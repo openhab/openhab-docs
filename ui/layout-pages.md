@@ -7,6 +7,8 @@ title: Layout Pages
 Layout Pages are used in the main web user interface to display widgets in an organized manner.
 You can choose among several layouts, based on whether you want to control the layout completely, or let the container decide where to place the widgets.
 
+![Layout Page Example](./images/layout_example.png)
+
 ## Anatomy of a Layout Page
 
 A layout page can host one or multiple **blocks**, optionally followed by a **masonry** layout.
@@ -30,6 +32,9 @@ With that in mind, it is advisable to build the page for the narrow screens firs
 For cells and masonry, you don't have to worry about it, it will be handled for you. However, when you choose to keep control of the layout by making use of rows and columns, you need to take extra care about the responsive breakpoints.
 
 These are controlled using the parameters on the column (`oh-grid-col`) components - you can configure them in the Design tab with the *Column Options* menu entries, or in YAML with the Code tab or a "Edit YAML" options on a parent component.
+
+![Column Options](./images/responsive1.png)
+
 Using code, you can quickly duplicate the breakpoints for similar columns.
 
 The breakpoints work like this: the `width` property of the column is the default width that will be applied for the smallest screen, then `xsmall`, `small`, `medium`, `large`, `xlarge` width will apply on wider screens appropriately:
@@ -47,6 +52,47 @@ The breakpoints work like this: the `width` property of the column is the defaul
 
 If you don't specify any width or breakpoints, the column will spread evenly on the row, without wrapping. This is fine for a couple of columns and simple widgets only, since on a small smartphone screen, you will rapidly get out of room.
 That's why you may find yourself wanting to let a column be 100% by default, so that it occupies the entire screen, and then reduce the width for `medium` or `large` breakpoints.
+
+For example, given this set of rows & cols:
+
+```yaml
+config:
+  label: Overview
+blocks:
+  - component: oh-block
+    config: {}
+    slots:
+      default:
+        - component: oh-grid-row
+          config: {}
+          slots:
+            default:
+              - component: oh-grid-col
+                config:
+                  width: "100"
+                  small: "50"
+                  medium: "33"
+                slots:
+                  default: []
+              - component: oh-grid-col
+                config:
+                  width: "100"
+                  small: "50"
+                  medium: "33"
+                slots:
+                  default: []
+              - component: oh-grid-col
+                config:
+                  width: "100"
+                  medium: "33"
+                slots:
+                  default: []
+```
+
+This is how the layout will adapt depending on the width of the screen:
+
+![Responsive Layout](./images/responsive2.gif)
+
 
 ## How to Build a Layout Page
 
@@ -78,6 +124,8 @@ You will also get an additional option: *"Add from Model..."*. This option will 
 - for columns or masonry, the _default standalone widget_;
 - for items inside list cards, the _default list item widget_;
 - for cell containers, the _default cell widget_.
+
+![Add from Model](./images/add_from_model.png)
 
 ::: tip REMARK
 

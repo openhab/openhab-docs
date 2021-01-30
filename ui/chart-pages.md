@@ -6,6 +6,8 @@ title: Chart Pages
 
 Chart Pages can display historical values in a full-screen `oh-chart` component.
 
+![Chart Example](./images/chart_example.png)
+
 ## Anatomy of a Chart Page
 
 Charts are based on the Apache ECharts library.

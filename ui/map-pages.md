@@ -6,6 +6,8 @@ title: Map Pages
 
 Map Pages can display either fixed markers or markers representating items of type Location, on a map.
 
+![Map Example](./images/map_example.png)
+
 ## Anatomy of a Map Page
 
 Map pages have some configuration properties that you mostly can define in the Design mode.

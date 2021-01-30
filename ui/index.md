@@ -89,6 +89,8 @@ In the Design tab, you have a view of the Page that easily allows you to add [Wi
 
 You will often find black buttons denoting that the component beside or beneath it can be customized. Some will open menus, that allow to open the configuration sheet for this particular component, reorder them, copy or paste them, remove them, or bring up the part of the YAML structure describing it and its descendents.
 
+![Widget Context Menu](./images/widget_context_menu.png)
+
 In the Code tab, you will be able to alter the component structure of the page, either with the sitemap syntax, or with YAML. In case of YAML, you can trigger autocompletion in many places of the YAML code:
 
 - at the root or component level, hit <kbd>Ctrl+Space</kbd> to start a `config` section, a `slots` section, or a `slots` section with a `default` slot;

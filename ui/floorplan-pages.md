@@ -6,6 +6,8 @@ title: Floorplan Pages
 
 Floorplan Pages can display markers or other elements over a custom image of your choice that you can zoom & pan.
 
+![Floorplan Example](./images/floorplan_example.png)
+
 ## Anatomy of a Floorplan Page
 
 Floorplan pages have some configuration properties that you mostly can define in the Design mode.

@@ -6,9 +6,11 @@ title: Tabbed Pages
 
 Tabbed Pages are composite Pages which are able to display other Pages in tabs.
 
+![Tabbed Example](./images/tabbed_example.png)
+
 ## Anatomy of a Tabbed Page
 
-Tabbed page are very simple: you can only add `oh-tabs` components which will have a label, icon, and a reference to another Page.
+Tabbed pages are very simple: you can only add `oh-tabs` components which will have a label, icon, and a reference to another Page.
 The tabs will be displayed in the order they're defined.
 
 ## Building a Tabbed Page
