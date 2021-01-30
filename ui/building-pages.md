@@ -107,11 +107,12 @@ However, it's important to know that there are limitations and sometimes editing
   This means that in these cases, these underlying concepts will usually be passed the key/values of the (openHAB) widget component's config so that more parameters can be accepted than those which are documented in the widget's definition.
   Sometimes it will be indicated somewhere when configuring the widget, or in the openHAB documentation itself, on the other hand some options won't be available for use (for instance, because they expect a callback function and you cannot define those in the widget's config) or need some transformation.
 
-2. Sometimes you'll want to use an expression to configure the property, but the UI  will get in your way - for instance, it will display an item picker while your intention is to set the prop value to be `=props.item1`. See below to learn more about expressions.
+1. Sometimes you'll want to use an expression to configure the property, but the UI will get in your way - for instance, it will display an item picker while your intention is to set the prop value to be `=props.item1`.
+  See below to learn more about expressions.
 
-3. To quickly and efficiently duplicate similar widgets with only a few differences, it is always way easier to copy/paste the relevant YAML in the editor.
+1. To quickly and efficiently duplicate similar widgets with only a few differences, it is always way easier to copy/paste the relevant YAML in the editor.
 
-4. The YAML is the best way of sharing complete or partial component structures like pages or widgets with others in the forum.
+1. The YAML is the best way of sharing complete or partial component structures like pages or widgets with others in the forum.
 
 Besides, there are several options that virtually all widgets in layout pages, map pages and plan pages accept, all of which are not currently available in the config sheet:
 
@@ -185,7 +186,6 @@ Substracts one week from the state of `DateTime` and return a relative time repr
 Expressions can be tested in the Widgets Expression Tester found in the Developer Sidebar
 (<kbd>Shift+Alt+D</kbd>).
 
-
 ## Actions
 
 When configuring a widget, you will encounter options related to actions (usually, when something is clicked or touched, but there might be several actions configured for a single widget, for instance, clicking on different parts or a long tap with a touch device); regardless, they will all have the same options:
@@ -258,7 +258,6 @@ the action.
 This is useful when "validating" a variable e.g.
 send a command to an item with the variable value then reset it.
 
-
 ## Techniques for Styling Widgets
 
 ### Predefined CSS Classes
@@ -271,8 +270,6 @@ You cannot define new CSS classes, but you can use classes from Framework7, for 
 - [Color Themes](https://v5.framework7.io/docs/color-themes.html#apply-color-themes)
 - [Hairlines](https://v5.framework7.io/docs/hairlines.html)
 - [Elevation](https://v5.framework7.io/docs/elevation.html)
-
-
 
 ### CSS Variables
 
@@ -324,7 +321,6 @@ These resources will help you with Flexbox and Grid:
 - [A Complete Guide to Grid](https://css-tricks.com/snippets/css/complete-guide-grid/)
 - [Grid Tutorial on W3Schools](https://www.w3schools.com/css/css_grid.asp)
 
-
 ## Personal Widgets
 
 You can extend the library of widgets you have at your disposal by creating personal ones, either by yourself, or copy-pasting from examples by the community; then you can reuse them on pages, multiple times if need be, simply configuring their props to your needs.
@@ -339,6 +335,7 @@ To actually see how the config sheet would look like, and specify props for your
 After saving the widget, you will have it as an option (under "Personal widgets") to add it to a layout page, or display in a modal like a popover, or use it as the default representation of an item.
 
 Note the special `widget:<uid>` syntax for the component type to specify "use this personal widget here", the `config` being the value to wish to assign to the widget props:
+
 ```yaml
 component: widget:widget_0a26c10a4d
 config:

@@ -93,7 +93,6 @@ This is how the layout will adapt depending on the width of the screen:
 
 ![Responsive Layout](./images/responsive2.gif)
 
-
 ## How to Build a Layout Page
 
 ### Defining the Layout

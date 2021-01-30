@@ -38,7 +38,6 @@ Fortunately, there are however several other mature apps, notably the mobile app
 [**Layout pages**](./layout-pages.html), introduced in openHAB 3, are the most common and versatile way of displaying information in the main UI.
 They have extensive options to control how they are laid out, and can display [**Widgets**](./building-pages.html) coming from the built-in libraries or widgets that you have designed or imported in your personal library.
 
-
 ### Maps & Floorplans
 
 [**Maps**](./map-pages.html) and [**Floorplans**](./floorplan-pages.html) are Pages dedicated to displaying markers and other elements on a background overlay.
@@ -71,7 +70,6 @@ The table below summarizes the different types of Pages and their compatibility:
 |[Floorplan](./floorplan-pages.html)|main UI|main UI|JSON DB|
 |[Chart](./chart-pages.html)|main UI|main UI|JSON DB|
 |[Tabbed](./tabbed-pages.html)|main UI|main UI|JSON DB|
-
 
 ## Designing Pages
 
@@ -106,11 +104,11 @@ Whereas in sitemaps, the entirety of the hierarchy is constrained within the sit
 You can indeed navigate from one page to the next, either with standard full-screen replacement, or in a modal window: you do that by configuring appropriate actions on some of the source page widgets, referencing the next.
 For instance, clicking on a marker on a Floor plan page can open a popup, displaying a Tabbed page itself containing a Chart page, a Layout page and a Map page.
 
-By carefully designing the navigation & interaction between pages, you can make up a coherent and complex user interface system. 
+By carefully designing the navigation & interaction between pages, you can make up a coherent and complex user interface system.
 You have two entry points to this system at your disposal:
 
 1. the Overview page;
-2. Pages that you promote to the main UI's Sidebar.
+1. Pages that you promote to the main UI's Sidebar.
 
 ### The Overview Page
 

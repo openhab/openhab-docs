@@ -32,4 +32,3 @@ Using the black context menu, you can reorder or remove existing markers.
 While it's "selected", a popover toolbar will appear, allowing you to configure it, edit its YAML, copy it (a Paste button will then appear besides *Add Marker*), or remove it.
 
 To position markers accurately, it's usually best to do it in Run mode, while the Markers area in Design mode is best for an overview of the markers on the page.
-
