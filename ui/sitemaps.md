@@ -23,7 +23,7 @@ Sitemaps follow the syntax described in this article.
 For easy editing of sitemap definition files, we suggest to use one of the [openHAB supporting editors]({{base}}/configuration/editors.html).
 These provide full IDE support for sitemap files, including syntax checking and auto-completion.
 
-The openHAB runtime distribution comes with a demo configuration package containing a sitemap file named [`demo.sitemap`](https://github.com/openhab/openhab-distro/blob/master/features/distro-resources/src/main/resources/sitemaps/demo.sitemap).
+The openHAB runtime distribution comes with a demo configuration package containing a sitemap file named [`demo.sitemap`](https://github.com/openhab/openhab-distro/blob/main/features/distro-resources/src/main/resources/sitemaps/demo.sitemap).
 You may find it useful to use this file as a starting point in creating a sitemap that fits your personal home setup.
 
 The following example illustrates what a typical Sitemap definition might look like:
@@ -74,7 +74,7 @@ To avoid very long or unstructured lines of element definition, parameters can b
 By encapsulating elements with curly brackets, multiple elements can be nested inside or behind others.
 The `Frame` element type is often used in combination with element blocks.
 Frames are used to visually distinguish multiple elements of the same topic on one interface page.
-When using code blocks behind other element types such as `Text` or `Group`, these UI elements will, in addition to their normal function, be links to a new view, presenting the nested elements. 
+When using code blocks behind other element types such as `Text` or `Group`, these UI elements will, in addition to their normal function, be links to a new view, presenting the nested elements.
 In the above example, multiple Frames are defined and some elements are not visible on the main view but are accessible behind their parent element.
 These are indicated by the ">" control icon on the right of an element.
 
@@ -85,7 +85,7 @@ openHAB supports these dependencies by providing parameters for dynamic behavior
 Be sure to check out the [Dynamic Sitemaps](#dynamic-sitemaps) chapter.
 
 For the technically interested: The Sitemap definition language is an
-Xtext Domain Specific Language and the sitemap file model can be found [here](https://github.com/eclipse/smarthome/blob/master/bundles/model/org.eclipse.smarthome.model.sitemap/src/org/eclipse/smarthome/model/Sitemap.xtext).
+Xtext Domain Specific Language and the sitemap file model can be found [here](https://github.com/openhab/openhab-core/blob/main/bundles/org.openhab.core.model.sitemap/src/org/openhab/core/model/sitemap/Sitemap.xtext).
 
 ### Special Element 'sitemap'
 
@@ -133,18 +133,18 @@ This provides the flexibility to present Items in the way desired in your home a
 
 **General remarks on parameters:**
 
--   In the following definitions, parameters in `[square brackets]` are optional.
+- In the following definitions, parameters in `[square brackets]` are optional.
 
--   Parameters must be supplied in the order shown.
+- Parameters must be supplied in the order shown.
 
--   Common parameters, also known from [items definition](items.html#item-syntax):
-    - `item` defines the name of the Item you want to present (e.g. `Temperature`), [more details](items.html#item-name).
-    - `label` sets the textual description displayed next to the preprocessed Item data (e.g. "`Now [%s °C]`"), [more details](items.html#item-label).
-    - `icon` chooses the name of the icon file to show next to the element, [more details](items.html#icons).
+- Common parameters, also known from [items definition](items.html#item-syntax):
+  - `item` defines the name of the Item you want to present (e.g. `Temperature`), [more details](items.html#item-name).
+  - `label` sets the textual description displayed next to the preprocessed Item data (e.g. "`Now [%s °C]`"), [more details](items.html#item-label).
+  - `icon` chooses the name of the icon file to show next to the element, [more details](items.html#icons).
 
--   When an [Item]({{base}}/configuration/items.html) is defined, you have the opportunity to assign a label and/or an icon at that point.
-If no label or icon are specified in the Sitemap, then the label and/or icon you assigned to the Item will be displayed.
-Setting a value for `label` or `icon` of a Sitemap element will override the values defined for the linked Item.
+- When an [Item]({{base}}/configuration/items.html) is defined, you have the opportunity to assign a label and/or an icon at that point.
+    If no label or icon are specified in the Sitemap, then the label and/or icon you assigned to the Item will be displayed.
+    Setting a value for `label` or `icon` of a Sitemap element will override the values defined for the linked Item.
 
 It has to be considered that if the label defined in a Channel or an Item contains text and state, these representations have to be overwritten separately in the Sitemap.
 In the following example a Item which has a label and state defined is overwritten.
@@ -163,9 +163,10 @@ sitemap demo label="My home automation" {
     }
 }
 ```
+
 UoM = [Units of Measurment]({{base}}/concepts/units-of-measurement.html)
 
--   Additional parameters such as `mappings` and `valuecolor` are described below.
+- Additional parameters such as `mappings` and `valuecolor` are described below.
 
 ### Element Type 'Frame'
 
@@ -196,7 +197,6 @@ Default item=<itemname> [label="<labelname>"] [icon="<iconname>"]
 
 Presents an Item using the default UI representation specified by the type of the given Item.
 E.g., a `Dimmer` Item will be represented as a [Slider](#element-type-slider) element while a `Player` Item will be rendered with player button controls (Previous/Pause/Play/Next).
-
 
 ### Element Type 'Text'
 
@@ -307,16 +307,16 @@ Slider item=<itemname> [label="<labelname>"] [icon="<iconname>"] [sendFrequency=
 
 This type presents a value as a user-adjustable control which slides from left (0) to right (100).
 
--   `sendFrequency` is used to distinguish between long and short button presses in the classic (web) frontend.
+- `sendFrequency` is used to distinguish between long and short button presses in the classic (web) frontend.
     This parameter defines the interval in milliseconds for sending increase/decrease requests.
 
--   `switchSupport` is a parameter without an assignment.
-    - Classic UI: If specified, a short press on the "up" or "down" button switches the item "on" or "off" (0 or 100) respectively.
-    - Android app: If specified, a short press on the item row (except the slider itself) switches the item "on" or "off".
-    - This parameter has no effect in other UIs.
+- `switchSupport` is a parameter without an assignment.
+  - Classic UI: If specified, a short press on the "up" or "down" button switches the item "on" or "off" (0 or 100) respectively.
+  - Android app: If specified, a short press on the item row (except the slider itself) switches the item "on" or "off".
+  - This parameter has no effect in other UIs.
 
--   `minValue` (defaults to 0) and `maxValue` (defaults to 100) limit the possible range of the value (both included in the range).
--   `step` (defaults to 1) defines the distance between two possible/selectable datapoints on the slider.
+- `minValue` (defaults to 0) and `maxValue` (defaults to 100) limit the possible range of the value (both included in the range).
+- `step` (defaults to 1) defines the distance between two possible/selectable datapoints on the slider.
 
 **Example:**
 
@@ -335,7 +335,6 @@ Colorpicker item=<itemname> [label="<labelname>"] [icon="<iconname>"] [sendFrequ
 This element is a combined control for something like a rgb or rgbw light where you can adjust brightness as well es the color hue.
 The down-button decreases brightness to zero and switches the light off. The up-button sets brightness to full but keeps the previous color (hue).
 The middle button opens an overlay to finetune your color. A color wheel let you pick the hue and a slider allows to set the brightness.
-
 
 - `sendFrequency` is used to distinguish between long and short button presses in the classic (web) frontend.
   This parameter defines the interval in milliseconds for sending increase/decrease requests.
@@ -362,7 +361,7 @@ Please be aware that Webview elements are not usable by all user interface optio
 **Example:**
 
 ```perl
-Webview url="http://www.openhab.org" height=5
+Webview url="https://www.openhab.org" height=5
 ```
 
 ![Presentation of the Webview element in BasicUI](images/sitemap_demo_webview.png)
@@ -393,7 +392,7 @@ Image [item=<itemname>] [icon="<iconname>"] url="<url of image>" [label="<labeln
 
 This element type is able to present an image.
 The image must be available on a reachable website or webserver without password or access token.
-Alternatively, the image file (e.g. YourImageFile.png) may be stored locally in the $OPENHAB_CONF/html folder, and will be accessible through the static route, http://<my.openHAB.device>:8080/static/YourImageFile.png.
+Alternatively, the image file (e.g. YourImageFile.png) may be stored locally in the $OPENHAB_CONF/html folder, and will be accessible through the static route, `https://<my.openHAB.device>:8080/static/YourImageFile.png`.
 
 - `item` can refer to either an Image Item whose state is the raw data of the image, or a String Item whose state is an URL that points to an image. Some clients may not (yet) consider `item`.
 - `url` is the default URL from which to retrieve the image, if there is no associated Item or if the associated item's state is not a URL.
@@ -405,7 +404,7 @@ Alternatively, the image file (e.g. YourImageFile.png) may be stored locally in 
 Image url="https://raw.githubusercontent.com/wiki/openhab/openhab/images/features.png"
 
 // display a snapshot image from an IP camera, using refresh parameter to get updated images
-Image url="http://192.168.1.203:8080/?action=snapshot" refresh=10000
+Image url="https://192.168.1.203:8080/?action=snapshot" refresh=10000
 ```
 
 ![Presentation of the Image element in BasicUI](images/sitemap_demo_image.png)
@@ -430,7 +429,7 @@ An embedded and/or protected video is not supported.
 **Example:**
 
 ```perl
-Video url="http://demo.openhab.org/Hue.m4v"
+Video url="https://demo.openhab.org/Hue.m4v"
 ```
 
 ![Presentation of the Video element in BasicUI](images/sitemap_demo_video.png)
@@ -444,18 +443,18 @@ Chart [item=<itemname>] [icon="<iconname>"] [label="<labelname>"] [refresh=xxxx]
 
 Adds a time-series chart object for the display of logged data.
 
--   `refresh` defines the refresh period of the Image (in milliseconds).
+- `refresh` defines the refresh period of the Image (in milliseconds).
 
--   `service` sets the persistence service to use.
-If no service is specified, openHAB will use the first queryable persistence service it finds.
-Therefore, for an installation with only a single persistence service, this is not required.
+- `service` sets the persistence service to use.
+    If no service is specified, openHAB will use the first queryable persistence service it finds.
+    Therefore, for an installation with only a single persistence service, this is not required.
 
--   `period` is the scale of the time axis. Valid values are `h, 4h, 8h, 12h, D, 2D, 3D, W, 2W, M, 2M, 4M or Y`.
+- `period` is the scale of the time axis. Valid values are `h, 4h, 8h, 12h, D, 2D, 3D, W, 2W, M, 2M, 4M or Y`.
 
--   `begin` / `end` sets the beginning and end of the time axis.
-Valid values are in the format: "yyyyMMddHHmm" (yyyy = year, MM = month, dd = day, HH = hour (0-23), mm = minutes).
+- `begin` / `end` sets the beginning and end of the time axis.
+    Valid values are in the format: `yyyyMMddHHmm` (`yyyy` = year, `MM` = month, `dd` = day, `HH` = hour (0-23), `mm` = minutes).
 
--   `legend` is used to show or to hide the chart legend.
+- `legend` is used to show or to hide the chart legend.
     Valid values are `true` (always show the legend) and `false` (never show the legend).
     If this parameter is not set, the legend is hidden if there is only one chart series.
 
@@ -463,7 +462,7 @@ Visit [Charts](https://github.com/openhab/openhab/wiki/Charts) in the Wiki for e
 
 **Other options to look out for:**
 The Chart element type is a good way to present time series data quickly.
-For more sophisticated diagrams, openHAB supports the integration of outside sources like most logging and graphing solutions (e.g. [Grafana](http://grafana.org)).
+For more sophisticated diagrams, openHAB supports the integration of outside sources like most logging and graphing solutions (e.g. [Grafana](https://grafana.org)).
 See this [Tutorial](https://community.openhab.org/t/13761/1) for more details.
 
 **Technical constraints and details:**
@@ -498,7 +497,6 @@ Imagine your TV is part of your openHAB setup.
 Its power state is represented by a binary Switch Item.
 Its channel number is a discrete number Item that may only be set to one of three states.
 By using a Switch or Selection element with a mappings array, you can replace these meaningless values with user-friendly descriptions for display on the user interface.
-
 
 This mapping changes the displayed power state of the TV from "ON" and "OFF" to the more accurate terms, "on" and "standby".
 Similarly, mapping above changes the numbers "1", "2", and "3" to "DasErste", "BBC One", and "Cartoon Network" respectively.
@@ -654,105 +652,31 @@ sitemap demo label="My home automation" {
 
 Explanation:
 
--   The Sitemap "demo" with the shown title "My home automation" is defined.
+- The Sitemap "demo" with the shown title "My home automation" is defined.
 
--   One first Frame with a date stamp is shown.
+- One first Frame with a date stamp is shown.
 
--   Another Frame with a visual label "Demo" is presented, containing:
+- Another Frame with a visual label "Demo" is presented, containing:
 
-    -   A Switch for the Item "Lights"
+  - A Switch for the Item "Lights"
 
-    -   A Text element showing a temperature in a given format
+  - A Text element showing a temperature in a given format
 
-    -   A Group element. Upon clicking the element, a new view containing all "Heating" Items will be shown.
+  - A Group element. Upon clicking the element, a new view containing all "Heating" Items will be shown.
 
-    -   Another Text element showing a "Multimedia" summary, e.g. "Currently playing".
+  - Another Text element showing a "Multimedia" summary, e.g. "Currently playing".
         The element is additionally the host for a nested block.
         By clicking in the element, a new view with two elements is presented:
-        - A Selection presenting four options in a modal dialog prompt
-        - A Slider to set the volume (e.g. 0-100%)
+    - A Selection presenting four options in a modal dialog prompt
+    - A Slider to set the volume (e.g. 0-100%)
 
 <!-- Note to author: If you update this example, remember to copy it to the beginning of this article as well! -->
 
 ## Further notes and comparison details
 
--   String comparisons are case sensitive, so `==ON` is not the same as `==on`.
+- String comparisons are case sensitive, so `==ON` is not the same as `==on`.
 
--   DateTime comparisons are relative to the current time and specified in seconds.
+- DateTime comparisons are relative to the current time and specified in seconds.
     So the expression `Lights_On_Time > 300` will return true if the DateTime Item is set to a value that's newer than the past 5 minutes (300 seconds).
 
--   Further examples for defining Sitemaps can be found in our [openHAB-Samples](https://github.com/openhab/openhab/wiki/Samples-Sitemap-Definitions) section.
-
-<!-- Note to author:
-- The screenshot were created with chrome mobile developer tools on a page width of 529px
- -The screenshots were created in BasicUI with the following items and Sitemap file content:
-Group:Number:AVG Temperatures <heating>
-Number Demo_LivingroomTemperature "Livingroom [21.0 °C]" <temperature> (Temperatures)
-Number Demo_BedroomTemperature "Bedroom [19.5 °C]" <temperature> (Temperatures)
-Number Demo_KitchenTemperature "Kitchen [20.5 °C]" <temperature> (Temperatures)
-Location Demo_Location "Location [48.858377,2.294486,66.0]"
-
-Number Demo_TV_Channel
-Color Demo_Color
-
-
-sitemap demo label="My home automation" {
-        Frame label="Date" {
-                Text item=Date label="Today [Monday, 01. Aug. 2016]"
-        }
-        Frame label="Demo" {
-                Switch item=Lights icon="light" mappings=[OFF="All Off"]
-                Text item=Temperature label="Livingroom [21.3 °C]" icon="temperature" valuecolor=[>25="orange",>15="green",<=15="blue"]
-                Group item=Heating
-                Text item=Multimedia_Summary label="Multimedia" icon="video" {
-                        Selection item=TV_Channel mappings=[0="off", 1="DasErste", 2="BBC One", 3="Cartoon Network"]
-                        Slider item=Volume
-                }
-        }
-
-        Text label="The following elements are for screenshots. The screen was at this width:"
-        Text label="---------------------------------------------------------------------------------------"
-    Frame {
-        Text item=Temperature label="Livingroom [21.3 °C]" icon="temperature"
-    }
-    Frame {
-        Switch item=Livingroom_Light_OnOff label="Ceiling Light" icon="light"
-    }
-    Frame {
-        Switch item=Demo_TV_Channel label="TV Channel" icon="television" mappings=[0="DasErste", 1="BBC One", 2="Cartoon Network"]
-    }
-    Frame {
-        Selection item=Demo_TV_Channel label="TV Channel" icon="television" mappings=[0="DasErste", 1="BBC One", 2="Cartoon Network"]
-    }
-    Frame {
-        Setpoint item=Demo_KitchenTemperature
-    }
-    Frame {
-        Slider item=Demo_KitchenTemperature switchSupport
-    }
-    Frame {
-        Colorpicker item=Demo_Color label="LED Light Color" icon="colorwheel"
-    }
-    //Frame {
-    //    Chart item=Demo_KitchenTemperature label="Test" period=h refresh=600
-    //}
-    Frame {
-        Group item=gHeatAct label="Room Temperatures [%.1f °C]"
-    }
-    Frame {
-        Image url="https://raw.githubusercontent.com/wiki/openhab/openhab/images/features.png"
-    }
-    Frame {
-        Video url="http://demo.openhab.org/Hue.m4v"
-    }
-    Frame {
-        Webview url="http://www.openhab.org" height=5
-    }
-    Frame {
-        Text item=Temperature label="Livingroom [22.0 °C]" icon="temperature" labelcolor=[!=1="blue"] valuecolor=[!=1="green"]
-    }
-    Frame {
-        Mapview item=Demo_Location height=5
-    }
-}
--->
+- Further examples for defining Sitemaps can be found in our [openHAB-Samples](https://github.com/openhab/openhab/wiki/Samples-Sitemap-Definitions) section.

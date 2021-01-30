@@ -89,7 +89,8 @@ module.exports = [
       'ui/tabbed-pages',
       'ui/chart-pages',
       ['ui/building-pages', 'Building Pages'],
-      'ui/habpanel',
+      ['ui/components/', 'Component Reference'],
+      'ui/habpanel/habpanel',
       ['apps/android', 'Android App'],
       'apps/ios',
       'apps/windows'
