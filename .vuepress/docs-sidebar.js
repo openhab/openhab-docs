@@ -90,10 +90,10 @@ module.exports = [
       'apps/windows',
       ['ecosystem/alexa/', 'Amazon Alexa'],
       ['ecosystem/google-assistant/', 'Google Assistant'], // from v2.3 onwards
-      ['../link/homekit/', 'Apple HomeKit'],
+      ['../addons/integrations/homekit/', 'Apple HomeKit'],
       // ['ecosystem/ifttt/', 'IFTTT'], // Temporary remove until service gets reactivated
       ['ecosystem/mycroft/', 'Mycroft.AI'],
-      ['../link/openhabcloud/', 'openHAB Cloud'],
+      ['../addons/integrations/openhabcloud/', 'openHAB Cloud'],
     ]
   },
   {
