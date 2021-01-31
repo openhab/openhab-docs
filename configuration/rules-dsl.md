@@ -345,7 +345,7 @@ These are methods of Objects that can accept a variety of types.
 
 Contrary, the Actions `sendCommand(MyItem, "<new_state>")` and `postUpdate(MyItem, "<new_state>")` can only accept strings as arguments.
 
-The reasons lie within Java, the object-oriented programming language on which openHAB is built.
+The reasons lies within Java, the object-oriented programming language on which openHAB is built.
 Java and the Rules DSL have two basic types, primitives and Objects.
 A lower case letter data type after a `var` or a `val` statement, for example `var int`, indicates a primitive type.
 An upper case letter data type after a `val` and `var` statement, for example `var Number` indicates an Object.
