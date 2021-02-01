@@ -153,5 +153,5 @@ Do not be fooled into assuming the “visible only to” feature gives you any s
 ### Additional Styling
 
 The `pageStyle` and `modalStyle` properties can be used on a Page component itself to set additional CSS properties to the parent responsible for displaying the page, normally not accessible.
-The styling with be applied to the `f7-page` component (in the former case, for pages displayed full screen, in the latter case, for pages displayed in a modal like a popup window).
+The styling will be applied to the `f7-page` component (in the former case, for pages displayed full screen, in the latter case, for pages displayed in a modal like a popup window).
 These properties are useful for instance to configure the background, or alter some CSS properties for the entire page.
