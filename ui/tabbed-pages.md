@@ -15,4 +15,4 @@ The tabs will be displayed in the order they're defined.
 
 ## Building a Tabbed Page
 
-In the Design view, under Tabs, click *"Add tab"* to add another tab. Then click on the newly added entry to configure the tab. using the black context menu, you can reorder or remove existing tabs.
+In the Design view, under Tabs, click **Add tab** to add another tab. Then click on the newly added entry to configure the tab. using the black context menu, you can reorder or remove existing tabs.

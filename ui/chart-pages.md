@@ -44,9 +44,9 @@ You can, however, launch the Analyzer with a predetermined set of item(s), chart
 
 From the Pages section in Settings, click "+" then Create Chart, or choose an existing Chart Page, to bring up the Chart Page Designer.
 
-You can choose the period type and initial period in the Page Configuration section, and then add Coordinate Systems, Axes, Series, and other chart components.
+You can choose the period type and initial period in the Page Configuration section, and then add **Coordinate Systems**, **Axes**, **Series**, and **other chart components**.
 
-Usually, you will first add a Grid, then either directly one or more Time Series (default axes will be created for you), or first Axes and an Aggregate Series.
+Usually, you will first add a **Grid**, then either directly one or more **Time Series** (default axes will be created for you), or first Axes and an **Aggregate Series**.
 
 When doing aggregations, you have to be careful to add the right type of axes based on the period that you chose (Aggregate Series don't support Dynamic period as chart type).
 
@@ -59,6 +59,6 @@ Then click Add Aggregate Series, choose the item, the Heatmap type, "Day of Mont
 Since the "outer" (first) dimension is on the Y axis, make sure you also enable "Transpose" to reflect that fact.
 Lastly, also make sure you add a Visual Map component to the chart since the Heatmap needs one as its color scale - even if it's hidden.
 
-In the "Other Components" section you will have badges in the buttons representing the number of components of that type.
+In the **Other Components** section you will have badges in the buttons representing the number of components of that type.
 You can indeed add several of these components, when appropriate.
 Below the title bar of the dialog to edit the component type, use the "+" tab to add one more, or use the Remove button at the bottom to remove the currently displayed component.

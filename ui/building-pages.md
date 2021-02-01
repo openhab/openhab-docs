@@ -22,7 +22,7 @@ The Component Reference provide details on what you can put in a certain compone
 Sometimes, the slots can be seen as different placeholders within a component where new components may be added. For instance, cell widgets have a `header` slot which represents the part of the cell when not expanded.
 The `default` slot is the space in the cell which becomes visible when the cell is expanded.
 
-In various parts of the UI page designers you can "focus" on a particular component usually by selecting the "Edit YAML" item in a black context menu.
+In various parts of the UI page designers you can "focus" on a particular component usually by selecting the **Edit YAML** item in a black context menu.
 
 Below is a typical component as represented in YAML:
 
@@ -324,7 +324,7 @@ These resources will help you with Flexbox and Grid:
 ## Personal Widgets
 
 You can extend the library of widgets you have at your disposal by creating personal ones, either by yourself, or copy-pasting from examples by the community; then you can reuse them on pages, multiple times if need be, simply configuring their props to your needs.
-To add a new personal widget, as an admin, click on Developer Tools then Widgets. Use the '+' button to create a new one.
+To add a new personal widget, as an admin, go to **Developer Tools > Widgets**, then use the '+' button to create a new one.
 
 The view features a code (YAML) editor and a live preview, you can change the orientation with the button in the center of the bottom toolbar.
 Don't forget to change the `uid` right away because you won't be able to alter it afterwards.
@@ -342,5 +342,3 @@ config:
   prop1: Test
   item: Color1
 ```
-
-To efficiently build widgets, you will have to rely often on the `style` and `class` properties, in conjunction with Framework7 [typography classes](https://framework7.io/docs/typography.html), [CSS variables](https://framework7.io/docs/css-variables.html), and Vue components, notably the [layout grid](https://framework7.io/vue/grid.html), and others.

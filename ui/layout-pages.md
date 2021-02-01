@@ -97,7 +97,7 @@ This is how the layout will adapt depending on the width of the screen:
 
 ### Defining the Layout
 
-When you create a new Layout Page, you'll notice the 2 buttons *"Add Block"* and *"Add Masonry"*.
+When you create a new Layout Page, you'll notice the 2 buttons **Add Block** and **Add Masonry**.
 Clicking either will add the respective container to the page.
 If you have multiple blocks, you can use the black context button (or the Code view) to reorder them with the Move Up/Move Down menu options.
 You can also copy it and paste it as another block after they've been designed, if you wish to have multuple similar blocks.
@@ -107,10 +107,10 @@ Blocks are also good candidates to use the conditional visibility features on, w
 You can restrict what's displayed on the page based on an expression, or who is currently viewing the page.
 In Design mode, _you will not be able to see the effect of these properties_, notably `visible`, but in Run mode they will be taken into account.
 
-Under blocks, as explained above, you can have a mix of cells or rows. The 2 buttons *"Add Row"* and *"Add Cells"* will let you add more of them.
+Under blocks, as explained above, you can have a mix of cells or rows. The 2 buttons **Add Row** and **Add Cells** will let you add more of them.
 They will be added at the end of the block, but as for the blocks themselves, you can reorder them, or duplicate them, using the context menus or the YAML.
 
-In Design mode, rows will feature an additional step before you can actually add widgets: adding columns: the *"Add Column"* serves this purpose.
+In Design mode, rows will feature an additional step before you can actually add widgets: adding columns: the **Add Column** serves this purpose.
 
 ### Adding Widgets
 
@@ -118,7 +118,7 @@ Big gray placeholders with a "+" sign will appear where you can add Widgets.
 
 Depending on the type of containers, different widgets from the Standard library will be offered in the menu, as well as widgets from your personal library.
 
-You will also get an additional option: *"Add from Model..."*. This option will display your semantic model, and let you pick one or several items, then add them in the container. The Widget that will be added will be the **default widget** for the item for that type of container which can be controlled with metadata:
+You will also get an additional option: **Add from Model...**. This option will display your semantic model, and let you pick one or several items, then add them in the container. The Widget that will be added will be the _default widget_ for the item for that type of container which can be controlled with metadata:
 
 - for columns or masonry, the _default standalone widget_;
 - for items inside list cards, the _default list item widget_;
@@ -128,6 +128,6 @@ You will also get an additional option: *"Add from Model..."*. This option will 
 
 ::: tip REMARK
 
-The widget that will be put on the page is a _copy_ of the current widget as defined in metadata at the time of the addition; if you change this definition for an  item, widgets that was already put on a page with the _Add from Model..._ feature will **NOT** be updated.
+The widget that will be put on the page is a _copy_ of the current widget as defined in metadata at the time of the addition; if you change this definition for an item, widgets that were already put on a page with the **Add from Model...** feature will **NOT** be updated.
 
 :::

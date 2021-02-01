@@ -21,6 +21,6 @@ You can also add two types of markers in the Markers area.
 In the Design view, configure the properties below Page Configuration.
 Some of them, like the background tiles or overlay providers, will indicate that some additional properties may need to be defined in YAML, for instance to set an OpenWeatherMap API key for the associated overlays to work.
 
-To add markers, under Markers, click either *"Add marker"* or *"Add circle marker"* as necessary. Then click on the newly added entry to configure the marker. using the black context menu, you can reorder or remove existing markers.
+To add markers, under Markers, click either **Add marker** or **Add circle marker** as necessary. Then click on the newly added entry to configure the marker. using the black context menu, you can reorder or remove existing markers.
 
 Use the Run mode to preview the page.

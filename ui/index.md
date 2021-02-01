@@ -4,7 +4,9 @@ title: User Interface Design Overview
 
 # User Interface Design Overview
 
-Once you have configured the physical and functional layers to your needs, built a model to represent your home and can succesfully operate your items individually within the administration area, you may now want to present them a little more nicely, to yourself or your family members, so they can interact with them or check their status easily without requiring access to these administration screens.
+Following the previous sections, you should have a working installation, with several Things, Items and Rules.
+You also ideally built a model to represent your home, and can succesfully operate your items individually within the administration area.
+You may now want to present them a little more nicely, to yourself or your family members, so they can interact with them or check their status easily without requiring access to these administration screens.
 
 To do that, openHAB puts different options at your disposal; they are commonly referred to as **Pages**.
 
@@ -19,7 +21,8 @@ The main's UI **home page** consists of 4 tabs:
 - an overview which you can customize entirely from scratch;
 - 3 tabs representing a generated view of your model oriented by **Location**, **Equipment** and **Properties**.
 
-In the 3 semantic tabs, expandable cards will appear **automatically** as you build your model, allowing you to get different perspectives on your home; for instance, you may want to see everything in a particular location, or everything pertaining to a certain class of equipment, like heating, or see a consolidated view of all items related to a certain property like temperature or humidity.
+In these 3 model-oriented tabs, expandable cards will appear **automatically** as you build your model, allowing you to get different perspectives on your home.
+For instance, you may want to see everything in a particular location, or everything pertaining to a certain class of equipment, like heating, or see a consolidated view of all items related to a certain property like temperature or humidity.
 Clicking on the card will make it expand and reveal its contents.
 Some of these cards will also feature glance badges that will extract some predefined information from your model and display it without you having to open the card.
 
@@ -73,15 +76,15 @@ The table below summarizes the different types of Pages and their compatibility:
 
 ## Designing Pages
 
-You can see the list of your Pages in the administration area of the main UI under _Settings > Pages_, and from there, create new ones, as well as modify or remove existing ones.
+You can see the list of your Pages in the administration area of the main UI under **Settings > Pages**, and from there, create new ones, as well as modify or remove existing ones.
 
-::: tip
+::: warning ATTENTION
 
 Sitemaps that you created in configuration files (`sitemaps/*.sitemap` files) are not displayed in this list.
 
 :::
 
-Every type of Page has its own designer but all of them with feature a *Design* tab and a *Code* tab.
+Every type of Page has its own designer but all of them with feature a **Design** tab and a **Code** tab.
 
 In the Design tab, you have a view of the Page that easily allows you to add [Widgets](./building-pages.html) in various parts. Every designer also has a _"general settings"_ table that will allow you to specify the identifier, the label, as well as some common settings.
 
@@ -112,7 +115,7 @@ You have two entry points to this system at your disposal:
 
 ### The Overview Page
 
-A Layout Page named _Overview_ (id: `overview`) is automatically created when you start.
+A Layout Page named **Overview** (id: `overview`) is automatically created when you start.
 The contents of this page will be shown on the Overview tab of the home page (see above): this page will be displayed when you open the main UI with the default URL.
 
 As a result, it's arguably the most important of them all, because that's what yourself, your household members and your eventual guests will see first, possibly on their narrow mobile screens.
@@ -128,9 +131,9 @@ Of course, you will also probably need to dive into details from time to time, b
 
 Another entry point to start navigating your Pages is to put some of them on the main UI's Sidebar: they will appear on the left side, or in the left drawer on smaller screens, just below the openHAB logo.
 
-To put a page on the Sidebar, open the "Sidebar & Visibility" option in a Page's general settings, and enable the "Show on Sidebar" toggle.
+To put a page on the Sidebar, open the _Sidebar & Visibility_ option in a Page's general settings, and enable the **Show on Sidebar** toggle.
 
-"Sidebar order" allows to reorder the sidebar menu, choose an integer for each page on the sidebar, the lower values will make the page higher in the menu.
+**Sidebar order** allows to reorder the sidebar menu, choose an integer for each page on the sidebar, the lower values will make the page higher in the menu.
 
 ## Additional Properties
 
@@ -138,7 +141,7 @@ You can put additional properties on a page's root component config which will i
 
 ### Visibility Restriction
 
-The `visibleTo` property with allow you to control whether the page will be viewable based on the current user's role.
+The `visibleTo` property allows you to control whether the page will be viewable based on the current user's role.
 The built-in roles `user` and `administrator` will be configurable in the Design tab, but you can also use YAML, in which case an array of `role:(role)` and/or `user:(userid)` strings is to be specified.
 
 ::: warning
