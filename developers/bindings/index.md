@@ -857,7 +857,7 @@ The devoloper has to take care about that.
 UPnP discovery is implemented in the framework as `UpnpDiscoveryService`.
 It is widely used in bindings.
 To facilitate the development, binding developers only need to implement a `UpnpDiscoveryParticipant`.
-Here the developer only needs to implement three simple methods, and may implement a fourth:
+Here the developer only needs to implement three simple methods, and may optionally implement a fourth:
 
 - `getSupportedThingTypeUIDs` - Returns the list of thing type UIDs that this participant supports.
     The discovery service uses this method of all registered discovery participants to return the list of currently supported thing type UIDs.
@@ -869,7 +869,7 @@ Here the developer only needs to implement three simple methods, and may impleme
 - `getRemovalGracePeriodSeconds` (OPTIONAL) - Returns an additional grace period delay in seconds before the device will be removed from the Inbox.
     This method is called when the discovery service is about to remove a Thing from the Inbox.
     Some bindings handle devices that can sometimes be a bit late in sending their 'ssdp:alive' notifications even though they have not really gone offline.
-    This means that the device is repeatedly removed from, and (re)added to, the Inbox
+    This means that the device is repeatedly removed from, and (re)added to, the Inbox.
     To prevent this, a binding may OPTIONALLY implement this method to specify an additional delay period (grace period) to wait before the device is removed from the Inbox.
 
 The following example shows the implementation of the UPnP discovery participant for the Hue binding, the `HueBridgeDiscoveryParticipant`.
