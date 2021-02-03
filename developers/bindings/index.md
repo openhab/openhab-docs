@@ -857,7 +857,7 @@ The devoloper has to take care about that.
 UPnP discovery is implemented in the framework as `UpnpDiscoveryService`.
 It is widely used in bindings.
 To facilitate the development, binding developers only need to implement a `UpnpDiscoveryParticipant`.
-Here the developer only needs to implement three simple methods:
+Here the developer only needs to implement three simple methods, and may optionally implement a fourth:
 
 - `getSupportedThingTypeUIDs` - Returns the list of thing type UIDs that this participant supports.
     The discovery service uses this method of all registered discovery participants to return the list of currently supported thing type UIDs.
@@ -866,11 +866,22 @@ Here the developer only needs to implement three simple methods:
 - `createResult` - Creates the `DiscoveryResult` out of the UPnP result.
     This method is called from the discovery service to create the actual discovery result.
     It uses the `getThingUID` method to create the thing UID of the result.
+- `getRemovalGracePeriodSeconds` (OPTIONAL) - Returns an additional grace period delay in seconds before the device will be removed from the Inbox.
+    This method is called when the discovery service is about to remove a Thing from the Inbox.
+    Some bindings handle devices that can sometimes be a bit late in sending their 'ssdp:alive' notifications even though they have not really gone offline.
+    This means that the device is repeatedly removed from, and (re)added to, the Inbox.
+    To prevent this, a binding may OPTIONALLY implement this method to specify an additional delay period (grace period) to wait before the device is removed from the Inbox.
 
 The following example shows the implementation of the UPnP discovery participant for the Hue binding, the `HueBridgeDiscoveryParticipant`.
 
 ```java
 public class HueBridgeDiscoveryParticipant implements UpnpDiscoveryParticipant {
+
+    private long removalGracePeriodSeconds = 50;
+
+    @Reference
+    @Nullable
+    ConfigurationAdmin configAdmin;
 
     @Override
     public Set<ThingTypeUID> getSupportedThingTypeUIDs() {
@@ -908,6 +919,25 @@ public class HueBridgeDiscoveryParticipant implements UpnpDiscoveryParticipant {
             }
         }
         return null;
+    }
+
+    // Implementating this method is OPTIONAL
+    // If not implemented, the 'default' method returns 0 by default
+    @Override
+    public long getRemovalGracePeriodSeconds(RemoteDevice device) {
+        if (configAdmin != null) {
+            try {
+                Configuration conf = configAdmin.getConfiguration("binding.hue");
+                Dictionary<String, @Nullable Object> properties = conf.getProperties();
+                Object property = properties.get(HueBindingConstants.REMOVAL_GRACE_PERIOD);
+                if (property != null) {
+                    removalGracePeriodSeconds = Integer.valueOf(property.toString()).longValue();
+                }
+            } catch (IOException | IllegalStateException | NullPointerException | NumberFormatException e) {
+                // fall through to pre-initialised (default) value
+            }
+        }
+        return removalGracePeriodSeconds;
     }
 }
 ```
