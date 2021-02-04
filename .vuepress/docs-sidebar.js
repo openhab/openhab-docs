@@ -81,7 +81,7 @@ module.exports = [
     children: [
       'configuration/editors',
       ['configuration/ui/habot/', 'HABot'],
-      'configuration/habpanel',
+      ['configuration/ui/habpanel/habpanel', 'HABPanel'],
       ['configuration/ui/basic/', 'Basic UI'],
       ['configuration/restdocs', 'REST API'],
       ['configuration/apitokens', 'API Token Generation'],
