@@ -146,7 +146,7 @@ Expressions are string literals beginning with the symbol `=` and everything aft
 - `props` is a dictionary of the key/values of self-defined props for the current personal widget, or page (pages, like any root UI components, may indeed have props). It is indispensable to use props in expressions when developing a personal widget
 - `vars` is a dictionary of variables (see below) that are available in the component's context
 - `loop` is a dictionary containing iteration information when you're repeating components from a source collection, it is defined only when in the context of a `oh-repeater` component
-- the JavaScript `Math` object (so you can use _Math.floor(...), Math.round(...) and the like
+- the JavaScript `Math` object (so you can use `Math.floor(...)`, `Math.round(...)` and the like)
 - the JavaScript `JSON` object to parse or produce JSON;
 - `dayjs` to build instances of the [day.js library](https://day.js.org/docs/en/parse/now) that you can use to parse or manipulate date & time
 - `theme` which holds the current theme: `ios`, `md` or `aurora`
