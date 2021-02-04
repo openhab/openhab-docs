@@ -410,6 +410,7 @@ Currently the miio binding supports more than 260 different models.
 | Yeelight LED Bulb (Color)    | miio:basic       | [yeelink.light.color2](#yeelink-light-color2) | Yes       |            |
 | Mi LED Smart Bulb (White and Color) | miio:basic       | [yeelink.light.color3](#yeelink-light-color3) | Yes       |            |
 | Yeelight LED Bulb 1S（Color）  | miio:basic       | [yeelink.light.color4](#yeelink-light-color4) | Yes       |            |
+| Yeelight Smart LED Bulb 1SE (color) | miio:basic       | [yeelink.light.colora](#yeelink-light-colora) | Yes       |            |
 | Yeelight LED Bulb (Tunable)  | miio:basic       | [yeelink.light.ct2](#yeelink-light-ct2) | Yes       |            |
 | Mi LED Desk Lamp             | miio:basic       | [yeelink.light.lamp1](#yeelink-light-lamp1) | Yes       |            |
 | Mi Smart LED Desk Lamp Pro   | miio:basic       | [yeelink.light.lamp2](#yeelink-light-lamp2) | Yes       |            |
@@ -2974,6 +2975,18 @@ e.g. `openhab:send actionCommand 'upd_timer["1498595904821", "on"]'` would enabl
 | rgbColor         | Color   | RGB Color                           |            |
 | name             | String  | Name                                |            |
 
+### Yeelight Smart LED Bulb 1SE (color) (<a name="yeelink-light-colora">yeelink.light.colora</a>) Channels
+
+| Channel          | Type    | Description                         | Comment    |
+|------------------|---------|-------------------------------------|------------|
+| power            | Switch  | Power                               |            |
+| brightness       | Dimmer  | Brightness                          |            |
+| delayoff         | Number:Time | Shutdown Timer                      |            |
+| colorTemperature | Number  | Color Temperature                   |            |
+| colorMode        | Number  | Color Mode                          |            |
+| rgbColor         | Color   | RGB Color                           |            |
+| name             | String  | Name                                |            |
+
 ### Yeelight LED Bulb (Tunable) (<a name="yeelink-light-ct2">yeelink.light.ct2</a>) Channels
 
 | Channel          | Type    | Description                         | Comment    |
@@ -4343,12 +4356,12 @@ e.g. `openhab:send actionCommand 'upd_timer["1498595904821", "on"]'` would enabl
 | Channel          | Type    | Description                         | Comment    |
 |------------------|---------|-------------------------------------|------------|
 | power            | Switch  | Power                               |            |
-| mode             | Number  | Mode                                |            |
+| mode             | Number  | Mode - Fan Level                    | Value mapping ["0"="Auto","1"="Silent","2"="Normal","3"="Maximum"] |
 | Fault            | Number  | Humidifier Device Fault             |            |
 | humidity         | Number:Dimensionless | Humidity                            |            |
-| targetHumidity   | Number  | Target Humidity                     |            |
+| targetHumidity   | Number:Dimensionless | Target Humidity                     |            |
 | waterlevel       | Number  | Water Level                         |            |
-| bright           | Dimmer  | LED Brightness                      |            |
+| bright           | Number  | LED Brightness                      | Value mapping ["0"="Dark","1"="Dimmed","2"="Brightest"] |
 | buzzer           | Switch  | Buzzer Status                       |            |
 | dry              | Switch  | Dry                                 |            |
 | usedhours        | Number:Time | Run Time                            |            |
@@ -4357,9 +4370,8 @@ e.g. `openhab:send actionCommand 'upd_timer["1498595904821", "on"]'` would enabl
 | actualmotorspeed | Number  | Actual Motor Speed                  |            |
 | temperature      | Number:Temperature | Temperature                         |            |
 | childlock        | Switch  | Child Lock                          |            |
-| ButtonPressed    | Number  | Button Pressed                      |            |
+| ButtonPressed    | Number  | Button Pressed                      | Value mapping ["0"="none","1"="led","2"="power"] |
 | clean            | Switch  | Clean Mode                          |            |
-| countryCode      | Number  | Country Code                        |            |
 
 ### Smartmi Evaporative Humidifier (<a name="zhimi-humidifier-cb1">zhimi.humidifier.cb1</a>) Channels
 
@@ -4452,6 +4464,7 @@ Number statusFanPow    "Fan Power [%1.0f%%]"  <signal>   (gVacStat) {channel="mi
 Number statusClean    "In Cleaning Status [%1.0f]"   <switch>  (gVacStat) {channel="miio:vacuum:034F0E45:status#in_cleaning" }
 Switch statusDND    "DND Activated"    (gVacStat) {channel="miio:vacuum:034F0E45:status#dnd_enabled" }
 Number statusStatus    "Status [%1.0f]"  <status>  (gVacStat) {channel="miio:vacuum:034F0E45:status#state"} 
+Switch isLocating    "Locating"    (gVacStat) {channel="miio:vacuum:034F0E45:status#is_locating" }
 
 Number consumableMain    "Main Brush [%1.0f]"    (gVacCons) {channel="miio:vacuum:034F0E45:consumables#main_brush_time"}
 Number consumableSide    "Side Brush [%1.0f]"    (gVacCons) {channel="miio:vacuum:034F0E45:consumables#side_brush_time"}
@@ -4488,6 +4501,7 @@ Additionally depending on the capabilities of your robot vacuum other channels m
 | Number  | status#water_box_mode             | Water Box Mode             |
 | Switch  | status#water_box_carriage_status  | Water Box Carriage Status  |
 | Switch  | status#mop_forbidden_enable       | Mop Forbidden              |
+| Switch  | status#is_locating                | Robot is locating          |
 | Number  | actions#segment                   | Room Clean  (enter room #) |
 
 
@@ -7467,6 +7481,21 @@ Color rgbColor "RGB Color" (G_light) {channel="miio:basic:light:rgbColor"}
 String name "Name" (G_light) {channel="miio:basic:light:name"}
 ```
 
+### Yeelight Smart LED Bulb 1SE (color) (yeelink.light.colora) item file lines
+
+note: Autogenerated example. Replace the id (light) in the channel with your own. Replace `basic` with `generic` in the thing UID depending on how your thing was discovered.
+
+```
+Group G_light "Yeelight Smart LED Bulb 1SE (color)" <status>
+Switch power "Power" (G_light) {channel="miio:basic:light:power"}
+Dimmer brightness "Brightness" (G_light) {channel="miio:basic:light:brightness"}
+Number:Time delayoff "Shutdown Timer" (G_light) {channel="miio:basic:light:delayoff"}
+Number colorTemperature "Color Temperature" (G_light) {channel="miio:basic:light:colorTemperature"}
+Number colorMode "Color Mode" (G_light) {channel="miio:basic:light:colorMode"}
+Color rgbColor "RGB Color" (G_light) {channel="miio:basic:light:rgbColor"}
+String name "Name" (G_light) {channel="miio:basic:light:name"}
+```
+
 ### Yeelight LED Bulb (Tunable) (yeelink.light.ct2) item file lines
 
 note: Autogenerated example. Replace the id (light) in the channel with your own. Replace `basic` with `generic` in the thing UID depending on how your thing was discovered.
@@ -9036,12 +9065,12 @@ note: Autogenerated example. Replace the id (humidifier) in the channel with you
 ```
 Group G_humidifier "Smartmi Evaporative Humidifer 2" <status>
 Switch power "Power" (G_humidifier) {channel="miio:basic:humidifier:power"}
-Number mode "Mode" (G_humidifier) {channel="miio:basic:humidifier:mode"}
+Number mode "Mode - Fan Level" (G_humidifier) {channel="miio:basic:humidifier:mode"}
 Number Fault "Humidifier Device Fault" (G_humidifier) {channel="miio:basic:humidifier:Fault"}
 Number:Dimensionless humidity "Humidity" (G_humidifier) {channel="miio:basic:humidifier:humidity"}
-Number targetHumidity "Target Humidity" (G_humidifier) {channel="miio:basic:humidifier:targetHumidity"}
+Number:Dimensionless targetHumidity "Target Humidity" (G_humidifier) {channel="miio:basic:humidifier:targetHumidity"}
 Number waterlevel "Water Level" (G_humidifier) {channel="miio:basic:humidifier:waterlevel"}
-Dimmer bright "LED Brightness" (G_humidifier) {channel="miio:basic:humidifier:bright"}
+Number bright "LED Brightness" (G_humidifier) {channel="miio:basic:humidifier:bright"}
 Switch buzzer "Buzzer Status" (G_humidifier) {channel="miio:basic:humidifier:buzzer"}
 Switch dry "Dry" (G_humidifier) {channel="miio:basic:humidifier:dry"}
 Number:Time usedhours "Run Time" (G_humidifier) {channel="miio:basic:humidifier:usedhours"}
@@ -9052,7 +9081,6 @@ Number:Temperature temperature "Temperature" (G_humidifier) {channel="miio:basic
 Switch childlock "Child Lock" (G_humidifier) {channel="miio:basic:humidifier:childlock"}
 Number ButtonPressed "Button Pressed" (G_humidifier) {channel="miio:basic:humidifier:ButtonPressed"}
 Switch clean "Clean Mode" (G_humidifier) {channel="miio:basic:humidifier:clean"}
-Number countryCode "Country Code" (G_humidifier) {channel="miio:basic:humidifier:countryCode"}
 ```
 
 ### Smartmi Evaporative Humidifier (zhimi.humidifier.cb1) item file lines
