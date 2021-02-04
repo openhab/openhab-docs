@@ -11,8 +11,8 @@ These structures make up hierarchies that notably define the pages in their enti
 
 Each component has:
 
-- A **type**;
-- Most of the time, a set of **configuration properties**;
+- A **type**
+- Most of the time, a set of **configuration properties**
 - Optionally, a set of **named slots** which hold collections of more components. By putting components into slots, we therefore define a hierarchy.
 Slots are optional, and have a name; usually when there’s slots involved there’s a `default` slot but not always.
 
@@ -79,8 +79,8 @@ config: ...
 slots: ...
 ```
 
-- an **uid** (its Unique IDentifier);
-- a **props** structure describing its own properties; props define parameters and parameter groups following a subset of the configuration description schema found in bindings, services and throughout openHAB: see [Configuration Descriptions](/docs/developer/bindings/config-xml.html).
+- an **uid** (its Unique IDentifier)
+- a **props** structure describing its own properties; props define parameters and parameter groups following a subset of the configuration description schema found in bindings, services and throughout openHAB: see [Configuration Descriptions](/docs/developer/bindings/onfig-xml.html)
 - a set of **tags**
 
 ## Widgets: Definition & Usage
@@ -91,10 +91,10 @@ No matter which type of page you’re editing, the designer will feature black b
 
 These menus will in most cases allow you to:
 
-- configure the documented parameters with a config sheet (“Configure Widget” or similar);
-- open the part of the page’s YAML representation pertaining to the widget (“Edit YAML”), that is, a subgraph of the page’s component tree with that widget as its root component;
-- perform cut/copy/paste operations, if supported (you can only do that in the same page currently, to copy or move widgets between pages, you may use the YAML view);
-- reorder the widget within its parent slot (these options are usually named “Move Up” and “Move Down” although you may occasionally encounter other labels, like “Move Left”/“Move Right”);
+- configure the documented parameters with a config sheet (“Configure Widget” or similar)
+- open the part of the page’s YAML representation pertaining to the widget (“Edit YAML”), that is, a subgraph of the page’s component tree with that widget as its root component
+- perform cut/copy/paste operations, if supported (you can only do that in the same page currently, to copy or move widgets between pages, you may use the YAML view)
+- reorder the widget within its parent slot (these options are usually named “Move Up” and “Move Down” although you may occasionally encounter other labels, like “Move Left”/“Move Right”)
 - remove the widget
 
 Configuring the widget with the config sheet is of course more user-friendly than editing the YAML, as the options are usually organized logically in groups and feature a description:
@@ -116,7 +116,7 @@ However, it's important to know that there are limitations and sometimes editing
 
 Besides, there are several options that virtually all widgets in layout pages, map pages and plan pages accept, all of which are not currently available in the config sheet:
 
-- `visible`: you can specify a `false` boolean to this option to hide the widget. This powerful feature, combined with expressions (see below), allows you to dynamically show widgets or even entire sections (if you use it on layout widgets containing other widgets), depending on the state of your items;
+- `visible`: you can specify a `false` boolean to this option to hide the widget. This powerful feature, combined with expressions (see below), allows you to dynamically show widgets or even entire sections (if you use it on layout widgets containing other widgets), depending on the state of your items
 Example: `visible: =items.TV_Powered.state === 'ON' && items.TV_Input.state === 'HDMI1'`
 - `visibleTo`: this accepts an array of strings like `role:administrator`, `role:user`, or `user:<userid>`, allowing the widget to be only visible to specific users or those with a certain role.
 Example: `visibleTo: ["user:scott", "role:administrator"]`
@@ -129,10 +129,10 @@ To help you define usable pages, there are a number of built-in widgets that you
 
 - the **System** library includes "crude" controls that you cannot add with the designers - for instance `oh-button`, `oh-slider`, `oh-colorpicker`. Instead, you're more likely use them within some container (card, list item...) provided by a widget of the Standard library; but when designing a personal widget with a complex layout you may want to use one or several of them directly. You may also use them in a slot of another widget, for those which define some, in order to add additional controls to that widget.
 - the **Standard** library, which has several classes of widgets:
-  - **layout widgets**, examples: `oh-block`, `oh-masonry`, `oh-grid-row`, `oh-grid-col` that you usually add with the designer to a layout page;
-  - **standalone widgets**, examples: `oh-label-card`, `oh-slider-card`, `oh-player-card` - usually not much more than widgets from the System library wrapped in a card;
-  - **list item widgets**, examples: `oh-list-item`, `oh-stepper-item`, `oh-toggle-item` - widgets that are thinner than the standalone ones, which you can only add a part of a list (`oh-list` or `oh-list-card`);
-  - **cell widgets**, examples: `oh-cell`, `oh-knob-cell`, `oh-colorpicker-cell`: these widgets are fixed-size cells that you can only add to a `oh-cells` container widget immediately below a `oh-block` in a layout page - they will either perform an action - switching a light on & off - or expanding to reveal additional controls;
+  - **layout widgets**, examples: `oh-block`, `oh-masonry`, `oh-grid-row`, `oh-grid-col` that you usually add with the designer to a layout page
+  - **standalone widgets**, examples: `oh-label-card`, `oh-slider-card`, `oh-player-card` - usually not much more than widgets from the System library wrapped in a card
+  - **list item widgets**, examples: `oh-list-item`, `oh-stepper-item`, `oh-toggle-item` - widgets that are thinner than the standalone ones, which you can only add a part of a list (`oh-list` or `oh-list-card`)
+  - **cell widgets**, examples: `oh-cell`, `oh-knob-cell`, `oh-colorpicker-cell`: these widgets are fixed-size cells that you can only add to a `oh-cells` container widget immediately below a `oh-block` in a layout page - they will either perform an action - switching a light on & off - or expanding to reveal additional controls
   - **page-specific widgets**, for instance map pages have `oh-map-marker` or `oh-map-circle-marker`, charts have different types of widgets than the rest to represent axes, series etc.
 
 See the [Component Reference](./components/) for details about the different libraries of components.
@@ -142,14 +142,14 @@ See the [Component Reference](./components/) for details about the different lib
 Virtually everywhere - with the notable exception of chart pages - every time you need a config prop to be dynamically updated, you can use an expression to configure it.
 Expressions are string literals beginning with the symbol `=` and everything after it is evaluated using a syntax very similar to JavaScript, you can use arithmetic or string operations etc., the [conditional (ternary) operator](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Conditional_Operator), as well as the following objects (subject to evolutions):
 
-- `items` is a dynamic key/value dictionary allowing you to retrieve the state of items; the result of `items.Item1` will be an object like `{ state: '23', displayState: '23 °C' }` (`displayState` may be omitted). You can therefore use `items.Item1.state` to use the current state of Item1 in your expression, if it changes, it will be reevaluated;
-- `props` is a dictionary of the key/values of self-defined props for the current personal widget, or page (pages, like any root UI components, may indeed have props). It is indispensable to use props in expressions when developing a personal widget;
-- `vars` is a dictionary of variables (see below) that are available in the component's context;
-- `loop` is a dictionary containing iteration information when you're repeating components from a source collection, it is defined only when in the context of a `oh-repeater` component;
-- the JavaScript `Math` object (so your can use _Math.floor(...), Math.round(...) and the like;
+- `items` is a dynamic key/value dictionary allowing you to retrieve the state of items; the result of `items.Item1` will be an object like `{ state: '23', displayState: '23 °C' }` (`displayState` may be omitted). You can therefore use `items.Item1.state` to use the current state of Item1 in your expression, if it changes, it will be reevaluated
+- `props` is a dictionary of the key/values of self-defined props for the current personal widget, or page (pages, like any root UI components, may indeed have props). It is indispensable to use props in expressions when developing a personal widget
+- `vars` is a dictionary of variables (see below) that are available in the component's context
+- `loop` is a dictionary containing iteration information when you're repeating components from a source collection, it is defined only when in the context of a `oh-repeater` component
+- the JavaScript `Math` object (so you can use _Math.floor(...), Math.round(...) and the like
 - the JavaScript `JSON` object to parse or produce JSON;
-- `dayjs` to build instances of the [day.js library](https://day.js.org/docs/en/parse/now) that you can use to parse or manipulate date & time;
-- `theme` which holds the current theme: `ios`, `md` or `aurora`;
+- `dayjs` to build instances of the [day.js library](https://day.js.org/docs/en/parse/now) that you can use to parse or manipulate date & time
+- `theme` which holds the current theme: `ios`, `md` or `aurora`
 - `themeOptions` and `device` allow to use the relevant objects that you can see in the About page, Technical information, View details, under `clientInfo`
 
 Expressions are particularly useful in cases where one wants to combine the states of more than one Item, or use the state of more than one Item in a single widget element.
@@ -327,7 +327,13 @@ You can extend the library of widgets you have at your disposal by creating pers
 To add a new personal widget, as an admin, go to **Developer Tools > Widgets**, then use the '+' button to create a new one.
 
 The view features a code (YAML) editor and a live preview, you can change the orientation with the button in the center of the bottom toolbar.
+
+::: warning WARNING
+
 Don't forget to change the `uid` right away because you won't be able to alter it afterwards.
+
+:::
+
 Sometimes the live preview will fail to update, you may want to hit the Redraw button or <kbd>Ctrl-R</kbd>/<kbd>Cmd-R</kbd> regularly when designing your widget.
 
 To actually see how the config sheet would look like, and specify props for your widget for the live preview, click on Set props (<kbd>Ctrl-P</kbd>) and configure them as needed.
