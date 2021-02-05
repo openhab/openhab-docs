@@ -74,7 +74,7 @@ Hide this marker outside certain zoom labels
 
   Visible only when zoomed to above this level (no limit if empty)
 
-- `zoomVisibilityMin` <small>INTEGER</small> _Zoom Visibility Maximum_
+- `zoomVisibilityMax` <small>INTEGER</small> _Zoom Visibility Maximum_
 
   Visible only when zoomed to below this level (no limit if empty)
 
