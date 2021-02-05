@@ -18,7 +18,6 @@ In order to represent all of these, openHAB defines the following base component
 - [Things](things.html) - Your devices represented in openHAB
 - [Items](items.html) - properties and capabilities of your Things
 - [Groups](items.html#groups) - collections or categories containing Items
-- [Sitemaps](sitemaps.html) - User-defined frontend interfaces to arrange Groups, Items and more
 - [Transformations](transform.html) - Helper functions to transform your data
 - [Persistence](persistence.html) - Services to store data over time
 - [Rules](rules-dsl.html) - Automation logic, the "smart" in your Smart Home!
@@ -26,6 +25,12 @@ In order to represent all of these, openHAB defines the following base component
 
 The individual articles have all the details needed to understand the concepts behind these building blocks for your Smart Home.
 For more details on the basic concepts behind openHAB, please visit the [Concepts Overview page](/docs/concepts/index.html).
+
+::: tip
+
+This section does not cover building user interfaces; this subject has its own section: [User Interfaces](/docs/ui/)
+
+:::
 
 ## Versatility
 
