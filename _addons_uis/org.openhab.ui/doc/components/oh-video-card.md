@@ -1,3 +1,11 @@
+---
+title: oh-video-card - Video Card
+component: oh-video-card
+label: Video Card
+description: Display a video (URL or URL from String item) in a card
+source: https://github.com/openhab/openhab-webui/edit/main/bundles/org.openhab.ui/doc/components/oh-video-card.md
+---
+
 # oh-video-card - Video Card
 
 <!-- GENERATED componentDescription -->

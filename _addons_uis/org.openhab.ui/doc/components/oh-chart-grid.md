@@ -1,3 +1,11 @@
+---
+title: oh-chart-grid - Cartesian Grid
+component: oh-chart-grid
+label: Cartesian Grid
+description: Reference documentation for the oh-chart-grid component
+source: https://github.com/openhab/openhab-webui/edit/main/bundles/org.openhab.ui/doc/components/oh-chart-grid.md
+---
+
 # oh-chart-grid - Cartesian Grid
 
 <!-- GENERATED componentDescription -->

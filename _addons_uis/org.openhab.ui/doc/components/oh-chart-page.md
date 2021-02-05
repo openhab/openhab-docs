@@ -1,3 +1,11 @@
+---
+title: oh-chart-page - Chart Page
+component: oh-chart-page
+label: Chart Page
+description: Visualize historical series
+source: https://github.com/openhab/openhab-webui/edit/main/bundles/org.openhab.ui/doc/components/oh-chart-page.md
+---
+
 # oh-chart-page - Chart Page
 
 <!-- GENERATED componentDescription -->

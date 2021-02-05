@@ -1,3 +1,11 @@
+---
+title: oh-colorpicker-item - Color Picker List Item
+component: oh-colorpicker-item
+label: Color Picker List Item
+description: Display a color picker in a list
+source: https://github.com/openhab/openhab-webui/edit/main/bundles/org.openhab.ui/doc/components/oh-colorpicker-item.md
+---
+
 # oh-colorpicker-item - Color Picker List Item
 
 <!-- GENERATED componentDescription -->

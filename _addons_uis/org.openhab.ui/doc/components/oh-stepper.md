@@ -1,3 +1,11 @@
+---
+title: oh-stepper - Stepper
+component: oh-stepper
+label: Stepper
+description: Stepper control, allows to input a number or decrement/increment it using buttons
+source: https://github.com/openhab/openhab-webui/edit/main/bundles/org.openhab.ui/doc/components/oh-stepper.md
+---
+
 # oh-stepper - Stepper
 
 <!-- GENERATED componentDescription -->

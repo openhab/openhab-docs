@@ -1,3 +1,11 @@
+---
+title: oh-list-item - List Item
+component: oh-list-item
+label: List Item
+description: A list item
+source: https://github.com/openhab/openhab-webui/edit/main/bundles/org.openhab.ui/doc/components/oh-list-item.md
+---
+
 # oh-list-item - List Item
 
 <!-- GENERATED componentDescription -->

@@ -1,3 +1,11 @@
+---
+title: oh-knob - Knob
+component: oh-knob
+label: Knob
+description: Knob control, allow to change a number value on a circular track
+source: https://github.com/openhab/openhab-webui/edit/main/bundles/org.openhab.ui/doc/components/oh-knob.md
+---
+
 # oh-knob - Knob
 
 <!-- GENERATED componentDescription -->

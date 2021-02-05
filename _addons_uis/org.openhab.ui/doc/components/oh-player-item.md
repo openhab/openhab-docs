@@ -1,3 +1,11 @@
+---
+title: oh-player-item - Player List Item
+component: oh-player-item
+label: Player List Item
+description: Display player controls in a list
+source: https://github.com/openhab/openhab-webui/edit/main/bundles/org.openhab.ui/doc/components/oh-player-item.md
+---
+
 # oh-player-item - Player List Item
 
 <!-- GENERATED componentDescription -->

@@ -1,3 +1,11 @@
+---
+title: oh-colorpicker - Colorpicker
+component: oh-colorpicker
+label: Colorpicker
+description: Control to pick a color
+source: https://github.com/openhab/openhab-webui/edit/main/bundles/org.openhab.ui/doc/components/oh-colorpicker.md
+---
+
 # oh-colorpicker - Colorpicker
 
 <!-- GENERATED componentDescription -->

@@ -1,3 +1,11 @@
+---
+title: oh-cell - Cell
+component: oh-cell
+label: Cell
+description: A regular or expandable cell
+source: https://github.com/openhab/openhab-webui/edit/main/bundles/org.openhab.ui/doc/components/oh-cell.md
+---
+
 # oh-cell - Cell
 
 <!-- GENERATED componentDescription -->

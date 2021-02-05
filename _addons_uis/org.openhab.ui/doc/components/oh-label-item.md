@@ -1,3 +1,11 @@
+---
+title: oh-label-item - Label List Item
+component: oh-label-item
+label: Label List Item
+description: Display the state of an item in a list
+source: https://github.com/openhab/openhab-webui/edit/main/bundles/org.openhab.ui/doc/components/oh-label-item.md
+---
+
 # oh-label-item - Label List Item
 
 <!-- GENERATED componentDescription -->

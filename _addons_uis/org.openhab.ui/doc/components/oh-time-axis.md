@@ -1,3 +1,11 @@
+---
+title: oh-time-axis - Time Axis
+component: oh-time-axis
+label: Time Axis
+description: Reference documentation for the oh-time-axis component
+source: https://github.com/openhab/openhab-webui/edit/main/bundles/org.openhab.ui/doc/components/oh-time-axis.md
+---
+
 # oh-time-axis - Time Axis
 
 <!-- GENERATED componentDescription -->

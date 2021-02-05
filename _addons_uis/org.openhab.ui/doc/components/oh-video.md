@@ -1,3 +1,11 @@
+---
+title: oh-video - Video
+component: oh-video
+label: Video
+description: Displays a video player from a URL or an item
+source: https://github.com/openhab/openhab-webui/edit/main/bundles/org.openhab.ui/doc/components/oh-video.md
+---
+
 # oh-video - Video
 
 <!-- GENERATED componentDescription -->

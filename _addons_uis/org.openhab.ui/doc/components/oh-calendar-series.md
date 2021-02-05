@@ -1,3 +1,11 @@
+---
+title: oh-calendar-series - Calendar Series
+component: oh-calendar-series
+label: Calendar Series
+description: Reference documentation for the oh-calendar-series component
+source: https://github.com/openhab/openhab-webui/edit/main/bundles/org.openhab.ui/doc/components/oh-calendar-series.md
+---
+
 # oh-calendar-series - Calendar Series
 
 <!-- GENERATED componentDescription -->

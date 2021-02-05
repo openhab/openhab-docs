@@ -1,3 +1,11 @@
+---
+title: oh-gauge - Gauge
+component: oh-gauge
+label: Gauge
+description: Circular or semi-circular read-only gauge
+source: https://github.com/openhab/openhab-webui/edit/main/bundles/org.openhab.ui/doc/components/oh-gauge.md
+---
+
 # oh-gauge - Gauge
 
 <!-- GENERATED componentDescription -->

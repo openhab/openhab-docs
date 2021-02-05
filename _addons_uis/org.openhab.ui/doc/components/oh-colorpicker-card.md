@@ -1,3 +1,11 @@
+---
+title: oh-colorpicker-card - Color Picker Card
+component: oh-colorpicker-card
+label: Color Picker Card
+description: Display a color picker in a card
+source: https://github.com/openhab/openhab-webui/edit/main/bundles/org.openhab.ui/doc/components/oh-colorpicker-card.md
+---
+
 # oh-colorpicker-card - Color Picker Card
 
 <!-- GENERATED componentDescription -->

@@ -1,3 +1,11 @@
+---
+title: oh-rollershutter - Rollershutter
+component: oh-rollershutter
+label: Rollershutter
+description: Rollershutter control, with up/down/stop buttons
+source: https://github.com/openhab/openhab-webui/edit/main/bundles/org.openhab.ui/doc/components/oh-rollershutter.md
+---
+
 # oh-rollershutter - Rollershutter
 
 <!-- GENERATED componentDescription -->

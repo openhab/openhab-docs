@@ -1,3 +1,11 @@
+---
+title: oh-player - Media player
+component: oh-player
+label: Media player
+description: Media player controls, with previous track/pause/play/next buttons
+source: https://github.com/openhab/openhab-webui/edit/main/bundles/org.openhab.ui/doc/components/oh-player.md
+---
+
 # oh-player - Media player
 
 <!-- GENERATED componentDescription -->

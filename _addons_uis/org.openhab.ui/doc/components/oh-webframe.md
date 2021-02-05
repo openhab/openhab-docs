@@ -1,3 +1,11 @@
+---
+title: oh-webframe - Web frame
+component: oh-webframe
+label: Web frame
+description: Displays a web page in a frame
+source: https://github.com/openhab/openhab-webui/edit/main/bundles/org.openhab.ui/doc/components/oh-webframe.md
+---
+
 # oh-webframe - Web frame
 
 <!-- GENERATED componentDescription -->

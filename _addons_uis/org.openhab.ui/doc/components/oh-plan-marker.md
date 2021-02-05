@@ -1,3 +1,11 @@
+---
+title: oh-plan-marker - Floor Plan Marker
+component: oh-plan-marker
+label: Floor Plan Marker
+description: A marker on a floor plan
+source: https://github.com/openhab/openhab-webui/edit/main/bundles/org.openhab.ui/doc/components/oh-plan-marker.md
+---
+
 # oh-plan-marker - Floor Plan Marker
 
 <!-- GENERATED componentDescription -->

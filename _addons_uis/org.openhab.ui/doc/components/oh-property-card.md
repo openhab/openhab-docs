@@ -1,3 +1,11 @@
+---
+title: oh-property-card - Property Card
+component: oh-property-card
+label: Property Card
+description: A card showing model items related to a certain property
+source: https://github.com/openhab/openhab-webui/edit/main/bundles/org.openhab.ui/doc/components/oh-property-card.md
+---
+
 # oh-property-card - Property Card
 
 <!-- GENERATED componentDescription -->

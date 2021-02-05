@@ -1,3 +1,11 @@
+---
+title: oh-map-page - Map page
+component: oh-map-page
+label: Map page
+description: Displays markers on a map
+source: https://github.com/openhab/openhab-webui/edit/main/bundles/org.openhab.ui/doc/components/oh-map-page.md
+---
+
 # oh-map-page - Map page
 
 <!-- GENERATED componentDescription -->

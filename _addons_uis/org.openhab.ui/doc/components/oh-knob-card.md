@@ -1,3 +1,11 @@
+---
+title: oh-knob-card - Knob Card
+component: oh-knob-card
+label: Knob Card
+description: Display a knob in a card to visualize and control a quantifiable item
+source: https://github.com/openhab/openhab-webui/edit/main/bundles/org.openhab.ui/doc/components/oh-knob-card.md
+---
+
 # oh-knob-card - Knob Card
 
 <!-- GENERATED componentDescription -->

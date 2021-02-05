@@ -1,3 +1,11 @@
+---
+title: oh-image - Image
+component: oh-image
+label: Image
+description: Displays an image from a URL or an item
+source: https://github.com/openhab/openhab-webui/edit/main/bundles/org.openhab.ui/doc/components/oh-image.md
+---
+
 # oh-image - Image
 
 <!-- GENERATED componentDescription -->

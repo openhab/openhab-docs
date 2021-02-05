@@ -1,3 +1,11 @@
+---
+title: oh-webframe-card - Web Frame Card
+component: oh-webframe-card
+label: Web Frame Card
+description: Display a web page in a card
+source: https://github.com/openhab/openhab-webui/edit/main/bundles/org.openhab.ui/doc/components/oh-webframe-card.md
+---
+
 # oh-webframe-card - Web Frame Card
 
 <!-- GENERATED componentDescription -->

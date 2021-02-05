@@ -1,3 +1,11 @@
+---
+title: oh-slider-card - Slider Card
+component: oh-slider-card
+label: Slider Card
+description: Display a slider in a card to control an item
+source: https://github.com/openhab/openhab-webui/edit/main/bundles/org.openhab.ui/doc/components/oh-slider-card.md
+---
+
 # oh-slider-card - Slider Card
 
 <!-- GENERATED componentDescription -->

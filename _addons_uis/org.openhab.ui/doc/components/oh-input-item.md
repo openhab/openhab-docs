@@ -1,3 +1,11 @@
+---
+title: oh-input-item - Input List Item
+component: oh-input-item
+label: Input List Item
+description: Display an input field in a list
+source: https://github.com/openhab/openhab-webui/edit/main/bundles/org.openhab.ui/doc/components/oh-input-item.md
+---
+
 # oh-input-item - Input List Item
 
 <!-- GENERATED componentDescription -->

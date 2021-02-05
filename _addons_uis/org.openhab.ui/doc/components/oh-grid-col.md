@@ -1,3 +1,11 @@
+---
+title: oh-grid-col - Layout Grid Column
+component: oh-grid-col
+label: Layout Grid Column
+description: A column in a grid layout
+source: https://github.com/openhab/openhab-webui/edit/main/bundles/org.openhab.ui/doc/components/oh-grid-col.md
+---
+
 # oh-grid-col - Layout Grid Column
 
 <!-- GENERATED componentDescription -->

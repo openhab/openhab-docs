@@ -1,3 +1,11 @@
+---
+title: oh-slider - Slider
+component: oh-slider
+label: Slider
+description: Slider control, allows to pick a number value on a scale
+source: https://github.com/openhab/openhab-webui/edit/main/bundles/org.openhab.ui/doc/components/oh-slider.md
+---
+
 # oh-slider - Slider
 
 <!-- GENERATED componentDescription -->

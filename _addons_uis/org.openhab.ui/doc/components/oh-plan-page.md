@@ -1,3 +1,11 @@
+---
+title: oh-plan-page - Floor plan
+component: oh-plan-page
+label: Floor plan
+description: Displays markers on an image overlay
+source: https://github.com/openhab/openhab-webui/edit/main/bundles/org.openhab.ui/doc/components/oh-plan-page.md
+---
+
 # oh-plan-page - Floor plan
 
 <!-- GENERATED componentDescription -->

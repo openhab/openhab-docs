@@ -1,3 +1,11 @@
+---
+title: oh-colorpicker-cell - Colorpicker Cell
+component: oh-colorpicker-cell
+label: Colorpicker Cell
+description: A cell expanding to a color picker
+source: https://github.com/openhab/openhab-webui/edit/main/bundles/org.openhab.ui/doc/components/oh-colorpicker-cell.md
+---
+
 # oh-colorpicker-cell - Colorpicker Cell
 
 <!-- GENERATED componentDescription -->

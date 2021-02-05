@@ -1,3 +1,11 @@
+---
+title: oh-map-marker - Map Marker
+component: oh-map-marker
+label: Map Marker
+description: An icon on a map
+source: https://github.com/openhab/openhab-webui/edit/main/bundles/org.openhab.ui/doc/components/oh-map-marker.md
+---
+
 # oh-map-marker - Map Marker
 
 <!-- GENERATED componentDescription -->

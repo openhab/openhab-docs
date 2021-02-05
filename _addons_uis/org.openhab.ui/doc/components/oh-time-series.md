@@ -1,3 +1,11 @@
+---
+title: oh-time-series - Time Series
+component: oh-time-series
+label: Time Series
+description: Reference documentation for the oh-time-series component
+source: https://github.com/openhab/openhab-webui/edit/main/bundles/org.openhab.ui/doc/components/oh-time-series.md
+---
+
 # oh-time-series - Time Series
 
 <!-- GENERATED componentDescription -->

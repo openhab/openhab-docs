@@ -1,3 +1,11 @@
+---
+title: oh-equipment-card - Equipment Class Card
+component: oh-equipment-card
+label: Equipment Class Card
+description: A card showing model items belonging to a certain equipment class
+source: https://github.com/openhab/openhab-webui/edit/main/bundles/org.openhab.ui/doc/components/oh-equipment-card.md
+---
+
 # oh-equipment-card - Equipment Class Card
 
 <!-- GENERATED componentDescription -->

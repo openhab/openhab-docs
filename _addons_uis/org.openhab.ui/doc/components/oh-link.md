@@ -1,3 +1,11 @@
+---
+title: oh-link - Link
+component: oh-link
+label: Link
+description: Link performing an action
+source: https://github.com/openhab/openhab-webui/edit/main/bundles/org.openhab.ui/doc/components/oh-link.md
+---
+
 # oh-link - Link
 
 <!-- GENERATED componentDescription -->

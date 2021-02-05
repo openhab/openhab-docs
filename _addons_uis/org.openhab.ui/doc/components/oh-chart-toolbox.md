@@ -1,3 +1,11 @@
+---
+title: oh-chart-toolbox - Toolbox
+component: oh-chart-toolbox
+label: Toolbox
+description: Reference documentation for the oh-chart-toolbox component
+source: https://github.com/openhab/openhab-webui/edit/main/bundles/org.openhab.ui/doc/components/oh-chart-toolbox.md
+---
+
 # oh-chart-toolbox - Toolbox
 
 <!-- GENERATED componentDescription -->

@@ -1,3 +1,11 @@
+---
+title: oh-chart-legend - Legend
+component: oh-chart-legend
+label: Legend
+description: Reference documentation for the oh-chart-legend component
+source: https://github.com/openhab/openhab-webui/edit/main/bundles/org.openhab.ui/doc/components/oh-chart-legend.md
+---
+
 # oh-chart-legend - Legend
 
 <!-- GENERATED componentDescription -->

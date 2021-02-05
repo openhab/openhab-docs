@@ -1,3 +1,11 @@
+---
+title: oh-trend - Trend line
+component: oh-trend
+label: Trend line
+description: Trend line to display the overall recent evoluation of an item
+source: https://github.com/openhab/openhab-webui/edit/main/bundles/org.openhab.ui/doc/components/oh-trend.md
+---
+
 # oh-trend - Trend line
 
 <!-- GENERATED componentDescription -->

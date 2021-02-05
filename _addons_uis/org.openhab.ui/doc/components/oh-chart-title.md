@@ -1,3 +1,11 @@
+---
+title: oh-chart-title - Title
+component: oh-chart-title
+label: Title
+description: Reference documentation for the oh-chart-title component
+source: https://github.com/openhab/openhab-webui/edit/main/bundles/org.openhab.ui/doc/components/oh-chart-title.md
+---
+
 # oh-chart-title - Title
 
 <!-- GENERATED componentDescription -->

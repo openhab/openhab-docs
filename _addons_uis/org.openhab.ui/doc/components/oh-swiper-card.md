@@ -1,3 +1,11 @@
+---
+title: oh-swiper-card - Swiper Card
+component: oh-swiper-card
+label: Swiper Card
+description: Display a swiper allowing to browse slides, in a card
+source: https://github.com/openhab/openhab-webui/edit/main/bundles/org.openhab.ui/doc/components/oh-swiper-card.md
+---
+
 # oh-swiper-card - Swiper Card
 
 <!-- GENERATED componentDescription -->

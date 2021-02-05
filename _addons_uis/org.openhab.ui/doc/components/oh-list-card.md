@@ -1,3 +1,11 @@
+---
+title: oh-list-card - List Card
+component: oh-list-card
+label: List Card
+description: Display a list in a card
+source: https://github.com/openhab/openhab-webui/edit/main/bundles/org.openhab.ui/doc/components/oh-list-card.md
+---
+
 # oh-list-card - List Card
 
 <!-- GENERATED componentDescription -->

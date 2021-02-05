@@ -1,3 +1,11 @@
+---
+title: oh-slider-item - Slider List Item
+component: oh-slider-item
+label: Slider List Item
+description: Display a slider control in a list
+source: https://github.com/openhab/openhab-webui/edit/main/bundles/org.openhab.ui/doc/components/oh-slider-item.md
+---
+
 # oh-slider-item - Slider List Item
 
 <!-- GENERATED componentDescription -->

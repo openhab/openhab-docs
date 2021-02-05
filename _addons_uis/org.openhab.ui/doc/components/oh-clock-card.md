@@ -1,3 +1,11 @@
+---
+title: oh-clock-card - Digital Clock Card
+component: oh-clock-card
+label: Digital Clock Card
+description: Display a digital clock in a card
+source: https://github.com/openhab/openhab-webui/edit/main/bundles/org.openhab.ui/doc/components/oh-clock-card.md
+---
+
 # oh-clock-card - Digital Clock Card
 
 <!-- GENERATED componentDescription -->

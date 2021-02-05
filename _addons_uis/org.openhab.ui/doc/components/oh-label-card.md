@@ -1,3 +1,11 @@
+---
+title: oh-label-card - Label Card
+component: oh-label-card
+label: Label Card
+description: Display the state of an item in a card
+source: https://github.com/openhab/openhab-webui/edit/main/bundles/org.openhab.ui/doc/components/oh-label-card.md
+---
+
 # oh-label-card - Label Card
 
 <!-- GENERATED componentDescription -->

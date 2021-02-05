@@ -1,3 +1,9 @@
+---
+title: Component Reference
+description: Index of all components defined in openHAB's main UI
+source: https://github.com/openhab/openhab-webui/edit/main/bundles/org.openhab.ui/doc/components/src/index.md
+---
+
 # Component Reference
 
 ## System Widget Library

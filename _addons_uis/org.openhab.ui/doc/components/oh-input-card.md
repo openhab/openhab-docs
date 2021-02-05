@@ -1,3 +1,11 @@
+---
+title: oh-input-card - Input Card
+component: oh-input-card
+label: Input Card
+description: Display an input in a card
+source: https://github.com/openhab/openhab-webui/edit/main/bundles/org.openhab.ui/doc/components/oh-input-card.md
+---
+
 # oh-input-card - Input Card
 
 <!-- GENERATED componentDescription -->

@@ -1,3 +1,11 @@
+---
+title: oh-chart-tooltip - Tooltip
+component: oh-chart-tooltip
+label: Tooltip
+description: Reference documentation for the oh-chart-tooltip component
+source: https://github.com/openhab/openhab-webui/edit/main/bundles/org.openhab.ui/doc/components/oh-chart-tooltip.md
+---
+
 # oh-chart-tooltip - Tooltip
 
 <!-- GENERATED componentDescription -->

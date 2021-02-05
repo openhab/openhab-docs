@@ -1,3 +1,11 @@
+---
+title: oh-image-card - Image Card
+component: oh-image-card
+label: Image Card
+description: Display an image (URL or Image item ) in a card
+source: https://github.com/openhab/openhab-webui/edit/main/bundles/org.openhab.ui/doc/components/oh-image-card.md
+---
+
 # oh-image-card - Image Card
 
 <!-- GENERATED componentDescription -->

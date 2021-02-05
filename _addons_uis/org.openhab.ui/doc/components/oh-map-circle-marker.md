@@ -1,3 +1,11 @@
+---
+title: oh-map-circle-marker - Circle Marker
+component: oh-map-circle-marker
+label: Circle Marker
+description: A circle on a map, to represent a radius
+source: https://github.com/openhab/openhab-webui/edit/main/bundles/org.openhab.ui/doc/components/oh-map-circle-marker.md
+---
+
 # oh-map-circle-marker - Circle Marker
 
 <!-- GENERATED componentDescription -->

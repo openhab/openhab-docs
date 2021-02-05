@@ -1,3 +1,11 @@
+---
+title: oh-location-card - Location Card
+component: oh-location-card
+label: Location Card
+description: A card showing model items in a certain location
+source: https://github.com/openhab/openhab-webui/edit/main/bundles/org.openhab.ui/doc/components/oh-location-card.md
+---
+
 # oh-location-card - Location Card
 
 <!-- GENERATED componentDescription -->

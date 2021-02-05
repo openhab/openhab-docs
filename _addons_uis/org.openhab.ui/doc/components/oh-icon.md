@@ -1,3 +1,11 @@
+---
+title: oh-icon - Icon
+component: oh-icon
+label: Icon
+description: Display an openHAB icon
+source: https://github.com/openhab/openhab-webui/edit/main/bundles/org.openhab.ui/doc/components/oh-icon.md
+---
+
 # oh-icon - Icon
 
 <!-- GENERATED componentDescription -->

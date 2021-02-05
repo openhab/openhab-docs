@@ -1,3 +1,11 @@
+---
+title: oh-toggle - Toggle
+component: oh-toggle
+label: Toggle
+description: Toggle control, allows to switch on or off
+source: https://github.com/openhab/openhab-webui/edit/main/bundles/org.openhab.ui/doc/components/oh-toggle.md
+---
+
 # oh-toggle - Toggle
 
 <!-- GENERATED componentDescription -->

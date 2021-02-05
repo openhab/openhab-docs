@@ -1,3 +1,11 @@
+---
+title: oh-knob-cell - Knob Cell
+component: oh-knob-cell
+label: Knob Cell
+description: A cell expanding to a knob control
+source: https://github.com/openhab/openhab-webui/edit/main/bundles/org.openhab.ui/doc/components/oh-knob-cell.md
+---
+
 # oh-knob-cell - Knob Cell
 
 <!-- GENERATED componentDescription -->

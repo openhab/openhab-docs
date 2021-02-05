@@ -1,3 +1,11 @@
+---
+title: oh-input - Input
+component: oh-input
+label: Input
+description: Displays an input field, used to set a variable
+source: https://github.com/openhab/openhab-webui/edit/main/bundles/org.openhab.ui/doc/components/oh-input.md
+---
+
 # oh-input - Input
 
 <!-- GENERATED componentDescription -->

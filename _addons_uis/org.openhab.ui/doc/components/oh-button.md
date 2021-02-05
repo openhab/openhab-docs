@@ -1,3 +1,11 @@
+---
+title: oh-button - Button
+component: oh-button
+label: Button
+description: Button performing an action
+source: https://github.com/openhab/openhab-webui/edit/main/bundles/org.openhab.ui/doc/components/oh-button.md
+---
+
 # oh-button - Button
 
 <!-- GENERATED componentDescription -->

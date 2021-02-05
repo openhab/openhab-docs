@@ -1,3 +1,11 @@
+---
+title: oh-toggle-item - Toggle List Item
+component: oh-toggle-item
+label: Toggle List Item
+description: Display a toggle switch in a list
+source: https://github.com/openhab/openhab-webui/edit/main/bundles/org.openhab.ui/doc/components/oh-toggle-item.md
+---
+
 # oh-toggle-item - Toggle List Item
 
 <!-- GENERATED componentDescription -->

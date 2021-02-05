@@ -1,3 +1,11 @@
+---
+title: oh-aggregate-series - Aggregate Series
+component: oh-aggregate-series
+label: Aggregate Series
+description: Reference documentation for the oh-aggregate-series component
+source: https://github.com/openhab/openhab-webui/edit/main/bundles/org.openhab.ui/doc/components/oh-aggregate-series.md
+---
+
 # oh-aggregate-series - Aggregate Series
 
 <!-- GENERATED componentDescription -->

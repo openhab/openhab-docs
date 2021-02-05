@@ -1,3 +1,11 @@
+---
+title: oh-slider-cell - Slider Cell
+component: oh-slider-cell
+label: Slider Cell
+description: A cell expanding to a big vertical slider
+source: https://github.com/openhab/openhab-webui/edit/main/bundles/org.openhab.ui/doc/components/oh-slider-cell.md
+---
+
 # oh-slider-cell - Slider Cell
 
 <!-- GENERATED componentDescription -->

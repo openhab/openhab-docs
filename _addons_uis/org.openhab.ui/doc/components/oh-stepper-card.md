@@ -1,3 +1,11 @@
+---
+title: oh-stepper-card - Stepper Card
+component: oh-stepper-card
+label: Stepper Card
+description: Display a stepper in a card to control an item
+source: https://github.com/openhab/openhab-webui/edit/main/bundles/org.openhab.ui/doc/components/oh-stepper-card.md
+---
+
 # oh-stepper-card - Stepper Card
 
 <!-- GENERATED componentDescription -->

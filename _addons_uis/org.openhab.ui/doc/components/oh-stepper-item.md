@@ -1,3 +1,11 @@
+---
+title: oh-stepper-item - Stepper List Item
+component: oh-stepper-item
+label: Stepper List Item
+description: Display a stepper control in a list
+source: https://github.com/openhab/openhab-webui/edit/main/bundles/org.openhab.ui/doc/components/oh-stepper-item.md
+---
+
 # oh-stepper-item - Stepper List Item
 
 <!-- GENERATED componentDescription -->

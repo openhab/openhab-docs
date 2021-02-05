@@ -1,3 +1,11 @@
+---
+title: oh-category-axis - Category Axis
+component: oh-category-axis
+label: Category Axis
+description: Reference documentation for the oh-category-axis component
+source: https://github.com/openhab/openhab-webui/edit/main/bundles/org.openhab.ui/doc/components/oh-category-axis.md
+---
+
 # oh-category-axis - Category Axis
 
 <!-- GENERATED componentDescription -->

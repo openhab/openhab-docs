@@ -1,3 +1,11 @@
+---
+title: oh-player-card - Player Card
+component: oh-player-card
+label: Player Card
+description: Display player controls in a card
+source: https://github.com/openhab/openhab-webui/edit/main/bundles/org.openhab.ui/doc/components/oh-player-card.md
+---
+
 # oh-player-card - Player Card
 
 <!-- GENERATED componentDescription -->

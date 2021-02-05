@@ -1,3 +1,11 @@
+---
+title: oh-rollershutter-card - Rollershutter Card
+component: oh-rollershutter-card
+label: Rollershutter Card
+description: Display rollershutter controls in a card
+source: https://github.com/openhab/openhab-webui/edit/main/bundles/org.openhab.ui/doc/components/oh-rollershutter-card.md
+---
+
 # oh-rollershutter-card - Rollershutter Card
 
 <!-- GENERATED componentDescription -->

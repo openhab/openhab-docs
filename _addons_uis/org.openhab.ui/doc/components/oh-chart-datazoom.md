@@ -1,3 +1,11 @@
+---
+title: oh-chart-datazoom - Data Zoom
+component: oh-chart-datazoom
+label: Data Zoom
+description: Reference documentation for the oh-chart-datazoom component
+source: https://github.com/openhab/openhab-webui/edit/main/bundles/org.openhab.ui/doc/components/oh-chart-datazoom.md
+---
+
 # oh-chart-datazoom - Data Zoom
 
 <!-- GENERATED componentDescription -->

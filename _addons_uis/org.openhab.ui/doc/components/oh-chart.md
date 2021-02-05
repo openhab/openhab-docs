@@ -1,3 +1,11 @@
+---
+title: oh-chart - Chart
+component: oh-chart
+label: Chart
+description: Visualize series of data
+source: https://github.com/openhab/openhab-webui/edit/main/bundles/org.openhab.ui/doc/components/oh-chart.md
+---
+
 # oh-chart - Chart
 
 <!-- GENERATED componentDescription -->

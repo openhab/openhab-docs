@@ -1,3 +1,11 @@
+---
+title: oh-list - List
+component: oh-list
+label: List
+description: List control, hosts list items
+source: https://github.com/openhab/openhab-webui/edit/main/bundles/org.openhab.ui/doc/components/oh-list.md
+---
+
 # oh-list - List
 
 <!-- GENERATED componentDescription -->

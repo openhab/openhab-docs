@@ -1,3 +1,11 @@
+---
+title: oh-rollershutter-cell - Rollershutter Cell
+component: oh-rollershutter-cell
+label: Rollershutter Cell
+description: A cell expanding to rollershutter controls
+source: https://github.com/openhab/openhab-webui/edit/main/bundles/org.openhab.ui/doc/components/oh-rollershutter-cell.md
+---
+
 # oh-rollershutter-cell - Rollershutter Cell
 
 <!-- GENERATED componentDescription -->

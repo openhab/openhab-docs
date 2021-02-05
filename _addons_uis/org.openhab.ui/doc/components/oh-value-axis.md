@@ -1,3 +1,11 @@
+---
+title: oh-value-axis - Value Axis
+component: oh-value-axis
+label: Value Axis
+description: Reference documentation for the oh-value-axis component
+source: https://github.com/openhab/openhab-webui/edit/main/bundles/org.openhab.ui/doc/components/oh-value-axis.md
+---
+
 # oh-value-axis - Value Axis
 
 <!-- GENERATED componentDescription -->

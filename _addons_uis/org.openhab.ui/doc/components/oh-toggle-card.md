@@ -1,3 +1,11 @@
+---
+title: oh-toggle-card - Toggle Card
+component: oh-toggle-card
+label: Toggle Card
+description: Display a toggle swtich in a card to send ON/OFF commands
+source: https://github.com/openhab/openhab-webui/edit/main/bundles/org.openhab.ui/doc/components/oh-toggle-card.md
+---
+
 # oh-toggle-card - Toggle Card
 
 <!-- GENERATED componentDescription -->

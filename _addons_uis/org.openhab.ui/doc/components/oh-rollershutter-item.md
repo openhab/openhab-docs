@@ -1,3 +1,11 @@
+---
+title: oh-rollershutter-item - Rollershutter List Item
+component: oh-rollershutter-item
+label: Rollershutter List Item
+description: Display rollershutter controls in a list
+source: https://github.com/openhab/openhab-webui/edit/main/bundles/org.openhab.ui/doc/components/oh-rollershutter-item.md
+---
+
 # oh-rollershutter-item - Rollershutter List Item
 
 <!-- GENERATED componentDescription -->

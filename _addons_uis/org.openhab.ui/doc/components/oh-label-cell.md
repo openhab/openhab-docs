@@ -1,3 +1,11 @@
+---
+title: oh-label-cell - Label Cell
+component: oh-label-cell
+label: Label Cell
+description: A cell with a big label to show a short item state value
+source: https://github.com/openhab/openhab-webui/edit/main/bundles/org.openhab.ui/doc/components/oh-label-cell.md
+---
+
 # oh-label-cell - Label Cell
 
 <!-- GENERATED componentDescription -->

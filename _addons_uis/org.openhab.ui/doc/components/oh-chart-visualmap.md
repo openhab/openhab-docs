@@ -1,3 +1,11 @@
+---
+title: oh-chart-visualmap - Visual Map
+component: oh-chart-visualmap
+label: Visual Map
+description: Reference documentation for the oh-chart-visualmap component
+source: https://github.com/openhab/openhab-webui/edit/main/bundles/org.openhab.ui/doc/components/oh-chart-visualmap.md
+---
+
 # oh-chart-visualmap - Visual Map
 
 <!-- GENERATED componentDescription -->

@@ -1,3 +1,11 @@
+---
+title: oh-gauge-card - Gauge Card
+component: oh-gauge-card
+label: Gauge Card
+description: Display a read-only gauge in a card to visualize a quantifiable item
+source: https://github.com/openhab/openhab-webui/edit/main/bundles/org.openhab.ui/doc/components/oh-gauge-card.md
+---
+
 # oh-gauge-card - Gauge Card
 
 <!-- GENERATED componentDescription -->
