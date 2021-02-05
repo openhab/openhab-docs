@@ -1,3 +1,7 @@
+---
+title: Building Pages - Components & Widgets
+---
+
 # Building Pages: Components & Widgets
 
 [[toc]]
