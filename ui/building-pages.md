@@ -84,7 +84,7 @@ slots: ...
 ```
 
 - an **uid** (its Unique IDentifier)
-- a **props** structure describing its own properties; props define parameters and parameter groups following a subset of the configuration description schema found in bindings, services and throughout openHAB: see [Configuration Descriptions](/docs/developer/bindings/onfig-xml.html)
+- a **props** structure describing its own properties; props define parameters and parameter groups following a subset of the configuration description schema found in bindings, services and throughout openHAB: see [Configuration Descriptions](/docs/developer/bindings/config-xml.html)
 - a set of **tags**
 
 ## Widgets: Definition & Usage
