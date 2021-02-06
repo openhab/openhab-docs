@@ -138,7 +138,8 @@ If this doesn't fit for you, you just have to replace `proxy_pass http://localho
 server {
     listen                                    80;
     server_name                               mydomain_or_myip;
-    
+
+    # Cross-Origin Resource Sharing
     add_header 'Access-Control-Allow-Origin' '*' always;
     add_header 'Access-Control-Allow_Credentials' 'true' always;
     add_header 'Access-Control-Allow-Headers' 'Authorization,Accept,Origin,DNT,X-CustomHeader,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range' always;
@@ -217,7 +218,8 @@ Open the configuration file and **add** the following lines underneath the proxy
 
 ##### Add authorization and cookie directives in NGINX Configuration
 
-This is an important new requirment in openHAB 3.0 and later versions.  This is not required prior to openHAB 3.0. In the `location /` block, you must add the following two directives underneath the `add_header` and `proxy_set_header` items respectively:
+This is an important new requirment in openHAB 3.0 and later versions.
+This is not required prior to openHAB 3.0. In the `location /` block, you must add the following two directives underneath the `add_header` and `proxy_set_header` items respectively:
 
 ```nginx
         add_header Set-Cookie X-OPENHAB-AUTH-HEADER=1;
@@ -436,11 +438,14 @@ server {
 server {
     listen                          443 ssl;
     server_name                     mydomain_or_myip;
-    
+
+    # Cross-Origin Resource Sharing.
     add_header 'Access-Control-Allow-Origin' '*' always;
     add_header 'Access-Control-Allow_Credentials' 'true' always;
     add_header 'Access-Control-Allow-Headers' 'Authorization,Accept,Origin,DNT,X-CustomHeader,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range' always;
     add_header 'Access-Control-Allow-Methods' 'GET,POST,OPTIONS,PUT,DELETE,PATCH' always;
+
+    # openHAB 3 api authentication
     add_header Set-Cookie X-OPENHAB-AUTH-HEADER=1;
 
     ssl_certificate                 /etc/letsencrypt/live/mydomain/fullchain.pem; # or /etc/ssl/openhab.crt
