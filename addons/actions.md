@@ -121,18 +121,38 @@ val output = sendHttpGetRequest("https://example.com/?id=1", headers, 1000)
 
 For example:
 
-```javascript
-var Timer myTimer = createTimer(now.plusMinutes(5), [ |
-    logInfo("rules", "Timer activated")
-])
+```php
+var Timer myTimer = null
+
+rule "timer example"
+when
+    Item YourItem changed
+then
+    if (YourItem.state == ON) {
+        if (myTimer !== null) {
+            logInfo("rules", "Timer rescheduled")
+            myTimer.reschedule(now.plusMinutes(5))
+        } else {
+            myTimer = createTimer(now.plusMinutes(5), [ |
+                logInfo("rules", "Timer activated")
+                //Do something...
+            ])
+            logInfo("rules", "Timer created")
+        }
+    } else {
+        logInfo("rules", "Timer canceled")
+        myTimer.cancel()
+        myTimer = null
+    }
+end
 ```
 
 The Timer object supports the following methods:
 
-- `cancel`: prevents the scheduled timer from executing
-- `isActive`: returns true if the timer will be executed as scheduled, i.e. it has not been cancelled or completed
-- `isRunning`: returns true if the code is currently executing (i.e. the timer activated the code but it is not done running)
-- `hasTerminated`: returns true if the code has run and completed
+- `cancel`: prevents the scheduled timer from executing. Most of the time `cancel` is used used in conjunction with setting the timer handler to `null` as a convenient indicator that some previously defined timer is now finished with. However setting the handler to `null` does not interact with the timer itself.
+- `isActive`: returns true if the timer will be executed as scheduled, i.e. it has not been cancelled or completed.
+- `isRunning`: returns true if the code is currently executing (i.e. the timer activated the code but it is not done running).
+- `hasTerminated`: returns true if the code has run and completed.
 - `reschedule(AbstractInstant instant)`: reschedules the timer to execute at the new time. If the Timer has terminated this method does nothing.
 
 ### Thing Status Action
