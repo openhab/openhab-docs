@@ -959,7 +959,47 @@ Here the developer only needs to implement four simple methods:
 
 ### Discovery that is bound to a Thing
 
-TODO
+When the discovery process is dependent on a configured bridge the discovery service must be bound to the bridge handler.
+Binding additional services to a handler can be achieved by implementing the service as a `ThingHandlerService`.
+
+Instead of using the Component annotation your discovery service implements the `ThingHandlerService`.
+It should extend the `AbstractDiscoveryService` just like a normal service.
+But you should also add the interface `DiscoveryService` to make sure the openHAB framework will register it as a discovery service:
+
+```
+public class <your binding bridge DiscoveryService> extends AbstractDiscoveryService
+        implements DiscoveryService, ThingHandlerService {
+```
+
+The interface `ThingHandlerService` has 2 methods to pass the handler of the bridge.
+A typical implementation is:
+
+```
+    @Override
+    public void setThingHandler(@Nullable ThingHandler handler) {
+        if (handler instanceof <your binding handler>) {
+            bridgeHandler = (<your binding handler>) handler;
+        }
+    }
+
+    @Override
+    public @Nullable ThingHandler getThingHandler() {
+        return bridgeHandler;
+    }
+```
+
+The `setThingHandler` is called by the openHAB framework and give you access to the binding bridge handler.
+The handler can be used to get the bridge UID or to get access to the configured device connected to the bridge handler.
+
+In the bridge handler you need to activate the thing handler service.
+This is done by implementing the `getServices` method in your bridge handler:
+
+```
+    @Override
+    public Collection<Class<? extends ThingHandlerService>> getServices() {
+        return Collections.singleton(<your binding bridge DiscoveryService>.class);
+    }
+```
 
 ## Frequently asked questions / FAQ
 
