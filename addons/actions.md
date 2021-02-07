@@ -131,7 +131,7 @@ then
     if (YourItem.state == ON) {
         if (myTimer !== null) {
             logInfo("rules", "Timer rescheduled")
-            timer_heizdecke.reschedule(now.plusMinutes(5))
+            myTimer.reschedule(now.plusMinutes(5))
         } else {
             myTimer = createTimer(now.plusMinutes(5), [ |
                 logInfo("rules", "Timer activated")
