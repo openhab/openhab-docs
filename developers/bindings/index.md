@@ -301,7 +301,11 @@ Of course, the polling job must be cancelled in the dispose method:
 ```java
 @Override
 public void dispose() {
-    pollingJob.cancel(true);
+    final job = pollingJob;
+    if (job != null) {
+        job.cancel(true);
+        pollingJob = null;
+    }
 }
 ```
 
@@ -957,18 +961,17 @@ Here the developer only needs to implement four simple methods:
     This method is called from the discovery service to create the actual discovery result.
     It uses the `getThingUID` method to create the thing UID of the result.
 
-### Discovery that is bound to a Thing
+### Discovery that is bound to a Bridge
 
 When the discovery process is dependent on a configured bridge the discovery service must be bound to the bridge handler.
 Binding additional services to a handler can be achieved by implementing the service as a `ThingHandlerService`.
 
 Instead of using the Component annotation your discovery service implements the `ThingHandlerService`.
-It should extend the `AbstractDiscoveryService` just like a normal service.
-But you should also add the interface `DiscoveryService` to make sure the openHAB framework will register it as a discovery service:
+It should extend the `AbstractDiscoveryService` (which implements `DiscoveryService`) just like a normal service:
 
 ```
 public class <your binding bridge DiscoveryService> extends AbstractDiscoveryService
-        implements DiscoveryService, ThingHandlerService {
+        implements ThingHandlerService {
 ```
 
 The interface `ThingHandlerService` has 2 methods to pass the handler of the bridge.
@@ -1027,8 +1030,14 @@ from the repository root to ensure that the build works smoothly (that step take
 
 The build includes [Tooling for static code analysis](https://github.com/openhab/static-code-analysis) that will validate your code against the openHAB Coding Guidelines and some additional best practices.
 Please fix all the priority 1 issues and all issues with priority 2 and 3 that are relevant (if you have any doubt don't hesitate to ask).
+to
 
 You can always run the above command from within your bindings directory to speed the build up and fix and check reported errors.
+Formatting error can be fixed by
+
+```bash
+mvn spotless:apply
+```
 
 Re-run the build to confirm that the checks are passing.
 If it does, it is time to [contribute your work](../contributing.html)!
