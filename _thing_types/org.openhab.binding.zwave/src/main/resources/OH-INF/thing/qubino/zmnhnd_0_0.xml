@@ -126,8 +126,7 @@ Activate / deactivate functions ALL ON/ALL OFF<br /> <h1>Overview</h1><p>Flush 1
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_11_2" type="integer" groupName="configuration"
-                 min="0" max="65535">
+      <parameter name="config_11_2" type="integer" groupName="configuration">
         <label>11: Automatic turning off relay after set time</label>
         <description><![CDATA[
 Automatic turning off relay after set time<br /> <h1>Overview</h1><p>When relay is ON it goes automatically OFF after time defined by this parameter. Timer is reset to zero each time the module receive ON command regardless from where it comes (push button, associated module, controller,..).</p>
@@ -136,10 +135,10 @@ Automatic turning off relay after set time<br /> <h1>Overview</h1><p>When relay 
         <options>
           <option value="0">Auto OFF disabled</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_12_2" type="integer" groupName="configuration"
-                 min="0" max="65535">
+      <parameter name="config_12_2" type="integer" groupName="configuration">
         <label>12: Automatic turning on relay after set time</label>
         <description><![CDATA[
 Automatic turning on relay after set time<br /> <h1>Overview</h1><p>When relay is OFF it goes automatically ON after time defined by this parameter. Timer is reset to zero each time the module receive OFF command regardless from where it comes (push button, associated module, controller,..).</p>
@@ -148,6 +147,7 @@ Automatic turning on relay after set time<br /> <h1>Overview</h1><p>When relay i
         <options>
           <option value="0">Auto ON disabled</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_15_1" type="integer" groupName="configuration">

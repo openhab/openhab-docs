@@ -198,7 +198,7 @@ In this mode, only <i>Entry Control Devices</i> such as locks will be securely i
         </config-description>
     </bridge-type>
 
-    <channel-type id="serial_sof">
+    <channel-type id="serial_sof" advanced="true">
         <item-type>Number</item-type>
         <label>Start Frames</label>
         <description>Counter tracking the number of SOF bytes received</description>
@@ -206,7 +206,7 @@ In this mode, only <i>Entry Control Devices</i> such as locks will be securely i
         <state pattern="%d" readOnly="true"></state>
     </channel-type>
 
-    <channel-type id="serial_ack">
+    <channel-type id="serial_ack" advanced="true">
         <item-type>Number</item-type>
         <label>Frames Acknowledged</label>
         <description>Counter tracking the number of frames acknowledged by the controller</description>
@@ -214,7 +214,7 @@ In this mode, only <i>Entry Control Devices</i> such as locks will be securely i
         <state pattern="%d" readOnly="true"></state>
     </channel-type>
 
-    <channel-type id="serial_nak">
+    <channel-type id="serial_nak" advanced="true">
         <item-type>Number</item-type>
         <label>Frames Rejected</label>
         <description>Counter tracking the number of frames rejected by the controller</description>
@@ -222,7 +222,7 @@ In this mode, only <i>Entry Control Devices</i> such as locks will be securely i
         <state pattern="%d" readOnly="true"></state>
     </channel-type>
 
-    <channel-type id="serial_can">
+    <channel-type id="serial_can" advanced="true">
         <item-type>Number</item-type>
         <label>Frames Cancelled</label>
         <description>Counter tracking the number of frames cancelled by the controller</description>
@@ -230,7 +230,7 @@ In this mode, only <i>Entry Control Devices</i> such as locks will be securely i
         <state pattern="%d" readOnly="true"></state>
     </channel-type>
 
-    <channel-type id="serial_oof">
+    <channel-type id="serial_oof" advanced="true">
         <item-type>Number</item-type>
         <label>OOF Bytes Received</label>
         <description>Counter tracking the number of out of flow bytes received</description>
@@ -238,7 +238,7 @@ In this mode, only <i>Entry Control Devices</i> such as locks will be securely i
         <state pattern="%d" readOnly="true"></state>
     </channel-type>
 
-    <channel-type id="serial_cse">
+    <channel-type id="serial_cse" advanced="true">
         <item-type>Number</item-type>
         <label>Received Checksum Errors</label>
         <description>Counter tracking the number of frames received with checksum errors</description>

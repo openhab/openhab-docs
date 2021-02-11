@@ -44,7 +44,7 @@ Vision Flood Sensor<br /> <h1>Overview</h1><p>This sensor is a Z-Wave™ enabled
       <property name="vendor">Vision Security</property>
       <property name="modelId">ZF5201EU-5</property>
       <property name="manufacturerId">0109</property>
-      <property name="manufacturerRef">201C:1C03</property>
+      <property name="manufacturerRef">201C:1C01,201C:1C03</property>
       <property name="dbReference">849</property>
       <property name="defaultAssociations">1</property>
     </properties>

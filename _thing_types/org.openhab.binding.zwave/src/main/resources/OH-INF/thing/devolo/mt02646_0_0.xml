@@ -102,8 +102,7 @@ multiples of 5s<br /> <h1>Overview</h1><p>Enable automatic interval in seconds r
         </options>
       </parameter>
 
-      <parameter name="config_2_2" type="integer" groupName="configuration"
-                 min="0" max="32767">
+      <parameter name="config_2_2" type="integer" groupName="configuration">
         <label>2: KWH Meter Report Period</label>
         <description><![CDATA[
 number of 10 minute intervals<br /> <h1>Overview</h1><p>Enable automatic interval in minutes reporting with an interval of 10min * the value. Set to 0 will disable the autoreporting function.</p>
@@ -112,6 +111,7 @@ number of 10 minute intervals<br /> <h1>Overview</h1><p>Enable automatic interva
         <options>
           <option value="0">Disable</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_3_2" type="integer" groupName="configuration"
@@ -167,14 +167,16 @@ load caution threshold<br /> <h1>Overview</h1><p>Enable automatic warning when t
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_8_2" type="integer" groupName="configuration"
-                 min="0" max="255">
+      <parameter name="config_8_2" type="integer" groupName="configuration">
         <label>8: Auto off timer</label>
-        <description>Auto off timer. 0 will disable the auto off function.</description>
+        <description><![CDATA[
+Auto off timer. 0 will disable the auto off function.<br /> <h1>Overview</h1><p><br /></p>
+        ]]></description>
         <default>0</default>
         <options>
           <option value="0">Disable</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_9_1" type="integer" groupName="configuration">

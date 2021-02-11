@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="aeotec_zwa006_00_000" listed="false">
+    <label>ZWA006 Boost Timer Switch</label>
+    <description><![CDATA[
+Boost Timer Switch<br /> <h1>Overview</h1><p>The Aeotec Smart boost timer switch is used to control immersion heaters or other switched loads up to 16 amps.  It also allows for a manual boost of up to two hours.  Suitable for indor use only.  Fits in a single UK electrial back box.  Z-Wave Plus S2 with smart start, 16 amps, monitor power use, backup battery</p> <br /> <h2>Inclusion Information</h2><p>1. Place your gateway or controller into Z-Wave pair or inclusion mode. (Please refer to your controller/gateway manual on how to do this)</p><p>2. Press the Action Button on your Switch once and the LED will flash a green LED.</p><p>3. If your switch has been successfully linked to your network, its LED will become solid green for 2 seconds. If linking was unsuccessful, the LED will return to a rainbow gradient.</p> <br /> <h2>Exclusion Information</h2><p>1. Place your gateway or controller into Z-Wave unpair or exclusion mode. (Please refer to your controller/gateway manual on how to do this)</p><p>2. Press the Action Button on your Switch.</p><p>3. If your switch has been successfully unlinked from your network, its LED will become a rainbow gradient. If linking was unsuccessful, the LED will become green or purple depending on how your LED mode is set.</p> <br /> <h2>Wakeup Information</h2><p><br /></p>
+    ]]></description>
+    <category>WallSwitch</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="meter_current" typeId="meter_current">
+        <label>Electric meter (amps)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_A</property>
+        </properties>
+      </channel>
+      <channel id="meter_voltage" typeId="meter_voltage">
+        <label>Electric meter (volts)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_V</property>
+        </properties>
+      </channel>
+      <channel id="meter_watts" typeId="meter_watts">
+        <label>Electric meter (watts)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_W</property>
+        </properties>
+      </channel>
+      <channel id="meter_kwh" typeId="meter_kwh">
+        <label>Electric meter (kWh)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_KWh</property>
+        </properties>
+      </channel>
+      <channel id="time_offset" typeId="time_offset">
+        <label>Clock Time Offset</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_CLOCK</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Aeotec Limited</property>
+      <property name="modelId">ZWA006</property>
+      <property name="manufacturerId">0371</property>
+      <property name="manufacturerRef">0003:00B4</property>
+      <property name="dbReference">1350</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_1_1" type="integer" groupName="configuration"
+                 min="0" max="3">
+        <label>1: Power Out Action</label>
+        <description><![CDATA[
+Power out action Action in case of power out. This parameter is used to configure the device state after power on.<br /> <h1>Overview</h1><p>0 - keep the last state when re-power on<br />1 - power on<br />2 - power off<br />3 - return to standard schedule (see schedule command class) so this would either be on or off depending on schedule and the time.</p>
+        ]]></description>
+        <default>3</default>
+        <options>
+          <option value="0">keep the last state when re-power on</option>
+          <option value="1">power on</option>
+          <option value="2">power off</option>
+          <option value="3">return to standard schedule (see schedule command class) so this would</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_2_1" type="integer" groupName="configuration"
+                 min="0" max="2">
+        <label>2: LED status</label>
+        <description><![CDATA[
+Configure LED (except boost) to be off irrespective of switch status.<br /> <h1>Overview</h1><p>0 - disable all LED except for boost<br />1 - enable all LED indication<br />2 - Momentary mode (LED turns on for 5 seconds, then turn off LED)</p>
+        ]]></description>
+        <default>1</default>
+        <options>
+          <option value="0">disable all LED except for boost</option>
+          <option value="1">enable all LED indication</option>
+          <option value="2">Momentary mode (LED turns on for 5 seconds, then turn off LED</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_3_4" type="integer" groupName="configuration">
+        <label>3: Auto off timer</label>
+        <description><![CDATA[
+Timer acts as auto off after specified minutes, setting is set in seconds.<br /> <h1>Overview</h1><p>0 - no auto off with timer<br />1 ~ 86400 auto off after this specified time, unit second.</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">no auto off with timer</option>
+          <option value="1">auto off after this specified time, unit second.</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_4_1" type="integer" groupName="configuration"
+                 min="0" max="1">
+        <label>4: Current overload protection</label>
+        <description><![CDATA[
+Current and overload protection<br /> <h1>Overview</h1><p>0 - disable current and overload protection<br />1 - enable current and overload protection</p>
+        ]]></description>
+        <default>1</default>
+        <options>
+          <option value="0">disable current and overload protection</option>
+          <option value="1">enable current and overload protection</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_5_2" type="integer" groupName="configuration"
+                 min="1" max="255">
+        <label>5: Boost time</label>
+        <description><![CDATA[
+Configure boost time interval, unit minute.<br /> <h1>Overview</h1><p>When user press the boost button one time, the boost time will increase 30 (the value can be changed) minutes.</p>
+        ]]></description>
+        <default>30</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_7_2" type="integer" groupName="configuration"
+                 min="0" max="3000">
+        <label>7: LED threshold setting</label>
+        <description><![CDATA[
+This parameter is used to configure the power led threshold, unit W. When the load &lt;= 100W, the power led will indicate yellow. When the load &gt; 100W, the power led will indicate orange. When no load, the power led will indicate white.<br /> <h1>Overview</h1><p>0~3000 W, threshold enabled.<br /></p>
+        ]]></description>
+        <default>100</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_20_2" type="integer" groupName="configuration">
+        <label>20: kWh threshold setting</label>
+        <description><![CDATA[
+Threshold settings for energy kWh. When the energy above the threshold, it will send a meter report command to gateway.<br /> <h1>Overview</h1><p>0 - disable report<br />1 ~ 10000 - enable report</p>
+        ]]></description>
+        <default>100</default>
+        <options>
+          <option value="0">disable report</option>
+          <option value="1">enable report</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_21_2" type="integer" groupName="configuration">
+        <label>21: Watt threshold setting</label>
+        <description><![CDATA[
+Threshold settings for Watt automatic report, unit W. When Watt above the threshold, it will send a meter report command to gateway.<br /> <h1>Overview</h1><p>0 - disable<br />1 ~ 2500 - enable</p>
+        ]]></description>
+        <default>100</default>
+        <options>
+          <option value="0">disable</option>
+          <option value="1">enable</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_22_2" type="integer" groupName="configuration">
+        <label>22: Current threshold setting</label>
+        <description><![CDATA[
+Threshold settings for Current automatic report, unit 0.1A. When current above the threshold, it will send a meter report command to gateway.<br /> <h1>Overview</h1><p>0 - disable<br />1 ~ 130 - enable</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">disable</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_23_4" type="integer" groupName="configuration">
+        <label>23: Watt report interval</label>
+        <description><![CDATA[
+Watt automatic report interval, unit second.<br /> <h1>Overview</h1><p>0 - disable<br />30 ~ 65535 - enable</p>
+        ]]></description>
+        <default>600</default>
+        <options>
+          <option value="0">disable</option>
+          <option value="30">enable</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_24_4" type="integer" groupName="configuration">
+        <label>24: kWh report interval</label>
+        <description><![CDATA[
+kWh automatic report interval, unit second.<br /> <h1>Overview</h1><p>0 - disable<br />30 ~ 65535 - enable</p>
+        ]]></description>
+        <default>600</default>
+        <options>
+          <option value="0">disable</option>
+          <option value="30">enable</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_25_4" type="integer" groupName="configuration">
+        <label>25: Voltage report interval</label>
+        <description><![CDATA[
+Voltage automatic report interval, unit second.<br /> <h1>Overview</h1><p>0 - disable<br />30 ~ 65535 - enable</p>
+        ]]></description>
+        <default>600</default>
+        <options>
+          <option value="0">disable</option>
+          <option value="30">enable</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_26_4" type="integer" groupName="configuration">
+        <label>26: Current report interval</label>
+        <description><![CDATA[
+Current automatic report interval, unit second.<br /> <h1>Overview</h1><p>0 - disable<br />30 ~ 65535 - enable</p>
+        ]]></description>
+        <default>600</default>
+        <options>
+          <option value="0">disable</option>
+          <option value="30">enable</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Lifeline</label>
+        <description><![CDATA[
+Group 1 is lifeline group, all nodes which associated in this group will receive the messages sent by device through lifeline.<br /> <h1>Overview</h1><p><br /></p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: On/off</label>
+        <description><![CDATA[
+COMMAND_CLASS_BASIC/BASIC_SET<br /> <h1>Overview</h1><p>Group 2 is a basic group, all nodes which associated in this group will receive a basic set command sent by this group. When the device is on, a basic set command with 0xFF value will be sent. When the device is off, a basic set command with 0x00 value will be sent.</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

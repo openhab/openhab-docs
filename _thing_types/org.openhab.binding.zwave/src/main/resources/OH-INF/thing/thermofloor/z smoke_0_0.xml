@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="thermofloor_z smoke_00_000" listed="false">
+    <label>Z-Smoke Smoke detector and motion sensor</label>
+    <description><![CDATA[
+Smoke detector and motion sensor<br /> <h1>Overview</h1><p>Heatit Z-Smoke Detector is a wireless smoke sensor with built-in PIR motion sensor, temperature sensor and emergency light. Heatit Z-Smoke Detector is a wireless operated photo-electronic smoke detector designed to interact with most Z-Wave enabled controllers. The detector features smoke-, temperature-, and IR-detection.</p><p>When other sensors in the Z-Wave network are activated and send an alarm signal, the smoke detector will also sound an alarm with its built-in siren to help give warning.</p> <br /> <h2>Inclusion Information</h2><p>After power is applied, the smoke detector initiates a 1-minute warm-up period. During this minute, the device will automatically enter add/remove mode, and may now be added to the system via the primary controller.</p><p>After the calibration process is finished, you may access the add/remove mode by pressing the function button three times within 1.5 seconds. Removing the device will reset it to factory settings.</p> <br /> <h2>Exclusion Information</h2><p>Put controller into exclusion mode and access the add/remove mode by pressing the function button three times within 1.5 seconds. Removing the device will reset it to factory settings.<br /></p> <br /> <h2>Wakeup Information</h2><p>n. a.</p>
+    ]]></description>
+    <category>SmokeDetector</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_binary" typeId="switch_binary">
+        <label>Switch</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY</property>
+        </properties>
+      </channel>
+      <channel id="sensor_temperature" typeId="sensor_temperature">
+        <label>Sensor (temperature)</label>
+        <properties>
+          <property name="binding:*:QuantityType">COMMAND_CLASS_SENSOR_MULTILEVEL;type=TEMPERATURE</property>
+        </properties>
+      </channel>
+      <channel id="alarm_smoke" typeId="alarm_smoke">
+        <label>Alarm (smoke)</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=SMOKE</property>
+        </properties>
+      </channel>
+      <channel id="alarm_heat" typeId="alarm_heat">
+        <label>Alarm (heat)</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=HEAT</property>
+        </properties>
+      </channel>
+      <channel id="alarm_burglar" typeId="alarm_burglar">
+        <label>Alarm (burglar)</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=BURGLAR</property>
+        </properties>
+      </channel>
+      <channel id="alarm_power" typeId="alarm_power">
+        <label>Alarm (power)</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=POWER_MANAGEMENT</property>
+        </properties>
+      </channel>
+      <channel id="battery-level" typeId="system.battery-level">
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_BATTERY</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">ThermoFloor</property>
+      <property name="modelId">Z-Smoke</property>
+      <property name="manufacturerId">019B</property>
+      <property name="manufacturerRef">0003:000D</property>
+      <property name="dbReference">1343</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Lifeline</label>
+        <description><![CDATA[
+Device status<br /> <h1>Overview</h1><p>Lifeline. Normally used by the Z-Wave</p><p>Controller.</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: Sensor Basic set</label>
+        <description><![CDATA[
+Basic set<br /> <h1>Overview</h1><p>When the smoke detector is active, it will send basic set (0xFF). When the smoke detector is deactived, it will send basic set (0x00).</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

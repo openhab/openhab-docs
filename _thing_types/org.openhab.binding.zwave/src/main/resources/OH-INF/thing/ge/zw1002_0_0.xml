@@ -33,7 +33,7 @@ Smart Outlet<br /> <h1>Overview</h1><p>When paired with a compatible hub, the sm
       <property name="vendor">Jasco Products</property>
       <property name="modelId">ZW1002</property>
       <property name="manufacturerId">0063</property>
-      <property name="manufacturerRef">4952:3233</property>
+      <property name="manufacturerRef">4952:3233,4952:3234</property>
       <property name="dbReference">1337</property>
       <property name="defaultAssociations">1</property>
     </properties>

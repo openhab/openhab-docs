@@ -1,0 +1,318 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="zooz_zen77_00_000" listed="false">
+    <label>ZEN77 Paddle Dimmer (S2)</label>
+    <description><![CDATA[
+Paddle Dimmer (S2)<br /> <h1>Overview</h1><p>Z-Wave dimmer paddle switch, 700 series, operating in compatibility mode.</p> <br /> <h2>Inclusion Information</h2><p>1. Put hub in inclusion mode</p><p>2. Tap UP three (3) times</p> <br /> <h2>Exclusion Information</h2><p>1. Bring hub close to switch, if possible</p><p>2. Put hub in exclusion mode</p><p>3. Tap DOWN three (3) times</p> <br /> <h2>Wakeup Information</h2><p><br /></p>
+    ]]></description>
+    <category>WallSwitch</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_dimmer" typeId="switch_dimmer">
+        <label>Dimmer</label>
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+          <property name="binding:Command:OnOffType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+        </properties>
+      </channel>
+      <channel id="scene_number" typeId="scene_number">
+        <label>Scene Number</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_CENTRAL_SCENE</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Zooz</property>
+      <property name="modelId">ZEN77</property>
+      <property name="manufacturerId">027A</property>
+      <property name="manufacturerRef">7000:A007</property>
+      <property name="dbReference">1345</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_1_0" type="integer" groupName="configuration"
+                 min="0" max="2">
+        <label>1: On/Off Paddle Orientation</label>
+        <description><![CDATA[
+Reverse default on/off operation or set to toggle mode<br /> <h1>Overview</h1><p>Choose if you want the upper paddle to turn the light on or turn the light off when tapped.</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Upper paddle turns the light on, lower paddle turns it off (default)</option>
+          <option value="1">Upper paddle turns the light off, lower paddle turns it on</option>
+          <option value="2">Any paddle turns light on/off</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_2_1" type="integer" groupName="configuration"
+                 min="0" max="3">
+        <label>2: LED Indicator On/Off</label>
+        <description><![CDATA[
+Adjust LED function<br /> <h1>Overview</h1><p>Choose if you want the LED indicator to turn on when the switch (light) is on or off, or if you want it to remain on or off at all times.</p><p>NOTE: tap the upper paddle 6 times quickly to change this mode.</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">LED indicator is on when switch is off, otherwise off (default)</option>
+          <option value="1">LED indicator is on when switch is on, otherwise off</option>
+          <option value="2">LED indicator is always OFF</option>
+          <option value="3">LED indicator is always ON</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_3_4" type="integer" groupName="configuration"
+                 min="0" max="65535">
+        <label>3: Auto Turn-Off Timer (Minutes)</label>
+        <description><![CDATA[
+How long the switch remains on<br /> <h1>Overview</h1><p>Use this parameter to enable or disable the auto turn-off timer function (the time after which you want the switch to automatically turn off once it has been turned on).</p><p>0 = disabled (default). Values other than 0, up to 65535, are the timer length, in minutes.</p>
+        ]]></description>
+        <default>0</default>
+        <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_5_4" type="integer" groupName="configuration"
+                 min="0" max="65535">
+        <label>5: Auto Turn-On Timer (Minutes)</label>
+        <description><![CDATA[
+How long the switch remains off<br /> <h1>Overview</h1><p>Use this parameter to enable or disable the auto turn-on timer function (the time after which you want the switch to automatically turn on once it has been turned off).</p><p>0 = disabled (default).  Values other than 0, up to 65535, are the timer length, in minutes.</p>
+        ]]></description>
+        <default>0</default>
+        <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_8_1" type="integer" groupName="configuration"
+                 min="0" max="2">
+        <label>8: On Off Status After Power Failure</label>
+        <description><![CDATA[
+How switch reacts to power failures<br /> <h1>Overview</h1><p>Set the on off status for the switch after power failure.</p>
+        ]]></description>
+        <default>2</default>
+        <options>
+          <option value="0">Forced to OFF (regardless of state prior to power outage)</option>
+          <option value="1">Forced to ON (regardless of state prior to power outage)</option>
+          <option value="2">Remembers and restores on/off status after power failure (default)</option>
+        </options>
+        <advanced>true</advanced>
+      </parameter>
+
+      <parameter name="config_9_1" type="integer" groupName="configuration"
+                 min="0" max="99">
+        <label>9: Ramp Rate Control (Seconds)</label>
+        <description><![CDATA[
+How long it takes to fade on/off<br /> <h1>Overview</h1><p>Adjust the ramp rate for your dimmer (fade-in / fade-out effect for on / off operation). Values correspond to the number of seconds it take for the dimmer to reach full brightness or turn off when operated manually.  Default = 1.<br /></p><p>0 = instant on/off.<br /></p>
+        ]]></description>
+        <default>1</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_10_1" type="integer" groupName="configuration"
+                 min="1" max="99">
+        <label>10: Minimum Brightness (Percent)</label>
+        <description><![CDATA[
+Limit how low the dimmer will go<br /> <h1>Overview</h1><p>Set the minimum brightness level (in %) for your dimmer. You won’t be able to dim the light below the set value.</p><p>1 = no limit (1% brightness) (default).</p>
+        ]]></description>
+        <default>1</default>
+        <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_11_1" type="integer" groupName="configuration"
+                 min="1" max="99">
+        <label>11: Maximum Brightness (Percent)</label>
+        <description><![CDATA[
+Limit how high the dimmer will fly<br /> <h1>Overview</h1><p>Set the maximum brightness level (in %) for your dimmer. You won’t be able to add brightness to the light beyond the set value.</p><p>Note: if Parameter 12 is set to value 0, Parameter 11 is automatically disabled.</p><p>99 = no limit (99% brightness) (default).</p>
+        ]]></description>
+        <default>99</default>
+        <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_12_1" type="integer" groupName="configuration"
+                 min="0" max="3">
+        <label>12: Double Tap Behavior</label>
+        <description><![CDATA[
+What happens when you double tap the upper paddle<br /> <h1>Overview</h1><p>Choose what you'd like the dimmer to do when you double-tap the upper paddle.</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">The light will turn on to full brightness (default)</option>
+          <option value="1">The light will turn on to the custom brightness level set in 18</option>
+          <option value="2">The light will turn on to the maximum brightness level set in 11</option>
+          <option value="3">Double tap disabled</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_13_1" type="integer" groupName="configuration"
+                 min="0" max="1">
+        <label>13: Enable/Disable Scene Control</label>
+        <description><![CDATA[
+Whether scene control functionality is enabled<br /> <h1>Overview</h1><p>Enable or disable scene control functionality for quick double tap triggers.</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Scene control disabled (default)</option>
+          <option value="1">Scene control enabled</option>
+        </options>
+        <advanced>true</advanced>
+      </parameter>
+
+      <parameter name="config_15_1" type="integer" groupName="configuration"
+                 min="0" max="2">
+        <label>15: Smart Bulb Mode: Enable/Disable Paddle</label>
+        <description><![CDATA[
+Allow or disallow local control (paddle)<br /> <h1>Overview</h1><p>Enable or disable paddle on/off control (aka disable the relay). If disabled, you’ll only be able to control the connected light via Z-Wave. Scenes and other functionality will still be available through paddles.</p><p>NOTE: hold the lower paddle for 10 seconds until the LED indicator starts blinking, then within 2 seconds, tap the upper paddle 5 times quickly to change this mode. The LED indicator will stay solid green for 3 seconds to confirm the change.</p>
+        ]]></description>
+        <default>1</default>
+        <options>
+          <option value="0">Physical paddle control disabled</option>
+          <option value="1">Physical paddle control enabled (default)</option>
+          <option value="2">Physical paddle and Z-Wave control disabled</option>
+        </options>
+        <advanced>true</advanced>
+      </parameter>
+
+      <parameter name="config_16_1" type="integer" groupName="configuration"
+                 min="1" max="99">
+        <label>16: Physical Dimming Speed (Seconds)</label>
+        <description><![CDATA[
+How long dimming takes when holding paddle<br /> <h1>Overview</h1><p>Set the time it takes to get from 0% to 100% brightness when pressing and holding the paddle (physical dimming). The number entered as value corresponds to the number of seconds.</p><p>5 = default.<br /></p>
+        ]]></description>
+        <default>5</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_18_1" type="integer" groupName="configuration"
+                 min="0" max="99">
+        <label>18: Custom Brightness Level (Percent)</label>
+        <description><![CDATA[
+Custom brightness level for Parameters 12 and 25<br /> <h1>Overview</h1><p>Set the custom brightness level (instead of the last set brightness level) you want the dimmer to come on to when you single tap or double tap the upper paddle (see parameters 12 and 25).</p><p>0 = last brightness level (default).</p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_20_1" type="integer" groupName="configuration"
+                 min="0" max="2">
+        <label>20: Held Paddle Reporting Behavior for Parameter 11</label>
+        <description><![CDATA[
+Set reporting behavior for held paddles<br /> <h1>Overview</h1><p>0 – send basic set report for each brightness level to hub when physical / Z-Wave control is disabled for physical dimming when paddles are manually pressed / held; report final brightness level only (basic set report) for physical dimming when paddles are manually pressed / held and physical / Z-Wave control is enabled; always report final brightness level only (via multilevel reports) for Z-Wave control regardless of the physical / Z-Wave control mode.</p><p>1 – report final brightness level only for physical dimming, regardless of the physical / Z-Wave control mode.</p><p>2 – send multilevel report for each brightness level to hub when physical / Z-Wave control is disabled for physical dimming when paddles are manually pressed / held; report final brightness level only (multilevel report) for physical dimming when paddles are manually pressed / held and physical / Z-Wave control is enabled; always report final brightness level only (via multilevel reports) for Z-Wave control regardless of the physical / Z-Wave control mode.</p>
+        ]]></description>
+        <default>2</default>
+        <options>
+          <option value="0">See Overview</option>
+          <option value="1">See Overview</option>
+          <option value="2">See Overview (default)</option>
+        </options>
+        <advanced>true</advanced>
+      </parameter>
+
+      <parameter name="config_21_1" type="integer" groupName="configuration"
+                 min="0" max="1">
+        <label>21: Reporting Behavior for Parameter 11</label>
+        <description><![CDATA[
+Set reporting behavior for disabled physical control<br /> <h1>Overview</h1><p>Whether to ignore status and not change LED state when physical control (11) disabled.</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Switch always reports status and changes LED state (default)</option>
+          <option value="1">No status or LED state change when physical control disabled</option>
+        </options>
+        <advanced>true</advanced>
+      </parameter>
+
+      <parameter name="config_22_1" type="integer" groupName="configuration"
+                 min="0" max="99">
+        <label>22: Night Light Mode (Percent)</label>
+        <description><![CDATA[
+Brightness level for nightlight mode<br /> <h1>Overview</h1><p>Set the brightness level the dimmer will turn on to when off and when lower paddle is held DOWN for a second.</p><p>0 = disabled.<br /></p>
+        ]]></description>
+        <default>20</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_23_1" type="integer" groupName="configuration"
+                 min="0" max="3">
+        <label>23: LED Indicator Color</label>
+        <description><![CDATA[
+Color of the LED<br /> <h1>Overview</h1><p>Choose the color of the LED indicator.</p>
+        ]]></description>
+        <default>1</default>
+        <options>
+          <option value="0">White</option>
+          <option value="1">Blue (default)</option>
+          <option value="2">Green</option>
+          <option value="3">Red</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_24_1" type="integer" groupName="configuration"
+                 min="0" max="2">
+        <label>24: LED Indicator Brightness Level</label>
+        <description><![CDATA[
+How bright the LED is<br /> <h1>Overview</h1><p>Choose the LED indicator's brightness level.</p>
+        ]]></description>
+        <default>1</default>
+        <options>
+          <option value="0">Bright (100%)</option>
+          <option value="1">Medium (60%) (default)</option>
+          <option value="2">Low (30%)</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_25_1" type="integer" groupName="configuration"
+                 min="0" max="3">
+        <label>25: Single Tap Behavior</label>
+        <description><![CDATA[
+What happens when you single tap the upper paddle<br /> <h1>Overview</h1><p>Choose what you'd like the dimmer to do when you tap the upper paddle once.</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">The light will turn on to the last brightness level (default)</option>
+          <option value="1">The light will turn on to the custom brightness level set in 18</option>
+          <option value="2">The light will turn on to the maximum brightness level set in 11</option>
+          <option value="3">The light will turn on to full brightness</option>
+        </options>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Lifeline</label>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

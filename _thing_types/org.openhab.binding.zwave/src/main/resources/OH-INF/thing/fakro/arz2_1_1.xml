@@ -27,6 +27,14 @@ Roller Shutter Module<br /> <h1>Overview</h1><p>The ARZ Z-Wave roller shutters a
           <property name="binding:Command:OnOffType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
         </properties>
       </channel>
+      <channel id="blinds_control" typeId="blinds_control">
+        <label>Blinds control</label>
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+          <property name="binding:Command:StopMoveType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+          <property name="binding:Command:UpDownType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+        </properties>
+      </channel>
       <channel id="alarm_power" typeId="alarm_power">
         <label>Alarm (power)</label>
         <properties>

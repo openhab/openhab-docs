@@ -241,12 +241,15 @@ defines duration of alarm sequence<br /> <h1>Overview</h1><p>0 – infinite</p> 
 determines which actions result in sending scene IDs<br /> <h1>Overview</h1><p>This parameter determines which actions result in sending scene IDs assigned to them. Values can be combined (e.g. 1+2=3 means that scenes for single and double click are sent).</p> <p>Enabling scenes for triple click disables entering the device in learn mode by triple clicking.</p> <p>Parameter size: 1B</p> <p>Default value: 0 (no scenes)</p> <p>Available values:</p> <p>1 – Key pressed 1 time</p> <p>2 – Key pressed 2 times</p> <p>4 – Key pressed 3 times</p> <p>8 – Key hold down and key released</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_41_1" type="integer" groupName="configuration"
                  min="0" max="15">
         <label>41: Second button – scenes sent</label>
-        <description>determines which actions result in sending scene IDs</description>
+        <description><![CDATA[
+determines which actions result in sending scene IDs<br /> <h1>Overview</h1><p><br /></p>
+        ]]></description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
       </parameter>

@@ -320,75 +320,89 @@ Scene Capable Wall Dimmer Switch<br /> <h1>Overview</h1><p>HS-WD200+ is a Z-Wave
         </options>
       </parameter>
 
-      <parameter name="config_31_1_00000001" type="integer" groupName="configuration">
-        <label>31: LED 1 Blink Status</label>
-        <description>LED 1 Blink Status (bottom)</description>
-        <default>0</default>
-        <options>
-          <option value="0">Solid</option>
-          <option value="1">Blink</option>
-        </options>
-        <limitToOptions>false</limitToOptions>
-      </parameter>
-
-      <parameter name="config_31_1_00000002" type="integer" groupName="configuration">
-        <label>31: LED 2 Blink Status</label>
-        <description>LED 2 Blink Status</description>
-        <default>0</default>
-        <options>
-          <option value="0">Solid</option>
-          <option value="1">Blink</option>
-        </options>
-        <limitToOptions>false</limitToOptions>
-      </parameter>
-
-      <parameter name="config_31_1_00000004" type="integer" groupName="configuration">
-        <label>31: LED 3 Blink Status</label>
-        <description>LED 3 Blink Status</description>
-        <default>0</default>
-        <options>
-          <option value="0">Solid</option>
-          <option value="1">Blink</option>
-        </options>
-        <limitToOptions>false</limitToOptions>
-      </parameter>
-
-      <parameter name="config_31_1_00000008" type="integer" groupName="configuration">
-        <label>31: LED 4 Blink Status</label>
-        <description>LED 4 Blink Status</description>
-        <default>0</default>
-        <options>
-          <option value="0">Solid</option>
-          <option value="1">Blink</option>
-        </options>
-        <limitToOptions>false</limitToOptions>
-      </parameter>
-
-      <parameter name="config_31_1_00000010" type="integer" groupName="configuration">
-        <label>31: LED 5 Blink Status</label>
-        <description>LED 5 Blink Status</description>
-        <default>0</default>
-        <options>
-          <option value="0">Solid</option>
-          <option value="1">Blink</option>
-        </options>
-        <limitToOptions>false</limitToOptions>
-      </parameter>
-
-      <parameter name="config_31_1_00000020" type="integer" groupName="configuration">
-        <label>31: LED 6 Blink Status</label>
-        <description>LED 6 Blink Status</description>
-        <default>0</default>
-        <options>
-          <option value="0">Solid</option>
-          <option value="1">Blink</option>
-        </options>
-        <limitToOptions>false</limitToOptions>
-      </parameter>
-
-      <parameter name="config_31_1_00000040" type="integer" groupName="configuration">
+      <parameter name="config_31_1_0000003F" type="integer" groupName="configuration">
         <label>31: LED 7 Blink Status</label>
-        <description>LED 7 Blink Status (top)</description>
+        <description><![CDATA[
+LED 7 Blink Status (top)<br /> <h1>Overview</h1><p><br /></p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Solid</option>
+          <option value="1">Blink</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_31_1_0000005F" type="integer" groupName="configuration">
+        <label>31: LED 6 Blink Status</label>
+        <description><![CDATA[
+LED 6 Blink Status<br /> <h1>Overview</h1><p><br /></p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Solid</option>
+          <option value="1">Blink</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_31_1_0000006F" type="integer" groupName="configuration">
+        <label>31: LED 5 Blink Status</label>
+        <description><![CDATA[
+LED 5 Blink Status<br /> <h1>Overview</h1><p><br /></p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Solid</option>
+          <option value="1">Blink</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_31_1_00000077" type="integer" groupName="configuration">
+        <label>31: LED 4 Blink Status</label>
+        <description><![CDATA[
+LED 4 Blink Status<br /> <h1>Overview</h1><p><br /></p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Solid</option>
+          <option value="1">Blink</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_31_1_0000007B" type="integer" groupName="configuration">
+        <label>31: LED 3 Blink Status</label>
+        <description><![CDATA[
+LED 3 Blink Status<br /> <h1>Overview</h1><p><br /></p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Solid</option>
+          <option value="1">Blink</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_31_1_0000007D" type="integer" groupName="configuration">
+        <label>31: LED 2 Blink Status</label>
+        <description><![CDATA[
+LED 2 Blink Status<br /> <h1>Overview</h1><p><br /></p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Solid</option>
+          <option value="1">Blink</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_31_1_0000007E" type="integer" groupName="configuration">
+        <label>31: LED 1 Blink Status</label>
+        <description><![CDATA[
+LED 1 Blink Status (bottom)<br /> <h1>Overview</h1><p><br /></p>
+        ]]></description>
         <default>0</default>
         <options>
           <option value="0">Solid</option>
@@ -587,8 +601,8 @@ Scene Capable Wall Dimmer Switch<br /> <h1>Overview</h1><p>HS-WD200+ is a Z-Wave
 
   <channel-type id="homeseer_hswd200_00_000_config_decimal_param31">
     <item-type>Number</item-type>
-    <label>LED 7 Blink Status</label>
-    <description>LED 7 Blink Status (top)</description>
+    <label>LED 1 Blink Status</label>
+    <description>LED 1 Blink Status (bottom)</description>
     <state pattern="%s">
       <options>
         <option value="0">Solid</option>

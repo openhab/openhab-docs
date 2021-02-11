@@ -53,7 +53,7 @@ Paddle Switch (On/Off)<br /> <h1>Overview</h1><p>Z-Wave on/off paddle switch, 70
       </parameter-group>
 
       <!-- PARAMETER DEFINITIONS -->
-      <parameter name="config_1_0" type="integer" groupName="configuration"
+      <parameter name="config_1_1" type="integer" groupName="configuration"
                  min="0" max="2">
         <label>1: On/Off Paddle Orientation</label>
         <description><![CDATA[
@@ -69,41 +69,37 @@ Reverse default on/off operation or set to toggle mode<br /> <h1>Overview</h1><p
 
       <parameter name="config_2_1" type="integer" groupName="configuration"
                  min="0" max="3">
-        <label>2: LED Indicator Control</label>
+        <label>2: LED Indicator On/Off</label>
         <description><![CDATA[
 Adjust LED function<br /> <h1>Overview</h1><p>Choose if you want the LED indicator to turn on when the switch (light) is on or off, or if you want it to remain on or off at all times.</p><p>NOTE: tap the upper paddle 6 times quickly to change this mode.</p>
         ]]></description>
         <default>0</default>
         <options>
-          <option value="0">LED indicator is on when switch is off, LED indicator is off when swit</option>
-          <option value="1">LED indicator is on when switch is on, LED indicator is off when switc</option>
+          <option value="0">LED indicator is on when switch is off, otherwise off (default)</option>
+          <option value="1">LED indicator is on when switch is on, otherwise off</option>
           <option value="2">LED indicator is always OFF</option>
           <option value="3">LED indicator is always ON</option>
         </options>
       </parameter>
 
-      <parameter name="config_3_4" type="integer" groupName="configuration">
-        <label>3: Auto Turn-Off Timer</label>
+      <parameter name="config_3_4" type="integer" groupName="configuration"
+                 min="0" max="65535">
+        <label>3: Auto Turn-Off Timer (Minutes)</label>
         <description><![CDATA[
-How long the switch remains on<br /> <h1>Overview</h1><p>Use this parameter to enable or disable the auto turn-off timer function (the time after which you want the switch to automatically turn off once it has been turned on).</p><p>Values other than 0, up to 65535, are the timer length, in minutes.<br /></p>
+How long the switch remains on<br /> <h1>Overview</h1><p>Use this parameter to enable or disable the auto turn-off timer function (the time after which you want the switch to automatically turn off once it has been turned on).</p><p>0 = disabled (default). Values other than 0, up to 65535, are the timer length, in minutes.<br /></p>
         ]]></description>
         <default>0</default>
-        <options>
-          <option value="0">Timer disabled (default)</option>
-        </options>
         <advanced>true</advanced>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_5_4" type="integer" groupName="configuration">
-        <label>5: Auto Turn-On Timer</label>
+      <parameter name="config_5_4" type="integer" groupName="configuration"
+                 min="0" max="65535">
+        <label>5: Auto Turn-On Timer (Minutes)</label>
         <description><![CDATA[
-How long the switch remains off<br /> <h1>Overview</h1><p>Use this parameter to enable or disable the auto turn-on timer function (the time after which you want the switch to automatically turn on once it has been turned off).</p><p>Values other than 0, up to 65535, are the timer length, in minutes.</p>
+How long the switch remains off<br /> <h1>Overview</h1><p>Use this parameter to enable or disable the auto turn-on timer function (the time after which you want the switch to automatically turn on once it has been turned off).</p><p>0 = disabled (default). Values other than 0, up to 65535, are the timer length, in minutes.</p>
         ]]></description>
         <default>0</default>
-        <options>
-          <option value="0">Timer disabled (default)</option>
-        </options>
         <advanced>true</advanced>
         <limitToOptions>false</limitToOptions>
       </parameter>
@@ -180,9 +176,24 @@ Set reporting behavior for disabled physical control<br /> <h1>Overview</h1><p>W
         <advanced>true</advanced>
       </parameter>
 
+      <parameter name="config_14_1" type="integer" groupName="configuration"
+                 min="0" max="3">
+        <label>14: LED Indicator Color</label>
+        <description><![CDATA[
+Color of the LED<br /> <h1>Overview</h1><p>Choose the color of the LED indicator.</p>
+        ]]></description>
+        <default>1</default>
+        <options>
+          <option value="0">White</option>
+          <option value="1">Blue (default)</option>
+          <option value="2">Green</option>
+          <option value="3">Red</option>
+        </options>
+      </parameter>
+
       <parameter name="config_15_1" type="integer" groupName="configuration"
                  min="0" max="2">
-        <label>15: LED Brightness Level</label>
+        <label>15: LED Indicator Brightness Level</label>
         <description><![CDATA[
 How bright the LED is<br /> <h1>Overview</h1><p>Choose the LED indicator's brightness level.</p>
         ]]></description>
@@ -203,7 +214,7 @@ How the switch reports paddle control<br /> <h1>Overview</h1><p>Choose how the s
         <default>1</default>
         <options>
           <option value="0">Z-Wave control = binary; paddle control = basic set</option>
-          <option value="1">Z-Wave control and paddle control = binary</option>
+          <option value="1">Z-Wave control and paddle control = binary (default)</option>
         </options>
         <advanced>true</advanced>
       </parameter>

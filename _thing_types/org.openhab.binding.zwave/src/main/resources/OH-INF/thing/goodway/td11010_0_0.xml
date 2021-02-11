@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="goodway_td11010_00_000" listed="false">
+    <label>TD11010 Roller Shutter Controller</label>
+    <description><![CDATA[
+Roller Shutter Controller<br /> <h1>Overview</h1><p>Z-Wave Roller Shutter Controller is an ideal for the remotely electric motor controller. It is used to control the motors of rollers, shades, blinds, venetian blinds and similar sun shade, which are single phase AC powered. The module can be controlled either through a Z-Wave network or through the wall switch, and measures power consumption of motor.<br /></p> <br /> <h2>Inclusion Information</h2><ol><li>Put the Z-Wave Controller into inclusion mode, and press the pairing button 3 times in 2 seconds to include the module.</li><li>Put the Z-Wave Controller into inclusion mode, and press the external swtich1 or external swtich2 3 times in 2 seconds to include the module.</li></ol> <br /> <h2>Exclusion Information</h2><ol><li>Put the Z-Wave Controller into exclusion mode, and press the pairing button 3 times in 2 seconds to exclude the device.</li><li>Put the Z-Wave Controller into inclusion mode, and press the external swtich1 or external swtich2 3 times in 2 seconds to include the module.</li></ol> <br /> <h2>Wakeup Information</h2><p><br /></p>
+    ]]></description>
+    <category>Blinds</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_binary" typeId="switch_binary">
+        <label>Switch</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY</property>
+        </properties>
+      </channel>
+      <channel id="blinds_control" typeId="blinds_control">
+        <label>Blinds controls</label>
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+          <property name="binding:Command:StopMoveType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+          <property name="binding:Command:UpDownType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+        </properties>
+      </channel>
+      <channel id="meter_kwh" typeId="meter_kwh">
+        <label>Electric meter (kWh)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_KWh</property>
+        </properties>
+      </channel>
+      <channel id="meter_current" typeId="meter_current">
+        <label>Electric meter (amps)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_A</property>
+        </properties>
+      </channel>
+      <channel id="meter_voltage" typeId="meter_voltage">
+        <label>Electric meter (volts)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_V</property>
+        </properties>
+      </channel>
+      <channel id="meter_watts" typeId="meter_watts">
+        <label>Electric meter (watts)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_W</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Good Way Technology Co., Ltd</property>
+      <property name="modelId">TD11010</property>
+      <property name="manufacturerId">0068</property>
+      <property name="manufacturerRef">0003:0014</property>
+      <property name="dbReference">1348</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_1_1" type="integer" groupName="configuration">
+        <label>1: Positioning Calibration</label>
+        <description>Positioning Calibration</description>
+        <default>0</default>
+        <options>
+          <option value="0">Disable</option>
+          <option value="1">Executing calibration</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_2_1" type="integer" groupName="configuration">
+        <label>2: External switch Protection</label>
+        <description><![CDATA[
+External switch Protection<br /> <h1>Overview</h1><p><br /></p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Enable external switch</option>
+          <option value="1">Disable external switch</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_3_2" type="integer" groupName="configuration"
+                 min="0" max="32767">
+        <label>3: Delay time for automatic closing</label>
+        <description><![CDATA[
+When the door is opened, set the delay time for automatic closing<br /> <h1>Overview</h1><p>0: Disable automatic closing</p><p>1 - 32767: The door will be closed automatically in 1 - 32767sec</p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_4_2" type="integer" groupName="configuration"
+                 min="0" max="32767">
+        <label>4: Delay time for automatic notification</label>
+        <description><![CDATA[
+When the door is open, set the delay time for automatic notification<br /> <h1>Overview</h1><p>0: Disable automatic notification</p><p>1 - 32767: The notification will be sent automatically in 1 - 32767 sec</p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_5_1" type="integer" groupName="configuration">
+        <label>5: Set the operation mode</label>
+        <description><![CDATA[
+Set the operation mode<br /> <h1>Overview</h1><p><br /></p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Roller Shutter</option>
+          <option value="1">Venetian (up/down and slate rotation)</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_6_1" type="integer" groupName="configuration">
+        <label>6: Angles of blinds</label>
+        <description><![CDATA[
+Set the angle of blinds<br /> <h1>Overview</h1><p>0：0∘</p><p>1：30∘</p><p>2：60∘</p><p>3：90∘</p><p>4：120∘</p><p>5：150∘</p><p>6：180</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">0 degree</option>
+          <option value="1">30 degree</option>
+          <option value="2">60 degree</option>
+          <option value="3">90 degree</option>
+          <option value="4">120 degree</option>
+          <option value="5">150 degree</option>
+          <option value="6">180 degree</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_7_1" type="integer" groupName="configuration"
+                 min="0" max="127">
+        <label>7: Slats turning time</label>
+        <description><![CDATA[
+Set the slats turning time<br /> <h1>Overview</h1><p>0：Disable</p><p>1 - 127: 0.1 - 12.7 sec</p>
+        ]]></description>
+        <default>15</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_8_1" type="integer" groupName="configuration"
+                 min="0" max="127">
+        <label>8: Delay time to start the motor up to the blade</label>
+        <description><![CDATA[
+Set the delay time to start the motor up to the blade<br /> <h1>Overview</h1><p>0：No offset time</p><p>1 - 127: 0.1 - 12.7 sec</p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_9_1" type="integer" groupName="configuration"
+                 min="1" max="127">
+        <label>9: Delay time to start the motor down to the blade</label>
+        <description><![CDATA[
+Set the delay time to start the motor down to the blade<br /> <h1>Overview</h1><p>0：No offset time</p><p>1 - 127: 0.1 – 12.7 sec</p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_10_1" type="integer" groupName="configuration"
+                 min="0" max="100">
+        <label>10: Power changed percentage to send the power report</label>
+        <description><![CDATA[
+Set the power changed percentage to send the power report<br /> <h1>Overview</h1><p>0：Disabled</p><p>1 - 100: 1% - 100%</p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_11_2" type="integer" groupName="configuration"
+                 min="60" max="32767">
+        <label>11: Time interval of reporting watts in seconds</label>
+        <description><![CDATA[
+Set the time interval of reporting watts in seconds<br /> <h1>Overview</h1><p>0：Disable</p><p>60 - 32767: 60 - 32767sec</p>
+        ]]></description>
+        <default>300</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_12_2" type="integer" groupName="configuration"
+                 min="60" max="32767">
+        <label>12: Time interval of reporting KWH in seconds</label>
+        <description><![CDATA[
+Set the time interval of reporting KWH in seconds<br /> <h1>Overview</h1><p>0：Disable</p><p>60 - 32767: 60 - 32767sec</p>
+        ]]></description>
+        <default>3600</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association">
+        <label>1: Lifeline</label>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

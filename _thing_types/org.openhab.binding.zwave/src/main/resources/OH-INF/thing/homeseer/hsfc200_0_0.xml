@@ -245,42 +245,50 @@ Scene Capable Fan Control Switch<br /> <h1>Overview</h1><p>HS-FC200+ is a Z-Wave
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_31_1_00000001" type="integer" groupName="configuration">
-        <label>31: LED 1 Blink Status</label>
-        <description>LED 1 Blink Status (bottom)</description>
-        <default>0</default>
-        <options>
-          <option value="0">Solid</option>
-          <option value="1">Blink</option>
-        </options>
-        <limitToOptions>false</limitToOptions>
-      </parameter>
-
-      <parameter name="config_31_1_00000002" type="integer" groupName="configuration">
-        <label>31: LED 2 Blink Status</label>
-        <description>LED 2 Blink Status</description>
-        <default>0</default>
-        <options>
-          <option value="0">Solid</option>
-          <option value="1">Blink</option>
-        </options>
-        <limitToOptions>false</limitToOptions>
-      </parameter>
-
-      <parameter name="config_31_1_00000004" type="integer" groupName="configuration">
-        <label>31: LED 3 Blink Status</label>
-        <description>LED 3 Blink Status</description>
-        <default>0</default>
-        <options>
-          <option value="0">Solid</option>
-          <option value="1">Blink</option>
-        </options>
-        <limitToOptions>false</limitToOptions>
-      </parameter>
-
-      <parameter name="config_31_1_00000008" type="integer" groupName="configuration" readOnly="true">
+      <parameter name="config_31_1_00000007" type="integer" groupName="configuration" readOnly="true">
         <label>31: LED 4 Blink Status</label>
-        <description>LED 4 Blink Status</description>
+        <description><![CDATA[
+LED 4 Blink Status<br /> <h1>Overview</h1><p><br /></p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Solid</option>
+          <option value="1">Blink</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_31_1_0000000B" type="integer" groupName="configuration">
+        <label>31: LED 3 Blink Status</label>
+        <description><![CDATA[
+LED 3 Blink Status<br /> <h1>Overview</h1><p><br /></p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Solid</option>
+          <option value="1">Blink</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_31_1_0000000D" type="integer" groupName="configuration">
+        <label>31: LED 2 Blink Status</label>
+        <description><![CDATA[
+LED 2 Blink Status<br /> <h1>Overview</h1><p><br /></p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Solid</option>
+          <option value="1">Blink</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_31_1_0000000E" type="integer" groupName="configuration">
+        <label>31: LED 1 Blink Status</label>
+        <description><![CDATA[
+LED 1 Blink Status (bottom)<br /> <h1>Overview</h1><p><br /></p>
+        ]]></description>
         <default>0</default>
         <options>
           <option value="0">Solid</option>
@@ -425,8 +433,8 @@ Scene Capable Fan Control Switch<br /> <h1>Overview</h1><p>HS-FC200+ is a Z-Wave
 
   <channel-type id="homeseer_hsfc200_00_000_config_decimal_param31">
     <item-type>Number</item-type>
-    <label>LED 4 Blink Status</label>
-    <description>LED 4 Blink Status</description>
+    <label>LED 1 Blink Status</label>
+    <description>LED 1 Blink Status (bottom)</description>
     <state pattern="%s">
       <options>
         <option value="0">Solid</option>

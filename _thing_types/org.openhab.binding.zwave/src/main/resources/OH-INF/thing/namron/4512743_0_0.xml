@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="namron_4512743_00_000" listed="false">
+    <label>4512743 Single channel 12V 288W LED kontroller</label>
+    <description><![CDATA[
+Single channel 12V 288W LED kontroller<br /> <h1>Overview</h1><p>The LED dimmer is a Z-Wave device that is used to switch ON/OFF, adjust light intensity of the connected LED light and can be controlled by other Z-Wave devices. The dimmer can be included and operated in any Z-Wave network with other Z-Wave certified devices from other manufacturers and/or other applications. All non-battery operated nodes within the network will act as repeaters regardless of vendor to increase reliability of the network. the device cannot act as Z-Wave network controller (primary or secondary), so a security enabled controller is needed for take full advantage of all functionally for the device. It also supports the Over The Air (OTA) feature for the product’s firmware upgrade. The encryption modes that the LED dimmer supports are S0, S2 Unauthenticated. When the LED dimmer is being included into a Z-Wave network, you can use your primary controller/gateway to enable one encryption mode or disable encryption. (The primary controller/gateway shall support encryption mode configuration).<br /></p> <br /> <h2>Inclusion Information</h2><ol><li>Set primary controller/gateway into inclusion mode (Please refer to your primary controllers manual on how to turn your controller into inclusion).</li><li>Power on the LED dimmer, make sure the LED dimmer does not belong to any Z-Wave network (please refer to the part “How to check whether the LED dimmer included to a network” of the manual).</li><li>When the connected LED light flashes quickly for 6 seconds, it means the LED dimmer does not belong to any network. Triple press the “Inclusion/Exclusion” button, it will be set into inclusion mode automatically, and waiting to be included.</li><li>When the connected LED light is under solid on status, it means the LED dimmer has already been included into a network. First you have to set the LED dimmer into exclusion mode, once excluded, it will be set into inclusion mode automatically, and waiting to be included.</li></ol><p>The connected LED light stays solid on 3s to indicate successful inclusion.</p> <br /> <h2>Exclusion Information</h2><p>There are two exclusion methods:</p><p>Method 1: Exclusion from the primary controller/gateway as follows:</p><ol><li>Set the primary controller/gateway into exclusion mode (Please refer to your primary controllers manual on how to set your controller into exclusion).</li><li>Triple press the “inclusion/exclusion” button, the LED dimmer will be set to exclusion mode, the connected LED light will flash quickly for 6 seconds, and waiting to be excluded, then LED light stays solid on 3s to indicate successful exclusion.</li></ol><p>There are 3 methods for the LED dimmer to quit “exclusion mode”. Once the LED dimmer quits “exclusion mode”, the LED light will stop the fast flash status.</p><ol><li>Automatically quits after successful exclusion.</li><li>Quits after 10 seconds timeout.</li><li>Power off and power on the LED dimmer.</li></ol><p>(Note: When the LED dimmer already included to a network, triple press “inclusion/exclusion” button, the LED dimmer will be set into exclusion mode and quit exclusion mode alternatively.)</p><p>Method 2: Factory reset the LED dimmer will force the LED dimmer to be excluded from a network. (please refer to the part “Factory Reset” of the manual)</p><p>Note: Factory reset is not recommended for exclusion, please use this procedure only if the primary controller/gateway is missing or otherwise inoperable.</p> <br /> <h2>Wakeup Information</h2><p><br /></p>
+    ]]></description>
+    <category>WallSwitch</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_dimmer" typeId="switch_dimmer">
+        <label>Dimmer</label>
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+          <property name="binding:Command:OnOffType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+        </properties>
+      </channel>
+      <channel id="scene_number" typeId="scene_number">
+        <label>Scene Number</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_SCENE_ACTIVATION</property>
+        </properties>
+      </channel>
+      <channel id="color_color" typeId="color_color">
+        <label>Color Control</label>
+        <properties>
+          <property name="binding:*:HSBType">COMMAND_CLASS_SWITCH_COLOR</property>
+          <property name="binding:*:PercentType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+          <property name="binding:Command:OnOffType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+        </properties>
+      </channel>
+      <channel id="color_temperature" typeId="color_temperature">
+        <label>Color Temperature</label>
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_SWITCH_COLOR;colorMode=DIFF_WHITE</property>
+          <property name="binding:Command:OnOffType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+        </properties>
+      </channel>
+      <channel id="alarm_system" typeId="alarm_system">
+        <label>Alarm (system)</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=SYSTEM</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Namron</property>
+      <property name="modelId">4512743</property>
+      <property name="manufacturerId">0438</property>
+      <property name="manufacturerRef">0200:D002</property>
+      <property name="dbReference">1351</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_2_1" type="integer" groupName="configuration"
+                 min="0" max="2">
+        <label>2: Saving load state</label>
+        <description><![CDATA[
+Saving load state before power failure<br /> <h1>Overview</h1><p>Info: Saving load state before power failure 0 – shutoff load 1 – turn on load 2 – save load state before power failure<br /></p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Shut off load</option>
+          <option value="1">Turn on load</option>
+          <option value="2">Save load state before power failure</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_3_1" type="integer" groupName="configuration"
+                 min="0" max="1">
+        <label>3: Enable/disable basic report</label>
+        <description><![CDATA[
+Enables/disables to send Basic report to the Lifeline when load state changed<br /> <h1>Overview</h1><p>Enable/disable to send the basic report to the Lifeline when the load state changed (When value set as 1, re-power on the dimmer, it will send Basic report automatically)</p><p>0 – Disable sending Basic report</p><p>1 – Enable sending Basic report</p>
+        ]]></description>
+        <default>1</default>
+        <options>
+          <option value="0">Disable sending Basic report</option>
+          <option value="1">Enable sending Basic report</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_5_1" type="integer" groupName="configuration"
+                 min="0" max="2">
+        <label>5: Cool light stage mode</label>
+        <description><![CDATA[
+Choose a cool light stage mode<br /> <h1>Overview</h1><p>Parameter number 5 defines light stage mode:</p><p>Value 0 inactivates light stage mode.</p><p>Value 1 is fade in and fade out mode with colors set by configuration parameter 8.</p><p>Value 2 is flash mode with colors set by configuration parameter 8.</p>
+        ]]></description>
+        <default>1</default>
+        <options>
+          <option value="0">inactivates light stage mode</option>
+          <option value="1">fade in and fade out mode with colors set by configuration parameter 8</option>
+          <option value="2">flash mode with colors set by configuration parameter 8.</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_6_1" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>6: Stage mode speed</label>
+        <description><![CDATA[
+Speed of stage mode<br /> <h1>Overview</h1><p>Parameter number 6 defines the speed of stage mode:</p><p>Value 0-0xFF configurable, 0 is the slowest, 255 is the fastest.</p>
+        ]]></description>
+        <default>243</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_7_1" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>7: Stage Mode Execution</label>
+        <description><![CDATA[
+Execution times of stage mode<br /> <h1>Overview</h1><p>Parameter number 7 defines execution times of stage mode:</p><p>Value 0 is unlimited times.</p><p>Value 1~0xFF is 1~255 times.</p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_8_1" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>8: Stage Mode Hue</label>
+        <description>The hue of stage mode</description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_9_1" type="integer" groupName="configuration"
+                 min="0" max="1">
+        <label>9: Enable/disable external switch</label>
+        <description><![CDATA[
+Enable/disable external switch to be added to and removed from a network<br /> <h1>Overview</h1><p>Parameter number 9 enables/disables external switch to be added to and removed from a network:</p><p>Value 0 disables.</p><p>Value 1 enables.</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Disable</option>
+          <option value="1">Enable</option>
+        </options>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Lifeline</label>
+        <description><![CDATA[
+<br /> <h1>Overview</h1><p>1. LED Dimmer Factory Reset, send Command Class "Device Reset Locally Notification V1" to associated devices of this group to report factory reset information when factory reset the LED dimmer.</p><p>2. When LED dimmer ON/OFF or light intensity value changes, send Command Class "Basic Report" to associated devices of this group to report ON/OFF or light intensity value information.</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

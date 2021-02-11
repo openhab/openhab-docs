@@ -89,7 +89,6 @@ Multirelay<br /> <h1>Overview</h1><p><strong>Features</strong></p> <ul><li>Power
       <property name="manufacturerId">027A</property>
       <property name="manufacturerRef">A000:A00A</property>
       <property name="versionMin">1.0</property>
-      <property name="versionMax">1.3</property>
       <property name="dbReference">1326</property>
       <property name="defaultAssociations">1</property>
     </properties>

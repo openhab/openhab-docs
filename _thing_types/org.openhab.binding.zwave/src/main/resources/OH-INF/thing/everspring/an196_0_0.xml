@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="everspring_an196_00_000" listed="false">
+    <label>AN196 Built in 2 channel on/off switch</label>
+    <description><![CDATA[
+Built in 2 channel on/off switch<br /> <h1>Overview</h1><p>The dual relay in-wall module contains two sets of relays and switches, with each set dedicated for controlling lighting or an appliance in your home.</p><p>The module is a Z-WaveTM enabled device which is fully compatible with any Z-WaveTM enabled network.</p><p>Each relay can be turned on/off individually using Z-waveTM commands or using the switches connected to the module. At 230V voltage, this module can support up to 2*4.3A output, 2*1000W resistive load.</p><p>This unit is to be installed and sealed inside an electrical switch box</p> <br /> <h2>Inclusion Information</h2><p>1. Put the Z-Wave Controller into inclusion mode.</p><p>2. Press the link key three times within 1.5 seconds to put the unit into inclusion mode.</p><p><br /></p> <br /> <h2>Exclusion Information</h2><p>1. Put the Z-Wave Controller into exclusion mode.</p><p>2. Press the link key three times within 1.5 seconds to put the unit into exclusion mode.</p><p><br /></p><p>If you are connecting this unit to a Z-Wave Controller that utilizes the S2 security protocol, you may be asked to enter a 5 digit Device Specific Key (DSK) that is unique to each unit by your controller. This can be found in one of two places:</p><ul><li>on the QR code label on the back of the unit</li><li>on the insert card inside the packaging</li></ul> <br /> <h2>Wakeup Information</h2><p><br /></p>
+    ]]></description>
+    <category>WallSwitch</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_binary" typeId="switch_binary">
+        <label>Switch</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY</property>
+        </properties>
+      </channel>
+      <channel id="alarm_power" typeId="alarm_power">
+        <label>Alarm (power)</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=POWER_MANAGEMENT</property>
+        </properties>
+      </channel>
+      <channel id="switch_binary1" typeId="switch_binary">
+        <label>Switch 1</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY:1</property>
+        </properties>
+      </channel>
+      <channel id="alarm_power1" typeId="alarm_power">
+        <label>Alarm (power) 1</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM:1;type=POWER_MANAGEMENT</property>
+        </properties>
+      </channel>
+      <channel id="switch_binary2" typeId="switch_binary">
+        <label>Switch 2</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY:2</property>
+        </properties>
+      </channel>
+      <channel id="alarm_power2" typeId="alarm_power">
+        <label>Alarm (power) 2</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM:2;type=POWER_MANAGEMENT</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Everspring</property>
+      <property name="modelId">AN196</property>
+      <property name="manufacturerId">0060</property>
+      <property name="manufacturerRef">0004:000E</property>
+      <property name="dbReference">1347</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_1_1" type="integer" groupName="configuration"
+                 min="0" max="1">
+        <label>1: Switch 1 Type</label>
+        <description><![CDATA[
+Set if switch is Momentary (0) or toggle (1)<br /> <h1>Overview</h1><p><br /></p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Momentary</option>
+          <option value="1">Toggle</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_2_1" type="integer" groupName="configuration"
+                 min="0" max="1">
+        <label>2: Switch 2 Type</label>
+        <description><![CDATA[
+Set if switch is Momentary (0) or toggle (1)<br /> <h1>Overview</h1><p><br /></p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Momentary</option>
+          <option value="1">Toggle</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_3_4" type="integer" groupName="configuration"
+                 min="0" max="43200">
+        <label>3: Relay 1 Auto Off Time</label>
+        <description>Set auto of timer up to 12 hours in seconds.</description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_4_4" type="integer" groupName="configuration"
+                 min="0" max="43200">
+        <label>4: Relay 2 Auto Off Time</label>
+        <description>Set auto of timer up to 12 hours in seconds.</description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_5_1" type="integer" groupName="configuration"
+                 min="0" max="1">
+        <label>5: Remember the last status of Relay 1</label>
+        <description><![CDATA[
+Set whether to remember the last status of Relay. 0 Don't remember, 1 remember.<br /> <h1>Overview</h1><p><br /></p>
+        ]]></description>
+        <default>1</default>
+        <options>
+          <option value="0">Don't Remember</option>
+          <option value="1">Remember</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_6_1" type="integer" groupName="configuration"
+                 min="0" max="1">
+        <label>6: Remember the last status of Relay 2</label>
+        <description><![CDATA[
+Set whether to remember the last status of Relay. 0 Don't remember, 1 remember.<br /> <h1>Overview</h1><p><br /></p>
+        ]]></description>
+        <default>1</default>
+        <options>
+          <option value="0">Don't Remember</option>
+          <option value="1">Remember</option>
+        </options>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Lifeline</label>
+        <description>When the unit is powered up for first time, a Notification Report will be sent to the node of Group 1. When performing Factory Reset, a Device Reset Locally Notification will be sent to the node of Group 1. When relay is activated through the switch, the</description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: On/Off Control</label>
+        <description>When switch 1 is pressed, a BASIC SET command containing a value will be sent to the node of Group 2 (When relay is off, Basic Set Value=0x00, when relay is on, Basic Set Value=0xFF).</description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_3" type="text" groupName="association" multiple="true">
+        <label>3: On/Off Control</label>
+        <description>When switch 2 is pressed, a BASIC SET command containing a value will be sent to the node of Group 3 (When relay is off, Basic Set Value=0x00, when relay is on, Basic Set Value=0xFF).</description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

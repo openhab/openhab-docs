@@ -1,0 +1,603 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="logic_matrixzba7140_00_000" listed="false">
+    <label>MATRIX ZBA7140 Matrix ZBA7140</label>
+    <description><![CDATA[
+Matrix ZBA7140<br /> <h1>Overview</h1><p>MATRIX type ZBA7140 (from hereon called MATRIX ZBA) is a multifunction battery wall controller that can be mounted in a modular wall-box or directly ontothe wall. It is compatible with existing FUGA® frames and wall boxes.</p><p>MATRIX ZBA has four configurable pushbuttons that can control other Z-Wave devices through the wireless Z-Wave network. These buttons can send ‘ON’, ‘OFF’ and ‘DIM’ commands to the associated Z-Wave devices. These devices could be light dimmers, blinds, sunscreens, etc.</p><p>MATRIX ZBA can also issue scene activation commands that can be used to activate scenes in the Z-Wave Controller.</p><p>MATRIX ZBA has four RGB indicator LEDs, one for each pushbutton, that indicates activation of the pushbutton, and when MATRIX ZBA is in inclusion or exclusion mode. These indicators can be configured to a desired indication colour, or they can indicate the battery level when a pushbutton is activated.</p><p>MATRIX ZBA is equipped with the newest battery-saving 700-series Z-Wave chip that uses up to 65% less power and have improved wireless range. This means that the small coin-cell battery can last between 5 –10years.</p><p>MATRIX ZBA is estimated to have a battery lifetime, at normal use, to approximately 5 years.</p> <br /> <h2>Inclusion Information</h2><p>MATRIXZBA is a SmartStart enabled product and can be added into a Z-Wave network by scanning the Z-Wave QR Code present on the product with a controller providing SmartStart inclusion. No further action is required and the SmartStart product will be added automatically within 10 minutes of being switched on in the network vicinity.Find the QR code and PIN Code on the back of the module.</p><p>Find the full DSK on the product packaging.</p><p>Add MATRIX ZBA to a network with Classic Inclusion by pressing once on the switch behind the pushbutton-cover. The LED near pushbutton 1 will start blinking.</p><p>Use same procedure for removing MATRIX ZBA with Classic Exclusion. If MATRIXZBA already belongs to a Z-Wave network, the remove process must be performed before adding it in a new network. Otherwise, the adding of the device will fail.</p> <br /> <h2>Exclusion Information</h2><p>Add MATRIX ZBA to a network with Classic Inclusion by pressing once on the switch behind the pushbutton-cover. The LED near pushbutton 1 will start blinking.</p><p>Use same procedure for removing MATRIX ZBAwith Classic Exclusion.</p> <br /> <h2>Wakeup Information</h2><p>This device will wake up every 6 hours and announce the wake-upstate by sending out a so-called Wake Up Notification. The controller can then empty the mailbox. The wake-up interval is a trade-off between maximal battery lifetime and the desired responses of the device. The device will stay awake right after inclusion for 10 seconds allowing the controller to perform certain configuration. It is possible to manually wake up the device by double-activating the button </p>
+    ]]></description>
+    <category>WallSwitch</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="scene_number" typeId="scene_number">
+        <label>Scene Number</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_CENTRAL_SCENE</property>
+        </properties>
+      </channel>
+      <channel id="battery-level" typeId="system.battery-level">
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_BATTERY</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Logic Group</property>
+      <property name="modelId">MATRIX ZBA7140</property>
+      <property name="manufacturerId">0234</property>
+      <property name="manufacturerRef">0004:0129</property>
+      <property name="dbReference">1330</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_1_1" type="integer" groupName="configuration"
+                 min="0" max="1">
+        <label>1: Enable Central Scene notifications</label>
+        <description><![CDATA[
+This parameter can be used for enabling or disabling Central scene notifications<br /> <h1>Overview</h1><p><br /></p>
+        ]]></description>
+        <default>1</default>
+        <options>
+          <option value="0">Central Scene notifications are disabled.</option>
+          <option value="1">Central Scene Notifications are enabled. (Default)</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_2_2" type="integer" groupName="configuration"
+                 min="1" max="1000">
+        <label>2: Pushbutton press threshold time</label>
+        <description><![CDATA[
+Specifies the time that a pushbutton must be activated before it is detected as pressed.<br /> <h1>Overview</h1><p>Specifies the time that a pushbutton must be activated before it is detected as pressed. This parameter also affects the detection of double-and triple-activations, as a new activationmust be detectedwithin this specified time for the repeatedly detection. Be aware that this parameter must be lower than the value in Parameter 3. Therefore, change this parameter with caution.</p>
+        ]]></description>
+        <default>400</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_3_2" type="integer" groupName="configuration"
+                 min="1" max="5000">
+        <label>3: Pushbutton held threshold time</label>
+        <description><![CDATA[
+Specifies the time that a pushbutton must have been activated before it is accepted as “held-down”.<br /> <h1>Overview</h1><p>Specifies the time that a pushbutton must have been activated before it is accepted as “held-down”. This value must be higher than the value set in Parameter 2. Resolution is milliseconds</p>
+        ]]></description>
+        <default>600</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_4_1" type="integer" groupName="configuration">
+        <label>4: Mode of the LED indication.</label>
+        <description><![CDATA[
+This parameter specifies the mode of the LED indication.<br /> <h1>Overview</h1><p>This parameter specifies the mode of the LED indication.</p>
+        ]]></description>
+        <default>1</default>
+        <options>
+          <option value="0">LED indication is turned off.</option>
+          <option value="1">LEDs indicates the current level of the battery, when the device is in</option>
+          <option value="2">LED colour is set by configuration parameter 5.</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_5_4_00000001" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>5: LEDs colour indication, Byte 1</label>
+        <description><![CDATA[
+Specifies the level for the red colour. (Default is 255)<br /> <h1>Overview</h1><p>This parameter specifies the colour levels for the red, green and blue colours in the 4 RGB LEDs. This parameter is not used unless configuration parameter 4 is set to the value 2. The default configuration is a white light, where red level value must be higher than the two other colours in order to get a white light.Value Description</p><p>Byte 1: Red colour level.0 -255Specifies the level for the red colour. (Default is 255)</p><br />
+        ]]></description>
+        <default>255</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_5_4_0000FF00" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>5: LEDs colour indication, Byte 2</label>
+        <description><![CDATA[
+Specifies the level for the green colour. (Default is 85)<br /> <h1>Overview</h1><p><br /></p>
+        ]]></description>
+        <default>85</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_5_4_00FF0000" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>5: LEDs colour indication, Byte 3</label>
+        <description><![CDATA[
+Specifies the level for the blue colour. (Default is 85)<br /> <h1>Overview</h1><p><br /></p>
+        ]]></description>
+        <default>85</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_5_4_01000000" type="integer" groupName="configuration"
+                 min="0" max="4294967295">
+        <label>5: Not used.</label>
+        <description><![CDATA[
+This byte is not used and must be set to 0.<br /> <h1>Overview</h1><p><br /></p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_6_2" type="integer" groupName="configuration">
+        <label>6: Associations groups, transmission when included secure.</label>
+        <description><![CDATA[
+This parameter specifies if commands are transmitted as a secure message for each of the association groups.<br /> <h1>Overview</h1><p>This parameter specifies if commands are transmitted as a secure message for each of the association groups.This parameter is only used when the device is included in security mode (either S0 or S2).</p>
+        ]]></description>
+        <default>255</default>
+        <options>
+          <option value="0">All messages in all groups are sent as insecure.</option>
+          <option value="1">Messages in association group 2 are sent as secure.</option>
+          <option value="2">Messages in association group 3 are sent as secure.</option>
+          <option value="4">Messages in association group 4 are sent as secure.</option>
+          <option value="8">Messages in association group 5 are sent as secure.</option>
+          <option value="16">Messages in association group 6 are sent as secure.</option>
+          <option value="32">Messages in association group 7 are sent as secure.</option>
+          <option value="64">Messages in association group 8 are sent as secure.</option>
+          <option value="128">Messages in association group 9 are sent as secure.</option>
+          <option value="255">All messages in all groups are sent as secure. (Default)</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_7_1" type="integer" groupName="configuration"
+                 min="0" max="3">
+        <label>7: Pushbutton 1 functionality.</label>
+        <description><![CDATA[
+This parameter specifies the functionality of pushbutton 1.<br /> <h1>Overview</h1><p>0 Standard toggle-function, the state is switched between on and off, dimming up and down. (Default)</p><p>1 Always turn on or dim up. Using this parameter, the pushbutton can only send ‘on’ or ‘dim up’ commands. Use this in pair with another pushbutton with value 2.</p><p>2 Always turn offor dim down. Using this parameter, the pushbutton can only send ‘off’ or ‘dim down’ commands. Use this in pair with another pushbutton with value 1.</p><p>3 When the pushbutton is down; an on command is sent, and when the pushbutton is released; an off command is sent.</p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_8_4_00000001" type="integer" groupName="configuration">
+        <label>8: Switch multilevel set single-activation values for pushbutton 1, Byte 1</label>
+        <description><![CDATA[
+Enable/Disable<br /> <h1>Overview</h1><p>Byte 1: Enable / Disable <br /></p><p>0 Disabled – A single activation of the pushbutton will not send commands to devices in the association group.</p><p>1 Enabled – A single activation will send commands to devices in the association group. Devices will receive commands with the values set in 3 following bytes.(Default)</p>
+        ]]></description>
+        <default>1</default>
+        <options>
+          <option value="0">Disabled –A single activation of the pushbutton will not send commands</option>
+          <option value="1">Enabled –A single activation will send commands to devices in the asso</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_8_4_0000FF00" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>8: Switch multilevel set single-activation values for pushbutton 1, Byte 2</label>
+        <description><![CDATA[
+Upper switch value<br /> <h1>Overview</h1><p>Byte 2: Upper switch value0 –99, 255When single pressing the pushbutton for ON, a Switch Multilevel Set with this value will be send to devices in the association group. (Default = 255)</p>
+        ]]></description>
+        <default>255</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_8_4_00FF0000" type="integer" groupName="configuration"
+                 min="0" max="99">
+        <label>8: Switch multilevel set single-activation values for pushbutton 1, Byte 3</label>
+        <description><![CDATA[
+Lower switch value<br /> <h1>Overview</h1><p>Byte 3: Lower switch value 0 -99 When single pressing the pushbutton for OFF, a Switch Multilevel Set with this value will be send to devices in the association group. (Default = 0)</p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_8_4_01000000" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>8: Switch multilevel set single-activation values for pushbutton 1, Byte 4</label>
+        <description><![CDATA[
+Duration<br /> <h1>Overview</h1><p>Byte 4: Duration 0 -255 When single pressing the pushbutton the Switch Multilevel Set with this duration value will be send to devices in the association group. <br /></p><p>0: Use dimmer default timer value. (Default)</p><p>1 –127: Duration in seconds.</p><p>128 –255: Duration in minutes (minus 127) from 1 –128 minutes, where 128 is 1 minute.</p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_9_4_00000001" type="integer" groupName="configuration"
+                 min="0" max="1">
+        <label>9: Switch Multilevel Set double-activation values for pushbutton 1. Byte 1</label>
+        <description><![CDATA[
+Enable/Disable<br /> <h1>Overview</h1><p>This parameter specifies the value that are sent to the devices in the Switch Multilevel association group (group 3) when the pushbutton is double-pressed.</p><p>Byte 1: Enable / Disable0Disabled –A double activation of the pushbutton will not send commands to devices in the association group.1Enabled –A double activation will send commands to devices in the association group. Devices will receive commands with the values set in 3 following bytes. (Default)</p>
+        ]]></description>
+        <default>1</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_9_4_0000FF00" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>9: Switch Multilevel Set double-activation values for pushbutton 1. Byte 2</label>
+        <description><![CDATA[
+Upper switch value<br /> <h1>Overview</h1><p>Byte 2: Upper switch value 0 –99, 255 When double pressing the pushbutton for ON, a Switch Multilevel Set with this value will be send to devices in the association group. (Default = 99)</p>
+        ]]></description>
+        <default>99</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_9_4_00FF0000" type="integer" groupName="configuration"
+                 min="0" max="99">
+        <label>9: Switch Multilevel Set double-activation values for pushbutton 1. Byte 3</label>
+        <description><![CDATA[
+Lower switch value<br /> <h1>Overview</h1><p>Byte 3: Lower switch value 0 -99 When double pressing the pushbutton for OFF, a Switch Multilevel Set with this value will be send to devices in the association group. (Default = 99)</p>
+        ]]></description>
+        <default>99</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_9_4_01000000" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>9: Switch Multilevel Set double-activation values for pushbutton 1. Byte 4</label>
+        <description><![CDATA[
+Duration<br /> <h1>Overview</h1><p>Byte 4: Duration 0 -255 When double pressing the pushbutton the Switch Multilevel Set with this duration value will be send to devices in the association group. <br /></p><p>0: Use dimmer default timer value. (Default)</p><p>1 –127: Duration in seconds.</p><p>128 –255: Duration in minutes (minus 127) from 1 –128 minutes, where 128 is 1 minute.</p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_10_1" type="integer" groupName="configuration"
+                 min="0" max="3">
+        <label>10: Pushbutton 2 functionality.</label>
+        <description><![CDATA[
+This parameter specifies the functionality of pushbutton 2.<br /> <h1>Overview</h1><p>0 Standard toggle-function, the state is switched between on and off, dimming up and down. (Default)</p><p>1 Always turn on or dim up. Using this parameter, the pushbutton can only send ‘on’ or ‘dim up’ commands. Use this in pair with another pushbutton with value 2.</p><p>2 Always turn off or dim down. Using this parameter, the pushbutton can only send ‘off’ or ‘dim down’ commands. Use this in pair with another pushbutton with value1.</p><p>3 When the pushbutton is down; an on command is sent, and when the pushbutton is released; an off command is sent.</p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_11_4_00000001" type="integer" groupName="configuration"
+                 min="0" max="1">
+        <label>11: Switch multilevel set single-activation values for pushbutton 2, Byte 1</label>
+        <description><![CDATA[
+Enable/Disable<br /> <h1>Overview</h1><p>Byte 1: Enable / Disable</p><p>0 Disabled – A single activation of the pushbutton will not send commands to devices in the association group.</p><p>1 Enabled – A single activation will send commands to devices in the association group. Devices will receive commands with the values set in 3 following bytes. (Default)</p>
+        ]]></description>
+        <default>1</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_11_4_0000FF00" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>11: Switch multilevel set single-activation values for pushbutton 2, Byte 2</label>
+        <description><![CDATA[
+Upper switch value<br /> <h1>Overview</h1><p>Byte 2: Upper switch value 0 –99, 255 When single pressing the pushbutton for ON, a Switch Multilevel Setwith this value will be send to devices in the association group. (Default = 255)</p>
+        ]]></description>
+        <default>255</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_11_4_00FF0000" type="integer" groupName="configuration"
+                 min="0" max="99">
+        <label>11: Switch multilevel set single-activation values for pushbutton 2, Byte 3</label>
+        <description><![CDATA[
+Lower switch value<br /> <h1>Overview</h1><p>Byte 3: Lower switch value 0 -99 When single pressing the pushbutton for OFF, a Switch Multilevel Set with this value will be send to devices in the association group. (Default = 0)</p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_11_4_01000000" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>11: Switch multilevel set single-activation values for pushbutton 2, Byte 4</label>
+        <description><![CDATA[
+Duration<br /> <h1>Overview</h1><p>Byte 4: Duration 0 -255 When single pressing the pushbutton the Switch Multilevel Set with this duration value will be send to devices in the association group. <br /></p><p>0: Use dimmer default timer value. (Default)</p><p>1 –127: Duration in seconds.</p><p>128 –255: Duration in minutes (minus 127) from 1 –128 minutes, where 128 is 1 minute.</p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_12_4_00000001" type="integer" groupName="configuration"
+                 min="0" max="1">
+        <label>12: Switch Multilevel Set double-activation values for pushbutton 2. Byte 1</label>
+        <description><![CDATA[
+Enable/Disable<br /> <h1>Overview</h1><p>Byte 1: Enable / Disable</p><p>0 Disabled – A double activation of the pushbutton will not send commands to devices in the association group.</p><p>1 Enabled – A double activation will send commands to devices in the association group. Devices will receive commands with the values set in 3 following bytes. (Default)</p>
+        ]]></description>
+        <default>1</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_12_4_0000FF00" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>12: Switch Multilevel Set double-activation values for pushbutton 2. Byte 2</label>
+        <description><![CDATA[
+Upper switch value<br /> <h1>Overview</h1><p>Byte 2: Upper switch value 0 –99, 255 When double pressing the pushbutton for ON, a Switch Multilevel Set with this value will be send to devices in the association group. (Default = 99)</p>
+        ]]></description>
+        <default>99</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_12_4_00FF0000" type="integer" groupName="configuration"
+                 min="0" max="99">
+        <label>12: Switch Multilevel Set double-activation values for pushbutton 2. Byte 3</label>
+        <description><![CDATA[
+Lower switch value<br /> <h1>Overview</h1><p>Byte 3: Lower switch value 0 -99 When double pressing the pushbutton for OFF, a Switch Multilevel Set with this value will be send to devices in the association group. (Default = 99)</p>
+        ]]></description>
+        <default>99</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_12_4_01000000" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>12: Switch Multilevel Set double-activation values for pushbutton 2. Byte 4</label>
+        <description><![CDATA[
+Duration<br /> <h1>Overview</h1><p>Byte 4: Duration 0 -255 When double pressing the pushbutton the Switch Multilevel Set with this duration value will be send to devices in the association group. <br /></p><p>0: Use dimmer default timer value. (Default)</p><p>1 –127: Duration in seconds.</p><p>128 –255: Duration in minutes (minus 127) from 1 –128 minutes, where 128 is 1 minute.</p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_13_1" type="integer" groupName="configuration"
+                 min="0" max="3">
+        <label>13: Pushbutton 3 functionality.</label>
+        <description><![CDATA[
+This parameter specifies the functionality of pushbutton 3.<br /> <h1>Overview</h1><p>0 Standard toggle-function, the state is switched between on and off, dimming up and down. (Default)</p><p>1 Always turn on or dim up. Using this parameter, the pushbutton can only send ‘on’ or ‘dim up’ commands. Use this in pair with another pushbutton with value 2.</p><p>2 Always turn offor dim down. Using this parameter, the pushbutton can only send ‘off’ or ‘dim down’ commands. Use this in pair with another pushbutton with value 1.</p><p>3 When the pushbutton is down; an on command is sent, and when the pushbutton is released; an off command is sent.</p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_14_4_00000001" type="integer" groupName="configuration"
+                 min="0" max="1">
+        <label>14: Switch multilevel set single-activation values for pushbutton 3, Byte 1</label>
+        <description><![CDATA[
+Enable/Disable<br /> <h1>Overview</h1><p>Byte 1: Enable / Disable <br /></p><p>0 Disabled – A single activation of the pushbutton will not send commands to devices in the association group.</p><p>1 Enabled – A single activation will send commands to devices in the association group. Devices will receive commands with the values set in 3 following bytes. (Default)</p>
+        ]]></description>
+        <default>1</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_14_4_0000FF00" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>14: Switch multilevel set single-activation values for pushbutton 3, Byte 2</label>
+        <description><![CDATA[
+Upper switch value.<br /> <h1>Overview</h1><p>Byte 2: Upper switch value 0 –99, 255 When single pressing the pushbutton for ON, a Switch Multilevel Set with this value will be send to devices in the association group. (Default = 255)</p>
+        ]]></description>
+        <default>255</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_14_4_00FF0000" type="integer" groupName="configuration"
+                 min="0" max="99">
+        <label>14: Switch multilevel set single-activation values for pushbutton 3, Byte 3</label>
+        <description><![CDATA[
+Lower switch value<br /> <h1>Overview</h1><p>Byte 3: Lower switch value 0 -99 When single pressing the pushbutton for OFF, a Switch Multilevel Set with this value will be send to devices in the association group. (Default = 0)</p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_14_4_01000000" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>14: Switch multilevel set single-activation values for pushbutton 3, Byte 3</label>
+        <description><![CDATA[
+Duaration<br /> <h1>Overview</h1><p>Byte 4: Duration 0 -255 When single pressing the pushbutton the Switch Multilevel Set with this duration value will be send to devices in the association group. <br /></p><p>0: Use dimmer default timer value. (Default)</p><p>1 –127: Duration in seconds.</p><p>128 –255: Duration in minutes (minus 127) from 1 –128 minutes, where 128 is 1 minute.</p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_15_4_00000001" type="integer" groupName="configuration"
+                 min="0" max="1">
+        <label>15: Switch Multilevel Set double-activation values for pushbutton 3. Byte 1</label>
+        <description><![CDATA[
+Enable/Disable<br /> <h1>Overview</h1><p>Byte 1: Enable / Disable</p><p>0 Disabled – A double activation of the pushbutton will not send commands to devices in the association group.</p><p>1 Enabled – A double activation will send commands to devices in the association group. Devices will receive commands with the values set in 3 following bytes. (Default)</p>
+        ]]></description>
+        <default>1</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_15_4_0000FF00" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>15: Switch Multilevel Set double-activation values for pushbutton 3. Byte 2</label>
+        <description><![CDATA[
+Upper switch value<br /> <h1>Overview</h1><p>Byte 2: Upper switch value 0 –99, 255 When double pressing the pushbutton for ON, a Switch Multilevel Set with this value will be send to devices in the association group. (Default = 99)</p>
+        ]]></description>
+        <default>99</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_15_4_00FF0000" type="integer" groupName="configuration"
+                 min="0" max="99">
+        <label>15: Switch Multilevel Set double-activation values for pushbutton 3. Byte 3</label>
+        <description><![CDATA[
+Lower switch value<br /> <h1>Overview</h1><p>Byte 3: Lower switch value 0 -99 When double pressing the pushbutton for OFF, a Switch Multilevel Set with this value will be send to devices in the association group. (Default = 99)</p>
+        ]]></description>
+        <default>99</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_15_4_01000000" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>15: Switch Multilevel Set double-activation values for pushbutton 3. Byte 4</label>
+        <description><![CDATA[
+Duration<br /> <h1>Overview</h1><p>Byte 4: Duration 0 -255 When double pressing the pushbutton the Switch Multilevel Set with this duration value will be send to devices in the association group. <br /></p><p>0: Use dimmer default timer value. (Default)</p><p>1 –127: Duration in seconds.</p><p>128 –255: Duration in minutes (minus 127) from 1 –128 minutes, where 128 is 1 minute.</p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_16_1" type="integer" groupName="configuration"
+                 min="0" max="3">
+        <label>16: Pushbutton 4 functionality.</label>
+        <description><![CDATA[
+This parameter specifies the functionality of pushbutton 4.<br /> <h1>Overview</h1><p>0 Standard toggle-function, the state is switched between on and off, dimming up and down. (Default)</p><p>1 Always turn on or dim up. Using this parameter, the pushbutton can only send ‘on’ or ‘dim up’ commands. Use this in pair with another pushbutton with value 2.</p><p>2 Always turn offor dim down. Using this parameter, the pushbutton can only send ‘of’ or ‘dim down’ commands. Use this in pair with another pushbutton with value 1.</p><p>3 When the pushbutton is down; an on command is sent, and when the pushbutton is released; an off command is sent.</p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_17_4_00000001" type="integer" groupName="configuration"
+                 min="0" max="1">
+        <label>17: Switch multilevel set single-activation values for pushbutton 4, Byte 1</label>
+        <description><![CDATA[
+Enable/Disable<br /> <h1>Overview</h1><p>Byte 1: Enable / Disable</p><p>0 Disabled – A single activation of the pushbutton will not send commands to devices in the association group.</p><p>1 Enabled – A single activation will send commands to devices in the association group. Devices will receive commands with the values set in 3 following bytes. (Default)</p>
+        ]]></description>
+        <default>1</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_17_4_0000FF00" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>17: Switch multilevel set single-activation values for pushbutton 4, Byte 2</label>
+        <description><![CDATA[
+Upper switch value<br /> <h1>Overview</h1><p>Byte 2: Upper switch value 0 –99, 255 When single pressing the pushbutton for ON, a Switch Multilevel Set with this value will be send to devices in the association group. (Default = 255)</p>
+        ]]></description>
+        <default>255</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_17_4_00FF0000" type="integer" groupName="configuration"
+                 min="0" max="99">
+        <label>17: Switch multilevel set single-activation values for pushbutton 4, Byte 3</label>
+        <description><![CDATA[
+Lower switch value<br /> <h1>Overview</h1><p>Byte 3: Lower switch value 0 -99 When single pressing the pushbutton for OFF, a Switch Multilevel Set with this value will be send to devices in the association group. (Default = 0)</p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_17_4_01000000" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>17: Switch multilevel set single-activation values for pushbutton 4, Byte 4</label>
+        <description><![CDATA[
+Duration<br /> <h1>Overview</h1><p>Byte 4: Duration 0 -255 When single pressing the pushbutton the Switch Multilevel Set with this duration value will be send to devices in the association group. <br /></p><p>0: Use dimmer default timer value. (Default)</p><p>1 –127: Duration in seconds.</p><p>128 –255: Duration in minutes (minus 127) from 1 –128 minutes, where 128 is 1 minute.</p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_18_4_00000001" type="integer" groupName="configuration"
+                 min="0" max="1">
+        <label>18: Switch Multilevel Set double-activation values for pushbutton 4. Byte 1</label>
+        <description><![CDATA[
+Enable/Disable<br /> <h1>Overview</h1><p>Byte 1: Enable / Disable</p><p>0 Disabled – A double activation of the pushbutton will not send commands to devices in the association group.</p><p>1 Enabled – A double activation will send commands to devices in the association group. Devices will receive commands with the values set in 3 following bytes. (Default)</p>
+        ]]></description>
+        <default>1</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_18_4_0000FF00" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>18: Switch Multilevel Set double-activation values for pushbutton 4. Byte 2</label>
+        <description><![CDATA[
+Upper switch value<br /> <h1>Overview</h1><p>Byte 2: Upper switch value 0 –99, 255 When double pressing the pushbutton for ON, a Switch Multilevel Set with this value will be send to devices in the association group. (Default = 99)</p>
+        ]]></description>
+        <default>99</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_18_4_00FF0000" type="integer" groupName="configuration"
+                 min="0" max="99">
+        <label>18: Switch Multilevel Set double-activation values for pushbutton 4. Byte 3</label>
+        <description><![CDATA[
+Lower switch value<br /> <h1>Overview</h1><p>Byte 3: Lower switch value 0 -99 When double pressing the pushbutton for OFF, a Switch Multilevel Set with this value will be send to devices in the association group. (Default = 99)</p>
+        ]]></description>
+        <default>99</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_18_4_01000000" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>18: Switch Multilevel Set double-activation values for pushbutton 4. Byte 4</label>
+        <description><![CDATA[
+Duration<br /> <h1>Overview</h1><p>Byte 4: Duration 0 -255 When double pressing the pushbutton the Switch Multilevel Set with this duration value will be send to devices in the association group. <br /></p><p>0: Use dimmer default timer value. (Default)</p><p>1 –127: Duration in seconds.</p><p>128 –255: Duration in minutes (minus 127) from 1 –128 minutes, where 128 is 1 minute.</p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Lifeline</label>
+        <description><![CDATA[
+<br /> <h1>Overview</h1>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: Button 1 Basic</label>
+        <description><![CDATA[
+Button 1 Basic<br /> <h1>Overview</h1><p>Nodes in this group receives Basic Set when pushbutton 1 is activated, the on or off status is decided by the internal button status and is toggled between each activation </p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_3" type="text" groupName="association" multiple="true">
+        <label>3: Button 1 Multilevel</label>
+        <description><![CDATA[
+Button 1 Multilevel<br /> <h1>Overview</h1><p>Nodes in this group receives Switch Multilevel Set / Switch Multilevel Start Level Change/ Switch Multilevel Stop Level Change when pushbutton 1 is operated. It can, as an example, be used for controlling light dimmers.</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_4" type="text" groupName="association" multiple="true">
+        <label>4: Button 2 Basic</label>
+        <description><![CDATA[
+Button 2 Basic<br /> <h1>Overview</h1><p><br /></p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_5" type="text" groupName="association" multiple="true">
+        <label>5: Button 2 Multilevel</label>
+        <description><![CDATA[
+Button 2 Multilevel<br /> <h1>Overview</h1><p><br /></p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_5" type="text" groupName="association" multiple="true">
+        <label>5: Button 4 Basic</label>
+        <description>Button 4 Basic</description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_6" type="text" groupName="association" multiple="true">
+        <label>6: Button 3 Basic</label>
+        <description>Button 3 Basic</description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_7" type="text" groupName="association" multiple="true">
+        <label>7: Button 3 Multilevel</label>
+        <description>Button 3 Multilevel</description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_9" type="text" groupName="association" multiple="true">
+        <label>9: Button 4 Multilevel</label>
+        <description><![CDATA[
+Button 4 Multilevel<br /> <h1>Overview</h1><p><br /></p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

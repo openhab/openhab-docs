@@ -77,50 +77,58 @@ Smart Plug<br /> <h1>Overview</h1><p>Smart plug is a Z-Wave Switch plugin module
       </parameter-group>
 
       <!-- PARAMETER DEFINITIONS -->
-      <parameter name="config_20_1_wo" type="integer" groupName="configuration">
+      <parameter name="config_20_1_wo" type="integer" groupName="configuration"
+                 min="0" max="1">
         <label>20: Overload Protection</label>
-        <description>Turn off if the load power exceeds 0.5A for more than 5s.</description>
+        <description><![CDATA[
+Turn off if the load power exceeds 0.5A for more than 5s.<br /> <h1>Overview</h1><p><br /></p>
+        ]]></description>
         <default>1</default>
         <options>
           <option value="0">Function Disabled</option>
           <option value="1">Function enabled</option>
         </options>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_21_1" type="integer" groupName="configuration">
+      <parameter name="config_21_1" type="integer" groupName="configuration"
+                 min="0" max="2">
         <label>21: Device Status After Power Failure.</label>
-        <description>Define how the Plug reacts after the power supply is back on.</description>
+        <description><![CDATA[
+Define how the Plug reacts after the power supply is back on.<br /> <h1>Overview</h1><p><br /></p>
+        ]]></description>
         <default>0</default>
         <options>
           <option value="0">Memorizes its state after a power failure</option>
           <option value="1">Always on after power failure.</option>
           <option value="2">Always off after power failure.</option>
         </options>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_24_1" type="integer" groupName="configuration">
+      <parameter name="config_24_1" type="integer" groupName="configuration"
+                 min="0" max="2">
         <label>24: Load Status Change Notification</label>
-        <description>Send notification to associated devices when load is changed.</description>
+        <description><![CDATA[
+Send notification to associated devices when load is changed.<br /> <h1>Overview</h1><p><br /></p>
+        ]]></description>
         <default>1</default>
         <options>
           <option value="0">Function is disabled</option>
           <option value="1">Send Basic Report</option>
           <option value="2">Only when load is not changed</option>
         </options>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_27_1" type="integer" groupName="configuration">
+      <parameter name="config_27_1" type="integer" groupName="configuration"
+                 min="0" max="1">
         <label>27: Indicator Modes</label>
-        <description>The RGB LED indicator will indicate the load.</description>
+        <description><![CDATA[
+The RGB LED indicator will indicate the load.<br /> <h1>Overview</h1><p><br /></p>
+        ]]></description>
         <default>0</default>
         <options>
           <option value="0">Work in indicator mode.</option>
           <option value="1">Indicate for 5 seconds after load has changed.</option>
         </options>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_151_2" type="integer" groupName="configuration"
@@ -144,8 +152,8 @@ Percentage threshold for when to send report to associated devices<br /> <h1>Ove
       </parameter>
 
       <parameter name="config_171_4" type="integer" groupName="configuration"
-                 min="5" max="2678400">
-        <label>171: Power Report Frequence</label>
+                 min="0" max="2678400">
+        <label>171: Power Report Frequency</label>
         <description><![CDATA[
 The interval of sending power report to association device.<br /> <h1>Overview</h1><p>The interval of sending power report to association device.</p> <p>0 = The function is disabled.</p>
         ]]></description>
@@ -154,8 +162,8 @@ The interval of sending power report to association device.<br /> <h1>Overview</
       </parameter>
 
       <parameter name="config_172_4" type="integer" groupName="configuration"
-                 min="5" max="2678400">
-        <label>172: Energy Report Frequence</label>
+                 min="0" max="2678400">
+        <label>172: Energy Report Frequency</label>
         <description><![CDATA[
 The interval of sending energy report to association device.<br /> <h1>Overview</h1><p>The interval of sending energy report to association device.</p> <p>0 = The function is disabled.</p>
         ]]></description>

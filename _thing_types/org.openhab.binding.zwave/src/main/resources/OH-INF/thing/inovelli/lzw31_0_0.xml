@@ -21,6 +21,24 @@ Black Series Dimmer<br /> <h1>Overview</h1><p>For starters, we’ve upgraded our
           <property name="binding:Command:OnOffType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
         </properties>
       </channel>
+      <channel id="config_decimal_param13" typeId="config_decimal">
+        <label>Light LED Color</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_CONFIGURATION;parameter=13</property>
+        </properties>
+      </channel>
+      <channel id="config_decimal_param14" typeId="config_decimal">
+        <label>LED Indicator Intensity</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_CONFIGURATION;parameter=14</property>
+        </properties>
+      </channel>
+      <channel id="config_decimal_param15" typeId="config_decimal">
+        <label>LED Indicator Intensity (when off)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_CONFIGURATION;parameter=15</property>
+        </properties>
+      </channel>
     </channels>
 
     <!-- DEVICE PROPERTY DEFINITIONS -->
@@ -115,7 +133,10 @@ Maximum level the light switch will dim to<br /> <h1>Overview</h1><p>Maximum lev
 Inverts the switch<br /> <h1>Overview</h1><p>Inverts the switch ( tap down = ON, tap up = OFF)</p> <p>0 = disabled, 1 = enabled</p>
         ]]></description>
         <default>0</default>
-        <limitToOptions>false</limitToOptions>
+        <options>
+          <option value="0">Disabled</option>
+          <option value="1">Enabled</option>
+        </options>
       </parameter>
 
       <parameter name="config_8_2" type="integer" groupName="configuration"
@@ -170,7 +191,7 @@ When should the switch send commands to associated devices<br /> <h1>Overview</h
 
       <parameter name="config_13_1" type="integer" groupName="configuration"
                  min="0" max="255">
-        <label>13: LED Indicator Colo</label>
+        <label>13: LED Indicator Color</label>
         <description><![CDATA[
 Sets the default color of the LED bar<br /> <h1>Overview</h1><p>This will set the default color of the LED bar</p> <p>Calculated by using a hue color circle ( value / 255*360) see website for more detail</p>
         ]]></description>
@@ -225,7 +246,10 @@ Timeout for LED notifications<br /> <h1>Overview</h1><p>Changes the amount of ti
 Neutral or no neutral<br /> <h1>Overview</h1><p>Select whether you are wiring your switch with or without a neutral wire</p><p>0 = No-Neutral, 1 = Neutral</p>
         ]]></description>
         <default>1</default>
-        <limitToOptions>false</limitToOptions>
+        <options>
+          <option value="0">No Neutral</option>
+          <option value="1">Neutral</option>
+        </options>
       </parameter>
 
       <parameter name="config_22_1" type="integer" groupName="configuration"
@@ -235,7 +259,11 @@ Neutral or no neutral<br /> <h1>Overview</h1><p>Select whether you are wiring yo
 Single Pole or Multi Pole<br /> <h1>Overview</h1><p>Select what type of installation you have</p><p>0 = Single-Pole (ie: one switch), 1 = Multi-Switch (Dumb Switch), 2 = Multi-Switch (Auxillary Switch)</p>
         ]]></description>
         <default>0</default>
-        <limitToOptions>false</limitToOptions>
+        <options>
+          <option value="0">Single-Pole</option>
+          <option value="1">Multi-Pole w/ Dumb Switch</option>
+          <option value="2">Multi-Pole w/Smart Aux Switch</option>
+        </options>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->
@@ -268,5 +296,29 @@ Single Pole or Multi Pole<br /> <h1>Overview</h1><p>Select what type of installa
     </config-description>
 
   </thing-type>
+
+  <channel-type id="inovelli_lzw31_00_000_config_decimal_param13">
+    <item-type>Number</item-type>
+    <label>LED Indicator Color</label>
+    <description>Sets the default color of the LED bar</description>
+    <state pattern="%s">
+    </state>
+  </channel-type>
+
+  <channel-type id="inovelli_lzw31_00_000_config_decimal_param14">
+    <item-type>Number</item-type>
+    <label>LED Indicator Intensity</label>
+    <description>Sets the intensity of the LED bar (brightness)</description>
+    <state pattern="%s">
+    </state>
+  </channel-type>
+
+  <channel-type id="inovelli_lzw31_00_000_config_decimal_param15">
+    <item-type>Number</item-type>
+    <label>LED Indicator Intensity (when off)</label>
+    <description>LED Indicator brightness when switch is off</description>
+    <state pattern="%s">
+    </state>
+  </channel-type>
 
 </thing:thing-descriptions>

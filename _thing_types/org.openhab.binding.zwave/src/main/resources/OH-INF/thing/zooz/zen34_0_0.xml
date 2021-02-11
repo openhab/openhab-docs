@@ -32,7 +32,7 @@ Remote switch<br /> <h1>Overview</h1><p>* Control other Z-Wave devices and enabl
       <property name="vendor">Zooz</property>
       <property name="modelId">ZEN34</property>
       <property name="manufacturerId">027A</property>
-      <property name="manufacturerRef">0004:F001</property>
+      <property name="manufacturerRef">0004:F001,7000:F001</property>
       <property name="dbReference">1310</property>
       <property name="defaultAssociations">1</property>
     </properties>

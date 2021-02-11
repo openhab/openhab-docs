@@ -153,8 +153,7 @@ Disable local control<br /> <h1>Overview</h1><p>"Stupid" mode (bit 2 = 1):<br />
         <default>2</default>
       </parameter>
 
-      <parameter name="config_10_2" type="integer" groupName="configuration"
-                 min="0" max="209">
+      <parameter name="config_10_2" type="integer" groupName="configuration">
         <label>10: (OFF_BEHAVIOUR)</label>
         <description><![CDATA[
 Off behaviour (timeout)<br /> <h1>Overview</h1><p>Behaviour after BASIC OFF (and similar commands).<br />If a transition (even with zero change) with a non-default duration is to be pro-<br />cessed, the transition cannot be interrupted by any motion event in any case.</p> <p>0 = Lamp/Relay is switched off and remains so until any new motion<br />event (local or remote) is received.</p> <p>1 - 209 = Lamp/Relay is switched off and remains so until after a specified<br />timeout once a new motion event (local or remote) is received.<br />Timeout:<br />1..100 – 1 second (1) to 100 seconds (100) in 1-second resolution<br />101..200 – 1 minute (101) to 100 minutes (200) 1-minute resolution<br />201..209 – 1 hour (201) to 9 hours (209) in 1-hour resolution</p> <p>210 - 254 = Reserved</p> <p>255 = Lamp/relay is switched off for TIME (cfg 1). It does not wait for a<br />motion event and works normally via current motion evaluation.</p>
@@ -163,10 +162,11 @@ Off behaviour (timeout)<br /> <h1>Overview</h1><p>Behaviour after BASIC OFF (and
         <options>
           <option value="255">Lamp/relay is switched off for TIME (cfg 1)</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_11_2" type="integer" groupName="configuration"
-                 min="2" max="209">
+                 min="0" max="255">
         <label>11: ON_BEHAVIOUR</label>
         <description><![CDATA[
 On behaviour (timeout)<br /> <h1>Overview</h1><p>Behaviour after BASIC ON (and similar commands).<br />If a transition (even with zero change) with a non-default duration is to be<br />processed, the transition cannot be interrupted by any motion event in any<br />case.</p> <p>0 = Lamp/relay is switched on and remains so until any new motion<br />event (local or remote) is received. It then works normally via current<br />motion evaluation.<br />Notice – during the day, this mode cannot be ended remotely due<br />to motion events not being transmitted – only via local motion sen-<br />sor if enabled.</p> <p>1 - 209 = Lamp/relay is switched on and remains so until after a specified<br />timeout once a new motion event (local or remote) is received. It then<br />works normally via current motion evaluation.<br />Timeout:<br />1..100 – 1 second (1) to 100 seconds (100) in 1-second resolution<br />101..200 – 1 minute (101) to 100 minutes (200) in 1-minute resolution<br />201..209 – 1 hour (201) to 9 hours (209) in 1-hour resolution<br />Notice – during the day, this mode cannot be ended remotely due to<br />motion events not being transmitted – only via local motion sensor if<br />enabled.</p> <p>210 - 254 = Reserved</p> <p>255 = Lamp/relay is switched on for TIME (cfg 1). It does not wait for a<br />motion event and works normally via current motion evaluation.</p>
@@ -175,7 +175,7 @@ On behaviour (timeout)<br /> <h1>Overview</h1><p>Behaviour after BASIC ON (and s
       </parameter>
 
       <parameter name="config_12_2" type="integer" groupName="configuration"
-                 min="0" max="209">
+                 min="0" max="255">
         <label>12: ON_TIME_OVER</label>
         <description><![CDATA[
 On behaviour time over (timeout)<br /> <h1>Overview</h1><p>Time limit to stop waiting for motion after timeout of ON_BEHAVIOUR or<br />OFF_ON_BEHAVIOUR (0-209) to prevent staying ON forever when there is<br />no motion.</p> <p>0 = No additional waiting for motion.</p> <p>1 - 209 =  1..100 – 1 second (1) to 100 seconds (100) in 1-second resolution<br />                  101..200 – 1 minute (101) to 100 minutes (200) in 1-minute resolution<br />                  201..209 – 1 hour (201) to 9 hours (209) in 1-hour resolution</p> <p>210 - 254 = Reserved</p> <p>255 = Never stop waiting for motion.</p>
@@ -184,7 +184,7 @@ On behaviour time over (timeout)<br /> <h1>Overview</h1><p>Time limit to stop wa
       </parameter>
 
       <parameter name="config_13_2" type="integer" groupName="configuration"
-                 min="0" max="209">
+                 min="0" max="255">
         <label>13: ON_OFF_ BEHAVIOUR</label>
         <description><![CDATA[
 Sequence On-Off behaviour (timeout)<br /> <h1>Overview</h1><p>Behaviour after a rapid sequence of BASIC ON and BASIC OFF commands.<br />The intention is to use a much longer timeout value than the time after a<br />single ON command which should then be followed by a short timeout value.<br />The behaviour is the same as for parameter 10 (OFF_LOCAL_DISABLE)<br />except: 255 – device ignores ON - OFF sequence and uses OFF behaviour.</p>
@@ -193,7 +193,7 @@ Sequence On-Off behaviour (timeout)<br /> <h1>Overview</h1><p>Behaviour after a 
       </parameter>
 
       <parameter name="config_14_2" type="integer" groupName="configuration"
-                 min="0" max="209">
+                 min="0" max="255">
         <label>14: OFF_ON_ BEHAVIOUR</label>
         <description><![CDATA[
 Sequence Off-On behaviour (timeout)<br /> <h1>Overview</h1><p>Behaviour after a rapid sequence of BASIC OFF and BASIC ON commands.<br />The intention is to use a much longer timeout value than the time after a sin-<br />gle OFF command which should then be followed by a short timeout value.<br />The behaviour is the same as for parameter 11 (ON_LOCAL_DISABLE)<br />except: 255 – device ignores OFF - ON sequence and uses ON behaviour.</p>
@@ -211,7 +211,7 @@ Sequence timing<br /> <h1>Overview</h1><p>Time in [100 milliseconds] of maximum 
       </parameter>
 
       <parameter name="config_16_2" type="integer" groupName="configuration"
-                 min="2" max="209">
+                 min="0" max="255">
         <label>16: MOTION_ DISABLE</label>
         <description><![CDATA[
 Motion Off behaviour (timeout)<br /> <h1>Overview</h1><p>Motion disable timeout after BASIC SET to motion endpoint when the inter-<br />nal motion sensor is not used for evaluating the behaviour of the lamp (SLAMP)<br />relay (SPIR) and groups 2 and 3. Events are, however, still transmitted to the<br />Lifeline, and the device can be controlled via remote motion sensors.</p> <p>0 = BASIC SET to motion sensor endpoint ignored, BASIC to root is<br />mapped to relay endpoint, (SPIR) motion sensor still enabled</p> <p><br />1 - 209 = Internal motion sensor is disabled for specified timeout after BASIC<br />SET 0x00 to motion endpoint.<br />Timeout:<br />1..100 – 1 second (1) to 100 seconds (100) in 1-second resolution<br />101..200 – 1 minute (101) to 100 minutes (200) in 1-minute resolution<br />201..209 – 1 hour (201) to 9 hours (209) in 1-hour resolution</p> <p>210 - 254 = Reserved</p> <p>255 = BASIC SET to motion endpoint ignored, motion sensor still disabled.</p>

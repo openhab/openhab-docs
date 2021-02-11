@@ -107,8 +107,7 @@ Set the illumination threshold to turn on the light.<br /> <h1>Overview</h1><p>W
         </options>
       </parameter>
 
-      <parameter name="config_5_1" type="integer" groupName="configuration"
-                 min="0" max="127">
+      <parameter name="config_5_1" type="integer" groupName="configuration">
         <label>5: Operation Mode</label>
         <description><![CDATA[
 Operation Mode<br /> <h1>Overview</h1><p>Parameter to set the Operation Mode.</p> <ul><li>Bit 0: Reserved.</li> <li>Bit 1: 1 means enable test mode;   0 means normal mode.  Notice: Ignored if DIP Switch is not set to Customer Mode.</li> <li>Bit 2: Disable the door/window function(1:Disable, 0:Enable)</li> <li>Bit3: Setting the temperature scale. 0: Fahrenheit, 1:Celsius </li> <li>Bit4: Disable the illumination report after event triggered. (1:Disable, 0:Enable) </li> <li>Bit5: Disable the temperature report after event triggered. (1:Disable, 0:Enable) </li> <li>Bit6: Reserved.</li> <li>Bit7: Disable the back key release into test mode. (1:Disable, 0:Enable)</li> </ul>
@@ -117,6 +116,7 @@ Operation Mode<br /> <h1>Overview</h1><p>Parameter to set the Operation Mode.</p
         <options>
           <option value="10">Preset: Celsius and LED on = Bits: 00001010 = 10</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_6_1" type="integer" groupName="configuration"
