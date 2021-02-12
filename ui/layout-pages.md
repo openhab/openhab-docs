@@ -100,7 +100,7 @@ This is how the layout will adapt depending on the width of the screen:
 When you create a new Layout Page, you'll notice the 2 buttons **Add Block** and **Add Masonry**.
 Clicking either will add the respective container to the page.
 If you have multiple blocks, you can use the black context button (or the Code view) to reorder them with the Move Up/Move Down menu options.
-You can also copy it and paste it as another block after they've been designed, if you wish to have multuple similar blocks.
+You can also copy it and paste it as another block after they've been designed, if you wish to have multiple similar blocks.
 You can also give a title to the block which will be displayed above it.
 
 Blocks are also good candidates to use the conditional visibility features on, with the `visible` and `visibleTo` properties.
