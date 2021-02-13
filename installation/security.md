@@ -33,6 +33,9 @@ On the very first start, openHAB generates a personal (self-signed, 256-bit ECC)
 This process makes sure that every installation has an individual certificate, so that nobody else can falsely mimic your server.
 Note that on slow hardware, this certificate generation can take up to several minutes, so be patient on a first start - it is all for your own security.
 
+If you wish, you can import your own certificate into this keystore.
+Please ensure that you remove the old certificate and give the new certificate the same alias as the old one (otherwise, the App might still be presented the old certificate).
+
 ## Authentication and Access Control
 
 openHAB does not (yet) support restricting access through HTTP(S) for certain users - there is no authentication in place, nor is there a limitation of functionality or information that different users can access.
