@@ -811,15 +811,14 @@ The MATRIX ZBA7140 supports 9 association groups.
 ### Group 1: Lifeline
 
 The Lifeline association group reports device status to a hub and is not designed to control other devices directly. When using the Lineline group with a hub, in most cases, only the lifeline group will need to be configured and normally the hub will perform this automatically during the device initialisation.
-Sends Device Reset notifications, Battery Reports, etc.
-Sends Device Reset notifications, Battery Reports, Indicator Reports, Central Scene Configuration Reports and Central Scene notifications.
+
 
 Association group 1 supports 5 nodes.
 
 ### Group 2: Button 1 Basic
 
 Button 1 Basic
-Nodes in this group receives Basic Set when pushbutton 1 is activated, the on or off status is decided by the internal button status and is toggled between each activation.
+Nodes in this group receives Basic Set when pushbutton 1 is activated, the on or off status is decided by the internal button status and is toggled between each activation 
 
 Association group 2 supports 5 nodes.
 
@@ -834,11 +833,13 @@ Association group 3 supports 5 nodes.
 
 Button 2 Basic
 
+
 Association group 4 supports 5 nodes.
 
 ### Group 5: Button 2 Multilevel
 
 Button 2 Multilevel
+
 
 Association group 5 supports 5 nodes.
 
@@ -846,7 +847,7 @@ Association group 5 supports 5 nodes.
 
 Button 4 Basic
 
-Association group 5 supports 8 nodes.
+Association group 5 supports 5 nodes.
 
 ### Group 6: Button 3 Basic
 
@@ -864,6 +865,7 @@ Association group 7 supports 5 nodes.
 
 Button 4 Multilevel
 
+
 Association group 9 supports 5 nodes.
 
 ## Technical Information
@@ -875,21 +877,20 @@ Association group 9 supports 5 nodes.
 | Command Class | Comment |
 |---------------|---------|
 | COMMAND_CLASS_NO_OPERATION_V1| |
-| COMMAND_CLASS_BASIC_V1| |
-| COMMAND_CLASS_TRANSPORT_SERVICE_V2| |
-| COMMAND_CLASS_ASSOCIATION_GRP_INFO_V3| |
+| COMMAND_CLASS_TRANSPORT_SERVICE_V1| |
+| COMMAND_CLASS_ASSOCIATION_GRP_INFO_V1| |
 | COMMAND_CLASS_DEVICE_RESET_LOCALLY_V1| |
 | COMMAND_CLASS_CENTRAL_SCENE_V3| |
-| COMMAND_CLASS_ZWAVEPLUS_INFO_V2| |
+| COMMAND_CLASS_ZWAVEPLUS_INFO_V1| |
 | COMMAND_CLASS_SUPERVISION_V1| |
-| COMMAND_CLASS_CONFIGURATION_V4| |
-| COMMAND_CLASS_MANUFACTURER_SPECIFIC_V2| |
+| COMMAND_CLASS_CONFIGURATION_V1| |
+| COMMAND_CLASS_MANUFACTURER_SPECIFIC_V1| |
 | COMMAND_CLASS_POWERLEVEL_V1| |
-| COMMAND_CLASS_FIRMWARE_UPDATE_MD_V5| |
+| COMMAND_CLASS_FIRMWARE_UPDATE_MD_V1| |
 | COMMAND_CLASS_BATTERY_V1| |
 | COMMAND_CLASS_WAKE_UP_V2| |
 | COMMAND_CLASS_ASSOCIATION_V2| |
-| COMMAND_CLASS_VERSION_V3| |
+| COMMAND_CLASS_VERSION_V2| |
 | COMMAND_CLASS_INDICATOR_V3| |
 | COMMAND_CLASS_MULTI_CHANNEL_ASSOCIATION_V3| |
 | COMMAND_CLASS_SECURITY_V1| |

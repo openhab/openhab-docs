@@ -5,10 +5,10 @@
   xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
                       https://openhab.org/schemas/thing-description/v1.0.0">
 
-  <thing-type id="zooz_zen77_00_000" listed="false">
-    <label>ZEN77 Paddle Dimmer (S2)</label>
+  <thing-type id="zooz_zen72_00_000" listed="false">
+    <label>ZEN72 Paddle Dimmer</label>
     <description><![CDATA[
-Paddle Dimmer (S2)<br /> <h1>Overview</h1><p>Z-Wave dimmer paddle switch, 700 series, operating in compatibility mode.</p> <br /> <h2>Inclusion Information</h2><p>1. Put hub in inclusion mode</p><p>2. Tap UP three (3) times</p> <br /> <h2>Exclusion Information</h2><p>1. Bring hub close to switch, if possible</p><p>2. Put hub in exclusion mode</p><p>3. Tap DOWN three (3) times</p> <br /> <h2>Wakeup Information</h2><p><br /></p>
+Paddle Dimmer<br /> <h1>Overview</h1><p>Z-Wave dimmer paddle switch, 700 series, operating in compatibility mode.</p> <br /> <h2>Inclusion Information</h2><p>1.  Put hub in inclusion mode<br /></p><p>2.  Tap UP three (3) times<br /></p> <br /> <h2>Exclusion Information</h2><p>1. Bring hub close to switch, if possible</p><p>2. Put hub in exclusion mode</p><p>3. Tap DOWN three (3) times</p> <br /> <h2>Wakeup Information</h2><p><br /></p><p><br /></p>
     ]]></description>
     <category>WallSwitch</category>
 
@@ -32,10 +32,10 @@ Paddle Dimmer (S2)<br /> <h1>Overview</h1><p>Z-Wave dimmer paddle switch, 700 se
     <!-- DEVICE PROPERTY DEFINITIONS -->
     <properties>
       <property name="vendor">Zooz</property>
-      <property name="modelId">ZEN77</property>
+      <property name="modelId">ZEN72</property>
       <property name="manufacturerId">027A</property>
-      <property name="manufacturerRef">7000:A007</property>
-      <property name="dbReference">1345</property>
+      <property name="manufacturerRef">7000:A002</property>
+      <property name="dbReference">1354</property>
       <property name="defaultAssociations">1</property>
     </properties>
 
@@ -87,7 +87,7 @@ Adjust LED function<br /> <h1>Overview</h1><p>Choose if you want the LED indicat
                  min="0" max="65535">
         <label>3: Auto Turn-Off Timer (Minutes)</label>
         <description><![CDATA[
-How long the switch remains on<br /> <h1>Overview</h1><p>Use this parameter to enable or disable the auto turn-off timer function (the time after which you want the switch to automatically turn off once it has been turned on).</p><p>0 = disabled (default). Values other than 0, up to 65535, are the timer length, in minutes.</p>
+How long the switch remains on<br /> <h1>Overview</h1><p>Use this parameter to enable or disable the auto turn-off timer function (the time after which you want the switch to automatically turn off once it has been turned on).</p><p>0 = disabled (default). Values other than 0, up to 65535, are the timer length, in minutes.<br /></p>
         ]]></description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
@@ -97,7 +97,7 @@ How long the switch remains on<br /> <h1>Overview</h1><p>Use this parameter to e
                  min="0" max="65535">
         <label>5: Auto Turn-On Timer (Minutes)</label>
         <description><![CDATA[
-How long the switch remains off<br /> <h1>Overview</h1><p>Use this parameter to enable or disable the auto turn-on timer function (the time after which you want the switch to automatically turn on once it has been turned off).</p><p>0 = disabled (default).  Values other than 0, up to 65535, are the timer length, in minutes.</p>
+How long the switch remains off<br /> <h1>Overview</h1><p>Use this parameter to enable or disable the auto turn-on timer function (the time after which you want the switch to automatically turn on once it has been turned off).</p><p>0 = disabled (default). Values other than 0, up to 65535, are the timer length, in minutes.</p>
         ]]></description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
@@ -121,7 +121,7 @@ How switch reacts to power failures<br /> <h1>Overview</h1><p>Set the on off sta
                  min="0" max="99">
         <label>9: Ramp Rate Control (Seconds)</label>
         <description><![CDATA[
-How long it takes to fade on/off<br /> <h1>Overview</h1><p>Adjust the ramp rate for your dimmer (fade-in / fade-out effect for on / off operation). Values correspond to the number of seconds it take for the dimmer to reach full brightness or turn off when operated manually.  Default = 1.<br /></p><p>0 = instant on/off.<br /></p>
+How long it takes to fade on/off<br /> <h1>Overview</h1><p>Adjust the ramp rate for your dimmer (fade-in / fade-out effect for on / off operation). Values correspond to the number of seconds it take for the dimmer to reach full brightness or turn off when operated manually. Default = 1.</p><p>0 = instant on/off.</p>
         ]]></description>
         <default>1</default>
         <limitToOptions>false</limitToOptions>
@@ -171,7 +171,7 @@ Whether scene control functionality is enabled<br /> <h1>Overview</h1><p>Enable 
         <default>0</default>
         <options>
           <option value="0">Scene control disabled (default)</option>
-          <option value="1">Scene control enabled</option>
+          <option value="1">No status or LED state change when physical control disabled</option>
         </options>
       </parameter>
 
@@ -182,18 +182,13 @@ Whether scene control functionality is enabled<br /> <h1>Overview</h1><p>Enable 
 Allow or disallow local control (paddle)<br /> <h1>Overview</h1><p>Enable or disable paddle on/off control (aka disable the relay). If disabled, you’ll only be able to control the connected light via Z-Wave. Scenes and other functionality will still be available through paddles.</p><p>NOTE: hold the lower paddle for 10 seconds until the LED indicator starts blinking, then within 2 seconds, tap the upper paddle 5 times quickly to change this mode. The LED indicator will stay solid green for 3 seconds to confirm the change.</p>
         ]]></description>
         <default>1</default>
-        <options>
-          <option value="0">Physical paddle control disabled</option>
-          <option value="1">Physical paddle control enabled (default)</option>
-          <option value="2">Physical paddle and Z-Wave control disabled</option>
-        </options>
       </parameter>
 
       <parameter name="config_16_1" type="integer" groupName="configuration"
                  min="1" max="99">
         <label>16: Physical Dimming Speed (Seconds)</label>
         <description><![CDATA[
-How long dimming takes when holding paddle<br /> <h1>Overview</h1><p>Set the time it takes to get from 0% to 100% brightness when pressing and holding the paddle (physical dimming). The number entered as value corresponds to the number of seconds.</p><p>5 = default.<br /></p>
+How long dimming takes when holding paddle<br /> <h1>Overview</h1><p>Set the time it takes to get from 0% to 100% brightness when pressing and holding the paddle (physical dimming). The number entered as value corresponds to the number of seconds.</p><p>5 = default.</p>
         ]]></description>
         <default>5</default>
         <limitToOptions>false</limitToOptions>
@@ -240,7 +235,7 @@ Set reporting behavior for disabled physical control<br /> <h1>Overview</h1><p>W
                  min="0" max="99">
         <label>22: Night Light Mode (Percent)</label>
         <description><![CDATA[
-Brightness level for nightlight mode<br /> <h1>Overview</h1><p>Set the brightness level the dimmer will turn on to when off and when lower paddle is held DOWN for a second.</p><p>0 = disabled.<br /></p>
+Brightness level for nightlight mode<br /> <h1>Overview</h1><p>Set the brightness level the dimmer will turn on to when off and when lower paddle is held DOWN for a second.</p><p>0 = disabled.</p>
         ]]></description>
         <default>20</default>
         <limitToOptions>false</limitToOptions>

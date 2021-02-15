@@ -199,7 +199,7 @@ This parameter has the configuration ID ```config_10_1``` and is of type ```INTE
 
 Automatic turning off relay after set time
 When relay is ON it goes automatically OFF after time defined by this parameter. Timer is reset to zero each time the module receive ON command regardless from where it comes (push button, associated module, controller,..).
-The following option values may be configured, in addition to values in the range 0 to 65535 -:
+The following option values may be configured -:
 
 | Value  | Description |
 |--------|-------------|
@@ -214,7 +214,7 @@ This parameter has the configuration ID ```config_11_2``` and is of type ```INTE
 
 Automatic turning on relay after set time
 When relay is OFF it goes automatically ON after time defined by this parameter. Timer is reset to zero each time the module receive OFF command regardless from where it comes (push button, associated module, controller,..).
-The following option values may be configured, in addition to values in the range 0 to 65535 -:
+The following option values may be configured -:
 
 | Value  | Description |
 |--------|-------------|

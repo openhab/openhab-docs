@@ -181,7 +181,7 @@ Detailed information on each parameter can be found in the sections below.
 | 33 | Alarm configuration - 4th slot | Alarm configuration - 4th slot |
 | 34 | Alarm configuration - 5th slot | Alarm configuration - 5th slot |
 | 35 | Alarm configuration – duration | Alarm configuration – duration |
-| 40 | First button – scenes sent | First button – scenes sent |
+| 40 | First button – scenes sent | 1 - Key pressed 1 time |
 | 41 | Second button – scenes sent | Second button – scenes sent |
 | 60 | Power reports – include self-consumption | Power reports – include self-consumption |
 | 61 | Power reports for first channel – on change | Power reports for first channel – on change |
@@ -549,21 +549,14 @@ This parameter has the configuration ID ```config_35_2``` and is of type ```INTE
 
 ### Parameter 40: First button – scenes sent
 
-First button – scenes sent
+1 - Key pressed 1 time
 This parameter determines which actions result in sending scene IDs assigned to them. Values can be combined (e.g. 1+2=3 means that scenes for single and double click are sent). Enabling scenes for triple click disables entering the device in learn mode by triple clicking.  
 Available values  
 1 – Key pressed 1 time  
 2 – Key pressed 2 times  
 4 – Key pressed 3 times  
 8 – Key hold down and key released
-The following option values may be configured, in addition to values in the range 0 to 15 -:
-
-| Value  | Description |
-|--------|-------------|
-| 1 | Key pressed 1 time |
-| 2 | Key pressed 2 times |
-| 4 | Key pressed 3 times |
-| 8 | Key hold down and key released |
+Values in the range 0 to 15 may be set.
 
 The manufacturer defined default value is ```0```.
 

@@ -8,7 +8,7 @@
   <thing-type id="logic_zif5028_00_000" listed="false">
     <label>ZIF5028 / HeatIt Z-DIN 616 6 relay switches and 6 digital inputs module for DIN rail</label>
     <description><![CDATA[
-6 relay switches and 6 digital inputs module for DIN rail<br /> <h1>Overview</h1><h3>Features</h3> <ul><li>DIN rail module with 6 relay outputs and 6 digital inputs</li> <li>Z-Wave interface for other systems in order to control them through the Z-Wave network</li> <li>Mounted on DIN-rail in switch board</li> <li>6 x 16A potential free relays</li> <li>2-poled switch solution when using 2 x relays in combination</li> <li>Works as slave Z-Wave repeater</li> <li>Firmware Update (OTA)</li> <li>Supports encryption mode: S0, S2 Access Control Class,</li> <li>S2 Authenticated Class, S2 Unauthenticated Class</li> </ul><h3>Technical data</h3> <ul><li><strong>Protocol</strong> Z-Wave, 868,4 MHz</li> <li><strong>SDK</strong> 6.71.00</li> <li><strong>Rated voltage</strong> 10 – 24V DC 8 – 20V AC</li> <li><strong>Power consumption</strong> 0,6W + 0,5W pr. active relay (max 4W)</li> <li><strong>Screw terminals</strong> 0,2 – 2,5 mm²</li> <li><strong>Outputs</strong> 6 x 1-pole potential free (10mm clearance)</li> <li><strong>Relay switches</strong> AC1: 16A 250V AC, AC3: 750W (engine), AC15: 360VA</li> <li><strong>Max. inrush current</strong> 80A/20ms</li> <li><strong>Contacts</strong> Common and Normally Closed</li> <li><strong>Inputs</strong> 6 x 1-pole potential free (5 mm clearance), max 10V DC</li> <li><strong>Input impedance</strong> 10 kOhm</li> <li><strong>Network range</strong> Up to 40 meters(depending on surroundings)</li> <li><strong>IP Class</strong> IP 20</li> <li><strong>Size</strong> (HxWxD) 85 x 105 x 60 mm</li> <li>M36 6-modules DIN rail</li> <li><strong>Certifications</strong> Z-Wave Plus, CE, EN 50491-3: 2009 EN 60669-2: 2004, EMC 2014/30/EU, RoHS 2011/65/EU,LVD 2014/35/EU</li> </ul><p>HeatIt Z-DIN 616 is re-branded Logic Group ZIF MODULE ZIF5028.</p> <br /> <h2>Inclusion Information</h2><p>Upon delivery, the Logic Group ZIF5028/Heatit Z-DIN 616 module has not been enrolled into any Z-Wave network. In order to communicate with other devices in the Z-Wave network, Logic Group ZIF5028/Heatit Z-DIN 616 must be enrolled in the network. This process is called to include the device in the Z-Wave network. Devices can also be removed from the Z-Wave network if they are to be used in another installation. This is called to exclude the device from the Z-Wave network.</p> <p>Both processes are initiated by setting the central network controls in either inclusion or exclusion mode. Please refer to the network controller’s manual how to set the central controls in either inclusion or exclusion mode.</p> <p>Then, the inclusion mode / exclusion mode on the Logic Group ZIF5028/Heatit Z-DIN 616 device is activated by pressing the small button through the hole in the front of the module, marked ”INCLUSION”, after which the status LED will start flashing.</p> <p>IF THE DEVICE ALREADY BELONGS TO A NETWORK, THE DEVICE MUST BE EXCLUDED BEFORE IT CAN BE INCLUDED IN THE CURRENT NETWORK, OTHERWISE THE INCLUSION PROCESS WILL FAIL.</p> <br /> <h2>Exclusion Information</h2><p>The same as the inclusion. Put the Z-Wave controller into Exclusion mode and then press the small button through the hole in the front of the module, marked ”INCLUSION”, after which the status LED will start flashing.</p> <p>FACTORY RESET</p> <p>Logic Group ZIF5028/Heatit Z-DIN 616 can be reset to factory settings, i.e. all configurations and device address will be reset to default settings. The device must then be reconnected to the Z-Wave network.</p> <p>Resetting is performed by activating the small pushbutton marked ”INCLUSION” located on the front for at least 10 seconds until the LED flashes briefly. E.g. slide a needle pin or a toothpick through the small hole to activate the pushbutton.</p> <p>This procedure only applies to cases where the primary network controller is not available or not operational.</p> <br /> <h2>Wakeup Information</h2><p>This device works as Z-Wave signal repeater. It's always on.</p>
+6 relay switches and 6 digital inputs module for DIN rail<br /> <h1>Overview</h1><h3>Features</h3> <ul><li>DIN rail module with 6 relay outputs and 6 digital inputs</li> <li>Z-Wave interface for other systems in order to control them through the Z-Wave network</li> <li>Mounted on DIN-rail in switch board</li> <li>6 x 16A potential free relays</li> <li>2-poled switch solution when using 2 x relays in combination</li> <li>Works as slave Z-Wave repeater</li> <li>Firmware Update (OTA)</li> <li>Supports encryption mode: S0, S2 Access Control Class,</li> <li>S2 Authenticated Class, S2 Unauthenticated Class</li> </ul><h3><br /></h3> <br /> <h2>Inclusion Information</h2><p>The inclusion mode / exclusion mode on the Logic Group ZIF5028/Heatit Z-DIN 616 device is activated by pressing the small button through the hole in the front of the module, marked ”INCLUSION”, after which the status LED will start flashing.</p> <br /> <h2>Exclusion Information</h2><p>The same as the inclusion. Put the Z-Wave controller into Exclusion mode and then press the small button through the hole in the front of the module, marked ”INCLUSION”, after which the status LED will start flashing.</p> <p>FACTORY RESET</p> <p>Logic Group ZIF5028/Heatit Z-DIN 616 can be reset to factory settings, i.e. all configurations and device address will be reset to default settings. The device must then be reconnected to the Z-Wave network.</p> <p>Resetting is performed by activating the small pushbutton marked ”INCLUSION” located on the front for at least 10 seconds until the LED flashes briefly. E.g. slide a needle pin or a toothpick through the small hole to activate the pushbutton.</p> <p>This procedure only applies to cases where the primary network controller is not available or not operational.</p> <br /> <h2>Wakeup Information</h2><p>This device works as Z-Wave signal repeater. It's always on.</p>
     ]]></description>
     <category>PowerOutlet</category>
 
@@ -220,8 +220,18 @@ Configures the function of input 1.<br /> <h1>Overview</h1><p>Select the value f
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_4_1" type="integer" groupName="configuration">
-        <label>4: Function setup of input 2.</label>
+      <parameter name="config_4_1" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>4: Timer for input 1</label>
+        <description><![CDATA[
+Configures the timer of input 1<br /> <h1>Overview</h1><p>Choose parameter value from the scheme below.</p><p><b>VALUE DESCRIPTION</b></p><p>0 Inactive (standard)</p><p>1 - 127 Time in seconds: 1 – 127 seconds.</p><p>128 - 255 Time in minutes: 128 – 255 minutes.</p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_5_1" type="integer" groupName="configuration">
+        <label>5: Function setup of input 2.</label>
         <description><![CDATA[
 Configures the function of input 2.<br /> <h1>Overview</h1><p>Select the value from the table below. Please refer to the section reg. input functions.</p>
         ]]></description>
@@ -235,8 +245,18 @@ Configures the function of input 2.<br /> <h1>Overview</h1><p>Select the value f
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_5_1" type="integer" groupName="configuration">
-        <label>5: Function setup of input 3.</label>
+      <parameter name="config_6_1" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>6: Timer for input 2</label>
+        <description><![CDATA[
+Configures the timer of input 2<br /> <h1>Overview</h1><p>Choose parameter value from the scheme below.</p><p><b>VALUE DESCRIPTION</b></p><p>0 Inactive (standard)</p><p>1 - 127 Time in seconds: 1 – 127 seconds.</p><p>128 - 255 Time in minutes: 128 – 255 minutes.</p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_7_1" type="integer" groupName="configuration">
+        <label>7: Function setup of input 3.</label>
         <description><![CDATA[
 Configures the function of input 3.<br /> <h1>Overview</h1><p>Select the value from the table below. Please refer to the section reg. input functions.</p>
         ]]></description>
@@ -250,8 +270,18 @@ Configures the function of input 3.<br /> <h1>Overview</h1><p>Select the value f
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_6_1" type="integer" groupName="configuration">
-        <label>6: Function setup of input 4.</label>
+      <parameter name="config_8_1" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>8: Timer for input 3</label>
+        <description><![CDATA[
+Configures the timer of input 3<br /> <h1>Overview</h1><p>Choose parameter value from the scheme below.</p><p><b>VALUE DESCRIPTION</b></p><p>0 Inactive (standard)</p><p>1 - 127 Time in seconds: 1 – 127 seconds.</p><p>128 - 255 Time in minutes: 128 – 255 minutes.</p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_9_1" type="integer" groupName="configuration">
+        <label>9: Function setup of input 4.</label>
         <description><![CDATA[
 Configures the function of input 4.<br /> <h1>Overview</h1><p>Select the value from the table below. Please refer to the section reg. input functions.</p>
         ]]></description>
@@ -265,8 +295,18 @@ Configures the function of input 4.<br /> <h1>Overview</h1><p>Select the value f
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_7_1" type="integer" groupName="configuration">
-        <label>7: Function setup of input 5.</label>
+      <parameter name="config_10_1" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>10: Timer for input 4</label>
+        <description><![CDATA[
+Configures the timer of input 4<br /> <h1>Overview</h1><p>Choose parameter value from the scheme below.</p><p><b>VALUE DESCRIPTION</b></p><p>0 Inactive (standard)</p><p>1 - 127 Time in seconds: 1 – 127 seconds.</p><p>128 - 255 Time in minutes: 128 – 255 minutes.</p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_11_1" type="integer" groupName="configuration">
+        <label>11: Function setup of input 5.</label>
         <description><![CDATA[
 Configures the function of input 5.<br /> <h1>Overview</h1><p>Select the value from the table below. Please refer to the section reg. input functions.</p>
         ]]></description>
@@ -280,8 +320,18 @@ Configures the function of input 5.<br /> <h1>Overview</h1><p>Select the value f
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_8_1" type="integer" groupName="configuration">
-        <label>8: Function setup of input 6.</label>
+      <parameter name="config_12_1" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>12: Timer for input 5</label>
+        <description><![CDATA[
+Configures the timer of input 5<br /> <h1>Overview</h1><p>Choose parameter value from the scheme below.</p><p><b>VALUE DESCRIPTION</b></p><p>0 Inactive (standard)</p><p>1 - 127 Time in seconds: 1 – 127 seconds.</p><p>128 - 255 Time in minutes: 128 – 255 minutes.</p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_13_1" type="integer" groupName="configuration">
+        <label>13: Function setup of input 6.</label>
         <description><![CDATA[
 Configures the function of input 6.<br /> <h1>Overview</h1><p>Select the value from the table below. Please refer to the section reg. input functions.</p>
         ]]></description>
@@ -295,9 +345,19 @@ Configures the function of input 6.<br /> <h1>Overview</h1><p>Select the value f
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_9_1" type="integer" groupName="configuration"
+      <parameter name="config_14_1" type="integer" groupName="configuration"
                  min="0" max="255">
-        <label>9: Input Snubber-filter time constant.</label>
+        <label>14: Timer setup of input 6</label>
+        <description><![CDATA[
+Configures the timer of input 6<br /> <h1>Overview</h1><p>Choose parameter value from the scheme below.</p><p><b>VALUE DESCRIPTION</b></p><p>0 Inactive (standard)</p><p>1 - 127 Time in seconds: 1 – 127 seconds.</p><p>128 - 255 Time in minutes: 128 – 255 minutes.</p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_15_1" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>15: Input Snubber-filter time constant.</label>
         <description><![CDATA[
 The time constant of the input snubber-filter.<br /> <h1>Overview</h1><p>Specifies the time used to define the time constant of the input snubber-filter. (Increments in 0.01 second resolution.)</p> <table><tr><td><strong>VALUE</strong></td> <td><strong>DESCRIPTION</strong></td> </tr><tr><td>0-255</td> <td>0 – 2,55 seconds. The standard value is 5, which corresponds to a snubber-filter-time constant of 50 milliseconds (0,05 seconds).</td> </tr></table>
         ]]></description>
@@ -305,9 +365,9 @@ The time constant of the input snubber-filter.<br /> <h1>Overview</h1><p>Specifi
         <advanced>true</advanced>
       </parameter>
 
-      <parameter name="config_10_1" type="integer" groupName="configuration"
+      <parameter name="config_16_1" type="integer" groupName="configuration"
                  min="0" max="255">
-        <label>10: Threshold value for activation of inputs.</label>
+        <label>16: Threshold value for activation of inputs.</label>
         <description><![CDATA[
 The time that an entry must be stable before it is accepted as active / idle.<br /> <h1>Overview</h1><p>Specifies the time that an entry must be stable before it is accepted as active / idle in 0.01 second resolution.</p> <table><tr><td><strong>VALUE</strong></td> <td><strong>DESCRIPTION</strong></td> </tr><tr><td>0-255</td> <td>0 – 2,55 seconds. The standard value is 20, which corresponds to 200 milliseconds (0,2 seconds).</td> </tr></table>
         ]]></description>
@@ -315,9 +375,9 @@ The time that an entry must be stable before it is accepted as active / idle.<br
         <advanced>true</advanced>
       </parameter>
 
-      <parameter name="config_11_1" type="integer" groupName="configuration"
+      <parameter name="config_17_1" type="integer" groupName="configuration"
                  min="0" max="255">
-        <label>11: Threshold for input in latched mode.</label>
+        <label>17: Threshold for input in latched mode.</label>
         <description><![CDATA[
 Time that an input must be activated before it accepts the button latched mode.<br /> <h1>Overview</h1><p>Indicates the time that an input must be activated before it accepts the button latched mode. (Increments in 0.01 second resolution.)</p> <table><tr><td><strong>VALUE</strong></td> <td><strong>DESCRIPTION</strong></td> </tr><tr><td>0-255</td> <td>0 – 2,55 seconds. The standard value is 50, which corresponds to 500 milliseconds (0,5 seconds).</td> </tr></table>
         ]]></description>
@@ -325,8 +385,8 @@ Time that an input must be activated before it accepts the button latched mode.<
         <advanced>true</advanced>
       </parameter>
 
-      <parameter name="config_12_1" type="integer" groupName="configuration">
-        <label>12: Deactivate Central Scene notifications.</label>
+      <parameter name="config_18_1" type="integer" groupName="configuration">
+        <label>18: Deactivate Central Scene notifications.</label>
         <description><![CDATA[
 Central Scene notifications when the 6 inputs are activated.<br /> <h1>Overview</h1><p>It is possible to enable Central Scene notifications when the 6 inputs are activated.</p>
         ]]></description>
@@ -338,8 +398,8 @@ Central Scene notifications when the 6 inputs are activated.<br /> <h1>Overview<
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_13_1" type="integer" groupName="configuration">
-        <label>13: Output function, Output 1.</label>
+      <parameter name="config_19_1" type="integer" groupName="configuration">
+        <label>19: Output function, Output 1.</label>
         <description><![CDATA[
 Output 1 can be controlled via Z-Wave or Input 1.<br /> <h1>Overview</h1><p>Choose parameter value from the scheme below.</p> <table><tr><td><strong>VALUE</strong></td> <td><strong>DESCRIPTION</strong></td> </tr><tr><td>0</td> <td>Output is controlled via Z-Wave messages.</td> </tr><tr><td>1</td> <td>Output is controlled by input 1. (Standard)</td> </tr></table>
         ]]></description>
@@ -351,8 +411,8 @@ Output 1 can be controlled via Z-Wave or Input 1.<br /> <h1>Overview</h1><p>Choo
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_14_1" type="integer" groupName="configuration">
-        <label>14: Output function, Output 2.</label>
+      <parameter name="config_20_1" type="integer" groupName="configuration">
+        <label>20: Output function, Output 2.</label>
         <description><![CDATA[
 Output 2 can be controlled via Z-Wave or Input 2.<br /> <h1>Overview</h1><p>Choose parameter value from the scheme below.</p> <table><tr><td><strong>VALUE</strong></td> <td><strong>DESCRIPTION</strong></td> </tr><tr><td>0</td> <td>Output is controlled via Z-Wave messages.</td> </tr><tr><td>1</td> <td>Output is controlled by input 2. (Standard)</td> </tr></table>
         ]]></description>
@@ -364,8 +424,8 @@ Output 2 can be controlled via Z-Wave or Input 2.<br /> <h1>Overview</h1><p>Choo
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_15_1" type="integer" groupName="configuration">
-        <label>15: Output function, Output 3.</label>
+      <parameter name="config_21_1" type="integer" groupName="configuration">
+        <label>21: Output function, Output 3.</label>
         <description><![CDATA[
 Output 3 can be controlled via Z-Wave or Input 3.<br /> <h1>Overview</h1><p>Choose parameter value from the scheme below.</p> <table><tr><td><strong>VALUE</strong></td> <td><strong>DESCRIPTION</strong></td> </tr><tr><td>0</td> <td>Output is controlled via Z-Wave messages.</td> </tr><tr><td>1</td> <td>Output is controlled by input 3. (Standard)</td> </tr></table>
         ]]></description>
@@ -377,8 +437,8 @@ Output 3 can be controlled via Z-Wave or Input 3.<br /> <h1>Overview</h1><p>Choo
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_16_1" type="integer" groupName="configuration">
-        <label>16: Output function, Output 4.</label>
+      <parameter name="config_22_1" type="integer" groupName="configuration">
+        <label>22: Output function, Output 4.</label>
         <description><![CDATA[
 Output 4 can be controlled via Z-Wave or Input 4.<br /> <h1>Overview</h1><p>Choose parameter value from the scheme below.</p> <table><tr><td><strong>VALUE</strong></td> <td><strong>DESCRIPTION</strong></td> </tr><tr><td>0</td> <td>Output is controlled via Z-Wave messages.</td> </tr><tr><td>1</td> <td>Output is controlled by input 4. (Standard)</td> </tr></table>
         ]]></description>
@@ -390,8 +450,8 @@ Output 4 can be controlled via Z-Wave or Input 4.<br /> <h1>Overview</h1><p>Choo
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_17_1" type="integer" groupName="configuration">
-        <label>17: Output function, Output 5.</label>
+      <parameter name="config_23_1" type="integer" groupName="configuration">
+        <label>23: Output function, Output 5.</label>
         <description><![CDATA[
 Output 5 can be controlled via Z-Wave or Input 5.<br /> <h1>Overview</h1><p>Choose parameter value from the scheme below.</p> <table><tr><td><strong>VALUE</strong></td> <td><strong>DESCRIPTION</strong></td> </tr><tr><td>0</td> <td>Output is controlled via Z-Wave messages.</td> </tr><tr><td>1</td> <td>Output is controlled by input 5. (Standard)</td> </tr></table>
         ]]></description>
@@ -403,8 +463,8 @@ Output 5 can be controlled via Z-Wave or Input 5.<br /> <h1>Overview</h1><p>Choo
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_18_1" type="integer" groupName="configuration">
-        <label>18: Output function, Output 6.</label>
+      <parameter name="config_24_1" type="integer" groupName="configuration">
+        <label>24: Output function, Output 6.</label>
         <description><![CDATA[
 Output 6 can be controlled via Z-Wave or Input 6.<br /> <h1>Overview</h1><p>Choose parameter value from the scheme below.</p> <table><tr><td><strong>VALUE</strong></td> <td><strong>DESCRIPTION</strong></td> </tr><tr><td>0</td> <td>Output is controlled via Z-Wave messages.</td> </tr><tr><td>1</td> <td>Output is controlled by input 6. (Standard)</td> </tr></table>
         ]]></description>

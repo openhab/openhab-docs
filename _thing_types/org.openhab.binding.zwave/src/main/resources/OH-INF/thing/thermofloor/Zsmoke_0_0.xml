@@ -5,7 +5,7 @@
   xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
                       https://openhab.org/schemas/thing-description/v1.0.0">
 
-  <thing-type id="thermofloor_z smoke_00_000" listed="false">
+  <thing-type id="thermofloor_Zsmoke_00_000" listed="false">
     <label>Z-Smoke Smoke detector and motion sensor</label>
     <description><![CDATA[
 Smoke detector and motion sensor<br /> <h1>Overview</h1><p>Heatit Z-Smoke Detector is a wireless smoke sensor with built-in PIR motion sensor, temperature sensor and emergency light. Heatit Z-Smoke Detector is a wireless operated photo-electronic smoke detector designed to interact with most Z-Wave enabled controllers. The detector features smoke-, temperature-, and IR-detection.</p><p>When other sensors in the Z-Wave network are activated and send an alarm signal, the smoke detector will also sound an alarm with its built-in siren to help give warning.</p> <br /> <h2>Inclusion Information</h2><p>After power is applied, the smoke detector initiates a 1-minute warm-up period. During this minute, the device will automatically enter add/remove mode, and may now be added to the system via the primary controller.</p><p>After the calibration process is finished, you may access the add/remove mode by pressing the function button three times within 1.5 seconds. Removing the device will reset it to factory settings.</p> <br /> <h2>Exclusion Information</h2><p>Put controller into exclusion mode and access the add/remove mode by pressing the function button three times within 1.5 seconds. Removing the device will reset it to factory settings.<br /></p> <br /> <h2>Wakeup Information</h2><p>n. a.</p>
