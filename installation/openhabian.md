@@ -284,12 +284,13 @@ This is the right time to prepare your system for disasters such as getting hit 
     Get an UPS.
     Zram is enabled by default for swap, logs and persistence data.
     You can toggle use in \[menu option 38\].
-2.  Move the root filesystem to USB-attached memory.
+2.  You can have openHABian mirror your SD card i.e. have it create a live copy. See [auto backup](#Auto-backup) documentation. You can activate mirroring using \[menu option 53\]
+3.  Move the root filesystem to USB-attached memory.
     WARNING: USB sticks are as susceptible to flash wear-out as SD cards are, making zram the better choice for a standard Pi to run off its internal SD card.
     But you can use this option to migrate your system to a safe medium such as an SSD or HDD.
     See \[menu option 37\].
-3.  Use the openHAB integrated [openhab-cli tool](https://community.openhab.org/t/recommended-way-to-backup-restore-oh2-configurations-and-things/7193/82) to interactively backup/restore your openHAB **config** \[menu option 50/51\].
-4.  Use [Amanda Network Backup](http://www.amanda.org/) for full system backups, documentation [here](openhabian-amanda.md).
+4.  Use the openHAB integrated [openhab-cli tool](https://community.openhab.org/t/recommended-way-to-backup-restore-oh2-configurations-and-things/7193/82) to interactively backup/restore your openHAB **config** \[menu option 50/51\].
+5.  Use [Amanda Network Backup](http://www.amanda.org/) for full system backups, documentation [here](openhabian-amanda.md).
     See \[menu option 52\].
 
 Standard openHABian install enables zram by default (#1).
@@ -386,23 +387,30 @@ Mind you that if you intend to open an issue, we need you to provide the output 
 
 #### Auto-backup
 
-You might want to setup openHABian to automatically backup and mirror your internal SD card to an external unit.
-We suggest to use another SD card in an external card writer device so that in case your internal SD card fails, you can switch SD cards to get the system back up running fast.
-Note most "16GB" cards are not _exactly_ 16 GB and your new one mustn't have less bytes than the old one so openHABian enforces the second card to have at least twice the size of your internal card.
-We make use of that extra space as storage for the backup system.
+Auto backup is a marketing name for two distinct features that you can deploy in one go at *unattended* installation time on a RPi (when you deploy the image).
+Technically it is a "low-cost" version of disk mirroring PLUS the setup of the Amanda backup system that has been available in a long time.
+So don't let the name confuse you. If you didn't choose to set this up at installation time, you can also individually select these via openhabian-config` menu options 53 (mirroring) and 52 (Amanda).
+Note mirroring is untested (and hardly makes sense to deploy) if you don't run RPi hardware but Amanda is well meant to be used as the backup system and is known to work on any hardware.
 
-To setup right at installation time:
+To setup openHABian to automatically backup and mirror your internal SD card to an external storage unit, we suggest to use another SD card in an external card writer device so that in case your internal SD card fails, you can switch SD cards to get the system back up running fast.
+Note most "16GB" cards are not _exactly_ 16 GB and your new one mustn't have less bytes than the old one so openHABian enforces the second card to have at least twice the size of your internal card.
+We can make use of that extra space as storage for the backup system.
+
+To setup mirroring right at installation time:
 Define `backupdrive=/dev/sdX` (replace X with the proper character) to enable this functionality right during unattended installation.
-You may change `storagedir=/storage` to any other name.
 The first attached disk type device is usually called `/dev/sda`.
-openHABian will create partitions 1 and 2 to be mirrors of your internal card and will assign the remaining space to a storage partition.
-Full mirroring will take place semiannually and for the 2nd partition (Linux root), changes will be synced once a week.
-See `systemctl list-timers`, timers are defined in `/etc/systemd/system/sd*.timer`.
-The unattended install routine will also setup Amanda to take daily backups and store them to that third partition.
 Use `storagecapacity=xxx` to override how much space to consume at most for Amanda backup storage (in MB).
-If you choose to skip this during system installation, you can still setup both, mirroring and Amanda, at any later time using the 5X menu options.
+openHABian will create partitions 1 and 2 to be mirrors of your internal card and will assign the remaining space to another partition that you can use for storage.
+NOTE: if you do and _if_ the remaining space is sufficient, selecting this will also result in setting up the Amanda backup system on that extra space.
+Note you can change where it stores its backup data via `storagedir=/storage`, but you cannot unselect the Amanda setup at this stage.
+If you want to setup mirroring only and Amanda anywhere else but on the extra SD space, you must not use unattended installation method (i.e. do not define `backupdrive`).
+You can still setup both, mirroring and Amanda, separately at any later time using the 53 (mirroring) and 52 (Amanda) menu options.
+
+Full mirroring will take place semiannually and for the 2nd partition (Linux root), changes will be synced once every day.
+See `systemctl list-timers`, timers are defined in `/etc/systemd/system/sd*.timer`.
 
 Menu 5X provides interactive access to the aforementioned functions:
+`52 Amanda System Backup` will will prepare an existing directory as your backup storage and make Amanda launch once a day. See the separate [Amanda setup document](openhabian-amanda.md).
 `53 Setup SD monitoring` prepares the partitions on an SD card and sets up timers to execute both, a full mirroring and complementary rsync 'diff' runs in a backup schedule.
 `54 Raw copy SD` is a one-time raw copy (mirror) run.
 `55 Sync SD` proagates (syncs) differences from your main SD card to your external card.
@@ -526,16 +534,15 @@ I've just installed openHABian and now I'm confused.
 No fancy login screen, no windows, no mouse support.
 What did I get into?
 
-You are not the first one to get confused about the **intended use case of openHABian**.
+You are not the first one to get confused about the intended use case of openHABian.
 Maybe it helps to not think of the RPi as a PC as we know it.
 An RPi is not (well, not _necessarily_) to be used with a keyboard and display.
 Its intended use case is to sit in a corner and provide a service reliably 24 hours a day, 7 days a week.
-You already own a **powerful PC or Mac** to work on.
-It would be a shame to have a powerful computer at your fingertips and then have to **restrict yourself** to a very limited graphical frontend on another device, wouldn't you agree?
+You already own a powerful PC or Mac to work on.
 
 What we actually want openHABian to be is a **dedicated, headless system** to **reliably run openHAB** and to **expose all interfaces** needed to interact and configure it (MainUI, HABPanel, openHAB LogViewer, Samba Network Shares, openHABian Configuration Tool, SSH, you-name-it).
 If you know how to work with these interfaces, you are set for a way better experience than the alternatives.
-The main challenge is to **get used to the Linux command line**, not even a GUI (like Pixel, see below) will relieve you from that in the long run.
+The main challenge is to **get used to the Linux command line**, not even a GUI will relieve you from that in the long run.
 If you are not willing to teach yourself a few fundamental Linux skills you will not become happy with any Linux system and should resort to a e.g. Windows machine.
 However as you are willing to tinker with smart home technology, I'm sure you are ready to **teach yourself new stuff** and expand your experience.
 
