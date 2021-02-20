@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="zooz_zen32_00_000" listed="false">
+    <label>ZEN32 Scene Controller</label>
+    <description><![CDATA[
+Scene Controller<br /> <h1>Overview</h1><p><b>Features</b></p><ul><li>Switch button: 15 A relay for Z-Wave on/off control</li><li>4 remote control buttons: trigger scenes and control other devices in your Z-Wave network from this switch</li><li><b>NEW 700 series Z-Wave</b> chip for better range and faster control</li><li><b>Direct 3-Way</b>: works with regular on/off switches in a 3-way</li><li><b>Scene control</b>: trigger actions with multi-tap (select hubs only)</li><li><b>Smart bulb mode</b>: disable relay and control the light via Z-Wave</li><li>Adjustable LED indicator in 4 colors and 3 brightness levels</li><li>S2 Security and SmartStart for easier inclusion</li></ul><p><b>Specifications</b></p><ul><li>Model Number: ZEN32</li><li>Z-Wave Signal Frequency: 908.42 MHz</li><li>Power: 120 VAC, 60 Hz</li><li><b>Maximum Load</b>: 150W LED, 960W Incandescent, 1800W (15A) Resistive, 3A motor (DON'T use with receptacles)</li><li>Range: Up to 500 feet line of sight</li><li>Operating Temperature: 32-104°F (0-40°C)</li><li>Installation and Use: Indoor only<br /></li></ul> <br /> <h2>Inclusion Information</h2><ol><li> Start Z-Wave inclusion.</li><li> Quickly press the switch button 3 times.</li></ol><p>The LED indicator will blink blue to signal communications and turn green for 3 seconds if inclusion is successful or turn red for 3 seconds if the pairing attempt fails.<br /></p> <br /> <h2>Exclusion Information</h2><ol><li> Start Z-Wave exclusion.</li><li>Quickly press the switch button 3 times.</li></ol><p>If successful, the LED will turn green for 3 seconds.<br /></p> <br /> <h2>Wakeup Information</h2><p><br /></p>
+    ]]></description>
+    <category>Battery</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_binary" typeId="switch_binary">
+        <label>Switch</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY</property>
+        </properties>
+      </channel>
+      <channel id="scene_number" typeId="scene_number">
+        <label>Scene Number</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_CENTRAL_SCENE</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Zooz</property>
+      <property name="modelId">ZEN32</property>
+      <property name="manufacturerId">027A</property>
+      <property name="manufacturerRef">7000:A008</property>
+      <property name="dbReference">1364</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association">
+        <label>1: 1</label>
+        <description>Lifeline</description>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: 2</label>
+        <description>Basic Set</description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_3" type="text" groupName="association" multiple="true">
+        <label>3: 3</label>
+        <description>Multilevel</description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_4" type="text" groupName="association" multiple="true">
+        <label>4: 4</label>
+        <description>Basic Set</description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_5" type="text" groupName="association" multiple="true">
+        <label>5: 5</label>
+        <description>Multilevel</description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_6" type="text" groupName="association" multiple="true">
+        <label>6: 6</label>
+        <description>Basic Set</description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_7" type="text" groupName="association" multiple="true">
+        <label>7: 7</label>
+        <description>Multilevel</description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_8" type="text" groupName="association" multiple="true">
+        <label>8: 8</label>
+        <description>Basic Set</description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_9" type="text" groupName="association" multiple="true">
+        <label>9: 9</label>
+        <description>Multilevel</description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_10" type="text" groupName="association" multiple="true">
+        <label>10: 10</label>
+        <description>Basic Set</description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_11" type="text" groupName="association" multiple="true">
+        <label>11: 11</label>
+        <description>Multilevel</description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

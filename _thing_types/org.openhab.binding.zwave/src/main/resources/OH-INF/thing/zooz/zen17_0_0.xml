@@ -1,0 +1,301 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="zooz_zen17_00_000" listed="false">
+    <label>ZEN17 Universal Relay</label>
+    <description><![CDATA[
+Universal Relay<br /> <h1>Overview</h1><p><strong>Features</strong></p> <ul><li>Powerful dry contact NO/NC relays to control loads up to 20 A for NO<br /></li> <li>Perfect for DC motors, pumps, commercial gates, or HVAC equipment</li> <li>Control up to 2 connected loads independently or together</li> <li>Z-Wave or optional wall switch control (toggle or momentary type)</li><li>Monitor inpuits independently from output control<br /></li> <li>Built-in timers for each relay to simplify automation</li> <li>Built-in Z-Wave Plus signal repeater to extend network range</li> <li>Powered by 12-24 V DC/AC or USB C port for easy set-up</li> <li>Wall mounting and minimal design for clean installation</li> <li>New 700 Z-Wave chip, S2 security, and SmartStart</li> </ul><p><strong>Specifications</strong></p> <ul><li>Model Number: ZEN17</li> <li>Z-Wave Signal Frequency: 908.42 MHz</li> <li>Power: 12-24 V DC/AC or USB C (DON'T use laptop/tablet chargers)<br /></li> <li>Maximum Load: NO relays: 20 A, NC relays: 10 A</li> <li>Range: Up to 200 feet line of sight</li> <li>Operating Temperature: 32-104° F (0-40° C)</li> <li>Installation and Use: Indoor only</li> </ul> <br /> <h2>Inclusion Information</h2><ol><li>Start Z-Wave inclusion.</li> <li>Quickly press the Z-Wave button 3 times.</li> </ol><p>The LED indicator will blink to signal communication and remain on for 2 seconds to confirm inclusion.</p> <br /> <h2>Exclusion Information</h2><ol><li>Start Z-Wave inclusion.</li> <li>Quickly press the Z-Wave button 3 times.</li> </ol> <br /> <h2>Wakeup Information</h2><p><br /></p>
+    ]]></description>
+    <category>Battery</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_binary1" typeId="switch_binary">
+        <label>Switch 1</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY:1</property>
+        </properties>
+      </channel>
+      <channel id="switch_binary2" typeId="switch_binary">
+        <label>Switch 2</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY:2</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Zooz</property>
+      <property name="modelId">ZEN17</property>
+      <property name="manufacturerId">027A</property>
+      <property name="manufacturerRef">7000:A00A</property>
+      <property name="dbReference">1363</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_1_1" type="integer" groupName="configuration"
+                 min="0" max="4">
+        <label>1: On Off Status After Power Failure</label>
+        <description><![CDATA[
+Set the on off status for the relays after power failure<br /> <h1>Overview</h1><p><br /></p>
+        ]]></description>
+        <default>1</default>
+        <options>
+          <option value="0">ALL relays forced to OFF</option>
+          <option value="1">ALL relays restore on/off status (default)</option>
+          <option value="2">ALL relays forced to ON</option>
+          <option value="3">Relay 1 restores on/off status, Relay 2 ON</option>
+          <option value="4">Relay 2 restores on/off status, Relay 1 ON</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_2_1" type="integer" groupName="configuration"
+                 min="0" max="10">
+        <label>2: Input Type for Relay 1 (S1)</label>
+        <description><![CDATA[
+Choose the wall switch or input type you want to connect to the S1 C terminals<br /> <h1>Overview</h1><p>Press and hold the Z-Wave button for 5 seconds to change to garage mode manually. IMPORTANT: If you set this parameter to value 4-10, you'll need to exclude and re-include the device (without changing any settings) so that a child device is created for the input of your choice!<br /></p>
+        ]]></description>
+        <default>2</default>
+        <options>
+          <option value="0">Momentary for lights only</option>
+          <option value="1">Toggle switch (light on when up, off when down)</option>
+          <option value="2">Toggle switch (state changes whenever the switch is toggled; default)</option>
+          <option value="3">Garage door (momentary mode)</option>
+          <option value="4">Leak alarm (water sensor)</option>
+          <option value="5">Heat alarm</option>
+          <option value="6">Motion alert</option>
+          <option value="7">Open/close alert (door sensor)</option>
+          <option value="8">CO alarm</option>
+          <option value="9">CO2 alarm</option>
+          <option value="10">On/off report (dry contact switch/sensor)</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_3_1" type="integer" groupName="configuration"
+                 min="0" max="10">
+        <label>3: Input Type for Relay 2 (S2)</label>
+        <description><![CDATA[
+Choose the wall switch or input type you want to connect to the S2 C terminals<br /> <h1>Overview</h1><p>Press and hold the Z-Wave button for 5 seconds to change to garage mode manually. IMPORTANT: If you set this parameter to value 4-10, you'll need to exclude and re-include the device (without changing any settings) so that a child device is created for the input of your choice!</p>
+        ]]></description>
+        <default>2</default>
+        <options>
+          <option value="0">Momentary for lights only</option>
+          <option value="1">Toggle switch (light on when up, off when down)</option>
+          <option value="2">Toggle switch (state changes whenever the switch is toggled; default)</option>
+          <option value="3">Garage door (momentary mode)</option>
+          <option value="4">Leak alarm (water sensor)</option>
+          <option value="5">Heat alarm</option>
+          <option value="6">Motion alert</option>
+          <option value="7">Open/close alert (door sensor)</option>
+          <option value="8">CO alarm</option>
+          <option value="9">CO2 alarm</option>
+          <option value="10">On/off report (dry contact switch/sensor)</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_5_1" type="integer" groupName="configuration"
+                 min="0" max="3">
+        <label>5: LED Indicator Control</label>
+        <description><![CDATA[
+LED Indicator Control<br /> <h1>Overview</h1><p>Choose if you want the LED indicator to turn on when any of the relays are on or if all of them are off, or if you want it to remain on or off at all times.</p> <p>Click the Z-Wave button 5 times quickly to change mode manually.</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">ON when all relays OFF (default)</option>
+          <option value="1">ON when any relay ON</option>
+          <option value="2">LED indicator is always OFF</option>
+          <option value="3">LED indicator is always ON</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_6_4" type="integer" groupName="configuration">
+        <label>6: Auto Turn-Off Timer for Relay 1</label>
+        <description><![CDATA[
+Auto Turn-Off Timer for Relay 1<br /> <h1>Overview</h1><p>Use this parameter to set the time after which you want the device connected to Relay 1 to automatically turn off once it has been turned on. The number entered as value corresponds to the number of minutes.</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Timer disabled (default)</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_7_4" type="integer" groupName="configuration">
+        <label>7: Auto Turn-On Timer for Relay 1</label>
+        <description><![CDATA[
+Auto Turn-On Timer for Relay 1<br /> <h1>Overview</h1><p>Use this parameter to set the time after which you want the device connected to Relay 1 to automatically turn on once it has been turned off. The number entered as value corresponds to the number of minutes.</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Timer disabled (default)</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_8_4" type="integer" groupName="configuration">
+        <label>8: Auto Turn-Off Timer for Relay 2</label>
+        <description><![CDATA[
+Auto Turn-Off Timer for Relay 2<br /> <h1>Overview</h1><p>Use this parameter to set the time after which you want the device connected to Relay 2 to automatically turn off once it has been turned on. The number entered as value corresponds to the number of minutes.</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Timer disabled (default)</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_9_4" type="integer" groupName="configuration">
+        <label>9: Auto Turn-On Timer for Relay 2</label>
+        <description><![CDATA[
+Auto Turn-On Timer for Relay 2<br /> <h1>Overview</h1><p>Use this parameter to set the time after which you want the device connected to Relay 2 to automatically turn on once it has been turned off. The number entered as value corresponds to the number of minutes.</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Timer disabled (default)</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_10_1" type="integer" groupName="configuration"
+                 min="0" max="1">
+        <label>10: Input Trigger for Relay 1</label>
+        <description><![CDATA[
+Input Trigger for Relay 1<br /> <h1>Overview</h1><p>Choose if you'd like the connected input (switch) on S1 C/VC C to trigger the load connected to R1 or if you want to use the input reports for monitoring only and separate the output from the input.<br /></p>
+        ]]></description>
+        <default>1</default>
+        <options>
+          <option value="0">Input trigger disabled</option>
+          <option value="1">Input trigger enabled (default)</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_11_1" type="integer" groupName="configuration"
+                 min="0" max="1">
+        <label>11: Input Trigger for Relay 2</label>
+        <description><![CDATA[
+Input Trigger for Relay 2<br /> <h1>Overview</h1><p>Choose if you'd like the connected input (switch) on S2 C/VC C to trigger the load connected to R2 or if you want to use the input reports for monitoring only and separate the output from the input.</p>
+        ]]></description>
+        <default>1</default>
+        <options>
+          <option value="0">Input trigger disabled</option>
+          <option value="1">Input trigger enabled (default)</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_15_1" type="integer" groupName="configuration"
+                 min="0" max="2">
+        <label>15: Auto Timer-Off Timer Unit for Relay 1</label>
+        <description><![CDATA[
+Use this parameter to choose between seconds, minutes, or hours to be used as the auto timer-off unit for Relay 1<br /> <h1>Overview</h1><p><br /></p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Minutes (default)</option>
+          <option value="1">Seconds</option>
+          <option value="2">Hours</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_16_1" type="integer" groupName="configuration"
+                 min="0" max="2">
+        <label>16: Auto Timer-On Timer Unit for Relay 1</label>
+        <description><![CDATA[
+Use this parameter to choose between seconds, minutes, or hours to be used as the auto timer-on unit for Relay 1<br /> <h1>Overview</h1><p><br /></p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Minutes (default)</option>
+          <option value="1">Seconds</option>
+          <option value="2">Hours</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_17_1" type="integer" groupName="configuration"
+                 min="0" max="2">
+        <label>17: Auto Timer-Off Timer Unit for Relay 2</label>
+        <description><![CDATA[
+Use this parameter to choose between seconds, minutes, or hours to be used as the auto timer-off unit for Relay 2<br /> <h1>Overview</h1><p><br /></p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Minutes (default)</option>
+          <option value="1">Seconds</option>
+          <option value="2">Hours</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_18_1" type="integer" groupName="configuration"
+                 min="0" max="2">
+        <label>18: Auto Timer-On Timer Unit for Relay 2</label>
+        <description><![CDATA[
+Use this parameter to choose between seconds, minutes, or hours to be used as the auto timer-on unit for Relay 2<br /> <h1>Overview</h1><p><br /></p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Minutes (default)</option>
+          <option value="1">Seconds</option>
+          <option value="2">Hours</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_24_1" type="integer" groupName="configuration"
+                 min="0" max="1">
+        <label>24: DC Motor Mode</label>
+        <description><![CDATA[
+Sync Relay 1 and Relay 2 together to prevent them from being activated at the same time<br /> <h1>Overview</h1><p><br /></p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">DC motor mode disabled (relays will activate whenever triggered)</option>
+          <option value="1">DC motor mode enabled (relay checks the status of the other relay)</option>
+        </options>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association">
+        <label>1: Lifeline</label>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: Relay 1</label>
+        <description>Send BASIC_SET reports when operated manually</description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_3" type="text" groupName="association" multiple="true">
+        <label>3: Relay 2</label>
+        <description>Send BASIC_SET reports when operated manually</description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>
