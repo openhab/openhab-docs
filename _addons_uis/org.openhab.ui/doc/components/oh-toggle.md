@@ -22,7 +22,7 @@ Toggle control, allows to switch on or off
 
 - `color` <small>TEXT</small> _Color_
 
-  Color of the control
+  Color of the control (supported values: red, green, blue, pink, yellow, orange, purple, deeppurple, lightblue, teal, lime, deeporange, gray, white, black)
 
 - `variable` <small>TEXT</small> _Variable_
 

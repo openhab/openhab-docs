@@ -9,7 +9,7 @@ source: https://github.com/openhab/openhab-webui/edit/main/bundles/org.openhab.u
 # oh-toggle-card - Toggle Card
 
 <!-- GENERATED componentDescription -->
-Display a toggle swtich in a card to send ON/OFF commands
+Display a toggle switch in a card to send ON/OFF commands
 <!-- GENERATED /componentDescription -->
 
 ## Configuration
@@ -50,6 +50,6 @@ Parameters of the card
 
 - `color` <small>TEXT</small> _Color_
 
-  Color of the control
+  Color of the control (supported values: red, green, blue, pink, yellow, orange, purple, deeppurple, lightblue, teal, lime, deeporange, gray, white, black)
 
 <!-- GENERATED /props -->

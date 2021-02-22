@@ -54,6 +54,6 @@ General settings of the list item
 
 - `color` <small>TEXT</small> _Color_
 
-  Color of the control
+  Color of the control (supported values: red, green, blue, pink, yellow, orange, purple, deeppurple, lightblue, teal, lime, deeporange, gray, white, black)
 
 <!-- GENERATED /props -->

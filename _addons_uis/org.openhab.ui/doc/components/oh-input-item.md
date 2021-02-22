@@ -54,11 +54,11 @@ General settings of the list item
 
 - `type` <small>TEXT</small> _Type_
 
-  Type of input (see f7-input docs)
+  Type of input (see <a class="external text-color-blue" target="_blank" href="https://framework7.io/docs/inputs.html#supported-inputs">f7 input docs</a>)
 
 - `inputmode` <small>TEXT</small> _Input Mode_
 
-  Type of data that might be entered: see <a class="external text-color-blue" target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/inputmode">MDN docs</a>
+  Type of data that might be entered (see <a class="external text-color-blue" target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/inputmode">MDN docs</a>)
 
 - `placeholder` <small>TEXT</small> _Placeholder_
 
