@@ -186,43 +186,28 @@ To change the type of an equipment or point, simply edit the tags.
 Some of these edits are possible from the Model Page itself.
 Where that's not supported, you can make the changes through the Item's Page.
 
-## Controls and Sensor types
+## Badges
 
-This is a table descibing the Equipment types and point class and type to enable display of badges and measurements on the location cards.
-This is based off the sources linked below.
+This is a table describing the Equipment, Point and Property classes needed to enable the display of status and measurement badges on the location cards.
 
+| Badge        | Type        | Equipment                                                  | Point                              | Property    |
+|--------------|-------------|------------------------------------------------------------|------------------------------------|-------------|
+| Lights       | Status      | *                                                          | Control, Switch                    | Light       |
+| Windows      | Status      | Window                                                     | OpenState                          | *           |
+| Doors        | Status      | Door, FrontDoor, BackDoor, InnerDoor, CellarDoor, SideDoor | OpenState                          | *           |
+| Garage Doors | Status      | GarageDoor                                                 | OpenState                          | *           |
+| Blinds       | Status      | Blinds                                                     | OpenState                          | *           |
+| Presence     | Status      | *                                                          | Status                             | Presence    |
+| Lock         | Status      | Lock                                                       | Status, OpenState, Control, Switch | *           |
+| Climate      | Status      | HVAC                                                       | Status, Control, Switch            | *           |
+| Screens      | Status      | Screen, Television                                         | Status, Control, Switch            | Power       |
+| Speakers     | Status      | Receiver, Speaker                                          | Status, Control, Switch            | Power       |
+| Projectors   | Status      | Projector                                                  | Status, Control, Switch            | Power       |
+| Alarms       | Status      | *                                                          | Alarm                              | *           |
+| Luminance    | Measurement | *                                                          | Measurement                        | Light       |
+| Temperature  | Measurement | *                                                          | Measurement                        | Temperature |
+| Humidity     | Measurement | *                                                          | Measurement                        | Humidity    |
+
+This table is based off the sources:
 - <https://github.com/openhab/openhab-webui/blob/main/bundles/org.openhab.ui/web/src/components/cards/glance/location/status-badge.vue#L63>
 - <https://github.com/openhab/openhab-webui/blob/main/bundles/org.openhab.ui/web/src/components/cards/glance/location/measurement-badge.vue#L48>
-
-### Badges
-
-| Type      | Equipment | Equipment subtypes allowed | Point Class | Point Type | Point Subtypes allowed |
-| ----------- | --- | ---- | ----------- | ---- | ----- |
-| Lights | ANY | NA |Control | Light | yes |
-| Windows  | Window | no | Status | OpenState | no |
-| Doors | Door or FrontDoor | no | Status | OpenState | no |
-| Garage Doors | GarageDoor | no | Status | OpenState | no |
-| Blinds | Blinds | no | Status | OpenState | no |
-| Presence | ANY | NA | Status | Presence | yes |
-| Lock | Lock | no | Status |  OpenState | no |
-| Lock | Lock | no | Status |  ANY | no |
-| Lock | Lock | no | Control |  ANY | yes |
-| Climate | HVAC | yes | Status | ANY | no |
-| Climate | HVAC | yes | Control | ANY | yes |
-| Screens | Screen | yes | Status | Power | no |
-| Screens | Screen | yes | Control | Power | yes |
-| Speakers | Receiver or Speaker | Status | Power | no |
-| Speakers | Receiver or Speaker | Control | Power | yes |
-| Projectors | Projector | no | Status | Power | no |
-| Projectors | Projector | no | Control | Power | yes |
-| Alarms | ANY | NA | Alarm | ANY | yes |
-
-### Measurements
-
- These don't care about equipment and just look at points
-
- | Type      |  Point Class | Point Type | Point Subtypes allowed |
-| ----------- | ----------- | ---- | ----- |
-| luminance |  Measurement | Light | yes |
-| temperature |  Measurement | Temperature | yes |
-| humidity |  Measurement | Humidity | yes |
