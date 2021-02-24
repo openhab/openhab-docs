@@ -3,8 +3,6 @@ layout: developersguide
 title: Thing Descriptions
 ---
 
-{% include base.html %}
-
 # Binding Definitions
 
 {:.no_toc}

@@ -3,8 +3,6 @@ layout: documentation
 title: Getting Started - First Steps
 ---
 
-{% include base.html %}
-
 # First Steps
 
 The following instructions will guide you through the initial steps after first installing openHAB.

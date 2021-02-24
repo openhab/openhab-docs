@@ -3,8 +3,6 @@ layout: developersguide
 title: Build System
 ---
 
-{% include base.html %}
-
 # Build System
 
 The buildsystem is based on maven.

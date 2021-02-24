@@ -3,8 +3,6 @@ layout: documentation
 title: openHAB on Linux
 ---
 
-{% include base.html %}
-
 # openHAB on Linux
 
 The following instructions will guide you through the process of setting up openHAB and recommended packages for both .DEB (Ubuntu, Debian etc.) and .RPM (RedHat, CentOS, Fedora etc.) Linux systems.

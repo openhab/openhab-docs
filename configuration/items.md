@@ -3,8 +3,6 @@ layout: documentation
 title: Items
 ---
 
-{% include base.html %}
-
 # Items
 
 In openHAB Items represent all properties and capabilities of the user’s home automation.

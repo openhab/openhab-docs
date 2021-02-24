@@ -3,8 +3,6 @@ layout: documentation
 title: openhab-docs Markdown StyleGuide
 ---
 
-{% include base.html %}
-
 # openHAB Documentation Style Guide
 
 ## General Remarks

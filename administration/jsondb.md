@@ -3,8 +3,6 @@ layout: documentation
 title: JsonDB Storage
 ---
 
-{% include base.html %}
-
 # JsonDB Storage
 
 JsonDB provides a system database for storage of configuration data.

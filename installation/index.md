@@ -3,8 +3,6 @@ layout: documentation
 title: Installation Overview
 ---
 
-{% include base.html %}
-
 # Installation Overview
 
 openHAB is written completely in Java.

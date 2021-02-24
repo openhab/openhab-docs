@@ -3,8 +3,6 @@ layout: developersguide
 title: Automation Modules
 ---
 
-{% include base.html %}
-
 # Developing Automation Modules
 
 {:.no_toc}

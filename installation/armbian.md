@@ -3,8 +3,6 @@ layout: documentation
 title: Armbian
 ---
 
-{% include base.html %}
-
 # Armbian
 
 ## What is Armbian?

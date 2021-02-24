@@ -3,8 +3,6 @@ layout: documentation
 title: Concepts
 ---
 
-{% include base.html %}
-
 # Concepts
 
 When first thinking about your home automation system, it may be helpful to bear in mind that there are two ways of thinking about or viewing your system: the physical view and the functional view.

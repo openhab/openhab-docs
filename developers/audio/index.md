@@ -3,8 +3,6 @@ layout: developersguide
 title: Audio & Voice
 ---
 
-{% include base.html %}
-
 # Audio & Voice
 
 openHAB provides a modular architecture that enables all kinds of different use cases.

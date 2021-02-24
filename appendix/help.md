@@ -3,8 +3,6 @@ layout: documentation
 title: Finding Help and FAQs
 ---
 
-{% include base.html %}
-
 # Finding Help
 
 openHAB is surrounding by an amazing community helping new users, discussing problems and providing tutorials and examples.

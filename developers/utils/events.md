@@ -3,8 +3,6 @@ layout: developersguide
 title: Event Bus
 ---
 
-{% include base.html %}
-
 # Event Bus
 
 {:.no_toc}

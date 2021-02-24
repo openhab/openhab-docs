@@ -3,8 +3,6 @@ layout: documentation
 title: Items
 ---
 
-{% include base.html %}
-
 # Items
 
 openHAB has a strict separation between the physical world (the "Things", see below) and the application, which is built around the notion of "Items" (also called the virtual layer).

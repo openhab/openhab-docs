@@ -3,8 +3,6 @@ layout: documentation
 title: Getting Started - Introduction
 ---
 
-{% include base.html %}
-
 # Welcome
 
 Welcome to openHAB.

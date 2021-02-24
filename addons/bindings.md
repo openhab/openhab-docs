@@ -3,8 +3,6 @@ layout: documentation
 title: Bindings
 ---
 
-{% include base.html %}
-
 # Bindings
 
 Bindings connect your smart home's devices and technologies to openHAB.

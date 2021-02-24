@@ -3,8 +3,6 @@ layout: developersguide
 title: Configuration Descriptions
 ---
 
-{% include base.html %}
-
 # Configuration Descriptions
 
 Specific services or bindings usually require a configuration to be operational in a meaningful way.

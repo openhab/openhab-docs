@@ -3,8 +3,6 @@ layout: documentation
 title: openHAB REST API
 ---
 
-{% include base.html %}
-
 # openHAB REST API
 
 Through the openHAB [REST API](https://en.wikipedia.org/wiki/REST_API) most aspects of the openHAB system can be readily accessed by other programs.

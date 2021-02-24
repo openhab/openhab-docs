@@ -4,8 +4,6 @@ title: Governance
 license: Parts of this page have been derived from the EPLv2 licensed https://www.eclipse.org/projects/handbook
 ---
 
-{% include base.html %}
-
 # Governance of the openHAB Project
 
 ## Principles

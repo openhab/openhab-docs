@@ -3,8 +3,6 @@ layout: documentation
 title: Audio & Voice
 ---
 
-{% include base.html %}
-
 # Audio & Voice
 
 Audio and voice features are an important aspect of any smart home solution as it is a very natural way to interact with the user.
