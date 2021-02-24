@@ -3,8 +3,6 @@ layout: documentation
 title: Sitemaps
 ---
 
-{% include base.html %}
-
 # Sitemaps
 
 In openHAB a collection of [Things]({{base}}/concepts/things.html) and [Items]({{base}}/concepts/items.html) represent physical or logical objects in the user's home automation setup.

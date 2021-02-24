@@ -3,8 +3,6 @@ layout: developersguide
 title: Configuration Admin
 ---
 
-{% include base.html %}
-
 # Configuration Admin Service
 
 As defined in the [OSGi Compendium Release 7][OSGi-cmpn] *configuration is the process of defining the configuration data of bundles and assuring that those bundles receive that data when they are active in the OSGi Service Platform.*

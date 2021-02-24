@@ -3,8 +3,6 @@ layout: documentation
 title: Bundle Management
 ---
 
-{% include base.html %}
-
 # Bundle Management
 
 The [console](console.html) offers various commands to manage bundles, among other things.

@@ -3,8 +3,6 @@ layout: documentation
 title: Multimedia
 ---
 
-{% include base.html %}
-
 # Multimedia
 
 ## Volume

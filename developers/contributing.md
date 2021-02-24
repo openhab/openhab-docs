@@ -3,8 +3,6 @@ layout: developersguide
 title: Contribution
 ---
 
-{% include base.html %}
-
 # Contributing to the Development of openHAB
 
 ## The Repositories

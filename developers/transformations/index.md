@@ -3,8 +3,6 @@ layout: developersguide
 title: Transformations / Profiles
 ---
 
-{% include base.html %}
-
 # Developing a Transformation Service
 
 Transformations and Profiles (see next section) are very similar in their nature. Usually

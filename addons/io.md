@@ -3,8 +3,6 @@ layout: documentation
 title: System Integrations
 ---
 
-{% include base.html %}
-
 # System Integrations
 
 openHAB supports services that enable integration with various technologies that don't fall into other add-on categories.

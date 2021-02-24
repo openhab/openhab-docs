@@ -3,8 +3,6 @@ layout: documentation
 title: Securing Communication and Access
 ---
 
-{% include base.html %}
-
 # Securing access to openHAB
 
 openHAB has mainly two ways to be accessed:

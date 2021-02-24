@@ -3,8 +3,6 @@ layout: documentation
 title: Rules
 ---
 
-{% include base.html %}
-
 # Textual Rules
 
 "Rules" are used for automating processes: Each rule can be triggered, which invokes a script that performs any kinds of tasks, e.g. turn on lights by modifying your items, do mathematical calculations, start timers etcetera.

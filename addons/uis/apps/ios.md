@@ -3,8 +3,6 @@ layout: documentation
 title: iOS App
 ---
 
-{% include base.html %}
-
 # iOS App
 
 <!-- https://developer.apple.com/app-store/marketing/guidelines/de/#downloadOnAppstore -->

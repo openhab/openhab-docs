@@ -3,8 +3,6 @@ layout: documentation
 title: Units Of Measurement
 ---
 
-{% include base.html %}
-
 # Units Of Measurement
 
 To express measured values in a scientific correct unit the framework supports units of measurement.

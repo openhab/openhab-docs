@@ -3,8 +3,6 @@ layout: developersguide
 title: Event Admin
 ---
 
-{% include base.html %}
-
 # Introduction
 
 In a dynamic environment like OSGi, communication with events has a wide variety of use cases.

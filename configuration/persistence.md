@@ -3,8 +3,6 @@ layout: documentation
 title: Persistence
 ---
 
-{% include base.html %}
-
 # Persistence
 
 openHAB can store data over time; this is known as persistence.

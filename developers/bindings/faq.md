@@ -3,8 +3,6 @@ layout: developersguide
 title: FAQ
 ---
 
-{% include base.html %}
-
 # Frequently Asked Questions (FAQs)
 
 Here is a list of frequently asked questions around the development of bindings.

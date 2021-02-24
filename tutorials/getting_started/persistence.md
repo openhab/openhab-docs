@@ -3,8 +3,6 @@ layout: documentation
 title:  Persistence
 ---
 
-{% include base.html %}
-
 # Persistence
 
 There are many times in home automation where one wants to keep, chart, and otherwise use the historic states of their Items.

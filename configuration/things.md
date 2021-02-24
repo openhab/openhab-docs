@@ -3,8 +3,6 @@ layout: documentation
 title: Things
 ---
 
-{% include base.html %}
-
 # Things
 
 [Things]({{base}}/concepts/things.html) represent the physical layer of an openHAB system.

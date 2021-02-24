@@ -3,8 +3,6 @@ layout: documentation
 title: Advanced Functionality and Administrative Tasks
 ---
 
-{% include base.html %}
-
 # Advanced Functionality and Administrative Tasks
 
 As a runtime environment openHAB uses [Apache Karaf](https://karaf.apache.org), a modern and polymorphic container for hosting Java applications.

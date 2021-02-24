@@ -3,8 +3,6 @@ layout: developersguide
 title: Coding Guidelines
 ---
 
-{% include base.html %}
-
 # Coding Guidelines
 
 {:.no_toc}
@@ -89,9 +87,9 @@ The rules are defined at <https://github.com/openhab/static-code-analysis/tree/m
 ### Java Coding Style
 
 - The [Java naming conventions](https://java.about.com/od/javasyntax/a/nameconventions.htm) should always be used and are descibed in detail at the link, a quick summary is:
-    * Channel IDs: `lowerCamelCase`
-    * Variables: `lowerCamelCase`
-    * Constants: `ALL_UPPER_CASE`
+  - Channel IDs: `lowerCamelCase`
+  - Variables: `lowerCamelCase`
+  - Constants: `ALL_UPPER_CASE`
 - Generics must be used where applicable. See example below:
 
 ```java

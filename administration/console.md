@@ -3,8 +3,6 @@ layout: documentation
 title: The Console
 ---
 
-{% include base.html %}
-
 # The Console
 
 The console offers the ability to:

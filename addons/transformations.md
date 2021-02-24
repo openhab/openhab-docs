@@ -3,8 +3,6 @@ layout: documentation
 title: Transformations
 ---
 
-{% include base.html %}
-
 # Transformations
 
 Transformations are used to translate data from a cluttered or technical raw value to a processed or human-readable representation.

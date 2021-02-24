@@ -3,8 +3,6 @@ layout: documentation
 title: Windows
 ---
 
-{% include base.html %}
-
 # openHAB on Windows
 
 The following instructions will guide you through the process of setting up openHAB.

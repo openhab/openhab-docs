@@ -3,8 +3,6 @@ layout: documentation
 title:  Adding Things - Simple
 ---
 
-{% include base.html %}
-
 # Adding Things - Simple
 
 As covered in the [concepts section]({{base}}/concepts/index.html) of the openHAB Docs, a binding is an add-on to openHAB that understands how to communicate with a specific home automation technology or API.

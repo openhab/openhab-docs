@@ -3,8 +3,6 @@ layout: developersguide
 title: OSGi Declarative Services
 ---
 
-{% include base.html %}
-
 # Declarative Services
 
 {:.no_toc}
