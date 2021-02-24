@@ -3,8 +3,6 @@ layout: documentation
 title: Docker
 ---
 
-{% include base.html %}
-
 # openHAB inside a Docker Container
 
 Docker is the most popular among a collection of tools that provide containerization.

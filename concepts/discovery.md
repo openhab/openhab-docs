@@ -3,8 +3,6 @@ layout: documentation
 title: Thing Discovery
 ---
 
-{% include base.html %}
-
 # Thing Discovery
 
 Many devices, technologies and systems can be automatically discovered on the network or browsed through some API. It therefore makes a lot of sense to use these features for a smart home solution.

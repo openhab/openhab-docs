@@ -3,8 +3,6 @@ layout: developersguide
 title: Bindings
 ---
 
-{% include base.html %}
-
 # Developing a Binding
 
 {:.no_toc}
@@ -969,7 +967,7 @@ Binding additional services to a handler can be achieved by implementing the ser
 Instead of using the Component annotation your discovery service implements the `ThingHandlerService`.
 It should extend the `AbstractDiscoveryService` (which implements `DiscoveryService`) just like a normal service:
 
-```
+```java
 public class <your binding bridge DiscoveryService> extends AbstractDiscoveryService
         implements ThingHandlerService {
 ```
@@ -977,7 +975,7 @@ public class <your binding bridge DiscoveryService> extends AbstractDiscoverySer
 The interface `ThingHandlerService` has 2 methods to pass the handler of the bridge.
 A typical implementation is:
 
-```
+```java
     @Override
     public void setThingHandler(@Nullable ThingHandler handler) {
         if (handler instanceof <your binding handler>) {
@@ -997,7 +995,7 @@ The handler can be used to get the bridge UID or to get access to the configured
 In the bridge handler you need to activate the thing handler service.
 This is done by implementing the `getServices` method in your bridge handler:
 
-```
+```java
     @Override
     public Collection<Class<? extends ThingHandlerService>> getServices() {
         return Collections.singleton(<your binding bridge DiscoveryService>.class);

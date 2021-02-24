@@ -3,8 +3,6 @@ layout: developersguide
 title: Extension service
 ---
 
-{% include base.html %}
-
 # Extension service
 
 openHAB comes with an API that allows implementing a service that manages the installed extensions within a solution.

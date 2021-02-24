@@ -3,8 +3,6 @@ layout: documentation
 title: macOS
 ---
 
-{% include base.html %}
-
 # Installation on macOS
 
 This page is structured as follows:

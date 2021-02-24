@@ -3,8 +3,6 @@ layout: documentation
 title: Persistence Services
 ---
 
-{% include base.html %}
-
 # Persistence Services
 
 Persistence services enable the storage of item states over time.

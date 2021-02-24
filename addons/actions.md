@@ -3,8 +3,6 @@ layout: documentation
 title: Actions
 ---
 
-{% include base.html %}
-
 # Actions
 
 Actions are predefined methods that are called from openHAB rules and scripts.

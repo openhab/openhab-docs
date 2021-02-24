@@ -3,8 +3,6 @@ layout: developersguide
 title: OSGi
 ---
 
-{% include base.html %}
-
 # OSGi Overview
 
 {:.no_toc}

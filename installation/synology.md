@@ -3,8 +3,6 @@ layout: documentation
 title: Synology DiskStation
 ---
 
-{% include base.html %}
-
 # Synology DiskStation
 
 The [DiskStation by Synology](https://www.synology.com/en-us/dsm) is a famous NAS server solution for your home, allowing the installation of additional packages.

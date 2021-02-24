@@ -3,8 +3,6 @@ layout: documentation
 title:  Semantic Model
 ---
 
-{% include base.html %}
-
 # Semantic Model
 
 Things represent devices and the sensors and actuators of those devices.
@@ -209,5 +207,6 @@ This is a table describing the Equipment, Point and Property classes needed to e
 | Humidity     | Measurement | *                                                          | Measurement                        | Humidity    |
 
 This table is based off the sources:
+
 - <https://github.com/openhab/openhab-webui/blob/main/bundles/org.openhab.ui/web/src/components/cards/glance/location/status-badge.vue#L63>
 - <https://github.com/openhab/openhab-webui/blob/main/bundles/org.openhab.ui/web/src/components/cards/glance/location/measurement-badge.vue#L48>

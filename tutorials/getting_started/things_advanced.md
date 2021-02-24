@@ -3,8 +3,6 @@ layout: documentation
 title:  Adding Things - Advanced
 ---
 
-{% include base.html %}
-
 # Adding Things - Advanced
 
 Some bindings and technologies simply do not support automatic discovery.

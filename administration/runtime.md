@@ -3,8 +3,6 @@ layout: documentation
 title: Runtime Commands
 ---
 
-{% include base.html %}
-
 # Runtime Commands
 
 It is possible to query and even change the state of entities like items or things. Therefore the console offers commands in various areas:

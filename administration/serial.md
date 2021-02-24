@@ -3,8 +3,6 @@ layout: documentation
 title: Serial Port Configuration
 ---
 
-{% include base.html %}
-
 # Serial Port Configuration
 
 Without correct configuration, bindings using serial devices might not be able to open the serial port for communication, and you will see an error message in the logs.

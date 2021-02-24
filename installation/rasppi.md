@@ -3,8 +3,6 @@ layout: documentation
 title: Raspberry Pi
 ---
 
-{% include base.html %}
-
 **Contents**
 {::options toc_levels="2..4"/}
 

@@ -3,8 +3,6 @@ layout: documentation
 title: Contributing to openHAB
 ---
 
-{% include base.html %}
-
 # Contributing to openHAB
 
 openHAB is a community effort and everyone can take part in that.

@@ -3,8 +3,6 @@ layout: documentation
 title: Editors
 ---
 
-{% include base.html %}
-
 # Editors - Different Ways to Simplify Your Textual Configuration
 
 Currently there are several existing solutions, that can help you configuring your openHAB instance in a textual way.

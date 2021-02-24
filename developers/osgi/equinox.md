@@ -3,8 +3,6 @@ layout: developersguide
 title: Equinox
 ---
 
-{% include base.html %}
-
 # Equinox
 
 {:.no_toc}

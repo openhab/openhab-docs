@@ -3,8 +3,6 @@ layout: developersguide
 title: Writing tests
 ---
 
-{% include base.html %}
-
 # Tests
 
 There are two approaches for testing:

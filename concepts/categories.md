@@ -3,8 +3,6 @@ layout: documentation
 title: Categories
 ---
 
-{% include base.html %}
-
 # Categories
 
 Categories in openHAB are used to provide meta information about Things, Channels, etc. UIs can use this information to render specific icons or provide a search functionality to for example filter all Things for a certain category.

@@ -3,8 +3,6 @@ layout: documentation
 title: Logging
 ---
 
-{% include base.html %}
-
 # Logging in openHAB
 
 This article describes the logging functionality in openHAB.
