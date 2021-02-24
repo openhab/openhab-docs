@@ -3,23 +3,15 @@ layout: documentation
 title: Next-Gen Rules
 ---
 
-{% include base.html %}
+:::tip
+This information is for advanced users.
+If your are looking for general rules explanations have a look at our [Rules](https://www.openhab.org/docs/configuration/rules-dsl.html) article.
+:::
 
 # Next-Generation Rule Engine
 
-[![experimental](https://badges.github.io/stability-badges/dist/experimental.svg)](https://github.com/badges/stability-badges)
-
-Since openHAB 2.4 another Rule Engine has been added. It works fundamentally different than what you find with our current [Rules](https://www.openhab.org/docs/configuration/rules-dsl.html). It allows Rules to be edited in a graphical fashion and to interact with [JSR223 Scripts (Javascript, Jypthon, etc)](https://www.openhab.org/docs/configuration/jsr223.html).
-
-## Installation
-
-Install the rule engine from Add-ons → Misc → Rule Engine (Experimental).
-
-![rule engine addon](images/rules_ng_addons.png)
-
-When you now refresh your browser, you will see a `Rules` menu appearing in the main menu of Paper UI.
-
-![new rule](images/rules_ng_new_rule.png)
+Since openHAB 2.4 another Rule Engine has been added.
+It allows Rules to be edited in a graphical fashion and to interact with [JSR223 Scripts (Javascript, Jypthon, etc)](https://www.openhab.org/docs/configuration/jsr223.html).
 
 ## Concept
 
