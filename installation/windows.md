@@ -101,6 +101,7 @@ By installing the openHAB process as a service in Windows, you can:
     set.default.KARAF_DATA=%OPENHAB_USERDATA%
     set.default.KARAF_ETC=%OPENHAB_USERDATA%\etc
     set.default.PATH=%PATH%;%KARAF_BASE%\lib;%KARAF_HOME%\lib
+    set.default.JAVA_HOME=C:\Program Files\Zulu\zulu-11
 
     # Java Application
     wrapper.working.dir=%KARAF_BASE%
