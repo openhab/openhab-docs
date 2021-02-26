@@ -178,8 +178,8 @@ This parameter has the configuration ID ```config_1_2``` and is of type ```INTEG
 ### Parameter 2: LIGHT
 
 Light threshold [lx]:
-0          – run Learn ambient light sequence.  
-2000 – is used as daylight (always night mode).  
+0      –    run Learn ambient light sequence.  
+2000 –    is used as daylight (always night mode).  
 Value can be controlled via potentiometer (if present on device) –  
 potentiometer value is then used as the default value and any  
 potentiometer movement rewrites the current setting
@@ -208,7 +208,7 @@ This parameter has the configuration ID ```config_5_1``` and is of type ```INTEG
 Brightness measuring interval [min]
 nterval for measuring ambient light when lamp is on (lamp switches off  
 briefly and measures). 0 = function is off.
-Values in the range 5 to 120 may be set.
+Values in the range 0 to 120 may be set.
 
 The manufacturer defined default value is ```0```.
 
@@ -304,7 +304,7 @@ Timeout:
 
 255 = Lamp/relay is switched off for TIME (cfg 1). It does not wait for a  
 motion event and works normally via current motion evaluation.
-The following option values may be configured, in addition to values in the range 0 to 209 -:
+The following option values may be configured -:
 
 | Value  | Description |
 |--------|-------------|
@@ -345,7 +345,7 @@ enabled.
 
 255 = Lamp/relay is switched on for TIME (cfg 1). It does not wait for a  
 motion event and works normally via current motion evaluation.
-Values in the range 2 to 209 may be set.
+Values in the range 0 to 255 may be set.
 
 The manufacturer defined default value is ```255```.
 
@@ -368,7 +368,7 @@ no motion.
 210 - 254 = Reserved
 
 255 = Never stop waiting for motion.
-Values in the range 0 to 209 may be set.
+Values in the range 0 to 255 may be set.
 
 The manufacturer defined default value is ```204```.
 
@@ -383,7 +383,7 @@ The intention is to use a much longer timeout value than the time after a
 single ON command which should then be followed by a short timeout value.  
 The behaviour is the same as for parameter 10 (OFF\_LOCAL\_DISABLE)  
 except: 255 – device ignores ON - OFF sequence and uses OFF behaviour.
-Values in the range 0 to 209 may be set.
+Values in the range 0 to 255 may be set.
 
 The manufacturer defined default value is ```204```.
 
@@ -398,7 +398,7 @@ The intention is to use a much longer timeout value than the time after a sin-
 gle OFF command which should then be followed by a short timeout value.  
 The behaviour is the same as for parameter 11 (ON\_LOCAL\_DISABLE)  
 except: 255 – device ignores OFF - ON sequence and uses ON behaviour.
-Values in the range 0 to 209 may be set.
+Values in the range 0 to 255 may be set.
 
 The manufacturer defined default value is ```204```.
 
@@ -441,7 +441,7 @@ Timeout:
 210 - 254 = Reserved
 
 255 = BASIC SET to motion endpoint ignored, motion sensor still disabled.
-Values in the range 2 to 209 may be set.
+Values in the range 0 to 255 may be set.
 
 The manufacturer defined default value is ```0```.
 

@@ -60,6 +60,8 @@ The following table summarises the channels available for the Z-Smoke -:
 | Battery Level | battery-level | system.battery_level | Battery | Number |
 
 ### Switch
+
+
 Switch the power on and off.
 
 The ```switch_binary``` channel is of type ```switch_binary``` and supports the ```Switch``` item and is in the ```Switch``` category.

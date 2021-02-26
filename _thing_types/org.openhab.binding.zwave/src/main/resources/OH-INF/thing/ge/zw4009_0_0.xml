@@ -6,9 +6,9 @@
                       https://openhab.org/schemas/thing-description/v1.0.0">
 
   <thing-type id="ge_zw4009_00_000" listed="false">
-    <label>ZW4009 Smart Toggle Switch</label>
+    <label>39354/ZW4009 Smart Toggle Switch</label>
     <description><![CDATA[
-Smart Toggle Switch<br /> <h1>Overview</h1><p>In-Wall Smart Toggle Switch (120/277VAC) with QuickFit and SimpleWire enhancements. Revolutionary QuickFit design features a housing depth that is up to 20 percent smaller than the previous Z-Wave models. This reduced size coupled with the elimination of heat taps provides a better fit in older style boxes and multi-gang configurations. SimpleWire technology allows line and load to automatically be configured with auto-sensing line-load terminals. All of this is coupled with Z-Wave S2 and Smart Start allows for effortless installation while being safer than ever!</p> <br /> <h2>Inclusion Information</h2><p>Press and release the top or bottom of the wireless smart switch (rocker).</p> <br /> <h2>Exclusion Information</h2><p>Press and release the top or bottom of the wireless smart switch (rocker).</p>
+Smart Toggle Switch<br /> <h1>Overview</h1><p>In-Wall Smart Toggle Switch (120/277VAC) with QuickFit and SimpleWire enhancements. Revolutionary QuickFit design features a housing depth that is up to 20 percent smaller than the previous Z-Wave models. This reduced size coupled with the elimination of heat taps provides a better fit in older style boxes and multi-gang configurations. SimpleWire technology allows line and load to automatically be configured with auto-sensing line-load terminals. All of this is coupled with Z-Wave S2 and Smart Start allows for effortless installation while being safer than ever!</p> <br /> <h2>Inclusion Information</h2><p>Press and release the top or bottom of the wireless smart switch (rocker).</p> <br /> <h2>Exclusion Information</h2><p>Press and release the top or bottom of the wireless smart switch (rocker).</p> <br /> <h2>Wakeup Information</h2><p><br /></p>
     ]]></description>
     <category>WallSwitch</category>
 
@@ -31,9 +31,9 @@ Smart Toggle Switch<br /> <h1>Overview</h1><p>In-Wall Smart Toggle Switch (120/2
     <!-- DEVICE PROPERTY DEFINITIONS -->
     <properties>
       <property name="vendor">Jasco Products</property>
-      <property name="modelId">ZW4009</property>
+      <property name="modelId">39354/ZW4009</property>
       <property name="manufacturerId">0063</property>
-      <property name="manufacturerRef">4952:3231</property>
+      <property name="manufacturerRef">4952:3231,4952:3238</property>
       <property name="dbReference">1237</property>
       <property name="defaultAssociations">1</property>
     </properties>

@@ -7,7 +7,9 @@
 
   <thing-type id="zipato_rgbwe27zw_00_000" listed="false">
     <label>RGBWE27ZW RGBW bulb</label>
-    <description>RGBW bulb</description>
+    <description><![CDATA[
+RGBW bulb<br /> <h1>Overview</h1><p>Zipato RGBW BULB has 5 color channels available for you to adjust: RED, GREEN, BLUE, WARM WHITE and COLD WHITE. Zipato RGBW BULB can be used to add color to your home or just to lighten it up in any white color tone you desire.</p> <br /> <h2>Inclusion Information</h2><p>Screw the bulb on a standard E27 socket. Turn on the wall switch. Tap a few times on the bulb to include it (with your controller in inclusion mode)</p> <br /> <h2>Exclusion Information</h2><p>Screw the bulb on a standard E27 socket. Turn on the wall switch. Tap a few times on the bulb to include it (with your controller in exclusion mode)</p> <br /> <h2>Wakeup Information</h2><p><br /></p>
+    ]]></description>
     <category>LightBulb</category>
 
     <!-- CHANNEL DEFINITIONS -->

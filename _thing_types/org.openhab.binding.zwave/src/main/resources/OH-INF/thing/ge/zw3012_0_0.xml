@@ -6,9 +6,9 @@
                       https://openhab.org/schemas/thing-description/v1.0.0">
 
   <thing-type id="ge_zw3012_00_000" listed="false">
-    <label>ZW3012 In-Wall Smart Dimmer</label>
+    <label>ZW3012 In-Wall No Neutral Smart Dimmer</label>
     <description><![CDATA[
-In-Wall Smart Dimmer<br /> <h1>Overview</h1><p>In-Wall Smart Dimmer</p> <br /> <h2>Inclusion Information</h2><p>Single press ON or OFF to include when controller is in include mode</p> <br /> <h2>Exclusion Information</h2><p>Single press ON or OFF to exclude when controller is in exclude mode</p> <br /> <h2>Wakeup Information</h2><p><br /></p>
+In-Wall No Neutral Smart Dimmer<br /> <h1>Overview</h1><p>In-Wall No Neutral Smart Dimmer</p> <br /> <h2>Inclusion Information</h2><p>Single press ON or OFF to include when controller is in include mode</p> <br /> <h2>Exclusion Information</h2><p>Single press ON or OFF to exclude when controller is in exclude mode</p> <br /> <h2>Wakeup Information</h2><p><br /></p>
     ]]></description>
     <category>WallSwitch</category>
 

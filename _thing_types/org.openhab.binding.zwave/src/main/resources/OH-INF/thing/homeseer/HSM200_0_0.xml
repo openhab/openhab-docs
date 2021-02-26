@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="homeseer_HSM200_00_000" listed="false">
+    <label>HS-M200 Homeseer Z-Wave Sensor</label>
+    <description><![CDATA[
+Homeseer Z-Wave Sensor<br /> <h1>Overview</h1><p>The HSM200 is designed to sense motion, temperature and light levels and will work with most Z-Wave certified controllers or smart hubs. HomeSeer HS4 system users can also program the unit to display up to 7 different colors when things happen in the home. Since the HSM200 is line powered, it can function as a Z-Wave network repeater and there are no batteries to replace!<br /></p> <br /> <h2>Inclusion Information</h2><p>Adding the HSM200 to your Z-Wave Network </p><p>a) The HSM200 is Z-Wave certified multi-sensor that should work with any Z-Wave certified system controller. Please follow the procedure required by your controller manufacturer for including the HSM200 with your Z-Wave network.</p><p>b) Once that is started, press the button on the side of the HSM200 once to activate inclusion.</p> <br /> <h2>Exclusion Information</h2><p>Press the button on the side of the HSM200 once </p> <br /> <h2>Wakeup Information</h2><p><br /></p>
+    ]]></description>
+    <category>Sensor</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_dimmer" typeId="switch_dimmer">
+        <label>Dimmer</label>
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+          <property name="binding:Command:OnOffType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+        </properties>
+      </channel>
+      <channel id="sensor_luminance" typeId="sensor_luminance">
+        <label>Sensor (luminance)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_SENSOR_MULTILEVEL;type=LUMINANCE</property>
+        </properties>
+      </channel>
+      <channel id="sensor_temperature" typeId="sensor_temperature">
+        <label>Sensor (temperature)</label>
+        <properties>
+          <property name="binding:*:QuantityType">COMMAND_CLASS_SENSOR_MULTILEVEL;type=TEMPERATURE</property>
+        </properties>
+      </channel>
+      <channel id="color_color" typeId="color_color">
+        <label>Color Control</label>
+        <properties>
+          <property name="binding:*:HSBType">COMMAND_CLASS_SWITCH_COLOR;colorMode=RGB</property>
+          <property name="binding:*:PercentType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+          <property name="binding:Command:OnOffType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+        </properties>
+      </channel>
+      <channel id="color_temperature" typeId="color_temperature">
+        <label>Color Temperature</label>
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_SWITCH_COLOR;colorMode=DIFF_WHITE</property>
+          <property name="binding:Command:OnOffType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+        </properties>
+      </channel>
+      <channel id="alarm_motion" typeId="alarm_motion">
+        <label>Alarm (motion)</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=MOTION</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">HomeSeer Technologies</property>
+      <property name="modelId">HS-M200</property>
+      <property name="manufacturerId">000C</property>
+      <property name="manufacturerRef">0004:0001</property>
+      <property name="dbReference">1306</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_1_1" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>1: On time</label>
+        <description><![CDATA[
+minutes that the lights stay on when motion has not been detected.<br /> <h1>Overview</h1><p>On Time sets the number of minutes that the lights stay on when motion has not been detected.</p><p>A value of 0 On Time is a special mode where the lights are constantly sent a command to turn them on whenever motion is detected. The device will NOT turn the lights off in this mode. Note that this mode will significantly shorten battery life.</p><p>Recommended values:</p><p> 5 min for hallways.</p><p> 20 min for an office environment.</p><p> 60 min for a library or other room where someone may be sitting still for a long time.</p>
+        ]]></description>
+        <default>3</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_2_1" type="integer" groupName="configuration"
+                 min="-1" max="99">
+        <label>2: On Level</label>
+        <description><![CDATA[
+value sent to Group 2 when motion is detected<br /> <h1>Overview</h1><p>A value of 0 will turn the lights off (not recommended).</p><p>A value between 1 and 99 will set the dim level to between 1% and 99% (99% is full on).</p><p>A value of -1 will turn the light on which depends on the device but most will set the dim level to the last dim setting.</p>
+        ]]></description>
+        <default>99</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_3_1" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>3: Luminance Report</label>
+        <description><![CDATA[
+Luminance report interval<br /> <h1>Overview</h1><p>A Luminance report is sent to the system controller every LiteMin minutes.</p><p>A value of zero turns this mode off. Luminance values can still be obtained at any time by the home control application in this mode.</p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_4_1" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>4: Temperature Report</label>
+        <description><![CDATA[
+Temperature Report interval<br /> <h1>Overview</h1><p>A value of zero turns this mode off. Temperature values can still be obtained at any time by polling the status of the temperature sensor.<br /></p>
+        ]]></description>
+        <default>5</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Lifeline</label>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: BASIC ON</label>
+        <description><![CDATA[
+<br /> <h1>Overview</h1><p>This group is used to directly turn lights on or off when motion is detected. Up to four (4) Z-Wave devices can be associated in this group. The HSM200 will send a BASIC ON command to all devices that are associated in this group. Note that the Z-Wave devices in this group must be within direct range (about 30’) of the HSM200. Control of nodes that are further away or blocked by metal or concrete walls should rely on the Z-Wave system controller and the home-control application for reliable operation.<br /></p>
+        ]]></description>
+        <multipleLimit>4</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

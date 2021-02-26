@@ -17,7 +17,19 @@ The RGBWE27ZW supports routing. This allows the device to communicate using othe
 
 ## Overview
 
-No device information is provided in the database. Consider [updating the database](https://opensmarthouse.org/zwavedatabase/237) to improve the documentation.
+Zipato RGBW BULB has 5 color channels available for you to adjust: RED, GREEN, BLUE, WARM WHITE and COLD WHITE. Zipato RGBW BULB can be used to add color to your home or just to lighten it up in any white color tone you desire.
+
+### Inclusion Information
+
+Screw the bulb on a standard E27 socket. Turn on the wall switch. Tap a few times on the bulb to include it (with your controller in inclusion mode)
+
+### Exclusion Information
+
+Screw the bulb on a standard E27 socket. Turn on the wall switch. Tap a few times on the bulb to include it (with your controller in exclusion mode)
+
+### General Usage Information
+
+
 
 ## Channels
 
