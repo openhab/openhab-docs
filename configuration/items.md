@@ -681,7 +681,7 @@ You can use *State Profiles* on State Channels and *Trigger Profiles* on Trigger
 Profiles can be specified as a parameter for a given Channel on the Item configuration:
 
 ```java
-<item-type> MyItem { channel="<bindingID>:<thing-typeID>:MyThing:myChannel"[profile="<profileID>", <profile-parameterID>="MyValue", ...]}
+<item-type> MyItem { channel="<bindingID>:<thing-typeID>:MyThing:myChannel"[profile="system:<profileID>", <profile-parameterID>="MyValue", ...]}
 ```
 
 There are some built-in Profiles available which are described in the table below.
@@ -692,12 +692,13 @@ If this is the case, you will find those within the documentation of the Binding
 Also, all [Transformation Services](/addons/#transform) provide a State Profile which allows you to do the transformation already on item-level instead doing it with a [Sitemap]({{base}}/configuration/sitemaps.html).
 You can find the documentation of these Profiles within the [Add-On documentation of the Transformation Service](/addons/#transform) you would like to use.
 
-| ID                                                                                            | Type    | Supported Item Types  | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
+| Profile ID                                                                                    | Type    | Supported Item Types  | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
 |-----------------------------------------------------------------------------------------------|---------|-----------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `default`                                                                                     | State   | All                   | If you don't specify any Profile, this Profile will be used. For State Channels, this means that states and commands are just propagated from the Channel to the Item and vice versa without any changes. For Trigger Channels, the Default Profile won't change anything on the Item.                                                                                                                                                                                                        |
 | `follow`                                                                                      | State   | All                   | If one device should "follow" the actions of another device, this can be used. The term "follow" in this case means that any state that is sent to an Item will be forwarded from this Item to any linked Channel with the `follow` Profile. It takes state updates on an Item and sends them as a command onto the Channel. In the direction from the ThingHandler towards the Item, this Profile ignores state updates.                                                                     |
 | `hysteresis`                                                                                  | State   | Switch                | The `hysteresis` Profile can be configured via three parameters: `lower` (**mandatory**) `QuantityType` or `DecimalType`, `upper` (optional) `QuantityType` or `DecimalType`, `inverted` (optional) `boolean`.  This Profile can be used to trigger alarms when number values exceed a given `lower` bound - sends `ON` to the Switch Item. By defining an additional `upper` bound it can provide kind of anti-flapping. The `inverted` parameter negates the resulting State of the Switch. |
-| `offset`                                                                                      | State   | Number                | An offset can be specified via the parameter `offset` which has to be a `QuantityType` or `DecimalType`. The specified offset will be applied to the value from the device before it arrives at the Item.                                                                                                                                                                                                                                                                                    |
+| `offset`                                                                                      | State   | Number                | An offset can be specified via the parameter `offset` which has to be a `QuantityType` or `DecimalType`. The specified offset will be applied to the value from the device before it arrives at the Item.                                                                                                                                                                                                                                                                                     |
+| `range`                                                                                       | State   | Switch                | The `range` Profile can be used to trigger alarms when number values exceed given limits (`lower` and `upper` bounds). It sends ON to a Switch Item. There are three parameters: `lower` and `upper` (**mandatory**) `QuantityType` or `DecimalType` and `inverted` (optional) `boolean`.                                                                                                                                                                                                     |
 | `timestamp-update`                                                                            | State   | DateTime              | This Profile will update a DateTime Item to track every update of the state of a given Channel, whatever the state is.                                                                                                                                                                                                                                                                                                                                                                        |
 | `timestamp-change`                                                                            | State   | DateTime              | This Profile will update a DateTime Item to track every change of the state of a given Channel.                                                                                                                                                                                                                                                                                                                                                                                               |
 | `rawbutton-on-off-switch`                                                                     | Trigger | Color, Dimmer, Switch | This Profile can only be used on Channels of the type `system.rawbutton`. On those Channels, it will set the Item state to `ON` when a `PRESSED` event arrives and to `OFF` when a `RELEASED` event arrives.                                                                                                                                                                                                                                                                                  |
@@ -733,7 +734,7 @@ end
 Instead of using this Rule, you can also use the `rawbutton-toggle-switch` Profile in combination with [Multi-Channel Linking](#multi-binding-channel-linkage):
 
 ```java
-Color Bedroom_Light { channel="hue:0210:1:bulb1:color", channel="serialbutton:button:mybutton:button" [profile="rawbutton-toggle-switch"] }
+Color Bedroom_Light { channel="hue:0210:1:bulb1:color", channel="serialbutton:button:mybutton:button" [profile="system:rawbutton-toggle-switch"] }
 ```
 
 This will make your Rule obsolete.
@@ -744,11 +745,19 @@ So with Profiles, you can significantly reduce the amount of Rules you need for 
 ```java
 Number:Temperature Outdoor_Temperature { channel="openweathermap:weather-and-forecast:api:local:current#temperature" }
 // Triggers a temperature high alarm (Switch = ON) as of 30 °c and stays ON until temperature drops below 29 °C
-Switch Outdoor_Temperature_High_Alert { channel="openweathermap:weather-and-forecast:api:local:current#temperature" [profile="hysteresis", lower="29 °C", upper="30 °C"] }
+Switch Outdoor_Temperature_High_Alert { channel="openweathermap:weather-and-forecast:api:local:current#temperature" [profile="system:hysteresis", lower="29 °C", upper="30 °C"] }
 // Temperture low alert below 0 °C
-Switch Outdoor_Temperature_Low_Alert { channel="openweathermap:weather-and-forecast:api:local:current#temperature" [profile="hysteresis", lower="0 °C", inverted=true] }
+Switch Outdoor_Temperature_Low_Alert { channel="openweathermap:weather-and-forecast:api:local:current#temperature" [profile="system:hysteresis", lower="0 °C", inverted=true] }
 
 // Indicates a battery low alarm if battery level drops below 15
 Number Battery_Level { channel="serialbutton:button:mybutton:battery-level" }
-Switch Low_Battery { channel="serialbutton:button:mybutton:battery-level" [profile="hysteresis", lower=15, inverted=true] }
+Switch Low_Battery { channel="serialbutton:button:mybutton:battery-level" [profile="system:hysteresis", lower=15, inverted=true] }
+```
+
+##### Example 5
+
+```java
+Number:Dimensionless Outdoor_Humidity { channel="openweathermap:weather-and-forecast:api:local:current#humidity" }
+// Triggers a humidity low / high alarm (Switch = ON) if humidity drops below of 40 % or exceeds 60 %
+Switch Outdoor_Humidity_Alert { channel="openweathermap:weather-and-forecast:api:local:current#humidity" [profile="system:range", lower="40 %", upper="60 %", inverted=true] }
 ```
