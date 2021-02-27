@@ -758,6 +758,6 @@ Switch Low_Battery { channel="serialbutton:button:mybutton:battery-level" [profi
 
 ```java
 Number:Dimensionless Outdoor_Humidity { channel="openweathermap:weather-and-forecast:api:local:current#humidity" }
-// Triggers a humidity low / high alarm (Switch = ON) if humidity drops below of 40 % or exceeds 60 %
+// Triggers a humidity low / high alarm (Switch = ON) if humidity drops below 40 % or exceeds 60 %
 Switch Outdoor_Humidity_Alert { channel="openweathermap:weather-and-forecast:api:local:current#humidity" [profile="system:range", lower="40 %", upper="60 %", inverted=true] }
 ```
