@@ -110,6 +110,30 @@ val headers = newHashMap("Cache-control" -> "no-cache")
 val output = sendHttpGetRequest("https://example.com/?id=1", headers, 1000)
 ```
 
+### Semantics
+
+One can use Semantics features in Rules.
+E.g. determine the location of an Item.
+Regardless if it is a Point, an Equipment or a Location itself.
+Therefore openHAB provides a bunch methods to be used in Rules.
+
+#### Rules DSL
+
+- `boolean isLocation(Item)` - checks if the given Item is is a Location
+- `boolean isEquipment(Item)` - checks if the given Item is is an Equipment
+- `boolean isPoint(Item)` - checks if the given Item is is a Point
+- `Item getLocation(Item)` - gets the Location Item of the Item, returns the related Location Item of the Item or `null`
+- `Class<? extends Location> getLocationType(Item)` - gets the Location type of the Item, returns the related Location type of the Item or `null`
+- `Item getEquipment(Item)` - gets the Equipment Item an Item belongs to, returns the related Equipment Item of the Item or `null`
+- `Class<? extends Equipment> getEquipmentType(Item)` - gets the Equipment type an Item belongs to, returns the related Equipment type of the Item or `null`
+- `Class<? extends Point> getPointType(Item)` - gets the Point type of an Item, returns the related Point type of the Item or `null`
+- `Class<? extends Property> getPropertyType(Item)` - gets the Property type an Item relates to, returns the related Property type of the Item or `null`
+- `Class<? extends Tag> getSemanticType(Item)` - gets the semantic type of an Item (i.e. a sub-type of Location, Equipment or Point)
+
+#### Scripted Automation
+
+One must import the Semantics Action and then call the above functions using `Semantics.<function>`, for example `Semantics.getLocation(Item)`.
+
 ### Timers
 
 `createTimer(AbstractInstant instant, Procedure procedure)`: schedules a block of code to execute at a future time
