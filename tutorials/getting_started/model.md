@@ -13,7 +13,7 @@ There are a fixed set of Item types representing all the different ways that a s
 The configuration of your Items is where meaning is applied to your devices.
 For example, instead of dealing with `zwave:1231242:node12:switch` we can deal with "Livingroom_Lamp".
 
-Items are the main entities that the rest of openHAB works with including Pages, sitemaps, rules, and persistence.
+Items are the main entities that the rest of openHAB works with including Pages, Sitemaps, Rules, and persistence.
 
 There are many ways to organize your items, one of which is to make use of the semantic model (descriptions for location, type of equipment and more).
 openHAB 3 makes extensive use of the semantic model to automatically create Pages (see next section) and to provide natural language interaction.
@@ -23,6 +23,8 @@ Taking the time to understand and choose a logical structure for your home will 
 
 This section gives a good example of one way to model your home with locations and equipment descriptions.
 The semantic model, when set up correctly, will allow openHAB to turn all lights off in the kitchen when asked, as the framework can understand the kitchen location and what items are lights in that location.
+Once you created a model you additionally are able to use [Semantics Actions]({{base}}/configuration/actions.html#semantics) in Rules to e.g. determine the Location of an Item or the related Equipment.
+This will help you to create, generalize and simplify Rules based on patterns and purpose.
 
 {::options toc_levels="2..4"/}
 
