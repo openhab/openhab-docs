@@ -244,7 +244,7 @@ This means in detail:
 
 In general bindings should NOT log to error/warn if e.g. connections are dropped -
 this is considered to be an external problem and from a system perspective to be a normal and expected situation.
-The correct way to inform users about such events is to update the Thing status accordingl
+The correct way to inform users about such events is to update the Thing status accordingly.
 
 Note that all events (including Thing status events) are anyhow already logged.
 
