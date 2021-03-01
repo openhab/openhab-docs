@@ -6,9 +6,9 @@
                       https://openhab.org/schemas/thing-description/v1.0.0">
 
   <thing-type id="inovelli_lzw30_00_000" listed="false">
-    <label>LZW30 Base model On-Off switch</label>
+    <label>LZW30 Black Series On/Off switch</label>
     <description><![CDATA[
-Base model On-Off switch<br /> <h1>Overview</h1><p>The Inovelli On/Off switch is a Z-Wave device that controls attached LED, CFL, &amp; Incandescent lighting which can be highly customized to your liking at the switch itself with our unique config button and advanced firmware.</p> <p> Configuration/Favorites Button: This switch allows for ultimate customization via the Configuration Button (rather than via a Z-Wave HUB) such as the power on state, LED Indicator Color, LED Indicator Intensity, and LED Indicator Intensity (When Off). </p> <p>OTA (Over-the-Air) Enabled: As with all our devices, the switch allows you to receive our latest firmware updates (NOTE: Please make sure your HUB supports this).</p> <br /> <h2>Inclusion Information</h2><p>Now that the switch is physically installed, let’s start the inclusion (pairing) process.</p> <ul><li>Restore power to your switch and if wired properly, the LED bar will light up (should flash a series of colors, then turn blue)</li> <li>Start the inclusion process on your HUB/Gateway</li> <li>Press the config button (A) 3x and the LED bar should pulse blue (if it doesn’t, try pressing the buttons faster or slower) indicating the switch is in inclusion mode. If successful, the switch LED Bar (B) will turn Green. If unsuccessful, the LED Bar will turn RED.</li> <li><strong>Z-Wave Range Check:</strong> Easily check whether or not your switch is within range by holding the Config Button (A) for 5-10 seconds. The LED bar will indicate: RED = Not in Range, or = Within Range GREEN (Good Signal).</li> </ul><p><strong>Final Thoughts / Tips: </strong>If you’re having issues pairing your switch, there’s a couple things you can try. The first one is to hold down the config button for 5 seconds until the LED bar indicates RED or GREEN, where RED = Not in Range, or = Within Range GREEN (Good Signal). If the signal is GREEN, then let’s try an exclusion to reset your switch.</p> <br /> <h2>Exclusion Information</h2><ul><li>Start the exclusion process on your HUB/Gateway</li> <li>Press, “Remove” and tap the Config button 3x and the LED bar should pulse blue</li> <li>The LED bar should flash GREEN if successful</li> </ul>
+Black Series On/Off switch<br /> <h1>Overview</h1><p>The Inovelli Black Series On/Off switch is a Z-Wave device that controls attached LED, CFL, &amp; Incandescent lighting which can be highly customized to your liking at the switch itself with our unique config button and advanced firmware.</p> <p>Configuration/Favorites Button: This switch allows for ultimate customization via the Configuration Button (rather than via a Z-Wave HUB) such as the power on state, LED Indicator Color, LED Indicator Intensity, and LED Indicator Intensity (When Off). </p> <p>OTA (Over-the-Air) Enabled: As with all our devices, the switch allows you to receive our latest firmware updates (NOTE: Please make sure your HUB supports this).</p> <br /> <h2>Inclusion Information</h2><p>Now that the switch is physically installed, let’s start the inclusion (pairing) process.</p> <ul><li>Restore power to your switch and if wired properly, the LED bar will light up (should flash a series of colors, then turn blue)</li> <li>Start the inclusion process on your HUB/Gateway</li> <li>Press the config button (A) 3x and the LED bar should pulse blue (if it doesn’t, try pressing the buttons faster or slower) indicating the switch is in inclusion mode. If successful, the switch LED Bar (B) will turn Green. If unsuccessful, the LED Bar will turn RED.</li> <li><strong>Z-Wave Range Check:</strong> Easily check whether or not your switch is within range by holding the Config Button (A) for 5-10 seconds. The LED bar will indicate: RED = Not in Range, or = Within Range GREEN (Good Signal).</li> </ul><p><strong>Final Thoughts / Tips: </strong>If you’re having issues pairing your switch, there’s a couple things you can try. The first one is to hold down the config button for 5 seconds until the LED bar indicates RED or GREEN, where RED = Not in Range, or = Within Range GREEN (Good Signal). If the signal is GREEN, then let’s try an exclusion to reset your switch.</p> <br /> <h2>Exclusion Information</h2><ul><li>Start the exclusion process on your HUB/Gateway</li> <li>Press, “Remove” and tap the Config button 3x and the LED bar should pulse blue</li> <li>The LED bar should flash GREEN if successful</li> </ul> <br /> <h2>Wakeup Information</h2><p><br /></p>
     ]]></description>
     <category>WallSwitch</category>
 
@@ -61,17 +61,17 @@ Power On State<br /> <h1>Overview</h1><p>When power is restored, the switch reve
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_2_1" type="integer" groupName="configuration">
+      <parameter name="config_2_1" type="integer" groupName="configuration"
+                 min="0" max="1">
         <label>2: Invert Switch</label>
         <description><![CDATA[
 Invert Switch<br /> <h1>Overview</h1><p>Inverts the switch (tap down = on, tap up = off)</p> <p>0 = disabled</p> <p>1 = enabled</p>
         ]]></description>
         <default>0</default>
         <options>
-          <option value="0">Disabled</option>
-          <option value="1">Enabled</option>
+          <option value="0">Standard</option>
+          <option value="1">Inverted</option>
         </options>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_3_2" type="integer" groupName="configuration"
@@ -94,11 +94,10 @@ Association Behaviour<br /> <h1>Overview</h1><p>1 = Local; 2 = 3-Way; 3 = 3-Way 
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_5_2" type="integer" groupName="configuration"
-                 min="0" max="255">
+      <parameter name="config_5_2" type="integer" groupName="configuration">
         <label>5: LED Indicator Color</label>
         <description><![CDATA[
-LED Indicator Color<br /> <h1>Overview</h1><p>0 to 255 Hue Color Circle</p> <p>170 - Blue - Default</p> <p>This will set the default color of the LED bar.  Calculated by using a hue color circle (Value / 255 * 360</p> <p>0 = Red</p> <p>21 = Orange</p> <p>42 = Yellow</p> <p>85 = Green</p> <p>127 = Cyan</p> <p>170 = Blue</p> <p>212 = Violet</p> <p>234 = Pink</p>
+LED Indicator Color<br /> <h1>Overview</h1><p>0 to 255 Hue Color Circle</p> <p>170 - Blue - Default</p> <p>This will set the default color of the LED bar.  Calculated by using a hue color circle (Value / 255 * 360</p> <p>0 = Red</p> <p>21 = Orange</p> <p>42 = Yellow</p> <p>85 = Green</p> <p>127 = Cyan</p> <p>170 = Blue</p> <p>212 = Violet</p> <p>234 = Pink</p><p>255 = White</p>
         ]]></description>
         <default>170</default>
         <options>
@@ -112,9 +111,11 @@ LED Indicator Color<br /> <h1>Overview</h1><p>0 to 255 Hue Color Circle</p> <p>1
           <option value="234">Pink</option>
           <option value="255">White</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_6_1" type="integer" groupName="configuration">
+      <parameter name="config_6_1" type="integer" groupName="configuration"
+                 min="0" max="10">
         <label>6: LED Indicator Intensity (when on)</label>
         <description><![CDATA[
 LED Indicator Intensity (when on)<br /> <h1>Overview</h1><p>0 = Off</p> <p>1-3 = Low intensity</p> <p>4-7 = Medium Intensity</p> <p>8-10 = High Intensity</p>
@@ -133,13 +134,13 @@ LED Indicator Intensity (when on)<br /> <h1>Overview</h1><p>0 = Off</p> <p>1-3 =
           <option value="9">90%</option>
           <option value="10">100 %</option>
         </options>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_7_1" type="integer" groupName="configuration">
-        <label>7: LED Indicator Intensity (when Off)</label>
+      <parameter name="config_7_1" type="integer" groupName="configuration"
+                 min="0" max="10">
+        <label>7: LED Indicator Intensity (when off)</label>
         <description><![CDATA[
-LED Indicator Intensity (when Off)<br /> <h1>Overview</h1><p>0 = Off</p> <p>1-3 = Low Intensity (default)</p> <p>4-7 = Medium Intensity</p> <p>8-10 = High Intensity</p>
+LED Indicator Intensity (when off)<br /> <h1>Overview</h1><p>0 = Off</p> <p>1-3 = Low Intensity (default)</p> <p>4-7 = Medium Intensity</p> <p>8-10 = High Intensity</p>
         ]]></description>
         <default>2</default>
         <options>
@@ -155,19 +156,19 @@ LED Indicator Intensity (when Off)<br /> <h1>Overview</h1><p>0 = Off</p> <p>1-3 
           <option value="9">90 %</option>
           <option value="10">100 %</option>
         </options>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_8_4" type="integer" groupName="configuration"
-                 min="0" max="83823359">
+                 min="0" max="100535039">
         <label>8: LED Strip Effect</label>
         <description><![CDATA[
-Calculated sum of parameters as per overview section<br /> <h1>Overview</h1><p>Enter the value that is the sum of:</p> <p>1) Color value out of 128 (1=red 21=Orange, 42=Yellow, 85=Green, 127=Cyan, 170=Blue, 234=Pink )</p> <p>2) Level  1 to 10, multiplied by 250</p> <p>3) Duration in seconds (up to 4 minutes, or use 255 for indefinitely) multiplied by 65536</p> <p>4) Effect style - (some discrepancy here, likely 1=solid, 2=Fast Blink, 3=Strobe? Slow Blink?, 4=Pulse, 5=?Strobe) - multiplied by 16777216</p> <p>{4) From Inovelli, supplied values were , 1=Solid, 2= Fast Blink, 2=Strobe, 3=Slow Blink, 4=Pulse.  Note the duplication with value 2.}</p> <p>Again, add up all these values, and this is the value to supply.</p>
+Adjust this parameter to animate the LED bar according to a calculated value<br /> <h1>Overview</h1><p>Enter the value that is the sum of:<br /></p> <p>1) Color value out of 128 (1=red 21=Orange, 42=Yellow, 85=Green, 127=Cyan, 170=Blue, 234=Pink )</p> <p>2) Level  1 to 10, multiplied by 256</p> <p>3) Duration in seconds (up to 4 minutes, or use 255 for indefinitely) multiplied by 65536</p> <p>4) Effect style - (0= off/clear, 1=Solid, 2=Chase, 3=Fast Blink, 4=Slow Blink, 5=Pulse) - multiplied by 16777216</p> <p>Again, add up all these values, and this is the value to supply.</p><p>Online Calculator - https://nathanfiscus.github.io/inovelli-notification-calc/</p>
         ]]></description>
         <default>0</default>
       </parameter>
 
-      <parameter name="config_51_1" type="integer" groupName="configuration">
+      <parameter name="config_51_1" type="integer" groupName="configuration"
+                 min="0" max="1">
         <label>51: Enable Instant On</label>
         <description><![CDATA[
 Enable Instant On<br /> <h1>Overview</h1><p>Enable instant on (ie: disable the 700ms delay) for physical switch.</p> <p>0: No Delay 1: 700ms Delay (default)</p>
@@ -177,7 +178,6 @@ Enable Instant On<br /> <h1>Overview</h1><p>Enable instant on (ie: disable the 7
           <option value="0">No delay</option>
           <option value="1">700ms delay</option>
         </options>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

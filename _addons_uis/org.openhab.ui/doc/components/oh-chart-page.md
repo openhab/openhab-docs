@@ -4,52 +4,117 @@ component: oh-chart-page
 label: Chart Page
 description: Visualize historical series
 source: https://github.com/openhab/openhab-webui/edit/main/bundles/org.openhab.ui/doc/components/oh-chart-page.md
+prev: /docs/ui/components/
 ---
 
 # oh-chart-page - Chart Page
 
+<!-- Put a screenshot here if relevant:
+![](./images/oh-chart-page/header.jpg)
+-->
+
+[[toc]]
+
+<!-- Note: you can overwrite the definition-provided description and add your own intro/additional sections instead -->
+<!-- DO NOT REMOVE the following comments if you intend to keep the definition-provided description -->
 <!-- GENERATED componentDescription -->
 Visualize historical series
 <!-- GENERATED /componentDescription -->
 
 ## Configuration
 
+<!-- DO NOT REMOVE the following comments -->
 <!-- GENERATED props -->
-
-- `chartType` <small>TEXT</small> _Chart Type_
-
-  Define a fixed period for the chart, aligned at the beginning of the period, e.g. January 1st at midnight for a year chart. If not set (or set to dynamic), the length of the period will be configurable but certain combinations like aggregated series might not work
-
-  | Option | Label |
-  |--------|-------|
-  | `(empty)` | Dynamic period |
-  | `day` | Day |
-  | `isoWeek` | Week (starting on Monday) |
-  | `week` | Week (starting on Sunday) |
-  | `month` | Month |
-  | `year` | Year |
-
-
-- `period` <small>TEXT</small> _Initial Period_
-
-  The initial period for the chart
-
-  | Option | Label |
-  |--------|-------|
-  | `h` | h |
-  | `2h` | 2h |
-  | `4h` | 4h |
-  | `12h` | 12h |
-  | `D` | D |
-  | `2D` | 2D |
-  | `3D` | 3D |
-  | `W` | W |
-  | `2W` | 2W |
-  | `M` | M |
-  | `2M` | 2M |
-  | `4M` | 4M |
-  | `6M` | 6M |
-  | `Y` | Y |
+### General
+<div class="props">
+<PropGroup label="General">
+<PropBlock type="TEXT" name="chartType" label="Chart Type" required="true">
+  <PropDescription>
+    Define a fixed period for the chart, aligned at the beginning of the period, e.g. January 1st at midnight for a year chart. If not set (or set to dynamic), the length of the period will be configurable but certain combinations like aggregated series might not work
+  </PropDescription>
+  <PropOptions>
+    <PropOption value="(empty)" label="Dynamic period" />
+    <PropOption value="day" label="Day" />
+    <PropOption value="isoWeek" label="Week (starting on Monday)" />
+    <PropOption value="week" label="Week (starting on Sunday)" />
+    <PropOption value="month" label="Month" />
+    <PropOption value="year" label="Year" />
+  </PropOptions>
+</PropBlock>
+<PropBlock type="TEXT" name="period" label="Initial Period">
+  <PropDescription>
+    The initial period for the chart
+  </PropDescription>
+  <PropOptions>
+    <PropOption value="h" label="h" />
+    <PropOption value="2h" label="2h" />
+    <PropOption value="4h" label="4h" />
+    <PropOption value="12h" label="12h" />
+    <PropOption value="D" label="D" />
+    <PropOption value="2D" label="2D" />
+    <PropOption value="3D" label="3D" />
+    <PropOption value="W" label="W" />
+    <PropOption value="2W" label="2W" />
+    <PropOption value="M" label="M" />
+    <PropOption value="2M" label="2M" />
+    <PropOption value="4M" label="4M" />
+    <PropOption value="6M" label="6M" />
+    <PropOption value="Y" label="Y" />
+  </PropOptions>
+</PropBlock>
+</PropGroup>
+</div>
 
 
 <!-- GENERATED /props -->
+
+<!-- If applicable describe how properties are forwarded to a underlying component from Framework7, ECharts, etc.:
+### Inherited Properties
+
+-->
+
+<!-- If applicable describe the slots recognized by the component and what they represent:
+### Slots
+
+#### `default`
+
+The contents of the oh-chart-page.
+
+-->
+
+<!-- Add as many examples as desired - put the YAML in a details container when it becomes too long (~150/200+ lines):
+## Examples
+
+### Example 1
+
+![](./images/oh-chart-page/example1.jpg)
+
+```yaml
+component: oh-chart-page
+config:
+  prop1: value1
+  prop2: value2
+```
+
+### Example 2
+
+![](./images/oh-chart-page/example2.jpg)
+
+::: details YAML
+```yaml
+component: oh-chart-page
+config:
+  prop1: value1
+  prop2: value2
+slots
+```
+:::
+
+-->
+
+<!-- Try to clean up URLs to the forum (https://community.openhab.org/t/<threadID>[/<postID>] should suffice)
+## Community Resources
+
+- [Community Post 1](https://community.openhab.org/t/12345)
+- [Community Post 2](https://community.openhab.org/t/23456)
+-->

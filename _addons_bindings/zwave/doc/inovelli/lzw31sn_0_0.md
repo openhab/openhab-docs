@@ -33,7 +33,11 @@ Once the inclusion process has started press the config button 3X and the LED ba
 
 ### Exclusion Information
 
-Put your HUB in Exclusion mode and press the Config Button 3X until your HUB says the device is excluded.
+Press the Config Button 3X
+
+### General Usage Information
+
+
 
 ## Channels
 
@@ -125,7 +129,7 @@ The following state translation is provided for this channel to the ```Number```
 
 ## Device Configuration
 
-The following table provides a summary of the 24 configuration parameters available in the LZW31-SN.
+The following table provides a summary of the 25 configuration parameters available in the LZW31-SN.
 Detailed information on each parameter can be found in the sections below.
 
 | Param | Name  | Description |
@@ -152,6 +156,7 @@ Detailed information on each parameter can be found in the sections below.
 | 20 | Energy Reports | Energy Reports |
 | 21 | AC Power Type | AC Power Type |
 | 22 | Switch Type | Switch Type |
+| 50 | Multi-Tap Delay | Multi-Tap Delay |
 | 51 | Instant On | Instant On |
 | 52 | Enable "smart bulb" mode | Enable "smart bulb" mode |
 
@@ -225,7 +230,7 @@ This parameter has the configuration ID ```config_6_1``` and is of type ```INTEG
 
 Invert Switch
 Inverts the switch (Tap Down = On, Tap Up = Off)
-The following option values may be configured -:
+The following option values may be configured, in addition to values in the range 0 to 1 -:
 
 | Value  | Description |
 |--------|-------------|
@@ -387,8 +392,8 @@ This parameter has the configuration ID ```config_20_1``` and is of type ```INTE
 ### Parameter 21: AC Power Type
 
 AC Power Type
-
-The following option values may be configured -:
+Select whether you are wiring your switch with or without a neutral wire. (0=No-Neutral, 1=Neutral)
+The following option values may be configured, in addition to values in the range 0 to 1 -:
 
 | Value  | Description |
 |--------|-------------|
@@ -403,8 +408,8 @@ This parameter has the configuration ID ```config_21_1``` and is of type ```INTE
 ### Parameter 22: Switch Type
 
 Switch Type
-
-The following option values may be configured -:
+Select what type of installation you have (0=single-pole, 1=3-Way w/dumb switch, 2=3-Way w/aux switch)
+The following option values may be configured, in addition to values in the range 0 to 2 -:
 
 | Value  | Description |
 |--------|-------------|
@@ -417,11 +422,34 @@ The manufacturer defined default value is ```0``` (Single-Pole (One Switch)).
 This parameter has the configuration ID ```config_22_1``` and is of type ```INTEGER```.
 
 
+### Parameter 50: Multi-Tap Delay
+
+Multi-Tap Delay
+Adjust the delay when parameter 51 is set to 1. 1=100ms, 2=200ms, 3=300ms, etc.
+The following option values may be configured, in addition to values in the range 1 to 9 -:
+
+| Value  | Description |
+|--------|-------------|
+| 1 | 100ms |
+| 2 | 200ms |
+| 3 | 300ms |
+| 4 | 400ms |
+| 5 | 500ms |
+| 6 | 600ms |
+| 7 | 700ms |
+| 8 | 800ms |
+| 9 | 900ms |
+
+The manufacturer defined default value is ```7``` (700ms).
+
+This parameter has the configuration ID ```config_50_1``` and is of type ```INTEGER```.
+
+
 ### Parameter 51: Instant On
 
 Instant On
 Enable instant on (ie: disable 700ms delay at the switch). If delay is disabled, scene control will be limited to button 1 (ie: tap up 1x or tap down 1x) and button 7 (config button). All other buttons (2-6) will be disabled.
-The following option values may be configured -:
+The following option values may be configured, in addition to values in the range 0 to 1 -:
 
 | Value  | Description |
 |--------|-------------|
@@ -437,7 +465,7 @@ This parameter has the configuration ID ```config_51_1``` and is of type ```INTE
 
 Enable "smart bulb" mode
 Smart bulb mode: If set to 1, power will output maximum % when dimmer is on to optimize performance with smart bulbs.
-The following option values may be configured -:
+The following option values may be configured, in addition to values in the range 0 to 1 -:
 
 | Value  | Description |
 |--------|-------------|

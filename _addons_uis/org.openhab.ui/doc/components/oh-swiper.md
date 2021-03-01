@@ -4,28 +4,98 @@ component: oh-swiper
 label: Swiper
 description: Swiper control, allows to display multiple swipeable slides
 source: https://github.com/openhab/openhab-webui/edit/main/bundles/org.openhab.ui/doc/components/oh-swiper.md
+prev: /docs/ui/components/
 ---
 
 # oh-swiper - Swiper
 
+<!-- Put a screenshot here if relevant:
+![](./images/oh-swiper/header.jpg)
+-->
+
+[[toc]]
+
+<!-- Note: you can overwrite the definition-provided description and add your own intro/additional sections instead -->
+<!-- DO NOT REMOVE the following comments if you intend to keep the definition-provided description -->
 <!-- GENERATED componentDescription -->
 Swiper control, allows to display multiple swipeable slides
 <!-- GENERATED /componentDescription -->
 
 ## Configuration
 
+<!-- DO NOT REMOVE the following comments -->
 <!-- GENERATED props -->
+### General
+<div class="props">
+<PropGroup label="General">
+<PropBlock type="BOOLEAN" name="pagination" label="Pagination">
+  <PropDescription>
+    Enable pagination
+  </PropDescription>
+</PropBlock>
+<PropBlock type="BOOLEAN" name="navigation" label="Navigation">
+  <PropDescription>
+    Enable navigation
+  </PropDescription>
+</PropBlock>
+<PropBlock type="BOOLEAN" name="scrollbar" label="Scrollbar">
+  <PropDescription>
+    Enable scrollbar
+  </PropDescription>
+</PropBlock>
+</PropGroup>
+</div>
 
-- `pagination` <small>BOOLEAN</small> _Pagination_
-
-  Enable pagination
-
-- `navigation` <small>BOOLEAN</small> _Navigation_
-
-  Enable navigation
-
-- `scrollbar` <small>BOOLEAN</small> _Scrollbar_
-
-  Enable scrollbar
 
 <!-- GENERATED /props -->
+
+<!-- If applicable describe how properties are forwarded to a underlying component from Framework7, ECharts, etc.:
+### Inherited Properties
+
+-->
+
+<!-- If applicable describe the slots recognized by the component and what they represent:
+### Slots
+
+#### `default`
+
+The contents of the oh-swiper.
+
+-->
+
+<!-- Add as many examples as desired - put the YAML in a details container when it becomes too long (~150/200+ lines):
+## Examples
+
+### Example 1
+
+![](./images/oh-swiper/example1.jpg)
+
+```yaml
+component: oh-swiper
+config:
+  prop1: value1
+  prop2: value2
+```
+
+### Example 2
+
+![](./images/oh-swiper/example2.jpg)
+
+::: details YAML
+```yaml
+component: oh-swiper
+config:
+  prop1: value1
+  prop2: value2
+slots
+```
+:::
+
+-->
+
+<!-- Try to clean up URLs to the forum (https://community.openhab.org/t/<threadID>[/<postID>] should suffice)
+## Community Resources
+
+- [Community Post 1](https://community.openhab.org/t/12345)
+- [Community Post 2](https://community.openhab.org/t/23456)
+-->

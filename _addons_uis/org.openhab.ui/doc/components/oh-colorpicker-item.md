@@ -4,73 +4,143 @@ component: oh-colorpicker-item
 label: Color Picker List Item
 description: Display a color picker in a list
 source: https://github.com/openhab/openhab-webui/edit/main/bundles/org.openhab.ui/doc/components/oh-colorpicker-item.md
+prev: /docs/ui/components/
 ---
 
 # oh-colorpicker-item - Color Picker List Item
 
+<!-- Put a screenshot here if relevant:
+![](./images/oh-colorpicker-item/header.jpg)
+-->
+
+[[toc]]
+
+<!-- Note: you can overwrite the definition-provided description and add your own intro/additional sections instead -->
+<!-- DO NOT REMOVE the following comments if you intend to keep the definition-provided description -->
 <!-- GENERATED componentDescription -->
 Display a color picker in a list
 <!-- GENERATED /componentDescription -->
 
 ## Configuration
 
+<!-- DO NOT REMOVE the following comments -->
 <!-- GENERATED props -->
-
 ### List Item
-
-General settings of the list item
-
-
-- `title` <small>TEXT</small> _Title_
-
-  Title of the item
-
-- `subtitle` <small>TEXT</small> _Subtitle_
-
-  Subtitle of the item
-
-- `after` <small>TEXT</small> _After_
-
-  Text to display on the opposite side of the item (set either this or a badge)
-
-- `icon` <small>TEXT</small> _Icon_
-
-  Use <code>oh:iconName</code> (<a class="external text-color-blue" target="_blank" href="https://www.openhab.org/link/icons">openHAB icon</a>) or <code>f7:iconName</code> (<a class="external text-color-blue" target="_blank" href="https://framework7.io/icons/">Framework7 icon</a>)
-
-- `iconColor` <small>TEXT</small> _Icon Color_
-
-  Not applicable to openHAB icons
-
-- `iconUseState` <small>BOOLEAN</small> _Icon depends on state_
-
-  Use the state of the item to get a dynamic icon (for openHAB icons only)
+<div class="props">
+<PropGroup name="listitem" label="List Item">
+  General settings of the list item
+<PropBlock type="TEXT" name="title" label="Title">
+  <PropDescription>
+    Title of the item
+  </PropDescription>
+</PropBlock>
+<PropBlock type="TEXT" name="subtitle" label="Subtitle">
+  <PropDescription>
+    Subtitle of the item
+  </PropDescription>
+</PropBlock>
+<PropBlock type="TEXT" name="after" label="After">
+  <PropDescription>
+    Text to display on the opposite side of the item (set either this or a badge)
+  </PropDescription>
+</PropBlock>
+<PropBlock type="TEXT" name="icon" label="Icon">
+  <PropDescription>
+    Use <code>oh:iconName</code> (<a class="external text-color-blue" target="_blank" href="https://www.openhab.org/link/icons">openHAB icon</a>) or <code>f7:iconName</code> (<a class="external text-color-blue" target="_blank" href="https://framework7.io/icons/">Framework7 icon</a>)
+  </PropDescription>
+</PropBlock>
+<PropBlock type="TEXT" name="iconColor" label="Icon Color">
+  <PropDescription>
+    Not applicable to openHAB icons
+  </PropDescription>
+</PropBlock>
+<PropBlock type="BOOLEAN" name="iconUseState" label="Icon depends on state">
+  <PropDescription>
+    Use the state of the item to get a dynamic icon (for openHAB icons only)
+  </PropDescription>
+</PropBlock>
+</PropGroup>
+</div>
 
 ### Color picker
-
-
-- `item` <small>TEXT</small> _Item_
-
-  Item to control
-
-- `modules` <small>TEXT</small> _Modules_
-
-  Modules to display
-
-  | Option | Label |
-  |--------|-------|
-  | `wheel` | Color wheel |
-  | `sb-spectrum` | Saturation/brightness spectrum |
-  | `hue-slider` | Hue slider |
-  | `hs-spectrum` | Hue/saturation spectrum |
-  | `brightness-slider` | Brightness spectrum |
-  | `rgb-sliders` | RGB sliders |
-  | `hsb-sliders` | HSB sliders |
-  | `rgb-bars` | RGB bars |
-  | `palette` | Palette |
-  | `current-color` | Current color |
-  | `initial-current-colors` | Initial current colors |
-
-  Multiple options are allowed.
+<div class="props">
+<PropGroup name="colorpicker" label="Color picker">
+<PropBlock type="TEXT" name="item" label="Item" context="item">
+  <PropDescription>
+    Item to control
+  </PropDescription>
+</PropBlock>
+<PropBlock type="TEXT" name="modules" label="Modules">
+  <PropDescription>
+    Modules to display
+  </PropDescription>
+  <PropOptions multiple="true">
+    <PropOption value="wheel" label="Color wheel" />
+    <PropOption value="sb-spectrum" label="Saturation/brightness spectrum" />
+    <PropOption value="hue-slider" label="Hue slider" />
+    <PropOption value="hs-spectrum" label="Hue/saturation spectrum" />
+    <PropOption value="brightness-slider" label="Brightness spectrum" />
+    <PropOption value="rgb-sliders" label="RGB sliders" />
+    <PropOption value="hsb-sliders" label="HSB sliders" />
+    <PropOption value="rgb-bars" label="RGB bars" />
+    <PropOption value="palette" label="Palette" />
+    <PropOption value="current-color" label="Current color" />
+    <PropOption value="initial-current-colors" label="Initial current colors" />
+  </PropOptions>
+</PropBlock>
+</PropGroup>
+</div>
 
 
 <!-- GENERATED /props -->
+
+<!-- If applicable describe how properties are forwarded to a underlying component from Framework7, ECharts, etc.:
+### Inherited Properties
+
+-->
+
+<!-- If applicable describe the slots recognized by the component and what they represent:
+### Slots
+
+#### `default`
+
+The contents of the oh-colorpicker-item.
+
+-->
+
+<!-- Add as many examples as desired - put the YAML in a details container when it becomes too long (~150/200+ lines):
+## Examples
+
+### Example 1
+
+![](./images/oh-colorpicker-item/example1.jpg)
+
+```yaml
+component: oh-colorpicker-item
+config:
+  prop1: value1
+  prop2: value2
+```
+
+### Example 2
+
+![](./images/oh-colorpicker-item/example2.jpg)
+
+::: details YAML
+```yaml
+component: oh-colorpicker-item
+config:
+  prop1: value1
+  prop2: value2
+slots
+```
+:::
+
+-->
+
+<!-- Try to clean up URLs to the forum (https://community.openhab.org/t/<threadID>[/<postID>] should suffice)
+## Community Resources
+
+- [Community Post 1](https://community.openhab.org/t/12345)
+- [Community Post 2](https://community.openhab.org/t/23456)
+-->
