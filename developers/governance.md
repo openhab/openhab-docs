@@ -4,13 +4,12 @@ title: Governance
 license: Parts of this page have been derived from the EPLv2 licensed https://www.eclipse.org/projects/handbook
 ---
 
-{% include base.html %}
-
 # Governance of the openHAB Project
 
 ## Principles
 
 The guiding principles for openHAB are the "open source rules of engagement", which comprise:
+
 - Transparency
 - Openness
 - Meritocracy
@@ -40,6 +39,7 @@ The maintainers are the ones with write access to the repository and they are re
 ### Responsibilities
 
 Maintainers take care of the respective repository, i.e. they
+
 - define coding guidelines
 - decide the architecture and features of the code
 - review PRs

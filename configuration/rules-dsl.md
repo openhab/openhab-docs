@@ -3,8 +3,6 @@ layout: documentation
 title: Rules
 ---
 
-{% include base.html %}
-
 # Textual Rules
 
 "Rules" are used for automating processes: Each rule can be triggered, which invokes a script that performs any kinds of tasks, e.g. turn on lights by modifying your items, do mathematical calculations, start timers etcetera.
@@ -22,22 +20,41 @@ On this page you will learn how to leverage its functionality to do *real* home 
 ### File Location
 
 Rules are placed in the folder `$OPENHAB_CONF/rules`.
-The [demo setup]({{base}}/tutorials/demo.html) already comes with a demo file called `demo.rules`, which has a couple of examples that can be a good starting point.
+The [demo setup](https://demo.openhab.org) already comes with a demo file called [`demo.rules`](https://github.com/openhab/openhab-distro/blob/main/features/distro-resources/src/main/resources/rules/demo.rules), which has a couple of examples that can be a good starting point.
 
 A rule file can contain multiple rules.
 All rules of a file share a common execution context, i.e. they can access and exchange variables with each other.
 It therefore makes sense to have different rule files for different use-cases or categories.
+
+### UI based definition
+
+Rules can be created and edited with in the UI.
+You can find the editor browsing to `Settings` -> `Rules`.
+Click on the `+` icon to add a rule and define a name and a trigger.
+
+  ![openHAB DSL Rules through UI - Creation](images/ui_rules_dsl_test_example.png)
+
+In our example we will catch the openHAB Startup to initialize our environment.
+
+  ![openHAB DSL Rules through UI - Add Action](images/ui_rules_dsl_test_example_action.png)
+
+Click on `Add Action` and choose `Run Script`.
+
+  ![openHAB DSL Rules through UI - Use DSL Language](images/ui_rules_dsl_test_example_dsl.png)
+
+Choose `Rule DSL` and enter a rule like it is described below in this article.
 
 ### IDE Support
 
 The [openHAB VS Code Extension]({{base}}/configuration/editors.html#openhab-vs-code-extension) offers support for rules building.
 It includes syntax checks and coloring, validation with error markers, content assist (Ctrl+Space) incl. templates etc.
 This makes the creation of rules very easy!
+Check out the editors page for more information and additional editor possibilities.
 
 ### The Syntax
 
 ::: tip Note
-The rule syntax is based on [Xbase](http://www.eclipse.org/Xtext/#xbase) and as a result it is sharing many details with [Xtend](http://www.eclipse.org/xtend/), which is built on top of Xbase as well.
+The rule syntax is based on [Xbase](https://www.eclipse.org/Xtext/#xbase) and as a result it is sharing many details with [Xtend](https://www.eclipse.org/xtend/), which is built on top of Xbase as well.
 As a result, we will often point to the Xtend documentation for details.
 :::
 
@@ -49,7 +66,7 @@ A rule file is a text file with the following structure:
 
 The **Imports** section contains import statement just like in Java.
 As in Java, they make the imported types available without having to use the fully qualified name for them.
-For further details, please see the [Xtend documentation for imports](http://www.eclipse.org/xtend/documentation/202_xtend_classes_members.html#imports).
+For further details, please see the [Xtend documentation for imports](https://www.eclipse.org/xtend/documentation/202_xtend_classes_members.html#imports).
 
 Example:
 
@@ -60,16 +77,16 @@ import java.net.URI
 A few default imports are already done, so classes from these packages do not need to be explicitly imported:
 
 ```java
-org.eclipse.smarthome.core.items
-org.eclipse.smarthome.core.persistence
-org.eclipse.smarthome.core.library.types
-org.eclipse.smarthome.core.library.items
-org.eclipse.smarthome.model.script.actions
+org.openhab.core.items
+org.openhab.core.persistence
+org.openhab.core.library.types
+org.openhab.core.library.items
+org.openhab.model.script.actions
 ```
 
 The **Variable Declarations** section can be used to declare variables that should be accessible to all rules in this file.
 You can declare variables with or without initial values and modifiable or read-only.
-For further details, please see the [Xtend documentation for variable declarations](http://www.eclipse.org/xtend/documentation/203_xtend_expressions.html#variable-declaration).
+For further details, please see the [Xtend documentation for variable declarations](https://www.eclipse.org/xtend/documentation/203_xtend_expressions.html#variable-declaration).
 
 Example:
 
@@ -101,6 +118,7 @@ end
 - `<SCRIPT_BLOCK>` - Contains the logic that should be executed when a trigger condition is met, see the [script](#scripts) section for details on its syntax.
 
 {: #rule-triggers}
+
 ### Rule Triggers
 
 Before a rule starts working, it has to be triggered.
@@ -116,6 +134,7 @@ There are different categories of rule triggers:
 Here are the details for each category:
 
 {: #event-based-triggers}
+
 ### Event-based Triggers
 
 You can listen to commands for a specific item, on status updates or on status changes (an update might leave the status unchanged).
@@ -130,17 +149,17 @@ Item <item> changed [from <state>] [to <state>]
 
 A simplistic explanation of the differences between `command` and `update` can be found in the article about [openHAB core actions](/docs/configuration/actions.html#event-bus-actions).
 
-An important warning is worth mentioning here.
-When using the `received command` trigger, the Rule will trigger **before** the Item's state is updated.
-Therefore, if the Rule needs to know what the command was, use the [implicit variable]({{base}}/configuration/rules-dsl.html#implicit-variables-inside-the-execution-block) `receivedCommand` instead of ItemName.state.
+When using the `received command` trigger, the Rule might trigger **before** the Item's state is updated.
+Therefore, if the Rule needs to know what the command was, use the [implicit variable]({{base}}/configuration/rules-dsl.html#implicit-variables-inside-the-execution-block) `receivedCommand` instead of `<ItemName>.state`.
 
 {: #member-of-triggers}
+
 ### Member of Triggers
 
 As with Item based event-based triggers discussed above, you can listen for commands, status updates, or status changes on the members of a given Group.
 You can also decide whether you want to catch only a specific command/status or any.
 All of the [implicit variables]({{base}}/configuration/rules-dsl.html#implicit-variables-inside-the-execution-block) get populated using the Item that caused the event.
-Of particular note, the implicit variable `triggeringItem` is populated with the Item that caused the Rule to trigger.
+The implicit variable `triggeringItem` is populated with the Item that caused the Rule to trigger.
 
 ```java
 Member of <group> received command [<command>]
@@ -150,13 +169,14 @@ Member of <group> changed [from <state>] [to <state>]
 
 The `Member of` trigger only works with Items that are a direct member of the Group.
 It does not work with members of nested subgroups.
-Also, as with Item event-based triggers, when using `received command`, the Rule will trigger before the Item's state is updated.
+Also, as with Item event-based triggers, when using `received command`, the Rule might trigger before the Item's state is updated.
 So in Rules where the Rule needs to know what the command was, use the `receivedCommand` implicit variable instead of `triggeringItem.state`.
 
 {: #time-based-triggers}
+
 ### Time-based Triggers
 
-You can either use some pre-defined expressions for timers or use a [cron expression](https:////www.quartz-scheduler.org/documentation/quartz-2.2.2/tutorials/tutorial-lesson-06.html) instead:
+You can either use some pre-defined expressions for timers or use a [cron expression](https://www.quartz-scheduler.org/documentation/quartz-2.2.2/tutorials/tutorial-lesson-06.html) instead:
 
 ```java
 Time is midnight
@@ -167,26 +187,24 @@ Time cron "<cron expression>"
 A cron expression takes the form of six or optionally seven fields:
 
 1. Seconds
-2. Minutes
-3. Hours
-4. Day-of-Month
-5. Month
-6. Day-of-Week
-7. Year (optional field)
+1. Minutes
+1. Hours
+1. Day-of-Month
+1. Month
+1. Day-of-Week
+1. Year (optional field)
 
-for more information see the [Quartz documentation](http://www.quartz-scheduler.org/documentation/quartz-2.1.7/tutorials/tutorial-lesson-06.html).
-
-You may also use [CronMaker](http://www.cronmaker.com/) or the generator at [FreeFormatter.com](http://www.freeformatter.com/cron-expression-generator-quartz.html) to generate cron expressions.
+You may use the generator at [FreeFormatter.com](https://www.freeformatter.com/cron-expression-generator-quartz.html) to generate your cron expressions.
 
 {: #system-based-triggers}
+
 ### System-based Triggers
 
-Two system-based triggers are provided as described in the table below:
+One system-based trigger is provided as described in the table below:
 
 | Trigger           | Description                                                                                                                                                                                        |
 |-------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| System started    | System started is triggered upon openHAB startup, after the rule file containing the System started trigger is modified, or after item(s) are modified in a .items file. |
-| System shuts down | Rules using the 'System shuts down' trigger execute when openHAB shuts down.                                                                                                                       |
+| System started    | `System started` is triggered upon openHAB startup.  In openHAB version 2, `System started` is also triggered after the rule file containing the System started trigger is modified, or after item(s) are modified in a .items file. |
 
 You may wish to use the 'System started' trigger to initialize values at startup if they are not already set.
 
@@ -204,6 +222,7 @@ end
 ```
 
 {: #thing-based-triggers}
+
 ### Thing-based Triggers
 
 Your rules can take actions based upon status updates or status changes generated by Things.
@@ -220,7 +239,7 @@ You can find all the possible values for status from [Thing Status](/docs/concep
 And refer to [Thing Status Action](/docs/configuration/actions.html#thing-status-action) to find how to get thing status in the script.
 
 The `thingUID` is the identifier assigned to the Thing, manually in your configuration or automatically during auto discovery.
-You can find it from PaperUI or from Karaf remote console.
+You can find it from UI or from Karaf remote console.
 For example, one z-wave device can be "zwave:device:c5155aa4:node14".
 
 ::: tip Note
@@ -228,6 +247,7 @@ You need to use quotes around `thingUID` if it contains special characters such 
 :::
 
 {: #channel-based-triggers}
+
 ### Channel-based Triggers
 
 Some add-ons provide trigger channels.
@@ -264,9 +284,10 @@ end
 ```
 
 {: #scripts}
+
 ## Scripts
 
-The expression language used within scripts is the same that is used in the Xtend language - see the [documentation of expressions](http://www.eclipse.org/xtend/documentation/203_xtend_expressions.html) on the Xtend homepage.
+The expression language used within scripts is the same that is used in the Xtend language - see the [documentation of expressions](https://www.eclipse.org/xtend/documentation/203_xtend_expressions.html) on the Xtend homepage.
 
 The syntax is very similar to Java, but has many nice features that allow writing concise code.
 It is especially powerful in handling collections.
@@ -287,6 +308,7 @@ if (Temperature.state < 20) {
 ```
 
 {: #manipulating-item-states}
+
 ### Manipulating Item States
 
 Rules are often used to manipulate the state of an Item, for example switching lights on and off under certain conditions.
@@ -306,12 +328,14 @@ The following table summarizes the impact of the two manipulator commands on the
 
 **Beware:**
 In most cases, a rule with a trigger of `received update` will fire following the command `sendCommand` as:
+
 - openHAB auto-updates the status of Items for which the item definition does not contain `autoupdate="false"`
 - the Thing sends a status update to the Item.
 
 Besides the specific manipulator command methods `MyItem.sendCommand(<new_state>)` and `MyItem.postUpdate(<new_state>)`, generic manipulators in the form of `sendCommand(MyItem, <new_state>)` and `postUpdate(MyItem, <new_state>)` are available. The specific versions is normally recommended.
 
 {: #sendcommand-method-vs-action}
+
 #### MyItem.sendCommand("new state") versus sendCommand(MyItem, "new state")
 
 Using the methods `MyItem.sendCommand(<new_state>)` and `MyItem.postUpdate(<new_state>)` is often preferable.
@@ -330,8 +354,9 @@ Using `Myitem.sendCommand(new_state)` or `Myitem.postUpdate(new_state)` will, in
 
 The Action `sendCommand(MyItem, new_state)` does not provide the same flexibilty.
 For example, if `new_state` is typed as a primitive (e.g., `var int new_state = 3`) and myItem is of the Object type Dimmer:
-* the following command ***will fail***: ~~sendCommand(MyItem, new_state)~~.
-* However, the following command **will work**: `MyItem.sendCommand(new_state)`.
+
+- the following command ***will fail***: ~~sendCommand(MyItem, new_state)~~.
+- However, the following command **will work**: `MyItem.sendCommand(new_state)`.
 
 Using `MyItem.postUpdate(new_state)` or `MyItem.sendCommand(new_state)` will create the most stable code.
 It provides by far the best option for avoiding most problems.
@@ -347,6 +372,7 @@ sendCommand("My_Lamp_" + index, ON)
 ```
 
 {: #using-state-of-items-in-rules}
+
 ### Using the States of Items in Rules
 
 Often it is desired to calculate other values from Item states or to compare Item states against other values
@@ -361,6 +387,7 @@ This section differentiates between command type and state type.
 For ease of reading, it is possible to simply add “type” to the end of a command type thereby obtaining the state type.
 For example, a Color Item can receive an OnOffType, IncreaseDecreaseType, PercentType, or HSBType.
 Therefore the following are all valid commands one can send to a Color Item:
+
 - `MyColorItem.sendCommand(ON)`
 - `MyColorItem.sendCommand(INCREASE)`
 - `MyColorItem.sendCommand(new PercentType(50))`
@@ -380,11 +407,12 @@ There are two ways to discover these methods:
 
 - Use the [openHAB VS Code Extension](/docs/configuration/editors.html#editors.html#openhab-vs-code-extension) and the `<ctrl><space>` key combo to list all the available methods
 - Look at the JavaDocs for the given type.
-For example, the [JavaDoc for HSBType](http://www.eclipse.org/smarthome/documentation/javadoc/index.html?org/eclipse/smarthome/core/library/types/HSBType.html) shows getRed, getBlue, and getGreen methods.
-These methods can be called in Rules-DSL without the "get" part in name as in `(MyColorItem.state as HSBType).red)`.
-They retrieve the state of MyColorItem and then casts it as HSBType to be able to use the methods associated with the HSBType.
+    For example, the [JavaDoc for HSBType](https://openhab.org/javadoc/latest/org/openhab/core/library/types/hsbtype) shows `getRed`, `getBlue`, and `getGreen` methods.
+    These methods can be called in Rules-DSL without the `get` part in name as in `(MyColorItem.state as HSBType).red)`.
+    They retrieve the state of MyColorItem and then casts it as HSBType to be able to use the methods associated with the HSBType.
 
 {: #conversions}
+
 #### Working with Item States: Conversions
 
 *Reminder: For a complete and up-to-date list of what item types are currently allowed in openHAB and the command types each item can accept refer to the section on [items in the openHAB documentation]({{base}}/concepts/items.html).*
@@ -436,63 +464,52 @@ val contactNum = if (MyContactItem.state == OPEN) 1 else 0
 
 ##### DateTime Item
 
-A DateTime Item carries a **DateTimeType**.
-DateTimeType presents the biggest challenge when converting and performing calculations.
-The problems stem from the fact that by default the Rules use a Joda DateTime class to represent time, most notably `now`.
-However, DateTimeType is not a Joda DateTime and in fact the two are incompatible, requiring some conversion in order to use the two together.
-
-The lowest common denominator when working with time is to get at the epoch value.
-Epoch is the number of milliseconds that have passed since 1 January 1970 GMT and stored in a `long`.
-With epoch, one can compare two dates together, convert a Joda DateTime to a DateTimeType and vice versa.
+A DateTime Item carries a **DateTimeType**, which internally holds a Java `ZonedDateTime` object.
 
 ```java
 // Get epoch from DateTimeType
-val Number epoch = (MyDateTimeItem.state as DateTimeType).zonedDateTime.timeInMillis
+val Number epoch = (MyDateTimeItem.state as DateTimeType).zonedDateTime.toInstant.toEpochMilli
 
-// Get epoch from Joda DateTime
-val Number nowEpoch = now.millis
+// Get epoch from Java ZonedDateTime
+val Number nowEpoch = now.toInstant.toEpochMilli
 
-// Convert DateTimeType to Joda DateTime
-val jodaVariantOne = new DateTime(MyDateTimeItem.state.toString)
-val jodaVariantTwo = new DateTime((MyDateTimeItem.state as DateTimeType).zonedDateTime.toInstant.toEpochMilli)
+// Convert DateTimeType to Java ZonedDateTime
+val javaZonedDateTime = (MyDateTimeItem.state as DateTimeType).zonedDateTime
 
-// Convert Joda DateTime to DateTimeType
-val calendar = java.util.Calendar::getInstance
-calendar.timeInMillis = now.millis
-val dtt = new DateTimeType(calendar)
+// Convert Java ZonedDateTime to DateTimeType
+val DateTimeType date = new DateTimeType(now)
 ```
 
 In certain cases it is needed to convert an epoch timestamp to a human readable and/or store it in a DateTimeType and a DateTime Item.
 Here an option to do so utilizing SimpleDateFormat:
 
 ```java
-import java.text.SimpleDateFormat
-import java.util.Date
+import java.time.format.DateTimeFormatter
 
 // Convert epoch to a human readable
-val SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSSZ")
-val String timestampString = sdf.format(new Date(timestampEpoch))
+val DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss.SSSZ")
+val long epoch = now.toInstant.toEpochMilli
+val ZonedDateTime zdt = ZonedDateTime.ofInstant(Instant.ofEpochMilli(epoch), ZoneOffset.UTC);
+val String dateTimeString = zdt.format(formatter)
 
 // Convert human readable time stamp to DateTimeType
-val DateTimeType timestamp = DateTimeType.valueOf(timestampString)
+val DateTimeType dtt = DateTimeType.valueOf(dateTimeString)
 
 //convert state from Item of DateTimeType into a string
 val String datetime_string  = DateTime_Item.state.format("%1$td.%1$tm.%1$ty %1$tH:%1$tM"))
 ```
 
-Both Joda DateTime as well as DateTimeType provide a number of useful methods for comparing date times together and/or extracting parts of the date.
-For some examples:
+ZonedDateTimes provide a number of useful methods for comparing date times together and/or extracting parts of the date:
 
 ```java
-// See if DateTimeType is before Joda DateTime
-if(now.isBefore((MyDateTimeItem.state as DateTimeType).zonedDateTime.timeInMillis)) ...
+// See if DateTimeType is before now
+if(now.isBefore((MyDateTimeItem.state as DateTimeType).zonedDateTime)) ...
 
-// See if DateTimeType is after Joda DateTime
-if(now.isAfter((MyDateTimeItem.state as DateTimeType).zonedDateTime.timeInMillis))...
+// See if DateTimeType is after now
+if(now.isAfter((MyDateTimeItem.state as DateTimeType).zonedDateTime)) ...
 
 // Get the hour in the day from a DateTimeType
-val hours = (MyDateTimeItem.state as DateTimeType).zonedDateTime.get(Calendar::HOUR_OF_DAY)
-// See the Calendar javadocs for the full set of parameters available
+val hour = (MyDateTimeItem.state as DateTimeType).zonedDateTime.hour
 ```
 
 ##### Dimmer Item
@@ -550,22 +567,22 @@ DecimalType and QuantityType are also java.lang.Number so all the conversions li
 
 Here some other commonly needed conversions:
 
-* For DecimalType states:
+- For DecimalType states:
 
 ```java
-//convert integer_number to string containing hex_code
-var String hex_code = Long.toHexString(integer_number);
+// convert integer_number to string containing hex_code
+var String hex_code = Long.toHexString(integer_number)
 
-//convert hex_code to Number type
-var MyNumber = Integer.parseInt(hex_code, 16) as Number
-//use the following for large_hex_code
-var MyNumber = Long.parseLong(hex, 16) as Number
+// convert hex_code to Number type
+var myNumber = Integer.parseInt(hex_code, 16) as Number
+// use the following for large_hex_code
+var myNumber = Long.parseLong(hex, 16) as Number
 
-// coverting hex_code into DecimalType
-var DecimalType parsedResult = DecimalType.valueOf(Long.parseLong(hex_code, 16).toString);
+// convert hex_code to DecimalType
+var DecimalType parsedResult = new DecimalType(Long.parseLong(hex_code, 16))
 ```
 
-* For QuantityType states:
+- For QuantityType states:
 
 ```java
 // define a QuantityType variable
@@ -630,7 +647,7 @@ val stateAsString = MyStringItem.state.toString
 
 In case an item returns a string containing a value as a hexadecimal number, it can be converted to an integer by using
 
-```
+```shell
 //Loading hexvalue from string
 val itemvalue = new java.math.BigDecimal(Integer::parseInt(myHexValue, 16))
 ```
@@ -644,7 +661,6 @@ One can convert from ON and OFF to 1 and 0 with code similar to:
 ```java
 val SwitchNum = if (MySwitchItem.state == ON) 1 else 0
 ```
-
 
 #### Deeper Dive
 
@@ -684,24 +700,27 @@ Each of these separate methods is individually written to handle all of these di
 MyItem will automatically apply the method that corresponds to the argument type.
 
 {: #implicit-variables}
+
 ### Implicit Variables inside the Execution Block
 
 Besides the implicitly available variables for items and commands/states, rules can have additional pre-defined variables, depending on their triggers:
 
-- `receivedCommand` - will be implicitly available in every rule that has at least one command event trigger.
-- `previousState` - will be implicitly available in every rule that has at least one status change event trigger.
-- `newState` - will be implicitly available in every rule that has at least one status update or status change event trigger.
-- `triggeringItem` - will be implicitly available in every rule that has at least one command, status update, or status change event trigger.
-- `receivedEvent` - will be implicitly available in every rule that has a channel-based trigger.
+- `receivedCommand` - implicitly available in every rule that has at least one command event trigger.
+- `previousState` - implicitly available in every rule that has at least one status change event trigger.
+- `newState` - implicitly available in every rule that has at least one status update or status change event trigger.
+- `triggeringItemName` - implicitly available in every rule that has at least one status update, status change or command event trigger.
+- `triggeringItem` - implicitly available in every rule that has a "Member of" trigger.
+- `receivedEvent` - implicitly available in every rule that has a channel-based trigger.
 
 {: #return}
+
 ### Early returns
 
 It is possible to return early from a rule, not executing the rest of the statements like this:
 
 ```java
 if (Temperature.state > 20) {
-	return;
+ return;
 }
 Heating.sendCommand(ON)
 ```
@@ -709,6 +728,7 @@ Heating.sendCommand(ON)
 Caveat: Please note the semicolon after the return statement which terminates the command without an additional argument.
 
 {: #concurrency-guard}
+
 ### Concurrency Guard
 
 If a rule triggers on UI events it may be necessary to guard against concurrency.
@@ -732,6 +752,7 @@ end
 ```
 
 {: #transformations}
+
 ### Transformations
 
 openHAB [Transformation services](/addons/#transform) can be used in rules to transform/translate/convert data.
@@ -777,8 +798,8 @@ finally {
 
 For all available Transformation services please refer to the list of [Transformation Add-ons](/addons/#transform).
 
-
 {: #logging}
+
 ### Logging
 
 You can emit log messages from your rules to aid debugging.
@@ -791,7 +812,7 @@ logWarn(String loggerName, String format, Object... args)
 logError(String loggerName, String format, Object... args)
 ```
 
-In each case, the `loggerName` parameter is combined with the string `org.eclipse.smarthome.model.script.` to create the log4j logger name.
+In each case, the `loggerName` parameter is combined with the string `org.openhab.core.model.script.` to create the log4j logger name.
 For example, if your rules file contained the following log message:
 
 ```java
@@ -801,7 +822,7 @@ logDebug("kitchen", "Kitchen light turned on")
 then the logger you would have to configure to have your messages appearing in the console would be:
 
 ```text
-log:set DEBUG org.eclipse.smarthome.model.script.kitchen
+log:set DEBUG org.openhab.core.model.script.kitchen
 ```
 
 ## Rule Examples
@@ -858,7 +879,7 @@ rule "Start wake up light on sunrise"
 when
     Channel "astro:sun:home:rise#event" triggered
 then
-    switch(receivedEvent.getEvent()) {
+    switch(receivedEvent) {
         case "START": {
             Light.sendCommand(ON)
         }

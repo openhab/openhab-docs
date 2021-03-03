@@ -6,10 +6,10 @@ title: Configuration
 # Configuration of your Smart Home
 
 openHAB is the center of your home automation.
-Properties and capabilities of all your devices are available through openHAB to the user frontend, the rule engine and other parts and connected systems.
+Properties and capabilities of all your devices are available through openHAB to the user interface.
 
-openHAB is a system installed and executed by you, **running independently** from any online services or proprietary technologies.
-You as the end-user have the **full control** over every aspect of your smart home.
+openHAB is a system installed and driven by you, **running independently** of any online services or proprietary technologies.
+You as the end-user have **full control** over every aspect of your smart home, and it will keep working even when your Internet link goes down.
 
 Every device connected to openHAB is functionally and logically different.
 In order to represent all of these, openHAB defines the following base components:
@@ -18,32 +18,42 @@ In order to represent all of these, openHAB defines the following base component
 - [Things](things.html) - Your devices represented in openHAB
 - [Items](items.html) - properties and capabilities of your Things
 - [Groups](items.html#groups) - collections or categories containing Items
-- [Sitemaps](sitemaps.html) - User-defined frontend interfaces to arrange Groups, Items and more
 - [Transformations](transform.html) - Helper functions to transform your data
 - [Persistence](persistence.html) - Services to store data over time
 - [Rules](rules-dsl.html) - Automation logic, the "smart" in your Smart Home!
-- [JSR223 Scripting](jsr223.html) - Define rules and other runtime objects using [Javascript](http://openjdk.java.net/projects/nashorn/), [Jython](http://www.jython.org) or [Groovy](http://www.groovy-lang.org/)
+- [JSR223 Scripting](jsr223.html) - Define rules and other runtime objects using [Javascript](https://openjdk.java.net/projects/nashorn/), [Jython](https://www.jython.org) or [Groovy](https://www.groovy-lang.org/)
 
-The individual articles hold all details needed to understand the concepts behind these building bricks for your Smart Home.
-For more details on the base concept behind openHAB, please visit the [Concepts Overview page](/docs/concepts/index.html).
+The individual articles have all the details needed to understand the concepts behind these building blocks for your Smart Home.
+For more details on the basic concepts behind openHAB, please visit the [Concepts Overview page](/docs/concepts/index.html).
+
+::: tip
+
+This section does not cover building user interfaces; this subject has its own section: [User Interfaces](/docs/ui/)
+
+:::
 
 ## Versatility
 
-openHAB provides different user interfaces to modify settings, manage your things and items and to build rules and sitemaps.
-HABmin provides a set of features to now overlap with Paper UI (which came later).
-Every interface still has its own strong points.
-The following table shows what the user interfaces can be used for.
-For a recommendation to new users which one(s) to use, see the section below. In the table, **"R" means recommended.**
+openHAB 3 provides a _single_ graphical user interface to modify settings, to manage your components and rules, and to provide a UI for users.
+
+While there are no full-scale starter and migration tutorials available yet, see the [recording of the recent 2020 openHAB virtual meetup](https://www.youtube.com/watch?v=pwZ8AOwRDEk) for a tour of the new Main UI (starting at 26:26).
+
+::: tip Important changes for openHAB 2 users<br>
+PaperUI and HABmin are no longer supported, they are replaced by the new Main UI.<br>
+It also provides flexible charting now so you won't require Grafana or a similar external tool any more.<br>
+v1 bindings are no longer available, see [this list](https://github.com/openhab/openhab-addons/issues/6179#migrated) what has been migrated to OH3.<br>
+The expire binding's functionality is now part of the core (item configuration stays the same).<br>
+File-based configuration is still available, but we recommend that everyone start over with a fresh setup built using the new Main UI.<br>
+_Note there is an option in Main UI to bulk create Items where you can copy'n'paste the contents of your `.items` files._
+:::
 
 <table class="centered highlight">
   <thead>
     <tr>
-      <th data-field="task">Task</th>
-      <th data-field="files">Textual Configuration</th>
-      <th data-field="paperui">Paper UI</th>
-      <th data-field="habmin">HABmin</th>
-      <th data-field="homebuilder">Homebuilder</th>
-      <th data-field="karaf">Console</th>
+      <th data-field="task">Configuration Task</th>
+      <th data-field="files">via text files</th>
+      <th data-field="mainui">in Main UI</th>
+      <th data-field="karaf">openHAB console</th>
       <th data-field="recommendation">Recommendation</th>
     </tr>
   </thead>
@@ -52,124 +62,98 @@ For a recommendation to new users which one(s) to use, see the section below. In
     <tr>
       <td>Auto-Discover Things and Items</td>
       <td>❌</td>
-      <td>✔️R</td>
-      <td>✔️R</td>
-      <td>❌</td>
       <td>✔️</td>
-      <td>Paper UI or HABmin<br/>Do not autocreate Items</td>
+      <td>✔️</td>
+      <td>Main UI<br/>Do not autocreate Items</td>
     </tr>
     <tr>
       <td>Define and manage Things</td>
-      <td>(✔️)<br/>not for all bindings</td>
-      <td>✔️R</td>
-      <td>✔️R</td>
-      <td>❌</td>
       <td>✔️</td>
-      <td>Paper UI or HABmin</td>
+      <td>✔️</td>
+      <td>✔️</td>
+      <td>Main UI</td>
     </tr>
     <tr>
-      <td>Define and manage Items</td>
-      <td>✔️R</td>
-      <td>✔️</td>
-      <td>❌</td>
+      <td>Define and manage Groups and Items</td>
       <td>✔️</td>
       <td>✔️</td>
+      <td>(✔️)</td>
       <td>items/*.items files</td>
     </tr>
     <tr>
-      <td>Define Groups</td>
-      <td>✔️R</td>
+      <td>Define GUI</td>
+      <td>sitemaps only</td>
+      <td>✔️<br>includes YAML view</td>
       <td>✔️</td>
-      <td>❌</td>
-      <td>✔️</td>
-      <td>✔️</td>
-      <td>items/*.items files</td>
-    </tr>
-    <tr>
-      <td>Define Sitemaps</td>
-      <td>✔️R</td>
-      <td>❌</td>
-      <td>❌</td>
-      <td>✔️R</td>
-      <td>❌</td>
-      <td>Homebuilder or sitemaps/*.sitemap files</td>
+      <td>Main UI<br>sitemaps/*.sitemap files</td>
     </tr>
     <tr>
       <td>Define Transformations</td>
       <td>✔️</td>
       <td>❌</td>
       <td>❌</td>
-      <td>❌</td>
-      <td>❌</td>
-      <td>transform/*.map files</td>
+      <td>transform/*.map*.js files</td>
     </tr>
     <tr>
       <td>Define Persistence</td>
       <td>✔️</td>
       <td>❌</td>
       <td>❌</td>
-      <td>❌</td>
-      <td>❌</td>
       <td>persistence/*.persist files</td>
     </tr>
     <tr>
       <td>Define Rules</td>
-      <td>✔️R</td>
-      <td>(❌)<br/>only for the experimental rules engine</td>
-      <td>(❌)<br/>not functional</td>
+      <td>✔️</td>
+      <td>✔️</td>
       <td>❌</td>
-      <td>❌</td>
-      <td>rules/*.rules files</td>
+      <td>Main UI<br>for starters: Blockly<br>(graphically create JS code)<br>for advanced users:<br>rules/*.rules files<br>for rules DSL and JSR223</td>
     </tr>
     <tr>
       <td>Manage Z-Wave Devices</td>
       <td>❌</td>
       <td>✔️</td>
-      <td>✔️R</td>
       <td>❌</td>
-      <td>❌</td>
-      <td>HABmin</td>
+      <td>Main UI</td>
     </tr>
     <tr>
       <td>Modify openHAB Settings/Services</td>
       <td>✔️</td>
-      <td>✔️R</td>
       <td>✔️</td>
-      <td>❌</td>
       <td>✔️</td>
-      <td>Paper UI</td>
+      <td>Main UI</td>
     </tr>
     <tr>
       <td>Install Add-ons</td>
-      <td>✔️R<br/>mandatory for OH1 bindings to require config</td>
-      <td>✔️R</td>
       <td>✔️</td>
-      <td>❌</td>
       <td>✔️</td>
-      <td>services/addons.cfg or Paper UI<br/>services/*.cfg for OH1 bindings</td>
+      <td>✔️</td>
+      <td>Main UI</td>
     </tr>
   </tbody>
 </table>
 
 ### Textual vs. Graphical Configuration
 
-In openHAB 1.x, smart home configuration was done via configuration files only.
-openHAB 2 added the administrative web interface "Paper UI".
-It allows for configuration of the base system and setup of openHAB 2 add-ons.
-Please be aware that not every addon/binding of openHAB version 1.x has been updated to version 2 and thus to work with Paper UI.
-You can still run these but you need to use file configuration for them.
+In openHAB 1, smart home configuration was done via configuration files only.
+openHAB 2 added the general administrative web interface "Paper UI", and openHAB 3 now further streamlines input capabilities with "Main UI".
+Things and Items can still be defined either in configuration files or via the GUI.
+We highly recommend adding them to the [system database](/docs/administration/jsondb.html) via Main UI, though.
+Note there is an option in Main UI to bulk create Items by copy and pasting the contents of existing `.items` files.
+Bulk delete is there, too.
+_Be sure to try out Semantic Modeling in Main UI_.
 
-Things and Items can either be defined and managed in configuration files or handled by Paper UI in a [system-side database](/docs/administration/jsondb.html).
-Both of the above described methods could be used parallel, e.g. a Thing can be discovered and created by Paper UI and the Items that link to that very same Thing (that Thing's Channels, actually) can be manually defined in a `.items` configuration file.
+Both methods can still be used in parallel, e.g. a Thing can be discovered and created in Main UI and the Items that link to that very same Thing (or that Thing's Channels, actually) can be manually defined in a `.items` configuration file.
+Technically speaking it's even possible to use text and UI config in parallel to maintain components of one type, however this is not recommended.
 
 ::: warning
-While it's technically possible to use both methods in parallel, we recommend to choose only one of them to avoid confusion and a loss of overview of your openHAB environment.
-It would work to mix but you may easily forget about what is your "source of truth" when you reconfigure Things or Items at a later stage.
+Do not mix file and UI definitions for Items (or for Things) to avoid confusion.
+It would work to mix these, but you can easily forget which is your "source of truth" when you add or reconfigure Things or Items at a later stage.
 :::
 
-Configuration done in files will be used (and Things/Items become visible and even changeable in Paper UI) if no Thing/Item of the same name was already created in PaperUI, but you can NOT create a Thing or Item using files and then use Paper UI to **permanently** change it.
-Configuration done in PaperUI will be used and permanently stored in the internal database if no Thing/Item of the same name already exists in files, but those additions or changes will not be copied back into any `.things` file.
-openHAB settings as defined in `services/addons.cfg` and `services/runtime.cfg` will override any settings made in PaperUI's Configuration/System pane.
+Things/Items configured in files will become visible in Main UI if no Thing/Item of the same name is already present in the system database, but a lock will symbolize that you can NOT change them in the GUI. You can only change them by editing the source files.
+**Note:** Things/Items you create via Main UI will be stored in the system database, but those additions or changes will not be written back into any `.things / .items` file.
+Textual configuration is a one-way street.
+Likewise, openHAB settings defined in `services/addons.cfg` and `services/runtime.cfg` will take precedence over any settings made via Main UI.
 
 ::: warning Important
 All text files must be created with UTF-8 encoding. When using Visual Studio Code, this encoding is already set by default.
@@ -177,21 +161,16 @@ All text files must be created with UTF-8 encoding. When using Visual Studio Cod
 
 ## Recommendations for New Users
 
-All interface options are supposed to work, still some of the more advanced settings might work better in one or the other setup.
-You have the full freedom of choice. On the other hand, this can be very confusing at times, particularly for new users.
-To help starters in narrowing down choices, here is some guidance that might also help to avoid some future pitfalls:
+Here are some hints to avoid some common pitfalls when starting out.
 
-* Use Paper UI to setup and maintain the openHAB base system. Use it to define _which_ addons and bindings you want to install and to assign _basic, static_ configuration (such as the device name of a ZWave stick or the IP address of a KNX gateway).
-* Create items and groups in `.items` files. You can also use [Homebuilder](homebuilder.html) to create your initial set of [.items](items.html) and [.sitemap](sitemaps.html) files. It is a separate GUI tool to assist you with the creation of these components to represent your home, however it does not provide GUI support for all the functionality that is available for use in .items, so it is not recommended to keep using Homebuilder to maintain these files.
-* Use Paper UI to manage configuration of each and every openHAB 2 add-on and binding.
-* Use file configuration or Paper UI to manage configuration of openHAB 1 add-ons and bindings.
-* Use Paper UI or habmin to manage ZWave things, but use configuration files to manage ZWave items.<br/>
-  There is a rationale to this: to use a GUI is comfortable for one-time actions, but you get any repetitive task easier and faster done using a text editor (e.g. search-and-replace names and parameters).
-  _Things_ can be autodiscovered so you don't have to enter all of them manually. Once initially configured, their configuration is not changing much over time.
-  On the other hand, you will keep changing _items_ rather often.
-  If you are new to openHAB, you will e.g. keep changing all of your item names as you keep learning what is a naming scheme you like best to work with in your rules. And once you are a pro, you will want to keep using files anyway. You can configure items via Paper UI, too, and you can use HABmin as well for both but remember once you use files, this will override any UI-made changes on next openHAB startup.
-* Use the editor of your choice to edit [sitemaps](sitemaps.html). Start with the demo sitemap as a template.
-* Use VS code extensions to [edit rules, items and sitemap files](editors.html).
-  You can also use any text editor, but VS code extensions will help you by highlighting and cross-checking the file syntax.
-  Either way, be aware that any 'save' results in openHAB reloading the rules file.
-  This can take more than a minute on a slow box such as a Raspberry Pi, so better to not edit rules files in place.
+- Start by modelling your house using a Semantic Model in Main UI.
+  Use it to create groups for rooms and apply proper semantic tags right away.
+  This will ultimately save a lot of setup work, as it will allow for group functions such as "switch off lights in _kitchen_" or _ground floor_ or _house_ and
+  also enable voice assistants to properly execute your instructions.
+  Be careful to apply a consistent naming scheme right in the beginning.
+- Use Main UI to manage Things. Remember that once initially configured, their configuration will not change much over time.
+- Run autodiscovery for _Things_ wherever offered so that you don't have to enter all of them manually
+- Also use Main UI to manage Items.
+  You can use the import function to import `.items` files or snippets taken from other sources like the openHAB community forum.
+- Use VS code extensions to [edit rules, items and sitemap files](editors.html).
+  You can also use any text editor or cloud based tool, but VS code extensions will work locally and help you by highlighting and cross-checking the file syntax.

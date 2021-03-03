@@ -3,7 +3,7 @@ require_relative "./process_file.rb"
 def process_main_docs(docs_source_dir)
 
     puts ">>> Migrating the introduction article"
-    process_file(".", "introduction.md", "docs", "https://github.com/openhab/openhab-docs/blob/master/introduction.md")
+    process_file(".", "introduction.md", "docs", "https://github.com/openhab/openhab-docs/blob/main/introduction.md")
     FileUtils.mv("docs/introduction.md", "docs/readme.md")
 
 
@@ -53,13 +53,13 @@ def process_main_docs(docs_source_dir)
     puts ">>> Migrating the Tutorial section"
 
 
-    Dir.glob("#{docs_source_dir}/tutorials/beginner/*.md") { |path|
+    Dir.glob("#{docs_source_dir}/tutorials/getting_started/*.md") { |path|
         file = File.basename(path)
         puts " -> #{file}"
-        process_file("#{docs_source_dir}/tutorials/beginner", file, "docs/tutorial", "#{$docs_repo_root}/tutorials/beginner/#{file}")
+        process_file("#{docs_source_dir}/tutorials/getting_started", file, "docs/tutorial", "#{$docs_repo_root}/tutorials/getting_started/#{file}")
     }
     puts " -> images"
-    FileUtils.cp_r("#{docs_source_dir}/tutorials/beginner/images", "docs/tutorial/images")
+     FileUtils.cp_r("#{docs_source_dir}/tutorials/getting_started/images", "docs/tutorial/images")
     # FileUtils.cp_r("#{docs_source_dir}/tutorials/images/*", "docs/tutorial/images")
 
 
@@ -77,24 +77,31 @@ def process_main_docs(docs_source_dir)
     FileUtils.cp_r("#{docs_source_dir}/configuration/images", "docs/configuration")
     process_file("#{docs_source_dir}/addons", "actions.md", "docs/configuration", "#{$docs_repo_root}/addons/actions.md")
     process_file("#{docs_source_dir}/addons", "transformations.md", "docs/configuration", "#{$docs_repo_root}/addons/transformations.md")
-    process_file("#{docs_source_dir}/tutorials", "migration.md", "docs/configuration/migration", "#{$docs_repo_root}/tutorials/migration.md")
-    FileUtils.mv("docs/configuration/migration/migration.md", "docs/configuration/migration/index.md")
-    FileUtils.cp_r("#{docs_source_dir}/tutorials/images", "docs/configuration/migration")
+    #process_file("#{docs_source_dir}/tutorials", "migration.md", "docs/configuration/migration", "#{$docs_repo_root}/tutorials/migration.md")
+    #FileUtils.mv("docs/configuration/migration/migration.md", "docs/configuration/migration/index.md")
+    #FileUtils.cp_r("#{docs_source_dir}/tutorials/images", "docs/configuration/migration")
+
+    puts ">>> Migrating the Migration Tutorial section"
 
 
+    Dir.glob("#{docs_source_dir}/configuration/migration/*.md") { |path|
+        file = File.basename(path)
+        puts " -> #{file}"
+        process_file("#{docs_source_dir}/configuration/migration", file, "docs/configuration/migration", "#{$docs_repo_root}/configuration/migration/#{file}")
+    }
+    puts " -> images"
+    #FileUtils.cp_r("#{docs_source_dir}/configuration/images", "docs/configuration") // no images placed yet
 
     puts ">>> Migrating the UI section"
 
 
-    Dir.glob("#{docs_source_dir}/_addons_uis/**") { |path|
-        next if path =~ /habpanel/ || path =~ /paper/ # Those already have their own article, no need to include the readme...
-        addon = File.basename(path)
-        puts " -> #{addon}"
-        FileUtils.mkdir_p("docs/configuration/ui/" + addon)
-        process_file("#{docs_source_dir}/_addons_uis", addon + "/readme.md", "docs/configuration/ui", "")
-        puts " -> images (#{addon})"
-        FileUtils.cp_r("#{docs_source_dir}/_addons_uis/#{addon}/doc", "docs/configuration/ui/#{addon}") if Dir.exists?("#{docs_source_dir}/_addons_uis/#{addon}/doc")
+    Dir.glob("#{docs_source_dir}/ui/*.md") { |path|
+        file = File.basename(path)
+        puts " -> #{file}"
+        process_file("#{docs_source_dir}/ui", file, "docs/ui", "#{$docs_repo_root}/ui/#{file}")
     }
+    puts " -> images"
+    FileUtils.cp_r("#{docs_source_dir}/ui/images", "docs/ui/images")
 
 
 

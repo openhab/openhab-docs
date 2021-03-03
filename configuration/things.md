@@ -3,8 +3,6 @@ layout: documentation
 title: Things
 ---
 
-{% include base.html %}
-
 # Things
 
 [Things]({{base}}/concepts/things.html) represent the physical layer of an openHAB system.
@@ -20,7 +18,7 @@ Items are used to control Things and consume their information.
 Ultimately, when Items are linked to Channels on a Thing, they become available to the various user interfaces and to the rules engine.
 
 ::: tip Note
-Things are a new concept in openHAB 2, Things definitions are not needed for 1.x bindings.
+Things are a new concept in openHAB, Things definitions are not needed for 1.x bindings.
 :::
 
 ## Defining Things
@@ -33,11 +31,11 @@ From then on, everything else is configured at the application layer for that en
 From start to finish, the process for fully configuring a physical entity represented by a Thing looks like this:
 
 1. Identify the binding required for the Thing
-2. Install the binding if it has not already been installed
-3. Define and configure the Thing
-4. Identify the Channels provided by the Thing
-5. [Add Items]({{base}}/configuration/items.html) and link them to the Thing's Channels
-6. At this point Items can be used to control the Thing or consume its information in e.g. [Sitemaps]({{base}}/configuration/sitemaps.html) or [Rules]({{base}}/configuration/rules-dsl.html)
+1. Install the binding if it has not already been installed
+1. Define and configure the Thing
+1. Identify the Channels provided by the Thing
+1. [Add Items]({{base}}/configuration/items.html) and link them to the Thing's Channels
+1. At this point Items can be used to control the Thing or consume its information in e.g. [Sitemaps]({{base}}/configuration/sitemaps.html) or [Rules]({{base}}/configuration/rules-dsl.html)
 
 There are two methods for defining Things provided by the various bindings:
 through [discovery]({{base}}/concepts/discovery.html) or by manual definition in configuration text files.
@@ -53,15 +51,15 @@ Other bindings (such as the [ZWave](/addons/bindings/zwave/) binding) currently 
 
 Things can be added to the system using [discovery]({{base}}/concepts/discovery.html), which allows Things to be discovered automatically if the appropriate binding has been installed and configured.
 When a Thing has been discovered, it appears in the discovery inbox.
-Newly discovered Things can be added to the system from the inbox using the [Paper UI]({{base}}/configuration/paperui.html).
+Newly discovered Things can be added to the system from the inbox using the UI.
 
 Things that are added to openHAB from the inbox are maintained in an internal database as opposed to a manually defined `.things` file (see below).
 Unlike manually defined Things, if a Thing has configurable properties, these properties can be set through a user interface.
 
-**Attention:** It has to be noted, that Things and Items added through Paper UI / discovery to the internal database will **not** be written to configuration files.
+**Attention:** It has to be noted, that Things and Items added through the UI / discovery to the internal database will **not** be written to configuration files.
 Things and Items definitions can be distributed and mixed among the internal database and manually defined text files.
 
-See the [configuration tutorial]({{base}}/tutorials/beginner/configuration.html) for a step-by-step guide on how to configure Things using discovery.
+See the [beginer tutorial]({{base}}/tutorials/things_simple.html) for a step-by-step guide on how to configure Things using discovery.
 
 ### Defining Things Using Files
 
@@ -76,14 +74,13 @@ Thing <binding_id>:<type_id>:<thing_id> "Label" @ "Location" [ <parameters> ]
 
 The first keyword defines whether the entry is a bridge or a thing.
 The next statement defines the UID of the thing which contains of the following three segments: `binding id`, `thing type id`, `thing id`.
-So the first two segments must match to a thing type supported by a binding (e.g. `network:device` or `astro:moon`), whereas the thing id can be freely defined.
+The first two segments must match to a thing type supported by a binding (e.g. `network:device` or `astro:moon`), whereas the thing id can be freely defined.
 Optionally, you may provide a label in order to recognize it easily, otherwise the default label from the thing type will be displayed.
 
 To help organizing your things, you also may define a location (`Location` in the example above).
 
-Inside the squared brackets configuration parameters of the thing are defined.
+Inside the square brackets configuration parameters of the thing are defined.
 The type of the configuration parameter is determined by the binding and must be specified accordingly in the DSL.
-
 
 **Examples:**
 
@@ -106,12 +103,12 @@ Please check each individual binding's [documentation](/addons/#binding) for det
 
 ### Defining Bridges Using Files
 
-Bridges can be defined together with contained things. The following configuration shows the definition of a hue bridge with two hue lamps:
+Bridges can be defined together with contained things. The following configuration shows the definition of a Hue bridge with two Hue lamps:
 
 ```xtend
 Bridge hue:bridge:mybridge [ ipAddress="192.168.3.123" ] {
-	Thing 0210 bulb1 [ lightId="1" ]
-	Thing 0210 bulb2 [ lightId="2" ]
+ Thing 0210 bulb1 [ lightId="1" ]
+ Thing 0210 bulb2 [ lightId="2" ]
 }
 ```
 
@@ -123,7 +120,7 @@ The resulting UID of the thing is `hue:0210:mybridge:bulb1`.
 Bridges that are defined somewhere else can also be referenced in the DSL:
 
 ```xtend
-Thing hue:0210:mybridge:bulb (hue:bridge:mybridge) [lightId="3"]
+Thing hue:0210:mybridge:bulb "Label" (hue:bridge:mybridge) @ "Location" [lightId="3"]
 ```
 
 The referenced bridge is specified in the parentheses.
@@ -160,11 +157,11 @@ It is also possible to add additional channels to existing things and for bindin
 
 ```xtend
 Thing yahooweather:weather:losangeles [ location=2442047, unit="us", refresh=120 ] {
-	Channels:
-		State String : customChannel1 "My Custom Channel" [
-			configParameter="Value"
-		]
-		State Number : customChannel2 []
+ Channels:
+  State String : customChannel1 "My Custom Channel" [
+   configParameter="Value"
+  ]
+  State Number : customChannel2 []
 }
 ```
 
@@ -176,11 +173,11 @@ As state channels are the default channels, you can omit the `State` keyword, th
 
 ```xtend
 Thing yahooweather:weather:losangeles [ location=2442047, unit="us", refresh=120 ] {
-	Channels:
-		String : customChannel1 "My Custom Channel" [
-			configParameter="Value"
-		]
-		Number : customChannel2 []
+ Channels:
+  String : customChannel1 "My Custom Channel" [
+   configParameter="Value"
+  ]
+  Number : customChannel2 []
 }
 ```
 
@@ -190,10 +187,10 @@ You may optionally give the channel a proper label (like “My Custom Channel”
 
 ```xtend
 Thing yahooweather:weather:losangeles [ location=2442047, unit="us", refresh=120 ] {
-	Channels:
-		Trigger String : customChannel1 [
-			configParameter="Value"
-		]
+ Channels:
+  Trigger String : customChannel1 [
+   configParameter="Value"
+  ]
 }
 ```
 
@@ -235,11 +232,11 @@ If you decide not to, then the label from the referenced channel type definition
 
 ### Linking Items
 
-Items can be linked to Channels of discovered or manually defined Things inside Paper UI or inside configuration files.
+Items can be linked to Channels of discovered or manually defined Things inside UI or inside configuration files.
 For more details about Item definition and usage, please refer to the [Items configuration article]({{base}}/configuration/items.html).
 
 It is important to note, that Channels of discovered Things can also be linked to Items defined in `.items` files.
-In order to link a Thing to an Item in an `.items` file, open the Thing in Paper UI under *Configuration → Things*.
+In order to link a Thing to an Item in an `.items` file, open the Thing in UI under `Settings → Things`.
 In the list of Thing Channels, look for the Channel you wish to link to an Item and copy the Channel's ID.
 For instance, a Z-Wave switch might have a Switch Channel that has an ID like this:
 

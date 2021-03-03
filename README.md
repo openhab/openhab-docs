@@ -4,12 +4,12 @@
 
 This repository contains the documentation for openHAB 3.x.
 
-The result is available at [https://next.openhab.org/docs/](https://www.openhab.org/docs/) and [https://next.openhab.org/addons/](https://www.openhab.org/addons/).
+The result is available at [https://openhab.org/docs/](https://www.openhab.org/docs/) and [https://openhab.org/addons/](https://www.openhab.org/addons/).
 
 ## How it works
 
 In this repo you can find and improve all *general* documentation contents.
-In fact that is all you can see in the `2.5.x` branch.
+In fact that is all you can see in the `main` branch.
 There are also other *read-only* branches, which hold external content like the *add-ons* and *concepts* documentation.
 We will read about them later.
 
@@ -17,8 +17,8 @@ We will read about them later.
 
 Correct, this is done in the original repository of the add-on.
 You may want to know how to find the right file in all of those repos?
-This is fairly easy: 
-on most of the documentation pages on https://next.openhab.org/, 
+This is fairly easy:
+on most of the documentation pages on <https://openhab.org/>,
 you will find the following link at the bottom, which will point you directly to the file you want to improve.
 
 ![Contribution link to a specific page](./images/contribution_link.png)
@@ -31,7 +31,7 @@ This happens mostly once a day. Afterwards your change is included in the next b
 The documentation is a community effort, so everyone is welcome to suggest changes, add new sections and fix bugs.
 This is done exactly the same way as for the code repositories, simply through pull requests against this repo.
 When editing a page through the _"Edit this page on GitHub"_ link on the website, you will be given the opportunity to
-create a pull request directly from GitHub. 
+create a pull request directly from GitHub.
 Please read our [contribution guidelines](CONTRIBUTING.md) and try to follow
 them as best as you can before submitting a change for review - but don't worry if you don't understand all of them, we
 will help you to get it right.
@@ -40,7 +40,7 @@ will help you to get it right.
 
 We use them to bring together all relevant articles or to archive versioned content.
 Mostly those branches will get updated automatically through our continuous integration builds.
-You can read a bit more below about our external ressources and how we get them.
+You can read a bit more below about our external resources and how we get them.
 
 ### Automatically Generated Parts
 
@@ -96,4 +96,4 @@ In short, the following has to be considered:
 - Versions like "2.1.0" are marked by git tags.
 - Based on tags branches like "2.1-patch" are created, to include later discovered changes (like fixed links).
 
-When a version is tagged (or updated), a static version of the website has to be generated and copied into the correct sub-folder, this is currently a manual operation described succinctly here: https://github.com/openhab/website/issues/72
+When a version is tagged (or updated), a static version of the website has to be generated and copied into the correct sub-folder, this is currently a manual operation described succinctly here: <https://github.com/openhab/website/issues/72>

@@ -3,8 +3,6 @@ layout: developersguide
 title: Transformations / Profiles
 ---
 
-{% include base.html %}
-
 # Developing a Transformation Service
 
 Transformations and Profiles (see next section) are very similar in their nature. Usually
@@ -28,7 +26,7 @@ your needs like `AbstractFileTransformationService`.
 
 ```java
 @NonNullByDefault
-@Component(immediate = true, property = { "smarthome.transform=BRO" })
+@Component(immediate = true, property = { "openhab.transform=BRO" })
 public class TheBroTransformationService implements TransformationService {
     private final Logger logger = LoggerFactory.getLogger(TheBroTransformationService.class);
 
@@ -41,7 +39,6 @@ public class TheBroTransformationService implements TransformationService {
 Next you implement the `transform` method. You are given a user configuration and the input value.
 In our case we do not use the `config` parameter.
 Other services like the regex or map transformation are using this parameter for the regex ("`.*=(\\d*.\\d*).*`") or the map (`mapfile.map`) for example.
-
 
 Our implementation is as simple as this:
 
@@ -61,28 +58,28 @@ just like transformations.
 
 But in contrast to transformations, if one Channel is linked to several Items it also will have several profile instances.
 Each instance handling the communication to exactly one of these Items.
-The same applies for the situation where one Item is linked to multiple Channels. 
+The same applies for the situation where one Item is linked to multiple Channels.
 
-Profiles are created by ProfileFactories and are retained for the lifetime of their link. 
+Profiles are created by ProfileFactories and are retained for the lifetime of their link.
 This means that they are, in contrast to transformations, allowed to retain a transient state,
-like e.g. the timestamp of the the last event or the last state. 
+like e.g. the timestamp of the the last event or the last state.
 With this, it is possible to take into account the temporal dimension when calculating the appropriate action in any situation.
 
 There exist two different kinds of profiles: state and trigger profiles.
 
 ## State Profiles
 
-State profiles are responsible for communication between Items and their corresponding state Channels (`ChannelKind.STATE`). 
+State profiles are responsible for communication between Items and their corresponding state Channels (`ChannelKind.STATE`).
 Their purpose is to forward state updates and commands to and from the Thing handlers.
 
 ## Trigger Profiles
 
-Trigger Channels (`ChannelKind.TRIGGER`) by themselves do not maintain a state (as by their nature they only fire events). 
-With the help of trigger profiles they can be linked to Items anyway. 
-Hence the main purpose of a trigger profile is to calculate a state based on the fired events. 
-This state then is forwarded to the linked Item by sending `ItemStateEvents`. 
+Trigger Channels (`ChannelKind.TRIGGER`) by themselves do not maintain a state (as by their nature they only fire events).
+With the help of trigger profiles they can be linked to Items anyway.
+Hence the main purpose of a trigger profile is to calculate a state based on the fired events.
+This state then is forwarded to the linked Item by sending `ItemStateEvents`.
 
-Trigger profiles are powerful means to implement some immediate, straight-forward logic without the need to write any rules. 
+Trigger profiles are powerful means to implement some immediate, straight-forward logic without the need to write any rules.
 
 Apart from that, they do not pass any commands or state updates to and from the Thing handler as by their nature trigger Channels are not capable of handling these.
 

@@ -3,15 +3,15 @@ layout: developersguide
 title: Automation Modules
 ---
 
-{% include base.html %}
-
 # Developing Automation Modules
+
 {:.no_toc}
 
 In this section you will be guided through developing *Module Types* and corresponding *Module Handlers* for the automation engine of openHAB.
 
 {::options toc_levels="2,3"/}
-* TOC
+
+- TOC
 {:toc}
 
 ## Module Types and Module Handlers
@@ -46,7 +46,7 @@ public class MyModuleTypeProvider implements ModuleTypeProvider {
     private Map<String, ModuleType> providedModuleTypes;
 
     public MyModuleTypeProvider() {
-        providedModuleTypes = new HashMap<String, ModuleType>();
+        providedModuleTypes = new HashMap<>();
         providedModuleTypes.put(TemperatureTriggerType.UID, TemperatureTriggerType.initialize());
         providedModuleTypes.put(PresenceConditionType.UID, PresenceConditionType.initialize());
         providedModuleTypes.put(AirConditionerActionType.UID, AirConditionerActionType.initialize());
@@ -178,9 +178,9 @@ The Condition that we are going to implement in the Condition Handler latter on 
 Notice that our output is of type "State" instead of a fully qualified class name like `java.lang.String`.
 The following openHAB classes have short forms:
 
-* "State" (an *Item* state)
-* "Event" (an openHAB event from the event bus)
-* "Command" (a command targeting an *Item*)
+- "State" (an *Item* state)
+- "Event" (an openHAB event from the event bus)
+- "Command" (a command targeting an *Item*)
 
 And now let's have a look at the Action type.
 
@@ -231,27 +231,27 @@ You will learn an easier way in a moment for statically defined module types
 In the last section we learned about the programmatic way of exposing *Module Types*.
 It is actually way easier to just descripe your module types in a declarative way via json and bundle them with your addon.
 
-To describe your modules (triggers, conditions, actions), add json files to `src/main/resources/ESH-INF/automation/moduletypes/`.
+To describe your modules (triggers, conditions, actions), add json files to `src/main/resources/OH-INF/automation/moduletypes/`.
 A module type file can contain one or multiple type descriptions.
 
 For our scenario we go with one file:
 
 ```json
-{  
+{
    "triggers":[
-      {  
+      {
          "uid":"TemperatureTriggerType",
          "label":"Temperature Trigger",
          "description":"This triggers when the temperature has reached a certain value",
-         "configDescriptions":[  
-            {  
+         "configDescriptions":[
+            {
                "name":"temperature",
                "type":"INTEGER",
                "label":"Temperature",
                "description":"Trigger temperature",
                "required":true
             },
-            {  
+            {
                "name":"operator",
                "type":"TEXT",
                "label":"Operator",
@@ -260,8 +260,8 @@ For our scenario we go with one file:
                "default": "above"
             }
          ],
-         "outputs":[  
-            {  
+         "outputs":[
+            {
                "name":"temperature",
                "type":"java.lang.Integer",
                "label":"Current Temperature",
@@ -270,13 +270,13 @@ For our scenario we go with one file:
          ]
       }
    ],
-   "conditions":[  
-      {  
+   "conditions":[
+      {
          "uid":"PresenceConditionType",
          "label":"Presence Condition",
          "description":"This condition is satisfied when the configure presence item is in ON state",
-         "configDescriptions":[  
-            {  
+         "configDescriptions":[
+            {
                "name":"presence",
                "type":"TEXT",
                "label":"Presence item",
@@ -284,8 +284,8 @@ For our scenario we go with one file:
                "required":true
             }
          ],
-         "outputs":[  
-            {  
+         "outputs":[
+            {
                "name":"presence",
                "type":"State",
                "label":"Output value",
@@ -294,20 +294,20 @@ For our scenario we go with one file:
          ]
       }
    ],
-   "actions":[  
-      {  
+   "actions":[
+      {
          "uid":"AirConditionerActionType",
          "label":"Switch an air conditioner",
          "description":"Control an air conditioner. Depending on the configuration and inputs it is switched into different power levels",
-         "configDescriptions":[  
-            {  
+         "configDescriptions":[
+            {
                "name":"level1_min_temp",
                "type":"INTEGER",
                "label":"Temperature for level 1",
                "description":"Level 1 on the given temperature in celsius",
                "required":true
             },
-            {  
+            {
                "name":"level2_min_temp",
                "type":"INTEGER",
                "label":"Temperature for level 2",
@@ -315,8 +315,8 @@ For our scenario we go with one file:
                "required":true
             }
          ],
-         "inputs":[  
-            {  
+         "inputs":[
+            {
                "name":"temperature",
                "type":"java.lang.Integer",
                "label":"Current Temperature",
@@ -334,9 +334,9 @@ You now have semantically described your modules.
 
 The pieces of code that actually
 
-* trigger, in case of Trigger types,
-* decide on condition satisfaction for Condition types or
-* execute something in case of Action types
+- trigger, in case of Trigger types,
+- decide on condition satisfaction for Condition types or
+- execute something in case of Action types
 
 are called *Module handlers*.
 
@@ -408,7 +408,7 @@ public class TemperatureTriggerHandler extends BaseTriggerModuleHandler
 
       String tempOp = (String) context.get(TemperatureTriggerType.CONFIG_OPERATOR);
       onAbove = (tempOp != null && "below".equals(tempOp)) ? false : true;
-      
+
    }
 
    // Setup your triggering stuff in here
@@ -426,7 +426,7 @@ public class TemperatureTriggerHandler extends BaseTriggerModuleHandler
 
    // Event from our imaginary temperature device. Triggers connected rules if temp is
    // over the configured threshold.
-   @Override 
+   @Override
    public void tempChangedOnImaginaryDevice(int tempInCelsius) {
       if (
             (tempInCelsius>temperature && onAbove) ||
@@ -437,7 +437,6 @@ public class TemperatureTriggerHandler extends BaseTriggerModuleHandler
    }
 }
 ```
-
 
 ### Condition Handler
 
@@ -470,6 +469,7 @@ public class PresenceConditionHandler extends BaseModuleHandler<Condition> imple
 
 }
 ```
+
 ### Action Handler
 
 Action Handler is used to help the Automation Engine to execute the specific Actions.
@@ -490,17 +490,17 @@ The automation engine reads rule json files from the `{openhab-dir}/automation/*
 The rule that implements our application is declaratively described in the json format like this:
 
 ```json
-[  
-   {  
+[
+   {
       "uid":"JsonDemoRule",
       "name":"DemoRule",
       "triggers":[
-         {  
+         {
             "id":"RuleTrigger",
             "label":"Item State Change Trigger",
             "description":"This triggers a rule if an items state changed",
             "type":"ItemStateChangeTrigger",
-            "configuration":{  
+            "configuration":{
                "itemName":"DemoSwitch"
             }
          }
@@ -508,12 +508,12 @@ The rule that implements our application is declaratively described in the json 
       "conditions":[
       ],
       "actions":[
-         {  
+         {
             "id":"RuleAction",
             "label":"Post command to an item",
             "description":"Posts commands on items",
             "type":"ItemPostCommandAction",
-            "configuration":{  
+            "configuration":{
                "itemName":"DemoDimmer",
                "command":"ON"
             }

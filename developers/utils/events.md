@@ -3,9 +3,8 @@ layout: developersguide
 title: Event Bus
 ---
 
-{% include base.html %}
-
 # Event Bus
+
 {:.no_toc}
 
 The openHAB framework provides an event bus for inter-component communication.
@@ -16,7 +15,8 @@ This section introduces the event API and illustrates how to receive such events
 Furthermore, the sending of events and the implementation of new event types will be described.
 
 {::options toc_levels="2,3"/}
-* TOC
+
+- TOC
 {:toc}
 
 ## API Introduction
@@ -40,7 +40,7 @@ The payloads of the openHAB core events are serialized with JSON.
 Each event implementation provides the payload as high level methods as well, usually presented by a data transfer object (DTO).
 
 A topic clearly defines the target of the event and its structure is similar to a REST URI, except the last part, the action.
-The topics of openHAB events are divided into the following four parts: `{namespace}/{entityType}/{entity}/{action}`, e.g. `smarthome/items/{itemName}/command`.
+The topics of openHAB events are divided into the following four parts: `{namespace}/{entityType}/{entity}/{action}`, e.g. `openhab/items/{itemName}/command`.
 
 The type of an event is represented by a string, usually the name of the concrete event implementation class, e.g. `ItemCommandEvent`, `ItemUpdatedEvent` .
 This string type presentation is used by event subscribers for event subscription (see chapter "Receive Events") and by the framework for the creation of concrete event instances.
@@ -49,16 +49,16 @@ The event source is optional and represents the name of the source identifying t
 
 #### Item Events
 
-| Event                      | Description                                             | Topic                                                |
-|----------------------------|---------------------------------------------------------|------------------------------------------------------|
-| ItemAddedEvent             | An item has been added to the item registry.            | smarthome/items/{itemName}/added                     |
-| ItemRemovedEvent           | An item has been removed from the item registry.        | smarthome/items/{itemName}/removed                   |
-| ItemUpdatedEvent           | An item has been updated in the item registry.          | smarthome/items/{itemName}/updated                   |
-| ItemCommandEvent           | A command is sent to an item via a channel.             | smarthome/items/{itemName}/command                   |
-| ItemStateEvent             | The state of an item is updated.                        | smarthome/items/{itemName}/state                     |
-| ItemStatePredictedEvent    | The state of an item predicted to be updated.           | smarthome/items/{itemName}/statepredicted            |
-| ItemStateChangedEvent      | The state of an item has changed.                       | smarthome/items/{itemName}/statechanged              |
-| GroupItemStateChangedEvent | The state of a group item has changed through a member. | smarthome/items/{itemName}/{memberName}/statechanged |
+| Event                      | Description                                             | Topic                                              |
+|----------------------------|---------------------------------------------------------|----------------------------------------------------|
+| ItemAddedEvent             | An item has been added to the item registry.            | openhab/items/{itemName}/added                     |
+| ItemRemovedEvent           | An item has been removed from the item registry.        | openhab/items/{itemName}/removed                   |
+| ItemUpdatedEvent           | An item has been updated in the item registry.          | openhab/items/{itemName}/updated                   |
+| ItemCommandEvent           | A command is sent to an item via a channel.             | openhab/items/{itemName}/command                   |
+| ItemStateEvent             | The state of an item is updated.                        | openhab/items/{itemName}/state                     |
+| ItemStatePredictedEvent    | The state of an item predicted to be updated.           | openhab/items/{itemName}/statepredicted            |
+| ItemStateChangedEvent      | The state of an item has changed.                       | openhab/items/{itemName}/statechanged              |
+| GroupItemStateChangedEvent | The state of a group item has changed through a member. | openhab/items/{itemName}/{memberName}/statechanged |
 
 ::: tip Note
 The `ItemStateEvent` is always sent if the state of an item is updated, even if the state did not change.
@@ -71,13 +71,13 @@ It contains the old and the new state of the group item as well as the member.
 
 #### Thing Events
 
-| Event                       | Description                                       | Topic                                     |
-|-----------------------------|---------------------------------------------------|-------------------------------------------|
-| ThingAddedEvent             | A thing has been added to the thing registry.     | smarthome/things/{thingUID}/added         |
-| ThingRemovedEvent           | A thing has been removed from the thing registry. | smarthome/things/{thingUID}/removed       |
-| ThingUpdatedEvent           | A thing has been updated in the thing registry.   | smarthome/things/{thingUID}/updated       |
-| ThingStatusInfoEvent        | The status of a thing is updated.                 | smarthome/things/{thingUID}/status        |
-| ThingStatusInfoChangedEvent | The status of a thing changed.                    | smarthome/things/{thingUID}/statuschanged |
+| Event                       | Description                                       | Topic                                   |
+|-----------------------------|---------------------------------------------------|-----------------------------------------|
+| ThingAddedEvent             | A thing has been added to the thing registry.     | openhab/things/{thingUID}/added         |
+| ThingRemovedEvent           | A thing has been removed from the thing registry. | openhab/things/{thingUID}/removed       |
+| ThingUpdatedEvent           | A thing has been updated in the thing registry.   | openhab/things/{thingUID}/updated       |
+| ThingStatusInfoEvent        | The status of a thing is updated.                 | openhab/things/{thingUID}/status        |
+| ThingStatusInfoChangedEvent | The status of a thing changed.                    | openhab/things/{thingUID}/statuschanged |
 
 ::: tip Note
 The `ThingStatusInfoEvent` is always sent if the status info of a thing is updated, even if the status did not change.
@@ -87,29 +87,28 @@ It contains the old and the new status of the thing.
 
 #### Inbox Events
 
-| Event                 | Description                                         | Topic                              |
-|-----------------------|-----------------------------------------------------|------------------------------------|
-| InboxAddedEvent       | A discovery result has been added to the inbox.     | smarthome/inbox/{thingUID}/added   |
-| InboxRemovedEvent     | A discovery result has been removed from the inbox. | smarthome/inbox/{thingUID}/removed |
-| InboxUpdateEvent      | A discovery result has been updated in the inbox.   | smarthome/inbox/{thingUID}/updated |
+| Event                 | Description                                         | Topic                            |
+|-----------------------|-----------------------------------------------------|----------------------------------|
+| InboxAddedEvent       | A discovery result has been added to the inbox.     | openhab/inbox/{thingUID}/added   |
+| InboxRemovedEvent     | A discovery result has been removed from the inbox. | openhab/inbox/{thingUID}/removed |
+| InboxUpdateEvent      | A discovery result has been updated in the inbox.   | openhab/inbox/{thingUID}/updated |
 
 #### Link Events
 
-| Event                       | Description                                              | Topic                                           |
-|-----------------------------|----------------------------------------------------------|-------------------------------------------------|
-| ItemChannelLinkAddedEvent   | An item channel link has been added to the registry.     | smarthome/links/{itemName}-{channelUID}/added   |
-| ItemChannelLinkRemovedEvent | An item channel link has been removed from the registry. | smarthome/links/{itemName}-{channelUID}/removed |
+| Event                       | Description                                              | Topic                                         |
+|-----------------------------|----------------------------------------------------------|-----------------------------------------------|
+| ItemChannelLinkAddedEvent   | An item channel link has been added to the registry.     | openhab/links/{itemName}-{channelUID}/added   |
+| ItemChannelLinkRemovedEvent | An item channel link has been removed from the registry. | openhab/links/{itemName}-{channelUID}/removed |
 
 #### Channel Events
 
-| Event                       | Description                                              | Topic                                           |
-|-----------------------------|----------------------------------------------------------|-------------------------------------------------|
-| ChannelTriggeredEvent       | A channel has been triggered.                            | smarthome/channels/{channelUID}/triggered       |
+| Event                       | Description                                              | Topic                                         |
+|-----------------------------|----------------------------------------------------------|-----------------------------------------------|
+| ChannelTriggeredEvent       | A channel has been triggered.                            | openhab/channels/{channelUID}/triggered       |
 
 ## Receive Events
 
 This section describes how to receive openHAB events in Java.
-If you want to receive events "outside" openHAB, e.g. with [cURL](https://en.wikipedia.org/wiki/CURL), please refer to the [REST API Examples](../../configuration/restdocs.html#rest-api-examples) section.
 
 An event subscriber defines the callback interface for receiving events from the openHAB event bus.
 The following Java snippet shows how to receive `ItemStateEvent`s and `ItemCommandEvent`s from the event bus.
@@ -118,7 +117,7 @@ Therefore, the `EventSubscriber` interface must be implemented.
 ```java
 public class SomeItemEventSubscriber implements EventSubscriber {
     private final Set<String> subscribedEventTypes = ImmutableSet.of(ItemStateEvent.TYPE, ItemCommandEvent.TYPE);
-    private final EventFilter eventFiter = new TopicEventFilter("smarthome/items/ItemX/.*");
+    private final EventFilter eventFiter = new TopicEventFilter("openhab/items/ItemX/.*");
 
     @Override
     public Set<String> getSubscribedEventTypes() {
@@ -153,47 +152,47 @@ A string representation of an event type can be found by a public member `TYPE` 
 To subscribe to all available event types, use the public member `ALL_EVENT_TYPES` of the event subscriber interface.
 
 The event subscriber provides a `TopicEventFilter` which is a default openHAB `EventFilter` implementation that ensures filtering of events based on a topic.
-The argument of the filter is a [Java regular expression](https://docs.oracle.com/javase/8/docs/api/java/util/regex/Pattern.html).
+The argument of the filter is a [Java regular expression](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/regex/Pattern.html).
 The filter method `EventFilter.apply()` will be called for each event on the event bus to which the event subscriber is subscribed (in the example above `ItemStateEvent` and `ItemCommandEvent`).
 If the filter applies (in the given example for all item events with the item name "ItemX"), the event will be received by the `EventSubscriber.receive()` method.
 Received events can be cast to the event implementation class for further processing.
 
-Each event subscriber must be registered via OSGi Declarative Services (DS) under the  `org.eclipse.smarthome.event.EventSubscriber` interface.
+Each event subscriber must be registered via OSGi Declarative Services (DS) under the `org.openhab.core.event.EventSubscriber` interface.
 
 ```xml
-<scr:component xmlns:scr="http://www.osgi.org/xmlns/scr/v1.1.0" immediate="true" name="SomeItemEventSubscriber">
-   <implementation class="org.eclipse.smarthome.core.items.events.SomeItemEventSubscriber"/>
+<scr:component xmlns:scr="https://www.osgi.org/xmlns/scr/v1.1.0" immediate="true" name="SomeItemEventSubscriber">
+   <implementation class="org.openhab.core.items.events.SomeItemEventSubscriber"/>
    <service>
-      <provide interface="org.eclipse.smarthome.core.events.EventSubscriber"/>
+      <provide interface="org.openhab.core.events.EventSubscriber"/>
    </service>
 </scr:component>
 ```
 
 The listing below summarizes some best practices in order to implement event subscribers:
 
-- To subscribe to only one event type openHAB provides the `org.eclipse.smarthome.core.events.AbstractTypedEventSubscriber` implementation.
-To receive an already cast event the `receiveTypedEvent(T)` method must be implemented.
-To provide an event filter the method `getEventFilter()` can be overridden.
+- To subscribe to only one event type openHAB provides the `org.openhab.core.events.AbstractTypedEventSubscriber` implementation.
+    To receive an already cast event the `receiveTypedEvent(T)` method must be implemented.
+    To provide an event filter the method `getEventFilter()` can be overridden.
 - openHAB provides an `AbstractItemEventSubscriber` class in order to receive `ItemStateEvents` and `ItemCommandEvents` (more information can be obtained in the next chapter).
-- To filter events based on a topic the  `org.eclipse.smarthome.core.events.TopicEventFilter` implementation from the openHAB core bundle can be used.
-The filtering is based on [Java regular expression](https://docs.oracle.com/javase/8/docs/api/java/util/regex/Pattern.html).
+- To filter events based on a topic the  `org.openhab.core.events.TopicEventFilter` implementation from the openHAB core bundle can be used.
+    The filtering is based on [Java regular expression](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/regex/Pattern.html).
 - The subscribed event types and the filter should be stored as class members (see example above) due to performance reasons.
 - If the subscribed event types are sufficient in order to receive all interested events, do not return any filter (in that case the method getFilter() returns null) due to performance reasons.
 - Avoid the creation of too many event subscribers.
-Similar event types can be received in one event subscriber.
+    Similar event types can be received in one event subscriber.
 - Handle exceptions in event subscriber implementation and throw only serious exceptions.
-Thrown exceptions will be handled in the framework by logging an error message with the cause.
+    Thrown exceptions will be handled in the framework by logging an error message with the cause.
 - The receive method should terminate quickly, since it blocks other event subscribers.
-Create a thread for long running operations.
+    Create a thread for long running operations.
 
 ### Receive ItemStateEvents and ItemCommandEvents
 
 Due to the fact that receiving `ItemStateEvents` and `ItemCommandEvents` is a common use case, openHAB provides an abstract event subscriber implementation via the core bundle.
-The class `org.eclipse.smarthome.core.items.events.AbstractItemEventSubscriber` provides two methods `receiveUpdate(ItemStateEvent)` and `receiveCommand(ItemCommandEvent)` which can be implemented in order to receive and handle such events.
+The class `org.openhab.core.items.events.AbstractItemEventSubscriber` provides two methods `receiveUpdate(ItemStateEvent)` and `receiveCommand(ItemCommandEvent)` which can be implemented in order to receive and handle such events.
 
 ```java
 public class SomeItemEventSubscriber extends AbstractItemEventSubscriber {
-    private final EventFilter eventFiter = new TopicEventFilter("smarthome/items/ItemX/.*");
+    private final EventFilter eventFiter = new TopicEventFilter("openhab/items/ItemX/.*");
 
     @Override
     public EventFilter getEventFilter() {
@@ -281,7 +280,7 @@ public class SunriseEvent extends AbstractEvent {
 The listing below summarizes some coding guidelines as illustrated in the example above:
 
 - Events should only be created by event factories.
-Constructors do not have any access specifier in order to make the class package private.
+    Constructors do not have any access specifier in order to make the class package private.
 - The serialization of the payload into a data transfer object (e.g. `SunriseDTO`) should be part of the event factory and will be assigned to a class member via the constructor.
 - A public member `TYPE` represents the event type as string representation and is usually the name of the class.
 - The `toString()` method should deliver a meaningful string since it is used for event logging.
@@ -298,7 +297,7 @@ The classes are located in the openHAB core bundle.
 ```java
 public class SunEventFactory extends AbstractEventFactory {
 
-    private static final String SUNRISE_EVENT_TOPIC = "smarthome/sun/{time}/sunrise";
+    private static final String SUNRISE_EVENT_TOPIC = "openhab/sun/{time}/sunrise";
 
     public SunEventFactory() {
         super(Sets.newHashSet(SunriseEvent.TYPE);
@@ -329,14 +328,14 @@ public class SunEventFactory extends AbstractEventFactory {
 The listing below summarizes some guidelines as illustrated in the example above:
 
 - Provide the supported event types (`SunriseEvent.TYPE`) via an `AbstractEventFactory` constructor call.
-The supported event types will be returned by the `AbstractEventFactory.getSupportedEventTypes()` method.
+    The supported event types will be returned by the `AbstractEventFactory.getSupportedEventTypes()` method.
 - The event factory defines the topic (`SUNRISE_EVENT_TOPIC`) of the supported event types.
-Please ensure that the topic format follows the topic structure of the openHAB core events, similar to a REST URI (`{namespace}/{entityType}/{entity}/{sub-entity-1}/.../{sub-entity-n}/{action}`).
-The namespace must be `smarthome`.
+    Please ensure that the topic format follows the topic structure of the openHAB core events, similar to a REST URI (`{namespace}/{entityType}/{entity}/{sub-entity-1}/.../{sub-entity-n}/{action}`).
+    The namespace must be `openhab`.
 - Implement the method `createEventByType(String eventType, String topic, String payload, String source)` to create a new event based on the topic and the payload, determined by the event type.
-This method will be called by the framework in order to dispatch received events to the corresponding event subscribers.
-If the payload is serialized with JSON, the method `deserializePayload(String payload, Class<T> classOfPayload)` can be used to deserialize the payload into a data transfer object.
+    This method will be called by the framework in order to dispatch received events to the corresponding event subscribers.
+    If the payload is serialized with JSON, the method `deserializePayload(String payload, Class<T> classOfPayload)` can be used to deserialize the payload into a data transfer object.
 - Provide a static method to create event instances based on a domain object (Item, Thing, or in the example above `Sunrise`).
-This method can be used by components in order to create events based on domain objects which should be sent by the EventPublisher.
-If the data transfer object should be serialized into a JSON payload, the method `serializePayload(Object payloadObject)` can be used.
-Custom event factories must be registered as an OSGi Service (eg. by using the @Component annotation) in order to receive the custom events.
+    This method can be used by components in order to create events based on domain objects which should be sent by the EventPublisher.
+    If the data transfer object should be serialized into a JSON payload, the method `serializePayload(Object payloadObject)` can be used.
+    Custom event factories must be registered as an OSGi Service (eg. by using the @Component annotation) in order to receive the custom events.

@@ -7,15 +7,23 @@ module.exports = [
     ]
   },
   {
-    title: 'Concepts',
+    title: 'Getting Started',
     collapsable: false,
     children: [
-      ['concepts/', 'Concepts Overview'],
-      'concepts/things',
-      'concepts/items',
-      'concepts/discovery',
-      'concepts/audio',
-      'concepts/units-of-measurement',  // from v2.3 onwards
+      ['tutorial/', 'Tutorial Overview'],
+      'tutorial/first_steps',
+      'tutorial/things_simple',
+      'tutorial/things_intermediate',
+      'tutorial/things_advanced',
+      'tutorial/model',
+      'tutorial/persistence',
+      /*'tutorial/pages_intro',
+      'tutorial/pages_widgets',
+      'tutorial/pages_types',
+      'tutorial/rules_simple',
+      'tutorial/rules_intermediate',
+      'tutorial/cloud',
+      'tutorial/example'*/
     ]
   },
   {
@@ -28,26 +36,23 @@ module.exports = [
       ['installation/macos', 'macOS'],
       'installation/openhabian',
       'installation/rasppi',
-      'installation/pine',
       'installation/armbian',
       'installation/docker',
       'installation/synology',
-      'installation/qnap',
+      // 'installation/qnap', // Remove until we get feedback about the current package state
       ['installation/security', 'Security']
     ]
   },
   {
-    title: 'New User Tutorial',
+    title: 'Concepts',
     collapsable: false,
     children: [
-      ['tutorial/', 'Tutorial Overview'],
-      'tutorial/1sttimesetup',
-      'tutorial/uis',
-      'tutorial/configuration',
-      'tutorial/sitemap',
-      'tutorial/rules',
-      'tutorial/logs',
-      ['tutorial/persistence', 'Persistence']
+      ['concepts/', 'Concepts Overview'],
+      'concepts/things',
+      'concepts/items',
+      'concepts/discovery',
+      'concepts/audio',
+      'concepts/units-of-measurement',  // from v2.3 onwards
     ]
   },
   {
@@ -55,10 +60,10 @@ module.exports = [
     collapsable: false,
     children: [
       ['configuration/', 'Configuration Overview'],
+      'configuration/editors',
       'configuration/addons',
       'configuration/things',
       'configuration/items',
-      'configuration/sitemaps',
       'configuration/persistence',
       'configuration/rules-dsl',
       'configuration/transformations',
@@ -67,33 +72,40 @@ module.exports = [
       'configuration/jsr223',
       'configuration/services',
       'configuration/multimedia',
-      ['configuration/migration/', 'Migration from 1.x']
+      ['configuration/restdocs', 'REST API'],
+      ['configuration/apitokens', 'API Token Generation'],
+      ['configuration/migration/', 'Migration from openHAB 2']
     ]
   },
   {
-    title: 'Interfaces and Ecosystem',
+    title: 'User Interface Guide',
     collapsable: false,
     children: [
-      'configuration/packages',
-      'configuration/editors',
-      'configuration/homebuilder',
-      ['configuration/paperui', 'Paper UI'],
-      ['configuration/ui/habmin/', 'HABmin'],
-      ['configuration/ui/habot/', 'HABot'],
-      'configuration/habpanel',
-      ['configuration/ui/basic/', 'Basic UI'],
-      ['configuration/ui/classic/', 'Classic UI'],
-      'configuration/rules-ng',
-      'configuration/eclipseiotmarket',
-      ['configuration/restdocs', 'REST API'],
+      'ui/',
+      'ui/sitemaps',
+      'ui/layout-pages',
+      'ui/map-pages',
+      'ui/floorplan-pages',
+      'ui/tabbed-pages',
+      'ui/chart-pages',
+      ['ui/building-pages', 'Building Pages'],
+      ['ui/components/', 'Component Reference'],
+      'ui/habpanel/habpanel',
       ['apps/android', 'Android App'],
       'apps/ios',
-      'apps/windows',
+      'apps/windows'
+    ]
+  },
+  {
+    title: 'Ecosystem',
+    collapsable: false,
+    children: [
       ['ecosystem/alexa/', 'Amazon Alexa'],
       ['ecosystem/google-assistant/', 'Google Assistant'], // from v2.3 onwards
       ['../addons/integrations/homekit/', 'Apple HomeKit'],
-      ['ecosystem/ifttt/', 'IFTTT'],
+      // ['ecosystem/ifttt/', 'IFTTT'], // Temporary remove until service gets reactivated
       ['ecosystem/mycroft/', 'Mycroft.AI'],
+      ['../addons/integrations/openhabcloud/', 'openHAB Cloud'],
     ]
   },
   {
@@ -106,6 +118,7 @@ module.exports = [
       'administration/bundles',
       'administration/logging',
       'administration/jsondb',
+      'administration/serial'
     ]
   },
   {
@@ -134,10 +147,9 @@ module.exports = [
       'developer/tests',
       'developer/contributing',
       'developer/governance',
-      'developer/legacy/compatibilitylayer',
       {
         title: 'Javadoc',
-        path: 'https://next.openhab.org/javadoc/latest/'
+        path: 'https://openhab.org/javadoc/latest/'
       }
     ]
   },

@@ -1,12 +1,12 @@
 {
-    "version": "2.0.0",
+    "version": "3.0.0",
     "options": {
         "env": {
-            "openhab_home": "c://openhab2",
-            "openhab_runtime": "c://openhab2/runtime",
-            "openhab_addons": "c://openhab2/addons",
-            "openhab_logs": "C://openhab2/userdata/logs",
-            "dist" : "org.openhab.binding.sony-2.5.0-SNAPSHOT.jar"
+            "openhab_home": "c://openhab",
+            "openhab_runtime": "c://openhab/runtime",
+            "openhab_addons": "c://openhab/addons",
+            "openhab_logs": "C://openhab/userdata/logs",
+            "dist" : "org.openhab.binding.something-3.0.0-SNAPSHOT.jar"
         }
     },
     "tasks": [
@@ -79,7 +79,7 @@
                 "args": [
                     "${workspaceFolder}/target/$env:dist",
                     "$env:openhab_addons"
-                ],
+                ]
             },
             "dependsOn": [
                 "mvn Compile (Offline)"
@@ -100,7 +100,7 @@
             "args": [
                 "-n",
                 "50",
-                "-f",
+                "-F",
                 "$openhab_logs/events.log"
             ],
             "windows": {
@@ -126,7 +126,7 @@
             "args": [
                 "-n",
                 "50",
-                "-f",
+                "-F",
                 "$openhab_logs/openhab.log"
             ],
             "windows": {

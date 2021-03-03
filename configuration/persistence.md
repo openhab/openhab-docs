@@ -3,8 +3,6 @@ layout: documentation
 title: Persistence
 ---
 
-{% include base.html %}
-
 # Persistence
 
 openHAB can store data over time; this is known as persistence.
@@ -22,8 +20,8 @@ Please refer to the [available persistence service add-on](/addons/#persistence)
 It is important to select a default persistence service.
 You should do this even if you have only one persistence add-on installed.
 
-To select a default persistence service, in paper UI, select Configuration and then System from the side menu.
-Scroll down to "Persistence", and select your default service from the drop-down list.
+To select a default persistence service, in UI, select `Settings->Persistence`.
+Select your default service from the drop-down list.
 Note that you must first install a persistence add-on before you make this selection.
 Be sure to save your choice once you have selected your default service.
 
@@ -67,7 +65,8 @@ The following strategies are defined internally and may be used in place of `str
 - `restoreOnStartup`: load and initialize the last persisted state of the Item on openHAB startup (if the Item state is undefined (`UNDEF`)).
 
 #### Cron Persistence Triggers
-openHAB uses [Quartz](http://www.quartz-scheduler.org/documentation/quartz-2.1.x/quick-start.html) for time-related cron events.
+
+openHAB uses [Quartz](https://www.quartz-scheduler.org/documentation) for time-related cron events.
 See the [Rules article]({{base}}/configuration/rules-dsl.html#time-based-triggers) for more information.
 
 ### Items
@@ -88,8 +87,9 @@ where `<itemlist>` is a comma-separated list consisting of one or more of the fo
 
 - `*` - this line should apply to all items in the system
 - `<itemName>` a single Item identified by its name. This Item can be a group Item.  But note that only the group value will be persisted.  The value of the individual group members will not be persisted using this option.
-- `<groupName>*` - all members of this group will be persisted, but not the group itself. If no strategies are provided, the default strategies that are declared in the first section are applied.  Optionally, an alias may be provided if the persistence service requires special names (e.g. a table to be used in a database, a feed id for an IoT service, etc.)
-Note that * is NOT a wildcard match character in this context.
+- `<groupName>*` - all members of this group will be persisted, but not the group itself. If no strategies are provided, the default strategies that are declared in the first section are applied.
+  Optionally, an alias may be provided if the persistence service requires special names (e.g. a table to be used in a database, a feed id for an IoT service, etc.)
+  Note that `*` is NOT a wildcard match character in this context.
 
 The example `Items` section below takes advantage of a `default` entry in the  `Strategies` section.
 Assume the `Strategies` section contains the line:
@@ -151,8 +151,8 @@ Items {
   item1, item2 : strategy = everyChange, restoreOnStartup
 }
 ```
-It is usually not necessary to restore all Items since there is a good chance that they are no longer accurate (switches may have been toggled, sensor values are likely to have changed), and the restoration may result in unwanted rule actions.
 
+It is usually not necessary to restore all Items since there is a good chance that they are no longer accurate (switches may have been toggled, sensor values are likely to have changed), and the restoration may result in unwanted rule actions.
 
 ## Persistence Extensions in Scripts and Rules
 
@@ -171,46 +171,64 @@ You can easily imagine that you can implement very powerful rules using this fea
 
 Here is the full list of available persistence extensions:
 
-| Persistence Extension                   | Description                                                                                                                                                                |
-|-----------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `<item>.persist`                        | Persists the current State of the Item                                                                                                                                     |
-| `<item>.lastUpdate`                     | Queries for the last update timestamp of a given Item                                                                                                                      |
-| `<item>.historicState(AbstractInstant)` | Retrieves the State of an Item at a certain point in time (returns HistoricItem)                                                                                            |
-| `<item>.changedSince(AbstractInstant)`  | Checks if the State of the Item has (ever) changed since a certain point in time                                                                                           |
-| `<item>.updatedSince(AbstractInstant)`  | Checks if the state of the Item has been updated since a certain point in time                                                                                             |
-| `<item>.maximumSince(AbstractInstant)`  | Gets the maximum value of the State of a persisted Item since a certain point in time                                                                                      |
-| `<item>.minimumSince(AbstractInstant)`  | Gets the minimum value of the State of a persisted Item since a certain point in time                                                                                      |
-| `<item>.averageSince(AbstractInstant)`  | Gets the average value of the State of a persisted Item since a certain point in time                                                                                      |
-| `<item>.deltaSince(AbstractInstant)`    | Gets the difference in value of the State of a given Item since a certain point in time                                                                                    |
-| `<item>.previousState()`                | Gets the previous State of a persisted Item (returns HistoricItem)                                                                                                         |
-| `<item>.previousState(true)`            | Gets the previous State of a persisted Item, skips Items with equal State values and searches the first Item with State not equal the current State (returns HistoricItem) |
-| `<item>.sumSince(AbstractInstant)`      | Gets the sum of the previous States of a persisted Item since a certain point in time                                                                                      |
+| Persistence Extension                  | Description                                                                                                                                                                |
+|----------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `<item>.persist`                       | Persists the current State of the Item                                                                                                                                     |
+| `<item>.lastUpdate`                    | Queries for the last update timestamp of a given Item                                                                                                                      |
+| `<item>.historicState(ZonedDateTime)`  | Retrieves the State of an Item at a certain point in time (returns HistoricItem)                                                                                           |
+| `<item>.changedSince(ZonedDateTime)`   | Checks if the State of the Item has (ever) changed since a certain point in time                                                                                           |
+| `<item>.updatedSince(ZonedDateTime)`   | Checks if the state of the Item has been updated since a certain point in time                                                                                             |
+| `<item>.maximumSince(ZonedDateTime)`   | Gets the maximum value of the State of a persisted Item since a certain point in time (returns HistoricItem)                                                               |
+| `<item>.minimumSince(ZonedDateTime)`   | Gets the minimum value of the State of a persisted Item since a certain point in time (returns HistoricItem)                                                               |
+| `<item>.averageSince(ZonedDateTime)`   | Gets the average value of the State of a persisted Item since a certain point in time. This method uses a time-weighted average calculation (see example below)            |
+| `<item>.deltaSince(ZonedDateTime)`     | Gets the difference in value of the State of a given Item since a certain point in time                                                                                    |
+| `<item>.evolutionRate(ZonedDateTime)`  | Gets the evolution rate of the state of a given {@link Item} since a certain point in time (returns DecimalType)                                                           |
+| `<item>.deviationSince(ZonedDateTime)` | Gets the standard deviation of the state of the given Item since a certain point in time (returns DecimalType)                                                             |
+| `<item>.varianceSince(ZonedDateTime)`  | Gets the variance of the state of the given Item since a certain point in time (returns DecimalType)                                                                       |
+| `<item>.previousState()`               | Gets the previous State of a persisted Item (returns HistoricItem)                                                                                                         |
+| `<item>.previousState(true)`           | Gets the previous State of a persisted Item, skips Items with equal State values and searches the first Item with State not equal the current State (returns HistoricItem) |
+| `<item>.sumSince(ZonedDateTime)`       | Gets the sum of the previous States of a persisted Item since a certain point in time                                                                                      |
 
 These extensions use the default persistence service.
 (Refer to 'Default Persistence Service' above to configure this.)
 You may specify a different persistence service by appending a String as an optional additional parameter at the end of the extension.
 
-**Example**
+### Examples
+
 To persist an Item called `Lights` in an rrd4j database, you would enter the following:
 `Lights.persist("rrd4j")`
 
+To get the average temperature over the last 5 minutes from the Item called `Temperature` in the influxdb persistence service, you would use:
+`Temperature.averageSince(now.minusMinutes(5), "influxdb")`
+
 The most useful methods of the HistoricItem object returned by some queries, are `.state` and `.getTimestamp`
+
+#### Time-weighted averages
+
+Time-weighted averages take into consideration not only the numerical levels of a particular variable, but also the amount of time spent on it.
+For instance, if you are measuring the temperature in a room - acknowledging the differences in the amounts of time until it changes.
+A brief example:
+18 °C for 13 hours a day, 21 °C for 7 hours a day, and 16.5 °C for 4 hours a day, you would obtain 18 °C x 13 h, 21 °C x 7 h and 16.5 °C x 4 h (234, 147, and 66, respectively).
+Sum the values that you obtained.
+In this case, 447 °C hours.
+Add together the time weights to get the total weight.
+In our example, the total weight is 13 h + 7 h + 4 h = 24 h.
+Divide the value in Step 2 by the total weights in Step 3, to get an average of 447 °C hours / 24 h = 18.625 °C.
 
 ### Date and Time Extensions
 
-A number of date and time calculations have been made available in openHAB through incorporation of [Jodatime](http://joda-time.sourceforge.net/).
+A number of date and time calculations have been made available in openHAB through `ZonedDateTime`.
 This makes it very easy to perform actions based upon time.
 Here are some examples:
 
 ```java
 Lights.changedSince(now.minusMinutes(2).minusSeconds(30))
-Temperature.maximumSince(now.toDateMidnight)
+Temperature.maximumSince(now.truncatedTo(ChronoUnit.DAYS))
 Temperature.minimumSince(parse("2012-01-01"))
-PowerMeter.historicState(now.toDateMidnight.withDayOfMonth(1))
+PowerMeter.historicState(now.truncatedTo(ChronoUnit.DAYS).withDayOfMonth(1))
 ```
 
 The "now" variable can be used for relative time expressions, while "parse()" can define absolute dates and times.
-See the [Jodatime documentation](http://joda-time.sourceforge.net/api-release/org/joda/time/format/ISODateTimeFormat.html#dateTimeParser()) for information on accepted formats for string parsing.
 
 ## Startup Behavior
 

@@ -3,8 +3,6 @@ layout: documentation
 title: iOS App
 ---
 
-{% include base.html %}
-
 # iOS App
 
 <!-- https://developer.apple.com/app-store/marketing/guidelines/de/#downloadOnAppstore -->
@@ -42,7 +40,7 @@ To view and control your own devices, navigate to the Settings page, then disabl
 In the "Local URL" field enter the base URL to your openHAB webinterface, either using its IP address (e.g. `http://192.168.1.125:8080`) or hostname (e.g. `http://openhabianpi:8080`).
 
 You can also connect to openHAB remotely, using either a direct connection or an openHAB Cloud instance like myopenHAB.
-Please see the [article on secure remote access](http://docs.openhab.org/installation/security.html) for more details.
+Please see the [article on secure remote access](https://docs.openhab.org/installation/security.html) for more details.
 Simply enter your "Remote URL" in the respective Settings field.
 The openHAB app will henceforth first try connecting to the local URL, then fall back to the remote URL.
 

@@ -3,9 +3,8 @@ layout: developersguide
 title: Thing Descriptions
 ---
 
-{% include base.html %}
-
 # Binding Definitions
+
 {:.no_toc}
 
 In order to work with *Things* and *Channels*, some meta information about them is needed.
@@ -14,14 +13,15 @@ These are provided through 'ThingType' and 'ChannelType' definitions,
 which describe details about their functionality and configuration options.
 
 {::options toc_levels="2,3"/}
-* TOC
+
+- TOC
 {:toc}
 
 ## ThingTypeProvider / ChannelTypeProvider
 
-Technically, the thing types are provided by `ThingTypeProvider`s (`org.eclipse.smarthome.core.thing.binding.ThingTypeProvider`).
+Technically, the thing types are provided by `ThingTypeProvider`s (`org.openhab.core.thing.binding.ThingTypeProvider`).
 
-openHAB comes with an implementation of such a provider that reads XML files from the folder `ESH-INF/thing` of bundles.
+openHAB comes with an implementation of such a provider that reads XML files from the folder `OH-INF/thing` of bundles.
 Although we refer to this XML syntax in the following, you also have the option to provide directly object model instances through your own provider implementation.
 
 The same applies for the channel types.
@@ -43,7 +43,7 @@ Which Things can be associated through which bridge type is defined within the d
         <label>Sample Thing</label>
         <description>Some sample description</description>
         <category>Lightbulb</category>
-		...
+    ...
     </thing-type>
 ```
 
@@ -77,6 +77,8 @@ That way channels can be reused in different things.
 The granularity of channel types should be on its semantic level, i.e. very fine-grained:
 If a Thing measures two temperature values, one for indoor and one for outdoor, this should be modelled as two different channel types.
 Overriding labels of a channel type must only be done if the very same functionality is offered multiple times, e.g. having an actuator with 5 relays, which each is a simple "switch", but you want to individually name the channels (1-5).
+
+### State Channel Types
 
 The following XML snippet shows a thing type definition with 2 channels and one referenced channel type:
 
@@ -121,27 +123,28 @@ The following XML snippet shows a system channel type definition and thing type 
 
 There exist system-wide channel types that are available by default:
 
-| Channel Type ID      | Reference typeId            | Item Type            | Category         | Description                                                                                                                                                                                                             |
-|----------------------|-----------------------------|----------------------|------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| signal-strength      | system.signal-strength      | Number               | QualityOfService | Represents signal strength of a device as a Number with values 0, 1, 2, 3 or 4; 0 being worst strength and 4 being best strength.                                                                                       |
-| low-battery          | system.low-battery          | Switch               | Battery          | Represents a low battery warning with possible values on (low battery) and off (battery ok).                                                                                                                                                           |
-| battery-level        | system.battery-level        | Number               | Battery          | Represents the battery level as a percentage (0-100%). Bindings for things supporting battery level in a different format (e.g. 4 levels) should convert to a percentage to provide a consistent battery level reading. |
-| power                | system.power                | Switch               | -                | Turn a device on/off.                                                                                                                                                                                                   |
-| brightness           | system.brightness           | Dimmer               | Light            | Brightness of a bulb (0-100%).                                                                                                                                                                                          |
-| color                | system.color                | Color                | ColorLight       | Color of a bulb.                                                                                                                                                                                                        |
-| color-temperature    | system.color-temperature    | Dimmer               | ColorLight       | Color temperature of a bulb (0-100%). 0% should be the coldest setting (highest Kelvin value).                                                                                                                          |
-| location             | system.location             | Location             | -                | Location in lat.,lon.,height coordinates.                                                                                                                                                                               |
-| motion               | system.motion               | Switch               | Motion           | Motion detected by the device (ON if motion is detected).                                                                                                                                                               |
-| mute                 | system.mute                 | Switch               | SoundVolume      | Turn on/off the volume of a device.                                                                                                                                                                                     |
-| volume               | system.volume               | Dimmer               | SoundVolume      | Change the sound volume of a device (0-100%).                                                                                                                                                                           |
-| media-control        | system.media-control        | Player               | MediaControl     | Control for a media player.                                                                                                                                                                                             |
-| media-title          | system.media-title          | String               | -                | Title of a (played) media file.                                                                                                                                                                                         |
-| media-artist         | system.media-artist         | String               | -                | Artist of a (played) media file.                                                                                                                                                                                        |
-| outdoor-temperature  | system.outdoor-temperature  | Number:Temperature   | Temperature      | Current outdoor temperature.                                                                                                                                                                                            |
-| wind-direction       | system.wind-direction       | Number:Angle         | Wind             | Wind direction in degrees (0-360°).                                                                                                                                                                                     |
-| wind-speed           | system.wind-speed           | Number:Speed         | Wind             | Wind speed                                                                                                                                                                                                              |
-| atmospheric-humidity | system.atmospheric-humidity | Number:Dimensionless | Humidity         | Atmospheric humidity in percent.                                                                                                                                                                                        |
-| barometric-pressure  | system.barometric-pressure  | Number:Pressure      | Pressure         | Barometric pressure                                                                                                                                                                                                     |
+| Channel Type ID       | Reference typeId             | Item Type            | Category         | Description                                                                                                                                                                                                             |
+|-----------------------|------------------------------|----------------------|------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| signal-strength       | system.signal-strength       | Number               | QualityOfService | Represents signal strength of a device as a Number with values 0, 1, 2, 3 or 4; 0 being worst strength and 4 being best strength.                                                                                       |
+| low-battery           | system.low-battery           | Switch               | LowBattery       | Represents a low battery warning with possible values on (low battery) and off (battery ok).                                                                                                                            |
+| battery-level         | system.battery-level         | Number               | Battery          | Represents the battery level as a percentage (0-100%). Bindings for things supporting battery level in a different format (e.g. 4 levels) should convert to a percentage to provide a consistent battery level reading. |
+| power                 | system.power                 | Switch               | Switch           | Turn a device on/off.                                                                                                                                                                                                   |
+| brightness            | system.brightness            | Dimmer               | Light            | Brightness of a bulb (0-100%).                                                                                                                                                                                          |
+| color                 | system.color                 | Color                | ColorLight       | Color of a bulb.                                                                                                                                                                                                        |
+| color-temperature     | system.color-temperature     | Dimmer               | ColorLight       | Color temperature of a bulb (0-100%). 0% should be the coldest setting (highest Kelvin value), 100 the warmest.                                                                                                         |
+| color-temperature-abs | system.color-temperature-abs | Number               | ColorLight       | Color temperature of a bulb in Kelvin (1000K-10000K).                                                                                                                                                                   |
+| location              | system.location              | Location             | -                | Location in lat.,lon.,height coordinates.                                                                                                                                                                               |
+| motion                | system.motion                | Switch               | Motion           | Motion detected by the device (ON if motion is detected).                                                                                                                                                               |
+| mute                  | system.mute                  | Switch               | SoundVolume      | Turn on/off the volume of a device.                                                                                                                                                                                     |
+| volume                | system.volume                | Dimmer               | SoundVolume      | Change the sound volume of a device (0-100%).                                                                                                                                                                           |
+| media-control         | system.media-control         | Player               | MediaControl     | Control for a media player.                                                                                                                                                                                             |
+| media-title           | system.media-title           | String               | -                | Title of a (played) media file.                                                                                                                                                                                         |
+| media-artist          | system.media-artist          | String               | -                | Artist of a (played) media file.                                                                                                                                                                                        |
+| outdoor-temperature   | system.outdoor-temperature   | Number:Temperature   | Temperature      | Current outdoor temperature.                                                                                                                                                                                            |
+| wind-direction        | system.wind-direction        | Number:Angle         | Wind             | Wind direction in degrees (0-360°).                                                                                                                                                                                     |
+| wind-speed            | system.wind-speed            | Number:Speed         | Wind             | Wind speed                                                                                                                                                                                                              |
+| atmospheric-humidity  | system.atmospheric-humidity  | Number:Dimensionless | Humidity         | Atmospheric humidity in percent.                                                                                                                                                                                        |
+| barometric-pressure   | system.barometric-pressure   | Number:Pressure      | Pressure         | Barometric pressure                                                                                                                                                                                                     |
 
 For further information about categories see the [categories page](../../concepts/categories.html).
 
@@ -151,6 +154,8 @@ The default value is `false` and thus will be taken if the `advanced` attribute 
 Especially for complex devices with a lot of channels, only a small set of channels - the most important ones - should be shown to the user to reduce complexity.
 Whether a channel should be declared as `advanced` depends on the device and can be decided by the binding developer.
 If a functionality is rarely used it should be better marked as `advanced`.
+
+### Trigger Channel Types
 
 The following XML snippet shows a trigger channel:
 
@@ -191,13 +196,13 @@ There exist system-wide trigger channel types that are available by default:
 | button          | system.button          | Can trigger `SHORT_PRESSED`, `DOUBLE_PRESSED` and `LONG_PRESSED` |
 | rawrocker       | system.rawrocker       | Can trigger `DIR1_PRESSED`, `DIR1_RELEASED`, `DIR2_PRESSED` and `DIR2_RELEASED` |
 
-In the following sections the declaration and semantics of tags, state descriptions and channel categories will be explained in more detail. 
-For a complete sample of the thing types XML file and a full list of possible configuration options please see the [XML Configuration Guide](xml-reference.html).
+In the following sections the declaration and semantics of tags, state descriptions and channel categories will be explained in more detail.
+For a complete sample of the thing types XML file and a full list of possible configuration options please see the [XML Configuration Guide](config-xml.html).
 
 ### Default Tags
 
-The XML definition of a ThingType allows to assign default tags to channels. 
-All items bound to this channel will automatically be tagged with these default tags. 
+The XML definition of a ThingType allows to assign default tags to channels.
+All items bound to this channel will automatically be tagged with these default tags.
 The following snippet shows a 'Lighting' tag definition:
 
 ```xml
@@ -217,7 +222,6 @@ This library is still in development., and only a very small set of tags are def
 | TargetTemperature  | Number, Number:Temperature | A target temperature that should engage a thermostats heating and cooling actions.   |
 | CurrentHumidity    | Number                     | An accessory that provides a single read-only value indicating the relative humidity. |
 
-
 ### State Description
 
 The state description allows to specify restrictions and additional information for the state of an item, that is linked to the channel.
@@ -228,23 +232,26 @@ The following XML snippet shows the definition for a temperature actuator channe
 <state min="12" max="30" step="0.5" pattern="%.1f %unit%" readOnly="false"></state>
 ```
 
-* The attributes `min` and `max` can only be declared for channel with the item type `Number`.
+- The attributes `min` and `max` can only be declared for channel with the item type `Number`.
   It defines the range of the numeric value.
   The Java data type is a BigDecimal.
   For example user interfaces can create sliders with an appropriate scale based on this information.
-* The `step` attribute can be declared for `Number` and `Dimmer` items and defines what is the minimal step size that can be used.
-* The `readonly` attribute can be used for all item types and defines if the state of an item can be changed.
+- The `step` attribute can be declared for `Number` and `Dimmer` items and defines what is the minimal step size that can be used.
+- The `readonly` attribute can be used for all item types and defines if the state of an item can be changed.
   For all sensors the `readonly` attribute should be set to `true`.
-* The `pattern` attribute can be used for `Number` and  `String` items.
+- The `pattern` attribute can be used for `Number` and  `String` items.
   It gives user interface a hint how to render the item.
-  The format of the pattern must be compliant to the [Java Number Format](http://docs.oracle.com/javase/tutorial/java/data/numberformat.html).
+  The format of the pattern must be compliant to the [Java Number Format](https://docs.oracle.com/javase/tutorial/java/data/numberformat.html).
   The pattern can be localized (see also [Internationalization](../../features/internationalization.html)).
   The special pattern placeholder `%unit%` is used for channels which bind to items of type `Number:<dimension>` which define a dimension for unit support.
   These channels will send state updates of type [QuantityType](../../concepts/units-of-measurement.html#quantitytype) and the unit is then rendered for the placeholder.
 
 Some channels might have only a limited and countable set of states.
 These states can be specified as options.
-A `String` item must be used as item type.
+A `String` or `Number` item must be used as item type.
+In general `String` should be preferred with a meaningful option value.
+This prevents the user from having to guess what a value represents if a number is used as option value.
+`Number` is useful when the value represents a quantity (e.g. like in the system-wide channel type `signal-strength`).
 
 The following XML snippet defines a list of predefined state options:
 
@@ -280,8 +287,9 @@ The following XML snippet defines a list of commands:
 ```
 
 The user interface can use these values to render
-* a drop down and also represent the current state or
-* as push buttons to simply send a command to the ThingHandler.
+
+- a drop down and also represent the current state or
+- as push buttons to simply send a command to the ThingHandler.
 
 The option labels can also be localized.
 
@@ -427,7 +435,7 @@ Inside the thing types XML file channel groups can be defined like this:
         <channel-group id="switchActor2" typeId="switchActor" />
     </channel-groups>
     <!-- ... -->
-</thing-type>    
+</thing-type>
 ```
 
 The channel group type is defined on the same level as the thing types and channel types.
@@ -472,7 +480,7 @@ To define such thing meta data the thing type definition provides the possibilit
              <property name="protocol">ZigBee</property>
              ...
         </properties>
-		...
+    ...
     </thing-type>
 ```
 
@@ -484,7 +492,7 @@ In contrast to the properties defined in the 'ThingType' definitions the thing h
 ### Representation Property
 
 A thing type can contain a so-called `representation property`.
-This optional property contains the _name_ of a property whose value can be used to uniquely identify a device.
+This optional property contains the **name** of a property whose value can be used to uniquely identify a device.
 The `thingUID` cannot be used for this purpose because there can be more than one thing for the same device.
 
 Each physical device normally has some kind of a technical identifier which is unique.
@@ -492,7 +500,7 @@ This could be a MAC address (e.g. Hue bridge, camera, all IP-based devices), a u
 This property is normally part of a discovery result for that specific thing type.
 Having this property identified per binding it could be used as the `representation property` for this thing.
 
-The `representation property` will be defined in the thing type XML: 
+The `representation property` shall be defined in the thing type XML:
 
 ```xml
     <thing-type id="thingTypeId">
@@ -500,32 +508,53 @@ The `representation property` will be defined in the thing type XML:
         <properties>
             <property name="vendor">Philips</property>
         </properties>
-        <representation-property>serialNumber</representation-property>
+        <representation-property>uniqueId</representation-property>
         ...
     </thing-type>
 ```
 
-Note that the `representation property` is normally not listed in the `properties` part of the thing type, as this part contains static properties, that are the same for each thing of this thing type.
-The name of the `representation property` identifies a property that is added to the thing in the thing handler upon successful initialization.
+Note that the `representation property` is normally not listed in the `properties` part of the Thing type XML, as this part contains static properties, that are the same for all instances of this Thing type.
+The name of the `representation property` identifies a property or configuration parameter that is added to the Thing in the Thing handler upon successful initialization.
 
 ### Representation Property and Discovery
 
-The representation property is being used to auto-ignore discovery results of devices that already have a corresponding thing.
-This happens if a device is being added manually.
-If the new thing is going online, the auto-ignore service of the inbox checks if the inbox already contains a discovery result of the same type where the value of its `representation property` is identical to the value of the `representation property` of the newly added thing.
-If this is the case, the result in the inbox is automatically set to ignored.
-Note that this result is automatically removed when the manual added thing is eventually removed.
-A new discovery would then automatically find this device again and add it to the inbox properly.
+The representation property is used to auto-ignore discovery results of Things that already exist in the system.
+This can happen if, a) a Thing has been created manually, or b) the Thing has been discovered separately by two mechanisms e.g. by mDNS, and by NetBios, or UPnP.
+If this is the case, the Thing in the inbox is automatically ignored.
+Note that this Thing is automatically removed when the manually added Thing is removed.
+A new discovery would then automatically find this Thing again and add it to the inbox properly.
+
+See also [Implementing a Discovery Service](index.md#representation-property)
+
+When comparing representation properties, the auto-ignore service checks for matches between the representation property of the newly discovered Thing, and both the properties and the configuration parameters of existing Things.
+If a configuration parameter will be used, then its respective `parameter` shall be declared in the XML `config-description` section or the `config-description` [XML file](config-xml.md):
+
+```xml
+    <thing-type id="thingTypeId">
+        ...
+        <representation-property>uniqueId</representation-property>
+        ...
+        <config-description>
+          <parameter name="uniqueId" type="text">
+            <label>Unique Id</label>
+            <description>The Unique Id for Representation Property</description>
+          </parameter>
+        </config-description>
+        ...
+    </thing-type>
+```
 
 ## Formatting Labels and Descriptions
 
 The label and descriptions for things, channels and config descriptions should follow the following format.
 The label should be short so that for most UIs it does not spread across multiple lines.
+Guideline is 2-3 words with up to 25 chars.
 Labels should be capitalized using the following rules:
-* Always capitalize the first and the last word.
-* Lowercase articles, coordinating conjunctions, and prepositions (`a, an, the, and, as, but, by, for, from, in, into, like, near, nor, of, onto, or, out, over, past, so, till, to, up, upon, with, yet`).
-* Capitalize all other words.
-* Brand- or product names that starts with a lowercase character can be written using their official spelling.
+
+- Always capitalize the first and the last word.
+- Lowercase articles, coordinating conjunctions, and prepositions (`a, an, the, and, as, but, by, for, from, in, into, like, near, nor, of, onto, or, out, over, past, so, till, to, up, upon, with, yet`).
+- Capitalize all other words.
+- Brand- or product names that starts with a lowercase character can be written using their official spelling.
 
 The description can contain longer text to describe the thing in more detail.
 Limited use of HTML tags is permitted to enhance the description - if a long description is provided, the first line should be kept short, and a line break (```<br />```) placed at the end of the line to allow UIs to display a short description in limited space.
@@ -565,14 +594,13 @@ In this example, an auto update policy is defined for the channel type, but is o
 
 The following policies are supported:
 
-* **veto**: No automatic state update should be sent by the framework.
+- **veto**: No automatic state update should be sent by the framework.
   The thing handler will make sure it sends a state update and it can do it better than just converting the command to a state.
-* **default**: The binding does not care and the framework may do what it deems to be right.
+- **default**: The binding does not care and the framework may do what it deems to be right.
   The state update which the framework will send out normally will correspond the command state anyway.
   This is the default if no other policy is set explicitly.
-* **recommend**: An automatic state update should be sent by the framework because no updates are sent by the binding.
+- **recommend**: An automatic state update should be sent by the framework because no updates are sent by the binding.
   This usually is the case when devices don't expose their current state to the handler.
-
 
 ## Bridges and Thing Descriptions
 
@@ -580,18 +608,17 @@ Every binding has to provide meta information about which bridges and/or *Thing*
 In that way a binding could describe that it requires specific bridges to be operational or define which channels (e.g. temperature, color, etc.) it provides.
 
 Every bridge or *Thing* has to provide meta information such as label or description.
-The meta information of all bridges and *Thing*s is accessible through the `org.eclipse.smarthome.core.thing.binding.ThingTypeProvider` service.
+The meta information of all bridges and *Thing*s is accessible through the `org.openhab.core.thing.binding.ThingTypeProvider` service.
 
-Bridge and *Thing* descriptions must be placed as XML file(s) (with the ending `.xml`) in the bundle's folder `/ESH-INF/thing/`.
-The full Java API for bridge and *Thing* descriptions can be found in the Java package `org.eclipse.smarthome.core.thing.type`.
-
+Bridge and *Thing* descriptions must be placed as XML file(s) (with the ending `.xml`) in the bundle's folder `/OH-INF/thing/`.
+The full Java API for bridge and *Thing* descriptions can be found in the Java package `org.openhab.core.thing.type`.
 
 ### XML Structure for Thing Descriptions
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <thing:thing-descriptions bindingId="bindingID"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance"
     xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
     xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
         https://openhab.org/schemas/thing-description-1.0.0.xsd">
@@ -712,7 +739,7 @@ The full Java API for bridge and *Thing* descriptions can be found in the Java p
         ...
       </options>
     </event>
-    
+
     <command>
       <options>
         <option value="String" />
@@ -727,7 +754,7 @@ The full Java API for bridge and *Thing* descriptions can be found in the Java p
     </config-description>
     OR
     <config-description-ref uri="{binding|thing-type|channel-type|any_other}:bindingID:..." />
-  </channel-type>   
+  </channel-type>
 
   <channel-group-type id="channelGroupTypeID" advanced="{true|false}">
     <label>String</label>
@@ -738,7 +765,7 @@ The full Java API for bridge and *Thing* descriptions can be found in the Java p
       <channel id="channelID" typeId="channelTypeID" />
       ...
     </channels>
-  </channel-group-type>   
+  </channel-group-type>
 
   ...
 
@@ -820,12 +847,11 @@ The full Java API for bridge and *Thing* descriptions can be found in the Java p
 | channel.id                  | An identifier of the channel the bridge/Thing provides | mandatory |
 | channel.typeId              | An identifier of the channel type definition the bridge/Thing provides | mandatory |
 
-
-The full XML schema for Thing type descriptions is specified in the <a href="https://openhab.org/schemas/thing-description-1.0.0.xsd">openHAB thing description XSD</a> file.
+The full XML schema for Thing type descriptions is specified in the [https://openhab.org/schemas/thing-description-1.0.0.xsd](https://openhab.org/schemas/thing-description-1.0.0.xsd) openHAB thing description XSD</a> file.
 
 **Hints:**
 
 - Any identifiers of the types are automatically mapped to unique identifiers: `bindingID:id`.
 - The attribute `uri` in the section `config-description` is optional, it *should not* be specified in bridge/*Thing*/channel type definition files because it's an embedded configuration.
-If the `uri` is *not* specified, the configuration description is registered as `thing-type:bindingID:id` or `channel-type:bindingID:id` otherwise the given `uri` is used.s
+  If the `uri` is *not* specified, the configuration description is registered as `thing-type:bindingID:id` or `channel-type:bindingID:id` otherwise the given `uri` is used.s
 - If a configuration description is already specified somewhere else and the bridge/*Thing*/channel type wants to (re-)use it, a `config-description-ref` should be used instead.

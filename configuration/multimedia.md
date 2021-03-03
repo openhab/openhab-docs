@@ -3,13 +3,11 @@ layout: documentation
 title: Multimedia
 ---
 
-{% include base.html %}
-
 # Multimedia
 
 ## Volume
 
-The framework supports some base [functions](https://www.eclipse.org/smarthome/documentation/javadoc/org/eclipse/smarthome/model/script/actions/Audio.html#getMasterVolume--) to control the audio sinks' volume.
+The framework supports some base [functions](https://openhab.org/javadoc/latest/org/openhab/core/model/script/actions/audio#method.summary) to control the audio sinks' volume.
 
 ### Actions
 
@@ -31,7 +29,7 @@ The distribution comes with these options built-in:
 |---------------------|-----------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `javasound`         | System Speaker                    | This uses the JRE sound drivers to play audio to the local sound interface.                                                                                                                                                                                                                                                                         |
 | `enhancedjavasound` | System Speaker (with mp3 support) | This uses the JRE sound drivers plus an additional 3rd party library, which adds support for mp3 files.                                                                                                                                                                                                                                             |
-| `webaudio`          | Web Audio                         | Convenient, if sounds should not be played on the server, but on the client: This sink sends the audio stream through HTTP to web clients, which then cause it to be played back by the browser. Obviously, the browser needs to be opened and have a compatible openHAB UI running. Currently, this feature is supported by Paper UI and HABPanel. |
+| `webaudio`          | Web Audio                         | Convenient, if sounds should not be played on the server, but on the client: This sink sends the audio stream through HTTP to web clients, which then cause it to be played back by the browser. Obviously, the browser needs to be opened and have a compatible openHAB UI running. Currently, this feature is supported by UI and HABPanel. |
 
 Additionally, certain bindings register their supported devices as audio sinks, e.g. Sonos speakers.
 
@@ -40,33 +38,33 @@ Additionally, certain bindings register their supported devices as audio sinks, 
 To check, which audio sinks are available, you can use the console:
 
 ```text
-openhab> smarthome:audio sinks
+openhab> openhab:audio sinks
 enhancedjavasound
 javasound
 webaudio
 ```
 
-You can define the default audio sink either by textual configuration in `$OPENHAB_CONF/services/runtime.cfg` or in the Paper UI in `Configuration->System->Audio`.
+You can define the default audio sink either by textual configuration in `$OPENHAB_CONF/services/runtime.cfg` or in the UI in `Settings->Audio`.
 
 In order to play a sound, you can use the following command on the console:
 
 ```text
-openhab> smarthome:audio play doorbell.mp3
+openhab> openhab:audio play doorbell.mp3
 
-openhab> smarthome:audio stream example.com
+openhab> openhab:audio stream example.com
 ```
 
 ### Actions
 
-Alternatively the [`playSound()`](https://www.eclipse.org/smarthome/documentation/javadoc/org/eclipse/smarthome/model/script/actions/Audio.html#playSound-java.lang.String-) or [`playStream()`](https://www.eclipse.org/smarthome/documentation/javadoc/org/eclipse/smarthome/model/script/actions/Audio.html#playStream-java.lang.String-) functions can be used in DSL rules:
+Alternatively the [`playSound()`](https://openhab.org/javadoc/latest/org/openhab/core/model/script/actions/audio#playSound(java.lang.String)) or [`playStream()`](https://openhab.org/javadoc/latest/org/openhab/core/model/script/actions/audio#playStream(java.lang.String)) functions can be used in DSL rules:
 
-- `playSound(String filename)` :	plays a sound from the sounds folder to the default sink
-- `playSound(String filename, PercentType volume)` :	plays a sound with the given volume from the sounds folder to the default sink
-- `playSound(String sink, String filename)` :	plays a sound from the sounds folder to the given sink(s)
-- `playSound(String sink, String filename, PercentType volume)` :	plays a sound with the given volume from the sounds folder to the given sink(s)
+- `playSound(String filename)` : plays a sound from the sounds folder to the default sink
+- `playSound(String filename, PercentType volume)` : plays a sound with the given volume from the sounds folder to the default sink
+- `playSound(String sink, String filename)` : plays a sound from the sounds folder to the given sink(s)
+- `playSound(String sink, String filename, PercentType volume)` : plays a sound with the given volume from the sounds folder to the given sink(s)
 
-- `playStream(String url)` :	plays an audio stream from an url to the default sink (set url to `null` if streaming should be stopped)
-- `playStream(String sink, String url)` :	plays an audio stream from an url to the given sink(s) (set url to `null` if streaming should be stopped)
+- `playStream(String url)` : plays an audio stream from an url to the default sink (set url to `null` if streaming should be stopped)
+- `playStream(String sink, String url)` : plays an audio stream from an url to the given sink(s) (set url to `null` if streaming should be stopped)
 
 #### Examples
 
@@ -91,7 +89,7 @@ In order to use text-to-speech, you need to install at least one [TTS service](/
 Once you have done so, you will find voices available in your system:
 
 ```text
-openhab> smarthome:voice voices
+openhab> openhab:voice voices
 mactts:Jorge Jorge (es_ES)
 mactts:Moira Moira (en_IE)
 mactts:Alice Alice (it_IT)
@@ -99,17 +97,17 @@ mactts:Ioana Ioana (ro_RO)
 mactts:Kanya Kanya (th_TH)
 ```
 
-You can define a default TTS service and a default voice to use either by textual configuration in `$OPENHAB_CONF/services/runtime.cfg` or in the Paper UI in `Configuration->System->Voice`.
+You can define a default TTS service and a default voice to use either by textual configuration in `$OPENHAB_CONF/services/runtime.cfg` or in the UI in `Settings->Voice`.
 
 In order to say a text, you can enter such a command on the console (The default voice and default audio sink will be used):
 
 ```text
-openhab> smarthome:voice say Hello world!
+openhab> openhab:voice say Hello world!
 ```
 
 ### Actions
 
-Alternatively you can execute such commands within DSL rules by using the [`say()`](https://www.eclipse.org/smarthome/documentation/javadoc/org/eclipse/smarthome/core/voice/VoiceManager.html#say-java.lang.String-) function:
+Alternatively you can execute such commands within DSL rules by using the [`say()`](https://openhab.org/javadoc/latest/org/openhab/core/voice/voicemanager#say(java.lang.String)) function:
 
 ```java
 say("Hello world!")
@@ -146,13 +144,13 @@ There are two implementations available by default:
 To test the interpreter, you can enter such a command on the console (assuming you have an item with label 'light'):
 
 ```text
-openhab> smarthome:voice interpret turn on the light
+openhab> openhab:voice interpret turn on the light
 ```
 
 The default human language interpreter will be used.
 In case of interpretation error, the error message will be said using the default voice and default audio sink.
 
-Again, such a command can also be entered within DSL rules (using the [`interpret()`](https://www.eclipse.org/smarthome/documentation/javadoc/org/eclipse/smarthome/core/voice/VoiceManager.html#interpret-java.lang.String-) function)
+Again, such a command can also be entered within DSL rules (using the [`interpret()`](https://openhab.org/javadoc/latest/org/openhab/core/voice/voicemanager#interpret(java.lang.String)) function)
 
 ```java
 interpret("turn on the light")
