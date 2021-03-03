@@ -84,6 +84,8 @@ This tutorial presents a series of concepts and steps that build upon one anothe
 
 [Item Widget Customization]({{base}}/tutorial/item_widgets.html): Customize How Items Appear in Cards
 
+[Custom Item Widgets]({{base}}/tutorial/custom_widgets.html): Creating your own widgets
+
 <!--
 [Rules: Simple]({{base}}/tutorial/rules_simple.html): Introduction to rules and a simple example
 

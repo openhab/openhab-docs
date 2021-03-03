@@ -447,7 +447,6 @@ To preview the configuration in progress there is a toggle at the bottom of the 
 
 Once you are happy, save the page and that will become your Overview page.
 
-
 ## Responsive Pages
 
 The Page will be viewed on a variety of screen sizes from computers to tablets to phones.
