@@ -94,7 +94,7 @@ props:
       type: TEXT
       context: item
       description: An item to control
-tags: 
+tags:
   - lights
   - list
 component: oh-toggle-item
@@ -124,7 +124,7 @@ props:
       type: TEXT
       context: item
       description: The item to control
-tags: 
+tags:
   - lights
   - list
 component: oh-toggle-item
@@ -322,7 +322,7 @@ As you create a widget that uses properties you will notice that the preview doe
 
 ![Chromecast widget no props](images/chromecast_widget_noprops.png)
 
-At the bottom of the widget editor there is a "Set Props" option, which can also be accessed by typing CTRL-p. 
+At the bottom of the widget editor there is a "Set Props" option, which can also be accessed by typing CTRL-p.
 This will bring up a form where the props can be set for the preview.
 
 ![Chromecast widget props set](images/chromecast_props_set.png)
@@ -386,7 +386,7 @@ slots:
                     item: =loop.item.name
 ```
 
-There are a number of options for looping. 
+There are a number of options for looping.
 Please see the docs for more details.
 
 ## Adding Widgets to Pages
@@ -451,4 +451,4 @@ Once you are happy, save the page and that will become your Overview page.
 
 You can create any number of additional pages as desired.
 Layout Pages like the Overview tab on the Overview Page are not the only types of pages that can be created.
-[Chart pages]({{base}}/ui/chart-pages.html), [Floorplan pages]({{base}}/ui/floorplan-pages.html), [Map pages]({{base}}/ui/map-pages.html), and [Tabbed pages]({{base}}/ui/tabbed-pages.html) are also availabe.
+[Chart pages]({{base}}/ui/chart-pages.html), [Floorplan pages]({{base}}/ui/floorplan-pages.html), [Map pages]({{base}}/ui/map-pages.html), and [Tabbed pages]({{base}}/ui/tabbed-pages.html) are also available.

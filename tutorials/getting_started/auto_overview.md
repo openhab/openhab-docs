@@ -5,7 +5,7 @@ title: Auto Overview
 
 # Automatically Generated Overview Tabs
 
-MainUI will automatically generate an Overview page (id:overview). 
+MainUI will automatically generate an Overview page (id:overview).
 This page will have four tabs.
 
 - Overview - user defined page
@@ -84,11 +84,10 @@ Now persistence is starting to pay off!
 
 If you've customized the chart and want to return to the same chart again, you can save it and a new Chart Page will be created showing those Items with those settings.
 
-
 ## Customization / Page Configuration
 
-MainUI does a pretty good job of guessing a decent default method to present the information to you. 
-But what's the fun in just accepting the default? 
+MainUI does a pretty good job of guessing a decent default method to present the information to you.
+But what's the fun in just accepting the default?
 Luckily there are a lot of opportunities for customization.
 You've already seen some customizations to the Locations tab above.
 
@@ -130,7 +129,7 @@ To insert a separator, click on the menu icon of that card you want to be the fi
 
 ![add separator before](images/add_separator.png)
 
-Give the separator a name and on the page you will no see a section heading with the entered name and all the Items below the separator grouped under that section heading. 
+Give the separator a name and on the page you will no see a section heading with the entered name and all the Items below the separator grouped under that section heading.
 
 ![separators](images/separators.png)
 
@@ -162,12 +161,12 @@ This default can be overridden here.
 
 This feature may require a bit more work.
 
-If you find a picture that allows cross linking to all you need to do is put in the URL of that picture in this field and MainUI will load it and make it used as the background for the card. 
-However, text and icons will be displayed on top of the image so one might need to modify the original image to work. 
+If you find a picture that allows cross linking to all you need to do is put in the URL of that picture in this field and MainUI will load it and make it used as the background for the card.
+However, text and icons will be displayed on top of the image so one might need to modify the original image to work.
 Or one may have their own images they want to use instead of something downloaded from the internet.
 
-For example, one might use high contrast images (e.g. architectural drawings and water color paintings) as the background images. 
-However, those images tend to be very light with very high contrast which makes both white and black text unreadable in many cases. 
+For example, one might use high contrast images (e.g. architectural drawings and water color paintings) as the background images.
+However, those images tend to be very light with very high contrast which makes both white and black text unreadable in many cases.
 There are two approaches you can use to deal with this.
 You can edit the image to lower the contrast and/or brightness or crop the image to a less busy portion.
 
@@ -184,10 +183,10 @@ config:
   invertText: false
 ```
 
-Once you have your custom images, place them in $OH_CONF/html. 
+Once you have your custom images, place them in $OH_CONF/html.
 Once they are there, you can use the relative path `/static/image.name` as the URL to the image.
 For example, I placed the file `garage.jpg` in `/etc/openhab/html` and reference it as you see in the YAML above.
-This is how to use a custom image as teh background of a card. 
+This is how to use a custom image as teh background of a card.
 You can see some stock images used as teh backgrounds for the cards on the Locations tab in the demo and screen shots above.
 
 Note, even though it is theoretically possible and tempting to just link to an absolute URL on the internet as it doesn't require to save the image file to openhab's server it is highly discouraged for security, link dependency, image sizing and other reasons.
@@ -198,12 +197,12 @@ Badges are only available on the Location cards.
 
 If one want to not show any badges at all toggle "Disable badges".
 
-If one wants to only suppress certain badges, select those that you want to show under "Enable badges". 
+If one wants to only suppress certain badges, select those that you want to show under "Enable badges".
 
 ##### Advanced Configuration
 
-For an individual card or to edit the Page itself one can switch to or show the YAML code. 
-Many actions like reordering the cards and inserting separators will be faster to do through the code. 
+For an individual card or to edit the Page itself one can switch to or show the YAML code.
+Many actions like reordering the cards and inserting separators will be faster to do through the code.
 
 Any advanced customization of the cards themselves through editing of the code directly is beyond the scope of this tutorial.
 See the [UI Docs]({{base}}/ui/index.html) for a detailed reference.

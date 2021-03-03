@@ -5,9 +5,9 @@ title: Intro to Pages
 
 # Introduction to Pages
 
-openHAB 3 introduces a new user unified user interface called MainUI. 
-Should you choose to, almost everything that can be configured in openHAB can be configured through MainUI. 
-You've already seen how to create and configure Things and how create Items and build the semantic model.  
+openHAB 3 introduces a new user unified user interface called MainUI.
+Should you choose to, almost everything that can be configured in openHAB can be configured through MainUI.
+You've already seen how to create and configure Things and how create Items and build the semantic model.
 Later you will see how to create Rules.
 
 In addition to the administration of openHAB, MainUI can be used as the interface you present to the users of your home automation.
@@ -20,13 +20,13 @@ You can find an example of the MainUI on the [demo page](https://demo.openhab.or
 
 ## Role Based Access
 
-MainUI presents two different views to users based on whether and as what type of user they log in as. 
-The two types of users are regular users and administrators. 
+MainUI presents two different views to users based on whether and as what type of user they log in as.
+The two types of users are regular users and administrators.
 
 ### Regular Users
 
-Regular are users who have not logged in or users who have not been configured to be administrators. 
-These users can see all of the interactive parts of the UI (i.e. Pages) and can open other apps (icon at the upper right hand corner of the screen) but they cannot see any of the administration user interfaces nor can they access the administration functions through the REST API. 
+Regular are users who have not logged in or users who have not been configured to be administrators.
+These users can see all of the interactive parts of the UI (i.e. Pages) and can open other apps (icon at the upper right hand corner of the screen) but they cannot see any of the administration user interfaces nor can they access the administration functions through the REST API.
 
 ![regular user view](images/regular_user.png)
 
@@ -34,13 +34,13 @@ Notice that none of the administration menus are shown; only the Pages defined t
 
 The sidebar menu can be hidden by clicking the push pin icon right above the openHAB logo.
 
-By default, these menus can be accessed by anyone on your network whether or not they are logged in or not. 
+By default, these menus can be accessed by anyone on your network whether or not they are logged in or not.
 
 ### Administration Users
 
-These users have full access to all parts of openHAB. 
-The list of menu options includes Settings, Developer Tools, and the Developer Sidebar. 
-These are most of the parts of openHAB you have been interacting with thus far. 
+These users have full access to all parts of openHAB.
+The list of menu options includes Settings, Developer Tools, and the Developer Sidebar.
+These are most of the parts of openHAB you have been interacting with thus far.
 Way back in First Steps the first thing you did was create an administration user.
 
 ![admin user view](images/admin_user.png)
@@ -49,7 +49,7 @@ Notice the new Settings and Developer Tools menus are now accessible.
 
 ## Other User Interfaces
 
-Every openHAB deployment is unique. 
+Every openHAB deployment is unique.
 Consequently every administrator of an openHAB instance will need to create a custom interface for the users of their bespoke home automation.
 openHAB 3 provides a number of options to supports this in addition Main UI Pages.
 
@@ -68,5 +68,4 @@ In addition, HABot will add a text box to the top of your Pages where one can st
 
 ![HABot text entry](images/habot_text.png)
 
-The rest of this tutorial will focus on Pages. 
-
+The rest of this tutorial will focus on Pages.
