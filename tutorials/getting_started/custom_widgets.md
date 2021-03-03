@@ -7,9 +7,9 @@ title: Item Widgets
 
 As mentioned on the previous page, MainUI allows for the creation of custom widgets.
 These custom widgets can be reused for multiple Items in a given openHAB setup or they can be shared with the community.
-A growning number of very impressive custom widgets have been posted to the [Add-ons -> UI](https://community.openhab.org/c/add-ons/uis/30).
-This page is going to provide a couple of examples of custom widgets.
-For a complrehensive reference on creating widgets, please see the [Building Pages]({{base}}/ui/building-pages.html) guide in the docs.
+A growing number of very impressive custom widgets have been posted to the [Add-ons -> UI on the forum](https://community.openhab.org/c/add-ons/uis/30).
+This page is going to provide only a couple of examples of custom widgets with an emphasis on the over all approach to developing your own.
+For a comprehensive reference on creating widgets, please see the [Building Pages]({{base}}/ui/building-pages.html) guide in the docs.
 
 {::options toc_levels="2..4"/}
 
@@ -18,7 +18,7 @@ For a complrehensive reference on creating widgets, please see the [Building Pag
 
 ## Where to Create Custom Widgets
 
-In MainUI under Developer Tools there is a Widgets option.
+In MainUI under Developer Tools there is a "Widgets" option.
 Opening this will present a page with a list of all the custom widgets.
 Clicking the + icon will open the editor which is a window split in half with a text entry area on the left and a preview on the right.
 
@@ -78,7 +78,7 @@ Give your new widget a meaningful name and tags.
 Each widget needs to have a unique name and that name is how it will appear in the list when you apply it to an Item.
 
 Now repalce the value of "component" in the custom widget with the "value" from the YAML you generated above.
-then replace everything under "config" in the custom widget with everything under "config" from the YAML you generated above.
+Then replace everything under "config" in the custom widget with everything under "config" from the YAML you generated above.
 
 ```yaml
 uid: test_light_list
@@ -107,7 +107,7 @@ config:
 ```
 
 Now we want to create some properties so that the widget can be customized for the any light Item.
-We can lave the Item property alone as that's what we want so we will change prop1 to be used for the title.
+We can leave the Item property alone as that's what we want so we will change prop1 to be used for the title.
 Then we will change the config to use the properties instead of the hard coded values.
 
 ```yaml
@@ -180,12 +180,12 @@ timestamp: Feb 5, 2021, 2:01:31 PM
 component: oh-list-item
 config:
   icon: '=(items[props.sensor_item].state == "CLOSED") ? "f7:house" : "f7:house_fill"'
-  iconColor: '=(items[props.sensor_item].state == "CLOSED") ? "green" : "orange"'
+  iconColor: '=(items[props.sensor_item].state == "CLOSED") ? "green" : "red"'
   title: =props.name
   action: command
   actionItem: =props.control_item
   actionCommand: ON
-  badgeColor: '=(items[props.sensor_item].state == "CLOSED") ? "green" : "orange"'
+  badgeColor: '=(items[props.sensor_item].state == "CLOSED") ? "green" : "red"'
   badge: '=(items[props.sensor_item].state == "CLOSED") ? "CLOSED" : "OPEN"'
 
 ```
@@ -200,7 +200,7 @@ This page will be populated with stand alone widgets, or card widgets.
 
 Often, one will want to have one single stand alone widget to represent a single Equipment, for example a thermostat or a Chomecast.
 These will be a single card that provides the display and interaction with many Items.
-If one has more than one Equipment that will use the same widget, or the widget is complex create a custom widget for these.
+If one has more than one Equipment that will use the same widget, or the widget is complex, create a custom widget for these.
 Once created, apply the custom widget to the Equipment Group Item in the model.
 Then on your Overview tab, or any other page, you can select "Add from Model", select the Equipment and it will drop the unified widget onto the page.
 
@@ -310,7 +310,7 @@ slots:
               text: =items[props.prefix+"_App"].state
 ```
 
-A full explanation of the widget is outside the sope of this tutorial but there are a few take aways.
+A full explanation of the widget is outside the scope of this tutorial but there are a few take aways.
 As with the list widget, it might be easier to create the widget on the Page editor first and then copy that to the custom widget as described above.
 First notice that not all the components used start with "oh".
 When building a complicated custom widget, one has more flexibility when using the base "f7" widgets instead.
@@ -327,12 +327,12 @@ This will bring up a form where the props can be set for the preview.
 
 ![Chromecast widget props set](images/chromecast_props_set.png)
 
-Once created, apply the custom widget to the Equipment Group Item in the model.
+Once created, apply the custom widget to the Equipment Group Item in the model by selecting it as the default stand alone widget.
 
 ## Dynamic Widgets
 
 It is also possible to create widgets that are dynamically populated from the model.
-This is particular useful to present a functional widget such as one widget to controll all the lights in the house.
+This is particularly useful to present a functional widget such as one widget to control all the lights in the house.
 For this the [oh-repeater]({{base}}/ui/components/oh-repeater.html) component will be very useful.
 This component allows one to set up a loop to iterate over a bunch of things such as all the Items with a given semantic properties tag and create a widget element for each one.
 
@@ -410,7 +410,7 @@ Because this is the first thing your users will see when accessing openHAB, the 
 
 To get started, click "Add Block", then "Add Row" and finally add how ever many columns you want.
 Repeat for additional rows.
-For this tutorial we will have two row and three columns.
+For this tutorial we will have two rows and three columns.
 
 ![Overview row and columns](images/overview_row_and_columns.png)
 
@@ -446,6 +446,17 @@ To preview the configuration in progress there is a toggle at the bottom of the 
 ![Overview preview](images/overview_preview.png)
 
 Once you are happy, save the page and that will become your Overview page.
+
+
+## Responsive Pages
+
+The Page will be viewed on a variety of screen sizes from computers to tablets to phones.
+To make the page adapt to the different screen widths there is a "Column Settings" option in a given column's setting icon.
+
+![Column Settings](images/column_options.png)
+
+This lets you define what percentage of a row a given column takes up based on the size of the screen the Page is being displayed upon.
+The above configuration is set for all the columns and consequently each coard will take up the full width of the screen unless it is a very wide screen (e.g. computer screen).
 
 ## Additional Pages
 
