@@ -25,7 +25,7 @@ The two types of users are regular users and administrators.
 
 ### Regular Users
 
-Regular are users who have not logged in or users who have not been configured to be administrators.
+Regular users wre those ho have not logged in or users who have not been configured to be administrators.
 These users can see all of the interactive parts of the UI (i.e. Pages) and can open other apps (icon at the upper right hand corner of the screen) but they cannot see any of the administration user interfaces nor can they access the administration functions through the REST API.
 
 ![regular user view](images/regular_user.png)
@@ -51,16 +51,16 @@ Notice the new Settings and Developer Tools menus are now accessible.
 
 Every openHAB deployment is unique.
 Consequently every administrator of an openHAB instance will need to create a custom interface for the users of their bespoke home automation.
-openHAB 3 provides a number of options to supports this in addition Main UI Pages.
+openHAB 3 provides a number of options to supports this in addition MainUI Pages.
 
 Interface | Purpose | How the UI is Defined | Notes
--|-|-
+-|-|-|-
 [Sitemaps]({{base}}/ui/sitemaps.html) | A simple declaritive way to define a simple user interface | Created using .sitemap files or through MainUI. | Used by BasicUI and the phone apps by default.
-[HABPanel]({{base}}/ui/habpanel/habpanel.html) | UI designed for fixed wall mounted tablets and similar touch screen displays using a blocks interface (e.g. the Windows 10 start menu) with a lot of customization options. | Built graphically though the browser. A number of custom widgets are defined and installable.
+HABPanel <!-- Where did the HABPanel docs go? --> | UI designed for fixed wall mounted tablets and similar touch screen displays using a blocks interface (e.g. the Windows 10 start menu) with a lot of customization options. | Built graphically though the browser. A number of custom widgets are defined and installable.
 HABot <!-- Where did the HABot docs go? --> | Provides a basic chatbot interaace to interact with your home automation through natural langauge. | Requires the configuration of the semantic model.
 [Pages]({{base}}/ui/index.html) | Built into MainUI that allows for a rich set of options to present your home automation. | Can be built automatiaclly through the semantic model as well as cutomized.
 
-Once installed, any non-Pages UI can be accessed in the "Other Apps" menu that pops up when clicking on the square icon in the upper right corner of the MainUI Overview page (first page you see when first accessing openHAB.
+Once installed, any non-Pages UI can be accessed in the "Other Apps" menu that pops up when clicking on the square icon in the upper right corner of the MainUI Overview page (first page you see when first accessing openHAB).
 
 ![other apps menu](images/other_apps.png)
 
