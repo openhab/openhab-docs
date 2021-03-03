@@ -6,7 +6,7 @@ title: Item Widgets
 # Custom Default Item Widgets
 
 In addition to customizing the Overview Page and the individual cards as discussed on the previous page, the way that the individual Point Items are shown, or whether or not they are shown at all, can be customized as well.
-In general the steps will include navigating to the Item in the Model tree or the Items Settings, click on "Add Metadata" and select "Default List Widget" to customize how the Item appears in the automatically generated cards on the Overview Page.
+In general the steps will include navigating to the Item in the Model tree or the Items Settings, clicking on "Add Metadata", and selecting "Default List Widget" to customize how the Item appears in the automatically generated cards on the Overview Page.
 One can also set the "Default Stand Alone Widget" and "Default Cell Widget" to change how an Item appears in other parts of MainUI.
 
 {::options toc_levels="2..4"/}
@@ -38,7 +38,7 @@ For complicated expressions, gradually build up the expression in this tool unti
 
 ## Visibility
 
-Each custom defined widget has a "Visibility" and "Visible to "property.
+Each custom defined widget has a "Visibility" and "Visible to" property.
 The "Visibility" option takes a boolean `true` or `false` (without quotes) or the result of a boolean expression to determine whether or not to render the widget.
 The "Visibile to" property controls which type of user can see the widget.
 Take heed of the warning, this is not a security feature, but it can be used to limit what a regular user can see in the automatically generated parts of the Overview Page.
@@ -51,7 +51,7 @@ There may be times where a piece of Equipment may have one or more Items that si
 Perhaps that Item is already displayed as part of another Item's custom list widget or it presents information or a control that the human users do not need.
 Instead of setting the visibility property, simply exclude the Item from the model by removing the Item's semantic tag.
 If the Item isn't used anywhere else, consider removing the Item entirely.
-Do not keep Items around just becuase you can.
+Do not keep Items around just because you can.
 
 ### Conditional Visibility
 
@@ -61,7 +61,7 @@ Those Items are only interesting when the plug itself is ON.
 Therefore hide the sensor readings Items by using an expression to only show it when the plug Switch Item itself is ON.
 
 Here are a set of widgets for a Chromecast.
-When the Chromecast isn't doing anything (Idling Channel is ON) the widgets are hiddin.
+When the Chromecast isn't doing anything (Idling Channel is ON) the widgets are hidden.
 
 ![hidden points](images/hidden_points.png)
 
@@ -74,12 +74,13 @@ The screen shots above are an extreme case where there are a lot of Equipment wi
 
 ## Configure a Custom Widget
 
-Be default MainUI will make a best guess to represent an Item.
+By default MainUI will make a best guess on how to represent an Item.
 If it fails to allow the interactions desired or doesn't look the way desired, a custom widget can be defined as metadata on the Item.
 To change how the Item appears in the automatically generated parts of the Overview Page, set the "Default List Widget".
 You can do so from the Model settings page or from the Item's settings page by clicking on "Add Metadata".
 
 See the [UI docs]({{base}}/ui/building-pages.html) for details on how to create custom widgets.
+There is some discussion on this on the next page of this tutorial as well.
 
 There are a number of widget types to choose from for a List Widget.
 See the [widget reference docs]({{base}}/ui/components/index.html) for details.
@@ -91,9 +92,8 @@ An important note about widgets.
 If one has more than one Item that should look and behave the same, create a custom widget under Developer Tools -> Widgets and reuse that for your Items.
 Once a custom widget is created, it will appear in the list of widget types.
 Properties can be used to customize the widget to work for each Item.
-See the docs linked to above for details.
+See the docs linked to above for details and the next page of the tutorial for some generic advice and approaches.
 Look in the [Add-Ons - UI Category on the forum](https://community.openhab.org/c/add-ons/uis/30) for lots of examples.
-The next page of this tutorial will discuss that in more detail.
 
 ## State Representation
 
@@ -102,19 +102,19 @@ Sometimes the binding will provide hints on how to display the state but most of
 
 Note, the `label` field of an Item's definition in a .items file or the label set on the Item is *not* used by MainUI.
 
-To customize the state of the Item the `State Description` metadata must be configured.
-This metadata lets you define the format and any transformations to apply to the Itemâ's state before it is displayed.
+To customize the state of the Item the "State Description" metadata must be configured.
+This metadata lets you define the format and any transformations to apply to the Item's state before it is displayed.
 When this metadata is defined, it will be used by default everywhere in MainUI.
 
 Field | What it does
 -|-
-Read Only | A toggle. When set it tells MainUI that the Item is not controllable (e.g. a Switch used to represent a sensor state) so a text/label widget will be used instead of a toggle.
-Pattern | Defines the pattern used to display the state. This is where you will define the transformation and any other formatting information according to the same [syntax as used by sitemaps]({{base}}/configuration/items.html#state-presentation). Everything that can go between the `[ ]` in that doc (excluding the `[ ]` themselves) can go here.
+Read Only | A toggle when set tells MainUI that the Item is not controllable (e.g. a Switch used to represent a sensor state) so a text/label widget will be used instead of a toggle.
+Pattern | Defines the pattern used to display the state. This is where you will define the transformation and any other formatting information according to the same [syntax as used by sitemaps]({{base}}/configuration/items.html#state-presentation). Everything that can go between the `[ ]` in an Item label as described by that doc (excluding the `[ ]` themselves) can go here.
 Min/Max/Step | Hints to MainUI used for slider, setpoint, and knob type widgets.
 Options | Can be used with Actions (see below) to provide a mapping between the state of the Item and a command to issue.
 
 There may be times when you want to suppress the state of the Item entirely.
-In those cases, enter ` ` (space) as the pattern and the Item's state will not be shown.
+In those cases, enter a space as the pattern and the Item's state will not be shown.
 
 ![state description](images/state_description.png)
 
@@ -123,7 +123,7 @@ The above shows the state description for a `Number:Time` Item formatted to show
 ## Actions
 
 There will be times when you want an entry in the card to perform some action when clicked on even when it's a sensor value.
-For example, one might send a command to the Garage Door Opener Item when clicking on the Garage Door Sensor's Item on the card (you can then hide or remove the opener's Item from the model so it doesn't show up at all, two for one).
+For example, one might send a command to the garage door opener Item when clicking on the garage door sensor's Item on the card (you can then hide or remove the opener's Item from the model so it doesn't show up at all, two for one).
 
 By default the action will usually be "Analyze item(s)" which will open up a chart of the historic state of the Items (see previous chapter).
 But there are many other Actions that can be performed.
