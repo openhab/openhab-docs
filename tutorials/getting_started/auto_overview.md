@@ -8,9 +8,9 @@ title: Auto Overview
 MainUI will automatically generate an Overview page (id:overview).
 This page will have four tabs.
 
-- Overview - user defined page
-- Locations - populated based on the model showing your Items based on their physical location
-- Equipment - populated based on the model showing your Items based on their Equipment type
+- Overview - user defined page.
+- Locations - populated based on the model showing your Items based on their physical location.
+- Equipment - populated based on the model showing your Items based on their Equipment type.
 - Properties - populated based on the model showing your Items based on their semantic Properties tag.
 
 {::options toc_levels="2..4"/}
@@ -34,7 +34,7 @@ However, this tab is completely custom built so how to do that is covered on the
 
 The model is really starting to pay off now!
 All of the Locations from your semantic model that have Equipment or Point Items directly in them will have their own card presented.
-For some types of roperties, a badge with a summary of that property at that location is shown on the card itself.
+For some types of Properties, a badge with a summary of that property at that location is shown on the card itself.
 Clicking on the card will bring up a list showing all the Equipment and Properties at that location.
 Equipment is represented as a gray bar with the name of the Equipment each Point/Property is shown with its default list widget.
 
@@ -45,12 +45,12 @@ The Properties tab shows those Point/Property Items from the model that are dire
 
 ![living room card](images/livingroom_card_equip.png)
 
-The badges shown on the card summarize all the link properties in that card and present it as a single badge.
+The badges shown on the card summarize all the Properties in that card and present that summary as a single badge.
 When there is nothing to present the badge is not shown.
 For example, if no lights are on, the lights badge will not be shown.
 When one light is on the light badge will be shown.
 When two or more lights are on, the light badge will be shown with a number indicating how many lights are on.
-For other types of sensors like temperature, the average of all the Items tagged with a Temperature property tag will be shown.
+For other types of sensors like temperature, the average of all the Items tagged with a Temperature Property tag will be shown.
 
 ### Equipment Tab
 
@@ -82,7 +82,7 @@ You can hide Items from the chart if it's to busy and change many other chart se
 
 Now persistence is starting to pay off!
 
-If you've customized the chart and want to return to the same chart again, you can save it and a new Chart Page will be created showing those Items with those settings.
+If you've customized the chart and want to return to the same chart again, you can save it and a new [Chart Page]({{base}}/ui/chart-pages.html) will be created showing those Items with those settings.
 
 ## Customization / Page Configuration
 
@@ -107,7 +107,7 @@ There are a few global settings for the overview pages itself and then each of t
 
 Field | Purpose
 -|-
-Display model cards to | Conmtrols what type of user can see the cards. If Administors is checked only an administrator user can see the cards tabs.
+Display model cards to | Controls what type of user can see the cards. If Administors is checked only an administrator user can see the cards tabs.
 Allow chat input box to | If HABot is installed, this controls what sort of user can access the HABot chat box.
 Hidden Model Tabs | Allows the Locations, Equipment, and/or Properties tabs to be hiddin to all users in case they are not used.
 
@@ -133,11 +133,12 @@ Give the separator a name and on the page you will no see a section heading with
 
 ![separators](images/separators.png)
 
-Tip 1 - Make sure to save before clikcing "Back" or otherwise leaving the page.
+Tip 1 - Make sure to save before clicking "Back" or otherwise leaving the page.
 
 You will have to reload the page to pick up the changes.
 
-Tip 2 - Open two separate tabs in your browser where you edit and view your page. Alternative, hit CTRL-R to force a reload and show the changes.
+Tip 2 - Open two separate tabs in your browser where you edit and view your page.
+Alternatively, hit CTRL-R to force a reload and show the changes.
 
 #### Card Customization
 
@@ -151,7 +152,7 @@ This will open a form with customication options.
 
 ##### Basic Settings
 
-Instead of using the Item's Label and parend Group as the Title and Subtitle of the card, these can be overridden and manually set.
+Instead of using the Item's Label and parent Group as the Title and Subtitle of the card, these can be overridden and manually set.
 [Expressions]({{base}}/ui/building-pages.html#dynamically-configuring-components-with-expressions) can be used to have the Title and Subtitle change based on the states of Items or other conditions.
 
 By default a background color is chosen based on the semantic tag.
@@ -186,22 +187,22 @@ config:
 Once you have your custom images, place them in $OH_CONF/html.
 Once they are there, you can use the relative path `/static/image.name` as the URL to the image.
 For example, I placed the file `garage.jpg` in `/etc/openhab/html` and reference it as you see in the YAML above.
-This is how to use a custom image as teh background of a card.
-You can see some stock images used as teh backgrounds for the cards on the Locations tab in the demo and screen shots above.
+This is how to use a custom image as the background of a card.
+You can see some stock images used as the backgrounds for the cards on the Locations tab in the demo and screen shots above.
 
-Note, even though it is theoretically possible and tempting to just link to an absolute URL on the internet as it doesn't require to save the image file to openhab's server it is highly discouraged for security, link dependency, image sizing and other reasons.
+Note, even though it is theoretically possible and tempting to just link to an absolute URL on the internet, as it doesn't require to save the image file to openhab's server, doing so is highly discouraged for security, link dependency, image sizing and other reasons.
 
 ##### Badges
 
 Badges are only available on the Location cards.
 
-If one want to not show any badges at all toggle "Disable badges".
+If one wants to not show any badges at all toggle "Disable badges".
 
-If one wants to only suppress certain badges, select those that you want to show under "Enable badges".
+If one wants to only suppress certain badges, select those that you want to show under "Enable Badges".
 
 ##### Advanced Configuration
 
-For an individual card or to edit the Page itself one can switch to or show the YAML code.
+For an individual card or to edit the Page itself one can switch to show the YAML code.
 Many actions like reordering the cards and inserting separators will be faster to do through the code.
 
 Any advanced customization of the cards themselves through editing of the code directly is beyond the scope of this tutorial.
