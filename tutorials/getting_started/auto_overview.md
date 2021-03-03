@@ -1,6 +1,7 @@
 ---
 layout: documentation
 title: Auto Overview
+---
 
 # Automatically Generated Overview Tabs
 

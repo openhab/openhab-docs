@@ -1,6 +1,7 @@
 ---
 layout: documentation
 title: Intro to Pages
+---
 
 # Introduction to Pages
 
