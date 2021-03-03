@@ -6,12 +6,12 @@ title: Auto Overview
 # Automatically Generated Overview Tabs
 
 MainUI will automatically generate an Overview page (id:overview). 
-This page will have four tabs:
+This page will have four tabs.
 
-- Overview: user defined page
-- Locations: populated based on the model showing your Items based on their physical location
-- Equipment: populated based on the model showing your Items based on their Equipment type
-- Properties: populated based on the model showing your Items based on their semantic Properties tag.
+- Overview - user defined page
+- Locations - populated based on the model showing your Items based on their physical location
+- Equipment - populated based on the model showing your Items based on their Equipment type
+- Properties - populated based on the model showing your Items based on their semantic Properties tag.
 
 {::options toc_levels="2..4"/}
 
@@ -134,11 +134,11 @@ Give the separator a name and on the page you will no see a section heading with
 
 ![separators](images/separators.png)
 
-Tip 1: Make sure to save before clikcing "Back" or otherwise leaving the page.
+Tip 1 - Make sure to save before clikcing "Back" or otherwise leaving the page.
 
 You will have to reload the page to pick up the changes.
 
-Tip 2: Open two separate tabs in your browser where you edit and view your page. Alternative, hit CTRL-R to force a reload and show the changes.
+Tip 2 - Open two separate tabs in your browser where you edit and view your page. Alternative, hit CTRL-R to force a reload and show the changes.
 
 #### Card Customization
 
@@ -190,7 +190,7 @@ For example, I placed the file `garage.jpg` in `/etc/openhab/html` and reference
 This is how to use a custom image as teh background of a card. 
 You can see some stock images used as teh backgrounds for the cards on the Locations tab in the demo and screen shots above.
 
-Note: even though it is theoretically possible and tempting to just link to an absolute URL on the internet as it doesn't require to save the image file to openhab's server it is highly discouraged for security, link dependency, image sizing and other reasons.
+Note, even though it is theoretically possible and tempting to just link to an absolute URL on the internet as it doesn't require to save the image file to openhab's server it is highly discouraged for security, link dependency, image sizing and other reasons.
 
 ##### Badges
 
