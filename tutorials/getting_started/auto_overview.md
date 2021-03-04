@@ -1,6 +1,6 @@
 ---
 layout: documentation
-title: Auto Overview
+title: Pages - Overview Page
 ---
 
 # Automatically Generated Overview Tabs
