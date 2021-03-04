@@ -1,6 +1,6 @@
 ---
 layout: documentation
-title: Item Widgets
+title:  Custom Widgets
 ---
 
 # Custom Default Item Widgets
