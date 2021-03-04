@@ -20,7 +20,7 @@ On this page you will learn how to leverage its functionality to do *real* home 
 ### File Location
 
 Rules are placed in the folder `$OPENHAB_CONF/rules`.
-The [demo setup](https://demo.openhab.org) already comes with a demo file called [`demo.rules`](https://github.com/openhab/openhab-distro/blob/main/features/distro-resources/src/main/resources/rules/demo.rules), which has a couple of examples that can be a good starting point.
+The [demo setup](https://demo.openhab.org) already comes with a demo file called [`demo.rules`](https://github.com/openhab/openhab-distro/blob/main/distributions/openhab-demo/src/main/resources/conf/rules/demo.rules), which has a couple of examples that can be a good starting point.
 
 A rule file can contain multiple rules.
 All rules of a file share a common execution context, i.e. they can access and exchange variables with each other.
