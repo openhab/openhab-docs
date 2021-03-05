@@ -36,7 +36,7 @@ It provides:
 
 Out of the box, the openHABian image provides:
 
--   Hassle-free setup without a display or keyboard, connected via Ethernet or [WiFi](#wifi-based-setup-notes)
+-   Hassle-free setup without a display or keyboard, connected via Ethernet or [Wi-Fi](#wi-fi-based-setup-notes)
 -   The latest stable version of openHAB
 -   Zulu Embedded OpenJDK Java 8, 11 or AdoptOpenJDK
 -   [openHABian Configuration Tool](#openhabian-configuration-tool) including updater functionality
@@ -56,7 +56,7 @@ The included **openHABian Configuration Tool** [`openhabian-config`](#openhabian
 
 -   Switch between openHAB versions 2 and 3 and select the latest _Release_, _Milestone_, and _SNAPSHOT_ [build versions](https://www.openhab.org/docs/installation/linux.html#changing-versions)
 -   Install and Setup a [reverse proxy](security.html##running-openhab-behind-a-reverse-proxy) with password authentication and/or HTTPS access (incl. [Let's Encrypt](https://letsencrypt.org) certificate) for self-controlled remote access
--   Manually set up a WiFi connection
+-   Manually set up a Wi-Fi connection
 -   Setup [Backup](#availability-and-backup) for your system
 -   Easily install and preconfigure [Optional Components](#optional-components) of your choice
 -   Configure Raspberry Pi specific functions
@@ -136,7 +136,7 @@ The whole process will take a few minutes, then openHAB and all other tools need
 
 -   [Download the latest "openHABian" SD card image file](https://github.com/openhab/openhabian/releases) (Note: the file is _xz_ compressed)
 -   Write the image to your SD card (e.g. with [Etcher](https://www.balena.io/etcher/) or official [Raspberry Pi Imager](https://www.raspberrypi.org/software/), both able to directly work with _xz_ files
--   Insert the SD card into your Raspberry Pi, connect your Ethernet cable - [WiFi is also supported](#wifi-based-setup-notes) - and power on
+-   Insert the SD card into your Raspberry Pi, connect your Ethernet cable - [Wi-Fi is also supported](#wi-fi-based-setup-notes) - and power on
 -   Wait approximately **15-45 minutes** for openHABian to do its magic, you can watch the install progress from within your browser.
 -   The system will be accessible by its IP or via the local DNS name `openhabian` (or whatever you changed 'hostname' in `openhabian.conf` to)
 -   Connect to the openHAB UI at [http://openhabian:8080](http://openhabian:8080)
@@ -352,16 +352,16 @@ You can also make use of this if you don't use the image but unattended installa
 Make the `adminkeyurl` point to an URL to contain a public SSH key.
 This will be included with your administration user's `.ssh/authorized_keys` and the openHAB console so the admin user (yourself, usually) can login after installation.
 
-#### WiFi based setup notes
+#### Wi-Fi based setup notes
 
-If you own a RPi3, RPi3+, RPi4, a RPi0W or any other model with a compatible WiFi dongle you can set up and use openHABian via WiFi only.
-For the WiFi based setup to work, you'll need to make your SSID and password known to the system before the first boot.
+If you own a RPi3, RPi3+, RPi4, a RPi0W or any other model with a compatible Wi-Fi dongle you can set up and use openHABian via Wi-Fi only.
+For the Wi-Fi based setup to work, you'll need to make your SSID and password known to the system before the first boot.
 So in addition to the setup instructions given above, uncomment and complete the lines reading `wifi_ssid=""` and `wifi_password=""` in `openhabian.conf`.
 
-#### WiFi Hotspot
+#### Wi-Fi Hotspot
 
-Whenever the WiFi interface wlan0 exists but does not have connectivity, openHABian will launch a **Hotspot**.
-When you use your mobile phone to scan for WiFi networks, you should be seeing a new network called `openHABian-<n>`.
+Whenever the Wi-Fi interface wlan0 exists but does not have connectivity, openHABian will launch a **Hotspot**.
+When you use your mobile phone to scan for Wi-Fi networks, you should be seeing a new network called `openHABian-<n>`.
 Connecting will work without a password. Once connected, open your browser and point it at `http://raspberrypi.local` or `http://comitup-<n>`.
 This may or may not work for your mobile browser as it requires Bonjour/ZeroConf abilities.
 If you cannot connect to this address, go to `http://10.41.0.1`.
@@ -372,7 +372,7 @@ Try to ping the new system's hostname (default is `openhabian`) or check DHCP on
 For more information on this feature see [comitup-cli](https://davesteele.github.io/comitup/).
 You can use `sudo comitup-cli` inside openHABian to change networks and eventually remove network credentials.
 Note the hotspot may not only become available during installation: it will remain on standby and will show up again every time your `wlan0` interface is losing connectivity.
-The hotspot feature is known to work on RPi-0W, RPi-3, and RPi-4 but is known to often expose problems with WiFi USB adapters.
+The hotspot feature is known to work on RPi-0W, RPi-3, and RPi-4 but is known to often expose problems with Wi-Fi USB adapters.
 
 #### Disable zram
 
@@ -390,15 +390,21 @@ Mind you that if you intend to open an issue, we need you to provide the output 
 Auto backup is a marketing name for two distinct features that you can deploy in one go at *unattended* installation time on a RPi (when you deploy the image).
 Technically it is a "low-cost" version of disk mirroring PLUS the setup of the Amanda backup system which all by itself has been available in a long time.
 So don't let the name confuse you. If you didn't choose to set this up at installation time, you can also individually select these functions via `openhabian-config` menu options 53 (mirroring) and 52 (Amanda).
-Note mirroring is untested (and hardly makes sense to deploy) if you don't run RPi hardware but Amanda is well meant to be used as the backup system and is known to work on any hardware.
+Note mirroring is untested (and hardly makes sense to deploy) if you don't run RPi hardware while Amanda is known to work on a lot of other hardware and is well meant to be used as the backup system there as well.
 
 To setup openHABian to automatically backup and mirror your internal SD card to an external storage unit, we suggest to use another SD card in an external card writer device so that in case your internal SD card fails, you can switch SD cards to get the system back up running fast.
-Note most "16GB" cards are not _exactly_ 16 GB and your new one mustn't have less bytes than the old one so openHABian enforces the second card to have at least twice the size of your internal card.
-We can make use of that extra space as storage for the backup system.
-HEADS UP: To setup mirroring will only work if the destination SD card is truely LARGER than the internal one. You must not buy and try to use two equal cards !
-Also be aware that the storage partition will not be mirrored so don't take _mirrors_ of the _mirror_ else it'll choke on bootup trying to mount the storage partition.
 
-To setup mirroring right at installation time:
+We recommend to put in another card that has at least _twice_ the size of the internal card. We can make use of that extra space as storage for the backup system.
+Note most "16GB" cards are not _exactly_ 16 GB and your mirror mustn't have less bytes than the internal one so at setup time, openHABian ensures the second card has at least the same size as your internal card.
+
+::: tip No Do-It-Yourself mirroring
+Please be aware that the storage partition will not be mirrored
+Note you must NOT use `dd` or any other tool to copy a SD card or partition on your own. If you do and boot with source and destination cards plugged in, they will have the same partition IDs and this will likely mess up and can irreversibly devastate your whole system. Use the `blkid` command in shell to see those IDs.
+So don't take _mirrors_ of the _mirror_.
+Also be aware that only the first two partitions are mirrored - the third one will never be mirrored even if you have set that up for use as backup area.
+:::
+
+To setup mirroring right during unattended installation of a RPi (using the image flash method):
 Define `backupdrive=/dev/sdX` (replace X with the proper character) to enable this functionality right during unattended installation.
 The first attached disk type device is usually called `/dev/sda`.
 Use `storagecapacity=xxx` to override how much space to consume at most for Amanda backup storage (in MB).
@@ -410,6 +416,7 @@ You can still setup both, mirroring and Amanda, separately at any later time usi
 
 Full mirroring will take place semiannually and for the 2nd partition (Linux root), changes will be synced once every day.
 See `systemctl list-timers`, timers are defined in `/etc/systemd/system/sd*.timer`.
+
 
 Menu 5X provides interactive access to the aforementioned functions:
 `52 Amanda System Backup` will will prepare an existing directory as your backup storage and make Amanda launch once a day. See the separate [Amanda setup document](openhabian-amanda.md).

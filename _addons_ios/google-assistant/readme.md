@@ -13,20 +13,30 @@ This guide describes step by step how to use the [openHAB Google Assistant Smart
 
 With the Action you can voice control your openHAB items and it supports lights, plugs, switches, thermostats and many more. The openHAB Action comes with multiple language support like English, German or French language.
 
-# General Configuration Instructions
+## General Configuration Instructions
 
-## Requirements
+### Requirements
 
 * [openHAB Cloud Connector](http://docs.openhab.org/addons/ios/openhabcloud/readme.html) configured using myopenHAB.org. (Items DO NOT need to be exposed to and will not show up on myopenHAB.org, this is only needed for the IFTTT service!)
 * Google account.
 * Google Home, Google Home mini, Google Nest or the Google Assistant on your phone.
 
-## Item configuration
+### Item configuration
+
 In openHAB 2 items are exposed via [metadata](https://www.openhab.org/docs/configuration/items.html#item-definition-and-syntax).
 
 Currently the following metadata values are supported (also depending on Googles API capabilities):
 
-* `Switch / Dimmer / Color { ga="Light" }`
+* `Switch / Dimmer / Color { ga="Light" }` (Depending on the item type controlling power, brightness and color is supported)
+
+---
+
+* `Group { ga="Light" [ colorTemperatureRange="2000,9000", useKelvin=true ] }` (Light with separate brightness and color items)
+* `Dimmer / Number { ga="lightBrightness" }` as part of Light group
+* `Dimmer / Number { ga="lightColorTemperature" }` as part of Light group
+
+---
+
 * `Switch { ga="Switch" [ inverted=true ] }` (all Switch items can use the inverted option)
 * `Switch { ga="Outlet" }`
 * `Switch { ga="Coffee_Maker" }`
@@ -36,12 +46,32 @@ Currently the following metadata values are supported (also depending on Googles
 * `Switch { ga="Sprinkler" }`
 * `Switch { ga="Vacuum" }`
 * `Switch { ga="Scene" }`
-* `Switch { ga="Lock" [ tfaAck=true ] }`
-* `Switch { ga="SecuritySystem" [ tfaPin="1234" ] }`
-* `Dimmer { ga="Speaker" }`
+
+---
+
+* `Switch / Contact { ga="Lock" [ ackNeeded=true ] }`
+* `Switch { ga="SecuritySystem" [ pinNeeded="1234" ] }`
+* `String { ga="Camera" [ protocols="hls,dash" ] }`
+* `Dimmer { ga="Speaker" }` (Volume control)
+
+---
+
+* `Group { ga="TV" [ volumeDefaultPercentage="20", levelStepSize="10", volumeMaxLevel="100", transportControlSupportedCommands="NEXT,PREVIOUS,PAUSE,RESUME", availableInputs="hdmi1=xbox,hdmi2=settopbox", availableChannels="1=Channel1=NBC,2=Channel2=CBS" ] }`
+* `Switch { ga="tvPower" }` as part of TV group (optional)
+* `Switch { ga="tvMute" }` as part of TV group (optional)
+* `Dimmer { ga="tvVolume" }` as part of TV group (optional)
+* `String { ga="tvChannel" }` as part of TV group (optional)
+* `String { ga="tvInput" }` as part of TV group (optional)
+* `Player { ga="tvTransport" }` as part of TV group (optional)
+
+---
+
 * `Switch / Dimmer { ga="Fan" [ speeds="0=away:zero,50=default:standard:one,100=high:two", lang="en", ordered=true ] }` (for Dimmer the options have to be set)
 * `Switch / Dimmer { ga="Hood" }`
 * `Switch / Dimmer { ga="AirPurifier" }`
+
+---
+
 * `Rollershutter { ga="Awning" [ inverted=true ] }` (all Rollershutter items can use the inverted option)
 * `Rollershutter { ga="Blinds" }`
 * `Rollershutter { ga="Curtain" }`
@@ -51,17 +81,24 @@ Currently the following metadata values are supported (also depending on Googles
 * `Rollershutter { ga="Pergola" }`
 * `Rollershutter { ga="Shutter" }`
 * `Rollershutter { ga="Window" }`
-* `Group { ga="Thermostat" [ modes="..." ] }`
+
+_\* All Rollershutter devices can also be used with a Switch or Contact item with the limitation of only supporting open and close states._
+
+---
+
+* `Group { ga="Thermostat" [ modes="...", thermostatTemperatureRange="10,30", useFahrenheit=true ] }`
 * `Number { ga="thermostatTemperatureAmbient" }` as part of Thermostat group
 * `Number { ga="thermostatHumidityAmbient" }` as part of Thermostat group
 * `Number { ga="thermostatTemperatureSetpoint" }` as part of Thermostat group
 * `Number / String { ga="thermostatMode" }` as part of Thermostat group
-* `String { ga="Camera" [ protocols="hls,dash" ] }`
 
-_\* All Rollershutter devices can also be used with a Switch item with the limitation of only supporting open and close states._
+---
+
+* `Number { ga="TemperatureSensor" } [ useFahrenheit=true ]`
 
 Example item configuration:
-  ```
+
+  ```js
   Switch KitchenLights "Kitchen Lights" <light> (gKitchen) { ga="Switch" }
   Dimmer BedroomLights "Bedroom Lights" <light> (gBedroom) { ga="Light" }
   Color LivingroomLights "Livingroom Lights" <light> (gLivingroom) { ga="Light" }
@@ -87,21 +124,33 @@ Furthermore, you can state synonyms for the device name: `Switch KitchenLight "K
 
 To ease setting up new devices you can add a room hint: `[ roomHint="Living Room" ]`.
 
+For devices supporting the OpenClose trait, the attributes `[ discreteOnlyOpenClose=false, queryOnlyOpenClose=false ]` can be configured.
 
-NOTE: metadata is not (yet?) available via paperUI. Either you create your items via ".items" files, or you can:
-- add metadata via console:
- ```
- smarthome:metadata add BedroomLights ga Light
- ```
+* discreteOnlyOpenClose defaults to false. When set to true, this indicates that the device must either be fully open or fully closed (that is, it does not support values between 0% and 100%). An example of such a device may be a valve.
+* queryOnlyOpenClose defaults to false. Is set to true for `Contact` items. Indicates if the device can only be queried for state information and cannot be controlled. Sensors that can only report open state should set this field to true.
 
-- add metadata using the REST API:
- ```
- PUT /rest/items/BedroomLights/metadata/ga
+---
 
- {
-   "value": "Light"
- }
- ```
+NOTE: metadata is not available via paperUI in openHAB v2. Either you create your items via ".items" files, or you can:
+
+* add metadata via console:
+
+  ```console
+  smarthome:metadata add BedroomLights ga Light
+  ```
+
+* add metadata using the REST API:
+
+  ```js
+  PUT /rest/items/BedroomLights/metadata/ga
+
+  {
+    "value": "Light"
+  }
+  ```
+
+NOTE: Please be aware that for backward compatibilty also the former usage of tags (ref. [Google Assistant Action Documentation v2.5](https://www.openhab.org/v2.5/docs/ecosystem/google-assistant/)) to specify items to be exposed to Google Assistent is supported and may cause unexpected behavior.
+Items that contain tags that refer to a valid Google Assistent device will be exposed regardless of having metadata set. E.g.: `Switch MyBulb ["Lighting"]`.
 
 ### Special item configurations
 
@@ -117,9 +166,9 @@ _pinNeeded_: "A two-factor authentication that requires a personal identificatio
 
 Example:
 
-```
-Switch DoorLock "Front Door" { ga="Lock" [ tfaAck=true ] }
-Switch HouseAlarm "House Alarm" { ga="SecuritySystem" [ tfaPin="1234" ] }
+```js
+Switch DoorLock "Front Door" { ga="Lock" [ ackNeeded=true ] }
+Switch HouseAlarm "House Alarm" { ga="SecuritySystem" [ pinNeeded="1234" ] }
 ```
 
 #### Thermostats
@@ -131,7 +180,7 @@ To set the temperature range your thermostat supports, add the config option `[ 
 
 There must be at least three items as members of the group:
 
-* (Mandatory) Mode: Number (Zwave THERMOSTAT_MODE Format) or String (off, heat, cool, on, ...). `{ ga="thermostatMode" }`
+* (Mandatory) Mode: Number or String (off, heat, cool, on, ...). `{ ga="thermostatMode" }`
 * (Mandatory) Temperature Ambient: Number. `{ ga="thermostatTemperatureAmbient" }`
 * (Mandatory) Temperature Setpoint: Number. `{ ga="thermostatTemperatureSetpoint" }`
 * (Optional) Temperature Setpoint High: Number. `{ ga="thermostatTemperatureSetpointHigh" }`
@@ -145,6 +194,7 @@ E.g. `[ modes="off=OFF:WINDOW_OPEN,heat=COMFORT:BOOST,eco=ECO,on=ON,auto" ]` wil
 By default the integration will provide `"off,heat,cool,on,heatcool,auto,eco"`.
 
 You can also set up a Thermostat for using it as a temperature sensor. To do so, create a Thermostat group and only add one item member as "thermostatTemperatureAmbient".
+However, it is recommended to prefer the `TemperatureSensor` type for simple temperature reports (but currently no UI support in Google Assistant).
 
 #### Fans
 
@@ -164,6 +214,8 @@ Blinds should always use the `Rollershutter` item type.
 Since Google and openHAB use the oposite percentage value for "opened" or "closed", the action will tranlate this automatically.
 If the values are still inverted in your case, you can state the `[ inverted=true ]` option for all `Rollershutter` items.
 
+Since Google only tells the open percentage (and not the verb "close" or "down"), it can not be differentiated between saying "set blind to 100%" or "open blind".
+Therefore, it is not possible to "not invert" the verbs, if the user chooses to invert the numbers.
 
 ## Setup & Usage on Google Assistant App
 
@@ -207,28 +259,27 @@ If the values are still inverted in your case, you can state the `[ inverted=tru
 ![openHAB Google App](images/Screenshot_10.png)
 ![openHAB Google App](images/Screenshot_11.png)
 
-
 ## Example Voice Commands
 
 Here are some example voice commands:
 
- * Turn on Office Lights.
- * Dim/Brighten Office Lights (increments 15%).
- * Set Office Lights to 35%.
- * Open/Close the blinds
- * Turn off Pool Waterfall.
- * Turn on House Fan.
- * Turn on Home Theater Scene.
- * Set Basement Thermostat to 15 degrees.
- * What is the current Basement Thermostat Temperature?
+* Turn on Office Lights.
+* Dim/Brighten Office Lights (increments 15%).
+* Set Office Lights to 35%.
+* Open/Close the blinds
+* Turn off Pool Waterfall.
+* Turn on House Fan.
+* Turn on Home Theater Scene.
+* Set Basement Thermostat to 15 degrees.
+* What is the current Basement Thermostat Temperature?
 
- ## Frequently Asked Question
+## Frequently Asked Question
 
- My New items did not appear in the Google Home app.
+My New items did not appear in the Google Home app.
 
- * Say: Hey Google, sync my devices.
+* Say: Hey Google, sync my devices.
 
- I'm not able to connect openHAB to Google Home.
+I'm not able to connect openHAB to Google Home.
 
 * Check, recheck and after that check again your items!
 * The items that you want to expose to Google Assistant should have the right metadata assigned.
@@ -238,17 +289,20 @@ Here are some example voice commands:
   * A number or string item with the metadata value { ga="thermostatMode" } as part of the thermostat group
   * A number item with the metadata value { ga="thermostatTemperatureAmbient" } as part of the thermostat group
   * A number item with the metadata value { ga="thermostatTemperatureSetpoint" } as part of the thermostat group
-  ```
+
+  ```js
   Group g_HK_Basement_TSTAT "Basement Thermostat" { ga="Thermostat" [ useFahrenheit=true ] }
   Number HK_Basement_Mode "Basement Heating/Cooling Mode" (g_HK_Basement_TSTAT) { ga="thermostatMode" }
   Number HK_Basement_Setpoint "Basement Setpoint" (g_HK_Basement_TSTAT) { ga="thermostatTemperatureSetpoint" }
   Number HK_Basement_Temp "Basement Temperature" (g_HK_Basement_TSTAT) { ga="thermostatTemperatureAmbient" }
   ```
+
 * If none of the above solutions works for you:
   * Remove all the metadata.
   * Make a new .item file with 1 item to expose.
-  ```
+
+  ```js
   Switch TestLight "Test Light" { ga="Switch" }
   ```
-  * Relink your account.
 
+  * Relink your account.
