@@ -6,7 +6,7 @@
                       https://openhab.org/schemas/thing-description/v1.0.0">
 
   <thing-type id="nietech_ms10z_00_000" listed="false">
-    <label>MZ10Z Wall Switch</label>
+    <label>MS10Z Wall Switch</label>
     <description><![CDATA[
 Wall Switch<br /> <h1>Overview</h1><p>Minoston MS10Z - a simple on/off switch with timer capabilities</p> <br /> <h2>Inclusion Information</h2><p>Press the up or down button three times quickly to ADD and REMOVE</p> <br /> <h2>Exclusion Information</h2><p>Press the up or down button three times quickly to ADD and REMOVE</p> <br /> <h2>Wakeup Information</h2><p><br /></p>
     ]]></description>
@@ -31,11 +31,11 @@ Wall Switch<br /> <h1>Overview</h1><p>Minoston MS10Z - a simple on/off switch wi
     <!-- DEVICE PROPERTY DEFINITIONS -->
     <properties>
       <property name="vendor">NIE Technology</property>
-      <property name="modelId">MZ10Z</property>
+      <property name="modelId">MS10Z</property>
       <property name="manufacturerId">0312</property>
-      <property name="manufacturerRef">FF00:FF03</property>
+      <property name="manufacturerRef">EE00:EE01,FF00:FF03</property>
       <property name="dbReference">1289</property>
-      <property name="defaultAssociations">1,2</property>
+      <property name="defaultAssociations">1</property>
     </properties>
 
     <!-- CONFIGURATION DESCRIPTIONS -->
@@ -109,6 +109,9 @@ Wall Switch<br /> <h1>Overview</h1><p>Minoston MS10Z - a simple on/off switch wi
 
       <parameter name="group_2" type="text" groupName="association" multiple="true">
         <label>2: Basic Set Command</label>
+        <description><![CDATA[
+<br /> <h1>Overview</h1><p><br /></p>
+        ]]></description>
         <multipleLimit>5</multipleLimit>
       </parameter>
 

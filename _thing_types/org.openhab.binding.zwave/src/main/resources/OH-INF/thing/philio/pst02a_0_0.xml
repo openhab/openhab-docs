@@ -88,21 +88,20 @@ Slim Multi-Sensor (PIR/Door/Temperature/Illumination)<br /> <h1>Overview</h1><p>
       </parameter-group>
 
       <!-- PARAMETER DEFINITIONS -->
-      <parameter name="config_2_1" type="integer" groupName="configuration"
-                 min="1" max="100">
+      <parameter name="config_2_1" type="integer" groupName="configuration">
         <label>2: Basic Set Level</label>
         <description><![CDATA[
-Setting the BASIC command value to turn on the light.<br /> <h1>Overview</h1><ul><li>0 = Turn off the light.</li> <li>1 - 100 = For dimmers 1 to 100 means the light strength.</li> <li>255 = turns on the light. (Default)</li> </ul>
+Setting the BASIC command value to turn on the light.<br /> <h1>Overview</h1><ul><li>0 = Turn off the light.</li> <li>1 - 100 = For dimmers 1 to 100 means the light strength.</li> <li>-1 = turns on the light. (Default)</li> </ul>
         ]]></description>
-        <default>255</default>
+        <default>-1</default>
         <options>
+          <option value="-1">Turn light ON (default)</option>
           <option value="0">Turn light OFF</option>
-          <option value="255">Turn light ON</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_3_1" type="integer" groupName="configuration"
-                 min="0" max="99">
+      <parameter name="config_3_1" type="integer" groupName="configuration">
         <label>3: PIR Sensitivity</label>
         <description><![CDATA[
 PIR Sensitivity setting.<br /> <h1>Overview</h1><p>Sensitivity for the PIR (Passive Infrared) sensor</p> <ul><li>0: Disable PIR motion detection.</li> <li>1–99: Motion detection sensitivity, where 1 is the lowest and 99 is the highest.</li> </ul>
@@ -111,10 +110,10 @@ PIR Sensitivity setting.<br /> <h1>Overview</h1><p>Sensitivity for the PIR (Pass
         <options>
           <option value="0">Disable Motion Detection</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_4_1" type="integer" groupName="configuration"
-                 min="0" max="100">
+      <parameter name="config_4_1" type="integer" groupName="configuration">
         <label>4: Light Threshold</label>
         <description><![CDATA[
 Illumination threshold for turning on associated lights.<br /> <h1>Overview</h1><p>When the event is triggered and the environment illumination is lower than the threshold, the device will turn on the associated lights.</p> <ul><li>0: turn off the illumination detection function and <em>never</em> turn on the lights</li> <li>1: darkest threshold level</li> <li>99 brightest threshold level</li> <li>100: turn off the illumination detection function and <em>always</em> turn on the lights.</li> </ul><p>Note: when not in test mode, only values in the range 1–99 will enable the illumination detection function and update the illumination value.</p>
@@ -123,18 +122,84 @@ Illumination threshold for turning on associated lights.<br /> <h1>Overview</h1>
         <options>
           <option value="0">Disable Illumination Detection</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_5_1" type="integer" groupName="configuration"
-                 min="0" max="127">
+      <parameter name="config_5_1_00000002" type="integer" groupName="configuration"
+                 min="0" max="1">
         <label>5: Operation Mode</label>
         <description><![CDATA[
-Mode of operation and enabled multisensor functions<br /> <h1>Overview</h1><p>Bitfield for setting the device in certain modes and enabling or disabling specific functions of the multisensor device.</p> <p><strong>PST02A only:</strong></p> <ul><li>Bit 0: reserved. (0)</li> <li>Bit 1: device mode. 0 = normal mode; 1 = test mode.</li> <li>Bit 2: disable the door/window function. 0 = enabled; 1 = disabled.</li> <li>Bit 3: temperature unit. 0 = Fahrenheit; 1 = Celcius.</li> <li>Bit 4: disable the illumination report after event triggered. 0 = enabled; 1 = disabled.</li> <li>Bit 5: disable the temperature report after event triggered. 0 = enabled; 1 = disabled.</li> <li>Bit 6: reserved. (0)</li> <li>Bit 7: disable the back key release into test mode. 0 = enabled; 1 = disabled.</li> </ul>
+Mode of operation<br /> <h1>Overview</h1><p>device mode. 0 = normal mode; 1 = test mode.<br /></p>
         ]]></description>
         <default>0</default>
         <options>
-          <option value="8">Set Celsius</option>
-          <option value="10">Preset: Celsius and LED on = Bits: 00001010 = 10</option>
+          <option value="0">normal mode</option>
+          <option value="1">test mode</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_5_1_00000004" type="integer" groupName="configuration"
+                 min="0" max="1">
+        <label>5: Door/window function</label>
+        <description><![CDATA[
+Enable or disable the door/window function<br /> <h1>Overview</h1><p>disable the door/window function. 0 = enabled; 1 = disabled.<br /></p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Enabled</option>
+          <option value="1">Disabled</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_5_1_00000008" type="integer" groupName="configuration"
+                 min="0" max="1">
+        <label>5: Temperature unit</label>
+        <description><![CDATA[
+The temperature unit<br /> <h1>Overview</h1><p>temperature unit. 0 = Fahrenheit; 1 = Celcius.<br /></p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Fahrenheit</option>
+          <option value="1">Celsius</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_5_1_00000010" type="integer" groupName="configuration"
+                 min="0" max="1">
+        <label>5: Illumination report after event triggered</label>
+        <description><![CDATA[
+Enable or disable the illumination report after event triggered<br /> <h1>Overview</h1><p>disable the illumination report after event triggered. 0 = enabled; 1 = disabled.<br /></p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Enabled</option>
+          <option value="1">Disabled</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_5_1_00000020" type="integer" groupName="configuration"
+                 min="0" max="1">
+        <label>5: Temperature report after event triggered</label>
+        <description><![CDATA[
+Enable or disable the temperature report after event triggered<br /> <h1>Overview</h1><p>disable the temperature report after event triggered. 0 = enabled; 1 = disabled.<br /></p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Enabled</option>
+          <option value="1">Disabled</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_5_0_00000080" type="integer" groupName="configuration"
+                 min="0" max="1">
+        <label>5: Back key release test mode</label>
+        <description><![CDATA[
+Enable or disable the back key release into test mode<br /> <h1>Overview</h1><p>disable the back key release into test mode. 0 = enabled; 1 = disabled.<br /></p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Enabled</option>
+          <option value="1">Disabled</option>
         </options>
       </parameter>
 
@@ -148,16 +213,81 @@ Enable or disable functions of the multisensor.<br /> <h1>Overview</h1><p>Bitfie
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_7_1" type="integer" groupName="configuration"
-                 min="0" max="127">
-        <label>7: Customer Function</label>
+      <parameter name="config_7_1_00000002" type="integer" groupName="configuration"
+                 min="0" max="1">
+        <label>7: Sending motion OFF report</label>
         <description><![CDATA[
-Enable or disable functions of the multisensor.<br /> <h1>Overview</h1><ul><li>Bit 0: Reserved.</li> <li>Bit 1: Enable sending motion OFF report.<strong> 0=Disable</strong>; 1=Enable. <em>Note: Depends on the value of bit 4, see below:</em> <ul><li>Bit 4 is 0: Report Notification CC, Type: 0x07, Event: 0xFE.</li> <li>Bit 4 is 1: Sensor Binary Report, Type: 0x0C, Value: 0x00.</li> </ul></li> <li>Bit 2: Enable PIR super sensitivity mode. 0=Disable; <strong>1=Enable.</strong></li> <li>Bit 3: Disable sending BASIC OFF after door/window is closed. 1=Disable,<strong> 0=Enable.</strong></li> <li>Bit 4: Notification type. <strong>0=Using Notification Report</strong>; 1=Using Sensor Binary Report.</li> <li>Bit 5: Disable Multi CC in auto report. 1=Disable; <strong>0=Enable</strong>.</li> <li>Bit 6: Disable reporting battery state when the device is triggered. 1=Disable; <strong>0=Enable</strong>.</li> <li>Bit 7: Reserved.</li> </ul><p>The default value has to be 20. With 20 the contact sensor throws a correct value.</p>
+Enable or disable sending motion OFF report<br /> <h1>Overview</h1><p>Enable sending motion OFF report. 0=Disable; 1=Enable. </p><p>Note: Depends on the Notification Type, see below:</p><p>* Notification type is notification report: Report Notification CC, Type: 0x07, Event: 0xFE.<br />* Notification type is sensor binary report: Sensor Binary Report, Type: 0x0C, Value: 0x00.</p>
         ]]></description>
-        <default>20</default>
+        <default>0</default>
         <options>
-          <option value="20">Setting: 0010100</option>
-          <option value="22">Setting: 00010110</option>
+          <option value="0">Disabled</option>
+          <option value="1">Enabled</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_7_1_00000004" type="integer" groupName="configuration"
+                 min="0" max="1">
+        <label>7: PIR super sensitivity mode</label>
+        <description><![CDATA[
+Enable PIR super sensitivity mode<br /> <h1>Overview</h1><p>Enable PIR super sensitivity mode. 0=Disable; 1=Enable.<br /></p>
+        ]]></description>
+        <default>1</default>
+        <options>
+          <option value="0">Disabled</option>
+          <option value="1">Enabled</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_7_1_00000008" type="integer" groupName="configuration"
+                 min="0" max="1">
+        <label>7: Sending BASIC OFF after door/window is closed</label>
+        <description><![CDATA[
+Enable or disable sending BASIC OFF after door/window is closed<br /> <h1>Overview</h1><p>Disable sending BASIC OFF after door/window is closed. 1=Disable, 0=Enable.<br /></p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Enabled</option>
+          <option value="1">Disabled</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_7_1_00000010" type="integer" groupName="configuration"
+                 min="0" max="1">
+        <label>7: Notification type</label>
+        <description><![CDATA[
+The Notification type<br /> <h1>Overview</h1><p>Notification type. 0=Using Notification Report; 1=Using Sensor Binary Report.<br /></p><p>Sensor Binary Report is recommended.</p>
+        ]]></description>
+        <default>1</default>
+        <options>
+          <option value="0">Using Notification Report</option>
+          <option value="1">Using Sensor Binary Report</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_7_1_00000020" type="integer" groupName="configuration"
+                 min="0" max="1">
+        <label>7: Multi CC in auto report</label>
+        <description><![CDATA[
+Enable or disable Multi CC in auto report<br /> <h1>Overview</h1><p>Disable Multi CC in auto report. 1=Disable; 0=Enable.<br /></p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Enabled</option>
+          <option value="1">Disabled</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_7_1_00000040" type="integer" groupName="configuration"
+                 min="0" max="1">
+        <label>7: Reporting battery state when the device is triggered</label>
+        <description><![CDATA[
+Enable or disable reporting battery state when the device is triggered<br /> <h1>Overview</h1><p>Disable reporting battery state when the device is triggered. 1=Disable; 0=Enable.<br /></p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Enabled</option>
+          <option value="1">Disabled</option>
         </options>
       </parameter>
 

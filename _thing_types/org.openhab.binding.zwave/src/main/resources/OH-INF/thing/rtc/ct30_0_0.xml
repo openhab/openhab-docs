@@ -8,7 +8,7 @@
   <thing-type id="rtc_ct30_00_000" listed="false">
     <label>CT30 Z-Wave Thermostat</label>
     <description><![CDATA[
-Z-Wave Thermostat<br /> <h1>Overview</h1><p>This thermostat was made by Radio Thermostat Company of America or 2Gig.  It can use either WiFi or Z-Wave or both depending on <br />which USNAP modules are installed.</p> <br /> <h2>Inclusion Information</h2><ul><li>Put your primary controller in include mode.</li> <li>Press the MENU button</li> <li>Tap the MATE button under the radio tower icon.  A large "r1" or "r2" wil be displayed indicating which slot the USNAP module is in.</li> <li>Tap the MATE button under the radio tower icon again to include.</li> </ul> <br /> <h2>Exclusion Information</h2><ul><li>Put your primary controller in exclude mode.</li> <li>Press the MENU button</li> <li>Tap the MATE button under the radio tower icon.  A large "r1" or "r2" wil be displayed indicating which slot the USNAP module is in.</li> <li>Tap the MATE button under the radio tower icon again to exclude.</li> </ul>
+Z-Wave Thermostat<br /> <h1>Overview</h1><p>This thermostat was made by Radio Thermostat Company of America or 2Gig.  It can use either WiFi or Z-Wave or both depending on <br />which USNAP modules are installed.</p> <br /> <h2>Inclusion Information</h2><ul><li>Put your primary controller in include mode.</li> <li>Press the MENU button</li> <li>Tap the MATE button under the radio tower icon.  A large "r1" or "r2" wil be displayed indicating which slot the USNAP module is in.</li> <li>Tap the MATE button under the radio tower icon again to include.</li> </ul> <br /> <h2>Exclusion Information</h2><ul><li>Put your primary controller in exclude mode.</li> <li>Press the MENU button</li> <li>Tap the MATE button under the radio tower icon.  A large "r1" or "r2" wil be displayed indicating which slot the USNAP module is in.</li> <li>Tap the MATE button under the radio tower icon again to exclude.</li> </ul> <br /> <h2>Wakeup Information</h2><p><br /></p>
     ]]></description>
     <category>HVAC</category>
 
@@ -68,7 +68,7 @@ Z-Wave Thermostat<br /> <h1>Overview</h1><p>This thermostat was made by Radio Th
       <property name="vendor">Radio Thermostat Company of America (RTC)</property>
       <property name="modelId">CT30</property>
       <property name="manufacturerId">0098</property>
-      <property name="manufacturerRef">0000:0000,0001:001E,0001:00F0,0001:00FF,1E10:0158,1E10:015C,1E12:015C,1E12:015E,3200:015E</property>
+      <property name="manufacturerRef">0000:0000,0001:001E,0001:00F0,0001:00FF,1E10:0158,1E10:015C,1E12:0015,1E12:015C,1E12:0163,1E12:163E,3200:015E</property>
       <property name="dbReference">94</property>
     </properties>
 
