@@ -220,7 +220,7 @@ Open the configuration file and **add** the following lines underneath the proxy
 ##### Add authorization and cookie directives in NGINX Configuration
 
 This is an important new requirment in openHAB 3.0 and later versions.
-This is not required prior to openHAB 3.0. In the `location /` block, you must add the following two directives underneath the `add_header` and `proxy_set_header` items respectively:
+This is not required prior to openHAB 3.0. You must add the following two directives underneath the `add_header` (in the `server` block) and `proxy_set_header` (in the `location /` block) items respectively:
 
 ```nginx
         add_header Set-Cookie X-OPENHAB-AUTH-HEADER=1;
