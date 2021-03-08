@@ -6,12 +6,7 @@ title: Pages - Overview Page
 # Automatically Generated Overview Tabs
 
 MainUI will automatically generate an Overview page (id:overview).
-This page will have four tabs.
-
-- Overview - user defined page.
-- Locations - populated based on the model showing your Items based on their physical location.
-- Equipment - populated based on the model showing your Items based on their Equipment type.
-- Properties - populated based on the model showing your Items based on their semantic Properties tag.
+This Overview page has four tabs: Overview, Locations, Equipment, and Properties.
 
 {::options toc_levels="2..4"/}
 
