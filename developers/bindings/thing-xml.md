@@ -756,7 +756,7 @@ The full Java API for bridge and *Thing* descriptions can be found in the Java p
     <config-description-ref uri="{binding|thing-type|channel-type|any_other}:bindingID:..." />
   </channel-type>
 
-  <channel-group-type id="channelGroupTypeID" advanced="{true|false}">
+  <channel-group-type id="channelGroupTypeID">
     <label>String</label>
     <description>String</description>
     <category>String</category>
@@ -839,7 +839,6 @@ The full Java API for bridge and *Thing* descriptions can be found in the Java p
 | Property                    | Description                                  | |
 |-----------------------------|----------------------------------------------|--------|
 | channel-group-type.id       | An identifier for the channel group type | mandatory |
-| channel-group-type.advanced | The flag indicating if this channel group contains advanced functionalities which should be typically not shown in the basic view of user interfaces | optional, default: false |
 | label                       | A human-readable label for the channel group | mandatory |
 | description                 | A human-readable description for the channel group | optional |
 | category                    | The category for the channel group, e.g. TEMPERATURE | optional |
