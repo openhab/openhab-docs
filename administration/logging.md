@@ -122,8 +122,17 @@ The list can be also filtered with grep. To find out the Z-Wave binding the foll
 ```shell
 openhab> list -s | grep zwave
 253 x Active x  80 x 2.5.5                   x org.openhab.binding.zwave
-
 ```
+
+Here are some popular loggers:
+
+| Logger                                | Logged when …                                                      |
+|---------------------------------------|--------------------------------------------------------------------|
+| `openhab.event.ItemStateChangedEvent` | … an Item is updated with a new value                              |
+| `openhab.event.ItemStateEvent`        | … an Item is updated with the old or a new value                   |
+| `openhab.event.ThingStatusInfoEvent`  | … a Thing updates its status (e.g. ONLINE, OFFLINE)                |
+| `org.openhab.binding.[bindingname]`   | … the binding issued a log message                                 |
+| `org.openhab.core.thing`              | … a Thing changes its lifecycle state (e.g. initializing, dispose) |
 
 The following example sets the logging for the Z-Wave binding to **DEBUG**
 
