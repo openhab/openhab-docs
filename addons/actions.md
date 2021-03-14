@@ -84,6 +84,10 @@ executeCommandLine("path/to/my/script.sh", itemState1, itemState2);
 
 // When you need the output in your further rule processing
 var ScriptResponse = executeCommandLine(Duration.ofSeconds(60), "path/to/my/script.sh", itemState1, itemState2);
+
+// Space separated constants must be given as separate parameters as well
+// e.g. path/to/your/script.sh xyz fred.file
+var ScriptResponse = executeCommandLine(Duration.ofSeconds(60), "path/to/your/script.sh", "xyz", "fred.file");
 ```
 
 ### HTTP Actions
