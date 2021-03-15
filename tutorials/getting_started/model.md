@@ -192,21 +192,21 @@ This is a table describing the Equipment, Point and Property classes needed to e
 
 | Badge        | Type        | Equipment                                                  | Point                              | Property    |
 |--------------|-------------|------------------------------------------------------------|------------------------------------|-------------|
-| Lights       | Status      | *                                                          | Control, Switch                    | Light       |
-| Windows      | Status      | Window                                                     | OpenState                          | *           |
-| Doors        | Status      | Door, FrontDoor, BackDoor, InnerDoor, CellarDoor, SideDoor | OpenState                          | *           |
-| Garage Doors | Status      | GarageDoor                                                 | OpenState                          | *           |
-| Blinds       | Status      | Blinds                                                     | OpenState                          | *           |
-| Presence     | Status      | *                                                          | Status                             | Presence    |
-| Lock         | Status      | Lock                                                       | Status, OpenState, Control, Switch | *           |
-| Climate      | Status      | HVAC                                                       | Status, Control, Switch            | *           |
+| Lights       | Status      | *Any*                                                        | Control, Switch                  | Light       |
+| Windows      | Status      | Window                                                     | OpenState                          | *Any*       |
+| Doors        | Status      | Door, FrontDoor, BackDoor, InnerDoor, CellarDoor, SideDoor | OpenState                          | *Any*       |
+| Garage Doors | Status      | GarageDoor                                                 | OpenState                          | *Any*       |
+| Blinds       | Status      | Blinds                                                     | OpenState                          | *Any*       |
+| Presence     | Status      | *Any*                                                      | Status                             | Presence    |
+| Lock         | Status      | Lock                                                       | Status, OpenState, Control, Switch | *Any*       |
+| Climate      | Status      | HVAC                                                       | Status, Control, Switch            | *Any*       |
 | Screens      | Status      | Screen, Television                                         | Status, Control, Switch            | Power       |
 | Speakers     | Status      | Receiver, Speaker                                          | Status, Control, Switch            | Power       |
 | Projectors   | Status      | Projector                                                  | Status, Control, Switch            | Power       |
-| Alarms       | Status      | *                                                          | Alarm                              | *           |
-| Luminance    | Measurement | *                                                          | Measurement                        | Light       |
-| Temperature  | Measurement | *                                                          | Measurement                        | Temperature |
-| Humidity     | Measurement | *                                                          | Measurement                        | Humidity    |
+| Alarms       | Status      | *Any*                                                      | Alarm                              | *Any*       |
+| Luminance    | Measurement | *Any*                                                      | Measurement                        | Light       |
+| Temperature  | Measurement | *Any*                                                      | Measurement                        | Temperature |
+| Humidity     | Measurement | *Any*                                                      | Measurement                        | Humidity    |
 
 This table is based off the sources:
 
