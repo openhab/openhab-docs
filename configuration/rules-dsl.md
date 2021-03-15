@@ -588,11 +588,15 @@ var DecimalType parsedResult = new DecimalType(Long.parseLong(hex_code, 16))
 // define a QuantityType variable
 var myTemperature = 20|°C
 
-// convert a quantity state into a different unit:
-var fahrenheit = myTemperature.toUnit("°F")
+// get units in text
+var myUnits = myTemperature.getUnit.toString  // gives "°C"
 
-// convert scalar value to DecimalType
+// convert a quantity state into a different unit:
+var fahrenheit = myTemperature.toUnit("°F")   // will contain quantity 68°F
+
+// convert quantity value to DecimalType
 var myDecimal = new DecimalType(fahrenheit.doubleValue) // myDecimal == 68
+var myCentigrade = fahrenheit.toUnit("°C").toBigDecimal  // 20
 
 // access scalar values as int, double, float
 var myInt = fahrenheit.intValue
@@ -601,6 +605,10 @@ var myfloat = fahrenheit.floatValue
 
 // check if a number item state is a QuantityType
 var isQuantity = myItem.state instanceof QuantityType
+
+// comparing Quantities
+// Tempting ... if (fahrenheit > 10) but NO!! that will not work as expected
+if (fahrenheit > 10|°C) { logInfo("test, "It's warm.") }
 ```
 
 Other useful conversions can be found under Dimmer Item.
@@ -608,6 +616,30 @@ Other useful conversions can be found under Dimmer Item.
 One warning comes with DecimalType (also holds true for QuantityType).
 The full explanation is [beyond the scope of this introduction](https://community.openhab.org/t/ambiguous-feature-call-whats-wrong-designer-user-or-bug/9477/4).
 To avoid an error mentioning an "Ambiguous Method Call" always cast the state of a DecimalType to a Number, not DecimalType.
+
+Take care with maths around Quantity Types.  While you can freely mix units in many cases, there are pitfalls.
+
+```java
+// add a QuantityType variable
+var miles = 2|mi
+var metres = 10|m
+var distance = miles + metres // result 2.0062 mi
+// The result uses units of first given quantity
+
+var area = metres * metres // result 100 m²
+// New appropriate units are used for result
+
+var fahr = 68|°F
+var centi = 1|°C
+var sumTemps = fahr + centi // result 101.80 °F
+// Probably not what you expected
+// Temperatures are always absolute, not interval or increment scale.
+// 1°C has been converted to 33.8°F, not to the interval 1.8°F
+
+// There is a mathematical trick for this
+var increment = fahr + centi - 0|°C  // result 69.80 °F
+// "subtracting zero" fixes the offset in the different scales
+```
 
 ##### Player Item
 
