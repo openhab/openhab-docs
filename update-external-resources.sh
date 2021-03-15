@@ -68,7 +68,7 @@ echo_process "Fetching feature.xml file from the snapshot repository..."
 # Getting all possibly relevant xml files
 wget -r -l 2 -npdH -A '*3.0.*.xml' -P "$resourcefolder/jfrog-files" "https://openhab.jfrog.io/openhab/libs-snapshot/org/openhab/distro/openhab-addons/"
 # Copy the latest feature file into the finally used feature.xml
-cp `ls .external-resources/jfrog-files/openhab-addons-3.0.*-*-features.xml | sort | tail -1` .external-resources/jfrog-files/feature.xml
+cp `ls .external-resources/jfrog-files/openhab-addons-3.0.*-features.xml | sort | tail -1` .external-resources/jfrog-files/feature.xml
 
 echo_process "Running Maven.... "
 mvn clean
