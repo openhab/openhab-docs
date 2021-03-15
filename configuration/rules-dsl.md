@@ -618,6 +618,7 @@ The full explanation is [beyond the scope of this introduction](https://communit
 To avoid an error mentioning an "Ambiguous Method Call" always cast the state of a DecimalType to a Number, not DecimalType.
 
 Take care with maths around Quantity Types.  While you can freely mix units in many cases, there are pitfalls.
+
 ```java
 // add a QuantityType variable
 var miles = 2|mi
