@@ -236,6 +236,59 @@ props:
     actionPropsParameterGroup: myaction
 ```
 
+<details class="custom-block details">
+<summary>How the implicit props are named</summary>
+
+The property names will be in the following format: `{groupName}_{actionPropName}`
+
+The list of `actionPropNames` can be found in the Component Reference (they’re always the same), for instance in the [oh-button](./components/oh-button.html#action) reference.
+
+:warning: The `groupName` prefix is the name of the parameter group, but occurrences of the word "action" will be removed from it.
+If you name the parameter group `action` there won't be a prefix anymore so the underscore will be removed too.
+
+Examples: 
+
+| Group Name | Prop Name Examples |
+|------------|--------------------|
+| action     | `action, actionItem, actionCommand, actionCommandAlt` |
+| tapAction  | `tap_action, tap_actionItem, tap_actionCommand, tap_actionCommandAlt` |
+| sceneOne   | `sceneOne_action, sceneOne_actionItem, sceneOne_actionCommand, sceneOne_actionCommandAlt` |
+
+You can dump the `props` objects in JSON to verify the names like in the following example (or just use `=JSON.stringify(props)` wherever you can display text in your widget):
+
+```yaml
+uid: dump_props_as_json
+props:
+  parameterGroups:
+    - name: sceneOne
+      context: action
+      label: Scene One
+    - name: sceneTwo
+      context: action
+      label: Scene Two
+    - name: tapAction
+      context: action
+      label: Tap Action
+    - name: action
+      context: action
+      label: Tap Action
+  parameters:
+    - name: prop1
+      label: Prop 1
+      type: TEXT
+      description: A text prop
+tags: []
+component: f7-row
+config:
+  tag: pre
+slots:
+  default:
+    - component: Label
+      config:
+        text: =JSON.stringify(props, null, 4)
+```
+</details>
+
 :::
 
 ## Variables
@@ -312,6 +365,9 @@ slots:
 ### Applying CSS Properties Directly
 
 Applying CSS properties like `border-color` directly on components is sometimes enough; but contrary to CSS variables like `--f7-button-border-color` which will be inherited to descendants in the tree, either by your own components or by f7 components (or their OH derivatives) that make use of these variables, they will only work on the element where you put the style configuration.
+
+There are hundreds of [CSS properties](https://www.w3schools.com/cssref/) you can use to design your widgets.
+Use the resources at [W3Schools](https://www.w3schools.com/css/default.asp) or the [CSS-Tricks Properties Almanac](https://css-tricks.com/almanac/properties/) to learn more about CSS properties and techniques - these resources will provide code in HTML and classes definitions but you can most of the time adapt them for usage in components' YAML definitions.
 
 There are hundreds of [CSS properties](https://www.w3schools.com/cssref/) you can use to design your widgets. Use the resources at [W3Schools](https://www.w3schools.com/css/default.asp) to learn more about CSS techniques - these examples will provide code in HTML and classes definitions but you can most of the time adapt them for usage in components' YAML definitions.
 
