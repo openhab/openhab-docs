@@ -74,7 +74,7 @@ props:
      context: item
      description: Choose an item for this prop
    - name: prop3
-     type: NUMBER
+     type: INTEGER
      advanced: true
      ...
 tags: ["tag1", "tag2"]
@@ -246,7 +246,7 @@ The list of `actionPropNames` can be found in the Component Reference (they’re
 :warning: The `groupName` prefix is the name of the parameter group, but occurrences of the word "action" will be removed from it.
 If you name the parameter group `action` there won't be a prefix anymore so the underscore will be removed too.
 
-Examples: 
+Examples:
 
 | Group Name | Prop Name Examples |
 |------------|--------------------|
@@ -287,6 +287,7 @@ slots:
       config:
         text: =JSON.stringify(props, null, 4)
 ```
+
 </details>
 
 :::
