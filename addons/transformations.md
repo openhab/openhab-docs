@@ -31,8 +31,8 @@ Transformation files need to be placed in the directory `$OPENHAB_CONF/transform
 
     ```java
     Contact Livingroom_Window        "Window [MAP(window_esp.map):%s]"               {/*Some Binding*/}
-    Number  Kitchen_Temperature_C    "Temperature [JSONPATH($.temperature):%.1f °C]" {/*Some Binding*/}
-    Number  Livingroom_Temperature_F "Temperature [JS(convert-C-to-F.js):%.1f °F]"   {/*Some Binding*/}
+    Number  Kitchen_Temperature_C    "Temperature [JSONPATH($.temperature):%s °C]" {/*Some Binding*/}
+    Number  Livingroom_Temperature_F "Temperature [JS(convert-C-to-F.js):%s °F]"   {/*Some Binding*/}
 
     ```
 
