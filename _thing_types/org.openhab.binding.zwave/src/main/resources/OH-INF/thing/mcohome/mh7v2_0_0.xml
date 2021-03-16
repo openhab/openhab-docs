@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="mcohome_mh7v2_00_000" listed="false">
+    <label>MH7v2 Water / Electrical Heating Thermostat</label>
+    <description><![CDATA[
+Water / Electrical Heating Thermostat<br /> <h1>Overview</h1><p>MCOHome Water / Electrical Heating Thermostat is a Z-Wave Plus enabled device for indoor temperature control. MH7H-WH is mainly applied to control wall mounted boiler, water valve/pump etc., while MH7H-EH is for electrical heating system.</p> <br /> <h2>Inclusion Information</h2><p>In normal working interface, press &amp; hold S4 to enter interface for inclusion or exclusion of Z-Wave network. Before device included into network, “- - -” will display on the screen. Then press S4 once, device will enter learning mode to get a node ID. If inclusion is success, a node ID will display on the screen in a few seconds</p> <br /> <h2>Exclusion Information</h2><p>In normal working interface, press &amp; hold S4 to enter interface for inclusion or exclusion of Z-Wave network.<br /></p> <br /> <h2>Wakeup Information</h2><p><br /></p>
+    ]]></description>
+    <category>HVAC</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="sensor_temperature" typeId="sensor_temperature">
+        <label>Sensor (temperature)</label>
+        <properties>
+          <property name="binding:*:QuantityType">COMMAND_CLASS_SENSOR_MULTILEVEL;type=TEMPERATURE</property>
+        </properties>
+      </channel>
+      <channel id="thermostat_mode" typeId="mcohome_mh7v2_00_000_thermostat_mode">
+        <label>Thermostat mode</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_THERMOSTAT_MODE</property>
+        </properties>
+      </channel>
+      <channel id="thermostat_state" typeId="thermostat_state">
+        <label>Thermostat Operating State</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_THERMOSTAT_OPERATING_STATE</property>
+        </properties>
+      </channel>
+      <channel id="thermostat_setpoint_heating" typeId="thermostat_setpoint">
+        <label>Setpoint (heating)</label>
+        <properties>
+          <property name="binding:*:QuantityType">COMMAND_CLASS_THERMOSTAT_SETPOINT;type=HEATING</property>
+        </properties>
+      </channel>
+      <channel id="thermostat_setpoint_furnace" typeId="thermostat_setpoint">
+        <label>Setpoint (furnace)</label>
+        <properties>
+          <property name="binding:*:QuantityType">COMMAND_CLASS_THERMOSTAT_SETPOINT;type=FURNACE</property>
+        </properties>
+      </channel>
+      <channel id="thermostat_setpoint_moist_air" typeId="thermostat_setpoint">
+        <label>Setpoint (moist air)</label>
+        <properties>
+          <property name="binding:*:QuantityType">COMMAND_CLASS_THERMOSTAT_SETPOINT;type=MOIST_AIR</property>
+        </properties>
+      </channel>
+      <channel id="time_offset" typeId="time_offset">
+        <label>Clock Time Offset</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_TIME_PARAMETERS</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">McoHome Technology Co., Ltd</property>
+      <property name="modelId">MH7v2</property>
+      <property name="manufacturerId">015F</property>
+      <property name="manufacturerRef">0711:5102</property>
+      <property name="dbReference">1369</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_1_1" type="integer" groupName="configuration"
+                 min="0" max="2">
+        <label>1: Temperature Units</label>
+        <description>Upload temperature format automatically</description>
+        <default>2</default>
+      </parameter>
+
+      <parameter name="config_2_1" type="integer" groupName="configuration"
+                 min="0" max="3">
+        <label>2: Temperature and Humidity Upload</label>
+        <description>Temperature and Humidity Upload</description>
+        <default>3</default>
+        <options>
+          <option value="0">Off</option>
+          <option value="1">Difference Value Only</option>
+          <option value="2">Timing Upload Only</option>
+          <option value="3">Difference + timing upload</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_3_2" type="integer" groupName="configuration"
+                 min="3" max="1000">
+        <label>3: Upload Temperature Difference</label>
+        <description><![CDATA[
+Upload Temperature Difference<br /> <h1>Overview</h1><p>Base on 0.1℃unit, </p><p>5 by default, 5*0.1℃=0.5℃,</p>
+        ]]></description>
+        <default>5</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_4_2" type="integer" groupName="configuration"
+                 min="0" max="65535">
+        <label>4: Upload Time Interval</label>
+        <description><![CDATA[
+Upload Time Interval<br /> <h1>Overview</h1><p>Base on 1s unit, </p><p>it suggest to be set above 30s (default is 30 s)</p>
+        ]]></description>
+        <default>30</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_5_1" type="integer" groupName="configuration"
+                 min="2" max="255">
+        <label>5: Upload humidity Difference</label>
+        <description><![CDATA[
+Upload humidity Difference<br /> <h1>Overview</h1><p>When the detection humidity value differ with the last percentage value, uploading activated</p>
+        ]]></description>
+        <default>3</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_255_1_wo" type="integer" groupName="configuration">
+        <label>255: Factory Reset</label>
+        <description><![CDATA[
+Factory Reset<br /> <h1>Overview</h1><p>0x55 Restore the factory setting(write only)</p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association">
+        <label>1: Lifeline</label>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: Basic Set 1</label>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_3" type="text" groupName="association" multiple="true">
+        <label>3: Basic Set 2</label>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+  <channel-type id="mcohome_mh7v2_00_000_thermostat_mode">
+    <item-type>Number</item-type>
+    <label>Thermostat Mode</label>
+    <description>Sets the thermostat mode</description>
+    <category>Temperature</category>
+    <state pattern="%s">
+      <options>
+        <option value="0">Off</option>
+        <option value="1">Heat</option>
+        <option value="11">Economy Heat</option>
+        <option value="13">Away</option>
+      </options>
+    </state>
+  </channel-type>
+
+</thing:thing-descriptions>

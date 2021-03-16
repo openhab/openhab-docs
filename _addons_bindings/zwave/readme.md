@@ -86,9 +86,9 @@ Sets the nightly heal time (in hours).
 
 The inclusion mode setting allows the user to set how the controller will initiate inclusion when discovery is initiated. There are three options available -:
 
-* Low Power Inclusion: In this mode devices must be within 1 meter of the controller to be included.
-* High Power Inclusion: In this mode devices must be able to communicate directly with the controller, so can be 10 to 15 meters from the controller under most conditions.
-* Network Wide Inclusion: In this mode devices can be anywhere in the network. This mode 
+* [`0`] Low Power Inclusion: In this mode devices must be within 1 meter of the controller to be included.
+* [`1`] High Power Inclusion: In this mode devices must be able to communicate directly with the controller, so can be 10 to 15 meters from the controller under most conditions.
+* [`2`] Network Wide Inclusion: In this mode devices can be anywhere in the network. This mode 
 
 
 #### Secure Inclusion Mode [security_inclusionmode]
