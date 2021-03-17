@@ -77,7 +77,7 @@ config:
 Give your new widget a meaningful name and tags.
 Each widget needs to have a unique name and that name is how it will appear in the list when you apply it to an Item.
 
-Now repalce the value of "component" in the custom widget with the "value" from the YAML you generated above.
+Now replace the value of "component" in the custom widget with the "value" from the YAML you generated above.
 Then replace everything under "config" in the custom widget with everything under "config" from the YAML you generated above.
 
 ```yaml
