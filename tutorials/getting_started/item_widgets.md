@@ -6,7 +6,7 @@ title: Pages - Item Widgets
 # Custom Default Item Widgets
 
 Just like the Overview Page and individual cards, the way individual Point Items are presented can be customized as well.
-In general the steps will include navigating to the Item in the Model tree or the Items Settings, clicking on "Add Metadata", and selecting "Default List Widget" to customize how the Item appears in the automatically generated cards on the Overview Page.
+In general the steps will include navigating to the Item in the Model tree or the Items Settings, clicking on "Add Metadata", and selecting "Default List Widget" to customize how the Item apepars in the automatically generated cards on the Overview Page.
 One can also set the "Default Stand Alone Widget" and "Default Cell Widget" to change how an Item appears in other parts of MainUI.
 
 {::options toc_levels="2..4"/}
