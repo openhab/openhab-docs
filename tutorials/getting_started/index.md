@@ -74,17 +74,19 @@ This tutorial presents a series of concepts and steps that build upon one anothe
 
 [Adding Things: Advanced]({{base}}/tutorial/things_advanced.html): Manual creation of Things
 
-[Items and the Semantic Model]({{base}}/tutorial/model.html): Creating Items and putting them into a semantic model
+[Items and the Semantic Model]({{base}}/tutorial/model.html): Creating Items and Putting Them into a Semantic Model
 
-[Persistence]({{base}}/tutorial/persistence.html): Saving and retrieving historic data
+[Persistence]({{base}}/tutorial/persistence.html): Saving and Retrieving Historic Data
+
+[Intro to Pages]({{base}}/tutorial/pages_intro.html): Visualizing and Using the Home Automation
+
+[Overview Page]({{base}}/tutorial/auto_overview.html): Automatically Generated Overview Page
+
+[Item Widget Customization]({{base}}/tutorial/item_widgets.html): Customize How Items Appear in Cards
+
+[Custom Item Widgets]({{base}}/tutorial/custom_widgets.html): Creating your own widgets
 
 <!--
-[Pages: Introduction]({{base}}//tutorial/pages_intro.html): What are Pages?
-
-[Pages: Widgets]({{base}}/tutorial/pages_widgets.html): Introduction to populating Pages
-
-[Pages: Page Types]({{base}}/tutorial/pages_types.html): Layout, Charts, and Tabbed type Pages
-
 [Rules: Simple]({{base}}/tutorial/rules_simple.html): Introduction to rules and a simple example
 
 [Rules: Intermediate]({{base}}/tutorial/rules_intermediate.html): Rules that involve some scripting
