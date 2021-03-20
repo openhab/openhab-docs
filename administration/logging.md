@@ -161,7 +161,7 @@ logDebug("heating", "Bedroom: Temperature: {}, Mode: {}", Bedroom_Temp.state, Be
 The main package of all script/rules based log entries is predefined as `org.openhab.core.model.script`.
 The chosen subpackage is appended to the end of the main package.
 It can be useful for filtering or package-based log level settings.
-For example you can use `log:set info org.openhab.core.model.script` and `log:set info org.openhab.core.model.script.heating` while you work on the heating rules to get debug level output for heating rules and only info level for the rest of your rules files so you don't flood the log with too many entries that are irrelevant at that point in time.
+For example you can use `log:set info org.openhab.core.model.script` and `log:set debug org.openhab.core.model.script.heating` while you work on the heating rules to get debug level output for heating rules and only info level for the rest of your rules files so you don't flood the log with too many entries that are irrelevant at that point in time.
 
 An example output of the last log statement above is:
 
