@@ -82,7 +82,7 @@ These must be inside the XML escape sequence - eg.
   <tr><td>parameter.max</td><td>The maximum value for numeric types, or the maximum length of strings. Note that the value of any options may be outside of this value (optional).</td></tr>
   <tr><td>parameter.step</td><td>The value granularity for a numeric value (optional).</td></tr>
   <tr><td>parameter.pattern</td><td>The regular expression for a text type (optional).</td></tr>
-  <tr><td>parameter.required</td><td>Specifies whether the value is required (optional).</td></tr>
+  <tr><td>parameter.required</td><td>Specifies whether the value is required (optional, default: false).</td></tr>
   <tr><td>parameter.readOnly</td><td>Specifies whether the value is read-only (optional).</td></tr>
   <tr><td>parameter.multiple</td><td>Specifies whether multiple selections of options are allowed (optional).</td></tr>
   <tr><td>parameter.groupName</td><td>Sets a group name for this parameter (optional).</td></tr>
