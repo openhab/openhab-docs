@@ -8,7 +8,7 @@
   <thing-type id="zooz_zen23_04_000" listed="false">
     <label>ZEN23 Toggle Switch v4</label>
     <description><![CDATA[
-Toggle Switch v4<br /> <h1>Overview</h1><p><br /></p><p>FEATURES</p> <ul><li>Manual or remote on/off control from your mobile device or computer (when included to a Z-Wave gateway controller) </li> <li>Z-Wave Plus with improved 500 chip for faster and safer wireless communication</li> <li>Works with LED, CFL, and incandescent bulbs (minimum 15Watts on load required) </li> <li>Based on simple and universal binary switch command class - supported by most Z-Wave controllers </li> <li>May be associated and grouped with other Z-Wave devices for advanced home automation </li> <li>Built-in Z-Wave signal repeater for a stronger and more reliable network </li> </ul> <br /> <h2>Inclusion Information</h2><p><br /></p><ol><li>Bring your Z-Wave gateway hub or controller within direct range of the switch</li> <li>Put your Z-Wave controller in inclusion mode</li> <li>Toggle the switch up quickly 3 times to finalize the inclusion process</li> <li>A new on/off device should appear on your controller's device list</li> </ol> <br /> <h2>Exclusion Information</h2><p><br /></p><ol><li>Bring your Z-Wave gateway hub or controller within direct range of the switch</li> <li>Put your Z-Wave controller in inclusion mode</li> <li>Toggle the switch up quickly 3 times to finalize the inclusion process</li> <li>A new on/off device should appear on your controller's device list</li> </ol> <br /> <h2>Wakeup Information</h2><p><br /></p><p><br /></p>
+Toggle Switch v4<br /> <h1>Overview</h1><p><br /></p><p>FEATURES</p> <ul><li>Manual or remote on/off control from your mobile device or computer (when included to a Z-Wave gateway controller) </li> <li>Z-Wave Plus with improved 500 chip for faster and safer wireless communication</li> <li>Works with LED, CFL, and incandescent bulbs (minimum 15Watts on load required) </li> <li>Based on simple and universal binary switch command class - supported by most Z-Wave controllers </li> <li>May be associated and grouped with other Z-Wave devices for advanced home automation </li> <li>Built-in Z-Wave signal repeater for a stronger and more reliable network </li> </ul> <br /> <h2>Inclusion Information</h2><ol><li>Bring your Z-Wave gateway hub or controller within direct range of the switch</li> <li>Put your Z-Wave controller in inclusion mode</li> <li>Toggle the switch up quickly 3 times to finalize the inclusion process</li> <li>A new on/off device should appear on your controller's device list</li> </ol> <br /> <h2>Exclusion Information</h2><ol><li>Bring your Z-Wave gateway hub or controller within direct range of the switch</li> <li>Put your Z-Wave controller in inclusion mode</li> <li>Toggle the switch up quickly 3 times to finalize the inclusion process</li> <li>A new on/off device should appear on your controller's device list</li> </ol> <br /> <h2>Wakeup Information</h2><p><br /></p><p><br /></p>
     ]]></description>
     <category>WallSwitch</category>
 
@@ -17,7 +17,7 @@ Toggle Switch v4<br /> <h1>Overview</h1><p><br /></p><p>FEATURES</p> <ul><li>Man
       <channel id="switch_binary" typeId="switch_binary">
         <label>Switch</label>
         <properties>
-          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY</property>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY,COMMAND_CLASS_BASIC</property>
         </properties>
       </channel>
       <channel id="scene_number" typeId="scene_number">
