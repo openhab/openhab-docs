@@ -21,7 +21,7 @@ Generally all dependencies should be OSGi-bundles and available on JCenter.
 
 ### External dependency
 
-In most cases they should be referenced in the project POM with scope `provided`:
+In most cases they should be referenced in the project POM with scope `compile`:
 
 ```xml
   <dependencies>
