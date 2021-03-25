@@ -46,7 +46,7 @@ Display an input field in a list
 </PropBlock>
 <PropBlock type="TEXT" name="icon" label="Icon">
   <PropDescription>
-    Use <code>oh:iconName</code> (<a class="external text-color-blue" target="_blank" href="https://www.openhab.org/link/icons">openHAB icon</a>) or <code>f7:iconName</code> (<a class="external text-color-blue" target="_blank" href="https://framework7.io/icons/">Framework7 icon</a>)
+    Use <code>oh:iconName</code> (<a class="external text-color-blue" target="_blank" href="https://www.openhab.org/link/icons">openHAB icon</a>), <code>f7:iconName</code> (<a class="external text-color-blue" target="_blank" href="https://framework7.io/icons/">Framework7 icon</a>) or <code>material:iconName</code> (<a class="external text-color-blue" target="_blank" href="https://jossef.github.io/material-design-icons-iconfont/">Material icon</a>)
   </PropDescription>
 </PropBlock>
 <PropBlock type="TEXT" name="iconColor" label="Icon Color">
@@ -77,7 +77,7 @@ Display an input field in a list
 </PropBlock>
 <PropBlock type="TEXT" name="inputmode" label="Input Mode">
   <PropDescription>
-    Type of data that might be entered: see <a class="external text-color-blue" target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/inputmode">MDN docs</a>
+    Type of data that might be entered (see <a class="external text-color-blue" target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/inputmode">MDN docs</a>)
   </PropDescription>
 </PropBlock>
 <PropBlock type="TEXT" name="placeholder" label="Placeholder">

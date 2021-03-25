@@ -55,7 +55,7 @@ Slider control, allows to pick a number value on a scale
 </PropBlock>
 <PropBlock type="BOOLEAN" name="label" label="Display Label">
   <PropDescription>
-    Display a label above the slider knob
+    Display a label above the slider knob while sliding
   </PropDescription>
 </PropBlock>
 <PropBlock type="BOOLEAN" name="scale" label="Display Scale">

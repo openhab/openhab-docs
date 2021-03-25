@@ -87,7 +87,7 @@ Display a slider in a card to control an item
 </PropBlock>
 <PropBlock type="BOOLEAN" name="label" label="Display Label">
   <PropDescription>
-    Display a label above the slider knob
+    Display a label above the slider knob while sliding
   </PropDescription>
 </PropBlock>
 <PropBlock type="BOOLEAN" name="scale" label="Display Scale">

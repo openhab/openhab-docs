@@ -40,7 +40,7 @@ Displays an input field, used to set a variable
 </PropBlock>
 <PropBlock type="TEXT" name="inputmode" label="Input Mode">
   <PropDescription>
-    Type of data that might be entered: see <a class="external text-color-blue" target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/inputmode">MDN docs</a>
+    Type of data that might be entered (see <a class="external text-color-blue" target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/inputmode">MDN docs</a>)
   </PropDescription>
 </PropBlock>
 <PropBlock type="TEXT" name="placeholder" label="Placeholder">

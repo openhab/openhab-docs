@@ -18,7 +18,7 @@ prev: /docs/ui/components/
 <!-- Note: you can overwrite the definition-provided description and add your own intro/additional sections instead -->
 <!-- DO NOT REMOVE the following comments if you intend to keep the definition-provided description -->
 <!-- GENERATED componentDescription -->
-Display a toggle switch in a card to send ON/OFF commands
+Display a toggle swtich in a card to send ON/OFF commands
 <!-- GENERATED /componentDescription -->
 
 ## Configuration
