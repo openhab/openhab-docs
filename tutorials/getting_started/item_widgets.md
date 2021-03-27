@@ -18,7 +18,7 @@ One can also set the "Default Stand Alone Widget" and "Default Cell Widget" to c
 
 Many portions of a widget can be configured to change dynamically based on the states of Items.
 This can be a powerful way to combine multiple Items into one widget (e.g. an oh-label widget showing the current state of a garage door that sends a command to a Switch Item to trigger the garage door opener when the widget is clicked).
-Common things one might use an expression for are to change an icon or color based on the state of an Item, to hide a widget entirely if an Item isn't in a given state, or to colors of the widget elements.
+Common things one might use an expression for are to change an icon or color based on the state of an Item, to hide a widget entirely if an Item isn't in a given state, or to change the colors of the widget elements.
 For full details on expressions see the [Expressions docs]({{base}}/ui/building-pages.html#dynamically-configuring-components-with-expressions).
 
 Note that when working with Units of Masurement, the state of the Item needs to be parsed into a number for comparisons.
@@ -121,7 +121,7 @@ The above shows the state description for a `Number:Time` Item formatted to show
 
 ## Actions
 
-There will be times when you want an entry in the card to perform some action when clicked on even when it's a read-only sensor value.
+There will be times when you want an entry in the card to perform some action when clicked even when it's a read-only sensor value.
 For example, one might send a command to the garage door opener Item when clicking on the garage door sensor's Item on the card (you can then hide or remove the opener's Item from the model so it doesn't show up at all - a two for one).
 
 By default the action will usually be "Analyze item(s)", which will open up a chart of the historic state of the Items (see previous chapter).
