@@ -17,7 +17,7 @@ The ZME_TIO_3S supports routing. This allows the device to communicate using oth
 
 ## Overview
 
-
+Compact ventilation system, developed by tion.ru
 
 ### Inclusion Information
 

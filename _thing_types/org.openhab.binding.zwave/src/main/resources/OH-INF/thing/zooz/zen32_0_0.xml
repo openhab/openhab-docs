@@ -131,7 +131,7 @@ LED Indicator mode for Button 4<br /> <h1>Overview</h1><p>Choose if you want the
       <parameter name="config_6_1" type="integer" groupName="configuration">
         <label>6: LED Indicator color for relay</label>
         <description><![CDATA[
-LED Indicator color for relay<br /> <h1>Overview</h1><p>Choose the color of the LED indicator for the relay.</p>
+LED Indicator color for relay<br /> <h1>Overview</h1><p>Choose the <b>color </b>of the LED indicator for the relay.</p><p>0 – white (default); 1 – blue; 2 – green; 3 – red</p>
         ]]></description>
         <default>0</default>
         <options>
@@ -146,7 +146,7 @@ LED Indicator color for relay<br /> <h1>Overview</h1><p>Choose the color of the 
       <parameter name="config_7_1" type="integer" groupName="configuration">
         <label>7: LED Indicator color for Button 1</label>
         <description><![CDATA[
-LED Indicator color for Button 1<br /> <h1>Overview</h1><p>Choose the color of the LED indicator for Button 1.</p>
+LED Indicator color for Button 1<br /> <h1>Overview</h1><p>Choose the <b>color </b>of the LED indicator for Button 1.</p><p>0 – white (default); 1 – blue; 2 – green; 3 – red</p>
         ]]></description>
         <default>0</default>
         <options>
@@ -176,7 +176,7 @@ LED Indicator color for Button 2<br /> <h1>Overview</h1><p>Choose the color of t
       <parameter name="config_9_1" type="integer" groupName="configuration">
         <label>9: LED Indicator color for Button 3</label>
         <description><![CDATA[
-LED Indicator color for Button 3<br /> <h1>Overview</h1><p>Choose the color of the LED indicator for Button 3.</p>
+LED Indicator color for Button 3<br /> <h1>Overview</h1><p>Choose the <b>color </b>of the LED indicator for Button 3.</p><p>0 – white (default); 1 – blue; 2 – green; 3 – red</p>
         ]]></description>
         <default>0</default>
         <options>
@@ -191,7 +191,7 @@ LED Indicator color for Button 3<br /> <h1>Overview</h1><p>Choose the color of t
       <parameter name="config_10_1" type="integer" groupName="configuration">
         <label>10: LED Indicator color for Button 4</label>
         <description><![CDATA[
-LED Indicator color for Button 4<br /> <h1>Overview</h1><p>Choose the color of the LED indicator for Button 4.</p>
+LED Indicator color for Button 4<br /> <h1>Overview</h1><p>Choose the <b>color </b>of the LED indicator for Button 4.</p><p>0 – white (default); 1 – blue; 2 – green; 3 – red</p>
         ]]></description>
         <default>0</default>
         <options>
@@ -274,10 +274,10 @@ LED Indicator brightness for Button 4<br /> <h1>Overview</h1><p>Choose the LED i
       </parameter>
 
       <parameter name="config_16_4" type="integer" groupName="configuration"
-                 min="1" max="65535">
+                 min="0" max="65535">
         <label>16: Auto Turn-Off Timer for Relay</label>
         <description><![CDATA[
-Auto Turn-Off Timer for Relay<br /> <h1>Overview</h1><p>Use this parameter to enable or disable the auto turn-off timer function (the time after which you want the switch to automatically turn off once it has been turned on).</p>
+Auto Turn-Off Timer for Relay<br /> <h1>Overview</h1><p>Use this parameter to enable or disable the auto turn-off timer function (the time after which you want the switch to automatically turn off once it has been turned on).</p><p>0 – disabled (default); 1 – 65535 (minutes)</p>
         ]]></description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
@@ -287,7 +287,7 @@ Auto Turn-Off Timer for Relay<br /> <h1>Overview</h1><p>Use this parameter to en
                  min="0" max="65535">
         <label>17: Auto Turn-On Timer for Relay</label>
         <description><![CDATA[
-Auto Turn-On Timer for Relay<br /> <h1>Overview</h1><p>Use this parameter to enable or disable the auto turn-on timer function (the time after which you want the switch to automatically turn on once it has been turned off).</p>
+Auto Turn-On Timer for Relay<br /> <h1>Overview</h1><p>Use this parameter to enable or disable the auto turn-on timer function (the time after which you want the switch to automatically turn on once it has been turned off).</p><p>0 – disabled (default); 1 – 65535 (minutes)</p>
         ]]></description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
@@ -356,17 +356,17 @@ Lifeline<br /> <h1>Overview</h1><p>Main button binary switch (Z-Wave) / basic se
       </parameter>
 
       <parameter name="group_2" type="text" groupName="association" multiple="true">
-        <label>2: Basic Set (main)</label>
+        <label>2: Basic Set (relay)</label>
         <description><![CDATA[
-Basic Set<br /> <h1>Overview</h1><p>Main button basic set (pressed only, doesn’t send anything when switch turned on via hub)</p>
+Basic Set<br /> <h1>Overview</h1><p>Main relay button basic set (pressed only, doesn’t send anything when switch turned on via hub)</p>
         ]]></description>
         <multipleLimit>5</multipleLimit>
       </parameter>
 
       <parameter name="group_3" type="text" groupName="association" multiple="true">
-        <label>3: Multilevel (main)</label>
+        <label>3: Multilevel (relay)</label>
         <description><![CDATA[
-Multilevel<br /> <h1>Overview</h1><p>Main button multilevel (held)</p>
+Multilevel<br /> <h1>Overview</h1><p>Main relay button multilevel (held)</p>
         ]]></description>
         <multipleLimit>5</multipleLimit>
       </parameter>

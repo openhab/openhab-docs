@@ -58,7 +58,7 @@ Popp Mold detector<br /> <h1>Overview</h1><p>Product Description<br /><br />This
       <property name="manufacturerId">0154</property>
       <property name="manufacturerRef">0004:0014</property>
       <property name="dbReference">990</property>
-      <property name="defaultAssociations">1,2,3,4,5</property>
+      <property name="defaultAssociations">1</property>
     </properties>
 
     <!-- CONFIGURATION DESCRIPTIONS -->
@@ -76,8 +76,7 @@ Popp Mold detector<br /> <h1>Overview</h1><p>Product Description<br /><br />This
       </parameter-group>
 
       <!-- PARAMETER DEFINITIONS -->
-      <parameter name="config_1_1" type="integer" groupName="configuration"
-                 min="0" max="100">
+      <parameter name="config_1_1" type="integer" groupName="configuration">
         <label>1: Min. Temp. change</label>
         <description><![CDATA[
 Minimum Temperature change to report<br /> <h1>Overview</h1><p><br />This value defines the minimum change of temperature to cause an unsolicited report of humidity to the central controller using Lifeline.<br />If the value is set to 0, there will be no reports sent to the controller, when the temperature changes. However, periodic reports, managed by configuration parameter 4, may still be active. <br />Size: 1 Byte, Default Value: 20<br /><br />1-100: 1/10 degree<br />0: disabled</p>
@@ -86,10 +85,10 @@ Minimum Temperature change to report<br /> <h1>Overview</h1><p><br />This value 
         <options>
           <option value="0">Disabled</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_2_1" type="integer" groupName="configuration"
-                 min="0" max="20">
+      <parameter name="config_2_1" type="integer" groupName="configuration">
         <label>2: Min humidity change.</label>
         <description><![CDATA[
 Minimum humidity change to report<br /> <h1>Overview</h1><p>Parameter 2: Minimum humidity change to report<br /><br />This value defines the minimum change of humidity to cause an unsolicited report of humidity to the central controller using Lifeline.<br />If the value is set to 0, there will be no reports sent to the controller, when the humidity changes. However, periodic reports, managed by configuration parameter 4, may still be active. <br />Size: 1 Byte, Default Value: 7</p>
@@ -98,10 +97,10 @@ Minimum humidity change to report<br /> <h1>Overview</h1><p>Parameter 2: Minimum
         <options>
           <option value="0">Disabled</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_4_2" type="integer" groupName="configuration"
-                 min="0" max="65535">
+      <parameter name="config_4_2" type="integer" groupName="configuration">
         <label>4: Periodic Reports</label>
         <description><![CDATA[
 Periodic Reports<br /> <h1>Overview</h1><p>Parameter 4: Periodic Reports<br /><br />This parameter defines the time interval to send an unsolicited report.<br />If the value is set to 0, there will be no periodic reports sent to the controller. However, reports on temperature/humidity changes, managed by configuration parameters 1 and 2, may still be active. <br />Size: 2 Byte, Default Value: 43200</p>
@@ -110,10 +109,10 @@ Periodic Reports<br /> <h1>Overview</h1><p>Parameter 4: Periodic Reports<br /><b
         <options>
           <option value="0">Disabled</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_5_2" type="integer" groupName="configuration"
-                 min="0" max="1000">
+      <parameter name="config_5_2" type="integer" groupName="configuration">
         <label>5: Temperature Upper Watermark</label>
         <description><![CDATA[
 Temperature Upper Watermark value<br /> <h1>Overview</h1><p>Parameter 5: Temperature Upper Watermark value<br /><br />This parameter defines a temperature. If the measured temperature surpasses this watermark a BASIC command is sent into Association Group 2 <br />Size: 2 Byte, Default Value: 0<br /><br />1-1000; 1/10 degree<br />0: disabled</p>
@@ -122,6 +121,7 @@ Temperature Upper Watermark value<br /> <h1>Overview</h1><p>Parameter 5: Tempera
         <options>
           <option value="0">Disabled</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_6_2" type="integer" groupName="configuration"
@@ -131,10 +131,10 @@ Temperature Upper Watermark value<br /> <h1>Overview</h1><p>Parameter 5: Tempera
 Temperature Lower Watermark value<br /> <h1>Overview</h1><p>Parameter 6: Temperature Lower Watermark value<br /><br />This parameter defines a temperature. If the measured temperature dropps below this watermark a BASIC command is sent into Association Group 3 <br />Size: 2 Byte, Default Value:0<br /><br />-200-1000: 1/10 degree<br />0: disabled</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_7_1" type="integer" groupName="configuration"
-                 min="10" max="100">
+      <parameter name="config_7_1" type="integer" groupName="configuration">
         <label>7: Humidity Upper Watermark</label>
         <description><![CDATA[
 Humidity Upper Watermark value<br /> <h1>Overview</h1><p>Parameter 7: Humidity Upper Watermark value<br /><br />This parameter defines a relative humidity. If the measured relative humidity surpasses this watermark a BASIC command is sent into Association Group 4 <br />Size: 1 Byte, Default Value: 0<br /><br />10-100: %<br />0: disabled</p>
@@ -143,10 +143,10 @@ Humidity Upper Watermark value<br /> <h1>Overview</h1><p>Parameter 7: Humidity U
         <options>
           <option value="0">Disabled</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_8_1" type="integer" groupName="configuration"
-                 min="0" max="90">
+      <parameter name="config_8_1" type="integer" groupName="configuration">
         <label>8: Humidity Lower Watermark</label>
         <description><![CDATA[
 Humidity Lower Watermark value<br /> <h1>Overview</h1><p>Parameter 8: Humidity Lower Watermark value<br /><br />This parameter defines a relative humidity. If the measured temperature dropps below this relative humidity a BASIC command is sent into Association Group 5 <br />Size: 1 Byte<br /><br />1-90: %<br />0: disabled</p>
@@ -155,6 +155,7 @@ Humidity Lower Watermark value<br /> <h1>Overview</h1><p>Parameter 8: Humidity L
         <options>
           <option value="0">Disabled</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_9_1" type="integer" groupName="configuration"
@@ -164,6 +165,7 @@ Humidity Lower Watermark value<br /> <h1>Overview</h1><p>Parameter 8: Humidity L
 Low Temperature Trigger BASIC Set Command Value<br /> <h1>Overview</h1><p>Parameter 9: Low Temperature Trigger BASIC Set Command Value<br /><br />This defines what BASIC command shall be sent out into association group 3 <br />Size: 1 Byte, Default Value: 255</p>
         ]]></description>
         <default>255</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_10_1" type="integer" groupName="configuration"
@@ -173,6 +175,7 @@ Low Temperature Trigger BASIC Set Command Value<br /> <h1>Overview</h1><p>Parame
 High Temperature Trigger BASIC Set Command Value<br /> <h1>Overview</h1><p>Parameter 10: High Temperature Trigger BASIC Set Command Value<br /><br />This defines what BASIC command shall be sent out into association group 2 <br />Size: 1 Byte, Default Value: 0</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_11_1" type="integer" groupName="configuration"
@@ -192,6 +195,7 @@ Low Humidity Trigger BASIC Set Command Value<br /> <h1>Overview</h1><p>Parameter
 High Humidity Trigger BASIC Set Command Value<br /> <h1>Overview</h1><p>Parameter 12: High Humidity Trigger BASIC Set Command Value<br /><br />This defines what BASIC command shall be sent out into association group 4 <br />Size: 1 Byte, Default Value: 0</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->
@@ -203,25 +207,33 @@ High Humidity Trigger BASIC Set Command Value<br /> <h1>Overview</h1><p>Paramete
 
       <parameter name="group_2" type="text" groupName="association" multiple="true">
         <label>2: Temperature High Trigger</label>
-        <description>Temperature High Trigger</description>
+        <description><![CDATA[
+Temperature High Trigger<br /> <h1>Overview</h1><p><br /></p>
+        ]]></description>
         <multipleLimit>5</multipleLimit>
       </parameter>
 
       <parameter name="group_3" type="text" groupName="association" multiple="true">
         <label>3: Temperature Low Trigger</label>
-        <description>Temperature Low Trigger</description>
+        <description><![CDATA[
+Temperature Low Trigger<br /> <h1>Overview</h1><p><br /></p>
+        ]]></description>
         <multipleLimit>5</multipleLimit>
       </parameter>
 
       <parameter name="group_4" type="text" groupName="association" multiple="true">
         <label>4: Humidity High Trigger</label>
-        <description>Humidity High Trigger</description>
+        <description><![CDATA[
+Humidity High Trigger<br /> <h1>Overview</h1><p><br /></p>
+        ]]></description>
         <multipleLimit>5</multipleLimit>
       </parameter>
 
       <parameter name="group_5" type="text" groupName="association" multiple="true">
         <label>5: Humidity Low Trigger</label>
-        <description>Humidity Low Trigger</description>
+        <description><![CDATA[
+Humidity Low Trigger<br /> <h1>Overview</h1><p><br /></p>
+        ]]></description>
         <multipleLimit>5</multipleLimit>
       </parameter>
 
