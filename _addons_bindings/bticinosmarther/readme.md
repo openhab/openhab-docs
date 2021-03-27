@@ -5,6 +5,7 @@ title: BTicinoSmarther - Bindings
 type: binding
 description: "The BTicino Smarther binding implements a bridge to the Legrand/BTicino Smarther v2.0 API and allows you to control your BTicino Smarther chronothermostat units with openHAB, making it possible to discover Smarther units connected to your Legrand/BTicino Smarther account."
 since: 3x
+logo: images/addons/bticinosmarther.png
 install: auto
 ---
 
