@@ -6,9 +6,9 @@ title:  Pages - Custom Widgets
 # Custom Default Item Widgets
 
 As mentioned on the previous page, MainUI allows for the creation of custom widgets.
-These custom widgets can be reused for multiple Items in a given openHAB setup or they can be shared with the community.
-A growing number of very impressive custom widgets have been posted to the [Add-ons -> UI on the forum](https://community.openhab.org/c/add-ons/uis/30).
-This page is going to provide only a couple of examples of custom widgets with an emphasis on the over all approach to developing your own.
+These custom widgets can be reused for multiple Items in a given openHAB setup, and better still they can be shared with the community.
+A growing number of very impressive custom widgets have been posted to [Add-ons -> UI on the forum](https://community.openhab.org/c/add-ons/uis/30).
+This page provides just a few examples of custom widgets with an emphasis on the overall approach to developing your own.
 For a comprehensive reference on creating widgets, please see the [Building Pages]({{base}}/ui/building-pages.html) guide in the docs.
 
 {::options toc_levels="2..4"/}
@@ -19,21 +19,21 @@ For a comprehensive reference on creating widgets, please see the [Building Page
 ## Where to Create Custom Widgets
 
 In MainUI under Developer Tools there is a "Widgets" option.
-Opening this will present a page with a list of all the custom widgets.
-Clicking the + icon will open the editor which is a window split in half with a text entry area on the left and a preview on the right.
+Opening this will present a page with a list of all your custom widgets.
+Clicking the + icon will open the editor, which is a window split in half with a text entry area on the left and a preview on the right.
 
 ![custom widget editor](images/custom_widget_editor.png)
 
 Note that when creating a custom list widget, the preview page will not render the widget in progress.
-One will have to apply the widget to an Item and refresh a page after saving the changes for that type of Item.
+You will have to apply the widget to an Item and refresh a page after saving the changes for that type of Item.
 
 ## Building Custom Widgets
 
-As you are learning how widgets work and all the options available, it might be easier to create the widget using the form presented when adding the Item metadata and then copying the YAML from the code tab to the Custom Widget editor.
-When doing this, make sure to fill out *all* the fields because when using the defaults, no value is added to the YAML in the code tab.
+As you are learning how widgets work and all of the available options, it might be easier to create the widget using the form presented when adding the Item metadata and then copying the YAML from the code tab to the Custom Widget editor.
+When doing this make sure to fill out *all* the fields, because when using the defaults no value is added to the YAML in the code tab.
 So, for example, be sure to enter in the Item field.
 
-Here is a filled out form customizing a list Item widget for a light.
+Here is a filled-out form customizing a list Item widget for a light.
 
 ![light list item widget form](images/light_list_widget_form.png)
 
@@ -75,7 +75,7 @@ config:
 ```
 
 Give your new widget a meaningful name and tags.
-Each widget needs to have a unique name and that name is how it will appear in the list when you apply it to an Item.
+Each widget needs to have a unique name, and that name is what will appear in the list when you apply it to an Item.
 
 Now replace the value of "component" in the custom widget with the "value" from the YAML you generated above.
 Then replace everything under "config" in the custom widget with everything under "config" from the YAML you generated above.
@@ -141,7 +141,7 @@ Select "test_light_list" as the widget type and you will be presented with a for
 
 ![applying custom list widget](images/applying_custom_list_widget.png)
 
-When ever the custom widget is changed, every Item that uses the custom widget will be updated with the change.
+Whenever a custom widget is changed, every Item that uses that custom widget will be updated with the change.
 This is a powerful tool to create and maintain the look and feel of your UIs.
 
 ## A More Complex List Item Widget
@@ -194,15 +194,15 @@ Notice how the sensor_item prop is used to control the icon, badge and color and
 
 ## Custom Stand Alone Widgets
 
-Up to this point the tutorial has focused on list item widgets because as someone who is just getting started, making minor tweaks to what is automatically generated will likely be the primary focus.
+Up to this point the tutorial has focused on list item widgets because as someone who is just getting started, making minor tweaks to what is automatically generated will likely be your primary focus.
 However, there is that Overview tab that needs to be manually populated too.
-This page will be populated with stand alone widgets, or card widgets.
+This page will be populated with stand-alone widgets or card widgets.
 
-Often, one will want to have one single stand alone widget to represent a single Equipment, for example a thermostat or a Chomecast.
+Often, one will want to have one single stand-alone widget to represent a single Equipment, for example a thermostat or a Chomecast.
 These will be a single card that provides the display and interaction with many Items.
 If one has more than one Equipment that will use the same widget, or the widget is complex, create a custom widget for these.
 Once created, apply the custom widget to the Equipment Group Item in the model.
-Then on your Overview tab, or any other page, you can select "Add from Model", select the Equipment and it will drop the unified widget onto the page.
+Then on your Overview tab or any other page, you can select "Add from Model", select the Equipment, and it will drop the unified widget onto the page.
 
 ## Example Stand Alone Widget
 
@@ -310,15 +310,17 @@ slots:
               text: =items[props.prefix+"_App"].state
 ```
 
-A full explanation of the widget is outside the scope of this tutorial but there are a few take aways.
+A full explanation of the widget is outside the scope of this tutorial, but there are a few key take-aways.
 As with the list widget, it might be easier to create the widget on the Page editor first and then copy that to the custom widget as described above.
 First notice that not all the components used start with "oh".
 When building a complicated custom widget, one has more flexibility when using the base "f7" widgets instead.
 
-Notice how the only property related to Items is a prefix. If one is consistent in their Item naming, one can define a prefix and the widget can build the Item names for each relevant Item using the prefix.
-This can greatly simplify the configuration of a widget. In this case the widget uses seven different Items that can all be obtained from that one property.
+Notice how the only property related to Items is a prefix.
+If one is consistent in their Item naming, one can define a prefix and the widget can build the Item names for each relevant Item using the prefix.
+This can greatly simplify the configuration of a widget.
+In this case the widget uses seven different Items that can all be obtained from that one property.
 
-As you create a widget that uses properties you will notice that the preview does not get rendered correctly.
+As you create a widget that uses properties, you will notice that the preview does not get rendered correctly.
 
 ![Chromecast widget no props](images/chromecast_widget_noprops.png)
 
@@ -327,14 +329,14 @@ This will bring up a form where the props can be set for the preview.
 
 ![Chromecast widget props set](images/chromecast_props_set.png)
 
-Once created, apply the custom widget to the Equipment Group Item in the model by selecting it as the default stand alone widget.
+Once created, apply the custom widget to the Equipment Group Item in the model by selecting it as the default stand-alone widget.
 
 ## Dynamic Widgets
 
 It is also possible to create widgets that are dynamically populated from the model.
-This is particularly useful to present a functional widget such as one widget to control all the lights in the house.
-For this the [oh-repeater]({{base}}/ui/components/oh-repeater.html) component will be very useful.
-This component allows one to set up a loop to iterate over a bunch of things such as all the Items with a given semantic properties tag and create a widget element for each one.
+This is particularly useful to present a functional widget, such as one widget to control all the lights in the house.
+For this, the [oh-repeater]({{base}}/ui/components/oh-repeater.html) component is very useful.
+This component allows one to set up a loop to iterate over a bunch of things, such as all the Items with a given semantic properties tag, and create a widget element for each one.
 
 For example, here is a widget that shows all the Items with a Switch and Light tag, filtering out those that have "Christmas" in the name unless the TisTheSeason Switch is ON.
 
@@ -391,13 +393,13 @@ Please see the docs for more details.
 
 ## Adding Widgets to Pages
 
-Now that the widgets are created it's time to put them on a Page.
+Now that the widgets are created, it's time to put them on a Page.
 We will focus on the Overview tab of the Overview page.
 
-To edit any Page go to Settings -> Pages in MainUI. There will be a grayed out entry which represents the customized Locations, Equipment, and Properties tabs and there will be an Overview entry.
-That represents the Overview tab.
-Clicking on that will brgin up a configuration page that allows one to configure the Overview tab with your custom widgets.
-You can build the widgets here but it's more flexible to create custom widgets and add them to this page.
+To edit any Page go to Settings -> Pages in MainUI. There will be a grayed-out entry which represents the customized Locations, Equipment, and Properties tabs, and there will be an Overview entry.
+That entry represents the Overview tab.
+Clicking on it will bring up a configuration page that allows you to configure the Overview tab with your custom widgets.
+You can build the widgets here, but it's more flexible to create custom widgets and add them to this page.
 
 A full description on how to build the page is beyond the scope of this tutorial.
 See the [Layout Pages docs]({{base}}/ui/layout-pages.html) for details.
@@ -408,20 +410,20 @@ You will be presented with a page similar to the following.
 
 Because this is the first thing your users will see when accessing openHAB, the most commonly use actuators and widgets should be on this page.
 
-To get started, click "Add Block", then "Add Row" and finally add how ever many columns you want.
+To get started, click "Add Block", then "Add Row" and finally add however many columns you want.
 Repeat for additional rows.
 For this tutorial we will have two rows and three columns.
 
 ![Overview row and columns](images/overview_row_and_columns.png)
 
 Now we will add a custom widget to that first columnn.
-In this case we will add a garage door widget that includes a camera feed and shows the status and allows triggering two garage doors.
+In this case we will add a garage door widget that includes a camera feed, shows the door status, and allows triggering two garage doors.
 Click on the + in that first cell and select the desired widget from the list.
-This is a simple widget that doesn't use any properties so we are done.
+This is a simple widget that doesn't use any properties, so we are done.
 
 Next we'll add the all lights widget from above.
 Click on the second cell and select the desired widget from the list.
-This is a dynamic widget but also doesn't have any properties so we are done with it.
+This is a dynamic widget, but also doesn't have any properties, so we are done with it.
 
 Finally we will add a services status widget which shows any home automation related devices or services that are offline.
 This one is also a dynamic widget without properties.
@@ -430,18 +432,18 @@ The Page currently looks as follows.
 ![Overview row one populates](images/overview_row1_config.png)
 
 Now we will fill out the bottom row with some widgets from the model.
-The Chromecast widget was applied to all the Chromecast Equipment Group Items as the default stand along widget.
+The Chromecast widget was applied to all the Chromecast Equipment Group Items as the default stand-along widget.
 Click on the first cell in the second row and this time select "Add from Model".
 Navigate to the Equipment Item desired and "Pick" it.
 
-Alternativly you can select the custom widget from the list and set the properties instead of adding from the model.
+Alternativly, you can select the custom widget from the list and set the properties instead of adding from the model.
 When you add the widget this way, the widget will look just like it does in the preview when the properties are not yet set.
-To set the properties here click on the edit icon and select "Configure Widget".
+To set the properties here, click on the edit icon and select "Configure Widget".
 You will be presented with a form to enter the values for the properties, in this case the Item prefix and title.
 
 ![Kitchen Chromecast Widget Props](images/kitchen_widget_props.png)
 
-To preview the configuration in progress there is a toggle at the bottom of the page for "Run mode" or you can press CTRL-R.
+To preview the configuration in progress there is a toggle at the bottom of the page for "Run mode", or you can press CTRL-R.
 
 ![Overview preview](images/overview_preview.png)
 
@@ -449,13 +451,13 @@ Once you are happy, save the page and that will become your Overview page.
 
 ## Responsive Pages
 
-The Page will be viewed on a variety of screen sizes from computers to tablets to phones.
+The Page will be viewed on a variety of screen sizes, from computers to tablets to phones.
 To make the page adapt to the different screen widths there is a "Column Settings" option in a given column's setting icon.
 
 ![Column Settings](images/column_options.png)
 
-This lets you define what percentage of a row a given column takes up based on the size of the screen the Page is being displayed upon.
-The above configuration is set for all the columns and consequently each coard will take up the full width of the screen unless it is a very wide screen (e.g. computer screen).
+This lets you define what percentage of a row a given column takes up based on the size of the screen the Page is being displayed on.
+The above configuration is set for all the columns, and consequently each card will take up the full width of the screen unless it is a very wide screen (e.g. a computer screen).
 
 ## Additional Pages
 
