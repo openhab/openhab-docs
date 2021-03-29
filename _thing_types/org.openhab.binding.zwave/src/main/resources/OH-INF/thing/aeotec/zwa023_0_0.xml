@@ -1,0 +1,348 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="aeotec_zwa023_00_000" listed="false">
+    <label>ZWA023 Aeotec Smart Switch 7 (type B)</label>
+    <description><![CDATA[
+Aeotec Smart Switch 7 (type B)<br /> <h1>Overview</h1><p>Switched power outlet with energy metering.<br /></p><p><br /></p> <br /> <h2>Inclusion Information</h2><p>Using your existing Z-Wave Controller supports Smart Start:</p><ol><li>Scan the QR code on Smart Switch using your Z-Wave gateway/controllers app.</li><li>Plugin your Smart Switch to any outlet that you wish to install it on.</li><li>Your Smart Switch will automatically pair to your Z-Wave network.</li></ol><p>Using your existing Z-Wave Controller without Smart Start:</p><ol><li>Set your Z-Wave Controller into its 'Add Device' mode. Refer to the Controller's manual if you are unsure of how to perform this step.</li><li>Power your Smart Switch to any outlet; its LED will slowly fade in and out slowly with a blue color to indicate it is ready to pair.</li><li>Tap the action button once. The LED will rapidly flash when it enters pair mode.</li><li>If your Z-Wave Controller supports S2 encryption, enter the first 5 digits of DSK into your Controller's interface if it is requested. The DSK is printed on Smart Switch.<ol><li>If pairing succeeds, it will become a bright blue light for 2 seconds.</li><li>If pairing fails, it will light a solid bright red light for 2 seconds and then return to a breathing blue light; repeat steps 1 to 4 if this happens.</li></ol></li></ol> <br /> <h2>Exclusion Information</h2><ol><li>Set your Z-Wave Controller into 'Remove Device' / 'Unpair Device' mode. Refer to the Controller's manual if you are unsure of how to perform this step.</li><li>Make sure the product is powered. If not, plug it into a wall socket and power it on.</li><li>Click Action Button 2 times quickly; it will bright violet light up to 2s.<ol><li>If Removing fails, it will light a bright red color for 2 seconds and then turn back to Load Indicator Mode; repeat steps 1 to 3. Contact us for further support if needed.</li><li>If Removing succeeds, it will become breathing blue light. Smart Switch is removed from the Z-Wave network successfully and is ready to be paired again.</li></ol></li></ol> <br /> <h2>Wakeup Information</h2><p><br /></p>
+    ]]></description>
+    <category>PowerOutlet</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_binary" typeId="switch_binary">
+        <label>Switch</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY</property>
+        </properties>
+      </channel>
+      <channel id="switch_dimmer" typeId="switch_dimmer">
+        <label>Dimmer</label>
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+          <property name="binding:Command:OnOffType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+        </properties>
+      </channel>
+      <channel id="scene_number" typeId="scene_number">
+        <label>Scene Number</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_SCENE_ACTIVATION</property>
+        </properties>
+      </channel>
+      <channel id="meter_current" typeId="meter_current">
+        <label>Electric meter (amps)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_A</property>
+        </properties>
+      </channel>
+      <channel id="meter_watts" typeId="meter_watts">
+        <label>Electric meter (watts)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_W</property>
+        </properties>
+      </channel>
+      <channel id="meter_kwh" typeId="meter_kwh">
+        <label>Electric meter (kWh)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_KWh</property>
+        </properties>
+      </channel>
+      <channel id="meter_voltage" typeId="meter_voltage">
+        <label>Electric meter (volts)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_V</property>
+        </properties>
+      </channel>
+      <channel id="color_color" typeId="color_color">
+        <label>Color Control</label>
+        <properties>
+          <property name="binding:*:HSBType">COMMAND_CLASS_SWITCH_COLOR</property>
+          <property name="binding:*:PercentType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+          <property name="binding:Command:OnOffType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+        </properties>
+      </channel>
+      <channel id="color_temperature" typeId="color_temperature">
+        <label>Color Temperature</label>
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_SWITCH_COLOR;colorMode=DIFF_WHITE</property>
+          <property name="binding:Command:OnOffType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+        </properties>
+      </channel>
+      <channel id="alarm_power" typeId="alarm_power">
+        <label>Alarm (power)</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=POWER_MANAGEMENT</property>
+        </properties>
+      </channel>
+      <channel id="time_offset" typeId="time_offset">
+        <label>Clock Time Offset</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_CLOCK</property>
+        </properties>
+      </channel>
+      <channel id="switch_binary1" typeId="switch_binary">
+        <label>Switch 1</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY:1</property>
+        </properties>
+      </channel>
+      <channel id="scene_number1" typeId="scene_number">
+        <label>Scene Number 1</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_SCENE_ACTIVATION:1</property>
+        </properties>
+      </channel>
+      <channel id="meter_current1" typeId="meter_current">
+        <label>Electric meter (amps) 1</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER:1;type=E_A</property>
+        </properties>
+      </channel>
+      <channel id="meter_watts1" typeId="meter_watts">
+        <label>Electric meter (watts) 1</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER:1;type=E_W</property>
+        </properties>
+      </channel>
+      <channel id="meter_kwh1" typeId="meter_kwh">
+        <label>Electric meter (kWh) 1</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER:1;type=E_KWh</property>
+        </properties>
+      </channel>
+      <channel id="meter_voltage1" typeId="meter_voltage">
+        <label>Electric meter (volts) 1</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER:1;type=E_V</property>
+        </properties>
+      </channel>
+      <channel id="alarm_power1" typeId="alarm_power">
+        <label>Alarm (power) 1</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM:1;type=POWER_MANAGEMENT</property>
+        </properties>
+      </channel>
+      <channel id="time_offset1" typeId="time_offset">
+        <label>Clock Time Offset 1</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_CLOCK:1</property>
+        </properties>
+      </channel>
+      <channel id="switch_dimmer2" typeId="switch_dimmer">
+        <label>Dimmer 2</label>
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_SWITCH_MULTILEVEL:2</property>
+          <property name="binding:Command:OnOffType">COMMAND_CLASS_SWITCH_MULTILEVEL:2</property>
+        </properties>
+      </channel>
+      <channel id="color_color2" typeId="color_color">
+        <label>Color Control 2</label>
+        <properties>
+          <property name="binding:*:HSBType">COMMAND_CLASS_SWITCH_COLOR:2</property>
+          <property name="binding:*:PercentType">COMMAND_CLASS_SWITCH_MULTILEVEL:2</property>
+          <property name="binding:Command:OnOffType">COMMAND_CLASS_SWITCH_MULTILEVEL:2</property>
+        </properties>
+      </channel>
+      <channel id="color_temperature2" typeId="color_temperature">
+        <label>Color Temperature 2</label>
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_SWITCH_COLOR:2;colorMode=DIFF_WHITE</property>
+          <property name="binding:Command:OnOffType">COMMAND_CLASS_SWITCH_MULTILEVEL:2</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Aeotec Limited</property>
+      <property name="modelId">ZWA023</property>
+      <property name="manufacturerId">0371</property>
+      <property name="manufacturerRef">0103:0017</property>
+      <property name="dbReference">1370</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_1_1" type="integer" groupName="configuration"
+                 min="0" max="2">
+        <label>1: LED Setting</label>
+        <description><![CDATA[
+This parameter is used to change the reaction of LED setting.<br /> <h1>Overview</h1><p><br /></p>
+        ]]></description>
+        <default>2</default>
+        <options>
+          <option value="0">Disable LED completely</option>
+          <option value="1">Night light</option>
+          <option value="2">Display ON/OFF status</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_2_4" type="integer" groupName="configuration"
+                 min="0" max="4294967295">
+        <label>2: Night Light On Time</label>
+        <description><![CDATA[
+Used to configure the Night Light on time.<br /> <h1>Overview</h1><p>Time is specified in format of 0xRRHHMMSS, where:<br />RR = Reserved</p><p>HH = Hours</p><p>MM = Minutes</p><p>SS = Seconds<br /></p>
+        ]]></description>
+        <default>0</default>
+        <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_3_4" type="integer" groupName="configuration"
+                 min="0" max="4294967295">
+        <label>3: Night Light Off Time</label>
+        <description><![CDATA[
+Used to configure the Night Light off time<br /> <h1>Overview</h1><p>0xRRHHMMSS, where:<br /></p><p>RR = Reserved</p><p>HH = Hours</p><p>MM = Minutes</p><p>SS = Seconds</p>
+        ]]></description>
+        <default>0</default>
+        <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_4_1" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>4: LED Blink Duration</label>
+        <description><![CDATA[
+Set the duration of blink<br /> <h1>Overview</h1><p>Set duration of LED blinks<br /></p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_5_1" type="integer" groupName="configuration"
+                 min="1" max="24">
+        <label>5: LED Blink Speed</label>
+        <description><![CDATA[
+Amount of blinks per second while blinking<br /> <h1>Overview</h1><p>Sets the blink rate when blinking<br /></p>
+        ]]></description>
+        <default>5</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_6_2" type="integer" groupName="configuration"
+                 min="0" max="3000">
+        <label>6: Send Alert When In Use</label>
+        <description><![CDATA[
+Send alert when in use.<br /> <h1>Overview</h1><p>A Scene Activation Set command will be sent when energy draw is above this setting value.</p>
+        ]]></description>
+        <default>100</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_7_1" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>7: Plug Always On</label>
+        <description><![CDATA[
+Prevents the plugin from being turned off<br /> <h1>Overview</h1><p><br /></p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Normal operation</option>
+          <option value="1">Button will not control ON/OFF</option>
+          <option value="2">Button disabled, except for include/exclude</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_8_1" type="integer" groupName="configuration"
+                 min="0" max="2">
+        <label>8: Power Out Action</label>
+        <description><![CDATA[
+Sets the plug's action in case of power loss<br /> <h1>Overview</h1><p><br /></p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Last Status</option>
+          <option value="1">Power On</option>
+          <option value="2">Power Off</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_21_2" type="integer" groupName="configuration"
+                 min="0" max="2500">
+        <label>21: Watt Report Threshold</label>
+        <description>Threshold for automatic report of Watts</description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_23_2" type="integer" groupName="configuration"
+                 min="0" max="65535">
+        <label>23: Watt Automatic Report Time</label>
+        <description><![CDATA[
+Automatic report time for Watts<br /> <h1>Overview</h1><p>0 - disable</p><p>1-30 = 30s</p><p>31-65535 = 31-65535s<br /></p>
+        ]]></description>
+        <default>600</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_40_4" type="integer" groupName="configuration"
+                 min="0" max="86400">
+        <label>40: Automatic Off Timer</label>
+        <description><![CDATA[
+Automatically turn OFF some time after turned ON<br /> <h1>Overview</h1><p>0 - no auto off timer</p><p>1~86400 - seconds<br /></p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_41_4" type="integer" groupName="configuration"
+                 min="0" max="86400">
+        <label>41: Automatic On Timer</label>
+        <description><![CDATA[
+Automatically turn switch ON some time after turned OFF<br /> <h1>Overview</h1><p>0 - no auto on timer</p><p>1~86400 - seconds<br /></p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Lideline</label>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: Retransmit</label>
+        <description><![CDATA[
+<br /> <h1>Overview</h1><p>Mirror of Endpoint 1 Group 2</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_3" type="text" groupName="association" multiple="true">
+        <label>3: Alert</label>
+        <description><![CDATA[
+<br /> <h1>Overview</h1><p>Mirror of Endpoint 1 Group 3</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>
