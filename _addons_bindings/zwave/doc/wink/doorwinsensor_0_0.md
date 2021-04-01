@@ -8,7 +8,7 @@ title: Door/Window Sensor - ZWave
 # Door/Window Sensor Wink D/W Sensor
 This describes the Z-Wave device *Door/Window Sensor*, manufactured by *Wink Inc.* with the thing type UID of ```wink_doorwinsensor_00_000```.
 
-The device is in the category of *Battery*, defining Batteries, Energy Storages.
+The device is in the category of *Sensor*, defining Device used to measure something.
 
 ![Door/Window Sensor product image](https://opensmarthouse.org/zwavedatabase/1294/image/)
 
@@ -175,6 +175,7 @@ The Door/Window Sensor supports 4 association groups.
 
 The Lifeline association group reports device status to a hub and is not designed to control other devices directly. When using the Lineline group with a hub, in most cases, only the lifeline group will need to be configured and normally the hub will perform this automatically during the device initialisation.
 Lifeline
+
 
 Association group 1 supports 5 nodes.
 

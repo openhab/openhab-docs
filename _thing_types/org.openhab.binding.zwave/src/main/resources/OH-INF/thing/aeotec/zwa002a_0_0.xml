@@ -36,6 +36,30 @@ Bulb 6 Multi-Color<br /> <h1>Overview</h1><p>Aeotec LED Bulb 6 Multi-Color, Z-Wa
           <property name="binding:Command:OnOffType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
         </properties>
       </channel>
+      <channel id="config_decimal_param1" typeId="aeotec_zwa002a_00_000_config_decimal_param1">
+        <label>Set custom mode for LED animations</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_CONFIGURATION;parameter=1</property>
+        </properties>
+      </channel>
+      <channel id="config_decimal_param2" typeId="aeotec_zwa002a_00_000_config_decimal_param2">
+        <label>Set Strobe over Custom Color</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_CONFIGURATION;parameter=2</property>
+        </properties>
+      </channel>
+      <channel id="config_decimal_param3" typeId="config_decimal">
+        <label>Set Rate of change to next color in Custom Mode</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_CONFIGURATION;parameter=3</property>
+        </properties>
+      </channel>
+      <channel id="config_decimal_param4" typeId="config_decimal">
+        <label>Set color that LED Bulb blinks in (Blink Mode)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_CONFIGURATION;parameter=4</property>
+        </properties>
+      </channel>
     </channels>
 
     <!-- DEVICE PROPERTY DEFINITIONS -->
@@ -93,6 +117,9 @@ Bulb 6 Multi-Color<br /> <h1>Overview</h1><p>Aeotec LED Bulb 6 Multi-Color, Z-Wa
 
       <parameter name="config_4_1_wo" type="integer" groupName="configuration">
         <label>4: Set color that LED Bulb blinks in (Blink Mode)</label>
+        <description><![CDATA[
+Blink colors in order &gt; White &gt; Red &gt; Orange &gt; Yellow &gt; Green &gt; Blue &gt; Indigo &gt; Purple<br /> <h1>Overview</h1><p>White = 1<br />Red = 2<br />Orange = 4<br />Yellow = 8<br />Green = 16<br />Blue = 32<br />Indigo = 64<br />Purple = 128<br /></p><p>Example: To Blink (Red &gt; Blue). Set: 2 + 32 = 34.</p>
+        ]]></description>
         <default>1</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
@@ -143,5 +170,43 @@ Bulb 6 Multi-Color<br /> <h1>Overview</h1><p>Aeotec LED Bulb 6 Multi-Color, Z-Wa
     </config-description>
 
   </thing-type>
+
+  <channel-type id="aeotec_zwa002a_00_000_config_decimal_param1">
+    <item-type>Number</item-type>
+    <label>Use custom mode for LED animations</label>
+    <state pattern="%s">
+      <options>
+        <option value="0">Disable</option>
+        <option value="1">Blink Colors in order mode</option>
+        <option value="2">Randomized blink color mode</option>
+      </options>
+    </state>
+  </channel-type>
+
+  <channel-type id="aeotec_zwa002a_00_000_config_decimal_param2">
+    <item-type>Number</item-type>
+    <label>Enable/Disable Strobe over Custom Color</label>
+    <state pattern="%s">
+      <options>
+        <option value="0">Disable</option>
+        <option value="1">Enable</option>
+      </options>
+    </state>
+  </channel-type>
+
+  <channel-type id="aeotec_zwa002a_00_000_config_decimal_param3">
+    <item-type>Number</item-type>
+    <label>Rate of change to next color in Custom Mode</label>
+    <state pattern="%s">
+    </state>
+  </channel-type>
+
+  <channel-type id="aeotec_zwa002a_00_000_config_decimal_param4">
+    <item-type>Number</item-type>
+    <label>Set color that LED Bulb blinks in (Blink Mode)</label>
+    <description>Blink colors in order &gt; White &gt; Red &gt; Orange &gt; Yellow &gt; Green &gt; Blue &gt; Indigo &gt; Purple</description>
+    <state pattern="%s">
+    </state>
+  </channel-type>
 
 </thing:thing-descriptions>

@@ -341,13 +341,15 @@ The interval time for auto reporting the illumination state<br /> <h1>Overview</
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_13_1" type="integer" groupName="configuration"
-                 min="1" max="127">
+      <parameter name="config_13_1" type="integer" groupName="configuration">
         <label>13: Auto Report Temperature Time</label>
         <description><![CDATA[
 The interval time for auto reporting the temperature state<br /> <h1>Overview</h1><p>The interval time for auto report the temperature.</p> <p>0 means turn off auto report temperature.</p> <p>The default value is 12. The tick time can setting by the configuration No.20.</p>
         ]]></description>
         <default>12</default>
+        <options>
+          <option value="0">Disabled</option>
+        </options>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
