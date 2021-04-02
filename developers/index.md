@@ -39,7 +39,7 @@ Sometimes it may not even be worth writing a binding or other addon if you can a
 For example, you may be better off using an http action in a rule or script to retrieve some values.
 
 Find the right abstraction and the corresponding link on the left navigation panel.
-General [coding guidelines](docs/developer/guidelines.html) apply to all types of addon development.
+General [coding guidelines](guidelines.html) apply to all types of addon development.
 
 ## Setup the Development Environment
 
