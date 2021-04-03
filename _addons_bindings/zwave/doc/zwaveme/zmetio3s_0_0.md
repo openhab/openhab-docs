@@ -40,6 +40,7 @@ The following table summarises the channels available for the ZME_TIO_3S -:
 | Channel Name | Channel ID | Channel Type | Category | Item Type |
 |--------------|------------|--------------|----------|-----------|
 | Power switch | switch_binary | switch_binary | Switch | Switch | 
+| FanSpeed_1 | switch_dimmer | switch_dimmer | DimmableLight | Dimmer | 
 | Sensor (air temperature) | sensor_temperature | sensor_temperature | Temperature | Number:Temperature | 
 | Thermostat mode | thermostat_mode | thermostat_mode | Temperature | Number | 
 | Setpoint (heating) | thermostat_setpoint | thermostat_setpoint | Heating | Number:Temperature | 
@@ -53,6 +54,14 @@ on/off device switch
 Switch the power on and off.
 
 The ```switch_binary``` channel is of type ```switch_binary``` and supports the ```Switch``` item and is in the ```Switch``` category.
+
+### FanSpeed_1
+Fan speed
+
+The brightness channel allows to control the brightness of a light.
+            It is also possible to switch the light on and off.
+
+The ```switch_dimmer``` channel is of type ```switch_dimmer``` and supports the ```Dimmer``` item and is in the ```DimmableLight``` category.
 
 ### Sensor (air temperature)
 Room temperature 

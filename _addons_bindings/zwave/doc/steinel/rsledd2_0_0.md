@@ -161,7 +161,7 @@ Detailed information on each parameter can be found in the sections below.
 ### Parameter 1: Time [s]
 
 Duration of light after motion detection.
-
+Duration of light after motion detection
 Values in the range 5 to 900 may be set.
 
 The manufacturer defined default value is ```180```.
@@ -176,7 +176,7 @@ LIGHT
 2000 – is used as daylight (always night mode).
 
 Value can be controlled via potentiometer (if present on device) – potentiometer value is then used as the default value and any potentiometer movement rewrites the current setting
-Values in the range 2 to 2000 may be set.
+Values in the range 0 to 2000 may be set.
 
 The manufacturer defined default value is ```2000```.
 
@@ -209,7 +209,7 @@ This parameter has the configuration ID ```config_5_1``` and is of type ```INTEG
 
 (only SLAMP)
 Interval for measuring ambient light when lamp is on (lamp switches off briefly and measures). 0 = function is off.
-Values in the range 5 to 120 may be set.
+Values in the range 0 to 120 may be set.
 
 The manufacturer defined default value is ```0```.
 
@@ -330,7 +330,7 @@ Notice – during the day, this mode cannot be ended remotely due to motion even
 210 - 254 = Reserved
 
 255 = Lamp/relay is switched on for TIME (cfg 1). It does not wait for a motion event and works normally via current motion evaluation.
-Values in the range 2 to 209 may be set.
+Values in the range 2 to 255 may be set.
 
 The manufacturer defined default value is ```255```.
 
@@ -353,7 +353,7 @@ no motion.
 210 - 254 = Reserved
 
 255 = Never stop waiting for motion.
-Values in the range 0 to 209 may be set.
+Values in the range 0 to 255 may be set.
 
 The manufacturer defined default value is ```204```.
 
@@ -368,7 +368,7 @@ The intention is to use a much longer timeout value than the time after a
 single ON command which should then be followed by a short timeout value.  
 The behaviour is the same as for parameter 10 (OFF\_LOCAL\_DISABLE)  
 except: 255 – device ignores ON - OFF sequence and uses OFF behaviour.
-Values in the range 0 to 209 may be set.
+Values in the range 0 to 255 may be set.
 
 The manufacturer defined default value is ```204```.
 
@@ -383,7 +383,7 @@ The intention is to use a much longer timeout value than the time after a sin-
 gle OFF command which should then be followed by a short timeout value.  
 The behaviour is the same as for parameter 11 (ON\_LOCAL\_DISABLE)  
 except: 255 – device ignores OFF - ON sequence and uses ON behaviour.
-Values in the range 0 to 209 may be set.
+Values in the range 0 to 255 may be set.
 
 The manufacturer defined default value is ```204```.
 
@@ -426,7 +426,7 @@ Timeout:
 210 - 254 = Reserved
 
 255 = BASIC SET to motion endpoint ignored, motion sensor still disabled.
-Values in the range 2 to 209 may be set.
+Values in the range 2 to 255 may be set.
 
 The manufacturer defined default value is ```0```.
 
@@ -452,12 +452,6 @@ This parameter has the configuration ID ```switchall_mode``` and is of type ```I
 Association groups allow the device to send unsolicited reports to the controller, or other devices in the network. Using association groups can allow you to eliminate polling, providing instant feedback of a device state change without unnecessary network traffic.
 
 The RS LED D2 Z-Wave supports 5 association groups.
-
-### Group 0: Root
-
-Root
-
-Association group 0 supports 1 node.
 
 ### Group 1: Lifeline
 
@@ -503,14 +497,8 @@ Association group 1 supports 1 node.
 
 ### Group 2: Control: Key01
 
-On/Off control (Never ever add controller, only third-party devices!)
+On/Off control
 Group 2 is used for directly controlling Z-Wave devices via BASIC SET commands through the evaluation of movement and light, as with internal use (so that all of these devices work together).
-
-This is intended for use especially with third-party devices that do not implement reactions for motion events.
-
-BASIC_SET and similar Z-Wave commands are not retransmitted intentionally to slaves and must be sent to slave devices via the controlling device simultaneously.
-
-Only for use in master-slave system, multi-device control is not possible.
 
 Association group 2 supports 16 nodes.
 
@@ -553,6 +541,13 @@ When device already uses remote Ambient Light value, then this value is also ret
 All devices in such a group should have the same LIGHT (threshold) settings in order that night mode is detected at the same time.
 
 Association group 4 supports 15 nodes.
+
+### Group 5: Control: Key02
+
+Basic Set
+On/Off Button & Central Scene Notification 
+
+Association group 5 supports 16 nodes.
 
 ## Technical Information
 

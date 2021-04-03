@@ -77,7 +77,7 @@ Indoor LED-light with motion sensor<br /> <h1>Overview</h1><ul><li>The sensor-sw
       <property name="manufacturerId">0271</property>
       <property name="manufacturerRef">0001:1A74</property>
       <property name="dbReference">759</property>
-      <property name="defaultAssociations">0,1,2,3,4</property>
+      <property name="defaultAssociations">1</property>
     </properties>
 
     <!-- CONFIGURATION DESCRIPTIONS -->
@@ -98,13 +98,15 @@ Indoor LED-light with motion sensor<br /> <h1>Overview</h1><ul><li>The sensor-sw
       <parameter name="config_1_2" type="integer" groupName="configuration"
                  min="5" max="900">
         <label>1: Time [s]</label>
-        <description>Duration of light after motion detection.</description>
+        <description><![CDATA[
+Duration of light after motion detection.<br /> <h1>Overview</h1><p>Duration of light after motion detection</p>
+        ]]></description>
         <default>180</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_2_2" type="integer" groupName="configuration"
-                 min="2" max="2000">
+                 min="0" max="2000">
         <label>2: Light threshold [lx]</label>
         <description><![CDATA[
 LIGHT<br /> <h1>Overview</h1><p>0      – run Learn ambient light sequence.<br />2000 – is used as daylight (always night mode).</p> <p>Value can be controlled via potentiometer (if present on device) – potentiometer value is then used as the default value and any potentiometer movement rewrites the current setting</p>
@@ -134,7 +136,7 @@ SENSITIVITY<br /> <h1>Overview</h1><p>Value can be controlled via potentiometer 
       </parameter>
 
       <parameter name="config_6_1" type="integer" groupName="configuration"
-                 min="5" max="120">
+                 min="0" max="120">
         <label>6: Brightness measuring interval [min]</label>
         <description><![CDATA[
 (only SLAMP)<br /> <h1>Overview</h1><p>Interval for measuring ambient light when lamp is on (lamp switches off briefly and measures). 0 = function is off.</p>
@@ -175,16 +177,17 @@ OFF_BEHAVIOUR<br /> <h1>Overview</h1><p>Behaviour after BASIC OFF (and similar c
       </parameter>
 
       <parameter name="config_11_2" type="integer" groupName="configuration"
-                 min="2" max="209">
+                 min="2" max="255">
         <label>11: On behaviour (timeout)</label>
         <description><![CDATA[
 ON_BEHAVIOUR<br /> <h1>Overview</h1><p>Behaviour after BASIC ON (and similar commands).<br />If a transition (even with zero change) with a non-default duration is to be processed, the transition cannot be interrupted by any motion event in any case.</p> <p>0 = Lamp/relay is switched on and remains so until any new motion event (local or remote) is received. It then works normally via current motion evaluation.<br />Notice – during the day, this mode cannot be ended remotely due to motion events not being transmitted – only via local motion sensor if enabled.</p> <p>1 - 209 = Lamp/relay is switched on and remains so until after a specified timeout once a new motion event (local or remote) is received. It then works normally via current motion evaluation.<br />    Timeout:<br />    1..100 – 1 second (1) to 100 seconds (100) in 1-second resolution<br />    101..200 – 1 minute (101) to 100 minutes (200) in 1-minute resolution<br />    201..209 – 1 hour (201) to 9 hours (209) in 1-hour resolution<br />Notice – during the day, this mode cannot be ended remotely due to motion events not being transmitted – only via local motion sensor if enabled.</p> <p>210 - 254 = Reserved</p> <p>255 = Lamp/relay is switched on for TIME (cfg 1). It does not wait for a motion event and works normally via current motion evaluation.</p>
         ]]></description>
         <default>255</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_12_2" type="integer" groupName="configuration"
-                 min="0" max="209">
+                 min="0" max="255">
         <label>12: On behaviour time over (timeout)</label>
         <description><![CDATA[
 ON_TIME_OVER<br /> <h1>Overview</h1><p>Time limit to stop waiting for motion after timeout of ON_BEHAVIOUR or<br />OFF_ON_BEHAVIOUR (0-209) to prevent staying ON forever when there is<br />no motion.</p> <p>0 = No additional waiting for motion.</p> <p>1 - 209 =  1..100 – 1 second (1) to 100 seconds (100) in 1-second resolution<br />                  101..200 – 1 minute (101) to 100 minutes (200) in 1-minute resolution<br />                  201..209 – 1 hour (201) to 9 hours (209) in 1-hour resolution</p> <p>210 - 254 = Reserved</p> <p>255 = Never stop waiting for motion.</p>
@@ -194,7 +197,7 @@ ON_TIME_OVER<br /> <h1>Overview</h1><p>Time limit to stop waiting for motion aft
       </parameter>
 
       <parameter name="config_13_2" type="integer" groupName="configuration"
-                 min="0" max="209">
+                 min="0" max="255">
         <label>13: Sequence On-Off behaviour (timeout)</label>
         <description><![CDATA[
 ON_OFF_ BEHAVIOUR<br /> <h1>Overview</h1><p>Behaviour after a rapid sequence of BASIC ON and BASIC OFF commands.<br />The intention is to use a much longer timeout value than the time after a<br />single ON command which should then be followed by a short timeout value.<br />The behaviour is the same as for parameter 10 (OFF_LOCAL_DISABLE)<br />except: 255 – device ignores ON - OFF sequence and uses OFF behaviour.</p>
@@ -204,7 +207,7 @@ ON_OFF_ BEHAVIOUR<br /> <h1>Overview</h1><p>Behaviour after a rapid sequence of 
       </parameter>
 
       <parameter name="config_14_2" type="integer" groupName="configuration"
-                 min="0" max="209">
+                 min="0" max="255">
         <label>14: Sequence Off-On behaviour (timeout)</label>
         <description><![CDATA[
 OFF_ON_ BEHAVIOUR<br /> <h1>Overview</h1><p>Behaviour after a rapid sequence of BASIC OFF and BASIC ON commands.<br />The intention is to use a much longer timeout value than the time after a sin-<br />gle OFF command which should then be followed by a short timeout value.<br />The behaviour is the same as for parameter 11 (ON_LOCAL_DISABLE)<br />except: 255 – device ignores OFF - ON sequence and uses ON behaviour.</p>
@@ -224,7 +227,7 @@ SEQUENCE_TIME<br /> <h1>Overview</h1><p>Time in [100 milliseconds] of maximum de
       </parameter>
 
       <parameter name="config_16_2" type="integer" groupName="configuration"
-                 min="2" max="209">
+                 min="2" max="255">
         <label>16: Motion Off behaviour (timeout)</label>
         <description><![CDATA[
 MOTION_ DISABLE<br /> <h1>Overview</h1><p>Motion disable timeout after BASIC SET to motion endpoint when the inter-<br />nal motion sensor is not used for evaluating the behaviour of the lamp (SLAMP)<br />relay (SPIR) and groups 2 and 3. Events are, however, still transmitted to the<br />Lifeline, and the device can be controlled via remote motion sensors.</p> <p>0 = BASIC SET to motion sensor endpoint ignored, BASIC to root is<br />mapped to relay endpoint, (SPIR) motion sensor still enabled</p> <p><br />1 - 209 = Internal motion sensor is disabled for specified timeout after BASIC<br />SET 0x00 to motion endpoint.<br />Timeout:<br />1..100 – 1 second (1) to 100 seconds (100) in 1-second resolution<br />101..200 – 1 minute (101) to 100 minutes (200) in 1-minute resolution<br />201..209 – 1 hour (201) to 9 hours (209) in 1-hour resolution</p> <p>210 - 254 = Reserved</p> <p>255 = BASIC SET to motion endpoint ignored, motion sensor still disabled.</p>
@@ -233,11 +236,6 @@ MOTION_ DISABLE<br /> <h1>Overview</h1><p>Motion disable timeout after BASIC SET
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->
-      <parameter name="group_0" type="text" groupName="association">
-        <label>0: Root</label>
-        <description>Root</description>
-      </parameter>
-
       <parameter name="group_1" type="text" groupName="association">
         <label>1: Lifeline</label>
         <description><![CDATA[
@@ -248,7 +246,7 @@ Lifeline<br /> <h1>Overview</h1><p>Lifeline messages</p> <p> - Device Reset Loc
       <parameter name="group_2" type="text" groupName="association" multiple="true">
         <label>2: Control: Key01</label>
         <description><![CDATA[
-On/Off control (Never ever add controller, only third-party devices!)<br /> <h1>Overview</h1><p>Group 2 is used for directly controlling Z-Wave devices via BASIC SET commands through the evaluation of movement and light, as with internal use (so that all of these devices work together).</p> <p>This is intended for use especially with third-party devices that do not implement reactions for motion events.</p> <p>BASIC_SET and similar Z-Wave commands are not retransmitted intentionally to slaves and must be sent to slave devices via the controlling device simultaneously.</p> <p>Only for use in master-slave system, multi-device control is not possible.</p>
+On/Off control<br /> <h1>Overview</h1><p>Group 2 is used for directly controlling Z-Wave devices via BASIC SET commands through the evaluation of movement and light, as with internal use (so that all of these devices work together).</p>
         ]]></description>
         <multipleLimit>16</multipleLimit>
       </parameter>
@@ -267,6 +265,14 @@ Notification: Motion<br /> <h1>Overview</h1><p>Group 3 sends MOTION_BEGIN and MO
 Sensor: Luminescence<br /> <h1>Overview</h1><p>Ambient Light via Group 4 is intended to substitute locally measured LUX <br />values in target devices – so that the network can have one source of ambient light value.</p> <p>Frames are sent a maximum of once per 2.5 minutes and a minimum of once per 15 minutes.</p> <p>When device already uses remote Ambient Light value, then this value is also retransmitted to group 4.</p> <p>All devices in such a group should have the same LIGHT (threshold) settings in order that night mode is detected at the same time.</p>
         ]]></description>
         <multipleLimit>15</multipleLimit>
+      </parameter>
+
+      <parameter name="group_5" type="text" groupName="association" multiple="true">
+        <label>5: Control: Key02</label>
+        <description><![CDATA[
+Basic Set<br /> <h1>Overview</h1><p>On/Off Button &amp; Central Scene Notification </p>
+        ]]></description>
+        <multipleLimit>16</multipleLimit>
       </parameter>
 
       <!-- STATIC DEFINITIONS -->

@@ -20,6 +20,13 @@ TION 3S Ventilator<br /> <h1>Overview</h1><p>Compact ventilation system, develop
           <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY</property>
         </properties>
       </channel>
+      <channel id="switch_dimmer" typeId="switch_dimmer">
+        <label>FanSpeed_1</label>
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+          <property name="binding:Command:OnOffType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+        </properties>
+      </channel>
       <channel id="sensor_temperature" typeId="sensor_temperature">
         <label>Sensor (air temperature)</label>
         <properties>
