@@ -1,0 +1,340 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="zwaveme_rs-10pm_00_000" listed="false">
+    <label>RS-10PM2 10 Channel Relay Module</label>
+    <description><![CDATA[
+10 Channel Relay Module<br /> <h1>Overview</h1><p>Haseman RS-10PM2 is a 10-channel, DIN Rail, Relay module with true RMS energy meter.</p><p>RS-10PM2 is optically isolated and protected against voltage surges, caused by switching of inductive and capacitive loads as power contactors, motors, EM valves and switching power supplies. Zero-cross switching technology ensures high reliability and long relay life.</p> <br /> <h2>Inclusion Information</h2><p>Triple click the Z-Button on the front panel.<br /></p> <br /> <h2>Exclusion Information</h2><p>Triple click the Z-Button on the front panel.<br /></p> <br /> <h2>Wakeup Information</h2><p><br /></p>
+    ]]></description>
+    <category>WallSwitch</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_binary" typeId="switch_binary">
+        <label>Switch</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY</property>
+        </properties>
+      </channel>
+      <channel id="sensor_voltage" typeId="sensor_voltage">
+        <label>Sensor (voltage)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_SENSOR_MULTILEVEL;type=VOLTAGE</property>
+        </properties>
+      </channel>
+      <channel id="meter_watts" typeId="meter_watts">
+        <label>Electric meter (watts)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_W</property>
+        </properties>
+      </channel>
+      <channel id="switch_binary1" typeId="switch_binary">
+        <label>Switch 1</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY:1</property>
+        </properties>
+      </channel>
+      <channel id="switch_binary2" typeId="switch_binary">
+        <label>Switch 2</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY:2</property>
+        </properties>
+      </channel>
+      <channel id="switch_binary3" typeId="switch_binary">
+        <label>Switch 3</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY:3</property>
+        </properties>
+      </channel>
+      <channel id="switch_binary4" typeId="switch_binary">
+        <label>Switch 4</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY:4</property>
+        </properties>
+      </channel>
+      <channel id="switch_binary5" typeId="switch_binary">
+        <label>Switch 5</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY:5</property>
+        </properties>
+      </channel>
+      <channel id="switch_binary6" typeId="switch_binary">
+        <label>Switch 6</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY:6</property>
+        </properties>
+      </channel>
+      <channel id="switch_binary7" typeId="switch_binary">
+        <label>Switch 7</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY:7</property>
+        </properties>
+      </channel>
+      <channel id="switch_binary8" typeId="switch_binary">
+        <label>Switch 8</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY:8</property>
+        </properties>
+      </channel>
+      <channel id="switch_binary9" typeId="switch_binary">
+        <label>Switch 9</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY:9</property>
+        </properties>
+      </channel>
+      <channel id="switch_binary10" typeId="switch_binary">
+        <label>Switch 10</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY:10</property>
+        </properties>
+      </channel>
+      <channel id="sensor_voltage11" typeId="sensor_voltage">
+        <label>Sensor (voltage) 11</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_SENSOR_MULTILEVEL:11;type=VOLTAGE</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Z-Wave.Me</property>
+      <property name="modelId">RS-10PM2</property>
+      <property name="manufacturerId">0115</property>
+      <property name="manufacturerRef">F111:1111</property>
+      <property name="dbReference">1375</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_11_1" type="integer" groupName="configuration"
+                 min="1" max="255">
+        <label>11: Reporting Time</label>
+        <description>Minimum time interval between power meter data reports.</description>
+        <default>30</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_64_2" type="integer" groupName="configuration"
+                 min="0" max="1">
+        <label>64: Power Up Memory</label>
+        <description>When active, the module will save actual status of all outputs</description>
+        <default>0</default>
+        <options>
+          <option value="0">Inactive - Power status not saved</option>
+          <option value="1">Active - Power status saved</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_65_2" type="integer" groupName="configuration"
+                 min="1" max="3">
+        <label>65: Channel 1 Switch Type</label>
+        <description>Switch Type</description>
+        <default>1</default>
+        <options>
+          <option value="1">Push Button</option>
+          <option value="2">Toggle Switch</option>
+          <option value="3">Follower Switch</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_66_2" type="integer" groupName="configuration"
+                 min="1" max="3">
+        <label>66: Channel 2 Switch Type</label>
+        <description>Switch Type</description>
+        <default>1</default>
+        <options>
+          <option value="1">Push Button</option>
+          <option value="2">Toggle Switch</option>
+          <option value="2">Follower Switch</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_67_2" type="integer" groupName="configuration"
+                 min="1" max="3">
+        <label>67: Channel 3 Switch Type</label>
+        <description>Switch Type</description>
+        <default>1</default>
+        <options>
+          <option value="1">Push Button</option>
+          <option value="2">Toggle Switch</option>
+          <option value="3">Follower Switch</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_68_2" type="integer" groupName="configuration"
+                 min="1" max="3">
+        <label>68: Channel 4 Switch Type</label>
+        <description>Switch Type</description>
+        <default>1</default>
+        <options>
+          <option value="1">Push Button</option>
+          <option value="2">Toggle Switch</option>
+          <option value="3">Follower Switch</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_69_2" type="integer" groupName="configuration"
+                 min="1" max="3">
+        <label>69: Channel 5 Switch Type</label>
+        <description>Switch Type</description>
+        <default>1</default>
+        <options>
+          <option value="1">Push Button</option>
+          <option value="2">Toggle Switch</option>
+          <option value="3">Follower Switch</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_70_2" type="integer" groupName="configuration"
+                 min="1" max="3">
+        <label>70: Channel 6 Switch Type</label>
+        <description>Switch Type</description>
+        <default>1</default>
+        <options>
+          <option value="1">Push Button</option>
+          <option value="2">Toggle Switch</option>
+          <option value="3">Follower Switch</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_71_2" type="integer" groupName="configuration"
+                 min="1" max="3">
+        <label>71: Channel 7 Switch Type</label>
+        <description>Switch Type</description>
+        <default>1</default>
+        <options>
+          <option value="1">Push Button</option>
+          <option value="2">Toggle Switch</option>
+          <option value="3">Follower Switch</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_72_2" type="integer" groupName="configuration"
+                 min="1" max="3">
+        <label>72: Channel 8 Switch Type</label>
+        <description>Switch Type</description>
+        <default>1</default>
+        <options>
+          <option value="1">Push Button</option>
+          <option value="2">Toggle Switch</option>
+          <option value="3">Follower Switch</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_73_2" type="integer" groupName="configuration"
+                 min="1" max="3">
+        <label>73: Channel 9 Switch Type</label>
+        <description>Switch Type</description>
+        <default>1</default>
+        <options>
+          <option value="1">Push Button</option>
+          <option value="2">Toggle Switch</option>
+          <option value="3">Follower Switch</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_74_2" type="integer" groupName="configuration"
+                 min="1" max="3">
+        <label>74: Channel 10 Switch Type</label>
+        <description>Switch Type</description>
+        <default>1</default>
+        <options>
+          <option value="1">Push Button</option>
+          <option value="2">Toggle Switch</option>
+          <option value="3">Follower Switch</option>
+        </options>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Lifeline</label>
+        <description><![CDATA[
+<br /> <h1>Overview</h1><p><br /></p>
+        ]]></description>
+        <multipleLimit>8</multipleLimit>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: S1</label>
+        <description>BASIC command class for switch S1</description>
+        <multipleLimit>8</multipleLimit>
+      </parameter>
+
+      <parameter name="group_3" type="text" groupName="association" multiple="true">
+        <label>3: S2</label>
+        <description>BASIC command class for switch S2</description>
+        <multipleLimit>8</multipleLimit>
+      </parameter>
+
+      <parameter name="group_4" type="text" groupName="association" multiple="true">
+        <label>4: S3</label>
+        <description>BASIC command class for switch S3</description>
+        <multipleLimit>8</multipleLimit>
+      </parameter>
+
+      <parameter name="group_6" type="text" groupName="association" multiple="true">
+        <label>6: S5</label>
+        <description>BASIC command class for switch S5</description>
+        <multipleLimit>8</multipleLimit>
+      </parameter>
+
+      <parameter name="group_7" type="text" groupName="association" multiple="true">
+        <label>7: S6</label>
+        <description>BASIC command class for switch S6</description>
+        <multipleLimit>8</multipleLimit>
+      </parameter>
+
+      <parameter name="group_8" type="text" groupName="association" multiple="true">
+        <label>8: S7</label>
+        <description>BASIC command class for switch S7</description>
+        <multipleLimit>8</multipleLimit>
+      </parameter>
+
+      <parameter name="group_9" type="text" groupName="association" multiple="true">
+        <label>9: S8</label>
+        <description>BASIC command class for switch S8</description>
+        <multipleLimit>8</multipleLimit>
+      </parameter>
+
+      <parameter name="group_10" type="text" groupName="association" multiple="true">
+        <label>10: S9</label>
+        <description>BASIC command class for switch S9</description>
+        <multipleLimit>8</multipleLimit>
+      </parameter>
+
+      <parameter name="group_11" type="text" groupName="association" multiple="true">
+        <label>11: S10</label>
+        <description>BASIC command class for switch S10</description>
+        <multipleLimit>8</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

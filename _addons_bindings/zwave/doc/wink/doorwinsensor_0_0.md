@@ -182,9 +182,7 @@ Association group 1 supports 5 nodes.
 ### Group 2: Control
 
 Directly triggers devices in response to events
-The Door/Window Sensor sends a Basic Set command to association Group 2 (or the Control Group) to directly trigger devices (like a light, chime, etc.) in response to events. 
-
-Then, after a preset delay, a BASIC\_SET(0x00) command is sent to reset the device (e.g. turn off the light.) The value of the Basic Set command (e.g. brightness of the lamp,) and the delay time before the BASIC\_SET(0x00) is sent is configured using configuration parameters 1 and 2 respectively.
+The Door/Window Sensor sends a Basic Set command to association Group 2 (or the Control Group) to directly trigger devices (like a light, chime, etc.) in response to events.
 
 Association group 2 supports 5 nodes.
 
