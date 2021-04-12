@@ -39,7 +39,7 @@ Energy Switch +<br /> <h1>Overview</h1><p>Control and monitor your lightning or 
       <property name="vendor">BeNext</property>
       <property name="modelId">Energy Switch +</property>
       <property name="manufacturerId">008A</property>
-      <property name="manufacturerRef">0006:0200,0020:0001</property>
+      <property name="manufacturerRef">0006:0200,0008:0200,0020:0001</property>
       <property name="dbReference">445</property>
       <property name="defaultAssociations">1</property>
     </properties>
