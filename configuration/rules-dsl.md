@@ -220,20 +220,6 @@ then
     ])
 end
 ```
-In openHAB version 3 the System-based Trigger for startlevel had been added, values depends on the startlevel:
-
-    00 - OSGi framework has been started.
-    10 - OSGi application start level has been reached, i.e. bundles are activated.
-    20 - Model entities (items, things, links, persist config) have been loaded, both from db as well as files.
-    30 - Item states have been restored from persistence service, where applicable.
-    40 - Rules are loaded and parsed, both from db as well as dsl and script files.
-    50 - Rule engine has executed all "system started" rules and is active.
-    70 - User interface is up and running. (planned, not included yet)
-    80 - All things have been initialized. (planned, not included yet)
-    100 - Startup is fully complete.
-    
-Startlevels (logically only if startlevel >= 40) are only available in UI-Rules, not in DSL-Rules with textual configuration.
-
 
 {: #thing-based-triggers}
 
