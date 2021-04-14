@@ -23,7 +23,7 @@ Taking the time to understand and choose a logical structure for your home will 
 
 However, the model is not intended to represent all your Groups and Items.
 The model only represents the physical layout of your home automation.
-Consequently it has some constrains discussed below.
+Consequently it has some constraints discussed below.
 But that does not mean that other ways of organizing and grouping Items are not supported.
 For example, one can create a cross cutting functional based Group like `AllLights`.
 Just don't put `AllLights` into your model.
