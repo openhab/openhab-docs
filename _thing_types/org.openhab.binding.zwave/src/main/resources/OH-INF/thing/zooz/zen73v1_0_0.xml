@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="zooz_zen73v1_00_000" listed="false">
+    <label>ZEN73v1 Toggle Switch</label>
+    <description><![CDATA[
+Toggle Switch<br /> <h1>Overview</h1><p>700 Series toggle switch with simple direct 3-way. </p><p>For LED/CFL and incandescent lights only. NOT for tube lights, fans, or receptacles.</p> <br /> <h2>Inclusion Information</h2><p>Toggle up 3 times quickly</p> <br /> <h2>Exclusion Information</h2><p>Toggle down 3 times quicklt</p> <br /> <h2>Wakeup Information</h2><p><br /></p>
+    ]]></description>
+    <category>WallSwitch</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_binary" typeId="switch_binary">
+        <label>Switch</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY</property>
+        </properties>
+      </channel>
+      <channel id="scene_number" typeId="scene_number">
+        <label>Scene Number</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_CENTRAL_SCENE</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Zooz</property>
+      <property name="modelId">ZEN73v1</property>
+      <property name="manufacturerId">027A</property>
+      <property name="manufacturerRef">7000:A003</property>
+      <property name="dbReference">1378</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_1_1" type="integer" groupName="configuration"
+                 min="0" max="2">
+        <label>1: On/Off Toggle Orientation</label>
+        <description>Determines toggle actions</description>
+        <default>0</default>
+        <options>
+          <option value="0">Up for On, Down for Off</option>
+          <option value="1">Up for Off, Down for On</option>
+          <option value="2">Any direction changes state</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_3_4" type="integer" groupName="configuration"
+                 min="0" max="65535">
+        <label>3: Auto Turn-Off Timer</label>
+        <description><![CDATA[
+control auto turn-off timer function<br /> <h1>Overview</h1><p>0 - disabled</p><p>1-656535 minutes</p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_5_4" type="integer" groupName="configuration"
+                 min="0" max="65535">
+        <label>5: Auto Turn On Timer</label>
+        <description><![CDATA[
+control auto turn on timer function<br /> <h1>Overview</h1><p>0 - disabled</p><p>1-65535 minutes</p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_8_1" type="integer" groupName="configuration"
+                 min="0" max="2">
+        <label>8: On Off Status After Power Failure</label>
+        <description>Set the on off status for the switch after power failure.</description>
+        <default>0</default>
+        <options>
+          <option value="0">Forced to OFF</option>
+          <option value="1">Forced to ON</option>
+          <option value="2">Restore Last Status</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_10_1" type="integer" groupName="configuration"
+                 min="0" max="1">
+        <label>10: Enable/Disable Scene Control</label>
+        <description>Enable/Disable Scene Control</description>
+        <default>0</default>
+        <options>
+          <option value="0">scene control disabled</option>
+          <option value="1">scene control enabled</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_12_1" type="integer" groupName="configuration"
+                 min="1" max="2">
+        <label>12: Smart Bulb Mode: Enable/Disable Paddle / Z-Wave Control</label>
+        <description><![CDATA[
+Enable or disable manual on/off control from the toggle.<br /> <h1>Overview</h1><p>Enable or disable manual on/off control from the toggle. </p><p>If enabled, you’ll only be able to control the connected light via Z-Wave. Scenes and other functionality will still be available from the toggle.</p>
+        ]]></description>
+        <default>1</default>
+        <options>
+          <option value="2">physical toggle and Z-Wave control disabled</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_13_1" type="integer" groupName="configuration"
+                 min="0" max="1">
+        <label>13: Reporting behavior for disabled physical control</label>
+        <description><![CDATA[
+Set reporting behavior for disabled physical control.<br /> <h1>Overview</h1><p>0 – switch reports on/off status and change LED indicator state even if physical and Z-Wave control is disabled (default). </p><p>1 – switch doesn't report on/off status or change LED indicator state when physical (and Z-Wave) control is disabled.</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Status reported &amp; LED changed</option>
+          <option value="1">No status report or LED change</option>
+        </options>
+        <advanced>true</advanced>
+      </parameter>
+
+      <parameter name="config_16_1" type="integer" groupName="configuration"
+                 min="0" max="1">
+        <label>16: Choose how the switch reports its status back to the hub.</label>
+        <description><![CDATA[
+Choose how the switch reports its status back to the hub.<br /> <h1>Overview</h1><p>0 – Binary switch report for Z-Wave control, basic set report for toggle (physical) control; </p><p>1 –binary switch report for both Z-Wave and toggle control</p>
+        ]]></description>
+        <default>1</default>
+        <options>
+          <option value="0">0 – Binary switch report for Z-Wave control, basic set report for togg</option>
+          <option value="1">Binary switch report for both</option>
+        </options>
+        <advanced>true</advanced>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association">
+        <label>1: Lifeline</label>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: BASIC SET</label>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>
