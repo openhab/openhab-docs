@@ -258,7 +258,7 @@ Available configuration parameters for input switch I1
 **Note!**
 
   * By setting the parameter 7 to value 4 or 5 the external Relay (IKA) is working with input switch without enabling parameter no. 101
-  * To make the IR Relay (BICOM) responsive to the digital input, in addition to the setting of the configuration parameter 7, parameter 100 must also be set to value 1 or 2.This is an advanced parameter and will therefore not show in the user interface without entering advanced mode.
+  * To make the IR Relay (BICOM) responsive to the digital input, in addition to the setting of the configuration parameter 7, parameter 100 must also be set to value 1 or 2.
 The following option values may be configured, in addition to values in the range 0 to 5 -:
 
 | Value  | Description |
@@ -286,7 +286,7 @@ Available configuration parameters (data type is 1 Byte DEC)
 **NOTE:** if power change is less than 5 W, the report is not send (pushed).  
 **NOTE:** Device is measuring also some disturbances even if on the output is no load. To avoid disturbances:
 
-  * If measured Active Power (W) is below e.g. 5W-> the reported value in this case is 0WThis is an advanced parameter and will therefore not show in the user interface without entering advanced mode.
+  * If measured Active Power (W) is below e.g. 5W-> the reported value in this case is 0W
 The following option values may be configured -:
 
 | Value  | Description |
@@ -312,7 +312,7 @@ Energy Total (kvarh), Total Energy (kVAh)
 
 **Note:** Device is reporting only if there was a change of 0.1 in Energy
 
-**Note:** In the future will be possible to measure and report also Active Energy on PH1, PH2 and PH3.This is an advanced parameter and will therefore not show in the user interface without entering advanced mode.
+**Note:** In the future will be possible to measure and report also Active Energy on PH1, PH2 and PH3.
 The following option values may be configured -:
 
 | Value  | Description |
@@ -332,7 +332,7 @@ Energy reports for Voltage, Current, Total Power Factor, Total Reactive Power
   * Default value 600 (600 seconds - 10 minutes)
   * 0 – reporting disabled
   * 600-65536 = 600 (600 seconds – 65536 seconds). Reporting enabled. Report is sent with the time interval set by entered value.
-  * Note: Device is reporting only if there was a changeThis is an advanced parameter and will therefore not show in the user interface without entering advanced mode.
+  * Note: Device is reporting only if there was a change
 The following option values may be configured -:
 
 | Value  | Description |
@@ -356,7 +356,7 @@ Available configuration parameters (data type is 1 Byte DEC):
 
 **NOTE1:** After parameter change, first exclude module (without setting parameters to default value) and then re include the module.
 
-**NOTE 2:** If you don't have IR BICOM relay module mounted and you enable IR communication (parameter 100 is 1 or 2) there will be no valid IR relay state reported. It will be reported IR COMMUNICATION ERROR and LED2 will BLINK.This is an advanced parameter and will therefore not show in the user interface without entering advanced mode.
+**NOTE 2:** If you don't have IR BICOM relay module mounted and you enable IR communication (parameter 100 is 1 or 2) there will be no valid IR relay state reported. It will be reported IR COMMUNICATION ERROR and LED2 will BLINK.
 The following option values may be configured -:
 
 | Value  | Description |
@@ -379,7 +379,7 @@ Available configuration parameters (data type is 1 Byte DEC):
   * 0 – External relay disabled
   * 1 – External relay enabled and connected to Phase 2
 
-**NOTE:** After parameter change, first exclude module (without setting parameters to default value) and then re include the module.This is an advanced parameter and will therefore not show in the user interface without entering advanced mode.
+**NOTE:** After parameter change, first exclude module (without setting parameters to default value) and then re include the module.
 The following option values may be configured -:
 
 | Value  | Description |
@@ -406,7 +406,7 @@ DEC)
   * 0 – no function
   * 10-60000 – 10W-60000W
 
-**NOTE:** Meter is capable of measuring max 3x65A!This is an advanced parameter and will therefore not show in the user interface without entering advanced mode.
+**NOTE:** Meter is capable of measuring max 3x65A!
 Values in the range 0 to 60000 may be set.
 
 The manufacturer defined default value is ```0```.
@@ -425,7 +425,7 @@ Available configuration parameters (data type is 2 Byte DEC)
   * 0 – External IR relay/ External relay will not turn back on
   * 30 – 32535 = 30 s – 32535 s
 
-**NOTE:** the delay time may be prolonged for more then 10s of the time set by the parameter.This is an advanced parameter and will therefore not show in the user interface without entering advanced mode.
+**NOTE:** the delay time may be prolonged for more then 10s of the time set by the parameter.
 The following option values may be configured -:
 
 | Value  | Description |
