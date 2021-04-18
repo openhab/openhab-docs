@@ -617,7 +617,10 @@ Commands and Updates from and to these Items will be combined, and can be used i
 Example:
 
 ```java
-Switch Office_PC {channel="lgwebos:WebOSTV:01dd3ac4-62f4-7505-208b-12345679", channel="network:servicedevice:6d5de4e65d"}
+Switch Office_PC {
+  channel="lgwebos:WebOSTV:01dd3ac4-62f4-7505-208b-12345679",
+  channel="network:servicedevice:6d5de4e65d"
+}
 ```
 
 The first example shows a symbiosis of the LG webOS Binding and the Wake-on-LAN Binding to interact with a TV.
@@ -734,7 +737,10 @@ end
 Instead of using this Rule, you can also use the `rawbutton-toggle-switch` Profile in combination with [Multi-Channel Linking](#multi-binding-channel-linkage):
 
 ```java
-Color Bedroom_Light { channel="hue:0210:1:bulb1:color", channel="serialbutton:button:mybutton:button" [profile="system:rawbutton-toggle-switch"] }
+Color Bedroom_Light {
+  channel="hue:0210:1:bulb1:color",
+  channel="serialbutton:button:mybutton:button" [profile="system:rawbutton-toggle-switch"]
+}
 ```
 
 This will make your Rule obsolete.
