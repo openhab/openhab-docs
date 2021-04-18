@@ -754,7 +754,7 @@ Number Battery_Level { channel="serialbutton:button:mybutton:battery-level" }
 Switch Low_Battery { channel="serialbutton:button:mybutton:battery-level" [profile="system:hysteresis", lower=15, inverted=true] }
 ```
 
-##### Example 5
+##### Example 3
 
 ```java
 Number:Dimensionless Outdoor_Humidity { channel="openweathermap:weather-and-forecast:api:local:current#humidity" }
