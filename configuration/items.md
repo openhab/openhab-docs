@@ -753,7 +753,7 @@ Switch Outdoor_Temperature_Low_Alert { channel="openweathermap:weather-and-forec
 /** Battery Level Profile **/
 Number Battery_Level { channel="serialbutton:button:mybutton:battery-level" }
 // Indicates a battery low alarm if battery level drops below 15
-Switch Low_Battery { channel="serialbutton:button:mybutton:battery-level" [profile="system:hysteresis", lower=15, inverted=true] } // Indicates a battery low alarm if battery level drops below 15
+Switch Low_Battery { channel="serialbutton:button:mybutton:battery-level" [profile="system:hysteresis", lower=15, inverted=true] }
 
 /** Range Profile **/
 Number:Dimensionless Outdoor_Humidity { channel="openweathermap:weather-and-forecast:api:local:current#humidity" }
