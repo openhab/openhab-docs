@@ -617,7 +617,10 @@ Commands and Updates from and to these Items will be combined, and can be used i
 Example:
 
 ```java
-Switch Office_PC {channel="lgwebos:WebOSTV:01dd3ac4-62f4-7505-208b-12345679", channel="network:servicedevice:6d5de4e65d"}
+Switch Office_PC {
+  channel="lgwebos:WebOSTV:01dd3ac4-62f4-7505-208b-12345679",
+  channel="network:servicedevice:6d5de4e65d"
+}
 ```
 
 The first example shows a symbiosis of the LG webOS Binding and the Wake-on-LAN Binding to interact with a TV.
@@ -710,7 +713,7 @@ You can find the documentation of these Profiles within the [Add-On documentatio
 | `rawrocker-to-play-pause`, `rawrocker-to-next-previous` and `rawrocker-to-rewind-fastforward` | Trigger | Player                | These Profiles can only be used on Channels of the type `system.rawrocker` and Player Items. They will convert a press on the first rocker button to an `PLAY` / `NEXT` / `FASTFORWARD` command while the second one will be converted to an `PAUSE` / `PREVIOUS` / `REWIND` command.                                                                                                                                                                                                         |
 | `rawrocker-to-stop-move` and `rawrocker-to-up-down`                                           | Trigger | Rollershutter         | These Profiles can only be used on Channels of the type `system.rawrocker` and Rollershutter Items. They will convert a press on the first rocker button to an `MOVE` / `UP` command while the second one will be converted to an `STOP` / `DOWN` command.                                                                                                                                                                                                                                    |
 
-##### Example 1
+##### Basic Example
 
 You have an Item called `Bedroom_Light` that is connected to a Hue lamp
 
@@ -734,29 +737,31 @@ end
 Instead of using this Rule, you can also use the `rawbutton-toggle-switch` Profile in combination with [Multi-Channel Linking](#multi-binding-channel-linkage):
 
 ```java
-Color Bedroom_Light { channel="hue:0210:1:bulb1:color", channel="serialbutton:button:mybutton:button" [profile="system:rawbutton-toggle-switch"] }
+Color Bedroom_Light {
+  channel="hue:0210:1:bulb1:color",
+  channel="serialbutton:button:mybutton:button" [profile="system:rawbutton-toggle-switch"]
+}
 ```
 
 This will make your Rule obsolete.
 So with Profiles, you can significantly reduce the amount of Rules you need for your Smart Home which helps you to keep your configuration short and clear.
 
-##### Example 2
+##### Advanced Examples
 
 ```java
+/** Hysteresis Profile **/
 Number:Temperature Outdoor_Temperature { channel="openweathermap:weather-and-forecast:api:local:current#temperature" }
 // Triggers a temperature high alarm (Switch = ON) as of 30 °c and stays ON until temperature drops below 29 °C
 Switch Outdoor_Temperature_High_Alert { channel="openweathermap:weather-and-forecast:api:local:current#temperature" [profile="system:hysteresis", lower="29 °C", upper="30 °C"] }
 // Temperture low alert below 0 °C
 Switch Outdoor_Temperature_Low_Alert { channel="openweathermap:weather-and-forecast:api:local:current#temperature" [profile="system:hysteresis", lower="0 °C", inverted=true] }
 
-// Indicates a battery low alarm if battery level drops below 15
+/** Battery Level Profile **/
 Number Battery_Level { channel="serialbutton:button:mybutton:battery-level" }
+// Indicates a battery low alarm if battery level drops below 15
 Switch Low_Battery { channel="serialbutton:button:mybutton:battery-level" [profile="system:hysteresis", lower=15, inverted=true] }
-```
 
-##### Example 5
-
-```java
+/** Range Profile **/
 Number:Dimensionless Outdoor_Humidity { channel="openweathermap:weather-and-forecast:api:local:current#humidity" }
 // Triggers a humidity low / high alarm (Switch = ON) if humidity drops below 40 % or exceeds 60 %
 Switch Outdoor_Humidity_Alert { channel="openweathermap:weather-and-forecast:api:local:current#humidity" [profile="system:range", lower="40 %", upper="60 %", inverted=true] }
