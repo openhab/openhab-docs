@@ -61,7 +61,7 @@ In this case the sun is modeled as an Equipment.
 
 ### Properties Tab
 
-Each Point Item that has a Property tag is represneted by a card showing each instance of that Property in the list.
+Each Point Item that has a Property tag is represented by a card showing each instance of that Property in the list.
 Unlike the other tabs, the gray bars here represent the Point tags and each Item with that Point is listed under that.
 What this means is for something like the Temperature Property one will have a set of all the temperature Measurements grouped together, and then all the temperature Setpoints grouped together, all on the same Temperature card.
 
