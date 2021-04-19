@@ -5,6 +5,7 @@ title: HAI/Leviton OmniLink - Bindings
 type: binding
 description: "This binding integrates the [OmniPro and Lumina](http://www.leviton.com/en/products/security-automation/automation-av-controllers/omni-security-systems) line of home automation systems."
 since: 3x
+logo: images/addons/omnilink.png
 install: manual
 ---
 
