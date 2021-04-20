@@ -52,17 +52,17 @@ You must also be on the relevant repository for openHAB, this hasn't changed for
 For DEB based installers (apt), your `.list` file should contain the line:
 
 ```shell
-deb https://dl.bintray.com/openhab/apt-repo2 stable main
+deb https://openhab.jfrog.io/artifactory/openhab-linuxpkg stable main
 ```
 
-For RPM based installers (yum), your `.repo` file should contain:
+For RPM based installers (yum/dnf), your `.repo` file should contain:
 
 ```shell
 [openHAB-Stable]
 name=openHAB Stable
-baseurl=https://dl.bintray.com/openhab/rpm-repo2/stable
+baseurl=https://openhab.jfrog.io/artifactory/openhab-linuxpkg-rpm/stable
 gpgcheck=1
-gpgkey=https://bintray.com/user/downloadSubjectPublicKey?username=openhab
+gpgkey=https://openhab.jfrog.io/artifactory/api/gpg/key/public
 enabled=1
 ```
 
