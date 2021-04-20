@@ -69,10 +69,10 @@ Alternatively resort to the [manual installation approach](#manual-installation)
 
 {% include collapsible/body.html %}
 
-First, add the openHAB Bintray repository key to your package manager and allow Apt to use the HTTPS Protocol:
+First, add the openHAB repository key to your package manager and allow Apt to use the HTTPS Protocol:
 
 ```shell
-wget -qO - 'https://bintray.com/user/downloadSubjectPublicKey?username=openhab' | sudo apt-key add -
+wget -qO - 'https://openhab.jfrog.io/artifactory/api/gpg/key/public' | sudo apt-key add -
 sudo apt-get install apt-transport-https
 ```
 
@@ -85,7 +85,7 @@ Then, you can choose between, *Official (Stable)*, *Beta* or *Snapshot* builds:
     Add the **openHAB Stable Repository** to your systems apt sources list:
 
     ```shell
-    echo 'deb https://dl.bintray.com/openhab/apt-repo2 stable main' | sudo tee /etc/apt/sources.list.d/openhab.list
+    echo 'deb https://openhab.jfrog.io/artifactory/openhab-linuxpkg stable main' | sudo tee /etc/apt/sources.list.d/openhab.list
     ```
 
 - **Testing Release**
@@ -146,9 +146,9 @@ You may add all three to the same file, but make sure the desired repo is is set
     ```text
     [openHAB-Stable]
     name=openHAB Stable
-    baseurl=https://dl.bintray.com/openhab/rpm-repo2/stable
+    baseurl=ttps://openhab.jfrog.io/artifactory/openhab-linuxpkg-rpm/
     gpgcheck=1
-    gpgkey="https://bintray.com/user/downloadSubjectPublicKey?username=openhab"
+    gpgkey="https://openhab.jfrog.io/artifactory/api/gpg/key/public"
     enabled=1
     ```
 
@@ -457,7 +457,7 @@ As openHAB is still in an evolving state, the snapshot may be the **preferred ch
 
     ```shell
     cd /tmp
-    wget -O openhab-download.zip https://bintray.com/... # Insert download link here
+    wget -O openhab-download.zip https://www.openhab.org/download/releases... # Insert download link here
     sudo unzip openhab-download.zip -d /opt/openhab
     rm openhab-download.zip
     ```
