@@ -146,7 +146,7 @@ You may add all three to the same file, but make sure the desired repo is is set
     ```text
     [openHAB-Stable]
     name=openHAB Stable
-    baseurl=ttps://openhab.jfrog.io/artifactory/openhab-linuxpkg-rpm/
+    baseurl=https://openhab.jfrog.io/artifactory/openhab-linuxpkg-rpm/stable
     gpgcheck=1
     gpgkey="https://openhab.jfrog.io/artifactory/api/gpg/key/public"
     enabled=1
