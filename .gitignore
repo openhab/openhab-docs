@@ -22,3 +22,4 @@ project.pbxproj
 docs
 addons/integrations
 vuepress
+.DS_Store
