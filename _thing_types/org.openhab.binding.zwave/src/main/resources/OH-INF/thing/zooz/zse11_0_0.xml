@@ -104,79 +104,17 @@ The delay in seconds before the sensor reports no motion<br /> <h1>Overview</h1>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_14_1" type="integer" groupName="configuration"
-                 min="0" max="1">
-        <label>14: Basic Set reports</label>
-        <description><![CDATA[
-Enable/disable Basic Set reports on motion detection<br /> <h1>Overview</h1><p><br /></p>
-        ]]></description>
-        <default>1</default>
-        <options>
-          <option value="0">Disable</option>
-          <option value="1">Enable</option>
-        </options>
-      </parameter>
-
-      <parameter name="config_15_1" type="integer" groupName="configuration"
-                 min="0" max="1">
-        <label>15: Basic Set report value on motion detection</label>
-        <description><![CDATA[
-<br /> <h1>Overview</h1><p><br /></p>
-        ]]></description>
-        <default>0</default>
-        <options>
-          <option value="0">Motion 0xFF; No motion 0x00</option>
-          <option value="1">Motion 0x00; No motion 0xFF</option>
-        </options>
-      </parameter>
-
-      <parameter name="config_16_1" type="integer" groupName="configuration"
-                 min="0" max="1">
-        <label>16: Binary Sensor reports</label>
-        <description><![CDATA[
-Enabled/disable Binary Sensor reports on motion detection<br /> <h1>Overview</h1><p><br /></p>
-        ]]></description>
-        <default>1</default>
-        <options>
-          <option value="0">Disable</option>
-          <option value="1">Enable</option>
-        </options>
-      </parameter>
-
-      <parameter name="config_18_1" type="integer" groupName="configuration"
-                 min="0" max="2">
-        <label>18: Temperature scale</label>
-        <description><![CDATA[
-<br /> <h1>Overview</h1><p><br /></p>
-        ]]></description>
-        <default>2</default>
-        <options>
-          <option value="0">Celcius</option>
-          <option value="2">Fahrenheit</option>
-        </options>
-      </parameter>
-
       <parameter name="config_19_1" type="integer" groupName="configuration"
                  min="0" max="1">
         <label>19: LED motion indicator</label>
         <description><![CDATA[
-<br /> <h1>Overview</h1><p><br /></p>
+Enable/disable LED indicator for motion<br /> <h1>Overview</h1><p><br /></p>
         ]]></description>
         <default>1</default>
         <options>
           <option value="0">Disable</option>
           <option value="1">Enable</option>
         </options>
-      </parameter>
-
-      <parameter name="config_32_1" type="integer" groupName="configuration"
-                 min="10" max="50">
-        <label>32: Low battery notification</label>
-        <description><![CDATA[
-The device will report low battery if below this level<br /> <h1>Overview</h1><p><br /></p>
-        ]]></description>
-        <default>10</default>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_172_2" type="integer" groupName="configuration"
@@ -186,25 +124,6 @@ The device will report low battery if below this level<br /> <h1>Overview</h1><p
 The reporting frequency for battery, temperature, humidity, and light level<br /> <h1>Overview</h1><p>Set the reporting frequency for battery, temperature, humidity, and light level. This is the minimum interval in which the sensor will send updates to the hub even if the reporting threshold isn't met. The values correspond to the number of hours.</p> <p>Note: Frequent reports will affect battery life.</p>
         ]]></description>
         <default>4</default>
-        <limitToOptions>false</limitToOptions>
-      </parameter>
-
-      <parameter name="config_182_1" type="integer" groupName="configuration">
-        <label>182: Battery reporting threshold</label>
-        <default>0</default>
-        <options>
-          <option value="0">Disabled</option>
-          <option value="5">5%</option>
-          <option value="10">10%</option>
-          <option value="15">15%</option>
-          <option value="20">20%</option>
-          <option value="25">25%</option>
-          <option value="30">30%</option>
-          <option value="35">35%</option>
-          <option value="40">40%</option>
-          <option value="45">45%</option>
-          <option value="50">50%</option>
-        </options>
         <limitToOptions>false</limitToOptions>
       </parameter>
 

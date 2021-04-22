@@ -5,7 +5,6 @@ title: MQTT Things and Channels - Bindings
 type: binding
 description: "MQTT is one of the most commonly used protocols in IoT (Internet of Things) projects. It stands for Message Queuing Telemetry Transport."
 since: 3x
-logo: images/addons/mqtt.generic.png
 install: manual
 ---
 
