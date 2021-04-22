@@ -5,6 +5,7 @@ title: ComfoAir - Bindings
 type: binding
 description: "This binding allows to monitor and control Zehnder ComfoAir serial controlled ventilation systems via RS232 serial connection."
 since: 3x
+logo: images/addons/comfoair.png
 install: auto
 ---
 
