@@ -242,7 +242,7 @@ The following XML snippet shows the definition for a temperature actuator channe
 - The `pattern` attribute can be used for `Number` and  `String` items.
   It gives user interface a hint how to render the item.
   The format of the pattern must be compliant to the [Java Number Format](https://docs.oracle.com/javase/tutorial/java/data/numberformat.html).
-  The pattern can be localized (see also [Internationalization](../../features/internationalization.html)).
+  The pattern can be localized (see also [Internationalization](../utils/i18n.html)).
   The special pattern placeholder `%unit%` is used for channels which bind to items of type `Number:<dimension>` which define a dimension for unit support.
   These channels will send state updates of type [QuantityType](../../concepts/units-of-measurement.html#quantitytype) and the unit is then rendered for the placeholder.
 
