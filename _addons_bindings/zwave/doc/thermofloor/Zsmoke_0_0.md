@@ -140,9 +140,7 @@ The Z-Smoke supports 2 association groups.
 
 The Lifeline association group reports device status to a hub and is not designed to control other devices directly. When using the Lineline group with a hub, in most cases, only the lifeline group will need to be configured and normally the hub will perform this automatically during the device initialisation.
 Device status
-Lifeline. Normally used by the Z-Wave
-
-Controller.
+Lifeline. Normally used by the Z-Wave Controller.
 
 Association group 1 supports 5 nodes.
 

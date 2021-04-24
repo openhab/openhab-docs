@@ -80,7 +80,7 @@ Smoke detector and motion sensor<br /> <h1>Overview</h1><p>Heatit Z-Smoke Detect
       <parameter name="group_1" type="text" groupName="association" multiple="true">
         <label>1: Lifeline</label>
         <description><![CDATA[
-Device status<br /> <h1>Overview</h1><p>Lifeline. Normally used by the Z-Wave</p><p>Controller.</p>
+Device status<br /> <h1>Overview</h1><p>Lifeline. Normally used by the Z-Wave Controller.</p>
         ]]></description>
         <multipleLimit>5</multipleLimit>
       </parameter>
