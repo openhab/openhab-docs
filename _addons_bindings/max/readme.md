@@ -3,7 +3,7 @@ id: max
 label: MAX!
 title: MAX! - Bindings
 type: binding
-description: "This is the binding for the [eQ-3 MAX! Home Solution](http://www.eq-3.de/)."
+description: "This is the binding for the [eQ-3 MAX! Home Solution](https://www.eq-3.de/)."
 since: 3x
 logo: images/addons/max.png
 install: auto
@@ -15,7 +15,7 @@ install: auto
 
 # MAX! Binding
 
-This is the binding for the [eQ-3 MAX! Home Solution](http://www.eq-3.de/).
+This is the binding for the [eQ-3 MAX! Home Solution](https://www.eq-3.de/).
 This binding allows you to integrate, view and control the MAX! Thermostats, Ecoswitch and Shuttercontact things.
 
 ## Supported Things
@@ -37,7 +37,7 @@ If for any reason you need to manually define the Things and you are not exactly
 ## Discovery
 
 When the bindings discovery is triggered, the network is queried for the existence of a MAX! Cube LAN gateway.
-When the Cube is found, it will become available in the inbox. 
+When the Cube is found, it will become available in the inbox.
 
 After the Cube `bridge` is available in openHAB, all the devices connected to it are discovered and added to the inbox.
 

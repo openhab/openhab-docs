@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="benext_80822002_00_000" listed="false">
+    <label>BEN_80822002 Keyfob with red panic button, lock button and unlock button</label>
+    <description><![CDATA[
+Keyfob with red panic button, lock button and unlock button<br /> <h1>Overview</h1><p>The BeNext Panic Button is a small panic button meant for wearing as a necklace. It has a big red SOS button, and a lock and unlock button. In newer versions, the buttons are colored. <br />The device is only available in the EU region </p> <br /> <h2>Inclusion Information</h2><ol><li>Press and hold the red SOS button until the LED starts blinking. </li><li>Then release the button.</li></ol><p>When classic inclusion fails, network wide inclusion will be tried. </p> <br /> <h2>Exclusion Information</h2><ol><li>Press and hold the red SOS button until the LED starts blinking. </li><li>Then release the button.</li></ol> <br /> <h2>Wakeup Information</h2><p>Hold the red SOS Button for approximately 14 seconds. Ignore the blinking of the LED and keep the button pressed for at least 14 seconds.</p>
+    ]]></description>
+    <category>RemoteControl</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="basic_switch_binary" typeId="switch_binary">
+        <label>Lock or unlock pressed</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_BASIC</property>
+        </properties>
+      </channel>
+      <channel id="sensor_binary" typeId="sensor_binary">
+        <label>Binary Sensor</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SENSOR_BINARY</property>
+        </properties>
+      </channel>
+      <channel id="alarm_general" typeId="alarm_general">
+        <label>Alarm</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM</property>
+        </properties>
+      </channel>
+      <channel id="battery-level" typeId="system.battery-level">
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_BATTERY</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">BeNext</property>
+      <property name="modelId">BEN_80822002</property>
+      <property name="manufacturerId">008A</property>
+      <property name="manufacturerRef">0014:0101</property>
+      <property name="dbReference">1380</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_1_1" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>1: Set to default</label>
+        <description><![CDATA[
+Set all configuration values to default values (factory default)<br /> <h1>Overview</h1><p>If 0xFF is written to this parameter, all configurable values are back to their defaults.  [Developer Note: Probably when you send a value other than 0xFF (but not 0x55 and not 0xAA) this is answered with 0x55, meaning soms configuration has been changed, or 0xAA, device has still all factory default configuration. The manual is not clear about that; I will test that when I can use this device in OH]</p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_2_1" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>2: Min time to press panic button</label>
+        <description><![CDATA[
+Minimum time to press the panic button before an alarm will be send<br /> <h1>Overview</h1><p>The time the panic button must be pressed before an alarm message is sent out. Divide the value in milliseconds by 10.</p><p>In case of 0, send an alarm message immediatelyIn case of 1 - 255, send an alarm message after this value * 10 ms</p><p>Default is 1 second.</p>
+        ]]></description>
+        <default>100</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_3_1" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>3: Min LED on time after panic</label>
+        <description><![CDATA[
+Minimum time that LED will be on after an alarm message<br /> <h1>Overview</h1><p>Specifies the minimum time the LED is on after an alarm message has been sent.  Divide the value in milliseconds by 10.</p>
+        ]]></description>
+        <default>100</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_4_1" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>4: Buttons mapped</label>
+        <description><![CDATA[
+Specifies what message will be sent in case of a key is pressed<br /> <h1>Overview</h1><p><b><i>Alarm mode</i> if 0: <br /></b>SOS button sends an ALARM_REPORT to nodes in group 1 <br />LOCK button sends a BASIC_SET with value 255 to nodes in group 1<br />UNLOCK button sends a BASIC_SET with value 0 to nodes in group 1<br /></p><p><b><i>Control mode</i> if 1-255:<br /></b>SOS button sends a BASIC_SET with value 255 to nodes in group 1<br />LOCK button sends a BASIC_SET with value 255 to nodes in group 2<br />UNLOCK button sends a BASIC_SET with value 0 to nodes in group 2<b><br /></b></p><p><br /></p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_5_1" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>5: Min time to press control buttons</label>
+        <description><![CDATA[
+Minimum time the control buttons must be pressed before a message is sent<br /> <h1>Overview</h1><p>Specifies the minimum time the lock and unlock buttons must be pressed, before a control message is sent to the controller. [<i>Developer Note: the manual suggests that this applies to all buttons, but it should be more logical that the only the lock and unlock is meant. This must be tested</i>]</p><p>Default is 10 (that is 100 ms)</p>
+        ]]></description>
+        <default>10</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_6_1" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>6: Min LED on time after control</label>
+        <description><![CDATA[
+Minimum time that LED will be on after a control message<br /> <h1>Overview</h1><p>The time the LED will be on after a control message has been sent out. Divide the value required in milliseconds by 10.</p><p>In case of 0, LED will be one while sending the message<br />In case of 1 - 255, LED will be on during send time + <i>this value </i>* 10 ms.<br /><br /> Default is 50 (500 ms)</p>
+        ]]></description>
+        <default>50</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Alarm</label>
+        <description><![CDATA[
+Alarm mode group<br /> <h1>Overview</h1><p>This group is used for the alarm mode. <br />&lt;UL&gt;<br />&lt;LI&gt;Pressing the SOS button or the lock and unlock button will generate an message in group 1 . &lt;/LI&gt;<br />&lt;LI&gt;Pressing lock and unlock only generates a  message in group 1 when in alarm mode&lt;/LI&gt;<br />&lt;/UL&gt;</p>
+        ]]></description>
+        <multipleLimit>8</multipleLimit>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: Control</label>
+        <description><![CDATA[
+lock and unlock button report group in control mode<br /> <h1>Overview</h1><p>Lock and unlock button are reported in group 2, when config parameter 4 is set to a value other than 0 (control mode).  <br />In control mode, SOS button is reported in group 1.</p>
+        ]]></description>
+        <multipleLimit>8</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

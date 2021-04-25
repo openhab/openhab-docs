@@ -3,7 +3,7 @@ id: omnilink
 label: HAI by Leviton OmniLink
 title: HAI by Leviton OmniLink - Bindings
 type: binding
-description: "This binding integrates the [Omni and Lumina](http://www.leviton.com/en/products/security-automation/automation-av-controllers/omni-security-systems) line of home automation systems."
+description: "This binding integrates the [Omni and Lumina](https://www.leviton.com/en/products/security-automation/automation-av-controllers/omni-security-systems) line of home automation systems."
 since: 3x
 logo: images/addons/omnilink.png
 install: manual
@@ -15,7 +15,7 @@ install: manual
 
 # HAI by Leviton OmniLink Binding
 
-This binding integrates the [Omni and Lumina](http://www.leviton.com/en/products/security-automation/automation-av-controllers/omni-security-systems) line of home automation systems.
+This binding integrates the [Omni and Lumina](https://www.leviton.com/en/products/security-automation/automation-av-controllers/omni-security-systems) line of home automation systems.
 At its core the Omni is a hardware board that provides security and access features.
 It connects to many other devices through serial ports or wired contacts and exposes them through a single TCP based API.
 
