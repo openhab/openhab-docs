@@ -231,6 +231,33 @@
 		<state pattern="%.1f %unit%" readOnly="true" />
 	</channel-type>
 
+    <!-- Metering Instantaneous Demand -->
+    <channel-type id="metering_instantdemand">
+        <item-type>Number</item-type>
+        <label>Instantaneous Demand</label>
+        <description>The instantaneous demand from the metering system</description>
+        <category>Number</category>
+        <autoUpdatePolicy>veto</autoUpdatePolicy>
+    </channel-type>
+
+    <!-- Metering Summation Delivered -->
+    <channel-type id="metering_sumdelivered">
+        <item-type>Number</item-type>
+        <label>Summation Delivered</label>
+        <description>The total delivered from the metering system</description>
+        <category>Number</category>
+        <autoUpdatePolicy>veto</autoUpdatePolicy>
+    </channel-type>
+
+    <!-- Metering Summation Received -->
+    <channel-type id="metering_sumreceived">
+        <item-type>Number</item-type>
+        <label>Summation Delivered</label>
+        <description>The total delivered from the metering system</description>
+        <category>Number</category>
+        <autoUpdatePolicy>veto</autoUpdatePolicy>
+    </channel-type>
+
 	<!-- Occupancy sensor -->
 	<channel-type id="sensor_occupancy">
 		<item-type>Switch</item-type>
@@ -256,7 +283,7 @@
         <description>Sets the level of the light</description>
         <category>Light</category>
         <autoUpdatePolicy>veto</autoUpdatePolicy>
-    </channel-type>
+    </channel-type>    
 
     <!-- Thermostat Local Temperature -->
     <channel-type id="thermostat_localtemp">

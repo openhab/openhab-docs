@@ -8,17 +8,24 @@ The ZigBee binding supports an interface to a wireless ZigBee home automation ne
 
 A ZigBee Coordinator is the network controller, and is therefore the heart of the ZigBee network. It also acts as the trust centre to control security access to the network.
 
-Coordinators need to be installed manually and the serial port (```zigbee_port```) and baud rate (```zigbee_baud```) must be set. These are set to match the configuration that the dongle is in. Should you wish to use a different baud rate than the default speed of the device (get default baud rate from the device manual) , you must change the configuration of the dongle using some other, and then configure the binding to match your change. If in doubt, you should leave the settings at their default values which should work in most cases.
+#### Configuring a coordinator
+Coordinators need to be installed manually and the serial port (`zigbee_port`) and baud rate (`zigbee_baud`) must be set. These are set to match the configuration that the dongle is in. Should you wish to use a different baud rate than the default speed of the device (get default baud rate from the device manual) , you must change the configuration of the dongle using some other, and then configure the binding to match your change. If in doubt, you should leave the settings at their default values which should work in most cases.
 
 If you are running on Linux, then you probably need to add the user 'openhab' to the tty group, and enable `EXTRA_JAVA_OPTS` for the serial port your coordinator uses (see [Linux install guide](https://www.openhab.org/docs/installation/linux.html#privileges-for-common-peripherals)). Additionally for Docker users, you will need to pass the serial port through Docker to openHAB (see [Docker install guide](https://www.openhab.org/docs/installation/docker.html#explanation-of-arguments-passed-to-docker))
 
-demo.things:
+##### Configuration via UI (recommended)
+After you have installed the binding, you can add a coordinator via the UI, by navigating to **Settings** > **Things** and clicking on the blue `+` button in the bottom right corner. Then choose the coordinator that matches your dongle. Make sure you check the **Show advanced** box, there are some important settings that otherwise stay hidden. Please refer to the sections [Serial port Configuration](#serial-port-configuration) and [Coordinator Configuration](coordinator-configuration) below for information about the settings for a coordinator.
+
+##### Configuration via config file
+You can also configure the coordinator via an old style Things file. Things files should be placed in `OPENHAB_CONF/things`. Here are some examples for a coordinator congiguration in a `.things` file.
+
+**minimal example:**
 
 ```java
 Thing zigbee:coordinator_cc2531:stick1 "Zigbee USB Stick" [zigbee_port="/dev/ttyACM0", zigbee_baud=38400]
 ```
 
-Extended example:
+**extended example:**
 
 ```java
 Thing zigbee:coordinator_ember:stick "Zigbee USB Stick" [zigbee_port="/dev/ttyUSB-Zigbee", zigbee_baud=57600, zigbee_flowcontrol=2, zigbee_childtimeout=864000, zigbee_concentrator=1, zigbee_meshupdateperiod=86400, zigbee_panid=35637, zigbee_extendedpanid="118E309DE90CC829", zigbee_networkkey="14 c6 a2 c7 fb e0 c3 19 8e 7c 36 30 dc ad a5 96", zigbee_powermode=1, zigbee_txpower=8]
@@ -50,10 +57,10 @@ Note that not all configuration parameters are available with all coordinators.
 
 The key is defined as 16 hexadecimal values. If not defined, this will default to the well known ZigBee HA link key which is required for ZigBee HA 1.2 devices. Do not alter this key if using with a ZigBee HA 1.2 network unless you fully understand the impact.
 
-If defined with the word ```INSTALLCODE:``` before the key, this will create a link key from an install code which may be shorter than 16 bytes.
+If defined with the word `INSTALLCODE:` before the key, this will create a link key from an install code which may be shorter than 16 bytes.
 
-e.g. ```5A 69 67 42 65 65 41 6C 6C 69 61 6E 63 65 30 39```
-e.g. ```INSTALLCODE:00 11 22 33 44 55 66 77```
+e.g. `5A 69 67 42 65 65 41 6C 6C 69 61 6E 63 65 30 39`
+e.g. `INSTALLCODE:00 11 22 33 44 55 66 77`
 
 ##### Network Key (zigbee_networkkey)
 
@@ -103,9 +110,9 @@ If supported, the High RAM concentrator should be used.
 
 The binding is able to search the network to get a list of what devices can communicate with other devices. This is a useful diagnostic feature as it allows users to see the links between devices, and the quality of these links. However, this can generate considerable traffic, and some battery devices may not poll their parents often enough to provide these updates, and users may consider that it is better to reduce the period, or disable this feature.
 
-**Value:** the update period in seconds. ```0``` means "never update". In PaperUI, a drop down list is shown, the options from that list are shown in te table below, with their equivalent values that can be put in a config file.
+**Value:** the update period in seconds. `0` means "never update". In PaperUI, a drop down list is shown, the options from that list are shown in te table below, with their equivalent values that can be put in a config file.
 
-| Paper UI     | Config file |
+| UI           | Config file |
 | ------------ | ------------|
 | _Never_      | `0`         |
 | _5 Minutes_  | `300`       |
@@ -125,10 +132,13 @@ Some coordinators may need to allocate memory to handle each node in the network
 
 Sets the Trust Centre join/rejoin mode.
 
-* TC_JOIN_DENY: Deny all joins.
-* TC_JOIN_SECURE: Allow only secure joining. Devices should join with the TC Link Key or a Device Specific Link Key via an install code.
-* TC_JOIN_INSECURE: Allow all joins.
-* TC_JOIN_INSTALLCODE: Only join with install code. Devices attempting to join with the TC Link Key will be rejected.
+| enumeration           | label             | explanation   |
+| --------------------- | ----------------- | ------------- |
+| `TC_JOIN_DENY`        | Deny all joins.   |               |
+| `TC_JOIN_SECURE`      | Allow only secure joining. | Devices should join with the TC Link Key or a Device Specific Link Key via an install code.
+| `TC_JOIN_INSECURE`    | Allow all joins.  |               | 
+| `TC_JOIN_INSTALLCODE` | Only join with install code. | Devices attempting to join with the TC Link Key will be rejected.
+
 
 #### Supported Coordinators
 
@@ -137,17 +147,17 @@ The following coordinators are known to be supported.
 | Name and Link              | Coordinator | Configuration | Comment |
 |----------------------------|-------------|---------------|---------|
 |[Texas Instruments CC2531EMK](http://www.ti.com/tool/cc2531emk)|[CC2531](#cc2531-coordinator)||Needs extra hardware and correct firmware (might be hard to find) for flashing.<br>There are also cheap copies of the CC2531 Stick available on eBay, Aliexpress, etc. like [this](https://de.aliexpress.com/item/Drahtlose-Zigbee-CC2531-Sniffer-software-protokoll-analyse-Bareboard-Paket-Protokoll-Analyzer-Modul-Usb-schnittstelle-Dongle-Erfassen/32852226435.html) and a module to flash the firmware like [this](https://de.aliexpress.com/item/SmartRF04EB-CC1110-CC2530-ZigBee-Module-USB-Downloader-Emulator-MCU-M100/32673666126.html) including a [connector board](https://de.aliexpress.com/item/CC2531-CC2540-Zigbee-Sniffer-software-protokoll-analyse-Wireless-Board-Bluetooth-BLE-4-0-Dongle-Capture-Modul/32869263224.html)<br>Also CC2530, CC2538 or CC2650 may work with the correct firmware but are not suggested|
-|[Bitron Video ZigBee USB Funkstick](http://www.bitronvideo.eu/index.php/produkte/smart-home-produkte/zb-funkstick/)|[Ember](#ember-ezsp-ncp-coordinator)|115200bps<br>Hardware flow control<br>High RAM||
-|[Elelabs ELU013/ELR023](https://elelabs.com/shop/)|[Ember](#ember-ezsp-ncp-coordinator)|115200bps<br>Hardware flow control<br>High RAM| Both the stick and the hat can be upgraded without additional hardware, firmware available [here](https://github.com/Elelabs/elelabs-zigbee-ezsp-utility).|
-|[Cortet EM358 USB Stick](https://www.cortet.com/iot-hardware/cortet-usb-sticks/em358-usb-stick)|[Ember](#ember-ezsp-ncp-coordinator)|57600bps<br>Software flow control<br>High RAM| |
-|[Nortek Security & Control HUSBZB-1](https://nortekcontrol.com/products/2gig/husbzb-1-gocontrol-quickstick-combo/)|[Ember](#ember-ezsp-ncp-coordinator)|57600bps<br>Software flow control<br>High RAM|Stick contains both Z-Wave and ZigBee. |
+|[Bitron Video ZigBee USB Funkstick](http://www.bitronvideo.eu/index.php/produkte/smart-home-produkte/zb-funkstick/)|[Ember](#ember-ezsp-ncp-coordinator)|115200bps<br>Hardware&nbsp;flow&nbsp;control<br>High RAM||
+|[Elelabs ELU013/ELR023](https://elelabs.com/shop/)|[Ember](#ember-ezsp-ncp-coordinator)|115200bps<br>Hardware&nbsp;flow&nbsp;control<br>High RAM| Both the stick and the hat can be upgraded without additional hardware, firmware available [here](https://github.com/Elelabs/elelabs-zigbee-ezsp-utility).|
+|[Cortet EM358 USB Stick](https://www.cortet.com/iot-hardware/cortet-usb-sticks/em358-usb-stick)|[Ember](#ember-ezsp-ncp-coordinator)|57600bps<br>Software&nbsp;flow&nbsp;control<br>High RAM| |
+|[Nortek Security & Control HUSBZB-1](https://nortekcontrol.com/products/2gig/husbzb-1-gocontrol-quickstick-combo/)|[Ember](#ember-ezsp-ncp-coordinator)|57600bps<br>Software&nbsp;flow&nbsp;control<br>High RAM|Stick contains both Z-Wave and ZigBee. |
 |[Telegesis ETRX357USB ZigBee® USB Stick](https://www.silabs.com/products/wireless/mesh-networking/telegesis-modules-gateways/etrx3-zigbee-usb-sticks)|[Telegesis](#telegesis-etrx3)|||
 |[QIVICON ZigBee-Funkstick](https://www.qivicon.com/de/produkte/produktinformationen/zigbee-funkstick/)|[Telegesis](#telegesis-etrx3)||Only working on Linux devices|
 |[Digi XStick](https://www.digi.com/products/xbee-rf-solutions/boxed-rf-modems-adapters/xstick)|[XBee](#digi-xbee-x-stick)|||
 
 #### CC2531 Coordinator
 
-This is the Texas Instruments ZNP stack. The thing type is ```coordinator_cc2531```.
+This is the Texas Instruments ZNP stack. The thing type is `coordinator_cc2531`.
 
 ##### CC2531 - Firmware
 
@@ -172,29 +182,29 @@ Extract and install the TI Flash Programmer, connect the CC-Debugger trough USB,
 
 #### Ember EZSP NCP Coordinator
 
-The Ember EZSP NCP (Network Co-Processor) supports the Silabs EM358 and EFR32 (MightyGecko) dongles with the standard NCP firmware. The thing type is ```coordinator_ember```.
+The Ember EZSP NCP (Network Co-Processor) supports the Silabs EM358 and EFR32 (MightyGecko) dongles with the standard NCP firmware. The thing type is `coordinator_ember`.
 
 Note that there are generally two versions of the Ember NCP firmware in use. One operates at a baud rate of 115200 with RTS/CTS flow control (i.e. hardware flow control), the other operates at a baud rate of 57600, and XON/XOFF flow control (i.e. software flow control). If you are programming your own stick (e.g. the CEL stick) then it should be advisable to use the hardware flow control version - many commercial sticks seem to use the lower speed and software flow control (e.g. Bitron and Nortek HUSBZB-1).
 
 If the usb dongle is not recognized, it might be necessary to make the dongle's device id known to the CP240x driver by Silicon Labs:
 
-- Find the device id (as listed by the command ```lsusb```). For the Bitron Funkstick that might be 10c4 8b34.
+- Find the device id (as listed by the command `lsusb`). For the Bitron Funkstick that might be 10c4 8b34.
 - Unplug the device
-- Enter the following commands (replace the id 10c4 8b34 with the one listed by  ```lsusb```):
-```
-sudo -s
-modprobe cp210x
-echo 10c4 8b34 > /sys/bus/usb-serial/drivers/cp210x/new_id
-```
+- Enter the following commands (replace the id 10c4 8b34 with the one listed by `lsusb`):
+  ```
+  sudo -s
+  modprobe cp210x
+  echo 10c4 8b34 > /sys/bus/usb-serial/drivers/cp210x/new_id
+  ```
 - Plug in the dongle. It should now be recognized properly as ttyUSBx.
 
 #### Telegesis ETRX3
 
-The thing type is ```coordinator_telegesis```.
+The thing type is `coordinator_telegesis`. Note that this dongle may not support all Zigbee 3.0 devices.
 
 #### Digi XBee X-Stick
 
-The thing type is ```coordinator_xbee```. Other XBee S2C devices should also be supported.
+The thing type is `coordinator_xbee`. Other XBee S2C devices should also be supported.
 
 The XBee must be run with API mode firmware and not the AT firmware.
 
@@ -249,9 +259,9 @@ The following devices have been tested by openHAB users with the binding. The ab
 
 ## Discovery
 
-Discovery is performed by putting the binding into join mode (by starting an inbox search), and then putting the device into join mode. Generally, it is best to reset the device to do this. Resetting the device ensures that it is no longer joined to a previous network, will ensure it is awake if it is a battery device, and will restart any channel and network search that the device may perform.
+Discovery is performed by putting the binding into join mode (by starting an inbox search), and then putting the device into join mode. Generally, it is best to reset the device to do this. Resetting the device ensures that it is no longer joined to a previous network, will ensure it is awake if it is a battery device, and will restart any channel and network search that the device may perform. Consult the manual of the device at hand to see how to reset it, this differs from device to device.
  
-Once the binding is installed, and an adapter is added, it automatically reads all devices that are set up on the ZigBee controller and puts them in the Inbox. When the binding is put into discovery mode via the user interface, the network will have join enabled for 60 seconds.
+Once the binding is installed, and an adapter is added, it automatically reads all devices that are set up on the ZigBee controller and puts them in the Inbox. When the binding is put into discovery mode via the user interface, the network will have join enabled for 60 seconds. You can put it in discovery mode via the **Scan** button in the user interface. This can be found after you click the blue **+** button in the bottom right corder of the **Things** screen and then select the **ZigBee Binding**.
 
 The binding will store the list of devices that have joined the network locally between restarts to allow them to be found again later. A ZigBee coordinator does not store a list of known devices, so rediscovery of devices following a restart may not be seemless if the dongle is moved to another system.
 
@@ -269,7 +279,7 @@ are not standard in their format, although you should be able to find the addres
 displayed text.
 
 The install code must be entered into the coordinator settings before starting the discovery process.
-The format is ```IEEE Address:Install Code``` in the following format -:
+The format is `IEEE Address:Install Code` in the following format -:
 
 ```
 AAAAAAAAAAAAAAAA:CCCC-CCCC-CCCC-CCCC-CCCC-CCCC-CCCC-CCCC-DDDD
@@ -289,7 +299,7 @@ The binding will attempt to automatically detect new devices, giving them a type
 
 ### Thing Types
 
-Currently all ZigBee things have the same thing type of ```zigbee_device```.
+Currently all ZigBee things have the same thing type of `zigbee_device`.
 
 ### Channel Types
 
@@ -297,34 +307,49 @@ A set of channels will be created depending on what clusters and endpoints a dev
 
 The following channels are supported -:
 
-| Channel UID | ZigBee Cluster | Type     |Description                  |
-|-------------|----------------|----------|-----------------------------|
-| battery-level | ```POWER_CONFIGURATION``` (0x0001) | Number |   |
-| battery_voltage | ```POWER_CONFIGURATION``` (0x0001) | Number:ElectricPotential |   |
-| color_color | ```COLOR_CONTROL``` (0x0300) | Color |   |
-| color_temperature | ```COLOR_CONTROL``` (0x0300) | Dimmer |   |
-| electrical_activepower | ```ELECTRICAL_MEASUREMENT``` (0x0B04) | Number:Power |   |
-| electrical_rmscurrent | ```ELECTRICAL_MEASUREMENT``` (0x0B04)  | Number:ElectricCurrent |   |
-| electrical_rmsvoltage | ```ELECTRICAL_MEASUREMENT``` (0x0B04)  | Number:ElectricPotential |   |
-| binaryinput | ```BINARY_INPUT__BASIC``` (0x000F)  | Switch |   |
-| ias_codetector | ```IAS_ZONE``` (0x0500)  | Switch |   |
-| ias_contactportal1 | ```IAS_ZONE``` (0x0500) | Switch |  |
-| ias_fire | ```IAS_ZONE``` (0x0500)  | Switch |   |
-| ias_motionintrusion | ```IAS_ZONE``` (0x0500) | Switch |  |
-| ias_motionpresence | ```IAS_ZONE``` (0x0500) | Switch |  |
-| ias_standard_system | ```IAS_ZONE``` (0x0500) | Switch |  |
-| ias_water | ```IAS_ZONE``` (0x0500) | Switch |  |
-| ias_movement | ```IAS_ZONE``` (0x0500) | Switch |  |
-| ias_vibration | ```IAS_ZONE``` (0x0500) | Switch |  |
-| ias_tamper | ```IAS_ZONE``` (0x0500) | Switch |  |
-| measurement_illuminance | ```ILLUMINANCE_MEASUREMENT``` (0x0400) | Number |   |
-| measurement_pressure | ```PRESSURE_MEASUREMENT``` (0x0403) | Number:Pressure |   |
-| measurement_relativehumidity | ```RELATIVE_HUMIDITY_MEASUREMENT``` (0x0405) | Number |   |
-| measurement_temperature | ```TEMPERATURE_MEASUREMENT``` (0x0402) | Number:Temperature |   |
-| sensor_occupancy | ```OCCUPANCY_SENSING``` (0x0406) | Switch  |  |
-| switch_dimmer | ```LEVEL_CONTROL``` (0x0008) | Dimmer |   |
-| switch_onoff | ```ON_OFF``` (0x0006) | Switch  |
-| warning_device | ```IAS_WD``` (0x0502) | String  |
+| Channel UID                  | ZigBee Cluster                           | Type                     | Description |
+|------------------------------|------------------------------------------|--------------------------|-------------|
+| battery-level                | `POWER_CONFIGURATION` (0x0001)           | Number                   |             |
+| battery_voltage              | `POWER_CONFIGURATION` (0x0001)           | Number:ElectricPotential |             |
+| binaryinput                  | `BINARY_INPUT__BASIC` (0x000F)           | Switch                   |             |
+| color_color                  | `COLOR_CONTROL` (0x0300)                 | Color                    |             |
+| color_temperature            | `COLOR_CONTROL` (0x0300)                 | Dimmer                   |             |
+| door_state                   | `DOOR_LOCK` (0x0101)                     | Switch                   |             |
+| electrical_activepower       | `ELECTRICAL_MEASUREMENT` (0x0B04)        | Number:Power             |             |
+| electrical_rmscurrent        | `ELECTRICAL_MEASUREMENT` (0x0B04)        | Number:ElectricCurrent   |             |
+| electrical_rmsvoltage        | `ELECTRICAL_MEASUREMENT` (0x0B04)        | Number:ElectricPotential |             |
+| fancontrol                   | `FAN_CONTROL` (0x0202)                   | Number                   |             |
+| ias_codetector               | `IAS_ZONE` (0x0500)                      | Switch                   |             |
+| ias_contactportal1           | `IAS_ZONE` (0x0500)                      | Switch                   |             |
+| ias_fire                     | `IAS_ZONE` (0x0500)                      | Switch                   |             |
+| ias_motionintrusion          | `IAS_ZONE` (0x0500)                      | Switch                   |             |
+| ias_motionpresence           | `IAS_ZONE` (0x0500)                      | Switch                   |             |
+| ias_standard_system          | `IAS_ZONE` (0x0500)                      | Switch                   |             |
+| ias_water                    | `IAS_ZONE` (0x0500)                      | Switch                   |             |
+| ias_movement                 | `IAS_ZONE` (0x0500)                      | Switch                   |             |
+| ias_vibration                | `IAS_ZONE` (0x0500)                      | Switch                   |             |
+| ias_tamper                   | `IAS_ZONE` (0x0500)                      | Switch                   |             |
+| ias_tamper                   | `IAS_ZONE` (0x0500)                      | Switch                   |             |
+| measurement_illuminance      | `ILLUMINANCE_MEASUREMENT` (0x0400)       | Number                   |             |
+| measurement_pressure         | `PRESSURE_MEASUREMENT` (0x0403)          | Number:Pressure          |             |
+| measurement_relativehumidity | `RELATIVE_HUMIDITY_MEASUREMENT` (0x0405) | Number                   |             |
+| measurement_temperature      | `TEMPERATURE_MEASUREMENT` (0x0402)       | Number:Temperature       |             |
+| metering_instantdemand       | `METERING` (0x0702)                      | Number                   |             |
+| metering_sumdelivered        | `METERING` (0x0702)                      | Number                   |             |
+| metering_sumreceived         | `METERING` (0x0702)                      | Number                   |             |
+| sensor_occupancy             | `OCCUPANCY_SENSING` (0x0406)             | Switch                   |             |
+| switch_dimmer                | `LEVEL_CONTROL` (0x0008)                 | Dimmer                   |             |
+| switch_onoff                 | `ON_OFF` (0x0006)                        | Switch                   |             |
+| thermostat_localtemp         | `THERMOSTAT` (0x0201)                    | Number                   |             |
+| thermostat_occupiedcooling   | `THERMOSTAT` (0x0201)                    | Number                   |             |
+| thermostat_occupiedheating   | `THERMOSTAT` (0x0201)                    | Number                   |             |
+| thermostat_outdoortemp       | `THERMOSTAT` (0x0201)                    | Number                   |             |
+| thermostat_runningmode       | `THERMOSTAT` (0x0201)                    | Number                   |             |
+| thermostat_systemmode        | `THERMOSTAT` (0x0201)                    | Number                   |             |
+| thermostat_unoccupiedcooling | `THERMOSTAT` (0x0201)                    | Number                   |             |
+| thermostat_unoccupiedheating | `THERMOSTAT` (0x0201)                    | Number                   |             |
+| warning_device               | `IAS_WD` (0x0502)                        | String                   |             |
+| windowcovering_lift          | `WINDOW_COVERING` (0x0102)               | Rollershutter            |             |
 
 
 ### Updates
@@ -363,13 +388,13 @@ Also note that solutions integrating the binding can add implementations of type
 
 ## Channels triggered event & rules
 
-Some devices like the Philips Hue Dimmer can be discovered and added to openHAB through this binding but will not allow the Items to be created in PaperUI. These channels are set as Triggers and will generate output in the events.log that looks similar to this:
+Some devices like the Philips Hue Dimmer can be discovered and added to openHAB through this binding but will not allow the Items to be created in the UI. These channels are set as Triggers and will generate output in the events.log that looks similar to this:
 
 ```
 2019-03-08 20:51:18.609 [vent.ChannelTriggeredEvent] - zigbee:philips_rwl021:AAAAAAAA:BBBBBBBBBBBBBBBB:buttonI triggered SHORT_PRESSED
 ```
-To utilize these events, no new Item is required and the rule can be used to directly trigger off of this event.
-The Channel that should be used can be copied directly from PaperUI under the Channels-section of the Thing or can be read from the events.log
+To utilize these events, no new Item is required, instead a Rule can be used to directly trigger off of this event.
+The Channel that should be used can be copied directly from the UI under the Channels-section of the Thing or can be read from the events.log
 See the following example on how to integrate the Channel triggered event for a Hue Dimmer:
 
 ```java
@@ -402,7 +427,9 @@ log:set debug com.zsmartsystems.zigbee
 log:set info com.zsmartsystems.zigbee.dongle.ember.internal.ash
 ```
 
-This will log data into the standard openhab.log file. There is an [online log viewer](https://opensmarthouse.org/utilities/logviewer/zigbee/) available for viewing the logs.
+> Karaf commands can be issued via the openHAB console. On a typical install, you can start this console via `openhab-cli console`. This will start the console with the default user `openhab`, which has `habopen` as default password.
+
+This will log data into the standard `openhab.log` file. There is an [online log viewer](https://opensmarthouse.org/utilities/logviewer/zigbee/) available for viewing the logs.
 
 Note that logs can only show what is happening at a high level - it can't show all data exchanges between the device and the coordinator - just what the coordinator sends to the binding. For this reason it can be difficult to debug issues where devices are not joining the network, or other low level issues need resolving. In such cases a network sniffer log is required, which requires additional hardware and software.
 
@@ -423,6 +450,6 @@ Pairing may require multiple attempts. The following issues have been observed:
 These devices have an unusually long, and non-standard, sleep time. Because of this, some routers are not able to properly keep track of them, and the devices lose connection to the network. Router devices from Centralite, General Electrics, Iris, Ledvance/OSRAM/Sylvania, PEQ, Securify, SmartThings are known to not work with Xiaomi/Aqara devices.
 Better results can be achieved by using IKEA, Nue/3A Home, _some_ OSRAM/Sylvania, XBee series 2 and 3, and CC2531 with router firmware.
 
-### External references
+#### External references
 
 [Hubitat forum](https://community.hubitat.com/t/xiaomi-aqara-devices-pairing-keeping-them-connected/623) - Xiaomi/Aqara incompatibilities
