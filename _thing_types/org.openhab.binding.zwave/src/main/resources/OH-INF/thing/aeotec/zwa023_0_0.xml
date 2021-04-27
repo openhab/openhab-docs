@@ -315,7 +315,10 @@ Automatically turn switch ON some time after turned OFF<br /> <h1>Overview</h1><
 
       <!-- ASSOCIATION DEFINITIONS -->
       <parameter name="group_1" type="text" groupName="association" multiple="true">
-        <label>1: Lideline</label>
+        <label>1: Lifeline</label>
+        <description><![CDATA[
+<br /> <h1>Overview</h1><p><br /></p>
+        ]]></description>
         <multipleLimit>5</multipleLimit>
       </parameter>
 
