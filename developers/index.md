@@ -94,6 +94,7 @@ This script is specific for binding addons. Follow these steps to generate your 
     ```bash
     create_openhab_binding_skeleton.cmd MyNewBinding "<Author>" <GitHubUsername>
     ```
+    Add your binding to the `bundles/pom.xml` file
 
     _Use your full name for `<Author>`_.
 
@@ -112,6 +113,8 @@ This script is specific for binding addons. Follow these steps to generate your 
    - `-o`: Won't update any dependencies.
    - `-DskipChecks`: Skips the static analysis checks
    - `-DskipTests`: Skips the unit tests
+   - `-Dspotless.check.skip=true` : Skips the spotless file formatting checks
+   - `-Dohc.version=3.0.2` : The version of openhab you are building for
 
 1. To start your new binding it's a good practise to commit your code on a new git branch:
 
@@ -124,3 +127,12 @@ This script is specific for binding addons. Follow these steps to generate your 
 Now you can start developing your NEW binding. We're looking forward to your pull request!
 
 In case the new binding has dependencies to other bundles/libraries see [Adding Dependencies](buildsystem.html#adding-dependencies) for more information.
+
+If developing on Windows, git will convert line endings from LF to CRLF automatically. The repo uses LF,
+and spotless will object, and throw errors. If you use `mnv spotless:apply` to fix formatting, it will add CRLF
+to all files dirtying the entire branch. Adding a `.gitattributes` file to the openhab-addons folder with the
+following will tell git and spotless to use LF endings:
+
+```text
+* text eol=lf
+```
