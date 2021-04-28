@@ -94,6 +94,7 @@ This script is specific for binding addons. Follow these steps to generate your 
     ```bash
     create_openhab_binding_skeleton.cmd MyNewBinding "<Author>" <GitHubUsername>
     ```
+    
     Add your binding to the `bundles/pom.xml` file
 
     _Use your full name for `<Author>`_.
