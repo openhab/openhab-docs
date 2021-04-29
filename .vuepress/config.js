@@ -23,7 +23,7 @@ module.exports = {
     ['link', { rel: 'apple-touch-icon', href: `/apple-icon.png` }],
     // ['link', { rel: 'stylesheet', href: `https://fonts.googleapis.com/css?family=Open+Sans:300,400` }],
     ['meta', { property: 'og:type', content: 'website' }],
-    ['meta', { property: 'og:image', content: 'https://www.openhab.org/og-image.png' }],
+    ['meta', { property: 'og:image', content: 'https://www.openhab.org/openhab-logo-square.svg' }],
     // ['meta', { property: 'og:title', content: 'openHAB' }],
     // ['meta', { property: 'og:description', content: 'a vendor and technology agnostic open source automation software for your home' }],
     // ['script', { src: `https://identity.netlify.com/v1/netlify-identity-widget.js` }]
@@ -49,7 +49,7 @@ module.exports = {
       if ((str.match(/\brule\b/) && str.match(/\bwhen\b/) && str.match(/\bthen\b/) && str.match(/\bend\b/)) ||
         str.match(/received update/) || str.match(/changed.*(?:from|to)/) || str.match(/Channel.*triggered/) ||
         str.match(/\bval\b/) || str.match(/\bvar\b/) /* <-- dangerous! */) {
-        
+
         lang = 'rules'
       }
       if (lang === 'shell' || lang === 'sh' || lang === 'shell_session') lang = 'bash'
@@ -71,7 +71,7 @@ module.exports = {
   // },
   serviceWorker: false,
   themeConfig: {
-    logo: `/openhab-logo.png`,
+    logo: `/openhab-logo.svg`,
     // repo: 'openhab',
     editLinks: false,
     activeHeaderLinks: false,
