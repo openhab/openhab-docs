@@ -18,7 +18,7 @@ h1.welcome {
 }
 </style>
 
-<img src="/openhab-logo-square.png" width="150" height="150" class="intro-logo" />
+<img src="/openhab-logo-square.svg" width="150" height="150" class="intro-logo" />
 
 <h1 class="welcome">Welcome!</h1>
 
