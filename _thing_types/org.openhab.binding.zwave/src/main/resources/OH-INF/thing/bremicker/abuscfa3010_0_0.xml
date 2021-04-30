@@ -156,16 +156,6 @@ This parameter defines the motor force, when turning the lock.<br /> <h1>Overvie
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_153_4" type="integer" groupName="configuration" readOnly="true"
-                 min="0" max="16700000">
-        <label>153: Driving Cycles Interlocked</label>
-        <description><![CDATA[
-Counter, how often in the direction of "Locked" navigated was.<br /> <h1>Overview</h1><p>Counter, how  often travel in „Locked“ direction.</p>
-        ]]></description>
-        <default>0</default>
-        <limitToOptions>false</limitToOptions>
-      </parameter>
-
       <parameter name="config_250_1" type="integer" groupName="configuration" readOnly="true">
         <label>250: Lock Status</label>
         <description><![CDATA[
@@ -184,7 +174,7 @@ This parameter reports the status of the lock.<br /> <h1>Overview</h1><p>Status 
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_251_4" type="integer" groupName="configuration" readOnly="true"
+      <parameter name="config_251_3" type="integer" groupName="configuration" readOnly="true"
                  min="0" max="16700000">
         <label>251: Drive Cycles Trap</label>
         <description><![CDATA[
@@ -194,11 +184,21 @@ Counter, how often the trap is activated was.<br /> <h1>Overview</h1><p>Counter,
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_252_4" type="integer" groupName="configuration" readOnly="true"
+      <parameter name="config_252_3" type="integer" groupName="configuration" readOnly="true"
                  min="0" max="16700000">
         <label>252: Driving Cycles Unlocked</label>
         <description><![CDATA[
 Counter, how often in the direction of Unlocked navigated was.<br /> <h1>Overview</h1><p>Counter, how often travel in „Unlocked“ direction.</p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_253_3" type="integer" groupName="configuration" readOnly="true"
+                 min="0" max="16700000">
+        <label>253: Driving Cycles Interlocked</label>
+        <description><![CDATA[
+Counter, how often in the direction of "Locked" navigated was.<br /> <h1>Overview</h1><p>Counter, how  often travel in „Locked“ direction.</p>
         ]]></description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>

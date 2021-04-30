@@ -187,7 +187,7 @@ This will change the communication method and the Mi IO binding can communicate 
 
 # Mi IO Devices
 
-Currently the miio binding supports more than 280 different models.
+Currently the miio binding supports more than 290 different models.
 
 | Device                       | ThingType        | Device Model           | Supported | Remark     |
 |------------------------------|------------------|------------------------|-----------|------------|
@@ -314,6 +314,10 @@ Currently the miio binding supports more than 280 different models.
 | Roborock T7 Pro              | miio:vacuum      | [roborock.vacuum.a09](#roborock-vacuum-a09) | Yes       |            |
 | Roborock S6 MaxV             | miio:vacuum      | [roborock.vacuum.a10](#roborock-vacuum-a10) | Yes       |            |
 | Roborock T7                  | miio:vacuum      | [roborock.vacuum.a11](#roborock-vacuum-a11) | Yes       |            |
+| Roborock T7S                 | miio:vacuum      | [roborock.vacuum.a14](#roborock-vacuum-a14) | Yes       |            |
+| Roborock S7                  | miio:vacuum      | [roborock.vacuum.a15](#roborock-vacuum-a15) | Yes       |            |
+| Roborock S4 Max              | miio:vacuum      | [roborock.vacuum.a19](#roborock-vacuum-a19) | Yes       |            |
+| Roborock T7S Plus            | miio:vacuum      | [roborock.vacuum.a23](#roborock-vacuum-a23) | Yes       |            |
 | Xiaowa C1                    | miio:vacuum      | [roborock.vacuum.c1](#roborock-vacuum-c1) | Yes       |            |
 | Roborock Xiaowa E Series Vacuum v2 | miio:unsupported | roborock.vacuum.e2     | No        |            |
 | Mi Robot Vacuum 1S           | miio:vacuum      | [roborock.vacuum.m1s](#roborock-vacuum-m1s) | Yes       |            |
@@ -418,6 +422,7 @@ Currently the miio binding supports more than 280 different models.
 | Yeelight LED Bulb (Color)    | miio:basic       | [yeelink.light.color2](#yeelink-light-color2) | Yes       |            |
 | Mi LED Smart Bulb (White and Color) | miio:basic       | [yeelink.light.color3](#yeelink-light-color3) | Yes       |            |
 | Yeelight LED Bulb 1S（Color）  | miio:basic       | [yeelink.light.color4](#yeelink-light-color4) | Yes       |            |
+| Mi Smart LED Bulb Essential (White and Color) | miio:basic       | [yeelink.light.color5](#yeelink-light-color5) | Yes       |            |
 | Yeelight Smart LED Bulb 1SE (color) | miio:basic       | [yeelink.light.colora](#yeelink-light-colora) | Yes       |            |
 | Yeelight LED Bulb (Tunable)  | miio:basic       | [yeelink.light.ct2](#yeelink-light-ct2) | Yes       |            |
 | Mi LED Desk Lamp             | miio:basic       | [yeelink.light.lamp1](#yeelink-light-lamp1) | Yes       |            |
@@ -428,6 +433,7 @@ Currently the miio binding supports more than 280 different models.
 | Yeelight                     | miio:basic       | [yeelink.light.lamp6](#yeelink-light-lamp6) | Yes       |            |
 | Yeelight LED Light Sensor Desk Lamp V1 | miio:basic       | [yeelink.light.lamp7](#yeelink-light-lamp7) | Yes       |            |
 | Yeelight                     | miio:basic       | [yeelink.light.lamp8](#yeelink-light-lamp8) | Yes       |            |
+| Yeelight Screen Light Bar    | miio:basic       | [yeelink.light.lamp15](#yeelink-light-lamp15) | Yes       |            |
 | Yeelight Bulb                | miio:basic       | [yeelink.light.mono1](#yeelink-light-mono1) | Yes       |            |
 | Yeelight White Bulb v2       | miio:basic       | [yeelink.light.mono2](#yeelink-light-mono2) | Yes       |            |
 | Yeelight LED Filament Bulb   | miio:basic       | [yeelink.light.mono5](#yeelink-light-mono5) | Yes       |            |
@@ -904,7 +910,7 @@ e.g. `openhab:send actionCommand 'upd_timer["1498595904821", "on"]'` would enabl
 
 | Channel              | Type                 | Description                              | Comment    |
 |----------------------|----------------------|------------------------------------------|------------|
-| vacuumaction         | String               | Vacuum Action                            | Value mapping ["sweep"="Sweep","stopsweep"="Stop Sweep","dock"="Goto Dock"] |
+| vacuumaction         | String               | Vacuum Action                            | Value mapping ["sweep"="Sweep","stopsweep"="Stop Sweep","dock"="Goto Dock","findme"="Find me","testsound"="Test Sound"] |
 | status               | Number               | Robot Cleaner - Status                   | Value mapping ["1"="Sweeping","2"="Idle","3"="Paused","4"="Error","5"="Go Charging","6"="Charging","7"="Mopping"] |
 | fault                | Number               | Robot Cleaner - Device Fault             |            |
 | battery-level        | Number:Dimensionless | Battery - Battery Level                  |            |
@@ -946,7 +952,7 @@ e.g. `openhab:send actionCommand 'upd_timer["1498595904821", "on"]'` would enabl
 
 | Channel              | Type                 | Description                              | Comment    |
 |----------------------|----------------------|------------------------------------------|------------|
-| vacuumaction         | String               | Vacuum Action                            | Value mapping ["sweep"="Sweep","stopsweep"="Stop Sweep","dock"="Goto Dock"] |
+| vacuumaction         | String               | Vacuum Action                            | Value mapping ["sweep"="Sweep","stopsweep"="Stop Sweep","dock"="Goto Dock","findme"="Find me","testsound"="Test Sound"] |
 | status               | Number               | Robot Cleaner - Status                   | Value mapping ["1"="Sweeping","2"="Idle","3"="Paused","4"="Error","5"="Go Charging","6"="Charging","7"="Mopping"] |
 | fault                | Number               | Robot Cleaner - Device Fault             |            |
 | battery-level        | Number:Dimensionless | Battery - Battery Level                  |            |
@@ -1072,7 +1078,7 @@ e.g. `openhab:send actionCommand 'upd_timer["1498595904821", "on"]'` would enabl
 
 | Channel              | Type                 | Description                              | Comment    |
 |----------------------|----------------------|------------------------------------------|------------|
-| vacuumaction         | String               | Vacuum Action                            | Value mapping ["sweep"="Sweep","stopsweep"="Stop Sweep","dock"="Goto Dock"] |
+| vacuumaction         | String               | Vacuum Action                            | Value mapping ["sweep"="Sweep","stopsweep"="Stop Sweep","dock"="Goto Dock","findme"="Find me","testsound"="Test Sound"] |
 | status               | Number               | Robot Cleaner - Status                   | Value mapping ["1"="Sweeping","2"="Idle","3"="Paused","4"="Error","5"="Go Charging","6"="Charging","7"="Mopping"] |
 | fault                | Number               | Robot Cleaner - Device Fault             |            |
 | battery-level        | Number:Dimensionless | Battery - Battery Level                  |            |
@@ -2843,7 +2849,7 @@ e.g. `openhab:send actionCommand 'upd_timer["1498595904821", "on"]'` would enabl
 | brightness           | Dimmer               | Brightness                               |            |
 | delayoff             | Number:Time          | Shutdown Timer                           |            |
 | colorTemperature     | Number               | Color Temperature                        |            |
-| colorMode            | Number               | Color Mode                               |            |
+| colorMode            | Number               | Color Mode                               | Value mapping ["0"="Default","1"="CT mode","2"="RGB mode","3"="HSV mode","4"="Color Flow mode","5"="Night Light mode"] |
 | rgbColor             | Color                | RGB Color                                |            |
 | name                 | String               | Name                                     |            |
 
@@ -2855,7 +2861,7 @@ e.g. `openhab:send actionCommand 'upd_timer["1498595904821", "on"]'` would enabl
 | brightness           | Dimmer               | Brightness                               |            |
 | delayoff             | Number:Time          | Shutdown Timer                           |            |
 | colorTemperature     | Number               | Color Temperature                        |            |
-| colorMode            | Number               | Color Mode                               |            |
+| colorMode            | Number               | Color Mode                               | Value mapping ["0"="Default","1"="CT mode","2"="RGB mode","3"="HSV mode","4"="Color Flow mode","5"="Night Light mode"] |
 | rgbColor             | Color                | RGB Color                                |            |
 | name                 | String               | Name                                     |            |
 
@@ -2867,7 +2873,7 @@ e.g. `openhab:send actionCommand 'upd_timer["1498595904821", "on"]'` would enabl
 | brightness           | Dimmer               | Brightness                               |            |
 | delayoff             | Number:Time          | Shutdown Timer                           |            |
 | colorTemperature     | Number               | Color Temperature                        |            |
-| colorMode            | Number               | Color Mode                               |            |
+| colorMode            | Number               | Color Mode                               | Value mapping ["0"="Default","1"="CT mode","2"="RGB mode","3"="HSV mode","4"="Color Flow mode","5"="Night Light mode"] |
 | rgbColor             | Color                | RGB Color                                |            |
 | name                 | String               | Name                                     |            |
 
@@ -3240,7 +3246,7 @@ e.g. `openhab:send actionCommand 'upd_timer["1498595904821", "on"]'` would enabl
 | brightness           | Dimmer               | Brightness                               |            |
 | delayoff             | Number:Time          | Shutdown Timer                           |            |
 | colorTemperature     | Number               | Color Temperature                        |            |
-| colorMode            | Number               | Color Mode                               |            |
+| colorMode            | Number               | Color Mode                               | Value mapping ["0"="Default","1"="CT mode","2"="RGB mode","3"="HSV mode","4"="Color Flow mode","5"="Night Light mode"] |
 | rgbColor             | Color                | RGB Color                                |            |
 | name                 | String               | Name                                     |            |
 
@@ -3252,7 +3258,7 @@ e.g. `openhab:send actionCommand 'upd_timer["1498595904821", "on"]'` would enabl
 | brightness           | Dimmer               | Brightness                               |            |
 | delayoff             | Number:Time          | Shutdown Timer                           |            |
 | colorTemperature     | Number               | Color Temperature                        |            |
-| colorMode            | Number               | Color Mode                               |            |
+| colorMode            | Number               | Color Mode                               | Value mapping ["0"="Default","1"="CT mode","2"="RGB mode","3"="HSV mode","4"="Color Flow mode","5"="Night Light mode"] |
 | rgbColor             | Color                | RGB Color                                |            |
 | name                 | String               | Name                                     |            |
 
@@ -3264,7 +3270,7 @@ e.g. `openhab:send actionCommand 'upd_timer["1498595904821", "on"]'` would enabl
 | brightness           | Dimmer               | Brightness                               |            |
 | delayoff             | Number:Time          | Shutdown Timer                           |            |
 | colorTemperature     | Number               | Color Temperature                        |            |
-| colorMode            | Number               | Color Mode                               |            |
+| colorMode            | Number               | Color Mode                               | Value mapping ["0"="Default","1"="CT mode","2"="RGB mode","3"="HSV mode","4"="Color Flow mode","5"="Night Light mode"] |
 | rgbColor             | Color                | RGB Color                                |            |
 | name                 | String               | Name                                     |            |
 
@@ -3276,7 +3282,19 @@ e.g. `openhab:send actionCommand 'upd_timer["1498595904821", "on"]'` would enabl
 | brightness           | Dimmer               | Brightness                               |            |
 | delayoff             | Number:Time          | Shutdown Timer                           |            |
 | colorTemperature     | Number               | Color Temperature                        |            |
-| colorMode            | Number               | Color Mode                               |            |
+| colorMode            | Number               | Color Mode                               | Value mapping ["0"="Default","1"="CT mode","2"="RGB mode","3"="HSV mode","4"="Color Flow mode","5"="Night Light mode"] |
+| rgbColor             | Color                | RGB Color                                |            |
+| name                 | String               | Name                                     |            |
+
+### Mi Smart LED Bulb Essential (White and Color) (<a name="yeelink-light-color5">yeelink.light.color5</a>) Channels
+
+| Channel              | Type                 | Description                              | Comment    |
+|----------------------|----------------------|------------------------------------------|------------|
+| power                | Switch               | Power                                    |            |
+| brightness           | Dimmer               | Brightness                               |            |
+| delayoff             | Number:Time          | Shutdown Timer                           |            |
+| colorTemperature     | Number               | Color Temperature                        |            |
+| colorMode            | Number               | Color Mode                               | Value mapping ["0"="Default","1"="CT mode","2"="RGB mode","3"="HSV mode","4"="Color Flow mode","5"="Night Light mode"] |
 | rgbColor             | Color                | RGB Color                                |            |
 | name                 | String               | Name                                     |            |
 
@@ -3288,7 +3306,7 @@ e.g. `openhab:send actionCommand 'upd_timer["1498595904821", "on"]'` would enabl
 | brightness           | Dimmer               | Brightness                               |            |
 | delayoff             | Number:Time          | Shutdown Timer                           |            |
 | colorTemperature     | Number               | Color Temperature                        |            |
-| colorMode            | Number               | Color Mode                               |            |
+| colorMode            | Number               | Color Mode                               | Value mapping ["0"="Default","1"="CT mode","2"="RGB mode","3"="HSV mode","4"="Color Flow mode","5"="Night Light mode"] |
 | rgbColor             | Color                | RGB Color                                |            |
 | name                 | String               | Name                                     |            |
 
@@ -3391,6 +3409,22 @@ e.g. `openhab:send actionCommand 'upd_timer["1498595904821", "on"]'` would enabl
 | colorMode            | Number               | Color Mode                               |            |
 | name                 | String               | Name                                     |            |
 
+### Yeelight Screen Light Bar (<a name="yeelink-light-lamp15">yeelink.light.lamp15</a>) Channels
+
+| Channel              | Type                 | Description                              | Comment    |
+|----------------------|----------------------|------------------------------------------|------------|
+| power                | Switch               | Power                                    |            |
+| brightness           | Dimmer               | Brightness                               |            |
+| delayoff             | Number:Time          | Shutdown Timer                           |            |
+| colorTemperature     | Number:Temperature   | Color Temperature                        |            |
+| colorMode            | Number               | Color Mode                               | Value mapping ["0"="Default","1"="CT mode","2"="RGB mode","3"="HSV mode","4"="Color Flow mode","5"="Night Light mode"] |
+| rgbColor             | Color                | RGB Color                                |            |
+| ambientBrightness    | Number               | Ambient Brightness                       |            |
+| ambientPower         | Switch               | Ambient Power                            |            |
+| ambientColor         | Color                | Ambient Color                            |            |
+| ambientColorTemperature | Number               | Ambient Color Temperature                |            |
+| ambientColorMode     | Number               | Ambient Color Mode                       |            |
+
 ### Yeelight Bulb (<a name="yeelink-light-mono1">yeelink.light.mono1</a>) Channels
 
 | Channel              | Type                 | Description                              | Comment    |
@@ -3445,7 +3479,7 @@ e.g. `openhab:send actionCommand 'upd_timer["1498595904821", "on"]'` would enabl
 | brightness           | Dimmer               | Brightness                               |            |
 | delayoff             | Number:Time          | Shutdown Timer                           |            |
 | colorTemperature     | Number               | Color Temperature                        |            |
-| colorMode            | Number               | Color Mode                               |            |
+| colorMode            | Number               | Color Mode                               | Value mapping ["0"="Default","1"="CT mode","2"="RGB mode","3"="HSV mode","4"="Color Flow mode","5"="Night Light mode"] |
 | rgbColor             | Color                | RGB Color                                |            |
 | name                 | String               | Name                                     |            |
 
@@ -3457,7 +3491,7 @@ e.g. `openhab:send actionCommand 'upd_timer["1498595904821", "on"]'` would enabl
 | brightness           | Dimmer               | Brightness                               |            |
 | delayoff             | Number:Time          | Shutdown Timer                           |            |
 | colorTemperature     | Number               | Color Temperature                        |            |
-| colorMode            | Number               | Color Mode                               |            |
+| colorMode            | Number               | Color Mode                               | Value mapping ["0"="Default","1"="CT mode","2"="RGB mode","3"="HSV mode","4"="Color Flow mode","5"="Night Light mode"] |
 | rgbColor             | Color                | RGB Color                                |            |
 | name                 | String               | Name                                     |            |
 
@@ -8308,6 +8342,21 @@ Color rgbColor "RGB Color" (G_light) {channel="miio:basic:light:rgbColor"}
 String name "Name" (G_light) {channel="miio:basic:light:name"}
 ```
 
+### Mi Smart LED Bulb Essential (White and Color) (yeelink.light.color5) item file lines
+
+note: Autogenerated example. Replace the id (light) in the channel with your own. Replace `basic` with `generic` in the thing UID depending on how your thing was discovered.
+
+```
+Group G_light "Mi Smart LED Bulb Essential (White and Color)" <status>
+Switch power "Power" (G_light) {channel="miio:basic:light:power"}
+Dimmer brightness "Brightness" (G_light) {channel="miio:basic:light:brightness"}
+Number:Time delayoff "Shutdown Timer" (G_light) {channel="miio:basic:light:delayoff"}
+Number colorTemperature "Color Temperature" (G_light) {channel="miio:basic:light:colorTemperature"}
+Number colorMode "Color Mode" (G_light) {channel="miio:basic:light:colorMode"}
+Color rgbColor "RGB Color" (G_light) {channel="miio:basic:light:rgbColor"}
+String name "Name" (G_light) {channel="miio:basic:light:name"}
+```
+
 ### Yeelight Smart LED Bulb 1SE (color) (yeelink.light.colora) item file lines
 
 note: Autogenerated example. Replace the id (light) in the channel with your own. Replace `basic` with `generic` in the thing UID depending on how your thing was discovered.
@@ -8447,6 +8496,25 @@ Number:Time delayoff "Shutdown Timer" (G_light) {channel="miio:basic:light:delay
 Number colorTemperature "Color Temperature" (G_light) {channel="miio:basic:light:colorTemperature"}
 Number colorMode "Color Mode" (G_light) {channel="miio:basic:light:colorMode"}
 String name "Name" (G_light) {channel="miio:basic:light:name"}
+```
+
+### Yeelight Screen Light Bar (yeelink.light.lamp15) item file lines
+
+note: Autogenerated example. Replace the id (light) in the channel with your own. Replace `basic` with `generic` in the thing UID depending on how your thing was discovered.
+
+```
+Group G_light "Yeelight Screen Light Bar" <status>
+Switch power "Power" (G_light) {channel="miio:basic:light:power"}
+Dimmer brightness "Brightness" (G_light) {channel="miio:basic:light:brightness"}
+Number:Time delayoff "Shutdown Timer" (G_light) {channel="miio:basic:light:delayoff"}
+Number:Temperature colorTemperature "Color Temperature" (G_light) {channel="miio:basic:light:colorTemperature"}
+Number colorMode "Color Mode" (G_light) {channel="miio:basic:light:colorMode"}
+Color rgbColor "RGB Color" (G_light) {channel="miio:basic:light:rgbColor"}
+Number ambientBrightness "Ambient Brightness" (G_light) {channel="miio:basic:light:ambientBrightness"}
+Switch ambientPower "Ambient Power" (G_light) {channel="miio:basic:light:ambientPower"}
+Color ambientColor "Ambient Color" (G_light) {channel="miio:basic:light:ambientColor"}
+Number ambientColorTemperature "Ambient Color Temperature" (G_light) {channel="miio:basic:light:ambientColorTemperature"}
+Number ambientColorMode "Ambient Color Mode" (G_light) {channel="miio:basic:light:ambientColorMode"}
 ```
 
 ### Yeelight Bulb (yeelink.light.mono1) item file lines

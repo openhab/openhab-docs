@@ -1,0 +1,372 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="heltun_he-hls01_00_000" listed="false">
+    <label>HE-HLS01 High Load Switch</label>
+    <description><![CDATA[
+High Load Switch<br /> <h1>Overview</h1><p>The HE-HLS01 High Load Switch with Thermostat Functions fits easily behind outlets making them ‘Impossibly Smart’ with over-the-Internet control and advanced programmability. In addition, built-in Power Consumption System helps to monitor how much energy was used. With included NTC temperature sensor it provides thermostat functions where a local display and controls are not needed. The High Load Switch also adds safety to your home by protecting against overloads, overheat, overvoltage, spark and surge conditions.</p> <br /> <h2>Inclusion Information</h2><ol><li>Ensure the HE-HLS01 is Powered On and the LED indicator blinks red slowly (i.e. it is excluded).</li><li>Start the Inclusion Mode from the gateway/controller.</li><li>To start the inclusion process on the HE-HLS01: a) if you want to use the device as a relay (binary switch), double-press the service button on the device (with no more than a one-second interval between presses).b) if you want to use the device as a thermostat, press four times the service button on the device (with no more than a one-second interval between presses).</li><li>The LED indicator will blink green quickly.</li><li>If the inclusion has been successful, the LED indicator will turn green for three seconds then continue slowly blinking green continuously while the HE-HLS01 is Powered On.</li><li>If the inclusion was not successful, the LED indicator will turn red for three seconds then continue slowly blinking red continuously while the HE-HLS01 is Powered On. In that case repeat the inclusion process (2-5) above.</li></ol> <br /> <h2>Exclusion Information</h2><ol><li>Ensure the HE-HLS01 is Powered On and the LED indicator blinks green slowly (i.e. it is included in a Z-Wave network).</li><li>Start the Exclusion Mode from the gateway/controller.</li><li>To start the exclusion process on the HE-HLS01, double-press the service button on the device (with no more than a one-second interval between presses).</li><li>The LED indicator will blink red quickly.</li><li>If the exclusion has been successful, LED indicator will turn red for three seconds then continue slowly blinking red continuously while the HE-HLS01 is Powered On.</li><li>If the exclusion was not successful, the LED indicator will turn green for three seconds then continue slowly blinking green continuously while the HE-HLS01 is Powered On. In that case repeat the exclusion process (2-5) above.</li></ol> <br /> <h2>Wakeup Information</h2><p><br /></p>
+    ]]></description>
+    <category>WallSwitch</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_binary" typeId="switch_binary">
+        <label>Switch</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY</property>
+        </properties>
+      </channel>
+      <channel id="sensor_temperature" typeId="sensor_temperature">
+        <label>Sensor (temperature)</label>
+        <properties>
+          <property name="binding:*:QuantityType">COMMAND_CLASS_SENSOR_MULTILEVEL;type=TEMPERATURE</property>
+        </properties>
+      </channel>
+      <channel id="meter_watts" typeId="meter_watts">
+        <label>Electric meter (watts)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_W</property>
+        </properties>
+      </channel>
+      <channel id="meter_voltage" typeId="meter_voltage">
+        <label>Electric meter (volts)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_V</property>
+        </properties>
+      </channel>
+      <channel id="meter_kwh" typeId="meter_kwh">
+        <label>Electric meter (kWh)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_KWh</property>
+        </properties>
+      </channel>
+      <channel id="alarm_power" typeId="alarm_power">
+        <label>Alarm (power)</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=POWER_MANAGEMENT</property>
+        </properties>
+      </channel>
+      <channel id="alarm_heat" typeId="alarm_heat">
+        <label>Alarm (heat)</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=HEAT</property>
+        </properties>
+      </channel>
+      <channel id="alarm_system" typeId="alarm_system">
+        <label>Alarm (system)</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=SYSTEM</property>
+        </properties>
+      </channel>
+      <channel id="time_offset" typeId="time_offset">
+        <label>Clock Time Offset</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_CLOCK</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Heltun</property>
+      <property name="modelId">HE-HLS01</property>
+      <property name="manufacturerId">0344</property>
+      <property name="manufacturerRef">0004:000A</property>
+      <property name="dbReference">1374</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_7_1" type="integer" groupName="configuration">
+        <label>7: Relay output mode</label>
+        <description>Relay output NO or NC mode</description>
+        <default>0</default>
+        <options>
+          <option value="0">Normally Open</option>
+          <option value="1">Normally Closed</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_10_1" type="integer" groupName="configuration"
+                 min="1" max="100">
+        <label>10: Floor Sensor Resistance</label>
+        <description><![CDATA[
+External Floor NTC temperature sensor resistance<br /> <h1>Overview</h1><p>If the external floor NTC temperature sensor is used it is necessary to select the correct resistance value in Ohms (Ω) of the sensor. The selection range is 1 to 100 kiloOhms (kΩ). One 10kΩ NTC floor temperature sensor is included in the HE-HLS01 package with a 3-meter connection wire. The factory default value is 10kΩ.</p>
+        ]]></description>
+        <default>10</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_16_1" type="integer" groupName="configuration">
+        <label>16: Temperature Scale Mode</label>
+        <description><![CDATA[
+Sets temperature unit (Celsius/Fahrenheit)<br /> <h1>Overview</h1><p>This parameter determines in which unit of measurement (degrees Celsius or Fahrenheit) the device will report the temperature, and also determines the scale that will be interpreted by the configuration parameters. Set the value 0 for Celsius and the value 1 for Fahrenheit.Factory default value is 0 (degrees Celsius).</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Celsius</option>
+          <option value="1">Fahrenheit</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_17_1" type="integer" groupName="configuration"
+                 min="-100" max="100">
+        <label>17: Temperature Sensor Calibration</label>
+        <description><![CDATA[
+Temperature Sensor Calibration<br /> <h1>Overview</h1><p>This Parameter defines the offset value for floor temperature. If the external floor temperature sensor is not calibrated properly, then manual calibration can be made by adjusting the values up to ±10.0°C (±18°F).This value will be added or subtracted from the floor temperature sensor reading. Through the Z-Wave network the value of this Parameter should be x10 (for Celsius only), e.g. for 1.5°C set the value 15. The factory default value is 0.</p>
+        ]]></description>
+        <default>0</default>
+        <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_23_1" type="integer" groupName="configuration">
+        <label>23: Auto On/Off</label>
+        <description><![CDATA[
+Auto On/Off<br /> <h1>Overview</h1><p>If this function is enabled the device will switch Off the relay output when there is no consumption and switch On the output again when the load is reconnected. It is possible to set the delay for Auto Off function (in the Parameter 24) and for Auto On function (in the Parameter 25). To enable Auto On/Off function, setthis Parameter value to 1 and use the value 0 if there is a need to disable the function.The factory default value is 0 (the function is disabled).</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Disabled</option>
+          <option value="1">Enabled</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_24_1" type="integer" groupName="configuration"
+                 min="0" max="120">
+        <label>24: Auto Off Timeout</label>
+        <description><![CDATA[
+Auto Off Timeout in minutes<br /> <h1>Overview</h1><p>If Auto On/Off function (the Parameter 23) is enabled, it is possible to delay the Auto Off function. The output will be switched Off when there is no consumption for the interval defined in this parameter in minutes. The value of this parameter can be set from 0 to 120 min. Set the parameter value to 0 if there is a need to switch Off the output immediately when consumption drops to 0W.The factory default value is 5 min</p>
+        ]]></description>
+        <default>5</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_25_1" type="integer" groupName="configuration"
+                 min="0" max="120">
+        <label>25: Auto On Reconnect Timeout</label>
+        <description><![CDATA[
+Auto On Reconnect Timeout<br /> <h1>Overview</h1><p>If Auto On/Off function (the Parameter 23) is enabled, it is possible to delay the Auto On function. When the load is reconnected the relay output will be switched On after the time defined in this parameter in minutes. The value of this parameter can be set from 0 to 120 min. Set the parameter value to 0 if there isa need to switch On the output immediately when the load is reconnected.The factory default value is 0 min.</p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_41_1" type="integer" groupName="configuration">
+        <label>41: External input: Hold Control Mode</label>
+        <description><![CDATA[
+External input: Hold Control Mode<br /> <h1>Overview</h1><p><br /></p>
+        ]]></description>
+        <default>2</default>
+        <options>
+          <option value="0">Hold function is disabled</option>
+          <option value="1">Operate like click (parameter 51)</option>
+          <option value="2">Momentary switch</option>
+          <option value="3">Reversed momentary switch</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_51_1" type="integer" groupName="configuration">
+        <label>51: External Input: Click Control Mode</label>
+        <description><![CDATA[
+External Input: Click Control Mode<br /> <h1>Overview</h1><p><br /></p>
+        ]]></description>
+        <default>1</default>
+        <options>
+          <option value="0">Click function disabled</option>
+          <option value="1">Toggle switch</option>
+          <option value="2">Relay switches to ON state only</option>
+          <option value="3">Relay switches to OFF state only</option>
+          <option value="4">Timer On&gt;Off mode</option>
+          <option value="5">Time Off&gt;On mode</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_71_2" type="integer" groupName="configuration"
+                 min="0" max="43200">
+        <label>71: Relay Timer Mode Duration</label>
+        <description><![CDATA[
+Relay Timer Mode Duration<br /> <h1>Overview</h1><p>These parameters specify the duration in seconds for the Timer mode (values 4 or 5 in the Parameter 51). Press the button on the switch connected to external input and the relay output goes to ON/OFF for the specified time then changes back to OFF/ON. The time value can be configured from 0 sec to 43200 sec (12 hours). The factory default value is 0.</p><p>If the parameter value is set to “0” the relay output will operate as a short contact (duration is about 0.5 sec).</p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_139_1" type="integer" groupName="configuration"
+                 min="1" max="120">
+        <label>139: Temperature sensor consecutive report interval</label>
+        <description><![CDATA[
+Temperature sensor consecutive report interval<br /> <h1>Overview</h1><p>When the device is connected to the Z-Wave gateway (controller), it periodically sends to the gateway reports from its floor temperature, sensor even if there are not changes in the values. This Parameter defines the interval between consecutive reports. The value can be adjusted from 1 min to 120 min. The factory default value is 10 min.</p>
+        ]]></description>
+        <default>10</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_141_1" type="integer" groupName="configuration"
+                 min="1" max="120">
+        <label>141: Energy Consumption Meter Consecutive Report Interval</label>
+        <description><![CDATA[
+Energy Consumption Meter Consecutive Report Interval<br /> <h1>Overview</h1><p>When the device is connected to the Z-Wave gateway (controller), it periodically sends to the gateway reports from its energy consumption sensor even if there is no change in the value. This Parameter defines the interval between consecutive reports of real time and cumulative energy consumption data to the gateway. The value can be adjusted from 1 min to 120 min. The factory default value is 10 min.</p>
+        ]]></description>
+        <default>10</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_142_1" type="integer" groupName="configuration"
+                 min="0" max="50">
+        <label>142: Energy Consumption Report Threshold</label>
+        <description><![CDATA[
+Consumption difference to send to controller, %<br /> <h1>Overview</h1><p>This Parameter determines the change in the load power resulting in the consumption report being sent to the gateway. From 1% to 50% can be selected. Use the value 0 if there is a need to stop sending the reports. The factory default value is 25</p>
+        ]]></description>
+        <default>25</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_143_1" type="integer" groupName="configuration"
+                 min="1" max="120">
+        <label>143: Temperature sensor consecutive report interval</label>
+        <description><![CDATA[
+Temperature sensor consecutive report interval<br /> <h1>Overview</h1><p>When the device is connected to the Z-Wave gateway (controller), it periodically sends to the gateway reports from its floor temperature, sensor even if there are not changes in the values. This Parameter defines the interval between consecutive reports. The value can be adjusted from 1 min to 120 min. The factory default value is 10 min.</p>
+        ]]></description>
+        <default>10</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_144_1" type="integer" groupName="configuration"
+                 min="0" max="100">
+        <label>144: Temperature report threshold</label>
+        <description><![CDATA[
+Temperature difference to send to controller, value X 10<br /> <h1>Overview</h1><p>This Parameter determines the change in temperature level (in °C or °F) resulting in temperature sensors report being sent to the gateway. The value of this Parameter should be x10 (for °C only), e.g. for 0.4°C use value 4.From 0.1°C (value 1) to 10°C (value 100) and for °F from 1°F -18°F can be selected. Use the value 0 if there is a need to stop sending the reports. The factory default value is 2 (0.2°C).</p>
+        ]]></description>
+        <default>2</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_153_2" type="integer" groupName="configuration"
+                 min="0" max="65535">
+        <label>153: Overheat Protection &amp; Notification</label>
+        <description><![CDATA[
+Overheat Protection &amp; Notification<br /> <h1>Overview</h1><p>You can define the maximum limit of temperature, reaching which the device will automatically switch Off the load and send “Overheat Detected” notification to the gateway. The value of this parameter can be set from 1 to 120 in °C scale mode or from 34 to 248 in °F scale mode. Usethe value 0 if there is a need to disable this function.The factory default value is 60 in °C scale and 140 in °F scale.</p>
+        ]]></description>
+        <default>60</default>
+        <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_154_1" type="integer" groupName="configuration">
+        <label>154: Over-Current Notification</label>
+        <description><![CDATA[
+Enable/disable over-current notification<br /> <h1>Overview</h1><p>The maximum load for the device is 16A. If the connected load current exceeds16A the device will automatically switch Off the output and send the “Over-Current Detected” notification to the gateway. To disable sending the notification, set the value of this Parameter to 0. The factory default value is 1 (the notification is enabled).</p>
+        ]]></description>
+        <default>1</default>
+        <options>
+          <option value="0">Disabled</option>
+          <option value="1">Enabled</option>
+        </options>
+        <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_155_2" type="integer" groupName="configuration">
+        <label>155: Over-Load Protection &amp; Notification</label>
+        <description><![CDATA[
+Over-Load Protection &amp; Notification<br /> <h1>Overview</h1><p>You can define the maximum power in Watt for connected load. The device will automatically switchoff the output and send “Over-Load Detected” notification to the gateway if power consumed by the connected load exceeds this limit. The value of this parameter can be set from 100 to4000 in watts. Use the value 0 if there is a need to disable this function.The factory default value is 3500W.</p>
+        ]]></description>
+        <default>3500</default>
+        <options>
+          <option value="0">Disabled</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_156_2" type="integer" groupName="configuration">
+        <label>156: Over-Voltage Protection &amp; Notification</label>
+        <description><![CDATA[
+Over-Voltage Protection &amp; Notification<br /> <h1>Overview</h1><p>The device constantly monitors the voltage of your electricity network. You can define the maximum voltage of network exceeding which the device will automatically switch off the output and send “Over-Voltage Detected” notification to the gateway. The value of this parameter can be set from 120 to 280 in volts. Use the value 0 if there is a needto disable this function.The factory default value is 240V.</p>
+        ]]></description>
+        <default>240</default>
+        <options>
+          <option value="0">Disabled</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_157_2" type="integer" groupName="configuration">
+        <label>157: Voltage Drop Protection &amp; Notification</label>
+        <description><![CDATA[
+Voltage Drop Protection &amp; Notification<br /> <h1>Overview</h1><p>You can define the minimum voltage of your electricity network. If the voltage of the network drops determined level the device will automatically switch off the output and send “Voltage Drop Detected” notification to the gateway. The value of this parameter can be set from 80 to 240 in volts. Use the value 0 if there is a need to disable this function.The factory default value is 200V.</p>
+        ]]></description>
+        <default>200</default>
+        <options>
+          <option value="0">Disabled</option>
+        </options>
+        <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association">
+        <label>1: Lifeline</label>
+        <description><![CDATA[
+Used to connect Z-Wave gateway<br /> <h1>Overview</h1><p><br /></p>
+        ]]></description>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: Relay Basic Set</label>
+        <description><![CDATA[
+Sends relay state (On/Off)<br /> <h1>Overview</h1><p>Group 2 –“Relay Basic Set”:is assigned to the HE-HLS01 relay state. It sends a Basic Set command with value 255 (On) when relay goes to On state and sends 0 (Off) when relay goes to Off state. The group supports five Nodes. </p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_3" type="text" groupName="association" multiple="true">
+        <label>3: S1 Basic Set</label>
+        <description><![CDATA[
+Sends external input state (On/Off)<br /> <h1>Overview</h1><p>Group 3 –“S1 Basic Set”:is assigned to the HE-HLS01 external input state. It sends a Basic Set command with value 255 (On) when external input is shorted and sends 0 (Off) when input is open. The group supports five Nodes.</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_4" type="text" groupName="association" multiple="true">
+        <label>4: Temperature Sensor</label>
+        <description><![CDATA[
+Sends external temperature values<br /> <h1>Overview</h1><p>Group 4 –“Temperature Sensor”:is assigned to the HE-HLS01 external temperature sensor and sends the sensor value when it changes. The group supports five nodes.<br /></p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

@@ -184,10 +184,10 @@ Detailed information on each parameter can be found in the sections below.
 | 4 | Travel Time | This parameter defines the travel path of the Lock. |
 | 5 | Touch Panel Settings | This parameter defines Touch Panel settings. |
 | 6 | Motor Force | This parameter defines the motor force, when turning the lock. |
-| 153 | Driving Cycles Interlocked | Counter, how often in the direction of "Locked" navigated was. |
 | 250 | Lock Status | This parameter reports the status of the lock. |
 | 251 | Drive Cycles Trap | Counter, how often the trap is activated was. |
 | 252 | Driving Cycles Unlocked | Counter, how often in the direction of Unlocked navigated was. |
+| 253 | Driving Cycles Interlocked | Counter, how often in the direction of "Locked" navigated was. |
 | 254 | ABUS Firmware Version | Display of ABUS Firmware version, e.g. 1.05. |
 |  | Lock Timeout | Sets the time after which the door will auto lock |
 
@@ -307,18 +307,6 @@ The manufacturer defined default value is ```1``` (Automatic/Normal force).
 This parameter has the configuration ID ```config_6_1``` and is of type ```INTEGER```.
 
 
-### Parameter 153: Driving Cycles Interlocked
-
-Counter, how often in the direction of "Locked" navigated was.
-Counter, how  often travel in „Locked“ direction.
-Values in the range 0 to 16700000 may be set.
-
-The manufacturer defined default value is ```0```.
-
-This parameter has the configuration ID ```config_153_4``` and is of type ```INTEGER```.
-This is a read only parameter.
-
-
 ### Parameter 250: Lock Status
 
 This parameter reports the status of the lock.
@@ -356,7 +344,7 @@ Values in the range 0 to 16700000 may be set.
 
 The manufacturer defined default value is ```0```.
 
-This parameter has the configuration ID ```config_251_4``` and is of type ```INTEGER```.
+This parameter has the configuration ID ```config_251_3``` and is of type ```INTEGER```.
 This is a read only parameter.
 
 
@@ -368,7 +356,19 @@ Values in the range 0 to 16700000 may be set.
 
 The manufacturer defined default value is ```0```.
 
-This parameter has the configuration ID ```config_252_4``` and is of type ```INTEGER```.
+This parameter has the configuration ID ```config_252_3``` and is of type ```INTEGER```.
+This is a read only parameter.
+
+
+### Parameter 253: Driving Cycles Interlocked
+
+Counter, how often in the direction of "Locked" navigated was.
+Counter, how  often travel in „Locked“ direction.
+Values in the range 0 to 16700000 may be set.
+
+The manufacturer defined default value is ```0```.
+
+This parameter has the configuration ID ```config_253_3``` and is of type ```INTEGER```.
 This is a read only parameter.
 
 

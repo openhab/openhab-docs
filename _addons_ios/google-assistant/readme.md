@@ -13,6 +13,8 @@ This guide describes step by step how to use the [openHAB Google Assistant Smart
 
 With the Action you can voice control your openHAB items and it supports lights, plugs, switches, thermostats and many more. The openHAB Action comes with multiple language support like English, German or French language.
 
+If you have any issues, questions or an idea for additional features, please take a look at the [repository on GitHub](https://github.com/openhab/openhab-google-assistant).
+
 ## General Configuration Instructions
 
 ::: tip
@@ -22,102 +24,306 @@ More information can be found in the corresponding [docs page](https://www.openh
 
 ### Requirements
 
-* openHAB Cloud Connector configured using myopenHAB.org. (Items DO NOT need to be exposed to and will not show up on myopenHAB.org, this is only needed for the IFTTT service!)
-* Google account.
-* Google Home, Google Home mini, Google Nest or the Google Assistant on your phone.
+* The openHAB Cloud Connector configured using myopenHAB.org (Items DO NOT need to be exposed to and will not show up on myopenHAB.org, this is only required for the IFTTT service!)
+* A Google account
+* A Google Home/Nest Voice Assistant Device or the Google Assistant on your phone
 
 ### Item configuration
 
-In openHAB 2 items are exposed via [metadata](https://www.openhab.org/docs/configuration/items.html#item-definition-and-syntax).
+To expose [items](https://www.openhab.org/docs/concepts/items.html) to Google Assistent you will need to add [metadata](https://www.openhab.org/docs/concepts/items.html#item-metadata) in the `ga` namespace.
 
-Currently the following metadata values are supported (also depending on Googles API capabilities):
+Currently the following devices are supported (also depending on Google's API capabilities):
 
-* `Switch / Dimmer / Color { ga="Light" }` (Depending on the item type controlling power, brightness and color is supported)
+_Hint: The value of `ga` is **not** case-sensitive._
 
----
+#### `Switch`
 
-* `Group { ga="Light" [ colorTemperatureRange="2000,9000", useKelvin=true ] }` (Light with separate brightness and color items)
-* `Dimmer / Number { ga="lightBrightness" }` as part of Light group
-* `Dimmer / Number { ga="lightColorTemperature" }` as part of Light group
+| | |
+|---|---|
+| **Device Type** | [Switch](https://developers.google.com/assistant/smarthome/guides/switch) |
+| **Supported Traits** | [OnOff](https://developers.google.com/assistant/smarthome/traits/onoff) |
+| **Supported Items** | Switch |
+| **Configuration** | (optional) `inverted=true/false` |
 
----
+**Example:**
 
-* `Switch { ga="Switch" [ inverted=true ] }` (all Switch items can use the inverted option)
-* `Switch { ga="Outlet" }`
-* `Switch { ga="Coffee_Maker" }`
-* `Switch { ga="WaterHeater" }`
-* `Switch { ga="Fireplace" }`
-* `Switch { ga="Valve" }`
-* `Switch { ga="Sprinkler" }`
-* `Switch { ga="Vacuum" }`
-* `Switch { ga="Scene" }`
+```shell
+Switch { ga="Switch" [ inverted=false ] }
+```
 
----
+#### `Light`
 
-* `Switch / Contact { ga="Lock" [ ackNeeded=true ] }`
-* `Switch { ga="SecuritySystem" [ pinNeeded="1234" ] }`
-* `String { ga="Camera" [ protocols="hls,dash" ] }`
-* `Dimmer { ga="Speaker" }` (Volume control)
+| | |
+|---|---|
+| **Device Type** | [Light](https://developers.google.com/assistant/smarthome/guides/light) |
+| **Supported Traits** | [OnOff](https://developers.google.com/assistant/smarthome/traits/onoff), [ColorSetting](https://developers.google.com/assistant/smarthome/traits/colorsetting), [Brightness](https://developers.google.com/assistant/smarthome/traits/brightness) (depending on used item type) |
+| **Supported Items** | Switch, Dimmer, Color |
+| **Configuration** | (optional) `inverted=true/false`<br>(optional) `colorTemperatureRange="minK,maxK"` |
 
----
+```shell
+Switch { ga="Light" [ inverted=true ] }
+Dimmer { ga="Light" }
+Color  { ga="Light" [ colorTemperatureRange="2000,9000" ] }
+```
 
-* `Group { ga="TV" [ volumeDefaultPercentage="20", levelStepSize="10", volumeMaxLevel="100", transportControlSupportedCommands="NEXT,PREVIOUS,PAUSE,RESUME", availableInputs="hdmi1=xbox,hdmi2=settopbox", availableChannels="1=Channel1=NBC,2=Channel2=CBS" ] }`
-* `Switch { ga="tvPower" }` as part of TV group (optional)
-* `Switch { ga="tvMute" }` as part of TV group (optional)
-* `Dimmer { ga="tvVolume" }` as part of TV group (optional)
-* `String { ga="tvChannel" }` as part of TV group (optional)
-* `String { ga="tvInput" }` as part of TV group (optional)
-* `Player { ga="tvTransport" }` as part of TV group (optional)
+#### `Light as Group with separate Color and Brightness`
 
----
+| | |
+|---|---|
+| **Device Type** | [Light](https://developers.google.com/assistant/smarthome/guides/light) |
+| **Supported Traits** | [OnOff](https://developers.google.com/assistant/smarthome/traits/onoff), [ColorSetting](https://developers.google.com/assistant/smarthome/traits/colorsetting), [Brightness](https://developers.google.com/assistant/smarthome/traits/brightness) |
+| **Supported Items** | Group as `light` with two Number or Dimmer members as `lightBrightness` & `lightColorTemperature` |
+| **Configuration** | (optional) `useKelvin=true/false`<br>(optional) `colorTemperatureRange="minK,maxK"`<br>_Hint: if you do not set `useKelvin=true` then `colorTemperatureRange` is required_ |
 
-* `Switch / Dimmer { ga="Fan" [ speeds="0=away:zero,50=default:standard:one,100=high:two", lang="en", ordered=true ] }` (for Dimmer the options have to be set)
-* `Switch / Dimmer { ga="Hood" }`
-* `Switch / Dimmer { ga="AirPurifier" }`
+```shell
+Group  lightGroup { ga="Light" [ useKelvin=true, colorTemperatureRange="2000,9000" ] }
+Dimmer brightnessItem (lightGroup) { ga="lightBrightness" }
+Number colorItem      (lightGroup) { ga="lightColorTemperature" }
+```
 
----
+#### `Scene`
 
-* `Rollershutter { ga="Awning" [ inverted=true ] }` (all Rollershutter items can use the inverted option)
-* `Rollershutter { ga="Blinds" }`
-* `Rollershutter { ga="Curtain" }`
-* `Rollershutter { ga="Door" }`
-* `Rollershutter { ga="Garage" }`
-* `Rollershutter { ga="Gate" }`
-* `Rollershutter { ga="Pergola" }`
-* `Rollershutter { ga="Shutter" }`
-* `Rollershutter { ga="Window" }`
+| | |
+|---|---|
+| **Device Type** | [Scene](https://developers.google.com/assistant/smarthome/guides/scene) |
+| **Supported Traits** | [Scene](https://developers.google.com/assistant/smarthome/traits/scene) |
+| **Supported Items** | Switch |
+| **Configuration** | (optional) `sceneReversible=true/false` |
 
-_\* All Rollershutter devices can also be used with a Switch or Contact item with the limitation of only supporting open and close states._
+```shell
+Switch { ga="Scene" [ sceneReversible=false ] }
+```
 
----
+#### `Outlet`, `Coffee_Maker`, `WaterHeater`, `Fireplace`
 
-* `Group { ga="Thermostat" [ modes="...", thermostatTemperatureRange="10,30", useFahrenheit=true ] }`
-* `Number { ga="thermostatTemperatureAmbient" }` as part of Thermostat group
-* `Number { ga="thermostatHumidityAmbient" }` as part of Thermostat group
-* `Number { ga="thermostatTemperatureSetpoint" }` as part of Thermostat group
-* `Number / String { ga="thermostatMode" }` as part of Thermostat group
+| | |
+|---|---|
+| **Device Type** | [Outlet](https://developers.google.com/assistant/smarthome/guides/outlet), [Coffee_Maker](https://developers.google.com/assistant/smarthome/guides/coffeemaker), [WaterHeater](https://developers.google.com/assistant/smarthome/guides/outlet), [Fireplace](https://developers.google.com/assistant/smarthome/guides/fireplace) |
+| **Supported Traits** | [OnOff](https://developers.google.com/assistant/smarthome/traits/onoff) |
+| **Supported Items** | Switch |
+| **Configuration** | (optional) `inverted=true/false` |
 
----
+```shell
+Switch { ga="Outlet" [ inverted=true ] }
+Switch { ga="Coffee_Maker" [ inverted=true ] }
+Switch { ga="WaterHeater" [ inverted=false ] }
+Switch { ga="Fireplace" }
+```
 
-* `Number { ga="TemperatureSensor" } [ useFahrenheit=true ]`
+#### `Valve`
 
-Example item configuration:
+| | |
+|---|---|
+| **Device Type** | [Valve](https://developers.google.com/assistant/smarthome/guides/valve) |
+| **Supported Traits** | [OpenClose](https://developers.google.com/assistant/smarthome/traits/openclose) |
+| **Supported Items** | Switch |
+| **Configuration** | (optional) `inverted=true/false` |
 
-  ```js
-  Switch KitchenLights "Kitchen Lights" <light> (gKitchen) { ga="Switch" }
-  Dimmer BedroomLights "Bedroom Lights" <light> (gBedroom) { ga="Light" }
-  Color LivingroomLights "Livingroom Lights" <light> (gLivingroom) { ga="Light" }
-  Switch SceneMovie "Livingroom Scene Movie" (gLivingroom) { synonyms="Movie Scene", ga="Scene" }
-  Switch CristmasTree "Cristmas Tree" (gLivingroom) { ga="Outlet" }
-  Switch DoorLock "Door Lock" { ga="Lock" }
+```shell
+Switch { ga="Valve" [ inverted=true ] }
+```
 
-  //Thermostat Setup (Google requires a mode, even if you manually set it up in openHAB)
-  Group g_HK_Basement_TSTAT "Basement Thermostat" { ga="Thermostat" [ useFahrenheit=true ] }
-  Number HK_Basement_Mode "Basement Heating/Cooling Mode" (g_HK_Basement_TSTAT) { ga="thermostatMode" }
-  Number HK_Basement_Setpoint "Basement Setpoint" (g_HK_Basement_TSTAT) { ga="thermostatTemperatureSetpoint" }
-  Number HK_Basement_Temp "Basement Temperature" (g_HK_Basement_TSTAT) { ga="thermostatTemperatureAmbient" }
-  Number HK_Basement_Humid "Basement Humidity" (g_HK_Basement_TSTAT) { ga="thermostatHumidityAmbient" }
-  ```
+#### `Sprinkler`, `Vacuum`
+
+| | |
+|---|---|
+| **Device Type** | [Sprinkler](https://developers.google.com/assistant/smarthome/guides/sprinkler), [Vacuum](https://developers.google.com/assistant/smarthome/guides/vacuum) |
+| **Supported Traits** | [StartStop](https://developers.google.com/assistant/smarthome/traits/startstop) |
+| **Supported Items** | Switch |
+| **Configuration** | (optional) `inverted=true/false` |
+
+```shell
+Switch { ga="Sprinkler" [ inverted=true ] }
+Switch { ga="Vacuum" [ inverted=false ] }
+```
+
+#### `Lock`
+
+| | |
+|---|---|
+| **Device Type** | [Lock](https://developers.google.com/assistant/smarthome/guides/lock) |
+| **Supported Traits** | [LockUnlock](https://developers.google.com/assistant/smarthome/traits/lockunlock) |
+| **Supported Items** | Contact (no device control), Switch |
+| **Configuration** | (optional) `ackNeeded=true/false`<br>(optional) `pinNeeded="1234"` |
+
+```shell
+Switch { ga="Lock" [ ackNeeded=true ] }
+Switch { ga="Lock" [ pinNeeded="1234" ] }
+```
+
+#### `SecuritySystem`
+
+| | |
+|---|---|
+| **Device Type** | [SecuritySystem](https://developers.google.com/assistant/smarthome/guides/securitysystem) |
+| **Supported Traits** | [ArmDisarm](https://developers.google.com/assistant/smarthome/traits/armdisarm) |
+| **Supported Items** | Switch |
+| **Configuration** | (optional) `ackNeeded=true/false`<br>(optional) `pinNeeded="1234"` |
+
+```shell
+Switch { ga="SecuritySystem" [ pinNeeded="1234" ] }
+```
+
+#### `Camera`
+
+| | |
+|---|---|
+| **Device Type** | [Camera](https://developers.google.com/assistant/smarthome/guides/camera) |
+| **Supported Traits** | [CameraStream](https://developers.google.com/assistant/smarthome/traits/camerastream) |
+| **Supported Items** | String |
+| **Configuration** | (optional) `protocols="hls,dash,smooth_stream,progressive_mp4"` _(choose suitable)_ |
+
+```shell
+String { ga="Camera" [ protocols="hls,dash" ] }
+```
+
+#### `Speaker` (volume control only)
+
+| | |
+|---|---|
+| **Device Type** | [Speaker](https://developers.google.com/assistant/smarthome/guides/speaker) |
+| **Supported Traits** | [Volume](https://developers.google.com/assistant/smarthome/traits/volume) |
+| **Supported Items** | Dimmer |
+| **Configuration** | (optional) `volumeDefaultPercentage="20"`<br>(optional) `levelStepSize="5"`<br>(optional) `volumeMaxLevel="100"` |
+
+```shell
+Dimmer { ga="Speaker" [ volumeDefaultPercentage="50", levelStepSize="10", volumeMaxLevel="90" ] }
+```
+
+#### `TV`
+
+| | |
+|---|---|
+| **Device Type** | [TV](https://developers.google.com/assistant/smarthome/guides/tv) |
+| **Supported Traits** | [OnOff](https://developers.google.com/assistant/smarthome/traits/onoff), [Volume](https://developers.google.com/assistant/smarthome/traits/volume), [TransportControl](https://developers.google.com/assistant/smarthome/traits/transportcontrol), [InputSelector](https://developers.google.com/assistant/smarthome/traits/inputselector), [AppSelector](https://developers.google.com/assistant/smarthome/traits/appselector), [Channel](https://developers.google.com/assistant/smarthome/traits/channel) (depending on used members) |
+| **Supported Items** | Group as `TV` with the following optional members: Switch as `tvPower`, Switch as `tvMute`, Dimmer as `tvVolume`, String as `tvChannel`, String as `tvInput`, String as `tvApplication`, Player as `tvTransport` |
+| **Configuration** | (optional) `volumeDefaultPercentage="20"`<br>(optional) `levelStepSize="5"`<br>(optional) `volumeMaxLevel="100"`<br>(optional) `transportControlSupportedCommands="NEXT,PREVIOUS,PAUSE,RESUME"`<br>(optional) `availableChannels="channelNumber=channelId=channelName:channelSynonym:...,..."`<br>(optional) `availableInputs="inputKey=inputName:inputSynonym:...,..."`<br>(optional) `availableApplications="applicationKey=applicationName:applicationSynonym:...,..."`<br>(optional) `lang="en"` |
+
+```shell
+Group  tvGroup { ga="TV" [ volumeDefaultPercentage="20", levelStepSize="10", volumeMaxLevel="100", transportControlSupportedCommands="NEXT,PREVIOUS,PAUSE,RESUME", availableChannels="1=Channel1=NBC,2=Channel2=CBS", availableInputs="hdmi1=xbox:gaming,hdmi2=settopbox", availableApplications: "youtube=YouTube:Tube,netflix=Netflix:Chill" ] }
+Switch powerItem       (tvGroup) { ga="tvPower" }
+Switch muteItem        (tvGroup) { ga="tvMute" }
+Dimmer volumeItem      (tvGroup) { ga="tvVolume" }
+String channelItem     (tvGroup) { ga="tvChannel" }
+String inputItem       (tvGroup) { ga="tvInput" }
+String applicationItem (tvGroup) { ga="tvApplication" }
+Player transportItem   (tvGroup) { ga="tvTransport" }
+```
+
+#### `Fan`, `Hood`, `AirPurifier`
+
+| | |
+|---|---|
+| **Device Type** | [Fan](https://developers.google.com/assistant/smarthome/guides/fan), [Hood](https://developers.google.com/assistant/smarthome/guides/hood), [AirPurifier](https://developers.google.com/assistant/smarthome/guides/airpurifier) |
+| **Supported Traits** | [OnOff](https://developers.google.com/assistant/smarthome/traits/OnOff), [FanSpeed](https://developers.google.com/assistant/smarthome/traits/fanspeed) (depending on used item type) |
+| **Supported Items** | Switch (no speed control), Dimmer |
+| **Configuration** | (optional) `speeds="0=away:zero,50=default:standard:one,100=high:two"`<br>(optional) `lang="en"`<br>(optional) `ordered=true/false`<br>_Hint: if you are using a Dimmer then `speeds` is required_ |
+
+Fans (and similar device types, like AirPurifier or Hood) support the `FanSpeed` trait.
+With that you will be able to set up and use human speakable modes, e.g. "fast" for 100% or "slow" for 25%.
+
+`speeds` will be a comma-separated list of modes with a percentage number followed by an equal sign and different aliases for that mode after a colon.
+So here both "high" and "two" would set the speed to 100%.
+You are also able to define the language of those aliases.
+The option `ordered` will tell the system that your list is ordered and you will then be able to also say "faster" or "slower" and Google will use the next or previous speed.
+
+```shell
+Dimmer { ga="Fan" [ speeds="0=away:zero,50=default:standard:one,100=high:two", lang="en", ordered=true ] }
+Switch { ga="Hood" }
+Dimmer { ga="AirPurifier" [ speeds="0=off,50=mid,100=high" ] }
+```
+
+#### `Awning`, `Blinds`, `Curtain`, `Door`, `Garage`, `Gate`, `Pergola`, `Shutter`, `Window`
+
+| | |
+|---|---|
+| **Device Type** | [Awning](https://developers.google.com/assistant/smarthome/guides/awning), [Blinds](https://developers.google.com/assistant/smarthome/guides/Blinds), [Curtain](https://developers.google.com/assistant/smarthome/guides/Curtain), [Door](https://developers.google.com/assistant/smarthome/guides/Door), [Garage](https://developers.google.com/assistant/smarthome/guides/Garage), [Gate](https://developers.google.com/assistant/smarthome/guides/Gate), [Pergola](https://developers.google.com/assistant/smarthome/guides/Pergola), [Shutter](https://developers.google.com/assistant/smarthome/guides/Shutter), [Window](https://developers.google.com/assistant/smarthome/guides/Window) |
+| **Supported Traits** | [OpenClose](https://developers.google.com/assistant/smarthome/traits/openclose), [StartStop](https://developers.google.com/assistant/smarthome/traits/startstop) |
+| **Supported Items** | Contact (no device control), Switch (no open percentage), Rollershutter |
+| **Configuration** | (optional) `inverted=true/false` |
+
+Blinds and simiar devices should always use the `Rollershutter` item type for proper functionallity.
+Since Google and openHAB use the oposite percentage value for "opened" and "closed", the action will tranlate this automatically.
+If the values are still inverted in your case, you can state the `inverted=true` option for all `Rollershutter` items.
+
+Since Google only tells the open percentage (and not the verb "close" or "down"), it can not be differentiated between saying "set blind to 100%" or "open blind".
+Therefore, it is not possible to "not invert" the verbs, if the user chooses to invert the numbers.
+
+```shell
+Rollershutter { ga="Awning" }
+Rollershutter { ga="Blinds" [ inverted=true ] }
+Rollershutter { ga="Curtain" }
+Switch        { ga="Door" }
+Rollershutter { ga="Garage" }
+Contact       { ga="Gate" }
+Rollershutter { ga="Pergola" }
+Rollershutter { ga="Shutter" }
+Rollershutter { ga="Window" }
+```
+
+#### `TemperatureSensor`
+
+| | |
+|---|---|
+| **Device Type** | [Sensor](https://developers.google.com/assistant/smarthome/guides/sensor) |
+| **Supported Traits** | [TemperatureControl](https://developers.google.com/assistant/smarthome/traits/temperaturecontrol) |
+| **Supported Items** | Number |
+| **Configuration** | (optional) `useFahrenheit=true/false` |
+
+```shell
+Number { ga="TemperatureSensor" [ useFahrenheit=true ] }
+```
+
+#### `Thermostat`
+
+| | |
+|---|---|
+| **Device Type** | [Thermostat](https://developers.google.com/assistant/smarthome/guides/thermostat) |
+| **Supported Traits** | [TemperatureSetting](https://developers.google.com/assistant/smarthome/traits/temperaturesetting) |
+| **Supported Items** | Group as `Thermostat` with the following optional members: Number as `thermostatTemperatureAmbient`, Number as `thermostatTemperatureSetpoint`, Number as `thermostatTemperatureSetpointLow`, Number as `thermostatTemperatureSetpointHigh`, Number as `thermostatHumidityAmbient`, String or Number as `thermostatMode` |
+| **Configuration** | (optional) `useFahrenheit=true/false`<br>(optional) `thermostatTemperatureRange="10,30"`<br>(optional) `modes="off=OFF:WINDOW_OPEN,heat=COMFORT:BOOST,eco=ECO,on=ON,auto"` |
+
+Thermostat requires a group of items to be properly configured to be used with Google Assistant. The default temperature unit is Celsius.
+To change the temperature unit to Fahrenheit, add the config option `useFahrenheit=true` to the thermostat group.
+To set the temperature range your thermostat supports, add the config option `thermostatTemperatureRange="10,30"` to the thermostat group.
+If your thermostat supports a range for the setpoint you can use both `thermostatTemperatureSetpointLow` and `thermostatTemperatureSetpointHigh` instead of the single `thermostatTemperatureSetpoint` item.
+
+If your thermostat does not have a mode, you should create one and manually assign a value (e.g. heat, cool, on, etc.) to have proper functionality.
+
+To map the [default thermostat modes of Google](https://developers.google.com/assistant/smarthome/traits/temperaturesetting.html) (on, off, heat, cool, etc.) to custom ones for your specific setup, you can use the `modes` config option on the thermostat group.
+E.g. `[ modes="off=OFF:WINDOW_OPEN,heat=COMFORT:BOOST,eco=ECO,on=ON,auto" ]` will enable the following five modes in Google Home `"off, heat, eco, on, auto"` that will be translated to `"OFF, COMFORT, ECO, ON, auto"`. You can specify alternative conversions using the colon sign, so that in the former example "BOOST" in openHAB would also be translated to "heat" in Google. For the translation of Google modes to openHAB always the first option after the equal sign is used.
+By default the integration will provide `"off,heat,cool,on,heatcool,auto,eco"`.
+
+You can also set up a Thermostat for using it as a temperature sensor. To do so, create a Thermostat group and only add one item member as "thermostatTemperatureAmbient".
+However, it is recommended to prefer the `TemperatureSensor` type for simple temperature reports (but currently there is no UI support in Google Home).
+
+```shell
+Group  thermostatGroup { ga="Thermostat" [ modes="off=OFF:WINDOW_OPEN,heat=COMFORT:BOOST,eco=ECO,on=ON,auto", thermostatTemperatureRange="10,30", useFahrenheit=false ] }
+Number ambientItem      (thermostatGroup) { ga="thermostatTemperatureAmbient" }
+Number humidityItem     (thermostatGroup) { ga="thermostatHumidityAmbient" }
+Number setpointItem     (thermostatGroup) { ga="thermostatTemperatureSetpoint" }
+Number setpointItemLow  (thermostatGroup) { ga="thermostatTemperatureSetpointLow" }
+Number setpointItemHigh (thermostatGroup) { ga="thermostatTemperatureSetpointHigh" }
+String modeItem         (thermostatGroup) { ga="thermostatMode" }
+```
+
+#### `Sensor`
+
+| | |
+|---|---|
+| **Device Type** | [Sensor](https://developers.google.com/assistant/smarthome/guides/sensor) |
+| **Supported Traits** | [SensorState](https://developers.google.com/assistant/smarthome/traits/sensorstate) |
+| **Supported Items** | Number, Dimmer |
+| **Configuration** |`sensorName="SmokeLevel"`<br>`valueUnit="PARTS_PER_MILLION"`<br>`states="no smoke=10,smoke detected=50,high=90"` |
+
+Please see the [SensorState documentation](https://developers.google.com/assistant/smarthome/traits/sensorstate) for more details on configuration options.
+For now only exact matches of the numeric value will report the descriptive state value.
+
+```shell
+Number { ga="Sensor" [ sensorName="AirQuality", valueUnit="AQI", states="good=10,moderate=50,poor=90" ] }
+```
+
+### Addtional Information
 
 Item labels are not mandatory in openHAB, but for the Google Assistant Action they are absolutely necessary!
 
@@ -129,10 +335,10 @@ Furthermore, you can state synonyms for the device name: `Switch KitchenLight "K
 
 To ease setting up new devices you can add a room hint: `[ roomHint="Living Room" ]`.
 
-For devices supporting the OpenClose trait, the attributes `[ discreteOnlyOpenClose=false, queryOnlyOpenClose=false ]` can be configured.
+For devices supporting the OpenClose trait, the attributes `[ discreteOnly=false, queryOnly=false ]` can be configured.
 
-* discreteOnlyOpenClose defaults to false. When set to true, this indicates that the device must either be fully open or fully closed (that is, it does not support values between 0% and 100%). An example of such a device may be a valve.
-* queryOnlyOpenClose defaults to false. Is set to true for `Contact` items. Indicates if the device can only be queried for state information and cannot be controlled. Sensors that can only report open state should set this field to true.
+* `discreteOnly` defaults to false. When set to true, this indicates that the device must either be fully open or fully closed (that is, it does not support values between 0% and 100%). An example of such a device may be a valve.
+* `queryOnly` defaults to false. Is set to true for `Contact` items. Indicates if the device can only be queried for state information and cannot be controlled. Sensors that can only report open state should set this field to true.
 
 ---
 
@@ -140,7 +346,7 @@ NOTE: metadata is not available via paperUI in openHAB v2. Either you create you
 
 * add metadata via console:
 
-  ```console
+  ```shell
   smarthome:metadata add BedroomLights ga Light
   ```
 
@@ -157,8 +363,6 @@ NOTE: metadata is not available via paperUI in openHAB v2. Either you create you
 NOTE: Please be aware that for backward compatibilty also the former usage of tags (ref. [Google Assistant Action Documentation v2.5](https://www.openhab.org/v2.5/docs/ecosystem/google-assistant/)) to specify items to be exposed to Google Assistent is supported and may cause unexpected behavior.
 Items that contain tags that refer to a valid Google Assistent device will be exposed regardless of having metadata set. E.g.: `Switch MyBulb ["Lighting"]`.
 
-### Special item configurations
-
 #### Two-Factor-Authentication
 
 For some actions, Google recommends to use TFA (Two-Factor-Authentication) to prevent accidential or unauthorized triggers of sensitive actions. See [Two-factor authentication &nbsp;|&nbsp; Actions on Google Smart Home](https://developers.google.com/assistant/smarthome/develop/two-factor-authentication).
@@ -171,56 +375,10 @@ _pinNeeded_: "A two-factor authentication that requires a personal identificatio
 
 Example:
 
-```js
-Switch DoorLock "Front Door" { ga="Lock" [ ackNeeded=true ] }
+```shell
+Switch DoorLock   "Front Door"  { ga="Lock" [ ackNeeded=true ] }
 Switch HouseAlarm "House Alarm" { ga="SecuritySystem" [ pinNeeded="1234" ] }
 ```
-
-#### Thermostats
-
-Thermostat requires a group of items to be properly configured to be used with Google Assistant. The default temperature unit is Celsius. `{ ga="Thermostat" }`
-
-To change the temperature unit to Fahrenheit, add the config option `[ useFahrenheit=true ]` to the thermostat group.
-To set the temperature range your thermostat supports, add the config option `[ thermostatTemperatureRange="10,30" ]` to the thermostat group.
-
-There must be at least three items as members of the group:
-
-* (Mandatory) Mode: Number or String (off, heat, cool, on, ...). `{ ga="thermostatMode" }`
-* (Mandatory) Temperature Ambient: Number. `{ ga="thermostatTemperatureAmbient" }`
-* (Mandatory) Temperature Setpoint: Number. `{ ga="thermostatTemperatureSetpoint" }`
-* (Optional) Temperature Setpoint High: Number. `{ ga="thermostatTemperatureSetpointHigh" }`
-* (Optional) Temperature Setpoint Low: Number. `{ ga="thermostatTemperatureSetpointLow" }`
-* (Optional) Humidity Ambient: Number. `{ ga="thermostatHumidityAmbient" }`
-
-If your thermostat does not have a mode, you should create one and manually assign a value (e.g. heat, cool, on, etc.) to have proper functionality.
-
-To map the [default thermostat modes of Google](https://developers.google.com/assistant/smarthome/traits/temperaturesetting.html) (on, off, heat, cool, etc.) to custom ones for your specific setup, you can use the _modes_ config option on the thermostat group.
-E.g. `[ modes="off=OFF:WINDOW_OPEN,heat=COMFORT:BOOST,eco=ECO,on=ON,auto" ]` will enable the following five modes in Google Home `"off, heat, eco, on, auto"` that will be translated to `"OFF, COMFORT, ECO, ON, auto"`. You can specify alternative conversions using the colon sign, so that in the former example "BOOST" in openHAB would also be translated to "heat" in Google. For the translation of Google modes to openHAB always the first option after the equal sign is used.
-By default the integration will provide `"off,heat,cool,on,heatcool,auto,eco"`.
-
-You can also set up a Thermostat for using it as a temperature sensor. To do so, create a Thermostat group and only add one item member as "thermostatTemperatureAmbient".
-However, it is recommended to prefer the `TemperatureSensor` type for simple temperature reports (but currently no UI support in Google Assistant).
-
-#### Fans
-
-_Fans_ (and similar device types, like _AirPurifier_ or _Hood_) support the _FanSpeed_ trait.
-With that you will be able to set up and use human speakable modes, e.g. "fast" for 100% or "slow" for 25%.
-
-To set up those modes use a _Dimmer_ item and the following metadata config: `[ speeds="0=away:zero,50=default:standard:one,100=high:two", lang="en", ordered=true ]`.
-
-_speeds_ will be a comma-separated list of modes with a percentage number followed by an equal sign and different aliases for that mode after a colon.
-So here both "high" and "two" would set the speed to 100%.
-You are also able to define the language of those aliases.
-The option _ordered_ will tell the system that your list is ordered and you will then be able to also say "faster" or "slower" and Google will use the next or previous speed.
-
-#### Blinds and similar devices
-
-Blinds should always use the `Rollershutter` item type.
-Since Google and openHAB use the oposite percentage value for "opened" or "closed", the action will tranlate this automatically.
-If the values are still inverted in your case, you can state the `[ inverted=true ]` option for all `Rollershutter` items.
-
-Since Google only tells the open percentage (and not the verb "close" or "down"), it can not be differentiated between saying "set blind to 100%" or "open blind".
-Therefore, it is not possible to "not invert" the verbs, if the user chooses to invert the numbers.
 
 ## Setup & Usage on Google Assistant App
 
@@ -290,23 +448,23 @@ I'm not able to connect openHAB to Google Home.
 * The items that you want to expose to Google Assistant should have the right metadata assigned.
 * The items that you want to expose to Google Assistant must have a item label! [Item Definition and Syntax](https://www.openhab.org/docs/configuration/items.html#item-definition-and-syntax)
 * If you expose thermostats make sure than you have:
-  * A group item with the metadata value { ga="Thermostat" }
-  * A number or string item with the metadata value { ga="thermostatMode" } as part of the thermostat group
-  * A number item with the metadata value { ga="thermostatTemperatureAmbient" } as part of the thermostat group
-  * A number item with the metadata value { ga="thermostatTemperatureSetpoint" } as part of the thermostat group
+  * A Group item with the metadata value `{ ga="Thermostat" }`
+  * A Number or String item with the metadata value `{ ga="thermostatMode" }` as part of the thermostat group
+  * A Number item with the metadata value `{ ga="thermostatTemperatureAmbient" }` as part of the thermostat group
+  * A Number item with the metadata value `{ ga="thermostatTemperatureSetpoint" }` as part of the thermostat group
 
-  ```js
-  Group g_HK_Basement_TSTAT "Basement Thermostat" { ga="Thermostat" [ useFahrenheit=true ] }
-  Number HK_Basement_Mode "Basement Heating/Cooling Mode" (g_HK_Basement_TSTAT) { ga="thermostatMode" }
-  Number HK_Basement_Setpoint "Basement Setpoint" (g_HK_Basement_TSTAT) { ga="thermostatTemperatureSetpoint" }
-  Number HK_Basement_Temp "Basement Temperature" (g_HK_Basement_TSTAT) { ga="thermostatTemperatureAmbient" }
+  ```shell
+  Group  g_HK_Basement_TSTAT  "Basement Thermostat"                                 { ga="Thermostat" [ useFahrenheit=true ] }
+  Number HK_Basement_Mode     "Basement Heating/Cooling Mode" (g_HK_Basement_TSTAT) { ga="thermostatMode" }
+  Number HK_Basement_Setpoint "Basement Setpoint"             (g_HK_Basement_TSTAT) { ga="thermostatTemperatureSetpoint" }
+  Number HK_Basement_Temp     "Basement Temperature"          (g_HK_Basement_TSTAT) { ga="thermostatTemperatureAmbient" }
   ```
 
 * If none of the above solutions works for you:
   * Remove all the metadata.
   * Make a new .item file with 1 item to expose.
 
-  ```js
+  ```shell
   Switch TestLight "Test Light" { ga="Switch" }
   ```
 

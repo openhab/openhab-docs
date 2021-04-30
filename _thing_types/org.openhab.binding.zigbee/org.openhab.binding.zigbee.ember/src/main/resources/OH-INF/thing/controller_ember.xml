@@ -131,8 +131,8 @@
 			</parameter>
 			
 			<parameter name="zigbee_initialise" type="boolean" groupName="network">
-				<label>Reset Controller</label>
-				<description>Resets the Controller and sets the configuration to the configured values</description>
+				<label>Reinitialize Controller</label>
+				<description>Resets the coordinator, reinitialises the network, and sets the configuration to the configured values</description>
 				<default>false</default>
 				<verify>true</verify>
 				<advanced>true</advanced>
