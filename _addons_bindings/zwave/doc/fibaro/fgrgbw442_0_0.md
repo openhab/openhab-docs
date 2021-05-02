@@ -243,7 +243,7 @@ The ```sensor_voltage9``` channel is of type ```sensor_voltage``` and supports t
 
 ## Device Configuration
 
-The following table provides a summary of the 39 configuration parameters available in the FGRGBW-442.
+The following table provides a summary of the 54 configuration parameters available in the FGRGBW-442.
 Detailed information on each parameter can be found in the sections below.
 
 | Param | Name  | Description |
@@ -253,11 +253,26 @@ Detailed information on each parameter can be found in the sections below.
 | 21 | Input 2 - operating mode | Input 2 - operating mode |
 | 22 | Input 3 - operating mode | Input 3 - operating mode |
 | 23 | Input 4 - operating mode | Input 4 - operating mode |
-| 30 | Alarm configuration - 1st slot | Alarm configuration - 1st slot |
-| 31 | Alarm configuration - 2nd slot | Alarm configuration - 2nd slot |
-| 32 | Alarm configuration - 3rd slot | Alarm configuration - 3rd slot |
-| 33 | Alarm configuration - 4th slot | Alarm configuration - 4th slot |
-| 34 | Alarm configuration - 5th slot | Alarm configuration - 5th slot |
+| 30 | Alarm configuration - 1st slot - 4B [LSB] | Alarm configuration - 1st slot (Action) |
+| 30 | Alarm configuration - 1st slot - 3B | Alarm configuration - 1st slot (Event/State Parameters) |
+| 30 | Alarm configuration - 1st slot - 2B | Alarm configuration - 1st slot (Notification Status) |
+| 30 | Alarm configuration - 1st slot - 1B [MSB] | Alarm configuration - 1st slot (Notification Type) |
+| 31 | Alarm configuration - 2nd slot - 4B [LSB] | Alarm configuration - 2nd slot - Water (Action ) |
+| 31 | Alarm configuration - 2nd slot - 3B | Alarm configuration - 2nd slot - Water (Event/State Parameters) |
+| 31 | Alarm configuration - 2nd slot - 2B | Alarm configuration - 2nd slot - Water (Notification Status) |
+| 31 | Alarm configuration - 2nd slot - 1B [MSB] | Alarm configuration - 2nd slot - Water (Notification Type) |
+| 32 | Alarm configuration - 3rd slot - 4B [LSB] | Alarm configuration - 3rd slot - Smoke (Action ) |
+| 32 | Alarm configuration - 3rd slot - 3B | Alarm configuration - 3rd slot - Smoke (Event/State Parameters) |
+| 32 | Alarm configuration - 3rd slot - 2B | Alarm configuration - 3rd slot - Smoke (Notification Status) |
+| 32 | Alarm configuration - 3rd slot - 1B [MSB] | Alarm configuration - 3rd slot - Smoke (Notification Type) |
+| 33 | Alarm configuration - 4th slot - 4B [LSB] | Alarm configuration - 4th slot - CO (Action ) |
+| 33 | Alarm configuration - 4th slot - 3B | Alarm configuration - 4th slot - CO (Event/State Parameters) |
+| 33 | Alarm configuration - 4th slot - 2B | Alarm configuration - 4th slot - CO (Notification Status) |
+| 33 | Alarm configuration - 4th slot - 1B [MSB] | Alarm configuration - 4th slot - CO (Notification Type) |
+| 34 | Alarm configuration - 5th slot - 4B [LSB] | Alarm configuration - 5th slot - Heat (Action ) |
+| 34 | Alarm configuration - 5th slot - 3B | Alarm configuration - 5th slot - Heat (Event/State Parameters) |
+| 34 | Alarm configuration - 5th slot - 2B | Alarm configuration - 5th slot - Heat (Notification Status) |
+| 34 | Alarm configuration - 5th slot - 1B [MSB] | Alarm configuration - 5th slot - Heat (Notification Type) |
 | 35 | Duration of alarm signalization | Duration of alarm signalization |
 | 40 | Input 1 - sent scenes | Input 1 - sent scenes |
 | 41 | Input 2 - sent scenes | Input 2 - sent scenes |
@@ -291,7 +306,9 @@ Detailed information on each parameter can be found in the sections below.
 ### Parameter 1: Remember device status before the power failure
 
 
+This parameter determines how the device will react in the event of power supply failure (e.g. power outage or taking out from the electrical outlet).
 
+After the power supply is back on, the device can be restored to previous state or remain switched off. The sequence is not remem- bered after the power returns. After power failure, the last color set before the sequence will be restored.
 The following option values may be configured -:
 
 | Value  | Description |
@@ -307,7 +324,7 @@ This parameter has the configuration ID ```config_1_1``` and is of type ```INTEG
 ### Parameter 20: Input 1 - operating mode
 
 Input 1 - operating mode
-
+This parameter allows to choose mode of 1st input (IN1). Change it depending on connected device.
 The following option values may be configured -:
 
 | Value  | Description |
@@ -326,7 +343,7 @@ This parameter has the configuration ID ```config_20_1``` and is of type ```INTE
 ### Parameter 21: Input 2 - operating mode
 
 Input 2 - operating mode
-
+This parameter allows to choose mode of 2nd input (IN2). Change it depending on connected device.
 The following option values may be configured -:
 
 | Value  | Description |
@@ -345,7 +362,7 @@ This parameter has the configuration ID ```config_21_1``` and is of type ```INTE
 ### Parameter 22: Input 3 - operating mode
 
 Input 3 - operating mode
-
+This parameter allows to choose mode of 3rd input (IN3). Change it depending on connected device.
 The following option values may be configured -:
 
 | Value  | Description |
@@ -364,7 +381,7 @@ This parameter has the configuration ID ```config_22_1``` and is of type ```INTE
 ### Parameter 23: Input 4 - operating mode
 
 Input 4 - operating mode
-
+This parameter allows to choose mode of 4th input (IN4). Change it depending on connected device.
 The following option values may be configured -:
 
 | Value  | Description |
@@ -380,10 +397,17 @@ The manufacturer defined default value is ```2``` (Momentary switch (Central Sce
 This parameter has the configuration ID ```config_23_1``` and is of type ```INTEGER```.
 
 
-### Parameter 30: Alarm configuration - 1st slot
+### Parameter 30: Alarm configuration - 1st slot - 4B [LSB]
 
-Alarm configuration - 1st slot
+Alarm configuration - 1st slot (Action)
+4B [LSB] – action: 0x00 – no reaction,
 
+  
+0x0X – turn off selected channel,  
+0x1X – turn on selected channel,  
+0x2X – blink selected channel,  
+0x3Y – activate alarm sequenceX – channels summarized: 1/2/3/4 channel are equal to values 1/2/4/8.  
+Y – sequence number: 1-10 (parameter 157).
 Values in the range 0 to 255 may be set.
 
 The manufacturer defined default value is ```0```.
@@ -391,10 +415,56 @@ The manufacturer defined default value is ```0```.
 This parameter has the configuration ID ```config_30_4_000000FF``` and is of type ```INTEGER```.
 
 
-### Parameter 31: Alarm configuration - 2nd slot
+### Parameter 30: Alarm configuration - 1st slot - 3B
 
-Alarm configuration - 2nd slot
+Alarm configuration - 1st slot (Event/State Parameters)
+3B – Event/State Parameters
 
+0x00
+Values in the range 0 to 255 may be set.
+
+The manufacturer defined default value is ```0```.
+
+This parameter has the configuration ID ```config_30_4_0000FF00``` and is of type ```INTEGER```.
+
+
+### Parameter 30: Alarm configuration - 1st slot - 2B
+
+Alarm configuration - 1st slot (Notification Status)
+2B – Notification Status
+
+0x00 - disabled
+Values in the range 0 to 255 may be set.
+
+The manufacturer defined default value is ```0```.
+
+This parameter has the configuration ID ```config_30_4_00FF0000``` and is of type ```INTEGER```.
+
+
+### Parameter 30: Alarm configuration - 1st slot - 1B [MSB]
+
+Alarm configuration - 1st slot (Notification Type)
+1B [MSB] – Notification Type
+
+0x00 - disabled
+Values in the range 0 to 255 may be set.
+
+The manufacturer defined default value is ```0```.
+
+This parameter has the configuration ID ```config_30_4_7F000000``` and is of type ```INTEGER```.
+
+
+### Parameter 31: Alarm configuration - 2nd slot - 4B [LSB]
+
+Alarm configuration - 2nd slot - Water (Action )
+4B [LSB] – action:0x00 – no reaction,
+
+  
+0x0X – turn off selected channel,  
+0x1X – turn on selected channel,  
+0x2X – blink selected channel,  
+0x3Y – activate alarm sequenceX – channels summarized: 1/2/3/4 channel are equal to values 1/2/4/8.  
+Y – sequence number: 1-10 (parameter 157).
 Values in the range 0 to 255 may be set.
 
 The manufacturer defined default value is ```0```.
@@ -402,10 +472,56 @@ The manufacturer defined default value is ```0```.
 This parameter has the configuration ID ```config_31_4_000000FF``` and is of type ```INTEGER```.
 
 
-### Parameter 32: Alarm configuration - 3rd slot
+### Parameter 31: Alarm configuration - 2nd slot - 3B
 
-Alarm configuration - 3rd slot
+Alarm configuration - 2nd slot - Water (Event/State Parameters)
+3B – Event/State Parameters
 
+0x00
+Values in the range 0 to 255 may be set.
+
+The manufacturer defined default value is ```0```.
+
+This parameter has the configuration ID ```config_31_4_0000FF00``` and is of type ```INTEGER```.
+
+
+### Parameter 31: Alarm configuration - 2nd slot - 2B
+
+Alarm configuration - 2nd slot - Water (Notification Status)
+2B – Notification Status
+
+0xFF - any notification
+Values in the range 0 to 255 may be set.
+
+The manufacturer defined default value is ```255```.
+
+This parameter has the configuration ID ```config_31_4_00FF0000``` and is of type ```INTEGER```.
+
+
+### Parameter 31: Alarm configuration - 2nd slot - 1B [MSB]
+
+Alarm configuration - 2nd slot - Water (Notification Type)
+1B [MSB] – Notification Type
+
+0x05 - Water
+Values in the range 0 to 255 may be set.
+
+The manufacturer defined default value is ```5```.
+
+This parameter has the configuration ID ```config_31_4_7F000000``` and is of type ```INTEGER```.
+
+
+### Parameter 32: Alarm configuration - 3rd slot - 4B [LSB]
+
+Alarm configuration - 3rd slot - Smoke (Action )
+4B [LSB] – action:0x00 – no reaction,
+
+  
+0x0X – turn off selected channel,  
+0x1X – turn on selected channel,  
+0x2X – blink selected channel,  
+0x3Y – activate alarm sequenceX – channels summarized: 1/2/3/4 channel are equal to values 1/2/4/8.  
+Y – sequence number: 1-10 (parameter 157).
 Values in the range 0 to 255 may be set.
 
 The manufacturer defined default value is ```0```.
@@ -413,10 +529,56 @@ The manufacturer defined default value is ```0```.
 This parameter has the configuration ID ```config_32_4_000000FF``` and is of type ```INTEGER```.
 
 
-### Parameter 33: Alarm configuration - 4th slot
+### Parameter 32: Alarm configuration - 3rd slot - 3B
 
-Alarm configuration - 4th slot
+Alarm configuration - 3rd slot - Smoke (Event/State Parameters)
+3B – Event/State Parameters
 
+0x00
+Values in the range 0 to 255 may be set.
+
+The manufacturer defined default value is ```0```.
+
+This parameter has the configuration ID ```config_32_4_0000FF00``` and is of type ```INTEGER```.
+
+
+### Parameter 32: Alarm configuration - 3rd slot - 2B
+
+Alarm configuration - 3rd slot - Smoke (Notification Status)
+2B – Notification Status
+
+0xFF - any notification
+Values in the range 0 to 255 may be set.
+
+The manufacturer defined default value is ```255```.
+
+This parameter has the configuration ID ```config_32_4_00FF0000``` and is of type ```INTEGER```.
+
+
+### Parameter 32: Alarm configuration - 3rd slot - 1B [MSB]
+
+Alarm configuration - 3rd slot - Smoke (Notification Type)
+1B [MSB] – Notification Type
+
+0x01 - Smoke Alarm
+Values in the range 0 to 255 may be set.
+
+The manufacturer defined default value is ```1```.
+
+This parameter has the configuration ID ```config_32_4_7F000000``` and is of type ```INTEGER```.
+
+
+### Parameter 33: Alarm configuration - 4th slot - 4B [LSB]
+
+Alarm configuration - 4th slot - CO (Action )
+4B [LSB] – action:0x00 – no reaction,
+
+  
+0x0X – turn off selected channel,  
+0x1X – turn on selected channel,  
+0x2X – blink selected channel,  
+0x3Y – activate alarm sequenceX – channels summarized: 1/2/3/4 channel are equal to values 1/2/4/8.  
+Y – sequence number: 1-10 (parameter 157).
 Values in the range 0 to 255 may be set.
 
 The manufacturer defined default value is ```0```.
@@ -424,10 +586,56 @@ The manufacturer defined default value is ```0```.
 This parameter has the configuration ID ```config_33_4_000000FF``` and is of type ```INTEGER```.
 
 
-### Parameter 34: Alarm configuration - 5th slot
+### Parameter 33: Alarm configuration - 4th slot - 3B
 
-Alarm configuration - 5th slot
+Alarm configuration - 4th slot - CO (Event/State Parameters)
+3B – Event/State Parameters
 
+0x00
+Values in the range 0 to 255 may be set.
+
+The manufacturer defined default value is ```0```.
+
+This parameter has the configuration ID ```config_33_4_0000FF00``` and is of type ```INTEGER```.
+
+
+### Parameter 33: Alarm configuration - 4th slot - 2B
+
+Alarm configuration - 4th slot - CO (Notification Status)
+2B – Notification Status
+
+0xFF - any notification
+Values in the range 0 to 255 may be set.
+
+The manufacturer defined default value is ```255```.
+
+This parameter has the configuration ID ```config_33_4_00FF0000``` and is of type ```INTEGER```.
+
+
+### Parameter 33: Alarm configuration - 4th slot - 1B [MSB]
+
+Alarm configuration - 4th slot - CO (Notification Type)
+1B [MSB] – Notification Type
+
+0x02 - CO Alarm
+Values in the range 0 to 255 may be set.
+
+The manufacturer defined default value is ```2```.
+
+This parameter has the configuration ID ```config_33_4_7F000000``` and is of type ```INTEGER```.
+
+
+### Parameter 34: Alarm configuration - 5th slot - 4B [LSB]
+
+Alarm configuration - 5th slot - Heat (Action )
+4B [LSB] – action:0x00 – no reaction,
+
+  
+0x0X – turn off selected channel,  
+0x1X – turn on selected channel,  
+0x2X – blink selected channel,  
+0x3Y – activate alarm sequenceX – channels summarized: 1/2/3/4 channel are equal to values 1/2/4/8.  
+Y – sequence number: 1-10 (parameter 157).
 Values in the range 0 to 255 may be set.
 
 The manufacturer defined default value is ```0```.
@@ -435,15 +643,53 @@ The manufacturer defined default value is ```0```.
 This parameter has the configuration ID ```config_34_4_000000FF``` and is of type ```INTEGER```.
 
 
+### Parameter 34: Alarm configuration - 5th slot - 3B
+
+Alarm configuration - 5th slot - Heat (Event/State Parameters)
+3B – Event/State Parameters
+
+0x00
+Values in the range 0 to 255 may be set.
+
+The manufacturer defined default value is ```0```.
+
+This parameter has the configuration ID ```config_34_4_0000FF00``` and is of type ```INTEGER```.
+
+
+### Parameter 34: Alarm configuration - 5th slot - 2B
+
+Alarm configuration - 5th slot - Heat (Notification Status)
+2B – Notification Status
+
+0xFF - any notification
+Values in the range 0 to 255 may be set.
+
+The manufacturer defined default value is ```255```.
+
+This parameter has the configuration ID ```config_34_4_00FF0000``` and is of type ```INTEGER```.
+
+
+### Parameter 34: Alarm configuration - 5th slot - 1B [MSB]
+
+Alarm configuration - 5th slot - Heat (Notification Type)
+1B [MSB] – Notification Type
+
+0x04 - Heat Alarm
+Values in the range 0 to 255 may be set.
+
+The manufacturer defined default value is ```4```.
+
+This parameter has the configuration ID ```config_34_4_7F000000``` and is of type ```INTEGER```.
+
+
 ### Parameter 35: Duration of alarm signalization
 
 Duration of alarm signalization
+This parameter determines the duration of alarm signaling (flashing mode and/or alarm sequence). Available Values:
 
-The following option values may be configured -:
-
-| Value  | Description |
-|--------|-------------|
-| 0 | infinite signalization |
+0 – infinite signalization,  
+1-32400 (1s-9h, 1s step)
+Values in the range 0 to 32400 may be set.
 
 The manufacturer defined default value is ```600```.
 
@@ -453,7 +699,14 @@ This parameter has the configuration ID ```config_35_2_0000FFFF``` and is of typ
 ### Parameter 40: Input 1 - sent scenes
 
 Input 1 - sent scenes
+This parameter defines which actions result in sending scene ID and attribute assigned to them. Parameter is relevant only if parameter 20 is set to 2, 3 or 4.
 
+Actions can be summed up, e.g. 1+2+4+8=15 and entered as a value for the parameter. Available values1 - Key pressed 1 time
+
+  
+2 - Key pressed 2 times  
+3 - Key pressed 3 times  
+4 - Key hold down and key released
 Values in the range 0 to 15 may be set.
 
 The manufacturer defined default value is ```15```.
@@ -464,7 +717,14 @@ This parameter has the configuration ID ```config_40_1``` and is of type ```INTE
 ### Parameter 41: Input 2 - sent scenes
 
 Input 2 - sent scenes
+This parameter defines which actions result in sending scene ID and attribute assigned to them. Parameter is relevant only if parameter 21 is set to 2, 3 or 4.
 
+Actions can be summed up, e.g. 1+2+4+8=15 and entered as a value for the parameter. Available values1 - Key pressed 1 time
+
+  
+2 - Key pressed 2 times  
+3 - Key pressed 3 times  
+4 - Key hold down and key released
 Values in the range 0 to 15 may be set.
 
 The manufacturer defined default value is ```15```.
@@ -475,7 +735,14 @@ This parameter has the configuration ID ```config_41_1``` and is of type ```INTE
 ### Parameter 42: Input 3 - sent scenes
 
 Input 3 - sent scenes
+This parameter defines which actions result in sending scene ID and attribute assigned to them. Parameter is relevant only if parameter 22 is set to 2, 3 or 4.
 
+Actions can be summed up, e.g. 1+2+4+8=15 and entered as a value for the parameter. Available values1 - Key pressed 1 time
+
+  
+2 - Key pressed 2 times  
+3 - Key pressed 3 times  
+4 - Key hold down and key released
 Values in the range 0 to 15 may be set.
 
 The manufacturer defined default value is ```15```.
@@ -486,7 +753,14 @@ This parameter has the configuration ID ```config_42_1``` and is of type ```INTE
 ### Parameter 43: Input 4 - sent scenes
 
 Input 4 - sent scenes
+This parameter defines which actions result in sending scene ID and attribute assigned to them. Parameter is relevant only if parameter 23 is set to 2, 3 or 4.
 
+Actions can be summed up, e.g. 1+2+4+8=15 and entered as a value for the parameter. Available values1 - Key pressed 1 time
+
+  
+2 - Key pressed 2 times  
+3 - Key pressed 3 times  
+4 - Key hold down and key released
 Values in the range 0 to 15 may be set.
 
 The manufacturer defined default value is ```15```.
@@ -575,7 +849,11 @@ This parameter has the configuration ID ```config_66_2``` and is of type ```INTE
 ### Parameter 150: Inputs - LED colour control mode
 
 Inputs - LED colour control mode
+This parameter determines how connected switches control LED strips.  
+0 – RGBW mode (every input controls output with the same number, IN1-OUT1, IN2-OUT2, IN3-OUT3, IN4-OUT4)
 
+  
+1 – HSB and White mode (inputs works in HSB color model, IN1-H (Hue), IN2-S (Saturation), IN3-B (Brightness), IN4-White (OUT4)
 The following option values may be configured -:
 
 | Value  | Description |
@@ -596,6 +874,7 @@ This parameter determines time of smooth transition between 0% and 100% when co
   * 0 – instantly
   * 1-127 (1s-127s, 1s step)
   * 128-254 (1min-127min, 1min step)
+  * 3 (3s) Default
 Values in the range 0 to 254 may be set.
 
 The manufacturer defined default value is ```3```.
@@ -611,6 +890,7 @@ This parameter determines time needed to change the state between current and t
   * 0 – instantly
   * 1-127 (1s-127s, 1s step)
   * 128-254 (1min-127min, 1min step)
+  * 3 (3s) Default
 Values in the range 0 to 254 may be set.
 
 The manufacturer defined default value is ```3```.
@@ -621,7 +901,7 @@ This parameter has the configuration ID ```config_152_2``` and is of type ```INT
 ### Parameter 154: ON frame value for single click
 
 ON frame value for single click
-This is an advanced parameter and will therefore not show in the user interface without entering advanced mode.
+For every byte: 0-99, 255This is an advanced parameter and will therefore not show in the user interface without entering advanced mode.
 Values in the range 0 to 4294967295 may be set.
 
 The manufacturer defined default value is ```4294967295```.
@@ -632,7 +912,7 @@ This parameter has the configuration ID ```config_154_4``` and is of type ```INT
 ### Parameter 154: ON frame value for single click IN1
 
 ON frame value for single click IN1
-
+For every byte: 0-99, 255
 Values in the range 0 to 255 may be set.
 
 The manufacturer defined default value is ```255```.
@@ -643,7 +923,7 @@ This parameter has the configuration ID ```config_154_4_000000FF``` and is of ty
 ### Parameter 154: ON frame value for single click IN2
 
 ON frame value for single click IN2
-
+For every byte: 0-99, 255
 Values in the range 0 to 255 may be set.
 
 The manufacturer defined default value is ```255```.
@@ -654,7 +934,7 @@ This parameter has the configuration ID ```config_154_4_0000FF00``` and is of ty
 ### Parameter 154: ON frame value for single click IN3
 
 ON frame value for single click IN3
-
+For every byte: 0-99, 255
 Values in the range 0 to 255 may be set.
 
 The manufacturer defined default value is ```255```.
@@ -665,7 +945,7 @@ This parameter has the configuration ID ```config_154_4_00FF0000``` and is of ty
 ### Parameter 154: ON frame value for single click IN4
 
 ON frame value for single click IN4
-
+For every byte: 0-99, 255
 Values in the range 0 to 255 may be set.
 
 The manufacturer defined default value is ```255```.
@@ -676,10 +956,10 @@ This parameter has the configuration ID ```config_154_4_7F000000``` and is of ty
 ### Parameter 155: OFF frame value for single click
 
 OFF frame value for single click
-This is an advanced parameter and will therefore not show in the user interface without entering advanced mode.
+For every byte: 0-99, 255This is an advanced parameter and will therefore not show in the user interface without entering advanced mode.
 Values in the range 0 to 4294967295 may be set.
 
-The manufacturer defined default value is ```4294967295```.
+The manufacturer defined default value is ```0```.
 
 This parameter has the configuration ID ```config_155_4``` and is of type ```INTEGER```.
 
@@ -687,10 +967,10 @@ This parameter has the configuration ID ```config_155_4``` and is of type ```INT
 ### Parameter 155: OFF frame value for single click IN1
 
 OFF frame value for single click IN1
-
+For every byte: 0-99, 255
 Values in the range 0 to 255 may be set.
 
-The manufacturer defined default value is ```255```.
+The manufacturer defined default value is ```0```.
 
 This parameter has the configuration ID ```config_155_4_000000FF``` and is of type ```INTEGER```.
 
@@ -698,10 +978,10 @@ This parameter has the configuration ID ```config_155_4_000000FF``` and is of ty
 ### Parameter 155: OFF frame value for single click IN2
 
 OFF frame value for single click IN2
-
+For every byte: 0-99, 255
 Values in the range 0 to 255 may be set.
 
-The manufacturer defined default value is ```255```.
+The manufacturer defined default value is ```0```.
 
 This parameter has the configuration ID ```config_155_4_0000FF00``` and is of type ```INTEGER```.
 
@@ -709,10 +989,10 @@ This parameter has the configuration ID ```config_155_4_0000FF00``` and is of ty
 ### Parameter 155: OFF frame value for single click IN3
 
 OFF frame value for single click IN3
-
+For every byte: 0-99, 255
 Values in the range 0 to 255 may be set.
 
-The manufacturer defined default value is ```255```.
+The manufacturer defined default value is ```0```.
 
 This parameter has the configuration ID ```config_155_4_00FF0000``` and is of type ```INTEGER```.
 
@@ -720,10 +1000,10 @@ This parameter has the configuration ID ```config_155_4_00FF0000``` and is of ty
 ### Parameter 155: OFF frame value for single click IN4
 
 OFF frame value for single click IN4
-
+For every byte: 0-99, 255
 Values in the range 0 to 255 may be set.
 
-The manufacturer defined default value is ```255```.
+The manufacturer defined default value is ```0```.
 
 This parameter has the configuration ID ```config_155_4_7F000000``` and is of type ```INTEGER```.
 
@@ -731,10 +1011,10 @@ This parameter has the configuration ID ```config_155_4_7F000000``` and is of ty
 ### Parameter 156: ON frame value for double click
 
 ON frame value for double click
-This is an advanced parameter and will therefore not show in the user interface without entering advanced mode.
+For every byte: 0-99, 255This is an advanced parameter and will therefore not show in the user interface without entering advanced mode.
 Values in the range 0 to 4294967295 may be set.
 
-The manufacturer defined default value is ```4294967295```.
+The manufacturer defined default value is ```1667457891```.
 
 This parameter has the configuration ID ```config_156_4``` and is of type ```INTEGER```.
 
@@ -742,10 +1022,10 @@ This parameter has the configuration ID ```config_156_4``` and is of type ```INT
 ### Parameter 156: ON frame value for double click IN1
 
 ON frame value for double click IN1
-
+For every byte: 0-99, 255
 Values in the range 0 to 255 may be set.
 
-The manufacturer defined default value is ```255```.
+The manufacturer defined default value is ```99```.
 
 This parameter has the configuration ID ```config_156_4_000000FF``` and is of type ```INTEGER```.
 
@@ -753,10 +1033,10 @@ This parameter has the configuration ID ```config_156_4_000000FF``` and is of ty
 ### Parameter 156: ON frame value for double click IN2
 
 ON frame value for double click IN2
-
+For every byte: 0-99, 255
 Values in the range 0 to 255 may be set.
 
-The manufacturer defined default value is ```255```.
+The manufacturer defined default value is ```99```.
 
 This parameter has the configuration ID ```config_156_4_0000FF00``` and is of type ```INTEGER```.
 
@@ -764,10 +1044,10 @@ This parameter has the configuration ID ```config_156_4_0000FF00``` and is of ty
 ### Parameter 156: ON frame value for double click IN3
 
 ON frame value for double click IN3
-
+For every byte: 0-99, 255
 Values in the range 0 to 255 may be set.
 
-The manufacturer defined default value is ```255```.
+The manufacturer defined default value is ```99```.
 
 This parameter has the configuration ID ```config_156_4_00FF0000``` and is of type ```INTEGER```.
 
@@ -775,10 +1055,10 @@ This parameter has the configuration ID ```config_156_4_00FF0000``` and is of ty
 ### Parameter 156: ON frame value for double click IN4
 
 ON frame value for double click IN4
-
+For every byte: 0-99, 255
 Values in the range 0 to 255 may be set.
 
-The manufacturer defined default value is ```255```.
+The manufacturer defined default value is ```99```.
 
 This parameter has the configuration ID ```config_156_4_7F000000``` and is of type ```INTEGER```.
 

@@ -205,6 +205,9 @@ RGBW CONTROLLER 2<br /> <h1>Overview</h1><p>FIBARO RGBW Controller 2 uses PWM ou
       <!-- PARAMETER DEFINITIONS -->
       <parameter name="config_1_1" type="integer" groupName="configuration">
         <label>1: Remember device status before the power failure</label>
+        <description><![CDATA[
+<br /> <h1>Overview</h1><p>This parameter determines how the device will react in the event of power supply failure (e.g. power outage or taking out from the electrical outlet).</p><p>After the power supply is back on, the device can be restored to previous state or remain switched off. The sequence is not remem- bered after the power returns. After power failure, the last color set before the sequence will be restored.</p>
+        ]]></description>
         <default>0</default>
         <options>
           <option value="0">device remains switched off</option>
@@ -215,7 +218,9 @@ RGBW CONTROLLER 2<br /> <h1>Overview</h1><p>FIBARO RGBW Controller 2 uses PWM ou
 
       <parameter name="config_20_1" type="integer" groupName="configuration">
         <label>20: Input 1 - operating mode</label>
-        <description>Input 1 - operating mode</description>
+        <description><![CDATA[
+Input 1 - operating mode<br /> <h1>Overview</h1><p>This parameter allows to choose mode of 1st input (IN1). Change it depending on connected device.<br /></p>
+        ]]></description>
         <default>2</default>
         <options>
           <option value="0">Analog input without internal pull-up</option>
@@ -229,7 +234,9 @@ RGBW CONTROLLER 2<br /> <h1>Overview</h1><p>FIBARO RGBW Controller 2 uses PWM ou
 
       <parameter name="config_21_1" type="integer" groupName="configuration">
         <label>21: Input 2 - operating mode</label>
-        <description>Input 2 - operating mode</description>
+        <description><![CDATA[
+Input 2 - operating mode<br /> <h1>Overview</h1><p>This parameter allows to choose mode of 2nd input (IN2). Change it depending on connected device.<br /></p>
+        ]]></description>
         <default>2</default>
         <options>
           <option value="0">Analog input without internal pull-up</option>
@@ -243,7 +250,9 @@ RGBW CONTROLLER 2<br /> <h1>Overview</h1><p>FIBARO RGBW Controller 2 uses PWM ou
 
       <parameter name="config_22_1" type="integer" groupName="configuration">
         <label>22: Input 3 - operating mode</label>
-        <description>Input 3 - operating mode</description>
+        <description><![CDATA[
+Input 3 - operating mode<br /> <h1>Overview</h1><p>This parameter allows to choose mode of 3rd input (IN3). Change it depending on connected device.<br /></p>
+        ]]></description>
         <default>2</default>
         <options>
           <option value="0">Analog input without internal pull-up</option>
@@ -257,7 +266,9 @@ RGBW CONTROLLER 2<br /> <h1>Overview</h1><p>FIBARO RGBW Controller 2 uses PWM ou
 
       <parameter name="config_23_1" type="integer" groupName="configuration">
         <label>23: Input 4 - operating mode</label>
-        <description>Input 4 - operating mode</description>
+        <description><![CDATA[
+Input 4 - operating mode<br /> <h1>Overview</h1><p>This parameter allows to choose mode of 4th input (IN4). Change it depending on connected device.<br /></p>
+        ]]></description>
         <default>2</default>
         <options>
           <option value="0">Analog input without internal pull-up</option>
@@ -271,60 +282,220 @@ RGBW CONTROLLER 2<br /> <h1>Overview</h1><p>FIBARO RGBW Controller 2 uses PWM ou
 
       <parameter name="config_30_4_000000FF" type="integer" groupName="configuration"
                  min="0" max="255">
-        <label>30: Alarm configuration - 1st slot</label>
-        <description>Alarm configuration - 1st slot</description>
+        <label>30: Alarm configuration - 1st slot - 4B [LSB]</label>
+        <description><![CDATA[
+Alarm configuration - 1st slot (Action)<br /> <h1>Overview</h1><p>4B [LSB] – action:</p> 0x00 – no reaction,<br />0x0X – turn off selected channel,<br />0x1X – turn on selected channel,<br />0x2X – blink selected channel,<br />0x3Y – activate alarm sequenceX – channels summarized: 1/2/3/4 channel are equal to values 1/2/4/8.<br />Y – sequence number: 1-10 (parameter 157).
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_30_4_0000FF00" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>30: Alarm configuration - 1st slot - 3B</label>
+        <description><![CDATA[
+Alarm configuration - 1st slot (Event/State Parameters)<br /> <h1>Overview</h1><p>3B – Event/State Parameters</p><p>0x00</p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_30_4_00FF0000" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>30: Alarm configuration - 1st slot - 2B</label>
+        <description><![CDATA[
+Alarm configuration - 1st slot (Notification Status)<br /> <h1>Overview</h1><p>2B – Notification Status</p><p>0x00 - disabled</p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_30_4_7F000000" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>30: Alarm configuration - 1st slot - 1B [MSB]</label>
+        <description><![CDATA[
+Alarm configuration - 1st slot (Notification Type)<br /> <h1>Overview</h1><p>1B [MSB] – Notification Type</p><p>0x00 - disabled</p>
+        ]]></description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_31_4_000000FF" type="integer" groupName="configuration"
                  min="0" max="255">
-        <label>31: Alarm configuration - 2nd slot</label>
-        <description>Alarm configuration - 2nd slot</description>
+        <label>31: Alarm configuration - 2nd slot - 4B [LSB]</label>
+        <description><![CDATA[
+Alarm configuration - 2nd slot - Water (Action )<br /> <h1>Overview</h1><p>4B [LSB] – action:</p>0x00 – no reaction,<br />0x0X – turn off selected channel,<br />0x1X – turn on selected channel,<br />0x2X – blink selected channel,<br />0x3Y – activate alarm sequenceX – channels summarized: 1/2/3/4 channel are equal to values 1/2/4/8.<br />Y – sequence number: 1-10 (parameter 157).
+        ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_31_4_0000FF00" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>31: Alarm configuration - 2nd slot - 3B</label>
+        <description><![CDATA[
+Alarm configuration - 2nd slot - Water (Event/State Parameters)<br /> <h1>Overview</h1><p>3B – Event/State Parameters</p><p>0x00</p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_31_4_00FF0000" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>31: Alarm configuration - 2nd slot - 2B</label>
+        <description><![CDATA[
+Alarm configuration - 2nd slot - Water (Notification Status)<br /> <h1>Overview</h1><p>2B – Notification Status</p><p>0xFF - any notification</p>
+        ]]></description>
+        <default>255</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_31_4_7F000000" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>31: Alarm configuration - 2nd slot - 1B [MSB]</label>
+        <description><![CDATA[
+Alarm configuration - 2nd slot - Water (Notification Type)<br /> <h1>Overview</h1><p>1B [MSB] – Notification Type</p><p>0x05 - Water</p>
+        ]]></description>
+        <default>5</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_32_4_000000FF" type="integer" groupName="configuration"
                  min="0" max="255">
-        <label>32: Alarm configuration - 3rd slot</label>
-        <description>Alarm configuration - 3rd slot</description>
+        <label>32: Alarm configuration - 3rd slot - 4B [LSB]</label>
+        <description><![CDATA[
+Alarm configuration - 3rd slot - Smoke (Action )<br /> <h1>Overview</h1><p>4B [LSB] – action:</p>0x00 – no reaction,<br />0x0X – turn off selected channel,<br />0x1X – turn on selected channel,<br />0x2X – blink selected channel,<br />0x3Y – activate alarm sequenceX – channels summarized: 1/2/3/4 channel are equal to values 1/2/4/8.<br />Y – sequence number: 1-10 (parameter 157).
+        ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_32_4_0000FF00" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>32: Alarm configuration - 3rd slot - 3B</label>
+        <description><![CDATA[
+Alarm configuration - 3rd slot - Smoke (Event/State Parameters)<br /> <h1>Overview</h1><p>3B – Event/State Parameters</p><p>0x00</p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_32_4_00FF0000" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>32: Alarm configuration - 3rd slot - 2B</label>
+        <description><![CDATA[
+Alarm configuration - 3rd slot - Smoke (Notification Status)<br /> <h1>Overview</h1><p>2B – Notification Status</p><p>0xFF - any notification</p>
+        ]]></description>
+        <default>255</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_32_4_7F000000" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>32: Alarm configuration - 3rd slot - 1B [MSB]</label>
+        <description><![CDATA[
+Alarm configuration - 3rd slot - Smoke (Notification Type)<br /> <h1>Overview</h1><p>1B [MSB] – Notification Type</p><p>0x01 - Smoke Alarm</p>
+        ]]></description>
+        <default>1</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_33_4_000000FF" type="integer" groupName="configuration"
                  min="0" max="255">
-        <label>33: Alarm configuration - 4th slot</label>
-        <description>Alarm configuration - 4th slot</description>
+        <label>33: Alarm configuration - 4th slot - 4B [LSB]</label>
+        <description><![CDATA[
+Alarm configuration - 4th slot - CO (Action )<br /> <h1>Overview</h1><p>4B [LSB] – action:</p>0x00 – no reaction,<br />0x0X – turn off selected channel,<br />0x1X – turn on selected channel,<br />0x2X – blink selected channel,<br />0x3Y – activate alarm sequenceX – channels summarized: 1/2/3/4 channel are equal to values 1/2/4/8.<br />Y – sequence number: 1-10 (parameter 157).
+        ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_33_4_0000FF00" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>33: Alarm configuration - 4th slot - 3B</label>
+        <description><![CDATA[
+Alarm configuration - 4th slot - CO (Event/State Parameters)<br /> <h1>Overview</h1><p>3B – Event/State Parameters</p><p>0x00</p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_33_4_00FF0000" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>33: Alarm configuration - 4th slot - 2B</label>
+        <description><![CDATA[
+Alarm configuration - 4th slot - CO (Notification Status)<br /> <h1>Overview</h1><p>2B – Notification Status</p><p>0xFF - any notification</p>
+        ]]></description>
+        <default>255</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_33_4_7F000000" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>33: Alarm configuration - 4th slot - 1B [MSB]</label>
+        <description><![CDATA[
+Alarm configuration - 4th slot - CO (Notification Type)<br /> <h1>Overview</h1><p>1B [MSB] – Notification Type</p><p>0x02 - CO Alarm</p>
+        ]]></description>
+        <default>2</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_34_4_000000FF" type="integer" groupName="configuration"
                  min="0" max="255">
-        <label>34: Alarm configuration - 5th slot</label>
-        <description>Alarm configuration - 5th slot</description>
+        <label>34: Alarm configuration - 5th slot - 4B [LSB]</label>
+        <description><![CDATA[
+Alarm configuration - 5th slot - Heat (Action )<br /> <h1>Overview</h1><p>4B [LSB] – action:</p>0x00 – no reaction,<br />0x0X – turn off selected channel,<br />0x1X – turn on selected channel,<br />0x2X – blink selected channel,<br />0x3Y – activate alarm sequenceX – channels summarized: 1/2/3/4 channel are equal to values 1/2/4/8.<br />Y – sequence number: 1-10 (parameter 157).
+        ]]></description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_35_2_0000FFFF" type="integer" groupName="configuration">
+      <parameter name="config_34_4_0000FF00" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>34: Alarm configuration - 5th slot - 3B</label>
+        <description><![CDATA[
+Alarm configuration - 5th slot - Heat (Event/State Parameters)<br /> <h1>Overview</h1><p>3B – Event/State Parameters</p><p>0x00</p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_34_4_00FF0000" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>34: Alarm configuration - 5th slot - 2B</label>
+        <description><![CDATA[
+Alarm configuration - 5th slot - Heat (Notification Status)<br /> <h1>Overview</h1><p>2B – Notification Status</p><p>0xFF - any notification</p>
+        ]]></description>
+        <default>255</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_34_4_7F000000" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>34: Alarm configuration - 5th slot - 1B [MSB]</label>
+        <description><![CDATA[
+Alarm configuration - 5th slot - Heat (Notification Type)<br /> <h1>Overview</h1><p>1B [MSB] – Notification Type</p><p>0x04 - Heat Alarm</p>
+        ]]></description>
+        <default>4</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_35_2_0000FFFF" type="integer" groupName="configuration"
+                 min="0" max="32400">
         <label>35: Duration of alarm signalization</label>
         <description><![CDATA[
-Duration of alarm signalization<br /> <h1>Overview</h1><p><br /></p>
+Duration of alarm signalization<br /> <h1>Overview</h1><p>This parameter determines the duration of alarm signaling (flashing mode and/or alarm sequence). Available Values:</p><p>0 – infinite signalization,<br />1-32400 (1s-9h, 1s step)</p>
         ]]></description>
         <default>600</default>
-        <options>
-          <option value="0">infinite signalization</option>
-        </options>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_40_1" type="integer" groupName="configuration"
                  min="0" max="15">
         <label>40: Input 1 - sent scenes</label>
-        <description>Input 1 - sent scenes</description>
+        <description><![CDATA[
+Input 1 - sent scenes<br /> <h1>Overview</h1><p>This parameter defines which actions result in sending scene ID and attribute assigned to them. Parameter is relevant only if parameter 20 is set to 2, 3 or 4.</p><p>Actions can be summed up, e.g. 1+2+4+8=15 and entered as a value for the parameter. Available values</p>1 - Key pressed 1 time<br />2 - Key pressed 2 times<br />3 - Key pressed 3 times<br />4 - Key hold down and key released
+        ]]></description>
         <default>15</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
@@ -332,7 +503,9 @@ Duration of alarm signalization<br /> <h1>Overview</h1><p><br /></p>
       <parameter name="config_41_1" type="integer" groupName="configuration"
                  min="0" max="15">
         <label>41: Input 2 - sent scenes</label>
-        <description>Input 2 - sent scenes</description>
+        <description><![CDATA[
+Input 2 - sent scenes<br /> <h1>Overview</h1><p>This parameter defines which actions result in sending scene ID and attribute assigned to them. Parameter is relevant only if parameter 21 is set to 2, 3 or 4.</p><p>Actions can be summed up, e.g. 1+2+4+8=15 and entered as a value for the parameter. Available values</p>1 - Key pressed 1 time<br />2 - Key pressed 2 times<br />3 - Key pressed 3 times<br />4 - Key hold down and key released
+        ]]></description>
         <default>15</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
@@ -340,7 +513,9 @@ Duration of alarm signalization<br /> <h1>Overview</h1><p><br /></p>
       <parameter name="config_42_1" type="integer" groupName="configuration"
                  min="0" max="15">
         <label>42: Input 3 - sent scenes</label>
-        <description>Input 3 - sent scenes</description>
+        <description><![CDATA[
+Input 3 - sent scenes<br /> <h1>Overview</h1><p>This parameter defines which actions result in sending scene ID and attribute assigned to them. Parameter is relevant only if parameter 22 is set to 2, 3 or 4.</p><p>Actions can be summed up, e.g. 1+2+4+8=15 and entered as a value for the parameter. Available values</p>1 - Key pressed 1 time<br />2 - Key pressed 2 times<br />3 - Key pressed 3 times<br />4 - Key hold down and key released
+        ]]></description>
         <default>15</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
@@ -348,7 +523,9 @@ Duration of alarm signalization<br /> <h1>Overview</h1><p><br /></p>
       <parameter name="config_43_1" type="integer" groupName="configuration"
                  min="0" max="15">
         <label>43: Input 4 - sent scenes</label>
-        <description>Input 4 - sent scenes</description>
+        <description><![CDATA[
+Input 4 - sent scenes<br /> <h1>Overview</h1><p>This parameter defines which actions result in sending scene ID and attribute assigned to them. Parameter is relevant only if parameter 23 is set to 2, 3 or 4.</p><p>Actions can be summed up, e.g. 1+2+4+8=15 and entered as a value for the parameter. Available values</p>1 - Key pressed 1 time<br />2 - Key pressed 2 times<br />3 - Key pressed 3 times<br />4 - Key hold down and key released
+        ]]></description>
         <default>15</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
@@ -405,7 +582,9 @@ Energy reports - periodic<br /> <h1>Overview</h1><p>This parameter determines in
 
       <parameter name="config_150_1" type="integer" groupName="configuration">
         <label>150: Inputs - LED colour control mode</label>
-        <description>Inputs - LED colour control mode</description>
+        <description><![CDATA[
+Inputs - LED colour control mode<br /> <h1>Overview</h1><p>This parameter determines how connected switches control LED strips.<br /></p>0 – RGBW mode (every input controls output with the same number, IN1-OUT1, IN2-OUT2, IN3-OUT3, IN4-OUT4)<br />1 – HSB and White mode (inputs works in HSB color model, IN1-H (Hue), IN2-S (Saturation), IN3-B (Brightness), IN4-White (OUT4)
+        ]]></description>
         <default>0</default>
         <options>
           <option value="0">RGBW mode</option>
@@ -418,7 +597,7 @@ Energy reports - periodic<br /> <h1>Overview</h1><p>This parameter determines in
                  min="0" max="254">
         <label>151: Local control - transition time</label>
         <description><![CDATA[
-Local control - transition time<br /> <h1>Overview</h1><p>This parameter determines time of smooth transition between 0% and 100% when controlling with connected switches.</p> <ul><li>0 – instantly</li> <li>1-127 (1s-127s, 1s step)</li> <li>128-254 (1min-127min, 1min step)</li> </ul>
+Local control - transition time<br /> <h1>Overview</h1><p>This parameter determines time of smooth transition between 0% and 100% when controlling with connected switches.</p> <ul><li>0 – instantly</li> <li>1-127 (1s-127s, 1s step)</li> <li>128-254 (1min-127min, 1min step)</li><li>3 (3s) Default<br /></li> </ul>
         ]]></description>
         <default>3</default>
         <limitToOptions>false</limitToOptions>
@@ -428,7 +607,7 @@ Local control - transition time<br /> <h1>Overview</h1><p>This parameter determi
                  min="0" max="254">
         <label>152: Remote control - transition time</label>
         <description><![CDATA[
-Remote control - transition time<br /> <h1>Overview</h1><p>This parameter determines time needed to change the state between current and target values when controlling via Z-Wave network.</p> <ul><li>0 – instantly</li> <li>1-127 (1s-127s, 1s step)</li> <li>128-254 (1min-127min, 1min step)</li> </ul>
+Remote control - transition time<br /> <h1>Overview</h1><p>This parameter determines time needed to change the state between current and target values when controlling via Z-Wave network.</p> <ul><li>0 – instantly</li> <li>1-127 (1s-127s, 1s step)</li> <li>128-254 (1min-127min, 1min step)</li><li>3 (3s) Default</li> </ul>
         ]]></description>
         <default>3</default>
         <limitToOptions>false</limitToOptions>
@@ -437,7 +616,9 @@ Remote control - transition time<br /> <h1>Overview</h1><p>This parameter determ
       <parameter name="config_154_4" type="integer" groupName="configuration"
                  min="0" max="4294967295">
         <label>154: ON frame value for single click</label>
-        <description>ON frame value for single click</description>
+        <description><![CDATA[
+ON frame value for single click<br /> <h1>Overview</h1><p>For every byte: 0-99, 255<br /></p>
+        ]]></description>
         <default>4294967295</default>
         <advanced>true</advanced>
         <limitToOptions>false</limitToOptions>
@@ -446,7 +627,9 @@ Remote control - transition time<br /> <h1>Overview</h1><p>This parameter determ
       <parameter name="config_154_4_000000FF" type="integer" groupName="configuration"
                  min="0" max="255">
         <label>154: ON frame value for single click IN1</label>
-        <description>ON frame value for single click IN1</description>
+        <description><![CDATA[
+ON frame value for single click IN1<br /> <h1>Overview</h1><p>For every byte: 0-99, 255<br /></p>
+        ]]></description>
         <default>255</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
@@ -454,7 +637,9 @@ Remote control - transition time<br /> <h1>Overview</h1><p>This parameter determ
       <parameter name="config_154_4_0000FF00" type="integer" groupName="configuration"
                  min="0" max="255">
         <label>154: ON frame value for single click IN2</label>
-        <description>ON frame value for single click IN2</description>
+        <description><![CDATA[
+ON frame value for single click IN2<br /> <h1>Overview</h1><p>For every byte: 0-99, 255<br /></p>
+        ]]></description>
         <default>255</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
@@ -462,7 +647,9 @@ Remote control - transition time<br /> <h1>Overview</h1><p>This parameter determ
       <parameter name="config_154_4_00FF0000" type="integer" groupName="configuration"
                  min="0" max="255">
         <label>154: ON frame value for single click IN3</label>
-        <description>ON frame value for single click IN3</description>
+        <description><![CDATA[
+ON frame value for single click IN3<br /> <h1>Overview</h1><p>For every byte: 0-99, 255<br /></p>
+        ]]></description>
         <default>255</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
@@ -470,7 +657,9 @@ Remote control - transition time<br /> <h1>Overview</h1><p>This parameter determ
       <parameter name="config_154_4_7F000000" type="integer" groupName="configuration"
                  min="0" max="255">
         <label>154: ON frame value for single click IN4</label>
-        <description>ON frame value for single click IN4</description>
+        <description><![CDATA[
+ON frame value for single click IN4<br /> <h1>Overview</h1><p>For every byte: 0-99, 255<br /></p>
+        ]]></description>
         <default>255</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
@@ -478,8 +667,10 @@ Remote control - transition time<br /> <h1>Overview</h1><p>This parameter determ
       <parameter name="config_155_4" type="integer" groupName="configuration"
                  min="0" max="4294967295">
         <label>155: OFF frame value for single click</label>
-        <description>OFF frame value for single click</description>
-        <default>4294967295</default>
+        <description><![CDATA[
+OFF frame value for single click<br /> <h1>Overview</h1><p>For every byte: 0-99, 255<br /></p>
+        ]]></description>
+        <default>0</default>
         <advanced>true</advanced>
         <limitToOptions>false</limitToOptions>
       </parameter>
@@ -487,40 +678,50 @@ Remote control - transition time<br /> <h1>Overview</h1><p>This parameter determ
       <parameter name="config_155_4_000000FF" type="integer" groupName="configuration"
                  min="0" max="255">
         <label>155: OFF frame value for single click IN1</label>
-        <description>OFF frame value for single click IN1</description>
-        <default>255</default>
+        <description><![CDATA[
+OFF frame value for single click IN1<br /> <h1>Overview</h1><p>For every byte: 0-99, 255<br /></p>
+        ]]></description>
+        <default>0</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_155_4_0000FF00" type="integer" groupName="configuration"
                  min="0" max="255">
         <label>155: OFF frame value for single click IN2</label>
-        <description>OFF frame value for single click IN2</description>
-        <default>255</default>
+        <description><![CDATA[
+OFF frame value for single click IN2<br /> <h1>Overview</h1><p>For every byte: 0-99, 255<br /></p>
+        ]]></description>
+        <default>0</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_155_4_00FF0000" type="integer" groupName="configuration"
                  min="0" max="255">
         <label>155: OFF frame value for single click IN3</label>
-        <description>OFF frame value for single click IN3</description>
-        <default>255</default>
+        <description><![CDATA[
+OFF frame value for single click IN3<br /> <h1>Overview</h1><p>For every byte: 0-99, 255<br /></p>
+        ]]></description>
+        <default>0</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_155_4_7F000000" type="integer" groupName="configuration"
                  min="0" max="255">
         <label>155: OFF frame value for single click IN4</label>
-        <description>OFF frame value for single click IN4</description>
-        <default>255</default>
+        <description><![CDATA[
+OFF frame value for single click IN4<br /> <h1>Overview</h1><p>For every byte: 0-99, 255<br /></p>
+        ]]></description>
+        <default>0</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_156_4" type="integer" groupName="configuration"
                  min="0" max="4294967295">
         <label>156: ON frame value for double click</label>
-        <description>ON frame value for double click</description>
-        <default>4294967295</default>
+        <description><![CDATA[
+ON frame value for double click<br /> <h1>Overview</h1><p>For every byte: 0-99, 255<br /></p>
+        ]]></description>
+        <default>1667457891</default>
         <advanced>true</advanced>
         <limitToOptions>false</limitToOptions>
       </parameter>
@@ -528,32 +729,40 @@ Remote control - transition time<br /> <h1>Overview</h1><p>This parameter determ
       <parameter name="config_156_4_000000FF" type="integer" groupName="configuration"
                  min="0" max="255">
         <label>156: ON frame value for double click IN1</label>
-        <description>ON frame value for double click IN1</description>
-        <default>255</default>
+        <description><![CDATA[
+ON frame value for double click IN1<br /> <h1>Overview</h1><p>For every byte: 0-99, 255<br /></p>
+        ]]></description>
+        <default>99</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_156_4_0000FF00" type="integer" groupName="configuration"
                  min="0" max="255">
         <label>156: ON frame value for double click IN2</label>
-        <description>ON frame value for double click IN2</description>
-        <default>255</default>
+        <description><![CDATA[
+ON frame value for double click IN2<br /> <h1>Overview</h1><p>For every byte: 0-99, 255<br /></p>
+        ]]></description>
+        <default>99</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_156_4_00FF0000" type="integer" groupName="configuration"
                  min="0" max="255">
         <label>156: ON frame value for double click IN3</label>
-        <description>ON frame value for double click IN3</description>
-        <default>255</default>
+        <description><![CDATA[
+ON frame value for double click IN3<br /> <h1>Overview</h1><p>For every byte: 0-99, 255<br /></p>
+        ]]></description>
+        <default>99</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_156_4_7F000000" type="integer" groupName="configuration"
                  min="0" max="255">
         <label>156: ON frame value for double click IN4</label>
-        <description>ON frame value for double click IN4</description>
-        <default>255</default>
+        <description><![CDATA[
+ON frame value for double click IN4<br /> <h1>Overview</h1><p>For every byte: 0-99, 255<br /></p>
+        ]]></description>
+        <default>99</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
