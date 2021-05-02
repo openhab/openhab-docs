@@ -25,11 +25,10 @@ There are different options for output devices (so called audio sinks):
 
 The distribution comes with these options built-in:
 
-| Output Device       | Audio Sink                        | Description                                                                                                                                                                                                                                                                                                                                         |
-|---------------------|-----------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `javasound`         | System Speaker                    | This uses the JRE sound drivers to play audio to the local sound interface.                                                                                                                                                                                                                                                                         |
-| `enhancedjavasound` | System Speaker (with mp3 support) | This uses the JRE sound drivers plus an additional 3rd party library, which adds support for mp3 files.                                                                                                                                                                                                                                             |
-| `webaudio`          | Web Audio                         | Convenient, if sounds should not be played on the server, but on the client: This sink sends the audio stream through HTTP to web clients, which then cause it to be played back by the browser. Obviously, the browser needs to be opened and have a compatible openHAB UI running. Currently, this feature is supported by UI and HABPanel. |
+| Output Device       | Audio Sink                        | Description                                                                                                                                                                                                                                                                                                                                 |
+|---------------------|-----------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `enhancedjavasound` | System Speaker (with mp3 support) | This uses the JRE sound drivers plus an additional 3rd party library, which adds support for mp3 files.                                                                                                                                                                                                                                     |
+| `webaudio`          | Web Audio                         | Convenient, if sounds should not be played on the server, but on the client: This sink sends the audio stream through HTTP to web clients, which then cause it to be played back by the browser. Obviously, the browser needs to be opened and have a compatible openHAB UI running. Currently, this feature is only supported by HABPanel. |
 
 Additionally, certain bindings register their supported devices as audio sinks, e.g. Sonos speakers.
 
@@ -40,7 +39,6 @@ To check, which audio sinks are available, you can use the console:
 ```text
 openhab> openhab:audio sinks
 enhancedjavasound
-javasound
 webaudio
 ```
 
