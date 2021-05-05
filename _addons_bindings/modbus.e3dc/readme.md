@@ -5,6 +5,7 @@ title: E3DC - Bindings
 type: binding
 description: "<img align='right' src='./doc/E3DC_logo.png'/>"
 since: 3x
+logo: images/addons/modbus.e3dc.png
 install: manual
 ---
 

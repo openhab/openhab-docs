@@ -5,6 +5,7 @@ title: BMW ConnectedDrive - Bindings
 type: binding
 description: "The binding provides a connection between [BMW's ConnectedDrive Portal](https://www.bmw-connecteddrive.com/country-region-select/country-region-selection.html) and openHAB."
 since: 3x
+logo: images/addons/bmwconnecteddrive.png
 install: manual
 ---
 
