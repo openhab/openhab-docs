@@ -5,10 +5,10 @@
   xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
                       https://openhab.org/schemas/thing-description/v1.0.0">
 
-  <thing-type id="zooz_zen34_00_000" listed="false">
-    <label>ZEN34 Remote switch</label>
+  <thing-type id="zooz_zen34v101_00_000" listed="false">
+    <label>zen34v1.01 Remote Switch</label>
     <description><![CDATA[
-Remote switch<br /> <h1>Overview</h1><p>* Control other Z-Wave devices and enable scenes with a click of a button</p><p>* Classic paddle switch look and size + magnetic base</p><p>* Install in your electrical switch box or mount anywhere on a wall with just adhesive tape</p><p>* The latest 700 chip with S2 and SmartStart support</p><p>* Powered by batteries, no wires needed<br /></p> <br /> <h2>Inclusion Information</h2><p>Put the openHAB Z-Wave binding into inclusion mode and click the upper paddle 6 times quickly. The LED indicator will blink blue during the process and light up green once added successfully. It will light up red if failed.<br /></p> <br /> <h2>Exclusion Information</h2><p>Put the openHAB Z-Wave binding into exclusion mode and click the lower paddle 6 times quickly.<br /></p> <br /> <h2>Wakeup Information</h2><p>Click the upper paddle 7 times quickly. The LED indicator will stay siolid blue during wakeup and will turn off when the device turns the Z-Wave radio off again.<br /></p>
+Remote Switch<br /> <h1>Overview</h1><p>* Control other Z-Wave devices and enable scenes with a click of a button</p><p>* Classic paddle switch look and size + magnetic base</p><p>* Install in your electrical switch box or mount anywhere on a wall with just adhesive tape</p><p>* The latest 700 chip with S2 and SmartStart support</p><p>* Powered by batteries, no wires needed</p> <br /> <h2>Inclusion Information</h2><p>Put the openHAB Z-Wave binding into inclusion mode and click the upper paddle 6 times quickly. The LED indicator will blink blue during the process and light up green once added successfully. It will light up red if failed.<br /></p> <br /> <h2>Exclusion Information</h2><p>Put the openHAB Z-Wave binding into exclusion mode and click the lower paddle 6 times quickly.<br /></p> <br /> <h2>Wakeup Information</h2><p><br /></p>
     ]]></description>
     <category>RemoteControl</category>
 
@@ -30,10 +30,10 @@ Remote switch<br /> <h1>Overview</h1><p>* Control other Z-Wave devices and enabl
     <!-- DEVICE PROPERTY DEFINITIONS -->
     <properties>
       <property name="vendor">Zooz</property>
-      <property name="modelId">ZEN34</property>
+      <property name="modelId">zen34v1.01</property>
       <property name="manufacturerId">027A</property>
-      <property name="manufacturerRef">0004:F001</property>
-      <property name="dbReference">1310</property>
+      <property name="manufacturerRef">7000:F001</property>
+      <property name="dbReference">1382</property>
       <property name="defaultAssociations">1</property>
     </properties>
 
@@ -82,7 +82,7 @@ Remote switch<br /> <h1>Overview</h1><p>* Control other Z-Wave devices and enabl
       <parameter name="config_3_1" type="integer" groupName="configuration"
                  min="0" max="6">
         <label>3: Lower paddle indicator color</label>
-        <default>0</default>
+        <default>1</default>
         <options>
           <option value="0">White</option>
           <option value="1">Blue</option>
@@ -100,12 +100,14 @@ Remote switch<br /> <h1>Overview</h1><p>* Control other Z-Wave devices and enabl
       </parameter>
 
       <parameter name="group_2" type="text" groupName="association" multiple="true">
-        <label>2: Basic Set</label>
+        <label>2: On/Off</label>
+        <description>1-tap for on.off control</description>
         <multipleLimit>5</multipleLimit>
       </parameter>
 
       <parameter name="group_3" type="text" groupName="association" multiple="true">
-        <label>3: Switch Multilevel</label>
+        <label>3: dimming</label>
+        <description>Paddle held/released for dimming</description>
         <multipleLimit>5</multipleLimit>
       </parameter>
 

@@ -103,7 +103,7 @@ Detailed information on each parameter can be found in the sections below.
 
 | Param | Name  | Description |
 |-------|-------|-------------|
-| 1 | Twin Assist | Helps you to lock and unlock your door lock. |
+| 1 | Twist Assist | Helps you to lock and unlock your door lock. |
 | 2 | Hold and Release | After a unlock operation the lock holds the lock, so the door can be opened |
 | 3 | Block to block | The lock will run the motor until it hits resistance. |
 | 4 | BLE Temporary Allowed | The BLE is enabled for a number of seconds. |
@@ -111,7 +111,7 @@ Detailed information on each parameter can be found in the sections below.
 | 6 | Autolock | Lock after an unlock.Value is delay in sec before lock is locked again. |
 |  | Lock Timeout | Sets the time after which the door will auto lock |
 
-### Parameter 1: Twin Assist
+### Parameter 1: Twist Assist
 
 Helps you to lock and unlock your door lock.
 0 -> disabled
@@ -135,7 +135,7 @@ After a unlock operation the lock holds the lock, so the door can be opened
 0 -> disabled
 
 1 to 2147483647 -> enabled no. of seconds
-The following option values may be configured, in addition to values in the range 0 to 2147483647 -:
+The following option values may be configured -:
 
 | Value  | Description |
 |--------|-------------|
