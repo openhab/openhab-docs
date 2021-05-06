@@ -38,7 +38,6 @@ Tested and developed with :
 ## Discovery
 
 No discovery supported, manual configuration is required.
-The things may be configured through the Paper UI.
 
 ## Thing Configuration
 
