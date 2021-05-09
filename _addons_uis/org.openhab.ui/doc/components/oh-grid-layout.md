@@ -56,7 +56,7 @@ Arranges widgets on a grid of squares with user-defined sizes
 </PropBlock>
 <PropBlock type="INTEGER" name="screenHeight" label="Screen Height">
   <PropDescription>
-    Screen width in pixels (default 720)
+    Screen height in pixels (default 720)
   </PropDescription>
 </PropBlock>
 <PropBlock type="BOOLEAN" name="scale" label="Scaling">
