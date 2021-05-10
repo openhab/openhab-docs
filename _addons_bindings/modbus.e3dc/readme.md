@@ -3,7 +3,7 @@ id: modbus.e3dc
 label: E3DC
 title: E3DC - Bindings
 type: binding
-description: "<img align='right' src='./doc/E3DC_logo.png'/>"
+description: "Integrates the Home Power Plants from E3/DC GmbH into openHAB."
 since: 3x
 logo: images/addons/modbus.e3dc.png
 install: manual
@@ -14,8 +14,6 @@ install: manual
 {% include base.html %}
 
 # E3DC
-
-<img align="right" src="./doc/E3DC_logo.png"/>
 
 Integrates the Home Power Plants from E3/DC GmbH into openHAB. 
 See [E3DC Website](https://www.e3dc.com/) to find more informations about the device.
