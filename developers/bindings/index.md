@@ -1042,20 +1042,21 @@ If it does, it is time to [contribute your work](../contributing.html)!
 
 ## Add your binding's logo to the openHAB website
 
-After your pull request has been merged and the upcoming openHAB version is released, your binding will be available in the addons search on the openHAB website.
+After your pull request has been merged and the next openHAB version is released, your binding will be available in the addons search on the openHAB website with a default logo.
 
 You can upload a logo to display it on the openhab.org start page, the addon search and in the readme.
 
 These are the requirements for logos:
 
-- PNG format. Transparancy is preferred.
-- Resolution 512x512 pixels or smaller in one dimension, if it's not a square logo
+- SVG or PNG (transparancy is preferred)
+- If PNG, 512x512 pixels or smaller in one dimension, if it's not a square logo
 - Less than 30kB
 
 File size is key as the website displays hundreds of small logos on the same page.
-To shrink the file, save your logo with Palette-Based Colors (sometimes called "Indexed-RGBA").
-Also, JPEG compression artifacts from former conversions or halo around the logo increases file size dramatically.
-There are online converters to convert your True Color PNG logo to Palette-Based Colors. E.g. https://compresspng.com/
+To shrink the file size, save your logo with Palette-Based Colors (sometimes called "Indexed-RGBA").
+Also, JPEG compression artifacts from prior conversions or halo around the logo increases file size dramatically.
+There are online converters to convert your True Color PNG logo to Palette-Based Colors. E.g. https://compresspng.com/.
+Or use zopflipng: `zopflipng -m --filters=0me --lossy_8bit --lossy_transparent -y logo.png logo.png`
 
 *After* your binding's pull request has been merged, you can upload your logo by filing another pull request to the [openhab-docs/images/addons/](https://github.com/openhab/openhab-docs/tree/main/images/addons) repository.
 Your logo will be available after the next website build.
