@@ -3,7 +3,6 @@ layout: documentation
 title:  Adding Things - Intermediate
 ---
 
-{% include base.html %}
 Previous: [Adding Things - Simple]({{base}}/tutorial/things_simple.html)
 
 # Adding Things - Intermediate
@@ -18,36 +17,39 @@ Scenario: you have some Z-Wave devices, including a wall plug and a rollershutte
 {:toc}
 
 ## Install the Binding
+
 From Settings, go to Things, then click the blue "+" button.
 
 We need to install the Z-Wave binding.
 Click "Install More Bindings".
 
-![](images/install_zwave.png)
+![install zwave](images/install_zwave.png)
 
 Find the Z-Wave binding, click on it, then click Install.
 
-![](images/installing_zwave.png)
+![installing zwave](images/installing_zwave.png)
 
 Wait for it to disappear from the list, then go back.
 
-![](images/installed_zwave.png)
+![installed zwave](images/installed_zwave.png)
 
 ## Create the Bridge Thing
+
 Click on the new option: Z-Wave Binding.
 
 Click on Z-Wave Serial Controller to add the controller.
 
-![](images/zwave_add_controller.png)
+![add zwave controller](images/zwave_add_controller.png)
 
 We need to specify one required parameter, the serial port.
 In certain cases, depending on your system, you will be provided with a list of options for this setting.
 
-![](images/zwave_port_config.png)
+![zwave port config](images/zwave_port_config.png)
 
 Choose the correct port, alter the name and/or ID of the controller Thing, then click Add in the top-right corner.
 
 ## Discover Things
+
 Once back on the Things screen, click on the "+" button then on Z-Wave Binding again.
 Click scan and all the devices already paired with the Zwave controller will be discovered and appear in the Inbox.
 To pair a new device, while on this screen, perform the procedure specific to the device to include it in your network.

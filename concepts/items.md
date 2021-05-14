@@ -3,15 +3,13 @@ layout: documentation
 title: Items
 ---
 
-{% include base.html %}
-
 # Items
 
 openHAB has a strict separation between the physical world (the "Things", see below) and the application, which is built around the notion of "Items" (also called the virtual layer).
 
 Items represent functionality that is used by the application (mainly user interfaces or automation logic).
 Items have a state and are used through events.
-  
+
 The following Item types are currently available (alphabetical order):
 
 | Item Name          | Description                                                        | Command Types                              |
@@ -38,11 +36,12 @@ Cyclic membership is not forbidden but strongly not recommended.
 User interfaces might display Group Items as single entries and provide navigation to its members.
 
 Example for a Group Item as a simple collection of other Items:
-```
+
+```shell
     Group groundFloor
     Switch kitchenLight (groundFloor)
     Switch livingroomLight (groundFloor)
-``` 
+```
 
 ### Derive Group State from Member Items
 
@@ -64,10 +63,10 @@ For available Group functions and examples see [Configuration Guide](../configur
 `DateTimeType` objects are parsed using Java's `SimpleDateFormat.parse()` using the first matching pattern:
 
 1. `yyyy-MM-dd'T'HH:mm:ss.SSSZ`
-2. `yyyy-MM-dd'T'HH:mm:ss.SSSz`
-3. `yyyy-MM-dd'T'HH:mm:ss.SSSX`
-4. `yyyy-MM-dd'T'HH:mm:ssz`
-5. `yyyy-MM-dd'T'HH:mm:ss`
+1. `yyyy-MM-dd'T'HH:mm:ss.SSSz`
+1. `yyyy-MM-dd'T'HH:mm:ss.SSSX`
+1. `yyyy-MM-dd'T'HH:mm:ssz`
+1. `yyyy-MM-dd'T'HH:mm:ss`
 
 | Literal | Standard           | Example                               |
 |---------|--------------------|---------------------------------------|
@@ -124,25 +123,26 @@ Here is a short table demonstrating conversions for the examples above:
 
 ## Item Metadata
 
-Sometimes additional information is required to be attached to Items for certain use-cases. 
+Sometimes additional information is required to be attached to Items for certain use-cases.
 This could be an application which needs some hints in order to render the Items in a generic way, or an integration with voice controlled assistants, or any other services which access the Items and need to understand their "meaning".
 
-Such metadata can be attached to Items using disjunct namespaces so they won't conflict with each other. 
-Each metadata entry has a main value and optionally additional key/value pairs. 
-There can be metadata attached to an Item for as many namespaces as desired, like in the following example: 
+Such metadata can be attached to Items using disjunct namespaces so they won't conflict with each other.
+Each metadata entry has a main value and optionally additional key/value pairs.
+There can be metadata attached to an Item for as many namespaces as desired, like in the following example:
 
-    Switch MyFan "My Fan" { homekit="Fan.v2", alexa="Fan" [ type="oscillating", speedSteps=3 ] }
+Switch MyFan "My Fan" { homekit="Fan.v2", alexa="Fan" [ type="oscillating", speedSteps=3 ] }
 
 The metdata can be included with the channel linking, an Alexa metadata mapping is added after the channel linking separated with a comma in the example for a ZWave switch below.
-```
+
+```shell
 Switch LightSwitch "Light Switch" {channel="zwave:device:22c99d1e:node3:switch_binary", alexa="PowerController.powerState"}
-``` 
+```
 
 The metadata can be maintained via a dedicated REST endpoint and is included in the `EnrichedItemDTO` responses.
 
-Extensions which can infer some metadata automatically need to implement and register a `MetadataProvider` service in order to make them available to the system. 
-They may provision them from any source they like and also dynamically remove or add data. 
+Extensions which can infer some metadata automatically need to implement and register a `MetadataProvider` service in order to make them available to the system.
+They may provision them from any source they like and also dynamically remove or add data.
 They are also not restricted to a single namespace.
 
-The `MetadataRegistry` provides access for all extensions which need to read the Item metadata programmatically. 
+The `MetadataRegistry` provides access for all extensions which need to read the Item metadata programmatically.
 It is the central place where additional information about Items is kept.

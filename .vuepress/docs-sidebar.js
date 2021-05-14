@@ -7,7 +7,7 @@ module.exports = [
     ]
   },
   {
-    title: 'Beginner Tutorial',
+    title: 'Getting Started',
     collapsable: false,
     children: [
       ['tutorial/', 'Tutorial Overview'],
@@ -17,6 +17,10 @@ module.exports = [
       'tutorial/things_advanced',
       'tutorial/model',
       'tutorial/persistence',
+      'tutorial/pages_intro',
+      'tutorial/auto_overview',
+      'tutorial/item_widgets',
+      'tutorial/custom_widgets',
       /*'tutorial/pages_intro',
       'tutorial/pages_widgets',
       'tutorial/pages_types',
@@ -24,6 +28,22 @@ module.exports = [
       'tutorial/rules_intermediate',
       'tutorial/cloud',
       'tutorial/example'*/
+    ]
+  },
+  {
+    title: 'Installation Guide',
+    collapsable: false,
+    children: [
+      'installation/',
+      ['installation/linux', 'Linux'],
+      ['installation/windows', 'Windows'],
+      ['installation/macos', 'macOS'],
+      'installation/openhabian',
+      'installation/armbian',
+      'installation/docker',
+      'installation/synology',
+      // 'installation/qnap', // Remove until we get feedback about the current package state
+      ['installation/security', 'Security']
     ]
   },
   {
@@ -39,31 +59,14 @@ module.exports = [
     ]
   },
   {
-    title: 'Installation Guide',
-    collapsable: false,
-    children: [
-      'installation/',
-      ['installation/linux', 'Linux'],
-      ['installation/windows', 'Windows'],
-      ['installation/macos', 'macOS'],
-      'installation/openhabian',
-      'installation/rasppi',
-      'installation/armbian',
-      'installation/docker',
-      'installation/synology',
-      // 'installation/qnap', // Remove until we get feedback about the current package state
-      ['installation/security', 'Security']
-    ]
-  },
-  {
     title: 'Configuration Guide',
     collapsable: false,
     children: [
       ['configuration/', 'Configuration Overview'],
+      'configuration/editors',
       'configuration/addons',
       'configuration/things',
       'configuration/items',
-      'configuration/sitemaps',
       'configuration/persistence',
       'configuration/rules-dsl',
       'configuration/transformations',
@@ -72,25 +75,40 @@ module.exports = [
       'configuration/jsr223',
       'configuration/services',
       'configuration/multimedia',
+      ['configuration/restdocs', 'REST API'],
+      ['configuration/apitokens', 'API Token Generation'],
       ['configuration/migration/', 'Migration from openHAB 2']
     ]
   },
   {
-    title: 'Interfaces and Ecosystem',
+    title: 'User Interface Guide',
     collapsable: false,
     children: [
-      'configuration/editors',
-      ['configuration/ui/habot/', 'HABot'],
-      'configuration/habpanel',
-      ['configuration/ui/basic/', 'Basic UI'],
+      'ui/',
+      'ui/sitemaps',
+      'ui/layout-pages',
+      'ui/map-pages',
+      'ui/floorplan-pages',
+      'ui/tabbed-pages',
+      'ui/chart-pages',
+      ['ui/building-pages', 'Building Pages'],
+      ['ui/components/', 'Component Reference'],
+      'ui/habpanel/habpanel',
       ['apps/android', 'Android App'],
       'apps/ios',
-      'apps/windows',
+      'apps/windows'
+    ]
+  },
+  {
+    title: 'Ecosystem',
+    collapsable: false,
+    children: [
       ['ecosystem/alexa/', 'Amazon Alexa'],
       ['ecosystem/google-assistant/', 'Google Assistant'], // from v2.3 onwards
       ['../addons/integrations/homekit/', 'Apple HomeKit'],
       // ['ecosystem/ifttt/', 'IFTTT'], // Temporary remove until service gets reactivated
       ['ecosystem/mycroft/', 'Mycroft.AI'],
+      ['../addons/integrations/openhabcloud/', 'openHAB Cloud'],
     ]
   },
   {

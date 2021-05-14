@@ -1,7 +1,7 @@
 ---
 layout: documentation
 title: HABPanel
-source: https://github.com/openhab/org.openhab.ui.habpanel/blob/master/doc/habpanel.md
+source: https://github.com/openhab/openhab-webui/blob/main/bundles/org.openhab.ui.habpanel/doc/habpanel.md
 ---
 
 {% include base.html %}

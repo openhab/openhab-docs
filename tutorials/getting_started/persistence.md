@@ -3,8 +3,6 @@ layout: documentation
 title:  Persistence
 ---
 
-{% include base.html %}
-
 # Persistence
 
 There are many times in home automation where one wants to keep, chart, and otherwise use the historic states of their Items.
@@ -26,8 +24,10 @@ Note that Persistence only saves Item states.
 {:toc}
 
 ## Persistence Concepts
+
 As previously mentioned, Persistence saves Item states.
 But the question is, when does it save those Item states?
+
 - Every time the Item changes?
 - Every time the Item is updated (an update does not necessarily result in the Item changing state)?
 - Only when the Item receives a command?
@@ -41,6 +41,7 @@ One special persistence strategy is `restoreOnStartup` which will update the Ite
 The good news here is that if you don't know what you may want to use persistence for, you can just keep the defaults and move to the next step.
 
 ## Persistence Configuration
+
 Each persistence add-on comes with it's own default persistence strategy.
 See the documentation for the specific persistence add-on for what the default strategy is.
 This default can be overridden.
@@ -54,12 +55,14 @@ One may not even want to save all their Items, or may want to save different Ite
 For example, a common approach would be to use [`MapDB`]({{base}}/addons/persistence/mapdb/) only for those Items that should be restored on startup, [`rrd4j`]({{base}}/addons/persistence/rrd4j) with an `everyChange` and every minute strategy for number and binary (Switch, Contact) type Items that are to be charted, and [`Influxdb`]({{base}}/addons/persistence/influxdb) with an `everyUpdate` strategy for analysis with external tools.
 
 ## Default Persistence
+
 openHAB ships with [`rrdj4`]({{base}}/addons/persistence/rrd4j) as the default persistence database and comes with a default persistence strategy of `everyChange`, `everyMinute`, and `restoreOnStartup` for every supported Item.
 The good thing about `rrd4j` is that the database never grows beyond a given size, so you never have to clean it up.
 However, the way it achieves this (replacing ten readings with the average of the ten readings as the data gets older) makes the database not work for all Item types.
 If you need to `restoreOnStartup` unsupported Item types, `MapDB` might be a better choice for you.
 
-## Why Bother with Persitence?
+## Why Bother with Persistence?
+
 The reason one would set up both the Model discussed in the previous tutorial and Persistence is that it will make creating your user interfaces much easier and much more rich.
 For example, a set of UI pages will be created automatically in MainUI based on the model.
 And just about anyplace you can interact with an Item in MainUI, there will be an "Analyze" button that will generate a chart based on the data saved in persistence.

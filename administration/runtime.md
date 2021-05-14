@@ -3,41 +3,38 @@ layout: documentation
 title: Runtime Commands
 ---
 
-{% include base.html %}
-
 # Runtime Commands
 
 It is possible to query and even change the state of entities like items or things. Therefore the console offers commands in various areas:
 
 {::options toc_levels="3..4"/}
 
-* TOC
+- TOC
 {:toc}
 
 ::: tip Note
 Some of the described commands are executed on the internal database and could break your installation. Please use this functionality only if you know what you are doing!
 :::
 
-
 ## Examples
 
 Query an item's state:
 
-```
+```shell
 openhab> openhab:status Heating_GF_Corridor
 OFF
 ```
 
 Changing an item's state:
 
-```
+```shell
 openhab> openhab:send Heating_GF_Corridor ON
 Command has been sent successfully.
 ```
 
 Get help for a command:
 
-```
+```shell
 openhab> help openhab:send
 Usage: openhab:send <item> <command> - sends a command for an item
 ```

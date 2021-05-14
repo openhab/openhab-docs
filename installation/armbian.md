@@ -3,8 +3,6 @@ layout: documentation
 title: Armbian
 ---
 
-{% include base.html %}
-
 # Armbian
 
 ## What is Armbian?
@@ -23,12 +21,10 @@ Armbian is a base operating system platform for single board computers.
 
 OpenHab will run on any Armbian [supported hardware](https://www.armbian.com/download/?device_support=Supported) but it is recommended to choose boards that have at least:
 
-
 - 512 Kb of memory (on minimal or server image)
 - eMMC or a [quality SD card](https://docs.armbian.com/User-Guide_Getting-Started/#how-to-prepare-a-sd-card)
 - 4 core
 - wired networking
-
 
 ![Armbian](images/boards1.png)
 
@@ -42,14 +38,14 @@ You can [download](https://www.armbian.com/download/?device_support=Supported) a
 
 1. Prepare Armbian as usual - [login as root / 1234, change root password, create username. You don't need to perform any other steps](https://docs.armbian.com/User-Guide_Getting-Started/).
 
-2. Update
+1. Update
 
 ```shell
 sudo apt-get update
 sudo apt-get upgrade
 ```
 
-3. Run armbian-config
+1. Run armbian-config
 
 ```shell
 sudo armbian-config

@@ -3,8 +3,6 @@ layout: developersguide
 title: Event Admin
 ---
 
-{% include base.html %}
-
 # Introduction
 
 In a dynamic environment like OSGi, communication with events has a wide variety of use cases.
@@ -64,8 +62,8 @@ public class LogEventHandler implements EventHandler {
 }
 ```
 
-* You can register a handler for multiple topics by separating them by comma: `event.topics=some/topic,other/topic`
-* You can register for all events with `*`.
+- You can register a handler for multiple topics by separating them by comma: `event.topics=some/topic,other/topic`
+- You can register for all events with `*`.
 
 ## Send Events
 
@@ -78,9 +76,9 @@ The service contains two methods for sending events:
 
 ## Further Reading
 
- - [OSGi Compendium Release 7][OSGi-cmpn]
- - <https://enroute.osgi.org/services/org.osgi.service.event.html>
- - <http://blog.vogella.com/2017/05/16/osgi-event-admin-publish-subscribe/>
+- [OSGi Compendium Release 7][OSGi-cmpn]
+- <https://enroute.osgi.org/services/org.osgi.service.event.html>
+- <http://blog.vogella.com/2017/05/16/osgi-event-admin-publish-subscribe/>
 
 [fig1]:images/event-admin.png
 

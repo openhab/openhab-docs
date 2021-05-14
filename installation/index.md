@@ -3,8 +3,6 @@ layout: documentation
 title: Installation Overview
 ---
 
-{% include base.html %}
-
 # Installation Overview
 
 openHAB is written completely in Java.
@@ -17,10 +15,10 @@ Always keep this in mind when searching for help and solutions.
 
 ## Platform Recommendations
 
-1.  You are **new to openHAB** and want to give it a try? You are in luck:
+1. You are **new to openHAB** and want to give it a try? You are in luck:
     - Set up openHAB on your local PC or Mac in just a few steps.
 
-1.  You've gained some experience and want to use openHAB to seriously control your home?
+1. You've gained some experience and want to use openHAB to seriously control your home?
     Typical hardware and software requirements are:
     - **24/7 availability:** A dedicated system connected by Ethernet and running continuously.
     - **Energy and space efficient:** A device capable of performing the task at hand without being excessive for your needs.
@@ -74,12 +72,12 @@ OpenJDK 64-Bit Server VM Zulu11.43+55-CA (build 11.0.9.1+1-LTS, mixed mode)
 
 Before you can start, two decisions have to be made:
 
-1.  openHAB is available as a platform independent archive file or through a package repository:
+1. openHAB is available as a platform independent archive file or through a package repository:
     - **Manual setup:** Download and extract a platform independent zip archive: [macOS](macos.html), [Windows](windows.html), [Linux](linux.html#manual-installation)
     - **Package setup:** Install from a package repository, using a package manager such as apt or yum.
     This option is only available for certain Linux distributions such as Debian or Ubuntu derivatives, but allows you to take advantage of automatic updates and is the recommended choice: [Linux (apt/deb)](linux.html#package-repository-installation)
 
-2.  Stable release or cutting edge:
+1. Stable release or cutting edge:
     - **Stable:** Use the latest official release [hosted on Bintray](https://bintray.com/openhab/mvn/openhab-distro) (recommended for new users).
     - **Snapshot:** Benefit from the latest changes in the daily created snapshot ([hosted on openhab.org](https://ci.openhab.org/)).
 
@@ -87,13 +85,42 @@ Before you can start, two decisions have to be made:
 
 Please follow the instructions in the installation article matching your platform (see the menu to the left).
 
+### Getting installation info
+
+For many actions you need to know the pathes where openHAB checks for files, or where you need to install additional packages.
+To find out where these locations are, e.g. where `$OPENHAB_CONF` points to, use the [console](https://www.openhab.org/docs/administration/console.html):
+
+```shell
+openhab-cli info
+```
+
+will result in e.g. for an [openHABian](https://www.openhab.org/docs/installation/openhabian.html) installation
+
+```shell
+Version:     3.0.0 (Build)
+
+User:        openhab (Active Process 7466)
+User Groups: openhab tty dialout audio bluetooth gpio
+
+Directories: Folder Name      | Path                        | User:Group
+             -----------      | ----                        | ----------
+             OPENHAB_HOME     | /usr/share/openhab          | openhab:openhab
+             OPENHAB_RUNTIME  | /usr/share/openhab/runtime  | openhab:openhab
+             OPENHAB_USERDATA | /var/lib/openhab            | openhab:openhab
+             OPENHAB_CONF     | /etc/openhab                | openhab:openhab
+             OPENHAB_LOGDIR   | /var/log/openhab            | openhab:openhab
+
+URLs:        http://169.254.63.209:8080
+             https://169.254.63.209:8443
+```
+
 ## Additional Steps
 
 After you get openHAB set up and running, there are a few additional setup steps you should consider:
 
--   Configure a network share on your openHAB host system using [Linux Samba Share](linux.html#network-sharing) for easier remote editing of configuration files.
+- Configure a network share on your openHAB host system using [Linux Samba Share](linux.html#network-sharing) for easier remote editing of configuration files.
 
--   Install [Visual Studio Code](https://code.visualstudio.com/Download) and the [openHAB VS Code Extension]({{base}}/configuration/editors.html#openhab-vs-code-extension) on your local machine, to manage your (remote) configuration files.
+- Install [Visual Studio Code](https://code.visualstudio.com/Download) and the [openHAB VS Code Extension]({{base}}/configuration/editors.html#openhab-vs-code-extension) on your local machine, to manage your (remote) configuration files.
     The openHAB VS Code Extension comes with built-in support for the openHAB syntax and elements.
 
 ## Getting started

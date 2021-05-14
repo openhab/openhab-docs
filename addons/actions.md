@@ -3,8 +3,6 @@ layout: documentation
 title: Actions
 ---
 
-{% include base.html %}
-
 # Actions
 
 Actions are predefined methods that are called from openHAB rules and scripts.
@@ -57,8 +55,40 @@ One can configure whether specific log entries are logged out and where they get
 
 ### Exec Actions
 
-- `executeCommandLine(String commandLine)`: Executes a command on the command line without waiting for the command to complete
-- `executeCommandLine(Duration.fromSeconds(timeout), String commandLine)`: Executes a command on the command and waits `timeout` seconds for the command to complete, returning the output from the command as a String
+You have different options to execute a command through an action.
+
+- `executeCommandLine(String commandLine)`: Executes a command on the command line without waiting for the command to complete.
+  For example you could run `executeCommandLine("path/to/my/script.sh")` which then would be executed and the rule would continue processing.
+
+- `executeCommandLine(Duration.ofSeconds(timeout), String commandLine)`: Executes a command on the command and waits `timeout` seconds for the command to complete, returning the output from the command as a String.
+  For example you could run `var ScriptResponse = executeCommandLine(Duration.ofSeconds(60), "path/to/my/script.sh");` would get executed and wait 1 minute for the output to be responded back and write it into the `ScriptResponse` variable.
+
+Other Durations than `ofSeconds` units are possible too.
+Check out the [Java Documentation](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/time/Duration.html?is-external=true) for possible units.
+
+#### Scripts with parameters
+
+Let's assume that your `path/to/my/script.sh`-Script needs two item states to process them with some calculation.
+In console you would call it like
+
+```text
+path/to/my/script.sh itemState1 itemState2
+```
+
+To solve this constellation within a rule you have to add one argument per script parameter to the function.
+The script above would be configured like shown below.
+
+```text
+// When you are not interested in the script output
+executeCommandLine("path/to/my/script.sh", itemState1, itemState2);
+
+// When you need the output in your further rule processing
+var ScriptResponse = executeCommandLine(Duration.ofSeconds(60), "path/to/my/script.sh", itemState1, itemState2);
+
+// Space separated constants must be given as separate parameters as well
+// e.g. path/to/your/script.sh xyz fred.file
+var ScriptResponse = executeCommandLine(Duration.ofSeconds(60), "path/to/your/script.sh", "xyz", "fred.file");
+```
 
 ### HTTP Actions
 
@@ -78,10 +108,35 @@ All HTTP Actions can have a last `timeout` parameter added in ms. eg. `sendHttpP
 :::
 
 For example:
+
 ```javascript
 val headers = newHashMap("Cache-control" -> "no-cache")
 val output = sendHttpGetRequest("https://example.com/?id=1", headers, 1000)
 ```
+
+### Semantics
+
+One can use Semantics features in Rules.
+E.g. determine the location of an Item.
+Regardless if it is a Point, an Equipment or a Location itself.
+Therefore openHAB provides a bunch methods to be used in Rules.
+
+#### Rules DSL
+
+- `boolean isLocation(Item)` - checks if the given Item is is a Location
+- `boolean isEquipment(Item)` - checks if the given Item is is an Equipment
+- `boolean isPoint(Item)` - checks if the given Item is is a Point
+- `Item getLocation(Item)` - gets the Location Item of the Item, returns the related Location Item of the Item or `null`
+- `Class<? extends Location> getLocationType(Item)` - gets the Location type of the Item, returns the related Location type of the Item or `null`
+- `Item getEquipment(Item)` - gets the Equipment Item an Item belongs to, returns the related Equipment Item of the Item or `null`
+- `Class<? extends Equipment> getEquipmentType(Item)` - gets the Equipment type an Item belongs to, returns the related Equipment type of the Item or `null`
+- `Class<? extends Point> getPointType(Item)` - gets the Point type of an Item, returns the related Point type of the Item or `null`
+- `Class<? extends Property> getPropertyType(Item)` - gets the Property type an Item relates to, returns the related Property type of the Item or `null`
+- `Class<? extends Tag> getSemanticType(Item)` - gets the semantic type of an Item (i.e. a sub-type of Location, Equipment or Point)
+
+#### Scripted Automation
+
+One must import the Semantics Action and then call the above functions using `Semantics.<function>`, for example `Semantics.getLocation(Item)`.
 
 ### Timers
 
@@ -92,18 +147,38 @@ val output = sendHttpGetRequest("https://example.com/?id=1", headers, 1000)
 
 For example:
 
-```javascript
-var Timer myTimer = createTimer(now.plusMinutes(5), [ |
-    logInfo("rules", "Timer activated")
-])
+```php
+var Timer myTimer = null
+
+rule "timer example"
+when
+    Item YourItem changed
+then
+    if (YourItem.state == ON) {
+        if (myTimer !== null) {
+            logInfo("rules", "Timer rescheduled")
+            myTimer.reschedule(now.plusMinutes(5))
+        } else {
+            myTimer = createTimer(now.plusMinutes(5), [ |
+                logInfo("rules", "Timer activated")
+                //Do something...
+            ])
+            logInfo("rules", "Timer created")
+        }
+    } else {
+        logInfo("rules", "Timer canceled")
+        myTimer.cancel()
+        myTimer = null
+    }
+end
 ```
 
 The Timer object supports the following methods:
 
-- `cancel`: prevents the scheduled timer from executing
-- `isActive`: returns true if the timer will be executed as scheduled, i.e. it has not been cancelled or completed
-- `isRunning`: returns true if the code is currently executing (i.e. the timer activated the code but it is not done running)
-- `hasTerminated`: returns true if the code has run and completed
+- `cancel`: prevents the scheduled timer from executing. Most of the time `cancel` is used used in conjunction with setting the timer handler to `null` as a convenient indicator that some previously defined timer is now finished with. However setting the handler to `null` does not interact with the timer itself.
+- `isActive`: returns true if the timer will be executed as scheduled, i.e. it has not been cancelled or completed.
+- `isRunning`: returns true if the code is currently executing (i.e. the timer activated the code but it is not done running).
+- `hasTerminated`: returns true if the code has run and completed.
 - `reschedule(AbstractInstant instant)`: reschedules the timer to execute at the new time. If the Timer has terminated this method does nothing.
 
 ### Thing Status Action
@@ -130,6 +205,7 @@ if ((thingStatusInfo !== null) && (thingStatusInfo.getStatus().toString() == "ON
 ```
 
 ### openHAB Subsystem Actions
+
 openHAB has several subsystems that can be accessed from Rules. These include persistence, see [Persistence Extensions in Scripts and Rules]({{base}}/configuration/persistence.html#persistence-extensions-in-scripts-and-rules), transformations, scripts.
 
 - `callScript(String scriptName)`: Calls a script which must be located in the `$OPENHAB_CONF/scripts` folder.
@@ -154,6 +230,7 @@ Three different actions are available:
 - `sendLogNotification(message)`: Sends a log notification to the `notifications` list at your openHAB Cloud instance.  Notifications are NOT sent to any registered devices
 
 For each of the three actions, there's another variant accepting an icon name and a severity:
+
 - `sendNotification(emailAddress, message, icon, severity)`
 - `sendBroadcastNotification(message, icon, severity)`
 - `sendLogNotification(message, icon, severity)`
@@ -161,12 +238,13 @@ For each of the three actions, there's another variant accepting an icon name an
 Icon and severity can potentially be used by cloud instance clients (such as the openHAB apps for Android or iOS) to be displayed in the list of notifications.
 
 The parameters for these actions have the following meaning:
+
 - `emailAddress`: String containing the email address the target user is registered with in the cloud instance
 - `message`: String containing the notification message text
 - `icon`: String containing the icon name (as described in [Items]({{base}}/configuration/items.html#icons))
 - `severity`: String containing a description of the severity of the incident
 
-**Example**
+### Example
 
 ```javascript
 rule "Front Door Notification"
@@ -177,7 +255,7 @@ then
 end
 ```
 
-For information on making use of the [openHAB Cloud service](https://github.com/openhab/openhab-cloud/blob/master/README.md) hosted by the [openHAB Foundation e.V.](https://www.openhabfoundation.org/), visit the [myopenhab.org website](https://www.myopenhab.org).
+For information on making use of the [openHAB Cloud service](https://github.com/openhab/openhab-cloud/blob/main/README.md) hosted by the [openHAB Foundation e.V.](https://www.openhabfoundation.org/), visit the [myopenhab.org website](https://www.myopenhab.org).
 
 ## Ephemeris
 
@@ -185,7 +263,7 @@ Ephemeris is a way to determine what type of day today or a number of days befor
 For example, a way to determine if today is a weekend, a bank holiday, someone’s birthday, trash day, etc.
 The default bank holidays and configuration syntax is defined by the [Jollyday library](https://github.com/svendiedrichsen/jollyday).
 
-### Actions
+### Actions Examples
 
 #### Rules DSL
 
@@ -266,6 +344,7 @@ dayset-workday=[MONDAY,TUESDAY,WEDNESDAY,THURSDAY,FRIDAY]
 dayset-weekend=[SATURDAY,SUNDAY]
 dayset-trash=[MONDAY]
 ```
+
 #### Custom Bank Holidays
 
 In addition to the ability to define custom daysets, one can define a custom list of holidays or other important days.
@@ -286,13 +365,14 @@ The following is an example listing a few custom days.
     </tns:Holidays>
 </tns:Configuration>
 ```
+
 For further examples and to find the list of elements to reference holidays that require more complicated calculations (e.g. holidays based on a lunar calendar, Easter, etc.) see the [XSD that defines the structures of the XML](https://github.com/svendiedrichsen/jollyday/blob/b78fa20e75d48bdf14e3fa8107befe44e3bacf3a/src/main/xsd/Holiday.xsd) or the XML file for your country or others.
 
 You can place these XML files anywhere on your file system that openHAB has permission to read.
 In the calls to the Actions, use the fully qualified path.
 We recommend placing these custom files somewhere inside your `$OH_CONF` folder, such as `$OH_CONF/services`.
 
-#### Localisation
+#### Localization
 
 Ephemeris supports translation of holidays into many languages. Localization support files can be found in the [GitHub repo](https://github.com/svendiedrichsen/jollyday/tree/master/src/main/resources/descriptions). Currently these language supports are available:
 
@@ -307,9 +387,9 @@ Feel free to extent this list by providing additional language support files.
 
 To enable localization,
 
-* copy the file for your language to your OH setup.
-  * again a folder in `$OH_CONF` folder, such as `$OH_CONF/services` is proposed.
-* use function 'Ephemeris.getHolidayDescription' to convert the name according to your localization file.
+- copy the file for your language to your OH setup.
+  - again a folder in `$OH_CONF` folder, such as `$OH_CONF/services` is proposed.
+- use function 'Ephemeris.getHolidayDescription' to convert the name according to your localization file.
 
 ## Installable Actions
 

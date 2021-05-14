@@ -3,9 +3,8 @@ layout: developersguide
 title: Bindings
 ---
 
-{% include base.html %}
-
 # Developing a Binding
+
 {:.no_toc}
 
 A binding is an extension to openHAB that integrates an external system like a software service or a hardware device.
@@ -19,7 +18,8 @@ It makes sense to briefly read over all sections to make you familiar with what 
 During development you might come back with specific questions.
 
 {::options toc_levels="2,3"/}
-* TOC
+
+- TOC
 {:toc}
 
 ## Structure of a Binding
@@ -117,16 +117,16 @@ For an example, our exemplary Weather binding starts and stops a scheduled job t
 The startup of a handler is divided in two essential steps:
 
 1. Handler is registered: `ThingHandler` instance is created by a `ThingHandlerFactory` and tracked by the framework.
-In addition, the handler can be registered as a service if required, e.g. as `FirmwareUpdateHandler` or `ConfigStatusProvider`.
+    In addition, the handler can be registered as a service if required, e.g. as `FirmwareUpdateHandler` or `ConfigStatusProvider`.
 
-2. Handler is initialized: `ThingHandler.initialize()` is called by the framework in order to initialize the handler.
-This method is only called if all 'required' configuration parameters of the Thing are present.
-The handler is ready to work (methods like `handleCommand`, `handleUpdate` or `thingUpdated` can be called).
+1. Handler is initialized: `ThingHandler.initialize()` is called by the framework in order to initialize the handler.
+    This method is only called if all 'required' configuration parameters of the Thing are present.
+    The handler is ready to work (methods like `handleCommand`, `handleUpdate` or `thingUpdated` can be called).
 
-The diagram below illustrates the startup of a handler in more detail.
-The life cycle is controlled by the `ThingManager`.
+    The diagram below illustrates the startup of a handler in more detail.
+    The life cycle is controlled by the `ThingManager`.
 
-![thing_life_cycle_startup](images/thing_life_cycle_startup.png)
+    ![thing_life_cycle_startup](images/thing_life_cycle_startup.png)
 
 The `ThingManager` mediates the communication between a `Thing` and a `ThingHandler` from the binding.
 The `ThingManager` creates for each Thing a `ThingHandler` instance using a `ThingHandlerFactory`.
@@ -153,11 +153,11 @@ After the handler is initialized, the handler must be ready to handle methods ca
 The shutdown of a handler is also divided in two essential steps:
 
 1. Handler is unregistered: `ThingHandler` instance is no longer tracked by the framework.
-The `ThingHandlerFactory` can unregister handler services (e.g. `FirmwareUpdateHandler` or `ConfigStatusProvider`) if registered, or release resources.
+    The `ThingHandlerFactory` can unregister handler services (e.g. `FirmwareUpdateHandler` or `ConfigStatusProvider`) if registered, or release resources.
 
-2. Handler is disposed: `ThingHandler.disposed()` method is called.
-The framework expects `dispose()` to be non-blocking and to return quickly.
-For longer running disposals, the implementation has to take care of scheduling a separate job.
+1. Handler is disposed: `ThingHandler.disposed()` method is called.
+    The framework expects `dispose()` to be non-blocking and to return quickly.
+    For longer running disposals, the implementation has to take care of scheduling a separate job.
 
 ![thing_life_cycle_shutdown](images/thing_life_cycle_shutdown.png)
 
@@ -208,8 +208,8 @@ Inside the `handleCommand` method binding specific logic can be executed.
 
 The ThingHandler implementation must be prepared to
 
-* handle different command types depending on the item types, that are defined by the channels,
-* be called at the same time from different threads.
+- handle different command types depending on the item types, that are defined by the channels,
+- be called at the same time from different threads.
 
 If an exception is thrown in the method, it will be caught by the framework and logged as an error.
 So it is better to handle communication errors within the binding and to update the thing status accordingly.
@@ -220,19 +220,19 @@ The following code block shows a typical implementation of the `handleCommand` m
 @Override
 public void handleCommand(ChannelUID channelUID, Command command) {
     try {
-    	switch (channelUID.getId()) {
-	    	case CHANNEL_TEMPERATURE:
-	        	if(command instanceof OnOffType.class) {
-	        		// binding specific logic goes here
-	        		SwitchState deviceSwitchState = convert((OnOffType) command);
-	        		updateDeviceState(deviceSwitchState);
-	        	}
-	        	break;
-	    	// ...
-    	}
-    	statusUpdated(ThingStatus.ONLINE);
-	} catch(DeviceCommunicationException ex) {
-		// catch exceptions and handle it in your binding
+        switch (channelUID.getId()) {
+            case CHANNEL_TEMPERATURE:
+                if(command instanceof OnOffType.class) {
+                    // binding specific logic goes here
+                    SwitchState deviceSwitchState = convert((OnOffType) command);
+                    updateDeviceState(deviceSwitchState);
+                }
+                break;
+            // ...
+        }
+        statusUpdated(ThingStatus.ONLINE);
+    } catch(DeviceCommunicationException ex) {
+        // catch exceptions and handle it in your binding
         statusUpdated(ThingStatus.OFFLINE, ThingStatusDetail.COMMUNICATION_ERROR, ex.getMessage());
     }
 }
@@ -299,7 +299,11 @@ Of course, the polling job must be cancelled in the dispose method:
 ```java
 @Override
 public void dispose() {
-    pollingJob.cancel(true);
+    final job = pollingJob;
+    if (job != null) {
+        job.cancel(true);
+        pollingJob = null;
+    }
 }
 ```
 
@@ -356,11 +360,11 @@ All other states are managed by the framework.
 Furthermore bindings can specify a localized description of the thing status by providing the reference of the localization string, e.g &#64;text/rate_limit.
 The corresponding handler is able to provide placeholder values as a JSON-serialized array of strings:
 
-```
+```text
 &#64;text/rate_limit ["60", "10", "@text/hour"]
 ```
 
-```
+```text
 rate_limit=Device is blocked by remote service for {0} minutes.
 Maximum limit of {1} configuration changes per {2} has been exceeded.
 For further info please refer to device vendor.
@@ -407,7 +411,7 @@ The following example shows how to modify two properties of a thing:
 
 ```java
 protected void devicePropertiesChanged(DeviceInfo deviceInfo) {
-	Map<String, String> properties = editProperties();
+    Map<String, String> properties = editProperties();
     properties.put(Thing.PROPERTY_SERIAL_NUMBER, deviceInfo.getSerialNumber());
     properties.put(Thing.PROPERTY_FIRMWARE_VERSION, deviceInfo.getFirmwareVersion());
     updateProperties(properties);
@@ -501,7 +505,6 @@ Therefore, the `BridgeHandler` interface extends the `ThingHandler` interface.
 openHAB provides an abstract implementation of the `BridgeHandler` interface named `BaseBridgeHandler`.
 It is recommended to use this class, because it covers a lot of common logic.
 
-
 ### Life cycle
 
 A `BridgeHandler` has the same life cycle than a `ThingHandler` (created by a `ThingHandlerFactory`, well defined life cycle by handler methods `initialize()` and `dispose()`, see chapter [Life Cycle](#lifecycle)).
@@ -534,12 +537,12 @@ A *ThingHandler* as handler for the thing entity can provide the configuration s
 For things that are created by sub-classes of the `BaseThingHandlerFactory` the provider is already automatically registered as an OSGi service if the concrete thing handler implements the configuration status provider interface.
 Currently the framework provides two base thing handler implementations for the configuration status provider interface:
 
-* `org.openhab.core.thing.binding.ConfigStatusThingHandler` extends the `BaseThingHandler` and is to be used if the configuration status is to be provided for thing entities
-* `org.openhab.core.thing.binding.ConfigStatusBridgeHandler` extends the `BaseBridgeHandler` and is to be used if the configuration status is to be provided for bridge entities
+- `org.openhab.core.thing.binding.ConfigStatusThingHandler` extends the `BaseThingHandler` and is to be used if the configuration status is to be provided for thing entities
+- `org.openhab.core.thing.binding.ConfigStatusBridgeHandler` extends the `BaseBridgeHandler` and is to be used if the configuration status is to be provided for bridge entities
 
 Sub-classes of these handlers must only override the operation `getConfigStatus` to provide the configuration status in form of a collection of `org.openhab.core.config.core.status.ConfigStatusMessage`s.
 
-#### Internationalization
+#### Internationalization of Config Status Messages
 
 The framework will take care of internationalizing messages.
 
@@ -548,10 +551,10 @@ The actual message key is built by the operation `withMessageKeySuffix(String)` 
 
 As a result depending on the type of the message the final constructed message keys are:
 
-* config-status.information.any-suffix
-* config-status.warning.any-suffix
-* config-status.error.any-suffix
-* config-status.pending.any-suffix
+- config-status.information.any-suffix
+- config-status.warning.any-suffix
+- config-status.error.any-suffix
+- config-status.pending.any-suffix
 
 ## Handling Thing / Bridge Removal
 
@@ -572,9 +575,9 @@ Quite often the device or service you expose via openHAB Things allows certain a
 
 Examples are:
 
-* Reboot / Restart device
-* Start searching for new lights for a Hue lights bridge
-* Send message (via E-Mail / SMS Gateway service / Instant Messanger)
+- Reboot / Restart device
+- Start searching for new lights for a Hue lights bridge
+- Send message (via E-Mail / SMS Gateway service / Instant Messanger)
 
 If you implement the `ThingActions` interface, you can tell the framework about your Thing related actions.
 
@@ -817,7 +820,7 @@ There is no explicit end to an active scan and discovery results can be provided
 If you would like assistance with enforcing a scan end pass a timeout to the `AbstractDiscoveryService` constructor.
 `stopScan` will then be called on your discovery service upon timeout expiration allowing you to stop your scan however needed.
 If a timeout is specified the scan will be considered active until the timeout expires even if `startScan` completed beforehand.
-In particular UIs such as the Paper UI will show the scan as in progress throughout the timeout.
+In particular UIs the scan will be shown as in progress throughout the timeout.
 If you override `stopScan` don't forget to call `super.stopScan` as `AbstractDiscoveryService` performs some cleanup in its version.
 If the timeout is set to 0 `stopScan` will not be called.
 
@@ -834,7 +837,7 @@ If this behavior is not appropriate for the implemented discovery service, one c
     }
 ```
 
-### Internationalization
+### Internationalization of Discovery result labels
 
 The framework will take care of internationalizing labels of discovery results if you extend the `AbstractDiscoveryService`.
 See [i18n](../utils/i18n.html#discovery) for more information.
@@ -848,6 +851,7 @@ The devoloper has to take care about that.
     protected @NonNullByDefault({}) TranslationProvider i18nProvider;
     protected @NonNullByDefault({}) LocaleProvider localeProvider;
 ```
+
 :::
 
 ### UPnP Discovery
@@ -855,20 +859,31 @@ The devoloper has to take care about that.
 UPnP discovery is implemented in the framework as `UpnpDiscoveryService`.
 It is widely used in bindings.
 To facilitate the development, binding developers only need to implement a `UpnpDiscoveryParticipant`.
-Here the developer only needs to implement three simple methods:
+Here the developer only needs to implement three simple methods, and may optionally implement a fourth:
 
 - `getSupportedThingTypeUIDs` - Returns the list of thing type UIDs that this participant supports.
-The discovery service uses this method of all registered discovery participants to return the list of currently supported thing type UIDs.
+    The discovery service uses this method of all registered discovery participants to return the list of currently supported thing type UIDs.
 - `getThingUID` - Creates a thing UID out of the UPnP result or returns `null` if this is not possible.
-This method is called from the discovery service during result creation to provide a unique thing UID for the result.
+    This method is called from the discovery service during result creation to provide a unique thing UID for the result.
 - `createResult` - Creates the `DiscoveryResult` out of the UPnP result.
-This method is called from the discovery service to create the actual discovery result.
-It uses the `getThingUID` method to create the thing UID of the result.
+    This method is called from the discovery service to create the actual discovery result.
+    It uses the `getThingUID` method to create the thing UID of the result.
+- `getRemovalGracePeriodSeconds` (OPTIONAL) - Returns an additional grace period delay in seconds before the device will be removed from the Inbox.
+    This method is called when the discovery service is about to remove a Thing from the Inbox.
+    Some bindings handle devices that can sometimes be a bit late in sending their 'ssdp:alive' notifications even though they have not really gone offline.
+    This means that the device is repeatedly removed from, and (re)added to, the Inbox.
+    To prevent this, a binding may OPTIONALLY implement this method to specify an additional delay period (grace period) to wait before the device is removed from the Inbox.
 
 The following example shows the implementation of the UPnP discovery participant for the Hue binding, the `HueBridgeDiscoveryParticipant`.
 
 ```java
 public class HueBridgeDiscoveryParticipant implements UpnpDiscoveryParticipant {
+
+    private long removalGracePeriodSeconds = 50;
+
+    @Reference
+    @Nullable
+    ConfigurationAdmin configAdmin;
 
     @Override
     public Set<ThingTypeUID> getSupportedThingTypeUIDs() {
@@ -907,6 +922,25 @@ public class HueBridgeDiscoveryParticipant implements UpnpDiscoveryParticipant {
         }
         return null;
     }
+
+    // Implementating this method is OPTIONAL
+    // If not implemented, the 'default' method returns 0 by default
+    @Override
+    public long getRemovalGracePeriodSeconds(RemoteDevice device) {
+        if (configAdmin != null) {
+            try {
+                Configuration conf = configAdmin.getConfiguration("binding.hue");
+                Dictionary<String, @Nullable Object> properties = conf.getProperties();
+                Object property = properties.get(HueBindingConstants.REMOVAL_GRACE_PERIOD);
+                if (property != null) {
+                    removalGracePeriodSeconds = Integer.valueOf(property.toString()).longValue();
+                }
+            } catch (IOException | IllegalStateException | NullPointerException | NumberFormatException e) {
+                // fall through to pre-initialised (default) value
+            }
+        }
+        return removalGracePeriodSeconds;
+    }
 }
 ```
 
@@ -918,16 +952,55 @@ Here the developer only needs to implement four simple methods:
 
 - `getServiceType` - Defines the [mDNS service type](https://www.dns-sd.org/ServiceTypes.html).
 - `getSupportedThingTypeUIDs` - Returns the list of thing type UIDs that this participant supports.
-The discovery service uses this method of all registered discovery participants to return the list of currently supported thing type UIDs.
+    The discovery service uses this method of all registered discovery participants to return the list of currently supported thing type UIDs.
 - `getThingUID` - Creates a thing UID out of the mDNS service info or returns `null` if this is not possible.
-This method is called from the discovery service during result creation to provide a unique thing UID for the result.
+    This method is called from the discovery service during result creation to provide a unique thing UID for the result.
 - `createResult` - Creates the `DiscoveryResult` out of the mDNS result.
-This method is called from the discovery service to create the actual discovery result.
-It uses the `getThingUID` method to create the thing UID of the result.
+    This method is called from the discovery service to create the actual discovery result.
+    It uses the `getThingUID` method to create the thing UID of the result.
 
-### Discovery that is bound to a Thing
+### Discovery that is bound to a Bridge
 
-TODO
+When the discovery process is dependent on a configured bridge the discovery service must be bound to the bridge handler.
+Binding additional services to a handler can be achieved by implementing the service as a `ThingHandlerService`.
+
+Instead of using the Component annotation your discovery service implements the `ThingHandlerService`.
+It should extend the `AbstractDiscoveryService` (which implements `DiscoveryService`) just like a normal service:
+
+```java
+public class <your binding bridge DiscoveryService> extends AbstractDiscoveryService
+        implements ThingHandlerService {
+```
+
+The interface `ThingHandlerService` has 2 methods to pass the handler of the bridge.
+A typical implementation is:
+
+```java
+    @Override
+    public void setThingHandler(@Nullable ThingHandler handler) {
+        if (handler instanceof <your binding handler>) {
+            bridgeHandler = (<your binding handler>) handler;
+        }
+    }
+
+    @Override
+    public @Nullable ThingHandler getThingHandler() {
+        return bridgeHandler;
+    }
+```
+
+The `setThingHandler` is called by the openHAB framework and give you access to the binding bridge handler.
+The handler can be used to get the bridge UID or to get access to the configured device connected to the bridge handler.
+
+In the bridge handler you need to activate the thing handler service.
+This is done by implementing the `getServices` method in your bridge handler:
+
+```java
+    @Override
+    public Collection<Class<? extends ThingHandlerService>> getServices() {
+        return Collections.singleton(<your binding bridge DiscoveryService>.class);
+    }
+```
 
 ## Frequently asked questions / FAQ
 
@@ -937,17 +1010,17 @@ Various binding related questions are answered in our [Binding development FAQ](
 
 Once you are happy with your implementation, you need to integrate it in the Maven build and add it to the official distro.
 
-* Add a new line in the [bundle pom.xml](https://github.com/openhab/openhab-addons/blob/master/bundles/pom.xml).
-* Add a new line in the [binding pom.xml](https://github.com/openhab/openhab-addons/blob/master/bom/openhab-addons/pom.xml).
-* If you have a dependency on a transport bundle (e.g. upnp, mdns or serial) or an external library,
+- Add a new line in the [bundle pom.xml](https://github.com/openhab/openhab-addons/blob/main/bundles/pom.xml).
+- Add a new line in the [binding pom.xml](https://github.com/openhab/openhab-addons/blob/main/bom/openhab-addons/pom.xml).
+- If you have a dependency on a transport bundle (e.g. upnp, mdns or serial) or an external library,
   make sure to add a line for this dependency in the `/src/main/feature/feature.xml` file in your binding folder. See the other bindings as an example.
-* Add your binding to the [CODEOWNERS](https://github.com/openhab/openhab-addons/blob/master/CODEOWNERS) file so that you get notified by Github when someone adds a pull request towards your binding.
+- Add your binding to the [CODEOWNERS](https://github.com/openhab/openhab-addons/blob/main/CODEOWNERS) file so that you get notified by Github when someone adds a pull request towards your binding.
 
 > Please make sure you add the above entries at their alphabetically correct position!
 
 Before you create a pull request on GitHub, you should now run
 
-```
+```bash
 mvn clean install
 ```
 
@@ -955,8 +1028,14 @@ from the repository root to ensure that the build works smoothly (that step take
 
 The build includes [Tooling for static code analysis](https://github.com/openhab/static-code-analysis) that will validate your code against the openHAB Coding Guidelines and some additional best practices.
 Please fix all the priority 1 issues and all issues with priority 2 and 3 that are relevant (if you have any doubt don't hesitate to ask).
+to
 
 You can always run the above command from within your bindings directory to speed the build up and fix and check reported errors.
+Formatting error can be fixed by
+
+```bash
+mvn spotless:apply
+```
 
 Re-run the build to confirm that the checks are passing.
 If it does, it is time to [contribute your work](../contributing.html)!

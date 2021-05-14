@@ -3,8 +3,6 @@ layout: documentation
 title: Concepts
 ---
 
-{% include base.html %}
-
 # Concepts
 
 When first thinking about your home automation system, it may be helpful to bear in mind that there are two ways of thinking about or viewing your system: the physical view and the functional view.
@@ -44,7 +42,7 @@ Channels may be linked to multiple Items and Items may be linked to multiple Cha
 
 To illustrate these concepts, consider the example below of a two-channel actuator that controls two lights:
 
-![](images/thing-devices-1.png)
+![thing-devices-1](images/thing-devices-1.png)
 
 The actuator is a Thing that might be installed in an electrical cabinet.
 It has a physical address and it must be configured in order to be used (remember the physical view introduced at the beginning of this article).

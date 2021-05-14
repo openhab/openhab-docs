@@ -3,8 +3,6 @@ layout: documentation
 title: Items
 ---
 
-{% include base.html %}
-
 # Items
 
 In openHAB Items represent all properties and capabilities of the user’s home automation.
@@ -32,9 +30,9 @@ For example, an Item bound to a sensor receives updated sensor readings and an I
 
 There are two methods for defining Items:
 
-1.  Through UI
+1. Through UI
 
-2.  Through text `.items` files located in the `$OPENHAB_CONF/items` folder.
+1. Through text `.items` files located in the `$OPENHAB_CONF/items` folder.
     Files here must have the extension `.items`; you may create as many `.items` files as needed.
     However, each Item must be unique across all `.items` files.
     Refer to the [installation docs]({{base}}/installation/index.html) to determine your specific installation's folder structure.
@@ -51,6 +49,7 @@ It's recommended to edit `.items` files using one of the [openHAB supporting edi
 Doing so will provide you with full IDE support including features such as syntax checking, and context assistance.
 
 {: #syntax}
+
 ## Item Definition and Syntax
 
 Items are defined using the following syntax:
@@ -68,7 +67,7 @@ itemtype itemname "labeltext [stateformat]" <iconname> (group1, group2, ...) ["t
 **Examples:**
 
 ```java
-Switch Kitchen_Light "Kitchen Light" {mqtt="<[...], >[...]" }
+Switch Kitchen_Light "Kitchen Light" {channel="mqtt:topic:..." }
 String Bedroom_Sonos_CurrentTitle "Title [%s]" (gBedRoom) {channel="sonos:..."}
 Number Bathroom_WashingMachine_Power "Power [%.0f W]" <energy> (gPower) {channel="homematic:..."}
 
@@ -89,6 +88,7 @@ The last example above defines an Item with the following fields:
 The remainder of this article provides additional information regarding Item definition fields.
 
 {: #type}
+
 ### Type
 
 The Item type defines what kind of state can be stored in that Item and which commands the Item will accept.
@@ -145,6 +145,7 @@ In the example above, if you move the Slider widget to 60%, move the Switch to O
 -->
 
 {: #name}
+
 ### Name
 
 The Item name is used to uniquely identify an Item.
@@ -164,14 +165,14 @@ An Item naming scheme with a physical or logical top-down will ensure you can ea
 
 The following naming style guide is recommended:
 
--   Words build a physical or logical hierarchy
+- Words build a physical or logical hierarchy
 
--   Every word of the Item name starts with an uppercase letter
+- Every word of the Item name starts with an uppercase letter
 
--   Words should be separated by an underscore character, except for words that logically belong together
+- Words should be separated by an underscore character, except for words that logically belong together
 
--   Names that reoccur frequently, such as the names of rooms or appliances, may be abbreviated to reduce overall name length.
-(Example: Bathroom = BR)
+- Names that reoccur frequently, such as the names of rooms or appliances, may be abbreviated to reduce overall name length.
+    (Example: Bathroom = BR)
 
 Examples:
 
@@ -187,9 +188,9 @@ Examples:
 Users are encouraged to apply the style guide above to group names as well as Item names.
 Two naming schemes are established in the community for Group names:
 
-1.  Use a plural word form (e.g. Batteries) where possible.
+1. Use a plural word form (e.g. Batteries) where possible.
     Otherwise the word "Group" may be appended for clarity.
-2.  Prepend a lowercase "g" to the name (e.g. gBattery)
+1. Prepend a lowercase "g" to the name (e.g. gBattery)
 
 | Group Name                                | Interpretation                                                        |
 |-------------------------------------------|-----------------------------------------------------------------------|
@@ -199,6 +200,7 @@ Two naming schemes are established in the community for Group names:
 | "`Livingroom`" or "`gLR`"                 | Group for *all* Items (including lights) belonging to the living room |
 
 {: #label}
+
 ### Label
 
 Label text is used to describe an Item in a human-readable way.
@@ -215,28 +217,31 @@ Number Livingroom_Temperature "Temperature [%.1f °C]"
 Channel labels can be overwritten by Item definitions and Item labels can be overwritten in [Sitemaps]({{base}}/configuration/sitemaps.html#element-types).
 
 {: #state}
+
 ### State
 
 The state of an Item depends on the Item type, the Channel bound to the Item, and internal or external events.
 A analogy can be drawn between the state of an Item and the value of a variable in a computer program.
 
 {: #item-state}
+
 #### Item State
 
 This section provides information about what a user can expect regarding the behavior of the state of an Item.
 
--   Items are created with a state of `NULL`
+- Items are created with a state of `NULL`
 
--   Operations in openHAB such as a user interacting with the Item using the Basic UI, or a Binding updating the state of an Item will change the state of the Item
+- Operations in openHAB such as a user interacting with the Item using the Basic UI, or a Binding updating the state of an Item will change the state of the Item
 
--   An Item's state may also be set through a Binding which may be reacting to changes in the real world
+- An Item's state may also be set through a Binding which may be reacting to changes in the real world
 
--   A Binding may set the state of an Item to `UNDEF` if it looses communications with a Thing (for example, a Z-wave doorbell with a dead battery).
-The Binding may also set the state to `UNDEF` if an error exists in the binding configuration, or under other conditions
+- A Binding may set the state of an Item to `UNDEF` if it looses communications with a Thing (for example, a Z-wave doorbell with a dead battery).
+    The Binding may also set the state to `UNDEF` if an error exists in the binding configuration, or under other conditions
 
 *N.B.*  Many openHAB users find that it can be very useful to use [Persistence](/addons/#persistence) and [System started]({{base}}/configuration/rules-dsl.html#system-based-triggers) rules so that their systems behaves in a predictable way after an openHAB restart.
 
 {: #command-vs-status}
+
 #### Command vs. Status
 
 Users should bear in mind the difference between an Item used to send a command to a Thing, and an Item that reflects the status of a real-world Thing in the UI.
@@ -258,6 +263,7 @@ Then you add the light-level Item to your UI.
 Now when you send the Switch Item command, and you see a corresponding increase in light level in the room, you know for sure that your command has been received and acted upon, because you have a return status Item in your UI.
 
 {: #state-presentation}
+
 #### State Presentation
 
 The Item definition determines the Item's textual state presentation, e.g., regarding formatting, decimal places, unit display and more.
@@ -286,6 +292,7 @@ Location  My_Location              "My Location [%2$s°N %3$s°E %1$sm]" // e.g.
 ```
 
 {: #state-transformation}
+
 #### State Transformation
 
 Transformations can be used in the state part of an Item, to translate the raw state of an Item into another language, or to convert technical values into human readable information.
@@ -299,6 +306,7 @@ Contact Livingroom_Window "Ventana del salón [MAP(window_esp.map):%s]"
 Please refer to the article on [Transformations](/docs/configuration/transformations.html) for more usage details and a list of available transformation services.
 
 {: #icons}
+
 ### Icons
 
 The icon name is used by openHAB to select the image to display next to an Item name when using one of openHAB's UIs, e.g. Basic UI.
@@ -332,6 +340,7 @@ Note that image files with the wrong file ending will be ignored.
 Users may substitute their own icon for an icon from the default icon set by placing a file in the `$OPENHAB_CONF/icons/classic/` folder with the same filename as the name of the icon being substituted.
 
 {: #icons-dynamic}
+
 #### Dynamic Icons
 
 Some icons are dynamically selected by openHAB depending on the Item's state.
@@ -353,15 +362,15 @@ Dynamic icon filenames follow the pattern below:
 Dynamic icon sets may consist of as many state-specific icon files as needed.
 Each set must meet the following criteria:
 
--   A default icon is mandatory.
+- A default icon is mandatory.
     The default icon filename is the name of the icon without a hyphen or state (e.g. `switch.svg`)
 
--   Icon filenames must follow the naming restrictions given for [icons](#icons) above
+- Icon filenames must follow the naming restrictions given for [icons](#icons) above
 
--   The state name must reflect the Item's raw state.
+- The state name must reflect the Item's raw state.
     [Transformations](#state-transformation) applied in the state presentation definition of the Item have no influence on icon selection.
 
--   The state portion of the icon name must be in lowercase letters
+- The state portion of the icon name must be in lowercase letters
 
 **Example:**
 
@@ -403,6 +412,7 @@ For a dimmable light (0-100%), you might provide icons as in the example:
 Just as with regular icons, user-defined dynamic icon sets may be configured via the custom icons folder `$OPENHAB_CONF/icons/classic/`.
 
 {: #groups}
+
 ### Groups
 
 The Group is a special Item type that can be used to define a category or collection into which you can combine other Items or Groups.
@@ -416,12 +426,12 @@ Group groupname ["labeltext"] [<iconname>] [(group1, group2, ...)]
 The Group item is commonly used to define hierarchies of Items from different perspectives.
 For example:
 
--   Location-oriented or physical perspective:
-    - Floors in your house → Rooms on that floor → An appliance in that room...
+- Location-oriented or physical perspective:
+  - Floors in your house → Rooms on that floor → An appliance in that room...
 
--   Functional or logical perspective:
-    - Maintenance Group → All battery states → Individual battery states in percentage
-    - Further examples: all lights, all room temperatures, combined power consumption
+- Functional or logical perspective:
+  - Maintenance Group → All battery states → Individual battery states in percentage
+  - Further examples: all lights, all room temperatures, combined power consumption
 
 These relationships can be exploited in [Sitemaps]({{base}}/configuration/sitemaps.html) or in [automation rules]({{base}}/configuration/rules-dsl.html) to navigate through the hierarchically organized Items or to perform computations and updates on subsets of similar Items.
 
@@ -455,6 +465,7 @@ Because of the hierarchical structure of your group items, the rule will be clea
 Additionally, the rule will not need to be modified when a new Item is added to the `Temperatures` group.
 
 {: #group-type}
+
 ### Derive Group State from Member Items
 
 As you are now aware, an Item can have a state (e.g. "ON", "OFF").
@@ -492,13 +503,13 @@ Incompatible Item types within a Group may result in the invalid aggregation res
 Examples for derived states on Group Items when declared in the Item DSL:
 
 ```java
-Group:Number             			Lights       	"Active Lights [%d]"              // e.g. "2"
-Group:Switch:OR(ON,OFF)  			Lights       	"Active Lights [%d]"              // e.g. ON and "2"
-Group:Switch:AND(ON,OFF) 			Lights       	"Active Lights [%d]"              // e.g. ON and "2"
-Group:Number:AVG         			Temperatures 	"All Room Temperatures [%.1f °C]" // e.g. "21.3 °C"
-Group:DateTime:EARLIEST  			LatestUpdate	"Latest Update [%1$tY.%1$tm.%1$tY %1$tH:%1$tM:%1$tS]"
-Group:DateTime:LATEST    			LastSeen		"Last Seen [%1$tY.%1$tm.%1$tY %1$tH:%1$tM:%1$tS]"
-Group:String:COUNT("OFFLINE")	    OfflineDevices	"Offline Devices [%d]"			  // e.g. "2"
+Group:Number                Lights        "Active Lights [%d]"              // e.g. "2"
+Group:Switch:OR(ON,OFF)     Lights        "Active Lights [%d]"              // e.g. ON and "2"
+Group:Switch:AND(ON,OFF)    Lights        "Active Lights [%d]"              // e.g. ON and "2"
+Group:Number:AVG            Temperatures  "All Room Temperatures [%.1f °C]" // e.g. "21.3 °C"
+Group:DateTime:EARLIEST     LatestUpdate "Latest Update [%1$tY.%1$tm.%1$tY %1$tH:%1$tM:%1$tS]"
+Group:DateTime:LATEST       LastSeen  "Last Seen [%1$tY.%1$tm.%1$tY %1$tH:%1$tM:%1$tS]"
+Group:String:COUNT("OFFLINE")     OfflineDevices "Offline Devices [%d]"     // e.g. "2"
 ```
 
 The first three examples above compute the number of active lights and store them as group state.
@@ -518,6 +529,7 @@ The `EARLIEST` function returns `now().minusDays(10)`, the `LATEST` function ret
 The last Group counts all members of it matching the given regular expression, here any character or state (simply counts all members).
 
 {: #tags}
+
 ### Tags
 
 Tags added to an Item definition allow a user to characterize the specific nature of the Item beyond its basic Item type.
@@ -538,6 +550,7 @@ Tags will be ignored if no Items in the openHAB installation support it.
 See the [Hue Emulation Service](/addons/integrations/hueemulation/) or [HomeKit Add-on](/addons/integrations/homekit/) documentation for more details.
 
 {: #binding}
+
 ### Binding Configuration
 
 One of the greatest strengths of an openHAB automation system is the sheer number of devices you can interact with.
@@ -558,11 +571,11 @@ Each Thing has one or more Channels, and Items are linked to one or more Channel
 There are two different kinds of channels:
 
 - State Channels will, as soon as linked to the Item, update the state of it and/or listen for Commands you send to it.
-For example, if you have a `Player` Item, a State Channel could be responsible for propagating the state of an audio player (`PLAYING`, `PAUSED`) to your Item as well as listening for proper Commands (`PLAY`, `PAUSE`, `PREVIOUS`, `NEXT`)
+    For example, if you have a `Player` Item, a State Channel could be responsible for propagating the state of an audio player (`PLAYING`, `PAUSED`) to your Item as well as listening for proper Commands (`PLAY`, `PAUSE`, `PREVIOUS`, `NEXT`)
 - Trigger Channels will only send events that won't have any effect on the Item unless you treat them with Rules or use a Trigger Profile to do state changes or commands based on your event.
-For example, when you use a Binding that integrates buttons or wall switches, a Trigger Channel could be responsible for sending a `PRESSED` event when someone is pressing the button of the device.
-This event on its own won't change anything on the Item, but you could use, for example, the Trigger Profile "rawbutton-toggle-switch" to toggle a lamp on or off when the button is clicked.
-Also, you could e.g. define a Rule that is triggered by this event and calculates the color of the lamp based on the sun position.
+    For example, when you use a Binding that integrates buttons or wall switches, a Trigger Channel could be responsible for sending a `PRESSED` event when someone is pressing the button of the device.
+    This event on its own won't change anything on the Item, but you could use, for example, the Trigger Profile "rawbutton-toggle-switch" to toggle a lamp on or off when the button is clicked.
+    Also, you could e.g. define a Rule that is triggered by this event and calculates the color of the lamp based on the sun position.
 
 Some Bindings support automatic discovery of Things, in which case discovered Things will appear in the Inbox in the UI.
 Once accepted, the new Thing will appear under Settings > Things.
@@ -604,13 +617,16 @@ Commands and Updates from and to these Items will be combined, and can be used i
 Example:
 
 ```java
-Switch Office_PC {channel="lgwebos:WebOSTV:01dd3ac4-62f4-7505-208b-12345679", channel="network:servicedevice:6d5de4e65d"}
+Switch Office_PC {
+  channel="lgwebos:WebOSTV:01dd3ac4-62f4-7505-208b-12345679",
+  channel="network:servicedevice:6d5de4e65d"
+}
 ```
 
 The first example shows a symbiosis of the LG webOS Binding and the Wake-on-LAN Binding to interact with a TV.
 
-
 {: #autoupdate}
+
 #### Parameter `autoupdate`
 
 When left as default, openHAB's `autoupdate` function attempts to predict the outcome of a *command* on the Item *state*.
@@ -626,6 +642,7 @@ Switch Garage_Gate {channel="xxx", autoupdate="false"}
 ```
 
 {: #expire}
+
 #### Parameter `expire`
 
 This parameter allows to post an update or command to an item after a period of time has passed.
@@ -635,7 +652,7 @@ Any future expiring update or command is cancelled, if the item receives an upda
 
 The parameter accepts a duration of time that can be a combination of hours, minutes and seconds in the format
 
-```
+```shell
 expire="1h 30m 45s"
 expire="1h05s"
 expire="55h 59m 12s"
@@ -647,7 +664,7 @@ Whitespaces are allowed between the sections.
 This duration can optionally be followed by a comma and the state or command to post, when the timer expires.
 If this optional section is not present, it defaults to the Undefined (`UnDefType.UNDEF`) state.
 
-```
+```shell
 Player MyPlayer   { expire="1h,command=STOP" } // send STOP command after one hour
 Number MyChannel  { expire="5m,state=0" }      // update state to 0 after five minutes
 String MyMessage  { expire="3m12s,Hello" }     // update state to Hello after three minutes and 12 seconds
@@ -667,7 +684,7 @@ You can use *State Profiles* on State Channels and *Trigger Profiles* on Trigger
 Profiles can be specified as a parameter for a given Channel on the Item configuration:
 
 ```java
-<item-type> MyItem { channel="<bindingID>:<thing-typeID>:MyThing:myChannel"[profile="<profileID>", <profile-parameterID>="MyValue", ...]}
+<item-type> MyItem { channel="<bindingID>:<thing-typeID>:MyThing:myChannel"[profile="system:<profileID>", <profile-parameterID>="MyValue", ...]}
 ```
 
 There are some built-in Profiles available which are described in the table below.
@@ -678,12 +695,15 @@ If this is the case, you will find those within the documentation of the Binding
 Also, all [Transformation Services](/addons/#transform) provide a State Profile which allows you to do the transformation already on item-level instead doing it with a [Sitemap]({{base}}/configuration/sitemaps.html).
 You can find the documentation of these Profiles within the [Add-On documentation of the Transformation Service](/addons/#transform) you would like to use.
 
-| ID                                                                                            | Type    | Supported Item Types  | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
+| Profile ID                                                                                    | Type    | Supported Item Types  | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
 |-----------------------------------------------------------------------------------------------|---------|-----------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `default`                                                                                     | State   | All                   | If you don't specify any Profile, this Profile will be used. For State Channels, this means that states and commands are just propagated from the Channel to the Item and vice versa without any changes. For Trigger Channels, the Default Profile won't change anything on the Item.                                                                                                                                                                                                        |
 | `follow`                                                                                      | State   | All                   | If one device should "follow" the actions of another device, this can be used. The term "follow" in this case means that any state that is sent to an Item will be forwarded from this Item to any linked Channel with the `follow` Profile. It takes state updates on an Item and sends them as a command onto the Channel. In the direction from the ThingHandler towards the Item, this Profile ignores state updates.                                                                     |
 | `hysteresis`                                                                                  | State   | Switch                | The `hysteresis` Profile can be configured via three parameters: `lower` (**mandatory**) `QuantityType` or `DecimalType`, `upper` (optional) `QuantityType` or `DecimalType`, `inverted` (optional) `boolean`.  This Profile can be used to trigger alarms when number values exceed a given `lower` bound - sends `ON` to the Switch Item. By defining an additional `upper` bound it can provide kind of anti-flapping. The `inverted` parameter negates the resulting State of the Switch. |
-| `offset`                                                                                      | State   | Number                | An offset can be specified via the parameter `offset` which has to be a `QuantityType` or `DecimalType`. The specificed offset will be applied to the value from the device before it arrives at the Item.                                                                                                                                                                                                                                                                                    |
+| `offset`                                                                                      | State   | Number                | An offset can be specified via the parameter `offset` which has to be a `QuantityType` or `DecimalType`. The specified offset will be applied to the value from the device before it arrives at the Item.                                                                                                                                                                                                                                                                                     |
+| `range`                                                                                       | State   | Switch                | The `range` Profile can be used to trigger alarms when number values exceed given limits (`lower` and `upper` bounds). It sends ON to a Switch Item. There are three parameters: `lower` and `upper` (**mandatory**) `QuantityType` or `DecimalType` and `inverted` (optional) `boolean`.                                                                                                                                                                                                     |
+| `timestamp-update`                                                                            | State   | DateTime              | This Profile will update a DateTime Item to track every update of the state of a given Channel, whatever the state is.                                                                                                                                                                                                                                                                                                                                                                        |
+| `timestamp-change`                                                                            | State   | DateTime              | This Profile will update a DateTime Item to track every change of the state of a given Channel.                                                                                                                                                                                                                                                                                                                                                                                               |
 | `rawbutton-on-off-switch`                                                                     | Trigger | Color, Dimmer, Switch | This Profile can only be used on Channels of the type `system.rawbutton`. On those Channels, it will set the Item state to `ON` when a `PRESSED` event arrives and to `OFF` when a `RELEASED` event arrives.                                                                                                                                                                                                                                                                                  |
 | `rawbutton-toggle-player`                                                                     | Trigger | Player                | This Profile can only be used on Channels of the type `system.rawbutton`. On those Channels, it will toggle the Player Item state between `PLAY` and `PAUSE` when `PRESSED` events arrive.                                                                                                                                                                                                                                                                                                    |
 | `rawbutton-toggle-rollershutter`                                                              | Trigger | Rollershutter         | This Profile can only be used on Channels of the type `system.rawbutton`. On those Channels, it will toggle the Rollershutter Item state between `UP` and `DOWN` when `PRESSED` events arrive.                                                                                                                                                                                                                                                                                                |
@@ -692,16 +712,15 @@ You can find the documentation of these Profiles within the [Add-On documentatio
 | `rawrocker-to-dimmer`                                                                         | Trigger | Dimmer                | Same as `rawrocker-to-on-off`, but additionally it allows to dim by holding the respective button. Technically, this Profile sends an `INCREASE` or `DECREASE` Command every 500 milliseconds while you hold.                                                                                                                                                                                                                                                                                 |
 | `rawrocker-to-play-pause`, `rawrocker-to-next-previous` and `rawrocker-to-rewind-fastforward` | Trigger | Player                | These Profiles can only be used on Channels of the type `system.rawrocker` and Player Items. They will convert a press on the first rocker button to an `PLAY` / `NEXT` / `FASTFORWARD` command while the second one will be converted to an `PAUSE` / `PREVIOUS` / `REWIND` command.                                                                                                                                                                                                         |
 | `rawrocker-to-stop-move` and `rawrocker-to-up-down`                                           | Trigger | Rollershutter         | These Profiles can only be used on Channels of the type `system.rawrocker` and Rollershutter Items. They will convert a press on the first rocker button to an `MOVE` / `UP` command while the second one will be converted to an `STOP` / `DOWN` command.                                                                                                                                                                                                                                    |
-| `timestamp-update`                                                                            | State   | All                   | This Profile will update a DateTime Item to track every update of the state of a given Channel, whatever the state is.                                                                                                                                                                                                                                                                                                                                                                        |
-| `timestamp-change`                                                                            | State   | All                   | This Profile will update a DateTime Item to track every change of the state of a given Channel.                                                                                                                                                                                                                                                                                                                                                                                               |
 
-##### Example 1
+##### Basic Example
 
 You have an Item called `Bedroom_Light` that is connected to a Hue lamp
 
 ```java
 Color Bedroom_Light { channel="hue:0210:1:bulb1:color" }
 ```
+
 and a [Rule]({{base}}/configuration/rules-dsl.html) to toggle this light with a serial button:
 
 ```java
@@ -718,22 +737,32 @@ end
 Instead of using this Rule, you can also use the `rawbutton-toggle-switch` Profile in combination with [Multi-Channel Linking](#multi-binding-channel-linkage):
 
 ```java
-Color Bedroom_Light { channel="hue:0210:1:bulb1:color", channel="serialbutton:button:mybutton:button" [profile="rawbutton-toggle-switch"] }
+Color Bedroom_Light {
+  channel="hue:0210:1:bulb1:color",
+  channel="serialbutton:button:mybutton:button" [profile="system:rawbutton-toggle-switch"]
+}
 ```
 
 This will make your Rule obsolete.
 So with Profiles, you can significantly reduce the amount of Rules you need for your Smart Home which helps you to keep your configuration short and clear.
 
-##### Example 2
+##### Advanced Examples
 
 ```java
+/** Hysteresis Profile **/
 Number:Temperature Outdoor_Temperature { channel="openweathermap:weather-and-forecast:api:local:current#temperature" }
 // Triggers a temperature high alarm (Switch = ON) as of 30 °c and stays ON until temperature drops below 29 °C
-Switch Outdoor_Temperature_High_Alert { channel="openweathermap:weather-and-forecast:api:local:current#temperature" [profile="hysteresis", lower="29 °C", upper="30 °C"] }
+Switch Outdoor_Temperature_High_Alert { channel="openweathermap:weather-and-forecast:api:local:current#temperature" [profile="system:hysteresis", lower="29 °C", upper="30 °C"] }
 // Temperture low alert below 0 °C
-Switch Outdoor_Temperature_Low_Alert { channel="openweathermap:weather-and-forecast:api:local:current#temperature" [profile="hysteresis", lower="0 °C", inverted=true] }
+Switch Outdoor_Temperature_Low_Alert { channel="openweathermap:weather-and-forecast:api:local:current#temperature" [profile="system:hysteresis", lower="0 °C", inverted=true] }
 
-// Indicates a battery low alarm if battery level drops below 15
+/** Battery Level Profile **/
 Number Battery_Level { channel="serialbutton:button:mybutton:battery-level" }
-Switch Low_Battery { channel="serialbutton:button:mybutton:battery-level", [profile="hysteresis", lower=15, inverted=true] }
+// Indicates a battery low alarm if battery level drops below 15
+Switch Low_Battery { channel="serialbutton:button:mybutton:battery-level" [profile="system:hysteresis", lower=15, inverted=true] }
+
+/** Range Profile **/
+Number:Dimensionless Outdoor_Humidity { channel="openweathermap:weather-and-forecast:api:local:current#humidity" }
+// Triggers a humidity low / high alarm (Switch = ON) if humidity drops below 40 % or exceeds 60 %
+Switch Outdoor_Humidity_Alert { channel="openweathermap:weather-and-forecast:api:local:current#humidity" [profile="system:range", lower="40 %", upper="60 %", inverted=true] }
 ```

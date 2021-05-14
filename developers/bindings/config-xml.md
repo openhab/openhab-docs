@@ -3,8 +3,6 @@ layout: developersguide
 title: Configuration Descriptions
 ---
 
-{% include base.html %}
-
 # Configuration Descriptions
 
 Specific services or bindings usually require a configuration to be operational in a meaningful way.
@@ -31,9 +29,10 @@ The description can include limited HTML to enhance the display of this informat
 
 The following HTML tags are allowed -: ```<b>, <br>, <em>, <h1>, <h2>, <h3>, <h4>, <h5>, <h6>, <i>, <p>, <small>, <strong>, <sub>, <sup>, <ul>, <ol>, <li>```.
 These must be inside the XML escape sequence - eg.
-```<description><![CDATA[ HTML marked up text here ]]></description>```.
+`<description><![CDATA[ HTML marked up text here ]]></description>`.
 
 ## XML Structure for Configuration Descriptions
+
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <config-description:config-descriptions
@@ -83,7 +82,7 @@ These must be inside the XML escape sequence - eg.
   <tr><td>parameter.max</td><td>The maximum value for numeric types, or the maximum length of strings. Note that the value of any options may be outside of this value (optional).</td></tr>
   <tr><td>parameter.step</td><td>The value granularity for a numeric value (optional).</td></tr>
   <tr><td>parameter.pattern</td><td>The regular expression for a text type (optional).</td></tr>
-  <tr><td>parameter.required</td><td>Specifies whether the value is required (optional).</td></tr>
+  <tr><td>parameter.required</td><td>Specifies whether the value is required (optional, default: false).</td></tr>
   <tr><td>parameter.readOnly</td><td>Specifies whether the value is read-only (optional).</td></tr>
   <tr><td>parameter.multiple</td><td>Specifies whether multiple selections of options are allowed (optional).</td></tr>
   <tr><td>parameter.groupName</td><td>Sets a group name for this parameter (optional).</td></tr>
@@ -147,10 +146,10 @@ Further, the <strong>item</strong> context can contain criteria to filter the li
 In the case of above filter only those items will be shown that satisfy the filter's conditions.
 The above filter is evaluated as follows:
 
-```
+```text
 (type=Switch OR type=Dimmer) AND (tag=Light OR tag=Heating)
-
 ```
+
 Similarly, the <strong>Channel</strong> context can contain criteria to filter channels based on <strong>kind</strong> field.
 The value of <strong>kind</strong> can either be STATE or TRIGGER.
 For example:
@@ -163,6 +162,7 @@ For example:
 
 Groups allow parameters to be grouped together into logical blocks so that the user can find the parameters they are looking for.
 A parameter can be placed into a group so that the UI knows how to display the information.
+
 <table>
   <tr><td><b>Property</b></td><td><b>Description</b></td></tr>
   <tr><td>group.name</td><td>The group name - this is used to link the parameters into the group, along with the groupName option in the parameter (mandatory).</td></tr>
@@ -177,7 +177,7 @@ The full XML schema for configuration descriptions is specified in the [openHAB 
 **Hints:**
 
 - Although the attribute `uri` is optional, it *must* be specified in configuration description files.
-Only for embedded configuration descriptions in documents for binding definitions and `Thing` type descriptions, the attribute is optional.
+  Only for embedded configuration descriptions in documents for binding definitions and `Thing` type descriptions, the attribute is optional.
 
 ## Example
 

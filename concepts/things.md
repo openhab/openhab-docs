@@ -12,7 +12,7 @@ From a user perspective, they are relevant for the setup and configuration proce
 Things can have configuration properties, which can be optional or mandatory.
 Such properties can be basic information like an IP address, an access token for a web service or a device specific configuration that alters its behavior.
 
-### Channels
+## Channels
 
 Things provide "Channels", which represent the different functions the Thing provides.
 Where the Thing is the physical entity or source of information, the Channel is a concrete function from this Thing.
@@ -23,16 +23,15 @@ Channels are linked to Items, where such links are the glue between the virtual 
 Once such a link is established, a Thing reacts to events sent for an item that is linked to one of its Channels.
 Likewise, it actively sends out events for Items linked to its Channels.
 
-### Bridges
+## Bridges
 
 A special type of Thing is a "bridge".
 Bridges are Things that need to be added to the system in order to gain access to other Things.
 A typical example of a bridge is an IP gateway for some non-IP based home automation system or a web service configuration with authentication information which every Thing from this web service might need.
 
-### Discovery
+## Discovery
 
 As many Things can be automatically discovered, there are special mechanisms available that deal with the handling of [automatically discovered Things](discovery.html).
-
 
 ## Thing Status
 
@@ -93,4 +92,3 @@ The following table lists the different status details for each status:
 <tr valign="top"><td>REMOVING</td>                 <td>NONE</td><td>No further status details available.</td></tr>
 <tr valign="top"><td>REMOVED</td>                  <td>NONE</td><td>No further status details available.</td></tr>
 </table>
-
