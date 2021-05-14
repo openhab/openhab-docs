@@ -238,6 +238,17 @@ The following devices have been tested by openHAB users with the binding. The ab
 | Osram Motion Sensor                            | Osram Smart+ Motion Sensor *[<sup>[1]</sup>](#note1)*        |
 | Securifi Peanut Plug                           | Metered Plug                                                 |
 | Shenzhen Ksentry Electronics On Off Controller | Relay                                                        |
+| SMaBiT (Bitron Video) Magnetic contect         | AV2010/21 /21A /21B /21C                                     |
+| SMaBiT (Bitron Video) Motion Sensor            | AV2010/22 /22A /22B                                          |
+| SMaBiT (Bitron Video) Wall-mount relay         | AV2010/18 (10A on/off), /16 (2.5A Dimmer)                    |
+| SMaBiT (Bitron Video) Smart Plug               | AV2010/25 (16A Metering), 28 (16A on/off), /16 (2.5A Dimmer) |
+| SMaBiT (Bitron Video) Remote Control           | AV2010/23                                                    |
+| SMaBiT (Bitron Video) Wall button              | AV2010/34                                                    |
+| SMaBiT (Bitron Video) Smoke Detector           | AV2010/24 /24A (operation as indoor-siren supported as well) |
+| SMaBiT (Bitron Video) Outdoor siren            | AV2010/29 /29A                                               |
+| SMaBiT (Bitron Video) Vibration sensor         | AV2010/33                                                    |
+| SMaBiT (Bitron Video) Water leak sensor        | AV2010/37 (siren cannot be triggered separately)             |
+| SMaBiT (Bitron Video) Thermostat w. relay      | AV2010/32 (only heating mode supported)                      |
 | SmartThings Plug                               | Metered Plug                                                 |
 | SmartThings Motion Sensor                      | CentraLite 3325-S Motion and Temperature sensor              |
 | SmartThings Contact Sensor                     | Contact and Temperature sensor                               |

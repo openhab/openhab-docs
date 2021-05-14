@@ -108,7 +108,7 @@ The delay in seconds before the sensor reports no motion<br /> <h1>Overview</h1>
                  min="0" max="1">
         <label>19: LED motion indicator</label>
         <description><![CDATA[
-Enable/disable LED indicator for motion<br /> <h1>Overview</h1><p><br /></p>
+Enable/disable LED indicator for motion<br /> <h1>Overview</h1><p>Enable or disable <b>LED indicator for motion alerts</b>.<br />0 - don’t flash LED when motion is detected<br />1 - flash LED indicator when motion is detected (default).</p>
         ]]></description>
         <default>1</default>
         <options>

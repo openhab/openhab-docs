@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zigbee"
+                          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                          xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+                          xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0 https://openhab.org/schemas/thing-description-1.0.0.xsd">
+
+    <!-- This is needed to avoid the device being considered just a Level Control client -->
+
+    <thing-type id="xiaomi_lumisensormagnet" listed="false">
+        <label>Xiaomi Door Window Sensor</label>
+
+        <channels>
+            <channel id="contact_switch" typeId="switch_onoff">
+                <label>Contact open (Switch)</label>
+                <description>The magnetic contact, seen by the device as a switch that is on when the contact is open</description>
+                <properties>
+                    <property name="zigbee_endpoint">1</property>
+                    <property name="zigbee_inputclusters">6</property>
+                </properties>
+            </channel>
+        </channels>
+
+        <properties>
+            <property name="vendor">Xiaomi</property>
+            <property name="modelId">lumi.sensor_magnet</property>
+            <property name="zigbee_logicaltype">END_DEVICE</property>
+        </properties>
+
+        <representation-property>zigbee_macaddress</representation-property>
+
+        <config-description>
+            <parameter name="zigbee_macaddress" type="text" readOnly="true" required="true">
+                <label>MAC Address</label>
+            </parameter>
+        </config-description>
+    </thing-type>
+</thing:thing-descriptions>

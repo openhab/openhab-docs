@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="mcohome_mhds221_00_000" listed="false">
+    <label>MH-DS221 MCO HOME Micro Switch Dry Contact</label>
+    <description><![CDATA[
+MCO HOME Micro Switch Dry Contact<br /> <h1>Overview</h1><p>Dry Contact Module MH-DS221 is a smart wall switch taht can on/off control wall-boiler, active normal close valve, automatic door etc via Z-Wave network, you can install it with traditional switch for both local and remote control. It supports basic command class, and also can act as a repeater in Z-Wave network. This product can be included and operated in any Z-Wave network with other Z-Wave certified devices from any other manufactures.</p> <br /> <h2>Inclusion Information</h2><ol><li>Set controller into Add/Remove mode. Follow the instructions provided by the controller/gateway manufacturer.</li><li>Press momentary button on the device, or the connected external button S1 3 times in quick succession.</li></ol><p>Note: If the INCLUSION/EXCLUSION is successful, the INDICATION LED will blink slowly 6 times, if not, INDICATION LED will be solid on or off depending on switch's state.</p> <br /> <h2>Exclusion Information</h2><ol><li>Set controller into Add/Remove mode. Follow the instructions provided by the controller/gateway manufacturer.</li><li>Press momentary button on the device, or the connected external button S1 3 times in quick succession.</li></ol><p>Note: If the INCLUSION/EXCLUSION is successful, the INDICATION LED will blink slowly 6 times, if not, INDICATION LED will be solid on or off depending on switch's state.</p> <br /> <h2>Wakeup Information</h2><p><br /></p>
+    ]]></description>
+    <category>GarageDoor</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="basic_basic_number" typeId="basic_number">
+        <label>Relay state change</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_BASIC</property>
+        </properties>
+      </channel>
+      <channel id="switch_binary" typeId="switch_binary">
+        <label>Switch</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">McoHome Technology Co., Ltd</property>
+      <property name="modelId">MH-DS221</property>
+      <property name="manufacturerId">015F</property>
+      <property name="manufacturerRef">D221:5102</property>
+      <property name="dbReference">1384</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_1_1" type="integer" groupName="configuration">
+        <label>1: Switch state saved or not when power failure</label>
+        <default>1</default>
+        <options>
+          <option value="0">Not saved, switch will be off when powered again</option>
+          <option value="1">Switch will keep the same state when powered again</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_2_1" type="integer" groupName="configuration">
+        <label>2: External switch type</label>
+        <description><![CDATA[
+0: Button (momentary button) <br /> 1: Toggle (2-State switches) <br />
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">0: Button (momentary button) <br /></option>
+          <option value="1">Toggle (2-State switches)</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_3_1" type="integer" groupName="configuration">
+        <label>3: 2-State switch</label>
+        <description><![CDATA[
+0: For the toggle switch without specified on/off position <br />1: For the toggle switch with specified on/off position
+        ]]></description>
+        <default>1</default>
+        <options>
+          <option value="0">For the toggle switch without specified on/off position</option>
+          <option value="1">For the toggle switch with specified on/off position</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_4_1" type="integer" groupName="configuration">
+        <label>4: OFF Timer</label>
+        <description><![CDATA[
+0: Forbid manual operation <br />1: Allow manual operation <br />
+        ]]></description>
+        <default>1</default>
+        <options>
+          <option value="0">Forbid manual operation</option>
+          <option value="1">Allow manual operation</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_5_2" type="integer" groupName="configuration">
+        <label>5: Timer Function</label>
+        <description><![CDATA[
+0: Disabled <br /> 1: 1-32767n*0.1s
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Disabled</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_7_1" type="integer" groupName="configuration">
+        <label>7: Active Reporting Command</label>
+        <default>0</default>
+        <options>
+          <option value="0">SWITCH_BINARY_REPORT</option>
+          <option value="1">BASIC_REPORT</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_8_1" type="integer" groupName="configuration">
+        <label>8: Operation report from switch1 to association group2</label>
+        <default>0</default>
+        <options>
+          <option value="-1">No report state to AG2</option>
+          <option value="0">Report on/off state of S1 to AG2</option>
+          <option value="1">Only report ON state of S1 to AG2</option>
+          <option value="2">Only report OFF state of S1 to AG2</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_255_1_wo" type="integer" groupName="configuration">
+        <label>255: Factory Settings</label>
+        <description>Restore factory setting</description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association">
+        <label>1: </label>
+        <description><![CDATA[
+Default<br /> <h1>Overview</h1><p><br /></p>
+        ]]></description>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: </label>
+        <description><![CDATA[
+Relay state change<br /> <h1>Overview</h1><p>COMMAND_CLASS_BASIC, BASIC_SET</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_3" type="text" groupName="association" multiple="true">
+        <label>3: </label>
+        <description><![CDATA[
+Relay state change<br /> <h1>Overview</h1><p>COMMAND_CLASS_BASIC, BASIC_REPORT</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>
