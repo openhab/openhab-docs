@@ -3,8 +3,6 @@ layout: documentation
 title: Docker
 ---
 
-{% include base.html %}
-
 # openHAB inside a Docker Container
 
 Docker is the most popular among a collection of tools that provide containerization.
@@ -69,11 +67,8 @@ Note that the software running inside a Docker container cannot follow the symbo
 Make sure the `openhab` user owns these directories.
 
 ```bash
-mkdir /opt/openhab
-mkdir /opt/openhab/conf
-mkdir /opt/openhab/userdata
-mkdir /opt/openhab/addons
-chown -R openhab:openhab /opt/openhab
+sudo mkdir -p /opt/openhab/{conf,userdata,addons}
+sudo chown -R openhab:openhab /opt/openhab
 ```
 
 ### Running the Container as a Service Managed by Docker
@@ -94,6 +89,7 @@ docker run \
         -d \
         -e USER_ID=<uid> \
         -e GROUP_ID=<gid> \
+        -e CRYPTO_POLICY=unlimited \
         --restart=always \
         openhab/openhab:<version>-<distribution>
 ```
@@ -122,7 +118,7 @@ To change the runtime parameters stop the container then execute the long comman
 
 Note, always review the README on [Docker Hub](https://hub.docker.com/r/openhab/openhab/) for the most up to date set of recommended arguments and environment variables.
 If running on a Systemd based Linux distro (Ubuntu 16.04 to be specific).
-The following openhab2.service file will start a new openHAB container every time it starts the service and destroy that container when the service stops.
+The following `openhab.service` file will start a new openHAB container every time it starts the service and destroy that container when the service stops.
 What that means is any data that you want to preserve between restarts of openHAB (e.g. configuration, databases, etc.) must be mounted from your host file system into the container.
 
 Creating a new container on every run greatly simplifies the upgrade and update process.
@@ -146,6 +142,7 @@ ExecStart=/usr/bin/docker run --name=%n --net=host \
   --device=/dev/ttyUSB0 \
   -e USER_ID=<uid_of_openhab> \
   -e GROUP_ID=<gid_of_openhab> \
+  -e CRYPTO_POLICY=unlimited \
   openhab/openhab:<version>-<distribution>
 ExecStop=/usr/bin/docker stop -t 2 %n ; /usr/bin/docker rm -f %n
 
@@ -157,15 +154,16 @@ Where `<uid>` is the user ID number for the `openhab` user which you can obtain 
 It is important that the ID number is passed in.
 The ID for the `openhab` user inside the container will not match the ID of the user on your host system and file permissions may be a bit odd (e.g. why does www-data own my openHAB config files?).
 
-Place this openhab2.service file into `/etc/systemd/system`.
+Place this `openhab.service` file into `/etc/systemd/system`.
 
-Then run `sudo systemctl enable openhab2.service`.
+Then run `sudo systemctl enable openhab.service`.
 
-Finally run `sudo systemctl start openhab2.service` to start openHAB running.
+Finally run `sudo systemctl start openhab.service` to start openHAB running.
 
 ## Explanation of Arguments Passed to Docker
 
 Note, always review the README on [Docker Hub](https://hub.docker.com/r/openhab/openhab/) for the most up to date set of recommended arguments and environment variables.
+
 - `/usr/bin/docker run` : create a new container from the passed in Image (last argument)
 - `--name=openhab` : give the container a human remember able name
 - `--net=host` : by default Docker will place a container into its own network stack. However, openHAB requires UPnP discovery so this parameter makes the Docker container use the host's network stack.
@@ -173,7 +171,7 @@ Note, always review the README on [Docker Hub](https://hub.docker.com/r/openhab/
 - `-v /etc/timezone:/etc/timezone:ro` : ties the timezone of the container to the host's time zone, read only so the container cannot change the host's time zone
 - `-v /opt/openhab/conf:/openhab/conf` : location of the conf folder for openHAB configurations (*Note:* you must create these folders on the host before running the container)
 - `-v /opt/openhab/userdata:/openhab/userdata` : location for logs, cache, persistence databases, etc.
-- `-v /opt/openhab/addons:/openhab/addons` : only needed if installing addons unavailable via PaperUI or the Karaf Console
+- `-v /opt/openhab/addons:/openhab/addons` : only needed if installing addons unavailable via UI or the Karaf Console
 - `-v /opt/openhab/.java:/openhab/.java` : needed by the Nest 1.x binding (and others?), location of the security token
 - `--device=/dev/ttyUSB0` : location of my zwave controller, change and/or add more --device tags to pass all your devices needed by openHAB to the container
 - `--restart=always` : if the container crashes or the system reboots the container is restarted
@@ -237,7 +235,6 @@ docker exec \
     openhab \
     /bin/chmod o+rw /dev/ttyACM0
 ```
-
 
 This command changes permissions of the specific device as expected (readable and writable for everyone).
 

@@ -1,7 +1,7 @@
 ---
 layout: documentation
 title: Android App
-source: https://github.com/openhab/openhab-android/blob/master/docs/USAGE.md
+source: https://github.com/openhab/openhab-android/blob/main/docs/USAGE.md
 ---
 
 {% include base.html %}
@@ -104,10 +104,10 @@ then
         logInfo("alarm", "Scheduling alarm for {} ({})", newState.toLocaleZone, epoch)
         if (timerAlarm !== null) {
             logInfo("alarm", "Reschedule alarm")
-            timerAlarm.reschedule(new DateTime(epoch))
+            timerAlarm.reschedule(newState.toLocaleZone.zonedDateTime)
         } else {
             logInfo("alarm", "New alarm")
-            timerAlarm = createTimer(new DateTime(epoch), [ |
+            timerAlarm = createTimer(newState.toLocaleZone.zonedDateTime, [ |
                 // Turn on stuff, e.g. radio or light
                 logInfo("alarm", "Alarm expired")
                 timerAlarm = null
@@ -305,7 +305,7 @@ Please refer to the [openhab-android project on GitHub](https://github.com/openh
 
 ### I don't receive any notifications
 
-Please have a look at the "Push notification status" on the About screen in the app.
+Please have a look at the notification status on the settings screen in the app.
 If it claims that your device is successfully registered at FCM, please open an issue on [openhab-android project on GitHub](https://github.com/openhab/openhab-android) or create a thread in the forum.
 
 ### My notifications are delayed
@@ -325,7 +325,7 @@ This has a few disadvantages:
 
 ### My voice command rule isn't run
 
-Please make sure `Default Human Language Interpreter` is set to `Rule-based Interpreter` (http://openhab:8080/paperui/index.html#/configuration/system) and `Rule Voice Interpreter` => `Configure` => Select correct item (http://openhab:8080/paperui/index.html#/configuration/services?tab=voice).
+Please make sure that `Default Human Language Interpreter` is set to `Rule-based Interpreter` (http://openhab:8080/#!/settings/services/org.openhab.voice) and that the correct Item is selected at `Other Services` => `Rule Voice Interpreter` => `Voice Command Item` (http://openhab:8080/#!/settings/services/org.openhab.rulehli/select/).
 
 ### Chart loading is too slow
 

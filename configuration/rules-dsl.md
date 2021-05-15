@@ -3,8 +3,6 @@ layout: documentation
 title: Rules
 ---
 
-{% include base.html %}
-
 # Textual Rules
 
 "Rules" are used for automating processes: Each rule can be triggered, which invokes a script that performs any kinds of tasks, e.g. turn on lights by modifying your items, do mathematical calculations, start timers etcetera.
@@ -22,7 +20,7 @@ On this page you will learn how to leverage its functionality to do *real* home 
 ### File Location
 
 Rules are placed in the folder `$OPENHAB_CONF/rules`.
-The [demo setup](https://demo.openhab.org) already comes with a demo file called [`demo.rules`](https://github.com/openhab/openhab-distro/blob/master/features/distro-resources/src/main/resources/rules/demo.rules), which has a couple of examples that can be a good starting point.
+The [demo setup](https://demo.openhab.org) already comes with a demo file called [`demo.rules`](https://github.com/openhab/openhab-distro/blob/main/distributions/openhab-demo/src/main/resources/conf/rules/demo.rules), which has a couple of examples that can be a good starting point.
 
 A rule file can contain multiple rules.
 All rules of a file share a common execution context, i.e. they can access and exchange variables with each other.
@@ -120,6 +118,7 @@ end
 - `<SCRIPT_BLOCK>` - Contains the logic that should be executed when a trigger condition is met, see the [script](#scripts) section for details on its syntax.
 
 {: #rule-triggers}
+
 ### Rule Triggers
 
 Before a rule starts working, it has to be triggered.
@@ -135,6 +134,7 @@ There are different categories of rule triggers:
 Here are the details for each category:
 
 {: #event-based-triggers}
+
 ### Event-based Triggers
 
 You can listen to commands for a specific item, on status updates or on status changes (an update might leave the status unchanged).
@@ -153,6 +153,7 @@ When using the `received command` trigger, the Rule might trigger **before** the
 Therefore, if the Rule needs to know what the command was, use the [implicit variable]({{base}}/configuration/rules-dsl.html#implicit-variables-inside-the-execution-block) `receivedCommand` instead of `<ItemName>.state`.
 
 {: #member-of-triggers}
+
 ### Member of Triggers
 
 As with Item based event-based triggers discussed above, you can listen for commands, status updates, or status changes on the members of a given Group.
@@ -172,9 +173,10 @@ Also, as with Item event-based triggers, when using `received command`, the Rule
 So in Rules where the Rule needs to know what the command was, use the `receivedCommand` implicit variable instead of `triggeringItem.state`.
 
 {: #time-based-triggers}
+
 ### Time-based Triggers
 
-You can either use some pre-defined expressions for timers or use a [cron expression](https:////www.quartz-scheduler.org/documentation/quartz-2.2.2/tutorials/tutorial-lesson-06.html) instead:
+You can either use some pre-defined expressions for timers or use a [cron expression](https://www.quartz-scheduler.org/documentation/quartz-2.2.2/tutorials/tutorial-lesson-06.html) instead:
 
 ```java
 Time is midnight
@@ -185,23 +187,24 @@ Time cron "<cron expression>"
 A cron expression takes the form of six or optionally seven fields:
 
 1. Seconds
-2. Minutes
-3. Hours
-4. Day-of-Month
-5. Month
-6. Day-of-Week
-7. Year (optional field)
+1. Minutes
+1. Hours
+1. Day-of-Month
+1. Month
+1. Day-of-Week
+1. Year (optional field)
 
-You may use [CronMaker](https://www.cronmaker.com/) or the generator at [FreeFormatter.com](https://www.freeformatter.com/cron-expression-generator-quartz.html) to generate cron expressions.
+You may use the generator at [FreeFormatter.com](https://www.freeformatter.com/cron-expression-generator-quartz.html) to generate your cron expressions.
 
 {: #system-based-triggers}
+
 ### System-based Triggers
 
-Two system-based triggers are provided as described in the table below:
+One system-based trigger is provided as described in the table below:
 
 | Trigger           | Description                                                                                                                                                                                        |
 |-------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| System started    | System started is triggered upon openHAB startup, after the rule file containing the System started trigger is modified, or after item(s) are modified in a .items file. |
+| System started    | `System started` is triggered upon openHAB startup.  In openHAB version 2, `System started` is also triggered after the rule file containing the System started trigger is modified, or after item(s) are modified in a .items file. |
 
 You may wish to use the 'System started' trigger to initialize values at startup if they are not already set.
 
@@ -218,7 +221,24 @@ then
 end
 ```
 
+In openHAB version 3 the System-based Trigger for startlevel had been added, values depends on the startlevel:
+
+```text
+00 - OSGi framework has been started.
+10 - OSGi application start level has been reached, i.e. bundles are activated.
+20 - Model entities (items, things, links, persist config) have been loaded, both from db as well as files.
+30 - Item states have been restored from persistence service, where applicable.
+40 - Rules are loaded and parsed, both from db as well as dsl and script files.
+50 - Rule engine has executed all "system started" rules and is active.
+70 - User interface is up and running. (planned, not included yet)
+80 - All things have been initialized. (planned, not included yet)
+100 - Startup is fully complete.
+```
+
+Startlevels (logically only if startlevel >= 40) are only available in UI-Rules, not in DSL-Rules with textual configuration.
+
 {: #thing-based-triggers}
+
 ### Thing-based Triggers
 
 Your rules can take actions based upon status updates or status changes generated by Things.
@@ -235,7 +255,7 @@ You can find all the possible values for status from [Thing Status](/docs/concep
 And refer to [Thing Status Action](/docs/configuration/actions.html#thing-status-action) to find how to get thing status in the script.
 
 The `thingUID` is the identifier assigned to the Thing, manually in your configuration or automatically during auto discovery.
-You can find it from PaperUI or from Karaf remote console.
+You can find it from UI or from Karaf remote console.
 For example, one z-wave device can be "zwave:device:c5155aa4:node14".
 
 ::: tip Note
@@ -243,6 +263,7 @@ You need to use quotes around `thingUID` if it contains special characters such 
 :::
 
 {: #channel-based-triggers}
+
 ### Channel-based Triggers
 
 Some add-ons provide trigger channels.
@@ -279,6 +300,7 @@ end
 ```
 
 {: #scripts}
+
 ## Scripts
 
 The expression language used within scripts is the same that is used in the Xtend language - see the [documentation of expressions](https://www.eclipse.org/xtend/documentation/203_xtend_expressions.html) on the Xtend homepage.
@@ -302,6 +324,7 @@ if (Temperature.state < 20) {
 ```
 
 {: #manipulating-item-states}
+
 ### Manipulating Item States
 
 Rules are often used to manipulate the state of an Item, for example switching lights on and off under certain conditions.
@@ -321,12 +344,14 @@ The following table summarizes the impact of the two manipulator commands on the
 
 **Beware:**
 In most cases, a rule with a trigger of `received update` will fire following the command `sendCommand` as:
+
 - openHAB auto-updates the status of Items for which the item definition does not contain `autoupdate="false"`
 - the Thing sends a status update to the Item.
 
 Besides the specific manipulator command methods `MyItem.sendCommand(<new_state>)` and `MyItem.postUpdate(<new_state>)`, generic manipulators in the form of `sendCommand(MyItem, <new_state>)` and `postUpdate(MyItem, <new_state>)` are available. The specific versions is normally recommended.
 
 {: #sendcommand-method-vs-action}
+
 #### MyItem.sendCommand("new state") versus sendCommand(MyItem, "new state")
 
 Using the methods `MyItem.sendCommand(<new_state>)` and `MyItem.postUpdate(<new_state>)` is often preferable.
@@ -345,8 +370,9 @@ Using `Myitem.sendCommand(new_state)` or `Myitem.postUpdate(new_state)` will, in
 
 The Action `sendCommand(MyItem, new_state)` does not provide the same flexibilty.
 For example, if `new_state` is typed as a primitive (e.g., `var int new_state = 3`) and myItem is of the Object type Dimmer:
-* the following command ***will fail***: ~~sendCommand(MyItem, new_state)~~.
-* However, the following command **will work**: `MyItem.sendCommand(new_state)`.
+
+- the following command ***will fail***: ~~sendCommand(MyItem, new_state)~~.
+- However, the following command **will work**: `MyItem.sendCommand(new_state)`.
 
 Using `MyItem.postUpdate(new_state)` or `MyItem.sendCommand(new_state)` will create the most stable code.
 It provides by far the best option for avoiding most problems.
@@ -362,6 +388,7 @@ sendCommand("My_Lamp_" + index, ON)
 ```
 
 {: #using-state-of-items-in-rules}
+
 ### Using the States of Items in Rules
 
 Often it is desired to calculate other values from Item states or to compare Item states against other values
@@ -376,6 +403,7 @@ This section differentiates between command type and state type.
 For ease of reading, it is possible to simply add “type” to the end of a command type thereby obtaining the state type.
 For example, a Color Item can receive an OnOffType, IncreaseDecreaseType, PercentType, or HSBType.
 Therefore the following are all valid commands one can send to a Color Item:
+
 - `MyColorItem.sendCommand(ON)`
 - `MyColorItem.sendCommand(INCREASE)`
 - `MyColorItem.sendCommand(new PercentType(50))`
@@ -395,11 +423,12 @@ There are two ways to discover these methods:
 
 - Use the [openHAB VS Code Extension](/docs/configuration/editors.html#editors.html#openhab-vs-code-extension) and the `<ctrl><space>` key combo to list all the available methods
 - Look at the JavaDocs for the given type.
-For example, the [JavaDoc for HSBType](https://openhab.org/javadoc/latest/org/openhab/core/library/types/hsbtype) shows getRed, getBlue, and getGreen methods.
-These methods can be called in Rules-DSL without the "get" part in name as in `(MyColorItem.state as HSBType).red)`.
-They retrieve the state of MyColorItem and then casts it as HSBType to be able to use the methods associated with the HSBType.
+    For example, the [JavaDoc for HSBType](https://openhab.org/javadoc/latest/org/openhab/core/library/types/hsbtype) shows `getRed`, `getBlue`, and `getGreen` methods.
+    These methods can be called in Rules-DSL without the `get` part in name as in `(MyColorItem.state as HSBType).red)`.
+    They retrieve the state of MyColorItem and then casts it as HSBType to be able to use the methods associated with the HSBType.
 
 {: #conversions}
+
 #### Working with Item States: Conversions
 
 *Reminder: For a complete and up-to-date list of what item types are currently allowed in openHAB and the command types each item can accept refer to the section on [items in the openHAB documentation]({{base}}/concepts/items.html).*
@@ -554,7 +583,7 @@ DecimalType and QuantityType are also java.lang.Number so all the conversions li
 
 Here some other commonly needed conversions:
 
-* For DecimalType states:
+- For DecimalType states:
 
 ```java
 // convert integer_number to string containing hex_code
@@ -569,17 +598,21 @@ var myNumber = Long.parseLong(hex, 16) as Number
 var DecimalType parsedResult = new DecimalType(Long.parseLong(hex_code, 16))
 ```
 
-* For QuantityType states:
+- For QuantityType states:
 
 ```java
 // define a QuantityType variable
 var myTemperature = 20|°C
 
-// convert a quantity state into a different unit:
-var fahrenheit = myTemperature.toUnit("°F")
+// get units in text
+var myUnits = myTemperature.getUnit.toString  // gives "°C"
 
-// convert scalar value to DecimalType
+// convert a quantity state into a different unit:
+var fahrenheit = myTemperature.toUnit("°F")   // will contain quantity 68°F
+
+// convert quantity value to DecimalType
 var myDecimal = new DecimalType(fahrenheit.doubleValue) // myDecimal == 68
+var myCentigrade = fahrenheit.toUnit("°C").toBigDecimal  // 20
 
 // access scalar values as int, double, float
 var myInt = fahrenheit.intValue
@@ -588,6 +621,10 @@ var myfloat = fahrenheit.floatValue
 
 // check if a number item state is a QuantityType
 var isQuantity = myItem.state instanceof QuantityType
+
+// comparing Quantities
+// Tempting ... if (fahrenheit > 10) but NO!! that will not work as expected
+if (fahrenheit > 10|°C) { logInfo("test, "It's warm.") }
 ```
 
 Other useful conversions can be found under Dimmer Item.
@@ -595,6 +632,30 @@ Other useful conversions can be found under Dimmer Item.
 One warning comes with DecimalType (also holds true for QuantityType).
 The full explanation is [beyond the scope of this introduction](https://community.openhab.org/t/ambiguous-feature-call-whats-wrong-designer-user-or-bug/9477/4).
 To avoid an error mentioning an "Ambiguous Method Call" always cast the state of a DecimalType to a Number, not DecimalType.
+
+Take care with maths around Quantity Types.  While you can freely mix units in many cases, there are pitfalls.
+
+```java
+// add a QuantityType variable
+var miles = 2|mi
+var metres = 10|m
+var distance = miles + metres // result 2.0062 mi
+// The result uses units of first given quantity
+
+var area = metres * metres // result 100 m²
+// New appropriate units are used for result
+
+var fahr = 68|°F
+var centi = 1|°C
+var sumTemps = fahr + centi // result 101.80 °F
+// Probably not what you expected
+// Temperatures are always absolute, not interval or increment scale.
+// 1°C has been converted to 33.8°F, not to the interval 1.8°F
+
+// There is a mathematical trick for this
+var increment = fahr + centi - 0|°C  // result 69.80 °F
+// "subtracting zero" fixes the offset in the different scales
+```
 
 ##### Player Item
 
@@ -634,7 +695,7 @@ val stateAsString = MyStringItem.state.toString
 
 In case an item returns a string containing a value as a hexadecimal number, it can be converted to an integer by using
 
-```
+```shell
 //Loading hexvalue from string
 val itemvalue = new java.math.BigDecimal(Integer::parseInt(myHexValue, 16))
 ```
@@ -648,7 +709,6 @@ One can convert from ON and OFF to 1 and 0 with code similar to:
 ```java
 val SwitchNum = if (MySwitchItem.state == ON) 1 else 0
 ```
-
 
 #### Deeper Dive
 
@@ -688,6 +748,7 @@ Each of these separate methods is individually written to handle all of these di
 MyItem will automatically apply the method that corresponds to the argument type.
 
 {: #implicit-variables}
+
 ### Implicit Variables inside the Execution Block
 
 Besides the implicitly available variables for items and commands/states, rules can have additional pre-defined variables, depending on their triggers:
@@ -700,13 +761,14 @@ Besides the implicitly available variables for items and commands/states, rules 
 - `receivedEvent` - implicitly available in every rule that has a channel-based trigger.
 
 {: #return}
+
 ### Early returns
 
 It is possible to return early from a rule, not executing the rest of the statements like this:
 
 ```java
 if (Temperature.state > 20) {
-	return;
+ return;
 }
 Heating.sendCommand(ON)
 ```
@@ -714,6 +776,7 @@ Heating.sendCommand(ON)
 Caveat: Please note the semicolon after the return statement which terminates the command without an additional argument.
 
 {: #concurrency-guard}
+
 ### Concurrency Guard
 
 If a rule triggers on UI events it may be necessary to guard against concurrency.
@@ -737,6 +800,7 @@ end
 ```
 
 {: #transformations}
+
 ### Transformations
 
 openHAB [Transformation services](/addons/#transform) can be used in rules to transform/translate/convert data.
@@ -782,8 +846,8 @@ finally {
 
 For all available Transformation services please refer to the list of [Transformation Add-ons](/addons/#transform).
 
-
 {: #logging}
+
 ### Logging
 
 You can emit log messages from your rules to aid debugging.
@@ -863,7 +927,7 @@ rule "Start wake up light on sunrise"
 when
     Channel "astro:sun:home:rise#event" triggered
 then
-    switch(receivedEvent.getEvent()) {
+    switch(receivedEvent) {
         case "START": {
             Light.sendCommand(ON)
         }

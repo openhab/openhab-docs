@@ -3,15 +3,13 @@ layout: documentation
 title: Thing Discovery
 ---
 
-{% include base.html %}
-
 # Thing Discovery
 
 Many devices, technologies and systems can be automatically discovered on the network or browsed through some API. It therefore makes a lot of sense to use these features for a smart home solution.
 
 openHAB bindings therefore implement _Discovery Services_ for Things, which provide _Discovery Results_. All _Discovery Results_ are regarded as suggestions to the user and are put into the _inbox_.
 
-### Background Discovery
+## Background Discovery
 
 Some discovery services support automatic discovery in the background, while for others a scan needs to be triggered manually.
 Services that support background discovery usually have it enabled by default.

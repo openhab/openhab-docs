@@ -18,7 +18,6 @@ In order to represent all of these, openHAB defines the following base component
 - [Things](things.html) - Your devices represented in openHAB
 - [Items](items.html) - properties and capabilities of your Things
 - [Groups](items.html#groups) - collections or categories containing Items
-- [Sitemaps](sitemaps.html) - User-defined frontend interfaces to arrange Groups, Items and more
 - [Transformations](transform.html) - Helper functions to transform your data
 - [Persistence](persistence.html) - Services to store data over time
 - [Rules](rules-dsl.html) - Automation logic, the "smart" in your Smart Home!
@@ -27,6 +26,12 @@ In order to represent all of these, openHAB defines the following base component
 The individual articles have all the details needed to understand the concepts behind these building blocks for your Smart Home.
 For more details on the basic concepts behind openHAB, please visit the [Concepts Overview page](/docs/concepts/index.html).
 
+::: tip
+
+This section does not cover building user interfaces; this subject has its own section: [User Interfaces](/docs/ui/)
+
+:::
+
 ## Versatility
 
 openHAB 3 provides a _single_ graphical user interface to modify settings, to manage your components and rules, and to provide a UI for users.
@@ -34,11 +39,12 @@ openHAB 3 provides a _single_ graphical user interface to modify settings, to ma
 While there are no full-scale starter and migration tutorials available yet, see the [recording of the recent 2020 openHAB virtual meetup](https://www.youtube.com/watch?v=pwZ8AOwRDEk) for a tour of the new Main UI (starting at 26:26).
 
 ::: tip Important changes for openHAB 2 users<br>
-PaperUI and HABmin are no longer supported, they are replaced by the new Main UI.
+PaperUI and HABmin are no longer supported, they are replaced by the new Main UI.<br>
 It also provides flexible charting now so you won't require Grafana or a similar external tool any more.<br>
-v1 bindings are no longer available. The expire binding's functionality is now part of the core (item configuration stays the same).<br>
+v1 bindings are no longer available, see [this list](https://github.com/openhab/openhab-addons/issues/6179#migrated) what has been migrated to OH3.<br>
+The expire binding's functionality is now part of the core (item configuration stays the same).<br>
 File-based configuration is still available, but we recommend that everyone start over with a fresh setup built using the new Main UI.<br>
-_Note there is an option in Main UI to bulk create Items where you can copy'n'paste the contents of your .items files._
+_Note there is an option in Main UI to bulk create Items where you can copy'n'paste the contents of your `.items` files._
 :::
 
 <table class="centered highlight">
@@ -86,7 +92,7 @@ _Note there is an option in Main UI to bulk create Items where you can copy'n'pa
       <td>✔️</td>
       <td>❌</td>
       <td>❌</td>
-      <td>transform/*.map *.js files</td>
+      <td>transform/*.map*.js files</td>
     </tr>
     <tr>
       <td>Define Persistence</td>
@@ -128,11 +134,11 @@ _Note there is an option in Main UI to bulk create Items where you can copy'n'pa
 
 ### Textual vs. Graphical Configuration
 
-In openHAB 1.x, smart home configuration was done via configuration files only.
+In openHAB 1, smart home configuration was done via configuration files only.
 openHAB 2 added the general administrative web interface "Paper UI", and openHAB 3 now further streamlines input capabilities with "Main UI".
 Things and Items can still be defined either in configuration files or via the GUI.
 We highly recommend adding them to the [system database](/docs/administration/jsondb.html) via Main UI, though.
-Note there is an option in Main UI to bulk create Things and Items by copy and pasting the contents of existing .things/.items files.
+Note there is an option in Main UI to bulk create Items by copy and pasting the contents of existing `.items` files.
 Bulk delete is there, too.
 _Be sure to try out Semantic Modeling in Main UI_.
 
@@ -157,15 +163,14 @@ All text files must be created with UTF-8 encoding. When using Visual Studio Cod
 
 Here are some hints to avoid some common pitfalls when starting out.
 
-* Start by modelling your house using a Semantic Model in Main UI.
+- Start by modelling your house using a Semantic Model in Main UI.
   Use it to create groups for rooms and apply proper semantic tags right away.
-  This will ultimately save a lot of setup work, as it will allow for group functions such as "switch off lights in _kitchen_" or _ground floor_ or _house_" and
+  This will ultimately save a lot of setup work, as it will allow for group functions such as "switch off lights in _kitchen_" or _ground floor_ or _house_ and
   also enable voice assistants to properly execute your instructions.
   Be careful to apply a consistent naming scheme right in the beginning.
-* Use Main UI to manage Things. Remember that once initially configured, their configuration will not change much over time.
-* Run autodiscovery for _Things_ wherever offered so that you don't have to enter all of them manually
-* Also use Main UI to manage Items.
+- Use Main UI to manage Things. Remember that once initially configured, their configuration will not change much over time.
+- Run autodiscovery for _Things_ wherever offered so that you don't have to enter all of them manually
+- Also use Main UI to manage Items.
   You can use the import function to import `.items` files or snippets taken from other sources like the openHAB community forum.
-* Use VS code extensions to [edit rules, items and sitemap files](editors.html).
+- Use VS code extensions to [edit rules, items and sitemap files](editors.html).
   You can also use any text editor or cloud based tool, but VS code extensions will work locally and help you by highlighting and cross-checking the file syntax.
-

@@ -3,8 +3,6 @@ layout: documentation
 title: Windows
 ---
 
-{% include base.html %}
-
 # openHAB on Windows
 
 The following instructions will guide you through the process of setting up openHAB.
@@ -16,38 +14,41 @@ This page is structured as follows:
 - TOC
 {:toc}
 
-## Preparation of the environment.
+## Preparation of the environment
 
 ### Before you start
+
 Please be sure you have installed the required supporting applications as described in [Prerequisites]({{base}}/installation/index.html#prerequisites).
 
+### Set the `JAVA_HOME` System Environment Variable in Windows
 
-### Set the `JAVA_HOME` System Environment Variable in Windows.
-  - Navigate to: Control Panel ➡️ System and Security ➡️ System ➡️ Advanced System Settings ➡️ Environment Variables ➡️ System Variables
-  - Create a New System Variable named JAVA_HOME (or update the existing one) to match the installation directory of the Java Platform chosen and installed in the step [Prerequisites]({{base}}/installation/index.html#prerequisites).
+- Navigate to: Control Panel ➡️ System and Security ➡️ System ➡️ Advanced System Settings ➡️ Environment Variables ➡️ System Variables
+- Create a New System Variable named JAVA_HOME (or update the existing one) to match the installation directory of the Java Platform chosen and installed in the step [Prerequisites]({{base}}/installation/index.html#prerequisites).
 
 ![JAVA_HOME](images/JAVA_HOME.png)
 
-### Choose a folder name for the openHAB installation.
+### Choose a folder name for the openHAB installation
+
 The name must **contain no spaces**. On this page, we will be using `C:\openHAB` as an example.
 
 ## Installation
 
 ### Install openHAB
+
 The openHAB runtime is distributed using a platform-independent zip file.
 To install it, follow these simple steps:
 
-1.  Download the latest Windows Stable or Snapshot ZIP archive file for manual installation from the [Download](https://www.openhab.org/download/) page.
+1. Download the latest Windows Stable or Snapshot ZIP archive file for manual installation from the [Download](https://www.openhab.org/download/) page.
 
-2.  Unzip the file in your chosen directory (e.g. `C:\openHAB`)
+1. Unzip the file in your chosen directory (e.g. `C:\openHAB`)
 
     ![openHAB Folders](images/openHAB_Folders.png)
 
-3.  Start the server: Launch the runtime by executing the script `C:\openHAB\start.bat` and wait a while for it to start and complete.
+1. Start the server: Launch the runtime by executing the script `C:\openHAB\start.bat` and wait a while for it to start and complete.
 
     ![Karaf_Windows](images/Karaf_Windows.png)
 
-4.  Point your browser to `http://localhost:8080`.
+1. Point your browser to `http://localhost:8080`.
     You should be looking at the openHAB page requesting you to set up an administrator username and password:
 
 ![Home_OH_adminCreate](images/Home_OH_adminCreate.png)
@@ -63,10 +64,11 @@ By installing the openHAB process as a service in Windows, you can:
 - Launch it automatically upon system startup
 - Run it in the background
 
-**Windows Service Installation Steps**
+#### Windows Service Installation Steps
 
-1.  Complete the [prerequisites](#prerequisites) and regular [installation](#installation) steps.
-2.  Issue the following two commands in your openHAB console:
+1. Complete the [prerequisites](#prerequisites) and regular [installation](#installation) steps.
+1. Issue the following two commands in your openHAB console:
+
     ```shell
     feature:install service-wrapper
     wrapper:install --name "openHAB" --display "openHAB" --description "openHAB Service"
@@ -74,12 +76,12 @@ By installing the openHAB process as a service in Windows, you can:
 
     ![Wrapper Install_Windows](images/Wrapper_Install_Windows.jpg)
 
-3.  Shutdown the openHAB instance by typing `logout` in the currently running console.
+1. Shutdown the openHAB instance by typing `logout` in the currently running console.
 
-4.  Update the newly created `C:\openHAB\userdata\etc\openHAB-wrapper.conf` to include all necessary parameters:
+1. Update the newly created `C:\openHAB\userdata\etc\openHAB-wrapper.conf` to include all necessary parameters:
 
-    - Copy all the config text from the below section and paste it in your `openHAB-wrapper.conf`, replacing all existing content.
-    - Adapt the first entry (`OPENHAB_HOME`) to match your openHAB installation directory.
+    1. Copy all the config text from the below section and paste it in your `openHAB-wrapper.conf`, replacing all existing content.
+    1. Adapt the first entry (`OPENHAB_HOME`) to match your openHAB installation directory.
 
     ```conf
     #*******************************************************
@@ -121,7 +123,7 @@ By installing the openHAB process as a service in Windows, you can:
     wrapper.java.additional.8=-Dopenhab.home="%OPENHAB_HOME%"
     wrapper.java.additional.9=-Dopenhab.conf="%OPENHAB_HOME%\conf"
     wrapper.java.additional.10=-Dopenhab.runtime="%OPENHAB_HOME%\runtime"
-    wrapper.java.additional.11-Dopenhab.userdata="%OPENHAB_HOME%\userdata"
+    wrapper.java.additional.11=-Dopenhab.userdata="%OPENHAB_HOME%\userdata"
     wrapper.java.additional.12=-Dopenhab.logdir="%OPENHAB_USERDATA%\logs"
     wrapper.java.additional.13=-Dfelix.cm.dir="%OPENHAB_HOME%\userdata\config"
     wrapper.java.additional.14=-Dorg.osgi.service.http.port=8080
@@ -150,7 +152,7 @@ By installing the openHAB process as a service in Windows, you can:
     wrapper.ntservice.interactive=false
     ```
 
-5.  Open an elevated command prompt and type the following commands:
+1. Open an elevated command prompt and type the following commands:
 
     ```text
     C:\openHAB\userdata\bin\openHAB-service.bat install
@@ -161,18 +163,13 @@ By installing the openHAB process as a service in Windows, you can:
 
     ![Wrapper_Start_Windows](images/Wrapper_Start_Windows.jpg)
 
-6.  Your openHAB Windows service is now installed and running.
-    Validate proper operations by:
+1. Your openHAB Windows service is now installed and running.
 
-    -   Browsing to [http://localhost:8080](http://localhost:8080)
+    Validate proper operations by browsing to `http://localhost:8080` and verifying that the Windows Service is running and set to Automatic Startup type.
+    Use `services.msc` and find the `openHAB` service.
+    Or by logging in with an SSH client to the console (see info below)
 
-    -   Verifying that the Windows Service is running and set to Automatic Startup type.
-        Use `services.msc` and find the `openHAB` service.
-
-        ![Windows Service](images/Windows_Service.jpg)
-
-    -   Logging in with an SSH client to the console (see info below)
-
+    ![Windows Service](images/Windows_Service.jpg)
 
 ### File Locations
 
@@ -188,12 +185,13 @@ Assuming a successful install, you will now have various folders inside `C:\open
 | Service configuration            | `C:\openHAB\userdata\etc`   |
 
 ## What next?
+
 You can:
+
 - continue reading the [Additional steps]({{base}}/installation/index.md#additional-steps) section of the Installation overview
 - read more about how to handle basic maintenance tasks, in the section below
 
 ## Maintenance
-
 
 ### Backup
 
@@ -211,15 +209,19 @@ cd C:\openHAB
 . .\runtime\bin\update.ps1
 Update-openHAB -OHVersion x.x.x
 ```
+
 Now that openHAB has updated, you only need to run the above commands again for future versions.
 
 ### Uninstallation
+
 - perform a backup as described above
 - uninstall openHAB as a Windows service: run PowerShell as an administrator and use the following commands
-```
+
+```text
 net stop openHAB
 C:\openHAB\userdata\bin\openHAB-service.bat remove
 ```
+
 - you can delete the whole contents of the C:\openHAB\ folder.
 
 ### Connecting to the openHAB console
@@ -227,13 +229,16 @@ C:\openHAB\userdata\bin\openHAB-service.bat remove
 You can connect to openHAB's console using the the `C:\openHAB\runtime\bin\client.bat` script on the local machine.
 Alternatively, you can use a standard SSH client:
 
--   Install an SSH client application, e.g., [Putty](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html), [KiTTY](http://kitty.9bis.net/) or [Xshell 5](https://www.netsarang.com/products/xsh_overview.html)
+1. Install an SSH client application, e.g., [Putty](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html), [KiTTY](http://kitty.9bis.net/) or [Xshell 5](https://www.netsarang.com/products/xsh_overview.html)
 
--   Setup a session with the following parameters:
-    - Host: 127.0.0.1
-    - Port: 8101
-    - Username: `openhab`
-    - Password: `habopen`
+1. Setup a session with the following parameters:
+
+    ```text
+    Host: 127.0.0.1
+    Port: 8101
+    Username: openhab
+    Password: habopen
+    ```
 
 ![SSH Connection 1](images/SSH_Connection_1.jpg)
 

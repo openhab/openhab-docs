@@ -3,8 +3,6 @@ layout: documentation
 title: Voice Services
 ---
 
-{% include base.html %}
-
 # Available Voice Services
 
 | Voice Service                         | Description                                                                                                                                                                              |

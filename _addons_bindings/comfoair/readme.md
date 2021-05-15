@@ -5,6 +5,7 @@ title: ComfoAir - Bindings
 type: binding
 description: "This binding allows to monitor and control Zehnder ComfoAir serial controlled ventilation systems via RS232 serial connection."
 since: 3x
+logo: images/addons/comfoair.png
 install: auto
 ---
 
@@ -17,6 +18,8 @@ install: auto
 This binding allows to monitor and control Zehnder ComfoAir serial controlled ventilation systems via RS232 serial connection.
 Though the binding is developed based on the protocol description for Zehnder ComfoAir devices it should also work for mostly identical systems from different manufacturers, like StorkAir WHR930, Wernig G90-380 and Paul Santos 370 DC.
 It was also successfully tested on a Wernig G90-160.
+
+**NOTE:** This binding does not work with the ComfoAir Q-series (e.g. Q350 or Q450). These ventilation units use a CAN bus for communication and a different protocol.
 
 ### Limitations
 

@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg enable-background="new 0 0 64 64" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
  <defs>
+  <ellipse id="e" cx="25" cy="40" rx="8" ry="2"/>
   <clipPath id="a">
    <use xlink:href="#e"/>
   </clipPath>
-  <ellipse id="e" cx="25" cy="40" rx="8" ry="2"/>
   <radialGradient id="c" cx="35" cy="33" r="5.831" gradientTransform="matrix(1 0 0 .25 0 24.75)" gradientUnits="userSpaceOnUse" xlink:href="#b"/>
   <radialGradient id="d" cx="25" cy="40.08" r="5.831" gradientTransform="matrix(1 0 0 .25 0 30.06)" gradientUnits="userSpaceOnUse" xlink:href="#b"/>
   <radialGradient id="b" cx="19" cy="28" r="5.831" gradientTransform="matrix(1 0 0 .25 0 21)" gradientUnits="userSpaceOnUse">

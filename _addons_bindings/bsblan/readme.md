@@ -3,8 +3,9 @@ id: bsblan
 label: BSB-LAN
 title: BSB-LAN - Bindings
 type: binding
-description: "This binding uses the REST API of [BSB-LPB-PPS-LAN](https://github.com/fredlcore/bsb_lan) to obtain data from the device."
+description: "This binding uses the REST API of [BSB-LPB-PPS-LAN](https://github.com/fredlcore/BSB-LAN) to obtain data from the device."
 since: 3x
+logo: images/addons/bsblan.png
 install: auto
 ---
 
@@ -14,7 +15,7 @@ install: auto
 
 # BSB-LAN Binding
 
-This binding uses the REST API of [BSB-LPB-PPS-LAN](https://github.com/fredlcore/bsb_lan) to obtain data from the device.
+This binding uses the REST API of [BSB-LPB-PPS-LAN](https://github.com/fredlcore/BSB-LAN) to obtain data from the device.
 
 ## Supported Things
 

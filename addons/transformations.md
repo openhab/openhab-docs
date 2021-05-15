@@ -3,8 +3,6 @@ layout: documentation
 title: Transformations
 ---
 
-{% include base.html %}
-
 # Transformations
 
 Transformations are used to translate data from a cluttered or technical raw value to a processed or human-readable representation.
@@ -23,7 +21,7 @@ The relevant transformation service needs to be installed via the paperUI before
 Be aware, that some Transformation services rely on transformation files, while others work by directly providing the transformation logic.
 Transformation files need to be placed in the directory `$OPENHAB_CONF/transform`.
 
-1.  Item and Sitemap Labels
+1. Item and Sitemap Labels
 
      Transformations used in the [state/value part]({{base}}/configuration/items.html#state-transformations) of labels are applied **on the fly**.
      While the **transformed value** will (for example) be visible on a Sitemap, the **original value** is stored in the Item.
@@ -33,8 +31,8 @@ Transformation files need to be placed in the directory `$OPENHAB_CONF/transform
 
     ```java
     Contact Livingroom_Window        "Window [MAP(window_esp.map):%s]"               {/*Some Binding*/}
-    Number  Kitchen_Temperature_C    "Temperature [JSONPATH($.temperature):%.1f °C]" {/*Some Binding*/}
-    Number  Livingroom_Temperature_F "Temperature [JS(convert-C-to-F.js):%.1f °F]"   {/*Some Binding*/}
+    Number  Kitchen_Temperature_C    "Temperature [JSONPATH($.temperature):%s °C]" {/*Some Binding*/}
+    Number  Livingroom_Temperature_F "Temperature [JS(convert-C-to-F.js):%s °F]"   {/*Some Binding*/}
 
     ```
 

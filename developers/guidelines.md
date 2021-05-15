@@ -3,9 +3,8 @@ layout: developersguide
 title: Coding Guidelines
 ---
 
-{% include base.html %}
-
 # Coding Guidelines
+
 {:.no_toc}
 
 The following guidelines apply to all (Java) code of the openHAB project.
@@ -18,14 +17,15 @@ To speed up the contribution process, we therefore advice to go through this che
 If you are just keen on binding development, you may skip this document first and come back later.
 
 {::options toc_levels="2,3"/}
-* TOC
+
+- TOC
 {:toc}
 
 ## A. Directory and File Layout
 
 The structure of a binding follows the structure of a typical OSGi bundle project.
 
-```
+```text
 |- doc                   Images and other assets used in the Readme.md
 |- src/main
 |---- feature
@@ -52,7 +52,7 @@ The structure of a binding follows the structure of a typical OSGi bundle projec
 |- README.md              The file describing your binding
 ```
 
-* Every Java file must have a license header. You can run ```mvn license:format``` on the root of the repo to automatically add missing headers.
+- Every Java file must have a license header. You can run ```mvn license:format``` on the root of the repo to automatically add missing headers.
 
 ## B. Code formatting rules & style
 
@@ -64,30 +64,33 @@ Rules are enforced as part of the build process using [Spotless Maven Plugin](ht
 To check if your code is following the code style run `mvn spotless:check`. If Maven prints `[INFO] Spotless check skipped` then run `mvn spotless:check -Dspotless.check.skip=false` instead as the check isn't mandatory yet.
 To reformat you code run `mvn spotless:apply`
 
-Code styles files are located in here: https://github.com/openhab/static-code-analysis/tree/master/codestyle/src/main/resources
+Code styles files are located in here: <https://github.com/openhab/static-code-analysis/tree/main/codestyle/src/main/resources>
 
 #### Java Code
 
 The rules are defined using the Eclipse Java Formatter definitions. There are plugins available for several IDEs that support these definitons.
 
-* Official [openHAB Eclipse IDE setup](ide/eclipse.html) is preconfigured
-* Eclipse standalone installation
-  - You can manually import [openhab_codestyle.xml](https://raw.githubusercontent.com/openhab/static-code-analysis/master/codestyle/src/main/resources/openhab_codestyle.xml) via `Eclipse Preferences -> Java -> Code Style -> Formatter` and [openhab.importorder](https://raw.githubusercontent.com/openhab/static-code-analysis/master/codestyle/src/main/resources/openhab.importorder) via `Eclipse Preferences -> Java -> Code Style -> Organize Imports`
-* IntelliJ using plugin https://plugins.jetbrains.com/plugin/6546-eclipse-code-formatter
-  - Same files as for the Eclipse standalone installation. Be sure to follow *all* the plugin configuration steps.
+- Official [openHAB Eclipse IDE setup](ide/eclipse.html) is preconfigured
+- Eclipse standalone installation
+  - You can manually import [openhab_codestyle.xml](https://raw.githubusercontent.com/openhab/static-code-analysis/main/codestyle/src/main/resources/openhab_codestyle.xml) via `Eclipse Preferences -> Java -> Code Style -> Formatter` and [openhab.importorder](https://raw.githubusercontent.com/openhab/static-code-analysis/main/codestyle/src/main/resources/openhab.importorder) via `Eclipse Preferences -> Java -> Code Style -> Organize Imports`
+- IntelliJ using plugin <https://plugins.jetbrains.com/plugin/6546-eclipse-code-formatter>
+  - Same files as for the Eclipse standalone installation. Be sure to follow *all- the plugin configuration steps.
 
 #### XML files
 
-* Maven `pom.xml` files shall have 2 space indentation
-* Other `xml` files shall have 1 tab indentation
-* Line length shall be 120 characters
+- Maven `pom.xml` files shall have 2 space indentation
+- Other `xml` files shall have 1 tab indentation
+- Line length shall be 120 characters
 
-The rules are defined at https://github.com/openhab/static-code-analysis/tree/master/codestyle/src/main/resources for the Eclipse WTP formatter, but will have to be manually entered into your IDE.
+The rules are defined at <https://github.com/openhab/static-code-analysis/tree/main/codestyle/src/main/resources> for the Eclipse WTP formatter, but will have to be manually entered into your IDE.
 
 ### Java Coding Style
 
-* The [Java naming conventions](https://java.about.com/od/javasyntax/a/nameconventions.htm) should be used for source files.
-* Generics must be used where applicable. See example below:
+- The [Java naming conventions](https://java.about.com/od/javasyntax/a/nameconventions.htm) should always be used and are descibed in detail at the link, a quick summary is:
+  - Channel IDs: `lowerCamelCase`
+  - Variables: `lowerCamelCase`
+  - Constants: `ALL_UPPER_CASE`
+- Generics must be used where applicable. See example below:
 
 ```java
 public static <T> boolean isEqual(GenericsType<T> g1, GenericsType<T> g2){
@@ -95,9 +98,9 @@ public static <T> boolean isEqual(GenericsType<T> g1, GenericsType<T> g2){
 }
 ```
 
-* Code MUST not show any warnings.
+- Code MUST not show any warnings.
   Warnings that cannot be circumvented should be suppressed by using the `@SuppressWarnings` annotation.
-* Your classes are generally organised within an internal package
+- Your classes are generally organised within an internal package
 
 ```java
 org.openhab.binding.coolbinding.internal
@@ -107,9 +110,9 @@ org.openhab.binding.coolbinding.internal.discovery
 
 Remember that classes that are meant to be used by scripts or other bindings must be non internal.
 
-* Every class, except data-transfer-objects (DTO), must be annotated with `@NonNullByDefault`.
+- Every class, except data-transfer-objects (DTO), must be annotated with `@NonNullByDefault`.
   For details see [Null annotation](#null-annotations).
-* OSGi Declarative Services annotations are to be used
+- OSGi Declarative Services annotations are to be used
 
 ```java
 @Component(service=MyCoolService.class)
@@ -123,10 +126,10 @@ public class MyCoolService {
 
 JavaDoc is required to describe the purpose and usage of every:
 
-* class,
-* interface,
-* enumeration (except inner classes and enums),
-* constant, field and method with visibility of default, protected or public.
+- class,
+- interface,
+- enumeration (except inner classes and enums),
+- constant, field and method with visibility of default, protected or public.
 
 An @author tag is required within the JavaDoc for every author who made a substantial contribution to the file.
 New @author tags should be placed below the older ones.
@@ -135,9 +138,11 @@ Data-transfer-objects (DTOs map from Json/XML to Java classes) do not require Ja
 ## D. Language Levels and Libraries
 
 1. openHAB generally targets the long time supported Java 11 releases with the following restrictions:
- * To allow optimized runtimes, the set of Java packages to be used is further restricted to [Compact Profile 2](https://www.oracle.com/technetwork/java/embedded/resources/tech/compact-profiles-overview-2157132.html).
-2. The [OSGi Core Release 7](https://osgi.org/download/r7/osgi.core-7.0.0.pdf) with [OSGI Compendium Release 7](https://osgi.org/download/r7/osgi.cmpn-7.0.0.pdf) is targeted, and newer features should not be used.
-3. [slf4j](http://slf4j.org) is used for logging.
+
+- To allow optimized runtimes, the set of Java packages to be used is further restricted to [Compact Profile 2](https://www.oracle.com/technetwork/java/embedded/resources/tech/compact-profiles-overview-2157132.html).
+
+1. The [OSGi Core Release 7](https://osgi.org/download/r7/osgi.core-7.0.0.pdf) with [OSGI Compendium Release 7](https://osgi.org/download/r7/osgi.cmpn-7.0.0.pdf) is targeted, and newer features should not be used.
+1. [slf4j](http://slf4j.org) is used for logging.
 
 You might also have the need to use other libraries for specific use cases like XML processing, networking etc.
 See [Default libraries](#default-libraries) for more details.
@@ -145,15 +150,15 @@ See [Default libraries](#default-libraries) for more details.
 ## E. Runtime Behavior
 
 1. Overridden methods from abstract classes or interfaces are expected to return fast unless otherwise stated in their JavaDoc.
-Expensive operations should therefore rather be scheduled as a job.
-2. Creation of threads must be avoided.
-Instead, resort into using existing schedulers which use pre-configured thread pools.
-If there is no suitable scheduler available, start a discussion in the forum about it rather than creating a thread by yourself.
-For periodically executed jobs that do not require a fixed rate [scheduleWithFixedDelay](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/ScheduledExecutorService.html#scheduleWithFixedDelay(java.lang.Runnable,long,long,java.util.concurrent.TimeUnit)) should be preferred over [scheduleAtFixedRate](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/ScheduledExecutorService.html#scheduleAtFixedRate(java.lang.Runnable,long,long,java.util.concurrent.TimeUnit)).
-3. Bundles need to cleanly start and stop without throwing exceptions or malfunctioning.
-This can be tested by manually starting and stopping the bundle from the console (```stop <bundle-id>``` resp. ```start <bundle-id>```).
-4. Bundles must not require any substantial CPU time.
-Test this e.g. using "top" or VisualVM and compare CPU utilization with your bundle stopped vs. started.
+  Expensive operations should therefore rather be scheduled as a job.
+1. Creation of threads must be avoided.
+  Instead, resort into using existing schedulers which use pre-configured thread pools.
+  If there is no suitable scheduler available, start a discussion in the forum about it rather than creating a thread by yourself.
+  For periodically executed jobs that do not require a fixed rate [scheduleWithFixedDelay](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/ScheduledExecutorService.html#scheduleWithFixedDelay(java.lang.Runnable,long,long,java.util.concurrent.TimeUnit)) should be preferred over [scheduleAtFixedRate](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/ScheduledExecutorService.html#scheduleAtFixedRate(java.lang.Runnable,long,long,java.util.concurrent.TimeUnit)).
+1. Bundles need to cleanly start and stop without throwing exceptions or malfunctioning.
+  This can be tested by manually starting and stopping the bundle from the console (```stop <bundle-id>``` resp. ```start <bundle-id>```).
+1. Bundles must not require any substantial CPU time.
+  Test this e.g. using "top" or VisualVM and compare CPU utilization with your bundle stopped vs. started.
 
 ## F. Logging
 
@@ -162,7 +167,7 @@ The logger that is used allows logging at multiple severity levels (trace, info,
 Most of the time, a level of `warn` or `debug` will be used.
 Please remember that every logging statement adds to code size and runtime cost.
 
-* Loggers should be [non-static](http://slf4j.org/faq.html#declared_static), `final` when ever possible and have the name `logger`.
+- Loggers should be [non-static](http://slf4j.org/faq.html#declared_static), `final` when ever possible and have the name `logger`.
 
 ```java
 class MyCoolClass {
@@ -170,7 +175,7 @@ class MyCoolClass {
 }
 ```
 
-* Parametrized logging must be used (instead of string concatenation).
+- Parametrized logging must be used (instead of string concatenation).
 
 ```java
 void myFun() {
@@ -180,9 +185,9 @@ void myFun() {
 }
 ```
 
-* Exceptions with stacktraces in the log are considered to be bugs in your binding that should be reported and fixed.
-If you add an exception as a last parameter to the logging, the stack trace will be printed.
-Configuration errors by users should only print log messages about what's wrong. In that case you would use `e.getMessage()`.
+- Exceptions with stacktraces in the log are considered to be bugs in your binding that should be reported and fixed.
+  If you add an exception as a last parameter to the logging, the stack trace will be printed.
+  Configuration errors by users should only print log messages about what's wrong. In that case you would use `e.getMessage()`.
 
 ```java
 void myFun() {
@@ -194,7 +199,7 @@ void myFun() {
 }
 ```
 
-* Logging is not a replacement for using the debugger.
+- Logging is not a replacement for using the debugger.
 
 ```java
 void myFun() {
@@ -204,7 +209,7 @@ void myFun() {
 }
 ```
 
-* Logging is not a replacement to use respective `update*` methods of the framework
+- Logging is not a replacement to use respective `update*` methods of the framework
 
 ```java
 void myFun() {
@@ -218,28 +223,28 @@ As every bundle is only one out of many, logging should be done very scarce.
 It should be up to the user to increase the logging level for specific bundles, packages or classes if necessary.
 This means in detail:
 
-* `error` logging should only be used
+- `error` logging should only be used
   - to inform the user that something is tremendously wrong in the setup, the system cannot function normally anymore, and there is a need for immediate action.
   - in case some code fails irrecoverably and the user should report it as a severe bug.
 
-* `warn` logging should only be used
+- `warn` logging should only be used
   - to inform the user that something seems to be wrong in the overall setup, but the system can nonetheless function as normal,
   - in recoverable situations when a section of code that is not accessed under normal operating conditions is reached.
 
-* `info` logging should be used sparsely.
+- `info` logging should be used sparsely.
   e.g. a newly started component or a user file that has been loaded.
 
-* `debug` logging should be used for detailed logging
+- `debug` logging should be used for detailed logging
   - to give the user debug information in cases of unexpected behavior.
   - to log exceptions in case of temporary problems, like connection problems.
     In case of such exceptions this should be reflected in an updated state of the binding.
 
-* `trace` logging should be used for verbose debug logging.
+- `trace` logging should be used for verbose debug logging.
    For example printing output values that can be large, but can help when debugging changed external apis.
 
 In general bindings should NOT log to error/warn if e.g. connections are dropped -
 this is considered to be an external problem and from a system perspective to be a normal and expected situation.
-The correct way to inform users about such events is to update the Thing status accordingl
+The correct way to inform users about such events is to update the Thing status accordingly.
 
 Note that all events (including Thing status events) are anyhow already logged.
 
@@ -260,7 +265,7 @@ This sections provides some background and more detailed information about parts
 ### Static Code Analysis
 
 The openHAB Maven build includes [tooling for static code analysis](https://github.com/openhab/static-code-analysis) that will validate your code against the Coding Guidelines and some additional best practices.
-Information about the checks can be found [here](https://github.com/openhab/static-code-analysis/blob/master/docs/included-checks.md).
+Information about the checks can be found [here](https://github.com/openhab/static-code-analysis/blob/main/docs/included-checks.md).
 
 The tool will generate an individual report for each bundle that you can find in `path/to/bundle/target/code-analysis/report.html` file and a report for the whole build that contains links to the individual reports in the `target/summary_report.html`.
 The tool categorizes the found issues by priority: 1(error),2(warning) or 3(info).
@@ -283,6 +288,8 @@ public class MyClass(){}
 
 This forces you to think about every field in your class if it can be null at any point, or should rather be default initialized.
 If you have fields that are neither marked as nullable, nor are initialized, the code will not compile.
+
+When using data transfer objects (DTO), you can move this into a package called dto or append DTO to the class name to get rid of the checkstyle warning about missing NonNullByDefault annotation.
 
 Fields that can be null are to be annotated like this:
 
@@ -322,22 +329,22 @@ In order to not have every binding use a different library, the following packag
 
 For XML Processing
 
-* com.thoughtworks.xstream
-* com.thoughtworks.xstream.annotations
-* com.thoughtworks.xstream.converters
-* com.thoughtworks.xstream.io
-* com.thoughtworks.xstream.io.xml
+- com.thoughtworks.xstream
+- com.thoughtworks.xstream.annotations
+- com.thoughtworks.xstream.converters
+- com.thoughtworks.xstream.io
+- com.thoughtworks.xstream.io.xml
 
 For JSON Processing
 
-* com.google.gson.*
+- com.google.gson.*
 
 For HTTP Operations
 
-* org.eclipse.jetty.client.*
-* org.eclipse.jetty.client.api.*
-* org.eclipse.jetty.http.*
-* org.eclipse.jetty.util.*
+- org.eclipse.jetty.client.*
+- org.eclipse.jetty.client.api.*
+- org.eclipse.jetty.http.*
+- org.eclipse.jetty.util.*
 
 ::: tip Note
 HttpClient instances should be obtained by the handler factory through the HttpClientFactory service and unless there are specific configuration requirements, the shared instance should be used.
@@ -345,8 +352,8 @@ HttpClient instances should be obtained by the handler factory through the HttpC
 
 For Web Socket Operations
 
-* org.eclipse.jetty.websocket.client
-* org.eclipse.jetty.websocket.api
+- org.eclipse.jetty.websocket.client
+- org.eclipse.jetty.websocket.api
 
 ::: tip Note
 WebSocketClient instances should be obtained by the handler factory through the WebSocketClientFactory service and unless there are specific configuration requirements, the shared instance should be used.

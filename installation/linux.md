@@ -3,8 +3,6 @@ layout: documentation
 title: openHAB on Linux
 ---
 
-{% include base.html %}
-
 # openHAB on Linux
 
 The following instructions will guide you through the process of setting up openHAB and recommended packages for both .DEB (Ubuntu, Debian etc.) and .RPM (RedHat, CentOS, Fedora etc.) Linux systems.
@@ -27,7 +25,8 @@ Linux file permissions is one of the biggest sources of issues, Linux novices ru
 If you find yourself in a situation, where you have **no write access** to the openHAB configuration or system files wrong permissions and/or the incorrect use of `sudo` are often the cause.
 Train your understanding of Linux permissions at [linuxjourney.com/lesson/file-permissions](https://linuxjourney.com/lesson/file-permissions).
 
-## Meeting the Requirements: ##
+## Meeting the Requirements
+
 As a first step, please verify, that your system meets the [prerequisites](index.html#prerequisites).
 You may want to install Zulu, a fully certified Java build [as a package or manually](https://docs.azul.com/zulu/zuludocs/ZuluUserGuide/InstallingZulu/InstallZulu.htm).
 
@@ -43,9 +42,10 @@ Make sure to download Zulu or Java **11**.
 ## Installation
 
 openHAB can be installed through
- - the openHABian project **(easiest method, ships with the openHABian configuration tool)**
- - a package repository (apt, yum)
- - manually from file.
+
+- the openHABian project **(easiest method, ships with the openHABian configuration tool)**
+- a package repository (apt, yum)
+- manually from file.
 
 The installation through the **openHABian project** and the use of the provided openHABian configuration tool is recommended for end users.
 
@@ -54,6 +54,7 @@ Installing using the provided **package repository** (using `apt`, `apt-get`, `y
 The manual installation through a platform independent archive file is suited for users who know what they are doing.
 
 ### openHABian project
+
 The easy step by step instruction can be found [here](openhabian.html).
 
 ### Package Repository Installation
@@ -68,26 +69,26 @@ Alternatively resort to the [manual installation approach](#manual-installation)
 
 {% include collapsible/body.html %}
 
-First, add the openHAB Bintray repository key to your package manager and allow Apt to use the HTTPS Protocol:
+First, add the openHAB repository key to your package manager and allow Apt to use the HTTPS Protocol:
 
 ```shell
-wget -qO - 'https://bintray.com/user/downloadSubjectPublicKey?username=openhab' | sudo apt-key add -
+wget -qO - 'https://openhab.jfrog.io/artifactory/api/gpg/key/public' | sudo apt-key add -
 sudo apt-get install apt-transport-https
 ```
 
 Then, you can choose between, *Official (Stable)*, *Beta* or *Snapshot* builds:
 
--   **Stable Release**
+- **Stable Release**
 
     The stable builds contain the latest official release with tested features.
 
     Add the **openHAB Stable Repository** to your systems apt sources list:
 
     ```shell
-    echo 'deb https://dl.bintray.com/openhab/apt-repo2 stable main' | sudo tee /etc/apt/sources.list.d/openhab.list
+    echo 'deb https://openhab.jfrog.io/artifactory/openhab-linuxpkg stable main' | sudo tee /etc/apt/sources.list.d/openhab.list
     ```
 
--   **Testing Release**
+- **Testing Release**
 
     The beta and release candidate builds come out less frequently, but will contain new features that are currently in the testing phase.
 
@@ -97,7 +98,7 @@ Then, you can choose between, *Official (Stable)*, *Beta* or *Snapshot* builds:
     echo 'deb https://openhab.jfrog.io/artifactory/openhab-linuxpkg testing main' | sudo tee /etc/apt/sources.list.d/openhab.list
     ```
 
--   **Snapshot Release**
+- **Snapshot Release**
 
     The snapshot build is created [almost daily](https://ci.openhab.org/job/openhab-linuxpkg/), and include the latest changes to the openHAB core and add-ons.
     These changes are often unstable, so you should use this branch only for testing or development purposes.
@@ -138,20 +139,20 @@ sudo apt-get install openhab-addons
 The RPM repo information should be defined inside a file, make a new file at `/etc/yum.repos.d/openhab.repo` with the following contents depending on your choice of release.
 You may add all three to the same file, but make sure the desired repo is is set to `enabled=1`:
 
--   **Stable Release**
+- **Stable Release**
 
     The stable builds contain the latest official release with tested features.
 
     ```text
     [openHAB-Stable]
     name=openHAB Stable
-    baseurl=https://dl.bintray.com/openhab/rpm-repo2/stable
+    baseurl=https://openhab.jfrog.io/artifactory/openhab-linuxpkg-rpm/stable
     gpgcheck=1
-    gpgkey=https://bintray.com/user/downloadSubjectPublicKey?username=openhab
+    gpgkey="https://openhab.jfrog.io/artifactory/api/gpg/key/public"
     enabled=1
     ```
 
--   **Testing Release**
+- **Testing Release**
 
     The beta or release candidate builds come out less frequently, but will contain new features that are currently in the testing phase.
 
@@ -164,7 +165,7 @@ You may add all three to the same file, but make sure the desired repo is is set
     enabled=1
     ```
 
--   **Snapshot Release**
+- **Snapshot Release**
 
     The snapshot build is created [almost daily](https://ci.openhab.org/job/openhab-linuxpkg/), and include the latest changes to the openHAB core and add-ons.
     These changes are often unstable, so you should use this branch only for testing or development purposes.
@@ -260,8 +261,8 @@ sudo systemctl enable openhab.service
 
 The first start may take **up to 15 minutes**, this is a good time to reward yourself with hot coffee or a freshly brewed tea!
 
-You should be able to reach the openHAB Dashboard at [http://openhab-device:8080]() at this point.
-If you're new to openHAB, then you should checkout the [beginner's tutorial]({{base}}/tutorials/beginner/1sttimesetup.html)!
+You should be able to reach the openHAB Dashboard at `http://openhab-device:8080` at this point.
+If you're new to openHAB, then you should checkout the [beginner's tutorial]({{base}}/tutorial/first_steps.html)!
 
 ![The openHAB Dashboard page](images/Home_Openhab_3.png)
 
@@ -450,22 +451,22 @@ We are going to download a platform independent archive file and extract it to t
 Choose between the latest Beta release or a Snapshot with all incoming contributions, created daily.
 As openHAB is still in an evolving state, the snapshot may be the **preferred choice**.
 
--   **Official Release**
+- **Official Release**
 
     Download and extract the latest offical stable version of openHAB from [our downloadpage](https://www.openhab.org/download/) to your host:
 
     ```shell
     cd /tmp
-    wget -O openhab-download.zip https://bintray.com/... # Insert download link here
+    wget -O openhab-download.zip https://www.openhab.org/download/releases... # Insert download link here
     sudo unzip openhab-download.zip -d /opt/openhab
     rm openhab-download.zip
     ```
 
--   **Beta/RC Release**
+- **Beta/RC Release**
 
     If available, beta or release candidate builds of openHAB can also be downloaded from [our downloadpage](https://www.openhab.org/download/) and extracted to your host as shown above.
 
--   **Snapshot Release**
+- **Snapshot Release**
 
     Download and extract the latest snapshot version of openHAB from [our downloadpage](https://www.openhab.org/download/) to your host. The process is analogue to above.
 
@@ -477,7 +478,7 @@ sudo chown -hR openhab:openhab /opt/openhab
 ```
 
 Everything is ready for a first test run.
-**Execute** openHAB and you should be able to reach the openHAB Dashboard at [http://openhab-device:8080]() after a few minutes:
+**Execute** openHAB and you should be able to reach the openHAB Dashboard at `http://openhab-device:8080` after a few minutes:
 
 ```shell
 # execute as restricted user openhab:
@@ -563,7 +564,7 @@ This is especially important if you are working with the latest snapshot as chan
 openHAB uses a script to update to any other version, or from stable to snapshot and visa-versa.
 Your personal configuration will be retained on upgrades, but you should **stop openHAB** and perform a backup first.
 
--   **Versions 2.1.0 and Above**
+- **Versions 2.1.0 and Above**
 
     From version 2.1.0, openHAB is distributed with the update script included.
     This script should be called from within openHAB's root directory.
@@ -587,14 +588,14 @@ Your personal configuration will be retained on upgrades, but you should **stop 
     sudo runtime/bin/update 2.2.0-SNAPSHOT
     ```
 
--   **Older Versions**
+- **Older Versions**
 
     If you're using a version earlier than 2.1.0, then you can use the following commands in Terminal to download the script and run it.
     Assuming the openHAB directory is in `/opt/openhab`:
 
     ```bash
     cd /opt/openhab
-    sudo sh -c "$(curl -fsSL https://raw.githubusercontent.com/openhab/openhab-distro/master/distributions/openhab/src/main/resources/bin/update)" -- 2.1.0
+    sudo sh -c "$(curl -fsSL https://raw.githubusercontent.com/openhab/openhab-distro/main/distributions/openhab/src/main/resources/bin/update)" -- 2.1.0
     ```
 
 #### Uninstall
@@ -625,7 +626,7 @@ sudo systemctl daemon-reload
 ## Backup and Restore
 
 It is recommended to make a backup of your configuration before *any* major change.
-To make a backup of openHAB2, you need to retain your configuration and userdata files.
+To make a backup of openHAB 2 or higher, you need to retain your configuration and userdata files.
 openHAB comes with scripts for storing your configuration in a zip file which is saved in `/var/lib/openhab/backups` for automatic installs and `openhab/backups` for manual installs.
 You can change the default path by setting the $OPENHAB_BACKUPS environment variable.
 
@@ -732,7 +733,7 @@ Next, add the desired share configurations to the end of the file:
 
 <!-- TODO: Limit to configuration folder??? -->
 
--   Package repository based installation:
+- Package repository based installation:
 
     ```ini
     [openHAB-userdata]
@@ -766,7 +767,7 @@ Next, add the desired share configurations to the end of the file:
       directory mask=0777
     ```
 
--   Manual installation:
+- Manual installation:
 
     ```ini
     [openHAB-files]

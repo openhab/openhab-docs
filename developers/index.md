@@ -22,16 +22,16 @@ The different guides of this chapter assume that you are somewhat familiar with 
 
 openHAB allows you to build upon the following concepts:
 
-* **Bindings**: A binding connects to external services or devices.
-* **Automation engine module**: A trigger, condition, or action that can be used in automation rules (or scripts).
-* **Transformation / Profiles**: Can be used to transform a *Thing Channel* value before it is assigned to an *Item*.
-* **An IO service**: Exposes openHAB internals via a defined interface (for example the REST interface, HomeKit or Hue Emulation Service).
-* **A Persistence service**: Persist item state updates and/or changes and allows them to be retrieved for specific points in time.
-* **Natural language processing skill**:
+- **Bindings**: A binding connects to external services or devices.
+- **Automation engine module**: A trigger, condition, or action that can be used in automation rules (or scripts).
+- **Transformation / Profiles**: Can be used to transform a *Thing Channel*- value before it is assigned to an *Item*.
+- **An IO service**: Exposes openHAB internals via a defined interface (for example the REST interface, HomeKit or Hue Emulation Service).
+- **A Persistence service**: Persist item state updates and/or changes and allows them to be retrieved for specific points in time.
+- **Natural language processing skill**:
   Executes something depending on the understood Intents and returns something back to the user.
-* **Audio sinks/sources**:
+- **Audio sinks/sources**:
   Control where audio can be played or implement audio sources.
-* and many more (not covered yet).
+- and many more (not covered yet).
 
 First think about what you want to achieve! Check our [community forum](https://community.openhab.org)
 and discuss your concept.
@@ -39,7 +39,7 @@ Sometimes it may not even be worth writing a binding or other addon if you can a
 For example, you may be better off using an http action in a rule or script to retrieve some values.
 
 Find the right abstraction and the corresponding link on the left navigation panel.
-General [coding guidelines](docs/developer/guidelines.html) apply to all types of addon development.
+General [coding guidelines](guidelines.html) apply to all types of addon development.
 
 ## Setup the Development Environment
 
@@ -84,33 +84,42 @@ This script is specific for binding addons. Follow these steps to generate your 
 1. From the command line in `openhab-addons/bundles` directory to create a skeleton of a new binding `mynewbinding` run:
 
    On Linux:
-    ```
+
+    ```bash
     ./create_openhab_binding_skeleton.sh  MyNewBinding "<Author>" <GitHubUsername>
     ```
 
    On Windows:
-    ```
+
+    ```bash
     create_openhab_binding_skeleton.cmd MyNewBinding "<Author>" <GitHubUsername>
     ```
+
+    Add your binding to the `bundles/pom.xml` file
 
     _Use your full name for `<Author>`_.
 
 1. Accept with `Y` when the skeleton configuration asks for it.
 
 1. From `openhab-addons` root you can build only your binding with maven using the `-pl` option:
-    ```
+
+    ```bash
     mvn clean install -pl :org.openhab.binding.mynewbinding
     ```
+
    Where `mynewbinding` is the name of your new binding.
    Some additional maven options that may help:
-   * `-U`: Forces all dependencies to be downloaded again.
-   * `-am`: Builds all projects in openhab-addons your project dependends on.
-   * `-o`: Won't update any dependencies.
-   * `-DskipChecks`: Skips the static analysis checks
-   * `-DskipTests`: Skips the unit tests
+   - `-U`: Forces all dependencies to be downloaded again.
+   - `-am`: Builds all projects in openhab-addons your project dependends on.
+   - `-o`: Won't update any dependencies.
+   - `-DskipChecks`: Skips the static analysis checks
+   - `-DskipTests`: Skips the unit tests
+   - `-Dspotless.check.skip=true` : Skips the spotless file formatting checks
+   - `-Dohc.version=3.0.2` : The version of openhab you are building for
 
 1. To start your new binding it's a good practise to commit your code on a new git branch:
-   ```
+
+   ```bash
    git checkout -b <mynewbranch>
    ```
 
@@ -119,3 +128,12 @@ This script is specific for binding addons. Follow these steps to generate your 
 Now you can start developing your NEW binding. We're looking forward to your pull request!
 
 In case the new binding has dependencies to other bundles/libraries see [Adding Dependencies](buildsystem.html#adding-dependencies) for more information.
+
+If developing on Windows, git will convert line endings from LF to CRLF automatically. The repo uses LF,
+and spotless will object, and throw errors. If you use `mnv spotless:apply` to fix formatting, it will add CRLF
+to all files dirtying the entire branch. Adding a `.gitattributes` file to the openhab-addons folder with the
+following will tell git and spotless to use LF endings:
+
+```text
+* text eol=lf
+```

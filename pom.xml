@@ -245,9 +245,12 @@
                 <resource>
                   <directory>${basedir}/.external-resources/openhabian/docs</directory>
                   <includes>
-                    <include>openhabian.md</include>
+                    <include>*.md</include>
                     <include>images/*.png</include>
                   </includes>
+                  <excludes>
+                    <exclude>NEWSLOG.md</exclude>
+                  </excludes>
                 </resource>
               </resources>
             </configuration>

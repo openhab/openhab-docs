@@ -3,13 +3,11 @@ layout: documentation
 title: System Integrations
 ---
 
-{% include base.html %}
-
 # System Integrations
 
 openHAB supports services that enable integration with various technologies that don't fall into other add-on categories.
 
-Most of the systems mentioned below are integrated via a *Misc* add-on, installed e.g. through Paper UI.
+Most of the systems mentioned below are integrated via a *Misc* add-on, installed e.g. through UI.
 Detailed instructions and requirements may be found in the corresponding documentation pages.
 
 <!-- selection not needed for now table id="ios-select" class="striped">

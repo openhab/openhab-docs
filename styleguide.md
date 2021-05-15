@@ -3,8 +3,6 @@ layout: documentation
 title: openhab-docs Markdown StyleGuide
 ---
 
-{% include base.html %}
-
 # openHAB Documentation Style Guide
 
 ## General Remarks
@@ -16,7 +14,7 @@ First and foremost we are following the recommendations given at: [https://www.c
 An ordered list:
 
 1. Some text
-2. Some more text
+1. Some more text
 
 An unordered list:
 
@@ -25,9 +23,9 @@ An unordered list:
 
 An unordered loose list (applied if bigger or with nested lists):
 
--   Some text
-    - An indented item, making the list "loose"
+- Some text
+  - An indented item, making the list "loose"
 
--   Some more text
+- Some more text
 
--   And even more text that could also strech over multiple lines
+- And even more text that could also strech over multiple lines

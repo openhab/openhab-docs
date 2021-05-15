@@ -3,8 +3,6 @@ layout: documentation
 title: Persistence
 ---
 
-{% include base.html %}
-
 # Persistence
 
 openHAB can store data over time; this is known as persistence.
@@ -22,8 +20,8 @@ Please refer to the [available persistence service add-on](/addons/#persistence)
 It is important to select a default persistence service.
 You should do this even if you have only one persistence add-on installed.
 
-To select a default persistence service, in paper UI, select Configuration and then System from the side menu.
-Scroll down to "Persistence", and select your default service from the drop-down list.
+To select a default persistence service, in UI, select `Settings->Persistence`.
+Select your default service from the drop-down list.
 Note that you must first install a persistence add-on before you make this selection.
 Be sure to save your choice once you have selected your default service.
 
@@ -67,6 +65,7 @@ The following strategies are defined internally and may be used in place of `str
 - `restoreOnStartup`: load and initialize the last persisted state of the Item on openHAB startup (if the Item state is undefined (`UNDEF`)).
 
 #### Cron Persistence Triggers
+
 openHAB uses [Quartz](https://www.quartz-scheduler.org/documentation) for time-related cron events.
 See the [Rules article]({{base}}/configuration/rules-dsl.html#time-based-triggers) for more information.
 
@@ -88,8 +87,9 @@ where `<itemlist>` is a comma-separated list consisting of one or more of the fo
 
 - `*` - this line should apply to all items in the system
 - `<itemName>` a single Item identified by its name. This Item can be a group Item.  But note that only the group value will be persisted.  The value of the individual group members will not be persisted using this option.
-- `<groupName>*` - all members of this group will be persisted, but not the group itself. If no strategies are provided, the default strategies that are declared in the first section are applied.  Optionally, an alias may be provided if the persistence service requires special names (e.g. a table to be used in a database, a feed id for an IoT service, etc.)
-Note that * is NOT a wildcard match character in this context.
+- `<groupName>*` - all members of this group will be persisted, but not the group itself. If no strategies are provided, the default strategies that are declared in the first section are applied.
+  Optionally, an alias may be provided if the persistence service requires special names (e.g. a table to be used in a database, a feed id for an IoT service, etc.)
+  Note that `*` is NOT a wildcard match character in this context.
 
 The example `Items` section below takes advantage of a `default` entry in the  `Strategies` section.
 Assume the `Strategies` section contains the line:
@@ -151,8 +151,8 @@ Items {
   item1, item2 : strategy = everyChange, restoreOnStartup
 }
 ```
-It is usually not necessary to restore all Items since there is a good chance that they are no longer accurate (switches may have been toggled, sensor values are likely to have changed), and the restoration may result in unwanted rule actions.
 
+It is usually not necessary to restore all Items since there is a good chance that they are no longer accurate (switches may have been toggled, sensor values are likely to have changed), and the restoration may result in unwanted rule actions.
 
 ## Persistence Extensions in Scripts and Rules
 
@@ -193,7 +193,7 @@ These extensions use the default persistence service.
 (Refer to 'Default Persistence Service' above to configure this.)
 You may specify a different persistence service by appending a String as an optional additional parameter at the end of the extension.
 
-#### Examples
+### Examples
 
 To persist an Item called `Lights` in an rrd4j database, you would enter the following:
 `Lights.persist("rrd4j")`
