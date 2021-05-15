@@ -64,16 +64,6 @@ A marker on a floor plan
     Size of the icon in pixels (40 by default)
   </PropDescription>
 </PropBlock>
-<PropBlock type="INTEGER" name="iconWidth" label="Icon Width">
-  <PropDescription>
-    Width of the icon in pixels (for openHAB icons only, 40 by default)
-  </PropDescription>
-</PropBlock>
-<PropBlock type="INTEGER" name="iconHeight" label="Icon Height">
-  <PropDescription>
-    Height of the icon in pixels (for openHAB icons only, 40 by default)
-  </PropDescription>
-</PropBlock>
 <PropBlock type="TEXT" name="iconColor" label="Icon Color">
   <PropDescription>
     Color of the icon (for Framework7/Material icons); use expression for dynamic colors

@@ -48,11 +48,6 @@ Trend line to display the overall recent evoluation of an item
     Colors of the trend line (see <a target="_blank" class="external text-color-blue" href="https://github.com/QingWei-Li/vue-trend#props">vue-trend</a>)
   </PropDescription>
 </PropBlock>
-<PropBlock type="TEXT" name="trendSampling" label="Trend Line Sampling">
-  <PropDescription>
-    Amount of minutes between each point of the trendline (default: 60). Affected by persistence strategies different from "every minute"
-  </PropDescription>
-</PropBlock>
 </PropGroup>
 </div>
 

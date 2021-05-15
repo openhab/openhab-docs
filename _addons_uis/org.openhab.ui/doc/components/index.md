@@ -12,7 +12,6 @@ source: https://github.com/openhab/openhab-webui/edit/main/bundles/org.openhab.u
 |--------|------|-------------|
 | [`oh-button`](./oh-button.html) |  [Button](./oh-button.html) | Button performing an action |
 | [`oh-chart`](./oh-chart.html) |  [Chart](./oh-chart.html) | Visualize series of data |
-| [`oh-clock`](./oh-clock.html) |  [Digital Clock](./oh-clock.html) | Display a digital clock |
 | [`oh-colorpicker`](./oh-colorpicker.html) |  [Colorpicker](./oh-colorpicker.html) | Control to pick a color |
 | [`oh-gauge`](./oh-gauge.html) |  [Gauge](./oh-gauge.html) | Circular or semi-circular read-only gauge |
 | [`oh-icon`](./oh-icon.html) |  [Icon](./oh-icon.html) | Display an openHAB icon |
@@ -88,7 +87,6 @@ source: https://github.com/openhab/openhab-webui/edit/main/bundles/org.openhab.u
 |--------|------|-------------|
 | [`oh-block`](./oh-block.html) |  [Layout Grid Block](./oh-block.html) | A block in a grid layout |
 | [`oh-grid-col`](./oh-grid-col.html) |  [Layout Grid Column](./oh-grid-col.html) | A column in a grid layout |
-| [`oh-grid-layout`](./oh-grid-layout.html) |  [Fixed Grid Layout](./oh-grid-layout.html) | Arranges widgets on a grid of squares with user-defined sizes |
 | [`oh-grid-row`](./oh-grid-row.html) |  [Layout Grid Row](./oh-grid-row.html) | A row in a grid layout |
 | [`oh-masonry`](./oh-masonry.html) |  [Masonry Layout](./oh-masonry.html) | Arranges widgets automatically depending on the screen size |
 
