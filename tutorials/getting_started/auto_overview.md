@@ -43,7 +43,7 @@ The Properties tab shows those Point/Property Items from the model that are dire
 The badges shown on the card summarize all of the Properties in that card and present that summary as a single badge.
 When there is nothing to present, the badge is not shown.
 For example, if no lights are on, the lights badge will not be shown.
-When one light is on the light badge will be shown.
+When one light is on, the light badge will be shown.
 When two or more lights are on, the light badge will be shown with a number indicating how many lights are on.
 For other types of sensors like temperature, the average of all the Items tagged with a Temperature Property tag will be shown.
 
