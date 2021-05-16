@@ -146,6 +146,14 @@ The following files are of interest for the execution environment:
 
 1. Start openHAB from the IDE by clicking "Run OSGi" (upper right of the `app.bndrun` window).
 
+    ::: tip
+    Depending on the amount of code you want to debug, especially when you're debugging not only add-ons, but also openHAB Core and UI's,
+    start-up procces may gets very slow and/or you get a `java.lang.OutOfMemoryError: Java heap space` exception.
+    In case this happens, you could increase the maximum heap space by adding e.g. `-Xmx8G` (for a maximum of 8 gigabyte) to
+    `Runtime Properties > JVM arguments` (bottem left of the `app.bndrun` window).
+    Afterwards, you have to save `app.bndrun` file again.
+    :::
+
 1. You can check that openHAB is running with your browser by going to: `http://localhost:8080/` (the last `/` is important!)
 
 1. You can check log output in the `Console` tab at the bottom.
