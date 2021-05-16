@@ -10,7 +10,7 @@ To make development easier an out-of-the-box setup is available that completely 
 This guide describes the steps to setup Eclipse and how to run and debug an add-on in Eclipse.
 
 ::: tip Existing Eclipse Installations
-If you already have Eclipse installed it is recommended to perform a separate Eclipse install for OpenHAB to avoid overriding your existing Eclipse configuration.
+If you already have Eclipse installed it is recommended to perform a separate Eclipse install for openHAB to avoid overriding your existing Eclipse configuration.
 :::
 
 ## Eclipse IDE Setup
@@ -93,7 +93,7 @@ This mechanism replaces the add-on installation process via the UI that you woul
 ### Running Add-ons
 
 Under `Infrastructure` you will find the project `org.openhab.demo.app`.
-This project contains the full configuration to run OpenHAB.
+This project contains the full configuration to run openHAB.
 The following files are of interest for the execution environment:
 
 ```text
@@ -102,7 +102,7 @@ The following files are of interest for the execution environment:
 |------- conf             Here you configure the manual text files
 |------- userdata         Here is the openHAB user data
 |------- logback.xml      XML file for logging options
-|--- app.bndrun           The file to start OpenHAB
+|--- app.bndrun           The file to start openHAB
 |--- pom.xml              The pom file with all dependencies for the demo project
 ```
 
@@ -190,7 +190,7 @@ If you imported your add-on as a project then the jar file is no longer retrieve
 If you want to develop a new binding read about the [Skeleton Script](../#develop-a-new-binding) to generate the base for your binding and create all required files.
 Then follow the above steps to build your sources and to configure the demo app to run your binding.
 
-## Updating OpenHAB
+## Updating openHAB
 
-You can update the OpenHAB version you are running in the IDE at any time simply by updating your git repos under your install folder.
+You can update the openHAB version you are running in the IDE at any time simply by updating your git repos under your install folder.
 For example to update to the latest version run `git checkout` in each repo folder under your `git` folder in the installation folder.

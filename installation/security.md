@@ -577,7 +577,7 @@ sudo nano /usr/local/etc/nginx/sites-enabled/openHAB-auth
 ```
 
 ```nginx
-# OpenHab NGINX config
+# openHAB NGINX config
 
 server {
     listen                          2020; #This is simply an unused port, it can be any number
