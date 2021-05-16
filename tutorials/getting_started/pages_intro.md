@@ -56,7 +56,7 @@ Interface | Purpose | How the UI is Defined | Notes
 [Sitemaps]({{base}}/ui/sitemaps.html) | A simple declaritive way to define a simple user interface | Created using .sitemap files or through MainUI. | Used by BasicUI and the phone apps by default.
 [HABPanel]({{base}}/ui/habpanel/habpanel.html) | UI designed for fixed wall mounted tablets and similar touch screen displays using a blocks interface (e.g. the Windows 10 start menu) with a lot of customization options. | Built graphically though the browser. A number of custom widgets are defined and installable.
 [HABot]({{base}}/ui/habot/) | Provides a basic chatbot interface to interact with your home automation through natural langauge. | Requires the configuration of the semantic model.
-[Pages]({{base}}/ui/index.html) | Built into MainUI. Allows for a rich set of options to present your home automation. | Can be built automatically through the semantic model as well as cutomized.
+[Pages]({{base}}/ui/index.html) | Built into MainUI. Allows for a rich set of options to present your home automation. | Can be built automatically through the semantic model as well as customized.
 
 Once installed, any non-Pages UI can be accessed in the "Other Apps" menu that pops up when clicking on the square icon in the upper right corner of the MainUI Overview page (the first page you see when first accessing openHAB).
 
