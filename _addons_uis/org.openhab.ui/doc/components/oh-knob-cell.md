@@ -125,6 +125,16 @@ A cell expanding to a knob control
     Size the control using percentages instead of pixels
   </PropDescription>
 </PropBlock>
+<PropBlock type="INTEGER" name="updateInterval" label="Update Interval">
+  <PropDescription>
+    Time to wait between subsequent commands in ms (default 500)
+  </PropDescription>
+</PropBlock>
+<PropBlock type="INTEGER" name="delayStateDisplay" label="Delay State Display">
+  <PropDescription>
+    Time to wait before switching from displaying user input to displaying item state in ms (default 2000)
+  </PropDescription>
+</PropBlock>
 </PropGroup>
 </div>
 

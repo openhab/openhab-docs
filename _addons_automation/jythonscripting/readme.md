@@ -5,6 +5,7 @@ title: Jython Scripting - Automation
 type: automation
 description: "This add-on provides [Jython](https://www.jython.org/) 2.7.2 that can be used as a scripting language within automation rules and which eliminates the need to download Jython and create `EXTRA_JAVA_OPTS` entries for `bootclasspath`, `python.home` and `python.path`."
 since: 3x
+logo: images/addons/jythonscripting.png
 install: auto
 ---
 

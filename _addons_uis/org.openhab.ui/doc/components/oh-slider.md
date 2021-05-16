@@ -78,6 +78,16 @@ Slider control, allows to pick a number value on a scale
     Text to append to the label while dragging the cursor
   </PropDescription>
 </PropBlock>
+<PropBlock type="INTEGER" name="updateInterval" label="Update Interval">
+  <PropDescription>
+    Time to wait between subsequent commands in ms (default 500)
+  </PropDescription>
+</PropBlock>
+<PropBlock type="INTEGER" name="delayStateDisplay" label="Delay State Display">
+  <PropDescription>
+    Time to wait before switching from displaying user input to displaying item state in ms (default 2000)
+  </PropDescription>
+</PropBlock>
 <PropBlock type="TEXT" name="variable" label="Variable">
   <PropDescription>
     Name of the variable to set on input change

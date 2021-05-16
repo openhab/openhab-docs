@@ -5,6 +5,7 @@ title: Polly Text-to-Speech - Voices
 type: voice
 description: "PollyTTS is a voice service utilizing the Internet based text-to-speech (TTS) service [Amazon Polly](https://aws.amazon.com/polly/)."
 since: 3x
+logo: images/addons/pollytts.png
 install: auto
 ---
 

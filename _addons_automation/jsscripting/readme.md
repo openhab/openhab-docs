@@ -5,6 +5,7 @@ title: JavaScript Scripting - Automation
 type: automation
 description: "This add-on provides support for JavaScript (ECMAScript 2021+) that can be used as a scripting language within automation rules."
 since: 3x
+logo: images/addons/jsscripting.png
 install: manual
 ---
 
