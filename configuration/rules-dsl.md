@@ -395,7 +395,7 @@ Often it is desired to calculate other values from Item states or to compare Ite
 
 In openHAB, every item carries a state.
 The state of an Item is an Object itself and can be accessed with `MyItem.state`.
-A complete and up-to-date list of item types are currently allowed in OpenHAB and the command types each item can accept is given in the [openHab documentation for items]({{base}}/concepts/items.html).
+A complete and up-to-date list of item types are currently allowed in openHAB and the command types each item can accept is given in the [openHab documentation for items]({{base}}/concepts/items.html).
 To use the state of an Item in rules it is often necessary to know what type of state the Item is carrying and how to convert it into types that can be used in such operations.
 Conversely, to use the result of a calculation to modify the state of an item may require its transformation into a suitable type.
 
