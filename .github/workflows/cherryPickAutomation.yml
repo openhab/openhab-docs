@@ -1,3 +1,4 @@
+name: Cherry pick automation
 # Automatically create pull requests to release branches on condition
 
 on:
