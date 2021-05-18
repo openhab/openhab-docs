@@ -114,7 +114,7 @@ In most cases, the description also contains a fully worked out example that inc
 To all newcomers: please read the section [New User Tutorial]({{base}}/tutorial).
 That section provides you with step-by-step instructions for your first easy setup.
 
-OpenHAB runs on most popular platforms such as Linux, Windows and MacOS and on almost any hardware ranging from Raspberry Pis to desktop computers and server PCs.
+openHAB runs on most popular platforms such as Linux, Windows and MacOS and on almost any hardware ranging from Raspberry Pis to desktop computers and server PCs.
 You can find specific installation instructions for these and other platforms in the [Installation Overview]({{base}}/installation/index.html) article.
 If you have a strong preference towards a particular platform, then that platform is probably your best choice.
 
