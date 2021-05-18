@@ -35,7 +35,7 @@ Instead, it is publishing metrics regularly on a preconfigured MQTT topic in a s
 ## Install the Binding and Transformation
 
 This device publishes JSON formatted messages, so we need to install an add-on that can process JSON: the JSONPath Transformation.
-A Transformation takes incoming data and transformes is somehow.
+A Transformation takes incoming data and transformes it somehow.
 In this case it will extract certain fields from the JSON.
 From Settings, click on Transformations under Add-ons.
 
