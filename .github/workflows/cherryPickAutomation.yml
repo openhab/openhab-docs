@@ -21,7 +21,7 @@ jobs:
         uses: carloscastrojumo/github-cherry-pick-action@v1.0.1
         with:
           branch: final-stable
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.CP_ACTION_TOKEN }}
           labels: |
             cherry-pick
   cherry_pick_release_v2_5_x:
@@ -37,6 +37,6 @@ jobs:
         uses: carloscastrojumo/github-cherry-pick-action@v1.0.1
         with:
           branch: final-2.5.x
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.CP_ACTION_TOKEN }}
           labels: |
             cherry-pick
