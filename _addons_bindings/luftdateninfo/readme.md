@@ -5,6 +5,7 @@ title: LuftdatenInfo - Bindings
 type: binding
 description: "Binding for the Sensor Community [luftdaten.info](https://luftdaten.info/). The community provides instructions to build sensors on your own and they can be integrated into the database."
 since: 3x
+logo: images/addons/luftdateninfo.png
 install: auto
 ---
 
