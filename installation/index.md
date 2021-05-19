@@ -97,7 +97,7 @@ openhab-cli info
 will result in e.g. for an [openHABian](https://www.openhab.org/docs/installation/openhabian.html) installation
 
 ```shell
-Version:     3.0.0 (Build)
+Version:     3.0.2 (Build)
 
 User:        openhab (Active Process 7466)
 User Groups: openhab tty dialout audio bluetooth gpio
