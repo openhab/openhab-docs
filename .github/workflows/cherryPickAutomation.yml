@@ -38,3 +38,5 @@ jobs:
           branch: final-2.5.x
           labels: |
             cherry-pick
+env:
+  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
