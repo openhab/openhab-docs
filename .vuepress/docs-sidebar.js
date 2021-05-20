@@ -42,7 +42,6 @@ module.exports = [
       'installation/armbian',
       'installation/docker',
       'installation/synology',
-      // 'installation/qnap', // Remove until we get feedback about the current package state
       ['installation/security', 'Security']
     ]
   },
@@ -55,7 +54,7 @@ module.exports = [
       'concepts/items',
       'concepts/discovery',
       'concepts/audio',
-      'concepts/units-of-measurement',  // from v2.3 onwards
+      'concepts/units-of-measurement',
     ]
   },
   {
@@ -104,7 +103,7 @@ module.exports = [
     collapsable: false,
     children: [
       ['ecosystem/alexa/', 'Amazon Alexa'],
-      ['ecosystem/google-assistant/', 'Google Assistant'], // from v2.3 onwards
+      ['ecosystem/google-assistant/', 'Google Assistant'],
       ['../addons/integrations/homekit/', 'Apple HomeKit'],
       // ['ecosystem/ifttt/', 'IFTTT'], // Temporary remove until service gets reactivated
       ['ecosystem/mycroft/', 'Mycroft.AI'],
