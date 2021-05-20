@@ -77,7 +77,7 @@ Note, always review the README on [Docker Hub](https://hub.docker.com/r/openhab/
 Services can be run an maintained on a Linux machine one of two ways, using Docker or using the system's built in service management (e.g. systemd).
 If using docker to manage the service, run the following command:
 
-:::
+:::: tabs
 
 ::: tab Linux
 
@@ -121,7 +121,7 @@ docker run ^
 
 :::
 
-:::
+::::
 
 
 Where
@@ -260,7 +260,7 @@ In Docker openHAB is running in name of `openhab`, a restricted user.
 The stick will work if you run the following command right after docker image is started.
 
 
-:::
+:::: tabs
 
 ::: tab Linux
 
@@ -283,7 +283,7 @@ docker exec \
 
 :::
 
-:::
+::::
 
 This command changes permissions of the specific device as expected (readable and writable for everyone).
 
