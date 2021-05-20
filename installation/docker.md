@@ -123,7 +123,6 @@ docker run ^
 
 ::::
 
-
 Where
 
 - `<uid>` is the user ID number for the `openhab` user which you can obtain using the command `id openhab`,
@@ -259,7 +258,6 @@ If you want use an USB stick (for example for Z-Wave network), then it will be n
 In Docker openHAB is running in name of `openhab`, a restricted user.
 The stick will work if you run the following command right after docker image is started.
 
-
 :::: tabs
 
 ::: tab Linux
@@ -270,14 +268,15 @@ docker exec \
     openhab \
     /bin/chmod o+rw /dev/ttyACM0
 ```
+
 :::
 
 ::: tab Windows
 
 ```bash
-docker exec \
-    -d \
-    openhab \
+docker exec ^
+    -d ^
+    openhab ^
     /bin/chmod o+rw /dev/ttyACM0
 ```
 
