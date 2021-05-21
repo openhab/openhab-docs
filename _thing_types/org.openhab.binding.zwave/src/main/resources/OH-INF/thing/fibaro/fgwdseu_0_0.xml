@@ -6,9 +6,9 @@
                       https://openhab.org/schemas/thing-description/v1.0.0">
 
   <thing-type id="fibaro_fgwdseu_00_000" listed="false">
-    <label>FGWDSEU WALLI SWITCH FIBARO DOUBLE SWITCH</label>
+    <label>FGWDSEU-221 FIBARO Walli Double Switch</label>
     <description><![CDATA[
-WALLI SWITCH FIBARO DOUBLE SWITCH<br /> <h1>Overview</h1><p>FIBARO Walli Double Switch is a smart wall switch designed to control one or two light sources via Z-Wave network. It measures active power and energy consumed by the controlled load. You can install it with provided cover plate or other compatible. <br />Main features of FIBARO Walli Double Switch: </p> <p>Can be used with:</p> <ul><li>Conventional incandescent and halogen light sources,</li> <li>LED lamps,</li> <li>Fluorescent lamps,</li> <li>Electronic transformers (for ELV halogen lamps and LED bulbs),</li> <li>Ferromagnetic transformers (for MLV halogen lamps).</li> <li>Can be used with provided cover plate or one of the following: <ul><li>GIRA – System 55 (Standard 55, E2, Event, Event Clear), </li> <li>Legrand – Céliane, </li> <li>Schneider – Odace.</li> <li>Active power and energy consumption metering.</li> </ul></li> <li>Supports Z-Wave network Security Modes: S0 with AES-128 encryption and S2 Authenticated with PRNG-based encryption. </li> <li>Works as Z-Wave signal repeater (all non-battery operated devices within the network will act as repeaters to increase reliability of the network). </li> <li>May be used with all devices certified with the Z-Wave Plus certificate and should be compatible with such devices produced by other manufacturers. </li> </ul> <br /> <h2>Inclusion Information</h2><p>Adding (Inclusion) – Z-Wave device learning mode, allowing to add the device to existing Z-Wave network. i If you want to change single/double switch operating mode (see “Single/Double Switch operating mode” on page 14), you must do it before adding the device to the Z-Wave network. 5.1: Adding manually To add the device to the Z-Wave network manually: 1. Power the device. 2. Set the main controller in (Security/non-Security Mode) add mode (see the controller’s manual). 3. Quickly, three times click one of the buttons. 4. If you are adding in Security S2 Authenticated, input the underlined part of the DSK (label on the bottom of the box). 5. LED will start blinking yellow, wait for the adding process to end. 6. Adding result will be confirmed by the Z-Wave controller’s message and the LED frame: • Green – successful (non-secure, S0, S2 non-authenticated), • Magenta – successful (Security S2 Authenticated), • Red – not successful.</p> <br /> <h2>Exclusion Information</h2><p>Removing (Exclusion) – Z-Wave device learning mode, allowing to remove the device from existing Z-Wave network. Removing also results in resetting the device to factory defaults.</p> <p>To remove the device from the Z-Wave network:</p> <ol><li>Power the device.</li> <li>Set the main controller into remove mode (see the controller’s manual).</li> <li>Quickly, three times click one of the buttons.</li> <li>LED will start blinking yellow, wait for the removing process to end.</li> <li>Successful removing will be confirmed by the Z-Wave controller’s message and red LED colour.</li> </ol>
+FIBARO Walli Double Switch<br /> <h1>Overview</h1><p>FIBARO Walli Double Switch is a smart wall switch designed to control one or two light sources via Z-Wave network. It measures active power and energy consumed by the controlled load. You can install it with provided cover plate or other compatible. <br />Main features of FIBARO Walli Double Switch: </p> <p>Can be used with:</p> <ul><li>Conventional incandescent and halogen light sources,</li> <li>LED lamps,</li> <li>Fluorescent lamps,</li> <li>Electronic transformers (for ELV halogen lamps and LED bulbs),</li> <li>Ferromagnetic transformers (for MLV halogen lamps).</li> <li>Can be used with provided cover plate or one of the following: <ul><li>GIRA – System 55 (Standard 55, E2, Event, Event Clear), </li> <li>Legrand – Céliane, </li> <li>Schneider – Odace.</li> <li>Active power and energy consumption metering.</li> </ul></li> <li>Supports Z-Wave network Security Modes: S0 with AES-128 encryption and S2 Authenticated with PRNG-based encryption. </li> <li>Works as Z-Wave signal repeater (all non-battery operated devices within the network will act as repeaters to increase reliability of the network). </li> <li>May be used with all devices certified with the Z-Wave Plus certificate and should be compatible with such devices produced by other manufacturers. </li> </ul> <br /> <h2>Inclusion Information</h2><p>Adding (Inclusion) – Z-Wave device learning mode, allowing to add the device to existing Z-Wave network. i If you want to change single/double switch operating mode (see “Single/Double Switch operating mode” on page 14), you must do it before adding the device to the Z-Wave network. 5.1: Adding manually To add the device to the Z-Wave network manually: 1. Power the device. 2. Set the main controller in (Security/non-Security Mode) add mode (see the controller’s manual). 3. Quickly, three times click one of the buttons. 4. If you are adding in Security S2 Authenticated, input the underlined part of the DSK (label on the bottom of the box). 5. LED will start blinking yellow, wait for the adding process to end. 6. Adding result will be confirmed by the Z-Wave controller’s message and the LED frame: • Green – successful (non-secure, S0, S2 non-authenticated), • Magenta – successful (Security S2 Authenticated), • Red – not successful.</p> <br /> <h2>Exclusion Information</h2><p>Removing (Exclusion) – Z-Wave device learning mode, allowing to remove the device from existing Z-Wave network. Removing also results in resetting the device to factory defaults.</p> <p>To remove the device from the Z-Wave network:</p> <ol><li>Power the device.</li> <li>Set the main controller into remove mode (see the controller’s manual).</li> <li>Quickly, three times click one of the buttons.</li> <li>LED will start blinking yellow, wait for the removing process to end.</li> <li>Successful removing will be confirmed by the Z-Wave controller’s message and red LED colour.</li> </ol> <br /> <h2>Wakeup Information</h2><p><br /></p>
     ]]></description>
     <category>WallSwitch</category>
 
@@ -91,7 +91,7 @@ WALLI SWITCH FIBARO DOUBLE SWITCH<br /> <h1>Overview</h1><p>FIBARO Walli Double 
     <!-- DEVICE PROPERTY DEFINITIONS -->
     <properties>
       <property name="vendor">Fibargroup</property>
-      <property name="modelId">FGWDSEU</property>
+      <property name="modelId">FGWDSEU-221</property>
       <property name="manufacturerId">010F</property>
       <property name="manufacturerRef">1B01:1000</property>
       <property name="dbReference">1181</property>
@@ -302,9 +302,10 @@ Alarm configuration – duration<br /> <h1>Overview</h1><p>This parameter define
                  min="0" max="15">
         <label>40: First button – scenes sent</label>
         <description><![CDATA[
-1 - Key pressed 1 time<br /> <h1>Overview</h1><p>This parameter determines which actions result in sending scene IDs assigned to them. Values can be combined (e.g. 1+2=3 means that scenes for single and double click are sent). Enabling scenes for triple click disables entering the device in learn mode by triple clicking.<br />Available values <br />1 – Key pressed 1 time <br />2 – Key pressed 2 times <br />4 – Key pressed 3 times <br />8 – Key hold down and key released</p>
+First Button - scenes sent<br /> <h1>Overview</h1><p>This parameter determines which actions result in sending scene IDs assigned to them. Values can be combined (e.g. 1+2=3 means that scenes for single and double click are sent). Enabling scenes for triple click disables entering the device in learn mode by triple clicking.<br />Available values <br />1 – Key pressed 1 time <br />2 – Key pressed 2 times <br />4 – Key pressed 3 times <br />8 – Key hold down and key released</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_41_1" type="integer" groupName="configuration"
@@ -314,12 +315,7 @@ Alarm configuration – duration<br /> <h1>Overview</h1><p>This parameter define
 Second button – scenes sent<br /> <h1>Overview</h1><p>This parameter determines which actions result in sending scene IDs assigned to them. Values can be combined (e.g. 1+2=3 means that scenes for single and double click are sent). Enabling scenes for triple click disables entering the device in learn mode by triple clicking. <br />Available values <br />1 – Key pressed 1 time <br />2 – Key pressed 2 times <br />4 – Key pressed 3 times <br />8 – Key hold down and key released</p>
         ]]></description>
         <default>0</default>
-        <options>
-          <option value="1">Key pressed 1 time</option>
-          <option value="2">Key pressed 2 times</option>
-          <option value="4">Key pressed 3 times</option>
-          <option value="8">Key hold down and key released</option>
-        </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_60_1" type="integer" groupName="configuration">

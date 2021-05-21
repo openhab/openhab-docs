@@ -1,19 +1,19 @@
 ---
 layout: documentation
-title: FGWDSEU - ZWave
+title: FGWDSEU-221 - ZWave
 ---
 
 {% include base.html %}
 
-# FGWDSEU WALLI SWITCH FIBARO DOUBLE SWITCH
-This describes the Z-Wave device *FGWDSEU*, manufactured by *[Fibargroup](http://www.fibaro.com/)* with the thing type UID of ```fibaro_fgwdseu_00_000```.
+# FGWDSEU-221 FIBARO Walli Double Switch
+This describes the Z-Wave device *FGWDSEU-221*, manufactured by *[Fibargroup](http://www.fibaro.com/)* with the thing type UID of ```fibaro_fgwdseu_00_000```.
 
 The device is in the category of *Wall Switch*, defining Any device attached to the wall that controls a binary status of something, for ex. a light switch.
 
-![FGWDSEU product image](https://opensmarthouse.org/zwavedatabase/1181/image/)
+![FGWDSEU-221 product image](https://opensmarthouse.org/zwavedatabase/1181/image/)
 
 
-The FGWDSEU supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is also able to participate in the routing of data between other devices in the mesh network.
+The FGWDSEU-221 supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is also able to participate in the routing of data between other devices in the mesh network.
 
 ## Overview
 
@@ -52,9 +52,13 @@ To remove the device from the Z-Wave network:
   4. LED will start blinking yellow, wait for the removing process to end.
   5. Successful removing will be confirmed by the Z-Wave controller’s message and red LED colour.
 
+### General Usage Information
+
+
+
 ## Channels
 
-The following table summarises the channels available for the FGWDSEU -:
+The following table summarises the channels available for the FGWDSEU-221 -:
 
 | Channel Name | Channel ID | Channel Type | Category | Item Type |
 |--------------|------------|--------------|----------|-----------|
@@ -160,7 +164,7 @@ The ```meter_kwh2``` channel is of type ```meter_kwh``` and supports the ```Numb
 
 ## Device Configuration
 
-The following table provides a summary of the 39 configuration parameters available in the FGWDSEU.
+The following table provides a summary of the 39 configuration parameters available in the FGWDSEU-221.
 Detailed information on each parameter can be found in the sections below.
 
 | Param | Name  | Description |
@@ -181,7 +185,7 @@ Detailed information on each parameter can be found in the sections below.
 | 33 | Alarm configuration - 4th slot | Alarm configuration - 4th slot |
 | 34 | Alarm configuration - 5th slot | Alarm configuration - 5th slot |
 | 35 | Alarm configuration – duration | Alarm configuration – duration |
-| 40 | First button – scenes sent | 1 - Key pressed 1 time |
+| 40 | First button – scenes sent | First Button - scenes sent |
 | 41 | Second button – scenes sent | Second button – scenes sent |
 | 60 | Power reports – include self-consumption | Power reports – include self-consumption |
 | 61 | Power reports for first channel – on change | Power reports for first channel – on change |
@@ -549,7 +553,7 @@ This parameter has the configuration ID ```config_35_2``` and is of type ```INTE
 
 ### Parameter 40: First button – scenes sent
 
-1 - Key pressed 1 time
+First Button - scenes sent
 This parameter determines which actions result in sending scene IDs assigned to them. Values can be combined (e.g. 1+2=3 means that scenes for single and double click are sent). Enabling scenes for triple click disables entering the device in learn mode by triple clicking.  
 Available values  
 1 – Key pressed 1 time  
@@ -572,14 +576,7 @@ Available values
 2 – Key pressed 2 times  
 4 – Key pressed 3 times  
 8 – Key hold down and key released
-The following option values may be configured, in addition to values in the range 0 to 15 -:
-
-| Value  | Description |
-|--------|-------------|
-| 1 | Key pressed 1 time |
-| 2 | Key pressed 2 times |
-| 4 | Key pressed 3 times |
-| 8 | Key hold down and key released |
+Values in the range 0 to 15 may be set.
 
 The manufacturer defined default value is ```0```.
 
@@ -912,7 +909,7 @@ This parameter has the configuration ID ```config_161_2``` and is of type ```INT
 
 Association groups allow the device to send unsolicited reports to the controller, or other devices in the network. Using association groups can allow you to eliminate polling, providing instant feedback of a device state change without unnecessary network traffic.
 
-The FGWDSEU supports 5 association groups.
+The FGWDSEU-221 supports 5 association groups.
 
 ### Group 1: Lifeline
 
