@@ -212,7 +212,8 @@ This is a table describing the Equipment, Point and Property classes needed to e
 
 | Badge        | Type        | Equipment                                                  | Point                              | Property    |
 |--------------|-------------|------------------------------------------------------------|------------------------------------|-------------|
-| Lights       | Status      | *Any*                                                        | Control, Switch                  | Light       |
+| Low Battery  | Status      | *Any*                                                      | LowBattery                         | *Any*       |
+| Lights       | Status      | *Any*                                                      | Control, Switch                    | Light       |
 | Windows      | Status      | Window                                                     | OpenState                          | *Any*       |
 | Doors        | Status      | Door, FrontDoor, BackDoor, InnerDoor, CellarDoor, SideDoor | OpenState                          | *Any*       |
 | Garage Doors | Status      | GarageDoor                                                 | OpenState                          | *Any*       |
