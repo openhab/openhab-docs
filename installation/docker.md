@@ -39,6 +39,10 @@ The Image has a very minimal installation of Linux with no services running and 
 
 ## Installation through Docker
 
+::: tip Note
+Some explanations are valid for linux systems only, alltough some windows examples can be found below.
+:::
+
 ### Obtaining the Official image from DockerHub
 
 [Docker Hub](https://hub.docker.com/r/openhab/openhab/) has the basic information necessary to acquire and run the Docker image.
