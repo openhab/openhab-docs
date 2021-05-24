@@ -2,12 +2,10 @@ name: Cherry pick automation
 # Automatically create pull requests to release branches on condition
 
 on:
-  pull_request:
+  pull_request_target:
     branches:
       - main
     types: ["closed"]
-
-permissions: write-all
 
 jobs:
   cherry_pick_release_stable:
