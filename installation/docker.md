@@ -39,6 +39,10 @@ The Image has a very minimal installation of Linux with no services running and 
 
 ## Installation through Docker
 
+::: tip Note
+Some explanations are valid for linux systems only, alltough some windows examples can be found below.
+:::
+
 ### Obtaining the Official image from DockerHub
 
 [Docker Hub](https://hub.docker.com/r/openhab/openhab/) has the basic information necessary to acquire and run the Docker image.
@@ -77,6 +81,10 @@ Note, always review the README on [Docker Hub](https://hub.docker.com/r/openhab/
 Services can be run an maintained on a Linux machine one of two ways, using Docker or using the system's built in service management (e.g. systemd).
 If using docker to manage the service, run the following command:
 
+:::: tabs
+
+::: tab Linux
+
 ```bash
 docker run \
         --name openhab \
@@ -93,6 +101,31 @@ docker run \
         --restart=always \
         openhab/openhab:<version>-<distribution>
 ```
+
+:::
+
+::: tab Windows
+
+```bash
+docker run ^
+        --name openhab ^
+        --net=host ^
+        -v /etc/localtime:/etc/localtime:ro ^
+        -v /etc/timezone:/etc/timezone:ro ^
+        -v /opt/openhab/conf:/openhab/conf ^
+        -v /opt/openhab/userdata:/openhab/userdata ^
+        -v /opt/openhab/addons:/openhab/addons ^
+        -d ^
+        -e USER_ID=<uid> ^
+        -e GROUP_ID=<gid> ^
+        -e CRYPTO_POLICY=unlimited ^
+        --restart=always ^
+        openhab/openhab:<version>-<distribution>
+```
+
+:::
+
+::::
 
 Where
 
@@ -229,12 +262,31 @@ If you want use an USB stick (for example for Z-Wave network), then it will be n
 In Docker openHAB is running in name of `openhab`, a restricted user.
 The stick will work if you run the following command right after docker image is started.
 
+:::: tabs
+
+::: tab Linux
+
 ```bash
 docker exec \
     -d \
     openhab \
     /bin/chmod o+rw /dev/ttyACM0
 ```
+
+:::
+
+::: tab Windows
+
+```bash
+docker exec ^
+    -d ^
+    openhab ^
+    /bin/chmod o+rw /dev/ttyACM0
+```
+
+:::
+
+::::
 
 This command changes permissions of the specific device as expected (readable and writable for everyone).
 
