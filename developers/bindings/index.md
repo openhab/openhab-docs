@@ -1055,7 +1055,7 @@ These are the requirements for logos:
 File size is key as the website displays hundreds of small logos on the same page.
 To shrink the file size, save your logo with Palette-Based Colors (sometimes called "Indexed-RGBA").
 Also, JPEG compression artifacts from prior conversions or halo around the logo increases file size dramatically.
-There are online converters to convert your True Color PNG logo to Palette-Based Colors. E.g. https://compresspng.com/.
+There are online converters to convert your True Color PNG logo to Palette-Based Colors. E.g. <https://compresspng.com/>.
 Or use zopflipng: `zopflipng -m --filters=0me --lossy_8bit --lossy_transparent -y logo.png logo.png`
 
 *After* your binding's pull request has been merged, you can upload your logo by filing another pull request to the [openhab-docs/images/addons/](https://github.com/openhab/openhab-docs/tree/main/images/addons) repository.
