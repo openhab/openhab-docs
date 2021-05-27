@@ -5,6 +5,7 @@ title: Miele Cloud - Bindings
 type: binding
 description: "This binding integrates [Miele@home](https://www.miele.de/brand/smarthome-42801.htm) appliances via a cloud connection."
 since: 3x
+logo: images/addons/mielecloud.png
 install: manual
 ---
 
