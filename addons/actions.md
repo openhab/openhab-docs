@@ -123,9 +123,9 @@ Therefore openHAB provides a bunch methods to be used in Rules.
 
 #### Rules DSL
 
-- `boolean isLocation(Item)` - checks if the given Item is is a Location
-- `boolean isEquipment(Item)` - checks if the given Item is is an Equipment
-- `boolean isPoint(Item)` - checks if the given Item is is a Point
+- `boolean isLocation(Item)` - checks if the given Item is a Location
+- `boolean isEquipment(Item)` - checks if the given Item is an Equipment
+- `boolean isPoint(Item)` - checks if the given Item is a Point
 - `Item getLocation(Item)` - gets the Location Item of the Item, returns the related Location Item of the Item or `null`
 - `Class<? extends Location> getLocationType(Item)` - gets the Location type of the Item, returns the related Location type of the Item or `null`
 - `Item getEquipment(Item)` - gets the Equipment Item an Item belongs to, returns the related Equipment Item of the Item or `null`
@@ -176,9 +176,9 @@ end
 The Timer object supports the following methods:
 
 - `cancel`: prevents the scheduled timer from executing. Most of the time `cancel` is used used in conjunction with setting the timer handler to `null` as a convenient indicator that some previously defined timer is now finished with. However setting the handler to `null` does not interact with the timer itself.
-- `isActive`: returns true if the timer will be executed as scheduled, i.e. it has not been cancelled or completed.
-- `isRunning`: returns true if the code is currently executing (i.e. the timer activated the code but it is not done running).
-- `hasTerminated`: returns true if the code has run and completed.
+- `isActive`: returns `true` if the timer will be executed as scheduled, i.e. it has not been cancelled or completed.
+- `isRunning`: returns `true` if the code is currently executing (i.e. the timer activated the code but it is not done running).
+- `hasTerminated`: returns `true` if the code has run and completed.
 - `reschedule(AbstractInstant instant)`: reschedules the timer to execute at the new time. If the Timer has terminated this method does nothing.
 
 ### Thing Status Action
