@@ -38,14 +38,14 @@ These dependencies are embedded in the resulting bundle automatically.
 
 There are two exceptions:
 
-1. Dependencies to other openHAB bundles (e.g. `org.openhab.addons.bundles/org.openhab.binding.bluetooth/2.5.0-SNAPSHOT` or `org.openhab.addons.bundles/org.openhab.transform.map/2.5.0-SNAPSHOT`).
+1. Dependencies to other openHAB bundles (e.g. `org.openhab.addons.bundles/org.openhab.binding.bluetooth/3.1.0-SNAPSHOT` or `org.openhab.addons.bundles/org.openhab.transform.map/3.1.0-SNAPSHOT`).
 1. Bundles that are used by more than one binding (e.g. Netty-bundles like `io.netty/netty-common/4.1.34.Final`).
 
 Dependencies on other openHAB bundles should have the scope `provided`.
 To ensure that they are available at runtime they also need to be added to the `feature.xml`:
 
 ```xml
-  <bundle dependency="true">mvn:org.openhab.addons.bundles/org.openhab.binding.bluetooth/2.5.0-SNAPSHOT</bundle>
+  <bundle dependency="true">mvn:org.openhab.addons.bundles/org.openhab.binding.bluetooth/3.1.0-SNAPSHOT</bundle>
 ```
 
 ### Internal dependency
