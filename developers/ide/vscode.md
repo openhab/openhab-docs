@@ -39,7 +39,7 @@ The following steps will show you how to setup a specific bundle for development
 
    1. Open console to the bundle location (example: `%BASE%\openhab-addons\bundles\org.openhab.binding.russound`)
    1. `mvn clean install -DskipChecks` in the console to build the bundle
-   1. Should produce a jar file in the 'target' directory of the bundle(example: `%BASE%\openhab-addons\bundles\org.openhab.binding.russound\target\org.openhab.binding.russound-2.5.0-SNAPSHOT.jar`)
+   1. Should produce a jar file in the 'target' directory of the bundle(example: `%BASE%\openhab-addons\bundles\org.openhab.binding.russound\target\org.openhab.binding.russound-3.1.0-SNAPSHOT.jar`)
 
 1. Open VSCode and then open the folder of the bundle.  From VSCode - use `File->Open Folder->choose bundle directory` (example: `%BASE%\openhab-addons\bundles\org.openhab.binding.russound`)
 
