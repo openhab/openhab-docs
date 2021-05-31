@@ -26,7 +26,7 @@ A layout that is optimal on a mobile phone screen is often not on a laptop or la
 ::: warning Widget design
 `oh-block`, [`oh-grid-row`](./oh-grid-row.html) and [`oh-grid-col`](./oh-grid-col.html) are used for layout page design.
 These controls are not suitable when designing custom widgets.
-Use the [f7-block](https://v5.framework7.io/vue/block.html), [f7-row](https://v5.framework7.io/vue/grid.html) and [f7-column](https://v5.framework7.io/vue/grid.html) to organize components in custom widget designs.
+Use the [f7-block](https://v5.framework7.io/vue/block.html), [f7-row](https://v5.framework7.io/vue/grid.html) and [f7-col](https://v5.framework7.io/vue/grid.html) to organize components in custom widget designs.
 :::
 
 * Layout pages are discussed within the main documentation [here](/docs/ui/layout-pages.html).
