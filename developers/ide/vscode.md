@@ -27,7 +27,7 @@ The following steps will only need to be done once to setup both VSCode and your
 
     ![define .vscode](images/ide_setup_vscode_settings.png)
 
-    Either globally define the formatting options via ```Files->Preferences->Settings->Extendions->Java configuration``` (or in the global ```settings.json```).  You can also define them local to a specific bundle by putting those lines in the ```.vscode/settings.json``` file in the bundle (similar to ```tasks.json```/```launch.json``` below).
+    Either globally define the formatting options via ```Files->Preferences->Settings->Extensions->Java configuration``` (or in the global ```settings.json```).  You can also define them local to a specific bundle by putting those lines in the ```.vscode/settings.json``` file in the bundle (similar to ```tasks.json```/```launch.json``` below).
 
  Download [settings.json](https://raw.githubusercontent.com/openhab/openhab-docs/main/developers/ide/examples/vscode/settings.json) for the recommended settings (or simply wish to copy the URLs in the above image).
 
