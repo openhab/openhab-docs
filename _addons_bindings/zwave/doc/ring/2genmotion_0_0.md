@@ -8,7 +8,7 @@ title: 2Gen Motion - ZWave
 # 2Gen Motion 2nd Gen Motion Sensor
 This describes the Z-Wave device *2Gen Motion*, manufactured by *Ring* with the thing type UID of ```ring_2genmotion_00_000```.
 
-The device is in the category of *Battery*, defining Batteries, Energy Storages.
+The device is in the category of *Motion Detector*, defining Motion sensors/detectors.
 
 ![2Gen Motion product image](https://opensmarthouse.org/zwavedatabase/1361/image/)
 
@@ -21,11 +21,11 @@ Ring Alarm Motion Detector is a wireless sensor for the Ring Alarm system which 
 
 Notes:
 
-1. This product can be operated in any Z-Wave™ network with other Z-Wave certified devices from other manufacturers. All mains operated nodes within the network will act as repeaters regardless of vendor to increase reliability of the network.
+  1. This product can be operated in any Z-Wave™ network with other Z-Wave certified devices from other manufacturers. All mains operated nodes within the network will act as repeaters regardless of vendor to increase reliability of the network.
 
 ### Inclusion Information
 
- After powering on the device, press and hold the button on the front of the device for ~3 seconds.  
+After powering on the device, press and hold the button on the front of the device for ~3 seconds.  
 
 
 Release the button and the device will enter Classic inclusion mode which implements both classic inclusion with a Node Information Frame, and Network Wide Inclusion. 
@@ -34,10 +34,8 @@ During Classic Inclusion mode, the green LED will blink three times followed by
 
 ### Exclusion Information
 
-1. Locate the pinhole reset button on the back of the device in the battery compartment.  
-
-
-2. With the controller in Remove (Z-Wave Exclusion) mode, use a paper clip or similar object and tap the pinhole button. The device’s red LED turns on solid to indicate the device was removed from the network.
+  1. Locate the pinhole reset button on the back of the device in the battery compartment.
+  2. With the controller in Remove (Z-Wave Exclusion) mode, use a paper clip or similar object and tap the pinhole button. The device’s red LED turns on solid to indicate the device was removed from the network.
 
 ### General Usage Information
 

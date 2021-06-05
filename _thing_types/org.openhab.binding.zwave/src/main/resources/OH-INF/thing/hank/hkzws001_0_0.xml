@@ -8,7 +8,7 @@
   <thing-type id="hank_hkzws001_00_000" listed="false">
     <label>HKZW-SO01 Smart Plug with two USB ports</label>
     <description><![CDATA[
-Smart Plug with two USB ports<br /> <h1>Overview</h1><p>Hank Smart Plug is a Z-Wave Switch plugin module specifically used to enable Z-Wave command and control (On/Off) of any plug-in tool. It can report wattage consumption or kWh energy usage. Smart Plug is also a security Z-Wave device and supports Over The Air (OTA) feature for the product's firmware upgrade.</p> <p>Based on the Z-Wave Plus specification.</p> <p>Features List:</p> <ol><li>Supports 1xAC output and 2xUSB outputs;</li> <li>AC output switch on/off by manual or Z-Wave command;</li> <li>LED indicates the working status;</li> <li>Z-Wave plus compatible (500 serials Product);</li> <li>Supporting power meter;</li> <li>Supporting repeater role</li> <li>Supporting firmware OTA</li> </ol> <br /> <h2>Inclusion Information</h2><p>Manual Z-Wave network inclusion:</p> <p>(1) Connect the power supply.</p> <p>(2) Set the Z-Wave network main controller into learning mode (see Z-Wave network controller operating manual).</p> <p>(3) Triple click the Z-button</p> <p>(4) Smart Plug should be recognized and included into the Z-Wave network.</p> <p>TIP:</p> <p>If the LED indicator not blinking when inserting a Plug into a socket, it means the plug was already added in other existing network.</p> <br /> <h2>Exclusion Information</h2><p>REMOVING FROM Z-WAVE NETWORK</p> <p>To remove Smart Plug from the Z-Wave network:</p> <p>(1) Insert the Plug into a socket,</p> <p>(2) Set the Z-Wave network controller into the exclusion mode (see Z-Wave controller operating manual)</p> <p>(3) Triple click the Z button.</p>
+Smart Plug with two USB ports<br /> <h1>Overview</h1><p>Hank Smart Plug is a Z-Wave Switch plugin module specifically used to enable Z-Wave command and control (On/Off) of any plug-in tool. It can report wattage consumption or kWh energy usage. Smart Plug is also a security Z-Wave device and supports Over The Air (OTA) feature for the product's firmware upgrade.</p> <p>Based on the Z-Wave Plus specification.</p> <p>Features List:</p> <ol><li>Supports 1xAC output and 2xUSB outputs;</li> <li>AC output switch on/off by manual or Z-Wave command;</li> <li>LED indicates the working status;</li> <li>Z-Wave plus compatible (500 serials Product);</li> <li>Supporting power meter;</li> <li>Supporting repeater role</li> <li>Supporting firmware OTA</li> </ol> <br /> <h2>Inclusion Information</h2><p>Manual Z-Wave network inclusion:</p> <ol><li>Connect the power supply.</li><li>Set the Z-Wave network main controller into learning mode (see Z-Wave network controller operating manual).</li><li>Triple click the Z-button</li><li>Smart Plug should be recognized and included into the Z-Wave network.</li></ol> <p>TIP:</p> <p>If the LED indicator not blinking when inserting a Plug into a socket, it means the plug was already added in other existing network.</p> <br /> <h2>Exclusion Information</h2><p>REMOVING FROM Z-WAVE NETWORK</p> <p>To remove Smart Plug from the Z-Wave network:</p> <ol><li>Insert the Plug into a socket</li><li>Set the Z-Wave network controller into the exclusion mode (see Z-Wave controller operating manual)</li><li>Triple click the Z button.</li></ol> <br /> <h2>Wakeup Information</h2><p><br /></p>
     ]]></description>
     <category>PowerOutlet</category>
 
@@ -106,7 +106,7 @@ Define how the plug reacts after power failure<br /> <h1>Overview</h1><p>Define 
 
       <parameter name="config_24_1" type="integer" groupName="configuration"
                  min="0" max="2">
-        <label>24: Notifcation on Load Change</label>
+        <label>24: Notification on Load Change</label>
         <description><![CDATA[
 Smart Plug can send notifications to association device load state changes.<br /> <h1>Overview</h1><p>Smart Plug can send notifications to association device load state changes.</p> <p>0 -Disabled.</p> <p>1 - Basic report.</p> <p>2 - Basic report only when Load condition not changed by Z-WAVE Command.</p>
         ]]></description>
@@ -126,7 +126,7 @@ LED in the device will indicate the state of load<br /> <h1>Overview</h1><p>Afte
 
       <parameter name="config_151_2" type="integer" groupName="configuration"
                  min="0" max="65535">
-        <label>151: Threshold of power report</label>
+        <label>151: Threshold of Power Report</label>
         <description><![CDATA[
 Power Threshold at which to send meter report<br /> <h1>Overview</h1><p>Power threshold to be interpreted, when the change value of load power exceeds the setting threshold, the smart plug will send meter report to association device (Group Lifeline).</p> <p>Available settings: 0 - 65535 (0 - 65535W)</p> <p>0 - The function is disabled.</p> <p>Default setting: 50 (50W)</p>
         ]]></description>
@@ -138,7 +138,7 @@ Power Threshold at which to send meter report<br /> <h1>Overview</h1><p>Power th
                  min="0" max="255">
         <label>152: Percentage Threshold of Power Report</label>
         <description><![CDATA[
-Percentage Threshold at which to send meter report<br /> <h1>Overview</h1><p>Power percentage threshold to be interpreted, when change value of the load power exceeds the setting threshold, the smart plug will send meter report to association device (Group Lifeline).</p> <p>Available settings: 0 - 255 (0 - 255%)</p> <p>0 - The function is disabled.</p> <p>Default setting: 10 (10%)</p>
+Percentage Threshold at which to send meter report<br /> <h1>Overview</h1><p>Power percentage threshold to be interpreted, when change value of the load power exceeds the setting threshold, the smart plug will send meter report to association device (Group Lifeline).</p> <p>Available settings: 0 - 100 (0 - 100%)</p> <p>0 - The function is disabled.</p> <p>Default setting: 10 (10%)</p>
         ]]></description>
         <default>10</default>
         <limitToOptions>false</limitToOptions>

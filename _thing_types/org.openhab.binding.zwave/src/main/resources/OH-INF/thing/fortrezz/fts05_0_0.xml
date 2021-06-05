@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="fortrezz_fts05_00_000" listed="false">
+    <label>FTS05 Wireless Water Leak Sensor</label>
+    <description><![CDATA[
+Wireless Water Leak Sensor<br /> <h1>Overview</h1><p>Gain peace of mind when away from home. Aging and faulty appliances, corroded water heaters, fixtures in bathrooms and laundry rooms can all cause water damage in the home, which is an expensive fix! Our flood sensor alerts you when it gets wet. Just simply place on the floor near water using appliances and fixtures such as dishwashers, toilets, and washing machines. When paired with our automated water shut-off valve, it will signal the valve to automatically turn off the water supply, eliminating any further damage from occurring. Sensor also monitors temperature to detect freezing conditions and even high heat in case of a fire. Place the sensor directly on the floor or in a cabinet under or near water using appliances and fixtures.<br /></p> <br /> <h2>Inclusion Information</h2><p>1. Set inclusion mode on your controller</p><p>2. Press and hold the program button for 1-3 seconds. The LED on the sensor will blink twice if successful. </p> <br /> <h2>Exclusion Information</h2><p>1. Set up exclusion mode on your controller</p><p>2. Press and hold the button for 1-3 seconds. The LED on the sensor will blink four times once complete.</p> <br /> <h2>Wakeup Information</h2><p>Check to make sure the sensor isn’t already in a network. Press the program button and observe LED indicator. You</p><p>may need to first exclude the unit from a network, then include it.</p>
+    ]]></description>
+    <category>Battery</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="sensor_temperature" typeId="sensor_temperature">
+        <label>Sensor (temperature)</label>
+        <properties>
+          <property name="binding:*:QuantityType">COMMAND_CLASS_SENSOR_MULTILEVEL;type=TEMPERATURE</property>
+        </properties>
+      </channel>
+      <channel id="alarm_flood" typeId="alarm_flood">
+        <label>Alarm (flood)</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=FLOOD</property>
+        </properties>
+      </channel>
+      <channel id="alarm_heat" typeId="alarm_heat">
+        <label>Alarm (heat)</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=HEAT</property>
+        </properties>
+      </channel>
+      <channel id="alarm_power" typeId="alarm_power">
+        <label>Alarm (power)</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=POWER_MANAGEMENT</property>
+        </properties>
+      </channel>
+      <channel id="alarm_system" typeId="alarm_system">
+        <label>Alarm (system)</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=SYSTEM</property>
+        </properties>
+      </channel>
+      <channel id="battery-level" typeId="system.battery-level">
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_BATTERY</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">FortrezZ LLC</property>
+      <property name="modelId">FTS05</property>
+      <property name="manufacturerId">0084</property>
+      <property name="manufacturerRef">00A3:020E</property>
+      <property name="dbReference">1386</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_1_1" type="integer" groupName="configuration"
+                 min="-10" max="69">
+        <label>1: Temperature low threshold</label>
+        <description>Temperature low threshold</description>
+        <default>4</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_2_1" type="integer" groupName="configuration"
+                 min="-9" max="70">
+        <label>2: Temperature high threshold</label>
+        <description>Temperature high threshold</description>
+        <default>70</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_4_1" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>4: Water Alarm Association Mode</label>
+        <description>Water Alarm Association Mode (send Basic Set ON or Basic Set OFF when alarm detected)</description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: Water Alarm Active</label>
+        <description><![CDATA[
+Basic Set Command ON (default, 0xFF) or OFF (0x00) for Water Alarm Activity<br /> <h1>Overview</h1><p>Basic Set Command ON (default, 0xFF) or OFF (0x00) is sent to the associated nodes to indicate that a Water Alarm is active. This depends on the parameter 4 configuration value. When the water alarm is cleared, one additional report with the opposite value is sent.</p>
+        ]]></description>
+        <multipleLimit>2</multipleLimit>
+      </parameter>
+
+      <parameter name="group_3" type="text" groupName="association" multiple="true">
+        <label>3: Temperature High Condition</label>
+        <description><![CDATA[
+Basic Set Command with value = 0xFF is sent to the associated nodes to indicate that a Temperature High condition has been detected.<br /> <h1>Overview</h1><p>Basic Set Command with value = 0xFF is sent to the associated nodes to indicate that a Temperature High condition has been detected. When the temperature is back in the normal range, one additional report with value = 0x00 is sent.</p>
+        ]]></description>
+        <multipleLimit>2</multipleLimit>
+      </parameter>
+
+      <parameter name="group_4" type="text" groupName="association" multiple="true">
+        <label>4: Temperature Low Condition</label>
+        <description><![CDATA[
+Basic Set Command with value = 0xFF is sent to the associated nodes to indicate that a Temperature Low condition has been detected.<br /> <h1>Overview</h1><p>Basic Set Command with value = 0xFF is sent to the associated nodes to indicate that a Temperature Low condition has been detected. When the temperature is back in the normal range, one additional report with value = 0x00 is sent.</p>
+        ]]></description>
+        <multipleLimit>2</multipleLimit>
+      </parameter>
+
+      <parameter name="group_5" type="text" groupName="association" multiple="true">
+        <label>5: Temperature Change Report</label>
+        <description><![CDATA[
+Temperature report (Multilevel Sensor) when the temperature has changed (with filtering/hysteresis to avoid continuous transmissions at a transition point).<br /> <h1>Overview</h1><p>Temperature report (Multilevel Sensor) when the temperature has changed (with filtering/hysteresis to avoid continuous transmissions at a transition point).</p>
+        ]]></description>
+        <multipleLimit>2</multipleLimit>
+      </parameter>
+
+      <parameter name="group_6" type="text" groupName="association" multiple="true">
+        <label>6: Temperature Report 5 Minute</label>
+        <description><![CDATA[
+Temperature report (Multilevel Sensor) every 5 minutes<br /> <h1>Overview</h1><p>Temperature report (Multilevel Sensor) every 5 minutes<br /></p>
+        ]]></description>
+        <multipleLimit>2</multipleLimit>
+      </parameter>
+
+      <parameter name="group_7" type="text" groupName="association" multiple="true">
+        <label>7: Temperature Report 20 Minute</label>
+        <description><![CDATA[
+Temperature report (Multilevel Sensor) every 20 minutes<br /> <h1>Overview</h1><p>Temperature report (Multilevel Sensor) every 20 minutes</p>
+        ]]></description>
+        <multipleLimit>2</multipleLimit>
+      </parameter>
+
+      <parameter name="group_8" type="text" groupName="association" multiple="true">
+        <label>8: Temperature Report 60 Minute</label>
+        <description><![CDATA[
+Temperature report (Multilevel Sensor) every 60 minutes<br /> <h1>Overview</h1><p>Temperature report (Multilevel Sensor) every 60 minutes<br /></p>
+        ]]></description>
+        <multipleLimit>2</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

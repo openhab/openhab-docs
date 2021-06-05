@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="hank_hkzwso08_00_000" listed="false">
+    <label>HKZW-SO08 Smart Plug</label>
+    <description><![CDATA[
+Smart Plug<br /> <h1>Overview</h1><p>Smart Plug is a Z-Wave Switch plugin module specifically used to enable Z-Wave command and control (on/off) of any plug-in tool. It can report wattage consumption or kWh energy usage.</p><p>This device is a security enabled Z-Wave Plus product that is able to use encrypted Z-Wave Plus messages to communicate to other security enabled Z-Wave Plus products.</p><p>Smart Plug is also a security Z-Wave device and supports the Over The Air (OTA) feature for the product’s firmware upgrade.</p><p>This device must be used in conjunction with a Security Enabled Z-Wave Controller in order to fully utilize all implemented functions.</p><p>Features:</p><ol><li>AC output switch on/off by manual or Z-Wave command;</li><li>RGB LED indicates the Z-WAVE network range and load power;</li><li>Support S0 and S2 security network;</li><li>Supporting power meter;</li><li>Supporting repeater role;</li><li>Supporting firmware OTA;</li><li>Supporting Smart Start;</li><li>Supports over-current protection</li></ol> <br /> <h2>Inclusion Information</h2><p>Manual Z-Wave network inclusion:</p><ol><li>Connect the power supply.</li><li>Set the Z-Wave network main controller into learning mode (see Z-Wave network controller operating manual).</li><li>Triple click the Z-button</li><li>Smart Plug should be recognized and included into the Z-Wave network.</li></ol> <br /> <h2>Exclusion Information</h2><p>To remove Smart Plug from the Z-Wave network:<br /></p><ol><li>Insert the Plug into a socket</li><li>Set the Z-Wave network controller into the exclusion mode (see Z-Wave controller operating manual)</li><li>Triple click the Z button.</li></ol> <br /> <h2>Wakeup Information</h2><p><br /></p>
+    ]]></description>
+    <category>PowerOutlet</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_binary" typeId="switch_binary">
+        <label>Switch</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY</property>
+        </properties>
+      </channel>
+      <channel id="scene_number" typeId="scene_number">
+        <label>Scene Number</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_SCENE_ACTIVATION</property>
+        </properties>
+      </channel>
+      <channel id="meter_kwh" typeId="meter_kwh">
+        <label>Electric meter (kWh)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_KWh</property>
+        </properties>
+      </channel>
+      <channel id="meter_voltage" typeId="meter_voltage">
+        <label>Electric meter (volts)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_V</property>
+        </properties>
+      </channel>
+      <channel id="meter_watts" typeId="meter_watts">
+        <label>Electric meter (watts)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_W</property>
+        </properties>
+      </channel>
+      <channel id="meter_current" typeId="meter_current">
+        <label>Electric meter (amps)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_A</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Hank</property>
+      <property name="modelId">HKZW-SO08</property>
+      <property name="manufacturerId">0208</property>
+      <property name="manufacturerRef">0100:0019</property>
+      <property name="dbReference">1391</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_20_1" type="integer" groupName="configuration"
+                 min="0" max="1">
+        <label>20: Overload Protection</label>
+        <description><![CDATA[
+If current exceeds 11.5A over 5 seconds, relay will turn off.<br /> <h1>Overview</h1><p>If current exceeds 11.5A over 5 seconds, relay will turn off.</p><p>0 - The function is disabled</p><p>1 - The function is enabled.</p>
+        ]]></description>
+        <default>1</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_21_1" type="integer" groupName="configuration"
+                 min="0" max="2">
+        <label>21: Device Status after Power Failure</label>
+        <description><![CDATA[
+Define how the plug reacts after power failure<br /> <h1>Overview</h1><p>Define how the plug reacts after power failure:</p><p>0 - Smart Plug returns to previous state after a power failure.</p><p>1 - Smart Plug does not memorize its state after a powerfailure.</p><p>Connected device will be on after the power supply is reconnected.</p><p>2 - Smart Plug does not memorize its state after a power failure.</p><p>Connected device will be off after the power supply is reconnected.</p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_24_1" type="integer" groupName="configuration"
+                 min="0" max="2">
+        <label>24: Notification on State Change</label>
+        <description><![CDATA[
+Smart Plug can send notifications when device state changes.<br /> <h1>Overview</h1><p>Smart Plug can send notifications to association device state changes.</p><p>0 - Disabled. But state can be gathered through polling every X minutes.</p><p>1 - Basic report.</p><p>2 - Basic report only when device activated using its physical button.</p>
+        ]]></description>
+        <default>1</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_27_1" type="integer" groupName="configuration"
+                 min="0" max="1">
+        <label>27: Indicator Mode</label>
+        <description><![CDATA[
+LED in the device will indicate the state of the device<br /> <h1>Overview</h1><p>After smart plug is included into a Z-Wave network, the LED in the device will indicate the state (ON/OFF).</p><p>0 - The LED will follow the status (on/off) of its load.</p><p>1 - When the state changes, the LED will follow the status (on/off), but only for 5 seconds after state modification.</p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_151_2" type="integer" groupName="configuration"
+                 min="0" max="2300">
+        <label>151: Threshold of Power Report</label>
+        <description><![CDATA[
+Power Threshold at which to send meter report<br /> <h1>Overview</h1><p>Power threshold to be interpreted, when the change value of load power exceeds the setting threshold, the smart plug will send meter report to association device (Group Lifeline).</p><p>Available settings: 0 - 2300 (0 - 2300W, being the mazximum power supported by the device, higher values technically possible but irrelevant)</p><p>0 - The function is disabled.</p><p>Default setting: 50 (50W)</p><p>NOTE: Don't provide a too low value otherwise you may flood your Z-Wave network</p>
+        ]]></description>
+        <default>50</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_152_1" type="integer" groupName="configuration"
+                 min="0" max="100">
+        <label>152: Percentage Threshold of Power Report</label>
+        <description><![CDATA[
+Percentage Threshold at which to send meter report<br /> <h1>Overview</h1><p>Power percentage threshold to be interpreted, when change value of the load power exceeds the setting threshold, the smart plug will send meter report to association device (Group Lifeline).</p><p>Available settings: 0 - 100 (0 - 100%)</p><p>0 - The function is disabled.</p><p>Default setting: 10 (10%)</p><p>NOTE: Don't provide a too low value otherwise you may flood your Z-Wave network<br /></p>
+        ]]></description>
+        <default>10</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_171_4" type="integer" groupName="configuration"
+                 min="3600" max="2678400">
+        <label>171: Power Report Frequency</label>
+        <description><![CDATA[
+The interval of sending power report to association device (Group Lifeline).<br /> <h1>Overview</h1><p>The interval of sending power report to association device (Group Lifeline).</p><p>Available settings: 0- 2678400 (0 - 2678400 seconds)</p><p>0 -The function is disabled.</p><p>Default setting: 3600 (1 hour).</p>
+        ]]></description>
+        <default>3600</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_172_4" type="integer" groupName="configuration"
+                 min="3600" max="2678400">
+        <label>172: Energy Report Frequency</label>
+        <description><![CDATA[
+The interval of sending energy report to association device (Group Lifeline).<br /> <h1>Overview</h1><p>The interval of sending energy report to association device (Group Lifeline).</p><p>Available settings: 3600 - 2678400 (3600 - 2678400 seconds)</p><p>0 -The function is disabled.</p><p>Default setting: 7200 (2 hours).</p>
+        ]]></description>
+        <default>7200</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_173_4" type="integer" groupName="configuration"
+                 min="3600" max="2678400">
+        <label>173: Voltage Report Frequency</label>
+        <description><![CDATA[
+The interval of sending voltage (V) report to association device (Group Lifeline)<br /> <h1>Overview</h1><p>The interval of sending voltage report to association device (Group Lifeline)</p><p>Available settings: 3600 - 2678400 (3600 - 2678400 seconds)</p><p>0 -The function is disabled.</p><p>Default setting: 0 (disabled).</p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_174_4" type="integer" groupName="configuration"
+                 min="3600" max="2678400">
+        <label>174: Electric Current Report Frequency</label>
+        <description><![CDATA[
+Interval for sending electric current (A) report.<br /> <h1>Overview</h1><p>The interval of sending electric current (A) report to association device (Group Lifeline).</p><p>Available settings: 3600 - 2678400 (3600 - 2678400 seconds)</p><p>0 -The function is disabled.</p><p>Default setting: 0 (disabled).</p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Lifeline</label>
+        <description>Meter, Basic etc.</description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>
