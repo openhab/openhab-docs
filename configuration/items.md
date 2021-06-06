@@ -754,15 +754,19 @@ Number:Temperature Outdoor_Temperature { channel="openweathermap:weather-and-for
 // Triggers a temperature high alarm (Switch = ON) as of 30 °c and stays ON until temperature drops below 29 °C
 Switch Outdoor_Temperature_High_Alert { channel="openweathermap:weather-and-forecast:api:local:current#temperature" [profile="system:hysteresis", lower="29 °C", upper="30 °C"] }
 // Temperture low alert below 0 °C
-Switch Outdoor_Temperature_Low_Alert { channel="openweathermap:weather-and-forecast:api:local:current#temperature" [profile="system:hysteresis", lower="0 °C", inverted=true] }
+Switch Outdoor_Temperature_Low_Alert { channel="openweathermap:weather-and-forecast:api:local:current#temperature" [profile="system:hysteresis", lower="0 °C", inverted="true"] }
 
 /** Battery Level Profile **/
 Number Battery_Level { channel="serialbutton:button:mybutton:battery-level" }
 // Indicates a battery low alarm if battery level drops below 15
-Switch Low_Battery { channel="serialbutton:button:mybutton:battery-level" [profile="system:hysteresis", lower=15, inverted=true] }
+Switch Low_Battery { channel="serialbutton:button:mybutton:battery-level" [profile="system:hysteresis", lower=15, inverted="true"] }
 
 /** Range Profile **/
 Number:Dimensionless Outdoor_Humidity { channel="openweathermap:weather-and-forecast:api:local:current#humidity" }
 // Triggers a humidity low / high alarm (Switch = ON) if humidity drops below 40 % or exceeds 60 %
-Switch Outdoor_Humidity_Alert { channel="openweathermap:weather-and-forecast:api:local:current#humidity" [profile="system:range", lower="40 %", upper="60 %", inverted=true] }
+Switch Outdoor_Humidity_Alert { channel="openweathermap:weather-and-forecast:api:local:current#humidity" [profile="system:range", lower="40 %", upper="60 %", inverted="true"] }
+
+/** Timestamp Offset **/
+// 30 min before sunrise
+DateTime Sunrise { channel="astro:sun:home:rise#start" [profile="system:timestamp-offset", offset=-1800] }
 ```
