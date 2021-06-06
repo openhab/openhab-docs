@@ -51,7 +51,7 @@ If you already have Eclipse installed it is recommended to perform a separate Ec
 
     ::: warning Attention
     Select `2.5.x` if you want to develop for 2.5.x.
-    The Core Framework only has a master branch (3.0 development), which means you can no longer make Core Framework changes for a 2.5.x system.
+    The Core Framework only has a main branch (3.0 development), which means you can no longer make Core Framework changes for a 2.5.x system.
     :::
 
 1. Click `Next>`, verify/modify Root and install folder name. Click on `Show all variables` to open the window shown below.
