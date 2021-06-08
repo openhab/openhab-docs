@@ -72,11 +72,12 @@ Color  { ga="Light" [ colorTemperatureRange="2000,9000" ] }
 |---|---|
 | **Device Type** | [Light](https://developers.google.com/assistant/smarthome/guides/light) |
 | **Supported Traits** | [OnOff](https://developers.google.com/assistant/smarthome/traits/onoff), [ColorSetting](https://developers.google.com/assistant/smarthome/traits/colorsetting), [Brightness](https://developers.google.com/assistant/smarthome/traits/brightness) |
-| **Supported Items** | Group as `light` with two Number or Dimmer members as `lightBrightness` & `lightColorTemperature` |
+| **Supported Items** | Group as `light` with the following members: Number or Dimmer as `lightBrightness`, Number or Dimmer as `lightColorTemperature`, (optional) Switch as `lightPower` |
 | **Configuration** | (optional) `useKelvin=true/false`<br>(optional) `colorTemperatureRange="minK,maxK"`<br>_Hint: if you do not set `useKelvin=true` then `colorTemperatureRange` is required_ |
 
 ```shell
 Group  lightGroup { ga="Light" [ useKelvin=true, colorTemperatureRange="2000,9000" ] }
+Switch powerItem      (lightGroup) { ga="lightPower" }
 Dimmer brightnessItem (lightGroup) { ga="lightBrightness" }
 Number colorItem      (lightGroup) { ga="lightColorTemperature" }
 ```
