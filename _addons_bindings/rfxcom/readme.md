@@ -1225,7 +1225,10 @@ Any messages that RFXCOM can receive but not decode.
         *   RTS - RTS
         *   SELECT\_PLUS - Select Plus
         *   HOME\_CONFORT - Home Confort
-
+        *   EDISIO - Edisio
+        *   HONEYWELL - Honeywell
+        *   FUNKBUS - Gira Funk-Bussystem
+        *   BYRONSX - Byron SX
 
 ### uv - RFXCOM UV/Temperature Sensor
 
