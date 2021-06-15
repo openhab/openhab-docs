@@ -17,7 +17,7 @@ FIBARO Walli Double Switch<br /> <h1>Overview</h1><p>FIBARO Walli Double Switch 
       <channel id="switch_binary" typeId="switch_binary">
         <label>Switch</label>
         <properties>
-          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY</property>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY,COMMAND_CLASS_BASIC</property>
         </properties>
       </channel>
       <channel id="meter_watts" typeId="meter_watts">

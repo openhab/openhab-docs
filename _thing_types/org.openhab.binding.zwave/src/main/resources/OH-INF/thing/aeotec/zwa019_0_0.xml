@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="aeotec_zwa019_00_000" listed="false">
+    <label>ZWA019 Aeotec Water Sensor 7 Pro</label>
+    <description><![CDATA[
+Aeotec Water Sensor 7 Pro<br /> <h1>Overview</h1><p>The AEOTEC Water Sensor 7 Pro is a sensor, which detects water leakage, measures temperature and humidity.</p> <br /> <h2>Inclusion Information</h2><p>Inclusion (If your gateway does not support SmartStart) <br /></p><ol><li>Open the housing.</li><li>Remove the battery protection.</li><li>Press the tamper on the side of the appliance three times quickly.</li></ol> <br /> <h2>Exclusion Information</h2><p>Exclusion <br /></p><ol><li>Open the housing.</li><li>Press the tamper on the side of the appliance three times quickly.</li></ol> <br /> <h2>Wakeup Information</h2><p>A single click on the button will wake up the device.</p>
+    ]]></description>
+    <category>Sensor</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="sensor_temperature" typeId="sensor_temperature">
+        <label>Sensor (temperature)</label>
+        <properties>
+          <property name="binding:*:QuantityType">COMMAND_CLASS_SENSOR_MULTILEVEL;type=TEMPERATURE</property>
+        </properties>
+      </channel>
+      <channel id="sensor_relhumidity" typeId="sensor_relhumidity">
+        <label>Sensor (relative humidity)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_SENSOR_MULTILEVEL;type=RELATIVE_HUMIDITY</property>
+        </properties>
+      </channel>
+      <channel id="alarm_power" typeId="alarm_power">
+        <label>Alarm (power)</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=POWER_MANAGEMENT</property>
+        </properties>
+      </channel>
+      <channel id="alarm_burglar" typeId="alarm_burglar">
+        <label>Alarm (burglar)</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=BURGLAR</property>
+        </properties>
+      </channel>
+      <channel id="alarm_flood" typeId="alarm_flood">
+        <label>Alarm (flood)</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=FLOOD</property>
+        </properties>
+      </channel>
+      <channel id="battery-level" typeId="system.battery-level">
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_BATTERY</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Aeotec Limited</property>
+      <property name="modelId">ZWA019</property>
+      <property name="manufacturerId">0371</property>
+      <property name="manufacturerRef">0102:0013</property>
+      <property name="dbReference">1392</property>
+      <property name="defaultAssociations">1,2,3,4</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_3_1" type="integer" groupName="configuration">
+        <label>3: Visual LED Indications</label>
+        <description>This parameter defines when LEDs will indicate events. Disabling all indications may extend battery life. Value 0 means - No Indications.</description>
+        <default>7</default>
+        <options>
+          <option value="1">Water Leakage Status Change</option>
+          <option value="2">Wake Up</option>
+          <option value="4">Device Tampering</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_4_1" type="integer" groupName="configuration">
+        <label>4: Range Test after double click</label>
+        <description>Allows to enable the a Z-Wave range test with double clicking the tamper switch. The green LED indicates the sensor is in the range and the red LED indicates, its out of range.</description>
+        <default>0</default>
+        <options>
+          <option value="0">Disabled</option>
+          <option value="1">Enabled</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_5_1" type="integer" groupName="configuration">
+        <label>5: 2nd Association Group Trigger</label>
+        <description>This parameter defines the status of the water leakage that causes sending a BASIC command to all devices of Association Group 2.</description>
+        <default>0</default>
+        <options>
+          <option value="0">Switch after Water Leakage Start and Stop</option>
+          <option value="1">Switch after Water Leakage Start</option>
+          <option value="2">Switch after Water Leakage Stop</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_6_1" type="integer" groupName="configuration">
+        <label>6: Command Sent to Devices of Association Group 2</label>
+        <description>This parameter defines which commands is sent to 2nd Association Group</description>
+        <default>2</default>
+        <options>
+          <option value="0">On</option>
+          <option value="1">Off</option>
+          <option value="2">On and Off</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_7_1" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>7: BASIC command value sent to 2nd Association Group on On event</label>
+        <description>This is the BASIC command value sent in case of On event.</description>
+        <default>255</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_8_1" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>8: BASIC command value sent to 2nd Association Group on Off event</label>
+        <description>This is the BASIC command value sent in case of Off event.</description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_9_2" type="integer" groupName="configuration"
+                 min="0" max="23400">
+        <label>9: Time Delay of On command frame</label>
+        <description>On command is sent after a delay defined in this parameter.</description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_10_2" type="integer" groupName="configuration"
+                 min="0" max="32400">
+        <label>10: Time Delay of Off command frame</label>
+        <description>Off command is sent after a delay defined in this parameter.</description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_11_2" type="integer" groupName="configuration"
+                 min="0" max="32400">
+        <label>11: Delay of Tamper Alarm Cancellation</label>
+        <description>Time a tamper alarm is delayed.</description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_12_1" type="integer" groupName="configuration">
+        <label>12: Reporting Tamper Alarm Cancellation</label>
+        <description>This parameter defines if the alarm cancellation event is reported.</description>
+        <default>1</default>
+        <options>
+          <option value="0">Do not send Report</option>
+          <option value="1">Send Report</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_16_1" type="integer" groupName="configuration">
+        <label>16: Minimum Temperature change to report</label>
+        <description>This value defines the minimum change of temperature to cause an unsolicited report of temperature to the central controller using Lifeline. If the value is set to 0, there will be no reports sent to the controller, when the temperature changes. However,</description>
+        <default>20</default>
+        <options>
+          <option value="0">Disabled</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_17_1" type="integer" groupName="configuration">
+        <label>17: Minimum humidity change to report</label>
+        <description>This value defines the minimum change of humidity to cause an unsolicited report of humidity to the central controller using Lifeline. If the value is set to 0, there will be no reports sent to the controller, when the humidity changes. However, periodic</description>
+        <default>5</default>
+        <options>
+          <option value="0">Disabled</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_18_2" type="integer" groupName="configuration">
+        <label>18: Periodic Reports</label>
+        <description>This parameter defines the time interval to send an unsolicited report. If the value is set to 0, there will be no periodic reports sent to the controller. However, reports on temperature/humidity changes, managed by configuration parameters 16 and 17, ma</description>
+        <default>43200</default>
+        <options>
+          <option value="0">Disabled</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_64_1" type="integer" groupName="configuration">
+        <label>64: Switch the unit of Temperature report</label>
+        <description>This value allows to switch between Celcius and Fahrenheit unit of temperature report.</description>
+        <default>2</default>
+        <options>
+          <option value="1">Celcius</option>
+          <option value="2">Farenheight</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_255_4" type="integer" groupName="configuration"
+                 min="0" max="1431655765">
+        <label>255: Reset Parameter</label>
+        <description>This parameter helps reset configuration parameters and the device to factory defaults</description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Group 1</label>
+        <description>Lifeline</description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: Group 2</label>
+        <description>Control devices when water leakage is detected</description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_3" type="text" groupName="association" multiple="true">
+        <label>3: Group 3</label>
+        <description>Sends out alarm message when water leakage is detected</description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_4" type="text" groupName="association" multiple="true">
+        <label>4: Group 4</label>
+        <description>Sends out alarm messages when tamper is tripped</description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>
