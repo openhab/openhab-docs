@@ -130,7 +130,7 @@ Now you can start developing your NEW binding. We're looking forward to your pul
 In case the new binding has dependencies to other bundles/libraries see [Adding Dependencies](buildsystem.html#adding-dependencies) for more information.
 
 If developing on Windows, git will convert line endings from LF to CRLF automatically. The repo uses LF,
-and spotless will object, and throw errors. If you use `mnv spotless:apply` to fix formatting, it will add CRLF
+and spotless will object, and throw errors. If you use `mvn spotless:apply` to fix formatting, it will add CRLF
 to all files dirtying the entire branch. Adding a `.gitattributes` file to the openhab-addons folder with the
 following will tell git and spotless to use LF endings:
 
