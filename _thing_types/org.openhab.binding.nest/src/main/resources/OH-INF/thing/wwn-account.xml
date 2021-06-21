@@ -4,9 +4,10 @@
 	xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
 	xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0 https://openhab.org/schemas/thing-description-1.0.0.xsd">
 
-	<bridge-type id="account">
-		<label>Nest Account</label>
-		<description>An account for using the Nest REST API</description>
-		<config-description-ref uri="thing-type:nest:account"/>
+	<bridge-type id="wwn_account">
+		<label>Nest WWN Account</label>
+		<description>An account for using the Works with Nest (WWN) API</description>
+		<config-description-ref uri="thing-type:nest:wwn_account"/>
 	</bridge-type>
+
 </thing:thing-descriptions>

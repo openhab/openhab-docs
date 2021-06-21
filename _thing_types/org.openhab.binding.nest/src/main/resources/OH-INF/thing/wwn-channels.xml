@@ -5,7 +5,7 @@
 	xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0 https://openhab.org/schemas/thing-description-1.0.0.xsd">
 
 	<!-- Common -->
-	<channel-type id="LastConnection" advanced="true">
+	<channel-type id="WWNLastConnection" advanced="true">
 		<item-type>DateTime</item-type>
 		<label>Last Connection</label>
 		<description>Timestamp of the last successful interaction with Nest</description>
@@ -13,7 +13,7 @@
 	</channel-type>
 
 	<!-- Structure -->
-	<channel-type id="Away">
+	<channel-type id="WWNAway">
 		<item-type>String</item-type>
 		<label>Away</label>
 		<description>Away state of the structure</description>
@@ -25,39 +25,39 @@
 		</state>
 	</channel-type>
 
-	<channel-type id="CountryCode" advanced="true">
+	<channel-type id="WWNCountryCode" advanced="true">
 		<item-type>String</item-type>
 		<label>Country Code</label>
 		<description>Country code of the structure</description>
 	</channel-type>
 
-	<channel-type id="PostalCode" advanced="true">
+	<channel-type id="WWNPostalCode" advanced="true">
 		<item-type>String</item-type>
 		<label>Postal Code</label>
 		<description>Postal code of the structure</description>
 	</channel-type>
 
-	<channel-type id="TimeZone">
+	<channel-type id="WWNTimeZone">
 		<item-type>String</item-type>
 		<label>Time Zone</label>
 		<description>The time zone for the structure</description>
 	</channel-type>
 
-	<channel-type id="PeakPeriodStartTime" advanced="true">
+	<channel-type id="WWNPeakPeriodStartTime" advanced="true">
 		<item-type>DateTime</item-type>
 		<label>Peak Period Start Time</label>
 		<description>Peak period start for the Rush Hour Rewards program</description>
 		<state readOnly="true"/>
 	</channel-type>
 
-	<channel-type id="PeakPeriodEndTime" advanced="true">
+	<channel-type id="WWNPeakPeriodEndTime" advanced="true">
 		<item-type>DateTime</item-type>
 		<label>Peak Period End Time</label>
 		<description>Peak period end for the Rush Hour Rewards program</description>
 		<state readOnly="true"/>
 	</channel-type>
 
-	<channel-type id="EtaBegin" advanced="true">
+	<channel-type id="WWNEtaBegin" advanced="true">
 		<item-type>DateTime</item-type>
 		<label>ETA</label>
 		<description>
@@ -66,14 +66,14 @@
 		</description>
 	</channel-type>
 
-	<channel-type id="RushHourRewardsEnrollment">
+	<channel-type id="WWNRushHourRewardsEnrollment">
 		<item-type>Switch</item-type>
 		<label>Rush Hour Rewards</label>
 		<description>If rush hour rewards system is enabled or not</description>
 		<state readOnly="true"/>
 	</channel-type>
 
-	<channel-type id="SecurityState">
+	<channel-type id="WWNSecurityState">
 		<item-type>String</item-type>
 		<label>Security State</label>
 		<description>Security state of the structure</description>
@@ -86,166 +86,166 @@
 	</channel-type>
 
 	<!-- Camera -->
-	<channel-group-type id="Camera">
+	<channel-group-type id="WWNCamera">
 		<label>Camera</label>
 		<description>Information about the camera</description>
 		<channels>
-			<channel id="streaming" typeId="Streaming"/>
-			<channel id="audio_input_enabled" typeId="AudioInputEnabled"/>
-			<channel id="public_share_enabled" typeId="PublicShareEnabled"/>
-			<channel id="video_history_enabled" typeId="VideoHistoryEnabled"/>
-			<channel id="app_url" typeId="AppUrl"/>
-			<channel id="snapshot_url" typeId="SnapshotUrl"/>
-			<channel id="public_share_url" typeId="PublicShareUrl"/>
-			<channel id="web_url" typeId="WebUrl"/>
-			<channel id="last_online_change" typeId="LastOnlineChange"/>
+			<channel id="streaming" typeId="WWNStreaming"/>
+			<channel id="audio_input_enabled" typeId="WWNAudioInputEnabled"/>
+			<channel id="public_share_enabled" typeId="WWNPublicShareEnabled"/>
+			<channel id="video_history_enabled" typeId="WWNVideoHistoryEnabled"/>
+			<channel id="app_url" typeId="WWNAppUrl"/>
+			<channel id="snapshot_url" typeId="WWNSnapshotUrl"/>
+			<channel id="public_share_url" typeId="WWNPublicShareUrl"/>
+			<channel id="web_url" typeId="WWNWebUrl"/>
+			<channel id="last_online_change" typeId="WWNLastOnlineChange"/>
 		</channels>
 	</channel-group-type>
 
-	<channel-type id="AudioInputEnabled" advanced="true">
+	<channel-type id="WWNAudioInputEnabled" advanced="true">
 		<item-type>Switch</item-type>
 		<label>Audio Input Enabled</label>
 		<description>If the audio input is enabled for this camera</description>
 	</channel-type>
 
-	<channel-type id="VideoHistoryEnabled" advanced="true">
+	<channel-type id="WWNVideoHistoryEnabled" advanced="true">
 		<item-type>Switch</item-type>
 		<label>Video History Enabled</label>
 		<description>If the video history is enabled for this camera</description>
 	</channel-type>
 
-	<channel-type id="PublicShareEnabled" advanced="true">
+	<channel-type id="WWNPublicShareEnabled" advanced="true">
 		<item-type>Switch</item-type>
 		<label>Public Share Enabled</label>
 		<description>If the public sharing of this camera is enabled</description>
 	</channel-type>
 
-	<channel-type id="Streaming">
+	<channel-type id="WWNStreaming">
 		<item-type>Switch</item-type>
 		<label>Streaming</label>
 		<description>If the camera is currently streaming</description>
 	</channel-type>
 
-	<channel-type id="WebUrl">
+	<channel-type id="WWNWebUrl">
 		<item-type>String</item-type>
 		<label>Web URL</label>
 		<description>The web URL for the camera, allows you to see the camera in a web page</description>
 	</channel-type>
 
-	<channel-type id="PublicShareUrl">
+	<channel-type id="WWNPublicShareUrl">
 		<item-type>String</item-type>
 		<label>Public Share URL</label>
 		<description>The publicly available URL for the camera</description>
 	</channel-type>
 
-	<channel-type id="SnapshotUrl" advanced="true">
+	<channel-type id="WWNSnapshotUrl" advanced="true">
 		<item-type>String</item-type>
 		<label>Snapshot URL</label>
 		<description>The URL showing a snapshot of the camera</description>
 	</channel-type>
 
-	<channel-type id="AppUrl" advanced="true">
+	<channel-type id="WWNAppUrl" advanced="true">
 		<item-type>String</item-type>
 		<label>App URL</label>
 		<description>The app URL for the camera, allows you to see the camera in an app</description>
 	</channel-type>
 
-	<channel-type id="LastOnlineChange" advanced="true">
+	<channel-type id="WWNLastOnlineChange" advanced="true">
 		<item-type>DateTime</item-type>
 		<label>Last Online Change</label>
 		<description>Timestamp of the last online status change</description>
 		<state readOnly="true"/>
 	</channel-type>
 
-	<channel-group-type id="CameraEvent">
+	<channel-group-type id="WWNCameraEvent">
 		<label>Camera Event</label>
 		<description>Information about the camera event</description>
 		<channels>
-			<channel id="has_motion" typeId="CameraEventHasMotion"/>
-			<channel id="has_sound" typeId="CameraEventHasSound"/>
-			<channel id="has_person" typeId="CameraEventHasPerson"/>
-			<channel id="start_time" typeId="CameraEventStartTime"/>
-			<channel id="end_time" typeId="CameraEventEndTime"/>
-			<channel id="urls_expire_time" typeId="CameraEventUrlsExpireTime"/>
-			<channel id="animated_image_url" typeId="CameraEventAnimatedImageUrl"/>
-			<channel id="app_url" typeId="CameraEventAppUrl"/>
-			<channel id="image_url" typeId="CameraEventImageUrl"/>
-			<channel id="web_url" typeId="CameraEventWebUrl"/>
-			<channel id="activity_zones" typeId="CameraEventActivityZones"/>
+			<channel id="has_motion" typeId="WWNCameraEventHasMotion"/>
+			<channel id="has_sound" typeId="WWNCameraEventHasSound"/>
+			<channel id="has_person" typeId="WWNCameraEventHasPerson"/>
+			<channel id="start_time" typeId="WWNCameraEventStartTime"/>
+			<channel id="end_time" typeId="WWNCameraEventEndTime"/>
+			<channel id="urls_expire_time" typeId="WWNCameraEventUrlsExpireTime"/>
+			<channel id="animated_image_url" typeId="WWNCameraEventAnimatedImageUrl"/>
+			<channel id="app_url" typeId="WWNCameraEventAppUrl"/>
+			<channel id="image_url" typeId="WWNCameraEventImageUrl"/>
+			<channel id="web_url" typeId="WWNCameraEventWebUrl"/>
+			<channel id="activity_zones" typeId="WWNCameraEventActivityZones"/>
 		</channels>
 	</channel-group-type>
 
-	<channel-type id="CameraEventHasSound" advanced="true">
+	<channel-type id="WWNCameraEventHasSound" advanced="true">
 		<item-type>Switch</item-type>
 		<label>Has Sound</label>
 		<description>If sound was detected in the camera event</description>
 		<state readOnly="true"/>
 	</channel-type>
 
-	<channel-type id="CameraEventHasMotion" advanced="true">
+	<channel-type id="WWNCameraEventHasMotion" advanced="true">
 		<item-type>Switch</item-type>
 		<label>Has Motion</label>
 		<description>If motion was detected in the camera event</description>
 		<state readOnly="true"/>
 	</channel-type>
 
-	<channel-type id="CameraEventHasPerson" advanced="true">
+	<channel-type id="WWNCameraEventHasPerson" advanced="true">
 		<item-type>Switch</item-type>
 		<label>Has Person</label>
 		<description>If a person was detected in the camera event</description>
 		<state readOnly="true"/>
 	</channel-type>
 
-	<channel-type id="CameraEventStartTime" advanced="true">
+	<channel-type id="WWNCameraEventStartTime" advanced="true">
 		<item-type>DateTime</item-type>
 		<label>Start Time</label>
 		<description>Timestamp when the camera event started</description>
 		<state readOnly="true"/>
 	</channel-type>
 
-	<channel-type id="CameraEventEndTime" advanced="true">
+	<channel-type id="WWNCameraEventEndTime" advanced="true">
 		<item-type>DateTime</item-type>
 		<label>End Time</label>
 		<description>Timestamp when the camera event ended</description>
 		<state readOnly="true"/>
 	</channel-type>
 
-	<channel-type id="CameraEventUrlsExpireTime" advanced="true">
+	<channel-type id="WWNCameraEventUrlsExpireTime" advanced="true">
 		<item-type>DateTime</item-type>
 		<label>URLs Expire Time</label>
 		<description>Timestamp when the camera event URLs expire</description>
 		<state readOnly="true"/>
 	</channel-type>
 
-	<channel-type id="CameraEventWebUrl" advanced="true">
+	<channel-type id="WWNCameraEventWebUrl" advanced="true">
 		<item-type>String</item-type>
 		<label>Web URL</label>
 		<description>The web URL for the camera event, allows you to see the camera event in a web page</description>
 		<state readOnly="true"/>
 	</channel-type>
 
-	<channel-type id="CameraEventAppUrl" advanced="true">
+	<channel-type id="WWNCameraEventAppUrl" advanced="true">
 		<item-type>String</item-type>
 		<label>App URL</label>
 		<description>The app URL for the camera event, allows you to see the camera event in an app</description>
 		<state readOnly="true"/>
 	</channel-type>
 
-	<channel-type id="CameraEventImageUrl" advanced="true">
+	<channel-type id="WWNCameraEventImageUrl" advanced="true">
 		<item-type>String</item-type>
 		<label>Image URL</label>
 		<description>The URL showing an image for the camera event</description>
 		<state readOnly="true"/>
 	</channel-type>
 
-	<channel-type id="CameraEventAnimatedImageUrl" advanced="true">
+	<channel-type id="WWNCameraEventAnimatedImageUrl" advanced="true">
 		<item-type>String</item-type>
 		<label>Animated Image URL</label>
 		<description>The URL showing an animated image for the camera event</description>
 		<state readOnly="true"/>
 	</channel-type>
 
-	<channel-type id="CameraEventActivityZones" advanced="true">
+	<channel-type id="WWNCameraEventActivityZones" advanced="true">
 		<item-type>String</item-type>
 		<label>Activity Zones</label>
 		<description>Identifiers for activity zones that detected the event (comma separated)</description>
@@ -253,7 +253,7 @@
 	</channel-type>
 
 	<!-- Smoke detector -->
-	<channel-type id="UiColorState" advanced="true">
+	<channel-type id="WWNUiColorState" advanced="true">
 		<item-type>String</item-type>
 		<label>UI Color State</label>
 		<description>Current color state of the protect</description>
@@ -267,7 +267,7 @@
 		</state>
 	</channel-type>
 
-	<channel-type id="CoAlarmState">
+	<channel-type id="WWNCoAlarmState">
 		<item-type>String</item-type>
 		<label>CO Alarm State</label>
 		<description>Carbon monoxide alarm state</description>
@@ -280,7 +280,7 @@
 		</state>
 	</channel-type>
 
-	<channel-type id="SmokeAlarmState">
+	<channel-type id="WWNSmokeAlarmState">
 		<item-type>String</item-type>
 		<label>Smoke Alarm State</label>
 		<description>Smoke alarm state</description>
@@ -293,14 +293,14 @@
 		</state>
 	</channel-type>
 
-	<channel-type id="ManualTestActive" advanced="true">
+	<channel-type id="WWNManualTestActive" advanced="true">
 		<item-type>Switch</item-type>
 		<label>Manual Test Active</label>
 		<description>If the manual test is currently active</description>
 		<state readOnly="true"/>
 	</channel-type>
 
-	<channel-type id="LastManualTestTime" advanced="true">
+	<channel-type id="WWNLastManualTestTime" advanced="true">
 		<item-type>DateTime</item-type>
 		<label>Last Manual Test Time</label>
 		<description>Timestamp of the last successful manual test</description>
@@ -308,7 +308,7 @@
 	</channel-type>
 
 	<!-- Thermostat -->
-	<channel-type id="Temperature">
+	<channel-type id="WWNTemperature">
 		<item-type>Number:Temperature</item-type>
 		<label>Temperature</label>
 		<description>Current temperature</description>
@@ -316,7 +316,7 @@
 		<state readOnly="true" pattern="%.1f %unit%"/>
 	</channel-type>
 
-	<channel-type id="SetPoint">
+	<channel-type id="WWNSetPoint">
 		<item-type>Number:Temperature</item-type>
 		<label>Set Point</label>
 		<description>The set point temperature</description>
@@ -324,7 +324,7 @@
 		<state pattern="%.1f %unit%" step="0.5"/>
 	</channel-type>
 
-	<channel-type id="MaxSetPoint">
+	<channel-type id="WWNMaxSetPoint">
 		<item-type>Number:Temperature</item-type>
 		<label>Max Set Point</label>
 		<description>The max set point temperature</description>
@@ -332,7 +332,7 @@
 		<state pattern="%.1f %unit%" step="0.5"/>
 	</channel-type>
 
-	<channel-type id="MinSetPoint">
+	<channel-type id="WWNMinSetPoint">
 		<item-type>Number:Temperature</item-type>
 		<label>Min Set Point</label>
 		<description>The min set point temperature</description>
@@ -340,7 +340,7 @@
 		<state pattern="%.1f %unit%" step="0.5"/>
 	</channel-type>
 
-	<channel-type id="EcoMaxSetPoint" advanced="true">
+	<channel-type id="WWNEcoMaxSetPoint" advanced="true">
 		<item-type>Number:Temperature</item-type>
 		<label>Eco Max Set Point</label>
 		<description>The eco range max set point temperature</description>
@@ -348,7 +348,7 @@
 		<state readOnly="true" pattern="%.1f %unit%"/>
 	</channel-type>
 
-	<channel-type id="EcoMinSetPoint" advanced="true">
+	<channel-type id="WWNEcoMinSetPoint" advanced="true">
 		<item-type>Number:Temperature</item-type>
 		<label>Eco Min Set Point</label>
 		<description>The eco range min set point temperature</description>
@@ -356,7 +356,7 @@
 		<state readOnly="true" pattern="%.1f %unit%"/>
 	</channel-type>
 
-	<channel-type id="LockedMaxSetPoint" advanced="true">
+	<channel-type id="WWNLockedMaxSetPoint" advanced="true">
 		<item-type>Number:Temperature</item-type>
 		<label>Locked Max Set Point</label>
 		<description>The locked range max set point temperature</description>
@@ -364,7 +364,7 @@
 		<state readOnly="true" pattern="%.1f %unit%"/>
 	</channel-type>
 
-	<channel-type id="LockedMinSetPoint" advanced="true">
+	<channel-type id="WWNLockedMinSetPoint" advanced="true">
 		<item-type>Number:Temperature</item-type>
 		<label>Locked Min Set Point</label>
 		<description>The locked range min set point temperature</description>
@@ -372,14 +372,14 @@
 		<state readOnly="true" pattern="%.1f %unit%"/>
 	</channel-type>
 
-	<channel-type id="Locked" advanced="true">
+	<channel-type id="WWNLocked" advanced="true">
 		<item-type>Switch</item-type>
 		<label>Locked</label>
 		<description>If the thermostat has the temperature locked to only be within a set range</description>
 		<state readOnly="true"/>
 	</channel-type>
 
-	<channel-type id="Mode">
+	<channel-type id="WWNMode">
 		<item-type>String</item-type>
 		<label>Mode</label>
 		<description>Current mode of the Nest thermostat</description>
@@ -394,7 +394,7 @@
 		</state>
 	</channel-type>
 
-	<channel-type id="PreviousMode" advanced="true">
+	<channel-type id="WWNPreviousMode" advanced="true">
 		<item-type>String</item-type>
 		<label>Previous Mode</label>
 		<description>The previous mode of the Nest thermostat</description>
@@ -409,7 +409,7 @@
 		</state>
 	</channel-type>
 
-	<channel-type id="State" advanced="true">
+	<channel-type id="WWNState" advanced="true">
 		<item-type>String</item-type>
 		<label>State</label>
 		<description>The active state of the Nest thermostat</description>
@@ -422,7 +422,7 @@
 		</state>
 	</channel-type>
 
-	<channel-type id="Humidity">
+	<channel-type id="WWNHumidity">
 		<item-type>Number:Dimensionless</item-type>
 		<label>Humidity</label>
 		<description>Indicates the current relative humidity</description>
@@ -430,35 +430,35 @@
 		<state pattern="%.1f %unit%" readOnly="true"/>
 	</channel-type>
 
-	<channel-type id="TimeToTarget">
+	<channel-type id="WWNTimeToTarget">
 		<item-type>Number:Time</item-type>
 		<label>Time to Target</label>
 		<description>Time left to the target temperature approximately</description>
 		<state pattern="%d %unit%" readOnly="true"/>
 	</channel-type>
 
-	<channel-type id="CanHeat" advanced="true">
+	<channel-type id="WWNCanHeat" advanced="true">
 		<item-type>Switch</item-type>
 		<label>Can Heat</label>
 		<description>If the thermostat can actually turn on heating</description>
 		<state readOnly="true"/>
 	</channel-type>
 
-	<channel-type id="CanCool" advanced="true">
+	<channel-type id="WWNCanCool" advanced="true">
 		<item-type>Switch</item-type>
 		<label>Can Cool</label>
 		<description>If the thermostat can actually turn on cooling</description>
 		<state readOnly="true"/>
 	</channel-type>
 
-	<channel-type id="FanTimerActive" advanced="true">
+	<channel-type id="WWNFanTimerActive" advanced="true">
 		<item-type>Switch</item-type>
 		<label>Fan Timer Active</label>
 		<description>If the fan timer is engaged</description>
 		<state/>
 	</channel-type>
 
-	<channel-type id="FanTimerDuration" advanced="true">
+	<channel-type id="WWNFanTimerDuration" advanced="true">
 		<item-type>Number:Time</item-type>
 		<label>Fan Timer Duration</label>
 		<description>Length of time that the fan is set to run</description>
@@ -476,45 +476,46 @@
 		</state>
 	</channel-type>
 
-	<channel-type id="FanTimerTimeout" advanced="true">
+	<channel-type id="WWNFanTimerTimeout" advanced="true">
 		<item-type>DateTime</item-type>
 		<label>Fan Timer Timeout</label>
 		<description>Timestamp when the fan stops running</description>
 		<state readOnly="true"/>
 	</channel-type>
 
-	<channel-type id="HasFan" advanced="true">
+	<channel-type id="WWNHasFan" advanced="true">
 		<item-type>Switch</item-type>
 		<label>Has Fan</label>
 		<description>If the thermostat can control the fan</description>
 		<state readOnly="true"/>
 	</channel-type>
 
-	<channel-type id="HasLeaf" advanced="true">
+	<channel-type id="WWNHasLeaf" advanced="true">
 		<item-type>Switch</item-type>
 		<label>Has Leaf</label>
 		<description>If the thermostat is currently in a leaf mode</description>
 		<state readOnly="true"/>
 	</channel-type>
 
-	<channel-type id="SunlightCorrectionEnabled" advanced="true">
+	<channel-type id="WWNSunlightCorrectionEnabled" advanced="true">
 		<item-type>Switch</item-type>
 		<label>Sunlight Correction Enabled</label>
 		<description>If sunlight correction is enabled</description>
 		<state readOnly="true"/>
 	</channel-type>
 
-	<channel-type id="SunlightCorrectionActive" advanced="true">
+	<channel-type id="WWNSunlightCorrectionActive" advanced="true">
 		<item-type>Switch</item-type>
 		<label>Sunlight Correction Active</label>
 		<description>If sunlight correction is active</description>
 		<state readOnly="true"/>
 	</channel-type>
 
-	<channel-type id="UsingEmergencyHeat" advanced="true">
+	<channel-type id="WWNUsingEmergencyHeat" advanced="true">
 		<item-type>Switch</item-type>
 		<label>Using Emergency Heat</label>
 		<description>If the system is currently using emergency heat</description>
 		<state readOnly="true"/>
 	</channel-type>
+
 </thing:thing-descriptions>

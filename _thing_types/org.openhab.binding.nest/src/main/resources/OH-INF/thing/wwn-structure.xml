@@ -4,9 +4,9 @@
 	xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
 	xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0 https://openhab.org/schemas/thing-description-1.0.0.xsd">
 
-	<thing-type id="structure">
+	<thing-type id="wwn_structure" listed="false">
 		<supported-bridge-type-refs>
-			<bridge-type-ref id="account"/>
+			<bridge-type-ref id="wwn_account"/>
 		</supported-bridge-type-refs>
 
 		<label>Nest Structure</label>
@@ -15,17 +15,17 @@
 			structure if you have more than one house</description>
 
 		<channels>
-			<channel id="country_code" typeId="CountryCode"/>
-			<channel id="postal_code" typeId="PostalCode"/>
-			<channel id="time_zone" typeId="TimeZone"/>
-			<channel id="peak_period_start_time" typeId="PeakPeriodStartTime"/>
-			<channel id="peak_period_end_time" typeId="PeakPeriodEndTime"/>
-			<channel id="rush_hour_rewards_enrollment" typeId="RushHourRewardsEnrollment"/>
-			<channel id="eta_begin" typeId="EtaBegin"/>
-			<channel id="co_alarm_state" typeId="CoAlarmState"/>
-			<channel id="smoke_alarm_state" typeId="SmokeAlarmState"/>
-			<channel id="security_state" typeId="SecurityState"/>
-			<channel id="away" typeId="Away"/>
+			<channel id="country_code" typeId="WWNCountryCode"/>
+			<channel id="postal_code" typeId="WWNPostalCode"/>
+			<channel id="time_zone" typeId="WWNTimeZone"/>
+			<channel id="peak_period_start_time" typeId="WWNPeakPeriodStartTime"/>
+			<channel id="peak_period_end_time" typeId="WWNPeakPeriodEndTime"/>
+			<channel id="rush_hour_rewards_enrollment" typeId="WWNRushHourRewardsEnrollment"/>
+			<channel id="eta_begin" typeId="WWNEtaBegin"/>
+			<channel id="co_alarm_state" typeId="WWNCoAlarmState"/>
+			<channel id="smoke_alarm_state" typeId="WWNSmokeAlarmState"/>
+			<channel id="security_state" typeId="WWNSecurityState"/>
+			<channel id="away" typeId="WWNAway"/>
 		</channels>
 
 		<properties>
@@ -34,7 +34,7 @@
 
 		<representation-property>structureId</representation-property>
 
-		<config-description-ref uri="thing-type:nest:structure"/>
+		<config-description-ref uri="thing-type:nest:wwn_structure"/>
 	</thing-type>
 
 </thing:thing-descriptions>
