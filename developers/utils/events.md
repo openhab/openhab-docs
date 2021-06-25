@@ -302,7 +302,7 @@ public class SunEventFactory extends AbstractEventFactory {
     private static final String SUNRISE_EVENT_TOPIC = "openhab/sun/{time}/sunrise";
 
     public SunEventFactory() {
-        super(Sets.newHashSet(SunriseEvent.TYPE));
+        super(Set.of(SunriseEvent.TYPE));
     }
 
     @Override
