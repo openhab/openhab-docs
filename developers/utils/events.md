@@ -102,9 +102,12 @@ It contains the old and the new status of the thing.
 
 #### Channel Events
 
-| Event                       | Description                                              | Topic                                         |
-|-----------------------------|----------------------------------------------------------|-----------------------------------------------|
-| ChannelTriggeredEvent       | A channel has been triggered.                            | openhab/channels/{channelUID}/triggered       |
+| Event                          | Description                                                   | Topic                                            |
+|--------------------------------|---------------------------------------------------------------|--------------------------------------------------|
+| ChannelDescriptionChangedEvent | A dynamic `CommandDescription` or `StateDescription` has changed. | openhab/channels/{channelUID}/descriptionchanged |
+| ChannelTriggeredEvent          | A channel has been triggered.                                 | openhab/channels/{channelUID}/triggered          |
+
+The `ChannelDescriptionChangedEvent` will be delivered automatically through the openHAB event bus if the binding implements a `BaseDynamicStateDescriptionProvider` or `BaseDynamicCommandDescriptionProvider` (see [Dynamic State / Command Description section](../bindings/thing-xml.html#dynamic-state-command-description)).
 
 ## Receive Events
 
@@ -116,7 +119,8 @@ Therefore, the `EventSubscriber` interface must be implemented.
 
 ```java
 public class SomeItemEventSubscriber implements EventSubscriber {
-    private final Set<String> subscribedEventTypes = ImmutableSet.of(ItemStateEvent.TYPE, ItemCommandEvent.TYPE);
+
+    private final Set<String> subscribedEventTypes = Set.of(ItemStateEvent.TYPE, ItemCommandEvent.TYPE);
     private final EventFilter eventFiter = new TopicEventFilter("openhab/items/ItemX/.*");
 
     @Override
@@ -192,6 +196,7 @@ The class `org.openhab.core.items.events.AbstractItemEventSubscriber` provides t
 
 ```java
 public class SomeItemEventSubscriber extends AbstractItemEventSubscriber {
+
     private final EventFilter eventFiter = new TopicEventFilter("openhab/items/ItemX/.*");
 
     @Override
@@ -220,20 +225,17 @@ The openHAB core events can only be created via the corresponding event factory.
 
 ```java
 public class SomeComponentWantsToPost {
-    private EventPublisher eventPublisher;
+
+    private final EventPublisher eventPublisher;
+
+    @Activate
+    public SomeComponentWantsToPost(final @Reference EventPublisher eventPublisher) {
+        this.eventPublisher = eventPublisher;
+    }
 
     public void postSomething() {
         ItemCommandEvent itemCommandEvent = ItemEventFactory.createCommandEvent("ItemX", OnOffType.ON);
         eventPublisher.post(itemCommandEvent);
-    }
-
-    @Reference
-    public void setEventPublisher(EventPublisher eventPublisher) {
-        this.eventPublisher = eventPublisher;
-    }
-
-    public void unsetEventPublisher(EventPublisher eventPublisher) {
-        this.eventPublisher = null;
     }
 }
 ```
@@ -300,7 +302,7 @@ public class SunEventFactory extends AbstractEventFactory {
     private static final String SUNRISE_EVENT_TOPIC = "openhab/sun/{time}/sunrise";
 
     public SunEventFactory() {
-        super(Sets.newHashSet(SunriseEvent.TYPE);
+        super(Sets.newHashSet(SunriseEvent.TYPE));
     }
 
     @Override
