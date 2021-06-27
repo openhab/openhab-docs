@@ -44,7 +44,7 @@ PIR Motion Sensor<br /> <h1>Overview</h1><p>Motion Sensor with illuminance and s
       <property name="vendor">Shenzhen Neo Electronics Co., Ltd</property>
       <property name="modelId">Motion Sensor</property>
       <property name="manufacturerId">0258</property>
-      <property name="manufacturerRef">0003:0083,0003:008D,0003:1083,0003:2083</property>
+      <property name="manufacturerRef">0003:0083,0003:1083,0003:2083,0003:608D</property>
       <property name="dbReference">401</property>
       <property name="defaultAssociations">1</property>
     </properties>

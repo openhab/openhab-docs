@@ -50,7 +50,7 @@ PIR Motion Sensor 2<br /> <h1>Overview</h1><p><br /></p><p>Motion Sensor with il
       <property name="vendor">Shenzhen Neo Electronics Co., Ltd</property>
       <property name="modelId">Motion Sensor 2</property>
       <property name="manufacturerId">0258</property>
-      <property name="manufacturerRef">0003:608D</property>
+      <property name="manufacturerRef">0003:008D</property>
       <property name="dbReference">1395</property>
       <property name="defaultAssociations">1</property>
     </properties>
