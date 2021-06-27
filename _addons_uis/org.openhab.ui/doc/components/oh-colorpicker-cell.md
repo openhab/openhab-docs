@@ -59,7 +59,7 @@ A cell expanding to a color picker
     Color to use when highlighted
   </PropDescription>
 </PropBlock>
-<PropBlock type="TEXT" name="on" label=""On" expression">
+<PropBlock type="TEXT" name="on" label="&quot;On&quot; expression">
   <PropDescription>
     Expression to determine when the card should be highlighted. If blank, determine automatically from the primary bound item if applicable.
   </PropDescription>

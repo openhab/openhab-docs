@@ -59,7 +59,7 @@ A cell expanding to a knob control
     Color to use when highlighted
   </PropDescription>
 </PropBlock>
-<PropBlock type="TEXT" name="on" label=""On" expression">
+<PropBlock type="TEXT" name="on" label="&quot;On&quot; expression">
   <PropDescription>
     Expression to determine when the card should be highlighted. If blank, determine automatically from the primary bound item if applicable.
   </PropDescription>
@@ -125,9 +125,14 @@ A cell expanding to a knob control
     Size the control using percentages instead of pixels
   </PropDescription>
 </PropBlock>
-<PropBlock type="INTEGER" name="updateInterval" label="Update Interval">
+<PropBlock type="BOOLEAN" name="releaseOnly" label="Send command only on release">
   <PropDescription>
-    Time to wait between subsequent commands in ms (default 500)
+    If enabled, no commands are sent during sliding
+  </PropDescription>
+</PropBlock>
+<PropBlock type="INTEGER" name="commandInterval" label="Command Interval">
+  <PropDescription>
+    Time to wait between subsequent commands in ms (default 200)
   </PropDescription>
 </PropBlock>
 <PropBlock type="INTEGER" name="delayStateDisplay" label="Delay State Display">

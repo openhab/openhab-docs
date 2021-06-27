@@ -86,6 +86,7 @@ A card showing model items in a certain location
     Select the badges you wish to show in the header of the card. Display all if none are selected.
   </PropDescription>
   <PropOptions multiple="true">
+    <PropOption value="battery" label="Low Battery Warning" />
     <PropOption value="lights" label="Lights On" />
     <PropOption value="windows" label="Open Windows" />
     <PropOption value="doors" label="Open Doors" />
