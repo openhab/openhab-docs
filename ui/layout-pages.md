@@ -7,14 +7,14 @@ title: Layout Pages
 Layout Pages are used in the main web user interface to display widgets in an organized manner.
 You can choose between two different basic types of layouts:
 
-**Responsive Layouts:**
+**Responsive Layouts**
 
 Responsive Layouts are the main layouts in openHAB and recommended for most uses. They automatically adjust to the device's screen and thus can be used as general interface from all devices.
 Within Responsive Layouts you can choose among several types of arrangements, based on whether you want to control the layout completely, or let the container decide where to place the widgets.
 
 ![Responsive Layout Page Example](./images/responsive_layout_example.png)
 
-**Fixed Grid Layouts:**
+**Fixed Grid Layouts**
 
 Fixed Grid Layouts allow you to create a Layout Page where elements have predefined positions and sizes. They are used to design a panel-like page for a specific screen size and are most suitable for static interfaces like wall mounted tablets.
 
@@ -173,7 +173,7 @@ The gear icon on the top right corner of each widget allows you to configure or 
 
 The following parameters can be adjusted for a Fixed Grid Layout:
 
-**Layout Settings:**
+**Layout Settings**
 
 *Number of Columns:*
 Number of grid columns across the page. Defaults to 16. Limited to a minimum widget width of 50px (calculated from screen width, margin and number of columns)
@@ -181,7 +181,7 @@ Number of grid columns across the page. Defaults to 16. Limited to a minimum wid
 *Margin:*
 Margin between items and to screen edge in CSS pixels. Defaults to 10.
 
-**Screen Settings:**
+**Screen Settings**
 
 *Screen Width:*
 Screen width in CSS pixels. Defaults to 1280.
@@ -192,7 +192,7 @@ Screen width in CSS pixels. Defaults to 720.
 *Scaling:*
 Enabling this scales the defined screen to the width available in the browser window. All widgets are resized accordingly, with the margin staying fixed. While this works well in many cases, it can lead to unpredictable styling issues, especially on large divergence from the defined screen width. Defaults to false.
 
-**Appearance:**
+**Appearance**
 
 *Hide Navigation Bar:*
 When enabled the navigation bar on top of a page does not get displayed on this page. In conjunction with hiding the sidebar via its pin icon, this can be used for full screen display, e.g. in a fullscreen browser or when used as Home Screen App on iOS. Defaults to false.
