@@ -301,7 +301,7 @@ These providers allow to provide a `StateDescription` (or `CommandDescription` r
 
 Also implement this interface if you want to provide dynamic state / command options.
 The original `StateDescription`/`CommandDescription` is available for modification and enhancement.
-The framework provides two abstract implementations for bindings to support translation and other basic features: `BaseDynamicStateDescriptionProvider` and `BaseDynamicCommandDescriptionProvider`.
+The framework provides two abstract implementations for bindings to support translation, publishing `ChannelDescriptionChangedEvent`s and other basic features: `BaseDynamicStateDescriptionProvider` and `BaseDynamicCommandDescriptionProvider`.
 
 The `StateDescriptionFragmentBuilder` (and `CommandDescriptionBuilder`) can be used to only provide the information which is available at the time of construction.
 
@@ -350,15 +350,13 @@ public class ExampleDynamicStateDescriptionProvider implements DynamicStateDescr
 @Component(service = { DynamicStateDescriptionProvider.class, ExampleDynamicStateDescriptionProvider.class })
 public class ExampleDynamicStateDescriptionProvider extends BaseDynamicStateDescriptionProvider {
 
-    @Reference
-    protected void setChannelTypeI18nLocalizationService(
-            final ChannelTypeI18nLocalizationService channelTypeI18nLocalizationService) {
+    @Activate
+    public ExampleDynamicStateDescriptionProvider(final @Reference EventPublisher eventPublisher, //
+            final @Reference ItemChannelLinkRegistry itemChannelLinkRegistry, //
+            final @Reference ChannelTypeI18nLocalizationService channelTypeI18nLocalizationService) {
+        this.eventPublisher = eventPublisher;
+        this.itemChannelLinkRegistry = itemChannelLinkRegistry;
         this.channelTypeI18nLocalizationService = channelTypeI18nLocalizationService;
-    }
-
-    protected void unsetChannelTypeI18nLocalizationService(
-            final ChannelTypeI18nLocalizationService channelTypeI18nLocalizationService) {
-        this.channelTypeI18nLocalizationService = null;
     }
 }
 ```
@@ -401,8 +399,12 @@ Therefore the `ThingHandlerFactory` has to reference the bundle instance and pas
 ```java
 public class ExampleHandlerFactory extends BaseThingHandlerFactory {
 
-    @Reference
-    private ExampleDynamicStateDescriptionProvider stateDescriptionProvider;
+    private final ExampleDynamicStateDescriptionProvider stateDescriptionProvider;
+
+    @Activate
+    public ExampleHandlerFactory(final @Reference ExampleDynamicStateDescriptionProvider stateDescriptionProvider) {
+        this.stateDescriptionProvider = stateDescriptionProvider;
+    }
 
     @Override
     protected ThingHandler createHandler(Thing thing) {
