@@ -5,6 +5,7 @@ title: HP Printer - Bindings
 type: binding
 description: "This binding supports [HP Printers](https://store.hp.com/us/en/cv/printers), which are reachable through IP on the local network."
 since: 3x
+logo: images/addons/hpprinter.png
 install: auto
 ---
 

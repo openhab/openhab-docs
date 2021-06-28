@@ -5,6 +5,7 @@ title: Siemens RDS - Bindings
 type: binding
 description: "The Siemens RDS binding provides the infrastructure for connecting openHAB to the Siemens Climatix IC cloud server and integrate connected [Siemens RDS Smart thermostats](https://new.siemens.com/global/en/products/buildings/hvac/room-thermostats/smart-thermostat.html) onto the openHAB bus."
 since: 3x
+logo: images/addons/siemensrds.png
 install: auto
 ---
 

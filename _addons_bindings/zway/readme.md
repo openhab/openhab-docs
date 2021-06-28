@@ -5,6 +5,7 @@ title: Z-Way - Bindings
 type: binding
 description: "Z-Way is a software to configure and control a Z-Wave network."
 since: 3x
+logo: images/addons/zway.png
 install: auto
 ---
 

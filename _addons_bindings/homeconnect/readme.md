@@ -5,6 +5,7 @@ title: Home Connect - Bindings
 type: binding
 description: "The binding integrates the [Home Connect](https://www.home-connect.com/) system into openHAB."
 since: 3x
+logo: images/addons/homeconnect.png
 install: manual
 ---
 

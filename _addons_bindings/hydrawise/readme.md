@@ -5,6 +5,7 @@ title: Hydrawise - Bindings
 type: binding
 description: "![API Key](doc/logo.png)"
 since: 3x
+logo: images/addons/hydrawise.png
 install: auto
 ---
 

@@ -5,6 +5,7 @@ title: Oppo Blu-ray player - Bindings
 type: binding
 description: "![Oppo logo](doc/oppo.png)"
 since: 3x
+logo: images/addons/oppo.png
 install: auto
 ---
 

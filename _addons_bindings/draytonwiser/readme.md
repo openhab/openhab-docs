@@ -5,6 +5,7 @@ title: Drayton Wiser - Bindings
 type: binding
 description: "This binding integrates the [Drayton Wiser Smart Heating System](https://wiser.draytoncontrols.co.uk/)."
 since: 3x
+logo: images/addons/draytonwiser.png
 install: auto
 ---
 

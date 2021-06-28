@@ -5,6 +5,7 @@ title: Stiebel Eltron ISG - Bindings
 type: binding
 description: "This extension adds support for the Stiebel Eltron modbus protocol."
 since: 3x
+logo: images/addons/modbus.stiebeleltron.png
 install: manual
 ---
 

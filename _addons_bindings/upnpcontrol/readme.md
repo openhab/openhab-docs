@@ -5,6 +5,7 @@ title: UpnpControl - Bindings
 type: binding
 description: "This binding acts as a UPnP control point to control UPnP AV media servers and media renderers as defined by the [UPnP Forum](https://openconnectivity.org/developer/specifications/upnp-resources/upnp/)."
 since: 3x
+logo: images/addons/upnpcontrol.png
 install: auto
 ---
 

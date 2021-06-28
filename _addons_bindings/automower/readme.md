@@ -5,6 +5,7 @@ title: Automower - Bindings
 type: binding
 description: "This is the binding for [Husqvarna Automower a robotic lawn mowers](https://www.husqvarna.com/uk/products/robotic-lawn-mowers/)."
 since: 3x
+logo: images/addons/automower.png
 install: auto
 ---
 

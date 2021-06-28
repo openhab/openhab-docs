@@ -5,6 +5,7 @@ title: GREE - Bindings
 type: binding
 description: "This binding integrates GREE Air Conditioners."
 since: 3x
+logo: images/addons/gree.png
 install: auto
 ---
 

@@ -5,6 +5,7 @@ title: SonyProjector - Bindings
 type: binding
 description: "This binding can be used to conrol Sony Projectors through:"
 since: 3x
+logo: images/addons/sonyprojector.png
 install: auto
 ---
 
