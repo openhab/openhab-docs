@@ -355,3 +355,9 @@ For Web Socket Operations
 ::: tip Note
 WebSocketClient instances should be obtained by the handler factory through the WebSocketClientFactory service and unless there are specific configuration requirements, the shared instance should be used.
 :::
+
+For Server Sent Events (SSE) Operations
+
+- javax.ws.rs.client
+- javax.ws.rs.core
+- javax.ws.rs.sse
