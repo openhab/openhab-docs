@@ -512,7 +512,7 @@ val String dateTimeString = zdt.format(formatter)
 val DateTimeType dtt = DateTimeType.valueOf(dateTimeString)
 
 //convert state from Item of DateTimeType into a string
-val String datetime_string  = DateTime_Item.state.format("%1$td.%1$tm.%1$ty %1$tH:%1$tM"))
+val String datetime_string  = DateTime_Item.state.format("%1$td.%1$tm.%1$ty %1$tH:%1$tM")
 ```
 
 ZonedDateTimes provide a number of useful methods for comparing date times together and/or extracting parts of the date:
