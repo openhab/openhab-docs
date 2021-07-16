@@ -21,7 +21,7 @@ Z-Wave controlled door lock<br /> <h1>Overview</h1><p>The ABUS Z-Wave HomeTec CF
         </properties>
       </channel>
       <channel id="sensor_door" typeId="sensor_door">
-        <label>Door Sensor</label>
+        <label>Door Sensor (unsupported)</label>
         <properties>
           <property name="binding:*:OpenClosedType">COMMAND_CLASS_DOOR_LOCK</property>
         </properties>

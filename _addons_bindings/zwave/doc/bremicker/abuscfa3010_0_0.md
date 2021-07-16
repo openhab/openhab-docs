@@ -99,7 +99,7 @@ The following table summarises the channels available for the CFA3010 -:
 | Channel Name | Channel ID | Channel Type | Category | Item Type |
 |--------------|------------|--------------|----------|-----------|
 | Door Lock | lock_door | lock_door | Door | Switch | 
-| Door Sensor | sensor_door | sensor_door | Door | Contact | 
+| Door Sensor (unsupported) | sensor_door | sensor_door | Door | Contact | 
 | Alarm (access) | alarm_access | alarm_access | Door | Switch | 
 | Alarm (power) | alarm_power | alarm_power | Energy | Switch | 
 | Alarm (system) | alarm_system | alarm_system |  | Switch | 
@@ -116,7 +116,9 @@ The following state translation is provided for this channel to the ```Switch```
 | ON | Locked |
 | OFF | Unlocked |
 
-### Door Sensor
+### Door Sensor (unsupported)
+The door sensor is currently not supported and (as far as ABUS feedback is concerned) won't be in the near future.
+
 Indicates if the door/window is open or closed.
 
 The ```sensor_door``` channel is of type ```sensor_door``` and supports the ```Contact``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
