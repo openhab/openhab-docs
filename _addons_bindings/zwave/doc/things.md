@@ -1113,4 +1113,4 @@ and links to more detailed information about each thing.
 | ZyXEL | [ST812](zyxel/st812_0_0.md) |  | ```zyxel_st812_00_000``` | Sensor |
 
 For information on adding devices to the database, refer to the 
-[database information page](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-database-guide).
+[database information page](https://opensmarthouse.org/blog/zwave_device_database_guide).
