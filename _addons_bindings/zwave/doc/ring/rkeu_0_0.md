@@ -5,7 +5,7 @@ title: Keypad - ZWave
 
 {% include base.html %}
 
-# Keypad Alarm Keypad EU
+# Keypad Alarm Keypad
 This describes the Z-Wave device *Keypad*, manufactured by *Ring* with the thing type UID of ```ring_rkeu_00_000```.
 
 The device is in the category of *Remote Control*, defining Any portable or hand-held device that controls the status of something, e.g. remote control, keyfob etc..
@@ -23,19 +23,15 @@ The keypad will include an interactive button interface, an informational displa
 
 ### Inclusion Information
 
-1: Activate inclusion mode on controller
-
-2: hold button 1 on keypad for 3 seconds to enter inclusion mode
-
-3: Device should appear in inbox
+  1. Activate inclusion mode on controller
+  2. Hold button 1 on keypad for 3 seconds to enter inclusion mode
+  3. Device should appear in inbox
 
 ### Exclusion Information
 
-1: Initiate exclusion mode on controller
-
-2: hold button 1 on kepad for 3 seconds.
-
-3: buttons on keypad should no longer beep when pressed
+  1. Initiate exclusion mode on controller
+  2. Hold button 1 on kepad for 3 seconds.
+  3. Buttons on keypad should no longer beep when pressed
 
 ### General Usage Information
 
@@ -435,7 +431,10 @@ The Keypad supports 1 association group.
 
 The Lifeline association group reports device status to a hub and is not designed to control other devices directly. When using the Lineline group with a hub, in most cases, only the lifeline group will need to be configured and normally the hub will perform this automatically during the device initialisation.
 Controller Updates
-1. Notification Report. Keypad will send Notification Report to the associated nodes when AC power / PIR sensor is triggered /system software failure. 2. Entry Control Notification. Keypad will send Entry Control Notification to the associated nodes when the mode button is triggered. 3. Battery Report. Keypad will send Battery Report when the battery level is low and the battery report’s value is 0xFF or Hearbeat. 4. Device Reset Locally Notification
+1. Notification Report. Keypad will send Notification Report to the associated nodes when AC power / PIR sensor is triggered /system software failure.  
+2. Entry Control Notification. Keypad will send Entry Control Notification to the associated nodes when the mode button is triggered.  
+3. Battery Report. Keypad will send Battery Report when the battery level is low and the battery report’s value is 0xFF or Hearbeat.  
+4. Device Reset Locally Notification
 
 Association group 1 supports 1 node.
 
