@@ -146,9 +146,16 @@ Both methods can still be used in parallel, e.g. a Thing can be discovered and c
 Technically speaking it's even possible to use text and UI config in parallel to maintain components of one type, however this is not recommended.
 
 ::: warning
-Do not mix file and UI definitions for Items (or for Things) to avoid confusion.
-It would work to mix these, but you can easily forget which is your "source of truth" when you add or reconfigure Things or Items at a later stage.
+Do not mix file and system database definitions (when created via UI) for Items (or for Things).
+You can easily forget which is your "source of truth" when you add or reconfigure Things or Items at a later stage.
+
+Also be aware that applying the semantic model means to add configuration (tags, group membership) to items.
+You must not create an item using files and then make use of it in the model using the UI as this means to mix
+text and system database configuration for that item, too.
 :::
+
+You *can* configure the model through text only, too. No documentation exists for that however so it is not recommended and
+you have to figure out yourself. Please contribute to the docs here if you managed to.
 
 Things/Items configured in files will become visible in Main UI if no Thing/Item of the same name is already present in the system database, but a lock will symbolize that you can NOT change them in the GUI. You can only change them by editing the source files.
 **Note:** Things/Items you create via Main UI will be stored in the system database, but those additions or changes will not be written back into any `.things / .items` file.
