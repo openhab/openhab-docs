@@ -38,8 +38,8 @@ Smoke detector and motion sensor<br /> <h1>Overview</h1><p>Heatit Z-Smoke Detect
           <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=HEAT</property>
         </properties>
       </channel>
-      <channel id="alarm_burglar" typeId="alarm_burglar">
-        <label>Alarm (burglar)</label>
+      <channel id="alarm_motion" typeId="alarm_motion">
+        <label>Alarm (motion)</label>
         <properties>
           <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=BURGLAR</property>
         </properties>
@@ -48,6 +48,12 @@ Smoke detector and motion sensor<br /> <h1>Overview</h1><p>Heatit Z-Smoke Detect
         <label>Alarm (power)</label>
         <properties>
           <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=POWER_MANAGEMENT</property>
+        </properties>
+      </channel>
+      <channel id="alarm_tamper" typeId="alarm_tamper">
+        <label>Alarm (tamper)</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=BURGLAR</property>
         </properties>
       </channel>
       <channel id="battery-level" typeId="system.battery-level">
