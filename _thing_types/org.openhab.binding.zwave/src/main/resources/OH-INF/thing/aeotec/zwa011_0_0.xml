@@ -14,16 +14,16 @@ Door/Window Sensor 7<br /> <h1>Overview</h1><p>Aeotec Door / Window Sensor 7 was
 
     <!-- CHANNEL DEFINITIONS -->
     <channels>
-      <channel id="alarm_burglar" typeId="alarm_burglar">
-        <label>Alarm (burglar)</label>
+      <channel id="alarm_tamper" typeId="alarm_tamper">
+        <label>Alarm (tamper)</label>
         <properties>
           <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=BURGLAR</property>
         </properties>
       </channel>
-      <channel id="alarm_access" typeId="alarm_access">
-        <label>Alarm (access)</label>
+      <channel id="sensor_door" typeId="sensor_door">
+        <label>Door Sensor</label>
         <properties>
-          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=ACCESS_CONTROL</property>
+          <property name="binding:*:OpenClosedType">COMMAND_CLASS_ALARM;type=ACCESS_CONTROL</property>
         </properties>
       </channel>
       <channel id="battery-level" typeId="system.battery-level">
@@ -58,10 +58,12 @@ Door/Window Sensor 7<br /> <h1>Overview</h1><p>Aeotec Door / Window Sensor 7 was
       </parameter-group>
 
       <!-- PARAMETER DEFINITIONS -->
-      <parameter name="config_3_1" type="integer" groupName="configuration" readOnly="true"
-                 min="0" max="255">
+      <parameter name="config_3_1" type="integer" groupName="configuration"
+                 min="0" max="1">
         <label>3: Door/Windows State</label>
-        <description>Sensor state when the magnet is close to the sensor.</description>
+        <description><![CDATA[
+Sensor state when the magnet is close to the sensor.<br /> <h1>Overview</h1><p><br /></p>
+        ]]></description>
         <default>0</default>
         <options>
           <option value="0">Closed</option>
@@ -71,7 +73,9 @@ Door/Window Sensor 7<br /> <h1>Overview</h1><p>Aeotec Door / Window Sensor 7 was
 
       <parameter name="config_4_1" type="integer" groupName="configuration">
         <label>4: LED</label>
-        <description>LED indicator. Disabling events might extend battery life.</description>
+        <description><![CDATA[
+Defines when the LED will indicate events.<br /> <h1>Overview</h1><p>Disabling all indications may extend battery life.</p><p><b>0</b> no indications<br /><b>1</b> indication of opening/closing status change<br /><b>2</b> indication of wake up (1 x click or periodical)<br /><b>4</b> indication of device tampering</p><p>Can be summed, e.g. a setting of 6 will disable open/close but enable wake-up and tamper.</p>
+        ]]></description>
         <default>7</default>
         <options>
           <option value="0">no indications</option>

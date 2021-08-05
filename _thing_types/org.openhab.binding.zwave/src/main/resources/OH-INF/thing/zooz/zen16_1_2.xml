@@ -14,12 +14,6 @@ Multirelay<br /> <h1>Overview</h1><p><strong>Features</strong></p> <ul><li>Power
 
     <!-- CHANNEL DEFINITIONS -->
     <channels>
-      <channel id="switch_binary" typeId="switch_binary">
-        <label>Switch</label>
-        <properties>
-          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY,COMMAND_CLASS_BASIC</property>
-        </properties>
-      </channel>
       <channel id="switch_binary1" typeId="switch_binary">
         <label>Switch 1</label>
         <properties>
@@ -330,61 +324,6 @@ Use this parameter to choose between seconds, minutes, or hours to be used as th
           <option value="0">Minutes (default)</option>
           <option value="1">Seconds</option>
           <option value="2">Hours</option>
-        </options>
-      </parameter>
-
-      <parameter name="config_21_1" type="integer" groupName="configuration"
-                 min="0" max="2">
-        <label>21: Delete (parameter not available for v1.10 - v1.20)</label>
-        <description><![CDATA[
-Decide whether you'd like Relay 1 to be normally open (NO) or normally closed (NC)<br /> <h1>Overview</h1><p><br /></p>
-        ]]></description>
-        <default>0</default>
-        <options>
-          <option value="0">Normally open (relay reports off when it's open / switch is off and on</option>
-          <option value="1">Normally closed (relay reports off when it's open / switch is on and o</option>
-          <option value="2">Normally closed (relay reports off when it's closed / switch is off an</option>
-        </options>
-      </parameter>
-
-      <parameter name="config_22_1" type="integer" groupName="configuration"
-                 min="0" max="2">
-        <label>22: Delete (parameter not available for v1.10 - v1.20)</label>
-        <description><![CDATA[
-Decide whether you'd like Relay 2 to be normally open (NO) or normally closed (NC)<br /> <h1>Overview</h1><p><br /></p>
-        ]]></description>
-        <default>0</default>
-        <options>
-          <option value="0">Normally open (relay reports off when it's open / switch is off and on</option>
-          <option value="1">Normally closed (relay reports off when it's open / switch is on and o</option>
-          <option value="2">Normally closed (relay reports off when it's closed / switch is off an</option>
-        </options>
-      </parameter>
-
-      <parameter name="config_23_1" type="integer" groupName="configuration"
-                 min="0" max="2">
-        <label>23: Delete (parameter not available for v1.10 - v1.20)</label>
-        <description><![CDATA[
-Decide whether you'd like Relay 3 to be normally open (NO) or normally closed (NC)<br /> <h1>Overview</h1><p><br /></p>
-        ]]></description>
-        <default>0</default>
-        <options>
-          <option value="0">Normally open (relay reports off when it's open / switch is off and on</option>
-          <option value="1">Normally closed (relay reports off when it's open / switch is on and o</option>
-          <option value="2">Normally closed (relay reports off when it's closed / switch is off an</option>
-        </options>
-      </parameter>
-
-      <parameter name="config_24_1" type="integer" groupName="configuration"
-                 min="0" max="1">
-        <label>24: Delete (parameter not available for v1.10 - v1.20)</label>
-        <description><![CDATA[
-Sync Relay 1 and Relay 2 together to prevent them from being activated at the same time<br /> <h1>Overview</h1><p><br /></p>
-        ]]></description>
-        <default>0</default>
-        <options>
-          <option value="0">DC motor mode disabled (relays will always turn on whenever activated)</option>
-          <option value="1">DC motor mode enabled (relay checks the status of the other relay afte</option>
         </options>
       </parameter>
 
