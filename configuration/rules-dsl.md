@@ -821,6 +821,7 @@ Examples:
 var condition = transform("MAP", "window_esp.map", "CLOSED")
 var temperature = transform("JSONPATH", "$.temperature", jsonstring)
 var fahrenheit = transform("JS", "convert-C-to-F.js", temperature)
+var doorstate = transform("MAP", "garage.map", GarageStateDoor1.state.toString) // must be type string
 ```
 
 The `transform` method tries to transform the given value and if it does not succeed it returns the original unchanged value.
