@@ -649,7 +649,8 @@ This parameter allows to post an update or command to an item after a period of 
 
 The expiration timer is started or restarted every time an item receives an update or a command *other than* the specified "expire" update/command.
 Any future expiring update or command is cancelled, if the item receives an update or command that matches the "expire" update/command.
-
+The expire parameter can also be combined with items that are connected to a channel.
+  
 The parameter accepts a duration of time that can be a combination of hours, minutes and seconds in the format
 
 ```shell
@@ -669,6 +670,7 @@ Player MyPlayer   { expire="1h,command=STOP" } // send STOP command after one ho
 Number MyChannel  { expire="5m,state=0" }      // update state to 0 after five minutes
 String MyMessage  { expire="3m12s,Hello" }     // update state to Hello after three minutes and 12 seconds
 Switch MySwitch   { expire="2h" }              // update state to Undefined two hours after last value
+Switch MyTrigger  { channel="openhab:speedtest:binding:trigger_test", expire="5s,command=OFF" } // update state to OFF after 5 seconds
 ```
 
 Note that the `state=` part is optional.
