@@ -666,11 +666,10 @@ This duration can optionally be followed by a comma and the state or command to 
 If this optional section is not present, it defaults to the Undefined (`UnDefType.UNDEF`) state.
 
 ```shell
-Player MyPlayer   { expire="1h,command=STOP" } // send STOP command after one hour
-Number MyChannel  { expire="5m,state=0" }      // update state to 0 after five minutes
-String MyMessage  { expire="3m12s,Hello" }     // update state to Hello after three minutes and 12 seconds
-Switch MySwitch   { expire="2h" }              // update state to Undefined two hours after last value
-Switch MyTrigger  { channel="openhab:speedtest:binding:trigger_test", expire="5s,command=OFF" } // update state to OFF after 5 seconds
+Player MyPlayer   { channel="xxx", expire="1h,command=STOP" } // send STOP command after one hour
+Number MyChannel  { channel="xxx", expire="5m,state=0" }      // update state to 0 after five minutes
+String MyMessage  { channel="xxx", expire="3m12s,Hello" }     // update state to Hello after three minutes and 12 seconds
+Switch MySwitch   { channel="xxx", expire="2h" }              // update state to Undefined two hours after last value
 ```
 
 Note that the `state=` part is optional.
