@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="nietech_zw31s_00_000" listed="false">
+    <label>ZW31S EVA LOGIK 3-Way Z-Wave Smart Dimmer Switch</label>
+    <description><![CDATA[
+EVA LOGIK 3-Way Z-Wave Smart Dimmer Switch<br /> <h1>Overview</h1><ul><li> manual &amp; wireless control switch on/off and light brightness.</li><li> 2 locations control: support 3-way wiring installation (neutral required).</li><li> built-in z-wave plus signal repeater /range extender.</li><li> s2 security protocol + the latest 500 series z-wave chip.</li><li> z-wave certificated hub/gateway required.</li><li> work with dimmable led, cfl, halogen and incandescent bulbs.</li></ul> <br /> <h2>Inclusion Information</h2><p>Adding Device To Z-Wave Network:</p><ol><li>Follow the instructions for your Z-Wave certified controller to add a device to the Z-Wave network</li><li>Once the controller is ready to add your device, <b>press the "down" button on the switch 3 times quickly</b>.  The blue LED will blink quickly.</li></ol>Now you have conplete control to turn your fixture ON/OFF or set dim levels according to groups, scenes, schedules and interactive automation programmed by your controller.  If your Z-Wave certified controller features remove access, you can control your fixture from your mobile devices.<p><br /></p><b>Again:  </b>If you have issues with pairing/including, please move the hub as close as possible to the device and try again.<p><br /></p><b>Note:  </b>If the Blue LED indicator doesn't light up after pressed the "down" button 3 times, please reset the device:  <b>click the button 2 times quickly then hold for at least 10 seconds.</b>  This operation could be done when manual control is functional--single press can turn on/off the light.<br /> <br /> <h2>Exclusion Information</h2><p>To Remove The Device:</p><ol><li>Follow the instructions for your Z-Wave certified controller to remove a device from the Z-Wave network.</li><li>Once the controller is ready to remove your device, press the "down" button on the switch 3 times quickly.<br /></li></ol> <br /> <h2>Wakeup Information</h2><p><br /></p>
+    ]]></description>
+    <category>WallSwitch</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_dimmer" typeId="switch_dimmer">
+        <label>Dimmer</label>
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+          <property name="binding:Command:OnOffType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+        </properties>
+      </channel>
+      <channel id="scene_number" typeId="scene_number">
+        <label>Scene Number</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_CENTRAL_SCENE</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">NIE Technology</property>
+      <property name="modelId">ZW31S</property>
+      <property name="manufacturerId">0312</property>
+      <property name="manufacturerRef">BB00:BB02</property>
+      <property name="dbReference">1407</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_1_1" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>1: Locally Button Function</label>
+        <description><![CDATA[
+Change the function of the paddle buttons<br /> <h1>Overview</h1><p>0:  Up = on, Down = off</p><p>1:  Up = off, Down = on</p><p>2:  Up and Down both change the state of the light<br /></p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Up = on, Down = off</option>
+          <option value="1">Up = off, Down = on</option>
+          <option value="2">Up and Down both change the state of the light</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_2_1" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>2: LED Indicator</label>
+        <description><![CDATA[
+Define state of the LED indicator<br /> <h1>Overview</h1><p>0:  LED is ON when switch is Off and LED is OFF when switch is On</p><p>1:  LED is ON when switch is On and LED is OFF when switch is Off</p><p>2:  LED always OFF</p><p>3:  LED always ON<br /></p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">LED is ON when switch is Off and LED is OFF when switch is On</option>
+          <option value="1">LED is ON when switch is On and LED is OFF when switch is Off</option>
+          <option value="2">LED always OFF</option>
+          <option value="3">LED always ON</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_4_4" type="integer" groupName="configuration"
+                 min="0" max="65535">
+        <label>4: Auto Turn Off Timer</label>
+        <description><![CDATA[
+Set a timer to turn the switch off automatically after the swtich turned on<br /> <h1>Overview</h1><p><br /></p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_6_4" type="integer" groupName="configuration"
+                 min="0" max="65535">
+        <label>6: Auto Turn-On Timer</label>
+        <description><![CDATA[
+Set a timer to turn the switch on automatically after the swtich turned off<br /> <h1>Overview</h1><p><br /></p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_8_1" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>8: Power Failure Restore State</label>
+        <description><![CDATA[
+Set state on or off after power failure<br /> <h1>Overview</h1><p>0:  Off</p><p>1:  On</p><p>2:  Memory state before power failure<br /></p>
+        ]]></description>
+        <default>2</default>
+        <options>
+          <option value="0">Off</option>
+          <option value="1">On</option>
+          <option value="2">Memory state before power failure</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_9_1" type="integer" groupName="configuration"
+                 min="0" max="10">
+        <label>9: Dimmer speed - ON/OFF Control</label>
+        <description><![CDATA[
+Set the time from max brightness to min brightness, or min brightness to max brightness when turning ON/OFF<br /> <h1>Overview</h1><p>1:  1 sec.</p><p>2:  2 sec.</p><p>etc.</p><p>10:  10 sec.<br /></p>
+        ]]></description>
+        <default>2</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_10_1" type="integer" groupName="configuration"
+                 min="0" max="10">
+        <label>10: Dimmer Speed - Local press &amp; hold</label>
+        <description><![CDATA[
+Set the time from max brightness to min brightness, or min brightness to max brightness when holding to change brightness at switch or hub<br /> <h1>Overview</h1><p>1:  1 sec.</p><p>2:  2 sec.</p><p>etc.</p><p>10:  10 sec.<br /></p>
+        ]]></description>
+        <default>4</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_11_1" type="integer" groupName="configuration"
+                 min="0" max="99">
+        <label>11: Minimum Value</label>
+        <description><![CDATA[
+Set the minimum brightness level setting<br /> <h1>Overview</h1><p>0:  Disable</p><p>1-99: minimum value<br /></p>
+        ]]></description>
+        <default>10</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_12_1" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>12: Maximum Value</label>
+        <description><![CDATA[
+Set the maximum brightness level setting<br /> <h1>Overview</h1><p>0:  disable</p><p>1-99:  maximum value<br /></p>
+        ]]></description>
+        <default>99</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association">
+        <label>1: Z-Wave Plus Lifeline</label>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: Send Basic Set ON / Off</label>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

@@ -32,7 +32,7 @@ Recessed Door Sensor 7<br /> <h1>Overview</h1><p>Aeotec Recessed Door Sensor (Ge
       <property name="vendor">Aeotec Limited</property>
       <property name="modelId">ZW187</property>
       <property name="manufacturerId">0371</property>
-      <property name="manufacturerRef">0002:00BB,0102:00BB</property>
+      <property name="manufacturerRef">0002:00BB,0102:00BB,0202:00BB</property>
       <property name="dbReference">1226</property>
       <property name="defaultAssociations">1</property>
     </properties>

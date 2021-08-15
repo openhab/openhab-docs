@@ -8,7 +8,7 @@
   <thing-type id="zooz_zen72_00_000" listed="false">
     <label>ZEN72 Paddle Dimmer</label>
     <description><![CDATA[
-Paddle Dimmer<br /> <h1>Overview</h1><p>Z-Wave dimmer paddle switch, 700 series, operating in compatibility mode.</p> <br /> <h2>Inclusion Information</h2><p>1.  Put hub in inclusion mode<br /></p><p>2.  Tap UP three (3) times<br /></p> <br /> <h2>Exclusion Information</h2><p>1. Bring hub close to switch, if possible</p><p>2. Put hub in exclusion mode</p><p>3. Tap DOWN three (3) times</p> <br /> <h2>Wakeup Information</h2><p><br /></p><p><br /></p>
+Paddle Dimmer<br /> <h1>Overview</h1><p>Z-Wave dimmer paddle switch, 700 series, operating in compatibility mode.</p> <br /> <h2>Inclusion Information</h2><ol><li>Put hub in inclusion mode</li><li>Tap UP three (3) times</li></ol> <br /> <h2>Exclusion Information</h2><ol><li>Bring hub close to switch, if possible</li><li>Put hub in exclusion mode</li><li>Tap DOWN three (3) times</li></ol> <br /> <h2>Wakeup Information</h2><p><br /></p><p><br /></p>
     ]]></description>
     <category>WallSwitch</category>
 
@@ -171,7 +171,7 @@ Whether scene control functionality is enabled<br /> <h1>Overview</h1><p>Enable 
         <default>0</default>
         <options>
           <option value="0">Scene control disabled (default)</option>
-          <option value="1">No status or LED state change when physical control disabled</option>
+          <option value="1">scene control enabled</option>
         </options>
       </parameter>
 
@@ -182,6 +182,11 @@ Whether scene control functionality is enabled<br /> <h1>Overview</h1><p>Enable 
 Allow or disallow local control (paddle)<br /> <h1>Overview</h1><p>Enable or disable paddle on/off control (aka disable the relay). If disabled, you’ll only be able to control the connected light via Z-Wave. Scenes and other functionality will still be available through paddles.</p><p>NOTE: hold the lower paddle for 10 seconds until the LED indicator starts blinking, then within 2 seconds, tap the upper paddle 5 times quickly to change this mode. The LED indicator will stay solid green for 3 seconds to confirm the change.</p>
         ]]></description>
         <default>1</default>
+        <options>
+          <option value="0">Physical paddle control disabled.</option>
+          <option value="1">Physical paddle control enabled (default).</option>
+          <option value="2">Physical paddle and Z-Wave control disabled.</option>
+        </options>
       </parameter>
 
       <parameter name="config_16_1" type="integer" groupName="configuration"
