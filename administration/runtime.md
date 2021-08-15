@@ -116,3 +116,17 @@ Usage: openhab:send <item> <command> - sends a command for an item
 | `openhab:firmware list <thingTypeUID>`                  | Lists the available firmwares for a thing type. |
 | `openhab:firmware status <thingUID>`                    | lists the firmware status for a thing           |
 | `openhab:firmware update <thingUID> <firmware version>` | updates the firmware for a thing                |
+
+
+### Users
+
+| Command                                                 | Description                                                                                |
+|---------------------------------------------------------|--------------------------------------------------------------------------------------------|
+|`openhab:users list`                                     | lists all users                                                                            |
+|`openhab:users add <userId> <password> <role>`           | adds a new user with the specified role                                                    |
+|`openhab:users remove <userId>`                          | removes the given user                                                                     |
+|`openhab:users changePassword <userId> <newPassword>`    | changes the password of a user                                                             |
+|`openhab:users listApiTokens`                            | lists the API tokens for all users                                                         |
+|`openhab:users addApiToken <userId> <tokenName> <scope>` | adds a new API token on behalf of the specified user for the specified scope               |
+|`openhab:users rmApiToken <userId> <tokenName>`          | removes (revokes) the specified API token                                                  |
+|`openhab:users clearSessions <userId>`                   | clear the refresh tokens associated with the user (will sign the user out of all sessions) |
