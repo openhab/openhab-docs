@@ -657,7 +657,6 @@ This parameter allows to post an update or command to an item after a period of 
 
 The expiration timer is started or restarted every time an item receives an update or a command *other than* the specified "expire" update/command.
 Any future expiring update or command is cancelled, if the item receives an update or command that matches the "expire" update/command.
-The expire parameter can also be combined with items that are connected to a channel.
   
 The parameter accepts a duration of time that can be a combination of hours, minutes and seconds in the format
 
