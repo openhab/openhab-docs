@@ -625,9 +625,17 @@ Switch Office_PC {
 
 The first example shows a symbiosis of the LG webOS Binding and the Wake-on-LAN Binding to interact with a TV.
 
-{: #autoupdate}
+{: #parameters}
 
-#### Parameter `autoupdate`
+#### Parameters
+
+While the `channel` parameter is used to link an item to a channel of a thing, it´s possible to add additional parameters for more features.
+Multiple parameters can be divided by a comma and a space.
+The order of parameters doesn´t matter and is interchangeable.
+  
+{: #autoupdate}
+  
+##### Parameter `autoupdate`
 
 When left as default, openHAB's `autoupdate` function attempts to predict the outcome of a *command* on the Item *state*.
 This prediction may be influenced by any linked channels.
@@ -643,7 +651,7 @@ Switch Garage_Gate {channel="xxx", autoupdate="false"}
 
 {: #expire}
 
-#### Parameter `expire`
+##### Parameter `expire`
 
 This parameter allows to post an update or command to an item after a period of time has passed.
 
@@ -666,7 +674,7 @@ This duration can optionally be followed by a comma and the state or command to 
 If this optional section is not present, it defaults to the Undefined (`UnDefType.UNDEF`) state.
 
 ```shell
-Player MyPlayer   { channel="xxx", expire="1h,command=STOP" } // send STOP command after one hour
+Player MyPlayer   { expire="1h,command=STOP" }                // send STOP command after one hour
 Number MyChannel  { channel="xxx", expire="5m,state=0" }      // update state to 0 after five minutes
 String MyMessage  { channel="xxx", expire="3m12s,Hello" }     // update state to Hello after three minutes and 12 seconds
 Switch MySwitch   { channel="xxx", expire="2h" }              // update state to Undefined two hours after last value
