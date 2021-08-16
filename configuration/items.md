@@ -625,9 +625,17 @@ Switch Office_PC {
 
 The first example shows a symbiosis of the LG webOS Binding and the Wake-on-LAN Binding to interact with a TV.
 
-{: #autoupdate}
+{: #parameters}
 
-#### Parameter `autoupdate`
+#### Parameters
+
+While the `channel` parameter is used to link an item to a channel of a thing, it is possible to add further parameters for additional features.
+Parameters are provided as a comma separated list.
+The order of the parameters does not matter.
+  
+{: #autoupdate}
+  
+##### Parameter `autoupdate`
 
 When left as default, openHAB's `autoupdate` function attempts to predict the outcome of a *command* on the Item *state*.
 This prediction may be influenced by any linked channels.
@@ -643,13 +651,13 @@ Switch Garage_Gate {channel="xxx", autoupdate="false"}
 
 {: #expire}
 
-#### Parameter `expire`
+##### Parameter `expire`
 
 This parameter allows to post an update or command to an item after a period of time has passed.
 
 The expiration timer is started or restarted every time an item receives an update or a command *other than* the specified "expire" update/command.
 Any future expiring update or command is cancelled, if the item receives an update or command that matches the "expire" update/command.
-
+  
 The parameter accepts a duration of time that can be a combination of hours, minutes and seconds in the format
 
 ```shell
@@ -665,10 +673,10 @@ This duration can optionally be followed by a comma and the state or command to 
 If this optional section is not present, it defaults to the Undefined (`UnDefType.UNDEF`) state.
 
 ```shell
-Player MyPlayer   { expire="1h,command=STOP" } // send STOP command after one hour
-Number MyChannel  { expire="5m,state=0" }      // update state to 0 after five minutes
-String MyMessage  { expire="3m12s,Hello" }     // update state to Hello after three minutes and 12 seconds
-Switch MySwitch   { expire="2h" }              // update state to Undefined two hours after last value
+Player MyPlayer   { expire="1h,command=STOP" }                // send STOP command after one hour
+Number MyChannel  { channel="xxx", expire="5m,state=0" }      // update state to 0 after five minutes
+String MyMessage  { channel="xxx", expire="3m12s,Hello" }     // update state to Hello after three minutes and 12 seconds
+Switch MySwitch   { channel="xxx", expire="2h" }              // update state to Undefined two hours after last value
 ```
 
 Note that the `state=` part is optional.
