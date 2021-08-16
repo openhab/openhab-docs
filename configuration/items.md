@@ -629,7 +629,7 @@ The first example shows a symbiosis of the LG webOS Binding and the Wake-on-LAN 
 
 #### Parameters
 
-While the `channel` parameter is used to link an item to a channel of a thing, it´s possible to add additional parameters for more features.
+While the `channel` parameter is used to link an item to a channel of a thing, it is possible to add further parameters for additional features.
 Multiple parameters can be divided by a comma and a space.
 The order of parameters doesn´t matter and is interchangeable.
   
