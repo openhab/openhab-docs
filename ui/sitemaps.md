@@ -135,10 +135,10 @@ This provides the flexibility to present Items in the way desired in your home a
 
 - Parameters must be supplied in the order shown.
 
-- Common parameters, also known from [items definition](items.html#item-syntax):
-  - `item` defines the name of the Item you want to present (e.g. `Temperature`), [more details](items.html#item-name).
-  - `label` sets the textual description displayed next to the preprocessed Item data (e.g. "`Now [%s °C]`"), [more details](items.html#item-label).
-  - `icon` chooses the name of the icon file to show next to the element, [more details](items.html#icons).
+- Common parameters, also known from [items definition]({{base}}/configuration/items.html#item-syntax):
+  - `item` defines the name of the Item you want to present (e.g. `Temperature`), [more details]({{base}}/configuration/items.html#item-name).
+  - `label` sets the textual description displayed next to the preprocessed Item data (e.g. "`Now [%s °C]`"), [more details]({{base}}/configuration/items.html#item-label).
+  - `icon` chooses the name of the icon file to show next to the element, [more details]({{base}}/configuration/items.html#icons).
 
 - When an [Item]({{base}}/configuration/items.html) is defined, you have the opportunity to assign a label and/or an icon at that point.
     If no label or icon are specified in the Sitemap, then the label and/or icon you assigned to the Item will be displayed.
