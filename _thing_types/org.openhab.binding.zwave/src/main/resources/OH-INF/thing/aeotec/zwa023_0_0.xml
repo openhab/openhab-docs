@@ -6,9 +6,9 @@
                       https://openhab.org/schemas/thing-description/v1.0.0">
 
   <thing-type id="aeotec_zwa023_00_000" listed="false">
-    <label>ZWA023 Aeotec Smart Switch 7 (type B)</label>
+    <label>ZWA023 Smart Switch 7</label>
     <description><![CDATA[
-Aeotec Smart Switch 7 (type B)<br /> <h1>Overview</h1><p>Switched power outlet with energy metering.<br /></p><p><br /></p> <br /> <h2>Inclusion Information</h2><p>Using your existing Z-Wave Controller supports Smart Start:</p><ol><li>Scan the QR code on Smart Switch using your Z-Wave gateway/controllers app.</li><li>Plugin your Smart Switch to any outlet that you wish to install it on.</li><li>Your Smart Switch will automatically pair to your Z-Wave network.</li></ol><p>Using your existing Z-Wave Controller without Smart Start:</p><ol><li>Set your Z-Wave Controller into its 'Add Device' mode. Refer to the Controller's manual if you are unsure of how to perform this step.</li><li>Power your Smart Switch to any outlet; its LED will slowly fade in and out slowly with a blue color to indicate it is ready to pair.</li><li>Tap the action button once. The LED will rapidly flash when it enters pair mode.</li><li>If your Z-Wave Controller supports S2 encryption, enter the first 5 digits of DSK into your Controller's interface if it is requested. The DSK is printed on Smart Switch.<ol><li>If pairing succeeds, it will become a bright blue light for 2 seconds.</li><li>If pairing fails, it will light a solid bright red light for 2 seconds and then return to a breathing blue light; repeat steps 1 to 4 if this happens.</li></ol></li></ol> <br /> <h2>Exclusion Information</h2><ol><li>Set your Z-Wave Controller into 'Remove Device' / 'Unpair Device' mode. Refer to the Controller's manual if you are unsure of how to perform this step.</li><li>Make sure the product is powered. If not, plug it into a wall socket and power it on.</li><li>Click Action Button 2 times quickly; it will bright violet light up to 2s.<ol><li>If Removing fails, it will light a bright red color for 2 seconds and then turn back to Load Indicator Mode; repeat steps 1 to 3. Contact us for further support if needed.</li><li>If Removing succeeds, it will become breathing blue light. Smart Switch is removed from the Z-Wave network successfully and is ready to be paired again.</li></ol></li></ol> <br /> <h2>Wakeup Information</h2><p><br /></p>
+Smart Switch 7<br /> <h1>Overview</h1><p>Switched power outlet with energy metering.<br /></p><p><br /></p> <br /> <h2>Inclusion Information</h2><p>Using your existing Z-Wave Controller supports Smart Start:</p><ol><li>Scan the QR code on Smart Switch using your Z-Wave gateway/controllers app.</li><li>Plugin your Smart Switch to any outlet that you wish to install it on.</li><li>Your Smart Switch will automatically pair to your Z-Wave network.</li></ol><p>Using your existing Z-Wave Controller without Smart Start:</p><ol><li>Set your Z-Wave Controller into its 'Add Device' mode. Refer to the Controller's manual if you are unsure of how to perform this step.</li><li>Power your Smart Switch to any outlet; its LED will slowly fade in and out slowly with a blue color to indicate it is ready to pair.</li><li>Tap the action button once. The LED will rapidly flash when it enters pair mode.</li><li>If your Z-Wave Controller supports S2 encryption, enter the first 5 digits of DSK into your Controller's interface if it is requested. The DSK is printed on Smart Switch.<ol><li>If pairing succeeds, it will become a bright blue light for 2 seconds.</li><li>If pairing fails, it will light a solid bright red light for 2 seconds and then return to a breathing blue light; repeat steps 1 to 4 if this happens.</li></ol></li></ol> <br /> <h2>Exclusion Information</h2><ol><li>Set your Z-Wave Controller into 'Remove Device' / 'Unpair Device' mode. Refer to the Controller's manual if you are unsure of how to perform this step.</li><li>Make sure the product is powered. If not, plug it into a wall socket and power it on.</li><li>Click Action Button 2 times quickly; it will bright violet light up to 2s.<ol><li>If Removing fails, it will light a bright red color for 2 seconds and then turn back to Load Indicator Mode; repeat steps 1 to 3. Contact us for further support if needed.</li><li>If Removing succeeds, it will become breathing blue light. Smart Switch is removed from the Z-Wave network successfully and is ready to be paired again.</li></ol></li></ol> <br /> <h2>Wakeup Information</h2><p><br /></p>
     ]]></description>
     <category>PowerOutlet</category>
 
@@ -275,6 +275,23 @@ Sets the plug's action in case of power loss<br /> <h1>Overview</h1><p><br /></p
         </options>
       </parameter>
 
+      <parameter name="config_19_1" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>19: Threshold Check Time</label>
+        <description>Frequency of Threshold checking - Seconds - Zero to disable</description>
+        <default>0</default>
+        <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_20_2" type="integer" groupName="configuration"
+                 min="0" max="10000">
+        <label>20: KWh Report Threshold</label>
+        <description>Threshold for automatic report of Watts -Zero to disable</description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
       <parameter name="config_21_2" type="integer" groupName="configuration"
                  min="0" max="2500">
         <label>21: Watt Report Threshold</label>
@@ -283,11 +300,50 @@ Sets the plug's action in case of power loss<br /> <h1>Overview</h1><p><br /></p
         <limitToOptions>false</limitToOptions>
       </parameter>
 
+      <parameter name="config_22_1" type="integer" groupName="configuration"
+                 min="0" max="150">
+        <label>22: Current Report Threshold</label>
+        <description>Current Report Threshold - Unit Ampere</description>
+        <default>0</default>
+        <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
       <parameter name="config_23_2" type="integer" groupName="configuration"
                  min="0" max="65535">
         <label>23: Watt Automatic Report Time</label>
         <description><![CDATA[
 Automatic report time for Watts<br /> <h1>Overview</h1><p>0 - disable</p><p>1-30 = 30s</p><p>31-65535 = 31-65535s<br /></p>
+        ]]></description>
+        <default>600</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_24_2" type="integer" groupName="configuration"
+                 min="0" max="65535">
+        <label>24: Kwh Automatic Report Time</label>
+        <description><![CDATA[
+Automatic report time for Kwh<br /> <h1>Overview</h1><p>0 - disable</p><p>1-30 = 30s</p><p>31-65535 = 31-65535s</p>
+        ]]></description>
+        <default>600</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_25_2" type="integer" groupName="configuration"
+                 min="0" max="65535">
+        <label>25: Voltage Automatic Report Time</label>
+        <description><![CDATA[
+Automatic report time for Voltage<br /> <h1>Overview</h1><p>0 - disable</p><p>1-30 = 30s</p><p>31-65535 = 31-65535s</p>
+        ]]></description>
+        <default>600</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_26_2" type="integer" groupName="configuration"
+                 min="0" max="65535">
+        <label>26: Amps Automatic Report Time</label>
+        <description><![CDATA[
+Automatic report time for Amps<br /> <h1>Overview</h1><p>0 - disable</p><p>1-30 = 30s</p><p>31-65535 = 31-65535s</p>
         ]]></description>
         <default>600</default>
         <limitToOptions>false</limitToOptions>

@@ -126,7 +126,10 @@ Blink colors in order &gt; White &gt; Red &gt; Orange &gt; Yellow &gt; Green &gt
 
       <parameter name="config_16_1" type="integer" groupName="configuration"
                  min="0" max="100">
-        <label>16: Ramp rate when dimming using Multilevel Switch</label>
+        <label>16: Ramp rate when dimming using Multilevel Switch in 100ms</label>
+        <description><![CDATA[
+Ramp rate in 100ms<br /> <h1>Overview</h1><p>Ramp rate when dimming using Multilevel Switch V1 CC in 100ms<br />Value range = 0 - 100<br />Default = 20 (2000ms)<br /></p>
+        ]]></description>
         <default>20</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
