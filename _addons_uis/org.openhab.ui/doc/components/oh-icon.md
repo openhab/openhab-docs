@@ -30,49 +30,47 @@ Display an openHAB icon
 <PropGroup label="General">
 <PropBlock type="BOOLEAN" name="icon" label="Icon">
   <PropDescription>
-    <a class="external text-color-blue" target="_blank" href="https://www.openhab.org/link/icons">openHAB icon</a>
+    <code>oh:iconName</code> or <code>iconName</code> (<a class="external text-color-blue" target="_blank" href="https://www.openhab.org/link/icons">openHAB icon</a>), <code>f7:iconName</code> (<a class="external text-color-blue" target="_blank" href="https://www.openhab.org/link/icons">Framework7 icon</a>), <code>material:iconName</code> (<a class="external text-color-blue" target="_blank" href="https://jossef.github.io/material-design-icons-iconfont/">Material icon</a>) or <code>iconify:iconSet:iconName</code> (<a class="external text-color-blue" target="_blank" href="https://icon-sets.iconify.design">Iconify icon</a>, requires being online if not in cache)
   </PropDescription>
 </PropBlock>
-<PropBlock type="TEXT" name="width" label="Width">
-</PropBlock>
-<PropBlock type="TEXT" name="inputmode" label="Input Mode">
+<PropBlock type="TEXT" name="width" label="Width" context="item">
   <PropDescription>
-    Type of data that might be entered: see <a class="external text-color-blue" target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/inputmode">MDN docs</a>
+    Width of the icon in pixels
   </PropDescription>
 </PropBlock>
-<PropBlock type="TEXT" name="placeholder" label="Placeholder">
+<PropBlock type="TEXT" name="height" label="Height" context="item">
   <PropDescription>
-    Placeholder text
+    Height of the icon in pixels
   </PropDescription>
 </PropBlock>
-<PropBlock type="BOOLEAN" name="clearButton" label="Clear button">
+<PropBlock type="TEXT" name="color" label="Color">
   <PropDescription>
-    Display input clear button
+    Color of the icon (for F7/Material icons, a <a class="external text-color-blue" target="_blank" href="https://v5.framework7.io/docs/color-themes.html#colors">Framework7 color theme</a>, for Iconify icons, a CSS color). Not applicable to OH icons.
   </PropDescription>
 </PropBlock>
-<PropBlock type="BOOLEAN" name="outline" label="Outline">
+<PropBlock type="BOOLEAN" name="inline" label="Inline">
   <PropDescription>
-    Makes input outline
+    Display the icon inline (for Iconify icons only)
   </PropDescription>
 </PropBlock>
-<PropBlock type="BOOLEAN" name="required" label="Required">
+<PropBlock type="TEXT" name="rotate" label="Rotate">
   <PropDescription>
-    Display an error message if left empty
+    Rotate the icon (for Iconify icons only; use a CSS value e.g. 90deg)
   </PropDescription>
 </PropBlock>
-<PropBlock type="TEXT" name="item" label="Item">
+<PropBlock type="BOOLEAN" name="horizontalFlip" label="Horizontal Flip">
   <PropDescription>
-    Link the input value to the state of this item
+    Flips the icon horizontally (for Iconify icons only)
   </PropDescription>
 </PropBlock>
-<PropBlock type="TEXT" name="value" label="Value">
+<PropBlock type="BOOLEAN" name="verticalFlip" label="Vertical Flip">
   <PropDescription>
-    Value when not found in item state or variable
+    Flips the icon vertically (for Iconify icons only)
   </PropDescription>
 </PropBlock>
-<PropBlock type="TEXT" name="variable" label="Variable">
+<PropBlock type="BOOLEAN" name="state" label="State">
   <PropDescription>
-    Name of the variable to set when the input changes
+    State of the icon (usually the state of an item) to use dynamic icons
   </PropDescription>
 </PropBlock>
 </PropGroup>

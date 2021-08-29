@@ -51,7 +51,7 @@ A marker on a floor plan
 <PropGroup name="icon" label="Icon">
 <PropBlock type="TEXT" name="icon" label="Icon">
   <PropDescription>
-    Use <code>oh:iconName</code> (<a class="external text-color-blue" target="_blank" href="https://www.openhab.org/link/icons">openHAB icon</a>), <code>f7:iconName</code> (<a class="external text-color-blue" target="_blank" href="https://framework7.io/icons/">Framework7 icon</a>) or <code>material:iconName</code> (<a class="external text-color-blue" target="_blank" href="https://jossef.github.io/material-design-icons-iconfont/">Material icon</a>)
+    Use <code>oh:iconName</code> (<a class="external text-color-blue" target="_blank" href="https://www.openhab.org/link/icons">openHAB icon</a>), <code>f7:iconName</code> (<a class="external text-color-blue" target="_blank" href="https://framework7.io/icons/">Framework7 icon</a>), <code>material:iconName</code> (<a class="external text-color-blue" target="_blank" href="https://jossef.github.io/material-design-icons-iconfont/">Material icon</a>) or <code>iconify:iconSet:iconName</code> (<a class="external text-color-blue" target="_blank" href="https://icon-sets.iconify.design">Iconify icon</a>, requires being online if not in cache)
   </PropDescription>
 </PropBlock>
 <PropBlock type="BOOLEAN" name="iconUseState" label="Icon depends on state">
@@ -76,7 +76,7 @@ A marker on a floor plan
 </PropBlock>
 <PropBlock type="TEXT" name="iconColor" label="Icon Color">
   <PropDescription>
-    Color of the icon (for Framework7/Material icons); use expression for dynamic colors
+    Color of the icon (for Framework7/Material/certain Iconify icons); use expression for dynamic colors
   </PropDescription>
 </PropBlock>
 </PropGroup>
