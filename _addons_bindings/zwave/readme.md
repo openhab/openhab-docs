@@ -423,11 +423,8 @@ log:set INFO org.openhab.binding.zwave
 By default, this will put all logging into the standard ```openhab.log``` file.  If you prefer to have all ZWave logging in a separate file, put this in your ```userdata/etc/log4j2.xml``` file.
 
 ```
-<!-- Zwave custom logger -->
-	<Logger additivity="false" level="INFO" name="org.openhab.binding.zwave">
-		<AppenderRef ref="ZWAVE"/>
-	</Logger>
-
+<Appenders>
+...
 <!-- Zwave custom file appender -->
 <RollingRandomAccessFile fileName="${sys:openhab.logdir}/zwave.log" filePattern="${sys:openhab.logdir}/zwave.log.%i" name="ZWAVE">
 	<PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss.SSS} [%-5.5p] [%-36.36c] - %m%n"/>
@@ -436,6 +433,17 @@ By default, this will put all logging into the standard ```openhab.log``` file. 
 			<SizeBasedTriggeringPolicy size="16 MB"/>
 		</Policies>
 </RollingRandomAccessFile>
+...
+</Appenders>
+
+<Loggers>
+...
+<!-- Zwave custom logger -->
+	<Logger additivity="false" level="INFO" name="org.openhab.binding.zwave">
+		<AppenderRef ref="ZWAVE"/>
+	</Logger>
+</Loggers>
+...
 ```
 
 An online viewer that presents the logs in a clearer way in order to help with their understanding, is available [here](https://opensmarthouse.org/utilities/logviewer/zwave/).
