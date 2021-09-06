@@ -6,7 +6,7 @@
                       https://openhab.org/schemas/thing-description/v1.0.0">
 
   <thing-type id="heiman_hs1sa_00_000" listed="false">
-    <label>HS1SA-Z Smart Smoke Detector</label>
+    <label>HS1SA/3SA Smart Smoke Detector</label>
     <description><![CDATA[
 Smart Smoke Detector<br /> <h1>Overview</h1><p>The smart smoke sensor detects smoke, and sends an alarm signals to alert of danger. When the smart smoke sensor detects smoke, it will send an alarm notification to your controller through wireless Z-Wave communication protocol.</p> <br /> <h2>Inclusion Information</h2><ul><li>Press the pin 3 times within 1.5s, Green LED is Blinking 3 times within 1 second.</li> <li>If Inclusion Process is successful, Green led will turn off.</li> </ul> <br /> <h2>Exclusion Information</h2><ul><li>Press the pin 3 times within 1.5s.</li> <li>If Exclusion Process is successful, Green led is Blinking 6 times, then turn off. </li> </ul> <br /> <h2>Wakeup Information</h2><ul><li>Wake up Notification is transmitted every 24 hours by default.</li> <li>Wake up Notification is transmitted after Notification Report is Transmitted.</li> </ul>
     ]]></description>
@@ -36,7 +36,7 @@ Smart Smoke Detector<br /> <h1>Overview</h1><p>The smart smoke sensor detects sm
     <!-- DEVICE PROPERTY DEFINITIONS -->
     <properties>
       <property name="vendor">Heiman Technology Co. Ltd</property>
-      <property name="modelId">HS1SA-Z</property>
+      <property name="modelId">HS1SA/3SA</property>
       <property name="manufacturerId">0260</property>
       <property name="manufacturerRef">8002:1000</property>
       <property name="dbReference">530</property>

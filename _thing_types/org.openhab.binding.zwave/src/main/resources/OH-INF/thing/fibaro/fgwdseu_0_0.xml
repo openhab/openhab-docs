@@ -38,6 +38,24 @@ FIBARO Walli Double Switch<br /> <h1>Overview</h1><p>FIBARO Walli Double Switch 
           <property name="binding:*:DecimalType">COMMAND_CLASS_CENTRAL_SCENE</property>
         </properties>
       </channel>
+      <channel id="config_decimal_param11" typeId="fibaro_fgwdseu_00_000_config_decimal_param11">
+        <label>LED frame Color ON-state</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_CONFIGURATION;parameter=11</property>
+        </properties>
+      </channel>
+      <channel id="config_decimal_param12" typeId="fibaro_fgwdseu_00_000_config_decimal_param12">
+        <label>LED frame Color OFF-state</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_CONFIGURATION;parameter=12</property>
+        </properties>
+      </channel>
+      <channel id="config_decimal_param13" typeId="config_decimal">
+        <label>LED frame Color brightness</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_CONFIGURATION;parameter=13</property>
+        </properties>
+      </channel>
       <channel id="alarm_power" typeId="alarm_power">
         <label>Alarm (power)</label>
         <properties>
@@ -596,5 +614,51 @@ Second channel – Double Click value sent to 4th and 5th association groups<br 
     </config-description>
 
   </thing-type>
+
+  <channel-type id="fibaro_fgwdseu_00_000_config_decimal_param11">
+    <item-type>Number</item-type>
+    <label>LED frame – colour when ON</label>
+    <description>LED frame – colour when ON</description>
+    <state pattern="%s">
+      <options>
+        <option value="0">LED disabled</option>
+        <option value="1">White</option>
+        <option value="2">Red</option>
+        <option value="3">Green</option>
+        <option value="4">Blue</option>
+        <option value="5">Yellow</option>
+        <option value="6">Cyan</option>
+        <option value="7">Magenta</option>
+        <option value="8">smoothly dep. on measured power</option>
+        <option value="9">in steps dep on measured power</option>
+      </options>
+    </state>
+  </channel-type>
+
+  <channel-type id="fibaro_fgwdseu_00_000_config_decimal_param12">
+    <item-type>Number</item-type>
+    <label>LED frame – colour when OFF</label>
+    <description>LED frame – colour when OFF</description>
+    <state pattern="%s">
+      <options>
+        <option value="0">LED disabled</option>
+        <option value="1">White</option>
+        <option value="2">Red</option>
+        <option value="3">Green</option>
+        <option value="4">Blue</option>
+        <option value="5">Yellow</option>
+        <option value="6">Cyan</option>
+        <option value="7">Magenta</option>
+      </options>
+    </state>
+  </channel-type>
+
+  <channel-type id="fibaro_fgwdseu_00_000_config_decimal_param13">
+    <item-type>Number</item-type>
+    <label>LED frame – brightness</label>
+    <description>LED frame – brightness</description>
+    <state pattern="%s">
+    </state>
+  </channel-type>
 
 </thing:thing-descriptions>

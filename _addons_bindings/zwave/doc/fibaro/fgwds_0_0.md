@@ -5,7 +5,7 @@ title: FGWDS - ZWave
 
 {% include base.html %}
 
-# FGWDS WALLI SWITCH FIBARO SINGLE SWITCH
+# FGWDS Fibaro Walli Single Switch
 This describes the Z-Wave device *FGWDS*, manufactured by *[Fibargroup](http://www.fibaro.com/)* with the thing type UID of ```fibaro_fgwds_00_000```.
 
 The device is in the category of *Wall Switch*, defining Any device attached to the wall that controls a binary status of something, for ex. a light switch.
@@ -94,6 +94,9 @@ The following table summarises the channels available for the FGWDS -:
 | Switch Binary | switch_binary | switch_binary | Switch | Switch | 
 | Electric meter (kWh) | meter_kwh | meter_kwh | Energy | Number | 
 | Electric meter (watts) | meter_watts | meter_watts | Energy | Number | 
+| LED frame color ON-state | config_decimal | config_decimal |  | Number | 
+| LED frame color OFF-state | config_decimal | config_decimal |  | Number | 
+| LED frame color brightness | config_decimal | config_decimal |  | Number | 
 
 ### Switch Binary
 Switch the power on and off.
@@ -109,6 +112,52 @@ The ```meter_kwh``` channel is of type ```meter_kwh``` and supports the ```Numbe
 Indicates the instantaneous power consumption.
 
 The ```meter_watts``` channel is of type ```meter_watts``` and supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
+
+### LED frame color ON-state
+This channel allows to change the color for the LED ring of the frame when the switch is in ON.
+
+The color can be assigned as follows  
+0 – LED disabled  
+1 – White  
+2 – Red  
+3 – Green  
+4 – Blue  
+5 – Yellow  
+6 – Cyan  
+7 – Magenta  
+8 – colour changes smoothly depending on measured power  
+9 – colour changes in steps depending on measured power
+
+Generic class for configuration parameter.
+
+The ```config_decimal``` channel is of type ```config_decimal``` and supports the ```Number``` item.
+
+### LED frame color OFF-state
+This channel allows to change the color for the LED ring of the frame when the switch is in OFF.
+
+The color can be assigned as follows  
+0 – LED disabled  
+1 – White  
+2 – Red  
+3 – Green  
+4 – Blue  
+5 – Yellow  
+6 – Cyan  
+7 – Magenta
+
+Generic class for configuration parameter.
+
+The ```config_decimal``` channel is of type ```config_decimal``` and supports the ```Number``` item.
+
+### LED frame color brightness
+0: LED disabled  
+1 - 100: 1-100% brightness  
+101: brightness directly proportional to measured power  
+102: brightness inversely proportional to measured power
+
+Generic class for configuration parameter.
+
+The ```config_decimal``` channel is of type ```config_decimal``` and supports the ```Number``` item.
 
 
 

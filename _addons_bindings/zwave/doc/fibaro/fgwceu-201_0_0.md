@@ -109,6 +109,9 @@ The following table summarises the channels available for the FGWCEU-201 -:
 |--------------|------------|--------------|----------|-----------|
 | Sensor (temperature) | sensor_temperature | sensor_temperature | Temperature | Number:Temperature | 
 | Scene Number | scene_number | scene_number |  | Number | 
+| LED frame color brightness | config_decimal | config_decimal |  | Number | 
+| LED frame Color ON-state | config_decimal | config_decimal |  | Number | 
+| LED frame Color OFF-state | config_decimal | config_decimal |  | Number | 
 | Battery Level | battery-level | system.battery_level | Battery | Number |
 
 ### Sensor (temperature)
@@ -131,6 +134,52 @@ This channel provides the scene, and the event as a decimal value in the form ``
 | 4        | Tripple keypress   |
 | 5        | 4 x keypress       |
 | 6        | 5 x keypress       |
+
+### LED frame color brightness
+0: LED disabled  
+1 - 100: 1-100% brightness  
+101: brightness directly proportional to measured power  
+102: brightness inversely proportional to measured power
+
+Generic class for configuration parameter.
+
+The ```config_decimal``` channel is of type ```config_decimal``` and supports the ```Number``` item.
+
+### LED frame Color ON-state
+This channel allows to change the color for the LED ring of the frame when the switch is in ON.
+
+The color can be assigned as follows  
+0 – LED disabled  
+1 – White  
+2 – Red  
+3 – Green  
+4 – Blue  
+5 – Yellow  
+6 – Cyan  
+7 – Magenta  
+8 – colour changes smoothly depending on measured power  
+9 – colour changes in steps depending on measured power
+
+Generic class for configuration parameter.
+
+The ```config_decimal``` channel is of type ```config_decimal``` and supports the ```Number``` item.
+
+### LED frame Color OFF-state
+This channel allows to change the color for the LED ring of the frame when the switch is in OFF.
+
+The color can be assigned as follows  
+0 – LED disabled  
+1 – White  
+2 – Red  
+3 – Green  
+4 – Blue  
+5 – Yellow  
+6 – Cyan  
+7 – Magenta
+
+Generic class for configuration parameter.
+
+The ```config_decimal``` channel is of type ```config_decimal``` and supports the ```Number``` item.
 
 ### Battery Level
 Represents the battery level as a percentage (0-100%). Bindings for things supporting battery level in a different format (e.g. 4 levels) should convert to a percentage to provide a consistent battery level reading.

@@ -6,9 +6,9 @@
                       https://openhab.org/schemas/thing-description/v1.0.0">
 
   <thing-type id="fibaro_fgwds_00_000" listed="false">
-    <label>FGWDS WALLI SWITCH FIBARO SINGLE SWITCH</label>
+    <label>FGWDS Fibaro Walli Single Switch</label>
     <description><![CDATA[
-WALLI SWITCH FIBARO SINGLE SWITCH<br /> <h1>Overview</h1><p>FIBARO Walli Single Switch is a smart wall switch designed to control one light sources via Z-Wave network. It measures active power and energy consumed by the controlled load. You can install it with provided cover plate or other compatible. <br />Main features of FIBARO Walli Single Switch: </p> <ul><li> Can be used with:  <ul><li>Conventional incandescent and halogen light sources, </li> <li> LED lamps, </li> <li>Fluorescent lamps, </li> <li>Electronic transformers (for ELV halogen lamps and LED bulbs), </li> <li>Ferromagnetic transformers (for MLV halogen lamps). </li> </ul></li> <li>Can be used with provided cover plate or one of the following:  <ul><li>GIRA – System 55 (Standard 55, E2, Event, Event Clear), </li> <li>Legrand – Céliane, </li> <li>Schneider – Odace. </li> </ul></li> <li>Active power and energy consumption metering. </li> <li>Supports Z-Wave network Security Modes: S0 with AES-128 encryption and S2 Authenticated with PRNG-based encryption. </li> <li>Works as Z-Wave signal repeater (all non-battery operated devices within the network will act as repeaters to increase reliability of the network). </li> <li>May be used with all devices certified with the Z-Wave Plus certificate and should be compatible with such devices produced by other manufacturers. </li> </ul> <br /> <h2>Inclusion Information</h2><h1>To add the device to the Z-Wave network manually:</h1> <ol><li>Power the device.</li> <li>Set the main controller in (Security/non-Security Mode) add mode (see the controller’s manual).</li> <li>Quickly, three times click one of the buttons.</li> <li>If you are adding in Security S2 Authenticated, scan the DSK QR code or input the underlined part of the DSK (label on the bottom of the box).</li> <li>LED will start blinking yellow, wait for the adding process to end.</li> </ol><p>Adding result will be confirmed by the Z-Wave controller’s message and the LED frame:</p> <ul><li>Green - successful (non-secure, S0, S2 non-authenticated),</li> <li>Magenta - successful (Security S2 Authenticated),</li> <li>Red – not successful.</li> </ul><h1>To add the device to the Z-Wave network using SmartStart:</h1> <ol><li>Set the main controller in Security S2 Authenticated add mode (see the controller’s manual). </li> <li>Scan the DSK QR code or input the underlined part of the DSK (label on the bottom of the box).</li> <li>Power the device.</li> <li>Wait for the adding process to start (up to few minutes), which is signaled with yellow LED blinking.</li> </ol><p>Adding result will be confirmed by the Z-Wave controller’s message and the LED frame:</p> <ul><li> Green - successful (non-secure, S0, S2 non-authenticated),</li> <li>Magenta - successful (Security S2 Authenticated),</li> <li>Red – not successful.</li> </ul> <br /> <h2>Exclusion Information</h2><p>To remove the device from the Z-Wave network:</p> <ol><li>Power the device.</li> <li>Set the main controller into remove mode (see the controller’s manual).</li> <li>Quickly, three times click one of the buttons.</li> <li>LED will start blinking yellow, wait for the removing process to end.</li> <li>Successful removing will be confirmed by the Z-Wave controller’s message and red LED colour.</li> </ol> <br /> <h2>Wakeup Information</h2><p>FIBARO Walli Double Switch is powered using DC power supply unit so it is always awake.</p>
+Fibaro Walli Single Switch<br /> <h1>Overview</h1><p>FIBARO Walli Single Switch is a smart wall switch designed to control one light sources via Z-Wave network. It measures active power and energy consumed by the controlled load. You can install it with provided cover plate or other compatible. <br />Main features of FIBARO Walli Single Switch: </p> <ul><li> Can be used with:  <ul><li>Conventional incandescent and halogen light sources, </li> <li> LED lamps, </li> <li>Fluorescent lamps, </li> <li>Electronic transformers (for ELV halogen lamps and LED bulbs), </li> <li>Ferromagnetic transformers (for MLV halogen lamps). </li> </ul></li> <li>Can be used with provided cover plate or one of the following:  <ul><li>GIRA – System 55 (Standard 55, E2, Event, Event Clear), </li> <li>Legrand – Céliane, </li> <li>Schneider – Odace. </li> </ul></li> <li>Active power and energy consumption metering. </li> <li>Supports Z-Wave network Security Modes: S0 with AES-128 encryption and S2 Authenticated with PRNG-based encryption. </li> <li>Works as Z-Wave signal repeater (all non-battery operated devices within the network will act as repeaters to increase reliability of the network). </li> <li>May be used with all devices certified with the Z-Wave Plus certificate and should be compatible with such devices produced by other manufacturers. </li> </ul> <br /> <h2>Inclusion Information</h2><h1>To add the device to the Z-Wave network manually:</h1> <ol><li>Power the device.</li> <li>Set the main controller in (Security/non-Security Mode) add mode (see the controller’s manual).</li> <li>Quickly, three times click one of the buttons.</li> <li>If you are adding in Security S2 Authenticated, scan the DSK QR code or input the underlined part of the DSK (label on the bottom of the box).</li> <li>LED will start blinking yellow, wait for the adding process to end.</li> </ol><p>Adding result will be confirmed by the Z-Wave controller’s message and the LED frame:</p> <ul><li>Green - successful (non-secure, S0, S2 non-authenticated),</li> <li>Magenta - successful (Security S2 Authenticated),</li> <li>Red – not successful.</li> </ul><h1>To add the device to the Z-Wave network using SmartStart:</h1> <ol><li>Set the main controller in Security S2 Authenticated add mode (see the controller’s manual). </li> <li>Scan the DSK QR code or input the underlined part of the DSK (label on the bottom of the box).</li> <li>Power the device.</li> <li>Wait for the adding process to start (up to few minutes), which is signaled with yellow LED blinking.</li> </ol><p>Adding result will be confirmed by the Z-Wave controller’s message and the LED frame:</p> <ul><li> Green - successful (non-secure, S0, S2 non-authenticated),</li> <li>Magenta - successful (Security S2 Authenticated),</li> <li>Red – not successful.</li> </ul> <br /> <h2>Exclusion Information</h2><p>To remove the device from the Z-Wave network:</p> <ol><li>Power the device.</li> <li>Set the main controller into remove mode (see the controller’s manual).</li> <li>Quickly, three times click one of the buttons.</li> <li>LED will start blinking yellow, wait for the removing process to end.</li> <li>Successful removing will be confirmed by the Z-Wave controller’s message and red LED colour.</li> </ol> <br /> <h2>Wakeup Information</h2><p>FIBARO Walli Double Switch is powered using DC power supply unit so it is always awake.</p>
     ]]></description>
     <category>WallSwitch</category>
 
@@ -30,6 +30,24 @@ WALLI SWITCH FIBARO SINGLE SWITCH<br /> <h1>Overview</h1><p>FIBARO Walli Single 
         <label>Electric meter (watts)</label>
         <properties>
           <property name="binding:*:DecimalType">COMMAND_CLASS_METER</property>
+        </properties>
+      </channel>
+      <channel id="config_decimal_param11" typeId="config_decimal">
+        <label>LED frame color ON-state</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_CONFIGURATION;parameter=11</property>
+        </properties>
+      </channel>
+      <channel id="config_decimal_param12" typeId="config_decimal">
+        <label>LED frame color OFF-state</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_CONFIGURATION;parameter=12</property>
+        </properties>
+      </channel>
+      <channel id="config_decimal_param13" typeId="config_decimal">
+        <label>LED frame color brightness</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_CONFIGURATION;parameter=13</property>
         </properties>
       </channel>
     </channels>
@@ -496,5 +514,29 @@ Second channel – Double Click value sent to 4th and 5th association groups<br 
     </config-description>
 
   </thing-type>
+
+  <channel-type id="fibaro_fgwds_00_000_config_decimal_param11">
+    <item-type>Number</item-type>
+    <label>LED frame – colour when ON</label>
+    <description>LED frame – colour when ON</description>
+    <state pattern="%s">
+    </state>
+  </channel-type>
+
+  <channel-type id="fibaro_fgwds_00_000_config_decimal_param12">
+    <item-type>Number</item-type>
+    <label>LED frame – colour when OFF</label>
+    <description>LED frame – colour when OFF</description>
+    <state pattern="%s">
+    </state>
+  </channel-type>
+
+  <channel-type id="fibaro_fgwds_00_000_config_decimal_param13">
+    <item-type>Number</item-type>
+    <label>LED frame – brightness</label>
+    <description>LED frame – brightness</description>
+    <state pattern="%s">
+    </state>
+  </channel-type>
 
 </thing:thing-descriptions>

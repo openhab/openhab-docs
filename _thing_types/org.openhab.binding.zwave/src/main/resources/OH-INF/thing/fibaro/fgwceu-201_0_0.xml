@@ -26,6 +26,24 @@ FIBARO Walli Double Wall Mounted Remote Controller<br /> <h1>Overview</h1><p>FIB
           <property name="binding:*:DecimalType">COMMAND_CLASS_CENTRAL_SCENE</property>
         </properties>
       </channel>
+      <channel id="config_decimal_param13" typeId="config_decimal">
+        <label>LED frame color brightness</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_CONFIGURATION;parameter=13</property>
+        </properties>
+      </channel>
+      <channel id="config_decimal_param11" typeId="config_decimal">
+        <label>LED frame Color ON-state</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_CONFIGURATION;parameter=11</property>
+        </properties>
+      </channel>
+      <channel id="config_decimal_param12" typeId="config_decimal">
+        <label>LED frame Color OFF-state</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_CONFIGURATION;parameter=12</property>
+        </properties>
+      </channel>
       <channel id="battery-level" typeId="system.battery-level">
         <properties>
           <property name="binding:*:PercentType">COMMAND_CLASS_BATTERY</property>
@@ -169,5 +187,13 @@ This parameter defines value of Basic Set or Multilevel Set frame (depending on 
     </config-description>
 
   </thing-type>
+
+  <channel-type id="fibaro_fgwceu-201_00_000_config_decimal_param13">
+    <item-type>Number</item-type>
+    <label>LED frame – brightness</label>
+    <description>This parameter allows to adjust the LED frame brightness</description>
+    <state pattern="%s">
+    </state>
+  </channel-type>
 
 </thing:thing-descriptions>

@@ -57,6 +57,9 @@ The following table summarises the channels available for the FGWREU-111 -:
 | Electric meter (watts) | meter_watts | meter_watts | Energy | Number | 
 | Electric meter (kWh) | meter_kwh | meter_kwh | Energy | Number | 
 | Scene Number | scene_number | scene_number |  | Number | 
+| LED frame Color OFF-state | config_decimal | config_decimal |  | Number | 
+| LED frame Color ON-state | config_decimal | config_decimal |  | Number | 
+| LED frame Color brightness | config_decimal | config_decimal |  | Number | 
 | Alarm (power) | alarm_power | alarm_power | Energy | Switch | 
 | Alarm (system) | alarm_system | alarm_system |  | Switch | 
 | Blinds Control | blinds_control1 | blinds_control | Blinds | Rollershutter | 
@@ -98,6 +101,52 @@ This channel provides the scene, and the event as a decimal value in the form ``
 | 4        | Tripple keypress   |
 | 5        | 4 x keypress       |
 | 6        | 5 x keypress       |
+
+### LED frame Color OFF-state
+This channel allows to change the color for the LED ring of the frame when the switch is in OFF.
+
+The color can be assigned as follows  
+0 – LED disabled  
+1 – White  
+2 – Red  
+3 – Green  
+4 – Blue  
+5 – Yellow  
+6 – Cyan  
+7 – Magenta
+
+Generic class for configuration parameter.
+
+The ```config_decimal``` channel is of type ```config_decimal``` and supports the ```Number``` item.
+
+### LED frame Color ON-state
+This channel allows to change the color for the LED ring of the frame when the switch is in ON.
+
+The color can be assigned as follows  
+0 – LED disabled  
+1 – White  
+2 – Red  
+3 – Green  
+4 – Blue  
+5 – Yellow  
+6 – Cyan  
+7 – Magenta  
+8 – colour changes smoothly depending on measured power  
+9 – colour changes in steps depending on measured power
+
+Generic class for configuration parameter.
+
+The ```config_decimal``` channel is of type ```config_decimal``` and supports the ```Number``` item.
+
+### LED frame Color brightness
+0: LED disabled  
+1 - 100: 1-100% brightness  
+101: brightness directly proportional to measured power  
+102: brightness inversely proportional to measured power
+
+Generic class for configuration parameter.
+
+The ```config_decimal``` channel is of type ```config_decimal``` and supports the ```Number``` item.
 
 ### Alarm (power)
 Indicates if a power alarm is triggered.

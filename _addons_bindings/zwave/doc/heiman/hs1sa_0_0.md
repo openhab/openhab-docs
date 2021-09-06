@@ -1,21 +1,21 @@
 ---
 layout: documentation
-title: HS1SA-Z - ZWave
+title: HS1SA/3SA - ZWave
 ---
 
 {% include base.html %}
 
-# HS1SA-Z Smart Smoke Detector
-This describes the Z-Wave device *HS1SA-Z*, manufactured by *[Heiman Technology Co. Ltd](http://www.heimantech.com/)* with the thing type UID of ```heiman_hs1sa_00_000```.
+# HS1SA/3SA Smart Smoke Detector
+This describes the Z-Wave device *HS1SA/3SA*, manufactured by *[Heiman Technology Co. Ltd](http://www.heimantech.com/)* with the thing type UID of ```heiman_hs1sa_00_000```.
 
 The device is in the category of *Smoke Detector*, defining Smoke detectors.
 
-![HS1SA-Z product image](https://opensmarthouse.org/zwavedatabase/530/image/)
+![HS1SA/3SA product image](https://opensmarthouse.org/zwavedatabase/530/image/)
 
 
-The HS1SA-Z supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is unable to participate in the routing of data from other devices.
+The HS1SA/3SA supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is unable to participate in the routing of data from other devices.
 
-The HS1SA-Z does not permanently listen for messages sent from the controller - it will periodically wake up automatically to check if the controller has messages to send, but will sleep most of the time to conserve battery life. Refer to the *Wakeup Information* section below for further information.
+The HS1SA/3SA does not permanently listen for messages sent from the controller - it will periodically wake up automatically to check if the controller has messages to send, but will sleep most of the time to conserve battery life. Refer to the *Wakeup Information* section below for further information.
 
 ## Overview
 
@@ -33,7 +33,7 @@ The smart smoke sensor detects smoke, and sends an alarm signals to alert of dan
 
 ### Wakeup Information
 
-The HS1SA-Z does not permanently listen for messages sent from the controller - it will periodically wake up automatically to check if the controller has messages to send, but will sleep most of the time to conserve battery life. The wakeup period can be configured in the user interface - it is advisable not to make this too short as it will impact battery life - a reasonable compromise is 1 hour.
+The HS1SA/3SA does not permanently listen for messages sent from the controller - it will periodically wake up automatically to check if the controller has messages to send, but will sleep most of the time to conserve battery life. The wakeup period can be configured in the user interface - it is advisable not to make this too short as it will impact battery life - a reasonable compromise is 1 hour.
 
 The wakeup period does not impact the devices ability to report events or sensor data. The device can be manually woken with a button press on the device as described below - note that triggering a device to send an event is not the same as a wakeup notification, and this will not allow the controller to communicate with the device.
 
@@ -41,9 +41,13 @@ The wakeup period does not impact the devices ability to report events or sensor
   * Wake up Notification is transmitted every 24 hours by default.
   * Wake up Notification is transmitted after Notification Report is Transmitted.
 
+### General Usage Information
+
+Note that both the HS1SA and HS3SA report the same application version and device IDs so are indistinguishable.
+
 ## Channels
 
-The following table summarises the channels available for the HS1SA-Z -:
+The following table summarises the channels available for the HS1SA/3SA -:
 
 | Channel Name | Channel ID | Channel Type | Category | Item Type |
 |--------------|------------|--------------|----------|-----------|
@@ -90,7 +94,7 @@ The device has no configuration parameters defined.
 
 Association groups allow the device to send unsolicited reports to the controller, or other devices in the network. Using association groups can allow you to eliminate polling, providing instant feedback of a device state change without unnecessary network traffic.
 
-The HS1SA-Z supports 3 association groups.
+The HS1SA/3SA supports 3 association groups.
 
 ### Group 1: Lifeline
 

@@ -40,6 +40,24 @@ Fibaro Walli Roller Shutter<br /> <h1>Overview</h1><p>Smart wall switch designed
           <property name="binding:*:DecimalType">COMMAND_CLASS_CENTRAL_SCENE</property>
         </properties>
       </channel>
+      <channel id="config_decimal_param12" typeId="config_decimal">
+        <label>LED frame Color OFF-state</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_CONFIGURATION;parameter=12</property>
+        </properties>
+      </channel>
+      <channel id="config_decimal_param11" typeId="config_decimal">
+        <label>LED frame Color ON-state</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_CONFIGURATION;parameter=11</property>
+        </properties>
+      </channel>
+      <channel id="config_decimal_param13" typeId="config_decimal">
+        <label>LED frame Color brightness</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_CONFIGURATION;parameter=13</property>
+        </properties>
+      </channel>
       <channel id="alarm_power" typeId="alarm_power">
         <label>Alarm (power)</label>
         <properties>
@@ -403,5 +421,29 @@ time needed for roller blinds to reach the bottom<br /> <h1>Overview</h1><p>This
     </config-description>
 
   </thing-type>
+
+  <channel-type id="fibaro_fgwreu111_00_000_config_decimal_param12">
+    <item-type>Number</item-type>
+    <label>LED frame – colour when not moving</label>
+    <description>This parameter defines the LED colour when the device motor is not running.</description>
+    <state pattern="%s">
+    </state>
+  </channel-type>
+
+  <channel-type id="fibaro_fgwreu111_00_000_config_decimal_param11">
+    <item-type>Number</item-type>
+    <label>LED frame colour when moving</label>
+    <description>This parameter defines the LED colour when the motor is running.</description>
+    <state pattern="%s">
+    </state>
+  </channel-type>
+
+  <channel-type id="fibaro_fgwreu111_00_000_config_decimal_param13">
+    <item-type>Number</item-type>
+    <label>LED frame – brightness</label>
+    <description>This parameter allows to adjust the LED frame brightness.</description>
+    <state pattern="%s">
+    </state>
+  </channel-type>
 
 </thing:thing-descriptions>
