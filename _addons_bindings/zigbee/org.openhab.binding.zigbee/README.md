@@ -198,6 +198,30 @@ If the usb dongle is not recognized, it might be necessary to make the dongle's 
   ```
 - Plug in the dongle. It should now be recognized properly as ttyUSBx.
 
+##### Flashing/Upgrading on Linux
+
+Some Ember EZSP NCP coordinators can be flashed to upgrade the firmware using walthowd/husbzb-firmware (https://github.com/walthowd/husbzb-firmware).
+It has been tested with the HUSZBZ-1 and Telegesis ETRX357USB and may work with other coordinators. 
+You are responsible to ensure you load the correct firmware for your device. 
+Loading the wrong firmware may render your device inoperable
+
+Review the `husbzb-firmware` readme for detailed instructions.
+Using docker to upgrade a HUSZBZ-1 is as follows:
+
+- Shutdown openHAB
+- `docker run --rm --device=/dev/ttyUSB1:/dev/ttyUSB1 -it walthowd/husbzb-firmware bash`
+- `./ncp.py scan`
+- Verify output shows which version of firmware the coordinator is running.
+  ```
+  {"ports": [{"port": "/dev/ttyUSB1", "vid": "10C4", "pid": "8A2A", "deviceType": "zigbee", "stackVersion": "5.4.1-194"}]}
+  ```
+- `./ncp.py flash -p /dev/ttyUSB1 -f ncp-uart-sw-6.7.8.ebl`
+- Wait for the flashing to complete and the coordinator to reboot.
+- `./ncp.py scan`
+  ```
+  {"ports": [{"port": "/dev/ttyUSB1", "vid": "10C4", "pid": "8A2A", "deviceType": "zigbee", "stackVersion": "6.7.8-373"}]}
+  ```
+
 #### Telegesis ETRX3
 
 The thing type is `coordinator_telegesis`. Note that this dongle may not support all Zigbee 3.0 devices.
