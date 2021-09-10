@@ -21,7 +21,16 @@ The `tooltipStyles` property can be configured in YAML to set additional CSS pro
 
 ## Building a Floorplan Page
 
-In the Design view, configure the properties below Page Configuration.
+In the Design view, configure the properties below Background Configuration.
+
+Images should be stored in /conf/html/
+
+Image URL:
+  /static/<your directory>/<your image file>
+    e.g: /static/floorplan/FloorPlan3Dsmall.jpg
+
+Image Width and Image Height:
+  Enter the actual sizes of your image
 
 To add markers, you can do it either:
 
