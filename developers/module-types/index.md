@@ -117,10 +117,10 @@ public class TemperatureTriggerType extends TriggerType {
         config.add(temperature);
         config.add(operator);
 
-        return new AirConditionerTriggerType(output,config);
+        return new TemperatureTriggerType(output,config);
     }
 
-    public AirConditionerTriggerType(List<Output> output, List<ConfigDescriptionParameter> config) {
+    public TemperatureTriggerType(List<Output> output, List<ConfigDescriptionParameter> config) {
         super(UID, config, "Temperature Trigger", "This triggers when the temperature has reached a certain value", null, Visibility.VISIBLE, output);
     }
 }
