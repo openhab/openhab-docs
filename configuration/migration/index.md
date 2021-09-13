@@ -9,9 +9,9 @@ description: Description of Beaking Changes and needed steps for a proper Migrat
 There are different approaches to get your openHAB 2 Environment upgraded to openHAB 3.
 You could start with a fresh install and migrate your environment step-by-step or you can upgrade your running environment and change your configuration where needed.
 
-Since this is a major version release you have to pay attention to some **Breaking Changes** that may affect your environment too.
-You can find a general note on the **Breaking Changes** here:
-<https://github.com/openhab/openhab-distro/wiki/Breaking-Changes-in-openHAB-3>
+Since this is a major version release you have to pay attention to some **Breaking Changes** that may affect your environment, too.
+<https://github.com/openhab/openhab-distro/wiki/Breaking-Changes-in-openHAB-3/139901f0ef7ee8b5b7dd480204ddf5069f030f50>
+(note this link is currently only a workaround for a Github issue with the final release notes document).
 
 Please read them carefully and check if you are affected by some of the changes, like the changes to some rules namespaces and the handling of time functions.
 
@@ -24,9 +24,9 @@ Please be aware of possible changes needed for your specific environment in case
 
 If you are working with an [openHABian](https://www.openhab.org/docs/installation/openhabian.html) setup, the upgrade is quite easy. Regardless of if you are currently using the openHAB 2.5 stable release or one of the latest 3.0.0 SNAPSHOT or milestone builds, switching to openHAB 3.0.0 stable is done in just a few steps:
 
-1. Connect to the SSH command line and execute: `sudo openhabian-config`
-1. When being asked, answer that you want to update.
-1. Select the menu entry"03 - Install openHAB" option.
+1. Connect to the SSH command line and run `sudo openhabian-config`
+2. When being asked to update openHABian, answer yes. Do not change the branch, it should read `stable` if you are on 2.X and `openHAB3` or `main` if on 3.X.
+3. Select the menu entry "03 - Install openHAB" option.
 
 ### Package-based Installations
 
