@@ -37,17 +37,17 @@ The following steps will show you how to setup a specific bundle for development
 
 1. Ensure the bundle builds correctly (natively with maven)
 
-   1. Open console to the bundle location (example: `%BASE%\openhab-addons\bundles\org.openhab.binding.russound`)
+   1. Open console to the bundle location (example: `%BASE%/openhab-addons/bundles/org.openhab.binding.russound`)
    1. `mvn clean install -DskipChecks` in the console to build the bundle
-   1. Should produce a jar file in the 'target' directory of the bundle(example: `%BASE%\openhab-addons\bundles\org.openhab.binding.russound\target\org.openhab.binding.russound-3.1.0-SNAPSHOT.jar`)
+   1. Should produce a jar file in the 'target' directory of the bundle(example: `%BASE%/openhab-addons/bundles/org.openhab.binding.russound/target/org.openhab.binding.russound-3.1.0-SNAPSHOT.jar`)
 
-1. Open VSCode and then open the folder of the bundle.  From VSCode - use `File->Open Folder->choose bundle directory` (example: `%BASE%\openhab-addons\bundles\org.openhab.binding.russound`)
+1. Open VSCode and then open the folder of the bundle.  From VSCode - use `File->Open Folder->choose bundle directory` (example: `%BASE%/openhab-addons/bundles/org.openhab.binding.russound`)
 
-1. Create a ".vscode" directory under the bundle (example: `%BASE%\openhab-addons\bundles\org.openhab.binding.russound\.vscode`)
+1. Create a ".vscode" directory under the bundle (example: `%BASE%/openhab-addons/bundles/org.openhab.binding.russound/.vscode`)
 
     ![define .vscode](images/ide_setup_vscode_folder.png)
 
-1. Download [tasks.json](https://raw.githubusercontent.com/openhab/openhab-docs/main/developers/ide/examples/vscode/tasks.json) to the .vscode directory (example: `%BASE%\openhab-addons\bundles\org.openhab.binding.russound\.vscode\tasks.json`)
+1. Download [tasks.json](https://raw.githubusercontent.com/openhab/openhab-docs/main/developers/ide/examples/vscode/tasks.json) to the .vscode directory (example: `%BASE%/openhab-addons/bundles/org.openhab.binding.russound/.vscode/tasks.json`)
 
     ![define tasks.json](./images/ide_setup_vscode_folder_tasks.png)
 
@@ -64,7 +64,7 @@ The following steps will show you how to setup a specific bundle for development
 1. Start the openHAB instance with the debug option - `start.bat debug` from a console in the openHAB home directory.  You should see the following line printed somewhere in the karaf console:
  `Listening for transport dt_socket at address: xxxx` (where xxxx should be 5005)
 
-1. Download [launch.json](https://raw.githubusercontent.com/openhab/openhab-docs/main/developers/ide/examples/vscode/launch.json) to the .vscode directory  (example: `%BASE%\openhab-addons\bundles\org.openhab.binding.russound\.vscode\launch.json`)
+1. Download [launch.json](https://raw.githubusercontent.com/openhab/openhab-docs/main/developers/ide/examples/vscode/launch.json) to the .vscode directory  (example: `%BASE%/openhab-addons/bundles/org.openhab.binding.russound/.vscode/launch.json`)
 
     ![define launch.json](./images/ide_setup_vscode_folder_launch.png)
 
