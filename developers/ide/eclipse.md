@@ -39,20 +39,15 @@ If you already have Eclipse installed it is recommended to perform a separate Ec
 
     ![select projects](./images/ide_setup_eclipse_4_openhab.png)
 
-    | Selection               | Install if                            | Branches   |
-    |-------------------------|---------------------------------------|------------|
-    | **openHAB Development** | **Debug/Demo Environment (Required)** | 2.5.x, 3.0 |
-    | openHAB Add-ons         | Add-ons Development                   | 2.5.x, 3.0 |
-    | openHAB ZigBee Binding  | ZigBee Binding Development            | 2.5.x, 3.0 |
-    | openHAB Z-Wave Binding  | Z-Wave Binding Development            | 2.5.x, 3.0 |
-    | openHAB BACNet Binding  | BACNet Binding Development            |            |
-    | openHAB Web UIs         | Web UIs Development                   | 2.5.x, 3.0 |
-    | openHAB Core Framework  | Core Framework Development            | 3.0        |
-
-    ::: warning Attention
-    Select `2.5.x` if you want to develop for 2.5.x.
-    The Core Framework only has a main branch (3.0 development), which means you can no longer make Core Framework changes for a 2.5.x system.
-    :::
+    | Selection               | Install if                            |
+    |-------------------------|---------------------------------------|
+    | **openHAB Development** | **Debug/Demo Environment (Required)** |
+    | openHAB Add-ons         | Add-ons Development                   |
+    | openHAB ZigBee Binding  | ZigBee Binding Development            |
+    | openHAB Z-Wave Binding  | Z-Wave Binding Development            |
+    | openHAB BACNet Binding  | BACNet Binding Development            |
+    | openHAB Web UIs         | Web UIs Development                   |
+    | openHAB Core Framework  | Core Framework Development            |
 
 1. Click `Next>`, verify/modify Root and install folder name. Click on `Show all variables` to open the window shown below.
 
@@ -101,7 +96,7 @@ The following files are of interest for the execution environment:
 |--- runtime
 |------- conf             Here you configure the manual text files
 |------- userdata         Here is the openHAB user data
-|------- logback.xml      XML file for logging options
+|------- log4j2.xml       XML file for logging options
 |--- app.bndrun           The file to start openHAB
 |--- pom.xml              The pom file with all dependencies for the demo project
 ```
