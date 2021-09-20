@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="merten_50x4xx_00_000" listed="false">
+    <label>50x4xx Switch Sensor Cover</label>
+    <description><![CDATA[
+Switch Sensor Cover<br /> <h1>Overview</h1><p>The sensor cover contains a radio receiver. Using the connected transmitters, you can switch connected ohmic and complex loads (such as incandescent lamps, low voltage halogen lamps) using the relay switch insert.</p> <br /> <h2>Inclusion Information</h2><p>Triple click on operating surface.<br /></p> <br /> <h2>Exclusion Information</h2><p>Triple click on operating surface.<br /></p> <br /> <h2>Wakeup Information</h2><p>Triple click on operating surface.</p>
+    ]]></description>
+    <category>WallSwitch</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_binary" typeId="switch_binary">
+        <label>Switch</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Merten</property>
+      <property name="modelId">50x4xx</property>
+      <property name="manufacturerId">007A</property>
+      <property name="manufacturerRef">4002:0001</property>
+      <property name="dbReference">1414</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association">
+        <label>1: Switching additional devices</label>
+        <description><![CDATA[
+Switching additional radio receivers<br /> <h1>Overview</h1><p>Switching additional radio receivers</p>
+        ]]></description>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association">
+        <label>2: unknown</label>
+        <description><![CDATA[
+unknown<br /> <h1>Overview</h1><p>unknown, not mentioned in the manual<br /></p>
+        ]]></description>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

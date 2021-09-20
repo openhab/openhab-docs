@@ -201,7 +201,11 @@ Available settings: 0 - 2300 (0 - 2300W, being the mazximum power supported by t
 Default setting: 50 (50W)
 
 NOTE: Don't provide a too low value otherwise you may flood your Z-Wave network
-Values in the range 0 to 2300 may be set.
+The following option values may be configured -:
+
+| Value  | Description |
+|--------|-------------|
+| 0 | Disabled |
 
 The manufacturer defined default value is ```50```.
 
@@ -220,7 +224,11 @@ Available settings: 0 - 100 (0 - 100%)
 Default setting: 10 (10%)
 
 NOTE: Don't provide a too low value otherwise you may flood your Z-Wave network
-Values in the range 0 to 100 may be set.
+The following option values may be configured -:
+
+| Value  | Description |
+|--------|-------------|
+| 0 | Disabled |
 
 The manufacturer defined default value is ```10```.
 
@@ -237,7 +245,11 @@ Available settings: 0- 2678400 (0 - 2678400 seconds)
 0 -The function is disabled.
 
 Default setting: 3600 (1 hour).
-Values in the range 3600 to 2678400 may be set.
+The following option values may be configured -:
+
+| Value  | Description |
+|--------|-------------|
+| 0 | Disabled |
 
 The manufacturer defined default value is ```3600```.
 
@@ -254,7 +266,11 @@ Available settings: 3600 - 2678400 (3600 - 2678400 seconds)
 0 -The function is disabled.
 
 Default setting: 7200 (2 hours).
-Values in the range 3600 to 2678400 may be set.
+The following option values may be configured -:
+
+| Value  | Description |
+|--------|-------------|
+| 0 | Disabled |
 
 The manufacturer defined default value is ```7200```.
 
@@ -271,9 +287,13 @@ Available settings: 3600 - 2678400 (3600 - 2678400 seconds)
 0 -The function is disabled.
 
 Default setting: 0 (disabled).
-Values in the range 3600 to 2678400 may be set.
+The following option values may be configured -:
 
-The manufacturer defined default value is ```0```.
+| Value  | Description |
+|--------|-------------|
+| 0 | Disabled |
+
+The manufacturer defined default value is ```0``` (Disabled).
 
 This parameter has the configuration ID ```config_173_4``` and is of type ```INTEGER```.
 
@@ -288,9 +308,13 @@ Available settings: 3600 - 2678400 (3600 - 2678400 seconds)
 0 -The function is disabled.
 
 Default setting: 0 (disabled).
-Values in the range 3600 to 2678400 may be set.
+The following option values may be configured -:
 
-The manufacturer defined default value is ```0```.
+| Value  | Description |
+|--------|-------------|
+| 0 | Disabled |
+
+The manufacturer defined default value is ```0``` (Disabled).
 
 This parameter has the configuration ID ```config_174_4``` and is of type ```INTEGER```.
 

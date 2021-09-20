@@ -44,7 +44,7 @@ Door/Window Sensor<br /> <h1>Overview</h1><p>The NEO Coolcam Door/Window Sensor 
       <property name="vendor">Shenzhen Neo Electronics Co., Ltd</property>
       <property name="modelId">NAS-DS01Z</property>
       <property name="manufacturerId">0258</property>
-      <property name="manufacturerRef">0003:0082,0003:1082,0003:2082,0003:3082,0003:4082,0003:6082</property>
+      <property name="manufacturerRef">0003:0082,0003:1082,0003:2082,0003:3082,0003:4082,0003:6082,0200:1022</property>
       <property name="dbReference">400</property>
       <property name="commandClass:COMMAND_CLASS_SENSOR_BINARY">sensor_door</property>
       <property name="defaultAssociations">1</property>

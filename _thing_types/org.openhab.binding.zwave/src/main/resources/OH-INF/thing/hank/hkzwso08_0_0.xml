@@ -117,63 +117,75 @@ LED in the device will indicate the state of the device<br /> <h1>Overview</h1><
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_151_2" type="integer" groupName="configuration"
-                 min="0" max="2300">
+      <parameter name="config_151_2" type="integer" groupName="configuration">
         <label>151: Threshold of Power Report</label>
         <description><![CDATA[
 Power Threshold at which to send meter report<br /> <h1>Overview</h1><p>Power threshold to be interpreted, when the change value of load power exceeds the setting threshold, the smart plug will send meter report to association device (Group Lifeline).</p><p>Available settings: 0 - 2300 (0 - 2300W, being the mazximum power supported by the device, higher values technically possible but irrelevant)</p><p>0 - The function is disabled.</p><p>Default setting: 50 (50W)</p><p>NOTE: Don't provide a too low value otherwise you may flood your Z-Wave network</p>
         ]]></description>
         <default>50</default>
+        <options>
+          <option value="0">Disabled</option>
+        </options>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_152_1" type="integer" groupName="configuration"
-                 min="0" max="100">
+      <parameter name="config_152_1" type="integer" groupName="configuration">
         <label>152: Percentage Threshold of Power Report</label>
         <description><![CDATA[
 Percentage Threshold at which to send meter report<br /> <h1>Overview</h1><p>Power percentage threshold to be interpreted, when change value of the load power exceeds the setting threshold, the smart plug will send meter report to association device (Group Lifeline).</p><p>Available settings: 0 - 100 (0 - 100%)</p><p>0 - The function is disabled.</p><p>Default setting: 10 (10%)</p><p>NOTE: Don't provide a too low value otherwise you may flood your Z-Wave network<br /></p>
         ]]></description>
         <default>10</default>
+        <options>
+          <option value="0">Disabled</option>
+        </options>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_171_4" type="integer" groupName="configuration"
-                 min="3600" max="2678400">
+      <parameter name="config_171_4" type="integer" groupName="configuration">
         <label>171: Power Report Frequency</label>
         <description><![CDATA[
 The interval of sending power report to association device (Group Lifeline).<br /> <h1>Overview</h1><p>The interval of sending power report to association device (Group Lifeline).</p><p>Available settings: 0- 2678400 (0 - 2678400 seconds)</p><p>0 -The function is disabled.</p><p>Default setting: 3600 (1 hour).</p>
         ]]></description>
         <default>3600</default>
+        <options>
+          <option value="0">Disabled</option>
+        </options>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_172_4" type="integer" groupName="configuration"
-                 min="3600" max="2678400">
+      <parameter name="config_172_4" type="integer" groupName="configuration">
         <label>172: Energy Report Frequency</label>
         <description><![CDATA[
 The interval of sending energy report to association device (Group Lifeline).<br /> <h1>Overview</h1><p>The interval of sending energy report to association device (Group Lifeline).</p><p>Available settings: 3600 - 2678400 (3600 - 2678400 seconds)</p><p>0 -The function is disabled.</p><p>Default setting: 7200 (2 hours).</p>
         ]]></description>
         <default>7200</default>
+        <options>
+          <option value="0">Disabled</option>
+        </options>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_173_4" type="integer" groupName="configuration"
-                 min="3600" max="2678400">
+      <parameter name="config_173_4" type="integer" groupName="configuration">
         <label>173: Voltage Report Frequency</label>
         <description><![CDATA[
 The interval of sending voltage (V) report to association device (Group Lifeline)<br /> <h1>Overview</h1><p>The interval of sending voltage report to association device (Group Lifeline)</p><p>Available settings: 3600 - 2678400 (3600 - 2678400 seconds)</p><p>0 -The function is disabled.</p><p>Default setting: 0 (disabled).</p>
         ]]></description>
         <default>0</default>
+        <options>
+          <option value="0">Disabled</option>
+        </options>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_174_4" type="integer" groupName="configuration"
-                 min="3600" max="2678400">
+      <parameter name="config_174_4" type="integer" groupName="configuration">
         <label>174: Electric Current Report Frequency</label>
         <description><![CDATA[
 Interval for sending electric current (A) report.<br /> <h1>Overview</h1><p>The interval of sending electric current (A) report to association device (Group Lifeline).</p><p>Available settings: 3600 - 2678400 (3600 - 2678400 seconds)</p><p>0 -The function is disabled.</p><p>Default setting: 0 (disabled).</p>
         ]]></description>
         <default>0</default>
+        <options>
+          <option value="0">Disabled</option>
+        </options>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
