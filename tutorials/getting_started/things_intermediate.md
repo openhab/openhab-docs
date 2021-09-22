@@ -53,7 +53,7 @@ Choose the correct port, alter the name and/or ID of the controller Thing, then 
 Once back on the Things screen, click on the "+" button then on Z-Wave Binding again.
 Click scan and all the devices already paired with the Zwave controller will be discovered and appear in the Inbox.
 To pair a new device, while on this screen, perform the procedure specific to the device to include it in your network.
-Go to the add-ons section of [this site]({{base}}/addons/bindings/zwave/doc/things.html#things-supported-by-the-z-wave-binding) and search for for the device model in the search bar.
+Go to the add-ons section of [this site](/addons/bindings/zwave/doc/things.html#things-supported-by-the-z-wave-binding) and search for for the device model in the search bar.
 The page should give you details on the inclusion procedure.
 Alternatively, look in the device's documentation from the vendor.
 
