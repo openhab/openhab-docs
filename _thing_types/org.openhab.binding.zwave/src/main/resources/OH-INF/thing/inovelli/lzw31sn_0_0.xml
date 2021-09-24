@@ -8,7 +8,7 @@
   <thing-type id="inovelli_lzw31sn_00_000" listed="false">
     <label>LZW31-SN Red Series Dimmer</label>
     <description><![CDATA[
-Red Series Dimmer<br /> <h1>Overview</h1><p>Inovelli’s new dimmer switch is packed with features and designed with your house in mind.</p> <p>From a hardware side we’ve upgraded our Z-Wave module for better distance and there is no longer a need for a neutral wire. The switch can be used in any 3-Way or 4-Way setting and allows you to use either an auxiliary switch, a smart switch or your existing dumb switch (NOTE: this only applies if a neutral wire is installed. If there is no neutral wire, the switch only works in a single-pole setting).</p> <p>From a firmware side, this switch has it all (literally). Scene control, notifications (flashes if your garage door is left open) and can be configured on any HUB.</p> <p>==</p> <p>Important:  If you have a neutral wire, set parameter 21 correctly.  If setting the switch up in a 3-way configuration, set parameter 22 (you may need to enable advanced settings to see this).</p> <br /> <h2>Inclusion Information</h2><p>Once the inclusion process has started press the config button 3X and the LED bar will flash blue.  If the switch was included successfully the bar will turn GREEN, however if the switch was not included successfully it will turn RED.</p> <br /> <h2>Exclusion Information</h2><p>Press the Config Button 3X</p> <br /> <h2>Wakeup Information</h2><p><br /></p>
+Red Series Dimmer<br /> <h1>Overview</h1><p>Inovelli’s new dimmer switch is packed with features and designed with your house in mind.</p> <p>From a hardware side we’ve upgraded our Z-Wave module for better distance and there is no longer a need for a neutral wire. The switch can be used in any 3-Way or 4-Way setting and allows you to use either an auxiliary switch, a smart switch or your existing dumb switch (NOTE: this only applies if a neutral wire is installed. If there is no neutral wire, the switch only works in a single-pole setting).</p> <p>From a firmware side, this switch has it all (literally). Scene control, notifications (flashes if your garage door is left open) and can be configured on any HUB.</p> <br /> <h2>Inclusion Information</h2><p>Once the inclusion process has started press the config button 3X and the LED bar will flash blue.  If the switch was included successfully the bar will turn GREEN, however if the switch was not included successfully it will turn RED.</p> <br /> <h2>Exclusion Information</h2><p>Press the Config Button 3X</p> <br /> <h2>Wakeup Information</h2><p><br /></p>
     ]]></description>
     <category>WallSwitch</category>
 
@@ -67,6 +67,12 @@ Red Series Dimmer<br /> <h1>Overview</h1><p>Inovelli’s new dimmer switch is pa
         <label>LED Indicator Intensity</label>
         <properties>
           <property name="binding:*:DecimalType">COMMAND_CLASS_CONFIGURATION;parameter=14</property>
+        </properties>
+      </channel>
+      <channel id="config_decimal_param3" typeId="config_decimal">
+        <label>Auto Off Timer (Seconds)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_CONFIGURATION;parameter=3</property>
         </properties>
       </channel>
       <channel id="protection_local" typeId="protection_local">
@@ -408,6 +414,14 @@ Enable "smart bulb" mode<br /> <h1>Overview</h1><p>Smart bulb mode: If set to 1,
     <item-type>Number</item-type>
     <label>LED Indicator Intensity</label>
     <description>LED Indicator Intensity</description>
+    <state pattern="%s">
+    </state>
+  </channel-type>
+
+  <channel-type id="inovelli_lzw31sn_00_000_config_decimal_param3">
+    <item-type>Number</item-type>
+    <label>Ramp Rate (Z-Wave)</label>
+    <description>Ramp Rate (Z-Wave)</description>
     <state pattern="%s">
     </state>
   </channel-type>

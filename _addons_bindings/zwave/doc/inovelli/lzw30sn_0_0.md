@@ -44,6 +44,7 @@ The following table summarises the channels available for the LZW30-SN -:
 | Scene Number | scene_number | scene_number |  | Number | 
 | LED strip effect | config_decimal | config_decimal |  | Number | 
 | LED Indicator Color | config_decimal | config_decimal |  | Number | 
+| Auto Off Timer (Seconds) | config_decimal | config_decimal |  | Number | 
 
 ### Switch
 Switch the power on and off.
@@ -89,6 +90,13 @@ Generic class for configuration parameter.
 The ```config_decimal``` channel is of type ```config_decimal``` and supports the ```Number``` item.
 
 ### LED Indicator Color
+Generic class for configuration parameter.
+
+The ```config_decimal``` channel is of type ```config_decimal``` and supports the ```Number``` item.
+
+### Auto Off Timer (Seconds)
+Auto off timer in seconds. 0 to disable, max 32767
+
 Generic class for configuration parameter.
 
 The ```config_decimal``` channel is of type ```config_decimal``` and supports the ```Number``` item.

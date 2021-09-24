@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="sensative_1101021_00_000" listed="false">
+    <label>11 01 021 Strips Guard</label>
+    <description><![CDATA[
+Strips Guard<br /> <h1>Overview</h1><p>Strips Guard 700 is a magnetic sensor for monitoring of windows, doors, and valuables.<br /></p> <br /> <h2>Inclusion Information</h2><ol><li>Open your Z-Wave Controller application and start pairing mode.</li><li>Remove both magnets from Strips.*</li><li>One long LED blink means Strips has been successfully added to your Z-Wave network.</li></ol><p>*If you have previously removed the magnets from Strips, or need to re-add the device, performing a manual wake up will join the device when the controller is in pairing mode.</p> <br /> <h2>Exclusion Information</h2><ol><li>Set your Z-Wave Controller to remove/exclude mode</li><li>Move the magnet all the way to the rounded edge, you should see 1 short LED blink</li><li>Move magnet towards center 2 more times (2 LED blinks)</li><li>If successful: 1 long LED blink</li></ol> <br /> <h2>Wakeup Information</h2><ol><li>Take the magnet and move it to the rounded edge and wait for the blink, then move the magnet away.</li><li>Repeat this 3 times. A final short blink will confirm that the user-command was successful.</li></ol>
+    ]]></description>
+    <category>Sensor</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="sensor_binary" typeId="sensor_binary">
+        <label>Binary Sensor</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SENSOR_BINARY</property>
+        </properties>
+      </channel>
+      <channel id="alarm_burglar" typeId="alarm_burglar">
+        <label>Alarm (burglar)</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=BURGLAR</property>
+        </properties>
+      </channel>
+      <channel id="alarm_system" typeId="alarm_system">
+        <label>Alarm (system)</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=SYSTEM</property>
+        </properties>
+      </channel>
+      <channel id="alarm_access" typeId="alarm_access">
+        <label>Alarm (access)</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=ACCESS_CONTROL</property>
+        </properties>
+      </channel>
+      <channel id="battery-level" typeId="system.battery-level">
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_BATTERY</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Sensative AB</property>
+      <property name="modelId">11 01 021</property>
+      <property name="manufacturerId">019A</property>
+      <property name="manufacturerRef">0004:0004</property>
+      <property name="dbReference">1415</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_1_1" type="integer" groupName="configuration"
+                 min="0" max="2">
+        <label>1: Notification type</label>
+        <description><![CDATA[
+Select the notification type for the door and window or close events.<br /> <h1>Overview</h1><p><br /></p>
+        ]]></description>
+        <default>1</default>
+        <options>
+          <option value="0">Binary Sensor report + Notification report (Access Control)</option>
+          <option value="1">Notification report (Access Control)</option>
+          <option value="2">Notification report (Home Security)</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_2_1" type="integer" groupName="configuration"
+                 min="0" max="1">
+        <label>2: LED alarm event reporting</label>
+        <description><![CDATA[
+Turn On or Off LED for specific event indications (ex. alarms).<br /> <h1>Overview</h1><p><br /></p>
+        ]]></description>
+        <default>1</default>
+        <options>
+          <option value="0">Turns off LED for door open events</option>
+          <option value="1">On</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_15_1" type="integer" groupName="configuration"
+                 min="0" max="2">
+        <label>15: Activate supervision</label>
+        <description><![CDATA[
+Activate Supervision command for only important alarm events or all events. Supervised commands require a confirmation from the gateway when a notification is received.<br /> <h1>Overview</h1><p>0 - Events sent with S2 Encapsulation only</p><p>1 - Only Door Open Alarm Report (Events sent with S2 and supervision encapsulation)</p><p>2 - Unsolicited reports (Door Open/Close, Tamper clear, Wake up notification and Battery Report events sent with S2 and supervision encapsulation)</p>
+        ]]></description>
+        <default>1</default>
+        <options>
+          <option value="0">Events sent with S2 Encapsulation only</option>
+          <option value="1">Only Door Open Alarm Report (Events sent with S2 and supervision enc.)</option>
+          <option value="2">Unsolicited reports</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_16_2" type="integer" groupName="configuration"
+                 min="500" max="30000">
+        <label>16: Supervision wait time</label>
+        <description>The number of miliseconds to wait for a Supervision response when a Supervised message is sent.</description>
+        <default>10000</default>
+        <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_17_1" type="integer" groupName="configuration"
+                 min="0" max="5">
+        <label>17: No. of failed event retries</label>
+        <description>Number of retries when a confirmation is not received.</description>
+        <default>1</default>
+        <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_18_1" type="integer" groupName="configuration"
+                 min="1" max="60">
+        <label>18: Failed event retry interval</label>
+        <description>The minimum number of seconds between retries.</description>
+        <default>6</default>
+        <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_19_1" type="integer" groupName="configuration"
+                 min="5" max="70">
+        <label>19: Heartbeat interval</label>
+        <description>Number of minutes between periodic battery reports (Accepts multiples of 5 mins, any arbitrary value in between 5 and 70 will be rounded up to a multiple of 5).</description>
+        <default>70</default>
+        <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_22_1" type="integer" groupName="configuration"
+                 min="0" max="1">
+        <label>22: Securiy Level</label>
+        <description><![CDATA[
+Select the level of security.<br /> <h1>Overview</h1><p>0 - Standard (Forces parameter behavior as follows: #16=10000; #17=Sensative standard (retries with an incrementally longer period until reconnected); #18=0; #19=Off)</p><p>1 - High Security (Enables parameters #16-#19; #1=2; #15=2)</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Standard</option>
+          <option value="1">High Security</option>
+        </options>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association">
+        <label>1: Lifeline</label>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

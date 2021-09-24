@@ -56,6 +56,12 @@ Red Series On/Off switch<br /> <h1>Overview</h1><p>Inovelli’s new on/off switc
           <property name="binding:*:DecimalType">COMMAND_CLASS_CONFIGURATION;parameter=5</property>
         </properties>
       </channel>
+      <channel id="config_decimal_param3" typeId="config_decimal">
+        <label>Auto Off Timer (Seconds)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_CONFIGURATION;parameter=3</property>
+        </properties>
+      </channel>
     </channels>
 
     <!-- DEVICE PROPERTY DEFINITIONS -->
@@ -391,6 +397,14 @@ Enable Instant On<br /> <h1>Overview</h1><p>Enable instant on (ie: disable the 7
         <option value="234">Pink</option>
         <option value="255">White</option>
       </options>
+    </state>
+  </channel-type>
+
+  <channel-type id="inovelli_lzw30sn_00_000_config_decimal_param3">
+    <item-type>Number</item-type>
+    <label>Auto Off Timer</label>
+    <description>Auto Off Timer</description>
+    <state pattern="%s">
     </state>
   </channel-type>
 

@@ -23,10 +23,6 @@ From a hardware side we’ve upgraded our Z-Wave module for better distance and 
 
 From a firmware side, this switch has it all (literally). Scene control, notifications (flashes if your garage door is left open) and can be configured on any HUB.
 
-==
-
-Important:  If you have a neutral wire, set parameter 21 correctly.  If setting the switch up in a 3-way configuration, set parameter 22 (you may need to enable advanced settings to see this).
-
 ### Inclusion Information
 
 Once the inclusion process has started press the config button 3X and the LED bar will flash blue.  If the switch was included successfully the bar will turn GREEN, however if the switch was not included successfully it will turn RED.
@@ -37,7 +33,7 @@ Press the Config Button 3X
 
 ### General Usage Information
 
-
+Important: If you have a neutral wire, set parameter 21 correctly. If setting the switch up in a 3-way configuration, set parameter 22 (you may need to enable advanced settings to see this).
 
 ## Channels
 
@@ -54,6 +50,7 @@ The following table summarises the channels available for the LZW31-SN -:
 | Default Level (Local) | config_decimal | config_decimal |  | Number | 
 | LED Indicator Color | config_decimal | config_decimal |  | Number | 
 | LED Indicator Intensity | config_decimal | config_decimal |  | Number | 
+| Auto Off Timer (Seconds) | config_decimal | config_decimal |  | Number | 
 | Protection Local | protection_local | protection_local |  | Number | 
 
 ### Dimmer
@@ -109,6 +106,13 @@ Generic class for configuration parameter.
 The ```config_decimal``` channel is of type ```config_decimal``` and supports the ```Number``` item.
 
 ### LED Indicator Intensity
+Generic class for configuration parameter.
+
+The ```config_decimal``` channel is of type ```config_decimal``` and supports the ```Number``` item.
+
+### Auto Off Timer (Seconds)
+Auto off timer in seconds. 0 to disable, max 32767
+
 Generic class for configuration parameter.
 
 The ```config_decimal``` channel is of type ```config_decimal``` and supports the ```Number``` item.
