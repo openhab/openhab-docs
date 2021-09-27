@@ -801,7 +801,7 @@ sudo chown -hR openhab:openhab /etc/openhab /opt/openhab/conf
 Finally check the configuration file for correctness and restart Samba to load the new settings:
 
 ```shell
-testparm
+samba-tool testparm
 
 # Linux init systems based on sysVinit
 sudo service smbd restart
