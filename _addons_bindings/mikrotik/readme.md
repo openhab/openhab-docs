@@ -5,6 +5,7 @@ title: Mikrotik RouterOS - Bindings
 type: binding
 description: "This binding integrates [Mikrotik](https://mikrotik.com/) [RouterOS](https://help.mikrotik.com/docs/display/ROS/RouterOS)"
 since: 3x
+logo: images/addons/mikrotik.png
 install: manual
 ---
 
