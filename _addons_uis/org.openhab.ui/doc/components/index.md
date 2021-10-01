@@ -87,6 +87,8 @@ source: https://github.com/openhab/openhab-webui/edit/main/bundles/org.openhab.u
 | Component | Name | Description |
 |--------|------|-------------|
 | [`oh-block`](./oh-block.html) |  [Layout Grid Block](./oh-block.html) | A block in a grid layout |
+| [`oh-canvas-item`](./oh-canvas-item.html) |  [Canvas Item](./oh-canvas-item.html) | Specific attributes to display widgets on a canvas. |
+| [`oh-canvas-layout`](./oh-canvas-layout.html) |  [Canvas Layout](./oh-canvas-layout.html) | Position widgets on a canvas layout with arbitrary position and size down to pixel resolution |
 | [`oh-grid-col`](./oh-grid-col.html) |  [Layout Grid Column](./oh-grid-col.html) | A column in a grid layout |
 | [`oh-grid-layout`](./oh-grid-layout.html) |  [Fixed Grid Layout](./oh-grid-layout.html) | Arranges widgets on a grid of squares with user-defined sizes |
 | [`oh-grid-row`](./oh-grid-row.html) |  [Layout Grid Row](./oh-grid-row.html) | A row in a grid layout |
