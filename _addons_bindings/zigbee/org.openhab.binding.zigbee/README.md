@@ -157,7 +157,9 @@ The following coordinators are known to be supported.
 
 #### CC2531 Coordinator
 
-Z-Stack Home 1.2 is the Texas Instruments ZNP stack for Zigbee Home Automation 1.2 networks. The thing type is `coordinator_cc2531`. 
+**Not Recommended for new systems**
+
+Z-Stack Home 1.2 is the Texas Instruments ZNP stack for Zigbee Home Automation 1.2 networks. The thing type is `coordinator_cc2531`. While this dongle is cheaply available from shops in China, it is no longer supported by the manufacturer and users may experience problems using this dongle with newer Zigbee 3.0 devices. Official firmware from TI doesn't support the updated security required by Zigbee 3.0 and devices may therefore join the network, and then leave again if the security is insufficient. Users will see this as a device in the inbox, and depending on exact timing for the device to leave, the device may be labled correctly, or as an unknown device. Either way it will not respond. Custom firmware created by users may be available on the Internet to work around this issue to allow this stick to be used, or if users are only using older devices, or cheaper Chinese devices, this may still work ok.
 
 ##### CC2531 - Firmware
 
