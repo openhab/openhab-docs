@@ -39,6 +39,12 @@ Black Series Dimmer<br /> <h1>Overview</h1><p>For starters, we’ve upgraded our
           <property name="binding:*:DecimalType">COMMAND_CLASS_CONFIGURATION;parameter=15</property>
         </properties>
       </channel>
+      <channel id="config_decimal_param8" typeId="config_decimal">
+        <label>Auto Off Timer (Seconds)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_CONFIGURATION;parameter=8</property>
+        </properties>
+      </channel>
     </channels>
 
     <!-- DEVICE PROPERTY DEFINITIONS -->
@@ -317,6 +323,14 @@ Single Pole or Multi Pole<br /> <h1>Overview</h1><p>Select what type of installa
     <item-type>Number</item-type>
     <label>LED Indicator Intensity (when off)</label>
     <description>LED Indicator brightness when switch is off</description>
+    <state pattern="%s">
+    </state>
+  </channel-type>
+
+  <channel-type id="inovelli_lzw31_00_000_config_decimal_param8">
+    <item-type>Number</item-type>
+    <label>Auto Off Timer</label>
+    <description>Automatically tuns the switch off after X seconds</description>
     <state pattern="%s">
     </state>
   </channel-type>

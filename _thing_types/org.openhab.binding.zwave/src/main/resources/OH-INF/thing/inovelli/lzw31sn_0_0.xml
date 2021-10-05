@@ -69,10 +69,10 @@ Red Series Dimmer<br /> <h1>Overview</h1><p>Inovelli’s new dimmer switch is pa
           <property name="binding:*:DecimalType">COMMAND_CLASS_CONFIGURATION;parameter=14</property>
         </properties>
       </channel>
-      <channel id="config_decimal_param3" typeId="config_decimal">
+      <channel id="config_decimal_param8" typeId="config_decimal">
         <label>Auto Off Timer (Seconds)</label>
         <properties>
-          <property name="binding:*:DecimalType">COMMAND_CLASS_CONFIGURATION;parameter=3</property>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_CONFIGURATION;parameter=8</property>
         </properties>
       </channel>
       <channel id="protection_local" typeId="protection_local">
@@ -418,10 +418,10 @@ Enable "smart bulb" mode<br /> <h1>Overview</h1><p>Smart bulb mode: If set to 1,
     </state>
   </channel-type>
 
-  <channel-type id="inovelli_lzw31sn_00_000_config_decimal_param3">
+  <channel-type id="inovelli_lzw31sn_00_000_config_decimal_param8">
     <item-type>Number</item-type>
-    <label>Ramp Rate (Z-Wave)</label>
-    <description>Ramp Rate (Z-Wave)</description>
+    <label>Auto Off Timer</label>
+    <description>Auto Off Timer</description>
     <state pattern="%s">
     </state>
   </channel-type>

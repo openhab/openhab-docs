@@ -102,14 +102,13 @@ Detailed information on each parameter can be found in the sections below.
 
 =0 report disabled, ≥10 report when change ≥n*0.1μg/m³
 
-The following option values may be configured, in addition to values in the range 0 to 255 -:
+The following option values may be configured -:
 
 | Value  | Description |
 |--------|-------------|
 | 0 | Report Disabled |
-| 10 | Report every whole 1μg/m³ change (default) |
 
-The manufacturer defined default value is ```10``` (Report every whole 1μg/m³ change (default)).
+The manufacturer defined default value is ```10```.
 
 This parameter has the configuration ID ```config_2_1``` and is of type ```INTEGER```.
 
@@ -118,14 +117,14 @@ This parameter has the configuration ID ```config_2_1``` and is of type ```INTEG
 
 =0 report disabled, ≥10 report when change ≥n*0.1μg/m³
 
-The following option values may be configured, in addition to values in the range 0 to 255 -:
+The following option values may be configured -:
 
 | Value  | Description |
 |--------|-------------|
 | 0 | Report Disabled |
-| 1 | Report if changed 0.5℃ |
+| 1 | Report if changed 0.5 |
 
-The manufacturer defined default value is ```1``` (Report if changed 0.5℃).
+The manufacturer defined default value is ```1``` (Report if changed 0.5).
 
 This parameter has the configuration ID ```config_3_1``` and is of type ```INTEGER```.
 
@@ -144,7 +143,7 @@ This parameter has the configuration ID ```config_4_1``` and is of type ```INTEG
 ### Parameter 255: Factory Setting
 
 85 (0x55) to restore factory setting
-Parameters will be set back to default values, association groups deleted.
+Parameters will be set back to default values, association groups deleted.This is an advanced parameter and will therefore not show in the user interface without entering advanced mode.
 The following option values may be configured -:
 
 | Value  | Description |

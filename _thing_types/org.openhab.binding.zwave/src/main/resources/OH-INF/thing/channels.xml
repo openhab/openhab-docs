@@ -1239,7 +1239,7 @@
 
     <!-- Switch Start/Stop Channel -->
     <channel-type id="switch_startstop">
-        <item-type>String</item-type>
+        <item-type>StopMoveType</item-type>
         <label>StartStop Switch</label>
         <description>Switch indicating direction</description>
         <category>Switch</category>

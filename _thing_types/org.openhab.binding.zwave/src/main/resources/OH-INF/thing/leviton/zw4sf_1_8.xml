@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="leviton_zw4sf_01_008" listed="false">
+    <label>ZW4SF Fan Speed Controller</label>
+    <description><![CDATA[
+Fan Speed Controller<br /> <h1>Overview</h1><p>The Decora Smart branded Z-Wave enabled Fan Speed Controller is designed for use with modern Z-Wave hubs.</p><p>This product can be operated in any Z-Wave network with other Z-Wave certified devices from other manufacturers. Your fan controller will act as a repeater in the network to increase the reliability of the network.</p><p>The Decora Smart Z-Wave fan controller allows you to select one of 4 fan speeds or turn your fan off from a smartphone or tablet or by voice when used with a z-wave hub.</p><p>The Decora Smart fan controller looks at home with your other Decora branded products. It has convenient manual on/off control, and an integrated bar to provide easy speed adjustment and hidden indicator lights.</p> <br /> <h2>Inclusion Information</h2><p><b>Network-wide Inclusion:</b></p><p>1. To enter programming mode, hold the top panel for 7 seconds. The status light will turn amber. Release and the status light will blink.</p><p>2. Tap the top of the paddle 1 time. The status light will quickly flash green.</p><p>3. The fan controller is now ready to learn into the Z-Wave network. Follow directions for the Z-Wave controller to complete the process.</p><p>4. Upon successful addition to the network the status light will turn off and then flash green 4 times. If it was not successfully added to the network, the status light will flash red 4 times.</p><p><b>Classic Inclusion:</b></p><ol><li>To enter programming mode, hold the top panel for 7 seconds. The status light will turn amber. Release and the status light will blink.</li><li>Follow the Z-Wave controller instructions to enter inclusion mode.</li><li>Tap the top of the paddle 1 time. The status light will quickly flash green.</li><li>The Z-Wave controller will confirm successful inclusion to the network.</li></ol> <br /> <h2>Exclusion Information</h2><p>To Exclude the device:</p><ol><li>Hold the top paddle for 7 seconds. The status light will turn amber. Release and the status light will blink.</li><li>Follow Z-Wave controller instructions to enter exclusion mode.</li><li>Tap the top of the paddle 1 time. The status light will quickly flash green.</li><li>The Z-Wave controller will remove the device from the network.</li></ol> <br /> <h2>Wakeup Information</h2><p><br /></p>
+    ]]></description>
+    <category>WallSwitch</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_dimmer" typeId="switch_dimmer">
+        <label>Dimmer</label>
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+          <property name="binding:Command:OnOffType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+        </properties>
+      </channel>
+      <channel id="scene_number" typeId="scene_number">
+        <label>Scene Number</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_SCENE_ACTIVATION</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Leviton</property>
+      <property name="modelId">ZW4SF</property>
+      <property name="manufacturerId">001D</property>
+      <property name="manufacturerRef">0038:0002</property>
+      <property name="versionMin">1.8</property>
+      <property name="versionMax">1.255</property>
+      <property name="dbReference">1418</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_3_1" type="integer" groupName="configuration"
+                 min="0" max="99">
+        <label>3: Minimum Fan Speed</label>
+        <description><![CDATA[
+Controls the minimum fan speed.<br /> <h1>Overview</h1><p><br /></p>
+        ]]></description>
+        <default>10</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_4_1" type="integer" groupName="configuration"
+                 min="0" max="99">
+        <label>4: Maximum Fan Speed</label>
+        <description>Controls the maximum fan speed</description>
+        <default>99</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_5_1" type="integer" groupName="configuration"
+                 min="0" max="99">
+        <label>5: Preset Fan Speed Level</label>
+        <description><![CDATA[
+Controls the initial fan speed level when turned on<br /> <h1>Overview</h1><p>This setting controls the speed the fan is set to when it turns on. When '0', the fan will use the last known speed setting. Otherwise, 1-99 control the initial fan speed, with 99 being the fastest.</p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_6_1" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>6: LED Level Indicator Timeout</label>
+        <description><![CDATA[
+Controls timeout for LED speed indicator, in seconds<br /> <h1>Overview</h1><p>0=Level indicator is always off. 255=Level indicator is always on. Anything in between is the number of seconds the level indicator LED will stay on for, after the fan speed has been adjusted.</p>
+        ]]></description>
+        <default>3</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_7_1" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>7: Status LED Behavior</label>
+        <description><![CDATA[
+Controls behavior of the status LED<br /> <h1>Overview</h1><p>0=Off, 254=Status Mode, 255=Locator Mode</p>
+        ]]></description>
+        <default>254</default>
+        <options>
+          <option value="0">LED Off</option>
+          <option value="254">Status Mode</option>
+          <option value="255">Locator Mode</option>
+        </options>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Lifeline</label>
+        <description><![CDATA[
+Lifeline<br /> <h1>Overview</h1><p><br /></p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>
