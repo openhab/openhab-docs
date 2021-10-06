@@ -8,7 +8,7 @@
         <description>SmartThings Motion and Temperature Sensor</description>
 
         <channels>
-            <channel id="illuminance" typeId="measurement_temperature">
+            <channel id="temperature" typeId="measurement_temperature">
                 <properties>
                     <property name="zigbee_endpoint">1</property>
                 </properties>

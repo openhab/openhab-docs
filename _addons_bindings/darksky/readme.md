@@ -17,6 +17,11 @@ install: auto
 
 This binding integrates the [Dark Sky API](https://darksky.net/dev/docs).
 
+::: tip Note
+The Dark Sky API service for existing customers will continue until the end of 2022.
+They do no longer accept new signups.
+:::
+
 ## Supported Things
 
 There are two supported things.
