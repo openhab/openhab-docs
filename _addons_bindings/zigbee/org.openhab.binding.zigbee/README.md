@@ -9,14 +9,17 @@ The ZigBee binding supports an interface to a wireless ZigBee home automation ne
 A ZigBee Coordinator is the network controller, and is therefore the heart of the ZigBee network. It also acts as the trust centre to control security access to the network.
 
 #### Configuring a coordinator
+
 Coordinators need to be installed manually and the serial port (`zigbee_port`) and baud rate (`zigbee_baud`) must be set. These are set to match the configuration that the dongle is in. Should you wish to use a different baud rate than the default speed of the device (get default baud rate from the device manual) , you must change the configuration of the dongle using some other, and then configure the binding to match your change. If in doubt, you should leave the settings at their default values which should work in most cases.
 
 If you are running on Linux, then you probably need to add the user 'openhab' to the tty group, and enable `EXTRA_JAVA_OPTS` for the serial port your coordinator uses (see [Linux install guide](https://www.openhab.org/docs/installation/linux.html#privileges-for-common-peripherals)). Additionally for Docker users, you will need to pass the serial port through Docker to openHAB (see [Docker install guide](https://www.openhab.org/docs/installation/docker.html#explanation-of-arguments-passed-to-docker))
 
 ##### Configuration via UI (recommended)
+
 After you have installed the binding, you can add a coordinator via the UI, by navigating to **Settings** > **Things** and clicking on the blue `+` button in the bottom right corner. Then choose the coordinator that matches your dongle. Make sure you check the **Show advanced** box, there are some important settings that otherwise stay hidden. Please refer to the sections [Serial port Configuration](#serial-port-configuration) and [Coordinator Configuration](coordinator-configuration) below for information about the settings for a coordinator.
 
 ##### Configuration via config file
+
 You can also configure the coordinator via an old style Things file. Things files should be placed in `OPENHAB_CONF/things`. Here are some examples for a coordinator congiguration in a `.things` file.
 
 **minimal example:**
@@ -31,27 +34,27 @@ Thing zigbee:coordinator_cc2531:stick1 "Zigbee USB Stick" [zigbee_port="/dev/tty
 Thing zigbee:coordinator_ember:stick "Zigbee USB Stick" [zigbee_port="/dev/ttyUSB-Zigbee", zigbee_baud=57600, zigbee_flowcontrol=2, zigbee_childtimeout=864000, zigbee_concentrator=1, zigbee_meshupdateperiod=86400, zigbee_panid=35637, zigbee_extendedpanid="118E309DE90CC829", zigbee_networkkey="14 c6 a2 c7 fb e0 c3 19 8e 7c 36 30 dc ad a5 96", zigbee_powermode=1, zigbee_txpower=8]
 ```
 
-*NOTE*: Do not use the values for `zigbee_networkkey`, `zigbee_panid` and `zigbee_extendedpanid` from this example, create random values for your own Zigbee network.
+_NOTE_: Do not use the values for `zigbee_networkkey`, `zigbee_panid` and `zigbee_extendedpanid` from this example, create random values for your own Zigbee network.
 
-*NOTE*: If you are using thing configuration files, you **MUST** define the following configuration parameters, or the system will not work properly as random values will be used at each restart:
+_NOTE_: If you are using thing configuration files, you **MUST** define the following configuration parameters, or the system will not work properly as random values will be used at each restart:
 
-- `zigbee_panid`, 
-- `zigbee_extendedpanid`, 
+- `zigbee_panid`,
+- `zigbee_extendedpanid`,
 - `zigbee_networkkey`.
 
 #### Serial port Configuration
 
 If you are using a config file, the serial port needs to be configured as shown in the above example. Below is a list of the relevat settings concerning the serial port.
 
-| Setting               | Allowed values  |
-| --------------------- | --------------- |
+| Setting               | Allowed values                                                                                                                                                                                                     |
+| --------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `zigbee_baud`         | Ember controllers: `38400`, `57600`, `115200` <br/>Telegesis controllers: `19200`, `38400`, `57600`, `115200` <br/>Xbee controllers: `9600`, `57600`, `115200` <br/>CC2531 controllers: `38400`, `57600`, `115200` |
-| `zigbee_flowcontrol ` | `0` = None, <br/>`1` = Hardware (CTS/RTS), <br/>`2` = Software (XOn/XOff) |
-| `zigbee_port`         | The name of the serial port, e.g. `/dev/ttyUSB1` or `/dev/ttyZigbee` or whatever the port is named on your system |
+| `zigbee_flowcontrol ` | `0` = None, <br/>`1` = Hardware (CTS/RTS), <br/>`2` = Software (XOn/XOff)                                                                                                                                          |
+| `zigbee_port`         | The name of the serial port, e.g. `/dev/ttyUSB1` or `/dev/ttyZigbee` or whatever the port is named on your system                                                                                                  |
 
 #### Coordinator Configuration
 
-Note that not all configuration parameters are available with all coordinators. 
+Note that not all configuration parameters are available with all coordinators.
 
 ##### Link Key (zigbee_linkkey)
 
@@ -77,7 +80,7 @@ Note that ZigBee compliant devices should rejoin the network seamlessly, however
 **Values:** Timeout time in seconds. The table below lists the options that are shown in PaperUI and the equivalent values that can be set in a configuration file:
 
 | Paper UI     | Config file |
-| ------------ | ------------|
+| ------------ | ----------- |
 | _5 Minutes_  | `320`       |
 | _30 Minutes_ | `1800`      |
 | _2 Hours_    | `7200`      |
@@ -100,11 +103,10 @@ If supported, the High RAM concentrator should be used.
 
 **Values:**
 
-| Value  | Meaning |
-| ------ | ------- |
-| `0`    | Low RAM concentrator |
-| `1`    | High RAM concentrator |
-
+| Value | Meaning               |
+| ----- | --------------------- |
+| `0`   | Low RAM concentrator  |
+| `1`   | High RAM concentrator |
 
 ##### Mesh Update Period (zigbee_meshupdateperiod)
 
@@ -113,7 +115,7 @@ The binding is able to search the network to get a list of what devices can comm
 **Value:** the update period in seconds. `0` means "never update". In PaperUI, a drop down list is shown, the options from that list are shown in te table below, with their equivalent values that can be put in a config file.
 
 | UI           | Config file |
-| ------------ | ------------|
+| ------------ | ----------- |
 | _Never_      | `0`         |
 | _5 Minutes_  | `300`       |
 | _30 Minutes_ | `1800`      |
@@ -132,28 +134,81 @@ Some coordinators may need to allocate memory to handle each node in the network
 
 Sets the Trust Centre join/rejoin mode.
 
-| enumeration           | label             | explanation   |
-| --------------------- | ----------------- | ------------- |
-| `TC_JOIN_DENY`        | Deny all joins.   |               |
-| `TC_JOIN_SECURE`      | Allow only secure joining. | Devices should join with the TC Link Key or a Device Specific Link Key via an install code.
-| `TC_JOIN_INSECURE`    | Allow all joins.  |               | 
-| `TC_JOIN_INSTALLCODE` | Only join with install code. | Devices attempting to join with the TC Link Key will be rejected.
-
+| enumeration           | label                        | explanation                                                                                 |
+| --------------------- | ---------------------------- | ------------------------------------------------------------------------------------------- |
+| `TC_JOIN_DENY`        | Deny all joins.              |                                                                                             |
+| `TC_JOIN_SECURE`      | Allow only secure joining.   | Devices should join with the TC Link Key or a Device Specific Link Key via an install code. |
+| `TC_JOIN_INSECURE`    | Allow all joins.             |                                                                                             |
+| `TC_JOIN_INSTALLCODE` | Only join with install code. | Devices attempting to join with the TC Link Key will be rejected.                           |
 
 #### Supported Coordinators
 
 The following coordinators are known to be supported.
 
-| Name and Link              | Coordinator | Configuration | Comment |
-|----------------------------|-------------|---------------|---------|
-|[Texas Instruments CC2531EMK](http://www.ti.com/tool/cc2531emk)|[CC2531](#cc2531-coordinator)||CC2531 is not recommended for more then 15 devices due to its less powerful MCU. Also needs extra [hardware and Z-Stack Home 1.2 firmware flashed](https://www.zigbee2mqtt.io/information/flashing_the_cc2531.html). CC2530 and CC2538 may work too with Z-Stack Home 1.2 compatible firmware.|
-|[Bitron Video ZigBee USB Funkstick](http://www.bitronvideo.eu/index.php/produkte/smart-home-produkte/zb-funkstick/)|[Ember](#ember-ezsp-ncp-coordinator)|57600bps<br>Software&nbsp;flow&nbsp;control<br>High RAM||
-|[Elelabs ELU013/ELR023](https://elelabs.com/shop/)|[Ember](#ember-ezsp-ncp-coordinator)|115200bps<br>Hardware&nbsp;flow&nbsp;control<br>High RAM| Both the stick and the hat can be upgraded without additional hardware, firmware available [here](https://github.com/Elelabs/elelabs-zigbee-ezsp-utility).|
-|[Cortet EM358 USB Stick](https://www.cortet.com/iot-hardware/cortet-usb-sticks/em358-usb-stick)|[Ember](#ember-ezsp-ncp-coordinator)|57600bps<br>Software&nbsp;flow&nbsp;control<br>High RAM| |
-|[Nortek Security & Control HUSBZB-1](https://nortekcontrol.com/products/2gig/husbzb-1-gocontrol-quickstick-combo/)|[Ember](#ember-ezsp-ncp-coordinator)|57600bps<br>Software&nbsp;flow&nbsp;control<br>High RAM|Stick contains both Z-Wave and ZigBee. |
-|[Telegesis ETRX357USB ZigBee® USB Stick](https://www.silabs.com/products/wireless/mesh-networking/telegesis-modules-gateways/etrx3-zigbee-usb-sticks)|[Telegesis](#telegesis-etrx3)|||
-|[QIVICON ZigBee-Funkstick](https://www.qivicon.com/de/produkte/produktinformationen/zigbee-funkstick/)|[Telegesis](#telegesis-etrx3)||Only working on Linux devices|
-|[Digi XStick](https://www.digi.com/products/xbee-rf-solutions/boxed-rf-modems-adapters/xstick)|[XBee](#digi-xbee-x-stick)|||
+| Name and Link                                                                                                                                         | Coordinator                          | Configuration                                            | Comment                                                                                                                                                                                                                                                                                        |
+| ----------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------ | -------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [Texas Instruments CC2531EMK](http://www.ti.com/tool/cc2531emk)                                                                                       | [CC2531](#cc2531-coordinator)        |                                                          | CC2531 is not recommended for more then 15 devices due to its less powerful MCU. Also needs extra [hardware and Z-Stack Home 1.2 firmware flashed](https://www.zigbee2mqtt.io/information/flashing_the_cc2531.html). CC2530 and CC2538 may work too with Z-Stack Home 1.2 compatible firmware. |
+| [Bitron Video ZigBee USB Funkstick](http://www.bitronvideo.eu/index.php/produkte/smart-home-produkte/zb-funkstick/)                                   | [Ember](#ember-ezsp-ncp-coordinator) | 57600bps<br>Software&nbsp;flow&nbsp;control<br>High RAM  |                                                                                                                                                                                                                                                                                                |
+| [Elelabs ELU013/ELR023](https://elelabs.com/shop/)                                                                                                    | [Ember](#ember-ezsp-ncp-coordinator) | 115200bps<br>Hardware&nbsp;flow&nbsp;control<br>High RAM | Both the stick and the hat can be upgraded without additional hardware, firmware available [here](https://github.com/Elelabs/elelabs-zigbee-ezsp-utility).                                                                                                                                     |
+| [Cortet EM358 USB Stick](https://www.cortet.com/iot-hardware/cortet-usb-sticks/em358-usb-stick)                                                       | [Ember](#ember-ezsp-ncp-coordinator) | 57600bps<br>Software&nbsp;flow&nbsp;control<br>High RAM  |                                                                                                                                                                                                                                                                                                |
+| [Nortek Security & Control HUSBZB-1](https://nortekcontrol.com/products/2gig/husbzb-1-gocontrol-quickstick-combo/)                                    | [Ember](#ember-ezsp-ncp-coordinator) | 57600bps<br>Software&nbsp;flow&nbsp;control<br>High RAM  | Stick contains both Z-Wave and ZigBee.                                                                                                                                                                                                                                                         |
+| [Telegesis ETRX357USB ZigBee® USB Stick](https://www.silabs.com/products/wireless/mesh-networking/telegesis-modules-gateways/etrx3-zigbee-usb-sticks) | [Telegesis](#telegesis-etrx3)        |                                                          |                                                                                                                                                                                                                                                                                                |
+| [QIVICON ZigBee-Funkstick](https://www.qivicon.com/de/produkte/produktinformationen/zigbee-funkstick/)                                                | [Telegesis](#telegesis-etrx3)        |                                                          | Only working on Linux devices                                                                                                                                                                                                                                                                  |
+| [Digi XStick](https://www.digi.com/products/xbee-rf-solutions/boxed-rf-modems-adapters/xstick)                                                        | [XBee](#digi-xbee-x-stick)           |                                                          |                                                                                                                                                                                                                                                                                                |
+
+#### Ember EZSP NCP Coordinator
+
+The Ember EZSP NCP (Network Co-Processor) supports the Silabs MightyGecko (EFR32MG) and the older EM357/8 dongles with the standard NCP firmware. The thing type is `coordinator_ember`. This dongle type is recommended due to its extensive use within both the community, and commercial systems using this dongle.
+
+Note that there are generally two versions of the Ember NCP firmware in use. One operates at a baud rate of 115200 with RTS/CTS flow control (i.e. hardware flow control), the other operates at a baud rate of 57600, and XON/XOFF flow control (i.e. software flow control). If you are programming your own stick (e.g. the CEL stick) then it should be advisable to use the hardware flow control version - many commercial sticks seem to use the lower speed and software flow control (e.g. Bitron and Nortek HUSBZB-1).
+
+Firmware versions higher than 6.4.0.0 may be required to work with some newer devices (ie those conforming to the Zigbee 3.0 standard). If your dongle has older firmware then devices may appear to join the network, but will not work as they will leave the network if they do not receive updated security information.
+
+If the usb dongle is not recognized, it might be necessary to make the dongle's device id known to the CP240x driver by Silicon Labs:
+
+- Find the device id (as listed by the command `lsusb`). For the Bitron Funkstick that might be 10c4 8b34.
+- Unplug the device
+- Enter the following commands (replace the id 10c4 8b34 with the one listed by `lsusb`):
+  ```
+  sudo -s
+  modprobe cp210x
+  echo 10c4 8b34 > /sys/bus/usb-serial/drivers/cp210x/new_id
+  ```
+- Plug in the dongle. It should now be recognized properly as ttyUSBx.
+
+##### Upgrading firmware
+
+Dongle firmware can be upgraded using the openHAB console with the `zigbee firmware` command. The firmware file must be specified next. The dongle will be taken offline, put into firmware upgrade mode and then upgraded. You MUST ensure that you have the correct firmware for your dongle as programming the incorrect firmware can render the device inoperable - requiring a programmer to recover.
+
+##### Flashing/Upgrading on Linux
+
+Some Ember EZSP NCP coordinators can be flashed to upgrade the firmware using walthowd/husbzb-firmware (https://github.com/walthowd/husbzb-firmware). It has been tested with the HUSZBZ-1 and Telegesis ETRX357USB and may work with other coordinators. You are responsible to ensure you load the correct firmware for your device - loading the wrong firmware may render your device inoperable.
+
+Review the `husbzb-firmware` readme for detailed instructions. Using docker to upgrade a HUSZBZ-1 is as follows:
+
+- Shutdown openHAB
+- `docker run --rm --device=/dev/ttyUSB1:/dev/ttyUSB1 -it walthowd/husbzb-firmware bash`
+- `./ncp.py scan`
+- Verify output shows which version of firmware the coordinator is running.
+  ```
+  {"ports": [{"port": "/dev/ttyUSB1", "vid": "10C4", "pid": "8A2A", "deviceType": "zigbee", "stackVersion": "5.4.1-194"}]}
+  ```
+- `./ncp.py flash -p /dev/ttyUSB1 -f ncp-uart-sw-6.7.8.ebl`
+- Wait for the flashing to complete and the coordinator to reboot.
+- `./ncp.py scan`
+  ```
+  {"ports": [{"port": "/dev/ttyUSB1", "vid": "10C4", "pid": "8A2A", "deviceType": "zigbee", "stackVersion": "6.7.8-373"}]}
+  ```
+
+#### Digi XBee X-Stick
+
+The thing type is `coordinator_xbee`. Other XBee S2C devices should also be supported.
+
+The XBee must be run with API mode firmware and not the AT firmware.
+
+#### Telegesis ETRX3
+
+The thing type is `coordinator_telegesis`. Note that this dongle may not support all Zigbee 3.0 devices although the firmware may be upgraded to support the standard Ember NCP firmware - see the Ember NCP section above for details.
 
 #### CC2531 Coordinator
 
@@ -182,64 +237,12 @@ The firmware can be flashed with `./cc-tool -e -w CC2531ZNP-Pro-Secure_Standard.
 For flashing the dongle using windows you need the [TI Flash Programmer](http://www.ti.com/tool/flash-programmer) (version 1, not version 2) and the Cebal drivers from [this TI site](http://www.ti.com/tool/cc-debugger) (available in section Software).
 Extract and install the TI Flash Programmer, connect the CC-Debugger trough USB, and with the dongle using the connector board. In the Windows device manager update the device driver with the Cebal drivers. Now the TI Flash Programmer should show your device. Select the firmware file, flash and verify your dongle firmware.
 
-#### Ember EZSP NCP Coordinator
-
-The Ember EZSP NCP (Network Co-Processor) supports the Silabs EM358 and EFR32 (MightyGecko) dongles with the standard NCP firmware. The thing type is `coordinator_ember`.
-
-Note that there are generally two versions of the Ember NCP firmware in use. One operates at a baud rate of 115200 with RTS/CTS flow control (i.e. hardware flow control), the other operates at a baud rate of 57600, and XON/XOFF flow control (i.e. software flow control). If you are programming your own stick (e.g. the CEL stick) then it should be advisable to use the hardware flow control version - many commercial sticks seem to use the lower speed and software flow control (e.g. Bitron and Nortek HUSBZB-1).
-
-If the usb dongle is not recognized, it might be necessary to make the dongle's device id known to the CP240x driver by Silicon Labs:
-
-- Find the device id (as listed by the command `lsusb`). For the Bitron Funkstick that might be 10c4 8b34.
-- Unplug the device
-- Enter the following commands (replace the id 10c4 8b34 with the one listed by `lsusb`):
-  ```
-  sudo -s
-  modprobe cp210x
-  echo 10c4 8b34 > /sys/bus/usb-serial/drivers/cp210x/new_id
-  ```
-- Plug in the dongle. It should now be recognized properly as ttyUSBx.
-
-##### Flashing/Upgrading on Linux
-
-Some Ember EZSP NCP coordinators can be flashed to upgrade the firmware using walthowd/husbzb-firmware (https://github.com/walthowd/husbzb-firmware).
-It has been tested with the HUSZBZ-1 and Telegesis ETRX357USB and may work with other coordinators. 
-You are responsible to ensure you load the correct firmware for your device. 
-Loading the wrong firmware may render your device inoperable
-
-Review the `husbzb-firmware` readme for detailed instructions.
-Using docker to upgrade a HUSZBZ-1 is as follows:
-
-- Shutdown openHAB
-- `docker run --rm --device=/dev/ttyUSB1:/dev/ttyUSB1 -it walthowd/husbzb-firmware bash`
-- `./ncp.py scan`
-- Verify output shows which version of firmware the coordinator is running.
-  ```
-  {"ports": [{"port": "/dev/ttyUSB1", "vid": "10C4", "pid": "8A2A", "deviceType": "zigbee", "stackVersion": "5.4.1-194"}]}
-  ```
-- `./ncp.py flash -p /dev/ttyUSB1 -f ncp-uart-sw-6.7.8.ebl`
-- Wait for the flashing to complete and the coordinator to reboot.
-- `./ncp.py scan`
-  ```
-  {"ports": [{"port": "/dev/ttyUSB1", "vid": "10C4", "pid": "8A2A", "deviceType": "zigbee", "stackVersion": "6.7.8-373"}]}
-  ```
-
-#### Telegesis ETRX3
-
-The thing type is `coordinator_telegesis`. Note that this dongle may not support all Zigbee 3.0 devices.
-
-#### Digi XBee X-Stick
-
-The thing type is `coordinator_xbee`. Other XBee S2C devices should also be supported.
-
-The XBee must be run with API mode firmware and not the AT firmware.
-
 ### Devices
 
 The following devices have been tested by openHAB users with the binding. The absence of a device in this list does not mean it will not work - if the device is a standard ZigBee device similar to ones on this list, then it should work.
 
 | Device                                         | Description                                                  |
-| ---------------------------------------------- | -------------------------------------------------------      |
+| ---------------------------------------------- | ------------------------------------------------------------ |
 | Busch-Jaeger 6711 U                            | Relay Insert                                                 |
 | Busch-Jaeger 6715 U                            | LED-Dimmer Insert                                            |
 | Busch-Jaeger 6735                              | Control Element (1-channel)                                  |
@@ -249,19 +252,19 @@ The following devices have been tested by openHAB users with the binding. The ab
 | GE Bulbs                                       |                                                              |
 | GE Tapt Wall Switch                            | On/Off Switch                                                |
 | Hue Bulbs                                      | Color LED Bulb                                               |
-| Hue Dimmer                                     | Hue Dimmer Switch Remote *[<sup>[2]</sup>](#note2)*          |
+| Hue Dimmer                                     | Hue Dimmer Switch Remote _[<sup>[2]</sup>](#note2)_          |
 | Hue Motion Sensor                              | Motion and Luminance sensor                                  |
 | IKEA Fyrtur Blinds                             | Roller blinds                                                |
 | IKEA Tradfri Bulbs                             |                                                              |
 | IKEA Tradfri Motion Sensor                     |                                                              |
 | IKEA Tradfri Outlet                            |                                                              |
 | IKEA Tradfri Repeater                          |                                                              |
-| Innr Bulbs                                     | *[<sup>[1]</sup>](#note1)*                                   |
-| Innr SP 120                                    | Smart Plug *[<sup>[1]</sup>](#note1)*                        |
+| Innr Bulbs                                     | _[<sup>[1]</sup>](#note1)_                                   |
+| Innr SP 120                                    | Smart Plug _[<sup>[1]</sup>](#note1)_                        |
 | LEDVANCE/Osram Bulbs                           |                                                              |
 | Lupus Small Zigbee Temperature Sensor 12314    | Lupus-Electronics Temperature and Humidity sensor            |
 | Osram Flex 3P Multicolor                       | Osram Smart+ LED Strip                                       |
-| Osram Motion Sensor                            | Osram Smart+ Motion Sensor *[<sup>[1]</sup>](#note1)*        |
+| Osram Motion Sensor                            | Osram Smart+ Motion Sensor _[<sup>[1]</sup>](#note1)_        |
 | Securifi Peanut Plug                           | Metered Plug                                                 |
 | Shenzhen Ksentry Electronics On Off Controller | Relay                                                        |
 | SMaBiT (Bitron Video) Magnetic contect         | AV2010/21 /21A /21B /21C                                     |
@@ -279,25 +282,25 @@ The following devices have been tested by openHAB users with the binding. The ab
 | SmartThings Motion Sensor                      | CentraLite 3325-S Motion and Temperature sensor              |
 | SmartThings Contact Sensor                     | Contact and Temperature sensor                               |
 | Telkonet EcoInsight Thermostat                 | Intelligent HVAC Thermostat                                  |
-| Trust Bulbs                                    | *[<sup>[1]</sup> ](#note1)*                                  |
+| Trust Bulbs                                    | _[<sup>[1]</sup> ](#note1)_                                  |
 | Ubisys modules                                 | D1 Dimmer, S1/S2 Switch modules                              |
-| Xiaomi Aqara Door and Window Sensor            | *[Known issues](#xiaomi-devices)*                            |
-| Xiaomi Aqara Temperature and Humidity Sensor   | *[Known issues](#xiaomi-devices)*                            |
-| Xiaomi Aqara Human Motion Sensor               | *[<sup>[3]</sup>](#note3)* *[Known issues](#xiaomi-devices)* |
-| Xiaomi Aqara Wireless Mini Switch              | *[Known issues](#xiaomi-devices)*                            |
-| Xiaomi Aqara Wired Wall Switch                 | *[Known issues](#xiaomi-devices)*                            |
-| Xiaomi Aqara Wireless Remote Switch            | Double Rocker variant *[Known issues](#xiaomi-devices)*      |
+| Xiaomi Aqara Door and Window Sensor            | _[Known issues](#xiaomi-devices)_                            |
+| Xiaomi Aqara Temperature and Humidity Sensor   | _[Known issues](#xiaomi-devices)_                            |
+| Xiaomi Aqara Human Motion Sensor               | _[<sup>[3]</sup>](#note3)_ _[Known issues](#xiaomi-devices)_ |
+| Xiaomi Aqara Wireless Mini Switch              | _[Known issues](#xiaomi-devices)_                            |
+| Xiaomi Aqara Wired Wall Switch                 | _[Known issues](#xiaomi-devices)_                            |
+| Xiaomi Aqara Wireless Remote Switch            | Double Rocker variant _[Known issues](#xiaomi-devices)_      |
 
-<a name="note1"></a> *Note 1: Some devices may not work with the Telegesis dongle.*
+<a name="note1"></a> _Note 1: Some devices may not work with the Telegesis dongle._
 
-<a name="note2"></a> *Note 2: The Hue Dimmer can be integrated but needs additional rule-configuration to work properly. See below for example.*
+<a name="note2"></a> _Note 2: The Hue Dimmer can be integrated but needs additional rule-configuration to work properly. See below for example._
 
-<a name="note3"></a> *Note 3: The illuminance channel value is being reported incorrectly. Transform by 10000\*log10(measuredValue+1) to get the correct illuminance in lux.*
+<a name="note3"></a> _Note 3: The illuminance channel value is being reported incorrectly. Transform by 10000\*log10(measuredValue+1) to get the correct illuminance in lux._
 
 ## Discovery
 
 Discovery is performed by putting the binding into join mode (by starting an inbox search), and then putting the device into join mode. Generally, it is best to reset the device to do this. Resetting the device ensures that it is no longer joined to a previous network, will ensure it is awake if it is a battery device, and will restart any channel and network search that the device may perform. Consult the manual of the device at hand to see how to reset it, this differs from device to device.
- 
+
 Once the binding is installed, and an adapter is added, it automatically reads all devices that are set up on the ZigBee controller and puts them in the Inbox. When the binding is put into discovery mode via the user interface, the network will have join enabled for 60 seconds. You can put it in discovery mode via the **Scan** button in the user interface. This can be found after you click the blue **+** button in the bottom right corder of the **Things** screen and then select the **ZigBee Binding**.
 
 The binding will store the list of devices that have joined the network locally between restarts to allow them to be found again later. A ZigBee coordinator does not store a list of known devices, so rediscovery of devices following a restart may not be seemless if the dongle is moved to another system.
@@ -328,7 +331,7 @@ Note that the last four characters in the install code are the checksum and may 
 
 ## Leave
 
-When a thing is deleted, the binding will attempt to remove the device from the network by sending the *leave* command on the network. The binding will put the Thing into the `REMOVING` state and once the leave is confirmed it will be finally `REMOVED`. It is not advised for force remove the Thing as this may cause an incomplete removal, and the device may be immediately added back to the Inbox.
+When a thing is deleted, the binding will attempt to remove the device from the network by sending the _leave_ command on the network. The binding will put the Thing into the `REMOVING` state and once the leave is confirmed it will be finally `REMOVED`. It is not advised for force remove the Thing as this may cause an incomplete removal, and the device may be immediately added back to the Inbox.
 
 ## Thing Configuration
 
@@ -345,7 +348,7 @@ A set of channels will be created depending on what clusters and endpoints a dev
 The following channels are supported -:
 
 | Channel UID                  | ZigBee Cluster                           | Type                     | Description |
-|------------------------------|------------------------------------------|--------------------------|-------------|
+| ---------------------------- | ---------------------------------------- | ------------------------ | ----------- |
 | battery-level                | `POWER_CONFIGURATION` (0x0001)           | Number                   |             |
 | battery_voltage              | `POWER_CONFIGURATION` (0x0001)           | Number:ElectricPotential |             |
 | binaryinput                  | `BINARY_INPUT__BASIC` (0x000F)           | Switch                   |             |
@@ -388,7 +391,6 @@ The following channels are supported -:
 | warning_device               | `IAS_WD` (0x0502)                        | String                   |             |
 | windowcovering_lift          | `WINDOW_COVERING` (0x0102)               | Rollershutter            |             |
 
-
 ### Updates
 
 The binding will attempt to configure a connection with the device to receive automatic and instantaneous reports when the device status changes. Should this configuration fail, the binding will resort to using a fast polling (note that "fast" is approximately 30 seconds at this time).
@@ -401,27 +403,26 @@ Similarly, to make the device emit a squawk (by siren and/or strobe signal), a c
 
 Examples:
 
-| Command string | Effect of the command |
-|----------------|-----------------------|
-| `type=warning useStrobe=true warningMode=BURGLAR sirenLevel=HIGH duration=PT30S` | Start a warning using both strobe signal and siren (type 'burglar alarm'), with a duration of 30 seconds.|
-| `type=warning useStrobe=false warningMode=FIRE sirenLevel=HIGH duration=PT60S` | Start a warning using only siren (type 'fire alarm'), with a duration of 60 seconds.|
-| `type=warning useStrobe=false warningMode=STOP sirenLevel=HIGH duration=PT30S` | If the device is currently emitting a warning, this stops the warning.|
-| `type=squawk useStrobe=false squawkMode=ARMED squawkLevel=HIGH` | Makes the device emit a 'squawk' signaling 'armed', with high volume.|
+| Command string                                                                   | Effect of the command                                                                                     |
+| -------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------- |
+| `type=warning useStrobe=true warningMode=BURGLAR sirenLevel=HIGH duration=PT30S` | Start a warning using both strobe signal and siren (type 'burglar alarm'), with a duration of 30 seconds. |
+| `type=warning useStrobe=false warningMode=FIRE sirenLevel=HIGH duration=PT60S`   | Start a warning using only siren (type 'fire alarm'), with a duration of 60 seconds.                      |
+| `type=warning useStrobe=false warningMode=STOP sirenLevel=HIGH duration=PT30S`   | If the device is currently emitting a warning, this stops the warning.                                    |
+| `type=squawk useStrobe=false squawkMode=ARMED squawkLevel=HIGH`                  | Makes the device emit a 'squawk' signaling 'armed', with high volume.                                     |
 
 The syntax for the command strings is as in the examples above, where the possible values for `type`, `useStrobe`, `warningMode`, `squawkMode`, `sirenLevel`, `squawkLevel`, and `duration` are as follows:
 
-| Command parameter | Value range |
-|-------------------|-------------|
-| type | `warning` and `squawk` |
-| useStrobe | `true` and `false` |
-| warningMode | `STOP`, `BURGLAR`, `FIRE`, `EMERGENCY`, `POLICE_PANIC`, `FIRE_PANIC`, `EMERGENCY_PANIC`, any integer value (for devices supporting warning modes not specified in the ZCL) |
-| squawkMode | `ARMED`, `DISARMED`, any integer value (for devices supporting squawk modes not specified in the ZCL) |
-| sirenLevel / squawkLevel | `LOW`, `MEDIUM`, `HIGH`, `VERY_HIGH`, any integer value (for devices supporting levels not specified in the ZCL) |
-| duration | A duration specified in the ISO-8601 duration format |
+| Command parameter        | Value range                                                                                                                                                                |
+| ------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| type                     | `warning` and `squawk`                                                                                                                                                     |
+| useStrobe                | `true` and `false`                                                                                                                                                         |
+| warningMode              | `STOP`, `BURGLAR`, `FIRE`, `EMERGENCY`, `POLICE_PANIC`, `FIRE_PANIC`, `EMERGENCY_PANIC`, any integer value (for devices supporting warning modes not specified in the ZCL) |
+| squawkMode               | `ARMED`, `DISARMED`, any integer value (for devices supporting squawk modes not specified in the ZCL)                                                                      |
+| sirenLevel / squawkLevel | `LOW`, `MEDIUM`, `HIGH`, `VERY_HIGH`, any integer value (for devices supporting levels not specified in the ZCL)                                                           |
+| duration                 | A duration specified in the ISO-8601 duration format                                                                                                                       |
 
 Note that it is possible to dynamically add command descriptions for specific warning/squawk types to a `warning_device` channel by configuring the channel configuration property `zigbee_iaswd_commandOptions`, using String parameters of the form `label=>commandString`, where `label` is the label provided to UIs to render, e.g., buttons for the provided command options (as done, e.g., by PaperUI).
-Also note that solutions integrating the binding can add implementations of type `WarningTypeCommandDescriptionProvider` to provide warning/squawk types together with command descriptions for all channels of type `warning_device`. 
-
+Also note that solutions integrating the binding can add implementations of type `WarningTypeCommandDescriptionProvider` to provide warning/squawk types together with command descriptions for all channels of type `warning_device`.
 
 ## Channels triggered event & rules
 
@@ -430,6 +431,7 @@ Some devices like the Philips Hue Dimmer can be discovered and added to openHAB 
 ```
 2019-03-08 20:51:18.609 [vent.ChannelTriggeredEvent] - zigbee:philips_rwl021:AAAAAAAA:BBBBBBBBBBBBBBBB:buttonI triggered SHORT_PRESSED
 ```
+
 To utilize these events, no new Item is required, instead a Rule can be used to directly trigger off of this event.
 The Channel that should be used can be copied directly from the UI under the Channels-section of the Thing or can be read from the events.log
 See the following example on how to integrate the Channel triggered event for a Hue Dimmer:
@@ -447,12 +449,11 @@ end
 
 ZigBee has a standard way of configuring how a device sends status reports to the binding - this is called Reporting. Reporting is configured using three pieces of information -:
 
-* Minimum Reporting Period: This is the minimum time between reports that the device will send updates. So, if data is changing regularly, this will prevent the binding receiving a flood of reports.
-* Maximum Reporting Period: This is the maximum time between reports that the device will send updates. If the data never changes, then the device will still send an update at this rate. This is important so that the binding knows the device has not failed, so it should not be set too long (normally a couple of hours will be fine).
-* Change: This is only applicable for "Analogue" data such as temperature, humidity, power. If the value changes by this amount since the last update, then an update will be sent so long as the minimum reporting period has passed.
+- Minimum Reporting Period: This is the minimum time between reports that the device will send updates. So, if data is changing regularly, this will prevent the binding receiving a flood of reports.
+- Maximum Reporting Period: This is the maximum time between reports that the device will send updates. If the data never changes, then the device will still send an update at this rate. This is important so that the binding knows the device has not failed, so it should not be set too long (normally a couple of hours will be fine).
+- Change: This is only applicable for "Analogue" data such as temperature, humidity, power. If the value changes by this amount since the last update, then an update will be sent so long as the minimum reporting period has passed.
 
 Polling may be used by the binding to request data from the device. Polling is normally only used if reporting doesn't work for some reason. This may happen if the reporting table in a device is full - if the binding detects this, it will increase the polling rate.
-
 
 ## When things don't appear to be working
 
@@ -479,8 +480,9 @@ Xiaomi/Aqara devices are not fully ZigBee compliant, and are known to suffer fro
 #### Pairing
 
 Pairing may require multiple attempts. The following issues have been observed:
-  * When trying to pair, the status LED blinks only once, instead of three times. Try again to reset/pair the device (keep the button pressed for > 5 seconds).
-  * Device attributes and channels are not immediately discovered: be patient. Check again in 1 hour, if nothing is there, delete the device and pair again.
+
+- When trying to pair, the status LED blinks only once, instead of three times. Try again to reset/pair the device (keep the button pressed for > 5 seconds).
+- Device attributes and channels are not immediately discovered: be patient. Check again in 1 hour, if nothing is there, delete the device and pair again.
 
 #### Lost connection
 
