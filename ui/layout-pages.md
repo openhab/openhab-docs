@@ -149,15 +149,19 @@ The widget that will be put on the page is a _copy_ of the current widget as def
 
 :::
 
-## Fixed Grid Layouts
+## Fixed Layouts
 
-The first thing to do when creating a Fixed Grid Layout is to define your screen size. In most cases this should be the **CSS Resolution** of the device you're creating this layout for.
+Fixed layouts allow you to position and size widgets freely, either on a grid with **Fixed Grid** layout, or in a completely free way with **Fixed Canvas** layouts (with **Fixed Canvas**, you are still able to temporarily switch on a grid if you want to snap some widgets).
+
+The first thing to do when creating a Fixed Layout is to define your screen size. In most cases this should be the **CSS Resolution** of the device you're creating this layout for.
 
 ::: tip Note
 
 For most modern tablets, mobile phones and some other screens the **CSS resolution** is different from the **physical pixel resolution** (sometimes referred to as *Retina* displays). The user interface tries to help you determining the CSS resolution by showing the currently detected value as *Current Screen* rate at the top of the virtual screen area.
 
 :::
+
+### Fixed Grid Layouts
 
 To define your screen size open the '#' menu and click **Configure Grid Layout**.
 
@@ -169,7 +173,7 @@ Positioning and resizing will snap to the underlying invisible grid. The size of
 
 The gear icon on the top right corner of each widget allows you to configure or remove a widget.
 
-### Configuration
+#### Configuration
 
 The following parameters can be adjusted for a Fixed Grid Layout:
 
@@ -202,3 +206,56 @@ With the navigation bar hidden, an icon is displayed on the top left corner when
 
 *Show Fullscreen Icon:*
 Show a fullscreen icon on the top right corner to enter browser fullscreen mode. Defaults to false.
+
+### Fixed Canvas Layouts
+
+To define your screen size open the canvas menu and click **Configure Canvas Layout**.
+
+The layout editor shows a gray surface as the *virtual screen area*, which represents your defined screen. You can now place widgets on that screen by clicking the **Add Widget** button. Just like with responsive layouts a placeholder will appear, allowing you to choose widgets from the library.
+
+Additionally, you can move the widget within the virtual screen area by dragging its upper left corner at the arrow icon shown. You can also resize the widget by grabbing the handles. Depending on the widget, you may also toggle the **Autosize** option in the widget options available from the gear icon on the top right corner of each widget to have the widget take its natural size.
+
+If you toggle the grid using the grid button, positioning and resizing will snap to the grid but untouched widgets will remain at their current size and position. The pitch of that grid can be adjusted in the layout configuration.
+
+The gear icon on the top right corner of each widget allows you to configure or remove a widget.
+
+#### Configuration
+
+The following parameters can be adjusted for a Fixed Canvas Layout:
+
+**Layout Settings**
+
+*Grid size:*
+Pitch of the grid when the editor grid button is enabled, in CSS pixels.
+
+**Screen Settings**
+
+*Screen Width:*
+Screen width in CSS pixels. Defaults to 1280.
+
+*Screen Height:*
+Screen width in CSS pixels. Defaults to 720.
+
+*Scaling:*
+Enabling this scales the defined screen to the width available in the browser window. All widgets are resized accordingly. While this works well in many cases, it can lead to unpredictable styling issues, especially on large divergence from the defined screen width. Defaults to false.
+
+*Image URL:*
+URL of the image to display in the background. The image is stretched to fit the screen size, while preserving its aspect ratio. If you want to achieve a different placement, adding margins to the image in an image editor will be necessary.
+
+*Image Source Set:*
+The setting is passed to the [`srcset`](https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images) attribute of the image element, allowing to specify different images to be used depending on the actual resolution of the device, for example is the layout will be used both on a so called 'retina' and non-'retina' tablet.
+
+**Widget Settings**
+
+Specific widget settings are available through the gear popup menu displayed on each widget in the layout. It provides access to the settings related to the type of the widget (**Widget Settings**) and to settings specific to the usage of this widget within a canvas.
+
+**Container Settings**
+
+*Preserve classic style:*
+Enabling this option preserves the widget style definition as in other layout pages (responsive, fixed grid). Usually, this means preserving the background of the widget.
+
+*Shadow:*
+Applies a shadow to the widget inner outline.
+
+*Bring to Front*, *Mode Up*, *Move Down*, *Send to Back*:
+Change the drawing order of several overlapping widgets.
