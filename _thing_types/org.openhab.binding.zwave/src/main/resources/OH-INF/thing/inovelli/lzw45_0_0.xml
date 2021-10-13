@@ -60,6 +60,12 @@ Red Series - RGBTW Lightstrip<br /> <h1>Overview</h1><p>The LZW45 Inovelli RGBTW
           <property name="binding:*:DecimalType">COMMAND_CLASS_CENTRAL_SCENE</property>
         </properties>
       </channel>
+      <channel id="config_decimal_param31" typeId="config_decimal">
+        <label>Pixel Effect</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_CONFIGURATION;parameter=31</property>
+        </properties>
+      </channel>
     </channels>
 
     <!-- DEVICE PROPERTY DEFINITIONS -->
@@ -294,7 +300,7 @@ A custom effect with up to 4 actions can be turned on with correct input for par
                  min="0" max="32767">
         <label>31: Pixel Effect</label>
         <description><![CDATA[
-Turn on an effect that utilizes the individually addressable LEDs.<br /> <h1>Overview</h1><p>Turn on an effect that utilizes the individually addressable LEDs. Listed Below.</p><p>Byte 0 = Effect, Byte 1 = Level</p><p>1. Static</p><p>2. Blink</p><p>3. Breath</p><p>4. Color Wipe</p><p>5. Color Wipe Reverse Inverse</p><p>6. Color Wipe Random</p><p>7. Random Color</p><p>8. Single Dynamic</p><p>9. Multi Dynamic</p><p>10. Rainbow</p><p>11. Rainbow Cycle</p><p>12. Scan</p><p>13. Dual Scan</p><p>14. Fade</p><p>15. Running Lights</p><p>16. Twinkle</p><p>17. Twinkle Random</p><p>18. Twinkle Fade</p><p>19. Twinkle Fade Random</p><p>20. Sparkle</p><p>21. Flash Sparkle</p><p>22. Hyper Sparkle</p><p>23. Strobe</p><p>24. Blink Rainbow</p><p>25. Chase White</p><p>26. Chase Color</p><p>27. Chase Random</p><p>28. Chase Rainbow</p><p>29. Chase Flash</p><p>30. Chase Flash Random</p><p>31. Chase Rainbow White</p><p>32. Chase Blackout</p><p>33. Chase Blackout Rainbow</p><p>34. Color Sweep Random</p><p>35. Running Color</p><p>36. Running Red Blue</p><p>37. Running Random</p><p>38. Larson Scanner</p><p>39. Comet</p><p>40. Fireworks</p><p>41. Fireworks Random</p><p>42. Merry Christmas</p><p>43. Circus Combustus</p><p>44. Halloween</p><p>45. Aurora</p>
+Turn on an effect that utilizes the individually addressable LEDs.<br /> <h1>Overview</h1><p>Turn on an effect that utilizes the individually addressable LEDs. Calculated as: (brightness * 256) + effect number below. Brightness can be 1-99, 0 turns off.</p><p>Byte 0 = Effect, Byte 1 = Level</p><p>1. Static</p><p>2. Blink</p><p>3. Breath</p><p>4. Color Wipe</p><p>5. Color Wipe Reverse Inverse</p><p>6. Color Wipe Random</p><p>7. Random Color</p><p>8. Single Dynamic</p><p>9. Multi Dynamic</p><p>10. Rainbow</p><p>11. Rainbow Cycle</p><p>12. Scan</p><p>13. Dual Scan</p><p>14. Fade</p><p>15. Running Lights</p><p>16. Twinkle</p><p>17. Twinkle Random</p><p>18. Twinkle Fade</p><p>19. Twinkle Fade Random</p><p>20. Sparkle</p><p>21. Flash Sparkle</p><p>22. Hyper Sparkle</p><p>23. Strobe</p><p>24. Blink Rainbow</p><p>25. Chase White</p><p>26. Chase Color</p><p>27. Chase Random</p><p>28. Chase Rainbow</p><p>29. Chase Flash</p><p>30. Chase Flash Random</p><p>31. Chase Rainbow White</p><p>32. Chase Blackout</p><p>33. Chase Blackout Rainbow</p><p>34. Color Sweep Random</p><p>35. Running Color</p><p>36. Running Red Blue</p><p>37. Running Random</p><p>38. Larson Scanner</p><p>39. Comet</p><p>40. Fireworks</p><p>41. Fireworks Random</p><p>42. Merry Christmas</p><p>43. Circus Combustus</p><p>44. Halloween</p><p>45. Aurora</p>
         ]]></description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
@@ -355,5 +361,13 @@ Switch Multilevel Set<br /> <h1>Overview</h1><p>Sends start / stop level change 
     </config-description>
 
   </thing-type>
+
+  <channel-type id="inovelli_lzw45_00_000_config_decimal_param31">
+    <item-type>Number</item-type>
+    <label>Pixel Effect</label>
+    <description>Turn on an effect that utilizes the individually addressable LEDs.</description>
+    <state pattern="%s">
+    </state>
+  </channel-type>
 
 </thing:thing-descriptions>

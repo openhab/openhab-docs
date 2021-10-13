@@ -69,7 +69,7 @@ Floodlight Sensor<br /> <h1>Overview</h1><p>The HS-FLS100+ is a PIR module thatâ
       <property name="vendor">HomeSeer Technologies</property>
       <property name="modelId">HS-FLS100+</property>
       <property name="manufacturerId">000C</property>
-      <property name="manufacturerRef">0201:000B,0201:000C</property>
+      <property name="manufacturerRef">0201:000B</property>
       <property name="dbReference">888</property>
       <property name="defaultAssociations">1</property>
     </properties>

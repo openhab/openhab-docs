@@ -145,7 +145,7 @@ Brightness threshold<br /> <h1>Overview</h1><p>Allowed values: 0-255</p>
                  min="0" max="255">
         <label>183: Reaction threshold for raising shutter (Input 1)</label>
         <description><![CDATA[
-Reaction threshold for raising shutter (Inpuit 1)<br /> <h1>Overview</h1><p>Allowed values: 0-255</p> <p>(256 * Input 1 + input 2) * 0.1s</p>
+Reaction threshold for raising shutter (Input 1)<br /> <h1>Overview</h1><p>Allowed values: 0-255</p> <p>(256 * Input 1 + input 2) * 0.1s</p>
         ]]></description>
         <default>0</default>
       </parameter>

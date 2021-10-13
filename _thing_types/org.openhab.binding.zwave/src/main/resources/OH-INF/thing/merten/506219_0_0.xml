@@ -90,6 +90,15 @@ Battery Powered Wall Controller<br /> <h1>Overview</h1><p><strong>Single-surface
 <br /> <h1>Overview</h1><p><br /></p>
         ]]></description>
         <default>0</default>
+        <options>
+          <option value="0">Switching/dimming/shutters dual-surface</option>
+          <option value="4">Switching single-surface</option>
+          <option value="44">Doorbell function</option>
+          <option value="52">LOWER shutter as long as button is pressed</option>
+          <option value="54">Move shutter single-surface</option>
+          <option value="55">RAISE shutter as long as button is pressed</option>
+          <option value="60">Retrieve/save scene</option>
+        </options>
       </parameter>
 
       <parameter name="config_2_1" type="integer" groupName="configuration"
@@ -99,6 +108,15 @@ Battery Powered Wall Controller<br /> <h1>Overview</h1><p><strong>Single-surface
 <br /> <h1>Overview</h1><p><br /></p>
         ]]></description>
         <default>0</default>
+        <options>
+          <option value="0">Switching/dimming/shutters dual-surface</option>
+          <option value="4">Switching single-surface</option>
+          <option value="44">Doorbell function</option>
+          <option value="52">LOWER shutter as long as button is pressed</option>
+          <option value="54">Move shutter single-surface</option>
+          <option value="55">RAISE shutter as long as button is pressed</option>
+          <option value="60">Retrieve/save scene</option>
+        </options>
       </parameter>
 
       <parameter name="config_3_1" type="integer" groupName="configuration"
@@ -108,6 +126,15 @@ Battery Powered Wall Controller<br /> <h1>Overview</h1><p><strong>Single-surface
 <br /> <h1>Overview</h1><p><br /></p>
         ]]></description>
         <default>0</default>
+        <options>
+          <option value="0">Switching/dimming/shutters dual-surface</option>
+          <option value="4">Switching single-surface</option>
+          <option value="44">Doorbell function</option>
+          <option value="52">LOWER shutter as long as button is pressed</option>
+          <option value="54">Move shutter single-surface</option>
+          <option value="55">RAISE shutter as long as button is pressed</option>
+          <option value="60">Retrieve/save scene</option>
+        </options>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->
