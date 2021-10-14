@@ -129,7 +129,7 @@ Now on the page you will now see a section heading with the entered name, and al
 
 ![separators](images/separators.png)
 
-Tip 1 - Make sure to save before clicking "Back" or otherwise leaving the page.
+Tip 1 - Make sure to save before clicking "Back" or otherwise changes will be lost when leaving the page.
 You will have to reload the page to pick up the changes.
 
 Tip 2 - Open two separate tabs in your browser where you edit and view your page.
@@ -191,7 +191,7 @@ Note: Even though it is possible and tempting to just link to an absolute URL on
 
 Badges are only available on the Location cards.
 
-If you want to not show any badges at all toggle "Disable badges".
+If you do not want to show any badges at all toggle "Disable badges".
 
 If you want to suppress only certain badges, select those that you want to show under "Enable Badges".
 
