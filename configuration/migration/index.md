@@ -25,8 +25,8 @@ Please be aware of possible changes needed for your specific environment in case
 If you are working with an [openHABian](https://www.openhab.org/docs/installation/openhabian.html) setup, the upgrade is quite easy. Regardless of if you are currently using the openHAB 2.5 stable release or one of the latest 3.0.0 SNAPSHOT or milestone builds, switching to openHAB 3.0.0 stable is done in just a few steps:
 
 1. Connect to the SSH command line and run `sudo openhabian-config`
-2. When being asked to update openHABian, answer yes. Do not change the branch, it should read `stable` if you are on 2.X and `openHAB3` or `main` if on 3.X.
-3. Select the menu entry "03 - Install openHAB" option.
+1. When being asked to update openHABian, answer yes. Do not change the branch, it should read `stable` if you are on 2.X and `openHAB3` or `main` if on 3.X.
+1. Select the menu entry "03 - Install openHAB" option.
 
 ### Package-based Installations
 
