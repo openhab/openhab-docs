@@ -93,8 +93,12 @@ Transmitter Flush-Mounted 4-Gang Switch<br /> <h1>Overview</h1><p>The flush-moun
       </parameter-group>
 
       <!-- PARAMETER DEFINITIONS -->
-      <parameter name="config_0_1" type="integer" groupName="configuration">
+      <parameter name="config_0_1" type="integer" groupName="configuration"
+                 min="0" max="127">
         <label>0: Group 1 (red)</label>
+        <description><![CDATA[
+<br /> <h1>Overview</h1><p><br /></p>
+        ]]></description>
         <default>4</default>
         <options>
           <option value="0">Switching/dimming/shutters dual-surface</option>
@@ -104,11 +108,14 @@ Transmitter Flush-Mounted 4-Gang Switch<br /> <h1>Overview</h1><p>The flush-moun
           <option value="54">Move roller shutter single-surface</option>
           <option value="55">RAISE roller shutter as long as button is pressed</option>
         </options>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_1_1" type="integer" groupName="configuration">
+      <parameter name="config_1_1" type="integer" groupName="configuration"
+                 min="0" max="127">
         <label>1: Group 2 (green)</label>
+        <description><![CDATA[
+<br /> <h1>Overview</h1><p><br /></p>
+        ]]></description>
         <default>4</default>
         <options>
           <option value="0">Switching/dimming/shutters dual-surface</option>
@@ -118,11 +125,14 @@ Transmitter Flush-Mounted 4-Gang Switch<br /> <h1>Overview</h1><p>The flush-moun
           <option value="54">Move roller shutter single-surface</option>
           <option value="55">RAISE roller shutter as long as button is pressed</option>
         </options>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_2_1" type="integer" groupName="configuration">
+      <parameter name="config_2_1" type="integer" groupName="configuration"
+                 min="0" max="127">
         <label>2: Group3 (brown)</label>
+        <description><![CDATA[
+<br /> <h1>Overview</h1><p><br /></p>
+        ]]></description>
         <default>4</default>
         <options>
           <option value="0">Switching/dimming/shutters dual-surface</option>
@@ -132,11 +142,14 @@ Transmitter Flush-Mounted 4-Gang Switch<br /> <h1>Overview</h1><p>The flush-moun
           <option value="54">Move roller shutter single-surface</option>
           <option value="55">RAISE roller shutter as long as button is pressed</option>
         </options>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_3_1" type="integer" groupName="configuration">
+      <parameter name="config_3_1" type="integer" groupName="configuration"
+                 min="0" max="127">
         <label>3: Group 4 (blue)</label>
+        <description><![CDATA[
+<br /> <h1>Overview</h1><p><br /></p>
+        ]]></description>
         <default>4</default>
         <options>
           <option value="0">Switching/dimming/shutters dual-surface</option>
@@ -146,7 +159,6 @@ Transmitter Flush-Mounted 4-Gang Switch<br /> <h1>Overview</h1><p>The flush-moun
           <option value="54">Move roller shutter single-surface</option>
           <option value="55">RAISE roller shutter as long as button is pressed</option>
         </options>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

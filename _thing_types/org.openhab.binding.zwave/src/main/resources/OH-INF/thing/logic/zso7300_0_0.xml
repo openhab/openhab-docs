@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="logic_zso7300_00_000" listed="false">
+    <label>ZSO7300 FUGA Metered Wall Outlet</label>
+    <description><![CDATA[
+FUGA Metered Wall Outlet<br /> <h1>Overview</h1><p>ZSO7300 is a smart multifunction socket outlet designed to control electrical appliances via Z-Wave network that can be mounted in a modular wall-box. It is compatible with existing FUGA® frames and wall boxes</p> <br /> <h2>Inclusion Information</h2><p>ZSO7300 is a SmartStart enabled product and can be added into a Z-Wave network by scanning the Z-Wave QR Code present on the product with a controller providing SmartStart inclusion. No further action is required and the</p><p>SmartStart product will be added automatically within 10 minutes of being switched on in the network vicinity.</p><p>Find the QR code and PIN Code under the pushbutton cover (Figure 6a). Find the full DSK on the product packaging or next to QR code.</p><p>Add ZSO7300 to a network with Classic Inclusion by pressing once on the switch (I) behind the pushbutton-cover. The LED will start blinking blue when the adding process is started.</p><p>Use same procedure for removing ZSO7300 with Classic Exclusion.</p><p>If ZSO7300 already belongs to a Z-Wave network, the remove process must be performed before adding it in a new network. Otherwise, the adding of the device will fail.</p> <br /> <h2>Exclusion Information</h2><p>ZSO7300 is a SmartStart enabled product and can be added into a Z-Wave network by scanning the Z-Wave QR Code present on the product with a controller providing SmartStart inclusion. No further action is required and the</p><p>SmartStart product will be added automatically within 10 minutes of being switched on in the network vicinity.</p><p>Find the QR code and PIN Code under the pushbutton cover (Figure 6a). Find the full DSK on the product packaging or next to QR code.</p><p>Add ZSO7300 to a network with Classic Inclusion by pressing once on the switch (I) behind the pushbutton-cover</p><p>The LED will start blinking blue when the adding process is started.</p><p>Use same procedure for removing ZSO7300 with Classic Exclusion.</p><p>If ZSO7300 already belongs to a Z-Wave network, the remove process must be performed before adding it in a new network. Otherwise, the adding of the device will fail.</p> <br /> <h2>Wakeup Information</h2><p>No Wakeup information</p>
+    ]]></description>
+    <category>PowerOutlet</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_binary" typeId="switch_binary">
+        <label>Switch</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY</property>
+        </properties>
+      </channel>
+      <channel id="meter_kwh" typeId="meter_kwh">
+        <label>Electric meter (kWh)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_KWh</property>
+        </properties>
+      </channel>
+      <channel id="meter_watts" typeId="meter_watts">
+        <label>Electric meter (watts)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_W</property>
+        </properties>
+      </channel>
+      <channel id="alarm_power" typeId="alarm_power">
+        <label>Alarm (power)</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=POWER_MANAGEMENT</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Logic Group</property>
+      <property name="modelId">ZSO7300</property>
+      <property name="manufacturerId">0234</property>
+      <property name="manufacturerRef">0004:002A</property>
+      <property name="dbReference">1413</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_1_1" type="integer" groupName="configuration">
+        <label>1: Parameter 1, Parameter size 1 byte. Startup relay state</label>
+        <description><![CDATA[
+Startup relay state<br /> <h1>Overview</h1><p>This parameter specifies the state of relay when device is turned on or restarts for some reason (power outage for</p><p>example). </p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Relay will be set off and load powered off</option>
+          <option value="1">Relay will be set on and load powered on</option>
+          <option value="2">Relay will be set to last state registered before restart</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_2_1" type="integer" groupName="configuration">
+        <label>2: Parameter 2, Parameter size 1 byte. Meter report time.</label>
+        <description><![CDATA[
+Meter Report time<br /> <h1>Overview</h1><p>This parameter specifies how often meter reports are sent via association group 1.</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Meter reports are never sent.</option>
+          <option value="1">Report time in seconds. (Default is 60 seconds).</option>
+          <option value="128">Report time in minutes (minus 127) from 1 – 128 minutes, where 128 is</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_3_2" type="integer" groupName="configuration">
+        <label>3: Parameter 3, Parameter size 2 byte. Watt change threshold</label>
+        <description><![CDATA[
+Watt. Change threshold<br /> <h1>Overview</h1><p>The following value determines how much the Watt consumption should change to initiate an unsolicited report to</p><p>the controller to be aware of rapid power consumption changes.</p>
+        ]]></description>
+        <default>50</default>
+        <options>
+          <option value="1">Correspond to Watts (Default is 50 W)</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_4_2" type="integer" groupName="configuration">
+        <label>4: Parameter 4, Parameter size 2 byte. Watt power off threshold</label>
+        <description><![CDATA[
+Watt power off threshold<br /> <h1>Overview</h1><p>As a safety mechanism it is possible to turn off relay if power consumption gets higher than the defined threshold.</p><p>This parameter specifies the number of Watts measured which will trigger relay off. If this event occurs device will</p><p>turn of relay and will start blinking until Button is pushed on the device or Basic Set command is sent to it.</p>
+        ]]></description>
+        <default>2900</default>
+        <options>
+          <option value="1">Correspond to Watts (Default is 2900 W)</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_5_1" type="integer" groupName="configuration">
+        <label>5: Parameter 5, Parameter size 1 byte. LED mode.</label>
+        <description><![CDATA[
+LED mode<br /> <h1>Overview</h1><p>This parameter specifies LED mode.</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Basic- When off no light in the LED, when on Green LED.</option>
+          <option value="1">Power consumption: LED indication OFF color is determined by Parameter</option>
+          <option value="2">User defined colors: When this mode is used, then ON and OFF colors wi</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_6_4_000000FF" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>6: Parameter 6, Parameter size 4 bytes. LED ON RESERVED</label>
+        <description><![CDATA[
+LED ON color indication<br /> <h1>Overview</h1><p>This parameter specifies the color levels for the red, green, and blue colors in the RGB LED. This parameter is not</p><p>used unless configuration parameter #5 is set to the value 2. The default configuration is a green light</p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_6_4_0000FF00" type="integer" groupName="configuration">
+        <label>6: Parameter 6, Parameter size 4 bytes. LED ON BLUE color indication.</label>
+        <description><![CDATA[
+LED ON color indication<br /> <h1>Overview</h1><p><br /></p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Specifies the level for the blue color. (Default is 255)</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_6_4_00FF0000" type="integer" groupName="configuration">
+        <label>6: Parameter 6, Parameter size 4 bytes. LED ON GREEN color indication.</label>
+        <description><![CDATA[
+LED ON color indication<br /> <h1>Overview</h1><p><br /></p>
+        ]]></description>
+        <default>255</default>
+        <options>
+          <option value="0">Specifies the level for the green color. (Default is 255)</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_6_4_7FFFFFFE" type="integer" groupName="configuration">
+        <label>6: Parameter 6, Parameter size 4 bytes. LED ON RED color indication.</label>
+        <description><![CDATA[
+LED ON color indication<br /> <h1>Overview</h1><p><br /></p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Specifies the level for the red color. (Default is 0)</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_7_4_000000FF" type="integer" groupName="configuration"
+                 min="0" max="4294967295">
+        <label>7: Parameter 7, Parameter size 4 bytes. LED OFF RESERVED color indication.</label>
+        <description><![CDATA[
+LED OFF color indication<br /> <h1>Overview</h1><p>This parameter specifies the color levels for the red, green, and blue colors in the RGB LED. This parameter is not</p><p>used unless configuration parameter #5 is set to the value 1 or 2. The default configuration is a purple light.</p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_7_4_0000FF00" type="integer" groupName="configuration">
+        <label>7: Parameter 7, Parameter size 4 bytes. LED OFF BLUE color indication.</label>
+        <description><![CDATA[
+LED OFF color indication<br /> <h1>Overview</h1><p>This parameter specifies the color levels for the red, green, and blue colors in the RGB LED. This parameter is not</p><p>used unless configuration parameter #5 is set to the value 1 or 2. The default configuration is a purple light.</p>
+        ]]></description>
+        <default>255</default>
+        <options>
+          <option value="0">Specifies the level for the blue color. (Default is 255)</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_7_4_00FF0000" type="integer" groupName="configuration">
+        <label>7: Parameter 7, Parameter size 4 bytes. LED OFF Green color indication.</label>
+        <description><![CDATA[
+LED OFF color indication<br /> <h1>Overview</h1><p>This parameter specifies the color levels for the red, green, and blue colors in the RGB LED. This parameter is not</p><p>used unless configuration parameter #5 is set to the value 1 or 2. The default configuration is a purple light.</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Specifies the level for the green color. (Default is 0)</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_7_4_7FFFFFFE" type="integer" groupName="configuration">
+        <label>7: Parameter 7, Parameter size 4 bytes. LED OFF RED color indication.</label>
+        <description><![CDATA[
+LED OFF color indication<br /> <h1>Overview</h1><p>This parameter specifies the color levels for the red, green, and blue colors in the RGB LED. This parameter is not</p><p>used unless configuration parameter #5 is set to the value 1 or 2. The default configuration is a purple light</p>
+        ]]></description>
+        <default>143</default>
+        <options>
+          <option value="0">Specifies the level for the red color. (Default is 143)</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_8_1" type="integer" groupName="configuration">
+        <label>8: Parameter 8, Parameter size 1 byte. LED brightness level.</label>
+        <description><![CDATA[
+LED Brightness level<br /> <h1>Overview</h1><p>This parameter determines the actual brightness level of the LED in percent<br /></p>
+        ]]></description>
+        <default>10</default>
+        <options>
+          <option value="0">Percent light brightness in the indicator LED. (Default is 10, which m</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_9_1" type="integer" groupName="configuration">
+        <label>9: Parameter 8, Parameter size 1 byte. LED brightness level.</label>
+        <description><![CDATA[
+Alter Association Group Security<br /> <h1>Overview</h1><p>This parameter specifies if commands are transmitted as a secure message for each of the association groups.</p><p>This parameter is only used when the device is included in security mode (either S0 or S2)</p>
+        ]]></description>
+        <default>255</default>
+        <options>
+          <option value="0">All messages in all groups are sent as insecure.</option>
+          <option value="1">Messages in association group 2 are sent as secure</option>
+          <option value="2">Messages in association group 3 are sent as secure.</option>
+          <option value="255">All messages in all groups are sent as secure. (Default)</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Lifeline</label>
+        <description><![CDATA[
+Lifeline<br /> <h1>Overview</h1><p>Sends Device Reset notifications, Meter Reports, Indicator Reports, Binary Switch reports,</p><p>Notification Event Power Management</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: Basic Report</label>
+        <description><![CDATA[
+Basic Report<br /> <h1>Overview</h1><p>Nodes in this group receives Basic Report with the actual state of the binary switch (relay). It</p><p>can be used by other devices to update their internal states and can be used in multi-way</p><p>switching configurations for ensuring that all controlling devices has an updated status.</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_3" type="text" groupName="association" multiple="true">
+        <label>3: Basic Set</label>
+        <description><![CDATA[
+Basic Set<br /> <h1>Overview</h1><p>Nodes in this group receives a Basic Set command whenever the ZSO button is used to</p><p>switch the relay ON or OFF. It is the actual state of the relay that is sent in the Basic Set</p><p>command. This group is NOT used when the relay state is changed by means of Z-Wave</p><p>commands (as this would result in a kind of self-oscillation and jam the Z-Wave network).</p><p>So, it will be possible to have two (or more) ZSO’s associated with each other by using this</p><p>group, to have the relay state synchronized when the ZSO buttons are used.</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

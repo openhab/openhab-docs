@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="2gig_stz1345_00_000" listed="false">
+    <label>STZ1-345 2GIG Z-Wave Plus Programmable Thermostat (2GIG-STZ1-345)</label>
+    <description><![CDATA[
+2GIG Z-Wave Plus Programmable Thermostat (2GIG-STZ1-345)<br /> <h1>Overview</h1><p>The 2GIG-STZ-1 Thermostat is a programmable, Z-Wave communicating thermostat. It can be powered using 24VAC (if both “R”&amp;”C”wires are available at the thermostat) or using four (4) AA batteries. Using Z-Wave technology, you have the ability to use most compatible Z-Wave hubs/controllers to operate the thermostat, configure programming settings as well as displaying current conditions in the home or office.</p> <br /> <h2>Inclusion Information</h2><ol><li>Set your primary controller to Include, add or Install mode, to add the thermostat as a node on your network (see your controller’s user manual for detailed instructions).</li><li>Touch any button to take the thermostat out of sleep mode.</li><li>Touch and hold MODE button for 5 seconds. SETUP will be displayed in the status display line.</li><li>Scroll to “Z-Wave” using Up/Down buttons. Touch FAN (Select).</li><li>When prompted by your Z-Wave controller, select YES in the Z-Wave Install screen.</li><li>Touch FAN (Select) to add thermostat to network.</li><li>The display line should flash WAIT and then SUCCESS if Z-Wave connection is made.</li><li>If Z-Wave does not connect to controller, WAIT, then FAIL will flash in status display line.</li><li>If thermostat fails to connect, repeat Steps three (3) through (7) to re-try connecting.</li></ol> <br /> <h2>Exclusion Information</h2><ol><li>Set your primary controller to exclude or remove mode to remove the thermostat as a node on your network (see your controller’s user manual for detailed instructions).</li><li>Touch any button to take the thermostat out of sleep mode.</li><li>Touch and hold the MODE button for 5 seconds. SETUP will be displayed in the status display line.</li><li>Scroll to “Z-Wave” using Up/Down buttons. Touch FAN (Select).</li><li>When prompted by your Z-Wave controller, select YES in the Z-Wave exclude screen.</li><li>Touch FAN (Select) to remove thermostat to network.</li><li>The display line should flash WAIT then SUCCESS if the thermostat is removed from the network.</li><li>If the removal operation is not successful, WAIT will flash, then FAIL will flash in status display</li></ol><p>line. Repeat Steps three (3) through (7) to re-try</p> <br /> <h2>Wakeup Information</h2><p><br /></p>
+    ]]></description>
+    <category>HVAC</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="sensor_temperature" typeId="sensor_temperature">
+        <label>Sensor (temperature)</label>
+        <properties>
+          <property name="binding:*:QuantityType">COMMAND_CLASS_SENSOR_MULTILEVEL;type=TEMPERATURE</property>
+        </properties>
+      </channel>
+      <channel id="sensor_relhumidity" typeId="sensor_relhumidity">
+        <label>Sensor (relative humidity)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_SENSOR_MULTILEVEL;type=RELATIVE_HUMIDITY</property>
+        </properties>
+      </channel>
+      <channel id="thermostat_mode" typeId="2gig_stz1345_00_000_thermostat_mode">
+        <label>Thermostat mode</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_THERMOSTAT_MODE</property>
+        </properties>
+      </channel>
+      <channel id="thermostat_state" typeId="thermostat_state">
+        <label>Thermostat Operating State</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_THERMOSTAT_OPERATING_STATE</property>
+        </properties>
+      </channel>
+      <channel id="thermostat_setpoint_auto_changeover" typeId="thermostat_setpoint">
+        <label>Setpoint (auto changeover)</label>
+        <properties>
+          <property name="binding:*:QuantityType">COMMAND_CLASS_THERMOSTAT_SETPOINT;type=AUTO_CHANGEOVER</property>
+        </properties>
+      </channel>
+      <channel id="thermostat_setpoint_moist_air" typeId="thermostat_setpoint">
+        <label>Setpoint (moist air)</label>
+        <properties>
+          <property name="binding:*:QuantityType">COMMAND_CLASS_THERMOSTAT_SETPOINT;type=MOIST_AIR</property>
+        </properties>
+      </channel>
+      <channel id="thermostat_setpoint_cooling" typeId="thermostat_setpoint">
+        <label>Setpoint (cooling)</label>
+        <properties>
+          <property name="binding:*:QuantityType">COMMAND_CLASS_THERMOSTAT_SETPOINT;type=COOLING</property>
+        </properties>
+      </channel>
+      <channel id="thermostat_setpoint_heating" typeId="thermostat_setpoint">
+        <label>Setpoint (heating)</label>
+        <properties>
+          <property name="binding:*:QuantityType">COMMAND_CLASS_THERMOSTAT_SETPOINT;type=HEATING</property>
+        </properties>
+      </channel>
+      <channel id="thermostat_setpoint_furnace" typeId="thermostat_setpoint">
+        <label>Setpoint (furnace)</label>
+        <properties>
+          <property name="binding:*:QuantityType">COMMAND_CLASS_THERMOSTAT_SETPOINT;type=FURNACE</property>
+        </properties>
+      </channel>
+      <channel id="thermostat_setpoint_dry_air" typeId="thermostat_setpoint">
+        <label>Setpoint (dry air)</label>
+        <properties>
+          <property name="binding:*:QuantityType">COMMAND_CLASS_THERMOSTAT_SETPOINT;type=DRY_AIR</property>
+        </properties>
+      </channel>
+      <channel id="thermostat_fanmode" typeId="2gig_stz1345_00_000_thermostat_fanmode">
+        <label>Thermostat fan mode</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_THERMOSTAT_FAN_MODE</property>
+        </properties>
+      </channel>
+      <channel id="thermostat_fanstate" typeId="2gig_stz1345_00_000_thermostat_fanstate">
+        <label>Thermostat fan state</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_THERMOSTAT_FAN_STATE</property>
+        </properties>
+      </channel>
+      <channel id="battery-level" typeId="system.battery-level">
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_BATTERY</property>
+        </properties>
+      </channel>
+      <channel id="time_offset" typeId="time_offset">
+        <label>Clock Time Offset</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_CLOCK</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">2gig Technologies Inc.</property>
+      <property name="modelId">STZ1-345</property>
+      <property name="manufacturerId">009B</property>
+      <property name="manufacturerRef">5354:5A31</property>
+      <property name="dbReference">1426</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Lifeline</label>
+        <description><![CDATA[
+<br /> <h1>Overview</h1><p><br /></p>
+        ]]></description>
+        <multipleLimit>2</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+  <channel-type id="2gig_stz1345_00_000_thermostat_mode">
+    <item-type>Number</item-type>
+    <label>Thermostat Mode</label>
+    <description>Sets the thermostat mode</description>
+    <category>Temperature</category>
+    <state pattern="%s">
+      <options>
+        <option value="0">Off</option>
+        <option value="1">Heat</option>
+        <option value="11">Economy Heat</option>
+        <option value="12">Economy Cool</option>
+        <option value="13">Away</option>
+        <option value="2">Cool</option>
+        <option value="3">Auto</option>
+        <option value="4">Aux Heat</option>
+      </options>
+    </state>
+  </channel-type>
+
+  <channel-type id="2gig_stz1345_00_000_thermostat_fanmode">
+    <item-type>Number</item-type>
+    <label>Thermostat Fan Mode</label>
+    <description>Sets the thermostat fan mode</description>
+    <category>Temperature</category>
+    <state pattern="%s">
+      <options>
+        <option value="0">Auto (Low)</option>
+        <option value="1">On (Low)</option>
+      </options>
+    </state>
+  </channel-type>
+
+  <channel-type id="2gig_stz1345_00_000_thermostat_fanstate">
+    <item-type>Number</item-type>
+    <label>Thermostat Fan State</label>
+    <description>Sets the thermostat fan state</description>
+    <category>Temperature</category>
+    <state pattern="%s">
+      <options>
+        <option value="0">Idle</option>
+      </options>
+    </state>
+  </channel-type>
+
+</thing:thing-descriptions>

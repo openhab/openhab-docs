@@ -1,0 +1,652 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="heltun_hers01_00_000" listed="false">
+    <label>HE-RS01 Five-channel relay</label>
+    <description><![CDATA[
+Five-channel relay<br /> <h1>Overview</h1><p>The Relay Switch quinto with roller shutter control brings incredible capabilities to any connected device. It makes light switches ‘smart’ with full remote monitoring, control, and advanced programmability. This brings the convenience of smartphone app control and automation to ‘dumb’ devices such as multi-gang light switches, electronic door locks, motorized gates, blinds, windows, and valves. At 26mm in depth, the Relay Switch quinto is also ‘impossibly small’, fitting into any rectangular, round or square electrical junction box, even behind attached devices.<br /></p><p>For example, you can control up to...</p><ul><li> Five ON/OFF devices</li><li>Three ON/OFF devices, and one, two-direction motor</li><li>One ON/OFF device, and two, two-direction motors</li></ul><p>It is designed to fit inside standard round, square, or rectangular electrical junction boxes installed behind an existing in-wall switch or inside a circuit breaker panel. Relay Switch Quinto enables On/Off controls of lights, dimmers, blinds, doors, gates, valves, and motors either manually by a direct-connected switch, or remotely through a Z-WaveTM network. Thanks to the HE-RS01 five-channel relays it can manage up to five On/Off devices, or three On/Off devices and one two-direction motors, or one On/Off device and two two-direction motors. It has two independent inputs for relay channels which allow it to control systems with different power sources or to use relay outputs as dry contacts. Each relay can be loaded up to five amps and uses the HELTUN Advanced Zero-Cross Technology to increase the life of the device and connected system.<br /></p> <br /> <h2>Inclusion Information</h2><ol><li>Ensure the HE-RS01 is Powered On and the LED indicator blinks red slowly (i.e. it is excluded)</li><li>Start the Inclusion mode from the gateway/controller</li><li>To start the inclusion process on the HE-RS01, double-press the service button on the device (with no more than a one-second interval between presses).</li><li>The LED indicator will blink green quickly.</li><li>If the inclusion has been successful, the LED indicator will turn green for three seconds then continue slowly blinking green continuously while the HE-RS01 is Powered On.</li><li>If the inclusion was not successful, the LED indicator will turn red for three seconds then continue slowly blinking red continuously while Powered On. In that case repeat the inclusion process (steps 2-5) above.</li></ol> <br /> <h2>Exclusion Information</h2><ol><li>1. Ensure the HE-RS01 is Powered On and the LED indicator is slowly blinking green (i.e. it is included in a Z-Wave network).</li><li>Start the Exclusion mode from the gateway/controller.</li><li>To start the exclusion process on the HE-RS01, double-press the service button on the device (with no more than a one-second interval between presses).</li><li>The LED indicator will blink red quickly.</li><li>If the inclusion has been successful, the LED indicator will turn red for three seconds then continue blinking red slowly continuously while the HE-RS01 is Powered On.</li><li>If the inclusion was not successful, the LED indicator will turn green for three seconds then continue slow blink green all the time the device is Powered On. In that case repeat the exclusion process (steps 2-5) above.</li></ol><p>≡ Note: If the HE-RS01 has previously been part of a Z-Wave network and has not been Excluded since (the LED indicator blinks green slowly), inclusion is not possible without first performing an Exclusion or Factory Reset procedure.<br /></p> <br /> <h2>Wakeup Information</h2><p>The device is not battery powered and requires no wakeup.</p>
+    ]]></description>
+    <category>WallSwitch</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_binary" typeId="switch_binary">
+        <label>Switch</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY</property>
+        </properties>
+      </channel>
+      <channel id="meter_watts" typeId="meter_watts">
+        <label>Electric meter (watts)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_W</property>
+        </properties>
+      </channel>
+      <channel id="meter_kwh" typeId="meter_kwh">
+        <label>Electric meter (kWh)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_KWh</property>
+        </properties>
+      </channel>
+      <channel id="scene_number" typeId="scene_number">
+        <label>Scene Number</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_CENTRAL_SCENE</property>
+        </properties>
+      </channel>
+      <channel id="time_offset" typeId="time_offset">
+        <label>Clock Time Offset</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_CLOCK</property>
+        </properties>
+      </channel>
+      <channel id="switch_binary1" typeId="switch_binary">
+        <label>Switch 1</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY:1</property>
+        </properties>
+      </channel>
+      <channel id="switch_binary2" typeId="switch_binary">
+        <label>Switch 2</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY:2</property>
+        </properties>
+      </channel>
+      <channel id="switch_binary3" typeId="switch_binary">
+        <label>Switch 3</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY:3</property>
+        </properties>
+      </channel>
+      <channel id="switch_binary4" typeId="switch_binary">
+        <label>Switch 4</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY:4</property>
+        </properties>
+      </channel>
+      <channel id="switch_binary5" typeId="switch_binary">
+        <label>Switch 5</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY:5</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Heltun</property>
+      <property name="modelId">HE-RS01</property>
+      <property name="manufacturerId">0344</property>
+      <property name="manufacturerRef">0004:0009</property>
+      <property name="dbReference">1425</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_1_1" type="integer" groupName="configuration" readOnly="true"
+                 min="0" max="9">
+        <label>1: Frequency Region</label>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_2_1" type="integer" groupName="configuration" readOnly="true"
+                 min="0" max="1">
+        <label>2: Inclusion / Exclusion Mode</label>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_3_4" type="integer" groupName="configuration" readOnly="true"
+                 min="0" max="4294967295">
+        <label>3: Hardware and Software Versions</label>
+        <description><![CDATA[
+<br /> <h1>Overview</h1><p><br /></p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_4_4" type="integer" groupName="configuration" readOnly="true"
+                 min="0" max="4294967295">
+        <label>4: Energy Consumption</label>
+        <description>Total consumption</description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_7_1" type="integer" groupName="configuration"
+                 min="0" max="1">
+        <label>7: Relay 1 Output</label>
+        <description>NO or NC mode</description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_8_1" type="integer" groupName="configuration"
+                 min="0" max="1">
+        <label>8: Relay 2 Output</label>
+        <description>NO or NC mode</description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_9_1" type="integer" groupName="configuration"
+                 min="0" max="1">
+        <label>9: Relay 3 Output</label>
+        <description>NO or NC mode</description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_10_1" type="integer" groupName="configuration"
+                 min="0" max="1">
+        <label>10: Relay 4 Output</label>
+        <description>NO or NC mode</description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_11_1" type="integer" groupName="configuration"
+                 min="0" max="1">
+        <label>11: Relay 5 Output</label>
+        <description>NO or NC mode</description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_12_2" type="integer" groupName="configuration"
+                 min="0" max="1100">
+        <label>12: Power Load Relay 1</label>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_13_2" type="integer" groupName="configuration"
+                 min="0" max="1100">
+        <label>13: Power Load Relay 2</label>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_14_2" type="integer" groupName="configuration"
+                 min="0" max="1100">
+        <label>14: Power Load Relay 3</label>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_15_2" type="integer" groupName="configuration"
+                 min="0" max="1100">
+        <label>15: Power Load Relay 4</label>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_16_2" type="integer" groupName="configuration"
+                 min="0" max="1100">
+        <label>16: Power Load Relay 5</label>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_19_1" type="integer" groupName="configuration"
+                 min="0" max="1">
+        <label>19: Time correction by controller</label>
+        <default>1</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_21_1" type="integer" groupName="configuration"
+                 min="1" max="7">
+        <label>21: Week Day</label>
+        <default>1</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_22_1" type="integer" groupName="configuration"
+                 min="0" max="2359">
+        <label>22: Time</label>
+        <description><![CDATA[
+Hour and Minutes<br /> <h1>Overview</h1><p><br /></p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_41_1" type="integer" groupName="configuration"
+                 min="0" max="4">
+        <label>41: Hold control mode for input S1</label>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_42_1" type="integer" groupName="configuration"
+                 min="0" max="4">
+        <label>42: Hold control mode for input S2</label>
+        <default>2</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_43_1" type="integer" groupName="configuration"
+                 min="0" max="4">
+        <label>43: Hold control mode for input S3</label>
+        <default>2</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_44_1" type="integer" groupName="configuration"
+                 min="0" max="4">
+        <label>44: Hold control mode for input S4</label>
+        <default>2</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_45_1" type="integer" groupName="configuration"
+                 min="0" max="4">
+        <label>45: Hold control mode for input S5</label>
+        <default>2</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_51_1" type="integer" groupName="configuration"
+                 min="0" max="5">
+        <label>51: Click control mode for input S1</label>
+        <default>1</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_52_1" type="integer" groupName="configuration"
+                 min="0" max="5">
+        <label>52: Click control mode for input S2</label>
+        <default>1</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_53_1" type="integer" groupName="configuration"
+                 min="0" max="5">
+        <label>53: Click control mode for input S3</label>
+        <default>1</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_54_1" type="integer" groupName="configuration"
+                 min="0" max="5">
+        <label>54: Click control mode for input S4</label>
+        <default>1</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_55_1" type="integer" groupName="configuration"
+                 min="0" max="5">
+        <label>55: Click control mode for input S1</label>
+        <default>1</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_61_1" type="integer" groupName="configuration"
+                 min="0" max="5">
+        <label>61: Relay 1 control external source</label>
+        <default>1</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_62_1" type="integer" groupName="configuration"
+                 min="0" max="5">
+        <label>62: Relay 2 control external source</label>
+        <default>2</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_63_1" type="integer" groupName="configuration"
+                 min="0" max="5">
+        <label>63: Relay 3 control external source</label>
+        <default>3</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_64_1" type="integer" groupName="configuration"
+                 min="0" max="5">
+        <label>64: Relay 4 control external source</label>
+        <default>4</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_65_1" type="integer" groupName="configuration"
+                 min="0" max="5">
+        <label>65: Relay 5 control external source</label>
+        <default>5</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_71_2" type="integer" groupName="configuration"
+                 min="0" max="43200">
+        <label>71: Relay 1 control external source</label>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_72_2" type="integer" groupName="configuration"
+                 min="0" max="43200">
+        <label>72: Relay 2 control external source</label>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_73_2" type="integer" groupName="configuration"
+                 min="0" max="43200">
+        <label>73: Relay 3 control external source</label>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_74_2" type="integer" groupName="configuration"
+                 min="0" max="43200">
+        <label>74: Relay 4 control external source</label>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_75_2" type="integer" groupName="configuration"
+                 min="0" max="43200">
+        <label>75: Relay 5 control external source</label>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_101_1" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>101: Group 1 relay inverse mode</label>
+        <description><![CDATA[
+<br /> <h1>Overview</h1><p>Allowed values: 0, 12, 13, 14, 15, 21, 23, 24, 25, 31, 32, 34, 35, 41, 42, 43, 45, 51, 52, 53, 54<br /></p>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_102_1" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>102: Group 2 relay inverse mode</label>
+        <description><![CDATA[
+<br /> <h1>Overview</h1><p>Allowed values: 0, 12, 13, 14, 15, 21, 23, 24, 25, 31, 32, 34, 35, 41, 42, 43, 45, 51, 52, 53, 54</p>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_111_4" type="integer" groupName="configuration"
+                 min="0" max="5912359">
+        <label>111: Relay control scenario 1</label>
+        <description><![CDATA[
+<br /> <h1>Overview</h1><p>Allowed values: 0, 1000000 to 5912359</p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_112_4" type="integer" groupName="configuration"
+                 min="0" max="5912359">
+        <label>112: Relay control scenario 2</label>
+        <description><![CDATA[
+<br /> <h1>Overview</h1><p>Allowed values: 0, 1000000 to 5912359<br /></p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_113_4" type="integer" groupName="configuration"
+                 min="0" max="5912359">
+        <label>113: Relay control scenario 3</label>
+        <description><![CDATA[
+<br /> <h1>Overview</h1><p>Allowed values: 0, 1000000 to 5912359<br /></p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_114_4" type="integer" groupName="configuration"
+                 min="0" max="5912359">
+        <label>114: Relay control scenario 4</label>
+        <description><![CDATA[
+<br /> <h1>Overview</h1><p>Allowed values: 0, 1000000 to 5912359<br /></p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_115_4" type="integer" groupName="configuration"
+                 min="0" max="5912359">
+        <label>115: Relay control scenario 5</label>
+        <description><![CDATA[
+<br /> <h1>Overview</h1><p>Allowed values: 0, 1000000 to 5912359<br /></p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_116_4" type="integer" groupName="configuration"
+                 min="0" max="5912359">
+        <label>116: Relay control scenario 6</label>
+        <description><![CDATA[
+<br /> <h1>Overview</h1><p>Allowed values: 0, 1000000 to 5912359<br /></p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_117_4" type="integer" groupName="configuration"
+                 min="0" max="5912359">
+        <label>117: Relay control scenario 7</label>
+        <description><![CDATA[
+<br /> <h1>Overview</h1><p>Allowed values: 0, 1000000 to 5912359<br /></p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_118_4" type="integer" groupName="configuration"
+                 min="0" max="5912359">
+        <label>118: Relay control scenario 8</label>
+        <description><![CDATA[
+<br /> <h1>Overview</h1><p>Allowed values: 0, 1000000 to 5912359<br /></p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_119_4" type="integer" groupName="configuration"
+                 min="0" max="5912359">
+        <label>119: Relay control scenario 9</label>
+        <description><![CDATA[
+<br /> <h1>Overview</h1><p>Allowed values: 0, 1000000 to 5912359<br /></p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_120_4" type="integer" groupName="configuration"
+                 min="0" max="5912359">
+        <label>120: Relay control scenario 10</label>
+        <description><![CDATA[
+<br /> <h1>Overview</h1><p>Allowed values: 0, 1000000 to 5912359<br /></p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_141_1" type="integer" groupName="configuration"
+                 min="10" max="120">
+        <label>141: Consumption meter</label>
+        <description>Consecutive report interval</description>
+        <default>10</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_142_1" type="integer" groupName="configuration"
+                 min="0" max="1">
+        <label>142: Consumption change report</label>
+        <description>Report to send to controller</description>
+        <default>1</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_171_1" type="integer" groupName="configuration"
+                 min="0" max="2">
+        <label>171: Associations mode for external input S1</label>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_172_1" type="integer" groupName="configuration"
+                 min="0" max="2">
+        <label>172: Associations mode for external input S2</label>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_173_1" type="integer" groupName="configuration"
+                 min="0" max="2">
+        <label>173: Associations mode for external input S3</label>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_174_1" type="integer" groupName="configuration"
+                 min="0" max="2">
+        <label>174: Associations mode for external input S4</label>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_175_1" type="integer" groupName="configuration"
+                 min="0" max="2">
+        <label>175: Associations mode for external input S5</label>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association">
+        <label>1: Lifeline</label>
+        <description><![CDATA[
+Reports full state of the device and is used to communicate with the Z-Wave gateway.<br /> <h1>Overview</h1><p>≡ Note: It is not recommended to modify this group.</p><p>≡ Note: For correct operating in Fibaro gateways, the Single Channel Association should be removed from the device LifeLine (EndPoint 0 Group 1).</p>
+        ]]></description>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: External Input S1 Basic Set</label>
+        <description>It is assigned to the state of S1 input and will be triggered when the button is pressed on the switch connected to input S1. Is used to send Basic Set ON (value 255) and Basic Set OFF (value 0) commands to the associated devices.</description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_3" type="text" groupName="association" multiple="true">
+        <label>3: External Input S1 Multilevel Set</label>
+        <description>It is assigned to the state of S1 input. It sends MULTILEVEL SWITCH command class frame when the button is held on the switch connected to input S1. Is used to send UP/DOWN command to the associated devices.</description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_4" type="text" groupName="association" multiple="true">
+        <label>4: External Input S2 Basic Set</label>
+        <description>It is assigned to the state of S2 input and will be triggered when the button is pressed on the switch connected to input S2. Is used to send Basic Set ON (value 255) and Basic Set OFF (value 0) commands to the associated devices.</description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_5" type="text" groupName="association" multiple="true">
+        <label>5: External Input S2 Multilevel Set</label>
+        <description>It is assigned to the state of S2 input. It sends MULTILEVEL SWITCH command class frame when the button is held on the switch connected to input S2. Is used to send UP/DOWN command to the associated devices.</description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_6" type="text" groupName="association" multiple="true">
+        <label>6: External Input S3 Basic Set</label>
+        <description>It is assigned to the state of S3 input and will be triggered when the button is pressed on the switch connected to input S3. Is used to send Basic Set ON (value 255) and Basic Set OFF (value 0) commands to the associated devices.</description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_7" type="text" groupName="association" multiple="true">
+        <label>7: External Input S3 Multilevel Set</label>
+        <description>It is assigned to the state of S3 input. It sends MULTILEVEL SWITCH command class frame when the button is held on the switch connected to input S3. Is used to send UP/DOWN command to the associated devices.</description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_8" type="text" groupName="association" multiple="true">
+        <label>8: External Input S4 Basic Set</label>
+        <description>It is assigned to the state of S4 input and will be triggered when the button is pressed on the switch connected to input S4. Is used to send Basic Set ON (value 255) and Basic Set OFF (value 0) commands to the associated devices.</description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_9" type="text" groupName="association" multiple="true">
+        <label>9: External Input S4 Multilevel Set</label>
+        <description>It is assigned to the state of S4 input. It sends MULTILEVEL SWITCH command class frame when the button is held on the switch connected to input S4. Is used to send UP/DOWN command to the associated devices.</description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_10" type="text" groupName="association" multiple="true">
+        <label>10: External Input S5 Basic Set</label>
+        <description>It is assigned to the state of S5 input and will be triggered when the button is pressed on the switch connected to input S5. Is used to send Basic Set ON (value 255) and Basic Set OFF (value 0) commands to the associated devices.</description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_11" type="text" groupName="association" multiple="true">
+        <label>11: External Input S5 Multilevel Set</label>
+        <description>It is assigned to the state of S5 input. It sends MULTILEVEL SWITCH command class frame when the button is held on the switch connected to input S5. Is used to send UP/DOWN command to the associated devices.</description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_12" type="text" groupName="association" multiple="true">
+        <label>12: Relay 1 Basic Set</label>
+        <description>It is assigned to the state of relay N1 and will be triggered on the relay state change. Is used to send Basic Set ON (value 255) and Basic Set OFF (value 0) commands to the associated devices.</description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_13" type="text" groupName="association" multiple="true">
+        <label>13: Relay 2 Basic Set</label>
+        <description>It is assigned to the state of relay N2 and will be triggered on the relay state change. Is used to send Basic Set ON (value 255) and Basic Set OFF (value 0) commands to the associated devices.</description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_14" type="text" groupName="association" multiple="true">
+        <label>14: Relay 3 Basic Set</label>
+        <description>It is assigned to the state of relay N3 and will be triggered on the relay state change. Is used to send Basic Set ON (value 255) and Basic Set OFF (value 0) commands to the associated devices.</description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_15" type="text" groupName="association" multiple="true">
+        <label>15: Relay 4 Basic Set</label>
+        <description>It is assigned to the state of relay N4 and will be triggered on the relay state change. Is used to send Basic Set ON (value 255) and Basic Set OFF (value 0) commands to the associated devices.</description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_16" type="text" groupName="association" multiple="true">
+        <label>16: Relay 5 Basic Set</label>
+        <description>It is assigned to the state of relay N5 and will be triggered on the relay state change. Is used to send Basic Set ON (value 255) and Basic Set OFF (value 0) commands to the associated devices.</description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>
