@@ -28,7 +28,6 @@ For the declarative way, you add your binding information in form of a `binding.
 
   <name>String</name>
   <description>String</description>
-  <author>String</author>
 
   <config-description>
     ...
@@ -44,7 +43,6 @@ For the declarative way, you add your binding information in form of a `binding.
 | binding.id                 | An identifier for the binding                | mandatory |
 | name                       | A human-readable name for the binding        | mandatory |
 | description                | A human-readable description for the binding | optional  |
-| author                     | The author of the binding                    | optional  |
 | service-id                 | The ID (service.pid or component.name) of the main binding service, which can be configured through OSGi configuration admin service. Should only be used in combination with a config description definition | optional |
 | config-description         | The configuration description for the binding within the ConfigDescriptionRegistry | optional |
 | config-description-ref     | The reference to a configuration description for the binding within the ConfigDescriptionRegistry | optional |
@@ -73,7 +71,6 @@ The following code gives an example for a binding definition.
 
   <name>hue Binding</name>
   <description>The hue Binding integrates the Philips hue system. It allows to control hue bulbs.</description>
-  <author>ACME</author>
 
 </binding:binding>
 ```
