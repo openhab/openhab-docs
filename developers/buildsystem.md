@@ -17,7 +17,7 @@ This section talks about some common buildsystem related topics and also some qu
 
 ## Adding Dependencies
 
-Generally all dependencies should be OSGi-bundles and available on JCenter.
+Generally all dependencies should be OSGi-bundles and available on Maven Central.
 
 ### External dependency
 
