@@ -509,7 +509,7 @@ Group:Switch:AND(ON,OFF)    Lights        "Active Lights [%d]"              // e
 Group:Number:AVG            Temperatures  "All Room Temperatures [%.1f °C]" // e.g. "21.3 °C"
 Group:DateTime:EARLIEST     LatestUpdate "Latest Update [%1$tY.%1$tm.%1$tY %1$tH:%1$tM:%1$tS]"
 Group:DateTime:LATEST       LastSeen  "Last Seen [%1$tY.%1$tm.%1$tY %1$tH:%1$tM:%1$tS]"
-Group:String:COUNT("OFFLINE")     OfflineDevices "Offline Devices [%d]"     // e.g. "2"
+Group:Number:COUNT("OFFLINE")     OfflineDevices "Offline Devices [%d]"     // e.g. "2"
 ```
 
 The first three examples above compute the number of active lights and store them as group state.
