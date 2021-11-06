@@ -244,8 +244,8 @@ Dimmer { ga="AirPurifier" [ speeds="0=off,50=mid,100=high" ] }
 | **Supported Items** | Contact (no device control), Switch (no open percentage), Rollershutter |
 | **Configuration** | (optional) `inverted=true/false` |
 
-Blinds and simiar devices should always use the `Rollershutter` item type for proper functionallity.
-Since Google and openHAB use the oposite percentage value for "opened" and "closed", the action will tranlate this automatically.
+Blinds and similar devices should always use the `Rollershutter` item type for proper functionallity.
+Since Google and openHAB use the opposite percentage value for "opened" and "closed", the action will translate this automatically.
 If the values are still inverted in your case, you can state the `inverted=true` option for all `Rollershutter` items.
 
 Since Google only tells the open percentage (and not the verb "close" or "down"), it can not be differentiated between saying "set blind to 100%" or "open blind".

@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="nietech_mp21zd_00_000" listed="false">
+    <label>MP21ZD Z-Wave Mini Plug Dimmer</label>
+    <description><![CDATA[
+Z-Wave Mini Plug Dimmer<br /> <h1>Overview</h1><p><b>Specifications:</b></p><ul><li>Power: 120V 60Hz</li><li>Loading: 200W Max</li><li>Frequency: 908.42Mhz</li><li>Temperature Range: 0°C ~ 40°C</li><li>Indoor use in dry location</li></ul><p><b>Features:</b><br /></p><ol><li>Z-Wave on/off + dimmer control.</li><li>Grounded 3-wire power connection for safety.</li><li>Remembers and restores on/off status after power failure.</li><li>Built-in Z-Wave Plus signal repeater to extend network range.</li><li>S2 security and 700 Z-Wave chip for reliable wireless communication.</li><li>Work with all certificated Z-Wave controllers.</li></ol> <br /> <h2>Inclusion Information</h2><ol><li>Follow the instructions for your Z-Wave certified controller to add a device to the Z-Wave network.</li><li>Once the controller is ready to add your device, press the manual/program button on the smart plug 3 times quickly.</li></ol> <br /> <h2>Exclusion Information</h2><ol><li>Follow the instructions for your Z-Wave certified controller to remove a device from the Z-Wave network.</li><li>Once the controller is ready to remove your device, press the manual/program button on the smart plug 3 times quickly.</li></ol> <br /> <h2>Wakeup Information</h2><p><br /></p>
+    ]]></description>
+    <category>Battery</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_dimmer" typeId="switch_dimmer">
+        <label>Dimmer</label>
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+          <property name="binding:Command:OnOffType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">NIE Technology</property>
+      <property name="modelId">MP21ZD</property>
+      <property name="manufacturerId">0312</property>
+      <property name="manufacturerRef">FF00:FF0D</property>
+      <property name="dbReference">1429</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_2_1" type="integer" groupName="configuration"
+                 min="0" max="3">
+        <label>2: LED Indicator</label>
+        <description><![CDATA[
+LED Indicator Setup<br /> <h1>Overview</h1><p>This parameter can access you to choose the led indicator to be on when the plug(light) is on/off, or LED indicator remains on/off all times.</p><p>(LED flashes 3 times when the configuration parameter changed.)</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">LED is ON when the switch if OFF, and LED is OFF when switch is ON</option>
+          <option value="1">LED is ON when switch is ON and LED is OFF when switch is OFF</option>
+          <option value="2">LED is always OFF</option>
+          <option value="3">LED is always ON</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_4_4" type="integer" groupName="configuration">
+        <label>4: Auto Turn-Off Timer</label>
+        <description><![CDATA[
+Auto Turn-Off Timer Setup<br /> <h1>Overview</h1><p>This parameter can access you to set a timer to make the switch turn off automatically after the switch turned on. The number entered as value corresponds to number of minutes.</p><p>(LED flashes 3 times when the configuration parameter changed.)<br /></p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Disable</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_6_4" type="integer" groupName="configuration">
+        <label>6: Auto Turn-On Timer</label>
+        <description><![CDATA[
+Auto Turn-On Timer Setup<br /> <h1>Overview</h1><p>This parameter can access you to set a timer to make the switch turn on automatically after the switch turned off. The number entered as value corresponds to number of minutes.</p><p>(LED flashes 3 times when the configuration parameter changed.)<br /></p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Disable</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_7_1" type="integer" groupName="configuration"
+                 min="1" max="10">
+        <label>7: Night Light</label>
+        <description><![CDATA[
+Night Light Setup<br /> <h1>Overview</h1><p>This parameter can access you to set a specific brightness for the light when you want to make it as a night light.</p><p>Value <i>x</i> = 10<i>x</i> percent brightness</p><p>(LED flashes 3 times when the configuration parameter changed.)<br /></p>
+        ]]></description>
+        <default>2</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_8_1" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>8: State Restore</label>
+        <description><![CDATA[
+Power Failure Restore State Setup<br /> <h1>Overview</h1><p>This parameter can access you to set the switch to be on/off after power failure.</p><p><b>Operation: quickly press 8 times to change this parameter.</b></p><p>(LED flashes 3 times when the configuration parameter changed.)</p>
+        ]]></description>
+        <default>2</default>
+        <options>
+          <option value="0">The switch is off regardless of the state prior to power failure.</option>
+          <option value="1">The switch is on regardless of the state prior to power failure.</option>
+          <option value="2">This switch will return to state prior to the power failure.</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_10_1" type="integer" groupName="configuration"
+                 min="1" max="10">
+        <label>10: Dimmer Speed</label>
+        <description><![CDATA[
+Dimmer Speed Setup (Dimmer Control)<br /> <h1>Overview</h1><p>This parameter can access you to set the time from maximum brightness to minimum brightness or minimum brightness to maximum brightness.</p><p>(Only when hold to change the brightness or control from HUB).</p>
+        ]]></description>
+        <default>4</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_11_1" type="integer" groupName="configuration"
+                 min="0" max="99">
+        <label>11: Multilevel Minimum</label>
+        <description><![CDATA[
+Multilevel Minimum Value Setup<br /> <h1>Overview</h1><p><b>Operation: quickly press 5 times to change this parameter.</b></p><p>(LED flashes 3 times when the configuration parameter changed.)</p>
+        ]]></description>
+        <default>10</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_12_1" type="integer" groupName="configuration">
+        <label>12: Multilevel Maximum</label>
+        <description><![CDATA[
+Multilevel Maximum Value Setup<br /> <h1>Overview</h1><p><b>Operation: quickly press 10 times to change this parameter.</b></p><p>(LED flashes 3 times when the configuration parameter changed.)</p>
+        ]]></description>
+        <default>99</default>
+        <options>
+          <option value="0">Disable</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_13_1" type="integer" groupName="configuration"
+                 min="1" max="60">
+        <label>13: Temperature Time</label>
+        <description><![CDATA[
+Temperature Report Time Setup<br /> <h1>Overview</h1><p>This parameter determines the minimum time in temperature that will result in sending new power report to the main controller.</p><p>(LED flashes 3 times when the configuration parameter changed.)</p><p><b>Operation: Set up on the hub</b></p>
+        ]]></description>
+        <default>1</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_14_1" type="integer" groupName="configuration"
+                 min="1" max="10">
+        <label>14: Temperature Threshold</label>
+        <description><![CDATA[
+Temperature Report Threshold Setup<br /> <h1>Overview</h1><p>This parameter determines the minimum change in temperature that will result in sending new power report to the main controller.</p><p>(LED flashes 3 times when the configuration parameter changed.)</p><p><b>Operation: Set up on the hub.</b></p>
+        ]]></description>
+        <default>5</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association">
+        <label>1: Lifeline</label>
+        <description><![CDATA[
+Association Group 1<br /> <h1>Overview</h1><p>This Device supports Lifeline (association group 1) supporting 1 node for lifeline communication.</p><p>Group 1 must be assigned the Node ID of the primary controller where unsolicited notifications will be sent. The Z-Wave controller should set this association automatically after inclusion.</p><p>Lifeline association only supports the “Device Reset Locally” function.</p>
+        ]]></description>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: Basic set command</label>
+        <description>Association Group 2</description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

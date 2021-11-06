@@ -7,7 +7,9 @@
 
   <thing-type id="merten_507001_00_000" listed="false">
     <label>507001 Switch Wall Insert 1 Gang</label>
-    <description>Switch Wall Insert 1 Gang</description>
+    <description><![CDATA[
+Switch Wall Insert 1 Gang<br /> <h1>Overview</h1><p>You can use the flush-mounted receiver to switch a load on and off via radio signal. When it receives the radio signal, the flush-mounted receiver switches its contact.</p> <br /> <h2>Inclusion Information</h2><p>Press the flush-mounted receiver's switch button three times within approx. 1.5 seconds (with a sharp object such as a phase tester. The LED in the flush-mounted receiver flashes.</p> <br /> <h2>Exclusion Information</h2><p>Press the flush-mounted receiver's switch button three times within approx. 1.5 seconds (with a sharp object such as a phase tester. The LED in the flush-mounted receiver flashes.</p> <br /> <h2>Wakeup Information</h2><p><br /></p>
+    ]]></description>
     <category>WallSwitch</category>
 
     <!-- CHANNEL DEFINITIONS -->
@@ -31,6 +33,18 @@
 
     <!-- CONFIGURATION DESCRIPTIONS -->
     <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Devices to be switched</label>
+        <multipleLimit>12</multipleLimit>
+      </parameter>
 
       <!-- STATIC DEFINITIONS -->
       <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">

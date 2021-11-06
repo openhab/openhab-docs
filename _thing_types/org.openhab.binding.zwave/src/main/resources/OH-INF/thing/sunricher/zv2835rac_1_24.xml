@@ -5,19 +5,19 @@
   xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
                       https://openhab.org/schemas/thing-description/v1.0.0">
 
-  <thing-type id="sunricher_zv2835rac_00_000" listed="false">
+  <thing-type id="sunricher_zv2835rac_01_024" listed="false">
     <label>ZV2835RAC Knob Smart Dimmer</label>
     <description><![CDATA[
-Knob Smart Dimmer<br /> <h1>Overview</h1><p>The knob smart dimmer is a Z-Wave device designed to work with various types of light sources. It may be connected to two-wire or three-wire configuration so it can operate with or without neutral lead. The dimmer can switch or dim connected light source either through Z-Wave devices or through the rotary knob directly. The smart dimmer is equipped with an algorithm of smart light source detection which makes configuration easier and ensures high compatibility of the device. It may be used as a switch with non-dimmable light sources (in 3-wire connection).</p> <p>Main Features:</p> <ul><li>Advanced microprocessor control,</li> <li>Implemented algorithm of smart light source detection,</li> <li>Auto-adjustment of the appropriate control mode to connected load,</li> <li>Active power and energy metering functionality,</li> <li>Soft start function,</li> <li>Memory of the last lighting level settings</li> </ul><p>It operates under the following loads:</p> <ul><li>Conventional incandescent and HV halogen light sources</li> <li>ELV halogen lamps and dimmable LED bulbs (with electronic transformers)</li> <li>MLV halogen lamps (with ferromagnetic transformers)</li> <li>Dimmable LED bulbs</li> <li>Dimmable compact fluorescent CFL tube lamps</li> </ul><p>It can be configured to use “Trailing edge” or “Leading edge” to control following load types:</p> <ul><li>"Trailing edge" for resistive loads</li> <li>"Trailing edge" for capacitive loads</li> <li>"Leading edge" for inductive loa</li> </ul> <br /> <h2>Inclusion Information</h2><p>There are two methods to set the dimmer into inclusion mode:</p> <ol><li>Repower on the dimmer, it will be set into inclusion mode automatically, and waiting to be included.</li> <li>Triple press reset button on the dimmer, it will set the dimmer into inclusion mode.</li> </ol> <br /> <h2>Exclusion Information</h2><p>There are two exclusion methods:</p> <p>Method 1: Exclusion from the primary controller/gateway as follows:</p> <ol><li>Set the primary controller/gateway into exclusion mode (Please refer to your primary controllers manual on how to set your controller into exclusion).</li> <li>Triple press reset button, the dimmer will be set to exclusion mode, and waiting to be excluded, then the dimmer will be excluded from the network.</li> </ol><p>Method 2: Factory reset the dimmer will force it to be excluded from a network. Note: Factory reset is not recommended for exclusion, please use this procedure only if the primary controller/gateway is missing or otherwise inoperable.<br />Factory Reset: Press and hold down the reset button for over 10 seconds, the dimmer will be reset to factory defaults, the load brightness will be restored to 50% and will flash slowly.</p> <br /> <h2>Wakeup Information</h2><p><br /></p>
+Knob Smart Dimmer<br /> <h1>Overview</h1><p>The knob smart dimmer is a Z-Wave device designed to work with various types of light sources. It may be connected to two-wire or three-wire configuration so it can operate with or without neutral lead. The dimmer can switch or dim connected light source either through Z-Wave devices or through the rotary knob directly. The smart dimmer is equipped with an algorithm of smart light source detection which makes configuration easier and ensures high compatibility of the device. It may be used as a switch with non-dimmable light sources (in 3-wire connection).<br /></p> <p>Main Features:</p> <ul><li>Advanced microprocessor control,</li> <li>Implemented algorithm of smart light source detection,</li> <li>Auto-adjustment of the appropriate control mode to connected load,</li> <li>Active power and energy metering functionality,</li> <li>Soft start function,</li> <li>Memory of the last lighting level settings</li> </ul><p>It operates under the following loads:</p> <ul><li>Conventional incandescent and HV halogen light sources</li> <li>ELV halogen lamps and dimmable LED bulbs (with electronic transformers)</li> <li>MLV halogen lamps (with ferromagnetic transformers)</li> <li>Dimmable LED bulbs</li> <li>Dimmable compact fluorescent CFL tube lamps</li> </ul><p>It can be configured to use “Trailing edge” or “Leading edge” to control following load types:</p> <ul><li>"Trailing edge" for resistive loads</li> <li>"Trailing edge" for capacitive loads</li> <li>"Leading edge" for inductive loa</li> </ul> <br /> <h2>Inclusion Information</h2><p>There are two methods to set the dimmer into inclusion mode:<br /></p> <ol><li>Power on the dimmer, it will be set into inclusion mode automatically, and waiting to be included.</li> <li>Triple press reset button on the dimmer, it will set the dimmer into inclusion mode.</li> </ol> <br /> <h2>Exclusion Information</h2><p>There are two methods to set the dimmer into inclusion mode:<br /></p> <ol><li>Power on the dimmer, it will be set into inclusion mode automatically, and waiting to be included.</li> <li>Triple press reset button on the dimmer, it will set the dimmer into inclusion mode.</li> </ol> <br /> <h2>Wakeup Information</h2><p><br /></p>
     ]]></description>
-    <category>WallSwitch</category>
+    <category>Battery</category>
 
     <!-- CHANNEL DEFINITIONS -->
     <channels>
       <channel id="switch_dimmer" typeId="switch_dimmer">
         <label>Dimmer</label>
         <properties>
-          <property name="binding:*:PercentType">COMMAND_CLASS_SWITCH_MULTILEVEL,COMMAND_CLASS_BASIC</property>
+          <property name="binding:*:PercentType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
           <property name="binding:Command:OnOffType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
         </properties>
       </channel>
@@ -25,18 +25,6 @@ Knob Smart Dimmer<br /> <h1>Overview</h1><p>The knob smart dimmer is a Z-Wave de
         <label>Scene Number</label>
         <properties>
           <property name="binding:*:DecimalType">COMMAND_CLASS_SCENE_ACTIVATION</property>
-        </properties>
-      </channel>
-      <channel id="meter_voltage" typeId="meter_voltage">
-        <label>Electric meter (volts)</label>
-        <properties>
-          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_V</property>
-        </properties>
-      </channel>
-      <channel id="meter_current" typeId="meter_current">
-        <label>Electric meter (amps)</label>
-        <properties>
-          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_A</property>
         </properties>
       </channel>
       <channel id="meter_kwh" typeId="meter_kwh">
@@ -49,6 +37,18 @@ Knob Smart Dimmer<br /> <h1>Overview</h1><p>The knob smart dimmer is a Z-Wave de
         <label>Electric meter (watts)</label>
         <properties>
           <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_W</property>
+        </properties>
+      </channel>
+      <channel id="meter_voltage" typeId="meter_voltage">
+        <label>Electric meter (volts)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_V</property>
+        </properties>
+      </channel>
+      <channel id="meter_current" typeId="meter_current">
+        <label>Electric meter (amps)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_A</property>
         </properties>
       </channel>
       <channel id="alarm_power" typeId="alarm_power">
@@ -71,8 +71,8 @@ Knob Smart Dimmer<br /> <h1>Overview</h1><p>The knob smart dimmer is a Z-Wave de
       <property name="modelId">ZV2835RAC</property>
       <property name="manufacturerId">0330</property>
       <property name="manufacturerRef">0200:D017</property>
-      <property name="versionMax">1.23</property>
-      <property name="dbReference">1177</property>
+      <property name="versionMin">1.24</property>
+      <property name="dbReference">1430</property>
       <property name="defaultAssociations">1</property>
     </properties>
 
@@ -315,6 +315,19 @@ Startup brightness<br /> <h1>Overview</h1><p>Setting startup brightness of the l
         ]]></description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_33_1" type="integer" groupName="configuration"
+                 min="0" max="1">
+        <label>33: External switch type</label>
+        <description><![CDATA[
+External switch type<br /> <h1>Overview</h1><p><br /></p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Push button switch</option>
+          <option value="1">Normal on/off switch</option>
+        </options>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

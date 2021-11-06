@@ -12,6 +12,16 @@ Roller shutter push-button<br /> <h1>Overview</h1><p>The roller shutter push-but
     ]]></description>
     <category>Blinds</category>
 
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="basic_switch_binary" typeId="switch_binary">
+        <label></label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_BASIC</property>
+        </properties>
+      </channel>
+    </channels>
+
     <!-- DEVICE PROPERTY DEFINITIONS -->
     <properties>
       <property name="vendor">Merten</property>

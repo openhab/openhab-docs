@@ -62,15 +62,17 @@ Basic Set Level<br /> <h1>Overview</h1><p>When Basic Set Command is sent where c
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_2_1" type="integer" groupName="configuration">
+      <parameter name="config_2_1" type="integer" groupName="configuration"
+                 min="0" max="1">
         <label>2: Enable/Disable Detecting</label>
-        <description>The Detecting function can be Disabled or Enabled.</description>
+        <description><![CDATA[
+The Detecting function can be Disabled or Enabled.<br /> <h1>Overview</h1><p><br /></p>
+        ]]></description>
         <default>1</default>
         <options>
           <option value="0">Disabled</option>
           <option value="1">Enabled</option>
         </options>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_3_1" type="integer" groupName="configuration"
@@ -101,8 +103,8 @@ Minimum Lux Level to provoke trigger<br /> <h1>Overview</h1><p>Sets minimum Lux 
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_6_1" type="integer" groupName="configuration"
-                 min="5" max="255">
+      <parameter name="config_6_2" type="integer" groupName="configuration"
+                 min="5" max="3600">
         <label>6: On-Off Duration</label>
         <description><![CDATA[
 On-Off Duration<br /> <h1>Overview</h1><p>The function of on-off duration setting will be useful if the detector is connected with a module or lighting. The duration determines how long the module/lighting should stay ON. For instance, Lamp Module turns off 100 secs after it has been turned on. This parameter can be configured with the value of 5 through 3600, where 5 means 5 second delay and 3600 means 3600 seconds of delay</p>

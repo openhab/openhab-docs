@@ -10,9 +10,6 @@ This describes the Z-Wave device *PS9EP*, manufactured by *Sigma Designs (Former
 
 The device is in the category of *Wall Switch*, defining Any device attached to the wall that controls a binary status of something, for ex. a light switch.
 
-![PS9EP product image](https://opensmarthouse.org/zwavedatabase/993/image/)
-
-
 The PS9EP supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is also able to participate in the routing of data between other devices in the mesh network.
 
 ## Overview
@@ -193,10 +190,6 @@ Association group 1 supports 5 nodes.
 | Command Class | Comment |
 |---------------|---------|
 | COMMAND_CLASS_SWITCH_MULTILEVEL_V1| |
-
-### Documentation Links
-
-* [pdf](https://opensmarthouse.org/zwavedatabase/993/reference/Home-Automation.pdf)
 
 ---
 

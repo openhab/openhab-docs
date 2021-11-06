@@ -40,11 +40,11 @@ The Z-URC 550EU does not permanently listen for messages sent from the controlle
 The wakeup period does not impact the devices ability to report events or sensor data. The device can be manually woken with a button press on the device as described below - note that triggering a device to send an event is not the same as a wakeup notification, and this will not allow the controller to communicate with the device.
 
 
-See Inclusion, but press 8364 instead of 8363, see manual p. 9.
+See Inclusion, but press 836**4** instead of 836**3**, see manual p. 9.
 
 ### General Usage Information
 
-
+Set the remote to Listening mode (press Conf+Remove for 3 seconds, then enter 836**4**, see manual p. 9) and tell your application to send the associations to the remote (for OH 3.1: click 'Save (Ctrl-S)' on the Thing Configuration page).
 
 ## Channels
 

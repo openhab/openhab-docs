@@ -20,22 +20,16 @@ Strips Guard<br /> <h1>Overview</h1><p>Strips Guard 700 is a magnetic sensor for
           <property name="binding:*:OnOffType">COMMAND_CLASS_SENSOR_BINARY</property>
         </properties>
       </channel>
-      <channel id="alarm_burglar" typeId="alarm_burglar">
-        <label>Alarm (burglar)</label>
+      <channel id="sensor_door" typeId="sensor_door">
+        <label>Door Sensor</label>
+        <properties>
+          <property name="binding:*:OpenClosedType">COMMAND_CLASS_ALARM;type=ACCESS_CONTROL</property>
+        </properties>
+      </channel>
+      <channel id="alarm_tamper" typeId="alarm_tamper">
+        <label>Tamper Alarm</label>
         <properties>
           <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=BURGLAR</property>
-        </properties>
-      </channel>
-      <channel id="alarm_system" typeId="alarm_system">
-        <label>Alarm (system)</label>
-        <properties>
-          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=SYSTEM</property>
-        </properties>
-      </channel>
-      <channel id="alarm_access" typeId="alarm_access">
-        <label>Alarm (access)</label>
-        <properties>
-          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=ACCESS_CONTROL</property>
         </properties>
       </channel>
       <channel id="battery-level" typeId="system.battery-level">
@@ -149,7 +143,7 @@ Activate Supervision command for only important alarm events or all events. Supe
 
       <parameter name="config_22_1" type="integer" groupName="configuration"
                  min="0" max="1">
-        <label>22: Securiy Level</label>
+        <label>22: Security Level</label>
         <description><![CDATA[
 Select the level of security.<br /> <h1>Overview</h1><p>0 - Standard (Forces parameter behavior as follows: #16=10000; #17=Sensative standard (retries with an incrementally longer period until reconnected); #18=0; #19=Off)</p><p>1 - High Security (Enables parameters #16-#19; #1=2; #15=2)</p>
         ]]></description>
