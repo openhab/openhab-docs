@@ -97,7 +97,7 @@ The following state translation is provided for this channel to the ```Switch```
 
 ## Device Configuration
 
-The following table provides a summary of the 18 configuration parameters available in the NAS-PD07Z.
+The following table provides a summary of the 20 configuration parameters available in the NAS-PD07Z.
 Detailed information on each parameter can be found in the sections below.
 
 | Param | Name  | Description |
@@ -106,20 +106,22 @@ Detailed information on each parameter can be found in the sections below.
 | 2 | Motion Enable |  |
 | 3 | Motion Alarm Once Enable |  |
 | 4 | Luminance Associated Enable |  |
-| 5 | Binary Sensor Report Enable |  |
-| 6 | Motion Sensitivity |  |
-| 7 | Temperature Offset Value |  |
-| 8 | Humidity Offset Value |  |
-| 9 | Temperature D-Value Setting |  |
-| 10 | Humidity D-Value Setting |  |
-| 11 | Luminance D-Value Setting |  |
-| 12 | Basic Set Level |  |
+| 5 | Motion Sensitivity |  |
+| 6 | Temperature Offset Value |  |
+| 7 | Humidity Offset Value |  |
+| 8 | Temperature D-Value Setting |  |
+| 9 | Humidity D-Value Setting |  |
+| 10 | Luminance D-Value Setting |  |
+| 11 | Basic Set Level |  |
+| 12 | Basic Set Off Delay Time |  |
 | 13 | Motion Blind Time |  |
-| 14 | Basic Set Off Delay Time |  |
-| 15 | Motion Clear Time |  |
+| 14 | ??? Unknown |  |
+| 15 | ??? Unknown |  |
 | 16 | Luminance Threshold for Associated |  |
-| 17 | Sensor Measureing Interval |  |
+| 17 | Sensor Measuring Interval |  |
 | 18 | Light Intensity Offset Calibration |  |
+| 98 | ??? Binary Sensor Report Enable |  |
+| 99 | ??? Motion Clear Time |  |
 
 ### Parameter 1: Led Indicator Enable
 
@@ -185,37 +187,32 @@ The manufacturer defined default value is ```0``` (Disable).
 This parameter has the configuration ID ```config_4_1``` and is of type ```INTEGER```.
 
 
-### Parameter 5: Binary Sensor Report Enable
+### Parameter 5: Motion Sensitivity
 
 
-'1' - Enable sensor binary report when device detects a motion event. '0' - Disable sensor binary report when device detects a motion event.
-The following option values may be configured, in addition to values in the range 0 to 1 -:
-
-| Value  | Description |
-|--------|-------------|
-| 0 | Disable |
-| 1 | Enale |
-
-The manufacturer defined default value is ```0``` (Disable).
-
-This parameter has the configuration ID ```config_5_1``` and is of type ```INTEGER```.
-
-
-### Parameter 6: Motion Sensitivity
-
-
-This parameter is configured the sensitivity that motion detect. This value is larger, the sensitivity is lower, and the distance for motion detecting is closer.
+This parameter is configured the sensitivity that motion detect. This value is larger, the sensitivity is lower, and the distance for motion detecting is closer. Available settings: 0 ... 15
 Values in the range 0 to 15 may be set.
 
 The manufacturer defined default value is ```2```.
 
+This parameter has the configuration ID ```config_5_1``` and is of type ```INTEGER```.
+
+
+### Parameter 6: Temperature Offset Value
+
+
+The current measuring temperature value can be add and minus a value by this setting. Temperature Offset Value = [Value] x 0.1 Degree Celsius / Fahrenheit (US). Available settings: -120 ... 120
+Values in the range -120 to 120 may be set.
+
+The manufacturer defined default value is ```0```.
+
 This parameter has the configuration ID ```config_6_1``` and is of type ```INTEGER```.
 
 
-### Parameter 7: Temperature Offset Value
+### Parameter 7: Humidity Offset Value
 
 
-The current measuring temperature value can be add and minus a value by this setting. Temperature Offset Value = [Value] x 0.1 Degree Celsius / Fahrenheit (US).
+The current measuring humidity value can be add and minus a value by this setting. Humidity Offset Value = [Value] x 0.1 RH%. Available settings: -120 ... 120
 Values in the range -120 to 120 may be set.
 
 The manufacturer defined default value is ```0```.
@@ -223,57 +220,57 @@ The manufacturer defined default value is ```0```.
 This parameter has the configuration ID ```config_7_1``` and is of type ```INTEGER```.
 
 
-### Parameter 8: Humidity Offset Value
+### Parameter 8: Temperature D-Value Setting
 
 
-The current measuring humidity value can be add and minus a value by this setting. Humidity Offset Value = [Value] x 0.1 RH%
-Values in the range -120 to 120 may be set.
-
-The manufacturer defined default value is ```0```.
-
-This parameter has the configuration ID ```config_8_1``` and is of type ```INTEGER```.
-
-
-### Parameter 9: Temperature D-Value Setting
-
-
-This configuration sets the changed value of the temperature. When the difference from the last report exceeds this setting value, the device will report current temperature value to Z-Wave Hubs. The D-Value = [Value] x 0.1 Degree Celsius / Fahrenheit (US).
+This configuration sets the changed value of the temperature. When the difference from the last report exceeds this setting value, the device will report current temperature value to Z-Wave Hubs. The D-Value = [Value] x 0.1 Degree Celsius / Fahrenheit (US). Available settings: 0 ... 120
 Values in the range 0 to 120 may be set.
 
 The manufacturer defined default value is ```10```.
 
-This parameter has the configuration ID ```config_9_1``` and is of type ```INTEGER```.
+This parameter has the configuration ID ```config_8_1``` and is of type ```INTEGER```.
 
 
-### Parameter 10: Humidity D-Value Setting
+### Parameter 9: Humidity D-Value Setting
 
 
-This configuration sets the changed value of the humidity. When the difference from the last report exceeds this setting value, the device will report current humidity value to Z-Wave Hubs. The D-Value = [Value] x 0.1 RH%.
+This configuration sets the changed value of the humidity. When the difference from the last report exceeds this setting value, the device will report current humidity value to Z-Wave Hubs. The D-Value = [Value] x 0.1 RH%. Available settings: 0 ... 120
 Values in the range 0 to 120 may be set.
 
 The manufacturer defined default value is ```20```.
 
-This parameter has the configuration ID ```config_10_1``` and is of type ```INTEGER```.
+This parameter has the configuration ID ```config_9_1``` and is of type ```INTEGER```.
 
 
-### Parameter 11: Luminance D-Value Setting
+### Parameter 10: Luminance D-Value Setting
 
 
-This configuration sets the changed value of the luminance. When the difference from the last report exceeds this setting value, the device will report current luminance value to Z-Wave Hubs. Unit: Lux.
+This configuration sets the changed value of the luminance. When the difference from the last report exceeds this setting value, the device will report current luminance value to Z-Wave Hubs. Unit: Lux. Available settings: 0 ... 120
 Values in the range 0 to 120 may be set.
 
 The manufacturer defined default value is ```50```.
 
-This parameter has the configuration ID ```config_11_1``` and is of type ```INTEGER```.
+This parameter has the configuration ID ```config_10_1``` and is of type ```INTEGER```.
 
 
-### Parameter 12: Basic Set Level
+### Parameter 11: Basic Set Level
 
 
-This parameter is configured the value that BASIC\_SET for nodes that associated in Group 2. '100' - BASIC\_SET = 0xFF (ON). '0' - BASIC_SET = 0x00 (OFF).
+This parameter is configured the value that BASIC\_SET for nodes that associated in Group 2. '100' - BASIC\_SET = 0xFF (ON). '0' - BASIC_SET = 0x00 (OFF). Available settings: 0 ... 100
 Values in the range 0 to 100 may be set.
 
 The manufacturer defined default value is ```100```.
+
+This parameter has the configuration ID ```config_11_2``` and is of type ```INTEGER```.
+
+
+### Parameter 12: Basic Set Off Delay Time
+
+
+This parameter is configured the time delay for device sending BASIC\_SET = 0x00 to nodes that associated in Group 2 when device detects a motion event. [0] - Not Send BASIC\_SET = 0x00 Command. [1-30000] - Time delay count. Unit: Second. Available settings: 0 ... 30000
+Values in the range 0 to 30000 may be set.
+
+The manufacturer defined default value is ```30```.
 
 This parameter has the configuration ID ```config_12_2``` and is of type ```INTEGER```.
 
@@ -281,7 +278,7 @@ This parameter has the configuration ID ```config_12_2``` and is of type ```INTE
 ### Parameter 13: Motion Blind Time
 
 
-This parameter is configured the time interval between two motion events triggered, during this period the motion detector will not be triggered even there has someone move in front of motion detector. Unit: Second.
+This parameter is configured the time interval between two motion events triggered, during this period the motion detector will not be triggered even there has someone move in front of motion detector. Unit: Second. Available settings: 1 ... 8
 Values in the range 1 to 8 may be set.
 
 The manufacturer defined default value is ```8```.
@@ -289,24 +286,24 @@ The manufacturer defined default value is ```8```.
 This parameter has the configuration ID ```config_13_1``` and is of type ```INTEGER```.
 
 
-### Parameter 14: Basic Set Off Delay Time
+### Parameter 14: ??? Unknown
 
 
-This parameter is configured the time delay for device sending BASIC\_SET = 0x00 to nodes that associated in Group 2 when device detects a motion event. [0] - Not Send BASIC\_SET = 0x00 Command. [1-30000] - Time delay count. Unit: Second.
-Values in the range 0 to 30000 may be set.
 
-The manufacturer defined default value is ```30```.
+Values in the range 0 to 0 may be set.
+
+The manufacturer defined default value is ```0```.
 
 This parameter has the configuration ID ```config_14_2``` and is of type ```INTEGER```.
 
 
-### Parameter 15: Motion Clear Time
+### Parameter 15: ??? Unknown
 
 
-This parameter is configured the time to clear motion event after a motion event detected. Time to motion clear, the device will send a clear event report to controller. Unit: Second.
-Values in the range 1 to 30000 may be set.
 
-The manufacturer defined default value is ```30```.
+Values in the range 0 to 0 may be set.
+
+The manufacturer defined default value is ```0```.
 
 This parameter has the configuration ID ```config_15_2``` and is of type ```INTEGER```.
 
@@ -314,7 +311,7 @@ This parameter has the configuration ID ```config_15_2``` and is of type ```INTE
 ### Parameter 16: Luminance Threshold for Associated
 
 
-This parameter is configured the light intensity threshold. When Ambient light intensity is less than this setting, device will consider the current environment is insufficient light. If "Configuration No. 3" is set '1' and a motion event is detected, the device will send a BASIC_SET to the nodes which associated in Group 2. Unit: 1 Lux.
+This parameter is configured the light intensity threshold. When Ambient light intensity is less than this setting, device will consider the current environment is insufficient light. If "Configuration No. 3" is set '1' and a motion event is detected, the device will send a BASIC_SET to the nodes which associated in Group 2. Unit: 1 Lux. Available settings: 0 - 1000
 Values in the range 0 to 1000 may be set.
 
 The manufacturer defined default value is ```50```.
@@ -322,10 +319,10 @@ The manufacturer defined default value is ```50```.
 This parameter has the configuration ID ```config_16_2``` and is of type ```INTEGER```.
 
 
-### Parameter 17: Sensor Measureing Interval
+### Parameter 17: Sensor Measuring Interval
 
 
-This parameter is configured the time interval for light sensor, temperature and humidity sensor measuring. This value is larger, the battery life is longer. And the sensors values changed are not obvious. 0 - All sensors are disabled. Unit: Second.
+This parameter is configured the time interval for light sensor, temperature and humidity sensor measuring. This value is larger, the battery life is longer. And the sensors values changed are not obvious. 0 - All sensors are disabled. Unit: Second. Available settings: 0 - 30000, default value: 180 (on batteries) or 10 (on USB)
 Values in the range 0 to 30000 may be set.
 
 The manufacturer defined default value is ```180```.
@@ -354,11 +351,40 @@ For example, Vm = 300, Vs = 2000 [sic], then k = 300 / 2600 = 0.11538
 k = 0.11538 * 1000 = 115,38 ~ 115
 
 The parameter should be set to 115.
+
+Available settings: 1 ... 32767
 Values in the range 1 to 32767 may be set.
 
 The manufacturer defined default value is ```5320```.
 
 This parameter has the configuration ID ```config_18_2``` and is of type ```INTEGER```.
+
+
+### Parameter 98: ??? Binary Sensor Report Enable
+
+
+'1' - Enable sensor binary report when device detects a motion event. '0' - Disable sensor binary report when device detects a motion event.
+The following option values may be configured, in addition to values in the range 0 to 1 -:
+
+| Value  | Description |
+|--------|-------------|
+| 0 | Disable |
+| 1 | Enale |
+
+The manufacturer defined default value is ```0``` (Disable).
+
+This parameter has the configuration ID ```config_98_1``` and is of type ```INTEGER```.
+
+
+### Parameter 99: ??? Motion Clear Time
+
+
+This parameter is configured the time to clear motion event after a motion event detected. Time to motion clear, the device will send a clear event report to controller. Unit: Second. Available settings: 0 ... 30000
+Values in the range 1 to 30000 may be set.
+
+The manufacturer defined default value is ```30```.
+
+This parameter has the configuration ID ```config_99_2``` and is of type ```INTEGER```.
 
 
 ## Association Groups
