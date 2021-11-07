@@ -41,9 +41,9 @@ Knowledge about how to start the runtime and execute basic commands will help yo
 
 The **org.eclipse.osgi** bundle is the framework implementation of the Core Framework specification in a standalone package.
 
-If you have compiled openHAB once either via command line (`mvn install`) or the Eclipse IDE, maven will have downloaded Equinox for you already.
-Find it in your maven cache directory (linux `~/.m2/repository/org/eclipse/platform/org.eclipse.osgi/3.15.0/org.eclipse.osgi-3.15.0.jar`
-and windows `C:\Users\your.name\.m2\..`).
+If you have compiled openHAB once either via command line (`mvn install`) or the Eclipse IDE, Maven will have downloaded Equinox for you already.
+Find it in your Maven cache directory (Linux `~/.m2/repository/org/eclipse/platform/org.eclipse.osgi/3.15.0/org.eclipse.osgi-3.15.0.jar`
+and Windows `C:\Users\your.name\.m2\..`).
 
 1. Create `configuration` folder in that directory.
 1. Inside the `configuration` folder create a file `config.ini`.
