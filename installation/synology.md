@@ -3,10 +3,128 @@ layout: documentation
 title: Synology DiskStation
 ---
 
-# Synology DiskStation
+# Synology DiskStation DSM 7.0 and higher
 
-The [DiskStation by Synology](https://www.synology.com/en-us/dsm) is a famous NAS server solution for your home, allowing the installation of additional packages.
-We are proud to be able to provide an [openHAB Synology package](https://github.com/openhab/openhab-syno-spk).
+The [DiskStation by Synology](https://www.synology.com/en-us/dsm) is a famous NAS server solution for your home, allowing the installation of additional packages. For versions of DSM before 7.0 please refer to the second half of this page.
+
+This page is structured as follows:
+
+{::options toc_levels="1,2"/}
+
+- TOC
+{:toc}
+
+## Prerequisite - prepare the Synology OS for openhab
+
+Synology NAS is based on unix but it has limitations since it is not a full server. There are some shortcuts you have to take to make it work. For the use of openHAB you need some preparation steps. For this create a ssh session into your NAS. For reference how to do that: I found this [youtube tutorial](https://www.youtube.com/watch?v=BCCIMRbAUp8).
+When you are in the secured shell first thing to do is to create the user openhab.
+```bash
+sudo synouser --add openhab habopen
+sudo synogroup --add openhab openhab
+```
+If you are going to use an usb like a z-wave dongle add another group for openhab and change the port access for ttyACM0 if that is the port for your usb device
+```bash
+sudo synogroup --add dialout openhab
+sudo chown root:dialout /dev/ttyACM0
+sudo chmod g+rw /dev/ttyACM0
+```
+Then for installation purposes run the following command:
+```bash
+sudo id openhab
+```
+The result will something like
+```bash
+uid=1032(openhab) gid=100(users) groups=100(users),65537(dialout),65539(openhab)
+```
+In this case we need the 1032 as the user and the 65539 as the group. Write them down.
+
+## Docker
+
+DSM 7 does not longer support java8 directly and therefor openhab has to run in a docker. But that also makes the installation easier to maintain. It works out of the box a bit different then the normal docker installation as described in de openhab documententation.
+Docker is a containerization platform and is used to run lightweight containers. These containers require a very little amount of memory and system resources to run. Synology NAS has official support for Docker.
+To use Docker, you need to install the Docker app from the Synology Web GUI.
+
+- Login and open the DiskStation Manager.
+- Go to Main Menu → Package Center.
+- Search for "docker" and install.
+- Click "Open".
+- Go to "Registry", here are all the available docker images and search for openhab.
+- Choose the "openhab/openhab" image and click "Download". Select "latest" since that is the latest stable version of openHAB. The docker image is added to "Image"
+- Go to "Image" and click on the openhab/openhab image and click "Add".
+
+Here comes the part where you really notice the difference between the Synology OS and normal Linux. 
+- On the create container window fill a name for the container (space and some special characters are not allowed). 
+- Next enable "Execute container using high privilege". 
+::: tip Note 
+This is only needed if you need resources like '/dev/ttyACM0' for z-wave, etc. It will run the docker container as root, the application in the container is still limited. Several issues are already raised for this at Synology.
+:::
+- Enable the resource limitation, CPU on Med and Memory limit on 2048MB. You can increase this in the future if you like.
+- Click on "Advanced"
+
+### Advanced Settings
+
+- Enable auto-restart
+
+### Volume
+
+- Click on "Add Folder" and "Create Folder" under the folder "docker" with the name "openHAB".
+- Create the folder "userdata" in the folder "openHAB" 
+- Create the folder "conf" in the folder "openHAB" 
+- Create the folder "addons" in the folder "openHAB" 
+- Now select "userdata" and click on "Select"
+- Change the mount path to "/openhab/userdata" this will connect the docker containers path "/openhab/userdata" to your Synology's local path "docker/openHAB/userdata" where you can reach it from outside the docker.
+- Click on "Add Folder", select "docker/openHAB/conf", click on select and change the mount path to "/openhab/conf".
+- Repeat this for addons.
+
+### Network
+
+- Leave on "Bridge"
+
+### Port Settings
+
+- Change the auto settings. Yor table should look like:
+```bash
+Local Port      Container Port      Type
+5007            5007                TCP
+8080            8080                TCP
+8101            8101                TCP
+8443            8443                TCP
+```
+If your already use one of these ports on your host, feel free to choose another local port.
+
+### Links
+
+- Nothing to do here
+
+### Environment
+
+- In the list find the variable "GROUP_ID" and put your previous written down id of the group openhab here, in my case it was 65539
+- In the same list locate "USER_ID" and fill the id of the user openhab, in my case 1032
+- Click on "Apply"
+
+### Summary 
+
+Here you can check if all changes where set correctly for your openhab container, enable "Run this container after the wizard is finished" and press "Done".
+Openhab is now running on your NAS. Give it a few minutes to start up.
+
+## Shells
+
+If you select the container running and press "Details" you will end up on  a windows where you get more information on this running container. One particular menu item you have to check is "Terminal". In here you see the name of the container left from the black field and if you press that you'll get the Karaf terminal for Openhab.
+
+If you click on "Create' it creates a bash terminal, click on bash and you'll have access to a shell in the container.
+
+By now the container is up and running, goto "http://[your-nas-ip-or-host-name]:8080" and welcome to Openhab.
+If you use p.e. a z-wave dongle on ttyACM0 you can now add the z-wave binding. Once openhab has been configured under the binding z-wave add a controller manually and change the port to /dev/ttyACM0. The z-wave controller gets online and you will discover the z-wave devices. If this is not working, please verify you enabled high privilege.
+
+::: tip Note
+The device path (`/dev/ttyACM0`) or container name (`openhab`) could be different in your system, please modify the commands accordingly.
+:::
+
+---
+
+# Older Synology DiskStations till DSM 6
+
+The [DiskStation by Synology](https://www.synology.com/en-us/dsm) is a famous NAS server solution for your home, allowing the installation of additional packages. We are proud to be able to provide an [openHAB Synology package](https://github.com/openhab/openhab-syno-spk).
 
 ## Prerequisite - Install Java
 
