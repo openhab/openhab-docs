@@ -7,13 +7,6 @@ title: Synology DiskStation
 
 The [DiskStation by Synology](https://www.synology.com/en-us/dsm) is a famous NAS server solution for your home, allowing the installation of additional packages. For versions of DSM before 7.0 please refer to the second half of this page.
 
-This page is structured as follows:
-
-{::options toc_levels="1,2"/}
-
-- TOC
-{:toc}
-
 ## Prerequisite - prepare the Synology OS for openhab
 
 Synology NAS is based on unix but it has limitations since it is not a full server. There are some shortcuts you have to take to make it work. For the use of openHAB you need some preparation steps. For this create a ssh session into your NAS. For reference how to do that: I found this [youtube tutorial](https://www.youtube.com/watch?v=BCCIMRbAUp8).
@@ -56,7 +49,7 @@ Here comes the part where you really notice the difference between the Synology 
 - On the create container window fill a name for the container (space and some special characters are not allowed). 
 - Next enable "Execute container using high privilege". 
 ::: tip Note 
-This is only needed if you need resources like '/dev/ttyACM0' for z-wave, etc. It will run the docker container as root, the application in the container is still limited. Several issues are already raised for this at Synology.
+This is needed for the host resources like '/dev/ttyACM0' for z-wave binding, the TCP stack for Network Binding, etc. It will run the docker container as root, the application in the container is still limited. Several issues are already raised for this at Synology.
 :::
 - Enable the resource limitation, CPU on Med and Memory limit on 2048MB. You can increase this in the future if you like.
 - Click on "Advanced"
@@ -78,19 +71,11 @@ This is only needed if you need resources like '/dev/ttyACM0' for z-wave, etc. I
 
 ### Network
 
-- Leave on "Bridge"
+- Select 'host' if you are planning to use the IP stack in bindings or if you are not sure.
 
 ### Port Settings
 
-- Change the auto settings. Yor table should look like:
-```bash
-Local Port      Container Port      Type
-5007            5007                TCP
-8080            8080                TCP
-8101            8101                TCP
-8443            8443                TCP
-```
-If your already use one of these ports on your host, feel free to choose another local port.
+- No change
 
 ### Links
 
