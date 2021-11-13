@@ -208,11 +208,16 @@
 				<advanced>true</advanced>
 			</parameter>
 
-			<parameter name="zigbee_installcode" type="text" groupName="network">
-				<label>Install Code</label>
-				<description>Add a temporary install key for device installation</description>
-				<advanced>true</advanced>
-			</parameter>
+            <parameter name="zigbee_installcode" type="text" groupName="network">
+                <label>Install Code</label>
+                <description>Add a temporary install key for device installation</description>
+                <advanced>true</advanced>
+            </parameter>
+
+            <parameter name="zigbee_groupregistration" type="text" groupName="network">
+                <label>Group Registrations</label>
+                <description>Registers the binding to receive group notifications. Groups are separated by a comma and must be defined in hexadecimal.</description>
+            </parameter>
 
 			<parameter name="zigbee_meshupdateperiod" type="integer" groupName="network">
 				<label>Mesh Update Period</label>

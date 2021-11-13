@@ -8,7 +8,7 @@
   <thing-type id="zooz_zen34v101_00_000" listed="false">
     <label>zen34v1.01 Remote Switch</label>
     <description><![CDATA[
-Remote Switch<br /> <h1>Overview</h1><p>* Control other Z-Wave devices and enable scenes with a click of a button</p><p>* Classic paddle switch look and size + magnetic base</p><p>* Install in your electrical switch box or mount anywhere on a wall with just adhesive tape</p><p>* The latest 700 chip with S2 and SmartStart support</p><p>* Powered by batteries, no wires needed</p> <br /> <h2>Inclusion Information</h2><p>Put the openHAB Z-Wave binding into inclusion mode and click the upper paddle 6 times quickly. The LED indicator will blink blue during the process and light up green once added successfully. It will light up red if failed.<br /></p> <br /> <h2>Exclusion Information</h2><p>Put the openHAB Z-Wave binding into exclusion mode and click the lower paddle 6 times quickly.<br /></p> <br /> <h2>Wakeup Information</h2><p><br /></p>
+Remote Switch<br /> <h1>Overview</h1><ul><li>Control other Z-Wave devices and enable scenes with a click of a button</li><li>Classic paddle switch look and size + magnetic base</li><li>Install in your electrical switch box or mount anywhere on a wall with just adhesive tape</li><li>The latest 700 chip with S2 and SmartStart support</li><li>Powered by batteries, no wires needed</li></ul> <br /> <h2>Inclusion Information</h2><p>Put the openHAB Z-Wave binding into inclusion mode and click the upper paddle 6 times quickly. The LED indicator will blink blue during the process and light up green once added successfully. It will light up red if failed.<br /></p> <br /> <h2>Exclusion Information</h2><p>Put the openHAB Z-Wave binding into exclusion mode and click the lower paddle 6 times quickly.<br /></p> <br /> <h2>Wakeup Information</h2><p><br /></p>
     ]]></description>
     <category>RemoteControl</category>
 
@@ -55,10 +55,13 @@ Remote Switch<br /> <h1>Overview</h1><p>* Control other Z-Wave devices and enabl
       <parameter name="config_1_1" type="integer" groupName="configuration"
                  min="0" max="2">
         <label>1: LED indication mode</label>
+        <description><![CDATA[
+<br /> <h1>Overview</h1><p><br /></p>
+        ]]></description>
         <default>1</default>
         <options>
           <option value="0">LED always OFF</option>
-          <option value="1">LED ON when button pressed</option>
+          <option value="1">LED ON when button pressed (default)</option>
           <option value="2">LED always ON (color from #2)</option>
           <option value="3">LED always ON (color from #3)</option>
         </options>
@@ -67,10 +70,13 @@ Remote Switch<br /> <h1>Overview</h1><p>* Control other Z-Wave devices and enabl
       <parameter name="config_2_1" type="integer" groupName="configuration"
                  min="0" max="6">
         <label>2: Upper paddle indicator color</label>
+        <description><![CDATA[
+<br /> <h1>Overview</h1><p><br /></p>
+        ]]></description>
         <default>1</default>
         <options>
           <option value="0">White</option>
-          <option value="1">Blue</option>
+          <option value="1">Blue (default)</option>
           <option value="2">Green</option>
           <option value="3">Red</option>
           <option value="4">Magenta</option>
@@ -82,9 +88,12 @@ Remote Switch<br /> <h1>Overview</h1><p>* Control other Z-Wave devices and enabl
       <parameter name="config_3_1" type="integer" groupName="configuration"
                  min="0" max="6">
         <label>3: Lower paddle indicator color</label>
-        <default>1</default>
+        <description><![CDATA[
+<br /> <h1>Overview</h1><p><br /></p>
+        ]]></description>
+        <default>0</default>
         <options>
-          <option value="0">White</option>
+          <option value="0">White (default)</option>
           <option value="1">Blue</option>
           <option value="2">Green</option>
           <option value="3">Red</option>
@@ -106,8 +115,10 @@ Remote Switch<br /> <h1>Overview</h1><p>* Control other Z-Wave devices and enabl
       </parameter>
 
       <parameter name="group_3" type="text" groupName="association" multiple="true">
-        <label>3: dimming</label>
-        <description>Paddle held/released for dimming</description>
+        <label>3: Dimming</label>
+        <description><![CDATA[
+Paddle held/released for dimming<br /> <h1>Overview</h1><p><br /></p>
+        ]]></description>
         <multipleLimit>5</multipleLimit>
       </parameter>
 

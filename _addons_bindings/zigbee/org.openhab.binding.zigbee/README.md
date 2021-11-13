@@ -141,30 +141,37 @@ Sets the Trust Centre join/rejoin mode.
 | `TC_JOIN_INSECURE`    | Allow all joins.             |                                                                                             |
 | `TC_JOIN_INSTALLCODE` | Only join with install code. | Devices attempting to join with the TC Link Key will be rejected.                           |
 
+##### Group Registration (zigbee_groupregistration)
+
+Some devices send commands to a group address (ie using multicast addressing). This configuration allows the user to define a list of groups that the binding will listen for commands. Multiple groups can be defined - groups are separated with a comma and must be defined as a four character hexadecimal value.
+
+Note that this is only available for Ember coordinators.
+
 #### Supported Coordinators
 
 The following coordinators are known to be supported.
 
 | Name and Link                                                                                                                                         | Coordinator                          | Configuration                                            | Comment                                                                                                                                                                                                                                                                                        |
 | ----------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------ | -------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [Texas Instruments CC2531EMK](http://www.ti.com/tool/cc2531emk)                                                                                       | [CC2531](#cc2531-coordinator)        |                                                          | CC2531 is not recommended for more then 15 devices due to its less powerful MCU. Also needs extra [hardware and Z-Stack Home 1.2 firmware flashed](https://www.zigbee2mqtt.io/guide/adapters/flashing/flashing_the_cc2531.html). CC2530 and CC2538 may work too with Z-Stack Home 1.2 compatible firmware. |
+| [POPP ZigBee Stick](https://www.popp.eu/zb-stick/) | [Ember](#ember-ezsp-ncp-coordinator) | 115200bps<br>Hardware&nbsp;flow&nbsp;control<br>High RAM |
 | [Bitron Video ZigBee USB Funkstick](https://bv.smabit.eu/index.php/smart-home-produkte/zb-funkstick/)                                                 | [Ember](#ember-ezsp-ncp-coordinator) | 57600bps<br>Software&nbsp;flow&nbsp;control<br>High RAM  |                                                                                                                                                                                                                                                                                                |
 | [Elelabs ELU013/ELR023](https://elelabs.com/shop/)                                                                                                    | [Ember](#ember-ezsp-ncp-coordinator) | 115200bps<br>Hardware&nbsp;flow&nbsp;control<br>High RAM | Both the stick and the hat can be upgraded without additional hardware, firmware available [here](https://github.com/Elelabs/elelabs-zigbee-ezsp-utility).                                                                                                                                     |
-| [Cortet EM358 USB Stick](https://www.cortet.com/iot-hardware/cortet-usb-sticks/em358-usb-stick)                                                       | [Ember](#ember-ezsp-ncp-coordinator) | 57600bps<br>Software&nbsp;flow&nbsp;control<br>High RAM  |                                                                                                                                                                                                                                                                                                |
+| [MeshConnect EM358 USB Stick](https://www.cortet.com/iot-hardware/cortet-usb-sticks/em358-usb-stick)                                                       | [Ember](#ember-ezsp-ncp-coordinator) |  | Requires specific drivers that may not work on MacOS Monterey                                                                                                                                                                                                                                                                                               |
 | [Nortek Security & Control HUSBZB-1](https://nortekcontrol.com/products/2gig/husbzb-1-gocontrol-quickstick-combo/)                                    | [Ember](#ember-ezsp-ncp-coordinator) | 57600bps<br>Software&nbsp;flow&nbsp;control<br>High RAM  | Stick contains both Z-Wave and ZigBee.                                                                                                                                                                                                                                                         |
-| [Telegesis ETRX357USB ZigBee® USB Stick](https://www.silabs.com/products/wireless/mesh-networking/telegesis-modules-gateways/etrx3-zigbee-usb-sticks) | [Telegesis](#telegesis-etrx3)        |                                                          |                                                                                                                                                                                                                                                                                                |
+| [Telegesis ETRX357USB ZigBee® USB Stick](https://www.silabs.com/products/wireless/mesh-networking/telegesis-modules-gateways/etrx3-zigbee-usb-sticks) | [Telegesis](#telegesis-etrx3)        |                                                          | Not supported for ZigBee 3.0                                                                                                                                                                                                                                                                                               |
 | [QIVICON ZigBee-Funkstick](https://www.qivicon.com/de/produkte/produktinformationen/zigbee-funkstick/)                                                | [Telegesis](#telegesis-etrx3)        |                                                          | Only working on Linux devices                                                                                                                                                                                                                                                                  |
 | [Digi XStick](https://www.digi.com/products/xbee-rf-solutions/boxed-rf-modems-adapters/xstick)                                                        | [XBee](#digi-xbee-x-stick)           |                                                          |                                                                                                                                                                                                                                                                                                |
+| [Texas Instruments CC2531EMK](http://www.ti.com/tool/cc2531emk)                                                                                       | [CC2531](#cc2531-coordinator)        |                                                          | CC2531 is not recommended for more then 15 devices due to its less powerful MCU. Also needs extra [hardware and Z-Stack Home 1.2 firmware flashed](https://www.zigbee2mqtt.io/guide/adapters/flashing/flashing_the_cc2531.html). CC2530 and CC2538 may work too with Z-Stack Home 1.2 compatible firmware. |
 
 #### Ember EZSP NCP Coordinator
 
-The Ember EZSP NCP (Network Co-Processor) supports the Silabs MightyGecko (EFR32MG) and the older EM357/8 dongles with the standard NCP firmware. The thing type is `coordinator_ember`. This dongle type is recommended due to its extensive use within both the community, and commercial systems using this dongle.
+The Ember EZSP NCP (Network Co-Processor) supports the SiLabs MightyGecko (EFR32MG) and the older EM357/8 dongles with the standard NCP firmware. The thing type is `coordinator_ember`. This dongle type is recommended due to its extensive use within both the community, and commercial systems using this dongle.
 
 Note that there are generally two versions of the Ember NCP firmware in use. One operates at a baud rate of 115200 with RTS/CTS flow control (i.e. hardware flow control), the other operates at a baud rate of 57600, and XON/XOFF flow control (i.e. software flow control). If you are programming your own stick (e.g. the CEL stick) then it should be advisable to use the hardware flow control version - many commercial sticks seem to use the lower speed and software flow control (e.g. Bitron and Nortek HUSBZB-1).
 
-Firmware versions higher than 6.4.0.0 may be required to work with some newer devices (ie those conforming to the Zigbee 3.0 standard). If your dongle has older firmware then devices may appear to join the network, but will not work as they will leave the network if they do not receive updated security information.
+Firmware versions higher than 6.4.0.0 may be required to work with some newer devices (i.e. those conforming to the Zigbee 3.0 standard). If your dongle has older firmware then devices may appear to join the network, but will not work as they will leave the network if they do not receive updated security information.
 
-If the usb dongle is not recognized, it might be necessary to make the dongle's device id known to the CP240x driver by Silicon Labs:
+If the USB dongle is not recognized, it might be necessary to make the dongle's device id known to the CP240x driver by Silicon Labs:
 
 - Find the device id (as listed by the command `lsusb`). For the Bitron Funkstick that might be 10c4 8b34.
 - Unplug the device
@@ -239,7 +246,7 @@ Extract and install the TI Flash Programmer, connect the CC-Debugger trough USB,
 
 ### Devices
 
-The following devices have been tested by openHAB users with the binding. The absence of a device in this list does not mean it will not work - if the device is a standard ZigBee device similar to ones on this list, then it should work.
+The following devices have been tested by openHAB users with the binding. This list is far from exhaustive, and the absence of a device in this list does not mean it will not work - if the device is a standard ZigBee device similar to ones on this list, then it should work. It should be noted that many "new" devices (approximately newer than 2020) will require coordinators that support ZigBee 3.0. If this is not supported, then devices may briefly join the network, and then leave when they find the network does not support the newer security requirements.
 
 | Device                                         | Description                                                  |
 | ---------------------------------------------- | ------------------------------------------------------------ |
@@ -299,9 +306,9 @@ The following devices have been tested by openHAB users with the binding. The ab
 
 ## Discovery
 
-Discovery is performed by putting the binding into join mode (by starting an inbox search), and then putting the device into join mode. Generally, it is best to reset the device to do this. Resetting the device ensures that it is no longer joined to a previous network, will ensure it is awake if it is a battery device, and will restart any channel and network search that the device may perform. Consult the manual of the device at hand to see how to reset it, this differs from device to device.
+Discovery is performed by putting the binding into join mode (by starting an thing search), and then putting the device into join mode. Generally, it is best to reset the device to do this. Resetting the device ensures that it is no longer joined to a previous network, will ensure it is awake if it is a battery device, and will restart any channel and network search that the device may perform. Consult the manual of the device at hand to see how to reset it, this differs from device to device.
 
-Once the binding is installed, and an adapter is added, it automatically reads all devices that are set up on the ZigBee controller and puts them in the Inbox. When the binding is put into discovery mode via the user interface, the network will have join enabled for 60 seconds. You can put it in discovery mode via the **Scan** button in the user interface. This can be found after you click the blue **+** button in the bottom right corder of the **Things** screen and then select the **ZigBee Binding**.
+When the binding is put into discovery mode via the user interface, the network will have join enabled for 60 seconds. You can put it in discovery mode via the **Scan** button in the user interface. This can be found after you click the blue **+** button in the bottom right corder of the **Things** screen and then select the **ZigBee Binding**.
 
 The binding will store the list of devices that have joined the network locally between restarts to allow them to be found again later. A ZigBee coordinator does not store a list of known devices, so rediscovery of devices following a restart may not be seemless if the dongle is moved to another system.
 
@@ -339,7 +346,7 @@ The binding will attempt to automatically detect new devices, giving them a type
 
 ### Thing Types
 
-Currently all ZigBee things have the same thing type of `zigbee_device`.
+Most ZigBee things have the same thing type of `zigbee_device`. The binding will automatically discover the device features and provide channels linked to device functionality that it is able to support. A small number of devices that require a manual thing definition may be defined in the binding to support devices that have non-standard functionality, or do not support the autodiscovery functionality provided by ZigBee.
 
 ### Channel Types
 
@@ -469,7 +476,29 @@ log:set info com.zsmartsystems.zigbee.dongle.ember.internal.ash
 
 This will log data into the standard `openhab.log` file. There is an [online log viewer](https://opensmarthouse.org/utilities/logviewer/zigbee/) available for viewing the logs.
 
-Note that logs can only show what is happening at a high level - it can't show all data exchanges between the device and the coordinator - just what the coordinator sends to the binding. For this reason it can be difficult to debug issues where devices are not joining the network, or other low level issues need resolving. In such cases a network sniffer log is required, which requires additional hardware and software.
+Note that logs can only show what is happening at a high level - it can't show all data exchanges between the device and the coordinator - just what the coordinator sends to the binding. For this reason it can be difficult to debug issues where devices are not joining the network, or other low level issues need resolving. In such cases a network sniffer log is required, which requires additional hardware and software. Information and software required to use an Ember dongle as a sniffer can be found on the [OpenSmartHouse](https://opensmarthouse.org/blog/zigbee_network_sniffer) site.
+
+### ZigBee Console Commands
+
+The openHAB command line interface provides a number of commands to interact with the ZigBee framework. These can provide useful options for debugging when things aren't going as planned, and can also provide advanced users a means to make changes that are not possible directly through the binding. This section will provide information on a few common issues that users may come up against, but is not an exhaustive user manual for low level ZigBee commands.
+
+All commands described below must be preceded by the word `zigbee` on the command line. To keep the documentation concise this is omitted in the examples below.
+
+To list all known nodes, use the `nodes` command. This will list the nodes and endpoints of the nodes, and is often required as a first step in order to get the node ID or endpoint ID for other commands. Nodes and endpoints are often required as arguments in commands and can typically be entered in decimal or hexadecimal node number with a decimal endpoint - e.g. `0x1234/1`, or `4660/1` - both of these describe the same node/endpoint.
+
+#### Device Information (Fingerprint)
+
+In some instances a device may not work correctly. This could be because the binding had problems during initialisation, or possibly because the device supports features not implemented in the binding, or possibly the device may implement custom functionality. To understand this, there is a `fingerprint` command. This command will attempt to poll the device to get a list of all the commands and attributes that the device supports and create a concise list. Note that this may not work on all devices if the device doesn't support the functionality discovery commands.
+
+#### Binding and Reporting
+
+The binding table is used within ZigBee to configure devices to send reports to the binding when their state changes. The binding will attempt to set the required ZigBee bindings during device initialisation, but sometimes this can fail. Often this may occur on older devices that have limited memory, and only have a small number of entries in the binding table, and then manual manipulation of the table may be required.
+
+The binding table for a node can be displayed with the `bindtable` command. It can then be updated with the `bind` command, and bindings can be removed with the `unbind` command.
+
+A second part to the binding and reporting system is the reporting. The binding table tells the device where it should send reports, but the actual reports must be configured as well. Many attributes in a ZigBee cluster can be configured to send reports if their state changes, or at a periodical rate if there have been no state updates within a certain time. Analogue values can be configured so that they report if the value changes by a certain amount so that the reports do not flood the system.  Care must be exercised when changing this configuration as it may interfere with the binding operation.
+
+The exact command required to configure reporting can depend on whether the attribute is a binary or analogue type. The console commands `subscribe` and `unsubscribe` allow the user to manipulate the reporting of an attribute, and the `reportcfg` command can be used to display the current configuration.
 
 ## Known issues
 

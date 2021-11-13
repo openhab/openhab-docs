@@ -115,10 +115,10 @@ Detailed information on each parameter can be found in the sections below.
 | 11 | Basic Set Level |  |
 | 12 | Basic Set Off Delay Time |  |
 | 13 | Motion Blind Time |  |
-| 14 | ??? Unknown |  |
-| 15 | ??? Unknown |  |
-| 16 | Luminance Threshold for Associated |  |
-| 17 | Sensor Measuring Interval |  |
+| 14 | ??? Unknown (Luminance Threshold for Associated - Parameter #16?) |  |
+| 15 | Sensor Measuring Interval |  |
+| 16 | ??? Luminance Threshold for Associated (or Parameter #14?) |  |
+| 17 | ??? Unknown |  |
 | 18 | Light Intensity Offset Calibration |  |
 | 98 | ??? Binary Sensor Report Enable |  |
 | 99 | ??? Motion Clear Time |  |
@@ -126,7 +126,7 @@ Detailed information on each parameter can be found in the sections below.
 ### Parameter 1: Led Indicator Enable
 
 
-This parameter is configured the Led light on disable or enable. '1' - Enable Led Blink when device detects a motion event. '0' - Disable Led blink. This configuration is not affect inclusion, exclusion and reset.
+This parameter is configured the Led light on disable or enable. '1' - Enable Led Blink when device detects a motion event. '0' - Disable Led blink. This configuration is not affect inclusion, exclusion and reset. Default: Enable
 The following option values may be configured, in addition to values in the range 0 to 1 -:
 
 | Value  | Description |
@@ -142,7 +142,7 @@ This parameter has the configuration ID ```config_1_1``` and is of type ```INTEG
 ### Parameter 2: Motion Enable
 
 
-This parameter is configured the motion detected if enable or not. '0' - Motion detected disable. '1' - Motion detected enable.
+This parameter is configured the motion detected if enable or not. '0' - Motion detected disable. '1' - Motion detected enable. Default: Enable
 The following option values may be configured, in addition to values in the range 0 to 1 -:
 
 | Value  | Description |
@@ -158,7 +158,7 @@ This parameter has the configuration ID ```config_2_1``` and is of type ```INTEG
 ### Parameter 3: Motion Alarm Once Enable
 
 
-This Parameter is configured the motion detected event report one time before motion event cleared. '0' - Motion event alarm will be reported when motion event is detected every time. '1' - Motion event alarm report only once before motion event cleared.
+This Parameter is configured the motion detected event report one time before motion event cleared. '0' - Motion event alarm will be reported when motion event is detected every time. '1' - Motion event alarm report only once before motion event cleared. Default: Enable
 The following option values may be configured, in addition to values in the range 0 to 1 -:
 
 | Value  | Description |
@@ -174,7 +174,7 @@ This parameter has the configuration ID ```config_3_1``` and is of type ```INTEG
 ### Parameter 4: Luminance Associated Enable
 
 
-'1' - Enable current light intensity to associate the motion event, if there has a motion event detected and the current light intensity is less than the settings in Configuraton No. 16, the device will send a BASIC\_SET to nodes associated in Group 2. And if the current light intensity is larger then the setting in Configuration No. 16, the device will not send BASIC\_SET to nodes associated in Group 2. '0' - Light intensity is not associated with motion event.
+'1' - Enable current light intensity to associate the motion event, if there has a motion event detected and the current light intensity is less than the settings in Configuraton No. 16, the device will send a BASIC\_SET to nodes associated in Group 2. And if the current light intensity is larger then the setting in Configuration No. 16, the device will not send BASIC\_SET to nodes associated in Group 2. '0' - Light intensity is not associated with motion event. Default: Disable
 The following option values may be configured, in addition to values in the range 0 to 1 -:
 
 | Value  | Description |
@@ -190,10 +190,10 @@ This parameter has the configuration ID ```config_4_1``` and is of type ```INTEG
 ### Parameter 5: Motion Sensitivity
 
 
-This parameter is configured the sensitivity that motion detect. This value is larger, the sensitivity is lower, and the distance for motion detecting is closer. Available settings: 0 ... 15
+This parameter is configured the sensitivity that motion detect. This value is larger, the sensitivity is lower, and the distance for motion detecting is closer. Available settings: 0 ... 15. Default: 1
 Values in the range 0 to 15 may be set.
 
-The manufacturer defined default value is ```2```.
+The manufacturer defined default value is ```1```.
 
 This parameter has the configuration ID ```config_5_1``` and is of type ```INTEGER```.
 
@@ -201,7 +201,7 @@ This parameter has the configuration ID ```config_5_1``` and is of type ```INTEG
 ### Parameter 6: Temperature Offset Value
 
 
-The current measuring temperature value can be add and minus a value by this setting. Temperature Offset Value = [Value] x 0.1 Degree Celsius / Fahrenheit (US). Available settings: -120 ... 120
+The current measuring temperature value can be add and minus a value by this setting. Temperature Offset Value = [Value] x 0.1 Degree Celsius / Fahrenheit (US). Available settings: -120 ... 120. Default: 0
 Values in the range -120 to 120 may be set.
 
 The manufacturer defined default value is ```0```.
@@ -212,7 +212,7 @@ This parameter has the configuration ID ```config_6_1``` and is of type ```INTEG
 ### Parameter 7: Humidity Offset Value
 
 
-The current measuring humidity value can be add and minus a value by this setting. Humidity Offset Value = [Value] x 0.1 RH%. Available settings: -120 ... 120
+The current measuring humidity value can be add and minus a value by this setting. Humidity Offset Value = [Value] x 0.1 RH%. Available settings: -120 ... 120. Default: 0
 Values in the range -120 to 120 may be set.
 
 The manufacturer defined default value is ```0```.
@@ -223,7 +223,7 @@ This parameter has the configuration ID ```config_7_1``` and is of type ```INTEG
 ### Parameter 8: Temperature D-Value Setting
 
 
-This configuration sets the changed value of the temperature. When the difference from the last report exceeds this setting value, the device will report current temperature value to Z-Wave Hubs. The D-Value = [Value] x 0.1 Degree Celsius / Fahrenheit (US). Available settings: 0 ... 120
+This configuration sets the changed value of the temperature. When the difference from the last report exceeds this setting value, the device will report current temperature value to Z-Wave Hubs. The D-Value = [Value] x 0.1 Degree Celsius / Fahrenheit (US). Available settings: 0 ... 120. Default: 10
 Values in the range 0 to 120 may be set.
 
 The manufacturer defined default value is ```10```.
@@ -234,7 +234,7 @@ This parameter has the configuration ID ```config_8_1``` and is of type ```INTEG
 ### Parameter 9: Humidity D-Value Setting
 
 
-This configuration sets the changed value of the humidity. When the difference from the last report exceeds this setting value, the device will report current humidity value to Z-Wave Hubs. The D-Value = [Value] x 0.1 RH%. Available settings: 0 ... 120
+This configuration sets the changed value of the humidity. When the difference from the last report exceeds this setting value, the device will report current humidity value to Z-Wave Hubs. The D-Value = [Value] x 0.1 RH%. Available settings: 0 ... 120. Default: 20
 Values in the range 0 to 120 may be set.
 
 The manufacturer defined default value is ```20```.
@@ -245,7 +245,7 @@ This parameter has the configuration ID ```config_9_1``` and is of type ```INTEG
 ### Parameter 10: Luminance D-Value Setting
 
 
-This configuration sets the changed value of the luminance. When the difference from the last report exceeds this setting value, the device will report current luminance value to Z-Wave Hubs. Unit: Lux. Available settings: 0 ... 120
+This configuration sets the changed value of the luminance. When the difference from the last report exceeds this setting value, the device will report current luminance value to Z-Wave Hubs. Unit: Lux. Available settings: 0 ... 120. Default: 50
 Values in the range 0 to 120 may be set.
 
 The manufacturer defined default value is ```50```.
@@ -256,7 +256,7 @@ This parameter has the configuration ID ```config_10_1``` and is of type ```INTE
 ### Parameter 11: Basic Set Level
 
 
-This parameter is configured the value that BASIC\_SET for nodes that associated in Group 2. '100' - BASIC\_SET = 0xFF (ON). '0' - BASIC_SET = 0x00 (OFF). Available settings: 0 ... 100
+This parameter is configured the value that BASIC\_SET for nodes that associated in Group 2. '100' - BASIC\_SET = 0xFF (ON). '0' - BASIC_SET = 0x00 (OFF). Available settings: 0 ... 100. Default: 100
 Values in the range 0 to 100 may be set.
 
 The manufacturer defined default value is ```100```.
@@ -267,7 +267,7 @@ This parameter has the configuration ID ```config_11_2``` and is of type ```INTE
 ### Parameter 12: Basic Set Off Delay Time
 
 
-This parameter is configured the time delay for device sending BASIC\_SET = 0x00 to nodes that associated in Group 2 when device detects a motion event. [0] - Not Send BASIC\_SET = 0x00 Command. [1-30000] - Time delay count. Unit: Second. Available settings: 0 ... 30000
+This parameter is configured the time delay for device sending BASIC\_SET = 0x00 to nodes that associated in Group 2 when device detects a motion event. [0] - Not Send BASIC\_SET = 0x00 Command. [1-30000] - Time delay count. Unit: Second. Available settings: 0 ... 30000. Default: 30
 Values in the range 0 to 30000 may be set.
 
 The manufacturer defined default value is ```30```.
@@ -286,10 +286,10 @@ The manufacturer defined default value is ```8```.
 This parameter has the configuration ID ```config_13_1``` and is of type ```INTEGER```.
 
 
-### Parameter 14: ??? Unknown
+### Parameter 14: ??? Unknown (Luminance Threshold for Associated - Parameter #16?)
 
 
-
+Default: 50
 Values in the range 0 to 0 may be set.
 
 The manufacturer defined default value is ```0```.
@@ -297,21 +297,21 @@ The manufacturer defined default value is ```0```.
 This parameter has the configuration ID ```config_14_2``` and is of type ```INTEGER```.
 
 
-### Parameter 15: ??? Unknown
+### Parameter 15: Sensor Measuring Interval
 
 
+This parameter is configured the time interval for light sensor, temperature and humidity sensor measuring. This value is larger, the battery life is longer. And the sensors values changed are not obvious. 0 - All sensors are disabled. Unit: Second. Available settings: 0 - 30000. Default: 180 (on batteries) or 10 (on USB)
+Values in the range 0 to 30000 may be set.
 
-Values in the range 0 to 0 may be set.
-
-The manufacturer defined default value is ```0```.
+The manufacturer defined default value is ```180```.
 
 This parameter has the configuration ID ```config_15_2``` and is of type ```INTEGER```.
 
 
-### Parameter 16: Luminance Threshold for Associated
+### Parameter 16: ??? Luminance Threshold for Associated (or Parameter #14?)
 
 
-This parameter is configured the light intensity threshold. When Ambient light intensity is less than this setting, device will consider the current environment is insufficient light. If "Configuration No. 3" is set '1' and a motion event is detected, the device will send a BASIC_SET to the nodes which associated in Group 2. Unit: 1 Lux. Available settings: 0 - 1000
+This parameter is configured the light intensity threshold. When Ambient light intensity is less than this setting, device will consider the current environment is insufficient light. If "Configuration No. 3" is set '1' and a motion event is detected, the device will send a BASIC_SET to the nodes which associated in Group 2. Unit: 1 Lux. Available settings: 0 - 1000. Default: 50
 Values in the range 0 to 1000 may be set.
 
 The manufacturer defined default value is ```50```.
@@ -319,13 +319,13 @@ The manufacturer defined default value is ```50```.
 This parameter has the configuration ID ```config_16_2``` and is of type ```INTEGER```.
 
 
-### Parameter 17: Sensor Measuring Interval
+### Parameter 17: ??? Unknown
 
 
-This parameter is configured the time interval for light sensor, temperature and humidity sensor measuring. This value is larger, the battery life is longer. And the sensors values changed are not obvious. 0 - All sensors are disabled. Unit: Second. Available settings: 0 - 30000, default value: 180 (on batteries) or 10 (on USB)
-Values in the range 0 to 30000 may be set.
+Default: 180
+Values in the range 0 to 0 may be set.
 
-The manufacturer defined default value is ```180```.
+The manufacturer defined default value is ```0```.
 
 This parameter has the configuration ID ```config_17_2``` and is of type ```INTEGER```.
 
@@ -352,7 +352,7 @@ k = 0.11538 * 1000 = 115,38 ~ 115
 
 The parameter should be set to 115.
 
-Available settings: 1 ... 32767
+Available settings: 1 ... 32767. Default: 5320
 Values in the range 1 to 32767 may be set.
 
 The manufacturer defined default value is ```5320```.
@@ -363,7 +363,7 @@ This parameter has the configuration ID ```config_18_2``` and is of type ```INTE
 ### Parameter 98: ??? Binary Sensor Report Enable
 
 
-'1' - Enable sensor binary report when device detects a motion event. '0' - Disable sensor binary report when device detects a motion event.
+'1' - Enable sensor binary report when device detects a motion event. '0' - Disable sensor binary report when device detects a motion event. Default: Disable
 The following option values may be configured, in addition to values in the range 0 to 1 -:
 
 | Value  | Description |
@@ -379,7 +379,7 @@ This parameter has the configuration ID ```config_98_1``` and is of type ```INTE
 ### Parameter 99: ??? Motion Clear Time
 
 
-This parameter is configured the time to clear motion event after a motion event detected. Time to motion clear, the device will send a clear event report to controller. Unit: Second. Available settings: 0 ... 30000
+This parameter is configured the time to clear motion event after a motion event detected. Time to motion clear, the device will send a clear event report to controller. Unit: Second. Available settings: 0 ... 30000. Default: 30
 Values in the range 1 to 30000 may be set.
 
 The manufacturer defined default value is ```30```.

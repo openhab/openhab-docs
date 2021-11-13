@@ -38,7 +38,7 @@ Floodlight Sensor<br /> <h1>Overview</h1><p>The HS-FLS100+ is a PIR module thatâ
           <property name="binding:*:DecimalType">COMMAND_CLASS_CONFIGURATION;parameter=1</property>
         </properties>
       </channel>
-      <channel id="config_decimal_param2" typeId="config_decimal">
+      <channel id="config_decimal_param2" typeId="homeseer_hsfls100_00_000_config_decimal_param2">
         <label>Lux sensor threshold</label>
         <properties>
           <property name="binding:*:DecimalType">COMMAND_CLASS_CONFIGURATION;parameter=2</property>
@@ -96,30 +96,41 @@ Floodlight Sensor<br /> <h1>Overview</h1><p>The HS-FLS100+ is a PIR module thatâ
 Period to send Trigger Off command after PIR is triggered.<br /> <h1>Overview</h1><p>Period to send Trigger Off command after PIR is triggered. Before this period expires, the PIR will not be able to detect any subsequent motion.</p>
         ]]></description>
         <default>15</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_2_2" type="integer" groupName="configuration"
-                 min="0" max="255">
+      <parameter name="config_2_2" type="integer" groupName="configuration">
         <label>2: Lux sensor threshold</label>
         <description><![CDATA[
 Lux level to activate the PIR<br /> <h1>Overview</h1><p>When the lux level falls below this threshold and the PIR gets triggered, the unit emits a Basic Set Command (Value=0xFF) and turns on its floodlight. This overwrites the Lux level set by the Lux knob.</p> <p>Setting = 0: always donâ€™t turn ON light</p> <p>Setting = 30~200: lighting activation by setting</p> <p>Setting = 255: turn ON light upon PIR triggered</p> <p>If the level is set to 0, the unit will not turn on its floodlight. The PIR will still send a notification report to the controller; if the level is set to 255, when motion is sensed, the sensor ignore the ambient brightness but just turn on the light.</p>
         ]]></description>
         <default>50</default>
+        <options>
+          <option value="0">Light is never triggered by PIR</option>
+          <option value="255">Light is always triggered by PIR regardless of lux</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_3_2" type="integer" groupName="configuration"
                  min="0" max="1440">
         <label>3: Auto Report luminance interval</label>
-        <description>sets the interval of periodic lux level report to the controller</description>
+        <description><![CDATA[
+Sets the interval of periodic lux level report to the controller<br /> <h1>Overview</h1><p><br /></p>
+        ]]></description>
         <default>10</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_4_1" type="integer" groupName="configuration">
         <label>4: Basic Report</label>
+        <description><![CDATA[
+<br /> <h1>Overview</h1><p><br /></p>
+        ]]></description>
         <default>1</default>
         <options>
-          <option value="0">not send Basic Report</option>
-          <option value="1">send Basic Report</option>
+          <option value="0">Do not send Basic Report</option>
+          <option value="1">Send Basic Report (default)</option>
         </options>
         <limitToOptions>false</limitToOptions>
       </parameter>
@@ -163,13 +174,17 @@ Devices in the group are controlled by the PIR sensor<br /> <h1>Overview</h1><p>
     <label>Lux sensor threshold</label>
     <description>Lux level to activate the PIR</description>
     <state pattern="%s">
+      <options>
+        <option value="0">Light is never triggered by PIR</option>
+        <option value="255">Light is always triggered by PIR regardless of lux</option>
+      </options>
     </state>
   </channel-type>
 
   <channel-type id="homeseer_hsfls100_00_000_config_decimal_param3">
     <item-type>Number</item-type>
     <label>Auto Report luminance interval</label>
-    <description>sets the interval of periodic lux level report to the controller</description>
+    <description>Sets the interval of periodic lux level report to the controller</description>
     <state pattern="%s">
     </state>
   </channel-type>
