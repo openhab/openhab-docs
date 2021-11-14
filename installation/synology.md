@@ -40,7 +40,7 @@ In this case we need the 1032 as the user and the 65539 as the group. Write them
 
 DSM 7 does not longer support java8 directly and therefor OpenHAB has to run in a Docker container. 
 And that also makes the installation easier to maintain. 
-It works out of the box a bit different then the normal Docker installation as described in de OpenHAB documententation.
+It works out of the box a bit different then the normal Docker installation as described in de openHAB documententation.
 Docker is a containerization platform and is used to run lightweight containers. 
 These containers require a very little amount of memory and system resources to run. 
 Synology NAS has official support for Docker.
