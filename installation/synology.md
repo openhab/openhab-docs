@@ -129,7 +129,7 @@ We are proud to be able to provide an [openHAB Synology package](https://github.
 
 ## Prerequisite - Install Java
 
-Current releases of OpenHAB require Oracle Java due to the generation of certificates based on [EC](https://en.wikipedia.org/wiki/Elliptic_curve_cryptography) which is not available in free Java implementations.
+Current releases of openHAB require Oracle Java due to the generation of certificates based on [EC](https://en.wikipedia.org/wiki/Elliptic_curve_cryptography) which is not available in free Java implementations.
 If you see the following error you are likely using OpenJDK:
 
 ```text
