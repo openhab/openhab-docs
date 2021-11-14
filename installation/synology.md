@@ -12,7 +12,7 @@ For versions of DSM before 7.0 please refer to the second half of this page.
 
 Synology NAS is based on Linux but it has limitations since it is not a full server.
 There are some shortcuts you have to take to make it work.  
-For the use of OpenHAB you need some preparation steps.
+For the use of openHAB you need some preparation steps.
 For this create a ssh session into your NAS.
 For reference how to do that: I found this [youtube tutorial](https://www.youtube.com/watch?v=BCCIMRbAUp8).
 When you are in the secured shell first thing to do is to create the user openhab.
