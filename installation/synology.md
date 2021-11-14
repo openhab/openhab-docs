@@ -51,7 +51,7 @@ To use Docker, you need to install the Docker app from the Synology Web GUI.
 - Search for "Docker" and install.
 - Click "Open".
 - Go to "Registry", here are all the available Docker images and search for openhab.
-- Choose the "openhab/openhab" image and click "Download". Select "latest" since that is the latest stable version of OpenHAB. The Docker image is added to "Image"
+- Choose the "openhab/openhab" image and click "Download". Select "latest" since that is the latest stable version of openHAB. The Docker image is added to "Image"
 - Go to "Image" and click on the openhab/openhab image and click "Add".
 
 Here comes the part where you really notice the difference between the Synology OS and Linux. 
