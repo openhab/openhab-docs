@@ -8,7 +8,7 @@ title: Synology DiskStation
 The [DiskStation by Synology](https://www.synology.com/en-us/dsm) is a famous NAS server solution for your home, allowing the installation of additional packages. 
 For versions of DSM before 7.0 please refer to the second half of this page.
 
-## Prerequisite - prepare the Synology OS for OpenHAB
+## Prerequisite - prepare the Synology OS for openHAB
 
 Synology NAS is based on Linux but it has limitations since it is not a full server.
 There are some shortcuts you have to take to make it work.  
