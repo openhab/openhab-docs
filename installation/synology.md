@@ -102,7 +102,7 @@ You can increase this in the future if you like.
 ### Summary 
 
 Here you can check if all changes where set correctly for your openHAB container, enable "Run this container after the wizard is finished" and press "Done".
-OpenHAB is now running on your NAS. 
+openHAB is now running on your NAS. 
 Give it a few minutes to start up.
 
 ## Shells
