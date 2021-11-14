@@ -38,7 +38,7 @@ In this case we need the 1032 as the user and the 65539 as the group. Write them
 
 ## Docker
 
-DSM 7 does no longer support Java 11 directly and therefor openHAB has to run in a Docker container. 
+DSM 7 does not longer support Java 11 directly and therefor openHAB has to run in a Docker container. 
 And that also makes the installation easier to maintain. 
 It works out of the box a bit different then the normal Docker installation as described in de openHAB documententation.
 Docker is a containerization platform and is used to run lightweight containers. 
@@ -124,12 +124,12 @@ The device path (`/dev/ttyACM0`) or container name (`openhab`) could be differen
 
 # Older Synology DiskStations till DSM 6
 
-The [DiskStation by Synology](https://www.Synology.com/en-us/dsm) is a famous NAS server solution for your home, allowing the installation of additional packages. 
-We are proud to be able to provide an [OpenHAB Synology package](https://github.com/openhab/openhab-syno-spk).
+The [DiskStation by Synology](https://www.synology.com/en-us/dsm) is a famous NAS server solution for your home, allowing the installation of additional packages. 
+We are proud to be able to provide an [openHAB Synology package](https://github.com/openhab/openhab-syno-spk).
 
 ## Prerequisite - Install Java
 
-Current releases of OpenHAB require Oracle Java due to the generation of certificates based on [EC](https://en.wikipedia.org/wiki/Elliptic_curve_cryptography) which is not available in free Java implementations.
+Current releases of openHAB require Oracle Java due to the generation of certificates based on [EC](https://en.wikipedia.org/wiki/Elliptic_curve_cryptography) which is not available in free Java implementations.
 If you see the following error you are likely using OpenJDK:
 
 ```text
@@ -142,9 +142,9 @@ To update Oracle JDK to Java8, click the Install Java / Upgrade Java button and 
 The filename and format of the uploaded file will be checked before installation.
 
 **Armada 370/XP** systems running DSM 6 require hard float ABI rather than the soft float used on DSM 5.
-If there is not a Java8 package in the Package Center, your machine may not be supported by the [Synology package](https://www.Synology.com/en-us/dsm/packages/Java8).
+If there is not a Java8 package in the Package Center, your machine may not be supported by the [Synology package](https://www.synology.com/en-us/dsm/packages/Java8).
 
-The best option for older unsupported Synology models such as **PowerPC** and **ARMv5** is to include the [PC-Loadletter](https://pcloadletter.co.uk/2011/08/23/java-package-for-Synology/) Repo.
+The best option for older unsupported Synology models such as **PowerPC** and **ARMv5** is to include the [PC-Loadletter](https://pcloadletter.co.uk/2011/08/23/java-package-for-synology/) Repo.
 [Download Java SE](https://www.oracle.com/technetwork/java/embedded/embedded-se/downloads/index.html) [(latest ARMv6)](https://www.oracle.com/technetwork/java/embedded/embedded-se/downloads/javase-embedded-downloads-2209751.html) [(Java Cryptography Extension if required)](https://www.oracle.com/technetwork/java/javase/downloads/jce8-download-2133166.html) and put them in the *public* folder of your NAS.
 Then start the installation of Java8 SE.
 
@@ -155,7 +155,7 @@ The **Java8 PowerPC** versions are available from [Oracle](https://www.oracle.co
 ## Installation
 
 Download the latest SPK package: [Releases](https://github.com/openhab/openhab-syno-spk/releases)
-The SPK is a wrapper to download the latest OpenHAB release and does not contain OpenHAB itself.
+The SPK is a wrapper to download the latest openHAB release and does not contain openHAB itself.
 
 1. Login and open the DiskStation Manager.
 1. Go to Control Panel → User → Advanced → User Home and check 'Enable user home service'
@@ -169,7 +169,7 @@ If your NAS cannot connect to the internet, the installer will tell you to downl
 
 ## Configuration
 
-The location of configuration files by OpenHAB differs depending on wether or not a shared folder named `public` exists:
+The location of configuration files by openHAB differs depending on wether or not a shared folder named `public` exists:
 
 - with public share folder: `/volume1/public/openHAB/conf/`
 - without public share folder: `/volume1/@appstore/openHAB/conf/`
@@ -178,16 +178,16 @@ For certain Synology models the `public` folder is created automatically during 
 The administrator can also create a public shared folder if desired.
 
 Synology does not document which models will automatically create a public folder.
-Refer to the Synology knowlegde base article on [Shared Folder](https://www.Synology.com/en-us/knowledgebase/DSM/help/DSM/AdminCenter/file_share_desc) to learn more.
+Refer to the Synology knowlegde base article on [Shared Folder](https://www.synology.com/en-us/knowledgebase/DSM/help/DSM/AdminCenter/file_share_desc) to learn more.
 
 ## Logging
 
-The OpenHAB log files can be found here:
+The openHAB log files can be found here:
 `/volume1/@appstore/openHAB/userdata/logs/`.
 
 From Version openHAB-2.2.0.006 the SPK generates two log files located at `/var/log/`.
 
 The first log file `openHAB-install.log` will be generated during the installation. 
-If you can't install the OpenHAB SPK, please have a look inside the file.
+If you can't install the openHAB SPK, please have a look inside the file.
 
 The second log `openHAB-start-stop.log` will be generated by starting and stopping openHAB inside the Package Manager.
