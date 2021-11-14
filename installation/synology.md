@@ -178,7 +178,7 @@ For certain Synology models the `public` folder is created automatically during 
 The administrator can also create a public shared folder if desired.
 
 Synology does not document which models will automatically create a public folder.
-Refer to the Synology knowlegde base article on [Shared Folder](https://www.Synology.com/en-us/knowledgebase/DSM/help/DSM/AdminCenter/file_share_desc) to learn more.
+Refer to the Synology knowlegde base article on [Shared Folder](https://www.synology.com/en-us/knowledgebase/DSM/help/DSM/AdminCenter/file_share_desc) to learn more.
 
 ## Logging
 
