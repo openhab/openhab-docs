@@ -124,7 +124,7 @@ The device path (`/dev/ttyACM0`) or container name (`openhab`) could be differen
 
 # Older Synology DiskStations till DSM 6
 
-The [DiskStation by Synology](https://www.Synology.com/en-us/dsm) is a famous NAS server solution for your home, allowing the installation of additional packages. 
+The [DiskStation by Synology](https://www.synology.com/en-us/dsm) is a famous NAS server solution for your home, allowing the installation of additional packages.
 We are proud to be able to provide an [openHAB Synology package](https://github.com/openhab/openhab-syno-spk).
 
 ## Prerequisite - Install Java
