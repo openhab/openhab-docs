@@ -182,7 +182,7 @@ Refer to the Synology knowlegde base article on [Shared Folder](https://www.Syno
 
 ## Logging
 
-The OpenHAB log files can be found here:
+The openHAB log files can be found here:
 `/volume1/@appstore/openHAB/userdata/logs/`.
 
 From Version openHAB-2.2.0.006 the SPK generates two log files located at `/var/log/`.
