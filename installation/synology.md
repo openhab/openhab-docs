@@ -142,7 +142,7 @@ To update Oracle JDK to Java8, click the Install Java / Upgrade Java button and 
 The filename and format of the uploaded file will be checked before installation.
 
 **Armada 370/XP** systems running DSM 6 require hard float ABI rather than the soft float used on DSM 5.
-If there is not a Java8 package in the Package Center, your machine may not be supported by the [Synology package](https://www.Synology.com/en-us/dsm/packages/Java8).
+If there is not a Java8 package in the Package Center, your machine may not be supported by the [Synology package](https://www.synology.com/en-us/dsm/packages/Java8).
 
 The best option for older unsupported Synology models such as **PowerPC** and **ARMv5** is to include the [PC-Loadletter](https://pcloadletter.co.uk/2011/08/23/java-package-for-synology/) Repo.
 [Download Java SE](https://www.oracle.com/technetwork/java/embedded/embedded-se/downloads/index.html) [(latest ARMv6)](https://www.oracle.com/technetwork/java/embedded/embedded-se/downloads/javase-embedded-downloads-2209751.html) [(Java Cryptography Extension if required)](https://www.oracle.com/technetwork/java/javase/downloads/jce8-download-2133166.html) and put them in the *public* folder of your NAS.
