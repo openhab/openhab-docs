@@ -109,7 +109,7 @@ Give it a few minutes to start up.
 
 If you select the container running and press "Details" you will end up on  a windows where you get more information on this running container. 
 One particular menu item you have to check is "Terminal". 
-In here you see the name of the container left from the black field and if you press that you'll get the Karaf terminal for OpenHAB.
+In here you see the name of the container left from the black field and if you press that you'll get the Karaf terminal for openHAB.
 
 If you click on "Create' it creates a bash terminal, click on bash and you'll have access to a shell in the container.
 
