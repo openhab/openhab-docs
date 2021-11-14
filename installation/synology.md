@@ -155,7 +155,7 @@ The **Java8 PowerPC** versions are available from [Oracle](https://www.oracle.co
 ## Installation
 
 Download the latest SPK package: [Releases](https://github.com/openhab/openhab-syno-spk/releases)
-The SPK is a wrapper to download the latest OpenHAB release and does not contain OpenHAB itself.
+The SPK is a wrapper to download the latest openHAB release and does not contain openHAB itself.
 
 1. Login and open the DiskStation Manager.
 1. Go to Control Panel → User → Advanced → User Home and check 'Enable user home service'
