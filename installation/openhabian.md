@@ -91,22 +91,21 @@ Note option 42 will also not downgrade Java.
 openHAB 2 however is known to run with Java 11 as well.
 
 ### *A note on dedication and commitment*
-
 *We sometimes read about people deciding against use of openHABian because they want to install additional software and believe openHABian does not let them do this.
 Everybody wants his home automation to be stable and most people install a dedicated RPi, i.e. they don't install any other software there that may interfere with proper openHAB operation.
 Reasonably so, this is our clear recommendation. Saving another 50 bucks is not worth putting the reliable day-to-day operations of your home at risk.*
 
 *Then again that being said, those who insist to can use openHABian as the starting point for their 'generic' server and run whatever software else on top.
-There's no genuine reason why this wouldn't work. The openHABian image is really just Raspberry Pi OS (lite) under the hood and openHABian is "just" some scripts that install a number of packages and configures the system in a specific way, optimized to run openHAB.*
+There's no genuine reason why this wouldn't work. The openHABian image is really just Raspberry Pi OS (lite) under the hood and openHABian is "just" some scripts that install a number of packages and configure the system in a specific way, optimized to run openHAB.*
 
-*What you must not do, though, is to mess with system packages and config and expect anyone to help you with that. Let's clearly state this as well: when you deliberately decide to make manual changes to the OS software packages and configuration (i.e. outside of openhabian-config), you will be on your own. Your setup is untested, and no-one but you knows about your changes. openHABian maintainers are really committed to providing you with a fine user experience, but this takes enormous efforts you don't get to see as a user. So if you choose to deviate from standard openHABian installations and run into problems thereafter, don't be unfair: don't waste maintainer's or anyone's time by asking for help or information on your issues on the forum.*
+<a id="befair"></a>
+*What you must not do, though, is to mess with the system, OS packages and config and expect anyone to help you with that. Let's clearly state this as well: when you deliberately decide to make manual changes to the OS software packages and configuration (i.e. outside of openhabian-config), you will be on your own. Your setup is untested, and no-one but you knows about your changes. openHABian maintainers are really committed to providing you with a fine user experience, but this takes enormous efforts you don't get to see as a user. So if you choose to deviate from the standard openHABian installation and run into problems thereafter, don't be unfair: don't waste maintainer's or anyone's time by asking for help or information on your issues on the forum. Thank you !*
 
 ## Hardware
 ### Hardware recommendation
-
 Let's put this first: our current recommendation is to get a RPi 4 with 2 or 4 GB of RAM, a 3A power supply and a 16 GB SD card.
-Because of the higher limit of write cycles, an SD card designed for Dashcams is preferable.
-Most manufacturers name them with a postfix like "Endurance" (e.g. "SanDisk MAX ENDURANCE" or "Kingston High Endurance").
+Prefer getting a card named with a postfix like "Endurance" (e.g. "SanDisk MAX ENDURANCE" or "Kingston High Endurance") because it
+can handle more write cycles hence it'll be more enduring under openHAB\'s use conditions.
 Also get another 32 GB or larger SD card and a USB card reader to make use of the ["auto backup" feature](openhabian.md#auto-backup).
 
 ### Hardware support
@@ -145,7 +144,6 @@ To install openHABian on anything older or newer may work or not.
 If you encounter issues, you may need to upgrade first or to live with the consequences of running an OS on the edge of software development.
 
 ### 64 bit?
-
 RPi 3 and 4 have a 64 bit processor and you may want to run openHAB in 64 bit.
 We provide a 64bit version of the image but it is unsupported and just provided as-is so use it at your own risk.
 Be aware that to run in 64 bit has a major drawback: increased memory usage.
@@ -157,7 +155,6 @@ reliably work on 64 bit.
 On x86 hardware, 64 bit is the standard.
 
 ### Networking
-
 You need to prepare your local network so you eventually need to configure your Internet router before an openHABian installation.
 For image based installations, openHABian re-uses the TCP/IP networking setup Raspberry Pi OS is coming with.
 The non-image (script-only) version of openHABian does not change anything about your existing OS' networking setup so you have to take care of that and prepare it yourself.
@@ -209,7 +206,6 @@ You should be seeing a welcome screen like the following:
 
 <a id="manual-setup"></a>
 ### Other Linux Systems (add openHABian just like any other software)
-
 Going beyond what the RPi image provides, you can also install openHABian on x86 hardware on top of any existing Debian installation.
 Please note that the unattended install is tailored to work for Raspberries.
 We cannot test HW/OS combos beyond RPis upfront so there is no promise for this work.
@@ -372,25 +368,27 @@ You can also try with a different set of parameters if your initial attempt fail
 
 Mind the comments for each configuration parameter. Browse the next documentation section for more explanations.
 
-#### Administration user
+#### Initial configuration
+You can have openHABian import a working openHAB configuration right from the start at installation time like whenyou migrate or reinstall:
+make the `initialconfig` parameter point to either a file or URL.
+Note that you can only place config zipfiles on the 1st (Windows) partition, and that partition will finally be accessible as `/boot`.
+So a filename would need to be `/boot/xxx.zip`. Default is `/boot/initial.zip`.
 
+#### Administration user
 Raspberry Pi OS images include a Linux user (`pi`) that you can use for openHAB administration.
 openHABian renames the user to what you specify in the `username` parameter and assigns the `userpw` password first, then it proceeds and makes various settings that are either useful (such as some aliases) or required to run openHAB.
 You can also make use of this if you don't use the image but unattended installation on non-RPi hardware, openHABian will then _create_ that user for you if it does not yet exist.
 
 #### Admin key
-
 Make the `adminkeyurl` point to an URL to contain a public SSH key.
 This will be included with your administration user's `.ssh/authorized_keys` and the openHAB console so the admin user (yourself, usually) can login right after installation  without a password. This helps with automating deployments.
 
 #### Wi-Fi based setup notes
-
 If you own a RPi3, RPi3+, RPi4, a RPi0W or any other model with a compatible Wi-Fi dongle you can set up and use openHABian via Wi-Fi only.
 For the Wi-Fi based setup to work, you'll need to make your SSID and password known to the system before the first boot.
 So in addition to the setup instructions given above, uncomment and complete the lines reading `wifi_ssid=""` and `wifi_password=""` in `openhabian.conf`.
 
 #### Wi-Fi Hotspot
-
 When your openHABian box does not get Internet connectivity through either Ethernet or WI-Fi (if configured), openHABian will launch a **Hotspot**.
 Use your mobile phone to scan for Wi-Fi networks, you should be seeing a new network called `openHABian-<n>`.
 Connecting will work without a password. Once connected, most smartphones will transfer you to a web page.
@@ -407,18 +405,15 @@ For more information on hotspot functions see [comitup-cli](https://davesteele.g
 The hotspot feature is known to work on RPi0W, RPi3, and RPi4 but is known to often expose problems with Wi-Fi USB adapters.
 
 #### Disable zram
-
 Zram is activated by default on fresh installations on ARM hardware.
 If you want to disable zram for some reason, use `zraminstall=disable` in `openhabian.conf` to install without.
 
 #### Debug mode
-
 See [Troubleshooting](#troubleshooting) section if you run into trouble installing.
 If you want to turn on debug mode edit `openhabian.conf` and set the `debugmode=` parameter to either `off`, `on` or `maximum`.
 Mind you that if you intend to open an issue, we need you to provide the output of `debugmode=maximum` so if you're in interactive mode, set your terminal to record output.
 
 #### Auto backup
-
 Auto backup is a marketing name for two distinct features that you can deploy in one go at _unattended_ installation time on a RPi (when you deploy the image).
 Technically it is a "low-cost" version of disk mirroring PLUS the setup of the Amanda backup system which all by itself has been available in a long time.
 So don't let the name confuse you. If you didn't choose to set this up at installation time, you can also individually select these functions via `openhabian-config` menu options 53 (mirroring) and 52 (Amanda).
@@ -457,7 +452,6 @@ Menu 5X provides interactive access to the aforementioned functions:<br>
 In case of failure of your primary SD card, replace the broken SD card in the internal slot with your backup card from the external reader. Get another SD card that matches the size of the backup (now in internal slot) card and use menu option 54 to copy your active backup card back to the new one.
 
 #### Tailscale VPN network
-
 Tailscale is a management toolset to establish a WireGuard based VPN between multiple systems if you want to connect to openHAB(ian) instances outside your LAN over Internet.
 It'll take care to detect and open ports when you and your peers are located behind firewalls.
 [Download the client](https://tailscale.com/download) and eventually get the Solo service plan from Tailscale, that's free for private use.
@@ -466,18 +460,15 @@ The Windows client has a link to the admin console where you can create pre-auth
 These you can put as the `preauthkey` into `openhabian.conf` to automatically deploy remote openHABian nodes (unattended install) and have them join the VPN.
 
 #### IPv6 notes
-
 You might encounter problems when you make use of IPv6 on some networks and systems. openHABian installation may stop or hang forever.
 In that case _or if you are sure that you do not need IPv6 on your openHABian server_, you can disable IPv6.
 Follow the instructions in the previous section and insert a line into `openhabian.conf` reading `ipv6=disable`.
 
 #### Fake hardware mode
-
 If to install openHABian fails because you have a non-supported hardware or run an unsupported OS release, you can "fake" your hardware and OS to make openHABian behave as if you did own that HW/OS.
 In `openhabian.conf`, uncomment and complete the lines reading `hw=`, `hwarch=` and/or `osrelease=` with the hw and os versions you want to attempt installation with.
 
 ## Optional Components
-
 openHABian comes with a number of additional tools to quickly install and set up additional home automation related software.
 You'll find all of these in the [openHABian Configuration Tool](#openhabian-configuration-tool), menu option 20.
 

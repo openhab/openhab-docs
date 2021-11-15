@@ -8,7 +8,7 @@
   <thing-type id="fibaro_fgbs222_00_000" listed="false">
     <label>FGBS222 Smart Implant</label>
     <description><![CDATA[
-Smart Implant<br /> <h1>Overview</h1><p>Allows to enhance the functionality of wired sensors and other devices by adding Z-Wave network communication. You can connect binary sensors, analog sensors, DS18B20 temperature sensors or DHT22 humidity and temperature sensor to report their readings to the Z-Wave controller. It can also control devices by opening/closing output contacts independently of the inputs.</p> <br /> <h2>Inclusion Information</h2><p>To add the device to the Z-Wave network manually:</p> <ol><li>Power the device.</li> <li>Set the main controller in (Security/non-Security Mode) add mode (see the controller’s manual).</li> <li>Quickly, triple click button on the device housing or switch connected to IN1 or IN2.</li> <li>If you are adding in Security S2 Authenticated, scan the DSK QR code or input the 5-digit PIN code (label on the bottom of the box).</li> <li>LED will start blinking yellow, wait for the adding process to end.</li> <li>Successful adding will be confirmed by the Z-Wave controller’s message.</li> </ol> <br /> <h2>Exclusion Information</h2><p>To remove the device from the Z-Wave network:</p> <ol><li>Power the device.</li> <li>Set the main controller into remove mode (see the controller’s manual).</li> <li>Quickly, triple click button on the device housing or switch connected to IN1 or IN2.</li> <li>LED will start blinking yellow, wait for the removing process to end.</li> <li>Successful removing will be confirmed by the Z-Wave controller’s message.</li> </ol><p><strong>Note:</strong> Removing also results in resetting the device to factory defaults.</p> <p><strong>Note: </strong>Removing using switch connected to IN1 or IN2 works only if parameter 20 (IN1) or 21 (IN2) is set to 3 or 4 and parameter 40 (IN1) or 41 (IN2) does not allow sending scenes for triple click.</p>
+Smart Implant<br /> <h1>Overview</h1><p>Allows to enhance the functionality of wired sensors and other devices by adding Z-Wave network communication. You can connect binary sensors, analog sensors, DS18B20 temperature sensors or DHT22 humidity and temperature sensor to report their readings to the Z-Wave controller. It can also control devices by opening/closing output contacts independently of the inputs.</p> <br /> <h2>Inclusion Information</h2><p>To add the device to the Z-Wave network manually:</p> <ol><li>Power the device.</li> <li>Set the main controller in (Security/non-Security Mode) add mode (see the controller’s manual).</li> <li>Quickly, triple click button on the device housing or switch connected to IN1 or IN2.</li> <li>If you are adding in Security S2 Authenticated, scan the DSK QR code or input the 5-digit PIN code (label on the bottom of the box).</li> <li>LED will start blinking yellow, wait for the adding process to end.</li> <li>Successful adding will be confirmed by the Z-Wave controller’s message.</li> </ol> <br /> <h2>Exclusion Information</h2><p>To remove the device from the Z-Wave network:</p> <ol><li>Power the device.</li> <li>Set the main controller into remove mode (see the controller’s manual).</li> <li>Quickly, triple click button on the device housing or switch connected to IN1 or IN2.</li> <li>LED will start blinking yellow, wait for the removing process to end.</li> <li>Successful removing will be confirmed by the Z-Wave controller’s message.</li> </ol><p><strong>Note:</strong> Removing also results in resetting the device to factory defaults.</p> <p><strong>Note: </strong>Removing using switch connected to IN1 or IN2 works only if parameter 20 (IN1) or 21 (IN2) is set to 3 or 4 and parameter 40 (IN1) or 41 (IN2) does not allow sending scenes for triple click.</p> <br /> <h2>Wakeup Information</h2><p><br /></p>
     ]]></description>
     <category>Sensor</category>
 
@@ -220,86 +220,85 @@ Smart Implant<br /> <h1>Overview</h1><p>Allows to enhance the functionality of w
       </parameter-group>
 
       <!-- PARAMETER DEFINITIONS -->
-      <parameter name="config_20_1" type="integer" groupName="configuration">
+      <parameter name="config_20_1" type="integer" groupName="configuration"
+                 min="0" max="5">
         <label>20: Input 1 - operating mode</label>
         <description><![CDATA[
 mode of 1st input<br /> <h1>Overview</h1><p>This parameter allows to choose mode of 1st input (IN1). Change it depending on connected device.</p>
         ]]></description>
         <default>2</default>
         <options>
-          <option value="0">Normally closed alarm input</option>
-          <option value="1">Normally open alarm input</option>
-          <option value="2">Monostable button</option>
-          <option value="3">Bistable button</option>
-          <option value="4">Analog input without internal pull-up</option>
-          <option value="5">Analog input with internal pull-up</option>
+          <option value="0">Normally closed alarm input (Notification)</option>
+          <option value="1">Normally open alarm input (Notification)</option>
+          <option value="2">Monostable button (Central Scene)</option>
+          <option value="3">Bistable button (Central Scene)</option>
+          <option value="4">Analog input without internal pull-up (Sensor Multilevel)</option>
+          <option value="5">Analog input with internal pull-up (Sensor Multilevel)</option>
         </options>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_21_1" type="integer" groupName="configuration">
+      <parameter name="config_21_1" type="integer" groupName="configuration"
+                 min="0" max="5">
         <label>21: Input 2 - operating mode</label>
         <description><![CDATA[
 mode of 2nd input<br /> <h1>Overview</h1><p>This parameter allows to choose mode of 2nd input (IN2). Change it depending on connected device.</p>
         ]]></description>
         <default>2</default>
         <options>
-          <option value="0">Normally closed alarm input</option>
-          <option value="1">Normally open alarm input</option>
-          <option value="2">Monostable button</option>
-          <option value="3">Bistable button</option>
-          <option value="4">Analog input without internal pull-up</option>
-          <option value="5">Analog input with internal pull-up</option>
+          <option value="0">Normally closed alarm input (Notification)</option>
+          <option value="1">Normally open alarm input (Notification)</option>
+          <option value="2">Monostable button (Central Scene)</option>
+          <option value="3">Bistable button (Central Scene)</option>
+          <option value="4">Analog input without internal pull-up (Sensor Multilevel)</option>
+          <option value="5">Analog input with internal pull-up (Sensor Multilevel)</option>
         </options>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_24_1" type="integer" groupName="configuration">
+      <parameter name="config_24_1" type="integer" groupName="configuration"
+                 min="0" max="1">
         <label>24: Inputs orientation</label>
         <description><![CDATA[
 reversing operation of IN1 and IN2 inputs<br /> <h1>Overview</h1><p>This parameter allows reversing operation of IN1 and IN2 inputs without changing the wiring. Use in case of incorrect wiring.</p>
         ]]></description>
         <default>0</default>
         <options>
-          <option value="0">default</option>
-          <option value="1">reversed</option>
+          <option value="0">default (IN1 - 1st input, IN2 - 2nd input)</option>
+          <option value="1">reversed (IN1 - 2nd input, IN2 - 1st input)</option>
         </options>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_25_1" type="integer" groupName="configuration">
+      <parameter name="config_25_1" type="integer" groupName="configuration"
+                 min="0" max="1">
         <label>25: Outputs orientation</label>
         <description><![CDATA[
 reversing operation of OUT1 and OUT2 outputs<br /> <h1>Overview</h1><p>This parameter allows reversing operation of OUT1 and OUT2 inputs without changing the wiring. Use in case of incorrect wiring.</p>
         ]]></description>
         <default>0</default>
         <options>
-          <option value="0">default</option>
-          <option value="1">reversed</option>
+          <option value="0">default (OUT1 - 1st output, OUT2 - 2nd output)</option>
+          <option value="1">reversed (OUT1 - 2nd output, OUT2 - 1st output)</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_40_1_0000000F" type="integer" groupName="configuration">
+        <label>40: Input 1 - sent scenes</label>
+        <description><![CDATA[
+sending scene ID<br /> <h1>Overview</h1><p>This parameter defines which actions result in sending scene ID and attribute assigned to them:</p><p><b>1</b>: Key pressed 1 time</p><p><b>2</b>: Key pressed 2 times</p><p><b>4</b>: Key pressed 3 times</p><p><b>8</b>: Key hold down and key released</p><p>Parameter is relevant only if parameter 20 is set to 2 or 3.</p> <p>This is a BIT flag allowing all options to be set. Sum the values of the options required to activate those actions that should be enabled.</p> <p>For example:</p> <p>to enable single and double click set the value to 3</p> <p>to enable single and triple set the value to 5</p> <p>All combinations are valid.</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="1">Key pressed 1 time</option>
+          <option value="2">Key pressed 2 times</option>
+          <option value="4">Key pressed 3 times</option>
+          <option value="8">Key hold down and key released</option>
         </options>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_40_1_0000000F" type="integer" groupName="configuration"
-                 min="0" max="127">
-        <label>40: Input 1 - sent scenes</label>
-        <description><![CDATA[
-sending scene ID<br /> <h1>Overview</h1><p>This parameter defines which actions result in sending scene ID and attribute assigned to them. Parameter is relevant only if parameter 20 is set to 2 or 3.</p> <p>This is a BIT flag allowing all options to be set. Sum the values of the options required to activate those actions that should be enabled.</p> <p>For example:</p> <p>to enable single and double click set the value to 3</p> <p>to enable single and triple set the value to 5</p> <p>All combinations are valid.</p>
-        ]]></description>
-        <default>0</default>
-        <options>
-          <option value="1">Key pressed 1 time</option>
-          <option value="2">Key pressed 2 times</option>
-          <option value="4">Key pressed 3 times</option>
-          <option value="8">Key hold down and key released</option>
-        </options>
-      </parameter>
-
-      <parameter name="config_41_1_0000000F" type="integer" groupName="configuration"
-                 min="0" max="127">
+      <parameter name="config_41_1_0000000F" type="integer" groupName="configuration">
         <label>41: Input 2 - sent scenes</label>
         <description><![CDATA[
-sending scene ID<br /> <h1>Overview</h1><p>This parameter defines which actions result in sending scene ID and attribute assigned to them. Parameter is relevant only if parameter 20 is set to 2 or 3.</p> <p>This is a BIT flag allowing all options to be set. Sum the values of the options required to activate those actions that should be enabled.</p> <p>For example:</p> <p>to enable single and double click set the value to 3</p> <p>to enable single and triple set the value to 5</p> <p>All combinations are valid.</p>
+sending scene ID<br /> <h1>Overview</h1><p>This parameter defines which actions result in sending scene ID and attribute assigned to them:</p><p><b>1</b>: Key pressed 1 time</p><p><b>2</b>: Key pressed 2 times</p><p><b>4</b>: Key pressed 3 times</p><p><b>8</b>: Key hold down and key released</p><p>Parameter is relevant only if parameter 20 is set to 2 or 3.</p> <p>This is a BIT flag allowing all options to be set. Sum the values of the options required to activate those actions that should be enabled.</p> <p>For example:</p> <p>to enable single and double click set the value to 3</p> <p>to enable single and triple set the value to 5</p> <p>All combinations are valid.</p>
         ]]></description>
         <default>0</default>
         <options>
@@ -308,13 +307,14 @@ sending scene ID<br /> <h1>Overview</h1><p>This parameter defines which actions 
           <option value="4">Key pressed 3 times</option>
           <option value="8">Key hold down and key released</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_47_2" type="integer" groupName="configuration"
                  min="0" max="255">
         <label>47: Input 1 - 2nd group, activated</label>
         <description><![CDATA[
-value sent to 2nd association group when activated<br /> <h1>Overview</h1><p>This parameter defines value sent to devices in 2nd association group when IN1 input is triggered (using Basic Command Class).</p>
+value sent to 2nd association group when activated<br /> <h1>Overview</h1><p>This parameter defines value sent to devices in 2nd association group when IN1 input is triggered (using Basic Command Class). Parameter is relevant only if parameter 20 is set to 0 or 1 (alarm mode).</p>
         ]]></description>
         <default>255</default>
         <advanced>true</advanced>
@@ -325,7 +325,7 @@ value sent to 2nd association group when activated<br /> <h1>Overview</h1><p>Thi
                  min="0" max="255">
         <label>49: Input 1 - 2nd group, deactivated</label>
         <description><![CDATA[
-value sent to 2nd association group when deactivated<br /> <h1>Overview</h1><p>This parameter defines value sent to devices in 2nd association group when IN1 input is deactivated (using Basic Command Class).</p>
+value sent to 2nd association group when deactivated<br /> <h1>Overview</h1><p>This parameter defines value sent to devices in 2nd association group when IN1 input is deactivated (using Basic Command Class). Parameter is relevant only if parameter 20 is set to 0 or 1 (alarm mode).</p>
         ]]></description>
         <default>0</default>
         <advanced>true</advanced>
@@ -336,7 +336,7 @@ value sent to 2nd association group when deactivated<br /> <h1>Overview</h1><p>T
                  min="0" max="255">
         <label>52: Input 2 - 3rd group, activated</label>
         <description><![CDATA[
-value sent to 3rd association group when activated<br /> <h1>Overview</h1><p>This parameter defines value sent to devices in 3rd association group when IN2 input is triggered (using Basic Command Class).</p>
+value sent to 3rd association group when activated<br /> <h1>Overview</h1><p>This parameter defines value sent to devices in 3rd association group when IN2 input is triggered (using Basic Command Class). Parameter is relevant only if parameter 21 is set to 0 or 1 (alarm mode).</p>
         ]]></description>
         <default>255</default>
         <advanced>true</advanced>
@@ -347,7 +347,7 @@ value sent to 3rd association group when activated<br /> <h1>Overview</h1><p>Thi
                  min="0" max="255">
         <label>54: Input 2 - 3rd group, deactivated</label>
         <description><![CDATA[
-value sent to 3rd association group when deactivated<br /> <h1>Overview</h1><p>This parameter defines value sent to devices in 2nd association group when IN2 input is deactivated (using Basic Command Class).</p>
+value sent to 3rd association group when deactivated<br /> <h1>Overview</h1><p>This parameter defines value sent to devices in 2nd association group when IN2 input is deactivated (using Basic Command Class). Parameter is relevant only if parameter 21 is set to 0 or 1 (alarm mode).</p>
         ]]></description>
         <default>0</default>
         <advanced>true</advanced>
@@ -454,30 +454,30 @@ additional delay of cancelling the alarm on IN2 input<br /> <h1>Overview</h1><p>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_154_1" type="integer" groupName="configuration">
+      <parameter name="config_154_1" type="integer" groupName="configuration"
+                 min="0" max="1">
         <label>154: Output 1 - logic of operation</label>
         <description><![CDATA[
 logic of OUT1 output operation<br /> <h1>Overview</h1><p>This parameter defines logic of OUT1 output operation.</p>
         ]]></description>
         <default>0</default>
         <options>
-          <option value="0">normally open</option>
-          <option value="1">normally closed</option>
+          <option value="0">contacts normally open / closed when active</option>
+          <option value="1">contacts normally closed / open when active</option>
         </options>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_155_1" type="integer" groupName="configuration">
+      <parameter name="config_155_1" type="integer" groupName="configuration"
+                 min="0" max="1">
         <label>155: Output 2 - logic of operation</label>
         <description><![CDATA[
-OUT2 output operation<br /> <h1>Overview</h1><p>This parameter defines logic of OUT2 output operation.</p>
+logic of OUT2 output operation<br /> <h1>Overview</h1><p>This parameter defines logic of OUT2 output operation.</p>
         ]]></description>
         <default>0</default>
         <options>
-          <option value="0">normally open</option>
-          <option value="1">normally closed</option>
+          <option value="0">contacts normally open / closed when active</option>
+          <option value="1">contacts normally closed / open when active</option>
         </options>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_156_2" type="integer" groupName="configuration"

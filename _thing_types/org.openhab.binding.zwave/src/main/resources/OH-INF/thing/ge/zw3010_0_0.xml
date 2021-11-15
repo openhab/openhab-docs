@@ -6,9 +6,9 @@
                       https://openhab.org/schemas/thing-description/v1.0.0">
 
   <thing-type id="ge_zw3010_00_000" listed="false">
-    <label>ZW3010 In-Wall Smart Dimmer ZW3010 / 39351</label>
+    <label>ZW3010 In-Wall Smart Dimmer ZW3010/14321/46564/39351/54897/54898</label>
     <description><![CDATA[
-In-Wall Smart Dimmer ZW3010 / 39351<br /> <h1>Overview</h1><p><br /></p> <br /> <h2>Inclusion Information</h2><p>Once the controller is ready to add your device, press and release the top or bottom of the smart fan control switch (rocker) to add it in the network.<br /></p> <br /> <h2>Exclusion Information</h2><p>Once the controller is ready to add your device, press and release the top or bottom of the switch (rocker) to add it in the network.<br /></p> <br /> <h2>Wakeup Information</h2><p><br /></p>
+In-Wall Smart Dimmer ZW3010/14321/46564/39351/54897/54898<br /> <h1>Overview</h1><p>In-Wall Smart Dimmer with QuickFit and SimpleWire enhancements. Revolutionary QuickFit design features a housing depth that is up to 20 percent smaller than the previous Z-Wave models. This reduced size coupled with the elimination of heat taps provides a better fit in older style boxes and multi-gang configurations. SimpleWire technology allows line and load to automatically be configured with auto-sensing line-load terminals. All of this is coupled with Z-Wave S2 and Smart Start allows for effortless installation while being safer than ever!<br /></p> <br /> <h2>Inclusion Information</h2><p>Once the controller is ready to add your device, press and release the top or bottom of the smart dimmer (rocker) to add it in the network.<br /></p> <br /> <h2>Exclusion Information</h2><p>Once the controller is ready to add your device, press and release the top or bottom of the smart dimmer (rocker) to remove it from the network.<br /></p> <br /> <h2>Wakeup Information</h2><p><br /></p>
     ]]></description>
     <category>WallSwitch</category>
 
@@ -34,7 +34,7 @@ In-Wall Smart Dimmer ZW3010 / 39351<br /> <h1>Overview</h1><p><br /></p> <br /> 
       <property name="vendor">Jasco Products</property>
       <property name="modelId">ZW3010</property>
       <property name="manufacturerId">0063</property>
-      <property name="manufacturerRef">4944:3339</property>
+      <property name="manufacturerRef">4944:3236,4944:3339</property>
       <property name="dbReference">1341</property>
       <property name="defaultAssociations">1</property>
     </properties>
