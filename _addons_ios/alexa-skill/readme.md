@@ -1375,8 +1375,8 @@ Items that represent a general device responding to on/off commands. For Number 
 * Supported item types:
   * Color
   * Dimmer
-  * Number (Requires state mappings)
-  * String (Requires state mappings)
+  * Number
+  * String
   * Switch
 * Supported metadata parameters:
   * OFF=`<state>` (Number/String only)
@@ -1539,7 +1539,7 @@ Items that represent the hold setting of a thermostat. This needs to be paired w
 
 * Supported item types:
   * Number [RESUME=0]
-  * String [RESUME="off"]
+  * String [RESUME="resume"]
   * Switch [RESUME="OFF"]
 * Supported metadata parameters:
   * RESUME=`<state>`
