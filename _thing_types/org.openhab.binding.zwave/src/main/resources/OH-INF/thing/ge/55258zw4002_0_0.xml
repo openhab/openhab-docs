@@ -6,7 +6,7 @@
                       https://openhab.org/schemas/thing-description/v1.0.0">
 
   <thing-type id="ge_55258zw4002_00_000" listed="false">
-    <label>55258_zw4002 3-Speed Fan control</label>
+    <label>ZW4002 / GE55258 3-Speed Fan control</label>
     <description><![CDATA[
 3-Speed Fan control<br /> <h1>Overview</h1><p>The in-wall fan control easily replaces any standard in-wall switch remotely controls a ceiling fan in your home and features a three-speed control system. Your home will be equipped with ultimate flexibility with the Enbrighten Z-Wave Smart Fan Control, capable of being used by itself or with up to four Enbrighten add-on switches. Screw terminal installation provides improved space efficiency when replacing existing switches and the integrated LED indicator light allows you to easily locate the switch in a dark room. <br /></p> <br /> <h2>Inclusion Information</h2><p>Press and release the top or bottom rocker</p> <br /> <h2>Exclusion Information</h2><p>Press and release the top or bottom rocker<br /></p> <br /> <h2>Wakeup Information</h2><p><br /></p>
     ]]></description>
@@ -32,7 +32,7 @@
     <!-- DEVICE PROPERTY DEFINITIONS -->
     <properties>
       <property name="vendor">Jasco Products</property>
-      <property name="modelId">55258_zw4002</property>
+      <property name="modelId">ZW4002 / GE55258</property>
       <property name="manufacturerId">0063</property>
       <property name="manufacturerRef">4944:3337</property>
       <property name="dbReference">1357</property>

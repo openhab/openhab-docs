@@ -6,9 +6,9 @@
                       https://openhab.org/schemas/thing-description/v1.0.0">
 
   <thing-type id="ge_zw4005_00_000" listed="false">
-    <label>ZW4005, 12722 On/Off Relay Switch</label>
+    <label>ZW4005 / GE12722 On/Off Relay Switch</label>
     <description><![CDATA[
-On/Off Relay Switch<br /> <h1>Overview</h1><p>Also marketed as GE / Jasco 12722.</p> <br /> <h2>Inclusion Information</h2><p>Once the controller is ready to include your smart switch, press and release the top or bottom button on the smart switch to include it in the network.</p> <br /> <h2>Exclusion Information</h2><p>Once the controller is ready to exclude your device, press and release the top or bottom button on the smart switch to exclude it from the network.</p>
+On/Off Relay Switch<br /> <h1>Overview</h1><p><b>Key Features</b></p><ul><li>Turn the connected device On/Off manually or via Z-Wave remote control</li><li>May be used in single pole installation or with up to four GE model 12723 Add-on switches in 3, 4, 5 or 6-way wiring configurations</li><li>Blue LED indicates switch location in a dark room</li><li>Can be Included in multiple Groups and Scenes</li><li>Supports Advanced Configuration; LED status, Invert switch (if unit is installed upside down)</li><li>Screw Terminal installation; requires wiring connections for Line (Hot), Load, Neutral, and Ground.</li><li>Traveler wire required for multi pole installation</li><li>Use a standard-size wall plate for single gang installations (wall plate not included); Multi-gang box option available (removable ‘side wings’)</li><li>Interchangeable Paddle switch: White &amp; light almond paddle included in package</li><li>LED can be enabled/disabled manually</li><li>Inline traveler circuit protection</li></ul><p><b>SPECIFICATIONS</b></p><ul><li>Power: 120 VAC, 60 Hz.</li><li>Signal (Frequency): 908.42 MHz.</li><li>Load ratings:<ul><li>Incandescent - Minimum Load: 40W, Maximum Load: 960W</li><li>Motor – 1/2HP</li><li>Resistive – 1800W</li></ul></li><li>Range: Up to 100 feet line of sight between the Wireless Controller and the closest Z-Wave receiver module.</li></ul> <br /> <h2>Inclusion Information</h2><p>Once the controller is ready to include your smart switch, press and release the top or bottom button on the smart switch to include it in the network.</p> <br /> <h2>Exclusion Information</h2><p>Once the controller is ready to exclude your device, press and release the top or bottom button on the smart switch to exclude it from the network.</p> <br /> <h2>Wakeup Information</h2><p><br /></p>
     ]]></description>
     <category>WallSwitch</category>
 
@@ -25,7 +25,7 @@ On/Off Relay Switch<br /> <h1>Overview</h1><p>Also marketed as GE / Jasco 12722.
     <!-- DEVICE PROPERTY DEFINITIONS -->
     <properties>
       <property name="vendor">Jasco Products</property>
-      <property name="modelId">ZW4005, 12722</property>
+      <property name="modelId">ZW4005 / GE12722</property>
       <property name="manufacturerId">0063</property>
       <property name="manufacturerRef">4952:3032</property>
       <property name="dbReference">48</property>

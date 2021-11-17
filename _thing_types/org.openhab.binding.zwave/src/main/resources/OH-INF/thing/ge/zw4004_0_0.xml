@@ -6,9 +6,9 @@
                       https://openhab.org/schemas/thing-description/v1.0.0">
 
   <thing-type id="ge_zw4004_00_000" listed="false">
-    <label>GE ZW4004 GE Z-Wave Wireless Smart Lighting and Appliance Control - 40 Amp</label>
+    <label>ZW4004 Wireless Smart Lighting and Appliance Control - 40 Amp</label>
     <description><![CDATA[
-GE Z-Wave Wireless Smart Lighting and Appliance Control - 40 Amp<br /> <h1>Overview</h1><p>Outdoor 40amp Direct Wire Box Control with Energy Monitoring</p> <br /> <h2>Inclusion Information</h2><p>Once the controller is ready to include your device, press and release the exterior-mounted push button to include it in the network.</p> <br /> <h2>Exclusion Information</h2><p>Press and release the exterior-mounted push button to exclude it from the network.</p>
+Wireless Smart Lighting and Appliance Control - 40 Amp<br /> <h1>Overview</h1><p>Outdoor 40amp Direct Wire Box Control with Energy Monitoring</p> <br /> <h2>Inclusion Information</h2><p>Once the controller is ready to include your device, press and release the exterior-mounted push button to include it in the network.</p> <br /> <h2>Exclusion Information</h2><p>Press and release the exterior-mounted push button to exclude it from the network.</p> <br /> <h2>Wakeup Information</h2><p><br /></p>
     ]]></description>
     <category>PowerOutlet</category>
 
@@ -55,7 +55,7 @@ GE Z-Wave Wireless Smart Lighting and Appliance Control - 40 Amp<br /> <h1>Overv
     <!-- DEVICE PROPERTY DEFINITIONS -->
     <properties>
       <property name="vendor">Jasco Products</property>
-      <property name="modelId">GE ZW4004</property>
+      <property name="modelId">ZW4004</property>
       <property name="manufacturerId">0063</property>
       <property name="manufacturerRef">4F44:3031</property>
       <property name="dbReference">655</property>

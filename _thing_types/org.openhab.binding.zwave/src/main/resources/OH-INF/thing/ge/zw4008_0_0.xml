@@ -6,9 +6,9 @@
                       https://openhab.org/schemas/thing-description/v1.0.0">
 
   <thing-type id="ge_zw4008_00_000" listed="false">
-    <label>43072/ZW4008DV In-Wall Smart Switch with QuickFit and SimpleWire enhancements.</label>
+    <label>ZW4008 / GE43072 In-Wall Smart Switch with QuickFit and SimpleWire enhancements.</label>
     <description><![CDATA[
-In-Wall Smart Switch with QuickFit and SimpleWire enhancements.<br /> <h1>Overview</h1><p>In-Wall Smart Switch with QuickFit and SimpleWire enhancements. Revolutionary QuickFit design features a housing depth that is up to 20 percent smaller than the previous Z-Wave models. This reduced size coupled with the elimination of heat taps provides a better fit in older style boxes and multi-gang configurations. SimpleWire technology allows line and load to automatically be configured with auto-sensing line-load terminals. All of this is coupled with Z-Wave S2 and Smart Start allows for effortless installation while being safer than ever!</p> <br /> <h2>Inclusion Information</h2><ol><li>Follow the instructions for your Z-Wave certified controller to add a device to the Z-Wave network.</li> <li>Once the controller is ready to add your device, press and release the top or bottom of the wireless smart switch (rocker).</li> </ol> <br /> <h2>Exclusion Information</h2><ol><li>Follow the instructions for your Z-Wave certified controller to remove a device from the Z-Wave network.</li> <li>Once the controller is ready to remove your device, press and release the top or bottom of the wireless smart switch (rocker).</li> </ol>
+In-Wall Smart Switch with QuickFit and SimpleWire enhancements.<br /> <h1>Overview</h1><p>In-Wall Smart Switch with QuickFit and SimpleWire enhancements. Revolutionary QuickFit design features a housing depth that is up to 20 percent smaller than the previous Z-Wave models. This reduced size coupled with the elimination of heat taps provides a better fit in older style boxes and multi-gang configurations. SimpleWire technology allows line and load to automatically be configured with auto-sensing line-load terminals. All of this is coupled with Z-Wave S2 and Smart Start allows for effortless installation while being safer than ever!</p> <br /> <h2>Inclusion Information</h2><ol><li>Follow the instructions for your Z-Wave certified controller to add a device to the Z-Wave network.</li> <li>Once the controller is ready to add your device, press and release the top or bottom of the wireless smart switch (rocker).</li> </ol> <br /> <h2>Exclusion Information</h2><ol><li>Follow the instructions for your Z-Wave certified controller to remove a device from the Z-Wave network.</li> <li>Once the controller is ready to remove your device, press and release the top or bottom of the wireless smart switch (rocker).</li> </ol> <br /> <h2>Wakeup Information</h2><p><br /></p>
     ]]></description>
     <category>WallSwitch</category>
 
@@ -25,7 +25,7 @@ In-Wall Smart Switch with QuickFit and SimpleWire enhancements.<br /> <h1>Overvi
     <!-- DEVICE PROPERTY DEFINITIONS -->
     <properties>
       <property name="vendor">Jasco Products</property>
-      <property name="modelId">43072/ZW4008DV</property>
+      <property name="modelId">ZW4008 / GE43072</property>
       <property name="manufacturerId">0063</property>
       <property name="manufacturerRef">4952:3036,4952:3135,4952:3136,4952:3139</property>
       <property name="dbReference">1155</property>

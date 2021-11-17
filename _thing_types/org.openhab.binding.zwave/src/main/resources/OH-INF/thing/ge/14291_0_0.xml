@@ -6,9 +6,9 @@
                       https://openhab.org/schemas/thing-description/v1.0.0">
 
   <thing-type id="ge_14291_00_000" listed="false">
-    <label>GE 14291 (ZW4005) In-Wall Paddle Switch</label>
+    <label>ZW4005 / GE14291 In-Wall Paddle Switch</label>
     <description><![CDATA[
-In-Wall Paddle Switch<br /> <h1>Overview</h1><p>In-Wall Wireless Smart Switch</p> <br /> <h2>Inclusion Information</h2><p>Press and release the top or bottom of the wireless smart switch (rocker)</p> <br /> <h2>Exclusion Information</h2><p>Press and release the top or bottom of the wireless smart switch (rocker)</p>
+In-Wall Paddle Switch<br /> <h1>Overview</h1><p>In-Wall Wireless Smart Switch</p> <br /> <h2>Inclusion Information</h2><p>Press and release the top or bottom of the wireless smart switch (rocker)</p> <br /> <h2>Exclusion Information</h2><p>Press and release the top or bottom of the wireless smart switch (rocker)</p> <br /> <h2>Wakeup Information</h2><p><br /></p>
     ]]></description>
     <category>WallSwitch</category>
 
@@ -37,7 +37,7 @@ In-Wall Paddle Switch<br /> <h1>Overview</h1><p>In-Wall Wireless Smart Switch</p
     <!-- DEVICE PROPERTY DEFINITIONS -->
     <properties>
       <property name="vendor">Jasco Products</property>
-      <property name="modelId">GE 14291 (ZW4005)</property>
+      <property name="modelId">ZW4005 / GE14291</property>
       <property name="manufacturerId">0063</property>
       <property name="manufacturerRef">4952:3036,4952:3185</property>
       <property name="dbReference">550</property>

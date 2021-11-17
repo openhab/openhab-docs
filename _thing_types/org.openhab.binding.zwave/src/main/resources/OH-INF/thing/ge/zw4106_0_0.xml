@@ -5,10 +5,10 @@
   xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
                       https://openhab.org/schemas/thing-description/v1.0.0">
 
-  <thing-type id="honeywell_39342_00_000" listed="false">
-    <label>ZW4106 / GE39342 Plug-In Smart Switch (Dual Linked Outlets, Grounded)</label>
+  <thing-type id="ge_zw4106_00_000" listed="false">
+    <label>ZW4106 / GE55249 Plug-In Smart Switch (Dual Linked Outlets, Grounded)</label>
     <description><![CDATA[
-Plug-In Smart Switch (Dual Linked Outlets, Grounded)<br /> <h1>Overview</h1><ul><li>2 Simultaneously Controlled Outlets</li> <li>Only Blocks One Outlet / Cords Exit Sideways</li> <li>Indoor</li> <li>Wall Plug</li> <li>120 VAC, 60 Hz</li> <li>908.42/916 MHz</li> <li>Max Incandescent Load 600W (5A)</li> <li>Max Resistive Load 1800W (15A)</li> <li>Max Motor 1/2 HP</li> <li>Max Range 45 m</li> <li>Operating Temperature Range 0°C to 40°C</li> <li>UL Listed</li> <li>FCC ID U2ZZW4104</li> <li>IC 6924A-ZW4104</li> </ul> <br /> <h2>Inclusion Information</h2><p>Press and release the manual/program button.  (Tested to work with Network Wide Inclusion.)</p> <br /> <h2>Exclusion Information</h2><p>Press and release the manual/program button.</p> <br /> <h2>Wakeup Information</h2><p><br /></p>
+Plug-In Smart Switch (Dual Linked Outlets, Grounded)<br /> <h1>Overview</h1><p>2 Simultaneously Controlled Outlets</p><p>Only Blocks One Outlet / Cords Exit Sideways</p><p>Indoor</p><p>Wall Plug</p><p>120 VAC, 60 Hz</p><p>908.42/916 MHz</p><p>Max Incandescent Load 600W (5A)</p><p>Max Resistive Load 1800W (15A)</p><p>Max Motor 1/2 HP</p><p>Max Range 45 m</p><p>Operating Temperature Range 0°C to 40°C</p><p>UL Listed</p><p>FCC ID U2ZZW4104</p><p>IC 6924A-ZW4104</p> <br /> <h2>Inclusion Information</h2><p>Press and release the manual/program button. (Tested to work with Network Wide Inclusion.)<br /></p> <br /> <h2>Exclusion Information</h2><p>Press and release the manual/program button.<br /></p> <br /> <h2>Wakeup Information</h2><p><br /></p>
     ]]></description>
     <category>PowerOutlet</category>
 
@@ -17,7 +17,7 @@ Plug-In Smart Switch (Dual Linked Outlets, Grounded)<br /> <h1>Overview</h1><ul>
       <channel id="switch_binary" typeId="switch_binary">
         <label>Switch</label>
         <properties>
-          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY,COMMAND_CLASS_BASIC</property>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY</property>
         </properties>
       </channel>
       <channel id="scene_number" typeId="scene_number">
@@ -26,15 +26,21 @@ Plug-In Smart Switch (Dual Linked Outlets, Grounded)<br /> <h1>Overview</h1><ul>
           <property name="binding:*:DecimalType">COMMAND_CLASS_SCENE_ACTIVATION</property>
         </properties>
       </channel>
+      <channel id="scene_number" typeId="scene_number">
+        <label>Scene Number</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_CENTRAL_SCENE</property>
+        </properties>
+      </channel>
     </channels>
 
     <!-- DEVICE PROPERTY DEFINITIONS -->
     <properties>
-      <property name="vendor">Honeywell</property>
-      <property name="modelId">ZW4106 / GE39342</property>
-      <property name="manufacturerId">0039</property>
-      <property name="manufacturerRef">5052:0039,5052:3033</property>
-      <property name="dbReference">922</property>
+      <property name="vendor">Jasco Products</property>
+      <property name="modelId">ZW4106 / GE55249</property>
+      <property name="manufacturerId">0063</property>
+      <property name="manufacturerRef">5052:3133</property>
+      <property name="dbReference">1436</property>
       <property name="defaultAssociations">1</property>
     </properties>
 
@@ -53,15 +59,11 @@ Plug-In Smart Switch (Dual Linked Outlets, Grounded)<br /> <h1>Overview</h1><ul>
       </parameter-group>
 
       <!-- PARAMETER DEFINITIONS -->
-      <parameter name="config_3_1" type="integer" groupName="configuration">
-        <label>3: LED Light Control</label>
+      <parameter name="config_3_1" type="integer" groupName="configuration"
+                 min="2" max="0">
+        <label>3: LED light Control</label>
         <description>Controls LED light state</description>
         <default>0</default>
-        <options>
-          <option value="0">LED Light on when switch turned OFF (Default)</option>
-          <option value="1">LED Light on when switch turned On</option>
-          <option value="2">LED Light Always Off</option>
-        </options>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
@@ -72,7 +74,7 @@ Plug-In Smart Switch (Dual Linked Outlets, Grounded)<br /> <h1>Overview</h1><ul>
       </parameter>
 
       <parameter name="group_2" type="text" groupName="association" multiple="true">
-        <label>2: Group 1</label>
+        <label>2: Group1</label>
         <description>Basic Set controlled with local load</description>
         <multipleLimit>5</multipleLimit>
       </parameter>

@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="nietech_mp22zd_00_000" listed="false">
+    <label>MP22ZD Outdoor Dimmer Plug</label>
+    <description><![CDATA[
+Outdoor Dimmer Plug<br /> <h1>Overview</h1>The Minoston MP22ZD is a 400W Loading Z-Wave smart outdoor dimmer plug designed for seasonal, landscape lighting, or porch light.<p><br /></p><p><b>Features</b></p><ul><li> Z-Wave on/off + dimmer control</li><li> Grounded 3-wire power connection for safety</li><li> Remembers and restores on/off status after power failure</li><li> Built-in Z-Wave Plus signal repeater to extend network range</li><li> S2 security and 700 Z-Wave chip for reliable wireless communication</li><li> Remote ON/OFF control via the Z-Wave™ controller</li><li> Manual ON/OFF control with the front panel push button</li><li> Association group and auto report switch status</li><li> Firmware upgrades via over-the-air (needs gateway's support)</li><li> Scenes</li></ul><p><b>Specs</b></p><ul><li>Model: MP22ZD</li><li>Loading: 400 W max for resistive (incandescent). 150 W max for LED/CFL.</li><li>Temperature Range: 32-104 °F (0-40 °C)</li><li>Range: Up to 100 feet line-of-sight</li></ul> <br /> <h2>Inclusion Information</h2><p> The plug is equipped with auto-inclusion. Do not plug in until you've started the inclusion process on your Z-Wave controller.</p><ol><li> Follow the instructions for your Z-Wave controller to prepare the controller to add a device to the network.</li><li> Once the controller is ready to add your device, plug in the smart plug. The inclusion process may start automatically, indicated by the LED blinking within 30 seconds after first plugged in. If not, press the button on the smart plug 3 times guickly. The blue LED will begin blinking quickly. If it does not, consider triggering exclusion or factory reset. If you have issues with adding the device, please move the device as close as possible to the hub and try again.</li></ol><p><b>SmartStart / DSK</b><br /></p><p>The device is compatible with SmartStart. SmartStart-enabled products can be added into a Z-Wave network by scanning the Z-Wave QR Code found on the top of the outlet or the back of the box with a controller providing SmartStart inclusion. No further action is required and the SmartStart product will be added automatically within 10 minutes of being switched on and in the network vicinity.</p> <br /> <h2>Exclusion Information</h2><ol><li>Follow the instructions for your Z-Wave controller to remove a device from the network.</li><li>Once the controller is ready to remove your device, press the button on the smart plug three times quickly.<br /></li></ol> <br /> <h2>Wakeup Information</h2><p><br /></p>
+    ]]></description>
+    <category>PowerOutlet</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_dimmer" typeId="switch_dimmer">
+        <label>Dimmer</label>
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+          <property name="binding:Command:OnOffType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">NIE Technology</property>
+      <property name="modelId">MP22ZD</property>
+      <property name="manufacturerId">0312</property>
+      <property name="manufacturerRef">FF07:FF03</property>
+      <property name="dbReference">1435</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_2_1" type="integer" groupName="configuration"
+                 min="0" max="3">
+        <label>2: Status LED</label>
+        <description><![CDATA[
+Choose if the LED should follow the output, oppose the output, or be always on or off.<br /> <h1>Overview</h1><p>Choose if the LED status light on the device should follow the output, oppose the output, or be always on or off.</p>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_4_4" type="integer" groupName="configuration">
+        <label>4: Auto Turn-Off Timer</label>
+        <description><![CDATA[
+Turn off the switch automatically after the switch turns on.<br /> <h1>Overview</h1><p><br /></p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Disabled</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_6_4" type="integer" groupName="configuration">
+        <label>6: Auto Turn-On Timer</label>
+        <description><![CDATA[
+Turn on the switch automatically after the switch turns off.<br /> <h1>Overview</h1><p><br /></p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Disabled</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_7_1" type="integer" groupName="configuration"
+                 min="1" max="10">
+        <label>7: Night Light Set</label>
+        <description>Brightness for the light when you want to make it a night light</description>
+        <default>2</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_8_1" type="integer" groupName="configuration"
+                 min="0" max="2">
+        <label>8: Restore State After Power Failure</label>
+        <description>Sets desired output state after power failure</description>
+        <default>2</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_10_1" type="integer" groupName="configuration"
+                 min="1" max="10">
+        <label>10: Dimmer Speed</label>
+        <description><![CDATA[
+Seconds to change brightness 100%<br /> <h1>Overview</h1><p>Only applies under certain conditions, such as when controlled by holding the device button.<br /></p>
+        ]]></description>
+        <default>4</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_11_1" type="integer" groupName="configuration">
+        <label>11: Dimmer Minimum Brightness</label>
+        <default>10</default>
+        <options>
+          <option value="0">Disabled</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_12_1" type="integer" groupName="configuration">
+        <label>12: Dimmer Maximum Brightness</label>
+        <default>0</default>
+        <options>
+          <option value="0">Disabled</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association">
+        <label>1: Z-Wave Plus Lifeline</label>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: Basic Set</label>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

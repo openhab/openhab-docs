@@ -26,16 +26,16 @@ Pet immune PIR Detector<br /> <h1>Overview</h1><p>The SP815 is a multifunction d
           <property name="binding:*:DecimalType">COMMAND_CLASS_SENSOR_MULTILEVEL;type=RELATIVE_HUMIDITY</property>
         </properties>
       </channel>
-      <channel id="alarm_burglar" typeId="alarm_burglar">
-        <label>Alarm (burglar)</label>
+      <channel id="alarm_motion" typeId="alarm_motion">
+        <label>Motion Alarm</label>
         <properties>
-          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=BURGLAR</property>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=BURGLAR, event=8</property>
         </properties>
       </channel>
-      <channel id="alarm_power" typeId="alarm_power">
-        <label>Alarm (power)</label>
+      <channel id="alarm_tamper" typeId="alarm_tamper">
+        <label>Tamper Alarm</label>
         <properties>
-          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=POWER_MANAGEMENT</property>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=BURGLAR, event=3</property>
         </properties>
       </channel>
       <channel id="battery-level" typeId="system.battery-level">
