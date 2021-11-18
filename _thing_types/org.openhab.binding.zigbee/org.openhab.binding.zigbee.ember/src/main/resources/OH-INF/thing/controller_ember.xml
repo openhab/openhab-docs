@@ -5,8 +5,8 @@
 	xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0 org.eclipse.smarthome.thing-description.xsd">
 
 	<bridge-type id="coordinator_ember">
-		<label>Ember EM35x Coordinator</label>
-		<description>Ember EM35x NCP</description>
+		<label>Ember Coordinator</label>
+		<description>SiLabs Ember based NCP</description>
 
 		<channels>
 			<channel id="rx_dat" typeId="ember_ash_rx_dat" />
@@ -217,6 +217,7 @@
             <parameter name="zigbee_groupregistration" type="text" groupName="network">
                 <label>Group Registrations</label>
                 <description>Registers the binding to receive group notifications. Groups are separated by a comma and must be defined in hexadecimal.</description>
+                <advanced>true</advanced>
             </parameter>
 
 			<parameter name="zigbee_meshupdateperiod" type="integer" groupName="network">
