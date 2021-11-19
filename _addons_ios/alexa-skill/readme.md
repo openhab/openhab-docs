@@ -565,7 +565,7 @@ Items that represent the feed from a security camera.
 
 It requires installing the [IP Camera binding](https://www.openhab.org/addons/bindings/ipcamera/) to create a [HLS live stream](https://www.openhab.org/addons/bindings/ipcamera/#hls-http-live-streaming), and running your [openHAB server behind a reverse proxy](https://www.openhab.org/docs/installation/security.html#running-openhab-behind-a-reverse-proxy) that can be accessed over HTTPS on your local network and port 443 using a valid SSL certificate.
 
-Once setup, configure the item linked to the binding `hlsUrl` channel and set the metadata parameter `proxyBaseUrl="https://openhab.myserver.tld"`. This will cause the skill to provide a stream URL to your Echo device, when requested, that should be accessible at `https://openhab.myserver.tld/ipcamera/camera1/ipcamera.m3u8` along with a static image URL, replacing the extension with `.jpg`. If your server requires basic authentication, set the `username` and `password` parameters.
+Once setup, configure the item linked to the binding `hlsUrl` channel and set the metadata parameter `proxyBaseUrl="https://openhab.myserver.tld"` pointing to your openHAB subdomain proxy base URL. This will cause the skill to provide a stream URL to your Echo device, when requested, that should be accessible at `https://openhab.myserver.tld/ipcamera/camera1/ipcamera.m3u8` along with a static image URL, replacing the extension with `.jpg`.
 
 * Supported item types:
   * String
@@ -575,10 +575,6 @@ Once setup, configure the item linked to the binding `hlsUrl` channel and set th
   * resolution=`<resolution>`
     * supported resolutions are `480p`, `720p`, `1080p`
     * defaults to `1080p`
-  * username=`<username>`
-    * defaults to no basic authentication.
-  * password=`<password>`
-    * defaults to no basic authentication.
 * Utterance examples:
   * *Alexa, show the `<device name>`.*
 
