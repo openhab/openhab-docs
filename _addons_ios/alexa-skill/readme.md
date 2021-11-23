@@ -495,7 +495,7 @@ Default attributes for each type are displayed in _italic_ and are depending on 
 
 Device Types | Supported Attributes | Description
 -------------|----------------------|------------
-`AirConditioner` | _[`HeatingCoolingMode`](#heatingcoolingmode)_, [`TargetTemperature`](#targettemperature), [`CurrentTemperature`](#currenttemperature), [`FanSpeed`](#fanspeed), [`FanDirection`](#fandirection), [`FanOscillate`](#fanoscillate) | A device that cools the air in interior spaces.
+`AirConditioner` | _[`PowerState`](#powerstate)_, [`TargetTemperature`](#targettemperature), [`CurrentTemperature`](#currenttemperature), [`FanSpeed`](#fanspeed), [`FanDirection`](#fandirection), [`FanOscillate`](#fanoscillate) | A device that cools the air in interior spaces.
 `AirFreshener` | Same as `Fan` | A device that emits pleasant odors and masks unpleasant odors in interior spaces.
 `AirPurifier` | Same as `Fan` | A device that improves the quality of air in interior spaces.
 `Automobile` | [`BatteryLevel`](#batterylevel), [`FanSpeed`](#fanspeed), [`LockState`](#lockstate), [`PowerState`](#powerstate), [`CurrentTemperature`](#currenttemperature) | A motor vehicle (automobile, car).
