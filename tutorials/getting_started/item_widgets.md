@@ -94,6 +94,10 @@ Properties can be used to customize the widget to work for each Item.
 See the docs referenced above for details, and the next page of this tutorial for some general advice and approaches.
 Look in the [Add-Ons - UI Category on the forum](https://community.openhab.org/c/add-ons/uis/30) for lots of examples.
 
+## Import Widgets from the openHAB marketplace
+
+There is also a [marketplace](https://community.openhab.org/c/marketplace/69) available where openHAB users publish custom widgets.
+
 ## State Representation
 
 By default the state of the Item will be displayed on the right hand side of the widget.
