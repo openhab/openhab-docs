@@ -28,7 +28,8 @@ Images should be stored in `/conf/html/[your directory]/`
 Image URL:
   `/static/[your directory]/[your image file]`
 
-  e.g: 
+  e.g:
+
 ```bash
 /static/floorplan/FloorPlan3Dsmall.jpg
 ```
