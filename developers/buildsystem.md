@@ -5,10 +5,10 @@ title: Build System
 
 # Build System
 
-The buildsystem is based on maven.
+The buildsystem is based on Maven.
 A very common tool for Java development.
 Maven is a convention centric, declarative system that is extensible via addional plugins.
-That means if you stick 100% to mavens idea of a java project, your buildsystem instruction file is not longer than 10 lines.
+That means if you stick 100% to Mavens idea of a java project, your buildsystem instruction file is not longer than 10 lines.
 
 openHAB has a few extra requirements and we use about 10 additional plugins,
 ranging from OSGi specific ones (bnd) to publish and testing plugins.

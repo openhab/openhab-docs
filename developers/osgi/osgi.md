@@ -150,7 +150,7 @@ We will list the most popular OSGi containers with a short description of their 
   - [Equinox](https://www.eclipse.org/equinox/) - this is the reference implementation of OSGi and developed by the Eclipse Foundation.
     As it is used in the openHAB project, we have [more detailed information](equinox.html).
   - [Apache Felix](https://felix.apache.org/) - developed by the Apache Software Foundation.
-    [Apache Karaf](https://karaf.apache.org/) is a distribution based on Apache Felix that provides some additional features on top of it (e.g. folder based hot deployment, improved default console with remote SSH, maven plugins and others). The openHAB project is using karaf for runtime dependency installation.
+    [Apache Karaf](https://karaf.apache.org/) is a distribution based on Apache Felix that provides some additional features on top of it (e.g. folder based hot deployment, improved default console with remote SSH, Maven plugins and others). The openHAB project is using karaf for runtime dependency installation.
   - [Concierge](https://www.eclipse.org/concierge/) - is aimed at mobile and embedded devices. With a size of around 250 kb it has the smallest footprint of the presented containers;
 
 - Commercial:
