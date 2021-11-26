@@ -56,7 +56,7 @@ If you do not find an answer to your question, do not hesitate to ask it on the 
     A dimmable light should only have a single channel of type `system.brightness` for its control.
     Note that although this channel type is declared for item type 'Dimmer', it is perfectly possible to link a `Switch`
     item to it, additionally to a `Dimmer` item.
-    The possibility to switch the light ON/OFF is therefore implicitly available and there is no need for an additional channel with item type `Switch`, even if the hardware might have separated switching and dimming in different commands. 
+    The possibility to switch the light ON/OFF is therefore implicitly available and there is no need for an additional channel with item type `Switch`, even if the hardware might have separated switching and dimming in different commands.
     In the openHAB abstraction layer, 0% brightness is identical to OFF.
     Sending an ON command to such a channel does not have to switch to 100% brightness, though.
     Depending on whether the device supports it, it can also dim to the last brightness value (other than 0%) it was in before.
