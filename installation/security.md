@@ -636,7 +636,7 @@ Back in the GUI, go to Control Panel > Application Portal > Reverse Proxy, make 
 |Destination Port:          |2020 (or whatever you set it to in the openHAB-auth file)|
 
 ::: tip Note
-We do this 'double' redirect to take advantage of the GUI certificate handling in DSM - this is the equivalent of CertBot for a linux installation.
+We do this 'double' redirect to take advantage of the GUI certificate handling in DSM - this is the equivalent of CertBot for a Linux installation.
 :::
 
 Give it a try again - you should now get redirected to `https://your-hostname.com` from `http://your-hostname.com`, and should receive a username and password prompt before you see the openHAB landing page.
