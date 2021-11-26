@@ -7,14 +7,14 @@ title: Layout Pages
 Layout Pages are used in the main web user interface to display widgets in an organized manner.
 You can choose between two different basic types of layouts:
 
-**Responsive Layouts**
+- Responsive Layouts
 
 Responsive Layouts are the main layouts in openHAB and recommended for most uses. They automatically adjust to the device's screen and thus can be used as general interface from all devices.
 Within Responsive Layouts you can choose among several types of arrangements, based on whether you want to control the layout completely, or let the container decide where to place the widgets.
 
 ![Responsive Layout Page Example](./images/responsive_layout_example.png)
 
-**Fixed Grid Layouts**
+- Fixed Grid Layouts
 
 Fixed Grid Layouts allow you to create a Layout Page where elements have predefined positions and sizes. They are used to design a panel-like page for a specific screen size and are most suitable for static interfaces like wall mounted tablets.
 
@@ -187,7 +187,7 @@ The gear icon on the top right corner of each widget allows you to configure or 
 
 The following parameters can be adjusted for a Fixed Grid Layout:
 
-**Layout Settings**
+##### Layout Settings
 
 *Number of Columns:*
 Number of grid columns across the page. Defaults to 16.
@@ -196,7 +196,7 @@ Limited to a minimum widget width of 50px (calculated from screen width, margin 
 *Margin:*
 Margin between items and to screen edge in CSS pixels. Defaults to 10.
 
-**Screen Settings**
+##### Screen Settings
 
 *Screen Width:*
 Screen width in CSS pixels. Defaults to 1280.
@@ -210,7 +210,7 @@ All widgets are resized accordingly, with the margin staying fixed.
 While this works well in many cases, it can lead to unpredictable styling issues, especially on large divergence from the defined screen width.
 Defaults to false.
 
-**Appearance**
+##### Appearance
 
 *Hide Navigation Bar:*
 When enabled the navigation bar on top of a page does not get displayed on this page.
@@ -246,12 +246,12 @@ The gear icon on the top right corner of each widget allows you to configure or 
 
 The following parameters can be adjusted for a Fixed Canvas Layout:
 
-**Layout Settings**
+##### Layout Settings
 
 *Grid size:*
 Pitch of the grid when the editor grid button is enabled, in CSS pixels.
 
-**Screen Settings**
+##### Screen Settings
 
 *Screen Width:*
 Screen width in CSS pixels. Defaults to 1280.
@@ -271,12 +271,12 @@ If you want to achieve a different placement, adding margins to the image in an 
 *Image Source Set:*
 The setting is passed to the [`srcset`](https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images) attribute of the image element, allowing to specify different images to be used depending on the actual resolution of the device, for example is the layout will be used both on a so called 'retina' and non-'retina' tablet.
 
-**Widget Settings**
+##### Widget Settings
 
 Specific widget settings are available through the gear popup menu displayed on each widget in the layout.
 It provides access to the settings related to the type of the widget (**Widget Settings**) and to settings specific to the usage of this widget within a canvas.
 
-**Container Settings**
+##### Container Settings
 
 *Preserve classic style:*
 Enabling this option preserves the widget style definition as in other layout pages (responsive, fixed grid).
