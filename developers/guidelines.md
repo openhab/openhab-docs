@@ -26,15 +26,15 @@ If you are just keen on binding development, you may skip this document first an
 The structure of a binding follows the structure of a typical OSGi bundle project.
 
 ```text
-|- doc                   Images and other assets used in the Readme.md
+|- doc                    Images and other assets used in the README.md
 |- src/main
 |---- feature
-|-------- feature.xml   Your OSGI feature file
-|---- java             Your Java code
+|-------- feature.xml     Your OSGi feature file
+|---- java                Your Java code
 |-------- org/openhab/[...]
 |- src/main/resources/OH-INF
 |---- binding
-|-------- binding.xml      Binding name, description, author and other meta data
+|-------- binding.xml     Binding name, description and other meta data
 |---- config              Configuration description files when not in things files
 |-------- *.xml
 |---- i18n                Your localized binding texts
@@ -42,9 +42,9 @@ The structure of a binding follows the structure of a typical OSGi bundle projec
 |---- thing               One or more xml files with thing descriptions
 |-------- *.xml
 |- src/test
-|---- java             It's easy to write unit tests and fellow developers will thank you
+|---- java                It's easy to write unit tests and fellow developers will thank you
 |-------- org/openhab/[...]
-|---- resources        Any resource files used in your unit tests, like test data
+|---- resources           Any resource files used in your unit tests, like test data
 |-------- [...]
 |- NOTICE                 License information
 |                         3rd party content has to be given in the NOTICE file
@@ -111,7 +111,7 @@ org.openhab.binding.coolbinding.internal.discovery
 Remember that classes that are meant to be used by scripts or other bindings must be non internal.
 
 - Every class, except data-transfer-objects (DTO), must be annotated with `@NonNullByDefault`.
-  For details see [Null annotation](#null-annotations).
+  For details see [Null annotations](#null-annotations).
 - OSGi Declarative Services annotations are to be used
 
 ```java
@@ -131,15 +131,15 @@ JavaDoc is required to describe the purpose and usage of every:
 - enumeration (except inner classes and enums),
 - constant, field and method with visibility of default, protected or public.
 
-An @author tag is required within the JavaDoc for every author who made a substantial contribution to the file.
-New @author tags should be placed below the older ones.
-Data-transfer-objects (DTOs map from Json/XML to Java classes) do not require JavaDoc.
+An `@author` tag is required within the JavaDoc for every author who made a substantial contribution to the file.
+New `@author` tags should be placed below the older ones.
+Data-transfer-objects (DTOs map from JSON/XML to Java classes) do not require JavaDoc.
 
 ## D. Language Levels and Libraries
 
 1. openHAB generally targets the long time supported Java 11 release.
-1. The [OSGi Core Release 7](https://osgi.org/download/r7/osgi.core-7.0.0.pdf) with [OSGI Compendium Release 7](https://osgi.org/download/r7/osgi.cmpn-7.0.0.pdf) is targeted, and newer features should not be used.
-1. [slf4j](http://slf4j.org) is used for logging.
+1. The [OSGi Core Release 7](https://osgi.org/download/r7/osgi.core-7.0.0.pdf) with [OSGi Compendium Release 7](https://osgi.org/download/r7/osgi.cmpn-7.0.0.pdf) is targeted, and newer features should not be used.
+1. [SLF4J](http://slf4j.org) is used for logging.
 
 You might also have the need to use other libraries for specific use cases like XML processing, networking etc.
 See [Default libraries](#default-libraries) for more details.

@@ -40,7 +40,7 @@ The Image has a very minimal installation of Linux with no services running and 
 ## Installation through Docker
 
 ::: tip Note
-Some explanations are valid for linux systems only, alltough some windows examples can be found below.
+Some explanations are valid for Linux systems only, although some Windows examples can be found below.
 :::
 
 ### Obtaining the Official image from DockerHub
@@ -79,7 +79,7 @@ sudo chown -R openhab:openhab /opt/openhab
 
 Note, always review the README on [Docker Hub](https://hub.docker.com/r/openhab/openhab/) for the most up to date set of recommended arguments and environment variables.
 Services can be run an maintained on a Linux machine one of two ways, using Docker or using the system's built in service management (e.g. systemd).
-If using docker to manage the service, run the following command:
+If using Docker to manage the service, run the following command:
 
 :::: tabs
 
@@ -260,7 +260,7 @@ It then performs all the same steps that the upgrade script and which are perfor
 
 If you want use an USB stick (for example for Z-Wave network), then it will be not available for the dockerized system by default.
 In Docker openHAB is running in name of `openhab`, a restricted user.
-The stick will work if you run the following command right after docker image is started.
+The stick will work if you run the following command right after Docker image is started.
 
 :::: tabs
 

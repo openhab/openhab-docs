@@ -45,21 +45,21 @@ Mockito lets us verify interactions between supporting classes and the unit unde
 Please read the very short but expressive introduction on the [<https://site.mockito.org/> Mockito homepage] in addition to this small example:
 
 ```java
+@ExtendWith(MockitoExtension.class)
 public class MyBindingHandlerTest {
 
     private ThingHandler handler;
 
-    private @Mock ThingHandlerCallback callback;
-    private @Mock Thing thing;
+    private @Mock ThingHandlerCallback callbackMock;
+    private @Mock Thing thingMock;
 
-    @Before
+    @BeforeEach
     public void setUp() {
-        initMocks(this);
-        handler = new MyBindingHandler(thing);
-        handler.setCallback(callback);
+        handler = new MyBindingHandler(thingMock);
+        handler.setCallback(callbackMock);
     }
 
-    @After
+    @AfterEach
     public void tearDown() {
         // Free any resources, like open database connections, files etc.
         handler.dispose();
@@ -67,13 +67,13 @@ public class MyBindingHandlerTest {
 
     @Test
     public void initializeShouldCallTheCallback() {
-        // we expect the handler#initialize method to call the callback during execution and
-        // pass it the thing and a ThingStatusInfo object containing the ThingStatus of the thing.
+        // we expect the handler#initialize method to call the callbackMock during execution and
+        // pass it the thingMock and a ThingStatusInfo object containing the ThingStatus of the thingMock.
         handler.initialize();
 
-        // verify the interaction with the callback.
-        // Check that the ThingStatusInfo given as second parameter to the callback was build with the ONLINE status:
-        verify(callback).statusUpdated(eq(thing), argThat(arg -> arg.getStatus().equals(ThingStatus.ONLINE)));
+        // verify the interaction with the callbackMock.
+        // Check that the ThingStatusInfo given as second parameter to the callbackMock was build with the ONLINE status:
+        verify(callbackMock).statusUpdated(eq(thingMock), argThat(arg -> arg.getStatus().equals(ThingStatus.ONLINE)));
     }
 
 }
@@ -86,11 +86,16 @@ In general Hamcrest should be favoured over JUnit as for the more advanced and d
 
 ```java
 import static org.hamcrest.CoreMatchers.*;
+import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.collection.IsCollectionWithSize.hasSize;
-import static org.hamcrest.core.IsCollectionContaining.hasItem;
-import static org.hamcrest.core.IsInstanceOf.instanceOf;
-import static org.hamcrest.core.StringContains.containsString;
+import static org.junit.jupiter.api.Assertions.*;
+
+import java.util.List;
+
+import org.junit.jupiter.api.Test;
+
 ...
+
 @Test
 public void assertionsToBeUsed() {
     // use JUnit assertions for very basic checks:
@@ -104,8 +109,8 @@ public void assertionsToBeUsed() {
     assertThat("myString", is("myString"));
     assertThat("myString", is(instanceOf(String.class)));
     assertThat("myString", containsString("yS"));
-    assertThat(Arrays.asList("one", "two"), hasItem("two"));
-    assertThat(Arrays.asList("one", "two"), hasSize(2));
+    assertThat(List.of("one", "two"), hasItem("two"));
+    assertThat(List.of("one", "two"), hasSize(2));
 
     // also valuable for null/boolean checks as the error output is advanced:
     assertThat(null, is(nullValue()));
@@ -127,7 +132,7 @@ A .bndrun file must be provided with your integration test to configure the runt
 Those kind of tests should be used sparingly as the setup is more complex and introduces execution overhead.
 Most situations can be tested using mocks (see [Mockito](#mockito)) and unit tests.
 
-From maven one can execute the test with `mvn install` command from the folder of the test fragment bundle.
+From Maven one can execute the test with `mvn install` command from the folder of the test fragment bundle.
 
 ### Example
 
@@ -137,60 +142,60 @@ The following JUnit/Mockito test class shows how to test the `ItemRegistry` by p
 
 ```java
 import static org.hamcrest.CoreMatchers.*;
+import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.collection.IsCollectionWithSize.hasSize;
-import static org.junit.Assert.assertThat;
 import static org.mockito.Mockito.when;
-import static org.mockito.MockitoAnnotations.initMocks;
 
-import java.util.ArrayList;
 import java.util.List;
 
-import org.junit.Before;
-import org.junit.Test;
+import org.eclipse.jdt.annotation.NonNullByDefault;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mock;
+import org.mockito.junit.jupiter.MockitoExtension;
 import org.openhab.core.items.Item;
 import org.openhab.core.items.ItemProvider;
 import org.openhab.core.items.ItemRegistry;
 import org.openhab.core.library.items.SwitchItem;
-import org.openhab.test.java.JavaOSGiTest;
+import org.openhab.core.test.java.JavaOSGiTest;
 
-import com.google.common.collect.Lists;
-
+@NonNullByDefault
+@ExtendWith(MockitoExtension.class)
 public class JavaItemRegistryOSGiTest extends JavaOSGiTest {
 
-    private static String ITEM_NAME = "switchItem";
-    private ItemRegistry itemRegistry;
+    private static final String ITEM_NAME = "switchItem";
 
-    private @Mock ItemProvider itemProvider;
+    private @Mock @NonNullByDefault({}) ItemProvider itemProviderMock;
 
-    @Before
+    private @NonNullByDefault({}) ItemRegistry itemRegistry;
+
+    @BeforeEach
     public void setUp() {
-        initMocks(this);
         itemRegistry = getService(ItemRegistry.class);
-        when(itemProvider.getAll()).thenReturn(Lists.newArrayList(new SwitchItem(ITEM_NAME)));
+        when(itemProviderMock.getAll()).thenReturn(List.of(new SwitchItem(ITEM_NAME)));
     }
 
     @Test
     public void getItemsShouldReturnItemsFromRegisteredItemProvider() {
         assertThat(itemRegistry.getItems(), hasSize(0));
 
-        registerService(itemProvider);
+        registerService(itemProviderMock);
 
-        List<Item> items = new ArrayList<>(itemRegistry.getItems());
+        List<Item> items = List.copyOf(itemRegistry.getItems());
         assertThat(items, hasSize(1));
         assertThat(items.get(0).getName(), is(equalTo(ITEM_NAME)));
 
-        unregisterService(itemProvider);
+        unregisterService(itemProviderMock);
 
         assertThat(itemRegistry.getItems(), hasSize(0));
     }
 }
 ```
 
-In the `setUp` method all mocks (annotated with @Mock) are created.
-This is `itemProvider` for this test.
-Then the `ItemRegistry` OSGi service is retrieved through the method `getService` from the base class `OSGiTest` and assigned to a private variable.
-Then the `ItemProvider` mock is configured to return a list with one SwitchItem when `itemProvider#getAll` gets called.
+Mocks annotated with @Mock are automatically created and injected into the class when annotating a class with `@ExtendWith(MockitoExtension.class)`.
+In the `setUp` method the `ItemRegistry` OSGi service is retrieved through the method `getService` from the base class `OSGiTest` and assigned to a private variable.
+Then the `ItemProvider` mock is configured to return a list with one SwitchItem when `itemProviderMock.getAll` gets called.
 The test method first checks that the registry delivers no items by default.
 Afterwards it registers the mocked `ItemProvider` as OSGi service with the method `registerService` and checks if the `ItemRegistry` returns one item now.
 At the end the mock is unregistered again.
@@ -199,7 +204,7 @@ At the end the mock is unregistered again.
 
 ### Failed to execute goal org.eclipse.tycho:tycho-surefire-plugin:XXX:test (default-test) on project XXX: No tests found
 
-Maven might report this error when building your project, it means that the maven surefire plugin cannot find any tests to execute, please check the following details:
+Maven might report this error when building your project, it means that the Maven surefire plugin cannot find any tests to execute, please check the following details:
 
 - Did you add any test classes with a class-name which ends with `Test` (singular)
 - Did you annotate any methods with `@Test`
