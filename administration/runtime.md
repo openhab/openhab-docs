@@ -117,7 +117,6 @@ Usage: openhab:send <item> <command> - sends a command for an item
 | `openhab:firmware status <thingUID>`                    | lists the firmware status for a thing           |
 | `openhab:firmware update <thingUID> <firmware version>` | updates the firmware for a thing                |
 
-
 ### Users
 
 | Command                                                 | Description                                                                                |
