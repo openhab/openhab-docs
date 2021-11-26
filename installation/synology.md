@@ -63,6 +63,7 @@ To use Docker, you need to install the Docker app from the Synology Web GUI.
 - Go to "Image" and click on the openhab/openhab image and click "Add".
 
 Here comes the part where you really notice the difference between the Synology OS and Linux.
+
 - On the create container window fill a name for the container (space and some special characters are not allowed).
 - Next enable "Execute container using high privilege".
 ::: tip Note
@@ -121,7 +122,7 @@ In here you see the name of the container left from the black field and if you p
 
 If you click on "Create' it creates a bash terminal, click on bash and you'll have access to a shell in the container.
 
-By now the container is up and running, goto "http://[your-NAS-ip-or-host-name]:8080" and the welcome to openHAB.
+By now the container is up and running, goto `http://[your-NAS-ip-or-host-name]:8080` and the welcome to openHAB.
 If you use p.e. a Z-Wave dongle on ttyACM0 you can now add the Z-Wave binding. Once openHAB has been configured under the binding Z-Wave add a controller manually and change the port to /dev/ttyACM0. The Z-Wave controller gets online and you will discover the Z-Wave devices. If this is not working, please verify you enabled high privilege.
 
 ::: tip Note
