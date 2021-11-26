@@ -5,7 +5,7 @@ title: Synology DiskStation
 
 # Synology DiskStation DSM 7.0 and higher
 
-The [DiskStation by Synology](https://www.synology.com/en-us/dsm) is a famous NAS server solution for your home, allowing the installation of additional packages. 
+The [DiskStation by Synology](https://www.synology.com/en-us/dsm) is a famous NAS server solution for your home, allowing the installation of additional packages.
 For versions of DSM before 7.0 please refer to the second half of this page.
 
 ## Prerequisite - prepare the Synology OS for openHAB
@@ -46,11 +46,11 @@ In this case we need the 1032 as the user and the 65539 as the group. Write them
 
 ## Docker
 
-DSM 7 does not longer support Java 11 directly and therefor openHAB has to run in a Docker container. 
-And that also makes the installation easier to maintain. 
+DSM 7 does not longer support Java 11 directly and therefor openHAB has to run in a Docker container.
+And that also makes the installation easier to maintain.
 It works out of the box a bit different then the normal Docker installation as described in de openHAB documententation.
-Docker is a containerization platform and is used to run lightweight containers. 
-These containers require a very little amount of memory and system resources to run. 
+Docker is a containerization platform and is used to run lightweight containers.
+These containers require a very little amount of memory and system resources to run.
 Synology NAS has official support for Docker.
 To use Docker, you need to install the Docker app from the Synology Web GUI.
 
@@ -62,15 +62,15 @@ To use Docker, you need to install the Docker app from the Synology Web GUI.
 - Choose the "openhab/openhab" image and click "Download". Select "latest" since that is the latest stable version of openHAB. The Docker image is added to "Image"
 - Go to "Image" and click on the openhab/openhab image and click "Add".
 
-Here comes the part where you really notice the difference between the Synology OS and Linux. 
-- On the create container window fill a name for the container (space and some special characters are not allowed). 
+Here comes the part where you really notice the difference between the Synology OS and Linux.
+- On the create container window fill a name for the container (space and some special characters are not allowed).
 - Next enable "Execute container using high privilege".
-::: tip Note 
-This is needed for the host resources like '/dev/ttyACM0' for Z-Wave binding, the TCP stack for Network Binding, etc. 
-It will run the Docker container as root, the application in the container is still limited. 
+::: tip Note
+This is needed for the host resources like '/dev/ttyACM0' for Z-Wave binding, the TCP stack for Network Binding, etc.
+It will run the Docker container as root, the application in the container is still limited.
 Several issues are already raised for this at Synology.
 :::
-- Enable the resource limitation, CPU on Med and Memory limit on 2048MB. 
+- Enable the resource limitation, CPU on Med and Memory limit on 2048MB.
 You can increase this in the future if you like.
 - Click on "Advanced"
 
@@ -81,9 +81,9 @@ You can increase this in the future if you like.
 ### Volume
 
 - Click on "Add Folder" and "Create Folder" under the folder "docker" with the name "openHAB".
-- Create the folder "userdata" in the folder "openHAB" 
-- Create the folder "conf" in the folder "openHAB" 
-- Create the folder "addons" in the folder "openHAB" 
+- Create the folder "userdata" in the folder "openHAB"
+- Create the folder "conf" in the folder "openHAB"
+- Create the folder "addons" in the folder "openHAB"
 - Now select "userdata" and click on "Select"
 - Change the mount path to "/openhab/userdata" this will connect the Docker containers path "/openhab/userdata" to your Synology's local path "docker/openHAB/userdata" where you can reach it from outside the Docker.
 - Click on "Add Folder", select "docker/openHAB/conf", click on select and change the mount path to "/openhab/conf".
@@ -107,16 +107,16 @@ You can increase this in the future if you like.
 - In the same list locate "USER_ID" and fill the id of the user openhab, in this tutorial 1032.
 - Click on "Apply".
 
-### Summary 
+### Summary
 
 Here you can check if all changes where set correctly for your openHAB container, enable "Run this container after the wizard is finished" and press "Done".
-openHAB is now running on your NAS. 
+openHAB is now running on your NAS.
 Give it a few minutes to start up.
 
 ## Shells
 
-If you select the container running and press "Details" you will end up on  a windows where you get more information on this running container. 
-One particular menu item you have to check is "Terminal". 
+If you select the container running and press "Details" you will end up on  a windows where you get more information on this running container.
+One particular menu item you have to check is "Terminal".
 In here you see the name of the container left from the black field and if you press that you'll get the Karaf terminal for openHAB.
 
 If you click on "Create' it creates a bash terminal, click on bash and you'll have access to a shell in the container.
@@ -132,7 +132,7 @@ The device path (`/dev/ttyACM0`) or container name (`openhab`) could be differen
 
 # Older Synology DiskStations till DSM 6
 
-The [DiskStation by Synology](https://www.synology.com/en-us/dsm) is a famous NAS server solution for your home, allowing the installation of additional packages. 
+The [DiskStation by Synology](https://www.synology.com/en-us/dsm) is a famous NAS server solution for your home, allowing the installation of additional packages.
 We are proud to be able to provide an [openHAB Synology package](https://github.com/openhab/openhab-syno-spk).
 
 ## Prerequisite - Install Java
@@ -195,7 +195,7 @@ The openHAB log files can be found here:
 
 From Version openHAB-2.2.0.006 the SPK generates two log files located at `/var/log/`.
 
-The first log file `openHAB-install.log` will be generated during the installation. 
+The first log file `openHAB-install.log` will be generated during the installation.
 If you can't install the openHAB SPK, please have a look inside the file.
 
 The second log `openHAB-start-stop.log` will be generated by starting and stopping openHAB inside the Package Manager.
