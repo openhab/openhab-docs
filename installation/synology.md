@@ -16,24 +16,32 @@ For the use of openHAB you need some preparation steps.
 For this create a ssh session into your NAS.
 For reference how to do that: I found this [youtube tutorial](https://www.youtube.com/watch?v=BCCIMRbAUp8).
 When you are in the secured shell first thing to do is to create the user openhab.
+
 ```bash
 sudo synouser --add openhab habopen
 sudo synogroup --add openhab openhab
 ```
+
 If you are going to use an USB like a Z-Wave dongle add another group for openhab and change the port access for ttyACM0 if that is the port for your USB device
+
 ```bash
 sudo synogroup --add dialout openhab
 sudo chown root:dialout /dev/ttyACM0
 sudo chmod g+rw /dev/ttyACM0
 ```
+
 Then for installation purposes run the following command:
+
 ```bash
 sudo id openhab
 ```
+
 The result will something like
+
 ```bash
 uid=1032(openhab) gid=100(users) groups=100(users),65537(dialout),65539(openhab)
 ```
+
 In this case we need the 1032 as the user and the 65539 as the group. Write them down.
 
 ## Docker
@@ -56,7 +64,7 @@ To use Docker, you need to install the Docker app from the Synology Web GUI.
 
 Here comes the part where you really notice the difference between the Synology OS and Linux. 
 - On the create container window fill a name for the container (space and some special characters are not allowed). 
-- Next enable "Execute container using high privilege". 
+- Next enable "Execute container using high privilege".
 ::: tip Note 
 This is needed for the host resources like '/dev/ttyACM0' for Z-Wave binding, the TCP stack for Network Binding, etc. 
 It will run the Docker container as root, the application in the container is still limited. 
