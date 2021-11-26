@@ -5,6 +5,7 @@ title: Nuvo Grand Concerto & Essentia G - Bindings
 type: binding
 description: "This binding can be used to control the Nuvo Grand Concerto or Essentia G whole house multi-zone amplifier."
 since: 3x
+logo: images/addons/nuvo.png
 install: auto
 ---
 
