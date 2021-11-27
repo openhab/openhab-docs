@@ -309,7 +309,6 @@ This type presents a value as a user-adjustable control which slides from left (
     This parameter defines the interval in milliseconds for sending increase/decrease requests.
 
 - `switchSupport` is a parameter without an assignment.
-  - Classic UI: If specified, a short press on the "up" or "down" button switches the item "on" or "off" (0 or 100) respectively.
   - Android app: If specified, a short press on the item row (except the slider itself) switches the item "on" or "off".
   - This parameter has no effect in other UIs.
 
