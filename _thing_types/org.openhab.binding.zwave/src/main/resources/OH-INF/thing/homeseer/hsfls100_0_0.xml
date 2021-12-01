@@ -122,7 +122,8 @@ Sets the interval of periodic lux level report to the controller<br /> <h1>Overv
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_4_1" type="integer" groupName="configuration">
+      <parameter name="config_4_1" type="integer" groupName="configuration"
+                 min="0" max="1">
         <label>4: Basic Report</label>
         <description><![CDATA[
 <br /> <h1>Overview</h1><p><br /></p>
@@ -132,7 +133,6 @@ Sets the interval of periodic lux level report to the controller<br /> <h1>Overv
           <option value="0">Do not send Basic Report</option>
           <option value="1">Send Basic Report (default)</option>
         </options>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

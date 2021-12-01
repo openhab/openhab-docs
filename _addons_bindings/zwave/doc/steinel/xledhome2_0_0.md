@@ -17,33 +17,26 @@ The XLED Home 2 supports routing. This allows the device to communicate using ot
 
 ## Overview
 
-–  Sensor-switched floodlight suitable for wall  
-mounting outdoors.  
-–  Fully swivelling LED panel and moveable sensor.  
-Movement triggers lights, alarms and many other  
-devices. With the fully swivelling panel, the flood-  
-light can be used at home to provide perfect illumi-  
-nation for lighting up property, or commercially for  
-lighting up business premises. In conjunction with  
-the opal cover, this extremely efficient technology  
-provides wide-area lighting
+  * Sensor-switched floodlight suitable for wall mounting outdoors.
+  * Fully swivelling LED panel and moveable sensor. Movement triggers lights, alarms and many other devices. With the fully swivelling panel, the floodlight can be used at home to provide perfect illumination for lighting up property, or commercially for lighting up business premises. In conjunction with the opal cover, this extremely efficient technology provides wide-area lighting
 
 ### Inclusion Information
 
-1. Set the Z-Wave controller to inclusion mode.  
-2. Press the link key once brieﬂy to set the device to inclusion mode.  
-3. Turn the knob from 0 to SET for max. 5 seconds and back. (SKNOB)  
-4. Press the link key 3x brieﬂy to set the device into inclusion mode.  
-(STOGGLE)
+  1. Set the Z-Wave controller to inclusion mode.
+  2. Press the link key once brieﬂy to set the device to inclusion mode.
+  3. Turn the knob from 0 to SET for max. 5 seconds and back. (SKNOB)
+  4. Press the link key 3x brieﬂy to set the device into inclusion mode (STOGGLE)
 
 ### Exclusion Information
 
-1. Set the Z-Wave controller to exclusion mode.  
-2. Press the link key once brieﬂy to set the device to exclusion  
-mode.  
-3. Turn the knob from 0 to SET for max. 5 seconds and back. (SKNOB)  
-4. Press the link key 3x brieﬂy to set the device into exclusion mode.  
-(STOGGLE)
+  1. Set the Z-Wave controller to exclusion mode.
+  2. Press the link key once brieﬂy to set the device to exclusion mode.
+  3. Turn the knob from 0 to SET for max. 5 seconds and back. (SKNOB)
+  4. Press the link key 3x brieﬂy to set the device into exclusion mode (STOGGLE)
+
+### General Usage Information
+
+
 
 ## Channels
 

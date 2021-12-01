@@ -52,15 +52,21 @@ Outdoor Dimmer Plug<br /> <h1>Overview</h1>The Minoston MP22ZD is a 400W Loading
                  min="0" max="3">
         <label>2: Status LED</label>
         <description><![CDATA[
-Choose if the LED should follow the output, oppose the output, or be always on or off.<br /> <h1>Overview</h1><p>Choose if the LED status light on the device should follow the output, oppose the output, or be always on or off.</p>
+Choose if the LED should follow the output, oppose the output, or be always on or off.<br /> <h1>Overview</h1><p>Choose if the LED status light on the device should follow the output, oppose the output, or be always on or off. (0=Oppose, 1=Follow, 2=Always Off, 3=Always On)<br /></p>
         ]]></description>
         <default>0</default>
+        <options>
+          <option value="0">Oppose Switch</option>
+          <option value="1">Follow Switch</option>
+          <option value="2">Always Off</option>
+          <option value="3">Always On</option>
+        </options>
       </parameter>
 
       <parameter name="config_4_4" type="integer" groupName="configuration">
         <label>4: Auto Turn-Off Timer</label>
         <description><![CDATA[
-Turn off the switch automatically after the switch turns on.<br /> <h1>Overview</h1><p><br /></p>
+Turn off the switch automatically after a set time from the switch turning on.<br /> <h1>Overview</h1><p>Turn off the switch automatically after a set time from the switch turning on.  Value is specified in minutes. (0=Disabled)<br /></p>
         ]]></description>
         <default>0</default>
         <options>
@@ -72,7 +78,7 @@ Turn off the switch automatically after the switch turns on.<br /> <h1>Overview<
       <parameter name="config_6_4" type="integer" groupName="configuration">
         <label>6: Auto Turn-On Timer</label>
         <description><![CDATA[
-Turn on the switch automatically after the switch turns off.<br /> <h1>Overview</h1><p><br /></p>
+Turn on the switch automatically after a set time from the switch turning off.<br /> <h1>Overview</h1><p>Turn on the switch automatically after a set time from the switch turning off. Value is specified in minutes. (0=Disabled)</p>
         ]]></description>
         <default>0</default>
         <options>
@@ -84,16 +90,24 @@ Turn on the switch automatically after the switch turns off.<br /> <h1>Overview<
       <parameter name="config_7_1" type="integer" groupName="configuration"
                  min="1" max="10">
         <label>7: Night Light Set</label>
-        <description>Brightness for the light when you want to make it a night light</description>
+        <description><![CDATA[
+Brightness for the light when you want to make it a night light<br /> <h1>Overview</h1><p>Brightness for the light when you want to make it a night light.  Value is specified in units of percent brightness.<br /></p>
+        ]]></description>
         <default>2</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_8_1" type="integer" groupName="configuration"
-                 min="0" max="2">
+      <parameter name="config_8_1" type="integer" groupName="configuration">
         <label>8: Restore State After Power Failure</label>
-        <description>Sets desired output state after power failure</description>
+        <description><![CDATA[
+Sets desired output state after power failure<br /> <h1>Overview</h1><p>Sets desired output state after power failure. (0=Off, 1=On, 2=Last)<br /></p>
+        ]]></description>
         <default>2</default>
+        <options>
+          <option value="0">Off</option>
+          <option value="1">On</option>
+          <option value="2">Last</option>
+        </options>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
@@ -101,7 +115,7 @@ Turn on the switch automatically after the switch turns off.<br /> <h1>Overview<
                  min="1" max="10">
         <label>10: Dimmer Speed</label>
         <description><![CDATA[
-Seconds to change brightness 100%<br /> <h1>Overview</h1><p>Only applies under certain conditions, such as when controlled by holding the device button.<br /></p>
+Seconds to change brightness by 100%<br /> <h1>Overview</h1><p>Seconds to change brightness by 100%. Only applies under certain conditions, such as when controlled by holding the device button.<br /></p>
         ]]></description>
         <default>4</default>
         <limitToOptions>false</limitToOptions>

@@ -729,14 +729,18 @@ Items that represent a channel. It is important to note only well-known channel 
   * Number
   * String
 * Supported metadata parameters:
-  * channelMappings=`<channels>`
-    * each mapping formatted as `<channelName>=<channelNumber>` (e.g. `channelMappings="CBS=2,NBC=4,ABC=7,PBS=13"`)
-    * allows channel requests by name and incrementally otherwise only channel requests by number are supported if not defined
-    * defaults to no mappings
+  * channelMappings=`<mappings>`
+    * each mapping formatted as `<channelNumber>=<channelName>` (e.g. `channelMappings="2=CBS,4=NBC,7=ABC,13=PBS"`)
+    * allows channel requests by name otherwise only channel requests by number are supported if not defined
+    * defaults to item state description options `channelMappings="value1=label1,..."`, if defined, otherwise no mappings
+  * range=`<range>`
+    * range formatted as `<minValue>:<maxValue>` (e.g. `range="100:499"`)
+    * defaults to `"1:9999"`
 * Utterance examples:
   * *Alexa, change the channel to `<channel number>` on the `<device name>`.*
   * *Alexa, change the channel to `<channel name>` on the `<device name>`.*
   * *Alexa, next channel on the `<device name>`.*
+  * *Alexa, previous channel on the `<device name>`.*
   * *Alexa, channel up on the `<device name>`.*
   * *Alexa, channel down on the `<device name>`.*
 
@@ -780,14 +784,14 @@ Items that represent a volume level.
   * increment=`<number>`
     * defaults to 10 (standard value provided by Alexa)
   * stepSpeaker=`<boolean>` (Number only)
-    * set to true for volume controlled in steps only and its state cannot be tracked by openHAB.
+    * set to true for volume controlled in incremental steps only and its state cannot be tracked by openHAB.
     * defaults to false
 * Utterance examples:
-  * *Alexa, set the volume of `<device name>` to 50.*
+  * *Alexa, set the volume of `<device name>` to 50.* (if not step speaker)
   * *Alexa, turn the volume up on `<device name>`.*
   * *Alexa, turn the volume down on `<device name>` by 20.*
-  * *Alexa, lower the volume on the `<device name>`.* (Step-speaker)
-  * *Alexa, volume up 20 on the `<device name>`.* (Step-speaker)
+  * *Alexa, increase the volume on the `<device name>`.*
+  * *Alexa, lower the volume on the `<device name>` by 20.*
 
 <a name="speaker-muted"></a>
 <a name="stepspeaker-muted"></a>
@@ -820,8 +824,9 @@ Items that represent the bass equalizer band range supported by an audio system.
   * Dimmer
   * Number
 * Supported metadata parameters:
-  * range=`<minValue:maxValue>`
-    * range values should be synced across different bands if configured since same values used for all bands due to Alexa restriction.
+  * range=`<range>`
+    * range formatted as `<minValue>:<maxValue>`
+    * should be synced across different bands if configured since same values used for all bands due to Alexa restriction.
     * defaults to `"0:100"` for Dimmer, otherwise `"-10:10"` for Number
   * defaultLevel=`<number>`
     * defaults to range midpoint
@@ -1426,7 +1431,7 @@ Items that represent a target setpoint for a thermostat.
   * scale=`<scale>`
     * Celsius or Fahrenheit
     * defaults to [item unit of measurement](#item-unit-of-measurement), otherwise Celsius
-  * setpointRange=`<minValue:maxValue>`
+  * setpointRange=`<range>`
     * range formatted as `<minValue>:<maxValue>` (e.g. `setpointRange="60:90"`)
     * defaults to 4°C -> 32°C or 40°F -> 90°F
 * Utterance examples:

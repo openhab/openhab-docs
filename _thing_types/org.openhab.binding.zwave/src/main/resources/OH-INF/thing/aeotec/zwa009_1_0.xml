@@ -5,7 +5,7 @@
   xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
                       https://openhab.org/schemas/thing-description/v1.0.0">
 
-  <thing-type id="aeotec_zwa009_00_000" listed="false">
+  <thing-type id="aeotec_zwa009_01_000" listed="false">
     <label>ZWA009 Temperature and Humidity Sensor</label>
     <description><![CDATA[
 Temperature and Humidity Sensor<br /> <h1>Overview</h1><p>Small sensor that offers monitoring of temperature, humidity, dew and mold. Uses a CR2477 battery with up to 2 years' lifespan.</p> <br /> <h2>Inclusion Information</h2><p>Triple click the intrusion (button on the front) button.<br /></p> <br /> <h2>Exclusion Information</h2><p>Triple click the intrusion (button on the front) button.</p> <br /> <h2>Wakeup Information</h2><p>Click the intrusion (button on the front) button.<br /></p>
@@ -57,6 +57,8 @@ Temperature and Humidity Sensor<br /> <h1>Overview</h1><p>Small sensor that offe
       <property name="modelId">ZWA009</property>
       <property name="manufacturerId">0371</property>
       <property name="manufacturerRef">0002:0009,0102:0009,0202:0009</property>
+      <property name="versionMin">1.0</property>
+      <property name="versionMax">1.255</property>
       <property name="dbReference">1336</property>
       <property name="defaultAssociations">1</property>
     </properties>

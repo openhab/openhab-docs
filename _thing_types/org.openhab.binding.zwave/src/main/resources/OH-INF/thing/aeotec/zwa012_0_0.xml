@@ -1,0 +1,418 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="aeotec_zwa012_00_000" listed="false">
+    <label>ZWA012 Door/Window Sensor 7 Pro</label>
+    <description><![CDATA[
+Door/Window Sensor 7 Pro<br /> <h1>Overview</h1><p>Aeotec Door / Window Sensor 7 was developed to record the condition of doors or windows with Z-Wave Plus. It is powered by Aeotec’s Gen7 technology and S2 framework. This Pro version adds options for a tilt sensor and terminals for use as a dry contact sensor.<br /></p> <br /> <h2>Inclusion Information</h2><p>Set your Z-Wave controller into pairing mode.</p><p>Triple-click the tamper switch on Door / Window Sensor 7 - this begins to blink five times</p><p>After completion of the inclusion, it lights up once before it goes out.</p><p>Close the cover</p><p>Note: Closing the cover is important! If the housing is not closed, the sensor is permanently awake. Only when the cover is closed does the sensor change to the idle state.</p> <br /> <h2>Exclusion Information</h2><p> Set your Z-Wave controller into unpair mode.</p><p> Triple-click the tamper switch on Door / Window Sensor 7 within 1.5 seconds - this will cause the LED to blink five times.</p><p> After a successful exclusion, it will light up its LED for 2 seconds then deactivate.</p> <br /> <h2>Wakeup Information</h2><p> Wake up the device by removing the cover. </p><p> Then hit the tamper switch once.</p>
+    ]]></description>
+    <category>Battery</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="sensor_binary" typeId="sensor_binary">
+        <label>Binary Sensor</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SENSOR_BINARY</property>
+        </properties>
+      </channel>
+      <channel id="scene_number" typeId="scene_number">
+        <label>Scene Number</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_CENTRAL_SCENE</property>
+        </properties>
+      </channel>
+      <channel id="alarm_access" typeId="alarm_access">
+        <label>Alarm (access)</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=ACCESS_CONTROL</property>
+        </properties>
+      </channel>
+      <channel id="alarm_burglar" typeId="alarm_burglar">
+        <label>Alarm (burglar)</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=BURGLAR</property>
+        </properties>
+      </channel>
+      <channel id="battery-level" typeId="system.battery-level">
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_BATTERY</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Aeotec Limited</property>
+      <property name="modelId">ZWA012</property>
+      <property name="manufacturerId">0371</property>
+      <property name="manufacturerRef">0102:000C</property>
+      <property name="dbReference">1390</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_1_1" type="integer" groupName="configuration"
+                 min="0" max="1">
+        <label>1: Operation Mode</label>
+        <description><![CDATA[
+Magnet or dry contact sensor<br /> <h1>Overview</h1><p>This parameter allows switching between internal sensor and external sensor.</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Magnet Sensor</option>
+          <option value="1">External / Dry Contact Sensor</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_2_1" type="integer" groupName="configuration"
+                 min="0" max="3">
+        <label>2: Dry Contact Operation Mode</label>
+        <description><![CDATA[
+Dry contact operation mode<br /> <h1>Overview</h1><p>Parameter defines how dry contact will operate with the sensor or switch that is connected to the dry contact terminals.</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">NO Toggle / Follow state will follow the input of the dry contact term</option>
+          <option value="1">NC Toggle / Follow state will follow the input of the dry contact term</option>
+          <option value="2">NO save state will allow state of sensor to toggle OPEN/CLOSE based on</option>
+          <option value="3">NC save state will allow state of sensor to toggle OPEN/CLOSE based on</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_3_1" type="integer" groupName="configuration"
+                 min="0" max="1">
+        <label>3: Door/Window State</label>
+        <description><![CDATA[
+Sensor state when the magnet is close to the sensor<br /> <h1>Overview</h1><p>This parameter allows setting Door / Window Sensor 7 state when the magnet is close to the sensor.<br /></p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Closed</option>
+          <option value="1">Open</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_4_1" type="integer" groupName="configuration">
+        <label>4: LED</label>
+        <description><![CDATA[
+Defines when the LED will indicate events<br /> <h1>Overview</h1><p>This parameter defines events indicated by the visual LED indicator. Disabling events might extend battery life.</p><p>Can be summed, e.g. a setting of 6 will disable open/close but enable wake up and tamper.</p>
+        ]]></description>
+        <default>7</default>
+        <options>
+          <option value="0">No indications</option>
+          <option value="1">Indicate open and close status change</option>
+          <option value="2">Indicate wake up</option>
+          <option value="4">Indicate device tampering</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_5_1" type="integer" groupName="configuration"
+                 min="0" max="1">
+        <label>5: Range Test</label>
+        <description><![CDATA[
+Range test<br /> <h1>Overview</h1><p>Allows enabling the activation of Z-Wave range test with double click of a Tamper Switch 2.<br /></p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Disable</option>
+          <option value="1">Enable</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_6_1" type="integer" groupName="configuration"
+                 min="0" max="2">
+        <label>6: Group 2 Association Triggers</label>
+        <description><![CDATA[
+Defines events that result in sending On/Off commands to devices added to the 2nd Association Group<br /> <h1>Overview</h1><p>This parameter defines events that result in sending On/Off commands to devices added to the 2nd Association Group. These commands are sent alternately to switch the devices On and Off. Commands represent the values of BASIC SET command frames. This parameter is inactive in external dry-contact mode (parameter “Operation Mode” set to 1).<br /></p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Switch after opening and closing</option>
+          <option value="1">Switch after opening</option>
+          <option value="2">Switch after closing</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_7_1" type="integer" groupName="configuration"
+                 min="0" max="2">
+        <label>7: Group 2 Commands</label>
+        <description><![CDATA[
+Commands sent to associated devices on Group 2<br /> <h1>Overview</h1><p>Command frames sent to devices added to the 2nd association group.<br /></p>
+        ]]></description>
+        <default>2</default>
+        <options>
+          <option value="0">On</option>
+          <option value="1">Off</option>
+          <option value="2">On and Off</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_8_1" type="integer" groupName="configuration">
+        <label>8: Group 2 On</label>
+        <description><![CDATA[
+Value of Group 2 On command<br /> <h1>Overview</h1><p>The value of 0 turns OFF the device, 255 turns it On. In the case of associating the Dimmer or Roller Shutter module, values 0-99 can be sent.<br /></p>
+        ]]></description>
+        <default>255</default>
+        <options>
+          <option value="0">Off</option>
+          <option value="255">On</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_9_1" type="integer" groupName="configuration">
+        <label>9: Group 2 Off</label>
+        <description><![CDATA[
+Value of Group 2 Off command<br /> <h1>Overview</h1><p>The value of 0 turns OFF the device, 255 turns it On. In the case of associating the Dimmer or Roller Shutter module, values 0-99 can be sent.<br /></p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Off</option>
+          <option value="255">On</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_10_2" type="integer" groupName="configuration">
+        <label>10: Group 2 On Delay</label>
+        <description><![CDATA[
+Time delay of On command from Group 2<br /> <h1>Overview</h1><p>The time period after which On command frame will be sent.<br /></p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">No delay</option>
+          <option value="32400">32400 seconds delay</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_11_2" type="integer" groupName="configuration">
+        <label>11: Group 2 Off Delay</label>
+        <description><![CDATA[
+Time delay of Off command from Group 2<br /> <h1>Overview</h1><p>The time period after which the OFF command frame will be sent.<br /></p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">No delay</option>
+          <option value="32400">32400 seconds delay</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_12_2" type="integer" groupName="configuration">
+        <label>12: Tamper Cancellation Delay</label>
+        <description><![CDATA[
+Delay of tamper alarm cancellation<br /> <h1>Overview</h1><p>The time period after which a tamper alarm will be canceled.<br /></p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">No delay</option>
+          <option value="32400">32400 seconds delay</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_13_1" type="integer" groupName="configuration"
+                 min="0" max="1">
+        <label>13: Tamper Cancellation Reporting</label>
+        <description><![CDATA[
+Reporting tamper alarm cancellation<br /> <h1>Overview</h1><p>Reporting cancellation of tamper alarm to the controller and 3rd Association Group.<br /></p>
+        ]]></description>
+        <default>1</default>
+        <options>
+          <option value="0">Do not send tamper cancellation report</option>
+          <option value="1">Send tamper cancellation report</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_14_1" type="integer" groupName="configuration"
+                 min="0" max="1">
+        <label>14: Central Scene</label>
+        <description><![CDATA[
+Central scene event functionality<br /> <h1>Overview</h1><p>This parameter enables/disables the central scene function.<br /></p>
+        ]]></description>
+        <default>1</default>
+        <options>
+          <option value="0">Disabled</option>
+          <option value="1">Enabled</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_15_1" type="integer" groupName="configuration"
+                 min="0" max="1">
+        <label>15: Tilt Sensor</label>
+        <description><![CDATA[
+Tilt sensor functionality<br /> <h1>Overview</h1><p>This parameter enables/disables the tilt function.<br /></p>
+        ]]></description>
+        <default>1</default>
+        <options>
+          <option value="0">Disabled</option>
+          <option value="1">Enabled</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_16_1" type="integer" groupName="configuration"
+                 min="0" max="1">
+        <label>16: Tilt Sensor State</label>
+        <description><![CDATA[
+Tilt sensor state<br /> <h1>Overview</h1><p>This parameter allows to set the state of the door/window when the tilt is in an OFF state.<br /></p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">OFF when sensor is vertical</option>
+          <option value="1">ON when sensor is vertical</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_17_1" type="integer" groupName="configuration"
+                 min="0" max="2">
+        <label>17: Group 5 Association Triggers</label>
+        <description><![CDATA[
+5th Association Group trigger<br /> <h1>Overview</h1><p>This parameter defines the status of the magnet switch that causes sending a BASIC command to all devices of Association Group 5.<br /></p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Switch after Open and Close</option>
+          <option value="1">Switch after Open</option>
+          <option value="2">Switch after Close</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_18_1" type="integer" groupName="configuration"
+                 min="0" max="2">
+        <label>18: Group 5 Commands</label>
+        <description><![CDATA[
+Command sent to devices of Association Group 5<br /> <h1>Overview</h1><p>This parameter defines which commands is sent to 5th Association Group.</p>
+        ]]></description>
+        <default>2</default>
+        <options>
+          <option value="0">On</option>
+          <option value="1">Off</option>
+          <option value="2">On and Off</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_19_1" type="integer" groupName="configuration">
+        <label>19: Group 5 On</label>
+        <description><![CDATA[
+Value of Group 5 On command<br /> <h1>Overview</h1><p>This is the BASIC command value sent in case of On event. 0 is off, 255 is on or a value between 0-99 can be sent.<br /></p>
+        ]]></description>
+        <default>255</default>
+        <options>
+          <option value="0">Off</option>
+          <option value="255">On</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_20_1" type="integer" groupName="configuration">
+        <label>20: Group 5 Off</label>
+        <description><![CDATA[
+Value of Group 5 Off command<br /> <h1>Overview</h1><p>This is the BASIC command value sent in case of Off event. 0 is off, 255 is on or a value between 0-99 can be sent.<br /></p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Off</option>
+          <option value="255">On</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_21_1" type="integer" groupName="configuration">
+        <label>21: Tilt Sensitivity</label>
+        <description><![CDATA[
+Tilt sensitivity<br /> <h1>Overview</h1><p>This parameter adjusts the tilt sensitivity if the tilt is too low or too strong. Value 0 does not disable Tilt Sensor, it just sets it to a minimum.<br /></p>
+        ]]></description>
+        <default>50</default>
+        <options>
+          <option value="0">Minimum sensitivity</option>
+          <option value="100">Maximum sensitivity</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_255_1" type="integer" groupName="configuration">
+        <label>255: Factory Reset</label>
+        <description><![CDATA[
+Factory reset<br /> <h1>Overview</h1><p>This parameter helps reset configuration parameters and the device to factory defaults.<br /></p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="1">Reset parameter</option>
+          <option value="1431655765">Factory default (exclude the device)</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Lifeline</label>
+        <description><![CDATA[
+Lifeline<br /> <h1>Overview</h1><p>Lifeline</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: Magnet or Dry Contact</label>
+        <description><![CDATA[
+Magnet or dry contact<br /> <h1>Overview</h1><p>Control devices when a magnet or external dry contact trips<br /></p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_3" type="text" groupName="association" multiple="true">
+        <label>3: Magnet or Dry Contact Alarm</label>
+        <description><![CDATA[
+Magnet or dry contact alarm<br /> <h1>Overview</h1><p>Sends our alarm message when magnet controlled or external dry sensor trips.<br /></p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_4" type="text" groupName="association" multiple="true">
+        <label>4: Tamper Alarm</label>
+        <description><![CDATA[
+Tamper alarm<br /> <h1>Overview</h1><p>Sends alarm messages when tamper is tripped</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_5" type="text" groupName="association" multiple="true">
+        <label>5: Tilt Sensor</label>
+        <description><![CDATA[
+Tilt sensor<br /> <h1>Overview</h1><p>Control devices when tilt sensor is tripped</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

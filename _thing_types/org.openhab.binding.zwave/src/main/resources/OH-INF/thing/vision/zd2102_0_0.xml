@@ -44,7 +44,7 @@ Door Window Sensor<br /> <h1>Overview</h1><p>The ZD2102 Door and Window sensor i
       <property name="vendor">Vision Security</property>
       <property name="modelId">ZD2102</property>
       <property name="manufacturerId">0109</property>
-      <property name="manufacturerRef">2001:0101,2001:0102</property>
+      <property name="manufacturerRef">2001:0101,2001:0102,2001:0103</property>
       <property name="dbReference">105</property>
       <property name="defaultAssociations">1</property>
     </properties>

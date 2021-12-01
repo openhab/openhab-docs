@@ -47,7 +47,7 @@ Fibaro Double Smart Module<br /> <h1>Overview</h1><h1>Description</h1> <p>The re
       <channel id="protection_local1" typeId="protection_local">
         <label>Local Protection S1</label>
         <properties>
-          <property name="binding:*:DecimalType">COMMAND_CLASS_PROTECTION:1</property>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_PROTECTION:1;type=PROTECTION_LOCAL</property>
         </properties>
       </channel>
       <channel id="switch_binary2" typeId="switch_binary">
@@ -59,7 +59,7 @@ Fibaro Double Smart Module<br /> <h1>Overview</h1><h1>Description</h1> <p>The re
       <channel id="protection_local2" typeId="protection_local">
         <label>Local Protection S2</label>
         <properties>
-          <property name="binding:*:DecimalType">COMMAND_CLASS_PROTECTION:2</property>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_PROTECTION:2;type=PROTECTION_LOCAL</property>
         </properties>
       </channel>
     </channels>
