@@ -53,7 +53,7 @@ In addition to these relationships, there are restrictions.
 
 - A Location can only be the direct member of zero or one Location Group.
 - An Equipment can only be the direct member of zero or one Location, or the direct member of zero or one Equipment. Put another way, an Equipment can only be the direct member of one Group that has a semantic tag.
-- A Point can only be the direct member of zero or one Location, or the direct member of zero of one Equipment. Put another way, a Point can only be the direct member of one Group that has a Location or Equipment tag.
+- A Point can only be the direct member of zero or one Location, or the direct member of zero or one Equipment. Put another way, a Point can only be the direct member of one Group that has a Location or Equipment tag.
 
 Because the model represents the physical, it makes no sense to deviate from these restrictions.
 An Equipment or Point cannot be in more than one location at the same time.
