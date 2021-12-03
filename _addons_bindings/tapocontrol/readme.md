@@ -5,6 +5,7 @@ title: TapoControl - Bindings
 type: binding
 description: "This binding adds support to control Tapo (Copyright © TP-Link Corporation Limited) Smart Home Devices from your local openHAB system."
 since: 3x
+logo: images/addons/tapocontrol.png
 install: manual
 ---
 
