@@ -1,7 +1,7 @@
 ---
 id: miio
-label: Xiaomi Mi IO
-title: Xiaomi Mi IO - Bindings
+label: Xiaomi Wifi devices (Mi IO)
+title: Xiaomi Wifi devices (Mi IO) - Bindings
 type: binding
 description: "This binding is used to control Xiaomi products implementing the Mi IO protocol."
 since: 3x
@@ -13,10 +13,11 @@ install: auto
 
 {% include base.html %}
 
-# Xiaomi Mi IO Binding
+# Xiaomi Wifi devices (Mi IO) Binding
 
 This binding is used to control Xiaomi products implementing the Mi IO protocol. 
-This is a set of wifi devices from Xiaomi that are part of the Mi Ecosystem which is branded as MiJia.
+This protocol is used for most of Xiaomi Mi Ecosystem wifi devices which is branded as MiJia.
+If your Xiaomi wifi device is controlled by the mihome app, most likely it communicates using the Mi IO protocol and can communicate with openHAB using this binding.
 
 ![MIIO logo](doc/miio.png)
 
@@ -27,9 +28,9 @@ The following things types are available:
 | ThingType        | Description                                                                                                              |
 |------------------|--------------------------------------------------------------------------------------------------------------------------|
 | miio:generic     | Generic type for discovered devices. Once the token is available and the device model is determined, this ThingType will automatically change to the appropriate ThingType |
-| miio:vacuum      | For Xiaomi Robot Vacuum products                                                                                         |
-| miio:basic       | For several basic devices like yeelights, airpurifiers. Channels and commands are determined by database configuration   |
-| miio:unsupported | For experimenting with other devices which use the Mi IO protocol                                                        |
+| miio:vacuum      | For Xiaomi/RoboRock Robot Vacuum products                                                                                         |
+| miio:basic       | For most other devices like yeelights, airpurifiers. Channels and commands are determined by database configuration   |
+| miio:unsupported | For experimenting with other devices which use the Mi IO protocol or to build experimental support                                                       |
 
 # Discovery
 
@@ -221,6 +222,7 @@ Currently the miio binding supports more than 300 different models.
 | Mi Smart Antibacterial Humidifier | miio:basic       | [deerma.humidifier.jsq](#deerma-humidifier-jsq) | Yes       |            |
 | Mi S Smart Humidifer         | miio:basic       | [deerma.humidifier.jsq1](#deerma-humidifier-jsq1) | Yes       |            |
 | Mi Smart Antibacterial Humidifier | miio:basic       | [deerma.humidifier.jsq5](#deerma-humidifier-jsq5) | Yes       |            |
+| Mi Smart Humidifer S         | miio:basic       | [deerma.humidifier.jsqs](#deerma-humidifier-jsqs) | Yes       |            |
 | Mi Smart Humidifier          | miio:basic       | [deerma.humidifier.mjjsq](#deerma-humidifier-mjjsq) | Yes       |            |
 | Mi Fresh Air Ventilator A1-150 | miio:basic       | [dmaker.airfresh.a1](#dmaker-airfresh-a1) | Yes       |            |
 | Mi Fresh Air Ventilator      | miio:basic       | [dmaker.airfresh.t2017](#dmaker-airfresh-t2017) | Yes       |            |
@@ -813,6 +815,21 @@ Note, not all the values need to be in the json file, e.g. a subset of the param
 | wet_and_protect      | Switch               | Wet and Protect                          |            |
 
 ### Mi Smart Antibacterial Humidifier (<a name="deerma-humidifier-jsq5">deerma.humidifier.jsq5</a>) Channels
+
+| Channel              | Type                 | Description                              | Comment    |
+|----------------------|----------------------|------------------------------------------|------------|
+| on                   | Switch               | Humidifier - Switch Status               |            |
+| fault                | Number               | Humidifier - Device Fault                | Value mapping `["0"="No Faults","1"="Insufficient Water","2"="Water Separation"]` |
+| fan_level            | Number               | Humidifier - Fan Level                   | Value mapping `["1"="Level1","2"="Level2","3"="Level3","4"="Humidity"]` |
+| target_humidity      | Number:Dimensionless | Humidifier - Target Humidity             |            |
+| relative_humidity    | Number:Dimensionless | Environment - Relative Humidity          |            |
+| temperature          | Number:Temperature   | Environment - Temperature                |            |
+| alarm                | Switch               | Alarm - Alarm                            |            |
+| on1                  | Switch               | Indicator Light - Switch Status          |            |
+| water_shortage_fault | Switch               | Custom - Water Shortage Fault            |            |
+| the_tank_filed       | Switch               | Custom - The Tank Filed                  |            |
+
+### Mi Smart Humidifer S (<a name="deerma-humidifier-jsqs">deerma.humidifier.jsqs</a>) Channels
 
 | Channel              | Type                 | Description                              | Comment    |
 |----------------------|----------------------|------------------------------------------|------------|
@@ -5647,6 +5664,24 @@ note: Autogenerated example. Replace the id (humidifier) in the channel with you
 
 ```
 Group G_humidifier "Mi Smart Antibacterial Humidifier" <status>
+Switch on "Humidifier - Switch Status" (G_humidifier) {channel="miio:basic:humidifier:on"}
+Number fault "Humidifier - Device Fault" (G_humidifier) {channel="miio:basic:humidifier:fault"}
+Number fan_level "Humidifier - Fan Level" (G_humidifier) {channel="miio:basic:humidifier:fan_level"}
+Number:Dimensionless target_humidity "Humidifier - Target Humidity" (G_humidifier) {channel="miio:basic:humidifier:target_humidity"}
+Number:Dimensionless relative_humidity "Environment - Relative Humidity" (G_humidifier) {channel="miio:basic:humidifier:relative_humidity"}
+Number:Temperature temperature "Environment - Temperature" (G_humidifier) {channel="miio:basic:humidifier:temperature"}
+Switch alarm "Alarm - Alarm" (G_humidifier) {channel="miio:basic:humidifier:alarm"}
+Switch on1 "Indicator Light - Switch Status" (G_humidifier) {channel="miio:basic:humidifier:on1"}
+Switch water_shortage_fault "Custom - Water Shortage Fault" (G_humidifier) {channel="miio:basic:humidifier:water_shortage_fault"}
+Switch the_tank_filed "Custom - The Tank Filed" (G_humidifier) {channel="miio:basic:humidifier:the_tank_filed"}
+```
+
+### Mi Smart Humidifer S (deerma.humidifier.jsqs) item file lines
+
+note: Autogenerated example. Replace the id (humidifier) in the channel with your own. Replace `basic` with `generic` in the thing UID depending on how your thing was discovered.
+
+```
+Group G_humidifier "Mi Smart Humidifer S" <status>
 Switch on "Humidifier - Switch Status" (G_humidifier) {channel="miio:basic:humidifier:on"}
 Number fault "Humidifier - Device Fault" (G_humidifier) {channel="miio:basic:humidifier:fault"}
 Number fan_level "Humidifier - Fan Level" (G_humidifier) {channel="miio:basic:humidifier:fan_level"}

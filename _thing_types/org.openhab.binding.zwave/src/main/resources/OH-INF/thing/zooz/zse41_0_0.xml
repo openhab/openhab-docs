@@ -40,7 +40,7 @@ Contact Sensor<br /> <h1>Overview</h1><ul><li><b>Door / window monitoring</b>: f
       <property name="manufacturerId">027A</property>
       <property name="manufacturerRef">7000:E001</property>
       <property name="dbReference">1411</property>
-      <property name="defaultAssociations">1</property>
+      <property name="defaultAssociations">1,2</property>
     </properties>
 
     <!-- CONFIGURATION DESCRIPTIONS -->

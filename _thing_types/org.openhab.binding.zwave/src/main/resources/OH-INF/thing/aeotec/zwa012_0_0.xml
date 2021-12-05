@@ -26,10 +26,10 @@ Door/Window Sensor 7 Pro<br /> <h1>Overview</h1><p>Aeotec Door / Window Sensor 7
           <property name="binding:*:DecimalType">COMMAND_CLASS_CENTRAL_SCENE</property>
         </properties>
       </channel>
-      <channel id="alarm_access" typeId="alarm_access">
-        <label>Alarm (access)</label>
+      <channel id="sensor_door" typeId="sensor_door">
+        <label>Door Sensor</label>
         <properties>
-          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=ACCESS_CONTROL</property>
+          <property name="binding:*:OpenClosedType">COMMAND_CLASS_ALARM</property>
         </properties>
       </channel>
       <channel id="alarm_burglar" typeId="alarm_burglar">
