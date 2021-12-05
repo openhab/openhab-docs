@@ -422,22 +422,20 @@ Number Battery   "Battery"    (SmartWatch) {alexa="BatteryLevel"}
 
 Semantic extensions are used to further customize how to interact with a device. This functionality is only supported by the [generic attributes](#generic-attributes). The Alexa API currently provides `Close`, `Open`, `Lower` and `Raise` interactions, removing the need for the Alexa routine workaround to control certain devices such as blinds or doors. Additionally, the skills now includes `Pause`, `Resume`, `Stop`, `TurnOff` and `TurnOn` custom interactions. Each semantic is composed of action and state mappings. The actions are used for interacting with the device and the states for displaying its current semantic state in the Alexa app (Not available as of yet). The supported action and state names are listed in the [semantic catalog](#semantic-catalog).
 
-The skill-based `Pause`, `Resume` and `Stop` semantics can only be set as action mappings. On the other side, the `TurnOn` and `TurnOff` semantics can be paired with `On` and `Off` state mappings to report a state if necessary (e.g. *Alexa, is `<device>` `<capability>` on?*). These state mappings can also be set without action mappings for status purpose only, and can be defined, depending on the item type, as a specific value `On=ON`, a pipe-delimited list of values `On=LOW|MEDIUM|HIGH`, or a range `On=1:5`.
-
-It is important to note that besides `TurnOff` and `TurnOn` action and `Off`/`On` state semantics, only one semantic type is allowed per endpoint. Additionally, adjust action mappings (e.g `Raise=(+10)`) are only supported by Alexa API action semantics.
+It is important to note that only one semantic type is allowed per endpoint. Additionally, adjust action mappings (e.g `Raise=(+10)`) are only supported by Alexa API action semantics.
 
 Here is how some the [device attributes](#device-attributes) using semantic extensions are translating to:
 
 A window blind [position state](#position-state). For example, when requesting *Alexa, open the blind*, the item will receive command `UP`. Likewise, when asking *Alexa, lower the blind*, it will receive command `DOWN`. And when requesting *Alexa, stop the blind*, it will receive command `STOP`. For position request, since Rollershutter range value are inverted by default, when requesting *Alexa, set the blind to 40%*, the item state will be set to `60`.
 
 ```xtend
-Rollershutter Blind "Blind" {alexa="Blind.RangeValue" [capabilityNames="@Setting.Position", supportedCommands="UP=@Value.Up:@Value.Open,DOWN=@Value.Down:@Value.Close,STOP=@Value.Stop", supportedRange="0:100:1", unitOfMeasure="Percent", actionMappings="Close=DOWN,Open=UP,Lower=DOWN,Raise=UP", stateMappings="Closed=100,Open=0:99"]}
+Rollershutter Blind "Blind" {alexa="Blind.RangeValue" [capabilityNames="@Setting.Position", supportedCommands="UP=@Value.Up:@Value.Open,DOWN=@Value.Down:@Value.Close,STOP=@Value.Stop", supportedRange="0:100:1", unitOfMeasure="Percent", actionMappings="Close=DOWN,Open=UP,Lower=DOWN,Raise=UP,Stop=STOP", stateMappings="Closed=100,Open=0:99"]}
 ```
 
 A window curtain [position state](#position-state). For example, when requesting *Alexa, open the curtain*, the item state will be set to `100`. Likewise, when asking *Alexa, close the blind*, it be set to `0`.
 
 ```xtend
-Dimmer Curtain "Curtain" {alexa="Curtain.RangeValue" [capabilityNames="@Setting.Position", supportedRange="0:100:1", presets="0=@Value.Close,100=@Value.Open", unitOfMeasure="Percent", actionMappings="Close=0,Open=100", stateMappings="Closed=0,Open=1:100"]}
+Dimmer Curtain "Curtain" {alexa="Curtain.RangeValue" [capabilityNames="@Setting.Position", supportedRange="0:100:1", unitOfMeasure="Percent", actionMappings="Close=0,Open=100", stateMappings="Closed=0,Open=1:100"]}
 ```
 
 A door [open state](#open-state). For example, when requesting *Alexa, open the door*, the item state will be set to `ON`.
@@ -449,7 +447,7 @@ Switch Door "Door" {alexa="Door.Mode" [capabilityNames="@Setting.Opening", suppo
 A vacuum cleaner [mode](#vacuum-mode). For example, when requesting *Alexa, turn on the vacuum cleaner*, the item state will be set to `CLEAN`. Likewise, when asking *Alexa, pause the vacuum cleaner*, it be set to `PAUSE`. And when requesting *Alexa, resume the vacuum cleaner*, it will be set to `CLEAN` again.
 
 ```xtend
-String VacuumCleaner "Vacuum Cleaner" {alexa="VacuumCleaner.Mode" [capabilityNames="@Setting.Mode", supportedModes="CLEAN=@Setting.Clean,DOCK=@Setting.Dock,SPOT=@Setting.Spot,PAUSE=@Setting.Pause,STOP=@Setting.Stop", actionMappings="Resume=DOCK,Pause=PAUSE,Stop=STOP,TurnOn=CLEAN,TurnOff=DOCK", stateMappings="Off=DOCK|PAUSE|STOP,On=CLEAN|SPOT"]}
+String VacuumCleaner "Vacuum Cleaner" {alexa="VacuumCleaner.Mode" [capabilityNames="@Setting.Mode", supportedModes="CLEAN=@Setting.Clean,DOCK=@Setting.Dock,SPOT=@Setting.Spot,PAUSE=@Setting.Pause,STOP=@Setting.Stop", actionMappings="Resume=CLEAN,Pause=PAUSE,Stop=STOP,TurnOn=CLEAN,TurnOff=DOCK"]}
 ```
 
 # Item Configuration
@@ -1641,14 +1639,13 @@ Items that represent components of a device that have more than one setting. Mul
       * set => `<action>=<mode>`
       * adjust => `<action>=(<deltaValue>)` (Supported only if `ordered=true`)
     * [supported action semantics](#semantic-catalog)
-    * only one specific action semantic allowed per endpoint, except for `TurnOn` and `TurnOff`
-    * no support for `TurnOn` and `TurnOff` semantics on Switch, use [`ToggleState`](#togglestate) instead
+    * only one given action semantic allowed per endpoint
+    * no support for `TurnOn` and `TurnOff` semantics on Switch, use [`PowerState`](#powerstate) instead
     * defaults to no actions
   * stateMappings=`<mappings>`
     * each [semantic](#semantic-extensions) mapping formatted as `<state>=<mode>` (e.g. `stateMappings="Closed=CLOSED,Open=OPEN"`)
     * [supported state semantics](#semantic-catalog)
-    * only one specific state semantic allowed per endpoint, except for `On` and `Off`
-    * no support for `On` and `Off` semantics on Switch, use [`ToggleState`](#togglestate) instead
+    * only one given state semantic allowed per endpoint
     * defaults to no states
 * Utterance examples:
   * *Alexa, set the `<device name>` `<capability name>` to `<mode name>`.*
@@ -1662,8 +1659,8 @@ Items that represent components of a device that have more than one setting. Mul
   * *Alexa, resume the `<device name>`.* (if `Resume` action defined)
   * *Alexa, pause the `<device name>`.* (if `Pause` action defined)
   * *Alexa, stop the `<device name>`.* (if `Stop` action defined)
-  * *Alexa, turn on the `<device name>` `<capability name>`.* (if `TurnOn` action defined)
-  * *Alexa, turn off the `<device name>` `<capability name>`.* (if `TurnOff` action defined)
+  * *Alexa, turn on the `<device name>`.* (if `TurnOn` action defined)
+  * *Alexa, turn off the `<device name>`.* (if `TurnOff` action defined)
 
 <a name="rangecontroller-rangevalue"></a>
 <a name="rangecomponent"></a>
@@ -1726,20 +1723,17 @@ Items that represent components of a device that are characterized by numbers wi
       * adjust => `<action>=(<deltaValue>)`
     * supported commands can be mapped as well (e.g. `actionMappings="Close=DOWN,Open=UP,Lower=DOWN,Raise=UP,Stop=STOP"`)
     * [supported action semantics](#semantic-catalog)
-    * only one specific action semantic allowed per endpoint, except for `TurnOn` and `TurnOff`
+    * only one given action semantic allowed per endpoint
     * no support for:
       * any [custom semantics](#custom-semantic-catalog) on Number with defined dimension
-      * `TurnOn` and `TurnOff` semantics on Rollershutter
+      * `TurnOn` and `TurnOff` semantics on Dimmer/Rollershutter
     * defaults to no actions
   * stateMappings=`<mappings>`
     * each [semantic](#semantic-extensions) mapping formatted as, based on state type: (e.g. `stateMappings="Closed=0,Open=1:100"`)
       * range => `<state>=<minValue>:<maxValue>`
       * value => `<state>=<value>`
     * [supported state semantics](#semantic-catalog)
-    * only one specific state semantic allowed per endpoint, except for `On` and `Off`
-    * no support for:
-      * any [custom semantics](#custom-semantic-catalog) on Number with defined dimension
-      * `On` and `Off` semantics on Rollershutter
+    * only one given state semantic allowed per endpoint
     * defaults to no states
 * Utterance examples:
   * *Alexa, set the `<device name>` `<capability name>` to 10.*
@@ -1756,19 +1750,23 @@ Items that represent components of a device that are characterized by numbers wi
   * *Alexa, resume the `<device name>`.* (if `Resume` action defined)
   * *Alexa, pause the `<device name>`.* (if `Pause` action defined)
   * *Alexa, stop the `<device name>`.* (if `Stop` action defined)
-  * *Alexa, turn on the `<device name>` `<capability name>`.* (if `TurnOn` action defined)
-  * *Alexa, turn off the `<device name>` `<capability name>`.* (if `TurnOff` action defined)
+  * *Alexa, turn on the `<device name>`.* (if `TurnOn` action defined)
+  * *Alexa, turn off the `<device name>`.* (if `TurnOff` action defined)
 
 <a name="togglecontroller-togglestate"></a>
 <a name="togglecomponent"></a>
 
 #### `ToggleState`
 
-Items that represent components of a device that can be toggled on or off. Multiple instances can be configured in a [group endpoint](#group-endpoint).
+Items that represent components of a device that can be toggled on or off. Multiple instances can be configured in a [group endpoint](#group-endpoint). For Number and String, the state mappings must be provided in the metadata parameters.
 
 * Supported item types:
+  * Number
+  * String
   * Switch
 * Supported metadata parameters:
+  * OFF=`<state>` (Number/String only)
+  * ON=`<state>` (Number/String only)
   * capabilityNames=`<names>`
     * each name formatted as `<@assetIdOrName>` (e.g. `capabilityNames="@Setting.Oscillate,Rotate"`)
       * predefined [asset ids](#asset-catalog)
@@ -1787,12 +1785,13 @@ Items that represent components of a device that can be toggled on or off. Multi
   * actionMappings=`<mappings>`
     * each [semantic](#semantic-extensions) mapping formatted as `<action>=ON` or `<action>=OFF` (e.g. `actionMappings="Close=OFF,Open=ON"`)
     * [supported action semantics](#semantic-catalog)
-    * only one specific action semantic allowed per endpoint
+    * only one given action semantic allowed per endpoint
+    * no support for `TurnOn` and `TurnOff` semantics
     * defaults to no actions
   * stateMappings=`<mappings>`
     * each [semantic](#semantic-extensions) mapping formatted as `<state>=ON` or `<state>=OFF` (e.g. `stateMappings="Closed=OFF,Open=ON"`)
     * [supported state semantics](#semantic-catalog)
-    * only one specific state semantic allowed per endpoint
+    * only one given state semantic allowed per endpoint
     * defaults to no states
 * Utterance examples:
   * *Alexa, turn on the `<device name>` `<capability name>`.*
@@ -2005,7 +2004,7 @@ List of custom semantic catalog defined by skill:
 Semantic Type | Identifiers
 --------------|------------
 Actions | `Pause`<br>`Resume`<br>`Stop`<br>`TurnOff`<br>`TurnOn`
-States | `Off`<br>`On`
+States |
 
 ## Unit of Measurement Catalog
 
