@@ -1432,7 +1432,7 @@ Items that represent a general device responding to percentage commands.
 
 #### `TargetTemperature`
 
-Items that represent a target setpoint for a thermostat.
+Items that represent a target setpoint for a thermostat. For thermostat that requires hold to be set prior to manually changing setpoints, set parameter `requiresSetpointHold=true` on the [`ThermostatHold`](#thermostathold) item.
 
 * Supported item types:
   * Number(:Temperature)
@@ -1455,9 +1455,7 @@ Items that represent a target setpoint for a thermostat.
 
 #### `CoolingSetpoint`
 
-Items that represent an upper or cooling setpoint for a thermostat. This needs to be paired with [`HeatingSetpoint`](#heatingsetpoint).
-
-By default, if the target, cooling and heating setpoints along with the thermostat mode are defined, the setpoint mode automation will be enabled limiting to dual mode interactions. For true triple mode support, set parameter `supportsSetpointMode=false` on the [`HeatingCoolingMode`](#heatingcoolingmode) item. It is important to note that only the target setpoint can be requested by voice. Therefore, when the thermostat is in dual mode, the cooling and heating setpoints will be updated based on the `comfortRange` parameter.
+Items that represent an upper or cooling setpoint for a thermostat. This needs to be paired with [`HeatingSetpoint`](#heatingsetpoint). It is important to note that only the target setpoint can be requested by voice. Therefore, when the thermostat is in dual mode, the cooling and heating setpoints will be updated based on the `comfortRange` parameter. For thermostat that requires hold to be set prior to manually changing setpoints, set parameter `requiresSetpointHold=true` on the [`ThermostatHold`](#thermostathold) item. By default, if the target, cooling and heating setpoints along with the thermostat mode are defined, the setpoint mode automation will be enabled limiting to dual mode interactions. For true triple mode support, set parameter `supportsSetpointMode=false` on the [`HeatingCoolingMode`](#heatingcoolingmode) item.
 
 * Supported item types:
   * Number(:Temperature)
@@ -1549,11 +1547,18 @@ Items that represent the heating/cooling mode of a thermostat.
 Items that represent the hold setting of a thermostat. This needs to be paired with [`HeatingCoolingMode`](#heatingcoolingmode). Only requests to resume schedule (turn off hold) are supported.
 
 * Supported item types:
-  * Number [RESUME=0]
-  * String [RESUME="resume"]
-  * Switch [RESUME="OFF"]
+  * Number [OFF=0, ON=1]
+  * String [OFF="schedule", ON="hold"]
+  * Switch (on/off control)
 * Supported metadata parameters:
-  * RESUME=`<state>`
+  * OFF=`<state>` (Number/String only)
+  * ON=`<state>` (Number/String only)
+  * inverted=`<boolean>` (Switch only)
+    * set to true to invert item state
+    * defaults to false
+  * requiresSetpointHold=`<boolean>`
+    * set to true to require thermostat hold to be set on setpoint requests
+    * defaults to false
 * Utterance examples:
   * *Alexa, resume the `<device name>` schedule.*
 
@@ -1685,12 +1690,12 @@ Items that represent components of a device that are characterized by numbers wi
       * predefined [asset ids](#asset-catalog)
       * list of text-based names [not allowed](#capability-names-not-allowed)
     * defaults to `@Setting.RangeValue` if [single endpoint](#single-endpoint), otherwise item label and synonyms metadata if part of [group endpoint](#group-endpoint)
-  * nonControllable=`<boolean>`
-    * set to true for state reporting support only
-    * defaults to item state description read only property if defined, otherwise false
   * inverted=`<boolean>`
     * set to true to invert item state
     * defaults to true for Rollershutter, otherwise false for other supported item types.
+  * nonControllable=`<boolean>`
+    * set to true for state reporting support only
+    * defaults to item state description read only property if defined, otherwise false
   * supportedCommands=`<commands>` (Dimmer/Rollershutter only)
     * each command formatted as:
       * default name => `<command>` (e.g. `supportedCommands="INCREASE,DECREASE"`)
@@ -1772,12 +1777,12 @@ Items that represent components of a device that can be toggled on or off. Multi
       * predefined [asset ids](#asset-catalog)
       * list of text-based names [not allowed](#capability-names-not-allowed)
     * defaults to `@Setting.ToggleState` if [single endpoint](#single-endpoint), otherwise item label and synonyms metadata if part of [group endpoint](#group-endpoint)
+  * inverted=`<boolean>` (Switch only)
+    * set to true to invert item state
+    * defaults to false
   * nonControllable=`<boolean>`
     * set to true for state reporting support only
     * defaults to item state description read only property if defined, otherwise false
-  * inverted=`<boolean>`
-    * set to true to invert item state
-    * defaults to false
   * language=`<code>`
     * text-based name language support
     * two-letter language code: `de`, `en`, `es`, `fr`, `hi`, `it`, `ja`, `pt`
