@@ -1,0 +1,18 @@
+name: Fetch openHABian Docs
+
+on:
+  # Repository dispatch event, to be triggerd by an openhabian release
+  # or manually from the openhabian repository
+  repository_dispatch:
+    types: [update-openhabian-docs-event]
+  workflow_dispatch:
+
+jobs:
+  call-reusable-fetch-workflow:
+    uses: openhab/openhab-docs/.github/workflows/fetch_external_docs_reusable.yml@main
+    with:
+      base_source_repository: openhabian
+      base_folder: installation
+      doc_base_name: openhabian
+      has_images: true
+      image_base_name: openHABian

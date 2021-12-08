@@ -1,0 +1,95 @@
+name: Fetch Docs Reusable
+# Generic action for fetching doc contents
+# This action is meant to be called by a detailled action for a specific repository, defining the needed parameters
+
+on:
+  workflow_call:
+    inputs:
+      base_target_branch:
+        description: 'The branch to check out in the target repository. Defaults to `final-stable`.'
+        default: 'final-stable'
+        required: false
+        type: string
+      base_source_organization:
+        description: 'The organization or user, that is holding the base repository. Defaults to `openhab`.'
+        default: 'openhab'
+        required: false
+        type: string
+      base_source_repository:
+        description: 'The repository that holds the source contents to copy.'
+        required: true
+        type: string
+      base_source_branch:
+        description: 'The branch that contents should get copied. Defaults to `main`.'
+        default: 'main'
+        required: false
+        type: string
+      base_folder:
+        description: 'The folder that is holding the contents in the target repository.'
+        required: true
+        type: string
+      doc_base_name:
+        description: 'The doc file name prefix for lookup options.'
+        required: true
+        type: string
+      has_images:
+        description: 'Flag for enabling image copy commands.'
+        required: true
+        type: boolean
+      image_base_name:
+        description: 'The image name prefix for lookup options'
+        required: true
+        type: string
+
+jobs:
+  fetchDocs:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2.4.0
+        with:
+          ref: ${{inputs.base_target_branch}}
+
+      - name: Checkout external repository
+        uses: actions/checkout@v2.4.0
+        with:
+          repository: ${{inputs.base_source_organization}}/${{inputs.base_source_repository}}
+          path: './external_contents/${{inputs.base_source_repository}}'
+
+      - name: Remove existing doc contents
+        run: find ${{inputs.base_folder}} -iname "${{inputs.doc_base_name}}*" -type f -delete
+
+      - name: Copy newest doc contents
+        run: |
+          echo "Copy current doc contents"
+          cp -v ./external_contents/${{inputs.base_source_repository}}/docs/${{inputs.doc_base_name}}*.md ${{inputs.base_folder}}
+
+      # Copy images only if flag is set to true
+      - name: Copy newest images
+        if: ${{ inputs.has_images == true}}
+        run: |
+          echo "Copy current images"
+          cp -v ./external_contents/${{inputs.base_source_repository}}/docs/images/${{inputs.image_base_name}}* ${{inputs.base_folder}}/images
+
+      - name: Remove external repositories
+        run: rm -rf ./external_contents
+
+      # Create an automated pull request, if the resulting branch is ahead of the `base-target-branch`
+      - name: Create Pull Request
+        id: cpr
+        uses: peter-evans/create-pull-request@v3
+        with:
+          commit-message: Automated ${{inputs.base_source_repository}} Docs fetch
+          committer: openHAB Bot <info@openhab.org>
+          author: openHAB Bot <info@openhab.org>
+          branch: automated/fetch_${{inputs.base_source_repository}}_docs
+          delete-branch: true
+          title: "[Automated] Fetch ${{inputs.base_source_repository}} docs"
+          labels: |
+            automated_pr
+
+      - name: Check outputs
+        run: |
+          echo "Pull Request Number - ${{ steps.cpr.outputs.pull-request-number }}"
+          echo "Pull Request URL - ${{ steps.cpr.outputs.pull-request-url }}"
