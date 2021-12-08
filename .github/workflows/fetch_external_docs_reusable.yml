@@ -64,7 +64,6 @@ jobs:
         run: |
           echo "Copy current doc contents"
           cp -v ./external_contents/${{inputs.base_source_repository}}/docs/${{inputs.doc_base_name}}*.md ${{inputs.base_folder}}
-          cp -v ./external_contents/${{inputs.base_source_repository}}/docs/images/${{inputs.image_base_name}}* ${{inputs.base_folder}}/images
 
       # Copy images only if flag is set to true
       - name: Copy newest images
