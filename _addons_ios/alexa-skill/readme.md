@@ -380,8 +380,8 @@ A fireplace and its settings modeled with a mix of range/mode-type generic attri
 ```xtend
 Group  Fireplace "Fireplace"             {alexa="Other"}
 Number Burners   "Burners"   (Fireplace) {alexa="RangeValue" [capabilityNames="@Setting.Preset", supportedRange="1:3:1", presets="1=@Value.Low:@Value.Minimum,2=@Value.Medium:Normal,3=@Value.High:@Value.Maximum"]}
-String Flame     "Flame"     (Fireplace) {alexa="Mode" [capabilityNames="Flame Type", supportedModes="Campfire=:Normal,Candle,IceFlame=Ice Flame"]}
-Color  Color     "Color"     (Fireplace) {alexa="Color"}
+String Flame     "Flame"     (Fireplace) {alexa="Mode" [capabilityNames="Flame Type", supportedModes="Campfire=Campfire:Normal,Candle,IceFlame=Ice Flame"]}
+Color  Color     "Color"     (Fireplace) {alexa="Brightness,Color"}
 Switch Power     "Power"     (Fireplace) {alexa="PowerState"}
 ```
 
@@ -390,9 +390,9 @@ A guitar amp and its settings modeled with a mix of range/mode/toggle-type gener
 ```xtend
 Group GuitarAmp  "Guitar Amp"            {alexa="Other"}
 Switch Overdrive "Overdrive" (GuitarAmp) {alexa="ToggleState" [capabilityNames="Overdrive"]}
-Switch Gain      "Gain"      (GuitarAmp) {alexa="RangeValue" [capabilityNames="Gain,Drive", supportedRange="1:10:1"]}
-String Preset    "Preset"    (GuitarAmp) {alexa="Mode" [capabilityNames="@Setting.Preset,Effect", supportedModes="Normal=:Standard,LowGain=Low Gain,LeadBoost=Lead Boost,Metal"]}
-Switch Volume    "Volume"    (GuitarAmp) {alexa="VolumeLevel"}
+Number Gain      "Gain"      (GuitarAmp) {alexa="RangeValue" [capabilityNames="Gain,Drive", supportedRange="1:10:1"]}
+String Preset    "Preset"    (GuitarAmp) {alexa="Mode" [capabilityNames="@Setting.Preset,Effect", supportedModes="Normal=Normal:Standard,LowGain=Low Gain,LeadBoost=Lead Boost,Metal"]}
+Number Volume    "Volume"    (GuitarAmp) {alexa="VolumeLevel"}
 Switch Mute      "Mute"      (GuitarAmp) {alexa="MuteState"}
 Number Bass      "Bass"      (GuitarAmp) {alexa="EqualizerBass"}
 Number Midrange  "Midrange"  (GuitarAmp) {alexa="EqualizerMidrange"}
@@ -420,9 +420,9 @@ Number Battery   "Battery"    (SmartWatch) {alexa="BatteryLevel"}
 
 ## Semantic Extensions
 
-Semantic extensions are used to further customize how to interact with a device. This functionality is only supported by the [generic attributes](#generic-attributes). The Alexa API currently provides `Close`, `Open`, `Lower` and `Raise` interactions, removing the need for the Alexa routine workaround to control certain devices such as blinds or doors. Additionally, the skills now includes `Pause`, `Resume`, `Stop`, `TurnOff` and `TurnOn` custom interactions. Each semantic is composed of action and state mappings. The actions are used for interacting with the device and the states for displaying its current semantic state in the Alexa app (Not available as of yet). The supported action and state names are listed in the [semantic catalog](#semantic-catalog).
+Semantic extensions are used to further customize how to interact with a device. This functionality is only supported by the [generic attributes](#generic-attributes). The Alexa API currently provides `Close`, `Open`, `Lower` and `Raise` interactions, removing the need for the Alexa routine workaround to control certain devices such as blinds or doors. Additionally, the skill includes `Pause`, `Resume`, `Stop`, `TurnOff` and `TurnOn` custom interactions. A semantic is composed of an action mapping and, in some cases, a state mapping. The actions are used for interacting with the device and the states for displaying its current semantic state in the Alexa app (Depending on [device types](#device-types)). The supported action and state names are listed in the [semantic catalog](#semantic-catalog).
 
-It is important to note that only one semantic type is allowed per endpoint. Additionally, adjust action mappings (e.g `Raise=(+10)`) are only supported by Alexa API action semantics.
+It is important to note that only one given semantic is allowed per endpoint. Additionally, adjust action mappings (e.g `Raise=(+10)`) are only supported by Alexa API action semantics.
 
 Here is how some the [device attributes](#device-attributes) using semantic extensions are translating to:
 
@@ -661,6 +661,7 @@ If paired with [`TiltAngle`](#tiltangle), the primary controls (open/close/stop)
     * defaults to your server [regional settings](#regional-settings) if defined, otherwise `en`
   * actionMappings=`<mappings>`
     * each [semantic](#semantic-extensions) mapping formatted as `<action>=<value>`
+    * `Open`, `Close` and `Stop` semantics only available when primary control is `position`
     * defaults to:
       * Dimmer => `Close=0,Open=100,Lower=0,Raise=100` or `Close=100,Open=0,Lower=100,Raise=0` (inverted)
       * Rollershutter => `Close=DOWN,Open=UP,Lower=DOWN,Raise=UP,Stop=STOP`
@@ -707,6 +708,7 @@ If paired with [`PositionState`](#positionstate), the primary controls (open/clo
     * defaults to your server [regional settings](#regional-settings) if defined, otherwise `en`
   * actionMappings=`<mappings>`
     * each [semantic](#semantic-extensions) mapping formatted as `<action>=<value>`
+    * only available when primary control is `tilt`
     * defaults to:
       * Dimmer => `Close=0,Open=100` or `Close=100,Open=0` (inverted)
       * Number => `Close=-90,Open=0` or `Close=90,Open=0`(inverted)
