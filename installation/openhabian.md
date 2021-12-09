@@ -34,15 +34,15 @@ It provides:
 
 ## Features
 
-Out of the box, the openHABian image provides:
+Out of the box, the openHABian image provides lots of useful Linux tools:
 
 -   Hassle-free setup without a display or keyboard, connected via Ethernet or [Wi-Fi](#wi-fi-based-setup-notes)
 -   All versions of openHAB to select from, including the latest stable one as the default
 -   Zulu Embedded OpenJDK Java 11 or AdoptOpenJDK
 -   [openHABian Configuration Tool](#openhabian-configuration-tool) including updater functionality
+-   [SD card mirroring](openhabian.md#auto-backup) and [Amanda Backup](openhabian-amanda.md) to boost system availability
 -   Web based openHAB Log Viewer (based on [frontail](https://github.com/mthenw/frontail))
 -   Samba file sharing [pre-configured ready to use shares](https://www.openhab.org/docs/installation/linux.html#mounting-locally)
--   Lots of useful Linux packages and settings pre-installed
 -   Login information screen, powered by [FireMotD](https://github.com/OutsideIT/FireMotD)
 -   The [Mosquitto](https://mosquitto.org) MQTT broker
 -   The [InfluxDB](https://www.influxdata.com/) database to store home automation data and [Grafana](https://grafana.com/) to visualize it
@@ -63,11 +63,49 @@ The included **openHABian Configuration Tool** [`openhabian-config`](#openhabian
 
 ... and much more
 
+## On openHAB 2 and 3
+openHABian will install **openHAB 3** by default.
+When openHAB3 was released, there have been some big changes also to openHABian such as to install Java 11 and to use changed file and directory names so you cannot simple upgrade the packages without adapting the rest of your server system, the openHABian installation that is.
+openHAB 2 will continue to work on openHABian, but openHAB 2 support is no longer actively maintained and the software will only receive select patches deemed necessary by the maintainers of the project.
+If you need openHAB 2 support please use the `stable` branch of openHABian.
+You can switch branches using menu option 01 in `openhabian-config` but ATTENTION you cannot up- or downgrade this way and you cannot arbitrarily change versions.
+There's a high risk you mess up your system if you do.
+
+### Deploy openHAB 2
+The image will install openHAB 3 by default, to have it install openHAB 2 right from the beginning, set` clonebranch=stable` in `openhabian.conf` before first boot.
+
+## Upgrading openHAB 2 to openHAB 3
+For openHABian users running openHAB 2.X, `openhabian-config` offers to migrate the openHABian environment and install openHAB3 for you.
+Menu option 42 will do the upgrade.
+Be aware that it isn't the [answer to the ultimate question](https://en.wikipedia.org/wiki/Phrases_from_The_Hitchhiker%27s_Guide_to_the_Galaxy#The_Answer_to_the_Ultimate_Question_of_Life,_the_Universe,_and_Everything_is_42): there is ONLY an openHAB upgrade path, you cannot downgrade from openHAB 3 to openHAB 2.
+
+::: warning No downgrades
+Take an openHAB config backup BEFORE you upgrade from openHAB v2 to v3. You should also take a system level backup!
+:::
+
+Menu option 42 can also do the downgrade and change the _environment_ back to match openHAB 2 but ATTENTION it'll only exchange the OS setup and the openHAB packages.
+It will NOT migrate your configuration back to a openHAB 2 compatible one. There is no software that can do this for you.
+So it is essential that you take a backup before you upgrade.
+You will have to restore your setup from that backup after a downgrade using menu option 51 or by manually using `openhab-cli restore <archive file>`.
+Note option 42 will also not downgrade Java.
+openHAB 2 however is known to run with Java 11 as well.
+
+### *A note on dedication and commitment*
+*We sometimes read about people deciding against use of openHABian because they want to install additional software and believe openHABian does not let them do this.
+Everybody wants their home automation to be stable and most people install a dedicated RPi, i.e. they don't install any other software there that may interfere with proper openHAB operation.
+Reasonably so, this is our clear recommendation. Saving another 50 bucks is not worth putting the reliable day-to-day operations of your home at risk.*
+
+*Then again that being said, those who insist to can use openHABian as the starting point for their 'generic' server and run whatever software else on top.
+There's no genuine reason why this wouldn't work. The openHABian image is really just Raspberry Pi OS (lite) under the hood and openHABian is "just" some scripts that install a number of packages and configure the system in a specific way, optimized to run openHAB.*
+
+<a id="befair"></a>
+*What you must not do, though, is to mess with the system, OS packages and config and expect anyone to help you with that. Let's clearly state this as well: when you deliberately decide to make manual changes to the OS software packages and configuration (i.e. outside of openhabian-config), you will be on your own. Your setup is untested, and no-one but you knows about your changes. openHABian maintainers are really committed to providing you with a fine user experience, but this takes enormous efforts you don't get to see as a user. So if you choose to deviate from the standard openHABian installation and run into problems thereafter, don't be unfair: don't waste maintainer's or anyone's time by asking for help or information on your issues on the forum. Thank you !*
+
 ## Hardware
-
 ### Hardware recommendation
-
 Let's put this first: our current recommendation is to get a RPi 4 with 2 or 4 GB of RAM, a 3A power supply and a 16 GB SD card.
+Prefer getting a card named with a postfix like "Endurance" (e.g. "SanDisk MAX ENDURANCE" or "Kingston High Endurance") because it
+can handle more write cycles hence it'll be more enduring under openHAB\'s use conditions.
 Also get another 32 GB or larger SD card and a USB card reader to make use of the ["auto backup" feature](openhabian.md#auto-backup).
 
 ### Hardware support
@@ -101,12 +139,11 @@ These are what we develop and test openHABian against.
 We provide code that is reported "as-is" to run on Ubuntu but we do **not support Ubuntu** so please don't open issues for this (PRs then again are welcome).
 Several optional components though, such as WireGuard or Homegear, are known to expose problems on Ubuntu.
 
-We expect you to use the current stable distribution: 'buster' for Raspberry Pi OS (ARM) and Debian (x86), with 'focal' for Ubuntu (x86).
+We expect you to use the current stable distribution: 'bullseye' for Raspberry Pi OS (ARM) and Debian (x86).
 To install openHABian on anything older or newer may work or not.
 If you encounter issues, you may need to upgrade first or to live with the consequences of running an OS on the edge of software development.
 
 ### 64 bit?
-
 RPi 3 and 4 have a 64 bit processor and you may want to run openHAB in 64 bit.
 We provide a 64bit version of the image but it is unsupported and just provided as-is so use it at your own risk.
 Be aware that to run in 64 bit has a major drawback: increased memory usage.
@@ -118,12 +155,12 @@ reliably work on 64 bit.
 On x86 hardware, 64 bit is the standard.
 
 ### Networking
-
-The scripted use (i.e. the non-image version) of openHABian does not change anything about your OS' networking setup (except if you deploy a VPN from the menu, of course) so you have to take care of that yourself.
+You need to prepare your local network so you eventually need to configure your Internet router before an openHABian installation.
 For image based installations, openHABian re-uses the TCP/IP networking setup Raspberry Pi OS is coming with.
+The non-image (script-only) version of openHABian does not change anything about your existing OS' networking setup so you have to take care of that and prepare it yourself.
 
-A properly working DHCP server is a mandatory prerequisite to openHABian's networking setup.
-We recommend you configure your DHCP server to always assign the same IP based based on your Pi's MAC address.
+A working DHCP server is a mandatory prerequisite to openHABian's networking setup.
+We recommend you configure your DHCP server to always assign the same IP based based on your RPi's MAC address.
 That'll effectively get you a fixed IP address.
 Most DHCP servers are part of your Internet router and have an option to allow for this type of mapping.
 For example in AVM Fritz!boxes (popular in Germany), it's a simple checkbox you can tick - note it only appears after the address was assigned to a client (your openHABian box) for the first time.
@@ -133,7 +170,7 @@ If you are getting an `169.*` IP address it means DHCP didn't work.
 
 When you boot a flashed image for the first time, openHABian will setup and use the Ethernet port if that one is connected with a cable to your LAN.
 It'll also use the `wifi_ssid` and `wifi_password` parameters from `/etc/openhabian.conf` to determine whether and how to setup the Wi-Fi interface.
-After these stages it checks for connectivity to the Internet and if that fails, it'll open a [Wi-Fi hotspot](#Wi-Fi-Hotspot) that lets you manually connect your system to a WLAN (Wi-Fi) of yours to jumpstart networking.
+After these stages it checks for connectivity to the Internet and if that fails, it'll open a [Wi-Fi hotspot](#wi-fi-hotspot) that lets you manually connect your system to a WLAN (Wi-Fi) of yours to jumpstart networking.
 Remember that once the hotspot is started, it'll hide once you have successfully used it to connect your Wi-Fi interface but it'll return should your Wi-Fi connectivity break down.
 
 
@@ -143,35 +180,32 @@ Remember that once the hotspot is started, it'll hide once you have successfully
 The provided image is based on the [Raspberry Pi OS Lite](https://www.raspberrypi.org/software/operating-systems/#raspberry-pi-os-32-bit) (previously called Raspbian) standard system.
 openHABian is designed as a headless system, you will not need a display or a keyboard.
 On first boot, the system will set up openHAB, its tools and settings.
-Packages will be downloaded in their newest version and configured.
-The whole process will take a few minutes, then openHAB and all other tools needed to get started will be ready to use without further configuration steps.
+Packages will be downloaded in their *newest* version and configured.
+The whole process will take some minutes, then openHAB and all other tools required to get started will be ready to use without further configuration steps.
 
-**Setup:**
+**Installation:**
 
+-   Make sure you meet the [hardware prerequisites](#hardware) first
+-   [Prepare your local router](#networking)
 -   [Download the latest "openHABian" SD card image file](https://github.com/openhab/openhabian/releases) (Note: the file is _xz_ compressed)
--   Write the image to your SD card (e.g. with [Etcher](https://www.balena.io/etcher/) or official [Raspberry Pi Imager](https://www.raspberrypi.org/software/), both able to directly work with _xz_ files
--   Insert the SD card into your Raspberry Pi, connect your Ethernet cable - [Wi-Fi is also supported](#wi-fi-based-setup-notes) - and power on
--   Wait approximately **15-45 minutes** for openHABian to do its magic, you can watch the install progress from within your browser.
--   The system will be accessible by its IP or via the local DNS name `openhabian` (or whatever you changed 'hostname' in `openhabian.conf` to)
+-   Write the image to your SD card using the official [Raspberry Pi Imager](https://www.raspberrypi.org/software/). Alternatively, you can use [Etcher](https://www.balena.io/etcher/).
+-   Optionally, you can change a number of parameters *now* to affect the installation. See this section (https://www.openhab.org/docs/installation/openhabian.html#openhabian-conf). As a beginner or if in doubt what an option does, don't change anything.
+-   Insert the SD card into your Raspberry Pi. Connect your Ethernet or [configure Wi-Fi](#wi-fi-based-setup-notes) if you want to use that. Power on and wait approximately 15-45 minutes for openHABian to do its magic. The system will be accessible by its IP or via the local DNS name `openhabian` and you can watch the install progress in your browser. If for whatever reason networking does not work, openHABian will launch a [hotspot](#Wi-Fi-Hotspot) so if you see that, something's up with your networking.
 -   Connect to the openHAB UI at [http://openhabian:8080](http://openhabian:8080)
 -   [Connect to the Samba network shares](https://www.openhab.org/docs/installation/linux.html#mounting-locally)
 -   Connect to the openHAB Log Viewer (frontail): [http://openhabian:9001](http://openhabian:9001)
--   If you encounter any setup problem, [please continue here](#successful)
+-   **If you encounter any setup problem, [please continue here](#successful)**
 
-You can stop reading for the time being, openHABian has installed and configured your openHAB system and you can start to use it right away.
-If you want to get in touch with the system or want to install one of the previously mentioned optional features, come back here later.
-
-Ready for more?
+When openHABian has installed and configured your openHAB system, you can start to use it right away.
 [Connect to your Raspberry Pi SSH console](https://www.raspberrypi.org/documentation/remote-access/ssh/windows.md) using the username `openhabian` and password `openhabian`.
-You will see the following welcome screen:
+You should be seeing a welcome screen like the following:
 
 ![openHABian login screen](images/openHABian-SSH-MotD.png)
 
-➜ Continue at the ["openHABian Configuration Tool"](#openhabian-configuration-tool) chapter below!
+➜ Continue at the ["openHABian Configuration Tool"](#openhabian-configuration-tool) chapter below.
 
 <a id="manual-setup"></a>
 ### Other Linux Systems (add openHABian just like any other software)
-
 Going beyond what the RPi image provides, you can also install openHABian on x86 hardware on top of any existing Debian installation.
 Please note that the unattended install is tailored to work for Raspberries.
 We cannot test HW/OS combos beyond RPis upfront so there is no promise for this work.
@@ -319,26 +353,6 @@ This function will rename the rules files so they get ignored by the starting op
 You can toggle to use this feature in menu option 44.
 
 ## Setup notes
-### On openHAB 2 and 3
-
-openHABian will install **openHAB 3** by default.
-When openHAB3 was released, there have been some big changes also to openHABian such as to install Java 11 and to use changed file and directory names.
-Most directory names `... /openhab2/ ...` will become `... /openhab/ ...` (NOTE: not `openhab3`) plus there's changes in a number of places, often subtle ones like the name of Samba export shares to change.
-For openHABian users running openHAB 2.X, `openhabian-config` offers to migrate the openHABian environment and install openHAB3 for you.
-Menu option 42 will do the upgrade.
-Be aware that it isn't the [answer to the ultimate question](https://en.wikipedia.org/wiki/Phrases_from_The_Hitchhiker%27s_Guide_to_the_Galaxy#The_Answer_to_the_Ultimate_Question_of_Life,_the_Universe,_and_Everything_is_42): there is ONLY an openHAB upgrade path, you cannot downgrade from openHAB 3 to openHAB 2.
-
-::: warning No downgrades
-Take an openHAB config backup BEFORE you upgrade from openHAB v2 to v3. You should also take a system level backup!
-:::
-
-Menu option 42 can also do the downgrade and change the _environment_ back to match openHAB 2 **BUT** it'll ONLY exchange the binary packages.
-There is no migration to change your configuration back to a openHAB 2 compatible one.
-So it is essential that you take a backup before you upgrade.
-You will have to restore your setup from that backup after a downgrade using menu option 51 or by manually using `openhab-cli restore <archive file>`.
-Note option 42 will also not downgrade Java.
-openHAB 2 however is known to run with Java 11 as well.
-
 ### `openhabian.conf`
 
 You can actually set a number of parameters _before_ you run an unattended installation.
@@ -354,28 +368,31 @@ You can also try with a different set of parameters if your initial attempt fail
 
 Mind the comments for each configuration parameter. Browse the next documentation section for more explanations.
 
-#### Administration user
+#### Initial configuration
+You can have openHABian import a working openHAB configuration right from the start at installation time like whenyou migrate or reinstall:
+make the `initialconfig` parameter point to either a file or URL.
+Note that you can only place config zipfiles on the 1st (Windows) partition, and that partition will finally be accessible as `/boot`.
+So a filename would need to be `/boot/xxx.zip`. Default is `/boot/initial.zip`.
+So if you have a openHAB configuration backup zipfile (created e.g. by using menu option 50), put it to the E: device that the first partition of your SD card shows up as on a Windows PC and change its name to 'initial.zip'.
 
+#### Administration user
 Raspberry Pi OS images include a Linux user (`pi`) that you can use for openHAB administration.
 openHABian renames the user to what you specify in the `username` parameter and assigns the `userpw` password first, then it proceeds and makes various settings that are either useful (such as some aliases) or required to run openHAB.
 You can also make use of this if you don't use the image but unattended installation on non-RPi hardware, openHABian will then _create_ that user for you if it does not yet exist.
 
 #### Admin key
-
 Make the `adminkeyurl` point to an URL to contain a public SSH key.
-This will be included with your administration user's `.ssh/authorized_keys` and the openHAB console so the admin user (yourself, usually) can login after installation.
+This will be included with your administration user's `.ssh/authorized_keys` and the openHAB console so the admin user (yourself, usually) can login right after installation  without a password. This helps with automating deployments.
 
 #### Wi-Fi based setup notes
-
 If you own a RPi3, RPi3+, RPi4, a RPi0W or any other model with a compatible Wi-Fi dongle you can set up and use openHABian via Wi-Fi only.
 For the Wi-Fi based setup to work, you'll need to make your SSID and password known to the system before the first boot.
 So in addition to the setup instructions given above, uncomment and complete the lines reading `wifi_ssid=""` and `wifi_password=""` in `openhabian.conf`.
 
 #### Wi-Fi Hotspot
-
 When your openHABian box does not get Internet connectivity through either Ethernet or WI-Fi (if configured), openHABian will launch a **Hotspot**.
 Use your mobile phone to scan for Wi-Fi networks, you should be seeing a new network called `openHABian-<n>`.
-Connecting will work without a password. Once connected, most smarthpones will transfer you to a web page.
+Connecting will work without a password. Once connected, most smartphones will transfer you to a web page.
 If this does not happen on your mobile device, open your browser on the mobile and point it at `http://raspberrypi.local` or `http://comitup-<n>`.
 This may or may not work for your mobile browser as it requires Bonjour/ZeroConf abilities.
 If you cannot connect to this address, go to `http://10.41.0.1`.
@@ -389,18 +406,15 @@ For more information on hotspot functions see [comitup-cli](https://davesteele.g
 The hotspot feature is known to work on RPi0W, RPi3, and RPi4 but is known to often expose problems with Wi-Fi USB adapters.
 
 #### Disable zram
-
 Zram is activated by default on fresh installations on ARM hardware.
 If you want to disable zram for some reason, use `zraminstall=disable` in `openhabian.conf` to install without.
 
 #### Debug mode
-
 See [Troubleshooting](#troubleshooting) section if you run into trouble installing.
 If you want to turn on debug mode edit `openhabian.conf` and set the `debugmode=` parameter to either `off`, `on` or `maximum`.
 Mind you that if you intend to open an issue, we need you to provide the output of `debugmode=maximum` so if you're in interactive mode, set your terminal to record output.
 
 #### Auto backup
-
 Auto backup is a marketing name for two distinct features that you can deploy in one go at _unattended_ installation time on a RPi (when you deploy the image).
 Technically it is a "low-cost" version of disk mirroring PLUS the setup of the Amanda backup system which all by itself has been available in a long time.
 So don't let the name confuse you. If you didn't choose to set this up at installation time, you can also individually select these functions via `openhabian-config` menu options 53 (mirroring) and 52 (Amanda).
@@ -413,7 +427,7 @@ Note most "16GB" cards are not _exactly_ 16 GB and your mirror mustn't have less
 
 ::: tip NO Do-It-Yourself mirroring
 Note you must NOT use `dd` or any other tool such as 'Win32 disk imager' to copy an SD card or partition on your own. If you do and boot with source and destination cards plugged in, they will have the same partition IDs and this will likely mess up things and can irreversibly devastate your whole system. Use the `blkid` command in shell to see those IDs. This also means you must not take _mirrors_ of the _mirror_.
-Also be aware that only the first two partitions are mirrored - the storage (3rd) parition will never be mirrored even if you have set that up for use as your backup area.
+Also be aware that only the first two partitions are mirrored - the storage (3rd) partition will never be mirrored even if you have set that up for use as your backup area.
 :::
 
 To setup mirroring right during unattended installation of a RPi (using the image flash method):<br>
@@ -426,7 +440,7 @@ You can change where it stores its backup data via `storagedir=/storage`, but yo
 If you want to setup mirroring only and Amanda anywhere else but on the extra SD space, you must not choose unattended installation method (i.e. do not define `backupdrive`).
 You can still setup both, mirroring and Amanda, separately at any later time using the 53 (mirroring) and 52 (Amanda) menu options.
 
-Full mirroring will take place semiannually and for the 2nd partition (Linux root), changes will be synced once every day.
+Full mirroring of the full SD card will take place semiannually and only for the 2nd partition (Linux root), changes will be synced once every day.
 See `systemctl list-timers`, timers are defined in `/etc/systemd/system/sd*.timer`.
 
 
@@ -436,10 +450,9 @@ Menu 5X provides interactive access to the aforementioned functions:<br>
 `54 Raw copy SD` is a one-time raw copy (mirror) run.
 `55 Sync SD` proagates (syncs) differences from your main SD card to your external card.
 
-Should you need to switch over to your backup card, get another new SD card that matches the size of the broken card and use menu option 54 to copy your active backup card back to the new one and switch cards back as soon as possible.
+In case of failure of your primary SD card, replace the broken SD card in the internal slot with your backup card from the external reader. Get another SD card that matches the size of the backup (now in internal slot) card and use menu option 54 to copy your active backup card back to the new one.
 
 #### Tailscale VPN network
-
 Tailscale is a management toolset to establish a WireGuard based VPN between multiple systems if you want to connect to openHAB(ian) instances outside your LAN over Internet.
 It'll take care to detect and open ports when you and your peers are located behind firewalls.
 [Download the client](https://tailscale.com/download) and eventually get the Solo service plan from Tailscale, that's free for private use.
@@ -448,20 +461,17 @@ The Windows client has a link to the admin console where you can create pre-auth
 These you can put as the `preauthkey` into `openhabian.conf` to automatically deploy remote openHABian nodes (unattended install) and have them join the VPN.
 
 #### IPv6 notes
-
 You might encounter problems when you make use of IPv6 on some networks and systems. openHABian installation may stop or hang forever.
 In that case _or if you are sure that you do not need IPv6 on your openHABian server_, you can disable IPv6.
 Follow the instructions in the previous section and insert a line into `openhabian.conf` reading `ipv6=disable`.
 
 #### Fake hardware mode
-
 If to install openHABian fails because you have a non-supported hardware or run an unsupported OS release, you can "fake" your hardware and OS to make openHABian behave as if you did own that HW/OS.
 In `openhabian.conf`, uncomment and complete the lines reading `hw=`, `hwarch=` and/or `osrelease=` with the hw and os versions you want to attempt installation with.
 
 ## Optional Components
-
-openHABian comes with a number of additional routines to quickly install and set up home automation related software.
-You'll find all of these in the [openHABian Configuration Tool](#openhabian-configuration-tool)
+openHABian comes with a number of additional tools to quickly install and set up additional home automation related software.
+You'll find all of these in the [openHABian Configuration Tool](#openhabian-configuration-tool), menu option 20.
 
 -   [Frontail](https://github.com/mthenw/frontail) - openHAB Log Viewer accessible from [http://openhabian:9001](http://openhabian:9001)
 -   [InfluxDB and Grafana](https://community.openhab.org/t/influxdb-grafana-persistence-and-graphing/13761/1) - persistence and graphing available from [http://openhabian:3000](http://openhabian:3000)
@@ -496,7 +506,7 @@ Double-check the IP address and name with your router while you wait.
 If there is absolutely no output for more than 10 minutes, your installation has failed in the first initialization phase.
 There probably is a problem with the way your router or local network are setup.
 Read on in the [Troubleshooting](#troubleshooting) section or move on to the [DEBUG guide](openhabian-DEBUG.md).
-You can set `debugmode=on` (or even = `maximum`) right on first install, too, to get to see what openHABian is doing.
+You can set `debugmode=maximum` in `openhabian.conf` right on first install, too, to get to see what openHABian is doing
 
 After a few minutes of boot up time, you can [connect to the SSH console](https://www.raspberrypi.org/documentation/remote-access/ssh/windows.md) of your device.
 During the setup process you'll be redirected to the live progress report of the setup (you can Ctrl-C to get into the shell).
