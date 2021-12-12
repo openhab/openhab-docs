@@ -311,6 +311,24 @@
             </configuration>
           </execution>
           <execution>
+            <id>copy-alexa-images</id>
+            <phase>process-resources</phase>
+            <goals>
+              <goal>copy-resources</goal>
+            </goals>
+            <configuration>
+              <outputDirectory>${basedir}/_addons_ios/ext/alexa-skill</outputDirectory>
+              <resources>
+                <resource>
+                  <directory>${basedir}/.external-resources/openhab-alexa/docs</directory>
+                  <includes>
+                    <include>images/*.png</include>
+                  </includes>
+                </resource>
+              </resources>
+            </configuration>
+          </execution>
+          <execution>
             <id>copy-thing-types</id>
             <phase>process-resources</phase>
             <goals>
@@ -364,7 +382,7 @@
               <goal>copy</goal>
             </goals>
             <configuration>
-              <sourceFile>${basedir}/.external-resources/openhab-alexa/USAGE.md</sourceFile>
+              <sourceFile>${basedir}/.external-resources/openhab-alexa/docs/oh_alexa-usage.md</sourceFile>
               <destinationFile>${basedir}/_addons_ios/ext/alexa-skill/readme.md</destinationFile>
             </configuration>
           </execution>
