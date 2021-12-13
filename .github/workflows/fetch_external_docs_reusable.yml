@@ -67,6 +67,10 @@ jobs:
           echo "Copy current doc contents"
           cp -v ./external_contents/${{inputs.base_source_repository}}/docs/${{inputs.doc_base_name}}*.md ${{inputs.base_folder}}
 
+          if [ -f USAGE.md ]; then
+            mv USAGE.md readme.md
+          fi 
+
       # Copy images only if flag is set to true 
       - name: Copy newest images
         if: ${{ inputs.has_images == true }}
