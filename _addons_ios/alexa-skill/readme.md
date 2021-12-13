@@ -1,13 +1,13 @@
 ---
 layout: documentation
-title: Amazon Alexa Smart Home Skill
-source: https://github.com/openhab/openhab-alexa/blob/main/USAGE.md
+title: openHAB Skill For Amazon Alexa
+source: https://github.com/openhab/openhab-alexa/blob/main/docs/USAGE.md
 description: "Alexa is an intelligent personal assistant developed by Amazon and designed to run on smart speakers and devices such as the Amazon Echo and Echo Dot."
 ---
 
 # Amazon Alexa Smart Home Skill
 
-<img align="right" width="150px" src="https://images-na.ssl-images-amazon.com/images/I/51-cpfTnBzL._SL210_QL95_BG0,0,0,0_FMpng_.png">
+<img align="right" width="150px" src="./images/skill-logo.png">
 
 Alexa is an intelligent personal assistant developed by Amazon and designed to run on smart speakers and devices such as the Amazon Echo and Dot.
 
@@ -388,7 +388,7 @@ Switch Power     "Power"     (Fireplace) {alexa="PowerState"}
 A guitar amp and its settings modeled with a mix of range/mode/toggle-type generic attributes.
 
 ```xtend
-Group GuitarAmp  "Guitar Amp"            {alexa="Other"}
+Group  GuitarAmp "Guitar Amp"            {alexa="Other"}
 Switch Overdrive "Overdrive" (GuitarAmp) {alexa="ToggleState" [capabilityNames="Overdrive"]}
 Number Gain      "Gain"      (GuitarAmp) {alexa="RangeValue" [capabilityNames="Gain,Drive", supportedRange="1:10:1"]}
 String Preset    "Preset"    (GuitarAmp) {alexa="Mode" [capabilityNames="@Setting.Preset,Effect", supportedModes="Normal=Normal:Standard,LowGain=Low Gain,LeadBoost=Lead Boost,Metal"]}
@@ -412,10 +412,10 @@ String Mode        "Mode"          (Router) {alexa="Mode" [capabilityNames="@Set
 A smart watch and its settings modeled with multiple read-only range-type generic attributes.
 
 ```xtend
-Group SmartWatch "SmartWatch"              {alexa="Wearable"}
-Number Steps     "Steps"      (SmartWatch) {alexa="RangeValue" [capabilityNames="Steps", supportedRange="0:100000:1", nonControllable=true]}
-Number Floors    "Floors"     (SmartWatch) {alexa="RangeValue" [capabilityNames="Floors", supportedRange="0:1000:1", nonControllable=true]}
-Number Battery   "Battery"    (SmartWatch) {alexa="BatteryLevel"}
+Group  SmartWatch "SmartWatch"              {alexa="Wearable"}
+Number Steps      "Steps"      (SmartWatch) {alexa="RangeValue" [capabilityNames="Steps", supportedRange="0:100000:1", nonControllable=true]}
+Number Floors     "Floors"     (SmartWatch) {alexa="RangeValue" [capabilityNames="Floors", supportedRange="0:1000:1", nonControllable=true]}
+Number Battery    "Battery"    (SmartWatch) {alexa="BatteryLevel"}
 ```
 
 ## Semantic Extensions
@@ -1793,7 +1793,7 @@ Items that represent components of a device that can be toggled on or off. Multi
     * each [semantic](#semantic-extensions) mapping formatted as `<action>=ON` or `<action>=OFF` (e.g. `actionMappings="Close=OFF,Open=ON"`)
     * [supported action semantics](#semantic-catalog)
     * only one given action semantic allowed per endpoint
-    * no support for `TurnOn` and `TurnOff` semantics
+    * no support for `TurnOn` and `TurnOff` semantics, use [`PowerState`](#powerstate) instead
     * defaults to no actions
   * stateMappings=`<mappings>`
     * each [semantic](#semantic-extensions) mapping formatted as `<state>=ON` or `<state>=OFF` (e.g. `stateMappings="Closed=OFF,Open=ON"`)
