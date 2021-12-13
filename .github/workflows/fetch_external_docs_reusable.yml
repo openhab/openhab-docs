@@ -30,15 +30,17 @@ on:
         type: string
       doc_base_name:
         description: 'The doc file name prefix for lookup options.'
-        required: true
+        required: false
         type: string
       has_images:
         description: 'Flag for enabling image copy commands.'
-        required: true
+        default: false
+        required: false
         type: boolean
       image_base_name:
         description: 'The image name prefix for lookup options'
-        required: true
+        default: ""
+        required: false
         type: string
 
 jobs:
@@ -65,9 +67,9 @@ jobs:
           echo "Copy current doc contents"
           cp -v ./external_contents/${{inputs.base_source_repository}}/docs/${{inputs.doc_base_name}}*.md ${{inputs.base_folder}}
 
-      # Copy images only if flag is set to true
+      # Copy images only if flag is set to true 
       - name: Copy newest images
-        if: ${{ inputs.has_images == true}}
+        if: ${{ inputs.has_images == true }}
         run: |
           echo "Copy current images"
           cp -v ./external_contents/${{inputs.base_source_repository}}/docs/images/${{inputs.image_base_name}}* ${{inputs.base_folder}}/images
