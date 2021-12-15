@@ -281,10 +281,10 @@ Switch ZonesAlert          "Zones Alert"     (SecurityPanel) {alexa="ZonesAlert"
 A vacuum cleaner with vacuum mode and fan speed controls, and battery level status.
 
 ```xtend
-Group  Vacuum       "Vacuum"        {alexa="VacuumCleaner"}
-String Mode         "Mode"          {alexa="VacuumMode"}
-Dimmer FanSpeed     "Fan Speed"     {alexa="FanSpeed"}
-Number BatteryLevel "Battery Level" {alexa="BatteryLevel"}
+Group  Vacuum       "Vacuum"                 {alexa="VacuumCleaner"}
+String Mode         "Mode"          (Vacuum) {alexa="VacuumMode"}
+Dimmer FanSpeed     "Fan Speed"     (Vaccum) {alexa="FanSpeed"}
+Number BatteryLevel "Battery Level" (Vacuum) {alexa="BatteryLevel"}
 ```
 
 A water heater with temperature and power on/off controls.
