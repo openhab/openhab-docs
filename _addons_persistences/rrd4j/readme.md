@@ -5,6 +5,7 @@ title: rrd4j - Persistence Services
 type: persistence
 description: "The [rrd4j](https://github.com/rrd4j/rrd4j) persistence service is based on a round-robin database."
 since: 3x
+logo: images/addons/rrd4j.png
 install: auto
 ---
 

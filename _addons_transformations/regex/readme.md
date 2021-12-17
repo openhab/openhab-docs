@@ -5,6 +5,7 @@ title: RegEx - Transformation Services
 type: transform
 description: "Transforms a source string on basis of the regular expression (regex) search pattern to a defined result string."
 since: 3x
+logo: images/addons/regex.png
 install: auto
 ---
 
