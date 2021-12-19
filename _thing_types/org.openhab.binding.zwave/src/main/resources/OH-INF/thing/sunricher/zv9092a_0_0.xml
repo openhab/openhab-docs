@@ -1,0 +1,433 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="sunricher_zv9092a_00_000" listed="false">
+    <label>Namron SR-ZV9092A Namron Z-Wave Heating Thermostat SR-ZV9092A</label>
+    <description><![CDATA[
+Namron Z-Wave Heating Thermostat SR-ZV9092A<br /> <h1>Overview</h1><p>Z-Wave Heating Thermostat SR-ZV9092A for underfloor heating ON/OFF<br /></p> <br /> <h2>Inclusion Information</h2><p>Adding to a Z-Wave Network (Inclusion)</p><p>Method 1:Select “Add”, then short press button , the device will send out inclusion request, “Status” will show “Inclusion...”. If there is no response from a gateway within 30 seconds, or inclusion failed, “Status” will show “Fail”. If included successfully, “Status” will show “Inclusion OK” and device ID.</p><p>Method 2: Operate the gateway into inclusion mode, make sure the device is already removed from previous network, reset power of the device, the device will be included to the gateway automatically.</p> <br /> <h2>Exclusion Information</h2><p>Removing from a Z-Wave Network (Exclusion)</p><p>Select “Remove”, then short press button , the device will send out exclusion request, “Status” will show “Exclusion...”. If there is no response from a gateway within 30 seconds, or exclusion failed, “Status” will show “Fail”. If excluded successfully, “Status” will show “Exclusion OK” and device ID will be showed as 0.</p> <br /> <h2>Wakeup Information</h2><p><br /></p>
+    ]]></description>
+    <category>HVAC</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="sensor_temperature" typeId="sensor_temperature">
+        <label>Sensor (temperature)</label>
+        <properties>
+          <property name="binding:*:QuantityType">COMMAND_CLASS_SENSOR_MULTILEVEL;type=TEMPERATURE</property>
+        </properties>
+      </channel>
+      <channel id="meter_kwh" typeId="meter_kwh">
+        <label>Electric meter (kWh)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_KWh</property>
+        </properties>
+      </channel>
+      <channel id="meter_watts" typeId="meter_watts">
+        <label>Electric meter (watts)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_W</property>
+        </properties>
+      </channel>
+      <channel id="meter_voltage" typeId="meter_voltage">
+        <label>Electric meter (volts)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_V</property>
+        </properties>
+      </channel>
+      <channel id="meter_current" typeId="meter_current">
+        <label>Electric meter (amps)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_A</property>
+        </properties>
+      </channel>
+      <channel id="thermostat_mode" typeId="sunricher_zv9092a_00_000_thermostat_mode">
+        <label>Thermostat mode</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_THERMOSTAT_MODE</property>
+        </properties>
+      </channel>
+      <channel id="thermostat_state" typeId="thermostat_state">
+        <label>Thermostat Operating State</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_THERMOSTAT_OPERATING_STATE</property>
+        </properties>
+      </channel>
+      <channel id="thermostat_setpoint_heating" typeId="thermostat_setpoint">
+        <label>Setpoint (heating)</label>
+        <properties>
+          <property name="binding:*:QuantityType">COMMAND_CLASS_THERMOSTAT_SETPOINT;type=HEATING</property>
+        </properties>
+      </channel>
+      <channel id="thermostat_setpoint_dry_air" typeId="thermostat_setpoint">
+        <label>Setpoint (dry air)</label>
+        <properties>
+          <property name="binding:*:QuantityType">COMMAND_CLASS_THERMOSTAT_SETPOINT;type=DRY_AIR</property>
+        </properties>
+      </channel>
+      <channel id="alarm_heat" typeId="alarm_heat">
+        <label>Alarm (heat)</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=HEAT</property>
+        </properties>
+      </channel>
+      <channel id="alarm_power" typeId="alarm_power">
+        <label>Alarm (power)</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=POWER_MANAGEMENT</property>
+        </properties>
+      </channel>
+      <channel id="time_offset" typeId="time_offset">
+        <label>Clock Time Offset</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_TIME_PARAMETERS</property>
+        </properties>
+      </channel>
+      <channel id="sensor_temperature1" typeId="sensor_temperature">
+        <label>Sensor (temperature) 1</label>
+        <properties>
+          <property name="binding:*:QuantityType">COMMAND_CLASS_SENSOR_MULTILEVEL:1;type=TEMPERATURE</property>
+        </properties>
+      </channel>
+      <channel id="thermostat_mode1" typeId="sunricher_zv9092a_00_000_thermostat_mode">
+        <label>Thermostat mode 1</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_THERMOSTAT_MODE:1</property>
+        </properties>
+      </channel>
+      <channel id="thermostat_state1" typeId="thermostat_state">
+        <label>Thermostat Operating State 1</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_THERMOSTAT_OPERATING_STATE:1</property>
+        </properties>
+      </channel>
+      <channel id="thermostat_setpoint_heating1" typeId="thermostat_setpoint">
+        <label>Setpoint (heating) 1</label>
+        <properties>
+          <property name="binding:*:QuantityType">COMMAND_CLASS_THERMOSTAT_SETPOINT:1;type=HEATING</property>
+        </properties>
+      </channel>
+      <channel id="thermostat_setpoint_dry_air1" typeId="thermostat_setpoint">
+        <label>Setpoint (dry air) 1</label>
+        <properties>
+          <property name="binding:*:QuantityType">COMMAND_CLASS_THERMOSTAT_SETPOINT:1;type=DRY_AIR</property>
+        </properties>
+      </channel>
+      <channel id="sensor_temperature2" typeId="sensor_temperature">
+        <label>Sensor (temperature) 2</label>
+        <properties>
+          <property name="binding:*:QuantityType">COMMAND_CLASS_SENSOR_MULTILEVEL:2;type=TEMPERATURE</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Sunricher</property>
+      <property name="modelId">Namron SR-ZV9092A</property>
+      <property name="manufacturerId">0330</property>
+      <property name="manufacturerRef">0200:D013</property>
+      <property name="dbReference">1446</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_2_1" type="integer" groupName="configuration"
+                 min="0" max="16">
+        <label>2: Over current detection max. value in Amp</label>
+        <description><![CDATA[
+Over current detection max. value in Amp<br /> <h1>Overview</h1><p>Over current detection max. value, unit is A. When detected current is over this value, the device will turn off the relay and send NOTIFICATION CC.</p><p>0, disable over current detection<br />5-16, over current detection max. value</p>
+        ]]></description>
+        <default>16</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_3_1" type="integer" groupName="configuration"
+                 min="0" max="2">
+        <label>3: Vibration level and buzzer level triggered by pressing buttons</label>
+        <description><![CDATA[
+Vibration level and buzzer level triggered by pressing buttons<br /> <h1>Overview</h1><p>Vibration level and buzzer level triggered by pressing buttons</p><p>0, disable vibration and buzzer<br />1, Low Level<br />2, High Level</p>
+        ]]></description>
+        <default>1</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_4_1" type="integer" groupName="configuration"
+                 min="0" max="1">
+        <label>4: Whether to recover to settings before power failure or power reset</label>
+        <description><![CDATA[
+Whether to recover to settings before power failure or power reset<br /> <h1>Overview</h1><p>Whether to recover to settings before power failure or power reset</p><p>0, use default settings<br />1, recover to settings before power failure or power reset</p>
+        ]]></description>
+        <default>1</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_6_1" type="integer" groupName="configuration"
+                 min="0" max="60">
+        <label>6: High temperature detection max. value</label>
+        <description><![CDATA[
+High temperature detection max. value<br /> <h1>Overview</h1><p>High temperature detection max. value, unit is ℃ , when either temperature sensor</p><p>is higher than this value, the device will turn off the relay and send NOTIFICATION CC.</p><p>0, disable this function<br />20-60, the high temperature value</p>
+        ]]></description>
+        <default>45</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_7_1" type="integer" groupName="configuration"
+                 min="5" max="20">
+        <label>7: Temperature control hysteresis value setting</label>
+        <description><![CDATA[
+Temperature control hysteresis value setting<br /> <h1>Overview</h1><p>Temperature control hysteresis value setting, setting range 0.5℃-2℃</p><p>5-20, unit is 0.1℃</p>
+        ]]></description>
+        <default>5</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_8_1" type="integer" groupName="configuration"
+                 min="0" max="1">
+        <label>8: Auto mode (Energy save mode) temperature schedule</label>
+        <description><![CDATA[
+Auto mode (Energy save mode) temperature schedule<br /> <h1>Overview</h1><p>Auto mode (Energy save mode) temperature schedule</p><p>0, use schedule set by user<br />1, use Energy_Save_Heating temperature set by THERMOSTAT_SETPOINT_SET</p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_9_1" type="integer" groupName="configuration"
+                 min="1" max="4">
+        <label>9: Select floor temperature sensor type</label>
+        <description><![CDATA[
+Select floor temperature sensor type<br /> <h1>Overview</h1><p>Select floor temperature sensor type:</p><p>1, NTC/10K B(25/50℃)=3950<br />2, NTC/15K B(25/50℃)=3950<br />3, NTC/50K B(25/50℃)=3950<br />4, NTC/100K B(25/50℃)=3950</p>
+        ]]></description>
+        <default>1</default>
+        <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_10_1" type="integer" groupName="configuration"
+                 min="1" max="3">
+        <label>10: Temperature control reference selection</label>
+        <description><![CDATA[
+Temperature control reference selection<br /> <h1>Overview</h1><p>Temperature control reference selection</p><p>1, room sensor<br />2, floor sensor<br />3, room+floor sensor</p>
+        ]]></description>
+        <default>1</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_11_1" type="integer" groupName="configuration"
+                 min="-10" max="10">
+        <label>11: ROOM SENSOR temperature compensation setting</label>
+        <description><![CDATA[
+ROOM SENSOR temperature compensation setting<br /> <h1>Overview</h1><p>ROOM SENSOR temperature compensation setting</p><p>-10~10, unit is 0.5</p>
+        ]]></description>
+        <default>0</default>
+        <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_12_1" type="integer" groupName="configuration"
+                 min="-10" max="10">
+        <label>12: FLOOR SENSOR temperature compensation setting</label>
+        <description><![CDATA[
+FLOOR SENSOR temperature compensation setting<br /> <h1>Overview</h1><p>FLOOR SENSOR temperature compensation setting</p><p>-10~10, unit is 0.5</p>
+        ]]></description>
+        <default>0</default>
+        <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_13_1" type="integer" groupName="configuration"
+                 min="5" max="100">
+        <label>13: Set how long the drying mode lasts</label>
+        <description><![CDATA[
+Set how long the drying mode lasts<br /> <h1>Overview</h1><p>Set how long the drying mode lasts</p><p>5~100, unit is minute</p>
+        ]]></description>
+        <default>5</default>
+        <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_14_1" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>14: Set the mode after the drying mode ends</label>
+        <description><![CDATA[
+Set the mode after the drying mode ends<br /> <h1>Overview</h1><p>Set the mode after the drying mode ends</p><p>0x00 = OFF<br />0x01 = Manual mode (comfort mode)<br />0x02 = Auto mode (energy save mode)<br />0x03 = Away mode</p>
+        ]]></description>
+        <default>2</default>
+        <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_16_1" type="integer" groupName="configuration"
+                 min="0" max="10">
+        <label>16: When to report temperature relative change threshold value actively</label>
+        <description><![CDATA[
+When to report temperature relative change threshold value actively<br /> <h1>Overview</h1><p>When to report temperature relative change threshold value actively, unit is 0.1</p><p>0, disable to report<br />2-10, report when the threshold value is 2-10</p>
+        ]]></description>
+        <default>2</default>
+        <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_17_2" type="integer" groupName="configuration"
+                 min="30" max="28800">
+        <label>17: Time interval value for periodic report of temperature, humidity</label>
+        <description><![CDATA[
+Time interval value for periodic report of temperature, humidity<br /> <h1>Overview</h1><p>Time interval value for periodic report of temperature, humidity, unit is S</p><p>0, disable to report<br />30~28800, report when time interval value is 30~28800</p><p>Default: 300 (5 minutes).</p>
+        ]]></description>
+        <default>300</default>
+        <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_18_1" type="integer" groupName="configuration"
+                 min="1" max="100">
+        <label>18: When to report power change absolute threshold</label>
+        <description><![CDATA[
+When to report power change absolute threshold<br /> <h1>Overview</h1><p>When to report power change absolute threshold, unit is W</p><p>0, disable to report<br />1~100, report when absolute threshold is 1~100</p>
+        ]]></description>
+        <default>5</default>
+        <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_19_1" type="integer" groupName="configuration"
+                 min="1" max="10">
+        <label>19: When to report current change absolute threshold</label>
+        <description><![CDATA[
+When to report current change absolute threshold<br /> <h1>Overview</h1><p>When to report current change absolute threshold, unit is 0.1A</p><p>0, disable to report<br />1~10, report when absolute threshold is 1~10</p>
+        ]]></description>
+        <default>10</default>
+        <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_20_1" type="integer" groupName="configuration"
+                 min="1" max="10">
+        <label>20: When to report voltage change absolute threshold</label>
+        <description><![CDATA[
+When to report voltage change absolute threshold<br /> <h1>Overview</h1><p>When to report voltage change absolute threshold, unit is 1 V</p><p>0, disable to report<br />1~10, report when absolute threshold is 1~10</p>
+        ]]></description>
+        <default>2</default>
+        <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_21_4" type="integer" groupName="configuration"
+                 min="60" max="2678400">
+        <label>21: Time interval value for periodic active report of Meter</label>
+        <description><![CDATA[
+Time interval value for periodic active report of Meter<br /> <h1>Overview</h1><p>Time interval value for periodic active report of Meter</p><p>60-2678400 (31 days), unit is S</p>
+        ]]></description>
+        <default>600</default>
+        <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_22_1" type="integer" groupName="configuration"
+                 min="0" max="2">
+        <label>22: The OLED display brightness when operate the device</label>
+        <description><![CDATA[
+The OLED display brightness when operate the device<br /> <h1>Overview</h1><p>The OLED display brightness when operate the device.</p><p>0, low level<br />1, mid level<br />2, high level</p>
+        ]]></description>
+        <default>1</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_23_1" type="integer" groupName="configuration"
+                 min="0" max="1">
+        <label>23: This parameter defines which sensor temperature will be displayed on Home page</label>
+        <description><![CDATA[
+This parameter defines which sensor temperature will be displayed on Home page<br /> <h1>Overview</h1><p>This parameter defines which sensor temperature will be displayed on Home page.</p><p>0x00: indoor air temperature<br />0x01: external temperature (floor temperature)</p>
+        ]]></description>
+        <default>0</default>
+        <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_24_1" type="integer" groupName="configuration"
+                 min="-12" max="12">
+        <label>24: The time zone that the time parameters command adopts is UTC</label>
+        <description><![CDATA[
+The time zone that the time parameters command adopts is UTC<br /> <h1>Overview</h1><p>The time zone that the time parameters command adopts is UTC, the time zone</p><p>need to be set:<br />+12 ~ -12</p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_26_1" type="integer" groupName="configuration"
+                 min="0" max="40">
+        <label>26: Window open detect function temperature threshold</label>
+        <description><![CDATA[
+Window open detect function temperature threshold<br /> <h1>Overview</h1><p>Window open detect function temperature threshold: the Celsius degrees that the temperature decreases within 3 minutes, unit is 0.1 Celsius degree.</p><p>0, disabled<br />15, 20, 25, 30, 35, 40, the set temperature threshold</p>
+        ]]></description>
+        <default>0</default>
+        <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association">
+        <label>1: Lifeline</label>
+        <description>Lifeline</description>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+  <channel-type id="sunricher_zv9092a_00_000_thermostat_mode">
+    <item-type>Number</item-type>
+    <label>Thermostat Mode</label>
+    <description>Sets the thermostat mode</description>
+    <category>Temperature</category>
+    <state pattern="%s">
+      <options>
+        <option value="0">Off</option>
+        <option value="1">Heat</option>
+        <option value="11">Economy Heat</option>
+        <option value="13">Away</option>
+        <option value="8">Dry Air</option>
+      </options>
+    </state>
+  </channel-type>
+
+  <channel-type id="sunricher_zv9092a_00_000_thermostat_mode">
+    <item-type>Number</item-type>
+    <label>Thermostat Mode</label>
+    <description>Sets the thermostat mode</description>
+    <category>Temperature</category>
+    <state pattern="%s">
+      <options>
+        <option value="0">Off</option>
+        <option value="1">Heat</option>
+        <option value="11">Economy Heat</option>
+        <option value="13">Away</option>
+        <option value="8">Dry Air</option>
+      </options>
+    </state>
+  </channel-type>
+
+</thing:thing-descriptions>
