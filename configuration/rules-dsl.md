@@ -286,7 +286,7 @@ Channel "<triggerChannel>" triggered [<triggerEvent>]
 When a binding provides such channels, you can find the needed information in the corresponding binding documentation.
 There is no generic list of possible values for `triggerEvent`,
 The `triggerEvent`(s) available depend upon the specific implementation details of the binding.
-If the Rule needs to know what the received event was, use the [implicit variable]({{base}}/configuration/rules-dsl.html#implicit-variables-inside-the-execution-block) `receivedEvent` to access the information.
+If the Rule needs to know what the received event or the triggering channel was, use the [implicit variable]({{base}}/configuration/rules-dsl.html#implicit-variables-inside-the-execution-block) `receivedEvent` or `triggeringChannel` to access the information.
 
 Example:
 
@@ -759,6 +759,7 @@ Besides the implicitly available variables for items and commands/states, rules 
 - `triggeringItemName` - implicitly available in every rule that has at least one status update, status change or command event trigger.
 - `triggeringItem` - implicitly available in every rule that has a "Member of" trigger.
 - `receivedEvent` - implicitly available in every rule that has a channel-based trigger.
+- `triggeringChannel` - implicitly available in every rule that has a channel-based trigger.
 
 {: #return}
 
