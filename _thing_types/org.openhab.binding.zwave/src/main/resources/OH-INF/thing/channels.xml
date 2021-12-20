@@ -414,6 +414,14 @@
         <category>ColorLight</category>
     </channel-type>
 
+    <!-- Color Command Class - Raw -->
+    <channel-type id="color_raw">
+        <item-type>String</item-type>
+        <label>Color Raw Setting</label>
+        <description>Sets the color from a comma delimited key=value string</description>
+        <category></category>
+    </channel-type>
+
     <!-- Configuration Command Class Channel - Decimal Conversion -->
     <channel-type id="config_decimal">
         <item-type>Number</item-type>
