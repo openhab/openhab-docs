@@ -958,6 +958,12 @@ Here the developer only needs to implement four simple methods:
 - `createResult` - Creates the `DiscoveryResult` out of the mDNS result.
     This method is called from the discovery service to create the actual discovery result.
     It uses the `getThingUID` method to create the thing UID of the result.
+- `getRemovalGracePeriodSeconds` (OPTIONAL) - Returns an additional grace period delay in seconds before the device will be removed from the Inbox.
+    This method is called when the discovery service is about to remove a Thing from the Inbox.
+    Some bindings handle devices that can sometimes be a bit late in sending their mDNS notifications even though they have not really gone offline.
+    This means that the device is repeatedly removed from, and (re)added to, the Inbox.
+    To prevent this, a binding may OPTIONALLY implement this method to specify an additional delay period (grace period) to wait before the device is removed from the Inbox.
+    See the example code for the `getRemovalGracePeriodSeconds()` method under the "UPnP Discovery" chapter above.
 
 ### Discovery that is bound to a Bridge
 
