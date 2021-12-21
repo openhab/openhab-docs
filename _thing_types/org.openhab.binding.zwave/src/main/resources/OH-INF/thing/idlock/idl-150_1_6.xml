@@ -1,0 +1,314 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="idlock_idl-150_01_006" listed="false">
+    <label>ID-150 Z-wave module for ID Lock 150</label>
+    <description><![CDATA[
+Z-wave module for ID Lock 150<br /> <h1>Overview</h1><p>The ID Lock Z-wave module is a security enabled Z-wave Plus product that is able to use encrypted Z-wave Plus messages in order to communicate to other Z-wave Plus products enabled security.</p><p>The module is proprietary for the ID Lock 150. The ID Lock Z-wave module must be used in conjunction with a Security Enabled Z-wave Controller in order to fully utilize their full capability.</p><p>The ID Lock Z-wave module can be included and operated in any Z-wave network containing certified other Z-wave products regardless of manufacturer. The ID Lock Z-wave module does not support the Basic Set Command Class.</p><p><br /></p> <br /> <h2>Inclusion Information</h2><ol><li>Bring the controller as close as possible to the lock unit</li><li>Set the controller to inclusion mode</li><li>Push and hold KEY button on the inside panel on the lock until all keys on the outside light up and an audible signal is given.</li><li>Release the KEY button on the inside panel</li><li>Enter your Master PIN and press *</li><li>Click 2 and then *</li><li>Click 5, don't press *</li><li>The LED flashes blue when inclusion is in progress</li><li>The inclusion may take some time as security is required</li></ol><p><br /></p> <br /> <h2>Exclusion Information</h2><ol><li>Set the controller to Exclusion mode</li><li>Push and hold KEY button on the inside panel on the lock until all keys on the outside light up and an audible signal is given.</li><li>Release the KEY button on the inside panel</li><li>Enter your Master PIN and press *</li><li>Click 2 and then *</li><li>Click 5, don't press *</li><li>The LED flashes blue when exclusion is in progress</li></ol><p><br /></p> <br /> <h2>Wakeup Information</h2><p><br /></p><p><br /></p>
+    ]]></description>
+    <category>Lock</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="lock_door" typeId="lock_door">
+        <label>Door Lock</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_DOOR_LOCK</property>
+        </properties>
+      </channel>
+      <channel id="sensor_door" typeId="sensor_door">
+        <label>Door State</label>
+        <properties>
+          <property name="binding:*:OpenClosedType">COMMAND_CLASS_DOOR_LOCK</property>
+        </properties>
+      </channel>
+      <channel id="config_decimal_param6" typeId="idlock_idl-150_01_006_config_decimal_param6">
+        <label>Service PIN Mode</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_CONFIGURATION;parameter=6</property>
+        </properties>
+      </channel>
+      <channel id="config_decimal_param4" typeId="idlock_idl-150_01_006_config_decimal_param4">
+        <label>Audio Volume</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_CONFIGURATION;parameter=4</property>
+        </properties>
+      </channel>
+      <channel id="config_decimal_param1" typeId="config_decimal">
+        <label>Lock Mode</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_CONFIGURATION;parameter=1</property>
+        </properties>
+      </channel>
+      <channel id="config_decimal_param2" typeId="idlock_idl-150_01_006_config_decimal_param2">
+        <label>RFID Mode</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_CONFIGURATION;parameter=2</property>
+        </properties>
+      </channel>
+      <channel id="config_decimal_param5" typeId="idlock_idl-150_01_006_config_decimal_param5">
+        <label>ReLock Mode</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_CONFIGURATION;parameter=5</property>
+        </properties>
+      </channel>
+      <channel id="notification_access_control" typeId="notification_access_control">
+        <label>Access Control (0x06)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_ALARM</property>
+        </properties>
+      </channel>
+      <channel id="notification_home_security" typeId="notification_home_security">
+        <label>Home Security (0x07)</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM</property>
+        </properties>
+      </channel>
+      <channel id="notification_smoke_alarm" typeId="notification_smoke_alarm">
+        <label>Emergency (0x0A)</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM</property>
+        </properties>
+      </channel>
+      <channel id="alarm_raw" typeId="alarm_raw">
+        <label>Alarm (raw)</label>
+        <properties>
+          <property name="binding:*:StringType">COMMAND_CLASS_ALARM</property>
+        </properties>
+      </channel>
+      <channel id="battery-level" typeId="system.battery-level">
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_BATTERY</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">ID Lock AS</property>
+      <property name="modelId">ID-150</property>
+      <property name="manufacturerId">0373</property>
+      <property name="manufacturerRef">0003:0001</property>
+      <property name="versionMin">1.6</property>
+      <property name="dbReference">1449</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_1_1" type="integer" groupName="configuration"
+                 min="0" max="3">
+        <label>1: Lock Mode</label>
+        <description><![CDATA[
+Set if the lock is in away mode and if automatic locking should be enabled<br /> <h1>Overview</h1><p>0 = Manual lock/Away off<br />1 = Auto lock/Away off<br />2 = Manual lock/Away on<br />3 = Auto lock/Away on<br /></p>
+        ]]></description>
+        <default>1</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_2_1" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>2: RFID Mode</label>
+        <description>RFID Mode</description>
+        <default>5</default>
+        <options>
+          <option value="5">RFID mode activated</option>
+          <option value="9">RFID mode deactivated</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_3_1" type="integer" groupName="configuration"
+                 min="0" max="1">
+        <label>3: Hinge Direction</label>
+        <description>Hinge Direction</description>
+        <default>1</default>
+        <options>
+          <option value="0">Right hinged operation</option>
+          <option value="1">Left hinged operation</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_4_1" type="integer" groupName="configuration"
+                 min="0" max="6">
+        <label>4: Audio Volume</label>
+        <description>Audio Volume</description>
+        <default>5</default>
+        <options>
+          <option value="0">Silent</option>
+          <option value="1">Very low</option>
+          <option value="2">Low</option>
+          <option value="3">Medium low</option>
+          <option value="4">Medium</option>
+          <option value="5">Medium high</option>
+          <option value="6">High</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_5_1" type="integer" groupName="configuration"
+                 min="0" max="1">
+        <label>5: ReLock Mode</label>
+        <description>ReLock Mode</description>
+        <default>1</default>
+        <options>
+          <option value="0">ReLock off</option>
+          <option value="1">ReLock on</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_6_1" type="integer" groupName="configuration"
+                 min="0" max="254">
+        <label>6: Service PIN Mode</label>
+        <description>Service PIN Mode</description>
+        <default>0</default>
+        <options>
+          <option value="0">Deactivated</option>
+          <option value="1">1x use</option>
+          <option value="2">2x use</option>
+          <option value="3">5x use</option>
+          <option value="4">10x use</option>
+          <option value="5">Random PIN 1x use</option>
+          <option value="6">Random PIN 24h use</option>
+          <option value="7">Always valid</option>
+          <option value="8">12 hours use</option>
+          <option value="9">24 hours use</option>
+          <option value="254">Disabled</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_7_1" type="integer" groupName="configuration" readOnly="true"
+                 min="0" max="255">
+        <label>7: Modul type</label>
+        <description><![CDATA[
+Modul type<br /> <h1>Overview</h1><p>150 = IDLock 150 (Read only)</p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_8_1" type="integer" groupName="configuration"
+                 min="0" max="3">
+        <label>8: Updater Mode</label>
+        <description>Updater Mode</description>
+        <default>0</default>
+        <options>
+          <option value="0">Off (no sound)</option>
+          <option value="1">On (no sound)</option>
+          <option value="2">Off</option>
+          <option value="3">On</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_9_1" type="integer" groupName="configuration"
+                 min="0" max="1">
+        <label>9: Master PIN Unlocks</label>
+        <description>Master PIN Unlocks</description>
+        <default>1</default>
+        <options>
+          <option value="0">No</option>
+          <option value="1">Yes</option>
+        </options>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Lifeline</label>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+  <channel-type id="idlock_idl-150_01_006_config_decimal_param6">
+    <item-type>Number</item-type>
+    <label>Service PIN Mode</label>
+    <description>Service PIN Mode</description>
+    <state pattern="%s">
+      <options>
+        <option value="0">Deactivated</option>
+        <option value="1">1x use</option>
+        <option value="2">2x use</option>
+        <option value="3">5x use</option>
+        <option value="4">10x use</option>
+        <option value="5">Random PIN 1x use</option>
+        <option value="6">Random PIN 24h use</option>
+        <option value="7">Always valid</option>
+        <option value="8">12 hours use</option>
+        <option value="9">24 hours use</option>
+        <option value="254">Disabled</option>
+      </options>
+    </state>
+  </channel-type>
+
+  <channel-type id="idlock_idl-150_01_006_config_decimal_param4">
+    <item-type>Number</item-type>
+    <label>Audio Volume</label>
+    <description>Audio Volume</description>
+    <state pattern="%s">
+      <options>
+        <option value="0">Silent</option>
+        <option value="1">Very low</option>
+        <option value="2">Low</option>
+        <option value="3">Medium low</option>
+        <option value="4">Medium</option>
+        <option value="5">Medium high</option>
+        <option value="6">High</option>
+      </options>
+    </state>
+  </channel-type>
+
+  <channel-type id="idlock_idl-150_01_006_config_decimal_param1">
+    <item-type>Number</item-type>
+    <label>Lock Mode</label>
+    <description>Set if the lock is in away mode and if automatic locking should be enabled</description>
+    <state pattern="%s">
+    </state>
+  </channel-type>
+
+  <channel-type id="idlock_idl-150_01_006_config_decimal_param2">
+    <item-type>Number</item-type>
+    <label>RFID Mode</label>
+    <description>RFID Mode</description>
+    <state pattern="%s">
+      <options>
+        <option value="5">RFID mode activated</option>
+        <option value="9">RFID mode deactivated</option>
+      </options>
+    </state>
+  </channel-type>
+
+  <channel-type id="idlock_idl-150_01_006_config_decimal_param5">
+    <item-type>Number</item-type>
+    <label>ReLock Mode</label>
+    <description>ReLock Mode</description>
+    <state pattern="%s">
+      <options>
+        <option value="0">ReLock off</option>
+        <option value="1">ReLock on</option>
+      </options>
+    </state>
+  </channel-type>
+
+</thing:thing-descriptions>

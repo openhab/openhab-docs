@@ -3,7 +3,7 @@ id: jrubyscripting
 label: JRuby Scripting
 title: JRuby Scripting - Automation
 type: automation
-description: "This add-on provides [JRuby](https://www.jruby.org/) 9.3.1 that can be used as a scripting language within automation rules."
+description: "This add-on provides [JRuby](https://www.jruby.org/) 9.3.2 that can be used as a scripting language within automation rules."
 since: 3x
 logo: images/addons/jrubyscripting.png
 install: manual
@@ -15,7 +15,7 @@ install: manual
 
 # JRuby Scripting
 
-This add-on provides [JRuby](https://www.jruby.org/) 9.3.1 that can be used as a scripting language within automation rules.
+This add-on provides [JRuby](https://www.jruby.org/) 9.3.2 that can be used as a scripting language within automation rules.
 
 ## JRuby Scripting Configuration
 
