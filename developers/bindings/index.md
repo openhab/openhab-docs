@@ -929,6 +929,15 @@ public class HueBridgeDiscoveryParticipant implements UpnpDiscoveryParticipant {
 
     @Activate
     public void activate(@Nullable Map<String, Object> configProperties) {
+        updateRemovalGracePeriod(configProperties);
+    }
+
+    @Modified
+    public void modified(@Nullable Map<String, Object> configProperties) {
+        updateRemovalGracePeriod(configProperties);
+    }
+
+    private void updateRemovalGracePeriod(Map<String, Object> configProperties) {
         if (configProperties != null) {
             Object value = configProperties.get(HueBindingConstants.REMOVAL_GRACE_PERIOD);
             if (value != null) {
