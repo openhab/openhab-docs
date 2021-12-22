@@ -63,5 +63,5 @@ Approve it in the usual way.
 Repeat this procedure for every Zwave device.
 
 Note: Battery powered devices will be discovered, but may remain as an "unknown" type until the device has woken up enough for the binding to discover what it is.
-On it's own, this process can take days.
+On its own, this process can take days.
 To speed up the process activate the device several times until the Thing shows the correct device type.
