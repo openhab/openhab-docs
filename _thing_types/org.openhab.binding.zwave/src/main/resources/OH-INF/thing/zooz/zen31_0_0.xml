@@ -66,6 +66,11 @@ RGBW Dimmer for LED Strips<br /> <h1>Overview</h1><ul><li>Manual or Z-Wave on/of
           <property name="binding:Command:OnOffType">COMMAND_CLASS_SWITCH_MULTILEVEL:1</property>
         </properties>
       </channel>
+      <channel id="color_raw1" typeId="color_raw">
+        <label>Color Raw</label>
+        <properties>
+        </properties>
+      </channel>
       <channel id="alarm_system1" typeId="alarm_system">
         <label>Alarm (system) 1</label>
         <properties>
