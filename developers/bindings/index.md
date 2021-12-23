@@ -942,7 +942,7 @@ public class HueBridgeDiscoveryParticipant implements UpnpDiscoveryParticipant {
             Object value = configProperties.get(HueBindingConstants.REMOVAL_GRACE_PERIOD);
             if (value != null) {
                 try {
-                    removalGracePeriodSeconds = Integer.parseInt((String) value);
+                    removalGracePeriodSeconds = Integer.parseInt(value.toString());
                 } catch (NumberFormatException e) {
                     logger.warn("Configuration property '{}' has invalid value: {}",
                             HueBindingConstants.REMOVAL_GRACE_PERIOD, value);
