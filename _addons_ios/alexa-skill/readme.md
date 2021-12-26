@@ -117,9 +117,9 @@ There is a maximum of 300 endpoints limit per user with 100 capabilities per end
 
 ## Single Endpoint
 
-Single items in openHAB can be mapped to single endpoint in Alexa through the use of the [item metadata](https://www.openhab.org/docs/concepts/items.html#item-metadata).
+Single items in openHAB can be mapped to a single endpoint in Alexa through the use of the [item metadata](https://www.openhab.org/docs/concepts/items.html#item-metadata).
 
-An simple example of this is a light switch. In openHAB a light switch is defined as a "Switch" item and responds to ON or OFF commands.
+A simple example of this is a light switch. In openHAB a light switch is defined as a "Switch" item and responds to ON or OFF commands.
 
 ```xtend
 Switch LightSwitch "Light Switch" {alexa="Light"}
@@ -682,7 +682,7 @@ If paired with [`TiltAngle`](#tiltangle), the primary controls (open/close/stop)
 
 #### `TiltAngle`
 
-Items that represent the title angle of a window blind.
+Items that represent the tilt angle of a window blind.
 
 If paired with [`PositionState`](#positionstate), the primary controls (open/close/stop) can be defined as position-based or tilt-based setting metadata parameter `primaryControl="tilt"` at the group level.
 

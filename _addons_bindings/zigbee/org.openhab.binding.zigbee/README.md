@@ -141,7 +141,7 @@ Sets the Trust Centre join/rejoin mode.
 | `TC_JOIN_INSECURE`    | Allow all joins.             |                                                                                             |
 | `TC_JOIN_INSTALLCODE` | Only join with install code. | Devices attempting to join with the TC Link Key will be rejected.                           |
 
-##### Group Registration (zigbee_groupregistration)
+##### Group Registration (zigbee_groupregistration)
 
 Some devices send commands to a group address (ie using multicast addressing). This configuration allows the user to define a list of groups that the binding will listen for commands. Multiple groups can be defined - groups are separated with a comma and must be defined as a four character hexadecimal value.
 
@@ -480,7 +480,7 @@ This will log data into the standard `openhab.log` file. There is an [online log
 
 Note that logs can only show what is happening at a high level - it can't show all data exchanges between the device and the coordinator - just what the coordinator sends to the binding. For this reason it can be difficult to debug issues where devices are not joining the network, or other low level issues need resolving. In such cases a network sniffer log is required, which requires additional hardware and software. Information and software required to use an Ember dongle as a sniffer can be found on the [OpenSmartHouse](https://opensmarthouse.org/blog/zigbee_network_sniffer) site.
 
-### ZigBee Console Commands
+### ZigBee Console Commands
 
 The openHAB command line interface provides a number of commands to interact with the ZigBee framework. These can provide useful options for debugging when things aren't going as planned, and can also provide advanced users a means to make changes that are not possible directly through the binding. This section will provide information on a few common issues that users may come up against, but is not an exhaustive user manual for low level ZigBee commands.
 
@@ -492,7 +492,7 @@ To list all known nodes, use the `nodes` command. This will list the nodes and e
 
 In some instances a device may not work correctly. This could be because the binding had problems during initialisation, or possibly because the device supports features not implemented in the binding, or possibly the device may implement custom functionality. To understand this, there is a `fingerprint` command. This command will attempt to poll the device to get a list of all the commands and attributes that the device supports and create a concise list. Note that this may not work on all devices if the device doesn't support the functionality discovery commands.
 
-#### Binding and Reporting
+#### Binding and Reporting
 
 The binding table is used within ZigBee to configure devices to send reports to the binding when their state changes. The binding will attempt to set the required ZigBee bindings during device initialisation, but sometimes this can fail. Often this may occur on older devices that have limited memory, and only have a small number of entries in the binding table, and then manual manipulation of the table may be required.
 
