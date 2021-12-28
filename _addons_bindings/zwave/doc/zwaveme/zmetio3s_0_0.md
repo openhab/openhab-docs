@@ -96,7 +96,7 @@ The following state translation is provided for this channel to the ```Number```
 | 13 | Away |
 
 ### Setpoint (heating)
-Heating temperature 
+Air heating temperature 
 
 Sets the thermostat setpoint.
 
@@ -168,8 +168,8 @@ Association group 1 supports 8 nodes.
 | COMMAND_CLASS_SWITCH_BINARY_V1| |
 | COMMAND_CLASS_SWITCH_MULTILEVEL_V1| |
 | COMMAND_CLASS_SENSOR_MULTILEVEL_V7| |
-| COMMAND_CLASS_THERMOSTAT_MODE_V1| |
-| COMMAND_CLASS_THERMOSTAT_SETPOINT_V1| |
+| COMMAND_CLASS_THERMOSTAT_MODE_V3| |
+| COMMAND_CLASS_THERMOSTAT_SETPOINT_V3| |
 | COMMAND_CLASS_ASSOCIATION_GRP_INFO_V1| |
 | COMMAND_CLASS_DEVICE_RESET_LOCALLY_V1| |
 | COMMAND_CLASS_ZWAVEPLUS_INFO_V1| |

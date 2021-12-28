@@ -48,11 +48,11 @@ The following table summarises the channels available for the XLED Home 2 -:
 | Scene Number | scene_number | scene_number |  | Number | 
 | Binary Sensor | sensor_binary | sensor_binary |  | Switch | 
 | Sensor (luminance) | sensor_luminance | sensor_luminance |  | Number | 
-| Alarm (burglar) | alarm_burglar | alarm_burglar | Door | Switch | 
+| Alarm (burglar) | alarm_motion | alarm_motion | Motion | Switch | 
 | Alarm (system) | alarm_system | alarm_system |  | Switch | 
 | Control: Key01 lamp (on/off) | switch_binary1 | switch_binary | Switch | Switch | 
 | Scene Number 1 | scene_number1 | scene_number |  | Number | 
-| Alarm (burglar) motion | alarm_burglar2 | alarm_burglar | Door | Switch | 
+| Alarm (burglar) motion | alarm_motion2 | alarm_motion | Motion | Switch | 
 | Sensor (luminance)2 | sensor_luminance3 | sensor_luminance |  | Number | 
 
 ### Switch
@@ -83,9 +83,9 @@ Indicates the current light reading.
 The ```sensor_luminance``` channel is of type ```sensor_luminance``` and supports the ```Number``` item. This is a read only channel so will only be updated following state changes from the device.
 
 ### Alarm (burglar)
-Indicates if the burglar alarm is triggered.
+Indicates if a motion alarm is triggered.
 
-The ```alarm_burglar``` channel is of type ```alarm_burglar``` and supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
+The ```alarm_motion``` channel is of type ```alarm_motion``` and supports the ```Switch``` item and is in the ```Motion``` category. This is a read only channel so will only be updated following state changes from the device.
 
 The following state translation is provided for this channel to the ```Switch``` item type -:
 
@@ -117,9 +117,9 @@ Triggers when a scene button is pressed.
 The ```scene_number1``` channel is of type ```scene_number``` and supports the ```Number``` item.
 
 ### Alarm (burglar) motion
-Indicates if the burglar alarm is triggered.
+Indicates if a motion alarm is triggered.
 
-The ```alarm_burglar2``` channel is of type ```alarm_burglar``` and supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
+The ```alarm_motion2``` channel is of type ```alarm_motion``` and supports the ```Switch``` item and is in the ```Motion``` category. This is a read only channel so will only be updated following state changes from the device.
 
 The following state translation is provided for this channel to the ```Switch``` item type -:
 
