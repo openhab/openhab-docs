@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="yale_yrd136_00_000" listed="false">
+    <label>YRD136 Yale Pro™ SL Key-Free Deadbolt (YRD136 or YRD156)</label>
+    <description><![CDATA[
+Yale Pro™ SL Key-Free Deadbolt (YRD136 or YRD156)<br /> <h1>Overview</h1><p>Built for the Pros. Designed for the Home.<br /><br />The Yale Pro™ SL (YRD156 or YRD136) is a key-free deadbolt with Z-Wave Plus built-in, available in touchscreen or keypad models. It replaces a standard deadbolt in minutes using just a screwdriver and can be added to dozens of Z-Wave smart home and alarm systems with one-touch enrollment.<br /></p><p>The lock is 100% key free so it can't be picked and there's no keys to lose. To prevent lockouts due to dead batteries, there is a 9V battery terminal located below the keypad. The lock has a backlit keypad that wakes with a touch and has numbers that won't wear off. It's backed by a lifetime limited warranty on finish and mechanics, and a one year warranty for electronics. Get the premium Yale design and features seen in retail, with a product offered specifically to the pro channel.<br /></p> <br /> <h2>Inclusion Information</h2><p>N/A</p> <br /> <h2>Exclusion Information</h2><p>N/A<br /></p> <br /> <h2>Wakeup Information</h2><p><br /></p>
+    ]]></description>
+    <category>Lock</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="lock_door" typeId="lock_door">
+        <label>Door Lock</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_DOOR_LOCK</property>
+        </properties>
+      </channel>
+      <channel id="alarm_power" typeId="alarm_power">
+        <label>Alarm (power)</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=POWER_MANAGEMENT</property>
+        </properties>
+      </channel>
+      <channel id="alarm_access" typeId="alarm_access">
+        <label>Alarm (access)</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=ACCESS_CONTROL</property>
+        </properties>
+      </channel>
+      <channel id="alarm_raw" typeId="alarm_raw">
+        <label>Alarm (raw)</label>
+        <properties>
+          <property name="binding:*:StringType">COMMAND_CLASS_ALARM</property>
+        </properties>
+      </channel>
+      <channel id="battery-level" typeId="system.battery-level">
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_BATTERY</property>
+        </properties>
+      </channel>
+      <channel id="time_offset" typeId="time_offset">
+        <label>Clock Time Offset</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_TIME_PARAMETERS</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">ASSA ABLOY</property>
+      <property name="modelId">YRD136</property>
+      <property name="manufacturerId">0129</property>
+      <property name="manufacturerRef">803B:0508</property>
+      <property name="dbReference">1450</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_1_1" type="integer" groupName="configuration"
+                 min="1" max="3">
+        <label>1: Volume</label>
+        <description>Volume of beeps</description>
+        <default>1</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_2_1" type="integer" groupName="configuration">
+        <label>2: Auto relock</label>
+        <description>Auto relocking after unlocked</description>
+        <default>3</default>
+        <options>
+          <option value="0">No auto-relock</option>
+          <option value="255">Auto relock</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_3_1" type="integer" groupName="configuration"
+                 min="5" max="255">
+        <label>3: Auto relock time</label>
+        <description><![CDATA[
+Time for auto relock<br /> <h1>Overview</h1><p>Amount of seconds between the door is unlocked and when it automatically attempts to re-lock itself, when auto-relocking is enabled.<br /></p>
+        ]]></description>
+        <default>30</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_4_1" type="integer" groupName="configuration"
+                 min="1" max="7">
+        <label>4: Wrong code limit</label>
+        <description><![CDATA[
+Number of incorrect PINs before lockout<br /> <h1>Overview</h1><p>Number of incorrect PINs that can be keyed in before lock goes into temporary keypad lockout mode.<br /></p>
+        ]]></description>
+        <default>5</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_7_1" type="integer" groupName="configuration" readOnly="true"
+                 min="1" max="255">
+        <label>7: Shutdown time</label>
+        <description><![CDATA[
+Incorrect attempts shutdown time<br /> <h1>Overview</h1><p>Amount of time lock should ignore the keypad, if the number of incorrect PINs is exceeded. (Can still be locked and unlocked by zwave while in shutdown.)<br /></p>
+        ]]></description>
+        <default>60</default>
+        <advanced>true</advanced>
+      </parameter>
+
+      <parameter name="config_8_1" type="integer" groupName="configuration">
+        <label>8: Operation Mode</label>
+        <description><![CDATA[
+Operation Mode<br /> <h1>Overview</h1><p><br /></p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Normal</option>
+          <option value="1">Vacation</option>
+          <option value="2">Privacy</option>
+        </options>
+        <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Receive Alarms</label>
+        <description><![CDATA[
+Group that will receive alarm notices from the lock<br /> <h1>Overview</h1><p>The lock supports 1 association group with 5 devices. Alarm Reports are sent out unsolicited to devices included in the association group.<br /></p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>
