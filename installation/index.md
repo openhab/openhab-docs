@@ -28,7 +28,7 @@ Always keep this in mind when searching for help and solutions.
 Many devices are suited to host a continuous installation of openHAB.
 Experiences with different devices and environments can be found in the [community forum hardware section](https://community.openhab.org/c/hardware/server).
 
-The [Raspberry Pi](rasppi.html) as a minimal sufficient device is quite popular, especially as we offer a quick setup with [openHABian](openhabian.html).
+The Raspberry Pi as a minimal sufficient device is quite popular, especially as we offer a quick setup with [openHABian](openhabian.html).
 A popular alternative is [our solution for the Synology DiskStation](synology.html), which many users already own in their homes.
 The previously mentioned [openHABian](openhabian.html) can also be used to kickstart your openHAB experience on existing Debian/Ubuntu based Linux systems.
 
@@ -97,7 +97,7 @@ openhab-cli info
 will result in e.g. for an [openHABian](https://www.openhab.org/docs/installation/openhabian.html) installation
 
 ```shell
-Version:     3.0.0 (Build)
+Version:     3.0.2 (Build)
 
 User:        openhab (Active Process 7466)
 User Groups: openhab tty dialout audio bluetooth gpio

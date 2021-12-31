@@ -43,7 +43,7 @@ The Properties tab shows those Point/Property Items from the model that are dire
 The badges shown on the card summarize all of the Properties in that card and present that summary as a single badge.
 When there is nothing to present, the badge is not shown.
 For example, if no lights are on, the lights badge will not be shown.
-When one light is on the light badge will be shown.
+When one light is on, the light badge will be shown.
 When two or more lights are on, the light badge will be shown with a number indicating how many lights are on.
 For other types of sensors like temperature, the average of all the Items tagged with a Temperature Property tag will be shown.
 
@@ -129,7 +129,7 @@ Now on the page you will now see a section heading with the entered name, and al
 
 ![separators](images/separators.png)
 
-Tip 1 - Make sure to save before clicking "Back" or otherwise leaving the page.
+Tip 1 - Make sure to save before clicking "Back" or otherwise changes will be lost when leaving the page.
 You will have to reload the page to pick up the changes.
 
 Tip 2 - Open two separate tabs in your browser where you edit and view your page.
@@ -191,7 +191,7 @@ Note: Even though it is possible and tempting to just link to an absolute URL on
 
 Badges are only available on the Location cards.
 
-If you want to not show any badges at all toggle "Disable badges".
+If you do not want to show any badges at all toggle "Disable badges".
 
 If you want to suppress only certain badges, select those that you want to show under "Enable Badges".
 

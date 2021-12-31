@@ -9,7 +9,7 @@ title: IntelliJ
 
 - git, Maven, IntelliJ and Java 11 are installed
 
-## Install OpenHAB distribution
+## Install openHAB distribution
 
 1. Install the official [openHAB distribution](https://www.openhab.org/download/)
 1. Start the distribution **in debug mode** (use `./start_debug.sh` instead of `./start.sh` in step 4)

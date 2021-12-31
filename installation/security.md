@@ -20,7 +20,7 @@ openHAB has mainly two ways to be accessed:
 ### Webserver Ports
 
 openHAB has a built-in webserver, which listens on port 8080 for HTTP and 8443 for HTTPS requests.
-In general, it is advised to use HTTPS communication over HTTP.
+In general, it is advised to use HTTPS in perefence to HTTP.
 
 The default ports 8080 and 8443 can be changed by setting the environment variables `OPENHAB_HTTP_PORT` resp. `OPENHAB_HTTPS_PORT`.
 In an apt installation, you would best do this in the file `/etc/default/openhab`.
@@ -577,7 +577,7 @@ sudo nano /usr/local/etc/nginx/sites-enabled/openHAB-auth
 ```
 
 ```nginx
-# OpenHab NGINX config
+# openHAB NGINX config
 
 server {
     listen                          2020; #This is simply an unused port, it can be any number
@@ -636,7 +636,7 @@ Back in the GUI, go to Control Panel > Application Portal > Reverse Proxy, make 
 |Destination Port:          |2020 (or whatever you set it to in the openHAB-auth file)|
 
 ::: tip Note
-We do this 'double' redirect to take advantage of the GUI certificate handling in DSM - this is the equivalent of CertBot for a linux installation.
+We do this 'double' redirect to take advantage of the GUI certificate handling in DSM - this is the equivalent of CertBot for a Linux installation.
 :::
 
 Give it a try again - you should now get redirected to `https://your-hostname.com` from `http://your-hostname.com`, and should receive a username and password prompt before you see the openHAB landing page.

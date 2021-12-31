@@ -53,7 +53,7 @@ In addition to these relationships, there are restrictions.
 
 - A Location can only be the direct member of zero or one Location Group.
 - An Equipment can only be the direct member of zero or one Location, or the direct member of zero or one Equipment. Put another way, an Equipment can only be the direct member of one Group that has a semantic tag.
-- A Point can only be the direct member of zero or one Location, or the direct member of zero of one Equipment. Put another way, a Point can only be the direct member of one Group that has a Location or Equipment tag.
+- A Point can only be the direct member of zero or one Location, or the direct member of zero or one Equipment. Put another way, a Point can only be the direct member of one Group that has a Location or Equipment tag.
 
 Because the model represents the physical, it makes no sense to deviate from these restrictions.
 An Equipment or Point cannot be in more than one location at the same time.
@@ -212,7 +212,8 @@ This is a table describing the Equipment, Point and Property classes needed to e
 
 | Badge        | Type        | Equipment                                                  | Point                              | Property    |
 |--------------|-------------|------------------------------------------------------------|------------------------------------|-------------|
-| Lights       | Status      | *Any*                                                        | Control, Switch                  | Light       |
+| Low Battery  | Status      | *Any*                                                      | LowBattery                         | *Any*       |
+| Lights       | Status      | *Any*                                                      | Control, Switch                    | Light       |
 | Windows      | Status      | Window                                                     | OpenState                          | *Any*       |
 | Doors        | Status      | Door, FrontDoor, BackDoor, InnerDoor, CellarDoor, SideDoor | OpenState                          | *Any*       |
 | Garage Doors | Status      | GarageDoor                                                 | OpenState                          | *Any*       |

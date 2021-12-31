@@ -5,8 +5,14 @@ title: Sitemaps
 
 # Sitemaps
 
+::: tip
+Sitemaps have existed since the first versions of openHAB. Therefore you will probably encounter a lot of examples referring to them throughout the documentation and in older community discussions.
+⚠️ **Keep in mind that the main UI is not currently able to display them**.
+If you are a new user, it's probably a good idea to start [customizing your Overview page first]({{base}}/tutorial/auto_overview.html#customization-page-configuration).
+:::
+
 In openHAB a collection of [Things]({{base}}/concepts/things.html) and [Items]({{base}}/concepts/items.html) represent physical or logical objects in the user's home automation setup.
-Sitemaps are used to select and prepare these elements in order to compose a user-oriented presentation of this setup for various User Interfaces (UIs), including [BasicUI]({{base}}/configuration/ui/basic/), the [openHAB app for Android]({{base}}/apps/android.html) and others.
+Sitemaps are one way to select and compose these elements into a user-oriented representation for various User Interfaces (UIs), including the [openHAB app for Android]({{base}}/apps/android.html).
 
 This page is structured as follows:
 
@@ -135,10 +141,10 @@ This provides the flexibility to present Items in the way desired in your home a
 
 - Parameters must be supplied in the order shown.
 
-- Common parameters, also known from [items definition](items.html#item-syntax):
-  - `item` defines the name of the Item you want to present (e.g. `Temperature`), [more details](items.html#item-name).
-  - `label` sets the textual description displayed next to the preprocessed Item data (e.g. "`Now [%s °C]`"), [more details](items.html#item-label).
-  - `icon` chooses the name of the icon file to show next to the element, [more details](items.html#icons).
+- Common parameters, also known from [items definition]({{base}}/configuration/items.html#item-syntax):
+  - `item` defines the name of the Item you want to present (e.g. `Temperature`), [more details]({{base}}/configuration/items.html#item-name).
+  - `label` sets the textual description displayed next to the preprocessed Item data (e.g. "`Now [%s °C]`"), [more details]({{base}}/configuration/items.html#item-label).
+  - `icon` chooses the name of the icon file to show next to the element, [more details]({{base}}/configuration/items.html#icons).
 
 - When an [Item]({{base}}/configuration/items.html) is defined, you have the opportunity to assign a label and/or an icon at that point.
     If no label or icon are specified in the Sitemap, then the label and/or icon you assigned to the Item will be displayed.
@@ -309,7 +315,6 @@ This type presents a value as a user-adjustable control which slides from left (
     This parameter defines the interval in milliseconds for sending increase/decrease requests.
 
 - `switchSupport` is a parameter without an assignment.
-  - Classic UI: If specified, a short press on the "up" or "down" button switches the item "on" or "off" (0 or 100) respectively.
   - Android app: If specified, a short press on the item row (except the slider itself) switches the item "on" or "off".
   - This parameter has no effect in other UIs.
 

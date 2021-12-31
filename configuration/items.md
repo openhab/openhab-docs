@@ -509,7 +509,7 @@ Group:Switch:AND(ON,OFF)    Lights        "Active Lights [%d]"              // e
 Group:Number:AVG            Temperatures  "All Room Temperatures [%.1f °C]" // e.g. "21.3 °C"
 Group:DateTime:EARLIEST     LatestUpdate "Latest Update [%1$tY.%1$tm.%1$tY %1$tH:%1$tM:%1$tS]"
 Group:DateTime:LATEST       LastSeen  "Last Seen [%1$tY.%1$tm.%1$tY %1$tH:%1$tM:%1$tS]"
-Group:String:COUNT("OFFLINE")     OfflineDevices "Offline Devices [%d]"     // e.g. "2"
+Group:Number:COUNT("OFFLINE")     OfflineDevices "Offline Devices [%d]"     // e.g. "2"
 ```
 
 The first three examples above compute the number of active lights and store them as group state.
@@ -625,9 +625,17 @@ Switch Office_PC {
 
 The first example shows a symbiosis of the LG webOS Binding and the Wake-on-LAN Binding to interact with a TV.
 
-{: #autoupdate}
+{: #parameters}
 
-#### Parameter `autoupdate`
+#### Parameters
+
+While the `channel` parameter is used to link an item to a channel of a thing, it is possible to add further parameters for additional features.
+Parameters are provided as a comma separated list.
+The order of the parameters does not matter.
+  
+{: #autoupdate}
+  
+##### Parameter `autoupdate`
 
 When left as default, openHAB's `autoupdate` function attempts to predict the outcome of a *command* on the Item *state*.
 This prediction may be influenced by any linked channels.
@@ -643,13 +651,13 @@ Switch Garage_Gate {channel="xxx", autoupdate="false"}
 
 {: #expire}
 
-#### Parameter `expire`
+##### Parameter `expire`
 
 This parameter allows to post an update or command to an item after a period of time has passed.
 
 The expiration timer is started or restarted every time an item receives an update or a command *other than* the specified "expire" update/command.
 Any future expiring update or command is cancelled, if the item receives an update or command that matches the "expire" update/command.
-
+  
 The parameter accepts a duration of time that can be a combination of hours, minutes and seconds in the format
 
 ```shell
@@ -665,10 +673,10 @@ This duration can optionally be followed by a comma and the state or command to 
 If this optional section is not present, it defaults to the Undefined (`UnDefType.UNDEF`) state.
 
 ```shell
-Player MyPlayer   { expire="1h,command=STOP" } // send STOP command after one hour
-Number MyChannel  { expire="5m,state=0" }      // update state to 0 after five minutes
-String MyMessage  { expire="3m12s,Hello" }     // update state to Hello after three minutes and 12 seconds
-Switch MySwitch   { expire="2h" }              // update state to Undefined two hours after last value
+Player MyPlayer   { expire="1h,command=STOP" }                // send STOP command after one hour
+Number MyChannel  { channel="xxx", expire="5m,state=0" }      // update state to 0 after five minutes
+String MyMessage  { channel="xxx", expire="3m12s,Hello" }     // update state to Hello after three minutes and 12 seconds
+Switch MySwitch   { channel="xxx", expire="2h" }              // update state to Undefined two hours after last value
 ```
 
 Note that the `state=` part is optional.
@@ -702,8 +710,9 @@ You can find the documentation of these Profiles within the [Add-On documentatio
 | `hysteresis`                                                                                  | State   | Switch                | The `hysteresis` Profile can be configured via three parameters: `lower` (**mandatory**) `QuantityType` or `DecimalType`, `upper` (optional) `QuantityType` or `DecimalType`, `inverted` (optional) `boolean`.  This Profile can be used to trigger alarms when number values exceed a given `lower` bound - sends `ON` to the Switch Item. By defining an additional `upper` bound it can provide kind of anti-flapping. The `inverted` parameter negates the resulting State of the Switch. |
 | `offset`                                                                                      | State   | Number                | An offset can be specified via the parameter `offset` which has to be a `QuantityType` or `DecimalType`. The specified offset will be applied to the value from the device before it arrives at the Item.                                                                                                                                                                                                                                                                                     |
 | `range`                                                                                       | State   | Switch                | The `range` Profile can be used to trigger alarms when number values exceed given limits (`lower` and `upper` bounds). It sends ON to a Switch Item. There are three parameters: `lower` and `upper` (**mandatory**) `QuantityType` or `DecimalType` and `inverted` (optional) `boolean`.                                                                                                                                                                                                     |
-| `timestamp-update`                                                                            | State   | DateTime              | This Profile will update a DateTime Item to track every update of the state of a given Channel, whatever the state is.                                                                                                                                                                                                                                                                                                                                                                        |
 | `timestamp-change`                                                                            | State   | DateTime              | This Profile will update a DateTime Item to track every change of the state of a given Channel.                                                                                                                                                                                                                                                                                                                                                                                               |
+| `timestamp-offset`                                                                            | State   | DateTime              | This Profile can be specified via the parameter `offset` (in seconds) which has to be a `DecimalType`. The specified offset will be applied to the date time before it is passed to the Item. Additionally it allows to modify the timezone by setting the parameter of the same name (e.g. "Europe / Berlin").                                                                                                                                                                               |
+| `timestamp-update`                                                                            | State   | DateTime              | This Profile will update a DateTime Item to track every update of the state of a given Channel, whatever the state is.                                                                                                                                                                                                                                                                                                                                                                        |
 | `rawbutton-on-off-switch`                                                                     | Trigger | Color, Dimmer, Switch | This Profile can only be used on Channels of the type `system.rawbutton`. On those Channels, it will set the Item state to `ON` when a `PRESSED` event arrives and to `OFF` when a `RELEASED` event arrives.                                                                                                                                                                                                                                                                                  |
 | `rawbutton-toggle-player`                                                                     | Trigger | Player                | This Profile can only be used on Channels of the type `system.rawbutton`. On those Channels, it will toggle the Player Item state between `PLAY` and `PAUSE` when `PRESSED` events arrive.                                                                                                                                                                                                                                                                                                    |
 | `rawbutton-toggle-rollershutter`                                                              | Trigger | Rollershutter         | This Profile can only be used on Channels of the type `system.rawbutton`. On those Channels, it will toggle the Rollershutter Item state between `UP` and `DOWN` when `PRESSED` events arrive.                                                                                                                                                                                                                                                                                                |
@@ -712,6 +721,7 @@ You can find the documentation of these Profiles within the [Add-On documentatio
 | `rawrocker-to-dimmer`                                                                         | Trigger | Dimmer                | Same as `rawrocker-to-on-off`, but additionally it allows to dim by holding the respective button. Technically, this Profile sends an `INCREASE` or `DECREASE` Command every 500 milliseconds while you hold.                                                                                                                                                                                                                                                                                 |
 | `rawrocker-to-play-pause`, `rawrocker-to-next-previous` and `rawrocker-to-rewind-fastforward` | Trigger | Player                | These Profiles can only be used on Channels of the type `system.rawrocker` and Player Items. They will convert a press on the first rocker button to an `PLAY` / `NEXT` / `FASTFORWARD` command while the second one will be converted to an `PAUSE` / `PREVIOUS` / `REWIND` command.                                                                                                                                                                                                         |
 | `rawrocker-to-stop-move` and `rawrocker-to-up-down`                                           | Trigger | Rollershutter         | These Profiles can only be used on Channels of the type `system.rawrocker` and Rollershutter Items. They will convert a press on the first rocker button to an `MOVE` / `UP` command while the second one will be converted to an `STOP` / `DOWN` command.                                                                                                                                                                                                                                    |
+| `timestamp-trigger`                                                                           | Trigger | DateTime              | This Profile can be used to link a trigger Channel to a DateTime Item and will update it every time the Channel triggers an event, whatever the event is.                                                                                                                                                                                                                                                                                                                                     |
 
 ##### Basic Example
 
@@ -741,6 +751,8 @@ Color Bedroom_Light {
   channel="hue:0210:1:bulb1:color",
   channel="serialbutton:button:mybutton:button" [profile="system:rawbutton-toggle-switch"]
 }
+DateTime Bedroom_Light_Updated { channel="hue:0210:1:bulb1:color" [profile="system:timestamp-update"] }
+DateTime Bedroom_Light_Changed { channel="hue:0210:1:bulb1:color" [profile="system:timestamp-change"] }
 ```
 
 This will make your Rule obsolete.
@@ -754,15 +766,19 @@ Number:Temperature Outdoor_Temperature { channel="openweathermap:weather-and-for
 // Triggers a temperature high alarm (Switch = ON) as of 30 °c and stays ON until temperature drops below 29 °C
 Switch Outdoor_Temperature_High_Alert { channel="openweathermap:weather-and-forecast:api:local:current#temperature" [profile="system:hysteresis", lower="29 °C", upper="30 °C"] }
 // Temperture low alert below 0 °C
-Switch Outdoor_Temperature_Low_Alert { channel="openweathermap:weather-and-forecast:api:local:current#temperature" [profile="system:hysteresis", lower="0 °C", inverted=true] }
+Switch Outdoor_Temperature_Low_Alert { channel="openweathermap:weather-and-forecast:api:local:current#temperature" [profile="system:hysteresis", lower="0 °C", inverted="true"] }
 
 /** Battery Level Profile **/
 Number Battery_Level { channel="serialbutton:button:mybutton:battery-level" }
 // Indicates a battery low alarm if battery level drops below 15
-Switch Low_Battery { channel="serialbutton:button:mybutton:battery-level" [profile="system:hysteresis", lower=15, inverted=true] }
+Switch Low_Battery { channel="serialbutton:button:mybutton:battery-level" [profile="system:hysteresis", lower=15, inverted="true"] }
 
 /** Range Profile **/
 Number:Dimensionless Outdoor_Humidity { channel="openweathermap:weather-and-forecast:api:local:current#humidity" }
 // Triggers a humidity low / high alarm (Switch = ON) if humidity drops below 40 % or exceeds 60 %
-Switch Outdoor_Humidity_Alert { channel="openweathermap:weather-and-forecast:api:local:current#humidity" [profile="system:range", lower="40 %", upper="60 %", inverted=true] }
+Switch Outdoor_Humidity_Alert { channel="openweathermap:weather-and-forecast:api:local:current#humidity" [profile="system:range", lower="40 %", upper="60 %", inverted="true"] }
+
+/** Timestamp Offset **/
+// 30 min before sunrise
+DateTime Sunrise { channel="astro:sun:home:rise#start" [profile="system:timestamp-offset", offset=-1800] }
 ```

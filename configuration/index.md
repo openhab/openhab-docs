@@ -36,7 +36,7 @@ This section does not cover building user interfaces; this subject has its own s
 
 openHAB 3 provides a _single_ graphical user interface to modify settings, to manage your components and rules, and to provide a UI for users.
 
-While there are no full-scale starter and migration tutorials available yet, see the [recording of the recent 2020 openHAB virtual meetup](https://www.youtube.com/watch?v=pwZ8AOwRDEk) for a tour of the new Main UI (starting at 26:26).
+While there are no full-scale starter and migration tutorials available yet, see the [recording of the recent 2020 openHAB virtual meetup](https://youtu.be/pwZ8AOwRDEk?t=1586) for a tour of the new Main UI (starting at 26:26).
 
 ::: tip Important changes for openHAB 2 users<br>
 PaperUI and HABmin are no longer supported, they are replaced by the new Main UI.<br>
@@ -78,7 +78,7 @@ _Note there is an option in Main UI to bulk create Items where you can copy'n'pa
       <td>✔️</td>
       <td>✔️</td>
       <td>(✔️)</td>
-      <td>items/*.items files</td>
+      <td>for starters:<br>Use the semantic model in UI<br>advanced users:<br>import items in UI to use the semantic model<br>only stick with *.items files if you know how to handle tagging and groups for the model</td>
     </tr>
     <tr>
       <td>Define GUI</td>
@@ -106,7 +106,7 @@ _Note there is an option in Main UI to bulk create Items where you can copy'n'pa
       <td>✔️</td>
       <td>✔️</td>
       <td>❌</td>
-      <td>Main UI<br>for starters: Blockly<br>(graphically create JS code)<br>for advanced users:<br>rules/*.rules files<br>for rules DSL and JSR223</td>
+      <td>for starters:<br>Main UI and Blockly<br>(graphically create JS code)<br>for advanced users:<br>rules/*.rules files<br>for rules DSL and JSR223</td>
     </tr>
     <tr>
       <td>Manage Z-Wave Devices</td>
@@ -146,9 +146,16 @@ Both methods can still be used in parallel, e.g. a Thing can be discovered and c
 Technically speaking it's even possible to use text and UI config in parallel to maintain components of one type, however this is not recommended.
 
 ::: warning
-Do not mix file and UI definitions for Items (or for Things) to avoid confusion.
-It would work to mix these, but you can easily forget which is your "source of truth" when you add or reconfigure Things or Items at a later stage.
+Do not mix file and system database definitions (when created via UI) for Items (or for Things).
+You can easily forget which is your "source of truth" when you add or reconfigure Things or Items at a later stage.
+
+Also be aware that applying the semantic model means to add configuration (tags, group membership) to items.
+You must not create an item using files and then make use of it in the model using the UI as this means to mix
+text and system database configuration for that item, too.
 :::
+
+You *can* configure the model through text only, too. No documentation exists for that however so it is not recommended and
+you have to figure out yourself. Please contribute to the docs here if you managed to.
 
 Things/Items configured in files will become visible in Main UI if no Thing/Item of the same name is already present in the system database, but a lock will symbolize that you can NOT change them in the GUI. You can only change them by editing the source files.
 **Note:** Things/Items you create via Main UI will be stored in the system database, but those additions or changes will not be written back into any `.things / .items` file.

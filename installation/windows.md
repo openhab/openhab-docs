@@ -130,6 +130,7 @@ By installing the openHAB process as a service in Windows, you can:
     wrapper.java.additional.15=-Dorg.osgi.service.http.port.secure=8443
     wrapper.java.additional.16=-Djava.util.logging.config.file="%KARAF_ETC%\java.util.logging.properties"
     wrapper.java.additional.17=-Dkaraf.logs="%OPENHAB_LOGDIR%"
+    wrapper.java.additional.18=-Dfile.encoding=UTF-8
     wrapper.java.maxmemory=512
 
     # Wrapper Logging Properties

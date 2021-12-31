@@ -43,7 +43,7 @@ General [coding guidelines](guidelines.html) apply to all types of addon develop
 
 ## Setup the Development Environment
 
-Development can happen on any of the supported operating systems (Windows, Mac OS, Linux).
+Development can happen on any of the supported operating systems (Windows, macOS, Linux).
 
 Please ensure that you have the following prerequisites installed as well:
 
@@ -101,14 +101,14 @@ This script is specific for binding addons. Follow these steps to generate your 
 
 1. Accept with `Y` when the skeleton configuration asks for it.
 
-1. From `openhab-addons` root you can build only your binding with maven using the `-pl` option:
+1. From `openhab-addons` root you can build only your binding with Maven using the `-pl` option:
 
     ```bash
     mvn clean install -pl :org.openhab.binding.mynewbinding
     ```
 
    Where `mynewbinding` is the name of your new binding.
-   Some additional maven options that may help:
+   Some additional Maven options that may help:
    - `-U`: Forces all dependencies to be downloaded again.
    - `-am`: Builds all projects in openhab-addons your project dependends on.
    - `-o`: Won't update any dependencies.
@@ -130,7 +130,7 @@ Now you can start developing your NEW binding. We're looking forward to your pul
 In case the new binding has dependencies to other bundles/libraries see [Adding Dependencies](buildsystem.html#adding-dependencies) for more information.
 
 If developing on Windows, git will convert line endings from LF to CRLF automatically. The repo uses LF,
-and spotless will object, and throw errors. If you use `mnv spotless:apply` to fix formatting, it will add CRLF
+and spotless will object, and throw errors. If you use `mvn spotless:apply` to fix formatting, it will add CRLF
 to all files dirtying the entire branch. Adding a `.gitattributes` file to the openhab-addons folder with the
 following will tell git and spotless to use LF endings:
 

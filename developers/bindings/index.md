@@ -879,12 +879,6 @@ The following example shows the implementation of the UPnP discovery participant
 ```java
 public class HueBridgeDiscoveryParticipant implements UpnpDiscoveryParticipant {
 
-    private long removalGracePeriodSeconds = 50;
-
-    @Reference
-    @Nullable
-    ConfigurationAdmin configAdmin;
-
     @Override
     public Set<ThingTypeUID> getSupportedThingTypeUIDs() {
         return Collections.singleton(THING_TYPE_BRIDGE);
@@ -922,23 +916,43 @@ public class HueBridgeDiscoveryParticipant implements UpnpDiscoveryParticipant {
         }
         return null;
     }
+}
+```
 
-    // Implementating this method is OPTIONAL
-    // If not implemented, the 'default' method returns 0 by default
-    @Override
-    public long getRemovalGracePeriodSeconds(RemoteDevice device) {
-        if (configAdmin != null) {
-            try {
-                Configuration conf = configAdmin.getConfiguration("binding.hue");
-                Dictionary<String, @Nullable Object> properties = conf.getProperties();
-                Object property = properties.get(HueBindingConstants.REMOVAL_GRACE_PERIOD);
-                if (property != null) {
-                    removalGracePeriodSeconds = Integer.valueOf(property.toString()).longValue();
+The following is an example of how to implement the OPTIONAL `getRemovalGracePeriodSeconds` method.
+
+```java
+@Component(configurationPid = "discovery.hue")
+public class HueBridgeDiscoveryParticipant implements UpnpDiscoveryParticipant {
+
+    private long removalGracePeriodSeconds = 15;
+
+    @Activate
+    public void activate(@Nullable Map<String, Object> configProperties) {
+        updateRemovalGracePeriod(configProperties);
+    }
+
+    @Modified
+    public void modified(@Nullable Map<String, Object> configProperties) {
+        updateRemovalGracePeriod(configProperties);
+    }
+
+    private void updateRemovalGracePeriod(Map<String, Object> configProperties) {
+        if (configProperties != null) {
+            Object value = configProperties.get(HueBindingConstants.REMOVAL_GRACE_PERIOD);
+            if (value != null) {
+                try {
+                    removalGracePeriodSeconds = Integer.parseInt(value.toString());
+                } catch (NumberFormatException e) {
+                    logger.warn("Configuration property '{}' has invalid value: {}",
+                            HueBindingConstants.REMOVAL_GRACE_PERIOD, value);
                 }
-            } catch (IOException | IllegalStateException | NullPointerException | NumberFormatException e) {
-                // fall through to pre-initialised (default) value
             }
         }
+    }
+
+    @Override
+    public long getRemovalGracePeriodSeconds(ServiceInfo serviceInfo) {
         return removalGracePeriodSeconds;
     }
 }
@@ -958,6 +972,12 @@ Here the developer only needs to implement four simple methods:
 - `createResult` - Creates the `DiscoveryResult` out of the mDNS result.
     This method is called from the discovery service to create the actual discovery result.
     It uses the `getThingUID` method to create the thing UID of the result.
+- `getRemovalGracePeriodSeconds` (OPTIONAL) - Returns an additional grace period delay in seconds before the device will be removed from the Inbox.
+    This method is called when the discovery service is about to remove a Thing from the Inbox.
+    Some bindings handle devices that can sometimes be a bit late in sending their mDNS notifications even though they have not really gone offline.
+    This means that the device is repeatedly removed from, and (re)added to, the Inbox.
+    To prevent this, a binding may OPTIONALLY implement this method to specify an additional delay period (grace period) to wait before the device is removed from the Inbox.
+    See the example code for the `getRemovalGracePeriodSeconds()` method under the "UPnP Discovery" chapter above.
 
 ### Discovery that is bound to a Bridge
 
@@ -1039,3 +1059,24 @@ mvn spotless:apply
 
 Re-run the build to confirm that the checks are passing.
 If it does, it is time to [contribute your work](../contributing.html)!
+
+## Add your binding's logo to the openHAB website
+
+After your pull request has been merged and the next openHAB version is released, your binding will be available in the addons search on the openHAB website with a default logo.
+
+You can upload a logo to display it on the openhab.org start page, the addon search and in the readme.
+
+These are the requirements for logos:
+
+- PNG (transparancy is preferred)
+- 512x512 pixels or smaller in one dimension, if it's not a square logo
+- Less than 30kB
+
+File size is key as the website displays hundreds of small logos on the same page.
+To shrink the file size, save your logo with Palette-Based Colors (sometimes called "Indexed-RGBA").
+Also, JPEG compression artifacts from prior conversions or halo around the logo increases file size dramatically.
+There are online converters to convert your True Color PNG logo to Palette-Based Colors. E.g. <https://compresspng.com/>.
+Or use zopflipng: `zopflipng -m --filters=0me --lossy_8bit --lossy_transparent -y logo.png logo.png`
+
+*After* your binding's pull request has been merged, you can upload your logo by filing another pull request to the [openhab-docs/images/addons/](https://github.com/openhab/openhab-docs/tree/main/images/addons) repository.
+Your logo will be available after the next website build.

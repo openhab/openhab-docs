@@ -372,7 +372,7 @@ slots:
         default:
           - component: oh-repeater
             config:
-              fragement: true
+              fragment: true
               for: item
               sourceType: itemsWithTags
               itemTags: Switch,Light
@@ -382,8 +382,8 @@ slots:
                 - component: oh-toggle-item
                   config:
                     icon: f7:lightbulb
-                    iconColor: '=(loop.item.state == "ON") ? "yellow" : "gray"'
-                    color: '=(loop.item.state == "ON") ? "yellow" : "gray"'
+                    iconColor: '=(items[loop.item.name].state == "ON") ? "yellow" : "gray"'
+                    color: '=(items[loop.item.name].state == "ON") ? "yellow" : "gray"'
                     title: =loop.item.label
                     item: =loop.item.name
 ```

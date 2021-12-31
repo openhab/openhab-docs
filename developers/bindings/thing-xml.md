@@ -121,30 +121,30 @@ The following XML snippet shows a system channel type definition and thing type 
 
 ### System State Channel Types
 
-There exist system-wide channel types that are available by default:
+There exist system-wide channel types that are available by default and which should be used whenever possible:
 
-| Channel Type ID       | Reference typeId             | Item Type            | Category         | Description                                                                                                                                                                                                             |
-|-----------------------|------------------------------|----------------------|------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| signal-strength       | system.signal-strength       | Number               | QualityOfService | Represents signal strength of a device as a Number with values 0, 1, 2, 3 or 4; 0 being worst strength and 4 being best strength.                                                                                       |
-| low-battery           | system.low-battery           | Switch               | LowBattery       | Represents a low battery warning with possible values on (low battery) and off (battery ok).                                                                                                                            |
-| battery-level         | system.battery-level         | Number               | Battery          | Represents the battery level as a percentage (0-100%). Bindings for things supporting battery level in a different format (e.g. 4 levels) should convert to a percentage to provide a consistent battery level reading. |
-| power                 | system.power                 | Switch               | Switch           | Turn a device on/off.                                                                                                                                                                                                   |
-| brightness            | system.brightness            | Dimmer               | Light            | Brightness of a bulb (0-100%).                                                                                                                                                                                          |
-| color                 | system.color                 | Color                | ColorLight       | Color of a bulb.                                                                                                                                                                                                        |
-| color-temperature     | system.color-temperature     | Dimmer               | ColorLight       | Color temperature of a bulb (0-100%). 0% should be the coldest setting (highest Kelvin value), 100 the warmest.                                                                                                         |
-| color-temperature-abs | system.color-temperature-abs | Number               | ColorLight       | Color temperature of a bulb in Kelvin (1000K-10000K).                                                                                                                                                                   |
-| location              | system.location              | Location             | -                | Location in lat.,lon.,height coordinates.                                                                                                                                                                               |
-| motion                | system.motion                | Switch               | Motion           | Motion detected by the device (ON if motion is detected).                                                                                                                                                               |
-| mute                  | system.mute                  | Switch               | SoundVolume      | Turn on/off the volume of a device.                                                                                                                                                                                     |
-| volume                | system.volume                | Dimmer               | SoundVolume      | Change the sound volume of a device (0-100%).                                                                                                                                                                           |
-| media-control         | system.media-control         | Player               | MediaControl     | Control for a media player.                                                                                                                                                                                             |
-| media-title           | system.media-title           | String               | -                | Title of a (played) media file.                                                                                                                                                                                         |
-| media-artist          | system.media-artist          | String               | -                | Artist of a (played) media file.                                                                                                                                                                                        |
-| outdoor-temperature   | system.outdoor-temperature   | Number:Temperature   | Temperature      | Current outdoor temperature.                                                                                                                                                                                            |
-| wind-direction        | system.wind-direction        | Number:Angle         | Wind             | Wind direction in degrees (0-360°).                                                                                                                                                                                     |
-| wind-speed            | system.wind-speed            | Number:Speed         | Wind             | Wind speed                                                                                                                                                                                                              |
-| atmospheric-humidity  | system.atmospheric-humidity  | Number:Dimensionless | Humidity         | Atmospheric humidity in percent.                                                                                                                                                                                        |
-| barometric-pressure   | system.barometric-pressure   | Number:Pressure      | Pressure         | Barometric pressure                                                                                                                                                                                                     |
+| Channel Type ID       | Reference typeId             | Item Type            | Category         | Tags                      | Description                                                                                                                                                                                                             |
+|-----------------------|------------------------------|----------------------|------------------|---------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| signal-strength       | system.signal-strength       | Number               | QualityOfService | Measurement, Level        | Represents signal strength of a device as a Number with values 0, 1, 2, 3 or 4; 0 being worst strength and 4 being best strength.                                                                                       |
+| low-battery           | system.low-battery           | Switch               | LowBattery       | LowBattery, Energy        | Represents a low battery warning with possible values on (low battery) and off (battery ok).                                                                                                                            |
+| battery-level         | system.battery-level         | Number               | Battery          | Measurement, Energy       | Represents the battery level as a percentage (0-100%). Bindings for things supporting battery level in a different format (e.g. 4 levels) should convert to a percentage to provide a consistent battery level reading. |
+| power                 | system.power                 | Switch               | Switch           | Switch, Power             | Turn a device on/off.                                                                                                                                                                                                   |
+| brightness            | system.brightness            | Dimmer               | Light            | Control, Light            | Brightness of a bulb (0-100%).                                                                                                                                                                                          |
+| color                 | system.color                 | Color                | ColorLight       | Control, Light            | Color of a bulb.                                                                                                                                                                                                        |
+| color-temperature     | system.color-temperature     | Dimmer               | ColorLight       | Control, ColorTemperature | Color temperature of a bulb (0-100%). 0% should be the coldest setting (highest Kelvin value), 100 the warmest.                                                                                                         |
+| color-temperature-abs | system.color-temperature-abs | Number               | ColorLight       | Control, ColorTemperature | Color temperature of a bulb in Kelvin (1000K-10000K).                                                                                                                                                                   |
+| location              | system.location              | Location             | -                | Measurement               | Location in lat.,lon.,height coordinates.                                                                                                                                                                               |
+| motion                | system.motion                | Switch               | Motion           | Status, Presence          | Motion detected by the device (ON if motion is detected).                                                                                                                                                               |
+| mute                  | system.mute                  | Switch               | SoundVolume      | Switch, SoundVolume       | Turn on/off the volume of a device.                                                                                                                                                                                     |
+| volume                | system.volume                | Dimmer               | SoundVolume      | Control, SoundVolume      | Change the sound volume of a device (0-100%).                                                                                                                                                                           |
+| media-control         | system.media-control         | Player               | MediaControl     | Control                   | Control for a media player.                                                                                                                                                                                             |
+| media-title           | system.media-title           | String               | -                | Status                    | Title of a (played) media file.                                                                                                                                                                                         |
+| media-artist          | system.media-artist          | String               | -                | Status                    | Artist of a (played) media file.                                                                                                                                                                                        |
+| outdoor-temperature   | system.outdoor-temperature   | Number:Temperature   | Temperature      | Measurement, Temperature  | Current outdoor temperature.                                                                                                                                                                                            |
+| wind-direction        | system.wind-direction        | Number:Angle         | Wind             | Measurement, Wind         | Wind direction in degrees (0-360°).                                                                                                                                                                                     |
+| wind-speed            | system.wind-speed            | Number:Speed         | Wind             | Measurement, Wind         | Wind speed                                                                                                                                                                                                              |
+| atmospheric-humidity  | system.atmospheric-humidity  | Number:Dimensionless | Humidity         | Measurement, Humidity     | Atmospheric humidity in percent.                                                                                                                                                                                        |
+| barometric-pressure   | system.barometric-pressure   | Number:Pressure      | Pressure         | Measurement, Pressure     | Barometric pressure                                                                                                                                                                                                     |
 
 For further information about categories see the [categories page](../../concepts/categories.html).
 
@@ -189,38 +189,31 @@ If an empty `<event>` tag is specified, the channel can trigger any event payloa
 
 There exist system-wide trigger channel types that are available by default:
 
-| Channel Type ID | Reference typeId       | Description  |
-|-----------------|------------------------|------------- |
-| trigger         | system.trigger         | Can only trigger, no event payload |
-| rawbutton       | system.rawbutton       | Can trigger `PRESSED` and `RELEASED` |
-| button          | system.button          | Can trigger `SHORT_PRESSED`, `DOUBLE_PRESSED` and `LONG_PRESSED` |
-| rawrocker       | system.rawrocker       | Can trigger `DIR1_PRESSED`, `DIR1_RELEASED`, `DIR2_PRESSED` and `DIR2_RELEASED` |
+| Channel Type ID | Reference typeId | Description                                                                     |
+|-----------------|------------------|---------------------------------------------------------------------------------|
+| trigger         | system.trigger   | Can only trigger, no event payload                                              |
+| rawbutton       | system.rawbutton | Can trigger `PRESSED` and `RELEASED`                                            |
+| button          | system.button    | Can trigger `SHORT_PRESSED`, `DOUBLE_PRESSED` and `LONG_PRESSED`                |
+| rawrocker       | system.rawrocker | Can trigger `DIR1_PRESSED`, `DIR1_RELEASED`, `DIR2_PRESSED` and `DIR2_RELEASED` |
 
 In the following sections the declaration and semantics of tags, state descriptions and channel categories will be explained in more detail.
 For a complete sample of the thing types XML file and a full list of possible configuration options please see the [XML Configuration Guide](config-xml.html).
 
 ### Default Tags
 
-The XML definition of a ThingType allows to assign default tags to channels.
+The XML definition of a ChannelType allows to assign default tags to channels.
 All items bound to this channel will automatically be tagged with these default tags.
-The following snippet shows a 'Lighting' tag definition:
+The following snippet shows a 'Control' and 'Light' tags definition:
 
 ```xml
 <tags>
-    <tag>Lighting</tag>
+    <tag>Control</tag>
+    <tag>Light</tag>
 </tags>
 ```
 
-Please note that only tags from a pre-defined tag library should be used.
-This library is still in development., and only a very small set of tags are defined so far:
-
-| Tag                | Item Types                 | Description                                                                           |
-|--------------------|----------------------------|---------------------------------------------------------------------------------------|
-| Lighting           | Switch, Dimmer, Color      | A light source, either switchable, dimmable or color                                  |
-| Switchable         | Switch, Dimmer, Color      | An accessory that can be turned off and on.                                           |
-| CurrentTemperature | Number, Number:Temperature | An accessory that provides a single read-only temperature value.                      |
-| TargetTemperature  | Number, Number:Temperature | A target temperature that should engage a thermostats heating and cooling actions.   |
-| CurrentHumidity    | Number                     | An accessory that provides a single read-only value indicating the relative humidity. |
+Please note that only [Point](https://openhab.org/javadoc/latest/org/openhab/core/semantics/model/point/package-summary.html) and/or [Property](https://openhab.org/javadoc/latest/org/openhab/core/semantics/model/property/package-summary.html) tags from the pre-defined tag library should be used.
+See also the [Semantic Model]({{base}}/tutorial/model.html) for more information on how tags are used with items.
 
 ### State Description
 
@@ -301,7 +294,7 @@ These providers allow to provide a `StateDescription` (or `CommandDescription` r
 
 Also implement this interface if you want to provide dynamic state / command options.
 The original `StateDescription`/`CommandDescription` is available for modification and enhancement.
-The framework provides two abstract implementations for bindings to support translation and other basic features: `BaseDynamicStateDescriptionProvider` and `BaseDynamicCommandDescriptionProvider`.
+The framework provides two abstract implementations for bindings to support translation, publishing `ChannelDescriptionChangedEvent`s and other basic features: `BaseDynamicStateDescriptionProvider` and `BaseDynamicCommandDescriptionProvider`.
 
 The `StateDescriptionFragmentBuilder` (and `CommandDescriptionBuilder`) can be used to only provide the information which is available at the time of construction.
 
@@ -350,15 +343,13 @@ public class ExampleDynamicStateDescriptionProvider implements DynamicStateDescr
 @Component(service = { DynamicStateDescriptionProvider.class, ExampleDynamicStateDescriptionProvider.class })
 public class ExampleDynamicStateDescriptionProvider extends BaseDynamicStateDescriptionProvider {
 
-    @Reference
-    protected void setChannelTypeI18nLocalizationService(
-            final ChannelTypeI18nLocalizationService channelTypeI18nLocalizationService) {
+    @Activate
+    public ExampleDynamicStateDescriptionProvider(final @Reference EventPublisher eventPublisher, //
+            final @Reference ItemChannelLinkRegistry itemChannelLinkRegistry, //
+            final @Reference ChannelTypeI18nLocalizationService channelTypeI18nLocalizationService) {
+        this.eventPublisher = eventPublisher;
+        this.itemChannelLinkRegistry = itemChannelLinkRegistry;
         this.channelTypeI18nLocalizationService = channelTypeI18nLocalizationService;
-    }
-
-    protected void unsetChannelTypeI18nLocalizationService(
-            final ChannelTypeI18nLocalizationService channelTypeI18nLocalizationService) {
-        this.channelTypeI18nLocalizationService = null;
     }
 }
 ```
@@ -401,8 +392,12 @@ Therefore the `ThingHandlerFactory` has to reference the bundle instance and pas
 ```java
 public class ExampleHandlerFactory extends BaseThingHandlerFactory {
 
-    @Reference
-    private ExampleDynamicStateDescriptionProvider stateDescriptionProvider;
+    private final ExampleDynamicStateDescriptionProvider stateDescriptionProvider;
+
+    @Activate
+    public ExampleHandlerFactory(final @Reference ExampleDynamicStateDescriptionProvider stateDescriptionProvider) {
+        this.stateDescriptionProvider = stateDescriptionProvider;
+    }
 
     @Override
     protected ThingHandler createHandler(Thing thing) {

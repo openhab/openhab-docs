@@ -286,7 +286,7 @@ Channel "<triggerChannel>" triggered [<triggerEvent>]
 When a binding provides such channels, you can find the needed information in the corresponding binding documentation.
 There is no generic list of possible values for `triggerEvent`,
 The `triggerEvent`(s) available depend upon the specific implementation details of the binding.
-If the Rule needs to know what the received event was, use the [implicit variable]({{base}}/configuration/rules-dsl.html#implicit-variables-inside-the-execution-block) `receivedEvent` to access the information.
+If the Rule needs to know what the received event or the triggering channel was, use the [implicit variable]({{base}}/configuration/rules-dsl.html#implicit-variables-inside-the-execution-block) `receivedEvent` or `triggeringChannel` to access the information.
 
 Example:
 
@@ -395,7 +395,7 @@ Often it is desired to calculate other values from Item states or to compare Ite
 
 In openHAB, every item carries a state.
 The state of an Item is an Object itself and can be accessed with `MyItem.state`.
-A complete and up-to-date list of item types are currently allowed in OpenHAB and the command types each item can accept is given in the [openHab documentation for items]({{base}}/concepts/items.html).
+A complete and up-to-date list of item types are currently allowed in openHAB and the command types each item can accept is given in the [openHab documentation for items]({{base}}/concepts/items.html).
 To use the state of an Item in rules it is often necessary to know what type of state the Item is carrying and how to convert it into types that can be used in such operations.
 Conversely, to use the result of a calculation to modify the state of an item may require its transformation into a suitable type.
 
@@ -512,7 +512,7 @@ val String dateTimeString = zdt.format(formatter)
 val DateTimeType dtt = DateTimeType.valueOf(dateTimeString)
 
 //convert state from Item of DateTimeType into a string
-val String datetime_string  = DateTime_Item.state.format("%1$td.%1$tm.%1$ty %1$tH:%1$tM"))
+val String datetime_string  = DateTime_Item.state.format("%1$td.%1$tm.%1$ty %1$tH:%1$tM")
 ```
 
 ZonedDateTimes provide a number of useful methods for comparing date times together and/or extracting parts of the date:
@@ -759,6 +759,7 @@ Besides the implicitly available variables for items and commands/states, rules 
 - `triggeringItemName` - implicitly available in every rule that has at least one status update, status change or command event trigger.
 - `triggeringItem` - implicitly available in every rule that has a "Member of" trigger.
 - `receivedEvent` - implicitly available in every rule that has a channel-based trigger.
+- `triggeringChannel` - implicitly available in every rule that has a channel-based trigger.
 
 {: #return}
 
@@ -821,6 +822,7 @@ Examples:
 var condition = transform("MAP", "window_esp.map", "CLOSED")
 var temperature = transform("JSONPATH", "$.temperature", jsonstring)
 var fahrenheit = transform("JS", "convert-C-to-F.js", temperature)
+var doorstate = transform("MAP", "garage.map", GarageStateDoor1.state.toString) // must be type string
 ```
 
 The `transform` method tries to transform the given value and if it does not succeed it returns the original unchanged value.

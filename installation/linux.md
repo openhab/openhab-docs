@@ -69,11 +69,10 @@ Alternatively resort to the [manual installation approach](#manual-installation)
 
 {% include collapsible/body.html %}
 
-First, add the openHAB repository key to your package manager and allow Apt to use the HTTPS Protocol:
+First, add the openHAB repository key to your package manager:
 
 ```shell
 wget -qO - 'https://openhab.jfrog.io/artifactory/api/gpg/key/public' | sudo apt-key add -
-sudo apt-get install apt-transport-https
 ```
 
 Then, you can choose between, *Official (Stable)*, *Beta* or *Snapshot* builds:
@@ -801,7 +800,7 @@ sudo chown -hR openhab:openhab /etc/openhab /opt/openhab/conf
 Finally check the configuration file for correctness and restart Samba to load the new settings:
 
 ```shell
-testparm
+samba-tool testparm
 
 # Linux init systems based on sysVinit
 sudo service smbd restart

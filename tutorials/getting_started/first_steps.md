@@ -15,7 +15,7 @@ The following instructions will guide you through the initial steps after first 
 ## Create the Admin User
 
 Once openHAB is installed and started, launch the user interface by navigating to `http://localhost:8080` (if not running locally, replace localhost with the server's address or hostname accordingly).
-If you installed from the openHABian image, you can use `http://openhabianpi:8080`.
+If you installed from the openHABian image, you can use `http://openhabian:8080`.
 
 By default, the administration pages can only be accessed if you are logged in with an administrator account.
 Since there are no users yet, openHAB will ask you to create an administrator account.
