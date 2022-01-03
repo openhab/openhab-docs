@@ -1678,13 +1678,7 @@ Items that represent components of a device that are characterized by numbers wi
 
 * Supported item types:
   * Dimmer
-  * Number
-  * Number:Angle
-  * Number:Dimensionless
-  * Number:Length
-  * Number:Mass
-  * Number:Temperature
-  * Number:Volume
+  * Number(:`<dimension>`)
   * Rollershutter
 * Supported metadata parameters:
   * capabilityNames=`<names>`

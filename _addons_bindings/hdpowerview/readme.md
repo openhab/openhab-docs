@@ -181,6 +181,7 @@ For single shades the refresh takes the item's channel into consideration:
 | lowBattery     | Battery           |
 | batteryLevel   | Battery           |
 | batteryVoltage | Battery           |
+| signalStrength | Survey            |
 
 ## Full Example
 
