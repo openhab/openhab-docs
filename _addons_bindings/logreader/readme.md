@@ -5,6 +5,7 @@ title: Log Reader - Bindings
 type: binding
 description: "This binding reads and analyzes log files. Search patterns are fully configurable, therefore different kind of log files should be possible to monitor by this binding."
 since: 3x
+logo: images/addons/logreader.png
 install: auto
 ---
 
