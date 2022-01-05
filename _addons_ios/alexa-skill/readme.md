@@ -255,6 +255,7 @@ Switch Mute     "Mute"     (Stereo)  {alexa="MuteState"}
 Switch Power    "Power"    (Stereo)  {alexa="PowerState"}
 String Input    "Input"    (Stereo)  {alexa="Input" [supportedInputs="HDMI1,TV"]}
 String Channel  "Channel"  (Stereo)  {alexa="Channel"}
+String KeyCode  "Key Code" (Stereo)  {alexa="ChannelKey" [CHANNEL_UP="CHUP", CHANNEL_DOWN="CHDOWN"]}
 Player Playback "Playback" (Stereo)  {alexa="Playback"}
 Switch Stop     "Stop"     (Stereo)  {alexa="PlaybackStop"}
 Number Bass     "Bass"     (Stereo)  {alexa="EqualizerBass" [range="-10:10"]}
@@ -501,7 +502,7 @@ Device Types | Supported Attributes | Description
 `Automobile` | [`BatteryLevel`](#batterylevel), [`FanSpeed`](#fanspeed), [`LockState`](#lockstate), [`PowerState`](#powerstate), [`TargetTemperature`](#targettemperature), [`CurrentTemperature`](#currenttemperature) | A motor vehicle (automobile, car).
 `AutomobileAccessory` | [`BatteryLevel`](#batterylevel), [`CameraStream`](#camerastream), [`FanSpeed`](#fanspeed), [`PowerState`](#powerstate) | A smart device in an automobile, such as a dash camera.
 `Blind`, `Curtain`, `Shade` | _[`OpenState`](#openstate)_, _[`PositionState`](#positionstate)_, [`TiltAngle`](#tiltAngle), [`TargetOpenState`](#targetopenstate), [`CurrentOpenState`](#currentopenstate) | A window covering on the inside of a structure.
-`BluetoothSpeaker` | _[`PowerState`](#powerstate)_, _[`VolumeLevel`](#volumelevel)_, [`MuteState`](#mutestate), [`EqualizerBass`](#equalizerbass), [`EqualizerMidrange`](#equalizermidrange), [`EqualizerTreble`](#equalizertreble), [`EqualizerMode`](#equalizermode), [`Channel`](#channel), [`Input`](#input), [`Playback`](#playback), [`PlaybackStop`](#playbackstop), [`BatteryLevel`](#batterylevel) | A speaker that connects to an audio source over Bluetooth.
+`BluetoothSpeaker` | _[`PowerState`](#powerstate)_, _[`VolumeLevel`](#volumelevel)_, [`MuteState`](#mutestate), [`EqualizerBass`](#equalizerbass), [`EqualizerMidrange`](#equalizermidrange), [`EqualizerTreble`](#equalizertreble), [`EqualizerMode`](#equalizermode), [`Channel`](#channel), [`ChannelKey`](#channelkey), [`Input`](#input), [`Playback`](#playback), [`PlaybackStop`](#playbackstop), [`BatteryLevel`](#batterylevel) | A speaker that connects to an audio source over Bluetooth.
 `Camera` | _[`PowerState`](#powerstate)_, _[`CameraStream`](#camerastream)_, [`BatteryLevel`](#batterylevel) | A security device with video or photo functionality.
 `ChristmasTree` | Same as `Light` | A religious holiday decoration that often contains lights.
 `CoffeeMaker` | _[`PowerState`](#powerstate)_ | A device that makes coffee.
@@ -534,11 +535,11 @@ Device Types | Supported Attributes | Description
 `SecuritySystem` | Same as `SecurityPanel` | A security system.
 `Shutter`, `Awning` | Same as `Blind` | A window covering on the outside of a structure.
 `SlowCooker` | _[`PowerState`](#powerstate)_ | An electric cooking device that sits on a countertop, cooks at low temperatures, and is often shaped like a cooking pot.
-`Speaker` | _[`PowerState`](#powerstate)_, _[`VolumeLevel`](#volumelevel)_, [`MuteState`](#mutestate), [`EqualizerBass`](#equalizerbass), [`EqualizerMidrange`](#equalizermidrange), [`EqualizerTreble`](#equalizertreble), [`EqualizerMode`](#equalizermode), [`Channel`](#channel), [`Input`](#input), [`Playback`](#playback), [`PlaybackStop`](#playbackstop) | A speaker or speaker system.
-`StreamingDevice` | _[`PowerState`](#powerstate)_, _[`Playback`](#playback)_, [`PlaybackStop`](#playbackstop), [`Channel`](#channel), [`Input`](#input), [`VolumeLevel`](#volumelevel), [`MuteState`](#mutestate), [`EqualizerBass`](#equalizerbass), [`EqualizerMidrange`](#equalizermidrange), [`EqualizerTreble`](#equalizertreble), [`EqualizerMode`](#equalizermode) | A streaming device such as Apple TV, Chromecast, or Roku.
+`Speaker` | _[`PowerState`](#powerstate)_, _[`VolumeLevel`](#volumelevel)_, [`MuteState`](#mutestate), [`EqualizerBass`](#equalizerbass), [`EqualizerMidrange`](#equalizermidrange), [`EqualizerTreble`](#equalizertreble), [`EqualizerMode`](#equalizermode), [`Channel`](#channel), [`ChannelKey`](#channelkey), [`Input`](#input), [`Playback`](#playback), [`PlaybackStop`](#playbackstop) | A speaker or speaker system.
+`StreamingDevice` | _[`PowerState`](#powerstate)_, _[`Playback`](#playback)_, [`PlaybackStop`](#playbackstop), [`Channel`](#channel), [`ChannelKey`](#channelkey), [`Input`](#input), [`VolumeLevel`](#volumelevel), [`MuteState`](#mutestate), [`EqualizerBass`](#equalizerbass), [`EqualizerMidrange`](#equalizermidrange), [`EqualizerTreble`](#equalizertreble), [`EqualizerMode`](#equalizermode) | A streaming device such as Apple TV, Chromecast, or Roku.
 `Switch` | _[`PowerState`](#powerstate)_, _[`PowerLevel`](#powerlevel)_, _[`Percentage`](#percentage)_ | A switch wired directly to the electrical system. A switch can control a variety of devices. For lighting devices, use `Light` instead.
 `Tablet` | _[`PowerState`](#powerstate)_,  [`BatteryLevel`](#batterylevel), [`NetworkAccess`](#networkaccess) | A tablet computer.
-`Television` | _[`PowerState`](#powerstate)_, _[`Channel`](#channel)_, [`Input`](#input), [`VolumeLevel`](#volumelevel), [`MuteState`](#mutestate), [`EqualizerBass`](#equalizerbass), [`EqualizerMidrange`](#equalizermidrange), [`EqualizerTreble`](#equalizertreble), [`EqualizerMode`](#equalizermode), [`Playback`](#playback), [`PlaybackStop`](#playbackstop) | A television.
+`Television` | _[`PowerState`](#powerstate)_, _[`Channel`](#channel)_, [`ChannelKey`](#channelkey), [`Input`](#input), [`VolumeLevel`](#volumelevel), [`MuteState`](#mutestate), [`EqualizerBass`](#equalizerbass), [`EqualizerMidrange`](#equalizermidrange), [`EqualizerTreble`](#equalizertreble), [`EqualizerMode`](#equalizermode), [`Playback`](#playback), [`PlaybackStop`](#playbackstop) | A television.
 `TemperatureSensor` | _[`CurrentTemperature`](#currenttemperature)_, [`BatteryLevel`](#batterylevel) | An endpoint that reports temperature, but does not control it. The temperature data of the endpoint doesn't appear in the Alexa app. If your endpoint also controls temperature, use `Thermostat` instead.
 `Thermostat` | _[`HeatingCoolingMode`](#heatingcoolingmode)_, [`TargetTemperature`](#targettemperature), [`CoolingSetpoint`](#coolingsetpoint), [`HeatingSetpoint`](#heatingsetpoint), [`EcoCoolingSetpoint`](#ecocoolingsetpoint), [`EcoHeatingSetpoint`](#ecoheatingsetpoint), [`ThermostatHold`](#thermostathold), [`ThermostatFan`](#thermostatfan), [`CurrentTemperature`](#currenttemperature), [`CurrentHumidity`](#currenthumidity), [`BatteryLevel`](#batterylevel) | An endpoint that controls temperature, stand-alone air conditioners, or heaters with direct temperature control. If your endpoint senses temperature but does not control it, use `TemperatureSensor` instead.
 `VacuumCleaner` | _[`PowerState`](#powerstate)_, _[`VacuumMode`](#vacuummode)_, [`FanSpeed`](#fanspeed), [`BatteryLevel`](#batterylevel) | A vacuum cleaner.
@@ -734,22 +735,37 @@ If paired with [`PositionState`](#positionstate), the primary controls (open/clo
 
 #### `Channel`
 
-Items that represent a channel. It is important to note only well-known channel names can be used as these are validated against a database on the Alexa side when requested. Unfortunately, Amazon doesn't provide a list of supported channel names.
+Items that represent a channel. It is important to note only well-known channel names can be used as these are validated against a database on the Alexa side when requested. Unfortunately, Amazon doesn't provide a list of supported channel names. For String, only channel requests by name are supported. For channel up/down keys support on adjustment requests, add [`ChannelKey`](#channelkey) to your entertainment group endpoint.
 
 * Supported item types:
   * Number
   * String
 * Supported metadata parameters:
   * channelMappings=`<mappings>`
-    * each mapping formatted as `<channelNumber>=<channelName>` (e.g. `channelMappings="2=CBS,4=NBC,7=ABC,13=PBS"`)
-    * allows channel requests by name otherwise only channel requests by number are supported if not defined
+    * each mapping formatted as `<channelId>=<channelName>` (e.g. `channelMappings="2=CBS,4=NBC,7=ABC,13=PBS"`)
+    * required for channel requests by name support
     * defaults to item state description options `channelMappings="value1=label1,..."`, if defined, otherwise no mappings
-  * range=`<range>`
+  * range=`<range>` (Number only)
     * range formatted as `<minValue>:<maxValue>` (e.g. `range="100:499"`)
     * defaults to `"1:9999"`
 * Utterance examples:
-  * *Alexa, change the channel to `<channel number>` on the `<device name>`.*
+  * *Alexa, change the channel to `<channel number>` on the `<device name>`.* (Number only)
   * *Alexa, change the channel to `<channel name>` on the `<device name>`.*
+  * *Alexa, next channel on the `<device name>`.*
+  * *Alexa, previous channel on the `<device name>`.*
+  * *Alexa, channel up on the `<device name>`.*
+  * *Alexa, channel down on the `<device name>`.*
+
+#### `ChannelKey`
+
+Items that represent channel up/down keys that change a channel incrementally in discrete steps.
+
+* Supported item types:
+  * String
+* Supported metadata parameters:
+  * CHANNEL_UP=`<keyCode>`
+  * CHANNEL_DOWN=`<keyCode>`
+* Utterance examples:
   * *Alexa, next channel on the `<device name>`.*
   * *Alexa, previous channel on the `<device name>`.*
   * *Alexa, channel up on the `<device name>`.*
