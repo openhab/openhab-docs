@@ -5,7 +5,7 @@
   xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
                       https://openhab.org/schemas/thing-description/v1.0.0">
 
-  <thing-type id="climax_PRL-1ZW_01_003" listed="false">
+  <thing-type id="climax_PRL-1ZW_00_000" listed="false">
     <label>PRL-1ZW Z-Wave Relay (PRL-1ZW)</label>
     <description><![CDATA[
 Z-Wave Relay (PRL-1ZW)<br /> <h1>Overview</h1><p>The PRL-1ZW is a Z-Wave enabled device and is fully compatible with any Z-Wave enabled network. The Relay can be connected to wired device and set to either Normal Open (N.O.) or Normal Close (N.C.) status. After joining Z-wave network, the Relay can be controlled via Z-wave network to activate connected devices.<br /></p> <br /> <h2>Inclusion Information</h2><ol><li>Put the Z-wave gateway or control panel into Inclusion mode (please refer to the Z-wave gateway or control panel manual).</li><li>Within 1.5 seconds, press the Function Button 3 times.</li><li>Refer to the operation manual of the Z-wave gateway or control panel to complete the adding process.</li><li>If the device has already been added (included) into another Z-wave Gateway/Control Panel, or if the device is unable to be added into the current Z-wave Gateway/Control Panel, try removing it first (see Removing Device).</li></ol> <br /> <h2>Exclusion Information</h2><ol><li>Put the Z-wave gateway or control panel into Exclusion mode (please refer to the Z-wave gateway or control panel manual).</li><li>Within 1.5 seconds, press the Function Button 3 times and the device will be removed from the Z-wave network.</li></ol> <br /> <h2>Wakeup Information</h2><p><br /></p>
@@ -28,7 +28,6 @@ Z-Wave Relay (PRL-1ZW)<br /> <h1>Overview</h1><p>The PRL-1ZW is a Z-Wave enabled
       <property name="modelId">PRL-1ZW</property>
       <property name="manufacturerId">018E</property>
       <property name="manufacturerRef">0004:000A</property>
-      <property name="versionMin">1.3</property>
       <property name="dbReference">1453</property>
       <property name="defaultAssociations">1</property>
     </properties>
