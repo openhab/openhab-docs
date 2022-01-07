@@ -735,7 +735,7 @@ If paired with [`PositionState`](#positionstate), the primary controls (open/clo
 
 #### `Channel`
 
-Items that represent a channel. It is important to note only well-known channel names can be used as these are validated against a database on the Alexa side when requested. Unfortunately, Amazon doesn't provide a list of supported channel names. For String, only channel requests by name are supported. For channel up/down keys support on adjustment requests, add [`ChannelKey`](#channelkey) to your entertainment group endpoint.
+Items that represent a channel. It is important to note only well-known channel names can be used as these are validated against a database on the Alexa side when requested. Unfortunately, Amazon doesn't provide a list of supported channel names. For String, only channel requests by name are supported. For adjustment requests, by default, the increment is linear within the `range` parameter for Number, or the `channelMappings` parameter for String, based on the current state. For channel up/down keys support instead on these requests, add [`ChannelKey`](#channelkey) to your entertainment group endpoint.
 
 * Supported item types:
   * Number
@@ -751,14 +751,14 @@ Items that represent a channel. It is important to note only well-known channel 
 * Utterance examples:
   * *Alexa, change the channel to `<channel number>` on the `<device name>`.* (Number only)
   * *Alexa, change the channel to `<channel name>` on the `<device name>`.*
-  * *Alexa, next channel on the `<device name>`.*
-  * *Alexa, previous channel on the `<device name>`.*
-  * *Alexa, channel up on the `<device name>`.*
-  * *Alexa, channel down on the `<device name>`.*
+  * *Alexa, next channel on the `<device name>`.* (if [`ChannelKey`](#channelkey) not defined)
+  * *Alexa, previous channel on the `<device name>`.* (if [`ChannelKey`](#channelkey) not defined)
+  * *Alexa, channel up on the `<device name>`.* (if [`ChannelKey`](#channelkey) not defined)
+  * *Alexa, channel down on the `<device name>`.* (if [`ChannelKey`](#channelkey) not defined)
 
 #### `ChannelKey`
 
-Items that represent channel up/down keys that change a channel incrementally in discrete steps.
+Items that represent channel up/down keys that change a channel incrementally in discrete steps. For change requests by number or by name support, add [`Channel`](#channel) to your entertainment group endpoint.
 
 * Supported item types:
   * String
