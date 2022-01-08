@@ -1062,6 +1062,9 @@ Items that represents a color temperature. It is important to note that temperat
   * increment=`<number>`
     * expressed in % (Dimmer); in Kelvin (Number)
     * defaults to INCREASE/DECREASE for Dimmer, otherwise 500 for Number
+  * requiresSetColorReset=`<boolean>` (Number only)
+    * set to true to require color temperature state to be reset on set color requests
+    * defaults to false
 * Utterance examples:
   * *Alexa, make the `<device name>` warm white.*
   * *Alexa, set the `<device name>` to daylight.*
