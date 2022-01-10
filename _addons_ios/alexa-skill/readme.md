@@ -255,7 +255,7 @@ Switch Mute     "Mute"     (Stereo)  {alexa="MuteState"}
 Switch Power    "Power"    (Stereo)  {alexa="PowerState"}
 String Input    "Input"    (Stereo)  {alexa="Input" [supportedInputs="HDMI1,TV"]}
 String Channel  "Channel"  (Stereo)  {alexa="Channel"}
-String KeyCode  "Key Code" (Stereo)  {alexa="ChannelKey" [CHANNEL_UP="CHUP", CHANNEL_DOWN="CHDOWN"]}
+String KeyCode  "Key Code" (Stereo)  {alexa="ChannelStep" [CHANNEL_UP="CHUP", CHANNEL_DOWN="CHDOWN"]}
 Player Playback "Playback" (Stereo)  {alexa="Playback"}
 Switch Stop     "Stop"     (Stereo)  {alexa="PlaybackStop"}
 Number Bass     "Bass"     (Stereo)  {alexa="EqualizerBass" [range="-10:10"]}
@@ -502,7 +502,7 @@ Device Types | Supported Attributes | Description
 `Automobile` | [`BatteryLevel`](#batterylevel), [`FanSpeed`](#fanspeed), [`LockState`](#lockstate), [`PowerState`](#powerstate), [`TargetTemperature`](#targettemperature), [`CurrentTemperature`](#currenttemperature) | A motor vehicle (automobile, car).
 `AutomobileAccessory` | [`BatteryLevel`](#batterylevel), [`CameraStream`](#camerastream), [`FanSpeed`](#fanspeed), [`PowerState`](#powerstate) | A smart device in an automobile, such as a dash camera.
 `Blind`, `Curtain`, `Shade` | _[`OpenState`](#openstate)_, _[`PositionState`](#positionstate)_, [`TiltAngle`](#tiltAngle), [`TargetOpenState`](#targetopenstate), [`CurrentOpenState`](#currentopenstate) | A window covering on the inside of a structure.
-`BluetoothSpeaker` | _[`PowerState`](#powerstate)_, _[`VolumeLevel`](#volumelevel)_, [`MuteState`](#mutestate), [`EqualizerBass`](#equalizerbass), [`EqualizerMidrange`](#equalizermidrange), [`EqualizerTreble`](#equalizertreble), [`EqualizerMode`](#equalizermode), [`Channel`](#channel), [`ChannelKey`](#channelkey), [`Input`](#input), [`Playback`](#playback), [`PlaybackStop`](#playbackstop), [`BatteryLevel`](#batterylevel) | A speaker that connects to an audio source over Bluetooth.
+`BluetoothSpeaker` | _[`PowerState`](#powerstate)_, _[`VolumeLevel`](#volumelevel)_, [`VolumeStep`](#volumestep), [`MuteState`](#mutestate), [`MuteStep`](#mutestep), [`EqualizerBass`](#equalizerbass), [`EqualizerMidrange`](#equalizermidrange), [`EqualizerTreble`](#equalizertreble), [`EqualizerMode`](#equalizermode), [`Channel`](#channel), [`ChannelStep`](#channelstep), [`Input`](#input), [`Playback`](#playback), [`PlaybackStop`](#playbackstop), [`BatteryLevel`](#batterylevel) | A speaker that connects to an audio source over Bluetooth.
 `Camera` | _[`PowerState`](#powerstate)_, _[`CameraStream`](#camerastream)_, [`BatteryLevel`](#batterylevel) | A security device with video or photo functionality.
 `ChristmasTree` | Same as `Light` | A religious holiday decoration that often contains lights.
 `CoffeeMaker` | _[`PowerState`](#powerstate)_ | A device that makes coffee.
@@ -535,11 +535,11 @@ Device Types | Supported Attributes | Description
 `SecuritySystem` | Same as `SecurityPanel` | A security system.
 `Shutter`, `Awning` | Same as `Blind` | A window covering on the outside of a structure.
 `SlowCooker` | _[`PowerState`](#powerstate)_ | An electric cooking device that sits on a countertop, cooks at low temperatures, and is often shaped like a cooking pot.
-`Speaker` | _[`PowerState`](#powerstate)_, _[`VolumeLevel`](#volumelevel)_, [`MuteState`](#mutestate), [`EqualizerBass`](#equalizerbass), [`EqualizerMidrange`](#equalizermidrange), [`EqualizerTreble`](#equalizertreble), [`EqualizerMode`](#equalizermode), [`Channel`](#channel), [`ChannelKey`](#channelkey), [`Input`](#input), [`Playback`](#playback), [`PlaybackStop`](#playbackstop) | A speaker or speaker system.
-`StreamingDevice` | _[`PowerState`](#powerstate)_, _[`Playback`](#playback)_, [`PlaybackStop`](#playbackstop), [`Channel`](#channel), [`ChannelKey`](#channelkey), [`Input`](#input), [`VolumeLevel`](#volumelevel), [`MuteState`](#mutestate), [`EqualizerBass`](#equalizerbass), [`EqualizerMidrange`](#equalizermidrange), [`EqualizerTreble`](#equalizertreble), [`EqualizerMode`](#equalizermode) | A streaming device such as Apple TV, Chromecast, or Roku.
+`Speaker` | _[`PowerState`](#powerstate)_, _[`VolumeLevel`](#volumelevel)_, [`VolumeStep`](#volumestep), [`MuteState`](#mutestate), [`MuteStep`](#mutestep), [`EqualizerBass`](#equalizerbass), [`EqualizerMidrange`](#equalizermidrange), [`EqualizerTreble`](#equalizertreble), [`EqualizerMode`](#equalizermode), [`Channel`](#channel), [`ChannelStep`](#channelstep), [`Input`](#input), [`Playback`](#playback), [`PlaybackStop`](#playbackstop) | A speaker or speaker system.
+`StreamingDevice` | _[`PowerState`](#powerstate)_, _[`Playback`](#playback)_, [`PlaybackStop`](#playbackstop), [`Channel`](#channel), [`ChannelStep`](#channelstep), [`Input`](#input), [`VolumeLevel`](#volumelevel), [`VolumeStep`](#volumestep), [`MuteState`](#mutestate), [`MuteStep`](#mutestep), [`EqualizerBass`](#equalizerbass), [`EqualizerMidrange`](#equalizermidrange), [`EqualizerTreble`](#equalizertreble), [`EqualizerMode`](#equalizermode) | A streaming device such as Apple TV, Chromecast, or Roku.
 `Switch` | _[`PowerState`](#powerstate)_, _[`PowerLevel`](#powerlevel)_, _[`Percentage`](#percentage)_ | A switch wired directly to the electrical system. A switch can control a variety of devices. For lighting devices, use `Light` instead.
 `Tablet` | _[`PowerState`](#powerstate)_,  [`BatteryLevel`](#batterylevel), [`NetworkAccess`](#networkaccess) | A tablet computer.
-`Television` | _[`PowerState`](#powerstate)_, _[`Channel`](#channel)_, [`ChannelKey`](#channelkey), [`Input`](#input), [`VolumeLevel`](#volumelevel), [`MuteState`](#mutestate), [`EqualizerBass`](#equalizerbass), [`EqualizerMidrange`](#equalizermidrange), [`EqualizerTreble`](#equalizertreble), [`EqualizerMode`](#equalizermode), [`Playback`](#playback), [`PlaybackStop`](#playbackstop) | A television.
+`Television` | _[`PowerState`](#powerstate)_, _[`Channel`](#channel)_, [`ChannelStep`](#channelstep), [`Input`](#input), [`VolumeLevel`](#volumelevel), [`VolumeStep`](#volumestep), [`MuteState`](#mutestate), [`MuteStep`](#mutestep), [`EqualizerBass`](#equalizerbass), [`EqualizerMidrange`](#equalizermidrange), [`EqualizerTreble`](#equalizertreble), [`EqualizerMode`](#equalizermode), [`Playback`](#playback), [`PlaybackStop`](#playbackstop) | A television.
 `TemperatureSensor` | _[`CurrentTemperature`](#currenttemperature)_, [`BatteryLevel`](#batterylevel) | An endpoint that reports temperature, but does not control it. The temperature data of the endpoint doesn't appear in the Alexa app. If your endpoint also controls temperature, use `Thermostat` instead.
 `Thermostat` | _[`HeatingCoolingMode`](#heatingcoolingmode)_, [`TargetTemperature`](#targettemperature), [`CoolingSetpoint`](#coolingsetpoint), [`HeatingSetpoint`](#heatingsetpoint), [`EcoCoolingSetpoint`](#ecocoolingsetpoint), [`EcoHeatingSetpoint`](#ecoheatingsetpoint), [`ThermostatHold`](#thermostathold), [`ThermostatFan`](#thermostatfan), [`CurrentTemperature`](#currenttemperature), [`CurrentHumidity`](#currenthumidity), [`BatteryLevel`](#batterylevel) | An endpoint that controls temperature, stand-alone air conditioners, or heaters with direct temperature control. If your endpoint senses temperature but does not control it, use `TemperatureSensor` instead.
 `VacuumCleaner` | _[`PowerState`](#powerstate)_, _[`VacuumMode`](#vacuummode)_, [`FanSpeed`](#fanspeed), [`BatteryLevel`](#batterylevel) | A vacuum cleaner.
@@ -735,7 +735,7 @@ If paired with [`PositionState`](#positionstate), the primary controls (open/clo
 
 #### `Channel`
 
-Items that represent a channel. It is important to note only well-known channel names can be used as these are validated against a database on the Alexa side when requested. Unfortunately, Amazon doesn't provide a list of supported channel names. For String, only channel requests by name are supported. For adjustment requests, by default, the increment is linear within the `range` parameter for Number, or the `channelMappings` parameter for String, based on the current state. For channel up/down keys support instead on these requests, add [`ChannelKey`](#channelkey) to your entertainment group endpoint.
+Items that represent a channel. It is important to note only well-known channel names can be used as these are validated against a database on the Alexa side when requested. Unfortunately, Amazon doesn't provide a list of supported channel names. For String, only channel requests by name are supported. For adjustment requests, by default, the increment is linear within the `range` parameter for Number, or the `channelMappings` parameter for String, based on the current state. For adjustment in incremental discrete steps, add [`ChannelStep`](#channelstep) to your entertainment group endpoint.
 
 * Supported item types:
   * Number
@@ -751,20 +751,20 @@ Items that represent a channel. It is important to note only well-known channel 
 * Utterance examples:
   * *Alexa, change the channel to `<channel number>` on the `<device name>`.* (Number only)
   * *Alexa, change the channel to `<channel name>` on the `<device name>`.*
-  * *Alexa, next channel on the `<device name>`.* (if [`ChannelKey`](#channelkey) not defined)
-  * *Alexa, previous channel on the `<device name>`.* (if [`ChannelKey`](#channelkey) not defined)
-  * *Alexa, channel up on the `<device name>`.* (if [`ChannelKey`](#channelkey) not defined)
-  * *Alexa, channel down on the `<device name>`.* (if [`ChannelKey`](#channelkey) not defined)
+  * *Alexa, next channel on the `<device name>`.* (if [`ChannelStep`](#channelstep) not defined)
+  * *Alexa, previous channel on the `<device name>`.* (if [`ChannelStep`](#channelstep) not defined)
+  * *Alexa, channel up on the `<device name>`.* (if [`ChannelStep`](#channelstep) not defined)
+  * *Alexa, channel down on the `<device name>`.* (if [`ChannelStep`](#channelstep) not defined)
 
-#### `ChannelKey`
+#### `ChannelStep`
 
-Items that represent channel up/down keys that change a channel incrementally in discrete steps. For change requests by number or by name support, add [`Channel`](#channel) to your entertainment group endpoint.
+Items that represent a channel adjusted in incremental discrete steps. For change requests by number or by name support, add [`Channel`](#channel) to your entertainment group endpoint.
 
 * Supported item types:
   * String
 * Supported metadata parameters:
-  * CHANNEL_UP=`<keyCode>`
-  * CHANNEL_DOWN=`<keyCode>`
+  * CHANNEL_UP=`<command>`
+  * CHANNEL_DOWN=`<command>`
 * Utterance examples:
   * *Alexa, next channel on the `<device name>`.*
   * *Alexa, previous channel on the `<device name>`.*
@@ -797,12 +797,11 @@ Items that represent an input source (e.g. "HDMI 1" or "TUNER" on a stereo).
   * *Alexa, what's the `<device name>` input?*
 
 <a name="speaker-volume"></a>
-<a name="stepspeaker-volume"></a>
 <a name="speakervolume"></a>
 
 #### `VolumeLevel`
 
-Items that represent a volume level.
+Items that represent a volume level as percentage. For adjustment in incremental discrete steps, use [`VolumeStep`](#volumestep) instead.
 
 * Supported item types:
   * Dimmer
@@ -810,23 +809,36 @@ Items that represent a volume level.
 * Supported metadata parameters:
   * increment=`<number>`
     * defaults to 10 (standard value provided by Alexa)
-  * stepSpeaker=`<boolean>` (Number only)
-    * set to true for volume controlled in incremental steps only and its state cannot be tracked by openHAB.
-    * defaults to false
 * Utterance examples:
-  * *Alexa, set the volume of `<device name>` to 50.* (if not step speaker)
+  * *Alexa, set the volume of `<device name>` to 50.*
   * *Alexa, turn the volume up on `<device name>`.*
   * *Alexa, turn the volume down on `<device name>` by 20.*
   * *Alexa, increase the volume on the `<device name>`.*
   * *Alexa, lower the volume on the `<device name>` by 20.*
 
+<a name="stepspeaker-volume"></a>
+
+#### `VolumeStep`
+
+Items that represent a volume level adjusted in incremental discrete steps. The skill limits adjustment to a maximum of 10 steps per request.
+
+* Supported item types:
+  * String
+* Supported metadata parameters:
+  * VOLUME_UP=`<command>`
+  * VOLUME_DOWN=`<command>`
+* Utterance examples:
+  * *Alexa, increase the volume on the `<device name>`.*
+  * *Alexa, lower the volume on the `<device name>` by 5.*
+  * *Alexa, volume up on the `<device name>`.*
+  * *Alexa, volume down 5 on the `<device name>`.*
+
 <a name="speaker-muted"></a>
-<a name="stepspeaker-muted"></a>
 <a name="speakermute"></a>
 
 #### `MuteState`
 
-Items that represent a muted state (ON muted, OFF unmuted).
+Items that represent a muted state (ON muted, OFF unmuted). For adjustment in discrete steps, use [`MuteStep`](#mutestep) instead.
 
 * Supported item types:
   * Switch
@@ -834,9 +846,20 @@ Items that represent a muted state (ON muted, OFF unmuted).
   * inverted=`<boolean>`
     * set to true to invert state
     * defaults to false
-  * stepSpeaker=`<boolean>`
-    * set to true if current muted state cannot be tracked by openHAB.
-    * defaults to false
+* Utterance examples:
+  * *Alexa, mute `<device name>`.*
+  * *Alexa, unmute `<device name>`.*
+
+<a name="stepspeaker-muted"></a>
+
+#### `MuteStep`
+
+Items that represent a muted state adjusted in discrete steps.
+
+* Supported item types:
+  * String
+* Supported metadata parameters:
+  * MUTE=`<command>`
 * Utterance examples:
   * *Alexa, mute `<device name>`.*
   * *Alexa, unmute `<device name>`.*
@@ -1903,7 +1926,7 @@ Alexa Interfaces | Supported Attributes | Supported Languages
 -----------------|------------------------|--------------------
 BrightnessController | [`Brightness`](#brightness) | `de-DE`, `en-AU`, `en-CA`, `en-GB`, `en-IN`, `en-US`, `es-ES`, `fr-FR`, `hi-IN`, `it-IT`, `ja-JP`, `pt-BR`
 CameraStreamController | [`CameraStream`](#camerastream) | `de-DE`, `en-AU`, `en-CA`, `en-GB`, `en-IN`, `en-US`, `es-ES`, `es-MX`, `fr-FR`, `hi-IN`, `it-IT`, `ja-JP`, `pt-BR`
-ChannelController | [`Channel`](#channel) | `de-DE`, `en-AU`, `en-CA`, `en-GB`, `en-IN`, `en-US`, `es-ES`, `es-MX`, `fr-FR`, `hi-IN`, `it-IT`, `ja-JP`, `pt-BR`
+ChannelController | [`Channel`](#channel), [`ChannelStep`](#channelstep) | `de-DE`, `en-AU`, `en-CA`, `en-GB`, `en-IN`, `en-US`, `es-ES`, `es-MX`, `fr-FR`, `hi-IN`, `it-IT`, `ja-JP`, `pt-BR`
 ColorController | [`Color`](#color) | `de-DE`, `en-AU`, `en-CA`, `en-GB`, `en-IN`, `en-US`, `es-ES`, `fr-FR`, `hi-IN`, `it-IT`, `ja-JP`, `pt-BR`
 ColorTemperatureController | [`ColorTemperature`](#colortemperature) | `de-DE`, `en-AU`, `en-CA`, `en-GB`, `en-IN`, `en-US`, `es-ES`, `fr-FR`, `hi-IN`, `it-IT`, `ja-JP`, `pt-BR`
 ContactSensor | [`ContactDetectionState`](#contactdetectionstate) | `de-DE`, `en-AU`, `en-CA`, `en-IN`, `en-US`, `es-ES`, `it-IT`, `ja-JP`
@@ -1921,7 +1944,7 @@ Safety | [`ObstacleAlert`](#obstaclealert) | `en-US`
 SceneController | [`Scene`](#scene), [`Activity`](#activity) | `de-DE`, `en-AU`, `en-CA`, `en-GB`, `en-IN`, `en-US`, `es-ES`, `fr-FR`, `it-IT`, `ja-JP`
 SecurityPanelController | [`ArmState`](#armstate), [`BurglaryAlarm`](#burglaryalarm), [`CarbonMonoxideAlarm`](#carbonmonoxidealarm), [`FireAlarm`](#firealarm), [`WaterAlarm`](#wateralarm) | `de-DE`, `en-AU`, `en-CA`, `en-GB`, `en-IN`, `en-US`, `es-ES`, `es-MX`, `es-US`, `fr-CA`, `fr-FR`, `it-IT`, `ja-JP`, `pt-BR`
 Speaker | [`VolumeLevel`](#volumelevel), [`MuteState`](#mutestate) | `de-DE`, `en-AU`, `en-CA`, `en-GB`, `en-IN`, `en-US`, `es-ES`, `es-MX`, `it-IT`, `ja-JP`
-StepSpeaker | [`VolumeLevel`](#volumelevel), [`MuteState`](#mutestate) | `de-DE`, `en-AU`, `en-CA`, `en-GB`, `en-IN`, `en-US`, `es-ES`, `it-IT`
+StepSpeaker | [`VolumeStep`](#volumestep), [`MuteStep`](#mutestep) | `de-DE`, `en-AU`, `en-CA`, `en-GB`, `en-IN`, `en-US`, `es-ES`, `it-IT`
 TemperatureSensor | [`CurrentTemperature`](#currenttemperature) | `de-DE`, `en-AU`, `en-CA`, `en-GB`, `en-IN`, `en-US`, `es-ES`, `fr-FR`, `it-IT`, `ja-JP`
 ThermostatController | [`TargetTemperature`](#targettemperature), [`CoolingSetpoint`](#coolingsetpoint), [`HeatingSetpoint`](#heatingsetpoint), [`HeatingCoolingMode`](#heatingcoolingmode), [`ThermostatHold`](#thermostathold) | `de-DE`, `en-AU`, `en-CA`, `en-GB`, `en-IN`, `en-US`, `es-ES`, `fr-FR`, `it-IT`, `ja-JP`, `pt-BR`
 ToggleController | [`ToggleState`](#togglestate), [`FanOscillate`](#fanoscillate), [`ThermostatFan`](#thermostatfan) | `de-DE`, `en-AU`, `en-CA`, `en-GB`, `en-IN`, `en-US`, `es-ES`, `es-MX`, `fr-CA`, `fr-FR`, `it-IT`, `ja-JP`
