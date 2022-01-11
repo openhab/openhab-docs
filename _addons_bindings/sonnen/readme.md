@@ -5,6 +5,7 @@ title: Sonnen - Bindings
 type: binding
 description: "The binding for sonnen communicates with a sonnen battery."
 since: 3x
+logo: images/addons/sonnen.png
 install: manual
 ---
 

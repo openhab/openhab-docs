@@ -5,6 +5,7 @@ title: Renault - Bindings
 type: binding
 description: "This binding allow MyRenault App. users to get battery status and other data from their cars."
 since: 3x
+logo: images/addons/renault.png
 install: manual
 ---
 

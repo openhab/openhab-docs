@@ -254,7 +254,7 @@ Number Volume   "Volume"   (Stereo)  {alexa="VolumeLevel"}
 Switch Mute     "Mute"     (Stereo)  {alexa="MuteState"}
 Switch Power    "Power"    (Stereo)  {alexa="PowerState"}
 String Input    "Input"    (Stereo)  {alexa="Input" [supportedInputs="HDMI1,TV"]}
-String Channel  "Channel"  (Stereo)  {alexa="Channel"}
+Number Channel  "Channel"  (Stereo)  {alexa="Channel"}
 String KeyCode  "Key Code" (Stereo)  {alexa="ChannelStep" [CHANNEL_UP="CHUP", CHANNEL_DOWN="CHDOWN"]}
 Player Playback "Playback" (Stereo)  {alexa="Playback"}
 Switch Stop     "Stop"     (Stereo)  {alexa="PlaybackStop"}
@@ -2012,6 +2012,7 @@ Asset Identifier | Supported Friendly Names
 `@Setting.Reverse` | Reverse
 `@Setting.Speed` | Speed
 `@Setting.Spot` | Spot
+`@Setting.TargetTemperature` | Target Temperature
 `@Setting.Tilt` | Tilt
 `@Setting.ToggleState` | Toggle State
 `@Value.Decrease` | Decrease
