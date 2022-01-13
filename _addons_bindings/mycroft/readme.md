@@ -5,6 +5,7 @@ title: Mycroft - Bindings
 type: binding
 description: "This binding connects to Mycroft A.I. in order to control it or react to events by listening on the message bus."
 since: 3x
+logo: images/addons/mycroft.png
 install: manual
 ---
 

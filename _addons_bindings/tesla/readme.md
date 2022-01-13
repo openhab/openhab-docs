@@ -115,7 +115,7 @@ Additionally, these advanced channels are available (not all are available on al
 | batteryheaternopower      | Switch                   | Battery Heater Power          | Indicates if there is enough power to use the battery heater                                                     |
 | batteryrange              | Number:Length            | Battery Range                 | Range of the battery                                                                                             |
 | calendarenabled           | Switch                   | Calendar Enabled              | Indicates if access to a remote calendar is enabled                                                              |
-| centerdisplay             | Switch                   | Central Display State         | Indicates the state of the central display in the vehicle                                                        |
+| centerdisplay             | Number                   | Central Display State         | Indicates the state of the central display in the vehicle, see [here](https://tesla-api.timdorr.com/vehicle/state/vehiclestate) for valid values |                                                 
 | centerrearseatheater      | Switch                   | Center Rear Seat Heater       | Indicates if the center rear seat heater is switched on                                                          |
 | charge                    | Switch                   | Charge                        | Start (ON) or stop (OFF) charging                                                                                |
 | chargecable               | String                   | Charge Cable                  | Undocumented / To be defined                                                                                     |
@@ -195,8 +195,8 @@ Additionally, these advanced channels are available (not all are available on al
 | soc                       | Number                   | State of Charge               | State of Charge, in %                                                                                            |
 | state                     | String                   | State                         | “online”, “asleep”, “waking”                                                                                     |
 | steeringwheelheater       | Switch                   | Steering Wheel Heater         | Indicates if the steering wheel heater is switched on                                                            |
-| sunroofstate              | String                   | Sunroof State                 | “unknown”, “open”, “closed”, “vent”, “comfort”                                                                   |
-| sunroof                   | Dimmer                   | Sunroof                       | Open or close the sunroof to provided % (0 closed, 100 fully open)                                               |
+| sunroofstate              | String                   | Sunroof State                 | Valid states are “unknown”, “open”, “closed”, “vent”, “comfort”. Accepts commands "close" and "vent".            |
+| sunroof                   | Dimmer                   | Sunroof                       | Indicates the opening state of the sunroof (0% closed, 100% fully open)                                          |
 | temperature               | Number:Temperature       | Temperature                   | Set the temperature of the autoconditioning system. The temperature for the driver and passenger will be synced. |
 | timetofullcharge          | Number                   | Time To Full Charge           | Number of hours to fully charge the battery                                                                      |
 | tripcharging              | Switch                   | Trip Charging                 | Not documented / To be defined                                                                                   |
