@@ -310,6 +310,29 @@ Rollershutter { ga="Shutter" }
 Rollershutter { ga="Window" }
 ```
 
+#### `Charger`
+
+| | |
+|---|---|
+| **Device Type** | [Charger](https://developers.google.com/assistant/smarthome/guides/charger) |
+| **Supported Traits** | [EnergyStorage](https://developers.google.com/assistant/smarthome/traits/energystorage) |
+| **Supported Items** | Group as `Charger` with the following optional members: Switch as `chargerCharging`, Switch as `chargerPluggedIn`, Number or Dimmer as `chargerCapacityRemaining`, Number or Dimmer as `chargerCapacityUntilFull` |
+| **Configuration** | (optional) `isRechargeable=true/false`<br>(optional) `unit="PERCENTAGE"` |
+
+The configuration option `unit` supports the following values: `PERCENTAGE` (default), `SECONDS`, `MILES`, `KILOMETERS`, `KILOWATT_HOURS`
+
+The setting `isRechargeable` defaults to `false` if not explicitly set to `true`.
+
+If no `chargerCharging` item is specified, the device will only support queries.
+
+```shell
+Group  chargerGroup { ga="Charger" [ isRechargeable=true, unit="KILOWATT_HOURS" ] }
+Switch chargingItem         (chargerGroup) { ga="chargerCharging" }
+Switch pluggedInItem        (chargerGroup) { ga="chargerPluggedIn" }
+Number capacityRemainItem   (chargerGroup) { ga="chargerCapacityRemaining" }
+Number capacityFullItem     (chargerGroup) { ga="chargerCapacityUntilFull" }
+```
+
 #### `TemperatureSensor`
 
 | | |

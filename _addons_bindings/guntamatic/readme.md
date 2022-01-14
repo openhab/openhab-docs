@@ -5,6 +5,7 @@ title: Guntamatic - Bindings
 type: binding
 description: "The Guntamatic Binding can be used to monitor and control [Guntamatic Heating Systems](https://www.guntamatic.com/en/)."
 since: 3x
+logo: images/addons/guntamatic.png
 install: manual
 ---
 
