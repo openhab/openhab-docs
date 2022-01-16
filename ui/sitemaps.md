@@ -210,7 +210,7 @@ Text [item=<itemname>] [label="<labelname>"] [icon="<iconname>"]
 
 Presents data as normal text.
 Most Item types can be used; the values can be prepared and reformatted by using string formatters and transformations.
-Please refer to the documentation on [item labels](items.html#item-label) for details.
+Please refer to the documentation on [item State Presentation]({{base}}/configuration/items.html#state-presentation) for details.
 
 **Example:**
 
