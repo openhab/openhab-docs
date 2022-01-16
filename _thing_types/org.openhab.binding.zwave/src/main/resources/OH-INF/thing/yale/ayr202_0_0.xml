@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="yale_ayr202_00_000" listed="false">
+    <label>AYR202 Yale nexTouch NTB610 with ayr202 network module</label>
+    <description><![CDATA[
+Yale nexTouch NTB610 with ayr202 network module<br /> <h1>Overview</h1><p>This is based on the Yale NTB610 nexTouch lock using the AY202 network module.  Yale nexTouch is part of its line of commerical door locks.  The NTB610 is a cylindrical lock with a keybutton or membrane keypad, battery powered, with optional sensors.  The device can store 250 user entry codes, has privacy settings, and has a speaker where user can be "talked through" the menu options.</p> <br /> <h2>Inclusion Information</h2><ol><li>Enter your Master Pin code followed by the Settings Button (Gear Icon)</li><li>Press 7 then press Settings Button</li><li>Press 1 then press Settings Button</li></ol> <br /> <h2>Exclusion Information</h2><ol><li>Enter your Master Pin code followed by the Settings Button (Gear Icon)</li><li>Press 7 then press Settings Button</li><li>Press 3 then press Settings Button</li></ol> <br /> <h2>Wakeup Information</h2><p>Press the Settings Button</p>
+    ]]></description>
+    <category>Lock</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="lock_door" typeId="lock_door">
+        <label>Door Lock</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_DOOR_LOCK</property>
+        </properties>
+      </channel>
+      <channel id="alarm_access" typeId="alarm_access">
+        <label>Alarm (access)</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=ACCESS_CONTROL</property>
+        </properties>
+      </channel>
+      <channel id="alarm_power" typeId="alarm_power">
+        <label>Alarm (power)</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=POWER_MANAGEMENT</property>
+        </properties>
+      </channel>
+      <channel id="battery-level" typeId="system.battery-level">
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_BATTERY</property>
+        </properties>
+      </channel>
+      <channel id="time_offset" typeId="time_offset">
+        <label>Clock Time Offset</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_TIME_PARAMETERS</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">ASSA ABLOY</property>
+      <property name="modelId">AYR202</property>
+      <property name="manufacturerId">0129</property>
+      <property name="manufacturerRef">8001:0B00</property>
+      <property name="dbReference">1461</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_1_1" type="integer" groupName="configuration">
+        <label>1: Silent Mode on/off</label>
+        <description>Controls spoken prompts</description>
+        <default>1</default>
+        <options>
+          <option value="1">high</option>
+          <option value="2">low</option>
+          <option value="3">Off</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_2_2" type="integer" groupName="configuration">
+        <label>2: Auto Relock</label>
+        <description>Sets whether or not the lock is to auto relock</description>
+        <default>0</default>
+        <options>
+          <option value="0">Off</option>
+          <option value="255">On</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_3_1" type="integer" groupName="configuration"
+                 min="1" max="127">
+        <label>3: Auto Relock NormalTime</label>
+        <description>Time in seconds to auto relock the door</description>
+        <default>5</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_4_1" type="integer" groupName="configuration"
+                 min="3" max="10">
+        <label>4: Wrong Code Entry Limit</label>
+        <description>Number of Attempt Times Permitted</description>
+        <default>5</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_5_1" type="integer" groupName="configuration">
+        <label>5: Language</label>
+        <description>Language Setting</description>
+        <default>1</default>
+        <options>
+          <option value="1">English</option>
+          <option value="2">Spanish</option>
+          <option value="3">French</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_7_1" type="integer" groupName="configuration"
+                 min="1" max="127">
+        <label>7: Shutdown Time</label>
+        <description>Number of Seconds the lock is shut down after reaching the Wrong Code Entry Limit</description>
+        <default>60</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_8_1" type="integer" groupName="configuration">
+        <label>8: Operating Mode</label>
+        <description>Operating Mode of the Lock</description>
+        <default>0</default>
+        <options>
+          <option value="0">Normal Mode</option>
+          <option value="1">Vacation Mode</option>
+          <option value="2">Privacy Mode</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_11_1" type="integer" groupName="configuration">
+        <label>11: One Touch Locking</label>
+        <description>Secure lock with one touch</description>
+        <default>255</default>
+        <options>
+          <option value="0">Off</option>
+          <option value="255">On</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_12_1" type="integer" groupName="configuration">
+        <label>12: Privacy Button</label>
+        <description>Turn Privacy On/Off</description>
+        <default>255</default>
+        <options>
+          <option value="0">Off</option>
+          <option value="255">On</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_15_1" type="integer" groupName="configuration">
+        <label>15: Reset to Factory Default</label>
+        <description>Lock Will Reset to Factory</description>
+        <default>0</default>
+        <options>
+          <option value="0">Normal</option>
+          <option value="1">RESET</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_18_1" type="integer" groupName="configuration"
+                 min="10" max="127">
+        <label>18: Door Propped Timer</label>
+        <description>Alarm in Seconds for propped open door</description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_19_1" type="integer" groupName="configuration">
+        <label>19: DPS Alarms</label>
+        <description>Enable/Disable Alarm - Used only when a door position sensor is present</description>
+        <default>0</default>
+        <options>
+          <option value="0">Off</option>
+          <option value="255">On</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association">
+        <label>1: Lifeline</label>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

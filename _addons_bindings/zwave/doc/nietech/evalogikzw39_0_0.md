@@ -60,7 +60,50 @@ The ```switch_dimmer``` channel is of type ```switch_dimmer``` and supports the 
 
 ## Device Configuration
 
-The device has no configuration parameters defined.
+The following table provides a summary of the 2 configuration parameters available in the ZW39.
+Detailed information on each parameter can be found in the sections below.
+
+| Param | Name  | Description |
+|-------|-------|-------------|
+| 8 | Minimum Brightness | defines the brightness when the output level is set to 1. 0=disable |
+| 9 | Maximum brightness | controls the brightness when the device is set to maximum output |
+|  | Switch All Mode | Set the mode for the switch when receiving SWITCH ALL commands |
+
+### Parameter 8: Minimum Brightness
+
+defines the brightness when the output level is set to 1. 0=disable
+This is an advanced parameter and will therefore not show in the user interface without entering advanced mode.
+Values in the range 0 to 99 may be set.
+
+The manufacturer defined default value is ```10```.
+
+This parameter has the configuration ID ```config_8_1``` and is of type ```INTEGER```.
+
+
+### Parameter 9: Maximum brightness
+
+controls the brightness when the device is set to maximum output
+This is an advanced parameter and will therefore not show in the user interface without entering advanced mode.
+Values in the range 0 to 99 may be set.
+
+The manufacturer defined default value is ```99```.
+
+This parameter has the configuration ID ```config_9_1``` and is of type ```INTEGER```.
+
+### Switch All Mode
+
+Set the mode for the switch when receiving SWITCH ALL commands.
+
+The following option values may be configured -:
+| Value  | Description |
+|--------|-------------|
+| 0 | Exclude from All On and All Off groups |
+| 1 | Include in All On group |
+| 2 | Include in All Off group |
+| 255 | Include in All On and All Off groups |
+
+This parameter has the configuration ID ```switchall_mode``` and is of type ```INTEGER```.
+
 
 ## Association Groups
 

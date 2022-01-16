@@ -37,10 +37,36 @@ Dimmable Smart Plug<br /> <h1>Overview</h1><p>EVA LOGIK ZW39 Plug is a Z-Wave PL
     <config-description>
 
       <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
       <parameter-group name="association">
         <context>link</context>
         <label>Association Groups</label>
       </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_8_1" type="integer" groupName="configuration"
+                 min="0" max="99">
+        <label>8: Minimum Brightness</label>
+        <description><![CDATA[
+defines the brightness when the output level is set to 1. 0=disable<br /> <h1>Overview</h1><p><br /></p>
+        ]]></description>
+        <default>10</default>
+        <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_9_1" type="integer" groupName="configuration"
+                 min="0" max="99">
+        <label>9: Maximum brightness</label>
+        <description>controls the brightness when the device is set to maximum output</description>
+        <default>99</default>
+        <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->
       <parameter name="group_1" type="text" groupName="association" multiple="true">

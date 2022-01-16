@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="climax_psm-29zw_00_000" listed="false">
+    <label>PSM-29ZW Power Switch with Meter</label>
+    <description><![CDATA[
+Power Switch with Meter<br /> <h1>Overview</h1><p>The Power Switch with Meter function (PSM-29ZW) has the extra feature of keeping tracks of energy consumption with built-in power meter and transmitting the data to coordinator regularly.<br /></p> <br /> <h2>Inclusion Information</h2><p>1. Plug the Power Switch into a power outlet.</p><p>2. Put the Z-Wave Gateway or Control Panel into Inclusion mode (please refer to the Z-Wave Gateway or Control Panel manual).</p><p>3. Within 1.5 seconds, press the Function Button 3 times.</p><p>4. Refer to the operation manual of the Z-Wave Gateway or Control Panel to complete the adding process.</p><p>5. If the device has already been added (included) into another Z-Wave Gateway/Control Panel, or if the device is unable to be added into the current Z-Wave Gateway/Control Panel, please exclude it first (see Removing Device) before attempting to include it into the current Z-Wave Gateway/Control Panel.</p> <br /> <h2>Exclusion Information</h2><p>1. Put the Z-Wave Gateway or Control Panel into Exclusion mode (please refer to the Z-Wave Gateway or Control Panel manual).</p><p>2. Within 1.5 seconds, press the Function Button 3 times and the device will be removed from the Z-Wave network.</p> <br /> <h2>Wakeup Information</h2><p><br /></p>
+    ]]></description>
+    <category>PowerOutlet</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_binary" typeId="switch_binary">
+        <label>Switch</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY</property>
+        </properties>
+      </channel>
+      <channel id="meter_kwh" typeId="meter_kwh">
+        <label>Electric meter (kWh)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_KWh</property>
+        </properties>
+      </channel>
+      <channel id="meter_watts" typeId="meter_watts">
+        <label>Electric meter (watts)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_W</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Climax Technology, Ltd.</property>
+      <property name="modelId">PSM-29ZW</property>
+      <property name="manufacturerId">018E</property>
+      <property name="manufacturerRef">0004:0002</property>
+      <property name="dbReference">1463</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Lifeline</label>
+        <description><![CDATA[
+<br /> <h1>Overview</h1><p>When toggling between On/Off, it will send Binary Switch Report to the nodes of Grouping 1.<br /></p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

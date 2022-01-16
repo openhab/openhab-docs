@@ -87,7 +87,7 @@ Indoor Siren 6 and Doorbell 6<br /> <h1>Overview</h1><p>Siren 6 is your home’s
       <property name="vendor">Aeotec Limited</property>
       <property name="modelId">ZW164</property>
       <property name="manufacturerId">0371</property>
-      <property name="manufacturerRef">0003:00A2,0003:00A4,0103:00A2,0103:00A4,0203:00A4</property>
+      <property name="manufacturerRef">0003:00A2,0003:00A4,0103:00A2,0103:00A4,0203:00A2,0203:00A4</property>
       <property name="dbReference">1089</property>
       <property name="defaultAssociations">1</property>
     </properties>
