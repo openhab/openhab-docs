@@ -173,7 +173,7 @@ def process_file(indir, file, outdir, source)
             line = line.gsub("./docs/", "/docs/")
             line = line.gsub("<activeState>", '\<activeState\>')
             line = line.gsub("<passiveState>", '\<passiveState\>')
-            line = line.gsub("<dimension>", '\<dimension\>')
+            line = line.gsub("(?<!`)<dimension>(?!`)", '\<dimension\>')
             line = line.gsub("<TransformProgram>", '\<TransformProgram\>')
             line = line.gsub("<FlahshbriefingDeviceID>", '`<FlahshbriefingDeviceID>`') if file =~ /amazonechocontrol/
             line = line.gsub("<SerialNumber>", '&lt;SerialNumber&gt;') if file =~ /airvisualnode/
