@@ -200,11 +200,12 @@ You may use the generator at [FreeFormatter.com](https://www.freeformatter.com/c
 
 ### System-based Triggers
 
-One system-based trigger is provided as described in the table below:
+System-based triggers are provided as described in the table below:
 
-| Trigger           | Description                                                                                                                                                                                        |
-|-------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| System started    | `System started` is triggered upon openHAB startup.  In openHAB version 2, `System started` is also triggered after the rule file containing the System started trigger is modified, or after item(s) are modified in a .items file. |
+| Trigger                            | Description                                                                                                                                                                                        |
+|------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| System started                     | `System started` is triggered upon openHAB startup. In openHAB version 2, `System started` is also triggered after the rule file containing the System started trigger is modified, or after item(s) are modified in a .items file.                  |
+| System reached start level <level> | `System reached start level <level>` is triggered when openHAB reaches a specific start level. A list of possible start levels is available below. Please note that only levels 40 and higher are useful as the rule engine needs to be ready first. |
 
 You may wish to use the 'System started' trigger to initialize values at startup if they are not already set.
 
@@ -215,9 +216,20 @@ rule "Speedtest init"
 when
     System started
 then
-    createTimer(now.plusSeconds(30), [|
-        if (Speedtest_Summary.state == NULL || Speedtest_Summary.state == "") Speedtest_Summary.postUpdate("unknown")
-    ])
+    if (Speedtest_Summary.state == NULL || Speedtest_Summary.state == "") Speedtest_Summary.postUpdate("unknown")
+end
+```
+
+You can then execute a rule on the next startup level which depends on the value set by the initialization rule.
+
+Example:
+
+```java
+rule "Speedtest update"
+when
+    System reached start level 50
+then
+    logInfo("Speedtest", "We now have the following state right after startup: " + Speedtest_Summary.state)
 end
 ```
 
@@ -235,7 +247,7 @@ In openHAB version 3 the System-based Trigger for startlevel had been added, val
 100 - Startup is fully complete.
 ```
 
-Startlevels (logically only if startlevel >= 40) are only available in UI-Rules, not in DSL-Rules with textual configuration.
+Startlevels less than 40 are not available as triggers because the rule engine needs to start up first before it can execute any rules.
 
 {: #thing-based-triggers}
 
