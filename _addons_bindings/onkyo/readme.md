@@ -42,6 +42,7 @@ At the moment only the following models are supported:
 -   TX-NR555
 -   TX-NR575
 -   TX-NR575E
+    TX-NR609
 -   TX-NR616
 -   TX-NR626
 -   TX-NR636
