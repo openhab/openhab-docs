@@ -32,6 +32,12 @@ Fibaro Walli Outlet type E/F<br /> <h1>Overview</h1><p>FIBARO Walli Outlet is a
           <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_W</property>
         </properties>
       </channel>
+      <channel id="meter_reset" typeId="meter_reset">
+        <label>Reset the total power consumption</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_METER</property>
+        </properties>
+      </channel>
       <channel id="config_decimal_param11" typeId="config_decimal">
         <label>LED frame Color ON-state</label>
         <properties>

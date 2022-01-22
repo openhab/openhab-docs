@@ -22,10 +22,18 @@ The HE-HLS01 High Load Switch with Thermostat Functions fits easily behind outle
 ### Inclusion Information
 
   1. Ensure the HE-HLS01 is Powered On and the LED indicator blinks red slowly (i.e. it is excluded).
+
   2. Start the Inclusion Mode from the gateway/controller.
-  3. To start the inclusion process on the HE-HLS01: a) if you want to use the device as a relay (binary switch), double-press the service button on the device (with no more than a one-second interval between presses).b) if you want to use the device as a thermostat, press four times the service button on the device (with no more than a one-second interval between presses).
+
+  3. To start the inclusion process on the HE-HLS01: 
+    
+    a) if you want to use the device as a “Binary Switch”, double-press the service button on the device (with no more than a one-second interval between presses).
+    
+    b) if you want to use the device as a “Thermostat”, press four times the service button on the device (with no more than a one-second interval between presses).
+
   4. The LED indicator will blink green quickly.
-  5. If the inclusion has been successful, the LED indicator will turn green for three seconds then continue slowly blinking green continuously while the HE-HLS01 is Powered On.
+  5. If the inclusion has been successful, the LED indicator will turn green for three seconds then continue slowly blinking green while the HE-HLS01 device type is “Binary Switch” and turn blue for three seconds then continue slowly blinking blue while the device type is “Thermostat”.
+
   6. If the inclusion was not successful, the LED indicator will turn red for three seconds then continue slowly blinking red continuously while the HE-HLS01 is Powered On. In that case repeat the inclusion process (2-5) above.
 
 ### Exclusion Information
@@ -127,36 +135,152 @@ The ```time_offset``` channel is of type ```time_offset``` and supports the ```N
 
 ## Device Configuration
 
-The following table provides a summary of the 20 configuration parameters available in the HE-HLS01.
+The following table provides a summary of the 46 configuration parameters available in the HE-HLS01.
 Detailed information on each parameter can be found in the sections below.
 
 | Param | Name  | Description |
 |-------|-------|-------------|
+| 1 | Frequency Region | Frequency Region |
+| 2 | Included Device Type | Included Device Type |
+| 3 | Hardware and Software Versions | Hardware and Software Versions |
+| 4 | Energy Consumption in kW | Energy Consumption in kW |
 | 7 | Relay output mode | Relay output NO or NC mode |
 | 10 | Floor Sensor Resistance | External Floor NTC temperature sensor resistance |
 | 16 | Temperature Scale Mode | Sets temperature unit (Celsius/Fahrenheit) |
 | 17 | Temperature Sensor Calibration | Temperature Sensor Calibration |
-| 23 | Auto On/Off | Auto On/Off |
+| 19 | Time correction by controller | Time correction by controller |
+| 21 | Week Day | Week Day |
+| 22 | Time: Hour and Minutes | Time: Hour and Minutes |
+| 23 | Load Auto On/Off | Load Auto On/Off |
 | 24 | Auto Off Timeout | Auto Off Timeout in minutes |
 | 25 | Auto On Reconnect Timeout | Auto On Reconnect Timeout |
+| 26 | Time Limited Load | Time Limited Load |
+| 27 | High Load ON Time Limit | High Load ON Time Limit |
 | 41 | External input: Hold Control Mode | External input: Hold Control Mode |
+| 46 | External input: Hold Control Mode Duration | External input: Hold Control Mode Duration |
 | 51 | External Input: Click Control Mode | External Input: Click Control Mode |
+| 66 | Restore Relay State After Power Failure | Restore Relay State After Power Failure |
 | 71 | Relay Timer Mode Duration | Relay Timer Mode Duration |
+| 111 | Relay control scenario 1 | Relay control scenario 1 |
+| 112 | Relay control scenario 2 | Relay control scenario 2 |
+| 113 | Relay control scenario 3 | Relay control scenario 3 |
+| 114 | Relay control scenario 4 | Relay control scenario 4 |
+| 115 | Relay control scenario 5 | Relay control scenario 5 |
+| 116 | Relay control scenario 6 | Relay control scenario 6 |
+| 117 | Relay control scenario 7 | Relay control scenario 7 |
+| 118 | Relay control scenario 8 | Relay control scenario 8 |
+| 119 | Relay control scenario 9 | Relay control scenario 9 |
+| 120 | Relay control scenario 10 | Relay control scenario 10 |
 | 139 | Temperature sensor consecutive report interval | Temperature sensor consecutive report interval |
 | 141 | Energy Consumption Meter Consecutive Report Interval | Energy Consumption Meter Consecutive Report Interval |
 | 142 | Energy Consumption Report Threshold | Consumption difference to send to controller, % |
 | 143 | Temperature sensor consecutive report interval | Temperature sensor consecutive report interval |
 | 144 | Temperature report threshold | Temperature difference to send to controller, value X 10 |
+| 151 | System Error Notification | System Error Notification |
+| 152 | Temperature Rise Notification | Temperature Rise Notification |
 | 153 | Overheat Protection & Notification | Overheat Protection & Notification |
 | 154 | Over-Current Notification | Enable/disable over-current notification |
 | 155 | Over-Load Protection & Notification | Over-Load Protection & Notification |
 | 156 | Over-Voltage Protection & Notification | Over-Voltage Protection & Notification |
 | 157 | Voltage Drop Protection & Notification | Voltage Drop Protection & Notification |
+| 158 | Spark Protection | Spark Protection |
+| 159 | Load On Notification | Load On Notification |
+| 160 | Load Off Notification | Load Off Notification |
+
+### Parameter 1: Frequency Region
+
+Frequency Region
+The HE-HLS01 has Z-Wave 700 series chip inside which allows to use the device in different Z-Wave frequencies. If there is a need to use the device in the frequency different from the factory default, change the value of this Parameter according to the frequency list below.
+
+0: EU (868.4 MHz, 869.85 MHz)
+
+1: US (908.4 MHz, 916.0 MHz)
+
+2: ANZ (919.8 MHz, 921.4 MHz)
+
+3: HK (919.8 MHz)
+
+4: IN (865.2 MHz)
+
+5: IL (916.0 MHz)
+
+6: RU (869.0 MHz)
+
+7: CN (868.4 MHz)
+
+8: JP (922.5 MHz, 923.9 MHz, 926.3 MHz)
+
+9: KR (920.9 MHz, 921.7 MHz, 923.1 MHz)This is an advanced parameter and will therefore not show in the user interface without entering advanced mode.
+The following option values may be configured -:
+
+| Value  | Description |
+|--------|-------------|
+| 0 | EU |
+| 1 | US |
+| 2 | ANZ |
+| 3 | HK |
+| 4 | IN |
+| 5 | IL |
+| 6 | RU |
+| 7 | CN |
+| 8 | JP |
+| 9 | KR |
+
+The manufacturer defined default value is ```0``` (EU).
+
+This parameter has the configuration ID ```config_1_1``` and is of type ```INTEGER```.
+This is a read only parameter.
+
+
+### Parameter 2: Included Device Type
+
+Included Device Type
+Included Device Type
+
+1 = Binary Switch
+
+2 = ThermostatThis is an advanced parameter and will therefore not show in the user interface without entering advanced mode.
+The following option values may be configured -:
+
+| Value  | Description |
+|--------|-------------|
+| 1 | Binary Switch |
+| 2 | Thermostat |
+
+The manufacturer defined default value is ```0```.
+
+This parameter has the configuration ID ```config_2_1``` and is of type ```INTEGER```.
+This is a read only parameter.
+
+
+### Parameter 3: Hardware and Software Versions
+
+Hardware and Software Versions
+This Parameter allows to check the hardware and firmware versions of the device. The Parameter returns value in the format XXYYZZ, where XX is Hardware Version, YY is Firmware Major Version and ZZ is Firmware Minor Version.This is an advanced parameter and will therefore not show in the user interface without entering advanced mode.
+Values in the range 0 to 0 may be set.
+
+The manufacturer defined default value is ```0```.
+
+This parameter has the configuration ID ```config_3_4``` and is of type ```INTEGER```.
+This is a read only parameter.
+
+
+### Parameter 4: Energy Consumption in kW
+
+Energy Consumption in kW
+This Parameter allows you to check the Cumulative Energy Consumption of the connected load. Through the Z-Wave network this Parameter returns Total Cumulative Consumption value in kWh.
+Values in the range 0 to 0 may be set.
+
+The manufacturer defined default value is ```0```.
+
+This parameter has the configuration ID ```config_4_4``` and is of type ```INTEGER```.
+This is a read only parameter.
+
 
 ### Parameter 7: Relay output mode
 
 Relay output NO or NC mode
-
+This Parameter determines the type of load connected to the device relay output. The output type can be NO – normal open (no contact/voltage switch the load OFF) or NC - normal close (output is contacted / there is a voltage to switch the load OFF). Choose the value 0 if NO contact type is required or value 1 if NC type is required. The factory default value is 0.
 The following option values may be configured -:
 
 | Value  | Description |
@@ -207,9 +331,57 @@ The manufacturer defined default value is ```0```.
 This parameter has the configuration ID ```config_17_1``` and is of type ```INTEGER```.
 
 
-### Parameter 23: Auto On/Off
+### Parameter 19: Time correction by controller
 
-Auto On/Off
+Time correction by controller
+If this Parameter value = 1 and the HE-HLS01 is connected to a Z-Wave gateway, the HEHLS01 time and day will be periodically polled and corrected from the gateway. To switch off auto-correction set the Parameter value to 0. The factory default value is 1.This is an advanced parameter and will therefore not show in the user interface without entering advanced mode.
+The following option values may be configured -:
+
+| Value  | Description |
+|--------|-------------|
+| 0 | Disabled |
+| 1 | Enabled |
+
+The manufacturer defined default value is ```1``` (Enabled).
+
+This parameter has the configuration ID ```config_19_1``` and is of type ```INTEGER```.
+
+
+### Parameter 21: Week Day
+
+Week Day
+This Parameter allows manual adjustment of the day of the week in case the HE-HLS01 is not connected to any Z-Wave gateway or auto-correction is disabled (Parameter 19 value is 0). 1 = Monday, 2 = Tuesday, 3 = Wednesday, 4 = Thursday, 5 = Friday, 6 = Saturday, 7 = Sunday. The factory default value is 1.This is an advanced parameter and will therefore not show in the user interface without entering advanced mode.
+The following option values may be configured -:
+
+| Value  | Description |
+|--------|-------------|
+| 1 | Monday |
+| 2 | Tuesday |
+| 3 | Wednesday |
+| 4 | Thursday |
+| 5 | Friday |
+| 6 | Saturday |
+| 7 | Sunday |
+
+The manufacturer defined default value is ```1``` (Monday).
+
+This parameter has the configuration ID ```config_21_1``` and is of type ```INTEGER```.
+
+
+### Parameter 22: Time: Hour and Minutes
+
+Time: Hour and Minutes
+This Parameter allows manual adjustment of Time. The Parameter has the following format: HHMM, where HH is hours and MM is minutes. E.g. for 16:08 set the value 1608 and for 1:00 set the value 100.This is an advanced parameter and will therefore not show in the user interface without entering advanced mode.
+Values in the range 0 to 2359 may be set.
+
+The manufacturer defined default value is ```0```.
+
+This parameter has the configuration ID ```config_22_2``` and is of type ```INTEGER```.
+
+
+### Parameter 23: Load Auto On/Off
+
+Load Auto On/Off
 If this function is enabled the device will switch Off the relay output when there is no consumption and switch On the output again when the load is reconnected. It is possible to set the delay for Auto Off function (in the Parameter 24) and for Auto On function (in the Parameter 25). To enable Auto On/Off function, setthis Parameter value to 1 and use the value 0 if there is a need to disable the function.The factory default value is 0 (the function is disabled).
 The following option values may be configured -:
 
@@ -245,10 +417,40 @@ The manufacturer defined default value is ```0```.
 This parameter has the configuration ID ```config_25_1``` and is of type ```INTEGER```.
 
 
+### Parameter 26: Time Limited Load
+
+Time Limited Load
+If the HLS01 is used to control an electric socket, you can configure the device so that it automatically switch Off the socket if the potentially dangerous high load is connected longer than allowable time (time to be set in the Parameter 27), for example, if you left the iron switched On for too long. Set in this parameter the threshold value in watts, reaching which the connected load will be considered high. The value of this parameter can be set from 100 to 3500 in watts. Use the value 0 if there is a need to disable this function. The factory default value is 0 (the function is disabled).
+Values in the range 0 to 0 may be set.
+
+The manufacturer defined default value is ```0```.
+
+This parameter has the configuration ID ```config_26_2``` and is of type ```INTEGER```.
+
+
+### Parameter 27: High Load ON Time Limit
+
+High Load ON Time Limit
+If High Load Timeout Protection is activated (the Parameter 26 is set) use this parameter to set the threshold value in minutes. If the load is connected longer than this value, the device will automatically switch Off the socket. The value of this parameter is in minutes and can be set from 1 to 1440. Use the value 0 if there is a need to disable this function. The factory default value is 0 (the function is disabled).
+Values in the range 0 to 1440 may be set.
+
+The manufacturer defined default value is ```0```.
+
+This parameter has the configuration ID ```config_27_2``` and is of type ```INTEGER```.
+
+
 ### Parameter 41: External input: Hold Control Mode
 
 External input: Hold Control Mode
+0 – Hold function is disabled
 
+1 – Operate like click (the Parameter 51) 
+
+2 – Momentary Switch: When the button on switch connected to external input is held, (key closed) the relay output state is ON, as soon as the button is released (key opened) the relay output state changes to OFF.
+
+3 – Reversed Momentary Switch: When the button on switch connected to external input is held, the relay output state is OFF, as soon as the button is released the relay output state changes to ON.
+
+The factory default value is 2.
 The following option values may be configured -:
 
 | Value  | Description |
@@ -263,10 +465,33 @@ The manufacturer defined default value is ```2``` (Momentary switch).
 This parameter has the configuration ID ```config_41_1``` and is of type ```INTEGER```.
 
 
+### Parameter 46: External input: Hold Control Mode Duration
+
+External input: Hold Control Mode Duration
+This parameter specifies the time the device needs to recognize a hold mode when the button connected to an external input is held (key closed). The acceptable values are: 200 to 5000 milliseconds. The factory default value is 500 milliseconds.
+Values in the range 200 to 5000 may be set.
+
+The manufacturer defined default value is ```0```.
+
+This parameter has the configuration ID ```config_46_1``` and is of type ```INTEGER```.
+
+
 ### Parameter 51: External Input: Click Control Mode
 
 External Input: Click Control Mode
+0 – Click function disabled
 
+1 – Toggle switch: relay inverts state (ON to OFF, OFF to ON).
+
+2 – Relay switches to ON state only
+
+3 – Relay switches to OFF state only
+
+4 – Timer: On>Off Mode: Relay output switches to ON state (contacts are closed) then after a specified time switches back to OFF state (contacts are open). The time is specified in the Parameter 71.
+
+5 – Timer: OFF>ON Mode: Relay output switches to OFF state (contacts are open) then after a specified time switches back to ON state (contacts are closed). The time is specified in Parameter 71.
+
+The factory default value is 1.
 The following option values may be configured -:
 
 | Value  | Description |
@@ -283,6 +508,22 @@ The manufacturer defined default value is ```1``` (Toggle switch).
 This parameter has the configuration ID ```config_51_1``` and is of type ```INTEGER```.
 
 
+### Parameter 66: Restore Relay State After Power Failure
+
+Restore Relay State After Power Failure
+This parameter determines if the last relay state should be restored after power failure or not. Use value 1 if there is a need to restore the last relay state, and value 0 for not restoring the last relay state. The relay state will always be off after power failure if value 0 is selected. The factory default value is 0
+The following option values may be configured -:
+
+| Value  | Description |
+|--------|-------------|
+| 0 | Disabled |
+| 1 | Enabled |
+
+The manufacturer defined default value is ```0``` (Disabled).
+
+This parameter has the configuration ID ```config_66_1``` and is of type ```INTEGER```.
+
+
 ### Parameter 71: Relay Timer Mode Duration
 
 Relay Timer Mode Duration
@@ -294,6 +535,416 @@ Values in the range 0 to 43200 may be set.
 The manufacturer defined default value is ```0```.
 
 This parameter has the configuration ID ```config_71_2``` and is of type ```INTEGER```.
+
+
+### Parameter 111: Relay control scenario 1
+
+Relay control scenario 1
+In these parameters, the relay state changes depending on day and time. For these configurations, parameter values are encoded as 7-digit numbers (ABCDEFG).
+
+A: State. 0 = Disabled, 1 = Enabled
+
+B: Day of week
+
+0 = every day
+
+1-7 = corresponding day (1 is Monday, 7 is Sunday)
+
+8 = every weekday (Monday - Friday)
+
+9 = every weekend (Saturday and Sunday)
+
+C: Change state to
+
+0 = Switch OFF
+
+1 = Switch ON
+
+DEFG: Time
+
+DE represents Hour (from 0 to 23),
+
+FG represents Minutes (from 0 to 59).
+
+All other numbers are reserved and will not affect the operation. To disable this option simply set this parameter to 0.
+
+The factory default value is 0.
+
+Example: Parameter value 1210350 means A=1 (the scenario is enabled), B=2 (Tuesday), C=1 (switch the relay On), DEFG=0350 (time 03:50). In this case each Tuesday at 03:50 the HE-HLS01 USER MANUAL 24 relay output will be switched On. To disable the scenario, change the first digit to 0. In this example it will be 0210350.This is an advanced parameter and will therefore not show in the user interface without entering advanced mode.
+Values in the range 0 to 0 may be set.
+
+The manufacturer defined default value is ```0```.
+
+This parameter has the configuration ID ```config_111_4``` and is of type ```INTEGER```.
+
+
+### Parameter 112: Relay control scenario 2
+
+Relay control scenario 2
+In these parameters, the relay state changes depending on day and time. For these configurations, parameter values are encoded as 7-digit numbers (ABCDEFG).
+
+A: State. 0 = Disabled, 1 = Enabled
+
+B: Day of week
+
+0 = every day
+
+1-7 = corresponding day (1 is Monday, 7 is Sunday)
+
+8 = every weekday (Monday - Friday)
+
+9 = every weekend (Saturday and Sunday)
+
+C: Change state to
+
+0 = Switch OFF
+
+1 = Switch ON
+
+DEFG: Time
+
+DE represents Hour (from 0 to 23),
+
+FG represents Minutes (from 0 to 59).
+
+All other numbers are reserved and will not affect the operation. To disable this option simply set this parameter to 0.
+
+The factory default value is 0.
+
+Example: Parameter value 1210350 means A=1 (the scenario is enabled), B=2 (Tuesday), C=1 (switch the relay On), DEFG=0350 (time 03:50). In this case each Tuesday at 03:50 the HE-HLS01 USER MANUAL 24 relay output will be switched On. To disable the scenario, change the first digit to 0. In this example it will be 0210350.This is an advanced parameter and will therefore not show in the user interface without entering advanced mode.
+Values in the range 0 to 0 may be set.
+
+The manufacturer defined default value is ```0```.
+
+This parameter has the configuration ID ```config_112_4``` and is of type ```INTEGER```.
+
+
+### Parameter 113: Relay control scenario 3
+
+Relay control scenario 3
+In these parameters, the relay state changes depending on day and time. For these configurations, parameter values are encoded as 7-digit numbers (ABCDEFG).
+
+A: State. 0 = Disabled, 1 = Enabled
+
+B: Day of week
+
+0 = every day
+
+1-7 = corresponding day (1 is Monday, 7 is Sunday)
+
+8 = every weekday (Monday - Friday)
+
+9 = every weekend (Saturday and Sunday)
+
+C: Change state to
+
+0 = Switch OFF
+
+1 = Switch ON
+
+DEFG: Time
+
+DE represents Hour (from 0 to 23),
+
+FG represents Minutes (from 0 to 59).
+
+All other numbers are reserved and will not affect the operation. To disable this option simply set this parameter to 0.
+
+The factory default value is 0.
+
+Example: Parameter value 1210350 means A=1 (the scenario is enabled), B=2 (Tuesday), C=1 (switch the relay On), DEFG=0350 (time 03:50). In this case each Tuesday at 03:50 the HE-HLS01 USER MANUAL 24 relay output will be switched On. To disable the scenario, change the first digit to 0. In this example it will be 0210350.This is an advanced parameter and will therefore not show in the user interface without entering advanced mode.
+Values in the range 0 to 0 may be set.
+
+The manufacturer defined default value is ```0```.
+
+This parameter has the configuration ID ```config_113_4``` and is of type ```INTEGER```.
+
+
+### Parameter 114: Relay control scenario 4
+
+Relay control scenario 4
+In these parameters, the relay state changes depending on day and time. For these configurations, parameter values are encoded as 7-digit numbers (ABCDEFG).
+
+A: State. 0 = Disabled, 1 = Enabled
+
+B: Day of week
+
+0 = every day
+
+1-7 = corresponding day (1 is Monday, 7 is Sunday)
+
+8 = every weekday (Monday - Friday)
+
+9 = every weekend (Saturday and Sunday)
+
+C: Change state to
+
+0 = Switch OFF
+
+1 = Switch ON
+
+DEFG: Time
+
+DE represents Hour (from 0 to 23),
+
+FG represents Minutes (from 0 to 59).
+
+All other numbers are reserved and will not affect the operation. To disable this option simply set this parameter to 0.
+
+The factory default value is 0.
+
+Example: Parameter value 1210350 means A=1 (the scenario is enabled), B=2 (Tuesday), C=1 (switch the relay On), DEFG=0350 (time 03:50). In this case each Tuesday at 03:50 the HE-HLS01 USER MANUAL 24 relay output will be switched On. To disable the scenario, change the first digit to 0. In this example it will be 0210350.This is an advanced parameter and will therefore not show in the user interface without entering advanced mode.
+Values in the range 0 to 0 may be set.
+
+The manufacturer defined default value is ```0```.
+
+This parameter has the configuration ID ```config_114_4``` and is of type ```INTEGER```.
+
+
+### Parameter 115: Relay control scenario 5
+
+Relay control scenario 5
+In these parameters, the relay state changes depending on day and time. For these configurations, parameter values are encoded as 7-digit numbers (ABCDEFG).
+
+A: State. 0 = Disabled, 1 = Enabled
+
+B: Day of week
+
+0 = every day
+
+1-7 = corresponding day (1 is Monday, 7 is Sunday)
+
+8 = every weekday (Monday - Friday)
+
+9 = every weekend (Saturday and Sunday)
+
+C: Change state to
+
+0 = Switch OFF
+
+1 = Switch ON
+
+DEFG: Time
+
+DE represents Hour (from 0 to 23),
+
+FG represents Minutes (from 0 to 59).
+
+All other numbers are reserved and will not affect the operation. To disable this option simply set this parameter to 0.
+
+The factory default value is 0.
+
+Example: Parameter value 1210350 means A=1 (the scenario is enabled), B=2 (Tuesday), C=1 (switch the relay On), DEFG=0350 (time 03:50). In this case each Tuesday at 03:50 the HE-HLS01 USER MANUAL 24 relay output will be switched On. To disable the scenario, change the first digit to 0. In this example it will be 0210350.This is an advanced parameter and will therefore not show in the user interface without entering advanced mode.
+Values in the range 0 to 0 may be set.
+
+The manufacturer defined default value is ```0```.
+
+This parameter has the configuration ID ```config_115_4``` and is of type ```INTEGER```.
+
+
+### Parameter 116: Relay control scenario 6
+
+Relay control scenario 6
+In these parameters, the relay state changes depending on day and time. For these configurations, parameter values are encoded as 7-digit numbers (ABCDEFG).
+
+A: State. 0 = Disabled, 1 = Enabled
+
+B: Day of week
+
+0 = every day
+
+1-7 = corresponding day (1 is Monday, 7 is Sunday)
+
+8 = every weekday (Monday - Friday)
+
+9 = every weekend (Saturday and Sunday)
+
+C: Change state to
+
+0 = Switch OFF
+
+1 = Switch ON
+
+DEFG: Time
+
+DE represents Hour (from 0 to 23),
+
+FG represents Minutes (from 0 to 59).
+
+All other numbers are reserved and will not affect the operation. To disable this option simply set this parameter to 0.
+
+The factory default value is 0.
+
+Example: Parameter value 1210350 means A=1 (the scenario is enabled), B=2 (Tuesday), C=1 (switch the relay On), DEFG=0350 (time 03:50). In this case each Tuesday at 03:50 the HE-HLS01 USER MANUAL 24 relay output will be switched On. To disable the scenario, change the first digit to 0. In this example it will be 0210350.This is an advanced parameter and will therefore not show in the user interface without entering advanced mode.
+Values in the range 0 to 0 may be set.
+
+The manufacturer defined default value is ```0```.
+
+This parameter has the configuration ID ```config_116_4``` and is of type ```INTEGER```.
+
+
+### Parameter 117: Relay control scenario 7
+
+Relay control scenario 7
+In these parameters, the relay state changes depending on day and time. For these configurations, parameter values are encoded as 7-digit numbers (ABCDEFG).
+
+A: State. 0 = Disabled, 1 = Enabled
+
+B: Day of week
+
+0 = every day
+
+1-7 = corresponding day (1 is Monday, 7 is Sunday)
+
+8 = every weekday (Monday - Friday)
+
+9 = every weekend (Saturday and Sunday)
+
+C: Change state to
+
+0 = Switch OFF
+
+1 = Switch ON
+
+DEFG: Time
+
+DE represents Hour (from 0 to 23),
+
+FG represents Minutes (from 0 to 59).
+
+All other numbers are reserved and will not affect the operation. To disable this option simply set this parameter to 0.
+
+The factory default value is 0.
+
+Example: Parameter value 1210350 means A=1 (the scenario is enabled), B=2 (Tuesday), C=1 (switch the relay On), DEFG=0350 (time 03:50). In this case each Tuesday at 03:50 the HE-HLS01 USER MANUAL 24 relay output will be switched On. To disable the scenario, change the first digit to 0. In this example it will be 0210350.This is an advanced parameter and will therefore not show in the user interface without entering advanced mode.
+Values in the range 0 to 0 may be set.
+
+The manufacturer defined default value is ```0```.
+
+This parameter has the configuration ID ```config_117_4``` and is of type ```INTEGER```.
+
+
+### Parameter 118: Relay control scenario 8
+
+Relay control scenario 8
+In these parameters, the relay state changes depending on day and time. For these configurations, parameter values are encoded as 7-digit numbers (ABCDEFG).
+
+A: State. 0 = Disabled, 1 = Enabled
+
+B: Day of week
+
+0 = every day
+
+1-7 = corresponding day (1 is Monday, 7 is Sunday)
+
+8 = every weekday (Monday - Friday)
+
+9 = every weekend (Saturday and Sunday)
+
+C: Change state to
+
+0 = Switch OFF
+
+1 = Switch ON
+
+DEFG: Time
+
+DE represents Hour (from 0 to 23),
+
+FG represents Minutes (from 0 to 59).
+
+All other numbers are reserved and will not affect the operation. To disable this option simply set this parameter to 0.
+
+The factory default value is 0.
+
+Example: Parameter value 1210350 means A=1 (the scenario is enabled), B=2 (Tuesday), C=1 (switch the relay On), DEFG=0350 (time 03:50). In this case each Tuesday at 03:50 the HE-HLS01 USER MANUAL 24 relay output will be switched On. To disable the scenario, change the first digit to 0. In this example it will be 0210350.This is an advanced parameter and will therefore not show in the user interface without entering advanced mode.
+Values in the range 0 to 0 may be set.
+
+The manufacturer defined default value is ```0```.
+
+This parameter has the configuration ID ```config_118_4``` and is of type ```INTEGER```.
+
+
+### Parameter 119: Relay control scenario 9
+
+Relay control scenario 9
+In these parameters, the relay state changes depending on day and time. For these configurations, parameter values are encoded as 7-digit numbers (ABCDEFG).
+
+A: State. 0 = Disabled, 1 = Enabled
+
+B: Day of week
+
+0 = every day
+
+1-7 = corresponding day (1 is Monday, 7 is Sunday)
+
+8 = every weekday (Monday - Friday)
+
+9 = every weekend (Saturday and Sunday)
+
+C: Change state to
+
+0 = Switch OFF
+
+1 = Switch ON
+
+DEFG: Time
+
+DE represents Hour (from 0 to 23),
+
+FG represents Minutes (from 0 to 59).
+
+All other numbers are reserved and will not affect the operation. To disable this option simply set this parameter to 0.
+
+The factory default value is 0.
+
+Example: Parameter value 1210350 means A=1 (the scenario is enabled), B=2 (Tuesday), C=1 (switch the relay On), DEFG=0350 (time 03:50). In this case each Tuesday at 03:50 the HE-HLS01 USER MANUAL 24 relay output will be switched On. To disable the scenario, change the first digit to 0. In this example it will be 0210350.This is an advanced parameter and will therefore not show in the user interface without entering advanced mode.
+Values in the range 0 to 0 may be set.
+
+The manufacturer defined default value is ```0```.
+
+This parameter has the configuration ID ```config_119_4``` and is of type ```INTEGER```.
+
+
+### Parameter 120: Relay control scenario 10
+
+Relay control scenario 10
+In these parameters, the relay state changes depending on day and time. For these configurations, parameter values are encoded as 7-digit numbers (ABCDEFG).
+
+A: State. 0 = Disabled, 1 = Enabled
+
+B: Day of week
+
+0 = every day
+
+1-7 = corresponding day (1 is Monday, 7 is Sunday)
+
+8 = every weekday (Monday - Friday)
+
+9 = every weekend (Saturday and Sunday)
+
+C: Change state to
+
+0 = Switch OFF
+
+1 = Switch ON
+
+DEFG: Time
+
+DE represents Hour (from 0 to 23),
+
+FG represents Minutes (from 0 to 59).
+
+All other numbers are reserved and will not affect the operation. To disable this option simply set this parameter to 0.
+
+The factory default value is 0.
+
+Example: Parameter value 1210350 means A=1 (the scenario is enabled), B=2 (Tuesday), C=1 (switch the relay On), DEFG=0350 (time 03:50). In this case each Tuesday at 03:50 the HE-HLS01 USER MANUAL 24 relay output will be switched On. To disable the scenario, change the first digit to 0. In this example it will be 0210350.This is an advanced parameter and will therefore not show in the user interface without entering advanced mode.
+Values in the range 0 to 0 may be set.
+
+The manufacturer defined default value is ```0```.
+
+This parameter has the configuration ID ```config_120_4``` and is of type ```INTEGER```.
 
 
 ### Parameter 139: Temperature sensor consecutive report interval
@@ -351,11 +1002,58 @@ The manufacturer defined default value is ```2```.
 This parameter has the configuration ID ```config_144_1``` and is of type ```INTEGER```.
 
 
+### Parameter 151: System Error Notification
+
+System Error Notification
+If the HLS01 does not work properly it sends “System Failure” notification to the gateway with the error code. Set the value 1 to enable “System Failure” notification or the value 0 to disable. The factory default value is 1 (the notification is enabled).
+
+Errors code list (sent with the notification):
+
+0 – No Error (no issue is detected)
+
+1 – Relay Off Error (when unable to switch Off the relay output).
+
+2 – Relay On Error (when unable to switch On the relay output).
+
+3 – Relay On & Off Error (when unable to switch On and Off the relay output).
+
+4 – NTC Error (when no NTC sensor is detected or when it is damaged).
+
+5 – NTC and Relay Off Error (when no NTC sensor is detected or when it is damaged and unable to switch Off the relay output).
+
+6 – NTC and Relay On Error (when no NTC sensor is detected or when it is damaged and unable to switch On the relay output).
+
+7 – NTC and Relay On & Off Error (when no NTC sensor is detected or when it is damaged and unable to switch On and Off the relay output)This is an advanced parameter and will therefore not show in the user interface without entering advanced mode.
+The following option values may be configured -:
+
+| Value  | Description |
+|--------|-------------|
+| 0 | Disabled |
+| 1 | Enabled |
+
+The manufacturer defined default value is ```1``` (Enabled).
+
+This parameter has the configuration ID ```config_151_1``` and is of type ```INTEGER```.
+
+
+### Parameter 152: Temperature Rise Notification
+
+Temperature Rise Notification
+Use this parameter if you want to know about temperature rise before it reaches the critical value, defined in the “Overheat Protection” parameter. The device will send “Rapid Temperature Rise” notification to the gateway if the temperature sensor reading reaches the value defined in this parameter. The value can be set from 1 to 120 in °C scale mode. To disable the notification, set the value of this parameter to 0. The factory default value is 50 in °C scale.
+
+We recommend setting the value of this Parameter lower than value of Parameter 153 (Overheat Protection).This is an advanced parameter and will therefore not show in the user interface without entering advanced mode.
+Values in the range 0 to 120 may be set.
+
+The manufacturer defined default value is ```50```.
+
+This parameter has the configuration ID ```config_152_0``` and is of type ```INTEGER```.
+
+
 ### Parameter 153: Overheat Protection & Notification
 
 Overheat Protection & Notification
 You can define the maximum limit of temperature, reaching which the device will automatically switch Off the load and send “Overheat Detected” notification to the gateway. The value of this parameter can be set from 1 to 120 in °C scale mode or from 34 to 248 in °F scale mode. Usethe value 0 if there is a need to disable this function.The factory default value is 60 in °C scale and 140 in °F scale.This is an advanced parameter and will therefore not show in the user interface without entering advanced mode.
-Values in the range 0 to 0 may be set.
+Values in the range 0 to 120 may be set.
 
 The manufacturer defined default value is ```60```.
 
@@ -421,6 +1119,54 @@ The following option values may be configured -:
 The manufacturer defined default value is ```200```.
 
 This parameter has the configuration ID ```config_157_2``` and is of type ```INTEGER```.
+
+
+### Parameter 158: Spark Protection
+
+Spark Protection
+If connected load fails it can create sparks that may cause a fire. The device constantly monitors the power consumption of connected load and can detect even a small surge in consumption and automatically switch off the output and send “Surge Detected” notification to the gateway. Set the value 1 to enable this function or the value 0 to disable. The factory default value is 1 (the protection is enabled).This is an advanced parameter and will therefore not show in the user interface without entering advanced mode.
+The following option values may be configured -:
+
+| Value  | Description |
+|--------|-------------|
+| 0 | Disabled |
+| 1 | Enabled |
+
+The manufacturer defined default value is ```1``` (Enabled).
+
+This parameter has the configuration ID ```config_158_1``` and is of type ```INTEGER```.
+
+
+### Parameter 159: Load On Notification
+
+Load On Notification
+Use this parameter if you want to get a “Power reconnected” notification every time the relay turns on. If you want to enable the notification set the parameter value to 1. The factory default value is 0 (Notification is disabled).This is an advanced parameter and will therefore not show in the user interface without entering advanced mode.
+The following option values may be configured -:
+
+| Value  | Description |
+|--------|-------------|
+| 0 | Disabled |
+| 1 | Enabled |
+
+The manufacturer defined default value is ```0``` (Disabled).
+
+This parameter has the configuration ID ```config_159_1``` and is of type ```INTEGER```.
+
+
+### Parameter 160: Load Off Notification
+
+Load Off Notification
+Use this parameter if you want to get a “AC mains disconnected” notification every time the relay turns off. If you want to enable the notification set the parameter value to 1. The factory default value is 0 (Notification is disabled).This is an advanced parameter and will therefore not show in the user interface without entering advanced mode.
+The following option values may be configured -:
+
+| Value  | Description |
+|--------|-------------|
+| 0 | Disabled |
+| 1 | Enabled |
+
+The manufacturer defined default value is ```0``` (Disabled).
+
+This parameter has the configuration ID ```config_160_1``` and is of type ```INTEGER```.
 
 
 ## Association Groups
@@ -493,6 +1239,7 @@ Association group 4 supports 5 nodes.
 ### Documentation Links
 
 * [Manual](https://opensmarthouse.org/zwavedatabase/1374/reference/Manual_Full_English_HE-HLS01_v1.0.0pdf.pdf)
+* [Manual FW 1.5](https://opensmarthouse.org/zwavedatabase/1374/reference/Manual_Full_English_HE-HLS01_v1.1.pdf)
 
 ---
 
