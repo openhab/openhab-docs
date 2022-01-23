@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zigbee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+	xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0 https://openhab.org/schemas/thing-description-1.0.0.xsd">
+
+	<!-- These devices do not correctly report their clusters, so they need a static thing definition for the binding to inject the correct clusters into the ZigBeeNode
+		They will detect as a generic zigbee:device quickly on scan but remain unusable in that state 
+		because they will not have gotten endpoint/channel/cluster linkaages.  
+
+		This thing description takes effect when the modelId is detected as lumi.sensor_switch.  
+		At that time sufficient details have been passed thru the binding to allow you to stop 
+		the pairing attempts when coupled with this static channel definition.
+
+		To pair just keep pairing and pressing the link button until the device detects as lumi:sensor_switch 
+		instead of as a generic zigbee:device.  Then add the device in openhab and wait a bit for it to come online.  -->
+
+	<thing-type id="xiaomi_lumisensor-switch" listed="false">
+		<label>Xiaomi LUMI Mijia Button</label>
+		<description>Single battery operated button (round model)</description>
+
+		<channels>
+			<channel id="switch" typeId="switch_onoff">
+				<properties>
+					<property name="zigbee_endpoint">1</property>
+					<property name="zigbee_inputclusters">6</property>
+				</properties>
+			</channel>
+		</channels>
+
+		<representation-property>zigbee_macaddress</representation-property>
+
+		<config-description>
+			<parameter name="zigbee_macaddress" type="text" readOnly="true" required="true">
+				<label>MAC Address</label>
+			</parameter>
+		</config-description>
+	</thing-type>
+</thing:thing-descriptions>
