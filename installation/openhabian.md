@@ -132,6 +132,12 @@ So there remains a risk that future openHABian releases will fail to work on you
 
 For ARM hardware that we don't support, you can try any of the [fake hardware parameters](openhabian.md/#fake-hardware-mode) to 'simulate' RPi hardware and Raspberry Pi OS.
 
+#### Hardware modifications
+Plugging in HATs like an UPS or USB sticks or even SSDs for storage is fine, but we do not support attaching any hardware if that requires any sort of software or configuration changes on the OS part of openHABian.
+To put it straight: we don't recommend SSDs and do not support attaching an SSD and move the system over there.
+If you know Linux well enough to manually apply all the required modifications, feel free to do so but please be aware that this is a completely untested option that may work or not and what's even more important: it is unsupported. Don't ask for help if you run into trouble.
+Also remember that any future changes to openHABian (which is what you get when you upgrade as you are recommended to do on every start of the `openhabian-config` tool) can interfere with any such modification of yours so while any such mod may work for the time being you apply it, it may break your box and openHAB experience anytime in the future.
+    
 ### OS support
 Going beyond what the RPi image provides, as a manually installed set of scripts, we support running openHABian on x86 hardware on generic Debian.
 On ARM, we only support Raspberry Pi OS.
@@ -324,21 +330,25 @@ They can be changed from openHABian menu.
 ## Availability and Backup
 
 openHAB is designed to reliably run 24 hours a day, seven days a week - and so should be your server.
-This is the right time to prepare your system for disasters such as getting hit by the SD card wear-out/corruption problem which is quite common among users of single board computers such as Raspberry Pis. openHABian has a number of features built in to enhance resilience:
+This is the right time to prepare your system for disasters such as getting hit by the SD card wear-out/corruption problem which is quite common among users of single board computers such as Raspberry Pis. See [this community thread](https://community.openhab.org/t/corrupt-filesystems-every-2-3-month/13057/20) for more information.
 
-1.  The zram feature moves write intensive parts of openHABian into RAM to mitigate the risk of SD card corruption. See [community thread](https://community.openhab.org/t/zram-status/80996) for more up to date information.
-    WARNING: power failure will result in some data to get lost (albeit the system should continue to run).
-    Get an UPS.
+openHABian has a number of features built in to enhance resilience:
+
+1.  The Zram feature moves write intensive parts of openHABian into RAM to mitigate the risk of SD card corruption.
+    WARNING: power failure will result in some data to get lost (albeit the system should continue to run) so we recommend to also get an UPS.
     Zram is enabled by default for swap, logs and persistence data.
     You can toggle use in \[menu option 38\].
-2.  You can have openHABian mirror your SD card. See [auto backup](#auto-backup) documentation. You can activate mirroring using \[menu option 53\].
-3.  Move the root filesystem to USB-attached devices.
-    WARNING 1: USB sticks are as susceptible to flash wear-out as SD cards are, making zram the better choice for a standard Pi to run off its internal SD card.
-    WARNING 2: It will NOT work out of the box to also _boot_ from the USB device.
-    As a Linux or openHAB beginner, you should NOT try this.
-    Using this is NOT recommended to anyone except those to **know** Linux well enough **to manually apply** all the required modifications.
+2.  Mirror your SD card: see [auto backup](#auto-backup) documentation. You can activate mirroring using \[menu option 53\].
+3.  openHABian provides an option to move the root filesystem to USB-attached devices.
     See \[menu option 37\].
-4.  Use the openHAB integrated [openhab-cli tool](https://community.openhab.org/t/recommended-way-to-backup-restore-oh2-configurations-and-things/7193/82) to interactively backup/restore your openHAB **config** \[menu option 50/51\].
+    
+    WARNING 1: openHABian does not support hardware modifications to have an effect on the system itself such as to add an SSD drive to boot from.
+    We clearly recommend NOT to do this, for your own sake of reliability.
+
+    WARNING 2: USB sticks are as susceptible to flash wear-out as SD cards are, making zram the better choice for a standard Pi to run off its internal SD card.
+    
+4.  Use the openHAB integrated [openhab-cli tool](https://community.openhab.org/t/recommended-way-to-backup-restore-oh2-configurations-and-things/7193/82) to interactively 
+    backup/restore your openHAB **config** \[menu option 50/51\].
 5.  Use [Amanda Network Backup](http://www.amanda.org/) for full system backups, documentation [here](openhabian-amanda.md).
     See \[menu option 52\].
 
@@ -448,17 +458,17 @@ Menu 5X provides interactive access to the aforementioned functions:<br>
 `52 Amanda System Backup` will prepare an existing directory as your backup storage and make Amanda launch once a day. See the separate [Amanda setup document](openhabian-amanda.md).
 `53 Setup SD mirroring` prepares the partitions on an SD card and sets up timers to execute both, a full mirroring and complementary rsync 'diff' runs.
 `54 Raw copy SD` is a one-time raw copy (mirror) run.
-`55 Sync SD` proagates (syncs) differences from your main SD card to your external card.
+`55 Sync SD` propagates (syncs) differences from your main SD card to your external card.
 
 In case of failure of your primary SD card, replace the broken SD card in the internal slot with your backup card from the external reader. Get another SD card that matches the size of the backup (now in internal slot) card and use menu option 54 to copy your active backup card back to the new one.
 
 #### Tailscale VPN network
 Tailscale is a management toolset to establish a WireGuard based VPN between multiple systems if you want to connect to openHAB(ian) instances outside your LAN over Internet.
 It'll take care to detect and open ports when you and your peers are located behind firewalls.
-[Download the client](https://tailscale.com/download) and eventually get the Solo service plan from Tailscale, that's free for private use.
-This free service will automatically be selected when you fire up your first VPN node.
+[Download the client](https://tailscale.com/download) and eventually get the Solo service plan from Tailscale, that's free for private use and will automatically be selected when you fire up your first VPN node.
 The Windows client has a link to the admin console where you can create pre-auth one-time keys.
 These you can put as the `preauthkey` into `openhabian.conf` to automatically deploy remote openHABian nodes (unattended install) and have them join the VPN.
+The `tstags` option allows you to specify tags for use in [Tailscale ACL](https://tailscale.com/kb/1018/acls/) definition.
 
 #### IPv6 notes
 You might encounter problems when you make use of IPv6 on some networks and systems. openHABian installation may stop or hang forever.
