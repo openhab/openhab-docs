@@ -167,7 +167,7 @@ then
         }
     } else {
         logInfo("rules", "Timer canceled")
-        myTimer.cancel()
+        myTimer?.cancel()
         myTimer = null
     }
 end
