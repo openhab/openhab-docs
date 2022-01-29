@@ -26,6 +26,11 @@ Select your default service from the drop-down list.
 Note that you must first install a persistence add-on before you make this selection.
 Be sure to save your choice once you have selected your default service.
 
+## Default Persistence Strategy
+Once a persistence service is installed it will start to persist Items according to its default strategy. Defaults are documented for each persistence service in their respective [documentation pages](/addons/#persistence).
+
+To overwrite the default strategy with something more appropriate for your setup, read on.
+
 ## Persistence Configuration
 
 The information below allows you to determine which Item states are persisted, when they are persisted, and where they are stored.
