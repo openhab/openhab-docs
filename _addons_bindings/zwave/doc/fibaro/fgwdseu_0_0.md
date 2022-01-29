@@ -65,6 +65,7 @@ The following table summarises the channels available for the FGWDSEU-221 -:
 | Switch | switch_binary | switch_binary | Switch | Switch | 
 | Electric meter (watts) | meter_watts | meter_watts | Energy | Number | 
 | Electric meter (kWh) | meter_kwh | meter_kwh | Energy | Number | 
+| Reset the total power consumption | meter_reset | meter_reset | Energy | Switch | 
 | Scene Number | scene_number | scene_number |  | Number | 
 | LED frame Color ON-state | config_decimal | config_decimal |  | Number | 
 | LED frame Color OFF-state | config_decimal | config_decimal |  | Number | 
@@ -92,6 +93,11 @@ The ```meter_watts``` channel is of type ```meter_watts``` and supports the ```N
 Indicates the energy consumption (kWh).
 
 The ```meter_kwh``` channel is of type ```meter_kwh``` and supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
+
+### Reset the total power consumption
+Reset the meter.
+
+The ```meter_reset``` channel is of type ```meter_reset``` and supports the ```Switch``` item and is in the ```Energy``` category.
 
 ### Scene Number
 Triggers when a scene button is pressed.

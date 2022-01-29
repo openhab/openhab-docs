@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="ge_4952_00_000" listed="false">
+    <label>4952 In-Wall Toggle Switch</label>
+    <description><![CDATA[
+In-Wall Toggle Switch<br /> <h1>Overview</h1><p>Transform any home into a smart home with the GE Z-Wave Smart Toggle Switch. The In-Wall Smart Toggle Switch can easily replaces any standard in-wall switch and remotely controls a light in your home. </p><p>Your home will be equipped with ultimate flexibility with the GE Z-Wave Smart Toggle Switch, capable of being used by itself or with up to four add-on switches. Screw terminal installation provides improved space efficiency when replacing existing switches and the integrated LED indicator light allows you to easily locate the switch in a dark room. <br /></p> <br /> <h2>Inclusion Information</h2><ol><li>Device Inclusion: Once the controller is ready to include your device, press up and release on the toggle to include it in the network.</li><li>Once your controller has confirmed that the device has been included, refresh the Z-Wave network to optimize performance. </li></ol> <br /> <h2>Exclusion Information</h2><p>Once the controller is ready to exclude your device, press up and release on the toggle to exclude it from the network. <br /></p> <br /> <h2>Wakeup Information</h2><p><br /></p>
+    ]]></description>
+    <category>WallSwitch</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_binary" typeId="switch_binary">
+        <label>Switch</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY</property>
+        </properties>
+      </channel>
+      <channel id="scene_number" typeId="scene_number">
+        <label>Scene Number</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_SCENE_ACTIVATION</property>
+        </properties>
+      </channel>
+      <channel id="scene_number" typeId="scene_number">
+        <label>Scene Number</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_CENTRAL_SCENE</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Jasco Products</property>
+      <property name="modelId">4952</property>
+      <property name="manufacturerId">0063</property>
+      <property name="manufacturerRef">4952:3138</property>
+      <property name="dbReference">1467</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>
