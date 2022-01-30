@@ -195,7 +195,7 @@ Max 2.55s, in 10ms steps<br /> <h1>Overview</h1><p>Single dimming step time (Aut
       </parameter>
 
       <parameter name="config_12_0" type="integer" groupName="configuration" readOnly="true"
-                 min="0" max="4294967295">
+                 min="-2147483646" max="2147483647">
         <label>12: Reversed</label>
         <description>Reversed</description>
         <default>0</default>
@@ -284,7 +284,7 @@ Operation report from Switch2 to Association Group 4<br /> <h1>Overview</h1><p>O
       </parameter>
 
       <parameter name="config_19_1" type="integer" groupName="configuration"
-                 min="0" max="255">
+                 min="-127" max="128">
         <label>19: Scene ID sent to AG1 when one click of S2</label>
         <description><![CDATA[
 0 Scene Activation disabled 1~255 send Activation CC to AG1<br /> <h1>Overview</h1><p>Scene ID sent to AG1 when one click of S2</p> <p>Values in the range 0 to 255 may be set.</p> <p>The manufacturer defined default value is 0.</p> <p>This parameter has the configuration ID config_19_1 and is of type INTEGER.</p>
@@ -294,7 +294,7 @@ Operation report from Switch2 to Association Group 4<br /> <h1>Overview</h1><p>O
       </parameter>
 
       <parameter name="config_20_1" type="integer" groupName="configuration"
-                 min="0" max="255">
+                 min="-127" max="128">
         <label>20: Scene ID sent to AG1 when double click of S2</label>
         <description><![CDATA[
 0 Scene Activation disabled 1~255 send Activation CC<br /> <h1>Overview</h1><p>Scene ID sent to AG1 when double click of S2</p> <p>Values in the range 0 to 255 may be set.</p> <p>The manufacturer defined default value is 0.</p> <p>This parameter has the configuration ID config_20_1 and is of type INTEGER.</p>
@@ -304,7 +304,7 @@ Operation report from Switch2 to Association Group 4<br /> <h1>Overview</h1><p>O
       </parameter>
 
       <parameter name="config_21_1" type="integer" groupName="configuration"
-                 min="0" max="255">
+                 min="-127" max="128">
         <label>21: Scene ID sent to AG1 when hold S2</label>
         <description><![CDATA[
 0 Scene Activation disabled 1~255 send Activation CC<br /> <h1>Overview</h1><p>Scene ID sent to AG1 when hold S2</p> <p>Values in the range 0 to 255 may be set.</p> <p>The manufacturer defined default value is 0.</p> <p>This parameter has the configuration ID config_21_1 and is of type INTEGER.</p>
@@ -327,9 +327,10 @@ Operation report from Switch2 to Association Group 4<br /> <h1>Overview</h1><p>O
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->
-      <parameter name="group_1" type="text" groupName="association">
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
         <label>1: Reports device’s dimming state</label>
         <description>reports device’s dimming state. It supports only one Node ID. A controller / gateway SHOULD be associated to this AG.</description>
+        <multipleLimit>1</multipleLimit>
       </parameter>
 
       <parameter name="group_2" type="text" groupName="association" multiple="true">

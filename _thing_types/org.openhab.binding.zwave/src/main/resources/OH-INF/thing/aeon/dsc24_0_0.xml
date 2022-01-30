@@ -84,14 +84,14 @@ Smart Energy Switch G2<br /> <h1>Overview</h1><p>There are appliances that we tu
 
       <!-- PARAMETER DEFINITIONS -->
       <parameter name="config_1_1" type="integer" groupName="configuration"
-                 min="0" max="255">
+                 min="-127" max="128">
         <label>1: Multilevel Sensor Report Content</label>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_2_2" type="integer" groupName="configuration"
-                 min="0" max="65535">
+                 min="-32767" max="32768">
         <label>2: Make SES blink</label>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
@@ -123,7 +123,7 @@ Enables automatic notifications to associated devices<br /> <h1>Overview</h1><p>
       </parameter>
 
       <parameter name="config_91_2" type="integer" groupName="configuration"
-                 min="0" max="65535">
+                 min="-32767" max="32768">
         <label>91: Minimum change in wattage</label>
         <description>Minimum change in wattage for a REPORT to be sent.</description>
         <default>50</default>
@@ -131,7 +131,7 @@ Enables automatic notifications to associated devices<br /> <h1>Overview</h1><p>
       </parameter>
 
       <parameter name="config_92_1" type="integer" groupName="configuration"
-                 min="0" max="255">
+                 min="-127" max="128">
         <label>92: Minimum change in wattage %</label>
         <description>Minimum change in wattage percent for a REPORT to be sent.</description>
         <default>10</default>
@@ -139,7 +139,7 @@ Enables automatic notifications to associated devices<br /> <h1>Overview</h1><p>
       </parameter>
 
       <parameter name="config_100_1" type="integer" groupName="configuration"
-                 min="0" max="255">
+                 min="-127" max="128">
         <label>100: Set 100 to 103 to default</label>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
@@ -179,7 +179,7 @@ Enables automatic notifications to associated devices<br /> <h1>Overview</h1><p>
       </parameter>
 
       <parameter name="config_110_1" type="integer" groupName="configuration"
-                 min="0" max="255">
+                 min="-127" max="128">
         <label>110: Set 111 to 113 to default</label>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
@@ -210,14 +210,14 @@ Enables automatic notifications to associated devices<br /> <h1>Overview</h1><p>
       </parameter>
 
       <parameter name="config_254_2" type="integer" groupName="configuration"
-                 min="0" max="65535">
+                 min="-32767" max="32768">
         <label>254: Device Tag</label>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_255_1" type="integer" groupName="configuration"
-                 min="0" max="255">
+                 min="-127" max="128">
         <label>255: Device Reset</label>
         <default>0</default>
         <limitToOptions>false</limitToOptions>

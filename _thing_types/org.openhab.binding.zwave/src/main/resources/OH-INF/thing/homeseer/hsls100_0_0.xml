@@ -99,7 +99,7 @@ HomeSeer Z-Wave Plus Leak Sensor<br /> <h1>Overview</h1><p>Homeseer HS-LS100+ is
       </parameter>
 
       <parameter name="config_17_1" type="integer" groupName="configuration"
-                 min="0" max="255">
+                 min="-127" max="128">
         <label>17: Set flooding alarm interval (Minute)</label>
         <description><![CDATA[
 Set flooding alarm interval (Minute)<br /> <h1>Overview</h1><p>The higher the value, the long the report periodically - in hexadecimal values from 0x01 to 0xFF, or 1 to 255 if your controller allows unsigned decimal values.</p> <p>0 - Disable flooding alarm</p>
@@ -119,7 +119,7 @@ Set flooding alarm interval (Minute)<br /> <h1>Overview</h1><p>The higher the va
       </parameter>
 
       <parameter name="config_19_1" type="integer" groupName="configuration"
-                 min="0" max="255">
+                 min="-127" max="128">
         <label>19: Temperature report time (minute)</label>
         <description><![CDATA[
 Temperature report time (minute)<br /> <h1>Overview</h1><p>The higher the value ,the long the report time</p> <p>0 - Disable report</p>

@@ -249,93 +249,94 @@ Relay to power off<br /> <h1>Overview</h1><p>Set value selects relay to be power
       </parameter>
 
       <parameter name="config_130_32" type="integer" groupName="configuration" readOnly="true"
-                 min="0" max="4294967295">
+                 min="-2147483646" max="2147483647">
         <label>130: Serial Number</label>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_131_16" type="integer" groupName="configuration" readOnly="true"
-                 min="0" max="4294967295">
+                 min="-2147483646" max="2147483647">
         <label>131: Meter Software reference</label>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_132_16" type="integer" groupName="configuration" readOnly="true"
-                 min="0" max="4294967295">
+                 min="-2147483646" max="2147483647">
         <label>132: Meter Hardware reference</label>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_140_24" type="integer" groupName="configuration" readOnly="true"
-                 min="0" max="4294967295">
+                 min="-2147483646" max="2147483647">
         <label>140: Voltage U1</label>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_141_24" type="integer" groupName="configuration" readOnly="true"
-                 min="0" max="4294967295">
+                 min="-2147483646" max="2147483647">
         <label>141: Current I1</label>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_142_24" type="integer" groupName="configuration" readOnly="true"
-                 min="0" max="4294967295">
+                 min="-2147483646" max="2147483647">
         <label>142: Active Power Total (Pt)</label>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_143_24" type="integer" groupName="configuration" readOnly="true"
-                 min="0" max="4294967295">
+                 min="-2147483646" max="2147483647">
         <label>143: Reactive Power Total (Qt)</label>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_144_16" type="integer" groupName="configuration" readOnly="true"
-                 min="0" max="4294967295">
+                 min="-2147483646" max="2147483647">
         <label>144: Power Factor Total (PFt)</label>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_145_32" type="integer" groupName="configuration" readOnly="true"
-                 min="0" max="4294967295">
+                 min="-2147483646" max="2147483647">
         <label>145: Active power accumulated (import)</label>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_146_32" type="integer" groupName="configuration" readOnly="true"
-                 min="0" max="4294967295">
+                 min="-2147483646" max="2147483647">
         <label>146: Reactive power accumulated</label>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_147_32" type="integer" groupName="configuration" readOnly="true"
-                 min="0" max="4294967295">
+                 min="-2147483646" max="2147483647">
         <label>147: Apparent power accumulated</label>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_148_32" type="integer" groupName="configuration" readOnly="true"
-                 min="0" max="4294967295">
+                 min="-2147483646" max="2147483647">
         <label>148: Active power accumulated (export)</label>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->
-      <parameter name="group_1" type="text" groupName="association">
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
         <label>1: Lifeline</label>
         <description>Reserved for communication with the main controller</description>
+        <multipleLimit>1</multipleLimit>
       </parameter>
 
       <!-- STATIC DEFINITIONS -->

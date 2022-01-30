@@ -53,7 +53,7 @@ Z-WAVE Remote<br /> <h1>Overview</h1><p>Zipato Z-Wave Remote is a simple control
 
       <!-- PARAMETER DEFINITIONS -->
       <parameter name="config_2_1" type="integer" groupName="configuration"
-                 min="0" max="255">
+                 min="-127" max="128">
         <label>2: Basic Set Level</label>
         <description><![CDATA[
 Basic Set Level<br /> <h1>Overview</h1><p>Setting the BASIC command value to turn on the light.</p> <ul><li>The 255 means turn on the light.</li> <li>For dimmer equipment 1 to 100 means the light strength. 0 means turn off the light.</li> </ul>
@@ -63,7 +63,7 @@ Basic Set Level<br /> <h1>Overview</h1><p>Setting the BASIC command value to tur
       </parameter>
 
       <parameter name="config_7_1" type="integer" groupName="configuration"
-                 min="0" max="255">
+                 min="-127" max="128">
         <label>7: Customer Function</label>
         <description><![CDATA[
 Customer Function<br /> <h1>Overview</h1><p>Customer function switch, using bit control.</p> <p>Bit0: Switch AV control/ Lighting group control. (0: AV control, 1: lighting group control)</p>

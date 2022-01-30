@@ -67,11 +67,12 @@ Allows making the top be "off"<br /> <h1>Overview</h1><p>To change the top of th
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->
-      <parameter name="group_1" type="text" groupName="association">
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
         <label>1: Lifeline</label>
         <description><![CDATA[
 <br /> <h1>Overview</h1><p>Group 1 is the “Lifeline” group and must be assigned the Node ID of the Z-Wave Controller to which unsolicited notifications from the WT00Z5-1 will be sent. Group 1 supports a single Node ID. The Z-Wave Controller should set the Lifeline Association automatically after inclusion. For instructions on how to set Associations, please refer to your Z-Wave Controller instructions. </p>
         ]]></description>
+        <multipleLimit>1</multipleLimit>
       </parameter>
 
       <parameter name="group_2" type="text" groupName="association" multiple="true">

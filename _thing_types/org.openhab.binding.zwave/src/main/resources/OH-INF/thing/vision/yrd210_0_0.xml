@@ -86,7 +86,7 @@ Yale YRD210 Real Living Deadbolt Lock<br /> <h1>Overview</h1><p><br /></p><p>The
       </parameter>
 
       <parameter name="config_3_1" type="integer" groupName="configuration"
-                 min="5" max="255">
+                 min="-127" max="128">
         <label>3: Relock time</label>
         <description><![CDATA[
 Seconds; automatically re-lock after specified time<br /> <h1>Overview</h1><p>Seconds; after successful code entry and unit unlocks, it will automatically re-lock after specified time</p>
@@ -117,7 +117,7 @@ The number of invalid code entries before TAMPER Alarm.<br /> <h1>Overview</h1><
       </parameter>
 
       <parameter name="config_7_1" type="integer" groupName="configuration"
-                 min="1" max="255">
+                 min="-127" max="128">
         <label>7: Shutdown Time</label>
         <description><![CDATA[
 Time unit will be inoperable after too many wrong codes<br /> <h1>Overview</h1><p>Number of seconds unit will be inoperable after number of wrong code entries is exceeded.</p>

@@ -64,11 +64,12 @@ RGBW 3-Zone Wall Mount Touch Panel<br /> <h1>Overview</h1><h1><strong>Product De
       </parameter-group>
 
       <!-- ASSOCIATION DEFINITIONS -->
-      <parameter name="group_1" type="text" groupName="association">
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
         <label>1: Lifeline</label>
         <description><![CDATA[
 Association group for commands to Z-Wave network controller<br /> <h1>Overview</h1><ol> <li>Send “Command Class Device Reset Locally” to associated devices of this group to report factory reset information when factory reset the wall controller.</li> <li>Double click a group number of the wall controller to send command to associated devices of this group using “Command Class Central Scene”.</li> </ol>
         ]]></description>
+        <multipleLimit>1</multipleLimit>
       </parameter>
 
       <parameter name="group_2" type="text" groupName="association" multiple="true">

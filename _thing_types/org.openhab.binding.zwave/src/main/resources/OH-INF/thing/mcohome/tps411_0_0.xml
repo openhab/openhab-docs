@@ -70,8 +70,9 @@ Touch Panel Switch 1 Button<br /> <h1>Overview</h1><p><strong>Touch Panel Switch
         <multipleLimit>5</multipleLimit>
       </parameter>
 
-      <parameter name="group_2" type="text" groupName="association">
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
         <label>2: All Status Reports</label>
+        <multipleLimit>1</multipleLimit>
       </parameter>
 
       <!-- STATIC DEFINITIONS -->

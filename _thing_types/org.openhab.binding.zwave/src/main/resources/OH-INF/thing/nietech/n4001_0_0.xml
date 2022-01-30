@@ -81,7 +81,7 @@ Timer to turn switch on<br /> <h1>Overview</h1><p>Set timer to turn switch on. 
       </parameter>
 
       <parameter name="config_6_1" type="integer" groupName="configuration"
-                 min="0" max="255">
+                 min="-127" max="128">
         <label>6: Restores state after power failure</label>
         <description><![CDATA[
 Define state for device after power failure<br /> <h1>Overview</h1><p>Define state for device after power failure<br /></p>

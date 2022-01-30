@@ -69,7 +69,7 @@ Smart Chime/Alarm<br /> <h1>Overview</h1><p>Smart Chime/Alarm</p> <ul><li>Audio 
       </parameter>
 
       <parameter name="config_2_1" type="integer" groupName="configuration"
-                 min="0" max="255">
+                 min="-127" max="128">
         <label>2: Siren Alarm Duration</label>
         <description><![CDATA[
 5 modes to set the duration for siren alarm<br /> <h1>Overview</h1><p>0 – alarm is off</p> <p>1 – alarm goes off for 30 seconds</p> <p>2 – alarm goes off for 60 seconds</p> <p>3 – alarm goes off for 5 minutes</p> <p>255 – alarm continues until battery drains</p> <p>Values: 0, 1 – 3, 255; 1 – default setting.</p>
@@ -79,7 +79,7 @@ Smart Chime/Alarm<br /> <h1>Overview</h1><p>Smart Chime/Alarm</p> <ul><li>Audio 
       </parameter>
 
       <parameter name="config_3_1" type="integer" groupName="configuration"
-                 min="0" max="255">
+                 min="-127" max="128">
         <label>3: Chime Sound Duration</label>
         <description><![CDATA[
 Chime Sound Duration<br /> <h1>Overview</h1><p>how many times the chime should repeat the doorbell sound once triggered by a BASIC_SET alarm command from a door sensor.</p> <p>Values: 0 – chime is off, 1 – 254 (cycles); 255 – chime</p> <p>sound continues until battery drains; 2 – default setting.</p>

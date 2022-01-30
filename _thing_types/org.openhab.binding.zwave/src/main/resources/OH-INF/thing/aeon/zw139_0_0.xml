@@ -153,7 +153,7 @@ Set the ON/OFF time of the LED when it is in Night light mode<br /> <h1>Overview
       </parameter>
 
       <parameter name="config_86_4" type="integer" groupName="configuration"
-                 min="0" max="4294967295">
+                 min="-2147483646" max="2147483647">
         <label>86: Set appointment 1</label>
         <description><![CDATA[
 Set the ON time of output load.<br /> <h1>Overview</h1><p>65536 to 65543 The day value (Mon to Sun) 16777216 Enable the setting. 256 to 316 The hour value of ON time 16777215 Disable the setting. 0 to 60 The minute value of ON time</p>

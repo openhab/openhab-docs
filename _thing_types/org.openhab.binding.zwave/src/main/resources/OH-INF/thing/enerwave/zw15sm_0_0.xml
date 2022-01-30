@@ -79,7 +79,7 @@ Binary Switch + Meter<br /> <h1>Overview</h1><p>The on/off switch replaces your 
       </parameter>
 
       <parameter name="config_8_1" type="integer" groupName="configuration"
-                 min="0" max="255">
+                 min="-127" max="128">
         <label>8: METER_REPORT Instant Energy Interval</label>
         <description><![CDATA[
 METER_REPORT Instant Energy Interval<br /> <h1>Overview</h1><p>Send METER_REPORT at this interval</p> <p>0 means to not send</p>
@@ -89,7 +89,7 @@ METER_REPORT Instant Energy Interval<br /> <h1>Overview</h1><p>Send METER_REPORT
       </parameter>
 
       <parameter name="config_9_1" type="integer" groupName="configuration"
-                 min="0" max="255">
+                 min="-127" max="128">
         <label>9: Instant Energy Autosend Interval</label>
         <description><![CDATA[
 Instant Energy Autosend Interval (SENSOR_MULTILEVEL_REPORT)<br /> <h1>Overview</h1><p>Send SENSOR_MULTILEVEL_REPORT at this interval</p> <p>0 means to not send</p>
@@ -99,7 +99,7 @@ Instant Energy Autosend Interval (SENSOR_MULTILEVEL_REPORT)<br /> <h1>Overview</
       </parameter>
 
       <parameter name="config_10_1" type="integer" groupName="configuration"
-                 min="0" max="255">
+                 min="-127" max="128">
         <label>10: Accumulated Energy Autosend Interval report</label>
         <description><![CDATA[
 Accumulated Energy Autosend Interval report (METER_REPORT)<br /> <h1>Overview</h1><p>Send accumulated METER_REPORT at this interval</p> <p>0 means to not send</p>
@@ -119,7 +119,7 @@ Enable automatic notifications whenever there is a wattage change<br /> <h1>Over
       </parameter>
 
       <parameter name="config_12_1" type="integer" groupName="configuration"
-                 min="0" max="255">
+                 min="-127" max="128">
         <label>12: Power change notification threshold</label>
         <description><![CDATA[
 Minimum change in wattage report<br /> <h1>Overview</h1><p>When the power changes by this many watts, send an automatic power level notification</p> <p>0: 0.0W<br />....<br />255: 25.5W</p>
@@ -129,9 +129,10 @@ Minimum change in wattage report<br /> <h1>Overview</h1><p>When the power change
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->
-      <parameter name="group_1" type="text" groupName="association">
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
         <label>1: Lifeline</label>
         <description>Send device reset locally notification</description>
+        <multipleLimit>1</multipleLimit>
       </parameter>
 
       <parameter name="group_2" type="text" groupName="association" multiple="true">

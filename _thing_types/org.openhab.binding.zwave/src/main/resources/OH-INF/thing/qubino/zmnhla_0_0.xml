@@ -153,7 +153,7 @@ Respond to ALL ON/ALL OFF<br /> <h1>Overview</h1><p>Flush PWM thermostat module 
       </parameter>
 
       <parameter name="config_11_2" type="integer" groupName="configuration"
-                 min="1" max="65535">
+                 min="-32767" max="32768">
         <label>11: I1 Functionality Selection</label>
         <description><![CDATA[
 I1 Functionality Selection<br /> <h1>Overview</h1><p>Default Value = 1.</p> <ul><li>65535 – Input I1 does not influence on the heat/cool process.</li> <li>1 - Input I1 changes the mode ofthe thermostat between OFF and AUTO. In this case function on flood sensor (if connected) is disabled.</li> <li>2 – input I1 influences on cooling and heating valves according to status of flood sensor. In this case function of Off and Auto selection by I1 is disabled</li> </ul>
@@ -163,7 +163,7 @@ I1 Functionality Selection<br /> <h1>Overview</h1><p>Default Value = 1.</p> <ul>
       </parameter>
 
       <parameter name="config_12_2" type="integer" groupName="configuration"
-                 min="1" max="65535">
+                 min="-32767" max="32768">
         <label>12: I2 Functionality Selection</label>
         <description><![CDATA[
 I2 Functionality Selection<br /> <h1>Overview</h1><ul><li>default value 65535</li> <li>65535 – input I2 does not influence on the heat/ cool process</li> <li>From 0 to 990 – Temperature set point from 0.0 °C to 99.0 °C. When I2 is pressed, temperature set point is automatically set to value defined here. In this case function of condense sensor is disabled.</li> <li>From 1001 to 1150 – Temperature set point from -0.1 °C to -15.0 °C. When I2 is pressed, temperature setpoint is automatically set to value defined here. In this case function of condense sensor is disabled.</li> <li>2000 – Input I2 influences on the cooling valve according to status of condense sensor, In this case function of setpoint selection with I2 is disabled.</li> </ul>
@@ -173,7 +173,7 @@ I2 Functionality Selection<br /> <h1>Overview</h1><ul><li>default value 65535</l
       </parameter>
 
       <parameter name="config_13_2" type="integer" groupName="configuration"
-                 min="1" max="65535">
+                 min="-32767" max="32768">
         <label>13: I3 Functionality Selection</label>
         <description><![CDATA[
 I3 Functionality Selection<br /> <h1>Overview</h1><ul><li>default value 65535</li> <li>65535 – input I3 does not influence on the heat/ cool process</li> <li>1 – input I3 changes the mode of the thermostat between Heat and Cool. In this case function on window sensor is disabled.</li> <li>2 – input I3 influences on cooling and heating valves according to status of window sensor. In this case function of Heat and Cool selection by I3 is disabled. </li> </ul>
@@ -203,7 +203,7 @@ Power reporting in Watts by timer interval<br /> <h1>Overview</h1><ul><li>defaul
       </parameter>
 
       <parameter name="config_45_1" type="integer" groupName="configuration"
-                 min="0" max="255">
+                 min="-127" max="128">
         <label>45: Antifreeze</label>
         <description><![CDATA[
 Antifreeze<br /> <h1>Overview</h1><p>Set value means at which temperature the device will be turned on even if the thermostat was manually set to off. Parameter can be set from 0 to 255 where 0 to 127 means from 0.0 °C to 12.7 °C and from 128 to 254 means from - 0.1 °C to -12.6 °C.</p> <p>Available configuration parameters </p> <ul><li>default value 50 (5,0 °C)</li> <li>255 – Antifreeze functionality disabled</li> </ul><p><strong>NOTE:</strong> Antifreeze is activated only in heating mode</p>
@@ -425,8 +425,9 @@ Input 3 Status off delay<br /> <h1>Overview</h1><ul><li>default value 0</li> <li
         <multipleLimit>16</multipleLimit>
       </parameter>
 
-      <parameter name="group_6" type="text" groupName="association">
+      <parameter name="group_6" type="text" groupName="association" multiple="true">
         <label>6: Controller Updates</label>
+        <multipleLimit>1</multipleLimit>
       </parameter>
 
       <!-- STATIC DEFINITIONS -->

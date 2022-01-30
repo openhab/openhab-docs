@@ -82,7 +82,7 @@ Homeseer Z-Wave Sensor<br /> <h1>Overview</h1><p>The HSM200 is designed to sense
 
       <!-- PARAMETER DEFINITIONS -->
       <parameter name="config_1_1" type="integer" groupName="configuration"
-                 min="0" max="255">
+                 min="-127" max="128">
         <label>1: On time</label>
         <description><![CDATA[
 minutes that the lights stay on when motion has not been detected.<br /> <h1>Overview</h1><p>On Time sets the number of minutes that the lights stay on when motion has not been detected.</p><p>A value of 0 On Time is a special mode where the lights are constantly sent a command to turn them on whenever motion is detected. The device will NOT turn the lights off in this mode. Note that this mode will significantly shorten battery life.</p><p>Recommended values:</p><p> 5 min for hallways.</p><p> 20 min for an office environment.</p><p> 60 min for a library or other room where someone may be sitting still for a long time.</p>
@@ -102,7 +102,7 @@ value sent to Group 2 when motion is detected<br /> <h1>Overview</h1><p>A value 
       </parameter>
 
       <parameter name="config_3_1" type="integer" groupName="configuration"
-                 min="0" max="255">
+                 min="-127" max="128">
         <label>3: Luminance Report</label>
         <description><![CDATA[
 Luminance report interval<br /> <h1>Overview</h1><p>A Luminance report is sent to the system controller every LiteMin minutes.</p><p>A value of zero turns this mode off. Luminance values can still be obtained at any time by the home control application in this mode.</p>
@@ -112,7 +112,7 @@ Luminance report interval<br /> <h1>Overview</h1><p>A Luminance report is sent t
       </parameter>
 
       <parameter name="config_4_1" type="integer" groupName="configuration"
-                 min="0" max="255">
+                 min="-127" max="128">
         <label>4: Temperature Report</label>
         <description><![CDATA[
 Temperature Report interval<br /> <h1>Overview</h1><p>A value of zero turns this mode off. Temperature values can still be obtained at any time by polling the status of the temperature sensor.<br /></p>

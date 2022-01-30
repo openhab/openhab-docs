@@ -65,7 +65,7 @@ Flood Sensor<br /> <h1>Overview</h1><p>The flood multisensor PAT02 has flood sen
 
       <!-- PARAMETER DEFINITIONS -->
       <parameter name="config_1_1" type="integer" groupName="configuration"
-                 min="0" max="255">
+                 min="-127" max="128">
         <label>1: Basic Set OFF Level</label>
         <description><![CDATA[
 Setting the BASIC command value<br /> <h1>Overview</h1><ul><li>Setting the BASIC command value <ul><li>When the flood trigger off(0x00), send the BASIC CC to the group 2.</li> </ul></li> </ul>
@@ -74,7 +74,7 @@ Setting the BASIC command value<br /> <h1>Overview</h1><ul><li>Setting the BASIC
       </parameter>
 
       <parameter name="config_2_1" type="integer" groupName="configuration"
-                 min="0" max="255">
+                 min="-127" max="128">
         <label>2: Basic Set ON Level</label>
         <description><![CDATA[
 Setting the BASIC command value<br /> <h1>Overview</h1><ul><li>Setting the BASIC command value <ul><li>When the flood trigger on(0xFF), send the BASIC CC to the group 2.  </li> </ul></li> </ul>
@@ -83,7 +83,7 @@ Setting the BASIC command value<br /> <h1>Overview</h1><ul><li>Setting the BASIC
       </parameter>
 
       <parameter name="config_5_1" type="integer" groupName="configuration"
-                 min="0" max="255">
+                 min="-127" max="128">
         <label>5: Operation Mode</label>
         <description><![CDATA[
 Operation mode. Using bit to control.<br /> <h1>Overview</h1><p>Operation mode. Using bit to control.</p> <ul><li>Bit0: Disable the Flood function.</li> <li>Bit1: Reserve.</li> <li>Bit2: Reserve.</li> <li>Bit3: not applicable for this device variant, set to 0</li> <li>Bit4: Reserve.</li> <li>Bit5: not applicable for this device variant, set to 1</li> <li>Bit6: Reserve.</li> <li>Bit7: Reserve.</li> </ul>
@@ -96,7 +96,7 @@ Operation mode. Using bit to control.<br /> <h1>Overview</h1><p>Operation mode. 
       </parameter>
 
       <parameter name="config_7_1" type="integer" groupName="configuration"
-                 min="0" max="255">
+                 min="-127" max="128">
         <label>7: Customer Function</label>
         <description><![CDATA[
 Parameter to set the sensor functions<br /> <h1>Overview</h1><p>Customer Function switch using bit control</p> <ul><li>Bit 0: Reserve</li> <li>Bit 1: Reserve</li> <li>Bit 2: Reserve</li> <li>Bit 3: Disable send out BASI OFF after flood event cleared <ul><li>0: Enable</li> <li>1: Disable</li> </ul></li> <li>Bit 4: Notification Type <ul><li>0: Using Notification Report</li> <li>1: Using Sensor Binary Report</li> </ul></li> <li>Bit 5: Disable Multi CC in auto report <ul><li>0: Enable</li> <li>1: Disable</li> </ul></li> <li>Bit 6: Disable to report Battery state when the device triggered <ul><li>0: Enable</li> <li>1: Disable</li> </ul></li> <li>Bit 7: Reserve</li> </ul>
@@ -123,7 +123,7 @@ The interval time for auto report the flood state.<br /> <h1>Overview</h1><p>The
       </parameter>
 
       <parameter name="config_20_1" type="integer" groupName="configuration"
-                 min="0" max="255">
+                 min="-127" max="128">
         <label>20: Auto Report Tick Interval</label>
         <description><![CDATA[
 The interval time for auto reporting each tick.<br /> <h1>Overview</h1><p>The interval time for auto report each tick.</p> <p>Setting this configuration will effect configuration No.10, No.13, No.14 and No.15.</p> <p>Units of one minute.</p> <p>Caution1: Setting to 0 means turn off all auto report function.</p> <p>Caution2: The value is unsigned byte</p>

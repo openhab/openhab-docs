@@ -153,7 +153,7 @@ Which notification to be sent to the associated devices.<br /> <h1>Overview</h1>
       </parameter>
 
       <parameter name="config_5_4" type="integer" groupName="configuration"
-                 min="0" max="4294967040">
+                 min="-2147483646" max="2147483647">
         <label>5: Color</label>
         <description><![CDATA[
 Configure which color will be displayed when a button is pressed<br /> <h1>Overview</h1><p>Each color component occupies a single byte. To calculate the color value do:</p> <p>color = ((((Red * 256) + Green) * 256) + Blue) * 256</p> <p>Value 1 = Red</p> <p>Value 2 = Green</p> <p>Value 3 = Blue</p> <p>Value 4 = Reserved</p>
@@ -182,11 +182,12 @@ Configure which color will be displayed when a button is pressed<br /> <h1>Overv
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->
-      <parameter name="group_1" type="text" groupName="association">
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
         <label>1: Lifeline</label>
         <description><![CDATA[
 Central Scene Notification<br /> <h1>Overview</h1><p>When touching the Button 1 to 4, the Central Scene Notificcation command will be sent to the associated node (1) in Association group 1.</p>
         ]]></description>
+        <multipleLimit>1</multipleLimit>
       </parameter>
 
       <parameter name="group_2" type="text" groupName="association" multiple="true">

@@ -86,7 +86,7 @@ Fibaro Walli Single Switch<br /> <h1>Overview</h1><p>FIBARO Walli Single Switch 
       </parameter>
 
       <parameter name="config_2_4" type="integer" groupName="configuration"
-                 min="0" max="4294967295">
+                 min="-2147483646" max="2147483647">
         <label>2: First channel – overload safety switch</label>
         <description><![CDATA[
 First channel – overload safety switch<br /> <h1>Overview</h1><table><tr><td>0 (default)</td> <td>function disabled</td> </tr><tr><td>10 to 36200</td> <td>(1.0-3620.0W, step 0.1W) – power threshold</td> </tr></table>
@@ -466,11 +466,12 @@ Second channel – Double Click value sent to 4th and 5th association groups<br 
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->
-      <parameter name="group_1" type="text" groupName="association">
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
         <label>1: Lifeline</label>
         <description><![CDATA[
 “Lifeline” reports the device status<br /> <h1>Overview</h1><p>1st association group – “Lifeline” reports the device status and allows for assigning single device only (main controller by default).</p>
         ]]></description>
+        <multipleLimit>1</multipleLimit>
       </parameter>
 
       <parameter name="group_2" type="text" groupName="association" multiple="true">

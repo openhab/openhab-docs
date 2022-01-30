@@ -239,7 +239,7 @@ Colorful mode configuration<br /> <h1>Overview</h1><p>Set-only parameter</p>
       </parameter>
 
       <parameter name="config_255_0" type="integer" groupName="configuration"
-                 min="0" max="4294967295">
+                 min="-2147483646" max="2147483647">
         <label>255: Reset to defaults</label>
         <description>Reset to defaults</description>
         <default>0</default>

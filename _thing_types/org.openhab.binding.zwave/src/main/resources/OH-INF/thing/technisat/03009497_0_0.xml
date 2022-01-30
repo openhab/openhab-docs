@@ -158,11 +158,12 @@ Select Dimming curve selection<br /> <h1>Overview</h1><p><b>0</b> - select dimmi
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->
-      <parameter name="group_1" type="text" groupName="association">
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
         <label>1: Lifeline</label>
         <description><![CDATA[
 The lifeline group reports the device's status.<br /> <h1>Overview</h1><p>- Device Reset Locally Notification<br />- Central Scene notification<br />- Meter Report<br />- Multilevel Switch Report<br />- Notification Report</p>
         ]]></description>
+        <multipleLimit>1</multipleLimit>
       </parameter>
 
       <parameter name="group_2" type="text" groupName="association" multiple="true">

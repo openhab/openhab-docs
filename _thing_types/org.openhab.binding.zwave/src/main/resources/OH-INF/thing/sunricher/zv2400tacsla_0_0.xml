@@ -266,7 +266,7 @@ Energy metering time cycle<br /> <h1>Overview</h1><p>Energy metering automatic r
       </parameter>
 
       <parameter name="config_23_4" type="integer" groupName="configuration"
-                 min="0" max="4294967295">
+                 min="-2147483646" max="2147483647">
         <label>23: Voltage metering time cycle</label>
         <description><![CDATA[
 Voltage metering time cycle<br /> <h1>Overview</h1><p>Voltage metering automatic report time cycle, unit is second Valid time cycle value: 5~2678400, when set as 0, report function disabled </p>
@@ -276,7 +276,7 @@ Voltage metering time cycle<br /> <h1>Overview</h1><p>Voltage metering automatic
       </parameter>
 
       <parameter name="config_24_4" type="integer" groupName="configuration"
-                 min="0" max="4294967295">
+                 min="-2147483646" max="2147483647">
         <label>24: Current metering time cycle</label>
         <description><![CDATA[
 Current metering time cycle<br /> <h1>Overview</h1><p>Current metering automatic report time cycle, unit is second Valid time cycle value: 5~2678400, when set as 0, report function disabled </p>

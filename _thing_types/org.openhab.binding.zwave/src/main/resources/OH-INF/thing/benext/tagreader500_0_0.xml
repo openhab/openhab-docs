@@ -59,7 +59,7 @@ WTRFID Mini Keypad<br /> <h1>Overview</h1><p>A Z-Wave security enabled entry con
 
       <!-- PARAMETER DEFINITIONS -->
       <parameter name="config_1_1" type="integer" groupName="configuration"
-                 min="0" max="255">
+                 min="-127" max="128">
         <label>1: Set to Default</label>
         <description><![CDATA[
 Set all configuration values to default values (factory settings)<br /> <h1>Overview</h1><p>If the Value is set to 0xFF (255) this device will return to factory settings.</p>
@@ -71,7 +71,7 @@ Set all configuration values to default values (factory settings)<br /> <h1>Over
       </parameter>
 
       <parameter name="config_2_1" type="integer" groupName="configuration"
-                 min="0" max="255">
+                 min="-127" max="128">
         <label>2: Feedback time</label>
         <description><![CDATA[
 the time the beep goes to off<br /> <h1>Overview</h1><p>0x00 = Off, 0xFF = endless</p>
@@ -81,7 +81,7 @@ the time the beep goes to off<br /> <h1>Overview</h1><p>0x00 = Off, 0xFF = endle
       </parameter>
 
       <parameter name="config_3_1" type="integer" groupName="configuration"
-                 min="0" max="255">
+                 min="-127" max="128">
         <label>3: Feedback time-out</label>
         <description><![CDATA[
 waiting for the wake-up-no-more command<br /> <h1>Overview</h1><p>Too configure the time-out, waiting on the wakeup_no_more_information command before the error sound starts automatically. The error sound is set to 8 short beeps.</p> <p>0x00 = off</p> <p>0x01 – 0xFF: Value in seconds</p>
@@ -140,8 +140,9 @@ Gateway confirmation<br /> <h1>Overview</h1><ul><li>In gateway mode it is possib
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->
-      <parameter name="group_1" type="text" groupName="association">
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
         <label>1: Lifeline</label>
+        <multipleLimit>1</multipleLimit>
       </parameter>
 
       <!-- STATIC DEFINITIONS -->

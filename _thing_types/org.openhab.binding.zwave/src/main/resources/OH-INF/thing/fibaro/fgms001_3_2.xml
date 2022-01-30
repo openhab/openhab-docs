@@ -450,11 +450,12 @@ Minimum temperature resulting in red LED illumination<br /> <h1>Overview</h1><p>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->
-      <parameter name="group_1" type="text" groupName="association">
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
         <label>1: Lifeline</label>
         <description><![CDATA[
 Device status<br /> <h1>Overview</h1><p>"Lifeline" is a reporting group, assigned to the device status. Main Z-Wave+ network controller should be added to this group. The "Lifeline" group can handle only one device. If Fibaro Motion Sensor operates in protected mode, outgoing messages are always encrypted.</p>
         ]]></description>
+        <multipleLimit>1</multipleLimit>
       </parameter>
 
       <parameter name="group_2" type="text" groupName="association" multiple="true">

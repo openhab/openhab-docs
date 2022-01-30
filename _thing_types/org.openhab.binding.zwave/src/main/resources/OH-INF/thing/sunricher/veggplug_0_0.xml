@@ -84,7 +84,7 @@ NAMRON Smart Plug<br /> <h1>Overview</h1><p>Zwave Smart Plug</p> <br /> <h2>Incl
 
       <!-- PARAMETER DEFINITIONS -->
       <parameter name="config_12_1" type="integer" groupName="configuration"
-                 min="0" max="255">
+                 min="-127" max="128">
         <label>12: Percentage Threshold Level</label>
         <description>Percentage Threshold Level</description>
         <default>0</default>
@@ -92,7 +92,7 @@ NAMRON Smart Plug<br /> <h1>Overview</h1><p>Zwave Smart Plug</p> <br /> <h2>Incl
       </parameter>
 
       <parameter name="config_13_2" type="integer" groupName="configuration"
-                 min="0" max="65535">
+                 min="-32767" max="32768">
         <label>13: Absolute Value Threshold Level</label>
         <description>Absolute Value Threshold Level</description>
         <default>0</default>

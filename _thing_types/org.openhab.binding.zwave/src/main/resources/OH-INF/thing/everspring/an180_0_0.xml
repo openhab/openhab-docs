@@ -90,11 +90,12 @@ Remember the last status<br /> <h1>Overview</h1><p>0: do not remember1: remember
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->
-      <parameter name="group_1" type="text" groupName="association">
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
         <label>1: Lifeline</label>
         <description><![CDATA[
 Controller communicaion<br /> <h1>Overview</h1><p>Supports: Binary Switch Report, Notification Report, Device Reset Locally Notification</p> <ul> <li>When the unit is powered for the first time, the unit will send a Notification Report to the node of Group 1. </li> <li>When setting the unit or changing the unit’s status, the unit will send a Binary Switch Report to the node of Group 1. </li> <li>Device Reset: When performing Reset the unit will send Device Reset Locally Notification to the node of Group1. </li> <li>The minimum interval time between two reports sent from this unit to the node of Group 1 is 3 seconds. Refer to Configuration parameter 2 for more information.</li> </ul>
         ]]></description>
+        <multipleLimit>1</multipleLimit>
       </parameter>
 
       <parameter name="group_2" type="text" groupName="association" multiple="true">

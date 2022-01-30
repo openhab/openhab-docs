@@ -64,7 +64,7 @@ Set External switch type Definitions<br /> <h1>Overview</h1><p>ZFM-80 provides a
       </parameter>
 
       <parameter name="config_2_1" type="integer" groupName="configuration"
-                 min="0" max="240">
+                 min="-127" max="128">
         <label>2: Timeout</label>
         <description><![CDATA[
 Set timeout period<br /> <h1>Overview</h1><p>ZFM-80US provides an advanced function "Conditional trigger for Fail Safe Installation". It can turn on or turn off the relay if ZFM-80US has not received any Z-Wave commands from a specified Z-Wave Node ID and within a specified period. For example: Z-Wave gateway can monitor a Z-Wave device status and power on equipment if this Z-Wave device is out of service.</p> <p>(default value is 0 [function disabled])</p>
@@ -74,7 +74,7 @@ Set timeout period<br /> <h1>Overview</h1><p>ZFM-80US provides an advanced funct
       </parameter>
 
       <parameter name="config_3_1" type="integer" groupName="configuration"
-                 min="0" max="232">
+                 min="-127" max="128">
         <label>3: NodeIdNumber</label>
         <description><![CDATA[
 Configure Node ID number for Z-Wave command source<br /> <h1>Overview</h1><p>ZFM-80US provides an advanced function "Conditional trigger for Fail Safe Installation". It can turn on or turn off the relay if ZFM-80US has not received any Z-Wave commands from a specified Z-Wave Node ID and within a specified period. For example: Z-Wave gateway can monitor a Z-Wave device status and power on equipment if this Z-Wave device is out of service.</p> <p>(default value is 0 [function disabled])</p>

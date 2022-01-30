@@ -111,7 +111,7 @@ ignore start level in StartLevelChange<br /> <h1>Overview</h1><p>Defines if the 
       </parameter>
 
       <parameter name="config_5_1" type="integer" groupName="configuration"
-                 min="0" max="255">
+                 min="-127" max="128">
         <label>5: Dimming speed</label>
         <description><![CDATA[
 Time to dim on button presses<br /> <h1>Overview</h1><p>Time to dim on button presses and Set command (if it has no duration specified). If not 0, dimming will be done smoothly to preserv bulb life.</p>
@@ -124,7 +124,7 @@ Time to dim on button presses<br /> <h1>Overview</h1><p>Time to dim on button pr
       </parameter>
 
       <parameter name="config_6_1" type="integer" groupName="configuration"
-                 min="1" max="255">
+                 min="-127" max="128">
         <label>6: Dimming long speed</label>
         <description><![CDATA[
 Time to dim on button holds and StartLevelChange<br /> <h1>Overview</h1><p>Time to dim on button holds and StartLevelChange command (if it has no duration specified).</p>

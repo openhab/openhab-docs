@@ -55,7 +55,7 @@ Lamp Module<br /> <h1>Overview</h1><p>300 Watt Scene Capable Plug-In Lamp Dimmin
 
       <!-- PARAMETER DEFINITIONS -->
       <parameter name="config_1_1" type="integer" groupName="configuration"
-                 min="0" max="253">
+                 min="-127" max="128">
         <label>1: Fade On Time</label>
         <description><![CDATA[
 Time it takes to fade on<br /> <h1>Overview</h1><p>0 is instant on 1-127 is in seconds 128-253 is in minutes</p>
@@ -65,7 +65,7 @@ Time it takes to fade on<br /> <h1>Overview</h1><p>0 is instant on 1-127 is in s
       </parameter>
 
       <parameter name="config_2_1" type="integer" groupName="configuration"
-                 min="0" max="253">
+                 min="-127" max="128">
         <label>2: Fade off time</label>
         <description><![CDATA[
 Time it takes to fade off<br /> <h1>Overview</h1><p>0 is instant on 1-127 is in seconds 128-253 is in minutes</p>

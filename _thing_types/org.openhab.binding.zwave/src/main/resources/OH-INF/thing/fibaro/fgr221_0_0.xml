@@ -92,7 +92,7 @@ Roller Shutter Controller<br /> <h1>Overview</h1><p>The in-wall Roller Shutter C
       </parameter>
 
       <parameter name="config_20_1" type="integer" groupName="configuration"
-                 min="0" max="255">
+                 min="-127" max="128">
         <label>20: Dimmer/Roller shutter control</label>
         <description>Options for changing parameter 1-99, default 16</description>
         <default>16</default>
@@ -171,8 +171,9 @@ Only valid for the 1.9 version of FGR221.<br /> <h1>Overview</h1><p>The device o
         <multipleLimit>16</multipleLimit>
       </parameter>
 
-      <parameter name="group_3" type="text" groupName="association">
+      <parameter name="group_3" type="text" groupName="association" multiple="true">
         <label>3: Controller Updates</label>
+        <multipleLimit>1</multipleLimit>
       </parameter>
 
       <!-- STATIC DEFINITIONS -->

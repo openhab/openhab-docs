@@ -74,7 +74,7 @@ ZLink Water Leak &amp; Temperature Sensor<br /> <h1>Overview</h1><p>ZLINK LD-100
       </parameter>
 
       <parameter name="config_3_1" type="integer" groupName="configuration"
-                 min="30" max="255">
+                 min="-127" max="128">
         <label>3: Temperature reporting</label>
         <description>Temperature reporting interval on micro USB power</description>
         <default>60</default>

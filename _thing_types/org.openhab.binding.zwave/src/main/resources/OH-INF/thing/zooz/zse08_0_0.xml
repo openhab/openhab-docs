@@ -59,7 +59,7 @@ Contact Sensor<br /> <h1>Overview</h1><p>You have picked the finest solution for
 
       <!-- PARAMETER DEFINITIONS -->
       <parameter name="config_1_2" type="integer" groupName="configuration"
-                 min="0" max="65535">
+                 min="-32767" max="32768">
         <label>1: Close Delay</label>
         <description><![CDATA[
 Delay (in seconds) before close signal will be sent<br /> <h1>Overview</h1><p>Set the delay time for turning associated devices OFF based on status change of your Contact Sensor. The number entered as the value corresponds to the number of seconds. So if 0 is entered by default, the Contact Sensor will report status change and trigger an associated device to turn off instantly, without any delay. If you change this setting to 10, the sensor will only trigger the associated device after 10 seconds the status change is reported - if your door or window is closed, the light will not go off for another 10 seconds.</p>
@@ -69,7 +69,7 @@ Delay (in seconds) before close signal will be sent<br /> <h1>Overview</h1><p>Se
       </parameter>
 
       <parameter name="config_2_1" type="integer" groupName="configuration"
-                 min="0" max="255">
+                 min="-127" max="128">
         <label>2: Trigger Value</label>
         <description><![CDATA[
 The value that will be set when the sensor is triggered<br /> <h1>Overview</h1><p>You can choose if your Contact Sensor turns an associated device on or off when sending the basic set command. Use value 0 to turn the associated device OFF and value 255 to turn it ON. Adjust brightness level for a Z-Wave dimmer (Multilevel switch) by putting in any value between 1 and 99.</p> <p>Values: 0 – OFF; 1 – 99 (% of light); 255 – ON (default).</p>

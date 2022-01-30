@@ -60,7 +60,7 @@ NotificationReport/BinaryReport<br /> <h1>Overview</h1><p>Customer function swit
       </parameter>
 
       <parameter name="config_29_4" type="integer" groupName="configuration"
-                 min="0" max="4294967295">
+                 min="-2147483646" max="2147483647">
         <label>29: Disable Alarm</label>
         <description><![CDATA[
 Disable the alarm function.<br /> <h1>Overview</h1><p>Disable the alarm  function. 1: Disable  Alarm, 0: Enable Alarm.  Caution: After the power  up, this configuration is  always 0.</p>

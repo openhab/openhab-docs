@@ -123,7 +123,7 @@ Set if the lock is in away mode and if automatic locking should be enabled<br />
       </parameter>
 
       <parameter name="config_2_1" type="integer" groupName="configuration"
-                 min="0" max="255">
+                 min="-127" max="128">
         <label>2: RFID Mode</label>
         <description>RFID Mode</description>
         <default>5</default>
@@ -172,7 +172,7 @@ Set if the lock is in away mode and if automatic locking should be enabled<br />
       </parameter>
 
       <parameter name="config_6_1" type="integer" groupName="configuration"
-                 min="0" max="254">
+                 min="-127" max="128">
         <label>6: Service PIN Mode</label>
         <description>Service PIN Mode</description>
         <default>0</default>
@@ -192,7 +192,7 @@ Set if the lock is in away mode and if automatic locking should be enabled<br />
       </parameter>
 
       <parameter name="config_7_1" type="integer" groupName="configuration" readOnly="true"
-                 min="0" max="255">
+                 min="-127" max="128">
         <label>7: Modul type</label>
         <description><![CDATA[
 Modul type<br /> <h1>Overview</h1><p>150 = IDLock 150 (Read only)</p>

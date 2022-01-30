@@ -73,7 +73,7 @@ Notification modes: 0=light, 1=alarm, 2=sensor<br /> <h1>Overview</h1><p>The ZIR
       </parameter>
 
       <parameter name="config_18_1" type="integer" groupName="configuration"
-                 min="0" max="255">
+                 min="-127" max="128">
         <label>18: Off/Idle delay</label>
         <description><![CDATA[
 Configuring the off/idle delay<br /> <h1>Overview</h1><p>OFF/IDLE (Applicable only when the ZIR010 is configured for Lighting or Binary Sensor Mode).</p> <p>The ZIR010 will consider there to be “No Activity” after 2 minutes passes during which the ZIR010 detected no motion. At that point, the ZIR010 can be configured to immediately send the OFF or IDLE command or it can be configured to send it from 1 minute to 255 minutes later. (+/- 1 minute).</p>

@@ -186,7 +186,7 @@ Input 1 Switch Type<br /> <h1>Overview</h1><p>By this parameter the user can set
       </parameter>
 
       <parameter name="config_66_1" type="integer" groupName="configuration"
-                 min="1" max="255">
+                 min="-127" max="128">
         <label>66: Dimming time when key pressed</label>
         <default>3</default>
         <limitToOptions>false</limitToOptions>
@@ -249,9 +249,10 @@ Input 1 Switch Type<br /> <h1>Overview</h1><p>By this parameter the user can set
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->
-      <parameter name="group_1" type="text" groupName="association">
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
         <label>1: Lifeline</label>
         <description>Reserved for communication with the main controller</description>
+        <multipleLimit>1</multipleLimit>
       </parameter>
 
       <parameter name="group_2" type="text" groupName="association" multiple="true">

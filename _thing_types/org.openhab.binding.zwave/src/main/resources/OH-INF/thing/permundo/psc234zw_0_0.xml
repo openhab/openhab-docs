@@ -73,11 +73,12 @@ Disable local control of plug<br /> <h1>Overview</h1><p>31d Size:1 Default: 00d<
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->
-      <parameter name="group_1" type="text" groupName="association">
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
         <label>1: Reports</label>
         <description><![CDATA[
 Reports triggered by change of relay state, meter values or time<br /> <h1>Overview</h1><p>Assoziationsgruppe Gruppe 1 (lifeline): 5 Events/Notifications:</p> <p>(1) Sendet COMMAND_CLASS_BASIC, BASIC_REPORT und COMMAND_CLASS_SWITCH_BINARY, BINARY_REPORT jeweils nach Änderung des RelaisStatus.</p> <p>(2) Sendet COMMAND_CLASS_METER_V2, METER_REPORT_V2 jeweils nach Änderung der Messwerte Energie oder Leistung entweder um einen Minimalbetrag, oder nach Ablauf einer Maximalzeit. Ebenso wird nach jedem Report eine Mindestzeit gewartet, bevor ein nächster Report gesendet wird. Zeiten für Werte Energie/Leistung:</p> <p>Mindestzeit zwischen 2 Reports: 1s PSC234ZW RC2.05 G3 DE 7</p> <p>Maximalzeit bis zum nächsten Report: 15min. Trigger bei Abweichung seit letzter Messung: 4% Leistung (mind. 2W) oder 1Wh Energie </p>
         ]]></description>
+        <multipleLimit>1</multipleLimit>
       </parameter>
 
       <!-- STATIC DEFINITIONS -->

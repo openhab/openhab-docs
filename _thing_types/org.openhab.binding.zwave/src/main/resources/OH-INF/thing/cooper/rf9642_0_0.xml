@@ -67,21 +67,21 @@ Z-Wave Plus smart accessory dimmer<br /> <h1>Overview</h1><p>Z-Wave Plus accesso
 
       <!-- PARAMETER DEFINITIONS -->
       <parameter name="config_1_1" type="integer" groupName="configuration"
-                 min="0" max="255">
+                 min="-127" max="128">
         <label>1: Delayed OFF Time</label>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_2_1" type="integer" groupName="configuration"
-                 min="0" max="255">
+                 min="-127" max="128">
         <label>2: Panic On Time</label>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_3_1" type="integer" groupName="configuration"
-                 min="0" max="255">
+                 min="-127" max="128">
         <label>3: Panic Off</label>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
@@ -109,7 +109,7 @@ Z-Wave Plus smart accessory dimmer<br /> <h1>Overview</h1><p>Z-Wave Plus accesso
       </parameter>
 
       <parameter name="config_7_1" type="integer" groupName="configuration"
-                 min="0" max="255">
+                 min="-127" max="128">
         <label>7: Dimmer Ramp Time</label>
         <default>3</default>
         <limitToOptions>false</limitToOptions>

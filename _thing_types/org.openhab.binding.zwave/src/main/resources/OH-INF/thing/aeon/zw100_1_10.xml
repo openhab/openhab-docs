@@ -132,7 +132,7 @@ Motion Sensor reset timeout<br /> <h1>Overview</h1><ol><li>The default PIR time 
       </parameter>
 
       <parameter name="config_8_1" type="integer" groupName="configuration"
-                 min="8" max="255">
+                 min="-127" max="128">
         <label>8: Timeout after wake up</label>
         <description>Set the timeout of awake after the Wake Up CC is sent out...</description>
         <default>30</default>
@@ -140,7 +140,7 @@ Motion Sensor reset timeout<br /> <h1>Overview</h1><ol><li>The default PIR time 
       </parameter>
 
       <parameter name="config_9_2" type="integer" groupName="configuration" readOnly="true"
-                 min="0" max="65535">
+                 min="-32767" max="32768">
         <label>9: Report the current power mode</label>
         <description><![CDATA[
 Report the current power mode and the product state of battery power mode<br /> <h1>Overview</h1><p>Value1 (MSB): 0x00=USB power mode, 0x01=Battery power mode<br />Value2 (LSB): 0x00=keep sleep state for Battery power mode, 0x01=keep awake for 10 minutes for battery power mode</p> <p>NOTE: this parameter cannot be used as Get/Set usage</p>
@@ -279,7 +279,7 @@ Send an alarm report if temperature is less than -15 °C<br /> <h1>Overview</h1>
       </parameter>
 
       <parameter name="config_48_1" type="integer" groupName="configuration"
-                 min="0" max="255">
+                 min="-127" max="128">
         <label>48: Send a report if the measurement is out of limits</label>
         <description><![CDATA[
 Send report when measurement is at upper/lower limit<br /> <h1>Overview</h1><p>Enable/disable to send a report when the measurement is more than the upper limit value or less than the lower limit value.<br />Bit mask = 0, disable.<br />Bit mask = 1, enable.<br />Bit 0 = temperature.<br />Bit 1 = humidity.<br />Bit 2 = luminance.<br />Bit 3 = ultraviolet.</p> <p>The above bit masks are used to enable/disable to send out a report when the measurement is less than the lower limit value. The below bit masks are used to enable/disable to send out a report when the measurement is more than the upper limit value<br />Bit 4 = temperature.<br />Bit 5 = humidity.<br />Bit 6 = luminance.<br />Bit 7 = ultraviolet.</p> <p><em>Note:</em> If USB power, the Sensor will check the limit every 10 seconds. If battery power, the Sensor will check the limit when it is waken up. </p>
@@ -412,7 +412,7 @@ Lower limit value of ultraviolet sensor<br /> <h1>Overview</h1><p>Set the lower 
       </parameter>
 
       <parameter name="config_57_2" type="integer" groupName="configuration"
-                 min="0" max="65535">
+                 min="-32767" max="32768">
         <label>57: Recover limit value of temperature sensor</label>
         <description><![CDATA[
 Recover limit value of temperature sensor<br /> <h1>Overview</h1><p>Set the recover limit value of temperature sensor.</p> <p><em>Note</em>:</p> <ol><li>When the current measurement &lt;= (Upper limit – Recover limit), the upper limit report is enabled and then it would send out a sensor report when the next measurement is more than the upper limit. After that the upper limit report would be disabled again until the measurement &lt;= (Upper limit – Recover limit).</li> <li>When the current measurement &gt;= (Lower limit + Recover limit), the lower limit report is enabled and then it would send out a sensor report when the next measurement is less than the lower limit. After that the lower limit report would be disabled again until the measurement &gt;= (Lower limit + Recover limit).</li> <li>High byte is the recover limit value. Low byte is the unit (0x01=Celsius, 0x02=Fahrenheit).</li> <li>Recover limit range: 1.0 to 25.5 ℃/ ℉ (0x0101 to 0xFF01 or 0x0102 to 0xFF02).</li> <li>E.g. The default recover limit value is 2.0 ℃/℉ (0x1401/0x1402), when the measurement is less than (Upper limit – 2), the upper limit report would be enabled one time</li> </ol>
@@ -432,7 +432,7 @@ Recover limit value of humidity sensor<br /> <h1>Overview</h1><p>Set the recover
       </parameter>
 
       <parameter name="config_59_1" type="integer" groupName="configuration"
-                 min="1" max="255">
+                 min="-127" max="128">
         <label>59: Recover limit value of Lighting sensor.</label>
         <description><![CDATA[
 Recover limit value of Lighting sensor.<br /> <h1>Overview</h1><p>Set the recover limit value of Lighting sensor.</p> <p><em>Note</em>:</p> <ol><li>When the current measurement &lt;= (Upper limit – Recover limit), the upper limit report is enabled and then it would send out a sensor report when the next measurement is more than the upper limit. After that the upper limit report would be disabled again until the measurement &lt;= (Upper limit – Recover limit).</li> <li>When the current measurement &gt;= (Lower limit + Recover limit), the lower limit report is enabled and then it would send out a sensor report when the next measurement is less than the lower limit. After that the lower limit report would be disabled again until the measurement &gt;= (Lower limit + Recover limit).</li> <li>Unit = 10×Recover limit (Lux)</li> <li><strong>Recover limit range: 10 to 2550Lux (0x01 to 0xFF). </strong></li> <li>E.g. The default recover limit value is 100 Lux, when the measurement is less than (Upper limit – 100), the upper limit report would be enabled one time or when the measurement is more than (Lower limit + 100), the lower limit report would be enabled one time. </li> </ol>
@@ -452,7 +452,7 @@ Recover limit value of Ultraviolet sensor<br /> <h1>Overview</h1><p>Set the reco
       </parameter>
 
       <parameter name="config_61_1" type="integer" groupName="configuration" readOnly="true"
-                 min="0" max="255">
+                 min="-127" max="128">
         <label>61: Out-of-limit state of the Sensors</label>
         <description><![CDATA[
 Out-of-limit state of the Sensors<br /> <h1>Overview</h1><p>Get the out-of-limit state of the Sensors.</p> <ul><li>Bit mask = 0, within the limit.</li> <li>Bit mask = 1, out of the limit.</li> <li>Bit 0 = temperature.</li> <li>Bit 1 = humidity.</li> <li>Bit 2 = luminance.</li> <li>Bit 3 = ultraviolet.</li> </ul><p>The above bit masks are used to indicate whether the current measurements of the Sensors are out of the lower limit.. The below bit masks are used to indicate whether the current measurements of the Sensors are out of the upper limit.</p> <ul><li>Bit 4 = temperature.</li> <li>Bit 5 = humidity.</li> <li>Bit 6 = luminance.</li> <li>Bit 7 = ultraviolet</li> </ul>

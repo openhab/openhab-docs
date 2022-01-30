@@ -112,11 +112,12 @@ How to interpret OFF command.<br /> <h1>Overview</h1><p>Whenever a switch off co
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->
-      <parameter name="group_1" type="text" groupName="association">
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
         <label>1: Group 1</label>
         <description><![CDATA[
 Where to send ALARM_REPORT and DEVICE_RESET_LOCALLY_NOTIFICATION<br /> <h1>Overview</h1><p>The dimmer can be set to send reports to associated Z-Wave devices. It supports one association group with one node support for Grouping 1. For group 1, the dimmer will report ALARM_REPORT and DEVICE_RESET_LOCALLY_NOTIFICATION.</p>
         ]]></description>
+        <multipleLimit>1</multipleLimit>
       </parameter>
 
       <!-- STATIC DEFINITIONS -->

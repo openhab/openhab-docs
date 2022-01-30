@@ -53,11 +53,12 @@ CO Detector<br /> <h1>Overview</h1><p>Carbon monoxide Sensor</p> <p>Battery Type
       </parameter-group>
 
       <!-- ASSOCIATION DEFINITIONS -->
-      <parameter name="group_1" type="text" groupName="association">
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
         <label>1: Lifeline</label>
         <description><![CDATA[
 Battery, Notification, Reset locally Notification, Binary report<br /> <h1>Overview</h1><table> <tr> <td>Association group 1: Lifeline association group Include command classes: Battery report, Notification report, and Device Reset Locally notification, Binary report.</td> </tr> </table>
         ]]></description>
+        <multipleLimit>1</multipleLimit>
       </parameter>
 
       <parameter name="group_2" type="text" groupName="association" multiple="true">

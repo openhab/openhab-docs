@@ -55,7 +55,7 @@
 
       <!-- PARAMETER DEFINITIONS -->
       <parameter name="config_1_1" type="integer" groupName="configuration"
-                 min="0" max="253">
+                 min="-127" max="128">
         <label>1: Fade On Time</label>
         <description><![CDATA[
 Fade on time<br /> <h1>Overview</h1><ul><li>0: Instant on</li> <li>1 to 127: 1-127 seconds</li> <li>128 to 253: 1-126 minutes</li> </ul>
@@ -65,7 +65,7 @@ Fade on time<br /> <h1>Overview</h1><ul><li>0: Instant on</li> <li>1 to 127: 1-1
       </parameter>
 
       <parameter name="config_2_1" type="integer" groupName="configuration"
-                 min="0" max="253">
+                 min="-127" max="128">
         <label>2: Fade Off Time</label>
         <description><![CDATA[
 Fade off time<br /> <h1>Overview</h1><ul><li>0: Instant off</li> <li>1 to 127: 1-127 seconds</li> <li>128 to 253: 1-126 minutes</li> </ul>
@@ -101,7 +101,7 @@ Preset light level<br /> <h1>Overview</h1><ul><li>0: Last dim level</li> <li>1 t
       </parameter>
 
       <parameter name="config_6_1" type="integer" groupName="configuration"
-                 min="0" max="255">
+                 min="-127" max="128">
         <label>6: LED Dim Level Indicator Timeout</label>
         <description><![CDATA[
 LED dim level indicator timeout<br /> <h1>Overview</h1><ul><li>0: LED indicators off</li> <li>1 to 254: Timeout in seconds</li> <li>255: Always on</li> </ul>
@@ -111,7 +111,7 @@ LED dim level indicator timeout<br /> <h1>Overview</h1><ul><li>0: LED indicators
       </parameter>
 
       <parameter name="config_7_1" type="integer" groupName="configuration"
-                 min="0" max="255">
+                 min="-127" max="128">
         <label>7: Locator LED Status</label>
         <description><![CDATA[
 Locator LED status<br /> <h1>Overview</h1><ul><li>0: LED off</li> <li>254: Status mode</li> <li>255: Locator mode</li> </ul>

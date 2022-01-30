@@ -134,7 +134,7 @@ Z-Wave transmission LED settings.<br /> <h1>Overview</h1><p>The ZRM230 will flic
       </parameter>
 
       <parameter name="config_20_1" type="integer" groupName="configuration"
-                 min="0" max="255">
+                 min="-127" max="128">
         <label>20: Poll Group 2 Interval</label>
         <description><![CDATA[
 Poll Group 2 interval (minutes).<br /> <h1>Overview</h1><p>Poll Group 2 Interval (minutes), valid values = 1 through 255 (Default value is 2).</p>

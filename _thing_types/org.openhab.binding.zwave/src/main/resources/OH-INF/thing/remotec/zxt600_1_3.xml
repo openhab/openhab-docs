@@ -90,7 +90,7 @@ AC Master<br /> <h1>Overview</h1><p>ZXT-600 AC Master is a Z-Wave plus certified
       </parameter>
 
       <parameter name="config_27_2" type="integer" groupName="configuration"
-                 min="0" max="65535">
+                 min="-32767" max="32768">
         <label>27: Set IR Code Number from built-in code library</label>
         <description>Set IR Code Number from built-in code library</description>
         <default>1</default>
@@ -107,7 +107,7 @@ AC Master<br /> <h1>Overview</h1><p>ZXT-600 AC Master is a Z-Wave plus certified
       </parameter>
 
       <parameter name="config_32_1" type="integer" groupName="configuration"
-                 min="0" max="255">
+                 min="-127" max="128">
         <label>32: Set built-in IR Emitter Control</label>
         <description><![CDATA[
 Set built-in IR Emitter Control<br /> <h1>Overview</h1><p>0 - disable</p> <p>255 enable (default)</p>
@@ -136,7 +136,7 @@ Control AC &amp;amp;quot;SWING&amp;amp;quot; function<br /> <h1>Overview</h1><p>
       </parameter>
 
       <parameter name="config_37_1" type="integer" groupName="configuration"
-                 min="0" max="255">
+                 min="-127" max="128">
         <label>37: Calibrate Temperature reading</label>
         <description><![CDATA[
 Calibrate Temperature reading<br /> <h1>Overview</h1><p>0 to 5 - positive value</p> <p>251 to 255 - negatice value</p>
@@ -146,9 +146,10 @@ Calibrate Temperature reading<br /> <h1>Overview</h1><p>0 to 5 - positive value<
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->
-      <parameter name="group_1" type="text" groupName="association">
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
         <label>1: Lifeline</label>
         <description>Z-Wave Plus Lifeline</description>
+        <multipleLimit>1</multipleLimit>
       </parameter>
 
       <!-- STATIC DEFINITIONS -->

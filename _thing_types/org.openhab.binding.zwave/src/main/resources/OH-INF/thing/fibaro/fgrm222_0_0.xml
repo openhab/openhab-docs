@@ -146,7 +146,7 @@ Enable Venetian Blind mode<br /> <h1>Overview</h1><p>Parameters value shoud be s
       </parameter>
 
       <parameter name="config_12_2" type="integer" groupName="configuration"
-                 min="0" max="65535">
+                 min="-32767" max="32768">
         <label>12: Turning time/delay time</label>
         <description><![CDATA[
 Time of full turn of the lamellas.<br /> <h1>Overview</h1><p>In Venetian Blind mode (parameter 10 set to 2) the parameter determines time of full turn of the lamellas. In Gate Mode (parameter 10 set to 3 or 4) the parameter defines the delay time after which an open gate starts closing.</p>
@@ -184,7 +184,7 @@ Parameter settings for Roller and Venetian Blind Mode<br /> <h1>Overview</h1><p>
       </parameter>
 
       <parameter name="config_17_1" type="integer" groupName="configuration"
-                 min="0" max="255">
+                 min="-127" max="128">
         <label>17: Delay time after S2</label>
         <description><![CDATA[
 Relays turn off time after reaching a limit switch.<br /> <h1>Overview</h1><p>In roller blind mode or venetian blind mode (parameter 10 set to 0, 1, 2) the parameter determines when the Roller Shutter relays are turned off after reaching a limit switch. In Gate Mode (parameter 10 set to 3 or 4) the parameter determines a time period.</p>
@@ -194,7 +194,7 @@ Relays turn off time after reaching a limit switch.<br /> <h1>Overview</h1><p>In
       </parameter>
 
       <parameter name="config_18_1" type="integer" groupName="configuration"
-                 min="0" max="255">
+                 min="-127" max="128">
         <label>18: Motor operation detection</label>
         <description>Power threshold to be interpreted as reaching a limit switch.</description>
         <default>10</default>
@@ -202,7 +202,7 @@ Relays turn off time after reaching a limit switch.<br /> <h1>Overview</h1><p>In
       </parameter>
 
       <parameter name="config_22_2" type="integer" groupName="configuration"
-                 min="0" max="65535">
+                 min="-32767" max="32768">
         <label>22: Motor operation time</label>
         <description>Time period for the motor to continue operation.</description>
         <default>10</default>
@@ -350,8 +350,9 @@ Only applies to momentary switches<br /> <h1>Overview</h1><p><strong>Roller Shut
         <multipleLimit>16</multipleLimit>
       </parameter>
 
-      <parameter name="group_3" type="text" groupName="association">
+      <parameter name="group_3" type="text" groupName="association" multiple="true">
         <label>3: Controller Updates</label>
+        <multipleLimit>1</multipleLimit>
       </parameter>
 
       <!-- STATIC DEFINITIONS -->

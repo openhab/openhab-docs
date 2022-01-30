@@ -174,7 +174,7 @@ Enable selective reporting only when power changes<br /> <h1>Overview</h1><p>Ena
       </parameter>
 
       <parameter name="config_5_2" type="integer" groupName="configuration"
-                 min="0" max="60000">
+                 min="-32767" max="32768">
         <label>5: Wattage Threshold - Whole strip</label>
         <description><![CDATA[
 Threshold change in wattage to induce a automatic report<br /> <h1>Overview</h1><p>Threshold change in wattage to induce a automatic report (Whole HEM). (Valid values 0-60000)           </p>
@@ -184,7 +184,7 @@ Threshold change in wattage to induce a automatic report<br /> <h1>Overview</h1>
       </parameter>
 
       <parameter name="config_6_2" type="integer" groupName="configuration"
-                 min="0" max="60000">
+                 min="-32767" max="32768">
         <label>6: Wattage Threshold - Socket 1</label>
         <description><![CDATA[
 Threshold change in wattage to induce a automatic report<br /> <h1>Overview</h1><p>Threshold change in wattage to induce a automatic report (Socket 1). (Valid values 0-60000)           </p>
@@ -194,7 +194,7 @@ Threshold change in wattage to induce a automatic report<br /> <h1>Overview</h1>
       </parameter>
 
       <parameter name="config_7_2" type="integer" groupName="configuration"
-                 min="0" max="60000">
+                 min="-32767" max="32768">
         <label>7: Wattage Threshold - Socket 2</label>
         <description><![CDATA[
 Threshold change in wattage to induce a automatic report<br /> <h1>Overview</h1><p>Threshold change in wattage to induce a automatic report (Socket 2). (Valid values 0-60000)           </p>
@@ -204,7 +204,7 @@ Threshold change in wattage to induce a automatic report<br /> <h1>Overview</h1>
       </parameter>
 
       <parameter name="config_8_2" type="integer" groupName="configuration"
-                 min="0" max="60000">
+                 min="-32767" max="32768">
         <label>8: Wattage Threshold - Socket 3</label>
         <description><![CDATA[
 Threshold change in wattage to induce a automatic report<br /> <h1>Overview</h1><p>Threshold change in wattage to induce a automatic report (Socket 3). (Valid values 0-60000)           </p>
@@ -214,7 +214,7 @@ Threshold change in wattage to induce a automatic report<br /> <h1>Overview</h1>
       </parameter>
 
       <parameter name="config_9_2" type="integer" groupName="configuration"
-                 min="0" max="60000">
+                 min="-32767" max="32768">
         <label>9: Wattage Threshold - Socket 4</label>
         <description><![CDATA[
 Threshold change in wattage to induce a automatic report<br /> <h1>Overview</h1><p>Threshold change in wattage to induce a automatic report (Socket 4). (Valid values 0-60000)           </p>
@@ -224,7 +224,7 @@ Threshold change in wattage to induce a automatic report<br /> <h1>Overview</h1>
       </parameter>
 
       <parameter name="config_10_2" type="integer" groupName="configuration"
-                 min="0" max="60000">
+                 min="-32767" max="32768">
         <label>10: Wattage Threshold - Socket 5</label>
         <description><![CDATA[
 Threshold change in wattage to induce a automatic report<br /> <h1>Overview</h1><p>Threshold change in wattage to induce a automatic report (Socket 5). (Valid values 0-60000)           </p>
@@ -234,7 +234,7 @@ Threshold change in wattage to induce a automatic report<br /> <h1>Overview</h1>
       </parameter>
 
       <parameter name="config_11_2" type="integer" groupName="configuration"
-                 min="0" max="60000">
+                 min="-32767" max="32768">
         <label>11: Wattage Threshold - Socket 6</label>
         <description><![CDATA[
 Threshold change in wattage to induce a automatic report<br /> <h1>Overview</h1><p>Threshold change in wattage to induce a automatic report (Socket 6). (Valid values 0-60000)           </p>
@@ -328,7 +328,7 @@ Status of load changed,send group 1<br /> <h1>Overview</h1><p>Status of load cha
       </parameter>
 
       <parameter name="config_90_2" type="integer" groupName="configuration"
-                 min="0" max="65535">
+                 min="-32767" max="32768">
         <label>90: Get Temperature</label>
         <description><![CDATA[
 Get temperature of Smart Strip<br /> <h1>Overview</h1><p>Get temperature of Smart Strip (Only GET is valid)</p>
@@ -338,7 +338,7 @@ Get temperature of Smart Strip<br /> <h1>Overview</h1><p>Get temperature of Smar
       </parameter>
 
       <parameter name="config_100_1" type="integer" groupName="configuration"
-                 min="0" max="255">
+                 min="-127" max="128">
         <label>100: Reset 0x65~0x67 to default value</label>
         <description>Reset 0x65~0x67 to default value</description>
         <default>0</default>

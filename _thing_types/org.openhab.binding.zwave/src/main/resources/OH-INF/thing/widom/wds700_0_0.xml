@@ -494,7 +494,7 @@ Value used to control G2 association group on Channel 2<br /> <h1>Overview</h1><
       </parameter>
 
       <parameter name="config_70_2" type="integer" groupName="configuration"
-                 min="60" max="36000">
+                 min="-32767" max="32768">
         <label>70: E_REPORT_DELAY</label>
         <description><![CDATA[
 Time after which the next Energy report will be sent<br /> <h1>Overview</h1><p>This parameter defines the time in seconds after which the next Energy report will be sent.<br /></p>
@@ -504,7 +504,7 @@ Time after which the next Energy report will be sent<br /> <h1>Overview</h1><p>T
       </parameter>
 
       <parameter name="config_71_2" type="integer" groupName="configuration"
-                 min="60" max="36000">
+                 min="-32767" max="32768">
         <label>71: W_REPORT_DELAY</label>
         <description><![CDATA[
 Time after which the next Power report will be sent<br /> <h1>Overview</h1><p>This parameter defines the time in second after which the next Power report will be sent.</p>

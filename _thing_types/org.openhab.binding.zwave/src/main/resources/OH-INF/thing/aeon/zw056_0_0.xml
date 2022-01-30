@@ -200,7 +200,7 @@ Notifies Group 1 when battery state is low<br /> <h1>Overview</h1><p>Enable/disa
       </parameter>
 
       <parameter name="config_241_4" type="integer" groupName="configuration"
-                 min="0" max="4294967295">
+                 min="-2147483646" max="2147483647">
         <label>241: Pair doorbell with button</label>
         <description><![CDATA[
 Starts wireless button pairing mode<br /> <h1>Overview</h1><p>Pair the Wireless Button with Doorbell.<br />Value=0x55555555, Start the Wireless Button pairing mode and<br />the blue Led will blink slowly, short press the Wireless Button<br />once, if the blue Led change to be solid, which means the pairing<br />is successful. Otherwise, repeat the steps.<br />It will automatically exit the pairing mode after 8s if there is no<br />pressing action of the Wireless Button.<br />Note:<br />You can send this configuration Get CC to ask the pairing result:<br />If configuration report value=0x00000000, which means the<br />pairing is failed.<br />If configuration report value =0xFFFFFFFF, which means the<br />pairing is successful.<br /></p>
@@ -219,7 +219,7 @@ Lock configuration<br /> <h1>Overview</h1><p>0:  config not locked</p> <p>1:  
       </parameter>
 
       <parameter name="config_255_4" type="integer" groupName="configuration"
-                 min="0" max="4294967295">
+                 min="-2147483646" max="2147483647">
         <label>255: Reset</label>
         <description><![CDATA[
 Reset to factory settings<br /> <h1>Overview</h1><p>1. Size=0x01， Configuration Value=0x00:<br />Reset configuration setting.<br />2. Size=0x04， Configuration Value=0x55555555:<br />Reset Factory setting.</p>

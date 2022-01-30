@@ -248,7 +248,7 @@ Configures the threshold for input 3 that will cause a flood to be detected.<br 
       </parameter>
 
       <parameter name="config_15_1" type="integer" groupName="configuration"
-                 min="0" max="250">
+                 min="-127" max="128">
         <label>15: Voltage.</label>
         <description><![CDATA[
 Voltage value used for power calculation.<br /> <h1>Overview</h1><p>Configures the value used for power calculation, as only the current for the load on the relay output is measured.</p> <p>0 – 250  = 0 – 250 Volt. Default value is 220.</p>
@@ -258,7 +258,7 @@ Voltage value used for power calculation.<br /> <h1>Overview</h1><p>Configures t
       </parameter>
 
       <parameter name="config_16_1" type="integer" groupName="configuration"
-                 min="0" max="255">
+                 min="-127" max="128">
         <label>16: Ampere</label>
         <description><![CDATA[
 NOT USED<br /> <h1>Overview</h1><p>0 - 255 = Default value is 0.</p>
@@ -268,7 +268,7 @@ NOT USED<br /> <h1>Overview</h1><p>0 - 255 = Default value is 0.</p>
       </parameter>
 
       <parameter name="config_17_1" type="integer" groupName="configuration"
-                 min="0" max="255">
+                 min="-127" max="128">
         <label>17: Digital value per ampere.</label>
         <description><![CDATA[
 DO NOT CHANGE THIS VALUE, UNLESS INSTRUCTED TO.<br /> <h1>Overview</h1><p>0 - 255 = 0 – 255. Default value is 81 which is corresponds to the current sensor ACS722LLCTR-20AB.</p>
@@ -288,9 +288,10 @@ Actual load in Watt.<br /> <h1>Overview</h1><p>Configures a constant value that 
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->
-      <parameter name="group_1" type="text" groupName="association">
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
         <label>1: Lifeline</label>
         <description>Lifeline group for the entire module. Sends Basic Report On / Off when the relay is turned on or off. Sends Meter Report with energy data for the load connected to the relay output.</description>
+        <multipleLimit>1</multipleLimit>
       </parameter>
 
       <parameter name="group_2" type="text" groupName="association" multiple="true">

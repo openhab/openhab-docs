@@ -113,7 +113,7 @@ Configure the output load status after re‐power<br /> <h1>Overview</h1><p>Conf
       </parameter>
 
       <parameter name="config_33_4_wo" type="integer" groupName="configuration"
-                 min="0" max="4294967295">
+                 min="-2147483646" max="2147483647">
         <label>33: RGB LED color testing</label>
         <description><![CDATA[
 Set the RGB LED color value for testing.<br /> <h1>Overview</h1><p>Value1: Reserved</p> <p>Value2: Red value</p> <p>Value3: Green value</p> <p>Value4: Blue value</p>
@@ -150,7 +150,7 @@ Configure the state of the LED<br /> <h1>Overview</h1><p>Configure the state of 
       </parameter>
 
       <parameter name="config_83_3" type="integer" groupName="configuration"
-                 min="0" max="16777215">
+                 min="-8388606" max="8388607">
         <label>83: Color in night light mode</label>
         <default>0</default>
         <advanced>true</advanced>
@@ -188,7 +188,7 @@ Configure the RGB value when it is in Night light mode<br /> <h1>Overview</h1><p
       </parameter>
 
       <parameter name="config_84_3" type="integer" groupName="configuration"
-                 min="0" max="16777215">
+                 min="-8388606" max="8388607">
         <label>84: Color in energy mode</label>
         <default>0</default>
         <advanced>true</advanced>
@@ -235,7 +235,7 @@ Enables/disables parameter 91 and 92<br /> <h1>Overview</h1><p>Enables/disables 
       </parameter>
 
       <parameter name="config_91_2" type="integer" groupName="configuration"
-                 min="0" max="60000">
+                 min="-32767" max="32768">
         <label>91: Wattage Threshold</label>
         <description><![CDATA[
 minimum change in wattage to trigger<br /> <h1>Overview</h1><p>The value here represents minimum change in wattage (in<br />terms of wattage) for a REPORT to be sent (Valid values 0-<br />60000).</p>

@@ -103,7 +103,7 @@ Motion Sensor<br /> <h1>Overview</h1><p>Motion sensor is a universal Z-Wave Sens
       </parameter>
 
       <parameter name="config_18_2" type="integer" groupName="configuration"
-                 min="0" max="65535">
+                 min="-32767" max="32768">
         <label>18: Motion Alarm Cancellation Delay</label>
         <description><![CDATA[
 Period of time after which Motion alarm will be cancelled.<br /> <h1>Overview</h1><p>The Motion alarm will be cancelled in the main controller and the associated devices after 3 seconds, the alarm cancellation can be delay by this parameter. Any motion detected during the cancellation delay time countdown will result in the countdown being restarted.</p>

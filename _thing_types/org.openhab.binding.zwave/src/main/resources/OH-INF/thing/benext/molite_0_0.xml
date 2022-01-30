@@ -71,7 +71,7 @@ Movement sensor with temperature and light sensor<br /> <h1>Overview</h1><p>Basi
 
       <!-- PARAMETER DEFINITIONS -->
       <parameter name="config_1_1" type="integer" groupName="configuration"
-                 min="0" max="255">
+                 min="-127" max="128">
         <label>1: Reset to factory settings</label>
         <description>Set all configuration values to default values (factory settings).</description>
         <default>0</default>
@@ -119,7 +119,7 @@ Switch off time<br /> <h1>Overview</h1><p>The switch off time will start running
       </parameter>
 
       <parameter name="config_6_2" type="integer" groupName="configuration"
-                 min="0" max="65535">
+                 min="-32767" max="32768">
         <label>6: The temperature offset</label>
         <description>An offset for the temperature.</description>
         <default>0</default>

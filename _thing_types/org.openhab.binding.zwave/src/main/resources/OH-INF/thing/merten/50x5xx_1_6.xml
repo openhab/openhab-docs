@@ -77,7 +77,7 @@ Roller shutter push-button<br /> <h1>Overview</h1><p>The roller shutter push-but
 
       <!-- PARAMETER DEFINITIONS -->
       <parameter name="config_176_1" type="integer" groupName="configuration"
-                 min="0" max="255">
+                 min="-127" max="128">
         <label>176: Changeover delay (motor protection)</label>
         <description><![CDATA[
 Changeover delay (motor protection)<br /> <h1>Overview</h1><p>Allowed values: 0-255</p> <p>Changeover delay =  Input * 0.1s</p>
@@ -86,7 +86,7 @@ Changeover delay (motor protection)<br /> <h1>Overview</h1><p>Allowed values: 0-
       </parameter>
 
       <parameter name="config_177_1" type="integer" groupName="configuration"
-                 min="0" max="255">
+                 min="-127" max="128">
         <label>177: Raising time (Input 1)</label>
         <description><![CDATA[
 Raising time (Input 1)<br /> <h1>Overview</h1><p>Allowed values: 0-255</p> <p>Raising time = (256 * Input 1 + Input 2) * 0.1s</p>
@@ -104,7 +104,7 @@ Raising time (Input 2)<br /> <h1>Overview</h1><p>Allowed values: 0-255</p> <p>Ra
       </parameter>
 
       <parameter name="config_179_1" type="integer" groupName="configuration"
-                 min="0" max="255">
+                 min="-127" max="128">
         <label>179: Lowering time (input 1)</label>
         <description><![CDATA[
 Lowering time (Input 1)<br /> <h1>Overview</h1><p>Allowed values: 0-255</p> <p>Lowering time = (256 * Input 1 + Input 2) * 0.1s</p>
@@ -113,7 +113,7 @@ Lowering time (Input 1)<br /> <h1>Overview</h1><p>Allowed values: 0-255</p> <p>L
       </parameter>
 
       <parameter name="config_180_1" type="integer" groupName="configuration"
-                 min="0" max="255">
+                 min="-127" max="128">
         <label>180: Lowering time (Input 2)</label>
         <description><![CDATA[
 Lowering time (Input 2)<br /> <h1>Overview</h1><p>Allowed values: 0-255</p> <p>Lowering time = (256 * Input 1 + Input 2) * 0.1s</p>
@@ -134,7 +134,7 @@ Lowering time (Input 2)<br /> <h1>Overview</h1><p>Allowed values: 0-255</p> <p>L
       </parameter>
 
       <parameter name="config_182_1" type="integer" groupName="configuration"
-                 min="0" max="255">
+                 min="-127" max="128">
         <label>182: Brightness threshold</label>
         <description><![CDATA[
 Brightness threshold<br /> <h1>Overview</h1><p>Allowed values: 0-255</p>
@@ -143,7 +143,7 @@ Brightness threshold<br /> <h1>Overview</h1><p>Allowed values: 0-255</p>
       </parameter>
 
       <parameter name="config_183_1" type="integer" groupName="configuration"
-                 min="0" max="255">
+                 min="-127" max="128">
         <label>183: Reaction threshold for raising shutter (Input 1)</label>
         <description><![CDATA[
 Reaction threshold for raising shutter (Input 1)<br /> <h1>Overview</h1><p>Allowed values: 0-255</p> <p>(256 * Input 1 + input 2) * 0.1s</p>
@@ -152,7 +152,7 @@ Reaction threshold for raising shutter (Input 1)<br /> <h1>Overview</h1><p>Allow
       </parameter>
 
       <parameter name="config_184_1" type="integer" groupName="configuration"
-                 min="0" max="255">
+                 min="-127" max="128">
         <label>184: Reaction threshold for raising shutter (Input 2)</label>
         <description><![CDATA[
 Reaction threshold for raising shutter (Input 2)<br /> <h1>Overview</h1><p>Allowed values: 0-255</p> <p>(256 * Input 1 + input 2) * 0.1s</p>
@@ -161,7 +161,7 @@ Reaction threshold for raising shutter (Input 2)<br /> <h1>Overview</h1><p>Allow
       </parameter>
 
       <parameter name="config_185_1" type="integer" groupName="configuration"
-                 min="0" max="255">
+                 min="-127" max="128">
         <label>185: Reaction threshold for lowering shutter (Input 1)</label>
         <description><![CDATA[
 Reaction threshold for lowering shutter (Input 1)<br /> <h1>Overview</h1><p>Allowed values: 0-255</p> <p>(256 * Input 1 + input 2) * 0.1s</p>
@@ -170,7 +170,7 @@ Reaction threshold for lowering shutter (Input 1)<br /> <h1>Overview</h1><p>Allo
       </parameter>
 
       <parameter name="config_186_1" type="integer" groupName="configuration"
-                 min="0" max="255">
+                 min="-127" max="128">
         <label>186: Reaction threshold for lowering shutter (Input 2)</label>
         <description><![CDATA[
 Reaction threshold for lowering shutter (Input 2)<br /> <h1>Overview</h1><p>Allowed values: 0-255</p> <p>(256 * Input 1 + input 2) * 0.1s</p>

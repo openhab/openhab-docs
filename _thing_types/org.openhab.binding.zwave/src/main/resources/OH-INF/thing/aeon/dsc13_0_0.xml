@@ -78,7 +78,7 @@ Micro Smart Energy Illuminator<br /> <h1>Overview</h1><p>The Aeon Labs Micro SEI
       </parameter>
 
       <parameter name="config_2_2" type="integer" groupName="configuration"
-                 min="0" max="65535">
+                 min="-32767" max="32768">
         <label>2: Blinking Behavior</label>
         <description><![CDATA[
 See overview<br /> <h1>Overview</h1><p>The LSB defines the total time the device need to blink. The value if set in seconds. The MSB defines the on/off interval of the blinking. The unit is 0.1 s.</p>

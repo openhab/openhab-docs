@@ -378,7 +378,7 @@ Temperature Reporting Filter (upper bound)<br /> <h1>Overview</h1><p>0-124ºF (u
       </parameter>
 
       <parameter name="config_14_1" type="integer" groupName="configuration" readOnly="true"
-                 min="1" max="255">
+                 min="-127" max="128">
         <label>14: Save Energy Mode Type</label>
         <description><![CDATA[
 Save Energy Mode Type<br /> <h1>Overview</h1><p>1=Adjust by target delta, </p> <p>2=Least consuming point in the running program, </p> <p>3=Save energy absolute setpoint, </p> <p>255=Save Energy not supported</p>

@@ -185,7 +185,7 @@ LED Backlit brightness level<br /> <h1>Overview</h1><p>0 - LED disabled </p> <
       </parameter>
 
       <parameter name="config_12_1" type="integer" groupName="configuration"
-                 min="0" max="255">
+                 min="-127" max="128">
         <label>12: Reporting interval for dimming level</label>
         <description>Reporting interval for dimming level</description>
         <default>10</default>
@@ -217,7 +217,7 @@ LED Backlit brightness level<br /> <h1>Overview</h1><p>0 - LED disabled </p> <
       </parameter>
 
       <parameter name="config_16_1" type="integer" groupName="configuration"
-                 min="0" max="255">
+                 min="-127" max="128">
         <label>16: Energy meter reporting interval</label>
         <description>Energy meter reporting interval</description>
         <default>16</default>
@@ -241,7 +241,7 @@ LED Backlit brightness level<br /> <h1>Overview</h1><p>0 - LED disabled </p> <
       </parameter>
 
       <parameter name="config_33_2" type="integer" groupName="configuration"
-                 min="0" max="65535">
+                 min="-32767" max="32768">
         <label>33: Voltage alarm threshold</label>
         <description>Voltage alarm threshold</description>
         <default>0</default>
@@ -249,8 +249,9 @@ LED Backlit brightness level<br /> <h1>Overview</h1><p>0 - LED disabled </p> <
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->
-      <parameter name="group_1" type="text" groupName="association">
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
         <label>1: Lifeline</label>
+        <multipleLimit>1</multipleLimit>
       </parameter>
 
       <parameter name="group_2" type="text" groupName="association" multiple="true">

@@ -59,7 +59,7 @@ Dome Battery powered Z-Wave Plus enabled mousetrap<br /> <h1>Overview</h1><p>The
 
       <!-- PARAMETER DEFINITIONS -->
       <parameter name="config_1_1" type="integer" groupName="configuration"
-                 min="0" max="255">
+                 min="-127" max="128">
         <label>1: BASIC_SET Level</label>
         <description><![CDATA[
 Sets the value sent by the BASIC_SET command to Association Group 2<br /> <h1>Overview</h1><p>This parameter sets the value sent by the BASIC_SET command to Association Group 2 (for more information, see “Assocation Groups”.)</p> <p>00 (0/Turn Off Device)</p> <p>01 ~ 63 (0-99)</p> <p>FF (255/Turn On Device)</p>
@@ -105,7 +105,7 @@ Enables or disables the indicator LED alarm when the trap is tripped<br /> <h1>O
       </parameter>
 
       <parameter name="config_5_1" type="integer" groupName="configuration"
-                 min="0" max="255">
+                 min="-127" max="128">
         <label>5: LED Alarm Duration</label>
         <description><![CDATA[
 Sets the amount of time the LED Indicator blinks after the trap is tripped<br /> <h1>Overview</h1><p>This parameter sets the amount of time the LED Indicator blinks after the trap is tripped.</p> <p>00 (LED Alarm Blinks Until Trap is Cleared)</p> <p>01~FF (1~255 in Hours)</p>

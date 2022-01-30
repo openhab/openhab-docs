@@ -65,8 +65,9 @@ Door/Window Sensor<br /> <h1>Overview</h1><p>The door/window sensor PSM08 has do
       </parameter-group>
 
       <!-- ASSOCIATION DEFINITIONS -->
-      <parameter name="group_1" type="text" groupName="association">
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
         <label>1: Lifeline</label>
+        <multipleLimit>1</multipleLimit>
       </parameter>
 
       <!-- STATIC DEFINITIONS -->

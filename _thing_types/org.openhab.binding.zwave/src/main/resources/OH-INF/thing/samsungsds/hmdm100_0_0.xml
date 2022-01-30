@@ -73,7 +73,7 @@ Doorlock Control Module for Samsung Locks<br /> <h1>Overview</h1><p>Chip Insert 
       </parameter>
 
       <parameter name="config_3_1" type="integer" groupName="configuration" readOnly="true"
-                 min="1" max="130">
+                 min="-127" max="128">
         <label>3: Registered User ID</label>
         <description><![CDATA[
 The number of registered user codes.2<br /> <h1>Overview</h1><p>The number of registered user codes.</p> <p>This parameter is supported to ‘Configuration Get Command’ only.</p>

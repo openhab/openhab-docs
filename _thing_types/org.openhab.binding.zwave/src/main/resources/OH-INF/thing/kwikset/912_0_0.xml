@@ -115,7 +115,7 @@ SKU (length = 8 bytes)<br /> <h1>Overview</h1><h1>Configuration Parameter 33 and
       </parameter>
 
       <parameter name="config_35_2" type="integer" groupName="configuration"
-                 min="0" max="65535">
+                 min="-32767" max="32768">
         <label>35: Lock Type</label>
         <description><![CDATA[
 Report the Unique ID of the lock type<br /> <h1>Overview</h1><p>The configuration Parameter 35 is used as read-only to report the Unique ID of the lock type.</p> <p>Released Board ID Unique ID</p> <p>910 Z-Wave (Legacy, FW 3.4) 0x00 0x00</p> <p>912 Z-Wave (Legacy, FW 3.2) 0x00 0x00</p> <p>910 Z-Wave 0x02 0x36</p> <p>912 Z-Wave 0x03 0x36</p> <p>914 Z-Wave 0x04 0x36</p> <p>916 Z-Wave 0x06 0x42</p>
@@ -138,11 +138,12 @@ Reset Lock to Factory Default<br /> <h1>Overview</h1><p>The configuration Parame
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->
-      <parameter name="group_1" type="text" groupName="association">
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
         <label>1: Lifeline</label>
         <description><![CDATA[
 <br /> <h1>Overview</h1><p>Z-Wave Plus Lifeline Supports the following types of unsolicited messages: Battery Report - sends periodic battery reports containing the battery percentage. Door Lock Operation Report - upon power up, this message will be sent to allow the controller to sync up with the current lock status. Notification Report - many notification types will be sent for status and alarms. The following notification types are supported: Access Control (V2), Home Security (V2), and Power Management (V2). Device Reset Locally Notification - this message will be sent to notify the smart home controller that the lock is resetting back to factory defaults and will be leaving the network.</p>
         ]]></description>
+        <multipleLimit>1</multipleLimit>
       </parameter>
 
       <parameter name="group_2" type="text" groupName="association" multiple="true">

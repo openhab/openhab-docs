@@ -149,7 +149,7 @@ Temperature Report threshold<br /> <h1>Overview</h1><p>Range is from 0.1 to 10°
       </parameter>
 
       <parameter name="config_10_1" type="integer" groupName="configuration"
-                 min="0" max="255">
+                 min="-127" max="128">
         <label>10: Number of LED flashes (duration)</label>
         <description>0 to 255</description>
         <default>5</default>

@@ -211,7 +211,7 @@ Whether thermostat uses intelligence to try and make the best of energy usage.<b
       </parameter>
 
       <parameter name="config_12_1" type="integer" groupName="configuration"
-                 min="10" max="240">
+                 min="-127" max="128">
         <label>12: Fan Circulation Period</label>
         <description>Fan Circulation Period (in min)</description>
         <default>20</default>
@@ -292,7 +292,7 @@ Lock out physical thermostat controls.<br /> <h1>Overview</h1><p>0 - Disabled (D
       </parameter>
 
       <parameter name="config_21_1" type="integer" groupName="configuration"
-                 min="10" max="240">
+                 min="-127" max="128">
         <label>21: Demand Response Period</label>
         <description>Demand Response Period (in min)</description>
         <default>10</default>

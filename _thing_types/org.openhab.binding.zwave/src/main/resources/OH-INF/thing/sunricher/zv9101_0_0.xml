@@ -116,7 +116,7 @@ Choose a cool light stage mode<br /> <h1>Overview</h1><p>Parameter number 5 defi
       </parameter>
 
       <parameter name="config_6_1" type="integer" groupName="configuration"
-                 min="0" max="255">
+                 min="-127" max="128">
         <label>6: Stage mode speed</label>
         <description><![CDATA[
 Speed of stage mode<br /> <h1>Overview</h1><p>Parameter number 6 defines the speed of stage mode:</p> <p>Value 0-0xFF configurable, 0 is the slowest, 255 is the fastest.</p>
@@ -126,7 +126,7 @@ Speed of stage mode<br /> <h1>Overview</h1><p>Parameter number 6 defines the spe
       </parameter>
 
       <parameter name="config_7_1" type="integer" groupName="configuration"
-                 min="0" max="255">
+                 min="-127" max="128">
         <label>7: Stage Mode Execution</label>
         <description><![CDATA[
 Execution times of stage mode<br /> <h1>Overview</h1><p>Parameter number 7 defines execution times of stage mode:</p> <p>Value 0 is unlimited times.</p> <p>Value 1~0xFF is 1~255 times.</p>
@@ -136,7 +136,7 @@ Execution times of stage mode<br /> <h1>Overview</h1><p>Parameter number 7 defin
       </parameter>
 
       <parameter name="config_8_1" type="integer" groupName="configuration"
-                 min="0" max="255">
+                 min="-127" max="128">
         <label>8: Stage Mode Hue</label>
         <description><![CDATA[
 The hue of stage mode<br /> <h1>Overview</h1><p>Parameter number 8 defines the hue of stage mode:</p> <p>Value 0~0xFF is hue 0~255.</p>

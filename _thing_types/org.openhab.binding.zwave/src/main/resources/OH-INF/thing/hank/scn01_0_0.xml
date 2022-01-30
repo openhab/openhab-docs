@@ -53,7 +53,7 @@ One-key Scene Controller<br /> <h1>Overview</h1><p>The Scene Controller is a sla
 
       <!-- PARAMETER DEFINITIONS -->
       <parameter name="config_42_1" type="integer" groupName="configuration"
-                 min="0" max="255">
+                 min="-127" max="128">
         <label>42: Duration</label>
         <description><![CDATA[
 Set the duration value of the sent commands<br /> <h1>Overview</h1><p>Setting the duration value of the sent commands, switch multilevel Set and switch multilevel start level change.</p>

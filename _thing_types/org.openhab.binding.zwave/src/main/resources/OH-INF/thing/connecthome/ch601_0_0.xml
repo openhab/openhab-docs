@@ -61,7 +61,7 @@ Selecting the operating mode<br /> <h1>Overview</h1><p>Parameter value = 0 (OPER
       </parameter>
 
       <parameter name="config_2_2" type="integer" groupName="configuration"
-                 min="0" max="65000">
+                 min="-32767" max="32768">
         <label>2: Auto Disabling With Delay</label>
         <description><![CDATA[
 After opening, the tap will automatically close after a certain time.<br /> <h1>Overview</h1><p>After opening, the valve will automatically close after a certain time. Auto-disable does not work when "0" is selected in the parameter. The units used in the parameter are: 1 - 65000 (1 = 1sec)</p>

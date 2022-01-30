@@ -72,7 +72,7 @@ Double relay Switch 2x1.7kW<br /> <h1>Overview</h1><p>https://defaro.ru/index.ph
       </parameter>
 
       <parameter name="config_2_2" type="integer" groupName="configuration"
-                 min="0" max="65000">
+                 min="-32767" max="32768">
         <label>2: Relay closed interval</label>
         <description><![CDATA[
 For blink mode for both S1 and S2<br /> <h1>Overview</h1><p>Sets relays ON state time in 1/10 of second, if Parameter 1 or 10 set to 3</p>
@@ -82,7 +82,7 @@ For blink mode for both S1 and S2<br /> <h1>Overview</h1><p>Sets relays ON state
       </parameter>
 
       <parameter name="config_3_2" type="integer" groupName="configuration"
-                 min="0" max="65000">
+                 min="-32767" max="32768">
         <label>3: Relay open interval</label>
         <description><![CDATA[
 For blink mode for both S1 and S2<br /> <h1>Overview</h1><p>Sets relays OFF state time in 1/10 of second, if Parameter 1 or 10 set to 3</p>
@@ -92,7 +92,7 @@ For blink mode for both S1 and S2<br /> <h1>Overview</h1><p>Sets relays OFF stat
       </parameter>
 
       <parameter name="config_4_2" type="integer" groupName="configuration"
-                 min="0" max="65000">
+                 min="-32767" max="32768">
         <label>4: S1 auto off delay</label>
         <description><![CDATA[
 Sets auto off delay for S1<br /> <h1>Overview</h1><p>Sets delay after which switch S1 will turn off in 1/10 sec. (0 - disable)</p>
@@ -104,7 +104,7 @@ Sets auto off delay for S1<br /> <h1>Overview</h1><p>Sets delay after which swit
       </parameter>
 
       <parameter name="config_5_2" type="integer" groupName="configuration"
-                 min="0" max="65000">
+                 min="-32767" max="32768">
         <label>5: S1 On delay</label>
         <description><![CDATA[
 Delay after ON command received<br /> <h1>Overview</h1><p>Sets time after which switch S1 will turn on after receiving ON command in 1/10 sec. (0 - disable feature)</p>
@@ -116,7 +116,7 @@ Delay after ON command received<br /> <h1>Overview</h1><p>Sets time after which 
       </parameter>
 
       <parameter name="config_6_2" type="integer" groupName="configuration"
-                 min="0" max="65000">
+                 min="-32767" max="32768">
         <label>6: S1 smart delay</label>
         <description><![CDATA[
 Smart off delay for S1<br /> <h1>Overview</h1><p>Sets time after which switch S1 will turn off after receiving OFF command in 1/10 sec.</p> <p>Events to which this delay is applicable set in Parameter 18.</p> <p>(0 - disable feature)</p>
@@ -165,7 +165,7 @@ Relay S2 mode of operation<br /> <h1>Overview</h1><p>Sets S2 mode of operation:<
       </parameter>
 
       <parameter name="config_11_2" type="integer" groupName="configuration"
-                 min="0" max="65000">
+                 min="-32767" max="32768">
         <label>11: S2 auto off time</label>
         <description><![CDATA[
 Sets auto off time for S2<br /> <h1>Overview</h1><p>Sets time after which switch S2 will turn off in 1/10 sec. (0 - disable)</p>
@@ -177,7 +177,7 @@ Sets auto off time for S2<br /> <h1>Overview</h1><p>Sets time after which switch
       </parameter>
 
       <parameter name="config_12_2" type="integer" groupName="configuration"
-                 min="0" max="65000">
+                 min="-32767" max="32768">
         <label>12: S2 turn on delay</label>
         <description><![CDATA[
 Sets turn on delay for S2<br /> <h1>Overview</h1><p>Sets delay after which switch S1 will turn on after receiving ON command in 1/10 sec. (0 - disable)</p>
@@ -189,7 +189,7 @@ Sets turn on delay for S2<br /> <h1>Overview</h1><p>Sets delay after which switc
       </parameter>
 
       <parameter name="config_13_2" type="integer" groupName="configuration"
-                 min="0" max="65000">
+                 min="-32767" max="32768">
         <label>13: S2 smart delay</label>
         <description><![CDATA[
 Smart delay for S2<br /> <h1>Overview</h1><p>Sets smart delay for S2 in 1/10sec (see Parameters 2,3,6 for description) (0-disable)</p>

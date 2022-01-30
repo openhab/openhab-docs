@@ -91,7 +91,7 @@ On/Off Command Dim Step<br /> <h1>Overview</h1><p>Indicates how many levels the 
       </parameter>
 
       <parameter name="config_8_1" type="integer" groupName="configuration"
-                 min="1" max="255">
+                 min="-127" max="128">
         <label>8: On/Off Command Dim Rate</label>
         <description><![CDATA[
 On/Off Command Dim Rate<br /> <h1>Overview</h1><p>This value indicates in 10 millisecond resolution This sets how often the dim level will change.</p> <p>For example, if you set this parameter to 1, then every 10ms the dim level will change.</p> <p>If you set it to 255, then every 2.55 seconds the dim level will change.</p>
@@ -111,7 +111,7 @@ Local Control Dim Step<br /> <h1>Overview</h1><p>Indicates how many levels the d
       </parameter>
 
       <parameter name="config_10_1" type="integer" groupName="configuration"
-                 min="1" max="255">
+                 min="-127" max="128">
         <label>10: Local Control Dim Rate</label>
         <description><![CDATA[
 Local Control Dim Rate<br /> <h1>Overview</h1><p>This value indicates in 10 millisecond resolution. This sets how often the dim level will change.</p> <p>For example, if you set this parameter to 1, then every 10ms the dim level will change.</p> <p>If you set it to 255, then every 2.55 seconds the dim level will change.</p>
@@ -131,7 +131,7 @@ ALL ON/ALL OFF Dim Step<br /> <h1>Overview</h1><p>Indicates how many levels the 
       </parameter>
 
       <parameter name="config_12_1" type="integer" groupName="configuration"
-                 min="1" max="255">
+                 min="-127" max="128">
         <label>12: ALL ON/ALL OFF Dim Rate</label>
         <description><![CDATA[
 ALL ON/ALL OFF Dim Rate<br /> <h1>Overview</h1><p>This value indicates in 10 millisecond resolution. This sets how often the dim level will change.</p> <p>For example, if you set this parameter to 1, then every 10ms the dim level will change.</p> <p>If you set it to 255, then every 2.55 seconds the dim level will change. </p>

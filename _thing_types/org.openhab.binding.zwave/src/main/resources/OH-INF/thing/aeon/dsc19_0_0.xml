@@ -85,7 +85,7 @@ Micro Smart Energy Illuminator G2<br /> <h1>Overview</h1><p>The Aeon Labs Micro 
 
       <!-- PARAMETER DEFINITIONS -->
       <parameter name="config_2_2" type="integer" groupName="configuration"
-                 min="0" max="65535">
+                 min="-32767" max="32768">
         <label>2: Make Micro Smart Dimmer 2nd Edition Blink</label>
         <description><![CDATA[
 The LSB defines the total time the device need to blink.<br /> <h1>Overview</h1><p>This is a double byte value. The LSB defines the total time the device need to blink. The value if set in seconds. The MSB defines the on/off interval of the blinking. The unit is 0.1 s.</p>
@@ -106,7 +106,7 @@ The LSB defines the total time the device need to blink.<br /> <h1>Overview</h1>
       </parameter>
 
       <parameter name="config_13_1" type="integer" groupName="configuration"
-                 min="0" max="255">
+                 min="-127" max="128">
         <label>13: Enable/Disable CRC16 encapsulation</label>
         <description>Parameter to Enable/Disable CRC16 encapsulation</description>
         <default>0</default>
@@ -141,7 +141,7 @@ Automated sending of a Report triggered by minimal change of value.<br /> <h1>Ov
       </parameter>
 
       <parameter name="config_91_2" type="integer" groupName="configuration"
-                 min="0" max="65535">
+                 min="-32767" max="32768">
         <label>91: Minimum Change to send Report (Watt)</label>
         <description>The value represents the minimum change in Wattage for a Report to be sent.</description>
         <default>25</default>
@@ -149,7 +149,7 @@ Automated sending of a Report triggered by minimal change of value.<br /> <h1>Ov
       </parameter>
 
       <parameter name="config_92_1" type="integer" groupName="configuration"
-                 min="0" max="255">
+                 min="-127" max="128">
         <label>92: Minimum Change to send Report (%)</label>
         <description><![CDATA[
 The minimum change in Watage Percent for a report to be sent.<br /> <h1>Overview</h1><p>The value represents the minimum change in Watage Percent for a report to be sent.</p>

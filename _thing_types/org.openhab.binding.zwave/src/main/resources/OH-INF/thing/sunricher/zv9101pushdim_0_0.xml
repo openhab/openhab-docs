@@ -79,7 +79,7 @@ basic report to the Lifeline when the load state changed<br /> <h1>Overview</h1>
       </parameter>
 
       <parameter name="config_4_1" type="integer" groupName="configuration"
-                 min="0" max="255">
+                 min="-127" max="128">
         <label>4: Default fade time</label>
         <description><![CDATA[
 Default fade time (unit is second)<br /> <h1>Overview</h1><p>Default fade time (unit is second, this value has the same function as Duration of Multilevel) Valid value: 0x00 - 0xFF</p> <table><tr><td>Value</td> <td>Description</td> </tr><tr><td>0-127</td> <td>1 second to 127 seconds in 1 second resolution</td> </tr><tr><td>128-254</td> <td>1 minute to 127 minutes in 1 minute resolution</td> </tr><tr><td>255</td> <td>Factory default duration. (1 sec.)</td> </tr></table>
@@ -117,11 +117,12 @@ Enable/disable external switch to be added to and removed from a network<br /> <
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->
-      <parameter name="group_1" type="text" groupName="association">
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
         <label>1: Lifeline</label>
         <description><![CDATA[
 Emergency Shutoff<br /> <h1>Overview</h1><p>The dimmer has accounted for Emergency Shutoff, when the temperature rises above 90°C, Emergency Shutoff is sent to Lifeline.</p> <p>System (0x09) Emergency Shutoff status</p>
         ]]></description>
+        <multipleLimit>1</multipleLimit>
       </parameter>
 
       <!-- STATIC DEFINITIONS -->

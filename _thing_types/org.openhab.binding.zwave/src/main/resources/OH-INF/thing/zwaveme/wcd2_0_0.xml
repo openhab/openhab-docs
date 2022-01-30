@@ -148,7 +148,7 @@ Action on group 4<br /> <h1>Overview</h1><ul><li>In Switch On/Off only mode On c
       </parameter>
 
       <parameter name="config_20_1" type="integer" groupName="configuration"
-                 min="0" max="255">
+                 min="-127" max="128">
         <label>20: Typical click timeout</label>
         <description>Typical time used to differentiate click, hold and double clicks in 10ms units</description>
         <default>50</default>

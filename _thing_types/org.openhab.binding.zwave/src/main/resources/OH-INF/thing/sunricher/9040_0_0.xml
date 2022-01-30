@@ -244,7 +244,7 @@ Over Current Protection<br /> <h1>Overview</h1><p>Over 1.5A for 20 seconds conti
       </parameter>
 
       <parameter name="config_21_1" type="integer" groupName="configuration"
-                 min="5" max="2678400">
+                 min="-127" max="128">
         <label>21: Power Metering Cycle</label>
         <description><![CDATA[
 Power Metering Cycle<br /> <h1>Overview</h1><p>Default 600 is 10 minutes</p>

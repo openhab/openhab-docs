@@ -157,7 +157,7 @@ Group 3 report variables to send<br /> <h1>Overview</h1><p>Value is the sum of t
       </parameter>
 
       <parameter name="config_250_2" type="integer" groupName="configuration"
-                 min="0" max="65535">
+                 min="-32767" max="32768">
         <label>250: CHECK AND DELETE ME formerly parameter 2</label>
         <description><![CDATA[
 CHECK AND DELETE ME formerly parameter 2<br /> <h1>Overview</h1><p>This is a double byte value. The LSB defines the total time the device need to blink. The value if set in seconds. The MSB defines the on/off interval of the blinking. The unit is 0.1 s.</p> <p>CHECK ME!</p> <p>CHECK ME!</p> <p>CHECK ME!</p> <p>CHECK ME!</p> <p>(did I do this right for parameter 2?)</p>
@@ -177,7 +177,7 @@ CHECK AND DELETE ME formerly parameter 2<br /> <h1>Overview</h1><p>This is a dou
       </parameter>
 
       <parameter name="config_254_2" type="integer" groupName="configuration"
-                 min="0" max="65535">
+                 min="-32767" max="32768">
         <label>254: Device Tag</label>
         <default>0</default>
         <limitToOptions>false</limitToOptions>

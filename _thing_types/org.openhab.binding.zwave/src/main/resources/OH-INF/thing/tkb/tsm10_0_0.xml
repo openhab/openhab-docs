@@ -63,7 +63,7 @@ Delay before turning light off again.<br /> <h1>Overview</h1><p>After turn on li
       </parameter>
 
       <parameter name="config_2_1" type="integer" groupName="configuration"
-                 min="1" max="255">
+                 min="-127" max="128">
         <label>2: Basic Set Level</label>
         <description><![CDATA[
 Lights on, or dimmer setting.<br /> <h1>Overview</h1><p>Setting the BASIC command value to turn on the light. The 255 means turn on the light. For dimmer equipment 1 to 99 means the light strength.</p>
@@ -74,7 +74,7 @@ Lights on, or dimmer setting.<br /> <h1>Overview</h1><p>Setting the BASIC comman
       </parameter>
 
       <parameter name="config_3_1" type="integer" groupName="configuration"
-                 min="1" max="168">
+                 min="-127" max="128">
         <label>3: Wake up interval</label>
         <description><![CDATA[
 Interval between wake up and auto report.<br /> <h1>Overview</h1><p>The interval time between waking up. 1 hour per tick and minimum time is 1 hour, default tick is 12 (12 hours). Maximum time is 168 hours (7 days).</p>

@@ -225,7 +225,7 @@ Interval between 2 tones for EP3 (Doorbell 1)<br /> <h1>Overview</h1><h1>Interva
       </parameter>
 
       <parameter name="config_3_4_00FF0000" type="integer" groupName="configuration"
-                 min="0" max="4294967295">
+                 min="-2147483646" max="2147483647">
         <label>3: Intercepting duration of a tone EP 3(Doorbell 1)</label>
         <description><![CDATA[
 Intercepting duration of a tone Endpoint 3(Doorbell 1)<br /> <h1>Overview</h1><h1>Intercepting duration of a tone for Endpoint 3(Doorbell 1)</h1> <table><tr><td><strong>Value</strong></td> <td><strong>Description</strong></td> </tr><tr><td>0</td> <td>Keep the original duration of a tone itself, without any interception.</td> </tr><tr><td>1 .. 254</td> <td>1-254 seconds. Intercept the duration of a tone . If the intercepting duration is <strong>shorter</strong> than the original duration of a tone, actual single play time is equal to the intercepting duration. If the intercepting duration is <strong>longer</strong> than the original duration of a tone, actual single play time is equal to the original duration.</td> </tr><tr><td>255</td> <td>Use the last valid configuration value.</td> </tr></table>

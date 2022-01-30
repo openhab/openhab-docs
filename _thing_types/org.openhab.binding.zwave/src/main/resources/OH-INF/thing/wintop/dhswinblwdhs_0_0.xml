@@ -138,7 +138,7 @@ Set number and type of directly connected buttons<br /> <h1>Overview</h1><ul><li
       </parameter>
 
       <parameter name="config_10_1" type="integer" groupName="configuration"
-                 min="0" max="255">
+                 min="-127" max="128">
         <label>10: Full close time</label>
         <description><![CDATA[
 Time to go from opened to closed state<br /> <h1>Overview</h1><p>Time to go from opened to closed state. Used to estimate the current level. Note that in Permanent motion mode the reported value would be Closed or Opened, while all Basic and Multilevel Set values (1-99, 255) would Open except 0 value that would Close</p>
@@ -147,7 +147,7 @@ Time to go from opened to closed state<br /> <h1>Overview</h1><p>Time to go from
       </parameter>
 
       <parameter name="config_11_1" type="integer" groupName="configuration"
-                 min="0" max="255">
+                 min="-127" max="128">
         <label>11: Full open time</label>
         <description><![CDATA[
 Time to go from closed to open state<br /> <h1>Overview</h1><p> Time to go from closed to open state. This value may differ from full close time for some blinds due to gravity. Used to estimate the current level. Note that in Permanent motion mode the reported value would be Closed or Opened, while all Basic and Multilevel Set values (1-99, 255) would Open except 0 value that would Close</p>

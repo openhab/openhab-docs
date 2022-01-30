@@ -93,11 +93,12 @@ Restores state after power failure<br /> <h1>Overview</h1><p>Parameter=6，Size=
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->
-      <parameter name="group_1" type="text" groupName="association">
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
         <label>1: Lifeline</label>
         <description><![CDATA[
 Association group 1<br /> <h1>Overview</h1><p>This Device supports Lifeline (association group 1) supporting 1 node for lifeline communication. Group 1 must be assigned the Node ID of the primary controller where unsolicited notifications will be sent. The Z-Wave controller should set this association automatically after inclusion. Lifeline association only supports the “Device Reset Locally” function. Refer to the instructions of your controller for any available details on how this can be set.</p>
         ]]></description>
+        <multipleLimit>1</multipleLimit>
       </parameter>
 
       <parameter name="group_2" type="text" groupName="association" multiple="true">

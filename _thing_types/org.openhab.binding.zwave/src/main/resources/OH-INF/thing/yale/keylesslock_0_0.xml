@@ -97,7 +97,7 @@ Sets the volume level of the beeps and voice prompts<br /> <h1>Overview</h1><p>1
       </parameter>
 
       <parameter name="config_2_1" type="integer" groupName="configuration"
-                 min="0" max="255">
+                 min="-127" max="128">
         <label>2: Auto Re-lock</label>
         <description><![CDATA[
 When enabled, the unit will automatically re-lock<br /> <h1>Overview</h1><p>0 = Off 255 = On</p>

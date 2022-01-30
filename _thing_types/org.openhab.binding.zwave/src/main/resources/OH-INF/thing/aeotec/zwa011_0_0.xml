@@ -87,7 +87,7 @@ Defines when the LED will indicate events.<br /> <h1>Overview</h1><p>Disabling a
       </parameter>
 
       <parameter name="config_5_1_wo" type="integer" groupName="configuration"
-                 min="0" max="255">
+                 min="-127" max="128">
         <label>5: Range test</label>
         <description><![CDATA[
 Range test<br /> <h1>Overview</h1><p>Z-Wave range test with double click of a Tamper Switch 2.</p>

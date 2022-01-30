@@ -59,7 +59,7 @@ Water Leak XS Sensor<br /> <h1>Overview</h1><p><b>Features</b></p><ul><li>Quick 
 
       <!-- PARAMETER DEFINITIONS -->
       <parameter name="config_1_1" type="integer" groupName="configuration"
-                 min="0" max="255">
+                 min="-127" max="128">
         <label>1: LED Indicator</label>
         <description><![CDATA[
 Turn the LED indicator on (blinking) or off when a water leak is detected.<br /> <h1>Overview</h1><p><br /></p>
@@ -72,7 +72,7 @@ Turn the LED indicator on (blinking) or off when a water leak is detected.<br />
       </parameter>
 
       <parameter name="config_2_1" type="integer" groupName="configuration"
-                 min="0" max="3600">
+                 min="-127" max="128">
         <label>2: Leak Alert Clear Delay</label>
         <description><![CDATA[
 Decide how long the sensor should wait before sending a "dry" report to your hub after water is no longer detected<br /> <h1>Overview</h1><p><b>Values:</b> 0-3600 (seconds)</p><p><b>Default:</b> 0 seconds (no delay)<br /></p><p>0 - reports “dry” to the hub immediately a leak is no longer detected<br /></p>
@@ -102,7 +102,7 @@ Decide when the sensor should report low battery to the hub.<br /> <h1>Overview<
       </parameter>
 
       <parameter name="config_5_1" type="integer" groupName="configuration"
-                 min="0" max="255">
+                 min="-127" max="128">
         <label>5: Basic Set Commands</label>
         <description>Decide if and when the sensor sends Basic Set commands are sent to the hub and Group 2</description>
         <default>1</default>

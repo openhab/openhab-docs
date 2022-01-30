@@ -125,7 +125,7 @@ OFF time<br /> <h1>Overview</h1><p>0x00 forbid manually operation</p><p>0x01 all
       </parameter>
 
       <parameter name="config_5_2" type="integer" groupName="configuration"
-                 min="0" max="65535">
+                 min="-32767" max="32768">
         <label>5: Timing function</label>
         <description><![CDATA[
 Timing function<br /> <h1>Overview</h1><p>0x00 function disabled</p><p>0x0001-0xFFFF 1s-65535s</p>
@@ -135,7 +135,7 @@ Timing function<br /> <h1>Overview</h1><p>0x00 function disabled</p><p>0x0001-0x
       </parameter>
 
       <parameter name="config_6_1" type="integer" groupName="configuration"
-                 min="0" max="255">
+                 min="-127" max="128">
         <label>6: ALL ON/ALL OFF</label>
         <description><![CDATA[
 ALL ON/ALL OFF<br /> <h1>Overview</h1><p>0x00 forbid ALL ON, forbid ALL OFF</p><p>0x01 forbid ALL ON, allow ALL OFF</p><p>0x02 allow ALL ON, forbid ALL OFF</p><p>0xFF(255) allow ALL ON, allow ALL OFF</p>
@@ -145,7 +145,7 @@ ALL ON/ALL OFF<br /> <h1>Overview</h1><p>0x00 forbid ALL ON, forbid ALL OFF</p><
       </parameter>
 
       <parameter name="config_8_1" type="integer" groupName="configuration"
-                 min="0" max="255">
+                 min="-127" max="128">
         <label>8: Operation report from Switchl to Association Group2</label>
         <description><![CDATA[
 Operation report from Switchl to Association Group2<br /> <h1>Overview</h1><p>0x00 report ON/OFF state of Si to AG2</p><p>0x01 only report ON state of S1 to AG2</p><p>0x02 only report OFF state of S1 to AG2 OxFF no report to AG 2</p>
@@ -155,7 +155,7 @@ Operation report from Switchl to Association Group2<br /> <h1>Overview</h1><p>0x
       </parameter>
 
       <parameter name="config_9_1" type="integer" groupName="configuration"
-                 min="1" max="255">
+                 min="-127" max="128">
         <label>9: Switch 2 function</label>
         <description><![CDATA[
 Switch 2 function<br /> <h1>Overview</h1><p>0x01 enable Scene Activation &amp; send Basic ON/OFF to associated devices 0x02 Scene Activation only</p><p>0x03 send Basic ON/OFF only</p><p>0xFF(255) disable S2 Function</p>
@@ -165,7 +165,7 @@ Switch 2 function<br /> <h1>Overview</h1><p>0x01 enable Scene Activation &amp; s
       </parameter>
 
       <parameter name="config_10_1" type="integer" groupName="configuration"
-                 min="0" max="255">
+                 min="-127" max="128">
         <label>10: Operation report from Switch2 to Association Group3</label>
         <description><![CDATA[
 Operation report from Switch2 to Association Group3<br /> <h1>Overview</h1><p>0x00 send Basic ON or Basic OFF to AG3 when turn on/off S2 Ox01 only send Basic ON when turn on S2</p><p>0x02 only send Basic OFF when turn off S2</p><p>0xFF(255) no report to AG 3</p>
@@ -175,7 +175,7 @@ Operation report from Switch2 to Association Group3<br /> <h1>Overview</h1><p>0x
       </parameter>
 
       <parameter name="config_11_1" type="integer" groupName="configuration"
-                 min="0" max="255">
+                 min="-127" max="128">
         <label>11: Scene ID sent to AG1 when one click of S2</label>
         <description><![CDATA[
 Scene ID sent to AG1 when one click of S2<br /> <h1>Overview</h1><p>0 Scene Activation disabled</p><p>1-255 send Activation CC to AG1 with specified Scene ID</p>
@@ -185,7 +185,7 @@ Scene ID sent to AG1 when one click of S2<br /> <h1>Overview</h1><p>0 Scene Acti
       </parameter>
 
       <parameter name="config_12_1" type="integer" groupName="configuration"
-                 min="0" max="255">
+                 min="-127" max="128">
         <label>12: Scene ID sent to AG1 when double click of S2</label>
         <description><![CDATA[
 Scene ID sent to AG1 when double click of S2<br /> <h1>Overview</h1><p>0 Scene Activation disabled</p><p>1-255 send Activation CC to AG1 with specified Scene ID</p>
@@ -195,7 +195,7 @@ Scene ID sent to AG1 when double click of S2<br /> <h1>Overview</h1><p>0 Scene A
       </parameter>
 
       <parameter name="config_13_1" type="integer" groupName="configuration"
-                 min="0" max="255">
+                 min="-127" max="128">
         <label>13: Scene ID sent to AG1 when hold of S2</label>
         <description><![CDATA[
 Scene ID sent to AG1 when hole of S2<br /> <h1>Overview</h1><p>0 Scene Activation disabled</p><p>1-255 send Activation CC to AG1 with specified Scene ID</p>
@@ -214,11 +214,12 @@ Factory setting<br /> <h1>Overview</h1><p>Set parameter ID 0x55 will restore Fac
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->
-      <parameter name="group_1" type="text" groupName="association">
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
         <label>1: Lifeline</label>
         <description><![CDATA[
 <br /> <h1>Overview</h1><p>Used for switching associated devices（switch 1 controlling group 1)<br /></p>
         ]]></description>
+        <multipleLimit>1</multipleLimit>
       </parameter>
 
       <parameter name="group_2" type="text" groupName="association" multiple="true">

@@ -123,7 +123,7 @@ Switch 0 Key Mode<br /> <h1>Overview</h1><p>0: single click to switch on/off sta
       </parameter>
 
       <parameter name="config_6_2" type="integer" groupName="configuration"
-                 min="0" max="65535">
+                 min="-32767" max="32768">
         <label>6: Key timer duration</label>
         <description><![CDATA[
 Key timer duration<br /> <h1>Overview</h1><p>0: infinite (always on, or always off, when pressed)<br />1 ~ 65535: time in seconds until returning to the default state as per Parameter 5</p>
@@ -282,7 +282,7 @@ Key 1 Scene Activate Mode Setting<br /> <h1>Overview</h1><p>0: Scene activate fu
       </parameter>
 
       <parameter name="config_18_1" type="integer" groupName="configuration"
-                 min="0" max="255">
+                 min="-127" max="128">
         <label>18: Key 1 Activate Scene ID</label>
         <description><![CDATA[
 Key 1 Activate Scene ID<br /> <h1>Overview</h1><p>0: Scene ID is invalid and will not send scene activate command (scene disabled)<br />1 ~ 255: Scene ID</p>
@@ -293,7 +293,7 @@ Key 1 Activate Scene ID<br /> <h1>Overview</h1><p>0: Scene ID is invalid and wil
       </parameter>
 
       <parameter name="config_19_1" type="integer" groupName="configuration"
-                 min="0" max="254">
+                 min="-127" max="128">
         <label>19: Key 1 Activate Scene Duration</label>
         <description><![CDATA[
 Key 1 Activate Scene Duration<br /> <h1>Overview</h1><p>0: Instantly<br />1 ~ 127: Specify dimming duration from 1 second (0x01) to 127 seconds (0x7F) in 1-second resolution<br />128 ~ 254: Specify dimming duration from 1 minute (0x80(128)) to 127 minutes (0xFE(254)) in 1-minute resolution</p>
@@ -320,7 +320,7 @@ Key 2 Scene Mode<br /> <h1>Overview</h1><p>0: Scene activate function disabled<b
       </parameter>
 
       <parameter name="config_21_1" type="integer" groupName="configuration"
-                 min="0" max="255">
+                 min="-127" max="128">
         <label>21: Key 2 Activate Scene ID</label>
         <description><![CDATA[
 Key 2 Activate Scene ID<br /> <h1>Overview</h1><p>0: Scene ID is invalid and will not send scene activate command (scene disabled)<br />1 ~ 255: Scene ID</p>
@@ -331,7 +331,7 @@ Key 2 Activate Scene ID<br /> <h1>Overview</h1><p>0: Scene ID is invalid and wil
       </parameter>
 
       <parameter name="config_22_1" type="integer" groupName="configuration"
-                 min="0" max="254">
+                 min="-127" max="128">
         <label>22: Key 2 Activate Scene Duration</label>
         <description><![CDATA[
 Key 2 Activate Scene Duration<br /> <h1>Overview</h1><p>0: Instantly<br />1 ~ 127: Specify dimming duration from 1 second (0x01) to 127 seconds (0x7F) in 1-second resolution<br />128 ~ 254: Specify dimming duration from 1 minute (0x80(128)) to 127 minutes (0xFE(254)) in 1-minute resolution</p>
@@ -358,7 +358,7 @@ Key 3 Scene Mode<br /> <h1>Overview</h1><p><strong>INACTIVE:</strong> This is in
       </parameter>
 
       <parameter name="config_24_1" type="integer" groupName="configuration" readOnly="true"
-                 min="0" max="255">
+                 min="-127" max="128">
         <label>24: Key 3 Activate Scene ID</label>
         <description><![CDATA[
 Key 3 Activate Scene ID<br /> <h1>Overview</h1><p><strong>INACTIVE:</strong> This is included in the firmware but only functions on the MH-S513 which has three buttons</p> <p>0: Scene ID is invalid and will not send scene activate command (scene disabled)<br />1 ~ 255: Scene ID</p>
@@ -369,7 +369,7 @@ Key 3 Activate Scene ID<br /> <h1>Overview</h1><p><strong>INACTIVE:</strong> Thi
       </parameter>
 
       <parameter name="config_25_1" type="integer" groupName="configuration" readOnly="true"
-                 min="0" max="254">
+                 min="-127" max="128">
         <label>25: Key 3 Activate Scene Duration</label>
         <description><![CDATA[
 Key 3 Activate Scene Duration<br /> <h1>Overview</h1><p><strong>INACTIVE:</strong> This is included in the firmware but only functions on the MH-S513 which has three buttons</p> <p>0: Instantly<br />1 ~ 127: Specify dimming duration from 1 second (0x01) to 127 seconds (0x7F) in 1-second resolution<br />128 ~ 254: Specify dimming duration from 1 minute (0x80(128)) to 127 minutes (0xFE(254)) in 1-minute resolution</p>
@@ -459,8 +459,9 @@ restore factory defaults<br /> <h1>Overview</h1><p><strong>Factory Reset.</stron
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->
-      <parameter name="group_1" type="text" groupName="association">
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
         <label>1: Lifeline</label>
+        <multipleLimit>1</multipleLimit>
       </parameter>
 
       <parameter name="group_2" type="text" groupName="association" multiple="true">

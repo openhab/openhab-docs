@@ -75,7 +75,7 @@ Steps to change dimmer level per tick<br /> <h1>Overview</h1><p>Indicates the nu
       </parameter>
 
       <parameter name="config_10_1" type="integer" groupName="configuration"
-                 min="1" max="255">
+                 min="-127" max="128">
         <label>10: Dimming Resolution Speed</label>
         <description><![CDATA[
 Tick length in 10ms units<br /> <h1>Overview</h1><p>Indicates the time duration of each level. The resolution is 10 ms. For example, a default value of 3 means the timer runs out every 30 milliseconds. Using the combinations of these 2 parameters, you can create a dim rate adjustment range as short as 10 ms to a very slow dim rate. </p>
@@ -85,11 +85,12 @@ Tick length in 10ms units<br /> <h1>Overview</h1><p>Indicates the time duration 
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->
-      <parameter name="group_1" type="text" groupName="association">
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
         <label>1: Lifeline</label>
         <description><![CDATA[
 <br /> <h1>Overview</h1><p>Association:</p> <p>1. PD-100 supports group #1 for lifeline communication.</p> <p>2. PD-100 supports a maximum of 1 node for group #1.</p> <p>3. Lifeline association only supports the "manual reset" event.</p> <p>4. For instructions on how to "set lifeline associate," please refer to your wireless controller instructions.</p>
         ]]></description>
+        <multipleLimit>1</multipleLimit>
       </parameter>
 
       <!-- STATIC DEFINITIONS -->

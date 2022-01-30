@@ -115,7 +115,7 @@ Type of alarm to 1st association group (SMOKE)<br /> <h1>Overview</h1><p>Allows 
       </parameter>
 
       <parameter name="config_7_1" type="integer" groupName="configuration"
-                 min="1" max="255">
+                 min="-127" max="128">
         <label>7: Forced Level of Dimming group 1</label>
         <description><![CDATA[
 Forced Level of Dimming group 1<br /> <h1>Overview</h1><p>Value of the parameter specifying the forced level of dimming / opening sun blinds when comes 'switch on' / 'open' command to devices from association group no. 1</p> <p>In the case of alarm frames the alarm priority is specified.</p>
@@ -167,7 +167,7 @@ Temperature measurement compensation<br /> <h1>Overview</h1><p>Temperature value
       </parameter>
 
       <parameter name="config_80_1" type="integer" groupName="configuration"
-                 min="0" max="255">
+                 min="-127" max="128">
         <label>80: Z-Wave range test interval</label>
         <description><![CDATA[
 Z-Wave range test interval<br /> <h1>Overview</h1><p>Time period between the consecutive Z-Wave network range tests.</p> <p>Available settings: 0 – 144 (10min multiplier) [10min-24h]</p> <p>0 – Z-Wave network range test inactive Default setting: 1 (10min)</p>
@@ -290,8 +290,9 @@ Temperature measurement compensation for report<br /> <h1>Overview</h1><p>Consid
         <multipleLimit>5</multipleLimit>
       </parameter>
 
-      <parameter name="group_3" type="text" groupName="association">
+      <parameter name="group_3" type="text" groupName="association" multiple="true">
         <label>3: Device Status</label>
+        <multipleLimit>1</multipleLimit>
       </parameter>
 
       <!-- STATIC DEFINITIONS -->

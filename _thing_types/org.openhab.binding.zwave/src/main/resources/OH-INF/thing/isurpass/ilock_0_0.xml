@@ -59,18 +59,20 @@ Smart lock<br /> <h1>Overview</h1><p>The door lock can work independently as a e
       </parameter-group>
 
       <!-- ASSOCIATION DEFINITIONS -->
-      <parameter name="group_1" type="text" groupName="association">
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
         <label>1: Lifeline</label>
         <description><![CDATA[
 <br /> <h1>Overview</h1><p>Our product supports an association group, and this group only support one node(one device) to receive unlock/lock message, battery report, alarm report. Please refer to your gateway guide to know how to set an association.</p>
         ]]></description>
+        <multipleLimit>1</multipleLimit>
       </parameter>
 
-      <parameter name="group_2" type="text" groupName="association">
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
         <label>2: Notify</label>
         <description><![CDATA[
 <br /> <h1>Overview</h1><p>COMMAND_CLASS_ALARM</p>
         ]]></description>
+        <multipleLimit>1</multipleLimit>
       </parameter>
 
       <!-- STATIC DEFINITIONS -->

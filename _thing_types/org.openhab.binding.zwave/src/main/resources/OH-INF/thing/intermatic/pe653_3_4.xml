@@ -106,7 +106,7 @@ Which type of pump is being used<br /> <h1>Overview</h1><p>0: 1 Speed Pump witho
       </parameter>
 
       <parameter name="config_2_1" type="integer" groupName="configuration"
-                 min="0" max="255">
+                 min="-127" max="128">
         <label>2: Fireman Timeout</label>
         <description><![CDATA[
 Minutes that pump will continue to run after heater shutoff<br /> <h1>Overview</h1><p>255: No heater installed</p> <p>0-15: Number of minutes for cooldown</p>

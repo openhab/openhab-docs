@@ -98,18 +98,20 @@ SOS Configuration<br /> <h1>Overview</h1><p>This parameter defines the SOS key f
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->
-      <parameter name="group_1" type="text" groupName="association">
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
         <label>1: Group 1</label>
         <description><![CDATA[
 Able to control z-wave main controller setting or alarm host status.<br /> <h1>Overview</h1><p>* COMMAND_CLASS_ZWAVEPLUS_INFO (V2)</p> <p>* COMMAND_CLASS_VERSION (V2)</p> <p>* COMMAND_CLASS_MANUFACTURER_SPECIFIC (V2)</p> <p>* COMMAND_CLASS_DEVICE_RESET_LOCALLY (V1)</p> <p>* COMMAND_CLASS_POWERLEVEL (V1)</p> <p>* COMMAND_CLASS_BATTERY (V1)</p> <p>* COMMAND_CLASS_ASSOCIATION (V2)</p> <p>* COMMAND_CLASS_ASSOCIATION_GRP_INFO (V1)</p> <p>* COMMAND_CLASS_WAKE_UP (V2)</p> <p>* COMMAND_CLASS_NOTIFICATION (V8)</p> <p>* COMMAND_CLASS_SENSOR_BINARY (V2)</p> <p>* COMMAND_CLASS_CONFIGURATION (V1)</p>
         ]]></description>
+        <multipleLimit>1</multipleLimit>
       </parameter>
 
-      <parameter name="group_2" type="text" groupName="association">
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
         <label>2: Group 2</label>
         <description><![CDATA[
 Switch or active the scene existing in the z-wave controller,thus to control other devices in the scene .<br /> <h1>Overview</h1><p>Note:Remote control is communicating with other devices via z-wave network directly, z-wave controller is not involved in.</p>
         ]]></description>
+        <multipleLimit>1</multipleLimit>
       </parameter>
 
       <!-- STATIC DEFINITIONS -->

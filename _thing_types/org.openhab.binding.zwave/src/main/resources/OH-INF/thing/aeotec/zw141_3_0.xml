@@ -248,7 +248,7 @@ Set Switch Type of External Switch 2<br /> <h1>Overview</h1><p>Report automatica
       </parameter>
 
       <parameter name="config_243_16" type="integer" groupName="configuration" readOnly="true"
-                 min="0" max="4294967295">
+                 min="-2147483646" max="2147483647">
         <label>243: Get DSK from product</label>
         <description>To Get DSK from product</description>
         <default>0</default>

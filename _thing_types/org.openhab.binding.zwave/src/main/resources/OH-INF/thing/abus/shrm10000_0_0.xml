@@ -53,11 +53,12 @@ Smoke detector<br /> <h1>Overview</h1><p>The smart smoke sensor detects smoke, a
       </parameter-group>
 
       <!-- ASSOCIATION DEFINITIONS -->
-      <parameter name="group_1" type="text" groupName="association">
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
         <label>1: Lifeline</label>
         <description><![CDATA[
 Battery, Notification, Reset locally Notification, Binary report<br /> <h1>Overview</h1><p>Association group 1: Lifeline association groupInclude command classes: Battery report, Notification report, and Device Reset Locally notification, Binary report.</p>
         ]]></description>
+        <multipleLimit>1</multipleLimit>
       </parameter>
 
       <parameter name="group_2" type="text" groupName="association" multiple="true">

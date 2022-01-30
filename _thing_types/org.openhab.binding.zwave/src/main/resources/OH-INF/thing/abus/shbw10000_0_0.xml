@@ -224,7 +224,7 @@ Humidity report Threshold<br /> <h1>Overview</h1><p>The threshold value serves a
       </parameter>
 
       <parameter name="config_113_2" type="integer" groupName="configuration"
-                 min="1" max="65528">
+                 min="-32767" max="32768">
         <label>113: Brightness report Threshold</label>
         <description><![CDATA[
 Brightness report Threshold<br /> <h1>Overview</h1><p>The threshold value serves as an additional condition for the time-based report.</p> <p>If the threshold value was not exceeded, the time-based report is not sent.</p>

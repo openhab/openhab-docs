@@ -90,11 +90,12 @@ sends report ever 30s when CO2 value above threshold<br /> <h1>Overview</h1><p>G
         <multipleLimit>5</multipleLimit>
       </parameter>
 
-      <parameter name="group_2" type="text" groupName="association">
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
         <label>2: Gateway report</label>
         <description><![CDATA[
 CO2, Temperature and Humidity is reported when changed<br /> <h1>Overview</h1><p>A gateway is suggested to associate with Group 2, which can support only one Node ID. The<br />gateway can ask for detected data any time. And the device will report to this associated device<br />(gateway) when detected data changes:<br />CO2: report when any change ≥50ppm“Multilevel sensor Report (CO2=0x11)”<br />Temperature: report when any change≥ 0.5 “Multilevel ℃ sensor Report (Temp=0x01)”<br />Humidity: report when any change≥ 2%“Multilevel sensor Report (Humidity=0x05)’</p>
         ]]></description>
+        <multipleLimit>1</multipleLimit>
       </parameter>
 
       <!-- STATIC DEFINITIONS -->

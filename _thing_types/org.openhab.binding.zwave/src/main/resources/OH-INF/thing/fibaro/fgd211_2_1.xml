@@ -109,7 +109,7 @@ Checking the device status before sending a control frame from the key no. 2.<br
       </parameter>
 
       <parameter name="config_9_1" type="integer" groupName="configuration"
-                 min="1" max="255">
+                 min="-127" max="128">
         <label>9: Time of MANUALLY moving between dimming values</label>
         <description>Options for changing parameter 1-255 (10ms - 2,5s)</description>
         <default>5</default>
@@ -117,7 +117,7 @@ Checking the device status before sending a control frame from the key no. 2.<br
       </parameter>
 
       <parameter name="config_10_1" type="integer" groupName="configuration"
-                 min="0" max="255">
+                 min="-127" max="128">
         <label>10: Time of AUTOMATIC moving between dimming values</label>
         <description><![CDATA[
 Time of Automatic moving the Dimmer between the extreme dimming values<br /> <h1>Overview</h1><p>Options for changing parameter 0-255 (0ms – 2.5s)</p> <p>0 - this value disables the smooth change in light intensity</p> <p>NOTE value 0 is required for inductive and capacitive devices unsuitable for dimming, (e.g. fluorescent lamps , motors etc.)</p>
@@ -221,7 +221,7 @@ Assigns bistable key status to the device status.<br /> <h1>Overview</h1><p>Info
       </parameter>
 
       <parameter name="config_20_1" type="integer" groupName="configuration"
-                 min="100" max="170">
+                 min="-127" max="128">
         <label>20: Minimum level of the Dimmer</label>
         <description><![CDATA[
 Enable decreasing the minimum level of the Dimmer<br /> <h1>Overview</h1><p>This function will enable decreasing the minimum level of the Dimmer by extending the control impulse. [100 - 170]      </p> <p>By changing the minimem level, the user may completely dim LED bulbs.</p> <p>Not all LED bulbs available on the market have the dimmm</p>
@@ -245,7 +245,7 @@ Resonse to alarm of any type<br /> <h1>Overview</h1><p>Alarm of any type (genera
       </parameter>
 
       <parameter name="config_39_2" type="integer" groupName="configuration"
-                 min="0" max="65535">
+                 min="-32767" max="32768">
         <label>39: ALARM FLASHING alarm time</label>
         <description>Amount of time (ms) the device keeps on flashing after receipt of Alarm Frame</description>
         <default>600</default>
@@ -285,8 +285,9 @@ Sending commands with command class scene activation<br /> <h1>Overview</h1><p>T
         <multipleLimit>5</multipleLimit>
       </parameter>
 
-      <parameter name="group_3" type="text" groupName="association">
+      <parameter name="group_3" type="text" groupName="association" multiple="true">
         <label>3: Controller Updates</label>
+        <multipleLimit>1</multipleLimit>
       </parameter>
 
       <!-- STATIC DEFINITIONS -->

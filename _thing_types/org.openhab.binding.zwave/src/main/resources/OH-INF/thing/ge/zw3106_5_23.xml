@@ -95,7 +95,7 @@ number of steps or levels per dim command<br /> <h1>Overview</h1><p>When Receivi
       </parameter>
 
       <parameter name="config_8_1" type="integer" groupName="configuration"
-                 min="1" max="255">
+                 min="-127" max="128">
         <label>8: command timing</label>
         <description><![CDATA[
 timing of the command steps<br /> <h1>Overview</h1><p>When Receiving a Z-Wave Dim Command - Dim Rate Adjustments</p> <p>The number of steps that the dimmer will change and the timing of the steps can be modified. The timing of the steps is in 10 millisecond intervals. The default setting “1” means the level will change every 10 milliseconds when the Dim Command is received, dimming will occur 3 times by default for a total of 30 ms. 255 would be every 2.55 seconds. Combined, the two parameters allow dim rates from 10 milliseconds to 4.2 minutes from maximum-to-minimum or minimum-to-maximum levels.</p>
@@ -115,7 +115,7 @@ number of steps or levels per dimmer button press<br /> <h1>Overview</h1><p>Manu
       </parameter>
 
       <parameter name="config_10_1" type="integer" groupName="configuration"
-                 min="1" max="255">
+                 min="-127" max="128">
         <label>10: manual timing</label>
         <description><![CDATA[
 timing of the manual steps<br /> <h1>Overview</h1><p>Manual Control Dimming (pressing the Dimmer’s button) - Dim Rate Adjustments</p> <p>The number of steps that the dimmer will change and the timing of the steps can be modified. The timing of the steps is in 10 millisecond intervals. The default setting “1” means the level will change every 10 milliseconds when the Dimmer button is pressed, by default, dimming will occur 3 times per press for a total of 30 ms. 255 would be every 2.55 seconds. Combined, the two parameters allow dim rates from 10 milliseconds to 4.2 minutes from maximum-to-minimum or minimum-to-maximum levels.</p>
@@ -135,7 +135,7 @@ number of steps or levels per all on/off command<br /> <h1>Overview</h1><p>When 
       </parameter>
 
       <parameter name="config_12_1" type="integer" groupName="configuration"
-                 min="1" max="255">
+                 min="-127" max="128">
         <label>12: All on/off timing</label>
         <description><![CDATA[
 timing of the all on/off command<br /> <h1>Overview</h1><p>When Receiving an All-On or All-Off Command - Dim Rate Adjustments</p> <p>The number of steps that the dimmer will change and the timing of the steps. The timing of the steps is in 10 millisecond intervals.  The default setting “1” means the level will change every 10 milliseconds when the Command is received, dimming will occur 3 times by default for a total of 30 ms. 255 would be every 2.55 seconds. Combined, the two parameters allow dim rates from 10 milliseconds to 4.2 minutes from maximum-to-minimum or minimum-to-maximum levels.</p>

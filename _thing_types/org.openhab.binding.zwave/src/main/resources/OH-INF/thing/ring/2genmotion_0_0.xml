@@ -129,7 +129,7 @@ Occupancy Clear Delay<br /> <h1>Overview</h1><p><br /></p>
       </parameter>
 
       <parameter name="config_7_1" type="integer" groupName="configuration"
-                 min="0" max="255">
+                 min="-127" max="128">
         <label>7: Intrusion Clear Delay</label>
         <description>Intrusion Clear Delay</description>
         <default>5</default>
@@ -137,7 +137,7 @@ Occupancy Clear Delay<br /> <h1>Overview</h1><p><br /></p>
       </parameter>
 
       <parameter name="config_8_1" type="integer" groupName="configuration"
-                 min="0" max="255">
+                 min="-127" max="128">
         <label>8: Standard Clear Delay</label>
         <description>Standard Clear Delay</description>
         <default>10</default>
@@ -155,7 +155,7 @@ Motion Detection Mode<br /> <h1>Overview</h1><p><br /></p>
       </parameter>
 
       <parameter name="config_10_1" type="integer" groupName="configuration"
-                 min="0" max="255">
+                 min="-127" max="128">
         <label>10: Any Motion Threshold</label>
         <description><![CDATA[
 Any Motion Threshold<br /> <h1>Overview</h1><p><br /></p>

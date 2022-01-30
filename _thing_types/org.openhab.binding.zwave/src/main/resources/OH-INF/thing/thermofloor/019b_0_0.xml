@@ -67,7 +67,7 @@ Knob Smart Dimmer<br /> <h1>Overview</h1><p>Z-Wave rotary dimmer for different l
 
       <!-- PARAMETER DEFINITIONS -->
       <parameter name="config_1_1" type="integer" groupName="configuration"
-                 min="0" max="200">
+                 min="-127" max="128">
         <label>1: Connected Load</label>
         <description><![CDATA[
 Defines the value of connected load<br /> <h1>Overview</h1><table><tr><td>Value</td> <td>Description</td> </tr><tr><td>0</td> <td>Not configured (Default)</td> </tr><tr><td>1-200</td> <td>1-200 Watts connected load</td> </tr></table>
@@ -97,7 +97,7 @@ Defines the highest dimming level of the dimmer<br /> <h1>Overview</h1><p>This p
       </parameter>
 
       <parameter name="config_4_1" type="integer" groupName="configuration"
-                 min="5" max="255">
+                 min="-127" max="128">
         <label>4: Total steps</label>
         <description><![CDATA[
 How many steps it should take to dim from min to max<br /> <h1>Overview</h1><p>This parameter defines how many steps it should take to dim from minimum to maximum dim level (One round = 20 steps)</p> <p>Default is 15 (3/4 round)</p>
@@ -139,7 +139,7 @@ Defines the dim level when restored from OFF state by push button<br /> <h1>Over
       </parameter>
 
       <parameter name="config_8_1" type="integer" groupName="configuration"
-                 min="0" max="255">
+                 min="-127" max="128">
         <label>8: Dimming Duration</label>
         <description><![CDATA[
 Defines how long it takes to dim to desired level.<br /> <h1>Overview</h1><p>This parameter defines how long it takes to dim to desired level.</p> <p>Note! Only Multilevel Switch Command Class is affected by this parameter.</p> <table><tr><td>Value</td> <td>Description</td> </tr><tr><td>0</td> <td>Disabled</td> </tr><tr><td>1-127</td> <td>Duration in seconds (1 - 127 seconds. Default is 1)</td> </tr><tr><td>128-255</td> <td>Duration in minutes (1 - 127 minutes)</td> </tr></table>

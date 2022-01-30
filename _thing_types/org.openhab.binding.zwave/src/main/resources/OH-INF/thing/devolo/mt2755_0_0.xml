@@ -153,7 +153,7 @@ The interval time for auto report the humidity<br /> <h1>Overview</h1><p>The int
       </parameter>
 
       <parameter name="config_20_1" type="integer" groupName="configuration"
-                 min="0" max="255">
+                 min="-127" max="128">
         <label>20: Auto Report Tick Interval</label>
         <description><![CDATA[
 The interval time for auto report each tick<br /> <h1>Overview</h1><p>Setting this configuration will effect configuration No.10, No.13, No.14 and No.15.</p> <p>Units of one minute.<br /><strong>Caution1:</strong> Setting to 0 means turn off all auto report function.</p> <p><strong>Caution2:</strong> The value is unsigned byte </p>

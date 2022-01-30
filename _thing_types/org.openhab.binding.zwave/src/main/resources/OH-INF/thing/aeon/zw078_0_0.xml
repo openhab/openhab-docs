@@ -134,7 +134,7 @@ Toggle automated report sending on change<br /> <h1>Overview</h1><p>Parameter to
       </parameter>
 
       <parameter name="config_91_2" type="integer" groupName="configuration"
-                 min="0" max="65535">
+                 min="-32767" max="32768">
         <label>91: Minimum Change to send Report (Watt)</label>
         <description>The value represents the minimum change in Wattage for a Report to be sent.</description>
         <default>25</default>
@@ -142,7 +142,7 @@ Toggle automated report sending on change<br /> <h1>Overview</h1><p>Parameter to
       </parameter>
 
       <parameter name="config_92_1" type="integer" groupName="configuration"
-                 min="0" max="255">
+                 min="-127" max="128">
         <label>92: Minimum Change to send Report (%)</label>
         <description><![CDATA[
 Percent change in wattage to send report<br /> <h1>Overview</h1><p>The value represents the minimum change in Wattage Percent for a report to be sent.</p>

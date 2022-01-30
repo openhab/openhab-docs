@@ -96,7 +96,7 @@ Enables or disables a wake period of 10 minutes after power up.<br /> <h1>Overvi
       </parameter>
 
       <parameter name="config_8_1" type="integer" groupName="configuration"
-                 min="15" max="255">
+                 min="-127" max="128">
         <label>8: WakeUp Time Out</label>
         <description><![CDATA[
 The number of seconds for the device to stay awake after the WakeUp is sent out.<br /> <h1>Overview</h1><p>Set the timeout to go into the sleep state after the Wake Up Notification was sent out. 15 - 255</p>
@@ -105,7 +105,7 @@ The number of seconds for the device to stay awake after the WakeUp is sent out.
       </parameter>
 
       <parameter name="config_9_2" type="integer" groupName="configuration" readOnly="true"
-                 min="0" max="65535">
+                 min="-32767" max="32768">
         <label>9: Current power mode (read only)</label>
         <description><![CDATA[
 Get the current power mode<br /> <h1>Overview</h1><p>Value 1: 0=USB power, 1=Battery power</p> <p>Value 2: 0=sleeping after powered on, 1=keep awake for 10 min after power on, 2=always awake</p>
@@ -115,7 +115,7 @@ Get the current power mode<br /> <h1>Overview</h1><p>Value 1: 0=USB power, 1=Bat
       </parameter>
 
       <parameter name="config_10_4" type="integer" groupName="configuration"
-                 min="0" max="4294967295">
+                 min="-2147483646" max="2147483647">
         <label>10: Alarm time for buzzer</label>
         <description>Set the alarm time for the buzzer when triggered</description>
         <default>0</default>
@@ -234,7 +234,7 @@ Temperature limit value<br /> <h1>Overview</h1><p>US Version: 0x01400100 (32 °F
       </parameter>
 
       <parameter name="config_57_2" type="integer" groupName="configuration"
-                 min="0" max="65535">
+                 min="-32767" max="32768">
         <label>57: Recover limit value</label>
         <description>Set the recover limit value of the temperature sensor</description>
         <default>0</default>
@@ -376,7 +376,7 @@ Set the interval time for sending the unsolicited report.<br /> <h1>Overview</h1
       </parameter>
 
       <parameter name="config_136_1" type="integer" groupName="configuration" readOnly="true"
-                 min="0" max="255">
+                 min="-127" max="128">
         <label>136: Sensor probe status</label>
         <description>Sensor probe status (read only)</description>
         <default>0</default>

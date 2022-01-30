@@ -91,7 +91,7 @@ send metering reports<br /> <h1>Overview</h1><p>Choose if you want the Mini Plug
       </parameter>
 
       <parameter name="config_2_2" type="integer" groupName="configuration"
-                 min="1" max="65535">
+                 min="-32767" max="32768">
         <label>2: Metering Report Frequency</label>
         <description><![CDATA[
 Frecuency metering reports to the controller.<br /> <h1>Overview</h1><p>Choose how often you want the Mini Plug to send metering reports to the controller. The number entered as the value corresponds to the number of seconds. So if 300 is entered by default, the Mini Plug will report power consumption every 300 seconds (5 minutes).</p>
@@ -170,7 +170,7 @@ Choose the recovery state for your Mini Plug if power outage occurs<br /> <h1>Ov
       </parameter>
 
       <parameter name="config_9_2" type="integer" groupName="configuration"
-                 min="1" max="65535">
+                 min="-32767" max="32768">
         <label>9: Auto Turn-Off Timer Interval</label>
         <description><![CDATA[
 Set the time to automatically turn off<br /> <h1>Overview</h1><p>Use this parameter to set the time after which you want the Mini Plug to automatically turn off once it has been turned on. The number entered as value corresponds to the number of minutes. Values: 1 – 65535 (minutes); 150 (minutes) – default setting. </p>

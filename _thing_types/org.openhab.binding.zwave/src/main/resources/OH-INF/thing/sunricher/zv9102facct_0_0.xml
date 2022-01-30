@@ -116,7 +116,7 @@ Set stage mode for lighting changes<br /> <h1>Overview</h1><p>Set lighting stage
       </parameter>
 
       <parameter name="config_6_1" type="integer" groupName="configuration"
-                 min="0" max="255">
+                 min="-127" max="128">
         <label>6: Stage mode speed</label>
         <description><![CDATA[
 Set speed of changes in stage mode<br /> <h1>Overview</h1><p>Set speed of stage mode 0-255</p> <p>0 is slowest 255 is fastest</p>
@@ -126,7 +126,7 @@ Set speed of changes in stage mode<br /> <h1>Overview</h1><p>Set speed of stage 
       </parameter>
 
       <parameter name="config_7_1" type="integer" groupName="configuration"
-                 min="0" max="255">
+                 min="-127" max="128">
         <label>7: Stage mode execution time</label>
         <description><![CDATA[
 Set execution time for stage mode<br /> <h1>Overview</h1><p>Set execution time for stage mode</p> <p>0 (default) - unlimited time</p> <p>1 - 255 set execution time</p>
@@ -136,7 +136,7 @@ Set execution time for stage mode<br /> <h1>Overview</h1><p>Set execution time f
       </parameter>
 
       <parameter name="config_8_1" type="integer" groupName="configuration"
-                 min="0" max="255">
+                 min="-127" max="128">
         <label>8: Stage mode hue</label>
         <description><![CDATA[
 Set stage mode hue 0-255<br /> <h1>Overview</h1><p>Set hue for stage mode</p> <p>0 - 255 (default)</p> <p>Only valid for fade in, fade out and flash mode.</p>
@@ -156,11 +156,12 @@ Enable / disable external switch for inclusion / exclusion<br /> <h1>Overview</h
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->
-      <parameter name="group_1" type="text" groupName="association">
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
         <label>1: Lifeline</label>
         <description><![CDATA[
 <br /> <h1>Overview</h1><p>Single Cast DEVICE_RESET_LOCALLY_NOTIFICATION (sent when factory reset the device)</p>
         ]]></description>
+        <multipleLimit>1</multipleLimit>
       </parameter>
 
       <!-- STATIC DEFINITIONS -->

@@ -73,7 +73,7 @@ Siren Alarm<br /> <h1>Overview</h1><p>Siren Alarm with ten different sounds.</p>
       </parameter>
 
       <parameter name="config_2_1" type="integer" groupName="configuration"
-                 min="0" max="255">
+                 min="-127" max="128">
         <label>2: Alarm music duration time</label>
         <description>Alarm music duration time</description>
         <default>2</default>
@@ -81,7 +81,7 @@ Siren Alarm<br /> <h1>Overview</h1><p>Siren Alarm with ten different sounds.</p>
       </parameter>
 
       <parameter name="config_3_1" type="integer" groupName="configuration"
-                 min="0" max="255">
+                 min="-127" max="128">
         <label>3: Door bell music duration time</label>
         <description>Door bell music duration time</description>
         <default>1</default>

@@ -62,7 +62,7 @@ Lamp Module<br /> <h1>Overview</h1><p>Plug in lamp module with on/off/dimming co
       </parameter>
 
       <parameter name="config_8_1" type="integer" groupName="configuration"
-                 min="1" max="255">
+                 min="-127" max="128">
         <label>8: On/Off Command Dim Rate</label>
         <description>Dim Rate</description>
         <default>3</default>
@@ -78,7 +78,7 @@ Lamp Module<br /> <h1>Overview</h1><p>Plug in lamp module with on/off/dimming co
       </parameter>
 
       <parameter name="config_10_1" type="integer" groupName="configuration"
-                 min="1" max="255">
+                 min="-127" max="128">
         <label>10: Local Control Dim Rate</label>
         <description>Local Control Dim Rate</description>
         <default>3</default>
@@ -94,7 +94,7 @@ Lamp Module<br /> <h1>Overview</h1><p>Plug in lamp module with on/off/dimming co
       </parameter>
 
       <parameter name="config_12_1" type="integer" groupName="configuration"
-                 min="1" max="255">
+                 min="-127" max="128">
         <label>12: ALL ON/ALL OFF Dim Rate</label>
         <default>3</default>
         <limitToOptions>false</limitToOptions>

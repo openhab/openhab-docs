@@ -104,7 +104,7 @@ Smart leak protector<br /> <h1>Overview</h1><p>Qubino water meter and leakage de
       </parameter>
 
       <parameter name="config_48_4" type="integer" groupName="configuration"
-                 min="-2147483648" max="2147483647">
+                 min="-2147483646" max="2147483647">
         <label>48: Water total consumption value in Liters</label>
         <description><![CDATA[
 Allows the user to set a custom meter value.<br /> <h1>Overview</h1><p>With this parameter we can set the current water consumption value in liters. The value is represented with two's complement notation so that it can represent negative values also. Span of the input value is from (-2147483648) to (+2147483647). Its main usage is to set the same value on our device as on physical water meter. If we get the PARAMETER_48 value with PARAMETER_GET command we get the last value that was set with this parameter and not the current water consumption value! To get the current consumption value we must send the METER_GET command.<br /></p>
@@ -220,11 +220,12 @@ This parameter defines what happens with the valve if the leak alarm is triggere
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->
-      <parameter name="group_1" type="text" groupName="association">
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
         <label>1: Lifeline</label>
         <description><![CDATA[
 The lifeline group to which all supported unsolicited messages are sent.<br /> <h1>Overview</h1><p>Supports the following command classes:</p><p>• Device Reset Locally: triggered upon request</p><p>• Meter Report: triggered on every 100L change</p><p>• Notification Report: triggered on Alarm and when clearing Alarm</p><p>• Switch Binary Report: triggered upon request or after valve position is changed.</p>
         ]]></description>
+        <multipleLimit>1</multipleLimit>
       </parameter>
 
       <parameter name="group_2" type="text" groupName="association" multiple="true">

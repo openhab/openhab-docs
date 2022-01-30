@@ -89,7 +89,7 @@ Alarm Keypad 2nd Gen<br /> <h1>Overview</h1><p>Ring Alarm features a Z-Wave keyp
       </parameter>
 
       <parameter name="config_4_1" type="integer" groupName="configuration"
-                 min="0" max="210">
+                 min="-127" max="128">
         <label>4: Announcement Audio Volume</label>
         <description>Announcement Audio Volume (for audio files - should this be lumped into one of the other volume settings?)</description>
         <default>7</default>
@@ -185,7 +185,7 @@ Alarm Keypad 2nd Gen<br /> <h1>Overview</h1><p>Ring Alarm features a Z-Wave keyp
       </parameter>
 
       <parameter name="config_16_1" type="integer" groupName="configuration"
-                 min="0" max="255">
+                 min="-127" max="128">
         <label>16: Ramp Time Config</label>
         <description>Ramp Time Config: Ramp time in milliseconds to turn the LEDs on/off. Applies to all LEDs on the keypad</description>
         <default>50</default>
@@ -233,7 +233,7 @@ Alarm Keypad 2nd Gen<br /> <h1>Overview</h1><p>Ring Alarm features a Z-Wave keyp
       </parameter>
 
       <parameter name="config_22_4" type="integer" groupName="configuration" readOnly="true"
-                 min="0" max="4294967295">
+                 min="-2147483646" max="2147483647">
         <label>22: Languages Supported (Get)</label>
         <description>Languages Supported (Get): returns bitmask of languages supported. Bits set to 1 indicate that the language is supported</description>
         <default>0</default>

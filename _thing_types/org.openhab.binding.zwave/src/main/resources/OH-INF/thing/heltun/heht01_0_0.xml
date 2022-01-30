@@ -141,7 +141,7 @@ Frequency Region<br /> <h1>Overview</h1><p><br /></p>
       </parameter>
 
       <parameter name="config_3_4" type="integer" groupName="configuration" readOnly="true"
-                 min="0" max="4294967295">
+                 min="-2147483646" max="2147483647">
         <label>3: Hardware and Software Versions</label>
         <description><![CDATA[
 Hardware and Software Versions<br /> <h1>Overview</h1><p><br /></p>
@@ -151,7 +151,7 @@ Hardware and Software Versions<br /> <h1>Overview</h1><p><br /></p>
       </parameter>
 
       <parameter name="config_4_4" type="integer" groupName="configuration" readOnly="true"
-                 min="0" max="4294967295">
+                 min="-2147483646" max="2147483647">
         <label>4: Energy Consumption, kW</label>
         <description><![CDATA[
 Energy Consumption, kW<br /> <h1>Overview</h1><p><br /></p>
@@ -780,18 +780,20 @@ Sunday night temp<br /> <h1>Overview</h1><p>Centigrade value * 10</p> <p>e.g. 22
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->
-      <parameter name="group_1" type="text" groupName="association">
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
         <label>1: Lifeline</label>
         <description><![CDATA[
 Reports full state of the device and used to communicate with the Z-Wave gateway.<br /> <h1>Overview</h1><p><br /></p>
         ]]></description>
+        <multipleLimit>1</multipleLimit>
       </parameter>
 
-      <parameter name="group_2" type="text" groupName="association">
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
         <label>2: Basic Set On/Off: Relay</label>
         <description><![CDATA[
 is assigned to the HE-HT01 operating state. It sends a Basic Set command with value 0 (Off) when it goes to IDLE state and sends 255 (ON) when it goes into HEATING state<br /> <h1>Overview</h1><p><br /></p>
         ]]></description>
+        <multipleLimit>1</multipleLimit>
       </parameter>
 
       <!-- STATIC DEFINITIONS -->

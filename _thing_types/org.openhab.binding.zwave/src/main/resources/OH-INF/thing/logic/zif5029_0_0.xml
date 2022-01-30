@@ -248,7 +248,7 @@ Precision of input 1<br /> <h1>Overview</h1><p>Specifies the number of decimals 
       </parameter>
 
       <parameter name="config_12_2" type="integer" groupName="configuration"
-                 min="0" max="65000">
+                 min="-32767" max="32768">
         <label>12: Pulses per Unit of input 1</label>
         <description><![CDATA[
 Pulses per Unit of input 1<br /> <h1>Overview</h1><p>Specifies the number of pulses to count before one unit is reached at input 1. For example, if this parameter is set to 1,000 and Scale Type is set to Cubic meters, 1,000 pulses is counted to equal 1m 3 .</p> <p>This parameter is retained during exclusion / inclusion of the device.</p> <table><tr><td><strong>Value</strong></td> <td><strong>Description</strong></td> </tr><tr><td>0 – 65000</td> <td>Number of pulses needed to equal one scale value. Standard is 1</td> </tr></table>
@@ -310,7 +310,7 @@ Precision of input 2.<br /> <h1>Overview</h1><p>Specifies the number of decimals
       </parameter>
 
       <parameter name="config_17_2" type="integer" groupName="configuration"
-                 min="0" max="65000">
+                 min="-32767" max="32768">
         <label>17: Pulses per Unit of input 2</label>
         <description><![CDATA[
 Pulses per Unit of input 2<br /> <h1>Overview</h1><p>Specifies the number of pulses to count before one unit is reached at input 2. For example, if this parameter is set to 1,000 and Scale Type is set to Cubic meters, 1,000 pulses is counted to equal 1m 3 .</p> <p>This parameter is retained during exclusion / inclusion of the device.</p> <table><tr><td><strong>Value</strong></td> <td><strong>Description</strong></td> </tr><tr><td>0 – 65000</td> <td>Number of pulses needed to equal one scale value. Standard is 1</td> </tr></table>
@@ -372,7 +372,7 @@ Precision of input 3<br /> <h1>Overview</h1><p>Specifies the number of decimals 
       </parameter>
 
       <parameter name="config_22_2" type="integer" groupName="configuration"
-                 min="0" max="65000">
+                 min="-32767" max="32768">
         <label>22: Pulses per Unit of input 3</label>
         <description><![CDATA[
 Pulses per Unit of input 3<br /> <h1>Overview</h1><p>Specifies the number of pulses to count before one unit is reached at input 3. For example, if this parameter is set to 1,000 and Scale Type is set to Cubic meters, 1,000 pulses is counted to equal 1m 3 .</p> <p>This parameter is retained during exclusion / inclusion of the device.</p> <table><tr><td><strong>Value</strong></td> <td><strong>Description</strong></td> </tr><tr><td>0 – 65000</td> <td>Number of pulses needed to equal one scale value. Standard is 1</td> </tr></table>
@@ -434,7 +434,7 @@ Precision of input 4<br /> <h1>Overview</h1><p>Specifies the number of decimals 
       </parameter>
 
       <parameter name="config_27_2" type="integer" groupName="configuration"
-                 min="0" max="65000">
+                 min="-32767" max="32768">
         <label>27: Pulses per Unit of input 4</label>
         <description><![CDATA[
 Pulses per Unit of input 4<br /> <h1>Overview</h1><p>Specifies the number of pulses to count before one unit is reached at input 4. For example, if this parameter isset to 1,000 and Scale Type is set to Cubic meters, 1,000 pulses is counted to equal 1m 3 .</p> <p>This parameter is retained during exclusion / inclusion of the device.</p> <table><tr><td><strong>Value</strong></td> <td><strong>Description</strong></td> </tr><tr><td>0-65000</td> <td>Number of pulses needed to equal one scale value. Standard is 1</td> </tr></table>
@@ -496,7 +496,7 @@ Precision of input 5<br /> <h1>Overview</h1><p>Specifies the number of decimals 
       </parameter>
 
       <parameter name="config_32_2" type="integer" groupName="configuration"
-                 min="0" max="65000">
+                 min="-32767" max="32768">
         <label>32: Pulses per Unit of input 5</label>
         <description><![CDATA[
 Pulses per Unit of input 5<br /> <h1>Overview</h1><p>Specifies the number of pulses to count before one unit is reached at input 5. For example, if this parameter is set to 1,000 and Scale Type is set to Cubic meters, 1,000 pulses is counted to equal 1m 3 .</p> <p>This parameter is retained during exclusion / inclusion of the device.</p> <table><tr><td><strong>Value</strong></td> <td><strong>Description</strong></td> </tr><tr><td>0-65000</td> <td>Number of pulses needed to equal one scale value. Standard is 1</td> </tr></table>
@@ -558,7 +558,7 @@ Precision of input 6<br /> <h1>Overview</h1><p>Specifies the number of decimals 
       </parameter>
 
       <parameter name="config_37_2" type="integer" groupName="configuration"
-                 min="0" max="65000">
+                 min="-32767" max="32768">
         <label>37: Pulses per Unit of input 6</label>
         <description><![CDATA[
 Pulses per Unit of input 6<br /> <h1>Overview</h1><p>Specifies the number of pulses to count before one unit is reached at input 6. For example, if this parameter is set to 1,000 and Scale Type is set to Cubic meters, 1,000 pulses is counted to equal 1m 3 .</p> <p>This parameter is retained during exclusion / inclusion of the device.</p> <table><tr><td><strong>Value</strong></td> <td><strong>Description</strong></td> </tr><tr><td>0-65000</td> <td>Number of pulses needed to equal one scale value. Standard is 1</td> </tr></table>
@@ -593,9 +593,10 @@ Time interval between meter reports<br /> <h1>Overview</h1><p>Specifies the time
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->
-      <parameter name="group_1" type="text" groupName="association">
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
         <label>1: Lifeline</label>
         <description>Lifeline group for the entire module.</description>
+        <multipleLimit>1</multipleLimit>
       </parameter>
 
       <!-- STATIC DEFINITIONS -->

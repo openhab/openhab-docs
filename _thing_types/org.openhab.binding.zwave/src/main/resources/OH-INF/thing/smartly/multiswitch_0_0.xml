@@ -394,7 +394,7 @@ Selected LED Mode<br /> <h1>Overview</h1><p>Controls the operation of the LEDs. 
       </parameter>
 
       <parameter name="config_240_1" type="integer" groupName="configuration"
-                 min="-128" max="127">
+                 min="-127" max="128">
         <label>240: Floor Sensor Temperature Offset</label>
         <description><![CDATA[
 Temperature Offset in 1/10th of a degree Celcius<br /> <h1>Overview</h1><p>Defines an offset to the Floor Temperature, given as a signed integer at 1/10 of a degree celcius. This provides an offset range of –12.8 to +12.7 degrees celcius.</p>
@@ -404,7 +404,7 @@ Temperature Offset in 1/10th of a degree Celcius<br /> <h1>Overview</h1><p>Defin
       </parameter>
 
       <parameter name="config_241_1" type="integer" groupName="configuration"
-                 min="-128" max="127">
+                 min="-127" max="128">
         <label>241: Room Sensor Temperature Offset</label>
         <description><![CDATA[
 Temperature Offset in 1/10th of a degree Celcius<br /> <h1>Overview</h1><p>Defines an offset to the Room Temperature, given as a signed integer at 1/10 of a degree celcius. This provides an offset range of –12.8 to +12.7 degrees celcius.</p>

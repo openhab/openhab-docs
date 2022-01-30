@@ -85,7 +85,7 @@ Motion Detector<br /> <h1>Overview</h1><p>Battery powered Motion Sensor</p> <br 
       </parameter>
 
       <parameter name="config_4_1" type="integer" groupName="configuration"
-                 min="5" max="255">
+                 min="-127" max="128">
         <label>4: Re-trigger Interval Setting</label>
         <default>180</default>
         <limitToOptions>false</limitToOptions>
@@ -100,15 +100,16 @@ Motion Detector<br /> <h1>Overview</h1><p>Battery powered Motion Sensor</p> <br 
       </parameter>
 
       <parameter name="config_6_1" type="integer" groupName="configuration"
-                 min="5" max="255">
+                 min="-127" max="128">
         <label>6: On-Off Duration</label>
         <default>15</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->
-      <parameter name="group_1" type="text" groupName="association">
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
         <label>1: Target for reports</label>
+        <multipleLimit>1</multipleLimit>
       </parameter>
 
       <parameter name="group_2" type="text" groupName="association" multiple="true">

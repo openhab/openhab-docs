@@ -67,11 +67,12 @@ Remember last status<br /> <h1>Overview</h1><p>Remember the last status:</p> <p>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->
-      <parameter name="group_1" type="text" groupName="association">
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
         <label>1: Lifeline</label>
         <description><![CDATA[
 <br /> <h1>Overview</h1><p>Group 1 commands:</p> <ul> <li>When the unit is powered for the first time, the unit will send a Notification Report to the node of Group 1</li> <li>When setting the unit or changing the unit’s status, the unit will send a Binary Switch Report to the node of Group 1. When the unit is OFF, Switch Binary Report Value = 0x00. When the unit is ON, Switch Binary Report Value = 0xFF.</li> <li>Device Reset: When performing Factory Reset the unit will send Device Reset Locally Notification to the node of Group1</li> </ul>
         ]]></description>
+        <multipleLimit>1</multipleLimit>
       </parameter>
 
       <parameter name="group_2" type="text" groupName="association" multiple="true">

@@ -66,7 +66,7 @@ Door/Window Sensor<br /> <h1>Overview</h1><p>The NEO Coolcam Door/Window Sensor 
 
       <!-- PARAMETER DEFINITIONS -->
       <parameter name="config_1_2" type="integer" groupName="configuration"
-                 min="0" max="65535">
+                 min="-32767" max="32768">
         <label>1: ON/OFF Delay</label>
         <description><![CDATA[
 Delay before the OFF command is transmitted<br /> <h1>Overview</h1><p>Adjust the delay before the OFF command is transmitted. 0 means send OFF command immediately.</p>
@@ -76,7 +76,7 @@ Delay before the OFF command is transmitted<br /> <h1>Overview</h1><p>Adjust the
       </parameter>
 
       <parameter name="config_2_1" type="integer" groupName="configuration"
-                 min="0" max="255">
+                 min="-127" max="128">
         <label>2: Basic Set Level</label>
         <description><![CDATA[
 Basic Set Command sent when door/window is opened or closed<br /> <h1>Overview</h1><p>Basic Set Command will be sent when the door/window is opened or closed, the receiver will take it for consideration; for instance, if a lamp module received the BSC of which value is decisive as to how bright of dim level of lamp module shall be.</p> <p>Available Settings:</p> <ul><li>0 - Off, Alarm cancelling or turning a device OFF</li> <li>1 - 99 or 255 – ON (Binary Switch Device)</li> <li>Dim Level (Multilevel Switch Device)</li> </ul>

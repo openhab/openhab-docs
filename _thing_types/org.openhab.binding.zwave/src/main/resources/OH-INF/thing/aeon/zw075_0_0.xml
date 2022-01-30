@@ -79,7 +79,7 @@ Smart Energy Switch 3rd Edition<br /> <h1>Overview</h1><p>Smart Energy Switch 3r
 
       <!-- PARAMETER DEFINITIONS -->
       <parameter name="config_2_2" type="integer" groupName="configuration"
-                 min="0" max="65535">
+                 min="-32767" max="32768">
         <label>2: Blinking Behaviour</label>
         <description><![CDATA[
 The LSB defines the total time the device need to blink.<br /> <h1>Overview</h1><p>The LSB defines the total time the device need to blink. The value if set in seconds. 1 - 255 The MSB defines the on/off interval of the blinking. The unit is 0.1 s. This is a double byte value.</p>

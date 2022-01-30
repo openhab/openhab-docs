@@ -137,7 +137,7 @@ How the LED indicator displays power consumption.<br /> <h1>Overview</h1><p>You 
       </parameter>
 
       <parameter name="config_151_2" type="integer" groupName="configuration"
-                 min="0" max="65535">
+                 min="-32767" max="32768">
         <label>151: Power Report Value Threshold</label>
         <description><![CDATA[
 When to report power consumption to your controller<br /> <h1>Overview</h1><p>Power Report Value Threshold Parameter 151: Choose how you want your Power Switch to report power consumption to your controller and associated devices. The number entered as value corresponds to the number of Watts the appliance needs to go over for the change to be reported. So if 50 Watts are entered by default, the Power Switch will report any change in power usage over 50 Watts (whether it’s at least 50 Watts more or 50 Watts less compared to previous report). Values: 0 – 65535; 0 – disabled (it will not report power consumption based on value change); 50 – default setting Size: 2 byte dec.</p>
@@ -146,7 +146,7 @@ When to report power consumption to your controller<br /> <h1>Overview</h1><p>Po
       </parameter>
 
       <parameter name="config_152_1" type="integer" groupName="configuration"
-                 min="0" max="255">
+                 min="-127" max="128">
         <label>152: Power Report Percentage Threshold</label>
         <description><![CDATA[
 How to report power consumption to your controller by percentage rate<br /> <h1>Overview</h1><p>Power Report Percentage Threshold Parameter 152: Choose how you want your Power Switch to report power consumption to your controller and associated devices by percentage rate. The number entered as value corresponds to the percentage in power usage change the appliance needs to go over for the event to be reported. So if 10% is entered by default, the Power Switch will report any change in power consumption over 10% (whether it’s at least 10% more or 10% less power consumption compared to previous report). Values: 0 – 255; 0 – disabled (it will not report power consumption based on percentage change); 10 – default setting Size: 1 byte dec.</p>

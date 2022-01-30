@@ -72,7 +72,7 @@ Controls LED behavior when switch state is on/off<br /> <h1>Overview</h1><p><br 
       </parameter>
 
       <parameter name="config_10_1" type="integer" groupName="configuration"
-                 min="0" max="255">
+                 min="-127" max="128">
         <label>10: Duration of each level</label>
         <description>Control the dim rate</description>
         <default>3</default>

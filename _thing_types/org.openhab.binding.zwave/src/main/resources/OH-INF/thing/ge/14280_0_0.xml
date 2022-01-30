@@ -69,7 +69,7 @@ Plug-In Smart Dimmer (Dual Linked Outlets)<br /> <h1>Overview</h1><ul><li>2 Simu
       </parameter>
 
       <parameter name="config_8_1" type="integer" groupName="configuration"
-                 min="1" max="255">
+                 min="-127" max="128">
         <label>8: Dim Rate Adjustments (From Z-Wave Controller)</label>
         <description>Timing of the steps</description>
         <default>1</default>
@@ -85,7 +85,7 @@ Plug-In Smart Dimmer (Dual Linked Outlets)<br /> <h1>Overview</h1><ul><li>2 Simu
       </parameter>
 
       <parameter name="config_10_1" type="integer" groupName="configuration"
-                 min="1" max="255">
+                 min="-127" max="128">
         <label>10: Dim Timing (When Manually Controlled)</label>
         <description><![CDATA[
 (When Manually Controlled)<br /> <h1>Overview</h1><p>Timing of the steps</p>
@@ -105,8 +105,9 @@ Plug-In Smart Dimmer (Dual Linked Outlets)<br /> <h1>Overview</h1><ul><li>2 Simu
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->
-      <parameter name="group_1" type="text" groupName="association">
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
         <label>1: Lifeline</label>
+        <multipleLimit>1</multipleLimit>
       </parameter>
 
       <!-- STATIC DEFINITIONS -->

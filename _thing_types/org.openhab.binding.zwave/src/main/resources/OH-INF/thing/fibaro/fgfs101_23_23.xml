@@ -111,7 +111,7 @@ Command frame sent by the Sensor in case flooding<br /> <h1>Overview</h1><p>Para
       </parameter>
 
       <parameter name="config_7_1" type="integer" groupName="configuration"
-                 min="1" max="255">
+                 min="-127" max="128">
         <label>7: Forced Level of Dimming group 1</label>
         <description><![CDATA[
 Value of the parameter specifying linking to association group no. 1<br /> <h1>Overview</h1><p>Value of the parameter specifying the forced level of dimming / opening sun blinds when comes <em>switch on</em> / <em>open</em> command to devices from association group no. 1. In the case of alarm frames the alarm priority is specified. Possible parameter settings.</p>
@@ -246,7 +246,7 @@ sensor’s vibrations alarm<br /> <h1>Overview</h1><p>(MOVEMENT_TAMPER / BUTTON_
       </parameter>
 
       <parameter name="config_75_2" type="integer" groupName="configuration"
-                 min="0" max="65535">
+                 min="-32767" max="32768">
         <label>75: Visual and audible alarms duration</label>
         <description><![CDATA[
 Silence the Flood Sensor.<br /> <h1>Overview</h1><p>The user can silence the Flood Sensor. Because the Sensor’s alarm may last for a long time, it’s possible to turn off visual and audible alarm signaling to save battery. The parameter determines a time period after which alarm will become “quiet” - still </p>
@@ -256,7 +256,7 @@ Silence the Flood Sensor.<br /> <h1>Overview</h1><p>The user can silence the Flo
       </parameter>
 
       <parameter name="config_76_2" type="integer" groupName="configuration"
-                 min="0" max="65535">
+                 min="-32767" max="32768">
         <label>76: Visual and audible alarms retransmit</label>
         <description><![CDATA[
 Period after which an alarm frame will be retransmitted<br /> <h1>Overview</h1><p>Parameter determines a time period after which an alarm frame will be retransmitted. The value of 0 cancels an alarm frame retransmission. The value of 65535 means 'each 1 second'. NOTE: In case a time period set in this parameter is shorter th</p>
@@ -289,8 +289,9 @@ Turning of the internal flood sensor.<br /> <h1>Overview</h1><p>Allows for turni
         <multipleLimit>5</multipleLimit>
       </parameter>
 
-      <parameter name="group_3" type="text" groupName="association">
+      <parameter name="group_3" type="text" groupName="association" multiple="true">
         <label>3: Device Status</label>
+        <multipleLimit>1</multipleLimit>
       </parameter>
 
       <!-- STATIC DEFINITIONS -->

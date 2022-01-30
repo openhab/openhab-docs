@@ -61,7 +61,7 @@ Wall Plug Dimmer<br /> <h1>Overview</h1><p>This is a wall plug dimmer that can b
       </parameter>
 
       <parameter name="config_2_2" type="integer" groupName="configuration"
-                 min="0" max="65535">
+                 min="-32767" max="32768">
         <label>2: Automatic switch off time</label>
         <description>If not zero, automatically switch off after a user defined time (in seconds)</description>
         <default>0</default>
@@ -94,7 +94,7 @@ RF Off command<br /> <h1>Overview</h1><p>Defines how to interpret RF Off command
       </parameter>
 
       <parameter name="config_5_1" type="integer" groupName="configuration"
-                 min="0" max="255">
+                 min="-127" max="128">
         <label>5: Speed for fast dimming</label>
         <description><![CDATA[
 Speed for fast dimming<br /> <h1>Overview</h1><p>Time to dim on button presses and Set command (if it has no duration specified).</p> <p>If not 0, dimming will be done smoothly to preserve bulb life.</p> <p>Set in 10ms steps.</p>
@@ -104,7 +104,7 @@ Speed for fast dimming<br /> <h1>Overview</h1><p>Time to dim on button presses a
       </parameter>
 
       <parameter name="config_6_1" type="integer" groupName="configuration"
-                 min="0" max="255">
+                 min="-127" max="128">
         <label>6: Speed for slow dimming</label>
         <description><![CDATA[
 Speed for slow dimming<br /> <h1>Overview</h1><p>Time to dim on button presses and Set command (if it has no duration specified).</p> <p>If not 0, dimming will be done smoothly to preserve bulb life.</p> <p>Set in 10ms steps.</p>

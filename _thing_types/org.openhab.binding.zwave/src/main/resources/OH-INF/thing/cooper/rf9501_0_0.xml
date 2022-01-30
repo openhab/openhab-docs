@@ -60,7 +60,7 @@
 
       <!-- PARAMETER DEFINITIONS -->
       <parameter name="config_1_1" type="integer" groupName="configuration"
-                 min="0" max="255">
+                 min="-127" max="128">
         <label>1: Delayed OFF time</label>
         <description>The time in seconds the switch will delay when trigger the delayed off feature</description>
         <default>0</default>
@@ -68,7 +68,7 @@
       </parameter>
 
       <parameter name="config_2_1" type="integer" groupName="configuration"
-                 min="0" max="255">
+                 min="-127" max="128">
         <label>2: Panic ON time</label>
         <description>The time in seconds the switch will turn on for when panic mode is triggered</description>
         <default>0</default>
@@ -76,7 +76,7 @@
       </parameter>
 
       <parameter name="config_3_1" type="integer" groupName="configuration"
-                 min="0" max="255">
+                 min="-127" max="128">
         <label>3: Panic OFF time</label>
         <description>The time in seconds the switch will turn off for when panic mode is triggered</description>
         <default>0</default>
@@ -84,7 +84,7 @@
       </parameter>
 
       <parameter name="config_4_1" type="integer" groupName="configuration"
-                 min="0" max="255">
+                 min="-127" max="128">
         <label>4: Basic Set Value</label>
         <description><![CDATA[
 Value to be transmitted to devices in association group<br /> <h1>Overview</h1><p>Setting this to anything other than 0 will cause the value to be transmitted to devices in the association group when the switch is triggered. A setting other than 0 will likely result in undesired operation</p>

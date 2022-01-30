@@ -101,8 +101,9 @@ Z-Wave Switch 3-gang White<br /> <h1>Overview</h1><p>COOLTOUCH Z-Wave smart swit
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->
-      <parameter name="group_1" type="text" groupName="association">
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
         <label>1: Controller</label>
+        <multipleLimit>1</multipleLimit>
       </parameter>
 
       <!-- STATIC DEFINITIONS -->

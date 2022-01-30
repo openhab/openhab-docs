@@ -89,7 +89,7 @@ After this time the Door Bell will receive an OFF.<br /> <h1>Overview</h1><p>Aft
       </parameter>
 
       <parameter name="config_3_1" type="integer" groupName="configuration"
-                 min="0" max="255">
+                 min="-127" max="128">
         <label>3: Ring Button ON Command</label>
         <description>Value to send on ring button press.</description>
         <default>255</default>
@@ -97,7 +97,7 @@ After this time the Door Bell will receive an OFF.<br /> <h1>Overview</h1><p>Aft
       </parameter>
 
       <parameter name="config_4_1" type="integer" groupName="configuration"
-                 min="0" max="255">
+                 min="-127" max="128">
         <label>4: Ring Button OFF Command</label>
         <default>0</default>
         <limitToOptions>false</limitToOptions>

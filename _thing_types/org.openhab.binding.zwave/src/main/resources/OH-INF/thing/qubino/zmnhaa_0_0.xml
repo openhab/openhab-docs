@@ -126,7 +126,7 @@ ctivate / deactivate functions ALL ON/ALL OFF<br /> <h1>Overview</h1><p>Flush 1 
       </parameter>
 
       <parameter name="config_11_2" type="integer" groupName="configuration"
-                 min="0" max="65535">
+                 min="-32767" max="32768">
         <label>11: Automatic turning off relay after set time</label>
         <description><![CDATA[
 Automatic turning off relay after set time<br /> <h1>Overview</h1><p>Default value 0</p> <ul><li> 0 - Auto OFF disabled</li> <li> 1 – 65535 = 0,01second – 655,35 seconds Auto OFF enabled with define time, step is 10mseconds.</li> </ul>
@@ -147,7 +147,7 @@ Automatic turning off relay after set time<br /> <h1>Overview</h1><p>Default val
       </parameter>
 
       <parameter name="config_40_1" type="integer" groupName="configuration"
-                 min="0" max="255">
+                 min="-127" max="128">
         <label>40: Power reporting in Watts on percentage change</label>
         <description><![CDATA[
 Power reporting in Watts on percentage change<br /> <h1>Overview</h1><ul><li>0 – Reporting Disabled</li> <li>1 – 100 = 1% - 100% Reporting enabled</li> </ul><p>Power report is send (push) only when actual power in Watts in real time changes for more than set percentage comparing to previous actual power in Watts, step is 1%</p>
@@ -157,7 +157,7 @@ Power reporting in Watts on percentage change<br /> <h1>Overview</h1><ul><li>0 �
       </parameter>
 
       <parameter name="config_42_2" type="integer" groupName="configuration"
-                 min="0" max="65535">
+                 min="-32767" max="32768">
         <label>42: Power reporting in Watts on power change</label>
         <description><![CDATA[
 Power reporting in Watts on power change<br /> <h1>Overview</h1><ul><li>default value 300 (power report in Watts is send each 300s)</li> <li>0 – Reporting Disabled</li> <li>1 – 65535 = 1second – 65535 seconds.</li> </ul><p>Reporting enabled. Power report is send with time interval set by entered value. </p>
@@ -187,8 +187,9 @@ triggered at change of the output Q state and reflecting its state<br /> <h1>Ove
         <multipleLimit>16</multipleLimit>
       </parameter>
 
-      <parameter name="group_4" type="text" groupName="association">
+      <parameter name="group_4" type="text" groupName="association" multiple="true">
         <label>4: Controller Updates</label>
+        <multipleLimit>1</multipleLimit>
       </parameter>
 
       <!-- STATIC DEFINITIONS -->

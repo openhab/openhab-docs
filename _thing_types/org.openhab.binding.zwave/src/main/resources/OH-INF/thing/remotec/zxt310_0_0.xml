@@ -32,7 +32,7 @@ AV IR Extender<br /> <h1>Overview</h1><p>ZXT‐310 is a Z‐Wave‐to‐AV IR Ex
 
       <!-- PARAMETER DEFINITIONS -->
       <parameter name="config_1_4" type="integer" groupName="configuration"
-                 min="0" max="4294967295">
+                 min="-2147483646" max="2147483647">
         <label>1: UIRD</label>
         <description><![CDATA[
 parameter 1 - 20 (0x01 - 0x14)<br /> <h1>Overview</h1><p>UIRD formatted raw data for the Simple AV command number or key being downloaded or uploaded </p>
@@ -42,7 +42,7 @@ parameter 1 - 20 (0x01 - 0x14)<br /> <h1>Overview</h1><p>UIRD formatted raw data
       </parameter>
 
       <parameter name="config_21_2" type="integer" groupName="configuration"
-                 min="0" max="65535">
+                 min="-32767" max="32768">
         <label>21: The Simple AV command</label>
         <description><![CDATA[
 The Simple AV command number or key going to be downloaded to the ZXT‐310<br /> <h1>Overview</h1><p>Referred to Simple AV command class key ID</p>

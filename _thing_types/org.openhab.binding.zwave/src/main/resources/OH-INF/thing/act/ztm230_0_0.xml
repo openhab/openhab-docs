@@ -118,7 +118,7 @@ Dim step parameter<br /> <h1>Overview</h1><p>Dim step (dim rate) parameter. It c
       </parameter>
 
       <parameter name="config_8_1" type="integer" groupName="configuration"
-                 min="1" max="255">
+                 min="-127" max="128">
         <label>8: On/Off Command dim timer</label>
         <description><![CDATA[
 Dim timer parameter<br /> <h1>Overview</h1><p>Dim timer parameter (how fast the dim rate) parameter. It can be set to a value of 1 to 255. This value indicates in 10 millisecond resolution, how often the dim level will change. For example, if you set this parameter to 1, then the dim level will change every 10mS. If you set it to 255, then the dim level will change every 2.55 seconds.  </p>
@@ -138,7 +138,7 @@ Dim step Parameter<br /> <h1>Overview</h1><p>Local Control dim rate. </p>
       </parameter>
 
       <parameter name="config_10_1" type="integer" groupName="configuration"
-                 min="1" max="255">
+                 min="-127" max="128">
         <label>10: Dim timer Parameter</label>
         <description><![CDATA[
 Dim timer Parameter<br /> <h1>Overview</h1><p>Dim timer Parameter. </p>
@@ -158,7 +158,7 @@ ALL ON/ALL OFF dim step<br /> <h1>Overview</h1><p>ALL ON/ALL OFF dim rate step 
       </parameter>
 
       <parameter name="config_12_1" type="integer" groupName="configuration"
-                 min="1" max="255">
+                 min="-127" max="128">
         <label>12: ALL ON/ALL OFF dim rate</label>
         <description><![CDATA[
 Dim timer Parameter<br /> <h1>Overview</h1><p>ALL ON/ALL OFF dim rate timer Parameter.</p>
@@ -218,7 +218,7 @@ Transmission LED behaviour<br /> <h1>Overview</h1><p>The ZTM230 will flicker its
       </parameter>
 
       <parameter name="config_20_1" type="integer" groupName="configuration"
-                 min="1" max="255">
+                 min="-127" max="128">
         <label>20: Poll group 1 interval</label>
         <description><![CDATA[
 Group 1 poll interval<br /> <h1>Overview</h1><p>How often it will poll Group 1 is configured using this parameter 20. The default poll rate is 2. Note that the poll interval starts timing again upon successful transmission of the poll request. Also note that the polling interval is not “exact” and that you may see some slight drift occur. Also the poll interval is reset upon switch being pressed. In addition, on power up, the ZTM230 will randomly poll based upon it’s node ID within 2 minutes of power being applied.  </p>

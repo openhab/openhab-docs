@@ -260,16 +260,18 @@ Toggle button inactivity time in "legacy" mode ( timeout )<br /> <h1>Overview</h
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->
-      <parameter name="group_0" type="text" groupName="association">
+      <parameter name="group_0" type="text" groupName="association" multiple="true">
         <label>0: ROOT DEVICE</label>
         <description>Root</description>
+        <multipleLimit>1</multipleLimit>
       </parameter>
 
-      <parameter name="group_1" type="text" groupName="association">
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
         <label>1: Lifeline</label>
         <description><![CDATA[
 Lifeline<br /> <h1>Overview</h1><p>Lifeline messages<br />- Device Reset Locally<br />- Notifications:<br />0x07 ( Home security ) - Motion Begin event ( 0x08 )<br />0x07 ( Home security ) - Motion End event ( 0x00, 0x08 )<br />- Binary Switch Report - LED state<br />- Multilevel Sensor Report - value of internal ambient light sensor<br />- Central scene notification - button events</p> <p>Motion Begin and Motion End events are sent along with frames to group 3. If multichannel<br />association is created the events are sent from motion sensor endpoint.<br />Switch Report is sent immediately upon a change of status along with frames<br />to group 2. If multichannel association is created the events are sent from LED<br />endpoint.<br />All notifications to lifeline are sent as sensor states regardless of sensor settings<br />and states as SLAVE_MODE, LOCAL_DISABLED and MOTION_ENABLE.<br />Multilevel Sensor Report is sent a maximum of once per 1 minute ( if the value has<br />changed by at least 3% ) and a minimum of once per 15 minutes ( if the value has<br />not changed ). If the ambient light value is old ( cannot be measured because of<br />permanent light ), the value is not transmitted via lifeline. Multilevel Sensor Report<br />can also be added to some other events to send in bulk. If multichannel association<br />is created the events are sent from light sensor endpoint.<br />Central scene notification is send as reaction to user interaction. If multichannel<br />association is created the events are send from toogle button endpoint.</p>
         ]]></description>
+        <multipleLimit>1</multipleLimit>
       </parameter>
 
       <parameter name="group_2" type="text" groupName="association" multiple="true">

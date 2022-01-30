@@ -92,7 +92,7 @@ Wireless Water Leak Sensor<br /> <h1>Overview</h1><p>Gain peace of mind when awa
       </parameter>
 
       <parameter name="config_4_1" type="integer" groupName="configuration"
-                 min="0" max="255">
+                 min="-127" max="128">
         <label>4: Water Alarm Association Mode</label>
         <description>Water Alarm Association Mode (send Basic Set ON or Basic Set OFF when alarm detected)</description>
         <default>0</default>

@@ -92,7 +92,7 @@ Auto Relock on/off<br /> <h1>Overview</h1><p>default is 0x00 or OFF</p>
       </parameter>
 
       <parameter name="config_3_1" type="integer" groupName="configuration"
-                 min="10" max="180">
+                 min="-127" max="128">
         <label>3: Auto Relock Time</label>
         <description><![CDATA[
 Auto Relock Time<br /> <h1>Overview</h1><p>10 to 180 seconds (default is 30 seconds)</p>
@@ -126,7 +126,7 @@ Language<br /> <h1>Overview</h1><p>1=English, 2=Spanish, 3=French (default is 1=
       </parameter>
 
       <parameter name="config_7_1" type="integer" groupName="configuration"
-                 min="10" max="180">
+                 min="-127" max="128">
         <label>7: Shut down time</label>
         <description><![CDATA[
 Shut down time after wrong code entries<br /> <h1>Overview</h1><p>10 to 180 seconds (default is 60 seconds)</p>
@@ -150,7 +150,7 @@ Operating mode<br /> <h1>Overview</h1><p>00 = normal mode (this is the default m
       </parameter>
 
       <parameter name="config_11_1" type="integer" groupName="configuration"
-                 min="0" max="255">
+                 min="-127" max="128">
         <label>11: One touch locking</label>
         <description><![CDATA[
 One touch locking<br /> <h1>Overview</h1><p>0x00 = OFF, 0xFF = ON (default)</p>
@@ -160,7 +160,7 @@ One touch locking<br /> <h1>Overview</h1><p>0x00 = OFF, 0xFF = ON (default)</p>
       </parameter>
 
       <parameter name="config_12_1" type="integer" groupName="configuration"
-                 min="0" max="255">
+                 min="-127" max="128">
         <label>12: Privacy button</label>
         <description><![CDATA[
 Privacy button<br /> <h1>Overview</h1><p>0x00 = OFF (default), 0xFF = ON</p>
@@ -170,7 +170,7 @@ Privacy button<br /> <h1>Overview</h1><p>0x00 = OFF (default), 0xFF = ON</p>
       </parameter>
 
       <parameter name="config_13_1" type="integer" groupName="configuration"
-                 min="0" max="255">
+                 min="-127" max="128">
         <label>13: Lock status LED</label>
         <description><![CDATA[
 Lock status LED<br /> <h1>Overview</h1><p>0x00 = OFF (default), 0xFF = ON</p>
@@ -190,9 +190,10 @@ Reset to factory default<br /> <h1>Overview</h1><p>01 = Lock will execute Reset 
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->
-      <parameter name="group_1" type="text" groupName="association">
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
         <label>1: Association group</label>
         <description>Lifeline</description>
+        <multipleLimit>1</multipleLimit>
       </parameter>
 
       <!-- STATIC DEFINITIONS -->

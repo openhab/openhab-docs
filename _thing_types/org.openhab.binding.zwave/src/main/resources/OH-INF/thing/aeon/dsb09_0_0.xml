@@ -173,7 +173,7 @@ Home Energy Meter<br /> <h1>Overview</h1><p>Your Home Energy Meter can be reset 
       </parameter>
 
       <parameter name="config_4_2" type="integer" groupName="configuration"
-                 min="0" max="60000">
+                 min="-32767" max="32768">
         <label>4: Current Threshold - Whole HEM</label>
         <description><![CDATA[
 Threshold change in wattage to induce an automatic report (Whole HEM).<br /> <h1>Overview</h1><p>Valid values: 0-60,000</p>
@@ -183,7 +183,7 @@ Threshold change in wattage to induce an automatic report (Whole HEM).<br /> <h1
       </parameter>
 
       <parameter name="config_5_2" type="integer" groupName="configuration"
-                 min="0" max="60000">
+                 min="-32767" max="32768">
         <label>5: Current Threshold - Clamp 1</label>
         <description><![CDATA[
 Threshold change in wattage to induce an automatic report (Clamp 1)<br /> <h1>Overview</h1><p>Valid values: 0-60,000</p>
@@ -193,7 +193,7 @@ Threshold change in wattage to induce an automatic report (Clamp 1)<br /> <h1>Ov
       </parameter>
 
       <parameter name="config_6_2" type="integer" groupName="configuration"
-                 min="0" max="60000">
+                 min="-32767" max="32768">
         <label>6: Current Threshold - Clamp 2</label>
         <description><![CDATA[
 Threshold change in wattage to induce an automatic report (Clamp 2)<br /> <h1>Overview</h1><p>Valid values: 0-60,000</p>
@@ -203,7 +203,7 @@ Threshold change in wattage to induce an automatic report (Clamp 2)<br /> <h1>Ov
       </parameter>
 
       <parameter name="config_7_2" type="integer" groupName="configuration"
-                 min="0" max="60000">
+                 min="-32767" max="32768">
         <label>7: Current Threshold - Clamp 3</label>
         <description><![CDATA[
 Threshold change in wattage to induce an automatic report (Clamp 3)<br /> <h1>Overview</h1><p>Valid values: 0-60,000</p>

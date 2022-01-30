@@ -364,7 +364,7 @@ Status LED 3 Color<br /> <h1>Overview</h1><p><br /></p>
       </parameter>
 
       <parameter name="config_30_1" type="integer" groupName="configuration"
-                 min="0" max="255">
+                 min="-127" max="128">
         <label>30: Blink Frequency</label>
         <description><![CDATA[
 Set blink frequency when displaying custom status<br /> <h1>Overview</h1><p>Possible values: 0, 1-255</p><p>0=No blink, 1=100ms ON then 100ms OFF</p>

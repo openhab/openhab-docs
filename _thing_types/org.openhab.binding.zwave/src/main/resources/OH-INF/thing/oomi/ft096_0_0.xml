@@ -256,7 +256,7 @@ Enables/disables parameter 91 and 92<br /> <h1>Overview</h1><p>Enables/disables 
       </parameter>
 
       <parameter name="config_91_2" type="integer" groupName="configuration"
-                 min="0" max="60000">
+                 min="-32767" max="32768">
         <label>91: Wattage Threshold</label>
         <description><![CDATA[
 minimum change in wattage to trigger<br /> <h1>Overview</h1><p>The value here represents minimum change in wattage (in<br />terms of wattage) for a REPORT to be sent (Valid values 0-<br />60000).</p>

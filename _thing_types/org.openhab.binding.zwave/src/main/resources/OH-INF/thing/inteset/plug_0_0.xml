@@ -84,7 +84,7 @@ Inteset Power Plug<br /> <h1>Overview</h1><p>Z-Wave Plug - Single Outlet (w/ wat
       </parameter>
 
       <parameter name="config_2_1" type="integer" groupName="configuration"
-                 min="1" max="65535">
+                 min="-127" max="128">
         <label>2: Meter Report Interval</label>
         <description>Defines interval time (in seconds) that the meter report data will be sent to the z-wave gateway</description>
         <default>300</default>
@@ -108,7 +108,7 @@ Inteset Power Plug<br /> <h1>Overview</h1><p>Z-Wave Plug - Single Outlet (w/ wat
       </parameter>
 
       <parameter name="config_5_1" type="integer" groupName="configuration"
-                 min="0" max="255">
+                 min="-127" max="128">
         <label>5: LED Display</label>
         <description>Defines LED funtion (on/off)</description>
         <default>1</default>
@@ -140,7 +140,7 @@ Inteset Power Plug<br /> <h1>Overview</h1><p>Z-Wave Plug - Single Outlet (w/ wat
       </parameter>
 
       <parameter name="config_9_1" type="integer" groupName="configuration"
-                 min="1" max="65535">
+                 min="-127" max="128">
         <label>9: Time Switch Period</label>
         <description>Defines the time period that the plug will be switched off automatically.</description>
         <default>150</default>
@@ -156,7 +156,7 @@ Inteset Power Plug<br /> <h1>Overview</h1><p>Z-Wave Plug - Single Outlet (w/ wat
       </parameter>
 
       <parameter name="config_11_1" type="integer" groupName="configuration"
-                 min="0" max="255">
+                 min="-127" max="128">
         <label>11: Clear Accumulated Energy</label>
         <description>Clears accumulated energy saved in the plug</description>
         <default>0</default>

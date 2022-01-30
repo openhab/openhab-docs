@@ -170,7 +170,7 @@ Configure what alarms Smart Switch 7 will react to from other Z-Wave devices.<br
       </parameter>
 
       <parameter name="config_10_1" type="integer" groupName="configuration"
-                 min="0" max="255">
+                 min="-127" max="128">
         <label>10: Release/Disable alarm</label>
         <description><![CDATA[
 Sets how you are able to disable Smart Switch 7s alarm state<br /> <h1>Overview</h1><table><tr><td><strong>Value</strong></td> <td><strong>Description</strong></td> </tr><tr><td>0</td> <td>Tap 3 times to disable the alarm state.</td> </tr><tr><td>1</td> <td>Notification idle events.</td> </tr><tr><td>10 - 255</td> <td>Sets time in minutes on how long the alarm state should be held.</td> </tr></table>
@@ -235,7 +235,7 @@ Allows you to configure how the LED indicator works<br /> <h1>Overview</h1><tabl
       </parameter>
 
       <parameter name="config_82_4" type="integer" groupName="configuration"
-                 min="0" max="4294967295">
+                 min="-2147483646" max="2147483647">
         <label>82: Night Light Mode</label>
         <description><![CDATA[
 Enable or disable Night Light Mode during specific times<br /> <h1>Overview</h1><table><tr><td>Value 1</td> <td>ON Hour (0 - 23)</td> </tr><tr><td>Value 2</td> <td>ON Minute (0 - 59)</td> </tr><tr><td>Value 3</td> <td>OFF Hour (0 - 23)</td> </tr><tr><td>Value 4</td> <td>OFF Minute (0 - 59)</td> </tr></table> <p>Byte value = 0x<strong>(Value 1)(Value 2)(Value 3)(Value 4)</strong></p> <p>Suggestion - use a hexadecimal to decimal converter that can be easily found on google.</p> <p>For example:</p> <p>If you want to set Night Light Mode to be enabled at 19:00 at night and disable at 07:30 in the morning, you just need to configure:</p> <p>Value1=0x13, Value2=0x00, Value3=0x07, Value4=0x1E.</p> <p>Input 0x1300071E into a hexadecimal calculator, the output decimal value will be 318768926</p>
@@ -295,7 +295,7 @@ Reports the sensors set on Parameter 101<br /> <h1>Overview</h1><p>Reports the s
       </parameter>
 
       <parameter name="config_255_4" type="integer" groupName="configuration"
-                 min="0" max="4294967295">
+                 min="-2147483646" max="2147483647">
         <label>255: Factory reset</label>
         <description><![CDATA[
 Factory reset the smart switch 7<br /> <h1>Overview</h1><p>This value can only be configured to reset default values of Smart Switch 7 parameter settings. This can also be used to factory reset and remove it from your Z-Wave network.</p> <table><tr><td><strong>Value</strong></td> <td><strong>Description</strong></td> </tr><tr><td>0</td> <td>Do nothing.</td> </tr><tr><td>Any value within 4 bytes.</td> <td>Reset Parameter Settings to default settings.</td> </tr><tr><td>0x55555555 or 1431655765</td> <td>Completely factory reset and remove from network.</td> </tr></table>

@@ -111,7 +111,7 @@ Adapt the display<br /> <h1>Overview</h1><p>This multiplier allows to adapt the 
       </parameter>
 
       <parameter name="config_5_1" type="integer" groupName="configuration"
-                 min="0" max="255">
+                 min="-127" max="128">
         <label>5: Heavy Rain</label>
         <description><![CDATA[
 Threshold defines heavy rain condition<br /> <h1>Overview</h1><p>This threshold defines when a heavy rain condition is hit. In most countries this is defined as &gt; 15 mm rain per hour. The default value however is to turn this function off. Size: 1 Byte, Default Value: 255</p>

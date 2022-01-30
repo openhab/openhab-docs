@@ -192,7 +192,7 @@ Defines how the strip transitions between colors<br /> <h1>Overview</h1><p>Note 
       </parameter>
 
       <parameter name="config_38_4" type="integer" groupName="configuration"
-                 min="0" max="4294967295">
+                 min="-2147483646" max="2147483647">
         <label>38: Change speed</label>
         <description><![CDATA[
 Change speed<br /> <h1>Overview</h1><p>Change speed:</p> <p>Value 1: The speed from OFF to ON.</p> <p>Value 2: The speed from ON to OFF.</p> <p>Value 3: Pause time of ON.</p> <p>Value 4: Pause time of OFF.  </p>
@@ -218,7 +218,7 @@ Change speed<br /> <h1>Overview</h1><p>Change speed:</p> <p>Value 1: The speed f
       </parameter>
 
       <parameter name="config_39_4_00FF0000" type="integer" groupName="configuration"
-                 min="0" max="4294967295">
+                 min="-2147483646" max="2147483647">
         <label>39: Multi Color, Single Color, or Random Mode - Byte 2</label>
         <description>todo</description>
         <default>0</default>

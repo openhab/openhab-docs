@@ -134,7 +134,7 @@ Send notifications to associated devices<br /> <h1>Overview</h1><p>Your Smart Pl
       </parameter>
 
       <parameter name="config_151_2" type="integer" groupName="configuration"
-                 min="0" max="65535">
+                 min="-32767" max="32768">
         <label>151: Power Report Value Threshold</label>
         <description><![CDATA[
 Minimum change in watts to report<br /> <h1>Overview</h1><p>Choose how you want your Smart Plug to report power consumption to your controller and associated devices.</p> <p>The number entered as value corresponds to the number of Watts the appliance needs to go over for the change to be reported.</p> <p>So if 50 Watts are entered by default, the smart plug will report any change in power usage over 50 Watts (whether it’s at least 50 Watts more or 50 Watts less compared to previous report).</p> <p>Values: 0 – 65535;</p> <p>0 – disabled (it will not report power consumption based on value change);</p>
@@ -143,7 +143,7 @@ Minimum change in watts to report<br /> <h1>Overview</h1><p>Choose how you want 
       </parameter>
 
       <parameter name="config_152_1" type="integer" groupName="configuration"
-                 min="0" max="255">
+                 min="-127" max="128">
         <label>152: Power Report Percentage Threshold</label>
         <description><![CDATA[
 Minimum percentage change to report<br /> <h1>Overview</h1><p>Choose how you want your Smart Plug to report power consumption to your controller and associated devices by percentage rate.</p> <p>The number entered as value corresponds to the percentage in power usage change the appliance needs to go over for the event to be reported.</p> <p>So if 10% is entered by default, the Smart Plug will report any change in power consumption over 10% (whether it’s at least 10% more or 10% less power consumption compared to previous report).</p> <p>Values: 0 – 255;</p> <p>0 – disabled (it will not report power consumption based on percentage change);</p>

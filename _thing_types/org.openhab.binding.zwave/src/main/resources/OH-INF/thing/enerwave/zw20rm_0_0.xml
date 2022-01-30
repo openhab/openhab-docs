@@ -77,7 +77,7 @@ In-wall Smart Meter Duplex Receptacle<br /> <h1>Overview</h1><p>The ZW20RM TR Du
       </parameter>
 
       <parameter name="config_8_1" type="integer" groupName="configuration"
-                 min="0" max="255">
+                 min="-127" max="128">
         <label>8: Instant Meter Autosend Interval</label>
         <description>Instant Energy Autosend Interval (send METER_REPORT)</description>
         <default>0</default>
@@ -85,7 +85,7 @@ In-wall Smart Meter Duplex Receptacle<br /> <h1>Overview</h1><p>The ZW20RM TR Du
       </parameter>
 
       <parameter name="config_9_1" type="integer" groupName="configuration"
-                 min="0" max="255">
+                 min="-127" max="128">
         <label>9: Instant Sensor Autosend interval</label>
         <description>Instant Energy Autosend interval (send SENSOR_MULTILEVEL_REPORT)</description>
         <default>0</default>
@@ -93,7 +93,7 @@ In-wall Smart Meter Duplex Receptacle<br /> <h1>Overview</h1><p>The ZW20RM TR Du
       </parameter>
 
       <parameter name="config_10_1" type="integer" groupName="configuration"
-                 min="0" max="255">
+                 min="-127" max="128">
         <label>10: Accumulated Meter Autosend Interval</label>
         <description>Accumulated Energy Autosend Interval report (send METER_REPORT)</description>
         <default>0</default>
@@ -116,7 +116,7 @@ Enable automatic notifications to associated device<br /> <h1>Overview</h1><p>De
       </parameter>
 
       <parameter name="config_12_1" type="integer" groupName="configuration"
-                 min="0" max="255">
+                 min="-127" max="128">
         <label>12: Minimum change to report</label>
         <description><![CDATA[
 Minimum change in wattage report<br /> <h1>Overview</h1><p>0-255: 0.0-25.5W</p>
@@ -126,9 +126,10 @@ Minimum change in wattage report<br /> <h1>Overview</h1><p>0-255: 0.0-25.5W</p>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->
-      <parameter name="group_1" type="text" groupName="association">
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
         <label>1: Notifications</label>
         <description>Lifeline</description>
+        <multipleLimit>1</multipleLimit>
       </parameter>
 
       <parameter name="group_2" type="text" groupName="association" multiple="true">

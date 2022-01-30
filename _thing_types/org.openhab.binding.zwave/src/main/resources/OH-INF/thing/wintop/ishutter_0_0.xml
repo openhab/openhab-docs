@@ -77,7 +77,7 @@ See overview<br /> <h1>Overview</h1><p>0 -&gt; One push button</p> <p>1 -&gt; Tw
       </parameter>
 
       <parameter name="config_2_2" type="integer" groupName="configuration"
-                 min="0" max="65535">
+                 min="-32767" max="32768">
         <label>2: Automatically close after</label>
         <description>If not zero, automatically close blind after a user defined time</description>
         <default>0</default>
@@ -152,7 +152,7 @@ Set LED indication mode<br /> <h1>Overview</h1><p>0 -&gt; Disabled</p> <p>1 -&gt
       </parameter>
 
       <parameter name="config_10_1" type="integer" groupName="configuration"
-                 min="0" max="255">
+                 min="-127" max="128">
         <label>10: Full close time</label>
         <description><![CDATA[
 Time to go from opened to closed state.<br /> <h1>Overview</h1><p>Used to estimate the current level. Note that in Permanent motion mode the reported value would a be Closed or Opened, while all Basic and  multilevel Set values (1-99, 255) would Open except 0 value that would Close. </p>
@@ -162,7 +162,7 @@ Time to go from opened to closed state.<br /> <h1>Overview</h1><p>Used to estima
       </parameter>
 
       <parameter name="config_11_1" type="integer" groupName="configuration"
-                 min="0" max="255">
+                 min="-127" max="128">
         <label>11: Full open time</label>
         <description><![CDATA[
 Time to go from closed to open state<br /> <h1>Overview</h1><p>Time to go from closed to open state. This value may differ from Full close time for some blinds due to gravity. Used to estimate the current level. Note that in Permanent motion mode the reported value would a be Closed or Opened, while all Basic and Multilevel Set values (1-99, 255) would Open except 0 value that would Close</p>
@@ -172,7 +172,7 @@ Time to go from closed to open state<br /> <h1>Overview</h1><p>Time to go from c
       </parameter>
 
       <parameter name="config_12_1" type="integer" groupName="configuration"
-                 min="0" max="255">
+                 min="-127" max="128">
         <label>12: Node Id of the blocking device</label>
         <description><![CDATA[
 Id of the device which commands would not be Open/Close, but as block/unblock.<br /> <h1>Overview</h1><p>Id of the device which commands would be interpreted not as Open/Close, but as block/unblock. Usefull with door opening detector: if the door is open, block the blind not to break shades while they move.</p>

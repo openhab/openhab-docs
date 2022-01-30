@@ -205,7 +205,7 @@ Enable/disable over current protection (over 2.1A for 20 seconds continuously)<b
       </parameter>
 
       <parameter name="config_14_2" type="integer" groupName="configuration"
-                 min="0" max="65535">
+                 min="-32767" max="32768">
         <label>14: Power automatic report absolute threshold</label>
         <description><![CDATA[
 Power automatic report absolute threshold<br /> <h1>Overview</h1><p>Power automatic report absolute threshold, unit is W. When power changes above the absolute threshold, immediately report current power value.</p>

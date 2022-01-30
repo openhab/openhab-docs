@@ -65,7 +65,7 @@ Keyfob with red panic button, lock button and unlock button<br /> <h1>Overview</
 
       <!-- PARAMETER DEFINITIONS -->
       <parameter name="config_1_1" type="integer" groupName="configuration"
-                 min="0" max="255">
+                 min="-127" max="128">
         <label>1: Set to default</label>
         <description><![CDATA[
 Set all configuration values to default values (factory default)<br /> <h1>Overview</h1><p>When you write 255 (0xFF) to this parameter, all configurable values are set back to their defaults. After some time, at the next wake up, the device will "answer" that by making the value -86 again (input is 0 to 255, but output is -128 to  +127, in 2's complement notation)</p><p>If this value is -86 (0xAA), the configuration of the device is default.<br />If this value is 85 (0x55), the configuration of the device has been changed.</p><p>Note:  If this value is on -86, and you make a change in the other configuration parameters, the OpenHab PaperUI prevent this, as the number must be between 0 and 255. You can circumvent that by making this parameter for instance 1 (or any other value, as long as that is not </p>
@@ -75,7 +75,7 @@ Set all configuration values to default values (factory default)<br /> <h1>Overv
       </parameter>
 
       <parameter name="config_2_1" type="integer" groupName="configuration"
-                 min="0" max="255">
+                 min="-127" max="128">
         <label>2: Min time to press panic button</label>
         <description><![CDATA[
 Minimum time to press the panic button before an alarm will be send<br /> <h1>Overview</h1><p>The time the panic button must be pressed before an alarm message is sent out. Unit is 10 ms, so 100 is 1 second.</p><p>In case of 0, send an alarm message immediately. <br />In case of 1 - 255, send an alarm message after this value * 10 ms</p><p>Default is  100 (1 second).</p>
@@ -85,7 +85,7 @@ Minimum time to press the panic button before an alarm will be send<br /> <h1>Ov
       </parameter>
 
       <parameter name="config_3_1" type="integer" groupName="configuration"
-                 min="0" max="255">
+                 min="-127" max="128">
         <label>3: Min LED on time after panic</label>
         <description><![CDATA[
 Minimum time that LED will be on after an alarm message<br /> <h1>Overview</h1><p>Specifies the minimum time the LED is on after an alarm message has been sent.  Unit is 10 ms, so 100 = 1 second. </p><p>Default is 100 (1 second). </p>
@@ -95,7 +95,7 @@ Minimum time that LED will be on after an alarm message<br /> <h1>Overview</h1><
       </parameter>
 
       <parameter name="config_4_1" type="integer" groupName="configuration"
-                 min="0" max="255">
+                 min="-127" max="128">
         <label>4: Buttons mapped</label>
         <description><![CDATA[
 Specifies what message will be sent in case of a key is pressed<br /> <h1>Overview</h1><p><b><i>Alarm mode</i> if 0: <br /></b>SOS button sends an ALARM_REPORT to nodes in group 1 <br />LOCK button sends a BASIC_SET with value 255 to nodes in group 1<br />UNLOCK button sends a BASIC_SET with value 0 to nodes in group 1<br /></p><p><b><i>Control mode</i> if 1-255:<br /></b>SOS button sends a BASIC_SET with value 255 to nodes in group 1<br />LOCK button sends a BASIC_SET with value 255 to nodes in group 2<br />UNLOCK button sends a BASIC_SET with value 0 to nodes in group 2<b><br /></b></p><p><br /></p>
@@ -105,7 +105,7 @@ Specifies what message will be sent in case of a key is pressed<br /> <h1>Overvi
       </parameter>
 
       <parameter name="config_5_1" type="integer" groupName="configuration"
-                 min="0" max="255">
+                 min="-127" max="128">
         <label>5: Min time to press control buttons</label>
         <description><![CDATA[
 Minimum time the control buttons must be pressed before a message is sent<br /> <h1>Overview</h1><p>Specifies the minimum time the lock and unlock buttons must be pressed, before a control message is sent to the controller. Unit is 10 ms, so 100 is 1 second.</p><p>Default is 10 (that is 100 ms)</p>
@@ -115,7 +115,7 @@ Minimum time the control buttons must be pressed before a message is sent<br /> 
       </parameter>
 
       <parameter name="config_6_1" type="integer" groupName="configuration"
-                 min="0" max="255">
+                 min="-127" max="128">
         <label>6: Min LED on time after control</label>
         <description><![CDATA[
 Minimum time that LED will be on after a control message<br /> <h1>Overview</h1><p>The time the LED will be on after a control message has been sent out. Unit is 10 ms, so for instance 100 is 1 second.</p><p>In case of 0, LED will be on while sending the message<br />In case of 1 - 255, LED will be on during send time + <i>this value </i>* 10 ms.<br /><br /> Default is 50 (500 ms)</p>

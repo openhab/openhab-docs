@@ -59,7 +59,7 @@ Water Sensor<br /> <h1>Overview</h1><p>Zooz Water Sensor ZSE30</p> <ul><li>Relia
 
       <!-- PARAMETER DEFINITIONS -->
       <parameter name="config_1_1" type="integer" groupName="configuration"
-                 min="0" max="255">
+                 min="-127" max="128">
         <label>1: Total Alarm Duration</label>
         <description><![CDATA[
 Total duration of audio and visual alarm when water is detected.<br /> <h1>Overview</h1><p>Use this parameter to set the total duration of audio and visual alarm each time water is detected. If the value is set to 0, the alarm will continue until water is no longer detected. Use parameters 2 – 4 to customize the alarm.</p>
@@ -69,7 +69,7 @@ Total duration of audio and visual alarm when water is detected.<br /> <h1>Overv
       </parameter>
 
       <parameter name="config_2_1" type="integer" groupName="configuration"
-                 min="1" max="255">
+                 min="-127" max="128">
         <label>2: Audio Alarm: Beep Interval</label>
         <description><![CDATA[
 Interval length between beeps<br /> <h1>Overview</h1><p>Set the beeping frequency for the sensor’s audio alarm. The interval between beeps can be as low as 1 minute.</p>
@@ -79,7 +79,7 @@ Interval length between beeps<br /> <h1>Overview</h1><p>Set the beeping frequenc
       </parameter>
 
       <parameter name="config_3_1" type="integer" groupName="configuration"
-                 min="10" max="255">
+                 min="-127" max="128">
         <label>3: Audio Alarm: First Beep Duration</label>
         <description><![CDATA[
 Duration of First Beep<br /> <h1>Overview</h1><p>Adjust the duration of the initial sound the alarm will produce after a leak is detected.</p>
@@ -89,7 +89,7 @@ Duration of First Beep<br /> <h1>Overview</h1><p>Adjust the duration of the init
       </parameter>
 
       <parameter name="config_4_1" type="integer" groupName="configuration"
-                 min="5" max="255">
+                 min="-127" max="128">
         <label>4: Audio Alarm: Beep Duration</label>
         <description><![CDATA[
 Beep Duration after first Beep<br /> <h1>Overview</h1><p>Adjust the duration of the beeps the alarm will sound after a leak is detected and the first “long” beep is produced.</p>
@@ -119,7 +119,7 @@ Enable/Disable Water Detection<br /> <h1>Overview</h1><p>Enable or disable water
       </parameter>
 
       <parameter name="config_7_1" type="integer" groupName="configuration"
-                 min="0" max="255">
+                 min="-127" max="128">
         <label>7: Trigger Action</label>
         <description><![CDATA[
 Send command to associated device.<br /> <h1>Overview</h1><p>You can choose if your Water Sensor turns an associated device on or off when sending the basic set command. Use value 0 to turn the associated device OFF and value 255 to turn it ON. Adjust brightness level for a Z-Wave dimmer (Multilevel switch) by putting in any value between 1 and 99. Values: 0 – OFF; 1 – 99 (% of light); 255 – ON (default).</p>

@@ -120,8 +120,9 @@ Auto turn off timer<br /> <h1>Overview</h1><p> 0 – 65535 (M); default 0M</p>
         <multipleLimit>5</multipleLimit>
       </parameter>
 
-      <parameter name="group_2" type="text" groupName="association">
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
         <label>2: Send Basic Set ON/OFF</label>
+        <multipleLimit>1</multipleLimit>
       </parameter>
 
       <!-- STATIC DEFINITIONS -->

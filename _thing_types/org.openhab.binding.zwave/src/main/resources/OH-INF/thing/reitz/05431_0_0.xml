@@ -60,7 +60,7 @@ Duewi ZW BJ ES 1000 / Reitz 05431 / ZWave.me 05457 Single button wall switch<br 
       </parameter>
 
       <parameter name="config_2_2" type="integer" groupName="configuration"
-                 min="0" max="65535">
+                 min="-32767" max="32768">
         <label>2: Automatic switch off</label>
         <description>If not zero, automatically switch off after a user defined time</description>
         <default>0</default>

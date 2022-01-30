@@ -202,7 +202,7 @@ Set appointment 2<br /> <h1>Overview</h1><p>0 to 99     The brightness level<
       </parameter>
 
       <parameter name="config_91_2" type="integer" groupName="configuration"
-                 min="0" max="60000">
+                 min="-32767" max="32768">
         <label>91: Set the threshold value of wattage</label>
         <description>Threshold change in wattage (in terms of wattage) to induce an automatic report</description>
         <default>25</default>
@@ -218,7 +218,7 @@ Threshold change in wattage (in terms of percentage)<br /> <h1>Overview</h1><p>T
       </parameter>
 
       <parameter name="config_100_1_wo" type="integer" groupName="configuration"
-                 min="0" max="255">
+                 min="-127" max="128">
         <label>100: Reset 101-103 to default</label>
         <description>Reset parameters 101-103 to default values</description>
         <default>0</default>
@@ -229,7 +229,7 @@ Threshold change in wattage (in terms of percentage)<br /> <h1>Overview</h1><p>T
       </parameter>
 
       <parameter name="config_101_1" type="integer" groupName="configuration"
-                 min="0" max="255">
+                 min="-127" max="128">
         <label>101: Set group 1 reports</label>
         <description><![CDATA[
 To set which reports need to be sent in Report group 1<br /> <h1>Overview</h1><p>1     Send Meter Report of voltage (V)<br />2     Send Meter Report of current (A)<br />4     Send Meter Report of wattage (W)<br />8     Send Meter Report of energy (kWh)</p>
@@ -239,7 +239,7 @@ To set which reports need to be sent in Report group 1<br /> <h1>Overview</h1><p
       </parameter>
 
       <parameter name="config_102_1" type="integer" groupName="configuration"
-                 min="0" max="255">
+                 min="-127" max="128">
         <label>102: Set group 2 reports</label>
         <description><![CDATA[
 To set which reports need to be sent in Report group 2<br /> <h1>Overview</h1><p>1     Send Meter Report of voltage (V)<br />2     Send Meter Report of current (A)<br />4     Send Meter Report of wattage (W)<br />8     Send Meter Report of energy (kWh)</p>
@@ -257,7 +257,7 @@ Reports sent to Report group 3<br /> <h1>Overview</h1><p>1     Send Meter Rep
       </parameter>
 
       <parameter name="config_110_1_wo" type="integer" groupName="configuration"
-                 min="0" max="255">
+                 min="-127" max="128">
         <label>110: Reset 111-113 to default</label>
         <description>Reset parameters 111-113 to default values</description>
         <default>0</default>
@@ -352,7 +352,7 @@ Reports sent to Report group 3<br /> <h1>Overview</h1><p>1     Send Meter Rep
       </parameter>
 
       <parameter name="config_125_1" type="integer" groupName="configuration"
-                 min="1" max="255">
+                 min="-127" max="128">
         <label>125: Set the default dimming rate</label>
         <description>The value range is 1 to 255 seconds</description>
         <default>255</default>

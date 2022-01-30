@@ -196,7 +196,7 @@ When should the switch send commands to associated devices<br /> <h1>Overview</h
       </parameter>
 
       <parameter name="config_13_1" type="integer" groupName="configuration"
-                 min="0" max="255">
+                 min="-127" max="128">
         <label>13: LED Indicator Color</label>
         <description><![CDATA[
 Sets the default color of the LED bar<br /> <h1>Overview</h1><p>This will set the default color of the LED bar</p> <p>Calculated by using a hue color circle ( value / 255*360) see website for more detail</p>

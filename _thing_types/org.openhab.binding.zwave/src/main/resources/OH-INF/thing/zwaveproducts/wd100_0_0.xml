@@ -82,7 +82,7 @@ In-Wall Dimmer<br /> <h1>Overview</h1><ul><li>Works with incandescent and dimmab
       </parameter>
 
       <parameter name="config_9_1" type="integer" groupName="configuration"
-                 min="0" max="255">
+                 min="-127" max="128">
         <label>9: Dim Level Increment</label>
         <description>Indicates the number of levels (1-99) to change dimming each step</description>
         <default>1</default>

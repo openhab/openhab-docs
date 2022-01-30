@@ -65,7 +65,7 @@ PIR motion sensor and light measurement<br /> <h1>Overview</h1><p>Zipato PIR Mot
 
       <!-- PARAMETER DEFINITIONS -->
       <parameter name="config_1_1" type="integer" groupName="configuration"
-                 min="8" max="255">
+                 min="-127" max="128">
         <label>1: Sensitivity level</label>
         <description><![CDATA[
 8 = Highest sensitivity, 255 = lowest sesitivity<br /> <h1>Overview</h1><p>1. SENSITIVITY LEVEL SETTING</p> <p>This parameter defines the sensitivity of PIR sensor. It’s recommended to test the sensor with moevements from a farthest end of the coverage area at the first time of use. If movements cannot be detected sensitively, simply adjust the sensitivity level with this parameter. This parameter can be configured with the value of 8 through 255, where 8 means high sensitivity and 255 means low sensitivity. Function: Sensivity Level Setting</p> <p>Parameter size: 1 byte</p> <p>Parameter number: 1</p> <p>Available settings: 8 ~ 255</p> <p>Default settings: 12</p>
@@ -93,7 +93,7 @@ BASIC SET LEVEL<br /> <h1>Overview</h1><p>3. BASIC SET LEVEL BASIC_SET command w
       </parameter>
 
       <parameter name="config_4_1" type="integer" groupName="configuration"
-                 min="0" max="255">
+                 min="-127" max="128">
         <label>4: PIR detection ENABLED / DISABLED</label>
         <description><![CDATA[
 Enable og disable the PIR sensor<br /> <h1>Overview</h1><p>4. PIR DETECTION FUNCTION ENABLED / DISABLED This parameter can enable or disable the PIR sensor detecting function. Function: Enabled / Disabled PIR function</p> <p>Parameter size: 1 byte</p> <p>Parameter number: 4</p> <p>Available settings: 0 (disable) or 255 (enable)</p> <p>Default setting: 255 </p>

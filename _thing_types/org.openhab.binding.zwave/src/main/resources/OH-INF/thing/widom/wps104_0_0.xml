@@ -362,7 +362,7 @@ Defines which parameters will be subjected to notification<br /> <h1>Overview</h
       </parameter>
 
       <parameter name="config_51_2" type="integer" groupName="configuration" readOnly="true"
-                 min="0" max="65535">
+                 min="-32767" max="32768">
         <label>51: Voltage RMS value</label>
         <description><![CDATA[
 Reading of this parameter returns the value of voltage RMS<br /> <h1>Overview</h1><p>Reading of this parameter returns the value of voltage RMS at the time of the reading expressed in tenths of Volts.</p>
@@ -372,7 +372,7 @@ Reading of this parameter returns the value of voltage RMS<br /> <h1>Overview</h
       </parameter>
 
       <parameter name="config_52_2" type="integer" groupName="configuration" readOnly="true"
-                 min="0" max="65535">
+                 min="-32767" max="32768">
         <label>52: Current RMS value</label>
         <description>Returns the value of current RMS expressed in hundredths of Amperes.</description>
         <default>0</default>
@@ -380,7 +380,7 @@ Reading of this parameter returns the value of voltage RMS<br /> <h1>Overview</h
       </parameter>
 
       <parameter name="config_53_1" type="integer" groupName="configuration" readOnly="true"
-                 min="0" max="255">
+                 min="-127" max="128">
         <label>53: Power Factor</label>
         <description>Returns the value of power factor as a percentage</description>
         <default>0</default>
@@ -388,7 +388,7 @@ Reading of this parameter returns the value of voltage RMS<br /> <h1>Overview</h
       </parameter>
 
       <parameter name="config_54_4" type="integer" groupName="configuration" readOnly="true"
-                 min="0" max="4294967295">
+                 min="-2147483646" max="2147483647">
         <label>54: Total energy consumed</label>
         <description>Returns the value of total energy consumed expressed in Wh (thousandths of KWh).</description>
         <default>0</default>
@@ -396,7 +396,7 @@ Reading of this parameter returns the value of voltage RMS<br /> <h1>Overview</h
       </parameter>
 
       <parameter name="config_55_4" type="integer" groupName="configuration" readOnly="true"
-                 min="0" max="4294967295">
+                 min="-2147483646" max="2147483647">
         <label>55: Total energy produced</label>
         <description>Returns the value of total energy consumed expressed in Wh (thousandths of KWh).</description>
         <default>0</default>

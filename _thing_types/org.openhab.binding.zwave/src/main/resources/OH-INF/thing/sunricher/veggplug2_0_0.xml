@@ -84,7 +84,7 @@ ROBB Smart Wallplug 3680Watt<br /> <h1>Overview</h1><p>Zwave Smart Plug. The Dev
 
       <!-- PARAMETER DEFINITIONS -->
       <parameter name="config_7_0" type="integer" groupName="configuration"
-                 min="0" max="4294967295">
+                 min="-2147483646" max="2147483647">
         <label>7: Device operating mode</label>
         <description><![CDATA[
 Defines operating modes: either "switch mode" or "thermostat mode".<br /> <h1>Overview</h1><p>Switch mode enables the control of the relay output directly by basic set or binary set.</p><p>Thermostat mode will control the relay output automatically according to the temperature value set.<br /></p>
@@ -94,7 +94,7 @@ Defines operating modes: either "switch mode" or "thermostat mode".<br /> <h1>Ov
       </parameter>
 
       <parameter name="config_8_0" type="integer" groupName="configuration"
-                 min="0" max="4294967295">
+                 min="-2147483646" max="2147483647">
         <label>8: Report state changes while in thermostat mode</label>
         <description><![CDATA[
 Whether to report setpoint and mode changes.<br /> <h1>Overview</h1><p>When configured as thermostat mode: if thermostat setpoint or mode changes, whether te report actively.</p><p> 0 - do not report.</p><p>1 - report actively.</p>
@@ -125,7 +125,7 @@ Temperature setpoint for automatic relay shutoff, or "0" to disable.<br /> <h1>O
       </parameter>
 
       <parameter name="config_11_0" type="integer" groupName="configuration"
-                 min="0" max="4294967295">
+                 min="-2147483646" max="2147483647">
         <label>11: Temperature change reporting threshold</label>
         <description><![CDATA[
 Temperature change in degrees Celsius at wich to report a temperature change to the gateway.<br /> <h1>Overview</h1><p>Temperature change report threshold. Report to the gateway when change value is lower or higher than the threshold <br /></p><p>0: disable reporting.</p><p>2 - 50: set a threshold‚ unit is 0.1 °Celsius.</p>
@@ -187,7 +187,7 @@ Time interval in seconds to report voltage, current, power and energy consumptio
       </parameter>
 
       <parameter name="config_18_0" type="integer" groupName="configuration"
-                 min="0" max="4294967295">
+                 min="-2147483646" max="2147483647">
         <label>18: Device state after a power reset</label>
         <description><![CDATA[
 The state to which the wallplug should be set after a powerfailure.<br /> <h1>Overview</h1><p>Device state after a power reset.</p><p>Switch Mode:</p><p>00: turn off relay</p><p>01: turn on relay</p><p>02: save relay state before power reset <br /></p><p>Thermostat mode:</p><p>00: HVAC OFF</p><p>01: HVAC ON</p><p>02: save HVAC state before power reset</p>

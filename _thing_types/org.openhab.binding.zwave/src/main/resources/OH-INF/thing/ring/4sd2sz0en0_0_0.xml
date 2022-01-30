@@ -109,7 +109,7 @@ LED indications on the device.<br /> <h1>Overview</h1><p><br /></p>
       </parameter>
 
       <parameter name="config_5_2" type="integer" groupName="configuration"
-                 min="0" max="65535">
+                 min="-32767" max="32768">
         <label>5: One shot timer</label>
         <description><![CDATA[
 wakeup notification one time after this parameter’s number of seconds.<br /> <h1>Overview</h1><p>unsigned</p>

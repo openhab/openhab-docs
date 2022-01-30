@@ -119,7 +119,7 @@ Configure Light Sensor<br /> <h1>Overview</h1><p>Reports light level in percenta
       </parameter>
 
       <parameter name="config_5_1" type="integer" groupName="configuration"
-                 min="15" max="255">
+                 min="-127" max="128">
         <label>5: Trigger Interval</label>
         <description><![CDATA[
 Set the trigger interval for motion sensor re-activation.<br /> <h1>Overview</h1><p>Use it to set trigger interval - the time when motion is reported again after initial trigger. Values: 15 - 255 where 1 stands for 1 second and 255 stands for 255 seconds. Default set to 15 seconds. NOTE: Small interval will increase activity and decrease battery life. </p>

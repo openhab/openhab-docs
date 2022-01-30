@@ -116,7 +116,7 @@ Type of cmd frame sent in case of flooding<br /> <h1>Overview</h1><p>Parameter d
       </parameter>
 
       <parameter name="config_7_1" type="integer" groupName="configuration"
-                 min="1" max="255">
+                 min="-127" max="128">
         <label>7: Forced Level of Dimming group 1</label>
         <description><![CDATA[
 Parameter specifying forced level of dimming f. asoc grp 1<br /> <h1>Overview</h1><p>Value of the parameter specifying the forced level of dimming / opening sun blinds when comes 'switch on' / 'open' command to devices from association group 1.</p>
@@ -253,7 +253,7 @@ Aalarms resulting from sensor’s vibrations<br /> <h1>Overview</h1><p>(MOVEMENT
       </parameter>
 
       <parameter name="config_75_2" type="integer" groupName="configuration"
-                 min="0" max="65535">
+                 min="-32767" max="32768">
         <label>75: Visual and audible alarms duration</label>
         <description><![CDATA[
 Visual and audible alarm duration<br /> <h1>Overview</h1><p>User can silence the Flood Sensor. Because the Sensor’s alarm may last for a long time, it’s possible to turn off visual and audible alarm signaling to save battery. The parameter determines a time period after which alarm will become “quiet” - still active but the device will go into battery saving mode.  Visual or acoustic alarm will be reactivated after time period specified in parameter 76.  When alarm status ceases, alarm will be turned off immediately.</p> <p>Value of 0 means visual and accoustic alarms are active indefinitely.  In battery power mode sensor will never go to sleep which may shorten battery life significantly.</p>
@@ -263,7 +263,7 @@ Visual and audible alarm duration<br /> <h1>Overview</h1><p>User can silence the
       </parameter>
 
       <parameter name="config_76_2" type="integer" groupName="configuration"
-                 min="0" max="65535">
+                 min="-32767" max="32768">
         <label>76: Alarm/basic retransmission time when flooding</label>
         <description><![CDATA[
 Time period after which alarm frames will be retransmitted<br /> <h1>Overview</h1><p>Parameter determines time period after which an alarm frame will be retransmitted. Value of 0 disables alarm frame retransmission.</p> <p><strong>NOTE:</strong> In case the time period set in this parameter is shorter than the one specified in parameter 75, the device will not quiet the alarm; it will remain active.</p>
@@ -296,8 +296,9 @@ Allows for turning of the internal flood sensor<br /> <h1>Overview</h1><p>Allows
         <multipleLimit>5</multipleLimit>
       </parameter>
 
-      <parameter name="group_3" type="text" groupName="association">
+      <parameter name="group_3" type="text" groupName="association" multiple="true">
         <label>3: Device Status</label>
+        <multipleLimit>1</multipleLimit>
       </parameter>
 
       <!-- STATIC DEFINITIONS -->

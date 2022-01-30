@@ -88,7 +88,7 @@ Location<br /> <h1>Overview</h1><p>Indicate a location for IR code learning and 
       </parameter>
 
       <parameter name="config_27_2" type="integer" groupName="configuration"
-                 min="0" max="65535">
+                 min="-32767" max="32768">
         <label>27: IR code number for built-in code library</label>
         <default>0</default>
         <limitToOptions>false</limitToOptions>

@@ -182,7 +182,7 @@ Select to report on thresholds<br /> <h1>Overview</h1><p>Enable/disable the sele
       </parameter>
 
       <parameter name="config_111_4" type="integer" groupName="configuration"
-                 min="0" max="4294967295">
+                 min="-2147483646" max="2147483647">
         <label>111: Setting an automatic report interval - Association Group 1</label>
         <description><![CDATA[
 <br /> <h1>Overview</h1><p>Parameter 111-113 [4 byte decimal] can be configured through your gateway in case the default settings of your MultiSensor are not what you desire.</p><p>Parameter 111 will set the interval for Group 1 (parameter 101), parameter 112 will set the interval for Group 2 (parameter 102), and parameter 113 will set the interval for Group 3 (parameter 103).</p><p>As an example, you have set parameter 101 to 241 which will report all of the sensors, and you want to report it every 1800 seconds. Set parameter 111 to 1800 to accomplish this.</p>
@@ -192,7 +192,7 @@ Select to report on thresholds<br /> <h1>Overview</h1><p>Enable/disable the sele
       </parameter>
 
       <parameter name="config_112_4" type="integer" groupName="configuration"
-                 min="0" max="4294967295">
+                 min="-2147483646" max="2147483647">
         <label>112: Setting an automatic report interval - Association Group 2</label>
         <description><![CDATA[
 <br /> <h1>Overview</h1><p>Parameter 111-113 [4 byte decimal] can be configured through your gateway in case the default settings of your MultiSensor are not what you desire.</p><p>Parameter 111 will set the interval for Group 1 (parameter 101), parameter 112 will set the interval for Group 2 (parameter 102), and parameter 113 will set the interval for Group 3 (parameter 103).</p><p>As an example, you have set parameter 101 to 241 which will report all of the sensors, and you want to report it every 1800 seconds. Set parameter 111 to 1800 to accomplish this.</p>
@@ -202,7 +202,7 @@ Select to report on thresholds<br /> <h1>Overview</h1><p>Enable/disable the sele
       </parameter>
 
       <parameter name="config_113_4" type="integer" groupName="configuration"
-                 min="0" max="4294967295">
+                 min="-2147483646" max="2147483647">
         <label>113: Setting an automatic report interval - Association Group 3</label>
         <description><![CDATA[
 <br /> <h1>Overview</h1><p>Parameter 111-113 [4 byte decimal] can be configured through your gateway in case the default settings of your MultiSensor are not what you desire.</p><p>Parameter 111 will set the interval for Group 1 (parameter 101), parameter 112 will set the interval for Group 2 (parameter 102), and parameter 113 will set the interval for Group 3 (parameter 103).</p><p>As an example, you have set parameter 101 to 241 which will report all of the sensors, and you want to report it every 1800 seconds. Set parameter 111 to 1800 to accomplish this.</p>

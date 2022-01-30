@@ -78,7 +78,7 @@ Wall Plug Meter Switch<br /> <h1>Overview</h1><p>Z-Wave UK Plug-in Switch plus P
 
       <!-- PARAMETER DEFINITIONS -->
       <parameter name="config_1_2" type="integer" groupName="configuration"
-                 min="0" max="65535">
+                 min="-32767" max="32768">
         <label>1: Watt Meter Report Period</label>
         <description><![CDATA[
 Time frame for reporting instant power consumption<br /> <h1>Overview</h1><p>If the setting is configured for 1 hour (set value = 720), the device will report its instant power consumption every 1 hour to Z-Wave Controller. (one unit = 5 seconds)</p>
@@ -87,7 +87,7 @@ Time frame for reporting instant power consumption<br /> <h1>Overview</h1><p>If 
       </parameter>
 
       <parameter name="config_2_2" type="integer" groupName="configuration"
-                 min="0" max="65535">
+                 min="-32767" max="32768">
         <label>2: KWH Meter Report Period</label>
         <description><![CDATA[
 Time frame for reporting Accumulated Power Consumption<br /> <h1>Overview</h1><p>if the setting is configured for 1hour (set value = 6), the device will report its Accumulated Power Consumption (KW/h) every hour (one unit = 10 min)</p>
@@ -97,7 +97,7 @@ Time frame for reporting Accumulated Power Consumption<br /> <h1>Overview</h1><p
       </parameter>
 
       <parameter name="config_3_2" type="integer" groupName="configuration"
-                 min="0" max="65535">
+                 min="-32767" max="32768">
         <label>3: Threshold of Watt for Load caution</label>
         <description><![CDATA[
 Warn when wattage of load over the preset threshold value<br /> <h1>Overview</h1><p>This is a warning when the wattage of load over the preset threshold value, if the load wattage exceeds the setting value the device will send a warning alarm command to the controller. </p>
@@ -107,7 +107,7 @@ Warn when wattage of load over the preset threshold value<br /> <h1>Overview</h1
       </parameter>
 
       <parameter name="config_4_2" type="integer" groupName="configuration"
-                 min="0" max="65535">
+                 min="-32767" max="32768">
         <label>4: Threshold of KWh for Load caution</label>
         <description><![CDATA[
 Warn if Acc. Power Consumption exceeds the set value<br /> <h1>Overview</h1><p>This is a warning when the KWh of load over the preset threshold value, if the Accumulated Power Consumption exceeds the setting value the device will send a warning alarm command to the controller.</p>

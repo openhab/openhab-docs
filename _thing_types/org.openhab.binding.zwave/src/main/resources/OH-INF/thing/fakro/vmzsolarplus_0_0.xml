@@ -112,7 +112,7 @@ Level of insolation to open/close the shades<br /> <h1>Overview</h1><p>Level of 
       </parameter>
 
       <parameter name="config_5_1" type="integer" groupName="configuration" readOnly="true"
-                 min="0" max="255">
+                 min="-127" max="128">
         <label>5: Temperature</label>
         <description><![CDATA[
 Temperature<br /> <h1>Overview</h1><p>T[<sup>o</sup>C] = x minus 50</p>
@@ -146,7 +146,7 @@ Restore last position<br /> <h1>Overview</h1><p>Restore last position or always 
       </parameter>
 
       <parameter name="config_17_1" type="integer" groupName="configuration" readOnly="true"
-                 min="0" max="255">
+                 min="-127" max="128">
         <label>17: Insolation level</label>
         <description><![CDATA[
 Current on autoshade solar panel<br /> <h1>Overview</h1><p>Current from autoshade solar panel for loading battery: 0 - 255 mA</p>
@@ -156,7 +156,7 @@ Current on autoshade solar panel<br /> <h1>Overview</h1><p>Current from autoshad
       </parameter>
 
       <parameter name="config_21_1" type="integer" groupName="configuration" readOnly="true"
-                 min="0" max="255">
+                 min="-127" max="128">
         <label>21: Motor current</label>
         <description><![CDATA[
 Motor current<br /> <h1>Overview</h1><p>Current used by motor: 10[mA] - 2,55[A]</p>
@@ -166,7 +166,7 @@ Motor current<br /> <h1>Overview</h1><p>Current used by motor: 10[mA] - 2,55[A]<
       </parameter>
 
       <parameter name="config_77_1" type="integer" groupName="configuration"
-                 min="1" max="255">
+                 min="-127" max="128">
         <label>77: CLOSE current</label>
         <description><![CDATA[
 CLOSE current<br /> <h1>Overview</h1><p>CLOSE current: 1[mA] - 255[mA]</p>
@@ -176,7 +176,7 @@ CLOSE current<br /> <h1>Overview</h1><p>CLOSE current: 1[mA] - 255[mA]</p>
       </parameter>
 
       <parameter name="config_78_1" type="integer" groupName="configuration"
-                 min="1" max="255">
+                 min="-127" max="128">
         <label>78: OPEN current</label>
         <description><![CDATA[
 OPEN current<br /> <h1>Overview</h1><p>OPEN current: 1[mA] - 255[mA]</p>
@@ -186,7 +186,7 @@ OPEN current<br /> <h1>Overview</h1><p>OPEN current: 1[mA] - 255[mA]</p>
       </parameter>
 
       <parameter name="config_79_1" type="integer" groupName="configuration"
-                 min="0" max="255">
+                 min="-127" max="128">
         <label>79: CLOSE overload current</label>
         <description><![CDATA[
 CLOSE overload current<br /> <h1>Overview</h1><p>CLOSE overload current: 10[mA] - 2,55[A]</p>
@@ -196,7 +196,7 @@ CLOSE overload current<br /> <h1>Overview</h1><p>CLOSE overload current: 10[mA] 
       </parameter>
 
       <parameter name="config_80_1" type="integer" groupName="configuration"
-                 min="0" max="255">
+                 min="-127" max="128">
         <label>80: OPEN overload current</label>
         <description><![CDATA[
 OPEN overload current<br /> <h1>Overview</h1><p>OPEN overload current: 10[mA] - 2,55[A]</p>
@@ -230,8 +230,9 @@ Restore default config values<br /> <h1>Overview</h1><p>Restore default config v
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->
-      <parameter name="group_1" type="text" groupName="association">
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
         <label>1: Lifeline</label>
+        <multipleLimit>1</multipleLimit>
       </parameter>
 
       <parameter name="group_2" type="text" groupName="association" multiple="true">

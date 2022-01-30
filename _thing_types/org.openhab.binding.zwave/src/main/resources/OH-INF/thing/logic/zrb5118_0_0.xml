@@ -264,7 +264,7 @@ Enables expanded LED control<br /> <h1>Overview</h1><p>This parameter enables an
       </parameter>
 
       <parameter name="config_11_1" type="integer" groupName="configuration"
-                 min="0" max="255">
+                 min="-127" max="128">
         <label>11: Prel-filter-time</label>
         <description><![CDATA[
 Prel-filter-time on button inputs<br /> <h1>Overview</h1><p>This parameter specificies the time use for prel-filter on the buttons in 0.01 seconds resolution. time can be can be </p><p>0 - 255 0 - 2.55 seconds. Default value is 5, corresponding to a prel filter of 50 milliseconds (0.05 seconds).</p>
@@ -274,7 +274,7 @@ Prel-filter-time on button inputs<br /> <h1>Overview</h1><p>This parameter speci
       </parameter>
 
       <parameter name="config_12_1" type="integer" groupName="configuration"
-                 min="0" max="255">
+                 min="-127" max="128">
         <label>12: Activation Threshold</label>
         <description><![CDATA[
 Threshold value for activation of button<br /> <h1>Overview</h1><p>This parameter specificies the threshold time for the buttons to be stable before the activation is accepted in 0.01 seconds resolution. time can be can be 0 – 2,55 sekunder. Standardvalue is 20, corrosponding to a threshold value of 200 milliseconds (0,20 seconds).</p>
@@ -284,7 +284,7 @@ Threshold value for activation of button<br /> <h1>Overview</h1><p>This paramete
       </parameter>
 
       <parameter name="config_13_1" type="integer" groupName="configuration"
-                 min="0" max="255">
+                 min="-127" max="128">
         <label>13: Held mode Threshold</label>
         <description><![CDATA[
 Threshold value for button in "long-press" condition<br /> <h1>Overview</h1><p>This parameter specificies the threshold time for the buttons to be stable before it will assume the condition "long-press" in 0.01 seconds resolution. time can be can be 0 – 2,55 sekunder. Standardvalue is 50, corrosponding to a threshold value of 500 milliseconds (0,50 seconds).</p>
@@ -294,7 +294,7 @@ Threshold value for button in "long-press" condition<br /> <h1>Overview</h1><p>T
       </parameter>
 
       <parameter name="config_14_4" type="integer" groupName="configuration"
-                 min="0" max="255255255255">
+                 min="-2147483646" max="2147483647">
         <label>14: Shared RGB-level control</label>
         <description><![CDATA[
 Shared RGB-level control<br /> <h1>Overview</h1><p>This parameter is used to set the shared light-level for the red, green and blue colors in the LEDs under the 4 Buttons.</p><p>Value Description</p><p>Byte 1: Light-level for red</p><p>0 - 255 Set the shared level for the red LEDs (standard value is 255)</p><p>Byte 2: Light-level for green<br /></p><p>0 – 255 Set the shared level for the green LEDs (standard value is 255)</p><p>Byte 3: Light-level for blue<br /></p><p>0 – 255 Set the shared level for the blue LEDs (standard value is 255)</p><p>Byte 4: Not used - must be set to 0.</p>
@@ -331,7 +331,7 @@ Button 1 function<br /> <h1>Overview</h1><p>This parameter set the function of b
       </parameter>
 
       <parameter name="config_17_2" type="integer" groupName="configuration"
-                 min="0" max="43200">
+                 min="-32767" max="32768">
         <label>17: Button 1 Timer</label>
         <description><![CDATA[
 Timer for Button 1<br /> <h1>Overview</h1><p>This parameter sets the time for the functions in parameter 16 which requires a timer. <br /></p>Value: Description<p>0 – 43200: Specifies the time in seconds. Standard is 300 = 5 minutes.</p>
@@ -398,7 +398,7 @@ Color commands for Button 1<br /> <h1>Overview</h1><p>This parameter controls th
       </parameter>
 
       <parameter name="config_22_4" type="integer" groupName="configuration"
-                 min="0" max="255255255255">
+                 min="-2147483646" max="2147483647">
         <label>22: Button 1 On RGB Level</label>
         <description><![CDATA[
 RGB-Light level to show for Button 1 in on state<br /> <h1>Overview</h1><p>This parameter is used to set the light saturation for the red, green and blue color, together with light level in the LEDs under Button 1, when status shal show on. (Stand is to set the blue to 50%). <br /></p><p>Value: Description<br /></p><p>Byte 1: Color saturation for red LEDs when status is on<br /></p><p>0 - 255: Specifies color saturation for the red LEDs. (Default value is 0).</p><p>Byte 2: Color saturation for green LEDs when status is on</p><p>0 - 255: Specifies color saturation for the green LEDs. (Default value is  0).</p><p>Byte 3: Color saturation for blue LEDs when status is on</p><p>0 - 255: Specifies color saturation for the blue LEDs. (Default value is 127).</p><p>Byte 4: LED control<br /></p><p>0 - 255: LED control, see the section about control of LEDs. (Default value is 0)</p>
@@ -408,7 +408,7 @@ RGB-Light level to show for Button 1 in on state<br /> <h1>Overview</h1><p>This 
       </parameter>
 
       <parameter name="config_23_4" type="integer" groupName="configuration"
-                 min="0" max="255255255255">
+                 min="-2147483646" max="2147483647">
         <label>23: Button 1 Off RGB Level</label>
         <description><![CDATA[
 RGB-Light level for Button 1 to show in off state<br /> <h1>Overview</h1><p>This parameter is used to set the light saturation for the red, green and blue color, together with light level in the LEDs under Button 1, when status shall show off. (Stand is to set a white color at 5%).</p><p>Value: Description</p><p>Byte 1: Color saturation for red LEDs when status is off<br /></p><p>0 - 255: Specifies color saturation for the red LEDs. (Default value is 47).</p><p>Byte 2: Color saturation for green LEDs when status is off<br /></p><p>0 - 255: Specifies color saturation for the green LEDs. (Default value is 47).</p><p>Byte 3: Color saturation for blue LEDs when status is off</p><p>0 - 255: Specifies color saturation for the blue LEDs. (Default value is 47).</p><p>Byte 4: LED control</p><p>0 - 255: LED control, see the section about control of LEDs. (Default value is 0)</p>
@@ -434,7 +434,7 @@ Button 2 function<br /> <h1>Overview</h1><p>This parameter set the function of b
       </parameter>
 
       <parameter name="config_25_2" type="integer" groupName="configuration"
-                 min="0" max="43200">
+                 min="-32767" max="32768">
         <label>25: Button 2 Timer</label>
         <description><![CDATA[
 Timer for Button 2<br /> <h1>Overview</h1><p>This parameter sets the time for the functions in parameter 24 which requires a timer.</p><p>Value: Description</p><p>0 – 43200: Specifies the time in seconds. Standard is 300 = 5 minutes.</p>
@@ -501,7 +501,7 @@ Color commands for Button 2<br /> <h1>Overview</h1><p>This parameter controls th
       </parameter>
 
       <parameter name="config_30_4" type="integer" groupName="configuration"
-                 min="0" max="255255255255">
+                 min="-2147483646" max="2147483647">
         <label>30: Button 2 On RGB Level</label>
         <description><![CDATA[
 RGB-Light level to show for Button 2 in on state<br /> <h1>Overview</h1><p>This parameter is used to set the light saturation for the red, green and blue color, together with light level in the LEDs under Button 2, when status shal show on. (Stand is to set the blue to 50%).</p><p>Value: Description</p><p>Byte 1: Color saturation for red LEDs when status is on</p><p>0 - 255: Specifies color saturation for the red LEDs. (Standardværdi er 0).</p><p>Byte 2: Color saturation for green LEDs when status is on</p><p>0 - 255: Specifies color saturation for the green LEDs. (Standardværdi er 0).</p><p>Byte 3: Color saturation for blue LEDs when status is on</p><p>0 - 255: Specifies color saturation for the blue LEDs. (Standardværdi er 127).</p><p>Byte 4: LED control</p><p>0 - 255: LED control, see the section about control of LEDs. (Standard value is 0)</p>
@@ -511,7 +511,7 @@ RGB-Light level to show for Button 2 in on state<br /> <h1>Overview</h1><p>This 
       </parameter>
 
       <parameter name="config_31_4" type="integer" groupName="configuration"
-                 min="0" max="255255255255">
+                 min="-2147483646" max="2147483647">
         <label>31: Button 2 Off RGB Level</label>
         <description><![CDATA[
 RGB-Light level for Button 2 to show in off state<br /> <h1>Overview</h1><p>This parameter is used to set the light saturation for the red, green and blue color, together with light level in the LEDs under Button 2, when status shall show off. (Stand is to set a white color at 5%).</p><p>Value: Description</p><p>Byte 1: Color saturation for red LEDs when status is off</p><p>0 - 255: Specifies color saturation for the red LEDs. (Standard value er 47).</p><p>Byte 2: Color saturation for green LEDs when status is off</p><p>0 - 255: Specifies color saturation for the green LEDs. (Standard value er 47).</p><p>Byte 3: Color saturation for blue LEDs when status is off</p><p>0 - 255: Specifies color saturation for the blue LEDs. (Standard value er 47).</p><p>Byte 4: LED control</p><p>0 - 255: LED control, see the section about control of LEDs. (Standard value is 0)</p>
@@ -536,7 +536,7 @@ Button 3 function<br /> <h1>Overview</h1><p>This parameter set the function of b
       </parameter>
 
       <parameter name="config_33_2" type="integer" groupName="configuration"
-                 min="0" max="43200">
+                 min="-32767" max="32768">
         <label>33: Button 3 Timer</label>
         <description><![CDATA[
 Timer for Button 3<br /> <h1>Overview</h1><p>This parameter sets the time for the functions in parameter 32 which requires a timer.</p><p>Value: Description</p><p>0 – 43200: Specifies the time in seconds. Standard is 300 = 5 minutes.</p>
@@ -603,7 +603,7 @@ Color commands for Button 3<br /> <h1>Overview</h1><p>This parameter controls th
       </parameter>
 
       <parameter name="config_38_4" type="integer" groupName="configuration"
-                 min="0" max="255255255255">
+                 min="-2147483646" max="2147483647">
         <label>38: Button 3 On RGB Level</label>
         <description><![CDATA[
 RGB-Light level to show for Button 3 in on state<br /> <h1>Overview</h1><p>This parameter is used to set the light saturation for the red, green and blue color, together with light level in the LEDs under Button 3, when status shal show on. (Stand is to set the blue to 50%).</p><p>Value: Description</p><p>Byte 1: Color saturation for red LEDs when status is on</p><p>0 - 255: Specifies color saturation for the red LEDs. (Standardværdi er 0).</p><p>Byte 2: Color saturation for green LEDs when status is on</p><p>0 - 255: Specifies color saturation for the green LEDs. (Standardværdi er 0).</p><p>Byte 3: Color saturation for blue LEDs when status is on</p><p>0 - 255: Specifies color saturation for the blue LEDs. (Standardværdi er 127).</p><p>Byte 4: LED control</p><p>0 - 255: LED control, see the section about control of LEDs. (Standard value is 0)</p>
@@ -613,7 +613,7 @@ RGB-Light level to show for Button 3 in on state<br /> <h1>Overview</h1><p>This 
       </parameter>
 
       <parameter name="config_39_4" type="integer" groupName="configuration"
-                 min="0" max="255255255255">
+                 min="-2147483646" max="2147483647">
         <label>39: Button 3 Off RGB Level</label>
         <description><![CDATA[
 RGB-Light level for Button 3 to show in off state<br /> <h1>Overview</h1><p>This parameter is used to set the light saturation for the red, green and blue color, together with light level in the LEDs under Button 3, when status shall show off. (Stand is to set a white color at 5%).</p><p>Value: Description</p><p>Byte 1: Color saturation for red LEDs when status is off</p><p>0 - 255: Specifies color saturation for the red LEDs. (Standard value er 47).</p><p>Byte 2: Color saturation for green LEDs when status is off</p><p>0 - 255: Specifies color saturation for the green LEDs. (Standard value er 47).</p><p>Byte 3: Color saturation for blue LEDs when status is off</p><p>0 - 255: Specifies color saturation for the blue LEDs. (Standard value er 47).</p><p>Byte 4: LED control</p><p>0 - 255: LED control, see the section about control of LEDs. (Standard value is 0)</p>
@@ -639,7 +639,7 @@ Button 4 function<br /> <h1>Overview</h1><p>This parameter set the function of b
       </parameter>
 
       <parameter name="config_41_2" type="integer" groupName="configuration"
-                 min="0" max="43200">
+                 min="-32767" max="32768">
         <label>41: Button 4 Timer</label>
         <description><![CDATA[
 Timer for Button 4<br /> <h1>Overview</h1><p>This parameter sets the time for the functions in parameter 32 which requires a timer.</p><p>Value: Description</p><p>0 – 43200: Specifies the time in seconds. Standard is 300 = 5 minutes.</p>
@@ -706,7 +706,7 @@ Color commands for Button 4<br /> <h1>Overview</h1><p>This parameter controls th
       </parameter>
 
       <parameter name="config_46_4" type="integer" groupName="configuration"
-                 min="0" max="255255255255">
+                 min="-2147483646" max="2147483647">
         <label>46: Button 4 On RGB Level</label>
         <description><![CDATA[
 RGB-Light level to show for Button 4 in on state<br /> <h1>Overview</h1><p>This parameter is used to set the light saturation for the red, green and blue color, together with light level in the LEDs under Button 3, when status shal show on. (Stand is to set the blue to 50%).</p><p>Value: Description</p><p>Byte 1: Color saturation for red LEDs when status is on</p><p>0 - 255: Specifies color saturation for the red LEDs. (Standardværdi er 0).</p><p>Byte 2: Color saturation for green LEDs when status is on</p><p>0 - 255: Specifies color saturation for the green LEDs. (Standardværdi er 0).</p><p>Byte 3: Color saturation for blue LEDs when status is on</p><p>0 - 255: Specifies color saturation for the blue LEDs. (Standardværdi er 127).</p><p>Byte 4: LED control</p><p>0 - 255: LED control, see the section about control of LEDs. (Standard value is 0)</p>
@@ -716,7 +716,7 @@ RGB-Light level to show for Button 4 in on state<br /> <h1>Overview</h1><p>This 
       </parameter>
 
       <parameter name="config_47_4" type="integer" groupName="configuration"
-                 min="0" max="255255255255">
+                 min="-2147483646" max="2147483647">
         <label>47: Button 4 Off RGB Level</label>
         <description><![CDATA[
 RGB-Light level for Button 4 to show in off state<br /> <h1>Overview</h1><p>This parameter is used to set the light saturation for the red, green and blue color, together with light level in the LEDs under Button 4, when status shall show off. (Stand is to set a white color at 5%).</p><p>Value: Description</p><p>Byte 1: Color saturation for red LEDs when status is off</p><p>0 - 255: Specifies color saturation for the red LEDs. (Standard value er 47).</p><p>Byte 2: Color saturation for green LEDs when status is off</p><p>0 - 255: Specifies color saturation for the green LEDs. (Standard value er 47).</p><p>Byte 3: Color saturation for blue LEDs when status is off</p><p>0 - 255: Specifies color saturation for the blue LEDs. (Standard value er 47).</p><p>Byte 4: LED control</p><p>0 - 255: LED control, see the section about control of LEDs. (Standard value is 0)</p>

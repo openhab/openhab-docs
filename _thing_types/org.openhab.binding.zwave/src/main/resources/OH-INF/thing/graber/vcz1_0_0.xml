@@ -62,11 +62,12 @@ Two Button Remote<br /> <h1>Overview</h1><p>The two-button remote is usually use
       </parameter-group>
 
       <!-- ASSOCIATION DEFINITIONS -->
-      <parameter name="group_1" type="text" groupName="association">
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
         <label>1: Lifeline</label>
         <description><![CDATA[
 <br /> <h1>Overview</h1><p>SWITCH MULTILEVEL REPORT after movement<br />BATTERY STATUS after movement or critical status<br />DEVICE RESET LOCALLY</p>
         ]]></description>
+        <multipleLimit>1</multipleLimit>
       </parameter>
 
       <parameter name="group_2" type="text" groupName="association" multiple="true">

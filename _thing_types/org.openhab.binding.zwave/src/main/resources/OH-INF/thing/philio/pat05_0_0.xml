@@ -191,7 +191,7 @@ The interval time for auto report the TVOC.<br /> <h1>Overview</h1><p>0 means tu
       </parameter>
 
       <parameter name="config_16_1" type="integer" groupName="configuration"
-                 min="0" max="255">
+                 min="-127" max="128">
         <label>16: Auto Report Tick Interval</label>
         <description><![CDATA[
 The interval time for auto report each tick.<br /> <h1>Overview</h1><p>Setting this configuration will effect configuration No.14 and No.15.</p> <p>The unit is 1 minute.</p> <p>Caution1: Setting to 0 means turn off all auto report function. <br />Caution2: The value is unsigned byte, the range is from 0x00 ~ 0xFF.</p>
@@ -221,8 +221,9 @@ The TVOC Differential to report<br /> <h1>Overview</h1><p>0 means turn off this 
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->
-      <parameter name="group_1" type="text" groupName="association">
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
         <label>1: Lifeline</label>
+        <multipleLimit>1</multipleLimit>
       </parameter>
 
       <!-- STATIC DEFINITIONS -->

@@ -89,7 +89,7 @@ Switch state saved or not when power failure<br /> <h1>Overview</h1><p>0=not sav
       </parameter>
 
       <parameter name="config_3_1" type="integer" groupName="configuration"
-                 min="0" max="255">
+                 min="-127" max="128">
         <label>3: ALL ON/ALL OFF</label>
         <description><![CDATA[
 ALL ON/ALL OFF<br /> <h1>Overview</h1><table><tr><td> <p>0=forbid ALL ON, forbid ALL OFF</p> <p>1=forbid ALL ON, allow ALL OFF</p> <p>2=allow ALL ON, forbid ALL OFF</p> <p>255=allow ALL ON, allow ALL OFF</p> </td> </tr></table>
@@ -119,7 +119,7 @@ Key Mode<br /> <h1>Overview</h1><p>0=single click to switch on/off status</p> <p
       </parameter>
 
       <parameter name="config_6_2" type="integer" groupName="configuration"
-                 min="0" max="65535">
+                 min="-32767" max="32768">
         <label>6: Key On duration</label>
         <description><![CDATA[
 Key On duration<br /> <h1>Overview</h1><p>0x00 infinite</p> <p>1~65535 unit "sec"</p>
@@ -129,11 +129,12 @@ Key On duration<br /> <h1>Overview</h1><p>0x00 infinite</p> <p>1~65535 unit "sec
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->
-      <parameter name="group_1" type="text" groupName="association">
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
         <label>1: Lifeline</label>
         <description><![CDATA[
 Associate with gateway<br /> <h1>Overview</h1><p>Send unsolicited reports to the gateway</p>
         ]]></description>
+        <multipleLimit>1</multipleLimit>
       </parameter>
 
       <parameter name="group_2" type="text" groupName="association" multiple="true">

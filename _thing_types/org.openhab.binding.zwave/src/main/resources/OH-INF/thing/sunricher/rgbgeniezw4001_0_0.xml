@@ -79,7 +79,7 @@ Enable/Disable Send basic report on load change<br /> <h1>Overview</h1><p>0 -- D
       </parameter>
 
       <parameter name="config_4_1" type="integer" groupName="configuration" readOnly="true"
-                 min="0" max="255">
+                 min="-127" max="128">
         <label>4: DefaultFadeTime</label>
         <description><![CDATA[
 Time to fade to new value (Units depend on value)<br /> <h1>Overview</h1><p>0x00 -- Instantaneous Change</p> <p>0x01 .. 0x7F -- 1 second (0x01) to 127 seconds (0x7F) in 1 second resolution</p> <p>0x80 .. 0xFE -- 1 minute (0x80) to 127 minutes (0xFE) in 1 minute resolution</p> <p>0xFF -- Factory Default duration (1 second)</p>

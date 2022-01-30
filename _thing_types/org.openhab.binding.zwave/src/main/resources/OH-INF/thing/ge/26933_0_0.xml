@@ -95,7 +95,7 @@
       </parameter>
 
       <parameter name="config_2_1" type="integer" groupName="configuration"
-                 min="0" max="255">
+                 min="-127" max="128">
         <label>2: Dim Level</label>
         <description><![CDATA[
 Brightness of associated light(s)<br /> <h1>Overview</h1><p>Valid values are 0-99 or 255 for last dimming level</p>

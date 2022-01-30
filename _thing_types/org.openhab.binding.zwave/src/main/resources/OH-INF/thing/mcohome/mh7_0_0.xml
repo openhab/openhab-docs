@@ -66,9 +66,10 @@ Water/Electrical Heating Thermostat<br /> <h1>Overview</h1><p>MCOHome Water / El
       </parameter-group>
 
       <!-- ASSOCIATION DEFINITIONS -->
-      <parameter name="group_1" type="text" groupName="association">
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
         <label>1: Gateway</label>
         <description>For sending temperature, working mode, etc. notifications</description>
+        <multipleLimit>1</multipleLimit>
       </parameter>
 
       <!-- STATIC DEFINITIONS -->

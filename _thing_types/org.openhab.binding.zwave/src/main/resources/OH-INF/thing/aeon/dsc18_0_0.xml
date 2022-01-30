@@ -78,7 +78,7 @@ Micro Smart Energy Switch G2<br /> <h1>Overview</h1><p>The Aeotec Micro Smart En
 
       <!-- PARAMETER DEFINITIONS -->
       <parameter name="config_2_2" type="integer" groupName="configuration"
-                 min="0" max="65535">
+                 min="-32767" max="32768">
         <label>2: Make Micro Smart Switch Blink</label>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
@@ -117,14 +117,14 @@ Micro Smart Energy Switch G2<br /> <h1>Overview</h1><p>The Aeotec Micro Smart En
       </parameter>
 
       <parameter name="config_91_2" type="integer" groupName="configuration"
-                 min="0" max="65535">
+                 min="-32767" max="32768">
         <label>91: Minimum Change to send Report (Watt)</label>
         <default>25</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_92_1" type="integer" groupName="configuration"
-                 min="0" max="255">
+                 min="-127" max="128">
         <label>92: Minimum Change to send Report (%)</label>
         <default>5</default>
         <limitToOptions>false</limitToOptions>

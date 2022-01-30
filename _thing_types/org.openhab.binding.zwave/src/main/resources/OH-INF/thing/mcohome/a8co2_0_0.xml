@@ -242,7 +242,7 @@ Multi-purpose sensor<br /> <h1>Overview</h1><p>MCOHome A8-9 is a Z-Wave enabled 
       </parameter>
 
       <parameter name="config_50_1" type="integer" groupName="configuration"
-                 min="-128" max="127">
+                 min="-127" max="128">
         <label>50: T_Offset</label>
         <description>-10.0 °C ~ 10.0 °C</description>
         <default>100</default>
@@ -263,7 +263,7 @@ Multi-purpose sensor<br /> <h1>Overview</h1><p>MCOHome A8-9 is a Z-Wave enabled 
       </parameter>
 
       <parameter name="config_53_1" type="integer" groupName="configuration"
-                 min="-128" max="127">
+                 min="-127" max="128">
         <label>53: PM2.5_OffSet</label>
         <description>-100 ~ 100 µg/m3</description>
         <default>100</default>
@@ -277,7 +277,7 @@ Multi-purpose sensor<br /> <h1>Overview</h1><p>MCOHome A8-9 is a Z-Wave enabled 
       </parameter>
 
       <parameter name="config_55_1" type="integer" groupName="configuration"
-                 min="-128" max="127">
+                 min="-127" max="128">
         <label>55: VOC_Correct</label>
         <description>-100 ~ 100</description>
         <default>100</default>
@@ -302,8 +302,9 @@ Multi-purpose sensor<br /> <h1>Overview</h1><p>MCOHome A8-9 is a Z-Wave enabled 
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->
-      <parameter name="group_1" type="text" groupName="association">
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
         <label>1: Lifeline</label>
+        <multipleLimit>1</multipleLimit>
       </parameter>
 
       <!-- STATIC DEFINITIONS -->

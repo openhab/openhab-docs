@@ -65,11 +65,12 @@ Door/Window Detector<br /> <h1>Overview</h1><p>The Door/Window Detector is a Z-W
       </parameter-group>
 
       <!-- ASSOCIATION DEFINITIONS -->
-      <parameter name="group_1" type="text" groupName="association">
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
         <label>1: Lifeline</label>
         <description><![CDATA[
 Notification Report, Device Reset Locally Notification<br /> <h1>Overview</h1><p>Group 1 commands:</p> <ul> <li>When the unit is powered up and was already a part of a Z-Wave network, the unit will send a Notification Report to the node of Group 1.</li> <li>When the tamper switch is released, the unit will send ALARM REPORT command to the nodes of Group 1.</li> <li>Upon detector status being changed, the unit will check its battery status simultaneously. When the battery level of the unit drops to an unacceptable level, the unit will emit Battery report to the nodes of Group 1.</li> <li>When performing Factory Reset the unit will send Device Reset Locally Notification to the node of Group 1.</li> </ul>
         ]]></description>
+        <multipleLimit>1</multipleLimit>
       </parameter>
 
       <parameter name="group_2" type="text" groupName="association" multiple="true">

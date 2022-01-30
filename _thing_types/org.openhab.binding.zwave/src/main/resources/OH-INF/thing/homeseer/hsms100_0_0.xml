@@ -101,7 +101,7 @@ Motion sensor sensitivity<br /> <h1>Overview</h1><p>The higher the value, the mo
       </parameter>
 
       <parameter name="config_18_2" type="integer" groupName="configuration"
-                 min="0" max="65535">
+                 min="-32767" max="32768">
         <label>18: Motion timeout interval</label>
         <description><![CDATA[
 Motion timeout interval<br /> <h1>Overview</h1><p>Set 0 to disable report.</p> <p>Value 1 to 65535 set timeout of transmitting command when motion has not been sensed for a period of time</p>

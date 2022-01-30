@@ -619,7 +619,7 @@ Remote control - transition time<br /> <h1>Overview</h1><p>This parameter determ
       </parameter>
 
       <parameter name="config_154_4" type="integer" groupName="configuration"
-                 min="0" max="4294967295">
+                 min="-2147483646" max="2147483647">
         <label>154: ON frame value for single click</label>
         <description><![CDATA[
 ON frame value for single click<br /> <h1>Overview</h1><p>For every byte: 0-99, 255<br /></p>
@@ -670,7 +670,7 @@ ON frame value for single click IN4<br /> <h1>Overview</h1><p>For every byte: 0-
       </parameter>
 
       <parameter name="config_155_4" type="integer" groupName="configuration"
-                 min="0" max="4294967295">
+                 min="-2147483646" max="2147483647">
         <label>155: OFF frame value for single click</label>
         <description><![CDATA[
 OFF frame value for single click<br /> <h1>Overview</h1><p>For every byte: 0-99, 255<br /></p>
@@ -721,7 +721,7 @@ OFF frame value for single click IN4<br /> <h1>Overview</h1><p>For every byte: 0
       </parameter>
 
       <parameter name="config_156_4" type="integer" groupName="configuration"
-                 min="0" max="4294967295">
+                 min="-2147483646" max="2147483647">
         <label>156: ON frame value for double click</label>
         <description><![CDATA[
 ON frame value for double click<br /> <h1>Overview</h1><p>For every byte: 0-99, 255<br /></p>
@@ -794,8 +794,9 @@ Start programmed sequence<br /> <h1>Overview</h1><p>Setting this parameter will 
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->
-      <parameter name="group_1" type="text" groupName="association">
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
         <label>1: Lifeline</label>
+        <multipleLimit>1</multipleLimit>
       </parameter>
 
       <parameter name="group_2" type="text" groupName="association" multiple="true">

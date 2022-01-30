@@ -71,7 +71,7 @@ PIR Motion Sensor 2<br /> <h1>Overview</h1><p><br /></p><p>Motion Sensor with il
 
       <!-- PARAMETER DEFINITIONS -->
       <parameter name="config_1_1" type="integer" groupName="configuration"
-                 min="8" max="255">
+                 min="-127" max="128">
         <label>1: Sensitivity Level</label>
         <description><![CDATA[
 Defines the sensitivity of PIR sensor.<br /> <h1>Overview</h1><p> Where 8 = highest &amp; 255 = lowest sensitivity</p>
@@ -91,7 +91,7 @@ Determines how long the associated devices should stay ON<br /> <h1>Overview</h1
       </parameter>
 
       <parameter name="config_3_1" type="integer" groupName="configuration"
-                 min="0" max="255">
+                 min="-127" max="128">
         <label>3: Basic Set Level</label>
         <description><![CDATA[
 Basic Set Command will be sent when motion is triggered<br /> <h1>Overview</h1><p>The receiver will take in for consideration; for instance, if a lamp module received the BSC of which value is decisive as to how bright of dim level of lamp module shall be.</p> <p>Available Settings:</p> <ul><li>0 - Off, Alarm cancelling or turning a device OFF</li> <li>1~99 or 255 – ON (Binary Switch Device)</li> <li>Dim Level (Multilevel Switch Device)</li> </ul>
@@ -101,7 +101,7 @@ Basic Set Command will be sent when motion is triggered<br /> <h1>Overview</h1><
       </parameter>
 
       <parameter name="config_4_1" type="integer" groupName="configuration"
-                 min="0" max="255">
+                 min="-127" max="128">
         <label>4: PIR Detector</label>
         <description><![CDATA[
 <br /> <h1>Overview</h1><p><br /></p>
@@ -134,7 +134,7 @@ Must be less than the On/Off Duration<br /> <h1>Overview</h1><p>No report will b
       </parameter>
 
       <parameter name="config_7_2" type="integer" groupName="configuration"
-                 min="60" max="36000">
+                 min="-32767" max="32768">
         <label>7: Light Sensor Polling Interval</label>
         <description><![CDATA[
 The Interval after which the Light Sensor Measure is polled.<br /> <h1>Overview</h1><p><br /></p>
@@ -157,7 +157,7 @@ The Interval after which the Light Sensor Measure is polled.<br /> <h1>Overview<
       </parameter>
 
       <parameter name="config_9_1" type="integer" groupName="configuration"
-                 min="0" max="255">
+                 min="-127" max="128">
         <label>9: Lux Level Changed Report</label>
         <description><![CDATA[
 How much the Lux Level must change<br /> <h1>Overview</h1><p>How much the Lux Level must change, in lux, to be reported to the main controller.</p>
@@ -190,7 +190,7 @@ How much the Lux Level must change<br /> <h1>Overview</h1><p>How much the Lux Le
       </parameter>
 
       <parameter name="config_99_2" type="integer" groupName="configuration"
-                 min="1" max="65535">
+                 min="-32767" max="32768">
         <label>99: Ambient light intensity calibration</label>
         <description><![CDATA[
 <br /> <h1>Overview</h1><p> This parameter defines the calibrated scale for ambient light intensity, to allow more or less granular light measurements</p>
@@ -200,11 +200,12 @@ How much the Lux Level must change<br /> <h1>Overview</h1><p>How much the Lux Le
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->
-      <parameter name="group_1" type="text" groupName="association">
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
         <label>1: Lifeline</label>
         <description><![CDATA[
 <br /> <h1>Overview</h1><ul> <li>NOTIFICATION_REPORT</li> <li>COMMAND_CLASS_SENSOR_BINARY_V2</li> <li>COMMAND_CLASS_SENSOR_MULTILEVEL_V7</li> <li>BATTERY_REPORT</li> <li>DEVICE_RESET_LOCALLY_NOTIFICATION</li> </ul>
         ]]></description>
+        <multipleLimit>1</multipleLimit>
       </parameter>
 
       <parameter name="group_2" type="text" groupName="association" multiple="true">

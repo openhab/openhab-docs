@@ -59,7 +59,7 @@ Motion Sensor<br /> <h1>Overview</h1><p>Zwave plus battery operated motion senso
 
       <!-- PARAMETER DEFINITIONS -->
       <parameter name="config_2_1" type="integer" groupName="configuration"
-                 min="0" max="255">
+                 min="-127" max="128">
         <label>2: Basic Set Level</label>
         <description>Setting the BASIC command value to turn on the light.</description>
         <default>255</default>
@@ -77,7 +77,7 @@ Adjust the PIR Sensitivity<br /> <h1>Overview</h1><p>This setting sets the sensi
       </parameter>
 
       <parameter name="config_6_1" type="integer" groupName="configuration"
-                 min="0" max="255">
+                 min="-127" max="128">
         <label>6: Multi-Sensor Function Switch</label>
         <description>Parameter to set the sensor functions.</description>
         <default>5</default>
@@ -185,7 +185,7 @@ How frequently battery status should be reported<br /> <h1>Overview</h1><p>The f
       </parameter>
 
       <parameter name="config_20_1" type="integer" groupName="configuration"
-                 min="0" max="255">
+                 min="-127" max="128">
         <label>20: Tick Interval</label>
         <description><![CDATA[
 Interval time for sending reports<br /> <h1>Overview</h1><p>This setting is used by the battery reporting interval setting. This setting defines the 'tick interval' or the number of time blocks to wait between sending reports. The default value of 30 means that a tick interval is 30 minutes.</p>

@@ -85,7 +85,7 @@ LED Backlit Brightness Level<br /> <h1>Overview</h1><p>0x00 LED disabled</p> <p>
       </parameter>
 
       <parameter name="config_4_1" type="integer" groupName="configuration"
-                 min="0" max="255">
+                 min="-127" max="128">
         <label>4: ALL ON/ALL OFF</label>
         <description><![CDATA[
 ALL ON/ALL OFF<br /> <h1>Overview</h1><p>0x00 forbid ALL ON, forbid ALL OFF</p> <p>0x01 forbid ALL ON, allow ALL OFF</p> <p>0x02 allow ALL ON, forbid ALL OFF</p> <p>0xFF allow ALL ON, allow ALL OFF</p>
@@ -185,7 +185,7 @@ Double click of S1<br /> <h1>Overview</h1><p>0x00 function disabled</p> <p>0x01 
       </parameter>
 
       <parameter name="config_15_1" type="integer" groupName="configuration"
-                 min="0" max="255">
+                 min="-127" max="128">
         <label>15: Switch1 to Association Group 2 &amp; 3</label>
         <description><![CDATA[
 Operation report from Switch1 to Association Group 2 &amp; 3<br /> <h1>Overview</h1><p>bit 6:0</p> <p>0x00 report all operation to AG2&amp;3</p> <p>0x01 only report when switching OFF</p> <p>0x02 only report when switching ON</p> <p>bit7 (valid for AG3 during dimming only)</p> <p>0 not report during dimming</p> <p>1 report during dimming</p>
@@ -195,7 +195,7 @@ Operation report from Switch1 to Association Group 2 &amp; 3<br /> <h1>Overview<
       </parameter>
 
       <parameter name="config_16_1" type="integer" groupName="configuration"
-                 min="0" max="255">
+                 min="-127" max="128">
         <label>16: Switch1 to Association Group 2</label>
         <description><![CDATA[
 Operation report from Switch1 to Association Group 2<br /> <h1>Overview</h1><p>0x00 When sent Basic Set On,</p> <p>carried Value is 0xFF</p> <p>0x01 When sent Basic Set On, carried</p> <p>Value is Current Dimmer Value</p>
@@ -205,7 +205,7 @@ Operation report from Switch1 to Association Group 2<br /> <h1>Overview</h1><p>0
       </parameter>
 
       <parameter name="config_19_1" type="integer" groupName="configuration"
-                 min="0" max="255">
+                 min="-127" max="128">
         <label>19: Scene ID sent to AG1 when one click of S1</label>
         <description><![CDATA[
 Scene ID sent to AG1 when one click of S1<br /> <h1>Overview</h1><p>0 Scene Activation disabled</p> <p>1~255 send Activation CC to AG1 with</p> <p>specified Scene ID</p>
@@ -215,7 +215,7 @@ Scene ID sent to AG1 when one click of S1<br /> <h1>Overview</h1><p>0 Scene Acti
       </parameter>
 
       <parameter name="config_20_1" type="integer" groupName="configuration"
-                 min="0" max="255">
+                 min="-127" max="128">
         <label>20: Scene ID sent to AG1 when double click of S1</label>
         <description><![CDATA[
 Scene ID sent to AG1 when double click of S1<br /> <h1>Overview</h1><p>0 Scene Activation disabled</p> <p>1~255 send Activation CC to AG1 with</p> <p>specified Scene ID</p>
@@ -225,7 +225,7 @@ Scene ID sent to AG1 when double click of S1<br /> <h1>Overview</h1><p>0 Scene A
       </parameter>
 
       <parameter name="config_21_1" type="integer" groupName="configuration"
-                 min="0" max="255">
+                 min="-127" max="128">
         <label>21: Scene ID sent to AG1 when hold S1</label>
         <description><![CDATA[
 Scene ID sent to AG1 when hold S1<br /> <h1>Overview</h1><p>0 Scene Activation disabled</p> <p>1~255 send Activation CC to AG1 with</p> <p>specified Scene ID</p>
@@ -244,9 +244,10 @@ Factory setting<br /> <h1>Overview</h1><p>0x55 restore factory setting</p>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->
-      <parameter name="group_1" type="text" groupName="association">
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
         <label>1: Lifeline</label>
         <description>1st AG: reports device’s dimming state. It supports only one Node ID. A controller/gateway SHOULD be associated to this AG.</description>
+        <multipleLimit>1</multipleLimit>
       </parameter>
 
       <parameter name="group_2" type="text" groupName="association" multiple="true">

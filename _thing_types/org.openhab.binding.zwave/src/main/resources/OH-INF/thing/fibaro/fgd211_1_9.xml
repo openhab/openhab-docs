@@ -102,7 +102,7 @@ Key no.2 is not represented by any physical device<br /> <h1>Overview</h1><p>Key
       </parameter>
 
       <parameter name="config_9_1" type="integer" groupName="configuration"
-                 min="1" max="255">
+                 min="-127" max="128">
         <label>9: Time of MANUALLY moving between dimming values</label>
         <description>Options for changing parameter 1-255 (10ms - 2,5s)</description>
         <default>5</default>
@@ -110,7 +110,7 @@ Key no.2 is not represented by any physical device<br /> <h1>Overview</h1><p>Key
       </parameter>
 
       <parameter name="config_10_1" type="integer" groupName="configuration"
-                 min="0" max="255">
+                 min="-127" max="128">
         <label>10: Time of AUTOMATIC moving between dimming values</label>
         <description><![CDATA[
 Options for changing parameter 1-255<br /> <h1>Overview</h1><p>Options for changing parameter 1-255 (10ms - 2,5s) - 0: this value disables the smooth change in light intensity. NOTE: value 0 is required for inductive and capacitive devices unsuitable for dimming (e.g. fluorescent lamps, motors, etc...)</p>
@@ -136,7 +136,7 @@ Options for changing parameter 1-255<br /> <h1>Overview</h1><p>Options for chang
       </parameter>
 
       <parameter name="config_13_1" type="integer" groupName="configuration"
-                 min="0" max="255">
+                 min="-127" max="128">
         <label>13: Minimum dimmer level control</label>
         <description>Options for changing parameter 1-98</description>
         <default>0</default>
@@ -215,7 +215,7 @@ Function to change [On-Off] bi-stable keys<br /> <h1>Overview</h1><p>This functi
       </parameter>
 
       <parameter name="config_20_1" type="integer" groupName="configuration"
-                 min="100" max="170">
+                 min="-127" max="128">
         <label>20: Parm 20</label>
         <description><![CDATA[
 Enable decreasing the minimum level<br /> <h1>Overview</h1><p>This function will enable decreasing the minimum level of the Dimmer by extending the control impulse.[100 - 170]</p> <p>By changing the minimem level, the user may completely dim LED bulbs.</p> <p>Not all LED bulbs available on the market support this.</p>
@@ -237,7 +237,7 @@ Enable decreasing the minimum level<br /> <h1>Overview</h1><p>This function will
       </parameter>
 
       <parameter name="config_39_2" type="integer" groupName="configuration"
-                 min="0" max="65535">
+                 min="-32767" max="32768">
         <label>39: ALARM FLASHING alarm time</label>
         <description>Amount of time (ms) the device keeps on flashing after receipt of Alarm Frame</description>
         <default>600</default>
@@ -245,7 +245,7 @@ Enable decreasing the minimum level<br /> <h1>Overview</h1><p>This function will
       </parameter>
 
       <parameter name="config_40_1" type="integer" groupName="configuration"
-                 min="0" max="255">
+                 min="-127" max="128">
         <label>40: Updating the dimming level without switch.</label>
         <description><![CDATA[
 Parameter’s value changes depending on the dimming level.<br /> <h1>Overview</h1><p>Available settings: from 1 to 99. Parameter’s value changes depending on the dimming level.</p>
@@ -278,8 +278,9 @@ Command class scene activation for group no. 3<br /> <h1>Overview</h1><p>The dev
         <multipleLimit>5</multipleLimit>
       </parameter>
 
-      <parameter name="group_3" type="text" groupName="association">
+      <parameter name="group_3" type="text" groupName="association" multiple="true">
         <label>3: Controller Updates</label>
+        <multipleLimit>1</multipleLimit>
       </parameter>
 
       <!-- STATIC DEFINITIONS -->

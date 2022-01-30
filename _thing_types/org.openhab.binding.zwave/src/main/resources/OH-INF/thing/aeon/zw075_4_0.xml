@@ -79,7 +79,7 @@ Smart Energy Switch 5th Edition<br /> <h1>Overview</h1><p>Smart Energy Switch 5t
 
       <!-- PARAMETER DEFINITIONS -->
       <parameter name="config_2_2" type="integer" groupName="configuration"
-                 min="0" max="65535">
+                 min="-32767" max="32768">
         <label>2: Blinking Behaviour</label>
         <description><![CDATA[
 The LSB defines the total time the device need to blink.<br /> <h1>Overview</h1><p>The LSB defines the total time the device need to blink. The value if set in seconds. 1 - 255 The MSB defines the on/off interval of the blinking. The unit is 0.1 s. This is a double byte value.</p>
@@ -209,7 +209,7 @@ Time interval when report of Reporting Group 3 is sent.<br /> <h1>Overview</h1><
       </parameter>
 
       <parameter name="config_200_1" type="integer" groupName="configuration" readOnly="true"
-                 min="0" max="255">
+                 min="-127" max="128">
         <label>200: Partner ID</label>
         <description><![CDATA[
 Determines whether or not the device is OEM or white label<br /> <h1>Overview</h1><p>Determines whether or not the device is OEM or white label.</p> <p>0 is OEM; 1 and above are a repackaged products for other companies.</p>

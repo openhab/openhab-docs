@@ -102,7 +102,7 @@ Enable or disable automatic notifications<br /> <h1>Overview</h1><p>Enables auto
       </parameter>
 
       <parameter name="config_91_2" type="integer" groupName="configuration"
-                 min="0" max="65535">
+                 min="-32767" max="32768">
         <label>91: Minimum change in wattage</label>
         <description><![CDATA[
 Minimum change in wattage to trigger event<br /> <h1>Overview</h1><p>The value here represents minimum change in wattage (in terms of wattage) for a REPORT to be sent.</p>
@@ -205,7 +205,7 @@ Minimum change in wattage % to trigger event<br /> <h1>Overview</h1><p>The value
       </parameter>
 
       <parameter name="config_254_2" type="integer" groupName="configuration"
-                 min="0" max="65535">
+                 min="-32767" max="32768">
         <label>254: Device Tag</label>
         <default>0</default>
         <limitToOptions>false</limitToOptions>

@@ -95,7 +95,7 @@ min. delta for automatic report<br /> <h1>Overview</h1><p>Defines the minimum ch
       </parameter>
 
       <parameter name="config_4_4" type="integer" groupName="configuration"
-                 min="0" max="4294967295">
+                 min="-2147483646" max="2147483647">
         <label>4: Mechanical meter serial number</label>
         <default>0</default>
         <limitToOptions>false</limitToOptions>

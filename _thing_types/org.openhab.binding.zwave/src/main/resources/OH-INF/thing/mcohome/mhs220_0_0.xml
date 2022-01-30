@@ -106,7 +106,7 @@ External switch type<br /> <h1>Overview</h1><p>0x00 Button (Momentary buttons )<
       </parameter>
 
       <parameter name="config_6_2" type="integer" groupName="configuration"
-                 min="0" max="65535">
+                 min="-32767" max="32768">
         <label>6: Timing function</label>
         <description>Timing function</description>
         <default>0</default>

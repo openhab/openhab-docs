@@ -57,7 +57,7 @@
       </parameter>
 
       <parameter name="config_2_1" type="integer" groupName="configuration"
-                 min="0" max="255">
+                 min="-127" max="128">
         <label>2: Automatically switch off after x seconds.</label>
         <description><![CDATA[
 If not zero, automatically switch device off after a user defined time<br /> <h1>Overview</h1><p>If not zero, automatically switch device off after a user defined time.</p> <ul><li>0 -&gt; Disabled</li> <li>1 - 65535 -&gt; Enabled, automatically switch off after x seconds.</li> </ul>

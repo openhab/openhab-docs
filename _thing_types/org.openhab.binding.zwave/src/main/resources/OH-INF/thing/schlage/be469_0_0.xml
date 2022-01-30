@@ -89,7 +89,7 @@ Touchscreen Deadbolt<br /> <h1>Overview</h1><p>Touchscreen Deadbolt with Alarm</
       </parameter>
 
       <parameter name="config_6_4" type="integer" groupName="configuration"
-                 min="0" max="4294967103">
+                 min="-2147483646" max="2147483647">
         <label>6: User Slot Status</label>
         <description><![CDATA[
 User slot status<br /> <h1>Overview</h1><p>Byte 1 (msb): Bit 7: User 8 Status Bit 6: User 7 Status Bit 5: User 6 Status Bit 4: User 5 Status Bit 3: User 4 Status Bit 2: User 3 Status Bit 1: User 2 Status Bit 0: User 1 Status Byte 2 : Bit 7: User 16 Status Bit 6: User 15 Status Bit 5: User 14 Status Bit 4: User 13 Status Bit 3: User 12 Status Bit 2: User 11 Status Bit 1: User 10 Status Bit 0: User 9 Status Byte 3 : Bit 7: User 24 Status Bit 6: User 23 Status Bit 5: User 22 Status Bit 4: User 21 Status Bit 3: User 20 Status Bit 2: User 19 Status Bit 1: User 18 Status Bit 0: User 17 Status Byte 4 (lsb): Bit 7: reserved Bit 6: reserved Bit 5: User 30 Status Bit 4: User 29 Status Bit 3: User 28 Status Bit 2: User 27 Status Bit 1: User 26 Status Bit 0: User 25 Status</p>
@@ -213,7 +213,7 @@ User slot status<br /> <h1>Overview</h1><p>Byte 1 (msb): Bit 7: User 8 Status Bi
       </parameter>
 
       <parameter name="config_18_1" type="integer" groupName="configuration" readOnly="true"
-                 min="0" max="255">
+                 min="-127" max="128">
         <label>18: Get Bootloader Version</label>
         <default>0</default>
         <limitToOptions>false</limitToOptions>

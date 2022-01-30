@@ -220,11 +220,12 @@ Motion Off behaviour (timeout)<br /> <h1>Overview</h1><p>Motion disable timeout 
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->
-      <parameter name="group_1" type="text" groupName="association">
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
         <label>1: Lifeline</label>
         <description><![CDATA[
 Lifeline<br /> <h1>Overview</h1><p>- Device Reset Locally (immediately)<br />- Notifications:<br />0x09 (System) – Hardware failure with manufacturer proprietary code (0x03)<br />0x09 (System) – Software failure with manufacturer proprietary code (0x04)<br />0x07 (Home security) – Motion Begin event (0x08)<br />0x07 (Home security) – Motion End event (0x00, 0x08)<br />- Binary Switch Report (SPIR)<br />- Binary Switch Report (SBIN)<br />- Multilevel Switch Report (SMUL)<br />- Multilevel Sensor Report – value of internal ambient light sensor<br />- Central scene notification (STOGGLE)<br />Motion Begin and Motion End events are sent along with frames to group 3.<br />If multichannel association is created the events are sent from motion sensor<br />endpoint.<br />Switch Report is sent immediately upon a change of status along with<br />frames to group 2. If multichannel association is created the events are sent<br />from lamp/relay endpoint.<br />Multilevel Sensor Report is sent a maximum of once per 1 minute<br />(if the value has changed by at least 3%) and a minimum of once per 15 min-<br />utes (if the value has not changed). If the ambient light value is old (cannot<br />be measured because of permanent light), the value is not transmitted via<br />lifeline. Multilevel Sensor Report can also be added to some other events to<br />send in bulk. If multichannel association is created the events are sent from<br />light sensor endpoint.<br />Central scene notification is sent as reaction to user interaction. If multichan-<br />nel association is created the events are sent from toggle button endpoint.</p> <p>All notifications to lifeline are sent as sensor states regardless of sensor<br />settings and states as SLAVE_MODE, LOCAL_DISABLED and MOTION_<br />ENABLE</p>
         ]]></description>
+        <multipleLimit>1</multipleLimit>
       </parameter>
 
       <parameter name="group_2" type="text" groupName="association" multiple="true">

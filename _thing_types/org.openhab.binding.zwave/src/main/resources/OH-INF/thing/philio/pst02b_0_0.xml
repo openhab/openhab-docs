@@ -190,7 +190,7 @@ The interval time for auto reporting the temperature.<br /> <h1>Overview</h1><p>
       </parameter>
 
       <parameter name="config_20_1" type="integer" groupName="configuration"
-                 min="0" max="255">
+                 min="-127" max="128">
         <label>20: Auto Report Tick interval</label>
         <description><![CDATA[
 The interval time for auto report each tick.<br /> <h1>Overview</h1><p><strong>PST02B only:</strong></p> <p>The interval time for auto report each tick. Setting this configuration will effect configuration No. 10, No. 11, No. 12 and No. 13</p> <p>The unit is 1 minute</p> <p>Caution1: Setting to 0 means turn off all auto report function.</p> <p>Caution 2: Thing value is unsigned byte. the range is from 0x00 (0) to 0xff (255)</p> <p><strong>TSP01 only:</strong></p> <p>Despite TSP01 instructions, this parameter has same effect as PST02B (tick time).</p>

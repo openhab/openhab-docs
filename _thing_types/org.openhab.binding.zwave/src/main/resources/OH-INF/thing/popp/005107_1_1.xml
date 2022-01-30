@@ -91,7 +91,7 @@ Solar Powered Outdoor Siren<br /> <h1>Overview</h1><p>This solar powered outdoor
       </parameter>
 
       <parameter name="config_2_1" type="integer" groupName="configuration"
-                 min="0" max="255">
+                 min="-127" max="128">
         <label>2: Temperature adjustments</label>
         <description><![CDATA[
 Temperature correction with positive and negative offset values<br /> <h1>Overview</h1><p>Temperature correction. For positive value 10 = 1 °C, for negative value x = 256 -  (T°C * 10).</p> <p>Example, if need shift -2.6°C, value calculate: 256 -  (2.6 * 10) = 230.</p>
@@ -103,7 +103,7 @@ Temperature correction with positive and negative offset values<br /> <h1>Overvi
       </parameter>
 
       <parameter name="config_3_1" type="integer" groupName="configuration"
-                 min="0" max="255">
+                 min="-127" max="128">
         <label>3: Send unsolicited temperature report</label>
         <description><![CDATA[
 Threshold temperature to send unsolicited report. 10 = 1°C<br /> <h1>Overview</h1><p>In 0.1°C (Default 10)</p>
@@ -113,7 +113,7 @@ Threshold temperature to send unsolicited report. 10 = 1°C<br /> <h1>Overview</
       </parameter>
 
       <parameter name="config_4_2" type="integer" groupName="configuration"
-                 min="0" max="65535">
+                 min="-32767" max="32768">
         <label>4: temperature report</label>
         <description><![CDATA[
 Send unsolicited temperature report after N wake up<br /> <h1>Overview</h1><p>Send unsolicited  temperature report after N wake up</p> <p>If the value is set, after N wake up number (measurement is every 4 minutes) the  temperature report will be sent.</p> <p>By default it's 15 = every 1 hour, 0 is disabled </p>

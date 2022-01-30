@@ -102,11 +102,12 @@ Send Scene Commands to Gateway or Controller Devices<br /> <h1>Overview</h1><p>P
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->
-      <parameter name="group_1" type="text" groupName="association">
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
         <label>1: Lifeline</label>
         <description><![CDATA[
 Lifeline<br /> <h1>Overview</h1><p><b>Lifeline — Group 1</b> </p> <p>This group supports one node, with its default association assigned to Master Controller node after inclusion.</p> <p>Used by controlled devices to report state to Master Controller if any changes happen.</p> <p>Send Command Class Device Reset Locally to Group 1’s associated device to achieve a factory reset of wall controller.</p>
         ]]></description>
+        <multipleLimit>1</multipleLimit>
       </parameter>
 
       <parameter name="group_2" type="text" groupName="association" multiple="true">

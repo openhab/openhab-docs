@@ -203,7 +203,7 @@ The interval time for auto reporting the temperature state<br /> <h1>Overview</h
       </parameter>
 
       <parameter name="config_20_1" type="integer" groupName="configuration"
-                 min="0" max="255">
+                 min="-127" max="128">
         <label>20: Auto Report Tick Interval</label>
         <description><![CDATA[
 The interval time for each auto report tick<br /> <h1>Overview</h1><p>The interval time for auto report each tick. Setting this configuration will effect configuration No.10, No.11, No.12 and No.13. Caution: Setting to 0 means turn off all auto report function.</p>

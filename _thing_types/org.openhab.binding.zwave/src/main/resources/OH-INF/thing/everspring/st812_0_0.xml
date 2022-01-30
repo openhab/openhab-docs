@@ -67,11 +67,12 @@ Flood Sensor<br /> <h1>Overview</h1><p>The flood detector is designed to sense t
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->
-      <parameter name="group_1" type="text" groupName="association">
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
         <label>1: Power applied and Sensor Alarm</label>
         <description><![CDATA[
 <br /> <h1>Overview</h1><p>The Detector will send ALARM_REPORT command to the nodes of Group 1 to inform the devices that the Detector is powered up.</p> <p>ALARM_REPORT Command: [Command Class Alarm, Alarm Type = 0x02, Alarm Level = 0x01]</p> <p>The second type for Group 1 is SENSOR_ALARM_REPORT.  255 = Alarm, 00 = Event clear.</p> <p>The third type for Group 1 is ALARM_REPORT type 0x01, Low battery</p>
         ]]></description>
+        <multipleLimit>1</multipleLimit>
       </parameter>
 
       <parameter name="group_2" type="text" groupName="association" multiple="true">

@@ -163,7 +163,7 @@ Switch off Micro Smart Plug in case the power is above x W<br /> <h1>Overview</h
       </parameter>
 
       <parameter name="config_23_2" type="integer" groupName="configuration"
-                 min="0" max="65535">
+                 min="-32767" max="32768">
         <label>23: Energy Auto-Sending Report</label>
         <description><![CDATA[
 Auto energy report if value changes of x Wh<br /> <h1>Overview</h1><p>This parameter will send a new energy report automatically if the energy value changes of x Wh (Watt-hour) compared to the last report.</p>
@@ -187,7 +187,7 @@ Auto energy report if value changes of x Wh<br /> <h1>Overview</h1><p>This param
       </parameter>
 
       <parameter name="config_24_2" type="integer" groupName="configuration"
-                 min="0" max="65535">
+                 min="-32767" max="32768">
         <label>24: Metering Heartbeat</label>
         <description><![CDATA[
 Reporting intervall for power and energy to lifeline.<br /> <h1>Overview</h1><p>Whatever other metering reports, this parameter will send one power and one energy report to the lifeline every x s (Seconds).</p>
@@ -202,7 +202,7 @@ Reporting intervall for power and energy to lifeline.<br /> <h1>Overview</h1><p>
       </parameter>
 
       <parameter name="config_25_2" type="integer" groupName="configuration"
-                 min="0" max="65535">
+                 min="-32767" max="32768">
         <label>25: Power High Threshold</label>
         <description><![CDATA[
 Defines the High Threshold value in W.<br /> <h1>Overview</h1><p>This parameter defines the High Threshold power value.</p>
@@ -227,7 +227,7 @@ Defines the High Threshold value in W.<br /> <h1>Overview</h1><p>This parameter 
       </parameter>
 
       <parameter name="config_26_2" type="integer" groupName="configuration"
-                 min="0" max="65535">
+                 min="-32767" max="32768">
         <label>26: Power Low Threshold</label>
         <description><![CDATA[
 Defines the Low Threshold value in W.<br /> <h1>Overview</h1><p>This parameter defines the Low Threshold power value.</p>

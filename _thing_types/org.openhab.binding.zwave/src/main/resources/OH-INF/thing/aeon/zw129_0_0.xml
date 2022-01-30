@@ -180,11 +180,12 @@ Configure which color will be displayed when a button is pressed<br /> <h1>Overv
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->
-      <parameter name="group_1" type="text" groupName="association">
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
         <label>1: Lifeline</label>
         <description><![CDATA[
 Z-Wave Plus Lifeline<br /> <h1>Overview</h1><p>When touching the Button 1 to 4, the Central Scene Notificcation command will be sent to the associated node (1) in Association group 1.</p>
         ]]></description>
+        <multipleLimit>1</multipleLimit>
       </parameter>
 
       <parameter name="group_2" type="text" groupName="association" multiple="true">

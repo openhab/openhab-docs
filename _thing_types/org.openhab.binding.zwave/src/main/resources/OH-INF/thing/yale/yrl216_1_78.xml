@@ -85,7 +85,7 @@ Changes speaker settings<br /> <h1>Overview</h1><p>1. Sound Enable</p><p>3. Soun
       </parameter>
 
       <parameter name="config_2_1" type="integer" groupName="configuration"
-                 min="0" max="255">
+                 min="-127" max="128">
         <label>2: Auto Relock on/off</label>
         <description><![CDATA[
 Turn on/off auto re-lock function<br /> <h1>Overview</h1><p><br /></p>
@@ -98,7 +98,7 @@ Turn on/off auto re-lock function<br /> <h1>Overview</h1><p><br /></p>
       </parameter>
 
       <parameter name="config_3_1" type="integer" groupName="configuration"
-                 min="10" max="180">
+                 min="-127" max="128">
         <label>3: Auto Relock Time</label>
         <description><![CDATA[
 Set time after unlock to trigger auto relock function<br /> <h1>Overview</h1><p><br /></p>
@@ -118,7 +118,7 @@ Set number of unsuccessful attempts before shutdown<br /> <h1>Overview</h1><p>Af
       </parameter>
 
       <parameter name="config_7_1" type="integer" groupName="configuration"
-                 min="10" max="180">
+                 min="-127" max="128">
         <label>7: Shut Down Time</label>
         <description><![CDATA[
 Set time to shutdown unit after Wrong Code Entry Limit exceeded<br /> <h1>Overview</h1><p>The unit will shutdown (flashing RED) for (<b>Shutdown Time</b>) seconds and not allow operation after the (<b>Wrong Code Entry L</b><b>imit</b>) has been met.</p>
@@ -141,7 +141,7 @@ Set Normal or Vacation Mode<br /> <h1>Overview</h1><p><br /></p>
       </parameter>
 
       <parameter name="config_11_1" type="integer" groupName="configuration"
-                 min="0" max="255">
+                 min="-127" max="128">
         <label>11: One Touch Locking</label>
         <description><![CDATA[
 Turn on/off one touch locking feature<br /> <h1>Overview</h1><p>When the latch is retracted, activating the keypad will extend the latch (during Automatic Re-lock duration or when Automatic Re-lock is disabled). When One-Touch Re-lock is not in use (disabled), any valid PIN code will re-lock the lock.</p>
@@ -154,7 +154,7 @@ Turn on/off one touch locking feature<br /> <h1>Overview</h1><p>When the latch i
       </parameter>
 
       <parameter name="config_13_1" type="integer" groupName="configuration"
-                 min="0" max="255">
+                 min="-127" max="128">
         <label>13: Lock Status LED</label>
         <description><![CDATA[
 Turn on/off lock status LED<br /> <h1>Overview</h1><p>Located on the interior escutcheon. Shows active status (Locked) of lock and can be enabled or disabled with this parameter.</p>
@@ -177,11 +177,12 @@ Reset to Factory Defaults<br /> <h1>Overview</h1><p><br /></p>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->
-      <parameter name="group_1" type="text" groupName="association">
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
         <label>1: Lifeline</label>
         <description><![CDATA[
 <br /> <h1>Overview</h1><p><br /></p>
         ]]></description>
+        <multipleLimit>1</multipleLimit>
       </parameter>
 
       <!-- STATIC DEFINITIONS -->

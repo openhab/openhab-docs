@@ -213,7 +213,7 @@ Reporting threshold for changes in the ambient temperature<br /> <h1>Overview</h
       </parameter>
 
       <parameter name="config_2_4" type="integer" groupName="configuration" readOnly="true"
-                 min="0" max="4294967295">
+                 min="-2147483646" max="2147483647">
         <label>2: HVAC Settings</label>
         <description><![CDATA[
 Configured HVAC settings<br /> <h1>Overview</h1><p>Byte 1 = HVAC Setup: Normal (0x01) or Heat Pump (0x02)<br />Byte 2 = Aux Setup (Gas (0x01) or Electric (0x02)) &amp; Number of Auxiliary Stages (Heat Pump)/Number of Heat Stages (Normal)<br />Byte 3 = Number of Heat Pump Stages<br />Byte 4 = Number of Cool Stages</p>
@@ -236,7 +236,7 @@ Prevents setpoint changes at thermostat<br /> <h1>Overview</h1><p>If set to 0, t
       </parameter>
 
       <parameter name="config_4_1" type="integer" groupName="configuration" readOnly="true"
-                 min="0" max="255">
+                 min="-127" max="128">
         <label>4: Power Status</label>
         <description><![CDATA[
 C-Wire / Battery Status<br /> <h1>Overview</h1><p>If 0x01, the thermostat is powered by a C-wire. If 0x02, the thermostat is powered by batteries. </p>

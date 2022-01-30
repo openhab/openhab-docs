@@ -130,7 +130,7 @@ Specifies the level for the blue colour. (Default is 85)<br /> <h1>Overview</h1>
       </parameter>
 
       <parameter name="config_5_4_01000000" type="integer" groupName="configuration"
-                 min="0" max="4294967295">
+                 min="-2147483646" max="2147483647">
         <label>5: Not used.</label>
         <description><![CDATA[
 This byte is not used and must be set to 0.<br /> <h1>Overview</h1><p><br /></p>

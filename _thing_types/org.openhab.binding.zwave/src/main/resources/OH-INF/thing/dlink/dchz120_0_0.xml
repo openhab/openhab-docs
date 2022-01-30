@@ -98,7 +98,7 @@ Set the illumination threshold to turn on the light.<br /> <h1>Overview</h1><p>W
       </parameter>
 
       <parameter name="config_5_1" type="integer" groupName="configuration"
-                 min="0" max="255">
+                 min="-127" max="128">
         <label>5: Operation Mode</label>
         <description><![CDATA[
 Parameter to set the Operation Mode.<br /> <h1>Overview</h1><p>Bit0: Reserve</p> <p>Bit1: 1 means test mode, 0 means normal mode</p> <p>Bit2: Disable the door/window function. (1:Disable, 0:Enable)</p> <p>Bit3: Setting the temperature scale. 0: Fahrenheit, 1: Celsius</p> <p>Bit4: Disable the illumination report after event triggered. (1:Disable, 0:Enable)</p> <p>Bit5: Disable the temperature report after event triggered. (1:Disable, 0:Enable)</p> <p>Bit6: Reserve</p> <p>Bit7: Disable the back key release into test mode. (1:Disable, 0:Enable)</p>
@@ -233,7 +233,7 @@ Interval time for auto reporting the temperature.<br /> <h1>Overview</h1><p>The 
       </parameter>
 
       <parameter name="config_20_1" type="integer" groupName="configuration"
-                 min="0" max="255">
+                 min="-127" max="128">
         <label>20: Auto Report Tick Interval</label>
         <description><![CDATA[
 Interval time for auto reporting each tick.<br /> <h1>Overview</h1><p>The interval time for auto report each tick. Setting this configuration will effect configuration No.10, No.11, No.12 and No.13.<br />Caution: Setting to 0 means turn off all auto report function  </p>

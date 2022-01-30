@@ -65,7 +65,7 @@ Flush mountable switch<br /> <h1>Overview</h1><p>The switch Flush Mountable is a
       </parameter>
 
       <parameter name="config_2_2" type="integer" groupName="configuration"
-                 min="0" max="65535">
+                 min="-32767" max="32768">
         <label>2: Automatic switch off</label>
         <description>If not zero, automatically switch off after a user defined time</description>
         <default>0</default>

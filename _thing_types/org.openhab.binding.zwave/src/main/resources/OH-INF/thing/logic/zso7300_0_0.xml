@@ -178,7 +178,7 @@ LED ON color indication<br /> <h1>Overview</h1><p><br /></p>
       </parameter>
 
       <parameter name="config_7_4_000000FF" type="integer" groupName="configuration"
-                 min="0" max="4294967295">
+                 min="-2147483646" max="2147483647">
         <label>7: Parameter 7, Parameter size 4 bytes. LED OFF RESERVED color indication.</label>
         <description><![CDATA[
 LED OFF color indication<br /> <h1>Overview</h1><p>This parameter specifies the color levels for the red, green, and blue colors in the RGB LED. This parameter is not</p><p>used unless configuration parameter #5 is set to the value 1 or 2. The default configuration is a purple light.</p>

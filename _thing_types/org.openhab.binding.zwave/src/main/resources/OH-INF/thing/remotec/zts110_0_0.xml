@@ -180,7 +180,7 @@ Lower Limit of Setpoint B<br /> <h1>Overview</h1><p>Determines Lower Limit of se
       </parameter>
 
       <parameter name="config_10_1" type="integer" groupName="configuration"
-                 min="0" max="255">
+                 min="-127" max="128">
         <label>10: Repeat Basic Set Counter</label>
         <description><![CDATA[
 Repeat Basic Set Counter<br /> <h1>Overview</h1><p>Thermostat sends 'Basic Set' command to its association node repeatedly ever X minutes.</p> <ul><li>0 = Disabled or</li> <li>Set to Enabled Values available 3 to 255.  </li> </ul>
@@ -230,8 +230,9 @@ AUTO report by time interval.<br /> <h1>Overview</h1><ul><li>0 = Disabled or</li
         <multipleLimit>4</multipleLimit>
       </parameter>
 
-      <parameter name="group_3" type="text" groupName="association">
+      <parameter name="group_3" type="text" groupName="association" multiple="true">
         <label>3: Controller Update</label>
+        <multipleLimit>1</multipleLimit>
       </parameter>
 
       <!-- STATIC DEFINITIONS -->

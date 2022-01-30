@@ -41,18 +41,20 @@ Switch Sensor Cover<br /> <h1>Overview</h1><p>The sensor cover contains a radio 
       </parameter-group>
 
       <!-- ASSOCIATION DEFINITIONS -->
-      <parameter name="group_1" type="text" groupName="association">
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
         <label>1: Switching additional devices</label>
         <description><![CDATA[
 Switching additional radio receivers<br /> <h1>Overview</h1><p>Switching additional radio receivers</p>
         ]]></description>
+        <multipleLimit>1</multipleLimit>
       </parameter>
 
-      <parameter name="group_2" type="text" groupName="association">
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
         <label>2: unknown</label>
         <description><![CDATA[
 unknown<br /> <h1>Overview</h1><p>unknown, not mentioned in the manual<br /></p>
         ]]></description>
+        <multipleLimit>1</multipleLimit>
       </parameter>
 
       <!-- STATIC DEFINITIONS -->

@@ -102,9 +102,10 @@ Disable manual pull function<br /> <h1>Overview</h1><p>Support Set only. Disable
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->
-      <parameter name="group_1" type="text" groupName="association">
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
         <label>1: Lifeline</label>
         <description>Z-Wave Plus Lifeline, is assigned to send motor lifeline status to associated devices, including send the multilevel report frame while window cover position, send device local reset frame while set factory default manually etc.</description>
+        <multipleLimit>1</multipleLimit>
       </parameter>
 
       <!-- STATIC DEFINITIONS -->

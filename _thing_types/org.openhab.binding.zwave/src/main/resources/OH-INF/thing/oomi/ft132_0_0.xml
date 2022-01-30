@@ -236,7 +236,7 @@ Dual Nano Switch with Energy Metering<br /> <h1>Overview</h1><p>Fantech Dual Nan
       </parameter>
 
       <parameter name="config_91_2" type="integer" groupName="configuration"
-                 min="0" max="60000">
+                 min="-32767" max="32768">
         <label>91: Set the threshold value of wattage.</label>
         <description>Set the threshold value of wattage.</description>
         <default>25</default>

@@ -107,7 +107,7 @@ Popp Smart Outdoor Plug - IP44 rated<br /> <h1>Overview</h1><p>The Wall Plug Swi
       </parameter>
 
       <parameter name="config_2_2" type="integer" groupName="configuration"
-                 min="0" max="65535">
+                 min="-32767" max="32768">
         <label>2: Auto Off</label>
         <description><![CDATA[
 Defines if and after which time the device shall turn off<br /> <h1>Overview</h1><p>Defines if and after which time the device shall turn off without any user interaction (in seconds) 0 = No auto off</p>
@@ -184,7 +184,7 @@ LED Color on ON state<br /> <h1>Overview</h1><p>Defines the behavior of the LED 
       </parameter>
 
       <parameter name="config_23_1" type="integer" groupName="configuration"
-                 min="0" max="250">
+                 min="-127" max="128">
         <label>23: Voltage Report Threshold</label>
         <description><![CDATA[
 Voltage Report Threshold<br /> <h1>Overview</h1><p>Report the voltage when the voltage has changed by more then X  * 1 V. When disabled (Value 0) the device will report every 10 minutes regardless of current voltage.</p>
@@ -194,7 +194,7 @@ Voltage Report Threshold<br /> <h1>Overview</h1><p>Report the voltage when the v
       </parameter>
 
       <parameter name="config_24_1" type="integer" groupName="configuration"
-                 min="0" max="255">
+                 min="-127" max="128">
         <label>24: Current Reporting Threshold</label>
         <description><![CDATA[
 Current Reporting Threshold<br /> <h1>Overview</h1><p>Report the current when the current has changed by more then X *0,01 A. When disabled the device will report every 10 minutes regardless of current change.</p>
@@ -204,7 +204,7 @@ Current Reporting Threshold<br /> <h1>Overview</h1><p>Report the current when th
       </parameter>
 
       <parameter name="config_25_1" type="integer" groupName="configuration"
-                 min="0" max="255">
+                 min="-127" max="128">
         <label>25: Power Reporting Threshold</label>
         <description><![CDATA[
 Power Reporting Threshold<br /> <h1>Overview</h1><p>Report the power when the power  has changed by more then X Watt. When disabled (Value 0) the device will report every 10 minutes regardless of power consumption change.</p>
@@ -224,7 +224,7 @@ Soft Circuit Breaker Threshold<br /> <h1>Overview</h1><p>When the power draw exc
       </parameter>
 
       <parameter name="config_27_1" type="integer" groupName="configuration"
-                 min="0" max="255">
+                 min="-127" max="128">
         <label>27: Soft Circuit Breaker Recovery Time</label>
         <description><![CDATA[
 Soft Circuit Breaker Recovery Time<br /> <h1>Overview</h1><p>Once the soft circuit breaker tipps and the load is disconnected the load will be automatically reconneced after X seconds. When disabled (value 0) the load must be repowered manually or with wireless command.</p>
@@ -234,7 +234,7 @@ Soft Circuit Breaker Recovery Time<br /> <h1>Overview</h1><p>Once the soft circu
       </parameter>
 
       <parameter name="config_28_1" type="integer" groupName="configuration"
-                 min="0" max="255">
+                 min="-127" max="128">
         <label>28: Soft Circuit Breaker Delay Time</label>
         <description><![CDATA[
 Soft Circuit Breaker Delay Time<br /> <h1>Overview</h1><p>This delay time (x * 0,1s) defines how fast the soft circuit breaker wil react when the threshold power is exceeded. The power is cut off only if the power draw remains over the threshold level for the defines time.</p>

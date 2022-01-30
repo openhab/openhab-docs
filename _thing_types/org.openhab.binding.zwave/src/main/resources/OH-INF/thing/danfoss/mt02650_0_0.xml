@@ -67,11 +67,12 @@ Devolo Thermostat (09356)<br /> <h1>Overview</h1><p>Radiator Thermostat</p> <br 
         <multipleLimit>10</multipleLimit>
       </parameter>
 
-      <parameter name="group_2" type="text" groupName="association">
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
         <label>2: Temprature sensor</label>
         <description><![CDATA[
 <br /> <h1>Overview</h1><p>A group of connections for connecting a room temperature sensor, in which it will be necessary to add a Z-Wave temperature sensor, the temperature of which the thermostat will use to control the heating device. Only one temperature sensor can be added to this group.</p>
         ]]></description>
+        <multipleLimit>1</multipleLimit>
       </parameter>
 
       <!-- STATIC DEFINITIONS -->

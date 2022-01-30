@@ -277,22 +277,25 @@ Double Switch in a dual relay in-wall module.<br /> <h1>Overview</h1><p>Vemmio D
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->
-      <parameter name="group_1" type="text" groupName="association">
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
         <label>1: Lifeline</label>
+        <multipleLimit>1</multipleLimit>
       </parameter>
 
-      <parameter name="group_2" type="text" groupName="association">
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
         <label>2: Group 2</label>
         <description><![CDATA[
 <br /> <h1>Overview</h1><p>For group 2, the Switch will report</p> <ol> <li>ON/OFF status of Relay1 </li> <li>Instant Power Consumption (Watt) of Relay1</li> <li>Accumulated Power Consumption (KWh) of Relay1 to Z-Wave Controller.</li> </ol>
         ]]></description>
+        <multipleLimit>1</multipleLimit>
       </parameter>
 
-      <parameter name="group_3" type="text" groupName="association">
+      <parameter name="group_3" type="text" groupName="association" multiple="true">
         <label>3: Group 3</label>
         <description><![CDATA[
 <br /> <h1>Overview</h1><p>For group 3, the Switch will report</p> <ol> <li>ON/OFF status of Relay2</li> <li>Instant Power Consumption (Watt) of Relay2</li> <li>Accumulated Power Consumption (KWh) of Relay2 to Z-Wave Controller.</li> </ol>
         ]]></description>
+        <multipleLimit>1</multipleLimit>
       </parameter>
 
       <!-- STATIC DEFINITIONS -->

@@ -275,11 +275,12 @@ Overload safety switch<br /> <h1>Overview</h1><p>The function allows for turning
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->
-      <parameter name="group_1" type="text" groupName="association">
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
         <label>1: Lifeline</label>
         <description><![CDATA[
 Root endpoint<br /> <h1>Overview</h1><p><strong>Command Class/Command</strong></p> <p>COMMAND_CLASS_DEVICE_RESET_LOCALLY, DEVICE_RESET_LOCALLY_NOTIFICATION, COMMAND_CLASS_SWITCH_MULTILEVEL_V4, SWITCH_MULTILEVEL_REPORT_V4, COMMAND_CLASS_SWITCH_COLOR_V3, SWITCH_COLOR_REPORT_V3, COMMAND_CLASS_NOTIFICATION_V8, NOTIFICATION_REPORT_V8, COMMAND_CLASS_SWITCH_BINARY, SWITCH_BINARY_REPORT, COMMAND_CLASS_METER, METER_REPORT</p>
         ]]></description>
+        <multipleLimit>1</multipleLimit>
       </parameter>
 
       <parameter name="group_2" type="text" groupName="association" multiple="true">

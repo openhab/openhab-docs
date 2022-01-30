@@ -71,7 +71,7 @@ Z-Wave room sensor<br /> <h1>Overview</h1><p>The flood multisensor PAT02 has flo
 
       <!-- PARAMETER DEFINITIONS -->
       <parameter name="config_5_1" type="integer" groupName="configuration"
-                 min="0" max="255">
+                 min="-127" max="128">
         <label>5: Operation Mode</label>
         <description><![CDATA[
 set Operation Mode using bit to control<br /> <h1>Overview</h1><p>set Operation Mode using bit to control</p> <ul><li>Bit 0: Reserve</li> <li>Bit 1: Reserve</li> <li>Bit 2: Reserve</li> <li>Bit 3: Setting temperature scale<ul><li>0: Fahrenheit</li> <li>1: Celsius</li> </ul></li> <li>Bit 4: Reserve</li> <li>Bit 5: Reserve</li> <li>Bit 6: Reserve</li> <li>Bit 7: Reserve</li> </ul>
@@ -81,7 +81,7 @@ set Operation Mode using bit to control<br /> <h1>Overview</h1><p>set Operation 
       </parameter>
 
       <parameter name="config_7_1" type="integer" groupName="configuration"
-                 min="0" max="255">
+                 min="-127" max="128">
         <label>7: Customer Function</label>
         <description><![CDATA[
 Customer Function switch using bit control<br /> <h1>Overview</h1><p>Customer Function switch using bit control</p> <ul><li>Bit 0: Reserve</li> <li>Bit 1: Reserve</li> <li>Bit 2: Reserve</li> <li>Bit 3: not applicable for this device variant, set to 0</li> <li>Bit 4: Notification Type <ul><li>0: Using Notification Report</li> <li>1: Using Sensor Binary Report</li> </ul></li> <li>Bit 5: Disable Multi CC in auto report <ul><li>0: Enable</li> <li>1: Disable</li> </ul></li> <li>Bit 6: not applicable for this device variant, set to 0</li> <li>Bit 7: Reserve</li> </ul>
@@ -120,7 +120,7 @@ The interval time for auto reporting the humidity state.<br /> <h1>Overview</h1>
       </parameter>
 
       <parameter name="config_20_1" type="integer" groupName="configuration"
-                 min="0" max="255">
+                 min="-127" max="128">
         <label>20: Auto Report Tick Interval</label>
         <description><![CDATA[
 The interval time for auto report each tick.<br /> <h1>Overview</h1><p>The interval time for auto report each tick. Units of one minute. Setting configuration will affect configuration no. 10, 13, 14 and 15.</p> <ul><li>Caution1: Setting to 0 means turn off all auto report function.</li> <li>Caution2: The value is unsigned byte.</li> </ul>

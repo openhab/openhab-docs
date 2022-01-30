@@ -71,7 +71,7 @@ Motion Sensor IN<br /> <h1>Overview</h1><p>Motion Sensor with illuminance featur
 
       <!-- PARAMETER DEFINITIONS -->
       <parameter name="config_1_1" type="integer" groupName="configuration"
-                 min="8" max="255">
+                 min="-127" max="128">
         <label>1: Sensitivity Level Setting</label>
         <description><![CDATA[
 Defines the sensitivity of PIR sensor.<br /> <h1>Overview</h1><p> Where 8 = highest &amp; 255 = lowest sensitivity</p>
@@ -91,7 +91,7 @@ Determined how long the associated devices should stay ON status<br /> <h1>Overv
       </parameter>
 
       <parameter name="config_3_1" type="integer" groupName="configuration"
-                 min="0" max="255">
+                 min="-127" max="128">
         <label>3: Basic Set Level</label>
         <description><![CDATA[
 Basic Set Command will be sent when the door/window is opened or closed<br /> <h1>Overview</h1><p>The receiver will take in for consideration; for instance, if a lamp module received the BSC of which value is decisive as to how bright of dim level of lamp module shall be.</p> <p>Available Settings:</p> <ul><li>0 - Off, Alarm cancelling or turning a device OFF</li> <li>1~99 or 255 – ON (Binary Switch Device)</li> <li>Dim Level (Multilevel Switch Device)</li> </ul>
@@ -131,7 +131,7 @@ Adjust the interval of PIR being re-triggered<br /> <h1>Overview</h1><p>No repor
       </parameter>
 
       <parameter name="config_7_2" type="integer" groupName="configuration"
-                 min="60" max="36000">
+                 min="-32767" max="32768">
         <label>7: Light Sensor Polling Interval</label>
         <description>The Intervall after which the Light Sensor Measure is polled.</description>
         <default>180</default>
@@ -175,7 +175,7 @@ Defines whether the LED blinking is on / off<br /> <h1>Overview</h1><p> 1 = ena
       </parameter>
 
       <parameter name="config_99_2" type="integer" groupName="configuration"
-                 min="1" max="65535">
+                 min="-32767" max="32768">
         <label>99: Ambient light intensity calibration</label>
         <description><![CDATA[
 Define the calibrated scale for ambient light intensity<br /> <h1>Overview</h1><p> This parameter defines the calibrated scale for ambient light intensity, to allow more or less granular light measurements</p>
@@ -185,11 +185,12 @@ Define the calibrated scale for ambient light intensity<br /> <h1>Overview</h1><
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->
-      <parameter name="group_1" type="text" groupName="association">
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
         <label>1: Lifeline</label>
         <description><![CDATA[
 Is assigned to the device status - OPEN/CLOSED. It enables the sensor to send reports and readings to Z-Wave Controller or Z-Wave Gateway whenever the sensor is triggered.<br /> <h1>Overview</h1><ul> <li>NOTIFICATION_REPORT</li> <li>COMMAND_CLASS_SENSOR_BINARY_V2</li> <li>COMMAND_CLASS_SENSOR_MULTILEVEL_V7</li> <li>BATTERY_REPORT</li> <li>DEVICE_RESET_LOCALLY_NOTIFICATION</li> </ul>
         ]]></description>
+        <multipleLimit>1</multipleLimit>
       </parameter>
 
       <parameter name="group_2" type="text" groupName="association" multiple="true">

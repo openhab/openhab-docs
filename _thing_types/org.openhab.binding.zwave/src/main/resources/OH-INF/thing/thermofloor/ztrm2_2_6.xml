@@ -411,7 +411,7 @@ Meter report interval<br /> <h1>Overview</h1><p>1. Value = 0, Reporting of meter
       </parameter>
 
       <parameter name="config_25_1" type="integer" groupName="configuration"
-                 min="0" max="255">
+                 min="-127" max="128">
         <label>25: Meter report delta value</label>
         <description><![CDATA[
 Meter report delta value<br /> <h1>Overview</h1><p>1. Value = 0 - 255, 0kWh - 25.5kWh, default = 1.0kWh</p> <p>Delta value in kWh between consecutive meter reports.<br />Meter reports can also be sent as a result of polling.</p>

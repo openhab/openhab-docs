@@ -118,7 +118,7 @@ In-Wall Smart Switch<br /> <h1>Overview</h1><p>The In-Wall Switch is a Z-Wave Sm
       </parameter>
 
       <parameter name="config_9_1" type="integer" groupName="configuration"
-                 min="0" max="255">
+                 min="-127" max="128">
         <label>9: Instant Energy Autosend Interval</label>
         <description><![CDATA[
 Instant Energy Autosend Interval (SENSOR_MULTILEVEL_REPORT)<br /> <h1>Overview</h1><p>Send SENSOR_MULTILEVEL_REPORT at this interval</p> <p>0 means to not send</p>
@@ -195,7 +195,7 @@ Configure the state of LED when it is in 3 modes<br /> <h1>Overview</h1><p>Confi
       </parameter>
 
       <parameter name="config_84_4" type="integer" groupName="configuration"
-                 min="0" max="4294967295">
+                 min="-2147483646" max="2147483647">
         <label>84: Night light mode LED state</label>
         <description><![CDATA[
 Set the ON/OFF time of the LED when it is in Night light mode<br /> <h1>Overview</h1><p>0 to 60 The minute time of OFF 256 to 316 The hour time of OFF 65536 to 65596 The minute time of ON 16777216 to 16777276 The hour time of ON</p>
@@ -204,7 +204,7 @@ Set the ON/OFF time of the LED when it is in Night light mode<br /> <h1>Overview
       </parameter>
 
       <parameter name="config_86_4" type="integer" groupName="configuration"
-                 min="0" max="4294967295">
+                 min="-2147483646" max="2147483647">
         <label>86: Set appointment 1</label>
         <description><![CDATA[
 Set the ON time of output load.<br /> <h1>Overview</h1><p>65536 to 65543 The day value (Mon to Sun) 16777216 Enable the setting. 256 to 316 The hour value of ON time 16777215 Disable the setting. 0 to 60 The minute value of ON time</p>
@@ -234,7 +234,7 @@ Set the OFF time of output load<br /> <h1>Overview</h1><p>256 to 316 The hour va
       </parameter>
 
       <parameter name="config_91_2" type="integer" groupName="configuration"
-                 min="0" max="60000">
+                 min="-32767" max="32768">
         <label>91: Set the threshold value of wattage</label>
         <description>Threshold change in wattage (in terms of wattage) to induce an automatic report</description>
         <default>25</default>
@@ -303,7 +303,7 @@ Set the OFF time of output load<br /> <h1>Overview</h1><p>256 to 316 The hour va
       </parameter>
 
       <parameter name="config_110_1" type="integer" groupName="configuration"
-                 min="0" max="255">
+                 min="-127" max="128">
         <label>110: Reset the parameter 111-113</label>
         <description>Set parameter 111-113 to default value.</description>
         <default>0</default>

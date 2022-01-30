@@ -77,7 +77,7 @@ Percent to change dimmer level per tick.<br /> <h1>Overview</h1><p><br /></p>
       </parameter>
 
       <parameter name="config_10_1" type="integer" groupName="configuration"
-                 min="1" max="255">
+                 min="-127" max="128">
         <label>10: Dimming Resolution Speed</label>
         <description><![CDATA[
 The time duration of each tick, in 10 ms units.<br /> <h1>Overview</h1><p><br /></p>
@@ -87,9 +87,10 @@ The time duration of each tick, in 10 ms units.<br /> <h1>Overview</h1><p><br />
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->
-      <parameter name="group_1" type="text" groupName="association">
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
         <label>1: Lifeline</label>
         <description>Lifeline association only supports the "manual reset" event.</description>
+        <multipleLimit>1</multipleLimit>
       </parameter>
 
       <!-- STATIC DEFINITIONS -->

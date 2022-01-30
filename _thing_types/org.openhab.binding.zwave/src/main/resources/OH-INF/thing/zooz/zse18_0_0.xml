@@ -97,7 +97,7 @@ Motion &amp; Vibration Sensor<br /> <h1>Overview</h1><p>Motion detection, built-
       </parameter>
 
       <parameter name="config_18_2" type="integer" groupName="configuration"
-                 min="3" max="65535">
+                 min="-32767" max="32768">
         <label>18: trigger interval</label>
         <description><![CDATA[
 3=6 seconds, 65535=65538 seconds (add 3 seconds to value set)<br /> <h1>Overview</h1><p>set trigger interval - the time when motion is reported again after initial trigger. </p> <p>NOTE: Small interval will increase activity and decrease battery life.</p>

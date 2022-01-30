@@ -65,7 +65,7 @@ Motion Sensor<br /> <h1>Overview</h1><p>Magnetically mounted motion sensor</p> <
 
       <!-- PARAMETER DEFINITIONS -->
       <parameter name="config_1_1" type="integer" groupName="configuration"
-                 min="8" max="255">
+                 min="-127" max="128">
         <label>1: Motion Sensitivity</label>
         <description><![CDATA[
 Motion Sensitivity<br /> <h1>Overview</h1><p>This parameter sets the sensitivity of the Motion Detector. It is a unitless parameter ranging in values from 8 up to 255, with 8 being the highest sensitivity level and 255 being the lowest.After physical installation, make sure the farthest part of the coverage area is still visible to the Motion Detector by adjusting this parameter</p>
@@ -85,7 +85,7 @@ Motion Cleared Time Delay<br /> <h1>Overview</h1><p>This parameters sets (in sec
       </parameter>
 
       <parameter name="config_3_1" type="integer" groupName="configuration"
-                 min="0" max="255">
+                 min="-127" max="128">
         <label>3: Basic Set Level</label>
         <description><![CDATA[
 Basic Set Level<br /> <h1>Overview</h1><p>This parameter sets the value sent by the BASIC_SET command to Association Group 2</p>
@@ -151,7 +151,7 @@ Enable/Disable Group 2 Ambient Light Threshold<br /> <h1>Overview</h1><p>If this
       </parameter>
 
       <parameter name="config_9_1" type="integer" groupName="configuration"
-                 min="0" max="255">
+                 min="-127" max="128">
         <label>9: Ambient Light Sensitivity Level</label>
         <description><![CDATA[
 Ambient Light Sensitivity Level<br /> <h1>Overview</h1><p>This Parameter sets the minimum change in ambient light level (in lux) the Motion Detector must detect before a Multilevel Sensor Report is sent to the main controller. </p>

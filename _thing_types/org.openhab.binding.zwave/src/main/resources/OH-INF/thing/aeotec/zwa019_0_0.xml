@@ -124,7 +124,7 @@ Aeotec Water Sensor 7 Pro<br /> <h1>Overview</h1><p>The AEOTEC Water Sensor 7 Pr
       </parameter>
 
       <parameter name="config_7_1" type="integer" groupName="configuration"
-                 min="0" max="255">
+                 min="-127" max="128">
         <label>7: BASIC command value sent to 2nd Association Group on On event</label>
         <description>This is the BASIC command value sent in case of On event.</description>
         <default>255</default>
@@ -132,7 +132,7 @@ Aeotec Water Sensor 7 Pro<br /> <h1>Overview</h1><p>The AEOTEC Water Sensor 7 Pr
       </parameter>
 
       <parameter name="config_8_1" type="integer" groupName="configuration"
-                 min="0" max="255">
+                 min="-127" max="128">
         <label>8: BASIC command value sent to 2nd Association Group on Off event</label>
         <description>This is the BASIC command value sent in case of Off event.</description>
         <default>0</default>

@@ -428,7 +428,7 @@ Digital temperature sensor / setpoint selector<br /> <h1>Overview</h1><p>If digi
       </parameter>
 
       <parameter name="config_122_1" type="integer" groupName="configuration"
-                 min="0" max="254">
+                 min="-127" max="128">
         <label>122: Node ID of external battery powered sensor</label>
         <description><![CDATA[
 Node ID of external battery powered room sensor<br /> <h1>Overview</h1><p>If digital temperature sensor is not connected, module can grab measured temperature from external battery powered room sensor defined by this parameter.</p> <ul><li>0 - external battery powered room sensor not in function</li> <li>1..254 = Node ID of external battery powered room sensor</li> </ul><p>Get sensor node_id from controller and set parameter 122 immediately after sensor weak up (after button press on it etc.)</p>
@@ -437,9 +437,10 @@ Node ID of external battery powered room sensor<br /> <h1>Overview</h1><p>If dig
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->
-      <parameter name="group_1" type="text" groupName="association">
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
         <label>1: Lifeline</label>
         <description>reserved for communication with the main controller</description>
+        <multipleLimit>1</multipleLimit>
       </parameter>
 
       <parameter name="group_2" type="text" groupName="association" multiple="true">

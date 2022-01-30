@@ -241,7 +241,7 @@ Enable / Disable External relay (IKA)<br /> <h1>Overview</h1><p>Available config
       </parameter>
 
       <parameter name="config_106_2" type="integer" groupName="configuration"
-                 min="0" max="60000">
+                 min="-32767" max="32768">
         <label>106: maximum power threshold of all phases together</label>
         <description><![CDATA[
 maximum power threshold of all phases together<br /> <h1>Overview</h1><p>External IR relay (BICOM) power threshold settings – maximum power of all phases together</p> <p>This parameter defines a threshold when External IR relay is being turned off. (If Parameter no. 100 is set to the value 1 or 2)</p> <p>Available configuration parameters (data type is 2 Byte<br />DEC)</p> <ul><li>Default value 0</li> <li>0 – no function</li> <li>10-60000 – 10W-60000W</li> </ul><p><strong>NOTE:</strong> Meter is capable of measuring max 3x65A!</p>
@@ -262,9 +262,10 @@ Power threshold – Delay before power on<br /> <h1>Overview</h1><p>External IR 
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->
-      <parameter name="group_1" type="text" groupName="association">
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
         <label>1: Lifeline</label>
         <description>Lifeline group (reserved for communication with the gateway (hub))</description>
+        <multipleLimit>1</multipleLimit>
       </parameter>
 
       <!-- STATIC DEFINITIONS -->

@@ -195,7 +195,7 @@ Closing alarm LED mode<br /> <h1>Overview</h1><p>Configure the alarm mode when t
       </parameter>
 
       <parameter name="config_39_4" type="integer" groupName="configuration"
-                 min="0" max="4294967295">
+                 min="-2147483646" max="2147483647">
         <label>39: Unknown state alarm mode</label>
         <description><![CDATA[
 Configuration alarm mode when the garage door is in "unknown" state<br /> <h1>Overview</h1><p>Configuration alarm mode when the garage door is in<br />"unknown" state:<br />1, Value1: configure the frequency of blinking for the Alarm<br />LED , there are 10 levels that 1 to10 level, the minimum<br />frequency is level 1 and the max frequency is level 10.<br />2, Value2: configure the alarm sound (there are 4 types sound<br />saved in EEPROM and user also can update it).<br />3, Value3: configure the volume of alarm sound (there are 10<br />levels, the min volume is 1 level and the max volume is 10</p> <p>levels).<br />4, Value4=0, disable the alarm prompt. Value4=1, enable the<br />alarm prompt.</p> <p>default values:</p> <p>Value1=4<br />Value2=3<br />Value3=8<br />Value4=0</p>
@@ -205,7 +205,7 @@ Configuration alarm mode when the garage door is in "unknown" state<br /> <h1>Ov
       </parameter>
 
       <parameter name="config_40_4" type="integer" groupName="configuration"
-                 min="0" max="4294967295">
+                 min="-2147483646" max="2147483647">
         <label>40: Closed alarm mode</label>
         <description><![CDATA[
 Configure the alarm mode when the garage door is in closed position.<br /> <h1>Overview</h1><p>Configuration alarm mode when the garage door is in<br />"closed" state:<br />1, Value1: configure the frequency of blinking for the Alarm<br />LED , there are 10 levels that 1 to10 level, the minimum<br />frequency is level 1 and the max frequency is level 10.<br />2, Value2: configure the alarm sound (there are 4 types sound<br />saved in EEPROM and user also can update it).<br />3, Value3: configure the volume of alarm sound (there are 10<br />levels, the min volume is 1 level and the max volume is 10 levels).<br />4, Value4=0, disable the alarm prompt. Value4=1, enable the<br />alarm prompt.</p> <p>default values:</p> <p>Value1=2<br />Value2=4<br />Value3=8<br />Value4=0</p>
@@ -215,7 +215,7 @@ Configure the alarm mode when the garage door is in closed position.<br /> <h1>O
       </parameter>
 
       <parameter name="config_41_1" type="integer" groupName="configuration"
-                 min="0" max="255">
+                 min="-127" max="128">
         <label>41: Tamper switch configuration</label>
         <description><![CDATA[
 Configuration report for the tamper switch State<br /> <h1>Overview</h1><p>Configuration report for the tamper switch state:<br />1, Value=0x00: Sensor is not removed<br />2, Value=0x0F: Sensor is removed</p> <p><br />Note:<br />1. The Garage Door Controller will send this configuration report to gateway controller or associated nodes automatically if the Sensor is removed.<br />2. You can send the value=0x55555555 of this parameter to controller to relieve the alarm state.</p>

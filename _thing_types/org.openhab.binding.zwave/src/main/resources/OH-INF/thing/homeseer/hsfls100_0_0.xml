@@ -136,11 +136,12 @@ Sets the interval of periodic lux level report to the controller<br /> <h1>Overv
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->
-      <parameter name="group_1" type="text" groupName="association">
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
         <label>1: Lifeline</label>
         <description><![CDATA[
 <br /> <h1>Overview</h1><p>Device Reset Locally Notification</p> <p>Notification Report </p> <p>Binary Report </p> <p>Sensor Multilevel Report </p> <p>Basic Report</p>
         ]]></description>
+        <multipleLimit>1</multipleLimit>
       </parameter>
 
       <parameter name="group_2" type="text" groupName="association" multiple="true">

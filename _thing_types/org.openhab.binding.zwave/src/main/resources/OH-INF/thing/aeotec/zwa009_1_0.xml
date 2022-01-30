@@ -101,7 +101,7 @@ This value defines the minimum change of humidity to cause an unsolicited report
       </parameter>
 
       <parameter name="config_4_2" type="integer" groupName="configuration"
-                 min="0" max="65535">
+                 min="-32767" max="32768">
         <label>4: Periodic Reports</label>
         <description><![CDATA[
 This parameter defines the time interval to send an unsolicited report. If the value is set to 0, there will be no periodic reports sent to the controller.<br /> <h1>Overview</h1><p>Periodic Reports.</p><p>This parameter defines the time interval to send an unsolicited report.</p><p>If the value is set to 0, there will be no periodic reports sent to the controller. </p><p>However, reports on temperature/humidity changes, managed by configuration parameters 1 and 2, may still be active. </p>
@@ -156,7 +156,7 @@ If the measured temperature drops below this relative humidity a BASIC command i
       </parameter>
 
       <parameter name="config_9_1" type="integer" groupName="configuration"
-                 min="0" max="255">
+                 min="-127" max="128">
         <label>9: Low Temperature Trigger Command</label>
         <description><![CDATA[
 This defines what BASIC SET command value shall be sent out into association group 3.<br /> <h1>Overview</h1><p>Low Temperature Trigger BASIC Set Command Value.</p><p>This defines what BASIC SET command value shall be sent out into association group 3.</p><p>Value meaning:</p><p>255 = ON.</p><p>0 = OFF.</p><p>1 - 100 = Defines a level between 0 - 100% if controlling dimmers.</p>
@@ -167,7 +167,7 @@ This defines what BASIC SET command value shall be sent out into association gro
       </parameter>
 
       <parameter name="config_10_1" type="integer" groupName="configuration"
-                 min="0" max="255">
+                 min="-127" max="128">
         <label>10: High Temperature Trigger Command</label>
         <description><![CDATA[
 This defines what BASIC SET command value be sent out into association group 2.<br /> <h1>Overview</h1><p>High Temperature Trigger BASIC Set Command Value</p><p>This defines what BASIC SET command value be sent out into association group 2. </p><p>Value meaning:</p><p>255 = ON.</p><p>0 = OFF.</p><p>1 - 100 = Defines a level between 0 - 100% if controlling dimmers.</p>
@@ -178,7 +178,7 @@ This defines what BASIC SET command value be sent out into association group 2.<
       </parameter>
 
       <parameter name="config_11_1" type="integer" groupName="configuration"
-                 min="0" max="255">
+                 min="-127" max="128">
         <label>11: Low Humidity Trigger Command</label>
         <description><![CDATA[
 This defines what BASIC SET command value shall be sent out into association group 5.<br /> <h1>Overview</h1><p>Low Humidity Trigger BASIC Set Command Value.</p><p>This defines what BASIC SET command value shall be sent out into association group 5. </p><p>Value meaning:</p><p>255 = ON.</p><p>0 = OFF.</p><p>1 - 100 = Defines a level between 0 - 100% if controlling dimmers.</p>
@@ -189,7 +189,7 @@ This defines what BASIC SET command value shall be sent out into association gro
       </parameter>
 
       <parameter name="config_12_1" type="integer" groupName="configuration"
-                 min="0" max="255">
+                 min="-127" max="128">
         <label>12: High Humidity Trigger Command</label>
         <description><![CDATA[
 This defines what BASIC SET command value shall be sent out into association group 4.<br /> <h1>Overview</h1><p>High Humidity Trigger BASIC Set Command Value.</p><p>This defines what BASIC SET command value shall be sent out into association group 4. </p><p>Value meaning:</p><p>255 = ON.</p><p>0 = OFF.</p><p>1 - 100 = Defines a level between 0 - 100% if controlling dimmers.</p>

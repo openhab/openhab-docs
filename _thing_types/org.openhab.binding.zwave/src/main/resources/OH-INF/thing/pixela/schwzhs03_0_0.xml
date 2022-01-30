@@ -164,7 +164,7 @@ Command to Control Group D<br /> <h1>Overview</h1><p>This parameter defines the 
       </parameter>
 
       <parameter name="config_21_1" type="integer" groupName="configuration"
-                 min="1" max="255">
+                 min="-127" max="128">
         <label>21: Send the following Switch All commands</label>
         <description>Send the following Switch All commands</description>
         <default>1</default>

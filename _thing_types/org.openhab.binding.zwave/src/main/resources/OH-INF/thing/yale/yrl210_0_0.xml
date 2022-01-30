@@ -86,7 +86,7 @@ Yale Push Button Lever Lock<br /> <h1>Overview</h1><p>Secure your home with this
       </parameter>
 
       <parameter name="config_3_1" type="integer" groupName="configuration"
-                 min="5" max="255">
+                 min="-127" max="128">
         <label>3: Relock time</label>
         <description>Time to relock after unlocking (seconds)</description>
         <default>30</default>
@@ -113,7 +113,7 @@ Yale Push Button Lever Lock<br /> <h1>Overview</h1><p>Secure your home with this
       </parameter>
 
       <parameter name="config_7_1" type="integer" groupName="configuration"
-                 min="1" max="255">
+                 min="-127" max="128">
         <label>7: Shutdown Time</label>
         <description>Invalid unlock attempts before lock out</description>
         <default>30</default>

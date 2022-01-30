@@ -71,7 +71,7 @@ On/Off Smart Plug + Signal Repeater (Z-Wave Plus)<br /> <h1>Overview</h1><p><str
       </parameter>
 
       <parameter name="config_2_2" type="integer" groupName="configuration"
-                 min="0" max="36000">
+                 min="-32767" max="32768">
         <label>2: Countdown</label>
         <description><![CDATA[
 Plug Auto Shut Off<br /> <h1>Overview</h1><p>Plug auto shutoff</p> <p>0 - 36000 seconds</p>

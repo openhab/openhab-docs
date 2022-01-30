@@ -65,7 +65,7 @@ Tag Reader<br /> <h1>Overview</h1><p>Basic operations</p> <ul><li>The Tag Reader
 
       <!-- PARAMETER DEFINITIONS -->
       <parameter name="config_1_1" type="integer" groupName="configuration"
-                 min="0" max="255">
+                 min="-127" max="128">
         <label>1: Set to Default</label>
         <description><![CDATA[
 Set all configuration values to default values (factory settings)<br /> <h1>Overview</h1><p>If the Value is set to 0xFF (255) this device will return to factory settings.</p>
@@ -75,7 +75,7 @@ Set all configuration values to default values (factory settings)<br /> <h1>Over
       </parameter>
 
       <parameter name="config_2_1" type="integer" groupName="configuration"
-                 min="0" max="255">
+                 min="-127" max="128">
         <label>2: Feedback time</label>
         <description><![CDATA[
 the time the beep goes to off<br /> <h1>Overview</h1><p>0x00 = Off, 0xFF = endless</p>
@@ -85,7 +85,7 @@ the time the beep goes to off<br /> <h1>Overview</h1><p>0x00 = Off, 0xFF = endle
       </parameter>
 
       <parameter name="config_3_1" type="integer" groupName="configuration"
-                 min="0" max="255">
+                 min="-127" max="128">
         <label>3: Feedback time-out</label>
         <description><![CDATA[
 waiting for the wake-up-no-more command<br /> <h1>Overview</h1><p>Too configure the time-out, waiting on the wakeup_no_more_information command before the error sound starts automatically. The error sound is set to 8 short beeps.</p> <p>0x00 = off</p>
@@ -105,7 +105,7 @@ Amount of beeps a second<br /> <h1>Overview</h1><p>To set the amount of beeps pe
       </parameter>
 
       <parameter name="config_5_1" type="integer" groupName="configuration"
-                 min="0" max="255">
+                 min="-127" max="128">
         <label>5: Mode</label>
         <description><![CDATA[
 To configure mode<br /> <h1>Overview</h1><p>Mode 1 =  normal working mode</p> <p>Mode 3 = z-wave chip is always on to be asked for information, for example version or manufacturer ID.</p> <p>Any other value will be reported after a GET, but will be seen as a mode 1.</p>
@@ -115,7 +115,7 @@ To configure mode<br /> <h1>Overview</h1><p>Mode 1 =  normal working mode</p> <
       </parameter>
 
       <parameter name="config_6_1" type="integer" groupName="configuration"
-                 min="0" max="255">
+                 min="-127" max="128">
         <label>6: RFID circuit start-up time</label>
         <description><![CDATA[
 The time the RFID will be started after pressing "home" or "away"<br /> <h1>Overview</h1><p>0x64 (100 * 10 ms = 1 s)</p> <p>The time (*10 ms) the RFID circuit waits to start after "home" or "away" has been pressed.</p> <p>the time *10 miliseconds, minimum = 0 seconds, max = 2,55 seconds. If the value is not in the allowed size the frame will be ignored.</p>

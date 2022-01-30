@@ -107,7 +107,7 @@ Motor Open, Go to Direction B<br /> <h1>Overview</h1><p>Set only, any value poss
       </parameter>
 
       <parameter name="config_32_1" type="integer" groupName="configuration" readOnly="true"
-                 min="0" max="255">
+                 min="-127" max="128">
         <label>32: Return motor status flag</label>
         <description><![CDATA[
 Return motor status flag<br /> <h1>Overview</h1><table><tr><td>0</td> <td>  -&gt;  </td> <td>motor is closing, go to direction A</td> </tr><tr><td>1</td> <td>  -&gt;  </td> <td>motor is opening, go to direction B</td> </tr><tr><td>2</td> <td>  -&gt;  </td> <td>motor endpoint A has setting</td> </tr><tr><td>3</td> <td>  -&gt;  </td> <td>motor endpoint B has setting</td> </tr><tr><td>4</td> <td>  -&gt;  </td> <td>(Reserved)</td> </tr><tr><td>5</td> <td>  -&gt;  </td> <td>(Reserved)</td> </tr><tr><td>6</td> <td>  -&gt;  </td> <td>(Reserved)</td> </tr><tr><td>7</td> <td>  -&gt;  </td> <td>direction revert</td> </tr></table>

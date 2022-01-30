@@ -175,9 +175,10 @@ Threshold of current for Load caution<br /> <h1>Overview</h1><p><strong>Unit is 
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->
-      <parameter name="group_1" type="text" groupName="association">
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
         <label>1: Group 1</label>
         <description>Switch will report its latest status to Z-Wave Controller.</description>
+        <multipleLimit>1</multipleLimit>
       </parameter>
 
       <!-- STATIC DEFINITIONS -->

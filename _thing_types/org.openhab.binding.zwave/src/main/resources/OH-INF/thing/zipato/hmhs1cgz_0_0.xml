@@ -42,11 +42,12 @@ Combustible Gas Sensor<br /> <h1>Overview</h1><p>This Smart Combustible Gas Sens
       </parameter-group>
 
       <!-- ASSOCIATION DEFINITIONS -->
-      <parameter name="group_1" type="text" groupName="association">
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
         <label>1: Lifeline</label>
         <description><![CDATA[
 <br /> <h1>Overview</h1><ul> <li>Lifeline between controller and the device.</li> <li>Supported command classes: Notification report, and Device Reset Locally notification.</li> <li>Association Group description: Association group 1: Lifeline association group</li> <li>Maximum supported node is 1.</li> </ul> <p>Include command classes: Notification Report and Device Reset Locally notification.</p>
         ]]></description>
+        <multipleLimit>1</multipleLimit>
       </parameter>
 
       <parameter name="group_2" type="text" groupName="association" multiple="true">

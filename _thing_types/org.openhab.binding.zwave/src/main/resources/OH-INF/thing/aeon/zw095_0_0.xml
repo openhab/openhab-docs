@@ -172,7 +172,7 @@ Enable selective reporting.<br /> <h1>Overview</h1><p>Enable selective reporting
       </parameter>
 
       <parameter name="config_4_2" type="integer" groupName="configuration"
-                 min="0" max="60000">
+                 min="-32767" max="32768">
         <label>4: Current Threshold - Whole HEM</label>
         <description>Threshold change in wattage to induce an automatic report (Whole HEM).</description>
         <default>50</default>
@@ -180,7 +180,7 @@ Enable selective reporting.<br /> <h1>Overview</h1><p>Enable selective reporting
       </parameter>
 
       <parameter name="config_5_2" type="integer" groupName="configuration"
-                 min="0" max="60000">
+                 min="-32767" max="32768">
         <label>5: Current Threshold - Clamp 1</label>
         <description>Threshold change in wattage to induce an automatic report (Clamp 1).</description>
         <default>50</default>
@@ -188,7 +188,7 @@ Enable selective reporting.<br /> <h1>Overview</h1><p>Enable selective reporting
       </parameter>
 
       <parameter name="config_6_2" type="integer" groupName="configuration"
-                 min="0" max="60000">
+                 min="-32767" max="32768">
         <label>6: Current Threshold - Clamp 2</label>
         <description>Threshold change in wattage to induce an automatic report (Clamp 2).</description>
         <default>50</default>
@@ -196,7 +196,7 @@ Enable selective reporting.<br /> <h1>Overview</h1><p>Enable selective reporting
       </parameter>
 
       <parameter name="config_7_2" type="integer" groupName="configuration"
-                 min="0" max="60000">
+                 min="-32767" max="32768">
         <label>7: Current Threshold - Clamp 3</label>
         <description>Threshold change in wattage to induce an automatic report (Clamp 3).</description>
         <default>50</default>

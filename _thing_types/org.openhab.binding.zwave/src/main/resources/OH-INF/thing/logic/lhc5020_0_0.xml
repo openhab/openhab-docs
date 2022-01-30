@@ -206,7 +206,7 @@ Turn on/off voltage on input terminal 4<br /> <h1>Overview</h1><p>If trigger dev
       </parameter>
 
       <parameter name="config_6_1" type="integer" groupName="configuration"
-                 min="0" max="255">
+                 min="-127" max="128">
         <label>6: Prel. filter time on input terminals</label>
         <description><![CDATA[
 Preliminary filter time on input terminals<br /> <h1>Overview</h1><p>Time in 10x milliseconds. E.g. 5 = 50 ms. </p>
@@ -216,7 +216,7 @@ Preliminary filter time on input terminals<br /> <h1>Overview</h1><p>Time in 10x
       </parameter>
 
       <parameter name="config_7_1" type="integer" groupName="configuration"
-                 min="0" max="255">
+                 min="-127" max="128">
         <label>7: Threshold for triggering input</label>
         <description><![CDATA[
 Threshold for triggering input<br /> <h1>Overview</h1><p>In 10x milliseconds, e.g. 5 = 50 ms, meaning that the voltage on the input terminals need to be stable for more than 50 ms behold the input is counted as activated. </p>
@@ -226,7 +226,7 @@ Threshold for triggering input<br /> <h1>Overview</h1><p>In 10x milliseconds, e.
       </parameter>
 
       <parameter name="config_8_1" type="integer" groupName="configuration"
-                 min="0" max="255">
+                 min="-127" max="128">
         <label>8: Threshold time for triggering input</label>
         <description><![CDATA[
 Threshold time for triggering input<br /> <h1>Overview</h1><p>Time in 10x miliseconds that an input need to be activated before it is counted as activated. E.g. 50 = 500 ms. </p>

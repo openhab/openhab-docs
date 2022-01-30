@@ -87,7 +87,7 @@ Water Detecton beep frequency<br /> <h1>Overview</h1><p>0=every 10 minutes (appr
       </parameter>
 
       <parameter name="config_3_1" type="integer" groupName="configuration"
-                 min="30" max="255">
+                 min="-127" max="128">
         <label>3: Temperature reportng interval when on line power</label>
         <description><![CDATA[
 Temperature reportng interval when on line power<br /> <h1>Overview</h1><p>30-255 seconds, default=60</p>

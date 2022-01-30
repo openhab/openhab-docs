@@ -70,7 +70,7 @@ Insert blind control<br /> <h1>Overview</h1><p>The Z-Wave.Me Flush Mountable Mot
       </parameter>
 
       <parameter name="config_2_2" type="integer" groupName="configuration"
-                 min="0" max="65535">
+                 min="-32767" max="32768">
         <label>2: Automatically open or close after</label>
         <description><![CDATA[
 Automatically open or close blind after time<br /> <h1>Overview</h1><p>If not zero, automatically open or close blind after a user defined time</p>
@@ -97,7 +97,7 @@ Defines how to interpret RF Off command.<br /> <h1>Overview</h1><p>Defines how t
       </parameter>
 
       <parameter name="config_4_1" type="integer" groupName="configuration"
-                 min="0" max="255">
+                 min="-127" max="128">
         <label>4: Full close time</label>
         <description><![CDATA[
 Time in seconds to go from opened to closed state.<br /> <h1>Overview</h1><p>Time to go from opened to closed state. Used to estimate the current level. Note that in Permanent motion mode the reported value would a be Closed or Opened, while all Basic and Multilevel Set values (1-99, 255) would Open except 0 value that would Close.</p>
@@ -109,7 +109,7 @@ Time in seconds to go from opened to closed state.<br /> <h1>Overview</h1><p>Tim
       </parameter>
 
       <parameter name="config_5_1" type="integer" groupName="configuration"
-                 min="0" max="255">
+                 min="-127" max="128">
         <label>5: Full open time</label>
         <description><![CDATA[
 Time in seconds to go from closed to open state.<br /> <h1>Overview</h1><p>Time to go from closed to open state. This value may differ from Full close time for some blinds due to gravity. Used to estimate the current level. Note that in Permanent motion mode the reported value would a be Closed or Opened, while all Basic and Multilevel Set values (1-99, 255) would Open except 0 value that would Close.</p>
@@ -121,7 +121,7 @@ Time in seconds to go from closed to open state.<br /> <h1>Overview</h1><p>Time 
       </parameter>
 
       <parameter name="config_6_1" type="integer" groupName="configuration"
-                 min="0" max="232">
+                 min="-127" max="128">
         <label>6: Node ID of the blocking device</label>
         <description><![CDATA[
 Id of the device which can block the blinds<br /> <h1>Overview</h1><p>Id of the device which commands would be interpreted not as Open/Close, but as block/unblock. Usefull with door opening detector: if the door is open, block the blind not to break shades while they move.</p>

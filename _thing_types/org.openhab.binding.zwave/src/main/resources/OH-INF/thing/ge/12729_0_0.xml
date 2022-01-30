@@ -64,7 +64,7 @@ Invert the ON/OFF Switch State.<br /> <h1>Overview</h1><p>If the switch is accid
       </parameter>
 
       <parameter name="config_8_1" type="integer" groupName="configuration"
-                 min="1" max="255">
+                 min="-127" max="128">
         <label>8: On/Off Command Dim Rate</label>
         <description><![CDATA[
 This sets how often the dim level will change.<br /> <h1>Overview</h1><p>The timing of the steps can be adjusted in 10 millisecond intervals. As an example, the default setting for parameter 8 is “3”. This means that the lighting level will change every 30 milliseconds when the Dim Command is received. A value of 255 would mean that the level would change every 2.55 seconds. Combined, the two parameters allow dim rate adjustments from 10 milliseconds to 4.2 minutes to go from maximum-to-minimum or minimum-to-maximum brightness levels.</p>
@@ -82,7 +82,7 @@ This sets how often the dim level will change.<br /> <h1>Overview</h1><p>The tim
       </parameter>
 
       <parameter name="config_10_1" type="integer" groupName="configuration"
-                 min="1" max="255">
+                 min="-127" max="128">
         <label>10: Local Control Dim Rate</label>
         <description><![CDATA[
 This sets how often the dim level will change.<br /> <h1>Overview</h1><p>The timing of the steps can be adjusted in 10 millisecond intervals. As an example, the default setting for parameter 8 is “3”. This means that the lighting level will change every 30 milliseconds when the Dim Command is received. A value of 255 would mean that the level would change every 2.55 seconds. Combined, the two parameters allow dim rate adjustments from 10 milliseconds to 4.2 minutes to go from maximum-to-minimum or minimum-to-maximum brightness levels.</p>
@@ -100,7 +100,7 @@ This sets how often the dim level will change.<br /> <h1>Overview</h1><p>The tim
       </parameter>
 
       <parameter name="config_12_1" type="integer" groupName="configuration"
-                 min="1" max="255">
+                 min="-127" max="128">
         <label>12: ALL ON/ALL OFF Dim Rate</label>
         <description><![CDATA[
 This sets how often the dim level will change.<br /> <h1>Overview</h1><p>The timing of the steps can be adjusted in 10 millisecond intervals. As an example, the default setting for parameter 8 is “3”. This means that the lighting level will change every 30 milliseconds when the Dim Command is received. A value of 255 would mean that the level would change every 2.55 seconds. Combined, the two parameters allow dim rate adjustments from 10 milliseconds to 4.2 minutes to go from maximum-to-minimum or minimum-to-maximum brightness levels.</p>

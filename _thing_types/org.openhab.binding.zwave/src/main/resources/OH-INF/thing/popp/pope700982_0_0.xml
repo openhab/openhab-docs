@@ -162,7 +162,7 @@ value sent in case of On event<br /> <h1>Overview</h1><p>This is the BASIC comma
       </parameter>
 
       <parameter name="config_8_1" type="integer" groupName="configuration"
-                 min="0" max="255">
+                 min="-127" max="128">
         <label>8: value sent to 2nd Association Group on Off event</label>
         <description><![CDATA[
 value sent in case of Off event<br /> <h1>Overview</h1><p>This is the BASIC command value sent in case of Off event. Size: 1 Byte, Default Value: 0</p>

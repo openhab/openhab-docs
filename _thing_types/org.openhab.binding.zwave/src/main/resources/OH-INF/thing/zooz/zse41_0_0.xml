@@ -89,7 +89,7 @@ Battery threshold to report low battery.<br /> <h1>Overview</h1><p>Decide when t
       </parameter>
 
       <parameter name="config_5_1" type="integer" groupName="configuration"
-                 min="0" max="255">
+                 min="-127" max="128">
         <label>5: Open/Close status</label>
         <description><![CDATA[
 Status to report when magnet touches sensor.<br /> <h1>Overview</h1><p>Decide which status should the sensor report to the hub when the magnet touches the sensor.</p><p><b>Values</b>: 0 – closed status reported when the magnet is by the sensor (<b>default</b>); 1 – open status reported when the magnet is by the sensor.</p>

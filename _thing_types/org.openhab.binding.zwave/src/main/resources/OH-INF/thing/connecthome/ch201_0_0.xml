@@ -307,11 +307,12 @@ Adjust temperature sensor if required.<br /> <h1>Overview</h1><p>In some cases, 
         <multipleLimit>10</multipleLimit>
       </parameter>
 
-      <parameter name="group_2" type="text" groupName="association">
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
         <label>2: External temperature sensor</label>
         <description><![CDATA[
 <br /> <h1>Overview</h1><p>In case if <strong>Parameter 10</strong> is set to <strong>1 Polling the room temperature sensor, </strong>the temperature value used by the thermostat to control heating device will be reqested from the sensor added to this group. Only one device can be added.</p>
         ]]></description>
+        <multipleLimit>1</multipleLimit>
       </parameter>
 
       <!-- STATIC DEFINITIONS -->

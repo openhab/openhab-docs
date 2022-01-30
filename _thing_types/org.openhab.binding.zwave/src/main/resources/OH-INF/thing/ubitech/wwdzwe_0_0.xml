@@ -77,7 +77,7 @@ Water Sensor<br /> <h1>Overview</h1><p>The Water Contact Sensor is placed on cri
 
       <!-- PARAMETER DEFINITIONS -->
       <parameter name="config_16_1" type="integer" groupName="configuration"
-                 min="0" max="255">
+                 min="-127" max="128">
         <label>16: Sensor Functions</label>
         <description><![CDATA[
 This parameter defines which sensor function of the device is active<br /> <h1>Overview</h1><p>Bit 0: Built-In Detection Probe<br />Bit 1: Remote Water Detection Probe<br />Bit 2: Overhead Detection<br />Bit 3: Freeze Detection</p><br /><p><br /></p><p><br /></p><p><br /></p><p><br /></p><p><br /></p>
@@ -87,7 +87,7 @@ This parameter defines which sensor function of the device is active<br /> <h1>O
       </parameter>
 
       <parameter name="config_17_1" type="integer" groupName="configuration"
-                 min="0" max="255">
+                 min="-127" max="128">
         <label>17: Water Leak Cancelation Command Behavior</label>
         <description><![CDATA[
 Defines when a BASIC command Value to send to cancel water alarm<br /> <h1>Overview</h1><p>0: Send BASIC SET command when Water Alarm canceled either Built-In OR on Remote Probe</p><p>1: Send BASIC SET command when Water Alarm canceled on Built-In AND on Remote Probe</p>
@@ -109,7 +109,7 @@ Defines when a BASIC command Value to send to cancel water alarm<br /> <h1>Overv
       </parameter>
 
       <parameter name="config_49_2" type="integer" groupName="configuration"
-                 min="0" max="65535">
+                 min="-32767" max="32768">
         <label>49: Temperature Sensor Report Threshold</label>
         <description><![CDATA[
 Defines the change in temperature value to cause unsolicited sending of an report.<br /> <h1>Overview</h1><p>0x00-0xff: Value in Celsius (example: 0x02 = 2 °C)<br /></p><p>0x100-0x1ff: Value in Fahrenheit (example: 0x102 = 2 °F)</p>
@@ -119,7 +119,7 @@ Defines the change in temperature value to cause unsolicited sending of an repor
       </parameter>
 
       <parameter name="config_50_2" type="integer" groupName="configuration"
-                 min="0" max="65535">
+                 min="-32767" max="32768">
         <label>50: Temperature Sensor Report Offset</label>
         <description><![CDATA[
 Defines a temperature offset for the reported temperature. This parameter can be used to compensate for certain temperature deviations.<br /> <h1>Overview</h1><p>0x00-0xff: Positive Deviation in Celsius (e.g. 0x02 = +2 °C)<br />0x1000-0x10ff: Negative Deviation in Celsius (e.g. 0x02 = -2 °C)<br />0x0100-0x01ff: Positive Deviation in Fahrenheit (e.g. 0x02 = +2 °F)<br />0x1100-0x11ff: Negative Deviation in Fahrenheit (e.g. 0x02 = -2 °F)</p><p><br /><br /></p>
@@ -129,7 +129,7 @@ Defines a temperature offset for the reported temperature. This parameter can be
       </parameter>
 
       <parameter name="config_51_2" type="integer" groupName="configuration"
-                 min="0" max="65535">
+                 min="-32767" max="32768">
         <label>51: Temperature Overheat Trigger</label>
         <description><![CDATA[
 Sets the temperature to trigger and overheat alarm and<br /> <h1>Overview</h1><p>0x00-0xff: Value in Celsius (example: 0x02 = 2 °C)<br />0x100-0x1ff: Value in Fahrenheit (example: 0x102 = 2 °F)</p>
@@ -139,7 +139,7 @@ Sets the temperature to trigger and overheat alarm and<br /> <h1>Overview</h1><p
       </parameter>
 
       <parameter name="config_52_2" type="integer" groupName="configuration"
-                 min="0" max="65535">
+                 min="-32767" max="32768">
         <label>52: Temperature Overheat Reset Trigger Value</label>
         <description><![CDATA[
 Sets the temperature to reset the overheat alarm and<br /> <h1>Overview</h1><p>0x00-0xff: Value in Celsius (example: 0x02 = 2 °C)<br />0x100-0x1ff: Value in Fahrenheit (example: 0x102 = 2 °F)</p>
@@ -149,7 +149,7 @@ Sets the temperature to reset the overheat alarm and<br /> <h1>Overview</h1><p>0
       </parameter>
 
       <parameter name="config_53_2" type="integer" groupName="configuration"
-                 min="0" max="65535">
+                 min="-32767" max="32768">
         <label>53: Freeze Trigger Value</label>
         <description><![CDATA[
 Sets the temperature threshold to cause a freeze alarm<br /> <h1>Overview</h1><p>0x00-0xff: Value in Celsius (example: 0x02 = 2 °C)<br />0x100-0x1ff: Value in Fahrenheit (example: 0x102 = 2 °F)</p><p><br /><br /></p>
@@ -159,7 +159,7 @@ Sets the temperature threshold to cause a freeze alarm<br /> <h1>Overview</h1><p
       </parameter>
 
       <parameter name="config_54_2" type="integer" groupName="configuration"
-                 min="0" max="65535">
+                 min="-32767" max="32768">
         <label>54: Freeze Trigger Reset Value</label>
         <description><![CDATA[
 Sets the temperature threshold to reset a freeze alarm<br /> <h1>Overview</h1><p>0x00-0xff: Value in Celsius (example: 0x02 = 2 °C)<br />0x100-0x1ff: Value in Fahrenheit (example: 0x102 = 2 °F)</p>
@@ -169,7 +169,7 @@ Sets the temperature threshold to reset a freeze alarm<br /> <h1>Overview</h1><p
       </parameter>
 
       <parameter name="config_64_1" type="integer" groupName="configuration"
-                 min="0" max="255">
+                 min="-127" max="128">
         <label>64: Built-In Leak Detection Command Value</label>
         <description>Defines what BASIC command Value to send into Association Group 3</description>
         <default>1</default>
@@ -177,7 +177,7 @@ Sets the temperature threshold to reset a freeze alarm<br /> <h1>Overview</h1><p
       </parameter>
 
       <parameter name="config_65_1" type="integer" groupName="configuration"
-                 min="0" max="255">
+                 min="-127" max="128">
         <label>65: Built-In Leak Detection Reset Command Value</label>
         <description>Defines what BASIC command Value to send into Association Group 3</description>
         <default>2</default>
@@ -185,7 +185,7 @@ Sets the temperature threshold to reset a freeze alarm<br /> <h1>Overview</h1><p
       </parameter>
 
       <parameter name="config_66_1" type="integer" groupName="configuration"
-                 min="0" max="255">
+                 min="-127" max="128">
         <label>66: Remote Leak Detection Command Value</label>
         <description>Defines what BASIC command Value to send into Association Group 3</description>
         <default>1</default>
@@ -193,7 +193,7 @@ Sets the temperature threshold to reset a freeze alarm<br /> <h1>Overview</h1><p
       </parameter>
 
       <parameter name="config_67_1" type="integer" groupName="configuration"
-                 min="0" max="255">
+                 min="-127" max="128">
         <label>67: Remote Leak Detection Reset Command Value</label>
         <description>Defines what BASIC command Value to send into Association Group 3</description>
         <default>2</default>
@@ -201,7 +201,7 @@ Sets the temperature threshold to reset a freeze alarm<br /> <h1>Overview</h1><p
       </parameter>
 
       <parameter name="config_68_1" type="integer" groupName="configuration"
-                 min="0" max="255">
+                 min="-127" max="128">
         <label>68: Temperature Overhead Action Value</label>
         <description>Defines what BASIC command Value to send into Association Group 4</description>
         <default>0</default>
@@ -209,7 +209,7 @@ Sets the temperature threshold to reset a freeze alarm<br /> <h1>Overview</h1><p
       </parameter>
 
       <parameter name="config_69_1" type="integer" groupName="configuration"
-                 min="0" max="255">
+                 min="-127" max="128">
         <label>69: Temperature Overhead Action Reset Value</label>
         <description>Defines what BASIC command Value to send into Association Group 4</description>
         <default>0</default>
@@ -217,7 +217,7 @@ Sets the temperature threshold to reset a freeze alarm<br /> <h1>Overview</h1><p
       </parameter>
 
       <parameter name="config_70_1" type="integer" groupName="configuration"
-                 min="0" max="255">
+                 min="-127" max="128">
         <label>70: Freeze Association Action Command</label>
         <description>Defines what BASIC command Value to send into Association Group 5</description>
         <default>0</default>
@@ -225,7 +225,7 @@ Sets the temperature threshold to reset a freeze alarm<br /> <h1>Overview</h1><p
       </parameter>
 
       <parameter name="config_71_1" type="integer" groupName="configuration"
-                 min="0" max="255">
+                 min="-127" max="128">
         <label>71: Freeze Association Reset Command</label>
         <description>Defines what BASIC command Value to send into Association Group 5</description>
         <default>0</default>
@@ -233,7 +233,7 @@ Sets the temperature threshold to reset a freeze alarm<br /> <h1>Overview</h1><p
       </parameter>
 
       <parameter name="config_80_1" type="integer" groupName="configuration"
-                 min="0" max="255">
+                 min="-127" max="128">
         <label>80: Resent Water Leak Notification time</label>
         <description><![CDATA[
 Defines the interval of resending water leak notification if the water is still present<br /> <h1>Overview</h1><p>0: Disabled<br />1: 1 minute<br />2: 2 minutes<br />etc...<br /></p>

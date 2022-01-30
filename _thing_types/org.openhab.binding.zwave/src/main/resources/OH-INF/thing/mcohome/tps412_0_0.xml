@@ -81,8 +81,9 @@ Touch Panel Switch 2 Channel<br /> <h1>Overview</h1><p>The MCO_TPS412 is a glass
         <multipleLimit>5</multipleLimit>
       </parameter>
 
-      <parameter name="group_3" type="text" groupName="association">
+      <parameter name="group_3" type="text" groupName="association" multiple="true">
         <label>3: All Status Reports</label>
+        <multipleLimit>1</multipleLimit>
       </parameter>
 
       <!-- STATIC DEFINITIONS -->

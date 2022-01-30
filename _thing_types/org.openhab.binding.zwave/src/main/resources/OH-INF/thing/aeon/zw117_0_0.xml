@@ -108,7 +108,7 @@ Range Extender 6<br /> <h1>Overview</h1><p>Aeotec Range Extender is a Z-Wave mes
       </parameter>
 
       <parameter name="config_254_2_000000FE" type="integer" groupName="configuration"
-                 min="0" max="65535">
+                 min="-32767" max="32768">
         <label>254: Device Tag.</label>
         <default>0</default>
         <limitToOptions>false</limitToOptions>

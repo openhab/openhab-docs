@@ -50,7 +50,7 @@ Duwi ZW ESJ 300 Blind Control<br /> <h1>Overview</h1><p>Z-Wave Built-in Shade Co
 
       <!-- PARAMETER DEFINITIONS -->
       <parameter name="config_0_1" type="integer" groupName="configuration"
-                 min="0" max="255">
+                 min="-127" max="128">
         <label>0: Running time</label>
         <description><![CDATA[
 Adjustment of the operating times of the sun blind control<br /> <h1>Overview</h1><p><strong>NOTE</strong>: The set values remain stored even after a power failure. The adjustment process of the operating times can be repeated anytime.<br /><strong>NOTE</strong>: Should the adjustment of the operating times take place with the help of the configuration tool of a third-party manufacturer, you can consider the following values as the basis: Please note that the adjustments should be undertaken only by well-versed technicians.</p> <p>0x00 = nointerruption/permanent operation</p> <p>0x01-0x7F = 1 second to 127 seconds in 1-second steps</p> <p>0x80-0xFE = 130 seconds (0x80) to 1390 seconds (0xFE) in 10 second-steps</p> <p>0xFF = factory settings 120 seconds</p>

@@ -77,7 +77,7 @@ iO Cover for the Simon 100 Schuko Plug Socket<br /> <h1>Overview</h1><p>Once plu
       </parameter>
 
       <parameter name="config_2_2" type="integer" groupName="configuration"
-                 min="0" max="65535">
+                 min="-32767" max="32768">
         <label>2: Custom consumption limit</label>
         <description><![CDATA[
 Custom consumption limit<br /> <h1>Overview</h1><p>0x0001 - 0xFFFF -&gt; Sets the power in Watts that is supported. (once the load is over, it is disconnected).</p>
@@ -101,7 +101,7 @@ Beacon LEDs<br /> <h1>Overview</h1><p>0x01-0x63 (1-100%) -&gt; Sets the intensit
       </parameter>
 
       <parameter name="config_10_1" type="integer" groupName="configuration"
-                 min="0" max="254">
+                 min="-127" max="128">
         <label>10: Delay ON</label>
         <description><![CDATA[
 Delay<br /> <h1>Overview</h1><ul><li>0x00 -&gt; (Default) Disables timing</li> <li>0x01-0x7F -&gt; Sets a timing with a range of (1-127sec)</li> <li>0x80-0xFE -&gt; Sets a timing with range of (1-127min)</li> </ul>
@@ -111,7 +111,7 @@ Delay<br /> <h1>Overview</h1><ul><li>0x00 -&gt; (Default) Disables timing</li> <
       </parameter>
 
       <parameter name="config_11_1" type="integer" groupName="configuration"
-                 min="0" max="254">
+                 min="-127" max="128">
         <label>11: Activation TIME</label>
         <description><![CDATA[
 Activation TIME<br /> <h1>Overview</h1><ul><li>0x00 -&gt; (Default) Disables timing</li> <li>0x01-0x7F -&gt; Sets a timing with a range of (1-127sec)</li> <li>0x80-0xFE -&gt; Sets a timing with range of (1-127min)</li> </ul>
@@ -153,7 +153,7 @@ Activation TIME<br /> <h1>Overview</h1><ul><li>0x00 -&gt; (Default) Disables tim
       </parameter>
 
       <parameter name="config_16_1" type="integer" groupName="configuration"
-                 min="0" max="254">
+                 min="-127" max="128">
         <label>16: Delay OFF</label>
         <description><![CDATA[
 Delay OFF<br /> <h1>Overview</h1><ul><li>0x00 -&gt; (Default) Disables timing</li> <li>0x01-0x7F -&gt; Sets a timing with a range of (1-127sec)</li> <li>0x80-0xFE -&gt; Sets a timing with range of (1-127min)</li> </ul>

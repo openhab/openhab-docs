@@ -152,7 +152,7 @@ Apparent Energy delta based configuration<br /> <h1>Overview</h1><p><i>This conf
       </parameter>
 
       <parameter name="config_8_2" type="integer" groupName="configuration"
-                 min="0" max="65520">
+                 min="-32767" max="32768">
         <label>8: Switch Status time</label>
         <description><![CDATA[
 Switch Status time interval based<br /> <h1>Overview</h1><p><i>This configuration Parameter will be used to set the time interval base reporting of switch status in 1 second resolution</i></p>
@@ -162,7 +162,7 @@ Switch Status time interval based<br /> <h1>Overview</h1><p><i>This configuratio
       </parameter>
 
       <parameter name="config_9_2" type="integer" groupName="configuration"
-                 min="0" max="65520">
+                 min="-32767" max="32768">
         <label>9: Voltage time</label>
         <description><![CDATA[
 Voltage time interval based<br /> <h1>Overview</h1><p><i>This configuration Parameter will be used to set the time interval base reporting of voltagein 1 second resolution.</i></p>
@@ -172,7 +172,7 @@ Voltage time interval based<br /> <h1>Overview</h1><p><i>This configuration Para
       </parameter>
 
       <parameter name="config_10_2" type="integer" groupName="configuration"
-                 min="0" max="65520">
+                 min="-32767" max="32768">
         <label>10: Current time</label>
         <description><![CDATA[
 Current time interval based<br /> <h1>Overview</h1><p><i>This configuration Parameter will be used to set the time interval base reporting of currentin 1 second resolution.</i></p>
@@ -182,7 +182,7 @@ Current time interval based<br /> <h1>Overview</h1><p><i>This configuration Para
       </parameter>
 
       <parameter name="config_11_2" type="integer" groupName="configuration"
-                 min="0" max="65520">
+                 min="-32767" max="32768">
         <label>11: Power Factor time</label>
         <description><![CDATA[
 Power Factor time interval based<br /> <h1>Overview</h1><p><i>This configuration Parameter will be used to set the time interval base reporting of Power Factor in 1 second resolution</i></p>
@@ -192,7 +192,7 @@ Power Factor time interval based<br /> <h1>Overview</h1><p><i>This configuration
       </parameter>
 
       <parameter name="config_12_2" type="integer" groupName="configuration"
-                 min="0" max="65520">
+                 min="-32767" max="32768">
         <label>12: Active Power time</label>
         <description><![CDATA[
 Active Power time interval based<br /> <h1>Overview</h1><p><i>This configuration Parameter will be used to set the time interval base reporting of Active Power in 1 second resolution. </i></p>
@@ -202,7 +202,7 @@ Active Power time interval based<br /> <h1>Overview</h1><p><i>This configuration
       </parameter>
 
       <parameter name="config_13_2" type="integer" groupName="configuration"
-                 min="0" max="65520">
+                 min="-32767" max="32768">
         <label>13: Active Energy time</label>
         <description><![CDATA[
 Active Energy time interval based<br /> <h1>Overview</h1><p><i>This configuration Parameter will be used to set the time interval base reporting of Active Energy in 1 second resolution. </i></p>
@@ -212,7 +212,7 @@ Active Energy time interval based<br /> <h1>Overview</h1><p><i>This configuratio
       </parameter>
 
       <parameter name="config_14_2" type="integer" groupName="configuration"
-                 min="0" max="65520">
+                 min="-32767" max="32768">
         <label>14: Apparent Energy time</label>
         <description><![CDATA[
 Apparent Energy time interval based<br /> <h1>Overview</h1><p><i>This configuration Parameter will be used to set the time interval base reporting of Apparent Energy in 1 second resolution. </i></p>
@@ -262,8 +262,9 @@ Sleep Current Config<br /> <h1>Overview</h1><p><i>This configuration is used to 
         <multipleLimit>4</multipleLimit>
       </parameter>
 
-      <parameter name="group_5" type="text" groupName="association">
+      <parameter name="group_5" type="text" groupName="association" multiple="true">
         <label>5: Time</label>
+        <multipleLimit>1</multipleLimit>
       </parameter>
 
       <!-- STATIC DEFINITIONS -->

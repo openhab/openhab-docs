@@ -96,7 +96,7 @@ Yale Pro™ SL Key-Free Deadbolt (YRD136 or YRD156)<br /> <h1>Overview</h1><p>Bu
       </parameter>
 
       <parameter name="config_3_1" type="integer" groupName="configuration"
-                 min="5" max="255">
+                 min="-127" max="128">
         <label>3: Auto relock time</label>
         <description><![CDATA[
 Time for auto relock<br /> <h1>Overview</h1><p>Amount of seconds between the door is unlocked and when it automatically attempts to re-lock itself, when auto-relocking is enabled.<br /></p>
@@ -116,7 +116,7 @@ Number of incorrect PINs before lockout<br /> <h1>Overview</h1><p>Number of inco
       </parameter>
 
       <parameter name="config_7_1" type="integer" groupName="configuration" readOnly="true"
-                 min="1" max="255">
+                 min="-127" max="128">
         <label>7: Shutdown time</label>
         <description><![CDATA[
 Incorrect attempts shutdown time<br /> <h1>Overview</h1><p>Amount of time lock should ignore the keypad, if the number of incorrect PINs is exceeded. (Can still be locked and unlocked by zwave while in shutdown.)<br /></p>

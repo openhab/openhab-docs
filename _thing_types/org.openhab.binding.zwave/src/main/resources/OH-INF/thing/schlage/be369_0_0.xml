@@ -92,7 +92,7 @@ Keypad Deadbolt<br /> <h1>Overview</h1><p>Schlage BE369 Keypad Door Lock - </p>
       </parameter>
 
       <parameter name="config_7_1" type="integer" groupName="configuration"
-                 min="0" max="255">
+                 min="-127" max="128">
         <label>7: Basic Set</label>
         <description>Byte to send with set command to devices in association group 1</description>
         <default>255</default>

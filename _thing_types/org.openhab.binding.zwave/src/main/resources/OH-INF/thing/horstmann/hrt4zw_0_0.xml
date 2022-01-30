@@ -94,7 +94,7 @@ Battery Powered Wall Thermostat<br /> <h1>Overview</h1><p>Wireless Z–Wave Batt
       </parameter>
 
       <parameter name="config_3_1" type="integer" groupName="configuration"
-                 min="0" max="255">
+                 min="-127" max="128">
         <label>3: Delta T</label>
         <description>Defines the temperature steps of the heating control. Steps are 0.1 K</description>
         <default>10</default>

@@ -165,7 +165,7 @@ Report only when power change reaches a threshold set in 4-11 below.<br /> <h1>O
       </parameter>
 
       <parameter name="config_4_2" type="integer" groupName="configuration"
-                 min="0" max="60000">
+                 min="-32767" max="32768">
         <label>4: Power Threshold - Whole HEM</label>
         <description><![CDATA[
 Threshold change in power to induce an automatic report (Whole HEM).<br /> <h1>Overview</h1><p>Threshold change in wattage to induce a automatic report (Whole HEM). (Valid values 0-60000)</p>
@@ -175,7 +175,7 @@ Threshold change in power to induce an automatic report (Whole HEM).<br /> <h1>O
       </parameter>
 
       <parameter name="config_5_2" type="integer" groupName="configuration"
-                 min="0" max="60000">
+                 min="-32767" max="32768">
         <label>5: Power Threshold - Clamp 1</label>
         <description><![CDATA[
 Threshold change in power to induce an automatic report (Clamp 1)<br /> <h1>Overview</h1><p>Threshold change in wattage to induce a automatic report (Clamp 1). (Valid values 0-60000)</p>
@@ -185,7 +185,7 @@ Threshold change in power to induce an automatic report (Clamp 1)<br /> <h1>Over
       </parameter>
 
       <parameter name="config_6_2" type="integer" groupName="configuration"
-                 min="0" max="60000">
+                 min="-32767" max="32768">
         <label>6: Power Threshold - Clamp 2</label>
         <description><![CDATA[
 Threshold change in power to induce a automatic report (Clamp 2).<br /> <h1>Overview</h1><p>Threshold change in wattage to induce a automatic report (Clamp 2). (Valid values 0-60000)</p>
@@ -195,7 +195,7 @@ Threshold change in power to induce a automatic report (Clamp 2).<br /> <h1>Over
       </parameter>
 
       <parameter name="config_7_2" type="integer" groupName="configuration"
-                 min="0" max="60000">
+                 min="-32767" max="32768">
         <label>7: Power Threshold - Clamp 3</label>
         <description><![CDATA[
 Threshold change in power to induce an automatic report (Clamp 3).<br /> <h1>Overview</h1><p>Threshold change in wattage to induce a automatic report (Clamp 3). (Valid values 0-60000)</p>

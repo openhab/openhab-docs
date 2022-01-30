@@ -175,7 +175,7 @@ This parameter reports the status of the lock.<br /> <h1>Overview</h1><p>Status 
       </parameter>
 
       <parameter name="config_251_3" type="integer" groupName="configuration" readOnly="true"
-                 min="0" max="16700000">
+                 min="-8388606" max="8388607">
         <label>251: Drive Cycles Trap</label>
         <description><![CDATA[
 Counter, how often the trap is activated was.<br /> <h1>Overview</h1><p>Counter, how often latch was actuated.</p>
@@ -185,7 +185,7 @@ Counter, how often the trap is activated was.<br /> <h1>Overview</h1><p>Counter,
       </parameter>
 
       <parameter name="config_252_3" type="integer" groupName="configuration" readOnly="true"
-                 min="0" max="16700000">
+                 min="-8388606" max="8388607">
         <label>252: Driving Cycles Unlocked</label>
         <description><![CDATA[
 Counter, how often in the direction of Unlocked navigated was.<br /> <h1>Overview</h1><p>Counter, how often travel in „Unlocked“ direction.</p>
@@ -195,7 +195,7 @@ Counter, how often in the direction of Unlocked navigated was.<br /> <h1>Overvie
       </parameter>
 
       <parameter name="config_253_3" type="integer" groupName="configuration" readOnly="true"
-                 min="0" max="16700000">
+                 min="-8388606" max="8388607">
         <label>253: Driving Cycles Interlocked</label>
         <description><![CDATA[
 Counter, how often in the direction of "Locked" navigated was.<br /> <h1>Overview</h1><p>Counter, how  often travel in „Locked“ direction.</p>
@@ -205,7 +205,7 @@ Counter, how often in the direction of "Locked" navigated was.<br /> <h1>Overvie
       </parameter>
 
       <parameter name="config_254_2" type="integer" groupName="configuration" readOnly="true"
-                 min="0" max="65535">
+                 min="-32767" max="32768">
         <label>254: ABUS Firmware Version</label>
         <description><![CDATA[
 Display of ABUS Firmware version, e.g. 1.05.<br /> <h1>Overview</h1><p>Display ABUS  firmware version, e.g. 1.05.</p>

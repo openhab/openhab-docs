@@ -107,7 +107,7 @@ Double switch<br /> <h1>Overview</h1><p>The Z-Wave.Me Switch Flush Mountable is 
       </parameter>
 
       <parameter name="config_2_2" type="integer" groupName="configuration"
-                 min="0" max="65535">
+                 min="-32767" max="32768">
         <label>2: Automatically switch off first channel after</label>
         <description>If not zero, automatically switch off after a user defined time</description>
         <default>0</default>
@@ -241,7 +241,7 @@ Energy consumption for first channel<br /> <h1>Overview</h1><p>Specify the consu
       </parameter>
 
       <parameter name="config_22_2" type="integer" groupName="configuration"
-                 min="0" max="65535">
+                 min="-32767" max="32768">
         <label>22: Automatically switch off second channel after</label>
         <description>If not zero, automatically switch off after a user defined time</description>
         <default>0</default>

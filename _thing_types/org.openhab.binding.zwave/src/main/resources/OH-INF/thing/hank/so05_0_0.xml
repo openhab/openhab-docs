@@ -132,7 +132,7 @@ The RGB LED indicator will indicate the load.<br /> <h1>Overview</h1><p><br /></
       </parameter>
 
       <parameter name="config_151_2" type="integer" groupName="configuration"
-                 min="0" max="65535">
+                 min="-32767" max="32768">
         <label>151: Power Report Threshold</label>
         <description><![CDATA[
 Power threashold for when to send reports to associated devices<br /> <h1>Overview</h1><p>When the change value of the load power exceeds the threshold, the meter report is send to associated devices.  0 -- The function is disabled.</p>
@@ -142,7 +142,7 @@ Power threashold for when to send reports to associated devices<br /> <h1>Overvi
       </parameter>
 
       <parameter name="config_152_1" type="integer" groupName="configuration"
-                 min="0" max="255">
+                 min="-127" max="128">
         <label>152: Power Report Percentage Threshold</label>
         <description><![CDATA[
 Percentage threshold for when to send report to associated devices<br /> <h1>Overview</h1><p>When the change value of the load power exceeds the threshold, the meter report is send to associated devices.</p> <p>0 -- The function is disabled.</p>

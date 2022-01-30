@@ -192,7 +192,7 @@ In Wall Dual Relay Switch<br /> <h1>Overview</h1><p>This in-wall switch module i
 
       <!-- PARAMETER DEFINITIONS -->
       <parameter name="config_1_2" type="integer" groupName="configuration"
-                 min="0" max="65535">
+                 min="-32767" max="32768">
         <label>1: W meter report period</label>
         <description><![CDATA[
 Period for reporting W meter<br /> <h1>Overview</h1><p>If the setting is configured for 1 hour (value = 720), the device will report its instant power consumption every 1 hour to Z-Wave Controller. Unit: 5 seconds</p>
@@ -202,7 +202,7 @@ Period for reporting W meter<br /> <h1>Overview</h1><p>If the setting is configu
       </parameter>
 
       <parameter name="config_2_2" type="integer" groupName="configuration"
-                 min="0" max="65535">
+                 min="-32767" max="32768">
         <label>2: kWh meter report period</label>
         <description><![CDATA[
 Period for reporting kWh meter<br /> <h1>Overview</h1><p>If the setting is configured for 1 hour (value = 6), the device will report its total power consumption every 1 hour to Z-Wave Controller. </p> <p>Unit: 10 minutes</p>
@@ -270,7 +270,7 @@ Restore switch state mode<br /> <h1>Overview</h1><p>Restores the switch state se
       </parameter>
 
       <parameter name="config_8_2" type="integer" groupName="configuration"
-                 min="0" max="65535">
+                 min="-32767" max="32768">
         <label>8: Auto Off Timer</label>
         <description><![CDATA[
 Auto Off Timer<br /> <h1>Overview</h1><p>Whenever the device switches to on, the auto off timer begin to count down. After the timer decrease to zero, it will switch off automatically.</p>
@@ -308,16 +308,19 @@ Endpoint 3<br /> <h1>Overview</h1><p>Multi-Channel Command is a good way to cont
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->
-      <parameter name="group_1" type="text" groupName="association">
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
         <label>1: Relay 1 + 2</label>
+        <multipleLimit>1</multipleLimit>
       </parameter>
 
-      <parameter name="group_2" type="text" groupName="association">
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
         <label>2: Relay 1</label>
+        <multipleLimit>1</multipleLimit>
       </parameter>
 
-      <parameter name="group_3" type="text" groupName="association">
+      <parameter name="group_3" type="text" groupName="association" multiple="true">
         <label>3: Relay 2</label>
+        <multipleLimit>1</multipleLimit>
       </parameter>
 
       <!-- STATIC DEFINITIONS -->

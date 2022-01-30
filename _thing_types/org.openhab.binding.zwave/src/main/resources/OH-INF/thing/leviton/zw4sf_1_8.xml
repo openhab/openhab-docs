@@ -85,7 +85,7 @@ Controls the initial fan speed level when turned on<br /> <h1>Overview</h1><p>Th
       </parameter>
 
       <parameter name="config_6_1" type="integer" groupName="configuration"
-                 min="0" max="255">
+                 min="-127" max="128">
         <label>6: LED Level Indicator Timeout</label>
         <description><![CDATA[
 Controls timeout for LED speed indicator, in seconds<br /> <h1>Overview</h1><p>0=Level indicator is always off. 255=Level indicator is always on. Anything in between is the number of seconds the level indicator LED will stay on for, after the fan speed has been adjusted.</p>
@@ -95,7 +95,7 @@ Controls timeout for LED speed indicator, in seconds<br /> <h1>Overview</h1><p>0
       </parameter>
 
       <parameter name="config_7_1" type="integer" groupName="configuration"
-                 min="0" max="255">
+                 min="-127" max="128">
         <label>7: Status LED Behavior</label>
         <description><![CDATA[
 Controls behavior of the status LED<br /> <h1>Overview</h1><p>0=Off, 254=Status Mode, 255=Locator Mode</p>

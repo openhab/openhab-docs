@@ -159,7 +159,7 @@ Vibration Intensity Reports<br /> <h1>Overview</h1><p>Used to enable/disable vib
       </parameter>
 
       <parameter name="config_9_1" type="integer" groupName="configuration"
-                 min="2" max="255">
+                 min="-127" max="128">
         <label>9: Wakeup CC Timeout</label>
         <description><![CDATA[
 Wakeup CC Timeout<br /> <h1>Overview</h1><p>Timeout set in seconds after Wakeup CC is send out before go to sleep. If role type is RSS, the minimum value will</p><p>be 10. If role type is LSS, the minimum value will be 2. If wakeup no more information received, return to sleep</p><p>mode immediately.</p>
@@ -189,7 +189,7 @@ Motion Group Control (Group2)<br /> <h1>Overview</h1><p>Set control of other dev
       </parameter>
 
       <parameter name="config_12_2" type="integer" groupName="configuration"
-                 min="0" max="65535">
+                 min="-32767" max="32768">
         <label>12: Motion Group Value Setting</label>
         <description><![CDATA[
 Motion Group Value Setting<br /> <h1>Overview</h1><p>Set Basic Set value for Group2. The MSB will act as the basic set value when motion trigger. The LSB will act as the</p><p>basic set value when motion untrigger. E.g. value=0x0A00, then BASIC_SET(0x0A) will be sent when motion trigger,</p><p>BASIC_SET(0x00) will be sent when motion untrigger.</p>
@@ -309,7 +309,7 @@ Threshold Check Enable/Disable<br /> <h1>Overview</h1><p>Enable/Disable threshol
       </parameter>
 
       <parameter name="config_41_1" type="integer" groupName="configuration"
-                 min="0" max="255">
+                 min="-127" max="128">
         <label>41: Temperature Threshold</label>
         <description><![CDATA[
 Temperature Threshold<br /> <h1>Overview</h1><p>Threshold = (Value * 0.1) Scale is determined by Param64. 0 = disable.</p>
@@ -349,7 +349,7 @@ UV Threshold<br /> <h1>Overview</h1><p>0 = disable.</p>
       </parameter>
 
       <parameter name="config_45_2" type="integer" groupName="configuration"
-                 min="0" max="65535">
+                 min="-32767" max="32768">
         <label>45: Threshold Check Time</label>
         <description><![CDATA[
 Threshold Check Time<br /> <h1>Overview</h1><p>Set threshold check time in seconds if threshold is enable via Parameter 40.</p><p>1~65535 - When USB powered</p><p>60~65535 - When Battery powered</p>
@@ -399,7 +399,7 @@ Temperature Lower Limit<br /> <h1>Overview</h1><p>Set lower limit level for temp
       </parameter>
 
       <parameter name="config_51_1" type="integer" groupName="configuration"
-                 min="1" max="255">
+                 min="-127" max="128">
         <label>51: Temperature Recover Limit</label>
         <description><![CDATA[
 Temperature Recover Limit<br /> <h1>Overview</h1><p>Temperature recover limit set in scale of 0.1. Scale is determined by Param64. If (Current measurement) &lt;= (upper</p><p>limit - recover limit), then temperature report. If (Current measurement) &gt;= (lower limit + recover limit), then</p><p>temperature report.</p>
@@ -459,7 +459,7 @@ Lux Lower Limit<br /> <h1>Overview</h1><p>Set lux lower limit level.</p>
       </parameter>
 
       <parameter name="config_57_1" type="integer" groupName="configuration"
-                 min="1" max="255">
+                 min="-127" max="128">
         <label>57: Lux Recover Limit</label>
         <description><![CDATA[
 Lux Recover Limit<br /> <h1>Overview</h1><p>Set lux recover limit level. Refer to Parameter  51.</p>
@@ -499,7 +499,7 @@ UV Recover Limit<br /> <h1>Overview</h1><p>Set UV recover limit level. Refer to 
       </parameter>
 
       <parameter name="config_61_1_00000100" type="integer" groupName="configuration" readOnly="true"
-                 min="0" max="255">
+                 min="-127" max="128">
         <label>61: Out-of-limit State</label>
         <description><![CDATA[
 Out-of-limit State<br /> <h1>Overview</h1><p>This is read only and bit mask. Out of the limit state of sensors.</p><p>Bit Mask:</p><p>0 - within limit</p><p>1 - out of limit</p><p>Value:</p><p>1 - Temperature upper level</p><p>2 - Humidity upper level</p><p>4 - Lux upper level</p><p>8 - UV upper level</p><p>16 - Temperature lower level</p><p>32 - Humidity lower level</p><p>64 - Lux lower level</p><p>128 - UV lower level</p>
@@ -532,7 +532,7 @@ LED Activity<br /> <h1>Overview</h1><p>Allow user to enable/disable LED activity
       </parameter>
 
       <parameter name="config_82_1" type="integer" groupName="configuration"
-                 min="0" max="255">
+                 min="-127" max="128">
         <label>82: Motion Sensor Report Indicator</label>
         <description><![CDATA[
 Motion Sensor Report Indicator<br /> <h1>Overview</h1><p>If LED is enabled by Param81, allow user to change the report color of motion sensor.</p>
@@ -622,7 +622,7 @@ Communication Indicator<br /> <h1>Overview</h1><p>If LED is enabled by Parameter
       </parameter>
 
       <parameter name="config_101_1" type="integer" groupName="configuration"
-                 min="0" max="241">
+                 min="-127" max="128">
         <label>101: Automatic Report Checklist 1</label>
         <description><![CDATA[
 Automatic Report Checklist 1<br /> <h1>Overview</h1><p>Checklist 1 for automatic timed report. When the corresponding item is selected, it will be checked when timeout setting by Parameter 111.</p><p>0 - Disabled</p><p>1 - Battery</p><p>16 - UV</p><p>32 - Temperature</p><p>64 - Humidity</p><p>128 - Lux</p><p>Default 241 = 1 + 16 + 32 + 64 + 128, means all enable.</p><p><br /></p>
@@ -632,7 +632,7 @@ Automatic Report Checklist 1<br /> <h1>Overview</h1><p>Checklist 1 for automatic
       </parameter>
 
       <parameter name="config_102_1" type="integer" groupName="configuration"
-                 min="0" max="241">
+                 min="-127" max="128">
         <label>102: Automatic Report Checklist 2</label>
         <description><![CDATA[
 Automatic Report Checklist 2<br /> <h1>Overview</h1><p>Checklist 2 for automatic timed report. When the corresponding item is selected, it will be checked when timeout setting by Parameter 112.</p><p>0 - Disabled</p><p>1 - Battery</p><p>16 - UV</p><p>32 - Temperature</p><p>64 - Humidity</p><p>128 - Lux</p><p>Max value 241 = 1 + 16 + 32 + 64 + 128, means all enable.</p>
@@ -642,7 +642,7 @@ Automatic Report Checklist 2<br /> <h1>Overview</h1><p>Checklist 2 for automatic
       </parameter>
 
       <parameter name="config_103_1" type="integer" groupName="configuration"
-                 min="0" max="241">
+                 min="-127" max="128">
         <label>103: Automatic Report Checklist 3</label>
         <description><![CDATA[
 Automatic Report Checklist 3<br /> <h1>Overview</h1><p>Checklist 3 for automatic timed report. When the corresponding item is selected, it will be checked when timeout setting by Parameter 113.</p><p>0 - Disabled</p><p>1 - Battery</p><p>16 - UV</p><p>32 - Temperature</p><p>64 - Humidity</p><p>128 - Lux</p><p>Max value 241 = 1 + 16 + 32 + 64 + 128, means all enable.</p><p><br /></p>
@@ -652,7 +652,7 @@ Automatic Report Checklist 3<br /> <h1>Overview</h1><p>Checklist 3 for automatic
       </parameter>
 
       <parameter name="config_111_2" type="integer" groupName="configuration"
-                 min="30" max="65535">
+                 min="-32767" max="32768">
         <label>111: Automatic Checklist 1 Interval Time</label>
         <description><![CDATA[
 Automatic Checklist 1 Interval Time<br /> <h1>Overview</h1><p>Interval time set in seconds to check the checklist1’s items. Multilevel Sensor Report will be sent when timeout.</p>
@@ -662,7 +662,7 @@ Automatic Checklist 1 Interval Time<br /> <h1>Overview</h1><p>Interval time set 
       </parameter>
 
       <parameter name="config_112_2" type="integer" groupName="configuration"
-                 min="30" max="65535">
+                 min="-32767" max="32768">
         <label>112: Automatic Checklist 2 Interval Time</label>
         <description><![CDATA[
 Automatic Checklist 2 Interval Time<br /> <h1>Overview</h1><p>Interval time set in seconds to check the checklist2’s items. Multilevel Sensor Report will be sent when timeout.</p>
@@ -672,7 +672,7 @@ Automatic Checklist 2 Interval Time<br /> <h1>Overview</h1><p>Interval time set 
       </parameter>
 
       <parameter name="config_113_2" type="integer" groupName="configuration"
-                 min="30" max="65535">
+                 min="-32767" max="32768">
         <label>113: Automatic Checklist 3 Interval Time</label>
         <description><![CDATA[
 Automatic Checklist 3 Interval Time<br /> <h1>Overview</h1><p>Interval time set in seconds to check the checklist3’s items. Multilevel Sensor Report will be sent when timeout.</p>
@@ -682,7 +682,7 @@ Automatic Checklist 3 Interval Time<br /> <h1>Overview</h1><p>Interval time set 
       </parameter>
 
       <parameter name="config_201_1" type="integer" groupName="configuration"
-                 min="-200" max="200">
+                 min="-127" max="128">
         <label>201: Temperature Offset Value</label>
         <description><![CDATA[
 Temperature Offset Value<br /> <h1>Overview</h1><p>Can add or minus this setting value to calibrate temperature when checked. Scale is defined by Param64. e.g. Value</p><p>15 means 1.5C or 1.5F.</p>

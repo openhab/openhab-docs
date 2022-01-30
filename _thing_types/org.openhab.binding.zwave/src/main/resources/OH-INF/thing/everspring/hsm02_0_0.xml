@@ -90,11 +90,12 @@ Staying Awake (for testing)<br /> <h1>Overview</h1><p>Can be used to determine i
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->
-      <parameter name="group_1" type="text" groupName="association">
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
         <label>1: Target for reports</label>
         <description><![CDATA[
 Support ALARM_REPORT, SENSOR_BINARY_SUPPORT<br /> <h1>Overview</h1><h1>Power Applied (Alarm Report)</h1> <p>Once the power has been applied, Alarm Report Command will be sent to Nodes in Grouping 1 to confirm the power applied status for HSM02. </p> <p>Power Applied Notice:<strong>[Command Class Alarm, Alarm Report, Alarm Type = 0x02, Alarm Level = 0x01]</strong></p> <h1>Magnet status report (Binary Sensor Report)</h1> <p>When the magnets of HSM02 are to be opened, Binary Sensor Report Command (Value = 0xFF) will be sent to Nodes in Grouping 1, and when the magnets are to be closed, Binary Sensor Report Command (Value = 0x00) will be sent as well.</p> <p>Magnets to be opened: <strong>[Command Class Sensor Binary, Sensor Binary Report, Value = 0xFF(255)]<br /></strong>Magnets to be closed: <strong>[Command Class Sensor Binary, Sensor Binary Report, Value = 0x00(0)]</strong></p> <h1>Low Battery Report (Alarm Report)</h1> <p>When HSM02 automatically wakes up, it will check the battery usage. When low battery is detected, Alarm Report Command will be sent to Nodes in Grouping 1, afterward, LED will light up for 1 sec to remind user when HSM02 is triggered due to open or close incidents.</p> <p>Low Battery Report : <strong>[Command Class Alarm, Alarm Report, Alarm Type = 0x01, Alarm Level = 0xFF]</strong></p> <h1>Tamper Event Report (Alarm Report)</h1> <p>Press and hold the tamper switch more than 10 seconds then release, the unit will send ALARM REPORT command to the nodes of Grouping 1 to inform them there is a tamper event.</p> <p>Tamper Event Report : <strong>[Command Class Alarm, Alarm Report, Alarm Type = 0x01, Alarm Level = 0x11] </strong></p>
         ]]></description>
+        <multipleLimit>1</multipleLimit>
       </parameter>
 
       <parameter name="group_2" type="text" groupName="association" multiple="true">

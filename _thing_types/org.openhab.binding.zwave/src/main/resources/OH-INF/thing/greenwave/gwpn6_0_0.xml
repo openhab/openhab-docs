@@ -185,7 +185,7 @@ Minimum variation in load current before a message is sent.<br /> <h1>Overview</
       </parameter>
 
       <parameter name="config_1_1" type="integer" groupName="configuration"
-                 min="0" max="255">
+                 min="-127" max="128">
         <label>1: No communication light</label>
         <description><![CDATA[
 Duration (min) the device flashes after a communication error.<br /> <h1>Overview</h1><p>After how many minutes the GreenWave device should start flashing if the controller didn't communicate with this device.</p>
@@ -237,23 +237,27 @@ Duration (min) the device flashes after a communication error.<br /> <h1>Overvie
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->
-      <parameter name="group_1" type="text" groupName="association">
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
         <label>1: Wheel position change</label>
+        <multipleLimit>1</multipleLimit>
       </parameter>
 
-      <parameter name="group_2" type="text" groupName="association">
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
         <label>2: Current leakage on relay</label>
+        <multipleLimit>1</multipleLimit>
       </parameter>
 
-      <parameter name="group_3" type="text" groupName="association">
+      <parameter name="group_3" type="text" groupName="association" multiple="true">
         <label>3: Power level change</label>
         <description><![CDATA[
 <br /> <h1>Overview</h1><p>The new power reading is sent if the delta of the change is greater than the defined minimum variation.</p>
         ]]></description>
+        <multipleLimit>1</multipleLimit>
       </parameter>
 
-      <parameter name="group_4" type="text" groupName="association">
+      <parameter name="group_4" type="text" groupName="association" multiple="true">
         <label>4: Over-current detection</label>
+        <multipleLimit>1</multipleLimit>
       </parameter>
 
       <!-- STATIC DEFINITIONS -->

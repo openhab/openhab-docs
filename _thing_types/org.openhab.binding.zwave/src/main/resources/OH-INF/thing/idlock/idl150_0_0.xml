@@ -157,7 +157,7 @@ Sets the validity of the service PIN<br /> <h1>Overview</h1><p>A configuration g
       </parameter>
 
       <parameter name="config_7_1" type="integer" groupName="configuration" readOnly="true"
-                 min="0" max="255">
+                 min="-127" max="128">
         <label>7: Door Lock Model Type</label>
         <description><![CDATA[
 Sends information if the model of the lock is 101 or 150<br /> <h1>Overview</h1><p>This configuration is only accepted by configuration get command</p> <p>It is a read only parameter. Default value depends on the door lock model type.</p> <p>101 = ID Lock 101</p> <p>150 = ID Lock 150</p>

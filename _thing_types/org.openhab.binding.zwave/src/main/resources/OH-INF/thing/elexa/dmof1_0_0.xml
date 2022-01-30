@@ -97,7 +97,7 @@ Enable/Disable the meter report.<br /> <h1>Overview</h1><p>This parameter enable
       </parameter>
 
       <parameter name="config_2_2" type="integer" groupName="configuration"
-                 min="1" max="65535">
+                 min="-32767" max="32768">
         <label>2: METER_REPORT</label>
         <description><![CDATA[
 The time between meter reports.<br /> <h1>Overview</h1><p>This parameter sets the amount of time between each successive METER_REPORT signal sent to Group 1 (also see Param 1 &amp; 6.)</p>

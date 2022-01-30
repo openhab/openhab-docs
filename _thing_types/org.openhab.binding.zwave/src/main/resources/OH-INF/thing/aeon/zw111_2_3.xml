@@ -247,7 +247,7 @@ WallSwipe Night light<br /> <h1>Overview</h1><p>Set the LED indication color of 
       </parameter>
 
       <parameter name="config_71_1" type="integer" groupName="configuration"
-                 min="0" max="255">
+                 min="-127" max="128">
         <label>71: WallSwipe sensitivity</label>
         <description>Set the sensitivity of WallSwipe</description>
         <default>0</default>
@@ -349,7 +349,7 @@ Set appointment 2<br /> <h1>Overview</h1><p>0 to 99     The brightness level<
       </parameter>
 
       <parameter name="config_91_2" type="integer" groupName="configuration"
-                 min="0" max="60000">
+                 min="-32767" max="32768">
         <label>91: Set the threshold value of wattage</label>
         <description>Threshold change in wattage (in terms of wattage) to induce an automatic report</description>
         <default>25</default>
@@ -365,7 +365,7 @@ Threshold change in wattage (in terms of percentage)<br /> <h1>Overview</h1><p>T
       </parameter>
 
       <parameter name="config_100_1_wo" type="integer" groupName="configuration"
-                 min="0" max="255">
+                 min="-127" max="128">
         <label>100: Reset 101-103 to default</label>
         <description>Reset parameters 101-103 to default values</description>
         <default>0</default>
@@ -376,7 +376,7 @@ Threshold change in wattage (in terms of percentage)<br /> <h1>Overview</h1><p>T
       </parameter>
 
       <parameter name="config_101_1" type="integer" groupName="configuration"
-                 min="0" max="255">
+                 min="-127" max="128">
         <label>101: Set group 1 reports</label>
         <description><![CDATA[
 To set which reports need to be sent in Report group 1<br /> <h1>Overview</h1><p>1     Send Meter Report of voltage (V)<br />2     Send Meter Report of current (A)<br />4     Send Meter Report of wattage (W)<br />8     Send Meter Report of energy (kWh)</p>
@@ -386,7 +386,7 @@ To set which reports need to be sent in Report group 1<br /> <h1>Overview</h1><p
       </parameter>
 
       <parameter name="config_102_1" type="integer" groupName="configuration"
-                 min="0" max="255">
+                 min="-127" max="128">
         <label>102: Set group 2 reports</label>
         <description><![CDATA[
 To set which reports need to be sent in Report group 2<br /> <h1>Overview</h1><p>1     Send Meter Report of voltage (V)<br />2     Send Meter Report of current (A)<br />4     Send Meter Report of wattage (W)<br />8     Send Meter Report of energy (kWh)</p>
@@ -404,7 +404,7 @@ To set which reports need to be sent in Report group 3<br /> <h1>Overview</h1><p
       </parameter>
 
       <parameter name="config_110_1_wo" type="integer" groupName="configuration"
-                 min="0" max="255">
+                 min="-127" max="128">
         <label>110: Reset 111-113 to default</label>
         <description>Reset parameters 111-113 to default values</description>
         <default>0</default>
@@ -499,7 +499,7 @@ To set which reports need to be sent in Report group 3<br /> <h1>Overview</h1><p
       </parameter>
 
       <parameter name="config_125_1" type="integer" groupName="configuration"
-                 min="1" max="255">
+                 min="-127" max="128">
         <label>125: Set the default dimming rate</label>
         <description>The value range is 1 to 255 seconds</description>
         <default>255</default>
@@ -556,7 +556,7 @@ To set which reports need to be sent in Report group 3<br /> <h1>Overview</h1><p
       </parameter>
 
       <parameter name="config_247_1" type="integer" groupName="configuration"
-                 min="0" max="255">
+                 min="-127" max="128">
         <label>247: Working way for S1/S2</label>
         <description><![CDATA[
 Working way for S1/S2<br /> <h1>Overview</h1><p>Set the working way for S1/S2 when the Switch mode is 2 state switch mode.</p> <ul><li>Bit 0 =0, S1 is a toggle switch.</li> <li>Bit 0 =1, S1 is an On/Off switch, the out load state and S1 switch state would be in sync when using S1 to control the output load.</li> <li>Bit 1 =0, S2 is a toggle switch.</li> <li>Bit 1 =1, S2 is an On/Off switch, the out load state and S2 switch state would be in sync when using S2 to control the output load.</li> <li>Bit 2- Bit 7, reserved.</li> </ul>
@@ -567,7 +567,7 @@ Working way for S1/S2<br /> <h1>Overview</h1><p>Set the working way for S1/S2 wh
       </parameter>
 
       <parameter name="config_248_1" type="integer" groupName="configuration"
-                 min="0" max="255">
+                 min="-127" max="128">
         <label>248: Function of S1/S2</label>
         <description><![CDATA[
 Function of S1/S2<br /> <h1>Overview</h1><p>Set the function of S1/S2.</p> <ul><li>Bit 0 = 0, the function of sending NIF is disabled.</li> <li>Bit 0 = 1, the function of sending NIF is enabled.</li> <li>Bit 1 = 0, the function of entering RF power level test mode is disabled.</li> <li>Bit 1 = 1, the function of entering RF power level test mode is enabled.</li> <li>Bit 2 = 0, the function of factory reset is disabled.</li> <li>Bit 2 = 1, the function of factory reset is enabled.</li> <li>Bit 3- Bit 6 = reserved.</li> <li>Bit 7 = 0, the setting for Bit 0 -Bit 2 are ineffective.</li> <li>Bit 7 = 1, the setting for Bit 0 -Bit 2 are effective</li> </ul>

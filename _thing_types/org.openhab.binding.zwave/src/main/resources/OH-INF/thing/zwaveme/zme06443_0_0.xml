@@ -72,7 +72,7 @@ Typical time used to differentiate click<br /> <h1>Overview</h1><p>Typical time 
       </parameter>
 
       <parameter name="config_13_1" type="integer" groupName="configuration"
-                 min="0" max="255">
+                 min="-127" max="128">
         <label>13: Action on button single press or hold</label>
         <description><![CDATA[
 Defines which command should be sent on button single press or hold.<br /> <h1>Overview</h1><p>Defines which command should be sent on button single press or hold.</p> <p>Basic and Scene commands are sent to Association group.</p> <p>Switch All commands are sent broadcast.</p> <p>Scenes have following meaning: Up = 1, Down = 2, Dim Up = 3, Dim Down = 4, Dim Up Stop = 5</p>

@@ -820,7 +820,7 @@ Device Toggle or Pulse the output<br /> <h1>Overview</h1><p><strong>Device Toggl
       </parameter>
 
       <parameter name="config_49_1" type="integer" groupName="configuration"
-                 min="0" max="255">
+                 min="-127" max="128">
         <label>49: Device Background LEDs Timeout</label>
         <description><![CDATA[
 Device Background LEDs Timeout<br /> <h1>Overview</h1><p><strong>Device Background LEDs Timeout:</strong></p> <p>0 = always Off</p> <p>10 - 40 = Timeout in seconds</p> <p>255 = always On!!!!!!!</p>

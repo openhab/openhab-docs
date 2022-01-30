@@ -94,7 +94,7 @@ Scene respond<br /> <h1>Overview</h1><p>0: All switches respond Scene CC<br />1:
       </parameter>
 
       <parameter name="config_5_1" type="integer" groupName="configuration"
-                 min="0" max="255">
+                 min="-127" max="128">
         <label>5: ALL ON/ALL OFF</label>
         <description><![CDATA[
 ALL ON/ALL OFF<br /> <h1>Overview</h1><p>0: forbid ALL ON, forbid ALL OFF<br />1: forbid ALL ON, allow ALL OFF<br />2: allow ALL ON, forbid ALL OFF<br />255: allow ALL ON, allow ALL OFF</p>
@@ -104,8 +104,9 @@ ALL ON/ALL OFF<br /> <h1>Overview</h1><p>0: forbid ALL ON, forbid ALL OFF<br />1
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->
-      <parameter name="group_1" type="text" groupName="association">
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
         <label>1: Lifeline</label>
+        <multipleLimit>1</multipleLimit>
       </parameter>
 
       <parameter name="group_2" type="text" groupName="association" multiple="true">

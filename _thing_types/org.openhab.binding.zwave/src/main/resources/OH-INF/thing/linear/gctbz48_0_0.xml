@@ -419,7 +419,7 @@ Un-Occupied CSP<br /> <h1>Overview</h1><p>Cool Setpoint for Unoccupied mode</p>
       </parameter>
 
       <parameter name="config_43_1" type="integer" groupName="configuration"
-                 min="0" max="252">
+                 min="-127" max="128">
         <label>43: Remote Sensor 1 Node Number</label>
         <description><![CDATA[
 Remote Sensor 1 Node Number<br /> <h1>Overview</h1><p>Node number for Remote Sensor 1</p>

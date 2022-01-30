@@ -114,7 +114,7 @@ Minimum Lux Level to provoke trigger<br /> <h1>Overview</h1><p>Sets minimum Lux 
       </parameter>
 
       <parameter name="config_6_1" type="integer" groupName="configuration"
-                 min="5" max="255">
+                 min="-127" max="128">
         <label>6: On-Off Duration</label>
         <description><![CDATA[
 On-Off Duration<br /> <h1>Overview</h1><p>The function of on-off duration setting will be useful if the detector is connected with a module or lighting. The duration determines how long the module/lighting should stay ON. For instance, Lamp Module turns off 100 secs after it has been turned on. This parameter can be configured with the value of 5 through 3600, where 5 means 5 second delay and 3600 means 3600 seconds of delay</p>
@@ -124,8 +124,9 @@ On-Off Duration<br /> <h1>Overview</h1><p>The function of on-off duration settin
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->
-      <parameter name="group_1" type="text" groupName="association">
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
         <label>1: Lifeline</label>
+        <multipleLimit>1</multipleLimit>
       </parameter>
 
       <parameter name="group_2" type="text" groupName="association" multiple="true">

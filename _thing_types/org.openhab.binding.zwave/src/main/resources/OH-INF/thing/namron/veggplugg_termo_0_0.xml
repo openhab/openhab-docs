@@ -148,7 +148,7 @@ Smart plug with thermostat<br /> <h1>Overview</h1><p><br /></p><p>Zwave Smart Pl
       </parameter>
 
       <parameter name="config_12_2" type="integer" groupName="configuration"
-                 min="0" max="65535">
+                 min="-32767" max="32768">
         <label>12: Time interval for periodical temperature report</label>
         <description>Time interval for periodical temperature report</description>
         <default>300</default>
@@ -156,7 +156,7 @@ Smart plug with thermostat<br /> <h1>Overview</h1><p><br /></p><p>Zwave Smart Pl
       </parameter>
 
       <parameter name="config_13_1" type="integer" groupName="configuration"
-                 min="0" max="255">
+                 min="-127" max="128">
         <label>13: Power change absolute threshold</label>
         <description>Power change absolute threshold</description>
         <default>2</default>
@@ -164,7 +164,7 @@ Smart plug with thermostat<br /> <h1>Overview</h1><p><br /></p><p>Zwave Smart Pl
       </parameter>
 
       <parameter name="config_14_1" type="integer" groupName="configuration"
-                 min="0" max="255">
+                 min="-127" max="128">
         <label>14: Voltage change absolute threshold</label>
         <description>Voltage change absolute threshold</description>
         <default>2</default>
@@ -172,7 +172,7 @@ Smart plug with thermostat<br /> <h1>Overview</h1><p><br /></p><p>Zwave Smart Pl
       </parameter>
 
       <parameter name="config_15_1" type="integer" groupName="configuration"
-                 min="0" max="255">
+                 min="-127" max="128">
         <label>15: Current change absolute threshold</label>
         <description>Current change absolute threshold</description>
         <default>1</default>

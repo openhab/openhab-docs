@@ -125,7 +125,7 @@ Aeotec Nano Switch<br /> <h1>Overview</h1><p>Aeotec Nano Switch is a Z-Wave Smar
       </parameter>
 
       <parameter name="config_9_1" type="integer" groupName="configuration"
-                 min="0" max="255">
+                 min="-127" max="128">
         <label>9: Instant Energy Autosend Interval</label>
         <description><![CDATA[
 Instant Energy Autosend Interval (SENSOR_MULTILEVEL_REPORT)<br /> <h1>Overview</h1><p>Send SENSOR_MULTILEVEL_REPORT at this interval</p> <p>0 means to not send</p>
@@ -243,7 +243,7 @@ Set the OFF time of output load<br /> <h1>Overview</h1><p>256 to 316 The hour va
       </parameter>
 
       <parameter name="config_91_2" type="integer" groupName="configuration"
-                 min="0" max="60000">
+                 min="-32767" max="32768">
         <label>91: Set the threshold value of wattage</label>
         <description>Threshold change in wattage (in terms of wattage) to induce an automatic report</description>
         <default>25</default>

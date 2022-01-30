@@ -65,7 +65,7 @@ Motion and Light Mini Sensor<br /> <h1>Overview</h1><p>Motion Mini Sensor provid
 
       <!-- PARAMETER DEFINITIONS -->
       <parameter name="config_1_1" type="integer" groupName="configuration"
-                 min="8" max="255">
+                 min="-127" max="128">
         <label>1: Sensitivity Level Setting</label>
         <description><![CDATA[
 This parameter defines the sensitivity of PIR detector<br /> <h1>Overview</h1><p>This parameter defines the sensitivity of PIR detector, it is recommended to test the detector with movements from a farthest end of the coverage area at first time of use. If movements cannot be detected sensitively, simply adjust the sensitivity level with this parameter.</p> <p>This Parameter can be configured with the value of 8 through 255, where 8 means high sensitivity and 255 means lowest sensitivity.</p>
@@ -130,7 +130,7 @@ Interval of being re-triggered after the PIR detector has been triggered.<br /> 
       </parameter>
 
       <parameter name="config_7_2" type="integer" groupName="configuration"
-                 min="60" max="36000">
+                 min="-32767" max="32768">
         <label>7: Light Sensor Polling Interva Time</label>
         <description><![CDATA[
 Set the light sensor measure ambient illumination level interval time<br /> <h1>Overview</h1><p>This Parameter can be set the light sensor measure ambient illumination level</p> <p>interval time. NOTE: This Value Must Be less than Wakeup Interval Time</p>

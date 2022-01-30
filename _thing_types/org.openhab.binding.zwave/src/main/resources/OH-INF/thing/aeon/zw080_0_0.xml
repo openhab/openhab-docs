@@ -80,7 +80,7 @@ Siren Gen5<br /> <h1>Overview</h1><p>Indoor Siren Gen5</p> <br /> <h2>Inclusion 
       </parameter>
 
       <parameter name="config_80_1" type="integer" groupName="configuration"
-                 min="0" max="255">
+                 min="-127" max="128">
         <label>80: Enable Notifications to Group 1</label>
         <description><![CDATA[
 what type of notification to send to Group 1<br /> <h1>Overview</h1><p>Enable to send notifications to associated devices (Group1) when the state of Siren changed (0=nothing,1=hailCC,2=basic CC report).</p>
@@ -90,7 +90,7 @@ what type of notification to send to Group 1<br /> <h1>Overview</h1><p>Enable to
       </parameter>
 
       <parameter name="config_200_1" type="integer" groupName="configuration"
-                 min="0" max="255">
+                 min="-127" max="128">
         <label>200: Partner ID</label>
         <default>0</default>
         <limitToOptions>false</limitToOptions>

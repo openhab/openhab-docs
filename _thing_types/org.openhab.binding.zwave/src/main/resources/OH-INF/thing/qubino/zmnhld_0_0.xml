@@ -543,7 +543,7 @@ Digital temperature sensor reporting<br /> <h1>Overview</h1><p>If digital tepera
       </parameter>
 
       <parameter name="config_122_1" type="integer" groupName="configuration"
-                 min="0" max="254">
+                 min="-127" max="128">
         <label>122: Node Id of external battery powered sensor</label>
         <description><![CDATA[
 Node Id of external battery powered sensor<br /> <h1>Overview</h1><p>0 - disabled</p> <p>1..254 = NodeId of external battery powered room sensor</p>
@@ -553,9 +553,10 @@ Node Id of external battery powered sensor<br /> <h1>Overview</h1><p>0 - disable
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->
-      <parameter name="group_1" type="text" groupName="association">
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
         <label>1: Lifeline</label>
         <description>reserved for communication with the main controller</description>
+        <multipleLimit>1</multipleLimit>
       </parameter>
 
       <parameter name="group_2" type="text" groupName="association" multiple="true">

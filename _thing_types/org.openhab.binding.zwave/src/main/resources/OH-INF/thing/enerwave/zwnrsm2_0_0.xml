@@ -61,7 +61,7 @@ Smart Dual Relay Switch Module<br /> <h1>Overview</h1><p>This smart relay can be
 
       <!-- PARAMETER DEFINITIONS -->
       <parameter name="config_3_1" type="integer" groupName="configuration"
-                 min="0" max="255">
+                 min="-127" max="128">
         <label>3: Unsolicited Report Configuration</label>
         <description><![CDATA[
 Send unsolicited status report to primary controller<br /> <h1>Overview</h1><p>ZWN-RSM2 can send unsolicited status report to primary controller (Node ID 0X01) when switch toggled due to some controllers designed as gateway. If your controller is not a gateway or does not need the status or you think it could confuse your Z-Wave net</p>
@@ -71,8 +71,9 @@ Send unsolicited status report to primary controller<br /> <h1>Overview</h1><p>Z
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->
-      <parameter name="group_1" type="text" groupName="association">
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
         <label>1: Lifeline</label>
+        <multipleLimit>1</multipleLimit>
       </parameter>
 
       <parameter name="group_2" type="text" groupName="association" multiple="true">

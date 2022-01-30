@@ -88,7 +88,7 @@ Double Relay Switch 2x1.5kW<br /> <h1>Overview</h1><p>Remotely Controlled Relay 
       </parameter>
 
       <parameter name="config_4_1" type="integer" groupName="configuration"
-                 min="0" max="255">
+                 min="-127" max="128">
         <label>4: Relay 1: OFF-delay time (10ms steps)</label>
         <description><![CDATA[
 Automatic turning off relay 1 after set time<br /> <h1>Overview</h1><p>Automatic turning off relay 1 after set time, in 10ms increments (default: 200ms)</p>
@@ -98,7 +98,7 @@ Automatic turning off relay 1 after set time<br /> <h1>Overview</h1><p>Automatic
       </parameter>
 
       <parameter name="config_5_1" type="integer" groupName="configuration"
-                 min="0" max="255">
+                 min="-127" max="128">
         <label>5: Relay 2: OFF-delay time (10ms steps)</label>
         <description><![CDATA[
 Automatic turning off relay 2 after set time<br /> <h1>Overview</h1><p>Automatic turning off relay 2 after set time, in 10ms increments (default: 200ms)</p>
@@ -230,7 +230,7 @@ Enable/Disable operation associated to group 1<br /> <h1>Overview</h1><p>Enable/
       </parameter>
 
       <parameter name="config_39_2" type="integer" groupName="configuration"
-                 min="0" max="65535">
+                 min="-32767" max="32768">
         <label>39: ALARM FLASHING alarm time</label>
         <description>Amount of time (ms) the device keeps on flashing after receipt of Alarm Frame</description>
         <default>600</default>
@@ -296,8 +296,9 @@ Enable/Disable operation associated to group 1<br /> <h1>Overview</h1><p>Enable/
         <multipleLimit>16</multipleLimit>
       </parameter>
 
-      <parameter name="group_3" type="text" groupName="association">
+      <parameter name="group_3" type="text" groupName="association" multiple="true">
         <label>3: Controller Updates</label>
+        <multipleLimit>1</multipleLimit>
       </parameter>
 
       <!-- STATIC DEFINITIONS -->

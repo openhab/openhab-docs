@@ -175,7 +175,7 @@ LCD Wallmount Controller<br /> <h1>Overview</h1><p>The system consists of LCD Ke
       </parameter>
 
       <parameter name="config_20_1" type="integer" groupName="configuration"
-                 min="0" max="255">
+                 min="-127" max="128">
         <label>20: Display Timeout</label>
         <description><![CDATA[
 <br /> <h1>Overview</h1><p><br /></p>

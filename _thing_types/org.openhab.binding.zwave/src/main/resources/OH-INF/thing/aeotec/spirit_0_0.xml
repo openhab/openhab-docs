@@ -204,11 +204,12 @@ Measured temperature offset<br /> <h1>Overview</h1><p>-50 ... +50: Offsets the m
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->
-      <parameter name="group_1" type="text" groupName="association">
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
         <label>1: Lifeline</label>
         <description><![CDATA[
 Spirit Z-Wave Plus can only be associated with the Z-Wave controller.<br /> <h1>Overview</h1><p>Commands:</p> <p>BATTERY_REPORT, DEVICE_RESET_LOCALLY_NOTIFICATION, THERMOSTAT_MODE_REPORT, THERMOSTAT_SETPOINT_REPORT, NOTIFICATION_REPORT, PROTECTION_REPORT, SENSOR_MULTILEVEL_REPORT, SWITCH_MULTILEVEL_REPORT</p>
         ]]></description>
+        <multipleLimit>1</multipleLimit>
       </parameter>
 
       <!-- STATIC DEFINITIONS -->

@@ -303,11 +303,12 @@ Set the brightness level the dimmer will turn on to when off and when lower padd
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->
-      <parameter name="group_1" type="text" groupName="association">
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
         <label>1: Lifeline</label>
         <description><![CDATA[
 BASIC REPORT gets sent to this group<br /> <h1>Overview</h1><p>This dimmer switch supports Group 1 with up to 1 devices for lifeline communication and Group 2 and 3 with up to 5 devices. This device will send BASIC REPORT to Group 1 and BASIC SET to group 2 and 3 when operated manually.</p>
         ]]></description>
+        <multipleLimit>1</multipleLimit>
       </parameter>
 
       <parameter name="group_2" type="text" groupName="association" multiple="true">

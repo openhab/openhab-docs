@@ -135,7 +135,7 @@ Configure the LED mode.<br /> <h1>Overview</h1><p>Configure the state of LED whe
       </parameter>
 
       <parameter name="config_83_3" type="integer" groupName="configuration"
-                 min="0" max="16777215">
+                 min="-8388606" max="8388607">
         <label>83: LED Color for Night Light</label>
         <description><![CDATA[
 Configure the RGB value when it is in Night light mode<br /> <h1>Overview</h1><p>Configure the RGB value when it is in Night light mode. (48-bit value)</p> <ul><li>Value1: Red color value (0-255) (16-bits: 32-47)</li> <li>Value2: Green color value (0-255) (16-bits: 16-31)</li> <li>Value3: Blue color value (0-255) (16-bits: 0-15)</li> </ul><p>Example Values:</p> <ul><li>Blue = 255 (0x0000FF)</li> <li>Green = 65280 (0x00FF00)</li> <li>Red = 16711680 (0xFF0000)</li> <li>White = 1774619 (0xFFFFFF)</li> </ul>
@@ -168,7 +168,7 @@ Enables/disables parameter 91 and 92 (reporting minimum wattage)<br /> <h1>Overv
       </parameter>
 
       <parameter name="config_91_2" type="integer" groupName="configuration"
-                 min="0" max="60000">
+                 min="-32767" max="32768">
         <label>91: Minimum Change to send Report (Watt)</label>
         <description><![CDATA[
 The minimum change in wattage value for a report to be sent<br /> <h1>Overview</h1><p>The value here represents minimum change in wattage (in terms of wattage) for a REPORT to be sent (Valid values 0- 60000). </p> <p>Default value: 25 (watts)</p>
@@ -300,7 +300,7 @@ Enable/disable Configuration Lock<br /> <h1>Overview</h1><p>Enable/disable Confi
       </parameter>
 
       <parameter name="config_254_2" type="integer" groupName="configuration"
-                 min="0" max="65535">
+                 min="-32767" max="32768">
         <label>254: Device Tag</label>
         <description>Device Tag</description>
         <default>0</default>
@@ -308,7 +308,7 @@ Enable/disable Configuration Lock<br /> <h1>Overview</h1><p>Enable/disable Confi
       </parameter>
 
       <parameter name="config_255_1" type="integer" groupName="configuration"
-                 min="0" max="255">
+                 min="-127" max="128">
         <label>255: Reset to Factory Default Settings</label>
         <description>Reset to Factory Default Settings</description>
         <default>0</default>

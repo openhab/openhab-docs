@@ -125,7 +125,7 @@ Temperature Calibration Offset<br /> <h1>Overview</h1><p>Tenths of a degree Fahr
       </parameter>
 
       <parameter name="config_9_2" type="integer" groupName="configuration"
-                 min="60" max="64800">
+                 min="-32767" max="32768">
         <label>9: Mandatory Temperature Reporting Interval</label>
         <description><![CDATA[
 Mandatory Temperature Reporting Interval<br /> <h1>Overview</h1><p>The number of seconds between temperature reports.</p>

@@ -101,11 +101,12 @@ Trigger Off Interval Setting<br /> <h1>Overview</h1><p>This controls how long th
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->
-      <parameter name="group_1" type="text" groupName="association">
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
         <label>1: Lifeline</label>
         <description><![CDATA[
 Battery Report, Device Reset Locally Notification, Notification Report<br /> <h1>Overview</h1><p><br /></p>
         ]]></description>
+        <multipleLimit>1</multipleLimit>
       </parameter>
 
       <parameter name="group_2" type="text" groupName="association" multiple="true">

@@ -119,11 +119,12 @@ Minimum Dimmer level control<br /> <h1>Overview</h1><p>Define the lower dimming 
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->
-      <parameter name="group_1" type="text" groupName="association">
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
         <label>1: Group 1</label>
         <description><![CDATA[
 <br /> <h1>Overview</h1><p>Association group_1 is used to report status change such as AUTO report to gateway.</p>
         ]]></description>
+        <multipleLimit>1</multipleLimit>
       </parameter>
 
       <parameter name="group_2" type="text" groupName="association" multiple="true">

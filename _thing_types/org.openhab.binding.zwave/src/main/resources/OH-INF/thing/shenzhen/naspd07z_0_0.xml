@@ -214,7 +214,7 @@ NEO Coolcam PIR 5 in 1<br /> <h1>Overview</h1><p>5 in 1 sensor: motion, temperat
       </parameter>
 
       <parameter name="config_14_2" type="integer" groupName="configuration"
-                 min="0" max="65535">
+                 min="-32767" max="32768">
         <label>14: ??? Unknown (Luminance Threshold for Associated - Parameter #16?)</label>
         <description><![CDATA[
 <br /> <h1>Overview</h1><p>Default: 50<br /></p>
@@ -244,7 +244,7 @@ NEO Coolcam PIR 5 in 1<br /> <h1>Overview</h1><p>5 in 1 sensor: motion, temperat
       </parameter>
 
       <parameter name="config_17_2" type="integer" groupName="configuration"
-                 min="0" max="65535">
+                 min="-32767" max="32768">
         <label>17: ??? Unknown</label>
         <description><![CDATA[
 <br /> <h1>Overview</h1><p>Default: 180<br /></p>

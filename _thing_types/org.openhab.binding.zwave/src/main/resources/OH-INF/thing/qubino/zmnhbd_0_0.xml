@@ -185,7 +185,7 @@ When relay Q2 is OFF it goes automatically ON after defined time<br /> <h1>Overv
       </parameter>
 
       <parameter name="config_15_1" type="integer" groupName="configuration"
-                 min="0" max="255">
+                 min="-127" max="128">
         <label>15: Seconds or milliseconds selection</label>
         <description><![CDATA[
 Automatic turning off / on seconds or milliseconds selection<br /> <h1>Overview</h1><p>Available configuration parameters:</p> <ul><li>0 – seconds selected</li> <li>1 – milliseconds selected</li> </ul><p><strong>NOTE:</strong> Parameter is valid for both outputs Q1, Q2 and is the same for turning off or on.</p>
@@ -286,8 +286,9 @@ Digital temperature sensor reporting<br /> <h1>Overview</h1><p>If digital temper
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->
-      <parameter name="group_1" type="text" groupName="association">
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
         <label>1: Default Reporting Group</label>
+        <multipleLimit>1</multipleLimit>
       </parameter>
 
       <parameter name="group_2" type="text" groupName="association" multiple="true">

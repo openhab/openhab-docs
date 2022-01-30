@@ -133,7 +133,7 @@ Motion Sensor reset timeout<br /> <h1>Overview</h1><ol><li>The default PIR time 
       </parameter>
 
       <parameter name="config_8_1" type="integer" groupName="configuration"
-                 min="8" max="255">
+                 min="-127" max="128">
         <label>8: Timeout after wake up</label>
         <description>Set the timeout of awake after the Wake Up CC is sent out...</description>
         <default>30</default>
