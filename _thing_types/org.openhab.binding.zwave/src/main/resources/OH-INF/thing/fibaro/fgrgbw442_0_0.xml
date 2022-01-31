@@ -624,7 +624,7 @@ Remote control - transition time<br /> <h1>Overview</h1><p>This parameter determ
         <description><![CDATA[
 ON frame value for single click<br /> <h1>Overview</h1><p>For every byte: 0-99, 255<br /></p>
         ]]></description>
-        <default>4294967295</default>
+        <default>-1</default>
         <advanced>true</advanced>
         <limitToOptions>false</limitToOptions>
       </parameter>

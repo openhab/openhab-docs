@@ -155,7 +155,7 @@ Operating mode<br /> <h1>Overview</h1><p>00 = normal mode (this is the default m
         <description><![CDATA[
 One touch locking<br /> <h1>Overview</h1><p>0x00 = OFF, 0xFF = ON (default)</p>
         ]]></description>
-        <default>255</default>
+        <default>-1</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 

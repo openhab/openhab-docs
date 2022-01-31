@@ -62,7 +62,7 @@ Water Leakage Sensor<br /> <h1>Overview</h1><p>The Flood Sensor is a universal Z
                  min="-127" max="128">
         <label>1: Flood Alarm Basic On Value</label>
         <description>Flood detected</description>
-        <default>255</default>
+        <default>-1</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 

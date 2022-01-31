@@ -132,7 +132,7 @@ Group 2 Commands<br /> <h1>Overview</h1><p>Command frames sent to devices added 
         <description><![CDATA[
 Group 2 On command<br /> <h1>Overview</h1><p>The value of 0 turns OFF the device, 255 turns it On. In the case of associating the Dimmer or Roller Shutter module values of 0-99 can be set.  For on/off 0 (off) or 255 (on).<br /></p>
         ]]></description>
-        <default>255</default>
+        <default>-1</default>
         <options>
           <option value="0">Off</option>
           <option value="255">On</option>

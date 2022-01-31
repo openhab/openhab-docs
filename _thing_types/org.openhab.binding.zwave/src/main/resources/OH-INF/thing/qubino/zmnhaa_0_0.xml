@@ -115,7 +115,7 @@ Flush 1 relay<br /> <h1>Overview</h1><p>This Z-Wave module is used for switching
         <description><![CDATA[
 ctivate / deactivate functions ALL ON/ALL OFF<br /> <h1>Overview</h1><p>Flush 1 relay module responds to commands ALL ON / ALL OFF that may be sent by the main controller or by other controller belonging to the system.</p>
         ]]></description>
-        <default>255</default>
+        <default>-1</default>
         <options>
           <option value="0">ALL ON is not active ALL OFF is not active</option>
           <option value="1">ALL ON is not active ALL OFF active</option>

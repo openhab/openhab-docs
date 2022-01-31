@@ -94,7 +94,7 @@ Wireless 3-in-1 Sensor<br /> <h1>Overview</h1><p>EZMotion™ enables fully autom
         <description><![CDATA[
 Sensitivity sets the amount of motion required for EZMotion to detect motion.<br /> <h1>Overview</h1><p>Sensitivity sets the amount of motion required for EZMotion to detect motion. A higher value makes it more sensitive and a lower value makes it less sensitive. Note that values above 200 are not recommended when EZMotion is battery operated. </p> <p>Recommended values: </p> <p>10 = Pet Immune<br /> 100 = Medium sensitivity for hallways<br /> 200 = Highly sensitive for rooms where people are sitting still </p>
         ]]></description>
-        <default>200</default>
+        <default>-56</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
@@ -113,7 +113,7 @@ Sets the number of minutes the lights stay on when motion has not been detected.
         <description><![CDATA[
 LED ON/OFF turns the LED on or off.<br /> <h1>Overview</h1><p>LED ON/OFF turns the LED on or off. A slight improvement in battery life is obtained by turning the LED off. Setting LED ON/OFF to zero will turn the LED off and 255 turns it on. </p>
         ]]></description>
-        <default>255</default>
+        <default>-1</default>
         <options>
           <option value="0">Off</option>
           <option value="255">On</option>
@@ -147,7 +147,7 @@ Setting Stay Awake value<br /> <h1>Overview</h1><p>Setting Stay Awake to a non-z
         <description><![CDATA[
 The value sent by the Z-Wave BASIC_SET command when motion is detected.<br /> <h1>Overview</h1><p>On Value is the value sent by the Z-Wave BASIC_SET command when motion is detected.<br /> A value of 0 will turn the lights off (not recommended).<br /> A value between 1 and 100 will set the dim level to between 1% and 100%.</p> <p>A value of 255 will turn the light on. </p>
         ]]></description>
-        <default>255</default>
+        <default>-1</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 

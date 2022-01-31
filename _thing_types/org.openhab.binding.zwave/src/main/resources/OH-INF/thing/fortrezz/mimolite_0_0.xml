@@ -93,7 +93,7 @@ Input-to-relay Mapping<br /> <h1>Overview</h1><p>The MIMOlite can be configured 
         <description><![CDATA[
 Lower Threshold, High<br /> <h1>Overview</h1><p>Lower Threshold, High (Default=0xBB; must be less than Upper Threshold Low and greater than Lower Threshold Low).</p>
         ]]></description>
-        <default>187</default>
+        <default>-69</default>
         <options>
           <option value="187">Default (0xBB)</option>
         </options>
@@ -103,7 +103,7 @@ Lower Threshold, High<br /> <h1>Overview</h1><p>Lower Threshold, High (Default=0
                  min="-127" max="128">
         <label>5: Lower_Threshold_Low</label>
         <description>Lower Threshold, Low</description>
-        <default>171</default>
+        <default>-85</default>
         <options>
           <option value="171">Default (0xAB)</option>
         </options>
@@ -113,7 +113,7 @@ Lower Threshold, High<br /> <h1>Overview</h1><p>Lower Threshold, High (Default=0
                  min="-127" max="128">
         <label>6: Upper_Threshold_High</label>
         <description>Upper Threshold, High</description>
-        <default>255</default>
+        <default>-1</default>
         <options>
           <option value="255">Default (0xFF)</option>
         </options>
@@ -125,7 +125,7 @@ Lower Threshold, High<br /> <h1>Overview</h1><p>Lower Threshold, High (Default=0
         <description><![CDATA[
 Upper Threshold, Low<br /> <h1>Overview</h1><p>Upper Threshold, Low (Default = 0xFE; must be greater than Lower Threshold High and less than Upper Threshold High).</p>
         ]]></description>
-        <default>254</default>
+        <default>-2</default>
         <options>
           <option value="254">Default (0xFE)</option>
         </options>

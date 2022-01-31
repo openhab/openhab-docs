@@ -97,7 +97,7 @@ This parameter allows for deactivation visual and acoustic alarm.<br /> <h1>Over
         <description><![CDATA[
 “On” level to be sent to devices from 2nd association group on flood event<br /> <h1>Overview</h1><p>Requested dimming level / roller blind opening level when sending turn on / open command to 2nd association group devices.</p> <p>Available settings:<br /><strong>1-99</strong> – requested level<br /><strong>255</strong> – turn a device on</p> <p>Determines the requested “on” level to be sent to devices from 2nd association group upon flood event. The value of 255 allows for turning a device on. In case of a Dimmer it means turning it on with the last memorized state, e.g. Dimmer set to 30% and turned off, turned on again using 255 command is turned on with last state i.e. 30%.</p>
         ]]></description>
-        <default>255</default>
+        <default>-1</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 

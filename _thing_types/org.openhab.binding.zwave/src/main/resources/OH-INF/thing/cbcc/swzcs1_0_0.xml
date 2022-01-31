@@ -49,7 +49,7 @@ Cord Switch<br /> <h1>Overview</h1><p>The wall switch is in “Gateway” Mode a
       <!-- PARAMETER DEFINITIONS -->
       <parameter name="config_1_1" type="integer" groupName="configuration">
         <label>1: Switch All</label>
-        <default>255</default>
+        <default>-1</default>
         <options>
           <option value="0">Disabled</option>
           <option value="1">Switch on only</option>

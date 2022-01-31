@@ -91,7 +91,7 @@ Time it takes to fade off<br /> <h1>Overview</h1><p>0 is instant on 1-127 is in 
       <parameter name="config_7_1" type="integer" groupName="configuration">
         <label>7: Locator LED Status</label>
         <description>LED Off or Status Mode 255 or Locator Mode</description>
-        <default>255</default>
+        <default>-1</default>
         <options>
           <option value="0">LED Off</option>
           <option value="254">Status Mode</option>

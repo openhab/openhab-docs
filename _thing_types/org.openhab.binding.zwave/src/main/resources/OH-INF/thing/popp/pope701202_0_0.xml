@@ -105,7 +105,7 @@ Minimum humidity change to report<br /> <h1>Overview</h1><p>Parameter 2: Minimum
         <description><![CDATA[
 Periodic Reports<br /> <h1>Overview</h1><p>Parameter 4: Periodic Reports<br /><br />This parameter defines the time interval to send an unsolicited report.<br />If the value is set to 0, there will be no periodic reports sent to the controller. However, reports on temperature/humidity changes, managed by configuration parameters 1 and 2, may still be active. <br />Size: 2 Byte, Default Value: 43200</p>
         ]]></description>
-        <default>43200</default>
+        <default>-22336</default>
         <options>
           <option value="0">Disabled</option>
         </options>
@@ -164,7 +164,7 @@ Humidity Lower Watermark value<br /> <h1>Overview</h1><p>Parameter 8: Humidity L
         <description><![CDATA[
 Low Temperature Trigger BASIC Set Command Value<br /> <h1>Overview</h1><p>Parameter 9: Low Temperature Trigger BASIC Set Command Value<br /><br />This defines what BASIC command shall be sent out into association group 3 <br />Size: 1 Byte, Default Value: 255</p>
         ]]></description>
-        <default>255</default>
+        <default>-1</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
@@ -184,7 +184,7 @@ High Temperature Trigger BASIC Set Command Value<br /> <h1>Overview</h1><p>Param
         <description><![CDATA[
 Low Humidity Trigger BASIC Set Command Value<br /> <h1>Overview</h1><p>Parameter 11: Low Humidity Trigger BASIC Set Command Value<br /><br />This defines what BASIC command shall be sent out into association group 5 <br />Size: 1 Byte, Default Value: 255<br /><br /></p>
         ]]></description>
-        <default>255</default>
+        <default>-1</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 

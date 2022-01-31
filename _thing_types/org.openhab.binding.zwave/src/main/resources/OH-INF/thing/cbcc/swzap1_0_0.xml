@@ -50,7 +50,7 @@ Swiid Plug<br /> <h1>Overview</h1><p>The SwiidPlug™ is designed to switch on a
       <parameter name="config_1_1" type="integer" groupName="configuration">
         <label>1: Switch All</label>
         <description>Switch All</description>
-        <default>255</default>
+        <default>-1</default>
         <options>
           <option value="0">Disabled (Default)</option>
           <option value="255">Enabled</option>

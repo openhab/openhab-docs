@@ -87,7 +87,7 @@ Simon IO: Roller Blind<br /> <h1>Overview</h1><p>Roller Blind IO is ready to ope
         <description><![CDATA[
 Calibration<br /> <h1>Overview</h1><p>255 - The device will perform a calibration process in order to Set the UP and DOWN times automatically</p>
         ]]></description>
-        <default>255</default>
+        <default>-1</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 

@@ -68,7 +68,7 @@ Delay before turning light off again.<br /> <h1>Overview</h1><p>After turn on li
         <description><![CDATA[
 Lights on, or dimmer setting.<br /> <h1>Overview</h1><p>Setting the BASIC command value to turn on the light. The 255 means turn on the light. For dimmer equipment 1 to 99 means the light strength.</p>
         ]]></description>
-        <default>255</default>
+        <default>-1</default>
         <advanced>true</advanced>
         <limitToOptions>false</limitToOptions>
       </parameter>

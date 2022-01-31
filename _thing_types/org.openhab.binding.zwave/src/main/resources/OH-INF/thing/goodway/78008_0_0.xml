@@ -64,7 +64,7 @@ Door/Window Sensor with Magnet<br /> <h1>Overview</h1><p>Z-Wave Door/Window sens
         <description><![CDATA[
 255: Binary switch ON, 1-99: Dimmer level<br /> <h1>Overview</h1><p>255: Binary switch ON</p> <p>1-99: Dimmer level </p>
         ]]></description>
-        <default>255</default>
+        <default>-1</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 

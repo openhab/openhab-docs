@@ -71,7 +71,7 @@ Smoke Sensor<br /> <h1>Overview</h1><p>ES61 is a battery powered independent pho
         <description><![CDATA[
 send BASIC Set = Value command<br /> <h1>Overview</h1><p>If there is any device in Association Group 2 the PIR Sensor will send BASIC Set = Value command to control that deivce when the PIR is triggered.</p>
         ]]></description>
-        <default>255</default>
+        <default>-1</default>
       </parameter>
 
       <parameter name="config_2_1" type="integer" groupName="configuration"

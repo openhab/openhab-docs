@@ -355,7 +355,7 @@ Reports sent to Report group 3<br /> <h1>Overview</h1><p>1     Send Meter Rep
                  min="-127" max="128">
         <label>125: Set the default dimming rate</label>
         <description>The value range is 1 to 255 seconds</description>
-        <default>255</default>
+        <default>-1</default>
       </parameter>
 
       <parameter name="config_128_1" type="integer" groupName="configuration">

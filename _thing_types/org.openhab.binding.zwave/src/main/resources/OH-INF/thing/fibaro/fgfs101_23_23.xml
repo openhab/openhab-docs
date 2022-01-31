@@ -102,7 +102,7 @@ LED indicator and acoustic alarm deactivation<br /> <h1>Overview</h1><p>Paramete
         <description><![CDATA[
 Command frame sent by the Sensor in case flooding<br /> <h1>Overview</h1><p>Parameter determines a type of command frame sent by the Sensor in case flooding has been detected or cancelled</p>
         ]]></description>
-        <default>255</default>
+        <default>-1</default>
         <options>
           <option value="0">ALARM WATER</option>
           <option value="255">BASIC_SET</option>
@@ -116,7 +116,7 @@ Command frame sent by the Sensor in case flooding<br /> <h1>Overview</h1><p>Para
         <description><![CDATA[
 Value of the parameter specifying linking to association group no. 1<br /> <h1>Overview</h1><p>Value of the parameter specifying the forced level of dimming / opening sun blinds when comes <em>switch on</em> / <em>open</em> command to devices from association group no. 1. In the case of alarm frames the alarm priority is specified. Possible parameter settings.</p>
         ]]></description>
-        <default>255</default>
+        <default>-1</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 

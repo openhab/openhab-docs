@@ -157,7 +157,7 @@ which commands is sent to 2nd Association Group<br /> <h1>Overview</h1><p>This p
         <description><![CDATA[
 value sent in case of On event<br /> <h1>Overview</h1><p>This is the BASIC command value sent in case of On event. Size: 1 Byte, Default Value: 255. Only 0 to 99 are valid values</p>
         ]]></description>
-        <default>255</default>
+        <default>-1</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 

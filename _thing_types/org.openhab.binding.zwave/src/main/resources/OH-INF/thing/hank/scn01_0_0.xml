@@ -58,7 +58,7 @@ One-key Scene Controller<br /> <h1>Overview</h1><p>The Scene Controller is a sla
         <description><![CDATA[
 Set the duration value of the sent commands<br /> <h1>Overview</h1><p>Setting the duration value of the sent commands, switch multilevel Set and switch multilevel start level change.</p>
         ]]></description>
-        <default>255</default>
+        <default>-1</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 

@@ -75,7 +75,7 @@ Door &amp; Window Sensor<br /> <h1>Overview</h1><p>The sensor DCH-Z110 has a doo
         <description><![CDATA[
 Setting the BASIC command value to turn on the light.<br /> <h1>Overview</h1><ul> <li>0: Turn off the light.</li> <li>1 - 100: For dimmers 1 to 100 means the light level.</li> <li>255: Turns on the light. (Default) </li> </ul>
         ]]></description>
-        <default>255</default>
+        <default>-1</default>
         <options>
           <option value="0">Off</option>
           <option value="255">On</option>

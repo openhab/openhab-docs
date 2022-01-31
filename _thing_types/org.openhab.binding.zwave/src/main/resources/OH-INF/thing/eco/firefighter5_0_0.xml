@@ -112,7 +112,7 @@ Firefighter Audio Detector<br /> <h1>Overview</h1><p><strong>Overview:</strong><
         <description><![CDATA[
 Sensor Mode<br /> <h1>Overview</h1><p>Enables the sensor to detect smoke alarm signals from a smoke detector or alarm signals from a smoke alarm and carbon monoxide alarm combo device. Allowed parameter values:</p> <p>0xA5  = Smoke alarm detection only</p> <p>0xFF   = Smoke and carbon monoxide alarm detection</p>
         ]]></description>
-        <default>165</default>
+        <default>-91</default>
         <options>
           <option value="165">Smoke alarm detection only</option>
           <option value="255">Smoke and carbon monoxide alarm detection</option>

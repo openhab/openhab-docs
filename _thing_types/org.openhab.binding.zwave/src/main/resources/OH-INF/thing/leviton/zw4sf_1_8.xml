@@ -100,7 +100,7 @@ Controls timeout for LED speed indicator, in seconds<br /> <h1>Overview</h1><p>0
         <description><![CDATA[
 Controls behavior of the status LED<br /> <h1>Overview</h1><p>0=Off, 254=Status Mode, 255=Locator Mode</p>
         ]]></description>
-        <default>254</default>
+        <default>-2</default>
         <options>
           <option value="0">LED Off</option>
           <option value="254">Status Mode</option>

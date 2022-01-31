@@ -100,7 +100,7 @@ Scene Respond<br /> <h1>Overview</h1><p>0: All switches respond Scene CC 1: only
         <description><![CDATA[
 ALL ON/ALL OFF<br /> <h1>Overview</h1><p>0: forbid ALL ON, forbid ALL OFF<br />1: forbid ALL ON, allow ALL OFF<br />2: allow ALL ON, forbid ALL OFF<br />255: allow ALL ON, allow ALL OFF</p>
         ]]></description>
-        <default>255</default>
+        <default>-1</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 

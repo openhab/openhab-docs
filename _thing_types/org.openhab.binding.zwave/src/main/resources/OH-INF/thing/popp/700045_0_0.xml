@@ -92,7 +92,7 @@ After this time the Door Bell will receive an OFF.<br /> <h1>Overview</h1><p>Aft
                  min="-127" max="128">
         <label>3: Ring Button ON Command</label>
         <description>Value to send on ring button press.</description>
-        <default>255</default>
+        <default>-1</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 

@@ -89,7 +89,7 @@ Switch state saved or not when power failure<br /> <h1>Overview</h1><p>0=not sav
         <description><![CDATA[
 ALL ON/ALL OFF<br /> <h1>Overview</h1><table><tr><td> <p>0=forbid ALL ON, forbid ALL OFF</p> <p>1=forbid ALL ON, allow ALL OFF</p> <p>2=allow ALL ON, forbid ALL OFF</p> <p>255=allow ALL ON, allow ALL OFF</p> </td> </tr></table>
         ]]></description>
-        <default>255</default>
+        <default>-1</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 

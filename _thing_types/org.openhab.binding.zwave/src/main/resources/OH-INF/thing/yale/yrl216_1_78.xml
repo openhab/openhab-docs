@@ -146,7 +146,7 @@ Set Normal or Vacation Mode<br /> <h1>Overview</h1><p><br /></p>
         <description><![CDATA[
 Turn on/off one touch locking feature<br /> <h1>Overview</h1><p>When the latch is retracted, activating the keypad will extend the latch (during Automatic Re-lock duration or when Automatic Re-lock is disabled). When One-Touch Re-lock is not in use (disabled), any valid PIN code will re-lock the lock.</p>
         ]]></description>
-        <default>255</default>
+        <default>-1</default>
         <options>
           <option value="0">One Touch Locking Off</option>
           <option value="255">One Touch Locking On</option>

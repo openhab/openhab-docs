@@ -90,7 +90,7 @@ Enable/disable to send the basic report<br /> <h1>Overview</h1><p>Enable/disable
         <description><![CDATA[
 Default fade time<br /> <h1>Overview</h1><p>Default(255) Is 1 second</p> <p>254 is 1 Minute</p>
         ]]></description>
-        <default>255</default>
+        <default>-1</default>
       </parameter>
 
       <parameter name="config_5_1" type="integer" groupName="configuration"

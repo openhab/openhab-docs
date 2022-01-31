@@ -84,7 +84,7 @@ Save switch state on power failure<br /> <h1>Overview</h1><p>0: Switch state not
         <description><![CDATA[
 Allow all on/off control<br /> <h1>Overview</h1><p>0: forbid ALL ON, forbid ALL OFF<br />1: forbid ALL ON, allow ALL OFF<br />2: allow ALL ON, forbid ALL OFF<br />255: allow ALL ON, allow ALL OFF</p>
         ]]></description>
-        <default>255</default>
+        <default>-1</default>
         <options>
           <option value="0">Forbid All ON/OFF</option>
           <option value="1">Forbid All ON. Allow ALL OFF</option>

@@ -321,7 +321,7 @@ Function is active only when parameter 61 is set to 0 or 1.<br /> <h1>Overview</
         <description><![CDATA[
 This function allows for turning off the controlled device...<br /> <h1>Overview</h1><p>... in case of exceeding the defined power. Controlled device will be turned off<br />even if "always on" function is active (parameter 1).<br />Controlled device can be turned back on via B-button or sending a<br />control frame. By default this function is inactive.<br />Default setting: 65 535 (6 553,5W)<br />Available settings: 10 - 65 535 (1W - 6 553,5W).<br />Value higher than 32 000 (3 200W) turns the overload safety switch<br />off, i.e. this functionality is turned off by default. </p>
         ]]></description>
-        <default>65535</default>
+        <default>-1</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 

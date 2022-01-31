@@ -121,7 +121,7 @@ Set stage mode for lighting changes<br /> <h1>Overview</h1><p>Set lighting stage
         <description><![CDATA[
 Set speed of changes in stage mode<br /> <h1>Overview</h1><p>Set speed of stage mode 0-255</p> <p>0 is slowest 255 is fastest</p>
         ]]></description>
-        <default>255</default>
+        <default>-1</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
@@ -141,7 +141,7 @@ Set execution time for stage mode<br /> <h1>Overview</h1><p>Set execution time f
         <description><![CDATA[
 Set stage mode hue 0-255<br /> <h1>Overview</h1><p>Set hue for stage mode</p> <p>0 - 255 (default)</p> <p>Only valid for fade in, fade out and flash mode.</p>
         ]]></description>
-        <default>255</default>
+        <default>-1</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 

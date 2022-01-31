@@ -142,7 +142,7 @@ Flush PWM thermostat<br /> <h1>Overview</h1><p>This Z-Wave module is used to reg
         <description><![CDATA[
 Respond to ALL ON/ALL OFF<br /> <h1>Overview</h1><p>Flush PWM thermostat module responds to commands ALL ON / ALL OFF that may be sent by the main controller or by other controller belonging to the system.           </p>
         ]]></description>
-        <default>255</default>
+        <default>-1</default>
         <options>
           <option value="0">ALL ON is not active ALL OFF is not active</option>
           <option value="1">ALL ON is not active ALL OFF active</option>
@@ -168,7 +168,7 @@ I1 Functionality Selection<br /> <h1>Overview</h1><p>Default Value = 1.</p> <ul>
         <description><![CDATA[
 I2 Functionality Selection<br /> <h1>Overview</h1><ul><li>default value 65535</li> <li>65535 – input I2 does not influence on the heat/ cool process</li> <li>From 0 to 990 – Temperature set point from 0.0 °C to 99.0 °C. When I2 is pressed, temperature set point is automatically set to value defined here. In this case function of condense sensor is disabled.</li> <li>From 1001 to 1150 – Temperature set point from -0.1 °C to -15.0 °C. When I2 is pressed, temperature setpoint is automatically set to value defined here. In this case function of condense sensor is disabled.</li> <li>2000 – Input I2 influences on the cooling valve according to status of condense sensor, In this case function of setpoint selection with I2 is disabled.</li> </ul>
         ]]></description>
-        <default>65535</default>
+        <default>-1</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
@@ -178,7 +178,7 @@ I2 Functionality Selection<br /> <h1>Overview</h1><ul><li>default value 65535</l
         <description><![CDATA[
 I3 Functionality Selection<br /> <h1>Overview</h1><ul><li>default value 65535</li> <li>65535 – input I3 does not influence on the heat/ cool process</li> <li>1 – input I3 changes the mode of the thermostat between Heat and Cool. In this case function on window sensor is disabled.</li> <li>2 – input I3 influences on cooling and heating valves according to status of window sensor. In this case function of Heat and Cool selection by I3 is disabled. </li> </ul>
         ]]></description>
-        <default>65535</default>
+        <default>-1</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 

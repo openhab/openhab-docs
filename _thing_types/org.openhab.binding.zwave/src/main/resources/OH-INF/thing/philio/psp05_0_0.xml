@@ -62,7 +62,7 @@ Motion Sensor<br /> <h1>Overview</h1><p>Zwave plus battery operated motion senso
                  min="-127" max="128">
         <label>2: Basic Set Level</label>
         <description>Setting the BASIC command value to turn on the light.</description>
-        <default>255</default>
+        <default>-1</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 

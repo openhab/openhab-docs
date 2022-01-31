@@ -102,7 +102,7 @@ There are 3 levels of sensitivity to smoke presence.<br /> <h1>Overview</h1><p>L
         <description><![CDATA[
 This parameter allows to activate excess temperature ...<br /> <h1>Overview</h1><p>...  and/or enclosure opening notifications sent to the main controller</p>
         ]]></description>
-        <default>255</default>
+        <default>-1</default>
         <options>
           <option value="0">All notifications disabled</option>
           <option value="1">Enclosure opening notification enabled</option>

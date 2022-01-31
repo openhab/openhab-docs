@@ -116,7 +116,7 @@ LED dim level indicator timeout<br /> <h1>Overview</h1><ul><li>0: LED indicators
         <description><![CDATA[
 Locator LED status<br /> <h1>Overview</h1><ul><li>0: LED off</li> <li>254: Status mode</li> <li>255: Locator mode</li> </ul>
         ]]></description>
-        <default>255</default>
+        <default>-1</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 

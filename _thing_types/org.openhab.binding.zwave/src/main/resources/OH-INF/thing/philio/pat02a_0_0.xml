@@ -92,7 +92,7 @@ Setting the BASIC command value.<br /> <h1>Overview</h1><p>Setting the BASIC com
         <description><![CDATA[
 Setting the BASIC command value.<br /> <h1>Overview</h1><p>Setting the BASIC command value.</p> <p>When the flood trigger on(0xFF), send the BASIC CC to the group 2.</p>
         ]]></description>
-        <default>255</default>
+        <default>-1</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 

@@ -502,7 +502,7 @@ To set which reports need to be sent in Report group 3<br /> <h1>Overview</h1><p
                  min="-127" max="128">
         <label>125: Set the default dimming rate</label>
         <description>The value range is 1 to 255 seconds</description>
-        <default>255</default>
+        <default>-1</default>
       </parameter>
 
       <parameter name="config_128_1" type="integer" groupName="configuration">
@@ -572,7 +572,7 @@ Working way for S1/S2<br /> <h1>Overview</h1><p>Set the working way for S1/S2 wh
         <description><![CDATA[
 Function of S1/S2<br /> <h1>Overview</h1><p>Set the function of S1/S2.</p> <ul><li>Bit 0 = 0, the function of sending NIF is disabled.</li> <li>Bit 0 = 1, the function of sending NIF is enabled.</li> <li>Bit 1 = 0, the function of entering RF power level test mode is disabled.</li> <li>Bit 1 = 1, the function of entering RF power level test mode is enabled.</li> <li>Bit 2 = 0, the function of factory reset is disabled.</li> <li>Bit 2 = 1, the function of factory reset is enabled.</li> <li>Bit 3- Bit 6 = reserved.</li> <li>Bit 7 = 0, the setting for Bit 0 -Bit 2 are ineffective.</li> <li>Bit 7 = 1, the setting for Bit 0 -Bit 2 are effective</li> </ul>
         ]]></description>
-        <default>131</default>
+        <default>-125</default>
         <advanced>true</advanced>
         <limitToOptions>false</limitToOptions>
       </parameter>

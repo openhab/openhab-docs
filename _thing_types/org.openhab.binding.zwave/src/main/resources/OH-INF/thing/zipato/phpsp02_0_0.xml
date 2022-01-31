@@ -82,7 +82,7 @@ Door/temp/illumination/motion sensor<br /> <h1>Overview</h1><p>Door/Window, moti
         <description><![CDATA[
 Basic command to turn on the light<br /> <h1>Overview</h1><p>Setting the BASIC command value to turn on the light. The 0xFF(-1) means turn on the light. For dimmer equipment 1 to 100 means the light strength.</p>
         ]]></description>
-        <default>255</default>
+        <default>-1</default>
         <options>
           <option value="0">Off</option>
           <option value="255">On</option>

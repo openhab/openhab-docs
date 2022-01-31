@@ -114,7 +114,7 @@ toggle Dimmer without or with specified on/off position<br /> <h1>Overview</h1><
         <description><![CDATA[
 forbid/allow ALL ON/ALL OFF<br /> <h1>Overview</h1><p>ALL ON/ALL OFF</p> <p>Values in the range 0 to 255 may be set.</p> <p>The manufacturer defined default value is 255.</p> <p>This parameter has the configuration ID config_4_1 and is of type INTEGER.</p>
         ]]></description>
-        <default>255</default>
+        <default>-1</default>
         <options>
           <option value="0">forbid ALL ON, forbid ALL OFF</option>
           <option value="0">forbid ALL ON, allow ALL OFF</option>

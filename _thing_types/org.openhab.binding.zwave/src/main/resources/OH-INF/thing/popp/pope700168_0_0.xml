@@ -116,7 +116,7 @@ Adapt the display<br /> <h1>Overview</h1><p>This multiplier allows to adapt the 
         <description><![CDATA[
 Threshold defines heavy rain condition<br /> <h1>Overview</h1><p>This threshold defines when a heavy rain condition is hit. In most countries this is defined as &gt; 15 mm rain per hour. The default value however is to turn this function off. Size: 1 Byte, Default Value: 255</p>
         ]]></description>
-        <default>255</default>
+        <default>-1</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 

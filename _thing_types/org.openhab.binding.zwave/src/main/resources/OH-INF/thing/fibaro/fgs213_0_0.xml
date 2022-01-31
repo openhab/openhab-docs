@@ -309,8 +309,8 @@ S2 switch - associations sent to 4th and 5th association groups<br /> <h1>Overvi
         </options>
       </parameter>
 
-      <parameter name="config_36_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_36_2" type="integer" groupName="configuration"
+                 min="0" max="255">
         <label>36: S2 switch ON value sent to 4th and 5th ass. groups</label>
         <description><![CDATA[
 S2 switch - Switch ON value sent to 4th and 5th association groups<br /> <h1>Overview</h1><p>This parameter defines value sent with Switch On command to devices associated in 4th and 5th association group. </p>

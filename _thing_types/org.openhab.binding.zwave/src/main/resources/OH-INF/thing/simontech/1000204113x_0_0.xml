@@ -123,7 +123,7 @@ Activation TIME<br /> <h1>Overview</h1><ul><li>0x00 -&gt; (Default) Disables tim
       <parameter name="config_12_1" type="integer" groupName="configuration">
         <label>12: LED in Repose</label>
         <description>Behavior of LED in Repose</description>
-        <default>255</default>
+        <default>-1</default>
         <options>
           <option value="0">Off</option>
           <option value="255">On</option>

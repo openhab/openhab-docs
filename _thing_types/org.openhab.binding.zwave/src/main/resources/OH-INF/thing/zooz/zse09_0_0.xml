@@ -90,7 +90,7 @@ delay after motion before turning OFF<br /> <h1>Overview</h1><p>Set the duration
         <description><![CDATA[
 Brightness to turn on the associated device 1-99, 255=ON<br /> <h1>Overview</h1><p>You can choose if your Mini Sensor turns an associated device on or off when sending the BASIC SET command. Use value 0 to turn the associated device OFF and value 255 to turn it ON. Adjust brightness level for a Z-Wave dimmer (Multilevel switch) by putting in any value between 1 and 99. </p>
         ]]></description>
-        <default>255</default>
+        <default>-1</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
@@ -98,7 +98,7 @@ Brightness to turn on the associated device 1-99, 255=ON<br /> <h1>Overview</h1>
                  min="-127" max="128">
         <label>4: Motion Detection</label>
         <description>255=Motion Detection Enabled</description>
-        <default>255</default>
+        <default>-1</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
@@ -148,7 +148,7 @@ Interval between light level reporting<br /> <h1>Overview</h1><p>Decide how ofte
         <description><![CDATA[
 Light level change to be reported.<br /> <h1>Overview</h1><p>Choose light level (in LUX) change to be reported by the Mini Sensor to the controller. By default, the sensor will report any change of 100 LUX or more.</p>
         ]]></description>
-        <default>255</default>
+        <default>-1</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 

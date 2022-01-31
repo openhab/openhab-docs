@@ -137,7 +137,7 @@ Group 3 report variables to send<br /> <h1>Overview</h1><p>Value is the sum of t
 
       <parameter name="config_120_1" type="integer" groupName="configuration">
         <label>120: External Button Type</label>
-        <default>255</default>
+        <default>-1</default>
         <options>
           <option value="0">Momentary Button</option>
           <option value="1">2 State Switch</option>

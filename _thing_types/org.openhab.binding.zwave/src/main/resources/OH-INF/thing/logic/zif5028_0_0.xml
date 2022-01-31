@@ -371,7 +371,7 @@ The time constant of the input snubber-filter.<br /> <h1>Overview</h1><p>Specifi
         <description><![CDATA[
 The time that an entry must be stable before it is accepted as active / idle.<br /> <h1>Overview</h1><p>Specifies the time that an entry must be stable before it is accepted as active / idle in 0.01 second resolution.</p> <table><tr><td><strong>VALUE</strong></td> <td><strong>DESCRIPTION</strong></td> </tr><tr><td>0-255</td> <td>0 – 2,55 seconds. The standard value is 20, which corresponds to 200 milliseconds (0,2 seconds).</td> </tr></table>
         ]]></description>
-        <default>200</default>
+        <default>-56</default>
         <advanced>true</advanced>
       </parameter>
 

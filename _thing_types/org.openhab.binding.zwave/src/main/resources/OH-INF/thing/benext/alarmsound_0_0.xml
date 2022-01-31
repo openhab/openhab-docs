@@ -69,7 +69,7 @@ Set all configuration values to default values (factory settings)<br /> <h1>Over
         <description><![CDATA[
 Test connection by sending a periodic test with sound on failure<br /> <h1>Overview</h1><p>Test connection by sending a periodic test. if the device doesn't react the user will be notified by a sound.</p> <p>0 this is turned off. 1-255 turn it on.</p>
         ]]></description>
-        <default>255</default>
+        <default>-1</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
@@ -89,7 +89,7 @@ Time it takes to send a new frame after the last frame has succesfully send<br /
         <description><![CDATA[
 Time elapsed between failing to end a frame and sending a new frame.<br /> <h1>Overview</h1><p>t(s) = param1 *60</p>
         ]]></description>
-        <default>240</default>
+        <default>-16</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 

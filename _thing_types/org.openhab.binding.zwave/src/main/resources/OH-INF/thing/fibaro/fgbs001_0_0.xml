@@ -149,7 +149,7 @@ Input 2 alarm cancellation delay.<br /> <h1>Overview</h1><p>Additional delay aft
         <description><![CDATA[
 Type of transmitted control frame for association group 1.<br /> <h1>Overview</h1><p>Activated via input IN1. The parameter allows to specify the type of alarm frame or to force transmission of control commands (BASIC_SET)</p>
         ]]></description>
-        <default>255</default>
+        <default>-1</default>
         <options>
           <option value="0">ALARM GENERIC</option>
           <option value="1">ALARM SMOKE</option>
@@ -167,7 +167,7 @@ Type of transmitted control frame for association group 1.<br /> <h1>Overview</h
         <description><![CDATA[
 Type of transmitted control frame for association group 2<br /> <h1>Overview</h1><p>Activated via input IN2. The parameter allows to specify the type of alarm frame or to force transmission of control commands (BASIC_SET)</p>
         ]]></description>
-        <default>255</default>
+        <default>-1</default>
         <options>
           <option value="0">ALARM GENERIC</option>
           <option value="1">ALARM SMOKE</option>
@@ -186,7 +186,7 @@ Type of transmitted control frame for association group 2<br /> <h1>Overview</h1
         <description><![CDATA[
 Value of the parameter specifying the forced levels.<br /> <h1>Overview</h1><p>Value of the parameter specifying the forced levels of dimming / opening sun blinds when comes 'switch on' / 'open' command to devices from association group no. 1.&lt;BR/&gt;In the case of alarm frames the alarm priority is specified.</p> <p>Possible parameter settings: (1 – 99) and 255<br />Value of 255 makes it possible to activate the device when using<br />the Dimmer module it means activating the device and setting it to<br />the previous stored condition, e.g. when Dimmer is set to 30%, then<br />deactivated, and then reactivated using command 255, it will<br />automatically be set to the previous condition, i.e. 30%. </p>
         ]]></description>
-        <default>255</default>
+        <default>-1</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
@@ -196,7 +196,7 @@ Value of the parameter specifying the forced levels.<br /> <h1>Overview</h1><p>V
         <description><![CDATA[
 Value of the parameter specifying forced levels.<br /> <h1>Overview</h1><p>Value of the parameter specifying the forced level of dimming /<br />opening sun blinds when comes “switch on” / ”open” command to<br />devices from association group no. 2.<br />In the case of alarm frames the alarm priority is specified.<br />Default value: 255<br />Possible parameter settings:<br />(1 – 99) and 255<br />Value of 255 makes it possible to activate the device; when using of<br />the Dimmer module it means activating the device and setting it to<br />the previous stored condition, e.g. when Dimmer is set to 30%, then<br />deactivated, and then reactivated using command 255, it will<br />automatically be set to the previous condition, i.e. 30%. </p>
         ]]></description>
-        <default>255</default>
+        <default>-1</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
@@ -230,7 +230,7 @@ Interval between successive readings of temperature sensors<br /> <h1>Overview</
         <description><![CDATA[
 The forced report is sent immediately after ...<br /> <h1>Overview</h1><p>... the next reading of temperature from the sensor, irrespective of the settings<br />of parameter no. 12.<br />Default value: 200 s<br />Possible parameter settings:<br />0 – 255 s<br />0 – deactivating the function<br />Note: Frequent sending of temperature condition reports is<br />reasonable when the sensor is located somewhere where can<br />occure rapid changes of ambient temperature. In other cases<br />it is recommended to leave the parameter set to the default<br />value.</p>
         ]]></description>
-        <default>200</default>
+        <default>-56</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 

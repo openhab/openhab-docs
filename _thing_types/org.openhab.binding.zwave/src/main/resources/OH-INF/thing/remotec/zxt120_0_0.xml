@@ -96,7 +96,7 @@ Location<br /> <h1>Overview</h1><p>Indicate a location for IR code learning and 
 
       <parameter name="config_28_1" type="integer" groupName="configuration">
         <label>28: External IR Emitter power level</label>
-        <default>255</default>
+        <default>-1</default>
         <options>
           <option value="0">Normal power mode</option>
           <option value="255">High power mode</option>

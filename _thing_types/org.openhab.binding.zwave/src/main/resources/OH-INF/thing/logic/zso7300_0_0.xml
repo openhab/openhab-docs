@@ -240,7 +240,7 @@ LED Brightness level<br /> <h1>Overview</h1><p>This parameter determines the act
         <description><![CDATA[
 Alter Association Group Security<br /> <h1>Overview</h1><p>This parameter specifies if commands are transmitted as a secure message for each of the association groups.</p><p>This parameter is only used when the device is included in security mode (either S0 or S2)</p>
         ]]></description>
-        <default>255</default>
+        <default>-1</default>
         <options>
           <option value="0">All messages in all groups are sent as insecure.</option>
           <option value="1">Messages in association group 2 are sent as secure</option>

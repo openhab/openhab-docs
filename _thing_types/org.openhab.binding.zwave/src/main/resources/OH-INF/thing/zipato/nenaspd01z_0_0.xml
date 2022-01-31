@@ -98,7 +98,7 @@ BASIC SET LEVEL<br /> <h1>Overview</h1><p>3. BASIC SET LEVEL BASIC_SET command w
         <description><![CDATA[
 Enable og disable the PIR sensor<br /> <h1>Overview</h1><p>4. PIR DETECTION FUNCTION ENABLED / DISABLED This parameter can enable or disable the PIR sensor detecting function. Function: Enabled / Disabled PIR function</p> <p>Parameter size: 1 byte</p> <p>Parameter number: 4</p> <p>Available settings: 0 (disable) or 255 (enable)</p> <p>Default setting: 255 </p>
         ]]></description>
-        <default>255</default>
+        <default>-1</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 

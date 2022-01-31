@@ -62,7 +62,7 @@ Temperature Sensor<br /> <h1>Overview</h1><p>Provides temperature reading from a
                  min="10" max="32768">
         <label>1: Wake Up Period</label>
         <description>Seconds to stay awake following button press</description>
-        <default>32768</default>
+        <default>-32768</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
@@ -130,7 +130,7 @@ Temperature Calibration Offset<br /> <h1>Overview</h1><p>Tenths of a degree Fahr
         <description><![CDATA[
 Mandatory Temperature Reporting Interval<br /> <h1>Overview</h1><p>The number of seconds between temperature reports.</p>
         ]]></description>
-        <default>64800</default>
+        <default>-736</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 

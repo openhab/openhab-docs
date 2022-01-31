@@ -161,7 +161,7 @@ Flush 1 relay<br /> <h1>Overview</h1><p>This Z-Wave module is used for switching
       <parameter name="config_10_1" type="integer" groupName="configuration">
         <label>10: Activate /deactivate ALL ON/ALL OFF</label>
         <description>module responds to commands ALL ON / ALL OFF</description>
-        <default>255</default>
+        <default>-1</default>
         <options>
           <option value="0">ALL ON is not active ALL OFF is not active</option>
           <option value="1">ALL ON is not active ALL OFF active</option>

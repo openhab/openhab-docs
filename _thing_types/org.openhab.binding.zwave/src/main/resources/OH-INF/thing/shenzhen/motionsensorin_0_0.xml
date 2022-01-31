@@ -96,13 +96,13 @@ Determined how long the associated devices should stay ON status<br /> <h1>Overv
         <description><![CDATA[
 Basic Set Command will be sent when the door/window is opened or closed<br /> <h1>Overview</h1><p>The receiver will take in for consideration; for instance, if a lamp module received the BSC of which value is decisive as to how bright of dim level of lamp module shall be.</p> <p>Available Settings:</p> <ul><li>0 - Off, Alarm cancelling or turning a device OFF</li> <li>1~99 or 255 – ON (Binary Switch Device)</li> <li>Dim Level (Multilevel Switch Device)</li> </ul>
         ]]></description>
-        <default>255</default>
+        <default>-1</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_4_1" type="integer" groupName="configuration">
         <label>4: Enable/Disable PIR Function</label>
-        <default>255</default>
+        <default>-1</default>
         <options>
           <option value="0">Disable PIR Detector Function</option>
           <option value="255">Enable PIR Detector Function</option>

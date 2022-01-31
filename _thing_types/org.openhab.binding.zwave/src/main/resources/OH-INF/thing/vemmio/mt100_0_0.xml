@@ -90,7 +90,7 @@ how long the associated devices should stay ON status<br /> <h1>Overview</h1><p>
         <description><![CDATA[
 value when PIR detector is triggered and Basic Set command sent<br /> <h1>Overview</h1><p>Valid Values: (0 – 99) </p> <p>0 – OFF , 255 - ON </p> <p>Basic Set Command will be sent where contains a value when PIR detector is triggered, the receiver will take it for consideration; for instance, if a lamp module is received the Basic Set Command of which value is decisive as to how bright of dim level of lamp module shall be. This Parameter is used to some associated devices</p>
         ]]></description>
-        <default>255</default>
+        <default>-1</default>
         <options>
           <option value="255">Off</option>
         </options>
@@ -101,7 +101,7 @@ value when PIR detector is triggered and Basic Set command sent<br /> <h1>Overvi
         <description><![CDATA[
 enabled or disabled the PIR<br /> <h1>Overview</h1><p>Valid Values: 0 – Disable PIR, 255 – Enable PIR</p> <p>This parameter can be enabled or disabled the PIR detector detecting function.</p>
         ]]></description>
-        <default>255</default>
+        <default>-1</default>
         <options>
           <option value="0">Disable PIR</option>
           <option value="255">Enable PIR</option>

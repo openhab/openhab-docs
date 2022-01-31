@@ -165,7 +165,7 @@ Determines the command frames sent in 1-st association group.<br /> <h1>Overview
         <description><![CDATA[
 The value of 255 allows to turn ON a device.<br /> <h1>Overview</h1><p>The value of 255 allows to turn ON a device. In case of the Dimmer, the value of 255 means turning ON at the last memorized state, e.g. the Dimmer turned ON at 30% and turned OFF using the value of 255, and then turned OFF, will be turned ON at 30%, i.e. the last memorized state.<br />Available settings: 0 - 255<br />Default setting: 255<br />Parameter size: 1 [byte]</p>
         ]]></description>
-        <default>255</default>
+        <default>-1</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 

@@ -85,7 +85,7 @@ Two Way Switch<br /> <h1>Overview</h1><p>Touch Panel Switch is a wall switch wit
         <description><![CDATA[
 0,1,2,255<br /> <h1>Overview</h1><p>0=forbid ALL ON, forbid ALL OFF</p> <p>1=forbid ALL ON, allow ALL OFF</p> <p>2=allow ALL ON, forbid ALL OFF</p> <p>255=allow ALL ON, allow ALL OFF</p>
         ]]></description>
-        <default>255</default>
+        <default>-1</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 

@@ -241,7 +241,7 @@ Which reports need to send automatically in timing intervals for group 3<br /> <
 
       <parameter name="config_120_1" type="integer" groupName="configuration">
         <label>120: Set External Switch/Button Control mode</label>
-        <default>255</default>
+        <default>-1</default>
         <options>
           <option value="0">Momentary button mode</option>
           <option value="1">2-state switch mode</option>

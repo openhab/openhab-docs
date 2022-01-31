@@ -57,7 +57,7 @@ Relay Switch 1x3kW<br /> <h1>Overview</h1><p>Remotely Controlled Relay Switch of
       <parameter name="config_1_1" type="integer" groupName="configuration">
         <label>1: Enable/Disable ALL ON/OFF</label>
         <description>Activate/Deactive ALL ON/OFF</description>
-        <default>255</default>
+        <default>-1</default>
         <options>
           <option value="-1">ALL ON active / ALL OFF active</option>
           <option value="0">ALL ON disabled / ALL OFF disabled</option>

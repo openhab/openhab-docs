@@ -64,7 +64,7 @@ Door/Window Sensor<br /> <h1>Overview</h1><p>Battery powered door/window sensor.
         <description><![CDATA[
 Basic Set Command will be sent when the door/window is opened or closed<br /> <h1>Overview</h1><p>If there is any device under Association Group2, the door sensor will send “Basic Set = value” command to control that device when the door sensor is opened.<br />“Value” configuration rule is as below:<br />Available settings:</p> <ul><li>1 to 100 Dimmer Level</li> <li>255 (Default) For ON/OFF Light Only</li> </ul>
         ]]></description>
-        <default>255</default>
+        <default>-1</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 

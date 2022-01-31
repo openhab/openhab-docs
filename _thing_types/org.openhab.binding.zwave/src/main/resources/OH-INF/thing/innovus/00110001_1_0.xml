@@ -131,7 +131,7 @@ Dimming level duration<br /> <h1>Overview</h1><p>Default Dimming Level Duration,
         <description><![CDATA[
 Long dim duration<br /> <h1>Overview</h1><p>Long Dim Duration, time to use dimming to level 0 when double clicking. Format is the same as multilevel switch duration.</p>
         ]]></description>
-        <default>158</default>
+        <default>-98</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 

@@ -60,7 +60,7 @@ Touchscreen Deadbolt<br /> <h1>Overview</h1><p>Touchscreen Deadbolt with Alarm</
       <!-- PARAMETER DEFINITIONS -->
       <parameter name="config_3_1" type="integer" groupName="configuration">
         <label>3: Beeper</label>
-        <default>255</default>
+        <default>-1</default>
         <options>
           <option value="0">Disable Beeper</option>
           <option value="255">Enable Beeper</option>

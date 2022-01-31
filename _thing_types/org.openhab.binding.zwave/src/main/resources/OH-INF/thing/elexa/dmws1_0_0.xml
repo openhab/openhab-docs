@@ -126,7 +126,7 @@ Total time the Leak Sensor will beep and light its LED in the event of a leak<br
         <description><![CDATA[
 The value sent by the BASIC_SET command to Association Group 2<br /> <h1>Overview</h1><p>Determines the value to be sent in the Basic Set command to Association Group 2 when a leak is detected</p>
         ]]></description>
-        <default>255</default>
+        <default>-1</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 

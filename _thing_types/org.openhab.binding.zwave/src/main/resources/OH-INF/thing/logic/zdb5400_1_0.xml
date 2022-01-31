@@ -378,7 +378,7 @@ This parameter specifies the functionality of pushbutton 1<br /> <h1>Overview</h
         <description><![CDATA[
 This parameter specifies the time used in parameter 16<br /> <h1>Overview</h1><p>This parameter specifies the time used in previous configuration parameter. This parameter is only applicable if previous parameter has value 1 or 2.<br /><br />Specifies the time in seconds. Default is 300 = 5 minutes.</p>
         ]]></description>
-        <default>300</default>
+        <default>44</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 

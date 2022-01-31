@@ -124,7 +124,7 @@ Water Leakage Detection<br /> <h1>Overview</h1><p>This parameter defines the fun
         <description><![CDATA[
 Basic Set Level<br /> <h1>Overview</h1><p>Basic Set Command will be sent where contains a value when the door/window is opened or closed, the receiver will take it for consideration; for instance, if a lamp module is received the Basic Set Command of which value is decisive as to how bright of dim level of lamp module shall be.</p>
         ]]></description>
-        <default>255</default>
+        <default>-1</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 

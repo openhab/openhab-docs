@@ -262,7 +262,7 @@ S2 switch - associations sent to 4th and 5th association groups<br /> <h1>Overvi
         <description><![CDATA[
 S2 switch - Switch ON value sent to 4th and 5th association groups<br /> <h1>Overview</h1><p>This parameter defines value sent with Switch On command to devices associated in 4th and 5th association group. </p>
         ]]></description>
-        <default>255</default>
+        <default>-1</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 

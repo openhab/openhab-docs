@@ -53,7 +53,7 @@ Air quality sensor for indoor use<br /> <h1>Overview</h1><p>This device measures
         <description><![CDATA[
 Configuration of the device operating mode<br /> <h1>Overview</h1><ul><li>bit 0    Unsolicited Multilevel Report Mode A    0 = disabled, 1 = <strong>enabled</strong></li> <li>bit 1    Unsolicited Multilevel Report Mode B    0 = <strong>disabled</strong>, 1 = enabled</li> <li>bit 2    Basic Set                                         0 = disabled, 1 = <strong>enabled</strong></li> <li>bit 3    Broadcast Multilevel Report                 0 = disabled, 1 = <strong>enabled</strong></li> <li>bit 7    SENSOAIR LEDs                               0 = disabled, 1 = <strong>enabled</strong></li> </ul><p><strong>Unsolicited Multilevel Report Mode A</strong></p> <p>SENSOAIR sends an usolicited multilevel report when the CO<sub>2</sub> value<br />exceeds one of the following threshold values:<br />600 ppm, 800 ppm, 1000 ppm, 1500 ppm, 2000 ppm, 2500 ppm</p> <p><strong>Unsolicited Multilevel Report Mode B<br /></strong></p> <p>SENSOAIR sends the current CO<sub>2</sub> value (without being requested) in an interval of<br />5 - 65000 seconds. The interval can be configured with parameter 2.</p>
         ]]></description>
-        <default>141</default>
+        <default>-115</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 

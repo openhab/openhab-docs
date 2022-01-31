@@ -277,7 +277,7 @@ Time that a button must be activated before it is accepted as “held-down".<br 
         <description><![CDATA[
 Global brightness control<br /> <h1>Overview</h1><p>This parameter specifies a common brightness for each of the three base colors for all four pushbutton indicators.</p> <table><tr><td><strong>Byte 1</strong></td> <td><strong>Red brightness</strong></td> </tr><tr><td>0-255</td> <td>Brightness level for the red color in the 4 indicator groups. (Default is 255)</td> </tr><tr><td><strong>Byte 2</strong></td> <td><strong> Green brightness</strong></td> </tr><tr><td>0-255</td> <td> <p>Brightness level for the green color in the 4 indicator groups. (Default is 255)</p> </td> </tr><tr><td><strong>Byte 3</strong></td> <td><strong> Green brightness</strong></td> </tr><tr><td>0-255</td> <td>Brightness level for the blue color in the 4 indicator groups. (Default is 255)</td> </tr><tr><td><strong>Byte 4</strong></td> <td><strong>Not used</strong></td> </tr><tr><td>0</td> <td>Not used – must be set to 0.</td> </tr></table>
         ]]></description>
-        <default>4294967040</default>
+        <default>-256</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 

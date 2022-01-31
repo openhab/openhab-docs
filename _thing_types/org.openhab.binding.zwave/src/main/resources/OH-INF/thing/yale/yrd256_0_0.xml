@@ -120,7 +120,7 @@ Number of incorrect PINs before lockout<br /> <h1>Overview</h1><p>Number of inco
 
       <parameter name="config_6_1" type="integer" groupName="configuration">
         <label>6: Radio event reporting</label>
-        <default>255</default>
+        <default>-1</default>
         <options>
           <option value="0">Don't report events?</option>
           <option value="255">Do report events?</option>

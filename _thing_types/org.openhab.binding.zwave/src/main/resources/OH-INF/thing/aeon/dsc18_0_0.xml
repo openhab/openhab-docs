@@ -177,7 +177,7 @@ Micro Smart Energy Switch G2<br /> <h1>Overview</h1><p>The Aeotec Micro Smart En
 
       <parameter name="config_120_1" type="integer" groupName="configuration">
         <label>120: Turn External Button Mode</label>
-        <default>255</default>
+        <default>-1</default>
         <options>
           <option value="0">Momentary Button Mode</option>
           <option value="1">2 State Switch Mode</option>

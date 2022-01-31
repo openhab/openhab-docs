@@ -148,7 +148,7 @@ Sending a BASIC command to all devices of Association Group 2<br /> <h1>Overview
                  min="-127" max="128">
         <label>7: BASIC command value sent to 2nd Assoc Group on On</label>
         <description>BASIC command value sent to 2nd Association Group on ‘On‘ event</description>
-        <default>255</default>
+        <default>-1</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 

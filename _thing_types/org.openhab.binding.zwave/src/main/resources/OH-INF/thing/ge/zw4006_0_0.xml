@@ -109,7 +109,7 @@ In-Wall Smart Motion Switch<br /> <h1>Overview</h1><p>The switch enables wireles
         <description><![CDATA[
 Change brightness of associated light bulb(s)<br /> <h1>Overview</h1><p><br /></p>
         ]]></description>
-        <default>255</default>
+        <default>-1</default>
         <options>
           <option value="255">Default</option>
         </options>

@@ -131,7 +131,7 @@ Type of IN input<br /> <h1>Overview</h1><p>Type of IN input</p>
         <description><![CDATA[
 Type of transmitted control frame for association group 1<br /> <h1>Overview</h1><p>The parameter allows you to specify the type of an alarm frame or to force control frames transmission (BASIC_SET)</p> <p>Available settings:<br /><b>1</b> – ALARM SMOKE frame<br /><b>2</b> – ALARM CO frame<br /><b>3</b> – ALARM CO2 frame<br /><b>4</b> – ALARM HEAT frame<br /><b>5</b> – ALARM WATER frame<br /><b>255</b> – Control frame BASIC_SET<br />Default setting: <strong>255</strong></p>
         ]]></description>
-        <default>255</default>
+        <default>-1</default>
         <options>
           <option value="1">ALARM SMOKE frame</option>
           <option value="2">ALARM CO frame</option>
@@ -149,7 +149,7 @@ Type of transmitted control frame for association group 1<br /> <h1>Overview</h1
         <description><![CDATA[
 Parameter for dimming/opening blinds<br /> <h1>Overview</h1><p>Value of the parameter specifying the forced level of dimming/opening roller blinds when “switch on”/”open” commands are sent to devices from association group no.1. In case of alarm frames an alarm priority is specified.</p> <p>Default value: <strong>255</strong></p> <p>Possible parameter settings: (<strong>1 – 99</strong>) and <strong>255</strong></p> <p>Value of <strong>255</strong> makes it possible to activate a device. In case of the Dimmer module it means activating the device and setting it to the previously stored condition, e.g. when Dimmer is set to 30%, deactivated and then reactivated using 255 commend, it will be automatically set to the previous condition i.e. 30%</p>
         ]]></description>
-        <default>255</default>
+        <default>-1</default>
       </parameter>
 
       <parameter name="config_9_1" type="integer" groupName="configuration">

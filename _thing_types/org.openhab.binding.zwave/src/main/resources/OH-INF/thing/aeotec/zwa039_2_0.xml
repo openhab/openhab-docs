@@ -126,7 +126,7 @@ This value determines how often aerQ Sensor checks for minimum change in tempera
         <description><![CDATA[
 This parameter defines the time interval to send an unsolicited report.<br /> <h1>Overview</h1><p>This parameter defines the time interval to send an unsolicited report.</p><p>If the value is set to 0, there will be no periodic reports sent to the controller. </p><p>However, reports on temperature/humidity changes, managed by configuration parameters 1 and 2, may still be active. </p>
         ]]></description>
-        <default>43200</default>
+        <default>-22336</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
@@ -176,7 +176,7 @@ This parameter defines a relative humidity. If the measured temperature drops be
         <description><![CDATA[
 This defines what BASIC SET command value shall be sent out into association group 3.<br /> <h1>Overview</h1><p>This defines what BASIC SET command value shall be sent out into association group 3.</p><p>Value meaning:</p><p>255 = ON.</p><p>0 = OFF.</p><p>1 - 100 = Defines a level between 0 - 100% if controlling dimmers.</p>
         ]]></description>
-        <default>255</default>
+        <default>-1</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
@@ -196,7 +196,7 @@ This defines what BASIC SET command value be sent out into association group 2.<
         <description><![CDATA[
 This defines what BASIC SET command value shall be sent out into association group 5.<br /> <h1>Overview</h1><p>This defines what BASIC SET command value shall be sent out into association group 5. </p><p>Value meaning:</p><p>255 = ON.</p><p>0 = OFF.</p><p>1 - 100 = Defines a level between 0 - 100% if controlling dimmers.</p>
         ]]></description>
-        <default>255</default>
+        <default>-1</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 

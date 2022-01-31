@@ -74,7 +74,7 @@ Delay (in seconds) before close signal will be sent<br /> <h1>Overview</h1><p>Se
         <description><![CDATA[
 The value that will be set when the sensor is triggered<br /> <h1>Overview</h1><p>You can choose if your Contact Sensor turns an associated device on or off when sending the basic set command. Use value 0 to turn the associated device OFF and value 255 to turn it ON. Adjust brightness level for a Z-Wave dimmer (Multilevel switch) by putting in any value between 1 and 99.</p> <p>Values: 0 – OFF; 1 – 99 (% of light); 255 – ON (default).</p>
         ]]></description>
-        <default>255</default>
+        <default>-1</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 

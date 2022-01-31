@@ -124,7 +124,7 @@ Motion Sensor<br /> <h1>Overview</h1><p>Motion sensor (PIR) is a passive infrare
                  min="-127" max="128">
         <label>8: Param 8</label>
         <description>Param 8</description>
-        <default>255</default>
+        <default>-1</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 

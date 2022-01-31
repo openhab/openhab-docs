@@ -209,7 +209,7 @@ Delay OFF<br /> <h1>Overview</h1><table><tr><td>0x00</td> <td>Instantly (default
         <description><![CDATA[
 Identify<br /> <h1>Overview</h1><p>The central LED blinks for 5 seconds in order to identify the device.</p>
         ]]></description>
-        <default>255</default>
+        <default>-1</default>
         <options>
           <option value="255">The dimmer blinks</option>
         </options>

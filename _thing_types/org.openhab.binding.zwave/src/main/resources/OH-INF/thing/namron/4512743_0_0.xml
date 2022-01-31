@@ -122,7 +122,7 @@ Choose a cool light stage mode<br /> <h1>Overview</h1><p>Parameter number 5 defi
         <description><![CDATA[
 Speed of stage mode<br /> <h1>Overview</h1><p>Parameter number 6 defines the speed of stage mode:</p><p>Value 0-0xFF configurable, 0 is the slowest, 255 is the fastest.</p>
         ]]></description>
-        <default>243</default>
+        <default>-13</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 

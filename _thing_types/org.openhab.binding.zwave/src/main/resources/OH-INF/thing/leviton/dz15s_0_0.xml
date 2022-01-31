@@ -55,7 +55,7 @@ Scene Capable Push On/Off<br /> <h1>Overview</h1><p>Decora Smart with Z-Wave Plu
       <!-- PARAMETER DEFINITIONS -->
       <parameter name="config_7_1" type="integer" groupName="configuration">
         <label>7: Locator LED Status</label>
-        <default>255</default>
+        <default>-1</default>
         <options>
           <option value="0">LED Off</option>
           <option value="254">Status Mode</option>

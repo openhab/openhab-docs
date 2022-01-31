@@ -106,7 +106,7 @@ Alarm acoustic and visual signals<br /> <h1>Overview</h1><p>parameter allows for
         <description><![CDATA[
 Type of alarm to 1st association group (SMOKE)<br /> <h1>Overview</h1><p>Allows for choosing a command class used in 1-st Association Group.</p>
         ]]></description>
-        <default>255</default>
+        <default>-1</default>
         <options>
           <option value="0">ALARM SENSOR (SMOKE)</option>
           <option value="255">BASIC_SET</option>
@@ -120,7 +120,7 @@ Type of alarm to 1st association group (SMOKE)<br /> <h1>Overview</h1><p>Allows 
         <description><![CDATA[
 Forced Level of Dimming group 1<br /> <h1>Overview</h1><p>Value of the parameter specifying the forced level of dimming / opening sun blinds when comes 'switch on' / 'open' command to devices from association group no. 1</p> <p>In the case of alarm frames the alarm priority is specified.</p>
         ]]></description>
-        <default>255</default>
+        <default>-1</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 

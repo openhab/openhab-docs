@@ -80,7 +80,7 @@ Basic Set OFF Level<br /> <h1>Overview</h1><p>Setting the BASIC command value</p
         <description><![CDATA[
 Basic Set ON Level<br /> <h1>Overview</h1><p>Setting the BASIC command value</p> <ul><li>When the flood trigger on(0xFF), send the BASIC CC to the group 2</li> </ul>
         ]]></description>
-        <default>255</default>
+        <default>-1</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 

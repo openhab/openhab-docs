@@ -79,7 +79,7 @@ Battery Powered Wall Thermostat<br /> <h1>Overview</h1><p>The SRT321 is a wirele
       <parameter name="config_1_1" type="integer" groupName="configuration">
         <label>1: Enable Temperature Sensor</label>
         <description>Controls the use of the temperature sensor on the device</description>
-        <default>255</default>
+        <default>-1</default>
         <options>
           <option value="0">Disable</option>
           <option value="255">Enable</option>

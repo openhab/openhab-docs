@@ -145,7 +145,7 @@ Sets if the unit operates normal, or disables keypad and Z-Wave lock/unlock<br /
 
       <parameter name="config_11_1" type="integer" groupName="configuration">
         <label>11: One Touch Locking</label>
-        <default>255</default>
+        <default>-1</default>
         <options>
           <option value="0">Off</option>
           <option value="255">On</option>

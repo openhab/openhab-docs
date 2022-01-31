@@ -118,7 +118,7 @@ RGBW Controller<br /> <h1>Overview</h1><p>Fibaro RGBW Controller is a universal,
         <description><![CDATA[
 Activation/deactivation of ALL ON/ALL OFF functions.<br /> <h1>Overview</h1><p>By default, ALL ON active ALL OFF active.</p>
         ]]></description>
-        <default>255</default>
+        <default>-1</default>
         <options>
           <option value="-1">ALL ON active ALL OFF active</option>
           <option value="0">ALL ON inactive ALL OFF inactive</option>
@@ -191,7 +191,7 @@ Step value (relevant for MODE1).<br /> <h1>Overview</h1><ul><li>Default setting:
         <description><![CDATA[
 Maximum Brightening level.<br /> <h1>Overview</h1><p>Default setting: 255, available settings: 3 - 255.</p>
         ]]></description>
-        <default>255</default>
+        <default>-1</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 

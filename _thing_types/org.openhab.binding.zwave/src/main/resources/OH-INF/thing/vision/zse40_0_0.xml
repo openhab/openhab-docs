@@ -115,7 +115,7 @@ Zooz 4-in-one motion/temperature/humidity/luminance sensor<br /> <h1>Overview</h
                  min="-127" max="128">
         <label>5: Trigger Interval</label>
         <description>Set the trigger interval for motion sensor re-activation.</description>
-        <default>180</default>
+        <default>-76</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 

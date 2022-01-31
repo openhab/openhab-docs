@@ -98,7 +98,7 @@ Shutter Panel<br /> <h1>Overview</h1><p>Touch Panel Switch is a wall panel built
       <parameter name="config_3_1" type="integer" groupName="configuration">
         <label>3: ALL ON/ALL OFF</label>
         <description>ALL ON/ALL OFF</description>
-        <default>255</default>
+        <default>-1</default>
         <options>
           <option value="0">forbid ALL ON, forbid ALL OFF</option>
           <option value="1">forbid ALL ON, allow ALL OFF</option>

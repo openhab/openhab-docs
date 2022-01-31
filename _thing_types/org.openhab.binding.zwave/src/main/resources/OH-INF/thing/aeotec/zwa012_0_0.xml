@@ -172,7 +172,7 @@ Commands sent to associated devices on Group 2<br /> <h1>Overview</h1><p>Command
         <description><![CDATA[
 Value of Group 2 On command<br /> <h1>Overview</h1><p>The value of 0 turns OFF the device, 255 turns it On. In the case of associating the Dimmer or Roller Shutter module, values 0-99 can be sent.<br /></p>
         ]]></description>
-        <default>255</default>
+        <default>-1</default>
         <options>
           <option value="0">Off</option>
           <option value="255">On</option>
@@ -317,7 +317,7 @@ Command sent to devices of Association Group 5<br /> <h1>Overview</h1><p>This pa
         <description><![CDATA[
 Value of Group 5 On command<br /> <h1>Overview</h1><p>This is the BASIC command value sent in case of On event. 0 is off, 255 is on or a value between 0-99 can be sent.<br /></p>
         ]]></description>
-        <default>255</default>
+        <default>-1</default>
         <options>
           <option value="0">Off</option>
           <option value="255">On</option>

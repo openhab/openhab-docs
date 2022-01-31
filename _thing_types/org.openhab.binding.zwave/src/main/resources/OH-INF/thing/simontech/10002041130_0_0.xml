@@ -155,7 +155,7 @@ Delay OFF<br /> <h1>Overview</h1><ul><li>0x00 -&gt; (Default) Disables timing</l
       <parameter name="config_17_1" type="integer" groupName="configuration">
         <label>17: Post Reset State</label>
         <description>Load state after reset</description>
-        <default>255</default>
+        <default>-1</default>
         <options>
           <option value="0">Off After Reset</option>
           <option value="255">Activated After Reset</option>
@@ -178,7 +178,7 @@ Delay OFF<br /> <h1>Overview</h1><ul><li>0x00 -&gt; (Default) Disables timing</l
       <parameter name="config_20_1_wo" type="integer" groupName="configuration">
         <label>20: Identify</label>
         <description>The center LED flashes</description>
-        <default>255</default>
+        <default>-1</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 

@@ -310,7 +310,7 @@ Red ring flashes violet when parameter 61 is set to 0 or 1.<br /> <h1>Overview</
         <description><![CDATA[
 Turns off controlled device in case of exceeding power.<br /> <h1>Overview</h1><p>This function allows for turning off the controlled device in case of exceeding the defined power. Controlled device will be turned off even if 'always on' function is active (parameter 1).</p> <p>Controlled device can be turned back on via B-button</p>
         ]]></description>
-        <default>65535</default>
+        <default>-1</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 

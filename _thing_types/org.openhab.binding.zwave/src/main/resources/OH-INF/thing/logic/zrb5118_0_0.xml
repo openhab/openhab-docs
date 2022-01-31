@@ -299,7 +299,7 @@ Threshold value for button in "long-press" condition<br /> <h1>Overview</h1><p>T
         <description><![CDATA[
 Shared RGB-level control<br /> <h1>Overview</h1><p>This parameter is used to set the shared light-level for the red, green and blue colors in the LEDs under the 4 Buttons.</p><p>Value Description</p><p>Byte 1: Light-level for red</p><p>0 - 255 Set the shared level for the red LEDs (standard value is 255)</p><p>Byte 2: Light-level for green<br /></p><p>0 – 255 Set the shared level for the green LEDs (standard value is 255)</p><p>Byte 3: Light-level for blue<br /></p><p>0 – 255 Set the shared level for the blue LEDs (standard value is 255)</p><p>Byte 4: Not used - must be set to 0.</p>
         ]]></description>
-        <default>2552552550</default>
+        <default>-1742414746</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 

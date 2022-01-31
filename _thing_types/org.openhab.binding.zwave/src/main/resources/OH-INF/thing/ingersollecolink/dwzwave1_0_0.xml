@@ -63,7 +63,7 @@ Z-Wave Door/Window Sensor<br /> <h1>Overview</h1><p>Monitor activities at your h
         <description><![CDATA[
 Fault Restore Report<br /> <h1>Overview</h1><p>Enable or disable Basic Sets of 0x00 on a fault restore to nodes in Group 2. Default = Enabled.</p>
         ]]></description>
-        <default>255</default>
+        <default>-1</default>
         <options>
           <option value="0">Disabled</option>
           <option value="255">Enabled</option>

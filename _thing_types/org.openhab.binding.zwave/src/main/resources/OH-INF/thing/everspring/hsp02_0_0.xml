@@ -87,7 +87,7 @@ Motion Detector<br /> <h1>Overview</h1><p>Battery powered Motion Sensor</p> <br 
       <parameter name="config_4_1" type="integer" groupName="configuration"
                  min="-127" max="128">
         <label>4: Re-trigger Interval Setting</label>
-        <default>180</default>
+        <default>-76</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 

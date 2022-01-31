@@ -106,7 +106,7 @@ This value defines the minimum change of humidity to cause an unsolicited report
         <description><![CDATA[
 This parameter defines the time interval to send an unsolicited report. If the value is set to 0, there will be no periodic reports sent to the controller.<br /> <h1>Overview</h1><p>Periodic Reports.</p><p>This parameter defines the time interval to send an unsolicited report.</p><p>If the value is set to 0, there will be no periodic reports sent to the controller. </p><p>However, reports on temperature/humidity changes, managed by configuration parameters 1 and 2, may still be active. </p>
         ]]></description>
-        <default>43200</default>
+        <default>-22336</default>
         <advanced>true</advanced>
         <limitToOptions>false</limitToOptions>
       </parameter>
@@ -161,7 +161,7 @@ If the measured temperature drops below this relative humidity a BASIC command i
         <description><![CDATA[
 This defines what BASIC SET command value shall be sent out into association group 3.<br /> <h1>Overview</h1><p>Low Temperature Trigger BASIC Set Command Value.</p><p>This defines what BASIC SET command value shall be sent out into association group 3.</p><p>Value meaning:</p><p>255 = ON.</p><p>0 = OFF.</p><p>1 - 100 = Defines a level between 0 - 100% if controlling dimmers.</p>
         ]]></description>
-        <default>255</default>
+        <default>-1</default>
         <advanced>true</advanced>
         <limitToOptions>false</limitToOptions>
       </parameter>
@@ -183,7 +183,7 @@ This defines what BASIC SET command value be sent out into association group 2.<
         <description><![CDATA[
 This defines what BASIC SET command value shall be sent out into association group 5.<br /> <h1>Overview</h1><p>Low Humidity Trigger BASIC Set Command Value.</p><p>This defines what BASIC SET command value shall be sent out into association group 5. </p><p>Value meaning:</p><p>255 = ON.</p><p>0 = OFF.</p><p>1 - 100 = Defines a level between 0 - 100% if controlling dimmers.</p>
         ]]></description>
-        <default>255</default>
+        <default>-1</default>
         <advanced>true</advanced>
         <limitToOptions>false</limitToOptions>
       </parameter>

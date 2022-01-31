@@ -71,7 +71,7 @@ The delay time from when the Door/Window Sensor sends the BASIC_SET command.<br 
       <parameter name="config_2_1" type="integer" groupName="configuration">
         <label>2: BASIC_SET Level</label>
         <description>Sets the value sent by the BASIC_SET command to Association Group 2</description>
-        <default>255</default>
+        <default>-1</default>
         <options>
           <option value="0">0/Turn Off Device</option>
           <option value="255">Turn On Device</option>

@@ -143,7 +143,7 @@ Yale nexTouch NTB610 with ayr202 network module<br /> <h1>Overview</h1><p>This i
       <parameter name="config_11_1" type="integer" groupName="configuration">
         <label>11: One Touch Locking</label>
         <description>Secure lock with one touch</description>
-        <default>255</default>
+        <default>-1</default>
         <options>
           <option value="0">Off</option>
           <option value="255">On</option>
@@ -154,7 +154,7 @@ Yale nexTouch NTB610 with ayr202 network module<br /> <h1>Overview</h1><p>This i
       <parameter name="config_12_1" type="integer" groupName="configuration">
         <label>12: Privacy Button</label>
         <description>Turn Privacy On/Off</description>
-        <default>255</default>
+        <default>-1</default>
         <options>
           <option value="0">Off</option>
           <option value="255">On</option>

@@ -77,7 +77,7 @@ Push Button Deadbolt<br /> <h1>Overview</h1><p>The Yale Real Living™ Stand-alo
 
       <parameter name="config_2_1" type="integer" groupName="configuration">
         <label>2: Auto relock</label>
-        <default>255</default>
+        <default>-1</default>
         <options>
           <option value="0">Off</option>
           <option value="255">On</option>

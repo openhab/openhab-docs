@@ -52,7 +52,7 @@ Plug-in Appliance Module<br /> <h1>Overview</h1><p>On/Off (binary) plug in modul
         <description><![CDATA[
 Controls state of on-device LED<br /> <h1>Overview</h1><p>Defines the behavior of the green LED.</p> <p>Default is Night Light mode where LED is on when switch is off.</p> <p>Valid values: 0 to 255</p> <ul><li>0 = LED off</li> <li>254 (0xFE) = Status mode</li> <li>255 (0xFF) = Locator mode</li> </ul>
         ]]></description>
-        <default>255</default>
+        <default>-1</default>
         <options>
           <option value="0">LED always off</option>
           <option value="254">LED on when switch is ON</option>

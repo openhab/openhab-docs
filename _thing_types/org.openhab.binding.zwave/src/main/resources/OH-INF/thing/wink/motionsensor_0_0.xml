@@ -90,7 +90,7 @@ Motion Cleared Time Delay<br /> <h1>Overview</h1><p>This parameters sets (in sec
         <description><![CDATA[
 Basic Set Level<br /> <h1>Overview</h1><p>This parameter sets the value sent by the BASIC_SET command to Association Group 2</p>
         ]]></description>
-        <default>255</default>
+        <default>-1</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 

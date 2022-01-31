@@ -141,7 +141,7 @@ Flush on/off thermostat<br /> <h1>Overview</h1><p>This Z-Wave module is used to 
         <description><![CDATA[
 Module responds to commands ALL ON / ALL OFF<br /> <h1>Overview</h1><p>Module responds to commands ALL ON / ALL OFF that may be sent by the main controller or by other controller belonging to the system.</p>
         ]]></description>
-        <default>255</default>
+        <default>-1</default>
         <options>
           <option value="0">ALL ON is not active ALL OFF is not active</option>
           <option value="1">ALL ON is not active ALL OFF active</option>
@@ -208,7 +208,7 @@ Power reporting in Watts by time interval<br /> <h1>Overview</h1><p>Set value me
         <description><![CDATA[
 Hysteresis On<br /> <h1>Overview</h1><p>This parameter defines temperature min difference between real measured temperature and set-point temperature to turn device on. Parameter can be set from 0 to 255 where 0 to 127 means from 0.0 °C to 12.7 °C and from 128 to 255 means from - 0.1 °C to -12.7 °C.</p> <p>Available configuration parameters</p> <p>default value 132 (-0.5 °C)</p>
         ]]></description>
-        <default>132</default>
+        <default>-124</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 

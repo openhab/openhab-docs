@@ -64,7 +64,7 @@ Dome Battery powered Z-Wave Plus enabled mousetrap<br /> <h1>Overview</h1><p>The
         <description><![CDATA[
 Sets the value sent by the BASIC_SET command to Association Group 2<br /> <h1>Overview</h1><p>This parameter sets the value sent by the BASIC_SET command to Association Group 2 (for more information, see “Assocation Groups”.)</p> <p>00 (0/Turn Off Device)</p> <p>01 ~ 63 (0-99)</p> <p>FF (255/Turn On Device)</p>
         ]]></description>
-        <default>255</default>
+        <default>-1</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 

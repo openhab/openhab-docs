@@ -126,7 +126,7 @@ RES_RMS_CURRENT<br /> <h1>Overview</h1><p><strong>Units of 10 mA</strong></p> <p
         <description><![CDATA[
 CLAMP_REVERSED<br /> <h1>Overview</h1><p>CLAMP_REVERSED is a read-only parameter that the controller can query to learn about the current placement of the clamp. During the measurement phase, WEM checks whether the clamp has been placed correctly or reversed (with regard to phase rotation). In the latter case, WEM notifies the user with a different blink pattern and stores this information into the CLAMP_REVERSED parameter.</p>
         ]]></description>
-        <default>255</default>
+        <default>-1</default>
         <options>
           <option value="0">Clamp placed Correctly</option>
           <option value="1">Clamp is REVERSED</option>

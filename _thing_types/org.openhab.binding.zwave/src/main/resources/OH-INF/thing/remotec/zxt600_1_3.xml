@@ -112,7 +112,7 @@ AC Master<br /> <h1>Overview</h1><p>ZXT-600 AC Master is a Z-Wave plus certified
         <description><![CDATA[
 Set built-in IR Emitter Control<br /> <h1>Overview</h1><p>0 - disable</p> <p>255 enable (default)</p>
         ]]></description>
-        <default>255</default>
+        <default>-1</default>
         <advanced>true</advanced>
         <limitToOptions>false</limitToOptions>
       </parameter>

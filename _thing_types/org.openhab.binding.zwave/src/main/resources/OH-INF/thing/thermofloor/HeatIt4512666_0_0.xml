@@ -92,7 +92,7 @@ Z-Wave thermostat for controlling external relay<br /> <h1>Overview</h1><p>Heati
                  min="-127" max="128">
         <label>1: Temperature/ Humidity report interval</label>
         <description>Used to adjust the time between report interval for Temperature and humidity reports</description>
-        <default>900</default>
+        <default>644</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 

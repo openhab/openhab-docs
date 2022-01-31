@@ -53,7 +53,7 @@ Tamper-Resistant Z-Wave Outlet - Model ZW15R<br /> <h1>Overview</h1><p>The Decor
         <description><![CDATA[
 Allow turning the status LED to various modes (off, status, locator)<br /> <h1>Overview</h1><p>0 = LED Off</p><p>254 = Status Mode</p><p>255 = Locater Mode</p>
         ]]></description>
-        <default>255</default>
+        <default>-1</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 

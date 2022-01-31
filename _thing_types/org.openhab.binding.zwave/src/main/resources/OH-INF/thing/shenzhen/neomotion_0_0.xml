@@ -109,7 +109,7 @@ Motion Sensor<br /> <h1>Overview</h1><p>Motion sensor(PIR) is a passive infrared
         <description><![CDATA[
 <br /> <h1>Overview</h1><p>This parameter can enable or disable PIR detector detecting function.<br /></p>
         ]]></description>
-        <default>255</default>
+        <default>-1</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 

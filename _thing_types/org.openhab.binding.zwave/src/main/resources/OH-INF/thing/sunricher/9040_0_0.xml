@@ -249,7 +249,7 @@ Over Current Protection<br /> <h1>Overview</h1><p>Over 1.5A for 20 seconds conti
         <description><![CDATA[
 Power Metering Cycle<br /> <h1>Overview</h1><p>Default 600 is 10 minutes</p>
         ]]></description>
-        <default>600</default>
+        <default>344</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 

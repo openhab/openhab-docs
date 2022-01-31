@@ -127,7 +127,7 @@ Aeotec Water Sensor 7 Pro<br /> <h1>Overview</h1><p>The AEOTEC Water Sensor 7 Pr
                  min="-127" max="128">
         <label>7: BASIC command value sent to 2nd Association Group on On event</label>
         <description>This is the BASIC command value sent in case of On event.</description>
-        <default>255</default>
+        <default>-1</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
@@ -197,7 +197,7 @@ Aeotec Water Sensor 7 Pro<br /> <h1>Overview</h1><p>The AEOTEC Water Sensor 7 Pr
       <parameter name="config_18_2" type="integer" groupName="configuration">
         <label>18: Periodic Reports</label>
         <description>This parameter defines the time interval to send an unsolicited report. If the value is set to 0, there will be no periodic reports sent to the controller. However, reports on temperature/humidity changes, managed by configuration parameters 16 and 17, ma</description>
-        <default>43200</default>
+        <default>-22336</default>
         <options>
           <option value="0">Disabled</option>
         </options>

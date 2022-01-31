@@ -82,7 +82,7 @@ Micro Dimmer<br /> <h1>Overview</h1><p>Micro Dimmer is a Z-Wave Plus enabled in-
                  min="-127" max="128">
         <label>4: ALL ON/ALL OFF</label>
         <description>ALL ON/ALL OFF</description>
-        <default>255</default>
+        <default>-1</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 

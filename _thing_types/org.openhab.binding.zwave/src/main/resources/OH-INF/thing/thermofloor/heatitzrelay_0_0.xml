@@ -253,7 +253,7 @@ Configures the threshold for input 3 that will cause a flood to be detected.<br 
         <description><![CDATA[
 Voltage value used for power calculation.<br /> <h1>Overview</h1><p>Configures the value used for power calculation, as only the current for the load on the relay output is measured.</p> <p>0 – 250  = 0 – 250 Volt. Default value is 220.</p>
         ]]></description>
-        <default>220</default>
+        <default>-36</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 

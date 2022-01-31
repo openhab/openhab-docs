@@ -117,7 +117,7 @@ Number of wrong tags that can be tried before stand-down<br /> <h1>Overview</h1>
         <description><![CDATA[
 Time after the wrong tag limit being exceeded before re-trying<br /> <h1>Overview</h1><p>Amount of time after the wrong tag limit being exceeded that the lock will stand-down for</p>
         ]]></description>
-        <default>250</default>
+        <default>-6</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
