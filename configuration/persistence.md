@@ -19,7 +19,8 @@ Please refer to the [available persistence service add-on](/addons/#persistence)
 
 ## Default Persistence Service
 
-You should configure a default persistence service even if you have only one persistence add-on installed. The default persistence service is used to provide data for the UI charting features and rules (you may choose to use another persistence service in either of these, configured on a case-by-case basis).
+You should configure a default persistence service even if you have only one persistence add-on installed.
+The default persistence service is used to provide data for the UI charting features and rules (you may choose to use another persistence service in either of these, configured on a case-by-case basis).
 
 To select a default persistence service, in UI, select `Settings->Persistence`.
 Select your default service from the drop-down list.
