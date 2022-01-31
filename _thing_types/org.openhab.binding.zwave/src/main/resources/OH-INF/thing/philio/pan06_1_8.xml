@@ -118,8 +118,7 @@ Switch state after repowering<br /> <h1>Overview</h1><p>0 : Switch off<br />1 : 
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_4_2" type="integer" groupName="configuration"
-                 min="0" max="32767">
+      <parameter name="config_4_2" type="integer" groupName="configuration">
         <label>4: Auto OFF Timer</label>
         <default>0</default>
       </parameter>

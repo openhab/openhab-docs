@@ -104,8 +104,7 @@ enable the Auto Turn-Off Timer<br /> <h1>Overview</h1><p>Auto Turn-Off Timer</p>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_4_4" type="integer" groupName="configuration"
-                 min="1" max="65535">
+      <parameter name="config_4_4" type="integer" groupName="configuration">
         <label>4: Auto Turn-Off Timer Duration</label>
         <description><![CDATA[
 set Auto Turn-Off Timer Duration<br /> <h1>Overview</h1><p>Parameter 4: Use this parameter to set the time a?er which you want the switch to automatically turn off once it has been turned on. The number entered as value corresponds to the number of minutes.</p> <p>Values: 1 – 65535 (minutes). 60 –default.</p> <p>Size: 4 byte dec.</p>
@@ -127,8 +126,7 @@ enable the Auto Turn-On Timer<br /> <h1>Overview</h1><p>Auto Turn-On Timer</p> <
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_6_4" type="integer" groupName="configuration"
-                 min="1" max="65535">
+      <parameter name="config_6_4" type="integer" groupName="configuration">
         <label>6: Auto Turn-On Timer Duration</label>
         <description><![CDATA[
 set Auto Turn-On Timer Duration<br /> <h1>Overview</h1><p>Parameter 6: Use this parameter to set the time a?er which you want the switch to automatically turn on once it has been turned off. The number entered as value corresponds to the number of minutes.</p> <p>Values: 1 – 65535 (minutes). Default</p> <p>set to 60.</p> <p>Size: 4 byte dec.</p>
@@ -137,8 +135,7 @@ set Auto Turn-On Timer Duration<br /> <h1>Overview</h1><p>Parameter 6: Use this 
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_7_1" type="integer" groupName="configuration"
-                 min="0" max="15">
+      <parameter name="config_7_1" type="integer" groupName="configuration">
         <label>7: Association Reports</label>
         <description><![CDATA[
 Association Reports<br /> <h1>Overview</h1><p>Choose which physical and Z-Wave triggers should prompt the dimmer to send a status change report to associated devices.</p> <p>0 – none;</p> <p>1 – physical tap on ZEN27 only;</p> <p>2 – physical tap on connected 3-way switch only;</p> <p>3 – physical tap on ZEN27 or connected 3-way switch;</p> <p>4 – Z-Wave command from hub;</p> <p>5 – physical tap on ZEN27 or Z-Wave command from hub;</p> <p>6 – physical tap on connected 3-way switch or Z-Wave command from hub;</p> <p>7 – physical tap on ZEN27 / connected 3-way switch or Z-Wave command from hub;</p> <p>8 – timer only;</p> <p>9 – physical tap on ZEN27 or timer;</p> <p>10 – physical tap on connected 3-way switch or timer;</p> <p>11 – physical tap on ZEN27 / connected 3-way switch or timer;</p> <p>12 – Z-Wave command from hub or timer;</p> <p>13 – physical tap on ZEN27, Z-Wave command from hub, or timer;</p> <p>14 – physical tap on ZEN27 / connected 3-way switch, Z-Wave command from hub, or timer;</p> <p>15 – all of the above (Default)</p>
@@ -160,8 +157,7 @@ Set the on off status for the switch after power failure.<br /> <h1>Overview</h1
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_9_1" type="integer" groupName="configuration"
-                 min="0" max="99">
+      <parameter name="config_9_1" type="integer" groupName="configuration">
         <label>9: Ramp Rate Control</label>
         <description><![CDATA[
 Adjust the ramp rate for your dimmer<br /> <h1>Overview</h1><p>Adjust the ramp rate for your dimmer (fade-in / fade-out effect for on / off operation). Values correspond to the number of seconds</p> <p>it takes for the dimmer to reach full brightness or turn off when operated manually.</p> <p>Values: 0 – 99 (seconds). Default set to 1.</p> <p>Size: 1 byte dec.</p>
@@ -169,8 +165,7 @@ Adjust the ramp rate for your dimmer<br /> <h1>Overview</h1><p>Adjust the ramp r
         <default>1</default>
       </parameter>
 
-      <parameter name="config_10_1" type="integer" groupName="configuration"
-                 min="1" max="99">
+      <parameter name="config_10_1" type="integer" groupName="configuration">
         <label>10: Minimum Brightness</label>
         <description><![CDATA[
 Set the minimum brightness level %<br /> <h1>Overview</h1><p>Minimum and Maximum Brightness</p> <p>Parameter 10: Set the minimum brightness level (in %) for your dimmer. You won’t be able to dim the light below the set value.</p> <p>Values: 1 – 99 (%). Default set to 1.</p> <p>Size: 1 byte dec.</p>
@@ -179,8 +174,7 @@ Set the minimum brightness level %<br /> <h1>Overview</h1><p>Minimum and Maximum
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_11_1" type="integer" groupName="configuration"
-                 min="1" max="99">
+      <parameter name="config_11_1" type="integer" groupName="configuration">
         <label>11: Maximum Brightness</label>
         <description><![CDATA[
 Set the maximum brightness level %<br /> <h1>Overview</h1><p>Minimum and Maximum Brightness</p> <p>Parameter 11: Set the maximum brightness level (in %) for your dimmer. You won’t be able to add brightness to the light beyond the set value. Note: if Parameter 12 is set to value 0, Parameter 11 is automatically disabled.</p> <p>Values: 1 – 99 (%). Default set to 99.</p> <p>Size: 1 byte dec.</p>
@@ -243,8 +237,7 @@ Enable or disable local on/off control<br /> <h1>Overview</h1><p>Enable or disab
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_16_1" type="integer" groupName="configuration"
-                 min="1" max="99">
+      <parameter name="config_16_1" type="integer" groupName="configuration">
         <label>16: Physical dimming speed</label>
         <description><![CDATA[
 Physical dimming speed<br /> <h1>Overview</h1><p>Set the time it takes to get from 0% to 100% brightness when pressing and holding the paddle (physical dimming). The number entered as value corresponds to the number of seconds.</p> <p>1 – 99 (seconds). Default: 4</p>
@@ -265,8 +258,7 @@ Z-Wave ramp rate<br /> <h1>Overview</h1><p>Choose if you want to set the Z-Wave 
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_18_1" type="integer" groupName="configuration"
-                 min="0" max="99">
+      <parameter name="config_18_1" type="integer" groupName="configuration">
         <label>18: Custom brightness level</label>
         <description><![CDATA[
 Custom brightness level<br /> <h1>Overview</h1><p>Set the custom brightness level (instead of the last set brightness level) you want the dimmer to come on to when you single tap the upper paddle.</p> <p>0 – last brightness level (default);</p> <p>1 – 99 (%) for custom brightness level.</p>

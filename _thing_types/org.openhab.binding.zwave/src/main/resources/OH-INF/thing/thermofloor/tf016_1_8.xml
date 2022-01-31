@@ -131,8 +131,7 @@ ZWave Thermostat<br /> <h1>Overview</h1><p>The Heatit Z-Wave is designed for con
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_4_2" type="integer" groupName="configuration"
-                 min="3" max="30">
+      <parameter name="config_4_2" type="integer" groupName="configuration">
         <label>4: DIFF l. Temperature control Hysteresis</label>
         <description><![CDATA[
 Range 3-30 (0.3°C 3.0°C)<br /> <h1>Overview</h1><p>In this mode you are able to make changes to the hysteresis in the thermostat. This means that you can changes the hysteresis from 0.2°C up to max 3.0°C. Default setting is 0.5°C. When using a waterbased heating, the recommended hysteresis is a minimum of 1.0°C.</p>
@@ -141,70 +140,61 @@ Range 3-30 (0.3°C 3.0°C)<br /> <h1>Overview</h1><p>In this mode you are able t
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_5_2" type="integer" groupName="configuration"
-                 min="50" max="400">
+      <parameter name="config_5_2" type="integer" groupName="configuration">
         <label>5: FLo, Floor min limit</label>
         <description>Range 50-400 (5.0°C 40.0°C)</description>
         <default>50</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_6_2" type="integer" groupName="configuration"
-                 min="50" max="400">
+      <parameter name="config_6_2" type="integer" groupName="configuration">
         <label>6: FHi, Floor max limit</label>
         <description>Range 50-400 (5.0°C 40.0°C)</description>
         <default>400</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_7_2" type="integer" groupName="configuration"
-                 min="50" max="400">
+      <parameter name="config_7_2" type="integer" groupName="configuration">
         <label>7: ALo, Air min limit</label>
         <description>Range 50-400 (5.0°C 40.0°C)</description>
         <default>50</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_8_2" type="integer" groupName="configuration"
-                 min="50" max="400">
+      <parameter name="config_8_2" type="integer" groupName="configuration">
         <label>8: AHi, Air max limit</label>
         <description>Range 50-400 (5.0°C 40.0°C)</description>
         <default>400</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_9_2" type="integer" groupName="configuration"
-                 min="0" max="9">
+      <parameter name="config_9_2" type="integer" groupName="configuration">
         <label>9: PLo, FP-mode P setting</label>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_10_2" type="integer" groupName="configuration"
-                 min="50" max="400">
+      <parameter name="config_10_2" type="integer" groupName="configuration">
         <label>10: CO mode setpoint</label>
         <description>Range 50-400 (5.0°C 40.0°C)</description>
         <default>210</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_11_2" type="integer" groupName="configuration"
-                 min="50" max="400">
+      <parameter name="config_11_2" type="integer" groupName="configuration">
         <label>11: ECO mode setpoint</label>
         <description>Range 50-400 (5.0°C 40.0°C)</description>
         <default>180</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_12_2" type="integer" groupName="configuration"
-                 min="0" max="10">
+      <parameter name="config_12_2" type="integer" groupName="configuration">
         <label>12: P setting</label>
         <default>2</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_13_2" type="integer" groupName="configuration"
-                 min="50" max="400">
+      <parameter name="config_13_2" type="integer" groupName="configuration">
         <label>13: COOL setpoint</label>
         <description>Only if cooling enabled. Range 50-400 (5.0°C 40.0°C)</description>
         <default>210</default>

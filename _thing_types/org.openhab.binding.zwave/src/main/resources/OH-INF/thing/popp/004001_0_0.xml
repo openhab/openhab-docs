@@ -64,8 +64,7 @@ Smoke Detector and Siren<br /> <h1>Overview</h1><h1>Secure Z-Wave Smoke Sensor p
       </parameter-group>
 
       <!-- PARAMETER DEFINITIONS -->
-      <parameter name="config_1_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_1_1" type="integer" groupName="configuration">
         <label>1: Siren alarm sequence interval in seconds</label>
         <description><![CDATA[
 This parameter defines the total length of the interval in seconds.<br /> <h1>Overview</h1><p>The additional siren is creating a different acoustic signal differentiate from the smoke alarm. This sound is partly on and partly off. This parameter defines the total length of the interval in seconds.</p>
@@ -74,8 +73,7 @@ This parameter defines the total length of the interval in seconds.<br /> <h1>Ov
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_2_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_2_1" type="integer" groupName="configuration">
         <label>2: Siren alarm tone length</label>
         <description><![CDATA[
 Total length of the sound versus silence within this interval.<br /> <h1>Overview</h1><p>The additional siren is creating a different acoustic signal differentiate from the smoke alarm. This sound is partly on and partly off. This parameter defines the total length of the sound versus silence within this interval.</p>
@@ -84,15 +82,13 @@ Total length of the sound versus silence within this interval.<br /> <h1>Overvie
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_3_1" type="integer" groupName="configuration"
-                 min="0" max="99">
+      <parameter name="config_3_1" type="integer" groupName="configuration">
         <label>3: Value of On-Command</label>
         <default>99</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_4_1" type="integer" groupName="configuration"
-                 min="0" max="99">
+      <parameter name="config_4_1" type="integer" groupName="configuration">
         <label>4: Value of Off-Command</label>
         <default>0</default>
         <limitToOptions>false</limitToOptions>

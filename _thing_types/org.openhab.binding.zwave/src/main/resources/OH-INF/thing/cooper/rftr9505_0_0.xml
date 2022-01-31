@@ -53,8 +53,7 @@ Duplex receptacle<br /> <h1>Overview</h1><p>The Aspire RF 15A split receptacle r
       </parameter-group>
 
       <!-- PARAMETER DEFINITIONS -->
-      <parameter name="config_2_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_2_1" type="integer" groupName="configuration">
         <label>2: Panic ON time</label>
         <description><![CDATA[
 Panic ON time<br /> <h1>Overview</h1><p>The amount of time in seconds the switch will turn on for when panic mode is triggered. </p> <table><tr><td><strong>Value</strong></td> <td><strong>Time</strong></td> </tr><tr><td>0 to 127</td> <td>0 to 127 seconds</td> </tr><tr><td>-128 to -1</td> <td>128 to 255 seconds</td> </tr></table>
@@ -64,8 +63,7 @@ Panic ON time<br /> <h1>Overview</h1><p>The amount of time in seconds the switch
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_3_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_3_1" type="integer" groupName="configuration">
         <label>3: Panic OFF time</label>
         <description><![CDATA[
 Panic OFF time<br /> <h1>Overview</h1><p>The amount of time in seconds the switch will turn off when panic mode is triggered. </p> <table><tr><td><strong>Value</strong></td> <td><strong>Time</strong></td> </tr><tr><td>0 to 127</td> <td>0 to 127 seconds</td> </tr><tr><td>-128 to -1</td> <td>128 to 255 seconds</td> </tr></table>

@@ -75,20 +75,17 @@ Dimmer with sensors support<br /> <h1>Overview</h1><p>One channel dimmer with ab
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_2_1" type="integer" groupName="configuration"
-                 min="1" max="94">
+      <parameter name="config_2_1" type="integer" groupName="configuration">
         <label>2: Min dimming level</label>
         <default>1</default>
       </parameter>
 
-      <parameter name="config_3_1" type="integer" groupName="configuration"
-                 min="6" max="99">
+      <parameter name="config_3_1" type="integer" groupName="configuration">
         <label>3: Max dimming level</label>
         <default>99</default>
       </parameter>
 
-      <parameter name="config_4_1" type="integer" groupName="configuration"
-                 min="0" max="120">
+      <parameter name="config_4_1" type="integer" groupName="configuration">
         <label>4: Dimming speed</label>
         <description><![CDATA[
 Dimming speed<br /> <h1>Overview</h1><p>Dimming speed in seconds (0 - instantly) <strong>WARNING</strong> - 0 does not work correctly, it leaves 11-15V AC on the terminals. Use 1 instead!</p>
@@ -100,8 +97,7 @@ Dimming speed<br /> <h1>Overview</h1><p>Dimming speed in seconds (0 - instantly)
         </options>
       </parameter>
 
-      <parameter name="config_5_2" type="integer" groupName="configuration"
-                 min="0" max="650">
+      <parameter name="config_5_2" type="integer" groupName="configuration">
         <label>5: Auto Off delay</label>
         <description><![CDATA[
 Delay to turn device OFF after ON command received<br /> <h1>Overview</h1><p>Sets time after which dimmer will turn off after receiving ON command in 1 sec. (0 - disable feature)</p>
@@ -112,8 +108,7 @@ Delay to turn device OFF after ON command received<br /> <h1>Overview</h1><p>Set
         </options>
       </parameter>
 
-      <parameter name="config_6_1" type="integer" groupName="configuration"
-                 min="0" max="3">
+      <parameter name="config_6_1" type="integer" groupName="configuration">
         <label>6: All ON/OFF behaviour</label>
         <description><![CDATA[
 All ON/OFF behaviour<br /> <h1>Overview</h1><p>0 - React on All ON/All OFF</p> <p>1 - Ignore All ON/All OFF</p> <p>2 - Ignore All ON/React on All OFF</p> <p>3 - React on All ON/Ignore All OFF</p>
@@ -145,8 +140,7 @@ All ON/OFF behaviour<br /> <h1>Overview</h1><p>0 - React on All ON/All OFF</p> <
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_9_2" type="integer" groupName="configuration"
-                 min="0" max="4000">
+      <parameter name="config_9_2" type="integer" groupName="configuration">
         <label>9: Light level</label>
         <description><![CDATA[
 Light level to maintain<br /> <h1>Overview</h1><p>In lumens</p>
@@ -158,8 +152,7 @@ Light level to maintain<br /> <h1>Overview</h1><p>In lumens</p>
         <advanced>true</advanced>
       </parameter>
 
-      <parameter name="config_10_2" type="integer" groupName="configuration"
-                 min="1" max="300">
+      <parameter name="config_10_2" type="integer" groupName="configuration">
         <label>10: Lighting change trigger threshold</label>
         <description><![CDATA[
 Lighting change trigger threshold<br /> <h1>Overview</h1><p>In lumens</p>
@@ -173,8 +166,7 @@ Lighting change trigger threshold<br /> <h1>Overview</h1><p>In lumens</p>
         <advanced>true</advanced>
       </parameter>
 
-      <parameter name="config_12_2" type="integer" groupName="configuration"
-                 min="0" max="1800">
+      <parameter name="config_12_2" type="integer" groupName="configuration">
         <label>12: Turn on delay</label>
         <description><![CDATA[
 Sets turn on delay<br /> <h1>Overview</h1><p>In seconds</p>
@@ -185,8 +177,7 @@ Sets turn on delay<br /> <h1>Overview</h1><p>In seconds</p>
         </options>
       </parameter>
 
-      <parameter name="config_13_2" type="integer" groupName="configuration"
-                 min="0" max="1800">
+      <parameter name="config_13_2" type="integer" groupName="configuration">
         <label>13: Smart delay for dimmer</label>
         <description><![CDATA[
 Smart delay for dimmer<br /> <h1>Overview</h1><p>In seconds (see Parameter 14)</p>
@@ -198,8 +189,7 @@ Smart delay for dimmer<br /> <h1>Overview</h1><p>In seconds (see Parameter 14)</
         <advanced>true</advanced>
       </parameter>
 
-      <parameter name="config_14_1" type="integer" groupName="configuration"
-                 min="0" max="2">
+      <parameter name="config_14_1" type="integer" groupName="configuration">
         <label>14: Smart delay mode</label>
         <description><![CDATA[
 Smart delay mode<br /> <h1>Overview</h1><p>DAD-101</p> <p>0 - implicit smart delay</p> <p>1 - use smart delay for all devices NOT in Group 1. Also smart delay ignored for controller and button issued commands</p> <p>2 - use smart delay for all devices IN Group 1. Also smart delay will be used for controller and button issued commands</p>
@@ -208,8 +198,7 @@ Smart delay mode<br /> <h1>Overview</h1><p>DAD-101</p> <p>0 - implicit smart del
         <advanced>true</advanced>
       </parameter>
 
-      <parameter name="config_15_2" type="integer" groupName="configuration"
-                 min="0" max="5000">
+      <parameter name="config_15_2" type="integer" groupName="configuration">
         <label>15: Load in Watts</label>
         <description>Lamps load in Watts</description>
         <default>0</default>
@@ -275,8 +264,7 @@ Sets sensor for dimmer control<br /> <h1>Overview</h1><p>0 - off</p> <p>1 - sens
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_22_2" type="integer" groupName="configuration"
-                 min="-60" max="1000">
+      <parameter name="config_22_2" type="integer" groupName="configuration">
         <label>22: Sensor 1 ON command value</label>
         <description><![CDATA[
 Sensor 1 ON command value<br /> <h1>Overview</h1><p>Commands send to AG 6</p>
@@ -288,8 +276,7 @@ Sensor 1 ON command value<br /> <h1>Overview</h1><p>Commands send to AG 6</p>
         </options>
       </parameter>
 
-      <parameter name="config_23_2" type="integer" groupName="configuration"
-                 min="-60" max="1000">
+      <parameter name="config_23_2" type="integer" groupName="configuration">
         <label>23: Sensor 1 command OFF value</label>
         <description><![CDATA[
 Value to activate OFF command for Sensor 1<br /> <h1>Overview</h1><p>For AG 6</p>
@@ -297,8 +284,7 @@ Value to activate OFF command for Sensor 1<br /> <h1>Overview</h1><p>For AG 6</p
         <default>0</default>
       </parameter>
 
-      <parameter name="config_24_1" type="integer" groupName="configuration"
-                 min="0" max="6">
+      <parameter name="config_24_1" type="integer" groupName="configuration">
         <label>24: Sensor 1 ON/OFF command behavior</label>
         <description><![CDATA[
 Behavior for ON/OFF command<br /> <h1>Overview</h1><p>Please see docs</p>

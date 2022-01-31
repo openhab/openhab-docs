@@ -64,8 +64,7 @@ Keypad with alarm activation rfid tag<br /> <h1>Overview</h1><p>Place the Tag Re
       </parameter-group>
 
       <!-- PARAMETER DEFINITIONS -->
-      <parameter name="config_1_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_1_1" type="integer" groupName="configuration">
         <label>1: Set to default</label>
         <description>Set all configuration to factory settings</description>
         <default>0</default>
@@ -85,8 +84,7 @@ Keypad with alarm activation rfid tag<br /> <h1>Overview</h1><p>Place the Tag Re
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_3_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_3_1" type="integer" groupName="configuration">
         <label>3: Feedback timeout</label>
         <description><![CDATA[
 Timeout beep<br /> <h1>Overview</h1><p>To configure the timeout to wait for a WAKEUP_NO_MORE_INFORMATION before the error beep is automatically sound. The error beep are fixed 8 beeps shortly after each other.</p>
@@ -95,8 +93,7 @@ Timeout beep<br /> <h1>Overview</h1><p>To configure the timeout to wait for a WA
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_4_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_4_1" type="integer" groupName="configuration">
         <label>4: Feedback beeps per second</label>
         <description>To configure the number of beeps per second. Every beep is fixed about 10ms.</description>
         <default>2</default>

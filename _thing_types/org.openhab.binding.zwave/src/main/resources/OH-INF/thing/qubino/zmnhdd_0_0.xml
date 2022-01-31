@@ -200,8 +200,7 @@ Flush dimmer module responds to commands ALL ON / ALL OFF<br /> <h1>Overview</h1
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_11_2" type="integer" groupName="configuration"
-                 min="0" max="32536">
+      <parameter name="config_11_2" type="integer" groupName="configuration">
         <label>11: Automatic turning off output after set time</label>
         <description><![CDATA[
 Auto OFF enabled with defined time, step is 1 second.<br /> <h1>Overview</h1><ul><li>0 - Auto OFF disabled</li> <li>1 – 32536 = 1 second – 32536 seconds</li> </ul>
@@ -210,8 +209,7 @@ Auto OFF enabled with defined time, step is 1 second.<br /> <h1>Overview</h1><ul
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_12_2" type="integer" groupName="configuration"
-                 min="0" max="32536">
+      <parameter name="config_12_2" type="integer" groupName="configuration">
         <label>12: Automatic turning on output after set time</label>
         <description><![CDATA[
 Auto ON enabled with defined time, step is 1 second.<br /> <h1>Overview</h1><ul><li>0 - Auto ON disabled</li> <li>1 – 32536 = 1 second – 32536 seconds</li> </ul>
@@ -260,8 +258,7 @@ Saving the state after a power failure<br /> <h1>Overview</h1><p>If state saving
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_40_1" type="integer" groupName="configuration"
-                 min="0" max="100">
+      <parameter name="config_40_1" type="integer" groupName="configuration">
         <label>40: Power reporting in watts on power change</label>
         <description><![CDATA[
 Set value is percentage, set value from 0 - 100 = 0% - 100%.<br /> <h1>Overview</h1><p>Set value means percentage, set value from 0 - 100 = 0% - 100%. Default value is 5.</p> <ul><li>0 – Reporting Disabled</li> <li>1 – 100 = 1% - 100% Reporting enabled.</li> </ul><p>Power report is send (push) only when actual power in Watts in real time changes for more than set percentage comparing to previous actual power in Watts, step is 1%.</p> <p>NOTE: if power changed is less than 1W, the report is not send (pushed), independent of percentage set.</p>
@@ -270,8 +267,7 @@ Set value is percentage, set value from 0 - 100 = 0% - 100%.<br /> <h1>Overview<
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_42_2" type="integer" groupName="configuration"
-                 min="0" max="32767">
+      <parameter name="config_42_2" type="integer" groupName="configuration">
         <label>42: Power reporting in Watts by time interval</label>
         <description><![CDATA[
 Set value means time interval (0 – 32767) in seconds.<br /> <h1>Overview</h1><p>Set value means time interval (0 – 32767) in seconds, when power report is sent.</p> <ul><li>0 – reporting disabled</li> <li>1 – 32767 = 1 second – 32767 seconds. Reporting enabled.</li> </ul><p>Power report is send with time interval set by entered value.</p>
@@ -280,8 +276,7 @@ Set value means time interval (0 – 32767) in seconds.<br /> <h1>Overview</h1><
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_60_1" type="integer" groupName="configuration"
-                 min="1" max="98">
+      <parameter name="config_60_1" type="integer" groupName="configuration">
         <label>60: Minimum dimming value</label>
         <description><![CDATA[
 Minimum dimming value is set by entered value.<br /> <h1>Overview</h1><ul><li>1-98 = 1% – 98%, step is 1%. Minimum dimming value is set by entered value.</li> </ul><p>NOTE: The minimum level may not be higher than the maximum level! 1% min. dimming value is defined by Z- Wave multilevel device class.</p>
@@ -290,8 +285,7 @@ Minimum dimming value is set by entered value.<br /> <h1>Overview</h1><ul><li>1-
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_61_1" type="integer" groupName="configuration"
-                 min="2" max="99">
+      <parameter name="config_61_1" type="integer" groupName="configuration">
         <label>61: Maximum dimming value</label>
         <description><![CDATA[
 Maximum dimming value is set by entered value.<br /> <h1>Overview</h1><ul><li>2-99 = 2% – 99%, step is 1%. Maximum dimming value is set by entered value.</li> </ul><p>NOTE: The maximum level may not be lower than the minimum level! 99% max. dimming value is defined by Z- Wave multilevel device class.</p>
@@ -300,8 +294,7 @@ Maximum dimming value is set by entered value.<br /> <h1>Overview</h1><ul><li>2-
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_65_2" type="integer" groupName="configuration"
-                 min="1" max="255">
+      <parameter name="config_65_2" type="integer" groupName="configuration">
         <label>65: Dimming time (soft on/off)</label>
         <description><![CDATA[
 Set value means time of moving the Dimmer between min. and max. dimming values<br /> <h1>Overview</h1><p>Set value means time of moving the Dimmer between min. and max. dimming values by short press of push button I1 or controlled through UI (BasicSet).</p> <ul><li>default value 100 = 1s</li> <li>1 - 255 = 100 mseconds – 25500 mseconds, step is 10 mseconds</li> </ul>
@@ -310,8 +303,7 @@ Set value means time of moving the Dimmer between min. and max. dimming values<b
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_66_2" type="integer" groupName="configuration"
-                 min="1" max="255">
+      <parameter name="config_66_2" type="integer" groupName="configuration">
         <label>66: Dimming time when key pressed</label>
         <description><![CDATA[
 Time of moving the Dimmer between min. and max dimming values<br /> <h1>Overview</h1><p>Time of moving the Dimmer between min. and max dimming values by continuous hold of push button I1 or associated device.</p> <ul><li>default value 3 = 3s</li> <li>1- 255 = 1 second – 255 seconds.</li> </ul>
@@ -333,8 +325,7 @@ This parameter is used with association group 3<br /> <h1>Overview</h1><p>This p
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_68_1" type="integer" groupName="configuration"
-                 min="0" max="127">
+      <parameter name="config_68_1" type="integer" groupName="configuration">
         <label>68: Dimming duration</label>
         <description><![CDATA[
 This parameter is used with association group 3<br /> <h1>Overview</h1><p>This parameter is used with association group 3. The Duration field MUST specify the time that the transition should take from the current value to the new target value. A supporting device SHOULD respect the specified Duration value.</p>
@@ -381,8 +372,7 @@ Enabling I3 means that Endpoint (I3) will be present on UI.<br /> <h1>Overview</
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_110_2" type="integer" groupName="configuration"
-                 min="1" max="32536">
+      <parameter name="config_110_2" type="integer" groupName="configuration">
         <label>110: Temperature sensor offset settings</label>
         <description><![CDATA[
 Offset to actual measured value<br /> <h1>Overview</h1><p>Set value is added or subtracted to actual measured value by sensor. Available configuration parameters:</p> <ul><li>default value 32536</li> <li>32536 – offset is 0.0C</li> <li>From 1 to 100 – value from 0.1 °C to 10.0 °C is added to actual measured temperature.</li> <li>From 1001 to 1100 -value from -0.1 °C to -10.0 °C is subtracted to actual measured temperature.</li> </ul>
@@ -391,8 +381,7 @@ Offset to actual measured value<br /> <h1>Overview</h1><p>Set value is added or 
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_120_1" type="integer" groupName="configuration"
-                 min="0" max="127">
+      <parameter name="config_120_1" type="integer" groupName="configuration">
         <label>120: Digital temperature sensor reporting</label>
         <description><![CDATA[
 Module reports measured temperature on defined temperature change<br /> <h1>Overview</h1><p>If digital temperature sensor is connected, module reports measured temperature on temperature change defined by this parameter. Available configuration parameters:</p> <ul><li>default value 5 = 0.5°C</li> <li>0 – Reporting disabled</li> </ul>

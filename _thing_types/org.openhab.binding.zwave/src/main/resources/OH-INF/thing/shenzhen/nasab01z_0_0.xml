@@ -64,56 +64,49 @@ Siren Alarm<br /> <h1>Overview</h1><p>Siren Alarm with ten different sounds.</p>
       </parameter-group>
 
       <!-- PARAMETER DEFINITIONS -->
-      <parameter name="config_1_1" type="integer" groupName="configuration"
-                 min="1" max="3">
+      <parameter name="config_1_1" type="integer" groupName="configuration">
         <label>1: Configure Alarm music volume</label>
         <description>Configure Alarm music volume</description>
         <default>2</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_2_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_2_1" type="integer" groupName="configuration">
         <label>2: Alarm music duration time</label>
         <description>Alarm music duration time</description>
         <default>2</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_3_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_3_1" type="integer" groupName="configuration">
         <label>3: Door bell music duration time</label>
         <description>Door bell music duration time</description>
         <default>1</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_4_1" type="integer" groupName="configuration"
-                 min="1" max="3">
+      <parameter name="config_4_1" type="integer" groupName="configuration">
         <label>4: Door bell music volume</label>
         <description>Door bell music volume</description>
         <default>2</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_5_1" type="integer" groupName="configuration"
-                 min="1" max="10">
+      <parameter name="config_5_1" type="integer" groupName="configuration">
         <label>5: Alarm music index</label>
         <description>Alarm music index</description>
         <default>9</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_6_1" type="integer" groupName="configuration"
-                 min="1" max="10">
+      <parameter name="config_6_1" type="integer" groupName="configuration">
         <label>6: Door bell music index</label>
         <description>Door bell music index</description>
         <default>10</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_7_1" type="integer" groupName="configuration"
-                 min="1" max="2">
+      <parameter name="config_7_1" type="integer" groupName="configuration">
         <label>7: Default Siren on mode</label>
         <description><![CDATA[
 Default Siren on mode<br /> <h1>Overview</h1><p>This parameter defines the default music index, volume and duration time for siren on.</p> <p>This parameter can be selected between ALARM MUSIC and DOOR BELL music.</p> <p>The settings for ALARM MUSIC defines by Param #1, #2, #5.</p> <p>The settings for DOOR BELL defines by Param #3, #4, #6.</p>
@@ -122,8 +115,7 @@ Default Siren on mode<br /> <h1>Overview</h1><p>This parameter defines the defau
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_8_1" type="integer" groupName="configuration"
-                 min="0" max="1">
+      <parameter name="config_8_1" type="integer" groupName="configuration">
         <label>8: Alarm Led Enable</label>
         <description><![CDATA[
 Alarm Led Enable<br /> <h1>Overview</h1><p>This parameter defines the default led enable status when siren is on for ALARM SOUND MODE. If parameter is set to ‘0’, led will be disable. If parameter is set to ‘1’, led will be enable. When siren is on, the led will blink.<br /></p>
@@ -132,8 +124,7 @@ Alarm Led Enable<br /> <h1>Overview</h1><p>This parameter defines the default le
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_9_1" type="integer" groupName="configuration"
-                 min="0" max="1">
+      <parameter name="config_9_1" type="integer" groupName="configuration">
         <label>9: Door Bell Led Enable</label>
         <description><![CDATA[
 Door Bell Led Enable<br /> <h1>Overview</h1><p>This parameter defines the default led enable status when siren is on for DOOR BELL SOUND MODE.</p><p>If parameter is set to ‘0’, led will be disable.</p><p>If parameter is set t0 ‘1’, led will be enable. When siren is on, the led will blink.</p>

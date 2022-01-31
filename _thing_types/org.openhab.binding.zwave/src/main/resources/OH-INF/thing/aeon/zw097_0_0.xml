@@ -148,15 +148,13 @@ Dry Contact Sensor<br /> <h1>Overview</h1><p>A fully functional Z-Wave sensor t
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_39_1" type="integer" groupName="configuration"
-                 min="10" max="50">
+      <parameter name="config_39_1" type="integer" groupName="configuration">
         <label>39: Send battery report when less than percentage</label>
         <default>10</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_111_4" type="integer" groupName="configuration"
-                 min="0" max="2147483647">
+      <parameter name="config_111_4" type="integer" groupName="configuration">
         <label>111: Set the interval time of battery report</label>
         <description><![CDATA[
 Value is specified in number of seconds.<br /> <h1>Overview</h1><p>Values greater than 10 will be rounded up to the nearest 4 minutes (10 through 240 = 4 minutes, 241 through 480 = 8 minutes, etc.)</p>
@@ -165,15 +163,13 @@ Value is specified in number of seconds.<br /> <h1>Overview</h1><p>Values greate
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_121_4_00000010" type="integer" groupName="configuration"
-                 min="0" max="1">
+      <parameter name="config_121_4_00000010" type="integer" groupName="configuration">
         <label>121: Send Sensor Binary report to associated devices</label>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_121_4_00000100" type="integer" groupName="configuration"
-                 min="0" max="1">
+      <parameter name="config_121_4_00000100" type="integer" groupName="configuration">
         <label>121: Send Basic report to associated devices</label>
         <default>1</default>
         <limitToOptions>false</limitToOptions>

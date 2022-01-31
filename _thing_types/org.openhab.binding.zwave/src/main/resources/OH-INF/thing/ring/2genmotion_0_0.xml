@@ -64,8 +64,7 @@
       </parameter-group>
 
       <!-- PARAMETER DEFINITIONS -->
-      <parameter name="config_1_1" type="integer" groupName="configuration"
-                 min="1" max="70">
+      <parameter name="config_1_1" type="integer" groupName="configuration">
         <label>1: Heartbeats</label>
         <description><![CDATA[
 Number minutes between heartbeats.<br /> <h1>Overview</h1><p>Heartbeats are automatic battery reports on a timer after the last event.<br /></p>
@@ -74,8 +73,7 @@ Number minutes between heartbeats.<br /> <h1>Overview</h1><p>Heartbeats are auto
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_2_1" type="integer" groupName="configuration"
-                 min="0" max="5">
+      <parameter name="config_2_1" type="integer" groupName="configuration">
         <label>2: Number of App Retries</label>
         <description><![CDATA[
 Number of application level retries attempted<br /> <h1>Overview</h1><p>Number of application level retries attempted for messages either not ACKed or messages encapsulated via supervision get that did not receive a report.<br /></p>
@@ -84,8 +82,7 @@ Number of application level retries attempted<br /> <h1>Overview</h1><p>Number o
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_3_1" type="integer" groupName="configuration"
-                 min="1" max="60">
+      <parameter name="config_3_1" type="integer" groupName="configuration">
         <label>3: App Level Retry Base Wait</label>
         <description><![CDATA[
 Application Level Retry Base Wait Time Period<br /> <h1>Overview</h1><p>The number base seconds used in the calculation for sleeping between retry messages.<br /></p>
@@ -108,8 +105,7 @@ configure the various LED indications on the device<br /> <h1>Overview</h1><p>0 
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_5_2" type="integer" groupName="configuration"
-                 min="500" max="5000">
+      <parameter name="config_5_2" type="integer" groupName="configuration">
         <label>5: Supervisory Retry Wait</label>
         <description><![CDATA[
 Supervisory Retry Wait<br /> <h1>Overview</h1><p>The number of milliseconds waiting for a Supervisory Report response to a Supervisory Get encapsulated command from the sensor before attempting a retry.<br /></p>
@@ -118,8 +114,7 @@ Supervisory Retry Wait<br /> <h1>Overview</h1><p>The number of milliseconds wait
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_6_2" type="integer" groupName="configuration"
-                 min="0" max="255">
+      <parameter name="config_6_2" type="integer" groupName="configuration">
         <label>6: Occupancy Clear Delay</label>
         <description><![CDATA[
 Occupancy Clear Delay<br /> <h1>Overview</h1><p><br /></p>
@@ -128,24 +123,21 @@ Occupancy Clear Delay<br /> <h1>Overview</h1><p><br /></p>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_7_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_7_1" type="integer" groupName="configuration">
         <label>7: Intrusion Clear Delay</label>
         <description>Intrusion Clear Delay</description>
         <default>5</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_8_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_8_1" type="integer" groupName="configuration">
         <label>8: Standard Clear Delay</label>
         <description>Standard Clear Delay</description>
         <default>10</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_9_1" type="integer" groupName="configuration"
-                 min="0" max="4">
+      <parameter name="config_9_1" type="integer" groupName="configuration">
         <label>9: Motion Detection Mode</label>
         <description><![CDATA[
 Motion Detection Mode<br /> <h1>Overview</h1><p><br /></p>
@@ -154,8 +146,7 @@ Motion Detection Mode<br /> <h1>Overview</h1><p><br /></p>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_10_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_10_1" type="integer" groupName="configuration">
         <label>10: Any Motion Threshold</label>
         <description><![CDATA[
 Any Motion Threshold<br /> <h1>Overview</h1><p><br /></p>
@@ -164,8 +155,7 @@ Any Motion Threshold<br /> <h1>Overview</h1><p><br /></p>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_11_1" type="integer" groupName="configuration"
-                 min="0" max="1">
+      <parameter name="config_11_1" type="integer" groupName="configuration">
         <label>11: Lighting Enabled</label>
         <description><![CDATA[
 Lighting Enabled<br /> <h1>Overview</h1><p><br /></p>
@@ -174,8 +164,7 @@ Lighting Enabled<br /> <h1>Overview</h1><p><br /></p>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_12_1" type="integer" groupName="configuration"
-                 min="0" max="60">
+      <parameter name="config_12_1" type="integer" groupName="configuration">
         <label>12: Lighting Delay</label>
         <description>Lighting Delay</description>
         <default>2</default>

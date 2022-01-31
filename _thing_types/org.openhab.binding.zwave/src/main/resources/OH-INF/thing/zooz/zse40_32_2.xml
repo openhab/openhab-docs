@@ -88,8 +88,7 @@
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_2_1" type="integer" groupName="configuration"
-                 min="1" max="50">
+      <parameter name="config_2_1" type="integer" groupName="configuration">
         <label>2: Temperature Sensitivity</label>
         <description><![CDATA[
 Amount the temperature must change before a report is sent<br /> <h1>Overview</h1><p>Use this setting to set a range for how much the temperature needs to change for it to be reported by the sensor</p> <p>Values: 1 - 50. Values are in 1/10 of a degree C, so 1 is 0.1 degree and 50 is 5 degrees.</p> <p>Default: 10 (1 degree). The sensor will report the new temperature value to the controller whenever the temperature goes up or down by 1 degree.</p>
@@ -98,8 +97,7 @@ Amount the temperature must change before a report is sent<br /> <h1>Overview</h
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_3_1" type="integer" groupName="configuration"
-                 min="1" max="50">
+      <parameter name="config_3_1" type="integer" groupName="configuration">
         <label>3: Humidity</label>
         <description><![CDATA[
 Configure Relative Humidity<br /> <h1>Overview</h1><p>Use it to set humidity percentage change to be reported by the sensor. Values: 1 - 50 where 1 stands for 1% and 50 stands for 50%. Default set to 10%.</p>
@@ -108,8 +106,7 @@ Configure Relative Humidity<br /> <h1>Overview</h1><p>Use it to set humidity per
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_4_1" type="integer" groupName="configuration"
-                 min="1" max="50">
+      <parameter name="config_4_1" type="integer" groupName="configuration">
         <label>4: Light Sensor</label>
         <description><![CDATA[
 Configure Light Sensor<br /> <h1>Overview</h1><p>Reports light level in percentage (1-100). Use it to choose light percentage change to be reported by the sensor. Values: 5 - 50 where 5 stands for 5% and 50 stands for 50%. Default set to 10%. </p>
@@ -118,8 +115,7 @@ Configure Light Sensor<br /> <h1>Overview</h1><p>Reports light level in percenta
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_5_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_5_1" type="integer" groupName="configuration">
         <label>5: Trigger Interval</label>
         <description><![CDATA[
 Set the trigger interval for motion sensor re-activation.<br /> <h1>Overview</h1><p>Use it to set trigger interval - the time when motion is reported again after initial trigger. Values: 15 - 255 where 1 stands for 1 second and 255 stands for 255 seconds. Default set to 15 seconds. NOTE: Small interval will increase activity and decrease battery life. </p>

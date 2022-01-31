@@ -84,8 +84,7 @@ Micro Smart Energy Illuminator G2<br /> <h1>Overview</h1><p>The Aeon Labs Micro 
       </parameter-group>
 
       <!-- PARAMETER DEFINITIONS -->
-      <parameter name="config_2_2" type="integer" groupName="configuration"
-                 min="-32767" max="32768">
+      <parameter name="config_2_2" type="integer" groupName="configuration">
         <label>2: Make Micro Smart Dimmer 2nd Edition Blink</label>
         <description><![CDATA[
 The LSB defines the total time the device need to blink.<br /> <h1>Overview</h1><p>This is a double byte value. The LSB defines the total time the device need to blink. The value if set in seconds. The MSB defines the on/off interval of the blinking. The unit is 0.1 s.</p>
@@ -105,8 +104,7 @@ The LSB defines the total time the device need to blink.<br /> <h1>Overview</h1>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_13_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_13_1" type="integer" groupName="configuration">
         <label>13: Enable/Disable CRC16 encapsulation</label>
         <description>Parameter to Enable/Disable CRC16 encapsulation</description>
         <default>0</default>
@@ -140,16 +138,14 @@ Automated sending of a Report triggered by minimal change of value.<br /> <h1>Ov
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_91_2" type="integer" groupName="configuration"
-                 min="-32767" max="32768">
+      <parameter name="config_91_2" type="integer" groupName="configuration">
         <label>91: Minimum Change to send Report (Watt)</label>
         <description>The value represents the minimum change in Wattage for a Report to be sent.</description>
         <default>25</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_92_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_92_1" type="integer" groupName="configuration">
         <label>92: Minimum Change to send Report (%)</label>
         <description><![CDATA[
 The minimum change in Watage Percent for a report to be sent.<br /> <h1>Overview</h1><p>The value represents the minimum change in Watage Percent for a report to be sent.</p>
@@ -158,8 +154,7 @@ The minimum change in Watage Percent for a report to be sent.<br /> <h1>Overview
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_101_4" type="integer" groupName="configuration"
-                 min="0" max="65535">
+      <parameter name="config_101_4" type="integer" groupName="configuration">
         <label>101: Reports for Group 1</label>
         <description><![CDATA[
 Which reports need to send automatically in timing intervals for group 1<br /> <h1>Overview</h1><p>The value is a combination number made up of the sum of the values for the individual parameters. The parameters have the values: KWH=8, Wattage=4, Current=2, Voltage=1.</p>
@@ -168,8 +163,7 @@ Which reports need to send automatically in timing intervals for group 1<br /> <
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_102_4" type="integer" groupName="configuration"
-                 min="0" max="65535">
+      <parameter name="config_102_4" type="integer" groupName="configuration">
         <label>102: Reports for Group 2</label>
         <description><![CDATA[
 Which reports need to send automatically in timing intervals for group 2<br /> <h1>Overview</h1><p>The value is a combination number made up of the sum of the values for the individual parameters. The parameters have the values: KWH=8, Wattage=4, Current=2, Voltage=1.</p>
@@ -178,8 +172,7 @@ Which reports need to send automatically in timing intervals for group 2<br /> <
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_103_4" type="integer" groupName="configuration"
-                 min="0" max="65535">
+      <parameter name="config_103_4" type="integer" groupName="configuration">
         <label>103: Reports for Group 3</label>
         <description><![CDATA[
 Which reports need to send automatically in timing intervals for group 3<br /> <h1>Overview</h1><p>The value is a combination number made up of the sum of the values for the individual parameters. The parameters have the values: KWH=8, Wattage=4, Current=2, Voltage=1.</p>
@@ -188,22 +181,19 @@ Which reports need to send automatically in timing intervals for group 3<br /> <
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_111_4" type="integer" groupName="configuration"
-                 min="1" max="2678400">
+      <parameter name="config_111_4" type="integer" groupName="configuration">
         <label>111: Interval to send out reports of group 1</label>
         <default>3</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_112_4" type="integer" groupName="configuration"
-                 min="1" max="2678400">
+      <parameter name="config_112_4" type="integer" groupName="configuration">
         <label>112: Interval to send out reports of group 2</label>
         <default>600</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_113_4" type="integer" groupName="configuration"
-                 min="1" max="2678400">
+      <parameter name="config_113_4" type="integer" groupName="configuration">
         <label>113: Interval to send out reports of group 3</label>
         <default>600</default>
         <limitToOptions>false</limitToOptions>

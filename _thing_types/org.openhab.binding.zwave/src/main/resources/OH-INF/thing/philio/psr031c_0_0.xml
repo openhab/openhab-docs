@@ -51,8 +51,7 @@ Panic Button<br /> <h1>Overview</h1><p><br /></p> <br /> <h2>Inclusion Informati
       </parameter-group>
 
       <!-- PARAMETER DEFINITIONS -->
-      <parameter name="config_10_1" type="integer" groupName="configuration"
-                 min="0" max="127">
+      <parameter name="config_10_1" type="integer" groupName="configuration">
         <label>10: Auto Report Battery Time</label>
         <description><![CDATA[
 Auto Report Battery Time<br /> <h1>Overview</h1><p>The interval time for auto report the battery level. 0 means turn off auto report battery. Each tick means 30 minutes. The default value is 12(6 hours).</p>

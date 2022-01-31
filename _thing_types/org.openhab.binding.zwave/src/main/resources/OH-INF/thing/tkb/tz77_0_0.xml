@@ -84,8 +84,7 @@ RGB dimmer switch<br /> <h1>Overview</h1><p>12V DC operating voltage.</p> <p>Thi
       </parameter-group>
 
       <!-- PARAMETER DEFINITIONS -->
-      <parameter name="config_1_1" type="integer" groupName="configuration"
-                 min="0" max="1">
+      <parameter name="config_1_1" type="integer" groupName="configuration">
         <label>1: Indicator light state</label>
         <description><![CDATA[
 Change the state of indicator light<br /> <h1>Overview</h1><p>Default status of socket: LED is on as indicator when the load is off</p>
@@ -94,8 +93,7 @@ Change the state of indicator light<br /> <h1>Overview</h1><p>Default status of 
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_2_1" type="integer" groupName="configuration"
-                 min="0" max="1">
+      <parameter name="config_2_1" type="integer" groupName="configuration">
         <label>2: Memory function</label>
         <description><![CDATA[
 Socket status when powered on<br /> <h1>Overview</h1><p>Default with memory: the socket status is same as before when power on</p>

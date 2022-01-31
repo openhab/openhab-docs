@@ -83,8 +83,7 @@ P1-dongle<br /> <h1>Overview</h1><p>The P1-dongle sends smart meter data wireles
       </parameter-group>
 
       <!-- PARAMETER DEFINITIONS -->
-      <parameter name="config_4_2" type="integer" groupName="configuration"
-                 min="-32767" max="32768">
+      <parameter name="config_4_2" type="integer" groupName="configuration">
         <label>4: Baud Rate</label>
         <description><![CDATA[
 Baud rate: the rate the device sends data between the smart meter and z-wave<br /> <h1>Overview</h1><p>Set BAUD rate value * 100.</p>

@@ -208,8 +208,7 @@ Endpoint I2 Notification and Event<br /> <h1>Overview</h1><p>Enabling I2 means t
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_110_2" type="integer" groupName="configuration"
-                 min="-32767" max="32768">
+      <parameter name="config_110_2" type="integer" groupName="configuration">
         <label>110: Temperature sensor offset settings</label>
         <description><![CDATA[
 Temperature sensor offset settings<br /> <h1>Overview</h1><p>Set value is added to or subtracted from actual measured value by sensor. </p> <p>Available configuration parameters:</p> <ul><li>32536: offset is 0.0 °C</li> <li>1 to 100: value from 0.1 °C to 10.0 °C is added to actual measured temperature</li> <li>1001 to 1100: value from -0.1 °C to -10.0 °C is subtracted to actual measured temperature<br /></li> </ul>
@@ -218,8 +217,7 @@ Temperature sensor offset settings<br /> <h1>Overview</h1><p>Set value is added 
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_120_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_120_1" type="integer" groupName="configuration">
         <label>120: Digital temperature sensor reporting</label>
         <description><![CDATA[
 Digital temperature sensor reporting<br /> <h1>Overview</h1><p>If digital temperature sensor is connected, module reports measured temperature on temperature change defined by this parameter.</p> <ul><li>0: Reporting disabled</li> <li>1- 127: 0,1°C - 12,7°C, step is 0,1°C</li> </ul>

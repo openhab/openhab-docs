@@ -58,8 +58,7 @@ A real push button (switch) available in several colors.<br /> <h1>Overview</h1>
       </parameter-group>
 
       <!-- PARAMETER DEFINITIONS -->
-      <parameter name="config_1_1" type="integer" groupName="configuration"
-                 min="1" max="127">
+      <parameter name="config_1_1" type="integer" groupName="configuration">
         <label>1: Scenes sent to the controller</label>
         <description><![CDATA[
 This parameter determines which actions result in sending scene IDs to them.<br /> <h1>Overview</h1><p>This parameter determines which actions result in sending scene IDs and attributes assigned to them.</p> <p>Available settings:</p> <p>1 - Key Pressed 1 time<br />2 - Key Pressed 2 times <br />4 - Key Pressed 3 times <br />8 - Key Pressed 4 times <br />16 - Key Pressed 5 times <br />32 - Key Held Down <br />64 - Key Released</p> <p>Values of parameter 1 may be combined, e.g. 1+2=3 means that scenes will be sent after pressing the button once or twice.</p>
@@ -67,8 +66,7 @@ This parameter determines which actions result in sending scene IDs to them.<br 
         <default>127</default>
       </parameter>
 
-      <parameter name="config_3_1" type="integer" groupName="configuration"
-                 min="1" max="7">
+      <parameter name="config_3_1" type="integer" groupName="configuration">
         <label>3: Associations in Z-Wave network Security Mode</label>
         <description><![CDATA[
 This parameter defines how commands are sent in specified association groups<br /> <h1>Overview</h1><p>This parameter defines how commands are sent in specified association groups: as secure or non-secure. Parameter is active only in Z-Wave network Security Mode. It does not apply to 1st „Lifeline” group.<br /><br />1 - 2nd group sent as secure <br />2 - 3rd group sent as secure <br />4 - 4th group sent as secure</p> <p>Values of parameter 3 may be combined, e.g. 1+2=3 means that 2nd &amp; 3rd group are sent as secure</p>
@@ -76,8 +74,7 @@ This parameter defines how commands are sent in specified association groups<br 
         <default>7</default>
       </parameter>
 
-      <parameter name="config_10_1" type="integer" groupName="configuration"
-                 min="0" max="3">
+      <parameter name="config_10_1" type="integer" groupName="configuration">
         <label>10: Key Pressed 1 time – command sent to 2nd group</label>
         <description><![CDATA[
 Associated in 2nd association group after a single click.<br /> <h1>Overview</h1><p>This parameter defines commands sent to devices associated in 2nd association group after a single click.</p> <p>Available settings:</p> <p>0 - no action <br />1 - SWITCH ON <br />2 - SWITCH OFF <br />3 - SWITCH ON/OFF – alternately</p>
@@ -85,8 +82,7 @@ Associated in 2nd association group after a single click.<br /> <h1>Overview</h1
         <default>3</default>
       </parameter>
 
-      <parameter name="config_11_2" type="integer" groupName="configuration"
-                 min="1" max="255">
+      <parameter name="config_11_2" type="integer" groupName="configuration">
         <label>11: Key Pressed 1 time – value ON sent to 2nd group</label>
         <description><![CDATA[
 Value of SWITCH ON command sent to devices in 2nd association group<br /> <h1>Overview</h1><p>This parameter defines value of SWITCH ON command sent to devices in 2nd association group after a single click.</p> <p>Available settings:</p> <p>1-255 - sent value</p>
@@ -94,8 +90,7 @@ Value of SWITCH ON command sent to devices in 2nd association group<br /> <h1>Ov
         <default>255</default>
       </parameter>
 
-      <parameter name="config_12_1" type="integer" groupName="configuration"
-                 min="0" max="3">
+      <parameter name="config_12_1" type="integer" groupName="configuration">
         <label>12: Key Pressed 2 times – command sent to 2nd group</label>
         <description><![CDATA[
 Commands sent to devices associated in 2nd association group<br /> <h1>Overview</h1><p>This parameter defines commands sent to devices associated in 2nd association group after a double click.</p> <p>Available settings:</p> <p>0 - no action <br />1 - SWITCH ON <br />2 - SWITCH OFF <br />3 - SWITCH ON/OFF – alternately</p>
@@ -103,8 +98,7 @@ Commands sent to devices associated in 2nd association group<br /> <h1>Overview<
         <default>1</default>
       </parameter>
 
-      <parameter name="config_13_2" type="integer" groupName="configuration"
-                 min="1" max="255">
+      <parameter name="config_13_2" type="integer" groupName="configuration">
         <label>13: Key Pressed 2 times – value ON sent to 2nd group</label>
         <description><![CDATA[
 SWITCH ON command in 2nd association group after double click<br /> <h1>Overview</h1><p>This parameter defines value of SWITCH ON command sent to devices in 2nd association group after a double click.</p> <p>Available settings:</p> <p>1-255 - sent value</p>
@@ -112,8 +106,7 @@ SWITCH ON command in 2nd association group after double click<br /> <h1>Overview
         <default>99</default>
       </parameter>
 
-      <parameter name="config_14_1" type="integer" groupName="configuration"
-                 min="0" max="3">
+      <parameter name="config_14_1" type="integer" groupName="configuration">
         <label>14: Key Pressed 3 times 2nd group command</label>
         <description><![CDATA[
 Commands associated in 2nd association group after a triple click.<br /> <h1>Overview</h1><p>This parameter defines commands sent to devices associated in 2nd association group after a triple click.</p> <p>Available settings:</p> <p>0 - no action <br />1 - SWITCH ON <br />2 - SWITCH OFF <br />3 - SWITCH ON/OFF – alternately</p>
@@ -121,8 +114,7 @@ Commands associated in 2nd association group after a triple click.<br /> <h1>Ove
         <default>0</default>
       </parameter>
 
-      <parameter name="config_15_2" type="integer" groupName="configuration"
-                 min="1" max="255">
+      <parameter name="config_15_2" type="integer" groupName="configuration">
         <label>15: Key Pressed 3 times – value ON to 2nd group</label>
         <description><![CDATA[
 SWITCH ON sent in 2nd association group after 3 presses<br /> <h1>Overview</h1><p>This parameter defines value of SWITCH ON command sent to devices in 2nd association group after a triple click.</p> <p>Available settings:</p> <p>1-255 - sent value</p>
@@ -130,8 +122,7 @@ SWITCH ON sent in 2nd association group after 3 presses<br /> <h1>Overview</h1><
         <default>255</default>
       </parameter>
 
-      <parameter name="config_20_1" type="integer" groupName="configuration"
-                 min="0" max="3">
+      <parameter name="config_20_1" type="integer" groupName="configuration">
         <label>20: Key Pressed 1 time – command sent to 3rd group</label>
         <description><![CDATA[
 Ssent to devices associated in 3rd association group after a single click.<br /> <h1>Overview</h1><p>This parameter defines commands sent to devices associated in 3rd association group after a single click.</p> <p>Available settings:</p> <p>0 - no action <br />1 - SWITCH ON <br />2 - SWITCH OFF <br />3 - SWITCH ON/OFF – alternately</p>
@@ -139,8 +130,7 @@ Ssent to devices associated in 3rd association group after a single click.<br />
         <default>3</default>
       </parameter>
 
-      <parameter name="config_21_2" type="integer" groupName="configuration"
-                 min="1" max="255">
+      <parameter name="config_21_2" type="integer" groupName="configuration">
         <label>21: Key Pressed 1 time – value ON sent to 3rd group</label>
         <description><![CDATA[
 Value of SWITCH ON command sent in 3rd association group after a single click.<br /> <h1>Overview</h1><p>This parameter defines value of SWITCH ON command sent to devices in 3rd association group after a single click.</p> <p>Available settings:</p> <p>1-255 - sent value</p>
@@ -148,8 +138,7 @@ Value of SWITCH ON command sent in 3rd association group after a single click.<b
         <default>255</default>
       </parameter>
 
-      <parameter name="config_22_1" type="integer" groupName="configuration"
-                 min="0" max="3">
+      <parameter name="config_22_1" type="integer" groupName="configuration">
         <label>22: Key Pressed 2 times – command sent to 3rd group</label>
         <description><![CDATA[
 Sent to associated in 3rd association group after a double click.<br /> <h1>Overview</h1><p>This parameter defines commands sent to devices associated in 3rd association group after a double click.</p> <p>Available settings:</p> <p>0 - no action <br />1 - SWITCH ON <br />2 - SWITCH OFF <br />3 - SWITCH ON/OFF – alternately</p>
@@ -157,8 +146,7 @@ Sent to associated in 3rd association group after a double click.<br /> <h1>Over
         <default>1</default>
       </parameter>
 
-      <parameter name="config_23_2" type="integer" groupName="configuration"
-                 min="1" max="255">
+      <parameter name="config_23_2" type="integer" groupName="configuration">
         <label>23: Key Pressed 2 times – value ON sent to 3rd group</label>
         <description><![CDATA[
 Value of SWITCH ON command sent in 3rd association group after a double click.<br /> <h1>Overview</h1><p>This parameter defines value of SWITCH ON command sent to devices in 3rd association group after a double click.</p> <p>Available settings:</p> <p>1-255 - sent value</p>
@@ -166,8 +154,7 @@ Value of SWITCH ON command sent in 3rd association group after a double click.<b
         <default>99</default>
       </parameter>
 
-      <parameter name="config_24_1" type="integer" groupName="configuration"
-                 min="0" max="3">
+      <parameter name="config_24_1" type="integer" groupName="configuration">
         <label>24: Key Pressed 3 times – command sent to 3rd group</label>
         <description><![CDATA[
 Sent to devices associated in 3rd association group after a triple click.<br /> <h1>Overview</h1><p>This parameter defines commands sent to devices associated in 3rd association group after a triple click.</p> <p>Available settings:</p> <p>0 - no action <br />1 - SWITCH ON <br />2 - SWITCH OFF <br />3 - SWITCH ON/OFF – alternately</p>
@@ -175,8 +162,7 @@ Sent to devices associated in 3rd association group after a triple click.<br /> 
         <default>0</default>
       </parameter>
 
-      <parameter name="config_25_2" type="integer" groupName="configuration"
-                 min="1" max="255">
+      <parameter name="config_25_2" type="integer" groupName="configuration">
         <label>25: Key Pressed 3 times – value ON sent to 3rd group</label>
         <description><![CDATA[
 Value SWITCH ON command sent in 3rd association group after a triple click.<br /> <h1>Overview</h1><p>This parameter defines value of SWITCH ON command sent to devices in 3rd association group after a triple click.</p> <p>Available settings:</p> <p>1-255 - sent value</p>
@@ -184,8 +170,7 @@ Value SWITCH ON command sent in 3rd association group after a triple click.<br /
         <default>255</default>
       </parameter>
 
-      <parameter name="config_29_1" type="integer" groupName="configuration"
-                 min="0" max="3">
+      <parameter name="config_29_1" type="integer" groupName="configuration">
         <label>29: Key Held Down – command sent to 3rd group</label>
         <description><![CDATA[
 Sent associated in 3rd association group after holding the button down.<br /> <h1>Overview</h1><p>This parameter defines commands sent to devices associated in 3rd association group after holding the button down.</p> <p>Available settings:</p> <p>0 - no action <br />1 - START LEVEL CHANGE UP (brightening) <br />2 - START LEVEL CHANGE DOWN (dimming) <br />3 - START LEVEL CHANGE UP/DOWN (brightening/dimming) – alternately</p>
@@ -193,8 +178,7 @@ Sent associated in 3rd association group after holding the button down.<br /> <h
         <default>3</default>
       </parameter>
 
-      <parameter name="config_30_1" type="integer" groupName="configuration"
-                 min="1" max="127">
+      <parameter name="config_30_1" type="integer" groupName="configuration">
         <label>30: Alarm frame triggers</label>
         <description><![CDATA[
 Which actions result in sending alarm frames to 4th association group.<br /> <h1>Overview</h1><p>Parameter determines which actions result in sending alarm frames to 4th association group.</p> <p>Available settings:</p> <p>1 - Key Pressed 1 time <br />2 - Key Pressed 2 times <br />4 - Key Pressed 3 times <br />8 - Key Pressed 4 times <br />16 - Key Pressed 5 times <br />32 - Key Held Down <br />64 - Key Released</p> <p>Values of parameter 30 may be combined, e.g. 1+2=3 means that alarm frames will be sent after pressing the button once or twice.</p>

@@ -65,8 +65,7 @@ Dimmer IO: Phase cut dimmer<br /> <h1>Overview</h1><p>The electronic dimmer swit
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_4_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_4_1" type="integer" groupName="configuration">
         <label>4: Set time</label>
         <description><![CDATA[
 Set time<br /> <h1>Overview</h1><table><tr><td>0x00</td> <td>Instantly (default value) Disable timming</td> </tr><tr><td>0x01-0x7F</td> <td>1 second (0x01) to 127 seconds (0x7F) in 1 second resolution</td> </tr><tr><td>0x80-0xFE</td> <td>1 second (0x80) to 127 minutes (0xFE) in 1 minute resolution</td> </tr></table>
@@ -75,8 +74,7 @@ Set time<br /> <h1>Overview</h1><table><tr><td>0x00</td> <td>Instantly (default 
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_5_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_5_1" type="integer" groupName="configuration">
         <label>5: Fade time</label>
         <description><![CDATA[
 Fade time<br /> <h1>Overview</h1><table><tr><td>0x00</td> <td>Instantly (default value) Disable timming</td> </tr><tr><td>0x01-0x7F</td> <td>1 second (0x01) to 127 seconds (0x7F) in 1 second resolution</td> </tr><tr><td>0x80-0xFE</td> <td>1 second (0x80) to 127 minutes (0xFE) in 1 minute resolution</td> </tr></table>
@@ -85,8 +83,7 @@ Fade time<br /> <h1>Overview</h1><table><tr><td>0x00</td> <td>Instantly (default
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_6_1" type="integer" groupName="configuration"
-                 min="1" max="99">
+      <parameter name="config_6_1" type="integer" groupName="configuration">
         <label>6: Minimum dimming value</label>
         <description><![CDATA[
 Minimum dimming value<br /> <h1>Overview</h1><p>Stablishes the Max and Min percentages that can be reached. Once the devices gets a value through Z-Wave it Scales the value read according this Min and Max margins.</p>
@@ -95,8 +92,7 @@ Minimum dimming value<br /> <h1>Overview</h1><p>Stablishes the Max and Min perce
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_7_1" type="integer" groupName="configuration"
-                 min="1" max="99">
+      <parameter name="config_7_1" type="integer" groupName="configuration">
         <label>7: Maximum dimming value</label>
         <description><![CDATA[
 Maximum dimming value<br /> <h1>Overview</h1><p>Stablishes the Max and Min percentages that can be reached. Once the devices gets a value through Z-Wave it Scales the value read according this Min and Max margins.</p>
@@ -105,8 +101,7 @@ Maximum dimming value<br /> <h1>Overview</h1><p>Stablishes the Max and Min perce
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_8_1" type="integer" groupName="configuration"
-                 min="1" max="99">
+      <parameter name="config_8_1" type="integer" groupName="configuration">
         <label>8: Last on value</label>
         <description><![CDATA[
 Last on value<br /> <h1>Overview</h1><p>Returns or sets the last non zero dimming value. In case of Set the device turns ON the load.</p>
@@ -127,8 +122,7 @@ Last on value<br /> <h1>Overview</h1><p>Returns or sets the last non zero dimmin
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_10_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_10_1" type="integer" groupName="configuration">
         <label>10: Delay ON</label>
         <description><![CDATA[
 Delay ON<br /> <h1>Overview</h1><table><tr><td>0x00</td> <td>Instantly (default value) Disable timming</td> </tr><tr><td>0x01-0x7F</td> <td>1 second (0x01) to 127 seconds (0x7F) in 1 second resolution</td> </tr><tr><td>0x80-0xFE</td> <td>1 second (0x80) to 127 minutes (0xFE) in 1 minute resolution</td> </tr></table>
@@ -137,8 +131,7 @@ Delay ON<br /> <h1>Overview</h1><table><tr><td>0x00</td> <td>Instantly (default 
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_11_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_11_1" type="integer" groupName="configuration">
         <label>11: Activation time</label>
         <description><![CDATA[
 Activation time<br /> <h1>Overview</h1><table><tr><td>0x00</td> <td>Instantly (default value) Disable timming</td> </tr><tr><td>0x01-0x7F</td> <td>1 second (0x01) to 127 seconds (0x7F) in 1 second resolution</td> </tr><tr><td>0x80-0xFE</td> <td>1 second (0x80) to 127 minutes (0xFE) in 1 minute resolution</td> </tr></table>
@@ -180,8 +173,7 @@ Activation time<br /> <h1>Overview</h1><table><tr><td>0x00</td> <td>Instantly (d
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_16_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_16_1" type="integer" groupName="configuration">
         <label>16: Delay OFF</label>
         <description><![CDATA[
 Delay OFF<br /> <h1>Overview</h1><table><tr><td>0x00</td> <td>Instantly (default value) Disable timming</td> </tr><tr><td>0x01-0x7F</td> <td>1 second (0x01) to 127 seconds (0x7F) in 1 second resolution</td> </tr><tr><td>0x80-0xFE</td> <td>1 second (0x80) to 127 minutes (0xFE) in 1 minute resolution</td> </tr></table>
@@ -216,8 +208,7 @@ Identify<br /> <h1>Overview</h1><p>The central LED blinks for 5 seconds in order
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_21_2" type="integer" groupName="configuration" readOnly="true"
-                 min="-32767" max="32768">
+      <parameter name="config_21_2" type="integer" groupName="configuration" readOnly="true">
         <label>21: State of charge</label>
         <description><![CDATA[
 State of charge<br /> <h1>Overview</h1><table><tr><td>First byte</td> <td> <p>0x00 Load is OFF</p> <p>0x01 Load is ON</p> </td> </tr><tr><td>Second byte</td> <td>0x00 - 0x063 Last active dimming value</td> </tr></table>

@@ -179,8 +179,7 @@ Fan Type<br /> <h1>Overview</h1><ul><li>0 = Gas (no fan w/Heat)</li> <li>1 = Ele
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_8_1" type="integer" groupName="configuration"
-                 min="5" max="9">
+      <parameter name="config_8_1" type="integer" groupName="configuration">
         <label>8: Minimum Off Time</label>
         <description><![CDATA[
 Minimum Off Time<br /> <h1>Overview</h1><p>Sets the Minimum Off Time (MOT) delay before another heating/cooling cycle can begin</p>
@@ -189,8 +188,7 @@ Minimum Off Time<br /> <h1>Overview</h1><p>Sets the Minimum Off Time (MOT) delay
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_9_1" type="integer" groupName="configuration"
-                 min="3" max="9">
+      <parameter name="config_9_1" type="integer" groupName="configuration">
         <label>9: Minimum Run Time</label>
         <description><![CDATA[
 Minimum Run Time<br /> <h1>Overview</h1><p>Sets the Minimum Run Time (MRT) delay before a heating/cooling cycle can turn off</p>
@@ -199,8 +197,7 @@ Minimum Run Time<br /> <h1>Overview</h1><p>Sets the Minimum Run Time (MRT) delay
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_10_1" type="integer" groupName="configuration"
-                 min="3" max="15">
+      <parameter name="config_10_1" type="integer" groupName="configuration">
         <label>10: Setpoint H/C Delta</label>
         <description><![CDATA[
 Setpoint H/C Delta<br /> <h1>Overview</h1><p>Sets the minimum separation between heating and cooling setpoints</p>
@@ -209,8 +206,7 @@ Setpoint H/C Delta<br /> <h1>Overview</h1><p>Sets the minimum separation between
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_11_1" type="integer" groupName="configuration"
-                 min="1" max="6">
+      <parameter name="config_11_1" type="integer" groupName="configuration">
         <label>11: H Delta Stage 1 ON</label>
         <description><![CDATA[
 H Delta Stage 1 ON<br /> <h1>Overview</h1><p>Sets the delta from setpoint that stage 1 heating starts</p>
@@ -219,8 +215,7 @@ H Delta Stage 1 ON<br /> <h1>Overview</h1><p>Sets the delta from setpoint that s
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_12_1" type="integer" groupName="configuration"
-                 min="0" max="5">
+      <parameter name="config_12_1" type="integer" groupName="configuration">
         <label>12: H Delta Stage 1 OFF</label>
         <description><![CDATA[
 H Delta Stage 1 OFF<br /> <h1>Overview</h1><p>Sets the delta from setpoint that stage 1 heating stops</p>
@@ -229,8 +224,7 @@ H Delta Stage 1 OFF<br /> <h1>Overview</h1><p>Sets the delta from setpoint that 
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_13_1" type="integer" groupName="configuration"
-                 min="2" max="7">
+      <parameter name="config_13_1" type="integer" groupName="configuration">
         <label>13: H Delta Stage 2 ON</label>
         <description><![CDATA[
 H Delta Stage 2 ON<br /> <h1>Overview</h1><p>Sets the delta from setpoint that stage 2 heating starts</p>
@@ -239,8 +233,7 @@ H Delta Stage 2 ON<br /> <h1>Overview</h1><p>Sets the delta from setpoint that s
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_14_1" type="integer" groupName="configuration"
-                 min="0" max="6">
+      <parameter name="config_14_1" type="integer" groupName="configuration">
         <label>14: H Delta Stage 2 OFF</label>
         <description><![CDATA[
 H Delta Stage 2 OFF<br /> <h1>Overview</h1><p>Sets the delta from setpoint that stage 2 heating stops</p>
@@ -249,8 +242,7 @@ H Delta Stage 2 OFF<br /> <h1>Overview</h1><p>Sets the delta from setpoint that 
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_15_1" type="integer" groupName="configuration"
-                 min="3" max="8">
+      <parameter name="config_15_1" type="integer" groupName="configuration">
         <label>15: H Delta Aux ON</label>
         <description><![CDATA[
 H Delta Aux ON<br /> <h1>Overview</h1><p>Sets the delta from setpoint that stage 3 heating starts</p>
@@ -259,8 +251,7 @@ H Delta Aux ON<br /> <h1>Overview</h1><p>Sets the delta from setpoint that stage
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_16_1" type="integer" groupName="configuration"
-                 min="0" max="7">
+      <parameter name="config_16_1" type="integer" groupName="configuration">
         <label>16: H Delta Stage 3 OFF</label>
         <description><![CDATA[
 H Delta Stage 3 OFF<br /> <h1>Overview</h1><p>Sets the delta from setpoint that stage 3 heating stops</p>
@@ -269,8 +260,7 @@ H Delta Stage 3 OFF<br /> <h1>Overview</h1><p>Sets the delta from setpoint that 
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_17_1" type="integer" groupName="configuration"
-                 min="1" max="6">
+      <parameter name="config_17_1" type="integer" groupName="configuration">
         <label>17: C Delta Stage 1 ON</label>
         <description><![CDATA[
 C Delta Stage 1 ON<br /> <h1>Overview</h1><p>Sets the delta from setpoint that stage 1 cooling starts</p>
@@ -279,8 +269,7 @@ C Delta Stage 1 ON<br /> <h1>Overview</h1><p>Sets the delta from setpoint that s
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_18_1" type="integer" groupName="configuration"
-                 min="0" max="5">
+      <parameter name="config_18_1" type="integer" groupName="configuration">
         <label>18: C Delta Stage 1 OFF</label>
         <description><![CDATA[
 C Delta Stage 1 OFF<br /> <h1>Overview</h1><p>Sets the delta from setpoint that stage 1 cooling stops</p>
@@ -289,8 +278,7 @@ C Delta Stage 1 OFF<br /> <h1>Overview</h1><p>Sets the delta from setpoint that 
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_19_1" type="integer" groupName="configuration"
-                 min="2" max="7">
+      <parameter name="config_19_1" type="integer" groupName="configuration">
         <label>19: C Delta Stage 2 ON</label>
         <description><![CDATA[
 C Delta Stage 2 ON<br /> <h1>Overview</h1><p>Sets the delta from setpoint that stage 2 cooling starts</p>
@@ -299,8 +287,7 @@ C Delta Stage 2 ON<br /> <h1>Overview</h1><p>Sets the delta from setpoint that s
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_20_1" type="integer" groupName="configuration"
-                 min="0" max="6">
+      <parameter name="config_20_1" type="integer" groupName="configuration">
         <label>20: C Delta Stage 2 OFF</label>
         <description><![CDATA[
 C Delta Stage 2 OFF<br /> <h1>Overview</h1><p>Sets the delta from setpoint that stage 2 cooling stops</p>
@@ -309,8 +296,7 @@ C Delta Stage 2 OFF<br /> <h1>Overview</h1><p>Sets the delta from setpoint that 
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_23_4" type="integer" groupName="configuration"
-                 min="0" max="65535">
+      <parameter name="config_23_4" type="integer" groupName="configuration">
         <label>23: Lifeline Association Group Report To Send</label>
         <description><![CDATA[
 Lifeline Association Group Report To Send<br /> <h1>Overview</h1><p>Report to send to the Lifeline Association Group upon change in thermostat state. </p> <p>Bitmask values:</p> <ul><li>1 = Temperature</li> <li>2 = Heat Setpoint</li> <li>4 = Cool Setpoint</li> <li>8 = Thermostat Heat/Cooling Mode</li> <li>16 = Fan Mode</li> <li>32 = Fan State</li> <li>64 = Operating State</li> <li>128 = Schedule (send CC parameter 38)</li> <li>256 = Setback (send CC parameter 40)</li> <li>512 = Run Hold (send CC parameter 39)</li> <li>1024 = Display Lock (send CC parameter 24)</li> <li>8192 = Battery Level</li> <li>16834 = Mechanical Relay State (send CC parameter 21)</li> <li>32768 = Thermostat State Config (send CC parameter 22)    </li> </ul>
@@ -331,8 +317,7 @@ Lifeline Association Group Report To Send<br /> <h1>Overview</h1><p>Report to se
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_26_1" type="integer" groupName="configuration"
-                 min="10" max="30">
+      <parameter name="config_26_1" type="integer" groupName="configuration">
         <label>26: Backlight Timer</label>
         <description><![CDATA[
 Backlight Timer<br /> <h1>Overview</h1><p>Sets the time from last button press that the backlight will turn OFF</p>
@@ -341,8 +326,7 @@ Backlight Timer<br /> <h1>Overview</h1><p>Sets the time from last button press t
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_33_1" type="integer" groupName="configuration"
-                 min="30" max="109">
+      <parameter name="config_33_1" type="integer" groupName="configuration">
         <label>33: Max Heat Setpoint</label>
         <description><![CDATA[
 Max Heat Setpoint<br /> <h1>Overview</h1><p>Sets the maximum heating setpoint value</p>
@@ -351,8 +335,7 @@ Max Heat Setpoint<br /> <h1>Overview</h1><p>Sets the maximum heating setpoint va
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_34_1" type="integer" groupName="configuration"
-                 min="33" max="112">
+      <parameter name="config_34_1" type="integer" groupName="configuration">
         <label>34: Min Cool Setpoint</label>
         <description><![CDATA[
 Min Cool Setpoint<br /> <h1>Overview</h1><p>Sets the minimum cooling setpoint value</p>
@@ -398,8 +381,7 @@ Run/Hold Mode<br /> <h1>Overview</h1><p>0 = Hold, 1 = Run</p>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_41_1" type="integer" groupName="configuration"
-                 min="30" max="109">
+      <parameter name="config_41_1" type="integer" groupName="configuration">
         <label>41: Un-Occupied HSP</label>
         <description><![CDATA[
 Un-Occupied HSP<br /> <h1>Overview</h1><p>Heat Setpoint for Unoccupied mode</p>
@@ -408,8 +390,7 @@ Un-Occupied HSP<br /> <h1>Overview</h1><p>Heat Setpoint for Unoccupied mode</p>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_42_1" type="integer" groupName="configuration"
-                 min="33" max="112">
+      <parameter name="config_42_1" type="integer" groupName="configuration">
         <label>42: Un-Occupied CSP</label>
         <description><![CDATA[
 Un-Occupied CSP<br /> <h1>Overview</h1><p>Cool Setpoint for Unoccupied mode</p>
@@ -418,8 +399,7 @@ Un-Occupied CSP<br /> <h1>Overview</h1><p>Cool Setpoint for Unoccupied mode</p>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_43_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_43_1" type="integer" groupName="configuration">
         <label>43: Remote Sensor 1 Node Number</label>
         <description><![CDATA[
 Remote Sensor 1 Node Number<br /> <h1>Overview</h1><p>Node number for Remote Sensor 1</p>
@@ -428,8 +408,7 @@ Remote Sensor 1 Node Number<br /> <h1>Overview</h1><p>Node number for Remote Sen
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_46_1" type="integer" groupName="configuration"
-                 min="0" max="112">
+      <parameter name="config_46_1" type="integer" groupName="configuration">
         <label>46: Remote Sensor 1 Temperature</label>
         <description><![CDATA[
 Remote Sensor 1 Temperature<br /> <h1>Overview</h1><p>Temperature of Remote Sensor 1</p>
@@ -438,8 +417,7 @@ Remote Sensor 1 Temperature<br /> <h1>Overview</h1><p>Temperature of Remote Sens
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_48_1" type="integer" groupName="configuration"
-                 min="-7" max="7">
+      <parameter name="config_48_1" type="integer" groupName="configuration">
         <label>48: Internal Sensor Temp Offset</label>
         <description><![CDATA[
 Internal Sensor Temp Offset<br /> <h1>Overview</h1><p>Internal Sensor Temperature Offset</p>
@@ -448,8 +426,7 @@ Internal Sensor Temp Offset<br /> <h1>Overview</h1><p>Internal Sensor Temperatur
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_49_1" type="integer" groupName="configuration"
-                 min="-7" max="7">
+      <parameter name="config_49_1" type="integer" groupName="configuration">
         <label>49: R1 Sensor Temp Offset</label>
         <description><![CDATA[
 R1 Sensor Temp Offset<br /> <h1>Overview</h1><p>R1 Sensor Temperature Offset</p>
@@ -458,8 +435,7 @@ R1 Sensor Temp Offset<br /> <h1>Overview</h1><p>R1 Sensor Temperature Offset</p>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_54_2" type="integer" groupName="configuration"
-                 min="0" max="4000">
+      <parameter name="config_54_2" type="integer" groupName="configuration">
         <label>54: Heat Timer</label>
         <description><![CDATA[
 Heat Timer<br /> <h1>Overview</h1><p>Heat Timer in hours</p>
@@ -468,8 +444,7 @@ Heat Timer<br /> <h1>Overview</h1><p>Heat Timer in hours</p>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_55_2" type="integer" groupName="configuration"
-                 min="0" max="4000">
+      <parameter name="config_55_2" type="integer" groupName="configuration">
         <label>55: Cool Timer</label>
         <description><![CDATA[
 Cool Timer<br /> <h1>Overview</h1><p>Cool Timer in hours</p>
@@ -478,8 +453,7 @@ Cool Timer<br /> <h1>Overview</h1><p>Cool Timer in hours</p>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_61_1" type="integer" groupName="configuration"
-                 min="0" max="90">
+      <parameter name="config_61_1" type="integer" groupName="configuration">
         <label>61: Fan Purge Heat</label>
         <description><![CDATA[
 Fan Purge Heat<br /> <h1>Overview</h1><p>Fan purge period for Heat mode</p>
@@ -489,8 +463,7 @@ Fan Purge Heat<br /> <h1>Overview</h1><p>Fan purge period for Heat mode</p>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_62_1" type="integer" groupName="configuration"
-                 min="0" max="90">
+      <parameter name="config_62_1" type="integer" groupName="configuration">
         <label>62: Fan Purge Cool</label>
         <description><![CDATA[
 Fan Purge Cool<br /> <h1>Overview</h1><p>Fan purge period for Cool mode</p>

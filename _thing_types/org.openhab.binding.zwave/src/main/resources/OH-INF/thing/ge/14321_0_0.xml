@@ -68,8 +68,7 @@ Defines the behavior of the blue LED.<br /> <h1>Overview</h1><p>Default is Night
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_3_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_3_1" type="integer" groupName="configuration">
         <label>3: Night Light</label>
         <description><![CDATA[
 Defines the behavior of the blue LED<br /> <h1>Overview</h1><p>This configuration parameter defines the behavior of the blue LED "night light".</p> <p>The default behavior is "ON_WHEN_OFF" - the LED is on when the switch is set to off.</p> <p>The other two options are "ON_WHEN_ON" - the LED is on when the switch is set to on, and</p> <p>"ALWAYS_OFF" - the LED is always off.</p>

@@ -44,8 +44,7 @@ This parameter is used to enable/disable the LED indicator.<br /> <h1>Overview</
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_220_1" type="integer" groupName="configuration"
-                 min="1" max="10">
+      <parameter name="config_220_1" type="integer" groupName="configuration">
         <label>220: RF power level</label>
         <description><![CDATA[
 RF power level<br /> <h1>Overview</h1><p>Configuration of the RF power level</p> <p>1~10, other= ignore. A total of 10 levels, level 1 <br />as the weak output power, and so on, 10 for <br />most output power level.</p>
@@ -67,8 +66,7 @@ Security network enabled<br /> <h1>Overview</h1><p>Security network enabled <br 
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_243_16" type="integer" groupName="configuration"
-                 min="-2147483646" max="2147483647">
+      <parameter name="config_243_16" type="integer" groupName="configuration">
         <label>243: Security Network Key</label>
         <description>Security Network Key</description>
         <default>0</default>

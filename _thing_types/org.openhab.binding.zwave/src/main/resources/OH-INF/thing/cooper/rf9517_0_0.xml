@@ -53,8 +53,7 @@ Accessory Switch<br /> <h1>Overview</h1><p>Aspire RF Accessory Switch Compatible
       </parameter-group>
 
       <!-- PARAMETER DEFINITIONS -->
-      <parameter name="config_1_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_1_1" type="integer" groupName="configuration">
         <label>1: Delayed OFF time</label>
         <description>The time in seconds the switch will delay when trigger the delayed off feature</description>
         <default>0</default>

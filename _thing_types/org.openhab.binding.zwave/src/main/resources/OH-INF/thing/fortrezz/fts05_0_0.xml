@@ -75,24 +75,21 @@ Wireless Water Leak Sensor<br /> <h1>Overview</h1><p>Gain peace of mind when awa
       </parameter-group>
 
       <!-- PARAMETER DEFINITIONS -->
-      <parameter name="config_1_1" type="integer" groupName="configuration"
-                 min="-10" max="69">
+      <parameter name="config_1_1" type="integer" groupName="configuration">
         <label>1: Temperature low threshold</label>
         <description>Temperature low threshold</description>
         <default>4</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_2_1" type="integer" groupName="configuration"
-                 min="-9" max="70">
+      <parameter name="config_2_1" type="integer" groupName="configuration">
         <label>2: Temperature high threshold</label>
         <description>Temperature high threshold</description>
         <default>70</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_4_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_4_1" type="integer" groupName="configuration">
         <label>4: Water Alarm Association Mode</label>
         <description>Water Alarm Association Mode (send Basic Set ON or Basic Set OFF when alarm detected)</description>
         <default>0</default>

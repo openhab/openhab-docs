@@ -70,8 +70,7 @@ POPP Rain-Sensor<br /> <h1>Overview</h1><p>The POPP Rain-Sensor is a Rain Measur
       </parameter-group>
 
       <!-- PARAMETER DEFINITIONS -->
-      <parameter name="config_1_2" type="integer" groupName="configuration"
-                 min="0" max="32000">
+      <parameter name="config_1_2" type="integer" groupName="configuration">
         <label>1: Rain Counter</label>
         <description><![CDATA[
 total count of rain<br /> <h1>Overview</h1><p>Ths values shows the total count of rain from the moment of inclusion in mm waterlevel. By writing this value this counter can be reset. Size: 2 Byte, Default Value: 0</p>
@@ -80,8 +79,7 @@ total count of rain<br /> <h1>Overview</h1><p>Ths values shows the total count o
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_2_1" type="integer" groupName="configuration"
-                 min="0" max="99">
+      <parameter name="config_2_1" type="integer" groupName="configuration">
         <label>2: Rain Start Command</label>
         <description><![CDATA[
 Send rain start command to group 2<br /> <h1>Overview</h1><p>This BASIC Set Command value is sent out into Association Group 2 when the device detects start of rain Size: 1 Byte, Default Value: 99</p>
@@ -90,8 +88,7 @@ Send rain start command to group 2<br /> <h1>Overview</h1><p>This BASIC Set Comm
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_3_1" type="integer" groupName="configuration"
-                 min="0" max="99">
+      <parameter name="config_3_1" type="integer" groupName="configuration">
         <label>3: Rain Stop Command</label>
         <description><![CDATA[
 Send rain stop to group 2<br /> <h1>Overview</h1><p>This BASIC Set Command value is sent out into Association Group 2 when the device detects stop of rain Size: 1 Byte, Default Value: 0</p>
@@ -100,8 +97,7 @@ Send rain stop to group 2<br /> <h1>Overview</h1><p>This BASIC Set Command value
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_4_2" type="integer" groupName="configuration"
-                 min="1" max="1000">
+      <parameter name="config_4_2" type="integer" groupName="configuration">
         <label>4: Meter Multiplier</label>
         <description><![CDATA[
 Adapt the display<br /> <h1>Overview</h1><p>This multiplier allows to adapt the display to certain controllers not being able to handle very low numbers. Size: 2 Byte, Default Value: 1 only 1/10/100/1000</p>
@@ -110,8 +106,7 @@ Adapt the display<br /> <h1>Overview</h1><p>This multiplier allows to adapt the 
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_5_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_5_1" type="integer" groupName="configuration">
         <label>5: Heavy Rain</label>
         <description><![CDATA[
 Threshold defines heavy rain condition<br /> <h1>Overview</h1><p>This threshold defines when a heavy rain condition is hit. In most countries this is defined as &gt; 15 mm rain per hour. The default value however is to turn this function off. Size: 1 Byte, Default Value: 255</p>
@@ -120,8 +115,7 @@ Threshold defines heavy rain condition<br /> <h1>Overview</h1><p>This threshold 
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_6_1" type="integer" groupName="configuration"
-                 min="0" max="99">
+      <parameter name="config_6_1" type="integer" groupName="configuration">
         <label>6: Heavy Rain Start Command</label>
         <description><![CDATA[
 Send heavy rain start to group 3<br /> <h1>Overview</h1><p>This BASIC Set Command value is sent out into Association Group 3 when the device detects start of heavy rain Size: 1 Byte, Default Value: 99</p>
@@ -130,8 +124,7 @@ Send heavy rain start to group 3<br /> <h1>Overview</h1><p>This BASIC Set Comman
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_7_1" type="integer" groupName="configuration"
-                 min="0" max="99">
+      <parameter name="config_7_1" type="integer" groupName="configuration">
         <label>7: Heavy Rain Stop Command</label>
         <description><![CDATA[
 Send heavy rain stop to group 3<br /> <h1>Overview</h1><p>This BASIC Set Command value is sent out into Association Group 3 when the device detects stop of heavy rain Size: 1 Byte, Default Value: 0</p>

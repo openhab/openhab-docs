@@ -71,8 +71,7 @@ Door/window sensor<br /> <h1>Overview</h1><p>This magnet sensor contains the lat
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_2_1" type="integer" groupName="configuration"
-                 min="0" max="63">
+      <parameter name="config_2_1" type="integer" groupName="configuration">
         <label>2: Group 2 Value</label>
         <description>Select what value that should be sent to association group 2</description>
         <default>-1</default>
@@ -105,8 +104,7 @@ Door/window sensor<br /> <h1>Overview</h1><p>This magnet sensor contains the lat
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_5_1" type="integer" groupName="configuration"
-                 min="0" max="63">
+      <parameter name="config_5_1" type="integer" groupName="configuration">
         <label>5: Group 3 Value</label>
         <description>Select what value that should be sent to association group 3</description>
         <default>-1</default>

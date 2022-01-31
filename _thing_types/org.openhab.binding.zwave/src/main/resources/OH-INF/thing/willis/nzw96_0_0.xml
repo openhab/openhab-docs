@@ -65,8 +65,7 @@ Outdoor Plug-in Module (1-Channel)<br /> <h1>Overview</h1><p>Inovelli's Outdoor 
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_2_2" type="integer" groupName="configuration"
-                 min="-32767" max="32768">
+      <parameter name="config_2_2" type="integer" groupName="configuration">
         <label>2: Countdown</label>
         <description>Plug Auto Shutoff</description>
         <default>0</default>

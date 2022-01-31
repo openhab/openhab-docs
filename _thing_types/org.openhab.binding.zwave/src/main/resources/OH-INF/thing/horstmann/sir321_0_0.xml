@@ -53,40 +53,35 @@ RF Countdown Timer<br /> <h1>Overview</h1><p>Wirelessly controllable 3 KW wall s
       </parameter-group>
 
       <!-- PARAMETER DEFINITIONS -->
-      <parameter name="config_1_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_1_1" type="integer" groupName="configuration">
         <label>1: Fail Save timer</label>
         <description>Enable/Disable the Fail save timer</description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_2_2" type="integer" groupName="configuration"
-                 min="0" max="127">
+      <parameter name="config_2_2" type="integer" groupName="configuration">
         <label>2: Temperature Scale</label>
         <description>Set the Temperatur scale to Celsius</description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_3_2" type="integer" groupName="configuration"
-                 min="0" max="32767">
+      <parameter name="config_3_2" type="integer" groupName="configuration">
         <label>3: Temperature reporting intervals</label>
         <description>Define the time interval for the temperature report that is sent.</description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_4_2" type="integer" groupName="configuration"
-                 min="0" max="100">
+      <parameter name="config_4_2" type="integer" groupName="configuration">
         <label>4: Delta configuration temperature reporting</label>
         <description>Set the delta-configuration of the temperature report in Celsius or Fahrenheit</description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_5_2" type="integer" groupName="configuration"
-                 min="0" max="1000">
+      <parameter name="config_5_2" type="integer" groupName="configuration">
         <label>5: Temperature Cutoff</label>
         <description>Set the Cutoff in Celsius</description>
         <default>0</default>

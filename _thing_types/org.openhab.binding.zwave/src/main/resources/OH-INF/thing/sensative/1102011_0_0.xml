@@ -123,8 +123,7 @@ Strips Comfort/Drips Multisensor<br /> <h1>Overview</h1><p>Strips, the ultra-thi
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_6_1" type="integer" groupName="configuration"
-                 min="-20" max="60">
+      <parameter name="config_6_1" type="integer" groupName="configuration">
         <label>6: High Temperature alarm level</label>
         <description>-20 to + 60 degree C</description>
         <default>60</default>
@@ -144,8 +143,7 @@ Strips Comfort/Drips Multisensor<br /> <h1>Overview</h1><p>Strips, the ultra-thi
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_8_1" type="integer" groupName="configuration"
-                 min="-20" max="60">
+      <parameter name="config_8_1" type="integer" groupName="configuration">
         <label>8: Low Temperature alarm level</label>
         <description>-20 to + 60 degree C</description>
         <default>-20</default>
@@ -176,8 +174,7 @@ Strips Comfort/Drips Multisensor<br /> <h1>Overview</h1><p>Strips, the ultra-thi
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_11_1" type="integer" groupName="configuration"
-                 min="1" max="100">
+      <parameter name="config_11_1" type="integer" groupName="configuration">
         <label>11: Leakage alarm level</label>
         <description>1 to 100 (1= almost dry, 100 = soaking wet)</description>
         <default>25</default>
@@ -186,8 +183,7 @@ Strips Comfort/Drips Multisensor<br /> <h1>Overview</h1><p>Strips, the ultra-thi
         </options>
       </parameter>
 
-      <parameter name="config_12_1" type="integer" groupName="configuration"
-                 min="0" max="120">
+      <parameter name="config_12_1" type="integer" groupName="configuration">
         <label>12: Moisture reporting period</label>
         <description>0-120: Number of hours between moisture reports</description>
         <default>0</default>

@@ -48,8 +48,7 @@ ABUS Security Center Bulb<br /> <h1>Overview</h1><p>The ABUS Z-Wave LED lamp can
       </parameter-group>
 
       <!-- PARAMETER DEFINITIONS -->
-      <parameter name="config_1_0" type="integer" groupName="configuration" readOnly="true"
-                 min="-2147483646" max="2147483647">
+      <parameter name="config_1_0" type="integer" groupName="configuration" readOnly="true">
         <label>1: Temperature of NTC</label>
         <description>This parameter can only be read and not set.</description>
         <default>0</default>

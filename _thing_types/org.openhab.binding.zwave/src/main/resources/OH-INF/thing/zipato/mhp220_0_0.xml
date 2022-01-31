@@ -124,8 +124,7 @@ forbid/allow ALL ON/ALL OFF<br /> <h1>Overview</h1><p>ALL ON/ALL OFF</p> <p>Valu
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_5_1" type="integer" groupName="configuration"
-                 min="0" max="98">
+      <parameter name="config_5_1" type="integer" groupName="configuration">
         <label>5: Minimum brightness level</label>
         <description><![CDATA[
 percentage brightness level<br /> <h1>Overview</h1><p>Minimum brightness level</p> <p>Values in the range 1 to 98 may be set.</p> <p>The manufacturer defined default value is 1.</p> <p>This parameter has the configuration ID config_5_1 and is of type INTEGER.</p>
@@ -134,8 +133,7 @@ percentage brightness level<br /> <h1>Overview</h1><p>Minimum brightness level</
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_6_1" type="integer" groupName="configuration"
-                 min="2" max="99">
+      <parameter name="config_6_1" type="integer" groupName="configuration">
         <label>6: Maximum brightness level</label>
         <description><![CDATA[
 2~99 percentage brightness level<br /> <h1>Overview</h1><p>Maximum brightness level</p> <p>Values in the range 2 to 99 may be set.</p> <p>The manufacturer defined default value is 99.</p> <p>This parameter has the configuration ID config_6_1 and is of type INTEGER.</p>
@@ -144,8 +142,7 @@ percentage brightness level<br /> <h1>Overview</h1><p>Minimum brightness level</
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_7_2" type="integer" groupName="configuration"
-                 min="1" max="26">
+      <parameter name="config_7_2" type="integer" groupName="configuration">
         <label>7: Single dimming step time(Manual)</label>
         <description><![CDATA[
 Max 2.55s, in 10ms steps<br /> <h1>Overview</h1><p>Single dimming step time(Manual)</p> <p>Values in the range 1 to 255 may be set.</p> <p>The manufacturer defined default value is 3.</p> <p>This parameter has the configuration ID config_7_2 and is of type INTEGER.</p>
@@ -154,8 +151,7 @@ Max 2.55s, in 10ms steps<br /> <h1>Overview</h1><p>Single dimming step time(Manu
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_8_1" type="integer" groupName="configuration"
-                 min="1" max="99">
+      <parameter name="config_8_1" type="integer" groupName="configuration">
         <label>8: Single dimming step size (Manual)</label>
         <description><![CDATA[
 1~99 percentage value (modification isn’t recommended)<br /> <h1>Overview</h1><p>Single dimming step size (Manual)</p> <p>Values in the range 1 to 99 may be set.</p> <p>The manufacturer defined default value is 1.</p> <p>This parameter has the configuration ID config_8_1 and is of type INTEGER.</p>
@@ -164,8 +160,7 @@ Max 2.55s, in 10ms steps<br /> <h1>Overview</h1><p>Single dimming step time(Manu
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_9_2" type="integer" groupName="configuration"
-                 min="1" max="26">
+      <parameter name="config_9_2" type="integer" groupName="configuration">
         <label>9: Single dimming step time (Auto)</label>
         <description><![CDATA[
 Max 2.55s, in 10ms steps<br /> <h1>Overview</h1><p>Single dimming step time (Auto)</p> <p>Values in the range 1 to 255 may be set.</p> <p>The manufacturer defined default value is 3.</p> <p>This parameter has the configuration ID config_9_2 and is of type INTEGER.</p>
@@ -174,8 +169,7 @@ Max 2.55s, in 10ms steps<br /> <h1>Overview</h1><p>Single dimming step time (Aut
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_10_1" type="integer" groupName="configuration"
-                 min="1" max="99">
+      <parameter name="config_10_1" type="integer" groupName="configuration">
         <label>10: Single dimming step size (Auto)</label>
         <description><![CDATA[
 1~99 percentage value (modification isn’t recommended)<br /> <h1>Overview</h1><p>Single dimming step size (Auto)</p> <p>Values in the range 1 to 99 may be set.</p> <p>The manufacturer defined default value is 1.</p> <p>This parameter has the configuration ID config_10_1 and is of type INTEGER.</p>
@@ -184,8 +178,7 @@ Max 2.55s, in 10ms steps<br /> <h1>Overview</h1><p>Single dimming step time (Aut
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_11_2" type="integer" groupName="configuration"
-                 min="0" max="255">
+      <parameter name="config_11_2" type="integer" groupName="configuration">
         <label>11: Timer function (Auto-off)</label>
         <description><![CDATA[
 0x00 function disabled 0x0001~0x00FF 1s~255s<br /> <h1>Overview</h1><p>Timer function (Auto-off)</p> <p>Values in the range 0 to 255 may be set.</p> <p>The manufacturer defined default value is 0.</p> <p>This parameter has the configuration ID config_11_2 and is of type INTEGER.</p>
@@ -194,16 +187,14 @@ Max 2.55s, in 10ms steps<br /> <h1>Overview</h1><p>Single dimming step time (Aut
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_12_0" type="integer" groupName="configuration" readOnly="true"
-                 min="-2147483646" max="2147483647">
+      <parameter name="config_12_0" type="integer" groupName="configuration" readOnly="true">
         <label>12: Reversed</label>
         <description>Reversed</description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_13_1" type="integer" groupName="configuration"
-                 min="0" max="99">
+      <parameter name="config_13_1" type="integer" groupName="configuration">
         <label>13: One click of S1</label>
         <description><![CDATA[
 1~99 percentage value switch<br /> <h1>Overview</h1><p>One click of S1</p> <p>Values in the range 0 to 99 may be set.</p> <p>The manufacturer defined default value is 99.</p> <p>This parameter has the configuration ID config_13_1 and is of type INTEGER.</p>
@@ -283,8 +274,7 @@ Operation report from Switch2 to Association Group 4<br /> <h1>Overview</h1><p>O
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_19_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_19_1" type="integer" groupName="configuration">
         <label>19: Scene ID sent to AG1 when one click of S2</label>
         <description><![CDATA[
 0 Scene Activation disabled 1~255 send Activation CC to AG1<br /> <h1>Overview</h1><p>Scene ID sent to AG1 when one click of S2</p> <p>Values in the range 0 to 255 may be set.</p> <p>The manufacturer defined default value is 0.</p> <p>This parameter has the configuration ID config_19_1 and is of type INTEGER.</p>
@@ -293,8 +283,7 @@ Operation report from Switch2 to Association Group 4<br /> <h1>Overview</h1><p>O
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_20_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_20_1" type="integer" groupName="configuration">
         <label>20: Scene ID sent to AG1 when double click of S2</label>
         <description><![CDATA[
 0 Scene Activation disabled 1~255 send Activation CC<br /> <h1>Overview</h1><p>Scene ID sent to AG1 when double click of S2</p> <p>Values in the range 0 to 255 may be set.</p> <p>The manufacturer defined default value is 0.</p> <p>This parameter has the configuration ID config_20_1 and is of type INTEGER.</p>
@@ -303,8 +292,7 @@ Operation report from Switch2 to Association Group 4<br /> <h1>Overview</h1><p>O
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_21_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_21_1" type="integer" groupName="configuration">
         <label>21: Scene ID sent to AG1 when hold S2</label>
         <description><![CDATA[
 0 Scene Activation disabled 1~255 send Activation CC<br /> <h1>Overview</h1><p>Scene ID sent to AG1 when hold S2</p> <p>Values in the range 0 to 255 may be set.</p> <p>The manufacturer defined default value is 0.</p> <p>This parameter has the configuration ID config_21_1 and is of type INTEGER.</p>

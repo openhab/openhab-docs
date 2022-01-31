@@ -56,8 +56,7 @@
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_2_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_2_1" type="integer" groupName="configuration">
         <label>2: Automatically switch off after x seconds.</label>
         <description><![CDATA[
 If not zero, automatically switch device off after a user defined time<br /> <h1>Overview</h1><p>If not zero, automatically switch device off after a user defined time.</p> <ul><li>0 -&gt; Disabled</li> <li>1 - 65535 -&gt; Enabled, automatically switch off after x seconds.</li> </ul>
@@ -94,8 +93,7 @@ Defines if the switch should restore switch state.<br /> <h1>Overview</h1><p>Def
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_20_2" type="integer" groupName="configuration"
-                 min="0" max="3500">
+      <parameter name="config_20_2" type="integer" groupName="configuration">
         <label>20: Specify the consumption of the load in watts</label>
         <description><![CDATA[
 Maximum load 3500 Watts<br /> <h1>Overview</h1><p>Specify the consumption of the load in watts, for the calculation of power consumption:</p> <ul><li>0 -&gt; Disabled</li> <li>1 - 3500 -&gt; Watts</li> </ul>

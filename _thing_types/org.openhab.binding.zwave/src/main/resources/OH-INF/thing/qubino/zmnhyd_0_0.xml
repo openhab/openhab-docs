@@ -95,8 +95,7 @@ Smart Plug<br /> <h1>Overview</h1><p>This Z-Wave module is used for switching an
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_11_2" type="integer" groupName="configuration"
-                 min="0" max="32535">
+      <parameter name="config_11_2" type="integer" groupName="configuration">
         <label>11: Automatic turning OFF relay after set time</label>
         <description><![CDATA[
 When the relay is turned ON, it automatically turns OFF after the defined time<br /> <h1>Overview</h1><p>The timer is reset each time, the module receives an ON command (from push button/main controller/association).</p> <ul><li>0 = Auto OFF disabled</li> <li>1 - 32535 = 1 second to 32535 seconds delay. Auto OFF is enabled with defined time. Step is 1s.</li> </ul>
@@ -144,8 +143,7 @@ Set Timer Units to Seconds or Milliseconds<br /> <h1>Overview</h1><p>Choose if y
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_40_1" type="integer" groupName="configuration"
-                 min="0" max="100">
+      <parameter name="config_40_1" type="integer" groupName="configuration">
         <label>40: Treshold Change in Power for reporting</label>
         <description><![CDATA[
 Change of power consumption [Watt] reporting threshold<br /> <h1>Overview</h1><p>Choose by how much power consumption needs to increase or decrease to be reported. Values correspond to percentages, so if 20 is set (by default), the device will report any power consumption changes of 20% or more compared to the last reading.</p> <ul><li>0 - Power consumption reporting disabled</li> <li>1 - 100 = 1% - 100% Power consumption reporting enabled. New value is reported only when Wattage in real time changes by more than the percentage value set in this parameter compared to the previous Wattage reading, starting at 1% (the lowest value possible).</li> </ul><p>NOTE: Power consumption needs to increase or decrease by at least 1 Watt to be reported, REGARDLESS of percentage set in this parameter.</p> <p>NOTE: When reporting Watts, module will automatically report also [V] (Voltage) and [A] (Amperes)</p>
@@ -154,8 +152,7 @@ Change of power consumption [Watt] reporting threshold<br /> <h1>Overview</h1><p
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_41_2" type="integer" groupName="configuration"
-                 min="0" max="32535">
+      <parameter name="config_41_2" type="integer" groupName="configuration">
         <label>41: Threshold time for power reporting</label>
         <description><![CDATA[
 Threshold time for power reporting [Seconds]<br /> <h1>Overview</h1><p>Set value refers to the time interval with which power consumption in Watts is reported (0 – 32535 seconds). If 300 is entered (by default), energy consumption reports will be sent to the gateway (hub) every 300 seconds (or 5 minutes).</p> <ul><li>0 - Power consumption reporting disabled</li> <li>30 - 32535 = 30 - 32535 seconds. Power consumption reporting enabled. Report is sent according to time interval (value) set here.</li> </ul><p>The device is reporting the following values (if there was a change): Power [W], Voltage [V] and Current [A]</p>
@@ -164,8 +161,7 @@ Threshold time for power reporting [Seconds]<br /> <h1>Overview</h1><p>Set value
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_42_2" type="integer" groupName="configuration"
-                 min="0" max="32535">
+      <parameter name="config_42_2" type="integer" groupName="configuration">
         <label>42: Power Consumption Reporting Time Threshold</label>
         <description><![CDATA[
 Power Consumption Reporting Time Threshold [Seconds]<br /> <h1>Overview</h1><p>Set value refers to the time interval with which power consumption in Watts is reported (0 – 32535 seconds).</p> <p>If 300 is entered (by default), energy consumption reports will be sent to the gateway (hub) every 300 seconds (or 5 minutes).</p> <p>Values :</p> <ul><li>0 : Power consumption reporting disabled</li> <li>30 - 32535 : 30 - 32535 seconds. Power consumption reporting enabled. Report is sent according to time interval (value) set here.</li> </ul>
@@ -174,8 +170,7 @@ Power Consumption Reporting Time Threshold [Seconds]<br /> <h1>Overview</h1><p>S
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_50_2" type="integer" groupName="configuration"
-                 min="0" max="4000">
+      <parameter name="config_50_2" type="integer" groupName="configuration">
         <label>50: Down value</label>
         <description><![CDATA[
 Lower power threshold [watt] used in parameter no. 52<br /> <h1>Overview</h1><p>Lower power threshold used in parameter no. 52. </p> <p>Values:</p> <ul><li>default value 30 : 30 W <br /></li> <li>0 – 4000 : 0W – 4000 W <br /></li> </ul><p>Down value cannot be higher than a value specified in parameter no. 51 <br /></p> <p>NOTE:</p> <ul><li>if parameter no. 50 value is 100W and if measured power is lower than 100W, the association is send association is send again if measured power will rise above 105W</li> <li>Power threshold step is 1W <br /></li> </ul>
@@ -184,8 +179,7 @@ Lower power threshold [watt] used in parameter no. 52<br /> <h1>Overview</h1><p>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_51_2" type="integer" groupName="configuration"
-                 min="0" max="4000">
+      <parameter name="config_51_2" type="integer" groupName="configuration">
         <label>51: Up value</label>
         <description><![CDATA[
 Upper power threshold [watt] used in parameter no. 52<br /> <h1>Overview</h1><p>Values</p> <ul><li>default value 50 : 50 W</li> <li>0 – 4000 : 0 W – 400 W </li> </ul><p>Up value cannot be lower than a value specified in the parameter no. 50.</p> <p>NOTE:</p> <ul><li>If parameter no. 51 value is 200W and if measured power is higher than 200W the association is send</li> <li>Association is send again if measured power will fall below 190W</li> <li>Power threshold step is 1W </li> </ul>

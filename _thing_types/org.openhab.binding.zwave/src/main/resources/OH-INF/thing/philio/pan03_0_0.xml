@@ -83,8 +83,7 @@ In Wall Micromodule Single Switch<br /> <h1>Overview</h1><p>This plug-in ON/OFF 
       </parameter-group>
 
       <!-- PARAMETER DEFINITIONS -->
-      <parameter name="config_1_2" type="integer" groupName="configuration"
-                 min="1" max="32767">
+      <parameter name="config_1_2" type="integer" groupName="configuration">
         <label>1: Watt Meter Report Period</label>
         <description><![CDATA[
 Watt Meter Report Period<br /> <h1>Overview</h1><p>WATT METER REPORT PERIOD:</p> <p>If the setting is configured for 1hour (set value =720), the Micromodule Single Switch Max.Load: 11A will report its instant power consumption every 1 hour to Group1 node. The maximum interval to report its instant power consumption is 45 hours (5s*32767/3600=45hr).</p>
@@ -92,8 +91,7 @@ Watt Meter Report Period<br /> <h1>Overview</h1><p>WATT METER REPORT PERIOD:</p>
         <default>720</default>
       </parameter>
 
-      <parameter name="config_2_2" type="integer" groupName="configuration"
-                 min="1" max="32767">
+      <parameter name="config_2_2" type="integer" groupName="configuration">
         <label>2: KWH Meter Report Period</label>
         <description><![CDATA[
 KWH Meter Report Period (6*10min=1 hour)<br /> <h1>Overview</h1><p>KWH METER REPORT PERIOD:</p> <p>If the setting is configured for 1hour (set value =6), the Micromodule Single Switch Max.Load: 11A will report its Accumulated Power Consumption (KW/h) every 1 hour to Group1 node. The maximum interval to report its Accumulated Power Consumption (KW/h) is 227.55 days (10min*32767/1440=227.55 days).</p>
@@ -101,8 +99,7 @@ KWH Meter Report Period (6*10min=1 hour)<br /> <h1>Overview</h1><p>KWH METER REP
         <default>6</default>
       </parameter>
 
-      <parameter name="config_3_2" type="integer" groupName="configuration"
-                 min="10" max="1100">
+      <parameter name="config_3_2" type="integer" groupName="configuration">
         <label>3: Threshold of current for Load caution</label>
         <description><![CDATA[
 Threshold of current for Load caution (1100*0.01A = 11A)<br /> <h1>Overview</h1><p>THRESHOLD OF CURRENT FOR LOAD CAUTION:</p> <p>This is a warning when the current of load over the preset threshold value, if the setting value is 1100, when the load current of Relay1 over this value, Micromodule Single Switch Max.Load: 11A will send current meter report to warn the Group1 node, the Range of the setting value is from 10 to 1100, and the default value is 1100.</p>
@@ -110,8 +107,7 @@ Threshold of current for Load caution (1100*0.01A = 11A)<br /> <h1>Overview</h1>
         <default>1100</default>
       </parameter>
 
-      <parameter name="config_4_2" type="integer" groupName="configuration"
-                 min="10" max="10000">
+      <parameter name="config_4_2" type="integer" groupName="configuration">
         <label>4: Threshold of KWh for Load caution</label>
         <description><![CDATA[
 Threshold of KWh for Load caution<br /> <h1>Overview</h1><p>THRESHOLD OF KWH FOR LOAD CAUTION</p> <p>This is a warning when the KWh of load over the preset threshold value, if the setting value is 10000, when the Accumulated Power Consumption of Relay1 over this value, Micromodule Single Switch Max.Load: 11A will send KWH meter report to warn the Group1 node, minimum value is 1KWh and default value is 10000 kWh</p>
@@ -158,8 +154,7 @@ Manual On/Off mode<br /> <h1>Overview</h1><p>MANUAL ON/OFF MODE:</p> <p>The On/O
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_8_2" type="integer" groupName="configuration"
-                 min="0" max="32767">
+      <parameter name="config_8_2" type="integer" groupName="configuration">
         <label>8: Auto off timer</label>
         <description><![CDATA[
 Auto off timer<br /> <h1>Overview</h1><p>AUTO OFF TIMER:</p> <p>Whenever Micromodule Single Switch Max.Load: 11A switches to on, the auto off timer begin to count down. After the timer decrease to zero, it will switch to off automatically. However if Auto off timer is set as 0, the auto off function will be disabled. The default setting is 0.</p>

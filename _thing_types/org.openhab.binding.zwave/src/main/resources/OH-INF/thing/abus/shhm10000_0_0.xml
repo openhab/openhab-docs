@@ -131,8 +131,7 @@ Behaviour of the LED display with device status "On".<br /> <h1>Overview</h1><p>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_16_2" type="integer" groupName="configuration"
-                 min="-32767" max="32768">
+      <parameter name="config_16_2" type="integer" groupName="configuration">
         <label>16: Power report (Threshold)</label>
         <description><![CDATA[
 The threshold value serves as an additional condition for the time-based report.<br /> <h1>Overview</h1><p>The threshold value serves as an additional condition for the time-based report.<br />If the threshold value was not exceeded, the time-based report is not sent. <br />The value 0 deactivates the power report threshold.</p> <ul><li>Adjustable from 0 – 65535 in Watt</li> </ul><p>(Hexadecimal: 0x00 – 0xFFFF)</p>
@@ -141,8 +140,7 @@ The threshold value serves as an additional condition for the time-based report.
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_17_1" type="integer" groupName="configuration"
-                 min="0" max="127">
+      <parameter name="config_17_1" type="integer" groupName="configuration">
         <label>17: Power report (Threshold value in percent)</label>
         <description><![CDATA[
 The threshold value serves as an additional condition for the time-based report.<br /> <h1>Overview</h1><p>The threshold value serves as an additional condition for the time-based report. <br />If the threshold value was not exceeded, the time-based report is not sent. <br />The value 0 deactivates the power report threshold.</p> <ul><li>Adjustable from 0 – 127 in Watt</li> </ul><p>(Hexadecimal: 0x00 – 0x7F)</p>
@@ -150,8 +148,7 @@ The threshold value serves as an additional condition for the time-based report.
         <default>10</default>
       </parameter>
 
-      <parameter name="config_100_1" type="integer" groupName="configuration"
-                 min="84" max="84">
+      <parameter name="config_100_1" type="integer" groupName="configuration">
         <label>100: Reset 101 – 104</label>
         <description><![CDATA[
 Resets parameter 101 - 104 to factory setting.<br /> <h1>Overview</h1><p>84 = Resets parameter 101 - 104 to factory setting.</p>
@@ -160,8 +157,7 @@ Resets parameter 101 - 104 to factory setting.<br /> <h1>Overview</h1><p>84 = Re
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_101_4" type="integer" groupName="configuration"
-                 min="5" max="2678400">
+      <parameter name="config_101_4" type="integer" groupName="configuration">
         <label>101: Power report (Time)</label>
         <description><![CDATA[
 The interval time of the power report (W).<br /> <h1>Overview</h1><p>The interval time of the power report (W). <br />The value 0 disables the report.</p> <ul><li>Adjustable from 5 - 2678400 in seconds</li> </ul><p>(Hexadecimal: 0x00 - 0x28DE80)</p>
@@ -169,8 +165,7 @@ The interval time of the power report (W).<br /> <h1>Overview</h1><p>The interva
         <default>600</default>
       </parameter>
 
-      <parameter name="config_102_4" type="integer" groupName="configuration"
-                 min="5" max="2678400">
+      <parameter name="config_102_4" type="integer" groupName="configuration">
         <label>102: Consumption report (Time)</label>
         <description><![CDATA[
 The interval time of the consumption report (kWh).<br /> <h1>Overview</h1><p>The interval time of the consumption report (kWh). <br />The value 0 disables the report.</p> <ul><li>Adjustable from 5 - 2678400 in seconds</li> </ul><p>(Hexadecimal: 0x00 - 0x28DE80)</p>
@@ -178,8 +173,7 @@ The interval time of the consumption report (kWh).<br /> <h1>Overview</h1><p>The
         <default>3600</default>
       </parameter>
 
-      <parameter name="config_103_4" type="integer" groupName="configuration"
-                 min="5" max="2678400">
+      <parameter name="config_103_4" type="integer" groupName="configuration">
         <label>103: Voltage report (Time)</label>
         <description><![CDATA[
 The interval time of the voltage report (V).<br /> <h1>Overview</h1><p>The interval time of the voltage report (V). <br />The value 0 disables the report.</p> <ul><li>Adjustable from 5 - 2678400 in seconds</li> </ul><p>(Hexadecimal: 0x00 - 0x28DE80)</p>
@@ -187,8 +181,7 @@ The interval time of the voltage report (V).<br /> <h1>Overview</h1><p>The inter
         <default>0</default>
       </parameter>
 
-      <parameter name="config_104_4" type="integer" groupName="configuration"
-                 min="5" max="2678400">
+      <parameter name="config_104_4" type="integer" groupName="configuration">
         <label>104: Current report (Time)</label>
         <description><![CDATA[
 The interval time of the current report (A).<br /> <h1>Overview</h1><p>The interval time of the current report (A). <br />The value 0 disables the report.</p> <ul><li>Adjustable from 5 - 2678400 in seconds</li> </ul><p>(Hexadecimal: 0x00 - 0x28DE80)</p>

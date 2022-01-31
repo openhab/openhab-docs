@@ -96,8 +96,7 @@ Configure the iniital output load state after re-power on<br /> <h1>Overview</h1
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_33_4" type="integer" groupName="configuration"
-                 min="0" max="2147483647">
+      <parameter name="config_33_4" type="integer" groupName="configuration">
         <label>33: RGB LED Color Test</label>
         <description><![CDATA[
 Set the RGB LED color value for testing<br /> <h1>Overview</h1><p>Set the RGB LED color value for testing (64-bit value).</p> <ul><li>Value1: Red value (0-255) (16-bits: 48-63)</li> <li>Value2: Green value (0-255) (16-bits: 32-47)</li> <li>Value3: Blue value (0-255) (16-bits: 16-31)</li> <li>Value4: Reserved (0-255) (16-bits: 0-15)</li> </ul><p>Example Values:</p> <ul><li>Red = -16777216 (0xFF000000)</li> <li>Green = 16711680 (0x00FF0000)</li> <li>Blue = 65280 (0x0000FF00)</li> </ul><p><strong>NOTE:<br /></strong>In OpenHAB and HABmin (or other Java software) To enter an unsigned integer value greater than 2147483647 you must convert the value to a signed 32-bit value.  </p>
@@ -134,8 +133,7 @@ Configure the LED mode.<br /> <h1>Overview</h1><p>Configure the state of LED whe
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_83_3" type="integer" groupName="configuration"
-                 min="-8388606" max="8388607">
+      <parameter name="config_83_3" type="integer" groupName="configuration">
         <label>83: LED Color for Night Light</label>
         <description><![CDATA[
 Configure the RGB value when it is in Night light mode<br /> <h1>Overview</h1><p>Configure the RGB value when it is in Night light mode. (48-bit value)</p> <ul><li>Value1: Red color value (0-255) (16-bits: 32-47)</li> <li>Value2: Green color value (0-255) (16-bits: 16-31)</li> <li>Value3: Blue color value (0-255) (16-bits: 0-15)</li> </ul><p>Example Values:</p> <ul><li>Blue = 255 (0x0000FF)</li> <li>Green = 65280 (0x00FF00)</li> <li>Red = 16711680 (0xFF0000)</li> <li>White = 1774619 (0xFFFFFF)</li> </ul>
@@ -144,8 +142,7 @@ Configure the RGB value when it is in Night light mode<br /> <h1>Overview</h1><p
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_84_3" type="integer" groupName="configuration"
-                 min="0" max="6579300">
+      <parameter name="config_84_3" type="integer" groupName="configuration">
         <label>84: LED Brightness</label>
         <description><![CDATA[
 Brightness level of RGB LED (0%-100%)<br /> <h1>Overview</h1><p>Configure the brightness level of RGB LED (0%-100%) when it is in Energy Mode/momentary indicate mode. (48-bit value)</p> <ul><li>Value1: green brightness value. (0-100) (16-bits: 32-47)</li> <li>Value2: yellow brightness value. (0-100) (16-bits: 16-31)</li> <li>Value3: red brightness value. (0-100) (16-bits: 0-15)</li> </ul><p>Default value is 50% brightness on all colors: 3289650 (0x323232)</p> <ul><li>Green=50 (0x320000)</li> <li>Yellow=50 (0x003200)</li> <li>Red=50 (0x000032)</li> </ul><p>Maximum value is 100% brightness on all colors: 6579300 (0x646464)</p> <ul><li>Green=100 (0x640000)</li> <li>Yellow=100 (0x006400)</li> <li>Red=100 (0x000064)</li> </ul>
@@ -167,8 +164,7 @@ Enables/disables parameter 91 and 92 (reporting minimum wattage)<br /> <h1>Overv
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_91_2" type="integer" groupName="configuration"
-                 min="-32767" max="32768">
+      <parameter name="config_91_2" type="integer" groupName="configuration">
         <label>91: Minimum Change to send Report (Watt)</label>
         <description><![CDATA[
 The minimum change in wattage value for a report to be sent<br /> <h1>Overview</h1><p>The value here represents minimum change in wattage (in terms of wattage) for a REPORT to be sent (Valid values 0- 60000). </p> <p>Default value: 25 (watts)</p>
@@ -177,8 +173,7 @@ The minimum change in wattage value for a report to be sent<br /> <h1>Overview</
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_92_1" type="integer" groupName="configuration"
-                 min="0" max="100">
+      <parameter name="config_92_1" type="integer" groupName="configuration">
         <label>92: Minimum Change to send Report (%)</label>
         <description><![CDATA[
 The minimum change in wattage percentage for a report to be sent<br /> <h1>Overview</h1><p>The value here represents minimum change in wattage percent (in terms of percentage) for a REPORT to be sent (Valid values 0-100).</p> <p>Default value: 5 (%) </p>
@@ -200,8 +195,7 @@ Reset the reports to send to each report group to default values.<br /> <h1>Over
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_101_4" type="integer" groupName="configuration"
-                 min="0" max="2147483647">
+      <parameter name="config_101_4" type="integer" groupName="configuration">
         <label>101: Reports for Group 1</label>
         <description><![CDATA[
 Define which reports to send in report group 1.<br /> <h1>Overview</h1><p>Which reports need to send in Report group 1 (See flags in user manual). </p> <p>See instruction manual for details on reporting configuration.</p>
@@ -210,8 +204,7 @@ Define which reports to send in report group 1.<br /> <h1>Overview</h1><p>Which 
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_102_4" type="integer" groupName="configuration"
-                 min="0" max="2147483647">
+      <parameter name="config_102_4" type="integer" groupName="configuration">
         <label>102: Reports for Group 2</label>
         <description><![CDATA[
 Define which reports to send in report group 2.<br /> <h1>Overview</h1><p>Which reports need to send in Report group 2 (See flags in user manual). </p> <p>See instruction manual for details on reporting configuration.</p>
@@ -220,8 +213,7 @@ Define which reports to send in report group 2.<br /> <h1>Overview</h1><p>Which 
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_103_4" type="integer" groupName="configuration"
-                 min="0" max="2147483647">
+      <parameter name="config_103_4" type="integer" groupName="configuration">
         <label>103: Reports for Group 3</label>
         <description><![CDATA[
 Define which reports to send in report group 3.<br /> <h1>Overview</h1><p>Which reports need to send in Report group 3 (See flags in user manual). </p> <p>See instruction manual for details on reporting configuration.</p>
@@ -243,8 +235,7 @@ Reset the reports time interval for each report group to default values.<br /> <
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_111_4" type="integer" groupName="configuration"
-                 min="0" max="2147483647">
+      <parameter name="config_111_4" type="integer" groupName="configuration">
         <label>111: Report Group 1 Time Interval</label>
         <description><![CDATA[
 The time interval of sending Report group .<br /> <h1>Overview</h1><p>The time interval of sending Report group 1 (Valid values 0x01-0x7FFFFFFF). </p>
@@ -253,8 +244,7 @@ The time interval of sending Report group .<br /> <h1>Overview</h1><p>The time i
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_112_4" type="integer" groupName="configuration"
-                 min="0" max="2147483647">
+      <parameter name="config_112_4" type="integer" groupName="configuration">
         <label>112: Report Group 2 Time Interval</label>
         <description><![CDATA[
 The time interval of sending Report group 2.<br /> <h1>Overview</h1><p>The time interval of sending Report group 2 (Valid values 0x01-0x7FFFFFFF). </p>
@@ -263,8 +253,7 @@ The time interval of sending Report group 2.<br /> <h1>Overview</h1><p>The time 
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_113_4" type="integer" groupName="configuration"
-                 min="0" max="2147483647">
+      <parameter name="config_113_4" type="integer" groupName="configuration">
         <label>113: Report Group 3 Time Interval</label>
         <description><![CDATA[
 The time interval of sending Report group 3.<br /> <h1>Overview</h1><p>The time interval of sending Report group 3 (Valid values 0x01-0x7FFFFFFF). </p>
@@ -299,16 +288,14 @@ Enable/disable Configuration Lock<br /> <h1>Overview</h1><p>Enable/disable Confi
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_254_2" type="integer" groupName="configuration"
-                 min="-32767" max="32768">
+      <parameter name="config_254_2" type="integer" groupName="configuration">
         <label>254: Device Tag</label>
         <description>Device Tag</description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_255_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_255_1" type="integer" groupName="configuration">
         <label>255: Reset to Factory Default Settings</label>
         <description>Reset to Factory Default Settings</description>
         <default>0</default>

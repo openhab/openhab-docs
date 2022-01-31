@@ -65,32 +65,28 @@ Outdoor Flood Light Z-Wave Plus<br /> <h1>Overview</h1><p>Small yet powerful, th
       </parameter-group>
 
       <!-- PARAMETER DEFINITIONS -->
-      <parameter name="config_1_2" type="integer" groupName="configuration"
-                 min="8" max="720">
+      <parameter name="config_1_2" type="integer" groupName="configuration">
         <label>1: PIR Trigger Off period</label>
         <description>PIR Trigger Off period</description>
         <default>15</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_2_2" type="integer" groupName="configuration"
-                 min="30" max="200">
+      <parameter name="config_2_2" type="integer" groupName="configuration">
         <label>2: Lux sensor threshold</label>
         <description>Lux sensor threshold</description>
         <default>50</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_3_2" type="integer" groupName="configuration"
-                 min="0" max="1440">
+      <parameter name="config_3_2" type="integer" groupName="configuration">
         <label>3: Lux auto report</label>
         <description>Lux auto report</description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_4_2" type="integer" groupName="configuration" readOnly="true"
-                 min="-32767" max="32768">
+      <parameter name="config_4_2" type="integer" groupName="configuration" readOnly="true">
         <label>4: Reads back the lux level measured</label>
         <description>Reads back the lux level measured</description>
         <default>0</default>

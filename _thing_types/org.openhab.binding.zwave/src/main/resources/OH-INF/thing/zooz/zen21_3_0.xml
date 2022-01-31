@@ -92,8 +92,7 @@ Enable / Disable Auto Turn-off<br /> <h1>Overview</h1><p>Default disabled</p>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_4_4" type="integer" groupName="configuration"
-                 min="1" max="65535">
+      <parameter name="config_4_4" type="integer" groupName="configuration">
         <label>4: Auto-Turn-off time</label>
         <description><![CDATA[
 Auto-Turn-off time<br /> <h1>Overview</h1><p>Default 60 minutes</p>
@@ -115,8 +114,7 @@ Auto Turn-on enable/disable<br /> <h1>Overview</h1><p>Default timer disabled</p>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_6_4" type="integer" groupName="configuration"
-                 min="1" max="65535">
+      <parameter name="config_6_4" type="integer" groupName="configuration">
         <label>6: Auto Turn-on timer</label>
         <description><![CDATA[
 Auto Turn-on timer<br /> <h1>Overview</h1><p>Default 60 minutes</p>

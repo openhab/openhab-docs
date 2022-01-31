@@ -50,8 +50,7 @@ In-wall Switch<br /> <h1>Overview</h1><p>In-wall switch 1-relay</p> <br /> <h2>I
       </parameter-group>
 
       <!-- PARAMETER DEFINITIONS -->
-      <parameter name="config_1_1" type="integer" groupName="configuration"
-                 min="1" max="2">
+      <parameter name="config_1_1" type="integer" groupName="configuration">
         <label>1: Mode</label>
         <description><![CDATA[
 Mode<br /> <h1>Overview</h1><p>Configuration Value:</p> <p>"1" -To Control Light with 1 Wall Switch &amp; to Control Light With 2 WallSwitches.</p> <p>"2"-To Control Light with 1 Wall Switch That Has Light Indicator (factory default).</p>
@@ -60,8 +59,7 @@ Mode<br /> <h1>Overview</h1><p>Configuration Value:</p> <p>"1" -To Control Light
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_2_1" type="integer" groupName="configuration"
-                 min="1" max="2">
+      <parameter name="config_2_1" type="integer" groupName="configuration">
         <label>2: Switch Type</label>
         <description><![CDATA[
 Switch Type<br /> <h1>Overview</h1><p>Configuration Value:</p> <p>"1" –With common on/off type switch button used(factory default).</p> <p>"2"–With momentary type switch button used.</p>

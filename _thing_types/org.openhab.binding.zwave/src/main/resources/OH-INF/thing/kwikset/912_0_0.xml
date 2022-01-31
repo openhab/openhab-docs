@@ -82,8 +82,7 @@ Touch Pad Keyed Entry Lever<br /> <h1>Overview</h1><p>The SmartCode touchpad sma
       </parameter-group>
 
       <!-- PARAMETER DEFINITIONS -->
-      <parameter name="config_31_1" type="integer" groupName="configuration"
-                 min="0" max="15">
+      <parameter name="config_31_1" type="integer" groupName="configuration">
         <label>31: Dipswitch Settings</label>
         <description><![CDATA[
 Dipswitch Settings<br /> <h1>Overview</h1><p>Configuration parameter is a one byte read only bit mask that returns the state of the user accessible dipswitches on the rear panel of the door lock. This is a read only parameter and cannot be used to set dipswitch settings.</p> <p>The following table shows the definition for the bits being used in the returned value: </p> <table><tr><td>Bit</td> <td>Description</td> </tr><tr><td>0 (0x01)</td> <td>Lock status LED (1:enabled)</td> </tr><tr><td>1 (0x02)</td> <td>Autolock setting (1:enabled)</td> </tr><tr><td>2 (0x04)</td> <td>Buzzer (1:enabled)</td> </tr><tr><td>3 (0x08)</td> <td> <p>Handing Invert (1:enabled)</p> </td> </tr></table><p><strong>Possible Values:</strong></p> <table><tr><td>0</td> <td>All features disabled</td> </tr><tr><td>1</td> <td>Lock status LED enabled</td> </tr><tr><td>2</td> <td>Autolock Enabled</td> </tr><tr><td>4</td> <td>Internal buzzer enabled</td> </tr><tr><td>8</td> <td>Handling invert enabled</td> </tr><tr><td>3</td> <td>Autolock &amp; Lock status LED enabled</td> </tr><tr><td>5</td> <td>Internal buzzer and lock status LED enabled</td> </tr><tr><td>7</td> <td>Autolock, Internal buzzer, and lock status LED enabled</td> </tr><tr><td>15</td> <td>All Features enabled</td> </tr></table>
@@ -92,8 +91,7 @@ Dipswitch Settings<br /> <h1>Overview</h1><p>Configuration parameter is a one by
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_33_4" type="integer" groupName="configuration"
-                 min="32" max="126">
+      <parameter name="config_33_4" type="integer" groupName="configuration">
         <label>33: first four most significant bytes of the SKU</label>
         <description><![CDATA[
 SKU (length = 8 bytes)<br /> <h1>Overview</h1><h1>Configuration Parameter 33 and 34</h1> <p>The Configuration Parameter 33 and 34 are used to set the SKU part numbers to the Kwikset locks. Configuration parameter 33 is the first four most significant bytes (MSB). Configuration parameter 34 is the least four significant bytes (LSB). Below describes how Configuration Parameter 33 and 34 are being used.</p> <ul><li>For a ZW Configuration Set, the DLM will first do a GET_SKU_ID to retrieve the full SKU from the lock, and the lock will respond with all 8 bytes. (If it’s not yet set, the DLM will consider that as all 0x30s.) The DLM changes only the appropriate 4 bytes in its local copy of the SKU, and it then sends the full 8 bytes down to the lock in a SET_SKU_ID.</li> <li>For a ZW Configuration Get, the DLM will do a GET_SKU_ID down to the lock, to which the lock will respond with all 8 bytes. The DLM will return the requested 4 bytes via ZW. If the SKU is not set, it will return all 0x30s (ASCII ‘0’s).</li> </ul>
@@ -103,8 +101,7 @@ SKU (length = 8 bytes)<br /> <h1>Overview</h1><h1>Configuration Parameter 33 and
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_34_4" type="integer" groupName="configuration"
-                 min="32" max="126">
+      <parameter name="config_34_4" type="integer" groupName="configuration">
         <label>34: four least significant bytes of the SKU.</label>
         <description><![CDATA[
 SKU (length = 8 bytes)<br /> <h1>Overview</h1><h1>Configuration Parameter 33 and 34</h1> <p>The Configuration Parameter 33 and 34 are used to set the SKU part numbers to the Kwikset locks. Configuration parameter 33 is the first four most significant bytes (MSB). Configuration parameter 34 is the least four significant bytes (LSB). Below describes how Configuration Parameter 33 and 34 are being used.</p> <ul><li>For a ZW Configuration Set, the DLM will first do a GET_SKU_ID to retrieve the full SKU from the lock, and the loc will respond with all 8 bytes. (If it’s not yet set, the DLM will consider that as all 0x30s.) The DLM changes only the appropriate 4 bytes in its local copy of the SKU, and it then sends the full 8 bytes down to the lock in a SET_SKU_ID.</li> <li>For a ZW Configuration Get, the DLM will do a GET_SKU_ID down to the lock, to which the lock will respond with all 8 bytes. The DLM will return the requested 4 bytes via ZW. If the SKU is not set, it will return all 0x30s (ASCII ‘0’s).</li> </ul>
@@ -114,8 +111,7 @@ SKU (length = 8 bytes)<br /> <h1>Overview</h1><h1>Configuration Parameter 33 and
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_35_2" type="integer" groupName="configuration"
-                 min="-32767" max="32768">
+      <parameter name="config_35_2" type="integer" groupName="configuration">
         <label>35: Lock Type</label>
         <description><![CDATA[
 Report the Unique ID of the lock type<br /> <h1>Overview</h1><p>The configuration Parameter 35 is used as read-only to report the Unique ID of the lock type.</p> <p>Released Board ID Unique ID</p> <p>910 Z-Wave (Legacy, FW 3.4) 0x00 0x00</p> <p>912 Z-Wave (Legacy, FW 3.2) 0x00 0x00</p> <p>910 Z-Wave 0x02 0x36</p> <p>912 Z-Wave 0x03 0x36</p> <p>914 Z-Wave 0x04 0x36</p> <p>916 Z-Wave 0x06 0x42</p>

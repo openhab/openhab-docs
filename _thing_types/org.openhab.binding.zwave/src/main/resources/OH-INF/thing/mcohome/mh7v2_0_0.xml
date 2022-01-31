@@ -83,15 +83,13 @@ Water / Electrical Heating Thermostat<br /> <h1>Overview</h1><p>MCOHome Water / 
       </parameter-group>
 
       <!-- PARAMETER DEFINITIONS -->
-      <parameter name="config_1_1" type="integer" groupName="configuration"
-                 min="0" max="2">
+      <parameter name="config_1_1" type="integer" groupName="configuration">
         <label>1: Temperature Units</label>
         <description>Upload temperature format automatically</description>
         <default>2</default>
       </parameter>
 
-      <parameter name="config_2_1" type="integer" groupName="configuration"
-                 min="0" max="3">
+      <parameter name="config_2_1" type="integer" groupName="configuration">
         <label>2: Temperature and Humidity Upload</label>
         <description>Temperature and Humidity Upload</description>
         <default>3</default>
@@ -103,8 +101,7 @@ Water / Electrical Heating Thermostat<br /> <h1>Overview</h1><p>MCOHome Water / 
         </options>
       </parameter>
 
-      <parameter name="config_3_2" type="integer" groupName="configuration"
-                 min="3" max="1000">
+      <parameter name="config_3_2" type="integer" groupName="configuration">
         <label>3: Upload Temperature Difference</label>
         <description><![CDATA[
 Upload Temperature Difference<br /> <h1>Overview</h1><p>Base on 0.1℃unit, </p><p>5 by default, 5*0.1℃=0.5℃,</p>
@@ -113,8 +110,7 @@ Upload Temperature Difference<br /> <h1>Overview</h1><p>Base on 0.1℃unit, </p
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_4_2" type="integer" groupName="configuration"
-                 min="-32767" max="32768">
+      <parameter name="config_4_2" type="integer" groupName="configuration">
         <label>4: Upload Time Interval</label>
         <description><![CDATA[
 Upload Time Interval<br /> <h1>Overview</h1><p>Base on 1s unit, </p><p>it suggest to be set above 30s (default is 30 s)</p>
@@ -123,8 +119,7 @@ Upload Time Interval<br /> <h1>Overview</h1><p>Base on 1s unit, </p><p>it sugge
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_5_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_5_1" type="integer" groupName="configuration">
         <label>5: Upload humidity Difference</label>
         <description><![CDATA[
 Upload humidity Difference<br /> <h1>Overview</h1><p>When the detection humidity value differ with the last percentage value, uploading activated</p>

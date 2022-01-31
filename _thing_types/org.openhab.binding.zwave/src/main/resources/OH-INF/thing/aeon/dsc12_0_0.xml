@@ -65,8 +65,7 @@ Micro Smart Energy Switch<br /> <h1>Overview</h1><p>The Aeon Labs Micro SES is a
       </parameter-group>
 
       <!-- PARAMETER DEFINITIONS -->
-      <parameter name="config_2_2" type="integer" groupName="configuration"
-                 min="-32767" max="32768">
+      <parameter name="config_2_2" type="integer" groupName="configuration">
         <label>2: Make Micro Smart Switch Blink</label>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
@@ -106,22 +105,19 @@ Automated sending of a Report triggered by minimal change of value.<br /> <h1>Ov
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_91_2" type="integer" groupName="configuration"
-                 min="-32767" max="32768">
+      <parameter name="config_91_2" type="integer" groupName="configuration">
         <label>91: Minimum Change to send Report (Watt)</label>
         <default>25</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_92_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_92_1" type="integer" groupName="configuration">
         <label>92: Minimum Change to send Report (%)</label>
         <default>5</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_101_4" type="integer" groupName="configuration"
-                 min="0" max="65535">
+      <parameter name="config_101_4" type="integer" groupName="configuration">
         <label>101: Automatic reports for group 1</label>
         <description><![CDATA[
 Which reports need to send automatically in timing intervals for group 1<br /> <h1>Overview</h1><p>Which reports need to send automatically in timing intervals for group 1</p>
@@ -130,8 +126,7 @@ Which reports need to send automatically in timing intervals for group 1<br /> <
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_102_4" type="integer" groupName="configuration"
-                 min="0" max="65535">
+      <parameter name="config_102_4" type="integer" groupName="configuration">
         <label>102: Automatic reports for group 2</label>
         <description><![CDATA[
 Which reports need to send automatically in timing intervals for group 2<br /> <h1>Overview</h1><p>Which reports need to send automatically in timing intervals for group 2</p>
@@ -140,8 +135,7 @@ Which reports need to send automatically in timing intervals for group 2<br /> <
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_103_4" type="integer" groupName="configuration"
-                 min="0" max="65535">
+      <parameter name="config_103_4" type="integer" groupName="configuration">
         <label>103: Automatic reports for group 3</label>
         <description><![CDATA[
 Which reports need to send automatically in timing intervals for group 3<br /> <h1>Overview</h1><p>Which reports need to send automatically in timing intervals for group 3</p>
@@ -150,22 +144,19 @@ Which reports need to send automatically in timing intervals for group 3<br /> <
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_111_4" type="integer" groupName="configuration"
-                 min="1" max="2678400">
+      <parameter name="config_111_4" type="integer" groupName="configuration">
         <label>111: Interval to send out reports of group 1</label>
         <default>3</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_112_4" type="integer" groupName="configuration"
-                 min="1" max="2678400">
+      <parameter name="config_112_4" type="integer" groupName="configuration">
         <label>112: Interval to send out reports of group 2</label>
         <default>600</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_113_4" type="integer" groupName="configuration"
-                 min="1" max="2678400">
+      <parameter name="config_113_4" type="integer" groupName="configuration">
         <label>113: Interval to send out reports of group 3</label>
         <default>600</default>
         <limitToOptions>false</limitToOptions>

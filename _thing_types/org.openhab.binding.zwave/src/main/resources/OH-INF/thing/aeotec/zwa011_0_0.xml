@@ -58,8 +58,7 @@ Door/Window Sensor 7<br /> <h1>Overview</h1><p>Aeotec Door / Window Sensor 7 was
       </parameter-group>
 
       <!-- PARAMETER DEFINITIONS -->
-      <parameter name="config_3_1" type="integer" groupName="configuration"
-                 min="0" max="1">
+      <parameter name="config_3_1" type="integer" groupName="configuration">
         <label>3: Door/Windows State</label>
         <description><![CDATA[
 Sensor state when the magnet is close to the sensor.<br /> <h1>Overview</h1><p><br /></p>
@@ -86,8 +85,7 @@ Defines when the LED will indicate events.<br /> <h1>Overview</h1><p>Disabling a
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_5_1_wo" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_5_1_wo" type="integer" groupName="configuration">
         <label>5: Range test</label>
         <description><![CDATA[
 Range test<br /> <h1>Overview</h1><p>Z-Wave range test with double click of a Tamper Switch 2.</p>

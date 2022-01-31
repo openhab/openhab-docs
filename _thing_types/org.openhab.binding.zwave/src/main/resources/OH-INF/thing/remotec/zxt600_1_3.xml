@@ -72,8 +72,7 @@ AC Master<br /> <h1>Overview</h1><p>ZXT-600 AC Master is a Z-Wave plus certified
       </parameter-group>
 
       <!-- PARAMETER DEFINITIONS -->
-      <parameter name="config_25_1" type="integer" groupName="configuration"
-                 min="0" max="32">
+      <parameter name="config_25_1" type="integer" groupName="configuration">
         <label>25: Learn IR Code</label>
         <description>Learn IR Code</description>
         <default>32</default>
@@ -81,16 +80,14 @@ AC Master<br /> <h1>Overview</h1><p>ZXT-600 AC Master is a Z-Wave plus certified
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_26_1" type="integer" groupName="configuration" readOnly="true"
-                 min="0" max="4">
+      <parameter name="config_26_1" type="integer" groupName="configuration" readOnly="true">
         <label>26: Check IR Code Learning Status</label>
         <description>Check IR Code Learning Status</description>
         <default>4</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_27_2" type="integer" groupName="configuration"
-                 min="-32767" max="32768">
+      <parameter name="config_27_2" type="integer" groupName="configuration">
         <label>27: Set IR Code Number from built-in code library</label>
         <description>Set IR Code Number from built-in code library</description>
         <default>1</default>
@@ -98,16 +95,14 @@ AC Master<br /> <h1>Overview</h1><p>ZXT-600 AC Master is a Z-Wave plus certified
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_30_1" type="integer" groupName="configuration"
-                 min="0" max="8">
+      <parameter name="config_30_1" type="integer" groupName="configuration">
         <label>30: Auto Report condi Trig by Room Temp change</label>
         <description>Set Auto Report condition Trigger by Room Temperature change</description>
         <default>8</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_32_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_32_1" type="integer" groupName="configuration">
         <label>32: Set built-in IR Emitter Control</label>
         <description><![CDATA[
 Set built-in IR Emitter Control<br /> <h1>Overview</h1><p>0 - disable</p> <p>255 enable (default)</p>
@@ -117,8 +112,7 @@ Set built-in IR Emitter Control<br /> <h1>Overview</h1><p>0 - disable</p> <p>255
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_33_1" type="integer" groupName="configuration"
-                 min="0" max="1">
+      <parameter name="config_33_1" type="integer" groupName="configuration">
         <label>33: Control AC SWING function</label>
         <description><![CDATA[
 Control AC &amp;amp;quot;SWING&amp;amp;quot; function<br /> <h1>Overview</h1><p>0 - swing off</p> <p>1 - swing on (default)</p>
@@ -127,16 +121,14 @@ Control AC &amp;amp;quot;SWING&amp;amp;quot; function<br /> <h1>Overview</h1><p>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_34_1" type="integer" groupName="configuration"
-                 min="1" max="8">
+      <parameter name="config_34_1" type="integer" groupName="configuration">
         <label>34: Set Auto Report Cond by Time Interv</label>
         <description>Set Auto Report Condition by Time Interval</description>
         <default>8</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_37_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_37_1" type="integer" groupName="configuration">
         <label>37: Calibrate Temperature reading</label>
         <description><![CDATA[
 Calibrate Temperature reading<br /> <h1>Overview</h1><p>0 to 5 - positive value</p> <p>251 to 255 - negatice value</p>

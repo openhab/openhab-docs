@@ -58,8 +58,7 @@ Door/Window Contact<br /> <h1>Overview</h1><p>Ring Alarm Contact Sensor: Expand
       </parameter-group>
 
       <!-- PARAMETER DEFINITIONS -->
-      <parameter name="config_1_2" type="integer" groupName="configuration"
-                 min="255" max="4200">
+      <parameter name="config_1_2" type="integer" groupName="configuration">
         <label>1: Wait time</label>
         <description><![CDATA[
 Time between sending unsolicited battery reports<br /> <h1>Overview</h1><p>255 to 4200 seconds <strong>in 255 second increments</strong> that the sensor should wait between sending unsolicited battery reports.  <br />The default configuration value for parameter 1 is defaulted to 4200 seconds on exclusion.</p>

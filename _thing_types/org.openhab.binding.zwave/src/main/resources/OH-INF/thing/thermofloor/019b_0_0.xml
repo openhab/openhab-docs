@@ -66,8 +66,7 @@ Knob Smart Dimmer<br /> <h1>Overview</h1><p>Z-Wave rotary dimmer for different l
       </parameter-group>
 
       <!-- PARAMETER DEFINITIONS -->
-      <parameter name="config_1_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_1_1" type="integer" groupName="configuration">
         <label>1: Connected Load</label>
         <description><![CDATA[
 Defines the value of connected load<br /> <h1>Overview</h1><table><tr><td>Value</td> <td>Description</td> </tr><tr><td>0</td> <td>Not configured (Default)</td> </tr><tr><td>1-200</td> <td>1-200 Watts connected load</td> </tr></table>
@@ -76,8 +75,7 @@ Defines the value of connected load<br /> <h1>Overview</h1><table><tr><td>Value<
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_2_1" type="integer" groupName="configuration"
-                 min="1" max="98">
+      <parameter name="config_2_1" type="integer" groupName="configuration">
         <label>2: Minimum Dim level</label>
         <description><![CDATA[
 Defines the lowest dimming level<br /> <h1>Overview</h1><p>This parameter defines the lowest dimming level of the dimmer.</p> <p>The value must be lower than parameter 3 ”Maximum Dim Level”. </p> <table><tr><td>Value</td> <td>Description</td> </tr><tr><td>1-98</td> <td>1% - 98% Default is 20 (20%)</td> </tr></table>
@@ -86,8 +84,7 @@ Defines the lowest dimming level<br /> <h1>Overview</h1><p>This parameter define
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_3_1" type="integer" groupName="configuration"
-                 min="2" max="99">
+      <parameter name="config_3_1" type="integer" groupName="configuration">
         <label>3: Maximum Dim level</label>
         <description><![CDATA[
 Defines the highest dimming level of the dimmer<br /> <h1>Overview</h1><p>This parameter defines the highest dimming level of the dimmer.</p> <p>The value must be higher than parameter 2 ”Minimum Dim Level”.</p>
@@ -96,8 +93,7 @@ Defines the highest dimming level of the dimmer<br /> <h1>Overview</h1><p>This p
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_4_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_4_1" type="integer" groupName="configuration">
         <label>4: Total steps</label>
         <description><![CDATA[
 How many steps it should take to dim from min to max<br /> <h1>Overview</h1><p>This parameter defines how many steps it should take to dim from minimum to maximum dim level (One round = 20 steps)</p> <p>Default is 15 (3/4 round)</p>
@@ -128,8 +124,7 @@ How many steps it should take to dim from min to max<br /> <h1>Overview</h1><p>T
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_7_1" type="integer" groupName="configuration"
-                 min="0" max="99">
+      <parameter name="config_7_1" type="integer" groupName="configuration">
         <label>7: Switch ON level</label>
         <description><![CDATA[
 Defines the dim level when restored from OFF state by push button<br /> <h1>Overview</h1><p>This parameter defines the dimming level when restored from OFF state by push button</p> <table><tr><td>Value</td> <td>Description</td> </tr><tr><td>0</td> <td>Restores last dim level (Default)</td> </tr><tr><td>1-99</td> <td>1% - 99%</td> </tr></table>
@@ -138,8 +133,7 @@ Defines the dim level when restored from OFF state by push button<br /> <h1>Over
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_8_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_8_1" type="integer" groupName="configuration">
         <label>8: Dimming Duration</label>
         <description><![CDATA[
 Defines how long it takes to dim to desired level.<br /> <h1>Overview</h1><p>This parameter defines how long it takes to dim to desired level.</p> <p>Note! Only Multilevel Switch Command Class is affected by this parameter.</p> <table><tr><td>Value</td> <td>Description</td> </tr><tr><td>0</td> <td>Disabled</td> </tr><tr><td>1-127</td> <td>Duration in seconds (1 - 127 seconds. Default is 1)</td> </tr><tr><td>128-255</td> <td>Duration in minutes (1 - 127 minutes)</td> </tr></table>
@@ -148,8 +142,7 @@ Defines how long it takes to dim to desired level.<br /> <h1>Overview</h1><p>Thi
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_9_2" type="integer" groupName="configuration"
-                 min="0" max="32767">
+      <parameter name="config_9_2" type="integer" groupName="configuration">
         <label>9: Meter Report Interval</label>
         <description><![CDATA[
 Defines report interval for Power Metering<br /> <h1>Overview</h1><table><tr><td>Value</td> <td>Description</td> </tr><tr><td>0</td> <td>Disabled</td> </tr><tr><td>30-32767</td> <td>Duration in seconds (30 - 32 767. Default is 60)</td> </tr></table>
@@ -158,8 +151,7 @@ Defines report interval for Power Metering<br /> <h1>Overview</h1><table><tr><td
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_10_1" type="integer" groupName="configuration"
-                 min="1" max="99">
+      <parameter name="config_10_1" type="integer" groupName="configuration">
         <label>10: Power restore level</label>
         <description>Defines initial dimming level after power loss.</description>
         <default>50</default>

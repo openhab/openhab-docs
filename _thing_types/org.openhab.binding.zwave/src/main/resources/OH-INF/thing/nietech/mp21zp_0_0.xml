@@ -77,8 +77,7 @@ Mini Plug with Power Meter<br /> <h1>Overview</h1><p><b>Z-Wave Plus Outlet Mini 
       </parameter-group>
 
       <!-- PARAMETER DEFINITIONS -->
-      <parameter name="config_1_1_00000001" type="integer" groupName="configuration"
-                 min="0" max="3">
+      <parameter name="config_1_1_00000001" type="integer" groupName="configuration">
         <label>1: LED Indicator</label>
         <description><![CDATA[
 LED Indicator Setup<br /> <h1>Overview</h1><p>This parameter can access you to choose the led indicator to be on when the plug(light) is on/off, or LED indicator remains on/off all times<br /></p>
@@ -116,8 +115,7 @@ Auto Turn-On Timer Setup<br /> <h1>Overview</h1><p>This parameter can access you
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_4_1_00000001" type="integer" groupName="configuration"
-                 min="0" max="2">
+      <parameter name="config_4_1_00000001" type="integer" groupName="configuration">
         <label>4: Restores state after power failure</label>
         <description><![CDATA[
 Restores state after power failure Setup<br /> <h1>Overview</h1><p>This parameter can access you to set the switch to be on/off after power failure.</p>
@@ -130,8 +128,7 @@ Restores state after power failure Setup<br /> <h1>Overview</h1><p>This paramete
         </options>
       </parameter>
 
-      <parameter name="config_5_1_00000001" type="integer" groupName="configuration"
-                 min="1" max="5">
+      <parameter name="config_5_1_00000001" type="integer" groupName="configuration">
         <label>5: Power Wattage(W) Report</label>
         <description><![CDATA[
 Power Wattage(W) Report Setup<br /> <h1>Overview</h1><p>This parameter determines the minimum change in power wattage(W) that will result in sending new power report to the main controller.</p>
@@ -140,8 +137,7 @@ Power Wattage(W) Report Setup<br /> <h1>Overview</h1><p>This parameter determine
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_6_4_00000001" type="integer" groupName="configuration"
-                 min="1" max="65535">
+      <parameter name="config_6_4_00000001" type="integer" groupName="configuration">
         <label>6: Time Report</label>
         <description><![CDATA[
 Time Report Setup<br /> <h1>Overview</h1><p>Electricity (A) Report Frequency (Timer)<br /></p>
@@ -150,8 +146,7 @@ Time Report Setup<br /> <h1>Overview</h1><p>Electricity (A) Report Frequency (Ti
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_7_1_00000001" type="integer" groupName="configuration"
-                 min="1" max="10">
+      <parameter name="config_7_1_00000001" type="integer" groupName="configuration">
         <label>7: Current(A) Report</label>
         <description><![CDATA[
 Current(A) Report Setup<br /> <h1>Overview</h1><p>This parameter determines the minimum change in Current(A) that will result in sending new power report to the main controller</p>
@@ -160,8 +155,7 @@ Current(A) Report Setup<br /> <h1>Overview</h1><p>This parameter determines the 
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_8_1_00000001" type="integer" groupName="configuration"
-                 min="1" max="10">
+      <parameter name="config_8_1_00000001" type="integer" groupName="configuration">
         <label>8: Energy(KWH) Report</label>
         <description><![CDATA[
 Energy(KWH) Report Setup<br /> <h1>Overview</h1><p>This parameter determines the minimum change in consumed energy that will result in sending new energy report to the main controller</p>
@@ -170,8 +164,7 @@ Energy(KWH) Report Setup<br /> <h1>Overview</h1><p>This parameter determines the
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_9_4_00000001" type="integer" groupName="configuration"
-                 min="1" max="65535">
+      <parameter name="config_9_4_00000001" type="integer" groupName="configuration">
         <label>9: Count Down Configuration</label>
         <description><![CDATA[
 Endpoint1 Count Down Configuration (Turn off the output by time）<br /> <h1>Overview</h1><p>Endpoint1 Count Down Configuration (Turn off the output by time）<br /></p>
@@ -180,8 +173,7 @@ Endpoint1 Count Down Configuration (Turn off the output by time）<br /> <h1>Ove
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_10_1_00000001" type="integer" groupName="configuration"
-                 min="0" max="1">
+      <parameter name="config_10_1_00000001" type="integer" groupName="configuration">
         <label>10: Auto Turn-ON Timer</label>
         <description><![CDATA[
 Endpoint1 Enable Auto Turn-ON Timer<br /> <h1>Overview</h1><p>Endpoint1 Enable Auto Turn-ON Timer<br /></p>
@@ -189,8 +181,7 @@ Endpoint1 Enable Auto Turn-ON Timer<br /> <h1>Overview</h1><p>Endpoint1 Enable A
         <default>0</default>
       </parameter>
 
-      <parameter name="config_11_4_00000001" type="integer" groupName="configuration"
-                 min="1" max="65535">
+      <parameter name="config_11_4_00000001" type="integer" groupName="configuration">
         <label>11: Count Down Configuration</label>
         <description><![CDATA[
 Endpoint1 Count Down Configuration(Turn on the output by time）<br /> <h1>Overview</h1><p>Endpoint1 Count Down Configuration(Turn on the output by time）<br /></p>
@@ -199,8 +190,7 @@ Endpoint1 Count Down Configuration(Turn on the output by time）<br /> <h1>Overv
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_12_1_00000001" type="integer" groupName="configuration"
-                 min="0" max="1">
+      <parameter name="config_12_1_00000001" type="integer" groupName="configuration">
         <label>12: E2 Auto Turn-OFF Timer</label>
         <description><![CDATA[
 Endpoint2 Enable Auto Turn-OFF Timer<br /> <h1>Overview</h1><p>Endpoint2 Enable Auto Turn-OFF Timer<br /></p>
@@ -208,8 +198,7 @@ Endpoint2 Enable Auto Turn-OFF Timer<br /> <h1>Overview</h1><p>Endpoint2 Enable 
         <default>0</default>
       </parameter>
 
-      <parameter name="config_13_4_00000001" type="integer" groupName="configuration"
-                 min="1" max="65535">
+      <parameter name="config_13_4_00000001" type="integer" groupName="configuration">
         <label>13: E2 Count Down Configuration</label>
         <description><![CDATA[
 Endpoint2 Count Down Configuration(Turn off the output by time）<br /> <h1>Overview</h1><p>Endpoint2 Count Down Configuration(Turn off the output by time）<br /></p>
@@ -218,8 +207,7 @@ Endpoint2 Count Down Configuration(Turn off the output by time）<br /> <h1>Over
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_14_1_00000001" type="integer" groupName="configuration"
-                 min="0" max="1">
+      <parameter name="config_14_1_00000001" type="integer" groupName="configuration">
         <label>14: E2 Auto Turn-ON Timer</label>
         <description><![CDATA[
 Endpoint2 Enable Auto Turn-ON Timer<br /> <h1>Overview</h1><p>Endpoint2 Enable Auto Turn-ON Timer<br /></p>
@@ -228,8 +216,7 @@ Endpoint2 Enable Auto Turn-ON Timer<br /> <h1>Overview</h1><p>Endpoint2 Enable A
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_15_4" type="integer" groupName="configuration"
-                 min="1" max="65535">
+      <parameter name="config_15_4" type="integer" groupName="configuration">
         <label>15: E2 Count Down Configuration</label>
         <description><![CDATA[
 Endpoint2 Count Down Configuration(Turn on the output by time）<br /> <h1>Overview</h1><p>Endpoint2 Count Down Configuration(Turn on the output by time）<br /></p>
@@ -238,8 +225,7 @@ Endpoint2 Count Down Configuration(Turn on the output by time）<br /> <h1>Overv
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_16_1_00000001" type="integer" groupName="configuration"
-                 min="0" max="1">
+      <parameter name="config_16_1_00000001" type="integer" groupName="configuration">
         <label>16: Manual Control</label>
         <description><![CDATA[
 Enable/Disable Manual Control<br /> <h1>Overview</h1><p>Enable/Disable Manual Control<br /></p>
@@ -248,8 +234,7 @@ Enable/Disable Manual Control<br /> <h1>Overview</h1><p>Enable/Disable Manual Co
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_17_1_00000001" type="integer" groupName="configuration"
-                 min="0" max="3">
+      <parameter name="config_17_1_00000001" type="integer" groupName="configuration">
         <label>17: Status LED Configuration</label>
         <description><![CDATA[
 Status LED Configuration<br /> <h1>Overview</h1><p>Status LED Configuration<br /></p>

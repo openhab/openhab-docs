@@ -167,8 +167,7 @@ Dimmer 2<br /> <h1>Overview</h1><p>FIBARO Dimmer 2 remotely controlled light dim
       </parameter-group>
 
       <!-- PARAMETER DEFINITIONS -->
-      <parameter name="config_1_1" type="integer" groupName="configuration"
-                 min="1" max="98">
+      <parameter name="config_1_1" type="integer" groupName="configuration">
         <label>1: Minimum brightness level</label>
         <description><![CDATA[
 Set automatically during the calibration process<br /> <h1>Overview</h1><p>The parameter is set automatically during the calibration process. The parameter can be changed manually after the calibration.</p>
@@ -177,8 +176,7 @@ Set automatically during the calibration process<br /> <h1>Overview</h1><p>The p
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_2_1" type="integer" groupName="configuration"
-                 min="1" max="99">
+      <parameter name="config_2_1" type="integer" groupName="configuration">
         <label>2: Maximum brightness level</label>
         <description><![CDATA[
 Set automatically during the calibration process.<br /> <h1>Overview</h1><p>The parameter is set automatically during the calibration process. The parameter can be changed manually after the calibration.</p>
@@ -187,8 +185,7 @@ Set automatically during the calibration process.<br /> <h1>Overview</h1><p>The 
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_3_1" type="integer" groupName="configuration"
-                 min="1" max="99">
+      <parameter name="config_3_1" type="integer" groupName="configuration">
         <label>3: Incandescence level of dimmable fluorescent lamps</label>
         <description><![CDATA[
 Dimmer will set to this value after first switch on.<br /> <h1>Overview</h1><p>Virtual value set as a percentage level between parameters MIN (1%) and MAX. (99%). The Dimmer will set to this value after first switch on. It is required for warming up and switching dimmable compact fluorescent lamps and certain types of light sources.</p>
@@ -197,8 +194,7 @@ Dimmer will set to this value after first switch on.<br /> <h1>Overview</h1><p>V
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_4_2" type="integer" groupName="configuration"
-                 min="0" max="255">
+      <parameter name="config_4_2" type="integer" groupName="configuration">
         <label>4: Incandescence time of dimmable fluorescent lamps</label>
         <description><![CDATA[
 Time for switching fluorescent lamps and certain light sources.<br /> <h1>Overview</h1><p>This parameter determines the time required for switching compact fluorescent lamps and certain types of light sources. Setting this parameter to 0 will disable the incandescence functionality. Available settings: 0-255 (0s - 25,5s)</p>
@@ -207,8 +203,7 @@ Time for switching fluorescent lamps and certain light sources.<br /> <h1>Overvi
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_5_1" type="integer" groupName="configuration"
-                 min="1" max="99">
+      <parameter name="config_5_1" type="integer" groupName="configuration">
         <label>5: Dimming Step at Automatic Control</label>
         <description><![CDATA[
 Percentage of a dimming step at automatic control.<br /> <h1>Overview</h1><p>The parameter defines the percentage of a dimming step at automatic control. 1-99</p>
@@ -217,8 +212,7 @@ Percentage of a dimming step at automatic control.<br /> <h1>Overview</h1><p>The
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_6_2" type="integer" groupName="configuration"
-                 min="0" max="255">
+      <parameter name="config_6_2" type="integer" groupName="configuration">
         <label>6: Dimming Step Timing at Automatic Control</label>
         <description><![CDATA[
 Time of a dimming step at automatic control.<br /> <h1>Overview</h1><p>The parameter defines the time of a dimming step at automatic control. Available settings: 0-255 (0s - 2,55s)</p>
@@ -227,8 +221,7 @@ Time of a dimming step at automatic control.<br /> <h1>Overview</h1><p>The param
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_7_1" type="integer" groupName="configuration"
-                 min="1" max="99">
+      <parameter name="config_7_1" type="integer" groupName="configuration">
         <label>7: Dimming Step at Manual Control</label>
         <description><![CDATA[
 Percentage of a dimming step at manual control.<br /> <h1>Overview</h1><p>The parameter defines the percentage of a dimming step at manual control. 1-99</p>
@@ -237,8 +230,7 @@ Percentage of a dimming step at manual control.<br /> <h1>Overview</h1><p>The pa
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_8_2" type="integer" groupName="configuration"
-                 min="0" max="255">
+      <parameter name="config_8_2" type="integer" groupName="configuration">
         <label>8: Dimming Step Timing at Manual Control</label>
         <description><![CDATA[
 Time of a dimming step at manual control.<br /> <h1>Overview</h1><p>The parameter defines the time of a dimming step at manual control. Available settings: 0-255 (0s - 2,55s)</p>
@@ -258,8 +250,7 @@ Time of a dimming step at manual control.<br /> <h1>Overview</h1><p>The paramete
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_10_2" type="integer" groupName="configuration"
-                 min="0" max="32767">
+      <parameter name="config_10_2" type="integer" groupName="configuration">
         <label>10: Timer functionality (auto - off).</label>
         <description><![CDATA[
 Setting of the timer.<br /> <h1>Overview</h1><p>The parameter defines the setting of the timer.</p> <p>Available settings:</p> <ul><li>1-32767 - time to turn off measured in seconds (1s - 9,1h)</li> <li>0 disables the function</li> </ul>
@@ -308,8 +299,7 @@ Mode of the Dimmer (auto/man settings).<br /> <h1>Overview</h1><p>This parameter
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_15_1" type="integer" groupName="configuration"
-                 min="0" max="99">
+      <parameter name="config_15_1" type="integer" groupName="configuration">
         <label>15: Burnt out bulb detection</label>
         <description><![CDATA[
 Percentage value of power variation<br /> <h1>Overview</h1><p>Percentage value of power variation, compared to standard power consumption, measured during the calibration procedure (to be interpreted as load error/burnt out bulb). 1-99, 0 disables the function.</p>
@@ -318,8 +308,7 @@ Percentage value of power variation<br /> <h1>Overview</h1><p>Percentage value o
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_16_2" type="integer" groupName="configuration"
-                 min="0" max="255">
+      <parameter name="config_16_2" type="integer" groupName="configuration">
         <label>16: Time delay of burnt out bulb/overload detection</label>
         <description><![CDATA[
 Delay for power variation detection<br /> <h1>Overview</h1><p>Time of delay (in seconds) for power variation detection, interpreted as a LOAD ERROR or OVERLOAD detection (too much power connected to the Dimmer 2). 0 disables the function.</p>
@@ -328,8 +317,7 @@ Delay for power variation detection<br /> <h1>Overview</h1><p>Time of delay (in 
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_19_1" type="integer" groupName="configuration"
-                 min="0" max="99">
+      <parameter name="config_19_1" type="integer" groupName="configuration">
         <label>19: Forced switch on brightness level</label>
         <description><![CDATA[
 Switching on the Dimmer will always set this brightness level.<br /> <h1>Overview</h1><p>If the parameter is active, switching on the Dimmer 2 (S1 single click) will always set this brightness level. 0 disables the function.</p>
@@ -557,8 +545,7 @@ Determine the trigger of auto-calibration procedure<br /> <h1>Overview</h1><p>Th
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_39_2" type="integer" groupName="configuration"
-                 min="0" max="250">
+      <parameter name="config_39_2" type="integer" groupName="configuration">
         <label>39: Power limit - OVERLOAD</label>
         <description><![CDATA[
 Reaching the defined value will result in turning off the load<br /> <h1>Overview</h1><p>Reaching the defined value will result in turning off the load. Parameter 39 is relevant only in a 3-wire connection i or a 2-wire connection for load of cosφ ≥ 0.99. (1 W - 250 W). 0 disables the function.</p>
@@ -619,8 +606,7 @@ Reaching the defined value will result in turning off the load<br /> <h1>Overvie
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_44_2" type="integer" groupName="configuration"
-                 min="1" max="32767">
+      <parameter name="config_44_2" type="integer" groupName="configuration">
         <label>44: Time of alarm state</label>
         <description><![CDATA[
 Alarm state may be cancelled earlier<br /> <h1>Overview</h1><p>Alarm state may be cancelled earlier, as a result of pushing the wall-switch keys or sending the Z-Wave command frame. Available settings: 1-32767 (1s - 32767s).</p>
@@ -683,8 +669,7 @@ Alarm state may be cancelled earlier<br /> <h1>Overview</h1><p>Alarm state may b
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_50_1" type="integer" groupName="configuration"
-                 min="0" max="100">
+      <parameter name="config_50_1" type="integer" groupName="configuration">
         <label>50: Active power reports</label>
         <description><![CDATA[
 Power level change resulting in new power report being sent.<br /> <h1>Overview</h1><p>The parameter defines the power level change that will result in a new power report being sent. The value is a percentage of the previous report. 0 disables the function.</p>
@@ -693,8 +678,7 @@ Power level change resulting in new power report being sent.<br /> <h1>Overview<
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_52_2" type="integer" groupName="configuration"
-                 min="0" max="32767">
+      <parameter name="config_52_2" type="integer" groupName="configuration">
         <label>52: Periodic active power and energy reports</label>
         <description><![CDATA[
 Time period between consecutive reports.<br /> <h1>Overview</h1><p>Parameter 52 defines a time period between consecutive reports. Timer is reset and counted from zero after each report (1 sec - 32767 sec). 0 disables the function.</p>
@@ -703,8 +687,7 @@ Time period between consecutive reports.<br /> <h1>Overview</h1><p>Parameter 52 
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_53_2" type="integer" groupName="configuration"
-                 min="0" max="255">
+      <parameter name="config_53_2" type="integer" groupName="configuration">
         <label>53: Energy reports</label>
         <description><![CDATA[
 Energy level change resulting in sending a new energy report.<br /> <h1>Overview</h1><p>Energy level change which will result in sending a new energy report. Available settings: 1-255 (0,01 - 2,55 kWh). 0 disables the function.</p>
@@ -740,8 +723,7 @@ How to calculate active power.<br /> <h1>Overview</h1><p>This parameter defines 
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_59_2" type="integer" groupName="configuration"
-                 min="0" max="500">
+      <parameter name="config_59_2" type="integer" groupName="configuration">
         <label>59: Approximated power at the maximum brightness level</label>
         <description><![CDATA[
 Power reported by the device at its maximum brightness level<br /> <h1>Overview</h1><p>This parameter determines the approximate value of the power that will be reported by the device at its maximum brightness level. Available settings: 0-500 (0-500W). Note: Parameter 59 works only when parameter 58 has a value other than 0.</p>

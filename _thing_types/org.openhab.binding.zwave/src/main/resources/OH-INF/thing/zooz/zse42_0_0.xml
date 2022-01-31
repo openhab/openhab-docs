@@ -58,8 +58,7 @@ Water Leak XS Sensor<br /> <h1>Overview</h1><p><b>Features</b></p><ul><li>Quick 
       </parameter-group>
 
       <!-- PARAMETER DEFINITIONS -->
-      <parameter name="config_1_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_1_1" type="integer" groupName="configuration">
         <label>1: LED Indicator</label>
         <description><![CDATA[
 Turn the LED indicator on (blinking) or off when a water leak is detected.<br /> <h1>Overview</h1><p><br /></p>
@@ -71,8 +70,7 @@ Turn the LED indicator on (blinking) or off when a water leak is detected.<br />
         </options>
       </parameter>
 
-      <parameter name="config_2_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_2_1" type="integer" groupName="configuration">
         <label>2: Leak Alert Clear Delay</label>
         <description><![CDATA[
 Decide how long the sensor should wait before sending a "dry" report to your hub after water is no longer detected<br /> <h1>Overview</h1><p><b>Values:</b> 0-3600 (seconds)</p><p><b>Default:</b> 0 seconds (no delay)<br /></p><p>0 - reports “dry” to the hub immediately a leak is no longer detected<br /></p>
@@ -81,8 +79,7 @@ Decide how long the sensor should wait before sending a "dry" report to your hub
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_3_1" type="integer" groupName="configuration"
-                 min="1" max="50">
+      <parameter name="config_3_1" type="integer" groupName="configuration">
         <label>3: Battery Reporting Threshold</label>
         <description><![CDATA[
 Set the threshold for battery reporting<br /> <h1>Overview</h1><p><b>Values:</b> 1-50%</p><p><b>Default:</b> 10%<br /></p>
@@ -91,8 +88,7 @@ Set the threshold for battery reporting<br /> <h1>Overview</h1><p><b>Values:</b>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_4_1" type="integer" groupName="configuration"
-                 min="10" max="50">
+      <parameter name="config_4_1" type="integer" groupName="configuration">
         <label>4: Low Battery Reporting Level</label>
         <description><![CDATA[
 Decide when the sensor should report low battery to the hub.<br /> <h1>Overview</h1><p><b>Values:</b> 10-50 (% battery life)</p><p><b>Default:</b> 20%<br /></p>
@@ -101,8 +97,7 @@ Decide when the sensor should report low battery to the hub.<br /> <h1>Overview<
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_5_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_5_1" type="integer" groupName="configuration">
         <label>5: Basic Set Commands</label>
         <description>Decide if and when the sensor sends Basic Set commands are sent to the hub and Group 2</description>
         <default>1</default>

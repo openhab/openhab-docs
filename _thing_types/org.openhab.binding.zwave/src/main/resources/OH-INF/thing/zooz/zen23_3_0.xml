@@ -81,8 +81,7 @@ Use this parameter to enable or disable the auto turn-off timer<br /> <h1>Overvi
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_4_4" type="integer" groupName="configuration"
-                 min="1" max="65535">
+      <parameter name="config_4_4" type="integer" groupName="configuration">
         <label>4: Auto Turn-Off Timer Time</label>
         <description><![CDATA[
 Time after which the switch automatically turns off<br /> <h1>Overview</h1><p>Use this parameter to set the time after which you want the switch to automatically turn off once it has been turned on. The number entered as value corresponds to the number of minutes.</p> <p>Values:</p> <p>1 – 65535 (minutes). <br />60 – default.<br /><br /></p>
@@ -104,8 +103,7 @@ Use this parameter to enable or disable the auto turn-on timer<br /> <h1>Overvie
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_6_4" type="integer" groupName="configuration"
-                 min="1" max="65535">
+      <parameter name="config_6_4" type="integer" groupName="configuration">
         <label>6: Auto Turn-On Timer Time</label>
         <description><![CDATA[
 Set the time after which the switch automatically turns on<br /> <h1>Overview</h1><p>Use this parameter to set the time after which you want the switch to automatically turn on once it has been turned off. The number entered as value corresponds to the number of minutes.</p> <p>Values:</p> <p>1 – 65535 (minutes). Default set to 60</p>

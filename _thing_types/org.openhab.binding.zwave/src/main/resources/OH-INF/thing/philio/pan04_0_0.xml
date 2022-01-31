@@ -209,8 +209,7 @@ In Wall Dual Relay(1 Way) Switch Module 2x 1.5kW with power meter<br /> <h1>Over
       </parameter-group>
 
       <!-- PARAMETER DEFINITIONS -->
-      <parameter name="config_1_2" type="integer" groupName="configuration"
-                 min="-32767" max="32768">
+      <parameter name="config_1_2" type="integer" groupName="configuration">
         <label>1: W meter report period</label>
         <description><![CDATA[
 Period for reporting W meter<br /> <h1>Overview</h1><p>If the setting is configured for 1 hour (value = 720), the device will report its instant power consumption every 1 hour to Z-Wave Controller. Unit: 5 seconds</p>
@@ -219,8 +218,7 @@ Period for reporting W meter<br /> <h1>Overview</h1><p>If the setting is configu
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_2_2" type="integer" groupName="configuration"
-                 min="-32767" max="32768">
+      <parameter name="config_2_2" type="integer" groupName="configuration">
         <label>2: kWh meter report period</label>
         <description><![CDATA[
 Period for reporting kWh meter<br /> <h1>Overview</h1><p>If the setting is configured for 1 hour (value = 6), the device will report its total power consumption every 1 hour to Z-Wave Controller. </p> <p>Unit: 10 minutes</p>
@@ -229,8 +227,7 @@ Period for reporting kWh meter<br /> <h1>Overview</h1><p>If the setting is confi
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_3_1" type="integer" groupName="configuration"
-                 min="1" max="3">
+      <parameter name="config_3_1" type="integer" groupName="configuration">
         <label>3: Selected endpoint</label>
         <description><![CDATA[
 Which endpoint is addressed by the BASIC command class<br /> <h1>Overview</h1><p>If the Controller is not using Multi_Channel command class to access the endpoint of PAN04, you may configure the endpoint value to react the Basic Command Class</p>
@@ -243,8 +240,7 @@ Which endpoint is addressed by the BASIC command class<br /> <h1>Overview</h1><p
         </options>
       </parameter>
 
-      <parameter name="config_4_1" type="integer" groupName="configuration"
-                 min="1" max="3">
+      <parameter name="config_4_1" type="integer" groupName="configuration">
         <label>4: Switch mode</label>
         <description><![CDATA[
 Change the external switch mode<br /> <h1>Overview</h1><p><br /></p>
@@ -257,8 +253,7 @@ Change the external switch mode<br /> <h1>Overview</h1><p><br /></p>
         </options>
       </parameter>
 
-      <parameter name="config_5_2" type="integer" groupName="configuration"
-                 min="10" max="1500">
+      <parameter name="config_5_2" type="integer" groupName="configuration">
         <label>5: Threshold of Watt for Load Caution</label>
         <description><![CDATA[
 If threshold of wattage is reached, a meter report will be generated<br /> <h1>Overview</h1><p><br /></p>
@@ -267,8 +262,7 @@ If threshold of wattage is reached, a meter report will be generated<br /> <h1>O
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_6_2" type="integer" groupName="configuration"
-                 min="1" max="10000">
+      <parameter name="config_6_2" type="integer" groupName="configuration">
         <label>6: Threshold of kWh for Load Caution</label>
         <description><![CDATA[
 If threshold of kWh is reached, a Meter Report will be generated<br /> <h1>Overview</h1><p><br /></p>
@@ -277,8 +271,7 @@ If threshold of kWh is reached, a Meter Report will be generated<br /> <h1>Overv
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_7_1" type="integer" groupName="configuration"
-                 min="0" max="2">
+      <parameter name="config_7_1" type="integer" groupName="configuration">
         <label>7: Restore switch state mode</label>
         <description><![CDATA[
 Restore switch state mode<br /> <h1>Overview</h1><p>Restores the switch state setting in case the device was disconnected from the power source.</p>
@@ -291,8 +284,7 @@ Restore switch state mode<br /> <h1>Overview</h1><p>Restores the switch state se
         </options>
       </parameter>
 
-      <parameter name="config_8_2" type="integer" groupName="configuration"
-                 min="0" max="32767">
+      <parameter name="config_8_2" type="integer" groupName="configuration">
         <label>8: Auto Off Timer</label>
         <description><![CDATA[
 Auto Off Timer<br /> <h1>Overview</h1><p>Whenever the device switches to on, the auto off timer begin to count down. After the timer decrease to zero, it will switch off automatically.</p>

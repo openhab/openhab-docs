@@ -54,15 +54,13 @@ Dimming Plug<br /> <h1>Overview</h1><p>Z-Wave Plug/Dimmer w/Built-in Z-Wave Repe
       </parameter-group>
 
       <!-- PARAMETER DEFINITIONS -->
-      <parameter name="config_1_1" type="integer" groupName="configuration"
-                 min="0" max="99">
+      <parameter name="config_1_1" type="integer" groupName="configuration">
         <label>1: Dimming Step</label>
         <description>Percentage of step when switch is dimming up or down (0 = instant)</description>
         <default>0</default>
       </parameter>
 
-      <parameter name="config_2_1" type="integer" groupName="configuration"
-                 min="1" max="99">
+      <parameter name="config_2_1" type="integer" groupName="configuration">
         <label>2: Minimum Level</label>
         <description>Minimum dimming level for attached light</description>
         <default>1</default>
@@ -92,8 +90,7 @@ Dimming Plug<br /> <h1>Overview</h1><p>Z-Wave Plug/Dimmer w/Built-in Z-Wave Repe
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_5_2" type="integer" groupName="configuration"
-                 min="0" max="32767">
+      <parameter name="config_5_2" type="integer" groupName="configuration">
         <label>5: Auto OFF</label>
         <description>Automatically turn switch off after this number of seconds</description>
         <default>0</default>
@@ -154,16 +151,14 @@ Dimming Plug<br /> <h1>Overview</h1><p>Z-Wave Plug/Dimmer w/Built-in Z-Wave Repe
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_8_1" type="integer" groupName="configuration"
-                 min="0" max="99">
+      <parameter name="config_8_1" type="integer" groupName="configuration">
         <label>8: Default Level (local)</label>
         <description>Default level when light is turned on at the switch (0 = previous level)</description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_9_1" type="integer" groupName="configuration"
-                 min="0" max="99">
+      <parameter name="config_9_1" type="integer" groupName="configuration">
         <label>9: Default Level (Z-Wave)</label>
         <description>Default level when light is turned on via Z-Wave command (0 = previous level)</description>
         <default>0</default>

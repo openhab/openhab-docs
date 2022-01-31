@@ -86,8 +86,7 @@ LED mode: 1 is show switch state. 2 is night mode (opposite).<br /> <h1>Overview
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_3_2" type="integer" groupName="configuration"
-                 min="0" max="32767">
+      <parameter name="config_3_2" type="integer" groupName="configuration">
         <label>3: Auto off timer</label>
         <description><![CDATA[
 Automatic OFF after given time.<br /> <h1>Overview</h1><p>Whenever DEVICE switches to on, the auto off timer begin to count down. After the timer decrease to zero, it will switch to off automatically. However if Auto off timer is set as 0, the auto off function will be disabled. The default setting is 0 (function disabled).</p>

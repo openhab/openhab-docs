@@ -107,8 +107,7 @@ Home Control Metering Plug<br /> <h1>Overview</h1><p>The devolo Home Control Sma
       </parameter-group>
 
       <!-- PARAMETER DEFINITIONS -->
-      <parameter name="config_1_2" type="integer" groupName="configuration"
-                 min="0" max="32767">
+      <parameter name="config_1_2" type="integer" groupName="configuration">
         <label>1: Watt counter reporting period</label>
         <description><![CDATA[
 multiples of 5s<br /> <h1>Overview</h1><p>Enable automatic interval in seconds reporting with an interval of 5s * the value. Set to 0 will disable the autoreporting function.</p>
@@ -119,8 +118,7 @@ multiples of 5s<br /> <h1>Overview</h1><p>Enable automatic interval in seconds r
         </options>
       </parameter>
 
-      <parameter name="config_2_2" type="integer" groupName="configuration"
-                 min="0" max="32767">
+      <parameter name="config_2_2" type="integer" groupName="configuration">
         <label>2: KWh counter reporting period</label>
         <description><![CDATA[
 number of 10 minute intervals<br /> <h1>Overview</h1><p>Enable automatic interval in minutes reporting with an interval of 10min * the value. Set to 0 will disable the autoreporting function.</p>
@@ -131,16 +129,14 @@ number of 10 minute intervals<br /> <h1>Overview</h1><p>Enable automatic interva
         </options>
       </parameter>
 
-      <parameter name="config_3_2" type="integer" groupName="configuration"
-                 min="10" max="1300">
+      <parameter name="config_3_2" type="integer" groupName="configuration">
         <label>3: Definition of warning of current load (A)</label>
         <description>1300*0.01A = 13A</description>
         <default>1300</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_4_2" type="integer" groupName="configuration"
-                 min="1" max="10000">
+      <parameter name="config_4_2" type="integer" groupName="configuration">
         <label>4: load caution threshold</label>
         <description><![CDATA[
 load caution threshold<br /> <h1>Overview</h1><p>Enable automatic warning when the accumulated kWh power consumption exceeds the setting value from 1KWh ~ 10000KWh.. Set to 0 will disable kWh load caution reporting.</p>
@@ -186,8 +182,7 @@ Restore switch state mode.<br /> <h1>Overview</h1><p>Status of the plug if it is
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_8_2" type="integer" groupName="configuration"
-                 min="0" max="32767">
+      <parameter name="config_8_2" type="integer" groupName="configuration">
         <label>8: Auto off timer</label>
         <description>Auto off timer. 0 will disable the auto off function.</description>
         <default>0</default>

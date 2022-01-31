@@ -58,8 +58,7 @@ Door/Window Sensor with Magnet<br /> <h1>Overview</h1><p>Z-Wave Door/Window sens
       </parameter-group>
 
       <!-- PARAMETER DEFINITIONS -->
-      <parameter name="config_1_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_1_1" type="integer" groupName="configuration">
         <label>1: Basic set level for nodes of group2</label>
         <description><![CDATA[
 255: Binary switch ON, 1-99: Dimmer level<br /> <h1>Overview</h1><p>255: Binary switch ON</p> <p>1-99: Dimmer level </p>
@@ -68,8 +67,7 @@ Door/Window Sensor with Magnet<br /> <h1>Overview</h1><p>Z-Wave Door/Window sens
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_2_1" type="integer" groupName="configuration"
-                 min="0" max="127">
+      <parameter name="config_2_1" type="integer" groupName="configuration">
         <label>2: Basic set OFF delay time for nodes of group2</label>
         <description><![CDATA[
 0: Disable, 0-127 Second<br /> <h1>Overview</h1><p>0: Disable</p> <p>0-127 Seconds</p>
@@ -78,8 +76,7 @@ Door/Window Sensor with Magnet<br /> <h1>Overview</h1><p>Z-Wave Door/Window sens
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_3_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_3_1" type="integer" groupName="configuration">
         <label>3: Delay time to enter standby mode</label>
         <description><![CDATA[
 After force to wake up, delay time to enter standby mode again<br /> <h1>Overview</h1><p>After force to wake up, delay time to enter standby mode again</p>
@@ -88,8 +85,7 @@ After force to wake up, delay time to enter standby mode again<br /> <h1>Overvie
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_4_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_4_1" type="integer" groupName="configuration">
         <label>4: Delay time to enter standby after wake up</label>
         <description><![CDATA[
 Delay time to enter standby after wake up<br /> <h1>Overview</h1><p>In standby mode, after wake up, delay time for standby again</p>
@@ -98,8 +94,7 @@ Delay time to enter standby after wake up<br /> <h1>Overview</h1><p>In standby m
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_5_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_5_1" type="integer" groupName="configuration">
         <label>5: Set waiting exclusion time</label>
         <description>Set waiting exclusion time</description>
         <default>3</default>
@@ -132,8 +127,7 @@ Delay time to enter standby after wake up<br /> <h1>Overview</h1><p>In standby m
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_8_1" type="integer" groupName="configuration"
-                 min="3" max="30">
+      <parameter name="config_8_1" type="integer" groupName="configuration">
         <label>8: Tamper alarm continuously send</label>
         <description><![CDATA[
 In tamper alarm mode, delay time for continuously send Sensor_Binary_report<br /> <h1>Overview</h1><p>In tamper alarm mode, delay time for continuously send Sensor_Binary_report</p>
@@ -156,8 +150,7 @@ The interval time of sending battery report<br /> <h1>Overview</h1><p>The interv
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_10_1" type="integer" groupName="configuration"
-                 min="0" max="3">
+      <parameter name="config_10_1" type="integer" groupName="configuration">
         <label>10: set the configuration of 2 external sensors</label>
         <description><![CDATA[
 BIT0: sensor1 (S1), BIT1: sensor2 (S2)<br /> <h1>Overview</h1><p>BIT0: sensor1 (S1)</p> <p>BIT1: sensor2 (S2)</p> <p>0 (00b): S2 NO, S1 NO</p> <p>1 (01b): S2 NO, S1 NC</p> <p>2 (10b): S2 NC, S1 NO</p> <p>3 (11b): S2 NC, S1 NC</p>

@@ -58,8 +58,7 @@ Door/Window Sensor<br /> <h1>Overview</h1><p>Battery powered door/window sensor.
       </parameter-group>
 
       <!-- PARAMETER DEFINITIONS -->
-      <parameter name="config_1_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_1_1" type="integer" groupName="configuration">
         <label>1: Basic Set Level</label>
         <description><![CDATA[
 Basic Set Command will be sent when the door/window is opened or closed<br /> <h1>Overview</h1><p>If there is any device under Association Group2, the door sensor will send “Basic Set = value” command to control that device when the door sensor is opened.<br />“Value” configuration rule is as below:<br />Available settings:</p> <ul><li>1 to 100 Dimmer Level</li> <li>255 (Default) For ON/OFF Light Only</li> </ul>
@@ -68,8 +67,7 @@ Basic Set Command will be sent when the door/window is opened or closed<br /> <h
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_2_1" type="integer" groupName="configuration"
-                 min="1" max="120">
+      <parameter name="config_2_1" type="integer" groupName="configuration">
         <label>2: Turn Off Light Time Configuration</label>
         <description><![CDATA[
 Turn Off Light Time<br /> <h1>Overview</h1><p>If there is any device under Association Group2, the door sensor will send “Basic Set = value”<br />command to Group2, and send “Basic Set = 0x00” command to turn-off light after “t” seconds,<br />Set value = “t”, means to send Basic Set command after “t” seconds.</p>
@@ -78,8 +76,7 @@ Turn Off Light Time<br /> <h1>Overview</h1><p>If there is any device under Assoc
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_3_1" type="integer" groupName="configuration"
-                 min="0" max="24">
+      <parameter name="config_3_1" type="integer" groupName="configuration">
         <label>3: Door Sensor Status Report</label>
         <description><![CDATA[
 Auto report Door/Window status time<br /> <h1>Overview</h1><p>Under normal working status (without trigger), the door sensor will automatically send report<br />to the Gateway about its current tamper &amp; open/close status. Set value = t, means “t” hours,<br />(“t”=0, means no status report)</p>

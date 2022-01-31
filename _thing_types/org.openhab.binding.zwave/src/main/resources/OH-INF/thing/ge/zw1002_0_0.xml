@@ -53,8 +53,7 @@ Smart Outlet<br /> <h1>Overview</h1><p>When paired with a compatible hub, the sm
       </parameter-group>
 
       <!-- PARAMETER DEFINITIONS -->
-      <parameter name="config_3_1" type="integer" groupName="configuration"
-                 min="0" max="2">
+      <parameter name="config_3_1" type="integer" groupName="configuration">
         <label>3: LED Light</label>
         <description>LED Light</description>
         <default>0</default>

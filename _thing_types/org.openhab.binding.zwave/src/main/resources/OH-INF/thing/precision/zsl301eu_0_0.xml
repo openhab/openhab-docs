@@ -107,8 +107,7 @@ Single relay switch<br /> <h1>Overview</h1><p>Switch Link is a power ON/OFF modu
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_5_1" type="integer" groupName="configuration"
-                 min="0" max="5">
+      <parameter name="config_5_1" type="integer" groupName="configuration">
         <label>5: Delay In Time</label>
         <description><![CDATA[
 Delay In Time<br /> <h1>Overview</h1><p>0   -&gt;  The light will be ON instantaneously once ON command is received.</p> <p>1 - 5   -&gt;  The module will detain the ON process for 1-5 seconds up to user preferences.</p>
@@ -117,8 +116,7 @@ Delay In Time<br /> <h1>Overview</h1><p>0   -&gt;  The light will be ON instan
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_6_1" type="integer" groupName="configuration"
-                 min="0" max="5">
+      <parameter name="config_6_1" type="integer" groupName="configuration">
         <label>6: Delay Out Time</label>
         <description><![CDATA[
 Delay Out Time<br /> <h1>Overview</h1><p>0   -&gt;  The light will be OFF instantaneously once OFF command is received.</p> <p>1 - 5   -&gt;  The module will detain the OFF process for 1-5 seconds up to user preferences.</p>

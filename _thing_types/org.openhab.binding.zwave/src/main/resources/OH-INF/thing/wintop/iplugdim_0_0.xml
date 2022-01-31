@@ -42,8 +42,7 @@ Wall Plug with dimming function<br /> <h1>Overview</h1><ul><li>The iPlugDim can 
       </parameter-group>
 
       <!-- PARAMETER DEFINITIONS -->
-      <parameter name="config_1_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_1_1" type="integer" groupName="configuration">
         <label>1: Set to Default</label>
         <description>Set to Default</description>
         <default>85</default>

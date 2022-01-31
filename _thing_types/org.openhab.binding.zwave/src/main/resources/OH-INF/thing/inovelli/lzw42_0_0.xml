@@ -63,8 +63,7 @@ Ilumin RGBW Bulb<br /> <h1>Overview</h1><p>Let’s get to know your sweet new sm
       </parameter-group>
 
       <!-- PARAMETER DEFINITIONS -->
-      <parameter name="config_2_1" type="integer" groupName="configuration"
-                 min="0" max="1">
+      <parameter name="config_2_1" type="integer" groupName="configuration">
         <label>2: Memory Function</label>
         <description><![CDATA[
 0 returns to last ON state, 1 = Returns to last state (ON or OFF)<br /> <h1>Overview</h1><p>When power is restored, the bulb reverts to its last ON state, or last state (ON or OFF). 0 returns to last ON state, 1 = Returns to last state (ON or OFF)</p>
@@ -73,16 +72,14 @@ Ilumin RGBW Bulb<br /> <h1>Overview</h1><p>Let’s get to know your sweet new sm
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_81_2" type="integer" groupName="configuration"
-                 min="2700" max="4999">
+      <parameter name="config_81_2" type="integer" groupName="configuration">
         <label>81: Warm White Adjustment</label>
         <description>Adjusts the warm white color component 2700 = 2700 Kelvin, 4999 = 4999 Kelvin</description>
         <default>2700</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_82_2" type="integer" groupName="configuration"
-                 min="5000" max="6500">
+      <parameter name="config_82_2" type="integer" groupName="configuration">
         <label>82: Cold White Adjustment</label>
         <description>Adjusts the cold white color compontne. 5000 = 5000 Kelvin, 6500 = 6500 Kelvin</description>
         <default>6500</default>

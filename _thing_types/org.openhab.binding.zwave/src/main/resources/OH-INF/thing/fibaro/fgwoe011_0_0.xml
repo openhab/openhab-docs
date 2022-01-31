@@ -95,8 +95,7 @@ Fibaro Walli Outlet type E/F<br /> <h1>Overview</h1><p>FIBARO Walli Outlet is a
       </parameter-group>
 
       <!-- PARAMETER DEFINITIONS -->
-      <parameter name="config_1_1" type="integer" groupName="configuration"
-                 min="0" max="1">
+      <parameter name="config_1_1" type="integer" groupName="configuration">
         <label>1: Remember device state</label>
         <description><![CDATA[
 Remember device state<br /> <h1>Overview</h1><p>This parameter determines how the device will react in the event of power supply failure (e.g. power outage).</p> <p>Parameter size 1B</p> <p>Default value 1 (restores the state)</p> <p>Available values <br />0 – remains switched off after restoring power <br />1 – restores remembered state after restoring power</p>
@@ -105,8 +104,7 @@ Remember device state<br /> <h1>Overview</h1><p>This parameter determines how th
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_2_4" type="integer" groupName="configuration"
-                 min="0" max="36800">
+      <parameter name="config_2_4" type="integer" groupName="configuration">
         <label>2: Overload safety switch</label>
         <description><![CDATA[
 Overload safety switch<br /> <h1>Overview</h1><p>This function allows to turn off the controlled device in case of exceeding the defined power. Controlled device can be turned back on via button or sending a control frame.</p> <p>Parameter size 4B</p> <p>Default value 0 (disabled)</p> <p>Available values <br />0 – function disabled <br />10-36800 (1.0-3680.0W, step 0.1W) – power threshold</p>
@@ -115,8 +113,7 @@ Overload safety switch<br /> <h1>Overview</h1><p>This function allows to turn of
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_10_4" type="integer" groupName="configuration"
-                 min="500" max="36800">
+      <parameter name="config_10_4" type="integer" groupName="configuration">
         <label>10: LED frame - power limit</label>
         <description><![CDATA[
 LED frame - power limit<br /> <h1>Overview</h1><p>This parameter determines maximum active power. Exceeding it results in the LED frame flashing violet. Function is active only when parameter 11 is set to 8 or 9.</p> <p>Parameter size 4B</p> <p>Default value 36800 (3680W)</p> <p>Available values 500-36800 (50.0-3680.0W, step 0.1W) – power threshold</p>
@@ -125,8 +122,7 @@ LED frame - power limit<br /> <h1>Overview</h1><p>This parameter determines maxi
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_11_1" type="integer" groupName="configuration"
-                 min="0" max="9">
+      <parameter name="config_11_1" type="integer" groupName="configuration">
         <label>11: LED frame - colour when ON</label>
         <description><![CDATA[
 LED frame - colour when ON<br /> <h1>Overview</h1><p>This parameter defines the LED colour when the device is ON.</p> <p>When set to 8 or 9, LED frame colour will change depending on the measured power and parameter 10. Other colours are set permanently and do not depend on power consumption.</p> <p>Parameter size 1B</p> <p>Default value 8 (depending on measured power)</p> <p>Available values <br />0 – LED disabled <br />1 – White <br />2 – Red <br />3 – Green <br />4 – Blue <br />5 – Yellow <br />6 – Cyan <br />7 – Magenta <br />8 – colour changes smoothly depending on measured power <br />9 – colour changes in steps depending on measured power</p>
@@ -135,8 +131,7 @@ LED frame - colour when ON<br /> <h1>Overview</h1><p>This parameter defines the 
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_12_1" type="integer" groupName="configuration"
-                 min="0" max="7">
+      <parameter name="config_12_1" type="integer" groupName="configuration">
         <label>12: LED frame - colour when OFF</label>
         <description><![CDATA[
 LED frame - colour when OFF<br /> <h1>Overview</h1><p>This parameter defines the LED colour when the device is OFF.</p> <p>Parameter size 1B</p> <p>Default value 0 (disabled)</p> <p>Available values <br />0 – LED disabled <br />1 – White <br />2 – Red <br />3 – Green <br />4 – Blue <br />5 – Yellow <br />6 – Cyan <br />7 – Magenta</p>
@@ -145,8 +140,7 @@ LED frame - colour when OFF<br /> <h1>Overview</h1><p>This parameter defines the
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_13_1" type="integer" groupName="configuration"
-                 min="0" max="102">
+      <parameter name="config_13_1" type="integer" groupName="configuration">
         <label>13: LED frame – brightness</label>
         <description><![CDATA[
 LED frame – brightness<br /> <h1>Overview</h1><p>This parameter allows to adjust the LED frame brightness.</p> <p>Parameter size 1B</p> <p>Default value 100 (100%)</p> <p>Available values <br />0 – LED disabled <br />1-100 (1-100% brightness) <br />101 – brightness directly proportional to measured power <br />102 – brightness inversely proportional to measured power</p>
@@ -155,8 +149,7 @@ LED frame – brightness<br /> <h1>Overview</h1><p>This parameter allows to adju
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_30_4" type="integer" groupName="configuration"
-                 min="-2147483646" max="2147483647">
+      <parameter name="config_30_4" type="integer" groupName="configuration">
         <label>30: Alarm configuration - 1st slot</label>
         <description><![CDATA[
 Alarm configuration - 1st slot<br /> <h1>Overview</h1><p>This parameter determines to which alarm frames and how the device should react. The parameters consist of 4 bytes, three most significant bytes are set according to the official Z-Wave protocol specification.</p> <p>Parameter size 4B</p> <p>Default value [0x00, 0x00, 0x00, 0x00] (disabled)</p> <p>Available values <br />1B [MSB] – Notification Type <br />2B - Notification Status <br />3B - Event/State Parameters <br />4B [LSB] – action: <br />0xX0 – no action on output, <br />0xX1 – turn ON, <br />0xX2 – turn OFF, <br />0xX3 – turn ON/OFF continuously, <br />0x0X – no action on LED frame, <br />0x1X – LED frame blinks red, <br />0x2X – LED frame blinks green, <br />0x4X – LED frame blinks blue, <br />0x8X – disable LED frame, <br />0xFX – LED frame LAPD signal (red-white-blue)</p>
@@ -165,8 +158,7 @@ Alarm configuration - 1st slot<br /> <h1>Overview</h1><p>This parameter determin
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_31_4" type="integer" groupName="configuration"
-                 min="-2147483646" max="2147483647">
+      <parameter name="config_31_4" type="integer" groupName="configuration">
         <label>31: Alarm configuration - 2nd slot</label>
         <description><![CDATA[
 Alarm configuration - 2nd slot<br /> <h1>Overview</h1><p>This parameter determines to which alarm frames and how the device should react. The parameters consist of 4 bytes, three most significant bytes are set according to the official Z-Wave protocol specification.</p> <p>Parameter size 4B</p> <p>Default value [0x05, 0xFF, 0x00, 0x00] (Water Alarm, any notification, no action)</p> <p>Available values <br />1B [MSB] – Notification Type <br />2B - Notification Status <br />3B - Event/State Parameters <br />4B [LSB] – action: <br />0xX0 – no action on output,, <br />0xX1 – turn ON, <br />0xX2 – turn OFF, <br />0xX3 – turn ON/OFF continuously, <br />0x0X – no action on LED frame, <br />0x1X – LED frame blinks red, <br />0x2X – LED frame blinks green, <br />0x4X – LED frame blinks blue, <br />0x8X – disable LED frame, <br />0xFX – LED frame LAPD signal (red-white-blue)</p>
@@ -175,8 +167,7 @@ Alarm configuration - 2nd slot<br /> <h1>Overview</h1><p>This parameter determin
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_32_4" type="integer" groupName="configuration"
-                 min="-2147483646" max="2147483647">
+      <parameter name="config_32_4" type="integer" groupName="configuration">
         <label>32: Alarm configuration - 3rd slot</label>
         <description><![CDATA[
 Alarm configuration - 3rd slot<br /> <h1>Overview</h1><p>This parameter determines to which alarm frames and how the device should react. The parameters consist of 4 bytes, three most significant bytes are set according to the official Z-Wave protocol specification.</p> <p>Parameter size 4B</p> <p>Default value [0x01, 0xFF, 0x00, 0x00] (Smoke Alarm, any notification, no action)</p> <p>Available values <br />1B [MSB] – Notification Type <br />2B - Notification Status <br />3B - Event/State Parameters <br />4B [LSB] – action: <br />0xX0 – no action on output, <br />0xX1 – turn ON, <br />0xX2 – turn OFF, <br />0xX3 – turn ON/OFF continuously, <br />0x0X – no action on LED frame, <br />0x1X – LED frame blinks red, <br />0x2X – LED frame blinks green, <br />0x4X – LED frame blinks blue, <br />0x8X – disable LED frame, <br />0xFX – LED frame LAPD signal (red-white-blue)</p>
@@ -185,8 +176,7 @@ Alarm configuration - 3rd slot<br /> <h1>Overview</h1><p>This parameter determin
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_33_4" type="integer" groupName="configuration"
-                 min="-2147483646" max="2147483647">
+      <parameter name="config_33_4" type="integer" groupName="configuration">
         <label>33: Alarm configuration - 4th slot</label>
         <description><![CDATA[
 Alarm configuration - 4th slot<br /> <h1>Overview</h1><p>This parameter determines to which alarm frames and how the device should react. The parameters consist of 4 bytes, three most significant bytes are set according to the official Z-Wave protocol specification.</p> <p>Parameter size 4B</p> <p>Default value [0x02, 0xFF, 0x00, 0x00] (CO Alarm, any notification, no action)</p> <p>Available values <br />1B [MSB] – Notification Type <br />2B - Notification Status <br />3B - Event/State Parameters <br />4B [LSB] – action: <br />0xX0 – no action on output, <br />0xX1 – turn ON, <br />0xX2 – turn OFF, <br />0xX3 – turn ON/OFF continuously, <br />0x0X – no action on LED frame, <br />0x1X – LED frame blinks red, <br />0x2X – LED frame blinks green, <br />0x4X – LED frame blinks blue, <br />0x8X – disable LED frame, <br />0xFX – LED frame LAPD signal (red-white-blue)</p>
@@ -195,8 +185,7 @@ Alarm configuration - 4th slot<br /> <h1>Overview</h1><p>This parameter determin
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_34_4" type="integer" groupName="configuration"
-                 min="-2147483646" max="2147483647">
+      <parameter name="config_34_4" type="integer" groupName="configuration">
         <label>34: Alarm configuration - 5th slot</label>
         <description><![CDATA[
 Alarm configuration - 5th slot<br /> <h1>Overview</h1><p>This parameter determines to which alarm frames and how the device should react. The parameters consist of 4 bytes, three most significant bytes are set according to the official Z-Wave protocol specification.</p> <p>Parameter size 4B</p> <p>Default value [0x04, 0xFF, 0x00, 0x00] (Heat Alarm, any notification, no action)</p> <p>Available values <br />1B [MSB] – Notification Type <br />2B - Notification Status <br />3B - Event/State Parameters <br />4B [LSB] – action: <br />0xX0 – no action on output, <br />0xX1 – turn ON, <br />0xX2 – turn OFF, <br />0xX3 – turn ON/OFF continuously, <br />0x0X – no action on LED frame, <br />0x1X – LED frame blinks red, <br />0x2X – LED frame blinks green, <br />0x4X – LED frame blinks blue, <br />0x8X – disable LED frame, <br />0xFX – LED frame LAPD signal (red-white-blue)</p>
@@ -205,8 +194,7 @@ Alarm configuration - 5th slot<br /> <h1>Overview</h1><p>This parameter determin
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_35_2" type="integer" groupName="configuration"
-                 min="0" max="32400">
+      <parameter name="config_35_2" type="integer" groupName="configuration">
         <label>35: Alarm configuration – duration</label>
         <description><![CDATA[
 Alarm configuration – duration<br /> <h1>Overview</h1><p>This parameter defines duration of alarm sequence. When time set in this parameter elapses, alarm is cancelled, LED frame and relay restore normal operation, but do not recover state from before the alarm.</p> <p>Parameter size 2B</p> <p>Default value 600 (10min)</p> <p>Available values <br />0 – infinite <br />1-32400 (1s-9h, 1s step) – duration</p>
@@ -215,8 +203,7 @@ Alarm configuration – duration<br /> <h1>Overview</h1><p>This parameter define
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_45_1" type="integer" groupName="configuration"
-                 min="1" max="3">
+      <parameter name="config_45_1" type="integer" groupName="configuration">
         <label>45: Associations – 2nd group</label>
         <description><![CDATA[
 Associations – 2nd group<br /> <h1>Overview</h1><p>This parameter determines which actions will result in sending control frames to devices associated in 2nd group.</p> <p>Parameter size 1B</p> <p>Default value 3</p> <p>Available values <br />1 – Power exceeds UP threshold <br />2 – Power drops below DOWN threshold <br />3 – Power exceeds UP threshold or drops below DOWN threshold</p>
@@ -225,8 +212,7 @@ Associations – 2nd group<br /> <h1>Overview</h1><p>This parameter determines w
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_46_4" type="integer" groupName="configuration"
-                 min="100" max="36800">
+      <parameter name="config_46_4" type="integer" groupName="configuration">
         <label>46: Associations – UP threshold</label>
         <description><![CDATA[
 Associations – UP threshold<br /> <h1>Overview</h1><p>This parameter determines upper power threshold for 2nd association group (paramter 45). Exceeding it will result in sending value set in parameter 47. Cannot be lower than DOWN threshold (parameter 48).</p> <p>Parameter size 4B</p> <p>Default value 500 (50W)</p> <p>Available values <br />100-36800 (10-3680W, 0.1W step) – power threshold</p>
@@ -235,8 +221,7 @@ Associations – UP threshold<br /> <h1>Overview</h1><p>This parameter determine
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_47_2" type="integer" groupName="configuration"
-                 min="0" max="255">
+      <parameter name="config_47_2" type="integer" groupName="configuration">
         <label>47: Associations – UP threshold frame value</label>
         <description><![CDATA[
 Associations – UP threshold frame value<br /> <h1>Overview</h1><p>This parameter defines value sent to devices in 2nd association group when power exceeds UP threshold set in parameter 46 (using Basic Command Class).</p> <p>Parameter size 2B</p> <p>Default value 255</p> <p>Available values <br />0 – turn off <br />1-99 – set level <br />255 – turn on with previous level</p>
@@ -245,8 +230,7 @@ Associations – UP threshold frame value<br /> <h1>Overview</h1><p>This paramet
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_48_4" type="integer" groupName="configuration"
-                 min="0" max="36700">
+      <parameter name="config_48_4" type="integer" groupName="configuration">
         <label>48: Associations – DOWN threshold</label>
         <description><![CDATA[
 Associations – DOWN threshold<br /> <h1>Overview</h1><p>This parameter determines lower power threshold for 2nd association group (paramter 45). Exceeding it will result in sending value set in parameter 49.</p> <p>Parameter size 4B</p> <p>Default value 300 (30W)</p> <p>Available values <br />0-36700 (0-3670W, 0.1W step) – power threshold</p>
@@ -255,8 +239,7 @@ Associations – DOWN threshold<br /> <h1>Overview</h1><p>This parameter determi
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_60_1" type="integer" groupName="configuration"
-                 min="0" max="1">
+      <parameter name="config_60_1" type="integer" groupName="configuration">
         <label>60: Power reports – include self-consumption</label>
         <description><![CDATA[
 Power reports – include self-consumption<br /> <h1>Overview</h1><p>This parameter determines whether the power measurements should include power consumed by the device itself.</p> <p>Parameter size 1B</p> <p>Default value 0 (not included)</p> <p>Available values <br />0 – Self-consumption not included <br />1 – Self-consumption included</p>
@@ -265,8 +248,7 @@ Power reports – include self-consumption<br /> <h1>Overview</h1><p>This parame
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_61_2" type="integer" groupName="configuration"
-                 min="0" max="500">
+      <parameter name="config_61_2" type="integer" groupName="configuration">
         <label>61: Power reports – on change</label>
         <description><![CDATA[
 Power reports – on change<br /> <h1>Overview</h1><p>This parameter defines minimal change (from the last reported) in measured power that results in sending new report. For loads under 50W the parameter is irrelevant, reports are sent every 5W change.</p> <p>Parameter size 2B</p> <p>Default value 15 (15%)</p> <p>Available values <br />0 - reporting on change disabled <br />1-500 (1-500%, 1% step) – minimal change</p>
@@ -275,8 +257,7 @@ Power reports – on change<br /> <h1>Overview</h1><p>This parameter defines min
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_62_2" type="integer" groupName="configuration"
-                 min="0" max="32400">
+      <parameter name="config_62_2" type="integer" groupName="configuration">
         <label>62: Power reports – periodic</label>
         <description><![CDATA[
 Power reports – periodic<br /> <h1>Overview</h1><p>This parameter defines reporting interval for measured power. Periodic reports are independent from changes in value (parameter 61).</p> <p>Parameter size 2B</p> <p>Default value 3600 (1h)</p> <p>Available values <br />0 – periodic reports disabled <br />30-32400 (30s-9h, 1s step) – time interval</p>
@@ -285,8 +266,7 @@ Power reports – periodic<br /> <h1>Overview</h1><p>This parameter defines repo
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_65_2" type="integer" groupName="configuration"
-                 min="0" max="500">
+      <parameter name="config_65_2" type="integer" groupName="configuration">
         <label>65: Energy reports – on change</label>
         <description><![CDATA[
 Energy reports – on change<br /> <h1>Overview</h1><p>This parameter defines minimal change (from the last reported) in measured energy that results in sending new report.</p> <p>Parameter size 2B</p> <p>Default value 10 (0.1kWh)</p> <p>Available values <br />0 - reporting on change disabled <br />1-500 (0.01-5kWh, 0.01kWh step) – minimal change</p>
@@ -295,8 +275,7 @@ Energy reports – on change<br /> <h1>Overview</h1><p>This parameter defines mi
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_66_2" type="integer" groupName="configuration"
-                 min="0" max="32400">
+      <parameter name="config_66_2" type="integer" groupName="configuration">
         <label>66: Energy reports – periodic</label>
         <description><![CDATA[
 Energy reports – periodic<br /> <h1>Overview</h1><p>This parameter defines reporting interval for measured energy. Periodic reports are independent from changes in value (parameter 65).</p> <p>Parameter size 2B Default value 3600 (1h)</p> <p>Available values <br />0 – periodic reports disabled <br />30-32400 (30s-9h, 1s step) – time interval</p>

@@ -53,8 +53,7 @@ Z-Wave Plug in Smart Switch<br /> <h1>Overview</h1><p>Control, automate, and sch
       </parameter-group>
 
       <!-- PARAMETER DEFINITIONS -->
-      <parameter name="config_3_1" type="integer" groupName="configuration"
-                 min="0" max="2">
+      <parameter name="config_3_1" type="integer" groupName="configuration">
         <label>3: LED Light</label>
         <description><![CDATA[
 Changes the behavior of the LED light<br /> <h1>Overview</h1><p><br /></p>

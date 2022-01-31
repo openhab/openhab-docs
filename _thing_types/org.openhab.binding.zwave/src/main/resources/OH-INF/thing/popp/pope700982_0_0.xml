@@ -96,8 +96,7 @@ This parameter deﬁnes the polarity of the magnet sensor<br /> <h1>Overview</h1
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_3_1" type="integer" groupName="configuration"
-                 min="0" max="7">
+      <parameter name="config_3_1" type="integer" groupName="configuration">
         <label>3: Visual LED Indications</label>
         <description><![CDATA[
 This parameter deﬁnes when the red LED will indicate events<br /> <h1>Overview</h1><p>This parameter deﬁnes when the red LED will indicate events. Disabling all indications may extend battery life. Size: 1 Byte, Default Value: 7 (values 1 + 2 + 4 summarized)</p>
@@ -161,8 +160,7 @@ value sent in case of On event<br /> <h1>Overview</h1><p>This is the BASIC comma
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_8_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_8_1" type="integer" groupName="configuration">
         <label>8: value sent to 2nd Association Group on Off event</label>
         <description><![CDATA[
 value sent in case of Off event<br /> <h1>Overview</h1><p>This is the BASIC command value sent in case of Off event. Size: 1 Byte, Default Value: 0</p>
@@ -171,8 +169,7 @@ value sent in case of Off event<br /> <h1>Overview</h1><p>This is the BASIC comm
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_9_2" type="integer" groupName="configuration"
-                 min="0" max="32400">
+      <parameter name="config_9_2" type="integer" groupName="configuration">
         <label>9: Time Delay of On command frame</label>
         <description><![CDATA[
 sent after a delay<br /> <h1>Overview</h1><p>On command is sent after a delay deﬁned in this parameter. Size: 2 Byte, Default Value: 0</p>
@@ -181,8 +178,7 @@ sent after a delay<br /> <h1>Overview</h1><p>On command is sent after a delay de
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_10_2" type="integer" groupName="configuration"
-                 min="0" max="32400">
+      <parameter name="config_10_2" type="integer" groupName="configuration">
         <label>10: Time Delay of Off command frame</label>
         <description><![CDATA[
 sent after a delay<br /> <h1>Overview</h1><p>Off command is sent after a delay deﬁned in this parameter. Size: 2 Byte, Default Value: 0</p>
@@ -190,8 +186,7 @@ sent after a delay<br /> <h1>Overview</h1><p>Off command is sent after a delay d
         <default>0</default>
       </parameter>
 
-      <parameter name="config_11_2" type="integer" groupName="configuration"
-                 min="0" max="32400">
+      <parameter name="config_11_2" type="integer" groupName="configuration">
         <label>11: Delay of Tamper Alarm Cancellation</label>
         <description><![CDATA[
 Time a tamper alarm is delayed in seconds<br /> <h1>Overview</h1><p>Time a tamper alarm is delayed. Size: 2 Byte, Default Value: 0</p>

@@ -1,0 +1,361 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="zooz_zac36_00_000" listed="false">
+    <label>ZAC36 Titan Water Valve Actuator</label>
+    <description><![CDATA[
+Titan Water Valve Actuator<br /> <h1>Overview</h1><p><b>Features</b></p><ul><li>Automatic shut-off actuator for your main water valve.</li><li>Connect it to your Z-Wave hub for full smart home control.</li><li> Use it offline with the included leak sensor probe.</li><li> Built-in temperature detection for instant freeze detection.</li><li>Retrofit installation with no tools required.</li><li> Use with ½” – 1 ¼” ball valves only (close prior to installation).</li><li> Indoor &amp; outdoor installation with IP66 rating (avoid direct sunlight).</li><li> NEW 700 series Z-Wave chip for better range and faster control.</li><li> S2 Security and SmartStart for easier inclusion.</li></ul><p><b>Specifications</b></p><ul><li> Model Number: ZAC36</li><li> Z-Wave Signal Frequency: 908.42 MHz.</li><li> Power: 12 V DC (1 A) power supply (included).</li><li> Temperature Sensor Range: -40° to 257° F.</li><li> Sound Indicator: up to 85 dB</li><li> Z-Wave Range: Up to 400 feet line of sight (up to 130 feet indoors).</li><li> Operating Temperature: 14-122° F (-10-50° C).</li><li> Installation and Use: Indoor &amp; outdoor (IP66)</li><li> Standby Power Consumption: 0.12 W</li><li> Full Operation Power Consumption: 8.4 W</li></ul> <br /> <h2>Inclusion Information</h2><b>1. ADD DEVICE to your hub.</b><ul><li>Initiate inclusion (pairing) in the app (or web interface).</li></ul><p><br /></p><p><b>2. Finalize inclusion at the actuator.</b><b><br /></b></p><ul><li><b>Tap THE Z-WAVE BUTTON 3 TIMES</b> if using traditional Z-Wave inclusion.</li></ul> <br /> <h2>Exclusion Information</h2><ol><li>Bring your Titan Valve Actuator close to the Z-Wave gateway (hub), if possible.</li><li>Put the Z-Wave hub into <b>exclusion mode</b>.</li><li>Tap the Z-Wave button <b>3 times quickly</b> (it will flash and beep once each time you tap to confirm communication).</li><li>Your hub will confirm exclusion, the LED indicator on the actuator will turn green for 3 seconds, and the device will sound 2 short beeps for a successful exclusion. The actuator will disappear from your controller’s device list. The LED indicator on the Titan will go back to the yellow blinking mode.</li></ol> <br /> <h2>Wakeup Information</h2><p><br /></p>
+    ]]></description>
+    <category>Valve</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_binary" typeId="switch_binary">
+        <label>Switch</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY</property>
+        </properties>
+      </channel>
+      <channel id="sensor_temperature" typeId="sensor_temperature">
+        <label>Sensor (temperature)</label>
+        <properties>
+          <property name="binding:*:QuantityType">COMMAND_CLASS_SENSOR_MULTILEVEL;type=TEMPERATURE</property>
+        </properties>
+      </channel>
+      <channel id="alarm_heat" typeId="alarm_heat">
+        <label>Alarm (heat)</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=HEAT</property>
+        </properties>
+      </channel>
+      <channel id="alarm_flood" typeId="alarm_flood">
+        <label>Alarm (flood)</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=FLOOD</property>
+        </properties>
+      </channel>
+      <channel id="alarm_power" typeId="alarm_power">
+        <label>Alarm (power)</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=POWER_MANAGEMENT</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Zooz</property>
+      <property name="modelId">ZAC36</property>
+      <property name="manufacturerId">027A</property>
+      <property name="manufacturerRef">0101:0036</property>
+      <property name="dbReference">1469</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_17_1" type="integer" groupName="configuration">
+        <label>17: Water Valve Command and Reporting Behavior</label>
+        <description><![CDATA[
+Decide which Z-Wave commands and reports you'd like to use to display when the device is open or closed (or to open / close the device).<br /> <h1>Overview</h1><p><br /></p>
+        ]]></description>
+        <default>1</default>
+        <options>
+          <option value="0">reports on when the valve is open (opens the valve when an "on" report</option>
+          <option value="1">reports off when the valve is open (opens the valve when an "off" repo</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_18_1" type="integer" groupName="configuration">
+        <label>18: Association Group 2 Report (Closing)</label>
+        <description>Decide which report is sent to Group 2 when parameter 17 is set to value 1 and the valve is closing.</description>
+        <default>1</default>
+        <options>
+          <option value="0">reports to Group 2 disabled</option>
+          <option value="1">Basic Set on (default)</option>
+          <option value="2">Basic Set off</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_19_1" type="integer" groupName="configuration">
+        <label>19: Association Group 2 Report (Opening)</label>
+        <description>Decide which report is sent to Group 2 when parameter 17 is set to value 1 and the valve is opening.</description>
+        <default>2</default>
+        <options>
+          <option value="0">reports to Group 2 disabled</option>
+          <option value="1">Basic Set on</option>
+          <option value="2">Basic Set off (default)</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_33_1" type="integer" groupName="configuration">
+        <label>33: Temperature Reporting Scale</label>
+        <description>Choose which scale you'd like the device to report temperature in.</description>
+        <default>2</default>
+        <options>
+          <option value="0">temperature reports disabled</option>
+          <option value="1">Celsius</option>
+          <option value="2">Fahrenheit (default)</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_34_2" type="integer" groupName="configuration">
+        <label>34: Temperature Reporting Threshold</label>
+        <description>Set the temperature reporting threshold.</description>
+        <default>4</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_35_2" type="integer" groupName="configuration">
+        <label>35: Temperature Reporting Offset</label>
+        <description>Set the temperature reporting offset.</description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_36_2" type="integer" groupName="configuration">
+        <label>36: Temperature Reporting Overheat Alarm</label>
+        <description><![CDATA[
+Set the overheat alarm trigger value.<br /> <h1>Overview</h1><p><b>Values:</b> 0 - 255 (degrees in F)</p>
+        ]]></description>
+        <default>104</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_37_2" type="integer" groupName="configuration">
+        <label>37: Temperature Reporting Overheat Alarm Cancellation</label>
+        <description><![CDATA[
+Set the overheat alarm cancellation trigger value.<br /> <h1>Overview</h1><p><b>Values:</b> 0 - 255 (degrees in F)</p>
+        ]]></description>
+        <default>86</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_38_1" type="integer" groupName="configuration">
+        <label>38: Association Group 4 Reports Overheat Alarm</label>
+        <description><![CDATA[
+Decide which report is sent to Group 4 when the overheat alarm (set in parameter 36) is triggered.<br /> <h1>Overview</h1><p><br /></p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">reports to Group 4 disabled (default)</option>
+          <option value="1">Basic Set on</option>
+          <option value="2">Basic Set off</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_39_1" type="integer" groupName="configuration">
+        <label>39: Association Group 4 Reports Overheat Alarm Cancelled</label>
+        <description><![CDATA[
+Decide which report is sent to Group 4 when the overheat alarm is cancelled.<br /> <h1>Overview</h1><p><br /></p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">reports to Group 4 disabled (default)</option>
+          <option value="1">Basic Set on</option>
+          <option value="2">Basic Set off</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_40_2" type="integer" groupName="configuration">
+        <label>40: Temperature Reporting Freeze Alarm</label>
+        <description><![CDATA[
+Set the freeze alarm trigger value.<br /> <h1>Overview</h1><p><b>Values:</b> 0 - 255 (degrees in F)</p>
+        ]]></description>
+        <default>32</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_41_2" type="integer" groupName="configuration">
+        <label>41: Temperature Reporting Freeze Alarm Cancellation</label>
+        <description><![CDATA[
+Set the freeze alarm cancellation trigger value.<br /> <h1>Overview</h1><p><b>Values:</b> 0 - 255 (degrees in F)</p>
+        ]]></description>
+        <default>36</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_42_1" type="integer" groupName="configuration">
+        <label>42: Freeze Alarm Operation Mode</label>
+        <description><![CDATA[
+Decide if you want to allow the valve actuator to open and close during freeze alarm mode.<br /> <h1>Overview</h1><p>If the actuator is disabled, it won't react to Z-Wave or manual triggers to open or close until the freeze alarm is cleared.</p>
+        ]]></description>
+        <default>1</default>
+        <options>
+          <option value="0">operation disabled</option>
+          <option value="1">operation enabled (default)</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_43_1" type="integer" groupName="configuration">
+        <label>43: Association Group 5 Reports Freeze Alarm</label>
+        <description>Decide which report is sent to Group 5 when the freeze alarm (set in parameter 40) is triggered.</description>
+        <default>0</default>
+        <options>
+          <option value="0">reports to Group 5 disabled (default)</option>
+          <option value="1">Basic Set on</option>
+          <option value="2">Basic Set off</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_44_1" type="integer" groupName="configuration">
+        <label>44: Association Group 5 Reports Freeze Alarm Cancelled</label>
+        <description>Decide which report is sent to Group 5 when the freeze alarm is cancelled. Values:</description>
+        <default>0</default>
+        <options>
+          <option value="0">reports to Group 5 disabled (default)</option>
+          <option value="1">Basic Set on</option>
+          <option value="2">Basic Set off</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_49_1" type="integer" groupName="configuration">
+        <label>49: Association Group 3 Reports Leak Alarm</label>
+        <description>Decide which report is sent to Group 3 when a leak alarm is triggered (from the connected leak detection probe).</description>
+        <default>1</default>
+        <options>
+          <option value="0">reports to Group 3 disabled</option>
+          <option value="1">Basic Set on (default)</option>
+          <option value="2">Basic Set off</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_50_1" type="integer" groupName="configuration">
+        <label>50: Association Group 3 Reports Leak Alarm Cleared</label>
+        <description>Decide which report is sent to Group 3 when the leak alarm is cleared (water is no longer detected by the connected probe).</description>
+        <default>0</default>
+        <options>
+          <option value="0">reports to Group 3 disabled (default)</option>
+          <option value="1">Basic Set on</option>
+          <option value="2">Basic Set off</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_51_1" type="integer" groupName="configuration">
+        <label>51: Leak Alarm Operation Mode</label>
+        <description><![CDATA[
+Decide if you want to allow the valve actuator to open and close during a leak alarm event.<br /> <h1>Overview</h1><p>If the actuator is disabled, it won't react to Z-Wave or manual triggers to open or close until the leak alarm is cleared.</p>
+        ]]></description>
+        <default>1</default>
+        <options>
+          <option value="0">operation disabled</option>
+          <option value="1">operation enabled (default)</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_61_1" type="integer" groupName="configuration">
+        <label>61: Auto Test Mode</label>
+        <description><![CDATA[
+Decide when you'd like the actuator to perform an auto test mode once it's installed.<br /> <h1>Overview</h1><p>The actuator will periodically make a 1/8 turn to ensure it is operational to self test.</p>
+        ]]></description>
+        <default>3</default>
+        <options>
+          <option value="1">enabled only when excluded from the Z-Wave hub</option>
+          <option value="2">enabled only when included to the Z-Wave hub</option>
+          <option value="3">enabled both when included or excluded (default)</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_62_1" type="integer" groupName="configuration">
+        <label>62: Auto Test Mode Frequency</label>
+        <description>Decide how often you'd like the actuator to perform the auto test described in parameter 61.</description>
+        <default>14</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_65_1" type="integer" groupName="configuration">
+        <label>65: Sound Alarms and Notifications</label>
+        <description>Decide if you'd like to receive sound (beep) feedback when operating the actuator as well as sound alarms for different modes and alarms the actuator goes into when installed.</description>
+        <default>1</default>
+        <options>
+          <option value="0">sound notifications disabled</option>
+          <option value="1">sound notifications enabled (default)</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_66_1" type="integer" groupName="configuration">
+        <label>66: LED Indicator Brightness Level</label>
+        <description>Decide how bright you'd like the LED indicator to be on your actuator. If you set it to value 0, the LED indicator will be disabled.</description>
+        <default>80</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_67_1" type="integer" groupName="configuration">
+        <label>67: Z-Wave Button Lock Protection</label>
+        <description>Enable Z-Wave button lock protection if you'd like to prevent the Z-Wave button from being locked accidentally.</description>
+        <default>0</default>
+        <options>
+          <option value="0">Z-Wave button lock disabled (default)</option>
+          <option value="1">Z-Wave button lock enabled</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Lifeline</label>
+        <multipleLimit>1</multipleLimit>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: Basic Set for Open / Close</label>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_3" type="text" groupName="association" multiple="true">
+        <label>3: Basic Set for Leak Alarm</label>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_4" type="text" groupName="association" multiple="true">
+        <label>4: Basic Set for Overheat Alarm</label>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_5" type="text" groupName="association" multiple="true">
+        <label>5: Basic Set for Freeze Alarm</label>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

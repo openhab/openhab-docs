@@ -77,24 +77,21 @@ In-wall Smart Meter Dimmer Switch<br /> <h1>Overview</h1><p>The ZW500DM Dimmer S
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_8_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_8_1" type="integer" groupName="configuration">
         <label>8: Instant Energy Autosend Interval</label>
         <description>Instant Energy Autosend Interval (send METER_REPORT)</description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_9_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_9_1" type="integer" groupName="configuration">
         <label>9: Instant Power Autosend Interval</label>
         <description>Instant Power Autosend interval (send SENSOR_MULTILEVEL_REPORT)</description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_10_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_10_1" type="integer" groupName="configuration">
         <label>10: Accumulated Energy Autosend Interval</label>
         <description>Accumulated Energy Autosend Interval report (send METER_REPORT)</description>
         <default>0</default>
@@ -116,8 +113,7 @@ Enable automatic notifications to associated device<br /> <h1>Overview</h1><p>De
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_12_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_12_1" type="integer" groupName="configuration">
         <label>12: Minimum change in wattage triggering report</label>
         <description><![CDATA[
 Minimum change in wattage report<br /> <h1>Overview</h1><p>0-255: 0.0-25.5W</p>

@@ -75,8 +75,7 @@ Daaf Zipato Smoke Sensor<br /> <h1>Overview</h1><p>Zipato Smoke Sensor (Z-Wave) 
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_10_1" type="integer" groupName="configuration"
-                 min="0" max="127">
+      <parameter name="config_10_1" type="integer" groupName="configuration">
         <label>10: Auto Report Battery Time</label>
         <description><![CDATA[
 Auto Report Battery Time<br /> <h1>Overview</h1><p>The interval time for auto report the battery level.</p>

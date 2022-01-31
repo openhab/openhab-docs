@@ -131,8 +131,7 @@ Included Device Type<br /> <h1>Overview</h1><p>Included Device Type</p><p>1 = Bi
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_3_4" type="integer" groupName="configuration" readOnly="true"
-                 min="-2147483646" max="2147483647">
+      <parameter name="config_3_4" type="integer" groupName="configuration" readOnly="true">
         <label>3: Hardware and Software Versions</label>
         <description><![CDATA[
 Hardware and Software Versions<br /> <h1>Overview</h1><p>This Parameter allows to check the hardware and firmware versions of the device. The Parameter returns value in the format XXYYZZ, where XX is Hardware Version, YY is Firmware Major Version and ZZ is Firmware Minor Version.</p>
@@ -142,8 +141,7 @@ Hardware and Software Versions<br /> <h1>Overview</h1><p>This Parameter allows t
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_4_4" type="integer" groupName="configuration" readOnly="true"
-                 min="-2147483646" max="2147483647">
+      <parameter name="config_4_4" type="integer" groupName="configuration" readOnly="true">
         <label>4: Energy Consumption in kW</label>
         <description><![CDATA[
 Energy Consumption in kW<br /> <h1>Overview</h1><p>This Parameter allows you to check the Cumulative Energy Consumption of the connected load. Through the Z-Wave network this Parameter returns Total Cumulative Consumption value in kWh.</p>
@@ -165,8 +163,7 @@ Relay output NO or NC mode<br /> <h1>Overview</h1><p>This Parameter determines t
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_10_1" type="integer" groupName="configuration"
-                 min="1" max="100">
+      <parameter name="config_10_1" type="integer" groupName="configuration">
         <label>10: Floor Sensor Resistance</label>
         <description><![CDATA[
 External Floor NTC temperature sensor resistance<br /> <h1>Overview</h1><p>If the external floor NTC temperature sensor is used it is necessary to select the correct resistance value in Ohms (Ω) of the sensor. The selection range is 1 to 100 kiloOhms (kΩ). One 10kΩ NTC floor temperature sensor is included in the HE-HLS01 package with a 3-meter connection wire. The factory default value is 10kΩ.</p>
@@ -188,8 +185,7 @@ Sets temperature unit (Celsius/Fahrenheit)<br /> <h1>Overview</h1><p>This parame
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_17_1" type="integer" groupName="configuration"
-                 min="-100" max="100">
+      <parameter name="config_17_1" type="integer" groupName="configuration">
         <label>17: Temperature Sensor Calibration</label>
         <description><![CDATA[
 Temperature Sensor Calibration<br /> <h1>Overview</h1><p>This Parameter defines the offset value for floor temperature. If the external floor temperature sensor is not calibrated properly, then manual calibration can be made by adjusting the values up to ±10.0°C (±18°F).This value will be added or subtracted from the floor temperature sensor reading. Through the Z-Wave network the value of this Parameter should be x10 (for Celsius only), e.g. for 1.5°C set the value 15. The factory default value is 0.</p>
@@ -232,8 +228,7 @@ Week Day<br /> <h1>Overview</h1><p>This Parameter allows manual adjustment of th
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_22_2" type="integer" groupName="configuration"
-                 min="0" max="2359">
+      <parameter name="config_22_2" type="integer" groupName="configuration">
         <label>22: Time: Hour and Minutes</label>
         <description><![CDATA[
 Time: Hour and Minutes<br /> <h1>Overview</h1><p>This Parameter allows manual adjustment of Time. The Parameter has the following format: HHMM, where HH is hours and MM is minutes. E.g. for 16:08 set the value 1608 and for 1:00 set the value 100.</p>
@@ -256,8 +251,7 @@ Load Auto On/Off<br /> <h1>Overview</h1><p>If this function is enabled the devic
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_24_1" type="integer" groupName="configuration"
-                 min="0" max="120">
+      <parameter name="config_24_1" type="integer" groupName="configuration">
         <label>24: Auto Off Timeout</label>
         <description><![CDATA[
 Auto Off Timeout in minutes<br /> <h1>Overview</h1><p>If Auto On/Off function (the Parameter 23) is enabled, it is possible to delay the Auto Off function. The output will be switched Off when there is no consumption for the interval defined in this parameter in minutes. The value of this parameter can be set from 0 to 120 min. Set the parameter value to 0 if there is a need to switch Off the output immediately when consumption drops to 0W.The factory default value is 5 min</p>
@@ -266,8 +260,7 @@ Auto Off Timeout in minutes<br /> <h1>Overview</h1><p>If Auto On/Off function (t
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_25_1" type="integer" groupName="configuration"
-                 min="0" max="120">
+      <parameter name="config_25_1" type="integer" groupName="configuration">
         <label>25: Auto On Reconnect Timeout</label>
         <description><![CDATA[
 Auto On Reconnect Timeout<br /> <h1>Overview</h1><p>If Auto On/Off function (the Parameter 23) is enabled, it is possible to delay the Auto On function. When the load is reconnected the relay output will be switched On after the time defined in this parameter in minutes. The value of this parameter can be set from 0 to 120 min. Set the parameter value to 0 if there isa need to switch On the output immediately when the load is reconnected.The factory default value is 0 min.</p>
@@ -276,8 +269,7 @@ Auto On Reconnect Timeout<br /> <h1>Overview</h1><p>If Auto On/Off function (the
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_26_2" type="integer" groupName="configuration"
-                 min="-32767" max="32768">
+      <parameter name="config_26_2" type="integer" groupName="configuration">
         <label>26: Time Limited Load</label>
         <description><![CDATA[
 Time Limited Load<br /> <h1>Overview</h1><p>If the HLS01 is used to control an electric socket, you can configure the device so that it automatically switch Off the socket if the potentially dangerous high load is connected longer than allowable time (time to be set in the Parameter 27), for example, if you left the iron switched On for too long. Set in this parameter the threshold value in watts, reaching which the connected load will be considered high. The value of this parameter can be set from 100 to 3500 in watts. Use the value 0 if there is a need to disable this function. The factory default value is 0 (the function is disabled).</p>
@@ -286,8 +278,7 @@ Time Limited Load<br /> <h1>Overview</h1><p>If the HLS01 is used to control an e
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_27_2" type="integer" groupName="configuration"
-                 min="0" max="1440">
+      <parameter name="config_27_2" type="integer" groupName="configuration">
         <label>27: High Load ON Time Limit</label>
         <description><![CDATA[
 High Load ON Time Limit<br /> <h1>Overview</h1><p>If High Load Timeout Protection is activated (the Parameter 26 is set) use this parameter to set the threshold value in minutes. If the load is connected longer than this value, the device will automatically switch Off the socket. The value of this parameter is in minutes and can be set from 1 to 1440. Use the value 0 if there is a need to disable this function. The factory default value is 0 (the function is disabled).</p>
@@ -311,8 +302,7 @@ External input: Hold Control Mode<br /> <h1>Overview</h1><p>0 – Hold function 
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_46_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_46_1" type="integer" groupName="configuration">
         <label>46: External input: Hold Control Mode Duration</label>
         <description><![CDATA[
 External input: Hold Control Mode Duration<br /> <h1>Overview</h1><p>This parameter specifies the time the device needs to recognize a hold mode when the button connected to an external input is held (key closed). The acceptable values are: 200 to 5000 milliseconds. The factory default value is 500 milliseconds.</p>
@@ -351,8 +341,7 @@ Restore Relay State After Power Failure<br /> <h1>Overview</h1><p>This parameter
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_71_2" type="integer" groupName="configuration"
-                 min="-32767" max="32768">
+      <parameter name="config_71_2" type="integer" groupName="configuration">
         <label>71: Relay Timer Mode Duration</label>
         <description><![CDATA[
 Relay Timer Mode Duration<br /> <h1>Overview</h1><p>These parameters specify the duration in seconds for the Timer mode (values 4 or 5 in the Parameter 51). Press the button on the switch connected to external input and the relay output goes to ON/OFF for the specified time then changes back to OFF/ON. The time value can be configured from 0 sec to 43200 sec (12 hours). The factory default value is 0.</p><p>If the parameter value is set to “0” the relay output will operate as a short contact (duration is about 0.5 sec).</p>
@@ -361,8 +350,7 @@ Relay Timer Mode Duration<br /> <h1>Overview</h1><p>These parameters specify the
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_111_4" type="integer" groupName="configuration"
-                 min="-2147483646" max="2147483647">
+      <parameter name="config_111_4" type="integer" groupName="configuration">
         <label>111: Relay control scenario 1</label>
         <description><![CDATA[
 Relay control scenario 1<br /> <h1>Overview</h1><p>In these parameters, the relay state changes depending on day and time. For these configurations, parameter values are encoded as 7-digit numbers (ABCDEFG).</p><p>A: State. 0 = Disabled, 1 = Enabled</p><p>B: Day of week</p><p>0 = every day</p><p>1-7 = corresponding day (1 is Monday, 7 is Sunday)</p><p>8 = every weekday (Monday - Friday)</p><p>9 = every weekend (Saturday and Sunday)</p><p>C: Change state to</p><p>0 = Switch OFF</p><p>1 = Switch ON</p><p>DEFG: Time</p><p>DE represents Hour (from 0 to 23),</p><p>FG represents Minutes (from 0 to 59).</p><p>All other numbers are reserved and will not affect the operation. To disable this option simply set this parameter to 0.</p><p>The factory default value is 0.</p><p>Example: Parameter value 1210350 means A=1 (the scenario is enabled), B=2 (Tuesday), C=1 (switch the relay On), DEFG=0350 (time 03:50). In this case each Tuesday at 03:50 the HE-HLS01 USER MANUAL 24 relay output will be switched On. To disable the scenario, change the first digit to 0. In this example it will be 0210350.</p>
@@ -372,8 +360,7 @@ Relay control scenario 1<br /> <h1>Overview</h1><p>In these parameters, the rela
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_112_4" type="integer" groupName="configuration"
-                 min="-2147483646" max="2147483647">
+      <parameter name="config_112_4" type="integer" groupName="configuration">
         <label>112: Relay control scenario 2</label>
         <description><![CDATA[
 Relay control scenario 2<br /> <h1>Overview</h1><p>In these parameters, the relay state changes depending on day and time. For these configurations, parameter values are encoded as 7-digit numbers (ABCDEFG).</p><p>A: State. 0 = Disabled, 1 = Enabled</p><p>B: Day of week</p><p>0 = every day</p><p>1-7 = corresponding day (1 is Monday, 7 is Sunday)</p><p>8 = every weekday (Monday - Friday)</p><p>9 = every weekend (Saturday and Sunday)</p><p>C: Change state to</p><p>0 = Switch OFF</p><p>1 = Switch ON</p><p>DEFG: Time</p><p>DE represents Hour (from 0 to 23),</p><p>FG represents Minutes (from 0 to 59).</p><p>All other numbers are reserved and will not affect the operation. To disable this option simply set this parameter to 0.</p><p>The factory default value is 0.</p><p>Example: Parameter value 1210350 means A=1 (the scenario is enabled), B=2 (Tuesday), C=1 (switch the relay On), DEFG=0350 (time 03:50). In this case each Tuesday at 03:50 the HE-HLS01 USER MANUAL 24 relay output will be switched On. To disable the scenario, change the first digit to 0. In this example it will be 0210350.</p>
@@ -383,8 +370,7 @@ Relay control scenario 2<br /> <h1>Overview</h1><p>In these parameters, the rela
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_113_4" type="integer" groupName="configuration"
-                 min="-2147483646" max="2147483647">
+      <parameter name="config_113_4" type="integer" groupName="configuration">
         <label>113: Relay control scenario 3</label>
         <description><![CDATA[
 Relay control scenario 3<br /> <h1>Overview</h1><p>In these parameters, the relay state changes depending on day and time. For these configurations, parameter values are encoded as 7-digit numbers (ABCDEFG).</p><p>A: State. 0 = Disabled, 1 = Enabled</p><p>B: Day of week</p><p>0 = every day</p><p>1-7 = corresponding day (1 is Monday, 7 is Sunday)</p><p>8 = every weekday (Monday - Friday)</p><p>9 = every weekend (Saturday and Sunday)</p><p>C: Change state to</p><p>0 = Switch OFF</p><p>1 = Switch ON</p><p>DEFG: Time</p><p>DE represents Hour (from 0 to 23),</p><p>FG represents Minutes (from 0 to 59).</p><p>All other numbers are reserved and will not affect the operation. To disable this option simply set this parameter to 0.</p><p>The factory default value is 0.</p><p>Example: Parameter value 1210350 means A=1 (the scenario is enabled), B=2 (Tuesday), C=1 (switch the relay On), DEFG=0350 (time 03:50). In this case each Tuesday at 03:50 the HE-HLS01 USER MANUAL 24 relay output will be switched On. To disable the scenario, change the first digit to 0. In this example it will be 0210350.</p>
@@ -394,8 +380,7 @@ Relay control scenario 3<br /> <h1>Overview</h1><p>In these parameters, the rela
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_114_4" type="integer" groupName="configuration"
-                 min="-2147483646" max="2147483647">
+      <parameter name="config_114_4" type="integer" groupName="configuration">
         <label>114: Relay control scenario 4</label>
         <description><![CDATA[
 Relay control scenario 4<br /> <h1>Overview</h1><p>In these parameters, the relay state changes depending on day and time. For these configurations, parameter values are encoded as 7-digit numbers (ABCDEFG).</p><p>A: State. 0 = Disabled, 1 = Enabled</p><p>B: Day of week</p><p>0 = every day</p><p>1-7 = corresponding day (1 is Monday, 7 is Sunday)</p><p>8 = every weekday (Monday - Friday)</p><p>9 = every weekend (Saturday and Sunday)</p><p>C: Change state to</p><p>0 = Switch OFF</p><p>1 = Switch ON</p><p>DEFG: Time</p><p>DE represents Hour (from 0 to 23),</p><p>FG represents Minutes (from 0 to 59).</p><p>All other numbers are reserved and will not affect the operation. To disable this option simply set this parameter to 0.</p><p>The factory default value is 0.</p><p>Example: Parameter value 1210350 means A=1 (the scenario is enabled), B=2 (Tuesday), C=1 (switch the relay On), DEFG=0350 (time 03:50). In this case each Tuesday at 03:50 the HE-HLS01 USER MANUAL 24 relay output will be switched On. To disable the scenario, change the first digit to 0. In this example it will be 0210350.</p>
@@ -405,8 +390,7 @@ Relay control scenario 4<br /> <h1>Overview</h1><p>In these parameters, the rela
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_115_4" type="integer" groupName="configuration"
-                 min="-2147483646" max="2147483647">
+      <parameter name="config_115_4" type="integer" groupName="configuration">
         <label>115: Relay control scenario 5</label>
         <description><![CDATA[
 Relay control scenario 5<br /> <h1>Overview</h1><p>In these parameters, the relay state changes depending on day and time. For these configurations, parameter values are encoded as 7-digit numbers (ABCDEFG).</p><p>A: State. 0 = Disabled, 1 = Enabled</p><p>B: Day of week</p><p>0 = every day</p><p>1-7 = corresponding day (1 is Monday, 7 is Sunday)</p><p>8 = every weekday (Monday - Friday)</p><p>9 = every weekend (Saturday and Sunday)</p><p>C: Change state to</p><p>0 = Switch OFF</p><p>1 = Switch ON</p><p>DEFG: Time</p><p>DE represents Hour (from 0 to 23),</p><p>FG represents Minutes (from 0 to 59).</p><p>All other numbers are reserved and will not affect the operation. To disable this option simply set this parameter to 0.</p><p>The factory default value is 0.</p><p>Example: Parameter value 1210350 means A=1 (the scenario is enabled), B=2 (Tuesday), C=1 (switch the relay On), DEFG=0350 (time 03:50). In this case each Tuesday at 03:50 the HE-HLS01 USER MANUAL 24 relay output will be switched On. To disable the scenario, change the first digit to 0. In this example it will be 0210350.</p>
@@ -416,8 +400,7 @@ Relay control scenario 5<br /> <h1>Overview</h1><p>In these parameters, the rela
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_116_4" type="integer" groupName="configuration"
-                 min="-2147483646" max="2147483647">
+      <parameter name="config_116_4" type="integer" groupName="configuration">
         <label>116: Relay control scenario 6</label>
         <description><![CDATA[
 Relay control scenario 6<br /> <h1>Overview</h1><p>In these parameters, the relay state changes depending on day and time. For these configurations, parameter values are encoded as 7-digit numbers (ABCDEFG).</p><p>A: State. 0 = Disabled, 1 = Enabled</p><p>B: Day of week</p><p>0 = every day</p><p>1-7 = corresponding day (1 is Monday, 7 is Sunday)</p><p>8 = every weekday (Monday - Friday)</p><p>9 = every weekend (Saturday and Sunday)</p><p>C: Change state to</p><p>0 = Switch OFF</p><p>1 = Switch ON</p><p>DEFG: Time</p><p>DE represents Hour (from 0 to 23),</p><p>FG represents Minutes (from 0 to 59).</p><p>All other numbers are reserved and will not affect the operation. To disable this option simply set this parameter to 0.</p><p>The factory default value is 0.</p><p>Example: Parameter value 1210350 means A=1 (the scenario is enabled), B=2 (Tuesday), C=1 (switch the relay On), DEFG=0350 (time 03:50). In this case each Tuesday at 03:50 the HE-HLS01 USER MANUAL 24 relay output will be switched On. To disable the scenario, change the first digit to 0. In this example it will be 0210350.</p>
@@ -427,8 +410,7 @@ Relay control scenario 6<br /> <h1>Overview</h1><p>In these parameters, the rela
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_117_4" type="integer" groupName="configuration"
-                 min="-2147483646" max="2147483647">
+      <parameter name="config_117_4" type="integer" groupName="configuration">
         <label>117: Relay control scenario 7</label>
         <description><![CDATA[
 Relay control scenario 7<br /> <h1>Overview</h1><p>In these parameters, the relay state changes depending on day and time. For these configurations, parameter values are encoded as 7-digit numbers (ABCDEFG).</p><p>A: State. 0 = Disabled, 1 = Enabled</p><p>B: Day of week</p><p>0 = every day</p><p>1-7 = corresponding day (1 is Monday, 7 is Sunday)</p><p>8 = every weekday (Monday - Friday)</p><p>9 = every weekend (Saturday and Sunday)</p><p>C: Change state to</p><p>0 = Switch OFF</p><p>1 = Switch ON</p><p>DEFG: Time</p><p>DE represents Hour (from 0 to 23),</p><p>FG represents Minutes (from 0 to 59).</p><p>All other numbers are reserved and will not affect the operation. To disable this option simply set this parameter to 0.</p><p>The factory default value is 0.</p><p>Example: Parameter value 1210350 means A=1 (the scenario is enabled), B=2 (Tuesday), C=1 (switch the relay On), DEFG=0350 (time 03:50). In this case each Tuesday at 03:50 the HE-HLS01 USER MANUAL 24 relay output will be switched On. To disable the scenario, change the first digit to 0. In this example it will be 0210350.</p>
@@ -438,8 +420,7 @@ Relay control scenario 7<br /> <h1>Overview</h1><p>In these parameters, the rela
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_118_4" type="integer" groupName="configuration"
-                 min="-2147483646" max="2147483647">
+      <parameter name="config_118_4" type="integer" groupName="configuration">
         <label>118: Relay control scenario 8</label>
         <description><![CDATA[
 Relay control scenario 8<br /> <h1>Overview</h1><p>In these parameters, the relay state changes depending on day and time. For these configurations, parameter values are encoded as 7-digit numbers (ABCDEFG).</p><p>A: State. 0 = Disabled, 1 = Enabled</p><p>B: Day of week</p><p>0 = every day</p><p>1-7 = corresponding day (1 is Monday, 7 is Sunday)</p><p>8 = every weekday (Monday - Friday)</p><p>9 = every weekend (Saturday and Sunday)</p><p>C: Change state to</p><p>0 = Switch OFF</p><p>1 = Switch ON</p><p>DEFG: Time</p><p>DE represents Hour (from 0 to 23),</p><p>FG represents Minutes (from 0 to 59).</p><p>All other numbers are reserved and will not affect the operation. To disable this option simply set this parameter to 0.</p><p>The factory default value is 0.</p><p>Example: Parameter value 1210350 means A=1 (the scenario is enabled), B=2 (Tuesday), C=1 (switch the relay On), DEFG=0350 (time 03:50). In this case each Tuesday at 03:50 the HE-HLS01 USER MANUAL 24 relay output will be switched On. To disable the scenario, change the first digit to 0. In this example it will be 0210350.</p>
@@ -449,8 +430,7 @@ Relay control scenario 8<br /> <h1>Overview</h1><p>In these parameters, the rela
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_119_4" type="integer" groupName="configuration"
-                 min="-2147483646" max="2147483647">
+      <parameter name="config_119_4" type="integer" groupName="configuration">
         <label>119: Relay control scenario 9</label>
         <description><![CDATA[
 Relay control scenario 9<br /> <h1>Overview</h1><p>In these parameters, the relay state changes depending on day and time. For these configurations, parameter values are encoded as 7-digit numbers (ABCDEFG).</p><p>A: State. 0 = Disabled, 1 = Enabled</p><p>B: Day of week</p><p>0 = every day</p><p>1-7 = corresponding day (1 is Monday, 7 is Sunday)</p><p>8 = every weekday (Monday - Friday)</p><p>9 = every weekend (Saturday and Sunday)</p><p>C: Change state to</p><p>0 = Switch OFF</p><p>1 = Switch ON</p><p>DEFG: Time</p><p>DE represents Hour (from 0 to 23),</p><p>FG represents Minutes (from 0 to 59).</p><p>All other numbers are reserved and will not affect the operation. To disable this option simply set this parameter to 0.</p><p>The factory default value is 0.</p><p>Example: Parameter value 1210350 means A=1 (the scenario is enabled), B=2 (Tuesday), C=1 (switch the relay On), DEFG=0350 (time 03:50). In this case each Tuesday at 03:50 the HE-HLS01 USER MANUAL 24 relay output will be switched On. To disable the scenario, change the first digit to 0. In this example it will be 0210350.</p>
@@ -460,8 +440,7 @@ Relay control scenario 9<br /> <h1>Overview</h1><p>In these parameters, the rela
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_120_4" type="integer" groupName="configuration"
-                 min="-2147483646" max="2147483647">
+      <parameter name="config_120_4" type="integer" groupName="configuration">
         <label>120: Relay control scenario 10</label>
         <description><![CDATA[
 Relay control scenario 10<br /> <h1>Overview</h1><p>In these parameters, the relay state changes depending on day and time. For these configurations, parameter values are encoded as 7-digit numbers (ABCDEFG).</p><p>A: State. 0 = Disabled, 1 = Enabled</p><p>B: Day of week</p><p>0 = every day</p><p>1-7 = corresponding day (1 is Monday, 7 is Sunday)</p><p>8 = every weekday (Monday - Friday)</p><p>9 = every weekend (Saturday and Sunday)</p><p>C: Change state to</p><p>0 = Switch OFF</p><p>1 = Switch ON</p><p>DEFG: Time</p><p>DE represents Hour (from 0 to 23),</p><p>FG represents Minutes (from 0 to 59).</p><p>All other numbers are reserved and will not affect the operation. To disable this option simply set this parameter to 0.</p><p>The factory default value is 0.</p><p>Example: Parameter value 1210350 means A=1 (the scenario is enabled), B=2 (Tuesday), C=1 (switch the relay On), DEFG=0350 (time 03:50). In this case each Tuesday at 03:50 the HE-HLS01 USER MANUAL 24 relay output will be switched On. To disable the scenario, change the first digit to 0. In this example it will be 0210350.</p>
@@ -471,8 +450,7 @@ Relay control scenario 10<br /> <h1>Overview</h1><p>In these parameters, the rel
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_139_1" type="integer" groupName="configuration"
-                 min="1" max="120">
+      <parameter name="config_139_1" type="integer" groupName="configuration">
         <label>139: Temperature sensor consecutive report interval</label>
         <description><![CDATA[
 Temperature sensor consecutive report interval<br /> <h1>Overview</h1><p>When the device is connected to the Z-Wave gateway (controller), it periodically sends to the gateway reports from its floor temperature, sensor even if there are not changes in the values. This Parameter defines the interval between consecutive reports. The value can be adjusted from 1 min to 120 min. The factory default value is 10 min.</p>
@@ -481,8 +459,7 @@ Temperature sensor consecutive report interval<br /> <h1>Overview</h1><p>When th
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_141_1" type="integer" groupName="configuration"
-                 min="1" max="120">
+      <parameter name="config_141_1" type="integer" groupName="configuration">
         <label>141: Energy Consumption Meter Consecutive Report Interval</label>
         <description><![CDATA[
 Energy Consumption Meter Consecutive Report Interval<br /> <h1>Overview</h1><p>When the device is connected to the Z-Wave gateway (controller), it periodically sends to the gateway reports from its energy consumption sensor even if there is no change in the value. This Parameter defines the interval between consecutive reports of real time and cumulative energy consumption data to the gateway. The value can be adjusted from 1 min to 120 min. The factory default value is 10 min.</p>
@@ -491,8 +468,7 @@ Energy Consumption Meter Consecutive Report Interval<br /> <h1>Overview</h1><p>W
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_142_1" type="integer" groupName="configuration"
-                 min="0" max="50">
+      <parameter name="config_142_1" type="integer" groupName="configuration">
         <label>142: Energy Consumption Report Threshold</label>
         <description><![CDATA[
 Consumption difference to send to controller, %<br /> <h1>Overview</h1><p>This Parameter determines the change in the load power resulting in the consumption report being sent to the gateway. From 1% to 50% can be selected. Use the value 0 if there is a need to stop sending the reports. The factory default value is 25</p>
@@ -501,8 +477,7 @@ Consumption difference to send to controller, %<br /> <h1>Overview</h1><p>This P
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_143_1" type="integer" groupName="configuration"
-                 min="1" max="120">
+      <parameter name="config_143_1" type="integer" groupName="configuration">
         <label>143: Temperature sensor consecutive report interval</label>
         <description><![CDATA[
 Temperature sensor consecutive report interval<br /> <h1>Overview</h1><p>When the device is connected to the Z-Wave gateway (controller), it periodically sends to the gateway reports from its floor temperature, sensor even if there are not changes in the values. This Parameter defines the interval between consecutive reports. The value can be adjusted from 1 min to 120 min. The factory default value is 10 min.</p>
@@ -511,8 +486,7 @@ Temperature sensor consecutive report interval<br /> <h1>Overview</h1><p>When th
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_144_1" type="integer" groupName="configuration"
-                 min="0" max="100">
+      <parameter name="config_144_1" type="integer" groupName="configuration">
         <label>144: Temperature report threshold</label>
         <description><![CDATA[
 Temperature difference to send to controller, value X 10<br /> <h1>Overview</h1><p>This Parameter determines the change in temperature level (in °C or °F) resulting in temperature sensors report being sent to the gateway. The value of this Parameter should be x10 (for °C only), e.g. for 0.4°C use value 4.From 0.1°C (value 1) to 10°C (value 100) and for °F from 1°F -18°F can be selected. Use the value 0 if there is a need to stop sending the reports. The factory default value is 2 (0.2°C).</p>
@@ -535,8 +509,7 @@ System Error Notification<br /> <h1>Overview</h1><p>If the HLS01 does not work p
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_152_0" type="integer" groupName="configuration"
-                 min="0" max="120">
+      <parameter name="config_152_0" type="integer" groupName="configuration">
         <label>152: Temperature Rise Notification</label>
         <description><![CDATA[
 Temperature Rise Notification<br /> <h1>Overview</h1><p>Use this parameter if you want to know about temperature rise before it reaches the critical value, defined in the “Overheat Protection” parameter. The device will send “Rapid Temperature Rise” notification to the gateway if the temperature sensor reading reaches the value defined in this parameter. The value can be set from 1 to 120 in °C scale mode. To disable the notification, set the value of this parameter to 0. The factory default value is 50 in °C scale.</p><p> We recommend setting the value of this Parameter lower than value of Parameter 153 (Overheat Protection).</p>
@@ -546,8 +519,7 @@ Temperature Rise Notification<br /> <h1>Overview</h1><p>Use this parameter if yo
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_153_2" type="integer" groupName="configuration"
-                 min="0" max="120">
+      <parameter name="config_153_2" type="integer" groupName="configuration">
         <label>153: Overheat Protection &amp; Notification</label>
         <description><![CDATA[
 Overheat Protection &amp; Notification<br /> <h1>Overview</h1><p>You can define the maximum limit of temperature, reaching which the device will automatically switch Off the load and send “Overheat Detected” notification to the gateway. The value of this parameter can be set from 1 to 120 in °C scale mode or from 34 to 248 in °F scale mode. Usethe value 0 if there is a need to disable this function.The factory default value is 60 in °C scale and 140 in °F scale.</p>

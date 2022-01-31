@@ -60,8 +60,7 @@ Wall Plug Dimmer<br /> <h1>Overview</h1><p>This is a wall plug dimmer that can b
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_2_2" type="integer" groupName="configuration"
-                 min="-32767" max="32768">
+      <parameter name="config_2_2" type="integer" groupName="configuration">
         <label>2: Automatic switch off time</label>
         <description>If not zero, automatically switch off after a user defined time (in seconds)</description>
         <default>0</default>
@@ -93,8 +92,7 @@ RF Off command<br /> <h1>Overview</h1><p>Defines how to interpret RF Off command
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_5_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_5_1" type="integer" groupName="configuration">
         <label>5: Speed for fast dimming</label>
         <description><![CDATA[
 Speed for fast dimming<br /> <h1>Overview</h1><p>Time to dim on button presses and Set command (if it has no duration specified).</p> <p>If not 0, dimming will be done smoothly to preserve bulb life.</p> <p>Set in 10ms steps.</p>
@@ -103,8 +101,7 @@ Speed for fast dimming<br /> <h1>Overview</h1><p>Time to dim on button presses a
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_6_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_6_1" type="integer" groupName="configuration">
         <label>6: Speed for slow dimming</label>
         <description><![CDATA[
 Speed for slow dimming<br /> <h1>Overview</h1><p>Time to dim on button presses and Set command (if it has no duration specified).</p> <p>If not 0, dimming will be done smoothly to preserve bulb life.</p> <p>Set in 10ms steps.</p>
@@ -127,8 +124,7 @@ Behavior when ON received<br /> <h1>Overview</h1><p>Defines the dim level on com
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_8_1" type="integer" groupName="configuration"
-                 min="0" max="99">
+      <parameter name="config_8_1" type="integer" groupName="configuration">
         <label>8: Baby dimming time</label>
         <description><![CDATA[
 Baby dimming time<br /> <h1>Overview</h1><p>Time to dim on double click Off button for Baby-Dim function. This function works only if the load is operated by single press and hold button action.</p> <p><strong>If enabled, the device will wait for a click timeout to see if the second click would be pressed. This will introduce a small delay for single click commands</strong></p>
@@ -137,8 +133,7 @@ Baby dimming time<br /> <h1>Overview</h1><p>Time to dim on double click Off butt
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_9_1" type="integer" groupName="configuration"
-                 min="0" max="100">
+      <parameter name="config_9_1" type="integer" groupName="configuration">
         <label>9: Baby target light level</label>
         <description><![CDATA[
 Baby target level<br /> <h1>Overview</h1><p>Target percentage level on which to stop while executing Baby Dimming. Can be 0 to completely switch off the light.</p>
@@ -147,8 +142,7 @@ Baby target level<br /> <h1>Overview</h1><p>Target percentage level on which to 
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_10_1" type="integer" groupName="configuration"
-                 min="0" max="100">
+      <parameter name="config_10_1" type="integer" groupName="configuration">
         <label>10: Baby target time level</label>
         <description><![CDATA[
 Baby target level<br /> <h1>Overview</h1><p>Typical time used to differentiate click, hold, double and triple clicks.</p> <p>Set in 10ms steps.</p>
@@ -157,24 +151,21 @@ Baby target level<br /> <h1>Overview</h1><p>Typical time used to differentiate c
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_17_1" type="integer" groupName="configuration"
-                 min="1" max="95">
+      <parameter name="config_17_1" type="integer" groupName="configuration">
         <label>17: Limit minimum light level</label>
         <description>Minimum level should be greater than maximum.</description>
         <default>1</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_18_1" type="integer" groupName="configuration"
-                 min="0" max="99">
+      <parameter name="config_18_1" type="integer" groupName="configuration">
         <label>18: Limit maximum light level</label>
         <description>Maximum level should be greater than minimum. Set to 0 to act as a switch.</description>
         <default>1</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_19_1" type="integer" groupName="configuration"
-                 min="0" max="99">
+      <parameter name="config_19_1" type="integer" groupName="configuration">
         <label>19: Dim Level on 'Switch On'</label>
         <description><![CDATA[
 Dim Level on 'Switch On'<br /> <h1>Overview</h1><p>defines how the dimmer hall react on a simple ON Command.</p> <p>Set to 0 to restore last level, otherwise sets dim level.</p>
@@ -183,8 +174,7 @@ Dim Level on 'Switch On'<br /> <h1>Overview</h1><p>defines how the dimmer hall r
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_51_1" type="integer" groupName="configuration"
-                 min="5" max="60">
+      <parameter name="config_51_1" type="integer" groupName="configuration">
         <label>51: Pause before pulse</label>
         <description><![CDATA[
 Pause before pulse<br /> <h1>Overview</h1><p><strong>NB: Do not touch these settings if you are not sure what they mean! </strong></p> <p>For dimmable LEDs and CFL with bypass use value 1.</p> <p>For other bulbs use default value.</p>
@@ -194,8 +184,7 @@ Pause before pulse<br /> <h1>Overview</h1><p><strong>NB: Do not touch these sett
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_52_1" type="integer" groupName="configuration"
-                 min="5" max="60">
+      <parameter name="config_52_1" type="integer" groupName="configuration">
         <label>52: Pause after pulse</label>
         <description><![CDATA[
 Pause after pulse<br /> <h1>Overview</h1><p><strong>NB: Do not touch these settings if you are not sure what they mean! </strong></p> <p>For dimmable LEDs and CFL with bypass use value 40.</p> <p>For other bulbs use default value.</p>
@@ -205,8 +194,7 @@ Pause after pulse<br /> <h1>Overview</h1><p><strong>NB: Do not touch these setti
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_53_1" type="integer" groupName="configuration"
-                 min="3" max="20">
+      <parameter name="config_53_1" type="integer" groupName="configuration">
         <label>53: Pulse width</label>
         <description><![CDATA[
 Pulse width<br /> <h1>Overview</h1><p><strong>NB: Do not touch these settings if you are not sure what they mean! </strong></p> <p>For dimmable LEDs and CFL with bypass use value 20.</p> <p>For other bulbs use default value.</p>

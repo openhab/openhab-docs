@@ -93,8 +93,7 @@ Transmitter Flush-Mounted 4-Gang Switch<br /> <h1>Overview</h1><p>The flush-moun
       </parameter-group>
 
       <!-- PARAMETER DEFINITIONS -->
-      <parameter name="config_0_1" type="integer" groupName="configuration"
-                 min="0" max="127">
+      <parameter name="config_0_1" type="integer" groupName="configuration">
         <label>0: Group 1 (red)</label>
         <description><![CDATA[
 <br /> <h1>Overview</h1><p><br /></p>
@@ -110,8 +109,7 @@ Transmitter Flush-Mounted 4-Gang Switch<br /> <h1>Overview</h1><p>The flush-moun
         </options>
       </parameter>
 
-      <parameter name="config_1_1" type="integer" groupName="configuration"
-                 min="0" max="127">
+      <parameter name="config_1_1" type="integer" groupName="configuration">
         <label>1: Group 2 (green)</label>
         <description><![CDATA[
 <br /> <h1>Overview</h1><p><br /></p>
@@ -127,8 +125,7 @@ Transmitter Flush-Mounted 4-Gang Switch<br /> <h1>Overview</h1><p>The flush-moun
         </options>
       </parameter>
 
-      <parameter name="config_2_1" type="integer" groupName="configuration"
-                 min="0" max="127">
+      <parameter name="config_2_1" type="integer" groupName="configuration">
         <label>2: Group3 (brown)</label>
         <description><![CDATA[
 <br /> <h1>Overview</h1><p><br /></p>
@@ -144,8 +141,7 @@ Transmitter Flush-Mounted 4-Gang Switch<br /> <h1>Overview</h1><p>The flush-moun
         </options>
       </parameter>
 
-      <parameter name="config_3_1" type="integer" groupName="configuration"
-                 min="0" max="127">
+      <parameter name="config_3_1" type="integer" groupName="configuration">
         <label>3: Group 4 (blue)</label>
         <description><![CDATA[
 <br /> <h1>Overview</h1><p><br /></p>

@@ -144,8 +144,7 @@ Activate / deactivate functions ALL ON/ALL OFF<br /> <h1>Overview</h1><p>Flush 1
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_11_2" type="integer" groupName="configuration"
-                 min="-32767" max="32768">
+      <parameter name="config_11_2" type="integer" groupName="configuration">
         <label>11: Automatic turning off relay Q1 after set time</label>
         <description><![CDATA[
 Automatic turning off relay Q1 after set time<br /> <h1>Overview</h1><p>Auto OFF enabled with define time, step is 10 mseconds</p> <ul><li>0 = Auto OFF disabled</li> <li>1–65535 = 0,01 second – 655,35 seconds</li> </ul>
@@ -154,8 +153,7 @@ Automatic turning off relay Q1 after set time<br /> <h1>Overview</h1><p>Auto OFF
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_12_2" type="integer" groupName="configuration"
-                 min="-32767" max="32768">
+      <parameter name="config_12_2" type="integer" groupName="configuration">
         <label>12: Automatic turning off relay Q2 after set time</label>
         <description><![CDATA[
 Automatic turning off relay Q2 after set time<br /> <h1>Overview</h1><p>Auto OFF enabled with define time, step is 10 mseconds</p> <ul><li>0 = Auto OFF disabled</li> <li>1–65535 = 0,01 second – 655,35 seconds</li> </ul>
@@ -175,8 +173,7 @@ Automatic turning off relay Q2 after set time<br /> <h1>Overview</h1><p>Auto OFF
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_40_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_40_1" type="integer" groupName="configuration">
         <label>40: Power reporting in Watts on power change for Q1</label>
         <description><![CDATA[
 Power reporting in Watts on power change for Q1<br /> <h1>Overview</h1><p>Power report is sent (pushed) only when actual power in Watts in real time changed for more than set percentage comparing to previous actual power in Watts, step is 1%.</p> <ul><li>0 = Reporting Disabled</li> <li>1–100 = 1% - 100% Reporting enabled</li> </ul>
@@ -185,8 +182,7 @@ Power reporting in Watts on power change for Q1<br /> <h1>Overview</h1><p>Power 
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_41_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_41_1" type="integer" groupName="configuration">
         <label>41: Power reporting in Watts on power change for Q2</label>
         <description><![CDATA[
 Power reporting in Watts on power change for Q2<br /> <h1>Overview</h1><p>Power report is sent (pushed) only when actual power in Watts in real time changed for more than set percentage comparing to previous actual power in Watts, step is 1%.</p> <ul><li>0 = Reporting Disabled</li> <li>1–100 = 1% - 100% Reporti</li> </ul>
@@ -195,8 +191,7 @@ Power reporting in Watts on power change for Q2<br /> <h1>Overview</h1><p>Power 
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_42_2" type="integer" groupName="configuration"
-                 min="-32767" max="32768">
+      <parameter name="config_42_2" type="integer" groupName="configuration">
         <label>42: Power reporting in Watts by time interval for Q1</label>
         <description><![CDATA[
 Power reporting in Watts by time interval for Q1<br /> <h1>Overview</h1><p>Default value is 300 (power report in Watts is sent each 300s)</p> <ul><li>0 = Reporting Disabled</li> <li>1–65535 = 1 second – 65535 seconds. Reporting enabled.</li> </ul><p>Power report is sent with time interval set by entered value.</p>
@@ -205,8 +200,7 @@ Power reporting in Watts by time interval for Q1<br /> <h1>Overview</h1><p>Defau
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_43_2" type="integer" groupName="configuration"
-                 min="-32767" max="32768">
+      <parameter name="config_43_2" type="integer" groupName="configuration">
         <label>43: Power reporting in Watts by time interval for Q2</label>
         <description><![CDATA[
 Power reporting in Watts by time interval for Q2<br /> <h1>Overview</h1><p>Default value is 300 (power report in Watts is sent each 300s)</p> <ul><li>0 = Reporting Disabled</li> <li>1–65535 = 1 second – 65535 seconds. Reporting enabled.  </li> </ul><p>Power report is sent with time interval set by entered value.</p>

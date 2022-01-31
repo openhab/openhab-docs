@@ -58,8 +58,7 @@ Motion Detector<br /> <h1>Overview</h1><p>Battery powered Motion Sensor</p> <br 
       </parameter-group>
 
       <!-- PARAMETER DEFINITIONS -->
-      <parameter name="config_1_1" type="integer" groupName="configuration"
-                 min="0" max="99">
+      <parameter name="config_1_1" type="integer" groupName="configuration">
         <label>1: Basic Set Level</label>
         <description>Value to be sent with a BASIC SET command</description>
         <default>99</default>
@@ -77,30 +76,26 @@ Motion Detector<br /> <h1>Overview</h1><p>Battery powered Motion Sensor</p> <br 
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_3_1" type="integer" groupName="configuration"
-                 min="1" max="10">
+      <parameter name="config_3_1" type="integer" groupName="configuration">
         <label>3: Sensitivity Level</label>
         <default>6</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_4_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_4_1" type="integer" groupName="configuration">
         <label>4: Re-trigger Interval Setting</label>
         <default>-76</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_5_1" type="integer" groupName="configuration"
-                 min="1" max="100">
+      <parameter name="config_5_1" type="integer" groupName="configuration">
         <label>5: LUX Level</label>
         <description>Value for what LUX level will arm the detection sensor</description>
         <default>10</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_6_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_6_1" type="integer" groupName="configuration">
         <label>6: On-Off Duration</label>
         <default>15</default>
         <limitToOptions>false</limitToOptions>

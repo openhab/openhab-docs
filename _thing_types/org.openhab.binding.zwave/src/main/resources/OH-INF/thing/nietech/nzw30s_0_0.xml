@@ -78,8 +78,7 @@ Invert switch<br /> <h1>Overview</h1><p>To change the top of the switch to OFF a
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_5_2" type="integer" groupName="configuration"
-                 min="0" max="32768">
+      <parameter name="config_5_2" type="integer" groupName="configuration">
         <label>5: Countdown</label>
         <description><![CDATA[
 Countdown Timer<br /> <h1>Overview</h1><p>Value 0 (default) = No Timer</p> <p>Range = 0 - 32768 Seconds</p>

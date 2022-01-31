@@ -64,8 +64,7 @@
       </parameter-group>
 
       <!-- PARAMETER DEFINITIONS -->
-      <parameter name="config_1_1" type="integer" groupName="configuration"
-                 min="1" max="70">
+      <parameter name="config_1_1" type="integer" groupName="configuration">
         <label>1: Heartbeats</label>
         <description><![CDATA[
 the number minutes between heartbeats.<br /> <h1>Overview</h1><p>Format Unsigned</p>
@@ -74,8 +73,7 @@ the number minutes between heartbeats.<br /> <h1>Overview</h1><p>Format Unsigned
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_2_1" type="integer" groupName="configuration"
-                 min="0" max="5">
+      <parameter name="config_2_1" type="integer" groupName="configuration">
         <label>2: Retries</label>
         <description><![CDATA[
 Number of application level retries attempted for messages<br /> <h1>Overview</h1><p>Unsigned</p>
@@ -84,8 +82,7 @@ Number of application level retries attempted for messages<br /> <h1>Overview</h
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_3_1" type="integer" groupName="configuration"
-                 min="1" max="60">
+      <parameter name="config_3_1" type="integer" groupName="configuration">
         <label>3: App Level Retry Base Wait</label>
         <description><![CDATA[
 The number base seconds used in the calculation for sleeping between retry messages.<br /> <h1>Overview</h1><p>Unsigned</p>
@@ -94,8 +91,7 @@ The number base seconds used in the calculation for sleeping between retry messa
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_4_1" type="integer" groupName="configuration"
-                 min="0" max="2">
+      <parameter name="config_4_1" type="integer" groupName="configuration">
         <label>4: LED</label>
         <description><![CDATA[
 LED indications on the device.<br /> <h1>Overview</h1><p><br /></p>
@@ -108,8 +104,7 @@ LED indications on the device.<br /> <h1>Overview</h1><p><br /></p>
         </options>
       </parameter>
 
-      <parameter name="config_5_2" type="integer" groupName="configuration"
-                 min="-32767" max="32768">
+      <parameter name="config_5_2" type="integer" groupName="configuration">
         <label>5: One shot timer</label>
         <description><![CDATA[
 wakeup notification one time after this parameter’s number of seconds.<br /> <h1>Overview</h1><p>unsigned</p>
@@ -118,8 +113,7 @@ wakeup notification one time after this parameter’s number of seconds.<br /> <
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_6_2" type="integer" groupName="configuration"
-                 min="500" max="5000">
+      <parameter name="config_6_2" type="integer" groupName="configuration">
         <label>6: Supervisory Retry</label>
         <description><![CDATA[
 The number of milliseconds waiting for a Supervisory Report<br /> <h1>Overview</h1><p>unsigned</p>

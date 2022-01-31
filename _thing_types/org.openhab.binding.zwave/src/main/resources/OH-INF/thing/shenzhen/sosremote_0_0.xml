@@ -64,8 +64,7 @@ Z-Wave Remote for Scene selection and SOS button<br /> <h1>Overview</h1><p>Remot
       </parameter-group>
 
       <!-- PARAMETER DEFINITIONS -->
-      <parameter name="config_1_1" type="integer" groupName="configuration"
-                 min="0" max="100">
+      <parameter name="config_1_1" type="integer" groupName="configuration">
         <label>1: Basic Set Level</label>
         <description><![CDATA[
 Basic Set Level<br /> <h1>Overview</h1><p>Basic Set Command will be sent where contains a value when SOS is triggered if group 2 have associated a device such as siren, the receiver will take it for consideration; for instance, if associated siren is received the Basic Set Command (0xFF), the siren will take alarm on.</p> <p>0~99 are mapping to Basic Set value (0 ~ 99). 100 is mapping to Basic Set Value 0xFF.</p>
@@ -74,8 +73,7 @@ Basic Set Level<br /> <h1>Overview</h1><p>Basic Set Command will be sent where c
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_2_2" type="integer" groupName="configuration"
-                 min="30" max="32767">
+      <parameter name="config_2_2" type="integer" groupName="configuration">
         <label>2: SOS Event Clear Time</label>
         <description><![CDATA[
 SOS Event Clear Time<br /> <h1>Overview</h1><p>This parameter defines the time to clear emergency event after emergency event is triggered when parameter #3 is set to ‘2’.</p> <p>This parameter is set to ‘0’, the clearing emergency event will not occurred always.</p> <p>The default value of this parameter is set to ‘60’, means that the emergency event will be cleared after 60 seconds when emergency event is triggered.</p>

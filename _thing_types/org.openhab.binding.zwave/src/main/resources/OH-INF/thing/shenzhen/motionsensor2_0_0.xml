@@ -70,8 +70,7 @@ PIR Motion Sensor 2<br /> <h1>Overview</h1><p><br /></p><p>Motion Sensor with il
       </parameter-group>
 
       <!-- PARAMETER DEFINITIONS -->
-      <parameter name="config_1_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_1_1" type="integer" groupName="configuration">
         <label>1: Sensitivity Level</label>
         <description><![CDATA[
 Defines the sensitivity of PIR sensor.<br /> <h1>Overview</h1><p> Where 8 = highest &amp; 255 = lowest sensitivity</p>
@@ -80,8 +79,7 @@ Defines the sensitivity of PIR sensor.<br /> <h1>Overview</h1><p> Where 8 = hig
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_2_2" type="integer" groupName="configuration"
-                 min="5" max="600">
+      <parameter name="config_2_2" type="integer" groupName="configuration">
         <label>2: ON/OFF Duration</label>
         <description><![CDATA[
 Determines how long the associated devices should stay ON<br /> <h1>Overview</h1><p>For instance, this parameter is set to 30(second), the PIR detector will send a BASIC SET Command to an associated device with value basic set level if PIR detector is triggered and the associated device will be turned on 30(second) before it is turned off. This Parameter value must be large than Parameter #6.</p>
@@ -90,8 +88,7 @@ Determines how long the associated devices should stay ON<br /> <h1>Overview</h1
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_3_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_3_1" type="integer" groupName="configuration">
         <label>3: Basic Set Level</label>
         <description><![CDATA[
 Basic Set Command will be sent when motion is triggered<br /> <h1>Overview</h1><p>The receiver will take in for consideration; for instance, if a lamp module received the BSC of which value is decisive as to how bright of dim level of lamp module shall be.</p> <p>Available Settings:</p> <ul><li>0 - Off, Alarm cancelling or turning a device OFF</li> <li>1~99 or 255 – ON (Binary Switch Device)</li> <li>Dim Level (Multilevel Switch Device)</li> </ul>
@@ -100,8 +97,7 @@ Basic Set Command will be sent when motion is triggered<br /> <h1>Overview</h1><
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_4_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_4_1" type="integer" groupName="configuration">
         <label>4: PIR Detector</label>
         <description><![CDATA[
 <br /> <h1>Overview</h1><p><br /></p>
@@ -113,8 +109,7 @@ Basic Set Command will be sent when motion is triggered<br /> <h1>Overview</h1><
         </options>
       </parameter>
 
-      <parameter name="config_5_2" type="integer" groupName="configuration"
-                 min="0" max="1000">
+      <parameter name="config_5_2" type="integer" groupName="configuration">
         <label>5: Light Sensor Brightness Threshold</label>
         <description><![CDATA[
 The light sensor is active when the brightness is above this level<br /> <h1>Overview</h1><p>If the ambient illumination level falls below this value and a person moves across or within the detected area , PIR detector will send a Z-Wave ON command(i.e. BASIC_SET value = parameter 3#) to an associated device and activate it.</p>
@@ -123,8 +118,7 @@ The light sensor is active when the brightness is above this level<br /> <h1>Ove
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_6_1" type="integer" groupName="configuration"
-                 min="1" max="8">
+      <parameter name="config_6_1" type="integer" groupName="configuration">
         <label>6: PIR Re-trigger Interval</label>
         <description><![CDATA[
 Must be less than the On/Off Duration<br /> <h1>Overview</h1><p>No report will be sent during this interval if a movement is presented. This Parameter value must be less than Parameter 2#.</p>
@@ -133,8 +127,7 @@ Must be less than the On/Off Duration<br /> <h1>Overview</h1><p>No report will b
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_7_2" type="integer" groupName="configuration"
-                 min="-32767" max="32768">
+      <parameter name="config_7_2" type="integer" groupName="configuration">
         <label>7: Light Sensor Polling Interval</label>
         <description><![CDATA[
 The Interval after which the Light Sensor Measure is polled.<br /> <h1>Overview</h1><p><br /></p>
@@ -156,8 +149,7 @@ The Interval after which the Light Sensor Measure is polled.<br /> <h1>Overview<
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_9_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_9_1" type="integer" groupName="configuration">
         <label>9: Lux Level Changed Report</label>
         <description><![CDATA[
 How much the Lux Level must change<br /> <h1>Overview</h1><p>How much the Lux Level must change, in lux, to be reported to the main controller.</p>
@@ -179,8 +171,7 @@ How much the Lux Level must change<br /> <h1>Overview</h1><p>How much the Lux Le
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_11_1" type="integer" groupName="configuration"
-                 min="0" max="1">
+      <parameter name="config_11_1" type="integer" groupName="configuration">
         <label>11: LED: Blink on Motion</label>
         <default>1</default>
         <options>
@@ -189,8 +180,7 @@ How much the Lux Level must change<br /> <h1>Overview</h1><p>How much the Lux Le
         </options>
       </parameter>
 
-      <parameter name="config_99_2" type="integer" groupName="configuration"
-                 min="-32767" max="32768">
+      <parameter name="config_99_2" type="integer" groupName="configuration">
         <label>99: Ambient light intensity calibration</label>
         <description><![CDATA[
 <br /> <h1>Overview</h1><p> This parameter defines the calibrated scale for ambient light intensity, to allow more or less granular light measurements</p>

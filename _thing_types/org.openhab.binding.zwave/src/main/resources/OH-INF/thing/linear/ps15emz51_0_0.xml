@@ -77,8 +77,7 @@ Appliance Module<br /> <h1>Overview</h1><p>The PS15EMZ5-1 is a plug in the wall 
       </parameter-group>
 
       <!-- PARAMETER DEFINITIONS -->
-      <parameter name="config_2_1" type="integer" groupName="configuration"
-                 min="0" max="100">
+      <parameter name="config_2_1" type="integer" groupName="configuration">
         <label>2: LED Intensity</label>
         <description><![CDATA[
 LED Intensity<br /> <h1>Overview</h1><p>100 = full brightness</p>
@@ -100,8 +99,7 @@ LED Intensity<br /> <h1>Overview</h1><p>100 = full brightness</p>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_13_2" type="integer" groupName="configuration"
-                 min="0" max="255">
+      <parameter name="config_13_2" type="integer" groupName="configuration">
         <label>13: Energy Monitoring</label>
         <description><![CDATA[
 Energy Monitoring<br /> <h1>Overview</h1><ul><li>0 Autmatic reporting OFF</li> <li>1-255 number of minutes between reports</li> </ul>

@@ -110,8 +110,7 @@ Wall Mount Accessory Switch<br /> <h1>Overview</h1><p>The 3-Way Wall Mounted Swi
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_20_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_20_1" type="integer" groupName="configuration">
         <label>20: Polling Interval</label>
         <description>How often, in minutes, to poll to keep synchronized with group.</description>
         <default>2</default>

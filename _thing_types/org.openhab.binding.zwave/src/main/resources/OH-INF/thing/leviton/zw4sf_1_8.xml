@@ -56,8 +56,7 @@ Fan Speed Controller<br /> <h1>Overview</h1><p>The Decora Smart branded Z-Wave e
       </parameter-group>
 
       <!-- PARAMETER DEFINITIONS -->
-      <parameter name="config_3_1" type="integer" groupName="configuration"
-                 min="0" max="99">
+      <parameter name="config_3_1" type="integer" groupName="configuration">
         <label>3: Minimum Fan Speed</label>
         <description><![CDATA[
 Controls the minimum fan speed.<br /> <h1>Overview</h1><p><br /></p>
@@ -66,16 +65,14 @@ Controls the minimum fan speed.<br /> <h1>Overview</h1><p><br /></p>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_4_1" type="integer" groupName="configuration"
-                 min="0" max="99">
+      <parameter name="config_4_1" type="integer" groupName="configuration">
         <label>4: Maximum Fan Speed</label>
         <description>Controls the maximum fan speed</description>
         <default>99</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_5_1" type="integer" groupName="configuration"
-                 min="0" max="99">
+      <parameter name="config_5_1" type="integer" groupName="configuration">
         <label>5: Preset Fan Speed Level</label>
         <description><![CDATA[
 Controls the initial fan speed level when turned on<br /> <h1>Overview</h1><p>This setting controls the speed the fan is set to when it turns on. When '0', the fan will use the last known speed setting. Otherwise, 1-99 control the initial fan speed, with 99 being the fastest.</p>
@@ -84,8 +81,7 @@ Controls the initial fan speed level when turned on<br /> <h1>Overview</h1><p>Th
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_6_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_6_1" type="integer" groupName="configuration">
         <label>6: LED Level Indicator Timeout</label>
         <description><![CDATA[
 Controls timeout for LED speed indicator, in seconds<br /> <h1>Overview</h1><p>0=Level indicator is always off. 255=Level indicator is always on. Anything in between is the number of seconds the level indicator LED will stay on for, after the fan speed has been adjusted.</p>
@@ -94,8 +90,7 @@ Controls timeout for LED speed indicator, in seconds<br /> <h1>Overview</h1><p>0
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_7_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_7_1" type="integer" groupName="configuration">
         <label>7: Status LED Behavior</label>
         <description><![CDATA[
 Controls behavior of the status LED<br /> <h1>Overview</h1><p>0=Off, 254=Status Mode, 255=Locator Mode</p>

@@ -64,176 +64,154 @@ Alarm Keypad 2nd Gen<br /> <h1>Overview</h1><p>Ring Alarm features a Z-Wave keyp
       </parameter-group>
 
       <!-- PARAMETER DEFINITIONS -->
-      <parameter name="config_1_1" type="integer" groupName="configuration"
-                 min="0" max="70">
+      <parameter name="config_1_1" type="integer" groupName="configuration">
         <label>1: Heartbeats</label>
         <description>This parameter is the number minutes between heartbeats. Heartbeats are automatic battery reports on a timer after the last event.</description>
         <default>70</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_2_1" type="integer" groupName="configuration"
-                 min="0" max="5">
+      <parameter name="config_2_1" type="integer" groupName="configuration">
         <label>2: Application Level Retries</label>
         <description>Number of application level retries attempted for messages either not ACKed or messages encapsulated via supervision get that did not receive a report.</description>
         <default>1</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_3_0" type="integer" groupName="configuration"
-                 min="1" max="60">
+      <parameter name="config_3_0" type="integer" groupName="configuration">
         <label>3: Application Level Retry Base Wait Time Period</label>
         <description>The number base seconds used in the calculation for sleeping between retry messages.</description>
         <default>5</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_4_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_4_1" type="integer" groupName="configuration">
         <label>4: Announcement Audio Volume</label>
         <description>Announcement Audio Volume (for audio files - should this be lumped into one of the other volume settings?)</description>
         <default>7</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_5_1" type="integer" groupName="configuration"
-                 min="0" max="10">
+      <parameter name="config_5_1" type="integer" groupName="configuration">
         <label>5: Key Tone Volume</label>
         <description>Key Tone Volume</description>
         <default>6</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_6_1" type="integer" groupName="configuration"
-                 min="0" max="10">
+      <parameter name="config_6_1" type="integer" groupName="configuration">
         <label>6: Siren Volume</label>
         <description>Siren Volume</description>
         <default>10</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_7_1" type="integer" groupName="configuration"
-                 min="2" max="5">
+      <parameter name="config_7_1" type="integer" groupName="configuration">
         <label>7: Long press emergency duration</label>
         <description>Long press emergency duration (seconds) This parameter allows a user to configure the duration in seconds for the hold time required to capture a long press . This includes Emergency Buttons + Mode Buttons (Police, Fire, Medical, Disarmed, Home, Away)</description>
         <default>3</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_8_1" type="integer" groupName="configuration"
-                 min="2" max="5">
+      <parameter name="config_8_1" type="integer" groupName="configuration">
         <label>8: Long press number pad duration</label>
         <description>Long press number pad duration (seconds) This parameter allows a user to configure the duration in seconds for the hold time required to capture a long press . This includes Number Pad + Check &amp; X (0-9, Check, X)</description>
         <default>3</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_9_1" type="integer" groupName="configuration"
-                 min="0" max="30">
+      <parameter name="config_9_1" type="integer" groupName="configuration">
         <label>9: Proximity Display Timeout</label>
         <description>Proximity Display Timeout : Timeout in seconds when proximity is detected and no input is received</description>
         <default>5</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_10_1" type="integer" groupName="configuration"
-                 min="0" max="30">
+      <parameter name="config_10_1" type="integer" groupName="configuration">
         <label>10: Button Press Display Timeout</label>
         <description>Button Press Display Timeout : Timeout in seconds when any button is pressed, but a sequence is not completed and buttons are no longer being pressed</description>
         <default>5</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_11_1" type="integer" groupName="configuration"
-                 min="0" max="30">
+      <parameter name="config_11_1" type="integer" groupName="configuration">
         <label>11: Status Change Display Timeout</label>
         <description>Status Change Display Timeout: Timeout in seconds when indicator command is received from the hub to change status</description>
         <default>5</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_12_1" type="integer" groupName="configuration"
-                 min="0" max="100">
+      <parameter name="config_12_1" type="integer" groupName="configuration">
         <label>12: Security Mode Brightness</label>
         <description>Security Mode Brightness: Adjusts the brightness of the security mode buttons</description>
         <default>100</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_13_1" type="integer" groupName="configuration"
-                 min="0" max="100">
+      <parameter name="config_13_1" type="integer" groupName="configuration">
         <label>13: Key Backlight Brightness</label>
         <description>Key Backlight Brightness: Adjusts the brightness of the keypad backlight. Used for Key Backlight LEDs only Available settings: 0-100%</description>
         <default>100</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_14_1" type="integer" groupName="configuration"
-                 min="0" max="100">
+      <parameter name="config_14_1" type="integer" groupName="configuration">
         <label>14: Ambient Light Sensor Level</label>
         <description>Ambient Light Sensor Level: Light threshold where keypad will stop backlighting if higher than</description>
         <default>5</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_15_1" type="integer" groupName="configuration"
-                 min="0" max="1">
+      <parameter name="config_15_1" type="integer" groupName="configuration">
         <label>15: Proximity On/OFF</label>
         <description>Proximity On/OFF: Turn On and Off the Proximity Detection.</description>
         <default>1</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_16_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_16_1" type="integer" groupName="configuration">
         <label>16: Ramp Time Config</label>
         <description>Ramp Time Config: Ramp time in milliseconds to turn the LEDs on/off. Applies to all LEDs on the keypad</description>
         <default>50</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_17_1" type="integer" groupName="configuration"
-                 min="0" max="100">
+      <parameter name="config_17_1" type="integer" groupName="configuration">
         <label>17: Low Battery Threshold</label>
         <description>Low Battery Threshold - The percentage level at which the display would turn on the yellow battery indicator (whenever the display is on).</description>
         <default>15</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_18_0" type="integer" groupName="configuration"
-                 min="0" max="31">
+      <parameter name="config_18_0" type="integer" groupName="configuration">
         <label>18: Languages Set</label>
         <description>Languages Set: bit number in the languages supported bitmask to set</description>
         <default>30</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_19_1" type="integer" groupName="configuration"
-                 min="0" max="100">
+      <parameter name="config_19_1" type="integer" groupName="configuration">
         <label>19: Warn Battery Threshold</label>
         <description>Warn Battery Threshold - The percentage level at which the display would turn on the red battery indicator (whenever the display is on)</description>
         <default>5</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_20_2" type="integer" groupName="configuration"
-                 min="500" max="5000">
+      <parameter name="config_20_2" type="integer" groupName="configuration">
         <label>20: Supervisory Report response time</label>
         <description>The number of milliseconds waiting for a Supervisory Report response to a Supervisory Get encapsulated command from the device before attempting a retry</description>
         <default>1500</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_21_2" type="integer" groupName="configuration"
-                 min="0" max="601">
+      <parameter name="config_21_2" type="integer" groupName="configuration">
         <label>21: System Security Mode Display</label>
         <description>System Security Mode Display: (Always, Sometimes, Never). 601 = Always On , 1 - 600 = periodic interval, 0 = Always</description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_22_4" type="integer" groupName="configuration" readOnly="true"
-                 min="-2147483646" max="2147483647">
+      <parameter name="config_22_4" type="integer" groupName="configuration" readOnly="true">
         <label>22: Languages Supported (Get)</label>
         <description>Languages Supported (Get): returns bitmask of languages supported. Bits set to 1 indicate that the language is supported</description>
         <default>0</default>

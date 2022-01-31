@@ -60,16 +60,14 @@ In-Wall Dimmer<br /> <h1>Overview</h1><p>In Wall Dimmer switch module.  Require
       </parameter-group>
 
       <!-- PARAMETER DEFINITIONS -->
-      <parameter name="config_2_1" type="integer" groupName="configuration"
-                 min="0" max="2">
+      <parameter name="config_2_1" type="integer" groupName="configuration">
         <label>2: LoadStatePowerLoss</label>
         <description>Saving load state before power failure</description>
         <default>2</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_3_1" type="integer" groupName="configuration"
-                 min="0" max="1">
+      <parameter name="config_3_1" type="integer" groupName="configuration">
         <label>3: EnableDisableBasicReport</label>
         <description><![CDATA[
 Enable/Disable Send basic report on load change<br /> <h1>Overview</h1><p>0 -- Disable to send Basic report</p> <p>1 -- Enable to sent Basic report</p>
@@ -78,8 +76,7 @@ Enable/Disable Send basic report on load change<br /> <h1>Overview</h1><p>0 -- D
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_4_1" type="integer" groupName="configuration" readOnly="true"
-                 min="-127" max="128">
+      <parameter name="config_4_1" type="integer" groupName="configuration" readOnly="true">
         <label>4: DefaultFadeTime</label>
         <description><![CDATA[
 Time to fade to new value (Units depend on value)<br /> <h1>Overview</h1><p>0x00 -- Instantaneous Change</p> <p>0x01 .. 0x7F -- 1 second (0x01) to 127 seconds (0x7F) in 1 second resolution</p> <p>0x80 .. 0xFE -- 1 minute (0x80) to 127 minutes (0xFE) in 1 minute resolution</p> <p>0xFF -- Factory Default duration (1 second)</p>
@@ -88,8 +85,7 @@ Time to fade to new value (Units depend on value)<br /> <h1>Overview</h1><p>0x00
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_5_1" type="integer" groupName="configuration"
-                 min="0" max="50">
+      <parameter name="config_5_1" type="integer" groupName="configuration">
         <label>5: MinBrightness</label>
         <description><![CDATA[
 Minimum Brightness Value<br /> <h1>Overview</h1><p>Valid Value: 0-50, the bigger the value is, the higher the load's minimum brightness is</p> <p>Note: when configuring this value, the value of Multilevel will be configured as 1 automatically so that users can preview the corresponding effect of minimum brightness value.</p>
@@ -98,8 +94,7 @@ Minimum Brightness Value<br /> <h1>Overview</h1><p>Valid Value: 0-50, the bigger
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_6_1" type="integer" groupName="configuration"
-                 min="0" max="1">
+      <parameter name="config_6_1" type="integer" groupName="configuration">
         <label>6: MOSFETDriveType</label>
         <description><![CDATA[
 Choose MOSFET driving type<br /> <h1>Overview</h1><p>0 -- trailing edge</p> <p>1 -- leading edge</p>
@@ -108,8 +103,7 @@ Choose MOSFET driving type<br /> <h1>Overview</h1><p>0 -- trailing edge</p> <p>1
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_7_1" type="integer" groupName="configuration"
-                 min="0" max="1">
+      <parameter name="config_7_1" type="integer" groupName="configuration">
         <label>7: EnableInclExcl</label>
         <description><![CDATA[
 Enable Inclusion and Exclusion<br /> <h1>Overview</h1><p>0 -- disable</p> <p>1 -- enable</p>

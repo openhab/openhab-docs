@@ -161,8 +161,7 @@ Qubino 3-Phase Smart Meter<br /> <h1>Overview</h1><p>Qubino 3-Phase Smart Meter 
       </parameter-group>
 
       <!-- PARAMETER DEFINITIONS -->
-      <parameter name="config_7_1" type="integer" groupName="configuration"
-                 min="0" max="5">
+      <parameter name="config_7_1" type="integer" groupName="configuration">
         <label>7: Input switch (i1) function selection</label>
         <description><![CDATA[
 Available configuration parameters for input switch I1<br /> <h1>Overview</h1><ul><li>0 – disabled</li> <li>2 – IR external relay control – mono stable push button</li> <li>3 – IR external relay control – bi-stable switch</li> <li>4 – External relay control – mono stable push button</li> <li>5 – External relay control – bi-stable switch</li> </ul> <p><strong>Note!</strong></p> <ul><li>By setting the parameter 7 to value 4 or 5 the external Relay (IKA) is working with input switch without enabling parameter no. 101</li> <li>To make the IR Relay (BICOM) responsive to the digital input, in addition to the setting of the configuration parameter 7, parameter 100 must also be set to value 1 or 2.</li> </ul>
@@ -240,8 +239,7 @@ Enable / Disable External relay (IKA)<br /> <h1>Overview</h1><p>Available config
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_106_2" type="integer" groupName="configuration"
-                 min="-32767" max="32768">
+      <parameter name="config_106_2" type="integer" groupName="configuration">
         <label>106: maximum power threshold of all phases together</label>
         <description><![CDATA[
 maximum power threshold of all phases together<br /> <h1>Overview</h1><p>External IR relay (BICOM) power threshold settings – maximum power of all phases together</p> <p>This parameter defines a threshold when External IR relay is being turned off. (If Parameter no. 100 is set to the value 1 or 2)</p> <p>Available configuration parameters (data type is 2 Byte<br />DEC)</p> <ul><li>Default value 0</li> <li>0 – no function</li> <li>10-60000 – 10W-60000W</li> </ul><p><strong>NOTE:</strong> Meter is capable of measuring max 3x65A!</p>

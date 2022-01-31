@@ -81,8 +81,7 @@ Auto Turn-Off Timer Enable<br /> <h1>Overview</h1><p>Enable or disable the auto 
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_4_4" type="integer" groupName="configuration"
-                 min="1" max="65535">
+      <parameter name="config_4_4" type="integer" groupName="configuration">
         <label>4: Auto Turn-Off Timer Time</label>
         <description><![CDATA[
 Auto Turn-Off Timer Time<br /> <h1>Overview</h1><p>The number is in minutes.</p> <p>Default: 60 minutes</p>
@@ -104,8 +103,7 @@ Auto Turn-On Timer Enable<br /> <h1>Overview</h1><p>enable or disable the auto t
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_6_4" type="integer" groupName="configuration"
-                 min="1" max="65535">
+      <parameter name="config_6_4" type="integer" groupName="configuration">
         <label>6: Auto Turn-On Timer Time</label>
         <description><![CDATA[
 Auto Turn-On Timer Time<br /> <h1>Overview</h1><p>number is in minutes</p> <p>Default: 60 minutes</p>
@@ -126,8 +124,7 @@ Auto Turn-On Timer Time<br /> <h1>Overview</h1><p>number is in minutes</p> <p>De
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_9_1" type="integer" groupName="configuration"
-                 min="1" max="99">
+      <parameter name="config_9_1" type="integer" groupName="configuration">
         <label>9: Ramp Rate Control</label>
         <description><![CDATA[
 Ramp Rate Control<br /> <h1>Overview</h1><p>Number of seconds for the dimmer to reach full brightness or turn off when operated manually.</p> <p>Default: 1 second</p>
@@ -136,8 +133,7 @@ Ramp Rate Control<br /> <h1>Overview</h1><p>Number of seconds for the dimmer to 
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_10_1" type="integer" groupName="configuration"
-                 min="1" max="99">
+      <parameter name="config_10_1" type="integer" groupName="configuration">
         <label>10: Minimum Brightness</label>
         <description><![CDATA[
 Minimum Brightness<br /> <h1>Overview</h1><p>Minimum brightness level (in %) for your dimmer.</p>
@@ -146,8 +142,7 @@ Minimum Brightness<br /> <h1>Overview</h1><p>Minimum brightness level (in %) for
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_11_1" type="integer" groupName="configuration"
-                 min="1" max="99">
+      <parameter name="config_11_1" type="integer" groupName="configuration">
         <label>11: Maximum Brightness</label>
         <description><![CDATA[
 Maximum Brightness<br /> <h1>Overview</h1><p>Maximum brightness level (in %) for your dimmer.</p>

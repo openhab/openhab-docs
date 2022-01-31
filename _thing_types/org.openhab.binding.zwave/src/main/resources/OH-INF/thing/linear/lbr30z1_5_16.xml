@@ -63,8 +63,7 @@ Turn Dim Level Memory ON/OFF<br /> <h1>Overview</h1><p>By default, the LBR30Z-1 
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_9_1" type="integer" groupName="configuration"
-                 min="1" max="99">
+      <parameter name="config_9_1" type="integer" groupName="configuration">
         <label>9: Dim / Bright Step Level</label>
         <description><![CDATA[
 How much the brightness will change with each dimming step<br /> <h1>Overview</h1><p>When the brightness is adjusted by the controller/gateway, how much the bulb brightness will change is set by the programmed dimming step level. </p>
@@ -73,8 +72,7 @@ How much the brightness will change with each dimming step<br /> <h1>Overview</h
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_10_1" type="integer" groupName="configuration"
-                 min="1" max="10">
+      <parameter name="config_10_1" type="integer" groupName="configuration">
         <label>10: Dim / Bright Speed</label>
         <description><![CDATA[
 How fast the brightness will change with each dimming step<br /> <h1>Overview</h1><p>When the brightness is adjusted by the controller/gateway, how fast the bulb brightness will change is set by the programmed dimming step speed</p>

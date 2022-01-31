@@ -64,8 +64,7 @@ Multisensor<br /> <h1>Overview</h1><p>The Home Control Motion Sensor measures br
       </parameter-group>
 
       <!-- PARAMETER DEFINITIONS -->
-      <parameter name="config_2_1" type="integer" groupName="configuration"
-                 min="-1" max="100">
+      <parameter name="config_2_1" type="integer" groupName="configuration">
         <label>2: Basic Set Level</label>
         <description><![CDATA[
 Basic Set Level<br /> <h1>Overview</h1><p>-1    -&gt;  0xFF(-1) turns on the light.</p> <p>1 - 100    -&gt;  For dimmers 1 to 100 means the light strength</p>
@@ -74,8 +73,7 @@ Basic Set Level<br /> <h1>Overview</h1><p>-1    -&gt;  0xFF(-1) turns on the 
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_3_1" type="integer" groupName="configuration"
-                 min="0" max="99">
+      <parameter name="config_3_1" type="integer" groupName="configuration">
         <label>3: PIR Sensitivity</label>
         <description><![CDATA[
 Parameter to set the Sensitivity<br /> <h1>Overview</h1><p>Parameter to set the Sensitivity for the PIR (Passiv Infrared Sensor)</p> <p>0-&gt; means disable the PIR motion;</p> <p>1 - 99-&gt; means the lowest sensitivity, 99 means the highest sensitivity</p>
@@ -84,8 +82,7 @@ Parameter to set the Sensitivity<br /> <h1>Overview</h1><p>Parameter to set the 
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_4_1" type="integer" groupName="configuration"
-                 min="0" max="100">
+      <parameter name="config_4_1" type="integer" groupName="configuration">
         <label>4: Light Threshold</label>
         <description><![CDATA[
 Setting the illumination threshold to turn on the light<br /> <h1>Overview</h1><p>Setting the illumination threshold to turn on the light. When the event triggered and the environment illumination lower then the threshold, the device will turn on the light</p> <p>0 -&gt;  means turn off illumination detected function and never turn on the light</p>
@@ -94,8 +91,7 @@ Setting the illumination threshold to turn on the light<br /> <h1>Overview</h1><
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_5_1" type="integer" groupName="configuration"
-                 min="0" max="127">
+      <parameter name="config_5_1" type="integer" groupName="configuration">
         <label>5: Operation Mode</label>
         <description><![CDATA[
 Operation Mode<br /> <h1>Overview</h1><p>Bit 0: 1 means security mode; 0 means home automation mode. </p> <p>Bit 1: 1 means enable test mode; 0 means disable test mode. Notice: Bit0 and Bit1 will effect when the DIP Switch setting to program mode. If Bit1 is enabled, the Bit0 is useless.</p> <p> Bit 2: Disable </p>
@@ -104,8 +100,7 @@ Operation Mode<br /> <h1>Overview</h1><p>Bit 0: 1 means security mode; 0 means h
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_6_1" type="integer" groupName="configuration"
-                 min="0" max="127">
+      <parameter name="config_6_1" type="integer" groupName="configuration">
         <label>6: Multi-Sensor Function Switch</label>
         <description><![CDATA[
 Configure Multi-Sensor Function Switch<br /> <h1>Overview</h1><p>Bit 0: Disable magnetic integrate illumination. </p> <p>Bit 1: Disable PIR integrate Illumination. </p> <p>Bit 2: Disable magnetic integrate PIR (Default is Disable) </p> <p>Bit 3: When Bit2 is 0 (Enable), the device is install in the same room with the light? 0: In the same room</p>
@@ -114,8 +109,7 @@ Configure Multi-Sensor Function Switch<br /> <h1>Overview</h1><p>Bit 0: Disable 
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_7_1" type="integer" groupName="configuration"
-                 min="0" max="127">
+      <parameter name="config_7_1" type="integer" groupName="configuration">
         <label>7: Customer Function</label>
         <description><![CDATA[
 Parameter to set the Customer Function.<br /> <h1>Overview</h1><p>Parameter to set the Customer Function. </p> <p>Bit 0: Reserved. </p> <p>Bit 1: Enable sending motion OFF report. 0: Disable, 1: Enable. Note: Depends on the Bit4, 0: Report Notification CC, Type: 0x07, Event: 0xFE 1: Sensor Binary Report,</p>
@@ -126,8 +120,7 @@ Parameter to set the Customer Function.<br /> <h1>Overview</h1><p>Parameter to s
         </options>
       </parameter>
 
-      <parameter name="config_8_1" type="integer" groupName="configuration"
-                 min="3" max="127">
+      <parameter name="config_8_1" type="integer" groupName="configuration">
         <label>8: PIR Re-Detect Interval Time</label>
         <description><![CDATA[
 Re-detect time after motion detected<br /> <h1>Overview</h1><p>In the security mode, after the PIR motion detected, setting the re-detect time </p>
@@ -136,8 +129,7 @@ Re-detect time after motion detected<br /> <h1>Overview</h1><p>In the security m
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_9_1" type="integer" groupName="configuration"
-                 min="4" max="127">
+      <parameter name="config_9_1" type="integer" groupName="configuration">
         <label>9: Turn Off Light Time</label>
         <description><![CDATA[
 Delay time to turn light off after no motion detected<br /> <h1>Overview</h1><p>After turn on the light, setting the delay time to turn off the light when the PIR motion is not detected</p>
@@ -146,24 +138,21 @@ Delay time to turn light off after no motion detected<br /> <h1>Overview</h1><p>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_10_1" type="integer" groupName="configuration"
-                 min="1" max="127">
+      <parameter name="config_10_1" type="integer" groupName="configuration">
         <label>10: Auto Report Battery Time</label>
         <description>Interval time for auto report the battery level</description>
         <default>12</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_12_1" type="integer" groupName="configuration"
-                 min="1" max="127">
+      <parameter name="config_12_1" type="integer" groupName="configuration">
         <label>12: Auto Report Illumination Time</label>
         <description>Interval time for auto report the illumination state</description>
         <default>12</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_13_1" type="integer" groupName="configuration"
-                 min="1" max="127">
+      <parameter name="config_13_1" type="integer" groupName="configuration">
         <label>13: Auto Report Temperature Time</label>
         <description>Interval time for auto report the temperature state</description>
         <default>12</default>

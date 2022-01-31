@@ -73,8 +73,7 @@ Single-socket PowerNode<br /> <h1>Overview</h1><p>This Configuration is for the 
       </parameter-group>
 
       <!-- PARAMETER DEFINITIONS -->
-      <parameter name="config_0_1" type="integer" groupName="configuration"
-                 min="0" max="100">
+      <parameter name="config_0_1" type="integer" groupName="configuration">
         <label>0: Min. variation of load current</label>
         <description><![CDATA[
 Minimum variation in load current before a message is sent.<br /> <h1>Overview</h1><p> Value in percent (30 =&gt; 30%)</p>
@@ -83,8 +82,7 @@ Minimum variation in load current before a message is sent.<br /> <h1>Overview</
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_1_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_1_1" type="integer" groupName="configuration">
         <label>1: No communication light</label>
         <description>Minutes after which the device will flash if controller communicate is lost</description>
         <default>2</default>

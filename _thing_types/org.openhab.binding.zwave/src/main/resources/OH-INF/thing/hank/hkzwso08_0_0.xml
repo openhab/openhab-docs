@@ -77,8 +77,7 @@ Smart Plug<br /> <h1>Overview</h1><p>Smart Plug is a Z-Wave Switch plugin module
       </parameter-group>
 
       <!-- PARAMETER DEFINITIONS -->
-      <parameter name="config_20_1" type="integer" groupName="configuration"
-                 min="0" max="1">
+      <parameter name="config_20_1" type="integer" groupName="configuration">
         <label>20: Overload Protection</label>
         <description><![CDATA[
 If current exceeds 11.5A over 5 seconds, relay will turn off.<br /> <h1>Overview</h1><p>If current exceeds 11.5A over 5 seconds, relay will turn off.</p><p>0 - The function is disabled</p><p>1 - The function is enabled.</p>
@@ -87,8 +86,7 @@ If current exceeds 11.5A over 5 seconds, relay will turn off.<br /> <h1>Overview
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_21_1" type="integer" groupName="configuration"
-                 min="0" max="2">
+      <parameter name="config_21_1" type="integer" groupName="configuration">
         <label>21: Device Status after Power Failure</label>
         <description><![CDATA[
 Define how the plug reacts after power failure<br /> <h1>Overview</h1><p>Define how the plug reacts after power failure:</p><p>0 - Smart Plug returns to previous state after a power failure.</p><p>1 - Smart Plug does not memorize its state after a powerfailure.</p><p>Connected device will be on after the power supply is reconnected.</p><p>2 - Smart Plug does not memorize its state after a power failure.</p><p>Connected device will be off after the power supply is reconnected.</p>
@@ -97,8 +95,7 @@ Define how the plug reacts after power failure<br /> <h1>Overview</h1><p>Define 
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_24_1" type="integer" groupName="configuration"
-                 min="0" max="2">
+      <parameter name="config_24_1" type="integer" groupName="configuration">
         <label>24: Notification on State Change</label>
         <description><![CDATA[
 Smart Plug can send notifications when device state changes.<br /> <h1>Overview</h1><p>Smart Plug can send notifications to association device state changes.</p><p>0 - Disabled. But state can be gathered through polling every X minutes.</p><p>1 - Basic report.</p><p>2 - Basic report only when device activated using its physical button.</p>
@@ -107,8 +104,7 @@ Smart Plug can send notifications when device state changes.<br /> <h1>Overview<
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_27_1" type="integer" groupName="configuration"
-                 min="0" max="1">
+      <parameter name="config_27_1" type="integer" groupName="configuration">
         <label>27: Indicator Mode</label>
         <description><![CDATA[
 LED in the device will indicate the state of the device<br /> <h1>Overview</h1><p>After smart plug is included into a Z-Wave network, the LED in the device will indicate the state (ON/OFF).</p><p>0 - The LED will follow the status (on/off) of its load.</p><p>1 - When the state changes, the LED will follow the status (on/off), but only for 5 seconds after state modification.</p>

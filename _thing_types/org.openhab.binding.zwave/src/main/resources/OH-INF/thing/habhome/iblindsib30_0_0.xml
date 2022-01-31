@@ -60,8 +60,7 @@ Window Blind Controller<br /> <h1>Overview</h1><p>An intelligent Z-Wave blind mo
       </parameter-group>
 
       <!-- PARAMETER DEFINITIONS -->
-      <parameter name="config_1_1" type="integer" groupName="configuration"
-                 min="15" max="30">
+      <parameter name="config_1_1" type="integer" groupName="configuration">
         <label>1: Close Interval</label>
         <description><![CDATA[
 Close Interval<br /> <h1>Overview</h1><p>Used for large blind auto calibration endpoint detection. A smaller value will make the blinds close tighter<br /></p>
@@ -70,8 +69,7 @@ Close Interval<br /> <h1>Overview</h1><p>Used for large blind auto calibration e
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_2_1" type="integer" groupName="configuration"
-                 min="0" max="1">
+      <parameter name="config_2_1" type="integer" groupName="configuration">
         <label>2: Reverse Direction</label>
         <description><![CDATA[
 Reverse Direction<br /> <h1>Overview</h1><p>Used to reverse the direction of the blinds<br /></p>
@@ -83,8 +81,7 @@ Reverse Direction<br /> <h1>Overview</h1><p>Used to reverse the direction of the
         </options>
       </parameter>
 
-      <parameter name="config_3_1" type="integer" groupName="configuration"
-                 min="0" max="1">
+      <parameter name="config_3_1" type="integer" groupName="configuration">
         <label>3: Disable Report</label>
         <description><![CDATA[
 Disable Report<br /> <h1>Overview</h1><p>Used to disable Z-Wave Report. This is useful for systems that poll iBlinds immediately after sending a position command. Disable if an immediate Z-Wave GET command is causing iBlinds motor to function improperly<br /></p>
@@ -96,8 +93,7 @@ Disable Report<br /> <h1>Overview</h1><p>Used to disable Z-Wave Report. This is 
         </options>
       </parameter>
 
-      <parameter name="config_4_1" type="integer" groupName="configuration"
-                 min="1" max="99">
+      <parameter name="config_4_1" type="integer" groupName="configuration">
         <label>4: Default ON Value</label>
         <description><![CDATA[
 Default ON Value<br /> <h1>Overview</h1><p>Used to set the default ON level. Default value for ON=50% (0x32). Change this value if you wish to change the Charge Adapter push button ON or the Z-Wave Binary Switch ON default value<br /></p>
@@ -106,8 +102,7 @@ Default ON Value<br /> <h1>Overview</h1><p>Used to set the default ON level. Def
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_6_1" type="integer" groupName="configuration"
-                 min="0" max="100">
+      <parameter name="config_6_1" type="integer" groupName="configuration">
         <label>6: Speed</label>
         <description><![CDATA[
 Speed<br /> <h1>Overview</h1><p>Used to set the default blind speed. 0 = No Delay. The larger the value the slower the speed. Note: A Z-Wave MultiLevel Switch command sent with a Duration value greater than 0 will always override the speed parameter<br /></p>

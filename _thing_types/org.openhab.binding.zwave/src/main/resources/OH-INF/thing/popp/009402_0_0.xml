@@ -65,8 +65,7 @@
       </parameter-group>
 
       <!-- PARAMETER DEFINITIONS -->
-      <parameter name="config_1_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_1_1" type="integer" groupName="configuration">
         <label>1: Siren alarm sequence interval</label>
         <description><![CDATA[
 Siren alarm sequence interval<br /> <h1>Overview</h1><p>The additional siren is creating a different acoustic signal differentiate from the smoke alarm. This sound is partly on and partly  off.</p> <p>This parameter defines the total length of the interval in seconds.</p>
@@ -75,8 +74,7 @@ Siren alarm sequence interval<br /> <h1>Overview</h1><p>The additional siren is 
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_2_1" type="integer" groupName="configuration"
-                 min="1" max="99">
+      <parameter name="config_2_1" type="integer" groupName="configuration">
         <label>2: Siren alarm tone length</label>
         <description><![CDATA[
 Siren alarm tone length<br /> <h1>Overview</h1><p>The  additional siren is creating a different acoustic signal differentiate from the smoke alarm. This sound is partly on and partly  off.</p> <p>This parameter defines the total  length of the sound versus silence within this interval.</p>
@@ -85,15 +83,13 @@ Siren alarm tone length<br /> <h1>Overview</h1><p>The  additional siren is crea
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_3_1" type="integer" groupName="configuration"
-                 min="0" max="99">
+      <parameter name="config_3_1" type="integer" groupName="configuration">
         <label>3: Value of On-Command</label>
         <default>99</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_4_1" type="integer" groupName="configuration"
-                 min="0" max="99">
+      <parameter name="config_4_1" type="integer" groupName="configuration">
         <label>4: Value of Off-Command</label>
         <default>99</default>
         <limitToOptions>false</limitToOptions>

@@ -78,8 +78,7 @@ Temperature and Humidity Sensor<br /> <h1>Overview</h1><p>Small sensor that offe
       </parameter-group>
 
       <!-- PARAMETER DEFINITIONS -->
-      <parameter name="config_1_1" type="integer" groupName="configuration"
-                 min="0" max="100">
+      <parameter name="config_1_1" type="integer" groupName="configuration">
         <label>1: Minimum Temperature change</label>
         <description><![CDATA[
 This value defines the minimum change of temperature to cause an unsolicited report of humidity to the central controller using Lifeline.<br /> <h1>Overview</h1><p>Minimum Temperature change to report.</p><p>This value defines the minimum change of temperature to cause an unsolicited report of humidity to the central controller using Lifeline.</p><p>If the value is set to 0, there will be no reports sent to the controller, when the temperature changes. However, periodic reports, managed by configuration parameter 4, may still be active. </p>
@@ -89,8 +88,7 @@ This value defines the minimum change of temperature to cause an unsolicited rep
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_2_1" type="integer" groupName="configuration"
-                 min="0" max="20">
+      <parameter name="config_2_1" type="integer" groupName="configuration">
         <label>2: Minimum humidity change</label>
         <description><![CDATA[
 This value defines the minimum change of humidity to cause an unsolicited report of humidity to the central controller using Lifeline.<br /> <h1>Overview</h1><p>Minimum humidity change to report.</p><p>This value defines the minimum change of humidity to cause an unsolicited report of humidity to the central controller using Lifeline.</p><p>If the value is set to 0, there will be no reports sent to the controller, when the humidity changes. </p><p>However, periodic reports, managed by configuration parameter 4, may still be active. </p>
@@ -100,8 +98,7 @@ This value defines the minimum change of humidity to cause an unsolicited report
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_4_2" type="integer" groupName="configuration"
-                 min="-32767" max="32768">
+      <parameter name="config_4_2" type="integer" groupName="configuration">
         <label>4: Periodic Reports</label>
         <description><![CDATA[
 This parameter defines the time interval to send an unsolicited report. If the value is set to 0, there will be no periodic reports sent to the controller.<br /> <h1>Overview</h1><p>Periodic Reports.</p><p>This parameter defines the time interval to send an unsolicited report.</p><p>If the value is set to 0, there will be no periodic reports sent to the controller. </p><p>However, reports on temperature/humidity changes, managed by configuration parameters 1 and 2, may still be active. </p>
@@ -111,8 +108,7 @@ This parameter defines the time interval to send an unsolicited report. If the v
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_5_2" type="integer" groupName="configuration"
-                 min="0" max="1000">
+      <parameter name="config_5_2" type="integer" groupName="configuration">
         <label>5: Temperature Upper Watermark</label>
         <description><![CDATA[
 If the measured temperature surpasses this watermark a BASIC command is sent into Association Group 2.<br /> <h1>Overview</h1><p>Temperature Upper Watermark value.</p><p>This parameter defines a temperature. </p><p>If the measured temperature surpasses this watermark a BASIC command is sent into Association Group 2.</p><p>The value of BASIC SET is defined by parameter 10. </p>
@@ -122,8 +118,7 @@ If the measured temperature surpasses this watermark a BASIC command is sent int
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_6_2" type="integer" groupName="configuration"
-                 min="0" max="1000">
+      <parameter name="config_6_2" type="integer" groupName="configuration">
         <label>6: Temperature Lower Watermark</label>
         <description><![CDATA[
 If the measured temperature dropps below this watermark a BASIC command is sent into Association Group 3.<br /> <h1>Overview</h1><p>Temperature Lower Watermark value.</p><p>This parameter defines a temperature. </p><p>If the measured temperature dropps below this watermark a BASIC command is sent into Association Group 3.</p><p>The value of BASIC SET is defined by parameter 9. </p>
@@ -133,8 +128,7 @@ If the measured temperature dropps below this watermark a BASIC command is sent 
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_7_1" type="integer" groupName="configuration"
-                 min="0" max="100">
+      <parameter name="config_7_1" type="integer" groupName="configuration">
         <label>7: Humidity Upper Watermark</label>
         <description><![CDATA[
 If the measured relative humidity surpasses this watermark a BASIC command is sent into Association Group 4.<br /> <h1>Overview</h1><p>Humidity Upper Watermark value.</p><p>This parameter defines the relative humidity. </p><p>If the measured relative humidity surpasses this watermark a BASIC command is sent into Association Group 4.</p><p>The value of BASIC SET is defined by parameter 12. </p>
@@ -144,8 +138,7 @@ If the measured relative humidity surpasses this watermark a BASIC command is se
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_8_1" type="integer" groupName="configuration"
-                 min="0" max="100">
+      <parameter name="config_8_1" type="integer" groupName="configuration">
         <label>8: Humidity Lower Watermark</label>
         <description><![CDATA[
 If the measured temperature drops below this relative humidity a BASIC command is sent into Association Group 5.<br /> <h1>Overview</h1><p>Humidity Lower Watermark value.</p><p>This parameter defines a relative humidity. </p><p>If the measured temperature drops below this relative humidity a BASIC command is sent into Association Group 5.</p><p>The value of BASIC SET is defined by parameter 11. </p>
@@ -155,8 +148,7 @@ If the measured temperature drops below this relative humidity a BASIC command i
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_9_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_9_1" type="integer" groupName="configuration">
         <label>9: Low Temperature Trigger Command</label>
         <description><![CDATA[
 This defines what BASIC SET command value shall be sent out into association group 3.<br /> <h1>Overview</h1><p>Low Temperature Trigger BASIC Set Command Value.</p><p>This defines what BASIC SET command value shall be sent out into association group 3.</p><p>Value meaning:</p><p>255 = ON.</p><p>0 = OFF.</p><p>1 - 100 = Defines a level between 0 - 100% if controlling dimmers.</p>
@@ -166,8 +158,7 @@ This defines what BASIC SET command value shall be sent out into association gro
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_10_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_10_1" type="integer" groupName="configuration">
         <label>10: High Temperature Trigger Command</label>
         <description><![CDATA[
 This defines what BASIC SET command value be sent out into association group 2.<br /> <h1>Overview</h1><p>High Temperature Trigger BASIC Set Command Value</p><p>This defines what BASIC SET command value be sent out into association group 2. </p><p>Value meaning:</p><p>255 = ON.</p><p>0 = OFF.</p><p>1 - 100 = Defines a level between 0 - 100% if controlling dimmers.</p>
@@ -177,8 +168,7 @@ This defines what BASIC SET command value be sent out into association group 2.<
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_11_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_11_1" type="integer" groupName="configuration">
         <label>11: Low Humidity Trigger Command</label>
         <description><![CDATA[
 This defines what BASIC SET command value shall be sent out into association group 5.<br /> <h1>Overview</h1><p>Low Humidity Trigger BASIC Set Command Value.</p><p>This defines what BASIC SET command value shall be sent out into association group 5. </p><p>Value meaning:</p><p>255 = ON.</p><p>0 = OFF.</p><p>1 - 100 = Defines a level between 0 - 100% if controlling dimmers.</p>
@@ -188,8 +178,7 @@ This defines what BASIC SET command value shall be sent out into association gro
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_12_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_12_1" type="integer" groupName="configuration">
         <label>12: High Humidity Trigger Command</label>
         <description><![CDATA[
 This defines what BASIC SET command value shall be sent out into association group 4.<br /> <h1>Overview</h1><p>High Humidity Trigger BASIC Set Command Value.</p><p>This defines what BASIC SET command value shall be sent out into association group 4. </p><p>Value meaning:</p><p>255 = ON.</p><p>0 = OFF.</p><p>1 - 100 = Defines a level between 0 - 100% if controlling dimmers.</p>
@@ -199,8 +188,7 @@ This defines what BASIC SET command value shall be sent out into association gro
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_13_1" type="integer" groupName="configuration"
-                 min="0" max="10">
+      <parameter name="config_13_1" type="integer" groupName="configuration">
         <label>13: Offset value for Mold</label>
         <description><![CDATA[
 This value allows to increase the humidity threshold for ideal mould environment notification by max 10%.<br /> <h1>Overview</h1><p>Offset value for Mold environment notification</p><p>This value allows to increase the humidity threshold for ideal mould environment notification by max 10%. (default 0 value will set to trigger at humidity levels above 70%)</p>
@@ -210,8 +198,7 @@ This value allows to increase the humidity threshold for ideal mould environment
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_64_0" type="integer" groupName="configuration"
-                 min="1" max="2">
+      <parameter name="config_64_0" type="integer" groupName="configuration">
         <label>64: Temperature Scale</label>
         <description><![CDATA[
 This parameter sets the temperature scale.<br /> <h1>Overview</h1><p>Temperature Scale</p><p>This parameter sets the temperature scale.</p><p>1 = Celsius</p><p>2 = Fahrenheit</p>
@@ -220,8 +207,7 @@ This parameter sets the temperature scale.<br /> <h1>Overview</h1><p>Temperature
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_255_4" type="integer" groupName="configuration"
-                 min="0" max="1431655765">
+      <parameter name="config_255_4" type="integer" groupName="configuration">
         <label>255: Reset Parameter</label>
         <description><![CDATA[
 This parameter helps reset configuration parameters and the device to factory defaults.<br /> <h1>Overview</h1><p>Reset Parameter</p><p>This parameter helps reset configuration parameters and the device to factory defaults.</p><p>1 = Reset all Parameter settings to their default settings. </p><p>1431655765 = Completely factory reset sensor and send device reset locally notification.</p>

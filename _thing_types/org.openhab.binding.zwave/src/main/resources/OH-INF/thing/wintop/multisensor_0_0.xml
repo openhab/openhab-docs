@@ -76,16 +76,14 @@ Multi-sensor<br /> <h1>Overview</h1><p>motion sensor</p> <br /> <h2>Inclusion In
       </parameter-group>
 
       <!-- PARAMETER DEFINITIONS -->
-      <parameter name="config_1_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_1_1" type="integer" groupName="configuration">
         <label>1: Set to default</label>
         <description>Set all config values to default values (factory settings).</description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_2_2" type="integer" groupName="configuration"
-                 min="0" max="3600">
+      <parameter name="config_2_2" type="integer" groupName="configuration">
         <label>2: Mode Timeout</label>
         <description><![CDATA[
 The time used in mode 2 to turn the sensor off .<br /> <h1>Overview</h1><p>The time used in mode 2 to turn the sensor off . </p> <p>This Time will start running as soon as detection is seen.</p>
@@ -94,8 +92,7 @@ The time used in mode 2 to turn the sensor off .<br /> <h1>Overview</h1><p>The t
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_3_2" type="integer" groupName="configuration"
-                 min="0" max="7200">
+      <parameter name="config_3_2" type="integer" groupName="configuration">
         <label>3: Switch off time</label>
         <description><![CDATA[
 Switch off time starts after timeout.<br /> <h1>Overview</h1><p>The switch off time will start running as soon as mode timeout is done. Motion sensor is turned on and when movement is de tected again the mode timeout (cfg param 1) will start running all over again. When switch off time is done a basic off message is s</p>
@@ -104,16 +101,14 @@ Switch off time starts after timeout.<br /> <h1>Overview</h1><p>The switch off t
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_4_1" type="integer" groupName="configuration"
-                 min="0" max="127">
+      <parameter name="config_4_1" type="integer" groupName="configuration">
         <label>4: Sensitivity</label>
         <description>The sensitivity of the motion circuit</description>
         <default>80</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_5_1" type="integer" groupName="configuration"
-                 min="1" max="3">
+      <parameter name="config_5_1" type="integer" groupName="configuration">
         <label>5: Mode</label>
         <description><![CDATA[
 The mode that is entered after detection<br /> <h1>Overview</h1><p>Normal operation mode is default.</p>
@@ -122,8 +117,7 @@ The mode that is entered after detection<br /> <h1>Overview</h1><p>Normal operat
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_6_2" type="integer" groupName="configuration"
-                 min="-10" max="10">
+      <parameter name="config_6_2" type="integer" groupName="configuration">
         <label>6: The temperature offset</label>
         <description><![CDATA[
 An offset for the temperature.<br /> <h1>Overview</h1><p>Param1,2: A signed integer to determine the offset off the temperature.</p>

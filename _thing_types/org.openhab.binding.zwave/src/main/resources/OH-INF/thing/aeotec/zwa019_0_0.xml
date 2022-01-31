@@ -123,40 +123,35 @@ Aeotec Water Sensor 7 Pro<br /> <h1>Overview</h1><p>The AEOTEC Water Sensor 7 Pr
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_7_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_7_1" type="integer" groupName="configuration">
         <label>7: BASIC command value sent to 2nd Association Group on On event</label>
         <description>This is the BASIC command value sent in case of On event.</description>
         <default>-1</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_8_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_8_1" type="integer" groupName="configuration">
         <label>8: BASIC command value sent to 2nd Association Group on Off event</label>
         <description>This is the BASIC command value sent in case of Off event.</description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_9_2" type="integer" groupName="configuration"
-                 min="0" max="23400">
+      <parameter name="config_9_2" type="integer" groupName="configuration">
         <label>9: Time Delay of On command frame</label>
         <description>On command is sent after a delay defined in this parameter.</description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_10_2" type="integer" groupName="configuration"
-                 min="0" max="32400">
+      <parameter name="config_10_2" type="integer" groupName="configuration">
         <label>10: Time Delay of Off command frame</label>
         <description>Off command is sent after a delay defined in this parameter.</description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_11_2" type="integer" groupName="configuration"
-                 min="0" max="32400">
+      <parameter name="config_11_2" type="integer" groupName="configuration">
         <label>11: Delay of Tamper Alarm Cancellation</label>
         <description>Time a tamper alarm is delayed.</description>
         <default>0</default>
@@ -215,8 +210,7 @@ Aeotec Water Sensor 7 Pro<br /> <h1>Overview</h1><p>The AEOTEC Water Sensor 7 Pr
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_255_4" type="integer" groupName="configuration"
-                 min="0" max="1431655765">
+      <parameter name="config_255_4" type="integer" groupName="configuration">
         <label>255: Reset Parameter</label>
         <description>This parameter helps reset configuration parameters and the device to factory defaults</description>
         <default>0</default>

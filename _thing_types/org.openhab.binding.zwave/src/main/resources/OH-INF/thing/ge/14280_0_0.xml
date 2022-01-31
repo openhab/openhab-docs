@@ -60,32 +60,28 @@ Plug-In Smart Dimmer (Dual Linked Outlets)<br /> <h1>Overview</h1><ul><li>2 Simu
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_7_1" type="integer" groupName="configuration"
-                 min="1" max="99">
+      <parameter name="config_7_1" type="integer" groupName="configuration">
         <label>7: Dim Rate</label>
         <description>number of steps or levels</description>
         <default>1</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_8_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_8_1" type="integer" groupName="configuration">
         <label>8: Dim Rate Adjustments (From Z-Wave Controller)</label>
         <description>Timing of the steps</description>
         <default>1</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_9_1" type="integer" groupName="configuration"
-                 min="1" max="99">
+      <parameter name="config_9_1" type="integer" groupName="configuration">
         <label>9: Dim rate Adjustments (When Manually Controlled)</label>
         <description>number of steps or levels</description>
         <default>1</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_10_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_10_1" type="integer" groupName="configuration">
         <label>10: Dim Timing (When Manually Controlled)</label>
         <description><![CDATA[
 (When Manually Controlled)<br /> <h1>Overview</h1><p>Timing of the steps</p>
@@ -94,8 +90,7 @@ Plug-In Smart Dimmer (Dual Linked Outlets)<br /> <h1>Overview</h1><ul><li>2 Simu
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_11_1" type="integer" groupName="configuration"
-                 min="1" max="99">
+      <parameter name="config_11_1" type="integer" groupName="configuration">
         <label>11: Dim Rate Adjustments</label>
         <description><![CDATA[
 (When Receiving All-On/All-Off Command)<br /> <h1>Overview</h1><p>number of steps of levels</p>

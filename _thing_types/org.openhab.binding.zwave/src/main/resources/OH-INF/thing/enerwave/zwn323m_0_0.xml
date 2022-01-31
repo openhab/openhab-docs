@@ -83,8 +83,7 @@ ZWN323M<br /> <h1>Overview</h1><p>This ZWN-323 Dimming Module is a Z-Wave enable
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_8_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_8_1" type="integer" groupName="configuration">
         <label>8: Autosend Interval (METER_REPORT)</label>
         <description><![CDATA[
 Autosend Interval (METER_REPORT)<br /> <h1>Overview</h1><p>Instant Energy Autosend Interval (send METER_REPORT)</p>
@@ -93,8 +92,7 @@ Autosend Interval (METER_REPORT)<br /> <h1>Overview</h1><p>Instant Energy Autose
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_9_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_9_1" type="integer" groupName="configuration">
         <label>9: Autosend interval (SENSOR_MULTILEVEL_REPORT)</label>
         <description><![CDATA[
 Autosend interval (SENSOR_MULTILEVEL_REPORT)<br /> <h1>Overview</h1><p>Instant Energy Autosend interval (send SENSOR_MULTILEVEL_REPORT)</p>
@@ -103,8 +101,7 @@ Autosend interval (SENSOR_MULTILEVEL_REPORT)<br /> <h1>Overview</h1><p>Instant E
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_10_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_10_1" type="integer" groupName="configuration">
         <label>10: Accumulated Autosend Interval ( METER_REPORT)</label>
         <description><![CDATA[
 Accumulated Autosend Interval ( METER_REPORT)<br /> <h1>Overview</h1><p>Accumulated Energy Autosend Interval report (send METER_REPORT)</p>
@@ -128,8 +125,7 @@ Enable automatic notifications<br /> <h1>Overview</h1><p>Device will send a noti
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_12_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_12_1" type="integer" groupName="configuration">
         <label>12: Minimum change in wattage report</label>
         <description><![CDATA[
 Minimum change in wattage report<br /> <h1>Overview</h1><p>0-255: 0.0-25.5W</p>

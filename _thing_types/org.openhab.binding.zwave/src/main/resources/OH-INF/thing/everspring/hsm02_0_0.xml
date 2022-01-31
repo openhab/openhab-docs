@@ -58,8 +58,7 @@ Door/Window Contact<br /> <h1>Overview</h1><p>Mini Door / Window Contact Detecto
       </parameter-group>
 
       <!-- PARAMETER DEFINITIONS -->
-      <parameter name="config_1_2" type="integer" groupName="configuration"
-                 min="0" max="99">
+      <parameter name="config_1_2" type="integer" groupName="configuration">
         <label>1: Basic Set Level</label>
         <description><![CDATA[
 Value to be sent with a BASIC SET command<br /> <h1>Overview</h1><p>0: Off</p> <p>1-99, 255: Dim Level (Multilevel Switch Device), ON (Binary Switch Device)</p>
@@ -68,8 +67,7 @@ Value to be sent with a BASIC SET command<br /> <h1>Overview</h1><p>0: Off</p> <
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_2_1" type="integer" groupName="configuration"
-                 min="0" max="127">
+      <parameter name="config_2_1" type="integer" groupName="configuration">
         <label>2: Configuring the OFF Delay</label>
         <description><![CDATA[
 OFF Delay in seconds<br /> <h1>Overview</h1><p>The Configuration parameter that can be used to adjust the amount of delay before the OFF command is transmitted. This parameter can be configured as 0-127, where 0 means sending OFF command immediately and 127 means 127 seconds of delay. </p>
@@ -78,8 +76,7 @@ OFF Delay in seconds<br /> <h1>Overview</h1><p>The Configuration parameter that 
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_3_1" type="integer" groupName="configuration"
-                 min="0" max="1">
+      <parameter name="config_3_1" type="integer" groupName="configuration">
         <label>3: Staying Awake (for testing)</label>
         <description><![CDATA[
 Staying Awake (for testing)<br /> <h1>Overview</h1><p>Can be used to determine if the unit stays "awake" all the time. This parameter can be configured as 0 or 1, where 1 means "enabled" and 0 stands for "disabled"</p>

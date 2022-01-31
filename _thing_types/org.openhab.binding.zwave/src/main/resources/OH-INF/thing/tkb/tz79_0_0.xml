@@ -97,8 +97,7 @@ Insert switch module<br /> <h1>Overview</h1><p>The zwave power switch module TZ7
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_3_2" type="integer" groupName="configuration"
-                 min="1" max="32767">
+      <parameter name="config_3_2" type="integer" groupName="configuration">
         <label>3: Watt Meter Report Period</label>
         <description><![CDATA[
 5s x 720 (default) = 3600s = 1 hour<br /> <h1>Overview</h1><p>If the setting is configured for 1 hour (set value = 720), the TZ79 will report its instant power consumption every 1 hour to Z-Wave controller. The maximum interval to report its instant power consumption is 45 hours (5s*36767/3600 = 45 hours)</p>
@@ -107,30 +106,26 @@ Insert switch module<br /> <h1>Overview</h1><p>The zwave power switch module TZ7
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_4_2" type="integer" groupName="configuration"
-                 min="1" max="32767">
+      <parameter name="config_4_2" type="integer" groupName="configuration">
         <label>4: kWH Meter Report Period</label>
         <description>6x10min = 1 hour</description>
         <default>6</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_5_2" type="integer" groupName="configuration"
-                 min="10" max="3000">
+      <parameter name="config_5_2" type="integer" groupName="configuration">
         <label>5: Threshold of Watt for load caution</label>
         <default>3000</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_6_2" type="integer" groupName="configuration"
-                 min="0" max="10000">
+      <parameter name="config_6_2" type="integer" groupName="configuration">
         <label>6: Threshold of kWH for load caution</label>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_7_1" type="integer" groupName="configuration"
-                 min="1" max="3">
+      <parameter name="config_7_1" type="integer" groupName="configuration">
         <label>7: Edge or Pulse mode or Edge-Toggle mode</label>
         <description>1 - Edge mode 2 - Pulse mode 3 - Edge toggle mode</description>
         <default>3</default>

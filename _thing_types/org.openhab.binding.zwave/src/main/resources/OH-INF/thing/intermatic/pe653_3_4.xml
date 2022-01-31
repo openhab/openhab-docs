@@ -85,8 +85,7 @@ Pool Control<br /> <h1>Overview</h1><p>A wireless electronic controller for pool
       </parameter-group>
 
       <!-- PARAMETER DEFINITIONS -->
-      <parameter name="config_1_2_000000FF" type="integer" groupName="configuration"
-                 min="1" max="6">
+      <parameter name="config_1_2_000000FF" type="integer" groupName="configuration">
         <label>1: Booster/Cleaner Pump Operation Mode</label>
         <description><![CDATA[
 Which circuit the booster/cleaner pump resides on<br /> <h1>Overview</h1><p>1: No</p> <p>2: Uses Circuit-1</p> <p>3: Variable Speed pump Speed-1</p> <p>4: Variable Speed pump Speed-2</p> <p>5: Variable Speed pump Speed-3</p> <p>6: Variable Speed pump Speed-4</p>
@@ -95,8 +94,7 @@ Which circuit the booster/cleaner pump resides on<br /> <h1>Overview</h1><p>1: N
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_1_2_0000FF00" type="integer" groupName="configuration"
-                 min="0" max="7">
+      <parameter name="config_1_2_0000FF00" type="integer" groupName="configuration">
         <label>1: Pump Type Operation Mode</label>
         <description><![CDATA[
 Which type of pump is being used<br /> <h1>Overview</h1><p>0: 1 Speed Pump without Booster/Cleaner</p> <p>1: 1 Speed Pump with Booster/Cleaner</p> <p>2: 2 Speed Pump without Booster/Cleaner</p> <p>3: 2 Speed Pump with Booster/Cleaner</p> <p>4: Variable Speed Pump without Booster/Cleaner</p> <p>5: Variable Speed Pump with Booster/Cleaner</p> <p>6: Reserved 6</p> <p>7: Reserved 7</p>
@@ -105,8 +103,7 @@ Which type of pump is being used<br /> <h1>Overview</h1><p>0: 1 Speed Pump witho
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_2_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_2_1" type="integer" groupName="configuration">
         <label>2: Fireman Timeout</label>
         <description><![CDATA[
 Minutes that pump will continue to run after heater shutoff<br /> <h1>Overview</h1><p>255: No heater installed</p> <p>0-15: Number of minutes for cooldown</p>
@@ -115,8 +112,7 @@ Minutes that pump will continue to run after heater shutoff<br /> <h1>Overview</
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_22_1" type="integer" groupName="configuration"
-                 min="0" max="2">
+      <parameter name="config_22_1" type="integer" groupName="configuration">
         <label>22: Pool - Spa Mode</label>
         <description><![CDATA[
 Controller Mode<br /> <h1>Overview</h1><p>0: Pool</p> <p>1: Spa</p> <p>2: Both</p>

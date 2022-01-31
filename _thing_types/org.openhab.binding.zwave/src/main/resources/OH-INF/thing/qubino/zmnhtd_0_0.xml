@@ -117,8 +117,7 @@ IR external relay or External Relay control mode<br /> <h1>Overview</h1><p>Avail
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_11_2" type="integer" groupName="configuration"
-                 min="0" max="32535">
+      <parameter name="config_11_2" type="integer" groupName="configuration">
         <label>11: Timer turning off IR external relay</label>
         <description><![CDATA[
 Automatic turning off IR external relay output after set time<br /> <h1>Overview</h1><p>When External IR relay is ON it goes automatically OFF after time defined in this parameter. Timer is reset to zero each time the device receives ON command.<br />Values (size is 2 byte dec):<br />• Default value 0<br />• 0-59 = Auto OFF disabled<br />• 60-32535 = 60 seconds – 32535 seconds</p>
@@ -129,8 +128,7 @@ Automatic turning off IR external relay output after set time<br /> <h1>Overview
         </options>
       </parameter>
 
-      <parameter name="config_12_2" type="integer" groupName="configuration"
-                 min="0" max="32535">
+      <parameter name="config_12_2" type="integer" groupName="configuration">
         <label>12: Timer turning on IR external relay output</label>
         <description><![CDATA[
 Automatic turning on IR external relay output after set time<br /> <h1>Overview</h1><p>When IR external relay is OFF it goes automatically ON after time defined by this Parameter. Timer is reset to zero each time the module receive OFF command regardless from where it comes (push button, associated module, controller,..). Available configuration parameters (data type is 2 Byte DEC)</p>
@@ -139,8 +137,7 @@ Automatic turning on IR external relay output after set time<br /> <h1>Overview<
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_13_2" type="integer" groupName="configuration"
-                 min="0" max="32535">
+      <parameter name="config_13_2" type="integer" groupName="configuration">
         <label>13: Timer turning off External relay output</label>
         <description><![CDATA[
 Automatic turning off External relay output after set time<br /> <h1>Overview</h1><p>When External relay is ON it goes automatically OFF after time defined by this parameter. Timer is reset to zero each time the module receive ON command regardless from where it comes (push button, associated module, controller,..). Available configuration parameters (data type is 2 Byte DEC)</p>
@@ -149,8 +146,7 @@ Automatic turning off External relay output after set time<br /> <h1>Overview</h
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_14_2" type="integer" groupName="configuration"
-                 min="0" max="32535">
+      <parameter name="config_14_2" type="integer" groupName="configuration">
         <label>14: Timer turning on External relay after output</label>
         <description><![CDATA[
 Automatic turning on External relay after output set time<br /> <h1>Overview</h1><p>When External relay is OFF it goes automatically ON after time defined by this parameter. Timer is reset to zero each time the module receive OFF command regardless from where it comes (push button, associated module, controller,..). Available configuration parameters (data type is 2 Byte DEC)</p>
@@ -159,8 +155,7 @@ Automatic turning on External relay after output set time<br /> <h1>Overview</h1
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_40_2" type="integer" groupName="configuration"
-                 min="0" max="100">
+      <parameter name="config_40_2" type="integer" groupName="configuration">
         <label>40: Power reporting (Watts) on power change</label>
         <description><![CDATA[
 Power reporting in Watts on power change<br /> <h1>Overview</h1><p>Set value means percentage, set value from 0 – 100 = 0% - 100%. Available configuration parameters (data type is 1 Byte DEC)</p> <p>Power report is send (push) only when actual power in Watts in real time changes for more than set percentage comparing to previous actual power in Watts, step is 1%</p> <p>NOTE: if power changed is less than 1W, the report is not send (pushed), independent of percentage set. When reporting Watts, module will automatically reports also V (Voltage), A (Amperes), Power factor, kVar (Reactive Power). </p>
@@ -169,8 +164,7 @@ Power reporting in Watts on power change<br /> <h1>Overview</h1><p>Set value mea
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_42_2" type="integer" groupName="configuration"
-                 min="0" max="32535">
+      <parameter name="config_42_2" type="integer" groupName="configuration">
         <label>42: Power reporting (Watts) by time interval</label>
         <description><![CDATA[
 Power reporting in Watts by time interval<br /> <h1>Overview</h1><p>Set value means time interval (0 – 32535) in seconds, when power report is send. Available config. parameters (data type is 2 Byte DEC).</p> <p>Power report is send with time interval set by entered value. When reporting Watts, module will automatically reports also V (Voltage), A (Amperes), Power factor, kVar (Reactive Power)</p>
@@ -210,8 +204,7 @@ Enable / Disable endpoints IR external relay and External relay<br /> <h1>Overvi
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_110_2" type="integer" groupName="configuration"
-                 min="0" max="15000">
+      <parameter name="config_110_2" type="integer" groupName="configuration">
         <label>110: Maximum Power auto off</label>
         <description><![CDATA[
 Maximum Power auto off<br /> <h1>Overview</h1><p>Set value means Maximum Power Consumption (0 - 15000) in watts (W), when relays are turned off according to parameters no. 111 and 112. Available configuration parameters (data type is 2 Bytes DEC</p>
@@ -223,8 +216,7 @@ Maximum Power auto off<br /> <h1>Overview</h1><p>Set value means Maximum Power C
         </options>
       </parameter>
 
-      <parameter name="config_111_2" type="integer" groupName="configuration"
-                 min="0" max="32525">
+      <parameter name="config_111_2" type="integer" groupName="configuration">
         <label>111: Delay overpower off</label>
         <description><![CDATA[
 Delay overpower off<br /> <h1>Overview</h1><p>Set value means number of second to power off relay (defined by parameters no. 110 and 112) before restart (30 - 32535) in seconds (s). Available configuration parameters (data type is 2 Bytes DEC): </p>
@@ -248,85 +240,73 @@ Relay to power off<br /> <h1>Overview</h1><p>Set value selects relay to be power
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_130_32" type="integer" groupName="configuration" readOnly="true"
-                 min="-2147483646" max="2147483647">
+      <parameter name="config_130_32" type="integer" groupName="configuration" readOnly="true">
         <label>130: Serial Number</label>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_131_16" type="integer" groupName="configuration" readOnly="true"
-                 min="-2147483646" max="2147483647">
+      <parameter name="config_131_16" type="integer" groupName="configuration" readOnly="true">
         <label>131: Meter Software reference</label>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_132_16" type="integer" groupName="configuration" readOnly="true"
-                 min="-2147483646" max="2147483647">
+      <parameter name="config_132_16" type="integer" groupName="configuration" readOnly="true">
         <label>132: Meter Hardware reference</label>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_140_24" type="integer" groupName="configuration" readOnly="true"
-                 min="-2147483646" max="2147483647">
+      <parameter name="config_140_24" type="integer" groupName="configuration" readOnly="true">
         <label>140: Voltage U1</label>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_141_24" type="integer" groupName="configuration" readOnly="true"
-                 min="-2147483646" max="2147483647">
+      <parameter name="config_141_24" type="integer" groupName="configuration" readOnly="true">
         <label>141: Current I1</label>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_142_24" type="integer" groupName="configuration" readOnly="true"
-                 min="-2147483646" max="2147483647">
+      <parameter name="config_142_24" type="integer" groupName="configuration" readOnly="true">
         <label>142: Active Power Total (Pt)</label>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_143_24" type="integer" groupName="configuration" readOnly="true"
-                 min="-2147483646" max="2147483647">
+      <parameter name="config_143_24" type="integer" groupName="configuration" readOnly="true">
         <label>143: Reactive Power Total (Qt)</label>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_144_16" type="integer" groupName="configuration" readOnly="true"
-                 min="-2147483646" max="2147483647">
+      <parameter name="config_144_16" type="integer" groupName="configuration" readOnly="true">
         <label>144: Power Factor Total (PFt)</label>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_145_32" type="integer" groupName="configuration" readOnly="true"
-                 min="-2147483646" max="2147483647">
+      <parameter name="config_145_32" type="integer" groupName="configuration" readOnly="true">
         <label>145: Active power accumulated (import)</label>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_146_32" type="integer" groupName="configuration" readOnly="true"
-                 min="-2147483646" max="2147483647">
+      <parameter name="config_146_32" type="integer" groupName="configuration" readOnly="true">
         <label>146: Reactive power accumulated</label>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_147_32" type="integer" groupName="configuration" readOnly="true"
-                 min="-2147483646" max="2147483647">
+      <parameter name="config_147_32" type="integer" groupName="configuration" readOnly="true">
         <label>147: Apparent power accumulated</label>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_148_32" type="integer" groupName="configuration" readOnly="true"
-                 min="-2147483646" max="2147483647">
+      <parameter name="config_148_32" type="integer" groupName="configuration" readOnly="true">
         <label>148: Active power accumulated (export)</label>
         <default>0</default>
         <limitToOptions>false</limitToOptions>

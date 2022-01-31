@@ -58,16 +58,14 @@ Door Window Sensor<br /> <h1>Overview</h1><p>The Mini Door/Window contact detect
       </parameter-group>
 
       <!-- PARAMETER DEFINITIONS -->
-      <parameter name="config_1_1" type="integer" groupName="configuration"
-                 min="0" max="99">
+      <parameter name="config_1_1" type="integer" groupName="configuration">
         <label>1: Basic Set Level</label>
         <description>Value to be sent with a BASIC SET command</description>
         <default>99</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_2_1" type="integer" groupName="configuration"
-                 min="0" max="127">
+      <parameter name="config_2_1" type="integer" groupName="configuration">
         <label>2: Configuring the OFF Delay</label>
         <description>OFF Delay in seconds</description>
         <default>0</default>

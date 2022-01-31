@@ -59,8 +59,7 @@ RAone SmartPower<br /> <h1>Overview</h1><p>For the further reduction of energy c
       </parameter-group>
 
       <!-- PARAMETER DEFINITIONS -->
-      <parameter name="config_1_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_1_1" type="integer" groupName="configuration">
         <label>1: Report node</label>
         <description><![CDATA[
 Report changes in level to this node id<br /> <h1>Overview</h1><p>Report Node, reports changes in level to this node id.</p> <p>Disabled if 0. -&gt; Copied from SmartDimmer, as there's no config information available.</p>

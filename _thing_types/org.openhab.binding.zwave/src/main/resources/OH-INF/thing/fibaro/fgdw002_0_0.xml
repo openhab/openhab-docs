@@ -157,8 +157,7 @@ Associations in Z-Wave network Security Mode<br /> <h1>Overview</h1><p>This para
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_12_2" type="integer" groupName="configuration"
-                 min="0" max="255">
+      <parameter name="config_12_2" type="integer" groupName="configuration">
         <label>12: Value of ON command sent to 2nd association group</label>
         <description><![CDATA[
 Value of ON command frame sent to 2nd association group<br /> <h1>Overview</h1><p>Value sent to devices in 2nd association group when opening is detected The value of 0 turns OFF the device, 255 turns it ON. In case of associating devices allowing smooth control, values 1-99 allow to set an associated device to a specified level.</p>
@@ -167,8 +166,7 @@ Value of ON command frame sent to 2nd association group<br /> <h1>Overview</h1><
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_13_2" type="integer" groupName="configuration"
-                 min="0" max="255">
+      <parameter name="config_13_2" type="integer" groupName="configuration">
         <label>13: Value of OFF command sent to 2nd association group</label>
         <description><![CDATA[
 Value of OFF command frame sent to 2nd association group<br /> <h1>Overview</h1><p>Value sent to devices in 2nd association group when closing is detected The value of 0 turns OFF the device, 255 turns it ON. In case of associating devices allowing smooth control, values 1-99 allow to set an associated device to a specified level.</p>
@@ -177,8 +175,7 @@ Value of OFF command frame sent to 2nd association group<br /> <h1>Overview</h1>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_14_2" type="integer" groupName="configuration"
-                 min="0" max="32400">
+      <parameter name="config_14_2" type="integer" groupName="configuration">
         <label>14: Association for opening - time delay</label>
         <description><![CDATA[
 Association for opening - time delay<br /> <h1>Overview</h1><p>Time that must elapse from opening to send the command frame to to devices in 2nd association group.</p>
@@ -187,8 +184,7 @@ Association for opening - time delay<br /> <h1>Overview</h1><p>Time that must el
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_15_2" type="integer" groupName="configuration"
-                 min="0" max="32400">
+      <parameter name="config_15_2" type="integer" groupName="configuration">
         <label>15: Association for closing - time delay</label>
         <description><![CDATA[
 Association for closing - time delay<br /> <h1>Overview</h1><p>Time (in seconds) that must elapse from closing to send the command frame to devices in 2nd association group</p>
@@ -197,8 +193,7 @@ Association for closing - time delay<br /> <h1>Overview</h1><p>Time (in seconds)
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_30_2" type="integer" groupName="configuration"
-                 min="0" max="32400">
+      <parameter name="config_30_2" type="integer" groupName="configuration">
         <label>30: Tamper - alarm cancellation delay</label>
         <description><![CDATA[
 Tamper - alarm cancellation delay<br /> <h1>Overview</h1><p>Time period after which a tamper alarm will be cancelled.</p>
@@ -220,8 +215,7 @@ Tamper - reporting alarm cancellation<br /> <h1>Overview</h1><p>Reporting cancel
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_50_2" type="integer" groupName="configuration"
-                 min="0" max="32400">
+      <parameter name="config_50_2" type="integer" groupName="configuration">
         <label>50: Interval of temperature measurements</label>
         <description><![CDATA[
 Interval of temperature measurements<br /> <h1>Overview</h1><p>This parameter defines how often the temperature will be measured. The shorter the time, the more frequently the temperature will be measured, but the battery life will shorten.</p>
@@ -230,8 +224,7 @@ Interval of temperature measurements<br /> <h1>Overview</h1><p>This parameter de
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_51_2" type="integer" groupName="configuration"
-                 min="0" max="300">
+      <parameter name="config_51_2" type="integer" groupName="configuration">
         <label>51: Temperature reports threshold</label>
         <description><![CDATA[
 Temperature reports threshold<br /> <h1>Overview</h1><p>This parameter defines the change of temperature in comparison with last reported, resulting in temperature report being sent to the main controller.</p> <p>Available settings:</p> <ul><li>0 - temperature reports based on threshold disabled</li> <li>1-300 - temperature threshold (0.1-30°C, 0.1°C step)</li> </ul>
@@ -240,8 +233,7 @@ Temperature reports threshold<br /> <h1>Overview</h1><p>This parameter defines t
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_52_2" type="integer" groupName="configuration"
-                 min="0" max="32400">
+      <parameter name="config_52_2" type="integer" groupName="configuration">
         <label>52: Interval of temperature reports</label>
         <description><![CDATA[
 Interval of temperature reports<br /> <h1>Overview</h1><p>This parameter determines how often the temperature reports will be sent to the main controller (regardless of parameters 50 and 51).</p> <p>Available settings:</p> <ul><li>0 - periodic temperature reports disabled</li> <li>300-32400 - time in seconds</li> </ul>
@@ -250,8 +242,7 @@ Interval of temperature reports<br /> <h1>Overview</h1><p>This parameter determi
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_53_2" type="integer" groupName="configuration"
-                 min="-1000" max="1000">
+      <parameter name="config_53_2" type="integer" groupName="configuration">
         <label>53: Temperature offset</label>
         <description><![CDATA[
 Temperature offset<br /> <h1>Overview</h1><p>The value to be added to the actual temperature, measured by the sensor (temperature compensation). Available settings: -1000–1000 (-100–100°C, 0.1°C step)</p>
@@ -275,8 +266,7 @@ Temperature alarm reports<br /> <h1>Overview</h1><p>Temperature alarms reported 
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_55_2" type="integer" groupName="configuration"
-                 min="1" max="600">
+      <parameter name="config_55_2" type="integer" groupName="configuration">
         <label>55: High temperature alarm threshold</label>
         <description><![CDATA[
 High temperature alarm threshold<br /> <h1>Overview</h1><p>If temperature is higher than set value, overheat notification will be sent and high temperature alarm will be triggered (if activated).</p> <p>Available settings:</p> <ul><li>1-600 (0.1-60°C, 0.1°C step)</li> </ul>
@@ -285,8 +275,7 @@ High temperature alarm threshold<br /> <h1>Overview</h1><p>If temperature is hig
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_56_2" type="integer" groupName="configuration"
-                 min="0" max="599">
+      <parameter name="config_56_2" type="integer" groupName="configuration">
         <label>56: Low temperature alarm threshold</label>
         <description><![CDATA[
 Low temperature alarm threshold<br /> <h1>Overview</h1><p>If temperature is lower than the set value, underheat notification will be sent and low temperature alarm will be triggered (if activated). Available settings: 0-599 (0-59.9°C, 0.1°C step)</p>

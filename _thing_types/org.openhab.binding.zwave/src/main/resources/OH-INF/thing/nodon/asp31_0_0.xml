@@ -59,8 +59,7 @@ Smart Plug<br /> <h1>Overview</h1><h1>"Learning Mode"</h1> <p>Press on the Smart
       </parameter-group>
 
       <!-- PARAMETER DEFINITIONS -->
-      <parameter name="config_1_1" type="integer" groupName="configuration"
-                 min="0" max="63">
+      <parameter name="config_1_1" type="integer" groupName="configuration">
         <label>1: Default State</label>
         <description><![CDATA[
 Default State<br /> <h1>Overview</h1><p>Status of the Smart Plug after a Power Failure or after being plugged</p>
@@ -73,8 +72,7 @@ Default State<br /> <h1>Overview</h1><p>Status of the Smart Plug after a Power F
         </options>
       </parameter>
 
-      <parameter name="config_2_1" type="integer" groupName="configuration"
-                 min="0" max="63">
+      <parameter name="config_2_1" type="integer" groupName="configuration">
         <label>2: Power Failure</label>
         <description><![CDATA[
 Power Failure<br /> <h1>Overview</h1><p>This parameter is to set-up the Power Failure / Recover notification and the associated group (Groups 4, 5, 6, 7, 8).</p> <p>The value may be a sum of available values. For example, if you want to activate Power Failure and enable group 4 &amp; 5, the parameter value should be 1+2+4=7.</p>

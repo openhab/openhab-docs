@@ -119,8 +119,7 @@ Forces the Micro Smart Plug status to be ON<br /> <h1>Overview</h1><p>This param
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_21_1" type="integer" groupName="configuration"
-                 min="0" max="100">
+      <parameter name="config_21_1" type="integer" groupName="configuration">
         <label>21: Power Auto-Sending Report</label>
         <description><![CDATA[
 Power report for changes of x % W<br /> <h1>Overview</h1><p>This parameter will send a power report automatically if  the power value  changes of x % W (Watt) compared to the last report.</p>
@@ -141,8 +140,7 @@ Power report for changes of x % W<br /> <h1>Overview</h1><p>This parameter will 
         </options>
       </parameter>
 
-      <parameter name="config_22_2" type="integer" groupName="configuration"
-                 min="0" max="2000">
+      <parameter name="config_22_2" type="integer" groupName="configuration">
         <label>22: Overload Report</label>
         <description><![CDATA[
 Switch off Micro Smart Plug in case the power is above x W<br /> <h1>Overview</h1><p>This parameter will switch off the Micro Smart Plug in case the power is above  x W (Watt) and send an alarm to the primary controller. This parameter has the highest execution priority between all the metering configurations for security reason.</p>
@@ -162,8 +160,7 @@ Switch off Micro Smart Plug in case the power is above x W<br /> <h1>Overview</h
         </options>
       </parameter>
 
-      <parameter name="config_23_2" type="integer" groupName="configuration"
-                 min="-32767" max="32768">
+      <parameter name="config_23_2" type="integer" groupName="configuration">
         <label>23: Energy Auto-Sending Report</label>
         <description><![CDATA[
 Auto energy report if value changes of x Wh<br /> <h1>Overview</h1><p>This parameter will send a new energy report automatically if the energy value changes of x Wh (Watt-hour) compared to the last report.</p>
@@ -186,8 +183,7 @@ Auto energy report if value changes of x Wh<br /> <h1>Overview</h1><p>This param
         </options>
       </parameter>
 
-      <parameter name="config_24_2" type="integer" groupName="configuration"
-                 min="-32767" max="32768">
+      <parameter name="config_24_2" type="integer" groupName="configuration">
         <label>24: Metering Heartbeat</label>
         <description><![CDATA[
 Reporting intervall for power and energy to lifeline.<br /> <h1>Overview</h1><p>Whatever other metering reports, this parameter will send one power and one energy report to the lifeline every x s (Seconds).</p>
@@ -201,8 +197,7 @@ Reporting intervall for power and energy to lifeline.<br /> <h1>Overview</h1><p>
         </options>
       </parameter>
 
-      <parameter name="config_25_2" type="integer" groupName="configuration"
-                 min="-32767" max="32768">
+      <parameter name="config_25_2" type="integer" groupName="configuration">
         <label>25: Power High Threshold</label>
         <description><![CDATA[
 Defines the High Threshold value in W.<br /> <h1>Overview</h1><p>This parameter defines the High Threshold power value.</p>
@@ -226,8 +221,7 @@ Defines the High Threshold value in W.<br /> <h1>Overview</h1><p>This parameter 
         </options>
       </parameter>
 
-      <parameter name="config_26_2" type="integer" groupName="configuration"
-                 min="-32767" max="32768">
+      <parameter name="config_26_2" type="integer" groupName="configuration">
         <label>26: Power Low Threshold</label>
         <description><![CDATA[
 Defines the Low Threshold value in W.<br /> <h1>Overview</h1><p>This parameter defines the Low Threshold power value.</p>

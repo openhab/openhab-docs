@@ -181,8 +181,7 @@ Nano Dimmer<br /> <h1>Overview</h1><p>Aeotec Nano Dimmer is a Z-Wave Smart Dimme
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_64_4" type="integer" groupName="configuration"
-                 min="0" max="2147483647">
+      <parameter name="config_64_4" type="integer" groupName="configuration">
         <label>64: WallSwipe button color</label>
         <description><![CDATA[
 WallSwipe button color<br /> <h1>Overview</h1><p>Set the button color of WallSwipe.</p> <ul><li>Value 1= Level.</li> <li>Value 2= the color value of Red.</li> <li>Value 3= the color value of Green.</li> <li>Value 4= the color value of Blue.</li> </ul>
@@ -192,8 +191,7 @@ WallSwipe button color<br /> <h1>Overview</h1><p>Set the button color of WallSwi
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_65_4" type="integer" groupName="configuration"
-                 min="0" max="2147483647">
+      <parameter name="config_65_4" type="integer" groupName="configuration">
         <label>65: WallSwipe LED Up gesture action</label>
         <description><![CDATA[
 WallSwipe LED Up gesture action<br /> <h1>Overview</h1><p>Set the LED indication color of WallSwipe when the gesture action is UP.</p> <ul><li>Value 1= Reserved.</li> <li>Value 2= the color value of Red.</li> <li>Value 3= the color value of Green.</li> <li>Value 4= the color value of Blue.</li> </ul>
@@ -203,8 +201,7 @@ WallSwipe LED Up gesture action<br /> <h1>Overview</h1><p>Set the LED indication
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_66_4" type="integer" groupName="configuration"
-                 min="0" max="2147483647">
+      <parameter name="config_66_4" type="integer" groupName="configuration">
         <label>66: WallSwipe LED Down gesture action</label>
         <description><![CDATA[
 WallSwipe LED Down gesture action<br /> <h1>Overview</h1><p>Set the LED indication color of WallSwipe when the gesture action is Down.</p> <ul><li>Value 1= Level.</li> <li>Value 2= the color value of Red.</li> <li>Value 3= the color value of Green.</li> <li>Value 4= the color value of Blue</li> </ul>
@@ -214,8 +211,7 @@ WallSwipe LED Down gesture action<br /> <h1>Overview</h1><p>Set the LED indicati
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_67_4" type="integer" groupName="configuration"
-                 min="0" max="2147483647">
+      <parameter name="config_67_4" type="integer" groupName="configuration">
         <label>67: WallSwipe LED Left gesture action</label>
         <description><![CDATA[
 WallSwipe LED Left gesture action<br /> <h1>Overview</h1><p>Set the LED indication color of WallSwipe when the gesture action is Left.</p> <ul><li>Value 1= Level.</li> <li>Value 2= the color value of Red.</li> <li>Value 3= the color value of Green.</li> <li>Value 4= the color value of Blue.</li> </ul>
@@ -225,8 +221,7 @@ WallSwipe LED Left gesture action<br /> <h1>Overview</h1><p>Set the LED indicati
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_68_4" type="integer" groupName="configuration"
-                 min="0" max="2147483647">
+      <parameter name="config_68_4" type="integer" groupName="configuration">
         <label>68: WallSwipe LED Right gesture action</label>
         <description><![CDATA[
 WallSwipe LED Right gesture action<br /> <h1>Overview</h1><p>Set the LED indication color of WallSwipe when the gesture action is Right.</p> <ul><li>Value 1= Level.</li> <li>Value 2= the color value of Red.</li> <li>Value 3= the color value of Green.</li> <li>Value 4= the color value of Blue.</li> </ul>
@@ -236,8 +231,7 @@ WallSwipe LED Right gesture action<br /> <h1>Overview</h1><p>Set the LED indicat
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_69_4" type="integer" groupName="configuration"
-                 min="0" max="2147483647">
+      <parameter name="config_69_4" type="integer" groupName="configuration">
         <label>69: WallSwipe Night light</label>
         <description><![CDATA[
 WallSwipe Night light<br /> <h1>Overview</h1><p>Set the LED indication color of WallSwipe when it is in Night light state.</p> <p>Value 1= Level.</p> <p>Value 2= the color value of Red.</p> <p>Value 3= the color value of Green.</p> <p>Value 4= the color value of Blue.</p>
@@ -246,8 +240,7 @@ WallSwipe Night light<br /> <h1>Overview</h1><p>Set the LED indication color of 
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_71_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_71_1" type="integer" groupName="configuration">
         <label>71: WallSwipe sensitivity</label>
         <description>Set the sensitivity of WallSwipe</description>
         <default>0</default>
@@ -309,8 +302,7 @@ Set notification sent to associated nodes (group 4)<br /> <h1>Overview</h1><p>To
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_84_4" type="integer" groupName="configuration"
-                 min="0" max="2147483647">
+      <parameter name="config_84_4" type="integer" groupName="configuration">
         <label>84: Time set for Night light mode</label>
         <description><![CDATA[
 Time set for Night light mode<br /> <h1>Overview</h1><ul><li>Value1: Hour of ON.</li> <li>Value2: Minute of ON.</li> <li>Value3: Hour of OFF.</li> <li>Value4: Minute of OFF.</li> </ul><p>E.g. The default setting is the Night light mode is enabled at 12: 00 and disabled at 8:00 0x12000800.</p>
@@ -319,8 +311,7 @@ Time set for Night light mode<br /> <h1>Overview</h1><ul><li>Value1: Hour of ON.
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_85_4" type="integer" groupName="configuration"
-                 min="0" max="16843197">
+      <parameter name="config_85_4" type="integer" groupName="configuration">
         <label>85: Set appointment 1</label>
         <description><![CDATA[
 Set appointment 1<br /> <h1>Overview</h1><p>0 to 99     The brightness level<br />256 to 316     The minute value of ON time<br />65536 to 65560     The hour value of ON time<br />16777215 to 16777222     The day value (Mon to Sun)</p>
@@ -328,8 +319,7 @@ Set appointment 1<br /> <h1>Overview</h1><p>0 to 99     The brightness level<
         <default>0</default>
       </parameter>
 
-      <parameter name="config_86_4" type="integer" groupName="configuration"
-                 min="0" max="16843197">
+      <parameter name="config_86_4" type="integer" groupName="configuration">
         <label>86: Set appointment 2</label>
         <description><![CDATA[
 Set appointment 2<br /> <h1>Overview</h1><p>0 to 99     The brightness level<br />256 to 316     The minute value of ON time<br />65536 to 65560     The hour value of ON time<br />16777215 to 16777222     The day value (Mon to Sun)</p>
@@ -348,15 +338,13 @@ Set appointment 2<br /> <h1>Overview</h1><p>0 to 99     The brightness level<
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_91_2" type="integer" groupName="configuration"
-                 min="-32767" max="32768">
+      <parameter name="config_91_2" type="integer" groupName="configuration">
         <label>91: Set the threshold value of wattage</label>
         <description>Threshold change in wattage (in terms of wattage) to induce an automatic report</description>
         <default>25</default>
       </parameter>
 
-      <parameter name="config_92_1" type="integer" groupName="configuration"
-                 min="0" max="100">
+      <parameter name="config_92_1" type="integer" groupName="configuration">
         <label>92: Set the threshold value of percent power</label>
         <description><![CDATA[
 Threshold change in wattage (in terms of percentage)<br /> <h1>Overview</h1><p>Threshold change in wattage (in terms of percentage) to induce an automatic report</p>
@@ -364,8 +352,7 @@ Threshold change in wattage (in terms of percentage)<br /> <h1>Overview</h1><p>T
         <default>5</default>
       </parameter>
 
-      <parameter name="config_100_1_wo" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_100_1_wo" type="integer" groupName="configuration">
         <label>100: Reset 101-103 to default</label>
         <description>Reset parameters 101-103 to default values</description>
         <default>0</default>
@@ -375,8 +362,7 @@ Threshold change in wattage (in terms of percentage)<br /> <h1>Overview</h1><p>T
         <advanced>true</advanced>
       </parameter>
 
-      <parameter name="config_101_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_101_1" type="integer" groupName="configuration">
         <label>101: Set group 1 reports</label>
         <description><![CDATA[
 To set which reports need to be sent in Report group 1<br /> <h1>Overview</h1><p>1     Send Meter Report of voltage (V)<br />2     Send Meter Report of current (A)<br />4     Send Meter Report of wattage (W)<br />8     Send Meter Report of energy (kWh)</p>
@@ -385,8 +371,7 @@ To set which reports need to be sent in Report group 1<br /> <h1>Overview</h1><p
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_102_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_102_1" type="integer" groupName="configuration">
         <label>102: Set group 2 reports</label>
         <description><![CDATA[
 To set which reports need to be sent in Report group 2<br /> <h1>Overview</h1><p>1     Send Meter Report of voltage (V)<br />2     Send Meter Report of current (A)<br />4     Send Meter Report of wattage (W)<br />8     Send Meter Report of energy (kWh)</p>
@@ -394,8 +379,7 @@ To set which reports need to be sent in Report group 2<br /> <h1>Overview</h1><p
         <default>0</default>
       </parameter>
 
-      <parameter name="config_103_1" type="integer" groupName="configuration"
-                 min="0" max="15">
+      <parameter name="config_103_1" type="integer" groupName="configuration">
         <label>103: Set Group 3 Reports</label>
         <description><![CDATA[
 To set which reports need to be sent in Report group 3<br /> <h1>Overview</h1><p>1     Send Meter Report of voltage (V)<br />2     Send Meter Report of current (A)<br />4     Send Meter Report of wattage (W)<br />8     Send Meter Report of energy (kWh)</p>
@@ -403,8 +387,7 @@ To set which reports need to be sent in Report group 3<br /> <h1>Overview</h1><p
         <default>0</default>
       </parameter>
 
-      <parameter name="config_110_1_wo" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_110_1_wo" type="integer" groupName="configuration">
         <label>110: Reset 111-113 to default</label>
         <description>Reset parameters 111-113 to default values</description>
         <default>0</default>
@@ -414,22 +397,19 @@ To set which reports need to be sent in Report group 3<br /> <h1>Overview</h1><p
         <advanced>true</advanced>
       </parameter>
 
-      <parameter name="config_111_4" type="integer" groupName="configuration"
-                 min="1" max="2147483647">
+      <parameter name="config_111_4" type="integer" groupName="configuration">
         <label>111: Automatic report interval group 1</label>
         <description>Set the interval of automatic report for Report group 1</description>
         <default>2147483647</default>
       </parameter>
 
-      <parameter name="config_112_4" type="integer" groupName="configuration"
-                 min="1" max="2147483647">
+      <parameter name="config_112_4" type="integer" groupName="configuration">
         <label>112: Automatic report interval group 2</label>
         <description>Set the interval of automatic report for Report group 2</description>
         <default>2147483647</default>
       </parameter>
 
-      <parameter name="config_113_4" type="integer" groupName="configuration"
-                 min="0" max="2147483647">
+      <parameter name="config_113_4" type="integer" groupName="configuration">
         <label>113: Automatic report interval group 3</label>
         <description>Set the interval of automatic report for Report group 3</description>
         <default>2147483647</default>
@@ -498,8 +478,7 @@ To set which reports need to be sent in Report group 3<br /> <h1>Overview</h1><p
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_125_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_125_1" type="integer" groupName="configuration">
         <label>125: Set the default dimming rate</label>
         <description>The value range is 1 to 255 seconds</description>
         <default>-1</default>
@@ -541,22 +520,19 @@ To set which reports need to be sent in Report group 3<br /> <h1>Overview</h1><p
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_131_1" type="integer" groupName="configuration"
-                 min="0" max="99">
+      <parameter name="config_131_1" type="integer" groupName="configuration">
         <label>131: Set the minimum brightness</label>
         <description>Set the min brightness level that the load can reach to</description>
         <default>99</default>
       </parameter>
 
-      <parameter name="config_132_1" type="integer" groupName="configuration"
-                 min="0" max="99">
+      <parameter name="config_132_1" type="integer" groupName="configuration">
         <label>132: Set the maximum brightness level</label>
         <description>Set the max brightness level that the load can reach to</description>
         <default>99</default>
       </parameter>
 
-      <parameter name="config_247_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_247_1" type="integer" groupName="configuration">
         <label>247: Working way for S1/S2</label>
         <description><![CDATA[
 Working way for S1/S2<br /> <h1>Overview</h1><p>Set the working way for S1/S2 when the Switch mode is 2 state switch mode.</p> <ul><li>Bit 0 =0, S1 is a toggle switch.</li> <li>Bit 0 =1, S1 is an On/Off switch, the out load state and S1 switch state would be in sync when using S1 to control the output load.</li> <li>Bit 1 =0, S2 is a toggle switch.</li> <li>Bit 1 =1, S2 is an On/Off switch, the out load state and S2 switch state would be in sync when using S2 to control the output load.</li> <li>Bit 2- Bit 7, reserved.</li> </ul>
@@ -566,8 +542,7 @@ Working way for S1/S2<br /> <h1>Overview</h1><p>Set the working way for S1/S2 wh
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_248_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_248_1" type="integer" groupName="configuration">
         <label>248: Function of S1/S2</label>
         <description><![CDATA[
 Function of S1/S2<br /> <h1>Overview</h1><p>Set the function of S1/S2.</p> <ul><li>Bit 0 = 0, the function of sending NIF is disabled.</li> <li>Bit 0 = 1, the function of sending NIF is enabled.</li> <li>Bit 1 = 0, the function of entering RF power level test mode is disabled.</li> <li>Bit 1 = 1, the function of entering RF power level test mode is enabled.</li> <li>Bit 2 = 0, the function of factory reset is disabled.</li> <li>Bit 2 = 1, the function of factory reset is enabled.</li> <li>Bit 3- Bit 6 = reserved.</li> <li>Bit 7 = 0, the setting for Bit 0 -Bit 2 are ineffective.</li> <li>Bit 7 = 1, the setting for Bit 0 -Bit 2 are effective</li> </ul>

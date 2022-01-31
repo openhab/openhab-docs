@@ -84,8 +84,7 @@ How the Wall Plug will react in the event of power supply failure<br /> <h1>Over
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_3_2" type="integer" groupName="configuration"
-                 min="0" max="18000">
+      <parameter name="config_3_2" type="integer" groupName="configuration">
         <label>3: Overload safety switch</label>
         <description><![CDATA[
 turn off the controlled device in case of exceeding the defined power.<br /> <h1>Overview</h1><p>This function allows to turn off the controlled device in case of ex- ceeding the defined power.</p> <p>Controlled device can be turned back on via button or sending a con- trol frame. By default this function is inactive.</p>
@@ -94,8 +93,7 @@ turn off the controlled device in case of exceeding the defined power.<br /> <h1
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_11_1" type="integer" groupName="configuration"
-                 min="0" max="100">
+      <parameter name="config_11_1" type="integer" groupName="configuration">
         <label>11: PowerReporting</label>
         <description><![CDATA[
 Minimum change in active power consumption to trigger<br /> <h1>Overview</h1><p>This parameter determines the minimum percentage change in active power consumption (in relation to the previously reported) that will result in sending new power report.</p>
@@ -104,8 +102,7 @@ Minimum change in active power consumption to trigger<br /> <h1>Overview</h1><p>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_12_2" type="integer" groupName="configuration"
-                 min="0" max="500">
+      <parameter name="config_12_2" type="integer" groupName="configuration">
         <label>12: EnergyReportingThreshold</label>
         <description><![CDATA[
 Energy reporting threshold<br /> <h1>Overview</h1><p>This parameter determines the minimum change in energy consumption (in relation to the previously reported) that will result in sending a new report.</p>
@@ -114,8 +111,7 @@ Energy reporting threshold<br /> <h1>Overview</h1><p>This parameter determines t
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_13_2" type="integer" groupName="configuration"
-                 min="0" max="32400">
+      <parameter name="config_13_2" type="integer" groupName="configuration">
         <label>13: PeriodicPowerRpt</label>
         <description><![CDATA[
 Periodic power reporting<br /> <h1>Overview</h1><p>This parameter defines time period between independent reports sent when changes in power load have not been recorded or if changes are insignificant. By default reports are sent every hour.</p>
@@ -124,8 +120,7 @@ Periodic power reporting<br /> <h1>Overview</h1><p>This parameter defines time p
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_14_2" type="integer" groupName="configuration"
-                 min="0" max="32400">
+      <parameter name="config_14_2" type="integer" groupName="configuration">
         <label>14: PeriodicEnergyRpt</label>
         <description><![CDATA[
 Periodic energy reporting<br /> <h1>Overview</h1><p>This parameter defines time period between independent reports sent when changes in power load have not been recorded or if changes are insignificant. By default reports are sent every hour.</p>
@@ -147,8 +142,7 @@ Measuring energy consumed by the Wall Plug itself<br /> <h1>Overview</h1><p>This
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_21_2" type="integer" groupName="configuration"
-                 min="100" max="18000">
+      <parameter name="config_21_2" type="integer" groupName="configuration">
         <label>21: UPValue</label>
         <description><![CDATA[
 UP value -On/Off (Power) association group (3)<br /> <h1>Overview</h1><p>upper power threshold, used in parameter 23. uP value cannot be lower than a value specified in parameter 22.</p>
@@ -157,8 +151,7 @@ UP value -On/Off (Power) association group (3)<br /> <h1>Overview</h1><p>upper p
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_22_2" type="integer" groupName="configuration"
-                 min="0" max="17900">
+      <parameter name="config_22_2" type="integer" groupName="configuration">
         <label>22: DOWNvalue</label>
         <description><![CDATA[
 lower power threshold<br /> <h1>Overview</h1><p>Lower power threshold, used in parameter 23. DOWn value cannot be higher than a value specified in parameter 21.</p>
@@ -181,8 +174,7 @@ the way that 3rd association group devices are controlled<br /> <h1>Overview</h1
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_24_2" type="integer" groupName="configuration"
-                 min="0" max="255">
+      <parameter name="config_24_2" type="integer" groupName="configuration">
         <label>24: SwitchOn</label>
         <description><![CDATA[
 Command sent when physical button is pressed<br /> <h1>Overview</h1><p>The value of BASIC SET command frame sent to the devices associat- ed in 2nd group „On/Off (Button)” when turning the device On using the button.</p>
@@ -191,8 +183,7 @@ Command sent when physical button is pressed<br /> <h1>Overview</h1><p>The value
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_25_2" type="integer" groupName="configuration" readOnly="true"
-                 min="0" max="255">
+      <parameter name="config_25_2" type="integer" groupName="configuration" readOnly="true">
         <label>25: SwitchOff</label>
         <description><![CDATA[
 Command sent when button turned off.<br /> <h1>Overview</h1><p>The value of BASIC SET command frame sent to the devices associat- ed in 2nd group „On/Off (Button)” when turning the device OFF using the button.</p>
@@ -201,8 +192,7 @@ Command sent when button turned off.<br /> <h1>Overview</h1><p>The value of BASI
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_26_2" type="integer" groupName="configuration"
-                 min="0" max="255">
+      <parameter name="config_26_2" type="integer" groupName="configuration">
         <label>26: ThresholdUpCmd</label>
         <description><![CDATA[
 Command sent if power exceeds param 21<br /> <h1>Overview</h1><p>The value of BASIC SET command frame sent to the devices associat- ed in 3rd group „On/Off (Power)” if power exceeded value of param- eter 21.</p>
@@ -211,8 +201,7 @@ Command sent if power exceeds param 21<br /> <h1>Overview</h1><p>The value of BA
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_27_2" type="integer" groupName="configuration"
-                 min="0" max="255">
+      <parameter name="config_27_2" type="integer" groupName="configuration">
         <label>27: ThresholdDownCmd</label>
         <description><![CDATA[
 Command sent when power drops below threshold<br /> <h1>Overview</h1><p>The value of BASIC SET command frame sent to the devices associ- ated in 3rd group „On/Off (Power)” if power dropped below value of parameter 22.</p>
@@ -239,8 +228,7 @@ Z-Wave network alarms to which the Wall Plug will respond<br /> <h1>Overview</h1
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_31_1" type="integer" groupName="configuration"
-                 min="0" max="50">
+      <parameter name="config_31_1" type="integer" groupName="configuration">
         <label>31: AlarmResponse</label>
         <description><![CDATA[
 how the Wall Plug will respond to alarms<br /> <h1>Overview</h1><p>This parameter defines how the Wall Plug will respond to alarms (de- vice’s status change).</p> <p>In case of values 1 or 2 the Wall Plug is operating normally and LED frame signals an alarm through time defined in parameter 32 or until the alarm is canceled.</p> <p>In case of values 5 to 50 the Wall Plug does not report status change, power changes, ignores BASIC SET command frames. After time defined in parameter 32 or after the alarm cancellation, connected device is set to the previous state.</p> <p>5-50 (0.5-5.0s, step 0.1s) - cyclically change device state with set period</p>
@@ -253,8 +241,7 @@ how the Wall Plug will respond to alarms<br /> <h1>Overview</h1><p>This paramete
         </options>
       </parameter>
 
-      <parameter name="config_32_2" type="integer" groupName="configuration"
-                 min="1" max="32400">
+      <parameter name="config_32_2" type="integer" groupName="configuration">
         <label>32: AlarmDuration</label>
         <description><![CDATA[
 duration of alarm state<br /> <h1>Overview</h1><p>This parameter specifies the duration of alarm state. If a device send- ing an alarm frame through the Z-Wave network sets alarm duration as well, this settings are ignored.</p>
@@ -263,8 +250,7 @@ duration of alarm state<br /> <h1>Overview</h1><p>This parameter specifies the d
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_40_2" type="integer" groupName="configuration"
-                 min="1000" max="18000">
+      <parameter name="config_40_2" type="integer" groupName="configuration">
         <label>40: PwrLoadViolet</label>
         <description><![CDATA[
 maximum active power value causes the LED frame to flash violet<br /> <h1>Overview</h1><p>This parameter determines maximum active power value, which when exceeded, causes the LED frame to flash violet. Function is active only when parameter 41 is set to 1 or 2.</p>

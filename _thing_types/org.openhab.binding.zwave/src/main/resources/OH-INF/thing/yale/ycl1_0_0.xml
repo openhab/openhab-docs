@@ -91,8 +91,7 @@ The lock will re-lock automatically if untouched for the timeout<br /> <h1>Overv
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_3_1" type="integer" groupName="configuration"
-                 min="7" max="60">
+      <parameter name="config_3_1" type="integer" groupName="configuration">
         <label>3: Re-lock time</label>
         <description><![CDATA[
 The amount of time which the lock will wait before re-locking<br /> <h1>Overview</h1><p>Re-lock time in seconds</p>
@@ -101,8 +100,7 @@ The amount of time which the lock will wait before re-locking<br /> <h1>Overview
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_4_1" type="integer" groupName="configuration"
-                 min="1" max="20">
+      <parameter name="config_4_1" type="integer" groupName="configuration">
         <label>4: Wrong tag limit</label>
         <description><![CDATA[
 Number of wrong tags that can be tried before stand-down<br /> <h1>Overview</h1><p>Number of wrong tags that can be tried before stand-down</p>
@@ -111,8 +109,7 @@ Number of wrong tags that can be tried before stand-down<br /> <h1>Overview</h1>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_7_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_7_1" type="integer" groupName="configuration">
         <label>7: Wrong tag timeout</label>
         <description><![CDATA[
 Time after the wrong tag limit being exceeded before re-trying<br /> <h1>Overview</h1><p>Amount of time after the wrong tag limit being exceeded that the lock will stand-down for</p>

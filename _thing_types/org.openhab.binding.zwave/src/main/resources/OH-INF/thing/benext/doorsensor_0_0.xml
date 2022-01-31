@@ -64,8 +64,7 @@ Door Sensor<br /> <h1>Overview</h1><p>Basic operations</p> <ul><li>The Door Sens
       </parameter-group>
 
       <!-- PARAMETER DEFINITIONS -->
-      <parameter name="config_1_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_1_1" type="integer" groupName="configuration">
         <label>1: Reset to factory settings</label>
         <description>Set all configuration values to default values (factory settings).</description>
         <default>0</default>
@@ -95,8 +94,7 @@ Door Sensor<br /> <h1>Overview</h1><p>Basic operations</p> <ul><li>The Door Sens
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_6_2" type="integer" groupName="configuration"
-                 min="-32767" max="32768">
+      <parameter name="config_6_2" type="integer" groupName="configuration">
         <label>6: Temperature offset</label>
         <description>An offset for the temperature.</description>
         <default>0</default>

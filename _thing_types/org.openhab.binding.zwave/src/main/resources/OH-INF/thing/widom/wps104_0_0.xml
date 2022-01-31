@@ -119,8 +119,7 @@ Device status upon receipt of a Basic Set command<br /> <h1>Overview</h1><p>The 
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_30_2" type="integer" groupName="configuration"
-                 min="0" max="4500">
+      <parameter name="config_30_2" type="integer" groupName="configuration">
         <label>30: Overcurrent Level</label>
         <description><![CDATA[
 Sets the overcurrent level<br /> <h1>Overview</h1><p>Sets the current level above which the time spent above that level is measured.</p> <p>Version C: From 0 to 4500[1] hundredths of Amperes – Default Value: <b>4500 Hundredths of Amperes</b></p> <p>Version S: From 0 to 1250 hundredths of Amperes – Default Value: <b>1250 Hundredths of Amperes</b></p>
@@ -129,8 +128,7 @@ Sets the overcurrent level<br /> <h1>Overview</h1><p>Sets the current level abov
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_31_2" type="integer" groupName="configuration"
-                 min="0" max="10800">
+      <parameter name="config_31_2" type="integer" groupName="configuration">
         <label>31: Overcurrent Time</label>
         <description><![CDATA[
 Sets the time to recognize an overcurrent event.<br /> <h1>Overview</h1><p>Sets the time beyond which, in the case of overcurrent at a level higher than that established in parameter 30, an OverCurrent event occurs.</p> <p>From 0 to 10800 Seconds (3 Hours) – Default Value: <b>10 Seconds</b></p>
@@ -180,8 +178,7 @@ Determines whether if energy consumed or energy produced.<br /> <h1>Overview</h1
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_35_2" type="integer" groupName="configuration"
-                 min="0" max="11250">
+      <parameter name="config_35_2" type="integer" groupName="configuration">
         <label>35: UP Power Level</label>
         <description><![CDATA[
 Sets the level of instantaneous power in Watts<br /> <h1>Overview</h1><p>The upper limit power threshold detector determines when instantaneous power remains above the threshold point (UP Power Level) beyond a specified duration (UP Power Time). When this happens, a <i>UP Power Event</i> occurs.</p> <p>Sets the level of instantaneous power in Watts beyond which time of permanence above this level is calculated. </p> <p>Version C: From 0 to 11250[1] – Default value: <b>11250 </b></p> <p>Version S: From 0 to 3000 – Default value: <b>3000 </b></p>
@@ -190,8 +187,7 @@ Sets the level of instantaneous power in Watts<br /> <h1>Overview</h1><p>The upp
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_36_2" type="integer" groupName="configuration"
-                 min="0" max="10800">
+      <parameter name="config_36_2" type="integer" groupName="configuration">
         <label>36: UP Power Time</label>
         <description><![CDATA[
 Sets the time in seconds<br /> <h1>Overview</h1><p>Sets the time in seconds beyond which, if instantaneous power remains at levels exceeding threshold defined by parameter 35, a UP Power event occurs.</p> <p>From 0 to 10800 seconds (3 Hours) – Default value: <b>10 Seconds</b></p>
@@ -215,8 +211,7 @@ Defines the next status case of a UP Power event<br /> <h1>Overview</h1><p>Defin
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_38_1" type="integer" groupName="configuration"
-                 min="-1" max="99">
+      <parameter name="config_38_1" type="integer" groupName="configuration">
         <label>38: UP Power Associated</label>
         <description><![CDATA[
 Defines the status of Group 2 devices<br /> <h1>Overview</h1><p>Defines the status of associated devices in the presence of a UP Power event.</p> <p>From: 1 to 99 for dimming purpose</p> <p>0 (OFF) and -1(ON) for switching ON/OFF.</p> <p>Default: <b>0 – OFF</b></p>
@@ -225,8 +220,7 @@ Defines the status of Group 2 devices<br /> <h1>Overview</h1><p>Defines the stat
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_39_2" type="integer" groupName="configuration"
-                 min="0" max="11250">
+      <parameter name="config_39_2" type="integer" groupName="configuration">
         <label>39: DOWN Power Level</label>
         <description><![CDATA[
 Sets the level of instantaneous power in Watts<br /> <h1>Overview</h1><p>Sets the level of instantaneous power beyond which the time of permanence below this level is calculated.</p> <p>From 0 to 11250 Watt – Default value: <b>0 W</b></p>
@@ -235,8 +229,7 @@ Sets the level of instantaneous power in Watts<br /> <h1>Overview</h1><p>Sets th
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_40_2" type="integer" groupName="configuration"
-                 min="0" max="10800">
+      <parameter name="config_40_2" type="integer" groupName="configuration">
         <label>40: DOWN Power Time</label>
         <description><![CDATA[
 Sets the time in seconds<br /> <h1>Overview</h1><p>Sets the time beyond which, if instantaneous power remains at levels below threshold defined by parameter 39, a DOWN Power event occurs.      From 0 to 10800 Seconds (3 Hours) – Default value: <b>10 Seconds</b></p>
@@ -260,8 +253,7 @@ Defines the next state case of a DOWN Power event<br /> <h1>Overview</h1><p>Defi
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_42_1" type="integer" groupName="configuration"
-                 min="-1" max="99">
+      <parameter name="config_42_1" type="integer" groupName="configuration">
         <label>42: DOWN Power Associated</label>
         <description><![CDATA[
 Defines the status of Group 3 devices<br /> <h1>Overview</h1><p>Defines the status of associated devices in the presence of a DOWN Power event.</p> <p>From: 1 to 99 for dimming purpose</p> <p>– 0 (OFF) and -1(ON) for switching ON/OFF.</p> <p>Default: <b>0 – OFF</b></p>
@@ -270,8 +262,7 @@ Defines the status of Group 3 devices<br /> <h1>Overview</h1><p>Defines the stat
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_43_4" type="integer" groupName="configuration"
-                 min="0" max="2000000">
+      <parameter name="config_43_4" type="integer" groupName="configuration">
         <label>43: Energy Level</label>
         <description><![CDATA[
 Sets the energy level in KWh<br /> <h1>Overview</h1><p>Sets the energy level that once exceeded an Energy Limit event occurs<b>.</b></p> <p>From 0 to 2.000.000 KWh – Default value: <b>2.000.000 KWh</b></p>
@@ -295,8 +286,7 @@ Defines the next state in case of Energy Limit event<br /> <h1>Overview</h1><p>D
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_45_1" type="integer" groupName="configuration"
-                 min="1" max="100">
+      <parameter name="config_45_1" type="integer" groupName="configuration">
         <label>45: Variation Instantaneous Power</label>
         <description><![CDATA[
 Defines the percentage variation of instantaneous power<br /> <h1>Overview</h1><p>Defines the percentage variation of instantaneous power determining the sending of the report<b>. </b></p> <p>From: 1 (1%) to 100 (100%) Default value: <b>10 – 10%</b></p>
@@ -305,8 +295,7 @@ Defines the percentage variation of instantaneous power<br /> <h1>Overview</h1><
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_46_1" type="integer" groupName="configuration"
-                 min="1" max="100">
+      <parameter name="config_46_1" type="integer" groupName="configuration">
         <label>46: Report Time Frequency</label>
         <description><![CDATA[
 Defines the time in minutes<br /> <h1>Overview</h1><p>Defines the maximum time in minutes since the previous report beyond which an Instantaneous Power Report will still be sent.</p> <p>From: 1 to 100 minutes. Default value: <b>10 minutes</b></p>
@@ -331,8 +320,7 @@ Defines the increase energy to generate a report<br /> <h1>Overview</h1><p>Defin
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_48_2" type="integer" groupName="configuration"
-                 min="1100" max="2500">
+      <parameter name="config_48_2" type="integer" groupName="configuration">
         <label>48: Nominal Voltage</label>
         <description><![CDATA[
 Defines the nominal voltage value in tenths of volts<br /> <h1>Overview</h1><p>Defines the nominal voltage value in tenths of volts. Together with parameter No. 49 this is used by the automatic notification system to send reports on variations of voltage.</p> <p>Default value: <b>2300</b></p> <p>From: 1100 to 2500</p>
@@ -341,8 +329,7 @@ Defines the nominal voltage value in tenths of volts<br /> <h1>Overview</h1><p>D
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_49_1" type="integer" groupName="configuration"
-                 min="1" max="100">
+      <parameter name="config_49_1" type="integer" groupName="configuration">
         <label>49: Fall In Maximum Voltage</label>
         <description><![CDATA[
 Defines, the nominal value for max voltage fall permitted<br /> <h1>Overview</h1><p>Defines, as a percentage, the nominal value for permitted fall in maximum voltage.</p> <p>From: 1 (1%) to 100 (100%) Default value: <b>10 – 10%</b></p>
@@ -351,8 +338,7 @@ Defines, the nominal value for max voltage fall permitted<br /> <h1>Overview</h1
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_50_2" type="integer" groupName="configuration"
-                 min="0" max="62">
+      <parameter name="config_50_2" type="integer" groupName="configuration">
         <label>50: Electric parameters</label>
         <description><![CDATA[
 Defines which parameters will be subjected to notification<br /> <h1>Overview</h1><p>Defines which electric parameters, other than power, will be subjected to automatic notification.</p> <p>The value to be set for this parameter must be calculated as the sum of values associated to the individual electric parameter indicated in the table of Manual.</p> <p>To send report only for Power please set the value to 0.</p> <p>To send report only for Power and Energy please set the value to 2 (0+2).</p> <p>To send report for Power, Energy, Voltage, Current, Power Factor please set the value to 30 (0+2+4+8+16).</p> <p>By default the report are sent for (Power, Energy, Voltage, Current, Power Factor) 0+2+4+8+16à30</p> <p>Default value: <b>30</b></p> <p>Permitted values: From 0 to 62</p>
@@ -361,8 +347,7 @@ Defines which parameters will be subjected to notification<br /> <h1>Overview</h
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_51_2" type="integer" groupName="configuration" readOnly="true"
-                 min="-32767" max="32768">
+      <parameter name="config_51_2" type="integer" groupName="configuration" readOnly="true">
         <label>51: Voltage RMS value</label>
         <description><![CDATA[
 Reading of this parameter returns the value of voltage RMS<br /> <h1>Overview</h1><p>Reading of this parameter returns the value of voltage RMS at the time of the reading expressed in tenths of Volts.</p>
@@ -371,32 +356,28 @@ Reading of this parameter returns the value of voltage RMS<br /> <h1>Overview</h
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_52_2" type="integer" groupName="configuration" readOnly="true"
-                 min="-32767" max="32768">
+      <parameter name="config_52_2" type="integer" groupName="configuration" readOnly="true">
         <label>52: Current RMS value</label>
         <description>Returns the value of current RMS expressed in hundredths of Amperes.</description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_53_1" type="integer" groupName="configuration" readOnly="true"
-                 min="-127" max="128">
+      <parameter name="config_53_1" type="integer" groupName="configuration" readOnly="true">
         <label>53: Power Factor</label>
         <description>Returns the value of power factor as a percentage</description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_54_4" type="integer" groupName="configuration" readOnly="true"
-                 min="-2147483646" max="2147483647">
+      <parameter name="config_54_4" type="integer" groupName="configuration" readOnly="true">
         <label>54: Total energy consumed</label>
         <description>Returns the value of total energy consumed expressed in Wh (thousandths of KWh).</description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_55_4" type="integer" groupName="configuration" readOnly="true"
-                 min="-2147483646" max="2147483647">
+      <parameter name="config_55_4" type="integer" groupName="configuration" readOnly="true">
         <label>55: Total energy produced</label>
         <description>Returns the value of total energy consumed expressed in Wh (thousandths of KWh).</description>
         <default>0</default>

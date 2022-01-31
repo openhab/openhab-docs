@@ -214,8 +214,7 @@ Power Strip<br /> <h1>Overview</h1><p><strong>FEATURES </strong></p> <ul><li>Wir
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_2_2" type="integer" groupName="configuration"
-                 min="-32767" max="32768">
+      <parameter name="config_2_2" type="integer" groupName="configuration">
         <label>2: Power Wattage Report Value Threshold</label>
         <description><![CDATA[
 Choose how you want your Power Strip to report power consumption to your hub<br /> <h1>Overview</h1><p>Choose how you want your Power Strip to report power consumption to your hub. The number entered as value corresponds to the number of Watts the appliance needs to go over for the change to be reported. So if 5 Watts are entered by default, the smart plug will report any change in power usage over 5 Watts for each outlet (whether it’s at least 5 Watts more or 5 Watts less compared to previous report).</p>
@@ -223,8 +222,7 @@ Choose how you want your Power Strip to report power consumption to your hub<br 
         <default>5</default>
       </parameter>
 
-      <parameter name="config_3_4" type="integer" groupName="configuration"
-                 min="5" max="2678400">
+      <parameter name="config_3_4" type="integer" groupName="configuration">
         <label>3: Power Wattage Report Frequency</label>
         <description><![CDATA[
 The number entered as value corresponds to the number of seconds<br /> <h1>Overview</h1><p>If 30 is entered, by default, the Strip will report power consumption (Wattage) every 30 seconds.  Default set to 30.</p>
@@ -232,8 +230,7 @@ The number entered as value corresponds to the number of seconds<br /> <h1>Overv
         <default>30</default>
       </parameter>
 
-      <parameter name="config_4_4" type="integer" groupName="configuration"
-                 min="5" max="2678400">
+      <parameter name="config_4_4" type="integer" groupName="configuration">
         <label>4: Energy (kWh) Report Frequency</label>
         <description><![CDATA[
 Report interval of power consumption (W) to your controller (hub)<br /> <h1>Overview</h1><p>The number entered as value corresponds to the number of seconds. So if 300 is entered by default, the power strip will report energy usage every 300 seconds (5 minutes).  Default set to 300.</p>
@@ -241,8 +238,7 @@ Report interval of power consumption (W) to your controller (hub)<br /> <h1>Over
         <default>300</default>
       </parameter>
 
-      <parameter name="config_5_2" type="integer" groupName="configuration"
-                 min="0" max="1500">
+      <parameter name="config_5_2" type="integer" groupName="configuration">
         <label>5: Overload Protection</label>
         <description><![CDATA[
 Set the Watt level for overload protection to kick in<br /> <h1>Overview</h1><p>The number entered as the value corresponds to the total number of Watts the Strip needs to detect across all 5 outlets to turn off automatically and send a notification to the hub.  0 = overload protection disabled (we DON’T recommend changing to this setting). Default set to 1500 Watts. </p>
@@ -263,8 +259,7 @@ Enable or disable the auto turn-off timer for CH1 outlet<br /> <h1>Overview</h1>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_7_4" type="integer" groupName="configuration"
-                 min="1" max="65535">
+      <parameter name="config_7_4" type="integer" groupName="configuration">
         <label>7: CH1 Auto Turn-Off Setting</label>
         <description>Time in minutes to turn off the device connected to CH1 after being turned on</description>
         <default>60</default>
@@ -281,8 +276,7 @@ Enable or disable the auto turn-off timer for CH1 outlet<br /> <h1>Overview</h1>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_9_4" type="integer" groupName="configuration"
-                 min="1" max="65535">
+      <parameter name="config_9_4" type="integer" groupName="configuration">
         <label>9: CH1 Auto Turn-On Setting</label>
         <description>Time in minutes to turn on the device connected to CH1 after being turned off.</description>
         <default>60</default>
@@ -299,8 +293,7 @@ Enable or disable the auto turn-off timer for CH1 outlet<br /> <h1>Overview</h1>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_11_4" type="integer" groupName="configuration"
-                 min="1" max="65535">
+      <parameter name="config_11_4" type="integer" groupName="configuration">
         <label>11: CH2 Auto Turn-Off Setting</label>
         <description>Time in minutes to turn off the device connected to CH2 after being turned on</description>
         <default>60</default>
@@ -317,8 +310,7 @@ Enable or disable the auto turn-off timer for CH1 outlet<br /> <h1>Overview</h1>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_13_4" type="integer" groupName="configuration"
-                 min="1" max="65535">
+      <parameter name="config_13_4" type="integer" groupName="configuration">
         <label>13: CH2 Auto Turn-On Setting</label>
         <description>Time in minutes to turn on the device connected to CH2 after being turned off</description>
         <default>60</default>
@@ -335,8 +327,7 @@ Enable or disable the auto turn-off timer for CH1 outlet<br /> <h1>Overview</h1>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_15_4" type="integer" groupName="configuration"
-                 min="1" max="65535">
+      <parameter name="config_15_4" type="integer" groupName="configuration">
         <label>15: CH3 Auto Turn-Off Setting</label>
         <description>Time in minutes to turn off the device connected to CH3 after being turned on</description>
         <default>60</default>
@@ -353,8 +344,7 @@ Enable or disable the auto turn-off timer for CH1 outlet<br /> <h1>Overview</h1>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_17_4" type="integer" groupName="configuration"
-                 min="1" max="65535">
+      <parameter name="config_17_4" type="integer" groupName="configuration">
         <label>17: CH3 Auto Turn-On Setting</label>
         <description>Time in minutes to turn on the device connected to CH3 after being turned off</description>
         <default>60</default>
@@ -371,8 +361,7 @@ Enable or disable the auto turn-off timer for CH1 outlet<br /> <h1>Overview</h1>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_19_4" type="integer" groupName="configuration"
-                 min="1" max="65535">
+      <parameter name="config_19_4" type="integer" groupName="configuration">
         <label>19: CH4 Auto Turn-Off Setting</label>
         <description>Time in minutes to turn off the device connected to CH4 after being turned on.</description>
         <default>60</default>
@@ -389,8 +378,7 @@ Enable or disable the auto turn-off timer for CH1 outlet<br /> <h1>Overview</h1>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_21_4" type="integer" groupName="configuration"
-                 min="1" max="65535">
+      <parameter name="config_21_4" type="integer" groupName="configuration">
         <label>21: CH4 Auto Turn-On Setting</label>
         <description>Time in minutes to turn on the device connected to CH4 after being turned off</description>
         <default>60</default>
@@ -407,8 +395,7 @@ Enable or disable the auto turn-off timer for CH1 outlet<br /> <h1>Overview</h1>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_23_4" type="integer" groupName="configuration"
-                 min="1" max="65535">
+      <parameter name="config_23_4" type="integer" groupName="configuration">
         <label>23: CH5 Auto Turn-Off Setting</label>
         <description>Time in minutes to turn off the device connected to CH5 after being turned on.</description>
         <default>60</default>
@@ -425,8 +412,7 @@ Enable or disable the auto turn-off timer for CH1 outlet<br /> <h1>Overview</h1>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_25_4" type="integer" groupName="configuration"
-                 min="1" max="65535">
+      <parameter name="config_25_4" type="integer" groupName="configuration">
         <label>25: CH5 Auto Turn-On Setting</label>
         <description>Time in minutes to turn on the device connected to CH5 after being turned off</description>
         <default>60</default>

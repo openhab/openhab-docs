@@ -54,15 +54,13 @@ Z-Wave in-wall Smart Dimmer<br /> <h1>Overview</h1><p>Stay connected to your hom
       </parameter-group>
 
       <!-- PARAMETER DEFINITIONS -->
-      <parameter name="config_4_1" type="integer" groupName="configuration"
-                 min="0" max="1">
+      <parameter name="config_4_1" type="integer" groupName="configuration">
         <label>4: Invert Switch</label>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_7_2" type="integer" groupName="configuration"
-                 min="1" max="99">
+      <parameter name="config_7_2" type="integer" groupName="configuration">
         <label>7: Z-Wave: Number of Steps or Levels</label>
         <description><![CDATA[
 Number of steps when set by controller<br /> <h1>Overview</h1><p>Both the number of steps (or levels) that the dimmer will change and the timing of the steps can be modified to suit personal preferences. The timing of the steps can be adjusted in 10 millisecond intervals.</p>
@@ -71,8 +69,7 @@ Number of steps when set by controller<br /> <h1>Overview</h1><p>Both the number
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_8_2" type="integer" groupName="configuration"
-                 min="1" max="255">
+      <parameter name="config_8_2" type="integer" groupName="configuration">
         <label>8: Z-Wave: Timing of Steps or Levels</label>
         <description><![CDATA[
 Timing when set by controller<br /> <h1>Overview</h1><p>Both the number of steps (or levels) that the dimmer will change and the timing of the steps can be modified to suit personal preferences. The timing of the steps can be adjusted in 10 millisecond intervals.</p>
@@ -81,32 +78,28 @@ Timing when set by controller<br /> <h1>Overview</h1><p>Both the number of steps
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_9_2" type="integer" groupName="configuration"
-                 min="1" max="99">
+      <parameter name="config_9_2" type="integer" groupName="configuration">
         <label>9: Manual: Number of Steps or Levels</label>
         <description>Number of steps when using the switch</description>
         <default>1</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_10_2" type="integer" groupName="configuration"
-                 min="1" max="255">
+      <parameter name="config_10_2" type="integer" groupName="configuration">
         <label>10: Manual: Timing of Steps</label>
         <description>Timing of steps when using the switch</description>
         <default>3</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_11_2" type="integer" groupName="configuration"
-                 min="1" max="99">
+      <parameter name="config_11_2" type="integer" groupName="configuration">
         <label>11: All-On/All-Off: Number of Steps or Levels</label>
         <description>Number of steps when receiving all-on or all-off command</description>
         <default>1</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_12_2" type="integer" groupName="configuration"
-                 min="1" max="255">
+      <parameter name="config_12_2" type="integer" groupName="configuration">
         <label>12: All-On/All-Off: Timing of Steps or Levels</label>
         <description>Timing of steps when receiving all-on or all-off command</description>
         <default>3</default>

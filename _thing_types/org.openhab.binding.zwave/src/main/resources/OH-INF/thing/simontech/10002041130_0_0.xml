@@ -89,8 +89,7 @@ Custom consumption limit<br /> <h1>Overview</h1><p>0x0001 - 0xFFFF -&gt; Sets th
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_3_1" type="integer" groupName="configuration"
-                 min="0" max="99">
+      <parameter name="config_3_1" type="integer" groupName="configuration">
         <label>3: Beacon</label>
         <description><![CDATA[
 Beacon LEDs<br /> <h1>Overview</h1><p>0x01-0x63 (1-100%) -&gt; Sets the intensity of the beacon LEDs.</p>
@@ -101,8 +100,7 @@ Beacon LEDs<br /> <h1>Overview</h1><p>0x01-0x63 (1-100%) -&gt; Sets the intensit
         </options>
       </parameter>
 
-      <parameter name="config_10_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_10_1" type="integer" groupName="configuration">
         <label>10: Delay ON</label>
         <description><![CDATA[
 Delay<br /> <h1>Overview</h1><ul><li>0x00 -&gt; (Default) Disables timing</li> <li>0x01-0x7F -&gt; Sets a timing with a range of (1-127sec)</li> <li>0x80-0xFE -&gt; Sets a timing with range of (1-127min)</li> </ul>
@@ -111,8 +109,7 @@ Delay<br /> <h1>Overview</h1><ul><li>0x00 -&gt; (Default) Disables timing</li> <
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_11_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_11_1" type="integer" groupName="configuration">
         <label>11: Activation TIME</label>
         <description><![CDATA[
 Activation TIME<br /> <h1>Overview</h1><ul><li>0x00 -&gt; (Default) Disables timing</li> <li>0x01-0x7F -&gt; Sets a timing with a range of (1-127sec)</li> <li>0x80-0xFE -&gt; Sets a timing with range of (1-127min)</li> </ul>
@@ -142,8 +139,7 @@ Activation TIME<br /> <h1>Overview</h1><ul><li>0x00 -&gt; (Default) Disables tim
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_16_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_16_1" type="integer" groupName="configuration">
         <label>16: Delay OFF</label>
         <description><![CDATA[
 Delay OFF<br /> <h1>Overview</h1><ul><li>0x00 -&gt; (Default) Disables timing</li> <li>0x01-0x7F -&gt; Sets a timing with a range of (1-127sec)</li> <li>0x80-0xFE -&gt; Sets a timing with range of (1-127min)</li> </ul>
@@ -182,8 +178,7 @@ Delay OFF<br /> <h1>Overview</h1><ul><li>0x00 -&gt; (Default) Disables timing</l
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_21_2" type="integer" groupName="configuration" readOnly="true"
-                 min="-32767" max="32768">
+      <parameter name="config_21_2" type="integer" groupName="configuration" readOnly="true">
         <label>21: Charge Status</label>
         <description>Charge status (read-only)</description>
         <default>0</default>

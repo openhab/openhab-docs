@@ -171,8 +171,7 @@ Matrix Switch with backlight and two outputs<br /> <h1>Overview</h1><p>MATRIX ty
       </parameter-group>
 
       <!-- PARAMETER DEFINITIONS -->
-      <parameter name="config_1_1" type="integer" groupName="configuration"
-                 min="0" max="52">
+      <parameter name="config_1_1" type="integer" groupName="configuration">
         <label>1: Button 1 Control</label>
         <description><![CDATA[
 This parameter specifies how Button 1 controls the relay outputs<br /> <h1>Overview</h1><p>This parameter specifies how Button 1 controls the relay outputs. The parameter is a bitmask where the individual values are added together, so it becomes possible to control both relay outputs.</p><p>Value Description</p><p>0   Button 1 does not control any relay outputs.</p><p>1    Button 1 can turn on relay output 1</p><p>2   Button 1 can turn on relay output 2</p><p>16 Button 1 can turn off relay output 1</p><p>32 Button 1 can turn off relay output 2</p><p><br /></p>
@@ -181,8 +180,7 @@ This parameter specifies how Button 1 controls the relay outputs<br /> <h1>Overv
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_1_1" type="integer" groupName="configuration"
-                 min="0" max="51">
+      <parameter name="config_1_1" type="integer" groupName="configuration">
         <label>1: Button 2 Control</label>
         <description><![CDATA[
 This parameter specifies how Button 2 controls the relay outputs<br /> <h1>Overview</h1><p>This parameter specifies how Button 2 controls the relay outputs. The parameter is a bitmask where the individual values are added together, so it becomes possible to control both relay outputs.</p><p>Value Description</p><p>0 Button 2 does not control any relay outputs.</p><p>1 Button 2 can turn on relay output 1</p><p>2 Button 2 can turn on relay output 2</p><p>16 Button 2 can turn off relay output 1</p><p>32 Button 2 can turn off relay output 2</p>
@@ -191,8 +189,7 @@ This parameter specifies how Button 2 controls the relay outputs<br /> <h1>Overv
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_3_1" type="integer" groupName="configuration"
-                 min="0" max="51">
+      <parameter name="config_3_1" type="integer" groupName="configuration">
         <label>3: Button 3 control</label>
         <description><![CDATA[
 This parameter specifies how Button 3 controls the relay outputs<br /> <h1>Overview</h1><p>This parameter specifies how Button 3 controls the relay outputs. The parameter is a bitmask where the individual values are added together, so it becomes possible to control both relay outputs.</p><p>Value Description</p><p>0 Button 3 does not control any relay outputs.</p><p>1 Button 3 can turn on relay output 1</p><p>2 Button 3 can turn on relay output 2</p><p>16 Button 3 can turn off relay output 1</p><p>32 Button 3 can turn off relay output 2</p>
@@ -201,8 +198,7 @@ This parameter specifies how Button 3 controls the relay outputs<br /> <h1>Overv
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_4_1" type="integer" groupName="configuration"
-                 min="0" max="51">
+      <parameter name="config_4_1" type="integer" groupName="configuration">
         <label>4: Button 4 Control</label>
         <description><![CDATA[
 This parameter specifies how Button 4 controls the relay outputs<br /> <h1>Overview</h1><p>This parameter specifies how Button 4 controls the relay outputs. The parameter is a bitmask where the individual values are added together, so it becomes possible to control both relay outputs.</p><p>Value Description</p><p>0 Button 4 does not control any relay outputs.</p><p>1 Button 4 can turn on relay output 1</p><p>2 Button 4 can turn on relay output 2</p><p>16 Button 4 can turn off relay output 1</p><p>32 Button 4 can turn off relay output 2</p>
@@ -211,8 +207,7 @@ This parameter specifies how Button 4 controls the relay outputs<br /> <h1>Overv
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_5_1" type="integer" groupName="configuration"
-                 min="0" max="1">
+      <parameter name="config_5_1" type="integer" groupName="configuration">
         <label>5: Relay Output 1 state after power-up</label>
         <description><![CDATA[
 State of Relay Output 1 after power-up<br /> <h1>Overview</h1><p>This parameter controls the state of Relay Output 1 after power-up. Standard is 0 (off)</p>
@@ -224,8 +219,7 @@ State of Relay Output 1 after power-up<br /> <h1>Overview</h1><p>This parameter 
         </options>
       </parameter>
 
-      <parameter name="config_6_1" type="integer" groupName="configuration"
-                 min="0" max="1">
+      <parameter name="config_6_1" type="integer" groupName="configuration">
         <label>6: Relay Output 2 state after power-up</label>
         <description><![CDATA[
 State of Relay Output 2 after power-up<br /> <h1>Overview</h1><p>This parameter controls the state of Relay Output 2 after power-up. Standard is 0 (off)<br /></p>
@@ -237,8 +231,7 @@ State of Relay Output 2 after power-up<br /> <h1>Overview</h1><p>This parameter 
         </options>
       </parameter>
 
-      <parameter name="config_7_1" type="integer" groupName="configuration"
-                 min="0" max="1">
+      <parameter name="config_7_1" type="integer" groupName="configuration">
         <label>7: Central Scene notifications</label>
         <description><![CDATA[
 Central Scene notifications<br /> <h1>Overview</h1><p>This parameter controls whether Central Scene notifications is enabled or not. Standard is 1 (enabled)<br /></p>
@@ -250,8 +243,7 @@ Central Scene notifications<br /> <h1>Overview</h1><p>This parameter controls wh
         </options>
       </parameter>
 
-      <parameter name="config_10_1" type="integer" groupName="configuration"
-                 min="0" max="1">
+      <parameter name="config_10_1" type="integer" groupName="configuration">
         <label>10: Extended LED control</label>
         <description><![CDATA[
 Enables expanded LED control<br /> <h1>Overview</h1><p>This parameter enables and disables expanded LED control. Standard is 0 (disabled)<br /></p>
@@ -263,8 +255,7 @@ Enables expanded LED control<br /> <h1>Overview</h1><p>This parameter enables an
         </options>
       </parameter>
 
-      <parameter name="config_11_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_11_1" type="integer" groupName="configuration">
         <label>11: Prel-filter-time</label>
         <description><![CDATA[
 Prel-filter-time on button inputs<br /> <h1>Overview</h1><p>This parameter specificies the time use for prel-filter on the buttons in 0.01 seconds resolution. time can be can be </p><p>0 - 255 0 - 2.55 seconds. Default value is 5, corresponding to a prel filter of 50 milliseconds (0.05 seconds).</p>
@@ -273,8 +264,7 @@ Prel-filter-time on button inputs<br /> <h1>Overview</h1><p>This parameter speci
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_12_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_12_1" type="integer" groupName="configuration">
         <label>12: Activation Threshold</label>
         <description><![CDATA[
 Threshold value for activation of button<br /> <h1>Overview</h1><p>This parameter specificies the threshold time for the buttons to be stable before the activation is accepted in 0.01 seconds resolution. time can be can be 0 – 2,55 sekunder. Standardvalue is 20, corrosponding to a threshold value of 200 milliseconds (0,20 seconds).</p>
@@ -283,8 +273,7 @@ Threshold value for activation of button<br /> <h1>Overview</h1><p>This paramete
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_13_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_13_1" type="integer" groupName="configuration">
         <label>13: Held mode Threshold</label>
         <description><![CDATA[
 Threshold value for button in "long-press" condition<br /> <h1>Overview</h1><p>This parameter specificies the threshold time for the buttons to be stable before it will assume the condition "long-press" in 0.01 seconds resolution. time can be can be 0 – 2,55 sekunder. Standardvalue is 50, corrosponding to a threshold value of 500 milliseconds (0,50 seconds).</p>
@@ -293,8 +282,7 @@ Threshold value for button in "long-press" condition<br /> <h1>Overview</h1><p>T
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_14_4" type="integer" groupName="configuration"
-                 min="-2147483646" max="2147483647">
+      <parameter name="config_14_4" type="integer" groupName="configuration">
         <label>14: Shared RGB-level control</label>
         <description><![CDATA[
 Shared RGB-level control<br /> <h1>Overview</h1><p>This parameter is used to set the shared light-level for the red, green and blue colors in the LEDs under the 4 Buttons.</p><p>Value Description</p><p>Byte 1: Light-level for red</p><p>0 - 255 Set the shared level for the red LEDs (standard value is 255)</p><p>Byte 2: Light-level for green<br /></p><p>0 – 255 Set the shared level for the green LEDs (standard value is 255)</p><p>Byte 3: Light-level for blue<br /></p><p>0 – 255 Set the shared level for the blue LEDs (standard value is 255)</p><p>Byte 4: Not used - must be set to 0.</p>
@@ -303,8 +291,7 @@ Shared RGB-level control<br /> <h1>Overview</h1><p>This parameter is used to set
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_15_2" type="integer" groupName="configuration"
-                 min="0" max="16383">
+      <parameter name="config_15_2" type="integer" groupName="configuration">
         <label>15: Association groups, sending in secure mode</label>
         <description><![CDATA[
 Association groups, transmission in secure mode<br /> <h1>Overview</h1><p>This parameter sets whether Z-wave messages send to devices in the association groups are to be send in secure mode. <b>This parameter is only valid if the device have been included in secure mode.</b></p><p><br /></p><p>0 Message in all association groups is send as non-secure messages (non-secure).<br /></p><p>1 Message in association group 2 is send as secure messages (secure).</p><p>2 Message in association group 3 is send as secure messages (secure).</p><p>4 Message in association group 4 is send as secure messages (secure).</p><p>8 Message in association group 5 is send as secure messages (secure).</p><p>16 Message in association group 6 is send as secure messages (secure).</p><p>32 Message in association group 7 is send as secure messages (secure).</p><p>64 Message in association group 8 is send as secure messages (secure).</p><p>128 Message in association group 9 is send as secure messages (secure).</p><p>256 Message in association group 10 is send as secure messages (secure).</p><p>512 Message in association group 11 is send as secure messages (secure).</p><p>1024 Message in association group 12 is send as secure messages (secure).</p><p>2048 Message in association group 13 is send as secure messages (secure).</p><p>4096 Message in association group 14 is send as secure messages (secure).</p><p>8191 Message in association group 15 is send as secure messages (secure).</p><p>16383 Messages in all association groups is send as secure messages (secure). (standard). <br /></p><p><b>NB. Above values are bitmasks, so the individual values have to added together to selection multiple options.</b></p>
@@ -314,8 +301,7 @@ Association groups, transmission in secure mode<br /> <h1>Overview</h1><p>This p
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_16_1" type="integer" groupName="configuration"
-                 min="0" max="4">
+      <parameter name="config_16_1" type="integer" groupName="configuration">
         <label>16: Button 1 Function</label>
         <description><![CDATA[
 Button 1 function<br /> <h1>Overview</h1><p>This parameter set the function of button 1.</p><p>Value: Description<br /></p><p>0: Ordinary shift-function which shift between on and off, and regulation up/down. (Standard) <br /></p><p>1: Automatic off after timer ends (stair light function). The timer is set in parameter 17.</p><p>2: Automatic on after timer ends. The timer is set in parameter 17.</p><p>3: Always off function. There is always send an off or regulate down command. Is used i cases where the button shall work together with another button as a pair. <br /></p><p>4: Always on function. There is always send an on or regulate up command. Is used i cases where the button shall work together with another button as a pair. </p>
@@ -330,8 +316,7 @@ Button 1 function<br /> <h1>Overview</h1><p>This parameter set the function of b
         </options>
       </parameter>
 
-      <parameter name="config_17_2" type="integer" groupName="configuration"
-                 min="-32767" max="32768">
+      <parameter name="config_17_2" type="integer" groupName="configuration">
         <label>17: Button 1 Timer</label>
         <description><![CDATA[
 Timer for Button 1<br /> <h1>Overview</h1><p>This parameter sets the time for the functions in parameter 16 which requires a timer. <br /></p>Value: Description<p>0 – 43200: Specifies the time in seconds. Standard is 300 = 5 minutes.</p>
@@ -340,8 +325,7 @@ Timer for Button 1<br /> <h1>Overview</h1><p>This parameter sets the time for th
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_18_4" type="integer" groupName="configuration"
-                 min="0" max="1255990">
+      <parameter name="config_18_4" type="integer" groupName="configuration">
         <label>18: Button 1 Multi Level</label>
         <description><![CDATA[
 Multi Level Switch Set values for Button 1<br /> <h1>Overview</h1><p>Value: Description<br /></p><p>Byte 1: On / Off<br /></p><p>0:  Off – Single Tap on the button will not result in a message to the associated devices in group 4. <br /></p><p>1 : On – Single-Tap on the button will result in the associated devices in group 4, will recieve messages with the configured lower and upper limits. (Standard) <br /></p><p>Byte 2: Upper contact limit</p><p>0 – 99, 255:  At a single tap on the button for on, then a Multi Level Switch Set message with this value will be send to the devices in association group 4 (Standard value = 255) <br /></p><p>Byte 3: Lower contact limit<br /></p><p>0 - 99: At a single tap on the button for off, then a Multi Level Switch Set message with this value will be send to the devices in association group 4 (Standard value = 0) </p><p>Byte 4: Not used – must be set to 0.</p>
@@ -350,8 +334,7 @@ Multi Level Switch Set values for Button 1<br /> <h1>Overview</h1><p>Value: Desc
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_19_1" type="integer" groupName="configuration"
-                 min="0" max="2">
+      <parameter name="config_19_1" type="integer" groupName="configuration">
         <label>19: Button 1 Binary</label>
         <description><![CDATA[
 Binary Switch Set for Button 1<br /> <h1>Overview</h1><p>This parameter specifies how incoming Binary Switch Set messages shall control Button 1.</p><p>Value: Description<br /></p><p>0: Binary Switch Set messages solely controls LED i button (on/off). (Standard) <br /></p><p>1: Binary Switch Set messages control actual status for button function, as well as LED in button.</p><p>2: Binary Switch Set messages functions as if on/off was done physical on the button, inclusive outgoing messages through association groups. <br /></p>
@@ -364,8 +347,7 @@ Binary Switch Set for Button 1<br /> <h1>Overview</h1><p>This parameter specifie
         </options>
       </parameter>
 
-      <parameter name="config_20_1" type="integer" groupName="configuration"
-                 min="0" max="7">
+      <parameter name="config_20_1" type="integer" groupName="configuration">
         <label>20: Button 1 LED Function</label>
         <description><![CDATA[
 LED function for Button 1<br /> <h1>Overview</h1><p>This parameter specifies LED function under Button 1</p><p>Value: Description<br /></p><p>0: Control of LED indication is inactive, can only be controlled by external commands.</p><p>1: Indication follows status of button.</p><p>2: Indication follows status of button with inverted function.</p><p>3: Same function as value 1<br /></p><p>4: Same function as value 2<br /></p><p>5: Indication follow status of light dimmer, on or off.</p><p>6: Indication follow status of light dimmer with inverted function.</p><p>7: Indication activates for 5 seconds when the button is pushed. (Standard).</p>
@@ -383,8 +365,7 @@ LED function for Button 1<br /> <h1>Overview</h1><p>This parameter specifies LED
         </options>
       </parameter>
 
-      <parameter name="config_21_1" type="integer" groupName="configuration"
-                 min="0" max="2">
+      <parameter name="config_21_1" type="integer" groupName="configuration">
         <label>21: Button 1 Color Command</label>
         <description><![CDATA[
 Color commands for Button 1<br /> <h1>Overview</h1><p>This parameter controls the color commands (Command Class Switch Color) for the LEDs under Button 1. <br /></p><p>Value: Description<br /></p><p>0: Direct control; LEDs show the received color command until the button is operated. <br /></p><p>1: Received command sets the color to display in off state. (Standard).</p><p>2: Received command sets the color to display in on state.</p>
@@ -397,8 +378,7 @@ Color commands for Button 1<br /> <h1>Overview</h1><p>This parameter controls th
         </options>
       </parameter>
 
-      <parameter name="config_22_4" type="integer" groupName="configuration"
-                 min="-2147483646" max="2147483647">
+      <parameter name="config_22_4" type="integer" groupName="configuration">
         <label>22: Button 1 On RGB Level</label>
         <description><![CDATA[
 RGB-Light level to show for Button 1 in on state<br /> <h1>Overview</h1><p>This parameter is used to set the light saturation for the red, green and blue color, together with light level in the LEDs under Button 1, when status shal show on. (Stand is to set the blue to 50%). <br /></p><p>Value: Description<br /></p><p>Byte 1: Color saturation for red LEDs when status is on<br /></p><p>0 - 255: Specifies color saturation for the red LEDs. (Default value is 0).</p><p>Byte 2: Color saturation for green LEDs when status is on</p><p>0 - 255: Specifies color saturation for the green LEDs. (Default value is  0).</p><p>Byte 3: Color saturation for blue LEDs when status is on</p><p>0 - 255: Specifies color saturation for the blue LEDs. (Default value is 127).</p><p>Byte 4: LED control<br /></p><p>0 - 255: LED control, see the section about control of LEDs. (Default value is 0)</p>
@@ -407,8 +387,7 @@ RGB-Light level to show for Button 1 in on state<br /> <h1>Overview</h1><p>This 
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_23_4" type="integer" groupName="configuration"
-                 min="-2147483646" max="2147483647">
+      <parameter name="config_23_4" type="integer" groupName="configuration">
         <label>23: Button 1 Off RGB Level</label>
         <description><![CDATA[
 RGB-Light level for Button 1 to show in off state<br /> <h1>Overview</h1><p>This parameter is used to set the light saturation for the red, green and blue color, together with light level in the LEDs under Button 1, when status shall show off. (Stand is to set a white color at 5%).</p><p>Value: Description</p><p>Byte 1: Color saturation for red LEDs when status is off<br /></p><p>0 - 255: Specifies color saturation for the red LEDs. (Default value is 47).</p><p>Byte 2: Color saturation for green LEDs when status is off<br /></p><p>0 - 255: Specifies color saturation for the green LEDs. (Default value is 47).</p><p>Byte 3: Color saturation for blue LEDs when status is off</p><p>0 - 255: Specifies color saturation for the blue LEDs. (Default value is 47).</p><p>Byte 4: LED control</p><p>0 - 255: LED control, see the section about control of LEDs. (Default value is 0)</p>
@@ -417,8 +396,7 @@ RGB-Light level for Button 1 to show in off state<br /> <h1>Overview</h1><p>This
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_24_1" type="integer" groupName="configuration"
-                 min="0" max="4">
+      <parameter name="config_24_1" type="integer" groupName="configuration">
         <label>24: Button 2 Function</label>
         <description><![CDATA[
 Button 2 function<br /> <h1>Overview</h1><p>This parameter set the function of button 2</p><p>Value: Description</p><p>0: Ordinary shift-function which shift between on and off, and regulation up/down. (Standard)</p><p>1: Automatic off after timer ends (stair light function). The timer is set in parameter 25.</p><p>2: Automatic on after timer ends. The timer is set in parameter 25.</p><p>3: Always off function. There is always send an off or regulate down command. Is used i cases where the button shall work together with another button as a pair.</p><p>4: Always on function. There is always send an on or regulate up command. Is used i cases where the button shall work together with another button as a pair. </p>
@@ -433,8 +411,7 @@ Button 2 function<br /> <h1>Overview</h1><p>This parameter set the function of b
         </options>
       </parameter>
 
-      <parameter name="config_25_2" type="integer" groupName="configuration"
-                 min="-32767" max="32768">
+      <parameter name="config_25_2" type="integer" groupName="configuration">
         <label>25: Button 2 Timer</label>
         <description><![CDATA[
 Timer for Button 2<br /> <h1>Overview</h1><p>This parameter sets the time for the functions in parameter 24 which requires a timer.</p><p>Value: Description</p><p>0 – 43200: Specifies the time in seconds. Standard is 300 = 5 minutes.</p>
@@ -443,8 +420,7 @@ Timer for Button 2<br /> <h1>Overview</h1><p>This parameter sets the time for th
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_26_4" type="integer" groupName="configuration"
-                 min="0" max="1255990">
+      <parameter name="config_26_4" type="integer" groupName="configuration">
         <label>26: Button 2 Multi Level</label>
         <description><![CDATA[
 Multi Level Switch Set values for Button 2<br /> <h1>Overview</h1><p>Value: Description</p><p>Byte 1: On / Off</p><p>0: Off – Single Tap on the button will not result in a message to the associated devices in group 4.</p><p>1 : On – Single-Tap on the button will result in the associated devices in group 4, will recieve messages with the configured lower and upper limits. (Standard)</p><p>Byte 2: Upper contact limit</p><p>0 – 99, 255: At a single tap on the button for on, then a Multi Level Switch Set message with this value will be send to the devices in association group 4 (Standard value = 255)</p><p>Byte 3: Lower contact limit</p><p>0 - 99: At a single tap on the button for off, then a Multi Level Switch Set message with this value will be send to the devices in association group 4 (Standard value = 0)</p><p>Byte 4: Not used – must be set to 0.</p>
@@ -453,8 +429,7 @@ Multi Level Switch Set values for Button 2<br /> <h1>Overview</h1><p>Value: Desc
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_27_1" type="integer" groupName="configuration"
-                 min="0" max="2">
+      <parameter name="config_27_1" type="integer" groupName="configuration">
         <label>27: Button 2 Binary</label>
         <description><![CDATA[
 Binary Switch Set for Button 2<br /> <h1>Overview</h1><p>This parameter specifies how incoming Binary Switch Set messages shall control Button 2.</p><p>Value: Description</p><p>0: Binary Switch Set messages solely controls LED i button (on/off). (Standard)</p><p>1: Binary Switch Set messages control actual status for button function, as well as LED in button.</p><p>2: Binary Switch Set messages functions as if on/off was done physical on the button, inclusive outgoing messages through association groups. </p>
@@ -467,8 +442,7 @@ Binary Switch Set for Button 2<br /> <h1>Overview</h1><p>This parameter specifie
         </options>
       </parameter>
 
-      <parameter name="config_28_1" type="integer" groupName="configuration"
-                 min="0" max="7">
+      <parameter name="config_28_1" type="integer" groupName="configuration">
         <label>28: Button 2 LED function</label>
         <description><![CDATA[
 LED function for Button 2<br /> <h1>Overview</h1><p>This parameter specifies LED function under Button 2<br /></p><p>Value: Description</p><p>0: Control of LED indication is inactive, can only be controlled by external commands.</p><p>1: Indication follows status of button.</p><p>2: Indication follows status of button with inverted function.</p><p>3: Same function as value 1</p><p>4: Same function as value 2</p><p>5: Indication follow status of light dimmer, on or off.</p><p>6: Indication follow status of light dimmer with inverted function.</p><p>7: Indication activates for 5 seconds when the button is pushed. (Standard).</p>
@@ -486,8 +460,7 @@ LED function for Button 2<br /> <h1>Overview</h1><p>This parameter specifies LED
         </options>
       </parameter>
 
-      <parameter name="config_29_1" type="integer" groupName="configuration"
-                 min="0" max="2">
+      <parameter name="config_29_1" type="integer" groupName="configuration">
         <label>29: Button 2 Color Command</label>
         <description><![CDATA[
 Color commands for Button 2<br /> <h1>Overview</h1><p>This parameter controls the color commands (Command Class Switch Color) for the LEDs under Button 2.</p><p>Value: Description</p><p>0: Direct control; LEDs show the received color command until the button is operated.</p><p>1: Received command sets the color to display in off state. (Standard).</p><p>2: Received command sets the color to display in on state.</p>
@@ -500,8 +473,7 @@ Color commands for Button 2<br /> <h1>Overview</h1><p>This parameter controls th
         </options>
       </parameter>
 
-      <parameter name="config_30_4" type="integer" groupName="configuration"
-                 min="-2147483646" max="2147483647">
+      <parameter name="config_30_4" type="integer" groupName="configuration">
         <label>30: Button 2 On RGB Level</label>
         <description><![CDATA[
 RGB-Light level to show for Button 2 in on state<br /> <h1>Overview</h1><p>This parameter is used to set the light saturation for the red, green and blue color, together with light level in the LEDs under Button 2, when status shal show on. (Stand is to set the blue to 50%).</p><p>Value: Description</p><p>Byte 1: Color saturation for red LEDs when status is on</p><p>0 - 255: Specifies color saturation for the red LEDs. (Standardværdi er 0).</p><p>Byte 2: Color saturation for green LEDs when status is on</p><p>0 - 255: Specifies color saturation for the green LEDs. (Standardværdi er 0).</p><p>Byte 3: Color saturation for blue LEDs when status is on</p><p>0 - 255: Specifies color saturation for the blue LEDs. (Standardværdi er 127).</p><p>Byte 4: LED control</p><p>0 - 255: LED control, see the section about control of LEDs. (Standard value is 0)</p>
@@ -510,8 +482,7 @@ RGB-Light level to show for Button 2 in on state<br /> <h1>Overview</h1><p>This 
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_31_4" type="integer" groupName="configuration"
-                 min="-2147483646" max="2147483647">
+      <parameter name="config_31_4" type="integer" groupName="configuration">
         <label>31: Button 2 Off RGB Level</label>
         <description><![CDATA[
 RGB-Light level for Button 2 to show in off state<br /> <h1>Overview</h1><p>This parameter is used to set the light saturation for the red, green and blue color, together with light level in the LEDs under Button 2, when status shall show off. (Stand is to set a white color at 5%).</p><p>Value: Description</p><p>Byte 1: Color saturation for red LEDs when status is off</p><p>0 - 255: Specifies color saturation for the red LEDs. (Standard value er 47).</p><p>Byte 2: Color saturation for green LEDs when status is off</p><p>0 - 255: Specifies color saturation for the green LEDs. (Standard value er 47).</p><p>Byte 3: Color saturation for blue LEDs when status is off</p><p>0 - 255: Specifies color saturation for the blue LEDs. (Standard value er 47).</p><p>Byte 4: LED control</p><p>0 - 255: LED control, see the section about control of LEDs. (Standard value is 0)</p>
@@ -520,8 +491,7 @@ RGB-Light level for Button 2 to show in off state<br /> <h1>Overview</h1><p>This
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_32_1" type="integer" groupName="configuration"
-                 min="0" max="4">
+      <parameter name="config_32_1" type="integer" groupName="configuration">
         <label>32: Button 3 Function</label>
         <description><![CDATA[
 Button 3 function<br /> <h1>Overview</h1><p>This parameter set the function of button 3<br /></p><p>Value: Description</p><p>0: Ordinary shift-function which shift between on and off, and regulation up/down. (Standard)</p><p>1: Automatic off after timer ends (stair light function). The timer is set in parameter 33.</p><p>2: Automatic on after timer ends. The timer is set in parameter 33.</p><p>3: Always off function. There is always send an off or regulate down command. Is used i cases where the button shall work together with another button as a pair.</p><p>4: Always on function. There is always send an on or regulate up command. Is used i cases where the button shall work together with another button as a pair. </p>
@@ -535,8 +505,7 @@ Button 3 function<br /> <h1>Overview</h1><p>This parameter set the function of b
         </options>
       </parameter>
 
-      <parameter name="config_33_2" type="integer" groupName="configuration"
-                 min="-32767" max="32768">
+      <parameter name="config_33_2" type="integer" groupName="configuration">
         <label>33: Button 3 Timer</label>
         <description><![CDATA[
 Timer for Button 3<br /> <h1>Overview</h1><p>This parameter sets the time for the functions in parameter 32 which requires a timer.</p><p>Value: Description</p><p>0 – 43200: Specifies the time in seconds. Standard is 300 = 5 minutes.</p>
@@ -545,8 +514,7 @@ Timer for Button 3<br /> <h1>Overview</h1><p>This parameter sets the time for th
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_34_4" type="integer" groupName="configuration"
-                 min="0" max="1255990">
+      <parameter name="config_34_4" type="integer" groupName="configuration">
         <label>34: Button 3 Multi Level</label>
         <description><![CDATA[
 Multi Level Switch Set values for Button 3<br /> <h1>Overview</h1><p>Value: Description</p><p>Byte 1: On / Off</p><p>0: Off – Single Tap on the button will not result in a message to the associated devices in group 4.</p><p>1 : On – Single-Tap on the button will result in the associated devices in group 4, will recieve messages with the configured lower and upper limits. (Standard)</p><p>Byte 2: Upper contact limit</p><p>0 – 99, 255: At a single tap on the button for on, then a Multi Level Switch Set message with this value will be send to the devices in association group 4 (Standard value = 255)</p><p>Byte 3: Lower contact limit</p><p>0 - 99: At a single tap on the button for off, then a Multi Level Switch Set message with this value will be send to the devices in association group 4 (Standard value = 0)</p><p>Byte 4: Not used – must be set to 0.</p>
@@ -555,8 +523,7 @@ Multi Level Switch Set values for Button 3<br /> <h1>Overview</h1><p>Value: Desc
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_35_1" type="integer" groupName="configuration"
-                 min="0" max="2">
+      <parameter name="config_35_1" type="integer" groupName="configuration">
         <label>35: Button 3 Binary</label>
         <description><![CDATA[
 Binary Switch Set for Button 3<br /> <h1>Overview</h1><p>This parameter specifies how incoming Binary Switch Set messages shall control Button 3.</p><p>Value: Description</p><p>0: Binary Switch Set messages solely controls LED i button (on/off). (Standard)</p><p>1: Binary Switch Set messages control actual status for button function, as well as LED in button.</p><p>2: Binary Switch Set messages functions as if on/off was done physical on the button, inclusive outgoing messages through association groups. </p>
@@ -569,8 +536,7 @@ Binary Switch Set for Button 3<br /> <h1>Overview</h1><p>This parameter specifie
         </options>
       </parameter>
 
-      <parameter name="config_36_1" type="integer" groupName="configuration"
-                 min="0" max="7">
+      <parameter name="config_36_1" type="integer" groupName="configuration">
         <label>36: Button 3 LED function</label>
         <description><![CDATA[
 LED function for Button 3<br /> <h1>Overview</h1><p>This parameter specifies LED function under Button 3<br /></p><p>Value: Description</p><p>0: Control of LED indication is inactive, can only be controlled by external commands.</p><p>1: Indication follows status of button.</p><p>2: Indication follows status of button with inverted function.</p><p>3: Same function as value 1</p><p>4: Same function as value 2</p><p>5: Indication follow status of light dimmer, on or off.</p><p>6: Indication follow status of light dimmer with inverted function.</p><p>7: Indication activates for 5 seconds when the button is pushed. (Standard).</p>
@@ -588,8 +554,7 @@ LED function for Button 3<br /> <h1>Overview</h1><p>This parameter specifies LED
         </options>
       </parameter>
 
-      <parameter name="config_37_1" type="integer" groupName="configuration"
-                 min="0" max="2">
+      <parameter name="config_37_1" type="integer" groupName="configuration">
         <label>37: Button 3 Color Command</label>
         <description><![CDATA[
 Color commands for Button 3<br /> <h1>Overview</h1><p>This parameter controls the color commands (Command Class Switch Color) for the LEDs under Button 3.</p><p>Value: Description</p><p>0: Direct control; LEDs show the received color command until the button is operated.</p><p>1: Received command sets the color to display in off state. (Standard).</p><p>2: Received command sets the color to display in on state.</p>
@@ -602,8 +567,7 @@ Color commands for Button 3<br /> <h1>Overview</h1><p>This parameter controls th
         </options>
       </parameter>
 
-      <parameter name="config_38_4" type="integer" groupName="configuration"
-                 min="-2147483646" max="2147483647">
+      <parameter name="config_38_4" type="integer" groupName="configuration">
         <label>38: Button 3 On RGB Level</label>
         <description><![CDATA[
 RGB-Light level to show for Button 3 in on state<br /> <h1>Overview</h1><p>This parameter is used to set the light saturation for the red, green and blue color, together with light level in the LEDs under Button 3, when status shal show on. (Stand is to set the blue to 50%).</p><p>Value: Description</p><p>Byte 1: Color saturation for red LEDs when status is on</p><p>0 - 255: Specifies color saturation for the red LEDs. (Standardværdi er 0).</p><p>Byte 2: Color saturation for green LEDs when status is on</p><p>0 - 255: Specifies color saturation for the green LEDs. (Standardværdi er 0).</p><p>Byte 3: Color saturation for blue LEDs when status is on</p><p>0 - 255: Specifies color saturation for the blue LEDs. (Standardværdi er 127).</p><p>Byte 4: LED control</p><p>0 - 255: LED control, see the section about control of LEDs. (Standard value is 0)</p>
@@ -612,8 +576,7 @@ RGB-Light level to show for Button 3 in on state<br /> <h1>Overview</h1><p>This 
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_39_4" type="integer" groupName="configuration"
-                 min="-2147483646" max="2147483647">
+      <parameter name="config_39_4" type="integer" groupName="configuration">
         <label>39: Button 3 Off RGB Level</label>
         <description><![CDATA[
 RGB-Light level for Button 3 to show in off state<br /> <h1>Overview</h1><p>This parameter is used to set the light saturation for the red, green and blue color, together with light level in the LEDs under Button 3, when status shall show off. (Stand is to set a white color at 5%).</p><p>Value: Description</p><p>Byte 1: Color saturation for red LEDs when status is off</p><p>0 - 255: Specifies color saturation for the red LEDs. (Standard value er 47).</p><p>Byte 2: Color saturation for green LEDs when status is off</p><p>0 - 255: Specifies color saturation for the green LEDs. (Standard value er 47).</p><p>Byte 3: Color saturation for blue LEDs when status is off</p><p>0 - 255: Specifies color saturation for the blue LEDs. (Standard value er 47).</p><p>Byte 4: LED control</p><p>0 - 255: LED control, see the section about control of LEDs. (Standard value is 0)</p>
@@ -622,8 +585,7 @@ RGB-Light level for Button 3 to show in off state<br /> <h1>Overview</h1><p>This
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_40_1" type="integer" groupName="configuration"
-                 min="0" max="4">
+      <parameter name="config_40_1" type="integer" groupName="configuration">
         <label>40: Button 4 Function</label>
         <description><![CDATA[
 Button 4 function<br /> <h1>Overview</h1><p>This parameter set the function of button 3</p><p>Value: Description</p><p>0: Ordinary shift-function which shift between on and off, and regulation up/down. (Standard)</p><p>1: Automatic off after timer ends (stair light function). The timer is set in parameter 41.</p><p>2: Automatic on after timer ends. The timer is set in parameter 41.</p><p>3: Always off function. There is always send an off or regulate down command. Is used i cases where the button shall work together with another button as a pair.</p><p>4: Always on function. There is always send an on or regulate up command. Is used i cases where the button shall work together with another button as a pair. </p>
@@ -638,8 +600,7 @@ Button 4 function<br /> <h1>Overview</h1><p>This parameter set the function of b
         </options>
       </parameter>
 
-      <parameter name="config_41_2" type="integer" groupName="configuration"
-                 min="-32767" max="32768">
+      <parameter name="config_41_2" type="integer" groupName="configuration">
         <label>41: Button 4 Timer</label>
         <description><![CDATA[
 Timer for Button 4<br /> <h1>Overview</h1><p>This parameter sets the time for the functions in parameter 32 which requires a timer.</p><p>Value: Description</p><p>0 – 43200: Specifies the time in seconds. Standard is 300 = 5 minutes.</p>
@@ -648,8 +609,7 @@ Timer for Button 4<br /> <h1>Overview</h1><p>This parameter sets the time for th
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_42_4" type="integer" groupName="configuration"
-                 min="0" max="1255990">
+      <parameter name="config_42_4" type="integer" groupName="configuration">
         <label>42: Button 4 Multi Level</label>
         <description><![CDATA[
 Multi Level Switch Set values for Button 4<br /> <h1>Overview</h1><p>Value: Description</p><p>Byte 1: On / Off</p><p>0: Off – Single Tap on the button will not result in a message to the associated devices in group 4.</p><p>1 : On – Single-Tap on the button will result in the associated devices in group 4, will recieve messages with the configured lower and upper limits. (Standard)</p><p>Byte 2: Upper contact limit</p><p>0 – 99, 255: At a single tap on the button for on, then a Multi Level Switch Set message with this value will be send to the devices in association group 4 (Standard value = 255)</p><p>Byte 3: Lower contact limit</p><p>0 - 99: At a single tap on the button for off, then a Multi Level Switch Set message with this value will be send to the devices in association group 4 (Standard value = 0)</p><p>Byte 4: Not used – must be set to 0.</p>
@@ -658,8 +618,7 @@ Multi Level Switch Set values for Button 4<br /> <h1>Overview</h1><p>Value: Desc
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_43_1" type="integer" groupName="configuration"
-                 min="0" max="2">
+      <parameter name="config_43_1" type="integer" groupName="configuration">
         <label>43: Buttom 4 Binary</label>
         <description><![CDATA[
 Binary Switch Set for Button 4<br /> <h1>Overview</h1><p>This parameter specifies how incoming Binary Switch Set messages shall control Button 4.</p><p>Value: Description</p><p>0: Binary Switch Set messages solely controls LED i button (on/off). (Standard)</p><p>1: Binary Switch Set messages control actual status for button function, as well as LED in button.</p><p>2: Binary Switch Set messages functions as if on/off was done physical on the button, inclusive outgoing messages through association groups. </p>
@@ -672,8 +631,7 @@ Binary Switch Set for Button 4<br /> <h1>Overview</h1><p>This parameter specifie
         </options>
       </parameter>
 
-      <parameter name="config_44_1" type="integer" groupName="configuration"
-                 min="0" max="7">
+      <parameter name="config_44_1" type="integer" groupName="configuration">
         <label>44: Button 4 LED function</label>
         <description><![CDATA[
 LED function for Button 4<br /> <h1>Overview</h1><p>This parameter specifies LED function under Button 4<br /></p><p>Value: Description</p><p>0: Control of LED indication is inactive, can only be controlled by external commands.</p><p>1: Indication follows status of button.</p><p>2: Indication follows status of button with inverted function.</p><p>3: Same function as value 1</p><p>4: Same function as value 2</p><p>5: Indication follow status of light dimmer, on or off.</p><p>6: Indication follow status of light dimmer with inverted function.</p><p>7: Indication activates for 5 seconds when the button is pushed. (Standard).</p>
@@ -691,8 +649,7 @@ LED function for Button 4<br /> <h1>Overview</h1><p>This parameter specifies LED
         </options>
       </parameter>
 
-      <parameter name="config_45_1" type="integer" groupName="configuration"
-                 min="0" max="2">
+      <parameter name="config_45_1" type="integer" groupName="configuration">
         <label>45: Button 4 Color Command</label>
         <description><![CDATA[
 Color commands for Button 4<br /> <h1>Overview</h1><p>This parameter controls the color commands (Command Class Switch Color) for the LEDs under Button 4.</p><p>Value: Description</p><p>0: Direct control; LEDs show the received color command until the button is operated.</p><p>1: Received command sets the color to display in off state. (Standard).</p><p>2: Received command sets the color to display in on state.</p>
@@ -705,8 +662,7 @@ Color commands for Button 4<br /> <h1>Overview</h1><p>This parameter controls th
         </options>
       </parameter>
 
-      <parameter name="config_46_4" type="integer" groupName="configuration"
-                 min="-2147483646" max="2147483647">
+      <parameter name="config_46_4" type="integer" groupName="configuration">
         <label>46: Button 4 On RGB Level</label>
         <description><![CDATA[
 RGB-Light level to show for Button 4 in on state<br /> <h1>Overview</h1><p>This parameter is used to set the light saturation for the red, green and blue color, together with light level in the LEDs under Button 3, when status shal show on. (Stand is to set the blue to 50%).</p><p>Value: Description</p><p>Byte 1: Color saturation for red LEDs when status is on</p><p>0 - 255: Specifies color saturation for the red LEDs. (Standardværdi er 0).</p><p>Byte 2: Color saturation for green LEDs when status is on</p><p>0 - 255: Specifies color saturation for the green LEDs. (Standardværdi er 0).</p><p>Byte 3: Color saturation for blue LEDs when status is on</p><p>0 - 255: Specifies color saturation for the blue LEDs. (Standardværdi er 127).</p><p>Byte 4: LED control</p><p>0 - 255: LED control, see the section about control of LEDs. (Standard value is 0)</p>
@@ -715,8 +671,7 @@ RGB-Light level to show for Button 4 in on state<br /> <h1>Overview</h1><p>This 
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_47_4" type="integer" groupName="configuration"
-                 min="-2147483646" max="2147483647">
+      <parameter name="config_47_4" type="integer" groupName="configuration">
         <label>47: Button 4 Off RGB Level</label>
         <description><![CDATA[
 RGB-Light level for Button 4 to show in off state<br /> <h1>Overview</h1><p>This parameter is used to set the light saturation for the red, green and blue color, together with light level in the LEDs under Button 4, when status shall show off. (Stand is to set a white color at 5%).</p><p>Value: Description</p><p>Byte 1: Color saturation for red LEDs when status is off</p><p>0 - 255: Specifies color saturation for the red LEDs. (Standard value er 47).</p><p>Byte 2: Color saturation for green LEDs when status is off</p><p>0 - 255: Specifies color saturation for the green LEDs. (Standard value er 47).</p><p>Byte 3: Color saturation for blue LEDs when status is off</p><p>0 - 255: Specifies color saturation for the blue LEDs. (Standard value er 47).</p><p>Byte 4: LED control</p><p>0 - 255: LED control, see the section about control of LEDs. (Standard value is 0)</p>

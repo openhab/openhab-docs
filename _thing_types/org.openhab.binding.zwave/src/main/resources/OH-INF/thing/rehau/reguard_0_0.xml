@@ -120,200 +120,175 @@ Water leakage detector and meter<br /> <h1>Overview</h1><p>The Rehau RE.GUARD is
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_4_1" type="integer" groupName="configuration"
-                 min="0" max="23">
+      <parameter name="config_4_1" type="integer" groupName="configuration">
         <label>4: fixed schedule time - hours</label>
         <description>fixed schedule time hour for microleakage test</description>
         <default>3</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_5_1" type="integer" groupName="configuration"
-                 min="0" max="59">
+      <parameter name="config_5_1" type="integer" groupName="configuration">
         <label>5: fixed schedule time - minutes</label>
         <description>fixed schedule time minute for microleakage test</description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_6_1" type="integer" groupName="configuration"
-                 min="0" max="127">
+      <parameter name="config_6_1" type="integer" groupName="configuration">
         <label>6: fixed schedule day</label>
         <description>fixed day in bin 1111111, Su=1, Sa=2, Fr=4, Th=8, We=16, Tu=32, Mo=64, 0= auto</description>
         <default>127</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_7_2" type="integer" groupName="configuration"
-                 min="0" max="168">
+      <parameter name="config_7_2" type="integer" groupName="configuration">
         <label>7: automatic schedule time interval</label>
         <description>automatic schedule time interval between microlekage tests, if not fixed</description>
         <default>24</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_8_2" type="integer" groupName="configuration"
-                 min="0" max="32000">
+      <parameter name="config_8_2" type="integer" groupName="configuration">
         <label>8: micro leakage mesuring time</label>
         <description>micro leakage mesuring time, time of closed valve</description>
         <default>100</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_9_2" type="integer" groupName="configuration"
-                 min="0" max="32000">
+      <parameter name="config_9_2" type="integer" groupName="configuration">
         <label>9: micro leakage pressure drop</label>
         <description>pressure drop for microleakage detection recognition</description>
         <default>5</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_10_2" type="integer" groupName="configuration"
-                 min="0" max="32000">
+      <parameter name="config_10_2" type="integer" groupName="configuration">
         <label>10: micro leakage pressure drop abort</label>
         <description>pressure drop in kPa</description>
         <default>100</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_11_1" type="integer" groupName="configuration"
-                 min="1" max="99">
+      <parameter name="config_11_1" type="integer" groupName="configuration">
         <label>11: number of measurements</label>
         <description>how many in one time period</description>
         <default>3</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_12_1" type="integer" groupName="configuration"
-                 min="0" max="60">
+      <parameter name="config_12_1" type="integer" groupName="configuration">
         <label>12: wait time until next measurement</label>
         <description>waiting time in minutes between two meassurements</description>
         <default>10</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_13_1" type="integer" groupName="configuration"
-                 min="0" max="2">
+      <parameter name="config_13_1" type="integer" groupName="configuration">
         <label>13: reaction to micro leakage</label>
         <description>0=disable detection, 1=blink LED, 2= blink LED andshut off valve</description>
         <default>1</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_14_1" type="integer" groupName="configuration" readOnly="true"
-                 min="0" max="1">
+      <parameter name="config_14_1" type="integer" groupName="configuration" readOnly="true">
         <label>14: macro leakage detected</label>
         <description>0 = no leackage 1 = leakage</description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_15_2" type="integer" groupName="configuration"
-                 min="0" max="32000">
+      <parameter name="config_15_2" type="integer" groupName="configuration">
         <label>15: max flow rate if operation mode is 2</label>
         <description>max flow rate if operation mode is 2</description>
         <default>3600</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_16_2" type="integer" groupName="configuration"
-                 min="0" max="32000">
+      <parameter name="config_16_2" type="integer" groupName="configuration">
         <label>16: max pressure drop if operation mode is 2</label>
         <description>max pressure drop if operation mode is 2</description>
         <default>1000</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_17_2" type="integer" groupName="configuration"
-                 min="0" max="32000">
+      <parameter name="config_17_2" type="integer" groupName="configuration">
         <label>17: max liters if operation mode is 2</label>
         <description>max liters single water abstraction if operation mode is 2</description>
         <default>400</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_18_2" type="integer" groupName="configuration"
-                 min="0" max="32000">
+      <parameter name="config_18_2" type="integer" groupName="configuration">
         <label>18: max continuous liter if operation mode is 2</label>
         <description>max liter continuous water abstraction if operation mode is 2</description>
         <default>400</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_19_2" type="integer" groupName="configuration"
-                 min="0" max="1440">
+      <parameter name="config_19_2" type="integer" groupName="configuration">
         <label>19: max time if operation mode is 2</label>
         <description>max time of single water abstraction if operation mode is 2</description>
         <default>30</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_20_2" type="integer" groupName="configuration"
-                 min="0" max="1440">
+      <parameter name="config_20_2" type="integer" groupName="configuration">
         <label>20: max continious time if operation mode is 2</label>
         <description>max time of continous water abstraction if operation mode is 2</description>
         <default>60</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_21_2" type="integer" groupName="configuration"
-                 min="0" max="32000">
+      <parameter name="config_21_2" type="integer" groupName="configuration">
         <label>21: max flow rate if operation mode is 1</label>
         <description>max flow rate if operation mode is 1</description>
         <default>3680</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_22_2" type="integer" groupName="configuration"
-                 min="0" max="32000">
+      <parameter name="config_22_2" type="integer" groupName="configuration">
         <label>22: max pressure drop if operation mode is 1</label>
         <description>max pressure drop if operation mode is 1</description>
         <default>1000</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_23_2" type="integer" groupName="configuration"
-                 min="0" max="32000">
+      <parameter name="config_23_2" type="integer" groupName="configuration">
         <label>23: max liters if operation mode is 1</label>
         <description>max liters non continous water abstraction if operation mode is 1</description>
         <default>20</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_24_2" type="integer" groupName="configuration"
-                 min="0" max="32000">
+      <parameter name="config_24_2" type="integer" groupName="configuration">
         <label>24: max continuous liter if operation mode is 1</label>
         <description>max liters continuous water abstraction if operation mode is 2</description>
         <default>20</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_25_2" type="integer" groupName="configuration"
-                 min="0" max="1440">
+      <parameter name="config_25_2" type="integer" groupName="configuration">
         <label>25: max time if operation mode is 1</label>
         <description>max time of single water abstraction if operation mode is 1</description>
         <default>30</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_26_2" type="integer" groupName="configuration"
-                 min="0" max="32000">
+      <parameter name="config_26_2" type="integer" groupName="configuration">
         <label>26: max continuous time if operation mode is 1</label>
         <description>max time of continous water abstraction if operation mode is 1</description>
         <default>30</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_27_2" type="integer" groupName="configuration"
-                 min="1" max="168">
+      <parameter name="config_27_2" type="integer" groupName="configuration">
         <label>27: macro leakage deactivation time</label>
         <description>temporary macro leakage deactivation (e.g. filling pool)</description>
         <default>2</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_28_1" type="integer" groupName="configuration"
-                 min="0" max="2">
+      <parameter name="config_28_1" type="integer" groupName="configuration">
         <label>28: reaction to macro leakage</label>
         <description>0=disable detection, 1=blink LED, 2= blink LED and shut off valve</description>
         <default>2</default>
@@ -327,104 +302,91 @@ Water leakage detector and meter<br /> <h1>Overview</h1><p>The Rehau RE.GUARD is
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_30_1" type="integer" groupName="configuration"
-                 min="0" max="2">
+      <parameter name="config_30_1" type="integer" groupName="configuration">
         <label>30: reaction to flooding sensor</label>
         <description>0=disable detection, 1=blink LED, 2= blink LED and shut off valve</description>
         <default>1</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_31_2" type="integer" groupName="configuration"
-                 min="0" max="32000">
+      <parameter name="config_31_2" type="integer" groupName="configuration">
         <label>31: backup battery nominal voltage</label>
         <description>Nominal voltage of backup battery</description>
         <default>6000</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_32_2" type="integer" groupName="configuration"
-                 min="0" max="32000">
+      <parameter name="config_32_2" type="integer" groupName="configuration">
         <label>32: backup battery nominal capacity</label>
         <description>Nominal capacity of backup battery</description>
         <default>3000</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_37_1" type="integer" groupName="configuration"
-                 min="0" max="1">
+      <parameter name="config_37_1" type="integer" groupName="configuration">
         <label>37: time set correctly</label>
         <description>1 = time is set correctly, 0 = time is not set correctly</description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_38_4" type="integer" groupName="configuration" readOnly="true"
-                 min="0" max="2147483647">
+      <parameter name="config_38_4" type="integer" groupName="configuration" readOnly="true">
         <label>38: total operating time</label>
         <description>Counting total operation time internally</description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_39_4" type="integer" groupName="configuration" readOnly="true"
-                 min="0" max="2147483647">
+      <parameter name="config_39_4" type="integer" groupName="configuration" readOnly="true">
         <label>39: operating time since last power on</label>
         <description>operating time since last power on</description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_49_2" type="integer" groupName="configuration"
-                 min="0" max="168">
+      <parameter name="config_49_2" type="integer" groupName="configuration">
         <label>49: auto absent</label>
         <description>0 = disable, 1-168h time after no use, operation mode is changed to 1 (absent)</description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_50_2" type="integer" groupName="configuration"
-                 min="-1000" max="1000">
+      <parameter name="config_50_2" type="integer" groupName="configuration">
         <label>50: water temperature high threshold</label>
         <description>water temperature high threshold for warning of sanitary problems</description>
         <default>250</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_51_2" type="integer" groupName="configuration"
-                 min="-1000" max="1000">
+      <parameter name="config_51_2" type="integer" groupName="configuration">
         <label>51: water temperature low threshold</label>
         <description>water temperature low threshold for warning of risk of frost</description>
         <default>20</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_52_2" type="integer" groupName="configuration"
-                 min="0" max="32000">
+      <parameter name="config_52_2" type="integer" groupName="configuration">
         <label>52: water pressure high threshold</label>
         <description>water pressure high threshold for warning of values above valid operating cond.</description>
         <default>1000</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_53_2" type="integer" groupName="configuration"
-                 min="0" max="32000">
+      <parameter name="config_53_2" type="integer" groupName="configuration">
         <label>53: water pressure low threshold</label>
         <description>water pressure high threshold for warning of values below valid operating cond.</description>
         <default>100</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_54_2" type="integer" groupName="configuration" readOnly="true"
-                 min="0" max="255">
+      <parameter name="config_54_2" type="integer" groupName="configuration" readOnly="true">
         <label>54: error code</label>
         <description>error code to identify the reason of a warning or fault</description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_56_1" type="integer" groupName="configuration"
-                 min="0" max="1">
+      <parameter name="config_56_1" type="integer" groupName="configuration">
         <label>56: autolearning</label>
         <description><![CDATA[
 automatic adaption of limits, set ids 15-26 to learned values<br /> <h1>Overview</h1><p>automatic adaption of limits set ids 15-26 to learned values (only if the last 40 days are ok - no leakage) </p>

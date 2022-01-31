@@ -133,8 +133,7 @@ Send notifications to associated devices<br /> <h1>Overview</h1><p>Your Smart Pl
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_151_2" type="integer" groupName="configuration"
-                 min="-32767" max="32768">
+      <parameter name="config_151_2" type="integer" groupName="configuration">
         <label>151: Power Report Value Threshold</label>
         <description><![CDATA[
 Minimum change in watts to report<br /> <h1>Overview</h1><p>Choose how you want your Smart Plug to report power consumption to your controller and associated devices.</p> <p>The number entered as value corresponds to the number of Watts the appliance needs to go over for the change to be reported.</p> <p>So if 50 Watts are entered by default, the smart plug will report any change in power usage over 50 Watts (whether it’s at least 50 Watts more or 50 Watts less compared to previous report).</p> <p>Values: 0 – 65535;</p> <p>0 – disabled (it will not report power consumption based on value change);</p>
@@ -142,8 +141,7 @@ Minimum change in watts to report<br /> <h1>Overview</h1><p>Choose how you want 
         <default>50</default>
       </parameter>
 
-      <parameter name="config_152_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_152_1" type="integer" groupName="configuration">
         <label>152: Power Report Percentage Threshold</label>
         <description><![CDATA[
 Minimum percentage change to report<br /> <h1>Overview</h1><p>Choose how you want your Smart Plug to report power consumption to your controller and associated devices by percentage rate.</p> <p>The number entered as value corresponds to the percentage in power usage change the appliance needs to go over for the event to be reported.</p> <p>So if 10% is entered by default, the Smart Plug will report any change in power consumption over 10% (whether it’s at least 10% more or 10% less power consumption compared to previous report).</p> <p>Values: 0 – 255;</p> <p>0 – disabled (it will not report power consumption based on percentage change);</p>
@@ -151,8 +149,7 @@ Minimum percentage change to report<br /> <h1>Overview</h1><p>Choose how you wan
         <default>10</default>
       </parameter>
 
-      <parameter name="config_171_4" type="integer" groupName="configuration"
-                 min="0" max="2678400">
+      <parameter name="config_171_4" type="integer" groupName="configuration">
         <label>171: Power Report Frequency</label>
         <description><![CDATA[
 How often to report power consumption (W) in secs<br /> <h1>Overview</h1><p>Choose how often you want your Smart Plug to report power consumption (W) to your controller and associated device.</p> <p>The number entered as value corresponds to the number of seconds.</p> <p>So if 30 is entered by default, the Smart Plug will report power consumption every 30 seconds.</p> <p>Values: 5 – 2678400;</p> <p>0 – disabled (it will not report power consumption);</p>
@@ -160,8 +157,7 @@ How often to report power consumption (W) in secs<br /> <h1>Overview</h1><p>Choo
         <default>30</default>
       </parameter>
 
-      <parameter name="config_172_4" type="integer" groupName="configuration"
-                 min="0" max="2678400">
+      <parameter name="config_172_4" type="integer" groupName="configuration">
         <label>172: Energy Report Frequency</label>
         <description><![CDATA[
 How often to report energy usage (KWH) in secs<br /> <h1>Overview</h1><p>Choose how often you want your Smart Plug to report energy usage (KWH) to your controller and associated device.</p> <p>The number entered as value corresponds to the number of seconds.</p> <p>So if 300 is entered by default, the smart plug will report energy usage every 300 seconds (5 minutes).</p> <p>Values: 5 – 2678400;</p> <p>0 – disabled (it will not report energy usage);</p>
@@ -169,8 +165,7 @@ How often to report energy usage (KWH) in secs<br /> <h1>Overview</h1><p>Choose 
         <default>300</default>
       </parameter>
 
-      <parameter name="config_173_4" type="integer" groupName="configuration"
-                 min="0" max="2678400">
+      <parameter name="config_173_4" type="integer" groupName="configuration">
         <label>173: Voltage Report Frequency</label>
         <description><![CDATA[
 How often to report voltage (V) in secs<br /> <h1>Overview</h1><p>Choose how often you want your Smart Plug to report voltage (V) to your controller and associated device.</p> <p>The number entered as value corresponds to the number of seconds.</p> <p>Values: 5 – 2678400;</p> <p>0 – disabled</p>
@@ -178,8 +173,7 @@ How often to report voltage (V) in secs<br /> <h1>Overview</h1><p>Choose how oft
         <default>0</default>
       </parameter>
 
-      <parameter name="config_174_4" type="integer" groupName="configuration"
-                 min="0" max="2678400">
+      <parameter name="config_174_4" type="integer" groupName="configuration">
         <label>174: Electricity Report Frequency</label>
         <description><![CDATA[
 How often to report electrical current (A) in secs<br /> <h1>Overview</h1><p>Choose how often you want your Smart Plug to report levels of electrical current (A) to your controller and associated device.</p> <p>The number entered as value corresponds to the number of seconds.</p> <p>Values: 5 – 2678400;</p> <p>0 – disabled</p>

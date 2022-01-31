@@ -47,22 +47,19 @@ Dual Pole Wall Switch<br /> <h1>Overview</h1><p>The flush-mounted CONNECT radio 
       </parameter-group>
 
       <!-- PARAMETER DEFINITIONS -->
-      <parameter name="config_176_1" type="integer" groupName="configuration"
-                 min="0" max="127">
+      <parameter name="config_176_1" type="integer" groupName="configuration">
         <label>176: Staircase timer byte 1</label>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_177_1" type="integer" groupName="configuration"
-                 min="0" max="127">
+      <parameter name="config_177_1" type="integer" groupName="configuration">
         <label>177: Staircase timer byte 2</label>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_183_1" type="integer" groupName="configuration"
-                 min="0" max="127">
+      <parameter name="config_183_1" type="integer" groupName="configuration">
         <label>183: Additional limit duration</label>
         <description>(after brief interruption) Unsure what this does</description>
         <default>30</default>

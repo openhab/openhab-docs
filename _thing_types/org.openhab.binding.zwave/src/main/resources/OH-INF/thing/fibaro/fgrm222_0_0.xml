@@ -145,8 +145,7 @@ Enable Venetian Blind mode<br /> <h1>Overview</h1><p>Parameters value shoud be s
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_12_2" type="integer" groupName="configuration"
-                 min="-32767" max="32768">
+      <parameter name="config_12_2" type="integer" groupName="configuration">
         <label>12: Turning time/delay time</label>
         <description><![CDATA[
 Time of full turn of the lamellas.<br /> <h1>Overview</h1><p>In Venetian Blind mode (parameter 10 set to 2) the parameter determines time of full turn of the lamellas. In Gate Mode (parameter 10 set to 3 or 4) the parameter defines the delay time after which an open gate starts closing.</p>
@@ -183,8 +182,7 @@ Parameter settings for Roller and Venetian Blind Mode<br /> <h1>Overview</h1><p>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_17_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_17_1" type="integer" groupName="configuration">
         <label>17: Delay time after S2</label>
         <description><![CDATA[
 Relays turn off time after reaching a limit switch.<br /> <h1>Overview</h1><p>In roller blind mode or venetian blind mode (parameter 10 set to 0, 1, 2) the parameter determines when the Roller Shutter relays are turned off after reaching a limit switch. In Gate Mode (parameter 10 set to 3 or 4) the parameter determines a time period.</p>
@@ -193,16 +191,14 @@ Relays turn off time after reaching a limit switch.<br /> <h1>Overview</h1><p>In
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_18_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_18_1" type="integer" groupName="configuration">
         <label>18: Motor operation detection</label>
         <description>Power threshold to be interpreted as reaching a limit switch.</description>
         <default>10</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_22_2" type="integer" groupName="configuration"
-                 min="-32767" max="32768">
+      <parameter name="config_22_2" type="integer" groupName="configuration">
         <label>22: Motor operation time</label>
         <description>Time period for the motor to continue operation.</description>
         <default>10</default>
@@ -279,8 +275,7 @@ Lamellas reaction upon alarm detection.<br /> <h1>Overview</h1><p>In Venetian Bl
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_40_1" type="integer" groupName="configuration"
-                 min="0" max="100">
+      <parameter name="config_40_1" type="integer" groupName="configuration">
         <label>40: Power reports</label>
         <description><![CDATA[
 Power level change resulting in new power value report<br /> <h1>Overview</h1><p>Power level change that will result in new power value report being sent. Value is a percentage of the previous report.</p>
@@ -289,16 +284,14 @@ Power level change resulting in new power value report<br /> <h1>Overview</h1><p
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_42_2" type="integer" groupName="configuration"
-                 min="-32767" max="32767">
+      <parameter name="config_42_2" type="integer" groupName="configuration">
         <label>42: Periodic power or energy reports</label>
         <description>Time to the next report. Value of 0 means the reports are turned off.</description>
         <default>3600</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_43_1" type="integer" groupName="configuration"
-                 min="-126" max="127">
+      <parameter name="config_43_1" type="integer" groupName="configuration">
         <label>43: Energy reports</label>
         <description><![CDATA[
 Energy level change resulting in new energy value report<br /> <h1>Overview</h1><p>Energy level change which will result in new energy value report being sent. Value of 0 means the reports are turned off.</p>

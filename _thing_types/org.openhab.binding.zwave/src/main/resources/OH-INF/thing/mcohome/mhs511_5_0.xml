@@ -95,8 +95,7 @@ Allow all on/off control<br /> <h1>Overview</h1><p>0: forbid ALL ON, forbid ALL 
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_4_1" type="integer" groupName="configuration"
-                 min="0" max="10">
+      <parameter name="config_4_1" type="integer" groupName="configuration">
         <label>4: LED backlight brightness level</label>
         <description><![CDATA[
 LED backlight brightness level<br /> <h1>Overview</h1><p>0: LED lighting disabled<br />1 ~ 10: Minimum to Maximum brightness<br />11 ~ 255: Same as 10 (Maximum)</p>
@@ -123,8 +122,7 @@ Switch 0 Key Mode<br /> <h1>Overview</h1><p>0: single click to switch on/off sta
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_6_2" type="integer" groupName="configuration"
-                 min="-32767" max="32768">
+      <parameter name="config_6_2" type="integer" groupName="configuration">
         <label>6: Key timer duration</label>
         <description><![CDATA[
 Key timer duration<br /> <h1>Overview</h1><p>0: infinite (always on, or always off, when pressed)<br />1 ~ 65535: time in seconds until returning to the default state as per Parameter 5</p>
@@ -233,8 +231,7 @@ Switch 3 Key Mode<br /> <h1>Overview</h1><p><strong>INACTIVE:</strong> This is i
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_14_1" type="integer" groupName="configuration"
-                 min="0" max="3">
+      <parameter name="config_14_1" type="integer" groupName="configuration">
         <label>14: Key lock local</label>
         <description><![CDATA[
 Key lock function (Manually)<br /> <h1>Overview</h1><p>This prevents or allows the local touch buttons to work.</p> <p>0: All keys unlocked<br />1: Key 1 locked<br />2: Key 2 locked<br />3: Keys 1 &amp; 2 locked<br />4: Key 3 locked - N/A<br />5: Keys 1 &amp; 3 locked - N/A<br />6: Keys 2 &amp; 3 locked - N/A<br />7: Keys 1 &amp; 2 &amp; 3 locked - N/A</p> <p><strong>Binary bit locations determine which keys are locked.</strong><br />BIT0: =1 Key 1 locked, operation disabled; =0 Key 1 not locked;<br />BIT1: =1 Key 2 locked, operation disabled; =0 Key 2 not locked;<br />BIT2: =1 Key 3 locked, operation disabled; =0 Key 3 not locked;<br />BIT7: Reserved</p> <p>E.g. 0x05 (00000101) From right to left Bit 0 and 2 are on so Key 1 and 3 are locked.</p> <p><strong>NOTE:</strong> Key 3 only on MH-S513.</p>
@@ -244,8 +241,7 @@ Key lock function (Manually)<br /> <h1>Overview</h1><p>This prevents or allows t
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_15_1" type="integer" groupName="configuration"
-                 min="0" max="3">
+      <parameter name="config_15_1" type="integer" groupName="configuration">
         <label>15: Key lock remote</label>
         <description><![CDATA[
 Key lock function (Wirelessly)<br /> <h1>Overview</h1><p>This prevents or allows the local touch buttons to work.</p> <p>0: All keys unlocked<br />1: Key 1 locked<br />2: Key 2 locked<br />3: Keys 1 &amp; 2 locked<br />4: Key 3 locked - N/A<br />5: Keys 1 &amp; 3 locked - N/A<br />6: Keys 2 &amp; 3 locked - N/A<br />7: Keys 1 &amp; 2 &amp; 3 locked - N/A</p> <p><strong>Binary bit locations determine which keys are locked.</strong><br />BIT0: =1 Key 1 locked, operation disabled; =0 Key 1 not locked;<br />BIT1: =1 Key 2 locked, operation disabled; =0 Key 2 not locked;<br />BIT2: =1 Key 3 locked, operation disabled; =0 Key 3 not locked;<br />BIT7: Reserved</p> <p>E.g. 0x05 (00000101) From right to left Bit 0 and 2 are on so Key 1 and 3 are locked.</p> <p><strong>NOTE:</strong> Key 3 only on MH-S513.</p>
@@ -255,8 +251,7 @@ Key lock function (Wirelessly)<br /> <h1>Overview</h1><p>This prevents or allows
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_16_1" type="integer" groupName="configuration"
-                 min="0" max="3">
+      <parameter name="config_16_1" type="integer" groupName="configuration">
         <label>16: Scene respond</label>
         <description><![CDATA[
 Scene respond<br /> <h1>Overview</h1><p>0: Scene respond disabled<br />1: Key 1 respond<br />2: Key 2 respond<br />3: Keys 1 &amp; 2 respond<br />4: Key 3 respond - N/A<br />5: Keys 1 &amp; 3 respond - N/A<br />6: Keys 2 &amp; 3 respond - N/A<br />7: Keys 1 &amp; 2 &amp; 3 respond - N/A</p> <p><strong>Binary bit locations determine which keys will respond.</strong><br />Bit0: =1 Key1 respond scene =0 Key1 not respond scene<br />Bit1: =1 Key2 respond scene =0 Key2 not respond scene<br />Bit2: =1 Key3 respond scene =0 Key3 not respond scene<br />Bit7: Reserved</p> <p>E.g. 0x05 (00000101) From right to left Bit 0 and 2 are on so Key 1 and 3 will respond.</p> <p><strong>NOTE:</strong> Key 3 only on MH-S513.</p>
@@ -282,8 +277,7 @@ Key 1 Scene Activate Mode Setting<br /> <h1>Overview</h1><p>0: Scene activate fu
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_18_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_18_1" type="integer" groupName="configuration">
         <label>18: Key 1 Activate Scene ID</label>
         <description><![CDATA[
 Key 1 Activate Scene ID<br /> <h1>Overview</h1><p>0: Scene ID is invalid and will not send scene activate command (scene disabled)<br />1 ~ 255: Scene ID</p>
@@ -293,8 +287,7 @@ Key 1 Activate Scene ID<br /> <h1>Overview</h1><p>0: Scene ID is invalid and wil
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_19_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_19_1" type="integer" groupName="configuration">
         <label>19: Key 1 Activate Scene Duration</label>
         <description><![CDATA[
 Key 1 Activate Scene Duration<br /> <h1>Overview</h1><p>0: Instantly<br />1 ~ 127: Specify dimming duration from 1 second (0x01) to 127 seconds (0x7F) in 1-second resolution<br />128 ~ 254: Specify dimming duration from 1 minute (0x80(128)) to 127 minutes (0xFE(254)) in 1-minute resolution</p>
@@ -319,8 +312,7 @@ Key 2 Scene Mode<br /> <h1>Overview</h1><p>INACTIVE: This is included in the fir
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_21_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_21_1" type="integer" groupName="configuration">
         <label>21: Key 2 Activate Scene ID</label>
         <description><![CDATA[
 Key 2 Activate Scene ID<br /> <h1>Overview</h1><p>INACTIVE: This is included in the firmware but only functions on the MH-S512 and MH-S513 which has two or three buttons</p><p>0: Scene ID is invalid and will not send scene activate command (scene disabled)<br />1 ~ 255: Scene ID</p>
@@ -329,8 +321,7 @@ Key 2 Activate Scene ID<br /> <h1>Overview</h1><p>INACTIVE: This is included in 
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_22_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_22_1" type="integer" groupName="configuration">
         <label>22: Key 2 Activate Scene Duration</label>
         <description><![CDATA[
 Key 2 Activate Scene Duration<br /> <h1>Overview</h1><p>INACTIVE: This is included in the firmware but only functions on the MH-S512 and MH-S513 which has two or three buttons</p><p><br /></p><p>0: Instantly<br />1 ~ 127: Specify dimming duration from 1 second (0x01) to 127 seconds (0x7F) in 1-second resolution<br />128 ~ 254: Specify dimming duration from 1 minute (0x80(128)) to 127 minutes (0xFE(254)) in 1-minute resolution</p>
@@ -355,8 +346,7 @@ Key 3 Scene Mode<br /> <h1>Overview</h1><p><strong>INACTIVE:</strong> This is in
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_24_1" type="integer" groupName="configuration" readOnly="true"
-                 min="-127" max="128">
+      <parameter name="config_24_1" type="integer" groupName="configuration" readOnly="true">
         <label>24: Key 3 Activate Scene ID</label>
         <description><![CDATA[
 Key 3 Activate Scene ID<br /> <h1>Overview</h1><p><strong>INACTIVE:</strong> This is included in the firmware but only functions on the MH-S513 which has three buttons</p> <p>0: Scene ID is invalid and will not send scene activate command (scene disabled)<br />1 ~ 255: Scene ID</p>
@@ -366,8 +356,7 @@ Key 3 Activate Scene ID<br /> <h1>Overview</h1><p><strong>INACTIVE:</strong> Thi
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_25_1" type="integer" groupName="configuration" readOnly="true"
-                 min="-127" max="128">
+      <parameter name="config_25_1" type="integer" groupName="configuration" readOnly="true">
         <label>25: Key 3 Activate Scene Duration</label>
         <description><![CDATA[
 Key 3 Activate Scene Duration<br /> <h1>Overview</h1><p><strong>INACTIVE:</strong> This is included in the firmware but only functions on the MH-S513 which has three buttons</p> <p>0: Instantly<br />1 ~ 127: Specify dimming duration from 1 second (0x01) to 127 seconds (0x7F) in 1-second resolution<br />128 ~ 254: Specify dimming duration from 1 minute (0x80(128)) to 127 minutes (0xFE(254)) in 1-minute resolution</p>
@@ -377,8 +366,7 @@ Key 3 Activate Scene Duration<br /> <h1>Overview</h1><p><strong>INACTIVE:</stron
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_31_1" type="integer" groupName="configuration"
-                 min="0" max="3">
+      <parameter name="config_31_1" type="integer" groupName="configuration">
         <label>31: Central scene settings</label>
         <description><![CDATA[
 Central scene settings<br /> <h1>Overview</h1><p>This enables the central scene function for each button.</p> <p>0: All keys disabled<br />1: Key 1 enabled<br />2: Key 2 enabled<br />3: Keys 1 &amp; 2 enabled<br />4: Key 3 enabled - N/A<br />5: Keys 1 &amp; 3 enabled - N/A<br />6: Keys 2 &amp; 3 enabled - N/A<br />7: Keys 1 &amp; 2 &amp; 3 enabled - N/A</p> <p><strong>Binary bit locations determine which keys are enabled.</strong><br />BIT0: =1 Key 1 disabled; =0 Key 1 enabled;<br />BIT1: =1 Key 2 disabled; =0 Key 2 enabled;<br />BIT2: =1 Key 3 disabled; =0 Key 3 enabled;<br />BIT7: Reserved</p> <p>E.g. 0x05 (00000101) From right to left Bit 0 and 2 are on so Key 1 and 3 are enabled.</p> <p><strong>NOTE:</strong> Key 3 only on MH-S513.</p>
@@ -388,8 +376,7 @@ Central scene settings<br /> <h1>Overview</h1><p>This enables the central scene 
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_32_1" type="integer" groupName="configuration"
-                 min="0" max="3">
+      <parameter name="config_32_1" type="integer" groupName="configuration">
         <label>32: Scene respond ID 1-50</label>
         <description><![CDATA[
 Scene respond ID 1-50<br /> <h1>Overview</h1><p>This enables the scene function for each button. Scene ID 1 - 50</p> <p>0: All keys disabled<br />1: Key 1 enabled<br />2: Key 2 enabled<br />3: Keys 1 &amp; 2 enabled<br />4: Key 3 enabled - N/A<br />5: Keys 1 &amp; 3 enabled - N/A<br />6: Keys 2 &amp; 3 enabled - N/A<br />7: Keys 1 &amp; 2 &amp; 3 enabled - N/A</p> <p><strong>Binary bit locations determine which keys are enabled.</strong><br />BIT0: =1 Key 1 disabled; =0 Key 1 enabled;<br />BIT1: =1 Key 2 disabled; =0 Key 2 enabled;<br />BIT2: =1 Key 3 disabled; =0 Key 3 enabled;<br />BIT7: Reserved</p> <p>E.g. 0x05 (00000101) From right to left Bit 0 and 2 are on so Key 1 and 3 are enabled.</p> <p><strong>NOTE:</strong> Key 3 only on MH-S513.</p>
@@ -399,8 +386,7 @@ Scene respond ID 1-50<br /> <h1>Overview</h1><p>This enables the scene function 
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_33_1" type="integer" groupName="configuration"
-                 min="0" max="3">
+      <parameter name="config_33_1" type="integer" groupName="configuration">
         <label>33: Scene respond ID 51-100</label>
         <description><![CDATA[
 Scene respond ID 51-100<br /> <h1>Overview</h1><p>This enables the scene function for each button. Scene ID 51 - 100</p> <p>0: All keys disabled<br />1: Key 1 enabled<br />2: Key 2 enabled<br />3: Keys 1 &amp; 2 enabled<br />4: Key 3 enabled - N/A<br />5: Keys 1 &amp; 3 enabled - N/A<br />6: Keys 2 &amp; 3 enabled - N/A<br />7: Keys 1 &amp; 2 &amp; 3 enabled - N/A</p> <p><strong>Binary bit locations determine which keys are enabled.</strong><br />BIT0: =1 Key 1 disabled; =0 Key 1 enabled;<br />BIT1: =1 Key 2 disabled; =0 Key 2 enabled;<br />BIT2: =1 Key 3 disabled; =0 Key 3 enabled;<br />BIT7: Reserved</p> <p>E.g. 0x05 (00000101) From right to left Bit 0 and 2 are on so Key 1 and 3 are enabled.</p> <p><strong>NOTE:</strong> Key 3 only on MH-S513.</p>
@@ -410,8 +396,7 @@ Scene respond ID 51-100<br /> <h1>Overview</h1><p>This enables the scene functio
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_34_1" type="integer" groupName="configuration"
-                 min="0" max="3">
+      <parameter name="config_34_1" type="integer" groupName="configuration">
         <label>34: Scene respond ID 101-150</label>
         <description><![CDATA[
 Scene respond ID 101-150<br /> <h1>Overview</h1><p>This enables the scene function for each button. Scene ID 51 - 100</p> <p>0: All keys disabled<br />1: Key 1 enabled<br />2: Key 2 enabled<br />3: Keys 1 &amp; 2 enabled<br />4: Key 3 enabled - N/A<br />5: Keys 1 &amp; 3 enabled - N/A<br />6: Keys 2 &amp; 3 enabled - N/A<br />7: Keys 1 &amp; 2 &amp; 3 enabled - N/A</p> <p><strong>Binary bit locations determine which keys are enabled.</strong><br />BIT0: =1 Key 1 disabled; =0 Key 1 enabled;<br />BIT1: =1 Key 2 disabled; =0 Key 2 enabled;<br />BIT2: =1 Key 3 disabled; =0 Key 3 enabled;<br />BIT7: Reserved</p> <p>E.g. 0x05 (00000101) From right to left Bit 0 and 2 are on so Key 1 and 3 are enabled.</p> <p><strong>NOTE:</strong> Key 3 only on MH-S513.</p>
@@ -421,8 +406,7 @@ Scene respond ID 101-150<br /> <h1>Overview</h1><p>This enables the scene functi
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_35_1" type="integer" groupName="configuration"
-                 min="0" max="3">
+      <parameter name="config_35_1" type="integer" groupName="configuration">
         <label>35: Scene respond ID 151-200</label>
         <description><![CDATA[
 Scene respond ID 151-200<br /> <h1>Overview</h1><p>This enables the scene function for each button. Scene ID 151 - 200</p> <p>0: All keys disabled<br />1: Key 1 enabled<br />2: Key 2 enabled<br />3: Keys 1 &amp; 2 enabled<br />4: Key 3 enabled - N/A<br />5: Keys 1 &amp; 3 enabled - N/A<br />6: Keys 2 &amp; 3 enabled - N/A<br />7: Keys 1 &amp; 2 &amp; 3 enabled - N/A</p> <p><strong>Binary bit locations determine which keys are enabled.</strong><br />BIT0: =1 Key 1 disabled; =0 Key 1 enabled;<br />BIT1: =1 Key 2 disabled; =0 Key 2 enabled;<br />BIT2: =1 Key 3 disabled; =0 Key 3 enabled;<br />BIT7: Reserved</p> <p>E.g. 0x05 (00000101) From right to left Bit 0 and 2 are on so Key 1 and 3 are enabled.</p> <p><strong>NOTE:</strong> Key 3 only on MH-S513.</p>

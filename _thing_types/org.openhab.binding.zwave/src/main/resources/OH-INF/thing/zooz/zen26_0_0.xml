@@ -76,8 +76,7 @@ Change behavior of the LED indicator<br /> <h1>Overview</h1><p>Choose if you wan
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_3_2" type="integer" groupName="configuration"
-                 min="0" max="32768">
+      <parameter name="config_3_2" type="integer" groupName="configuration">
         <label>3: Auto turn-OFF timer</label>
         <description><![CDATA[
 Enable the auto turn-OFF timer<br /> <h1>Overview</h1><p>Use this parameter to set the time which you want the switch to automatically turn OFF once it has been turned ON. The number entered as value corresponds to the number of seconds.</p>

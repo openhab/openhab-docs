@@ -52,8 +52,7 @@ Door/Window Sensor<br /> <h1>Overview</h1><p>A slim door/window sensor.</p> <br 
       </parameter-group>
 
       <!-- PARAMETER DEFINITIONS -->
-      <parameter name="config_1_1" type="integer" groupName="configuration"
-                 min="3" max="127">
+      <parameter name="config_1_1" type="integer" groupName="configuration">
         <label>1: Turn Off Light Time</label>
         <description><![CDATA[
 Delay before turning light off again.<br /> <h1>Overview</h1><p>After turn on light, setting the delay time to turn off the light. 10 seconds per tick, and minimum time is 30 seconds, default tick 3 (30 seconds).</p>
@@ -62,8 +61,7 @@ Delay before turning light off again.<br /> <h1>Overview</h1><p>After turn on li
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_2_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_2_1" type="integer" groupName="configuration">
         <label>2: Basic Set Level</label>
         <description><![CDATA[
 Lights on, or dimmer setting.<br /> <h1>Overview</h1><p>Setting the BASIC command value to turn on the light. The 255 means turn on the light. For dimmer equipment 1 to 99 means the light strength.</p>
@@ -73,8 +71,7 @@ Lights on, or dimmer setting.<br /> <h1>Overview</h1><p>Setting the BASIC comman
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_3_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_3_1" type="integer" groupName="configuration">
         <label>3: Wake up interval</label>
         <description><![CDATA[
 Interval between wake up and auto report.<br /> <h1>Overview</h1><p>The interval time between waking up. 1 hour per tick and minimum time is 1 hour, default tick is 12 (12 hours). Maximum time is 168 hours (7 days).</p>
@@ -83,8 +80,7 @@ Interval between wake up and auto report.<br /> <h1>Overview</h1><p>The interval
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_4_1" type="integer" groupName="configuration"
-                 min="1" max="2">
+      <parameter name="config_4_1" type="integer" groupName="configuration">
         <label>4: Operation Mode</label>
         <description><![CDATA[
 Security / Home Automation mode<br /> <h1>Overview</h1><p>1 means security mode - only reports events to controller.</p> <p>2 means home automation mode - reports events to controller and sends commands to lighting.</p>
@@ -93,8 +89,7 @@ Security / Home Automation mode<br /> <h1>Overview</h1><p>1 means security mode 
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_5_1" type="integer" groupName="configuration"
-                 min="0" max="1">
+      <parameter name="config_5_1" type="integer" groupName="configuration">
         <label>5: Ignore Magnetic Off</label>
         <description><![CDATA[
 Ignore door/window closing<br /> <h1>Overview</h1><p>0 means light control action with the door/window close.</p> <p>1 means ignore the door/window close.</p>

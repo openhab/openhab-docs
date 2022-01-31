@@ -207,64 +207,56 @@ Pair Mode, upper two buttons<br /> <h1>Overview</h1><p>Configuration of Pair Mod
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_7_1" type="integer" groupName="configuration"
-                 min="0" max="100">
+      <parameter name="config_7_1" type="integer" groupName="configuration">
         <label>7: Percentage of light in the LED #1 when On</label>
         <description>Configure the percentage of light in LED # 1, when the LED is turned on.</description>
         <default>50</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_8_1" type="integer" groupName="configuration" readOnly="true"
-                 min="0" max="100">
+      <parameter name="config_8_1" type="integer" groupName="configuration" readOnly="true">
         <label>8: Percentage of light in the LED #2 when On</label>
         <description>Configure the percentage of light in LED # 2, when the LED is turned on.</description>
         <default>50</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_9_1" type="integer" groupName="configuration"
-                 min="0" max="100">
+      <parameter name="config_9_1" type="integer" groupName="configuration">
         <label>9: Percentage of light in the LED #3 when On</label>
         <description>Configure the percentage of light in LED # 3, when the LED is turned on.</description>
         <default>50</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_10_1" type="integer" groupName="configuration"
-                 min="0" max="100">
+      <parameter name="config_10_1" type="integer" groupName="configuration">
         <label>10: Percentage of light in the LED #4 when On</label>
         <description>Configure the percentage of light in LED #4, when the LED is turned on.</description>
         <default>50</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_11_1" type="integer" groupName="configuration"
-                 min="0" max="100">
+      <parameter name="config_11_1" type="integer" groupName="configuration">
         <label>11: Percentage of light in the LED #1 when Off</label>
         <description>Configure the percentage of light in LED # 1, when the LED is turned off.</description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_12_1" type="integer" groupName="configuration"
-                 min="0" max="100">
+      <parameter name="config_12_1" type="integer" groupName="configuration">
         <label>12: Percentage of light in the LED #2 when Off</label>
         <description>Configure the percentage of light in LED # 2, when the LED is turned off.</description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_13_1" type="integer" groupName="configuration"
-                 min="0" max="100">
+      <parameter name="config_13_1" type="integer" groupName="configuration">
         <label>13: Percentage of light in the LED #3 when Off</label>
         <description>Configure the percentage of light in LED #3, when the LED is turned off.</description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_14_1" type="integer" groupName="configuration"
-                 min="0" max="100">
+      <parameter name="config_14_1" type="integer" groupName="configuration">
         <label>14: Percentage of light in the LED #4 when Off</label>
         <description>Configure the percentage of light in LED #4, when the LED is turned off.</description>
         <default>0</default>
@@ -346,8 +338,7 @@ Disable House Cleaning Mode.<br /> <h1>Overview</h1><p>This parameter is able to
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_19_4_0000FF00" type="integer" groupName="configuration"
-                 min="0" max="255">
+      <parameter name="config_19_4_0000FF00" type="integer" groupName="configuration">
         <label>19: Upper switch value - (button #1)</label>
         <description><![CDATA[
 Multilevel Switch - Upper switch value - (button #1)<br /> <h1>Overview</h1><p>When single pressing the button for ON, a Multilevel Switch Set with this value will be send to devices in association group 6. (Default = 255)</p>
@@ -356,8 +347,7 @@ Multilevel Switch - Upper switch value - (button #1)<br /> <h1>Overview</h1><p>W
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_19_4_00FF0000" type="integer" groupName="configuration"
-                 min="0" max="99">
+      <parameter name="config_19_4_00FF0000" type="integer" groupName="configuration">
         <label>19: Lower switch value - (button #1)</label>
         <description><![CDATA[
 Multilevel Switch - Lower switch value - (button #1)<br /> <h1>Overview</h1><p>When single pressing the button for OFF, a Multilevel Switch Set with this value will be send to devices in association group 6. (Default = 0)</p>
@@ -377,8 +367,7 @@ Multilevel Switch - Lower switch value - (button #1)<br /> <h1>Overview</h1><p>W
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_20_4_0000FF00" type="integer" groupName="configuration"
-                 min="0" max="255">
+      <parameter name="config_20_4_0000FF00" type="integer" groupName="configuration">
         <label>20: Upper switch value - (button #2)</label>
         <description><![CDATA[
 Multilevel Switch - Upper switch value - (button #2)<br /> <h1>Overview</h1><p>When single pressing the button for ON, a Multilevel Switch Set with this value will be send to devices in association group 6. (Default = 255)</p>
@@ -387,8 +376,7 @@ Multilevel Switch - Upper switch value - (button #2)<br /> <h1>Overview</h1><p>W
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_20_4_00FF0000" type="integer" groupName="configuration"
-                 min="0" max="99">
+      <parameter name="config_20_4_00FF0000" type="integer" groupName="configuration">
         <label>20: Lower switch value - (button #2)</label>
         <description><![CDATA[
 Multilevel Switch - Lower switch value - (button #2)<br /> <h1>Overview</h1><p>When single pressing the button for OFF, a Multilevel Switch Set with this value will be send to devices in association group 6. (Default = 0)</p>
@@ -408,8 +396,7 @@ Multilevel Switch - Lower switch value - (button #2)<br /> <h1>Overview</h1><p>W
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_21_4_0000FF00" type="integer" groupName="configuration"
-                 min="0" max="255">
+      <parameter name="config_21_4_0000FF00" type="integer" groupName="configuration">
         <label>21: Upper switch value - (button #3)</label>
         <description><![CDATA[
 Multilevel Switch - Upper switch value - (button #3)<br /> <h1>Overview</h1><p>When single pressing the button for ON, a Multilevel Switch Set with this value will be send to devices in association group 6. (Default = 255)</p>
@@ -418,8 +405,7 @@ Multilevel Switch - Upper switch value - (button #3)<br /> <h1>Overview</h1><p>W
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_21_4_00FF0000" type="integer" groupName="configuration"
-                 min="0" max="99">
+      <parameter name="config_21_4_00FF0000" type="integer" groupName="configuration">
         <label>21: Lower switch value - (button #3)</label>
         <description><![CDATA[
 Multilevel Switch - Lower switch value - (button #3)<br /> <h1>Overview</h1><p>When single pressing the button for OFF, a Multilevel Switch Set with this value will be send to devices in association group 6. (Default = 0)</p>
@@ -439,8 +425,7 @@ Multilevel Switch - Lower switch value - (button #3)<br /> <h1>Overview</h1><p>W
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_22_4_0000FF00" type="integer" groupName="configuration"
-                 min="0" max="255">
+      <parameter name="config_22_4_0000FF00" type="integer" groupName="configuration">
         <label>22: Upper switch value - (button #4)</label>
         <description><![CDATA[
 Multilevel Switch - Upper switch value - (button #4)<br /> <h1>Overview</h1><p>When single pressing the button for ON, a Multilevel Switch Set with this value will be send to devices in association group 6. (Default = 255)</p>
@@ -449,8 +434,7 @@ Multilevel Switch - Upper switch value - (button #4)<br /> <h1>Overview</h1><p>W
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_22_4_00FF0000" type="integer" groupName="configuration"
-                 min="0" max="99">
+      <parameter name="config_22_4_00FF0000" type="integer" groupName="configuration">
         <label>22: Lower switch value - (button #4)</label>
         <description><![CDATA[
 Multilevel Switch - Lower switch value - (button #4)<br /> <h1>Overview</h1><p>When single pressing the button for OFF, a Multilevel Switch Set with this value will be send to devices in association group 6. (Default = 0)</p>

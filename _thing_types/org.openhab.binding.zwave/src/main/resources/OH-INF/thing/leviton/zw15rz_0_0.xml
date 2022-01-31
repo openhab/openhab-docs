@@ -47,8 +47,7 @@ Tamper-Resistant Z-Wave Outlet - Model ZW15R<br /> <h1>Overview</h1><p>The Decor
       </parameter-group>
 
       <!-- PARAMETER DEFINITIONS -->
-      <parameter name="config_7_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_7_1" type="integer" groupName="configuration">
         <label>7: Status LED Configuration</label>
         <description><![CDATA[
 Allow turning the status LED to various modes (off, status, locator)<br /> <h1>Overview</h1><p>0 = LED Off</p><p>254 = Status Mode</p><p>255 = Locater Mode</p>

@@ -77,8 +77,7 @@ Double click option<br /> <h1>Overview</h1><p>Double click option (set to max. b
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_17_1" type="integer" groupName="configuration"
-                 min="0" max="5">
+      <parameter name="config_17_1" type="integer" groupName="configuration">
         <label>17: Dimmer time from 0% to max.</label>
         <description><![CDATA[
 Dimmer time from 0% to max.<br /> <h1>Overview</h1><p>Time to move the Dimmer from 0% to max. dimming values.</p> <p>(The ZDS-210 will implement the dimming duration if received this parameter value from controller/gateway.Otherwise, the ZDS-210 will implement the local parameter value)</p>
@@ -87,16 +86,14 @@ Dimmer time from 0% to max.<br /> <h1>Overview</h1><p>Time to move the Dimmer fr
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_18_1" type="integer" groupName="configuration"
-                 min="2" max="99">
+      <parameter name="config_18_1" type="integer" groupName="configuration">
         <label>18: Maximum Dimmer level control</label>
         <description>Maximum Dimmer level control</description>
         <default>99</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_19_1" type="integer" groupName="configuration"
-                 min="1" max="98">
+      <parameter name="config_19_1" type="integer" groupName="configuration">
         <label>19: Minimum Dimmer level control</label>
         <description>Minimum Dimmer level control</description>
         <default>13</default>

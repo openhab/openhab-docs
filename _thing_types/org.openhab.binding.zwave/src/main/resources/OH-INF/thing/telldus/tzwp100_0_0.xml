@@ -47,8 +47,7 @@ Wall Plug Switch<br /> <h1>Overview</h1><p>Plug­in switch, controls lighting an
       </parameter-group>
 
       <!-- PARAMETER DEFINITIONS -->
-      <parameter name="config_1_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_1_1" type="integer" groupName="configuration">
         <label>1: Countdown timer</label>
         <description>Automatic turning off in minutes, 0 to disable</description>
         <default>0</default>
@@ -67,8 +66,7 @@ Wall Plug Switch<br /> <h1>Overview</h1><p>Plug­in switch, controls lighting an
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_3_1" type="integer" groupName="configuration"
-                 min="0" max="100">
+      <parameter name="config_3_1" type="integer" groupName="configuration">
         <label>3: LED indicator</label>
         <description>Set the intensity of the LED indicator</description>
         <default>100</default>

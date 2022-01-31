@@ -220,8 +220,7 @@ Smart Implant<br /> <h1>Overview</h1><p>Allows to enhance the functionality of w
       </parameter-group>
 
       <!-- PARAMETER DEFINITIONS -->
-      <parameter name="config_20_1" type="integer" groupName="configuration"
-                 min="0" max="5">
+      <parameter name="config_20_1" type="integer" groupName="configuration">
         <label>20: Input 1 - operating mode</label>
         <description><![CDATA[
 mode of 1st input<br /> <h1>Overview</h1><p>This parameter allows to choose mode of 1st input (IN1). Change it depending on connected device.</p>
@@ -237,8 +236,7 @@ mode of 1st input<br /> <h1>Overview</h1><p>This parameter allows to choose mode
         </options>
       </parameter>
 
-      <parameter name="config_21_1" type="integer" groupName="configuration"
-                 min="0" max="5">
+      <parameter name="config_21_1" type="integer" groupName="configuration">
         <label>21: Input 2 - operating mode</label>
         <description><![CDATA[
 mode of 2nd input<br /> <h1>Overview</h1><p>This parameter allows to choose mode of 2nd input (IN2). Change it depending on connected device.</p>
@@ -254,8 +252,7 @@ mode of 2nd input<br /> <h1>Overview</h1><p>This parameter allows to choose mode
         </options>
       </parameter>
 
-      <parameter name="config_24_1" type="integer" groupName="configuration"
-                 min="0" max="1">
+      <parameter name="config_24_1" type="integer" groupName="configuration">
         <label>24: Inputs orientation</label>
         <description><![CDATA[
 reversing operation of IN1 and IN2 inputs<br /> <h1>Overview</h1><p>This parameter allows reversing operation of IN1 and IN2 inputs without changing the wiring. Use in case of incorrect wiring.</p>
@@ -267,8 +264,7 @@ reversing operation of IN1 and IN2 inputs<br /> <h1>Overview</h1><p>This paramet
         </options>
       </parameter>
 
-      <parameter name="config_25_1" type="integer" groupName="configuration"
-                 min="0" max="1">
+      <parameter name="config_25_1" type="integer" groupName="configuration">
         <label>25: Outputs orientation</label>
         <description><![CDATA[
 reversing operation of OUT1 and OUT2 outputs<br /> <h1>Overview</h1><p>This parameter allows reversing operation of OUT1 and OUT2 inputs without changing the wiring. Use in case of incorrect wiring.</p>
@@ -310,8 +306,7 @@ sending scene ID<br /> <h1>Overview</h1><p>This parameter defines which actions 
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_47_2" type="integer" groupName="configuration"
-                 min="0" max="255">
+      <parameter name="config_47_2" type="integer" groupName="configuration">
         <label>47: Input 1 - 2nd group, activated</label>
         <description><![CDATA[
 value sent to 2nd association group when activated<br /> <h1>Overview</h1><p>This parameter defines value sent to devices in 2nd association group when IN1 input is triggered (using Basic Command Class). Parameter is relevant only if parameter 20 is set to 0 or 1 (alarm mode).</p>
@@ -321,8 +316,7 @@ value sent to 2nd association group when activated<br /> <h1>Overview</h1><p>Thi
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_49_2" type="integer" groupName="configuration"
-                 min="0" max="255">
+      <parameter name="config_49_2" type="integer" groupName="configuration">
         <label>49: Input 1 - 2nd group, deactivated</label>
         <description><![CDATA[
 value sent to 2nd association group when deactivated<br /> <h1>Overview</h1><p>This parameter defines value sent to devices in 2nd association group when IN1 input is deactivated (using Basic Command Class). Parameter is relevant only if parameter 20 is set to 0 or 1 (alarm mode).</p>
@@ -332,8 +326,7 @@ value sent to 2nd association group when deactivated<br /> <h1>Overview</h1><p>T
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_52_2" type="integer" groupName="configuration"
-                 min="0" max="255">
+      <parameter name="config_52_2" type="integer" groupName="configuration">
         <label>52: Input 2 - 3rd group, activated</label>
         <description><![CDATA[
 value sent to 3rd association group when activated<br /> <h1>Overview</h1><p>This parameter defines value sent to devices in 3rd association group when IN2 input is triggered (using Basic Command Class). Parameter is relevant only if parameter 21 is set to 0 or 1 (alarm mode).</p>
@@ -343,8 +336,7 @@ value sent to 3rd association group when activated<br /> <h1>Overview</h1><p>Thi
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_54_2" type="integer" groupName="configuration"
-                 min="0" max="255">
+      <parameter name="config_54_2" type="integer" groupName="configuration">
         <label>54: Input 2 - 3rd group, deactivated</label>
         <description><![CDATA[
 value sent to 3rd association group when deactivated<br /> <h1>Overview</h1><p>This parameter defines value sent to devices in 2nd association group when IN2 input is deactivated (using Basic Command Class). Parameter is relevant only if parameter 21 is set to 0 or 1 (alarm mode).</p>
@@ -354,8 +346,7 @@ value sent to 3rd association group when deactivated<br /> <h1>Overview</h1><p>T
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_63_1" type="integer" groupName="configuration"
-                 min="0" max="100">
+      <parameter name="config_63_1" type="integer" groupName="configuration">
         <label>63: Analog inputs - minimal change to report</label>
         <description><![CDATA[
 minimal change<br /> <h1>Overview</h1><p>This parameter defines minimal change (from the last reported) of analog input value that results in sending new report. Parameter is relevant only for analog inputs (parameter 20 or 21 set to 4 or 5).</p> <p>Values: 0 - reporting on change disabled, 1-100 (0.1-10V, 0.1V step)</p> <p>Default: 5 (0.5V)</p>
@@ -364,8 +355,7 @@ minimal change<br /> <h1>Overview</h1><p>This parameter defines minimal change (
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_64_2" type="integer" groupName="configuration"
-                 min="0" max="32400">
+      <parameter name="config_64_2" type="integer" groupName="configuration">
         <label>64: Analog inputs - periodical reports</label>
         <description><![CDATA[
 reporting period of analog inputs value<br /> <h1>Overview</h1><p>This parameter defines reporting period of analog inputs value. Periodical reports are independent from changes in value (parameter 63). Parameter is relevant only for analog inputs (parameter 20 or 21 set to 4 or 5).</p> <p>Values: 60-32400 (60s-9h)</p> <p>Default: 0 (periodical reports disabled)</p>
@@ -374,8 +364,7 @@ reporting period of analog inputs value<br /> <h1>Overview</h1><p>This parameter
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_65_2" type="integer" groupName="configuration"
-                 min="0" max="255">
+      <parameter name="config_65_2" type="integer" groupName="configuration">
         <label>65: Temperature sensor threshold</label>
         <description><![CDATA[
 Internal temperature sensor - minimal change to report<br /> <h1>Overview</h1><p>This parameter defines minimal change (from the last reported) of internal temperature sensor value that results in sending new report.</p> <p>Values: 0 - reporting on change disabled, 1-255 (0.1-25.5°C)</p> <p>Default: 5 (0.5°C)</p>
@@ -384,8 +373,7 @@ Internal temperature sensor - minimal change to report<br /> <h1>Overview</h1><p
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_66_2" type="integer" groupName="configuration"
-                 min="0" max="32400">
+      <parameter name="config_66_2" type="integer" groupName="configuration">
         <label>66: Temperatur sensor period</label>
         <description><![CDATA[
 Internal temperature sensor - periodical reports<br /> <h1>Overview</h1><p>This parameter defines reporting period of internal temperature sensor value. Periodical reports are independent from changes in value (parameter 65).</p> <p>Values: 0 - 60-32400 (60s-9h)</p> <p>Default: 0 (periodical reports disabled)</p>
@@ -394,8 +382,7 @@ Internal temperature sensor - periodical reports<br /> <h1>Overview</h1><p>This 
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_67_2" type="integer" groupName="configuration"
-                 min="0" max="255">
+      <parameter name="config_67_2" type="integer" groupName="configuration">
         <label>67: External sensors threshold</label>
         <description><![CDATA[
 External sensors - minimal change to report<br /> <h1>Overview</h1><p>This parameter defines minimal change (from the last reported) of external sensors values (DS18B20 or DHT22) that results in sending new report. Parameter is relevant only for connected DS18B20 or DHT22 sensors.</p> <p>Values: 0 - reporting on change disabled, 1-255 (0.1-25.5 units, 0.1)</p> <p>Default: 5 (0.5 units)</p>
@@ -404,8 +391,7 @@ External sensors - minimal change to report<br /> <h1>Overview</h1><p>This param
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_68_2" type="integer" groupName="configuration"
-                 min="0" max="32400">
+      <parameter name="config_68_2" type="integer" groupName="configuration">
         <label>68: External sensors - periodical reports</label>
         <description><![CDATA[
 reporting period of analog inputs value<br /> <h1>Overview</h1><p>This parameter defines reporting period of analog inputs value. Periodical reports are independent from changes in value (parameter 67). Parameter is relevant only for connected DS18B20 or DHT22 sensors.</p> <p>Values: 60-32400 (60s-9h)</p> <p>Default: 0 (periodical reports disabled)</p>
@@ -414,8 +400,7 @@ reporting period of analog inputs value<br /> <h1>Overview</h1><p>This parameter
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_150_1" type="integer" groupName="configuration"
-                 min="1" max="100">
+      <parameter name="config_150_1" type="integer" groupName="configuration">
         <label>150: Input 1 - sensitivity</label>
         <description><![CDATA[
 inertia time of IN1 input in alarm modes<br /> <h1>Overview</h1><p>This parameter defines the inertia time of IN1 input in alarm modes. Adjust this parameter to prevent bouncing or signal disruptions. Parameter is relevant only if parameter 20 is set to 0 or 1 (alarm mode).</p> <p>Values: 1-100 (10ms-1000ms, 10ms step)</p> <p>Default: 10 (100ms)</p>
@@ -424,8 +409,7 @@ inertia time of IN1 input in alarm modes<br /> <h1>Overview</h1><p>This paramete
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_151_1" type="integer" groupName="configuration"
-                 min="1" max="100">
+      <parameter name="config_151_1" type="integer" groupName="configuration">
         <label>151: Input 2 - sensitivity</label>
         <description><![CDATA[
 inertia time of IN2 input in alarm modes<br /> <h1>Overview</h1><p>This parameter defines the inertia time of IN2 input in alarm modes. Adjust this parameter to prevent bouncing or signal disruptions. Parameter is relevant only if parameter 21 is set to 0 or 1 (alarm mode).</p> <p>Values: 1-100 (10ms-1000ms, 10ms step)</p> <p>Default: 10 (100ms)</p>
@@ -434,8 +418,7 @@ inertia time of IN2 input in alarm modes<br /> <h1>Overview</h1><p>This paramete
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_152_2" type="integer" groupName="configuration"
-                 min="0" max="3600">
+      <parameter name="config_152_2" type="integer" groupName="configuration">
         <label>152: Input 1 - delay of alarm cancellation</label>
         <description><![CDATA[
 additional delay of cancelling the alarm on IN1 input<br /> <h1>Overview</h1><p>This parameter defines additional delay of cancelling the alarm on IN1 input. Parameter is relevant only if parameter 20 is set to 0 or 1 (alarm mode).</p> <p>Values: 1-3600s</p> <p>Default: 0 (no delay)</p>
@@ -444,8 +427,7 @@ additional delay of cancelling the alarm on IN1 input<br /> <h1>Overview</h1><p>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_153_2" type="integer" groupName="configuration"
-                 min="0" max="3600">
+      <parameter name="config_153_2" type="integer" groupName="configuration">
         <label>153: Input 2 - delay of alarm cancellation</label>
         <description><![CDATA[
 additional delay of cancelling the alarm on IN2 input<br /> <h1>Overview</h1><p>This parameter defines additional delay of cancelling the alarm on IN2 input. Parameter is relevant only if parameter 21 is set to 0 or 1 (alarm mode).</p> <p>Values: 1-3600s</p> <p>Default: 0 (no delay)</p>
@@ -454,8 +436,7 @@ additional delay of cancelling the alarm on IN2 input<br /> <h1>Overview</h1><p>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_154_1" type="integer" groupName="configuration"
-                 min="0" max="1">
+      <parameter name="config_154_1" type="integer" groupName="configuration">
         <label>154: Output 1 - logic of operation</label>
         <description><![CDATA[
 logic of OUT1 output operation<br /> <h1>Overview</h1><p>This parameter defines logic of OUT1 output operation.</p>
@@ -467,8 +448,7 @@ logic of OUT1 output operation<br /> <h1>Overview</h1><p>This parameter defines 
         </options>
       </parameter>
 
-      <parameter name="config_155_1" type="integer" groupName="configuration"
-                 min="0" max="1">
+      <parameter name="config_155_1" type="integer" groupName="configuration">
         <label>155: Output 2 - logic of operation</label>
         <description><![CDATA[
 logic of OUT2 output operation<br /> <h1>Overview</h1><p>This parameter defines logic of OUT2 output operation.</p>
@@ -480,8 +460,7 @@ logic of OUT2 output operation<br /> <h1>Overview</h1><p>This parameter defines 
         </options>
       </parameter>
 
-      <parameter name="config_156_2" type="integer" groupName="configuration"
-                 min="0" max="27000">
+      <parameter name="config_156_2" type="integer" groupName="configuration">
         <label>156: Output 1 - auto off</label>
         <description><![CDATA[
 OUT1 automatically deactivated<br /> <h1>Overview</h1><p>This parameter defines time after which OUT1 will be automatically deactivated.</p> <p>Values: 1-27000 (0.1s-45min, 0.1s step)</p> <p>Default: 0 (auto off disabled)</p>
@@ -490,8 +469,7 @@ OUT1 automatically deactivated<br /> <h1>Overview</h1><p>This parameter defines 
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_157_2" type="integer" groupName="configuration"
-                 min="0" max="27000">
+      <parameter name="config_157_2" type="integer" groupName="configuration">
         <label>157: Output 2 - auto off</label>
         <description><![CDATA[
 OUT2 automatically deactivated<br /> <h1>Overview</h1><p>This parameter defines time after which OUT2 will be automatically deactivated.</p> <p>Values: 1-27000 (0.1s-45min, 0.1s step)</p> <p>Default: 0 (auto off disabled)</p>

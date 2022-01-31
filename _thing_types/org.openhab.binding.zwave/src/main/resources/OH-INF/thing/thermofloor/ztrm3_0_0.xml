@@ -173,8 +173,7 @@ Operation mode<br /> <h1>Overview</h1><p>Value = 0, Off <br />Value = 1, Heatin
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_4_1" type="integer" groupName="configuration"
-                 min="3" max="30">
+      <parameter name="config_4_1" type="integer" groupName="configuration">
         <label>4: Temperature Control Hysteresis</label>
         <description><![CDATA[
 Temperature Control Hysteresis<br /> <h1>Overview</h1><p>0.3°C to 3.0°C. Default is 5 (0.5°C)</p>
@@ -183,8 +182,7 @@ Temperature Control Hysteresis<br /> <h1>Overview</h1><p>0.3°C to 3.0°C. Defau
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_5_2" type="integer" groupName="configuration"
-                 min="50" max="400">
+      <parameter name="config_5_2" type="integer" groupName="configuration">
         <label>5: Floor Minimum Temperature Limit</label>
         <description><![CDATA[
 Floor Minimum Temperature Limit<br /> <h1>Overview</h1><p>5.0°C to 40.0°C. Default is 50 (5.0°C)</p>
@@ -193,8 +191,7 @@ Floor Minimum Temperature Limit<br /> <h1>Overview</h1><p>5.0°C to 40.0°C. Def
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_6_2" type="integer" groupName="configuration"
-                 min="50" max="400">
+      <parameter name="config_6_2" type="integer" groupName="configuration">
         <label>6: Floor MaximumTemperature Limit</label>
         <description><![CDATA[
 Floor MaximumTemperature Limit<br /> <h1>Overview</h1><p>5.0°C to 40.0°C. Default is 400 (40.0°C)</p>
@@ -203,8 +200,7 @@ Floor MaximumTemperature Limit<br /> <h1>Overview</h1><p>5.0°C to 40.0°C. Defa
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_7_2" type="integer" groupName="configuration"
-                 min="50" max="400">
+      <parameter name="config_7_2" type="integer" groupName="configuration">
         <label>7: Air Minimum Temp Limit (ALo)</label>
         <description><![CDATA[
 Air Minimum Temp Limit (ALo)<br /> <h1>Overview</h1><p>5.0°C to 40.0°C. Default is 50 (5.0°C)</p>
@@ -213,8 +209,7 @@ Air Minimum Temp Limit (ALo)<br /> <h1>Overview</h1><p>5.0°C to 40.0°C. Defaul
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_8_2" type="integer" groupName="configuration"
-                 min="50" max="400">
+      <parameter name="config_8_2" type="integer" groupName="configuration">
         <label>8: Air Maximum Temp Limit (AHi)</label>
         <description><![CDATA[
 Air Maximum Temp Limit (AHi)<br /> <h1>Overview</h1><p>5.0°C to 40.0°C. Default is 400 (40.0°C)</p>
@@ -223,8 +218,7 @@ Air Maximum Temp Limit (AHi)<br /> <h1>Overview</h1><p>5.0°C to 40.0°C. Defaul
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_9_2" type="integer" groupName="configuration"
-                 min="50" max="400">
+      <parameter name="config_9_2" type="integer" groupName="configuration">
         <label>9: Heating Mode Setpoint</label>
         <description><![CDATA[
 Heating Mode Setpoint<br /> <h1>Overview</h1><p>5.0°C to 40.0°C. Default is 210 (21.0°C)</p>
@@ -233,8 +227,7 @@ Heating Mode Setpoint<br /> <h1>Overview</h1><p>5.0°C to 40.0°C. Default is 21
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_10_1" type="integer" groupName="configuration"
-                 min="-60" max="60">
+      <parameter name="config_10_1" type="integer" groupName="configuration">
         <label>10: Room Sensor Calibration</label>
         <description><![CDATA[
 Room Sensor Calibration<br /> <h1>Overview</h1><p>-6.0°C to 6.0°C. Default is 0 (0.0°C)</p>
@@ -243,8 +236,7 @@ Room Sensor Calibration<br /> <h1>Overview</h1><p>-6.0°C to 6.0°C. Default is 
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_11_1" type="integer" groupName="configuration"
-                 min="-60" max="60">
+      <parameter name="config_11_1" type="integer" groupName="configuration">
         <label>11: Floor Sensor Calibration</label>
         <description><![CDATA[
 Floor Sensor Calibration<br /> <h1>Overview</h1><p>-6.0°C to 6.0°C. Default is 0 (0.0°C)</p>
@@ -253,8 +245,7 @@ Floor Sensor Calibration<br /> <h1>Overview</h1><p>-6.0°C to 6.0°C. Default is
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_12_1" type="integer" groupName="configuration"
-                 min="-60" max="60">
+      <parameter name="config_12_1" type="integer" groupName="configuration">
         <label>12: External Sensor Calibration</label>
         <description><![CDATA[
 External Sensor Calibration<br /> <h1>Overview</h1><p>-6.0°C to 6.0°C. Default is 0 (0.0°C)</p>
@@ -276,8 +267,7 @@ Temperature Display<br /> <h1>Overview</h1><p>Selects which temperature is shown
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_14_1" type="integer" groupName="configuration"
-                 min="0" max="100">
+      <parameter name="config_14_1" type="integer" groupName="configuration">
         <label>14: Button brighness dimmed state</label>
         <description><![CDATA[
 Button brighness dimmed state<br /> <h1>Overview</h1><p>Configure the brightness of the buttons in dimmed state.</p> <p>0 to 100% (Default 50%)</p>
@@ -286,8 +276,7 @@ Button brighness dimmed state<br /> <h1>Overview</h1><p>Configure the brightness
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_15_1" type="integer" groupName="configuration"
-                 min="0" max="100">
+      <parameter name="config_15_1" type="integer" groupName="configuration">
         <label>15: Button brighness active state</label>
         <description><![CDATA[
 Button brighness active state<br /> <h1>Overview</h1><p>Configure the brightness of the buttons in active state.</p> <p>0 to 100% (Default 100%)</p>
@@ -296,8 +285,7 @@ Button brighness active state<br /> <h1>Overview</h1><p>Configure the brightness
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_16_1" type="integer" groupName="configuration"
-                 min="0" max="100">
+      <parameter name="config_16_1" type="integer" groupName="configuration">
         <label>16: Display brighness dimmed state</label>
         <description><![CDATA[
 Display brighness dimmed state<br /> <h1>Overview</h1><p>Configure the brightness of the display in dimmed state.</p> <p>0 to 100% (Default 100%)</p>  
@@ -306,8 +294,7 @@ Display brighness dimmed state<br /> <h1>Overview</h1><p>Configure the brightnes
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_17_1" type="integer" groupName="configuration"
-                 min="0" max="100">
+      <parameter name="config_17_1" type="integer" groupName="configuration">
         <label>17: Display brighness active state</label>
         <description><![CDATA[
 Display brighness active state<br /> <h1>Overview</h1><p>Configure the brightness of the display, in active state.</p> <p>0 to 100% (Default 100%)</p>  
@@ -316,8 +303,7 @@ Display brighness active state<br /> <h1>Overview</h1><p>Configure the brightnes
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_18_2" type="integer" groupName="configuration"
-                 min="30" max="32767">
+      <parameter name="config_18_2" type="integer" groupName="configuration">
         <label>18: Temperature report interval</label>
         <description><![CDATA[
 Temperature report interval<br /> <h1>Overview</h1><p>Time interval between consecutive temperature reports.</p> <p>Temperature reports can also be sent as a result of polling.</p> <p>30 seconds to 32767 seconds. Default is 60 seconds</p>  
@@ -326,8 +312,7 @@ Temperature report interval<br /> <h1>Overview</h1><p>Time interval between cons
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_19_1" type="integer" groupName="configuration"
-                 min="1" max="100">
+      <parameter name="config_19_1" type="integer" groupName="configuration">
         <label>19: Temperature report hysteresis</label>
         <description><![CDATA[
 Temperature report hysteresis<br /> <h1>Overview</h1><p>The temperature report will be sent if there is a difference in temperature value from the previous value reported, defined in this parameter (hysteresis). Temperature reports can also be sent as a result of polling.</p> <p>0.1°C to 10.0°C. Default is 10 (1.0°C)</p>  
@@ -336,8 +321,7 @@ Temperature report hysteresis<br /> <h1>Overview</h1><p>The temperature report w
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_20_2" type="integer" groupName="configuration"
-                 min="30" max="32767">
+      <parameter name="config_20_2" type="integer" groupName="configuration">
         <label>20: Meter report interval</label>
         <description><![CDATA[
 Meter report interval<br /> <h1>Overview</h1><p>Time interval between consecutive meter reports.</p> <p>Meter reports can also be sent as a result of polling.</p> <p>30 seconds to 32767 seconds. Default is 90 seconds</p>  

@@ -64,8 +64,7 @@ Motion, light, and temperature sensor<br /> <h1>Overview</h1><p>Aeotec TriSensor
       </parameter-group>
 
       <!-- PARAMETER DEFINITIONS -->
-      <parameter name="config_1_2" type="integer" groupName="configuration"
-                 min="0" max="32767">
+      <parameter name="config_1_2" type="integer" groupName="configuration">
         <label>1: Motion Retrigger Time</label>
         <description><![CDATA[
 Delay before the motion event can be re-triggered<br /> <h1>Overview</h1><p>This parameter is configured the delay time before PIR sensor can be triggered again to reset motion timeout counter.</p>
@@ -73,8 +72,7 @@ Delay before the motion event can be re-triggered<br /> <h1>Overview</h1><p>This
         <default>30</default>
       </parameter>
 
-      <parameter name="config_2_2" type="integer" groupName="configuration"
-                 min="0" max="32767">
+      <parameter name="config_2_2" type="integer" groupName="configuration">
         <label>2: Motion Clear Time</label>
         <description><![CDATA[
 Time until the motion event is cleared<br /> <h1>Overview</h1><p>This parameter is configured the time to clear motion event after a motion event detected. Time to motion clear, the device will send a clear event report to controller and send BASIC_SET= 0x00 to nodes associated in group 2.</p>
@@ -83,8 +81,7 @@ Time until the motion event is cleared<br /> <h1>Overview</h1><p>This parameter 
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_3_1" type="integer" groupName="configuration"
-                 min="0" max="11">
+      <parameter name="config_3_1" type="integer" groupName="configuration">
         <label>3: Motion Sensitivity</label>
         <description><![CDATA[
 Motion sensor sensitivity on a scale from 1-11<br /> <h1>Overview</h1><p>This parameter is configured the sensitivity that motion detect.</p>
@@ -133,8 +130,7 @@ Send BASIC_SET when events are triggered<br /> <h1>Overview</h1><p>This paramete
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_7_2" type="integer" groupName="configuration"
-                 min="-400" max="1185">
+      <parameter name="config_7_2" type="integer" groupName="configuration">
         <label>7: Temperature Alarm Value</label>
         <description><![CDATA[
 Alert nodes when temperature is above this value<br /> <h1>Overview</h1><p>This parameter is configured the threshold value that alarm level for temperature. When the current ambient temperature value is larger than this configuration value, device will send a BASIC_SET = 0xFF to nodes associated in group 3. If current temperature value is less than this value, device will send a BASIC_SET = 0x00 to nodes associated in group 3.</p>
@@ -239,8 +235,7 @@ Whether to blink the LED when motion is detected<br /> <h1>Overview</h1><p>This 
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_21_2" type="integer" groupName="configuration"
-                 min="0" max="250">
+      <parameter name="config_21_2" type="integer" groupName="configuration">
         <label>21: Temperature Threshold Value to Report</label>
         <description><![CDATA[
 Minimum temperature change to report<br /> <h1>Overview</h1><p>Change threshold value for change in temperature to induce an automatic report for temperature sensor. Setting of value 20 can be a change of -2.0 or +2.0 (C or F depending on Parameter No.20) to induce automatic report or setting a value of 2 will be a change of 0.2(C or F).</p>
@@ -249,8 +244,7 @@ Minimum temperature change to report<br /> <h1>Overview</h1><p>Change threshold 
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_22_2" type="integer" groupName="configuration"
-                 min="0" max="10000">
+      <parameter name="config_22_2" type="integer" groupName="configuration">
         <label>22: Light intensity Threshold Value to Report</label>
         <description><![CDATA[
 Minimum light intensity change to report<br /> <h1>Overview</h1><p>Change threshold value for change in light sensor to induce an automatic report for temperature sensor.</p>
@@ -259,8 +253,7 @@ Minimum light intensity change to report<br /> <h1>Overview</h1><p>Change thresh
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_23_2" type="integer" groupName="configuration"
-                 min="0" max="32767">
+      <parameter name="config_23_2" type="integer" groupName="configuration">
         <label>23: Temperature Sensor Report Interval</label>
         <description><![CDATA[
 Interval for timed temperature reports<br /> <h1>Overview</h1><p>This parameter is configured the time interval for temperature sensor report. This value is larger, the battery life is longer. And the temperature value changed is not obvious.</p>
@@ -269,8 +262,7 @@ Interval for timed temperature reports<br /> <h1>Overview</h1><p>This parameter 
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_24_2" type="integer" groupName="configuration"
-                 min="0" max="32767">
+      <parameter name="config_24_2" type="integer" groupName="configuration">
         <label>24: Light Sensor Report Interval</label>
         <description><![CDATA[
 Interval for timed light level reports<br /> <h1>Overview</h1><p>This parameter is configured the time interval for light sensor report. This value is larger, the battery life is longer. And the light intensity changed is not obvious.</p>
@@ -279,8 +271,7 @@ Interval for timed light level reports<br /> <h1>Overview</h1><p>This parameter 
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_30_2" type="integer" groupName="configuration"
-                 min="-200" max="200">
+      <parameter name="config_30_2" type="integer" groupName="configuration">
         <label>30: Temperature Offset Value</label>
         <description><![CDATA[
 Adjustment for temperature measurements<br /> <h1>Overview</h1><p>The current measuring temperature value can be add and minus a value by this setting.</p>
@@ -289,8 +280,7 @@ Adjustment for temperature measurements<br /> <h1>Overview</h1><p>The current me
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_31_2" type="integer" groupName="configuration"
-                 min="-1000" max="1000">
+      <parameter name="config_31_2" type="integer" groupName="configuration">
         <label>31: Light Intensity Offset Value</label>
         <description><![CDATA[
 Adjustment for light intensity measurements<br /> <h1>Overview</h1><p>The current measuring light intensity value can be add and minus a value by this setting.</p>
@@ -299,8 +289,7 @@ Adjustment for light intensity measurements<br /> <h1>Overview</h1><p>The curren
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_100_2" type="integer" groupName="configuration"
-                 min="1" max="32767">
+      <parameter name="config_100_2" type="integer" groupName="configuration">
         <label>100: Light Sensor Calibrated Coefficient</label>
         <description><![CDATA[
 Calibration coefficient for light measurements<br /> <h1>Overview</h1><p>This configuration defines the calibrated scale for ambient light intensity. Because the method and position that the sensor mounted and the cover of sensor will bring measurement error, user can get more real light intensity by this parameter setting. User should run the steps as blows for calibrating:</p> <ol><li>Set this parameter value to default (Assumes the sensor has been added in a Z- Wave Network).</li> <li>Place a digital luxmeter close to sensor and keep the same direction, monitor the light intensity value (Vm) which report to controller and record it. The same time user should record the value (Vs) of luxmeter.</li> <li>The scale calibration formula: k = Vm / Vs.</li> <li>The value of k is then multiplied by 1024 and rounded to the nearest whole number.</li> <li>Set the value getting in 5) to this parameter, calibrate finished.</li> </ol><p>For example, Vm = 300, Vs = 2600, then k = 2600 / 300 = 8.6667,<br />k = 8.6667 * 1024 = 8874.7 ≈ 8875. In this case, the parameter should be set to 8875.</p>

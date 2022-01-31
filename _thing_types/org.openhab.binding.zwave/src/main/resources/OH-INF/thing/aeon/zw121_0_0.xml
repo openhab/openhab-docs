@@ -104,8 +104,7 @@ Reboot/save/exit Colorful mode.<br /> <h1>Overview</h1><p>Reboot/save/exit Color
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_37_4_0000001F" type="integer" groupName="configuration"
-                 min="0" max="30">
+      <parameter name="config_37_4_0000001F" type="integer" groupName="configuration">
         <label>37: Color Change Speed Level</label>
         <description><![CDATA[
 Applies only when the Color Transition Style is set to Fade Out/In<br /> <h1>Overview</h1><p>Value 0 means constant speed. Value 1-30 sets the speed to accelerate/decelerate. </p>
@@ -130,8 +129,7 @@ Applies only when the Color Transition Style is set to Fade Out/In<br /> <h1>Ove
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_37_4_0000FF00" type="integer" groupName="configuration"
-                 min="0" max="254">
+      <parameter name="config_37_4_0000FF00" type="integer" groupName="configuration">
         <label>37: Cycle Count</label>
         <description><![CDATA[
 Defines the number of repetitions of the color transition cycle<br /> <h1>Overview</h1><p>When the end is reached the strip turns off.</p>
@@ -140,8 +138,7 @@ Defines the number of repetitions of the color transition cycle<br /> <h1>Overvi
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_37_4_00FF0000" type="integer" groupName="configuration"
-                 min="1" max="99">
+      <parameter name="config_37_4_00FF0000" type="integer" groupName="configuration">
         <label>37: Brightness</label>
         <description><![CDATA[
 Brightness when in color transition mode<br /> <h1>Overview</h1><p>Note that this setting only affects the brightness when in color transition mode. Use the "Brightness" channel to set the brightness outside of color transition mode.</p>
@@ -191,8 +188,7 @@ Defines how the strip transitions between colors<br /> <h1>Overview</h1><p>Note 
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_38_4" type="integer" groupName="configuration"
-                 min="-2147483646" max="2147483647">
+      <parameter name="config_38_4" type="integer" groupName="configuration">
         <label>38: Change speed</label>
         <description><![CDATA[
 Change speed<br /> <h1>Overview</h1><p>Change speed:</p> <p>Value 1: The speed from OFF to ON.</p> <p>Value 2: The speed from ON to OFF.</p> <p>Value 3: Pause time of ON.</p> <p>Value 4: Pause time of OFF.  </p>
@@ -201,32 +197,28 @@ Change speed<br /> <h1>Overview</h1><p>Change speed:</p> <p>Value 1: The speed f
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_39_4_000000FF" type="integer" groupName="configuration"
-                 min="0" max="5">
+      <parameter name="config_39_4_000000FF" type="integer" groupName="configuration">
         <label>39: Multi Color, Single Color or Random Mode - Byte 4</label>
         <description>todo</description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_39_4_0000FF00" type="integer" groupName="configuration"
-                 min="0" max="5">
+      <parameter name="config_39_4_0000FF00" type="integer" groupName="configuration">
         <label>39: Multi Color, Single Color, or Random Mode - Byte 3</label>
         <description>todo</description>
         <default>3</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_39_4_00FF0000" type="integer" groupName="configuration"
-                 min="-2147483646" max="2147483647">
+      <parameter name="config_39_4_00FF0000" type="integer" groupName="configuration">
         <label>39: Multi Color, Single Color, or Random Mode - Byte 2</label>
         <description>todo</description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_39_4_7F000000" type="integer" groupName="configuration"
-                 min="0" max="5">
+      <parameter name="config_39_4_7F000000" type="integer" groupName="configuration">
         <label>39: Multi Color, Single Color, or Random Mode - Byte 1</label>
         <description>todo</description>
         <default>3</default>

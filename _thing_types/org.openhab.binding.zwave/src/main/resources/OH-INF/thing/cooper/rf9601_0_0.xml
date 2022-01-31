@@ -60,22 +60,19 @@ Z-Wave Plus wireless switch<br /> <h1>Overview</h1><p>The Z-Wave Plus wireless s
       </parameter-group>
 
       <!-- PARAMETER DEFINITIONS -->
-      <parameter name="config_1_1" type="integer" groupName="configuration"
-                 min="0" max="127">
+      <parameter name="config_1_1" type="integer" groupName="configuration">
         <label>1: Delayed OFF Time</label>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_2_1" type="integer" groupName="configuration"
-                 min="0" max="127">
+      <parameter name="config_2_1" type="integer" groupName="configuration">
         <label>2: Panic ON Time</label>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_3_1" type="integer" groupName="configuration"
-                 min="0" max="127">
+      <parameter name="config_3_1" type="integer" groupName="configuration">
         <label>3: Panic OFF Time</label>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
@@ -102,15 +99,13 @@ Z-Wave Plus wireless switch<br /> <h1>Overview</h1><p>The Z-Wave Plus wireless s
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_13_1" type="integer" groupName="configuration"
-                 min="0" max="4">
+      <parameter name="config_13_1" type="integer" groupName="configuration">
         <label>13: Blue LED brightness level when switch is ON</label>
         <default>4</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_14_1" type="integer" groupName="configuration"
-                 min="0" max="4">
+      <parameter name="config_14_1" type="integer" groupName="configuration">
         <label>14: Blue LED brightness level when switch is OFF</label>
         <default>1</default>
         <limitToOptions>false</limitToOptions>

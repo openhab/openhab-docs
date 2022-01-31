@@ -101,23 +101,20 @@ Checking the device status before sending a control frame from the key no. 2.<br
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_8_1" type="integer" groupName="configuration"
-                 min="1" max="99">
+      <parameter name="config_8_1" type="integer" groupName="configuration">
         <label>8: Dimming step at automatic control</label>
         <default>1</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_9_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_9_1" type="integer" groupName="configuration">
         <label>9: Time of MANUALLY moving between dimming values</label>
         <description>Options for changing parameter 1-255 (10ms - 2,5s)</description>
         <default>5</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_10_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_10_1" type="integer" groupName="configuration">
         <label>10: Time of AUTOMATIC moving between dimming values</label>
         <description><![CDATA[
 Time of Automatic moving the Dimmer between the extreme dimming values<br /> <h1>Overview</h1><p>Options for changing parameter 0-255 (0ms – 2.5s)</p> <p>0 - this value disables the smooth change in light intensity</p> <p>NOTE value 0 is required for inductive and capacitive devices unsuitable for dimming, (e.g. fluorescent lamps , motors etc.)</p>
@@ -125,24 +122,21 @@ Time of Automatic moving the Dimmer between the extreme dimming values<br /> <h1
         <default>1</default>
       </parameter>
 
-      <parameter name="config_11_1" type="integer" groupName="configuration"
-                 min="1" max="99">
+      <parameter name="config_11_1" type="integer" groupName="configuration">
         <label>11: Dimming step at manual control</label>
         <description>Options for changing parameter 1-99</description>
         <default>1</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_12_1" type="integer" groupName="configuration"
-                 min="2" max="99">
+      <parameter name="config_12_1" type="integer" groupName="configuration">
         <label>12: Maximum dimmer level control</label>
         <description>Options for changing parameter 2-99</description>
         <default>99</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_13_1" type="integer" groupName="configuration"
-                 min="1" max="98">
+      <parameter name="config_13_1" type="integer" groupName="configuration">
         <label>13: Minimum dimmer level control</label>
         <description>Options for changing parameter 1-98</description>
         <default>2</default>
@@ -220,8 +214,7 @@ Assigns bistable key status to the device status.<br /> <h1>Overview</h1><p>Info
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_20_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_20_1" type="integer" groupName="configuration">
         <label>20: Minimum level of the Dimmer</label>
         <description><![CDATA[
 Enable decreasing the minimum level of the Dimmer<br /> <h1>Overview</h1><p>This function will enable decreasing the minimum level of the Dimmer by extending the control impulse. [100 - 170]      </p> <p>By changing the minimem level, the user may completely dim LED bulbs.</p> <p>Not all LED bulbs available on the market have the dimmm</p>
@@ -244,16 +237,14 @@ Resonse to alarm of any type<br /> <h1>Overview</h1><p>Alarm of any type (genera
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_39_2" type="integer" groupName="configuration"
-                 min="-32767" max="32768">
+      <parameter name="config_39_2" type="integer" groupName="configuration">
         <label>39: ALARM FLASHING alarm time</label>
         <description>Amount of time (ms) the device keeps on flashing after receipt of Alarm Frame</description>
         <default>600</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_40_1" type="integer" groupName="configuration"
-                 min="1" max="99">
+      <parameter name="config_40_1" type="integer" groupName="configuration">
         <label>40: Updating the dimming level without switch.</label>
         <description><![CDATA[
 Available settings: from 1 to 99.<br /> <h1>Overview</h1><p>Parameter’s value changes depending on the dimming level.  </p>

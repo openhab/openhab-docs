@@ -58,8 +58,7 @@ Smart Door Sensor<br /> <h1>Overview</h1><h4>Description</h4> <p>Whether you’r
       </parameter-group>
 
       <!-- PARAMETER DEFINITIONS -->
-      <parameter name="config_20_1" type="integer" groupName="configuration"
-                 min="1" max="3">
+      <parameter name="config_20_1" type="integer" groupName="configuration">
         <label>20: Report Method</label>
         <description><![CDATA[
 Change Open/Close Report Method<br /> <h1>Overview</h1><ol><li>Notification (Default)</li> <li>Basic Set</li> <li>Basic Report</li> </ol>

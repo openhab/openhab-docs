@@ -79,8 +79,7 @@
       </parameter-group>
 
       <!-- PARAMETER DEFINITIONS -->
-      <parameter name="config_1_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_1_1" type="integer" groupName="configuration">
         <label>1: Group 1 Level</label>
         <description><![CDATA[
 Group 1 Level<br /> <h1>Overview</h1><p>Value 0x00-0x63 or 0xFF is the level for all nodes listed in the Group 1</p>
@@ -89,8 +88,7 @@ Group 1 Level<br /> <h1>Overview</h1><p>Value 0x00-0x63 or 0xFF is the level for
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_2_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_2_1" type="integer" groupName="configuration">
         <label>2: Group 2 Level</label>
         <description><![CDATA[
 Group 2 Level<br /> <h1>Overview</h1><p>Value 0x00-0x63 or 0xFF is the level for all nodes listed in the Group 2</p>
@@ -99,8 +97,7 @@ Group 2 Level<br /> <h1>Overview</h1><p>Value 0x00-0x63 or 0xFF is the level for
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_3_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_3_1" type="integer" groupName="configuration">
         <label>3: Group 3 Level</label>
         <description><![CDATA[
 Group 3 Level<br /> <h1>Overview</h1><p>Value 0x00-0x63 or 0xFF is the level for all nodes listed in the Group 3</p>
@@ -109,8 +106,7 @@ Group 3 Level<br /> <h1>Overview</h1><p>Value 0x00-0x63 or 0xFF is the level for
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_4_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_4_1" type="integer" groupName="configuration">
         <label>4: Group 4 Level</label>
         <description><![CDATA[
 Group 4 Level<br /> <h1>Overview</h1><p>Value 0x00-0x63 or 0xFF is the level for all nodes listed in the Group 4</p>
@@ -119,8 +115,7 @@ Group 4 Level<br /> <h1>Overview</h1><p>Value 0x00-0x63 or 0xFF is the level for
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_5_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_5_1" type="integer" groupName="configuration">
         <label>5: Group 5 Level</label>
         <description><![CDATA[
 Group 5 Level<br /> <h1>Overview</h1><p>Value 0x00-0x63 or 0xFF is the level for all nodes listed in the Group 5</p>

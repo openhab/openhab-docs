@@ -82,8 +82,7 @@ To send notifications to (Group 1) when state change.0 = Nothing.1= Basic CC.<br
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_81_2" type="integer" groupName="configuration" readOnly="true"
-                 min="2700" max="4999">
+      <parameter name="config_81_2" type="integer" groupName="configuration" readOnly="true">
         <label>81: Adjust color temperature in warm white color comp</label>
         <description><![CDATA[
 available value: 0x0A8C-1387Warm White(0x0A8C(2700k) ~ 0x1387 (4999k))<br /> <h1>Overview</h1><p>Adjusting the color temperature in warm white color component. available value: 0x0A8C-1387Warm White(0x0A8C(2700k) ~ 0x1387 (4999k))</p>
@@ -94,8 +93,7 @@ available value: 0x0A8C-1387Warm White(0x0A8C(2700k) ~ 0x1387 (4999k))<br /> <h1
         </options>
       </parameter>
 
-      <parameter name="config_82_2" type="integer" groupName="configuration" readOnly="true"
-                 min="5000" max="6500">
+      <parameter name="config_82_2" type="integer" groupName="configuration" readOnly="true">
         <label>82: Color temperature in cold white color comp</label>
         <description><![CDATA[
 Available value:0x1388-0x1964Cold White (0x1388 (5000k) ~ 0x1964 (6500k))<br /> <h1>Overview</h1><p>Adjusting the color temperature in cold white color component. available value:0x1388-0x1964 Cold White (0x1388 (5000k) ~ 0x1964 (6500k))</p>

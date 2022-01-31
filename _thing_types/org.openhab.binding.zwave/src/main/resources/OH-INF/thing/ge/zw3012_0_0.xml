@@ -54,8 +54,7 @@ In-Wall No Neutral Smart Dimmer<br /> <h1>Overview</h1><p>In-Wall No Neutral Sma
       </parameter-group>
 
       <!-- PARAMETER DEFINITIONS -->
-      <parameter name="config_3_1" type="integer" groupName="configuration"
-                 min="0" max="3">
+      <parameter name="config_3_1" type="integer" groupName="configuration">
         <label>3: LED Configuration</label>
         <description><![CDATA[
 Set LED to desired status setting<br /> <h1>Overview</h1><p>Set LED to desired status setting</p>
@@ -69,8 +68,7 @@ Set LED to desired status setting<br /> <h1>Overview</h1><p>Set LED to desired s
         </options>
       </parameter>
 
-      <parameter name="config_4_1" type="integer" groupName="configuration"
-                 min="0" max="1">
+      <parameter name="config_4_1" type="integer" groupName="configuration">
         <label>4: Invert Switch</label>
         <description><![CDATA[
 Reverse the default On/Off setting<br /> <h1>Overview</h1><p><br /></p>
@@ -82,8 +80,7 @@ Reverse the default On/Off setting<br /> <h1>Overview</h1><p><br /></p>
         </options>
       </parameter>
 
-      <parameter name="config_6_1" type="integer" groupName="configuration"
-                 min="0" max="1">
+      <parameter name="config_6_1" type="integer" groupName="configuration">
         <label>6: Dim Rate</label>
         <description><![CDATA[
 Slows down the rate at which the device ramps up and down<br /> <h1>Overview</h1><p><br /></p>
@@ -95,8 +92,7 @@ Slows down the rate at which the device ramps up and down<br /> <h1>Overview</h1
         </options>
       </parameter>
 
-      <parameter name="config_16_1" type="integer" groupName="configuration"
-                 min="0" max="1">
+      <parameter name="config_16_1" type="integer" groupName="configuration">
         <label>16: Switch Mode</label>
         <description><![CDATA[
 Mimics operation of a standard switch. No ramping up or down in operation<br /> <h1>Overview</h1><p><br /></p>
@@ -108,8 +104,7 @@ Mimics operation of a standard switch. No ramping up or down in operation<br /> 
         </options>
       </parameter>
 
-      <parameter name="config_19_1" type="integer" groupName="configuration"
-                 min="0" max="1">
+      <parameter name="config_19_1" type="integer" groupName="configuration">
         <label>19: Alternate Exclusion</label>
         <description><![CDATA[
 When programmed, the default exclusion process will not exclude device from network. Prevents accidental removal of device from network<br /> <h1>Overview</h1><p><br /></p>
@@ -121,32 +116,28 @@ When programmed, the default exclusion process will not exclude device from netw
         </options>
       </parameter>
 
-      <parameter name="config_30_1" type="integer" groupName="configuration"
-                 min="1" max="99">
+      <parameter name="config_30_1" type="integer" groupName="configuration">
         <label>30: Minimum Dim Threshold</label>
         <description>User can custom set a Minimum dim level other than 1%. To be used when performance in lower range is not suitable in normal operation</description>
         <default>1</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_31_1" type="integer" groupName="configuration"
-                 min="1" max="99">
+      <parameter name="config_31_1" type="integer" groupName="configuration">
         <label>31: Maximum Dim Threshold</label>
         <description>User can custom set a Maximum dim level other than 99%. To be used when performance in upper range is not suitable in normal operation</description>
         <default>99</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_32_1" type="integer" groupName="configuration"
-                 min="1" max="99">
+      <parameter name="config_32_1" type="integer" groupName="configuration">
         <label>32: Brightness Level</label>
         <description>Dimmer will turn ON to this level</description>
         <default>99</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_84_1" type="integer" groupName="configuration"
-                 min="0" max="1">
+      <parameter name="config_84_1" type="integer" groupName="configuration">
         <label>84: Reset to Factory Default</label>
         <description><![CDATA[
 Reset to Factory Default<br /> <h1>Overview</h1><p><br /></p>

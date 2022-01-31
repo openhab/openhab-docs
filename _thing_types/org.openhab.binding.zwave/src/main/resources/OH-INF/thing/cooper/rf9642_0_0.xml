@@ -66,22 +66,19 @@ Z-Wave Plus smart accessory dimmer<br /> <h1>Overview</h1><p>Z-Wave Plus accesso
       </parameter-group>
 
       <!-- PARAMETER DEFINITIONS -->
-      <parameter name="config_1_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_1_1" type="integer" groupName="configuration">
         <label>1: Delayed OFF Time</label>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_2_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_2_1" type="integer" groupName="configuration">
         <label>2: Panic On Time</label>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_3_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_3_1" type="integer" groupName="configuration">
         <label>3: Panic Off</label>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
@@ -108,36 +105,31 @@ Z-Wave Plus smart accessory dimmer<br /> <h1>Overview</h1><p>Z-Wave Plus accesso
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_7_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_7_1" type="integer" groupName="configuration">
         <label>7: Dimmer Ramp Time</label>
         <default>3</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_13_1" type="integer" groupName="configuration"
-                 min="0" max="4">
+      <parameter name="config_13_1" type="integer" groupName="configuration">
         <label>13: Blue LED Brightness Level while dimmer is ON</label>
         <default>4</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_14_1" type="integer" groupName="configuration"
-                 min="0" max="4">
+      <parameter name="config_14_1" type="integer" groupName="configuration">
         <label>14: Blue LED Brightness Level while dimmer is OFF</label>
         <default>2</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_15_1" type="integer" groupName="configuration"
-                 min="0" max="4">
+      <parameter name="config_15_1" type="integer" groupName="configuration">
         <label>15: Amber LED Brightness Level while dimmer is ON</label>
         <default>3</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_16_1" type="integer" groupName="configuration"
-                 min="0" max="4">
+      <parameter name="config_16_1" type="integer" groupName="configuration">
         <label>16: Amber LED Brightness Level while dimmer is OFF</label>
         <default>0</default>
         <limitToOptions>false</limitToOptions>

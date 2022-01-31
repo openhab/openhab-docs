@@ -70,8 +70,7 @@ Dome Z-Wave Plus Motion Detector with Light Sensor and Flexible Magnetic Mount<b
       </parameter-group>
 
       <!-- PARAMETER DEFINITIONS -->
-      <parameter name="config_1_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_1_1" type="integer" groupName="configuration">
         <label>1: Motion Sensitivity</label>
         <description><![CDATA[
 8 = high; 255 = low<br /> <h1>Overview</h1><p>Adjust detection by choosing a value from 8 to 255, where 8 stands for high sensitivity level (detection of the smallest movement) and 255 stands for very low sensitivity level</p>
@@ -80,8 +79,7 @@ Dome Z-Wave Plus Motion Detector with Light Sensor and Flexible Magnetic Mount<b
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_2_2" type="integer" groupName="configuration"
-                 min="5" max="600">
+      <parameter name="config_2_2" type="integer" groupName="configuration">
         <label>2: Trigger ON Duration</label>
         <description><![CDATA[
 delay after motion before turning OFF<br /> <h1>Overview</h1><p>Set the duration (in seconds) you want the associated device to stay ON for after being triggered by the sensor before it automatically turns OFF. Must be greater than value set in parameter 6.</p>
@@ -90,8 +88,7 @@ delay after motion before turning OFF<br /> <h1>Overview</h1><p>Set the duration
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_3_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_3_1" type="integer" groupName="configuration">
         <label>3: Trigger Action</label>
         <description><![CDATA[
 Brightness to turn on the associated device 1-99, 255=ON<br /> <h1>Overview</h1><p>You can choose if your Mini Sensor turns an associated device on or off when sending the BASIC SET command. Use value 0 to turn the associated device OFF and value 255 to turn it ON. Adjust brightness level for a Z-Wave dimmer (Multilevel switch) by putting in any value between 1 and 99. </p>
@@ -100,16 +97,14 @@ Brightness to turn on the associated device 1-99, 255=ON<br /> <h1>Overview</h1>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_4_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_4_1" type="integer" groupName="configuration">
         <label>4: Motion Detection</label>
         <description>255=Motion Detection Enabled</description>
         <default>-1</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_5_2" type="integer" groupName="configuration"
-                 min="0" max="1000">
+      <parameter name="config_5_2" type="integer" groupName="configuration">
         <label>5: Light Trigger Level</label>
         <description><![CDATA[
 Max Light level which enables motion trigger<br /> <h1>Overview</h1><p>Set your light sensor as a secondary trigger for associated devices. If light level in a room falls beyond the set point and motion is detected, the Mini Sensor will send BASIC_SET command to associated devices to turn ON. The number entered as the value corresponds to the number of LUX. By default, if motion has been detected by your Mini Sensor, the associated device will turn ON if light level last reported by the sensor is under 100 LUX. </p>
@@ -118,8 +113,7 @@ Max Light level which enables motion trigger<br /> <h1>Overview</h1><p>Set your 
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_6_1" type="integer" groupName="configuration"
-                 min="1" max="8">
+      <parameter name="config_6_1" type="integer" groupName="configuration">
         <label>6: Motion Trigger Interval</label>
         <description><![CDATA[
 Minimum time between motion triggers.<br /> <h1>Overview</h1><p>Adjust the time (in seconds) when motion is reported again after initial trigger. By default, with continued motion, the Mini Sensor will report motion again 8 seconds after it's last detection. The value set for this parameter can NOT be greater than value set in parameter 2. NOTE: Small interval will increase activity and decrease battery life.</p>
@@ -128,8 +122,7 @@ Minimum time between motion triggers.<br /> <h1>Overview</h1><p>Adjust the time 
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_7_2" type="integer" groupName="configuration"
-                 min="-32767" max="32768">
+      <parameter name="config_7_2" type="integer" groupName="configuration">
         <label>7: Light Polling Interval</label>
         <description><![CDATA[
 Interval between light level reporting<br /> <h1>Overview</h1><p>Decide how often (in seconds) you want the Mini Sensor to report light level to the controller and associated devices. By default, the Mini Sensor will report light level values every 3 minutes. The value set for this parameter can NOT be greater than the wake-up interval. NOTE: Small interval will increase activity and decrease battery life.</p>
@@ -138,8 +131,7 @@ Interval between light level reporting<br /> <h1>Overview</h1><p>Decide how ofte
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_8_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_8_1" type="integer" groupName="configuration">
         <label>8: Light Trigger</label>
         <description><![CDATA[
 255=enable Light sensor<br /> <h1>Overview</h1><p>Use this parameter to enable and disable the light sensor as secondary trigger. If this feature is enabled, the Mini Sensor will activate associated devices based on motion AND light level set in parameter 5</p>
@@ -148,8 +140,7 @@ Interval between light level reporting<br /> <h1>Overview</h1><p>Decide how ofte
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_9_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_9_1" type="integer" groupName="configuration">
         <label>9: Light Report</label>
         <description><![CDATA[
 Light level change to be reported.<br /> <h1>Overview</h1><p>Choose light level (in LUX) change to be reported by the Mini Sensor to the controller. By default, the sensor will report any change of 100 LUX or more.</p>
@@ -158,8 +149,7 @@ Light level change to be reported.<br /> <h1>Overview</h1><p>Choose light level 
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_10_1" type="integer" groupName="configuration"
-                 min="0" max="1">
+      <parameter name="config_10_1" type="integer" groupName="configuration">
         <label>10: LED Notifications</label>
         <description><![CDATA[
 0=disable, 1=enable<br /> <h1>Overview</h1><p>Use this parameter to turn LED notifications on or off for motion detection.</p>

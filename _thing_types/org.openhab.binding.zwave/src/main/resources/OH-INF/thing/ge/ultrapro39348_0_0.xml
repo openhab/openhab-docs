@@ -53,8 +53,7 @@ UltraPro 39348/ZW4008 In Wall Switch<br /> <h1>Overview</h1><p>UltraPro Z-Wave P
       </parameter-group>
 
       <!-- PARAMETER DEFINITIONS -->
-      <parameter name="config_3_1" type="integer" groupName="configuration"
-                 min="0" max="3">
+      <parameter name="config_3_1" type="integer" groupName="configuration">
         <label>3: Blue LED Night Light</label>
         <description><![CDATA[
 Blue LED Night Light<br /> <h1>Overview</h1><p>This configuration parameter defines the behavior of the blue LED "night light". The default behavior is "ON_WHEN_OFF" - the LED is on when the switch is set to off. The other two options are "ON_WHEN_ON" - the LED is on when the switch is set to on, and "ALWAYS_OFF" - the LED is always off.<br /></p>

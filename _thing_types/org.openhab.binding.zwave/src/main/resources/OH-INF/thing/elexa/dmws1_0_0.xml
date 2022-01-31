@@ -64,8 +64,7 @@ Dome Leak Sensor<br /> <h1>Overview</h1><p>The Dome Leak Sensor is a battery pow
       </parameter-group>
 
       <!-- PARAMETER DEFINITIONS -->
-      <parameter name="config_1_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_1_1" type="integer" groupName="configuration">
         <label>1: Total Alarm Duration</label>
         <description><![CDATA[
 Total time the Leak Sensor will beep and light its LED in the event of a leak<br /> <h1>Overview</h1><p>0: Leak Sensor beeps until water is removed</p> <p>1-255: 1-255 minutes</p>
@@ -74,24 +73,21 @@ Total time the Leak Sensor will beep and light its LED in the event of a leak<br
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_2_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_2_1" type="integer" groupName="configuration">
         <label>2: Mute Time</label>
         <description>Quiet time between each Reminder Alarm</description>
         <default>1</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_3_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_3_1" type="integer" groupName="configuration">
         <label>3: Initial Alarm</label>
         <description>Time the Leak Sensor beeps before it is muted</description>
         <default>60</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_4_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_4_1" type="integer" groupName="configuration">
         <label>4: Reminder Alarm</label>
         <description>Length of each beep after the Initial Alarm</description>
         <default>5</default>
@@ -120,8 +116,7 @@ Total time the Leak Sensor will beep and light its LED in the event of a leak<br
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_7_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_7_1" type="integer" groupName="configuration">
         <label>7: Basic Set Level</label>
         <description><![CDATA[
 The value sent by the BASIC_SET command to Association Group 2<br /> <h1>Overview</h1><p>Determines the value to be sent in the Basic Set command to Association Group 2 when a leak is detected</p>

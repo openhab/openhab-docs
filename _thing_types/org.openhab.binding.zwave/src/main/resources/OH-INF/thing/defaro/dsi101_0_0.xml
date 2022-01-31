@@ -58,8 +58,7 @@ DSI-101 binary switch<br /> <h1>Overview</h1><p>https://defaro.ru/index.php/supp
       </parameter-group>
 
       <!-- PARAMETER DEFINITIONS -->
-      <parameter name="config_1_1" type="integer" groupName="configuration"
-                 min="0" max="5">
+      <parameter name="config_1_1" type="integer" groupName="configuration">
         <label>1: B1 operation mode</label>
         <description><![CDATA[
 B1 operation mode<br /> <h1>Overview</h1><p>0 - Turn off for short press/Dim down for hold (monostable switch)</p> <p>1 - Turn on for short press/Dim up for hold (monostable switch)</p> <p>2 - Bistable switch</p> <p>3 - Scene activation mode</p> <p>4 - Monostable switch. Each press/hold switches on/off/sends dim up/down state for devices from AG 3 or 11 (only first device from this AG is supported!)</p> <p>5 - Bistable switch for devices from AG 3 or 11 (only first device from this AG is supported!)</p>
@@ -67,8 +66,7 @@ B1 operation mode<br /> <h1>Overview</h1><p>0 - Turn off for short press/Dim dow
         <default>0</default>
       </parameter>
 
-      <parameter name="config_2_1" type="integer" groupName="configuration"
-                 min="0" max="5">
+      <parameter name="config_2_1" type="integer" groupName="configuration">
         <label>2: B2 operation mode</label>
         <description><![CDATA[
 B2 operation mode<br /> <h1>Overview</h1><p>0 - Turn off for short press/Dim down for hold (monostable switch)</p> <p>1 - Turn on for short press/Dim up for hold (monostable switch)</p> <p>2 - Bistable switch</p> <p>3 - Scene activation mode</p> <p>4 - Monostable switch. Each press/hold switches on/off/sends dim up/down state for devices from AG 4 or 12 (only first device from this AG is supported!)</p> <p>5 - Bistable switch for devices from AG 4 or 12 (only first device from this AG is supported)</p>
@@ -76,8 +74,7 @@ B2 operation mode<br /> <h1>Overview</h1><p>0 - Turn off for short press/Dim dow
         <default>0</default>
       </parameter>
 
-      <parameter name="config_3_1" type="integer" groupName="configuration"
-                 min="0" max="5">
+      <parameter name="config_3_1" type="integer" groupName="configuration">
         <label>3: B3 operation mode</label>
         <description><![CDATA[
 B3 operation mode<br /> <h1>Overview</h1><p>0 - Turn off for short press/Dim down for hold (monostable switch)</p> <p>1 - Turn on for short press/Dim up for hold (monostable switch)</p> <p>2 - Bistable switch</p> <p>3 - Scene activation mode</p> <p>4 - Monostable switch. Each press/hold switches on/off/sends dim up/down state for devices from AG 5 or 13 (only first device from this AG is supported!)</p> <p>5 - Bistable switch for devices from AG 5 or 13 (only first device from this AG is supported)</p>
@@ -85,8 +82,7 @@ B3 operation mode<br /> <h1>Overview</h1><p>0 - Turn off for short press/Dim dow
         <default>0</default>
       </parameter>
 
-      <parameter name="config_4_1" type="integer" groupName="configuration"
-                 min="0" max="5">
+      <parameter name="config_4_1" type="integer" groupName="configuration">
         <label>4: B4 operation mode</label>
         <description><![CDATA[
 B4 operation mode<br /> <h1>Overview</h1><p>0 - Turn off for short press/Dim down for hold (monostable switch)</p> <p>1 - Turn on for short press/Dim up for hold (monostable switch)</p> <p>2 - Bistable switch</p> <p>3 - Scene activation mode</p> <p>4 - Monostable switch. Each press/hold switches on/off/sends dim up/down state for devices from AG 4 or 12 (only first device from this AG is supported!)</p> <p>5 - Bistable switch for devices from AG 4 or 12 (only first device from this AG is supported)</p>
@@ -94,8 +90,7 @@ B4 operation mode<br /> <h1>Overview</h1><p>0 - Turn off for short press/Dim dow
         <default>0</default>
       </parameter>
 
-      <parameter name="config_5_1" type="integer" groupName="configuration"
-                 min="0" max="5">
+      <parameter name="config_5_1" type="integer" groupName="configuration">
         <label>5: B5 operation mode</label>
         <description><![CDATA[
 B5 operation mode<br /> <h1>Overview</h1><p>0 - Turn off for short press/Dim down for hold (monostable switch)</p> <p>1 - Turn on for short press/Dim up for hold (monostable switch)</p> <p>2 - Bistable switch</p> <p>3 - Scene activation mode</p> <p>4 - Monostable switch. Each press/hold switches on/off/sends dim up/down state for devices from AG 7 or 15 (only first device from this AG is supported!)</p> <p>5 - Bistable switch for devices from AG 7 or 15 (only first device from this AG is supported)</p>
@@ -103,8 +98,7 @@ B5 operation mode<br /> <h1>Overview</h1><p>0 - Turn off for short press/Dim dow
         <default>0</default>
       </parameter>
 
-      <parameter name="config_6_1" type="integer" groupName="configuration"
-                 min="0" max="5">
+      <parameter name="config_6_1" type="integer" groupName="configuration">
         <label>6: B6 operation mode</label>
         <description><![CDATA[
 B6 operation mode<br /> <h1>Overview</h1><p>0 - Turn off for short press/Dim down for hold (monostable switch)</p> <p>1 - Turn on for short press/Dim up for hold (monostable switch)</p> <p>2 - Bistable switch</p> <p>3 - Scene activation mode</p> <p>4 - Monostable switch. Each press/hold switches on/off/sends dim up/down state for devices from AG 8 or 16 (only first device from this AG is supported!)</p> <p>5 - Bistable switch for devices from AG 8 or 16 (only first device from this AG is supported)</p>
@@ -112,8 +106,7 @@ B6 operation mode<br /> <h1>Overview</h1><p>0 - Turn off for short press/Dim dow
         <default>0</default>
       </parameter>
 
-      <parameter name="config_7_1" type="integer" groupName="configuration"
-                 min="0" max="5">
+      <parameter name="config_7_1" type="integer" groupName="configuration">
         <label>7: B7 operation mode</label>
         <description><![CDATA[
 B7 operation mode<br /> <h1>Overview</h1><p>0 - Turn off for short press/Dim down for hold (monostable switch)</p> <p>1 - Turn on for short press/Dim up for hold (monostable switch)</p> <p>2 - Bistable switch</p> <p>3 - Scene activation mode</p> <p>4 - Monostable switch. Each press/hold switches on/off/sends dim up/down state for devices from AG 9 or 17 (only first device from this AG is supported!)</p> <p>5 - Bistable switch for devices from AG 9 or 17 (only first device from this AG is supported)</p>
@@ -121,8 +114,7 @@ B7 operation mode<br /> <h1>Overview</h1><p>0 - Turn off for short press/Dim dow
         <default>0</default>
       </parameter>
 
-      <parameter name="config_8_1" type="integer" groupName="configuration"
-                 min="0" max="5">
+      <parameter name="config_8_1" type="integer" groupName="configuration">
         <label>8: B8 operation mode</label>
         <description><![CDATA[
 B8 operation mode<br /> <h1>Overview</h1><p>0 - Turn off for short press/Dim down for hold (monostable switch)</p> <p>1 - Turn on for short press/Dim up for hold (monostable switch)</p> <p>2 - Bistable switch</p> <p>3 - Scene activation mode</p> <p>4 - Monostable switch. Each press/hold switches on/off/sends dim up/down state for devices from AG 10 or 18 (only first device from this AG is supported!)</p> <p>5 - Bistable switch for devices from AG 10 or 18 (only first device from this AG is supported)</p>
@@ -130,8 +122,7 @@ B8 operation mode<br /> <h1>Overview</h1><p>0 - Turn off for short press/Dim dow
         <default>0</default>
       </parameter>
 
-      <parameter name="config_9_1" type="integer" groupName="configuration"
-                 min="1" max="50">
+      <parameter name="config_9_1" type="integer" groupName="configuration">
         <label>9: Long press delay</label>
         <description><![CDATA[
 Delay for long press detection<br /> <h1>Overview</h1><p>In 1/10 of sec</p>
@@ -139,8 +130,7 @@ Delay for long press detection<br /> <h1>Overview</h1><p>In 1/10 of sec</p>
         <default>5</default>
       </parameter>
 
-      <parameter name="config_10_1" type="integer" groupName="configuration"
-                 min="0" max="99">
+      <parameter name="config_10_1" type="integer" groupName="configuration">
         <label>10: B1 value for AG 11</label>
         <description><![CDATA[
 B1 value to send for AG 11<br /> <h1>Overview</h1><p>Value to send to AG 11  (0 - disable this functionality)</p>
@@ -148,8 +138,7 @@ B1 value to send for AG 11<br /> <h1>Overview</h1><p>Value to send to AG 11  (0
         <default>0</default>
       </parameter>
 
-      <parameter name="config_11_1" type="integer" groupName="configuration"
-                 min="0" max="99">
+      <parameter name="config_11_1" type="integer" groupName="configuration">
         <label>11: B2 value to send</label>
         <description><![CDATA[
 B2 value to send for AG 12<br /> <h1>Overview</h1><p>Value to send to AG 12  (0 - disable this functionality)</p>
@@ -157,8 +146,7 @@ B2 value to send for AG 12<br /> <h1>Overview</h1><p>Value to send to AG 12  (0
         <default>0</default>
       </parameter>
 
-      <parameter name="config_12_1" type="integer" groupName="configuration"
-                 min="0" max="99">
+      <parameter name="config_12_1" type="integer" groupName="configuration">
         <label>12: B3 value to send for AG 13</label>
         <description><![CDATA[
 B3 value to send for AG 13<br /> <h1>Overview</h1><p>Value to send to AG 13  (0 - disable this functionality)</p>
@@ -166,8 +154,7 @@ B3 value to send for AG 13<br /> <h1>Overview</h1><p>Value to send to AG 13  (0
         <default>0</default>
       </parameter>
 
-      <parameter name="config_13_1" type="integer" groupName="configuration"
-                 min="0" max="99">
+      <parameter name="config_13_1" type="integer" groupName="configuration">
         <label>13: B4 value to send</label>
         <description><![CDATA[
 B4 value to send for AG 14<br /> <h1>Overview</h1><p>Value to send to AG 14  (0 - disable this functionality)</p>
@@ -175,8 +162,7 @@ B4 value to send for AG 14<br /> <h1>Overview</h1><p>Value to send to AG 14  (0
         <default>0</default>
       </parameter>
 
-      <parameter name="config_14_1" type="integer" groupName="configuration"
-                 min="0" max="99">
+      <parameter name="config_14_1" type="integer" groupName="configuration">
         <label>14: B5 value to send</label>
         <description><![CDATA[
 B5 value to send for AG 15<br /> <h1>Overview</h1><p>Value to send to AG 15  (0 - disable this functionality)</p>
@@ -184,8 +170,7 @@ B5 value to send for AG 15<br /> <h1>Overview</h1><p>Value to send to AG 15  (0
         <default>0</default>
       </parameter>
 
-      <parameter name="config_15_1" type="integer" groupName="configuration"
-                 min="0" max="99">
+      <parameter name="config_15_1" type="integer" groupName="configuration">
         <label>15: B6 value to send</label>
         <description><![CDATA[
 B6 value to send for AG 16<br /> <h1>Overview</h1><p>Value to send to AG 16  (0 - disable this functionality)</p>
@@ -193,8 +178,7 @@ B6 value to send for AG 16<br /> <h1>Overview</h1><p>Value to send to AG 16  (0
         <default>0</default>
       </parameter>
 
-      <parameter name="config_16_1" type="integer" groupName="configuration"
-                 min="0" max="99">
+      <parameter name="config_16_1" type="integer" groupName="configuration">
         <label>16: B7 value to send</label>
         <description><![CDATA[
 B7 value to send for AG 17<br /> <h1>Overview</h1><p>Value to send to AG 17  (0 - disable this functionality)</p>
@@ -202,8 +186,7 @@ B7 value to send for AG 17<br /> <h1>Overview</h1><p>Value to send to AG 17  (0
         <default>0</default>
       </parameter>
 
-      <parameter name="config_17_1" type="integer" groupName="configuration"
-                 min="0" max="99">
+      <parameter name="config_17_1" type="integer" groupName="configuration">
         <label>17: B8 value to send</label>
         <description><![CDATA[
 B8 value to send for AG 18<br /> <h1>Overview</h1><p>Value to send to AG 18  (0 - disable this functionality)</p>
@@ -211,22 +194,19 @@ B8 value to send for AG 18<br /> <h1>Overview</h1><p>Value to send to AG 18  (0
         <default>0</default>
       </parameter>
 
-      <parameter name="config_20_2" type="integer" groupName="configuration"
-                 min="-60" max="1000">
+      <parameter name="config_20_2" type="integer" groupName="configuration">
         <label>20: Sensor 1 turn on value</label>
         <description>Sensor 1 turn on value for AG 19</description>
         <default>0</default>
       </parameter>
 
-      <parameter name="config_21_2" type="integer" groupName="configuration"
-                 min="-60" max="1000">
+      <parameter name="config_21_2" type="integer" groupName="configuration">
         <label>21: Sensor 1 command off value</label>
         <description>Sensor 1 command off value for AG19</description>
         <default>0</default>
       </parameter>
 
-      <parameter name="config_22_1" type="integer" groupName="configuration"
-                 min="0" max="6">
+      <parameter name="config_22_1" type="integer" groupName="configuration">
         <label>22: Sensor 1 conversion rules</label>
         <description><![CDATA[
 Sensor 1 conversion rules<br /> <h1>Overview</h1><p>All commands are sent to devices in AG 19</p> <p>0 - ignore sensor value</p> <p>1 - send ON if Value &lt;= Param20 and send OFF if Value &gt;= Param21</p> <p>2 - send OFF if Value &lt;= Param21 and send ON if Value &gt;= Param20</p> <p>3 - send ON if Value &lt;= Param20</p> <p>4 - send ON if Value &gt;= Param20</p> <p>5 - send OFF if Value &gt;= Param21</p> <p>6 - send OFF if Value &lt;= Param21</p>
@@ -234,22 +214,19 @@ Sensor 1 conversion rules<br /> <h1>Overview</h1><p>All commands are sent to dev
         <default>0</default>
       </parameter>
 
-      <parameter name="config_23_2" type="integer" groupName="configuration"
-                 min="-60" max="1000">
+      <parameter name="config_23_2" type="integer" groupName="configuration">
         <label>23: Sensor 2 command on value</label>
         <description>Sensor 2 command on value for AG 20</description>
         <default>0</default>
       </parameter>
 
-      <parameter name="config_24_2" type="integer" groupName="configuration"
-                 min="-60" max="1000">
+      <parameter name="config_24_2" type="integer" groupName="configuration">
         <label>24: Sensor 2 command off value</label>
         <description>Sensor 2 command off value for AG 20</description>
         <default>0</default>
       </parameter>
 
-      <parameter name="config_25_1" type="integer" groupName="configuration"
-                 min="0" max="6">
+      <parameter name="config_25_1" type="integer" groupName="configuration">
         <label>25: Sensor 2 conversion rules</label>
         <description><![CDATA[
 Sensor 2 conversion rules<br /> <h1>Overview</h1><p>All commands are sent to devices in AG 20</p> <p>0 - ignore sensor value</p> <p>1 - send ON if Value &lt;= Param23 and send OFF if Value &gt;= Param24</p> <p>2 - send OFF if Value &lt;= Param24 and send ON if Value &gt;= Param23</p> <p>3 - send ON if Value &lt;= Param23</p> <p>4 - send ON if Value &gt;= Param23</p> <p>5 - send OFF if Value &gt;= Param24</p> <p>6 - send OFF if Value &lt;= Param24</p>

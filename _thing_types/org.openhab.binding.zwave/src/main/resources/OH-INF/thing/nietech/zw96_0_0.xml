@@ -61,8 +61,7 @@ Status LED Configuration<br /> <h1>Overview</h1><p>Status LED Configuration</p>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_2_2" type="integer" groupName="configuration"
-                 min="-32767" max="32768">
+      <parameter name="config_2_2" type="integer" groupName="configuration">
         <label>2: Count Down</label>
         <description>Count Down Configuration</description>
         <default>0</default>

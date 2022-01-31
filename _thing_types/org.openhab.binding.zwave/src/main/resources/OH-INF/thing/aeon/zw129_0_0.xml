@@ -150,8 +150,7 @@ Which notification to be sent to the associated devices.<br /> <h1>Overview</h1>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_5_4" type="integer" groupName="configuration"
-                 min="0" max="2147483647">
+      <parameter name="config_5_4" type="integer" groupName="configuration">
         <label>5: Color</label>
         <description><![CDATA[
 Configure which color will be displayed when a button is pressed<br /> <h1>Overview</h1><p>Each color component occupies a single byte. To calculate the color value do:</p> <p>color = ((((Red * 256) + Green) * 256) + Blue) * 256</p> <p>Value 1 = Red</p> <p>Value 2 = Green</p> <p>Value 3 = Blue</p> <p>Value 4 = Reserved</p>
@@ -160,8 +159,7 @@ Configure which color will be displayed when a button is pressed<br /> <h1>Overv
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_39_1" type="integer" groupName="configuration"
-                 min="0" max="50">
+      <parameter name="config_39_1" type="integer" groupName="configuration">
         <label>39: Low battery value</label>
         <description>Set the low battery value</description>
         <default>5</default>

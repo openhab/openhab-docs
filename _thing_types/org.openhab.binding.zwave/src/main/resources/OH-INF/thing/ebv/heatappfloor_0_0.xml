@@ -89,8 +89,7 @@ heatapp! floor is a controller for thermal actuators in underfloor heating insta
       </parameter-group>
 
       <!-- PARAMETER DEFINITIONS -->
-      <parameter name="config_1_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_1_1" type="integer" groupName="configuration">
         <label>1: Missing Radio Link time</label>
         <description><![CDATA[
 Missing Radio Link time<br /> <h1>Overview</h1><p>Maximum time device will wait for reconnection before it going ot emergency mode (All switches ON). </p> <p>It is possible to set in the range of 10 min to 4 hours. Default value is 30 min, only 1 Byte</p>

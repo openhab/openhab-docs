@@ -272,8 +272,7 @@ Sets the swing threshold before turning on / off HVAC.<br /> <h1>Overview</h1><p
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_8_2" type="integer" groupName="configuration"
-                 min="4" max="3084">
+      <parameter name="config_8_2" type="integer" groupName="configuration">
         <label>8: Thermostat Diff Temperature</label>
         <description><![CDATA[
 Set's the differential temperature for multi-stage HVAC systems.<br /> <h1>Overview</h1><p>The Thermostat Differential Temperature configuration command sets the differential temperature for multi-stage HVAC systems. The differential temperature delta defines when the thermostat will turn on additional stages.</p>

@@ -47,37 +47,32 @@ Battery Powered Wall Controller MOVE<br /> <h1>Overview</h1><p>Battery powered p
       </parameter-group>
 
       <!-- PARAMETER DEFINITIONS -->
-      <parameter name="config_4_1" type="integer" groupName="configuration"
-                 min="0" max="127">
+      <parameter name="config_4_1" type="integer" groupName="configuration">
         <label>4: Switching single-surface</label>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_44_1" type="integer" groupName="configuration"
-                 min="0" max="127">
+      <parameter name="config_44_1" type="integer" groupName="configuration">
         <label>44: Doorbell function</label>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_52_1" type="integer" groupName="configuration"
-                 min="0" max="127">
+      <parameter name="config_52_1" type="integer" groupName="configuration">
         <label>52: LOWER shutter as long as button is pressed</label>
         <description>Direction of movement changes after each switching process</description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_54_1" type="integer" groupName="configuration"
-                 min="0" max="127">
+      <parameter name="config_54_1" type="integer" groupName="configuration">
         <label>54: Move shutter single-surface</label>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_55_1" type="integer" groupName="configuration"
-                 min="0" max="127">
+      <parameter name="config_55_1" type="integer" groupName="configuration">
         <label>55: RAISE shutter as long as button is pressed</label>
         <default>0</default>
         <limitToOptions>false</limitToOptions>

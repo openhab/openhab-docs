@@ -196,8 +196,7 @@ Multifunctional Weather Station<br /> <h1>Overview</h1><p>Weather Station is use
       </parameter-group>
 
       <!-- PARAMETER DEFINITIONS -->
-      <parameter name="config_1_2" type="integer" groupName="configuration"
-                 min="0" max="8800">
+      <parameter name="config_1_2" type="integer" groupName="configuration">
         <label>1: Wind Gauge - Gust Top Value</label>
         <description><![CDATA[
 Wind Gauge, Wind Gust Top Value<br /> <h1>Overview</h1><p>Wind Gauge, Wind Gust Top Value, if the Wind Gust is Higher than the Parameter Value, a device triggers an Association</p>
@@ -206,8 +205,7 @@ Wind Gauge, Wind Gust Top Value<br /> <h1>Overview</h1><p>Wind Gauge, Wind Gust 
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_2_2" type="integer" groupName="configuration"
-                 min="0" max="30000">
+      <parameter name="config_2_2" type="integer" groupName="configuration">
         <label>2: Rain Gauge - Rate top value</label>
         <description><![CDATA[
 Rain Rate top value<br /> <h1>Overview</h1><p>If the sensor Rain Rate is higher than the parameter value, a device triggers a association.</p>
@@ -216,8 +214,7 @@ Rain Rate top value<br /> <h1>Overview</h1><p>If the sensor Rain Rate is higher 
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_3_1" type="integer" groupName="configuration"
-                 min="0" max="1">
+      <parameter name="config_3_1" type="integer" groupName="configuration">
         <label>3: Wind Gauge</label>
         <description><![CDATA[
 Wind Gust<br /> <h1>Overview</h1><p>0 - if the wind gauge is higher than the parameter No. 1 value, then a device sends basic set = 0x00</p> <p>1 - if the wind gauge is higher than the parameter No. 1 value, then a device sends basic set =0xff</p>
@@ -226,8 +223,7 @@ Wind Gust<br /> <h1>Overview</h1><p>0 - if the wind gauge is higher than the par
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_4_1" type="integer" groupName="configuration"
-                 min="0" max="1">
+      <parameter name="config_4_1" type="integer" groupName="configuration">
         <label>4: Rain Gauge</label>
         <description><![CDATA[
 Rain Rate<br /> <h1>Overview</h1><p>0 - if the rain amount is higher than the parameter No. 2 value, then a device sends basic set = 0x00</p> <p>1 - if the rain amount is higher than the parameter No. 2 value, then a device sends basic set =0xff</p>
@@ -236,8 +232,7 @@ Rain Rate<br /> <h1>Overview</h1><p>0 - if the rain amount is higher than the pa
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_5_1" type="integer" groupName="configuration"
-                 min="0" max="1">
+      <parameter name="config_5_1" type="integer" groupName="configuration">
         <label>5: End Point 1</label>
         <description><![CDATA[
 Unsolicited report<br /> <h1>Overview</h1><p>0 - Unsolicited report disabled</p> <p>1 - Unsolicited report enabled</p>
@@ -246,8 +241,7 @@ Unsolicited report<br /> <h1>Overview</h1><p>0 - Unsolicited report disabled</p>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_6_1" type="integer" groupName="configuration"
-                 min="0" max="1">
+      <parameter name="config_6_1" type="integer" groupName="configuration">
         <label>6: End Point 2</label>
         <description><![CDATA[
 Unsolicited report<br /> <h1>Overview</h1><p>0 - Unsolicited report disabled</p> <p>1 - Unsolicited report enabled</p>
@@ -256,8 +250,7 @@ Unsolicited report<br /> <h1>Overview</h1><p>0 - Unsolicited report disabled</p>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_7_1" type="integer" groupName="configuration"
-                 min="0" max="1">
+      <parameter name="config_7_1" type="integer" groupName="configuration">
         <label>7: End Point 3</label>
         <description><![CDATA[
 Unsolicited report<br /> <h1>Overview</h1><p>0 - Unsolicited report disabled</p> <p>1 - Unsolicited report enabled</p>
@@ -266,8 +259,7 @@ Unsolicited report<br /> <h1>Overview</h1><p>0 - Unsolicited report disabled</p>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_8_1" type="integer" groupName="configuration"
-                 min="0" max="1">
+      <parameter name="config_8_1" type="integer" groupName="configuration">
         <label>8: End Point 4</label>
         <description><![CDATA[
 Unsolicited report<br /> <h1>Overview</h1><p>0 - Unsolicited report disabled</p> <p>1 - Unsolicited report enabled</p>
@@ -276,8 +268,7 @@ Unsolicited report<br /> <h1>Overview</h1><p>0 - Unsolicited report disabled</p>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_9_1" type="integer" groupName="configuration"
-                 min="0" max="1">
+      <parameter name="config_9_1" type="integer" groupName="configuration">
         <label>9: End Point 5</label>
         <description><![CDATA[
 Unsolicited report<br /> <h1>Overview</h1><p>0 - Unsolicited report disabled</p> <p>1 - Unsolicited report enabled</p>
@@ -286,8 +277,7 @@ Unsolicited report<br /> <h1>Overview</h1><p>0 - Unsolicited report disabled</p>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_10_1" type="integer" groupName="configuration"
-                 min="0" max="1">
+      <parameter name="config_10_1" type="integer" groupName="configuration">
         <label>10: End Point 6</label>
         <description><![CDATA[
 Unsolicited report<br /> <h1>Overview</h1><p>0 - Unsolicited report disabled</p> <p>1 - Unsolicited report enabled</p>
@@ -296,8 +286,7 @@ Unsolicited report<br /> <h1>Overview</h1><p>0 - Unsolicited report disabled</p>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_11_1" type="integer" groupName="configuration"
-                 min="0" max="1">
+      <parameter name="config_11_1" type="integer" groupName="configuration">
         <label>11: End Point 7</label>
         <description><![CDATA[
 Unsolicited report<br /> <h1>Overview</h1><p>0 - Unsolicited report disabled</p> <p>1 - Unsolicited report enabled</p>
@@ -306,8 +295,7 @@ Unsolicited report<br /> <h1>Overview</h1><p>0 - Unsolicited report disabled</p>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_12_1" type="integer" groupName="configuration"
-                 min="0" max="1">
+      <parameter name="config_12_1" type="integer" groupName="configuration">
         <label>12: End Point 8</label>
         <description><![CDATA[
 Unsolicited report<br /> <h1>Overview</h1><p>0 - Unsolicited report disabled</p> <p>1 - Unsolicited report enabled</p>
@@ -316,8 +304,7 @@ Unsolicited report<br /> <h1>Overview</h1><p>0 - Unsolicited report disabled</p>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_13_1" type="integer" groupName="configuration"
-                 min="0" max="1">
+      <parameter name="config_13_1" type="integer" groupName="configuration">
         <label>13: End Point 9</label>
         <description><![CDATA[
 Unsolicited report<br /> <h1>Overview</h1><p>0 - Unsolicited report disabled</p> <p>1 - Unsolicited report enabled</p>
@@ -326,8 +313,7 @@ Unsolicited report<br /> <h1>Overview</h1><p>0 - Unsolicited report disabled</p>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_14_1" type="integer" groupName="configuration"
-                 min="0" max="1">
+      <parameter name="config_14_1" type="integer" groupName="configuration">
         <label>14: End Point 10</label>
         <description><![CDATA[
 Unsolicited report<br /> <h1>Overview</h1><p>0 - Unsolicited report disabled</p> <p>1 - Unsolicited report enabled</p>
@@ -336,8 +322,7 @@ Unsolicited report<br /> <h1>Overview</h1><p>0 - Unsolicited report disabled</p>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_15_1" type="integer" groupName="configuration"
-                 min="0" max="1">
+      <parameter name="config_15_1" type="integer" groupName="configuration">
         <label>15: Random ID enable</label>
         <description><![CDATA[
 enables/disables random ID<br /> <h1>Overview</h1><p>If Random ID is disabled, the Weather Station USB Key can receive data from multiple 433 MHz Sensors on the same Channel. If the Random ID is enabled, the USB Key can receive data from only one sensor on the same channel. If the USB Key does not receive a data from a sensor on a specific channel for more than 2.5 hours, it clears the Random ID of the device and waits for a new ID. If you replace the batteries in the modules, the Random ID will change. If you want that the USB Key accept a module immediately, set the Parameter No. 15 to “0” and in the next step again to “1”.</p>
@@ -346,8 +331,7 @@ enables/disables random ID<br /> <h1>Overview</h1><p>If Random ID is disabled, t
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_250_1" type="integer" groupName="configuration"
-                 min="0" max="1">
+      <parameter name="config_250_1" type="integer" groupName="configuration">
         <label>250: Unsecure / Secure Inclusion</label>
         <description><![CDATA[
 Unsecure / Secure Inclusion<br /> <h1>Overview</h1><ul><li>default Value 0</li> <li>0 – Unsecure Inclusion</li> <li>1 – Secure Inclusion</li> </ul><p>The Weather Station Key supports both, the secure and unsecure inclusion. Even if the controller does not support security command classes, the Key could be included as unsecure and keep all the functionality. By default, the Key includes as unsecure. To include the Key as secure follow the procedure:</p> <ol><li>Include the Key into the controller</li> <li>Set the parameter 250 to the value “1”</li> <li>Enable add/remove mode on main controller,</li> <li>Hold service button S between 1.5 and 4 seconds to exclude the module</li> <li>If the exclusion of the module was successful, the LED on the module starts blinking</li> <li>Unplug the module out of the power supply</li> <li>enable add/remove mode on main controller</li> <li>Plug the module into the power supply to star autoinclusion</li> <li>Now the module should be included as secure</li> </ol><p>The same procedure is to include the module as unsecure</p>

@@ -71,8 +71,7 @@ Double relay Switch 2x1.7kW<br /> <h1>Overview</h1><p>https://defaro.ru/index.ph
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_2_2" type="integer" groupName="configuration"
-                 min="-32767" max="32768">
+      <parameter name="config_2_2" type="integer" groupName="configuration">
         <label>2: Relay closed interval</label>
         <description><![CDATA[
 For blink mode for both S1 and S2<br /> <h1>Overview</h1><p>Sets relays ON state time in 1/10 of second, if Parameter 1 or 10 set to 3</p>
@@ -81,8 +80,7 @@ For blink mode for both S1 and S2<br /> <h1>Overview</h1><p>Sets relays ON state
         <advanced>true</advanced>
       </parameter>
 
-      <parameter name="config_3_2" type="integer" groupName="configuration"
-                 min="-32767" max="32768">
+      <parameter name="config_3_2" type="integer" groupName="configuration">
         <label>3: Relay open interval</label>
         <description><![CDATA[
 For blink mode for both S1 and S2<br /> <h1>Overview</h1><p>Sets relays OFF state time in 1/10 of second, if Parameter 1 or 10 set to 3</p>
@@ -91,8 +89,7 @@ For blink mode for both S1 and S2<br /> <h1>Overview</h1><p>Sets relays OFF stat
         <advanced>true</advanced>
       </parameter>
 
-      <parameter name="config_4_2" type="integer" groupName="configuration"
-                 min="-32767" max="32768">
+      <parameter name="config_4_2" type="integer" groupName="configuration">
         <label>4: S1 auto off delay</label>
         <description><![CDATA[
 Sets auto off delay for S1<br /> <h1>Overview</h1><p>Sets delay after which switch S1 will turn off in 1/10 sec. (0 - disable)</p>
@@ -103,8 +100,7 @@ Sets auto off delay for S1<br /> <h1>Overview</h1><p>Sets delay after which swit
         </options>
       </parameter>
 
-      <parameter name="config_5_2" type="integer" groupName="configuration"
-                 min="-32767" max="32768">
+      <parameter name="config_5_2" type="integer" groupName="configuration">
         <label>5: S1 On delay</label>
         <description><![CDATA[
 Delay after ON command received<br /> <h1>Overview</h1><p>Sets time after which switch S1 will turn on after receiving ON command in 1/10 sec. (0 - disable feature)</p>
@@ -115,8 +111,7 @@ Delay after ON command received<br /> <h1>Overview</h1><p>Sets time after which 
         </options>
       </parameter>
 
-      <parameter name="config_6_2" type="integer" groupName="configuration"
-                 min="-32767" max="32768">
+      <parameter name="config_6_2" type="integer" groupName="configuration">
         <label>6: S1 smart delay</label>
         <description><![CDATA[
 Smart off delay for S1<br /> <h1>Overview</h1><p>Sets time after which switch S1 will turn off after receiving OFF command in 1/10 sec.</p> <p>Events to which this delay is applicable set in Parameter 18.</p> <p>(0 - disable feature)</p>
@@ -141,8 +136,7 @@ Powerfail recovery mode for S1<br /> <h1>Overview</h1><p>Recovery behavior for S
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_8_1" type="integer" groupName="configuration"
-                 min="0" max="3">
+      <parameter name="config_8_1" type="integer" groupName="configuration">
         <label>8: All ON/OFF behaviour</label>
         <description><![CDATA[
 All ON/OFF behaviour<br /> <h1>Overview</h1><p>0 - React on All ON/All OFF</p> <p>1 - Ignore All ON/All OFF</p> <p>2 - Ignore All ON/React on All OFF</p> <p>3 - React on All ON/Ignore All OFF</p>
@@ -164,8 +158,7 @@ Relay S2 mode of operation<br /> <h1>Overview</h1><p>Sets S2 mode of operation:<
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_11_2" type="integer" groupName="configuration"
-                 min="-32767" max="32768">
+      <parameter name="config_11_2" type="integer" groupName="configuration">
         <label>11: S2 auto off time</label>
         <description><![CDATA[
 Sets auto off time for S2<br /> <h1>Overview</h1><p>Sets time after which switch S2 will turn off in 1/10 sec. (0 - disable)</p>
@@ -176,8 +169,7 @@ Sets auto off time for S2<br /> <h1>Overview</h1><p>Sets time after which switch
         </options>
       </parameter>
 
-      <parameter name="config_12_2" type="integer" groupName="configuration"
-                 min="-32767" max="32768">
+      <parameter name="config_12_2" type="integer" groupName="configuration">
         <label>12: S2 turn on delay</label>
         <description><![CDATA[
 Sets turn on delay for S2<br /> <h1>Overview</h1><p>Sets delay after which switch S1 will turn on after receiving ON command in 1/10 sec. (0 - disable)</p>
@@ -188,8 +180,7 @@ Sets turn on delay for S2<br /> <h1>Overview</h1><p>Sets delay after which switc
         </options>
       </parameter>
 
-      <parameter name="config_13_2" type="integer" groupName="configuration"
-                 min="-32767" max="32768">
+      <parameter name="config_13_2" type="integer" groupName="configuration">
         <label>13: S2 smart delay</label>
         <description><![CDATA[
 Smart delay for S2<br /> <h1>Overview</h1><p>Sets smart delay for S2 in 1/10sec (see Parameters 2,3,6 for description) (0-disable)</p>
@@ -244,8 +235,7 @@ S2 button operation mode<br /> <h1>Overview</h1><p>Type of button connected to S
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_18_1" type="integer" groupName="configuration"
-                 min="0" max="2">
+      <parameter name="config_18_1" type="integer" groupName="configuration">
         <label>18: Smart delay</label>
         <description><![CDATA[
 Smart delay mode<br /> <h1>Overview</h1><p>0 - implicit smart delay</p> <p>1 - use smart delay for all devices NOT in Group 1. Also smart delay ignored for controller and button issued commands</p> <p>2 - use smart delay for all devices IN Group 1. Also smart delay will be used for controller and button issued commands</p>

@@ -107,112 +107,98 @@ Smart plug with thermostat<br /> <h1>Overview</h1><p><br /></p><p>Zwave Smart Pl
       </parameter-group>
 
       <!-- PARAMETER DEFINITIONS -->
-      <parameter name="config_7_1" type="integer" groupName="configuration"
-                 min="0" max="1">
+      <parameter name="config_7_1" type="integer" groupName="configuration">
         <label>7: Device operating mode</label>
         <description>Device operating mode - 0 switch mode - 1 Thermostat mode</description>
         <default>1</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_8_1" type="integer" groupName="configuration"
-                 min="0" max="1">
+      <parameter name="config_8_1" type="integer" groupName="configuration">
         <label>8: Actively report when in thermostat mode</label>
         <description>Actively report when in thermostat mode - 0 no report - 1 report</description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_9_2" type="integer" groupName="configuration"
-                 min="-50" max="50">
+      <parameter name="config_9_2" type="integer" groupName="configuration">
         <label>9: Temperature compensation value</label>
         <description>Temperature compensation value</description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_10_2" type="integer" groupName="configuration"
-                 min="30" max="60">
+      <parameter name="config_10_2" type="integer" groupName="configuration">
         <label>10: Enable over temperature protection</label>
         <description>Enable over temperature protection</description>
         <default>36</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_11_2" type="integer" groupName="configuration"
-                 min="0" max="50">
+      <parameter name="config_11_2" type="integer" groupName="configuration">
         <label>11: Temperature change report threshold</label>
         <description>Temperature change report threshold. 0: disable report - 2-50 set a threshold</description>
         <default>5</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_12_2" type="integer" groupName="configuration"
-                 min="-32767" max="32768">
+      <parameter name="config_12_2" type="integer" groupName="configuration">
         <label>12: Time interval for periodical temperature report</label>
         <description>Time interval for periodical temperature report</description>
         <default>300</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_13_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_13_1" type="integer" groupName="configuration">
         <label>13: Power change absolute threshold</label>
         <description>Power change absolute threshold</description>
         <default>2</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_14_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_14_1" type="integer" groupName="configuration">
         <label>14: Voltage change absolute threshold</label>
         <description>Voltage change absolute threshold</description>
         <default>2</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_15_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_15_1" type="integer" groupName="configuration">
         <label>15: Current change absolute threshold</label>
         <description>Current change absolute threshold</description>
         <default>1</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_16_4" type="integer" groupName="configuration"
-                 min="0" max="2678400">
+      <parameter name="config_16_4" type="integer" groupName="configuration">
         <label>16: Time Interval Report Power</label>
         <description>Time Interval Report Power</description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_17_4" type="integer" groupName="configuration"
-                 min="0" max="2678400">
+      <parameter name="config_17_4" type="integer" groupName="configuration">
         <label>17: Time interval for report of voltage</label>
         <description>Time interval for report of voltage</description>
         <default>600</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_18_1" type="integer" groupName="configuration"
-                 min="0" max="2">
+      <parameter name="config_18_1" type="integer" groupName="configuration">
         <label>18: Device state after power reset</label>
         <description>Device state after power reset. Switch: 00-turn off relay 01:turn on relay Thermostat mode: 00:HVAC OFF 01:HVAC ON 02:save HVAC state before power reset</description>
         <default>2</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_19_1" type="integer" groupName="configuration"
-                 min="0" max="1">
+      <parameter name="config_19_1" type="integer" groupName="configuration">
         <label>19: Enable/Disable Switch Binary Report</label>
         <description>Enable/Disable Switch Binary Report</description>
         <default>1</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_20_1" type="integer" groupName="configuration"
-                 min="0" max="16">
+      <parameter name="config_20_1" type="integer" groupName="configuration">
         <label>20: Enable/Disable Current Protection Function</label>
         <description>Enable/Disable Current Protection Function</description>
         <default>16</default>

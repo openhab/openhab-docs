@@ -98,8 +98,7 @@ Yale button deadbolt without keyway<br /> <h1>Overview</h1><p>Security Keyless P
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_3_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_3_1" type="integer" groupName="configuration">
         <label>3: Auto relock time</label>
         <description><![CDATA[
 Time for auto relock<br /> <h1>Overview</h1><p>Amount of seconds between the door is unlocked and when it automatically attempts to re-lock itself, when auto-relocking is enabled.</p>
@@ -108,8 +107,7 @@ Time for auto relock<br /> <h1>Overview</h1><p>Amount of seconds between the doo
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_4_1" type="integer" groupName="configuration"
-                 min="1" max="7">
+      <parameter name="config_4_1" type="integer" groupName="configuration">
         <label>4: Wrong code limit</label>
         <description><![CDATA[
 Number of incorrect PINs before lockout<br /> <h1>Overview</h1><p>Number of incorrect PINs that can be keyed in before lock goes into temporary keypad lockout mode.</p>
@@ -117,8 +115,7 @@ Number of incorrect PINs before lockout<br /> <h1>Overview</h1><p>Number of inco
         <default>5</default>
       </parameter>
 
-      <parameter name="config_7_1" type="integer" groupName="configuration" readOnly="true"
-                 min="-127" max="128">
+      <parameter name="config_7_1" type="integer" groupName="configuration" readOnly="true">
         <label>7: Shutdown time</label>
         <description><![CDATA[
 Incorrect attempts shutdown time<br /> <h1>Overview</h1><p>Amount of time lock should ignore the keypad, if the number of incorrect PINs is exceeded.  (Can still be locked and unlocked by zwave while in shutdown.)</p>

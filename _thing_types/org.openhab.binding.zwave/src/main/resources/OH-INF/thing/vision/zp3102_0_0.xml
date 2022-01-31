@@ -65,8 +65,7 @@ Motion Sensor<br /> <h1>Overview</h1><p>The ZP3102 is a Z-Wave enabled motion de
       </parameter-group>
 
       <!-- PARAMETER DEFINITIONS -->
-      <parameter name="config_1_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_1_1" type="integer" groupName="configuration">
         <label>1: On time in minutes</label>
         <description>Delay before sending OFF</description>
         <default>3</default>
@@ -84,8 +83,7 @@ Motion Sensor<br /> <h1>Overview</h1><p>The ZP3102 is a Z-Wave enabled motion de
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_3_1" type="integer" groupName="configuration"
-                 min="1" max="7">
+      <parameter name="config_3_1" type="integer" groupName="configuration">
         <label>3: Infrared sensor sensitivity adjustment</label>
         <description><![CDATA[
 1 is most sensitive, 7 is least<br /> <h1>Overview</h1><p>(Parameter 3) Infrared sensor sensitivity adjustment, 7 levels sensitivity, 1 = most<br />sensitive, 7 = most insensitive, default values= 4</p>

@@ -64,32 +64,28 @@ RGBW bulb<br /> <h1>Overview</h1><p>Zipato RGBW BULB has 5 color channels availa
       </parameter-group>
 
       <!-- PARAMETER DEFINITIONS -->
-      <parameter name="config_1_1" type="integer" groupName="configuration"
-                 min="1" max="100">
+      <parameter name="config_1_1" type="integer" groupName="configuration">
         <label>1: Color temperature</label>
         <description>Values range from 0 to 100 where 0 is cold white and 100 is warm white.</description>
         <default>50</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_2_1" type="integer" groupName="configuration"
-                 min="0" max="31">
+      <parameter name="config_2_1" type="integer" groupName="configuration">
         <label>2: Shock sensor sensitivity</label>
         <description>Range from 0 to 31 where 0 is minimum sensitivity and 31 is maximum sensitivity.</description>
         <default>16</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_3_1" type="integer" groupName="configuration"
-                 min="0" max="25">
+      <parameter name="config_3_1" type="integer" groupName="configuration">
         <label>3: Strobe Light Interval</label>
         <description>Values range from 0 to 25 in intervals of 100 milliseconds.</description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_4_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_4_1" type="integer" groupName="configuration">
         <label>4: Strobe Light Pulse Count</label>
         <description>Values range from 0 to 250 and a special value 255 which sets infinite flashing.</description>
         <default>0</default>

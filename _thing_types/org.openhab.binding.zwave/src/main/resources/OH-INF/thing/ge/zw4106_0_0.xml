@@ -59,8 +59,7 @@ Plug-In Smart Switch (Dual Linked Outlets, Grounded)<br /> <h1>Overview</h1><p>2
       </parameter-group>
 
       <!-- PARAMETER DEFINITIONS -->
-      <parameter name="config_3_1" type="integer" groupName="configuration"
-                 min="2" max="0">
+      <parameter name="config_3_1" type="integer" groupName="configuration">
         <label>3: LED light Control</label>
         <description>Controls LED light state</description>
         <default>0</default>

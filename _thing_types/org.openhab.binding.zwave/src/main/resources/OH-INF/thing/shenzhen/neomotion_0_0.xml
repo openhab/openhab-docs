@@ -70,8 +70,7 @@ Motion Sensor<br /> <h1>Overview</h1><p>Motion sensor(PIR) is a passive infrared
       </parameter-group>
 
       <!-- PARAMETER DEFINITIONS -->
-      <parameter name="config_1_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_1_1" type="integer" groupName="configuration">
         <label>1: Sensitivity Level Setting</label>
         <description><![CDATA[
 <br /> <h1>Overview</h1><p>This parameter defines the sensitivity of PIR sensor. At the first time of test, it is recommended to test the sensor with movements from a farthest end of the coverage area .If movements cannot be detected sensitively, simply adjust the sensitivity level by changing this parameter.<br /></p>
@@ -80,8 +79,7 @@ Motion Sensor<br /> <h1>Overview</h1><p>Motion sensor(PIR) is a passive infrared
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_2_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_2_1" type="integer" groupName="configuration">
         <label>2: On/Off Duration</label>
         <description><![CDATA[
 <br /> <h1>Overview</h1><p>This parameter can determine how long the associated devices should stay ON status. For instance, this parameter is set to 30(second), PIR sensor will send a BASIC SET Command toan associated device with value basic set level if PIR sensor is triggered, and the associated devices will be turned on, and stay in this status for 30(second) before it is turned off<br /></p>
@@ -103,8 +101,7 @@ Motion Sensor<br /> <h1>Overview</h1><p>Motion sensor(PIR) is a passive infrared
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_4_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_4_1" type="integer" groupName="configuration">
         <label>4: PIR Detecting Function Enabled/Disabled</label>
         <description><![CDATA[
 <br /> <h1>Overview</h1><p>This parameter can enable or disable PIR detector detecting function.<br /></p>
@@ -113,8 +110,7 @@ Motion Sensor<br /> <h1>Overview</h1><p>Motion sensor(PIR) is a passive infrared
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_5_2" type="integer" groupName="configuration"
-                 min="0" max="1000">
+      <parameter name="config_5_2" type="integer" groupName="configuration">
         <label>5: Ambient illumination Lux Level</label>
         <description><![CDATA[
 <br /> <h1>Overview</h1><p>This parameter can be set a lux level value which determines when light sensor is activated. Ifthe ambient illumination level falls below this value, and a person moves across orstands within the detected area , PIR detector will send a Z-Wave ON command(i.e.BASIC_SET value = parameter 3#) to an associated device and activate it.<br /></p>
@@ -123,8 +119,7 @@ Motion Sensor<br /> <h1>Overview</h1><p>Motion sensor(PIR) is a passive infrared
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_6_1" type="integer" groupName="configuration"
-                 min="1" max="8">
+      <parameter name="config_6_1" type="integer" groupName="configuration">
         <label>6: Re-trigger Interval Setting</label>
         <description><![CDATA[
 <br /> <h1>Overview</h1><p>This Parameter can be used to adjust the interval of being retriggered after PIR sensor has been triggered. This Parameter value must be less than Parameter 2#.If user set this parameter to default by Configure CC, the parameter #2 will be set to default value<br /></p>
@@ -133,8 +128,7 @@ Motion Sensor<br /> <h1>Overview</h1><p>Motion sensor(PIR) is a passive infrared
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_7_2" type="integer" groupName="configuration"
-                 min="-32767" max="32768">
+      <parameter name="config_7_2" type="integer" groupName="configuration">
         <label>7: Light Sensor Polling Interval</label>
         <description><![CDATA[
 <br /> <h1>Overview</h1><p>This Parameter can be set as interval time for light sensor measuring ambient illumination level.<br /></p>
@@ -143,8 +137,7 @@ Motion Sensor<br /> <h1>Overview</h1><p>Motion sensor(PIR) is a passive infrared
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_8_1" type="integer" groupName="configuration"
-                 min="0" max="1">
+      <parameter name="config_8_1" type="integer" groupName="configuration">
         <label>8: Lux Level Function Enable</label>
         <description><![CDATA[
 <br /> <h1>Overview</h1><p>If this parameter is set to '1', and when Lux level is less than the value defined by parameter#5, PIR sensor will send a BASIC_SET command frame(i.e. BASIC_SET (value = parameter3) to an associated device and activate it. If Lux Level is greater than the value defined by parameter #5, PIR sensor will not send a BASIC_SET command frame.</p>
@@ -153,8 +146,7 @@ Motion Sensor<br /> <h1>Overview</h1><p>Motion sensor(PIR) is a passive infrared
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_9_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_9_1" type="integer" groupName="configuration">
         <label>9: Ambient illumination Lux Level Report</label>
         <description><![CDATA[
 <br /> <h1>Overview</h1><p>This parameter defines how much Lux must be changed first, then PIR sensor will report to zwave gateway.<br /></p>
@@ -163,8 +155,7 @@ Motion Sensor<br /> <h1>Overview</h1><p>Motion sensor(PIR) is a passive infrared
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_10_1" type="integer" groupName="configuration"
-                 min="0" max="127">
+      <parameter name="config_10_1" type="integer" groupName="configuration">
         <label>10: Ambient Temperature Differential Report</label>
         <description><![CDATA[
 <br /> <h1>Overview</h1><p>This parameter is configured the value that differential between current measured andprevious report value. If the differential value larger than the settings, device will report thismeasured temperature value to nodes associated in lifeline<br /></p>
@@ -173,8 +164,7 @@ Motion Sensor<br /> <h1>Overview</h1><p>Motion sensor(PIR) is a passive infrared
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_11_1" type="integer" groupName="configuration"
-                 min="0" max="1">
+      <parameter name="config_11_1" type="integer" groupName="configuration">
         <label>11: Led Blink Enable</label>
         <description><![CDATA[
 <br /> <h1>Overview</h1><p>This parameter defines the Led on/off enable. If this parameter is set to '1', led blink will be enabled, the led will blink once when motion sensor detect a movement. Otherwise, the led will be turned off always.<br /></p>
@@ -183,15 +173,13 @@ Motion Sensor<br /> <h1>Overview</h1><p>Motion sensor(PIR) is a passive infrared
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_12_1" type="integer" groupName="configuration"
-                 min="0" max="1">
+      <parameter name="config_12_1" type="integer" groupName="configuration">
         <label>12: Motion Event Report One Time Enable</label>
         <default>1</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_99_2" type="integer" groupName="configuration"
-                 min="-32767" max="32768">
+      <parameter name="config_99_2" type="integer" groupName="configuration">
         <label>99: Ambient light intensity calibration</label>
         <description><![CDATA[
 <br /> <h1>Overview</h1><p>This parameter defines the calibrated scale for ambient light intensity. Because the methodand position that the sensor is mounted , and the cover of sensor will bringmeasurement error,user can get more real light intensity by this parameter setting. Usershould run the steps as blows for calibrating.<br /></p>

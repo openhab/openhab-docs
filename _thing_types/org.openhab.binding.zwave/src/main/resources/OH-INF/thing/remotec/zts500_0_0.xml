@@ -125,8 +125,7 @@ Thermostat<br /> <h1>Overview</h1><p>Remotec ZTS-500 is a security Z-Wave enable
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_4_1" type="integer" groupName="configuration"
-                 min="3" max="6">
+      <parameter name="config_4_1" type="integer" groupName="configuration">
         <label>4: Dead Band</label>
         <description><![CDATA[
 3=3F/1.5C - 6=6F/3C<br /> <h1>Overview</h1><p>The Dead Band is a temperature range in which neither COOL or HEAT turns on when in AUTO mode.</p>
@@ -135,8 +134,7 @@ Thermostat<br /> <h1>Overview</h1><p>Remotec ZTS-500 is a security Z-Wave enable
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_10_1" type="integer" groupName="configuration"
-                 min="-10" max="10">
+      <parameter name="config_10_1" type="integer" groupName="configuration">
         <label>10: Temp. Sensor Calibration</label>
         <description><![CDATA[
 Changes Temp. Display (-10=-10F/-5C - 10=+10F/5C)<br /> <h1>Overview</h1><p>Adjusts room temperature display to match a calibrated value.</p>

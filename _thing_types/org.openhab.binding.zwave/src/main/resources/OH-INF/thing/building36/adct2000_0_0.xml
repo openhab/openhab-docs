@@ -113,8 +113,7 @@ Configures the type of heating system used.<br /> <h1>Overview</h1><p>0 - Normal
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_2_1" type="integer" groupName="configuration"
-                 min="0" max="3">
+      <parameter name="config_2_1" type="integer" groupName="configuration">
         <label>2: Number of Heat Stages</label>
         <description>Heat Stages 0-3 Default is 2.</description>
         <default>2</default>
@@ -122,8 +121,7 @@ Configures the type of heating system used.<br /> <h1>Overview</h1><p>0 - Normal
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_3_1" type="integer" groupName="configuration"
-                 min="0" max="2">
+      <parameter name="config_3_1" type="integer" groupName="configuration">
         <label>3: Number of Cool Stages</label>
         <description>Cool Stages 0-2 Default is 2.</description>
         <default>2</default>
@@ -144,16 +142,14 @@ Choose type of fuel. Reality - whether unit is boiler vs forced air.<br /> <h1>O
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_5_4" type="integer" groupName="configuration"
-                 min="-100" max="100">
+      <parameter name="config_5_4" type="integer" groupName="configuration">
         <label>5: Calibration Temperature</label>
         <description>Calibration Temperature Range (in deg. F) Precision is tenths of a degree.</description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_6_4" type="integer" groupName="configuration"
-                 min="0" max="30">
+      <parameter name="config_6_4" type="integer" groupName="configuration">
         <label>6: Overshoot</label>
         <description>Overshoot Range (in deg. F) Precision is tenths of a degree. Default is 5.</description>
         <default>5</default>
@@ -161,8 +157,7 @@ Choose type of fuel. Reality - whether unit is boiler vs forced air.<br /> <h1>O
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_7_4" type="integer" groupName="configuration"
-                 min="0" max="30">
+      <parameter name="config_7_4" type="integer" groupName="configuration">
         <label>7: Swing</label>
         <description>Swing Range (in deg. F) Precision is tenths of a degree.</description>
         <default>0</default>
@@ -170,8 +165,7 @@ Choose type of fuel. Reality - whether unit is boiler vs forced air.<br /> <h1>O
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_8_1" type="integer" groupName="configuration"
-                 min="1" max="60">
+      <parameter name="config_8_1" type="integer" groupName="configuration">
         <label>8: Heat Staging Delay</label>
         <description>Heat Staging Delay (in min)</description>
         <default>10</default>
@@ -179,8 +173,7 @@ Choose type of fuel. Reality - whether unit is boiler vs forced air.<br /> <h1>O
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_9_1" type="integer" groupName="configuration"
-                 min="1" max="60">
+      <parameter name="config_9_1" type="integer" groupName="configuration">
         <label>9: Cool Staging Delay</label>
         <description>Cool Staging Delay (in min)</description>
         <default>10</default>
@@ -188,8 +181,7 @@ Choose type of fuel. Reality - whether unit is boiler vs forced air.<br /> <h1>O
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_10_4" type="integer" groupName="configuration"
-                 min="0" max="950">
+      <parameter name="config_10_4" type="integer" groupName="configuration">
         <label>10: Balance Setpoint</label>
         <description>Balance Setpont Range (in deg. F) Precision is tenths of a degree.</description>
         <default>350</default>
@@ -210,8 +202,7 @@ Whether thermostat uses intelligence to try and make the best of energy usage.<b
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_12_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_12_1" type="integer" groupName="configuration">
         <label>12: Fan Circulation Period</label>
         <description>Fan Circulation Period (in min)</description>
         <default>20</default>
@@ -219,8 +210,7 @@ Whether thermostat uses intelligence to try and make the best of energy usage.<b
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_13_1" type="integer" groupName="configuration"
-                 min="0" max="100">
+      <parameter name="config_13_1" type="integer" groupName="configuration">
         <label>13: Fan Circulation Duty Cycle</label>
         <description>Duty Cycle (percentage)</description>
         <default>25</default>
@@ -228,8 +218,7 @@ Whether thermostat uses intelligence to try and make the best of energy usage.<b
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_14_2" type="integer" groupName="configuration"
-                 min="1" max="3600">
+      <parameter name="config_14_2" type="integer" groupName="configuration">
         <label>14: Fan Purge Time</label>
         <description>Purge Time (in s)</description>
         <default>60</default>
@@ -237,32 +226,28 @@ Whether thermostat uses intelligence to try and make the best of energy usage.<b
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_15_4" type="integer" groupName="configuration"
-                 min="350" max="950">
+      <parameter name="config_15_4" type="integer" groupName="configuration">
         <label>15: Maximum Heat Setpoint</label>
         <description>Max Heat Setpoint Range (in deg. F) Precision is tenths of a degree.</description>
         <default>950</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_16_4" type="integer" groupName="configuration"
-                 min="350" max="950">
+      <parameter name="config_16_4" type="integer" groupName="configuration">
         <label>16: Minimum Heat Setpoint</label>
         <description>Min Heat Setpoint Range (in deg. F) Precision is tenths of a degree.</description>
         <default>350</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_17_4" type="integer" groupName="configuration"
-                 min="500" max="950">
+      <parameter name="config_17_4" type="integer" groupName="configuration">
         <label>17: Maximum Cool Setpoint</label>
         <description>Max Cool Setpoint Range(in deg. F) Precision is tenths of a degree.</description>
         <default>950</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_18_4" type="integer" groupName="configuration"
-                 min="500" max="950">
+      <parameter name="config_18_4" type="integer" groupName="configuration">
         <label>18: Minimum Cool Setpoint</label>
         <description>Min Cool Setpoint (in deg. F) Precision is tenths of a degree.</description>
         <default>500</default>
@@ -282,8 +267,7 @@ Lock out physical thermostat controls.<br /> <h1>Overview</h1><p>0 - Disabled (D
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_20_1" type="integer" groupName="configuration"
-                 min="0" max="60">
+      <parameter name="config_20_1" type="integer" groupName="configuration">
         <label>20: Compressor Delay</label>
         <description>Compressor Delay (in min)</description>
         <default>5</default>
@@ -291,8 +275,7 @@ Lock out physical thermostat controls.<br /> <h1>Overview</h1><p>0 - Disabled (D
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_21_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_21_1" type="integer" groupName="configuration">
         <label>21: Demand Response Period</label>
         <description>Demand Response Period (in min)</description>
         <default>10</default>
@@ -300,8 +283,7 @@ Lock out physical thermostat controls.<br /> <h1>Overview</h1><p>0 - Disabled (D
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_22_1" type="integer" groupName="configuration"
-                 min="0" max="100">
+      <parameter name="config_22_1" type="integer" groupName="configuration">
         <label>22: Demand Response Duty Cycle</label>
         <description>Demand Response Duty Cycle (percentage)</description>
         <default>25</default>
@@ -368,8 +350,7 @@ Which source of power is utilized.<br /> <h1>Overview</h1><p>0 - Battery (Defaul
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_27_1" type="integer" groupName="configuration"
-                 min="0" max="100">
+      <parameter name="config_27_1" type="integer" groupName="configuration">
         <label>27: Battery Alert Threshold Low</label>
         <description>Battery Alert Range (percentage)</description>
         <default>30</default>
@@ -377,8 +358,7 @@ Which source of power is utilized.<br /> <h1>Overview</h1><p>0 - Battery (Defaul
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_28_1" type="integer" groupName="configuration"
-                 min="0" max="100">
+      <parameter name="config_28_1" type="integer" groupName="configuration">
         <label>28: Battery Alert Threshold Very Low</label>
         <description>Very Low Battery Alert Range (percentage)</description>
         <default>15</default>
@@ -400,8 +380,7 @@ Enables remote temperature sensor instead of built-in.<br /> <h1>Overview</h1><p
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_31_4" type="integer" groupName="configuration"
-                 min="10" max="100">
+      <parameter name="config_31_4" type="integer" groupName="configuration">
         <label>31: Heat Differential</label>
         <description>Heat Differential (in deg. F) Precision is tenths of a degree.</description>
         <default>30</default>
@@ -409,8 +388,7 @@ Enables remote temperature sensor instead of built-in.<br /> <h1>Overview</h1><p
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_32_4" type="integer" groupName="configuration"
-                 min="10" max="100">
+      <parameter name="config_32_4" type="integer" groupName="configuration">
         <label>32: Cool Differential</label>
         <description>Cool Differential (in deg. F) Precision is tenths of a degree.</description>
         <default>30</default>
@@ -418,8 +396,7 @@ Enables remote temperature sensor instead of built-in.<br /> <h1>Overview</h1><p
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_33_4" type="integer" groupName="configuration"
-                 min="5" max="20">
+      <parameter name="config_33_4" type="integer" groupName="configuration">
         <label>33: Temperature Reporting Threshold</label>
         <description>Temperature Reporting Range (in deg. F) Precision is tenths of a degree.</description>
         <default>10</default>

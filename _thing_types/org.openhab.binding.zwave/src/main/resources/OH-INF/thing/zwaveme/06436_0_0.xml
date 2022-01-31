@@ -69,8 +69,7 @@ Insert blind control<br /> <h1>Overview</h1><p>The Z-Wave.Me Flush Mountable Mot
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_2_2" type="integer" groupName="configuration"
-                 min="-32767" max="32768">
+      <parameter name="config_2_2" type="integer" groupName="configuration">
         <label>2: Automatically open or close after</label>
         <description><![CDATA[
 Automatically open or close blind after time<br /> <h1>Overview</h1><p>If not zero, automatically open or close blind after a user defined time</p>
@@ -96,8 +95,7 @@ Defines how to interpret RF Off command.<br /> <h1>Overview</h1><p>Defines how t
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_4_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_4_1" type="integer" groupName="configuration">
         <label>4: Full close time</label>
         <description><![CDATA[
 Time in seconds to go from opened to closed state.<br /> <h1>Overview</h1><p>Time to go from opened to closed state. Used to estimate the current level. Note that in Permanent motion mode the reported value would a be Closed or Opened, while all Basic and Multilevel Set values (1-99, 255) would Open except 0 value that would Close.</p>
@@ -108,8 +106,7 @@ Time in seconds to go from opened to closed state.<br /> <h1>Overview</h1><p>Tim
         </options>
       </parameter>
 
-      <parameter name="config_5_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_5_1" type="integer" groupName="configuration">
         <label>5: Full open time</label>
         <description><![CDATA[
 Time in seconds to go from closed to open state.<br /> <h1>Overview</h1><p>Time to go from closed to open state. This value may differ from Full close time for some blinds due to gravity. Used to estimate the current level. Note that in Permanent motion mode the reported value would a be Closed or Opened, while all Basic and Multilevel Set values (1-99, 255) would Open except 0 value that would Close.</p>
@@ -120,8 +117,7 @@ Time in seconds to go from closed to open state.<br /> <h1>Overview</h1><p>Time 
         </options>
       </parameter>
 
-      <parameter name="config_6_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_6_1" type="integer" groupName="configuration">
         <label>6: Node ID of the blocking device</label>
         <description><![CDATA[
 Id of the device which can block the blinds<br /> <h1>Overview</h1><p>Id of the device which commands would be interpreted not as Open/Close, but as block/unblock. Usefull with door opening detector: if the door is open, block the blind not to break shades while they move.</p>
@@ -172,8 +168,7 @@ Invert open and close relays<br /> <h1>Overview</h1><p>Allows exchanging open an
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_10_1" type="integer" groupName="configuration"
-                 min="1" max="100">
+      <parameter name="config_10_1" type="integer" groupName="configuration">
         <label>10: Typical click timeout</label>
         <description><![CDATA[
 Typical click timeout<br /> <h1>Overview</h1><p>Typical time used to differentiate click, hold and double and triple clicks in 10ms units</p>

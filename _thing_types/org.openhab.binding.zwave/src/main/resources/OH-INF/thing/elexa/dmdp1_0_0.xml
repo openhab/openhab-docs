@@ -116,8 +116,7 @@ Enable/Disable Temperature Sensor<br /> <h1>Overview</h1><p>The Door/Window Sens
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_5_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_5_1" type="integer" groupName="configuration">
         <label>5: Temperature offset</label>
         <description><![CDATA[
 Temperature offset<br /> <h1>Overview</h1><p>This Configuration Parameter can offset the temperature value reported by ± 125 degrees to compensate for temperature variances in a room - for example, the temperature near the ceiling in a room is significantly higher than the average temperature of the same room. This Parameter accepts a signed 8-bit value with an absolute value of up to 125, and its units are Dependant on Configuration Parameter 07</p> <table><tr><td>Size</td> <td>Name</td> <td>Available Values</td> <td>Default Value</td> </tr><tr><td>01</td> <td>Temperature offset</td> <td>00 ~ 7D (0°~125°)<br />83 ~ FF (-125° ~ -1°)</td> <td>00 <br /> (0° Offset) </td> </tr></table>
@@ -138,8 +137,7 @@ Temperature Units<br /> <h1>Overview</h1><p>The Door/Window Sensor can report te
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_7_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_7_1" type="integer" groupName="configuration">
         <label>7: Basic Set Value (Group 2)</label>
         <description><![CDATA[
 Basic Set Value (Group 2)<br /> <h1>Overview</h1><p>This parameter sets the value sent by the Basic Set command to Association Group 2 (for more information, see “Association Group Info”.)</p> <table><tr><td>Size</td> <td>Name</td> <td>Available Values</td> <td>Default Value</td> </tr><tr><td>01</td> <td>Basic Set Value (Group 2)</td> <td>00 (0/Turn Off Device)<br />01 ~ 63 (0-99)<br />FF (255/Turn On Device)</td> <td>FF <br /> (255/Turn On Device) </td> </tr></table>
@@ -147,8 +145,7 @@ Basic Set Value (Group 2)<br /> <h1>Overview</h1><p>This parameter sets the valu
         <default>0</default>
       </parameter>
 
-      <parameter name="config_8_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_8_1" type="integer" groupName="configuration">
         <label>8: Basic Set Value (Group 3)</label>
         <description><![CDATA[
 Basic Set Value (Group 3)<br /> <h1>Overview</h1><p>This parameter sets the value sent by the Basic Set command to Association Group 3. The Door/Window Sensor sends a Basic Set command to Association Group 4 when the door or window opens (for more information, see “Association Group Info”.)</p> <table><tr><td>Size</td> <td>Name</td> <td>Available Values</td> <td>Default Value</td> </tr><tr><td>01</td> <td>Basic Set Value (Group 2)</td> <td>00 (0/Turn Off Device)<br />01 ~ 63 (0-99)<br />FF (255/Turn On Device)</td> <td>FF <br /> (255/Turn On Device)</td> </tr></table>
@@ -156,8 +153,7 @@ Basic Set Value (Group 3)<br /> <h1>Overview</h1><p>This parameter sets the valu
         <default>0</default>
       </parameter>
 
-      <parameter name="config_9_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_9_1" type="integer" groupName="configuration">
         <label>9: Basic Set Value (Group 4)</label>
         <description><![CDATA[
 Basic Set Value (Group 4)<br /> <h1>Overview</h1><p>This parameter sets the value sent by the Basic Set command to Association Group 4.The Door/Window Sensor sends a Basic Set command to Association Group 4 when the door or window opens (for more information, see “Association Group Info”.)</p> <table><tr><td>Size</td> <td>Name</td> <td>Available Values</td> <td>Default Values</td> </tr><tr><td>01</td> <td>Basic Set Value (Group 4)</td> <td>00 (0/Turn Off Device)<br />01 ~ 63 (0-99)<br />FF (-1/Turn On Device)</td> <td>FF <br /> (-1/Turn On Device) </td> </tr></table>

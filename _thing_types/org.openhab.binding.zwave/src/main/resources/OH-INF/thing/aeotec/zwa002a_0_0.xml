@@ -108,8 +108,7 @@ Bulb 6 Multi-Color<br /> <h1>Overview</h1><p>Aeotec LED Bulb 6 Multi-Color, Z-Wa
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_3_4" type="integer" groupName="configuration"
-                 min="5" max="8640000">
+      <parameter name="config_3_4" type="integer" groupName="configuration">
         <label>3: Rate of change to next color in Custom Mode</label>
         <default>50</default>
         <limitToOptions>false</limitToOptions>
@@ -124,8 +123,7 @@ Blink colors in order &gt; White &gt; Red &gt; Orange &gt; Yellow &gt; Green &gt
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_16_1" type="integer" groupName="configuration"
-                 min="0" max="100">
+      <parameter name="config_16_1" type="integer" groupName="configuration">
         <label>16: Ramp rate when dimming using Multilevel Switch in 100ms</label>
         <description><![CDATA[
 Ramp rate in 100ms<br /> <h1>Overview</h1><p>Ramp rate when dimming using Multilevel Switch V1 CC in 100ms<br />Value range = 0 - 100<br />Default = 20 (2000ms)<br /></p>
@@ -145,15 +143,13 @@ Ramp rate in 100ms<br /> <h1>Overview</h1><p>Ramp rate when dimming using Multil
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_81_2" type="integer" groupName="configuration"
-                 min="2700" max="4999">
+      <parameter name="config_81_2" type="integer" groupName="configuration">
         <label>81: Adjust color component of Warm White</label>
         <default>2700</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_82_2" type="integer" groupName="configuration"
-                 min="5000" max="6500">
+      <parameter name="config_82_2" type="integer" groupName="configuration">
         <label>82: Adjust color component of Cold White</label>
         <default>6500</default>
         <limitToOptions>false</limitToOptions>

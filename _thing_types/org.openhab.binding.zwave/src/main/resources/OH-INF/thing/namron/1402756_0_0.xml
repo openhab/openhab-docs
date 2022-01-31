@@ -72,8 +72,7 @@ LED Dimmer<br /> <h1>Overview</h1><p>This is a switch multilevel device based on
       </parameter-group>
 
       <!-- PARAMETER DEFINITIONS -->
-      <parameter name="config_1_1" type="integer" groupName="configuration"
-                 min="0" max="2">
+      <parameter name="config_1_1" type="integer" groupName="configuration">
         <label>1: State After Power Restore</label>
         <description><![CDATA[
 State After Power Restore<br /> <h1>Overview</h1><p>State After Power Restore: The state the switch should return to once power is restored after power failure</p> <p>0 - off</p> <p>1 - on</p> <p>2 - Returns to level before Power Outage</p>
@@ -82,8 +81,7 @@ State After Power Restore<br /> <h1>Overview</h1><p>State After Power Restore: T
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_2_1" type="integer" groupName="configuration"
-                 min="0" max="1">
+      <parameter name="config_2_1" type="integer" groupName="configuration">
         <label>2: Notification when load status change</label>
         <description><![CDATA[
 Notification when load status change<br /> <h1>Overview</h1><p>Notification when load status change: The Dimmer will send notification to associated device(Group Lifeline) when status of DImmer load is changed:</p> <p>0 - The function is disabled</p> <p>1 - Send Switch Multilevel Report</p>
@@ -92,8 +90,7 @@ Notification when load status change<br /> <h1>Overview</h1><p>Notification when
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_3_1" type="integer" groupName="configuration"
-                 min="0" max="100">
+      <parameter name="config_3_1" type="integer" groupName="configuration">
         <label>3: Default dimming speed</label>
         <description><![CDATA[
 Default dimming speed<br /> <h1>Overview</h1><p>Default dimming speed. Valid Value: 0-100</p> <p>0 - Instantly</p> <p>1 - Fast</p> <p>...</p> <p>100 - Slow</p>
@@ -102,8 +99,7 @@ Default dimming speed<br /> <h1>Overview</h1><p>Default dimming speed. Valid Val
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_5_1" type="integer" groupName="configuration"
-                 min="0" max="1">
+      <parameter name="config_5_1" type="integer" groupName="configuration">
         <label>5: Enable or Disable external switch to pair network</label>
         <description><![CDATA[
 Enable or Disable external switch to pair network<br /> <h1>Overview</h1><p>Enable or Disable external switch to pair network.</p> <p>0 - Disable</p> <p>1 - Enable</p>
@@ -112,8 +108,7 @@ Enable or Disable external switch to pair network<br /> <h1>Overview</h1><p>Enab
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_6_1" type="integer" groupName="configuration"
-                 min="0" max="1">
+      <parameter name="config_6_1" type="integer" groupName="configuration">
         <label>6: Setting dimming way</label>
         <description><![CDATA[
 Setting dimming way<br /> <h1>Overview</h1><p>Setting dimming way.</p> <p>0 - Linear dimming</p> <p>1 - Logarithmic dimming</p>
@@ -122,8 +117,7 @@ Setting dimming way<br /> <h1>Overview</h1><p>Setting dimming way.</p> <p>0 - Li
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_7_1" type="integer" groupName="configuration"
-                 min="0" max="99">
+      <parameter name="config_7_1" type="integer" groupName="configuration">
         <label>7: Setting default brightness when turn on</label>
         <description><![CDATA[
 Setting default brightness when turn on the dimmer from off status<br /> <h1>Overview</h1><p>Setting default brightness when turn on the dimmer from off status</p> <p>Setting 0 means that the dimmer will use parameter 1.</p> <p>Valid value: 0 - 99</p>
@@ -132,8 +126,7 @@ Setting default brightness when turn on the dimmer from off status<br /> <h1>Ove
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_8_1" type="integer" groupName="configuration"
-                 min="0" max="60">
+      <parameter name="config_8_1" type="integer" groupName="configuration">
         <label>8: Setting delay time when turn off the load</label>
         <description><![CDATA[
 Setting delay time when turn off the load<br /> <h1>Overview</h1><p>Setting delay time when turn off the load, unit is second.</p> <p>Valid value: 0 - 60</p>

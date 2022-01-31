@@ -157,16 +157,14 @@ MODE1, Example: change saturation level from 0% to 99%<br /> <h1>Overview</h1><p
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_9_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_9_1" type="integer" groupName="configuration">
         <label>9: Step value (for MODE1)</label>
         <description>Step value (relevant for MODE1)</description>
         <default>1</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_10_2" type="integer" groupName="configuration"
-                 min="-32767" max="32768">
+      <parameter name="config_10_2" type="integer" groupName="configuration">
         <label>10: Time between steps (relevant for MODE1)</label>
         <description><![CDATA[
 Time between steps (relevant for MODE1).<br /> <h1>Overview</h1><p>Default setting: 10 ms  0 - immediate change of state, available settings: 1 - 60000 ms.</p>
@@ -175,8 +173,7 @@ Time between steps (relevant for MODE1).<br /> <h1>Overview</h1><p>Default setti
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_11_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_11_1" type="integer" groupName="configuration">
         <label>11: Time for changing from start to end value</label>
         <description><![CDATA[
 Step value (relevant for MODE1).<br /> <h1>Overview</h1><ul><li>Default setting: 67 (3s)</li> <li>0: immediate change</li> <li>1-63: 20-126 [ms] value*20ms</li> <li>65-127: 1-63 [s] (value-64)*1s</li> <li>129-191: 10-630 [s] (value-128)*10s</li> </ul>
@@ -185,8 +182,7 @@ Step value (relevant for MODE1).<br /> <h1>Overview</h1><ul><li>Default setting:
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_12_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_12_1" type="integer" groupName="configuration">
         <label>12: Maximum Brightening level</label>
         <description><![CDATA[
 Maximum Brightening level.<br /> <h1>Overview</h1><p>Default setting: 255, available settings: 3 - 255.</p>
@@ -195,8 +191,7 @@ Maximum Brightening level.<br /> <h1>Overview</h1><p>Default setting: 255, avail
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_13_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_13_1" type="integer" groupName="configuration">
         <label>13: Minimum dim level</label>
         <description><![CDATA[
 Minimum dim level.<br /> <h1>Overview</h1><p>Default setting: 2, available settings: 3 - 255.</p>
@@ -205,8 +200,7 @@ Minimum dim level.<br /> <h1>Overview</h1><p>Default setting: 2, available setti
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_14_2" type="integer" groupName="configuration"
-                 min="-32767" max="32768">
+      <parameter name="config_14_2" type="integer" groupName="configuration">
         <label>14: Inputs/Outputs configuration</label>
         <description><![CDATA[
 Relevant for main controllers other than Home Center 2 only<br /> <h1>Overview</h1><p>Inputs/Outputs configuration - relevant for main controllers other than Home Center 2 only.<br />Default setting: 4369, Controlled device: RGBW, toggle switch inputs (NORMAL MODE).</p>
@@ -243,8 +237,7 @@ Alarm response<br /> <h1>Overview</h1><p>Alarm of any type (General alarm, flood
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_38_1" type="integer" groupName="configuration"
-                 min="1" max="10">
+      <parameter name="config_38_1" type="integer" groupName="configuration">
         <label>38: Alarm sequence program</label>
         <description><![CDATA[
 Alarm sequence program.<br /> <h1>Overview</h1><p>Default setting: 10, 1-10 specifies alarm program number.</p>
@@ -253,8 +246,7 @@ Alarm sequence program.<br /> <h1>Overview</h1><p>Default setting: 10, 1-10 spec
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_39_2" type="integer" groupName="configuration"
-                 min="-32767" max="32768">
+      <parameter name="config_39_2" type="integer" groupName="configuration">
         <label>39: Active PROGRAM alarm time</label>
         <description><![CDATA[
 Active PROGRAM alarm time.<br /> <h1>Overview</h1><p>Default setting: 600s, 1-65534 specifies alarm time in seconds.</p>
@@ -275,8 +267,7 @@ Active PROGRAM alarm time.<br /> <h1>Overview</h1><p>Default setting: 600s, 1-65
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_43_1" type="integer" groupName="configuration"
-                 min="1" max="100">
+      <parameter name="config_43_1" type="integer" groupName="configuration">
         <label>43: Reporting 0-10v analog inputs change threshold</label>
         <description><![CDATA[
 Defines which input voltage must change to be reported<br /> <h1>Overview</h1><p>Parameter defines a value by which input voltage must change in order to be reported to the main controller.<br />New value is calculated based on last reported value, default setting: 5</p>
@@ -285,8 +276,7 @@ Defines which input voltage must change to be reported<br /> <h1>Overview</h1><p
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_44_2" type="integer" groupName="configuration"
-                 min="-32767" max="32768">
+      <parameter name="config_44_2" type="integer" groupName="configuration">
         <label>44: Power load reporting frequency</label>
         <description><![CDATA[
 Parameter defines Time between reports.<br /> <h1>Overview</h1><p>Parameter defines Time between reports. The report will be sent if last reported value differs from the current value, else reports will also be sent in case of polling. Default setting: 3 600 (s)</p>
@@ -295,8 +285,7 @@ Parameter defines Time between reports.<br /> <h1>Overview</h1><p>Parameter defi
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_45_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_45_1" type="integer" groupName="configuration">
         <label>45: Reporting energy consumption changes</label>
         <description><![CDATA[
 Reporting energy consumption changes<br /> <h1>Overview</h1><p>Defines the required change in power to generate an unsolicited power report. New, reported energy value is calculated based on last reported value. Default setting: 10 (0,1 kWh).</p>
@@ -316,8 +305,7 @@ Reporting energy consumption changes<br /> <h1>Overview</h1><p>Defines the requi
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_72_1" type="integer" groupName="configuration"
-                 min="1" max="10">
+      <parameter name="config_72_1" type="integer" groupName="configuration">
         <label>72: Starting animation program</label>
         <description><![CDATA[
 Starting predefined program when device set to work in RGB/RGBW mode<br /> <h1>Overview</h1><p>Starting predefined program when device set to work in RGB/RGBW mode (parameter 14) - relevant for main controllers other than Home Center 2 only. Default setting: 1</p>

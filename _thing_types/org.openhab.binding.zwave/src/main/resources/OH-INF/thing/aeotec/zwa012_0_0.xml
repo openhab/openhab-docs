@@ -70,8 +70,7 @@ Door/Window Sensor 7 Pro<br /> <h1>Overview</h1><p>Aeotec Door / Window Sensor 7
       </parameter-group>
 
       <!-- PARAMETER DEFINITIONS -->
-      <parameter name="config_1_1" type="integer" groupName="configuration"
-                 min="0" max="1">
+      <parameter name="config_1_1" type="integer" groupName="configuration">
         <label>1: Operation Mode</label>
         <description><![CDATA[
 Magnet or dry contact sensor<br /> <h1>Overview</h1><p>This parameter allows switching between internal sensor and external sensor.</p>
@@ -83,8 +82,7 @@ Magnet or dry contact sensor<br /> <h1>Overview</h1><p>This parameter allows swi
         </options>
       </parameter>
 
-      <parameter name="config_2_1" type="integer" groupName="configuration"
-                 min="0" max="3">
+      <parameter name="config_2_1" type="integer" groupName="configuration">
         <label>2: Dry Contact Operation Mode</label>
         <description><![CDATA[
 Dry contact operation mode<br /> <h1>Overview</h1><p>Parameter defines how dry contact will operate with the sensor or switch that is connected to the dry contact terminals.</p>
@@ -98,8 +96,7 @@ Dry contact operation mode<br /> <h1>Overview</h1><p>Parameter defines how dry c
         </options>
       </parameter>
 
-      <parameter name="config_3_1" type="integer" groupName="configuration"
-                 min="0" max="1">
+      <parameter name="config_3_1" type="integer" groupName="configuration">
         <label>3: Door/Window State</label>
         <description><![CDATA[
 Sensor state when the magnet is close to the sensor<br /> <h1>Overview</h1><p>This parameter allows setting Door / Window Sensor 7 state when the magnet is close to the sensor.<br /></p>
@@ -126,8 +123,7 @@ Defines when the LED will indicate events<br /> <h1>Overview</h1><p>This paramet
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_5_1" type="integer" groupName="configuration"
-                 min="0" max="1">
+      <parameter name="config_5_1" type="integer" groupName="configuration">
         <label>5: Range Test</label>
         <description><![CDATA[
 Range test<br /> <h1>Overview</h1><p>Allows enabling the activation of Z-Wave range test with double click of a Tamper Switch 2.<br /></p>
@@ -139,8 +135,7 @@ Range test<br /> <h1>Overview</h1><p>Allows enabling the activation of Z-Wave ra
         </options>
       </parameter>
 
-      <parameter name="config_6_1" type="integer" groupName="configuration"
-                 min="0" max="2">
+      <parameter name="config_6_1" type="integer" groupName="configuration">
         <label>6: Group 2 Association Triggers</label>
         <description><![CDATA[
 Defines events that result in sending On/Off commands to devices added to the 2nd Association Group<br /> <h1>Overview</h1><p>This parameter defines events that result in sending On/Off commands to devices added to the 2nd Association Group. These commands are sent alternately to switch the devices On and Off. Commands represent the values of BASIC SET command frames. This parameter is inactive in external dry-contact mode (parameter “Operation Mode” set to 1).<br /></p>
@@ -153,8 +148,7 @@ Defines events that result in sending On/Off commands to devices added to the 2n
         </options>
       </parameter>
 
-      <parameter name="config_7_1" type="integer" groupName="configuration"
-                 min="0" max="2">
+      <parameter name="config_7_1" type="integer" groupName="configuration">
         <label>7: Group 2 Commands</label>
         <description><![CDATA[
 Commands sent to associated devices on Group 2<br /> <h1>Overview</h1><p>Command frames sent to devices added to the 2nd association group.<br /></p>
@@ -232,8 +226,7 @@ Delay of tamper alarm cancellation<br /> <h1>Overview</h1><p>The time period aft
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_13_1" type="integer" groupName="configuration"
-                 min="0" max="1">
+      <parameter name="config_13_1" type="integer" groupName="configuration">
         <label>13: Tamper Cancellation Reporting</label>
         <description><![CDATA[
 Reporting tamper alarm cancellation<br /> <h1>Overview</h1><p>Reporting cancellation of tamper alarm to the controller and 3rd Association Group.<br /></p>
@@ -245,8 +238,7 @@ Reporting tamper alarm cancellation<br /> <h1>Overview</h1><p>Reporting cancella
         </options>
       </parameter>
 
-      <parameter name="config_14_1" type="integer" groupName="configuration"
-                 min="0" max="1">
+      <parameter name="config_14_1" type="integer" groupName="configuration">
         <label>14: Central Scene</label>
         <description><![CDATA[
 Central scene event functionality<br /> <h1>Overview</h1><p>This parameter enables/disables the central scene function.<br /></p>
@@ -258,8 +250,7 @@ Central scene event functionality<br /> <h1>Overview</h1><p>This parameter enabl
         </options>
       </parameter>
 
-      <parameter name="config_15_1" type="integer" groupName="configuration"
-                 min="0" max="1">
+      <parameter name="config_15_1" type="integer" groupName="configuration">
         <label>15: Tilt Sensor</label>
         <description><![CDATA[
 Tilt sensor functionality<br /> <h1>Overview</h1><p>This parameter enables/disables the tilt function.<br /></p>
@@ -271,8 +262,7 @@ Tilt sensor functionality<br /> <h1>Overview</h1><p>This parameter enables/disab
         </options>
       </parameter>
 
-      <parameter name="config_16_1" type="integer" groupName="configuration"
-                 min="0" max="1">
+      <parameter name="config_16_1" type="integer" groupName="configuration">
         <label>16: Tilt Sensor State</label>
         <description><![CDATA[
 Tilt sensor state<br /> <h1>Overview</h1><p>This parameter allows to set the state of the door/window when the tilt is in an OFF state.<br /></p>
@@ -284,8 +274,7 @@ Tilt sensor state<br /> <h1>Overview</h1><p>This parameter allows to set the sta
         </options>
       </parameter>
 
-      <parameter name="config_17_1" type="integer" groupName="configuration"
-                 min="0" max="2">
+      <parameter name="config_17_1" type="integer" groupName="configuration">
         <label>17: Group 5 Association Triggers</label>
         <description><![CDATA[
 5th Association Group trigger<br /> <h1>Overview</h1><p>This parameter defines the status of the magnet switch that causes sending a BASIC command to all devices of Association Group 5.<br /></p>
@@ -298,8 +287,7 @@ Tilt sensor state<br /> <h1>Overview</h1><p>This parameter allows to set the sta
         </options>
       </parameter>
 
-      <parameter name="config_18_1" type="integer" groupName="configuration"
-                 min="0" max="2">
+      <parameter name="config_18_1" type="integer" groupName="configuration">
         <label>18: Group 5 Commands</label>
         <description><![CDATA[
 Command sent to devices of Association Group 5<br /> <h1>Overview</h1><p>This parameter defines which commands is sent to 5th Association Group.</p>

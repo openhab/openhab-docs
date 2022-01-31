@@ -59,24 +59,21 @@ Sprinkler Controller Supporting Flow Sensors, Rain Sensors and Moisture Sensors<
       </parameter-group>
 
       <!-- PARAMETER DEFINITIONS -->
-      <parameter name="config_2_2" type="integer" groupName="configuration"
-                 min="1" max="255">
+      <parameter name="config_2_2" type="integer" groupName="configuration">
         <label>2: Master Valve Delay</label>
         <description>Delay in seconds</description>
         <default>1</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_12_4" type="integer" groupName="configuration"
-                 min="0" max="2147483647">
+      <parameter name="config_12_4" type="integer" groupName="configuration">
         <label>12: Flow Sensor K value</label>
         <description>Unique to flow sensor</description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_13_4" type="integer" groupName="configuration"
-                 min="0" max="2147483647">
+      <parameter name="config_13_4" type="integer" groupName="configuration">
         <label>13: Flow Sensor Offset value</label>
         <description>Unique to the flow sensor</description>
         <default>0</default>

@@ -54,8 +54,7 @@ Toggle Dimmer<br /> <h1>Overview</h1><p>Manual or Z-Wave on.off and brightness c
       </parameter-group>
 
       <!-- PARAMETER DEFINITIONS -->
-      <parameter name="config_1_1" type="integer" groupName="configuration"
-                 min="0" max="2">
+      <parameter name="config_1_1" type="integer" groupName="configuration">
         <label>1: On/Off Toggle Orientation</label>
         <description><![CDATA[
 On/Off Toggle Orientation<br /> <h1>Overview</h1><p><br /></p>
@@ -68,8 +67,7 @@ On/Off Toggle Orientation<br /> <h1>Overview</h1><p><br /></p>
         </options>
       </parameter>
 
-      <parameter name="config_3_4" type="integer" groupName="configuration"
-                 min="0" max="65535">
+      <parameter name="config_3_4" type="integer" groupName="configuration">
         <label>3: Auto Turn-Off Timer</label>
         <description><![CDATA[
 Auto Turn-Off Timer<br /> <h1>Overview</h1><p>0 – timer disabled (default); </p><p>1 – 65535 (minutes).</p>
@@ -78,8 +76,7 @@ Auto Turn-Off Timer<br /> <h1>Overview</h1><p>0 – timer disabled (default); <
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_5_4" type="integer" groupName="configuration"
-                 min="0" max="65535">
+      <parameter name="config_5_4" type="integer" groupName="configuration">
         <label>5: Auto Turn-On Timer</label>
         <description><![CDATA[
 Auto Turn-On Timer<br /> <h1>Overview</h1><p>0 – timer disabled (default); </p><p>1 – 65535 (minutes).<br /></p>
@@ -88,8 +85,7 @@ Auto Turn-On Timer<br /> <h1>Overview</h1><p>0 – timer disabled (default); </
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_8_1" type="integer" groupName="configuration"
-                 min="0" max="2">
+      <parameter name="config_8_1" type="integer" groupName="configuration">
         <label>8: On Off Status After Power Failure</label>
         <description>On Off Status After Power Failure</description>
         <default>2</default>
@@ -100,8 +96,7 @@ Auto Turn-On Timer<br /> <h1>Overview</h1><p>0 – timer disabled (default); </
         </options>
       </parameter>
 
-      <parameter name="config_9_1" type="integer" groupName="configuration"
-                 min="0" max="99">
+      <parameter name="config_9_1" type="integer" groupName="configuration">
         <label>9: Ramp Rate Control</label>
         <description><![CDATA[
 Ramp Rate Control<br /> <h1>Overview</h1><p>Adjust the ramp rate for your dimmer (fade-in / fade-out effect for on / off operation).Values correspond to the number of seconds it take for the dimmer to reach full brightness or turn off when operated manually.<br /></p>
@@ -110,8 +105,7 @@ Ramp Rate Control<br /> <h1>Overview</h1><p>Adjust the ramp rate for your dimmer
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_10_1" type="integer" groupName="configuration"
-                 min="1" max="99">
+      <parameter name="config_10_1" type="integer" groupName="configuration">
         <label>10: Minimum Brightness</label>
         <description><![CDATA[
 Minimum brightness in percent<br /> <h1>Overview</h1><p><br /></p>
@@ -120,8 +114,7 @@ Minimum brightness in percent<br /> <h1>Overview</h1><p><br /></p>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_11_1" type="integer" groupName="configuration"
-                 min="1" max="99">
+      <parameter name="config_11_1" type="integer" groupName="configuration">
         <label>11: Maximum Brightness</label>
         <description><![CDATA[
 Maximum brightness in percent<br /> <h1>Overview</h1><p><br /></p>
@@ -130,8 +123,7 @@ Maximum brightness in percent<br /> <h1>Overview</h1><p><br /></p>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_12_1" type="integer" groupName="configuration"
-                 min="0" max="3">
+      <parameter name="config_12_1" type="integer" groupName="configuration">
         <label>12: Double Tap Up</label>
         <description><![CDATA[
 Double tap up behaviour<br /> <h1>Overview</h1><p><br /></p>
@@ -145,8 +137,7 @@ Double tap up behaviour<br /> <h1>Overview</h1><p><br /></p>
         </options>
       </parameter>
 
-      <parameter name="config_13_1" type="integer" groupName="configuration"
-                 min="0" max="1">
+      <parameter name="config_13_1" type="integer" groupName="configuration">
         <label>13: Scene Control</label>
         <description><![CDATA[
 Scene Control<br /> <h1>Overview</h1><p><br /></p>
@@ -158,8 +149,7 @@ Scene Control<br /> <h1>Overview</h1><p><br /></p>
         </options>
       </parameter>
 
-      <parameter name="config_15_1" type="integer" groupName="configuration"
-                 min="0" max="2">
+      <parameter name="config_15_1" type="integer" groupName="configuration">
         <label>15: Smart Bulb Mode</label>
         <description><![CDATA[
 Smart Bulb Mode: Enable/Disable Toggle / Z-Wave Control<br /> <h1>Overview</h1><p>Enable or disable on/off control from the toggle (aka disable the relay). If disabled, you’ll only be able to control the connected light via Z-Wave. Scenes and other functionality will still be available from the toggle.<br /></p><p><b>For option 3:</b></p><p><b>NOTE: </b>Hold the toggle down for 10 seconds until the LED indicator starts blinking, then within 2 seconds, toggle the switch down 5 times quickly to change this mode. The LED indicator will stay solid green for 3 seconds to confirm the change.</p>
@@ -173,8 +163,7 @@ Smart Bulb Mode: Enable/Disable Toggle / Z-Wave Control<br /> <h1>Overview</h1><
         <advanced>true</advanced>
       </parameter>
 
-      <parameter name="config_16_1" type="integer" groupName="configuration"
-                 min="1" max="99">
+      <parameter name="config_16_1" type="integer" groupName="configuration">
         <label>16: Physical Dimming Speed</label>
         <description>Physical Dimming Speed in seconds</description>
         <default>5</default>
@@ -191,8 +180,7 @@ Smart Bulb Mode: Enable/Disable Toggle / Z-Wave Control<br /> <h1>Overview</h1><
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_20_1" type="integer" groupName="configuration"
-                 min="0" max="2">
+      <parameter name="config_20_1" type="integer" groupName="configuration">
         <label>20: Dimmer Report Type</label>
         <description>Dimmer Report Type</description>
         <default>2</default>
@@ -204,8 +192,7 @@ Smart Bulb Mode: Enable/Disable Toggle / Z-Wave Control<br /> <h1>Overview</h1><
         <advanced>true</advanced>
       </parameter>
 
-      <parameter name="config_21_1" type="integer" groupName="configuration"
-                 min="0" max="1">
+      <parameter name="config_21_1" type="integer" groupName="configuration">
         <label>21: Disabled Physical Toggle Reporting</label>
         <description>Disabled Physical Toggle Reporting Behaviour</description>
         <default>0</default>
@@ -215,8 +202,7 @@ Smart Bulb Mode: Enable/Disable Toggle / Z-Wave Control<br /> <h1>Overview</h1><
         </options>
       </parameter>
 
-      <parameter name="config_22_1" type="integer" groupName="configuration"
-                 min="0" max="99">
+      <parameter name="config_22_1" type="integer" groupName="configuration">
         <label>22: Night Light Mode</label>
         <description><![CDATA[
 Night Light Mode<br /> <h1>Overview</h1><p>Set the brightness level the dimmer will turn on to when off and when toggle is held DOWN for a second.<br /></p>
@@ -225,8 +211,7 @@ Night Light Mode<br /> <h1>Overview</h1><p>Set the brightness level the dimmer w
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_25_1" type="integer" groupName="configuration"
-                 min="0" max="3">
+      <parameter name="config_25_1" type="integer" groupName="configuration">
         <label>25: Tap Up Once</label>
         <description><![CDATA[
 Tap up once behaviour<br /> <h1>Overview</h1><p><br /></p>

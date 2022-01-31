@@ -53,8 +53,7 @@ Toggle Switch<br /> <h1>Overview</h1><p>700 Series toggle switch with simple dir
       </parameter-group>
 
       <!-- PARAMETER DEFINITIONS -->
-      <parameter name="config_1_1" type="integer" groupName="configuration"
-                 min="0" max="2">
+      <parameter name="config_1_1" type="integer" groupName="configuration">
         <label>1: On/Off Toggle Orientation</label>
         <description>Determines toggle actions</description>
         <default>0</default>
@@ -65,8 +64,7 @@ Toggle Switch<br /> <h1>Overview</h1><p>700 Series toggle switch with simple dir
         </options>
       </parameter>
 
-      <parameter name="config_3_4" type="integer" groupName="configuration"
-                 min="0" max="65535">
+      <parameter name="config_3_4" type="integer" groupName="configuration">
         <label>3: Auto Turn-Off Timer</label>
         <description><![CDATA[
 control auto turn-off timer function<br /> <h1>Overview</h1><p>0 - disabled</p><p>1-656535 minutes</p>
@@ -75,8 +73,7 @@ control auto turn-off timer function<br /> <h1>Overview</h1><p>0 - disabled</p><
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_5_4" type="integer" groupName="configuration"
-                 min="0" max="65535">
+      <parameter name="config_5_4" type="integer" groupName="configuration">
         <label>5: Auto Turn On Timer</label>
         <description><![CDATA[
 control auto turn on timer function<br /> <h1>Overview</h1><p>0 - disabled</p><p>1-65535 minutes</p>
@@ -85,8 +82,7 @@ control auto turn on timer function<br /> <h1>Overview</h1><p>0 - disabled</p><p
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_8_1" type="integer" groupName="configuration"
-                 min="0" max="2">
+      <parameter name="config_8_1" type="integer" groupName="configuration">
         <label>8: On Off Status After Power Failure</label>
         <description>Set the on off status for the switch after power failure.</description>
         <default>0</default>
@@ -97,8 +93,7 @@ control auto turn on timer function<br /> <h1>Overview</h1><p>0 - disabled</p><p
         </options>
       </parameter>
 
-      <parameter name="config_10_1" type="integer" groupName="configuration"
-                 min="0" max="1">
+      <parameter name="config_10_1" type="integer" groupName="configuration">
         <label>10: Enable/Disable Scene Control</label>
         <description>Enable/Disable Scene Control</description>
         <default>0</default>
@@ -108,8 +103,7 @@ control auto turn on timer function<br /> <h1>Overview</h1><p>0 - disabled</p><p
         </options>
       </parameter>
 
-      <parameter name="config_12_1" type="integer" groupName="configuration"
-                 min="1" max="2">
+      <parameter name="config_12_1" type="integer" groupName="configuration">
         <label>12: Smart Bulb Mode: Enable/Disable Paddle / Z-Wave Control</label>
         <description><![CDATA[
 Enable or disable manual on/off control from the toggle.<br /> <h1>Overview</h1><p>Enable or disable manual on/off control from the toggle. </p><p>If enabled, you’ll only be able to control the connected light via Z-Wave. Scenes and other functionality will still be available from the toggle.</p>
@@ -120,8 +114,7 @@ Enable or disable manual on/off control from the toggle.<br /> <h1>Overview</h1>
         </options>
       </parameter>
 
-      <parameter name="config_13_1" type="integer" groupName="configuration"
-                 min="0" max="1">
+      <parameter name="config_13_1" type="integer" groupName="configuration">
         <label>13: Reporting behavior for disabled physical control</label>
         <description><![CDATA[
 Set reporting behavior for disabled physical control.<br /> <h1>Overview</h1><p>0 – switch reports on/off status and change LED indicator state even if physical and Z-Wave control is disabled (default). </p><p>1 – switch doesn't report on/off status or change LED indicator state when physical (and Z-Wave) control is disabled.</p>
@@ -134,8 +127,7 @@ Set reporting behavior for disabled physical control.<br /> <h1>Overview</h1><p>
         <advanced>true</advanced>
       </parameter>
 
-      <parameter name="config_16_1" type="integer" groupName="configuration"
-                 min="0" max="1">
+      <parameter name="config_16_1" type="integer" groupName="configuration">
         <label>16: Choose how the switch reports its status back to the hub.</label>
         <description><![CDATA[
 Choose how the switch reports its status back to the hub.<br /> <h1>Overview</h1><p>0 – Binary switch report for Z-Wave control, basic set report for toggle (physical) control; </p><p>1 –binary switch report for both Z-Wave and toggle control</p>

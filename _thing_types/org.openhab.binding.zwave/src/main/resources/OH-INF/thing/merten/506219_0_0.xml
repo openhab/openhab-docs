@@ -65,8 +65,7 @@ Battery Powered Wall Controller<br /> <h1>Overview</h1><p><strong>Single-surface
       </parameter-group>
 
       <!-- PARAMETER DEFINITIONS -->
-      <parameter name="config_0_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_0_1" type="integer" groupName="configuration">
         <label>0: Button 1 function</label>
         <description><![CDATA[
 <br /> <h1>Overview</h1><p><br /></p>
@@ -83,8 +82,7 @@ Battery Powered Wall Controller<br /> <h1>Overview</h1><p><strong>Single-surface
         </options>
       </parameter>
 
-      <parameter name="config_1_0" type="integer" groupName="configuration"
-                 min="-2147483646" max="2147483647">
+      <parameter name="config_1_0" type="integer" groupName="configuration">
         <label>1: Button 2 function</label>
         <description><![CDATA[
 <br /> <h1>Overview</h1><p><br /></p>
@@ -101,8 +99,7 @@ Battery Powered Wall Controller<br /> <h1>Overview</h1><p><strong>Single-surface
         </options>
       </parameter>
 
-      <parameter name="config_2_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_2_1" type="integer" groupName="configuration">
         <label>2: Button 3 function</label>
         <description><![CDATA[
 <br /> <h1>Overview</h1><p><br /></p>
@@ -119,8 +116,7 @@ Battery Powered Wall Controller<br /> <h1>Overview</h1><p><strong>Single-surface
         </options>
       </parameter>
 
-      <parameter name="config_3_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_3_1" type="integer" groupName="configuration">
         <label>3: Button 4 function</label>
         <description><![CDATA[
 <br /> <h1>Overview</h1><p><br /></p>

@@ -58,48 +58,42 @@ Indoor Siren<br /> <h1>Overview</h1><p>The Zipato indoor siren is an intelligent
       </parameter-group>
 
       <!-- PARAMETER DEFINITIONS -->
-      <parameter name="config_1_1" type="integer" groupName="configuration"
-                 min="1" max="3">
+      <parameter name="config_1_1" type="integer" groupName="configuration">
         <label>1: Alarm volume</label>
         <description>configure alarm volume</description>
         <default>2</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_2_1" type="integer" groupName="configuration"
-                 min="1" max="3">
+      <parameter name="config_2_1" type="integer" groupName="configuration">
         <label>2: alarm duration time</label>
         <description>alarm duration time: 1=30sec., 2=1 min, 3=5min</description>
         <default>2</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_3_1" type="integer" groupName="configuration"
-                 min="0" max="127">
+      <parameter name="config_3_1" type="integer" groupName="configuration">
         <label>3: Configuring doorbell music duration time</label>
         <description>Configuring doorbell music duration time</description>
         <default>20</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_4_1" type="integer" groupName="configuration"
-                 min="1" max="3">
+      <parameter name="config_4_1" type="integer" groupName="configuration">
         <label>4: Configure doorbell music volume</label>
         <description>Low, Middle, High</description>
         <default>1</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_5_1" type="integer" groupName="configuration"
-                 min="1" max="10">
+      <parameter name="config_5_1" type="integer" groupName="configuration">
         <label>5: Configure alarm sound index</label>
         <description>sound type</description>
         <default>5</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_6_1" type="integer" groupName="configuration"
-                 min="1" max="10">
+      <parameter name="config_6_1" type="integer" groupName="configuration">
         <label>6: Configure doorbell music index</label>
         <description>Sound Types</description>
         <default>5</default>

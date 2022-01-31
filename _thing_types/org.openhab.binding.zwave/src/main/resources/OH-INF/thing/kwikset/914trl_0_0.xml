@@ -103,8 +103,7 @@ Door lock status LED blinks every 6 seconds.<br /> <h1>Overview</h1><p>Door lock
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_40_1_wo" type="integer" groupName="configuration"
-                 min="0" max="1">
+      <parameter name="config_40_1_wo" type="integer" groupName="configuration">
         <label>40: Factory Default</label>
         <description><![CDATA[
 Reset to factory default settings.<br /> <h1>Overview</h1><p>Reset factory default settings, except for the anti-theft setting.</p>

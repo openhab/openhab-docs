@@ -113,8 +113,7 @@ Restore Switch State after AC power loss<br /> <h1>Overview</h1><p>Whenever the 
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_4_2" type="integer" groupName="configuration"
-                 min="0" max="32767">
+      <parameter name="config_4_2" type="integer" groupName="configuration">
         <label>4: Auto OFF Timer</label>
         <description><![CDATA[
 Auto OFF Timer Countdown<br /> <h1>Overview</h1><p>Whenever TZ06 switches to ON, the auto OFF timer will begin to count down.  After the time decreases to zero, it will switch to OFF automatically.  However, if auto OFF timer is set to 0, the auto OFF function will be disabled.  The default setting is 0.</p>

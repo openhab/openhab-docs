@@ -53,8 +53,7 @@ EVA LOGIK 3-Way Z-Wave Smart Dimmer Switch<br /> <h1>Overview</h1><ul><li> manua
       </parameter-group>
 
       <!-- PARAMETER DEFINITIONS -->
-      <parameter name="config_1_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_1_1" type="integer" groupName="configuration">
         <label>1: Locally Button Function</label>
         <description><![CDATA[
 Change the function of the paddle buttons<br /> <h1>Overview</h1><p>0:  Up = on, Down = off</p><p>1:  Up = off, Down = on</p><p>2:  Up and Down both change the state of the light<br /></p>
@@ -67,8 +66,7 @@ Change the function of the paddle buttons<br /> <h1>Overview</h1><p>0:  Up = on
         </options>
       </parameter>
 
-      <parameter name="config_2_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_2_1" type="integer" groupName="configuration">
         <label>2: LED Indicator</label>
         <description><![CDATA[
 Define state of the LED indicator<br /> <h1>Overview</h1><p>0:  LED is ON when switch is Off and LED is OFF when switch is On</p><p>1:  LED is ON when switch is On and LED is OFF when switch is Off</p><p>2:  LED always OFF</p><p>3:  LED always ON<br /></p>
@@ -82,8 +80,7 @@ Define state of the LED indicator<br /> <h1>Overview</h1><p>0:  LED is ON when 
         </options>
       </parameter>
 
-      <parameter name="config_4_4" type="integer" groupName="configuration"
-                 min="0" max="65535">
+      <parameter name="config_4_4" type="integer" groupName="configuration">
         <label>4: Auto Turn Off Timer</label>
         <description><![CDATA[
 Set a timer to turn the switch off automatically after the swtich turned on<br /> <h1>Overview</h1><p><br /></p>
@@ -92,8 +89,7 @@ Set a timer to turn the switch off automatically after the swtich turned on<br /
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_6_4" type="integer" groupName="configuration"
-                 min="0" max="65535">
+      <parameter name="config_6_4" type="integer" groupName="configuration">
         <label>6: Auto Turn-On Timer</label>
         <description><![CDATA[
 Set a timer to turn the switch on automatically after the swtich turned off<br /> <h1>Overview</h1><p><br /></p>
@@ -102,8 +98,7 @@ Set a timer to turn the switch on automatically after the swtich turned off<br /
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_8_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_8_1" type="integer" groupName="configuration">
         <label>8: Power Failure Restore State</label>
         <description><![CDATA[
 Set state on or off after power failure<br /> <h1>Overview</h1><p>0:  Off</p><p>1:  On</p><p>2:  Memory state before power failure<br /></p>
@@ -116,8 +111,7 @@ Set state on or off after power failure<br /> <h1>Overview</h1><p>0:  Off</p><p
         </options>
       </parameter>
 
-      <parameter name="config_9_1" type="integer" groupName="configuration"
-                 min="0" max="10">
+      <parameter name="config_9_1" type="integer" groupName="configuration">
         <label>9: Dimmer speed - ON/OFF Control</label>
         <description><![CDATA[
 Set the time from max brightness to min brightness, or min brightness to max brightness when turning ON/OFF<br /> <h1>Overview</h1><p>1:  1 sec.</p><p>2:  2 sec.</p><p>etc.</p><p>10:  10 sec.<br /></p>
@@ -126,8 +120,7 @@ Set the time from max brightness to min brightness, or min brightness to max bri
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_10_1" type="integer" groupName="configuration"
-                 min="0" max="10">
+      <parameter name="config_10_1" type="integer" groupName="configuration">
         <label>10: Dimmer Speed - Local press &amp; hold</label>
         <description><![CDATA[
 Set the time from max brightness to min brightness, or min brightness to max brightness when holding to change brightness at switch or hub<br /> <h1>Overview</h1><p>1:  1 sec.</p><p>2:  2 sec.</p><p>etc.</p><p>10:  10 sec.<br /></p>
@@ -136,8 +129,7 @@ Set the time from max brightness to min brightness, or min brightness to max bri
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_11_1" type="integer" groupName="configuration"
-                 min="0" max="99">
+      <parameter name="config_11_1" type="integer" groupName="configuration">
         <label>11: Minimum Value</label>
         <description><![CDATA[
 Set the minimum brightness level setting<br /> <h1>Overview</h1><p>0:  Disable</p><p>1-99: minimum value<br /></p>
@@ -146,8 +138,7 @@ Set the minimum brightness level setting<br /> <h1>Overview</h1><p>0:  Disable<
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_12_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_12_1" type="integer" groupName="configuration">
         <label>12: Maximum Value</label>
         <description><![CDATA[
 Set the maximum brightness level setting<br /> <h1>Overview</h1><p>0:  disable</p><p>1-99:  maximum value<br /></p>

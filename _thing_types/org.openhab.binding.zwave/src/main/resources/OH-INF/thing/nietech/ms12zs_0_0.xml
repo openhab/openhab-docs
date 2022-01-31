@@ -53,8 +53,7 @@ On/Off Toggle Wall Switch<br /> <h1>Overview</h1><p>Minoston MS12ZS - an on/off/
       </parameter-group>
 
       <!-- PARAMETER DEFINITIONS -->
-      <parameter name="config_1_1" type="integer" groupName="configuration"
-                 min="0" max="2">
+      <parameter name="config_1_1" type="integer" groupName="configuration">
         <label>1: Local Button Function</label>
         <description><![CDATA[
 Configure the action performed by manual operation of the paddle.<br /> <h1>Overview</h1><p>Choose if you want the upper paddle to turn the light on or turn the light off when tapped, or if you'd like any paddle to change the state of the light.<br /></p>
@@ -63,8 +62,7 @@ Configure the action performed by manual operation of the paddle.<br /> <h1>Over
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_2_1" type="integer" groupName="configuration"
-                 min="0" max="4">
+      <parameter name="config_2_1" type="integer" groupName="configuration">
         <label>2: LED Indicator</label>
         <description><![CDATA[
 Configure the LED indicator operation.<br /> <h1>Overview</h1><p>Choose to set whether the LED indicator is always on, always off, or indicates the current or inverse state of the switch output </p>
@@ -73,8 +71,7 @@ Configure the LED indicator operation.<br /> <h1>Overview</h1><p>Choose to set w
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_4_4" type="integer" groupName="configuration"
-                 min="0" max="65535">
+      <parameter name="config_4_4" type="integer" groupName="configuration">
         <label>4: Auto Turn-Off Time</label>
         <description><![CDATA[
 Configure the time to turn off in minutes<br /> <h1>Overview</h1><p>Set a timer to make the switch turn off automatically after the switch turns on.</p>
@@ -83,8 +80,7 @@ Configure the time to turn off in minutes<br /> <h1>Overview</h1><p>Set a timer 
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_6_4" type="integer" groupName="configuration"
-                 min="0" max="65535">
+      <parameter name="config_6_4" type="integer" groupName="configuration">
         <label>6: Auto Turn-On Timer</label>
         <description><![CDATA[
 Configure the time to turn on in minutes<br /> <h1>Overview</h1><p>Set a timer to make the switch turn on automatically after the switch turns off.</p>

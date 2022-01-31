@@ -91,8 +91,7 @@ Connected Keypad with Lever<br /> <h1>Overview</h1><p>Camelot style residential 
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_7_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_7_1" type="integer" groupName="configuration">
         <label>7: Lock Basic Set Value</label>
         <description>Byte to send with set command to devices in association group 1</description>
         <default>-1</default>

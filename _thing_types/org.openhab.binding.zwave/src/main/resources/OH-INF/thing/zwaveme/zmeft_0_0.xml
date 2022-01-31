@@ -64,8 +64,7 @@ Floor Thermostat<br /> <h1>Overview</h1><p>Underfloor heating thermostat allows 
       </parameter-group>
 
       <!-- PARAMETER DEFINITIONS -->
-      <parameter name="config_1_2" type="integer" groupName="configuration"
-                 min="0" max="1800">
+      <parameter name="config_1_2" type="integer" groupName="configuration">
         <label>1: Boost Dry mode duration</label>
         <default>1800</default>
         <limitToOptions>false</limitToOptions>
@@ -95,22 +94,19 @@ Floor Thermostat<br /> <h1>Overview</h1><p>Underfloor heating thermostat allows 
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_4_1" type="integer" groupName="configuration"
-                 min="1" max="60">
+      <parameter name="config_4_1" type="integer" groupName="configuration">
         <label>4: Temperature control interval</label>
         <default>18</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_5_1" type="integer" groupName="configuration"
-                 min="1" max="60">
+      <parameter name="config_5_1" type="integer" groupName="configuration">
         <label>5: Maximum allowed temperature deviation</label>
         <default>30</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_6_1" type="integer" groupName="configuration"
-                 min="20" max="55">
+      <parameter name="config_6_1" type="integer" groupName="configuration">
         <label>6: Maximal allowed temperature</label>
         <description><![CDATA[
 Maximal allowed temperature<br /> <h1>Overview</h1><p>In all modes the thermostat will switch off heating until temperature drops below this limit. For wooden and laminate floor maximal allowed temperature is 27 degree. For tile and concrete floor maximal allowed temperature value is 45 degree.</p>
@@ -119,8 +115,7 @@ Maximal allowed temperature<br /> <h1>Overview</h1><p>In all modes the thermosta
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_10_1" type="integer" groupName="configuration"
-                 min="1" max="100">
+      <parameter name="config_10_1" type="integer" groupName="configuration">
         <label>10: Typical click timeout</label>
         <description>Typical time used to differenciate click from hold</description>
         <default>50</default>

@@ -67,8 +67,7 @@ Power On State<br /> <h1>Overview</h1><p>When power is restored, the switch reve
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_2_1" type="integer" groupName="configuration"
-                 min="0" max="1">
+      <parameter name="config_2_1" type="integer" groupName="configuration">
         <label>2: Invert Switch</label>
         <description><![CDATA[
 Invert Switch<br /> <h1>Overview</h1><p>Inverts the switch (tap down = on, tap up = off)</p> <p>0 = disabled</p> <p>1 = enabled</p>
@@ -80,8 +79,7 @@ Invert Switch<br /> <h1>Overview</h1><p>Inverts the switch (tap down = on, tap u
         </options>
       </parameter>
 
-      <parameter name="config_3_2" type="integer" groupName="configuration"
-                 min="0" max="32767">
+      <parameter name="config_3_2" type="integer" groupName="configuration">
         <label>3: Auto Off Timer</label>
         <description><![CDATA[
 Auto Off Timer (in seconds)<br /> <h1>Overview</h1><p>Automatically turns the switch off after x amount of seconds</p> <p>0 = Disabled</p> <p>1= 1 second</p> <p>32767 = 32767 seconds</p>
@@ -90,8 +88,7 @@ Auto Off Timer (in seconds)<br /> <h1>Overview</h1><p>Automatically turns the sw
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_4_1" type="integer" groupName="configuration"
-                 min="1" max="15">
+      <parameter name="config_4_1" type="integer" groupName="configuration">
         <label>4: Association Behaviour</label>
         <description><![CDATA[
 Association Behaviour<br /> <h1>Overview</h1><p>1 = Local; 2 = 3-Way; 3 = 3-Way + Local; 4 = Z-Wave HUB; 5 = Z-Wave HUB + Local; 6 = Z-Wave HUB + 3-Way; 7 = Z-Wave HUB + Local; 8 = Timer; 9 = Timer + Local; 10 = Timer + 3-Way; 11 = Timer + Local; 12 = Timer + Z-Wave HUB; 13 = Timer + Local; 14 = Timer + Z-Wave HUB; 15 = (Default) All</p>
@@ -120,8 +117,7 @@ LED Indicator Color<br /> <h1>Overview</h1><p>0 to 255 Hue Color Circle</p> <p>1
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_6_1" type="integer" groupName="configuration"
-                 min="0" max="10">
+      <parameter name="config_6_1" type="integer" groupName="configuration">
         <label>6: LED Indicator Intensity (when on)</label>
         <description><![CDATA[
 LED Indicator Intensity (when on)<br /> <h1>Overview</h1><p>0 = Off</p> <p>1-3 = Low intensity</p> <p>4-7 = Medium Intensity</p> <p>8-10 = High Intensity</p>
@@ -142,8 +138,7 @@ LED Indicator Intensity (when on)<br /> <h1>Overview</h1><p>0 = Off</p> <p>1-3 =
         </options>
       </parameter>
 
-      <parameter name="config_7_1" type="integer" groupName="configuration"
-                 min="0" max="10">
+      <parameter name="config_7_1" type="integer" groupName="configuration">
         <label>7: LED Indicator Intensity (when off)</label>
         <description><![CDATA[
 LED Indicator Intensity (when off)<br /> <h1>Overview</h1><p>0 = Off</p> <p>1-3 = Low Intensity (default)</p> <p>4-7 = Medium Intensity</p> <p>8-10 = High Intensity</p>
@@ -164,8 +159,7 @@ LED Indicator Intensity (when off)<br /> <h1>Overview</h1><p>0 = Off</p> <p>1-3 
         </options>
       </parameter>
 
-      <parameter name="config_8_4" type="integer" groupName="configuration"
-                 min="0" max="100535039">
+      <parameter name="config_8_4" type="integer" groupName="configuration">
         <label>8: LED Strip Effect</label>
         <description><![CDATA[
 Adjust this parameter to animate the LED bar according to a calculated value<br /> <h1>Overview</h1><p>Enter the value that is the sum of:<br /></p> <p>1) Color value out of 128 (1=red 21=Orange, 42=Yellow, 85=Green, 127=Cyan, 170=Blue, 234=Pink )</p> <p>2) Level  1 to 10, multiplied by 256</p> <p>3) Duration in seconds (up to 4 minutes, or use 255 for indefinitely) multiplied by 65536</p> <p>4) Effect style - (0= off/clear, 1=Solid, 2=Chase, 3=Fast Blink, 4=Slow Blink, 5=Pulse) - multiplied by 16777216</p> <p>Again, add up all these values, and this is the value to supply.</p><p>Online Calculator - https://nathanfiscus.github.io/inovelli-notification-calc/</p>
@@ -173,8 +167,7 @@ Adjust this parameter to animate the LED bar according to a calculated value<br 
         <default>0</default>
       </parameter>
 
-      <parameter name="config_51_1" type="integer" groupName="configuration"
-                 min="0" max="1">
+      <parameter name="config_51_1" type="integer" groupName="configuration">
         <label>51: Enable Instant On</label>
         <description><![CDATA[
 Enable Instant On<br /> <h1>Overview</h1><p>Enable instant on (ie: disable the 700ms delay) for physical switch.</p> <p>0: No Delay 1: 700ms Delay (default)</p>

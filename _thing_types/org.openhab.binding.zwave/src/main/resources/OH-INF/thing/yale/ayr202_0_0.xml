@@ -92,16 +92,14 @@ Yale nexTouch NTB610 with ayr202 network module<br /> <h1>Overview</h1><p>This i
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_3_1" type="integer" groupName="configuration"
-                 min="1" max="127">
+      <parameter name="config_3_1" type="integer" groupName="configuration">
         <label>3: Auto Relock NormalTime</label>
         <description>Time in seconds to auto relock the door</description>
         <default>5</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_4_1" type="integer" groupName="configuration"
-                 min="3" max="10">
+      <parameter name="config_4_1" type="integer" groupName="configuration">
         <label>4: Wrong Code Entry Limit</label>
         <description>Number of Attempt Times Permitted</description>
         <default>5</default>
@@ -120,8 +118,7 @@ Yale nexTouch NTB610 with ayr202 network module<br /> <h1>Overview</h1><p>This i
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_7_1" type="integer" groupName="configuration"
-                 min="1" max="127">
+      <parameter name="config_7_1" type="integer" groupName="configuration">
         <label>7: Shutdown Time</label>
         <description>Number of Seconds the lock is shut down after reaching the Wrong Code Entry Limit</description>
         <default>60</default>
@@ -173,8 +170,7 @@ Yale nexTouch NTB610 with ayr202 network module<br /> <h1>Overview</h1><p>This i
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_18_1" type="integer" groupName="configuration"
-                 min="10" max="127">
+      <parameter name="config_18_1" type="integer" groupName="configuration">
         <label>18: Door Propped Timer</label>
         <description>Alarm in Seconds for propped open door</description>
         <default>0</default>

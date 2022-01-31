@@ -75,8 +75,7 @@ RGBW LED Controller<br /> <h1>Overview</h1><p>The LED dimmer is a Z-Wave device 
       </parameter-group>
 
       <!-- PARAMETER DEFINITIONS -->
-      <parameter name="config_2_1" type="integer" groupName="configuration"
-                 min="0" max="2">
+      <parameter name="config_2_1" type="integer" groupName="configuration">
         <label>2: Save Load State</label>
         <description><![CDATA[
 Saving load state before power failure<br /> <h1>Overview</h1><p>Parameter number 2 defines the load state after re-power on it:</p> <p>Value 0 is off state.</p> <p>Value 1 is on state.</p> <p>Value 2 is the state before re-power on.</p>
@@ -85,8 +84,7 @@ Saving load state before power failure<br /> <h1>Overview</h1><p>Parameter numbe
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_2_1" type="integer" groupName="configuration"
-                 min="0" max="2">
+      <parameter name="config_2_1" type="integer" groupName="configuration">
         <label>2: Saving load state</label>
         <description><![CDATA[
 Saving load state before power failure<br /> <h1>Overview</h1><p>Info: Saving load state before power failure 0 – shutoff load 1 – turn on load 2 – save load state before power failure</p>
@@ -95,8 +93,7 @@ Saving load state before power failure<br /> <h1>Overview</h1><p>Info: Saving lo
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_3_1" type="integer" groupName="configuration"
-                 min="0" max="1">
+      <parameter name="config_3_1" type="integer" groupName="configuration">
         <label>3: Enable/disable basic report</label>
         <description><![CDATA[
 Enables/disables to send Basic report to the Lifeline when load state changed<br /> <h1>Overview</h1><p>Parameter number 3 enables/disables to send Basic report to the Lifeline when load state changed:</p> <p>Value 0 disables to send.</p> <p>Value 1 enables to send.</p>
@@ -105,8 +102,7 @@ Enables/disables to send Basic report to the Lifeline when load state changed<br
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_5_1" type="integer" groupName="configuration"
-                 min="0" max="7">
+      <parameter name="config_5_1" type="integer" groupName="configuration">
         <label>5: Cool light stage mode</label>
         <description><![CDATA[
 Choose a cool light stage mode<br /> <h1>Overview</h1><p>Parameter number 5 defines light stage mode:</p> <p>Value 0 inactivates light stage mode.</p> <p>Value 1 is fade in and fade out mode with colors set by configuration parameter 8.</p> <p>Value 2 is flash mode with colors set by configuration parameter 8.</p> <p>Value 3 is rainbow mode with system fixed changing effect.</p> <p>Value 4 is fade in and fade out mode with randomly changing colors.</p> <p>Value 5 is flash mode with randomly changing colors.</p> <p>Value 6 is rainbow mode with randomly changing colors.</p> <p>Value 7 is random mode, colors switch randomly.</p>
@@ -115,8 +111,7 @@ Choose a cool light stage mode<br /> <h1>Overview</h1><p>Parameter number 5 defi
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_6_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_6_1" type="integer" groupName="configuration">
         <label>6: Stage mode speed</label>
         <description><![CDATA[
 Speed of stage mode<br /> <h1>Overview</h1><p>Parameter number 6 defines the speed of stage mode:</p> <p>Value 0-0xFF configurable, 0 is the slowest, 255 is the fastest.</p>
@@ -125,8 +120,7 @@ Speed of stage mode<br /> <h1>Overview</h1><p>Parameter number 6 defines the spe
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_7_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_7_1" type="integer" groupName="configuration">
         <label>7: Stage Mode Execution</label>
         <description><![CDATA[
 Execution times of stage mode<br /> <h1>Overview</h1><p>Parameter number 7 defines execution times of stage mode:</p> <p>Value 0 is unlimited times.</p> <p>Value 1~0xFF is 1~255 times.</p>
@@ -135,8 +129,7 @@ Execution times of stage mode<br /> <h1>Overview</h1><p>Parameter number 7 defin
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_8_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_8_1" type="integer" groupName="configuration">
         <label>8: Stage Mode Hue</label>
         <description><![CDATA[
 The hue of stage mode<br /> <h1>Overview</h1><p>Parameter number 8 defines the hue of stage mode:</p> <p>Value 0~0xFF is hue 0~255.</p>
@@ -145,8 +138,7 @@ The hue of stage mode<br /> <h1>Overview</h1><p>Parameter number 8 defines the h
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_9_1" type="integer" groupName="configuration"
-                 min="0" max="1">
+      <parameter name="config_9_1" type="integer" groupName="configuration">
         <label>9: Enable/disable external switch</label>
         <description><![CDATA[
 Enable/disable external switch to be added to and removed from a network<br /> <h1>Overview</h1><p>Parameter number 9 enables/disables external switch to be added to and removed from a network:</p> <p>Value 0 disables.</p> <p>Value 1 enables.</p>

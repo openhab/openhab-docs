@@ -53,8 +53,7 @@ Alarm sound<br /> <h1>Overview</h1><p>The Alarm Sound is a plug&amp;play product
       </parameter-group>
 
       <!-- PARAMETER DEFINITIONS -->
-      <parameter name="config_1_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_1_1" type="integer" groupName="configuration">
         <label>1: Set to Default</label>
         <description><![CDATA[
 Set all configuration values to default values (factory settings)<br /> <h1>Overview</h1><p>If value is set to 255 reset to default settings.</p>
@@ -63,8 +62,7 @@ Set all configuration values to default values (factory settings)<br /> <h1>Over
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_2_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_2_1" type="integer" groupName="configuration">
         <label>2: Destination routine on/off</label>
         <description><![CDATA[
 Test connection by sending a periodic test with sound on failure<br /> <h1>Overview</h1><p>Test connection by sending a periodic test. if the device doesn't react the user will be notified by a sound.</p> <p>0 this is turned off. 1-255 turn it on.</p>
@@ -73,8 +71,7 @@ Test connection by sending a periodic test with sound on failure<br /> <h1>Overv
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_3_1" type="integer" groupName="configuration"
-                 min="0" max="60">
+      <parameter name="config_3_1" type="integer" groupName="configuration">
         <label>3: Desitnation routine succes time</label>
         <description><![CDATA[
 Time it takes to send a new frame after the last frame has succesfully send<br /> <h1>Overview</h1><p>t(s) = param1 * 6 *60</p>
@@ -83,8 +80,7 @@ Time it takes to send a new frame after the last frame has succesfully send<br /
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_4_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_4_1" type="integer" groupName="configuration">
         <label>4: Destination routine failed time</label>
         <description><![CDATA[
 Time elapsed between failing to end a frame and sending a new frame.<br /> <h1>Overview</h1><p>t(s) = param1 *60</p>
@@ -93,8 +89,7 @@ Time elapsed between failing to end a frame and sending a new frame.<br /> <h1>O
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_7_1" type="integer" groupName="configuration"
-                 min="0" max="6">
+      <parameter name="config_7_1" type="integer" groupName="configuration">
         <label>7: Select index sound/light mode</label>
         <description><![CDATA[
 The index of the sound mode when a switch binary/basic set frame been received<br /> <h1>Overview</h1><p>0 to switch off, 1-6 to select light/sound mode.</p> <p>If value is put higher then 5 the application will read this as 1.</p>
@@ -103,8 +98,7 @@ The index of the sound mode when a switch binary/basic set frame been received<b
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_8_1" type="integer" groupName="configuration"
-                 min="0" max="6">
+      <parameter name="config_8_1" type="integer" groupName="configuration">
         <label>8: power offline sound/light mode</label>
         <description><![CDATA[
 The sound and light mode that will be used when the device gets unplugged.<br /> <h1>Overview</h1><p>0 to switch off, 1-6 to select light/sound mode.</p> <p>If value is put higher then 5 the application will read this as 1.</p>
@@ -113,8 +107,7 @@ The sound and light mode that will be used when the device gets unplugged.<br />
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_10_18" type="integer" groupName="configuration"
-                 min="-2147483646" max="2147483647">
+      <parameter name="config_10_18" type="integer" groupName="configuration">
         <label>10: sound/light index 1</label>
         <description><![CDATA[
 Sound/light that will be played when index 1 has been selected<br /> <h1>Overview</h1><p>Params 10-27 are the values to set the sound/light (this will be set when index 1)</p> <p>When the configuration is not this size the frame will be ignored.</p> <p>For the configuration of the light/sound mode i would like to refer to the manual.</p>
@@ -123,8 +116,7 @@ Sound/light that will be played when index 1 has been selected<br /> <h1>Overvie
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_28_18" type="integer" groupName="configuration"
-                 min="-2147483646" max="2147483647">
+      <parameter name="config_28_18" type="integer" groupName="configuration">
         <label>28: sound/light index 2</label>
         <description><![CDATA[
 Sound/light that will be played when index 2 has been selected<br /> <h1>Overview</h1><p>Params 28-45 are the values to set the sound/light (this will be set when index 2)</p> <p>When the configuration is not this size the frame will be ignored.</p> <p>For the configuration of the light/sound mode i would like to refer to the manual.</p>
@@ -133,8 +125,7 @@ Sound/light that will be played when index 2 has been selected<br /> <h1>Overvie
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_46_18" type="integer" groupName="configuration"
-                 min="-2147483646" max="2147483647">
+      <parameter name="config_46_18" type="integer" groupName="configuration">
         <label>46: sound/light index 3</label>
         <description><![CDATA[
 Sound/light that will be played when index 3 has been selected<br /> <h1>Overview</h1><p>Params 45-63 are the values to set the sound/light (this will be set when index 3)</p> <p>When the configuration is not this size the frame will be ignored.</p> <p>For the configuration of the light/sound mode i would like to refer to the manual.</p>
@@ -143,8 +134,7 @@ Sound/light that will be played when index 3 has been selected<br /> <h1>Overvie
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_64_18" type="integer" groupName="configuration"
-                 min="-2147483646" max="2147483647">
+      <parameter name="config_64_18" type="integer" groupName="configuration">
         <label>64: sound/light index 4</label>
         <description><![CDATA[
 Sound/light that will be played when index 4 has been selected<br /> <h1>Overview</h1><p>Params 64-81 are the values to set the sound/light (this will be set when index 4)</p> <p>When the configuration is not this size the frame will be ignored.</p> <p>For the configuration of the light/sound mode i would like to refer to the manual.</p>
@@ -153,8 +143,7 @@ Sound/light that will be played when index 4 has been selected<br /> <h1>Overvie
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_82_18" type="integer" groupName="configuration"
-                 min="-2147483646" max="2147483647">
+      <parameter name="config_82_18" type="integer" groupName="configuration">
         <label>82: sound/light index 5</label>
         <description><![CDATA[
 Sound/light that will be played when index 5 has been selected<br /> <h1>Overview</h1><p>Params 82-99 are the values to set the sound/light (this will be set when index 5)</p> <p>When the configuration is not this size the frame will be ignored.</p> <p>For the configuration of the light/sound mode i would like to refer to the manual.</p>
@@ -163,8 +152,7 @@ Sound/light that will be played when index 5 has been selected<br /> <h1>Overvie
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_100_18" type="integer" groupName="configuration"
-                 min="-2147483646" max="2147483647">
+      <parameter name="config_100_18" type="integer" groupName="configuration">
         <label>100: sound/light index 6</label>
         <description><![CDATA[
 Sound/light that will be played when index 6 has been selected<br /> <h1>Overview</h1><p>Params 100-117 are the values to set the sound/light (this will be set when index 6)</p> <p>When the configuration is not this size the frame will be ignored.</p> <p>For the configuration of the light/sound mode i would like to refer to the manual.</p>

@@ -52,8 +52,7 @@ Single Paddle Wall Controller<br /> <h1>Overview</h1><p>The battery wall control
       </parameter-group>
 
       <!-- PARAMETER DEFINITIONS -->
-      <parameter name="config_10_1" type="integer" groupName="configuration"
-                 min="1" max="100">
+      <parameter name="config_10_1" type="integer" groupName="configuration">
         <label>10: Typical click timeout</label>
         <description><![CDATA[
 Typical time used to differentiate click<br /> <h1>Overview</h1><p>Typical time used to differentiate click, hold, double and triple clicks</p> <p>Defined in 10ms ticks.</p>
@@ -71,8 +70,7 @@ Typical time used to differentiate click<br /> <h1>Overview</h1><p>Typical time 
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_13_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_13_1" type="integer" groupName="configuration">
         <label>13: Action on button single press or hold</label>
         <description><![CDATA[
 Defines which command should be sent on button single press or hold.<br /> <h1>Overview</h1><p>Defines which command should be sent on button single press or hold.</p> <p>Basic and Scene commands are sent to Association group.</p> <p>Switch All commands are sent broadcast.</p> <p>Scenes have following meaning: Up = 1, Down = 2, Dim Up = 3, Dim Down = 4, Dim Up Stop = 5</p>

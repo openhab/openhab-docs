@@ -76,95 +76,83 @@ Inteset Power Plug<br /> <h1>Overview</h1><p>Z-Wave Plug - Single Outlet (w/ wat
       </parameter-group>
 
       <!-- PARAMETER DEFINITIONS -->
-      <parameter name="config_1_1" type="integer" groupName="configuration"
-                 min="0" max="1">
+      <parameter name="config_1_1" type="integer" groupName="configuration">
         <label>1: Send Meter Report Enable</label>
         <description>Defines disable/enable meter report measure data to gateway</description>
         <default>1</default>
       </parameter>
 
-      <parameter name="config_2_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_2_1" type="integer" groupName="configuration">
         <label>2: Meter Report Interval</label>
         <description>Defines interval time (in seconds) that the meter report data will be sent to the z-wave gateway</description>
         <default>44</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_3_1" type="integer" groupName="configuration"
-                 min="1" max="16">
+      <parameter name="config_3_1" type="integer" groupName="configuration">
         <label>3: Maximum Over-Load Current</label>
         <description>Defines maximum current which power plug can provide for household load that is connected to the plug.</description>
         <default>13</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_4_1" type="integer" groupName="configuration"
-                 min="1" max="16">
+      <parameter name="config_4_1" type="integer" groupName="configuration">
         <label>4: Maximum Alarm Current</label>
         <description>Defines maximum current. If load is greater than this parameter, the LED light will flash yellow.</description>
         <default>13</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_5_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_5_1" type="integer" groupName="configuration">
         <label>5: LED Display</label>
         <description>Defines LED funtion (on/off)</description>
         <default>1</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_6_1" type="integer" groupName="configuration"
-                 min="1" max="100">
+      <parameter name="config_6_1" type="integer" groupName="configuration">
         <label>6: Configure Power Report</label>
         <description>Defines how much power variation rate should reach to make the power plug report to the gateway.</description>
         <default>5</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_7_1" type="integer" groupName="configuration"
-                 min="0" max="1">
+      <parameter name="config_7_1" type="integer" groupName="configuration">
         <label>7: Remember Relay Status</label>
         <description>Defines the relay status to be remembered or not. If remembered, plug would keep the relay status to be the same as the status before disconnection.</description>
         <default>1</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_8_1" type="integer" groupName="configuration"
-                 min="0" max="1">
+      <parameter name="config_8_1" type="integer" groupName="configuration">
         <label>8: Plug Time Switch Function</label>
         <description>Defines the timer function enable/disable. Time period defined in parameter 9.</description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_9_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_9_1" type="integer" groupName="configuration">
         <label>9: Time Switch Period</label>
         <description>Defines the time period that the plug will be switched off automatically.</description>
         <default>-106</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_10_1" type="integer" groupName="configuration"
-                 min="0" max="1">
+      <parameter name="config_10_1" type="integer" groupName="configuration">
         <label>10: Button On/Off Enable</label>
         <description>Enable/Disable the on/off function of the button on the device</description>
         <default>1</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_11_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_11_1" type="integer" groupName="configuration">
         <label>11: Clear Accumulated Energy</label>
         <description>Clears accumulated energy saved in the plug</description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_12_1" type="integer" groupName="configuration"
-                 min="0" max="1">
+      <parameter name="config_12_1" type="integer" groupName="configuration">
         <label>12: Meter Enable</label>
         <description>Enable/Disable the meter function</description>
         <default>1</default>

@@ -109,8 +109,7 @@ Input 1 contact type<br /> <h1>Overview</h1><p>This parameter determines how the
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_40_1" type="integer" groupName="configuration"
-                 min="0" max="100">
+      <parameter name="config_40_1" type="integer" groupName="configuration">
         <label>40: Power Consumption Reporting Threshold</label>
         <description><![CDATA[
 Power Consumption Reporting Threshold<br /> <h1>Overview</h1><p>Choose by how much power consumption needs to increase or decrease to be reported. Values correspond to percentages so if 10 is set, for example, the device will report any power consumption changes of 10% or more compared to the last reading.</p> <p><br />Values:<br />• default value 10<br />• 0 - Power consumption reporting<br />disabled<br />• 1 - 100 = 1% - 100% </p> <p>Power consumption reporting enabled. New value is reported only when Wattage in real time changes by more than the percentage value set in this parameter compared to the previous Wattage reading, starting at 1% (the lowest value possible).<br /></p> <p><strong>NOTE: Power consumption needs to increase or decrease by at least 1 Watt to be reported, REGARDLESS of percentage set in this parameter. </strong> </p>
@@ -118,8 +117,7 @@ Power Consumption Reporting Threshold<br /> <h1>Overview</h1><p>Choose by how mu
         <default>10</default>
       </parameter>
 
-      <parameter name="config_42_2" type="integer" groupName="configuration"
-                 min="0" max="32767">
+      <parameter name="config_42_2" type="integer" groupName="configuration">
         <label>42: Power Consumption Reporting(Time)</label>
         <description><![CDATA[
 Power Consumption Reporting(Time)<br /> <h1>Overview</h1><p>Set value refers to the time interval with which power consumption in Watts is reported (30 – 32767 seconds) starting from time of last Watts reported. If for example 300 is entered, energy consumption reports will be sent to the gateway (hub) every 300 seconds (or 5 minutes).<br /></p> <p>Values:<br />• default value 600 (600 seconds = 10 minutes)<br />• 0 - Power consumption reporting disabled<br />• 30 - 32767 = 30 - 32767 seconds.</p> <p> Power consumption reporting enabled. Report is sent according to time interval (value) set here. EXAMPLE: If we set value to 30 seconds and the device reports Watts because of percent change of power (parameter 40 - Watt Power Consumption Reporting Threshold) at time = 5 seconds,<br />then the device will send next meter report at time = 35 seconds (assuming the device has not sent report within interval 5 to 35 seconds). </p>
@@ -127,8 +125,7 @@ Power Consumption Reporting(Time)<br /> <h1>Overview</h1><p>Set value refers to 
         <default>600</default>
       </parameter>
 
-      <parameter name="config_43_2" type="integer" groupName="configuration"
-                 min="0" max="450">
+      <parameter name="config_43_2" type="integer" groupName="configuration">
         <label>43: Hysteresis Upper temperature offset</label>
         <description><![CDATA[
 Hysteresis Upper temperature offset<br /> <h1>Overview</h1><p>This parameter defines minimum temperature difference between real measured temperature and set-point temperature to turn device on in heat mode or turn device off in cool mode. </p> <p>Values:<br />• default value 5 (0.5 °C)<br />• 0 – 450</p> <p><strong><br />NOTE1: If configuration parameter 78 (Scale selection) is set to Celsius, then valid interval is 0 – 250 (0.0 °C – 25.0 °C, resolution 0.1 °C)<br /></strong></p> <p><strong>NOTE2: If configuration parameter 78 (Scale selection) is set to Fahrenheit, then valid interval is 0 – 450 (0.0 °F – 45.0 °F, resolution 0.1 °F)<br /></strong></p> <p><strong>NOTE3: If configuration parameter 78 (Scale selection) is set to Fahrenheit, note that Fahrenheit values will be converted to Celsius degrees. Due to conversion algorithm please be advised that configuration value could drift when converting values back and forth. </strong> </p>
@@ -136,8 +133,7 @@ Hysteresis Upper temperature offset<br /> <h1>Overview</h1><p>This parameter def
         <default>5</default>
       </parameter>
 
-      <parameter name="config_44_2" type="integer" groupName="configuration"
-                 min="0" max="450">
+      <parameter name="config_44_2" type="integer" groupName="configuration">
         <label>44: Hysteresis Lower temperature offset</label>
         <description><![CDATA[
 Hysteresis Lower temperature offset<br /> <h1>Overview</h1><p>This parameter defines minimum temperature difference between real measured temperature and set-point temperature to turn device off in heat mode or turn device on in cool mode. </p> <p>Values:<br />• default value 5 (0.5 °C)<br />• 0 - 450</p> <p><strong><br />NOTE1: If configuration parameter 78 (Scale selection) is set to Celsius, then valid interval is 0 – 250 (0.0 °C – 25.0 °C, resolution 0.1 °C)<br />NOTE2: If configuration parameter 78 (Scale selection) is set to Fahrenheit, then valid interval is 0 – 450 (0.0 °F – 45.0 °F, resolution 0.1 °F)<br />NOTE3: If configuration parameter 78 (Scale selection) is set to Fahrenheit, note that Fahrenheit values will be converted to Celsius degrees. Due to conversion algorithm please be advised that configuration value could drift when converting values back and forth. </strong> </p>
@@ -145,8 +141,7 @@ Hysteresis Lower temperature offset<br /> <h1>Overview</h1><p>This parameter def
         <default>5</default>
       </parameter>
 
-      <parameter name="config_45_2" type="integer" groupName="configuration"
-                 min="-125" max="1000">
+      <parameter name="config_45_2" type="integer" groupName="configuration">
         <label>45: Antifreeze</label>
         <description><![CDATA[
 Antifreeze<br /> <h1>Overview</h1><p>Set value determines at which temperature the device will be turned on even (if the thermostat was manually set to off).<br /></p> <p>Values:<br />• default value 50 (5.0 °C)<br />• -125 - 545<br />• 1000 - Antifreeze functionality disabled</p> <p><strong>NOTE1: Antifreeze is activated only in heating mode and it uses hysteresis of ±0.5°C.<br />NOTE2: If configuration parameter 78 (Scale selection) is set to Celsius, then valid interval is -125 – 125 (-12.5 °C – 12.5 °C, resolution 0.1 °C)<br />NOTE3: If configuration parameter 78 (Scale selection) is set to Fahrenheit, then valid interval is 95 – 545 (9.5 °F – 54.5 °F, resolution 0.1 °F)<br />NOTE4: If configuration parameter 78 (Scale selection) is set to Fahrenheit, note that Fahrenheit values will be converted to Celsius degrees. Due to conversion algorithm please be advised that configuration value could drift when converting values back and forth. </strong> </p>
@@ -167,8 +162,7 @@ Thermostat mode<br /> <h1>Overview</h1><p>This parameter determines how the devi
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_60_2" type="integer" groupName="configuration"
-                 min="-150" max="2120">
+      <parameter name="config_60_2" type="integer" groupName="configuration">
         <label>60: Too low temperature limit</label>
         <description><![CDATA[
 Too low temperature limit<br /> <h1>Overview</h1><p>This parameter determines the temperature at which the device sends a command to the associated device - to turn ON device or to turn OFF device.</p> <p>Values:<br />• Default value 50 (Too low temperature limit is 5.0 °C)<br />• -150 - 2120</p> <p><br /><strong>NOTE1: Too low temperature limit is used with Association Group 3.</strong><br /><strong>NOTE2: If configuration parameter 78 (Scale selection) is set to Celsius, then valid interval is -150 – 1000 (-15.0 °C – 100.0 °C, resolution 0.1 °C)</strong><br /><strong>NOTE3: If configuration parameter 78 (Scale selection) is set to Fahrenheit, then valid interval is 50 – 2120 (5.0 °F – 212.0 °F, resolution 0.1 °F)</strong><br /><strong>NOTE4: If configuration parameter 78 (Scale selection) is set to Fahrenheit, note that Fahrenheit values will be converted to Celsius degrees. Due to conversion algorithm please be advised that configuration value could drift when converting values back and forth.</strong> </p>
@@ -176,8 +170,7 @@ Too low temperature limit<br /> <h1>Overview</h1><p>This parameter determines th
         <default>50</default>
       </parameter>
 
-      <parameter name="config_61_2" type="integer" groupName="configuration"
-                 min="1" max="2120">
+      <parameter name="config_61_2" type="integer" groupName="configuration">
         <label>61: Too high temperature limit</label>
         <description><![CDATA[
 Too high temperature limit<br /> <h1>Overview</h1><p>This parameter determines the temperature at which the device sends a command to the associated device, to turn ON device or to turn OFF device. </p> <p>Values:<br />• default value 700 (too high temperature limit is 70.0 °C)<br />• 1 - 2120</p> <p><br /><strong>NOTE1: Too high temperature limit is used with Association Group 3.</strong><br /><strong>NOTE2: If configuration parameter 78 (Scale selection) is set to Celsius, then valid interval is 1 – 1000 (0.1 °C – 100.0 °C, resolution 0.1 °C)</strong><br /><strong>NOTE3: If configuration parameter 78 (Scale selection) is set to Fahrenheit, then valid interval is 322 – 2120 (32.2 °F – 212.0 °F, resolution 0.1 °F)</strong><br /><strong>NOTE4: If configuration parameter 78 (Scale selection) is set to Fahrenheit, note that Fahrenheit values will be converted to Celsius degrees. Due to conversion algorithm please be advised that configuration value could drift when converting values back and forth.</strong> </p>
@@ -211,8 +204,7 @@ Scale Selection<br /> <h1>Overview</h1><p>This parameter determines in which mea
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_110_2" type="integer" groupName="configuration"
-                 min="-270" max="270">
+      <parameter name="config_110_2" type="integer" groupName="configuration">
         <label>110: Temperature Sensor Offset Settings</label>
         <description><![CDATA[
 Temperature Sensor Offset Settings<br /> <h1>Overview</h1><p>Set value is added to or subtracted from the actually measured value to adjust the temperature report sent by an external sensor.<br /></p> <p>Values: </p> <p>• default value 0<br />• -270 - 270</p> <p><br /><strong>NOTE1: If configuration parameter 78 (Scale selection) is set to Celsius, then valid interval is -150 – 150 (-15.0 °C – 15.0 °C, resolution 0.1 °C)</strong><br /><strong>NOTE2: If configuration parameter 78 (Scale selection) is set to Fahrenheit, then valid interval is -270 - 270 (-27.0 °F – 27.0 °F, resolution 0.1 °F)</strong><br /><strong>NOTE3: If configuration parameter 78 (Scale selection) is set to Fahrenheit, note that Fahrenheit values will be converted to Celsius degrees. Due to conversion algorithm please be advised that configuration value could drift when converting values back and forth</strong> </p>
@@ -220,8 +212,7 @@ Temperature Sensor Offset Settings<br /> <h1>Overview</h1><p>Set value is added 
         <default>0</default>
       </parameter>
 
-      <parameter name="config_120_2" type="integer" groupName="configuration"
-                 min="0" max="270">
+      <parameter name="config_120_2" type="integer" groupName="configuration">
         <label>120: Temperature Sensor Reporting Threshold</label>
         <description><![CDATA[
 Temperature Sensor Reporting Threshold<br /> <h1>Overview</h1><p>This configuration parameters sets reporting threshold between reported temperature and actual temperature for reporting temperature at association group 4. </p> <p>Values:<br />• Default value 5 = 0.5°C<br />• 0 – Reporting disabled<br />• 0 - 270</p> <p><strong><br />NOTE1: If configuration parameter 78 (Scale selection) is set to Celsius, then valid interval is 0 – 150 (0 °C – 15.0 °C, resolution 0.1 °C)<br />NOTE2: If configuration parameter 78 (Scale selection) is set to Fahrenheit, then valid interval is 0 - 270 (0 °F – 27.0 °F, resolution 0.1 °F)<br />NOTE3: If configuration parameter 78 (Scale selection) is set to Fahrenheit, note that Fahrenheit values will be converted to Celsius degrees. Due to conversion algorithm please be advised that configuration value could drift when converting values back and forth </strong> </p>

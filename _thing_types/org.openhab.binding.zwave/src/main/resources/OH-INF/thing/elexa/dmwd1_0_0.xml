@@ -58,8 +58,7 @@ Dome door &amp; window sensor<br /> <h1>Overview</h1><p>The Dome Door/Window Sen
       </parameter-group>
 
       <!-- PARAMETER DEFINITIONS -->
-      <parameter name="config_1_2" type="integer" groupName="configuration"
-                 min="-32767" max="32768">
+      <parameter name="config_1_2" type="integer" groupName="configuration">
         <label>1: BASIC_SET Off Delay</label>
         <description><![CDATA[
 The delay time from when the Door/Window Sensor sends the BASIC_SET command.<br /> <h1>Overview</h1><p>The delay time from when the Door/Window Sensor sends the BASIC_SET command to Association Group 2 and when the BASIC_SET(0) is sent. It accepts a value up to 65,535, in seconds.</p>

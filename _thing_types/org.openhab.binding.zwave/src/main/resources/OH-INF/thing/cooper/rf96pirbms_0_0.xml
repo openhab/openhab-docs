@@ -58,40 +58,35 @@ Motion Sensor<br /> <h1>Overview</h1><p>Z-Wave Plus Wireless Motion Sensor, with
       </parameter-group>
 
       <!-- PARAMETER DEFINITIONS -->
-      <parameter name="config_1_1" type="integer" groupName="configuration"
-                 min="1" max="99">
+      <parameter name="config_1_1" type="integer" groupName="configuration">
         <label>1: Basic Set Level</label>
         <description>Basic Set Level</description>
         <default>99</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_3_1" type="integer" groupName="configuration"
-                 min="1" max="10">
+      <parameter name="config_3_1" type="integer" groupName="configuration">
         <label>3: Sensitivity Level</label>
         <description>Sensitivity Level</description>
         <default>6</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_4_2" type="integer" groupName="configuration"
-                 min="5" max="3600">
+      <parameter name="config_4_2" type="integer" groupName="configuration">
         <label>4: Re-trigger Interval Setting</label>
         <description>Re-trigger Interval Setting</description>
         <default>180</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_5_1" type="integer" groupName="configuration"
-                 min="1" max="100">
+      <parameter name="config_5_1" type="integer" groupName="configuration">
         <label>5: Lux Level</label>
         <description>Lux Level</description>
         <default>20</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_6_2" type="integer" groupName="configuration"
-                 min="5" max="3600">
+      <parameter name="config_6_2" type="integer" groupName="configuration">
         <label>6: On-Off Duration</label>
         <description>On-Off Duration</description>
         <default>15</default>

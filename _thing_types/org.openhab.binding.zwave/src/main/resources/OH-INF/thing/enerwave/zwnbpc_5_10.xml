@@ -59,8 +59,7 @@ PIR Sensor<br /> <h1>Overview</h1><p>This sensor acts as a security device by de
       </parameter-group>
 
       <!-- PARAMETER DEFINITIONS -->
-      <parameter name="config_1_1" type="integer" groupName="configuration"
-                 min="1" max="7">
+      <parameter name="config_1_1" type="integer" groupName="configuration">
         <label>1: Motion timeout</label>
         <description><![CDATA[
 Multiplier to wakeup timer interval<br /> <h1>Overview</h1><p>It is minimum time when the associated nodes keep turn on</p> <p>n:1-7 (n*WAKE_UP_INTERVAL)</p>

@@ -59,8 +59,7 @@ Enbrighten 60W Dimmable Light Bulb<br /> <h1>Overview</h1><p>Breathe new life in
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_9_1" type="integer" groupName="configuration"
-                 min="1" max="99">
+      <parameter name="config_9_1" type="integer" groupName="configuration">
         <label>9: Dimming/Brightening Step Level</label>
         <description><![CDATA[
 Dimming/Brightening Step Level<br /> <h1>Overview</h1><p>You may change the dimming step level when you adjust the brightness by your controller/gateway.</p> <p>When the value is low, dimming/brightening is gradual.</p> <p>When the value is high, dimming/brightening is rapid.</p>
@@ -69,8 +68,7 @@ Dimming/Brightening Step Level<br /> <h1>Overview</h1><p>You may change the dimm
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_10_1" type="integer" groupName="configuration"
-                 min="1" max="10">
+      <parameter name="config_10_1" type="integer" groupName="configuration">
         <label>10: Dimming/Brightening Step Timing</label>
         <description><![CDATA[
 Dimming/Brightening Step Timing<br /> <h1>Overview</h1><p>You may change the dimming speed quicker or slower.</p> <p>When the value is low, the step timing is quick.</p> <p>When the value is high, the step timing is slow.</p>

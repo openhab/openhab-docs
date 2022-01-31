@@ -66,8 +66,7 @@ Universal light dimmer<br /> <h1>Overview</h1><p>DIMMY type ZDI5200 is a Z-Wave 
       </parameter-group>
 
       <!-- PARAMETER DEFINITIONS -->
-      <parameter name="config_1_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_1_1" type="integer" groupName="configuration">
         <label>1: Duration of dimming</label>
         <description><![CDATA[
 Duration of dimming<br /> <h1>Overview</h1><p>This parameter specifies the duration of a full regulation of the light from 0% to 100%. A regulation of the light with 1% will take 1/100 of the specified duration. This is used when the dimming is fulfilled from other Z-Wave devices with a factory default duration.</p> <table><tr><td><strong>Value</strong></td> <td><strong>Description</strong></td> </tr><tr><td>0</td> <td>Immediately</td> </tr><tr><td>1 - 127</td> <td>Duration in seconds. (Default is 5 seconds).</td> </tr><tr><td>128 - 255</td> <td>Duration in minutes (minus 127) from 1 – 128 minutes, where 128 is 1 minute.</td> </tr></table>
@@ -90,8 +89,7 @@ Dimmer mode<br /> <h1>Overview</h1><p>The dimmer can work in three different mod
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_3_1" type="integer" groupName="configuration"
-                 min="0" max="99">
+      <parameter name="config_3_1" type="integer" groupName="configuration">
         <label>3: Dimmer minimum leve</label>
         <description><![CDATA[
 Dimmer minimum leve<br /> <h1>Overview</h1><p>This parameter specifies the actual level of the dimmer output when set to 0%.</p> <table><tr><td><strong>Value</strong></td> <td><strong>Description</strong></td> </tr><tr><td>0 - 99</td> <td>Corresponds to 0 – 99% (Default is 0)</td> </tr></table>
@@ -100,8 +98,7 @@ Dimmer minimum leve<br /> <h1>Overview</h1><p>This parameter specifies the actua
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_4_1" type="integer" groupName="configuration"
-                 min="1" max="99">
+      <parameter name="config_4_1" type="integer" groupName="configuration">
         <label>4: Dimmer maximum level.</label>
         <description><![CDATA[
 Dimmer maximum level.<br /> <h1>Overview</h1><p>This parameter specifies the actual level of the dimmer output when set to 99%.</p> <table><tr><td><strong>Value</strong></td> <td><strong>Description</strong></td> </tr><tr><td>1-99</td> <td>Corresponds to 1 – 99% (Default is 99)</td> </tr></table>
@@ -110,8 +107,7 @@ Dimmer maximum level.<br /> <h1>Overview</h1><p>This parameter specifies the act
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_5_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_5_1" type="integer" groupName="configuration">
         <label>5: Meter report time.</label>
         <description><![CDATA[
 Meter report time.<br /> <h1>Overview</h1><p>This parameter specifies how often meter reports are sent via association group 1.</p> <table><tr><td><strong>Value</strong></td> <td><strong>Description</strong></td> </tr><tr><td>0</td> <td>Meter reports are never sent</td> </tr><tr><td>1-127</td> <td>Report time in seconds. (Default is 60 seconds).</td> </tr><tr><td>128-255</td> <td>Report time in minutes (minus 127) from 1 – 128 minutes, where 128 is 1 minute.</td> </tr></table>

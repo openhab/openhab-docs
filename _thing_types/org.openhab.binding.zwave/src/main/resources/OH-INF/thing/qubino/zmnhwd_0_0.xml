@@ -200,8 +200,7 @@ Qubino Flush RGBW Dimmer<br /> <h1>Overview</h1><p>Qubino Flush RGBW module cont
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_6_2" type="integer" groupName="configuration"
-                 min="1" max="1127">
+      <parameter name="config_6_2" type="integer" groupName="configuration">
         <label>6: Auto Scene Mode</label>
         <description><![CDATA[
 Duration between Colour change<br /> <h1>Overview</h1><ul><li>1-127 – delay duration is 1 sec to 127 sec </li> <li>1001-1127 – delay duration is from 1 min to 127 min. This parameter has no effect on Lighting and Party Scene. </li> </ul>
@@ -220,8 +219,7 @@ Duration between Colour change<br /> <h1>Overview</h1><ul><li>1-127 – delay du
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_8_2" type="integer" groupName="configuration"
-                 min="0" max="32536">
+      <parameter name="config_8_2" type="integer" groupName="configuration">
         <label>8: Automatic turning off output after set time</label>
         <description><![CDATA[
 Automatic turning off output after set time<br /> <h1>Overview</h1><ul><li>0 – Auto OFF disabled </li> <li>1 – 32536 = 1 second – 32536 seconds Auto OFF</li> </ul>
@@ -229,8 +227,7 @@ Automatic turning off output after set time<br /> <h1>Overview</h1><ul><li>0 –
         <default>0</default>
       </parameter>
 
-      <parameter name="config_9_2" type="integer" groupName="configuration"
-                 min="0" max="32536">
+      <parameter name="config_9_2" type="integer" groupName="configuration">
         <label>9: Automatic turning on output after set time</label>
         <description><![CDATA[
 Automatic turning on output after set time<br /> <h1>Overview</h1><ul><li>0 – Auto ON disabled</li> <li>1 – 32536 = 1 second – 32536 seconds Auto ON</li> </ul>
@@ -238,8 +235,7 @@ Automatic turning on output after set time<br /> <h1>Overview</h1><ul><li>0 – 
         <default>0</default>
       </parameter>
 
-      <parameter name="config_10_1" type="integer" groupName="configuration"
-                 min="2" max="99">
+      <parameter name="config_10_1" type="integer" groupName="configuration">
         <label>10: MAX dimming value</label>
         <description><![CDATA[
 MAX dimming value<br /> <h1>Overview</h1><p>2-99 = 2 % – 99 %</p>
@@ -247,8 +243,7 @@ MAX dimming value<br /> <h1>Overview</h1><p>2-99 = 2 % – 99 %</p>
         <default>99</default>
       </parameter>
 
-      <parameter name="config_11_1" type="integer" groupName="configuration"
-                 min="1" max="98">
+      <parameter name="config_11_1" type="integer" groupName="configuration">
         <label>11: MIN dimming value</label>
         <description><![CDATA[
 MIN dimming value<br /> <h1>Overview</h1><p>1-98 = 1 % – 98 %</p>
@@ -256,8 +251,7 @@ MIN dimming value<br /> <h1>Overview</h1><p>1-98 = 1 % – 98 %</p>
         <default>1</default>
       </parameter>
 
-      <parameter name="config_12_1" type="integer" groupName="configuration"
-                 min="5" max="25">
+      <parameter name="config_12_1" type="integer" groupName="configuration">
         <label>12: Dimming time (soft on/off)</label>
         <description><![CDATA[
 Dimming time (soft on/off)<br /> <h1>Overview</h1><ul><li>Default value 10 = 1 s </li> <li>5 – 25 = from 0.5 to 2.5 seconds </li> </ul>
@@ -265,8 +259,7 @@ Dimming time (soft on/off)<br /> <h1>Overview</h1><ul><li>Default value 10 = 1 s
         <default>10</default>
       </parameter>
 
-      <parameter name="config_13_1" type="integer" groupName="configuration"
-                 min="1" max="127">
+      <parameter name="config_13_1" type="integer" groupName="configuration">
         <label>13: Dimming time when key pressed</label>
         <description><![CDATA[
 Dimming time when key pressed<br /> <h1>Overview</h1><p>1 – 127 = from 1 to 127 seconds </p> <p>NOTE: Dimming time depends also on Min and Max dimming value. </p>

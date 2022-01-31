@@ -75,8 +75,7 @@ Invert on &amp; off on the physical switch<br /> <h1>Overview</h1><p>Invert wha
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_5_2" type="integer" groupName="configuration"
-                 min="0" max="32767">
+      <parameter name="config_5_2" type="integer" groupName="configuration">
         <label>5: autoOff</label>
         <description>Automatically turn switch off after this number of seconds</description>
         <default>0</default>

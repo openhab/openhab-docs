@@ -109,8 +109,7 @@ Never accidentally remove a device during with alternate exclusion<br /> <h1>Ove
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_30_1" type="integer" groupName="configuration"
-                 min="1" max="99">
+      <parameter name="config_30_1" type="integer" groupName="configuration">
         <label>30: Minimum Dim Threshold</label>
         <description><![CDATA[
 Set the minimum dimmer threshold<br /> <h1>Overview</h1><p>Set the minimum dimmer threshold when manually or remotely controlled</p>
@@ -119,8 +118,7 @@ Set the minimum dimmer threshold<br /> <h1>Overview</h1><p>Set the minimum dimme
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_31_1" type="integer" groupName="configuration"
-                 min="0" max="99">
+      <parameter name="config_31_1" type="integer" groupName="configuration">
         <label>31: Maximum Brightness Threshold</label>
         <description><![CDATA[
 Set the brightness threshold<br /> <h1>Overview</h1><p>Set the maximum brightness threshold when manually or remotely controlled</p>
@@ -129,8 +127,7 @@ Set the brightness threshold<br /> <h1>Overview</h1><p>Set the maximum brightnes
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_32_1" type="integer" groupName="configuration"
-                 min="0" max="99">
+      <parameter name="config_32_1" type="integer" groupName="configuration">
         <label>32: Default Brightness Level</label>
         <description><![CDATA[
 Set the default brightness level for manual turn on<br /> <h1>Overview</h1><p>Set the default brightness level that the dimmer will turn on when being controlled manually</p> <p>Ex. 1= 1% and 99 = 99%</p>

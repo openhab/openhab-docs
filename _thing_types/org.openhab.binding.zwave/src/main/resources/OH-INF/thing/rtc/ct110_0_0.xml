@@ -196,8 +196,7 @@ Thermostat<br /> <h1>Overview</h1><p>The Z-Wave Plus enabled CT110 is a sleek, m
       </parameter-group>
 
       <!-- PARAMETER DEFINITIONS -->
-      <parameter name="config_1_1" type="integer" groupName="configuration"
-                 min="0" max="4">
+      <parameter name="config_1_1" type="integer" groupName="configuration">
         <label>1: Temperature Reporting Threshold</label>
         <description>Temperature Reporting Threshold</description>
         <default>4</default>
@@ -215,8 +214,7 @@ Thermostat<br /> <h1>Overview</h1><p>The Z-Wave Plus enabled CT110 is a sleek, m
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_2_4_00000F00" type="integer" groupName="configuration"
-                 min="0" max="64">
+      <parameter name="config_2_4_00000F00" type="integer" groupName="configuration">
         <label>2: # of Auxiliary Stages</label>
         <description># of Auxiliary Stages</description>
         <default>0</default>
@@ -234,16 +232,14 @@ Thermostat<br /> <h1>Overview</h1><p>The Z-Wave Plus enabled CT110 is a sleek, m
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_2_4_00FF0000" type="integer" groupName="configuration"
-                 min="0" max="128">
+      <parameter name="config_2_4_00FF0000" type="integer" groupName="configuration">
         <label>2: # of Heat Pump Stages.</label>
         <description># of Heat Pump Stages.</description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_2_4_0F000000" type="integer" groupName="configuration"
-                 min="0" max="64">
+      <parameter name="config_2_4_0F000000" type="integer" groupName="configuration">
         <label>2: # of Cool Stages.</label>
         <description># of Cool Stages.</description>
         <default>0</default>
@@ -324,8 +320,7 @@ Thermostat<br /> <h1>Overview</h1><p>The Z-Wave Plus enabled CT110 is a sleek, m
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_10_2_0000FFFF" type="integer" groupName="configuration"
-                 min="0" max="124">
+      <parameter name="config_10_2_0000FFFF" type="integer" groupName="configuration">
         <label>10: Temperature Reporting Filter (lower bound)</label>
         <description><![CDATA[
 Temperature Reporting Filter (lower bound)<br /> <h1>Overview</h1><p> 0 -124ºF (lower bound)</p>
@@ -334,8 +329,7 @@ Temperature Reporting Filter (lower bound)<br /> <h1>Overview</h1><p> 0 -124ºF
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_10_2_0FFF0000" type="integer" groupName="configuration"
-                 min="0" max="124">
+      <parameter name="config_10_2_0FFF0000" type="integer" groupName="configuration">
         <label>10: Temperature Reporting Filter (upper bound)</label>
         <description><![CDATA[
 Temperature Reporting Filter (upper bound)<br /> <h1>Overview</h1><p>0-124ºF (upper bound)</p>
@@ -377,8 +371,7 @@ Temperature Reporting Filter (upper bound)<br /> <h1>Overview</h1><p>0-124ºF (u
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_14_1" type="integer" groupName="configuration" readOnly="true"
-                 min="-127" max="128">
+      <parameter name="config_14_1" type="integer" groupName="configuration" readOnly="true">
         <label>14: Save Energy Mode Type</label>
         <description><![CDATA[
 Save Energy Mode Type<br /> <h1>Overview</h1><p>1=Adjust by target delta, </p> <p>2=Least consuming point in the running program, </p> <p>3=Save energy absolute setpoint, </p> <p>255=Save Energy not supported</p>

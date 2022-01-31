@@ -95,8 +95,7 @@ Thermostat<br /> <h1>Overview</h1><p>The TZEMT500B Thermostat is compatible with
       </parameter-group>
 
       <!-- PARAMETER DEFINITIONS -->
-      <parameter name="config_132_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_132_1" type="integer" groupName="configuration">
         <label>132: Schedule Mode</label>
         <default>0</default>
         <limitToOptions>false</limitToOptions>

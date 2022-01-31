@@ -58,8 +58,7 @@ Smart Lock<br /> <h1>Overview</h1><p>Kwikset®, the leader in residential securi
       </parameter-group>
 
       <!-- PARAMETER DEFINITIONS -->
-      <parameter name="config_31_1" type="integer" groupName="configuration" readOnly="true"
-                 min="0" max="15">
+      <parameter name="config_31_1" type="integer" groupName="configuration" readOnly="true">
         <label>31: Dipswitch Settings</label>
         <description><![CDATA[
 Dipswitch Settings<br /> <h1>Overview</h1><p>Configuration parameter is a one byte read only bit mask that returns the state of the user accessible dipswitches on the rear panel of the door lock. This is a read only parameter and cannot be used to set dipswitch settings.</p> <p>The following table shows the definition for the bits being used in the returned value: </p> <table><tr><td>Bit</td> <td>Description</td> </tr><tr><td>0 (0x01)</td> <td>Lock status LED (1:enabled)</td> </tr><tr><td>1 (0x02)</td> <td>Autolock setting (1:enabled)</td> </tr><tr><td>2 (0x04)</td> <td>Buzzer (1:enabled)</td> </tr><tr><td>3 (0x08)</td> <td>Handing Invert (1:enabled)</td> </tr></table><p><strong>Possible Values:</strong></p> <table><tr><td>0</td> <td>All features disabled</td> </tr><tr><td>1</td> <td>Lock status LED enabled</td> </tr><tr><td>2</td> <td>Autolock Enabled</td> </tr><tr><td>4</td> <td>Internal buzzer enabled</td> </tr><tr><td>8</td> <td>Handling invert enabled</td> </tr><tr><td>3</td> <td>Autolock &amp; Lock status LED enabled</td> </tr><tr><td>5</td> <td>Internal buzzer and lock status LED enabled</td> </tr><tr><td>7</td> <td>Autolock, Internal buzzer, and lock status LED enabled</td> </tr><tr><td>15</td> <td>All Features enabled</td> </tr></table>
@@ -68,8 +67,7 @@ Dipswitch Settings<br /> <h1>Overview</h1><p>Configuration parameter is a one by
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_33_4" type="integer" groupName="configuration"
-                 min="-2147483646" max="2147483647">
+      <parameter name="config_33_4" type="integer" groupName="configuration">
         <label>33: First 4 bytes of SKU</label>
         <description><![CDATA[
 SKU (length = 8 bytes)<br /> <h1>Overview</h1><p>The configuration parameters 33 and 34 are used to set and get the SKU part numbers. The SKU is made up of 8 bytes. Each parameter consists of four bytes of data. Parameter 33 contains the first four most significant bytes of the SKU, while parameter 34 contains the four least significant bytes of the SKU.</p> <p>When setting the SKU, it must be done in two set commands, one for each parameter. The order of programming the SKU does not matter.</p> <p>Setting parameter 33 will program the first four bytes of the SKU. Setting parameter 34 will program the last 4 bytes of the SKU. Most printable values are accepted for the set command.</p> <p>When getting the SKU, it must be done in two get commands, one for each parameter. The order of getting the SKU does not matter.</p> <p>Getting parameter 33 will retrieve the first four bytes of the SKU. Getting parameter 34 will retrieve the last 4 bytes of the SKU. </p>
@@ -79,8 +77,7 @@ SKU (length = 8 bytes)<br /> <h1>Overview</h1><p>The configuration parameters 33
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_34_4" type="integer" groupName="configuration"
-                 min="-2147483646" max="2147483647">
+      <parameter name="config_34_4" type="integer" groupName="configuration">
         <label>34: Last 4 bytes of SKU</label>
         <description><![CDATA[
 SKU (length = 8 bytes)<br /> <h1>Overview</h1><p>The configuration parameters 33 and 34 are used to set and get the SKU part numbers. The SKU is made up of 8 bytes. Each parameter consists of four bytes of data. Parameter 33 contains the first four most significant bytes of the SKU, while parameter 34 contains the four least significant bytes of the SKU.</p> <p>When setting the SKU, it must be done in two set commands, one for each parameter. The order of programming the SKU does not matter.</p> <p>Setting parameter 33 will program the first four bytes of the SKU. Setting parameter 34 will program the last 4 bytes of the SKU. Most printable values are accepted for the set command.</p> <p>When getting the SKU, it must be done in two get commands, one for each parameter. The order of getting the SKU does not matter.</p> <p>Getting parameter 33 will retrieve the first four bytes of the SKU. Getting parameter 34 will retrieve the last 4 bytes of the SKU. </p>
@@ -90,8 +87,7 @@ SKU (length = 8 bytes)<br /> <h1>Overview</h1><p>The configuration parameters 33
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_35_2" type="integer" groupName="configuration" readOnly="true"
-                 min="-32767" max="32768">
+      <parameter name="config_35_2" type="integer" groupName="configuration" readOnly="true">
         <label>35: Lock Type</label>
         <description><![CDATA[
 Report the Unique ID of the lock type<br /> <h1>Overview</h1><p>The configuration Parameter 35 is used as read-only to report the Unique ID of the lock type.</p> <table><tr><td><strong>Released Board ID</strong></td> <td><strong>Unique ID</strong></td> </tr><tr><td>910 Z-wave (Legacy, FW 3.4)</td> <td>0x00 0x00</td> </tr><tr><td>912 Z-wave (Legacy, FW 3.2)</td> <td>0x00 0x00</td> </tr><tr><td>910 Z-wave</td> <td>0x02 0x36</td> </tr><tr><td>912 Z-wave</td> <td>0x03 0x36</td> </tr><tr><td>914 Z-wave</td> <td>0x04 0x36</td> </tr><tr><td>916 Z-wave</td> <td>0x06 0x42</td> </tr></table>
@@ -100,8 +96,7 @@ Report the Unique ID of the lock type<br /> <h1>Overview</h1><p>The configuratio
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_40_1" type="integer" groupName="configuration"
-                 min="0" max="1">
+      <parameter name="config_40_1" type="integer" groupName="configuration">
         <label>40: Factory Reset</label>
         <description><![CDATA[
 Reset Lock to Factory Default<br /> <h1>Overview</h1><p>The configuration parameter 40 is a one byte field, used to set the lock to its default setting, known as a factory reset command.</p> <p>Reading this parameter will always return a value of 0.</p> <p>Writing a value of 1 to this parameter will cause both the lock and Z-Wave card to reset back to their default settings and will remove itself from the network. All network information, including associations will be cleared. </p>

@@ -181,8 +181,7 @@ Smart Switch 7<br /> <h1>Overview</h1><p>Switched power outlet with energy meter
       </parameter-group>
 
       <!-- PARAMETER DEFINITIONS -->
-      <parameter name="config_1_1" type="integer" groupName="configuration"
-                 min="0" max="2">
+      <parameter name="config_1_1" type="integer" groupName="configuration">
         <label>1: LED Setting</label>
         <description><![CDATA[
 This parameter is used to change the reaction of LED setting.<br /> <h1>Overview</h1><p><br /></p>
@@ -195,8 +194,7 @@ This parameter is used to change the reaction of LED setting.<br /> <h1>Overview
         </options>
       </parameter>
 
-      <parameter name="config_2_4" type="integer" groupName="configuration"
-                 min="-2147483646" max="2147483647">
+      <parameter name="config_2_4" type="integer" groupName="configuration">
         <label>2: Night Light On Time</label>
         <description><![CDATA[
 Used to configure the Night Light on time.<br /> <h1>Overview</h1><p>Time is specified in format of 0xRRHHMMSS, where:<br />RR = Reserved</p><p>HH = Hours</p><p>MM = Minutes</p><p>SS = Seconds<br /></p>
@@ -206,8 +204,7 @@ Used to configure the Night Light on time.<br /> <h1>Overview</h1><p>Time is spe
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_3_4" type="integer" groupName="configuration"
-                 min="-2147483646" max="2147483647">
+      <parameter name="config_3_4" type="integer" groupName="configuration">
         <label>3: Night Light Off Time</label>
         <description><![CDATA[
 Used to configure the Night Light off time<br /> <h1>Overview</h1><p>0xRRHHMMSS, where:<br /></p><p>RR = Reserved</p><p>HH = Hours</p><p>MM = Minutes</p><p>SS = Seconds</p>
@@ -217,8 +214,7 @@ Used to configure the Night Light off time<br /> <h1>Overview</h1><p>0xRRHHMMSS,
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_4_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_4_1" type="integer" groupName="configuration">
         <label>4: LED Blink Duration</label>
         <description><![CDATA[
 Set the duration of blink<br /> <h1>Overview</h1><p>Set duration of LED blinks<br /></p>
@@ -227,8 +223,7 @@ Set the duration of blink<br /> <h1>Overview</h1><p>Set duration of LED blinks<b
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_5_1" type="integer" groupName="configuration"
-                 min="1" max="24">
+      <parameter name="config_5_1" type="integer" groupName="configuration">
         <label>5: LED Blink Speed</label>
         <description><![CDATA[
 Amount of blinks per second while blinking<br /> <h1>Overview</h1><p>Sets the blink rate when blinking<br /></p>
@@ -237,8 +232,7 @@ Amount of blinks per second while blinking<br /> <h1>Overview</h1><p>Sets the bl
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_6_2" type="integer" groupName="configuration"
-                 min="0" max="3000">
+      <parameter name="config_6_2" type="integer" groupName="configuration">
         <label>6: Send Alert When In Use</label>
         <description><![CDATA[
 Send alert when in use.<br /> <h1>Overview</h1><p>A Scene Activation Set command will be sent when energy draw is above this setting value.</p>
@@ -247,8 +241,7 @@ Send alert when in use.<br /> <h1>Overview</h1><p>A Scene Activation Set command
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_7_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_7_1" type="integer" groupName="configuration">
         <label>7: Plug Always On</label>
         <description><![CDATA[
 Prevents the plugin from being turned off<br /> <h1>Overview</h1><p><br /></p>
@@ -261,8 +254,7 @@ Prevents the plugin from being turned off<br /> <h1>Overview</h1><p><br /></p>
         </options>
       </parameter>
 
-      <parameter name="config_8_1" type="integer" groupName="configuration"
-                 min="0" max="2">
+      <parameter name="config_8_1" type="integer" groupName="configuration">
         <label>8: Power Out Action</label>
         <description><![CDATA[
 Sets the plug's action in case of power loss<br /> <h1>Overview</h1><p><br /></p>
@@ -275,8 +267,7 @@ Sets the plug's action in case of power loss<br /> <h1>Overview</h1><p><br /></p
         </options>
       </parameter>
 
-      <parameter name="config_19_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_19_1" type="integer" groupName="configuration">
         <label>19: Threshold Check Time</label>
         <description>Frequency of Threshold checking - Seconds - Zero to disable</description>
         <default>0</default>
@@ -284,24 +275,21 @@ Sets the plug's action in case of power loss<br /> <h1>Overview</h1><p><br /></p
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_20_2" type="integer" groupName="configuration"
-                 min="0" max="10000">
+      <parameter name="config_20_2" type="integer" groupName="configuration">
         <label>20: KWh Report Threshold</label>
         <description>Threshold for automatic report of Watts -Zero to disable</description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_21_2" type="integer" groupName="configuration"
-                 min="0" max="2500">
+      <parameter name="config_21_2" type="integer" groupName="configuration">
         <label>21: Watt Report Threshold</label>
         <description>Threshold for automatic report of Watts</description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_22_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_22_1" type="integer" groupName="configuration">
         <label>22: Current Report Threshold</label>
         <description>Current Report Threshold - Unit Ampere</description>
         <default>0</default>
@@ -309,8 +297,7 @@ Sets the plug's action in case of power loss<br /> <h1>Overview</h1><p><br /></p
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_23_2" type="integer" groupName="configuration"
-                 min="-32767" max="32768">
+      <parameter name="config_23_2" type="integer" groupName="configuration">
         <label>23: Watt Automatic Report Time</label>
         <description><![CDATA[
 Automatic report time for Watts<br /> <h1>Overview</h1><p>0 - disable</p><p>1-30 = 30s</p><p>31-65535 = 31-65535s<br /></p>
@@ -319,8 +306,7 @@ Automatic report time for Watts<br /> <h1>Overview</h1><p>0 - disable</p><p>1-30
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_24_2" type="integer" groupName="configuration"
-                 min="-32767" max="32768">
+      <parameter name="config_24_2" type="integer" groupName="configuration">
         <label>24: Kwh Automatic Report Time</label>
         <description><![CDATA[
 Automatic report time for Kwh<br /> <h1>Overview</h1><p>0 - disable</p><p>1-30 = 30s</p><p>31-65535 = 31-65535s</p>
@@ -329,8 +315,7 @@ Automatic report time for Kwh<br /> <h1>Overview</h1><p>0 - disable</p><p>1-30 =
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_25_2" type="integer" groupName="configuration"
-                 min="-32767" max="32768">
+      <parameter name="config_25_2" type="integer" groupName="configuration">
         <label>25: Voltage Automatic Report Time</label>
         <description><![CDATA[
 Automatic report time for Voltage<br /> <h1>Overview</h1><p>0 - disable</p><p>1-30 = 30s</p><p>31-65535 = 31-65535s</p>
@@ -339,8 +324,7 @@ Automatic report time for Voltage<br /> <h1>Overview</h1><p>0 - disable</p><p>1-
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_26_2" type="integer" groupName="configuration"
-                 min="-32767" max="32768">
+      <parameter name="config_26_2" type="integer" groupName="configuration">
         <label>26: Amps Automatic Report Time</label>
         <description><![CDATA[
 Automatic report time for Amps<br /> <h1>Overview</h1><p>0 - disable</p><p>1-30 = 30s</p><p>31-65535 = 31-65535s</p>
@@ -349,8 +333,7 @@ Automatic report time for Amps<br /> <h1>Overview</h1><p>0 - disable</p><p>1-30 
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_40_4" type="integer" groupName="configuration"
-                 min="0" max="86400">
+      <parameter name="config_40_4" type="integer" groupName="configuration">
         <label>40: Automatic Off Timer</label>
         <description><![CDATA[
 Automatically turn OFF some time after turned ON<br /> <h1>Overview</h1><p>0 - no auto off timer</p><p>1~86400 - seconds<br /></p>
@@ -359,8 +342,7 @@ Automatically turn OFF some time after turned ON<br /> <h1>Overview</h1><p>0 - n
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_41_4" type="integer" groupName="configuration"
-                 min="0" max="86400">
+      <parameter name="config_41_4" type="integer" groupName="configuration">
         <label>41: Automatic On Timer</label>
         <description><![CDATA[
 Automatically turn switch ON some time after turned OFF<br /> <h1>Overview</h1><p>0 - no auto on timer</p><p>1~86400 - seconds<br /></p>

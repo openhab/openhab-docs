@@ -113,8 +113,7 @@ Scene Controller<br /> <h1>Overview</h1><p><b>Features</b></p><ul><li>Switch but
       </parameter-group>
 
       <!-- PARAMETER DEFINITIONS -->
-      <parameter name="config_1_1" type="integer" groupName="configuration"
-                 min="0" max="3">
+      <parameter name="config_1_1" type="integer" groupName="configuration">
         <label>1: LED Indicator mode for relay</label>
         <description><![CDATA[
 LED Indicator mode for relay<br /> <h1>Overview</h1><p>Choose if you want the LED indicator to turn on when the relay is on or off, or if you want it to remain on or off at all times.</p>
@@ -128,8 +127,7 @@ LED Indicator mode for relay<br /> <h1>Overview</h1><p>Choose if you want the LE
         </options>
       </parameter>
 
-      <parameter name="config_2_1" type="integer" groupName="configuration"
-                 min="0" max="3">
+      <parameter name="config_2_1" type="integer" groupName="configuration">
         <label>2: LED Indicator mode for Button 1</label>
         <description><![CDATA[
 LED Indicator mode for Button 1<br /> <h1>Overview</h1><p>Choose if you want the LED indicator to turn on when Button 1 is on or off, or if you want it to remain on or off at all times.</p>
@@ -143,8 +141,7 @@ LED Indicator mode for Button 1<br /> <h1>Overview</h1><p>Choose if you want the
         </options>
       </parameter>
 
-      <parameter name="config_3_1" type="integer" groupName="configuration"
-                 min="0" max="3">
+      <parameter name="config_3_1" type="integer" groupName="configuration">
         <label>3: LED Indicator mode for Button 2</label>
         <description><![CDATA[
 LED Indicator mode for Button 2<br /> <h1>Overview</h1><p>Choose if you want the LED indicator to turn on when Button 2 is on or off, or if you want it to remain on or off at all times.</p>
@@ -158,8 +155,7 @@ LED Indicator mode for Button 2<br /> <h1>Overview</h1><p>Choose if you want the
         </options>
       </parameter>
 
-      <parameter name="config_4_1" type="integer" groupName="configuration"
-                 min="0" max="3">
+      <parameter name="config_4_1" type="integer" groupName="configuration">
         <label>4: LED Indicator mode for Button 3</label>
         <description><![CDATA[
 LED Indicator mode for Button 3<br /> <h1>Overview</h1><p>Choose if you want the LED indicator to turn on when Button 3 is on or off, or if you want it to remain on or off at all times.</p>
@@ -173,8 +169,7 @@ LED Indicator mode for Button 3<br /> <h1>Overview</h1><p>Choose if you want the
         </options>
       </parameter>
 
-      <parameter name="config_5_1" type="integer" groupName="configuration"
-                 min="0" max="3">
+      <parameter name="config_5_1" type="integer" groupName="configuration">
         <label>5: LED Indicator mode for Button 4</label>
         <description><![CDATA[
 LED Indicator mode for Button 4<br /> <h1>Overview</h1><p>Choose if you want the LED indicator to turn on when Button 4 is on or off, or if you want it to remain on or off at all times.</p>
@@ -188,8 +183,7 @@ LED Indicator mode for Button 4<br /> <h1>Overview</h1><p>Choose if you want the
         </options>
       </parameter>
 
-      <parameter name="config_6_1" type="integer" groupName="configuration"
-                 min="0" max="3">
+      <parameter name="config_6_1" type="integer" groupName="configuration">
         <label>6: LED Indicator color for relay</label>
         <description><![CDATA[
 LED Indicator color for relay<br /> <h1>Overview</h1><p>Choose the <b>color </b>of the LED indicator for the relay.</p><p>0 – white (default); 1 – blue; 2 – green; 3 – red</p>
@@ -203,8 +197,7 @@ LED Indicator color for relay<br /> <h1>Overview</h1><p>Choose the <b>color </b>
         </options>
       </parameter>
 
-      <parameter name="config_7_1" type="integer" groupName="configuration"
-                 min="0" max="3">
+      <parameter name="config_7_1" type="integer" groupName="configuration">
         <label>7: LED Indicator color for Button 1</label>
         <description><![CDATA[
 LED Indicator color for Button 1<br /> <h1>Overview</h1><p>Choose the <b>color </b>of the LED indicator for Button 1.</p><p>0 – white (default); 1 – blue; 2 – green; 3 – red</p>
@@ -218,8 +211,7 @@ LED Indicator color for Button 1<br /> <h1>Overview</h1><p>Choose the <b>color <
         </options>
       </parameter>
 
-      <parameter name="config_8_1" type="integer" groupName="configuration"
-                 min="0" max="3">
+      <parameter name="config_8_1" type="integer" groupName="configuration">
         <label>8: LED Indicator color for Button 2</label>
         <description><![CDATA[
 LED Indicator color for Button 2<br /> <h1>Overview</h1><p>Choose the color of the LED indicator for Button 2.</p>
@@ -233,8 +225,7 @@ LED Indicator color for Button 2<br /> <h1>Overview</h1><p>Choose the color of t
         </options>
       </parameter>
 
-      <parameter name="config_9_1" type="integer" groupName="configuration"
-                 min="0" max="3">
+      <parameter name="config_9_1" type="integer" groupName="configuration">
         <label>9: LED Indicator color for Button 3</label>
         <description><![CDATA[
 LED Indicator color for Button 3<br /> <h1>Overview</h1><p>Choose the <b>color </b>of the LED indicator for Button 3.</p><p>0 – white (default); 1 – blue; 2 – green; 3 – red</p>
@@ -248,8 +239,7 @@ LED Indicator color for Button 3<br /> <h1>Overview</h1><p>Choose the <b>color <
         </options>
       </parameter>
 
-      <parameter name="config_10_1" type="integer" groupName="configuration"
-                 min="0" max="3">
+      <parameter name="config_10_1" type="integer" groupName="configuration">
         <label>10: LED Indicator color for Button 4</label>
         <description><![CDATA[
 LED Indicator color for Button 4<br /> <h1>Overview</h1><p>Choose the <b>color </b>of the LED indicator for Button 4.</p><p>0 – white (default); 1 – blue; 2 – green; 3 – red</p>
@@ -263,8 +253,7 @@ LED Indicator color for Button 4<br /> <h1>Overview</h1><p>Choose the <b>color <
         </options>
       </parameter>
 
-      <parameter name="config_11_1" type="integer" groupName="configuration"
-                 min="0" max="2">
+      <parameter name="config_11_1" type="integer" groupName="configuration">
         <label>11: LED Indicator brightness for relay</label>
         <description><![CDATA[
 LED Indicator brightness for relay<br /> <h1>Overview</h1><p>Choose the LED indicator's brightness level for the relay.</p>
@@ -277,8 +266,7 @@ LED Indicator brightness for relay<br /> <h1>Overview</h1><p>Choose the LED indi
         </options>
       </parameter>
 
-      <parameter name="config_12_1" type="integer" groupName="configuration"
-                 min="0" max="2">
+      <parameter name="config_12_1" type="integer" groupName="configuration">
         <label>12: LED Indicator brightness for Button 1</label>
         <description><![CDATA[
 LED Indicator brightness for Button 1<br /> <h1>Overview</h1><p>Choose the LED indicator's brightness level for Button 1.</p>
@@ -291,8 +279,7 @@ LED Indicator brightness for Button 1<br /> <h1>Overview</h1><p>Choose the LED i
         </options>
       </parameter>
 
-      <parameter name="config_13_1" type="integer" groupName="configuration"
-                 min="0" max="2">
+      <parameter name="config_13_1" type="integer" groupName="configuration">
         <label>13: LED Indicator brightness for Button 2</label>
         <description><![CDATA[
 LED Indicator brightness for Button 2<br /> <h1>Overview</h1><p>Choose the LED indicator's brightness level for Button 2.</p>
@@ -305,8 +292,7 @@ LED Indicator brightness for Button 2<br /> <h1>Overview</h1><p>Choose the LED i
         </options>
       </parameter>
 
-      <parameter name="config_14_1" type="integer" groupName="configuration"
-                 min="0" max="2">
+      <parameter name="config_14_1" type="integer" groupName="configuration">
         <label>14: LED Indicator brightness for Button 3</label>
         <description><![CDATA[
 LED Indicator brightness for Button 3<br /> <h1>Overview</h1><p>Choose the LED indicator's brightness level for Button 3.</p>
@@ -319,8 +305,7 @@ LED Indicator brightness for Button 3<br /> <h1>Overview</h1><p>Choose the LED i
         </options>
       </parameter>
 
-      <parameter name="config_15_1" type="integer" groupName="configuration"
-                 min="0" max="2">
+      <parameter name="config_15_1" type="integer" groupName="configuration">
         <label>15: LED Indicator brightness for Button 4</label>
         <description><![CDATA[
 LED Indicator brightness for Button 4<br /> <h1>Overview</h1><p>Choose the LED indicator's brightness level for Button 4.</p>
@@ -333,8 +318,7 @@ LED Indicator brightness for Button 4<br /> <h1>Overview</h1><p>Choose the LED i
         </options>
       </parameter>
 
-      <parameter name="config_16_4" type="integer" groupName="configuration"
-                 min="0" max="65535">
+      <parameter name="config_16_4" type="integer" groupName="configuration">
         <label>16: Auto Turn-Off Timer for Relay</label>
         <description><![CDATA[
 Auto Turn-Off Timer for Relay<br /> <h1>Overview</h1><p>Use this parameter to enable or disable the auto turn-off timer function (the time after which you want the switch to automatically turn off once it has been turned on).</p><p>0 – disabled (default); 1 – 65535 (minutes)</p>
@@ -343,8 +327,7 @@ Auto Turn-Off Timer for Relay<br /> <h1>Overview</h1><p>Use this parameter to en
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_17_4" type="integer" groupName="configuration"
-                 min="0" max="65535">
+      <parameter name="config_17_4" type="integer" groupName="configuration">
         <label>17: Auto Turn-On Timer for Relay</label>
         <description><![CDATA[
 Auto Turn-On Timer for Relay<br /> <h1>Overview</h1><p>Use this parameter to enable or disable the auto turn-on timer function (the time after which you want the switch to automatically turn on once it has been turned off).</p><p>0 – disabled (default); 1 – 65535 (minutes)</p>
@@ -353,8 +336,7 @@ Auto Turn-On Timer for Relay<br /> <h1>Overview</h1><p>Use this parameter to ena
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_18_1" type="integer" groupName="configuration"
-                 min="0" max="2">
+      <parameter name="config_18_1" type="integer" groupName="configuration">
         <label>18: State After Power Failure</label>
         <description><![CDATA[
 State After Power Failure<br /> <h1>Overview</h1><p>Set the on off status for the switch after power failure.</p>
@@ -367,8 +349,7 @@ State After Power Failure<br /> <h1>Overview</h1><p>Set the on off status for th
         </options>
       </parameter>
 
-      <parameter name="config_19_1" type="integer" groupName="configuration"
-                 min="0" max="2">
+      <parameter name="config_19_1" type="integer" groupName="configuration">
         <label>19: Disable / Enable Control on the Relay</label>
         <description><![CDATA[
 Disable / Enable Control on the Relay<br /> <h1>Overview</h1><p>Enable or disable paddle on/off control (aka disable the relay). If disabled, you’ll only be able to control the connected light via Z-Wave. Scenes and other functionality will still be available through buttons.</p><p><b>Values</b>: 0 – Disable local / physical control (from the button), enable Z-Wave control; 1 – Enable local / physical control (from the button), enable Z-Wave control (default); 2 – Disable local / physical control (from the button), disable Z-Wave control</p>
@@ -381,8 +362,7 @@ Disable / Enable Control on the Relay<br /> <h1>Overview</h1><p>Enable or disabl
         </options>
       </parameter>
 
-      <parameter name="config_20_1" type="integer" groupName="configuration"
-                 min="0" max="1">
+      <parameter name="config_20_1" type="integer" groupName="configuration">
         <label>20: Relay Behavior with Disabled Local / Z-Wave Control</label>
         <description><![CDATA[
 Relay Behavior with Disabled Local / Z-Wave Control<br /> <h1>Overview</h1><p>Set reporting behavior for disabled physical control.</p><p><b>Values</b>: 0 – report on/off status when button is pressed and change LED indicator status if Parameter 19 is set to value 0 or 2; 1 – DON’T report on/off status when button is pressed and DON’T change LED indicator status if Parameter 19 is set to value 0 or 2 (but the relay will always send central scene command) (default)</p>
@@ -394,8 +374,7 @@ Relay Behavior with Disabled Local / Z-Wave Control<br /> <h1>Overview</h1><p>Se
         </options>
       </parameter>
 
-      <parameter name="config_21_1" type="integer" groupName="configuration"
-                 min="0" max="1">
+      <parameter name="config_21_1" type="integer" groupName="configuration">
         <label>21: 3-Way Switch Type</label>
         <description><![CDATA[
 3-Way Switch Type<br /> <h1>Overview</h1><p>Choose the type of 3-way switch you want to use with this switch in a 3-way set-up.</p><p><b>Values</b>: 0 – regular mechanical 3-way on/off switch, use the connected 3-way switch to turn the light on or off (default); 1 – momentary switch, click once to change status (light on or off)</p>

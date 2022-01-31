@@ -73,16 +73,14 @@ Shutter Control<br /> <h1>Overview</h1><p>Flush Shutter</p> <br /> <h2>Inclusion
       </parameter-group>
 
       <!-- PARAMETER DEFINITIONS -->
-      <parameter name="config_40_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_40_1" type="integer" groupName="configuration">
         <label>40: Power reporting in Watts</label>
         <description>Power reporting in Watts on power change for Q1 or Q2</description>
         <default>10</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_71_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_71_1" type="integer" groupName="configuration">
         <label>71: Operating modes</label>
         <description><![CDATA[
 This parameter defines selection between two available operating modes<br /> <h1>Overview</h1><p>This parameter defines selection between two available operating modes. NOTE1: After parameter change, first exclude module (without setting parameters to default value) then wait at least 30s and then re include the module!<br /></p>
@@ -105,8 +103,7 @@ This parameter defines the time necessary for slats to make full turn (180 degre
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_73_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_73_1" type="integer" groupName="configuration">
         <label>73: Slats position</label>
         <description><![CDATA[
 Slats return to previously set position only in case of Z-wave control (not valid for limit switch positions)<br /> <h1>Overview</h1><p>This parameter defines slats position after up/down movement through Z-wave or push-buttons.</p><p>• default value 1 </p><p>• 0 - Slats return to previously set position only in case of Z-wave control (not valid for limit switch positions).</p><p>• 1 - Slats return to previously set position in case of Z-wave control, push-button operation or when the lower limit switch is reached.</p>
@@ -115,8 +112,7 @@ Slats return to previously set position only in case of Z-wave control (not vali
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_78_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_78_1" type="integer" groupName="configuration">
         <label>78: Forced Shutter calibration</label>
         <description><![CDATA[
 By modifying the parameters setting from 0 to 1 a Shutter enters the calibration mode.<br /> <h1>Overview</h1><p>Set to 1 - Start calibration process (when calibration process is finished, completing full cycle - up, down and up, set the parameter 78 (Forced Shutter calibration) value back to 0<br /></p>

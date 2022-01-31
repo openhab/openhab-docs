@@ -76,8 +76,7 @@ FIBARO Walli Double Wall Mounted Remote Controller<br /> <h1>Overview</h1><p>FIB
       </parameter-group>
 
       <!-- PARAMETER DEFINITIONS -->
-      <parameter name="config_13_1" type="integer" groupName="configuration"
-                 min="0" max="100">
+      <parameter name="config_13_1" type="integer" groupName="configuration">
         <label>13: LED frame – brightness</label>
         <description><![CDATA[
 This parameter allows to adjust the LED frame brightness<br /> <h1>Overview</h1><p>0 – LED disabled<br />1-100 (1-100% brightness)</p>
@@ -86,8 +85,7 @@ This parameter allows to adjust the LED frame brightness<br /> <h1>Overview</h1>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_20_1" type="integer" groupName="configuration"
-                 min="0" max="6">
+      <parameter name="config_20_1" type="integer" groupName="configuration">
         <label>20: Operation mode</label>
         <description><![CDATA[
 This parameter defines operation of the device. Choose the mode depending on the type of the device you want to control remotely<br /> <h1>Overview</h1><p>0 – scene controller mode<br />1 – double button mode<br />2 – single button mode<br />3 – switch controller mode<br />4 – dimmer / roller shutter controller mode<br />5 – roller shutter controller mode (step-by-step)<br />6 – venetian blinds controller mode (step-by-step)</p>
@@ -96,8 +94,7 @@ This parameter defines operation of the device. Choose the mode depending on the
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_150_2" type="integer" groupName="configuration"
-                 min="0" max="8">
+      <parameter name="config_150_2" type="integer" groupName="configuration">
         <label>150: LED ring – first button</label>
         <description><![CDATA[
 This parameter defines the colour of first button indicator (upper part of the LED ring) for indications using Indicator CC.<br /> <h1>Overview</h1><p>0 – LED disabled<br />1 – White<br />2 – Red<br />3 – Green<br />4 – Blue<br />5 – Yellow<br />6 – Cyan<br />7 – Magenta<br />8 – Blinking red-white-blue</p>
@@ -106,8 +103,7 @@ This parameter defines the colour of first button indicator (upper part of the L
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_151_2" type="integer" groupName="configuration"
-                 min="0" max="8">
+      <parameter name="config_151_2" type="integer" groupName="configuration">
         <label>151: LED ring – second button</label>
         <description><![CDATA[
 This parameter defines the colour of second button indicator (lower part of the LED ring) for indications using Indicator CC.<br /> <h1>Overview</h1><p>0 – LED disabled<br />1 – White<br />2 – Red<br />3 – Green<br />4 – Blue<br />5 – Yellow<br />6 – Cyan<br />7 – Magenta<br />8 – Blinking red-white-blue</p>
@@ -116,8 +112,7 @@ This parameter defines the colour of second button indicator (lower part of the 
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_152_2" type="integer" groupName="configuration"
-                 min="0" max="255">
+      <parameter name="config_152_2" type="integer" groupName="configuration">
         <label>152: 1st button - double click value</label>
         <description><![CDATA[
 This parameter defines value of Basic Set or Multilevel Set frame (depending on selected mode) sent to associated devices after double click. This parameter is not relevant for Scene Controller Mode<br /> <h1>Overview</h1><p>Available values 0-99 or 255</p>
@@ -126,8 +121,7 @@ This parameter defines value of Basic Set or Multilevel Set frame (depending on 
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_153_2" type="integer" groupName="configuration"
-                 min="0" max="255">
+      <parameter name="config_153_2" type="integer" groupName="configuration">
         <label>153: 2nd button - double click value</label>
         <description><![CDATA[
 This parameter defines value of Basic Set or Multilevel Set frame (depending on selected mode) sent to associated devices after double click. This parameter is used only in Double Button Mode.<br /> <h1>Overview</h1><p>Available values 0-99 or 255</p>

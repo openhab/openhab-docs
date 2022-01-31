@@ -59,16 +59,14 @@ Energy Switch +<br /> <h1>Overview</h1><p>Control and monitor your lightning or 
       </parameter-group>
 
       <!-- PARAMETER DEFINITIONS -->
-      <parameter name="config_1_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_1_1" type="integer" groupName="configuration">
         <label>1: Set to Default</label>
         <description>If value is set to 0XFF (255), device set to default</description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_2_1" type="integer" groupName="configuration"
-                 min="0" max="3">
+      <parameter name="config_2_1" type="integer" groupName="configuration">
         <label>2: Amount of decimals</label>
         <description><![CDATA[
 If value is set to 1 the info shall be presented with 1 decimal<br /> <h1>Overview</h1><p>0,1,2,3 amount of decimals. Every Amount higher then 3 shall be printed as 3 decimals.</p>
@@ -77,8 +75,7 @@ If value is set to 1 the info shall be presented with 1 decimal<br /> <h1>Overvi
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_3_2" type="integer" groupName="configuration"
-                 min="0" max="4500">
+      <parameter name="config_3_2" type="integer" groupName="configuration">
         <label>3: Power Limit</label>
         <description><![CDATA[
 The device will shut down when it reaches an amount higher then defined (W)<br /> <h1>Overview</h1><p>0 = no power limit.</p> <p>1-4500 are acceptable values and can be used, everything above the 4500 shall be changed to 4500.</p>
@@ -87,8 +84,7 @@ The device will shut down when it reaches an amount higher then defined (W)<br /
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_4_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_4_1" type="integer" groupName="configuration">
         <label>4: Start up with last known socket status</label>
         <description><![CDATA[
 Start up with last known socket status<br /> <h1>Overview</h1><ul><li>If 0 then the device will always be off, when</li> <li>If 1-255 hen the device will remain the last known state</li> </ul>
@@ -97,32 +93,28 @@ Start up with last known socket status<br /> <h1>Overview</h1><ul><li>If 0 then 
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_6_1" type="integer" groupName="configuration"
-                 min="10" max="100">
+      <parameter name="config_6_1" type="integer" groupName="configuration">
         <label>6: Auto report %</label>
         <description>The value will change when the % is changed.</description>
         <default>20</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_7_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_7_1" type="integer" groupName="configuration">
         <label>7: Auto report Watt</label>
         <description>The value will change when the Watt is changed.</description>
         <default>10</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_8_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_8_1" type="integer" groupName="configuration">
         <label>8: Auto report time</label>
         <description>The time between 2 of the meter rerport</description>
         <default>20</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_9_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_9_1" type="integer" groupName="configuration">
         <label>9: Relais delay time</label>
         <description><![CDATA[
 The time that needs to pass before the next state change<br /> <h1>Overview</h1><p>Value * 10 miliseconds</p>
@@ -131,8 +123,7 @@ The time that needs to pass before the next state change<br /> <h1>Overview</h1>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_10_1" type="integer" groupName="configuration"
-                 min="0" max="2">
+      <parameter name="config_10_1" type="integer" groupName="configuration">
         <label>10: Led indicator</label>
         <description><![CDATA[
 The state of the Led compared to the relais state<br /> <h1>Overview</h1><p>0 = Indication Led never off</p> <p>1 = led ON when relais ON</p> <p>2 = led On when relais OFF</p>

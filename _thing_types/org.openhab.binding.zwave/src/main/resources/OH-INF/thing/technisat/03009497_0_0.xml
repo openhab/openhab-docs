@@ -72,8 +72,7 @@ Dimmer flush mount compatible to Busch-Jaeger<br /> <h1>Overview</h1><p>The Tech
       </parameter-group>
 
       <!-- PARAMETER DEFINITIONS -->
-      <parameter name="config_1_1" type="integer" groupName="configuration"
-                 min="0" max="1">
+      <parameter name="config_1_1" type="integer" groupName="configuration">
         <label>1: Central scene notification</label>
         <description><![CDATA[
 Enable/Disable Central scene notifcations for 2x-5x press<br /> <h1>Overview</h1><p><b>0</b> - disable, </p><p><b>1</b> - enable<br /></p>
@@ -85,8 +84,7 @@ Enable/Disable Central scene notifcations for 2x-5x press<br /> <h1>Overview</h1
         </options>
       </parameter>
 
-      <parameter name="config_2_2" type="integer" groupName="configuration"
-                 min="0" max="8640">
+      <parameter name="config_2_2" type="integer" groupName="configuration">
         <label>2: Wattage meter</label>
         <description><![CDATA[
 Interval Current wattage meter report in 10s<br /> <h1>Overview</h1><p>Interval of current wattage meter report in 10 second steps, 30s ... 1day, 0 - disable<br /></p>
@@ -95,8 +93,7 @@ Interval Current wattage meter report in 10s<br /> <h1>Overview</h1><p>Interval 
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_3_2" type="integer" groupName="configuration"
-                 min="0" max="30240">
+      <parameter name="config_3_2" type="integer" groupName="configuration">
         <label>3: Energy meter report</label>
         <description><![CDATA[
 Interval of active energy meter report in minutes<br /> <h1>Overview</h1><p>Interval of active energy meter report in minutes, 10min ... 3 weeks, 0 - disable<br /></p>
@@ -105,8 +102,7 @@ Interval of active energy meter report in minutes<br /> <h1>Overview</h1><p>Inte
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_4_1" type="integer" groupName="configuration"
-                 min="0" max="1">
+      <parameter name="config_4_1" type="integer" groupName="configuration">
         <label>4: Operation mode of T1 and T2</label>
         <description><![CDATA[
 Function of switch position T1 (up) and T2 (down)<br /> <h1>Overview</h1><p><b>0</b> -T1 turns output L1 on, T2 turn output L1 off<br /></p><p><b>1 </b>- T1 and T2 toggle output L1</p>
@@ -118,8 +114,7 @@ Function of switch position T1 (up) and T2 (down)<br /> <h1>Overview</h1><p><b>0
         </options>
       </parameter>
 
-      <parameter name="config_5_1" type="integer" groupName="configuration"
-                 min="0" max="1">
+      <parameter name="config_5_1" type="integer" groupName="configuration">
         <label>5: Extension connector switch type</label>
         <description><![CDATA[
 Configuration of switch type connected to extension connector S<br /> <h1>Overview</h1><p><b>0 </b>- a toggle switch type is connected to extension connector S<br /></p><p><b>1 </b>- a push button switch type is connected to extension connector S</p>
@@ -132,8 +127,7 @@ Configuration of switch type connected to extension connector S<br /> <h1>Overvi
         <advanced>true</advanced>
       </parameter>
 
-      <parameter name="config_6_1" type="integer" groupName="configuration"
-                 min="1" max="3">
+      <parameter name="config_6_1" type="integer" groupName="configuration">
         <label>6: Extension connector central scenes</label>
         <description><![CDATA[
 Central Scene mapping of extension input S<br /> <h1>Overview</h1><p><b>1 - </b>map extension input S to central scene of T1</p><p><b>2</b>: map extension input S to central scene of T2</p><p><b>3</b>: map extension input S to own central scene</p>
@@ -147,8 +141,7 @@ Central Scene mapping of extension input S<br /> <h1>Overview</h1><p><b>1 - </b
         <advanced>true</advanced>
       </parameter>
 
-      <parameter name="config_7_1" type="integer" groupName="configuration"
-                 min="0" max="1">
+      <parameter name="config_7_1" type="integer" groupName="configuration">
         <label>7: Dimming curve selection</label>
         <description><![CDATA[
 Select Dimming curve selection<br /> <h1>Overview</h1><p><b>0</b> - select dimming curve 1</p><p><b>1</b> - select dimming curve 2</p>

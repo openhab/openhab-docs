@@ -83,8 +83,7 @@ WiDom Smart Double Switch 7<br /> <h1>Overview</h1><p>WiDom Smart Double Switch 
       </parameter-group>
 
       <!-- PARAMETER DEFINITIONS -->
-      <parameter name="config_1_1" type="integer" groupName="configuration"
-                 min="0" max="2">
+      <parameter name="config_1_1" type="integer" groupName="configuration">
         <label>1: IN1_TYPE</label>
         <description><![CDATA[
 Type of input 1<br /> <h1>Overview</h1><p>This parameter defines the type of input 1.<br /></p>
@@ -97,8 +96,7 @@ Type of input 1<br /> <h1>Overview</h1><p>This parameter defines the type of inp
         </options>
       </parameter>
 
-      <parameter name="config_2_1" type="integer" groupName="configuration"
-                 min="0" max="2">
+      <parameter name="config_2_1" type="integer" groupName="configuration">
         <label>2: IN2_TYPE</label>
         <description><![CDATA[
 Type of input 2<br /> <h1>Overview</h1><p>This parameter defines the type of input 2.<br /></p>
@@ -213,8 +211,7 @@ Which events on input 2 do not switch off output 2<br /> <h1>Overview</h1><p>Thi
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_21_1" type="integer" groupName="configuration"
-                 min="0" max="1">
+      <parameter name="config_21_1" type="integer" groupName="configuration">
         <label>21: OUT1_TYPE</label>
         <description><![CDATA[
 Type of output 1<br /> <h1>Overview</h1><p>This parameter defines the type of output 1.</p>
@@ -226,8 +223,7 @@ Type of output 1<br /> <h1>Overview</h1><p>This parameter defines the type of ou
         </options>
       </parameter>
 
-      <parameter name="config_22_1" type="integer" groupName="configuration"
-                 min="0" max="1">
+      <parameter name="config_22_1" type="integer" groupName="configuration">
         <label>22: OUT2_TYPE</label>
         <description><![CDATA[
 Type of output 2<br /> <h1>Overview</h1><p>This parameter defines the type of output 2.</p>
@@ -239,8 +235,7 @@ Type of output 2<br /> <h1>Overview</h1><p>This parameter defines the type of ou
         </options>
       </parameter>
 
-      <parameter name="config_23_1" type="integer" groupName="configuration"
-                 min="0" max="3">
+      <parameter name="config_23_1" type="integer" groupName="configuration">
         <label>23: STARTUP_OUT1</label>
         <description><![CDATA[
 Level of output 1 on startup (status of the device following a restart)<br /> <h1>Overview</h1><p>This parameter defines the level of output 1 on startup (<i>status of the device following a restart</i>).<br /></p>
@@ -254,8 +249,7 @@ Level of output 1 on startup (status of the device following a restart)<br /> <h
         </options>
       </parameter>
 
-      <parameter name="config_24_1" type="integer" groupName="configuration"
-                 min="0" max="3">
+      <parameter name="config_24_1" type="integer" groupName="configuration">
         <label>24: STARTUP_OUT2</label>
         <description><![CDATA[
 Level of output 2 on startup (status of the device following a restart)<br /> <h1>Overview</h1><p>This parameter defines the level of output 2 on startup (<i>status of the device following a restart</i>).</p>
@@ -269,8 +263,7 @@ Level of output 2 on startup (status of the device following a restart)<br /> <h
         </options>
       </parameter>
 
-      <parameter name="config_25_1" type="integer" groupName="configuration"
-                 min="0" max="2">
+      <parameter name="config_25_1" type="integer" groupName="configuration">
         <label>25: LOCAL_SCENE</label>
         <description><![CDATA[
 Local Scene configuration<br /> <h1>Overview</h1><p>This parameter configures the Local Scene:<br /></p><p><b>0</b>: Independent channel (<i>external switch I1 controls output 1 and external switch I2 controls output 2</i>)</p><p><b>1</b>: Never both ON (<i>both outputs can be OFF but they can never be ON simultaneously</i>)</p><p><b>2</b>: Sequencing (<i>outputs are toggled in this order: both outputs ON, only output 1 ON, only output 2 ON, both outputs OFF</i>)</p>
@@ -302,8 +295,7 @@ Which trigger event on Channel 1 activate its timers when output 1 has changed<b
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_31_4" type="integer" groupName="configuration"
-                 min="0" max="360000">
+      <parameter name="config_31_4" type="integer" groupName="configuration">
         <label>31: OFF_EP1_VALUE</label>
         <description><![CDATA[
 Time after which output 1 will be switched off<br /> <h1>Overview</h1><p>This parameter defines the time in tenths of seconds after which output 1 will be switched off.</p>
@@ -312,8 +304,7 @@ Time after which output 1 will be switched off<br /> <h1>Overview</h1><p>This pa
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_32_4" type="integer" groupName="configuration"
-                 min="0" max="360000">
+      <parameter name="config_32_4" type="integer" groupName="configuration">
         <label>32: ON_EP1_VALUE</label>
         <description><![CDATA[
 Time after which output 1 will be switched on<br /> <h1>Overview</h1><p>This parameter defines the time in tenths of second after which output 1 will be switched on.</p>
@@ -341,8 +332,7 @@ Which trigger events on Channel 2 activate its timers when output 2 has changed<
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_34_4" type="integer" groupName="configuration"
-                 min="0" max="360000">
+      <parameter name="config_34_4" type="integer" groupName="configuration">
         <label>34: OFF_EP2_VALUE</label>
         <description><![CDATA[
 Time after which output 2 will be switched off<br /> <h1>Overview</h1><p>This parameter defines the time in tenths of seconds after which output 2 will be switched off.<br /></p>
@@ -351,8 +341,7 @@ Time after which output 2 will be switched off<br /> <h1>Overview</h1><p>This pa
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_35_4" type="integer" groupName="configuration"
-                 min="0" max="360000">
+      <parameter name="config_35_4" type="integer" groupName="configuration">
         <label>35: ON_EP2_VALUE</label>
         <description><![CDATA[
 Time after which output 2 will be switched on<br /> <h1>Overview</h1><p>This parameter defines the time in tenths of seconds after which output 2 will be switched on.</p>
@@ -493,8 +482,7 @@ Value used to control G2 association group on Channel 2<br /> <h1>Overview</h1><
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_70_2" type="integer" groupName="configuration"
-                 min="-32767" max="32768">
+      <parameter name="config_70_2" type="integer" groupName="configuration">
         <label>70: E_REPORT_DELAY</label>
         <description><![CDATA[
 Time after which the next Energy report will be sent<br /> <h1>Overview</h1><p>This parameter defines the time in seconds after which the next Energy report will be sent.<br /></p>
@@ -503,8 +491,7 @@ Time after which the next Energy report will be sent<br /> <h1>Overview</h1><p>T
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_71_2" type="integer" groupName="configuration"
-                 min="-32767" max="32768">
+      <parameter name="config_71_2" type="integer" groupName="configuration">
         <label>71: W_REPORT_DELAY</label>
         <description><![CDATA[
 Time after which the next Power report will be sent<br /> <h1>Overview</h1><p>This parameter defines the time in second after which the next Power report will be sent.</p>
@@ -513,8 +500,7 @@ Time after which the next Power report will be sent<br /> <h1>Overview</h1><p>Th
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_75_1" type="integer" groupName="configuration"
-                 min="0" max="100">
+      <parameter name="config_75_1" type="integer" groupName="configuration">
         <label>75: W_ISTANT_REPORT</label>
         <description><![CDATA[
 The percentage change from the last sent report that triggers a new Power report<br /> <h1>Overview</h1><p>This parameter defines the percentage change from the last sent report that triggers a new Power report.<br /></p>

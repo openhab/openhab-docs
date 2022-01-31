@@ -125,8 +125,7 @@ Illumination threshold for turning on associated lights.<br /> <h1>Overview</h1>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_5_1_00000002" type="integer" groupName="configuration"
-                 min="0" max="1">
+      <parameter name="config_5_1_00000002" type="integer" groupName="configuration">
         <label>5: Operation Mode</label>
         <description><![CDATA[
 Mode of operation<br /> <h1>Overview</h1><p>device mode. 0 = normal mode; 1 = test mode.<br /></p>
@@ -138,8 +137,7 @@ Mode of operation<br /> <h1>Overview</h1><p>device mode. 0 = normal mode; 1 = te
         </options>
       </parameter>
 
-      <parameter name="config_5_1_00000004" type="integer" groupName="configuration"
-                 min="0" max="1">
+      <parameter name="config_5_1_00000004" type="integer" groupName="configuration">
         <label>5: Door/window function</label>
         <description><![CDATA[
 Enable or disable the door/window function<br /> <h1>Overview</h1><p>disable the door/window function. 0 = enabled; 1 = disabled.<br /></p>
@@ -151,8 +149,7 @@ Enable or disable the door/window function<br /> <h1>Overview</h1><p>disable the
         </options>
       </parameter>
 
-      <parameter name="config_5_1_00000008" type="integer" groupName="configuration"
-                 min="0" max="1">
+      <parameter name="config_5_1_00000008" type="integer" groupName="configuration">
         <label>5: Temperature unit</label>
         <description><![CDATA[
 The temperature unit<br /> <h1>Overview</h1><p>temperature unit. 0 = Fahrenheit; 1 = Celcius.<br /></p>
@@ -164,8 +161,7 @@ The temperature unit<br /> <h1>Overview</h1><p>temperature unit. 0 = Fahrenheit;
         </options>
       </parameter>
 
-      <parameter name="config_5_1_00000010" type="integer" groupName="configuration"
-                 min="0" max="1">
+      <parameter name="config_5_1_00000010" type="integer" groupName="configuration">
         <label>5: Illumination report after event triggered</label>
         <description><![CDATA[
 Enable or disable the illumination report after event triggered<br /> <h1>Overview</h1><p>disable the illumination report after event triggered. 0 = enabled; 1 = disabled.<br /></p>
@@ -177,8 +173,7 @@ Enable or disable the illumination report after event triggered<br /> <h1>Overvi
         </options>
       </parameter>
 
-      <parameter name="config_5_1_00000020" type="integer" groupName="configuration"
-                 min="0" max="1">
+      <parameter name="config_5_1_00000020" type="integer" groupName="configuration">
         <label>5: Temperature report after event triggered</label>
         <description><![CDATA[
 Enable or disable the temperature report after event triggered<br /> <h1>Overview</h1><p>disable the temperature report after event triggered. 0 = enabled; 1 = disabled.<br /></p>
@@ -190,8 +185,7 @@ Enable or disable the temperature report after event triggered<br /> <h1>Overvie
         </options>
       </parameter>
 
-      <parameter name="config_5_0_00000080" type="integer" groupName="configuration"
-                 min="0" max="1">
+      <parameter name="config_5_0_00000080" type="integer" groupName="configuration">
         <label>5: Back key release test mode</label>
         <description><![CDATA[
 Enable or disable the back key release into test mode<br /> <h1>Overview</h1><p>disable the back key release into test mode. 0 = enabled; 1 = disabled.<br /></p>
@@ -203,8 +197,7 @@ Enable or disable the back key release into test mode<br /> <h1>Overview</h1><p>
         </options>
       </parameter>
 
-      <parameter name="config_6_1" type="integer" groupName="configuration"
-                 min="0" max="127">
+      <parameter name="config_6_1" type="integer" groupName="configuration">
         <label>6: Multi-Sensor Function Switch</label>
         <description><![CDATA[
 Enable or disable functions of the multisensor.<br /> <h1>Overview</h1><p>Bitfield for enabling or disabling functions of the multisensor.</p> <ul><li>Bit 0: Disable magnetic integrate illumination to turn ON the lighting nodes in the association group 2. 1:Disable, (<strong>0:Enable</strong>)</li> <li>Bit 1: Disable PIR integrate Illumination to turn ON lighting nodes in the association group 1.</li> <li>1:Disable, (<strong>0:Enable</strong>)</li> <li>Bit 2: Disable magnetic integrate PIR  to turn ON the lighting nodes in the association group 2. (<strong>1:Disable</strong>), 0:Enable</li> <li>Bit 3: When bit 2 is 0 (enabled), are the device installed in the same room as the light? <ul><li><strong>(0 = In the same room)</strong>;</li> <li>1 = In another room.</li> <li>Note: If this bit is 1, it is recommended to also set bit 1 to 1, because when the PIR triggered, it doesn't mean that a person is in the room where the lights are.</li> </ul></li> <li>Bit 4: Disable the 5 seconds delay to turn off the light, when door/window is closed. 1:Disable, (<strong>0:Enable</strong>)</li> <li>Bit 5: Disable auto turn off the light, after door/window opened to turn on the light. <ul><li><em>Note: If bit 2 is 0, this setting has no effect.</em></li> <li><em>Note: If configuration parameter is 0, </em><em>this setting has no effect.</em></li> </ul></li> <li>Bit 6: Reserved.(0)</li> <li>Bit 7: Reserved (0)</li> </ul>
@@ -213,8 +206,7 @@ Enable or disable functions of the multisensor.<br /> <h1>Overview</h1><p>Bitfie
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_7_1_00000002" type="integer" groupName="configuration"
-                 min="0" max="1">
+      <parameter name="config_7_1_00000002" type="integer" groupName="configuration">
         <label>7: Sending motion OFF report</label>
         <description><![CDATA[
 Enable or disable sending motion OFF report<br /> <h1>Overview</h1><p>Enable sending motion OFF report. 0=Disable; 1=Enable. </p><p>Note: Depends on the Notification Type, see below:</p><p>* Notification type is notification report: Report Notification CC, Type: 0x07, Event: 0xFE.<br />* Notification type is sensor binary report: Sensor Binary Report, Type: 0x0C, Value: 0x00.</p>
@@ -226,8 +218,7 @@ Enable or disable sending motion OFF report<br /> <h1>Overview</h1><p>Enable sen
         </options>
       </parameter>
 
-      <parameter name="config_7_1_00000004" type="integer" groupName="configuration"
-                 min="0" max="1">
+      <parameter name="config_7_1_00000004" type="integer" groupName="configuration">
         <label>7: PIR super sensitivity mode</label>
         <description><![CDATA[
 Enable PIR super sensitivity mode<br /> <h1>Overview</h1><p>Enable PIR super sensitivity mode. 0=Disable; 1=Enable.<br /></p>
@@ -239,8 +230,7 @@ Enable PIR super sensitivity mode<br /> <h1>Overview</h1><p>Enable PIR super sen
         </options>
       </parameter>
 
-      <parameter name="config_7_1_00000008" type="integer" groupName="configuration"
-                 min="0" max="1">
+      <parameter name="config_7_1_00000008" type="integer" groupName="configuration">
         <label>7: Sending BASIC OFF after door/window is closed</label>
         <description><![CDATA[
 Enable or disable sending BASIC OFF after door/window is closed<br /> <h1>Overview</h1><p>Disable sending BASIC OFF after door/window is closed. 1=Disable, 0=Enable.<br /></p>
@@ -252,8 +242,7 @@ Enable or disable sending BASIC OFF after door/window is closed<br /> <h1>Overvi
         </options>
       </parameter>
 
-      <parameter name="config_7_1_00000010" type="integer" groupName="configuration"
-                 min="0" max="1">
+      <parameter name="config_7_1_00000010" type="integer" groupName="configuration">
         <label>7: Notification type</label>
         <description><![CDATA[
 The Notification type<br /> <h1>Overview</h1><p>Notification type. 0=Using Notification Report; 1=Using Sensor Binary Report.<br /></p><p>Sensor Binary Report is recommended.</p>
@@ -265,8 +254,7 @@ The Notification type<br /> <h1>Overview</h1><p>Notification type. 0=Using Notif
         </options>
       </parameter>
 
-      <parameter name="config_7_1_00000020" type="integer" groupName="configuration"
-                 min="0" max="1">
+      <parameter name="config_7_1_00000020" type="integer" groupName="configuration">
         <label>7: Multi CC in auto report</label>
         <description><![CDATA[
 Enable or disable Multi CC in auto report<br /> <h1>Overview</h1><p>Disable Multi CC in auto report. 1=Disable; 0=Enable.<br /></p>
@@ -278,8 +266,7 @@ Enable or disable Multi CC in auto report<br /> <h1>Overview</h1><p>Disable Mult
         </options>
       </parameter>
 
-      <parameter name="config_7_1_00000040" type="integer" groupName="configuration"
-                 min="0" max="1">
+      <parameter name="config_7_1_00000040" type="integer" groupName="configuration">
         <label>7: Reporting battery state when the device is triggered</label>
         <description><![CDATA[
 Enable or disable reporting battery state when the device is triggered<br /> <h1>Overview</h1><p>Disable reporting battery state when the device is triggered. 1=Disable; 0=Enable.<br /></p>
@@ -291,8 +278,7 @@ Enable or disable reporting battery state when the device is triggered<br /> <h1
         </options>
       </parameter>
 
-      <parameter name="config_8_1" type="integer" groupName="configuration"
-                 min="1" max="127">
+      <parameter name="config_8_1" type="integer" groupName="configuration">
         <label>8: PIR Re-Detect Interval Time</label>
         <description><![CDATA[
 Time period to wait until reporting motion detected again.<br /> <h1>Overview</h1><p>In the normal mode, after the PIR motion detected, setting the re-detect time. 8 seconds per tick, default tick is 3 (24 seconds).</p> <p>Setting the suitable value to prevent received the trigger signal too frequently. Also can save the battery energy.</p> <p>Notice: If this value bigger than the configuration setting NO. 9. There is a period after the light turned off and the PIR not start detecting.</p>
@@ -301,8 +287,7 @@ Time period to wait until reporting motion detected again.<br /> <h1>Overview</h
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_9_1" type="integer" groupName="configuration"
-                 min="0" max="127">
+      <parameter name="config_9_1" type="integer" groupName="configuration">
         <label>9: Turn Off Light Time</label>
         <description><![CDATA[
 Time to wait before sending command to turn off lights<br /> <h1>Overview</h1><p>When a BASIC SET command has been sent to turn on lights and motion is no longer detected by the PIR sensor, wait the configured time before sending a "turn off light" command.</p> <p>The timeout is the configured value multiplied with 8 seconds, i.e. value 4 (the default) means 32 seconds timeout.</p> <p>0 means "never turn off the lights".</p>
@@ -311,8 +296,7 @@ Time to wait before sending command to turn off lights<br /> <h1>Overview</h1><p
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_10_1" type="integer" groupName="configuration"
-                 min="0" max="127">
+      <parameter name="config_10_1" type="integer" groupName="configuration">
         <label>10: Auto Report Battery Time</label>
         <description><![CDATA[
 The interval time for auto reporting the battery level.<br /> <h1>Overview</h1><p>The interval time for auto report the battery level.</p> <p>0 means turn off auto report battery.</p> <p>The default value is 12. The tick time can setting by the configuration No.20.</p>
@@ -321,8 +305,7 @@ The interval time for auto reporting the battery level.<br /> <h1>Overview</h1><
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_11_1" type="integer" groupName="configuration"
-                 min="0" max="127">
+      <parameter name="config_11_1" type="integer" groupName="configuration">
         <label>11: Auto Report Door/Window State Time</label>
         <description><![CDATA[
 The interval time for auto reporting the door/window state<br /> <h1>Overview</h1><p>The interval time for auto report the door/window state.</p> <p>0 means turn off auto report door/window state.</p> <p>The default value is 12. The tick time can setting by the configuration No.20.</p>
@@ -331,8 +314,7 @@ The interval time for auto reporting the door/window state<br /> <h1>Overview</h
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_12_1" type="integer" groupName="configuration"
-                 min="1" max="127">
+      <parameter name="config_12_1" type="integer" groupName="configuration">
         <label>12: Auto Report Illumination Time</label>
         <description><![CDATA[
 The interval time for auto reporting the illumination state<br /> <h1>Overview</h1><p>The interval time for auto report the illumination.</p> <p>0 means turn off auto report illumination.</p> <p>The default value is 12. The tick time can setting by the configuration No.20.</p>
@@ -353,8 +335,7 @@ The interval time for auto reporting the temperature state<br /> <h1>Overview</h
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_20_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_20_1" type="integer" groupName="configuration">
         <label>20: Auto Report Tick Interval</label>
         <description><![CDATA[
 The interval time for each auto report tick.<br /> <h1>Overview</h1><p>The interval time for auto report each tick. Setting this configuration will effect configuration No.10, No.11, No.12 and No.13.</p> <p>Caution: Setting to 0 means turn off all auto report function.</p>
@@ -363,8 +344,7 @@ The interval time for each auto report tick.<br /> <h1>Overview</h1><p>The inter
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_21_1" type="integer" groupName="configuration"
-                 min="0" max="127">
+      <parameter name="config_21_1" type="integer" groupName="configuration">
         <label>21: Temperature Differential Report</label>
         <description><![CDATA[
 The temperature differential to report.<br /> <h1>Overview</h1><p>The temperature differential to report.</p> <p>0 means turn off this function.</p> <p>The unit is Fahrenheit.</p> <p>Enable this function the device will detect every minutes.</p> <p>And when the temperature is over 140</p> <p>degree Fahrenheit, it will continue</p> <p>report.</p> <p>Enable this functionality will cause some issue please see the detail in the</p> <p>“Temperature Report” section.</p> <p><strong>Temperature Report:</strong></p> <p>When the PIR motion detected or the door/window state changed, the device will unsolicited to send the “Sensor Multilevel Report” to the nodes in the group 1.</p> <p>Sensor Type: Temperature (0x01)</p> <p>Note: To disable this functionality by setting the configuration N0.5 bit5</p> <p>to 1.</p> <p>*** Temperature differential report ***</p> <p>This function default is enabled, to disable this function by setting the configuration NO.21 to 0.</p> <p>In the default, when the temperature is changed to plus or minus one degree Fahrenheit (0.56 degree Celsius), the device will report temperature information to the nodes in the group 1.</p> <p>The device will measure the temperature in every one minute. And if the temperature is over 140 degree Fahrenheit (60 degree Celsius), the device will always report in each measurement.</p> <p>Caution 1: Enable this functionality, it will cause the PIR Motion to disable detection when the temperature measurement. In other words,</p> <p>The PIR motion will blind one second in every one minute.</p>
@@ -373,8 +353,7 @@ The temperature differential to report.<br /> <h1>Overview</h1><p>The temperatur
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_22_1" type="integer" groupName="configuration"
-                 min="0" max="99">
+      <parameter name="config_22_1" type="integer" groupName="configuration">
         <label>22: Illumination Differential Report</label>
         <description><![CDATA[
 The illumination differential to report.<br /> <h1>Overview</h1><p>The illumination differential to report.</p> <p>0 means turn off this function.</p> <p>The unit is percentage.</p> <p>Enable this function the device will detect every minutes.</p> <p>Enable this functionality will cause some issue please see the detail in the</p> <p>“Illumination Report” section.</p> <p><strong>Illumination Report:</strong></p> <p>When the PIR motion detected or the door/window state changed, the device will unsolicited to send the “Sensor Multilevel Report” to the nodes in the group 1.</p> <p>Sensor Type: Luminance (0x03)</p> <p>Note: To disable this functionality by setting the configuration N0.5 bit4 to 1.</p> <p>*** Illumination differential report ***</p> <p>This function default is disabled, to enable this function by setting the configuration NO.22 not to zero.</p> <p>Enable this functionality, the device will measure the illumination in every one minute. And if the illumination is changed to plus or minus the value (setting by the configuration NO.22), the device will report illumination information to the nodes in the group 1.</p> <p>Caution 1: Enable this function will reduce the battery life about 15% ~ 20%. And another issue is setting the differential value too small, it will cause report too frequency, shorter the battery life more.</p> <p>Propose the setting differential value should not small than 10.</p> <p>Caution 2: If the configuration No.4 is setting to 0 or 100, this functionality is useless.</p> <p>Caution 3: Enable this functionality, it will cause the PIR Motion to disable detection when the illumination measurement. In other words,</p> <p>The PIR motion will blind one second in every one minute.</p>

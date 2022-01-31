@@ -70,16 +70,14 @@ Alarm Keypad<br /> <h1>Overview</h1><p>Ring Alarm features a Z-Wave keypad, will
       </parameter-group>
 
       <!-- PARAMETER DEFINITIONS -->
-      <parameter name="config_1_2" type="integer" groupName="configuration"
-                 min="70" max="1440">
+      <parameter name="config_1_2" type="integer" groupName="configuration">
         <label>1: Parameter 1</label>
         <description>Battery Report Interval</description>
         <default>1440</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_2_1" type="integer" groupName="configuration"
-                 min="1" max="5">
+      <parameter name="config_2_1" type="integer" groupName="configuration">
         <label>2: Parameter 2</label>
         <description><![CDATA[
 Z-Wave Sleep Timeout<br /> <h1>Overview</h1><p>Time to wait after receiving ZW for more OTA messages. </p>
@@ -94,176 +92,154 @@ Z-Wave Sleep Timeout<br /> <h1>Overview</h1><p>Time to wait after receiving ZW f
         </options>
       </parameter>
 
-      <parameter name="config_3_1" type="integer" groupName="configuration"
-                 min="0" max="1">
+      <parameter name="config_3_1" type="integer" groupName="configuration">
         <label>3: Parameter 3</label>
         <description>Co-Proc Is Alive</description>
         <default>1</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_4_1" type="integer" groupName="configuration"
-                 min="0" max="30">
+      <parameter name="config_4_1" type="integer" groupName="configuration">
         <label>4: Parameter 4</label>
         <description>Proximity Timeout</description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_5_1" type="integer" groupName="configuration"
-                 min="0" max="30">
+      <parameter name="config_5_1" type="integer" groupName="configuration">
         <label>5: Parameter 5</label>
         <description>Button Press Timeout</description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_6_1" type="integer" groupName="configuration"
-                 min="10" max="60">
+      <parameter name="config_6_1" type="integer" groupName="configuration">
         <label>6: Parameter 6</label>
         <description>Status Change Timeout</description>
         <default>10</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_7_1" type="integer" groupName="configuration"
-                 min="0" max="1">
+      <parameter name="config_7_1" type="integer" groupName="configuration">
         <label>7: Parameter 7</label>
         <description>Power Mode</description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_8_1" type="integer" groupName="configuration"
-                 min="1" max="15">
+      <parameter name="config_8_1" type="integer" groupName="configuration">
         <label>8: Parameter 8</label>
         <description>Key Backlight Timeout</description>
         <default>1</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_9_1" type="integer" groupName="configuration"
-                 min="0" max="100">
+      <parameter name="config_9_1" type="integer" groupName="configuration">
         <label>9: Parameter 9</label>
         <description>Key Backlight Brightness</description>
         <default>50</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_10_1" type="integer" groupName="configuration"
-                 min="1" max="8">
+      <parameter name="config_10_1" type="integer" groupName="configuration">
         <label>10: Parameter 10</label>
         <description>Key Tone Volume</description>
         <default>4</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_11_1" type="integer" groupName="configuration"
-                 min="0" max="100">
+      <parameter name="config_11_1" type="integer" groupName="configuration">
         <label>11: Parameter 11</label>
         <description>Ambient Light Sensor Level</description>
         <default>50</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_12_1" type="integer" groupName="configuration"
-                 min="0" max="10">
+      <parameter name="config_12_1" type="integer" groupName="configuration">
         <label>12: Parameter 12</label>
         <description>Siren Volume</description>
         <default>5</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_13_1" type="integer" groupName="configuration"
-                 min="0" max="1">
+      <parameter name="config_13_1" type="integer" groupName="configuration">
         <label>13: Parameter 13</label>
         <description>Proximity On/OFF</description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_14_1" type="integer" groupName="configuration"
-                 min="0" max="100">
+      <parameter name="config_14_1" type="integer" groupName="configuration">
         <label>14: Parameter 14</label>
         <description>Proximity Distance</description>
         <default>50</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_15_1" type="integer" groupName="configuration"
-                 min="0" max="100">
+      <parameter name="config_15_1" type="integer" groupName="configuration">
         <label>15: Parameter 15</label>
         <description>Extended Battery Life LED Brightness Adjustment</description>
         <default>50</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_16_1" type="integer" groupName="configuration"
-                 min="0" max="100">
+      <parameter name="config_16_1" type="integer" groupName="configuration">
         <label>16: Parameter 16</label>
         <description>Reduced Battery Life LED Brightness Adjustment</description>
         <default>50</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_17_1" type="integer" groupName="configuration"
-                 min="1" max="100">
+      <parameter name="config_17_1" type="integer" groupName="configuration">
         <label>17: Parameter 17</label>
         <description>Fast Blink Rate</description>
         <default>50</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_18_1" type="integer" groupName="configuration"
-                 min="1" max="100">
+      <parameter name="config_18_1" type="integer" groupName="configuration">
         <label>18: Parameter 18</label>
         <description>Slow Blink Rate</description>
         <default>25</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_19_2" type="integer" groupName="configuration"
-                 min="500" max="5000">
+      <parameter name="config_19_2" type="integer" groupName="configuration">
         <label>19: Parameter 19</label>
         <description>Supervision Report Timeout. settings</description>
         <default>500</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_20_1" type="integer" groupName="configuration"
-                 min="0" max="5">
+      <parameter name="config_20_1" type="integer" groupName="configuration">
         <label>20: Parameter 20</label>
         <description>Number of Re-transmissions Attempts. settings</description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_21_1" type="integer" groupName="configuration"
-                 min="1" max="60">
+      <parameter name="config_21_1" type="integer" groupName="configuration">
         <label>21: Parameter 21</label>
         <description>Wait Period Between Re-transmissions Attempts. settings</description>
         <default>10</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_22_1" type="integer" groupName="configuration"
-                 min="0" max="31">
+      <parameter name="config_22_1" type="integer" groupName="configuration">
         <label>22: Parameter 22</label>
         <description>Language Used</description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_23_4" type="integer" groupName="configuration"
-                 min="-2147483646" max="2147483647">
+      <parameter name="config_23_4" type="integer" groupName="configuration">
         <label>23: Parameter 23</label>
         <description>Bit mask data for supported languages</description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_24_4" type="integer" groupName="configuration"
-                 min="0" max="1000">
+      <parameter name="config_24_4" type="integer" groupName="configuration">
         <label>24: Parameter 24</label>
         <description>Audio File Version</description>
         <default>0</default>

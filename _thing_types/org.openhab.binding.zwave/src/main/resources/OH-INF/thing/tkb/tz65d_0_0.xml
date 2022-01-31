@@ -134,8 +134,7 @@ Enable Shade Control Group 3<br /> <h1>Overview</h1><p>Enable the control of sha
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_20_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_20_1" type="integer" groupName="configuration">
         <label>20: Poll Group 2 Interval (minutes)</label>
         <description>Polling Interval in minutes (default 2)</description>
         <default>2</default>

@@ -108,8 +108,7 @@ Shutter Panel<br /> <h1>Overview</h1><p>Touch Panel Switch is a wall panel built
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_4_1" type="integer" groupName="configuration"
-                 min="0" max="10">
+      <parameter name="config_4_1" type="integer" groupName="configuration">
         <label>4: LED Backlit brightness level</label>
         <description><![CDATA[
 LED Backlit brightness level<br /> <h1>Overview</h1><ul><li>0 - LED disabled</li> <li>1 - 10 Min level - max level</li> </ul>
@@ -134,8 +133,7 @@ Key Mode<br /> <h1>Overview</h1><p>This function works for corridor or stairwell
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_6_2" type="integer" groupName="configuration"
-                 min="-32767" max="32768">
+      <parameter name="config_6_2" type="integer" groupName="configuration">
         <label>6: Key On duration</label>
         <description><![CDATA[
 Key On duration<br /> <h1>Overview</h1><ul><li>0 - infinite</li> <li>1~65535 unit "sec"</li> </ul>
@@ -144,8 +142,7 @@ Key On duration<br /> <h1>Overview</h1><ul><li>0 - infinite</li> <li>1~65535 uni
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_8_1" type="integer" groupName="configuration"
-                 min="0" max="3">
+      <parameter name="config_8_1" type="integer" groupName="configuration">
         <label>8: Basic CC integration setting</label>
         <description><![CDATA[
 Basic CC integration setting<br /> <h1>Overview</h1><p><strong>This parameter works for integration with different gateways/systems. If you do not know how to use, keep as default. </strong></p> <ul><li>0x00 "Basic Set" received，key 1 responds; "Basic Get" received，key 1 sends "Basic Report"; key 1 will <strong>not</strong> send unsolicited "Basic Report"（No Endpoint）to LifeLine Association</li> <li>0x01 "Basic Set" received，key 1 responds; "Basic Get" received，key 1 sends "Basic Report"; key 1 will send unsolicited "Basic Report"（No Endpoint）to LifeLine Association</li> <li>0x02 "Basic Set" received，all keys respond; "Basic Get" received，not reply "Basic Report"; All keys will not send unsolicited "Basic Report"（No Endpoint） to LifeLine Association</li> <li>0x03 "Basic Set" received，all keys respond; "Basic Get" received，key 1 sends "Basic Report"; All keys will not send unsolicited "Basic Report"（No Endpoint）to LifeLine Association</li> </ul>
@@ -155,8 +152,7 @@ Basic CC integration setting<br /> <h1>Overview</h1><p><strong>This parameter wo
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_16_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_16_1" type="integer" groupName="configuration">
         <label>16: Scene respond</label>
         <description><![CDATA[
 Scene respond<br /> <h1>Overview</h1><ul><li>0x00: Scene respond disabled</li> <li>Bit0: =1 Key1 respond scene <ul><li>=0 Key1 not respond scene</li> </ul></li> <li>Bit1: =1 Key2 respond scene <ul><li>=0 Key2 not respond scene</li> </ul></li> <li>Bit2: =1 Key3 respond scene <ul><li>=0 Key3 not respond scene</li> </ul></li> <li>Bit7:4 Rev </li> </ul>
@@ -179,8 +175,7 @@ Scene respond<br /> <h1>Overview</h1><ul><li>0x00: Scene respond disabled</li> <
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_18_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_18_1" type="integer" groupName="configuration">
         <label>18: Key1 Activate Scene ID</label>
         <description><![CDATA[
 Key1 Activate Scene ID<br /> <h1>Overview</h1><ul><li>0x00 Scene ID is invalid and will not send scene activate command.</li> <li>1~255 Scene ID</li> </ul>
@@ -189,8 +184,7 @@ Key1 Activate Scene ID<br /> <h1>Overview</h1><ul><li>0x00 Scene ID is invalid a
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_19_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_19_1" type="integer" groupName="configuration">
         <label>19: Key1 Activate Scene Duration</label>
         <description><![CDATA[
 Key1 Activate Scene Duration<br /> <h1>Overview</h1><ul><li>0x00 Instantly</li> <li>0x01~0x7F: Dimming durations from 1 second (0x01) to 127 seconds (0x7F) in 1-second resolution</li> <li>0x80~0xFE: Specify dimming durations from 1 minute (0x80) to 127 minutes (0xFE) in 1-minute resolution. </li> </ul>
@@ -212,8 +206,7 @@ Key1 Activate Scene Duration<br /> <h1>Overview</h1><ul><li>0x00 Instantly</li> 
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_21_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_21_1" type="integer" groupName="configuration">
         <label>21: Key2 Activate Scene ID</label>
         <description><![CDATA[
 Key2 Activate Scene ID<br /> <h1>Overview</h1><ul><li>0x00 Scene ID is invalid and will not send scene activate command.</li> <li>1~255 Scene ID</li> </ul>
@@ -222,8 +215,7 @@ Key2 Activate Scene ID<br /> <h1>Overview</h1><ul><li>0x00 Scene ID is invalid a
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_22_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_22_1" type="integer" groupName="configuration">
         <label>22: Key2 Activate Scene Duration</label>
         <description><![CDATA[
 Key2 Activate Scene Duration<br /> <h1>Overview</h1><ul><li>0x00 Instantly</li> <li>0x01~0x7F: Dimming durations from 1 second (0x01) to 127 seconds (0x7F) in 1-second resolution</li> <li>0x80~0xFE: Specify dimming durations from 1 minute (0x80) to 127 minutes (0xFE) in 1-minute resolution</li> </ul>
@@ -245,8 +237,7 @@ Key2 Activate Scene Duration<br /> <h1>Overview</h1><ul><li>0x00 Instantly</li> 
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_24_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_24_1" type="integer" groupName="configuration">
         <label>24: Key3 Activate Scene ID</label>
         <description><![CDATA[
 Key3 Activate Scene ID<br /> <h1>Overview</h1><ul><li>0x00 Scene ID is invalid and will not send scene activate command.</li> <li>1~255 Scene ID</li> </ul>
@@ -255,8 +246,7 @@ Key3 Activate Scene ID<br /> <h1>Overview</h1><ul><li>0x00 Scene ID is invalid a
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_25_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_25_1" type="integer" groupName="configuration">
         <label>25: Key3 Activate Scene Duration</label>
         <description><![CDATA[
 Key3 Activate Scene Duration<br /> <h1>Overview</h1><ul><li>0x00 Instantly</li> <li>0x01~0x7F: Dimming durations from 1 second (0x01) to 127 seconds (0x7F) in 1-second resolution</li> <li>0x80~0xFE: Specify dimming durations from 1 minute (0x80) to 127 minutes (0xFE) in 1-minute resolution. </li> </ul>
@@ -265,8 +255,7 @@ Key3 Activate Scene Duration<br /> <h1>Overview</h1><ul><li>0x00 Instantly</li> 
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_32_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_32_1" type="integer" groupName="configuration">
         <label>32: Scene respond ID 1-50</label>
         <description><![CDATA[
 Scene respond ID 1-50<br /> <h1>Overview</h1><ul><li>0x00: Scene respond disabled</li> <li>Bit0: <ul><li>=1 Key1 respond scene</li> <li>=0 Key1 not respond scene</li> </ul></li> <li>Bit1: <ul><li>=1 Key2 respond scene</li> <li>=0 Key2 not respond scene</li> </ul></li> <li>Bit2: <ul><li>=1 Key3 respond scene</li> <li>=0 Key3 not respond scene</li> </ul></li> <li>Bit7:4 Rev</li> </ul><p><strong>Valid only when the default is 0X00 for parameter 0X10</strong></p>
@@ -276,8 +265,7 @@ Scene respond ID 1-50<br /> <h1>Overview</h1><ul><li>0x00: Scene respond disable
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_33_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_33_1" type="integer" groupName="configuration">
         <label>33: Scene respond ID 51-100</label>
         <description><![CDATA[
 Scene respond ID 51-100<br /> <h1>Overview</h1><ul><li>0x00: Scene respond disabled</li> <li>Bit0: <ul><li>=1 Key1 respond scene</li> <li>=0 Key1 not respond scene</li> </ul></li> <li>Bit1: <ul><li>=1 Key2 respond scene</li> <li>=0 Key2 not respond scene</li> </ul></li> <li>Bit2: <ul><li>=1 Key3 respond scene</li> <li>=0 Key3 not respond scene</li> </ul></li> <li>Bit7:4 Rev</li> </ul><p><strong>Valid only when the default is 0X00 for parameter 0X10</strong></p>
@@ -287,8 +275,7 @@ Scene respond ID 51-100<br /> <h1>Overview</h1><ul><li>0x00: Scene respond disab
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_34_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_34_1" type="integer" groupName="configuration">
         <label>34: Scene respond ID 101-150</label>
         <description><![CDATA[
 Scene respond ID 101-150<br /> <h1>Overview</h1><ul><li>0x00: Scene respond disabled</li> <li>Bit0: <ul><li>=1 Key1 respond scene</li> <li>=0 Key1 not respond scene</li> </ul></li> <li>Bit1: <ul><li>=1 Key2 respond scene</li> <li>=0 Key2 not respond scene</li> </ul></li> <li>Bit2: <ul><li>=1 Key3 respond scene</li> <li>=0 Key3 not respond scene</li> </ul></li> <li>Bit7:4 Rev</li> </ul><p><strong>Valid only when the default is 0X00 for parameter 0X10</strong></p>
@@ -298,8 +285,7 @@ Scene respond ID 101-150<br /> <h1>Overview</h1><ul><li>0x00: Scene respond disa
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_35_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_35_1" type="integer" groupName="configuration">
         <label>35: Scene respond ID 151-200</label>
         <description><![CDATA[
 Scene respond ID 151-200<br /> <h1>Overview</h1><ul><li>0x00: Scene respond disabled</li> <li>Bit0: <ul><li>=1 Key1 respond scene</li> <li>=0 Key1 not respond scene</li> </ul></li> <li>Bit1: <ul><li>=1 Key2 respond scene</li> <li>=0 Key2 not respond scene</li> </ul></li> <li>Bit2: <ul><li>=1 Key3 respond scene</li> <li>=0 Key3 not respond scene</li> </ul></li> <li>Bit7:4 Rev</li> </ul><p><strong>Valid only when the default is 0X00 for parameter 0X10</strong></p>
@@ -309,8 +295,7 @@ Scene respond ID 151-200<br /> <h1>Overview</h1><ul><li>0x00: Scene respond disa
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_36_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_36_1" type="integer" groupName="configuration">
         <label>36: Scene respond ID 201-250</label>
         <description><![CDATA[
 Scene respond ID 201-250<br /> <h1>Overview</h1><ul><li>0x00: Scene respond disabled</li> <li>Bit0: <ul><li>=1 Key1 respond scene</li> <li>=0 Key1 not respond scene</li> </ul></li> <li>Bit1: <ul><li>=1 Key2 respond scene</li> <li>=0 Key2 not respond scene</li> </ul></li> <li>Bit2: <ul><li>=1 Key3 respond scene</li> <li>=0 Key3 not respond scene</li> </ul></li> <li>Bit7:4 Rev</li> </ul><p><strong>Valid only when the default is 0X00 for parameter 0X10</strong></p>
@@ -320,8 +305,7 @@ Scene respond ID 201-250<br /> <h1>Overview</h1><ul><li>0x00: Scene respond disa
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_255_1_wo" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_255_1_wo" type="integer" groupName="configuration">
         <label>255: Factory Reset</label>
         <description>Factory Reset</description>
         <default>0</default>

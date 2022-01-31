@@ -73,8 +73,7 @@ Shutter wall switch<br /> <h1>Overview</h1><p>TechniSat roller shutter is a wall
       </parameter-group>
 
       <!-- PARAMETER DEFINITIONS -->
-      <parameter name="config_1_1" type="integer" groupName="configuration"
-                 min="0" max="1">
+      <parameter name="config_1_1" type="integer" groupName="configuration">
         <label>1: Central scene notification</label>
         <description><![CDATA[
 Enable/Disable Central scene notifcations for 2x-5x press<br /> <h1>Overview</h1><p>0 - disable, 1 - enable</p>
@@ -83,8 +82,7 @@ Enable/Disable Central scene notifcations for 2x-5x press<br /> <h1>Overview</h1
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_2_2" type="integer" groupName="configuration"
-                 min="0" max="8640">
+      <parameter name="config_2_2" type="integer" groupName="configuration">
         <label>2: Wattage meter</label>
         <description><![CDATA[
 Interval Current wattage meter report in 10s<br /> <h1>Overview</h1><p>Interval of current wattage meter report in 10 second steps, 30s ... 1day, 0 - disable</p>
@@ -93,8 +91,7 @@ Interval Current wattage meter report in 10s<br /> <h1>Overview</h1><p>Interval 
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_3_2" type="integer" groupName="configuration"
-                 min="0" max="30240">
+      <parameter name="config_3_2" type="integer" groupName="configuration">
         <label>3: Energy meter report</label>
         <description><![CDATA[
 Interval of active energy meter report in minutes<br /> <h1>Overview</h1><p>Interval of active energy meter report in minutes, 10min ... 3 weeks, 0 - disable</p>
@@ -103,8 +100,7 @@ Interval of active energy meter report in minutes<br /> <h1>Overview</h1><p>Inte
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_4_1" type="integer" groupName="configuration"
-                 min="0" max="1">
+      <parameter name="config_4_1" type="integer" groupName="configuration">
         <label>4: Manual shutter calibration</label>
         <description><![CDATA[
 Manual shutter calibration<br /> <h1>Overview</h1><p>Manual shutter calibration (shutter will move up, down and up again)<br />0 - idle, 1 - start a manual shutter calibration</p>

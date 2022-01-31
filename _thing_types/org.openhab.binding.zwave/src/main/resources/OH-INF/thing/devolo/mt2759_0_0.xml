@@ -169,8 +169,7 @@ Activate / deactivate functions ALL ON/ALL OFF<br /> <h1>Overview</h1><p>HC Swit
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_11_2" type="integer" groupName="configuration"
-                 min="0" max="32535">
+      <parameter name="config_11_2" type="integer" groupName="configuration">
         <label>11: Automatic turning off</label>
         <description><![CDATA[
 Automatic turning off output after set time<br /> <h1>Overview</h1><p>When relay is ON it goes automatically OFF after time defined by this parameter. Timer is reset to zero each time the module receive ON command regardless from where it comes (push button, associated module, controller,..).</p> <ul><li>default value 0</li> <li>0 = Auto OFF disabled</li> <li>1 - 32535 = 1 second (0,01s) - 32535 seconds (325,35s)</li> </ul><p>Auto OFF enabled with define time, step is 1s or 10ms according to parameter nr. 15.</p>
@@ -181,8 +180,7 @@ Automatic turning off output after set time<br /> <h1>Overview</h1><p>When relay
         </options>
       </parameter>
 
-      <parameter name="config_12_2" type="integer" groupName="configuration"
-                 min="0" max="32535">
+      <parameter name="config_12_2" type="integer" groupName="configuration">
         <label>12: Automatic turning on</label>
         <description><![CDATA[
 Automatic turning on output after set time<br /> <h1>Overview</h1><p>When relay is OFF it goes automatically ON after time defined by this parameter. Timer is reset to zero each time the module receive OFF command regardless from where it come s (push button, associated module, controller,..).</p> <p>Available configuration parameters (data type is 2 Byte DEC):</p> <ul><li>default value 0</li> <li>0 Auto ON disabled</li> <li>1 32535 = 1second (0,01s) 32536 seconds (325,35s)</li> </ul><p>Auto ON enabled with define time, step is 1s or 10m s according to parameter nr. 15.</p>
@@ -217,8 +215,7 @@ Automatic turning off / on seconds or milliseconds selection<br /> <h1>Overview<
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_40_1" type="integer" groupName="configuration"
-                 min="0" max="100">
+      <parameter name="config_40_1" type="integer" groupName="configuration">
         <label>40: Power reporting (W) on power change</label>
         <description><![CDATA[
 Power reporting in Watts on power change<br /> <h1>Overview</h1><p>Set value means percentage, set value from 0 - 100 = 0% - 100%. Available configuration parameters (data type is 1 Byte DEC):</p> <ul><li>default value 10 = 10%</li> <li>0 = reporting disabled</li> <li>1-100 = 1% - 100% reporting enabled</li> </ul><p>Power report is send (push) only when actual power in Watts in real time changes for more than set percentage comparing to previous actual power in Watts , step is When using low power loads, It is recommended to set parameter no. 40 to a higher value (e.g. 50%).</p> <p>NOTE: if power changed is less than 1W, the report is not send (pushed), independent of percentage set.</p>
@@ -229,8 +226,7 @@ Power reporting in Watts on power change<br /> <h1>Overview</h1><p>Set value mea
         </options>
       </parameter>
 
-      <parameter name="config_42_2" type="integer" groupName="configuration"
-                 min="0" max="32535">
+      <parameter name="config_42_2" type="integer" groupName="configuration">
         <label>42: Power reporting (W) by time interval</label>
         <description><![CDATA[
 Power reporting in Watts by time interval<br /> <h1>Overview</h1><p>Set value means time interval (0 - 32535) in seconds, when power report is send. Available configuration parameters (data type is 2 Byte DEC):</p> <ul><li>default value 300 = 300s</li> <li>0 reporting disabled</li> <li>30-32535 = 30 seconds - 32535 seconds. Reporting enabled. <br />Power report is send with time interval set by entered value.</li> </ul>
@@ -290,8 +286,7 @@ Enable / Disable Endpoint I3 or select Notification Type and Event<br /> <h1>Ove
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_110_2" type="integer" groupName="configuration"
-                 min="1" max="32536">
+      <parameter name="config_110_2" type="integer" groupName="configuration">
         <label>110: Temperature sensor offset settings</label>
         <description><![CDATA[
 Temperature sensor offset settings<br /> <h1>Overview</h1><p>Set value is added or subtracted to actual measured value by sensor. Available configuration parameters (data type is 2 Byte DEC):</p> <table><tr><td>Values</td> <td>Description</td> </tr><tr><td>32536</td> <td> is 0.0C (Default)</td> </tr><tr><td>1 –100</td> <td>From 1 to 100 value from 0.1°C to 10.0°C is added to actual measured temperature.</td> </tr><tr><td>1001 –1100</td> <td>From 1001 to 1100 value from 0.1 °C to 10.0 °C is subtracted to actual measured temperature.</td> </tr></table>
@@ -299,8 +294,7 @@ Temperature sensor offset settings<br /> <h1>Overview</h1><p>Set value is added 
         <default>32536</default>
       </parameter>
 
-      <parameter name="config_120_1" type="integer" groupName="configuration"
-                 min="0" max="127">
+      <parameter name="config_120_1" type="integer" groupName="configuration">
         <label>120: Temperature sensor reporting</label>
         <description><![CDATA[
 Temperature sensor reporting<br /> <h1>Overview</h1><p>If digital temperature sensor is connected, module reports measured temperature on temperature change defined by this parameter. Available configuration parameters (data type is 1 Byte DEC):</p> <table><tr><td>Values</td> <td>Description</td> </tr><tr><td>5</td> <td>0,5°C (default)</td> </tr><tr><td>0</td> <td>Reporting disabled</td> </tr><tr><td>1 –127</td> <td>0,1°C - 12,7°C, step is 0,1°C</td> </tr></table>

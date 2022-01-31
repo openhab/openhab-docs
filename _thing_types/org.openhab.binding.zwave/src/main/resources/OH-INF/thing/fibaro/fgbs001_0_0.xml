@@ -98,8 +98,7 @@ Universal Binary Sensor<br /> <h1>Overview</h1><p>The Universal Binary Sensor is
       </parameter-group>
 
       <!-- PARAMETER DEFINITIONS -->
-      <parameter name="config_1_2" type="integer" groupName="configuration"
-                 min="-32767" max="32768">
+      <parameter name="config_1_2" type="integer" groupName="configuration">
         <label>1: IN1 Alarm Cancellation Delay</label>
         <description><![CDATA[
 Input I alarm cancellation delay.<br /> <h1>Overview</h1><p>Additional delay after an alarm from input IN1 has ceased. The parameter allows you to specify additional time, after which the input no. 1 alarm is cancelled once its violation has ceased.</p>
@@ -108,8 +107,7 @@ Input I alarm cancellation delay.<br /> <h1>Overview</h1><p>Additional delay aft
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_2_2" type="integer" groupName="configuration"
-                 min="-32767" max="32768">
+      <parameter name="config_2_2" type="integer" groupName="configuration">
         <label>2: IN2 Alarm Cancellation Delay</label>
         <description><![CDATA[
 Input 2 alarm cancellation delay.<br /> <h1>Overview</h1><p>Additional delay after an alarm from input IN2 has ceased. The parameter allows you to specify additional time, after which the input no. 2 alarm is cancelled once its violation has ceased.</p>
@@ -180,8 +178,7 @@ Type of transmitted control frame for association group 2<br /> <h1>Overview</h1
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_7_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_7_1" type="integer" groupName="configuration">
         <label>7: Forced Level of Dimming group 1</label>
         <description><![CDATA[
 Value of the parameter specifying the forced levels.<br /> <h1>Overview</h1><p>Value of the parameter specifying the forced levels of dimming / opening sun blinds when comes 'switch on' / 'open' command to devices from association group no. 1.&lt;BR/&gt;In the case of alarm frames the alarm priority is specified.</p> <p>Possible parameter settings: (1 – 99) and 255<br />Value of 255 makes it possible to activate the device when using<br />the Dimmer module it means activating the device and setting it to<br />the previous stored condition, e.g. when Dimmer is set to 30%, then<br />deactivated, and then reactivated using command 255, it will<br />automatically be set to the previous condition, i.e. 30%. </p>
@@ -190,8 +187,7 @@ Value of the parameter specifying the forced levels.<br /> <h1>Overview</h1><p>V
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_8_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_8_1" type="integer" groupName="configuration">
         <label>8: Forced Level of Dimming group 2</label>
         <description><![CDATA[
 Value of the parameter specifying forced levels.<br /> <h1>Overview</h1><p>Value of the parameter specifying the forced level of dimming /<br />opening sun blinds when comes “switch on” / ”open” command to<br />devices from association group no. 2.<br />In the case of alarm frames the alarm priority is specified.<br />Default value: 255<br />Possible parameter settings:<br />(1 – 99) and 255<br />Value of 255 makes it possible to activate the device; when using of<br />the Dimmer module it means activating the device and setting it to<br />the previous stored condition, e.g. when Dimmer is set to 30%, then<br />deactivated, and then reactivated using command 255, it will<br />automatically be set to the previous condition, i.e. 30%. </p>
@@ -214,8 +210,7 @@ Deactivating transmission of the frame cancelling the alarm<br /> <h1>Overview</
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_10_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_10_1" type="integer" groupName="configuration">
         <label>10: Interval between readings of temperature sensors</label>
         <description><![CDATA[
 Interval between successive readings of temperature sensors<br /> <h1>Overview</h1><p> from all sensors connected to the device in seconds. Note: taking temperature readings from the sensor does not result in sending a temperature condition report to the central hub.</p>
@@ -224,8 +219,7 @@ Interval between successive readings of temperature sensors<br /> <h1>Overview</
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_11_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_11_1" type="integer" groupName="configuration">
         <label>11: Interval betw. forcing to send report for temp.</label>
         <description><![CDATA[
 The forced report is sent immediately after ...<br /> <h1>Overview</h1><p>... the next reading of temperature from the sensor, irrespective of the settings<br />of parameter no. 12.<br />Default value: 200 s<br />Possible parameter settings:<br />0 – 255 s<br />0 – deactivating the function<br />Note: Frequent sending of temperature condition reports is<br />reasonable when the sensor is located somewhere where can<br />occure rapid changes of ambient temperature. In other cases<br />it is recommended to leave the parameter set to the default<br />value.</p>
@@ -234,8 +228,7 @@ The forced report is sent immediately after ...<br /> <h1>Overview</h1><p>... th
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_12_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_12_1" type="integer" groupName="configuration">
         <label>12: Insensitiveness to temperature changes.</label>
         <description><![CDATA[
 This is the maximum acceptable difference between<br /> <h1>Overview</h1><p> the last reported temperature and the current temperature taken from the sensor. If the temperatures differ by the set value or more, then a report with the current temperature value is sent to the device</p>

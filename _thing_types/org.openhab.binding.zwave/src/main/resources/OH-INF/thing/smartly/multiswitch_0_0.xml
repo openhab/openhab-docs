@@ -173,8 +173,7 @@ Multifunction Switch<br /> <h1>Overview</h1><p>The Multifunction Switch is a Z-W
       </parameter-group>
 
       <!-- PARAMETER DEFINITIONS -->
-      <parameter name="config_4_2" type="integer" groupName="configuration"
-                 min="0" max="32767">
+      <parameter name="config_4_2" type="integer" groupName="configuration">
         <label>4: Safety Activate Delay</label>
         <description><![CDATA[
 Safety Activate Delay in seconds<br /> <h1>Overview</h1><p>Safety Mode is activated after the configured number of seconds has elapsed. It will start by turning OFF the Back Unit when activated. A 0 value Disables Safety Mode. The MAX limit is 32767 seconds (9 hours, 6 minutes and 7 seconds). The minimum Actication delay is 60 seconds, and values from 1 to 59 will automatically be translated to a 60 second delay.</p>
@@ -183,8 +182,7 @@ Safety Activate Delay in seconds<br /> <h1>Overview</h1><p>Safety Mode is activa
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_5_2" type="integer" groupName="configuration"
-                 min="0" max="32767">
+      <parameter name="config_5_2" type="integer" groupName="configuration">
         <label>5: Safety OFF Period</label>
         <description><![CDATA[
 Safety OFF Period in seconds<br /> <h1>Overview</h1><p>The number of seconds to stay in OFF mode when Safety is activated. The Back unit turns ON when the timer have elapsed. If value is 0, the Back Unit will not turn back ON. The MAX limit is 32767 seconds (9 hours, 6 minutes and 7 seconds). A 60 second minimum period applies.</p>
@@ -193,8 +191,7 @@ Safety OFF Period in seconds<br /> <h1>Overview</h1><p>The number of seconds to 
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_6_2" type="integer" groupName="configuration"
-                 min="0" max="32767">
+      <parameter name="config_6_2" type="integer" groupName="configuration">
         <label>6: Safety ON Period</label>
         <description><![CDATA[
 Safety ON Period in seconds<br /> <h1>Overview</h1><p>The number of seconds to stay in ON mode when Safety is activated. The Back Unit turns back OFF when the timer have elapsed (and continues to turn ON and OFF alternately). If value is 0, the Back Unit WILL NOT turn ON at all. The MAX limit is 32767 seconds (9 hours, 6 minutes and 7 seconds). A 60 second minimum period applies.</p>
@@ -203,8 +200,7 @@ Safety ON Period in seconds<br /> <h1>Overview</h1><p>The number of seconds to s
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_10_2" type="integer" groupName="configuration"
-                 min="30" max="32767">
+      <parameter name="config_10_2" type="integer" groupName="configuration">
         <label>10: Dimming speed</label>
         <description><![CDATA[
 Dimmer Speed in 1/100th of a Second<br /> <h1>Overview</h1><p>Defines the "fade" time when setting a dim level from a controller. Fade time is defined as the time it takes to dim from MIN level to MAX level, which means an increase of 10% in light level takes 1/10th of the configured time. The value defines the dim time in 1/100'th of a second, which means a value of 200 gives a Dimming Speed of 2.0 seconds from MIN to MAX. Max time is 327.67 seconds (almost 11 minutes). Values below 30 (0.3 seconds) are ignored ̧ and values below 100 (1 second) are discouraged.</p>
@@ -213,8 +209,7 @@ Dimmer Speed in 1/100th of a Second<br /> <h1>Overview</h1><p>Defines the "fade"
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_11_1" type="integer" groupName="configuration"
-                 min="0" max="1">
+      <parameter name="config_11_1" type="integer" groupName="configuration">
         <label>11: Dimmer mode</label>
         <description><![CDATA[
 Dimmer Operation Mode<br /> <h1>Overview</h1><p>[ Leading Edge (LE) = 0, Tailing Edge (TE) = 1 ] Defines if Dimmer should operate in Leading or Tailing Edge mode. Most Lights work quite OK in the default Leading Edge mode, but this mode also usually cause some noise from the dimmer unit. During installation it is therefore recommended to try TE mode, and use this if the Light operates properly. Tailing Edge mode is known to cause instability in some type of Lights! This configuration does not have any effect on 1-10V Dimmer Back Units!</p>
@@ -223,8 +218,7 @@ Dimmer Operation Mode<br /> <h1>Overview</h1><p>[ Leading Edge (LE) = 0, Tailing
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_12_1" type="integer" groupName="configuration"
-                 min="1" max="99">
+      <parameter name="config_12_1" type="integer" groupName="configuration">
         <label>12: Maximum Level</label>
         <description><![CDATA[
 Maximum Dimmer Level<br /> <h1>Overview</h1><p>The Maximum Light level of the dimmer. Typically there is no visible difference when the dimming level reaches a point in the range 75 - 90, and the installer should set this value to the lowest value where no change is visible. The default value of 90 is usually OK.</p>
@@ -233,8 +227,7 @@ Maximum Dimmer Level<br /> <h1>Overview</h1><p>The Maximum Light level of the di
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_13_1" type="integer" groupName="configuration"
-                 min="1" max="99">
+      <parameter name="config_13_1" type="integer" groupName="configuration">
         <label>13: Minimum Level</label>
         <description><![CDATA[
 Minimum Dimmer Level<br /> <h1>Overview</h1><p>The Minimum Light Level of the dimmer. This should be adjusted so the controlled Light is still ON and stable. Remember that LED type lights may work if dimmed down to a low value, but may not start if the light is turned OFF and ON again.</p>
@@ -243,8 +236,7 @@ Minimum Dimmer Level<br /> <h1>Overview</h1><p>The Minimum Light Level of the di
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_14_1" type="integer" groupName="configuration"
-                 min="0" max="4">
+      <parameter name="config_14_1" type="integer" groupName="configuration">
         <label>14: Button mode</label>
         <description><![CDATA[
 Operating mode for switch<br /> <h1>Overview</h1><p>Controls the operation mode of the buttons. Valid configuration values are:<br />0 – Single Switch Mode (default)<br />1 – Dual Switch Mode<br />2 – Quadruple Switch Mode<br />3 – Legacy Scenario Mode<br />4 – Central Scene Controller Mode</p>
@@ -253,8 +245,7 @@ Operating mode for switch<br /> <h1>Overview</h1><p>Controls the operation mode 
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_15_1" type="integer" groupName="configuration"
-                 min="0" max="30">
+      <parameter name="config_15_1" type="integer" groupName="configuration">
         <label>15: Light Zone Control Mode</label>
         <description><![CDATA[
 Light Zone Control Mode<br /> <h1>Overview</h1><p>Controls if the Light Zones should operate in Switch or Dimmer Mode (only used in Button Modes 0, 1 and 2):<br />0 – All Light Zones in Dimmer Mode (default) 1 – All Light Zones in Switch Mode</p> <p>To control Light Zone switch mode individually, add any of the following values to enable switch mode individually (dimmer is default):<br />2 – Light Zone 1 Switch Mode<br />4 – Light Zone 2 Switch Mode<br />8 – Light Zone 3 Switch Mode<br />16 – Light Zone 4 Switch Mode<br />Example: A value of 10 (8 + 2) enables switch mode in Light Zone 1 and 3.</p>
@@ -263,8 +254,7 @@ Light Zone Control Mode<br /> <h1>Overview</h1><p>Controls if the Light Zones sh
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_17_1" type="integer" groupName="configuration"
-                 min="0" max="2">
+      <parameter name="config_17_1" type="integer" groupName="configuration">
         <label>17: Back Unit Role</label>
         <description><![CDATA[
 Selected Back Unit Role<br /> <h1>Overview</h1><p>Configures the Role of the Back Unit, which dictates what Local functionality controls it. Valid configuration values are:<br />0 - The Thermostat will control the Back Unit (if the back unit is a dimmer, then this value has no effect as Thermostats requires a local relay for local control)</p> <p>1 - The Light Control feature (buttons) will control the Back Unit.<br />2 - Disconnected mode means the Back Unit is not controlled by any local UI or features, and can only be controlled via Z-Wave End-Point 1 (or the Root Device).</p>
@@ -273,8 +263,7 @@ Selected Back Unit Role<br /> <h1>Overview</h1><p>Configures the Role of the Bac
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_18_1" type="integer" groupName="configuration"
-                 min="1" max="4">
+      <parameter name="config_18_1" type="integer" groupName="configuration">
         <label>18: Back Unit Light Zone</label>
         <description><![CDATA[
 Selected Back Unit Light Zone<br /> <h1>Overview</h1><p>Selects which Light Zone controls the Back Unit (in Light Mode). Possible values are:<br />1 – Light Zone 1 (Button and Z-Wave) (default) 2 – Light Zone 2 (Button and Z-Wave)<br />3 – Light Zone 3 (Button and Z-Wave)<br />4 – Light Zone 4 (Button and Z-Wave)</p> <p>This does not have any effect however when the BU role is set to Thermostat or Disconnected!</p>
@@ -283,8 +272,7 @@ Selected Back Unit Light Zone<br /> <h1>Overview</h1><p>Selects which Light Zone
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_32_2" type="integer" groupName="configuration"
-                 min="0" max="500">
+      <parameter name="config_32_2" type="integer" groupName="configuration">
         <label>32: Thermostat Set Point Max</label>
         <description><![CDATA[
 Set Point Max in 1/10th of a degree Celcius<br /> <h1>Overview</h1><p>Maximum Heat Set Point the Thermostat is allowed to be set to. If the Thermostat is used for Floor Heating, please make sure that this value is configured to the same value as (or lower than) the Max Floor Temperature. Given in 1/10 of a degree Celcius, which means a value of 300 means 30 degrees C. </p>
@@ -293,8 +281,7 @@ Set Point Max in 1/10th of a degree Celcius<br /> <h1>Overview</h1><p>Maximum He
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_34_2" type="integer" groupName="configuration"
-                 min="0" max="500">
+      <parameter name="config_34_2" type="integer" groupName="configuration">
         <label>34: Thermostat Set Point Min</label>
         <description><![CDATA[
 Set Point Min in 1/10th of a degree Celcius<br /> <h1>Overview</h1><p>Minimum Heat Set Point the Thermostat is allowed to be set to. Given in 1/10 of a degree Celcius, which means a value of 50 means 5 degrees C.</p>
@@ -303,8 +290,7 @@ Set Point Min in 1/10th of a degree Celcius<br /> <h1>Overview</h1><p>Minimum He
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_36_2" type="integer" groupName="configuration"
-                 min="0" max="32767">
+      <parameter name="config_36_2" type="integer" groupName="configuration">
         <label>36: Thermostat Control Resend Interval</label>
         <description><![CDATA[
 Resend Interval in seconds<br /> <h1>Overview</h1><p>Defines the interval between each time the Thermostat will repeat its last control command. This is used in combination with the Relay Safety configuration when controlling external Relays. If the Thermostat should fail, it would then stop sending control commands which in turn means the Relay will turn itself OFF after the safety mode delay has expired. This insures that heating will not be left ON indefinitely in failure situations.</p>
@@ -313,8 +299,7 @@ Resend Interval in seconds<br /> <h1>Overview</h1><p>Defines the interval betwee
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_37_2" type="integer" groupName="configuration"
-                 min="60" max="32767">
+      <parameter name="config_37_2" type="integer" groupName="configuration">
         <label>37: Thermostat Minimum On/Off Interval</label>
         <description><![CDATA[
 Minimum On/Off interval in seconds<br /> <h1>Overview</h1><p>This configuration defines the minimum interval the controlled Thermostat Relays will be ON and OFF. This is a feature intended to avoid turning control relays ON and OFF too frequently, which should insure a better lifetime of controlled relays. The default value is 5 minutes, which is OK for most electrical heating control. If used to control Water based heating, the value MUST be adjusted in accordance with the manufacturers specifications.</p>
@@ -323,8 +308,7 @@ Minimum On/Off interval in seconds<br /> <h1>Overview</h1><p>This configuration 
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_38_2" type="integer" groupName="configuration"
-                 min="0" max="500">
+      <parameter name="config_38_2" type="integer" groupName="configuration">
         <label>38: Thermostat Floor Temp Max</label>
         <description><![CDATA[
 Floor Temp Max in 1/10th of a degree Celcius<br /> <h1>Overview</h1><p>Max floor temperature if a local floor sensor is connected. If the Floor Sensor reads a temperature Higher than the configured value, it will immediately turn the relay (or any associated relays) OFF.</p> <p>The relay will stay off until the temperature sinks below this value, and the Thermostat issues it's next control command. Disabled if zero (0) value, or if no floor sensor is connected. The value is given as 1/10th of a degree Celcius. Range: 0 – 500 (0-50 degrees).</p> <p>NOTE! MAX 27 degrees is recommended for Wooden Floors!</p> <p>NOTE! This function is always active as long as a Floor Sensor is connected, regardless of the sensor configuration described below.</p>
@@ -333,8 +317,7 @@ Floor Temp Max in 1/10th of a degree Celcius<br /> <h1>Overview</h1><p>Max floor
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_40_1" type="integer" groupName="configuration"
-                 min="1" max="3">
+      <parameter name="config_40_1" type="integer" groupName="configuration">
         <label>40: Temperature Sensor Select</label>
         <description><![CDATA[
 Temperature Sensor Select<br /> <h1>Overview</h1><p>Defines which temperature Sensor should be used for Heating Control. The default value is Both (3), which should work well in most scenarios (even when only a Floor or Room sensor is present). If both a Room and Floor sensor is used, the Thermostat will always control heating based on the lowest temperature reading of the two, to insure a comfortable floor temperature even if the room is already warm enough. If this is not wanted, the Thermostat should be configured to use the Room sensor Only. NOTE! The Floor Max Temperature feature will ALWAYS be active as long as a floor sensor is available, even if the Thermostat is configured to only use the Room Sensor.</p> <p>1 - Local Room - Use temperature from Locally connected Room sensor ONLY. Max Floor Temp protection is still active as long as a floor sensor is available.</p> <p>2 - Local Floor - Use temperature from Locally connected Floor sensor ONLY<br />3 - Both - Use temperature from Locally connected Floor AND Room sensor if available (Default).</p>
@@ -343,8 +326,7 @@ Temperature Sensor Select<br /> <h1>Overview</h1><p>Defines which temperature Se
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_44_1" type="integer" groupName="configuration"
-                 min="1" max="99">
+      <parameter name="config_44_1" type="integer" groupName="configuration">
         <label>44: Cold Start Minimum Level</label>
         <description><![CDATA[
 Cold Start Minimum Level<br /> <h1>Overview</h1><p>Sets the minimum level the Dimmer should go to when the light is switched ON. This is typically used for LED lamps which does not switch ON correctly when the dimming level is at the Minimum.</p>
@@ -353,8 +335,7 @@ Cold Start Minimum Level<br /> <h1>Overview</h1><p>Sets the minimum level the Di
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_64_2" type="integer" groupName="configuration"
-                 min="0" max="32767">
+      <parameter name="config_64_2" type="integer" groupName="configuration">
         <label>64: Temperature Report Inteval</label>
         <description><![CDATA[
 Report Interval in seconds<br /> <h1>Overview</h1><p>Defines the Periodic Report interval for temperature readings. This can be configured to a minimum of 60 seconds and maximum of (32767 seconds. A 0 value disables the Interval based Periodic reporting, and any value below 60 results in a 60 second interval.</p>
@@ -363,8 +344,7 @@ Report Interval in seconds<br /> <h1>Overview</h1><p>Defines the Periodic Report
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_66_1" type="integer" groupName="configuration"
-                 min="0" max="127">
+      <parameter name="config_66_1" type="integer" groupName="configuration">
         <label>66: Temperature Report Threshold</label>
         <description><![CDATA[
 Report Threshold in 1/10th of a degree Celcius<br /> <h1>Overview</h1><p>Defines a temperature change threshold where a temperature report is sent regardless of the Report Interval. This also works if the report interval is disabled. The value is given in 1/10 of a degree celsius, and can be in the range 1-127. A zero value disables the Threshold.</p>
@@ -373,8 +353,7 @@ Report Threshold in 1/10th of a degree Celcius<br /> <h1>Overview</h1><p>Defines
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_67_1" type="integer" groupName="configuration"
-                 min="0" max="127">
+      <parameter name="config_67_1" type="integer" groupName="configuration">
         <label>67: Thermostat On∕Off Interval Override Threshold</label>
         <description><![CDATA[
 Temperature Threshold in 1/10th of a degree Celcius<br /> <h1>Overview</h1><p>Defines a temperature threshold at which the configured On/Off interval is overridden and the Heating relay state will change regardless. The value is given in 1/10th of a degree, supporting a max threshold of 12.7 degrees celcius. A Zero (0) value disables this feature (the default).</p>
@@ -383,8 +362,7 @@ Temperature Threshold in 1/10th of a degree Celcius<br /> <h1>Overview</h1><p>De
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_80_1" type="integer" groupName="configuration"
-                 min="0" max="2">
+      <parameter name="config_80_1" type="integer" groupName="configuration">
         <label>80: Button LED Mode</label>
         <description><![CDATA[
 Selected LED Mode<br /> <h1>Overview</h1><p>Controls the operation of the LEDs. Possible values are:<br />0 – LEDs are always OFF (default)<br />1 – Momentary ON</p> <p>2 – Stable ON</p> <p>The LED operation is described in details later in this document, and depends on the Button Mode configuration.</p>
@@ -393,8 +371,7 @@ Selected LED Mode<br /> <h1>Overview</h1><p>Controls the operation of the LEDs. 
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_240_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_240_1" type="integer" groupName="configuration">
         <label>240: Floor Sensor Temperature Offset</label>
         <description><![CDATA[
 Temperature Offset in 1/10th of a degree Celcius<br /> <h1>Overview</h1><p>Defines an offset to the Floor Temperature, given as a signed integer at 1/10 of a degree celcius. This provides an offset range of –12.8 to +12.7 degrees celcius.</p>
@@ -403,8 +380,7 @@ Temperature Offset in 1/10th of a degree Celcius<br /> <h1>Overview</h1><p>Defin
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_241_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_241_1" type="integer" groupName="configuration">
         <label>241: Room Sensor Temperature Offset</label>
         <description><![CDATA[
 Temperature Offset in 1/10th of a degree Celcius<br /> <h1>Overview</h1><p>Defines an offset to the Room Temperature, given as a signed integer at 1/10 of a degree celcius. This provides an offset range of –12.8 to +12.7 degrees celcius.</p>

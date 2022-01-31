@@ -97,8 +97,7 @@ Door lock status LED blinks every 6 seconds<br /> <h1>Overview</h1><p>Door lock 
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_33_4" type="integer" groupName="configuration"
-                 min="32" max="126">
+      <parameter name="config_33_4" type="integer" groupName="configuration">
         <label>33: SKU (1st half)</label>
         <description><![CDATA[
 First 4 byes of SKU<br /> <h1>Overview</h1><p>The configuration parameters 33 and 34 are used to set and get the SKU part numbers. The SKU is made up of 8 bytes. Each parameter consists of four bytes of data. Parameter 33 contains the first four most significant bytes of the SKU, while parameter 34 contains the four least significant bytes of the SKU.</p> <p>When setting the SKU, it must be done in two set commands, one for each parameter. The order of programming the SKU does not matter. Setting parameter 33 will program the first four bytes of the SKU. Setting parameter 34 will program the last 4 bytes of the SKU. Most printable values are accepted for the set command.</p> <p>When getting the SKU, it must be done in two get commands, one for each parameter. The order of getting the SKU does not matter. Getting parameter 33 will retrieve the first four bytes of the SKU. Getting parameter 34 will retrieve the last 4 bytes of the SKU.</p>
@@ -107,8 +106,7 @@ First 4 byes of SKU<br /> <h1>Overview</h1><p>The configuration parameters 33 an
         <advanced>true</advanced>
       </parameter>
 
-      <parameter name="config_34_4" type="integer" groupName="configuration"
-                 min="32" max="126">
+      <parameter name="config_34_4" type="integer" groupName="configuration">
         <label>34: SKU (2nd half)</label>
         <description><![CDATA[
 Last 4 bytes of SKU<br /> <h1>Overview</h1><p>The configuration parameters 33 and 34 are used to set and get the SKU part numbers. The SKU is made up of 8 bytes. Each parameter consists of four bytes of data. Parameter 33 contains the first four most significant bytes of the SKU, while parameter 34 contains the four least significant bytes of the SKU.</p> <p>When setting the SKU, it must be done in two set commands, one for each parameter. The order of programming the SKU does not matter. Setting parameter 33 will program the first four bytes of the SKU. Setting parameter 34 will program the last 4 bytes of the SKU. Most printable values are accepted for the set command.</p> <p>When getting the SKU, it must be done in two get commands, one for each parameter. The order of getting the SKU does not matter. Getting parameter 33 will retrieve the first four bytes of the SKU. Getting parameter 34 will retrieve the last 4 bytes of the SKU.</p>

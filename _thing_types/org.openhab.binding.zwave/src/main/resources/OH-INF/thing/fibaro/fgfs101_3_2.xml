@@ -66,8 +66,7 @@ Flood Sensor<br /> <h1>Overview</h1><p>FIBARO Flood Sensor is a universal, Z-Wav
       </parameter-group>
 
       <!-- PARAMETER DEFINITIONS -->
-      <parameter name="config_1_2" type="integer" groupName="configuration"
-                 min="0" max="3600">
+      <parameter name="config_1_2" type="integer" groupName="configuration">
         <label>1: Alarm cancellation delay</label>
         <description><![CDATA[
 Time in seconds that the flood state is retained after flooding event<br /> <h1>Overview</h1><p>Determines time period (in seconds) by which a Flood Sensor will retain the flood state after the flooding itself has ceased. The sensor will keep on reporting flooding to the main controller. This parameter setting does not affect acoustic and visual ala</p>
@@ -91,8 +90,7 @@ This parameter allows for deactivation visual and acoustic alarm.<br /> <h1>Over
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_7_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_7_1" type="integer" groupName="configuration">
         <label>7: Requested dimming level to 2nd assoc. group</label>
         <description><![CDATA[
 “On” level to be sent to devices from 2nd association group on flood event<br /> <h1>Overview</h1><p>Requested dimming level / roller blind opening level when sending turn on / open command to 2nd association group devices.</p> <p>Available settings:<br /><strong>1-99</strong> – requested level<br /><strong>255</strong> – turn a device on</p> <p>Determines the requested “on” level to be sent to devices from 2nd association group upon flood event. The value of 255 allows for turning a device on. In case of a Dimmer it means turning it on with the last memorized state, e.g. Dimmer set to 30% and turned off, turned on again using 255 command is turned on with last state i.e. 30%.</p>
@@ -114,8 +112,7 @@ Enable/disable device off/alarm cancellation updates to 2nd/3rd assoc groups<br 
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_10_4" type="integer" groupName="configuration"
-                 min="1" max="65535">
+      <parameter name="config_10_4" type="integer" groupName="configuration">
         <label>10: Temperature measurement interval</label>
         <description><![CDATA[
 Seconds between consecutive measurements of battery level/temperature<br /> <h1>Overview</h1><p>Time interval (in seconds) between consecutive measurements of battery level and temperature (done by built-in temperature sensor). If the temperature differs from previously reported by a value determined in parameter 12, it will be reported to the Z-Wave controller. In battery mode more significant battery level changes will be reported. Short time intervals mean more frequent communication, which results in shortened battery life. After consecutive FAILED and SUCCESSFUL communication attempts, the Sensor will go to standby mode.</p>
@@ -124,8 +121,7 @@ Seconds between consecutive measurements of battery level/temperature<br /> <h1>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_12_2" type="integer" groupName="configuration"
-                 min="1" max="1000">
+      <parameter name="config_12_2" type="integer" groupName="configuration">
         <label>12: Temperature measurement hysteresis</label>
         <description><![CDATA[
 Minimum change in temperature value for report to be sent to controller<br /> <h1>Overview</h1><p>Determines a minimum temperature change value (insensitivity level), resulting in a temperature report being sent to the main controller, according to the Parameter 10 settings.</p> <p>Available settings: <strong>1 – 1 000</strong> (each 0.01°C)<br />Default setting: <strong>50</strong> (0.5°C)<br />Parameter size: <strong>2 [bytes]</strong></p>
@@ -134,8 +130,7 @@ Minimum change in temperature value for report to be sent to controller<br /> <h
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_50_2" type="integer" groupName="configuration"
-                 min="-10000" max="10000">
+      <parameter name="config_50_2" type="integer" groupName="configuration">
         <label>50: Low temperature alarm threshold</label>
         <description><![CDATA[
 Temperature value below which visual indicator blinks<br /> <h1>Overview</h1><p>The parameter stores a temperature value, below which visual indicator blinks with a colour determined by a parameter 61 settings. By default the visual indicator blinks blue.</p> <p>Available settings: <strong>-10 000 to +10 000</strong> (each 0.01°C)<br />Default setting: <strong>1 500</strong> (15.00°C)<br />Parameter size: <strong>2 [bytes]</strong></p> <p>The main controller does not interpret negative numbers as decimals. That’s why read value may be different than entered. Negative numbers are coded in U2 standard.</p>
@@ -144,8 +139,7 @@ Temperature value below which visual indicator blinks<br /> <h1>Overview</h1><p>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_51_2" type="integer" groupName="configuration"
-                 min="-10000" max="10000">
+      <parameter name="config_51_2" type="integer" groupName="configuration">
         <label>51: High temperature alarm threshold</label>
         <description><![CDATA[
 Temperature value above which visual indicator blinks<br /> <h1>Overview</h1><p>Available settings: <strong>-10 000 to +10 000</strong> (each 0.01°C)<br />Default setting: <strong>3 500</strong> (35°C)<br />Parameter size: <strong>2 [bytes]</strong></p> <p>The parameter stores a temperature value, above which visual indicator blinks with a colour determined by the parameter 62 settings. By default the visual indicator blinks red.</p> <p>The main controller does not interpret negative numbers as decimals. That’s why read value may be different than entered. Negative numbers are coded in U2 standard.</p>
@@ -154,8 +148,7 @@ Temperature value above which visual indicator blinks<br /> <h1>Overview</h1><p>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_61_4" type="integer" groupName="configuration"
-                 min="0" max="16777215">
+      <parameter name="config_61_4" type="integer" groupName="configuration">
         <label>61: Low temperature alarm indicator colour</label>
         <description><![CDATA[
 Parameter stores RGB colour value.<br /> <h1>Overview</h1><p>A main controller interprets colours as a sum of it component colours value. Each colours value is a number from 0 to 255.</p> <p>Example:</p> <p>Indicated colour = 65536 * RED value + 256 * GREEN value + BLUE value</p>
@@ -164,8 +157,7 @@ Parameter stores RGB colour value.<br /> <h1>Overview</h1><p>A main controller i
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_62_4" type="integer" groupName="configuration"
-                 min="0" max="16777215">
+      <parameter name="config_62_4" type="integer" groupName="configuration">
         <label>62: High temperature alarm indicator colour</label>
         <description><![CDATA[
 Parameter stores RGB colour value.<br /> <h1>Overview</h1><p>Parameter stores RGB colour value.</p> <p>Available settings: <strong>0 – 16777215</strong><br />Default setting: <strong>16711680</strong> (red 0x00FF0000)<br />Parameter size: <strong>4 [bytes]</strong></p> <p>A main controller interprets colours as a sum of it component colours value. Each colours value is a number from 0 to 255.</p> <p>Example:<br />Indicated colour = 65536 * RED value + 256 * GREEN value + BLUE value</p>
@@ -188,8 +180,7 @@ Enable or disable visual temperature indicator via device's LED<br /> <h1>Overvi
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_73_2" type="integer" groupName="configuration"
-                 min="-10000" max="10000">
+      <parameter name="config_73_2" type="integer" groupName="configuration">
         <label>73: Temperature measurement compensation</label>
         <description><![CDATA[
 Offset to current temperature to account temperature difference<br /> <h1>Overview</h1><p>Available settings: <strong>-10 000 to +10 000</strong><br />Default setting: <strong>0</strong> (0.00°C)<br />Parameter size: <strong>2 [bytes]</strong></p> <p>Parameter stores a temperature value to be added to or deducted from the current temperature measured by internal temperature sensor in order to compensate the difference between air temperature and temperature at the floor level.</p>
@@ -213,8 +204,7 @@ Movement/tamper alarm sent to 1st &amp; 4th assoc. group<br /> <h1>Overview</h1>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_75_4" type="integer" groupName="configuration"
-                 min="0" max="65535">
+      <parameter name="config_75_4" type="integer" groupName="configuration">
         <label>75: Alarms signalization duration</label>
         <description><![CDATA[
 Turn off alarm after given timeout<br /> <h1>Overview</h1><p>The device is capable of automatically turning off alarm signalization after a certain amount of time. Long lasting alarm may reduce battery life, when constantly signalized.</p> <p>Available settings:<br /><strong>0</strong> – alarms active indefinitely<br /><strong>1-65535</strong> – time in seconds<br />Default setting: <strong>0</strong><br />Parameter size: <strong>4 [bytes]</strong></p> <p>The parameter determines time after which alarm will become “quiet” – still active but the device will go into battery saving mode. Visual or acoustic alarm will be reactivated after time specified in the parameter 76. When alarm status ceases, alarm will be turned off immediately.</p> <p>The value of 0 means visual and acoustic alarms are active indefinitely. In battery power mode the Sensor will never go to sleep which may shorten battery life significantly.</p> <p>The parameter is ignored when Parameter 2 is set to 0.</p>
@@ -223,8 +213,7 @@ Turn off alarm after given timeout<br /> <h1>Overview</h1><p>The device is capab
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_76_4" type="integer" groupName="configuration"
-                 min="0" max="65535">
+      <parameter name="config_76_4" type="integer" groupName="configuration">
         <label>76: Alarm signalization reactivation period</label>
         <description><![CDATA[
 Time period after which an alarm will be turned back on<br /> <h1>Overview</h1><p>Parameter determines a time period after which an alarm will be turned back on (in case it was turned off by parameter 75 setting). It will also resend commands to 2nd and 3rd association groups as if the alarm was detected again.</p> <p>Available settings:<br /><strong>0</strong> – alarm reactivation inactive<br /><strong>1-65535</strong> – time in seconds<br />Default setting: <strong>0</strong><br />Parameter size: <strong>4 [bytes]</strong></p> <p>In case a time period set in parameter 76 is shorter than the one specified in parameter 75, the device will not quiet the alarm, it will remain active.</p>

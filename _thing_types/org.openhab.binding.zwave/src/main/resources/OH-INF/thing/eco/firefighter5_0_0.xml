@@ -106,8 +106,7 @@ Firefighter Audio Detector<br /> <h1>Overview</h1><p><strong>Overview:</strong><
       </parameter-group>
 
       <!-- PARAMETER DEFINITIONS -->
-      <parameter name="config_1_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_1_1" type="integer" groupName="configuration">
         <label>1: Mode: Smoke Alarm/Combo Smoke CO alarm</label>
         <description><![CDATA[
 Sensor Mode<br /> <h1>Overview</h1><p>Enables the sensor to detect smoke alarm signals from a smoke detector or alarm signals from a smoke alarm and carbon monoxide alarm combo device. Allowed parameter values:</p> <p>0xA5  = Smoke alarm detection only</p> <p>0xFF   = Smoke and carbon monoxide alarm detection</p>

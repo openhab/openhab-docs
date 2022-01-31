@@ -76,8 +76,7 @@ Temperature sensor<br /> <h1>Overview</h1><p> The SES 302 measures temperature 
       </parameter-group>
 
       <!-- PARAMETER DEFINITIONS -->
-      <parameter name="config_1_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_1_1" type="integer" groupName="configuration">
         <label>1: Delta Temp</label>
         <description><![CDATA[
 Precision of measured temperature (delta)<br /> <h1>Overview</h1><p>Configuration value : Desired value / Resolution. (Resolution = 0.1)</p> <p>Example: To configure Delta temperature to 2 °C,  the value needed to be configured in device is 2/0.1 = 20.</p> <p>IMPORTANT: Controllers may only allow configuring signed values. In order to set values in the range 128...255, the value sent in the application shall be equal to desired value minus 256. For example, to set Delta Temperature to 130, it may be needed to set a value 130−256=−126.</p> <p>Zero configuration means that the corresponding functionality is disabled.</p>
@@ -86,8 +85,7 @@ Precision of measured temperature (delta)<br /> <h1>Overview</h1><p>Configuratio
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_2_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_2_1" type="integer" groupName="configuration">
         <label>2: Temp Reporting Interval</label>
         <description><![CDATA[
 Reporting interval in minutes<br /> <h1>Overview</h1><p>IMPORTANT: Controllers may only allow configuring signed values. In order to set values in the range 128...255, the value sent in the application shall be equal to desired value minus 256. For example, to set Delta Temperature to 130, it may be needed to set a value 130−256=−126.<br /><br /></p> <p>Zero configuration means that the corresponding functionality is disabled.</p>

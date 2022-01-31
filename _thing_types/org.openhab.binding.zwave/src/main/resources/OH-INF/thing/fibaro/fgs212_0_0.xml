@@ -85,8 +85,7 @@ Forced auto off period<br /> <h1>Overview</h1><p>If Parameter 4 states an auto o
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_4_2" type="integer" groupName="configuration"
-                 min="-32767" max="32768">
+      <parameter name="config_4_2" type="integer" groupName="configuration">
         <label>4: Relay 1: OFF-delay time (100ms steps)</label>
         <description><![CDATA[
 Automatic turning off relay 1 after set time ...<br /> <h1>Overview</h1><p>Default: 0 (Auto off disabled). In 100ms increments.</p>
@@ -205,8 +204,7 @@ Enable/Disable operation of dimmer or roller shutter devices ...<br /> <h1>Overv
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_39_2" type="integer" groupName="configuration"
-                 min="-32767" max="32768">
+      <parameter name="config_39_2" type="integer" groupName="configuration">
         <label>39: ALARM FLASHING alarm time</label>
         <description>Amount of time (ms) the device keeps on flashing after receipt of Alarm Frame</description>
         <default>600</default>

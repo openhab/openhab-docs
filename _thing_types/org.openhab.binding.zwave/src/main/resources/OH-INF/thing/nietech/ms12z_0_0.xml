@@ -86,8 +86,7 @@ Wall Switch<br /> <h1>Overview</h1><p>Minoston MS12Z - a simple on/off switch wi
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_4_4" type="integer" groupName="configuration"
-                 min="1" max="65535">
+      <parameter name="config_4_4" type="integer" groupName="configuration">
         <label>4: Timer</label>
         <default>65535</default>
         <limitToOptions>false</limitToOptions>

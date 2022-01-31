@@ -70,8 +70,7 @@ Touchpad Electronic Deadbolt<br /> <h1>Overview</h1><p>Kwikset®, the leader in 
       </parameter-group>
 
       <!-- PARAMETER DEFINITIONS -->
-      <parameter name="config_33_4" type="integer" groupName="configuration"
-                 min="0" max="4">
+      <parameter name="config_33_4" type="integer" groupName="configuration">
         <label>33: SKU</label>
         <description><![CDATA[
 Set the first four most significant bytes of the SKU<br /> <h1>Overview</h1><p>The configuration parameters 33 and 34 are used to set and get the SKU part numbers. The SKU is made up of 8 bytes. Each parameter consists of four bytes of data. Parameter 33 contains the first four most significant bytes of the SKU, while parameter 34 contains the four least significant bytes of the SKU. When setting the SKU, it must be done in two set commands, one for each parameter. The order of programming the SKU does not matter. Most printable values are accepted for the set command. When getting the SKU, it must be done in two get commands, one for each parameter. The order of getting the SKU does not matter. Getting parameter 33 will retrieve the first four bytes of the SKU. Getting parameter 34 will retrieve the last 4 bytes of the SKU. </p>
@@ -80,8 +79,7 @@ Set the first four most significant bytes of the SKU<br /> <h1>Overview</h1><p>T
         <advanced>true</advanced>
       </parameter>
 
-      <parameter name="config_34_4" type="integer" groupName="configuration"
-                 min="0" max="4">
+      <parameter name="config_34_4" type="integer" groupName="configuration">
         <label>34: SKU (Last 4)</label>
         <description><![CDATA[
 The four least significant bytes of the SKU<br /> <h1>Overview</h1><p>The configuration parameters 33 and 34 are used to set and get the SKU part numbers. The SKU is made up of 8 bytes. Each parameter consists of four bytes of data. Parameter 33 contains the first four most significant bytes of the SKU, while parameter 34 contains the four least significant bytes of the SKU. When setting the SKU, it must be done in two set commands, one for each parameter. The order of programming the SKU does not matter. Setting parameter 33 will program the first four bytes of the SKU. Setting parameter 34 will program the last 4 bytes of the SKU. Most printable values are accepted for the set command. When getting the SKU, it must be done in two get commands, one for each parameter. The order of getting the SKU does not matter. Getting parameter 33 will retrieve the first four bytes of the SKU. Getting parameter 34 will retrieve the last 4 bytes of the SKU.</p>

@@ -76,8 +76,7 @@ Door/temp/illumination/motion sensor<br /> <h1>Overview</h1><p>Door/Window, moti
       </parameter-group>
 
       <!-- PARAMETER DEFINITIONS -->
-      <parameter name="config_2_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_2_1" type="integer" groupName="configuration">
         <label>2: Basic Set Level</label>
         <description><![CDATA[
 Basic command to turn on the light<br /> <h1>Overview</h1><p>Setting the BASIC command value to turn on the light. The 0xFF(-1) means turn on the light. For dimmer equipment 1 to 100 means the light strength.</p>
@@ -89,8 +88,7 @@ Basic command to turn on the light<br /> <h1>Overview</h1><p>Setting the BASIC c
         </options>
       </parameter>
 
-      <parameter name="config_3_1" type="integer" groupName="configuration"
-                 min="0" max="99">
+      <parameter name="config_3_1" type="integer" groupName="configuration">
         <label>3: PIR Sensitivity</label>
         <description><![CDATA[
 setting<br /> <h1>Overview</h1><p>PIR sensitivity settings. 0 means disable the PIR motion. 1 means the lowest sensitivity, 99 means the highest sensitivity. High sensitivity means can detected long distance, but if there is more noise signal in the environment, it will re-trigger too frequently.</p>
@@ -98,8 +96,7 @@ setting<br /> <h1>Overview</h1><p>PIR sensitivity settings. 0 means disable the 
         <default>80</default>
       </parameter>
 
-      <parameter name="config_4_1" type="integer" groupName="configuration"
-                 min="0" max="100">
+      <parameter name="config_4_1" type="integer" groupName="configuration">
         <label>4: Light Threshold</label>
         <description><![CDATA[
 setting<br /> <h1>Overview</h1><p>Setting the illumination threshold to turn on the light. When the event is triggered and the environment illumination is lower than the threshold, the device will turn on the light. 0 means turn off illumination detection function, and never turn on the light.</p> <ul><li>1 means darkest.</li> <li>99 means brightest.</li> <li>100 means turn off illumination detection function, and always turn on the light.</li> </ul><p>Notice: In test mode, only the value in 1 to 99 will enable the illumination detection function and update the illumination value.</p>
@@ -359,8 +356,7 @@ disable/enable battery state reports<br /> <h1>Overview</h1><p>Bit6: Disable to 
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_8_1_0000007F" type="integer" groupName="configuration"
-                 min="0" max="127">
+      <parameter name="config_8_1_0000007F" type="integer" groupName="configuration">
         <label>8: PIR motion re-trigger min interval</label>
         <description><![CDATA[
 PIR motion re-trigger min interval<br /> <h1>Overview</h1><p>In normal mode, after the PIR motion detection, setting the re-detect time. 8 seconds per tick, default tick is 3 (24 seconds). Setting the suitable value to prevent sending the trigger signal too frequently. Also can save the battery energy.</p> <p>Notice: If this value bigger than the configuration setting NO. 9. There is a period after the light turned off and the PIR  start detecting again.</p>
@@ -369,8 +365,7 @@ PIR motion re-trigger min interval<br /> <h1>Overview</h1><p>In normal mode, aft
         <advanced>true</advanced>
       </parameter>
 
-      <parameter name="config_9_1_0000007F" type="integer" groupName="configuration"
-                 min="0" max="127">
+      <parameter name="config_9_1_0000007F" type="integer" groupName="configuration">
         <label>9: Light on time hysteresis</label>
         <description><![CDATA[
 time to keep the light on without motion<br /> <h1>Overview</h1><p>After turn on the lighting, setting the delay time to turn off the lighting when the PIR motion is not<br />detected. 8 seconds per tick, default tick is 4 (32 seconds). 0 means never send turn off light command.</p>
@@ -379,8 +374,7 @@ time to keep the light on without motion<br /> <h1>Overview</h1><p>After turn on
         <advanced>true</advanced>
       </parameter>
 
-      <parameter name="config_10_1_0000007F" type="integer" groupName="configuration"
-                 min="0" max="127">
+      <parameter name="config_10_1_0000007F" type="integer" groupName="configuration">
         <label>10: battery level auto-report interval</label>
         <description><![CDATA[
 battery level auto-report interval<br /> <h1>Overview</h1><p>The interval time for auto report the battery level. 0 means turn off auto report battery. The default value is 12. The tick time can be set by the configuration parameter No.20.</p>
@@ -389,8 +383,7 @@ battery level auto-report interval<br /> <h1>Overview</h1><p>The interval time f
         <advanced>true</advanced>
       </parameter>
 
-      <parameter name="config_11_1_0000007F" type="integer" groupName="configuration"
-                 min="0" max="127">
+      <parameter name="config_11_1_0000007F" type="integer" groupName="configuration">
         <label>11: door state report interval</label>
         <description><![CDATA[
 door state report interval<br /> <h1>Overview</h1><p>The interval time for auto reporting the door/window state. 0 means turn off auto report door/window state. The default value is 12. The tick time can be set by the configuration parameter No.20.</p>
@@ -399,8 +392,7 @@ door state report interval<br /> <h1>Overview</h1><p>The interval time for auto 
         <advanced>true</advanced>
       </parameter>
 
-      <parameter name="config_12_1_0000007F" type="integer" groupName="configuration"
-                 min="0" max="127">
+      <parameter name="config_12_1_0000007F" type="integer" groupName="configuration">
         <label>12: illumination auto report interval</label>
         <description><![CDATA[
 illumination auto report interval<br /> <h1>Overview</h1><p>The interval time for auto report the illumination. 0 means turn off auto report illumination. The<br />default value is 12. The tick time can be set by the configuration parameter No.20.</p>
@@ -409,8 +401,7 @@ illumination auto report interval<br /> <h1>Overview</h1><p>The interval time fo
         <advanced>true</advanced>
       </parameter>
 
-      <parameter name="config_13_1_0000007F" type="integer" groupName="configuration"
-                 min="0" max="127">
+      <parameter name="config_13_1_0000007F" type="integer" groupName="configuration">
         <label>13: temperature report interval</label>
         <description><![CDATA[
 temperature report interval<br /> <h1>Overview</h1><p>The interval time for a temperature auto report. default=12, 0=no auto-report. Tick duration set by parameter 20.</p>
@@ -419,8 +410,7 @@ temperature report interval<br /> <h1>Overview</h1><p>The interval time for a te
         <advanced>true</advanced>
       </parameter>
 
-      <parameter name="config_20_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_20_1" type="integer" groupName="configuration">
         <label>20: tick duration</label>
         <description><![CDATA[
 auto-reports tick duration<br /> <h1>Overview</h1><p>The interval time for auto report each tick. Setting this configuration will effect configuration<br />No.10, No.11, No.12 and No.13.&lt;br/&gt; Caution: Setting to 0 means turn off all auto report function.</p>
@@ -429,8 +419,7 @@ auto-reports tick duration<br /> <h1>Overview</h1><p>The interval time for auto 
         <advanced>true</advanced>
       </parameter>
 
-      <parameter name="config_21_1_0000007F" type="integer" groupName="configuration"
-                 min="0" max="127">
+      <parameter name="config_21_1_0000007F" type="integer" groupName="configuration">
         <label>21: temperature differential to report</label>
         <description><![CDATA[
 temperature differential to report<br /> <h1>Overview</h1><p>The temperature differential to report. 0 means turn off this function. The unit is in Fahrenheit. Enable this function the device will detect every minutes. And when the temperature is over 140 degree Fahrenheit, it will continue report. Enable this functionality will cause some issue please see the detail in the “Temperature Report” section</p>
@@ -439,8 +428,7 @@ temperature differential to report<br /> <h1>Overview</h1><p>The temperature dif
         <advanced>true</advanced>
       </parameter>
 
-      <parameter name="config_22_1_0000003F" type="integer" groupName="configuration"
-                 min="0" max="63">
+      <parameter name="config_22_1_0000003F" type="integer" groupName="configuration">
         <label>22: min illumination differential</label>
         <description><![CDATA[
 min illumination differential to report<br /> <h1>Overview</h1><p>The illumination differential to report. 0 means turn off this function. The unit is percentage. Enable this function the device will detect every minutes. Enable this functionality will cause some issue please see the detail in the “Illumination Report” section.</p>

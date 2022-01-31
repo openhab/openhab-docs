@@ -119,48 +119,42 @@ Ignore start level when recieving dim commands<br /> <h1>Overview</h1><p>The WT0
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_7_1" type="integer" groupName="configuration"
-                 min="1" max="99">
+      <parameter name="config_7_1" type="integer" groupName="configuration">
         <label>7: dim step parameter</label>
         <description>dim step parameter valid values: 1-99</description>
         <default>3</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_8_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_8_1" type="integer" groupName="configuration">
         <label>8: dim timer parameter</label>
         <description>dim timer parameter valid values: 1-255</description>
         <default>10</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_9_1" type="integer" groupName="configuration"
-                 min="1" max="99">
+      <parameter name="config_9_1" type="integer" groupName="configuration">
         <label>9: Local control dim step</label>
         <description>dim step parameter valid values: 1-99</description>
         <default>3</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_10_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_10_1" type="integer" groupName="configuration">
         <label>10: Local control dim timer</label>
         <description>dim timer parameter valid values: 1-255</description>
         <default>10</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_11_1" type="integer" groupName="configuration"
-                 min="1" max="99">
+      <parameter name="config_11_1" type="integer" groupName="configuration">
         <label>11: ALL ON/ ALL OFF dim step</label>
         <description>dim step parameter valid values: 1-99</description>
         <default>3</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_12_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_12_1" type="integer" groupName="configuration">
         <label>12: ALL ON/ ALL OFF dim timer</label>
         <description>dim timer parameter valid values: 1-255</description>
         <default>10</default>
@@ -227,8 +221,7 @@ LED Transmission Indication<br /> <h1>Overview</h1><p>The WT00Z-1 will ﬂicker 
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_20_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_20_1" type="integer" groupName="configuration">
         <label>20: Poll: minutes</label>
         <description><![CDATA[
 Frequency that WT00Z-1 will poll first node in Group 1<br /> <h1>Overview</h1><p>The WT00Z-1 will poll the ﬁrst node in Group 1 in order to keep itself synchronized with the group if this conﬁguration parameter is set to 1. How often it will poll is conﬁgured using this parameter.</p> <p><b>Parameter 20</b></p> <p><b>Length: 1 Byte</b></p> <p><b>Valid Values = 1 through 255 (default: 2)</b></p>

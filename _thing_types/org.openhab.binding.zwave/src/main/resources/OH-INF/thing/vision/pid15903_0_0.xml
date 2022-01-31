@@ -83,16 +83,14 @@ Plug In Power Monitor<br /> <h1>Overview</h1><p>Power Outlet</p> <br /> <h2>Incl
       </parameter-group>
 
       <!-- PARAMETER DEFINITIONS -->
-      <parameter name="config_1_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_1_1" type="integer" groupName="configuration">
         <label>1: Auto Report Timing</label>
         <description>Reports kWh/kVAh</description>
         <default>60</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_2_2" type="integer" groupName="configuration"
-                 min="5" max="3600">
+      <parameter name="config_2_2" type="integer" groupName="configuration">
         <label>2: Report When Wattage Changes</label>
         <description>Reports V/A/W</description>
         <default>50</default>

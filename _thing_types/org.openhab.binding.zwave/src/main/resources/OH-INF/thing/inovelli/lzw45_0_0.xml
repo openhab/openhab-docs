@@ -134,8 +134,7 @@ This changes the speed in which the lightstrip turns on or off.<br /> <h1>Overvi
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_4_1" type="integer" groupName="configuration"
-                 min="1" max="45">
+      <parameter name="config_4_1" type="integer" groupName="configuration">
         <label>4: Minimum Level</label>
         <description><![CDATA[
 The minimum level that the strip can be dimmed to.<br /> <h1>Overview</h1><p>The minimum level that the strip can be dimmed to. Useful when the user has an LED strip that does not turn on or flickers at a lower level.</p>
@@ -144,8 +143,7 @@ The minimum level that the strip can be dimmed to.<br /> <h1>Overview</h1><p>The
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_5_1" type="integer" groupName="configuration"
-                 min="55" max="99">
+      <parameter name="config_5_1" type="integer" groupName="configuration">
         <label>5: Maximum Level</label>
         <description><![CDATA[
 The maximum level that the strip can be dimmed to.<br /> <h1>Overview</h1><p>The maximum level that the strip can be dimmed to. Useful when the user has an LED strip that reaches its maximum level before the dimmer value of 99.</p>
@@ -190,8 +188,7 @@ Default level for the dimmer when it is powered on from a Z-Wave command (i.e. B
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_9_4" type="integer" groupName="configuration"
-                 min="0" max="6500">
+      <parameter name="config_9_4" type="integer" groupName="configuration">
         <label>9: Default Color</label>
         <description><![CDATA[
 Byte(3-2): Values between 2700-6500 represent a color temperature. Byte(1-0): Values between 1-360 represent the color on the Hue color wheel. The value of 361 represents a random color and a value of 0 represents the previous color.<br /> <h1>Overview</h1><p>Byte(3-2): Values between 2700-6500 represent a color temperature. Byte(1-0): Values between 1-360 represent the color on the Hue color wheel. The value of 361 represents a random color and a value of 0 represents the previous color.</p>
@@ -226,8 +223,7 @@ The power level change that will result in a new power report being sent.<br /> 
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_18_2" type="integer" groupName="configuration"
-                 min="0" max="32767">
+      <parameter name="config_18_2" type="integer" groupName="configuration">
         <label>18: Periodic Power &amp; Energy Reports</label>
         <description><![CDATA[
 Time period between consecutive power &amp; energy reports being sent (in seconds).<br /> <h1>Overview</h1><p>Time period between consecutive power &amp; energy reports being sent (in seconds). The timer is reset after each report is sent</p>
@@ -236,8 +232,7 @@ Time period between consecutive power &amp; energy reports being sent (in second
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_19_1" type="integer" groupName="configuration"
-                 min="0" max="100">
+      <parameter name="config_19_1" type="integer" groupName="configuration">
         <label>19: Active Energy Reports</label>
         <description><![CDATA[
 Energy reports Energy level change which will result in sending a new energy report.<br /> <h1>Overview</h1><p>Energy reports Energy level change which will result in sending a new energy report. Available settings: 0 - energy reports disabled, 1-127 (0.01-1.27 kWh) - report triggering threshold,</p><p>Default setting: 10 (0.1 kWh)</p>
@@ -246,8 +241,7 @@ Energy reports Energy level change which will result in sending a new energy rep
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_21_4" type="integer" groupName="configuration"
-                 min="0" max="2147483647">
+      <parameter name="config_21_4" type="integer" groupName="configuration">
         <label>21: Quick Strip Effect</label>
         <description><![CDATA[
 Turn on a quick effect that is similar to the LED notifications on our dimmers and switches.<br /> <h1>Overview</h1><p>Turn on a quick effect that is similar to the LED notifications on our dimmers and switches.</p><p>See website for details.</p>
@@ -256,8 +250,7 @@ Turn on a quick effect that is similar to the LED notifications on our dimmers a
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_22_4" type="integer" groupName="configuration"
-                 min="0" max="2147483647">
+      <parameter name="config_22_4" type="integer" groupName="configuration">
         <label>22: Custom Effect Parameter 1</label>
         <description><![CDATA[
 A custom effect with up to 4 actions can be turned on with correct input for parameters 22-24, 30. (Color/Transition)<br /> <h1>Overview</h1><p>A custom effect with up to 4 actions can be turned on with correct input for parameters 22-24, 30. This parameter controls the color and transition of those actions. See website for details.</p>
@@ -266,8 +259,7 @@ A custom effect with up to 4 actions can be turned on with correct input for par
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_23_4" type="integer" groupName="configuration"
-                 min="0" max="2147483647">
+      <parameter name="config_23_4" type="integer" groupName="configuration">
         <label>23: Custom Effect Parameter 2</label>
         <description><![CDATA[
 A custom effect with up to 4 actions can be turned on with correct input for parameters 22- 24, 30. (Level)<br /> <h1>Overview</h1><p>A custom effect with up to 4 actions can be turned on with correct input for parameters 22-24, 30. This parameter controls the level of those actions. See website for details.</p>
@@ -276,8 +268,7 @@ A custom effect with up to 4 actions can be turned on with correct input for par
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_24_4" type="integer" groupName="configuration"
-                 min="0" max="2147483647">
+      <parameter name="config_24_4" type="integer" groupName="configuration">
         <label>24: Custom Effect Parameter 3</label>
         <description><![CDATA[
 A custom effect with up to 4 actions can be turned on with correct input for parameters 22- 24, 30. (Duration)<br /> <h1>Overview</h1><p>A custom effect with up to 4 actions can be turned on with correct input for parameters 22-24, 30. This parameter controls the duration of those actions. See website for details.</p>
@@ -286,8 +277,7 @@ A custom effect with up to 4 actions can be turned on with correct input for par
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_30_4" type="integer" groupName="configuration"
-                 min="0" max="32768">
+      <parameter name="config_30_4" type="integer" groupName="configuration">
         <label>30: Custom Effect Parameter 4</label>
         <description><![CDATA[
 A custom effect with up to 4 actions can be turned on with correct input for parameters 22- 24, 30. (Iterations/Scale)<br /> <h1>Overview</h1><p>A custom effect with up to 4 actions can be turned on with correct input for parameters 22-24, 30. This parameter controls the number of iterations, the end effect, and the scale of the duration in parameter 24. See website for details.</p>
@@ -296,8 +286,7 @@ A custom effect with up to 4 actions can be turned on with correct input for par
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_31_2" type="integer" groupName="configuration"
-                 min="0" max="32767">
+      <parameter name="config_31_2" type="integer" groupName="configuration">
         <label>31: Pixel Effect</label>
         <description><![CDATA[
 Turn on an effect that utilizes the individually addressable LEDs.<br /> <h1>Overview</h1><p>Turn on an effect that utilizes the individually addressable LEDs. Calculated as: (brightness * 256) + effect number below. Brightness can be 1-99, 0 turns off.</p><p>Byte 0 = Effect, Byte 1 = Level</p><p>1. Static</p><p>2. Blink</p><p>3. Breath</p><p>4. Color Wipe</p><p>5. Color Wipe Reverse Inverse</p><p>6. Color Wipe Random</p><p>7. Random Color</p><p>8. Single Dynamic</p><p>9. Multi Dynamic</p><p>10. Rainbow</p><p>11. Rainbow Cycle</p><p>12. Scan</p><p>13. Dual Scan</p><p>14. Fade</p><p>15. Running Lights</p><p>16. Twinkle</p><p>17. Twinkle Random</p><p>18. Twinkle Fade</p><p>19. Twinkle Fade Random</p><p>20. Sparkle</p><p>21. Flash Sparkle</p><p>22. Hyper Sparkle</p><p>23. Strobe</p><p>24. Blink Rainbow</p><p>25. Chase White</p><p>26. Chase Color</p><p>27. Chase Random</p><p>28. Chase Rainbow</p><p>29. Chase Flash</p><p>30. Chase Flash Random</p><p>31. Chase Rainbow White</p><p>32. Chase Blackout</p><p>33. Chase Blackout Rainbow</p><p>34. Color Sweep Random</p><p>35. Running Color</p><p>36. Running Red Blue</p><p>37. Running Random</p><p>38. Larson Scanner</p><p>39. Comet</p><p>40. Fireworks</p><p>41. Fireworks Random</p><p>42. Merry Christmas</p><p>43. Circus Combustus</p><p>44. Halloween</p><p>45. Aurora</p>
@@ -306,8 +295,7 @@ Turn on an effect that utilizes the individually addressable LEDs.<br /> <h1>Ove
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_51_1" type="integer" groupName="configuration"
-                 min="0" max="1">
+      <parameter name="config_51_1" type="integer" groupName="configuration">
         <label>51: Disable Physical On/Off Delay</label>
         <description><![CDATA[
 The 700ms delay that occurs after pressing the physical button to turn the switch on/off is removed.<br /> <h1>Overview</h1><p>The 700ms delay that occurs after pressing the physical button to turn the switch on/off is removed. Consequently this also removes the following scenes: 2x, 3x, 4x, 5x tap. Still working are the 1x tap, held, released, and the level up/down scenes.</p>

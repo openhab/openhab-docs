@@ -82,8 +82,7 @@ Multisiren<br /> <h1>Overview</h1><ul><li>Audio and visual alarm triggered by ot
       </parameter-group>
 
       <!-- PARAMETER DEFINITIONS -->
-      <parameter name="config_1_2" type="integer" groupName="configuration"
-                 min="10" max="600">
+      <parameter name="config_1_2" type="integer" groupName="configuration">
         <label>1: Siren alarm duration</label>
         <description><![CDATA[
 Siren alarm duration<br /> <h1>Overview</h1><p>Choose how long you want the siren alarm to last for once it's triggered. The number entered as value corresponds to the number of seconds.</p>
@@ -91,8 +90,7 @@ Siren alarm duration<br /> <h1>Overview</h1><p>Choose how long you want the sire
         <default>180</default>
       </parameter>
 
-      <parameter name="config_2_2" type="integer" groupName="configuration"
-                 min="1" max="1440">
+      <parameter name="config_2_2" type="integer" groupName="configuration">
         <label>2: Temperature and humidity reporting interval</label>
         <description><![CDATA[
 Temperature and humidity reporting interval<br /> <h1>Overview</h1><p>Choose how often you want the Multisiren to report temperature and humidity readings. The number entered as value corresponds to the number of minutes. Frequent reports will decrease battery life.</p>
@@ -100,8 +98,7 @@ Temperature and humidity reporting interval<br /> <h1>Overview</h1><p>Choose how
         <default>30</default>
       </parameter>
 
-      <parameter name="config_3_1" type="integer" groupName="configuration"
-                 min="0" max="99">
+      <parameter name="config_3_1" type="integer" groupName="configuration">
         <label>3: Custom sound selection for audio speaker</label>
         <description><![CDATA[
 Custom sound selection for audio speaker<br /> <h1>Overview</h1><p>Enable one of the custom sounds in the audio file library. The number entered as value corresponds to the file number in the library. Audio Speaker is an optional feature enabled by the brand new Sound Switch command class. This feature is <strong>separate from the siren alarm</strong> (the sound or volume of the siren can’t be adjusted) and once fully enabled, it allows you to play different sounds from the library based on different Z-Wave triggers and events. The default value (0) disables the custom sound. The file in position 2 is reserved for the tamper switch notification.</p> <p><strong>How to manage the audio file library (for Audio Speaker only)</strong></p> <ol><li>Plug the Multisiren to your computer/laptop using the mini USB port.</li> <li>Follow the prompts on the screen to run the manager.</li> <li>Use the file navigation menu on the le to locate your file source.</li> <li>Select the files you want to upload to the Multisiren. Accepted formats: <ul><li><strong>.wav files in Mono only </strong>(you need to convert any Mp3’s)</li> <li>Sample rate: 8KHz – 32KHz</li> <li>Max length per file: 30 seconds (total max length of all files: 85 sec.)</li> </ul></li> <li>Click on the upload icon in the bottom left corner on the window.</li> <li>Your library is now updated. You can use the up/down arrow icons to change the file order in the library. Note that the no. 2 file in the library is reserved for tamper switch notification playback.</li> <li>Close the Library Manager soware, remove the USB cable, and power cycle your Multisiren by taking one of the batteries out and reinserting it.</li> </ol>

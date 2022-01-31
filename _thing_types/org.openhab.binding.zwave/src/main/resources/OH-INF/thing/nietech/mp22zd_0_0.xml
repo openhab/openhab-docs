@@ -48,8 +48,7 @@ Outdoor Dimmer Plug<br /> <h1>Overview</h1>The Minoston MP22ZD is a 400W Loading
       </parameter-group>
 
       <!-- PARAMETER DEFINITIONS -->
-      <parameter name="config_2_1" type="integer" groupName="configuration"
-                 min="0" max="3">
+      <parameter name="config_2_1" type="integer" groupName="configuration">
         <label>2: Status LED</label>
         <description><![CDATA[
 Choose if the LED should follow the output, oppose the output, or be always on or off.<br /> <h1>Overview</h1><p>Choose if the LED status light on the device should follow the output, oppose the output, or be always on or off. (0=Oppose, 1=Follow, 2=Always Off, 3=Always On)<br /></p>
@@ -87,8 +86,7 @@ Turn on the switch automatically after a set time from the switch turning off.<b
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_7_1" type="integer" groupName="configuration"
-                 min="1" max="10">
+      <parameter name="config_7_1" type="integer" groupName="configuration">
         <label>7: Night Light Set</label>
         <description><![CDATA[
 Brightness for the light when you want to make it a night light<br /> <h1>Overview</h1><p>Brightness for the light when you want to make it a night light.  Value is specified in units of percent brightness.<br /></p>
@@ -111,8 +109,7 @@ Sets desired output state after power failure<br /> <h1>Overview</h1><p>Sets des
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_10_1" type="integer" groupName="configuration"
-                 min="1" max="10">
+      <parameter name="config_10_1" type="integer" groupName="configuration">
         <label>10: Dimmer Speed</label>
         <description><![CDATA[
 Seconds to change brightness by 100%<br /> <h1>Overview</h1><p>Seconds to change brightness by 100%. Only applies under certain conditions, such as when controlled by holding the device button.<br /></p>

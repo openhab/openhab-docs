@@ -64,8 +64,7 @@ Jasco 3-way Light Switch<br /> <h1>Overview</h1><p>Transform any home into a sma
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_4_1" type="integer" groupName="configuration"
-                 min="0" max="1">
+      <parameter name="config_4_1" type="integer" groupName="configuration">
         <label>4: Invert Switch</label>
         <description>Invert Switch</description>
         <default>0</default>

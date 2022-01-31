@@ -59,8 +59,7 @@ Wall Plug Switch<br /> <h1>Overview</h1><p>This is a switch plug that can be pla
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_2_2" type="integer" groupName="configuration"
-                 min="-32767" max="32768">
+      <parameter name="config_2_2" type="integer" groupName="configuration">
         <label>2: Automatic switch off time</label>
         <description>If not zero, automatically switch off after a user defined time (in seconds)</description>
         <default>0</default>

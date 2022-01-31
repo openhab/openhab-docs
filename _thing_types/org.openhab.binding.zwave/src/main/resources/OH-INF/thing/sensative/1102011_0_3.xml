@@ -138,16 +138,14 @@ Strips Multisensor Comfort/Drip<br /> <h1>Overview</h1><p>Strips Comfort is a di
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_7_1" type="integer" groupName="configuration"
-                 min="-20" max="60">
+      <parameter name="config_7_1" type="integer" groupName="configuration">
         <label>7: High temperature alarm level</label>
         <description>High temperature alarm level</description>
         <default>60</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_8_1" type="integer" groupName="configuration"
-                 min="-20" max="60">
+      <parameter name="config_8_1" type="integer" groupName="configuration">
         <label>8: Low temperature alarm level</label>
         <description>Low temperature alarm level</description>
         <default>-20</default>
@@ -166,16 +164,14 @@ Strips Multisensor Comfort/Drip<br /> <h1>Overview</h1><p>Strips Comfort is a di
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_10_4" type="integer" groupName="configuration"
-                 min="3" max="64000">
+      <parameter name="config_10_4" type="integer" groupName="configuration">
         <label>10: High ambient light report level</label>
         <description>High ambient light report level</description>
         <default>40000</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_11_4" type="integer" groupName="configuration"
-                 min="1" max="42000">
+      <parameter name="config_11_4" type="integer" groupName="configuration">
         <label>11: Low ambient light report level</label>
         <description><![CDATA[
 Low ambient light report level<br /> <h1>Overview</h1><p>Must be significantly lower than parameter 10 </p>
@@ -195,16 +191,14 @@ Low ambient light report level<br /> <h1>Overview</h1><p>Must be significantly l
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_13_1" type="integer" groupName="configuration"
-                 min="1" max="100">
+      <parameter name="config_13_1" type="integer" groupName="configuration">
         <label>13: Leakage alarm level</label>
         <description>Leakage alarm level</description>
         <default>10</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_14_1" type="integer" groupName="configuration"
-                 min="0" max="120">
+      <parameter name="config_14_1" type="integer" groupName="configuration">
         <label>14: Moisture reporting period</label>
         <description>Moisture reporting period</description>
         <default>0</default>

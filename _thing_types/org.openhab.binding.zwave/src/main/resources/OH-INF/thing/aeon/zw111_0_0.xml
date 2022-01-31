@@ -185,8 +185,7 @@ Set notification sent to associated nodes (group 4)<br /> <h1>Overview</h1><p>To
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_85_4" type="integer" groupName="configuration"
-                 min="0" max="16843197">
+      <parameter name="config_85_4" type="integer" groupName="configuration">
         <label>85: Set appointment 1</label>
         <description><![CDATA[
 Set appointment 1<br /> <h1>Overview</h1><p>0 to 99     The brightness level<br />256 to 316     The minute value of ON time<br />65536 to 65560     The hour value of ON time<br />16777215 to 16777222     The day value (Mon to Sun)</p>
@@ -194,8 +193,7 @@ Set appointment 1<br /> <h1>Overview</h1><p>0 to 99     The brightness level<
         <default>0</default>
       </parameter>
 
-      <parameter name="config_86_4" type="integer" groupName="configuration"
-                 min="0" max="16843197">
+      <parameter name="config_86_4" type="integer" groupName="configuration">
         <label>86: Set appointment 2</label>
         <description><![CDATA[
 Set appointment 2<br /> <h1>Overview</h1><p>0 to 99     The brightness level<br />256 to 316     The minute value of ON time<br />65536 to 65560     The hour value of ON time<br />16777215 to 16777222     The day value (Mon to Sun)</p>
@@ -214,15 +212,13 @@ Set appointment 2<br /> <h1>Overview</h1><p>0 to 99     The brightness level<
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_91_2" type="integer" groupName="configuration"
-                 min="-32767" max="32768">
+      <parameter name="config_91_2" type="integer" groupName="configuration">
         <label>91: Set the threshold value of wattage</label>
         <description>Threshold change in wattage (in terms of wattage) to induce an automatic report</description>
         <default>25</default>
       </parameter>
 
-      <parameter name="config_92_1" type="integer" groupName="configuration"
-                 min="0" max="100">
+      <parameter name="config_92_1" type="integer" groupName="configuration">
         <label>92: Set the threshold value of percent power</label>
         <description><![CDATA[
 Threshold change in wattage (in terms of percentage)<br /> <h1>Overview</h1><p>Threshold change in wattage (in terms of percentage) to induce an automatic report</p>
@@ -230,8 +226,7 @@ Threshold change in wattage (in terms of percentage)<br /> <h1>Overview</h1><p>T
         <default>5</default>
       </parameter>
 
-      <parameter name="config_100_1_wo" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_100_1_wo" type="integer" groupName="configuration">
         <label>100: Reset 101-103 to default</label>
         <description>Reset parameters 101-103 to default values</description>
         <default>0</default>
@@ -241,8 +236,7 @@ Threshold change in wattage (in terms of percentage)<br /> <h1>Overview</h1><p>T
         <advanced>true</advanced>
       </parameter>
 
-      <parameter name="config_101_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_101_1" type="integer" groupName="configuration">
         <label>101: Set group 1 reports</label>
         <description><![CDATA[
 To set which reports need to be sent in Report group 1<br /> <h1>Overview</h1><p>1     Send Meter Report of voltage (V)<br />2     Send Meter Report of current (A)<br />4     Send Meter Report of wattage (W)<br />8     Send Meter Report of energy (kWh)</p>
@@ -251,8 +245,7 @@ To set which reports need to be sent in Report group 1<br /> <h1>Overview</h1><p
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_102_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_102_1" type="integer" groupName="configuration">
         <label>102: Set group 2 reports</label>
         <description><![CDATA[
 To set which reports need to be sent in Report group 2<br /> <h1>Overview</h1><p>1     Send Meter Report of voltage (V)<br />2     Send Meter Report of current (A)<br />4     Send Meter Report of wattage (W)<br />8     Send Meter Report of energy (kWh)</p>
@@ -260,8 +253,7 @@ To set which reports need to be sent in Report group 2<br /> <h1>Overview</h1><p
         <default>0</default>
       </parameter>
 
-      <parameter name="config_103_1" type="integer" groupName="configuration"
-                 min="0" max="15">
+      <parameter name="config_103_1" type="integer" groupName="configuration">
         <label>103: Set Group 3 Reports</label>
         <description><![CDATA[
 To set which reports need to be sent in Report group 3<br /> <h1>Overview</h1><p>1     Send Meter Report of voltage (V)<br />2     Send Meter Report of current (A)<br />4     Send Meter Report of wattage (W)<br />8     Send Meter Report of energy (kWh)</p>
@@ -269,8 +261,7 @@ To set which reports need to be sent in Report group 3<br /> <h1>Overview</h1><p
         <default>0</default>
       </parameter>
 
-      <parameter name="config_110_1_wo" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_110_1_wo" type="integer" groupName="configuration">
         <label>110: Reset 111-113 to default</label>
         <description>Reset parameters 111-113 to default values</description>
         <default>0</default>
@@ -280,22 +271,19 @@ To set which reports need to be sent in Report group 3<br /> <h1>Overview</h1><p
         <advanced>true</advanced>
       </parameter>
 
-      <parameter name="config_111_4" type="integer" groupName="configuration"
-                 min="1" max="2147483647">
+      <parameter name="config_111_4" type="integer" groupName="configuration">
         <label>111: Automatic report interval group 1</label>
         <description>Set the interval of automatic report for Report group 1</description>
         <default>2147483647</default>
       </parameter>
 
-      <parameter name="config_112_4" type="integer" groupName="configuration"
-                 min="1" max="2147483647">
+      <parameter name="config_112_4" type="integer" groupName="configuration">
         <label>112: Automatic report interval group 2</label>
         <description>Set the interval of automatic report for Report group 2</description>
         <default>2147483647</default>
       </parameter>
 
-      <parameter name="config_113_4" type="integer" groupName="configuration"
-                 min="0" max="2147483647">
+      <parameter name="config_113_4" type="integer" groupName="configuration">
         <label>113: Automatic report interval group 3</label>
         <description>Set the interval of automatic report for Report group 3</description>
         <default>2147483647</default>
@@ -364,8 +352,7 @@ To set which reports need to be sent in Report group 3<br /> <h1>Overview</h1><p
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_125_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_125_1" type="integer" groupName="configuration">
         <label>125: Set the default dimming rate</label>
         <description>The value range is 1 to 255 seconds</description>
         <default>-1</default>
@@ -407,15 +394,13 @@ To set which reports need to be sent in Report group 3<br /> <h1>Overview</h1><p
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_131_1" type="integer" groupName="configuration"
-                 min="0" max="99">
+      <parameter name="config_131_1" type="integer" groupName="configuration">
         <label>131: Set the minimum brightness</label>
         <description>Set the min brightness level that the load can reach to</description>
         <default>99</default>
       </parameter>
 
-      <parameter name="config_132_1" type="integer" groupName="configuration"
-                 min="0" max="99">
+      <parameter name="config_132_1" type="integer" groupName="configuration">
         <label>132: Set the maximum brightness level</label>
         <description>Set the max brightness level that the load can reach to</description>
         <default>99</default>

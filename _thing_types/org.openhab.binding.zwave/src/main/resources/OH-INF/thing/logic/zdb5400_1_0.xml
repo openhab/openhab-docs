@@ -195,8 +195,7 @@ MATRIX 55 Switch with Dimmer and Backlight<br /> <h1>Overview</h1><p>MATRIX type
       </parameter-group>
 
       <!-- PARAMETER DEFINITIONS -->
-      <parameter name="config_0_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_0_1" type="integer" groupName="configuration">
         <label>0: Pushbutton debounce timer</label>
         <description><![CDATA[
 Pushbutton input debounce time in 0.01 seconds resolution.<br /> <h1>Overview</h1><p>1-255   1 – 2.55 seconds. <br /></p><p>Default is 5, which equals to a debounce-filter on 50 milliseconds (0.05 seconds).</p>
@@ -205,8 +204,7 @@ Pushbutton input debounce time in 0.01 seconds resolution.<br /> <h1>Overview</h
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_1_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_1_1" type="integer" groupName="configuration">
         <label>1: Operating pushbutton(s) for dimmer.</label>
         <description><![CDATA[
 This parameter specifies which pushbutton(s) that shall be used to control the built-in dimmer<br /> <h1>Overview</h1><p>This parameter specifies which pushbutton(s) that shall be used to control the built-in dimmer. The parameter is a bitmask, so each of the values can be added up in order to have several pushbuttons to operate the dimmer</p><p>0    No local operation of the dimmer<br />1    Pushbutton 1 controls the dimmer<br />2    Pushbutton 2 controls the dimmer<br />4    Pushbutton 3 controls the dimmer<br />8    Pushbutton 4 controls the dimmer.</p>
@@ -215,8 +213,7 @@ This parameter specifies which pushbutton(s) that shall be used to control the b
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_2_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_2_1" type="integer" groupName="configuration">
         <label>2: Duration of dimming</label>
         <description><![CDATA[
 This parameter specifies the duration of a full regulation of the light from 0% to 100%<br /> <h1>Overview</h1><p>A regulation of the light with 1% will take 1/100 of the specified duration. This is used when a pushbutton is held-down for controlling the dimming, and when the dimming is fulfilled from other Z-Wave devices when specifying factory default duration.</p><p>0           Immediately<br />1 - 127  Duration in seconds<br />128-255 Duration in minutes (minus 127), where 128 is 1 minute</p>
@@ -225,8 +222,7 @@ This parameter specifies the duration of a full regulation of the light from 0% 
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_3_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_3_1" type="integer" groupName="configuration">
         <label>3: Duration of on/off</label>
         <description><![CDATA[
 This parameter specifies the duration when turning the light on or off<br /> <h1>Overview</h1><p>This parameter specifies the duration when turning the light on or off</p><p>0                Immediately<br />1 - 127      Time in seconds.<br />128 - 255  Time in minutes (minus 127), where 128 is 1 minute.</p>
@@ -235,8 +231,7 @@ This parameter specifies the duration when turning the light on or off<br /> <h1
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_4_1" type="integer" groupName="configuration"
-                 min="0" max="2">
+      <parameter name="config_4_1" type="integer" groupName="configuration">
         <label>4: Dimmer mode</label>
         <description><![CDATA[
 The dimmer can work in three different modes.<br /> <h1>Overview</h1><p>The dimmer can work in three different modes: on/off, leading edge or trailing edge.</p>
@@ -249,8 +244,7 @@ The dimmer can work in three different modes.<br /> <h1>Overview</h1><p>The dimm
         </options>
       </parameter>
 
-      <parameter name="config_5_1" type="integer" groupName="configuration"
-                 min="0" max="99">
+      <parameter name="config_5_1" type="integer" groupName="configuration">
         <label>5: Dimmer minimum level</label>
         <description><![CDATA[
 This parameter specifies the actual level of the dimmer output when set to 0%<br /> <h1>Overview</h1><p>0 - 99 Corresponds to 0 – 99%<br /></p>
@@ -259,8 +253,7 @@ This parameter specifies the actual level of the dimmer output when set to 0%<br
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_6_1" type="integer" groupName="configuration"
-                 min="1" max="99">
+      <parameter name="config_6_1" type="integer" groupName="configuration">
         <label>6: Dimmer maximum level</label>
         <description><![CDATA[
 This parameter specifies the actual level of the dimmer output when set to 99%<br /> <h1>Overview</h1><p>1 - 99 Corresponds to 1 – 99%<br /></p>
@@ -306,8 +299,7 @@ This parameter can be used for enabling the enhanced LED control<br /> <h1>Overv
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_11_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_11_1" type="integer" groupName="configuration">
         <label>11: Pushbutton debounce timer</label>
         <description><![CDATA[
 Pushbutton input debounce time in 0.01 seconds resolution<br /> <h1>Overview</h1><p>1 - 255    1 – 2.55 seconds. <br /></p><p>Default is 5, which equals to a debounce-filter on 50 milliseconds (0.05 seconds).</p>
@@ -316,8 +308,7 @@ Pushbutton input debounce time in 0.01 seconds resolution<br /> <h1>Overview</h1
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_12_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_12_1" type="integer" groupName="configuration">
         <label>12: Pushbutton press threshold time</label>
         <description><![CDATA[
 Specifies the time that a pushbutton must be activated before it is detected as pressed<br /> <h1>Overview</h1><p>1 - 255   1 – 2.55 seconds, Resolution is in 0.01 seconds</p><p>Default is 20, which equals to 200 milliseconds (0.2 seconds).</p>
@@ -326,8 +317,7 @@ Specifies the time that a pushbutton must be activated before it is detected as 
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_13_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_13_1" type="integer" groupName="configuration">
         <label>13: Pushbutton held threshold time</label>
         <description><![CDATA[
 Specifies the time that a pushbutton must have been activated before it is accepted as “held-down”<br /> <h1>Overview</h1><p>1 - 255      1 – 2.55 seconds. Resolution is 0.01 seconds</p><p>Default is 50, which equals to 500 milliseconds (0,5 seconds).</p>
@@ -336,8 +326,7 @@ Specifies the time that a pushbutton must have been activated before it is accep
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_14_4" type="integer" groupName="configuration"
-                 min="-2147483646" max="2147483647">
+      <parameter name="config_14_4" type="integer" groupName="configuration">
         <label>14: Global brightness control</label>
         <description><![CDATA[
 This parameter specifies a common brightness for each of the three base colours for all four pushbutton indicators<br /> <h1>Overview</h1><p>Byte 1: Red brightness</p><p>0 - 255   Brightness level for the red colour in the 4 indicator groups. (Default is 255)<br /></p><p>Byte 2: Green brightness<br />0 – 255   Brightness level for the green colour in the 4 indicator groups. (Default is 255)</p><p>Byte 3: Blue brightness<br />0 - 255   Brightness level for the blue colour in the 4 indicator groups. (Default is 255)</p><p>Byte 4: Not used – must be set to 0.</p>
@@ -346,8 +335,7 @@ This parameter specifies a common brightness for each of the three base colours 
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_15_2" type="integer" groupName="configuration"
-                 min="-32767" max="32768">
+      <parameter name="config_15_2" type="integer" groupName="configuration">
         <label>15: Associations groups, transmission when included secure</label>
         <description><![CDATA[
 his parameter specifies if commands are transmitted as a secure message for each of the association groups<br /> <h1>Overview</h1><p>This parameter is only used when the device is included in security mode (either S0 or S2).</p><p>0 All messages in all groups are sent as insecure<br />1 Messages in association group 2 are sent as secure<br />2 Messages in association group 3 are sent as secure<br />4 Messages in association group 4 are sent as secure<br />8 Messages in association group 5 are sent as secure<br />16 Messages in association group 6 are sent as secure<br />32 Messages in association group 7 are sent as secure<br />64 Messages in association group 8 are sent as secure<br />128 Messages in association group 9 are sent as secure<br />256 Messages in association group 10 are sent as secure<br />512 Messages in association group 11 are sent as secure<br />1024 Messages in association group 12 are sent as secure<br />2048 Messages in association group 13 are sent as secure<br />4096 Messages in association group 14 are sent as secure<br />8191 Messages in all association groups are sent as secure. (Default)</p><p>NB. The above values are bitmasks and can be added up to select several options.</p>
@@ -372,8 +360,7 @@ This parameter specifies the functionality of pushbutton 1<br /> <h1>Overview</h
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_17_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_17_1" type="integer" groupName="configuration">
         <label>17: Timer value for pushbutton 1</label>
         <description><![CDATA[
 This parameter specifies the time used in parameter 16<br /> <h1>Overview</h1><p>This parameter specifies the time used in previous configuration parameter. This parameter is only applicable if previous parameter has value 1 or 2.<br /><br />Specifies the time in seconds. Default is 300 = 5 minutes.</p>
@@ -382,8 +369,7 @@ This parameter specifies the time used in parameter 16<br /> <h1>Overview</h1><p
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_18_4" type="integer" groupName="configuration"
-                 min="-2147483646" max="2147483647">
+      <parameter name="config_18_4" type="integer" groupName="configuration">
         <label>18: Multi-Level Switch Set values for pushbutton 1</label>
         <description><![CDATA[
 Multi-Level Switch Set values for pushbutton 1<br /> <h1>Overview</h1><p>Byte 1: Enable / Disable</p><p>0 Disabled – A single activation of the pushbutton will not send commands to devices in association group 4.</p><p>1 Enabled – A single activation will send commands to devices in association group 4. Devices will receive commands with the values set in Byte 2 and 3 (Default).</p><p>Byte 2: Upper switch value</p><p>0 – 99,255 When single pressing the pushbutton for ON, a Multilevel Switch Set with this value will be send to devices in association group 4. (Default = 255)</p><p>Byte 3: Lower switch value</p><p>0 - 99 When single pressing the pushbutton for OFF, a Multilevel Switch Set with this value will be send to devices in association group 4. (Default = 0)</p><p>Byte 4: Not used – must be set to 0.</p>
@@ -392,8 +378,7 @@ Multi-Level Switch Set values for pushbutton 1<br /> <h1>Overview</h1><p>Byte 1:
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_19_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_19_1" type="integer" groupName="configuration">
         <label>19: Basic Set support for pushbutton 1</label>
         <description><![CDATA[
 This parameter specifies how received Basic Set commands are handled<br /> <h1>Overview</h1><p>0 Basic Set only controls the pushbutton indicator LEDs, ON/OFF. (Default)</p><p>1 Basic Set controls the internal switch status and the pushbutton indicator LEDs.</p><p>2 Basic Set is handled as if the user had activated the pushbutton, including transmission of commands via the association groups.</p>
@@ -402,8 +387,7 @@ This parameter specifies how received Basic Set commands are handled<br /> <h1>O
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_20_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_20_1" type="integer" groupName="configuration">
         <label>20: Pushbutton 1 LED indication.</label>
         <description><![CDATA[
 This parameter specifies how the LED indication is controlled<br /> <h1>Overview</h1><p>0 Internal LED control is disabled, only external commands control the indication.</p><p>1 The LED indication follows the switch status.</p><p>2 The LED indication follows the switch status – with inverted functionality.</p><p>3 Same as 1</p><p>4 Same as 2</p><p>5 The LED indication follows the status of the internal dimmer, ON or OFF.</p><p>6 The LED indication follows the status of the internal dimmer with inverted  functionality, ON or OFF.</p><p>7 The LED indicator is ON for 5 seconds when the pushbutton is activated. (Default).</p>
@@ -412,8 +396,7 @@ This parameter specifies how the LED indication is controlled<br /> <h1>Overview
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_21_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_21_1" type="integer" groupName="configuration">
         <label>21: Colour commands for pushbutton 1 LED indication</label>
         <description><![CDATA[
 This parameter specifies how Command Class Switch Color commands are handled<br /> <h1>Overview</h1><p>0 Direct control; the LED indication shows the received colour immediately, until the pushbutton is activated.</p><p>1 Colour command sets the colour for OFF indication. (Default).</p><p>2 Colour command sets the colour for ON indication.</p>
@@ -422,8 +405,7 @@ This parameter specifies how Command Class Switch Color commands are handled<br 
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_22_4" type="integer" groupName="configuration"
-                 min="-2147483646" max="2147483647">
+      <parameter name="config_22_4" type="integer" groupName="configuration">
         <label>22: ON indication RGB-saturation for pushbutton 1</label>
         <description><![CDATA[
 This parameter specifies the saturation levels when ON status is indicated<br /> <h1>Overview</h1><p>This parameter specifies the saturation levels for the red, green and blue LEDs, when ON status is indicated. (Default is the ON-state indicated by a 50% blue colour).</p><p>Byte 1: Colour saturation, red.<br />0 - 255 Specifies the saturation for the red LEDs. (Default is 0)</p><p>Byte 2: Colour saturation, green.<br />0 – 255 Specifies the saturation for the green LEDs. (Default is 0)</p><p>Byte 3: Colour saturation, blue.<br />0 - 255 Specifies the saturation for the blue LEDs. (Default is 127)</p><p>Byte 4: LED control.<br />0 - 255 LED indicator control; see the application note about this parameter.(Default is 0)</p>
@@ -432,8 +414,7 @@ This parameter specifies the saturation levels when ON status is indicated<br />
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_23_4" type="integer" groupName="configuration"
-                 min="-2147483646" max="2147483647">
+      <parameter name="config_23_4" type="integer" groupName="configuration">
         <label>23: OFF indication RGB-saturation for pushbutton 1</label>
         <description><![CDATA[
 This parameter specifies the saturation levels when OFF status is indicated<br /> <h1>Overview</h1><p>This parameter specifies the saturation levels for the red, green and blue LEDs, when OFF status is indicated. (Default is the OFF-state indicated as a low white light on 5%)</p><p>Byte 1: Colour saturation, red.<br />0 - 255  Specifies the saturation for the red LEDs. (Default is 47).</p><p>Byte 2: Colour saturation, green.<br />0 – 255  Specifies the saturation for the green LEDs. (Default is 47)</p><p>Byte 3: Colour saturation, blue.<br />0 - 255  Specifies the saturation for the blue LEDs. (Default is 47)</p><p>Byte 4: LED control.<br />0 - 255  LED indicator control; see the application note about this parameter. (Default is 0)</p>

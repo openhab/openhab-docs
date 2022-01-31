@@ -47,8 +47,7 @@ Power Switch EU<br /> <h1>Overview</h1><p>Basic operations</p> <ul><li>The Power
       </parameter-group>
 
       <!-- PARAMETER DEFINITIONS -->
-      <parameter name="config_1_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_1_1" type="integer" groupName="configuration">
         <label>1: Set to Default</label>
         <description><![CDATA[
 Set all configuration values to default values (factory settings)<br /> <h1>Overview</h1><p>All values (0x00 – 0xFF) except for 0x55 can be used to default all the configuration params .</p>
@@ -57,8 +56,7 @@ Set all configuration values to default values (factory settings)<br /> <h1>Over
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_4_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_4_1" type="integer" groupName="configuration">
         <label>4: Start up with last known socket status</label>
         <description><![CDATA[
 state in what the switch is when power is supplied<br /> <h1>Overview</h1><p>If 0x01–0xFF: When power applied socket is the state before power was disconnected</p>
@@ -67,8 +65,7 @@ state in what the switch is when power is supplied<br /> <h1>Overview</h1><p>If 
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_9_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_9_1" type="integer" groupName="configuration">
         <label>9: Relay delay time</label>
         <description><![CDATA[
 Relay delay time<br /> <h1>Overview</h1><p>When the relay is switched it can't be switched again until the configured time has passed</p> <p>Value * 10 milliseconds</p>
@@ -77,8 +74,7 @@ Relay delay time<br /> <h1>Overview</h1><p>When the relay is switched it can't b
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_10_1" type="integer" groupName="configuration"
-                 min="0" max="2">
+      <parameter name="config_10_1" type="integer" groupName="configuration">
         <label>10: Led indicator</label>
         <description><![CDATA[
 Show the led compared to the relay state<br /> <h1>Overview</h1><p>If value is 0: the indicator led is never switched on If value is 1: the indicator led is switched on when relay is switched on If value is 2: the indicator led is switched on when relay is switched off</p>

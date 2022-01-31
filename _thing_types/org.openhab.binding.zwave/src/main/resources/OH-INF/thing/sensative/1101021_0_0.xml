@@ -64,8 +64,7 @@ Strips Guard<br /> <h1>Overview</h1><p>Strips Guard 700 is a magnetic sensor for
       </parameter-group>
 
       <!-- PARAMETER DEFINITIONS -->
-      <parameter name="config_1_1" type="integer" groupName="configuration"
-                 min="0" max="2">
+      <parameter name="config_1_1" type="integer" groupName="configuration">
         <label>1: Notification type</label>
         <description><![CDATA[
 Select the notification type for the door and window or close events.<br /> <h1>Overview</h1><p><br /></p>
@@ -78,8 +77,7 @@ Select the notification type for the door and window or close events.<br /> <h1>
         </options>
       </parameter>
 
-      <parameter name="config_2_1" type="integer" groupName="configuration"
-                 min="0" max="1">
+      <parameter name="config_2_1" type="integer" groupName="configuration">
         <label>2: LED alarm event reporting</label>
         <description><![CDATA[
 Turn On or Off LED for specific event indications (ex. alarms).<br /> <h1>Overview</h1><p><br /></p>
@@ -91,8 +89,7 @@ Turn On or Off LED for specific event indications (ex. alarms).<br /> <h1>Overvi
         </options>
       </parameter>
 
-      <parameter name="config_15_1" type="integer" groupName="configuration"
-                 min="0" max="2">
+      <parameter name="config_15_1" type="integer" groupName="configuration">
         <label>15: Activate supervision</label>
         <description><![CDATA[
 Activate Supervision command for only important alarm events or all events. Supervised commands require a confirmation from the gateway when a notification is received.<br /> <h1>Overview</h1><p>0 - Events sent with S2 Encapsulation only</p><p>1 - Only Door Open Alarm Report (Events sent with S2 and supervision encapsulation)</p><p>2 - Unsolicited reports (Door Open/Close, Tamper clear, Wake up notification and Battery Report events sent with S2 and supervision encapsulation)</p>
@@ -105,8 +102,7 @@ Activate Supervision command for only important alarm events or all events. Supe
         </options>
       </parameter>
 
-      <parameter name="config_16_2" type="integer" groupName="configuration"
-                 min="500" max="30000">
+      <parameter name="config_16_2" type="integer" groupName="configuration">
         <label>16: Supervision wait time</label>
         <description>The number of miliseconds to wait for a Supervision response when a Supervised message is sent.</description>
         <default>10000</default>
@@ -114,8 +110,7 @@ Activate Supervision command for only important alarm events or all events. Supe
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_17_1" type="integer" groupName="configuration"
-                 min="0" max="5">
+      <parameter name="config_17_1" type="integer" groupName="configuration">
         <label>17: No. of failed event retries</label>
         <description>Number of retries when a confirmation is not received.</description>
         <default>1</default>
@@ -123,8 +118,7 @@ Activate Supervision command for only important alarm events or all events. Supe
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_18_1" type="integer" groupName="configuration"
-                 min="1" max="60">
+      <parameter name="config_18_1" type="integer" groupName="configuration">
         <label>18: Failed event retry interval</label>
         <description>The minimum number of seconds between retries.</description>
         <default>6</default>
@@ -132,8 +126,7 @@ Activate Supervision command for only important alarm events or all events. Supe
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_19_1" type="integer" groupName="configuration"
-                 min="5" max="70">
+      <parameter name="config_19_1" type="integer" groupName="configuration">
         <label>19: Heartbeat interval</label>
         <description>Number of minutes between periodic battery reports (Accepts multiples of 5 mins, any arbitrary value in between 5 and 70 will be rounded up to a multiple of 5).</description>
         <default>70</default>
@@ -141,8 +134,7 @@ Activate Supervision command for only important alarm events or all events. Supe
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_22_1" type="integer" groupName="configuration"
-                 min="0" max="1">
+      <parameter name="config_22_1" type="integer" groupName="configuration">
         <label>22: Security Level</label>
         <description><![CDATA[
 Select the level of security.<br /> <h1>Overview</h1><p>0 - Standard (Forces parameter behavior as follows: #16=10000; #17=Sensative standard (retries with an incrementally longer period until reconnected); #18=0; #19=Off)</p><p>1 - High Security (Enables parameters #16-#19; #1=2; #15=2)</p>

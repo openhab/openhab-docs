@@ -102,8 +102,7 @@ Touchscreen Deadbolt<br /> <h1>Overview</h1><p>Z-Wave Enabled residential auto-t
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_16_1" type="integer" groupName="configuration"
-                 min="4" max="8">
+      <parameter name="config_16_1" type="integer" groupName="configuration">
         <label>16: User Code PIN Length</label>
         <description>User codes can be 4-8 digits. Changing length will delete all existing codes.</description>
         <default>4</default>

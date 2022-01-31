@@ -171,24 +171,21 @@ Outputs orientation<br /> <h1>Overview</h1><p>This parameter allows reversing th
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_30_4_0000FF00" type="integer" groupName="configuration"
-                 min="0" max="255">
+      <parameter name="config_30_4_0000FF00" type="integer" groupName="configuration">
         <label>30: Event/State Parameters - Blinda</label>
         <description>Event/State Parameters for blinds</description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_30_4_00FF0000" type="integer" groupName="configuration"
-                 min="0" max="255">
+      <parameter name="config_30_4_00FF0000" type="integer" groupName="configuration">
         <label>30: Notification Status for Blinds</label>
         <description>Notification Status for Blinds</description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_30_4_7F000000" type="integer" groupName="configuration"
-                 min="0" max="255">
+      <parameter name="config_30_4_7F000000" type="integer" groupName="configuration">
         <label>30: Notification Type for Blinds</label>
         <description>Notification Type for Blinds</description>
         <default>0</default>
@@ -207,24 +204,21 @@ Outputs orientation<br /> <h1>Overview</h1><p>This parameter allows reversing th
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_31_4_0000FF00" type="integer" groupName="configuration"
-                 min="0" max="255">
+      <parameter name="config_31_4_0000FF00" type="integer" groupName="configuration">
         <label>31: Event/State Parameters for Water</label>
         <description>Event/State Parameters for Water</description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_31_4_00FF0000" type="integer" groupName="configuration"
-                 min="0" max="255">
+      <parameter name="config_31_4_00FF0000" type="integer" groupName="configuration">
         <label>31: Notification Status for Water</label>
         <description>Notification Status for Water</description>
         <default>255</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_31_4_7F000000" type="integer" groupName="configuration"
-                 min="0" max="255">
+      <parameter name="config_31_4_7F000000" type="integer" groupName="configuration">
         <label>31: Notification Type for Water</label>
         <description>Notification Type for Water</description>
         <default>5</default>
@@ -243,24 +237,21 @@ Outputs orientation<br /> <h1>Overview</h1><p>This parameter allows reversing th
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_32_4_0000FF00" type="integer" groupName="configuration"
-                 min="0" max="255">
+      <parameter name="config_32_4_0000FF00" type="integer" groupName="configuration">
         <label>32: Event/State Parameters for Smoke</label>
         <description>Event/State Parameters for Smoke</description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_32_4_00FF0000" type="integer" groupName="configuration"
-                 min="0" max="255">
+      <parameter name="config_32_4_00FF0000" type="integer" groupName="configuration">
         <label>32: Notification Status for Smoke</label>
         <description>Notification Status for Smoke</description>
         <default>255</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_32_4_7F000000" type="integer" groupName="configuration" readOnly="true"
-                 min="0" max="255">
+      <parameter name="config_32_4_7F000000" type="integer" groupName="configuration" readOnly="true">
         <label>32: Notification Type for Smoke</label>
         <description>Notification Type for Smoke</description>
         <default>1</default>
@@ -279,16 +270,14 @@ Outputs orientation<br /> <h1>Overview</h1><p>This parameter allows reversing th
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_33_4_0000FF00" type="integer" groupName="configuration" readOnly="true"
-                 min="0" max="255">
+      <parameter name="config_33_4_0000FF00" type="integer" groupName="configuration" readOnly="true">
         <label>33: Event/State Parameters for CO</label>
         <description>Event/State Parameters for CO</description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_33_4_00FF0000" type="integer" groupName="configuration"
-                 min="0" max="255">
+      <parameter name="config_33_4_00FF0000" type="integer" groupName="configuration">
         <label>33: Notification Status for CO</label>
         <description>Notification Status for CO</description>
         <default>255</default>
@@ -314,40 +303,35 @@ Outputs orientation<br /> <h1>Overview</h1><p>This parameter allows reversing th
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_34_4_0000FF00" type="integer" groupName="configuration"
-                 min="0" max="255">
+      <parameter name="config_34_4_0000FF00" type="integer" groupName="configuration">
         <label>34: Event/State Parameters for Heat</label>
         <description>Event/State Parameters for Heat</description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_34_4_00FF0000" type="integer" groupName="configuration"
-                 min="0" max="255">
+      <parameter name="config_34_4_00FF0000" type="integer" groupName="configuration">
         <label>34: Notification Status for Heat</label>
         <description>Notification Status for Heat</description>
         <default>255</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_34_4_7F000000" type="integer" groupName="configuration"
-                 min="0" max="255">
+      <parameter name="config_34_4_7F000000" type="integer" groupName="configuration">
         <label>34: Notification Status for Heat</label>
         <description>Notification Status for Heat</description>
         <default>4</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_40_1" type="integer" groupName="configuration"
-                 min="0" max="15">
+      <parameter name="config_40_1" type="integer" groupName="configuration">
         <label>40: S1 Switch Scenes sent</label>
         <description>Parameter values may be combined</description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_41_1" type="integer" groupName="configuration"
-                 min="0" max="15">
+      <parameter name="config_41_1" type="integer" groupName="configuration">
         <label>41: S2 Switch Scenes sent</label>
         <description>Parameter values may be combined</description>
         <default>0</default>
@@ -365,32 +349,28 @@ Outputs orientation<br /> <h1>Overview</h1><p>This parameter allows reversing th
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_61_2" type="integer" groupName="configuration"
-                 min="0" max="500">
+      <parameter name="config_61_2" type="integer" groupName="configuration">
         <label>61: Power reports - on change</label>
         <description>Power reports - on change</description>
         <default>15</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_62_2" type="integer" groupName="configuration"
-                 min="0" max="32400">
+      <parameter name="config_62_2" type="integer" groupName="configuration">
         <label>62: Power reports - periodic</label>
         <description>Power reports - periodic</description>
         <default>3600</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_65_2" type="integer" groupName="configuration"
-                 min="0" max="500">
+      <parameter name="config_65_2" type="integer" groupName="configuration">
         <label>65: Energy reports - on change</label>
         <description>Energy reports - on change</description>
         <default>10</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_66_2" type="integer" groupName="configuration"
-                 min="0" max="32400">
+      <parameter name="config_66_2" type="integer" groupName="configuration">
         <label>66: Energy reports - periodic</label>
         <description>Energy reports - periodic</description>
         <default>3600</default>
@@ -428,8 +408,7 @@ Operating mode<br /> <h1>Overview</h1><p>This parameter allows adjusting operati
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_152_4" type="integer" groupName="configuration"
-                 min="0" max="90000">
+      <parameter name="config_152_4" type="integer" groupName="configuration">
         <label>152: Venetian blind - time of full turn of the slats</label>
         <description>Venetian blind - time of full turn of the slats</description>
         <default>150</default>
@@ -450,32 +429,28 @@ Set slats back to previous position<br /> <h1>Overview</h1><p>For Venetian blind
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_154_2" type="integer" groupName="configuration"
-                 min="0" max="600">
+      <parameter name="config_154_2" type="integer" groupName="configuration">
         <label>154: Delay motor stop</label>
         <description>Delay motor stop after reaching end switch</description>
         <default>10</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_155_2" type="integer" groupName="configuration"
-                 min="0" max="255">
+      <parameter name="config_155_2" type="integer" groupName="configuration">
         <label>155: Motor operation detection</label>
         <description>Motor operation detection</description>
         <default>10</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_156_4" type="integer" groupName="configuration"
-                 min="0" max="90000">
+      <parameter name="config_156_4" type="integer" groupName="configuration">
         <label>156: Time of up movement</label>
         <description>Time of up movement</description>
         <default>6000</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_157_4" type="integer" groupName="configuration"
-                 min="0" max="90000">
+      <parameter name="config_157_4" type="integer" groupName="configuration">
         <label>157: Time of down movement</label>
         <description>Time of down movement</description>
         <default>6000</default>

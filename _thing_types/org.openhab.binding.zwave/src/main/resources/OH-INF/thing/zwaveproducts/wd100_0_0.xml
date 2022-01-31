@@ -65,32 +65,28 @@ In-Wall Dimmer<br /> <h1>Overview</h1><ul><li>Works with incandescent and dimmab
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_7_1" type="integer" groupName="configuration"
-                 min="1" max="99">
+      <parameter name="config_7_1" type="integer" groupName="configuration">
         <label>7: Remote dim level increment</label>
         <description>Number of dim levels to change for each dim step when remotely commanded</description>
         <default>1</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_8_2" type="integer" groupName="configuration"
-                 min="1" max="255">
+      <parameter name="config_8_2" type="integer" groupName="configuration">
         <label>8: Remote dim step duration</label>
         <description>Interval between dimming steps when remotely commanded</description>
         <default>3</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_9_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_9_1" type="integer" groupName="configuration">
         <label>9: Dim Level Increment</label>
         <description>Indicates the number of levels (1-99) to change dimming each step</description>
         <default>1</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_10_2" type="integer" groupName="configuration"
-                 min="0" max="255">
+      <parameter name="config_10_2" type="integer" groupName="configuration">
         <label>10: Step Duration</label>
         <description>The number of tens of milliseconds (1-255) to delay on each dimming step.</description>
         <default>3</default>

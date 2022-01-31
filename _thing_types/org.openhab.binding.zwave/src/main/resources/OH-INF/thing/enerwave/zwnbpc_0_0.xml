@@ -53,8 +53,7 @@ PIR Sensor<br /> <h1>Overview</h1><p>This sensor acts as a security device by de
       </parameter-group>
 
       <!-- PARAMETER DEFINITIONS -->
-      <parameter name="config_0_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_0_1" type="integer" groupName="configuration">
         <label>0: Motion timeout</label>
         <default>1</default>
         <limitToOptions>false</limitToOptions>

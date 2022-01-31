@@ -70,8 +70,7 @@ AC IR Remote<br /> <h1>Overview</h1><p>The ZXT-120 is a Z-Wave to air-conditione
       </parameter-group>
 
       <!-- PARAMETER DEFINITIONS -->
-      <parameter name="config_25_1" type="integer" groupName="configuration"
-                 min="0" max="22">
+      <parameter name="config_25_1" type="integer" groupName="configuration">
         <label>25: Location</label>
         <description><![CDATA[
 Location<br /> <h1>Overview</h1><p>Indicate a location for IR code learning and start learning</p>
@@ -80,15 +79,13 @@ Location<br /> <h1>Overview</h1><p>Indicate a location for IR code learning and 
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_26_1" type="integer" groupName="configuration" readOnly="true"
-                 min="0" max="4">
+      <parameter name="config_26_1" type="integer" groupName="configuration" readOnly="true">
         <label>26: Learning status register (Read Only)</label>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_27_2" type="integer" groupName="configuration"
-                 min="-32767" max="32768">
+      <parameter name="config_27_2" type="integer" groupName="configuration">
         <label>27: IR code number for built-in code library</label>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
@@ -124,15 +121,13 @@ Location<br /> <h1>Overview</h1><p>Indicate a location for IR code learning and 
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_35_4" type="integer" groupName="configuration" readOnly="true"
-                 min="0" max="65535">
+      <parameter name="config_35_4" type="integer" groupName="configuration" readOnly="true">
         <label>35: Learn location status. Bitmask. (Read Only)</label>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_37_1" type="integer" groupName="configuration"
-                 min="-5" max="5">
+      <parameter name="config_37_1" type="integer" groupName="configuration">
         <label>37: Sensor temperature compensation</label>
         <default>0</default>
         <limitToOptions>false</limitToOptions>

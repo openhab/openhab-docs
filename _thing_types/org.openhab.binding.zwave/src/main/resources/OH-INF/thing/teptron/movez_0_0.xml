@@ -55,32 +55,28 @@ ZWave Blind Controllers<br /> <h1>Overview</h1><p>Z-Wave retro fit blind motor.<
       </parameter-group>
 
       <!-- PARAMETER DEFINITIONS -->
-      <parameter name="config_1_1" type="integer" groupName="configuration"
-                 min="1" max="100">
+      <parameter name="config_1_1" type="integer" groupName="configuration">
         <label>1: Motor’s up speed</label>
         <description>Motor’s up speed</description>
         <default>100</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_2_1" type="integer" groupName="configuration"
-                 min="1" max="100">
+      <parameter name="config_2_1" type="integer" groupName="configuration">
         <label>2: Motor’s down speed</label>
         <description>Motor’s down speed</description>
         <default>100</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_3_1" type="integer" groupName="configuration"
-                 min="0" max="1">
+      <parameter name="config_3_1" type="integer" groupName="configuration">
         <label>3: Basic Set 0xFF support</label>
         <description>Basic Set 0xFF support</description>
         <default>1</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_4_1" type="integer" groupName="configuration"
-                 min="0" max="2">
+      <parameter name="config_4_1" type="integer" groupName="configuration">
         <label>4: Association group 02 control command preference</label>
         <description>Association group 02 control command preference</description>
         <default>0</default>

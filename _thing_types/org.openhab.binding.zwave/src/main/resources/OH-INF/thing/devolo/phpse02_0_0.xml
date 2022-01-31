@@ -71,8 +71,7 @@ Multisound indoor siren<br /> <h1>Overview</h1><p><strong>### NOTE ###</strong><
       </parameter-group>
 
       <!-- PARAMETER DEFINITIONS -->
-      <parameter name="config_7_4" type="integer" groupName="configuration"
-                 min="0" max="65535">
+      <parameter name="config_7_4" type="integer" groupName="configuration">
         <label>7: Costumer Function</label>
         <description><![CDATA[
 NotificationReport/BinaryReport<br /> <h1>Overview</h1><p>Notification Type,</p> <p>0: Using Notification Report.</p> <p>1: Using Sensor Binary Report.</p>
@@ -82,8 +81,7 @@ NotificationReport/BinaryReport<br /> <h1>Overview</h1><p>Notification Type,</p>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_29_4" type="integer" groupName="configuration"
-                 min="0" max="1">
+      <parameter name="config_29_4" type="integer" groupName="configuration">
         <label>29: Disable Alarm</label>
         <description><![CDATA[
 Disable the alarm function.<br /> <h1>Overview</h1><p>Disable the alarm function.</p> <p>1: Disable Alarm,</p> <p>0: Enable Alarm.</p> <p>Caution: After the power up, this configuration is always 0.</p>
@@ -92,8 +90,7 @@ Disable the alarm function.<br /> <h1>Overview</h1><p>Disable the alarm function
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_31_4_0000000C" type="integer" groupName="configuration"
-                 min="0" max="127">
+      <parameter name="config_31_4_0000000C" type="integer" groupName="configuration">
         <label>31: Alarm Duration</label>
         <description><![CDATA[
 Play alarm sound duration.<br /> <h1>Overview</h1><p>Play alarm sound duration, 1 tick is 30 seconds.</p> <p>Default is 3 minutes, maximum is 63.5 minutes.</p> <p>0 means never auto stop.</p>

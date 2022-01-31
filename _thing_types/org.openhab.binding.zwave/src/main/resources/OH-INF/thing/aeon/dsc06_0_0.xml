@@ -101,8 +101,7 @@ Enable or disable automatic notifications<br /> <h1>Overview</h1><p>Enables auto
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_91_2" type="integer" groupName="configuration"
-                 min="-32767" max="32768">
+      <parameter name="config_91_2" type="integer" groupName="configuration">
         <label>91: Minimum change in wattage</label>
         <description><![CDATA[
 Minimum change in wattage to trigger event<br /> <h1>Overview</h1><p>The value here represents minimum change in wattage (in terms of wattage) for a REPORT to be sent.</p>
@@ -111,8 +110,7 @@ Minimum change in wattage to trigger event<br /> <h1>Overview</h1><p>The value h
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_92_1" type="integer" groupName="configuration"
-                 min="0" max="100">
+      <parameter name="config_92_1" type="integer" groupName="configuration">
         <label>92: Minimum change in wattage %</label>
         <description><![CDATA[
 Minimum change in wattage % to trigger event<br /> <h1>Overview</h1><p>The value here represents minimum change in wattage percent (in terms of percentage) for a REPORT to be sent.</p>
@@ -180,32 +178,28 @@ Minimum change in wattage % to trigger event<br /> <h1>Overview</h1><p>The value
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_111_4" type="integer" groupName="configuration"
-                 min="1" max="65535">
+      <parameter name="config_111_4" type="integer" groupName="configuration">
         <label>111: Interval Group 1</label>
         <description>The time interval (in seconds) for sending report to Group 1</description>
         <default>600</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_112_4" type="integer" groupName="configuration"
-                 min="1" max="65535">
+      <parameter name="config_112_4" type="integer" groupName="configuration">
         <label>112: Interval Group 2</label>
         <description>The time interval (in seconds) for sending report to Group 2</description>
         <default>600</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_113_4" type="integer" groupName="configuration"
-                 min="1" max="65535">
+      <parameter name="config_113_4" type="integer" groupName="configuration">
         <label>113: Interval Group 3</label>
         <description>The time interval (in seconds) for sending report to Group 3</description>
         <default>600</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_254_2" type="integer" groupName="configuration"
-                 min="-32767" max="32768">
+      <parameter name="config_254_2" type="integer" groupName="configuration">
         <label>254: Device Tag</label>
         <default>0</default>
         <limitToOptions>false</limitToOptions>

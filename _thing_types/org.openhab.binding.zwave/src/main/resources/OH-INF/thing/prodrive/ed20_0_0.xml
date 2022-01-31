@@ -83,8 +83,7 @@ Eneco Meter Adapter<br /> <h1>Overview</h1><p>The meter adapter measures gas and
       </parameter-group>
 
       <!-- PARAMETER DEFINITIONS -->
-      <parameter name="config_1_1" type="integer" groupName="configuration"
-                 min="0" max="2">
+      <parameter name="config_1_1" type="integer" groupName="configuration">
         <label>1: Analog gas/heat port mode</label>
         <description>Analog gas/heat port mode</description>
         <default>1</default>
@@ -95,8 +94,7 @@ Eneco Meter Adapter<br /> <h1>Overview</h1><p>The meter adapter measures gas and
         </options>
       </parameter>
 
-      <parameter name="config_2_4" type="integer" groupName="configuration"
-                 min="0" max="65535">
+      <parameter name="config_2_4" type="integer" groupName="configuration">
         <label>2: Analog gas/heat port resolution</label>
         <description><![CDATA[
 Analog gas/heat port resolution<br /> <h1>Overview</h1><p>pulses per cubic meter / pulses per MJ; in Q14.2 notation</p>
@@ -105,8 +103,7 @@ Analog gas/heat port resolution<br /> <h1>Overview</h1><p>pulses per cubic meter
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_3_1" type="integer" groupName="configuration"
-                 min="0" max="3">
+      <parameter name="config_3_1" type="integer" groupName="configuration">
         <label>3: Analog electricity port mode</label>
         <description>Analog electricity port mode</description>
         <default>1</default>
@@ -117,8 +114,7 @@ Analog gas/heat port resolution<br /> <h1>Overview</h1><p>pulses per cubic meter
         </options>
       </parameter>
 
-      <parameter name="config_4_4" type="integer" groupName="configuration"
-                 min="0" max="65535">
+      <parameter name="config_4_4" type="integer" groupName="configuration">
         <label>4: Analog electricity port resolution</label>
         <description><![CDATA[
 Analog electricity port resolution<br /> <h1>Overview</h1><p>pulses per kWh; in Q14.2 notation</p>

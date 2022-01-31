@@ -60,8 +60,7 @@ Dual Paddle Wall Dimmer<br /> <h1>Overview</h1><p>Dual Paddle Wall Dimmer, AC230
       </parameter-group>
 
       <!-- PARAMETER DEFINITIONS -->
-      <parameter name="config_1_1" type="integer" groupName="configuration"
-                 min="0" max="1">
+      <parameter name="config_1_1" type="integer" groupName="configuration">
         <label>1: Night Light</label>
         <description><![CDATA[
 LED Mode<br /> <h1>Overview</h1><p>The LED on the switch will by default, turn ON when the load attached is turn OFF. To make the LED turn ON when the load attached is turn ON instead, set parameter 1 to a value of 1.</p>
@@ -70,8 +69,7 @@ LED Mode<br /> <h1>Overview</h1><p>The LED on the switch will by default, turn O
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_2_1" type="integer" groupName="configuration"
-                 min="0" max="1">
+      <parameter name="config_2_1" type="integer" groupName="configuration">
         <label>2: Memory Function</label>
         <description><![CDATA[
 Switch memory function<br /> <h1>Overview</h1><p>Stated in the above form, switch by default value is 1, when the value is 0, switch memory function not open; when the value is 1, open switch memory function.</p>
@@ -80,8 +78,7 @@ Switch memory function<br /> <h1>Overview</h1><p>Stated in the above form, switc
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_3_1" type="integer" groupName="configuration"
-                 min="0" max="1">
+      <parameter name="config_3_1" type="integer" groupName="configuration">
         <label>3: Invert Switch</label>
         <description><![CDATA[
 Reverse switch direction<br /> <h1>Overview</h1><p>To change the top of the switch to OFF and the bottom of the switch ON, set parameter 3 to 1.<br />Note: if you invert the switches and also install the product upside down, remember the load will now be controlled by the right, not the left switch.</p>
@@ -90,8 +87,7 @@ Reverse switch direction<br /> <h1>Overview</h1><p>To change the top of the swit
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_4_1" type="integer" groupName="configuration"
-                 min="0" max="2">
+      <parameter name="config_4_1" type="integer" groupName="configuration">
         <label>4: LED Transmission Indication</label>
         <description><![CDATA[
 Set LED flickering mode<br /> <h1>Overview</h1><p>The switch will flicker its LED when it is transmitting to any of its 4 groups. This flickering can be set to not flicker at all (set to 0), to flicker the entire time it is transmitting (set to 2), or to flicker for only 1 second when it begins transmitting (set to 1).<br />By default, the switch is set to flicker for only 1 second.</p>
@@ -100,8 +96,7 @@ Set LED flickering mode<br /> <h1>Overview</h1><p>The switch will flicker its LE
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_5_1" type="integer" groupName="configuration"
-                 min="0" max="1">
+      <parameter name="config_5_1" type="integer" groupName="configuration">
         <label>5: Suspend Group 4</label>
         <description><![CDATA[
 Disable transmitting commands to devices that are in Group 4<br /> <h1>Overview</h1><p>You may wish to disable transmitting commands to Z-Wave devices that are in Group 4 without “disassociating” those devices from from the group. Setting parameter 5 to the value of 1 will stop the switch from transmitting to devices that are “associated” into Group 4.</p>

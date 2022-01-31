@@ -90,8 +90,7 @@ In Wall Dimmer module<br /> <h1>Overview</h1><p>Z-Wave Built-in receiver with di
       </parameter-group>
 
       <!-- PARAMETER DEFINITIONS -->
-      <parameter name="config_2_1" type="integer" groupName="configuration"
-                 min="0" max="2">
+      <parameter name="config_2_1" type="integer" groupName="configuration">
         <label>2: State after Power Failure</label>
         <description>State after Power Failure</description>
         <default>2</default>
@@ -102,8 +101,7 @@ In Wall Dimmer module<br /> <h1>Overview</h1><p>Z-Wave Built-in receiver with di
         </options>
       </parameter>
 
-      <parameter name="config_3_1" type="integer" groupName="configuration"
-                 min="0" max="1">
+      <parameter name="config_3_1" type="integer" groupName="configuration">
         <label>3: Basic Report on Load Change</label>
         <description>Basic Report on Load Change</description>
         <default>1</default>
@@ -125,8 +123,7 @@ Default Fade Time in Seconds<br /> <h1>Overview</h1><p><br /></p>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_5_1" type="integer" groupName="configuration"
-                 min="0" max="50">
+      <parameter name="config_5_1" type="integer" groupName="configuration">
         <label>5: Minimum Brightness Value</label>
         <description><![CDATA[
 Minimum Brightness Value<br /> <h1>Overview</h1><p>Higher number is higher minimum brightness</p>
@@ -135,8 +132,7 @@ Minimum Brightness Value<br /> <h1>Overview</h1><p>Higher number is higher minim
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_6_1" type="integer" groupName="configuration"
-                 min="0" max="100">
+      <parameter name="config_6_1" type="integer" groupName="configuration">
         <label>6: Maximum Brightness Value</label>
         <description><![CDATA[
 Maximum Brightness Value<br /> <h1>Overview</h1><p>Higher is brighter</p>
@@ -145,8 +141,7 @@ Maximum Brightness Value<br /> <h1>Overview</h1><p>Higher is brighter</p>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_7_1" type="integer" groupName="configuration"
-                 min="0" max="1">
+      <parameter name="config_7_1" type="integer" groupName="configuration">
         <label>7: MOSFET driving type</label>
         <description>MOSFET driving type</description>
         <default>0</default>
@@ -156,8 +151,7 @@ Maximum Brightness Value<br /> <h1>Overview</h1><p>Higher is brighter</p>
         </options>
       </parameter>
 
-      <parameter name="config_8_1" type="integer" groupName="configuration"
-                 min="0" max="2">
+      <parameter name="config_8_1" type="integer" groupName="configuration">
         <label>8: External Switch Type</label>
         <description>External Switch Type</description>
         <default>0</default>
@@ -168,8 +162,7 @@ Maximum Brightness Value<br /> <h1>Overview</h1><p>Higher is brighter</p>
         </options>
       </parameter>
 
-      <parameter name="config_9_1" type="integer" groupName="configuration"
-                 min="0" max="1">
+      <parameter name="config_9_1" type="integer" groupName="configuration">
         <label>9: External Switch network management</label>
         <description>External Switch network management</description>
         <default>1</default>
@@ -179,8 +172,7 @@ Maximum Brightness Value<br /> <h1>Overview</h1><p>Higher is brighter</p>
         </options>
       </parameter>
 
-      <parameter name="config_10_1" type="integer" groupName="configuration" readOnly="true"
-                 min="0" max="2">
+      <parameter name="config_10_1" type="integer" groupName="configuration" readOnly="true">
         <label>10: Detect Load after Power On</label>
         <description><![CDATA[
 Detect Load after Power On<br /> <h1>Overview</h1><p>detect load type, minimum brightness, maximum brightness</p>
@@ -222,8 +214,7 @@ Load Type<br /> <h1>Overview</h1><p><br /></p>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_13_1" type="integer" groupName="configuration"
-                 min="0" max="1">
+      <parameter name="config_13_1" type="integer" groupName="configuration">
         <label>13: Over Current Protection</label>
         <description><![CDATA[
 Over Current Protection<br /> <h1>Overview</h1><p>Over 1.5A for 20 seconds continuously</p>
@@ -235,16 +226,14 @@ Over Current Protection<br /> <h1>Overview</h1><p>Over 1.5A for 20 seconds conti
         </options>
       </parameter>
 
-      <parameter name="config_15_1" type="integer" groupName="configuration"
-                 min="0" max="100">
+      <parameter name="config_15_1" type="integer" groupName="configuration">
         <label>15: Power Report Percent Threshold</label>
         <description>Power Report Percent Threshold</description>
         <default>20</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_21_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_21_1" type="integer" groupName="configuration">
         <label>21: Power Metering Cycle</label>
         <description><![CDATA[
 Power Metering Cycle<br /> <h1>Overview</h1><p>Default 600 is 10 minutes</p>
@@ -253,8 +242,7 @@ Power Metering Cycle<br /> <h1>Overview</h1><p>Default 600 is 10 minutes</p>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_22_4" type="integer" groupName="configuration"
-                 min="5" max="2678400">
+      <parameter name="config_22_4" type="integer" groupName="configuration">
         <label>22: Energy Metering Cycle</label>
         <description><![CDATA[
 Energy Metering Cycle<br /> <h1>Overview</h1><p>Default 1800 is 30 minutes</p>
@@ -263,16 +251,14 @@ Energy Metering Cycle<br /> <h1>Overview</h1><p>Default 1800 is 30 minutes</p>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_23_4" type="integer" groupName="configuration"
-                 min="5" max="2678400">
+      <parameter name="config_23_4" type="integer" groupName="configuration">
         <label>23: Voltage Metering Cycle</label>
         <description>Voltage Metering Cycle</description>
         <default>3600</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_24_4" type="integer" groupName="configuration"
-                 min="5" max="2678400">
+      <parameter name="config_24_4" type="integer" groupName="configuration">
         <label>24: Current Metering Cycle</label>
         <description>Current Metering Cycle</description>
         <default>3600</default>

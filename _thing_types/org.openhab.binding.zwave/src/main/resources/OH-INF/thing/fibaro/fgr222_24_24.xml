@@ -117,8 +117,7 @@ Roller Shutter 2<br /> <h1>Overview</h1><p>The device allows for controlling mot
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_12_2" type="integer" groupName="configuration"
-                 min="-32767" max="32768">
+      <parameter name="config_12_2" type="integer" groupName="configuration">
         <label>12: Turning time/ delay time</label>
         <description><![CDATA[
 depending on mode, turning time or delay time<br /> <h1>Overview</h1><p>In Venetian Blind mode (parameter 10 set to 2) the parameter determines time of full turn of the lamellas.</p> <p>In Gate Mode (parameter 10 set to 3 or 4) the parameter defines the delay time after which an open gate starts closing.Type range</p>
@@ -155,8 +154,7 @@ either Toggle switches or a single, momentary switch.<br /> <h1>Overview</h1><p>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_17_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_17_1" type="integer" groupName="configuration">
         <label>17: Delay time after S2</label>
         <description><![CDATA[
 delay till auto turned off or auto gate close<br /> <h1>Overview</h1><p>17. In Roller Blind Mode or Venetian Blind mode (parameter 10 set to 0, 1, 2) the parameter determines when the Roller Shutter relays are turned off after reaching a limit switch. In Gate Mode (parameter 10 set to 3 or 4) the parameter determines a time period after which a gate will start closing after a S2 contact has been disconnected. In this mode, time to turn off the Roller Shutter relays after reaching a limit switch is set to 3 seconds and cannot be modified.</p> <p>Value of 0 means the gate will note close automatically. <br />Available settings: 0 - 255 (0,1-25,5s). <br />Default setting: 10 (1s). <br />Parameter size: 1 [byte]</p>
@@ -165,16 +163,14 @@ delay till auto turned off or auto gate close<br /> <h1>Overview</h1><p>17. In R
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_18_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_18_1" type="integer" groupName="configuration">
         <label>18: Motor operation detection</label>
         <description>Power threshold to be interpreted as reaching a limit switch.</description>
         <default>10</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_22_2" type="integer" groupName="configuration"
-                 min="-32767" max="32768">
+      <parameter name="config_22_2" type="integer" groupName="configuration">
         <label>22: Motor operation time</label>
         <description>Time period for the motor to continue operation.</description>
         <default>10</default>
@@ -251,8 +247,7 @@ set to 1 will enter calibration mode<br /> <h1>Overview</h1><p>29. Forced Roller
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_40_1" type="integer" groupName="configuration"
-                 min="0" max="100">
+      <parameter name="config_40_1" type="integer" groupName="configuration">
         <label>40: Power reports</label>
         <description><![CDATA[
 change that needs to occur to trigger the power report<br /> <h1>Overview</h1><p>40. Power reports. Power level change that will result in new power value report being sent. The parameter defines a change that needs to occur in order to trigger the report. The value is a percentage of the previous report. Power report threshold available settings: 1-100 (1-100%). Value of 0 means the reports are turned off. Default setting: 10 (10%). Parameter size: 1 [byte]</p>
@@ -261,16 +256,14 @@ change that needs to occur to trigger the power report<br /> <h1>Overview</h1><p
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_42_2" type="integer" groupName="configuration"
-                 min="-32767" max="32768">
+      <parameter name="config_42_2" type="integer" groupName="configuration">
         <label>42: Periodic power or energy reports</label>
         <description>Time to the next report. Value of 0 means the reports are turned off.</description>
         <default>3600</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_43_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_43_1" type="integer" groupName="configuration">
         <label>43: Energy reports</label>
         <description><![CDATA[
 Energy threshold to trigger report<br /> <h1>Overview</h1><p>43. Energy reports. Energy level change which will result in new energy value report being sent. The parameter defines a change that needs to occur in order to trigger the report. Energy threshold available settings: 1-254 (0,01 - 2,54kWh). Value of 0 means the reports are turned off. Default setting 10 (0,1kWh). Parameter size: 1 [byte]</p>

@@ -66,8 +66,7 @@ Micro Smart Energy Illuminator<br /> <h1>Overview</h1><p>The Aeon Labs Micro SEI
       </parameter-group>
 
       <!-- PARAMETER DEFINITIONS -->
-      <parameter name="config_1_1" type="integer" groupName="configuration"
-                 min="0" max="1">
+      <parameter name="config_1_1" type="integer" groupName="configuration">
         <label>1: Type of Sensor Report</label>
         <description>Defines the value type to be sent as Sensor Report.</description>
         <default>0</default>
@@ -77,8 +76,7 @@ Micro Smart Energy Illuminator<br /> <h1>Overview</h1><p>The Aeon Labs Micro SEI
         </options>
       </parameter>
 
-      <parameter name="config_2_2" type="integer" groupName="configuration"
-                 min="-32767" max="32768">
+      <parameter name="config_2_2" type="integer" groupName="configuration">
         <label>2: Blinking Behavior</label>
         <description><![CDATA[
 See overview<br /> <h1>Overview</h1><p>The LSB defines the total time the device need to blink. The value if set in seconds. The MSB defines the on/off interval of the blinking. The unit is 0.1 s.</p>
@@ -87,8 +85,7 @@ See overview<br /> <h1>Overview</h1><p>The LSB defines the total time the device
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_80_1" type="integer" groupName="configuration"
-                 min="0" max="2">
+      <parameter name="config_80_1" type="integer" groupName="configuration">
         <label>80: Notification on Status Change</label>
         <description>Type of report to send when the device status changes</description>
         <default>0</default>
@@ -99,8 +96,7 @@ See overview<br /> <h1>Overview</h1><p>The LSB defines the total time the device
         </options>
       </parameter>
 
-      <parameter name="config_90_1" type="integer" groupName="configuration"
-                 min="0" max="1">
+      <parameter name="config_90_1" type="integer" groupName="configuration">
         <label>90: Disable Minimum Change report</label>
         <default>0</default>
         <options>
@@ -109,24 +105,21 @@ See overview<br /> <h1>Overview</h1><p>The LSB defines the total time the device
         </options>
       </parameter>
 
-      <parameter name="config_91_2" type="integer" groupName="configuration"
-                 min="0" max="32000">
+      <parameter name="config_91_2" type="integer" groupName="configuration">
         <label>91: Minimum Change to send Report (Watt)</label>
         <description>The minimum change in Wattage for a Report to be sent</description>
         <default>50</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_92_1" type="integer" groupName="configuration"
-                 min="0" max="100">
+      <parameter name="config_92_1" type="integer" groupName="configuration">
         <label>92: Minimum Change to send Report (%)</label>
         <description>The minimum change in Wattage Percent for a report to be sent</description>
         <default>10</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_101_4" type="integer" groupName="configuration"
-                 min="0" max="65535">
+      <parameter name="config_101_4" type="integer" groupName="configuration">
         <label>101: Reports to send to Group 1</label>
         <description><![CDATA[
 See overview<br /> <h1>Overview</h1><p>The value is a combination number made up of the sum of the values for the individual parameters. The parameters have the values: Wattage=4, Current=2, Voltage=1.</p>
@@ -135,8 +128,7 @@ See overview<br /> <h1>Overview</h1><p>The value is a combination number made up
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_102_4" type="integer" groupName="configuration"
-                 min="0" max="65535">
+      <parameter name="config_102_4" type="integer" groupName="configuration">
         <label>102: Reports to send to Group 2</label>
         <description><![CDATA[
 See overview<br /> <h1>Overview</h1><p>The value is a combination number made up of the sum of the values for the individual parameters. The parameters have the values: Wattage=4, Current=2, Voltage=1.</p>
@@ -145,8 +137,7 @@ See overview<br /> <h1>Overview</h1><p>The value is a combination number made up
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_103_4" type="integer" groupName="configuration"
-                 min="0" max="65535">
+      <parameter name="config_103_4" type="integer" groupName="configuration">
         <label>103: Reports to send to Group 3</label>
         <description><![CDATA[
 See overview<br /> <h1>Overview</h1><p>The value is a combination number made up of the sum of the values for the individual parameters. The parameters have the values: Wattage=4, Current=2, Voltage=1.</p>
@@ -155,24 +146,21 @@ See overview<br /> <h1>Overview</h1><p>The value is a combination number made up
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_111_4" type="integer" groupName="configuration"
-                 min="0" max="65535">
+      <parameter name="config_111_4" type="integer" groupName="configuration">
         <label>111: Interval to send out reports of group 1</label>
         <description>Time interval to send report to Group 1</description>
         <default>720</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_112_4" type="integer" groupName="configuration"
-                 min="0" max="65535">
+      <parameter name="config_112_4" type="integer" groupName="configuration">
         <label>112: Interval to send out reports of group 2</label>
         <description>Time interval to send report to Group 2</description>
         <default>720</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_113_4" type="integer" groupName="configuration"
-                 min="0" max="65535">
+      <parameter name="config_113_4" type="integer" groupName="configuration">
         <label>113: Interval to send out reports of group 3</label>
         <description>Time interval to send report to Group 3</description>
         <default>720</default>

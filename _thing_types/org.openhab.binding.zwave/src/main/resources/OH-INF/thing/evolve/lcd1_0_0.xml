@@ -46,8 +46,7 @@ LCD Wallmount Controller<br /> <h1>Overview</h1><p>The system consists of LCD Ke
       </parameter-group>
 
       <!-- PARAMETER DEFINITIONS -->
-      <parameter name="config_1_1" type="integer" groupName="configuration"
-                 min="0" max="6">
+      <parameter name="config_1_1" type="integer" groupName="configuration">
         <label>1: Button 1 Type</label>
         <description><![CDATA[
 <br /> <h1>Overview</h1><p><b>Only 1 button can be defined as a Privacy Button</b><br /></p><p><b>Only 1 button can be defined as a Housekeeping Button</b><br /></p><p>Scene Control/BASICSET toggle sends Scene command to association group when un-inverted, sends BASIC_SET OFF to association group when inverted<br /></p>
@@ -63,8 +62,7 @@ LCD Wallmount Controller<br /> <h1>Overview</h1><p>The system consists of LCD Ke
         </options>
       </parameter>
 
-      <parameter name="config_2_1" type="integer" groupName="configuration"
-                 min="0" max="6">
+      <parameter name="config_2_1" type="integer" groupName="configuration">
         <label>2: Button 2 Type</label>
         <description><![CDATA[
 <br /> <h1>Overview</h1><p><b>Only 1 button can be defined as a Privacy Button</b></p><p><b>Only 1 button can be defined as a Housekeeping Button</b></p><p>Scene Control/BASICSET toggle sends Scene command to association group when un-inverted, sends BASIC_SET OFF to association group when inverted</p>
@@ -81,8 +79,7 @@ LCD Wallmount Controller<br /> <h1>Overview</h1><p>The system consists of LCD Ke
         </options>
       </parameter>
 
-      <parameter name="config_3_1" type="integer" groupName="configuration"
-                 min="0" max="6">
+      <parameter name="config_3_1" type="integer" groupName="configuration">
         <label>3: Button 3 Type</label>
         <description><![CDATA[
 <br /> <h1>Overview</h1><p>Only 1 button can be defined as a Privacy Button</p><p>Only 1 button can be defined as a Housekeeping Button</p><p>Scene Control/BASICSET toggle sends Scene command to association group when un-inverted, sends BASIC_SET OFF to association group when inverted</p>
@@ -96,8 +93,7 @@ LCD Wallmount Controller<br /> <h1>Overview</h1><p>The system consists of LCD Ke
         </options>
       </parameter>
 
-      <parameter name="config_4_1" type="integer" groupName="configuration"
-                 min="0" max="6">
+      <parameter name="config_4_1" type="integer" groupName="configuration">
         <label>4: Button 4 Type</label>
         <description><![CDATA[
 <br /> <h1>Overview</h1><p>Only 1 button can be defined as a Privacy Button</p><p>Only 1 button can be defined as a Housekeeping Button</p><p>Scene Control/BASICSET toggle sends Scene command to association group when un-inverted, sends BASIC_SET OFF to association group when inverted</p>
@@ -112,8 +108,7 @@ LCD Wallmount Controller<br /> <h1>Overview</h1><p>The system consists of LCD Ke
         </options>
       </parameter>
 
-      <parameter name="config_5_1" type="integer" groupName="configuration"
-                 min="0" max="6">
+      <parameter name="config_5_1" type="integer" groupName="configuration">
         <label>5: Button 5 Type</label>
         <description><![CDATA[
 <br /> <h1>Overview</h1><p>Only 1 button can be defined as a Privacy Button</p><p>Only 1 button can be defined as a Housekeeping Button</p><p>Scene Control/BASICSET toggle sends Scene command to association group when un-inverted, sends BASIC_SET OFF to association group when inverted</p>
@@ -127,8 +122,7 @@ LCD Wallmount Controller<br /> <h1>Overview</h1><p>The system consists of LCD Ke
         </options>
       </parameter>
 
-      <parameter name="config_16_1" type="integer" groupName="configuration"
-                 min="1" max="7">
+      <parameter name="config_16_1" type="integer" groupName="configuration">
         <label>16: Language</label>
         <description><![CDATA[
 <br /> <h1>Overview</h1><p><br /></p>
@@ -145,8 +139,7 @@ LCD Wallmount Controller<br /> <h1>Overview</h1><p>The system consists of LCD Ke
         </options>
       </parameter>
 
-      <parameter name="config_17_1" type="integer" groupName="configuration"
-                 min="1" max="18">
+      <parameter name="config_17_1" type="integer" groupName="configuration">
         <label>17: Keypad Type</label>
         <description><![CDATA[
 <br /> <h1>Overview</h1><p>Allows default menu display configurations.  Use type 17 for custom metadata.</p>
@@ -174,8 +167,7 @@ LCD Wallmount Controller<br /> <h1>Overview</h1><p>The system consists of LCD Ke
         </options>
       </parameter>
 
-      <parameter name="config_20_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_20_1" type="integer" groupName="configuration">
         <label>20: Display Timeout</label>
         <description><![CDATA[
 <br /> <h1>Overview</h1><p><br /></p>
@@ -184,8 +176,7 @@ LCD Wallmount Controller<br /> <h1>Overview</h1><p>The system consists of LCD Ke
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_21_1" type="integer" groupName="configuration"
-                 min="1" max="20">
+      <parameter name="config_21_1" type="integer" groupName="configuration">
         <label>21: Backlight ON Level</label>
         <description><![CDATA[
 <br /> <h1>Overview</h1><p><br /></p>
@@ -194,15 +185,13 @@ LCD Wallmount Controller<br /> <h1>Overview</h1><p>The system consists of LCD Ke
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_22_1" type="integer" groupName="configuration"
-                 min="0" max="20">
+      <parameter name="config_22_1" type="integer" groupName="configuration">
         <label>22: Backlight OFF Level</label>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_23_1" type="integer" groupName="configuration"
-                 min="1" max="20">
+      <parameter name="config_23_1" type="integer" groupName="configuration">
         <label>23: Button ON Level</label>
         <description><![CDATA[
 <br /> <h1>Overview</h1><p><br /></p>
@@ -211,15 +200,13 @@ LCD Wallmount Controller<br /> <h1>Overview</h1><p>The system consists of LCD Ke
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_24_1" type="integer" groupName="configuration"
-                 min="0" max="20">
+      <parameter name="config_24_1" type="integer" groupName="configuration">
         <label>24: Button OFF Level</label>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_25_1" type="integer" groupName="configuration"
-                 min="5" max="20">
+      <parameter name="config_25_1" type="integer" groupName="configuration">
         <label>25: LCD Contrast</label>
         <description><![CDATA[
 <br /> <h1>Overview</h1><p><br /></p>
@@ -228,8 +215,7 @@ LCD Wallmount Controller<br /> <h1>Overview</h1><p>The system consists of LCD Ke
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_26_0" type="integer" groupName="configuration"
-                 min="0" max="1">
+      <parameter name="config_26_0" type="integer" groupName="configuration">
         <label>26: Screen Orientation</label>
         <description><![CDATA[
 <br /> <h1>Overview</h1><p><br /></p>
@@ -241,8 +227,7 @@ LCD Wallmount Controller<br /> <h1>Overview</h1><p>The system consists of LCD Ke
         </options>
       </parameter>
 
-      <parameter name="config_27_1" type="integer" groupName="configuration"
-                 min="0" max="60">
+      <parameter name="config_27_1" type="integer" groupName="configuration">
         <label>27: Network Update</label>
         <description><![CDATA[
 <br /> <h1>Overview</h1><p>When loaded, LCD will trigger a Network Update after timeout<br /></p>
@@ -251,8 +236,7 @@ LCD Wallmount Controller<br /> <h1>Overview</h1><p>The system consists of LCD Ke
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_29_1" type="integer" groupName="configuration"
-                 min="0" max="100">
+      <parameter name="config_29_1" type="integer" groupName="configuration">
         <label>29: Red Backlight ON Level</label>
         <description><![CDATA[
 <br /> <h1>Overview</h1><p><br /></p>
@@ -261,8 +245,7 @@ LCD Wallmount Controller<br /> <h1>Overview</h1><p>The system consists of LCD Ke
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_30_1" type="integer" groupName="configuration"
-                 min="0" max="100">
+      <parameter name="config_30_1" type="integer" groupName="configuration">
         <label>30: Blue Backlight ON Level</label>
         <description><![CDATA[
 <br /> <h1>Overview</h1><p><br /></p>
@@ -271,8 +254,7 @@ LCD Wallmount Controller<br /> <h1>Overview</h1><p>The system consists of LCD Ke
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_31_1" type="integer" groupName="configuration"
-                 min="0" max="100">
+      <parameter name="config_31_1" type="integer" groupName="configuration">
         <label>31: Green Backlight ON Level</label>
         <description><![CDATA[
 <br /> <h1>Overview</h1><p><br /></p>

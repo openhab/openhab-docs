@@ -70,8 +70,7 @@
       </parameter-group>
 
       <!-- PARAMETER DEFINITIONS -->
-      <parameter name="config_3_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_3_1" type="integer" groupName="configuration">
         <label>3: Value of ON-Command</label>
         <description><![CDATA[
 Value of ON-Command<br /> <h1>Overview</h1><p>This value is sent as BASIC Set to Association Group 2 when an Smoke Alarm occurs.</p>
@@ -80,8 +79,7 @@ Value of ON-Command<br /> <h1>Overview</h1><p>This value is sent as BASIC Set to
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_4_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_4_1" type="integer" groupName="configuration">
         <label>4: Value of Off-Command</label>
         <description><![CDATA[
 Value of Off-Command<br /> <h1>Overview</h1><p>This value is sent as BASIC Set to Association Group 2 when an Smoke Alarm is cleared.</p>

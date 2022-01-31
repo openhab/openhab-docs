@@ -58,24 +58,21 @@ Temperature Sensor<br /> <h1>Overview</h1><p>Provides temperature reading from a
       </parameter-group>
 
       <!-- PARAMETER DEFINITIONS -->
-      <parameter name="config_1_2" type="integer" groupName="configuration"
-                 min="10" max="32768">
+      <parameter name="config_1_2" type="integer" groupName="configuration">
         <label>1: Wake Up Period</label>
         <description>Seconds to stay awake following button press</description>
         <default>-32768</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_2_2" type="integer" groupName="configuration"
-                 min="1000" max="2500">
+      <parameter name="config_2_2" type="integer" groupName="configuration">
         <label>2: Low Battery Level</label>
         <description>Battery level</description>
         <default>2500</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_3_2" type="integer" groupName="configuration"
-                 min="0" max="100">
+      <parameter name="config_3_2" type="integer" groupName="configuration">
         <label>3: Temperature Reporting Threshold</label>
         <description>Tenths of a degree Fahrenheit. A value of 10 would be 1.0F.</description>
         <default>100</default>
@@ -93,8 +90,7 @@ Temperature Sensor<br /> <h1>Overview</h1><p>Provides temperature reading from a
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_5_2" type="integer" groupName="configuration"
-                 min="0" max="255">
+      <parameter name="config_5_2" type="integer" groupName="configuration">
         <label>5: Battery Reporting Interval</label>
         <description><![CDATA[
 Battery Reporting Interval<br /> <h1>Overview</h1><p>Number of wake up intervals between autonomous battery reports. The wake up interval is set in the Wake Up Command Class.</p>
@@ -103,8 +99,7 @@ Battery Reporting Interval<br /> <h1>Overview</h1><p>Number of wake up intervals
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_7_2" type="integer" groupName="configuration"
-                 min="0" max="255">
+      <parameter name="config_7_2" type="integer" groupName="configuration">
         <label>7: Temperature Reporting Interval</label>
         <description><![CDATA[
 Temperature Reporting Interval<br /> <h1>Overview</h1><p>The number of wake up intervals between autonomous temperature reports. </p> <p>If this value is zero, autonomous temperature reporting based on wake up interval is disabled.</p>
@@ -113,8 +108,7 @@ Temperature Reporting Interval<br /> <h1>Overview</h1><p>The number of wake up i
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_8_2" type="integer" groupName="configuration"
-                 min="-100" max="100">
+      <parameter name="config_8_2" type="integer" groupName="configuration">
         <label>8: Temperature Calibration Offset</label>
         <description><![CDATA[
 Temperature Calibration Offset<br /> <h1>Overview</h1><p>Tenths of a degree Fahrenheit. A value of 10 would be 1.0F.</p>
@@ -124,8 +118,7 @@ Temperature Calibration Offset<br /> <h1>Overview</h1><p>Tenths of a degree Fahr
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_9_2" type="integer" groupName="configuration"
-                 min="-32767" max="32768">
+      <parameter name="config_9_2" type="integer" groupName="configuration">
         <label>9: Mandatory Temperature Reporting Interval</label>
         <description><![CDATA[
 Mandatory Temperature Reporting Interval<br /> <h1>Overview</h1><p>The number of seconds between temperature reports.</p>

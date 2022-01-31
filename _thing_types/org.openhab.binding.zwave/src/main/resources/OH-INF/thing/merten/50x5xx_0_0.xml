@@ -48,43 +48,37 @@ Roller shutter push-button<br /> <h1>Overview</h1><p>The roller shutter push-but
       </parameter-group>
 
       <!-- PARAMETER DEFINITIONS -->
-      <parameter name="config_176_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_176_1" type="integer" groupName="configuration">
         <label>176: Changeover delay (motor protection)</label>
         <description>Changeover delay (motor protection)</description>
         <default>0</default>
       </parameter>
 
-      <parameter name="config_177_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_177_1" type="integer" groupName="configuration">
         <label>177: Raising time (Input 1)</label>
         <description>Raising time (Input 1)</description>
         <default>0</default>
       </parameter>
 
-      <parameter name="config_178_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_178_1" type="integer" groupName="configuration">
         <label>178: Raising time (Input 2)</label>
         <description>Raising time (Input 1)</description>
         <default>0</default>
       </parameter>
 
-      <parameter name="config_179_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_179_1" type="integer" groupName="configuration">
         <label>179: Lowering time (input 1)</label>
         <description>Lowering time (input 1)</description>
         <default>0</default>
       </parameter>
 
-      <parameter name="config_180_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_180_1" type="integer" groupName="configuration">
         <label>180: Lowering time (input 2)</label>
         <description>Lowering time (input 2)</description>
         <default>0</default>
       </parameter>
 
-      <parameter name="config_181_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_181_1" type="integer" groupName="configuration">
         <label>181: Inclusion of light sensor</label>
         <description>Inclusion of light sensor</description>
         <default>0</default>
@@ -95,36 +89,31 @@ Roller shutter push-button<br /> <h1>Overview</h1><p>The roller shutter push-but
         </options>
       </parameter>
 
-      <parameter name="config_182_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_182_1" type="integer" groupName="configuration">
         <label>182: Brightness threshold</label>
         <description>Brightness threshold</description>
         <default>0</default>
       </parameter>
 
-      <parameter name="config_183_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_183_1" type="integer" groupName="configuration">
         <label>183: Reaction threshold for raising shutter (Input 1)</label>
         <description>Reaction threshold for raising shutter (Input 1)</description>
         <default>0</default>
       </parameter>
 
-      <parameter name="config_184_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_184_1" type="integer" groupName="configuration">
         <label>184: Reaction threshold for raising shutter (Input 2)</label>
         <description>Reaction threshold for raising shutter (Input 2)</description>
         <default>0</default>
       </parameter>
 
-      <parameter name="config_185_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_185_1" type="integer" groupName="configuration">
         <label>185: Reaction threshold for lowering shutter (Input 1)</label>
         <description>Reaction threshold for lowering shutter (Input 1)</description>
         <default>0</default>
       </parameter>
 
-      <parameter name="config_186_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_186_1" type="integer" groupName="configuration">
         <label>186: Reaction threshold for lowering shutter (Input 1)</label>
         <description>Reaction threshold for lowering shutter (Input 1)</description>
         <default>0</default>

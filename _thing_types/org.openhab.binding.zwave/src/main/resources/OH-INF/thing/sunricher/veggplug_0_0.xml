@@ -83,72 +83,63 @@ NAMRON Smart Plug<br /> <h1>Overview</h1><p>Zwave Smart Plug</p> <br /> <h2>Incl
       </parameter-group>
 
       <!-- PARAMETER DEFINITIONS -->
-      <parameter name="config_12_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_12_1" type="integer" groupName="configuration">
         <label>12: Percentage Threshold Level</label>
         <description>Percentage Threshold Level</description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_13_2" type="integer" groupName="configuration"
-                 min="-32767" max="32768">
+      <parameter name="config_13_2" type="integer" groupName="configuration">
         <label>13: Absolute Value Threshold Level</label>
         <description>Absolute Value Threshold Level</description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_14_4" type="integer" groupName="configuration"
-                 min="0" max="2678400">
+      <parameter name="config_14_4" type="integer" groupName="configuration">
         <label>14: Time Interval Report Voltage</label>
         <description>Time Interval Report Voltage</description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_15_4" type="integer" groupName="configuration"
-                 min="0" max="2678400">
+      <parameter name="config_15_4" type="integer" groupName="configuration">
         <label>15: Time Interval Report Current</label>
         <description>Time Interval Report Current</description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_16_4" type="integer" groupName="configuration"
-                 min="0" max="2678400">
+      <parameter name="config_16_4" type="integer" groupName="configuration">
         <label>16: Time Interval Report Power</label>
         <description>Time Interval Report Power</description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_17_4" type="integer" groupName="configuration"
-                 min="0" max="2678400">
+      <parameter name="config_17_4" type="integer" groupName="configuration">
         <label>17: Time Interval Report Energy</label>
         <description>Time Interval Report Energy</description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_18_1" type="integer" groupName="configuration"
-                 min="0" max="2">
+      <parameter name="config_18_1" type="integer" groupName="configuration">
         <label>18: Saving load state before power failure</label>
         <description>Saving load state before power failure</description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_19_1" type="integer" groupName="configuration"
-                 min="0" max="1">
+      <parameter name="config_19_1" type="integer" groupName="configuration">
         <label>19: Enable/Disable Switch Binary Report</label>
         <description>Enable/Disable Switch Binary Report</description>
         <default>1</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_20_1" type="integer" groupName="configuration"
-                 min="0" max="1">
+      <parameter name="config_20_1" type="integer" groupName="configuration">
         <label>20: Enable/Disable Current Protection Function</label>
         <description>Enable/Disable Current Protection Function</description>
         <default>1</default>

@@ -102,8 +102,7 @@ Infrared motion detector with orientation light<br /> <h1>Overview</h1><p>Infrar
       </parameter-group>
 
       <!-- PARAMETER DEFINITIONS -->
-      <parameter name="config_1_2" type="integer" groupName="configuration"
-                 min="5" max="900">
+      <parameter name="config_1_2" type="integer" groupName="configuration">
         <label>1: TIME</label>
         <description>Duration of light after motion detection [s]</description>
         <default>180</default>
@@ -112,8 +111,7 @@ Infrared motion detector with orientation light<br /> <h1>Overview</h1><p>Infrar
         </options>
       </parameter>
 
-      <parameter name="config_2_2" type="integer" groupName="configuration"
-                 min="0" max="2000">
+      <parameter name="config_2_2" type="integer" groupName="configuration">
         <label>2: LIGHT</label>
         <description><![CDATA[
 Light threshold [lx]<br /> <h1>Overview</h1><p>Light threshold: 2 - 2000, 0 lx</p> <p>0 - run Learn ambient light sequence. 2000 - is used as daylight ( always night mode ).</p>
@@ -124,15 +122,13 @@ Light threshold [lx]<br /> <h1>Overview</h1><p>Light threshold: 2 - 2000, 0 lx</
         </options>
       </parameter>
 
-      <parameter name="config_5_1" type="integer" groupName="configuration"
-                 min="2" max="100">
+      <parameter name="config_5_1" type="integer" groupName="configuration">
         <label>5: SENSITIVITY</label>
         <description>Motion Radar Sensitivity [%]</description>
         <default>100</default>
       </parameter>
 
-      <parameter name="config_6_1" type="integer" groupName="configuration"
-                 min="0" max="120">
+      <parameter name="config_6_1" type="integer" groupName="configuration">
         <label>6: Brightness measuring interval</label>
         <description><![CDATA[
 Brightness measuring interval [min]<br /> <h1>Overview</h1><p>Interval for measuring ambient light when lamp is on ( lamp switches off briefly and measures ): 5 - 120 min. 0 = function is off.</p>
@@ -141,8 +137,7 @@ Brightness measuring interval [min]<br /> <h1>Overview</h1><p>Interval for measu
         <advanced>true</advanced>
       </parameter>
 
-      <parameter name="config_8_1" type="integer" groupName="configuration"
-                 min="0" max="1">
+      <parameter name="config_8_1" type="integer" groupName="configuration">
         <label>8: GLOBAL_LIGHT</label>
         <description><![CDATA[
 Use external Ambient Light Value<br /> <h1>Overview</h1><p>When GLOBAL_LIGHT mode is ON - device overrides its own light sensor values and uses Light report values from any Z-Wave light sensor instead - this has to be configured appropriately to send light automatically. If the last remote light level value is older than 30 minutes, the internal light value is used again until the next external value is received.</p>
@@ -151,8 +146,7 @@ Use external Ambient Light Value<br /> <h1>Overview</h1><p>When GLOBAL_LIGHT mod
         <advanced>true</advanced>
       </parameter>
 
-      <parameter name="config_9_1" type="integer" groupName="configuration"
-                 min="0" max="4">
+      <parameter name="config_9_1" type="integer" groupName="configuration">
         <label>9: SLAVE_MODE</label>
         <description><![CDATA[
 Disable local control<br /> <h1>Overview</h1><p>Bit Field:</p> <table><tr><td>Bit</td> <td>7</td> <td>6</td> <td>5</td> <td>4</td> <td>3</td> <td>2</td> <td>1</td> <td>0</td> </tr><tr><td>Function</td> <td>-</td> <td>-</td> <td>-</td> <td>-</td> <td>-</td> <td>"Stupid" mode</td> <td>Central unit<br />checking in<br />slave mode</td> <td>Slave mode</td> </tr></table><p><br /><strong>"Stupid" mode ( bit 2 = 1 ):</strong><br />- has higher priority then slave mode.<br />- LED is permanently on ( for simple power wall switch controlling ).</p> <p><br /><strong>Slave mode ( bit 0 = 1 ):</strong><br />- only if included in Z-Wave network<br />- useful for controlling via third-party sensor<br />- LED is directly controlled via Z-Wave, internal sensors are not used for controlling it</p> <p><br /><strong>Central unit checking ( bit 1 = 1 ):</strong> ( useful especially for controlling via gateway )<br />When slave bit is 0:<br />- device signalises fail of lifeline connection ( if this bit is zero, fail of lifeline connection<br />is not signalised )<br />When slave bit is 1:<br />- device checks presence of Z-Wave device in lifeline group ( gateway ). If it is not<br />present for 2 minutes ( testing repeatedly every 30 seconds ) device switches<br />to normal mode in the same way as after the end of local disabled mode<br />( ON_BEHAVIOUR )<br />- the device checks every 1 minute for recovery of Lifeline connection.<br />- if no lifeline specified - it works in normal mode</p> <p><br /><strong>Be careful with this option</strong>, device stops using its own motion sensor in Slave<br />and Stupid mode.</p>
@@ -161,8 +155,7 @@ Disable local control<br /> <h1>Overview</h1><p>Bit Field:</p> <table><tr><td>Bi
         <advanced>true</advanced>
       </parameter>
 
-      <parameter name="config_10_2" type="integer" groupName="configuration"
-                 min="0" max="209">
+      <parameter name="config_10_2" type="integer" groupName="configuration">
         <label>10: OFF_BEHAVIOUR</label>
         <description><![CDATA[
 Off behaviour ( timeout )<br /> <h1>Overview</h1><p>Behaviour after BASIC OFF ( and similar commands ).<br />If a transition ( even with zero change ) with a non-default duration is to be processed,<br />the transition cannot be interrupted by any motion event in any case.</p> <p>0 LED is switched off and remains so until any new motion event ( local or remote ) is received.<br />1 - 209 LED is switched off and remains so until after a specified timeout once a new motion event ( local or remote ) is received.<br />Timeout:<br />1..100 - 1 second ( 1 ) to 100 seconds ( 100 ) in 1-second resolution<br />101..200 - 1 minute ( 101 ) to 100 minutes ( 200 ) 1-minute resolution<br />201..209 - 1 hour ( 201 ) to 9 hours ( 209 ) in 1-hour resolution<br />210 - 254 Reserved<br />255 LED is switched off for TIME ( cfg 1 ). It does not wait for a motion event and works normally via current motion evaluation.</p>
@@ -171,8 +164,7 @@ Off behaviour ( timeout )<br /> <h1>Overview</h1><p>Behaviour after BASIC OFF ( 
         <advanced>true</advanced>
       </parameter>
 
-      <parameter name="config_11_2" type="integer" groupName="configuration"
-                 min="0" max="255">
+      <parameter name="config_11_2" type="integer" groupName="configuration">
         <label>11: ON_BEHAVIOUR</label>
         <description><![CDATA[
 On behaviour ( timeout )<br /> <h1>Overview</h1><p>Behaviour after BASIC ON ( and similar commands ).<br />If a transition ( even with zero change ) with a non-default duration is to be processed, the transition cannot be interrupted by any motion event in any case.</p> <p>0 LED is switched on and remains so until any new motion event ( local or remote ) is received. It then works normally via current motion evaluation.<br />Notice - during the day, this mode cannot be ended remotely due to motion events not being transmitted - only via local motion sensor if enabled.<br />1 - 209 LED is switched off and remains so until after a specified timeout<br />once a new motion event ( local or remote ) is received.<br />Timeout:<br />1..100 - 1 second ( 1 ) to 100 seconds ( 100 ) in 1-second resolution<br />101..200 - 1 minute ( 101 ) to 100 minutes ( 200 ) 1-minute resolution<br />201..209 - 1 hour ( 201 ) to 9 hours ( 209 ) in 1-hour resolution<br />Notice - during the day, this mode cannot be ended remotely due to motion<br />events not being transmitted - only via local motion sensor if enabled.<br />210 - 254 Reserved<br />255 LED is switched off for TIME ( cfg 1 ). It does not wait for a motion<br />event and works normally via current motion evaluation.</p>
@@ -181,8 +173,7 @@ On behaviour ( timeout )<br /> <h1>Overview</h1><p>Behaviour after BASIC ON ( an
         <advanced>true</advanced>
       </parameter>
 
-      <parameter name="config_12_2" type="integer" groupName="configuration"
-                 min="0" max="209">
+      <parameter name="config_12_2" type="integer" groupName="configuration">
         <label>12: ON_TIME_OVER</label>
         <description><![CDATA[
 On behaviour time over ( timeout )<br /> <h1>Overview</h1><p>Time limit to stop waiting for motion after timeout of ON_BEHAVIOUR or OFF_ON_BEHAVIOUR ( 0-209 ) to prevent staying ON forever when there is no motion.</p> <p>0 No additional waiting for motion.<br />1..100 - 1 second ( 1 ) to 100 seconds ( 100 ) in 1-second resolution<br />101..200 - 1 minute ( 101 ) to 100 minutes ( 200 ) in 1-minute resolution<br />201..209 - 1 hour ( 201 ) to 9 hours ( 209 ) in 1-hour resolution<br />210 - 254 Reserved<br />255 Never stop waiting for motion.</p>
@@ -191,8 +182,7 @@ On behaviour time over ( timeout )<br /> <h1>Overview</h1><p>Time limit to stop 
         <advanced>true</advanced>
       </parameter>
 
-      <parameter name="config_13_2" type="integer" groupName="configuration"
-                 min="0" max="209">
+      <parameter name="config_13_2" type="integer" groupName="configuration">
         <label>13: ON_OFF_BEHAVIOUR</label>
         <description><![CDATA[
 Sequence On-Off behaviour ( timeout )<br /> <h1>Overview</h1><p>Behaviour after a rapid sequence of BASIC ON and BASIC OFF commands.<br />The intention is to use a much longer timeout value than the time after a single ON command which should then be followed by a short timeout value.<br />The behaviour is the same as for parameter 10 ( OFF_LOCAL_DISABLE ) except: 255 - device ignores ON - OFF sequence and uses OFF behaviour</p>
@@ -201,8 +191,7 @@ Sequence On-Off behaviour ( timeout )<br /> <h1>Overview</h1><p>Behaviour after 
         <advanced>true</advanced>
       </parameter>
 
-      <parameter name="config_14_2" type="integer" groupName="configuration"
-                 min="0" max="209">
+      <parameter name="config_14_2" type="integer" groupName="configuration">
         <label>14: OFF_ON_BEHAVIOUR</label>
         <description><![CDATA[
 Sequence Off-On behaviour ( timeout )<br /> <h1>Overview</h1><p>Behaviour after a rapid sequence of BASIC OFF and BASIC ON commands.<br />The intention is to use a much longer timeout value than the time after a single OFF command which should then be followed by a short timeout value.<br />The behaviour is the same as for parameter 11 ( ON_LOCAL_DISABLE ) except: 255 - device ignores OFF - ON sequence and uses ON behaviour.</p>
@@ -211,8 +200,7 @@ Sequence Off-On behaviour ( timeout )<br /> <h1>Overview</h1><p>Behaviour after 
         <advanced>true</advanced>
       </parameter>
 
-      <parameter name="config_15_1" type="integer" groupName="configuration"
-                 min="10" max="50">
+      <parameter name="config_15_1" type="integer" groupName="configuration">
         <label>15: SEQUENCE_TIME</label>
         <description><![CDATA[
 Sequence Off-On behaviour ( timeout )<br /> <h1>Overview</h1><p>Time in [100 milliseconds] of maximum delay between BASIC ON and BASIC OFF ( and vice versa ) to consider this as a sequence. It is typically 1 second, but can be exceptionally longer due to retransmissions and overload - in this case, a longer interval can be allowed ( up to 5 seconds ).</p>
@@ -221,8 +209,7 @@ Sequence Off-On behaviour ( timeout )<br /> <h1>Overview</h1><p>Time in [100 mil
         <advanced>true</advanced>
       </parameter>
 
-      <parameter name="config_16_2" type="integer" groupName="configuration"
-                 min="0" max="209">
+      <parameter name="config_16_2" type="integer" groupName="configuration">
         <label>16: MOTION_DISABLE</label>
         <description><![CDATA[
 Motion Off behaviour ( timeout )<br /> <h1>Overview</h1><p>Motion disable timeout after BASIC SET to motion endpoint when the internal motion sensor is not used for evaluating the behaviour of the LED and groups 2 and 3. Events are, however, still transmitted to the Lifeline, and the device can be controlled via remote motion sensors.</p> <p><br />0 BASIC SET to Motion sensor endpoint ignored, BASIC to root is mapped to LED endpoint, motion sensor still enabled<br />1 - 209 Internal motion sensor is disabled for specified timeout after BASIC SET 0x00 to Motion sensor endpoint. BASIC to root is mapped to Motion sensor endpoint. ( SPIR )<br />Timeout:<br />1..100 - 1 second ( 1 ) to 100 seconds ( 100 ) in 1-second resolution<br />101..200 - 1 minute ( 101 ) to 100 minutes ( 200 ) in 1-minute resolution<br />201..209 - 1 hour ( 201 ) to 9 hours ( 209 ) in 1-hour resolution<br />210 - 254 Reserved<br />255 BASIC SET to Motion sensor endpoint ignored, BASIC to root is mapped to LED endpoint, motion sensor still disabled</p>
@@ -231,8 +218,7 @@ Motion Off behaviour ( timeout )<br /> <h1>Overview</h1><p>Motion disable timeou
         <advanced>true</advanced>
       </parameter>
 
-      <parameter name="config_17_1" type="integer" groupName="configuration"
-                 min="0" max="31">
+      <parameter name="config_17_1" type="integer" groupName="configuration">
         <label>17: BUTTON_BEHAVIOUR</label>
         <description><![CDATA[
 Toggle button behaviour<br /> <h1>Overview</h1><p>Bit Field:</p> <table><tr><td>Bit</td> <td>7</td> <td>6</td> <td>5</td> <td>4</td> <td>3</td> <td>2</td> <td>1</td> <td>0</td> </tr><tr><td>Function</td> <td>-</td> <td>-</td> <td>-</td> <td>Dim<br />disable</td> <td>Network<br />behaviour</td> <td>Standalone<br />behaviour</td> <td>Scene<br />switch</td> <td>Dim<br />increase</td> </tr></table><p><br /><strong>Dim increase ( bit 0 ):</strong><br />- long press of button does dim decreasing ( 0 = default )<br />- long press of button does dim increasing ( 1 )</p> <p><strong>Scene switch ( bit 1 ):</strong><br />- short press of button does toggle - on/off ( 0 = default )<br />- short press of button does scene switch ( 1 )</p> <p><strong>Standalone behaviour ( bit 2 ):</strong><br />- using "legacy" sensor deactivity after button press ( 0 = default )<br />- using "cfg 10-14" sensor deactivity after button press ( 1 )</p> <p><strong>Network behaviour ( bit 3 ):</strong><br />- using "legacy" sensor deactivity after button press ( 0 )<br />- using "cfg 10-14" sensor deactivity after button press ( 1 = default )</p> <p><strong>Dim disable ( bit 4 ):</strong><br />- dim events ( long press ) are used ( 0 = default )<br />- dim events ( long press ) are ignored ( 1 )</p> <p>"legacy" sensor deactivity behaviour does this:<br />- Pressing push button when LED is OFF: LED will switch on as long as there is<br />movement and the delay time runs of<br />- Pressing push button when LED is ON: LED will switch off as long as there is<br />movement ans the delay time runs of ( invers logic ).</p> <p>"cfg 10-14" sensor deactivity behaviour uses behaviour specified in parameters<br />10-14 ( the same behaviour as pressing of external switch using BASIC ON/OFF<br />functions )</p>
@@ -241,8 +227,7 @@ Toggle button behaviour<br /> <h1>Overview</h1><p>Bit Field:</p> <table><tr><td>
         <advanced>true</advanced>
       </parameter>
 
-      <parameter name="config_18_1" type="integer" groupName="configuration"
-                 min="0" max="127">
+      <parameter name="config_18_1" type="integer" groupName="configuration">
         <label>18: BUTTON_SCENES</label>
         <description><![CDATA[
 Toggle button Scene 1-4<br /> <h1>Overview</h1><p>Parameters 18 specifies scene numbers ( from 1 to number ) to be switched by<br />toggle button. 0 menas - do not useany.</p>
@@ -250,8 +235,7 @@ Toggle button Scene 1-4<br /> <h1>Overview</h1><p>Parameters 18 specifies scene 
         <default>1</default>
       </parameter>
 
-      <parameter name="config_19_2" type="integer" groupName="configuration"
-                 min="1" max="209">
+      <parameter name="config_19_2" type="integer" groupName="configuration">
         <label>19: LEGACY_INACTIVITY_TIME )</label>
         <description><![CDATA[
 Toggle button inactivity time in "legacy" mode ( timeout )<br /> <h1>Overview</h1><p>In "legacy" button mode function this timeout is used to cancel motion sensor inactivity mode after motion end ( both for on and off state of LED ).</p> <p>Timeout:<br />1..100 - 1 second ( 1 ) to 100 seconds ( 100 ) in 1-second resolution<br />101..200 - 1 minute ( 101 ) to 100 minutes ( 200 ) in 1-minute resolution<br />201..209 - 1 hour ( 201 ) to 9 hours ( 209 ) in 1-hour resolution</p>

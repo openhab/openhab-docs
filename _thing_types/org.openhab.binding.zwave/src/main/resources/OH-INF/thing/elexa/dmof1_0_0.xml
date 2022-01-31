@@ -96,8 +96,7 @@ Enable/Disable the meter report.<br /> <h1>Overview</h1><p>This parameter enable
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_2_2" type="integer" groupName="configuration"
-                 min="-32767" max="32768">
+      <parameter name="config_2_2" type="integer" groupName="configuration">
         <label>2: METER_REPORT</label>
         <description><![CDATA[
 The time between meter reports.<br /> <h1>Overview</h1><p>This parameter sets the amount of time between each successive METER_REPORT signal sent to Group 1 (also see Param 1 &amp; 6.)</p>
@@ -106,8 +105,7 @@ The time between meter reports.<br /> <h1>Overview</h1><p>This parameter sets th
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_3_1" type="integer" groupName="configuration"
-                 min="1" max="16">
+      <parameter name="config_3_1" type="integer" groupName="configuration">
         <label>3: Set "Overload" Current level</label>
         <description><![CDATA[
 Maximum current the plug will pass<br /> <h1>Overview</h1><p>Sets the maximum current the plug will pass before it cuts off power and sends a NOTIFICATION_EVENT_POWER_ MANAGEMENT_OVER_LOAD_DETECTED signal to Group 1 and a BASIC_SET(FF) to Group 2. The LED will then blink red once per second until the current returns to normal. To clear the NOTIFICATION and start monitoring again, the BUTTON must be pushed once (only after the current is back to normal.) <strong>NOTE: this value must be higher than Param 4</strong></p>
@@ -116,8 +114,7 @@ Maximum current the plug will pass<br /> <h1>Overview</h1><p>Sets the maximum cu
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_4_1" type="integer" groupName="configuration"
-                 min="1" max="16">
+      <parameter name="config_4_1" type="integer" groupName="configuration">
         <label>4: Set "Alert" Current Level</label>
         <description><![CDATA[
 Current level warning threshold<br /> <h1>Overview</h1><p>Sets the current level at which the On/Off Plug-In Switch will flash its LED yellow, until the current returns to below this level. It will NOT cut off current to the device; this functions as a visible warning to the user. <strong>NOTE: this value must be lower than Param 3</strong></p>
@@ -137,8 +134,7 @@ Current level warning threshold<br /> <h1>Overview</h1><p>Sets the current level
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_6_1" type="integer" groupName="configuration"
-                 min="1" max="64">
+      <parameter name="config_6_1" type="integer" groupName="configuration">
         <label>6: Current change METER_REPORT level</label>
         <description><![CDATA[
 Report of relative change in current flow<br /> <h1>Overview</h1><p>In addition to sending a METER_REPORT to Group 1 in the time interval set by Param 2, the On/Off Plug-In Switch also sends a METER_REPORT when it detects a relative change in current flow. This parameter sets this minimum current change amount, in percent, at which point the On/Off Plug-In Switch will send a METER_REPORT to Group 1. Also see Param 1 &amp; 2.</p>
@@ -171,8 +167,7 @@ Timer once plugged in before it turn off the device.<br /> <h1>Overview</h1><p>I
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_9_4" type="integer" groupName="configuration"
-                 min="1" max="65535">
+      <parameter name="config_9_4" type="integer" groupName="configuration">
         <label>9: Set Timer Time Interval</label>
         <description><![CDATA[
 Time before auto shut off if on.<br /> <h1>Overview</h1><p>Sets the time interval before the On/Off Plug-In Switch automatically shuts off. See Param 8.</p>

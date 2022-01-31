@@ -142,8 +142,7 @@ Thermostatic Valve<br /> <h1>Overview</h1><p>FIBARO Heat Controller is a remotel
       </parameter-group>
 
       <!-- PARAMETER DEFINITIONS -->
-      <parameter name="config_1_4" type="integer" groupName="configuration"
-                 min="10" max="10000">
+      <parameter name="config_1_4" type="integer" groupName="configuration">
         <label>1: Override Schedule duration</label>
         <description><![CDATA[
 Duration of Override Schedule after turning knob<br /> <h1>Overview</h1><p>This parameter determines duration of Override Schedule after turning the knob while normal schedule is active (set by Schedule CC).</p> <p>Units = minutes</p>
@@ -152,8 +151,7 @@ Duration of Override Schedule after turning knob<br /> <h1>Overview</h1><p>This 
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_2_4" type="integer" groupName="configuration"
-                 min="0" max="1023">
+      <parameter name="config_2_4" type="integer" groupName="configuration">
         <label>2: Additional functions</label>
         <description><![CDATA[
 This parameter allows to enable different additional functions of the device.<br /> <h1>Overview</h1><p>Parameter 2 values may be combined, e.g. 1+8=9 means that Open Window Detector and LED indications when controlling remotely are enabled.</p> <p>1 (bit 0) - enable Open Window Detector</p> <p>2 (bit 1) - enable fast Open Window Detector</p> <p>4 (bit 2) - increase receiver sensitivity (shortens battery life)</p> <p>8 (bit 3) - enabled LED indications when controlling remotely</p> <p>16 (bit 4) - protect from setting Full ON and Full OFF mode by turning the knob manually</p><p>32 (bit 5) - device mounted in vertical position<br /></p><p>64 (bit 6) - moderate regulator behaviour (instead of Rapid)<br /></p><p>128 (bit 7) - inverted knob operation</p><p>256 (bit 8) - report when heating medium is required</p><p>512 (bit 9) - detecting heating system failures</p>
@@ -162,8 +160,7 @@ This parameter allows to enable different additional functions of the device.<br
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_3_4" type="integer" groupName="configuration" readOnly="true"
-                 min="0" max="15">
+      <parameter name="config_3_4" type="integer" groupName="configuration" readOnly="true">
         <label>3: Additional functions status (READ-ONLY)</label>
         <description><![CDATA[
 This parameter allows to check statuses of different additional functions.<br /> <h1>Overview</h1><p>Parameter 3 values may be combined, e.g. 1+2=3 means optional sensor works properly and open window detection was triggered.</p> <p>1 (bit 0) - optional temperature sensor connected and operational</p> <p>2 (bit 1) - open window detected</p><p>4 (bit 2) - provide heat in order to maintain set temperature</p><p>8 (bit 3) - malfunctioning heating system (cannot reach set temperature)</p>

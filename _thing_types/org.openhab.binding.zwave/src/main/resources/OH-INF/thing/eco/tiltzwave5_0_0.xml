@@ -52,8 +52,7 @@ Z-Wave Plus Garage Door Tilt Sensor<br /> <h1>Overview</h1><p>The accelerometer 
       </parameter-group>
 
       <!-- PARAMETER DEFINITIONS -->
-      <parameter name="config_1_1" type="integer" groupName="configuration"
-                 min="0" max="10">
+      <parameter name="config_1_1" type="integer" groupName="configuration">
         <label>1: Number of application level retries</label>
         <description><![CDATA[
 Number of attempts the device should attempt application level retries.<br /> <h1>Overview</h1><p>Number of attempts the device should attempt application level retries.</p>
@@ -62,8 +61,7 @@ Number of attempts the device should attempt application level retries.<br /> <h
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_2_2" type="integer" groupName="configuration"
-                 min="10" max="5000">
+      <parameter name="config_2_2" type="integer" groupName="configuration">
         <label>2: milliseconds between application levels retries</label>
         <description><![CDATA[
 Number of milliseconds between application levels retries.<br /> <h1>Overview</h1><p>Number of milliseconds between application levels retries.</p>
@@ -72,8 +70,7 @@ Number of milliseconds between application levels retries.<br /> <h1>Overview</h
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_3_1" type="integer" groupName="configuration"
-                 min="0" max="2">
+      <parameter name="config_3_1" type="integer" groupName="configuration">
         <label>3: Tilt angle at which the garage door is considered closed</label>
         <description><![CDATA[
 The tilt angle at which the garage door is considered closed.<br /> <h1>Overview</h1><p>The tilt angle at which the garage door is considered closed.</p><p>Byte value 0: 10 degrees</p><p>Byte value 1: 30 degrees</p><p>Byte value 2: 50 degrees</p>
@@ -86,8 +83,7 @@ The tilt angle at which the garage door is considered closed.<br /> <h1>Overview
         </options>
       </parameter>
 
-      <parameter name="config_4_1" type="integer" groupName="configuration"
-                 min="0" max="2">
+      <parameter name="config_4_1" type="integer" groupName="configuration">
         <label>4: Tilt angle at which the garage door is considered opened</label>
         <description><![CDATA[
 The tilt angle at which the garage door is considered opened.<br /> <h1>Overview</h1><p>The tilt angle at which the garage door is considered opened.</p><p>Byte value 0: 30 degrees</p><p>Byte value 1: 50 degrees</p><p>Byte value 2: 70 degrees</p>

@@ -133,16 +133,14 @@ Toggle automated report sending on change<br /> <h1>Overview</h1><p>Parameter to
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_91_2" type="integer" groupName="configuration"
-                 min="-32767" max="32768">
+      <parameter name="config_91_2" type="integer" groupName="configuration">
         <label>91: Minimum Change to send Report (Watt)</label>
         <description>The value represents the minimum change in Wattage for a Report to be sent.</description>
         <default>25</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_92_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_92_1" type="integer" groupName="configuration">
         <label>92: Minimum Change to send Report (%)</label>
         <description><![CDATA[
 Percent change in wattage to send report<br /> <h1>Overview</h1><p>The value represents the minimum change in Wattage Percent for a report to be sent.</p>
@@ -151,8 +149,7 @@ Percent change in wattage to send report<br /> <h1>Overview</h1><p>The value rep
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_101_4" type="integer" groupName="configuration"
-                 min="0" max="65535">
+      <parameter name="config_101_4" type="integer" groupName="configuration">
         <label>101: reports to send automatically</label>
         <description><![CDATA[
 See overview<br /> <h1>Overview</h1><p>The value is a combination number made up of the sum of the values for the individual parameters.                                                       </p> <p>The parameters have the values: KWH=8, Wattage=4, Current=2, Voltage=1.                          </p>
@@ -161,8 +158,7 @@ See overview<br /> <h1>Overview</h1><p>The value is a combination number made up
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_102_4" type="integer" groupName="configuration"
-                 min="0" max="65535">
+      <parameter name="config_102_4" type="integer" groupName="configuration">
         <label>102: which reports to send to group 2</label>
         <description><![CDATA[
 see overview<br /> <h1>Overview</h1><p>The value is a combination number made up of the sum of the values for the individual parameters.                                                       </p> <p>The parameters have the values: KWH=8, Wattage=4, Current=2, Voltage=1.                          </p>
@@ -171,8 +167,7 @@ see overview<br /> <h1>Overview</h1><p>The value is a combination number made up
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_103_4" type="integer" groupName="configuration"
-                 min="0" max="65535">
+      <parameter name="config_103_4" type="integer" groupName="configuration">
         <label>103: which reports to send to group 3</label>
         <description><![CDATA[
 see overview<br /> <h1>Overview</h1><p>The value is a combination number made up of the sum of the values for the individual parameters.                                                       </p> <p>The parameters have the values: KWH=8, Wattage=4, Current=2, Voltage=1.                          </p>
@@ -181,22 +176,19 @@ see overview<br /> <h1>Overview</h1><p>The value is a combination number made up
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_111_4" type="integer" groupName="configuration"
-                 min="1" max="2678400">
+      <parameter name="config_111_4" type="integer" groupName="configuration">
         <label>111: Interval to send out reports of group 1</label>
         <default>3</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_112_4" type="integer" groupName="configuration"
-                 min="1" max="2678400">
+      <parameter name="config_112_4" type="integer" groupName="configuration">
         <label>112: Interval to send out reports of group 2</label>
         <default>600</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_113_4" type="integer" groupName="configuration"
-                 min="1" max="2678400">
+      <parameter name="config_113_4" type="integer" groupName="configuration">
         <label>113: Interval to send out reports of group 3</label>
         <default>600</default>
         <limitToOptions>false</limitToOptions>

@@ -147,8 +147,7 @@ Thermostat<br /> <h1>Overview</h1><p>The TZ43 thermostat provides for typical th
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_10_1" type="integer" groupName="configuration"
-                 min="5" max="9">
+      <parameter name="config_10_1" type="integer" groupName="configuration">
         <label>10: MOT</label>
         <description>Minimum OFF Time</description>
         <default>6</default>
@@ -156,8 +155,7 @@ Thermostat<br /> <h1>Overview</h1><p>The TZ43 thermostat provides for typical th
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_11_1" type="integer" groupName="configuration"
-                 min="1" max="9">
+      <parameter name="config_11_1" type="integer" groupName="configuration">
         <label>11: MRT</label>
         <description>Minimum Run Time</description>
         <default>6</default>
@@ -165,8 +163,7 @@ Thermostat<br /> <h1>Overview</h1><p>The TZ43 thermostat provides for typical th
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_12_1" type="integer" groupName="configuration"
-                 min="1" max="8">
+      <parameter name="config_12_1" type="integer" groupName="configuration">
         <label>12: H Delta Stage 1 On</label>
         <description>H Delta Stage 1 On</description>
         <default>1</default>
@@ -174,8 +171,7 @@ Thermostat<br /> <h1>Overview</h1><p>The TZ43 thermostat provides for typical th
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_13_1" type="integer" groupName="configuration"
-                 min="0" max="8">
+      <parameter name="config_13_1" type="integer" groupName="configuration">
         <label>13: H Delta Stage 1 Off</label>
         <description>H Delta Stage 1 Off</description>
         <default>0</default>
@@ -183,8 +179,7 @@ Thermostat<br /> <h1>Overview</h1><p>The TZ43 thermostat provides for typical th
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_14_1" type="integer" groupName="configuration"
-                 min="1" max="8">
+      <parameter name="config_14_1" type="integer" groupName="configuration">
         <label>14: H Delta Stage 2 On</label>
         <description>H Delta Stage 2 On</description>
         <default>4</default>
@@ -192,8 +187,7 @@ Thermostat<br /> <h1>Overview</h1><p>The TZ43 thermostat provides for typical th
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_15_1" type="integer" groupName="configuration"
-                 min="0" max="8">
+      <parameter name="config_15_1" type="integer" groupName="configuration">
         <label>15: H Delta Stage 2 Off</label>
         <description>H Delta Stage 2 Off</description>
         <default>0</default>
@@ -201,8 +195,7 @@ Thermostat<br /> <h1>Overview</h1><p>The TZ43 thermostat provides for typical th
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_16_1" type="integer" groupName="configuration"
-                 min="1" max="8">
+      <parameter name="config_16_1" type="integer" groupName="configuration">
         <label>16: H Delta Stage 3 On</label>
         <description>H Delta Stage 3 On</description>
         <default>6</default>
@@ -210,8 +203,7 @@ Thermostat<br /> <h1>Overview</h1><p>The TZ43 thermostat provides for typical th
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_17_1" type="integer" groupName="configuration"
-                 min="0" max="8">
+      <parameter name="config_17_1" type="integer" groupName="configuration">
         <label>17: H Delta Stage 3 Off</label>
         <description>H Delta Stage 3 Off</description>
         <default>3</default>
@@ -219,8 +211,7 @@ Thermostat<br /> <h1>Overview</h1><p>The TZ43 thermostat provides for typical th
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_18_1" type="integer" groupName="configuration"
-                 min="1" max="8">
+      <parameter name="config_18_1" type="integer" groupName="configuration">
         <label>18: C Delta Stage 1 On</label>
         <description>C Delta Stage 1 On</description>
         <default>1</default>
@@ -228,8 +219,7 @@ Thermostat<br /> <h1>Overview</h1><p>The TZ43 thermostat provides for typical th
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_19_1" type="integer" groupName="configuration"
-                 min="0" max="8">
+      <parameter name="config_19_1" type="integer" groupName="configuration">
         <label>19: C Delta Stage 1 Off</label>
         <description>C Delta Stage 1 Off</description>
         <default>0</default>
@@ -237,8 +227,7 @@ Thermostat<br /> <h1>Overview</h1><p>The TZ43 thermostat provides for typical th
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_20_1" type="integer" groupName="configuration"
-                 min="1" max="8">
+      <parameter name="config_20_1" type="integer" groupName="configuration">
         <label>20: C Delta Stage 2 On</label>
         <description>C Delta Stage 2 On</description>
         <default>4</default>
@@ -246,8 +235,7 @@ Thermostat<br /> <h1>Overview</h1><p>The TZ43 thermostat provides for typical th
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_21_1" type="integer" groupName="configuration"
-                 min="0" max="8">
+      <parameter name="config_21_1" type="integer" groupName="configuration">
         <label>21: C Delta Stage 2 Off</label>
         <description>C Delta Stage 2 Off</description>
         <default>0</default>
@@ -279,8 +267,7 @@ Thermostat<br /> <h1>Overview</h1><p>The TZ43 thermostat provides for typical th
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_75_1" type="integer" groupName="configuration"
-                 min="0" max="120">
+      <parameter name="config_75_1" type="integer" groupName="configuration">
         <label>75: Fan Cycler ON Time</label>
         <description>Fan Cycler ON Time</description>
         <default>0</default>
@@ -288,8 +275,7 @@ Thermostat<br /> <h1>Overview</h1><p>The TZ43 thermostat provides for typical th
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_76_1" type="integer" groupName="configuration"
-                 min="0" max="120">
+      <parameter name="config_76_1" type="integer" groupName="configuration">
         <label>76: Fan Cycler OFF Time</label>
         <description>Fan Cycler OFF Time</description>
         <default>20</default>

@@ -58,8 +58,7 @@ Motion Sensor<br /> <h1>Overview</h1><p>The PIR-200 Motion Sensor is designed to
       </parameter-group>
 
       <!-- PARAMETER DEFINITIONS -->
-      <parameter name="config_5_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_5_1" type="integer" groupName="configuration">
         <label>5: Re-trigger duration</label>
         <description><![CDATA[
 Re-trigger duration<br /> <h1>Overview</h1><p>User can change value from 1 to 255 minutes to setup the re-trigger time when there is no movement detected in the period of time.</p>

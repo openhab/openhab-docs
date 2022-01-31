@@ -64,8 +64,7 @@ Switch IO: On/Off Power Switch<br /> <h1>Overview</h1><p>Simon Electronic Switch
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_10_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_10_1" type="integer" groupName="configuration">
         <label>10: Delay ON</label>
         <description><![CDATA[
 Delay from activation request until load activation<br /> <h1>Overview</h1><p>0-127 Delay in seconds, 128-254 Delay in minutes</p>
@@ -74,8 +73,7 @@ Delay from activation request until load activation<br /> <h1>Overview</h1><p>0-
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_11_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_11_1" type="integer" groupName="configuration">
         <label>11: Activation Time</label>
         <description><![CDATA[
 Time that load performs activated after complete an activation process.<br /> <h1>Overview</h1><p>0-127 Delay in seconds, 128-254 Delay in minutes</p>
@@ -117,8 +115,7 @@ Time that load performs activated after complete an activation process.<br /> <h
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_16_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_16_1" type="integer" groupName="configuration">
         <label>16: Delay OFF</label>
         <description><![CDATA[
 Delay from deactivation request until load deactivation.<br /> <h1>Overview</h1><p>0-127 Delay in seconds, 128-254 Delay in minutes</p>

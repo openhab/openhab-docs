@@ -60,8 +60,7 @@ In-Wall Dimmer Module<br /> <h1>Overview</h1><p>Z-Wave Built-in receiver with di
       </parameter-group>
 
       <!-- PARAMETER DEFINITIONS -->
-      <parameter name="config_2_1" type="integer" groupName="configuration"
-                 min="0" max="2">
+      <parameter name="config_2_1" type="integer" groupName="configuration">
         <label>2: Saving load state</label>
         <description><![CDATA[
 Saving load state before power failure<br /> <h1>Overview</h1><p>Info: Saving load state before power failure 0 – shutoff load 1 – turn on load 2 – save load state before power failure</p>
@@ -69,8 +68,7 @@ Saving load state before power failure<br /> <h1>Overview</h1><p>Info: Saving lo
         <default>0</default>
       </parameter>
 
-      <parameter name="config_3_1" type="integer" groupName="configuration"
-                 min="0" max="1">
+      <parameter name="config_3_1" type="integer" groupName="configuration">
         <label>3: Enable/disable to send report</label>
         <description><![CDATA[
 basic report to the Lifeline when the load state changed<br /> <h1>Overview</h1><p>Enable/disable to send the basic report to the Lifeline when the load state changed (When value set as 1, re-power on the dimmer, it will send Basic report automatically)</p> <p>0 – Disable to send Basic report</p> <p>1 – Enable to send Basic report</p>
@@ -78,8 +76,7 @@ basic report to the Lifeline when the load state changed<br /> <h1>Overview</h1>
         <default>1</default>
       </parameter>
 
-      <parameter name="config_4_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_4_1" type="integer" groupName="configuration">
         <label>4: Default fade time</label>
         <description><![CDATA[
 Default fade time (unit is second)<br /> <h1>Overview</h1><p>Default fade time (unit is second, this value has the same function as Duration of Multilevel) Valid value: 0x00 - 0xFF</p> <table><tr><td>Value</td> <td>Description</td> </tr><tr><td>0-127</td> <td>1 second to 127 seconds in 1 second resolution</td> </tr><tr><td>128-254</td> <td>1 minute to 127 minutes in 1 minute resolution</td> </tr><tr><td>255</td> <td>Factory default duration. (1 sec.)</td> </tr></table>
@@ -88,8 +85,7 @@ Default fade time (unit is second)<br /> <h1>Overview</h1><p>Default fade time (
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_5_1" type="integer" groupName="configuration"
-                 min="0" max="50">
+      <parameter name="config_5_1" type="integer" groupName="configuration">
         <label>5: brightness value</label>
         <description><![CDATA[
 Setting minimum brightness value<br /> <h1>Overview</h1><p>Setting minimum brightness value Valid value: 0 - 50, the bigger the value is, the higher the load’s minimum brightness is Note: when configure this value, the value of Multilevel will be configured as 1 automatically so that users can preview the corre-sponding effect of minimum brightness value</p>
@@ -97,8 +93,7 @@ Setting minimum brightness value<br /> <h1>Overview</h1><p>Setting minimum brigh
         <default>0</default>
       </parameter>
 
-      <parameter name="config_6_1" type="integer" groupName="configuration"
-                 min="0" max="1">
+      <parameter name="config_6_1" type="integer" groupName="configuration">
         <label>6: MOSFET</label>
         <description><![CDATA[
 Choose MOSFET<br /> <h1>Overview</h1><p>Choose MOSFET driving type 0 – trailing edge 1 – leading edge</p>
@@ -107,8 +102,7 @@ Choose MOSFET<br /> <h1>Overview</h1><p>Choose MOSFET driving type 0 – trailin
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_7_1" type="integer" groupName="configuration"
-                 min="0" max="1">
+      <parameter name="config_7_1" type="integer" groupName="configuration">
         <label>7: removal from network</label>
         <description><![CDATA[
 Enable/disable external switch to be added to and removed from a network<br /> <h1>Overview</h1><p>Enable/disable external switch to be added to and removed from a network (when enables this function, triple press the external switch within 1.5 seconds to be added to or removed from a net-work) 0 – disable 1 - enable</p>

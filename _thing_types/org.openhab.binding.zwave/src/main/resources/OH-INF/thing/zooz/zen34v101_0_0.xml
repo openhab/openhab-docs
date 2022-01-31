@@ -52,8 +52,7 @@ Remote Switch<br /> <h1>Overview</h1><ul><li>Control other Z-Wave devices and en
       </parameter-group>
 
       <!-- PARAMETER DEFINITIONS -->
-      <parameter name="config_1_1" type="integer" groupName="configuration"
-                 min="0" max="3">
+      <parameter name="config_1_1" type="integer" groupName="configuration">
         <label>1: LED indication mode</label>
         <description><![CDATA[
 <br /> <h1>Overview</h1><p><br /></p>
@@ -67,8 +66,7 @@ Remote Switch<br /> <h1>Overview</h1><ul><li>Control other Z-Wave devices and en
         </options>
       </parameter>
 
-      <parameter name="config_2_1" type="integer" groupName="configuration"
-                 min="0" max="6">
+      <parameter name="config_2_1" type="integer" groupName="configuration">
         <label>2: Upper paddle indicator color</label>
         <description><![CDATA[
 <br /> <h1>Overview</h1><p><br /></p>
@@ -85,8 +83,7 @@ Remote Switch<br /> <h1>Overview</h1><ul><li>Control other Z-Wave devices and en
         </options>
       </parameter>
 
-      <parameter name="config_3_1" type="integer" groupName="configuration"
-                 min="0" max="6">
+      <parameter name="config_3_1" type="integer" groupName="configuration">
         <label>3: Lower paddle indicator color</label>
         <description><![CDATA[
 <br /> <h1>Overview</h1><p><br /></p>

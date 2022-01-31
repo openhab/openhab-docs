@@ -99,8 +99,7 @@ Touchscreen deadbolt without keyway<br /> <h1>Overview</h1><ul><li>Installs On S
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_3_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_3_1" type="integer" groupName="configuration">
         <label>3: Auto relock time</label>
         <description><![CDATA[
 Time for auto relock<br /> <h1>Overview</h1><p>Number of seconds after the door is unlocked that it will attempt to automatically re-lock itself, if enabled.</p>
@@ -108,8 +107,7 @@ Time for auto relock<br /> <h1>Overview</h1><p>Number of seconds after the door 
         <default>30</default>
       </parameter>
 
-      <parameter name="config_4_1" type="integer" groupName="configuration"
-                 min="1" max="7">
+      <parameter name="config_4_1" type="integer" groupName="configuration">
         <label>4: Incorrect PIN limit</label>
         <description><![CDATA[
 Number of incorrect PINs before lockout<br /> <h1>Overview</h1><p>Number of incorrect PINs that can be attempted before lock goes into temporary keypad lockout.</p>
@@ -129,8 +127,7 @@ Number of incorrect PINs before lockout<br /> <h1>Overview</h1><p>Number of inco
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_7_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_7_1" type="integer" groupName="configuration">
         <label>7: Keypad lockout time</label>
         <description><![CDATA[
 Incorrect PINs lockout time<br /> <h1>Overview</h1><p>Amount of time to lock-out the keypad once the number of incorrect PINs has been reached on the keypad.  (Zwave is still active during lockout.)</p>

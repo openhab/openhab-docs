@@ -87,8 +87,7 @@ Enable / Disable BASIC SET command<br /> <h1>Overview</h1><p>A setting of â€œ0â€
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_32_1" type="integer" groupName="configuration"
-                 min="10" max="50">
+      <parameter name="config_32_1" type="integer" groupName="configuration">
         <label>32: Defines value of LOW BATTERY</label>
         <description>Defines value of LOW BATTERY</description>
         <default>20</default>

@@ -129,24 +129,21 @@ which alarm frames and how the device should react<br /> <h1>Overview</h1><p>Thi
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_30_4_0000FF00" type="integer" groupName="configuration"
-                 min="0" max="255">
+      <parameter name="config_30_4_0000FF00" type="integer" groupName="configuration">
         <label>30: Alarm configuration 1 Event/State</label>
         <description>Event/State Parameters</description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_30_4_00FF0000" type="integer" groupName="configuration"
-                 min="0" max="255">
+      <parameter name="config_30_4_00FF0000" type="integer" groupName="configuration">
         <label>30: Alarm configuration - 1st slot - Notify Status</label>
         <description>Notification Status</description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_30_4_7F000000" type="integer" groupName="configuration"
-                 min="0" max="255">
+      <parameter name="config_30_4_7F000000" type="integer" groupName="configuration">
         <label>30: Alarm configuration - 1st slot - Notify Type</label>
         <description>Notification Type</description>
         <default>0</default>
@@ -168,24 +165,21 @@ Water Alarm<br /> <h1>Overview</h1><p>This parameter determines to which alarm f
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_31_4_0000FF00" type="integer" groupName="configuration"
-                 min="0" max="255">
+      <parameter name="config_31_4_0000FF00" type="integer" groupName="configuration">
         <label>31: Alarm configuration - 2nd slot</label>
         <description>Event/State Parameters</description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_31_4_00FF0000" type="integer" groupName="configuration"
-                 min="0" max="255">
+      <parameter name="config_31_4_00FF0000" type="integer" groupName="configuration">
         <label>31: Alarm configuration - 2nd slot</label>
         <description>Notification Status</description>
         <default>255</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_31_4_7F000000" type="integer" groupName="configuration"
-                 min="0" max="255">
+      <parameter name="config_31_4_7F000000" type="integer" groupName="configuration">
         <label>31: Alarm configuration - 2nd slot</label>
         <description>Notification Type</description>
         <default>5</default>
@@ -207,24 +201,21 @@ Action<br /> <h1>Overview</h1><p>This parameter determines to which alarm frames
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_32_4_0000FF00" type="integer" groupName="configuration"
-                 min="0" max="255">
+      <parameter name="config_32_4_0000FF00" type="integer" groupName="configuration">
         <label>32: Alarm configuration - 3rd slot</label>
         <description>Event/State</description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_32_4_00FF0000" type="integer" groupName="configuration"
-                 min="0" max="255">
+      <parameter name="config_32_4_00FF0000" type="integer" groupName="configuration">
         <label>32: Alarm configuration - 3rd slot</label>
         <description>Notification Status</description>
         <default>255</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_32_4_7F000000" type="integer" groupName="configuration"
-                 min="0" max="255">
+      <parameter name="config_32_4_7F000000" type="integer" groupName="configuration">
         <label>32: Alarm configuration - 3rd slot</label>
         <description>Notification Type</description>
         <default>1</default>
@@ -246,24 +237,21 @@ Action<br /> <h1>Overview</h1><p>This parameter determines to which alarm frames
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_33_4_0000FF00" type="integer" groupName="configuration"
-                 min="0" max="255">
+      <parameter name="config_33_4_0000FF00" type="integer" groupName="configuration">
         <label>33: Alarm configuration - 4th slot - CO Alarm</label>
         <description>Event/State</description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_33_4_00FF0000" type="integer" groupName="configuration"
-                 min="0" max="255">
+      <parameter name="config_33_4_00FF0000" type="integer" groupName="configuration">
         <label>33: Alarm configuration - 4th slot - CO Alarm</label>
         <description>Notification Status</description>
         <default>255</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_33_4_7F000000" type="integer" groupName="configuration"
-                 min="0" max="255">
+      <parameter name="config_33_4_7F000000" type="integer" groupName="configuration">
         <label>33: Alarm configuration - 4th slot - CO Alarm</label>
         <description>Notification Type</description>
         <default>2</default>
@@ -285,32 +273,28 @@ Heat Alarm<br /> <h1>Overview</h1><p>This parameter determines to which alarm fr
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_34_4_0000FF00" type="integer" groupName="configuration"
-                 min="0" max="255">
+      <parameter name="config_34_4_0000FF00" type="integer" groupName="configuration">
         <label>34: Alarm configuration - 5th slot</label>
         <description>Event/State</description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_34_4_00FF0000" type="integer" groupName="configuration"
-                 min="0" max="255">
+      <parameter name="config_34_4_00FF0000" type="integer" groupName="configuration">
         <label>34: Alarm configuration - 5th slot</label>
         <description>Notification Status</description>
         <default>255</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_34_4_7F000000" type="integer" groupName="configuration"
-                 min="0" max="255">
+      <parameter name="config_34_4_7F000000" type="integer" groupName="configuration">
         <label>34: Alarm configuration - 5th slot</label>
         <description>Notification Type</description>
         <default>4</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_35_2" type="integer" groupName="configuration"
-                 min="0" max="32400">
+      <parameter name="config_35_2" type="integer" groupName="configuration">
         <label>35: Alarm configuration – duration</label>
         <description><![CDATA[
 Duration of alarm se-quence<br /> <h1>Overview</h1><p>This parameter defines duration of alarm se-quence. When time set in this parameter elaps-es, alarm is cancelled and relays restore normal operation, but do not recover state from before the alarm.<br />0 – infinite<br />1-32400 (1s-9h, 1s step) – duration</p>
@@ -319,8 +303,7 @@ Duration of alarm se-quence<br /> <h1>Overview</h1><p>This parameter defines dur
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_40_1" type="integer" groupName="configuration"
-                 min="0" max="15">
+      <parameter name="config_40_1" type="integer" groupName="configuration">
         <label>40: S1 input – scenes sent</label>
         <description><![CDATA[
 Actions result in sending scene IDs<br /> <h1>Overview</h1><p>This parameter determines which actions result in sending scene IDs assigned to them. Values can be combined (e.g. 1+2=3 means that scenes for single and double click are sent).<br /><br />Enabling scenes for triple click disables entering the device in learning mode by triple clicking.<br /><br />0 – no scenes sent<br />1 – Key pressed 1 time<br />2 – Key pressed 2 times<br />4 – Key pressed 3 times<br />8 – Key hold down and key released</p>
@@ -329,8 +312,7 @@ Actions result in sending scene IDs<br /> <h1>Overview</h1><p>This parameter det
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_41_1" type="integer" groupName="configuration"
-                 min="0" max="15">
+      <parameter name="config_41_1" type="integer" groupName="configuration">
         <label>41: S2 input – scenes sent</label>
         <description><![CDATA[
 Actions result in sending scene IDs<br /> <h1>Overview</h1><p>This parameter determines which actions result in sending scene IDs assigned to them. Values can be combined (e.g. 1+2=3 means that scenes for single and double click are sent).<br /><br />Enabling scenes for triple click disables entering the device in learning mode by triple clicking.<br /><br />0 – no scenes sent<br />1 – Key pressed 1 time<br />2 – Key pressed 2 times<br />4 – Key pressed 3 times<br />8 – Key hold down and key released</p>
@@ -368,8 +350,7 @@ Reaction when changing state of S1 input in timed modes<br /> <h1>Overview</h1><
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_154_2" type="integer" groupName="configuration"
-                 min="0" max="32000">
+      <parameter name="config_154_2" type="integer" groupName="configuration">
         <label>154: Time for delayed/auto OFF and flashing modes</label>
         <description><![CDATA[
 Sets time parameter used in timed modes.<br /> <h1>Overview</h1><p>This parameter allows to set time parameter used in timed modes for first channel. For de-layed/auto OFF modes it determines duration, for flashing mode it determines cycle period.<br /><br />0 – 0.1 seconds<br />1-32000 – 0.1-3200 seconds, 0.1s step</p>
@@ -378,8 +359,7 @@ Sets time parameter used in timed modes.<br /> <h1>Overview</h1><p>This paramete
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_156_2" type="integer" groupName="configuration"
-                 min="0" max="255">
+      <parameter name="config_156_2" type="integer" groupName="configuration">
         <label>156: S1: Switch ON sent to 2nd association group</label>
         <description><![CDATA[
 S1 input – Switch ON value sent to 2nd association group<br /> <h1>Overview</h1><p>This parameter defines value sent with Switch ON command to devices in 2nd association group when using S1 input.<br /><br />0 – turn off<br />1-99 – turn on and set level<br />255 – turn on with last level</p>
@@ -388,8 +368,7 @@ S1 input – Switch ON value sent to 2nd association group<br /> <h1>Overview</h
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_157_2" type="integer" groupName="configuration"
-                 min="0" max="255">
+      <parameter name="config_157_2" type="integer" groupName="configuration">
         <label>157: S1: Switch OFF sent to 2nd association group</label>
         <description><![CDATA[
 S1 input – Switch OFF value sent to 2nd association group<br /> <h1>Overview</h1><p>This parameter defines value sent with Switch OFF command to devices in 2nd association group when using S1 input.<br /><br />0 – turn off<br />1-99 – turn on and set level<br />255 – turn on with last level</p>
@@ -398,8 +377,7 @@ S1 input – Switch OFF value sent to 2nd association group<br /> <h1>Overview</
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_158_2" type="integer" groupName="configuration"
-                 min="0" max="255">
+      <parameter name="config_158_2" type="integer" groupName="configuration">
         <label>158: S1: Double Click sent to 2nd association group</label>
         <description><![CDATA[
 S1 input – Double Click value sent to 2nd association group<br /> <h1>Overview</h1><p>This parameter defines value sent with Double Click command to devices in 2nd association group when using S1 input.<br /><br />0 – turn off<br />1-99 – turn on and set level<br />255 – turn on with last level</p>

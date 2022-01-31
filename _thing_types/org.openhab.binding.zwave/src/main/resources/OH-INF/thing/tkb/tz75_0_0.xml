@@ -85,8 +85,7 @@ Rollershutter Controller<br /> <h1>Overview</h1><p>This in-wall Roller Shutter 
       </parameter-group>
 
       <!-- PARAMETER DEFINITIONS -->
-      <parameter name="config_1_2" type="integer" groupName="configuration"
-                 min="1" max="32767">
+      <parameter name="config_1_2" type="integer" groupName="configuration">
         <label>1: Watt meter report period</label>
         <description><![CDATA[
 Watt meter report period<br /> <h1>Overview</h1><p>If the setting is configured for 1 hour (set value =720), the TZ75 will report its instant power consumption every 1 hour to the node of the corresponding group. The maximum interval to report its instant power consumption is 45 hours (5s*32767/3600=45h).</p>
@@ -95,8 +94,7 @@ Watt meter report period<br /> <h1>Overview</h1><p>If the setting is configured 
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_2_2" type="integer" groupName="configuration"
-                 min="1" max="32767">
+      <parameter name="config_2_2" type="integer" groupName="configuration">
         <label>2: KWH Meter Report period</label>
         <description><![CDATA[
 KWH Meter Report period<br /> <h1>Overview</h1><p>If the setting is configured for 1 hour (set value =6), the TZ75 will report its accumulated power consumption (KW/h) every 1 hour to the node of the corresponding group. The maximum interval to report its accumulated power consumption (KW/h) is 227.55 days (10min*32767/1440=227.55 days).</p>
@@ -105,8 +103,7 @@ KWH Meter Report period<br /> <h1>Overview</h1><p>If the setting is configured f
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_3_2" type="integer" groupName="configuration"
-                 min="10" max="1100">
+      <parameter name="config_3_2" type="integer" groupName="configuration">
         <label>3: Treshold of watt for load caution</label>
         <description><![CDATA[
 Treshold of watt for load caution<br /> <h1>Overview</h1><p>This is the maximum power consuption which is allowed during acivation of the Roller Shutter relays up or down. Set the threshold high enough to prevent from overloads in winter etc. when the motor needs slightly more power.</p> <p>When an overload state occurs, the TZ75 gets disabled and the LED flashes in 0.5 second intervals. The overload state can be cleared by disconnecting and reconnecting the TZ75 main power.</p>
@@ -115,8 +112,7 @@ Treshold of watt for load caution<br /> <h1>Overview</h1><p>This is the maximum 
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_4_2" type="integer" groupName="configuration"
-                 min="0" max="10000">
+      <parameter name="config_4_2" type="integer" groupName="configuration">
         <label>4: Treshold of KWH for load caution</label>
         <description><![CDATA[
 Treshold of KWH for load caution<br /> <h1>Overview</h1><p>The default value 0 will disable the KWh warning.</p>

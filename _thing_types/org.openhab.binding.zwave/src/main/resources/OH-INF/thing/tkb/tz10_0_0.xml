@@ -71,8 +71,7 @@ Thermostat with LCD Screen<br /> <h1>Overview</h1><p>Heating thermostat with LCD
       </parameter-group>
 
       <!-- PARAMETER DEFINITIONS -->
-      <parameter name="config_4_1" type="integer" groupName="configuration"
-                 min="0" max="1">
+      <parameter name="config_4_1" type="integer" groupName="configuration">
         <label>4: Memory function</label>
         <description><![CDATA[
 The thermostat will recover the operating mode after a power failure.<br /> <h1>Overview</h1><p><br /></p>

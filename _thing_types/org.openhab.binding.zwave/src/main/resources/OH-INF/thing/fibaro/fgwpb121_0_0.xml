@@ -223,8 +223,7 @@ Measuring energy consumed by the Wall Plug itself.<br /> <h1>Overview</h1><p>Thi
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_21_2" type="integer" groupName="configuration"
-                 min="100" max="18000">
+      <parameter name="config_21_2" type="integer" groupName="configuration">
         <label>21: Up Value</label>
         <description><![CDATA[
 Upper power threshold.<br /> <h1>Overview</h1><p>[UP value - "On/Off (Power)" association group (3) .]</p> <p>100-18000 - (10.0-1800.0W, step 0.1W); default 500 (50W).</p> <p>Upper power threshold, used in parameter 23. UP value cannot be lower than a value specified in parameter 22.</p>
@@ -232,8 +231,7 @@ Upper power threshold.<br /> <h1>Overview</h1><p>[UP value - "On/Off (Power)" as
         <default>500</default>
       </parameter>
 
-      <parameter name="config_22_2" type="integer" groupName="configuration"
-                 min="0" max="17900">
+      <parameter name="config_22_2" type="integer" groupName="configuration">
         <label>22: Down value</label>
         <description><![CDATA[
 Lower power threshold.<br /> <h1>Overview</h1><p>[DOWN value - "On/Off (Power)" association group (3).]</p> <p>0-17900 - (0.0-1790.0W, step 0.1W); default 300 (30W).</p> <p>Lower power threshold, used in parameter 23. DOWN value cannot be higher than a value specified in parameter 21.</p>
@@ -339,8 +337,7 @@ Wall plug response to alarms.<br /> <h1>Overview</h1><p>5-50 (0.5-5.0s, step 0.1
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_32_2" type="integer" groupName="configuration"
-                 min="1" max="32400">
+      <parameter name="config_32_2" type="integer" groupName="configuration">
         <label>32: Alarm state duration.</label>
         <description><![CDATA[
 Specifies the duration of the alarm state.<br /> <h1>Overview</h1><p>1-32400 (in seconds).</p> <p>600 (default).</p> <p>This parameter specifies the duration of alarm state. If a device sending an alarm frame through the Z-Wave network sets alarm duration as well, this settings are ignored.</p> <p>NOTE: The alarm may be canceled by pressing and holding the button.</p>
@@ -348,8 +345,7 @@ Specifies the duration of the alarm state.<br /> <h1>Overview</h1><p>1-32400 (in
         <default>600</default>
       </parameter>
 
-      <parameter name="config_40_2" type="integer" groupName="configuration"
-                 min="1000" max="18000">
+      <parameter name="config_40_2" type="integer" groupName="configuration">
         <label>40: Power load for violet color.</label>
         <description><![CDATA[
 Maximum active power to flash the LED frame Violet.<br /> <h1>Overview</h1><p>1000-18000 (100.0-1800.0W, step 0.1W).</p> <p>18000 (1800W; Default).</p> <p>This parameter determines maximum active power value, which when exceeded, causes the LED frame to flash violet. Function is active only when parameter 41 is set to 1 or 2.</p>

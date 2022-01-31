@@ -42,16 +42,14 @@ Smart Dimmer<br /> <h1>Overview</h1><p> Transform any home into a smart home wi
       </parameter-group>
 
       <!-- PARAMETER DEFINITIONS -->
-      <parameter name="config_7_1" type="integer" groupName="configuration"
-                 min="1" max="99">
+      <parameter name="config_7_1" type="integer" groupName="configuration">
         <label>7: Dimmer steps</label>
         <description>number of steps or levels</description>
         <default>1</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_8_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_8_1" type="integer" groupName="configuration">
         <label>8: Time between dimmer steps</label>
         <description>Timing of the steps (10ms increments)</description>
         <default>3</default>

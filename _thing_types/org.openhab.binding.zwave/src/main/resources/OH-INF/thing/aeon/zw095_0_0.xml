@@ -171,64 +171,56 @@ Enable selective reporting.<br /> <h1>Overview</h1><p>Enable selective reporting
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_4_2" type="integer" groupName="configuration"
-                 min="-32767" max="32768">
+      <parameter name="config_4_2" type="integer" groupName="configuration">
         <label>4: Current Threshold - Whole HEM</label>
         <description>Threshold change in wattage to induce an automatic report (Whole HEM).</description>
         <default>50</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_5_2" type="integer" groupName="configuration"
-                 min="-32767" max="32768">
+      <parameter name="config_5_2" type="integer" groupName="configuration">
         <label>5: Current Threshold - Clamp 1</label>
         <description>Threshold change in wattage to induce an automatic report (Clamp 1).</description>
         <default>50</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_6_2" type="integer" groupName="configuration"
-                 min="-32767" max="32768">
+      <parameter name="config_6_2" type="integer" groupName="configuration">
         <label>6: Current Threshold - Clamp 2</label>
         <description>Threshold change in wattage to induce an automatic report (Clamp 2).</description>
         <default>50</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_7_2" type="integer" groupName="configuration"
-                 min="-32767" max="32768">
+      <parameter name="config_7_2" type="integer" groupName="configuration">
         <label>7: Current Threshold - Clamp 3</label>
         <description>Threshold change in wattage to induce an automatic report (Clamp 3).</description>
         <default>50</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_8_1" type="integer" groupName="configuration"
-                 min="0" max="100">
+      <parameter name="config_8_1" type="integer" groupName="configuration">
         <label>8: Percent Change - Whole HEM</label>
         <description>Percentage change in wattage (Whole HEM).</description>
         <default>10</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_9_1" type="integer" groupName="configuration"
-                 min="0" max="100">
+      <parameter name="config_9_1" type="integer" groupName="configuration">
         <label>9: Percent Change - Clamp 1</label>
         <description>Percentage change in wattage (Clamp 1).</description>
         <default>10</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_10_1" type="integer" groupName="configuration"
-                 min="0" max="100">
+      <parameter name="config_10_1" type="integer" groupName="configuration">
         <label>10: Percent Change - Clamp 2</label>
         <description>Percentage change in wattage (Clamp 2).</description>
         <default>10</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_11_1" type="integer" groupName="configuration"
-                 min="0" max="100">
+      <parameter name="config_11_1" type="integer" groupName="configuration">
         <label>11: Percent Change - Clamp 3</label>
         <description>Percentage change in wattage (Clamp3)</description>
         <default>10</default>
@@ -245,8 +237,7 @@ Enable selective reporting.<br /> <h1>Overview</h1><p>Enable selective reporting
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_101_4" type="integer" groupName="configuration"
-                 min="0" max="2147483647">
+      <parameter name="config_101_4" type="integer" groupName="configuration">
         <label>101: Report Group 1</label>
         <description><![CDATA[
 Which reports need to send in Report group 1<br /> <h1>Overview</h1><p>This page provides examples for setting the type of reports you want from the clamps and total readings using Parameter 101-103 for Home Energy Meter Gen5 and form part of the larger Home Energy Meter Gen5 user guide.</p> <p>To set specific reports for your HEM Gen5, refer to the decimal table below if you do not know how to read a binary table. All you will need to do is add the decimal values together of all the settings you want, and then utilize the sum as the parameter setting value.</p> <p>You may download an easy excel sheet by clicking here, or clicking on the attachment below.</p> <p>ie. Parameter 101 [4 byte dec]: 6927 [This reports kwh and watt for total HEM, clamp 1, and clamp 2 + Voltage and Amperage for Total HEM readings]</p> <p>ie2. Parameter 101 [4 btye dec]: 3 (from 1 + 2)  (reports kWh and Watt on Total Readings) </p> <p>Byte # Decimal Value Output Clamp # HEM Restriction</p> <p>byte 4 1 kWh Total Readings   <br />byte 4 2 Watt Total Readings   <br />byte 4 4 Voltage Total Readings   <br />byte 4 8 Amperage Total Readings   <br />byte 4 16 kVarh Total Readings Gen5 only <br />byte 4 32 kVar Total Readings Gen5 only <br />byte 4 64 Reserved     <br />byte 4 128 Reserved     <br />byte 3 256 Watt Clamp 1  <br /> byte 3 512 Watt Clamp 2   <br />byte 3 1024 Watt Clamp 3   <br />byte 3 2048 kWh Clamp 1   <br />byte 3 4096 kWh Clamp 2   <br />byte 3 8192 kWh Clamp 3   <br />byte 3 16384 Reserved     <br />byte 3 32768 Reserved     <br />byte 2 65536 Voltage Clamp 1   <br />byte 2 131072 Voltage Clamp 2   <br />byte 2 262144 Voltage Clamp 3   <br />byte 2 524288 Amperage Clamp 1   <br />byte 2 1048576 Amperage Clamp 2   <br />byte 2 2097152 Amperage Clamp 3   <br />byte 2 4194304 Reserved     <br />byte 2 8388608 Reserved     <br />byte 1 16777216 kVah Clamp 1 Gen5 only <br />byte 1 33554432 kVah Clamp 2 Gen5 only <br />byte 1 67108864 kVah Clamp 3 Gen5 only <br />byte 1 134217728 kVar Clamp 1 Gen5 only <br />byte 1 268435456 kVar Clamp 2 Gen5 only <br />byte 1 536870912 kVar Clamp 3 Gen5 only <br />byte 1 1073741824 Reserved     <br />byte 1 2147483648 Reserved    </p> <p>The table above shows a decimal representation of all flags that can be set on  parameter 101-103 to report specific data.</p> <p><strong>Example use of the Report Table.</strong></p> <p>For example, if you want to report only the total KWH consumption, and the  Wattage for clamp 3, you would add 1 + 1024 and set the sum (1025) to parameter 101, 102, or 103. </p> <p>As another example, if you want to report Wattage and KWH power consumption  for all clamps, you would add 256 + 512 + 1024 + 2048 + 4096 + 8192, then set the sum (16128) to parameter 101, 102, or 103. </p> <p>And if you want to report everything, you would add the whole table together and set it to 101, and set 102 and 103 to 0 values. </p> <p><strong>Setting an automatic report interval.</strong></p> <p>Parameter 111-113 [4 byte dec] can be configured through your gateway in case  the default settings of your HEM is not what you desire. </p> <p>Parameter 111 will set the interval for Group 1 (parameter 101), parameter 112 will set the interval for Group 2 (parameter 102), and parameter 113 will set the interval for Group 3 (parameter 103). </p> <p>As an example, you have set parameter 101 to report the total KWH consumption  and the wattage for clamp 3, and you want to report it every 500 seconds. Set Parameter 111 [4 byte dec] to 500.</p> <p><strong>Utilizing different groups.</strong></p> <p>Your Home Energy Meter has 3 different groups that you may setup, from the  settings and examples above, you may configure each group to report different clamps and total reports to report at different interval. Group 1 uses Parameter 101 and 111, group 2 uses parameter 102 and 112, and group 3 uses parameter 103 and 113.</p>
@@ -255,8 +246,7 @@ Which reports need to send in Report group 1<br /> <h1>Overview</h1><p>This page
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_102_4" type="integer" groupName="configuration"
-                 min="0" max="2147483647">
+      <parameter name="config_102_4" type="integer" groupName="configuration">
         <label>102: Report Group 2</label>
         <description><![CDATA[
 Which reports need to send in Report group 2<br /> <h1>Overview</h1><p>See Report Group 1</p>
@@ -265,8 +255,7 @@ Which reports need to send in Report group 2<br /> <h1>Overview</h1><p>See Repor
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_103_4" type="integer" groupName="configuration"
-                 min="0" max="2147483647">
+      <parameter name="config_103_4" type="integer" groupName="configuration">
         <label>103: Report Group 3</label>
         <description><![CDATA[
 Which reports need to send in Report group 3<br /> <h1>Overview</h1><p>See Report Group 1</p>
@@ -275,22 +264,19 @@ Which reports need to send in Report group 3<br /> <h1>Overview</h1><p>See Repor
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_111_4" type="integer" groupName="configuration"
-                 min="1" max="2147483647">
+      <parameter name="config_111_4" type="integer" groupName="configuration">
         <label>111: Interval to send out reports of group 1</label>
         <default>5</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_112_4" type="integer" groupName="configuration"
-                 min="1" max="2147483647">
+      <parameter name="config_112_4" type="integer" groupName="configuration">
         <label>112: Interval to send out reports of group 2</label>
         <default>120</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_113_4" type="integer" groupName="configuration"
-                 min="1" max="2147483647">
+      <parameter name="config_113_4" type="integer" groupName="configuration">
         <label>113: Interval to send out reports of group 3</label>
         <default>120</default>
         <limitToOptions>false</limitToOptions>

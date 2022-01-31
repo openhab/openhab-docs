@@ -67,8 +67,7 @@ GE Enbrighten Z-Wave Plus Smart Dimmer<br /> <h1>Overview</h1><p>Set the scene w
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_4_1" type="integer" groupName="configuration"
-                 min="0" max="1">
+      <parameter name="config_4_1" type="integer" groupName="configuration">
         <label>4: Invert</label>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
@@ -114,8 +113,7 @@ Alternate Exclusion<br /> <h1>Overview</h1><p>Never accidentally remove a device
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_30_1" type="integer" groupName="configuration"
-                 min="1" max="99">
+      <parameter name="config_30_1" type="integer" groupName="configuration">
         <label>30: Minimum Dim Threshold</label>
         <description><![CDATA[
 Minimum Dim Threshold<br /> <h1>Overview</h1><p>Set the minimum dimmer threshold when manually or remotely controlled</p>
@@ -124,8 +122,7 @@ Minimum Dim Threshold<br /> <h1>Overview</h1><p>Set the minimum dimmer threshold
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_31_1" type="integer" groupName="configuration"
-                 min="1" max="99">
+      <parameter name="config_31_1" type="integer" groupName="configuration">
         <label>31: Maximum Brightness Threshold</label>
         <description><![CDATA[
 Maximum Brightness Threshold<br /> <h1>Overview</h1><p>Set the maximum brightness threshold when manually or remotely controlled</p>
@@ -134,8 +131,7 @@ Maximum Brightness Threshold<br /> <h1>Overview</h1><p>Set the maximum brightnes
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_32_1" type="integer" groupName="configuration"
-                 min="0" max="99">
+      <parameter name="config_32_1" type="integer" groupName="configuration">
         <label>32: Default Brightness Level</label>
         <description><![CDATA[
 Default Brightness Level<br /> <h1>Overview</h1><p>Set the default brightness level that the dimmer will turn on when being controlled manually</p> <ul><li>0 = Default</li> <li>1 - 99 = percentage</li> </ul>

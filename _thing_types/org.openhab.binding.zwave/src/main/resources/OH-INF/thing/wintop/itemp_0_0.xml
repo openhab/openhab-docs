@@ -99,8 +99,7 @@ Operating Mode<br /> <h1>Overview</h1><p>Defines if the sensor is in normal wake
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_6_2" type="integer" groupName="configuration"
-                 min="0" max="15300">
+      <parameter name="config_6_2" type="integer" groupName="configuration">
         <label>6: Temperature Offset</label>
         <description><![CDATA[
 Temperature Offset<br /> <h1>Overview</h1><p>Can be used to calibrate the temperature sensors function. Calibrated as factory default.</p>

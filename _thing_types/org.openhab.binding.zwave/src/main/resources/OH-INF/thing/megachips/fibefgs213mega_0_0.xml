@@ -104,8 +104,7 @@ First channel - reaction to switch for delay/auto ON/OFF modes<br /> <h1>Overvie
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_12_2" type="integer" groupName="configuration"
-                 min="0" max="32000">
+      <parameter name="config_12_2" type="integer" groupName="configuration">
         <label>12: time parameter for delay/auto ON/OFF modes</label>
         <description><![CDATA[
 First channel - time parameter for delay/auto ON/OFF modes<br /> <h1>Overview</h1><p>This parameter allows to set time parameter used in timed modes.</p> <p>Available settings: 0 (0.1s), 1-32000 (1-32000s, 1s step) - time parameter</p> <p>Default setting: 50 (50s)</p>
@@ -114,8 +113,7 @@ First channel - time parameter for delay/auto ON/OFF modes<br /> <h1>Overview</h
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_13_2" type="integer" groupName="configuration"
-                 min="1" max="32000">
+      <parameter name="config_13_2" type="integer" groupName="configuration">
         <label>13: 1st ch. pulse time for flashing mode</label>
         <description><![CDATA[
 First channel - pulse time for flashing mode<br /> <h1>Overview</h1><p>This parameter allows to set time of switching to opposite state in flashing mode</p> <p>Available settings: 1-32000 (0.1-3200.0s, 0.1s step) - time parameter</p> <p>Default setting: 5 (0.5s)</p>
@@ -166,8 +164,7 @@ Associations in Z-Wave network security mode<br /> <h1>Overview</h1><p>This para
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_28_1" type="integer" groupName="configuration"
-                 min="0" max="15">
+      <parameter name="config_28_1" type="integer" groupName="configuration">
         <label>28: S1 switch - scenes sent</label>
         <description><![CDATA[
 S1 switch - scenes sent<br /> <h1>Overview</h1><p>This parameter determines which actions result in sending scene IDs assigned to them</p>
@@ -182,8 +179,7 @@ S1 switch - scenes sent<br /> <h1>Overview</h1><p>This parameter determines whic
         </options>
       </parameter>
 
-      <parameter name="config_29_1" type="integer" groupName="configuration"
-                 min="0" max="15">
+      <parameter name="config_29_1" type="integer" groupName="configuration">
         <label>29: S2 switch - scenes sent</label>
         <description><![CDATA[
 S2 switch - scenes sent<br /> <h1>Overview</h1><p>This parameter determines which actions result in sending scene IDs assigned to them</p>
@@ -198,8 +194,7 @@ S2 switch - scenes sent<br /> <h1>Overview</h1><p>This parameter determines whic
         </options>
       </parameter>
 
-      <parameter name="config_30_1" type="integer" groupName="configuration"
-                 min="0" max="15">
+      <parameter name="config_30_1" type="integer" groupName="configuration">
         <label>30: S1 assocs. sent to 2nd and 3rd group</label>
         <description><![CDATA[
 S1 switch - associations sent to 2nd and 3rd association groups<br /> <h1>Overview</h1><p>This parameter determines which actions are ignored when sending commands to devices associated in 2nd and 3rd association group. All actions are active by default.</p>
@@ -214,16 +209,14 @@ S1 switch - associations sent to 2nd and 3rd association groups<br /> <h1>Overvi
         </options>
       </parameter>
 
-      <parameter name="config_31_2" type="integer" groupName="configuration"
-                 min="0" max="255">
+      <parameter name="config_31_2" type="integer" groupName="configuration">
         <label>31: S1 ON val sent to 2nd and 3rd groups</label>
         <description>S1 switch - Switch ON value sent to 2nd and 3rd association groups</description>
         <default>255</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_32_2" type="integer" groupName="configuration"
-                 min="0" max="255">
+      <parameter name="config_32_2" type="integer" groupName="configuration">
         <label>32: S1 OFF val sent to 2nd and 3rd groups</label>
         <description><![CDATA[
 S1 switch - Switch ON value sent to 2nd and 3rd association groups<br /> <h1>Overview</h1><p>This parameter defines value sent with Switch OFF command to devices associated in 2nd and 3rd association group.</p>
@@ -232,16 +225,14 @@ S1 switch - Switch ON value sent to 2nd and 3rd association groups<br /> <h1>Ove
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_33_2" type="integer" groupName="configuration"
-                 min="0" max="255">
+      <parameter name="config_33_2" type="integer" groupName="configuration">
         <label>33: S1 DblClick val sent to 2nd and 3rd groups</label>
         <description>S1 switch - Double Click value sent to 2nd and 3rd association groups</description>
         <default>99</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_35_1" type="integer" groupName="configuration"
-                 min="0" max="15">
+      <parameter name="config_35_1" type="integer" groupName="configuration">
         <label>35: S2 assocs. sent to 4th and 5th group</label>
         <description><![CDATA[
 S2 switch - associations sent to 4th and 5th association groups<br /> <h1>Overview</h1><p>This parameter determines which actions result in sending commands to devices associated in 4th and 5th association group. All actions are active by default.</p>
@@ -256,8 +247,7 @@ S2 switch - associations sent to 4th and 5th association groups<br /> <h1>Overvi
         </options>
       </parameter>
 
-      <parameter name="config_36_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_36_1" type="integer" groupName="configuration">
         <label>36: S2 switch ON value sent to 4th and 5th ass. groups</label>
         <description><![CDATA[
 S2 switch - Switch ON value sent to 4th and 5th association groups<br /> <h1>Overview</h1><p>This parameter defines value sent with Switch On command to devices associated in 4th and 5th association group. </p>
@@ -266,8 +256,7 @@ S2 switch - Switch ON value sent to 4th and 5th association groups<br /> <h1>Ove
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_37_2" type="integer" groupName="configuration"
-                 min="0" max="255">
+      <parameter name="config_37_2" type="integer" groupName="configuration">
         <label>37: S2 switch OFF sent to 4th and 5th groups</label>
         <description><![CDATA[
 S2 switch - Switch OFF value sent to 4th and 5th association groups<br /> <h1>Overview</h1><p>This parameter defines value sent with Switch OFF command to devices associated in 4th and 5th association group. </p>
@@ -276,8 +265,7 @@ S2 switch - Switch OFF value sent to 4th and 5th association groups<br /> <h1>Ov
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_38_2" type="integer" groupName="configuration"
-                 min="0" max="255">
+      <parameter name="config_38_2" type="integer" groupName="configuration">
         <label>38: S2 double click sent to 4th and 5th ass. grps.</label>
         <description><![CDATA[
 S2 switch - Double Click value sent to 4th and 5th association groups<br /> <h1>Overview</h1><p>This parameter defines value sent with Double Click command to devices associated in 4th and 5th association group. </p>
@@ -346,8 +334,7 @@ Reaction to Heat Alarm<br /> <h1>Overview</h1><p>This parameter determines how t
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_44_2" type="integer" groupName="configuration"
-                 min="1" max="32000">
+      <parameter name="config_44_2" type="integer" groupName="configuration">
         <label>44: Flashing alarm duration</label>
         <description><![CDATA[
 Flashing alarm duration<br /> <h1>Overview</h1><p>This parameter allows to set duration of flashing alarm mode.  (1-32000s duration, 1s step). The default value (600) represents 10 minutes.</p>
@@ -356,8 +343,7 @@ Flashing alarm duration<br /> <h1>Overview</h1><p>This parameter allows to set d
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_50_1" type="integer" groupName="configuration"
-                 min="0" max="100">
+      <parameter name="config_50_1" type="integer" groupName="configuration">
         <label>50: Active power reports</label>
         <description><![CDATA[
 Power level reporting threshold.<br /> <h1>Overview</h1><p>The parameter defines the power level change that will result in a new power report being sent. The value is a percentage of the previous report. 0 disables the function.</p>
@@ -366,8 +352,7 @@ Power level reporting threshold.<br /> <h1>Overview</h1><p>The parameter defines
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_51_1" type="integer" groupName="configuration"
-                 min="0" max="120">
+      <parameter name="config_51_1" type="integer" groupName="configuration">
         <label>51: Minimal time between power report</label>
         <description><![CDATA[
 Determines minimal time between power reports<br /> <h1>Overview</h1><p>This  parameter determines minimum time that has to elapse before sending new power report to the main controller. 0 disables the function. 1-120s - report interval in seconds</p>
@@ -376,8 +361,7 @@ Determines minimal time between power reports<br /> <h1>Overview</h1><p>This  p
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_53_2" type="integer" groupName="configuration"
-                 min="0" max="32000">
+      <parameter name="config_53_2" type="integer" groupName="configuration">
         <label>53: Energy reports</label>
         <description><![CDATA[
 Energy level change resulting in sending a new energy report.<br /> <h1>Overview</h1><p>Energy level change which will result in sending a new energy report. Available settings: 1-32000 (0.01 - 320 kWh). 0 disables the function.</p>
@@ -386,8 +370,7 @@ Energy level change resulting in sending a new energy report.<br /> <h1>Overview
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_58_2" type="integer" groupName="configuration"
-                 min="0" max="32000">
+      <parameter name="config_58_2" type="integer" groupName="configuration">
         <label>58: Periodic power reports</label>
         <description><![CDATA[
 Determines time interval for periodic power reports<br /> <h1>Overview</h1><p>This  parameter  determines  in  what  time  interval  the  periodic  power   reports are sent to the main controller. 0  - periodic reports are disabled, 1-32000  (1-32000s) - report interval</p>
@@ -396,8 +379,7 @@ Determines time interval for periodic power reports<br /> <h1>Overview</h1><p>Th
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_59_2" type="integer" groupName="configuration"
-                 min="0" max="32000">
+      <parameter name="config_59_2" type="integer" groupName="configuration">
         <label>59: Periodic energy reports</label>
         <description><![CDATA[
 Determines time interval for periodic energy reports<br /> <h1>Overview</h1><p>This parameter determines in what time interval the periodic energy reports are sent to the main controller. 0  - periodic reports are disabled 1-32000  (1-32000s) - report interval</p>

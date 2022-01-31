@@ -83,8 +83,7 @@ Wall Plug Switch<br /> <h1>Overview</h1><p>This Plug provides line voltage, curr
       </parameter-group>
 
       <!-- PARAMETER DEFINITIONS -->
-      <parameter name="config_1_1" type="integer" groupName="configuration"
-                 min="0" max="1">
+      <parameter name="config_1_1" type="integer" groupName="configuration">
         <label>1: Meter Report Enable</label>
         <description><![CDATA[
 This parameter defines Disable/Enable meter report measure data to controller.<br /> <h1>Overview</h1><p><br /></p>
@@ -96,8 +95,7 @@ This parameter defines Disable/Enable meter report measure data to controller.<b
         </options>
       </parameter>
 
-      <parameter name="config_2_2" type="integer" groupName="configuration"
-                 min="-32767" max="32768">
+      <parameter name="config_2_2" type="integer" groupName="configuration">
         <label>2: Meter Report Interval</label>
         <description><![CDATA[
 Interval time reporting data to controller<br /> <h1>Overview</h1><p>This parameter defines interval time (in seconds) that Meter report data to main controller.</p>
@@ -106,8 +104,7 @@ Interval time reporting data to controller<br /> <h1>Overview</h1><p>This parame
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_3_1" type="integer" groupName="configuration"
-                 min="1" max="16">
+      <parameter name="config_3_1" type="integer" groupName="configuration">
         <label>3: Maxium over-load current</label>
         <description><![CDATA[
 maximum current the plug can provide to load<br /> <h1>Overview</h1><p>This parameter defines maximum current the plug can provide to load that be connected to plug. If the current consumed by load greater than maximum current, the plug will cut off power and send alarm.<br />Send Alarm NOTIFICATION_EVENT_POWER_MANAGEMENT_OVER_LOAD_DETECTED to associated devices in lifeline. Red Led will blink every seconds until current is normal (less than Parameter #3). You must remove the loader and turn on the Plug (press the button once) to enable current monitor and clear NOTIFICATION ALARM. This parameter value must be great than #4. If user set this parameter to default by Configure CC, the parameter #4 will be set to default value.</p>
@@ -116,8 +113,7 @@ maximum current the plug can provide to load<br /> <h1>Overview</h1><p>This para
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_4_1" type="integer" groupName="configuration"
-                 min="1" max="15">
+      <parameter name="config_4_1" type="integer" groupName="configuration">
         <label>4: Maximum alarm current</label>
         <description><![CDATA[
 Max current for over-current notification<br /> <h1>Overview</h1><p>Defines maximum current, if the current plug provide to load great than this parameter, the plug will send over-current notification to main controller and the LED will be turn RED, but plug cannot cut-off power. Value must be less than parameter 3#.</p>
@@ -126,8 +122,7 @@ Max current for over-current notification<br /> <h1>Overview</h1><p>Defines maxi
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_5_1" type="integer" groupName="configuration"
-                 min="0" max="1">
+      <parameter name="config_5_1" type="integer" groupName="configuration">
         <label>5: LED enable</label>
         <description><![CDATA[
 This parameter defines the LED indication Function ON/OFF.<br /> <h1>Overview</h1><p><br /></p>
@@ -139,8 +134,7 @@ This parameter defines the LED indication Function ON/OFF.<br /> <h1>Overview</h
         </options>
       </parameter>
 
-      <parameter name="config_6_1" type="integer" groupName="configuration"
-                 min="1" max="100">
+      <parameter name="config_6_1" type="integer" groupName="configuration">
         <label>6: Power Report Threshold</label>
         <description><![CDATA[
 Power consumed change to be reported<br /> <h1>Overview</h1><p>How much the power consumed must change to be reported. If the rate of power consumed change ratio is greater than this parameter, the plug will report the results, voltage, current, power and energy.</p>
@@ -149,8 +143,7 @@ Power consumed change to be reported<br /> <h1>Overview</h1><p>How much the powe
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_7_1" type="integer" groupName="configuration"
-                 min="0" max="1">
+      <parameter name="config_7_1" type="integer" groupName="configuration">
         <label>7: Remember Relay ON/OFF status after power failure.</label>
         <description><![CDATA[
 Plug state after power-on<br /> <h1>Overview</h1><p>Define how will the Plug react after the power supply is back on.  0 = will be off after the power supply is reconnected.  Others = remember relay status</p>
@@ -162,8 +155,7 @@ Plug state after power-on<br /> <h1>Overview</h1><p>Define how will the Plug rea
         </options>
       </parameter>
 
-      <parameter name="config_8_1" type="integer" groupName="configuration"
-                 min="0" max="1">
+      <parameter name="config_8_1" type="integer" groupName="configuration">
         <label>8: Plug Time switch Function</label>
         <description><![CDATA[
 Timer plug OFF after time period<br /> <h1>Overview</h1><p>Defines if the timer function is enabled/disabled to switch the Plug OFF after the time period, which is defined in parameter 9#.</p>
@@ -175,8 +167,7 @@ Timer plug OFF after time period<br /> <h1>Overview</h1><p>Defines if the timer 
         </options>
       </parameter>
 
-      <parameter name="config_9_2" type="integer" groupName="configuration"
-                 min="-32767" max="32768">
+      <parameter name="config_9_2" type="integer" groupName="configuration">
         <label>9: Time switch Period</label>
         <description><![CDATA[
 Delay time after the plug is switched off (in minutes)<br /> <h1>Overview</h1><p>This parameter defines the time after the plug is switched off. If Parameter 8# is set to ‘1’, and relay is turn ON, the relay will be turn OFF after delay this parameter.</p>
@@ -185,8 +176,7 @@ Delay time after the plug is switched off (in minutes)<br /> <h1>Overview</h1><p
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_10_1" type="integer" groupName="configuration"
-                 min="0" max="1">
+      <parameter name="config_10_1" type="integer" groupName="configuration">
         <label>10: Button On/Off Enable</label>
         <description><![CDATA[
 Enable/Disable top button function<br /> <h1>Overview</h1><p>If this parameter is set to ‘1’, users can turn on and off the wall plug by pressing the button on the top of the wall plug. If this parameter is set to ‘0’, the wall plug cannot be turned on and off by pressing the button.</p>

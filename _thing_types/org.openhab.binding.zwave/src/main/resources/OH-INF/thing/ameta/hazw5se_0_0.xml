@@ -64,8 +64,7 @@ Door/Window Sensor<br /> <h1>Overview</h1><ul><li>The AIBASE Door/Window Sensor 
       </parameter-group>
 
       <!-- PARAMETER DEFINITIONS -->
-      <parameter name="config_10_1" type="integer" groupName="configuration"
-                 min="0" max="50">
+      <parameter name="config_10_1" type="integer" groupName="configuration">
         <label>10: Level of low battery</label>
         <description><![CDATA[
 This parameter defines a battery level as the “low battery”<br /> <h1>Overview</h1><p>Available settings: 0‐50 (0% ‐ 50%) </p> <p>Default setting: 10 (10%)</p>

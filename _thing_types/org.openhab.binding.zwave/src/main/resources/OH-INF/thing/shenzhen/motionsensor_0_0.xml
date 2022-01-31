@@ -64,8 +64,7 @@ PIR Motion Sensor<br /> <h1>Overview</h1><p>Motion Sensor with illuminance and s
       </parameter-group>
 
       <!-- PARAMETER DEFINITIONS -->
-      <parameter name="config_1_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_1_1" type="integer" groupName="configuration">
         <label>1: Sensitivity Level Setting</label>
         <description><![CDATA[
 Defines the sensitivity of PIR sensor.<br /> <h1>Overview</h1><p> Where 8 = highest &amp; 255 = lowest sensitivity</p>
@@ -74,8 +73,7 @@ Defines the sensitivity of PIR sensor.<br /> <h1>Overview</h1><p> Where 8 = hig
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_2_2" type="integer" groupName="configuration"
-                 min="5" max="600">
+      <parameter name="config_2_2" type="integer" groupName="configuration">
         <label>2: ON/OFF Duration Setting</label>
         <description><![CDATA[
 Determined how long the associated devices should stay ON status<br /> <h1>Overview</h1><p>For instance, this parameter is set to 30(second), the PIR detector will send a BASIC SET Command to an associated device with value basic set level if PIR detector is triggered and the associated device will be turned on 30(second) before it is turned off. This Parameter value must be large than Parameter #6.</p>
@@ -84,8 +82,7 @@ Determined how long the associated devices should stay ON status<br /> <h1>Overv
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_3_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_3_1" type="integer" groupName="configuration">
         <label>3: Basic Set Level</label>
         <description><![CDATA[
 Basic Set Command will be sent when the door/window is opened or closed<br /> <h1>Overview</h1><p>The receiver will take in for consideration; for instance, if a lamp module received the BSC of which value is decisive as to how bright of dim level of lamp module shall be.</p> <p>Available Settings:</p> <ul><li>0 - Off, Alarm cancelling or turning a device OFF</li> <li>1~99 or 255 – ON (Binary Switch Device)</li> <li>Dim Level (Multilevel Switch Device)</li> </ul>
@@ -104,8 +101,7 @@ Basic Set Command will be sent when the door/window is opened or closed<br /> <h
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_5_2" type="integer" groupName="configuration"
-                 min="0" max="1000">
+      <parameter name="config_5_2" type="integer" groupName="configuration">
         <label>5: Lux Level Set</label>
         <description><![CDATA[
 Set a lux level value which determines when the light sensor is activated.<br /> <h1>Overview</h1><p>If the ambient illumination level falls below this value and a person moves across or within the detected area , PIR detector will send a Z-Wave ON command(i.e. BASIC_SET value = parameter 3#) to an associated device and activate it.</p>
@@ -114,8 +110,7 @@ Set a lux level value which determines when the light sensor is activated.<br />
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_6_1" type="integer" groupName="configuration"
-                 min="1" max="8">
+      <parameter name="config_6_1" type="integer" groupName="configuration">
         <label>6: Re-trigger Interval</label>
         <description><![CDATA[
 Adjust the interval of PIR being re-triggered<br /> <h1>Overview</h1><p>No report will be sent during this interval if a movement is presented. This Parameter value must be less than Parameter 2#.</p>
@@ -124,8 +119,7 @@ Adjust the interval of PIR being re-triggered<br /> <h1>Overview</h1><p>No repor
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_7_2" type="integer" groupName="configuration"
-                 min="-32767" max="32768">
+      <parameter name="config_7_2" type="integer" groupName="configuration">
         <label>7: Light Sensor Polling Interval</label>
         <description>The Intervall after which the Light Sensor Measure is polled.</description>
         <default>180</default>
@@ -145,8 +139,7 @@ Adjust the interval of PIR being re-triggered<br /> <h1>Overview</h1><p>No repor
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_9_2" type="integer" groupName="configuration"
-                 min="0" max="255">
+      <parameter name="config_9_2" type="integer" groupName="configuration">
         <label>9: Lux Level Changed Report</label>
         <description><![CDATA[
 How much the Lux Level must change<br /> <h1>Overview</h1><p>How much the Lux Level must change, in lux, to be reported to the main controller.</p>
@@ -168,8 +161,7 @@ Defines whether the LED blinking is on / off<br /> <h1>Overview</h1><p> 1 = ena
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_99_2" type="integer" groupName="configuration"
-                 min="-32767" max="32768">
+      <parameter name="config_99_2" type="integer" groupName="configuration">
         <label>99: Ambient light intensity calibration</label>
         <description><![CDATA[
 Define the calibrated scale for ambient light intensity<br /> <h1>Overview</h1><p> This parameter defines the calibrated scale for ambient light intensity, to allow more or less granular light measurements</p>

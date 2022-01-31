@@ -96,8 +96,7 @@ enable the Auto Turn-Off Timer<br /> <h1>Overview</h1><p>Auto Turn-Off Timer</p>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_4_4" type="integer" groupName="configuration"
-                 min="1" max="65535">
+      <parameter name="config_4_4" type="integer" groupName="configuration">
         <label>4: Auto Turn-Off Timer Duration</label>
         <description><![CDATA[
 set Auto Turn-Off Timer Duration<br /> <h1>Overview</h1><p>Parameter 4: Use this parameter to set the time a?er which you want the switch to automatically turn off once it has been turned on. The number entered as value corresponds to the number of minutes.</p> <p>Values: 1 – 65535 (minutes). 60 –default.</p> <p>Size: 4 byte dec.</p>
@@ -119,8 +118,7 @@ enable the Auto Turn-On Timer<br /> <h1>Overview</h1><p>Auto Turn-On Timer</p> <
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_6_4" type="integer" groupName="configuration"
-                 min="1" max="65535">
+      <parameter name="config_6_4" type="integer" groupName="configuration">
         <label>6: Auto Turn-On Timer Duration</label>
         <description><![CDATA[
 set Auto Turn-On Timer Duration<br /> <h1>Overview</h1><p>Parameter 6: Use this parameter to set the time a?er which you want the switch to automatically turn on once it has been turned off. The number entered as value corresponds to the number of minutes.</p> <p>Values: 1 – 65535 (minutes). Default</p> <p>set to 60.</p> <p>Size: 4 byte dec.</p>
@@ -143,8 +141,7 @@ Set the on off status for the switch after power failure.<br /> <h1>Overview</h1
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_9_1" type="integer" groupName="configuration"
-                 min="1" max="99">
+      <parameter name="config_9_1" type="integer" groupName="configuration">
         <label>9: Ramp Rate Control</label>
         <description><![CDATA[
 Adjust the ramp rate for your dimmer<br /> <h1>Overview</h1><p>Ramp Rate Control</p> <p>Parameter 9: Adjust the ramp rate for your dimmer (fade-in / fade-out effect for on / off operation). Values correspond to the number of seconds</p> <p>it takes for the dimmer to reach full brightness or turn off when operated manually.</p> <p>Values: 1 – 99 (seconds). Default set to 1.</p> <p>Size: 1 byte dec.</p>
@@ -153,8 +150,7 @@ Adjust the ramp rate for your dimmer<br /> <h1>Overview</h1><p>Ramp Rate Control
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_10_1" type="integer" groupName="configuration"
-                 min="1" max="99">
+      <parameter name="config_10_1" type="integer" groupName="configuration">
         <label>10: Minimum Brightness</label>
         <description><![CDATA[
 Set the minimum brightness level %<br /> <h1>Overview</h1><p>Minimum and Maximum Brightness</p> <p>Parameter 10: Set the minimum brightness level (in %) for your dimmer. You won’t be able to dim the light below the set value.</p> <p>Values: 1 – 99 (%). Default set to 1.</p> <p>Size: 1 byte dec.</p>
@@ -163,8 +159,7 @@ Set the minimum brightness level %<br /> <h1>Overview</h1><p>Minimum and Maximum
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_11_1" type="integer" groupName="configuration"
-                 min="1" max="99">
+      <parameter name="config_11_1" type="integer" groupName="configuration">
         <label>11: Maximum Brightness</label>
         <description><![CDATA[
 Set the maximum brightness level %<br /> <h1>Overview</h1><p>Minimum and Maximum Brightness</p> <p>Parameter 11: Set the maximum brightness level (in %) for your dimmer. You won’t be able to add brightness to the light beyond the set value. Note: if Parameter 12 is set to value 0, Parameter 11 is automatically disabled.</p> <p>Values: 1 – 99 (%). Default set to 99.</p> <p>Size: 1 byte dec.</p>

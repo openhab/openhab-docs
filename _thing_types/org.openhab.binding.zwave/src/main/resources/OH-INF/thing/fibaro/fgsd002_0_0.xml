@@ -170,8 +170,7 @@ This parameter defines which frames will be sent ...<br /> <h1>Overview</h1><p>i
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_11_2" type="integer" groupName="configuration"
-                 min="1" max="255">
+      <parameter name="config_11_2" type="integer" groupName="configuration">
         <label>11: BASIC ON frame value</label>
         <description><![CDATA[
 BASIC ON frame is sent in case of smoke presence detection ...<br /> <h1>Overview</h1><p>and FIRE ALARM triggering. Its value is defined by the parameter. Available settings: 0-99, 255. 0 - turn off the device. 1-99 - set the device to 1-99%. 255 - set the last status</p>
@@ -180,8 +179,7 @@ BASIC ON frame is sent in case of smoke presence detection ...<br /> <h1>Overvie
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_12_2" type="integer" groupName="configuration"
-                 min="0" max="255">
+      <parameter name="config_12_2" type="integer" groupName="configuration">
         <label>12: BASIC OFF frame value</label>
         <description><![CDATA[
 BASIC OFF frame is sent in case of FIRE ALARM cancellation.<br /> <h1>Overview</h1><p>Its value is defined by the parameter. Available settings: 0-99, 255. 0 - turn off the device. 1-99 - set the device to 1-99%. 255 - set the last status</p>
@@ -205,8 +203,7 @@ A value other than 0 means that alarms are being ...<br /> <h1>Overview</h1><p>�
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_20_2" type="integer" groupName="configuration"
-                 min="0" max="8640">
+      <parameter name="config_20_2" type="integer" groupName="configuration">
         <label>20: Temperature report interval</label>
         <description><![CDATA[
 Time interval between consecutive temperature reports.<br /> <h1>Overview</h1><p>Report is sent when new temperature value is different from the one previously reported - according to the set hysteresis (parameter 21). Temperature reports can be also sent as a result of polling.<br /></p> <p>Available settings: 0, 1-8640 (multiply by 10 seconds) [10s-24h]<br /></p> <p>0 – reports inactive<br />1-8640 - [10s-24h]<br /></p> <p>Default setting: 1 (10 seconds)<br />Parameter size: 2 [bytes] </p>
@@ -215,8 +212,7 @@ Time interval between consecutive temperature reports.<br /> <h1>Overview</h1><p
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_21_1" type="integer" groupName="configuration"
-                 min="1" max="100">
+      <parameter name="config_21_1" type="integer" groupName="configuration">
         <label>21: Temperature report hysteresis</label>
         <description><![CDATA[
 The temperature report will only be sent if there is a difference ...<br /> <h1>Overview</h1><p>in temperature value from the previous value reported, defined in this parameter (hysteresis). Temperature reports can be also sent as a result of polling.<br /></p> <p>Available settings: 1 – 100 (in 0,1oC steps)<br />1-100 - (multiply by 0,1) [0,1oC - 10oC]<br /></p> <p>Default setting: 10 (1oC)<br />Parameter size: 1 [byte] </p>
@@ -225,8 +221,7 @@ The temperature report will only be sent if there is a difference ...<br /> <h1>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_30_1" type="integer" groupName="configuration"
-                 min="1" max="100">
+      <parameter name="config_30_1" type="integer" groupName="configuration">
         <label>30: Temperature threshold</label>
         <description><![CDATA[
 Temperature threshold for activating alarms<br /> <h1>Overview</h1><p>This is the temperature threshold, measured by the internal sensor above which the excess temperature notification is sent (visual indication/sound/Z-Wave report).</p> <p>Note that the alarm will not be deactivated again until the temperature drops by at least 2 degrees below this threshold.</p>
@@ -235,8 +230,7 @@ Temperature threshold for activating alarms<br /> <h1>Overview</h1><p>This is th
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_31_2" type="integer" groupName="configuration"
-                 min="1" max="8640">
+      <parameter name="config_31_2" type="integer" groupName="configuration">
         <label>31: Excess temperature signaling interval</label>
         <description><![CDATA[
 Time interval of signaling (visual indication/sound) excess ...<br /> <h1>Overview</h1><p> temperature level</p> <p><br />Available settings: 1-8640 (multiply by 10 seconds) [10s-24h]<br />1-8640 - [10s-24h]<br /></p> <p>Default setting: 1 (10 seconds)<br />Parameter size: 2 [bytes] </p>
@@ -245,8 +239,7 @@ Time interval of signaling (visual indication/sound) excess ...<br /> <h1>Overvi
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_32_2" type="integer" groupName="configuration"
-                 min="1" max="8640">
+      <parameter name="config_32_2" type="integer" groupName="configuration">
         <label>32: Lack of Z-Wave range indication interval</label>
         <description><![CDATA[
 Time interval of signaling (visual indication/sound) lack of ...<br /> <h1>Overview</h1><p>Z-Wave range.</p> <p><br />Available settings: 1-8640 (multiply by 10 seconds) [10s-24h]<br />1-8640 - [10s-24h]<br /></p> <p>Default setting: 180 (30min)<br />Parameter size: 2 [bytes] </p>

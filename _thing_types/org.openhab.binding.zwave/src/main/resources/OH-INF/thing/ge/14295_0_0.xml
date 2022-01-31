@@ -65,48 +65,42 @@ In-Wall Dimmer Switch<br /> <h1>Overview</h1><p>Transform any home into a smart 
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_7_1" type="integer" groupName="configuration"
-                 min="1" max="99">
+      <parameter name="config_7_1" type="integer" groupName="configuration">
         <label>7: Dim Rate Steps</label>
         <description>Number of steps or levels</description>
         <default>1</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_8_2" type="integer" groupName="configuration"
-                 min="1" max="255">
+      <parameter name="config_8_2" type="integer" groupName="configuration">
         <label>8: Dim Rate step timing</label>
         <description>Timing of steps or levels</description>
         <default>3</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_9_1" type="integer" groupName="configuration"
-                 min="1" max="99">
+      <parameter name="config_9_1" type="integer" groupName="configuration">
         <label>9: Dim 2 Rate Steps</label>
         <description>Number of steps or levels</description>
         <default>1</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_10_2" type="integer" groupName="configuration"
-                 min="1" max="255">
+      <parameter name="config_10_2" type="integer" groupName="configuration">
         <label>10: Dim 2 Step Timing</label>
         <description>Timing of steps</description>
         <default>3</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_11_1" type="integer" groupName="configuration"
-                 min="1" max="99">
+      <parameter name="config_11_1" type="integer" groupName="configuration">
         <label>11: Dim 3 Rate Steps</label>
         <description>Number of steps or levels</description>
         <default>1</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_12_2" type="integer" groupName="configuration"
-                 min="1" max="255">
+      <parameter name="config_12_2" type="integer" groupName="configuration">
         <label>12: Dim 3 Rate Timing</label>
         <description>Timing of steps or levels</description>
         <default>3</default>

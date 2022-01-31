@@ -71,8 +71,7 @@ Outdoor Motion Sensor v2<br /> <h1>Overview</h1><p>OUTDOOR SENSOR: Introducing t
       </parameter-group>
 
       <!-- PARAMETER DEFINITIONS -->
-      <parameter name="config_1_1" type="integer" groupName="configuration"
-                 min="0" max="99">
+      <parameter name="config_1_1" type="integer" groupName="configuration">
         <label>1: Basic Set Report Value Sent to Associated Devices</label>
         <description><![CDATA[
 Basic Set Report Value Sent to Associated Devices<br /> <h1>Overview</h1><p>Set the value of basic set report sent to the light associated with the sensor in Group 2 (so the light turns on to the selected brightness level). 99 is the equivalent of full brightness in Z-Wave terms.</p>
@@ -81,8 +80,7 @@ Basic Set Report Value Sent to Associated Devices<br /> <h1>Overview</h1><p>Set 
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_2_1" type="integer" groupName="configuration"
-                 min="0" max="1">
+      <parameter name="config_2_1" type="integer" groupName="configuration">
         <label>2: Enable / Disable Motion Reports</label>
         <description><![CDATA[
 Enable / Disable Motion Reports<br /> <h1>Overview</h1><p>Enable or disable motion reports completely. If motion sensor is disabled, the device will not report motion at all to your hub.</p>
@@ -94,8 +92,7 @@ Enable / Disable Motion Reports<br /> <h1>Overview</h1><p>Enable or disable moti
         </options>
       </parameter>
 
-      <parameter name="config_3_1" type="integer" groupName="configuration"
-                 min="1" max="10">
+      <parameter name="config_3_1" type="integer" groupName="configuration">
         <label>3: Motion sensitivity</label>
         <description><![CDATA[
 Motion sensitivity<br /> <h1>Overview</h1><p>Adjust motion sensitivity where 10 is the most sensitive setting. The default sensitivity is 1.</p>
@@ -129,8 +126,7 @@ Motion re-trigger time<br /> <h1>Overview</h1><p>Set motion re-trigger time for 
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_6_2" type="integer" groupName="configuration"
-                 min="1" max="1440">
+      <parameter name="config_6_2" type="integer" groupName="configuration">
         <label>6: Lux reporting frequency</label>
         <description><![CDATA[
 Lux reporting frequency<br /> <h1>Overview</h1><p>Set lux reporting frequency to decide how often in minutes the sensor will measure and send brightness level data to the hub and associated devices. The default is 30 minutes and the range is 1-1440. Note: Frequent reports will affect battery life.</p>
@@ -139,8 +135,7 @@ Lux reporting frequency<br /> <h1>Overview</h1><p>Set lux reporting frequency to
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_7_2" type="integer" groupName="configuration" readOnly="true"
-                 min="5" max="720">
+      <parameter name="config_7_2" type="integer" groupName="configuration" readOnly="true">
         <label>7: Reading from physical motion clear knob</label>
         <description><![CDATA[
 Reading from physical motion clear knob<br /> <h1>Overview</h1><p><strong>READ ONLY. </strong>Read the values for the timer (motion clear) knob set physically at the sensor.</p> <p><strong>Values: </strong>5 (at T position / test mode); 30; 60; 300; 600; 720 (seconds).</p>
@@ -149,8 +144,7 @@ Reading from physical motion clear knob<br /> <h1>Overview</h1><p><strong>READ O
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_8_2" type="integer" groupName="configuration" readOnly="true"
-                 min="10" max="900">
+      <parameter name="config_8_2" type="integer" groupName="configuration" readOnly="true">
         <label>8: Reading from physical low lux trigger knob</label>
         <description><![CDATA[
 Reading from physical low lux trigger knob<br /> <h1>Overview</h1><p><strong>READ ONLY. </strong>Read the values for the lux trigger knob set physically at the sensor.</p> <p><strong>Values: </strong>10; 50; 100; 200; 300; 900 lux (at T position / test mode).</p>

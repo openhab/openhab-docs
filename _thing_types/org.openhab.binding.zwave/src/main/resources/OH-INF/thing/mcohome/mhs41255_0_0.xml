@@ -65,8 +65,7 @@ MCO Touch Panel Switch<br /> <h1>Overview</h1><p>The Touch Panel Switch can be u
       </parameter-group>
 
       <!-- PARAMETER DEFINITIONS -->
-      <parameter name="config_2_1" type="integer" groupName="configuration"
-                 min="0" max="1">
+      <parameter name="config_2_1" type="integer" groupName="configuration">
         <label>2: Switch state saved or not when power failure</label>
         <description><![CDATA[
 Switch state saved or not when power failure<br /> <h1>Overview</h1><p>0x00 not saved，switch will be off when powered again</p> <p>0x01 saved，switch will keep the same state when powered again - DEFAULT</p>
@@ -75,8 +74,7 @@ Switch state saved or not when power failure<br /> <h1>Overview</h1><p>0x00 not 
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_3_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_3_1" type="integer" groupName="configuration">
         <label>3: ALL ON/ALL OFF</label>
         <description><![CDATA[
 ALL ON/ALL OFF<br /> <h1>Overview</h1><p>0x00 forbid ALL ON, forbid ALL OFF</p> <p>0x01 forbid ALL ON, allow ALL OFF</p> <p>0x02 allow ALL ON, forbid ALL OFF</p> <p>0xFF allow ALL ON, allow ALL OFF - DEFAULT</p>
@@ -85,8 +83,7 @@ ALL ON/ALL OFF<br /> <h1>Overview</h1><p>0x00 forbid ALL ON, forbid ALL OFF</p> 
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_4_1" type="integer" groupName="configuration"
-                 min="1" max="10">
+      <parameter name="config_4_1" type="integer" groupName="configuration">
         <label>4: LED Backlit brightness level</label>
         <description><![CDATA[
 LED Backlit brightness level<br /> <h1>Overview</h1><p>0x00 LED disabled</p> <p>0x01~0x0A Min level-Max level</p> <p>&gt;0x0A same level as 0x0A - DEFAULT</p>
@@ -95,8 +92,7 @@ LED Backlit brightness level<br /> <h1>Overview</h1><p>0x00 LED disabled</p> <p>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_5_1" type="integer" groupName="configuration"
-                 min="0" max="4">
+      <parameter name="config_5_1" type="integer" groupName="configuration">
         <label>5: Key Mode</label>
         <description><![CDATA[
 Key Mode<br /> <h1>Overview</h1><p>0x00 single click to switch on/off status - DEFAULT</p> <p>0x01 Key default as off state. When it is turned on, then it will be turned off automatically after a time period , which can be set in item 0x06</p> <p>0x02 Key default as on state. When it is turned off, then it will be turned on automatically after a time period , which can be set in item 0x06</p> <p>0x03 hold &gt;3s then key is on, and off once released</p> <p>0X04 single click to switch on/off status + hold &gt;3s then key is on, and off once released</p> <p>**** This function works for corridor or stairwell situation. ****</p>
@@ -105,8 +101,7 @@ Key Mode<br /> <h1>Overview</h1><p>0x00 single click to switch on/off status - D
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_6_2" type="integer" groupName="configuration"
-                 min="-32767" max="32768">
+      <parameter name="config_6_2" type="integer" groupName="configuration">
         <label>6: Key On duration</label>
         <description><![CDATA[
 Key On duration<br /> <h1>Overview</h1><p>0x00 infinite - DEFAULT</p> <p>1~65535 unit "sec"</p>
@@ -115,8 +110,7 @@ Key On duration<br /> <h1>Overview</h1><p>0x00 infinite - DEFAULT</p> <p>1~65535
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_8_1" type="integer" groupName="configuration"
-                 min="0" max="3">
+      <parameter name="config_8_1" type="integer" groupName="configuration">
         <label>8: Basic CC integration setting</label>
         <description><![CDATA[
 Basic CC integration setting<br /> <h1>Overview</h1><p>0x00 "Basic Set" received，key 1 responds; "Basic Get" received，key 1 sends "Basic Report"; key 1 will not send unsolicited "Basic Report"（No Endpoint）to LifeLine Association - DEFAULT</p> <p>0x01 "Basic Set" received，key 1 responds; "Basic Get" received，key 1 sends "Basic Report"; key 1 will send unsolicited "Basic Report"（No Endpoint）to LifeLine Association</p> <p>0x02 "Basic Set" received，all keys respond; "Basic Get" received，not reply "Basic Report"; All keys will not send unsolicited "Basic Report"（No Endpoint） to LifeLine Association</p> <p>0x03 "Basic Set" received，all keys respond; "Basic Get" received，key 1 sends "Basic Report"; All keys will not send unsolicited "Basic Report"（No Endpoint）to LifeLine Association</p>
@@ -125,8 +119,7 @@ Basic CC integration setting<br /> <h1>Overview</h1><p>0x00 "Basic Set" received
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_10_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_10_1" type="integer" groupName="configuration">
         <label>10: Scene respond</label>
         <description><![CDATA[
 Scene respond<br /> <h1>Overview</h1><p>0x00: Scene respond disabled</p> <p>Bit0: =1 Key1 respond scene</p> <p>        =0 Key1 not respond scene</p> <p>Bit1: =1 Key2 respond scene</p> <p>        =0 Key2 not respond scene</p> <p>Bit7:4 Rev</p>

@@ -92,8 +92,7 @@ Secure Z-Wave Room Thermostat<br /> <h1>Overview</h1><p>The SRT323 has been deve
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_3_1" type="integer" groupName="configuration"
-                 min="0" max="100">
+      <parameter name="config_3_1" type="integer" groupName="configuration">
         <label>3: Delta T</label>
         <description><![CDATA[
 Define the temperature steps<br /> <h1>Overview</h1><p>Change between temperatures to trigger a temperature report (step 0.1) (Default 10 = 1C)</p>

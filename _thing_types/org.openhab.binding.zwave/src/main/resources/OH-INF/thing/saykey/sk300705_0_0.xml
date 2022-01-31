@@ -55,8 +55,7 @@ Curtain Motor Control external module<br /> <h1>Overview</h1><p>The SK-3007-05 e
       </parameter-group>
 
       <!-- PARAMETER DEFINITIONS -->
-      <parameter name="config_4_1" type="integer" groupName="configuration" readOnly="true"
-                 min="-127" max="99">
+      <parameter name="config_4_1" type="integer" groupName="configuration" readOnly="true">
         <label>4: Current Motor Position</label>
         <description><![CDATA[
 Current Motor Position<br /> <h1>Overview</h1><p>Support Get only, feedback motor current position(0x00-0x63, 0xFE)</p>

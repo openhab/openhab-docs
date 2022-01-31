@@ -81,8 +81,7 @@ Siren<br /> <h1>Overview</h1><p>The DCH-Z510 mydlink Z-Wave Siren is a wireless 
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_31_1" type="integer" groupName="configuration"
-                 min="0" max="127">
+      <parameter name="config_31_1" type="integer" groupName="configuration">
         <label>31: Alarm Duration</label>
         <description>Play alarm sound duration, 1 tick is 30 seconds. 0 means never auto stop.</description>
         <default>0</default>

@@ -83,24 +83,21 @@ Boiler Thermostat<br /> <h1>Overview</h1><p>MCOHome Thermostat for Water Heating
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_2_2" type="integer" groupName="configuration"
-                 min="3" max="995">
+      <parameter name="config_2_2" type="integer" groupName="configuration">
         <label>2: Temperature Difference Setting</label>
         <description>Base on 0.1 ºC unit; n*0.1 ºC=0.5 ºC</description>
         <default>60</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_3_2" type="integer" groupName="configuration"
-                 min="10" max="32767">
+      <parameter name="config_3_2" type="integer" groupName="configuration">
         <label>3: Timed report intervals</label>
         <description>Base on 1s unit, it suggest to be set above 30s</description>
         <default>60</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_4_1" type="integer" groupName="configuration"
-                 min="0" max="99">
+      <parameter name="config_4_1" type="integer" groupName="configuration">
         <label>4: Humidity Difference Reporting</label>
         <description><![CDATA[
 <br /> <h1>Overview</h1><p>0x00: Disabled</p> <p>1-99: A Humidity difference value greater than this will be automatically reported to the gateway</p>
@@ -109,8 +106,7 @@ Boiler Thermostat<br /> <h1>Overview</h1><p>MCOHome Thermostat for Water Heating
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_5_1" type="integer" groupName="configuration"
-                 min="0" max="127">
+      <parameter name="config_5_1" type="integer" groupName="configuration">
         <label>5: Association 2 SET Command Retransmition times</label>
         <description><![CDATA[
 <br /> <h1>Overview</h1><p>0: Not resend</p> <p>1-127: Resend Times</p>
@@ -119,8 +115,7 @@ Boiler Thermostat<br /> <h1>Overview</h1><p>MCOHome Thermostat for Water Heating
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_7_1" type="integer" groupName="configuration"
-                 min="10" max="120">
+      <parameter name="config_7_1" type="integer" groupName="configuration">
         <label>7: Secret Manu P07</label>
         <description><![CDATA[
 <br /> <h1>Overview</h1><p>Heating period setting unit: min, range: 10-120,</p> <p>default: 20, step value: 1</p>
@@ -129,8 +124,7 @@ Boiler Thermostat<br /> <h1>Overview</h1><p>MCOHome Thermostat for Water Heating
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_8_1" type="integer" groupName="configuration"
-                 min="10" max="120">
+      <parameter name="config_8_1" type="integer" groupName="configuration">
         <label>8: Secret Menu P08</label>
         <description><![CDATA[
 <br /> <h1>Overview</h1><p>Heating time should be less than P07 value. </p>

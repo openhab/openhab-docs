@@ -52,8 +52,7 @@ Flood/water sensor<br /> <h1>Overview</h1><p>Flood/Water detection</p> <br /> <h
       </parameter-group>
 
       <!-- PARAMETER DEFINITIONS -->
-      <parameter name="config_1_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_1_1" type="integer" groupName="configuration">
         <label>1: Alarm Duration Time</label>
         <description><![CDATA[
 Alarm Duration Time<br /> <h1>Overview</h1><p>This configuration parameter that can be used to adjust the time for beep and LED turned on when water leakage is detected.</p> <p>If this parameter is set to ‘0’, the beep and LED will be turn on always until water leakage is not detected</p>
@@ -62,8 +61,7 @@ Alarm Duration Time<br /> <h1>Overview</h1><p>This configuration parameter that 
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_2_2" type="integer" groupName="configuration"
-                 min="1" max="255">
+      <parameter name="config_2_2" type="integer" groupName="configuration">
         <label>2: Alarm Interval</label>
         <description><![CDATA[
 Alarm Interval<br /> <h1>Overview</h1><p>This Parameter defines beep on /off interval time when water leakage is detected.</p>
@@ -72,8 +70,7 @@ Alarm Interval<br /> <h1>Overview</h1><p>This Parameter defines beep on /off int
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_3_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_3_1" type="integer" groupName="configuration">
         <label>3: First Alarm On Time Duration</label>
         <description><![CDATA[
 First Alarm On Time Duration<br /> <h1>Overview</h1><p>This parameter defines beep on duration first time when water leakage is detected.</p>
@@ -82,8 +79,7 @@ First Alarm On Time Duration<br /> <h1>Overview</h1><p>This parameter defines be
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_4_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_4_1" type="integer" groupName="configuration">
         <label>4: Alarm on Time Duration</label>
         <description><![CDATA[
 Alarm on Time Duration<br /> <h1>Overview</h1><p>This parameter defines beep on duration after first beep on when water leakage is detected.</p>
@@ -118,8 +114,7 @@ Water Leakage Detection<br /> <h1>Overview</h1><p>This parameter defines the fun
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_7_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_7_1" type="integer" groupName="configuration">
         <label>7: Basic Set Level</label>
         <description><![CDATA[
 Basic Set Level<br /> <h1>Overview</h1><p>Basic Set Command will be sent where contains a value when the door/window is opened or closed, the receiver will take it for consideration; for instance, if a lamp module is received the Basic Set Command of which value is decisive as to how bright of dim level of lamp module shall be.</p>

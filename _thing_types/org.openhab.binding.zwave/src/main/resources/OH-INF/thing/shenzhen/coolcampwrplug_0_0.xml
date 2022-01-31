@@ -127,8 +127,7 @@ Wall Plug Switch<br /> <h1>Overview</h1><p>This Plug provides line voltage, curr
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_5_2" type="integer" groupName="configuration"
-                 min="0" max="32767">
+      <parameter name="config_5_2" type="integer" groupName="configuration">
         <label>5: Timing Length Setting</label>
         <description>Timing Length Setting</description>
         <default>120</default>
@@ -146,16 +145,14 @@ Wall Plug Switch<br /> <h1>Overview</h1><p>This Plug provides line voltage, curr
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_7_2" type="integer" groupName="configuration"
-                 min="30" max="32767">
+      <parameter name="config_7_2" type="integer" groupName="configuration">
         <label>7: Interval of meter reporting setting</label>
         <description>Interval of meter reporting setting</description>
         <default>300</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_8_1" type="integer" groupName="configuration"
-                 min="1" max="16">
+      <parameter name="config_8_1" type="integer" groupName="configuration">
         <label>8: Maximum output current setting</label>
         <description><![CDATA[
 Maximum output current setting<br /> <h1>Overview</h1><p>The Value must be greather than the alarm value defined in Parameter 10</p>
@@ -164,16 +161,14 @@ Maximum output current setting<br /> <h1>Overview</h1><p>The Value must be great
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_9_2" type="integer" groupName="configuration"
-                 min="1" max="1600">
+      <parameter name="config_9_2" type="integer" groupName="configuration">
         <label>9: Current Differential Setting</label>
         <description>Current Differential Setting</description>
         <default>50</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_10_1" type="integer" groupName="configuration"
-                 min="1" max="15">
+      <parameter name="config_10_1" type="integer" groupName="configuration">
         <label>10: Current Alarm Value</label>
         <description><![CDATA[
 Current Alarm Value<br /> <h1>Overview</h1><p>The Value must be less than the max. output value defined in Parameter 8</p>

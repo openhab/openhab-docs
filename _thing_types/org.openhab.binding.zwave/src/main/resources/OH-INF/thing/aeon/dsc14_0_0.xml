@@ -65,8 +65,7 @@ Micro Motor Controller<br /> <h1>Overview</h1><p>The Aeon Labs Micro Motor Contr
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_2_2" type="integer" groupName="configuration"
-                 min="-32767" max="32768">
+      <parameter name="config_2_2" type="integer" groupName="configuration">
         <label>2: Blinking Behavior</label>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
@@ -96,22 +95,19 @@ Disables automated sending of a Report triggered by minimum value.<br /> <h1>Ove
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_91_2" type="integer" groupName="configuration"
-                 min="0" max="32000">
+      <parameter name="config_91_2" type="integer" groupName="configuration">
         <label>91: Minimum Change to send Report (Watt)</label>
         <default>50</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_92_1" type="integer" groupName="configuration"
-                 min="0" max="100">
+      <parameter name="config_92_1" type="integer" groupName="configuration">
         <label>92: Minimum Change to send Report (%)</label>
         <default>10</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_101_4" type="integer" groupName="configuration"
-                 min="0" max="65535">
+      <parameter name="config_101_4" type="integer" groupName="configuration">
         <label>101: reports to send automatically</label>
         <description><![CDATA[
 Bitmask of Group 1 reports<br /> <h1>Overview</h1><p>The value is a combination number made up of the sum of the values for the individual parameters. The parameters have the values:</p> <ul><li>Wattage=4</li> <li>Current=2</li> <li>Voltage=1</li> </ul>
@@ -120,8 +116,7 @@ Bitmask of Group 1 reports<br /> <h1>Overview</h1><p>The value is a combination 
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_102_4" type="integer" groupName="configuration"
-                 min="0" max="65535">
+      <parameter name="config_102_4" type="integer" groupName="configuration">
         <label>102: Which reports to send automatically to group 2</label>
         <description><![CDATA[
 Bitmask of Group 2 reports<br /> <h1>Overview</h1><p>The value is a combination number made up of the sum of the values for the individual parameters. The parameters have the values:</p> <ul><li>Wattage=4</li> <li>Current=2</li> <li>Voltage=1</li> </ul>
@@ -130,8 +125,7 @@ Bitmask of Group 2 reports<br /> <h1>Overview</h1><p>The value is a combination 
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_103_4" type="integer" groupName="configuration"
-                 min="0" max="65535">
+      <parameter name="config_103_4" type="integer" groupName="configuration">
         <label>103: Bitmask of Group 3 reports</label>
         <description><![CDATA[
 Which reports to send automatically to group 3<br /> <h1>Overview</h1><p>The value is a combination number made up of the sum of the values for the individual parameters. The parameters have the values:</p> <ul><li>Wattage=4</li> <li>Current=2</li> <li>Voltage=1</li> </ul>
@@ -140,22 +134,19 @@ Which reports to send automatically to group 3<br /> <h1>Overview</h1><p>The val
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_111_4" type="integer" groupName="configuration"
-                 min="0" max="65535">
+      <parameter name="config_111_4" type="integer" groupName="configuration">
         <label>111: Interval to send out reports of group 1</label>
         <default>720</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_112_4" type="integer" groupName="configuration"
-                 min="0" max="65535">
+      <parameter name="config_112_4" type="integer" groupName="configuration">
         <label>112: Interval to send out reports of group 2</label>
         <default>720</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_113_4" type="integer" groupName="configuration"
-                 min="0" max="65535">
+      <parameter name="config_113_4" type="integer" groupName="configuration">
         <label>113: Interval to send out reports of group 3</label>
         <default>720</default>
         <limitToOptions>false</limitToOptions>

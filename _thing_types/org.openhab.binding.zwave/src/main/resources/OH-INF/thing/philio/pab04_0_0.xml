@@ -65,8 +65,7 @@ Smart Energy Flow Meter<br /> <h1>Overview</h1><p>This valves controller PAB04 i
       </parameter-group>
 
       <!-- PARAMETER DEFINITIONS -->
-      <parameter name="config_1_1" type="integer" groupName="configuration"
-                 min="1" max="2">
+      <parameter name="config_1_1" type="integer" groupName="configuration">
         <label>1: Unit of Water Flow</label>
         <description>Unit of Water Flow</description>
         <default>2</default>
@@ -76,8 +75,7 @@ Smart Energy Flow Meter<br /> <h1>Overview</h1><p>This valves controller PAB04 i
         </options>
       </parameter>
 
-      <parameter name="config_2_1" type="integer" groupName="configuration"
-                 min="0" max="1">
+      <parameter name="config_2_1" type="integer" groupName="configuration">
         <label>2: Accumulated Water Report</label>
         <description>Accumulated Water Report</description>
         <default>1</default>
@@ -97,8 +95,7 @@ Smart Energy Flow Meter<br /> <h1>Overview</h1><p>This valves controller PAB04 i
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_4_2" type="integer" groupName="configuration"
-                 min="1" max="32676">
+      <parameter name="config_4_2" type="integer" groupName="configuration">
         <label>4: Pulses per Liter</label>
         <description>Pulses per Liter</description>
         <default>450</default>
@@ -106,8 +103,7 @@ Smart Energy Flow Meter<br /> <h1>Overview</h1><p>This valves controller PAB04 i
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_5_1" type="integer" groupName="configuration"
-                 min="0" max="1">
+      <parameter name="config_5_1" type="integer" groupName="configuration">
         <label>5: Relay Control Mode</label>
         <description>Relay Control Mode</description>
         <default>0</default>

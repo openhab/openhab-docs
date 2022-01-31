@@ -58,48 +58,42 @@ Danalock Universal Module V3<br /> <h1>Overview</h1><p>The Universal Model V3 su
       </parameter-group>
 
       <!-- PARAMETER DEFINITIONS -->
-      <parameter name="config_1_4" type="integer" groupName="configuration"
-                 min="0" max="2147483647">
+      <parameter name="config_1_4" type="integer" groupName="configuration">
         <label>1: Relay 1 Pulse length (ms)</label>
         <description>Time the relay is on in milliseconds.</description>
         <default>5000</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_2_4" type="integer" groupName="configuration"
-                 min="0" max="2147483647">
+      <parameter name="config_2_4" type="integer" groupName="configuration">
         <label>2: Relay 1 Delay length (ms)</label>
         <description>Time before the relay is activated.</description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_3_4" type="integer" groupName="configuration"
-                 min="0" max="2147483647">
+      <parameter name="config_3_4" type="integer" groupName="configuration">
         <label>3: Relay 2 Pulse length (ms)</label>
         <description>Time the relay is on in milliseconds.</description>
         <default>5000</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_4_4" type="integer" groupName="configuration"
-                 min="0" max="2147483647">
+      <parameter name="config_4_4" type="integer" groupName="configuration">
         <label>4: Relay 2 Delay length (ms)</label>
         <description>Time before the relay is activated.</description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_5_4" type="integer" groupName="configuration"
-                 min="0" max="2147483647">
+      <parameter name="config_5_4" type="integer" groupName="configuration">
         <label>5: Relay 3 Pulse length (ms)</label>
         <description>Time the relay is on in milliseconds.</description>
         <default>5000</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_6_4" type="integer" groupName="configuration"
-                 min="0" max="2147483647">
+      <parameter name="config_6_4" type="integer" groupName="configuration">
         <label>6: Relay 3 Delay length (ms)</label>
         <description>Time before the relay is activated.</description>
         <default>0</default>
@@ -117,32 +111,28 @@ Danalock Universal Module V3<br /> <h1>Overview</h1><p>The Universal Model V3 su
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_8_4" type="integer" groupName="configuration"
-                 min="0" max="2147483647">
+      <parameter name="config_8_4" type="integer" groupName="configuration">
         <label>8: Battery Sample Interval Seconds</label>
         <description>Battery Sample Interval Seconds</description>
         <default>3600</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_9_4" type="integer" groupName="configuration"
-                 min="0" max="12100">
+      <parameter name="config_9_4" type="integer" groupName="configuration">
         <label>9: Battery Milli Volt Level Threshold Maximum</label>
         <description>Maximum battery alarm level in mV.</description>
         <default>12100</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_10_4" type="integer" groupName="configuration"
-                 min="0" max="2147483647">
+      <parameter name="config_10_4" type="integer" groupName="configuration">
         <label>10: Battery Milli Volt Level Threshold Minimum</label>
         <description>Minimum battery alarm level in mV.</description>
         <default>11600</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_11_4" type="integer" groupName="configuration"
-                 min="0" max="2147483647">
+      <parameter name="config_11_4" type="integer" groupName="configuration">
         <label>11: Ble temporary allow – timer - seconds</label>
         <description>Allow Bluetooth to be on for a time in seconds</description>
         <default>0</default>

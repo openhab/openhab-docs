@@ -108,50 +108,43 @@ Red Series Dimmer<br /> <h1>Overview</h1><p>Inovelli’s new dimmer switch is pa
       </parameter-group>
 
       <!-- PARAMETER DEFINITIONS -->
-      <parameter name="config_1_1" type="integer" groupName="configuration"
-                 min="0" max="100">
+      <parameter name="config_1_1" type="integer" groupName="configuration">
         <label>1: Dimming Speed (Z-Wave)</label>
         <description>Dimming Speed (Z-Wave)</description>
         <default>3</default>
       </parameter>
 
-      <parameter name="config_2_1" type="integer" groupName="configuration"
-                 min="0" max="101">
+      <parameter name="config_2_1" type="integer" groupName="configuration">
         <label>2: Dimming Speed (from switch)</label>
         <description>Dimming Speed (from switch)</description>
         <default>101</default>
       </parameter>
 
-      <parameter name="config_3_1" type="integer" groupName="configuration"
-                 min="0" max="101">
+      <parameter name="config_3_1" type="integer" groupName="configuration">
         <label>3: Ramp Rate (Z-Wave)</label>
         <description>Ramp Rate (Z-Wave)</description>
         <default>101</default>
       </parameter>
 
-      <parameter name="config_4_1" type="integer" groupName="configuration"
-                 min="0" max="101">
+      <parameter name="config_4_1" type="integer" groupName="configuration">
         <label>4: Ramp Rate (from switch)</label>
         <description>Ramp Rate (from switch)</description>
         <default>101</default>
       </parameter>
 
-      <parameter name="config_5_1" type="integer" groupName="configuration"
-                 min="1" max="45">
+      <parameter name="config_5_1" type="integer" groupName="configuration">
         <label>5: Minimum Dim Level</label>
         <description>Minimum Dim Level</description>
         <default>1</default>
       </parameter>
 
-      <parameter name="config_6_1" type="integer" groupName="configuration"
-                 min="55" max="99">
+      <parameter name="config_6_1" type="integer" groupName="configuration">
         <label>6: Maximum Dim Level</label>
         <description>Maximum Dim Level</description>
         <default>99</default>
       </parameter>
 
-      <parameter name="config_7_1" type="integer" groupName="configuration"
-                 min="0" max="1">
+      <parameter name="config_7_1" type="integer" groupName="configuration">
         <label>7: Invert Switch</label>
         <description><![CDATA[
 Invert Switch<br /> <h1>Overview</h1><p>Inverts the switch (Tap Down = On, Tap Up = Off)</p>
@@ -163,8 +156,7 @@ Invert Switch<br /> <h1>Overview</h1><p>Inverts the switch (Tap Down = On, Tap U
         </options>
       </parameter>
 
-      <parameter name="config_8_2" type="integer" groupName="configuration"
-                 min="0" max="32767">
+      <parameter name="config_8_2" type="integer" groupName="configuration">
         <label>8: Auto Off Timer</label>
         <description><![CDATA[
 Auto Off Timer<br /> <h1>Overview</h1><p>Automatically turns the switch off after x amount of seconds.</p>
@@ -172,22 +164,19 @@ Auto Off Timer<br /> <h1>Overview</h1><p>Automatically turns the switch off afte
         <default>0</default>
       </parameter>
 
-      <parameter name="config_9_1" type="integer" groupName="configuration"
-                 min="0" max="99">
+      <parameter name="config_9_1" type="integer" groupName="configuration">
         <label>9: Default Level (Local)</label>
         <description>Default Level (Local)</description>
         <default>0</default>
       </parameter>
 
-      <parameter name="config_10_1" type="integer" groupName="configuration"
-                 min="0" max="99">
+      <parameter name="config_10_1" type="integer" groupName="configuration">
         <label>10: Default Level (Z-Wave)</label>
         <description>Default Level (Z-Wave)</description>
         <default>0</default>
       </parameter>
 
-      <parameter name="config_11_1" type="integer" groupName="configuration"
-                 min="0" max="101">
+      <parameter name="config_11_1" type="integer" groupName="configuration">
         <label>11: Power On State</label>
         <description><![CDATA[
 Power On State<br /> <h1>Overview</h1><p>When power is restored, the switch reverts to either On, Off or Last Level.</p> <p>0=Off, 1-99=Specific % On, 101=Returns to level before Power Outage.</p>
@@ -195,8 +184,7 @@ Power On State<br /> <h1>Overview</h1><p>When power is restored, the switch reve
         <default>0</default>
       </parameter>
 
-      <parameter name="config_12_1" type="integer" groupName="configuration"
-                 min="0" max="15">
+      <parameter name="config_12_1" type="integer" groupName="configuration">
         <label>12: Association Behavior</label>
         <description><![CDATA[
 Association Behavior<br /> <h1>Overview</h1><p>When should the switch send commands to the associated devices:</p> <p>01 = Local, 02 = 3-Way, 03 = 3-Way &amp; Local, 04 = Z-Wave Hub, 05 = Z-Wave Hub &amp; Local, 06 = Z-Wave Hub &amp; 3-Way, 07 = Z-Wave Hub &amp; Local &amp; 3-Way, 08 = Timer, 09 = Timer &amp; Local, 10 = Timer &amp; 3-Way, 11 =Timer &amp; 3-Way &amp; Local, 12 = Timer &amp; Z-Wave Hub, 13 = Timer &amp; Z-Wave Hub &amp; Local, 14 = Timer &amp; Z-Wave Hub &amp; 3-Way, 15 = All</p>
@@ -204,15 +192,13 @@ Association Behavior<br /> <h1>Overview</h1><p>When should the switch send comma
         <default>15</default>
       </parameter>
 
-      <parameter name="config_13_2" type="integer" groupName="configuration"
-                 min="0" max="255">
+      <parameter name="config_13_2" type="integer" groupName="configuration">
         <label>13: LED Indicator Color</label>
         <description>LED Indicator Color</description>
         <default>170</default>
       </parameter>
 
-      <parameter name="config_14_1" type="integer" groupName="configuration"
-                 min="0" max="10">
+      <parameter name="config_14_1" type="integer" groupName="configuration">
         <label>14: LED Indicator Intensity</label>
         <description><![CDATA[
 LED Indicator Intensity<br /> <h1>Overview</h1><p>This will set the intensity of the LED bar (ie: how bright it is) in 10% increments.</p>
@@ -220,8 +206,7 @@ LED Indicator Intensity<br /> <h1>Overview</h1><p>This will set the intensity of
         <default>5</default>
       </parameter>
 
-      <parameter name="config_15_1" type="integer" groupName="configuration"
-                 min="0" max="10">
+      <parameter name="config_15_1" type="integer" groupName="configuration">
         <label>15: LED Indicator Intensity (When Off)</label>
         <description><![CDATA[
 LED Indicator Intensity (When Off)<br /> <h1>Overview</h1><p>This is the intensity of the LED bar when the switch is off in 10% increments.</p>
@@ -229,8 +214,7 @@ LED Indicator Intensity (When Off)<br /> <h1>Overview</h1><p>This is the intensi
         <default>1</default>
       </parameter>
 
-      <parameter name="config_16_4" type="integer" groupName="configuration"
-                 min="0" max="100600575">
+      <parameter name="config_16_4" type="integer" groupName="configuration">
         <label>16: LED Strip Effect</label>
         <description><![CDATA[
 LED Strip Effect<br /> <h1>Overview</h1><p>Addition:  To get the final code for the desired color/effect/duration, use this calculator:  https://nathanfiscus.github.io/inovelli-notification-calc/</p>
@@ -239,8 +223,7 @@ LED Strip Effect<br /> <h1>Overview</h1><p>Addition:  To get the final code for
         <advanced>true</advanced>
       </parameter>
 
-      <parameter name="config_17_1" type="integer" groupName="configuration"
-                 min="0" max="10">
+      <parameter name="config_17_1" type="integer" groupName="configuration">
         <label>17: LED Indicator Timeout</label>
         <description><![CDATA[
 LED Indicator Timeout<br /> <h1>Overview</h1><p>Changes the amount of time the RGB Bar shows the Dim level if the LED Bar has been disabled.</p>
@@ -248,30 +231,26 @@ LED Indicator Timeout<br /> <h1>Overview</h1><p>Changes the amount of time the R
         <default>3</default>
       </parameter>
 
-      <parameter name="config_18_1" type="integer" groupName="configuration"
-                 min="0" max="100">
+      <parameter name="config_18_1" type="integer" groupName="configuration">
         <label>18: Active Power Reports</label>
         <description>Active Power Reports</description>
         <default>10</default>
       </parameter>
 
-      <parameter name="config_19_2" type="integer" groupName="configuration"
-                 min="0" max="32767">
+      <parameter name="config_19_2" type="integer" groupName="configuration">
         <label>19: Periodic Power &amp; Energy Reports</label>
         <description>Periodic Power &amp; Energy Reports</description>
         <default>3600</default>
       </parameter>
 
-      <parameter name="config_20_1" type="integer" groupName="configuration"
-                 min="0" max="100">
+      <parameter name="config_20_1" type="integer" groupName="configuration">
         <label>20: Energy Reports</label>
         <description>Energy Reports</description>
         <default>10</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_21_1" type="integer" groupName="configuration"
-                 min="0" max="1">
+      <parameter name="config_21_1" type="integer" groupName="configuration">
         <label>21: AC Power Type</label>
         <description><![CDATA[
 AC Power Type<br /> <h1>Overview</h1><p>Select whether you are wiring your switch with or without a neutral wire. (0=No-Neutral, 1=Neutral)<br /></p>
@@ -283,8 +262,7 @@ AC Power Type<br /> <h1>Overview</h1><p>Select whether you are wiring your switc
         </options>
       </parameter>
 
-      <parameter name="config_22_1" type="integer" groupName="configuration"
-                 min="0" max="2">
+      <parameter name="config_22_1" type="integer" groupName="configuration">
         <label>22: Switch Type</label>
         <description><![CDATA[
 Switch Type<br /> <h1>Overview</h1><p>Select what type of installation you have (0=single-pole, 1=3-Way w/dumb switch, 2=3-Way w/aux switch)<br /></p>
@@ -297,8 +275,7 @@ Switch Type<br /> <h1>Overview</h1><p>Select what type of installation you have 
         </options>
       </parameter>
 
-      <parameter name="config_50_1" type="integer" groupName="configuration"
-                 min="1" max="9">
+      <parameter name="config_50_1" type="integer" groupName="configuration">
         <label>50: Multi-Tap Delay</label>
         <description><![CDATA[
 Multi-Tap Delay<br /> <h1>Overview</h1><p>Adjust the delay when parameter 51 is set to 1. 1=100ms, 2=200ms, 3=300ms, etc.<br /></p>
@@ -317,8 +294,7 @@ Multi-Tap Delay<br /> <h1>Overview</h1><p>Adjust the delay when parameter 51 is 
         </options>
       </parameter>
 
-      <parameter name="config_51_1" type="integer" groupName="configuration"
-                 min="0" max="1">
+      <parameter name="config_51_1" type="integer" groupName="configuration">
         <label>51: Instant On</label>
         <description><![CDATA[
 Instant On<br /> <h1>Overview</h1><p>Enable instant on (ie: disable 700ms delay at the switch). If delay is disabled, scene control will be limited to button 1 (ie: tap up 1x or tap down 1x) and button 7 (config button). All other buttons (2-6) will be disabled.</p>
@@ -330,8 +306,7 @@ Instant On<br /> <h1>Overview</h1><p>Enable instant on (ie: disable 700ms delay 
         </options>
       </parameter>
 
-      <parameter name="config_52_1" type="integer" groupName="configuration"
-                 min="0" max="1">
+      <parameter name="config_52_1" type="integer" groupName="configuration">
         <label>52: Enable "smart bulb" mode</label>
         <description><![CDATA[
 Enable "smart bulb" mode<br /> <h1>Overview</h1><p>Smart bulb mode: If set to 1, power will output maximum % when dimmer is on to optimize performance with smart bulbs.</p>

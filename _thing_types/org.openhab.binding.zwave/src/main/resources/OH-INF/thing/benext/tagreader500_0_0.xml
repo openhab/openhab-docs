@@ -58,8 +58,7 @@ WTRFID Mini Keypad<br /> <h1>Overview</h1><p>A Z-Wave security enabled entry con
       </parameter-group>
 
       <!-- PARAMETER DEFINITIONS -->
-      <parameter name="config_1_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_1_1" type="integer" groupName="configuration">
         <label>1: Set to Default</label>
         <description><![CDATA[
 Set all configuration values to default values (factory settings)<br /> <h1>Overview</h1><p>If the Value is set to 0xFF (255) this device will return to factory settings.</p>
@@ -70,8 +69,7 @@ Set all configuration values to default values (factory settings)<br /> <h1>Over
         </options>
       </parameter>
 
-      <parameter name="config_2_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_2_1" type="integer" groupName="configuration">
         <label>2: Feedback time</label>
         <description><![CDATA[
 the time the beep goes to off<br /> <h1>Overview</h1><p>0x00 = Off, 0xFF = endless</p>
@@ -80,8 +78,7 @@ the time the beep goes to off<br /> <h1>Overview</h1><p>0x00 = Off, 0xFF = endle
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_3_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_3_1" type="integer" groupName="configuration">
         <label>3: Feedback time-out</label>
         <description><![CDATA[
 waiting for the wake-up-no-more command<br /> <h1>Overview</h1><p>Too configure the time-out, waiting on the wakeup_no_more_information command before the error sound starts automatically. The error sound is set to 8 short beeps.</p> <p>0x00 = off</p> <p>0x01 – 0xFF: Value in seconds</p>
@@ -90,8 +87,7 @@ waiting for the wake-up-no-more command<br /> <h1>Overview</h1><p>Too configure 
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_4_1" type="integer" groupName="configuration"
-                 min="0" max="5">
+      <parameter name="config_4_1" type="integer" groupName="configuration">
         <label>4: feedback beeps per second</label>
         <description><![CDATA[
 Amount of beeps a second<br /> <h1>Overview</h1><p>To set the amount of beeps per second, every beep is around 10ms.</p>

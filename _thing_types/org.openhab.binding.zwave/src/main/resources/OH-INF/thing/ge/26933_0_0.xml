@@ -94,13 +94,15 @@
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_2_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_2_1" type="integer" groupName="configuration">
         <label>2: Dim Level</label>
         <description><![CDATA[
-Brightness of associated light(s)<br /> <h1>Overview</h1><p>Valid values are 0-99 or 255 for last dimming level</p>
+Brightness of associated light(s)<br /> <h1>Overview</h1><p>Valid values are 0-99 or -1 for last dimming level</p>
         ]]></description>
         <default>-1</default>
+        <options>
+          <option value="-1">last dimming value</option>
+        </options>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
@@ -151,8 +153,7 @@ Sets how the light responds to motion<br /> <h1>Overview</h1><p>Occupancy – Li
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_7_1" type="integer" groupName="configuration"
-                 min="1" max="99">
+      <parameter name="config_7_1" type="integer" groupName="configuration">
         <label>7: Remote Control Dim Step</label>
         <description><![CDATA[
 Sets the step size of the dimmer.<br /> <h1>Overview</h1><p>1=Default<br />2-99=Steps/Levels</p>
@@ -161,8 +162,7 @@ Sets the step size of the dimmer.<br /> <h1>Overview</h1><p>1=Default<br />2-99=
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_8_2" type="integer" groupName="configuration"
-                 min="1" max="255">
+      <parameter name="config_8_2" type="integer" groupName="configuration">
         <label>8: Remote Control Dim Rate</label>
         <description><![CDATA[
 Set the speed at which the dim level will change. (10 millisecond precision)<br /> <h1>Overview</h1><p>When set to 1, the dim level will change every 10ms, when set to 255 the dim level will change every 2.55 seconds. The default value is 3 / 30 ms.</p>
@@ -171,8 +171,7 @@ Set the speed at which the dim level will change. (10 millisecond precision)<br 
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_9_1" type="integer" groupName="configuration"
-                 min="1" max="99">
+      <parameter name="config_9_1" type="integer" groupName="configuration">
         <label>9: Local Control Dim Step</label>
         <description><![CDATA[
 Sets the step size of the dimmer.<br /> <h1>Overview</h1><p>1=Default<br />2-99=Steps/Levels</p>
@@ -181,8 +180,7 @@ Sets the step size of the dimmer.<br /> <h1>Overview</h1><p>1=Default<br />2-99=
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_10_2" type="integer" groupName="configuration"
-                 min="1" max="255">
+      <parameter name="config_10_2" type="integer" groupName="configuration">
         <label>10: Local Control Dim Rate</label>
         <description><![CDATA[
 Set the speed at which the dim level will change. (10 millisecond precision)<br /> <h1>Overview</h1><p>When set to 1, the dim level will change every 10ms, when set to 255 the dim level will change every 2.55 seconds. The default value is 3 / 30 ms.</p>
@@ -191,8 +189,7 @@ Set the speed at which the dim level will change. (10 millisecond precision)<br 
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_11_1" type="integer" groupName="configuration"
-                 min="1" max="99">
+      <parameter name="config_11_1" type="integer" groupName="configuration">
         <label>11: ALL ON/ALL OFF Dim Step</label>
         <description><![CDATA[
 Sets the step size of the dimmer.<br /> <h1>Overview</h1><p>1=Default<br />2=99=Steps/Levels</p>
@@ -201,8 +198,7 @@ Sets the step size of the dimmer.<br /> <h1>Overview</h1><p>1=Default<br />2=99=
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_12_2" type="integer" groupName="configuration"
-                 min="1" max="255">
+      <parameter name="config_12_2" type="integer" groupName="configuration">
         <label>12: ALL ON/ALL OFF Dim Rate</label>
         <description><![CDATA[
 Set the speed at which the dim level will change. (10 millisecond precision)<br /> <h1>Overview</h1><p>When set to 1, the dim level will change every 10ms, when set to 255 the dim level will change every 2.55 seconds. The default value is 3 / 30 ms.</p>
@@ -236,8 +232,7 @@ Enable/Disable whether motion sensor only turns light on if room is dark<br /> <
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_15_2" type="integer" groupName="configuration"
-                 min="0" max="110">
+      <parameter name="config_15_2" type="integer" groupName="configuration">
         <label>15: Reset Cycle</label>
         <description><![CDATA[
 Reset Cycle<br /> <h1>Overview</h1><p>0=disable<br />1=10 seconds<br />2=20 seconds<br />3=30 seconds<br />4=45 seconds<br />5 to 109 = 15 second intervals, starting at 60 seconds<br />110=27 minutes 15 seconds</p>
@@ -257,8 +252,7 @@ Reset Cycle<br /> <h1>Overview</h1><p>0=disable<br />1=10 seconds<br />2=20 seco
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_17_1" type="integer" groupName="configuration"
-                 min="0" max="99">
+      <parameter name="config_17_1" type="integer" groupName="configuration">
         <label>17: Switch Level</label>
         <description><![CDATA[
 Set power level for plain switch functionality<br /> <h1>Overview</h1><p>0=disabled (default)<br />1-99=Brightness Level</p>

@@ -72,8 +72,7 @@ Notification modes: 0=light, 1=alarm, 2=sensor<br /> <h1>Overview</h1><p>The ZIR
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_18_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_18_1" type="integer" groupName="configuration">
         <label>18: Off/Idle delay</label>
         <description><![CDATA[
 Configuring the off/idle delay<br /> <h1>Overview</h1><p>OFF/IDLE (Applicable only when the ZIR010 is configured for Lighting or Binary Sensor Mode).</p> <p>The ZIR010 will consider there to be “No Activity” after 2 minutes passes during which the ZIR010 detected no motion. At that point, the ZIR010 can be configured to immediately send the OFF or IDLE command or it can be configured to send it from 1 minute to 255 minutes later. (+/- 1 minute).</p>
@@ -95,8 +94,7 @@ Disabling the zir010 trom sending commands unsolicited<br /> <h1>Overview</h1><p
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_22_1" type="integer" groupName="configuration"
-                 min="15" max="45">
+      <parameter name="config_22_1" type="integer" groupName="configuration">
         <label>22: Awake Time</label>
         <description><![CDATA[
 Duration ranges from 15 to 45 seconds. Valid values range from 15 to 45.<br /> <h1>Overview</h1><p>The ZIR010 will send a Wakeup Notification Command approximately 3 minutes after power up IF and only IF it has been included into a Z-Wave network. From that point on, the ZIR010 will wake up every 4 hours and re-send the Wakeup Notification Command unless configured for another time interval. The ZIR010 will stay awake by default for 30 seconds and then go back to sleep to conserve battery life. </p> <p>The time interval between Wakeup Notification Commands can be adjusted if you have a device that supports this. Refer to that device’s instructions. </p> <p>The time the ZIR010 stays awake can be adjusted from 15 seconds to 45 seconds by sending a value of 15 to 45 to the ZIR010 using Configuration Parameter # 22 (when asked for the number of bytes, select 1). This awake time period starts over every time the ZIR010 receives a command or request. </p>

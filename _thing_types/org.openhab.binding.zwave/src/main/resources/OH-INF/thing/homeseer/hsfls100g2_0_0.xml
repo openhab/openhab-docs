@@ -77,8 +77,7 @@ Floodlight Sensor<br /> <h1>Overview</h1><p><br /></p><p>The HS-FLS100-G2 is a P
       </parameter-group>
 
       <!-- PARAMETER DEFINITIONS -->
-      <parameter name="config_1_2" type="integer" groupName="configuration"
-                 min="8" max="720">
+      <parameter name="config_1_2" type="integer" groupName="configuration">
         <label>1: PIR Trigger Off Period</label>
         <description><![CDATA[
 Period to send Trigger Off command after PIR is triggered.<br /> <h1>Overview</h1><p>Period to send Trigger Off command after PIR is triggered. Before this period expires, the PIR will not be able to detect any subsequent motion.</p>
@@ -86,8 +85,7 @@ Period to send Trigger Off command after PIR is triggered.<br /> <h1>Overview</h
         <default>180</default>
       </parameter>
 
-      <parameter name="config_2_2" type="integer" groupName="configuration"
-                 min="10" max="900">
+      <parameter name="config_2_2" type="integer" groupName="configuration">
         <label>2: Lux sensor threshold</label>
         <description><![CDATA[
 Lux level to activate the PIR<br /> <h1>Overview</h1><p>Ambient Lux level to turn on light. This setting overwrites the Lux level set by the Lux knob. When the lux level falls below this threshold and the PIR gets triggered, the unit emits a basic set command (value=0xFF) to turn on its floodlight.</p>
@@ -95,8 +93,7 @@ Lux level to activate the PIR<br /> <h1>Overview</h1><p>Ambient Lux level to tur
         <default>50</default>
       </parameter>
 
-      <parameter name="config_3_2" type="integer" groupName="configuration"
-                 min="1" max="1440">
+      <parameter name="config_3_2" type="integer" groupName="configuration">
         <label>3: Auto Report luminance interval</label>
         <description><![CDATA[
 sets the interval of periodic lux level report and temperature report to the controller<br /> <h1>Overview</h1><p><br /></p>
@@ -104,8 +101,7 @@ sets the interval of periodic lux level report and temperature report to the con
         <default>10</default>
       </parameter>
 
-      <parameter name="config_4_1" type="integer" groupName="configuration"
-                 min="0" max="1">
+      <parameter name="config_4_1" type="integer" groupName="configuration">
         <label>4: PIR Trigger alert</label>
         <description><![CDATA[
 Enable/Disables PIR alerts sent from the unit through Notification report or Basic Report commands<br /> <h1>Overview</h1><p>0 : Disable alert</p><p>1 : Enable alert</p>
@@ -113,8 +109,7 @@ Enable/Disables PIR alerts sent from the unit through Notification report or Bas
         <default>1</default>
       </parameter>
 
-      <parameter name="config_5_1" type="integer" groupName="configuration"
-                 min="0" max="1">
+      <parameter name="config_5_1" type="integer" groupName="configuration">
         <label>5: Floodlight Control Mode</label>
         <description><![CDATA[
 Enable/Disables Floodlight control by Zwave and/or PIR trigger and LUX level<br /> <h1>Overview</h1><p>1 : floodlight is controlled by PIR trigger and LUX level, or by Z-wave controller</p><p>0 : floodlight is controlled by Z-wave controller directly, regardless of PIR trigger or LUX level</p>
@@ -122,8 +117,7 @@ Enable/Disables Floodlight control by Zwave and/or PIR trigger and LUX level<br 
         <default>1</default>
       </parameter>
 
-      <parameter name="config_6_1" type="integer" groupName="configuration"
-                 min="0" max="1">
+      <parameter name="config_6_1" type="integer" groupName="configuration">
         <label>6: Lux Sensor</label>
         <description><![CDATA[
 Enable/Disables floodlight is controlled by LUX Level and PIR trigger or LUX level only<br /> <h1>Overview</h1><p>0 : Floodlight is controlled by LUX Level and PIR trigger</p><p>1 : Lighting control via LUX level only, regardless of PIR trigger</p>
@@ -131,8 +125,7 @@ Enable/Disables floodlight is controlled by LUX Level and PIR trigger or LUX lev
         <default>0</default>
       </parameter>
 
-      <parameter name="config_7_0" type="integer" groupName="configuration"
-                 min="100" max="156">
+      <parameter name="config_7_0" type="integer" groupName="configuration">
         <label>7: Measured Temperature Offset</label>
         <description><![CDATA[
 Sets the offset to the Measured Temperature<br /> <h1>Overview</h1><p>0x9C - 0x64 (offset range : -10.0°C ~ +10.0°C)</p>
@@ -140,8 +133,7 @@ Sets the offset to the Measured Temperature<br /> <h1>Overview</h1><p>0x9C - 0x6
         <default>0</default>
       </parameter>
 
-      <parameter name="config_8_1" type="integer" groupName="configuration"
-                 min="0" max="2">
+      <parameter name="config_8_1" type="integer" groupName="configuration">
         <label>8: PIR Sensitivity Level</label>
         <description><![CDATA[
 Sets the PIR Sensitivity Level<br /> <h1>Overview</h1><p>0/1/2</p><p>0: low level, approx. 6m distance</p><p>1: mid level, approx. 10m distance</p><p>2: high level, approx. 20m distance</p><p>Distance measured at ambient temperature 68°F</p>

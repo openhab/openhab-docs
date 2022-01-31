@@ -53,8 +53,7 @@ Outlet Plugable Siren<br /> <h1>Overview</h1><p>Aeon Labs Siren is a switch bina
       </parameter-group>
 
       <!-- PARAMETER DEFINITIONS -->
-      <parameter name="config_37_2" type="integer" groupName="configuration"
-                 min="-32767" max="32768">
+      <parameter name="config_37_2" type="integer" groupName="configuration">
         <label>37: Sirensound and Volume</label>
         <description><![CDATA[
 Sets the sound type and volume<br /> <h1>Overview</h1><p>The Value1(low byte) is used to select the Siren sound. The Value2(high byte) is used to adjust the volume. Other values will be ignored. 0 1  -&gt;   do not change the current sound.1 1  -&gt;   Siren sound 1 is selected.2 1  -&gt;   Siren sound 2 i</p>

@@ -79,8 +79,7 @@ Dimmer Accessory Switch<br /> <h1>Overview</h1><p>Aspire RF smart dimmer system 
       </parameter-group>
 
       <!-- PARAMETER DEFINITIONS -->
-      <parameter name="config_1_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_1_1" type="integer" groupName="configuration">
         <label>1: Delayed OFF time</label>
         <description><![CDATA[
 delay time in seconds<br /> <h1>Overview</h1><p>The amount of time in seconds the switch will delay when trigger the delayed off feature</p>
@@ -89,8 +88,7 @@ delay time in seconds<br /> <h1>Overview</h1><p>The amount of time in seconds th
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_2_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_2_1" type="integer" groupName="configuration">
         <label>2: Panic ON time</label>
         <description><![CDATA[
 time in seconds for panic mode<br /> <h1>Overview</h1><p>The amount of time in seconds the switch will turn on for when panic mode is triggered</p>
@@ -99,8 +97,7 @@ time in seconds for panic mode<br /> <h1>Overview</h1><p>The amount of time in s
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_3_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_3_1" type="integer" groupName="configuration">
         <label>3: Panic OFF time</label>
         <description><![CDATA[
 off time in seconds for panic mode<br /> <h1>Overview</h1><p>The amount of time in seconds the switch will turn off for when panic mode is triggered</p>
@@ -109,8 +106,7 @@ off time in seconds for panic mode<br /> <h1>Overview</h1><p>The amount of time 
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_4_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_4_1" type="integer" groupName="configuration">
         <label>4: Basic Set Value</label>
         <description><![CDATA[
 send this value to associated devices<br /> <h1>Overview</h1><p>Setting this to anything other than 0 will cause the value to be transmitted to devices in the association group when the switch is triggered. A setting other than 0 will likely result in undesired operation</p>
@@ -142,8 +138,7 @@ send this value to associated devices<br /> <h1>Overview</h1><p>Setting this to 
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_7_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_7_1" type="integer" groupName="configuration">
         <label>7: Dimmer Ramp Time</label>
         <description><![CDATA[
 time in seconds to ramp to desired level<br /> <h1>Overview</h1><p>The amount of time in seconds the switch will take to reach the desired dim level</p>

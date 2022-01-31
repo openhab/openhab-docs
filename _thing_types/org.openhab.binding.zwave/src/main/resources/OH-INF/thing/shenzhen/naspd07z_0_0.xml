@@ -71,8 +71,7 @@ NEO Coolcam PIR 5 in 1<br /> <h1>Overview</h1><p>5 in 1 sensor: motion, temperat
       </parameter-group>
 
       <!-- PARAMETER DEFINITIONS -->
-      <parameter name="config_1_1" type="integer" groupName="configuration"
-                 min="0" max="1">
+      <parameter name="config_1_1" type="integer" groupName="configuration">
         <label>1: Led Indicator Enable</label>
         <description><![CDATA[
 <br /> <h1>Overview</h1><p>This parameter is configured the Led light on disable or enable. '1' - Enable Led Blink when device detects a motion event. '0' - Disable Led blink. This configuration is not affect inclusion, exclusion and reset. Default: Enable<br /></p>
@@ -84,8 +83,7 @@ NEO Coolcam PIR 5 in 1<br /> <h1>Overview</h1><p>5 in 1 sensor: motion, temperat
         </options>
       </parameter>
 
-      <parameter name="config_2_1" type="integer" groupName="configuration"
-                 min="0" max="1">
+      <parameter name="config_2_1" type="integer" groupName="configuration">
         <label>2: Motion Enable</label>
         <description><![CDATA[
 <br /> <h1>Overview</h1><p>This parameter is configured the motion detected if enable or not. '0' - Motion detected disable. '1' - Motion detected enable. Default: Enable<br /></p>
@@ -97,8 +95,7 @@ NEO Coolcam PIR 5 in 1<br /> <h1>Overview</h1><p>5 in 1 sensor: motion, temperat
         </options>
       </parameter>
 
-      <parameter name="config_3_1" type="integer" groupName="configuration"
-                 min="0" max="1">
+      <parameter name="config_3_1" type="integer" groupName="configuration">
         <label>3: Motion Alarm Once Enable</label>
         <description><![CDATA[
 <br /> <h1>Overview</h1><p>This Parameter is configured the motion detected event report one time before motion event cleared. '0' - Motion event alarm will be reported when motion event is detected every time. '1' - Motion event alarm report only once before motion event cleared. Default: Enable<br /></p>
@@ -110,8 +107,7 @@ NEO Coolcam PIR 5 in 1<br /> <h1>Overview</h1><p>5 in 1 sensor: motion, temperat
         </options>
       </parameter>
 
-      <parameter name="config_4_1" type="integer" groupName="configuration"
-                 min="0" max="1">
+      <parameter name="config_4_1" type="integer" groupName="configuration">
         <label>4: Luminance Associated Enable</label>
         <description><![CDATA[
 <br /> <h1>Overview</h1><p>'1' - Enable current light intensity to associate the motion event, if there has a motion event detected and the current light intensity is less than the settings in Configuraton No. 16, the device will send a BASIC_SET to nodes associated in Group 2. And if the current light intensity is larger then the setting in Configuration No. 16, the device will not send BASIC_SET to nodes associated in Group 2. '0' - Light intensity is not associated with motion event. Default: Disable<br /></p>
@@ -123,8 +119,7 @@ NEO Coolcam PIR 5 in 1<br /> <h1>Overview</h1><p>5 in 1 sensor: motion, temperat
         </options>
       </parameter>
 
-      <parameter name="config_5_1" type="integer" groupName="configuration"
-                 min="0" max="15">
+      <parameter name="config_5_1" type="integer" groupName="configuration">
         <label>5: Motion Sensitivity</label>
         <description><![CDATA[
 <br /> <h1>Overview</h1><p>This parameter is configured the sensitivity that motion detect. This value is larger, the sensitivity is lower, and the distance for motion detecting is closer. Available settings: 0 ... 15. Default: 1<br /></p>
@@ -133,8 +128,7 @@ NEO Coolcam PIR 5 in 1<br /> <h1>Overview</h1><p>5 in 1 sensor: motion, temperat
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_6_1" type="integer" groupName="configuration"
-                 min="-120" max="120">
+      <parameter name="config_6_1" type="integer" groupName="configuration">
         <label>6: Temperature Offset Value</label>
         <description><![CDATA[
 <br /> <h1>Overview</h1><p>The current measuring temperature value can be add and minus a value by this setting. Temperature Offset Value = [Value] x 0.1 Degree Celsius / Fahrenheit (US). Available settings: -120 ... 120. Default: 0<br /></p>
@@ -143,8 +137,7 @@ NEO Coolcam PIR 5 in 1<br /> <h1>Overview</h1><p>5 in 1 sensor: motion, temperat
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_7_1" type="integer" groupName="configuration"
-                 min="-120" max="120">
+      <parameter name="config_7_1" type="integer" groupName="configuration">
         <label>7: Humidity Offset Value</label>
         <description><![CDATA[
 <br /> <h1>Overview</h1><p>The current measuring humidity value can be add and minus a value by this setting. Humidity Offset Value = [Value] x 0.1 RH%. Available settings: -120 ... 120. Default: 0 <br /></p>
@@ -153,8 +146,7 @@ NEO Coolcam PIR 5 in 1<br /> <h1>Overview</h1><p>5 in 1 sensor: motion, temperat
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_8_1" type="integer" groupName="configuration"
-                 min="0" max="120">
+      <parameter name="config_8_1" type="integer" groupName="configuration">
         <label>8: Temperature D-Value Setting</label>
         <description><![CDATA[
 <br /> <h1>Overview</h1><p>This configuration sets the changed value of the temperature. When the difference from the last report exceeds this setting value, the device will report current temperature value to Z-Wave Hubs. The D-Value = [Value] x 0.1 Degree Celsius / Fahrenheit (US). Available settings: 0 ... 120. Default: 10<br /></p>
@@ -163,8 +155,7 @@ NEO Coolcam PIR 5 in 1<br /> <h1>Overview</h1><p>5 in 1 sensor: motion, temperat
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_9_1" type="integer" groupName="configuration"
-                 min="0" max="120">
+      <parameter name="config_9_1" type="integer" groupName="configuration">
         <label>9: Humidity D-Value Setting</label>
         <description><![CDATA[
 <br /> <h1>Overview</h1><p>This configuration sets the changed value of the humidity. When the difference from the last report exceeds this setting value, the device will report current humidity value to Z-Wave Hubs. The D-Value = [Value] x 0.1 RH%. Available settings: 0 ... 120. Default: 20<br /></p>
@@ -173,8 +164,7 @@ NEO Coolcam PIR 5 in 1<br /> <h1>Overview</h1><p>5 in 1 sensor: motion, temperat
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_10_1" type="integer" groupName="configuration"
-                 min="0" max="120">
+      <parameter name="config_10_1" type="integer" groupName="configuration">
         <label>10: Luminance D-Value Setting</label>
         <description><![CDATA[
 <br /> <h1>Overview</h1><p>This configuration sets the changed value of the luminance. When the difference from the last report exceeds this setting value, the device will report current luminance value to Z-Wave Hubs. Unit: Lux. Available settings: 0 ... 120. Default: 50<br /></p>
@@ -183,8 +173,7 @@ NEO Coolcam PIR 5 in 1<br /> <h1>Overview</h1><p>5 in 1 sensor: motion, temperat
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_11_2" type="integer" groupName="configuration"
-                 min="0" max="100">
+      <parameter name="config_11_2" type="integer" groupName="configuration">
         <label>11: Basic Set Level</label>
         <description><![CDATA[
 <br /> <h1>Overview</h1><p>This parameter is configured the value that BASIC_SET for nodes that associated in Group 2. '100' - BASIC_SET = 0xFF (ON). '0' - BASIC_SET = 0x00 (OFF). Available settings: 0 ... 100. Default: 100<br /></p>
@@ -193,8 +182,7 @@ NEO Coolcam PIR 5 in 1<br /> <h1>Overview</h1><p>5 in 1 sensor: motion, temperat
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_12_2" type="integer" groupName="configuration"
-                 min="0" max="30000">
+      <parameter name="config_12_2" type="integer" groupName="configuration">
         <label>12: Basic Set Off Delay Time</label>
         <description><![CDATA[
 <br /> <h1>Overview</h1><p>This parameter is configured the time delay for device sending BASIC_SET = 0x00 to nodes that associated in Group 2 when device detects a motion event. [0] - Not Send BASIC_SET = 0x00 Command. [1-30000] - Time delay count. Unit: Second. Available settings: 0 ... 30000. Default: 30<br /></p>
@@ -203,8 +191,7 @@ NEO Coolcam PIR 5 in 1<br /> <h1>Overview</h1><p>5 in 1 sensor: motion, temperat
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_13_1" type="integer" groupName="configuration"
-                 min="1" max="8">
+      <parameter name="config_13_1" type="integer" groupName="configuration">
         <label>13: Motion Blind Time</label>
         <description><![CDATA[
 <br /> <h1>Overview</h1><p>This parameter is configured the time interval between two motion events triggered, during this period the motion detector will not be triggered even there has someone move in front of motion detector. Unit: Second. Available settings: 1 ... 8<br /></p>
@@ -213,8 +200,7 @@ NEO Coolcam PIR 5 in 1<br /> <h1>Overview</h1><p>5 in 1 sensor: motion, temperat
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_14_2" type="integer" groupName="configuration"
-                 min="-32767" max="32768">
+      <parameter name="config_14_2" type="integer" groupName="configuration">
         <label>14: ??? Unknown (Luminance Threshold for Associated - Parameter #16?)</label>
         <description><![CDATA[
 <br /> <h1>Overview</h1><p>Default: 50<br /></p>
@@ -223,8 +209,7 @@ NEO Coolcam PIR 5 in 1<br /> <h1>Overview</h1><p>5 in 1 sensor: motion, temperat
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_15_2" type="integer" groupName="configuration"
-                 min="0" max="30000">
+      <parameter name="config_15_2" type="integer" groupName="configuration">
         <label>15: Sensor Measuring Interval</label>
         <description><![CDATA[
 <br /> <h1>Overview</h1><p>This parameter is configured the time interval for light sensor, temperature and humidity sensor measuring. This value is larger, the battery life is longer. And the sensors values changed are not obvious. 0 - All sensors are disabled. Unit: Second. Available settings: 0 - 30000. Default: 180 (on batteries) or 10 (on USB)<br /></p>
@@ -233,8 +218,7 @@ NEO Coolcam PIR 5 in 1<br /> <h1>Overview</h1><p>5 in 1 sensor: motion, temperat
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_16_2" type="integer" groupName="configuration"
-                 min="0" max="1000">
+      <parameter name="config_16_2" type="integer" groupName="configuration">
         <label>16: ??? Luminance Threshold for Associated (or Parameter #14?)</label>
         <description><![CDATA[
 <br /> <h1>Overview</h1><p>This parameter is configured the light intensity threshold. When Ambient light intensity is less than this setting, device will consider the current environment is insufficient light. If "Configuration No. 3" is set '1' and a motion event is detected, the device will send a BASIC_SET to the nodes which associated in Group 2. Unit: 1 Lux. Available settings: 0 - 1000. Default: 50 </p>
@@ -243,8 +227,7 @@ NEO Coolcam PIR 5 in 1<br /> <h1>Overview</h1><p>5 in 1 sensor: motion, temperat
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_17_2" type="integer" groupName="configuration"
-                 min="-32767" max="32768">
+      <parameter name="config_17_2" type="integer" groupName="configuration">
         <label>17: ??? Unknown</label>
         <description><![CDATA[
 <br /> <h1>Overview</h1><p>Default: 180<br /></p>
@@ -253,8 +236,7 @@ NEO Coolcam PIR 5 in 1<br /> <h1>Overview</h1><p>5 in 1 sensor: motion, temperat
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_18_2" type="integer" groupName="configuration"
-                 min="1" max="32767">
+      <parameter name="config_18_2" type="integer" groupName="configuration">
         <label>18: Light Intensity Offset Calibration</label>
         <description><![CDATA[
 <br /> <h1>Overview</h1><p>This parameter defines the calibrated scale for ambient light intensity. Because the method and position that the sensor mounted and the cover of sensor will bring measurement error, user can get more real light intensity by this parameter setting. User should run the steps blows for calibrating.</p><p>1. Set this parameter value to default (Assumes the sensor has been added in a Z-Wave Network).</p><p>2. Place a digital luxmeter close to sensor and keep the same direction, monitor the light intensity values (Vm) which report to controller and record it. The same time user should record the Value (Vs) of luxmeter.</p><p>3. The scale calibration formula: k = Vm / Vs.</p><p>4. The value of k is then multiplied by 1000 and rounded to the nearest whole number.</p><p>5. Set the value getting in 5) to this parameter, calibrate finished. <br /></p><p>For example, Vm = 300, Vs = 2000 [sic], then k = 300 / 2600 = 0.11538</p><p>k = 0.11538 * 1000 = 115,38 ~ 115</p><p>The parameter should be set to 115.</p><p>Available settings: 1 ... 32767. Default: 5320<br /></p>
@@ -263,8 +245,7 @@ NEO Coolcam PIR 5 in 1<br /> <h1>Overview</h1><p>5 in 1 sensor: motion, temperat
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_98_1" type="integer" groupName="configuration"
-                 min="0" max="1">
+      <parameter name="config_98_1" type="integer" groupName="configuration">
         <label>98: ??? Binary Sensor Report Enable</label>
         <description><![CDATA[
 <br /> <h1>Overview</h1><p>'1' - Enable sensor binary report when device detects a motion event. '0' - Disable sensor binary report when device detects a motion event. Default: Disable<br /></p>
@@ -276,8 +257,7 @@ NEO Coolcam PIR 5 in 1<br /> <h1>Overview</h1><p>5 in 1 sensor: motion, temperat
         </options>
       </parameter>
 
-      <parameter name="config_99_2" type="integer" groupName="configuration"
-                 min="1" max="30000">
+      <parameter name="config_99_2" type="integer" groupName="configuration">
         <label>99: ??? Motion Clear Time</label>
         <description><![CDATA[
 <br /> <h1>Overview</h1><p>This parameter is configured the time to clear motion event after a motion event detected. Time to motion clear, the device will send a clear event report to controller. Unit: Second. Available settings: 0 ... 30000. Default: 30 </p>

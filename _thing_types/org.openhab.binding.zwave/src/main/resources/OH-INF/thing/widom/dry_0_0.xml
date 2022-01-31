@@ -47,24 +47,21 @@ Widom Smart Dry contact<br /> <h1>Overview</h1><p>WiDom Smart Dry Contact Switch
       </parameter-group>
 
       <!-- PARAMETER DEFINITIONS -->
-      <parameter name="config_1_1" type="integer" groupName="configuration"
-                 min="0" max="7">
+      <parameter name="config_1_1" type="integer" groupName="configuration">
         <label>1: Numbers of clicks to control the load</label>
         <description>Defines which sequences of clicks control the load</description>
         <default>7</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_4_1" type="integer" groupName="configuration"
-                 min="-1" max="100">
+      <parameter name="config_4_1" type="integer" groupName="configuration">
         <label>4: Value used for devices belonging to Group 2</label>
         <description>Value sent when the external switch receives 1 Click</description>
         <default>100</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_5_1" type="integer" groupName="configuration"
-                 min="-1" max="100">
+      <parameter name="config_5_1" type="integer" groupName="configuration">
         <label>5: Value used for devices belonging to Group 3</label>
         <description><![CDATA[
 Value sent wen the external switch receives 2 Clicks<br /> <h1>Overview</h1><p> Value used for devices belonging to Group 3 when the external switch receives 2 Clicks</p>
@@ -73,8 +70,7 @@ Value sent wen the external switch receives 2 Clicks<br /> <h1>Overview</h1><p>�
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_6_1" type="integer" groupName="configuration"
-                 min="-1" max="100">
+      <parameter name="config_6_1" type="integer" groupName="configuration">
         <label>6: Value used for devices belonging to Group 4</label>
         <description><![CDATA[
 Value sent when external switch receives 3 Clicks<br /> <h1>Overview</h1><p> Value used for devices belonging to Group 4 when external switch receives 3 Clicks</p>
@@ -83,16 +79,14 @@ Value sent when external switch receives 3 Clicks<br /> <h1>Overview</h1><p> Va
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_10_2" type="integer" groupName="configuration"
-                 min="0" max="32000">
+      <parameter name="config_10_2" type="integer" groupName="configuration">
         <label>10: Timer to switch OFF the Relay</label>
         <description>Defines the time after which the relay is switched OFF</description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_11_2" type="integer" groupName="configuration"
-                 min="0" max="32000">
+      <parameter name="config_11_2" type="integer" groupName="configuration">
         <label>11: Timer to switch ON the Relay</label>
         <description>Defines the time after which the relay is switched ON</description>
         <default>0</default>
@@ -106,8 +100,7 @@ Value sent when external switch receives 3 Clicks<br /> <h1>Overview</h1><p> Va
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_20_2" type="integer" groupName="configuration"
-                 min="0" max="255">
+      <parameter name="config_20_2" type="integer" groupName="configuration">
         <label>20: One Click Scene Activation Set</label>
         <description><![CDATA[
 Defines the Scene Activation Set value sent to the Lifeline group with 1 Click<br /> <h1>Overview</h1><p>Defines the Scene Activation Set value sent to the Lifeline group with 1 Click on the external switch</p>
@@ -116,8 +109,7 @@ Defines the Scene Activation Set value sent to the Lifeline group with 1 Click<b
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_21_2" type="integer" groupName="configuration"
-                 min="0" max="255">
+      <parameter name="config_21_2" type="integer" groupName="configuration">
         <label>21: Two Clicks Scene Activation Set</label>
         <description><![CDATA[
 Defines the Scene Activation Set value sent to the Lifeline group with 2 Clicks<br /> <h1>Overview</h1><p>Defines the Scene Activation Set value sent to the Lifeline group with 2 Clicks on the external switch</p>
@@ -126,8 +118,7 @@ Defines the Scene Activation Set value sent to the Lifeline group with 2 Clicks<
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_22_2" type="integer" groupName="configuration"
-                 min="0" max="255">
+      <parameter name="config_22_2" type="integer" groupName="configuration">
         <label>22: Three Clicks Scene Activation Set</label>
         <description><![CDATA[
 Defines the Scene Activation Set value sent to the Lifeline group with 3 Clicks<br /> <h1>Overview</h1><p>Defines the Scene Activation Set value sent to the Lifeline group with 3 Clicks on the external switch</p>

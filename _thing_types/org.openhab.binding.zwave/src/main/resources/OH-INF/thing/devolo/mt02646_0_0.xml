@@ -114,16 +114,14 @@ number of 10 minute intervals<br /> <h1>Overview</h1><p>Enable automatic interva
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_3_2" type="integer" groupName="configuration"
-                 min="10" max="1300">
+      <parameter name="config_3_2" type="integer" groupName="configuration">
         <label>3: Threshold of current for Load Caution</label>
         <description>1300*0.01A = 13A</description>
         <default>1300</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_4_2" type="integer" groupName="configuration"
-                 min="1" max="10000">
+      <parameter name="config_4_2" type="integer" groupName="configuration">
         <label>4: Threshold of KWh for Load Caution</label>
         <description><![CDATA[
 load caution threshold<br /> <h1>Overview</h1><p>Enable automatic warning when the accumulated kWh power consumption exceeds the setting value from 1KWh ~ 10000KWh.. Set to 0 will disable kWh load caution reporting.</p>

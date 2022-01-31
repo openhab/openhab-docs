@@ -82,8 +82,7 @@ Smart door lock with z-wave module.<br /> <h1>Overview</h1><p>The Yale Keyless C
       </parameter-group>
 
       <!-- PARAMETER DEFINITIONS -->
-      <parameter name="config_1_1" type="integer" groupName="configuration"
-                 min="1" max="3">
+      <parameter name="config_1_1" type="integer" groupName="configuration">
         <label>1: Audio Volume</label>
         <description><![CDATA[
 Sets the volume level of the beeps and voice prompts<br /> <h1>Overview</h1><p>1 = Silent 2 = Low 3 = High</p>
@@ -96,8 +95,7 @@ Sets the volume level of the beeps and voice prompts<br /> <h1>Overview</h1><p>1
         </options>
       </parameter>
 
-      <parameter name="config_2_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_2_1" type="integer" groupName="configuration">
         <label>2: Auto Re-lock</label>
         <description><![CDATA[
 When enabled, the unit will automatically re-lock<br /> <h1>Overview</h1><p>0 = Off 255 = On</p>
@@ -108,15 +106,13 @@ When enabled, the unit will automatically re-lock<br /> <h1>Overview</h1><p>0 = 
         </options>
       </parameter>
 
-      <parameter name="config_3_1" type="integer" groupName="configuration"
-                 min="7" max="90">
+      <parameter name="config_3_1" type="integer" groupName="configuration">
         <label>3: Re-lock Time</label>
         <description>Time after unlocking that the device will lock</description>
         <default>7</default>
       </parameter>
 
-      <parameter name="config_4_1" type="integer" groupName="configuration"
-                 min="1" max="7">
+      <parameter name="config_4_1" type="integer" groupName="configuration">
         <label>4: Wrong Code Entry Limit</label>
         <description>The number of invalid tries before the lock shutdowns and sends an alarm</description>
         <default>3</default>

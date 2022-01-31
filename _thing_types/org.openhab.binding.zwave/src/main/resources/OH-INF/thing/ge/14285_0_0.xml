@@ -107,8 +107,7 @@ Direct Wire Indoor/Outdoor Smart Switch<br /> <h1>Overview</h1><p><strong>SPECIF
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_3_1" type="integer" groupName="configuration"
-                 min="5" max="60">
+      <parameter name="config_3_1" type="integer" groupName="configuration">
         <label>3: Energy Report Frequency</label>
         <description>Energy Report Frequency</description>
         <default>5</default>

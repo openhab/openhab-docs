@@ -124,8 +124,7 @@ Home Energy Meter<br /> <h1>Overview</h1><p>Your Home Energy Meter can be reset 
       </parameter-group>
 
       <!-- PARAMETER DEFINITIONS -->
-      <parameter name="config_1_2" type="integer" groupName="configuration"
-                 min="0" max="32000">
+      <parameter name="config_1_2" type="integer" groupName="configuration">
         <label>1: Voltage</label>
         <description>Voltage to calculate wattage from amperage.</description>
         <default>240</default>
@@ -172,8 +171,7 @@ Home Energy Meter<br /> <h1>Overview</h1><p>Your Home Energy Meter can be reset 
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_4_2" type="integer" groupName="configuration"
-                 min="-32767" max="32768">
+      <parameter name="config_4_2" type="integer" groupName="configuration">
         <label>4: Current Threshold - Whole HEM</label>
         <description><![CDATA[
 Threshold change in wattage to induce an automatic report (Whole HEM).<br /> <h1>Overview</h1><p>Valid values: 0-60,000</p>
@@ -182,8 +180,7 @@ Threshold change in wattage to induce an automatic report (Whole HEM).<br /> <h1
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_5_2" type="integer" groupName="configuration"
-                 min="-32767" max="32768">
+      <parameter name="config_5_2" type="integer" groupName="configuration">
         <label>5: Current Threshold - Clamp 1</label>
         <description><![CDATA[
 Threshold change in wattage to induce an automatic report (Clamp 1)<br /> <h1>Overview</h1><p>Valid values: 0-60,000</p>
@@ -192,8 +189,7 @@ Threshold change in wattage to induce an automatic report (Clamp 1)<br /> <h1>Ov
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_6_2" type="integer" groupName="configuration"
-                 min="-32767" max="32768">
+      <parameter name="config_6_2" type="integer" groupName="configuration">
         <label>6: Current Threshold - Clamp 2</label>
         <description><![CDATA[
 Threshold change in wattage to induce an automatic report (Clamp 2)<br /> <h1>Overview</h1><p>Valid values: 0-60,000</p>
@@ -202,8 +198,7 @@ Threshold change in wattage to induce an automatic report (Clamp 2)<br /> <h1>Ov
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_7_2" type="integer" groupName="configuration"
-                 min="-32767" max="32768">
+      <parameter name="config_7_2" type="integer" groupName="configuration">
         <label>7: Current Threshold - Clamp 3</label>
         <description><![CDATA[
 Threshold change in wattage to induce an automatic report (Clamp 3)<br /> <h1>Overview</h1><p>Valid values: 0-60,000</p>
@@ -212,8 +207,7 @@ Threshold change in wattage to induce an automatic report (Clamp 3)<br /> <h1>Ov
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_8_1" type="integer" groupName="configuration"
-                 min="0" max="100">
+      <parameter name="config_8_1" type="integer" groupName="configuration">
         <label>8: Percent Change - Whole HEM</label>
         <description><![CDATA[
 Percentage change in wattage to induce an automatic report (Whole HEM)<br /> <h1>Overview</h1><p>Valid values: 0-100</p>
@@ -222,8 +216,7 @@ Percentage change in wattage to induce an automatic report (Whole HEM)<br /> <h1
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_9_1" type="integer" groupName="configuration"
-                 min="0" max="100">
+      <parameter name="config_9_1" type="integer" groupName="configuration">
         <label>9: Percent Change - Clamp 1</label>
         <description><![CDATA[
 Percentage change in wattage to induce an automatic report (Clamp 1)<br /> <h1>Overview</h1><p>Valid values: 0-100</p>
@@ -232,8 +225,7 @@ Percentage change in wattage to induce an automatic report (Clamp 1)<br /> <h1>O
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_10_1" type="integer" groupName="configuration"
-                 min="0" max="100">
+      <parameter name="config_10_1" type="integer" groupName="configuration">
         <label>10: Percent Change - Clamp 2</label>
         <description><![CDATA[
 Percentage change in wattage to induce an automatic report (Clamp 2)<br /> <h1>Overview</h1><p>Valid values: 0-100</p>
@@ -242,8 +234,7 @@ Percentage change in wattage to induce an automatic report (Clamp 2)<br /> <h1>O
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_11_1" type="integer" groupName="configuration"
-                 min="0" max="100">
+      <parameter name="config_11_1" type="integer" groupName="configuration">
         <label>11: Percent Change - Clamp 3</label>
         <description><![CDATA[
 Percentage change in wattage to induce an automatic report (Clamp 3)<br /> <h1>Overview</h1><p>Valid values: 0-100</p>
@@ -572,22 +563,19 @@ Percentage change in wattage to induce an automatic report (Clamp 3)<br /> <h1>O
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_111_4" type="integer" groupName="configuration"
-                 min="1" max="2678400">
+      <parameter name="config_111_4" type="integer" groupName="configuration">
         <label>111: Interval to send Report Group 1</label>
         <default>720</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_112_4" type="integer" groupName="configuration"
-                 min="1" max="2678400">
+      <parameter name="config_112_4" type="integer" groupName="configuration">
         <label>112: Interval to send Report Group 2</label>
         <default>720</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_113_4" type="integer" groupName="configuration"
-                 min="1" max="2678400">
+      <parameter name="config_113_4" type="integer" groupName="configuration">
         <label>113: Interval to send Report Group 3</label>
         <default>720</default>
         <limitToOptions>false</limitToOptions>

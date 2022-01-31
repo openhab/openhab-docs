@@ -71,8 +71,7 @@ Clamp Energy Meter<br /> <h1>Overview</h1><p>The Wireless Energy Meter performs 
       </parameter-group>
 
       <!-- PARAMETER DEFINITIONS -->
-      <parameter name="config_2_1" type="integer" groupName="configuration"
-                 min="30" max="120">
+      <parameter name="config_2_1" type="integer" groupName="configuration">
         <label>2: MEAS_PERIOD</label>
         <description><![CDATA[
 MEAS_PERIOD<br /> <h1>Overview</h1><p>MEAS_PERIOD represents the minimum reporting interval, i.e. 1/MEAS_PERIOD is the maximum reporting frequency. WEM checks for changes in the line measures every MEAS_PERIOD. If there are meaningful changes, a report is sent to the controller.</p>
@@ -81,8 +80,7 @@ MEAS_PERIOD<br /> <h1>Overview</h1><p>MEAS_PERIOD represents the minimum reporti
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_3_1" type="integer" groupName="configuration"
-                 min="3" max="60">
+      <parameter name="config_3_1" type="integer" groupName="configuration">
         <label>3: MAX_REP_INTERVAL</label>
         <description><![CDATA[
 MAX_REP_INTERVAL<br /> <h1>Overview</h1><p><strong>Units of 10 sec</strong></p> <p>MAX_REP_INTERVAL is the maximum time that can elapse without sending a report. If no meaningful events occur, WEM sends one measurement every MAX_REP_INTERVAL seconds. Notice that, since the check is performed every MEAS_PERIOD, the reporting interval is rounded to the smallest multiple integer of MEAS_PERIOD (e.g. MEAS_PERIOD = 45, MAX_REP_INTERVAL = 12, reports are sent every 135 s).</p>
@@ -91,8 +89,7 @@ MAX_REP_INTERVAL<br /> <h1>Overview</h1><p><strong>Units of 10 sec</strong></p> 
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_4_1" type="integer" groupName="configuration"
-                 min="1" max="100">
+      <parameter name="config_4_1" type="integer" groupName="configuration">
         <label>4: RES_ACTIVE_POWER</label>
         <description><![CDATA[
 RES_ACTIVE_POWER<br /> <h1>Overview</h1><p>The minimum quantity (resolution) that triggers a report</p>
@@ -101,8 +98,7 @@ RES_ACTIVE_POWER<br /> <h1>Overview</h1><p>The minimum quantity (resolution) tha
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_5_2" type="integer" groupName="configuration"
-                 min="1" max="1000">
+      <parameter name="config_5_2" type="integer" groupName="configuration">
         <label>5: RES_RMS_VOLTAGE</label>
         <description><![CDATA[
 RES_RMS_VOLTAGE<br /> <h1>Overview</h1><p><strong>Units of 100 mV</strong></p> <p>The minimum quantity (resolution) that triggers a report</p>
@@ -111,8 +107,7 @@ RES_RMS_VOLTAGE<br /> <h1>Overview</h1><p><strong>Units of 100 mV</strong></p> <
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_6_2" type="integer" groupName="configuration"
-                 min="1" max="1000">
+      <parameter name="config_6_2" type="integer" groupName="configuration">
         <label>6: RES_RMS_CURRENT</label>
         <description><![CDATA[
 RES_RMS_CURRENT<br /> <h1>Overview</h1><p><strong>Units of 10 mA</strong></p> <p>The minimum quantity (resolution) that triggers a report</p>
@@ -148,8 +143,7 @@ ENABLE_CRC16<br /> <h1>Overview</h1><p>ENABLE_CRC16 parameter provides for an ex
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_10_1" type="integer" groupName="configuration"
-                 min="0" max="6">
+      <parameter name="config_10_1" type="integer" groupName="configuration">
         <label>10: AVG_PERIOD</label>
         <description><![CDATA[
 AVG_PERIOD<br /> <h1>Overview</h1><p><strong>Units of 5 seconds</strong></p> <p>AVG_PERIOD determines the time window used to compute an average over the line readings. Each unit of AVG_PERIOD is worth 5 seconds. If AVG_PERIOD = 0 no average is computed and the last sample is returned. Note that the maximum average window coincides with the minimum value of MAX_REP_INTERVAL. Also note that a delay of up to the average window can be introduced in returning the measurements (each measurement is returned only when ready).</p>

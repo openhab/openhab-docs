@@ -83,16 +83,14 @@ Recessed Door/Window Sensor<br /> <h1>Overview</h1><p>Aeotec Recessed Door Senso
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_111_4" type="integer" groupName="configuration"
-                 min="0" max="65535">
+      <parameter name="config_111_4" type="integer" groupName="configuration">
         <label>111: Low battery voltage check time</label>
         <description>Minimum battery low check Interval time is 4 minutes (240 seconds)</description>
         <default>112</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_121_4" type="integer" groupName="configuration"
-                 min="0" max="65535">
+      <parameter name="config_121_4" type="integer" groupName="configuration">
         <label>121: Flag values for triggered magnet switch</label>
         <description>Flag values for which reports to send when the magnet switch is triggered</description>
         <default>256</default>

@@ -48,8 +48,7 @@ In-wall Dimming Switch<br /> <h1>Overview</h1><p>Inovelli's In-Wall Smart Dimmer
       </parameter-group>
 
       <!-- PARAMETER DEFINITIONS -->
-      <parameter name="config_1_1" type="integer" groupName="configuration"
-                 min="1" max="99">
+      <parameter name="config_1_1" type="integer" groupName="configuration">
         <label>1: Dimmer Step configuration</label>
         <description><![CDATA[
 Dimmer Speed Setting (On/Off)<br /> <h1>Overview</h1><p>Control the speed with which the dimmer turns on and off.</p>
@@ -57,8 +56,7 @@ Dimmer Speed Setting (On/Off)<br /> <h1>Overview</h1><p>Control the speed with w
         <default>1</default>
       </parameter>
 
-      <parameter name="config_2_1" type="integer" groupName="configuration"
-                 min="1" max="99">
+      <parameter name="config_2_1" type="integer" groupName="configuration">
         <label>2: Dimmer Minimum Configuration</label>
         <description><![CDATA[
 Lowest dim setting before turning off<br /> <h1>Overview</h1><p>Lowest dim setting before turning off</p>
@@ -79,8 +77,7 @@ Invert On/Off from Top/Bottom<br /> <h1>Overview</h1><p>Invert the switch on/off
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_5_2" type="integer" groupName="configuration"
-                 min="0" max="32768">
+      <parameter name="config_5_2" type="integer" groupName="configuration">
         <label>5: Countdown Timer</label>
         <description><![CDATA[
 Shutoff Timer<br /> <h1>Overview</h1><p>Countdown timer.</p> <p>0x00 - x8000 - 0-32768 Seconds</p>

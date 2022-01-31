@@ -64,8 +64,7 @@ Door Window Sensor<br /> <h1>Overview</h1><p>Wireless Door/ Window Sensor</p> <b
       </parameter-group>
 
       <!-- PARAMETER DEFINITIONS -->
-      <parameter name="config_1_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_1_1" type="integer" groupName="configuration">
         <label>1: External switch</label>
         <description><![CDATA[
 Determines if the external switch can be used.<br /> <h1>Overview</h1><p><br /></p>

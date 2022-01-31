@@ -66,32 +66,28 @@ Widom Smart Dimmer<br /> <h1>Overview</h1><p>WiDom Smart TE Dimmer is an "in-wal
       </parameter-group>
 
       <!-- PARAMETER DEFINITIONS -->
-      <parameter name="config_1_1" type="integer" groupName="configuration"
-                 min="-1" max="99">
+      <parameter name="config_1_1" type="integer" groupName="configuration">
         <label>1: Start-up status</label>
         <description>Defines the status of the device, in term of light level, following a restart.</description>
         <default>-1</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_2_1" type="integer" groupName="configuration"
-                 min="-126" max="127">
+      <parameter name="config_2_1" type="integer" groupName="configuration">
         <label>2: Fade On Time</label>
         <description>Defines the time spent to switch the load from complete OFF to complete ON</description>
         <default>1</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_3_1" type="integer" groupName="configuration"
-                 min="-126" max="127">
+      <parameter name="config_3_1" type="integer" groupName="configuration">
         <label>3: Fade Off Time</label>
         <description>Defines the time spent to switch the load from complete ON to complete OFF</description>
         <default>1</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_4_1" type="integer" groupName="configuration"
-                 min="0" max="60">
+      <parameter name="config_4_1" type="integer" groupName="configuration">
         <label>4: Local Dimming Time</label>
         <description><![CDATA[
 Defines the time spent to switch the controlled load<br /> <h1>Overview</h1><p>Defines the time spent to switch the controlled load when the external switch is hold down</p>
@@ -100,16 +96,14 @@ Defines the time spent to switch the controlled load<br /> <h1>Overview</h1><p>D
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_10_1" type="integer" groupName="configuration"
-                 min="1" max="98">
+      <parameter name="config_10_1" type="integer" groupName="configuration">
         <label>10: Minimum Light Level</label>
         <description>Defines which light level will correspond to 1% in the range between 1 and 98%</description>
         <default>1</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_11_1" type="integer" groupName="configuration"
-                 min="2" max="99">
+      <parameter name="config_11_1" type="integer" groupName="configuration">
         <label>11: Maximum Light Level</label>
         <description>Defines which light level will correspond to 99% in the range between 2 and 99%</description>
         <default>99</default>

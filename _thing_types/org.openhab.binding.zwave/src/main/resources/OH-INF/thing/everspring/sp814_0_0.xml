@@ -52,8 +52,7 @@ Motion Detector<br /> <h1>Overview</h1><p>The Motion Detector is a Z-WaveTM enab
       </parameter-group>
 
       <!-- PARAMETER DEFINITIONS -->
-      <parameter name="config_1_1" type="integer" groupName="configuration"
-                 min="0" max="99">
+      <parameter name="config_1_1" type="integer" groupName="configuration">
         <label>1: Basic Set Level</label>
         <description><![CDATA[
 Basic Set Level<br /> <h1>Overview</h1><p>When Basic Set Command is sent where contains a value, the receiver will take it for consideration; for instance, if a lamp module is received the Basic Set command of which value is decisive as to how bright of dim level of lamp module shall be.</p> <p>Example: 0: OFF</p> <p>1-99: ON (Binary Switch Device)</p> <p>Dim Level (Multilevel Switch Device)</p> <p>Function: Basic Set level</p> <p>Parameter: 1</p> <p>Number Size: 1</p> <p>Range: 0-99</p> <p>Default: 99 </p>
@@ -62,8 +61,7 @@ Basic Set Level<br /> <h1>Overview</h1><p>When Basic Set Command is sent where c
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_2_1" type="integer" groupName="configuration"
-                 min="0" max="1">
+      <parameter name="config_2_1" type="integer" groupName="configuration">
         <label>2: Enable/Disable Detecting</label>
         <description><![CDATA[
 The Detecting function can be Disabled or Enabled.<br /> <h1>Overview</h1><p><br /></p>
@@ -75,16 +73,14 @@ The Detecting function can be Disabled or Enabled.<br /> <h1>Overview</h1><p><br
         </options>
       </parameter>
 
-      <parameter name="config_3_1" type="integer" groupName="configuration"
-                 min="1" max="10">
+      <parameter name="config_3_1" type="integer" groupName="configuration">
         <label>3: Sensitivity Level</label>
         <description>1 Means lowest sensitivity and 10 means highest.</description>
         <default>6</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_4_2" type="integer" groupName="configuration"
-                 min="5" max="3600">
+      <parameter name="config_4_2" type="integer" groupName="configuration">
         <label>4: Re-trigger Interval</label>
         <description><![CDATA[
 Adjust the interval of being re-triggered after a trigger<br /> <h1>Overview</h1><p>The Configuration parameter that can be used to adjust the interval of being re-triggered after the detector has been triggered as Configuration Parameter #4. No response will be made during this interval if a movement is presented. The time interval can be set between 5 secs to 3600 secs. </p>
@@ -93,8 +89,7 @@ Adjust the interval of being re-triggered after a trigger<br /> <h1>Overview</h1
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_5_1" type="integer" groupName="configuration"
-                 min="1" max="100">
+      <parameter name="config_5_1" type="integer" groupName="configuration">
         <label>5: Lux Level</label>
         <description><![CDATA[
 Minimum Lux Level to provoke trigger<br /> <h1>Overview</h1><p>Sets minimum Lux Level of ambient illumination necessary for Motion Detector to trigger.</p> <p>The user can set a detecting percentage of lux level which determines when the light sensor will be activated. If percentage of lux level of ambient illumination falls below this percentage, and a person moves across or within the protected area, the detector will emit Z-Wave ON Command (i.e. Basic Set Command (Value = Basic Set Level)) to controller and activate connected modules and lighting. Percentage can be set between 1% to 100%.</p>
@@ -103,8 +98,7 @@ Minimum Lux Level to provoke trigger<br /> <h1>Overview</h1><p>Sets minimum Lux 
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_6_2" type="integer" groupName="configuration"
-                 min="5" max="3600">
+      <parameter name="config_6_2" type="integer" groupName="configuration">
         <label>6: On-Off Duration</label>
         <description><![CDATA[
 On-Off Duration<br /> <h1>Overview</h1><p>The function of on-off duration setting will be useful if the detector is connected with a module or lighting. The duration determines how long the module/lighting should stay ON. For instance, Lamp Module turns off 100 secs after it has been turned on. This parameter can be configured with the value of 5 through 3600, where 5 means 5 second delay and 3600 means 3600 seconds of delay</p>

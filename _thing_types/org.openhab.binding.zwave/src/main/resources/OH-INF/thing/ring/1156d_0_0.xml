@@ -58,8 +58,7 @@ Motion Sensor<br /> <h1>Overview</h1><p>Ring Alarm Motion Sensor: Expand your Ri
       </parameter-group>
 
       <!-- PARAMETER DEFINITIONS -->
-      <parameter name="config_2_1" type="integer" groupName="configuration"
-                 min="1" max="9">
+      <parameter name="config_2_1" type="integer" groupName="configuration">
         <label>2: Dwell Time</label>
         <description><![CDATA[
 Dwell Time<br /> <h1>Overview</h1><p>Configures the “dwell” window or how long the sensor should not be detecting motion before sending the “no motion detected” message. </p> <p>1 to 9 minutes.</p>

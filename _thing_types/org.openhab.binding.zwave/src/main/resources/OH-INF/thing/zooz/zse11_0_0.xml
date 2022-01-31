@@ -94,8 +94,7 @@ Motion sensitivity<br /> <h1>Overview</h1><p>0 is disabled, 1 is low sensitivity
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_13_2" type="integer" groupName="configuration"
-                 min="10" max="3600">
+      <parameter name="config_13_2" type="integer" groupName="configuration">
         <label>13: Motion clear time</label>
         <description><![CDATA[
 The delay in seconds before the sensor reports no motion<br /> <h1>Overview</h1><p>The delay in seconds before the sensor reports no motion to the hub and associated devices after detecting the last motion activity.</p>
@@ -104,8 +103,7 @@ The delay in seconds before the sensor reports no motion<br /> <h1>Overview</h1>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_19_1" type="integer" groupName="configuration"
-                 min="0" max="1">
+      <parameter name="config_19_1" type="integer" groupName="configuration">
         <label>19: LED motion indicator</label>
         <description><![CDATA[
 Enable/disable LED indicator for motion<br /> <h1>Overview</h1><p>Enable or disable <b>LED indicator for motion alerts</b>.<br />0 - don’t flash LED when motion is detected<br />1 - flash LED indicator when motion is detected (default).</p>
@@ -117,8 +115,7 @@ Enable/disable LED indicator for motion<br /> <h1>Overview</h1><p>Enable or disa
         </options>
       </parameter>
 
-      <parameter name="config_172_2" type="integer" groupName="configuration"
-                 min="1" max="744">
+      <parameter name="config_172_2" type="integer" groupName="configuration">
         <label>172: Reporting frequency</label>
         <description><![CDATA[
 The reporting frequency for battery, temperature, humidity, and light level<br /> <h1>Overview</h1><p>Set the reporting frequency for battery, temperature, humidity, and light level. This is the minimum interval in which the sensor will send updates to the hub even if the reporting threshold isn't met. The values correspond to the number of hours.</p> <p>Note: Frequent reports will affect battery life.</p>
@@ -127,8 +124,7 @@ The reporting frequency for battery, temperature, humidity, and light level<br /
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_183_2" type="integer" groupName="configuration"
-                 min="1" max="144">
+      <parameter name="config_183_2" type="integer" groupName="configuration">
         <label>183: Temperature reporting threshold</label>
         <description><![CDATA[
 Temperature reporting threshold<br /> <h1>Overview</h1><p>The sensor will report a new temperature value to the hub whenever temperature changes by the number of degrees entered as value.</p>

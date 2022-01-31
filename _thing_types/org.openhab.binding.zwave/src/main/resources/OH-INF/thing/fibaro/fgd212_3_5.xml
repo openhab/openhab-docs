@@ -159,8 +159,7 @@ Dimmer 2<br /> <h1>Overview</h1><p>Remotely controlled light dimming module is d
       </parameter-group>
 
       <!-- PARAMETER DEFINITIONS -->
-      <parameter name="config_1_1" type="integer" groupName="configuration"
-                 min="1" max="98">
+      <parameter name="config_1_1" type="integer" groupName="configuration">
         <label>1: Minimum brightness level</label>
         <description><![CDATA[
 set automatically during the calibration<br /> <h1>Overview</h1><p>The parameter is set automatically during the calibration process. The parameter can be changed manually after the calibration.</p>
@@ -169,8 +168,7 @@ set automatically during the calibration<br /> <h1>Overview</h1><p>The parameter
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_2_1" type="integer" groupName="configuration"
-                 min="1" max="99">
+      <parameter name="config_2_1" type="integer" groupName="configuration">
         <label>2: Maximum brightness level</label>
         <description><![CDATA[
 parameter is set automatically during the calibration process<br /> <h1>Overview</h1><p>The parameter is set automatically during the calibration process. The parameter can be changed manually after the calibration.</p>
@@ -179,8 +177,7 @@ parameter is set automatically during the calibration process<br /> <h1>Overview
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_3_1" type="integer" groupName="configuration"
-                 min="1" max="99">
+      <parameter name="config_3_1" type="integer" groupName="configuration">
         <label>3: Incandescence level of dimmable CFL*</label>
         <description><![CDATA[
 Virtual value (percentage between 1% and 99%)<br /> <h1>Overview</h1><p>Virtual value set as a percentage level between parameters MIN (1%) and MAX. (99%). The Dimmer 2 will set to this value after first switch on. It is required for warming up and switching dimmable compact fluorescent lamps and certain types of light sources.</p> <p>*CFL: compact fluorescent lamps</p>
@@ -189,8 +186,7 @@ Virtual value (percentage between 1% and 99%)<br /> <h1>Overview</h1><p>Virtual 
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_4_2" type="integer" groupName="configuration"
-                 min="0" max="255">
+      <parameter name="config_4_2" type="integer" groupName="configuration">
         <label>4: Incandescence time of dimmable CFL*</label>
         <description><![CDATA[
 time required for switching. 0s - 25,5s<br /> <h1>Overview</h1><p>Incandescence time of dimmable compact fluorescent lamps</p> <p>This parameter determines the time required for switching compact fluorescent lamps and certain types of light sources. Setting this parameter to 0 will disable the incandescence functionality. Available settings: 0-255 (0s - 25,5s).</p> <p>*CFL: compact fluorescent lamps</p>
@@ -199,8 +195,7 @@ time required for switching. 0s - 25,5s<br /> <h1>Overview</h1><p>Incandescence 
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_5_1" type="integer" groupName="configuration"
-                 min="1" max="99">
+      <parameter name="config_5_1" type="integer" groupName="configuration">
         <label>5: Dimming Step at Automatic Control</label>
         <description><![CDATA[
 percentage of a dimming step at automatic control. 1-99<br /> <h1>Overview</h1><p>The parameter defines the percentage of a dimming step at automatic control. 1-99</p>
@@ -209,8 +204,7 @@ percentage of a dimming step at automatic control. 1-99<br /> <h1>Overview</h1><
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_6_2" type="integer" groupName="configuration"
-                 min="0" max="255">
+      <parameter name="config_6_2" type="integer" groupName="configuration">
         <label>6: Dimming Step Timing at Automatic Control</label>
         <description><![CDATA[
 Defines the time of a dimming step at automatic control<br /> <h1>Overview</h1><p>The parameter defines the time of a dimming step at automatic control. Available settings: 0-255 (0s - 2,55s)</p>
@@ -219,16 +213,14 @@ Defines the time of a dimming step at automatic control<br /> <h1>Overview</h1><
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_7_1" type="integer" groupName="configuration"
-                 min="1" max="99">
+      <parameter name="config_7_1" type="integer" groupName="configuration">
         <label>7: Dimming Step at Manual Control</label>
         <description>The parameter defines the percentage of a dimming step at manual control. 1-99</description>
         <default>1</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_8_2" type="integer" groupName="configuration"
-                 min="0" max="255">
+      <parameter name="config_8_2" type="integer" groupName="configuration">
         <label>8: Dimming Step Timing at Manual Control</label>
         <description><![CDATA[
 Defines the time of a dimming step at manual control.<br /> <h1>Overview</h1><p>The parameter defines the time of a dimming step at manual control. Available settings: 0-255 (0s - 2,55s)</p>
@@ -248,8 +240,7 @@ Defines the time of a dimming step at manual control.<br /> <h1>Overview</h1><p>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_10_2" type="integer" groupName="configuration"
-                 min="0" max="32767">
+      <parameter name="config_10_2" type="integer" groupName="configuration">
         <label>10: Timer functionality (auto - off)</label>
         <description><![CDATA[
 Defines the setting of the timer<br /> <h1>Overview</h1><p>The parameter defines the setting of the timer. Available settings:1-32767 - time to turn off measured in seconds (1s - 9,1h), 0 disables the function</p>
@@ -298,8 +289,7 @@ Operating mode of the Dimmer<br /> <h1>Overview</h1><p>This parameter determines
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_15_1" type="integer" groupName="configuration"
-                 min="0" max="99">
+      <parameter name="config_15_1" type="integer" groupName="configuration">
         <label>15: Burnt out bulb detection</label>
         <description><![CDATA[
 Percentage value of power variation<br /> <h1>Overview</h1><p>Percentage value of power variation, compared to standard power consumption, measured during the calibration procedure (to be interpreted as load error/burnt out bulb). 1-99, 0 disables the function.</p>
@@ -308,8 +298,7 @@ Percentage value of power variation<br /> <h1>Overview</h1><p>Percentage value o
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_16_2" type="integer" groupName="configuration"
-                 min="0" max="255">
+      <parameter name="config_16_2" type="integer" groupName="configuration">
         <label>16: Time delay of a burnt out bulb</label>
         <description><![CDATA[
 Time of delay for power variation detection<br /> <h1>Overview</h1><p>Time of delay (in seconds) for power variation detection, interpreted as a LOAD ERROR or OVERLOAD detection (too much power connected to the Dimmer 2). 0 disables the function.</p>
@@ -318,8 +307,7 @@ Time of delay for power variation detection<br /> <h1>Overview</h1><p>Time of de
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_19_1" type="integer" groupName="configuration"
-                 min="0" max="99">
+      <parameter name="config_19_1" type="integer" groupName="configuration">
         <label>19: Forced switch on brightness level</label>
         <description><![CDATA[
 Dimmer 2 will always set this brightness level.<br /> <h1>Overview</h1><p>If the parameter is active, switching on the Dimmer 2 (S1 single click) will always set this brightness level. 0 disables the function.</p>
@@ -547,8 +535,7 @@ Determines trigger of auto-calibration procedure<br /> <h1>Overview</h1><p>This 
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_38_2" type="integer" groupName="configuration"
-                 min="0" max="255">
+      <parameter name="config_38_2" type="integer" groupName="configuration">
         <label>38: Brightness level correction for flickering loads</label>
         <description><![CDATA[
 Duration of brightn level correction for flickering<br /> <h1>Overview</h1><p>This parameter specifies the duration of Brightness level correction for flickering loads in seconds. 255 sets the function to "always enabled". 0 disables the function.<br />Correction reduces spontaneous flickering of some capacitive load (e.g. dimmable LEDs) at certain brightness levels in 2-wire installation.<br />In countries using ripple-control, correction may cause changes in brightness. In this case it is necessary to disable correction or adjust time of correction for flickering loads.</p>
@@ -557,8 +544,7 @@ Duration of brightn level correction for flickering<br /> <h1>Overview</h1><p>Th
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_39_2" type="integer" groupName="configuration"
-                 min="0" max="250">
+      <parameter name="config_39_2" type="integer" groupName="configuration">
         <label>39: Power limit - OVERLOAD</label>
         <description><![CDATA[
 Defined value turns off load<br /> <h1>Overview</h1><p>Reaching the defined value will result in turning off the load. Parameter 39 is relevant only in a 3-wire connection i or a 2-wire connection for load of cosφ ≥ 0.99. (1 W - 250 W). 0 disables the function.</p>
@@ -619,8 +605,7 @@ Defined value turns off load<br /> <h1>Overview</h1><p>Reaching the defined valu
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_44_2" type="integer" groupName="configuration"
-                 min="1" max="32767">
+      <parameter name="config_44_2" type="integer" groupName="configuration">
         <label>44: Time of alarm state</label>
         <description><![CDATA[
 Time alarm state cancelled<br /> <h1>Overview</h1><p>Alarm state may be cancelled earlier, as a result of pushing the wall-switch keys or sending the Z-Wave command frame. Available settings: 1-32767 (1s - 32767s).</p>
@@ -686,8 +671,7 @@ Critical temperature/VOLTAGE DROP alarm report<br /> <h1>Overview</h1><p>OVERHEA
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_50_1" type="integer" groupName="configuration"
-                 min="0" max="100">
+      <parameter name="config_50_1" type="integer" groupName="configuration">
         <label>50: Active power reports</label>
         <description><![CDATA[
 Pwr level change resulting in power report sent<br /> <h1>Overview</h1><p>The parameter defines the power level change that will result in a new power report being sent. The value is a percentage of the previous report. 0 disables the function.</p>
@@ -696,8 +680,7 @@ Pwr level change resulting in power report sent<br /> <h1>Overview</h1><p>The pa
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_52_2" type="integer" groupName="configuration"
-                 min="0" max="32767">
+      <parameter name="config_52_2" type="integer" groupName="configuration">
         <label>52: Periodic active power and energy reports</label>
         <description><![CDATA[
 Time period between consecutive reports<br /> <h1>Overview</h1><p>Parameter 52 defines a time period between consecutive reports. Timer is reset and counted from zero after each report (1 sec - 32767 sec). 0 disables the function.</p>
@@ -706,8 +689,7 @@ Time period between consecutive reports<br /> <h1>Overview</h1><p>Parameter 52 d
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_53_2" type="integer" groupName="configuration"
-                 min="0" max="255">
+      <parameter name="config_53_2" type="integer" groupName="configuration">
         <label>53: Energy reports</label>
         <description><![CDATA[
 Energy level change resulting in energy report sent<br /> <h1>Overview</h1><p>Energy level change which will result in sending a new energy report. Available settings: 1-255 (0,01 - 2,55 kWh). 0 disables the function.</p>
@@ -743,8 +725,7 @@ Calculation of active power<br /> <h1>Overview</h1><p>This parameter defines how
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_59_2" type="integer" groupName="configuration"
-                 min="0" max="500">
+      <parameter name="config_59_2" type="integer" groupName="configuration">
         <label>59: Approximated power at the maximum brightness level</label>
         <description><![CDATA[
 Approximated power at the maximum brightness level<br /> <h1>Overview</h1><p>This parameter determines the approximate value of the power that will be reported by the device at its maximum brightness level. Available settings: 0-500 (0-500W). Note: Parameter 59 works only when parameter 58 has a value other than 0.</p>

@@ -58,8 +58,7 @@ Smart Chime/Alarm<br /> <h1>Overview</h1><p>Smart Chime/Alarm</p> <ul><li>Audio 
       </parameter-group>
 
       <!-- PARAMETER DEFINITIONS -->
-      <parameter name="config_1_1" type="integer" groupName="configuration"
-                 min="1" max="3">
+      <parameter name="config_1_1" type="integer" groupName="configuration">
         <label>1: Siren Volume</label>
         <description><![CDATA[
 3 volume levels for the alarm siren sound.<br /> <h1>Overview</h1><p>Values: 1 – low, 2 – medium, 3 – high (default)</p>
@@ -68,8 +67,7 @@ Smart Chime/Alarm<br /> <h1>Overview</h1><p>Smart Chime/Alarm</p> <ul><li>Audio 
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_2_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_2_1" type="integer" groupName="configuration">
         <label>2: Siren Alarm Duration</label>
         <description><![CDATA[
 5 modes to set the duration for siren alarm<br /> <h1>Overview</h1><p>0 – alarm is off</p> <p>1 – alarm goes off for 30 seconds</p> <p>2 – alarm goes off for 60 seconds</p> <p>3 – alarm goes off for 5 minutes</p> <p>255 – alarm continues until battery drains</p> <p>Values: 0, 1 – 3, 255; 1 – default setting.</p>
@@ -78,8 +76,7 @@ Smart Chime/Alarm<br /> <h1>Overview</h1><p>Smart Chime/Alarm</p> <ul><li>Audio 
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_3_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_3_1" type="integer" groupName="configuration">
         <label>3: Chime Sound Duration</label>
         <description><![CDATA[
 Chime Sound Duration<br /> <h1>Overview</h1><p>how many times the chime should repeat the doorbell sound once triggered by a BASIC_SET alarm command from a door sensor.</p> <p>Values: 0 – chime is off, 1 – 254 (cycles); 255 – chime</p> <p>sound continues until battery drains; 2 – default setting.</p>
@@ -88,8 +85,7 @@ Chime Sound Duration<br /> <h1>Overview</h1><p>how many times the chime should r
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_4_1" type="integer" groupName="configuration"
-                 min="1" max="3">
+      <parameter name="config_4_1" type="integer" groupName="configuration">
         <label>4: Chime Volume</label>
         <description><![CDATA[
 3 volume levels for the doorbell sound. Set volume to low, medium, or high.<br /> <h1>Overview</h1><p>Values: 1 – low, 2 – medium, 3 – high (default)</p>
@@ -98,8 +94,7 @@ Chime Sound Duration<br /> <h1>Overview</h1><p>how many times the chime should r
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_5_1" type="integer" groupName="configuration"
-                 min="1" max="10">
+      <parameter name="config_5_1" type="integer" groupName="configuration">
         <label>5: Siren Alarm Tone</label>
         <description><![CDATA[
 10 different tones for alarm siren<br /> <h1>Overview</h1><p>Values: 1-10; 10 – default setting.</p>
@@ -108,8 +103,7 @@ Chime Sound Duration<br /> <h1>Overview</h1><p>how many times the chime should r
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_6_1" type="integer" groupName="configuration"
-                 min="1" max="10">
+      <parameter name="config_6_1" type="integer" groupName="configuration">
         <label>6: Chime Tone</label>
         <description><![CDATA[
 10 different tones for doorbell<br /> <h1>Overview</h1><p>Values: 1-10; 4 – default setting.</p>
@@ -118,8 +112,7 @@ Chime Sound Duration<br /> <h1>Overview</h1><p>how many times the chime should r
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_7_1" type="integer" groupName="configuration"
-                 min="1" max="2">
+      <parameter name="config_7_1" type="integer" groupName="configuration">
         <label>7: Siren Alarm or Chime Mode</label>
         <description><![CDATA[
 Siren Alarm or Chime Mode<br /> <h1>Overview</h1><p>Switch between Siren Alarm (configu-red by parameters 1, 2, 5, 8) and Chime / Doorbell (parameters 3, 4, 6, 9) modes.</p> <p>Values: 1 – Siren Alarm enabled; 2 – Chime enabled (default).</p>
@@ -128,8 +121,7 @@ Siren Alarm or Chime Mode<br /> <h1>Overview</h1><p>Switch between Siren Alarm (
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_8_1" type="integer" groupName="configuration"
-                 min="0" max="1">
+      <parameter name="config_8_1" type="integer" groupName="configuration">
         <label>8: LED Notifications for Siren Alarm</label>
         <description><![CDATA[
 LED Notifications for Siren Alarm<br /> <h1>Overview</h1><p>Enable or disable visual alarm for Siren mode. The LED will blink when triggered.</p> <p>Values: 0 – LED disabled; 1 – LED enabled (default).</p>
@@ -138,8 +130,7 @@ LED Notifications for Siren Alarm<br /> <h1>Overview</h1><p>Enable or disable vi
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_9_1" type="integer" groupName="configuration"
-                 min="0" max="1">
+      <parameter name="config_9_1" type="integer" groupName="configuration">
         <label>9: LED Notifications for Chime</label>
         <description><![CDATA[
 LED Notifications for Chime<br /> <h1>Overview</h1><p>Enable or disable visual alarm for Chime mode. The LED will blink when triggered.</p> <p>Values: 0 – LED disabled (default); 1 – LED enabled.</p>

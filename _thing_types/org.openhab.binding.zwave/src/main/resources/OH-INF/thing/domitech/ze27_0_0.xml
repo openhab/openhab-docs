@@ -61,8 +61,7 @@ Dim level when the bulb is turned on<br /> <h1>Overview</h1><p>You may select th
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_9_1" type="integer" groupName="configuration"
-                 min="1" max="99">
+      <parameter name="config_9_1" type="integer" groupName="configuration">
         <label>9: Dimming / brightening step level</label>
         <description><![CDATA[
 Controls the speed of dimming / brightening<br /> <h1>Overview</h1><p>You may change the dimming step level when you adjust the brightness from your controller.</p> <p>When the value is low, dimming / brightening is gradual. When the value is high, dimming / brightening is rapid.</p>
@@ -71,8 +70,7 @@ Controls the speed of dimming / brightening<br /> <h1>Overview</h1><p>You may ch
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_10_1" type="integer" groupName="configuration"
-                 min="1" max="10">
+      <parameter name="config_10_1" type="integer" groupName="configuration">
         <label>10: Dimming / brightening step timing</label>
         <description><![CDATA[
 Dimming / brightening step timing<br /> <h1>Overview</h1><p>This parameter controls the dimming speed. When the value is low, the step timing is quick. When the value is high, the step timing is slow.</p>

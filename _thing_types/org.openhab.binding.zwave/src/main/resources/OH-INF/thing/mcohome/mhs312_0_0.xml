@@ -59,8 +59,7 @@ Two Way Switch<br /> <h1>Overview</h1><p>Touch Panel Switch is a wall switch wit
       </parameter-group>
 
       <!-- PARAMETER DEFINITIONS -->
-      <parameter name="config_2_1" type="integer" groupName="configuration"
-                 min="0" max="1">
+      <parameter name="config_2_1" type="integer" groupName="configuration">
         <label>2: Switch state saved or not when power failure</label>
         <description><![CDATA[
 1=Saved 0=not saved<br /> <h1>Overview</h1><p>0= not saved，switch will be off when powered again</p> <p>1= saved，switch will keep the same state when powered again</p>
@@ -69,8 +68,7 @@ Two Way Switch<br /> <h1>Overview</h1><p>Touch Panel Switch is a wall switch wit
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_2_1" type="integer" groupName="configuration"
-                 min="0" max="1">
+      <parameter name="config_2_1" type="integer" groupName="configuration">
         <label>2: Switch state saved or not when power failure</label>
         <description><![CDATA[
 1=Saved 0=not saved<br /> <h1>Overview</h1><p>0= not saved，switch will be off when powered again</p> <p>1= saved，switch will keep the same state when powered again</p>
@@ -79,8 +77,7 @@ Two Way Switch<br /> <h1>Overview</h1><p>Touch Panel Switch is a wall switch wit
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_3_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_3_1" type="integer" groupName="configuration">
         <label>3: ALL ON/ALL OFF</label>
         <description><![CDATA[
 0,1,2,255<br /> <h1>Overview</h1><p>0=forbid ALL ON, forbid ALL OFF</p> <p>1=forbid ALL ON, allow ALL OFF</p> <p>2=allow ALL ON, forbid ALL OFF</p> <p>255=allow ALL ON, allow ALL OFF</p>
@@ -89,16 +86,14 @@ Two Way Switch<br /> <h1>Overview</h1><p>Touch Panel Switch is a wall switch wit
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_4_1" type="integer" groupName="configuration"
-                 min="0" max="10">
+      <parameter name="config_4_1" type="integer" groupName="configuration">
         <label>4: LED Backlit brightness level</label>
         <description>0=LED disabled 1-10=Min level-Max level</description>
         <default>10</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_5_1" type="integer" groupName="configuration"
-                 min="0" max="4">
+      <parameter name="config_5_1" type="integer" groupName="configuration">
         <label>5: Key Mode</label>
         <description><![CDATA[
 0-4<br /> <h1>Overview</h1><p>0=single click to switch on/off status</p> <p>1=Key default as off state. When it is turned on, then it will be turned off automatically after a time period , which can be set in item 5</p> <p>2=Key default as on state. When it is turned off, then it will be turned on automatically after a time period , which can be set in item 5</p> <p>3=hold &gt;3s then key is on, and off once released</p> <p>4=single click to switch on/off status + hold &gt;3s then key is on, and off once released</p>
@@ -107,8 +102,7 @@ Two Way Switch<br /> <h1>Overview</h1><p>Touch Panel Switch is a wall switch wit
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_6_2" type="integer" groupName="configuration"
-                 min="-32767" max="32768">
+      <parameter name="config_6_2" type="integer" groupName="configuration">
         <label>6: Key On duration</label>
         <description>0=infinite 1~65535=unit "sec"</description>
         <default>0</default>

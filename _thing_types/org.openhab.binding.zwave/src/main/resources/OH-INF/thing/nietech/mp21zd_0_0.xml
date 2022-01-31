@@ -48,8 +48,7 @@ Z-Wave Mini Plug Dimmer<br /> <h1>Overview</h1><p><b>Specifications:</b></p><ul>
       </parameter-group>
 
       <!-- PARAMETER DEFINITIONS -->
-      <parameter name="config_2_1" type="integer" groupName="configuration"
-                 min="0" max="3">
+      <parameter name="config_2_1" type="integer" groupName="configuration">
         <label>2: LED Indicator</label>
         <description><![CDATA[
 LED Indicator Setup<br /> <h1>Overview</h1><p>This parameter can access you to choose the led indicator to be on when the plug(light) is on/off, or LED indicator remains on/off all times.</p><p>(LED flashes 3 times when the configuration parameter changed.)</p>
@@ -87,8 +86,7 @@ Auto Turn-On Timer Setup<br /> <h1>Overview</h1><p>This parameter can access you
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_7_1" type="integer" groupName="configuration"
-                 min="1" max="10">
+      <parameter name="config_7_1" type="integer" groupName="configuration">
         <label>7: Night Light</label>
         <description><![CDATA[
 Night Light Setup<br /> <h1>Overview</h1><p>This parameter can access you to set a specific brightness for the light when you want to make it as a night light.</p><p>Value <i>x</i> = 10<i>x</i> percent brightness</p><p>(LED flashes 3 times when the configuration parameter changed.)<br /></p>
@@ -97,8 +95,7 @@ Night Light Setup<br /> <h1>Overview</h1><p>This parameter can access you to set
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_8_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_8_1" type="integer" groupName="configuration">
         <label>8: State Restore</label>
         <description><![CDATA[
 Power Failure Restore State Setup<br /> <h1>Overview</h1><p>This parameter can access you to set the switch to be on/off after power failure.</p><p><b>Operation: quickly press 8 times to change this parameter.</b></p><p>(LED flashes 3 times when the configuration parameter changed.)</p>
@@ -111,8 +108,7 @@ Power Failure Restore State Setup<br /> <h1>Overview</h1><p>This parameter can a
         </options>
       </parameter>
 
-      <parameter name="config_10_1" type="integer" groupName="configuration"
-                 min="1" max="10">
+      <parameter name="config_10_1" type="integer" groupName="configuration">
         <label>10: Dimmer Speed</label>
         <description><![CDATA[
 Dimmer Speed Setup (Dimmer Control)<br /> <h1>Overview</h1><p>This parameter can access you to set the time from maximum brightness to minimum brightness or minimum brightness to maximum brightness.</p><p>(Only when hold to change the brightness or control from HUB).</p>
@@ -121,8 +117,7 @@ Dimmer Speed Setup (Dimmer Control)<br /> <h1>Overview</h1><p>This parameter can
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_11_1" type="integer" groupName="configuration"
-                 min="0" max="99">
+      <parameter name="config_11_1" type="integer" groupName="configuration">
         <label>11: Multilevel Minimum</label>
         <description><![CDATA[
 Multilevel Minimum Value Setup<br /> <h1>Overview</h1><p><b>Operation: quickly press 5 times to change this parameter.</b></p><p>(LED flashes 3 times when the configuration parameter changed.)</p>
@@ -143,8 +138,7 @@ Multilevel Maximum Value Setup<br /> <h1>Overview</h1><p><b>Operation: quickly p
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_13_1" type="integer" groupName="configuration"
-                 min="1" max="60">
+      <parameter name="config_13_1" type="integer" groupName="configuration">
         <label>13: Temperature Time</label>
         <description><![CDATA[
 Temperature Report Time Setup<br /> <h1>Overview</h1><p>This parameter determines the minimum time in temperature that will result in sending new power report to the main controller.</p><p>(LED flashes 3 times when the configuration parameter changed.)</p><p><b>Operation: Set up on the hub</b></p>
@@ -153,8 +147,7 @@ Temperature Report Time Setup<br /> <h1>Overview</h1><p>This parameter determine
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_14_1" type="integer" groupName="configuration"
-                 min="1" max="10">
+      <parameter name="config_14_1" type="integer" groupName="configuration">
         <label>14: Temperature Threshold</label>
         <description><![CDATA[
 Temperature Report Threshold Setup<br /> <h1>Overview</h1><p>This parameter determines the minimum change in temperature that will result in sending new power report to the main controller.</p><p>(LED flashes 3 times when the configuration parameter changed.)</p><p><b>Operation: Set up on the hub.</b></p>

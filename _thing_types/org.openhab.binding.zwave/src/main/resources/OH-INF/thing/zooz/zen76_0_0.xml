@@ -53,8 +53,7 @@ Paddle Switch (S2)<br /> <h1>Overview</h1><p>Z-Wave paddle switch, 700 series, o
       </parameter-group>
 
       <!-- PARAMETER DEFINITIONS -->
-      <parameter name="config_1_1" type="integer" groupName="configuration"
-                 min="0" max="2">
+      <parameter name="config_1_1" type="integer" groupName="configuration">
         <label>1: On/Off Paddle Orientation</label>
         <description><![CDATA[
 Reverse default on/off operation or set to toggle mode<br /> <h1>Overview</h1><p>Choose if you want the upper paddle to turn the light on or turn the light off when tapped.</p>
@@ -67,8 +66,7 @@ Reverse default on/off operation or set to toggle mode<br /> <h1>Overview</h1><p
         </options>
       </parameter>
 
-      <parameter name="config_2_1" type="integer" groupName="configuration"
-                 min="0" max="3">
+      <parameter name="config_2_1" type="integer" groupName="configuration">
         <label>2: LED Indicator</label>
         <description><![CDATA[
 Adjust LED function<br /> <h1>Overview</h1><p>Choose if you want the LED indicator to turn on when the switch (light) is on or off, or if you want it to remain on or off at all times.</p><p>NOTE: tap the upper paddle 6 times quickly to change this mode.</p>
@@ -82,8 +80,7 @@ Adjust LED function<br /> <h1>Overview</h1><p>Choose if you want the LED indicat
         </options>
       </parameter>
 
-      <parameter name="config_3_4" type="integer" groupName="configuration"
-                 min="0" max="65535">
+      <parameter name="config_3_4" type="integer" groupName="configuration">
         <label>3: Auto Turn-Off Timer (Minutes)</label>
         <description><![CDATA[
 How long the switch remains ON<br /> <h1>Overview</h1><p>Use this parameter to enable or disable the auto turn-off timer function (the time after which you want the switch to automatically turn off once it has been turned on).</p><p>0 = disabled (default). Values other than 0, up to 65535, are the timer length, in minutes.</p>
@@ -92,8 +89,7 @@ How long the switch remains ON<br /> <h1>Overview</h1><p>Use this parameter to e
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_5_4" type="integer" groupName="configuration"
-                 min="0" max="65535">
+      <parameter name="config_5_4" type="integer" groupName="configuration">
         <label>5: Auto Turn-On Timer (Minutes)</label>
         <description><![CDATA[
 How long the switch remains OFF<br /> <h1>Overview</h1><p>Use this parameter to enable or disable the auto turn-on timer function (the time after which you want the switch to automatically turn on once it has been turned off).</p><p>0 = disabled (default).  Values other than 0, up to 65535, are the timer length, in minutes.</p>
@@ -102,8 +98,7 @@ How long the switch remains OFF<br /> <h1>Overview</h1><p>Use this parameter to 
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_8_1" type="integer" groupName="configuration"
-                 min="0" max="2">
+      <parameter name="config_8_1" type="integer" groupName="configuration">
         <label>8: On Off Status After Power Failure</label>
         <description><![CDATA[
 How switch reacts to power failures<br /> <h1>Overview</h1><p>Set the on off status for the switch after power failure.</p>
@@ -117,8 +112,7 @@ How switch reacts to power failures<br /> <h1>Overview</h1><p>Set the on off sta
         <advanced>true</advanced>
       </parameter>
 
-      <parameter name="config_10_1" type="integer" groupName="configuration"
-                 min="0" max="1">
+      <parameter name="config_10_1" type="integer" groupName="configuration">
         <label>10: Scene control</label>
         <description><![CDATA[
 Enable or disable scene control functionality for quick double tap<br /> <h1>Overview</h1><p><br /></p>
@@ -130,8 +124,7 @@ Enable or disable scene control functionality for quick double tap<br /> <h1>Ove
         </options>
       </parameter>
 
-      <parameter name="config_12_1" type="integer" groupName="configuration"
-                 min="0" max="2">
+      <parameter name="config_12_1" type="integer" groupName="configuration">
         <label>12: Local Control</label>
         <description><![CDATA[
 Enable or disable local on/off control<br /> <h1>Overview</h1><p>If enabled, you’ll only be able to control the connected light via Z-Wave. Scenes and other functionality will still be available through paddles.</p><p>NOTE: tap the upper paddle 10 times quickly to change this mode. <br /></p><p>NOTE: hold the lower paddle for 10 seconds until the LED indicator starts blinking, then within 2 seconds, tap the upper paddle 5 times quickly to change this mode. The LED indicator will stay solid green for 3 seconds to confirm the change.</p>
@@ -144,8 +137,7 @@ Enable or disable local on/off control<br /> <h1>Overview</h1><p>If enabled, you
         </options>
       </parameter>
 
-      <parameter name="config_13_1" type="integer" groupName="configuration"
-                 min="0" max="1">
+      <parameter name="config_13_1" type="integer" groupName="configuration">
         <label>13: Reporting Behavior for Parameter 12</label>
         <description><![CDATA[
 Set reporting behavior for disabled physical control<br /> <h1>Overview</h1><p><br /></p>
@@ -157,8 +149,7 @@ Set reporting behavior for disabled physical control<br /> <h1>Overview</h1><p><
         </options>
       </parameter>
 
-      <parameter name="config_14_1" type="integer" groupName="configuration"
-                 min="0" max="3">
+      <parameter name="config_14_1" type="integer" groupName="configuration">
         <label>14: LED indicator color</label>
         <description>Choose the color of the LED indicator</description>
         <default>1</default>
@@ -170,8 +161,7 @@ Set reporting behavior for disabled physical control<br /> <h1>Overview</h1><p><
         </options>
       </parameter>
 
-      <parameter name="config_15_1" type="integer" groupName="configuration"
-                 min="0" max="2">
+      <parameter name="config_15_1" type="integer" groupName="configuration">
         <label>15: LED indicator brightness</label>
         <description><![CDATA[
 Choose the LED indicator's brightness level<br /> <h1>Overview</h1><p><br /></p>
@@ -185,8 +175,7 @@ Choose the LED indicator's brightness level<br /> <h1>Overview</h1><p><br /></p>
         <advanced>true</advanced>
       </parameter>
 
-      <parameter name="config_16_1" type="integer" groupName="configuration"
-                 min="0" max="1">
+      <parameter name="config_16_1" type="integer" groupName="configuration">
         <label>16: Association Reports</label>
         <description><![CDATA[
 Choose how the switch reports its status back to the hub<br /> <h1>Overview</h1><p><br /></p>

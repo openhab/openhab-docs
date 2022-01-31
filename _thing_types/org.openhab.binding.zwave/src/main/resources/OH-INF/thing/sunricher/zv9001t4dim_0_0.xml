@@ -75,8 +75,7 @@
       </parameter-group>
 
       <!-- PARAMETER DEFINITIONS -->
-      <parameter name="config_3_1" type="integer" groupName="configuration"
-                 min="0" max="1">
+      <parameter name="config_3_1" type="integer" groupName="configuration">
         <label>3: Scene_type</label>
         <description><![CDATA[
 Scene type<br /> <h1>Overview</h1><p>Parameter 3 can be configured via “COMMAND_CLASS_CONFIGURATION” to decide which scene command to use “CENTRAL SCENE” or “SCENE ACTIVATION”, factory default is “CENTRAL SCENE”.</p>
@@ -85,8 +84,7 @@ Scene type<br /> <h1>Overview</h1><p>Parameter 3 can be configured via “COMMAN
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_4_1" type="integer" groupName="configuration"
-                 min="0" max="1">
+      <parameter name="config_4_1" type="integer" groupName="configuration">
         <label>4: Scene_send_to_where</label>
         <description><![CDATA[
 Scene send to where<br /> <h1>Overview</h1><p>Parameter 4 can be configured via “COMMAND_CLASS_CONFIGURATION” to decide which object shall the remote send scene packet to, the gateway or the association group. Factory default is the association group.   By factory default this remote uses “CENTRAL SCENE” to send packet to the association group devices, this method requires that the controlled devices support “CENTRAL SCENE”</p>

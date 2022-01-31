@@ -155,16 +155,14 @@ Scene Capable Wall Dimmer Switch<br /> <h1>Overview</h1><p>HS-WD200+ is a Z-Wave
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_11_1" type="integer" groupName="configuration"
-                 min="0" max="90">
+      <parameter name="config_11_1" type="integer" groupName="configuration">
         <label>11: Remote Ramp Rate</label>
         <description>Set dimmer ramp rate for remote control</description>
         <default>3</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_12_1" type="integer" groupName="configuration"
-                 min="0" max="90">
+      <parameter name="config_12_1" type="integer" groupName="configuration">
         <label>12: Local Ramp Rate</label>
         <description>Set dimmer ramp rate for local control</description>
         <default>3</default>

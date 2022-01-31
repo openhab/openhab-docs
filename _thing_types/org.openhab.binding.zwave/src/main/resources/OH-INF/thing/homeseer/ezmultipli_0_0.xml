@@ -67,8 +67,7 @@ Multi Sensor<br /> <h1>Overview</h1><p>EZMultiPli™ enables fully automated lig
       </parameter-group>
 
       <!-- PARAMETER DEFINITIONS -->
-      <parameter name="config_1_1" type="integer" groupName="configuration"
-                 min="0" max="127">
+      <parameter name="config_1_1" type="integer" groupName="configuration">
         <label>1: OnTime</label>
         <description><![CDATA[
 OnTime<br /> <h1>Overview</h1><p>OnTime sets the number of minutes that the lights stay on when motion has not been detected.</p> <p>A value of 0 is a special mode where the lights are constantly sent a command to turn them on whenever motion is detected. EZMultiPli will NOT turn the lights off in this mode.</p> <p>Recommended values:</p> <ul><li>5 min for hallways</li> <li>20 min for an office environment</li> <li>60 min for a library, office or other room where someone may be sitting still for a long time</li> </ul>
@@ -77,8 +76,7 @@ OnTime<br /> <h1>Overview</h1><p>OnTime sets the number of minutes that the ligh
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_2_1" type="integer" groupName="configuration"
-                 min="-1" max="99">
+      <parameter name="config_2_1" type="integer" groupName="configuration">
         <label>2: OnLevel</label>
         <description><![CDATA[
 OnLevel<br /> <h1>Overview</h1><p>OnLevel is the value sent by the Z-Wave BASIC_SET command to all Association Group 2 nodes when motion is detected.</p> <p>A value of 0 will turn the lights off (not recommended). A value between 1 and 99 will set the dim level to between 1% and 99% (99% is full on).</p> <p>A value of -1 will turn the light “on” which depends on the device but most will set the dim level to the last dim setting.</p>
@@ -87,8 +85,7 @@ OnLevel<br /> <h1>Overview</h1><p>OnLevel is the value sent by the Z-Wave BASIC_
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_3_1" type="integer" groupName="configuration"
-                 min="0" max="127">
+      <parameter name="config_3_1" type="integer" groupName="configuration">
         <label>3: LiteMin</label>
         <description><![CDATA[
 LiteMin<br /> <h1>Overview</h1><p>A Luminance report is sent to the system controller every LiteMin minutes.</p> <p>A value of zero turns this mode off. Luminance values can still be obtained at any time by the home control application in this mode</p>
@@ -97,8 +94,7 @@ LiteMin<br /> <h1>Overview</h1><p>A Luminance report is sent to the system contr
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_4_1" type="integer" groupName="configuration"
-                 min="0" max="127">
+      <parameter name="config_4_1" type="integer" groupName="configuration">
         <label>4: TempMin</label>
         <description><![CDATA[
 A Temperature report is sent to the controller every TempMin minutes.<br /> <h1>Overview</h1><p>A Temperature report is sent to the controller every TempMin minutes.</p> <p>A value of zero turns this mode off. Temperature values can still be obtained at any time by polling the status of the temperature sensor.</p>
@@ -107,8 +103,7 @@ A Temperature report is sent to the controller every TempMin minutes.<br /> <h1>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_5_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_5_1" type="integer" groupName="configuration">
         <label>5: TempAdj</label>
         <description><![CDATA[
 TempAdj<br /> <h1>Overview</h1><p>TempAdj is a twos-complement number that is used to adjust the temperature reading to make it more accurate. The value is in tenths of degree Fahrenheit. The temperature reading can be adjusted by +12.7F to -12.8F. A value of 1 will adjust the temperature reading by +0.1F. A value of -1 will adjust the temperature by -0.1F. A value of 123 will adjust the temperature by +12.3F. </p>

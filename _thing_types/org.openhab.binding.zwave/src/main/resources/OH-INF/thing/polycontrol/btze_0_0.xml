@@ -94,8 +94,7 @@ After a unlock operation the lock holds the lock, so the door can be opened<br /
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_4_4" type="integer" groupName="configuration"
-                 min="0" max="2147483647">
+      <parameter name="config_4_4" type="integer" groupName="configuration">
         <label>4: BLE Temporary Allowed</label>
         <description><![CDATA[
 The BLE is enabled for a number of seconds.<br /> <h1>Overview</h1><p>0 -&gt; Disabled</p> <p>1 to 2147483647 -&gt; enabled no. of seconds</p>
@@ -117,8 +116,7 @@ BLE Always Allowed<br /> <h1>Overview</h1><p>0 -&gt; BLE Always disabled</p> <p
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_6_4" type="integer" groupName="configuration"
-                 min="0" max="2147483647">
+      <parameter name="config_6_4" type="integer" groupName="configuration">
         <label>6: Autolock</label>
         <description><![CDATA[
 Lock after an unlock.Value is delay in sec before lock is locked again.<br /> <h1>Overview</h1><p>0 -&gt; disabled</p> <p>1 to 2147483647 -&gt; enabled no. of seconds</p>

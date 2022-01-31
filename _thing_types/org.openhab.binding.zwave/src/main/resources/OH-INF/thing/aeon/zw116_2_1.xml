@@ -124,8 +124,7 @@ Aeotec Nano Switch<br /> <h1>Overview</h1><p>Aeotec Nano Switch is a Z-Wave Smar
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_9_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_9_1" type="integer" groupName="configuration">
         <label>9: Instant Energy Autosend Interval</label>
         <description><![CDATA[
 Instant Energy Autosend Interval (SENSOR_MULTILEVEL_REPORT)<br /> <h1>Overview</h1><p>Send SENSOR_MULTILEVEL_REPORT at this interval</p> <p>0 means to not send</p>
@@ -201,8 +200,7 @@ Configure the state of LED when it is in 3 modes<br /> <h1>Overview</h1><p>Confi
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_84_4" type="integer" groupName="configuration"
-                 min="0" max="2147483647">
+      <parameter name="config_84_4" type="integer" groupName="configuration">
         <label>84: Night light mode LED state</label>
         <description><![CDATA[
 Set the ON/OFF time of the LED when it is in Night light mode<br /> <h1>Overview</h1><p>0 to 60 The minute time of OFF 256 to 316 The hour time of OFF 65536 to 65596 The minute time of ON 16777216 to 16777276 The hour time of ON</p>
@@ -211,8 +209,7 @@ Set the ON/OFF time of the LED when it is in Night light mode<br /> <h1>Overview
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_86_4" type="integer" groupName="configuration"
-                 min="0" max="8327680">
+      <parameter name="config_86_4" type="integer" groupName="configuration">
         <label>86: Set appointment 1</label>
         <description><![CDATA[
 Set the ON time of output load.<br /> <h1>Overview</h1><p>65536 to 65543 The day value (Mon to Sun) 16777216 Enable the setting. 256 to 316 The hour value of ON time 16777215 Disable the setting. 0 to 60 The minute value of ON time</p>
@@ -221,8 +218,7 @@ Set the ON time of output load.<br /> <h1>Overview</h1><p>65536 to 65543 The day
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_87_4" type="integer" groupName="configuration"
-                 min="0" max="8327680">
+      <parameter name="config_87_4" type="integer" groupName="configuration">
         <label>87: Set appointment 2</label>
         <description><![CDATA[
 Set the OFF time of output load<br /> <h1>Overview</h1><p>256 to 316 The hour value of ON time 65536 to 65543 The day value (Mon to Sun) 16777215 Disable the setting. 0 to 60 The minute value of ON time 16777216 Enable the setting.</p>
@@ -242,16 +238,14 @@ Set the OFF time of output load<br /> <h1>Overview</h1><p>256 to 316 The hour va
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_91_2" type="integer" groupName="configuration"
-                 min="-32767" max="32768">
+      <parameter name="config_91_2" type="integer" groupName="configuration">
         <label>91: Set the threshold value of wattage</label>
         <description>Threshold change in wattage (in terms of wattage) to induce an automatic report</description>
         <default>25</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_92_1" type="integer" groupName="configuration"
-                 min="0" max="100">
+      <parameter name="config_92_1" type="integer" groupName="configuration">
         <label>92: Set the threshold value of percent power</label>
         <description>Threshold percentage change in wattage for an automatic report</description>
         <default>5</default>
@@ -265,8 +259,7 @@ Set the OFF time of output load<br /> <h1>Overview</h1><p>256 to 316 The hour va
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_101_4" type="integer" groupName="configuration"
-                 min="0" max="15">
+      <parameter name="config_101_4" type="integer" groupName="configuration">
         <label>101: Set group 1 reports</label>
         <description>To set which reports need to be sent in Report group 1.</description>
         <default>0</default>
@@ -278,8 +271,7 @@ Set the OFF time of output load<br /> <h1>Overview</h1><p>256 to 316 The hour va
         </options>
       </parameter>
 
-      <parameter name="config_102_4" type="integer" groupName="configuration"
-                 min="0" max="15">
+      <parameter name="config_102_4" type="integer" groupName="configuration">
         <label>102: Set group 2 reports</label>
         <description>To set which reports need to be sent in Report group 2.</description>
         <default>0</default>
@@ -291,8 +283,7 @@ Set the OFF time of output load<br /> <h1>Overview</h1><p>256 to 316 The hour va
         </options>
       </parameter>
 
-      <parameter name="config_103_4" type="integer" groupName="configuration"
-                 min="0" max="15">
+      <parameter name="config_103_4" type="integer" groupName="configuration">
         <label>103: Set group 3 reports</label>
         <description>To set which reports need to be sent in Report group 3.</description>
         <default>0</default>
@@ -311,24 +302,21 @@ Set the OFF time of output load<br /> <h1>Overview</h1><p>256 to 316 The hour va
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_111_4" type="integer" groupName="configuration"
-                 min="1" max="2147483647">
+      <parameter name="config_111_4" type="integer" groupName="configuration">
         <label>111: Interval for automatic report group 1.</label>
         <description>Set the interval of automatic report for Report group 1.</description>
         <default>10</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_112_4" type="integer" groupName="configuration"
-                 min="1" max="2147483647">
+      <parameter name="config_112_4" type="integer" groupName="configuration">
         <label>112: Interval for automatic report group 2</label>
         <description>Set the interval of automatic report for Report group 2.</description>
         <default>600</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_113_4" type="integer" groupName="configuration"
-                 min="1" max="2147483647">
+      <parameter name="config_113_4" type="integer" groupName="configuration">
         <label>113: Interval for automatic group 3 report</label>
         <description>Set the interval of automatic report for Report group 3</description>
         <default>600</default>

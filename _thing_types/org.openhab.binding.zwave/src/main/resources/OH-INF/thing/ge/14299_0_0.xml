@@ -77,48 +77,42 @@ GE/Jasco In-Wall 1000W Incandescent Smart Dimmer<br /> <h1>Overview</h1><p><stro
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_7_1" type="integer" groupName="configuration"
-                 min="1" max="99">
+      <parameter name="config_7_1" type="integer" groupName="configuration">
         <label>7: Dim Steps</label>
         <description>number of steps or levels</description>
         <default>1</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_8_2" type="integer" groupName="configuration"
-                 min="1" max="255">
+      <parameter name="config_8_2" type="integer" groupName="configuration">
         <label>8: Dim Timing</label>
         <description>timing of steps</description>
         <default>1</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_9_1" type="integer" groupName="configuration"
-                 min="1" max="99">
+      <parameter name="config_9_1" type="integer" groupName="configuration">
         <label>9: Dim 2 Steps</label>
         <description>number of steps or levels</description>
         <default>1</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_10_2" type="integer" groupName="configuration"
-                 min="1" max="255">
+      <parameter name="config_10_2" type="integer" groupName="configuration">
         <label>10: Dim 2 Timing</label>
         <description>timing of steps</description>
         <default>1</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_11_1" type="integer" groupName="configuration"
-                 min="1" max="99">
+      <parameter name="config_11_1" type="integer" groupName="configuration">
         <label>11: Dim 3 Steps</label>
         <description>number of steps or levels</description>
         <default>1</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_12_2" type="integer" groupName="configuration"
-                 min="1" max="255">
+      <parameter name="config_12_2" type="integer" groupName="configuration">
         <label>12: Dim 3 Timing</label>
         <description>timing of steps</description>
         <default>1</default>

@@ -72,40 +72,35 @@ Remotely Controlled Ventilation<br /> <h1>Overview</h1><p>The Systemair Z-Wave V
       </parameter-group>
 
       <!-- PARAMETER DEFINITIONS -->
-      <parameter name="config_1_2" type="integer" groupName="configuration"
-                 min="-32767" max="32768">
+      <parameter name="config_1_2" type="integer" groupName="configuration">
         <label>1: System Type (read-only)</label>
         <description>Ventilation System Type.</description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_2_2" type="integer" groupName="configuration"
-                 min="0" max="12">
+      <parameter name="config_2_2" type="integer" groupName="configuration">
         <label>2: Filter - Period (read-only)</label>
         <description>In step of 30 days; 6=180days.</description>
         <default>12</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_3_2" type="integer" groupName="configuration"
-                 min="-32767" max="32768">
+      <parameter name="config_3_2" type="integer" groupName="configuration">
         <label>3: Filter - Days</label>
         <description>How many days has been used since the last change</description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_4_2" type="integer" groupName="configuration"
-                 min="-32767" max="32768">
+      <parameter name="config_4_2" type="integer" groupName="configuration">
         <label>4: Boost Mode Remaining Time</label>
         <description>How many seconds are left for Boost mode.</description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_5_2" type="integer" groupName="configuration"
-                 min="-32767" max="32768">
+      <parameter name="config_5_2" type="integer" groupName="configuration">
         <label>5: Temperature Setpoint Step (read-only)</label>
         <description>The min change available in degree Celsius x 10; 25 = 2.5 C.</description>
         <default>0</default>

@@ -101,24 +101,21 @@ determines if current state is memorized on power failure<br /> <h1>Overview</h1
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_3_2" type="integer" groupName="configuration"
-                 min="1" max="32767">
+      <parameter name="config_3_2" type="integer" groupName="configuration">
         <label>3: Watt Meter Report Period</label>
         <description>5s x 720 (default) = 3600s = 1 hour</description>
         <default>720</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_4_2" type="integer" groupName="configuration"
-                 min="0" max="32767">
+      <parameter name="config_4_2" type="integer" groupName="configuration">
         <label>4: kWH Meter Report Period</label>
         <description>10m * 6 (default) = 60m = 1 hour</description>
         <default>6</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_5_2" type="integer" groupName="configuration"
-                 min="10" max="3000">
+      <parameter name="config_5_2" type="integer" groupName="configuration">
         <label>5: Threshold of Watt for Load Caution</label>
         <description><![CDATA[
 Above this level, switch enters overload mode<br /> <h1>Overview</h1><p>Overload mode means the switch is disabled and the LED flashes at 0.5 second intervals. Unplug unit to clear mode.</p>
@@ -127,8 +124,7 @@ Above this level, switch enters overload mode<br /> <h1>Overview</h1><p>Overload
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_6_2" type="integer" groupName="configuration"
-                 min="1" max="10000">
+      <parameter name="config_6_2" type="integer" groupName="configuration">
         <label>6: Threshold of kWH for Load Caution</label>
         <description><![CDATA[
 Over this level, unit with go into overload mode<br /> <h1>Overview</h1><p>Overload mode means the switch is disabled and the LED flashes at 0.5 second intervals. Unplug unit to clear mode.</p>

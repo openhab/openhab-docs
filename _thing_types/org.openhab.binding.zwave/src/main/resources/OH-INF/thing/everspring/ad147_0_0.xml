@@ -54,24 +54,21 @@ Z-Wave Dimmer Plug<br /> <h1>Overview</h1><p>The mini Dimmer Plug is a Z-WaveTM 
       </parameter-group>
 
       <!-- PARAMETER DEFINITIONS -->
-      <parameter name="config_1_2" type="integer" groupName="configuration"
-                 min="0" max="255">
+      <parameter name="config_1_2" type="integer" groupName="configuration">
         <label>1: Basic Set Command value</label>
         <description>Basic Set Command value</description>
         <default>255</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_2_1" type="integer" groupName="configuration"
-                 min="3" max="25">
+      <parameter name="config_2_1" type="integer" groupName="configuration">
         <label>2: Delaying Time to report to Group 1</label>
         <description>The delaying time to report to Group 1</description>
         <default>3</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_3_1" type="integer" groupName="configuration"
-                 min="0" max="1">
+      <parameter name="config_3_1" type="integer" groupName="configuration">
         <label>3: Remember the last status</label>
         <description><![CDATA[
 Remember the last status<br /> <h1>Overview</h1><p>1 = Remember</p> <p>0 = Do not remember</p>
@@ -80,8 +77,7 @@ Remember the last status<br /> <h1>Overview</h1><p>1 = Remember</p> <p>0 = Do no
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_4_1" type="integer" groupName="configuration"
-                 min="0" max="1">
+      <parameter name="config_4_1" type="integer" groupName="configuration">
         <label>4: Output mode setting: Dimming, On/Off</label>
         <description><![CDATA[
 Output mode setting: Dimming, On/Off<br /> <h1>Overview</h1><p>0 = Dimming</p> <p>1 = On/off</p>

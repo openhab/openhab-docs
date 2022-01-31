@@ -71,8 +71,7 @@ CO2 Monitor Air quality detector<br /> <h1>Overview</h1><p>MCOHome CO2 Monitor i
       </parameter-group>
 
       <!-- PARAMETER DEFINITIONS -->
-      <parameter name="config_1_2" type="integer" groupName="configuration"
-                 min="1" max="2000">
+      <parameter name="config_1_2" type="integer" groupName="configuration">
         <label>1: Notification Threshold</label>
         <description><![CDATA[
 CO2 Notification Threshold<br /> <h1>Overview</h1><p>Sets the CO2 notification threshold for association group 1.</p> <p>When the detected CO2 value is higher than the setting value, the device will send a (CO2 Detected Event) report to the Group 1. And this report will keep sending every 30 sec until the detected value is lower than the setting value.</p>

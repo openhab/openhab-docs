@@ -60,29 +60,25 @@ ASPIRE RF Plug-In Z-Wave Lamp Dimmer<br /> <h1>Overview</h1><p>Plug-in dimmer; 3
       </parameter-group>
 
       <!-- PARAMETER DEFINITIONS -->
-      <parameter name="config_1_1" type="integer" groupName="configuration"
-                 min="0" max="127">
+      <parameter name="config_1_1" type="integer" groupName="configuration">
         <label>1: Delayed Off</label>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_2_1" type="integer" groupName="configuration"
-                 min="0" max="127">
+      <parameter name="config_2_1" type="integer" groupName="configuration">
         <label>2: Panic On Time</label>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_3_1" type="integer" groupName="configuration"
-                 min="0" max="127">
+      <parameter name="config_3_1" type="integer" groupName="configuration">
         <label>3: Panic Off Time</label>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_4_1" type="integer" groupName="configuration"
-                 min="0" max="127">
+      <parameter name="config_4_1" type="integer" groupName="configuration">
         <label>4: Basic Set Value</label>
         <description>Not available in earlier versions of the device.</description>
         <default>0</default>
@@ -110,8 +106,7 @@ ASPIRE RF Plug-In Z-Wave Lamp Dimmer<br /> <h1>Overview</h1><p>Plug-in dimmer; 3
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_7_1" type="integer" groupName="configuration"
-                 min="0" max="127">
+      <parameter name="config_7_1" type="integer" groupName="configuration">
         <label>7: Dimmer Ramp Time</label>
         <default>0</default>
         <limitToOptions>false</limitToOptions>

@@ -101,22 +101,19 @@ Changes speaker settigs<br /> <h1>Overview</h1><ol><li>High Volume</li> <li>Low 
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_3_1" type="integer" groupName="configuration"
-                 min="10" max="127">
+      <parameter name="config_3_1" type="integer" groupName="configuration">
         <label>3: Auto Relock Time</label>
         <default>127</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_4_1" type="integer" groupName="configuration"
-                 min="3" max="10">
+      <parameter name="config_4_1" type="integer" groupName="configuration">
         <label>4: Wrong Code Entry Limit</label>
         <default>3</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_7_1" type="integer" groupName="configuration"
-                 min="10" max="127">
+      <parameter name="config_7_1" type="integer" groupName="configuration">
         <label>7: Shut Down Time (after wrong code entries)</label>
         <default>10</default>
         <limitToOptions>false</limitToOptions>

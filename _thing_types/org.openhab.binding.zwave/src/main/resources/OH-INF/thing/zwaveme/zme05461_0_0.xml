@@ -106,8 +106,7 @@ Double switch<br /> <h1>Overview</h1><p>The Z-Wave.Me Switch Flush Mountable is 
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_2_2" type="integer" groupName="configuration"
-                 min="-32767" max="32768">
+      <parameter name="config_2_2" type="integer" groupName="configuration">
         <label>2: Automatically switch off first channel after</label>
         <description>If not zero, automatically switch off after a user defined time</description>
         <default>0</default>
@@ -228,8 +227,7 @@ What to do on button Down press (both)<br /> <h1>Overview</h1><p>Defines how to 
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_20_2" type="integer" groupName="configuration"
-                 min="0" max="1800">
+      <parameter name="config_20_2" type="integer" groupName="configuration">
         <label>20: Energy consumption for first channel</label>
         <description><![CDATA[
 Energy consumption for first channel<br /> <h1>Overview</h1><p>Specify the consumption of the load in watts, for the calculation of power consumption. Max load 1800 W.</p>
@@ -240,8 +238,7 @@ Energy consumption for first channel<br /> <h1>Overview</h1><p>Specify the consu
         </options>
       </parameter>
 
-      <parameter name="config_22_2" type="integer" groupName="configuration"
-                 min="-32767" max="32768">
+      <parameter name="config_22_2" type="integer" groupName="configuration">
         <label>22: Automatically switch off second channel after</label>
         <description>If not zero, automatically switch off after a user defined time</description>
         <default>0</default>
@@ -277,8 +274,7 @@ Switch by buttons (second channel)<br /> <h1>Overview</h1><p>If disabled, the lo
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_40_2" type="integer" groupName="configuration"
-                 min="0" max="1800">
+      <parameter name="config_40_2" type="integer" groupName="configuration">
         <label>40: Energy consumption for second channel</label>
         <description><![CDATA[
 Energy consumption for second channel<br /> <h1>Overview</h1><p>Specify the consumption of the load in watts, for the calculation of power consumption. Max load 1800 W.</p>

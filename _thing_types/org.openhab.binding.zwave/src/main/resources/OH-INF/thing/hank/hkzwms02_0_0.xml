@@ -53,8 +53,7 @@ Motion Sensor<br /> <h1>Overview</h1><p>Motion sensor is a universal Z-Wave Sens
       </parameter-group>
 
       <!-- PARAMETER DEFINITIONS -->
-      <parameter name="config_12_1" type="integer" groupName="configuration"
-                 min="1" max="8">
+      <parameter name="config_12_1" type="integer" groupName="configuration">
         <label>12: Motion Sensor`s Sensitivity</label>
         <description>The higher the value,the more sensitive the PIR sensor</description>
         <default>8</default>
@@ -102,8 +101,7 @@ Motion Sensor<br /> <h1>Overview</h1><p>Motion sensor is a universal Z-Wave Sens
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_18_2" type="integer" groupName="configuration"
-                 min="-32767" max="32768">
+      <parameter name="config_18_2" type="integer" groupName="configuration">
         <label>18: Motion Alarm Cancellation Delay</label>
         <description><![CDATA[
 Period of time after which Motion alarm will be cancelled.<br /> <h1>Overview</h1><p>The Motion alarm will be cancelled in the main controller and the associated devices after 3 seconds, the alarm cancellation can be delay by this parameter. Any motion detected during the cancellation delay time countdown will result in the countdown being restarted.</p>
@@ -111,8 +109,7 @@ Period of time after which Motion alarm will be cancelled.<br /> <h1>Overview</h
         <default>0</default>
       </parameter>
 
-      <parameter name="config_32_1" type="integer" groupName="configuration"
-                 min="10" max="50">
+      <parameter name="config_32_1" type="integer" groupName="configuration">
         <label>32: Level of low battery</label>
         <description>Define a battery level ad the "low battery"</description>
         <default>20</default>

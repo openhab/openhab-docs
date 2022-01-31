@@ -76,8 +76,7 @@ Built in 2 channel on/off switch<br /> <h1>Overview</h1><p>The dual relay in-wal
       </parameter-group>
 
       <!-- PARAMETER DEFINITIONS -->
-      <parameter name="config_1_1" type="integer" groupName="configuration"
-                 min="0" max="1">
+      <parameter name="config_1_1" type="integer" groupName="configuration">
         <label>1: Switch 1 Type</label>
         <description><![CDATA[
 Set if switch is Momentary (0) or toggle (1)<br /> <h1>Overview</h1><p><br /></p>
@@ -89,8 +88,7 @@ Set if switch is Momentary (0) or toggle (1)<br /> <h1>Overview</h1><p><br /></p
         </options>
       </parameter>
 
-      <parameter name="config_2_1" type="integer" groupName="configuration"
-                 min="0" max="1">
+      <parameter name="config_2_1" type="integer" groupName="configuration">
         <label>2: Switch 2 Type</label>
         <description><![CDATA[
 Set if switch is Momentary (0) or toggle (1)<br /> <h1>Overview</h1><p><br /></p>
@@ -102,24 +100,21 @@ Set if switch is Momentary (0) or toggle (1)<br /> <h1>Overview</h1><p><br /></p
         </options>
       </parameter>
 
-      <parameter name="config_3_4" type="integer" groupName="configuration"
-                 min="0" max="43200">
+      <parameter name="config_3_4" type="integer" groupName="configuration">
         <label>3: Relay 1 Auto Off Time</label>
         <description>Set auto of timer up to 12 hours in seconds.</description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_4_4" type="integer" groupName="configuration"
-                 min="0" max="43200">
+      <parameter name="config_4_4" type="integer" groupName="configuration">
         <label>4: Relay 2 Auto Off Time</label>
         <description>Set auto of timer up to 12 hours in seconds.</description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_5_1" type="integer" groupName="configuration"
-                 min="0" max="1">
+      <parameter name="config_5_1" type="integer" groupName="configuration">
         <label>5: Remember the last status of Relay 1</label>
         <description><![CDATA[
 Set whether to remember the last status of Relay. 0 Don't remember, 1 remember.<br /> <h1>Overview</h1><p><br /></p>
@@ -131,8 +126,7 @@ Set whether to remember the last status of Relay. 0 Don't remember, 1 remember.<
         </options>
       </parameter>
 
-      <parameter name="config_6_1" type="integer" groupName="configuration"
-                 min="0" max="1">
+      <parameter name="config_6_1" type="integer" groupName="configuration">
         <label>6: Remember the last status of Relay 2</label>
         <description><![CDATA[
 Set whether to remember the last status of Relay. 0 Don't remember, 1 remember.<br /> <h1>Overview</h1><p><br /></p>

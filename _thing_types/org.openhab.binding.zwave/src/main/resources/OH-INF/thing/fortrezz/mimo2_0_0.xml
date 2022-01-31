@@ -83,8 +83,7 @@ Dual Digital or Analog Voltage input and Dual Contact Relay<br /> <h1>Overview</
       </parameter-group>
 
       <!-- PARAMETER DEFINITIONS -->
-      <parameter name="config_1_1_0000001F" type="integer" groupName="configuration"
-                 min="0" max="31">
+      <parameter name="config_1_1_0000001F" type="integer" groupName="configuration">
         <label>1: Relay 1 Trigger Interval</label>
         <description>Momentary trigger time in 100ms intervals, 10=1s, 0=disable</description>
         <default>0</default>
@@ -107,8 +106,7 @@ Relay 1 Trigger on Sensor Input<br /> <h1>Overview</h1><p><br /></p>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_2_1_0000001F" type="integer" groupName="configuration"
-                 min="0" max="31">
+      <parameter name="config_2_1_0000001F" type="integer" groupName="configuration">
         <label>2: Relay 2 Trigger Interval</label>
         <description>Momentary trigger time in 100ms intervals, 10=1s, 0=disable</description>
         <default>0</default>
@@ -129,8 +127,7 @@ Relay 1 Trigger on Sensor Input<br /> <h1>Overview</h1><p><br /></p>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_3_1_0000003F" type="integer" groupName="configuration"
-                 min="0" max="63">
+      <parameter name="config_3_1_0000003F" type="integer" groupName="configuration">
         <label>3: Sensor 1 Report Interval</label>
         <description>Report sensor state every (30s resolution, 0=none, 1=30s, 10=5m, 63=31.5m)</description>
         <default>0</default>
@@ -158,32 +155,27 @@ Relay 1 Trigger on Sensor Input<br /> <h1>Overview</h1><p><br /></p>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_4_2" type="integer" groupName="configuration"
-                 min="0" max="4095">
+      <parameter name="config_4_2" type="integer" groupName="configuration">
         <label>4: Sensor 1 Lower Threshold High</label>
         <default>0</default>
       </parameter>
 
-      <parameter name="config_5_2" type="integer" groupName="configuration"
-                 min="0" max="4095">
+      <parameter name="config_5_2" type="integer" groupName="configuration">
         <label>5: Sensor 1 Lower Threshold Low</label>
         <default>0</default>
       </parameter>
 
-      <parameter name="config_6_2" type="integer" groupName="configuration"
-                 min="0" max="4095">
+      <parameter name="config_6_2" type="integer" groupName="configuration">
         <label>6: Sensor 1 Upper Threshold High</label>
         <default>0</default>
       </parameter>
 
-      <parameter name="config_7_2" type="integer" groupName="configuration"
-                 min="0" max="4095">
+      <parameter name="config_7_2" type="integer" groupName="configuration">
         <label>7: Sensor 1 Upper Threshold Low</label>
         <default>0</default>
       </parameter>
 
-      <parameter name="config_9_1_0000003F" type="integer" groupName="configuration"
-                 min="0" max="63">
+      <parameter name="config_9_1_0000003F" type="integer" groupName="configuration">
         <label>9: Sensor 2 Report Interval</label>
         <description>Report sensor state every (30s resolution, 0=none, 1=30s, 10=5m, 63=31.5m)</description>
         <default>0</default>
@@ -211,26 +203,22 @@ Relay 1 Trigger on Sensor Input<br /> <h1>Overview</h1><p><br /></p>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_10_2" type="integer" groupName="configuration"
-                 min="0" max="4095">
+      <parameter name="config_10_2" type="integer" groupName="configuration">
         <label>10: Sensor 2 Lower Threshold High</label>
         <default>0</default>
       </parameter>
 
-      <parameter name="config_11_2" type="integer" groupName="configuration"
-                 min="0" max="4095">
+      <parameter name="config_11_2" type="integer" groupName="configuration">
         <label>11: Sensor 2 Lower Threshold Low</label>
         <default>0</default>
       </parameter>
 
-      <parameter name="config_12_2" type="integer" groupName="configuration"
-                 min="0" max="4095">
+      <parameter name="config_12_2" type="integer" groupName="configuration">
         <label>12: Sensor 2 Upper Threshold High</label>
         <default>0</default>
       </parameter>
 
-      <parameter name="config_13_2" type="integer" groupName="configuration"
-                 min="0" max="4095">
+      <parameter name="config_13_2" type="integer" groupName="configuration">
         <label>13: Sensor 2 Upper Threshold Low</label>
         <default>0</default>
       </parameter>

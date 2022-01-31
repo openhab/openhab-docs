@@ -71,8 +71,7 @@ Heati Single Relay 16A<br /> <h1>Overview</h1><p>Heatit ZM Single Relay is a hig
       </parameter-group>
 
       <!-- PARAMETER DEFINITIONS -->
-      <parameter name="config_1_1" type="integer" groupName="configuration"
-                 min="1" max="16">
+      <parameter name="config_1_1" type="integer" groupName="configuration">
         <label>1: Load Limit</label>
         <description><![CDATA[
 Ensures that the device does not draw more current than rated. Immunity for power consumption peaks.<br /> <h1>Overview</h1><p>1-16 ampere. Default is 16 (16 ampere).</p>
@@ -81,8 +80,7 @@ Ensures that the device does not draw more current than rated. Immunity for powe
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_2_2" type="integer" groupName="configuration"
-                 min="0" max="32767">
+      <parameter name="config_2_2" type="integer" groupName="configuration">
         <label>2: Power shutdown actions</label>
         <description><![CDATA[
 Decide how the device should react when the overload/overheating features has turned relay OFF.<br /> <h1>Overview</h1><p>0 - Disabled and will not retry. User needs to manually turn on afterwards. If temperature overload is on, device will not turn on until device has cooled down.</p><p>32767 - After power shut down (param 1) device will try to turn back ON after delay specified here (time in minutes).</p>
@@ -91,8 +89,7 @@ Decide how the device should react when the overload/overheating features has tu
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_3_1" type="integer" groupName="configuration"
-                 min="0" max="1">
+      <parameter name="config_3_1" type="integer" groupName="configuration">
         <label>3: Switch Type</label>
         <description><![CDATA[
 Decides what type of switch is connected.<br /> <h1>Overview</h1><p>0 - Momentary switch.</p><p>1 - Toggle switch.<br /></p>
@@ -101,8 +98,7 @@ Decides what type of switch is connected.<br /> <h1>Overview</h1><p>0 - Momentar
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_4_1" type="integer" groupName="configuration"
-                 min="0" max="1">
+      <parameter name="config_4_1" type="integer" groupName="configuration">
         <label>4: S1/Button operation</label>
         <description><![CDATA[
 S1/Button actions<br /> <h1>Overview</h1><p>0 - Button turns load on/off and sends Meter report + Relay status.</p><p>1 - Button sends Meter report + Relay status, load can be only controlled wirelessly.</p>
@@ -111,8 +107,7 @@ S1/Button actions<br /> <h1>Overview</h1><p>0 - Button turns load on/off and sen
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_5_1" type="integer" groupName="configuration"
-                 min="0" max="3">
+      <parameter name="config_5_1" type="integer" groupName="configuration">
         <label>5: Scene notifications</label>
         <description><![CDATA[
 Decides if/what scene controller notifications the device sends to gateway.<br /> <h1>Overview</h1><p>0 - Sends scene controller for S2. S1 disabled.</p><p>1 - Sends scene controller for S1. S2 disabled.</p><p>2 - Sends scene controller for S1 and S2.</p><p>3 - Scene controller deactivated.</p>
@@ -121,8 +116,7 @@ Decides if/what scene controller notifications the device sends to gateway.<br /
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_6_1" type="integer" groupName="configuration"
-                 min="0" max="2">
+      <parameter name="config_6_1" type="integer" groupName="configuration">
         <label>6: Restore Power Level</label>
         <description><![CDATA[
 Relay power level after power is restored from power-outage.When device is from factory/factory reset the first state of the device should be OFF.<br /> <h1>Overview</h1><p>0 - Always OFF on restored power.</p><p>1 - Always ON on restored power.</p><p>2 - Restore last state on restored power).</p>
@@ -131,8 +125,7 @@ Relay power level after power is restored from power-outage.When device is from 
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_7_4" type="integer" groupName="configuration"
-                 min="0" max="86400">
+      <parameter name="config_7_4" type="integer" groupName="configuration">
         <label>7: Automatic turn OFF</label>
         <description><![CDATA[
 Time to turn relay OFF after having been turned ON.<br /> <h1>Overview</h1><p>0 - Auto OFF disabled.</p><p>1 - 86400 - Auto Off timeout in seconds.</p>
@@ -141,8 +134,7 @@ Time to turn relay OFF after having been turned ON.<br /> <h1>Overview</h1><p>0 
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_8_4" type="integer" groupName="configuration"
-                 min="0" max="86400">
+      <parameter name="config_8_4" type="integer" groupName="configuration">
         <label>8: Automatic turn ON</label>
         <description><![CDATA[
 Time to turn relay ON after having been turned OFF.<br /> <h1>Overview</h1><p>0 - Auto ON disabled.</p><p>1 - 86400 - Auto ON timeout in seconds.</p>
@@ -151,8 +143,7 @@ Time to turn relay ON after having been turned OFF.<br /> <h1>Overview</h1><p>0 
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_9_1" type="integer" groupName="configuration"
-                 min="0" max="1">
+      <parameter name="config_9_1" type="integer" groupName="configuration">
         <label>9: Inverted Output</label>
         <description><![CDATA[
 Decides if the relay output should be inverted<br /> <h1>Overview</h1><p>0 - Standard operation.</p><p>1 - Inverted Output.<br /></p>
@@ -161,8 +152,7 @@ Decides if the relay output should be inverted<br /> <h1>Overview</h1><p>0 - Sta
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_10_2" type="integer" groupName="configuration"
-                 min="30" max="32767">
+      <parameter name="config_10_2" type="integer" groupName="configuration">
         <label>10: Meter report interval</label>
         <description><![CDATA[
 Time interval between consecutive meter reports. Meter reports can also be sent as a result of polling.<br /> <h1>Overview</h1><p>30 seconds – 32767 seconds.</p>
@@ -171,8 +161,7 @@ Time interval between consecutive meter reports. Meter reports can also be sent 
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_11_2" type="integer" groupName="configuration"
-                 min="5" max="3600">
+      <parameter name="config_11_2" type="integer" groupName="configuration">
         <label>11: Meter report delta value</label>
         <description><![CDATA[
 Decides the delta for meter in Watt for the device issue meter report. This parameter will issue W.<br /> <h1>Overview</h1><p>5-3600W.<br /></p>

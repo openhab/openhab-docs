@@ -176,8 +176,7 @@ On/Off Status After Power Failure<br /> <h1>Overview</h1><p>Choose the recovery 
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_2_4" type="integer" groupName="configuration"
-                 min="0" max="65535">
+      <parameter name="config_2_4" type="integer" groupName="configuration">
         <label>2: Wattage Threshold</label>
         <description><![CDATA[
 Power Wattage Report Value Threshold<br /> <h1>Overview</h1><p>Choose how you want your Double Plug to report power consumption to your hub. The number entered as value corresponds to the number of Watts the appliance needs to go over for the change to be reported. So if 5 Watts are entered by default, the Double Plug will report any change in power usage over 5 Watts for each outlet (whether it’s at least 5 Watts more or 5 Watts less compared to previous report). 0 = Disable.</p>
@@ -185,8 +184,7 @@ Power Wattage Report Value Threshold<br /> <h1>Overview</h1><p>Choose how you wa
         <default>10</default>
       </parameter>
 
-      <parameter name="config_3_4" type="integer" groupName="configuration"
-                 min="30" max="2678400">
+      <parameter name="config_3_4" type="integer" groupName="configuration">
         <label>3: Wattage Frequency</label>
         <description><![CDATA[
 Power Wattage Report Frequency<br /> <h1>Overview</h1><p>The number entered as value corresponds to the number of seconds. So if 30 is entered by default, the Double Plug will report power consumption (Wattage) every 30 seconds.</p>
@@ -195,8 +193,7 @@ Power Wattage Report Frequency<br /> <h1>Overview</h1><p>The number entered as v
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_4_4" type="integer" groupName="configuration"
-                 min="30" max="2678400">
+      <parameter name="config_4_4" type="integer" groupName="configuration">
         <label>4: Energy Frequency</label>
         <description><![CDATA[
 Energy (kWh) Report Frequency<br /> <h1>Overview</h1><p>Choose how often you want your Double Plug to report power consumption (W) to your controller (hub). The number entered as value corresponds to the number of seconds. So if 300 is entered by default, the Double Plug will report energy usage every 300 seconds (5 minutes).</p>
@@ -205,8 +202,7 @@ Energy (kWh) Report Frequency<br /> <h1>Overview</h1><p>Choose how often you wan
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_5_4" type="integer" groupName="configuration"
-                 min="30" max="2678400">
+      <parameter name="config_5_4" type="integer" groupName="configuration">
         <label>5: Voltage Frequency</label>
         <description><![CDATA[
 Voltage (V) Report Frequency<br /> <h1>Overview</h1><p>Choose how often you want your Double Plug to report voltage to your controller (hub). The number entered as value corresponds to the number of seconds. So if 300 is entered by default, the Double Plug will report voltage every 300 seconds (5 minutes).</p>
@@ -215,8 +211,7 @@ Voltage (V) Report Frequency<br /> <h1>Overview</h1><p>Choose how often you want
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_6_4" type="integer" groupName="configuration"
-                 min="30" max="2678400">
+      <parameter name="config_6_4" type="integer" groupName="configuration">
         <label>6: Current Frequency</label>
         <description><![CDATA[
 Electrical Current (A) Report Frequency<br /> <h1>Overview</h1><p>Choose how often you want your Double Plug to report electrical current (A) to your controller (hub). The number entered as value corresponds to the number of seconds. So if 300 is entered by default, the Double Plug will report current every 300 seconds (5 minutes).</p>
@@ -225,8 +220,7 @@ Electrical Current (A) Report Frequency<br /> <h1>Overview</h1><p>Choose how oft
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_7_1" type="integer" groupName="configuration"
-                 min="1" max="10">
+      <parameter name="config_7_1" type="integer" groupName="configuration">
         <label>7: Overload Protection</label>
         <description><![CDATA[
 Overload Protection<br /> <h1>Overview</h1><p>Set the amp level for overload protection to kick in. The number entered as the value corresponds to the total number of amps the Double Plug needs to detect across both outlets to turn off automatically and send a notification to the hub and associated devices.</p>
@@ -248,8 +242,7 @@ Enable Auto Turn-Off Timer for Left Outlet<br /> <h1>Overview</h1><p>Use this pa
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_9_4" type="integer" groupName="configuration"
-                 min="1" max="65535">
+      <parameter name="config_9_4" type="integer" groupName="configuration">
         <label>9: Turn-Off Time (Left)</label>
         <description><![CDATA[
 Auto Turn-Off Time for Left Outlet<br /> <h1>Overview</h1><p>Use this parameter to set the time after which you want the device connected to the left (CH1) outlet to automatically turn off once it has been turned on. The number entered as value corresponds to the number of minutes.</p>
@@ -271,8 +264,7 @@ Enable Auto Turn-On Timer for Left Outlet<br /> <h1>Overview</h1><p>Use this par
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_11_4" type="integer" groupName="configuration"
-                 min="1" max="65535">
+      <parameter name="config_11_4" type="integer" groupName="configuration">
         <label>11: Turn-On Time (Left)</label>
         <description><![CDATA[
 Auto Turn-On Time for Left Outlet<br /> <h1>Overview</h1><p>Use this parameter to set the time after which you want the device connected to the left (CH1) outlet to automatically turn on once it has been turned off. The number entered as value corresponds to the number of minutes.</p>
@@ -294,8 +286,7 @@ Enable Auto Turn-Off Timer for Right Outlet<br /> <h1>Overview</h1><p>Use this p
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_13_4" type="integer" groupName="configuration"
-                 min="1" max="65535">
+      <parameter name="config_13_4" type="integer" groupName="configuration">
         <label>13: Turn-Off Time (Right)</label>
         <description><![CDATA[
 Auto Turn-Off Time for Right Outlet<br /> <h1>Overview</h1><p>Use this parameter to set the time after which you want the device connected to the right (CH2) outlet to automatically turn off once it has been turned on. The number entered as value corresponds to the number of minutes.</p>
@@ -317,8 +308,7 @@ Enable Auto Turn-On Timer for Right Outlet<br /> <h1>Overview</h1><p>Use this pa
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_15_4" type="integer" groupName="configuration"
-                 min="1" max="65535">
+      <parameter name="config_15_4" type="integer" groupName="configuration">
         <label>15: Turn-On Time (Right)</label>
         <description><![CDATA[
 Auto Turn-On Time for Right Outlet<br /> <h1>Overview</h1><p>Use this parameter to set the time after which you want the device connected to the right (CH2) outlet to automatically turn on once it has been turned off. The number entered as value corresponds to the number of minutes.</p>

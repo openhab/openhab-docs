@@ -83,8 +83,7 @@ ROBB Smart Wallplug 3680Watt<br /> <h1>Overview</h1><p>Zwave Smart Plug. The Dev
       </parameter-group>
 
       <!-- PARAMETER DEFINITIONS -->
-      <parameter name="config_7_0" type="integer" groupName="configuration"
-                 min="-2147483646" max="2147483647">
+      <parameter name="config_7_0" type="integer" groupName="configuration">
         <label>7: Device operating mode</label>
         <description><![CDATA[
 Defines operating modes: either "switch mode" or "thermostat mode".<br /> <h1>Overview</h1><p>Switch mode enables the control of the relay output directly by basic set or binary set.</p><p>Thermostat mode will control the relay output automatically according to the temperature value set.<br /></p>
@@ -93,8 +92,7 @@ Defines operating modes: either "switch mode" or "thermostat mode".<br /> <h1>Ov
         <advanced>true</advanced>
       </parameter>
 
-      <parameter name="config_8_0" type="integer" groupName="configuration"
-                 min="-2147483646" max="2147483647">
+      <parameter name="config_8_0" type="integer" groupName="configuration">
         <label>8: Report state changes while in thermostat mode</label>
         <description><![CDATA[
 Whether to report setpoint and mode changes.<br /> <h1>Overview</h1><p>When configured as thermostat mode: if thermostat setpoint or mode changes, whether te report actively.</p><p> 0 - do not report.</p><p>1 - report actively.</p>
@@ -103,8 +101,7 @@ Whether to report setpoint and mode changes.<br /> <h1>Overview</h1><p>When conf
         <advanced>true</advanced>
       </parameter>
 
-      <parameter name="config_9_0" type="integer" groupName="configuration"
-                 min="-50" max="50">
+      <parameter name="config_9_0" type="integer" groupName="configuration">
         <label>9: Temperature compensation value</label>
         <description><![CDATA[
 Temperature compensation in 0.1 °Celsius per unit point.<br /> <h1>Overview</h1><p>Sets the temperature compensation to none: 0.</p><p>Sets the temperature compensation to a defined value in 0.1 °Celsius. For example a value of -5 will compensate by -0.5 °Celsius.<br /></p>
@@ -113,8 +110,7 @@ Temperature compensation in 0.1 °Celsius per unit point.<br /> <h1>Overview</h1
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_10_0" type="integer" groupName="configuration"
-                 min="0" max="50">
+      <parameter name="config_10_0" type="integer" groupName="configuration">
         <label>10: Over temperature protection</label>
         <description><![CDATA[
 Temperature setpoint for automatic relay shutoff, or "0" to disable.<br /> <h1>Overview</h1><p>Whether to enable over temperature protection. When temperature achieves the set value, the relay output will be forced to off. <br /></p><p>0: disable over temperature protection .<br /></p><p>30 - 60: set a threshold, unit is 1 Celcius degree.</p>
@@ -124,8 +120,7 @@ Temperature setpoint for automatic relay shutoff, or "0" to disable.<br /> <h1>O
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_11_0" type="integer" groupName="configuration"
-                 min="-2147483646" max="2147483647">
+      <parameter name="config_11_0" type="integer" groupName="configuration">
         <label>11: Temperature change reporting threshold</label>
         <description><![CDATA[
 Temperature change in degrees Celsius at wich to report a temperature change to the gateway.<br /> <h1>Overview</h1><p>Temperature change report threshold. Report to the gateway when change value is lower or higher than the threshold <br /></p><p>0: disable reporting.</p><p>2 - 50: set a threshold‚ unit is 0.1 °Celsius.</p>
@@ -135,8 +130,7 @@ Temperature change in degrees Celsius at wich to report a temperature change to 
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_12_0" type="integer" groupName="configuration"
-                 min="10" max="65535">
+      <parameter name="config_12_0" type="integer" groupName="configuration">
         <label>12: Periodic temperature reporting interval</label>
         <description><![CDATA[
 Sets the interval (in seconds) for temperature reporting.<br /> <h1>Overview</h1><p>Time interval for periodical temperature report. Unit is seconds. <br /></p><p>0: disable reporting.</p><p>10 - 65535 time interval for periodical temperature report.</p>
@@ -146,8 +140,7 @@ Sets the interval (in seconds) for temperature reporting.<br /> <h1>Overview</h1
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_13_0" type="integer" groupName="configuration"
-                 min="0" max="255">
+      <parameter name="config_13_0" type="integer" groupName="configuration">
         <label>13: Power change threshold</label>
         <description><![CDATA[
 Report power changes over or under the threshold value (W).<br /> <h1>Overview</h1><p>Power change absolute threshold. Unit is W. Report when power change value lower or higher than the threshold. <br /></p><p>Value:</p><p> 0: disable reporting.</p><p>1 - 255: absolute threshold.</p>
@@ -156,8 +149,7 @@ Report power changes over or under the threshold value (W).<br /> <h1>Overview</
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_14_0" type="integer" groupName="configuration"
-                 min="0" max="255">
+      <parameter name="config_14_0" type="integer" groupName="configuration">
         <label>14: Voltage change absolute threshold</label>
         <description><![CDATA[
 Report voltage changes over or under the threshold value (V).<br /> <h1>Overview</h1><p>Voltage change absolute threshold. Unit is V. Report when voltage change value lower or higher than the threshold. <br /></p><p>Value:</p><p>0: disable reporting.</p><p>1 - 255: absolute threshold.</p>
@@ -166,8 +158,7 @@ Report voltage changes over or under the threshold value (V).<br /> <h1>Overview
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_15_0" type="integer" groupName="configuration"
-                 min="0" max="255">
+      <parameter name="config_15_0" type="integer" groupName="configuration">
         <label>15: Current change absolute threshold</label>
         <description><![CDATA[
 Report current changes over or under the threshold value (A).<br /> <h1>Overview</h1><p>Current change absolute threshold. Unit is 0‚1A. Report when current change value lower or higher than the threshold.</p><p>Value:</p><p> 0: disable reporting</p><p>1 - 255: absolute threshold</p>
@@ -176,8 +167,7 @@ Report current changes over or under the threshold value (A).<br /> <h1>Overview
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_17_0" type="integer" groupName="configuration"
-                 min="60" max="2678400">
+      <parameter name="config_17_0" type="integer" groupName="configuration">
         <label>17: Time interval for energy reporting</label>
         <description><![CDATA[
 Time interval in seconds to report voltage, current, power and energy consumption values.<br /> <h1>Overview</h1><p>Time interval for periodically active report of voltage value, current value, power value, energy consumption, unit is seconds.</p><p>60-2678400 (31 days)‚unit is S, it stands for time interval of 60s to 2678400s.</p>
@@ -186,8 +176,7 @@ Time interval in seconds to report voltage, current, power and energy consumptio
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_18_0" type="integer" groupName="configuration"
-                 min="-2147483646" max="2147483647">
+      <parameter name="config_18_0" type="integer" groupName="configuration">
         <label>18: Device state after a power reset</label>
         <description><![CDATA[
 The state to which the wallplug should be set after a powerfailure.<br /> <h1>Overview</h1><p>Device state after a power reset.</p><p>Switch Mode:</p><p>00: turn off relay</p><p>01: turn on relay</p><p>02: save relay state before power reset <br /></p><p>Thermostat mode:</p><p>00: HVAC OFF</p><p>01: HVAC ON</p><p>02: save HVAC state before power reset</p>
@@ -195,8 +184,7 @@ The state to which the wallplug should be set after a powerfailure.<br /> <h1>Ov
         <default>2</default>
       </parameter>
 
-      <parameter name="config_19_0" type="integer" groupName="configuration"
-                 min="0" max="1">
+      <parameter name="config_19_0" type="integer" groupName="configuration">
         <label>19: Report state changes while in switch mode</label>
         <description><![CDATA[
 Whether to report mode changes, power resetting or factory resets.<br /> <h1>Overview</h1><p>Enable/disable to send SWITCH_BINARY_REPORT to the Lifeline when the plug state changes while in "Switch mode", reset power of the plug and factory reset the plug <br /></p><p>0: disable to send <br /></p><p>1: enable to send</p>
@@ -204,8 +192,7 @@ Whether to report mode changes, power resetting or factory resets.<br /> <h1>Ove
         <default>1</default>
       </parameter>
 
-      <parameter name="config_20_0" type="integer" groupName="configuration"
-                 min="0" max="16">
+      <parameter name="config_20_0" type="integer" groupName="configuration">
         <label>20: Current protection</label>
         <description><![CDATA[
 Set the threshold for current protection (in Ampère), or disable.<br /> <h1>Overview</h1><p>Enable/disable current protection threshold function <br /></p><p>0: disable current protection.<br /></p><p>10 - 16: threshold in Ampère.</p>

@@ -83,8 +83,7 @@ Determine motor run direction for Shutter Mode and Venetian Mode<br /> <h1>Overv
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_34_2" type="integer" groupName="configuration"
-                 min="10" max="32767">
+      <parameter name="config_34_2" type="integer" groupName="configuration">
         <label>34: Blade Turn Time</label>
         <description><![CDATA[
 Blade Turn Time (Unit = 0.01 seconds)<br /> <h1>Overview</h1><p>Note:</p> <ul><li>For Venetian, if this value is set too large for blade turning, curtain may move upwards or downwards.</li> <li>Calibration need to work correctly.Or this setting will force the curtain to move up or down.</li> <li>This configuration will not change after network exclusion</li> </ul>
@@ -93,8 +92,7 @@ Blade Turn Time (Unit = 0.01 seconds)<br /> <h1>Overview</h1><p>Note:</p> <ul><l
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_35_2" type="integer" groupName="configuration"
-                 min="500" max="32767">
+      <parameter name="config_35_2" type="integer" groupName="configuration">
         <label>35: Curtain Trip Time (Unit = 0.01 seconds)</label>
         <description><![CDATA[
 Curtain Trip Time<br /> <h1>Overview</h1><p>Note:</p> <ul><li>For Venetian, if this value is set too large for curtain trip, blade turn positioning may cause errors.</li> <li>This configuration will not change after network exclusion</li> </ul>
@@ -247,8 +245,7 @@ Set Switch Type of External Switch 2<br /> <h1>Overview</h1><p>Report automatica
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_243_16" type="integer" groupName="configuration" readOnly="true"
-                 min="-2147483646" max="2147483647">
+      <parameter name="config_243_16" type="integer" groupName="configuration" readOnly="true">
         <label>243: Get DSK from product</label>
         <description>To Get DSK from product</description>
         <default>0</default>

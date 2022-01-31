@@ -62,8 +62,7 @@ Door/Window Sensor 6<br /> <h1>Overview</h1><p>Aeon Labs Door/ Window Sensor 6 i
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_39_1" type="integer" groupName="configuration"
-                 min="10" max="50">
+      <parameter name="config_39_1" type="integer" groupName="configuration">
         <label>39: Low battery threshold (10% to 50%)</label>
         <description>The value the sensor will use to determine a low battery level</description>
         <default>20</default>
@@ -81,8 +80,7 @@ Door/Window Sensor 6<br /> <h1>Overview</h1><p>Aeon Labs Door/ Window Sensor 6 i
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_111_4" type="integer" groupName="configuration"
-                 min="240" max="134217727">
+      <parameter name="config_111_4" type="integer" groupName="configuration">
         <label>111: Low battery voltage check time</label>
         <description>Sets the value of the interval for the low battery check time (in seconds)</description>
         <default>86640</default>

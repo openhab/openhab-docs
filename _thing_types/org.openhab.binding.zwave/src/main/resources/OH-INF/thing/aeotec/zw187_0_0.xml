@@ -94,8 +94,7 @@ Configure the Basic Set value<br /> <h1>Overview</h1><p>Determine the Basic Set 
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_4_2" type="integer" groupName="configuration"
-                 min="0" max="1535">
+      <parameter name="config_4_2" type="integer" groupName="configuration">
         <label>4: Application Layer Retry</label>
         <description><![CDATA[
 Configure retry number and wait time<br /> <h1>Overview</h1><p>The device supports an application retry mechanism when the application of the device has detected a transmission error when Basic Set, Sensor Binary Report or Notification Report (Access Control) message is sent out but fails to result in an ACK or a Supervision Report.</p> <p>High Byte: Configure the number of retries. The valid value is 0-5. 0 means disable retry.</p> <p>Low Byte: Configure the wait time between retries. The valid value is 0-255. Unit is 100ms.</p>
@@ -104,8 +103,7 @@ Configure retry number and wait time<br /> <h1>Overview</h1><p>The device suppor
         <advanced>true</advanced>
       </parameter>
 
-      <parameter name="config_5_1" type="integer" groupName="configuration"
-                 min="0" max="50">
+      <parameter name="config_5_1" type="integer" groupName="configuration">
         <label>5: Supervision Report Wait Time</label>
         <description>Configure Supervision Report Wait Time</description>
         <default>15</default>
@@ -127,8 +125,7 @@ Control LED Indicator<br /> <h1>Overview</h1><p>Determine whether the LED flash 
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_90_1" type="integer" groupName="configuration"
-                 min="10" max="50">
+      <parameter name="config_90_1" type="integer" groupName="configuration">
         <label>90: Low Battery threshold</label>
         <description><![CDATA[
 Configure the Low Battery threshold<br /> <h1>Overview</h1><p>Induce a battery report when the battery level is less than or equal to the threshold. Forward battery report. Valid 10%-50% remaining.</p>
@@ -136,8 +133,7 @@ Configure the Low Battery threshold<br /> <h1>Overview</h1><p>Induce a battery r
         <default>30</default>
       </parameter>
 
-      <parameter name="config_101_2" type="integer" groupName="configuration"
-                 min="1" max="14400">
+      <parameter name="config_101_2" type="integer" groupName="configuration">
         <label>101: Timed barrery report</label>
         <description><![CDATA[
 Enable/Disable timed battery report<br /> <h1>Overview</h1><p>Enable timed battery report and sets how often battery is reported in minutes.</p>

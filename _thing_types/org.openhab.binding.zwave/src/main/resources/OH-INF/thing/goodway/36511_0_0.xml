@@ -69,48 +69,42 @@ RGBW Dimmer Module<br /> <h1>Overview</h1><p>This RGBW Dimmer Module enables rem
       </parameter-group>
 
       <!-- PARAMETER DEFINITIONS -->
-      <parameter name="config_1_1" type="integer" groupName="configuration"
-                 min="1" max="9">
+      <parameter name="config_1_1" type="integer" groupName="configuration">
         <label>1: Input IN1</label>
         <description>Input IN1</description>
         <default>1</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_2_1" type="integer" groupName="configuration"
-                 min="1" max="9">
+      <parameter name="config_2_1" type="integer" groupName="configuration">
         <label>2: Input IN2</label>
         <description>Input IN2</description>
         <default>1</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_3_1" type="integer" groupName="configuration"
-                 min="1" max="9">
+      <parameter name="config_3_1" type="integer" groupName="configuration">
         <label>3: Input IN3</label>
         <description>Input IN3</description>
         <default>1</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_4_1" type="integer" groupName="configuration"
-                 min="1" max="9">
+      <parameter name="config_4_1" type="integer" groupName="configuration">
         <label>4: Input IN4</label>
         <description>Input IN4</description>
         <default>1</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_5_1" type="integer" groupName="configuration"
-                 min="0" max="6">
+      <parameter name="config_5_1" type="integer" groupName="configuration">
         <label>5: Auto Scene Mode Set</label>
         <description>Auto Scene Mode Set</description>
         <default>1</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_6_2" type="integer" groupName="configuration"
-                 min="1" max="1127">
+      <parameter name="config_6_2" type="integer" groupName="configuration">
         <label>6: Auto Scene Mode Duration</label>
         <description><![CDATA[
 Auto Scene Mode Duration<br /> <h1>Overview</h1><p>1-127=1-127 seconds</p> <p>1001-1127=1-127 minutes</p>
@@ -119,48 +113,42 @@ Auto Scene Mode Duration<br /> <h1>Overview</h1><p>1-127=1-127 seconds</p> <p>10
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_7_1" type="integer" groupName="configuration"
-                 min="0" max="1">
+      <parameter name="config_7_1" type="integer" groupName="configuration">
         <label>7: Memeory Device Status</label>
         <description>Memeory Device Status at Power Cut</description>
         <default>1</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_10_1" type="integer" groupName="configuration"
-                 min="2" max="99">
+      <parameter name="config_10_1" type="integer" groupName="configuration">
         <label>10: Max Dimming Value</label>
         <description>Max Dimming Value</description>
         <default>99</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_11_1" type="integer" groupName="configuration"
-                 min="1" max="98">
+      <parameter name="config_11_1" type="integer" groupName="configuration">
         <label>11: Min Dimming Value</label>
         <description>Min Dimming Value</description>
         <default>1</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_12_1" type="integer" groupName="configuration"
-                 min="5" max="25">
+      <parameter name="config_12_1" type="integer" groupName="configuration">
         <label>12: Dimming Time Soft ON/OFF</label>
         <description>Dimming Time Soft ON/OFF</description>
         <default>10</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_13_1" type="integer" groupName="configuration"
-                 min="1" max="127">
+      <parameter name="config_13_1" type="integer" groupName="configuration">
         <label>13: Dimming Time when key pressed</label>
         <description>Dimming Time when key pressed</description>
         <default>5</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_14_1" type="integer" groupName="configuration"
-                 min="0" max="3">
+      <parameter name="config_14_1" type="integer" groupName="configuration">
         <label>14: Dimmer Mode</label>
         <description>Dimmer Mode</description>
         <default>0</default>

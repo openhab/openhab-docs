@@ -148,8 +148,7 @@ FIBARO Walli Double Switch<br /> <h1>Overview</h1><p>FIBARO Walli Double Switch 
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_2_4" type="integer" groupName="configuration"
-                 min="0" max="45000">
+      <parameter name="config_2_4" type="integer" groupName="configuration">
         <label>2: First channel – overload safety switch</label>
         <description><![CDATA[
 First channel – overload safety switch<br /> <h1>Overview</h1><p>This function allows to turn off the controlled device in case of exceeding the defined power. Controlled device can be turned back on via button or sending a control frame. </p> <p><strong>Single Switch Mode</strong></p> <p>0 – function disabled <br />10-45000 (1.0-4500.0W, step 0.1W) – power threshold</p> <p><strong>Double Switch Mode</strong></p> <p>0 – function disabled <br />10-36200 (1.0-3620.0W, step 0.1W) – power threshold</p>
@@ -158,8 +157,7 @@ First channel – overload safety switch<br /> <h1>Overview</h1><p>This function
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_3_4" type="integer" groupName="configuration"
-                 min="0" max="36200">
+      <parameter name="config_3_4" type="integer" groupName="configuration">
         <label>3: Second channel – overload safety switch</label>
         <description><![CDATA[
 Second channel – overload safety switch<br /> <h1>Overview</h1><p><strong>Only in Double Switch Mode</strong> <br />This function allows to turn off the controlled device in case of exceeding the defined power. Controlled device can be turned back on via button or sending a control frame.</p> <p>Available values 0 – function disabled <br />10-36200 (1.0-3620.0W, step 0.1W) – power threshold</p>
@@ -168,8 +166,7 @@ Second channel – overload safety switch<br /> <h1>Overview</h1><p><strong>Only
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_10_4" type="integer" groupName="configuration"
-                 min="500" max="30000">
+      <parameter name="config_10_4" type="integer" groupName="configuration">
         <label>10: LED Frame - power limit</label>
         <description><![CDATA[
 LED frame – power limit<br /> <h1>Overview</h1><p>This parameter determines maximum active power. Exceeding it results in the LED frame flashing violet. Function is active only when parameter 11 is set to 8 or 9.</p> <p>Single Switch Mode <br />Default value 36800 (3680W) <br />Available values 500-36800 (50.0-3680.0W, step 0.1W) – power threshold</p> <p>Double Switch Mode <br />Default value 30000 (3000W) <br />Available values 500-30000 (50.0-3000.0W, step 0.1W) – power threshold</p>
@@ -216,8 +213,7 @@ LED frame – colour when OFF<br /> <h1>Overview</h1><p>This parameter defines t
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_13_1" type="integer" groupName="configuration"
-                 min="0" max="102">
+      <parameter name="config_13_1" type="integer" groupName="configuration">
         <label>13: LED frame – brightness</label>
         <description><![CDATA[
 LED frame – brightness<br /> <h1>Overview</h1><p>This parameter allows to adjust the LED frame brightness.</p> <p>Available values <br />0 – LED disabled <br />1-100 (1-100% brightness) <br />101 – brightness directly proportional to measured power <br />102 – brightness inversely proportional to measured power </p>
@@ -226,8 +222,7 @@ LED frame – brightness<br /> <h1>Overview</h1><p>This parameter allows to adju
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_20_1" type="integer" groupName="configuration"
-                 min="1" max="4">
+      <parameter name="config_20_1" type="integer" groupName="configuration">
         <label>20: Buttons operation</label>
         <description><![CDATA[
 Buttons operation<br /> <h1>Overview</h1><p>This parameter defines how device buttons should control the channels.</p> <p><strong>Single Switch Mode<br /></strong>Default value 1 <strong><br /></strong>Available values <br />1 – 1st and 2nd button toggle the load <br />2 – 1st button turns the load ON, 2nd button turns the load OFF<br />3 – device works in 2-way/3-way switch configuration</p> <p><strong>Double Switch Mode<br /></strong>Default Value 3<br />Available values <br />1 – 1st and 2nd button toggle both channels <br />2 – 1st button turns both channels ON, 2nd button turns both channels OFF <br />3 – 1st button toggles 1st channel, 2nd button toggles 2nd channel <br />4 – 1st button single click turns 1st channel ON, 1st button double click turns 2nd channel ON, 2nd button single click turns both channels OFF</p>
@@ -262,8 +257,7 @@ Outputs orientation (Only in Double Switch Mode)<br /> <h1>Overview</h1><p>This 
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_30_4" type="integer" groupName="configuration"
-                 min="-2147483646" max="2147483647">
+      <parameter name="config_30_4" type="integer" groupName="configuration">
         <label>30: Alarm configuration - 1st slot</label>
         <description><![CDATA[
 Alarm configuration - 1st slot<br /> <h1>Overview</h1><p>This parameter determines to which alarm frames and how the device should react. The parameters consist of 4 bytes, three most significant bytes are set according to the official Z-Wave protocol specification. <br />Available values <br />1B [MSB] – Notification Type <br />2B – Notification Status <br />3B – Event/State Parameters <br />4B [LSB] – action: <br /> 0x00 – no action<br /> 0xX1 – turn ON<br /> 0xX2 – turn OFF<br /> 0xX3 – turn ON/OFF continuously<br /> 0x0X – no action on LED frame<br /> 0x1X – LED frame blinks red<br /> 0x2X – LED frame blinks green<br /> 0x4X – LED frame blinks blue<br /> 0x8X – disable LED frame<br /> 0xFX – LED frame LAPD signal (red-white-blue)</p>
@@ -272,8 +266,7 @@ Alarm configuration - 1st slot<br /> <h1>Overview</h1><p>This parameter determin
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_31_4" type="integer" groupName="configuration"
-                 min="-2147483646" max="2147483647">
+      <parameter name="config_31_4" type="integer" groupName="configuration">
         <label>31: Alarm configuration - 2nd slot</label>
         <description><![CDATA[
 Alarm configuration - 2nd slot<br /> <h1>Overview</h1><p>This parameter determines to which alarm frames and how the device should react. The parameters consist of 4 bytes, three most significant bytes are set according to the official Z-Wave protocol specification. <br />Available values <br />1B [MSB] – Notification Type <br />2B – Notification Status <br />3B – Event/State Parameters <br />4B [LSB] – action: <br /> 0x00 – no action<br /> 0xX1 – turn ON<br /> 0xX2 – turn OFF<br /> 0xX3 – turn ON/OFF continuously<br /> 0x0X – no action on LED frame<br /> 0x1X – LED frame blinks red<br /> 0x2X – LED frame blinks green<br /> 0x4X – LED frame blinks blue<br /> 0x8X – disable LED frame<br /> 0xFX – LED frame LAPD signal (red-white-blue)</p>
@@ -282,8 +275,7 @@ Alarm configuration - 2nd slot<br /> <h1>Overview</h1><p>This parameter determin
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_32_4" type="integer" groupName="configuration"
-                 min="-2147483646" max="2147483647">
+      <parameter name="config_32_4" type="integer" groupName="configuration">
         <label>32: Alarm configuration - 3rd slot</label>
         <description><![CDATA[
 Alarm configuration - 3rd slot<br /> <h1>Overview</h1><p>This parameter determines to which alarm frames and how the device should react. The parameters consist of 4 bytes, three most significant bytes are set according to the official Z-Wave protocol specification.<br />Available Values<br />1B [MSB] – Notification Type <br />2B – Notification Status <br />3B – Event/State Parameters <br />4B [LSB] – action: <br /> 0x00 – no action<br /> 0xX1 – turn ON<br /> 0xX2 – turn OFF<br /> 0xX3 – turn ON/OFF continuously<br /> 0x0X – no action on LED frame<br /> 0x1X – LED frame blinks red<br /> 0x2X – LED frame blinks green<br /> 0x4X – LED frame blinks blue<br /> 0x8X – disable LED frame<br /> 0xFX – LED frame LAPD signal (red-white-blue)</p>
@@ -292,8 +284,7 @@ Alarm configuration - 3rd slot<br /> <h1>Overview</h1><p>This parameter determin
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_33_4" type="integer" groupName="configuration"
-                 min="-2147483646" max="2147483647">
+      <parameter name="config_33_4" type="integer" groupName="configuration">
         <label>33: Alarm configuration - 4th slot</label>
         <description><![CDATA[
 Alarm configuration - 4th slot<br /> <h1>Overview</h1><p>This parameter determines to which alarm frames and how the device should react. The parameters consist of 4 bytes, three most significant bytes are set according to the official Z-Wave protocol specification.<br />Available values <br />1B [MSB] – Notification Type <br />2B – Notification Status <br />3B – Event/State Parameters <br />4B [LSB] – action: <br /> 0x00 – no action<br /> 0xX1 – turn ON<br /> 0xX2 – turn OFF<br /> 0xX3 – turn ON/OFF continuously<br /> 0x0X – no action on LED frame<br /> 0x1X – LED frame blinks red<br /> 0x2X – LED frame blinks green<br /> 0x4X – LED frame blinks blue<br /> 0x8X – disable LED frame<br /> 0xFX – LED frame LAPD signal (red-white-blue)</p>
@@ -302,8 +293,7 @@ Alarm configuration - 4th slot<br /> <h1>Overview</h1><p>This parameter determin
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_34_4" type="integer" groupName="configuration"
-                 min="-2147483646" max="2147483647">
+      <parameter name="config_34_4" type="integer" groupName="configuration">
         <label>34: Alarm configuration - 5th slot</label>
         <description><![CDATA[
 Alarm configuration - 5th slot<br /> <h1>Overview</h1><p>This parameter determines to which alarm frames and how the device should react. The parameters consist of 4 bytes, three most significant bytes are set according to the official Z-Wave protocol specification.<br />Available values <br />1B [MSB] – Notification Type <br />2B – Notification Status <br />3B – Event/State Parameters <br />4B [LSB] – action: <br /> 0x00 – no action<br /> 0xX1 – turn ON<br /> 0xX2 – turn OFF<br /> 0xX3 – turn ON/OFF continuously<br /> 0x0X – no action on LED frame<br /> 0x1X – LED frame blinks red<br /> 0x2X – LED frame blinks green<br /> 0x4X – LED frame blinks blue<br /> 0x8X – disable LED frame<br /> 0xFX – LED frame LAPD signal (red-white-blue)</p>
@@ -312,8 +302,7 @@ Alarm configuration - 5th slot<br /> <h1>Overview</h1><p>This parameter determin
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_35_2" type="integer" groupName="configuration"
-                 min="0" max="32400">
+      <parameter name="config_35_2" type="integer" groupName="configuration">
         <label>35: Alarm configuration – duration</label>
         <description><![CDATA[
 Alarm configuration – duration<br /> <h1>Overview</h1><p>This parameter defines duration of alarm sequence. When time set in this parameter elapses, alarm is cancelled, LED frame and relay restore normal operation, but do not recover state from before the alarm.<br />Available values <br />0 – infinite <br />1-32400 (1s-9h, 1s step) – duration</p>
@@ -322,8 +311,7 @@ Alarm configuration – duration<br /> <h1>Overview</h1><p>This parameter define
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_40_1" type="integer" groupName="configuration"
-                 min="0" max="15">
+      <parameter name="config_40_1" type="integer" groupName="configuration">
         <label>40: First button – scenes sent</label>
         <description><![CDATA[
 First Button - scenes sent<br /> <h1>Overview</h1><p>This parameter determines which actions result in sending scene IDs assigned to them. Values can be combined (e.g. 1+2=3 means that scenes for single and double click are sent). Enabling scenes for triple click disables entering the device in learn mode by triple clicking.<br />Available values <br />1 – Key pressed 1 time <br />2 – Key pressed 2 times <br />4 – Key pressed 3 times <br />8 – Key hold down and key released</p>
@@ -332,8 +320,7 @@ First Button - scenes sent<br /> <h1>Overview</h1><p>This parameter determines w
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_41_1" type="integer" groupName="configuration"
-                 min="0" max="15">
+      <parameter name="config_41_1" type="integer" groupName="configuration">
         <label>41: Second button – scenes sent</label>
         <description><![CDATA[
 Second button – scenes sent<br /> <h1>Overview</h1><p>This parameter determines which actions result in sending scene IDs assigned to them. Values can be combined (e.g. 1+2=3 means that scenes for single and double click are sent). Enabling scenes for triple click disables entering the device in learn mode by triple clicking. <br />Available values <br />1 – Key pressed 1 time <br />2 – Key pressed 2 times <br />4 – Key pressed 3 times <br />8 – Key hold down and key released</p>
@@ -355,8 +342,7 @@ Power reports – include self-consumption<br /> <h1>Overview</h1><p>This parame
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_61_2" type="integer" groupName="configuration"
-                 min="0" max="500">
+      <parameter name="config_61_2" type="integer" groupName="configuration">
         <label>61: Power reports for first channel – on change</label>
         <description><![CDATA[
 Power reports for first channel – on change<br /> <h1>Overview</h1><p>This parameter defines minimal change (from the last reported) in measured power that results in sending new report. For loads under 50W the parameter is irrelevant, report are sent every 5W change.<br />Available values <br />0 – reporting on change disabled <br />1-500 (1-500%, 1% step) – minimal change</p>
@@ -365,8 +351,7 @@ Power reports for first channel – on change<br /> <h1>Overview</h1><p>This par
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_62_2" type="integer" groupName="configuration"
-                 min="0" max="32400">
+      <parameter name="config_62_2" type="integer" groupName="configuration">
         <label>62: Power reports for first channel – periodic</label>
         <description><![CDATA[
 Power reports for first channel – periodic<br /> <h1>Overview</h1><p>This parameter defines reporting interval for measured power. Periodic reports are independent from changes in value (parameter 61).<br />Available values <br />0 – periodic reports disabled <br />30-32400 (30s-9h, 1s step) – time interval</p>
@@ -375,8 +360,7 @@ Power reports for first channel – periodic<br /> <h1>Overview</h1><p>This para
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_63_2" type="integer" groupName="configuration"
-                 min="0" max="500">
+      <parameter name="config_63_2" type="integer" groupName="configuration">
         <label>63: Power reports for second channel – on change</label>
         <description><![CDATA[
 Power reports for second channel – on change<br /> <h1>Overview</h1><p><strong>Only in Double Switch Mode</strong></p> <p>This parameter defines minimal change (from the last reported) in measured power that results in sending new report. For loads under 50W the parameter is irrelevant, report are sent every 5W change.<br />Available values <br />0 – reporting on change disabled <br />1-500 (1-500%, 1% step) – minimal change</p>
@@ -385,8 +369,7 @@ Power reports for second channel – on change<br /> <h1>Overview</h1><p><strong
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_64_2" type="integer" groupName="configuration"
-                 min="0" max="32400">
+      <parameter name="config_64_2" type="integer" groupName="configuration">
         <label>64: Power reports for second channel – periodic</label>
         <description><![CDATA[
 Power reports for second channel – periodic<br /> <h1>Overview</h1><p><strong>Only in Double Switch Mode</strong></p> <p>This parameter defines reporting interval for measured power. Periodic reports are independent from changes in value (parameter 63).<br />Available values <br />0 – periodic reports disabled <br />30-32400 (30s-9h, 1s step) – time interval<br /></p>
@@ -395,8 +378,7 @@ Power reports for second channel – periodic<br /> <h1>Overview</h1><p><strong>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_65_2" type="integer" groupName="configuration"
-                 min="0" max="500">
+      <parameter name="config_65_2" type="integer" groupName="configuration">
         <label>65: Energy reports for first channel – on change</label>
         <description><![CDATA[
 Energy reports for first channel – on change<br /> <h1>Overview</h1><p>This parameter defines minimal change (from the last reported) in measured energy that results in sending new report.<br />Available values <br />0 – reporting on change disabled <br />1-500 (0.01-5kWh, 0.01kWh step) – minimal change</p>
@@ -405,8 +387,7 @@ Energy reports for first channel – on change<br /> <h1>Overview</h1><p>This pa
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_66_2" type="integer" groupName="configuration"
-                 min="0" max="32400">
+      <parameter name="config_66_2" type="integer" groupName="configuration">
         <label>66: Energy reports for first channel – periodic</label>
         <description><![CDATA[
 Energy reports for first channel – periodic<br /> <h1>Overview</h1><p>This parameter defines reporting interval for measured energy. Periodic reports are independent from changes in value (parameter 65).<br />Available values <br />0 – periodic reports disabled <br />30-32400 (30s-9h, 1s step) – time interval</p>
@@ -415,8 +396,7 @@ Energy reports for first channel – periodic<br /> <h1>Overview</h1><p>This par
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_67_2" type="integer" groupName="configuration"
-                 min="0" max="500">
+      <parameter name="config_67_2" type="integer" groupName="configuration">
         <label>67: Energy reports for second channel – on change</label>
         <description><![CDATA[
 Energy reports for second channel – on change<br /> <h1>Overview</h1><p><strong>Only in Double Switch Mode </strong></p> <p>Description This parameter defines minimal change (from the last reported) in measured energy that results in sending new report.<br />Available values <br />0 – reporting on change disabled <br />1-500 (0.01-5kWh, 0.01kWh step) – minimal change</p>
@@ -425,8 +405,7 @@ Energy reports for second channel – on change<br /> <h1>Overview</h1><p><stron
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_68_2" type="integer" groupName="configuration"
-                 min="0" max="32400">
+      <parameter name="config_68_2" type="integer" groupName="configuration">
         <label>68: Energy reports for second channel – periodic</label>
         <description><![CDATA[
 Energy reports for second channel – periodic<br /> <h1>Overview</h1><p><strong>Only in Double Switch Mode </strong></p> <p>Description This parameter defines reporting interval for measured energy. Periodic reports are independent from changes in value (parameter 67). <br />Available values <br />0 – periodic reports disabled <br />30-32400 (30s-9h, 1s step) – time interval</p>
@@ -491,8 +470,7 @@ Second channel - reaction to switch for delayed OFF / pulse modes<br /> <h1>Over
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_154_2" type="integer" groupName="configuration"
-                 min="0" max="32000">
+      <parameter name="config_154_2" type="integer" groupName="configuration">
         <label>154: 1st ch - time parameter for delayed</label>
         <description><![CDATA[
 First channel - time parameter for delayed OFF / pulse modes<br /> <h1>Overview</h1><p>This parameter allows to set time parameter used in timed modes for 1st channel (parameter 150). Delay time for switching off or duration of the pulse. <br />Available values <br />0 – 0.1 second <br />1-32000 (1-32000s, 1s step) – time parameter</p>
@@ -501,8 +479,7 @@ First channel - time parameter for delayed OFF / pulse modes<br /> <h1>Overview<
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_155_2" type="integer" groupName="configuration"
-                 min="0" max="32000">
+      <parameter name="config_155_2" type="integer" groupName="configuration">
         <label>155: 2nd ch - time parameter for delayed</label>
         <description><![CDATA[
 Second channel - time parameter for delayed OFF / pulse modes<br /> <h1>Overview</h1><p><strong>Only in Double Switch Mode</strong></p> <p>This parameter allows to set time parameter used in timed modes for 2nd channel (parameter 151). Delay time for switching off or duration of the pulse. <br />Available values <br />0 – 0.1 second <br />1-32000 (1-32000s, 1s step) – time parameter</p>
@@ -511,8 +488,7 @@ Second channel - time parameter for delayed OFF / pulse modes<br /> <h1>Overview
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_156_2" type="integer" groupName="configuration"
-                 min="0" max="255">
+      <parameter name="config_156_2" type="integer" groupName="configuration">
         <label>156: 1st ch – ON value sent to 2nd/3rd</label>
         <description><![CDATA[
 First channel – Switch ON value sent to 2nd and 3rd association groups<br /> <h1>Overview</h1><p>This parameter defines value sent with Switch ON command to devices associated in 2nd and 3rd association group for manual changes of Endpoint 1 state. <br />Available values<br />0-99 or 255</p>
@@ -521,8 +497,7 @@ First channel – Switch ON value sent to 2nd and 3rd association groups<br /> <
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_157_2" type="integer" groupName="configuration"
-                 min="0" max="255">
+      <parameter name="config_157_2" type="integer" groupName="configuration">
         <label>157: 1st ch – OFF value sent to 2nd/3rd</label>
         <description><![CDATA[
 First channel – Switch OFF value sent to 2nd and 3rd association groups<br /> <h1>Overview</h1><p>This parameter defines value sent with Switch OFF command to devices associated in 2nd and 3rd association group for manual changes of Endpoint 1 state. <br />Available values <br />0-99 or 255</p>
@@ -531,8 +506,7 @@ First channel – Switch OFF value sent to 2nd and 3rd association groups<br /> 
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_158_2" type="integer" groupName="configuration"
-                 min="0" max="255">
+      <parameter name="config_158_2" type="integer" groupName="configuration">
         <label>158: 1st ch – Double Click value sent to 2nd/3rd</label>
         <description><![CDATA[
 First channel – Double Click value sent to 2nd and 3rd association groups<br /> <h1>Overview</h1><p>This parameter defines value sent with Double Click command to devices associated in 2nd and 3rd association group for manual changes of Endpoint 1 state. <br />Available values <br />0-99 or 255</p>
@@ -541,8 +515,7 @@ First channel – Double Click value sent to 2nd and 3rd association groups<br /
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_159_2" type="integer" groupName="configuration"
-                 min="0" max="255">
+      <parameter name="config_159_2" type="integer" groupName="configuration">
         <label>159: 2nd ch – ON value sent to 4th/5th</label>
         <description><![CDATA[
 Second channel – Switch ON value sent to 4th and 5th association groups<br /> <h1>Overview</h1><p><strong>Only in Double Switch Mode </strong></p> <p>This parameter defines value sent with Switch ON command to devices associated in 4th and 5th association group for manual changes of Endpoint 2 state. <br />Available values <br />0-99 or 255 </p>
@@ -551,8 +524,7 @@ Second channel – Switch ON value sent to 4th and 5th association groups<br /> 
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_160_2" type="integer" groupName="configuration"
-                 min="0" max="255">
+      <parameter name="config_160_2" type="integer" groupName="configuration">
         <label>160: 2nd ch – OFF value sent to 4th/5th</label>
         <description><![CDATA[
 Second channel – Switch OFF value sent to 4th and 5th association groups<br /> <h1>Overview</h1><p><strong>Only in Double Switch Mode </strong></p> <p>This parameter defines value sent with Switch OFF command to devices associated in 4th and 5th association group for manual changes of Endpoint 2 state. <br />Available values <br />0-99 or 255</p>
@@ -561,8 +533,7 @@ Second channel – Switch OFF value sent to 4th and 5th association groups<br />
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_161_2" type="integer" groupName="configuration"
-                 min="0" max="255">
+      <parameter name="config_161_2" type="integer" groupName="configuration">
         <label>161: 2nd ch – Double Click value sent to 4th/5th</label>
         <description><![CDATA[
 Second channel – Double Click value sent to 4th and 5th association groups<br /> <h1>Overview</h1><p><strong>Only in Double Switch Mode</strong></p> <p>This parameter defines value sent with Double Click command to devices associated in 4th and 5th association group for manual changes of Endpoint 2 state. <br />Available values <br />0-99 or 255</p>

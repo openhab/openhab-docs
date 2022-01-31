@@ -48,8 +48,7 @@ Radio Push-button CONNECT, 1 button<br /> <h1>Overview</h1><p>Single-surface pus
       </parameter-group>
 
       <!-- PARAMETER DEFINITIONS -->
-      <parameter name="config_0_1" type="integer" groupName="configuration"
-                 min="0" max="127">
+      <parameter name="config_0_1" type="integer" groupName="configuration">
         <label>0: Button 1 function</label>
         <description><![CDATA[
 <br /> <h1>Overview</h1><p><br /></p>
@@ -66,8 +65,7 @@ Radio Push-button CONNECT, 1 button<br /> <h1>Overview</h1><p>Single-surface pus
         </options>
       </parameter>
 
-      <parameter name="config_1_1" type="integer" groupName="configuration"
-                 min="0" max="127">
+      <parameter name="config_1_1" type="integer" groupName="configuration">
         <label>1: Button 2 function</label>
         <description><![CDATA[
 <br /> <h1>Overview</h1><p><br /></p>

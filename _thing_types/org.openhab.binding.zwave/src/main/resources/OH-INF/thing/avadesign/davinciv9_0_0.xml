@@ -793,24 +793,21 @@ Button 9 attributes<br /> <h1>Overview</h1><p>Bit [0] = LED enable</p> <p>Bit [1
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_46_1" type="integer" groupName="configuration"
-                 min="0" max="7">
+      <parameter name="config_46_1" type="integer" groupName="configuration">
         <label>46: Device Led on intensity</label>
         <description>Device Led on intensity</description>
         <default>7</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_47_1" type="integer" groupName="configuration"
-                 min="0" max="7">
+      <parameter name="config_47_1" type="integer" groupName="configuration">
         <label>47: Device Led off intensity</label>
         <description>Device Led off intensity</description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_48_1" type="integer" groupName="configuration"
-                 min="0" max="1">
+      <parameter name="config_48_1" type="integer" groupName="configuration">
         <label>48: Device Toggle or Pulse the output</label>
         <description><![CDATA[
 Device Toggle or Pulse the output<br /> <h1>Overview</h1><p><strong>Device Toggle or Pulse the output:</strong></p> <p>0 = Toggle</p> <p>1 = Pulse</p>
@@ -819,8 +816,7 @@ Device Toggle or Pulse the output<br /> <h1>Overview</h1><p><strong>Device Toggl
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_49_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_49_1" type="integer" groupName="configuration">
         <label>49: Device Background LEDs Timeout</label>
         <description><![CDATA[
 Device Background LEDs Timeout<br /> <h1>Overview</h1><p><strong>Device Background LEDs Timeout:</strong></p> <p>0 = always Off</p> <p>10 - 40 = Timeout in seconds</p> <p>255 = always On!!!!!!!</p>
@@ -829,8 +825,7 @@ Device Background LEDs Timeout<br /> <h1>Overview</h1><p><strong>Device Backgrou
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_50_1" type="integer" groupName="configuration"
-                 min="0" max="7">
+      <parameter name="config_50_1" type="integer" groupName="configuration">
         <label>50: Device touch sensitivity</label>
         <description><![CDATA[
 Device touch sensitivity<br /> <h1>Overview</h1><p><strong>You can choose value between 0 – 7</strong></p> <p>0 = most sensitive</p> <p>7 = least sensitive</p>

@@ -64,8 +64,7 @@ Motion Sensor<br /> <h1>Overview</h1><p>Magnetically mounted motion sensor</p> <
       </parameter-group>
 
       <!-- PARAMETER DEFINITIONS -->
-      <parameter name="config_1_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_1_1" type="integer" groupName="configuration">
         <label>1: Motion Sensitivity</label>
         <description><![CDATA[
 Motion Sensitivity<br /> <h1>Overview</h1><p>This parameter sets the sensitivity of the Motion Detector. It is a unitless parameter ranging in values from 8 up to 255, with 8 being the highest sensitivity level and 255 being the lowest.After physical installation, make sure the farthest part of the coverage area is still visible to the Motion Detector by adjusting this parameter</p>
@@ -74,8 +73,7 @@ Motion Sensitivity<br /> <h1>Overview</h1><p>This parameter sets the sensitivity
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_2_2" type="integer" groupName="configuration"
-                 min="5" max="600">
+      <parameter name="config_2_2" type="integer" groupName="configuration">
         <label>2: Motion Cleared Time Delay</label>
         <description><![CDATA[
 Motion Cleared Time Delay<br /> <h1>Overview</h1><p>This parameters sets (in seconds) the amount of time after a motion event before the Motion Detector reports no activity to the main controller (see Notification and Binary Sensor command classes for more information.) This also sets the amount of time before a BASIC_SET (00) command is sent to Association Group 2 to turn off any activated devices. This value must be higher than the value of Parameter 6, and if this parameter is reset to default settings, Parameter 6 will also be reset.</p>
@@ -84,8 +82,7 @@ Motion Cleared Time Delay<br /> <h1>Overview</h1><p>This parameters sets (in sec
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_3_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_3_1" type="integer" groupName="configuration">
         <label>3: Basic Set Level</label>
         <description><![CDATA[
 Basic Set Level<br /> <h1>Overview</h1><p>This parameter sets the value sent by the BASIC_SET command to Association Group 2</p>
@@ -107,8 +104,7 @@ Enable/Disable Motion Detection<br /> <h1>Overview</h1><p>This setting enables o
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_5_2" type="integer" groupName="configuration"
-                 min="5" max="1000">
+      <parameter name="config_5_2" type="integer" groupName="configuration">
         <label>5: Group 2 Ambient Light Threshold</label>
         <description><![CDATA[
 Group 2 Ambient Light Threshold<br /> <h1>Overview</h1><p>If Parameter 8 is enabled, this setting sets the light level (in lux) below which the Motion Detector will send BASIC_SET commands to Association Group 2 when motion is detected.</p>
@@ -117,8 +113,7 @@ Group 2 Ambient Light Threshold<br /> <h1>Overview</h1><p>If Parameter 8 is enab
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_6_1" type="integer" groupName="configuration"
-                 min="1" max="8">
+      <parameter name="config_6_1" type="integer" groupName="configuration">
         <label>6: Retrigger Interval</label>
         <description><![CDATA[
 Retrigger Interval<br /> <h1>Overview</h1><p>After each motion event, the Motion Detector is disabled for the amount of time (in seconds) set by this parameter before it can send out another Motion Detected Notification Report/Binary Sensor Report.This value must be lower than the value of Parameter 2, and if this parameter is reset to default settings, Parameter 2 will also be reset.</p> <p>Essentially, when motion is detected the sensor will send a motion event every X seconds to the controller, as controlled by this parameter. (When motion is not detected, it fires off one and is done.)</p>
@@ -127,8 +122,7 @@ Retrigger Interval<br /> <h1>Overview</h1><p>After each motion event, the Motion
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_7_2" type="integer" groupName="configuration"
-                 min="60" max="3600">
+      <parameter name="config_7_2" type="integer" groupName="configuration">
         <label>7: Light Sensing Interval</label>
         <description><![CDATA[
 Light Sensing Interval<br /> <h1>Overview</h1><p>This parameter sets the amount of time (in seconds) between each successive ambient light level reading that is sent. This value must be less than the Wakeup Interval Time (which is 43,200 seconds or 12 hours by default). This defaults to 180.</p>
@@ -150,8 +144,7 @@ Enable/Disable Group 2 Ambient Light Threshold<br /> <h1>Overview</h1><p>If this
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_9_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_9_1" type="integer" groupName="configuration">
         <label>9: Ambient Light Sensitivity Level</label>
         <description><![CDATA[
 Ambient Light Sensitivity Level<br /> <h1>Overview</h1><p>This Parameter sets the minimum change in ambient light level (in lux) the Motion Detector must detect before a Multilevel Sensor Report is sent to the main controller. </p>

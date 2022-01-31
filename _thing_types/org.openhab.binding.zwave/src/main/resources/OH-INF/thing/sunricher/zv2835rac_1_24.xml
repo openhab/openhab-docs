@@ -118,8 +118,7 @@ Send the basic report to the Lifeline when the load state changed<br /> <h1>Over
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_4_1" type="integer" groupName="configuration"
-                 min="0" max="127">
+      <parameter name="config_4_1" type="integer" groupName="configuration">
         <label>4: Default fade time</label>
         <description><![CDATA[
 Default fade time<br /> <h1>Overview</h1><p>Default fade time (unit is second, this value has the same function as Duration of Multilevel) 0: Instantly 1-127: 1 to 127 seconds in 1 second resolution</p>
@@ -128,16 +127,14 @@ Default fade time<br /> <h1>Overview</h1><p>Default fade time (unit is second, t
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_5_1" type="integer" groupName="configuration"
-                 min="0" max="50">
+      <parameter name="config_5_1" type="integer" groupName="configuration">
         <label>5: Minimum brightness</label>
         <description>Minimum brightness</description>
         <default>15</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_6_1" type="integer" groupName="configuration"
-                 min="0" max="100">
+      <parameter name="config_6_1" type="integer" groupName="configuration">
         <label>6: Maximum brightness</label>
         <description>Maximum brightness</description>
         <default>100</default>
@@ -157,8 +154,7 @@ MOSFET driving type<br /> <h1>Overview</h1><p>MOSFET driving type:</p> <p>0 - tr
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_8_1" type="integer" groupName="configuration"
-                 min="1" max="50">
+      <parameter name="config_8_1" type="integer" groupName="configuration">
         <label>8: Step setting</label>
         <description><![CDATA[
 Step setting of the knob<br /> <h1>Overview</h1><p>Setting step of the knob</p> <p>Corresponding dimming stepping level for each rotation of the knob (a full dimming stepping level is 99) Valid value: 1-50</p>
@@ -236,8 +232,7 @@ Overcurrect Protection<br /> <h1>Overview</h1><p>Enable/disable over current pro
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_14_2" type="integer" groupName="configuration"
-                 min="0" max="600">
+      <parameter name="config_14_2" type="integer" groupName="configuration">
         <label>14: Power absolute threshold</label>
         <description><![CDATA[
 Power automatic report absolute threshold<br /> <h1>Overview</h1><p>Power automatic report absolute threshold, unit is W<br />When power changes above the absolute threshold, immediately report current power value</p>
@@ -246,8 +241,7 @@ Power automatic report absolute threshold<br /> <h1>Overview</h1><p>Power automa
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_15_1" type="integer" groupName="configuration"
-                 min="0" max="100">
+      <parameter name="config_15_1" type="integer" groupName="configuration">
         <label>15: Power percentage threshold</label>
         <description><![CDATA[
 Power automatic report percentage threshold<br /> <h1>Overview</h1><p>Power automatic report percentage threshold, unit is %<br />When power changes above the percentage threshold, immediately report current power value</p>
@@ -256,8 +250,7 @@ Power automatic report percentage threshold<br /> <h1>Overview</h1><p>Power auto
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_21_4" type="integer" groupName="configuration"
-                 min="5" max="2678400">
+      <parameter name="config_21_4" type="integer" groupName="configuration">
         <label>21: Power report cycle</label>
         <description><![CDATA[
 Power metering automatic report time cycle<br /> <h1>Overview</h1><p>Power metering automatic report time cycle, unit is second<br />Valid time cycle value: 5~2678400<br />Default is 600 seconds (10 minutes)</p>
@@ -266,8 +259,7 @@ Power metering automatic report time cycle<br /> <h1>Overview</h1><p>Power meter
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_22_4" type="integer" groupName="configuration"
-                 min="5" max="2678400">
+      <parameter name="config_22_4" type="integer" groupName="configuration">
         <label>22: Energy report cycle</label>
         <description><![CDATA[
 Energy metering automatic report time cycle<br /> <h1>Overview</h1><p>Energy metering automatic report time cycle, unit is second</p> <p>Valid time cycle value: 5~2678400</p> <p>Default is 1800 seconds (30 minutes)</p>
@@ -276,8 +268,7 @@ Energy metering automatic report time cycle<br /> <h1>Overview</h1><p>Energy met
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_23_4" type="integer" groupName="configuration"
-                 min="5" max="2678400">
+      <parameter name="config_23_4" type="integer" groupName="configuration">
         <label>23: Voltage report cycle</label>
         <description><![CDATA[
 Voltage metering automatic report time cycle<br /> <h1>Overview</h1><p>Voltage metering automatic report time cycle, unit is second</p> <p>Valid time cycle value: 5~267840</p>
@@ -286,8 +277,7 @@ Voltage metering automatic report time cycle<br /> <h1>Overview</h1><p>Voltage m
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_24_4" type="integer" groupName="configuration"
-                 min="5" max="2678400">
+      <parameter name="config_24_4" type="integer" groupName="configuration">
         <label>24: Current report cycle</label>
         <description><![CDATA[
 Current metering automatic report time cycle<br /> <h1>Overview</h1><p>Current metering automatic report time cycle, unit is second</p> <p>Valid time cycle value: 5~2678400</p>
@@ -307,8 +297,7 @@ Current metering automatic report time cycle<br /> <h1>Overview</h1><p>Current m
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_32_1" type="integer" groupName="configuration"
-                 min="0" max="99">
+      <parameter name="config_32_1" type="integer" groupName="configuration">
         <label>32: Startup brightness</label>
         <description><![CDATA[
 Startup brightness<br /> <h1>Overview</h1><p>Setting startup brightness of the load</p> <p>Valid value: 0~99</p> <p>Note: every time when turn on the load from OFF status, if the target brightness is lower than the startup brightness, the brightness will first go to the startup brightness value then fall down to the target brightness</p>
@@ -317,8 +306,7 @@ Startup brightness<br /> <h1>Overview</h1><p>Setting startup brightness of the l
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_33_1" type="integer" groupName="configuration"
-                 min="0" max="1">
+      <parameter name="config_33_1" type="integer" groupName="configuration">
         <label>33: External switch type</label>
         <description><![CDATA[
 External switch type<br /> <h1>Overview</h1><p><br /></p>

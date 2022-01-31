@@ -52,8 +52,7 @@ Flood sensor<br /> <h1>Overview</h1><p>The Flood Detector consists of a transcei
       </parameter-group>
 
       <!-- PARAMETER DEFINITIONS -->
-      <parameter name="config_1_1" type="integer" groupName="configuration"
-                 min="0" max="99">
+      <parameter name="config_1_1" type="integer" groupName="configuration">
         <label>1: Basic Level Set</label>
         <description><![CDATA[
 The value sent with Basic commands in case of detected flood<br /> <h1>Overview</h1><p>0 = Off</p> <p>1-99 = On (Binary Switch Device),  Dim Level (Multilevel Switch Device)</p>

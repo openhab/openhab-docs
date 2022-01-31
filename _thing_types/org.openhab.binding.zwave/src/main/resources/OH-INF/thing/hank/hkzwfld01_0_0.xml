@@ -125,8 +125,7 @@ Flood Sensor FLD01<br /> <h1>Overview</h1><p>HANK Flood Sensor is a device that 
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_20_2" type="integer" groupName="configuration"
-                 min="-670" max="2570">
+      <parameter name="config_20_2" type="integer" groupName="configuration">
         <label>20: Set the high temperature alarm trigger value</label>
         <description>Available setting(US):-67°c to -257°c</description>
         <default>1040</default>
@@ -144,8 +143,7 @@ Flood Sensor FLD01<br /> <h1>Overview</h1><p>HANK Flood Sensor is a device that 
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_22_2" type="integer" groupName="configuration"
-                 min="-670" max="2570">
+      <parameter name="config_22_2" type="integer" groupName="configuration">
         <label>22: Set the low temperature alarm trigger value</label>
         <description>Available setting(US):-67°c to -257°c</description>
         <default>0</default>
@@ -163,8 +161,7 @@ Flood Sensor FLD01<br /> <h1>Overview</h1><p>HANK Flood Sensor is a device that 
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_32_1" type="integer" groupName="configuration"
-                 min="10" max="50">
+      <parameter name="config_32_1" type="integer" groupName="configuration">
         <label>32: Level of low battery</label>
         <description>This parameter defines a battery level as the "low bettery"</description>
         <default>20</default>

@@ -104,8 +104,7 @@ Fan &amp; Light Switch<br /> <h1>Overview</h1><p>There are two different wireles
       </parameter-group>
 
       <!-- PARAMETER DEFINITIONS -->
-      <parameter name="config_1_1" type="integer" groupName="configuration"
-                 min="0" max="98">
+      <parameter name="config_1_1" type="integer" groupName="configuration">
         <label>1: Light Dimming Speed</label>
         <description><![CDATA[
 Light Dimming Speed<br /> <h1>Overview</h1><p>This changes the speed in which the attached light dims up or down. A setting of 0 should turn the light immediately on or off (almost like an on/off switch). Increasing the value should slow down the transition speed.</p>
@@ -114,8 +113,7 @@ Light Dimming Speed<br /> <h1>Overview</h1><p>This changes the speed in which th
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_2_1" type="integer" groupName="configuration"
-                 min="0" max="99">
+      <parameter name="config_2_1" type="integer" groupName="configuration">
         <label>2: Light Dimming Speed (From Switch)</label>
         <description><![CDATA[
 Light Dimming Speed (From Switch)<br /> <h1>Overview</h1><p>This changes the speed in which the attached light dims up or down when controlled from the physical switch. A setting of 0 should turn the light immediately on or off (almost like an on/off switch). Increasing the value should slow down the transition speed. A setting of 99 should keep this in sync with parameter 1.</p>
@@ -124,8 +122,7 @@ Light Dimming Speed (From Switch)<br /> <h1>Overview</h1><p>This changes the spe
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_3_1" type="integer" groupName="configuration"
-                 min="0" max="99">
+      <parameter name="config_3_1" type="integer" groupName="configuration">
         <label>3: Light Ramp Rate</label>
         <description><![CDATA[
 Light Ramp Rate<br /> <h1>Overview</h1><p>This changes the speed in which the attached light turns on or off. For example, when a user sends the switch a basicSet(value: 0xFF) or basicSet(value: 0x00), this is the speed in which those actions take place. A setting of 0 should turn the light immediately on or off (almost like an on/off switch). Increasing the value should slow down the transition speed. A setting of 99 should keep this in sync with parameter 1.</p>
@@ -134,8 +131,7 @@ Light Ramp Rate<br /> <h1>Overview</h1><p>This changes the speed in which the at
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_4_1" type="integer" groupName="configuration"
-                 min="0" max="99">
+      <parameter name="config_4_1" type="integer" groupName="configuration">
         <label>4: Light Ramp Rate (From Switch)</label>
         <description><![CDATA[
 Light Ramp Rate (From Switch)<br /> <h1>Overview</h1><p>This changes the speed in which the attached light turns on or off from the physical switch. For example, when a user presses the up or down button, this is the speed in which those actions take place. A setting of 0 should turn the light immediately on or off (almost like an on/off switch). Increasing the value should slow down the transition speed. A setting of 99 should keep this in sync with parameter 1.</p>
@@ -144,8 +140,7 @@ Light Ramp Rate (From Switch)<br /> <h1>Overview</h1><p>This changes the speed i
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_5_1" type="integer" groupName="configuration"
-                 min="1" max="45">
+      <parameter name="config_5_1" type="integer" groupName="configuration">
         <label>5: Minimum Light Level</label>
         <description><![CDATA[
 Minimum Light Level<br /> <h1>Overview</h1><p>The minimum level that the dimmer allows the bulb to be dimmed to. Useful when the user has an LED bulb that does not turn on or flickers at a lower level.</p>
@@ -154,8 +149,7 @@ Minimum Light Level<br /> <h1>Overview</h1><p>The minimum level that the dimmer 
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_6_1" type="integer" groupName="configuration"
-                 min="55" max="99">
+      <parameter name="config_6_1" type="integer" groupName="configuration">
         <label>6: Maximum Light Level</label>
         <description><![CDATA[
 Maximum Light Level<br /> <h1>Overview</h1><p>The maximum level that the dimmer allows the bulb to be dimmed to. Useful when the user has an LED bulb that reaches its maximum level before the dimmer value of 99.</p>
@@ -164,8 +158,7 @@ Maximum Light Level<br /> <h1>Overview</h1><p>The maximum level that the dimmer 
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_7_1" type="integer" groupName="configuration"
-                 min="1" max="45">
+      <parameter name="config_7_1" type="integer" groupName="configuration">
         <label>7: Minimum Fan Level</label>
         <description><![CDATA[
 Minimum Fan Level<br /> <h1>Overview</h1><p>The minimum level that the dimmer allows the fan to be dimmed to. Useful when the user has a fan that does not turn at a lower level.</p>
@@ -174,8 +167,7 @@ Minimum Fan Level<br /> <h1>Overview</h1><p>The minimum level that the dimmer al
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_8_1" type="integer" groupName="configuration"
-                 min="55" max="99">
+      <parameter name="config_8_1" type="integer" groupName="configuration">
         <label>8: Maximum Fan Level</label>
         <description><![CDATA[
 Maximum Fan Level<br /> <h1>Overview</h1><p>The maximum level that the dimmer allows the fan to be dimmed to.</p>
@@ -184,8 +176,7 @@ Maximum Fan Level<br /> <h1>Overview</h1><p>The maximum level that the dimmer al
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_10_2" type="integer" groupName="configuration"
-                 min="0" max="32767">
+      <parameter name="config_10_2" type="integer" groupName="configuration">
         <label>10: Auto Off Light Timer</label>
         <description><![CDATA[
 Auto Off Light Timer<br /> <h1>Overview</h1><p>Automatically turns the light switch off after this many seconds. When the switch is turned on a timer is started that is the duration of this setting. When the timer expires, the switch is turned off.</p>
@@ -194,8 +185,7 @@ Auto Off Light Timer<br /> <h1>Overview</h1><p>Automatically turns the light swi
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_11_2" type="integer" groupName="configuration"
-                 min="0" max="32767">
+      <parameter name="config_11_2" type="integer" groupName="configuration">
         <label>11: Auto Off Fan Timer</label>
         <description><![CDATA[
 Auto Off Fan Timer<br /> <h1>Overview</h1><p>Automatically turns the fan switch off after this many seconds. When the switch is turned on a timer is started that is the duration of this setting. When the timer expires, the switch is turned off.</p>
@@ -204,8 +194,7 @@ Auto Off Fan Timer<br /> <h1>Overview</h1><p>Automatically turns the fan switch 
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_12_1" type="integer" groupName="configuration"
-                 min="0" max="99">
+      <parameter name="config_12_1" type="integer" groupName="configuration">
         <label>12: Default Light Level (Local)</label>
         <description><![CDATA[
 Default Light Level (Local)<br /> <h1>Overview</h1><p>Default level for the dimmer when it is powered on from the local switch. A setting of 0 means that the switch will return to the level that it was on before it was turned off.</p>
@@ -214,8 +203,7 @@ Default Light Level (Local)<br /> <h1>Overview</h1><p>Default level for the dimm
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_13_1" type="integer" groupName="configuration"
-                 min="0" max="99">
+      <parameter name="config_13_1" type="integer" groupName="configuration">
         <label>13: Default Light Level (Z-Wave)</label>
         <description><![CDATA[
 Default Light Level (Z-Wave)<br /> <h1>Overview</h1><p>Default level for the dimmer when it is powered on from a Z-Wave command. A setting of 0 means that the switch will return to the level that it was on before it was turned off.</p>
@@ -252,8 +240,7 @@ Default Fan Level (Local)<br /> <h1>Overview</h1><p>Default level for the fan di
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_16_1" type="integer" groupName="configuration"
-                 min="0" max="100">
+      <parameter name="config_16_1" type="integer" groupName="configuration">
         <label>16: Light State After Power Restored</label>
         <description><![CDATA[
 Light State After Power Restored<br /> <h1>Overview</h1><p>The state the switch should return to once power is restored after power failure. 0 = off, 1-99 = level, 100=previous.</p>
@@ -278,8 +265,7 @@ Fan State After Power Restored<br /> <h1>Overview</h1><p>The state the switch sh
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_18_2" type="integer" groupName="configuration"
-                 min="0" max="255">
+      <parameter name="config_18_2" type="integer" groupName="configuration">
         <label>18: Light LED Indicator Color</label>
         <description><![CDATA[
 Light LED Indicator Color<br /> <h1>Overview</h1><p>This is the color of the Light LED strip represented as part of the HUE color wheel. Since the wheel has 360 values and this parameter only has 255, the following equation can be used to determine the color: value/255 * 360 = Hue color wheel value</p>
@@ -288,8 +274,7 @@ Light LED Indicator Color<br /> <h1>Overview</h1><p>This is the color of the Lig
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_19_1" type="integer" groupName="configuration"
-                 min="0" max="10">
+      <parameter name="config_19_1" type="integer" groupName="configuration">
         <label>19: Light LED Strip Intensity</label>
         <description><![CDATA[
 Light LED Strip Intensity<br /> <h1>Overview</h1><p>This is the intensity of the Light LED strip.</p>
@@ -298,8 +283,7 @@ Light LED Strip Intensity<br /> <h1>Overview</h1><p>This is the intensity of the
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_20_2" type="integer" groupName="configuration"
-                 min="0" max="255">
+      <parameter name="config_20_2" type="integer" groupName="configuration">
         <label>20: Fan LED Indicator Color</label>
         <description><![CDATA[
 Fan LED Indicator Color<br /> <h1>Overview</h1><p>This is the color of the Fan LED strip represented as part of the HUE color wheel. Since the wheel has 360 values and this parameter only has 255, the following equation can be used to determine the color: value/255 * 360 = Hue color wheel value</p>
@@ -308,8 +292,7 @@ Fan LED Indicator Color<br /> <h1>Overview</h1><p>This is the color of the Fan L
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_21_1" type="integer" groupName="configuration"
-                 min="0" max="10">
+      <parameter name="config_21_1" type="integer" groupName="configuration">
         <label>21: Fan LED Strip Intensity</label>
         <description><![CDATA[
 Fan LED Strip Intensity<br /> <h1>Overview</h1><p>This is the intensity of the Fan LED strip.</p>
@@ -318,8 +301,7 @@ Fan LED Strip Intensity<br /> <h1>Overview</h1><p>This is the intensity of the F
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_22_1" type="integer" groupName="configuration"
-                 min="0" max="10">
+      <parameter name="config_22_1" type="integer" groupName="configuration">
         <label>22: Light LED Strip Intensity (When OFF)</label>
         <description><![CDATA[
 Light LED Strip Intensity (When OFF)<br /> <h1>Overview</h1><p>This is the intensity of the Light LED strip when the switch is off. This is useful for users to see the light switch location when the lights are off.</p>
@@ -328,8 +310,7 @@ Light LED Strip Intensity (When OFF)<br /> <h1>Overview</h1><p>This is the inten
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_23_1" type="integer" groupName="configuration"
-                 min="0" max="10">
+      <parameter name="config_23_1" type="integer" groupName="configuration">
         <label>23: Fan LED Strip Intensity (When OFF)</label>
         <description><![CDATA[
 Fan LED Strip Intensity (When OFF)<br /> <h1>Overview</h1><p>This is the intensity of the Light LED strip when the switch is off. This is useful for users to see the light switch location when the lights are off.</p>
@@ -338,8 +319,7 @@ Fan LED Strip Intensity (When OFF)<br /> <h1>Overview</h1><p>This is the intensi
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_24_4" type="integer" groupName="configuration"
-                 min="0" max="100600319">
+      <parameter name="config_24_4" type="integer" groupName="configuration">
         <label>24: Light LED Strip Effect</label>
         <description><![CDATA[
 Light LED Strip Effect<br /> <h1>Overview</h1><p>Byte 4: Effect - 0 = Off, 1 = Solid, 2 = Slow Blink, 3 = Fast Blink, 4 = Chase, 5 = Pulse</p> <p>Byte 3: Duration</p> <ul><li>1 to 60 = 1 to 60 seconds</li> <li>61 to 120 = 1 to 60 minutes</li> <li>121 - 254 = 1 - 134 hours</li> <li>255 = Indefinitely</li> </ul><p>Byte 2: Intensity - 0 to 9. 0 = dim, 9 = bright</p> <p>Byte 1: Color - 0 - 255. Hue color wheel. value/255 * 360 = Hue color wheel value</p> <p>Calculator available at: http://calculator.inovelli.com/</p>
@@ -349,8 +329,7 @@ Light LED Strip Effect<br /> <h1>Overview</h1><p>Byte 4: Effect - 0 = Off, 1 = S
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_24_4_000000FF" type="integer" groupName="configuration"
-                 min="0" max="255">
+      <parameter name="config_24_4_000000FF" type="integer" groupName="configuration">
         <label>24: Light LED Strip Effect Color</label>
         <description><![CDATA[
 Light LED Strip Effect Color<br /> <h1>Overview</h1><p>Hue color wheel. value/255 * 360 = Hue color wheel value</p>
@@ -359,8 +338,7 @@ Light LED Strip Effect Color<br /> <h1>Overview</h1><p>Hue color wheel. value/25
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_24_4_0000FF00" type="integer" groupName="configuration"
-                 min="0" max="9">
+      <parameter name="config_24_4_0000FF00" type="integer" groupName="configuration">
         <label>24: Light LED Strip Effect Intensity</label>
         <description><![CDATA[
 Light LED Strip Effect Intensity<br /> <h1>Overview</h1><p>0 = dim, 9 = bright</p>
@@ -369,8 +347,7 @@ Light LED Strip Effect Intensity<br /> <h1>Overview</h1><p>0 = dim, 9 = bright</
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_24_4_00FF0000" type="integer" groupName="configuration"
-                 min="0" max="255">
+      <parameter name="config_24_4_00FF0000" type="integer" groupName="configuration">
         <label>24: Light LED Strip Effect Duration</label>
         <description><![CDATA[
 Light LED Strip Effect Duration<br /> <h1>Overview</h1><ul><li>1 to 60 = 1 to 60 seconds</li> <li>61 to 120 = 1 to 60 minutes</li> <li>121 to 254 = 1 to 134 hours</li> <li>255 = Indefinitely</li> </ul>
@@ -396,8 +373,7 @@ Light LED Strip Effect Type<br /> <h1>Overview</h1><p>0 = Off, 1 = Solid, 2 = Sl
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_25_4" type="integer" groupName="configuration"
-                 min="0" max="100600319">
+      <parameter name="config_25_4" type="integer" groupName="configuration">
         <label>25: Fan LED Strip Effect</label>
         <description><![CDATA[
 Fan LED Strip Effect<br /> <h1>Overview</h1><p>Byte 4: Effect - 0 = Off, 1 = Solid, 2 = Slow Blink, 3 = Fast Blink, 4 = Chase, 5 = Pulse</p> <p>Byte 3: Duration</p> <ul><li>1 to 60 = 1 to 60 seconds</li> <li>61 to 120 = 1 to 60 minutes</li> <li>121 - 254 = 1 - 134 hours</li> <li>255 = Indefinitely</li> </ul><p>Byte 2: Intensity - 0 to 9. 0 = dim, 9 = bright</p> <p>Byte 1: Color - 0 - 255. Hue color wheel. value/255 * 360 = Hue color wheel value</p> <p>Calculator available at: http://calculator.inovelli.com/</p>
@@ -407,8 +383,7 @@ Fan LED Strip Effect<br /> <h1>Overview</h1><p>Byte 4: Effect - 0 = Off, 1 = Sol
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_25_4_000000FF" type="integer" groupName="configuration"
-                 min="0" max="255">
+      <parameter name="config_25_4_000000FF" type="integer" groupName="configuration">
         <label>25: Fan LED Strip Effect Color</label>
         <description><![CDATA[
 Fan LED Strip Effect Color<br /> <h1>Overview</h1><p>Hue color wheel. value/255 * 360 = Hue color wheel value</p>
@@ -417,8 +392,7 @@ Fan LED Strip Effect Color<br /> <h1>Overview</h1><p>Hue color wheel. value/255 
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_25_4_0000FF00" type="integer" groupName="configuration"
-                 min="0" max="9">
+      <parameter name="config_25_4_0000FF00" type="integer" groupName="configuration">
         <label>25: Fan LED Strip Effect Intesity</label>
         <description><![CDATA[
 Fan LED Strip Effect Intesity<br /> <h1>Overview</h1><p>0 = dim, 9 = bright</p>
@@ -427,8 +401,7 @@ Fan LED Strip Effect Intesity<br /> <h1>Overview</h1><p>0 = dim, 9 = bright</p>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_25_4_00FF0000" type="integer" groupName="configuration"
-                 min="0" max="255">
+      <parameter name="config_25_4_00FF0000" type="integer" groupName="configuration">
         <label>25: Fan LED Strip Effect Duration</label>
         <description><![CDATA[
 Fan LED Strip Effect Duration<br /> <h1>Overview</h1><ul><li>1 to 60 = 1 to 60 seconds</li> <li>61 to 120 = 1 to 60 minutes</li> <li>121 to 254 = 1 to 134 hours</li> <li>255 = Indefinitely</li> </ul>
@@ -498,8 +471,7 @@ Fan LED Strip Timeout<br /> <h1>Overview</h1><p>When the LED strip is disabled (
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_28_1" type="integer" groupName="configuration"
-                 min="0" max="100">
+      <parameter name="config_28_1" type="integer" groupName="configuration">
         <label>28: Active Power Reports</label>
         <description><![CDATA[
 Active Power Reports<br /> <h1>Overview</h1><p>The power level change that will result in a new power report being sent. The value is a percentage of the previous report. 0 = disabled.</p>
@@ -508,8 +480,7 @@ Active Power Reports<br /> <h1>Overview</h1><p>The power level change that will 
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_29_2" type="integer" groupName="configuration"
-                 min="0" max="32767">
+      <parameter name="config_29_2" type="integer" groupName="configuration">
         <label>29: Periodic Power &amp; Energy Reports</label>
         <description><![CDATA[
 Periodic Power &amp; Energy Reports<br /> <h1>Overview</h1><p>Time period between consecutive power and energy reports being sent (in seconds). The timer is reset after each report is sent.</p>
@@ -518,8 +489,7 @@ Periodic Power &amp; Energy Reports<br /> <h1>Overview</h1><p>Time period betwee
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_30_1" type="integer" groupName="configuration"
-                 min="0" max="100">
+      <parameter name="config_30_1" type="integer" groupName="configuration">
         <label>30: Energy Reports</label>
         <description><![CDATA[
 Energy Reports<br /> <h1>Overview</h1><p>The energy level change that will result in a new energy report being sent. The value is a percentage of the previous report.</p>
@@ -543,8 +513,7 @@ Local Protection Settings<br /> <h1>Overview</h1><p>Enable local protection on t
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_51_1" type="integer" groupName="configuration"
-                 min="0" max="1">
+      <parameter name="config_51_1" type="integer" groupName="configuration">
         <label>51: Enable instant on</label>
         <description><![CDATA[
 Disable the 700ms delay.<br /> <h1>Overview</h1><p>Enable instant on (ie: disable the 700ms delay). Note, if you disable the delay, it will also disable scene control except for Button 1 (ie: tap up 1x or tap down 1x, held &amp; released) and button 6, 7, 8, 9 (level up / down buttons). All other scenes will be disabled.</p><p>Firmware v1.36 and above.</p>

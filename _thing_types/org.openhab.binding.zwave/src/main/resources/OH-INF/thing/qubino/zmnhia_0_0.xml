@@ -151,8 +151,7 @@ Module responds to commands ALL ON / ALL OFF<br /> <h1>Overview</h1><p>Module re
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_11_2" type="integer" groupName="configuration"
-                 min="-32767" max="32768">
+      <parameter name="config_11_2" type="integer" groupName="configuration">
         <label>11: Set point set by I2</label>
         <description><![CDATA[
 Set point set by I2<br /> <h1>Overview</h1><p>When I2 is pressed set point will be set according to the value of this parameter. Available config. parameters:</p> <p>default value 65535</p> <p>65535 – input I2 does not influence on the set point</p> <p>From 0 to 990 – set point from 0.0 °C to 99.0 °C</p> <p>From 1001 to 1150 – set point from -0.1 °C to -15.0 °C</p>
@@ -161,8 +160,7 @@ Set point set by I2<br /> <h1>Overview</h1><p>When I2 is pressed set point will 
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_12_2" type="integer" groupName="configuration"
-                 min="-32767" max="32768">
+      <parameter name="config_12_2" type="integer" groupName="configuration">
         <label>12: Set point set by I3</label>
         <description><![CDATA[
 Set point set by I3<br /> <h1>Overview</h1><p>When I3 is pressed set point will be set according to the value of this parameter. Available config. parameters</p> <p>default value 65535</p> <p>65535 – input I3 does not influence on the set point</p> <p>From 0 to 990 – set point from 0.0 °C to 99.0 °C</p> <p>From 1001 to 1150 – set point from -0.1 °C to -15.0 °C</p>
@@ -182,8 +180,7 @@ Set point set by I3<br /> <h1>Overview</h1><p>When I3 is pressed set point will 
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_40_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_40_1" type="integer" groupName="configuration">
         <label>40: Power reporting in Watts on power change for Q1</label>
         <description><![CDATA[
 Power reporting in Watts on power change<br /> <h1>Overview</h1><p>Set value means percentage, set value from 0 - 100=0% - 100%. Available configuration parameters</p> <p>default value 3</p> <p>0 – Reporting Disabled</p> <p>1–100 = 1%-100% Reporting enabled. Power report is sent (push) only when actual power in Watts in real time changes for more than set percentage comparing to previous actual power in Watts, step is 1%.</p> <p>NOTE: If power changed is less than 1W, the report is not sent (pushed), independent of percentage set.</p>
@@ -192,8 +189,7 @@ Power reporting in Watts on power change<br /> <h1>Overview</h1><p>Set value mea
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_42_2" type="integer" groupName="configuration"
-                 min="-32767" max="32768">
+      <parameter name="config_42_2" type="integer" groupName="configuration">
         <label>42: Power reporting in Watts by time interval for Q1</label>
         <description><![CDATA[
 Power reporting in Watts by time interval<br /> <h1>Overview</h1><p>Set value means time interval (0 – 65535) in seconds, when power report is send. Available config. parameters</p> <p>default value 300 (power report in Watts is send each 300s)</p> <p>0 – Reporting Disabled</p> <p>1 – 65535 = 1second – 65535 seconds. Reporting enabled. Power report is send with time interval set by entered value.</p>
@@ -202,8 +198,7 @@ Power reporting in Watts by time interval<br /> <h1>Overview</h1><p>Set value me
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_43_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_43_1" type="integer" groupName="configuration">
         <label>43: Hysteresis On</label>
         <description><![CDATA[
 Hysteresis On<br /> <h1>Overview</h1><p>This parameter defines temperature min difference between real measured temperature and set-point temperature to turn device on. Parameter can be set from 0 to 255 where 0 to 127 means from 0.0 °C to 12.7 °C and from 128 to 255 means from - 0.1 °C to -12.7 °C.</p> <p>Available configuration parameters</p> <p>default value 132 (-0.5 °C)</p>
@@ -212,8 +207,7 @@ Hysteresis On<br /> <h1>Overview</h1><p>This parameter defines temperature min d
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_44_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_44_1" type="integer" groupName="configuration">
         <label>44: Hysteresis Off</label>
         <description><![CDATA[
 Hysteresis Off<br /> <h1>Overview</h1><p>This parameter defines temperature min difference between real measured temperature and set-point temperature to turn device off. Parameter can be set from 0 to 255 where 0 to 127 means from 0.0 °C to 12.7 °C and from 128 to 255 means from - 0.1 °C to -12.7 °C.</p> <p>Available configuration parameters</p> <p>default value 5 (+0.5 °C)</p>
@@ -222,8 +216,7 @@ Hysteresis Off<br /> <h1>Overview</h1><p>This parameter defines temperature min 
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_45_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_45_1" type="integer" groupName="configuration">
         <label>45: Antifreeze</label>
         <description><![CDATA[
 Antifreeze function Temperature<br /> <h1>Overview</h1><p>Set value means at which temperature the device will be turned on even if the thermostat was manually set to off. Parameter can be set from 0 to 255 where 0 to 127 means from 0.0 °C to 12.7 °C and from 128 to 254 means from - 0.1 °C to -12.6 °C.</p> <p>Available configuration parameters</p> <p>default value 50 (5,0 °C)</p> <p>255 – Antifreeze functionality disabled</p>
@@ -232,8 +225,7 @@ Antifreeze function Temperature<br /> <h1>Overview</h1><p>Set value means at whi
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_60_2" type="integer" groupName="configuration"
-                 min="-32767" max="32768">
+      <parameter name="config_60_2" type="integer" groupName="configuration">
         <label>60: Too low temperature limit</label>
         <description><![CDATA[
 Too low temperature limit<br /> <h1>Overview</h1><p>Available configuration parameters</p> <p>Default value 50 (Too low temperature limit is 5.0°C)</p> <p>1 - 1000 = 0.1°C – 100.0°C, step is 0.1°C. Too low temperature limit is set by entered value. In case is set value out of this range, module is changing set value automatically to default value.</p>
@@ -242,8 +234,7 @@ Too low temperature limit<br /> <h1>Overview</h1><p>Available configuration para
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_61_2" type="integer" groupName="configuration"
-                 min="-32767" max="32768">
+      <parameter name="config_61_2" type="integer" groupName="configuration">
         <label>61: Too high temperature limit</label>
         <description><![CDATA[
 Too high temperature limit<br /> <h1>Overview</h1><p>Available configuration parameters:</p> <p>Default value 50 (Too low temperature limit is 5.0°C)</p> <p>1 - 1000 = 0.1°C – 100.0°C, step is 0.1°C. Too low temperature limit is set by entered value. In case is set value out of this range, module is changing set value automatically to default value.</p>
@@ -252,8 +243,7 @@ Too high temperature limit<br /> <h1>Overview</h1><p>Available configuration par
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_63_2" type="integer" groupName="configuration"
-                 min="-32767" max="32768">
+      <parameter name="config_63_2" type="integer" groupName="configuration">
         <label>63: Switch selection</label>
         <description><![CDATA[
 Connected device type can be (NO) or (NC)<br /> <h1>Overview</h1><p>Set value means the type of the device that is connected to the relay output. The device type can be normally open (NO) or normally close (NC). Available configuration parameters</p> <p>default value 0</p> <p>0 - When system is turned off the output is 0 V.</p> <p>1 - When system is turned off the output is 230 V.</p>

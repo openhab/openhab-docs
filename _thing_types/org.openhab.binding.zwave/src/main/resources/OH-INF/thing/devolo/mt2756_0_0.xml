@@ -64,8 +64,7 @@ MT2756 Flood Sensor<br /> <h1>Overview</h1><p>The Home Control Water Sensor is a
       </parameter-group>
 
       <!-- PARAMETER DEFINITIONS -->
-      <parameter name="config_1_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_1_1" type="integer" groupName="configuration">
         <label>1: Basic Set OFF Level</label>
         <description><![CDATA[
 Basic Set OFF Level<br /> <h1>Overview</h1><p>Setting the BASIC command value</p> <ul><li>When the flood trigger off(0x00), send the BASIC CC to the group 2</li> </ul>
@@ -74,8 +73,7 @@ Basic Set OFF Level<br /> <h1>Overview</h1><p>Setting the BASIC command value</p
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_2_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_2_1" type="integer" groupName="configuration">
         <label>2: Basic Set ON Level</label>
         <description><![CDATA[
 Basic Set ON Level<br /> <h1>Overview</h1><p>Setting the BASIC command value</p> <ul><li>When the flood trigger on(0xFF), send the BASIC CC to the group 2</li> </ul>
@@ -97,8 +95,7 @@ Disable the Flood function<br /> <h1>Overview</h1><p>Operation mode</p> <ul><li>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_7_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_7_1" type="integer" groupName="configuration">
         <label>7: Customer Function</label>
         <description><![CDATA[
 Customer Function<br /> <h1>Overview</h1><p>Parameter to set the sensor functions</p> <ul><li>Bit 0: Reserve</li> <li>Bit 1: Reserve</li> <li>Bit 2: Reserve</li> <li>Bit 3: Disable send out BASIC OFF after the flood event cleared</li> <li>Bit 4: Notification Type. <ul><li>0:Using Notification Report,</li> <li>1:Using Sensor Binary Report</li> </ul></li> <li>Bit 5: Disable Multi CC in aut</li> </ul>
@@ -107,8 +104,7 @@ Customer Function<br /> <h1>Overview</h1><p>Parameter to set the sensor function
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_10_1" type="integer" groupName="configuration"
-                 min="0" max="127">
+      <parameter name="config_10_1" type="integer" groupName="configuration">
         <label>10: Auto Report Battery Time</label>
         <description><![CDATA[
 Auto Report Battery Time<br /> <h1>Overview</h1><p>The interval time for auto reporting the battery level</p> <ul><li>0 = Turn off auto report battery.</li> <li>1-127 = Number of ticks.</li> </ul><p>The default value is 12. The tick time can be set by configuration No. 20.</p>
@@ -117,8 +113,7 @@ Auto Report Battery Time<br /> <h1>Overview</h1><p>The interval time for auto re
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_15_1" type="integer" groupName="configuration"
-                 min="0" max="127">
+      <parameter name="config_15_1" type="integer" groupName="configuration">
         <label>15: Auto Report Flood Time</label>
         <description><![CDATA[
 Auto Report Flood Time<br /> <h1>Overview</h1><p>The interval time for auto report the flood state</p> <ul><li>0 = Turn off auto report</li> <li>1-127 = Number of ticks.</li> </ul><p>The default value is 12. The tick time can be set by configuration No. 20</p>
@@ -127,8 +122,7 @@ Auto Report Flood Time<br /> <h1>Overview</h1><p>The interval time for auto repo
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_20_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_20_1" type="integer" groupName="configuration">
         <label>20: Auto Report Tick Interval</label>
         <description><![CDATA[
 Auto Report Tick Interval<br /> <h1>Overview</h1><p>The interval time for auto reporting each tick.</p> <ul><li>0 = Turn off all auto report function.</li> <li>1-255 = Number of ticks.</li> </ul><p>Setting this configuration will effect configuration Nr. 10 and No. 15.</p>

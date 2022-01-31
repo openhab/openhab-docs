@@ -124,8 +124,7 @@ Temperature Upper Watermark value<br /> <h1>Overview</h1><p>Parameter 5: Tempera
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_6_2" type="integer" groupName="configuration"
-                 min="-200" max="1000">
+      <parameter name="config_6_2" type="integer" groupName="configuration">
         <label>6: Temperature Lower Watermark</label>
         <description><![CDATA[
 Temperature Lower Watermark value<br /> <h1>Overview</h1><p>Parameter 6: Temperature Lower Watermark value<br /><br />This parameter defines a temperature. If the measured temperature dropps below this watermark a BASIC command is sent into Association Group 3 <br />Size: 2 Byte, Default Value:0<br /><br />-200-1000: 1/10 degree<br />0: disabled</p>
@@ -158,8 +157,7 @@ Humidity Lower Watermark value<br /> <h1>Overview</h1><p>Parameter 8: Humidity L
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_9_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_9_1" type="integer" groupName="configuration">
         <label>9: Low Temperature Trigger</label>
         <description><![CDATA[
 Low Temperature Trigger BASIC Set Command Value<br /> <h1>Overview</h1><p>Parameter 9: Low Temperature Trigger BASIC Set Command Value<br /><br />This defines what BASIC command shall be sent out into association group 3 <br />Size: 1 Byte, Default Value: 255</p>
@@ -168,8 +166,7 @@ Low Temperature Trigger BASIC Set Command Value<br /> <h1>Overview</h1><p>Parame
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_10_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_10_1" type="integer" groupName="configuration">
         <label>10: High Temperature Trigger</label>
         <description><![CDATA[
 High Temperature Trigger BASIC Set Command Value<br /> <h1>Overview</h1><p>Parameter 10: High Temperature Trigger BASIC Set Command Value<br /><br />This defines what BASIC command shall be sent out into association group 2 <br />Size: 1 Byte, Default Value: 0</p>
@@ -178,8 +175,7 @@ High Temperature Trigger BASIC Set Command Value<br /> <h1>Overview</h1><p>Param
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_11_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_11_1" type="integer" groupName="configuration">
         <label>11: Low Humidity Trigger</label>
         <description><![CDATA[
 Low Humidity Trigger BASIC Set Command Value<br /> <h1>Overview</h1><p>Parameter 11: Low Humidity Trigger BASIC Set Command Value<br /><br />This defines what BASIC command shall be sent out into association group 5 <br />Size: 1 Byte, Default Value: 255<br /><br /></p>
@@ -188,8 +184,7 @@ Low Humidity Trigger BASIC Set Command Value<br /> <h1>Overview</h1><p>Parameter
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_12_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_12_1" type="integer" groupName="configuration">
         <label>12: High Humidity Trigger</label>
         <description><![CDATA[
 High Humidity Trigger BASIC Set Command Value<br /> <h1>Overview</h1><p>Parameter 12: High Humidity Trigger BASIC Set Command Value<br /><br />This defines what BASIC command shall be sent out into association group 4 <br />Size: 1 Byte, Default Value: 0</p>

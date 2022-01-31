@@ -152,8 +152,7 @@ Action on group D<br /> <h1>Overview</h1><p>This parameter defines the command t
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_20_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_20_1" type="integer" groupName="configuration">
         <label>20: Typical click timeout</label>
         <description>Typical time used to differenciate click, hold and double clicks in 10ms units</description>
         <default>50</default>

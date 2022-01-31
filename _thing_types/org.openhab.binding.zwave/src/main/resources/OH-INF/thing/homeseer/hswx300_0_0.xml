@@ -173,8 +173,7 @@ Sets bottom LED operation (in normal mode)<br /> <h1>Overview</h1><p><br /></p>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_5_1" type="integer" groupName="configuration"
-                 min="1" max="14">
+      <parameter name="config_5_1" type="integer" groupName="configuration">
         <label>5: Dimming Threshold</label>
         <description><![CDATA[
 Sets the lowest dimming threshold<br /> <h1>Overview</h1><p>Possible values: 1-14</p><p>3-wire mode (1=16%, 14=25%)</p><p>2-wire mode (1=25%, 14=30%)</p>
@@ -194,8 +193,7 @@ Sets the lowest dimming threshold<br /> <h1>Overview</h1><p>Possible values: 1-1
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_11_1" type="integer" groupName="configuration"
-                 min="0" max="90">
+      <parameter name="config_11_1" type="integer" groupName="configuration">
         <label>11: Remote Ramp Rate</label>
         <description><![CDATA[
 Set dimmer ramp rate for remote control<br /> <h1>Overview</h1><p>Possible values: 0-90</p><p>0=No delay (instant ON), 1=1 second</p>
@@ -204,8 +202,7 @@ Set dimmer ramp rate for remote control<br /> <h1>Overview</h1><p>Possible value
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_12_1" type="integer" groupName="configuration"
-                 min="0" max="90">
+      <parameter name="config_12_1" type="integer" groupName="configuration">
         <label>12: Local Ramp Rate</label>
         <description><![CDATA[
 Set dimmer ramp rate for local control<br /> <h1>Overview</h1><p>Possible values: 0-90</p><p>0=No delay (instant ON), 1=1 second</p>
@@ -363,8 +360,7 @@ Status LED 3 Color<br /> <h1>Overview</h1><p><br /></p>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_30_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_30_1" type="integer" groupName="configuration">
         <label>30: Blink Frequency</label>
         <description><![CDATA[
 Set blink frequency when displaying custom status<br /> <h1>Overview</h1><p>Possible values: 0, 1-255</p><p>0=No blink, 1=100ms ON then 100ms OFF</p>

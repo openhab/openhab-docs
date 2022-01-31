@@ -89,8 +89,7 @@ Touchscreen Comfort Control Thermostat<br /> <h1>Overview</h1><p>The Trane 624 T
       </parameter-group>
 
       <!-- PARAMETER DEFINITIONS -->
-      <parameter name="config_10_1" type="integer" groupName="configuration"
-                 min="5" max="9">
+      <parameter name="config_10_1" type="integer" groupName="configuration">
         <label>10: Minimum Off Time</label>
         <description><![CDATA[
 Minimum Off Time<br /> <h1>Overview</h1><p>Sets the minimum off time before another heating/cooling cycle can begin to provide compressor short cycle protection. The thermostat screen will display WAIT when minimum off time is being enforced.</p>
@@ -100,8 +99,7 @@ Minimum Off Time<br /> <h1>Overview</h1><p>Sets the minimum off time before anot
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_11_1" type="integer" groupName="configuration"
-                 min="1" max="9">
+      <parameter name="config_11_1" type="integer" groupName="configuration">
         <label>11: Minimum Run Time</label>
         <description><![CDATA[
 Minimum Run Time<br /> <h1>Overview</h1><p>Sets the minimum run time before a heating/cooling cycle can turn off to prevent rapid cycling. Thermostat screen will display "Cool ON" or "Heat ON" while the minimum run time is being enforced.</p>
@@ -111,8 +109,7 @@ Minimum Run Time<br /> <h1>Overview</h1><p>Sets the minimum run time before a he
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_12_1" type="integer" groupName="configuration"
-                 min="1" max="8">
+      <parameter name="config_12_1" type="integer" groupName="configuration">
         <label>12: Heating Delta Stage 1 ON</label>
         <description><![CDATA[
 Heating Delta Stage 1 ON<br /> <h1>Overview</h1><p>Sets the delta from setpoint that stage 1 heating starts.</p>
@@ -122,8 +119,7 @@ Heating Delta Stage 1 ON<br /> <h1>Overview</h1><p>Sets the delta from setpoint 
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_13_1" type="integer" groupName="configuration"
-                 min="0" max="8">
+      <parameter name="config_13_1" type="integer" groupName="configuration">
         <label>13: Heating Delta Stage 1 OFF</label>
         <description><![CDATA[
 Heating Delta Stage 1 OFF<br /> <h1>Overview</h1><p>Sets the delta from setpoint that stage 1 heating stops. Stage 1 turns off at setpoint minus (-) Delta Stage 1.</p>

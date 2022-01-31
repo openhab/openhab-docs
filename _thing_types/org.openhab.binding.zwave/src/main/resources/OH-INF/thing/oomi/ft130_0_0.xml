@@ -104,8 +104,7 @@ Which notification to be sent to the associated devices.<br /> <h1>Overview</h1>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_39_1" type="integer" groupName="configuration"
-                 min="0" max="50">
+      <parameter name="config_39_1" type="integer" groupName="configuration">
         <label>39: Low battery value</label>
         <description>Set the low battery value</description>
         <default>5</default>

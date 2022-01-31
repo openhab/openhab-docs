@@ -65,16 +65,14 @@ Wall Dimmer Switch<br /> <h1>Overview</h1><p>HS-WD100+ is a Z-Wave wall dimmer t
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_9_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_9_1" type="integer" groupName="configuration">
         <label>9: Dim Level Increment</label>
         <description>Indicates the number of levels (1-99) to change dimming each step</description>
         <default>1</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_10_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_10_1" type="integer" groupName="configuration">
         <label>10: Step Duration</label>
         <description>The number of tens of milliseconds (1-255) to delay on each dimming step.</description>
         <default>3</default>

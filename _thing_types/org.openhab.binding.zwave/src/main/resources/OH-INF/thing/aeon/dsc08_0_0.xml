@@ -76,8 +76,7 @@ Smart Energy Illuminator<br /> <h1>Overview</h1><p>The Aeon Labs Inline Smart En
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_2_2" type="integer" groupName="configuration"
-                 min="-32767" max="32768">
+      <parameter name="config_2_2" type="integer" groupName="configuration">
         <label>2: Make SES blink</label>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
@@ -108,8 +107,7 @@ Enables automatic notifications to associated devices<br /> <h1>Overview</h1><p>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_91_2" type="integer" groupName="configuration"
-                 min="-32767" max="32768">
+      <parameter name="config_91_2" type="integer" groupName="configuration">
         <label>91: Minimum change in wattage</label>
         <description><![CDATA[
 Minimum change in wattage for a REPORT to be sent.<br /> <h1>Overview</h1><p>The value here represents minimum change in wattage (in terms of wattage) for a REPORT to be sent.</p>
@@ -118,8 +116,7 @@ Minimum change in wattage for a REPORT to be sent.<br /> <h1>Overview</h1><p>The
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_92_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_92_1" type="integer" groupName="configuration">
         <label>92: Minimum change in wattage %</label>
         <description><![CDATA[
 Minimum percent change in wattage for a REPORT to be sent.<br /> <h1>Overview</h1><p>The value here represents minimum change in wattage percent (in terms of percentage) for a REPORT to be sent.</p>
@@ -128,8 +125,7 @@ Minimum percent change in wattage for a REPORT to be sent.<br /> <h1>Overview</h
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_100_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_100_1" type="integer" groupName="configuration">
         <label>100: Set 100 to 103 to default</label>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
@@ -168,39 +164,34 @@ Minimum percent change in wattage for a REPORT to be sent.<br /> <h1>Overview</h
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_110_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_110_1" type="integer" groupName="configuration">
         <label>110: Set 111 to 113 to default</label>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_111_4" type="integer" groupName="configuration"
-                 min="0" max="65535">
+      <parameter name="config_111_4" type="integer" groupName="configuration">
         <label>111: Interval group 1</label>
         <description>The time interval of sending Report group 1</description>
         <default>600</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_112_4" type="integer" groupName="configuration"
-                 min="0" max="65535">
+      <parameter name="config_112_4" type="integer" groupName="configuration">
         <label>112: Interval group 2</label>
         <description>The time interval of sending Report group 2</description>
         <default>600</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_113_4" type="integer" groupName="configuration"
-                 min="0" max="65535">
+      <parameter name="config_113_4" type="integer" groupName="configuration">
         <label>113: Interval group 3</label>
         <description>The time interval of sending Report group 3</description>
         <default>600</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_254_2" type="integer" groupName="configuration"
-                 min="-32767" max="32768">
+      <parameter name="config_254_2" type="integer" groupName="configuration">
         <label>254: Device Tag</label>
         <default>0</default>
         <limitToOptions>false</limitToOptions>

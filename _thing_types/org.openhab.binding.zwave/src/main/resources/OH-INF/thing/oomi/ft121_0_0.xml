@@ -105,8 +105,7 @@ Brightness Level Control<br /> <h1>Overview</h1><p>Enable/disable to turn on the
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_37_4_0000001F" type="integer" groupName="configuration"
-                 min="0" max="31">
+      <parameter name="config_37_4_0000001F" type="integer" groupName="configuration">
         <label>37: Colour Change Speed Level</label>
         <description><![CDATA[
 Colour Change Speed Level<br /> <h1>Overview</h1><ul><li>0 = Constant speed</li> <li>1 - 30 = Accelerate/decelerate speed from level 1 to 30</li> <li>31 = Inactive (keep the current configuration values)</li> </ul>
@@ -129,8 +128,7 @@ Time Base of Colour Change Speed<br /> <h1>Overview</h1><p>Time Base of Colour C
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_37_4_0000FF00" type="integer" groupName="configuration"
-                 min="0" max="255">
+      <parameter name="config_37_4_0000FF00" type="integer" groupName="configuration">
         <label>37: Cycle Count</label>
         <description><![CDATA[
 Cycle Count<br /> <h1>Overview</h1><ul><li>0 = Unlimited</li> <li>1 - 254 = Total number of cycles before stopping</li> <li>255 = Inactive (keep the current configuration values)</li> </ul>
@@ -139,8 +137,7 @@ Cycle Count<br /> <h1>Overview</h1><ul><li>0 = Unlimited</li> <li>1 - 254 = Tota
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_37_4_00FF0000" type="integer" groupName="configuration"
-                 min="1" max="99">
+      <parameter name="config_37_4_00FF0000" type="integer" groupName="configuration">
         <label>37: Brightness</label>
         <description><![CDATA[
 Brightness<br /> <h1>Overview</h1><ul><li> 1 = Min level.</li> <li>99 = Max level</li> </ul>
@@ -163,8 +160,7 @@ Brightness<br /> <h1>Overview</h1><ul><li> 1 = Min level.</li> <li>99 = Max lev
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_37_4_38000000" type="integer" groupName="configuration"
-                 min="0" max="15">
+      <parameter name="config_37_4_38000000" type="integer" groupName="configuration">
         <label>37: Colour Change Speed Option</label>
         <description><![CDATA[
 Colour Change Speed Option<br /> <h1>Overview</h1><p>Colour Change Speed Option</p>
@@ -238,8 +234,7 @@ Colorful mode configuration<br /> <h1>Overview</h1><p>Set-only parameter</p>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_255_0" type="integer" groupName="configuration"
-                 min="-2147483646" max="2147483647">
+      <parameter name="config_255_0" type="integer" groupName="configuration">
         <label>255: Reset to defaults</label>
         <description>Reset to defaults</description>
         <default>0</default>

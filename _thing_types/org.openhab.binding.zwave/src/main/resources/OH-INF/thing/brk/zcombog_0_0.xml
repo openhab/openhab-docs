@@ -64,24 +64,21 @@ Smoke and Carbon Monoxide Alarm<br /> <h1>Overview</h1><p>The Z-Wave Smoke/CO al
       </parameter-group>
 
       <!-- PARAMETER DEFINITIONS -->
-      <parameter name="config_1_2" type="integer" groupName="configuration"
-                 min="500" max="5000">
+      <parameter name="config_1_2" type="integer" groupName="configuration">
         <label>1: SuperVision report timeout</label>
         <description>ZCOMBO will send the message over SuperVision Command Class and it will wait for the SuperVision report from the Controller for the SuperVision report timeout time.</description>
         <default>1500</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_2_2" type="integer" groupName="configuration"
-                 min="0" max="5">
+      <parameter name="config_2_2" type="integer" groupName="configuration">
         <label>2: SuperVision retry count</label>
         <description>If the SuperVision report is not received within the SuperVision report timeout time, the ZCOMBO will retry sending the message again. Upon exceeding the max retry, the ZCOMBO device will send the next message available in the queue.</description>
         <default>1</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_3_1" type="integer" groupName="configuration"
-                 min="1" max="60">
+      <parameter name="config_3_1" type="integer" groupName="configuration">
         <label>3: SuperVision wait time</label>
         <description><![CDATA[
 Before retrying the message, ZCOMBO will wait for the SuperVision wait time.<br /> <h1>Overview</h1><p>Actual wait time is calculated using below formula,</p><p>Wait time = SuperVision wait time base-value + random-value + (attempt-count x 5 seconds)</p><p>• The random value shall be a time between 100 and 1100 milliseconds</p>

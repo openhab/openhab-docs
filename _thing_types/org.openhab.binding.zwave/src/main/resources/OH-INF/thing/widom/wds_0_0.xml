@@ -108,8 +108,7 @@ Defines the status of the output O1/O2 after 2 Clicks<br /> <h1>Overview</h1><p>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_3_1" type="integer" groupName="configuration"
-                 min="0" max="39">
+      <parameter name="config_3_1" type="integer" groupName="configuration">
         <label>3: Type of outputs</label>
         <description><![CDATA[
 Defines how the outputs are controlled<br /> <h1>Overview</h1><p>Defines if the outputs are controlled individually, as a traditional device with two channels, or if its behaviour simulates a single pole double throw relay</p> <p><strong>Parameter value and</strong> <strong>device reaction</strong></p> <p>0 – SINGLE CHANNELS (Default Value)</p> <p>Channel 1 and Channel 2 are controlled individually</p> <p>From 1 to 9 – SINGLE POLE DOUBLE THROW RELAY</p> <p>The two channels are in opposite status. If the Channel 1 is close the Channel 2 is open, if the Channel 1 is open the Channel 2 is close. The value of the parameter defines the closing delay of the relay in tenth of seconds</p> <p>From 10 to 19 – SEQUENCING RELAY</p> <p>Channels are toggled in this way: both channels ON, only channel 1 ON, only channel 2 ON, both channels OFF. The value of the parameter, deducted of 9, defines the closing delay of the relay in tenth of seconds.</p> <p>From 20 to 39 – SELECTOR</p> <p>Both channels can be OFF but they can never be ON simultaneously. It can be used for fan coil control, roller shutters, and in general for two-speed systems. The value of the parameter, deducted of 19, defines the closing delay of the relay in tenth of seconds.</p> <p><strong>INFO:</strong> 0 – configuration is available on WiDom Universal Double Switch starting from the firmware version 1.40.</p>
@@ -131,8 +130,7 @@ Defines the Clicks on the Switches that control associated devices<br /> <h1>Ove
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_5_1" type="integer" groupName="configuration"
-                 min="-1" max="106">
+      <parameter name="config_5_1" type="integer" groupName="configuration">
         <label>5: Level used to control association group 2 and 3</label>
         <description><![CDATA[
 Defines how to control the devices associated to group 2 and 3.<br /> <h1>Overview</h1><h4>Configuration value and Action performed on the associated device</h4> <h5><br />0 – SWITCH_OFF</h5> <p>The associated devices are switched OFF</p> <h5><br />-1 – SWITCH_ON</h5> <p>The associated devices are switched ON</p> <h5>From 1 to 99</h5> <p>The associated devices (dimmer, roller shutters) are set to the indicated level (only for devices associated to group 3)</p> <h5><br />100 – RELAY_STATUS (Default Value)</h5> <p>If the Relay 1 is ON/OFF, the associated devices are ON/OFF</p> <h5><br />101 – RELAY_STATUS_BUT_IGNORE_IF_OFF</h5> <p>If the Relay 1 is ON the associated devices are ON; if it is OFF no action is taken on the associated devices</p> <h5><br />102 – RELAY_STATUS_BUT_IGNORE_IF_ON</h5> <p>If the Relay 1 is OFF the associated devices are OFF; if it is ON no action is taken on the associated devices</p> <h5><br />103 – RELAY_OPPOSITE_BUT_IGNORE_IF_OFF</h5> <p>If the Relay 1 is ON the associated devices are OFF; if it is OFF no action is taken on the associated devices</p> <h5><br />104 – RELAY_OPPOSITE_BUT_IGNORE_IF_ON</h5> <p>If the Relay 1 is OFF the associated devices are ON; if it is ON no action is taken on the associated devices</p> <h5><br />105 – RELAY_OPPOSITE</h5> <p>If the Relay 1 is ON/OFF, the associated devices are OFF/ON</p> <h5>106 – IGNORE</h5> <p>No action is taken on the associated devices</p>
@@ -140,8 +138,7 @@ Defines how to control the devices associated to group 2 and 3.<br /> <h1>Overvi
         <default>100</default>
       </parameter>
 
-      <parameter name="config_6_1" type="integer" groupName="configuration"
-                 min="-1" max="106">
+      <parameter name="config_6_1" type="integer" groupName="configuration">
         <label>6: Level used to control association group 4 and 5.</label>
         <description><![CDATA[
 Defines how to control the devices associated to group 4 and 5.<br /> <h1>Overview</h1><h4>Configuration value and Action performed on the associated device</h4> <h5><br />0 – SWITCH_OFF</h5> <p>The associated devices are switched OFF</p> <h5><br />-1 – SWITCH_ON</h5> <p>The associated devices are switched ON</p> <h5>From 1 to 99</h5> <p>The associated devices (dimmer, roller shutters) are set to the indicated level (only for devices associated to group 3)</p> <h5><br />100 – RELAY_STATUS (Default Value)</h5> <p>If the Relay 1 is ON/OFF, the associated devices are ON/OFF</p> <h5><br />101 – RELAY_STATUS_BUT_IGNORE_IF_OFF</h5> <p>If the Relay 1 is ON the associated devices are ON; if it is OFF no action is taken on the associated devices</p> <h5><br />102 – RELAY_STATUS_BUT_IGNORE_IF_ON</h5> <p>If the Relay 1 is OFF the associated devices are OFF; if it is ON no action is taken on the associated devices</p> <h5><br />103 – RELAY_OPPOSITE_BUT_IGNORE_IF_OFF</h5> <p>If the Relay 1 is ON the associated devices are OFF; if it is OFF no action is taken on the associated devices</p> <h5><br />104 – RELAY_OPPOSITE_BUT_IGNORE_IF_ON</h5> <p>If the Relay 1 is OFF the associated devices are ON; if it is ON no action is taken on the associated devices</p> <h5><br />105 – RELAY_OPPOSITE</h5> <p>If the Relay 1 is ON/OFF, the associated devices are OFF/ON</p> <h5>106 – IGNORE</h5> <p>No action is taken on the associated devices</p>
@@ -149,8 +146,7 @@ Defines how to control the devices associated to group 4 and 5.<br /> <h1>Overvi
         <default>100</default>
       </parameter>
 
-      <parameter name="config_10_2" type="integer" groupName="configuration"
-                 min="0" max="32000">
+      <parameter name="config_10_2" type="integer" groupName="configuration">
         <label>10: Timer to switch OFF the Channel 1</label>
         <description><![CDATA[
 Defines the time after which the Channel 1 is switched OFF<br /> <h1>Overview</h1><p>0 (Default Value): Timer disabled</p> <p><br />From 1 to 32000 (seconds): After this time the relay of the Channel 1 is OFF</p>
@@ -158,8 +154,7 @@ Defines the time after which the Channel 1 is switched OFF<br /> <h1>Overview</h
         <default>0</default>
       </parameter>
 
-      <parameter name="config_11_2" type="integer" groupName="configuration"
-                 min="0" max="32000">
+      <parameter name="config_11_2" type="integer" groupName="configuration">
         <label>11: Timer to switch OFF the Channel 2</label>
         <description><![CDATA[
 Defines the time after which the Channel 2 is switched OFF<br /> <h1>Overview</h1><p>0 (Default Value): Timer disabled</p> <p><br />From 1 to 32000 (seconds): After this time the relay of the Channel 2 is OFF</p>
@@ -167,8 +162,7 @@ Defines the time after which the Channel 2 is switched OFF<br /> <h1>Overview</h
         <default>0</default>
       </parameter>
 
-      <parameter name="config_12_2" type="integer" groupName="configuration"
-                 min="0" max="32000">
+      <parameter name="config_12_2" type="integer" groupName="configuration">
         <label>12: Timer to switch ON the Channel 1</label>
         <description><![CDATA[
 Defines the time after which the Channel 1 is switched ON<br /> <h1>Overview</h1><p>0 (Default Value): Timer disabled</p> <p>From 1 to 32000 (seconds): After this time the relay of the Channel 1 is ON</p>
@@ -176,8 +170,7 @@ Defines the time after which the Channel 1 is switched ON<br /> <h1>Overview</h1
         <default>0</default>
       </parameter>
 
-      <parameter name="config_13_2" type="integer" groupName="configuration" readOnly="true"
-                 min="0" max="32000">
+      <parameter name="config_13_2" type="integer" groupName="configuration" readOnly="true">
         <label>13: Timer to switch ON the Channel 2</label>
         <description><![CDATA[
 Defines the time after which the Channel 2 is switched ON<br /> <h1>Overview</h1><p>0 (Default Value): Timer disabled</p> <p>From 1 to 32000 (seconds): After this time the relay of the Channel 2 is ON</p>

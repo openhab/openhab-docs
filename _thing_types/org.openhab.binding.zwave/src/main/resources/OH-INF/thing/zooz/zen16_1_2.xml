@@ -61,8 +61,7 @@ Multirelay<br /> <h1>Overview</h1><p><strong>Features</strong></p> <ul><li>Power
       </parameter-group>
 
       <!-- PARAMETER DEFINITIONS -->
-      <parameter name="config_1_1" type="integer" groupName="configuration"
-                 min="0" max="4">
+      <parameter name="config_1_1" type="integer" groupName="configuration">
         <label>1: On Off Status After Power Failure</label>
         <description><![CDATA[
 Set the on off status for the relays after power failure<br /> <h1>Overview</h1><p><br /></p>
@@ -77,8 +76,7 @@ Set the on off status for the relays after power failure<br /> <h1>Overview</h1>
         </options>
       </parameter>
 
-      <parameter name="config_2_1" type="integer" groupName="configuration"
-                 min="0" max="3">
+      <parameter name="config_2_1" type="integer" groupName="configuration">
         <label>2: Switch Type for Relay 1 (Sw1)</label>
         <description><![CDATA[
 Choose the wall switch type you want to connect to the Sw1 terminal<br /> <h1>Overview</h1><p>Press and hold the Z-Wave button for 5 seconds to change mode manually</p>
@@ -92,8 +90,7 @@ Choose the wall switch type you want to connect to the Sw1 terminal<br /> <h1>Ov
         </options>
       </parameter>
 
-      <parameter name="config_3_1" type="integer" groupName="configuration"
-                 min="0" max="3">
+      <parameter name="config_3_1" type="integer" groupName="configuration">
         <label>3: Switch Type for Relay 2 (Sw2)</label>
         <description><![CDATA[
 Choose the wall switch type you want to connect to the Sw2 terminal<br /> <h1>Overview</h1><p>Click-click’n’hold the Z-Wave button for 5 seconds to change mode manually.</p>
@@ -107,8 +104,7 @@ Choose the wall switch type you want to connect to the Sw2 terminal<br /> <h1>Ov
         </options>
       </parameter>
 
-      <parameter name="config_4_1" type="integer" groupName="configuration"
-                 min="0" max="3">
+      <parameter name="config_4_1" type="integer" groupName="configuration">
         <label>4: Switch Type for Relay 3 (Sw3)</label>
         <description><![CDATA[
 Choose the wall switch type you want to connect to the Sw3 terminal.<br /> <h1>Overview</h1><p>Click-click-click’n’hold the Z-Wave button for 5 seconds to change mode manually</p>
@@ -122,8 +118,7 @@ Choose the wall switch type you want to connect to the Sw3 terminal.<br /> <h1>O
         </options>
       </parameter>
 
-      <parameter name="config_5_1" type="integer" groupName="configuration"
-                 min="0" max="3">
+      <parameter name="config_5_1" type="integer" groupName="configuration">
         <label>5: LED Indicator Control</label>
         <description><![CDATA[
 LED Indicator Control<br /> <h1>Overview</h1><p>Choose if you want the LED indicator to turn on when any of the relays are on or if all of them are off, or if you want it to remain on or off at all times.</p> <p>Click the Z-Wave button 5 times quickly to change mode manually</p>
@@ -209,8 +204,7 @@ Auto Turn-On Timer for Relay 3<br /> <h1>Overview</h1><p>Use this parameter to s
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_12_1" type="integer" groupName="configuration"
-                 min="0" max="2">
+      <parameter name="config_12_1" type="integer" groupName="configuration">
         <label>12: Enable/Disable Manual Control for Sw1</label>
         <description><![CDATA[
 Enable/Disable Manual Control for Sw1<br /> <h1>Overview</h1><p>Enable or disable physical on/off control of Relay 1 from the wall switch connected to Sw1 terminal. If disabled, you’ll only be able to control the connected device via Z-Wave.</p>
@@ -223,8 +217,7 @@ Enable/Disable Manual Control for Sw1<br /> <h1>Overview</h1><p>Enable or disabl
         </options>
       </parameter>
 
-      <parameter name="config_13_1" type="integer" groupName="configuration"
-                 min="0" max="2">
+      <parameter name="config_13_1" type="integer" groupName="configuration">
         <label>13: Enable/Disable Manual Control for Sw2</label>
         <description><![CDATA[
 Enable/Disable Manual Control for Sw2<br /> <h1>Overview</h1><p>Enable or disable physical on/off control of Relay 2 from the wall switch connected to Sw2 terminal. If disabled, you’ll only be able to control the connected device via Z-Wave.</p>
@@ -237,8 +230,7 @@ Enable/Disable Manual Control for Sw2<br /> <h1>Overview</h1><p>Enable or disabl
         </options>
       </parameter>
 
-      <parameter name="config_14_1" type="integer" groupName="configuration"
-                 min="0" max="2">
+      <parameter name="config_14_1" type="integer" groupName="configuration">
         <label>14: Enable/Disable Manual Control for Sw3</label>
         <description><![CDATA[
 Enable/Disable Manual Control for Sw3<br /> <h1>Overview</h1><p>Enable or disable physical on/off control of Relay 3 from the wall switch connected to Sw3 terminal. If disabled, you’ll only be able to control the connected device via Z-Wave.</p>
@@ -251,8 +243,7 @@ Enable/Disable Manual Control for Sw3<br /> <h1>Overview</h1><p>Enable or disabl
         </options>
       </parameter>
 
-      <parameter name="config_15_1" type="integer" groupName="configuration"
-                 min="0" max="2">
+      <parameter name="config_15_1" type="integer" groupName="configuration">
         <label>15: Auto Timer-Off Timer Unit for Relay 1</label>
         <description><![CDATA[
 Use this parameter to choose between seconds, minutes, or hours to be used as the auto timer-off unit for Relay 1<br /> <h1>Overview</h1><p><br /></p>
@@ -265,8 +256,7 @@ Use this parameter to choose between seconds, minutes, or hours to be used as th
         </options>
       </parameter>
 
-      <parameter name="config_16_1" type="integer" groupName="configuration"
-                 min="0" max="2">
+      <parameter name="config_16_1" type="integer" groupName="configuration">
         <label>16: Auto Timer-On Timer Unit for Relay 1</label>
         <description>Use this parameter to choose between seconds, minutes, or hours to be used as the auto timer-on unit for Relay 1</description>
         <default>0</default>
@@ -277,8 +267,7 @@ Use this parameter to choose between seconds, minutes, or hours to be used as th
         </options>
       </parameter>
 
-      <parameter name="config_17_1" type="integer" groupName="configuration"
-                 min="0" max="2">
+      <parameter name="config_17_1" type="integer" groupName="configuration">
         <label>17: Auto Timer-Off Timer Unit for Relay 2</label>
         <description>Use this parameter to choose between seconds, minutes, or hours to be used as the auto timer-off unit for Relay 2</description>
         <default>0</default>
@@ -289,8 +278,7 @@ Use this parameter to choose between seconds, minutes, or hours to be used as th
         </options>
       </parameter>
 
-      <parameter name="config_18_1" type="integer" groupName="configuration"
-                 min="0" max="2">
+      <parameter name="config_18_1" type="integer" groupName="configuration">
         <label>18: Auto Timer-On Timer Unit for Relay 2</label>
         <description><![CDATA[
 Use this parameter to choose between seconds, minutes, or hours to be used as the auto timer-on unit for Relay 2<br /> <h1>Overview</h1><p><br /></p>
@@ -303,8 +291,7 @@ Use this parameter to choose between seconds, minutes, or hours to be used as th
         </options>
       </parameter>
 
-      <parameter name="config_19_1" type="integer" groupName="configuration"
-                 min="0" max="2">
+      <parameter name="config_19_1" type="integer" groupName="configuration">
         <label>19: Auto Timer-Off Timer Unit for Relay 3</label>
         <description>Use this parameter to choose between seconds, minutes, or hours to be used as the auto timer-off unit for Relay 3</description>
         <default>0</default>
@@ -315,8 +302,7 @@ Use this parameter to choose between seconds, minutes, or hours to be used as th
         </options>
       </parameter>
 
-      <parameter name="config_20_1" type="integer" groupName="configuration"
-                 min="0" max="2">
+      <parameter name="config_20_1" type="integer" groupName="configuration">
         <label>20: Auto Timer-On Timer Unit for Relay 3</label>
         <description>Use this parameter to choose between seconds, minutes, or hours to be used as the auto timer-on unit for Relay 3</description>
         <default>0</default>

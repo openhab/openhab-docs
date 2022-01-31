@@ -261,8 +261,7 @@ To set which notification would be sent to association group 4<br /> <h1>Overvie
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_84_4" type="integer" groupName="configuration"
-                 min="0" max="593044313">
+      <parameter name="config_84_4" type="integer" groupName="configuration">
         <label>84: Night light on/off</label>
         <description><![CDATA[
 Time to turn the light on and off<br /> <h1>Overview</h1><p>value 1 = (range of 0 - 23) // ON (hour) value 2 = (range of 0 - 59) // ON (minute) value 3 = (range of 0 - 23) // OFF (hour) value 4 = (range of 0 - 59) // OFF (minute)   It would be best to convert each value into HEX and input them like this:   Parameter 84 = (value 1)(value 2)(value 3)(value 4)   Using the default values it would look like this = (12)(00)(08)(00) converted to decimal is = 301991936 </p>
@@ -281,16 +280,14 @@ Time to turn the light on and off<br /> <h1>Overview</h1><p>value 1 = (range of 
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_91_2" type="integer" groupName="configuration"
-                 min="-32767" max="32768">
+      <parameter name="config_91_2" type="integer" groupName="configuration">
         <label>91: Set the threshold value of wattage.</label>
         <description>Set the threshold value of wattage.</description>
         <default>25</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_92_1" type="integer" groupName="configuration"
-                 min="0" max="100">
+      <parameter name="config_92_1" type="integer" groupName="configuration">
         <label>92: Set the threshold percent power</label>
         <description>Set the threshold value of wattage.</description>
         <default>5</default>
@@ -305,8 +302,7 @@ Time to turn the light on and off<br /> <h1>Overview</h1><p>value 1 = (range of 
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_101_4" type="integer" groupName="configuration"
-                 min="0" max="1776399">
+      <parameter name="config_101_4" type="integer" groupName="configuration">
         <label>101: Set group 1 reports</label>
         <description><![CDATA[
 To set which reports need to be sent in Report group 1<br /> <h1>Overview</h1><p>Sum the values of the options you want:</p> <p>1 = Meter REPORT (kWh) of whole Channels</p> <p>2 = Meter REPORT (Watt) of whole Channels</p> <p>4 = Meter REPORT (V) of whole Channels</p> <p>8 = Meter REPORT (A) of whole Channels</p> <p>256 = Multi Channel Meter Report (W) on Channel 1</p> <p>512 = Multi Channel Meter Report (W) on Channel 2</p> <p>2048 = Multi Channel Meter Report (kWh) on Channel 1</p> <p>4096 = Multi Channel Meter Report (kWh) on Channel 2</p> <p>65536 = Multi Channel Meter Report (V) on Channel 1</p> <p>131072 = Multi Channel Meter Report (V) on Channel 2</p> <p>524288 = Multi Channel Meter Report (A) on Channel 1</p> <p>1048576 = Multi Channel Meter Report (A) on Channel 2</p> <p>1776399 = ALL ABOVE OPTIONS</p>
@@ -328,8 +324,7 @@ To set which reports need to be sent in Report group 1<br /> <h1>Overview</h1><p
         </options>
       </parameter>
 
-      <parameter name="config_102_4" type="integer" groupName="configuration"
-                 min="0" max="1776399">
+      <parameter name="config_102_4" type="integer" groupName="configuration">
         <label>102: To set which reports will be sent in Report g2</label>
         <description><![CDATA[
 To set which reports will be sent in Report group 2.<br /> <h1>Overview</h1><p><br />Sum the values of the options you want:</p> <p>1 = Meter REPORT (kWh) of whole Channels</p> <p>2 = Meter REPORT (Watt) of whole Channels</p> <p>4 = Meter REPORT (V) of whole Channels</p> <p>8 = Meter REPORT (A) of whole Channels</p> <p>256 = Multi Channel Meter Report (W) on Channel 1</p> <p>512 = Multi Channel Meter Report (W) on Channel 2</p> <p>2048 = Multi Channel Meter Report (kWh) on Channel 1</p> <p>4096 = Multi Channel Meter Report (kWh) on Channel 2</p> <p>65536 = Multi Channel Meter Report (V) on Channel 1</p> <p>131072 = Multi Channel Meter Report (V) on Channel 2</p> <p>524288 = Multi Channel Meter Report (A) on Channel 1</p> <p>1048576 = Multi Channel Meter Report (A) on Channel 2</p> <p>1776399 = ALL ABOVE OPTIONS</p>
@@ -351,8 +346,7 @@ To set which reports will be sent in Report group 2.<br /> <h1>Overview</h1><p><
         </options>
       </parameter>
 
-      <parameter name="config_103_4" type="integer" groupName="configuration"
-                 min="0" max="1776399">
+      <parameter name="config_103_4" type="integer" groupName="configuration">
         <label>103: To set which reports will be sent in Report g3</label>
         <description><![CDATA[
 To set which reports need to be sent in Report group 3.<br /> <h1>Overview</h1><p>Sum the values of the options you want:</p> <p>1 = Meter REPORT (kWh) of whole Channels</p> <p>2 = Meter REPORT (Watt) of whole Channels</p> <p>4 = Meter REPORT (V) of whole Channels</p> <p>8 = Meter REPORT (A) of whole Channels</p> <p>256 = Multi Channel Meter Report (W) on Channel 1</p> <p>512 = Multi Channel Meter Report (W) on Channel 2</p> <p>2048 = Multi Channel Meter Report (kWh) on Channel 1</p> <p>4096 = Multi Channel Meter Report (kWh) on Channel 2</p> <p>65536 = Multi Channel Meter Report (V) on Channel 1</p> <p>131072 = Multi Channel Meter Report (V) on Channel 2</p> <p>524288 = Multi Channel Meter Report (A) on Channel 1</p> <p>1048576 = Multi Channel Meter Report (A) on Channel 2</p> <p>1776399 = ALL ABOVE OPTIONS</p>
@@ -382,24 +376,21 @@ To set which reports need to be sent in Report group 3.<br /> <h1>Overview</h1><
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_111_4" type="integer" groupName="configuration"
-                 min="1" max="2147483647">
+      <parameter name="config_111_4" type="integer" groupName="configuration">
         <label>111: Set the interval of automatic report for Report G1</label>
         <description>Set the interval of automatic report for Report group 1.</description>
         <default>10</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_112_4" type="integer" groupName="configuration"
-                 min="1" max="2147483647">
+      <parameter name="config_112_4" type="integer" groupName="configuration">
         <label>112: Set the interval of automatic report for Report G2</label>
         <description>Set the interval of automatic report for Report group 2.</description>
         <default>600</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_113_4" type="integer" groupName="configuration"
-                 min="1" max="2147483647">
+      <parameter name="config_113_4" type="integer" groupName="configuration">
         <label>113: Set the interval of automatic report for Report G3</label>
         <description>Set the interval of automatic report for Report group 3.</description>
         <default>600</default>

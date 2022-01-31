@@ -54,8 +54,7 @@ Lamp Module<br /> <h1>Overview</h1><p>300 Watt Scene Capable Plug-In Lamp Dimmin
       </parameter-group>
 
       <!-- PARAMETER DEFINITIONS -->
-      <parameter name="config_1_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_1_1" type="integer" groupName="configuration">
         <label>1: Fade On Time</label>
         <description><![CDATA[
 Time it takes to fade on<br /> <h1>Overview</h1><p>0 is instant on 1-127 is in seconds 128-253 is in minutes</p>
@@ -64,8 +63,7 @@ Time it takes to fade on<br /> <h1>Overview</h1><p>0 is instant on 1-127 is in s
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_2_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_2_1" type="integer" groupName="configuration">
         <label>2: Fade off time</label>
         <description><![CDATA[
 Time it takes to fade off<br /> <h1>Overview</h1><p>0 is instant on 1-127 is in seconds 128-253 is in minutes</p>
@@ -74,15 +72,13 @@ Time it takes to fade off<br /> <h1>Overview</h1><p>0 is instant on 1-127 is in 
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_3_1" type="integer" groupName="configuration"
-                 min="0" max="100">
+      <parameter name="config_3_1" type="integer" groupName="configuration">
         <label>3: Minimum Light Level</label>
         <default>10</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_4_1" type="integer" groupName="configuration"
-                 min="0" max="100">
+      <parameter name="config_4_1" type="integer" groupName="configuration">
         <label>4: Maximum Light Level</label>
         <default>100</default>
         <limitToOptions>false</limitToOptions>

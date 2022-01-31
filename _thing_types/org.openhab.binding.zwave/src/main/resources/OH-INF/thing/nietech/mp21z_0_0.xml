@@ -47,8 +47,7 @@ Z-Wave Mini Plug<br /> <h1>Overview</h1><p>Outdoor AC Plug</p><p>Key Features:</
       </parameter-group>
 
       <!-- PARAMETER DEFINITIONS -->
-      <parameter name="config_1_1" type="integer" groupName="configuration"
-                 min="0" max="2">
+      <parameter name="config_1_1" type="integer" groupName="configuration">
         <label>1: LED Indicator</label>
         <description><![CDATA[
 Status LED Configuration<br /> <h1>Overview</h1><p>Value: 00(default) outlet on,led on.</p> <p>Value: 01 outlet on,led off.</p> <p>Value: 02 led off, led no work.</p>

@@ -101,22 +101,19 @@ Five-channel relay<br /> <h1>Overview</h1><p>The Relay Switch quinto with roller
       </parameter-group>
 
       <!-- PARAMETER DEFINITIONS -->
-      <parameter name="config_1_1" type="integer" groupName="configuration" readOnly="true"
-                 min="0" max="9">
+      <parameter name="config_1_1" type="integer" groupName="configuration" readOnly="true">
         <label>1: Frequency Region</label>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_2_1" type="integer" groupName="configuration" readOnly="true"
-                 min="0" max="1">
+      <parameter name="config_2_1" type="integer" groupName="configuration" readOnly="true">
         <label>2: Inclusion / Exclusion Mode</label>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_3_4" type="integer" groupName="configuration" readOnly="true"
-                 min="-2147483646" max="2147483647">
+      <parameter name="config_3_4" type="integer" groupName="configuration" readOnly="true">
         <label>3: Hardware and Software Versions</label>
         <description><![CDATA[
 <br /> <h1>Overview</h1><p><br /></p>
@@ -125,105 +122,91 @@ Five-channel relay<br /> <h1>Overview</h1><p>The Relay Switch quinto with roller
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_4_4" type="integer" groupName="configuration" readOnly="true"
-                 min="-2147483646" max="2147483647">
+      <parameter name="config_4_4" type="integer" groupName="configuration" readOnly="true">
         <label>4: Energy Consumption</label>
         <description>Total consumption</description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_7_1" type="integer" groupName="configuration"
-                 min="0" max="1">
+      <parameter name="config_7_1" type="integer" groupName="configuration">
         <label>7: Relay 1 Output</label>
         <description>NO or NC mode</description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_8_1" type="integer" groupName="configuration"
-                 min="0" max="1">
+      <parameter name="config_8_1" type="integer" groupName="configuration">
         <label>8: Relay 2 Output</label>
         <description>NO or NC mode</description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_9_1" type="integer" groupName="configuration"
-                 min="0" max="1">
+      <parameter name="config_9_1" type="integer" groupName="configuration">
         <label>9: Relay 3 Output</label>
         <description>NO or NC mode</description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_10_1" type="integer" groupName="configuration"
-                 min="0" max="1">
+      <parameter name="config_10_1" type="integer" groupName="configuration">
         <label>10: Relay 4 Output</label>
         <description>NO or NC mode</description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_11_1" type="integer" groupName="configuration"
-                 min="0" max="1">
+      <parameter name="config_11_1" type="integer" groupName="configuration">
         <label>11: Relay 5 Output</label>
         <description>NO or NC mode</description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_12_2" type="integer" groupName="configuration"
-                 min="0" max="1100">
+      <parameter name="config_12_2" type="integer" groupName="configuration">
         <label>12: Power Load Relay 1</label>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_13_2" type="integer" groupName="configuration"
-                 min="0" max="1100">
+      <parameter name="config_13_2" type="integer" groupName="configuration">
         <label>13: Power Load Relay 2</label>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_14_2" type="integer" groupName="configuration"
-                 min="0" max="1100">
+      <parameter name="config_14_2" type="integer" groupName="configuration">
         <label>14: Power Load Relay 3</label>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_15_2" type="integer" groupName="configuration"
-                 min="0" max="1100">
+      <parameter name="config_15_2" type="integer" groupName="configuration">
         <label>15: Power Load Relay 4</label>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_16_2" type="integer" groupName="configuration"
-                 min="0" max="1100">
+      <parameter name="config_16_2" type="integer" groupName="configuration">
         <label>16: Power Load Relay 5</label>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_19_1" type="integer" groupName="configuration"
-                 min="0" max="1">
+      <parameter name="config_19_1" type="integer" groupName="configuration">
         <label>19: Time correction by controller</label>
         <default>1</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_21_1" type="integer" groupName="configuration"
-                 min="1" max="7">
+      <parameter name="config_21_1" type="integer" groupName="configuration">
         <label>21: Week Day</label>
         <default>1</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_22_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_22_1" type="integer" groupName="configuration">
         <label>22: Time</label>
         <description><![CDATA[
 Hour and Minutes<br /> <h1>Overview</h1><p><br /></p>
@@ -232,148 +215,127 @@ Hour and Minutes<br /> <h1>Overview</h1><p><br /></p>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_41_1" type="integer" groupName="configuration"
-                 min="0" max="4">
+      <parameter name="config_41_1" type="integer" groupName="configuration">
         <label>41: Hold control mode for input S1</label>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_42_1" type="integer" groupName="configuration"
-                 min="0" max="4">
+      <parameter name="config_42_1" type="integer" groupName="configuration">
         <label>42: Hold control mode for input S2</label>
         <default>2</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_43_1" type="integer" groupName="configuration"
-                 min="0" max="4">
+      <parameter name="config_43_1" type="integer" groupName="configuration">
         <label>43: Hold control mode for input S3</label>
         <default>2</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_44_1" type="integer" groupName="configuration"
-                 min="0" max="4">
+      <parameter name="config_44_1" type="integer" groupName="configuration">
         <label>44: Hold control mode for input S4</label>
         <default>2</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_45_1" type="integer" groupName="configuration"
-                 min="0" max="4">
+      <parameter name="config_45_1" type="integer" groupName="configuration">
         <label>45: Hold control mode for input S5</label>
         <default>2</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_51_1" type="integer" groupName="configuration"
-                 min="0" max="5">
+      <parameter name="config_51_1" type="integer" groupName="configuration">
         <label>51: Click control mode for input S1</label>
         <default>1</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_52_1" type="integer" groupName="configuration"
-                 min="0" max="5">
+      <parameter name="config_52_1" type="integer" groupName="configuration">
         <label>52: Click control mode for input S2</label>
         <default>1</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_53_1" type="integer" groupName="configuration"
-                 min="0" max="5">
+      <parameter name="config_53_1" type="integer" groupName="configuration">
         <label>53: Click control mode for input S3</label>
         <default>1</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_54_1" type="integer" groupName="configuration"
-                 min="0" max="5">
+      <parameter name="config_54_1" type="integer" groupName="configuration">
         <label>54: Click control mode for input S4</label>
         <default>1</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_55_1" type="integer" groupName="configuration"
-                 min="0" max="5">
+      <parameter name="config_55_1" type="integer" groupName="configuration">
         <label>55: Click control mode for input S1</label>
         <default>1</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_61_1" type="integer" groupName="configuration"
-                 min="0" max="5">
+      <parameter name="config_61_1" type="integer" groupName="configuration">
         <label>61: Relay 1 control external source</label>
         <default>1</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_62_1" type="integer" groupName="configuration"
-                 min="0" max="5">
+      <parameter name="config_62_1" type="integer" groupName="configuration">
         <label>62: Relay 2 control external source</label>
         <default>2</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_63_1" type="integer" groupName="configuration"
-                 min="0" max="5">
+      <parameter name="config_63_1" type="integer" groupName="configuration">
         <label>63: Relay 3 control external source</label>
         <default>3</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_64_1" type="integer" groupName="configuration"
-                 min="0" max="5">
+      <parameter name="config_64_1" type="integer" groupName="configuration">
         <label>64: Relay 4 control external source</label>
         <default>4</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_65_1" type="integer" groupName="configuration"
-                 min="0" max="5">
+      <parameter name="config_65_1" type="integer" groupName="configuration">
         <label>65: Relay 5 control external source</label>
         <default>5</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_71_2" type="integer" groupName="configuration"
-                 min="-32767" max="32768">
+      <parameter name="config_71_2" type="integer" groupName="configuration">
         <label>71: Relay 1 control external source</label>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_72_2" type="integer" groupName="configuration"
-                 min="-32767" max="32768">
+      <parameter name="config_72_2" type="integer" groupName="configuration">
         <label>72: Relay 2 control external source</label>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_73_2" type="integer" groupName="configuration"
-                 min="-32767" max="32768">
+      <parameter name="config_73_2" type="integer" groupName="configuration">
         <label>73: Relay 3 control external source</label>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_74_2" type="integer" groupName="configuration"
-                 min="-32767" max="32768">
+      <parameter name="config_74_2" type="integer" groupName="configuration">
         <label>74: Relay 4 control external source</label>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_75_2" type="integer" groupName="configuration"
-                 min="-32767" max="32768">
+      <parameter name="config_75_2" type="integer" groupName="configuration">
         <label>75: Relay 5 control external source</label>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_101_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_101_1" type="integer" groupName="configuration">
         <label>101: Group 1 relay inverse mode</label>
         <description><![CDATA[
 <br /> <h1>Overview</h1><p>Allowed values: 0, 12, 13, 14, 15, 21, 23, 24, 25, 31, 32, 34, 35, 41, 42, 43, 45, 51, 52, 53, 54<br /></p>
@@ -381,8 +343,7 @@ Hour and Minutes<br /> <h1>Overview</h1><p><br /></p>
         <default>0</default>
       </parameter>
 
-      <parameter name="config_102_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_102_1" type="integer" groupName="configuration">
         <label>102: Group 2 relay inverse mode</label>
         <description><![CDATA[
 <br /> <h1>Overview</h1><p>Allowed values: 0, 12, 13, 14, 15, 21, 23, 24, 25, 31, 32, 34, 35, 41, 42, 43, 45, 51, 52, 53, 54</p>
@@ -390,8 +351,7 @@ Hour and Minutes<br /> <h1>Overview</h1><p><br /></p>
         <default>0</default>
       </parameter>
 
-      <parameter name="config_111_4" type="integer" groupName="configuration"
-                 min="0" max="5912359">
+      <parameter name="config_111_4" type="integer" groupName="configuration">
         <label>111: Relay control scenario 1</label>
         <description><![CDATA[
 <br /> <h1>Overview</h1><p>Allowed values: 0, 1000000 to 5912359</p>
@@ -400,8 +360,7 @@ Hour and Minutes<br /> <h1>Overview</h1><p><br /></p>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_112_4" type="integer" groupName="configuration"
-                 min="0" max="5912359">
+      <parameter name="config_112_4" type="integer" groupName="configuration">
         <label>112: Relay control scenario 2</label>
         <description><![CDATA[
 <br /> <h1>Overview</h1><p>Allowed values: 0, 1000000 to 5912359<br /></p>
@@ -410,8 +369,7 @@ Hour and Minutes<br /> <h1>Overview</h1><p><br /></p>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_113_4" type="integer" groupName="configuration"
-                 min="0" max="5912359">
+      <parameter name="config_113_4" type="integer" groupName="configuration">
         <label>113: Relay control scenario 3</label>
         <description><![CDATA[
 <br /> <h1>Overview</h1><p>Allowed values: 0, 1000000 to 5912359<br /></p>
@@ -420,8 +378,7 @@ Hour and Minutes<br /> <h1>Overview</h1><p><br /></p>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_114_4" type="integer" groupName="configuration"
-                 min="0" max="5912359">
+      <parameter name="config_114_4" type="integer" groupName="configuration">
         <label>114: Relay control scenario 4</label>
         <description><![CDATA[
 <br /> <h1>Overview</h1><p>Allowed values: 0, 1000000 to 5912359<br /></p>
@@ -430,8 +387,7 @@ Hour and Minutes<br /> <h1>Overview</h1><p><br /></p>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_115_4" type="integer" groupName="configuration"
-                 min="0" max="5912359">
+      <parameter name="config_115_4" type="integer" groupName="configuration">
         <label>115: Relay control scenario 5</label>
         <description><![CDATA[
 <br /> <h1>Overview</h1><p>Allowed values: 0, 1000000 to 5912359<br /></p>
@@ -440,8 +396,7 @@ Hour and Minutes<br /> <h1>Overview</h1><p><br /></p>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_116_4" type="integer" groupName="configuration"
-                 min="0" max="5912359">
+      <parameter name="config_116_4" type="integer" groupName="configuration">
         <label>116: Relay control scenario 6</label>
         <description><![CDATA[
 <br /> <h1>Overview</h1><p>Allowed values: 0, 1000000 to 5912359<br /></p>
@@ -450,8 +405,7 @@ Hour and Minutes<br /> <h1>Overview</h1><p><br /></p>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_117_4" type="integer" groupName="configuration"
-                 min="0" max="5912359">
+      <parameter name="config_117_4" type="integer" groupName="configuration">
         <label>117: Relay control scenario 7</label>
         <description><![CDATA[
 <br /> <h1>Overview</h1><p>Allowed values: 0, 1000000 to 5912359<br /></p>
@@ -460,8 +414,7 @@ Hour and Minutes<br /> <h1>Overview</h1><p><br /></p>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_118_4" type="integer" groupName="configuration"
-                 min="0" max="5912359">
+      <parameter name="config_118_4" type="integer" groupName="configuration">
         <label>118: Relay control scenario 8</label>
         <description><![CDATA[
 <br /> <h1>Overview</h1><p>Allowed values: 0, 1000000 to 5912359<br /></p>
@@ -470,8 +423,7 @@ Hour and Minutes<br /> <h1>Overview</h1><p><br /></p>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_119_4" type="integer" groupName="configuration"
-                 min="0" max="5912359">
+      <parameter name="config_119_4" type="integer" groupName="configuration">
         <label>119: Relay control scenario 9</label>
         <description><![CDATA[
 <br /> <h1>Overview</h1><p>Allowed values: 0, 1000000 to 5912359<br /></p>
@@ -480,8 +432,7 @@ Hour and Minutes<br /> <h1>Overview</h1><p><br /></p>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_120_4" type="integer" groupName="configuration"
-                 min="0" max="5912359">
+      <parameter name="config_120_4" type="integer" groupName="configuration">
         <label>120: Relay control scenario 10</label>
         <description><![CDATA[
 <br /> <h1>Overview</h1><p>Allowed values: 0, 1000000 to 5912359<br /></p>
@@ -490,52 +441,45 @@ Hour and Minutes<br /> <h1>Overview</h1><p><br /></p>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_141_1" type="integer" groupName="configuration"
-                 min="10" max="120">
+      <parameter name="config_141_1" type="integer" groupName="configuration">
         <label>141: Consumption meter</label>
         <description>Consecutive report interval</description>
         <default>10</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_142_1" type="integer" groupName="configuration"
-                 min="0" max="1">
+      <parameter name="config_142_1" type="integer" groupName="configuration">
         <label>142: Consumption change report</label>
         <description>Report to send to controller</description>
         <default>1</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_171_1" type="integer" groupName="configuration"
-                 min="0" max="2">
+      <parameter name="config_171_1" type="integer" groupName="configuration">
         <label>171: Associations mode for external input S1</label>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_172_1" type="integer" groupName="configuration"
-                 min="0" max="2">
+      <parameter name="config_172_1" type="integer" groupName="configuration">
         <label>172: Associations mode for external input S2</label>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_173_1" type="integer" groupName="configuration"
-                 min="0" max="2">
+      <parameter name="config_173_1" type="integer" groupName="configuration">
         <label>173: Associations mode for external input S3</label>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_174_1" type="integer" groupName="configuration"
-                 min="0" max="2">
+      <parameter name="config_174_1" type="integer" groupName="configuration">
         <label>174: Associations mode for external input S4</label>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_175_1" type="integer" groupName="configuration"
-                 min="0" max="2">
+      <parameter name="config_175_1" type="integer" groupName="configuration">
         <label>175: Associations mode for external input S5</label>
         <default>0</default>
         <limitToOptions>false</limitToOptions>

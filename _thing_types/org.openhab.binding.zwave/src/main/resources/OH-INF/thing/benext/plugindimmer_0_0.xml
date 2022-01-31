@@ -60,8 +60,7 @@ Plug-in Dimmer<br /> <h1>Overview</h1><p>Basic operations</p> <ul><li>The Plug-i
       </parameter-group>
 
       <!-- PARAMETER DEFINITIONS -->
-      <parameter name="config_1_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_1_1" type="integer" groupName="configuration">
         <label>1: Reset to factory settings</label>
         <description>Set all configuration values to default values (factory settings).</description>
         <default>0</default>
@@ -81,8 +80,7 @@ Enable dimming<br /> <h1>Overview</h1><p>This parameter is used to enable the di
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_6_2" type="integer" groupName="configuration"
-                 min="25" max="150">
+      <parameter name="config_6_2" type="integer" groupName="configuration">
         <label>6: Maximum powerload</label>
         <description><![CDATA[
 Maximum powerload<br /> <h1>Overview</h1><p>The maximum powerload in watts when light is turned on, when measured higher then this value the Plugin Dimmer is automatically stops with dimming or is turned off.</p>
@@ -91,8 +89,7 @@ Maximum powerload<br /> <h1>Overview</h1><p>The maximum powerload in watts when 
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_7_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_7_1" type="integer" groupName="configuration">
         <label>7: Dimming speed</label>
         <description><![CDATA[
 Dimming speed<br /> <h1>Overview</h1><p>The speed of dimming when activated (manual and RF). Dim speed is 1% per value (* 10 ms)</p>
@@ -101,8 +98,7 @@ Dimming speed<br /> <h1>Overview</h1><p>The speed of dimming when activated (man
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_8_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_8_1" type="integer" groupName="configuration">
         <label>8: Fading up speed</label>
         <description><![CDATA[
 Fading up speed<br /> <h1>Overview</h1><p>The speed of fading up when activated (manual and RF). Fade speed is 1% per value (* 10 ms)</p>
@@ -111,8 +107,7 @@ Fading up speed<br /> <h1>Overview</h1><p>The speed of fading up when activated 
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_11_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_11_1" type="integer" groupName="configuration">
         <label>11: Auto meter report: percentage</label>
         <description><![CDATA[
 Auto meter report: percentage<br /> <h1>Overview</h1><p>A percentage that an energy value must be different compared to a previous sent value before an unsolicited meter report is sent.</p> <p>Minimum value = 1%  Maximum value = 100%</p>
@@ -121,8 +116,7 @@ Auto meter report: percentage<br /> <h1>Overview</h1><p>A percentage that an ene
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_12_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_12_1" type="integer" groupName="configuration">
         <label>12: Auto meter report: watt</label>
         <description><![CDATA[
 Auto meter report: watt<br /> <h1>Overview</h1><p>A watt value that an energy value must be different compared to a previous sent value before an unsolicited meter report is sent.</p> <p>Minimum value = 5 watt  Maximum value = 255 watt</p>
@@ -131,8 +125,7 @@ Auto meter report: watt<br /> <h1>Overview</h1><p>A watt value that an energy va
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_13_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_13_1" type="integer" groupName="configuration">
         <label>13: Auto meter report: time</label>
         <description><![CDATA[
 Auto meter report: time<br /> <h1>Overview</h1><p>A time value that has to be passed compared to a previous sent value before a unsolicited meter report is sent.</p> <p>Minimum value = 10 seconds  Maximum value = 255 seconds</p>
@@ -141,8 +134,7 @@ Auto meter report: time<br /> <h1>Overview</h1><p>A time value that has to be pa
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_14_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_14_1" type="integer" groupName="configuration">
         <label>14: Last known status</label>
         <description><![CDATA[
 Last known status<br /> <h1>Overview</h1><p>What to do with lamp status when power applied. </p> <p>If 0x00: Always switch light off when power applied. </p> <p>If &gt; 0x00: Switch lamp on/off depending on last known lampstatus before power was disconnected.</p>
@@ -151,8 +143,7 @@ Last known status<br /> <h1>Overview</h1><p>What to do with lamp status when pow
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_15_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_15_1" type="integer" groupName="configuration">
         <label>15: Fading down speed</label>
         <description><![CDATA[
 Fading down speed<br /> <h1>Overview</h1><p>The speed of fading down when activated (manual and RF). Fade speed is 1% per value (* 10 ms)</p>

@@ -108,8 +108,7 @@ Fan Coil Thermostat<br /> <h1>Overview</h1><p>MCOHome Fan Coil Thermostat is a Z
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_3_2" type="integer" groupName="configuration"
-                 min="3" max="1000">
+      <parameter name="config_3_2" type="integer" groupName="configuration">
         <label>3: Upload temperature difference</label>
         <description><![CDATA[
 Upload temperature difference<br /> <h1>Overview</h1><p>Base on 0.1C unit. 5 by default. 5 * 0.1C = 0.5C, 0x0003 to 0x03E8</p>
@@ -118,8 +117,7 @@ Upload temperature difference<br /> <h1>Overview</h1><p>Base on 0.1C unit. 5 by 
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_4_2" type="integer" groupName="configuration"
-                 min="-32767" max="32768">
+      <parameter name="config_4_2" type="integer" groupName="configuration">
         <label>4: Upload time interval</label>
         <description><![CDATA[
 Upload time interval in seconds<br /> <h1>Overview</h1><p>Base is 1s unit. It is suggested to be set above 30s, 0x000A to 0xFFFF</p>

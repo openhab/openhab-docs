@@ -77,8 +77,7 @@ Air Quality Sensor<br /> <h1>Overview</h1><p>Z-Wave sensor in an ultra slim desi
       </parameter-group>
 
       <!-- PARAMETER DEFINITIONS -->
-      <parameter name="config_1_1" type="integer" groupName="configuration"
-                 min="0" max="50">
+      <parameter name="config_1_1" type="integer" groupName="configuration">
         <label>1: Temperature on-change reporting</label>
         <description><![CDATA[
 Temperature on-change reporting<br /> <h1>Overview</h1><p>0x00 No on-change reporting (only time-based reports).</p> <p>0x01 - 0x32 report if temperature changed by delta = 0,1°C - 5,0°C</p>
@@ -89,8 +88,7 @@ Temperature on-change reporting<br /> <h1>Overview</h1><p>0x00 No on-change repo
         </options>
       </parameter>
 
-      <parameter name="config_2_1" type="integer" groupName="configuration"
-                 min="0" max="10">
+      <parameter name="config_2_1" type="integer" groupName="configuration">
         <label>2: Humidity on-change reporting</label>
         <description><![CDATA[
 Humidity on-change reporting<br /> <h1>Overview</h1><p>0x00 No on-change reporting (only time-based reports)</p> <p>0x01 - 0x0A report if humidity changed by delta = 1% ...10%</p>
@@ -142,8 +140,7 @@ Resolution Humidity<br /> <h1>Overview</h1><p>0x00 No resolution (example 33%)</
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_6_1" type="integer" groupName="configuration"
-                 min="0" max="10">
+      <parameter name="config_6_1" type="integer" groupName="configuration">
         <label>6: VOC on-change reporting</label>
         <description><![CDATA[
 VOC on-change reporting<br /> <h1>Overview</h1><p>0x00 No on-change reporting (only time-based reports)</p> <p>0x01 - 0x0A report if VOC reading changed by 100ppb - 1000ppb</p>
@@ -152,8 +149,7 @@ VOC on-change reporting<br /> <h1>Overview</h1><p>0x00 No on-change reporting (o
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_7_1" type="integer" groupName="configuration"
-                 min="0" max="10">
+      <parameter name="config_7_1" type="integer" groupName="configuration">
         <label>7: CO2eq on-change reporting</label>
         <description><![CDATA[
 CO2eq on-change reporting<br /> <h1>Overview</h1><p>0x00 No on-change reporting (only time-based reports)</p> <p>0x01 - 0x0A report if CO2eq reading changed by 100ppm - 1000ppm</p>
@@ -162,8 +158,7 @@ CO2eq on-change reporting<br /> <h1>Overview</h1><p>0x00 No on-change reporting 
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_8_1" type="integer" groupName="configuration"
-                 min="0" max="1">
+      <parameter name="config_8_1" type="integer" groupName="configuration">
         <label>8: Air quality indication via LED</label>
         <description><![CDATA[
 Air quality indication via LED<br /> <h1>Overview</h1><p>0x00 No air quality indication via LEDs</p> <p>0x01 Indicate measured air quality via LEDs </p>

@@ -64,8 +64,7 @@ Z-Wave room sensor<br /> <h1>Overview</h1><p>qheat RS is a battery operated temp
       </parameter-group>
 
       <!-- PARAMETER DEFINITIONS -->
-      <parameter name="config_1_2" type="integer" groupName="configuration"
-                 min="1" max="100">
+      <parameter name="config_1_2" type="integer" groupName="configuration">
         <label>1: Temperature Report threshold</label>
         <description><![CDATA[
 Temperature Report threshold<br /> <h1>Overview</h1><p>Range is from 0.1 to 10°C 1=0.1°C 100=10°C, default value 5 = 0.5 °C</p>
@@ -74,32 +73,28 @@ Temperature Report threshold<br /> <h1>Overview</h1><p>Range is from 0.1 to 10°
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_2_2" type="integer" groupName="configuration"
-                 min="1" max="100">
+      <parameter name="config_2_2" type="integer" groupName="configuration">
         <label>2: Set-point display resolution</label>
         <description>range from 0.1 to 10°C 1=0.1°C 100=10°C</description>
         <default>5</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_3_2" type="integer" groupName="configuration"
-                 min="0" max="40">
+      <parameter name="config_3_2" type="integer" groupName="configuration">
         <label>3: Min Set-point and override limit</label>
         <description>from min 0°C to max setpoint override limit 0=0°C 40=40°C</description>
         <default>12</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_4_2" type="integer" groupName="configuration"
-                 min="0" max="40">
+      <parameter name="config_4_2" type="integer" groupName="configuration">
         <label>4: Max Set-point and override limit</label>
         <description>from min setpoint override limit to max 40°C 0=0°C 40=40°C</description>
         <default>28</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_5_4" type="integer" groupName="configuration"
-                 min="0" max="65535">
+      <parameter name="config_5_4" type="integer" groupName="configuration">
         <label>5: LED Flash period</label>
         <description>0 to 65535 seconds</description>
         <default>1</default>
@@ -140,16 +135,14 @@ Temperature Report threshold<br /> <h1>Overview</h1><p>Range is from 0.1 to 10°
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_9_2" type="integer" groupName="configuration"
-                 min="1" max="5">
+      <parameter name="config_9_2" type="integer" groupName="configuration">
         <label>9: LED on time</label>
         <description>1=100ms 5=500ms</description>
         <default>1</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_10_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_10_1" type="integer" groupName="configuration">
         <label>10: Number of LED flashes (duration)</label>
         <description>0 to 255</description>
         <default>5</default>

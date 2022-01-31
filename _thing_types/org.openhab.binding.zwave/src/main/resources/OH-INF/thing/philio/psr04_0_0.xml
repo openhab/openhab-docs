@@ -58,8 +58,7 @@ Smart Color Button<br /> <h1>Overview</h1><p>This device is a multiple functions
       </parameter-group>
 
       <!-- PARAMETER DEFINITIONS -->
-      <parameter name="config_1_1" type="integer" groupName="configuration"
-                 min="0" max="99">
+      <parameter name="config_1_1" type="integer" groupName="configuration">
         <label>1: Basic Set OFF level</label>
         <description><![CDATA[
 Control the value represented by the left-side in area D.<br /> <h1>Overview</h1><p> E.g. Setting this configuration to 0x0F means range of Command Basic Set value start from 0x0F.</p>
@@ -68,8 +67,7 @@ Control the value represented by the left-side in area D.<br /> <h1>Overview</h1
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_2_1" type="integer" groupName="configuration"
-                 min="0" max="99">
+      <parameter name="config_2_1" type="integer" groupName="configuration">
         <label>2: Basic Set ON level</label>
         <description><![CDATA[
 Control the value represented by the right-side in area D.<br /> <h1>Overview</h1><p> E.g. Setting this configuration to 0x1E means range of Command Basic Set value start from 0x1E.</p>
@@ -78,8 +76,7 @@ Control the value represented by the right-side in area D.<br /> <h1>Overview</h
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_10_1" type="integer" groupName="configuration"
-                 min="0" max="127">
+      <parameter name="config_10_1" type="integer" groupName="configuration">
         <label>10: Auto Report Battery Time</label>
         <description><![CDATA[
 The interval time for auto reporting the Battery level.<br /> <h1>Overview</h1><p>0: Function is disabled.<br />1 - 127: Define the time interval.</p> <p>0 means turn off auto report battery. The default value of 12 is equivalent to 6 hours.</p>
@@ -88,8 +85,7 @@ The interval time for auto reporting the Battery level.<br /> <h1>Overview</h1><
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_25_1" type="integer" groupName="configuration"
-                 min="0" max="1">
+      <parameter name="config_25_1" type="integer" groupName="configuration">
         <label>25: Customer Function</label>
         <description>Bit 0: Dimmer setting method. Bit 1: Disable buzzer in timer mode.</description>
         <default>0</default>

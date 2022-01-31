@@ -205,8 +205,7 @@ Turn on/off voltage on input terminal 4<br /> <h1>Overview</h1><p>If trigger dev
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_6_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_6_1" type="integer" groupName="configuration">
         <label>6: Prel. filter time on input terminals</label>
         <description><![CDATA[
 Preliminary filter time on input terminals<br /> <h1>Overview</h1><p>Time in 10x milliseconds. E.g. 5 = 50 ms. </p>
@@ -215,8 +214,7 @@ Preliminary filter time on input terminals<br /> <h1>Overview</h1><p>Time in 10x
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_7_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_7_1" type="integer" groupName="configuration">
         <label>7: Threshold for triggering input</label>
         <description><![CDATA[
 Threshold for triggering input<br /> <h1>Overview</h1><p>In 10x milliseconds, e.g. 5 = 50 ms, meaning that the voltage on the input terminals need to be stable for more than 50 ms behold the input is counted as activated. </p>
@@ -225,8 +223,7 @@ Threshold for triggering input<br /> <h1>Overview</h1><p>In 10x milliseconds, e.
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_8_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_8_1" type="integer" groupName="configuration">
         <label>8: Threshold time for triggering input</label>
         <description><![CDATA[
 Threshold time for triggering input<br /> <h1>Overview</h1><p>Time in 10x miliseconds that an input need to be activated before it is counted as activated. E.g. 50 = 500 ms. </p>
@@ -235,8 +232,7 @@ Threshold time for triggering input<br /> <h1>Overview</h1><p>Time in 10x milise
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_9_1" type="integer" groupName="configuration"
-                 min="0" max="3">
+      <parameter name="config_9_1" type="integer" groupName="configuration">
         <label>9: Function for input terminal 1</label>
         <description><![CDATA[
 Function for input terminal 1<br /> <h1>Overview</h1><p>0 = Inactive</p> <p>1 = Level controlled</p> <p>2 = Back edge controlled</p> <p>3 = Front edge controlled. </p>
@@ -245,8 +241,7 @@ Function for input terminal 1<br /> <h1>Overview</h1><p>0 = Inactive</p> <p>1 = 
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_10_1" type="integer" groupName="configuration"
-                 min="0" max="3">
+      <parameter name="config_10_1" type="integer" groupName="configuration">
         <label>10: Function for input terminal 2</label>
         <description><![CDATA[
 Function for input terminal 2<br /> <h1>Overview</h1><p>0 = Inactive</p> <p>1 = Level controlled</p> <p>2 = Back edge controlled</p> <p>3 = Front edge controlled. </p>
@@ -255,8 +250,7 @@ Function for input terminal 2<br /> <h1>Overview</h1><p>0 = Inactive</p> <p>1 = 
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_11_1" type="integer" groupName="configuration"
-                 min="0" max="3">
+      <parameter name="config_11_1" type="integer" groupName="configuration">
         <label>11: Function for input terminal 3</label>
         <description><![CDATA[
 Function for input terminal 3<br /> <h1>Overview</h1><p>0 = Inactive</p> <p>1 = Level controlled</p> <p>2 = Back edge controlled</p> <p>3 = Front edge controlled. </p>
@@ -265,8 +259,7 @@ Function for input terminal 3<br /> <h1>Overview</h1><p>0 = Inactive</p> <p>1 = 
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_12_1" type="integer" groupName="configuration"
-                 min="0" max="3">
+      <parameter name="config_12_1" type="integer" groupName="configuration">
         <label>12: Function for input terminal 4</label>
         <description><![CDATA[
 Function for input terminal 4<br /> <h1>Overview</h1><p>0 = Inactive</p> <p>1 = Level controlled</p> <p>2 = Back edge controlled</p> <p>3 = Front edge controlled. </p>
@@ -275,8 +268,7 @@ Function for input terminal 4<br /> <h1>Overview</h1><p>0 = Inactive</p> <p>1 = 
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_13_1" type="integer" groupName="configuration"
-                 min="0" max="1">
+      <parameter name="config_13_1" type="integer" groupName="configuration">
         <label>13: Central Scene notification</label>
         <description><![CDATA[
 Central Scene notification<br /> <h1>Overview</h1><p>Send Central Scene notification when the 4 input terminals gets activated. </p> <p>0 = Notification off</p> <p>1 = Notification on</p>

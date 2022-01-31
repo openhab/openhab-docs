@@ -80,24 +80,21 @@ WiDom Smart Roller Shutter<br /> <h1>Overview</h1><p>WiDom Smart Roller Shutter 
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_2_1" type="integer" groupName="configuration"
-                 min="50" max="100">
+      <parameter name="config_2_1" type="integer" groupName="configuration">
         <label>2: Favorite level for ON position</label>
         <description>Favorite level for ON position</description>
         <default>100</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_3_1" type="integer" groupName="configuration"
-                 min="0" max="49">
+      <parameter name="config_3_1" type="integer" groupName="configuration">
         <label>3: Favorite level for OFF position</label>
         <description>Favorite level for OFF position</description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_4_1" type="integer" groupName="configuration"
-                 min="-1" max="99">
+      <parameter name="config_4_1" type="integer" groupName="configuration">
         <label>4: Value for Group 2 with 1 click on UP button</label>
         <description><![CDATA[
 Value for Group 2 with 1 click on UP button<br /> <h1>Overview</h1><p>Value used for devices belonging to Group 2 when UP button receive 1 Click</p>
@@ -106,8 +103,7 @@ Value for Group 2 with 1 click on UP button<br /> <h1>Overview</h1><p>Value used
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_5_1" type="integer" groupName="configuration"
-                 min="-1" max="99">
+      <parameter name="config_5_1" type="integer" groupName="configuration">
         <label>5: Value for Group 2 with 1 click on DOWN button</label>
         <description><![CDATA[
 Value for Group 2 with 1 click on DOWN button<br /> <h1>Overview</h1><p>Value used for devices belonging to Group 2 when DOWN button receive 1 Click </p>
@@ -116,8 +112,7 @@ Value for Group 2 with 1 click on DOWN button<br /> <h1>Overview</h1><p>Value us
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_6_1" type="integer" groupName="configuration"
-                 min="-1" max="99">
+      <parameter name="config_6_1" type="integer" groupName="configuration">
         <label>6: Value for Group 3 with 2 clicks on UP button</label>
         <description><![CDATA[
 Value for Group 3 with 2 clicks on UP button<br /> <h1>Overview</h1><p> Value used for devices belonging to Group 3 when UP button receive 2 Clicks</p>
@@ -126,8 +121,7 @@ Value for Group 3 with 2 clicks on UP button<br /> <h1>Overview</h1><p> Value u
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_7_1" type="integer" groupName="configuration"
-                 min="-1" max="99">
+      <parameter name="config_7_1" type="integer" groupName="configuration">
         <label>7: Value for Group 3 with 2 clicks on DOWN button</label>
         <description><![CDATA[
 Value for Group 3 with 2 clicks on DOWN button<br /> <h1>Overview</h1><p>Value used for devices belonging to Group 3 when DOWN button receive 2 Clicks </p>
@@ -136,8 +130,7 @@ Value for Group 3 with 2 clicks on DOWN button<br /> <h1>Overview</h1><p>Value u
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_8_1" type="integer" groupName="configuration"
-                 min="-1" max="99">
+      <parameter name="config_8_1" type="integer" groupName="configuration">
         <label>8: Value for Group 4 with 3 clicks on UP button</label>
         <description><![CDATA[
 Value for Group 4 with 3 clicks on UP button<br /> <h1>Overview</h1><p>Value used for devices belonging to Group 4 when UP button receive 3 Clicks </p>
@@ -146,8 +139,7 @@ Value for Group 4 with 3 clicks on UP button<br /> <h1>Overview</h1><p>Value use
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_9_1" type="integer" groupName="configuration"
-                 min="-1" max="99">
+      <parameter name="config_9_1" type="integer" groupName="configuration">
         <label>9: Value for Group 4 with 3 clicks on DOWN button</label>
         <description><![CDATA[
 Value for Group 4 with 3 clicks on DOWN button<br /> <h1>Overview</h1><p>Value used for devices belonging to Group 4 when DOWN button receive 3 Clicks</p>
@@ -156,8 +148,7 @@ Value for Group 4 with 3 clicks on DOWN button<br /> <h1>Overview</h1><p>Value u
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_20_1" type="integer" groupName="configuration"
-                 min="0" max="2">
+      <parameter name="config_20_1" type="integer" groupName="configuration">
         <label>20: Calibration</label>
         <description><![CDATA[
 Defines the status of the calibration procedure<br /> <h1>Overview</h1><p>Defines the status of the calibration procedure. By default, as soon as the device has been included, the calibration starts in automatic mode. At the end of the calibration, this parameter is set to 1. Afterwards the calibration can be done again by setting this parameter to 0 (AUTO) or 2 (MANUAL) and clicking on any external button.  If the calibration is set in AUTO mode, it will be completed automatically.  If the calibration is set in MANUAL mode, a click on any external button is necessary to carry on the next step.  During the calibration, the LED indicator blinks repeatedly in BLUE. </p>
@@ -166,8 +157,7 @@ Defines the status of the calibration procedure<br /> <h1>Overview</h1><p>Define
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_21_2" type="integer" groupName="configuration"
-                 min="0" max="3000">
+      <parameter name="config_21_2" type="integer" groupName="configuration">
         <label>21: Motor idle state definition</label>
         <description><![CDATA[
 Motor idle state definition<br /> <h1>Overview</h1><p>Defines the level of power consumption under which the motor is considered steady (stationary) </p>
@@ -176,8 +166,7 @@ Motor idle state definition<br /> <h1>Overview</h1><p>Defines the level of power
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_22_1" type="integer" groupName="configuration"
-                 min="0" max="127">
+      <parameter name="config_22_1" type="integer" groupName="configuration">
         <label>22: Limit switch recognition</label>
         <description><![CDATA[
 Limit switch recognition<br /> <h1>Overview</h1><p>The motor has reached the limit switch when its power consumption is lower than PLIMIT (the power defined in parameter No. 21) for an amount of time defined by this parameter. </p>

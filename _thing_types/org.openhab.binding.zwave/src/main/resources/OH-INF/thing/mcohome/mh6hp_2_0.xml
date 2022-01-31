@@ -90,24 +90,21 @@ Programmable Thermostat<br /> <h1>Overview</h1><p>MH6-HP programmable thermostat
       </parameter-group>
 
       <!-- PARAMETER DEFINITIONS -->
-      <parameter name="config_1_1" type="integer" groupName="configuration"
-                 min="0" max="2">
+      <parameter name="config_1_1" type="integer" groupName="configuration">
         <label>1: Upload temperature format automatically</label>
         <description>Upload temperature format automatically</description>
         <default>2</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_2_1" type="integer" groupName="configuration"
-                 min="0" max="3">
+      <parameter name="config_2_1" type="integer" groupName="configuration">
         <label>2: Upload temperature and humidity automatically</label>
         <description>Upload temperature and humidity automatically</description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_3_2" type="integer" groupName="configuration"
-                 min="3" max="1000">
+      <parameter name="config_3_2" type="integer" groupName="configuration">
         <label>3: Upload temperature difference</label>
         <description><![CDATA[
 Upload temperature difference<br /> <h1>Overview</h1><p>Base on 0.1℃unit, 0x0005 by default, 5*0.1℃=0.5℃, 0x0003~0x03E8 (3-1000)<br /></p> <p><br /><br /></p>
@@ -116,16 +113,14 @@ Upload temperature difference<br /> <h1>Overview</h1><p>Base on 0.1℃unit, 0x00
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_4_2" type="integer" groupName="configuration"
-                 min="-32767" max="32768">
+      <parameter name="config_4_2" type="integer" groupName="configuration">
         <label>4: Upload time interval regularly</label>
         <description>Upload time interval regularly</description>
         <default>30</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_5_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_5_1" type="integer" groupName="configuration">
         <label>5: Upload humidity difference</label>
         <description>Upload humidity difference</description>
         <default>3</default>

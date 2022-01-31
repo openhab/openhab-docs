@@ -77,16 +77,14 @@ Fibaro Walli Single Switch<br /> <h1>Overview</h1><p>FIBARO Walli Single Switch 
       </parameter-group>
 
       <!-- PARAMETER DEFINITIONS -->
-      <parameter name="config_1_1" type="integer" groupName="configuration"
-                 min="0" max="1">
+      <parameter name="config_1_1" type="integer" groupName="configuration">
         <label>1: Remember device state</label>
         <description>Remember device state</description>
         <default>1</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_2_4" type="integer" groupName="configuration"
-                 min="-2147483646" max="2147483647">
+      <parameter name="config_2_4" type="integer" groupName="configuration">
         <label>2: First channel – overload safety switch</label>
         <description><![CDATA[
 First channel – overload safety switch<br /> <h1>Overview</h1><table><tr><td>0 (default)</td> <td>function disabled</td> </tr><tr><td>10 to 36200</td> <td>(1.0-3620.0W, step 0.1W) – power threshold</td> </tr></table>
@@ -95,8 +93,7 @@ First channel – overload safety switch<br /> <h1>Overview</h1><table><tr><td>0
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_3_4" type="integer" groupName="configuration"
-                 min="0" max="36200">
+      <parameter name="config_3_4" type="integer" groupName="configuration">
         <label>3: Second channel – overload safety switch</label>
         <description><![CDATA[
 Second channel – overload safety switch<br /> <h1>Overview</h1><table><tr><td>0 (default)</td> <td>function disabled</td> </tr><tr><td>10 to 36200</td> <td>(1.0-3620.0W, step 0.1W) – power threshold</td> </tr></table>
@@ -105,8 +102,7 @@ Second channel – overload safety switch<br /> <h1>Overview</h1><table><tr><td>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_10_4" type="integer" groupName="configuration"
-                 min="500" max="36800">
+      <parameter name="config_10_4" type="integer" groupName="configuration">
         <label>10: LED frame – power limit</label>
         <description><![CDATA[
 LED frame – power limit<br /> <h1>Overview</h1><p>(50.0-3680.0W, step 0.1W) – power threshold</p>
@@ -115,8 +111,7 @@ LED frame – power limit<br /> <h1>Overview</h1><p>(50.0-3680.0W, step 0.1W) �
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_11_1" type="integer" groupName="configuration"
-                 min="0" max="9">
+      <parameter name="config_11_1" type="integer" groupName="configuration">
         <label>11: LED frame – colour when ON</label>
         <description><![CDATA[
 LED frame – colour when ON<br /> <h1>Overview</h1><table><tr><td>0</td> <td>LED disabled</td> </tr><tr><td>1 (Default)</td> <td>White</td> </tr><tr><td>2</td> <td>Red</td> </tr><tr><td>3</td> <td>Green</td> </tr><tr><td>4</td> <td>Blue</td> </tr><tr><td>5</td> <td>Yellow</td> </tr><tr><td>6</td> <td>Cyan</td> </tr><tr><td>7</td> <td>Magenta</td> </tr><tr><td>8</td> <td>colour changes smoothly depending on measured power</td> </tr><tr><td>9</td> <td>colour changes in steps depending on measured power</td> </tr></table>
@@ -125,8 +120,7 @@ LED frame – colour when ON<br /> <h1>Overview</h1><table><tr><td>0</td> <td>LE
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_12_1" type="integer" groupName="configuration"
-                 min="0" max="7">
+      <parameter name="config_12_1" type="integer" groupName="configuration">
         <label>12: LED frame – colour when OFF</label>
         <description><![CDATA[
 LED frame – colour when OFF<br /> <h1>Overview</h1><table><tr><td>0 (default)</td> <td>LED disabled</td> </tr><tr><td>1</td> <td>White</td> </tr><tr><td>2</td> <td>Red</td> </tr><tr><td>3</td> <td>Green</td> </tr><tr><td>4</td> <td>Blue</td> </tr><tr><td>5</td> <td>Yellow</td> </tr><tr><td>6</td> <td>Cyan</td> </tr><tr><td>7</td> <td>Magenta</td> </tr></table>
@@ -135,8 +129,7 @@ LED frame – colour when OFF<br /> <h1>Overview</h1><table><tr><td>0 (default)<
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_13_1" type="integer" groupName="configuration"
-                 min="0" max="102">
+      <parameter name="config_13_1" type="integer" groupName="configuration">
         <label>13: LED frame – brightness</label>
         <description><![CDATA[
 LED frame – brightness<br /> <h1>Overview</h1><table><tr><td>0</td> <td>LED disable</td> </tr><tr><td>1 to 100<br />(Default)</td> <td>(1-100% brightness)</td> </tr><tr><td>101</td> <td>brightness directly proportional to measured power</td> </tr><tr><td>102</td> <td>brightness inversely proportional to measured power</td> </tr></table>
@@ -145,8 +138,7 @@ LED frame – brightness<br /> <h1>Overview</h1><table><tr><td>0</td> <td>LED di
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_20_1" type="integer" groupName="configuration"
-                 min="1" max="3">
+      <parameter name="config_20_1" type="integer" groupName="configuration">
         <label>20: Buttons operation</label>
         <description><![CDATA[
 Buttons operation<br /> <h1>Overview</h1><table><tr><td>1 (default)</td> <td>1 st and 2nd button toggle the load</td> </tr><tr><td>2</td> <td>1st button turns the load ON, 2nd button turns the load OFF</td> </tr><tr><td>3</td> <td> device works in 2-way/3-way switch configuration</td> </tr></table>
@@ -155,8 +147,7 @@ Buttons operation<br /> <h1>Overview</h1><table><tr><td>1 (default)</td> <td>1 s
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_24_1" type="integer" groupName="configuration"
-                 min="0" max="1">
+      <parameter name="config_24_1" type="integer" groupName="configuration">
         <label>24: Buttons orientation</label>
         <description><![CDATA[
 Buttons orientation<br /> <h1>Overview</h1><table><tr><td>0 (default)</td> <td>default (1st button controls 1st channel, 2nd button controls 2nd channel)</td> </tr><tr><td>1</td> <td>reversed (1st button controls 2nd channel, 2nd button controls 1st channel)</td> </tr></table>
@@ -165,8 +156,7 @@ Buttons orientation<br /> <h1>Overview</h1><table><tr><td>0 (default)</td> <td>d
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_25_1" type="integer" groupName="configuration"
-                 min="0" max="1">
+      <parameter name="config_25_1" type="integer" groupName="configuration">
         <label>25: Outputs orientation</label>
         <description><![CDATA[
 Outputs orientation<br /> <h1>Overview</h1><table><tr><td>0 (default)</td> <td>default (Q1 - 1st channel, Q2 - 2nd channel)</td> </tr><tr><td>1</td> <td>reversed (Q1 - 2nd channel, Q2 - 1st channel)</td> </tr></table>
@@ -175,8 +165,7 @@ Outputs orientation<br /> <h1>Overview</h1><table><tr><td>0 (default)</td> <td>d
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_30_4" type="integer" groupName="configuration"
-                 min="0" max="4">
+      <parameter name="config_30_4" type="integer" groupName="configuration">
         <label>30: Alarm configuration - 1st slot</label>
         <description><![CDATA[
 Alarm configuration - 1st slot<br /> <h1>Overview</h1><table><tr><td> </td> <td>1 to 0</td> <td>[MSB] – Notification Type</td> </tr><tr><td> </td> <td>2</td> <td>Notification Value</td> </tr><tr><td> </td> <td>3</td> <td>Event/State Parameters</td> </tr><tr><td> </td> <td>4</td> <td>[LSB] – action</td> </tr></table>
@@ -185,8 +174,7 @@ Alarm configuration - 1st slot<br /> <h1>Overview</h1><table><tr><td> </td> <td
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_31_4" type="integer" groupName="configuration"
-                 min="0" max="4">
+      <parameter name="config_31_4" type="integer" groupName="configuration">
         <label>31: Alarm configuration - 2nd slot</label>
         <description><![CDATA[
 Alarm configuration - 2nd slot<br /> <h1>Overview</h1><table><tr><td>1</td> <td>[MSB] – Notification Type</td> </tr><tr><td>2</td> <td>Notification Value</td> </tr><tr><td>3</td> <td>Event/State Parameters</td> </tr><tr><td>4</td> <td>[LSB] – action</td> </tr></table>
@@ -195,8 +183,7 @@ Alarm configuration - 2nd slot<br /> <h1>Overview</h1><table><tr><td>1</td> <td>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_32_4" type="integer" groupName="configuration"
-                 min="0" max="4">
+      <parameter name="config_32_4" type="integer" groupName="configuration">
         <label>32: Alarm configuration - 3rd slot</label>
         <description><![CDATA[
 Alarm configuration - 3rd slot<br /> <h1>Overview</h1><table><tr><td>1</td> <td>[MSB] – Notification Type</td> </tr><tr><td>2</td> <td>Notification Value</td> </tr><tr><td>3</td> <td>Event/State Parameters</td> </tr><tr><td>4</td> <td>[LSB] – action</td> </tr></table>
@@ -205,8 +192,7 @@ Alarm configuration - 3rd slot<br /> <h1>Overview</h1><table><tr><td>1</td> <td>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_33_4" type="integer" groupName="configuration"
-                 min="0" max="4">
+      <parameter name="config_33_4" type="integer" groupName="configuration">
         <label>33: Alarm configuration - 4th slot</label>
         <description><![CDATA[
 Alarm configuration - 4th slot<br /> <h1>Overview</h1><table><tr><td>0 (default)</td> <td>Notification Type</td> </tr><tr><td>1</td> <td>[MSB] – Notification Type</td> </tr><tr><td>2</td> <td>Notification Status</td> </tr><tr><td>3</td> <td>Event/State Parameters</td> </tr><tr><td>4</td> <td>[LSB] – action</td> </tr></table>
@@ -215,8 +201,7 @@ Alarm configuration - 4th slot<br /> <h1>Overview</h1><table><tr><td>0 (default)
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_34_4" type="integer" groupName="configuration"
-                 min="0" max="4">
+      <parameter name="config_34_4" type="integer" groupName="configuration">
         <label>34: Alarm configuration - 5th slot</label>
         <description><![CDATA[
 Alarm configuration - 5th slot<br /> <h1>Overview</h1><table><tr><td>1</td> <td>[MSB] – Notification Type</td> </tr><tr><td>2</td> <td>Notification Status</td> </tr><tr><td>3</td> <td>Event/State Parameters</td> </tr><tr><td>4</td> <td>[LSB] - action</td> </tr></table>
@@ -225,8 +210,7 @@ Alarm configuration - 5th slot<br /> <h1>Overview</h1><table><tr><td>1</td> <td>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_35_2" type="integer" groupName="configuration"
-                 min="0" max="32400">
+      <parameter name="config_35_2" type="integer" groupName="configuration">
         <label>35: Alarm configuration – duration</label>
         <description><![CDATA[
 Alarm configuration – duration<br /> <h1>Overview</h1><table><tr><td>0</td> <td>infinite</td> </tr><tr><td>1 to 32400<br />(Default)</td> <td>(1s-9h, 1s step) – duration</td> </tr></table>
@@ -235,8 +219,7 @@ Alarm configuration – duration<br /> <h1>Overview</h1><table><tr><td>0</td> <t
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_40_1" type="integer" groupName="configuration"
-                 min="0" max="8">
+      <parameter name="config_40_1" type="integer" groupName="configuration">
         <label>40: First button – scenes sent</label>
         <description><![CDATA[
 First button – scenes sent<br /> <h1>Overview</h1><table><tr><td>1</td> <td>Key pressed 1 time</td> </tr><tr><td>2</td> <td>Key pressed 2 time</td> </tr><tr><td>4</td> <td>Key pressed 3 time</td> </tr><tr><td>8</td> <td>Key hold down and key released</td> </tr></table>
@@ -245,8 +228,7 @@ First button – scenes sent<br /> <h1>Overview</h1><table><tr><td>1</td> <td>Ke
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_41_1" type="integer" groupName="configuration"
-                 min="0" max="8">
+      <parameter name="config_41_1" type="integer" groupName="configuration">
         <label>41: Second button – scenes sent</label>
         <description><![CDATA[
 Second button – scenes sent<br /> <h1>Overview</h1><table><tr><td>1</td> <td>Key pressed 1 time</td> </tr><tr><td>2</td> <td>Key pressed 2 time</td> </tr><tr><td>4</td> <td>Key pressed 3 time</td> </tr><tr><td>8</td> <td>Key hold down and key released</td> </tr></table>
@@ -255,8 +237,7 @@ Second button – scenes sent<br /> <h1>Overview</h1><table><tr><td>1</td> <td>K
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_60_1" type="integer" groupName="configuration"
-                 min="0" max="1">
+      <parameter name="config_60_1" type="integer" groupName="configuration">
         <label>60: Power reports – include self-consumption</label>
         <description><![CDATA[
 Power reports – include self-consumption<br /> <h1>Overview</h1><table><tr><td>0 (default)</td> <td>Self-consumption not included</td> </tr><tr><td>1</td> <td>Self-consumption included</td> </tr></table>
@@ -265,8 +246,7 @@ Power reports – include self-consumption<br /> <h1>Overview</h1><table><tr><td
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_61_2" type="integer" groupName="configuration"
-                 min="0" max="500">
+      <parameter name="config_61_2" type="integer" groupName="configuration">
         <label>61: Power reports for first channel – on change</label>
         <description><![CDATA[
 Power reports for first channel – on change<br /> <h1>Overview</h1><table><tr><td>0</td> <td>reporting on change disabled</td> </tr><tr><td>1 to 500<br />(Default)</td> <td>(1-500%, 1% step) – minimal change</td> </tr></table>
@@ -275,8 +255,7 @@ Power reports for first channel – on change<br /> <h1>Overview</h1><table><tr>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_62_2" type="integer" groupName="configuration"
-                 min="0" max="32400">
+      <parameter name="config_62_2" type="integer" groupName="configuration">
         <label>62: Power reports for first channel – periodic</label>
         <description><![CDATA[
 Power reports for first channel – periodic<br /> <h1>Overview</h1><table><tr><td>0</td> <td>periodic reports disabled</td> </tr><tr><td>30 to 32400<br />(Default)</td> <td>(30s-9h, 1s step) – time interval</td> </tr></table>
@@ -285,8 +264,7 @@ Power reports for first channel – periodic<br /> <h1>Overview</h1><table><tr><
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_63_2" type="integer" groupName="configuration"
-                 min="0" max="500">
+      <parameter name="config_63_2" type="integer" groupName="configuration">
         <label>63: Power reports for second channel – on change</label>
         <description><![CDATA[
 Power reports for second channel – on change<br /> <h1>Overview</h1><table><tr><td>0</td> <td>reporting on change disabled</td> </tr><tr><td>1 to 500<br />(Default)</td> <td>(1-500%, 1% step) – minimal change</td> </tr></table>
@@ -295,8 +273,7 @@ Power reports for second channel – on change<br /> <h1>Overview</h1><table><tr
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_64_2" type="integer" groupName="configuration"
-                 min="0" max="32400">
+      <parameter name="config_64_2" type="integer" groupName="configuration">
         <label>64: Power reports for second channel – periodic</label>
         <description><![CDATA[
 Power reports for second channel – periodic<br /> <h1>Overview</h1><table><tr><td>0</td> <td>periodic reports disabled</td> </tr><tr><td>30 to 32400<br />(Default)</td> <td>(30s-9h, 1s step) – time interval</td> </tr></table>
@@ -305,8 +282,7 @@ Power reports for second channel – periodic<br /> <h1>Overview</h1><table><tr>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_65_2" type="integer" groupName="configuration"
-                 min="0" max="500">
+      <parameter name="config_65_2" type="integer" groupName="configuration">
         <label>65: Energy reports for first channel – on change</label>
         <description><![CDATA[
 Energy reports for first channel – on change<br /> <h1>Overview</h1><table><tr><td>0</td> <td>reporting on change disabled</td> </tr><tr><td>1 to 500<br />(Default)</td> <td>(0.01-5kWh, 0.01kWh step) – minimal change</td> </tr></table>
@@ -315,8 +291,7 @@ Energy reports for first channel – on change<br /> <h1>Overview</h1><table><tr
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_66_2" type="integer" groupName="configuration"
-                 min="0" max="32400">
+      <parameter name="config_66_2" type="integer" groupName="configuration">
         <label>66: Energy reports for first channel – periodic</label>
         <description><![CDATA[
 Energy reports for first channel – periodic<br /> <h1>Overview</h1><table><tr><td>0</td> <td>periodic reports disabled</td> </tr><tr><td>30 to 32400<br />(Default)</td> <td>(30s-9h, 1s step) – time interval</td> </tr></table>
@@ -325,8 +300,7 @@ Energy reports for first channel – periodic<br /> <h1>Overview</h1><table><tr>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_67_2" type="integer" groupName="configuration"
-                 min="0" max="500">
+      <parameter name="config_67_2" type="integer" groupName="configuration">
         <label>67: Energy reports for second channel – on change</label>
         <description><![CDATA[
 Energy reports for second channel – on change<br /> <h1>Overview</h1><table><tr><td>0</td> <td>reporting on change disabled</td> </tr><tr><td>1 to 500<br />(Default)</td> <td>(0.01-5kWh, 0.01kWh step) – minimal change</td> </tr></table>
@@ -335,8 +309,7 @@ Energy reports for second channel – on change<br /> <h1>Overview</h1><table><t
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_68_2" type="integer" groupName="configuration"
-                 min="0" max="32400">
+      <parameter name="config_68_2" type="integer" groupName="configuration">
         <label>68: Energy reports for second channel – periodic</label>
         <description><![CDATA[
 Energy reports for second channel – periodic<br /> <h1>Overview</h1><table><tr><td>0</td> <td>periodic reports disabled</td> </tr><tr><td>30 to 32400<br />(Default)</td> <td>(30s-9h, 1s step) – time interval</td> </tr></table>
@@ -345,8 +318,7 @@ Energy reports for second channel – periodic<br /> <h1>Overview</h1><table><tr
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_150_1" type="integer" groupName="configuration"
-                 min="0" max="2">
+      <parameter name="config_150_1" type="integer" groupName="configuration">
         <label>150: First channel – operating mode</label>
         <description><![CDATA[
 First channel – operating mode<br /> <h1>Overview</h1><table><tr><td>0 (default)</td> <td>standard operation</td> </tr><tr><td>1</td> <td>delayed OFF</td> </tr><tr><td>2</td> <td>single pulse</td> </tr></table>
@@ -355,8 +327,7 @@ First channel – operating mode<br /> <h1>Overview</h1><table><tr><td>0 (defaul
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_151_1" type="integer" groupName="configuration"
-                 min="0" max="2">
+      <parameter name="config_151_1" type="integer" groupName="configuration">
         <label>151: Second channel – operating mode</label>
         <description><![CDATA[
 Second channel – operating mode<br /> <h1>Overview</h1><table><tr><td>0 (defaut)</td> <td>standard operation</td> </tr><tr><td>1</td> <td>delayed OFF</td> </tr><tr><td>2</td> <td>single pulse</td> </tr></table>
@@ -365,8 +336,7 @@ Second channel – operating mode<br /> <h1>Overview</h1><table><tr><td>0 (defau
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_152_1" type="integer" groupName="configuration"
-                 min="0" max="2">
+      <parameter name="config_152_1" type="integer" groupName="configuration">
         <label>152: chan1reactdelayedoff</label>
         <description><![CDATA[
 First channel - reaction to switch for delayed OFF / pulse modes<br /> <h1>Overview</h1><table><tr><td>0(default)</td> <td>cancel mode and set default state</td> </tr><tr><td>1</td> <td>no reaction - mode runs until it ends</td> </tr><tr><td>2</td> <td>reset timer - start counting from the beginning</td> </tr></table>
@@ -375,8 +345,7 @@ First channel - reaction to switch for delayed OFF / pulse modes<br /> <h1>Overv
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_153_1" type="integer" groupName="configuration"
-                 min="0" max="2">
+      <parameter name="config_153_1" type="integer" groupName="configuration">
         <label>153: chan2reactdelayedoff</label>
         <description><![CDATA[
 Second channel - reaction to switch for delayed OFF / pulse modes<br /> <h1>Overview</h1><table><tr><td>0(default)</td> <td>cancel mode and set default state</td> </tr><tr><td>1</td> <td>no reaction - mode runs until it ends</td> </tr><tr><td>2</td> <td>reset timer - start counting from the beginning</td> </tr></table>
@@ -385,8 +354,7 @@ Second channel - reaction to switch for delayed OFF / pulse modes<br /> <h1>Over
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_154_2" type="integer" groupName="configuration"
-                 min="0" max="32000">
+      <parameter name="config_154_2" type="integer" groupName="configuration">
         <label>154: chan1timedelayedoff</label>
         <description><![CDATA[
 First channel - time parameter for delayed OFF / pulse modes<br /> <h1>Overview</h1><table><tr><td>0</td> <td>0.1 second</td> </tr><tr><td>1 to 32000<br />(Default)</td> <td>(1-32000s, 1s step) – time parameter</td> </tr></table>
@@ -395,8 +363,7 @@ First channel - time parameter for delayed OFF / pulse modes<br /> <h1>Overview<
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_155_2" type="integer" groupName="configuration"
-                 min="0" max="32000">
+      <parameter name="config_155_2" type="integer" groupName="configuration">
         <label>155: chan2timedelayedoff</label>
         <description><![CDATA[
 Second channel - time parameter for delayed OFF / pulse modes<br /> <h1>Overview</h1><table><tr><td>0</td> <td>0.1 second</td> </tr><tr><td>1 to 32000<br />(Default)</td> <td>(1-32000s, 1s step) – time parameter</td> </tr></table>
@@ -405,8 +372,7 @@ Second channel - time parameter for delayed OFF / pulse modes<br /> <h1>Overview
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_156_2" type="integer" groupName="configuration"
-                 min="0" max="255">
+      <parameter name="config_156_2" type="integer" groupName="configuration">
         <label>156: chan1onsent23assgp</label>
         <description><![CDATA[
 First channel – Switch ON value sent to 2nd and 3rd association groups<br /> <h1>Overview</h1><table><tr><td>0 to 99</td> <td>2nd association group</td> </tr><tr><td>255 (default)</td> <td>3rd association group</td> </tr></table>
@@ -415,8 +381,7 @@ First channel – Switch ON value sent to 2nd and 3rd association groups<br /> <
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_157_2" type="integer" groupName="configuration"
-                 min="0" max="255">
+      <parameter name="config_157_2" type="integer" groupName="configuration">
         <label>157: chan1offsent23assgp</label>
         <description><![CDATA[
 First channel – Switch OFF value sent to 2nd and 3rd association groups<br /> <h1>Overview</h1><table><tr><td>0 to 99 (default)</td> <td>2nd association group</td> </tr><tr><td>255</td> <td>3rd association group</td> </tr></table>
@@ -425,8 +390,7 @@ First channel – Switch OFF value sent to 2nd and 3rd association groups<br /> 
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_158_2" type="integer" groupName="configuration"
-                 min="0" max="255">
+      <parameter name="config_158_2" type="integer" groupName="configuration">
         <label>158: chan1doclicsent23assgp</label>
         <description><![CDATA[
 First channel – Double Click value sent to 2nd and 3rd association groups<br /> <h1>Overview</h1><table><tr><td>0 to 99 (default)</td> <td>2nd association group</td> </tr><tr><td>255</td> <td>3rd association group</td> </tr></table>
@@ -435,8 +399,7 @@ First channel – Double Click value sent to 2nd and 3rd association groups<br /
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_159_2" type="integer" groupName="configuration"
-                 min="0" max="255">
+      <parameter name="config_159_2" type="integer" groupName="configuration">
         <label>159: chan2onsent45assgp</label>
         <description><![CDATA[
 Second channel – Switch ON value sent to 4th and 5th association groups<br /> <h1>Overview</h1><table><tr><td>0 to 99</td> <td>4th association group</td> </tr><tr><td>255<br />(Default)</td> <td>5th association group</td> </tr></table>
@@ -445,8 +408,7 @@ Second channel – Switch ON value sent to 4th and 5th association groups<br /> 
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_160_2" type="integer" groupName="configuration"
-                 min="0" max="255">
+      <parameter name="config_160_2" type="integer" groupName="configuration">
         <label>160: chan2offsent45assgp</label>
         <description><![CDATA[
 Second channel – Switch OFF value sent to 4th and 5th association groups<br /> <h1>Overview</h1><table><tr><td>0 to 99 (default)</td> <td>4th association group</td> </tr><tr><td>255</td> <td>5th association group</td> </tr></table>
@@ -455,8 +417,7 @@ Second channel – Switch OFF value sent to 4th and 5th association groups<br />
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_161_2" type="integer" groupName="configuration"
-                 min="0" max="255">
+      <parameter name="config_161_2" type="integer" groupName="configuration">
         <label>161: chan2doclicsent23assgp</label>
         <description><![CDATA[
 Second channel – Double Click value sent to 4th and 5th association groups<br /> <h1>Overview</h1><table><tr><td>0 to 99 (default)</td> <td>4th association group</td> </tr><tr><td>255</td> <td>5th association group</td> </tr></table>

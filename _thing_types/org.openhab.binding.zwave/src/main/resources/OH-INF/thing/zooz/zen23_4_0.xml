@@ -80,8 +80,7 @@ Use this parameter to enable or disable the auto turn-off timer<br /> <h1>Overvi
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_4_4" type="integer" groupName="configuration"
-                 min="1" max="65535">
+      <parameter name="config_4_4" type="integer" groupName="configuration">
         <label>4: Auto Turn-Off Timer Time</label>
         <description><![CDATA[
 Time after which the switch automatically turns off<br /> <h1>Overview</h1><p>Use this parameter to set the time after which you want the switch to automatically turn off once it has been turned on. The number entered as value corresponds to the number of minutes.</p> <p>Values:</p> <p>1 – 65535 (minutes). <br />60 – default.<br /><br /></p>
@@ -103,8 +102,7 @@ Use this parameter to enable or disable the auto turn-on timer<br /> <h1>Overvie
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_6_4" type="integer" groupName="configuration"
-                 min="1" max="65535">
+      <parameter name="config_6_4" type="integer" groupName="configuration">
         <label>6: Auto Turn-On Timer Time</label>
         <description><![CDATA[
 Set the time after which the switch automatically turns on<br /> <h1>Overview</h1><p>Use this parameter to set the time after which you want the switch to automatically turn on once it has been turned off. The number entered as value corresponds to the number of minutes.</p> <p>Values:</p> <p>1 – 65535 (minutes). Default set to 60</p>
@@ -140,8 +138,7 @@ Enable or disable scene control functionality for quick 2-tap.<br /> <h1>Overvie
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_11_1" type="integer" groupName="configuration"
-                 min="0" max="2">
+      <parameter name="config_11_1" type="integer" groupName="configuration">
         <label>11: Smart Bulb Mode</label>
         <description><![CDATA[
 Enable/Disable Toggle / Z-Wave Control<br /> <h1>Overview</h1><p>Enable or disable local on/off control. If enabled, you’ll only be able to control the connected light via Z-Wave. Scenes and other functionality will still be available through toggle.<br /></p>
@@ -150,15 +147,13 @@ Enable/Disable Toggle / Z-Wave Control<br /> <h1>Overview</h1><p>Enable or disab
         <advanced>true</advanced>
       </parameter>
 
-      <parameter name="config_12_1" type="integer" groupName="configuration"
-                 min="0" max="1">
+      <parameter name="config_12_1" type="integer" groupName="configuration">
         <label>12: 3-Way Switch Type</label>
         <description>3-Way Switch Type</description>
         <default>0</default>
       </parameter>
 
-      <parameter name="config_13_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_13_1" type="integer" groupName="configuration">
         <label>13: Report for Disabled Toggle</label>
         <description>Report for Disabled Toggle</description>
         <default>0</default>

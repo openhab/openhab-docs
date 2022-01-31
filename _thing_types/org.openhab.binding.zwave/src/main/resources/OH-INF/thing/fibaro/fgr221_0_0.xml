@@ -91,8 +91,7 @@ Roller Shutter Controller<br /> <h1>Overview</h1><p>The in-wall Roller Shutter C
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_20_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_20_1" type="integer" groupName="configuration">
         <label>20: Dimmer/Roller shutter control</label>
         <description>Options for changing parameter 1-99, default 16</description>
         <default>16</default>

@@ -116,8 +116,7 @@ Invert Switch<br /> <h1>Overview</h1><p>Inverts the switch (Tap Down = On, Tap U
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_3_2" type="integer" groupName="configuration"
-                 min="0" max="32767">
+      <parameter name="config_3_2" type="integer" groupName="configuration">
         <label>3: Auto Off Timer</label>
         <description><![CDATA[
 Auto Off Timer<br /> <h1>Overview</h1><p>Automatically turns the switch off after x amount of seconds</p> <p>0 = Disabled</p> <p>1= 1 second</p> <p>32767 = 32767 seconds</p>
@@ -125,8 +124,7 @@ Auto Off Timer<br /> <h1>Overview</h1><p>Automatically turns the switch off afte
         <default>0</default>
       </parameter>
 
-      <parameter name="config_4_1" type="integer" groupName="configuration"
-                 min="0" max="15">
+      <parameter name="config_4_1" type="integer" groupName="configuration">
         <label>4: Association Behavior</label>
         <description><![CDATA[
 Association Behavior<br /> <h1>Overview</h1><p>When should the switch send commands to the associated devices:</p> <p>01 = Local, 02 = 3-Way, 03 = 3-Way &amp; Local, 04 = Z-Wave Hub, 05 = Z-Wave Hub &amp; Local, 06 = Z-Wave Hub &amp; 3-Way, 07 = Z-Wave Hub &amp; Local &amp; 3-Way, 08 = Timer, 09 = Timer &amp; Local, 10 = Timer &amp; 3-Way, 11 =Timer &amp; 3-Way &amp; Local, 12 = Timer &amp; Z-Wave Hub, 13 = Timer &amp; Z-Wave Hub &amp; Local, 14 = Timer &amp; Z-Wave Hub &amp; 3-Way, 15 = All</p>
@@ -135,8 +133,7 @@ Association Behavior<br /> <h1>Overview</h1><p>When should the switch send comma
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_5_2" type="integer" groupName="configuration"
-                 min="0" max="255">
+      <parameter name="config_5_2" type="integer" groupName="configuration">
         <label>5: LED Indicator Color</label>
         <description><![CDATA[
 LED Indicator Color<br /> <h1>Overview</h1><p>This will set the default color of the LED bar.  Calculated by using a hue color circle (Value / 255 * 360).  Se website for more info.</p> <p>0 = Red</p> <p>21 = Orange</p> <p>42 = Yellow</p> <p>85 = Green</p> <p>127 = Cyan</p> <p>170 = Blue</p> <p>212 = Violet</p> <p>234 = Pink</p>
@@ -199,8 +196,7 @@ LED Indicator Intensity (When Off)<br /> <h1>Overview</h1><p>This is the intensi
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_8_4" type="integer" groupName="configuration"
-                 min="0" max="83823359">
+      <parameter name="config_8_4" type="integer" groupName="configuration">
         <label>8: LED Strip Effect</label>
         <description><![CDATA[
 LED Strip Effect<br /> <h1>Overview</h1><p>This will allow you to add some sweet effects to your LED bar (ie: pulse, chase, solid, etc)</p> <p>Byte 1 = Color.  This will set the color of the LED bar.  Calculated by using a hue color circle (Value / 255 * 360).</p> <p>Byte 2 = Brightness.  Sets the brightness in 10% increments.</p> <p>Byte 3 = Duration. </p> <p>Byte 4 = Effect. Sets the effect: 0 = Off, 1 = Solid, 2 = Fast Blink, 3 = Slow Blink, 4 = Pulse</p> <p>Addition:  To get the final code for the desired color/effect/duration, use this calculator:  https://nathanfiscus.github.io/inovelli-notification-calc/</p>
@@ -209,8 +205,7 @@ LED Strip Effect<br /> <h1>Overview</h1><p>This will allow you to add some sweet
         <advanced>true</advanced>
       </parameter>
 
-      <parameter name="config_8_4_000000FF" type="integer" groupName="configuration"
-                 min="0" max="255">
+      <parameter name="config_8_4_000000FF" type="integer" groupName="configuration">
         <label>8: LED Strip Effect (Color)</label>
         <description><![CDATA[
 LED Strip Effect (Color)<br /> <h1>Overview</h1><p>This will allow you to add some sweet effects to your LED bar (ie: pulse, chase, solid, etc)</p> <p>This will set the color of the LED bar.  Calculated by using a hue color circle (Value / 255 * 360).</p> <p>0 = Red</p> <p>21 = Orange</p> <p>42 = Yellow</p> <p>85 = Green</p> <p>127 = Cyan</p> <p>170 = Blue</p> <p>212 = Violet</p> <p>234 = Pink</p>
@@ -251,8 +246,7 @@ LED Strip Effect (Brightness)<br /> <h1>Overview</h1><p>This will allow you to a
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_8_4_00FF0000" type="integer" groupName="configuration"
-                 min="0" max="255">
+      <parameter name="config_8_4_00FF0000" type="integer" groupName="configuration">
         <label>8: LED Strip Effect (Duration)</label>
         <description><![CDATA[
 LED Strip Effect (Duration)<br /> <h1>Overview</h1><p>This will allow you to add some sweet effects to your LED bar (ie: pulse, chase, solid, etc)</p> <p>1 = 1 Second</p> <p>2 = 2 Seconds</p> <p>3 = 3 Seconds</p> <p>4 = 4 Seconds</p> <p>5 = 5 Seconds</p> <p>6 = 6 Seconds</p> <p>7 = 7 Seconds</p> <p>8 = 8 Seconds</p> <p>9 = 9 Seconds</p> <p>10 = 10 Seconds</p> <p>20 = 20 Seconds</p> <p>30 = 30 Seconds</p> <p>40 = 40 Seconds</p> <p>50 = 50 Seconds</p> <p>60 = 60 Seconds</p> <p>62 = 2 Minutes</p> <p>63 = 3 Minutes</p> <p>64 = 4 Minutes</p> <p>65 = 5 Minutes</p> <p>255 = Indefinitely</p>
@@ -299,8 +293,7 @@ LED Strip Timeout<br /> <h1>Overview</h1><p>When the LED strip is disabled (LED 
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_10_1" type="integer" groupName="configuration"
-                 min="0" max="100">
+      <parameter name="config_10_1" type="integer" groupName="configuration">
         <label>10: Active Power Reports</label>
         <description><![CDATA[
 Active Power Reports<br /> <h1>Overview</h1><p>The power level change that will result in a new power report being sent (% of previous report)</p> <p>0 = Disabled</p> <p>10 = 10% of previous report</p> <p>100 = 100% of previous report</p>
@@ -308,8 +301,7 @@ Active Power Reports<br /> <h1>Overview</h1><p>The power level change that will 
         <default>10</default>
       </parameter>
 
-      <parameter name="config_11_2" type="integer" groupName="configuration"
-                 min="0" max="32767">
+      <parameter name="config_11_2" type="integer" groupName="configuration">
         <label>11: Periodic Power &amp; Energy Reports</label>
         <description><![CDATA[
 Periodic Power &amp; Energy Reports<br /> <h1>Overview</h1><p>Time period between consecutive power and energy reports being sent (in seconds)</p> <p>0 = 0 seconds</p> <p>1 = 1 second</p> <p>32767 = 32767 seconds</p> <p>Timer resets after every report is sent</p>
@@ -317,8 +309,7 @@ Periodic Power &amp; Energy Reports<br /> <h1>Overview</h1><p>Time period betwee
         <default>3600</default>
       </parameter>
 
-      <parameter name="config_12_1" type="integer" groupName="configuration"
-                 min="0" max="100">
+      <parameter name="config_12_1" type="integer" groupName="configuration">
         <label>12: Energy Reports</label>
         <description><![CDATA[
 Energy Reports<br /> <h1>Overview</h1><p>The energy level change that will result in a new energy report being sent (% of previous report)</p> <p>0 = Disabled</p> <p>10 = 10% of previous report</p> <p>100 = 100% of previous report</p>

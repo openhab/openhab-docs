@@ -60,8 +60,7 @@ Solar Awning<br /> <h1>Overview</h1><p>The AMZ Z-Wave Solar Awning Blind is inte
       </parameter-group>
 
       <!-- PARAMETER DEFINITIONS -->
-      <parameter name="config_1_1" type="integer" groupName="configuration"
-                 min="0" max="2">
+      <parameter name="config_1_1" type="integer" groupName="configuration">
         <label>1: Operation Mode</label>
         <description><![CDATA[
 Operation Mode<br /> <h1>Overview</h1><p>0 – manual<br />1 – semi<br />2 – auto</p>
@@ -70,8 +69,7 @@ Operation Mode<br /> <h1>Overview</h1><p>0 – manual<br />1 – semi<br />2 –
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_2_1" type="integer" groupName="configuration"
-                 min="1" max="2">
+      <parameter name="config_2_1" type="integer" groupName="configuration">
         <label>2: Season</label>
         <description><![CDATA[
 Season<br /> <h1>Overview</h1><p>1 – summer<br />2 – winter</p>
@@ -80,24 +78,21 @@ Season<br /> <h1>Overview</h1><p>1 – summer<br />2 – winter</p>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_3_1" type="integer" groupName="configuration"
-                 min="1" max="30">
+      <parameter name="config_3_1" type="integer" groupName="configuration">
         <label>3: Time</label>
         <description>Time</description>
         <default>3</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_4_1" type="integer" groupName="configuration"
-                 min="3" max="100">
+      <parameter name="config_4_1" type="integer" groupName="configuration">
         <label>4: Sensitivity</label>
         <description>Sensitivity</description>
         <default>60</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_12_1" type="integer" groupName="configuration"
-                 min="1" max="2">
+      <parameter name="config_12_1" type="integer" groupName="configuration">
         <label>12: Calibration</label>
         <description><![CDATA[
 Calibration<br /> <h1>Overview</h1><p>Value 1 – calibrated<br />Value 2 – discalibrated – to enter the calibration mode must first time discalibrate and then calibrate.</p>
@@ -106,8 +101,7 @@ Calibration<br /> <h1>Overview</h1><p>Value 1 – calibrated<br />Value 2 – di
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_13_1" type="integer" groupName="configuration"
-                 min="1" max="2">
+      <parameter name="config_13_1" type="integer" groupName="configuration">
         <label>13: Positioning</label>
         <description><![CDATA[
 Positioning<br /> <h1>Overview</h1><p>1 – FF go to Max<br />2 – FF go to previous position</p>

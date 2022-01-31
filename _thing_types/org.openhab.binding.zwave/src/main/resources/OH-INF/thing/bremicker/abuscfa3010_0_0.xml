@@ -76,8 +76,7 @@ Z-Wave controlled door lock<br /> <h1>Overview</h1><p>The ABUS Z-Wave HomeTec CF
       </parameter-group>
 
       <!-- PARAMETER DEFINITIONS -->
-      <parameter name="config_1_1" type="integer" groupName="configuration"
-                 min="1" max="20">
+      <parameter name="config_1_1" type="integer" groupName="configuration">
         <label>1: Latch Hold Time</label>
         <description>This parameter defines how long the latch is hold open.</description>
         <default>3</default>
@@ -174,8 +173,7 @@ This parameter reports the status of the lock.<br /> <h1>Overview</h1><p>Status 
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_251_3" type="integer" groupName="configuration" readOnly="true"
-                 min="-8388606" max="8388607">
+      <parameter name="config_251_3" type="integer" groupName="configuration" readOnly="true">
         <label>251: Drive Cycles Trap</label>
         <description><![CDATA[
 Counter, how often the trap is activated was.<br /> <h1>Overview</h1><p>Counter, how often latch was actuated.</p>
@@ -184,8 +182,7 @@ Counter, how often the trap is activated was.<br /> <h1>Overview</h1><p>Counter,
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_252_3" type="integer" groupName="configuration" readOnly="true"
-                 min="-8388606" max="8388607">
+      <parameter name="config_252_3" type="integer" groupName="configuration" readOnly="true">
         <label>252: Driving Cycles Unlocked</label>
         <description><![CDATA[
 Counter, how often in the direction of Unlocked navigated was.<br /> <h1>Overview</h1><p>Counter, how often travel in „Unlocked“ direction.</p>
@@ -194,8 +191,7 @@ Counter, how often in the direction of Unlocked navigated was.<br /> <h1>Overvie
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_253_3" type="integer" groupName="configuration" readOnly="true"
-                 min="-8388606" max="8388607">
+      <parameter name="config_253_3" type="integer" groupName="configuration" readOnly="true">
         <label>253: Driving Cycles Interlocked</label>
         <description><![CDATA[
 Counter, how often in the direction of "Locked" navigated was.<br /> <h1>Overview</h1><p>Counter, how  often travel in „Locked“ direction.</p>
@@ -204,8 +200,7 @@ Counter, how often in the direction of "Locked" navigated was.<br /> <h1>Overvie
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_254_2" type="integer" groupName="configuration" readOnly="true"
-                 min="-32767" max="32768">
+      <parameter name="config_254_2" type="integer" groupName="configuration" readOnly="true">
         <label>254: ABUS Firmware Version</label>
         <description><![CDATA[
 Display of ABUS Firmware version, e.g. 1.05.<br /> <h1>Overview</h1><p>Display ABUS  firmware version, e.g. 1.05.</p>

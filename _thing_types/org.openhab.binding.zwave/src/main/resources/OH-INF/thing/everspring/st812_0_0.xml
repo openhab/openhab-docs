@@ -58,8 +58,7 @@ Flood Sensor<br /> <h1>Overview</h1><p>The flood detector is designed to sense t
       </parameter-group>
 
       <!-- PARAMETER DEFINITIONS -->
-      <parameter name="config_1_1" type="integer" groupName="configuration"
-                 min="0" max="99">
+      <parameter name="config_1_1" type="integer" groupName="configuration">
         <label>1: Basic Level Set</label>
         <description>The value sent with Basic commands in case of detected flood</description>
         <default>99</default>

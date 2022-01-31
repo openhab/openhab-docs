@@ -180,32 +180,28 @@ Define which sequences of clicks control the load connected to Channel 1/2.<br /
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_10_2" type="integer" groupName="configuration"
-                 min="0" max="32000">
+      <parameter name="config_10_2" type="integer" groupName="configuration">
         <label>10: Timer to switch OFF the Channel 1</label>
         <description>Defines the time after which the Channel 1 is switched OFF</description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_11_2" type="integer" groupName="configuration"
-                 min="0" max="32000">
+      <parameter name="config_11_2" type="integer" groupName="configuration">
         <label>11: Timer to switch OFF the Channel 2</label>
         <description>Defines the time after which the Channel 2 is switched OFF</description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_12_2" type="integer" groupName="configuration"
-                 min="0" max="32000">
+      <parameter name="config_12_2" type="integer" groupName="configuration">
         <label>12: Timer to switch ON the Channel 1</label>
         <description>Defines the time after which the Channel 1 is switched ON</description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_13_2" type="integer" groupName="configuration"
-                 min="0" max="32000">
+      <parameter name="config_13_2" type="integer" groupName="configuration">
         <label>13: Timer to switch ON the Channel 2</label>
         <description>Defines the time after which the Channel 2 is switched ON</description>
         <default>0</default>

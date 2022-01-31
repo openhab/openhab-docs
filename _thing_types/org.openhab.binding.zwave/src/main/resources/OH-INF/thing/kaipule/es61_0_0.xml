@@ -65,8 +65,7 @@ Smoke Sensor<br /> <h1>Overview</h1><p>ES61 is a battery powered independent pho
       </parameter-group>
 
       <!-- PARAMETER DEFINITIONS -->
-      <parameter name="config_1_1" type="integer" groupName="configuration"
-                 min="1" max="100">
+      <parameter name="config_1_1" type="integer" groupName="configuration">
         <label>1: Basic Set</label>
         <description><![CDATA[
 send BASIC Set = Value command<br /> <h1>Overview</h1><p>If there is any device in Association Group 2 the PIR Sensor will send BASIC Set = Value command to control that deivce when the PIR is triggered.</p>
@@ -74,8 +73,7 @@ send BASIC Set = Value command<br /> <h1>Overview</h1><p>If there is any device 
         <default>-1</default>
       </parameter>
 
-      <parameter name="config_2_1" type="integer" groupName="configuration"
-                 min="1" max="120">
+      <parameter name="config_2_1" type="integer" groupName="configuration">
         <label>2: Turn Off Light Time Configuration</label>
         <description><![CDATA[
 send BASIC Set = Value command &amp; send Basic Set = 0x00 to turn of light<br /> <h1>Overview</h1><p>If there is any device in Association Group 2 the PIR Sensor will send BASIC Set = Value command to Group 2 and send Basic Set = 0x00 to turn of light after 5 x t seconds- Set value t means to send the BAsic Set command after t seconds.</p>
@@ -83,8 +81,7 @@ send BASIC Set = Value command &amp; send Basic Set = 0x00 to turn of light<br /
         <default>20</default>
       </parameter>
 
-      <parameter name="config_3_1" type="integer" groupName="configuration"
-                 min="1" max="120">
+      <parameter name="config_3_1" type="integer" groupName="configuration">
         <label>3: PIR Sensor Alarm Elemination Time Configuration</label>
         <description><![CDATA[
 Value * 5s<br /> <h1>Overview</h1><p>Min time is 5s. Eg If the config is 1, this means it will eliminate alarm after 1 * 5s = 5 seconds</p>

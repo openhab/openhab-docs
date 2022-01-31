@@ -126,22 +126,19 @@ Water / Electrical Heating Thermostat<br /> <h1>Overview</h1><p>MCOHome Water / 
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_3_2" type="integer" groupName="configuration"
-                 min="3" max="1000">
+      <parameter name="config_3_2" type="integer" groupName="configuration">
         <label>3: Upload temperature difference</label>
         <description>Base on 0.1°C unit, 5 by default, 5*0.1°C=0.5°C</description>
         <default>5</default>
       </parameter>
 
-      <parameter name="config_4_2" type="integer" groupName="configuration"
-                 min="-32767" max="32768">
+      <parameter name="config_4_2" type="integer" groupName="configuration">
         <label>4: Upload time interval regularly</label>
         <description>Base on 1s unit, it suggest to be set above 30s</description>
         <default>30</default>
       </parameter>
 
-      <parameter name="config_5_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_5_1" type="integer" groupName="configuration">
         <label>5: Upload humidity difference</label>
         <description>Upload when percent difference exceeded</description>
         <default>3</default>

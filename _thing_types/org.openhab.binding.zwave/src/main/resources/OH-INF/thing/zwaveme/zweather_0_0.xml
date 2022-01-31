@@ -97,16 +97,14 @@
       </parameter-group>
 
       <!-- PARAMETER DEFINITIONS -->
-      <parameter name="config_1_1" type="integer" groupName="configuration"
-                 min="0" max="30">
+      <parameter name="config_1_1" type="integer" groupName="configuration">
         <label>1: Wind Speed Action Threshold</label>
         <description>Available Parameters: 0 - Off 1 - 30 in milliseconds Default = 6 m/s</description>
         <default>6</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_2_1" type="integer" groupName="configuration"
-                 min="0" max="100">
+      <parameter name="config_2_1" type="integer" groupName="configuration">
         <label>2: Twilight Action Threshold</label>
         <description>Set from 0 - 100 % Default = 37% (street lighting)</description>
         <default>37</default>

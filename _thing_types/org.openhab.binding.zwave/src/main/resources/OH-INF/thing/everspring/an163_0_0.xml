@@ -65,8 +65,7 @@ Metering Power Switch<br /> <h1>Overview</h1><p>Remote On/Off control of the con
       </parameter-group>
 
       <!-- PARAMETER DEFINITIONS -->
-      <parameter name="config_1_1" type="integer" groupName="configuration"
-                 min="0" max="120">
+      <parameter name="config_1_1" type="integer" groupName="configuration">
         <label>1: True Period</label>
         <description><![CDATA[
 Timeout before unit transmits ON/OFF state after manual button press<br /> <h1>Overview</h1><p>This setting configures the timeout after the manual on/off button is pressed before the status is transmitted. When the on/off button is pressed, the timer starts. After the timeout expires, the status of the switch is examined, and if it is different than it was prior to the first button press, the updated status is transmitted. If it is the same, no status is transmitted.</p> <p>The time setting is made in increments of 100ms, so a setting of "10" sets the timer to 10 * 100ms, or 1000ms (1s).</p>
@@ -88,8 +87,7 @@ Configure the unit to send command to other devices in Grouping 2<br /> <h1>Over
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_3_2" type="integer" groupName="configuration"
-                 min="0" max="3240">
+      <parameter name="config_3_2" type="integer" groupName="configuration">
         <label>3: Meter Report Period (W)</label>
         <description><![CDATA[
 How often the meter should report load (W).<br /> <h1>Overview</h1><p>This setting configures how often the module should report instant power load (in Watts) to the controller. The maximum interval is 9h (10s * 3240 / 3600 = 9h).</p>
@@ -98,8 +96,7 @@ How often the meter should report load (W).<br /> <h1>Overview</h1><p>This setti
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_4_2" type="integer" groupName="configuration"
-                 min="0" max="10080">
+      <parameter name="config_4_2" type="integer" groupName="configuration">
         <label>4: Meter Report Period (kWh)</label>
         <description><![CDATA[
 How often the meter should report load (kWh).<br /> <h1>Overview</h1><p>This setting configures the period for the module to report power load over time (kWh). The default is 24h. Maximum period is 1 week (1min * 10080 / 60 = 168h = 1 week). Smaller loads generally need more time for accurate calculation of kilowatt-hours. </p>

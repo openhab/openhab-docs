@@ -78,8 +78,7 @@ Smart Energy Switch 3rd Edition<br /> <h1>Overview</h1><p>Smart Energy Switch 3r
       </parameter-group>
 
       <!-- PARAMETER DEFINITIONS -->
-      <parameter name="config_2_2" type="integer" groupName="configuration"
-                 min="-32767" max="32768">
+      <parameter name="config_2_2" type="integer" groupName="configuration">
         <label>2: Blinking Behaviour</label>
         <description><![CDATA[
 The LSB defines the total time the device need to blink.<br /> <h1>Overview</h1><p>The LSB defines the total time the device need to blink. The value if set in seconds. 1 - 255 The MSB defines the on/off interval of the blinking. The unit is 0.1 s. This is a double byte value.</p>
@@ -153,8 +152,7 @@ Enable/Disable automated sending of report triggered by minimal change of value.
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_91_2" type="integer" groupName="configuration"
-                 min="0" max="32000">
+      <parameter name="config_91_2" type="integer" groupName="configuration">
         <label>91: Minimum Change to send Report (Watt)</label>
         <description><![CDATA[
 The value represents the minimum change in Wattage for a Report to be sent.<br /> <h1>Overview</h1><p> Range is 0 - 32000</p>
@@ -163,8 +161,7 @@ The value represents the minimum change in Wattage for a Report to be sent.<br /
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_92_1" type="integer" groupName="configuration"
-                 min="0" max="100">
+      <parameter name="config_92_1" type="integer" groupName="configuration">
         <label>92: Minimum Change to send Report (%)</label>
         <description><![CDATA[
 Minimum change in Wattage Percent for a report to be sent.<br /> <h1>Overview</h1><p>The value represents the minimum change in Wattage Percent for a report to be sent. Range is 0 to 100%</p>
@@ -186,8 +183,7 @@ Minimum change in Wattage Percent for a report to be sent.<br /> <h1>Overview</h
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_101_4" type="integer" groupName="configuration"
-                 min="0" max="65535">
+      <parameter name="config_101_4" type="integer" groupName="configuration">
         <label>101: Report type to send to Group 1</label>
         <description><![CDATA[
 The value is a combination number<br /> <h1>Overview</h1><p>The value is a combination number made up of the sum of the values for the individual parameters.</p> <p>The parameters have the values: KWH=8, Wattage=4, Current=2, Voltage=1.</p> <p>Therefore if you want all parameters sending regular r</p>
@@ -196,8 +192,7 @@ The value is a combination number<br /> <h1>Overview</h1><p>The value is a combi
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_102_4" type="integer" groupName="configuration"
-                 min="0" max="65535">
+      <parameter name="config_102_4" type="integer" groupName="configuration">
         <label>102: Report type to send to Group 2</label>
         <description><![CDATA[
 The value is a combination number<br /> <h1>Overview</h1><p>The value is a combination number made up of the sum of the values for the individual parameters.</p> <p>The parameters have the values: KWH=8, Wattage=4, Current=2, Voltage=1.</p> <p> Therefore if you want all parameters sending regular re</p>
@@ -206,8 +201,7 @@ The value is a combination number<br /> <h1>Overview</h1><p>The value is a combi
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_103_4" type="integer" groupName="configuration"
-                 min="0" max="65535">
+      <parameter name="config_103_4" type="integer" groupName="configuration">
         <label>103: Report type to send to Group 3</label>
         <description><![CDATA[
 The value is a combination number<br /> <h1>Overview</h1><p>The value is a combination number &lt;br&gt; made up of the sum of the values for the individual parameters. &lt;br&gt; The parameters have the values: KWH=8, Wattage=4, Current=2, Voltage=1. &lt;br&gt; Therefore if you want all parameters sending regular re</p>
@@ -216,8 +210,7 @@ The value is a combination number<br /> <h1>Overview</h1><p>The value is a combi
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_111_4" type="integer" groupName="configuration"
-                 min="0" max="65535">
+      <parameter name="config_111_4" type="integer" groupName="configuration">
         <label>111: Interval to send out reports to Group 1</label>
         <description><![CDATA[
 Time Interval to send reports to Group 1<br /> <h1>Overview</h1><p>Defines the time interval when the defined report of Reporting Group 1 is sent out.</p> <p>0 s - 65535 s - Interval</p>
@@ -226,8 +219,7 @@ Time Interval to send reports to Group 1<br /> <h1>Overview</h1><p>Defines the t
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_112_4" type="integer" groupName="configuration"
-                 min="0" max="65535">
+      <parameter name="config_112_4" type="integer" groupName="configuration">
         <label>112: Interval to send out reports of group 2</label>
         <description><![CDATA[
 Time interval to send reports of group 2<br /> <h1>Overview</h1><p>Defines the time interval when the defined report of Reporting Group 2 is sent out.</p> <p>0 s - 65535 s - Interval</p>
@@ -236,8 +228,7 @@ Time interval to send reports of group 2<br /> <h1>Overview</h1><p>Defines the t
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_113_4" type="integer" groupName="configuration"
-                 min="0" max="65535">
+      <parameter name="config_113_4" type="integer" groupName="configuration">
         <label>113: Interval to send out reports of group 3</label>
         <description><![CDATA[
 Time interval when report of Reporting Group 3 is sent.<br /> <h1>Overview</h1><p>Defines the time interval when the defined report of Reporting Group 3 is sent out.</p> <p>0 s - 65535 s - Interval</p>

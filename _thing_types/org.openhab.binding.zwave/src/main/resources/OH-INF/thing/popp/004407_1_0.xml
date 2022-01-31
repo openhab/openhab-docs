@@ -83,15 +83,13 @@ CO Detector<br /> <h1>Overview</h1><p>This product combines a certified carbon m
       </parameter-group>
 
       <!-- PARAMETER DEFINITIONS -->
-      <parameter name="config_1_1" type="integer" groupName="configuration"
-                 min="0" max="99">
+      <parameter name="config_1_1" type="integer" groupName="configuration">
         <label>1: Value of ON-Command</label>
         <default>99</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_2_1" type="integer" groupName="configuration"
-                 min="0" max="99">
+      <parameter name="config_2_1" type="integer" groupName="configuration">
         <label>2: Value of OFF-Command</label>
         <default>0</default>
         <limitToOptions>false</limitToOptions>

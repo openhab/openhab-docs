@@ -48,8 +48,7 @@ Smart Energy Illuminator G2<br /> <h1>Overview</h1><p>Plugin dimmer for a lamp</
       </parameter-group>
 
       <!-- PARAMETER DEFINITIONS -->
-      <parameter name="config_2_2" type="integer" groupName="configuration"
-                 min="-32767" max="32768">
+      <parameter name="config_2_2" type="integer" groupName="configuration">
         <label>2: Configure Blinking LED</label>
         <default>1</default>
         <limitToOptions>false</limitToOptions>

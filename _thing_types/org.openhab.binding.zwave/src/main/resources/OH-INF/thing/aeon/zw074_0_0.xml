@@ -76,15 +76,13 @@
       </parameter-group>
 
       <!-- PARAMETER DEFINITIONS -->
-      <parameter name="config_2_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_2_1" type="integer" groupName="configuration">
         <label>2: Wake up for 10 minutes when batteries are inserted</label>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_3_2" type="integer" groupName="configuration"
-                 min="1" max="15300">
+      <parameter name="config_3_2" type="integer" groupName="configuration">
         <label>3: On time</label>
         <description><![CDATA[
 Time to keep state On before sending Off command<br /> <h1>Overview</h1><p>How long should the device associated to multi sensor keep state On before sending it Off command (if the value is bigger than 255, the value would be rounded to next integer in minutes)</p>
@@ -127,8 +125,7 @@ Enable/disable the selective reporting<br /> <h1>Overview</h1><p>Enable/disable 
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_41_2" type="integer" groupName="configuration"
-                 min="-32767" max="32768">
+      <parameter name="config_41_2" type="integer" groupName="configuration">
         <label>41: Temperature threshold to trigger a report.</label>
         <description><![CDATA[
 Temperature threshold to trigger a report.<br /> <h1>Overview</h1><ol><li>When the unit is Celsius, threshold=Value.</li> <li>When the unit is Fahrenheit, threshold=Value*1.8. The accuracy is 0.1.</li> <li>The high byte is the part of integer, the low byte is the fractional part.</li> </ol>
@@ -137,8 +134,7 @@ Temperature threshold to trigger a report.<br /> <h1>Overview</h1><ol><li>When t
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_42_2" type="integer" groupName="configuration"
-                 min="-32767" max="32768">
+      <parameter name="config_42_2" type="integer" groupName="configuration">
         <label>42: Humidity threshold to trigger a report.</label>
         <description><![CDATA[
 Threshold for change in humidity to trigger a report.<br /> <h1>Overview</h1><p>The accuracy is 0.1.</p> <p>The high byte is the part of integer, the low byte is the fractional part.</p>
@@ -147,8 +143,7 @@ Threshold for change in humidity to trigger a report.<br /> <h1>Overview</h1><p>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_43_2" type="integer" groupName="configuration"
-                 min="0" max="1000">
+      <parameter name="config_43_2" type="integer" groupName="configuration">
         <label>43: luminance report threshold</label>
         <description><![CDATA[
 luminance report threshold<br /> <h1>Overview</h1><p>Threshold for changes in luminance to trigger a report. Note the sensor range is just 1-1000 lux !</p>
@@ -157,8 +152,7 @@ luminance report threshold<br /> <h1>Overview</h1><p>Threshold for changes in lu
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_44_2" type="integer" groupName="configuration"
-                 min="-32767" max="32768">
+      <parameter name="config_44_2" type="integer" groupName="configuration">
         <label>44: Battery level to induce an automatic report.</label>
         <description><![CDATA[
 Battery level to induce an automatic report.<br /> <h1>Overview</h1><p>The accuracy is 0.1.</p> <p>The high byte is the part of integer, the low byte is the fractional part.</p>
@@ -180,8 +174,7 @@ Enable/disable low temperature alarm report<br /> <h1>Overview</h1><p>Enable/dis
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_101_4" type="integer" groupName="configuration"
-                 min="0" max="65535">
+      <parameter name="config_101_4" type="integer" groupName="configuration">
         <label>101: Reports sent automatically for group 1</label>
         <description><![CDATA[
 Reports sent automatically for group 1<br /> <h1>Overview</h1><p>The value is a combination number made up of the sum of the values for the individual sensors and battery. The sensors have the values:</p> <ul><li>Temperature=32</li> <li>Humidity=64</li> <li>Lightlevel=128</li> <li>Battery=1</li> </ul>
@@ -190,8 +183,7 @@ Reports sent automatically for group 1<br /> <h1>Overview</h1><p>The value is a 
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_102_4" type="integer" groupName="configuration"
-                 min="0" max="65535">
+      <parameter name="config_102_4" type="integer" groupName="configuration">
         <label>102: Reports sent automatically for group 2</label>
         <description><![CDATA[
 Reports sent automatically for group 2<br /> <h1>Overview</h1><p>The value is a combination number made up of the sum of the values for the individual sensors and battery.</p> <p>The sensors have the values:</p> <ul><li>Temperature=32</li> <li>Humidity=64</li> <li>Lightlevel=128</li> <li>Battery=1</li> </ul>
@@ -200,8 +192,7 @@ Reports sent automatically for group 2<br /> <h1>Overview</h1><p>The value is a 
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_103_4" type="integer" groupName="configuration"
-                 min="0" max="65535">
+      <parameter name="config_103_4" type="integer" groupName="configuration">
         <label>103: Reports sent automatically for group 3</label>
         <description><![CDATA[
 Reports sent automatically for group 3<br /> <h1>Overview</h1><p>The value is a combination number made up of the sum of the values for the individual sensors and battery.</p> <p>The sensors have the values:</p> <ul><li>Temperature=32</li> <li>Humidity=64</li> <li>Lightlevel=128</li> <li>Battery=1</li> </ul>
@@ -210,22 +201,19 @@ Reports sent automatically for group 3<br /> <h1>Overview</h1><p>The value is a 
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_111_4" type="integer" groupName="configuration"
-                 min="1" max="2678400">
+      <parameter name="config_111_4" type="integer" groupName="configuration">
         <label>111: Interval to send out reports of group 1</label>
         <default>720</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_112_4" type="integer" groupName="configuration"
-                 min="1" max="2678400">
+      <parameter name="config_112_4" type="integer" groupName="configuration">
         <label>112: Interval to send out reports of group 2</label>
         <default>720</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_113_4" type="integer" groupName="configuration"
-                 min="1" max="2678400">
+      <parameter name="config_113_4" type="integer" groupName="configuration">
         <label>113: Interval to send out reports of group 3</label>
         <default>720</default>
         <limitToOptions>false</limitToOptions>

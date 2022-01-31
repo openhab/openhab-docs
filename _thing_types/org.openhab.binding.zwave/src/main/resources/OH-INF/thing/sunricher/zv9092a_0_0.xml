@@ -149,8 +149,7 @@ Namron Z-Wave Heating Thermostat SR-ZV9092A<br /> <h1>Overview</h1><p>Z-Wave Hea
       </parameter-group>
 
       <!-- PARAMETER DEFINITIONS -->
-      <parameter name="config_2_1" type="integer" groupName="configuration"
-                 min="0" max="16">
+      <parameter name="config_2_1" type="integer" groupName="configuration">
         <label>2: Over current detection max. value in Amp</label>
         <description><![CDATA[
 Over current detection max. value in Amp<br /> <h1>Overview</h1><p>Over current detection max. value, unit is A. When detected current is over this value, the device will turn off the relay and send NOTIFICATION CC.</p><p>0, disable over current detection<br />5-16, over current detection max. value</p>
@@ -159,8 +158,7 @@ Over current detection max. value in Amp<br /> <h1>Overview</h1><p>Over current 
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_3_1" type="integer" groupName="configuration"
-                 min="0" max="2">
+      <parameter name="config_3_1" type="integer" groupName="configuration">
         <label>3: Vibration level and buzzer level triggered by pressing buttons</label>
         <description><![CDATA[
 Vibration level and buzzer level triggered by pressing buttons<br /> <h1>Overview</h1><p>Vibration level and buzzer level triggered by pressing buttons</p><p>0, disable vibration and buzzer<br />1, Low Level<br />2, High Level</p>
@@ -169,8 +167,7 @@ Vibration level and buzzer level triggered by pressing buttons<br /> <h1>Overvie
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_4_1" type="integer" groupName="configuration"
-                 min="0" max="1">
+      <parameter name="config_4_1" type="integer" groupName="configuration">
         <label>4: Whether to recover to settings before power failure or power reset</label>
         <description><![CDATA[
 Whether to recover to settings before power failure or power reset<br /> <h1>Overview</h1><p>Whether to recover to settings before power failure or power reset</p><p>0, use default settings<br />1, recover to settings before power failure or power reset</p>
@@ -179,8 +176,7 @@ Whether to recover to settings before power failure or power reset<br /> <h1>Ove
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_6_1" type="integer" groupName="configuration"
-                 min="0" max="60">
+      <parameter name="config_6_1" type="integer" groupName="configuration">
         <label>6: High temperature detection max. value</label>
         <description><![CDATA[
 High temperature detection max. value<br /> <h1>Overview</h1><p>High temperature detection max. value, unit is ℃ , when either temperature sensor</p><p>is higher than this value, the device will turn off the relay and send NOTIFICATION CC.</p><p>0, disable this function<br />20-60, the high temperature value</p>
@@ -189,8 +185,7 @@ High temperature detection max. value<br /> <h1>Overview</h1><p>High temperature
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_7_1" type="integer" groupName="configuration"
-                 min="5" max="20">
+      <parameter name="config_7_1" type="integer" groupName="configuration">
         <label>7: Temperature control hysteresis value setting</label>
         <description><![CDATA[
 Temperature control hysteresis value setting<br /> <h1>Overview</h1><p>Temperature control hysteresis value setting, setting range 0.5℃-2℃</p><p>5-20, unit is 0.1℃</p>
@@ -199,8 +194,7 @@ Temperature control hysteresis value setting<br /> <h1>Overview</h1><p>Temperatu
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_8_1" type="integer" groupName="configuration"
-                 min="0" max="1">
+      <parameter name="config_8_1" type="integer" groupName="configuration">
         <label>8: Auto mode (Energy save mode) temperature schedule</label>
         <description><![CDATA[
 Auto mode (Energy save mode) temperature schedule<br /> <h1>Overview</h1><p>Auto mode (Energy save mode) temperature schedule</p><p>0, use schedule set by user<br />1, use Energy_Save_Heating temperature set by THERMOSTAT_SETPOINT_SET</p>
@@ -209,8 +203,7 @@ Auto mode (Energy save mode) temperature schedule<br /> <h1>Overview</h1><p>Auto
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_9_1" type="integer" groupName="configuration"
-                 min="1" max="4">
+      <parameter name="config_9_1" type="integer" groupName="configuration">
         <label>9: Select floor temperature sensor type</label>
         <description><![CDATA[
 Select floor temperature sensor type<br /> <h1>Overview</h1><p>Select floor temperature sensor type:</p><p>1, NTC/10K B(25/50℃)=3950<br />2, NTC/15K B(25/50℃)=3950<br />3, NTC/50K B(25/50℃)=3950<br />4, NTC/100K B(25/50℃)=3950</p>
@@ -220,8 +213,7 @@ Select floor temperature sensor type<br /> <h1>Overview</h1><p>Select floor temp
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_10_1" type="integer" groupName="configuration"
-                 min="1" max="3">
+      <parameter name="config_10_1" type="integer" groupName="configuration">
         <label>10: Temperature control reference selection</label>
         <description><![CDATA[
 Temperature control reference selection<br /> <h1>Overview</h1><p>Temperature control reference selection</p><p>1, room sensor<br />2, floor sensor<br />3, room+floor sensor</p>
@@ -230,8 +222,7 @@ Temperature control reference selection<br /> <h1>Overview</h1><p>Temperature co
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_11_1" type="integer" groupName="configuration"
-                 min="-10" max="10">
+      <parameter name="config_11_1" type="integer" groupName="configuration">
         <label>11: ROOM SENSOR temperature compensation setting</label>
         <description><![CDATA[
 ROOM SENSOR temperature compensation setting<br /> <h1>Overview</h1><p>ROOM SENSOR temperature compensation setting</p><p>-10~10, unit is 0.5</p>
@@ -241,8 +232,7 @@ ROOM SENSOR temperature compensation setting<br /> <h1>Overview</h1><p>ROOM SENS
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_12_1" type="integer" groupName="configuration"
-                 min="-10" max="10">
+      <parameter name="config_12_1" type="integer" groupName="configuration">
         <label>12: FLOOR SENSOR temperature compensation setting</label>
         <description><![CDATA[
 FLOOR SENSOR temperature compensation setting<br /> <h1>Overview</h1><p>FLOOR SENSOR temperature compensation setting</p><p>-10~10, unit is 0.5</p>
@@ -252,8 +242,7 @@ FLOOR SENSOR temperature compensation setting<br /> <h1>Overview</h1><p>FLOOR SE
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_13_1" type="integer" groupName="configuration"
-                 min="5" max="100">
+      <parameter name="config_13_1" type="integer" groupName="configuration">
         <label>13: Set how long the drying mode lasts</label>
         <description><![CDATA[
 Set how long the drying mode lasts<br /> <h1>Overview</h1><p>Set how long the drying mode lasts</p><p>5~100, unit is minute</p>
@@ -263,8 +252,7 @@ Set how long the drying mode lasts<br /> <h1>Overview</h1><p>Set how long the dr
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_14_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_14_1" type="integer" groupName="configuration">
         <label>14: Set the mode after the drying mode ends</label>
         <description><![CDATA[
 Set the mode after the drying mode ends<br /> <h1>Overview</h1><p>Set the mode after the drying mode ends</p><p>0x00 = OFF<br />0x01 = Manual mode (comfort mode)<br />0x02 = Auto mode (energy save mode)<br />0x03 = Away mode</p>
@@ -274,8 +262,7 @@ Set the mode after the drying mode ends<br /> <h1>Overview</h1><p>Set the mode a
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_16_1" type="integer" groupName="configuration"
-                 min="0" max="10">
+      <parameter name="config_16_1" type="integer" groupName="configuration">
         <label>16: When to report temperature relative change threshold value actively</label>
         <description><![CDATA[
 When to report temperature relative change threshold value actively<br /> <h1>Overview</h1><p>When to report temperature relative change threshold value actively, unit is 0.1</p><p>0, disable to report<br />2-10, report when the threshold value is 2-10</p>
@@ -285,8 +272,7 @@ When to report temperature relative change threshold value actively<br /> <h1>Ov
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_17_2" type="integer" groupName="configuration"
-                 min="30" max="28800">
+      <parameter name="config_17_2" type="integer" groupName="configuration">
         <label>17: Time interval value for periodic report of temperature, humidity</label>
         <description><![CDATA[
 Time interval value for periodic report of temperature, humidity<br /> <h1>Overview</h1><p>Time interval value for periodic report of temperature, humidity, unit is S</p><p>0, disable to report<br />30~28800, report when time interval value is 30~28800</p><p>Default: 300 (5 minutes).</p>
@@ -296,8 +282,7 @@ Time interval value for periodic report of temperature, humidity<br /> <h1>Overv
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_18_1" type="integer" groupName="configuration"
-                 min="1" max="100">
+      <parameter name="config_18_1" type="integer" groupName="configuration">
         <label>18: When to report power change absolute threshold</label>
         <description><![CDATA[
 When to report power change absolute threshold<br /> <h1>Overview</h1><p>When to report power change absolute threshold, unit is W</p><p>0, disable to report<br />1~100, report when absolute threshold is 1~100</p>
@@ -307,8 +292,7 @@ When to report power change absolute threshold<br /> <h1>Overview</h1><p>When to
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_19_1" type="integer" groupName="configuration"
-                 min="1" max="10">
+      <parameter name="config_19_1" type="integer" groupName="configuration">
         <label>19: When to report current change absolute threshold</label>
         <description><![CDATA[
 When to report current change absolute threshold<br /> <h1>Overview</h1><p>When to report current change absolute threshold, unit is 0.1A</p><p>0, disable to report<br />1~10, report when absolute threshold is 1~10</p>
@@ -318,8 +302,7 @@ When to report current change absolute threshold<br /> <h1>Overview</h1><p>When 
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_20_1" type="integer" groupName="configuration"
-                 min="1" max="10">
+      <parameter name="config_20_1" type="integer" groupName="configuration">
         <label>20: When to report voltage change absolute threshold</label>
         <description><![CDATA[
 When to report voltage change absolute threshold<br /> <h1>Overview</h1><p>When to report voltage change absolute threshold, unit is 1 V</p><p>0, disable to report<br />1~10, report when absolute threshold is 1~10</p>
@@ -329,8 +312,7 @@ When to report voltage change absolute threshold<br /> <h1>Overview</h1><p>When 
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_21_4" type="integer" groupName="configuration"
-                 min="60" max="2678400">
+      <parameter name="config_21_4" type="integer" groupName="configuration">
         <label>21: Time interval value for periodic active report of Meter</label>
         <description><![CDATA[
 Time interval value for periodic active report of Meter<br /> <h1>Overview</h1><p>Time interval value for periodic active report of Meter</p><p>60-2678400 (31 days), unit is S</p>
@@ -340,8 +322,7 @@ Time interval value for periodic active report of Meter<br /> <h1>Overview</h1><
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_22_1" type="integer" groupName="configuration"
-                 min="0" max="2">
+      <parameter name="config_22_1" type="integer" groupName="configuration">
         <label>22: The OLED display brightness when operate the device</label>
         <description><![CDATA[
 The OLED display brightness when operate the device<br /> <h1>Overview</h1><p>The OLED display brightness when operate the device.</p><p>0, low level<br />1, mid level<br />2, high level</p>
@@ -350,8 +331,7 @@ The OLED display brightness when operate the device<br /> <h1>Overview</h1><p>Th
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_23_1" type="integer" groupName="configuration"
-                 min="0" max="1">
+      <parameter name="config_23_1" type="integer" groupName="configuration">
         <label>23: This parameter defines which sensor temperature will be displayed on Home page</label>
         <description><![CDATA[
 This parameter defines which sensor temperature will be displayed on Home page<br /> <h1>Overview</h1><p>This parameter defines which sensor temperature will be displayed on Home page.</p><p>0x00: indoor air temperature<br />0x01: external temperature (floor temperature)</p>
@@ -361,8 +341,7 @@ This parameter defines which sensor temperature will be displayed on Home page<b
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_24_1" type="integer" groupName="configuration"
-                 min="-12" max="12">
+      <parameter name="config_24_1" type="integer" groupName="configuration">
         <label>24: The time zone that the time parameters command adopts is UTC</label>
         <description><![CDATA[
 The time zone that the time parameters command adopts is UTC<br /> <h1>Overview</h1><p>The time zone that the time parameters command adopts is UTC, the time zone</p><p>need to be set:<br />+12 ~ -12</p>
@@ -371,8 +350,7 @@ The time zone that the time parameters command adopts is UTC<br /> <h1>Overview<
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_26_1" type="integer" groupName="configuration"
-                 min="0" max="40">
+      <parameter name="config_26_1" type="integer" groupName="configuration">
         <label>26: Window open detect function temperature threshold</label>
         <description><![CDATA[
 Window open detect function temperature threshold<br /> <h1>Overview</h1><p>Window open detect function temperature threshold: the Celsius degrees that the temperature decreases within 3 minutes, unit is 0.1 Celsius degree.</p><p>0, disabled<br />15, 20, 25, 30, 35, 40, the set temperature threshold</p>

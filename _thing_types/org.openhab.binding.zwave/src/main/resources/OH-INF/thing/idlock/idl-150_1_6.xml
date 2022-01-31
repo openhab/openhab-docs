@@ -112,8 +112,7 @@ Z-wave module for ID Lock 150<br /> <h1>Overview</h1><p>The ID Lock Z-wave modul
       </parameter-group>
 
       <!-- PARAMETER DEFINITIONS -->
-      <parameter name="config_1_1" type="integer" groupName="configuration"
-                 min="0" max="3">
+      <parameter name="config_1_1" type="integer" groupName="configuration">
         <label>1: Lock Mode</label>
         <description><![CDATA[
 Set if the lock is in away mode and if automatic locking should be enabled<br /> <h1>Overview</h1><p>0 = Manual lock/Away off<br />1 = Auto lock/Away off<br />2 = Manual lock/Away on<br />3 = Auto lock/Away on<br /></p>
@@ -122,8 +121,7 @@ Set if the lock is in away mode and if automatic locking should be enabled<br />
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_2_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_2_1" type="integer" groupName="configuration">
         <label>2: RFID Mode</label>
         <description>RFID Mode</description>
         <default>5</default>
@@ -133,8 +131,7 @@ Set if the lock is in away mode and if automatic locking should be enabled<br />
         </options>
       </parameter>
 
-      <parameter name="config_3_1" type="integer" groupName="configuration"
-                 min="0" max="1">
+      <parameter name="config_3_1" type="integer" groupName="configuration">
         <label>3: Hinge Direction</label>
         <description>Hinge Direction</description>
         <default>1</default>
@@ -144,8 +141,7 @@ Set if the lock is in away mode and if automatic locking should be enabled<br />
         </options>
       </parameter>
 
-      <parameter name="config_4_1" type="integer" groupName="configuration"
-                 min="0" max="6">
+      <parameter name="config_4_1" type="integer" groupName="configuration">
         <label>4: Audio Volume</label>
         <description>Audio Volume</description>
         <default>5</default>
@@ -160,8 +156,7 @@ Set if the lock is in away mode and if automatic locking should be enabled<br />
         </options>
       </parameter>
 
-      <parameter name="config_5_1" type="integer" groupName="configuration"
-                 min="0" max="1">
+      <parameter name="config_5_1" type="integer" groupName="configuration">
         <label>5: ReLock Mode</label>
         <description>ReLock Mode</description>
         <default>1</default>
@@ -171,8 +166,7 @@ Set if the lock is in away mode and if automatic locking should be enabled<br />
         </options>
       </parameter>
 
-      <parameter name="config_6_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_6_1" type="integer" groupName="configuration">
         <label>6: Service PIN Mode</label>
         <description>Service PIN Mode</description>
         <default>0</default>
@@ -191,8 +185,7 @@ Set if the lock is in away mode and if automatic locking should be enabled<br />
         </options>
       </parameter>
 
-      <parameter name="config_7_1" type="integer" groupName="configuration" readOnly="true"
-                 min="-127" max="128">
+      <parameter name="config_7_1" type="integer" groupName="configuration" readOnly="true">
         <label>7: Modul type</label>
         <description><![CDATA[
 Modul type<br /> <h1>Overview</h1><p>150 = IDLock 150 (Read only)</p>
@@ -201,8 +194,7 @@ Modul type<br /> <h1>Overview</h1><p>150 = IDLock 150 (Read only)</p>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_8_1" type="integer" groupName="configuration"
-                 min="0" max="3">
+      <parameter name="config_8_1" type="integer" groupName="configuration">
         <label>8: Updater Mode</label>
         <description>Updater Mode</description>
         <default>0</default>
@@ -214,8 +206,7 @@ Modul type<br /> <h1>Overview</h1><p>150 = IDLock 150 (Read only)</p>
         </options>
       </parameter>
 
-      <parameter name="config_9_1" type="integer" groupName="configuration"
-                 min="0" max="1">
+      <parameter name="config_9_1" type="integer" groupName="configuration">
         <label>9: Master PIN Unlocks</label>
         <description>Master PIN Unlocks</description>
         <default>1</default>

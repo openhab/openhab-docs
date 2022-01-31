@@ -77,8 +77,7 @@ Smart Plug<br /> <h1>Overview</h1><p>Smart plug is a Z-Wave Switch plugin module
       </parameter-group>
 
       <!-- PARAMETER DEFINITIONS -->
-      <parameter name="config_20_1_wo" type="integer" groupName="configuration"
-                 min="0" max="1">
+      <parameter name="config_20_1_wo" type="integer" groupName="configuration">
         <label>20: Overload Protection</label>
         <description><![CDATA[
 Turn off if the load power exceeds 0.5A for more than 5s.<br /> <h1>Overview</h1><p><br /></p>
@@ -90,8 +89,7 @@ Turn off if the load power exceeds 0.5A for more than 5s.<br /> <h1>Overview</h1
         </options>
       </parameter>
 
-      <parameter name="config_21_1" type="integer" groupName="configuration"
-                 min="0" max="2">
+      <parameter name="config_21_1" type="integer" groupName="configuration">
         <label>21: Device Status After Power Failure.</label>
         <description><![CDATA[
 Define how the Plug reacts after the power supply is back on.<br /> <h1>Overview</h1><p><br /></p>
@@ -104,8 +102,7 @@ Define how the Plug reacts after the power supply is back on.<br /> <h1>Overview
         </options>
       </parameter>
 
-      <parameter name="config_24_1" type="integer" groupName="configuration"
-                 min="0" max="2">
+      <parameter name="config_24_1" type="integer" groupName="configuration">
         <label>24: Load Status Change Notification</label>
         <description><![CDATA[
 Send notification to associated devices when load is changed.<br /> <h1>Overview</h1><p><br /></p>
@@ -118,8 +115,7 @@ Send notification to associated devices when load is changed.<br /> <h1>Overview
         </options>
       </parameter>
 
-      <parameter name="config_27_1" type="integer" groupName="configuration"
-                 min="0" max="1">
+      <parameter name="config_27_1" type="integer" groupName="configuration">
         <label>27: Indicator Modes</label>
         <description><![CDATA[
 The RGB LED indicator will indicate the load.<br /> <h1>Overview</h1><p><br /></p>
@@ -131,8 +127,7 @@ The RGB LED indicator will indicate the load.<br /> <h1>Overview</h1><p><br /></
         </options>
       </parameter>
 
-      <parameter name="config_151_2" type="integer" groupName="configuration"
-                 min="-32767" max="32768">
+      <parameter name="config_151_2" type="integer" groupName="configuration">
         <label>151: Power Report Threshold</label>
         <description><![CDATA[
 Power threashold for when to send reports to associated devices<br /> <h1>Overview</h1><p>When the change value of the load power exceeds the threshold, the meter report is send to associated devices.  0 -- The function is disabled.</p>
@@ -141,8 +136,7 @@ Power threashold for when to send reports to associated devices<br /> <h1>Overvi
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_152_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_152_1" type="integer" groupName="configuration">
         <label>152: Power Report Percentage Threshold</label>
         <description><![CDATA[
 Percentage threshold for when to send report to associated devices<br /> <h1>Overview</h1><p>When the change value of the load power exceeds the threshold, the meter report is send to associated devices.</p> <p>0 -- The function is disabled.</p>
@@ -151,8 +145,7 @@ Percentage threshold for when to send report to associated devices<br /> <h1>Ove
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_171_4" type="integer" groupName="configuration"
-                 min="0" max="2678400">
+      <parameter name="config_171_4" type="integer" groupName="configuration">
         <label>171: Power Report Frequency</label>
         <description><![CDATA[
 The interval of sending power report to association device.<br /> <h1>Overview</h1><p>The interval of sending power report to association device.</p> <p>0 = The function is disabled.</p>
@@ -161,8 +154,7 @@ The interval of sending power report to association device.<br /> <h1>Overview</
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_172_4" type="integer" groupName="configuration"
-                 min="0" max="2678400">
+      <parameter name="config_172_4" type="integer" groupName="configuration">
         <label>172: Energy Report Frequency</label>
         <description><![CDATA[
 The interval of sending energy report to association device.<br /> <h1>Overview</h1><p>The interval of sending energy report to association device.</p> <p>0 = The function is disabled.</p>
@@ -171,8 +163,7 @@ The interval of sending energy report to association device.<br /> <h1>Overview<
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_173_4" type="integer" groupName="configuration"
-                 min="0" max="2678400">
+      <parameter name="config_173_4" type="integer" groupName="configuration">
         <label>173: Voltage Report Frequency</label>
         <description><![CDATA[
 The interval of sending voltage report to association device.<br /> <h1>Overview</h1><p>The interval of sending voltage report to association device.</p> <p>0 = The function is disabled.</p>
@@ -181,8 +172,7 @@ The interval of sending voltage report to association device.<br /> <h1>Overview
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_174_4" type="integer" groupName="configuration"
-                 min="0" max="2678400">
+      <parameter name="config_174_4" type="integer" groupName="configuration">
         <label>174: Electricity Report Frequency</label>
         <description><![CDATA[
 The interval of sending electricity report to association device.<br /> <h1>Overview</h1><p>The interval of sending electricity report to association device.</p> <p>0 = The function is disabled.</p>

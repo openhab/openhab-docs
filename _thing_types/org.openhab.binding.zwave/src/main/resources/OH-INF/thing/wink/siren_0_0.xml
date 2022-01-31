@@ -169,8 +169,7 @@ Toggle Secondary Chime<br /> <h1>Overview</h1><p>This Parameter toggles between 
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_8_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_8_1" type="integer" groupName="configuration">
         <label>8: Power Level</label>
         <description>Power Level</description>
         <default>0</default>

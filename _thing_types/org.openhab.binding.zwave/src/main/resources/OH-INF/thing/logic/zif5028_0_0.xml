@@ -220,8 +220,7 @@ Configures the function of input 1.<br /> <h1>Overview</h1><p>Select the value f
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_4_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_4_1" type="integer" groupName="configuration">
         <label>4: Timer for input 1</label>
         <description><![CDATA[
 Configures the timer of input 1<br /> <h1>Overview</h1><p>Choose parameter value from the scheme below.</p><p><b>VALUE DESCRIPTION</b></p><p>0 Inactive (standard)</p><p>1 - 127 Time in seconds: 1 – 127 seconds.</p><p>128 - 255 Time in minutes: 128 – 255 minutes.</p>
@@ -245,8 +244,7 @@ Configures the function of input 2.<br /> <h1>Overview</h1><p>Select the value f
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_6_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_6_1" type="integer" groupName="configuration">
         <label>6: Timer for input 2</label>
         <description><![CDATA[
 Configures the timer of input 2<br /> <h1>Overview</h1><p>Choose parameter value from the scheme below.</p><p><b>VALUE DESCRIPTION</b></p><p>0 Inactive (standard)</p><p>1 - 127 Time in seconds: 1 – 127 seconds.</p><p>128 - 255 Time in minutes: 128 – 255 minutes.</p>
@@ -270,8 +268,7 @@ Configures the function of input 3.<br /> <h1>Overview</h1><p>Select the value f
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_8_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_8_1" type="integer" groupName="configuration">
         <label>8: Timer for input 3</label>
         <description><![CDATA[
 Configures the timer of input 3<br /> <h1>Overview</h1><p>Choose parameter value from the scheme below.</p><p><b>VALUE DESCRIPTION</b></p><p>0 Inactive (standard)</p><p>1 - 127 Time in seconds: 1 – 127 seconds.</p><p>128 - 255 Time in minutes: 128 – 255 minutes.</p>
@@ -295,8 +292,7 @@ Configures the function of input 4.<br /> <h1>Overview</h1><p>Select the value f
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_10_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_10_1" type="integer" groupName="configuration">
         <label>10: Timer for input 4</label>
         <description><![CDATA[
 Configures the timer of input 4<br /> <h1>Overview</h1><p>Choose parameter value from the scheme below.</p><p><b>VALUE DESCRIPTION</b></p><p>0 Inactive (standard)</p><p>1 - 127 Time in seconds: 1 – 127 seconds.</p><p>128 - 255 Time in minutes: 128 – 255 minutes.</p>
@@ -320,8 +316,7 @@ Configures the function of input 5.<br /> <h1>Overview</h1><p>Select the value f
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_12_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_12_1" type="integer" groupName="configuration">
         <label>12: Timer for input 5</label>
         <description><![CDATA[
 Configures the timer of input 5<br /> <h1>Overview</h1><p>Choose parameter value from the scheme below.</p><p><b>VALUE DESCRIPTION</b></p><p>0 Inactive (standard)</p><p>1 - 127 Time in seconds: 1 – 127 seconds.</p><p>128 - 255 Time in minutes: 128 – 255 minutes.</p>
@@ -345,8 +340,7 @@ Configures the function of input 6.<br /> <h1>Overview</h1><p>Select the value f
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_14_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_14_1" type="integer" groupName="configuration">
         <label>14: Timer setup of input 6</label>
         <description><![CDATA[
 Configures the timer of input 6<br /> <h1>Overview</h1><p>Choose parameter value from the scheme below.</p><p><b>VALUE DESCRIPTION</b></p><p>0 Inactive (standard)</p><p>1 - 127 Time in seconds: 1 – 127 seconds.</p><p>128 - 255 Time in minutes: 128 – 255 minutes.</p>
@@ -355,8 +349,7 @@ Configures the timer of input 6<br /> <h1>Overview</h1><p>Choose parameter value
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_15_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_15_1" type="integer" groupName="configuration">
         <label>15: Input Snubber-filter time constant.</label>
         <description><![CDATA[
 The time constant of the input snubber-filter.<br /> <h1>Overview</h1><p>Specifies the time used to define the time constant of the input snubber-filter. (Increments in 0.01 second resolution.)</p> <table><tr><td><strong>VALUE</strong></td> <td><strong>DESCRIPTION</strong></td> </tr><tr><td>0-255</td> <td>0 – 2,55 seconds. The standard value is 5, which corresponds to a snubber-filter-time constant of 50 milliseconds (0,05 seconds).</td> </tr></table>
@@ -365,8 +358,7 @@ The time constant of the input snubber-filter.<br /> <h1>Overview</h1><p>Specifi
         <advanced>true</advanced>
       </parameter>
 
-      <parameter name="config_16_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_16_1" type="integer" groupName="configuration">
         <label>16: Threshold value for activation of inputs.</label>
         <description><![CDATA[
 The time that an entry must be stable before it is accepted as active / idle.<br /> <h1>Overview</h1><p>Specifies the time that an entry must be stable before it is accepted as active / idle in 0.01 second resolution.</p> <table><tr><td><strong>VALUE</strong></td> <td><strong>DESCRIPTION</strong></td> </tr><tr><td>0-255</td> <td>0 – 2,55 seconds. The standard value is 20, which corresponds to 200 milliseconds (0,2 seconds).</td> </tr></table>
@@ -375,8 +367,7 @@ The time that an entry must be stable before it is accepted as active / idle.<br
         <advanced>true</advanced>
       </parameter>
 
-      <parameter name="config_17_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_17_1" type="integer" groupName="configuration">
         <label>17: Threshold for input in latched mode.</label>
         <description><![CDATA[
 Time that an input must be activated before it accepts the button latched mode.<br /> <h1>Overview</h1><p>Indicates the time that an input must be activated before it accepts the button latched mode. (Increments in 0.01 second resolution.)</p> <table><tr><td><strong>VALUE</strong></td> <td><strong>DESCRIPTION</strong></td> </tr><tr><td>0-255</td> <td>0 – 2,55 seconds. The standard value is 50, which corresponds to 500 milliseconds (0,5 seconds).</td> </tr></table>

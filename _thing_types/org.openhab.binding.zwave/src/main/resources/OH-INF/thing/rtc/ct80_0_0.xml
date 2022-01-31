@@ -110,8 +110,7 @@ Reporting threshold for changes in the ambient temperature.<br /> <h1>Overview</
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_2_4" type="integer" groupName="configuration" readOnly="true"
-                 min="-2147483646" max="2147483647">
+      <parameter name="config_2_4" type="integer" groupName="configuration" readOnly="true">
         <label>2: HVAC Settings</label>
         <description><![CDATA[
 Configured HVAC settings<br /> <h1>Overview</h1><p>Byte 1 = HVAC Setup: Normal (0x01) or Heat Pump (0x02)</p> <p>Byte 2 = Aux Setup(Gas (0x01) or Electric (0x02)) &amp; Number of Auxiliary Stages (Heat Pump)/Number of Heat Stages (Normal)</p> <p>Byte 3 = Number of Heat Pump Stages</p> <p>Byte 4 = Number of Cool Stages</p>
@@ -133,8 +132,7 @@ Prevents setpoint changes at thermostat.<br /> <h1>Overview</h1><p>If set to 0, 
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_4_1" type="integer" groupName="configuration" readOnly="true"
-                 min="-127" max="128">
+      <parameter name="config_4_1" type="integer" groupName="configuration" readOnly="true">
         <label>4: Power Status</label>
         <description><![CDATA[
 C-Wire / Battery Status<br /> <h1>Overview</h1><p>If 0x01, the thermostat is being powered from a C-wire, if 0x02, the thermostat is being powered off of batteries.</p>
@@ -204,8 +202,7 @@ Configures additional stages<br /> <h1>Overview</h1><p>Sets the differential tem
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_9_1" type="integer" groupName="configuration"
-                 min="1" max="2">
+      <parameter name="config_9_1" type="integer" groupName="configuration">
         <label>9: Thermostat Recovery Mode</label>
         <description><![CDATA[
 Fast or Economy recovery mode.<br /> <h1>Overview</h1><p>The Thermostat Recovery Mode can be either fast (0x01) or economy (0x02).</p>
@@ -214,8 +211,7 @@ Fast or Economy recovery mode.<br /> <h1>Overview</h1><p>The Thermostat Recovery
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_10_2" type="integer" groupName="configuration"
-                 min="-32767" max="32768">
+      <parameter name="config_10_2" type="integer" groupName="configuration">
         <label>10: Temp Reporting Filter</label>
         <description><![CDATA[
 Upper/Lower bounds for thermostat temperature reporting<br /> <h1>Overview</h1><p>Sets the upper/lower bounds for the thermostat reporting ambient temperature changes. The value must be between 0F and 124F. By default the value is set to 0F (report all changes).</p>
@@ -224,8 +220,7 @@ Upper/Lower bounds for thermostat temperature reporting<br /> <h1>Overview</h1><
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_11_1" type="integer" groupName="configuration"
-                 min="0" max="1">
+      <parameter name="config_11_1" type="integer" groupName="configuration">
         <label>11: Simple UI Mode</label>
         <description><![CDATA[
 Simple Mode Enable/Disable<br /> <h1>Overview</h1><p>If the value is set to 0x00 then Normal Mode is enabled. If the value is set to 0x01 then Simple Mode is enabled.</p>
@@ -234,8 +229,7 @@ Simple Mode Enable/Disable<br /> <h1>Overview</h1><p>If the value is set to 0x00
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_12_1" type="integer" groupName="configuration"
-                 min="0" max="1">
+      <parameter name="config_12_1" type="integer" groupName="configuration">
         <label>12: Multicast</label>
         <description><![CDATA[
 Enable or disables Multicast<br /> <h1>Overview</h1><p>If set to 0, multicast is disabled, if set to 1, will enable the multicast.</p>

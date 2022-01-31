@@ -105,8 +105,7 @@ CH-201 Thermostat<br /> <h1>Overview</h1><p>The CH-201 thermostat is a Z-Wave de
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_2_1" type="integer" groupName="configuration"
-                 min="1" max="7">
+      <parameter name="config_2_1" type="integer" groupName="configuration">
         <label>2: Temperature threshold</label>
         <description><![CDATA[
 Set temperature threshold<br /> <h1>Overview</h1><p><strong>Unfortunately, it is not possible to always maintain one exact temperature value because of inertia.</strong></p> <p>To maintain the temperature, two values ​​are used: minimum and maximum. When the minimum value is reached, the heating will be turned on, when heating to the maximum value - the heating element will be turned off. For the convenience of the user, the controller assumes temperature adjustment with only one value, from which the thermostat will calculate the previously mentioned "minimum" and "maximum" values ​​of the temperature range. We recommend using a small range of 1 degree for more comfort and the most accurate match to the chosen temperature. If your heating element consumes a significant amount of energy at the moment of switching on, then it is recommended to reduce the number of on-off cycles by increasing this parameter. With our thermostat, you can always achieve the optimum operating mode by experiment or by contacting our specialists for help. The acceptable value is from 1 to 7 degrees:</p>
@@ -142,8 +141,7 @@ Operating mode in case a thermostat doesn't receive data from a temp sensor<br /
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_5_2" type="integer" groupName="configuration"
-                 min="100" max="30000">
+      <parameter name="config_5_2" type="integer" groupName="configuration">
         <label>5: Max waiting time from temp sensor</label>
         <description><![CDATA[
 Max time of data expectation from room temperature sensor<br /> <h1>Overview</h1><p>After the specified time, the absence of data from the room sensor will be considered a malfunction.</p> <p>In the event of a temperature sensor failure, the thermostat will switch to crash mode. In this mode, the temperature will be set to 0 ° C, the thermostat will go to the state specified in Parameter # 4, the first group of connections will be sent an alarm. The response of the controller will depend on the controller settings. Refer to your controller's user manual for more information.</p>
@@ -152,8 +150,7 @@ Max time of data expectation from room temperature sensor<br /> <h1>Overview</h1
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_6_2" type="integer" groupName="configuration"
-                 min="-127" max="127">
+      <parameter name="config_6_2" type="integer" groupName="configuration">
         <label>6: Minimum allowable temperature</label>
         <description><![CDATA[
 Set minimum allowable temperature<br /> <h1>Overview</h1><p>The temperature set by the user can not be set below the permissible value. The allowable value (from -127 to 127 ° C)</p>
@@ -162,8 +159,7 @@ Set minimum allowable temperature<br /> <h1>Overview</h1><p>The temperature set 
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_6_2" type="integer" groupName="configuration"
-                 min="-127" max="127">
+      <parameter name="config_6_2" type="integer" groupName="configuration">
         <label>6: Minimum allowable temperature</label>
         <description><![CDATA[
 Set minimum allowable temperature<br /> <h1>Overview</h1><p>The temperature set by the user can not be set below the permissible value. The allowable value (from -127 to 127 ° C)</p>
@@ -172,8 +168,7 @@ Set minimum allowable temperature<br /> <h1>Overview</h1><p>The temperature set 
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_7_2" type="integer" groupName="configuration"
-                 min="-127" max="127">
+      <parameter name="config_7_2" type="integer" groupName="configuration">
         <label>7: Maximum alowable temperature</label>
         <description><![CDATA[
 Set maximum alowable temperature<br /> <h1>Overview</h1><p>The temperature set by the user can not be higher than this value, including when using turbo mode (for example, the temperature of a warm floor with a wooden base can not be above 27 ° C).  The allowable value (from -127 to 127 ° С) </p> <p>30 degrees (Default).</p>
@@ -182,8 +177,7 @@ Set maximum alowable temperature<br /> <h1>Overview</h1><p>The temperature set b
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_8_2" type="integer" groupName="configuration"
-                 min="100" max="1200">
+      <parameter name="config_8_2" type="integer" groupName="configuration">
         <label>8: Time turbo mode</label>
         <description><![CDATA[
 Set time turbo mode<br /> <h1>Overview</h1><p>Turbo mode is used for drying floors after wet cleaning. The turbo mode will maintain the maximum temperature for a predetermined period of time, after which the thermostat will switch to the previously set operating mode.</p> <p>Valid value (from 100 to 1200 seconds)</p> <p>120 seconds (default).</p>
@@ -192,8 +186,7 @@ Set time turbo mode<br /> <h1>Overview</h1><p>Turbo mode is used for drying floo
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_9_1" type="integer" groupName="configuration"
-                 min="0" max="1">
+      <parameter name="config_9_1" type="integer" groupName="configuration">
         <label>9: Power on turbo mode</label>
         <description><![CDATA[
 Set power on turbo mode<br /> <h1>Overview</h1><p>This parameter determines whether to turn on the turbo mode when the thermostat is off.</p> <p>0 Enable (Default).</p> <p>1 Do not include</p>
@@ -216,8 +209,7 @@ Set temperature sensor mode<br /> <h1>Overview</h1><p>The CH-201 thermostat is e
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_11_2" type="integer" groupName="configuration"
-                 min="15" max="600">
+      <parameter name="config_11_2" type="integer" groupName="configuration">
         <label>11: Polling period of the room sensor</label>
         <description><![CDATA[
 Set polling period of the room sensor<br /> <h1>Overview</h1><p>If you select a value, you should take into account the fact that too frequent polling of the sensor can overload the Z-Wave network</p> <p>Valid value is from 15 to 600 seconds:</p> <p>300 seconds (Default).</p>
@@ -226,8 +218,7 @@ Set polling period of the room sensor<br /> <h1>Overview</h1><p>If you select a 
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_12_1" type="integer" groupName="configuration"
-                 min="1" max="16">
+      <parameter name="config_12_1" type="integer" groupName="configuration">
         <label>12: Temprature threshold to send data</label>
         <description><![CDATA[
 The value that temprature should be changed to send data<br /> <h1>Overview</h1><p>The value that temprature should be changed to send data to devices in the 1st group of connections recieved from a temprature sensor</p> <p>The thermostat can send data to the controller and / or other Z-Wave network devices when the temperature changes by the specified value. Set this parameter based on your network configuration to avoid overloading.</p> <p>The valid value is from 1 to 16 degrees:</p> <p>1 degree (Default).</p>
@@ -236,8 +227,7 @@ The value that temprature should be changed to send data<br /> <h1>Overview</h1>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_13_2" type="integer" groupName="configuration"
-                 min="100" max="600">
+      <parameter name="config_13_2" type="integer" groupName="configuration">
         <label>13: Interval for forced sending data</label>
         <description><![CDATA[
 Set Interval for forced sending data<br /> <h1>Overview</h1><p>Interval for forced sending data to devices in 1st group of connections recieved from a temprature sensor.</p> <p>The thermostat can send data at regular intervals, for example every 2 minutes. The value begins to count from the last successful sending of data.</p> <p>The valid value is from 10 to 600 seconds:</p> <p>300 seconds (Default).</p>

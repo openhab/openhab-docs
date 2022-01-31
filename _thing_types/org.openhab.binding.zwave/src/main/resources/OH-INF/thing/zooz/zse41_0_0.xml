@@ -58,8 +58,7 @@ Contact Sensor<br /> <h1>Overview</h1><ul><li><b>Door / window monitoring</b>: f
       </parameter-group>
 
       <!-- PARAMETER DEFINITIONS -->
-      <parameter name="config_1_1" type="integer" groupName="configuration"
-                 min="0" max="1">
+      <parameter name="config_1_1" type="integer" groupName="configuration">
         <label>1: LED Indicator</label>
         <description><![CDATA[
 Turn the LED indicator for open/close status change on or off.<br /> <h1>Overview</h1><p>Turn the LED indicator for open/close status change on or off.</p><p><b>Values</b>: 0 – LED indicator won’t blink when the sensor’s status is changed from open to close and vice versa; 1 – LED indicator will blink when the sensor’s open/close status is changed (<b>default</b>).</p>
@@ -68,8 +67,7 @@ Turn the LED indicator for open/close status change on or off.<br /> <h1>Overvie
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_3_1" type="integer" groupName="configuration"
-                 min="1" max="50">
+      <parameter name="config_3_1" type="integer" groupName="configuration">
         <label>3: Battery reporting</label>
         <description><![CDATA[
 Set the threshold for battery reporting.<br /> <h1>Overview</h1><p>Set the threshold for battery reporting.</p><p><b>Values</b>: 1-50 (%). <b>Default</b>: 10</p>
@@ -78,8 +76,7 @@ Set the threshold for battery reporting.<br /> <h1>Overview</h1><p>Set the thres
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_4_1" type="integer" groupName="configuration"
-                 min="10" max="50">
+      <parameter name="config_4_1" type="integer" groupName="configuration">
         <label>4: Low battery report</label>
         <description><![CDATA[
 Battery threshold to report low battery.<br /> <h1>Overview</h1><p>Decide when the sensor should report low battery to the hub.</p><p><b>Values</b>: 10-50 (% battery life). <b>Default</b>: 20</p>
@@ -88,8 +85,7 @@ Battery threshold to report low battery.<br /> <h1>Overview</h1><p>Decide when t
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_5_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_5_1" type="integer" groupName="configuration">
         <label>5: Open/Close status</label>
         <description><![CDATA[
 Status to report when magnet touches sensor.<br /> <h1>Overview</h1><p>Decide which status should the sensor report to the hub when the magnet touches the sensor.</p><p><b>Values</b>: 0 – closed status reported when the magnet is by the sensor (<b>default</b>); 1 – open status reported when the magnet is by the sensor.</p>
@@ -98,8 +94,7 @@ Status to report when magnet touches sensor.<br /> <h1>Overview</h1><p>Decide wh
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_6_4" type="integer" groupName="configuration"
-                 min="0" max="3600">
+      <parameter name="config_6_4" type="integer" groupName="configuration">
         <label>6: Delay for ON command to group 2</label>
         <description><![CDATA[
 Set the delay for the ON basic set command to be sent to the devices associated in Group 2 after the door is open.<br /> <h1>Overview</h1><p>Set the delay for the ON basic set command to be sent to the devices associated in Group 2 after the door is open.</p><p><b>Values</b>: 0-3600 (seconds). <b>Default</b>: 0 (no delay).</p>
@@ -108,8 +103,7 @@ Set the delay for the ON basic set command to be sent to the devices associated 
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_7_4" type="integer" groupName="configuration"
-                 min="0" max="3600">
+      <parameter name="config_7_4" type="integer" groupName="configuration">
         <label>7: Delay for OFF command to group 2</label>
         <description><![CDATA[
 Set the delay for the OFF basic set command to be sent to the devices associated in Group 2 after the door is closed.<br /> <h1>Overview</h1><p>Set the delay for the OFF basic set command to be sent to the devices associated in Group 2 after the door is closed.</p><p><b>Values</b>: 0-3600 (seconds). <b>Default</b>: 0 (no delay).</p>

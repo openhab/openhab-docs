@@ -111,8 +111,7 @@ Configuration parameter<br /> <h1>Overview</h1><p>is a one byte read only bit ma
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_33_4" type="integer" groupName="configuration"
-                 min="-2147483646" max="2147483647">
+      <parameter name="config_33_4" type="integer" groupName="configuration">
         <label>33: first four most significant bytes of the SKU</label>
         <description><![CDATA[
 contains the first four most significant bytes of the SKU<br /> <h1>Overview</h1><p>When setting the SKU, it must be done in two set commands, one for each parameter. The order of programming the SKU does not matter. Setting parameter 33 will program the first four bytes of the SKU. Setting parameter 34 will program the last 4 bytes of the SKU. Most printable values are accepted for the set command. When getting the SKU, it must be done in two get commands, one for each parameter. The order of getting the SKU does not matter. Getting parameter 33 will retrieve the first four bytes of the SKU. Getting parameter 34 will retrieve the last 4 bytes of the SKU.</p>
@@ -121,8 +120,7 @@ contains the first four most significant bytes of the SKU<br /> <h1>Overview</h1
         <advanced>true</advanced>
       </parameter>
 
-      <parameter name="config_34_8" type="integer" groupName="configuration"
-                 min="-2147483646" max="2147483647">
+      <parameter name="config_34_8" type="integer" groupName="configuration">
         <label>34: four least significant bytes of the SKU</label>
         <description><![CDATA[
 the four least significant bytes of the SKU<br /> <h1>Overview</h1><p>When setting the SKU, it must be done in two set commands, one for each parameter. The order of programming the SKU does not matter. Setting parameter 33 will program the first four bytes of the SKU. Setting parameter 34 will program the last 4 bytes of the SKU. Most printable values are accepted for the set command. When getting the SKU, it must be done in two get commands, one for each parameter. The order of getting the SKU does not matter. Getting parameter 33 will retrieve the first four bytes of the SKU. Getting parameter 34 will retrieve the last 4 bytes of the SKU.</p>

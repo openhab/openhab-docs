@@ -54,8 +54,7 @@ IQ Dimmer (PD-100)<br /> <h1>Overview</h1><p>The IQ Dimmer is plug in lamp modul
       </parameter-group>
 
       <!-- PARAMETER DEFINITIONS -->
-      <parameter name="config_3_1" type="integer" groupName="configuration"
-                 min="0" max="2">
+      <parameter name="config_3_1" type="integer" groupName="configuration">
         <label>3: Nightlight</label>
         <description>When should LED be illuminated. When device is on, off or never.</description>
         <default>0</default>
@@ -66,8 +65,7 @@ IQ Dimmer (PD-100)<br /> <h1>Overview</h1><p>The IQ Dimmer is plug in lamp modul
         </options>
       </parameter>
 
-      <parameter name="config_9_1" type="integer" groupName="configuration"
-                 min="1" max="99">
+      <parameter name="config_9_1" type="integer" groupName="configuration">
         <label>9: Dimming Resolution Levels</label>
         <description><![CDATA[
 Percent to change dimmer level per tick.<br /> <h1>Overview</h1><p><br /></p>
@@ -76,8 +74,7 @@ Percent to change dimmer level per tick.<br /> <h1>Overview</h1><p><br /></p>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_10_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_10_1" type="integer" groupName="configuration">
         <label>10: Dimming Resolution Speed</label>
         <description><![CDATA[
 The time duration of each tick, in 10 ms units.<br /> <h1>Overview</h1><p><br /></p>

@@ -85,88 +85,77 @@ MCO HOME Micro Shutter<br /> <h1>Overview</h1><p>MCO HOME Micro Shutter for wind
       </parameter-group>
 
       <!-- PARAMETER DEFINITIONS -->
-      <parameter name="config_1_2" type="integer" groupName="configuration"
-                 min="1" max="32767">
+      <parameter name="config_1_2" type="integer" groupName="configuration">
         <label>1: Watt meter report period</label>
         <description>Watt meter report period</description>
         <default>720</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_2_2" type="integer" groupName="configuration"
-                 min="1" max="32767">
+      <parameter name="config_2_2" type="integer" groupName="configuration">
         <label>2: KHW meter report period</label>
         <description>KHW meter report period:Unit 10min,6*10min=1h</description>
         <default>6</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_3_2" type="integer" groupName="configuration"
-                 min="10" max="500">
+      <parameter name="config_3_2" type="integer" groupName="configuration">
         <label>3: Threshold of current load - Caution</label>
         <description>Unit 0.01A 500*0.01A=5A</description>
         <default>500</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_4_2" type="integer" groupName="configuration"
-                 min="1" max="10000">
+      <parameter name="config_4_2" type="integer" groupName="configuration">
         <label>4: Watt meter report period</label>
         <description>Watt meter report period</description>
         <default>10000</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_5_1" type="integer" groupName="configuration"
-                 min="1" max="2">
+      <parameter name="config_5_1" type="integer" groupName="configuration">
         <label>5: Level Report mode</label>
         <description>1: Report destination in 5s interval: 2: report every 10% level charge</description>
         <default>2</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_7_1" type="integer" groupName="configuration"
-                 min="0" max="1">
+      <parameter name="config_7_1" type="integer" groupName="configuration">
         <label>7: Demo trip</label>
         <description>1:activate demo trip and calibration when first touch of the button</description>
         <default>1</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_9_1" type="integer" groupName="configuration"
-                 min="0" max="1">
+      <parameter name="config_9_1" type="integer" groupName="configuration">
         <label>9: Demo trip and calibration</label>
         <description>1:activate demo trip and calibration</description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_10_1" type="integer" groupName="configuration"
-                 min="0" max="1">
+      <parameter name="config_10_1" type="integer" groupName="configuration">
         <label>10: A: Auto Calibratio</label>
         <description>1:activate calibration only</description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_11_1" type="integer" groupName="configuration"
-                 min="0" max="98">
+      <parameter name="config_11_1" type="integer" groupName="configuration">
         <label>11: B: Min level of the shutter close</label>
         <description>0-98</description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_12_1" type="integer" groupName="configuration"
-                 min="1" max="99">
+      <parameter name="config_12_1" type="integer" groupName="configuration">
         <label>12: C: Max Level of shutter open</label>
         <description>1-99</description>
         <default>99</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_13_1" type="integer" groupName="configuration"
-                 min="0" max="2">
+      <parameter name="config_13_1" type="integer" groupName="configuration">
         <label>13: D: External switch type</label>
         <description><![CDATA[
 0: Button (momentary buttons)<br /> 1: toggle (2-state switches)<br /> on position-shutter open<br /> off position -shutter close<br /> 2: toggle (2-state switches)<br /> on position-shutter close<br /> off postion - shutter open<br />
@@ -175,8 +164,7 @@ MCO HOME Micro Shutter<br /> <h1>Overview</h1><p>MCO HOME Micro Shutter for wind
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_14_1" type="integer" groupName="configuration"
-                 min="1" max="4">
+      <parameter name="config_14_1" type="integer" groupName="configuration">
         <label>14: E: External switch input</label>
         <description><![CDATA[
 0: no external switch<br /> 1: wire 1 ex, momentary or toggle key to S1 only<br /> 2: wire 1 ex, momentary or toggle key to S2 only<br /> 3: wire 2 ex, momentary or toggle keys to S1 and S2, each key can control both directions <br /> 4: wire 2
@@ -185,8 +173,7 @@ MCO HOME Micro Shutter<br /> <h1>Overview</h1><p>MCO HOME Micro Shutter for wind
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_255_1" type="integer" groupName="configuration"
-                 min="0" max="85">
+      <parameter name="config_255_1" type="integer" groupName="configuration">
         <label>255: FF: Factory Setting</label>
         <description>85 restore factory setting</description>
         <default>0</default>

@@ -96,8 +96,7 @@ Enable Auto Turn-Off Timer<br /> <h1>Overview</h1><p>Value=0 Timer disabled (def
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_4_4" type="integer" groupName="configuration"
-                 min="0" max="65535">
+      <parameter name="config_4_4" type="integer" groupName="configuration">
         <label>4: Auto turn off timer</label>
         <description><![CDATA[
 Auto turn off timer<br /> <h1>Overview</h1><p> 0 – 65535 (M); default 0M</p>
@@ -106,8 +105,7 @@ Auto turn off timer<br /> <h1>Overview</h1><p> 0 – 65535 (M); default 0M</p>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_6_1" type="integer" groupName="configuration"
-                 min="0" max="2">
+      <parameter name="config_6_1" type="integer" groupName="configuration">
         <label>6: Restore state after power failure</label>
         <description>Restore state after power failure</description>
         <default>2</default>

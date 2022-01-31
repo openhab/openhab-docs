@@ -37,8 +37,7 @@ HKZW<br /> <h1>Overview</h1><p>ACC01 is an IR Transceiver based on Z-Wave techno
       </parameter-group>
 
       <!-- PARAMETER DEFINITIONS -->
-      <parameter name="config_93_4" type="integer" groupName="configuration"
-                 min="1" max="1431655765">
+      <parameter name="config_93_4" type="integer" groupName="configuration">
         <label>93: Clear IR information</label>
         <description>Clear IR information</description>
         <default>1</default>
@@ -57,8 +56,7 @@ HKZW<br /> <h1>Overview</h1><p>ACC01 is an IR Transceiver based on Z-Wave techno
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_255_4" type="integer" groupName="configuration"
-                 min="1" max="1431655765">
+      <parameter name="config_255_4" type="integer" groupName="configuration">
         <label>255: Reset &amp; remove from Z-Wave network</label>
         <description>Reset &amp; remove from Z-Wave network</description>
         <default>1</default>

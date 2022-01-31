@@ -95,8 +95,7 @@ Stay awake for 10 minutes at power on<br /> <h1>Overview</h1><p>Enable/Disable w
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_3_2" type="integer" groupName="configuration"
-                 min="10" max="3600">
+      <parameter name="config_3_2" type="integer" groupName="configuration">
         <label>3: Default PIR time</label>
         <description><![CDATA[
 The default PIR time<br /> <h1>Overview</h1><p>The default PIR time is 4 minutes. The Multisensor will send BASIC SET CC (0x00) to the associated nodes if no motion is triggered again in 4 minutes.</p> <p>Range: 10 - 3600</p> <p>Note:<br />The time unit is second if the value range is in 10 to 255. If the value range is in 256 to 3600, the time unit will be minute and its value should follow the below rules:<br />a) Interval time = Value/60, if the interval time can be divided by 60 and withoud remainder.<br />b) Interval time = (Value/60)+1, if the interval time can be divided by 60 and has remainder.<br />Other values will be ignored.</p>
@@ -104,8 +103,7 @@ The default PIR time<br /> <h1>Overview</h1><p>The default PIR time is 4 minutes
         <default>240</default>
       </parameter>
 
-      <parameter name="config_4_1" type="integer" groupName="configuration"
-                 min="0" max="5">
+      <parameter name="config_4_1" type="integer" groupName="configuration">
         <label>4: Motion sensor sensitivity</label>
         <description><![CDATA[
 Sensitivity level of PIR sensor (1=minimum, 5=maximum)<br /> <h1>Overview</h1><p>Enable/disable the function of motion sensor.</p> <p>Value = 0, disable<br />Value = 1, enable, sensitivity level = 1 (minimum level)<br />Value = 2, enable, sensitivity level = 2<br />Value = 3, enable, sensitivity level = 3<br />Value = 4, enable, sensitivity level = 4<br />Value = 5, enable, sensitivity level = 5 (maximum level)</p>
@@ -131,8 +129,7 @@ Sensitivity level of PIR sensor (1=minimum, 5=maximum)<br /> <h1>Overview</h1><p
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_39_1" type="integer" groupName="configuration"
-                 min="10" max="50">
+      <parameter name="config_39_1" type="integer" groupName="configuration">
         <label>39: Low battery value</label>
         <default>20</default>
         <limitToOptions>false</limitToOptions>
@@ -151,8 +148,7 @@ Select to report on thresholds<br /> <h1>Overview</h1><p>Enable/disable the sele
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_101_4" type="integer" groupName="configuration"
-                 min="0" max="255">
+      <parameter name="config_101_4" type="integer" groupName="configuration">
         <label>101: Setting automatic report flags - Association Group 1</label>
         <description><![CDATA[
 <br /> <h1>Overview</h1><p>Parameter 101-103 [4 byte dec] can be configured through your gateway in case the default settings of your MultiSensor are not what you desire.</p><p>128 - Light Sensor</p><p>64 - Humidity Sensor</p><p>32 - Temperature Sensor</p><p>16 - Ultraviolet Sensor</p><p>1 - Battery Sensor</p><p>The table above shows a decimal representation of all flags that can be set on parameter 101-103 to report specific data.</p><p>For example, if you want to report only the temperature and light sensor you would add 32 + 64 and set the sum (96) to parameter 101, 102, or 103.</p><p>As another example, if you want to report only the light sensor and battery, you would add 1 + 128, then set the sum (129) to parameter 101, 102, or 103.</p><p>And if you want to report all of the sensors, you would add the whole table together and set the sum (241) to parameter 101, 102, or 103.</p>
@@ -161,8 +157,7 @@ Select to report on thresholds<br /> <h1>Overview</h1><p>Enable/disable the sele
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_102_4" type="integer" groupName="configuration"
-                 min="0" max="255">
+      <parameter name="config_102_4" type="integer" groupName="configuration">
         <label>102: Setting automatic report flags - Association Group 2</label>
         <description><![CDATA[
 <br /> <h1>Overview</h1><p>Parameter 101-103 [4 byte dec] can be configured through your gateway in case the default settings of your MultiSensor are not what you desire.</p><p>128 - Light Sensor</p><p>64 - Humidity Sensor</p><p>32 - Temperature Sensor</p><p>16 - Ultraviolet Sensor</p><p>1 - Battery Sensor</p><p>The table above shows a decimal representation of all flags that can be set on parameter 101-103 to report specific data.</p><p>For example, if you want to report only the temperature and light sensor you would add 32 + 64 and set the sum (96) to parameter 101, 102, or 103.</p><p>As another example, if you want to report only the light sensor and battery, you would add 1 + 128, then set the sum (129) to parameter 101, 102, or 103.</p><p>And if you want to report all of the sensors, you would add the whole table together and set the sum (241) to parameter 101, 102, or 103.</p>
@@ -171,8 +166,7 @@ Select to report on thresholds<br /> <h1>Overview</h1><p>Enable/disable the sele
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_103_4" type="integer" groupName="configuration"
-                 min="0" max="255">
+      <parameter name="config_103_4" type="integer" groupName="configuration">
         <label>103: Setting automatic report flags - Association Group 3</label>
         <description><![CDATA[
 <br /> <h1>Overview</h1><p>Parameter 101-103 [4 byte dec] can be configured through your gateway in case the default settings of your MultiSensor are not what you desire.</p><p>128 - Light Sensor</p><p>64 - Humidity Sensor</p><p>32 - Temperature Sensor</p><p>16 - Ultraviolet Sensor</p><p>1 - Battery Sensor</p><p>The table above shows a decimal representation of all flags that can be set on parameter 101-103 to report specific data.</p><p>For example, if you want to report only the temperature and light sensor you would add 32 + 64 and set the sum (96) to parameter 101, 102, or 103.</p><p>As another example, if you want to report only the light sensor and battery, you would add 1 + 128, then set the sum (129) to parameter 101, 102, or 103.</p><p>And if you want to report all of the sensors, you would add the whole table together and set the sum (241) to parameter 101, 102, or 103.</p>
@@ -181,8 +175,7 @@ Select to report on thresholds<br /> <h1>Overview</h1><p>Enable/disable the sele
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_111_4" type="integer" groupName="configuration"
-                 min="-2147483646" max="2147483647">
+      <parameter name="config_111_4" type="integer" groupName="configuration">
         <label>111: Setting an automatic report interval - Association Group 1</label>
         <description><![CDATA[
 <br /> <h1>Overview</h1><p>Parameter 111-113 [4 byte decimal] can be configured through your gateway in case the default settings of your MultiSensor are not what you desire.</p><p>Parameter 111 will set the interval for Group 1 (parameter 101), parameter 112 will set the interval for Group 2 (parameter 102), and parameter 113 will set the interval for Group 3 (parameter 103).</p><p>As an example, you have set parameter 101 to 241 which will report all of the sensors, and you want to report it every 1800 seconds. Set parameter 111 to 1800 to accomplish this.</p>
@@ -191,8 +184,7 @@ Select to report on thresholds<br /> <h1>Overview</h1><p>Enable/disable the sele
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_112_4" type="integer" groupName="configuration"
-                 min="-2147483646" max="2147483647">
+      <parameter name="config_112_4" type="integer" groupName="configuration">
         <label>112: Setting an automatic report interval - Association Group 2</label>
         <description><![CDATA[
 <br /> <h1>Overview</h1><p>Parameter 111-113 [4 byte decimal] can be configured through your gateway in case the default settings of your MultiSensor are not what you desire.</p><p>Parameter 111 will set the interval for Group 1 (parameter 101), parameter 112 will set the interval for Group 2 (parameter 102), and parameter 113 will set the interval for Group 3 (parameter 103).</p><p>As an example, you have set parameter 101 to 241 which will report all of the sensors, and you want to report it every 1800 seconds. Set parameter 111 to 1800 to accomplish this.</p>
@@ -201,8 +193,7 @@ Select to report on thresholds<br /> <h1>Overview</h1><p>Enable/disable the sele
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_113_4" type="integer" groupName="configuration"
-                 min="-2147483646" max="2147483647">
+      <parameter name="config_113_4" type="integer" groupName="configuration">
         <label>113: Setting an automatic report interval - Association Group 3</label>
         <description><![CDATA[
 <br /> <h1>Overview</h1><p>Parameter 111-113 [4 byte decimal] can be configured through your gateway in case the default settings of your MultiSensor are not what you desire.</p><p>Parameter 111 will set the interval for Group 1 (parameter 101), parameter 112 will set the interval for Group 2 (parameter 102), and parameter 113 will set the interval for Group 3 (parameter 103).</p><p>As an example, you have set parameter 101 to 241 which will report all of the sensors, and you want to report it every 1800 seconds. Set parameter 111 to 1800 to accomplish this.</p>

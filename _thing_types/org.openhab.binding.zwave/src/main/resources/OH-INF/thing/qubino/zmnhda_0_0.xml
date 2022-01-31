@@ -146,8 +146,7 @@ Activate / deactivate functions ALL ON/ALL OFF<br /> <h1>Overview</h1><p>Flush 1
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_40_1" type="integer" groupName="configuration"
-                 min="0" max="100">
+      <parameter name="config_40_1" type="integer" groupName="configuration">
         <label>40: Power reporting in Watts on power change</label>
         <description><![CDATA[
 Set value means percentage<br /> <h1>Overview</h1><ul><li>0 – Reporting Disabled</li> <li>1 – 100 = 1% - 100% Reporting enabled.</li> </ul><p>Power report is send (push) only when actual power in Watts in real time change for more than set percentage comparing to previous actual power in Watts, step is 1%. </p>
@@ -156,8 +155,7 @@ Set value means percentage<br /> <h1>Overview</h1><ul><li>0 – Reporting Disabl
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_42_2" type="integer" groupName="configuration"
-                 min="-32767" max="32768">
+      <parameter name="config_42_2" type="integer" groupName="configuration">
         <label>42: Power reporting in Watts by time interval</label>
         <description><![CDATA[
 Power reporting in Watts by time interval<br /> <h1>Overview</h1><p>Set value means time interval (0 – 65535) in seconds, when power report is send.</p> <ul><li>default value 300 (power report in Watts is send each 300s)</li> <li>0 – Reporting Disabled</li> <li>1 – 65535 = 1 second – 65535 seconds. Reporting enabled.</li> </ul><p>Power report is send with time interval set by entered value. </p>
@@ -166,8 +164,7 @@ Power reporting in Watts by time interval<br /> <h1>Overview</h1><p>Set value me
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_60_1" type="integer" groupName="configuration"
-                 min="0" max="98">
+      <parameter name="config_60_1" type="integer" groupName="configuration">
         <label>60: Minimum dimming value</label>
         <description><![CDATA[
 Minimum dimming value<br /> <h1>Overview</h1><ul><li> Default value 1 (Minimum dimming value is 1%)</li> <li>1- 98 = 1% – 98%, step is 1%. Minimum dimming values is set by entered value.</li> </ul><p><strong>NOTE</strong>: The maximum level may not be lower than the minimum level! 1% min. dimming value is defined by Z-Wave multilevel device class</p>
@@ -176,8 +173,7 @@ Minimum dimming value<br /> <h1>Overview</h1><ul><li> Default value 1 (Minimum 
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_61_1" type="integer" groupName="configuration"
-                 min="2" max="99">
+      <parameter name="config_61_1" type="integer" groupName="configuration">
         <label>61: Maximum dimming value</label>
         <description><![CDATA[
 Maximum dimming value<br /> <h1>Overview</h1><ul><li>Default value 99 (Maximum dimming value is 99 %)</li> <li>2- 99 = 2% – 99%, step is 1%. Maximum dimming values is set by entered value.</li> </ul><p><strong>NOTE:</strong> The maximum level may not be lower than the minimum level! 99% max. dimming value is defined by Z-Wave multilevel device class</p>
@@ -186,8 +182,7 @@ Maximum dimming value<br /> <h1>Overview</h1><ul><li>Default value 99 (Maximum d
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_65_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_65_1" type="integer" groupName="configuration">
         <label>65: Dimming time (soft on/off)</label>
         <description><![CDATA[
 Dimming time (soft on/off)<br /> <h1>Overview</h1><p>Set value means time of moving the Dimmer between min. and max. dimming values by short press of push button I1 or controlled through UI.</p> <ul><li>Default value 100 (Dimming time between min. and max. dimming values is 1s)</li> <li>1- 255 = 10mseconds – 2550mseconds (2,55s), step is 10mseconds </li> </ul>
@@ -196,8 +191,7 @@ Dimming time (soft on/off)<br /> <h1>Overview</h1><p>Set value means time of mov
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_66_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_66_1" type="integer" groupName="configuration">
         <label>66: Dimming time when key pressed</label>
         <description><![CDATA[
 Dimming time when key pressed<br /> <h1>Overview</h1><p>Time of moving the Dimmer between min. and max dimming values by continues hold of push button I1.</p> <p>Default value 3 (Dimming time between min. and max. dimming values is 3s)</p> <p> 1- 255 = 1 second – 255 seconds</p>

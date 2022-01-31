@@ -92,8 +92,7 @@ Qubino LUXY Smart Light<br /> <h1>Overview</h1><p>The Qubino LUXY Smart Light 
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_5_2" type="integer" groupName="configuration"
-                 min="0" max="32535">
+      <parameter name="config_5_2" type="integer" groupName="configuration">
         <label>5: Motion sensor memory timer</label>
         <description><![CDATA[
 Time after which the output triggered by motion sensor is turned off.<br /> <h1>Overview</h1><p>0 – 32534 = 0-32534 seconds after which the LED will be turned off.</p> <p>32535 – never turns off.</p>
@@ -101,8 +100,7 @@ Time after which the output triggered by motion sensor is turned off.<br /> <h1>
         <default>10</default>
       </parameter>
 
-      <parameter name="config_10_2" type="integer" groupName="configuration"
-                 min="0" max="32535">
+      <parameter name="config_10_2" type="integer" groupName="configuration">
         <label>10: Auto-on timer</label>
         <description><![CDATA[
 Defines the time after which the device is turned to last known state.<br /> <h1>Overview</h1><p>0 – disabled</p> <p>30 – 32535 = 30 – 32535 seconds after which the device turns on</p>
@@ -110,8 +108,7 @@ Defines the time after which the device is turned to last known state.<br /> <h1
         <default>0</default>
       </parameter>
 
-      <parameter name="config_11_2" type="integer" groupName="configuration"
-                 min="0" max="32535">
+      <parameter name="config_11_2" type="integer" groupName="configuration">
         <label>11: Auto-off timer</label>
         <description><![CDATA[
 Defines the time after which the device is turned to last known state.<br /> <h1>Overview</h1><p>0 – disabled</p> <p>30 – 32535 = 30 – 32535 seconds after which the device turns off</p>

@@ -70,16 +70,14 @@ Temperature Humidity Sensor<br /> <h1>Overview</h1><p>Temperature and humidity s
       </parameter-group>
 
       <!-- PARAMETER DEFINITIONS -->
-      <parameter name="config_1_1" type="integer" groupName="configuration"
-                 min="1" max="10">
+      <parameter name="config_1_1" type="integer" groupName="configuration">
         <label>1: Battery Reporting Threshold</label>
         <description>Set the threshold for battery reporting</description>
         <default>5</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_2_1" type="integer" groupName="configuration"
-                 min="10" max="50">
+      <parameter name="config_2_1" type="integer" groupName="configuration">
         <label>2: Low Battery</label>
         <description><![CDATA[
 When the sensor should report low battery<br /> <h1>Overview</h1><p><br /></p>
@@ -88,24 +86,21 @@ When the sensor should report low battery<br /> <h1>Overview</h1><p><br /></p>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_3_1" type="integer" groupName="configuration"
-                 min="10" max="100">
+      <parameter name="config_3_1" type="integer" groupName="configuration">
         <label>3: Temperature Reporting Threshold</label>
         <description>Sensor will send a new temperature report if difference exceeds this threshold</description>
         <default>20</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_4_1" type="integer" groupName="configuration"
-                 min="5" max="50">
+      <parameter name="config_4_1" type="integer" groupName="configuration">
         <label>4: Humidity Reporting Threshold</label>
         <description>Sensor will send a new humidity report if difference exceeds this threshold value</description>
         <default>10</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_16_2" type="integer" groupName="configuration"
-                 min="0" max="480">
+      <parameter name="config_16_2" type="integer" groupName="configuration">
         <label>16: Temperature Reporting Interval</label>
         <description><![CDATA[
 Sensor will report temperature at least as often as this value<br /> <h1>Overview</h1><p>0 disables setting</p>
@@ -114,8 +109,7 @@ Sensor will report temperature at least as often as this value<br /> <h1>Overvie
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_17_2" type="integer" groupName="configuration"
-                 min="0" max="480">
+      <parameter name="config_17_2" type="integer" groupName="configuration">
         <label>17: Humidity Reporting Interval</label>
         <description><![CDATA[
 Sensor will report humidity at least as often as this value<br /> <h1>Overview</h1><p>0 disables this setting</p>
@@ -124,8 +118,7 @@ Sensor will report humidity at least as often as this value<br /> <h1>Overview</
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_17_2" type="integer" groupName="configuration"
-                 min="0" max="480">
+      <parameter name="config_17_2" type="integer" groupName="configuration">
         <label>17: Humidity Reporting Interval</label>
         <description><![CDATA[
 Sensor will report humidity at least as often as this value<br /> <h1>Overview</h1><p>0 disables this setting</p>

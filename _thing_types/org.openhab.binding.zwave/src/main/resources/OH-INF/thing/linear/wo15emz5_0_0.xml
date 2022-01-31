@@ -81,8 +81,7 @@ LED mode for attached load<br /> <h1>Overview</h1><p>By default, the LED on the 
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_13_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_13_1" type="integer" groupName="configuration">
         <label>13: Energy Monitoring</label>
         <description><![CDATA[
 Minutes<br /> <h1>Overview</h1><p>WO15EMZ5-1 reports the total accumulated Kilowatt Hours (kWh) and the instantaneous Watts being consumed by the load.</p> <p>Valid values are 0 - 255, with 0 disabling automatic reporting, and 1 - 255 being the interval in minutes for the automatic reporting interval.</p> <p>Configuration Parameter 13 configures the rate at which the energy readings are reported. If the maximum kWh value that can be reported is reached (21,474 kWh), then it will remain at the maximum level until reset to 0.</p> <p>The Watts reading provides the immediate reading of the power being consumed by the load. The Watts reading takes several seconds to settle so wait a few seconds before reading the energy value when the state of the switch (on / off) has changed.</p> <p>To reset, the total accumulated kWh used by the WO15EMZ5-1 the Z-Wave controller needs to send a reset command at the request of the user. It will also be reset if the WO15EMZ5-1 is excluded from the Z-Wave network.</p>

@@ -90,8 +90,7 @@ send metering reports<br /> <h1>Overview</h1><p>Choose if you want the Mini Plug
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_2_2" type="integer" groupName="configuration"
-                 min="-32767" max="32768">
+      <parameter name="config_2_2" type="integer" groupName="configuration">
         <label>2: Metering Report Frequency</label>
         <description><![CDATA[
 Frecuency metering reports to the controller.<br /> <h1>Overview</h1><p>Choose how often you want the Mini Plug to send metering reports to the controller. The number entered as the value corresponds to the number of seconds. So if 300 is entered by default, the Mini Plug will report power consumption every 300 seconds (5 minutes).</p>
@@ -100,8 +99,7 @@ Frecuency metering reports to the controller.<br /> <h1>Overview</h1><p>Choose h
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_3_1" type="integer" groupName="configuration"
-                 min="1" max="16">
+      <parameter name="config_3_1" type="integer" groupName="configuration">
         <label>3: Overload Protection</label>
         <description><![CDATA[
 Maximum amount of electricity Mini Plug to handle.<br /> <h1>Overview</h1><p>Use this parameter to adjust the maximum amount of electricity you want your Mini Plug to handle. The number entered as the value corresponds to the number of Amperes. Overload protection will turn the Mini Plug’s relay off once load exceeds 13A by default. It will also send a notification (NOTIFICATION_EVENT_POWER_MANAGEMENT_OVER_LOAD_DETECTED) to the controller and all associated devices. LED indicator on the device will blink red until the load is disconnected. Press the Z-Wave button ONCE to switch the alarm off. The value set in this parameter needs to be greater than the value in parameter 4. </p>
@@ -110,8 +108,7 @@ Maximum amount of electricity Mini Plug to handle.<br /> <h1>Overview</h1><p>Use
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_4_1" type="integer" groupName="configuration"
-                 min="1" max="13">
+      <parameter name="config_4_1" type="integer" groupName="configuration">
         <label>4: Overload Protection Notification</label>
         <description><![CDATA[
 LED notifications of heavy load.<br /> <h1>Overview</h1><p>Use this parameter to adjust electricity value for LED notifications of heavy load. The LED indicator on the Mini Plug will light up yellow once electricity from the load is greater than the value set in this parameter. The relay will NOT turn off. The value set in this parameter can NOT be greater than the value in parameter 3. Values: 1 – 13 (Amperes) or whatever the value set in parameter 3. 12 (Amperes) – default setting. </p>
@@ -133,8 +130,7 @@ Use this parameter to turn LED notifications on or off<br /> <h1>Overview</h1><p
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_6_1" type="integer" groupName="configuration"
-                 min="1" max="100">
+      <parameter name="config_6_1" type="integer" groupName="configuration">
         <label>6: Power Report Percentage Threshold</label>
         <description><![CDATA[
 Mini Plug to report energy usage percentage rate.<br /> <h1>Overview</h1><p>Choose how you want your Mini Plug to report power consumption, electricity, voltage, and energy usage to your controller and associated devices by percentage rate. The number entered as the value corresponds to the change in percentage the appliance needs to go over for the event to be reported. So if 5% is entered by default, the Mini Plug will report any change in power consumption (W), voltage (V), electricity (A), or energy usage (kWH) over 5% (whether it’s at least 5% more or 5% less compared to previous report). Values: 1 – 100 (%); 5 (%) – default setting</p>
@@ -169,8 +165,7 @@ Choose the recovery state for your Mini Plug if power outage occurs<br /> <h1>Ov
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_9_2" type="integer" groupName="configuration"
-                 min="-32767" max="32768">
+      <parameter name="config_9_2" type="integer" groupName="configuration">
         <label>9: Auto Turn-Off Timer Interval</label>
         <description><![CDATA[
 Set the time to automatically turn off<br /> <h1>Overview</h1><p>Use this parameter to set the time after which you want the Mini Plug to automatically turn off once it has been turned on. The number entered as value corresponds to the number of minutes. Values: 1 – 65535 (minutes); 150 (minutes) – default setting. </p>

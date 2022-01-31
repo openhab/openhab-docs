@@ -95,8 +95,7 @@ Mode<br /> <h1>Overview</h1><p>0 -&gt; Stepper motor mode wave drive(power savin
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_4_1" type="integer" groupName="configuration"
-                 min="1" max="100">
+      <parameter name="config_4_1" type="integer" groupName="configuration">
         <label>4: Turn degrees</label>
         <description><![CDATA[
 Turn degrees<br /> <h1>Overview</h1><p>(Default) Factor 10 turn degrees ( 1 = 10 degrees, 9 = 90 degrees etc.)</p>
@@ -104,8 +103,7 @@ Turn degrees<br /> <h1>Overview</h1><p>(Default) Factor 10 turn degrees ( 1 = 10
         <default>1</default>
       </parameter>
 
-      <parameter name="config_5_1" type="integer" groupName="configuration"
-                 min="0" max="60">
+      <parameter name="config_5_1" type="integer" groupName="configuration">
         <label>5: Auto Latch time</label>
         <description><![CDATA[
 Auto Latch time<br /> <h1>Overview</h1><p>How many seconds from the lock has been unlatched to it automatically should close again. If 0 then it is disabled.</p>
@@ -140,8 +138,7 @@ Battery Type<br /> <h1>Overview</h1><p>2 -&gt; Mains power, changing from and 
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_8_1" type="integer" groupName="configuration"
-                 min="0" max="100">
+      <parameter name="config_8_1" type="integer" groupName="configuration">
         <label>8: Battery alarm</label>
         <description><![CDATA[
 Battery alarm value<br /> <h1>Overview</h1><p>When the battery level is under this value, the device will notify user with a beep sound after latch or unlatch</p>

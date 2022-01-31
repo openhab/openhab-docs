@@ -53,8 +53,7 @@ On/Off Smart Light Switch<br /> <h1>Overview</h1><p>Z-Wave Plus On/Off Smart Lig
       </parameter-group>
 
       <!-- PARAMETER DEFINITIONS -->
-      <parameter name="config_4_1" type="integer" groupName="configuration"
-                 min="0" max="1">
+      <parameter name="config_4_1" type="integer" groupName="configuration">
         <label>4: Invert Switch</label>
         <description><![CDATA[
 On/Off rocker settings can be reversed<br /> <h1>Overview</h1><p>If the switch is accidentally installed upside down with On at the bottom and Off at the top, the default On/Off rocker settings can be reversed by changing parameter 4s value to 1. <br /> </p>

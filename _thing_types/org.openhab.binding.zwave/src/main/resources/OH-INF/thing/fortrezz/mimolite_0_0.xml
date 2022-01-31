@@ -65,8 +65,7 @@ Digital or Analog Voltage input and/or Dry Contact Relay<br /> <h1>Overview</h1>
       </parameter-group>
 
       <!-- PARAMETER DEFINITIONS -->
-      <parameter name="config_2_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_2_1" type="integer" groupName="configuration">
         <label>2: Clear_Pulse_Meter_Counts</label>
         <default>0</default>
         <options>
@@ -74,8 +73,7 @@ Digital or Analog Voltage input and/or Dry Contact Relay<br /> <h1>Overview</h1>
         </options>
       </parameter>
 
-      <parameter name="config_3_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_3_1" type="integer" groupName="configuration">
         <label>3: Trigger_Mapping</label>
         <description><![CDATA[
 Input-to-relay Mapping<br /> <h1>Overview</h1><p>The MIMOlite can be configured to automatically turn the relay on when the input is triggered or a Z-Wave command can also turn the relay on. The Configuration Command Class, Parameter 3, is used to set the input-to-relay mapping (See Technical Appendix). When input-to-relay mapping is enabled, Z-WaveTM commands to set the relay are overridden. The default for the relay is no input-to-relay mapping. Momentary vs Latched relay operation is selected by jumper P5 on the circuit board. The Momentary/Latched jumper is read only at power on when the MIMOlite is not in a ZWave network. When the jumper is off, momentary (default 500ms) operation is selected. If desired, once in-network, a Zwave configuration command (Parameter 11) can be used to override the jumper setting. The momentary configuration can be set from 100ms to 25.5ms (approximate) in increments of 100ms via the ZWave command. </p> <p>Note that neither a Basic Report nor a Binary Switch Report is sent when relay is automatically set or cleared by Trigger Mapping.</p>
@@ -87,8 +85,7 @@ Input-to-relay Mapping<br /> <h1>Overview</h1><p>The MIMOlite can be configured 
         </options>
       </parameter>
 
-      <parameter name="config_4_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_4_1" type="integer" groupName="configuration">
         <label>4: Lower_Threshold_High</label>
         <description><![CDATA[
 Lower Threshold, High<br /> <h1>Overview</h1><p>Lower Threshold, High (Default=0xBB; must be less than Upper Threshold Low and greater than Lower Threshold Low).</p>
@@ -99,8 +96,7 @@ Lower Threshold, High<br /> <h1>Overview</h1><p>Lower Threshold, High (Default=0
         </options>
       </parameter>
 
-      <parameter name="config_5_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_5_1" type="integer" groupName="configuration">
         <label>5: Lower_Threshold_Low</label>
         <description>Lower Threshold, Low</description>
         <default>-85</default>
@@ -109,8 +105,7 @@ Lower Threshold, High<br /> <h1>Overview</h1><p>Lower Threshold, High (Default=0
         </options>
       </parameter>
 
-      <parameter name="config_6_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_6_1" type="integer" groupName="configuration">
         <label>6: Upper_Threshold_High</label>
         <description>Upper Threshold, High</description>
         <default>-1</default>
@@ -119,8 +114,7 @@ Lower Threshold, High<br /> <h1>Overview</h1><p>Lower Threshold, High (Default=0
         </options>
       </parameter>
 
-      <parameter name="config_7_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_7_1" type="integer" groupName="configuration">
         <label>7: Upper_Threshold_Low</label>
         <description><![CDATA[
 Upper Threshold, Low<br /> <h1>Overview</h1><p>Upper Threshold, Low (Default = 0xFE; must be greater than Lower Threshold High and less than Upper Threshold High).</p>
@@ -156,8 +150,7 @@ Multilevel AutoReport Interval<br /> <h1>Overview</h1><p>Periodic send interval 
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_11_1" type="integer" groupName="configuration"
-                 min="-127" max="128">
+      <parameter name="config_11_1" type="integer" groupName="configuration">
         <label>11: Momentary_Relay1_Duration</label>
         <description><![CDATA[
 Momentary Relay1 output enable/disable (100msec).<br /> <h1>Overview</h1><p>Momentary Relay1 output enable/disable. 0 = disable (Default) 1..255 = enable / value sets the approximate momentary on time in increments of 100msec.</p>

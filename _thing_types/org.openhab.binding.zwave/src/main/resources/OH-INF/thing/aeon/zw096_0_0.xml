@@ -112,8 +112,7 @@ Configure the output load status after re‐power<br /> <h1>Overview</h1><p>Conf
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_33_4_wo" type="integer" groupName="configuration"
-                 min="-2147483646" max="2147483647">
+      <parameter name="config_33_4_wo" type="integer" groupName="configuration">
         <label>33: RGB LED color testing</label>
         <description><![CDATA[
 Set the RGB LED color value for testing.<br /> <h1>Overview</h1><p>Value1: Reserved</p> <p>Value2: Red value</p> <p>Value3: Green value</p> <p>Value4: Blue value</p>
@@ -149,16 +148,14 @@ Configure the state of the LED<br /> <h1>Overview</h1><p>Configure the state of 
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_83_3" type="integer" groupName="configuration"
-                 min="-8388606" max="8388607">
+      <parameter name="config_83_3" type="integer" groupName="configuration">
         <label>83: Color in night light mode</label>
         <default>0</default>
         <advanced>true</advanced>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_83_3_000000FF" type="integer" groupName="configuration"
-                 min="0" max="255">
+      <parameter name="config_83_3_000000FF" type="integer" groupName="configuration">
         <label>83: Blue night light color value</label>
         <description><![CDATA[
 Blue night light color value<br /> <h1>Overview</h1><p>Value for parameter 83, night light blue color</p>
@@ -167,8 +164,7 @@ Blue night light color value<br /> <h1>Overview</h1><p>Value for parameter 83, n
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_83_3_0000FF00" type="integer" groupName="configuration"
-                 min="0" max="255">
+      <parameter name="config_83_3_0000FF00" type="integer" groupName="configuration">
         <label>83: Green night light color value</label>
         <description><![CDATA[
 Green night light color value<br /> <h1>Overview</h1><p>Green color value for parameter 83, night light mode.</p>
@@ -177,8 +173,7 @@ Green night light color value<br /> <h1>Overview</h1><p>Green color value for pa
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_83_3_00FF0000" type="integer" groupName="configuration"
-                 min="0" max="255">
+      <parameter name="config_83_3_00FF0000" type="integer" groupName="configuration">
         <label>83: Red night light color value</label>
         <description><![CDATA[
 Configure the RGB value when it is in Night light mode<br /> <h1>Overview</h1><p>Configure the RGB value when it is in Night light mode.<br />Value1: Red color value<br />Value2: Green color value<br />Value3: Blue color value</p> <p>defaults:</p> <p>Value1=0xDD<br />Value2=0xA0<br />Value3=0xDD</p>
@@ -187,16 +182,14 @@ Configure the RGB value when it is in Night light mode<br /> <h1>Overview</h1><p
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_84_3" type="integer" groupName="configuration"
-                 min="-8388606" max="8388607">
+      <parameter name="config_84_3" type="integer" groupName="configuration">
         <label>84: Color in energy mode</label>
         <default>0</default>
         <advanced>true</advanced>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_84_3_000000FF" type="integer" groupName="configuration"
-                 min="0" max="100">
+      <parameter name="config_84_3_000000FF" type="integer" groupName="configuration">
         <label>84: Green brightness in energy mode (%)</label>
         <description><![CDATA[
 Green brightness in energy mode (%)<br /> <h1>Overview</h1><p>Configure the brightness level of RGB LED (0%-100%) when<br />it is in Energy Mode/momentary indicate mode.<br />Value1: green color value.<br />Value2: yellow color value.<br />Value3: red color value.</p>
@@ -205,16 +198,14 @@ Green brightness in energy mode (%)<br /> <h1>Overview</h1><p>Configure the brig
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_84_3_0000FF00" type="integer" groupName="configuration"
-                 min="0" max="100">
+      <parameter name="config_84_3_0000FF00" type="integer" groupName="configuration">
         <label>84: Yellow brightness in energy mode (%)</label>
         <description>Yellow brightness in energy mode (%)</description>
         <default>50</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_84_3_00FF0000" type="integer" groupName="configuration"
-                 min="0" max="100">
+      <parameter name="config_84_3_00FF0000" type="integer" groupName="configuration">
         <label>84: Red brightness in energy mode (%)</label>
         <description>Red brightness in energy mode (%)</description>
         <default>50</default>
@@ -234,8 +225,7 @@ Enables/disables parameter 91 and 92<br /> <h1>Overview</h1><p>Enables/disables 
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_91_2" type="integer" groupName="configuration"
-                 min="-32767" max="32768">
+      <parameter name="config_91_2" type="integer" groupName="configuration">
         <label>91: Wattage Threshold</label>
         <description><![CDATA[
 minimum change in wattage to trigger<br /> <h1>Overview</h1><p>The value here represents minimum change in wattage (in<br />terms of wattage) for a REPORT to be sent (Valid values 0-<br />60000).</p>
@@ -244,8 +234,7 @@ minimum change in wattage to trigger<br /> <h1>Overview</h1><p>The value here re
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_92_1" type="integer" groupName="configuration"
-                 min="0" max="100">
+      <parameter name="config_92_1" type="integer" groupName="configuration">
         <label>92: Wattage Percent Change</label>
         <description><![CDATA[
 minimum change in wattage percent<br /> <h1>Overview</h1><p>The value here represents minimum change in wattage<br />percent (in terms of percentage) for a REPORT to be sent<br />(Valid values 0-100).</p>
@@ -321,8 +310,7 @@ minimum change in wattage percent<br /> <h1>Overview</h1><p>The value here repre
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_111_4" type="integer" groupName="configuration"
-                 min="1" max="2147483647">
+      <parameter name="config_111_4" type="integer" groupName="configuration">
         <label>111: Time interval for sending to group 1</label>
         <description><![CDATA[
 Group 1 automatic update interval<br /> <h1>Overview</h1><p>The time interval of sending Report group 1 (Valid values 0x01-0xFFFFFFFF).</p> <p>Default value is 3</p> <p>Note: Only up to 0x7fffffff is currently supported</p>
@@ -331,8 +319,7 @@ Group 1 automatic update interval<br /> <h1>Overview</h1><p>The time interval of
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_112_4" type="integer" groupName="configuration"
-                 min="1" max="2147483647">
+      <parameter name="config_112_4" type="integer" groupName="configuration">
         <label>112: Time interval for sending to group 2</label>
         <description><![CDATA[
 Group 2 automatic update interval<br /> <h1>Overview</h1><p>The time interval of sending Report group 1 (Valid values 0x01-0xFFFFFFFF).</p> <p>Default value is 600</p> <p>Note: Only up to 0x7fffffff is currently supported</p>
@@ -341,8 +328,7 @@ Group 2 automatic update interval<br /> <h1>Overview</h1><p>The time interval of
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_113_4" type="integer" groupName="configuration"
-                 min="1" max="2147483647">
+      <parameter name="config_113_4" type="integer" groupName="configuration">
         <label>113: Time interval for sending to group 3</label>
         <description><![CDATA[
 Group 3 automatic update interval<br /> <h1>Overview</h1><p>The time interval of sending Report group 1 (Valid values 0x01-0xFFFFFFFF).</p> <p>Default value is 600</p> <p>Note: Only up to 0x7fffffff is currently supported</p>

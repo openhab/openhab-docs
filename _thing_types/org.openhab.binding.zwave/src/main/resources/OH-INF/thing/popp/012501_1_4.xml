@@ -71,8 +71,7 @@ Electric Strike Lock Control<br /> <h1>Overview</h1><p>An electric strike is an 
       </parameter-group>
 
       <!-- PARAMETER DEFINITIONS -->
-      <parameter name="config_0_1" type="integer" groupName="configuration"
-                 min="0" max="127">
+      <parameter name="config_0_1" type="integer" groupName="configuration">
         <label>0: Auto-Close</label>
         <description><![CDATA[
 Automated Close after Opening<br /> <h1>Overview</h1><p>0: No automated close after command ‘open’<br />1-127: Close again after x seconds (Default 3) </p>
@@ -80,8 +79,7 @@ Automated Close after Opening<br /> <h1>Overview</h1><p>0: No automated close af
         <default>3</default>
       </parameter>
 
-      <parameter name="config_1_1" type="integer" groupName="configuration"
-                 min="0" max="99">
+      <parameter name="config_1_1" type="integer" groupName="configuration">
         <label>1: Off-Command</label>
         <description><![CDATA[
 Value of Off-Command<br /> <h1>Overview</h1><p>Value of Off-Command (Parameter number 1, Size 1) </p>
@@ -89,8 +87,7 @@ Value of Off-Command<br /> <h1>Overview</h1><p>Value of Off-Command (Parameter n
         <default>0</default>
       </parameter>
 
-      <parameter name="config_2_1" type="integer" groupName="configuration"
-                 min="0" max="99">
+      <parameter name="config_2_1" type="integer" groupName="configuration">
         <label>2: On-Command</label>
         <description><![CDATA[
 Value of On-Command<br /> <h1>Overview</h1><p>Value of On-Command (Parameter number 2, Size 1) </p>

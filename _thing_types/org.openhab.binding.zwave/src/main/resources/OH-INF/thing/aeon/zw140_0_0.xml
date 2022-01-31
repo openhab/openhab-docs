@@ -153,8 +153,7 @@ Group 4 notifications<br /> <h1>Overview</h1><p>To set which notification would 
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_84_4" type="integer" groupName="configuration"
-                 min="0" max="16777276">
+      <parameter name="config_84_4" type="integer" groupName="configuration">
         <label>84: ON/OFF time in Night light mode.</label>
         <description><![CDATA[
 Set the ON/OFF time of the LED when it is in Night light mode.<br /> <h1>Overview</h1><p>0 to 60 The minute time of OFF 256 to 316 The hour time of OFF 65536 to 65596 The minute time of ON 16777216 to 16777276 The hour time of ON</p>
@@ -164,8 +163,7 @@ Set the ON/OFF time of the LED when it is in Night light mode.<br /> <h1>Overvie
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_86_4" type="integer" groupName="configuration"
-                 min="0" max="16777216">
+      <parameter name="config_86_4" type="integer" groupName="configuration">
         <label>86: Set appointment 1</label>
         <description><![CDATA[
 Set appointment 1<br /> <h1>Overview</h1><p>256 to 316 The hour value of ON time 16777215 Disable the setting. 0 to 60 The minute value of ON time 65536 to 65543 The day value (Mon to Sun) 16777216 Enable the setting.</p>
@@ -175,8 +173,7 @@ Set appointment 1<br /> <h1>Overview</h1><p>256 to 316 The hour value of ON time
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_87_4" type="integer" groupName="configuration"
-                 min="0" max="16777216">
+      <parameter name="config_87_4" type="integer" groupName="configuration">
         <label>87: Set appointment 2</label>
         <description><![CDATA[
 Set appointment 2<br /> <h1>Overview</h1><p>256 to 316 The hour value of ON time 65536 to 65543 The day value (Mon to Sun) 16777215 Disable the setting. 0 to 60 The minute value of ON time 16777216 Enable the setting.</p>

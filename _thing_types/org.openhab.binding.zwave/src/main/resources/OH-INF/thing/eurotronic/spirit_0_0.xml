@@ -150,8 +150,7 @@ LCD Timeout<br /> <h1>Overview</h1><p>0: No Timeout LCD always on</p> <p>5-30: L
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_3_1" type="integer" groupName="configuration"
-                 min="0" max="1">
+      <parameter name="config_3_1" type="integer" groupName="configuration">
         <label>3: Backlight</label>
         <description><![CDATA[
 Backlight<br /> <h1>Overview</h1><p><br /></p>
@@ -174,8 +173,7 @@ Backlight<br /> <h1>Overview</h1><p><br /></p>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_5_1" type="integer" groupName="configuration"
-                 min="0" max="50">
+      <parameter name="config_5_1" type="integer" groupName="configuration">
         <label>5: Measured Temperature report</label>
         <description><![CDATA[
 Measured Temperature report<br /> <h1>Overview</h1><p>0: Unsolicited Temperature reporting disabled</p> <p>1-50: report if temperature changed by delta = 0,1°C ... 5,0 °C</p> <p>default 5: report on delta T = 0,5°C</p>
@@ -184,8 +182,7 @@ Measured Temperature report<br /> <h1>Overview</h1><p>0: Unsolicited Temperature
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_6_1" type="integer" groupName="configuration"
-                 min="0" max="100">
+      <parameter name="config_6_1" type="integer" groupName="configuration">
         <label>6: Valve opening percentage report</label>
         <description><![CDATA[
 Valve opening percentage report<br /> <h1>Overview</h1><p>0: Unsolicited valve opening percentage reporting disabled.</p> <p>1-100: report if valve opening changed by delta = 1% ... 100%</p>
