@@ -1,7 +1,7 @@
 ---
 layout: documentation
 title: Google Assistant
-source: https://github.com/openhab/openhab-google-assistant/blob/master/docs/USAGE.md
+source: https://github.com/openhab/openhab-google-assistant/blob/main/docs/USAGE.md
 description: "Google Assistant is Google's virtual personal assistant and uses Actions on Google as the platform for \"Actions\" (software applications) to extend the functionality of the Google Assistant."
 ---
 
