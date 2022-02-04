@@ -1,0 +1,18 @@
+name: Fetch openHAB Mycroft Skill Docs
+
+on:
+  # Repository dispatch event, to be triggerd by an openhab-alexa release
+  # or manually from the openhab-mycroft repository
+  repository_dispatch:
+    types: [update-openhab-mycroft-docs-event]
+  workflow_dispatch:
+
+jobs:
+  call-reusable-fetch-workflow:
+    uses: openhab/openhab-docs/.github/workflows/fetch_external_docs_reusable.yml@main
+    with:
+      base_source_repository: openhab-mycroft
+      base_source_ref: ${{ github.event.client_payload.ref }}
+      base_folder: _addons_ios/mycroft-skill
+      doc_base_dir: ''
+      doc_base_file: USAGE.md

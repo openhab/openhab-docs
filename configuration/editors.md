@@ -87,3 +87,8 @@ You can find the syntax file and installation instructions on [openhab-syntax-te
 
 BBEdit is a text and code editor for macOS and the offical successor of TextWrangler.
 You can find the syntax file and installation instructions on [BBEdit-openHAB-language](https://github.com/mjmeijer/BBEdit-openHAB-language).
+
+### Emacs
+
+Emacs is an amazingly extendable free software text editor.
+You can find a basic modes for the most common types at [openhab-mode](https://github.com/peterhoeg/openhab-mode).

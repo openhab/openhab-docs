@@ -185,8 +185,6 @@ All configuration values will be mapped to properties of the class.
 The type of the property must match the type of the configuration.
 The following types are supported for configuration values: `Boolean`, `boolean`, `String`, `BigDecimal`, `int`, `long`, `float` and `double`.
 
-For example, the Yahoo Weather binding allows configuration of the location and the refresh frequency.
-
 ### Properties
 
 *Things* can have properties.
@@ -879,12 +877,6 @@ The following example shows the implementation of the UPnP discovery participant
 ```java
 public class HueBridgeDiscoveryParticipant implements UpnpDiscoveryParticipant {
 
-    private long removalGracePeriodSeconds = 50;
-
-    @Reference
-    @Nullable
-    ConfigurationAdmin configAdmin;
-
     @Override
     public Set<ThingTypeUID> getSupportedThingTypeUIDs() {
         return Collections.singleton(THING_TYPE_BRIDGE);
@@ -922,23 +914,43 @@ public class HueBridgeDiscoveryParticipant implements UpnpDiscoveryParticipant {
         }
         return null;
     }
+}
+```
 
-    // Implementating this method is OPTIONAL
-    // If not implemented, the 'default' method returns 0 by default
-    @Override
-    public long getRemovalGracePeriodSeconds(RemoteDevice device) {
-        if (configAdmin != null) {
-            try {
-                Configuration conf = configAdmin.getConfiguration("binding.hue");
-                Dictionary<String, @Nullable Object> properties = conf.getProperties();
-                Object property = properties.get(HueBindingConstants.REMOVAL_GRACE_PERIOD);
-                if (property != null) {
-                    removalGracePeriodSeconds = Integer.valueOf(property.toString()).longValue();
+The following is an example of how to implement the OPTIONAL `getRemovalGracePeriodSeconds` method.
+
+```java
+@Component(configurationPid = "discovery.hue")
+public class HueBridgeDiscoveryParticipant implements UpnpDiscoveryParticipant {
+
+    private long removalGracePeriodSeconds = 15;
+
+    @Activate
+    public void activate(@Nullable Map<String, Object> configProperties) {
+        updateRemovalGracePeriod(configProperties);
+    }
+
+    @Modified
+    public void modified(@Nullable Map<String, Object> configProperties) {
+        updateRemovalGracePeriod(configProperties);
+    }
+
+    private void updateRemovalGracePeriod(Map<String, Object> configProperties) {
+        if (configProperties != null) {
+            Object value = configProperties.get(HueBindingConstants.REMOVAL_GRACE_PERIOD);
+            if (value != null) {
+                try {
+                    removalGracePeriodSeconds = Integer.parseInt(value.toString());
+                } catch (NumberFormatException e) {
+                    logger.warn("Configuration property '{}' has invalid value: {}",
+                            HueBindingConstants.REMOVAL_GRACE_PERIOD, value);
                 }
-            } catch (IOException | IllegalStateException | NullPointerException | NumberFormatException e) {
-                // fall through to pre-initialised (default) value
             }
         }
+    }
+
+    @Override
+    public long getRemovalGracePeriodSeconds(ServiceInfo serviceInfo) {
         return removalGracePeriodSeconds;
     }
 }
@@ -958,6 +970,12 @@ Here the developer only needs to implement four simple methods:
 - `createResult` - Creates the `DiscoveryResult` out of the mDNS result.
     This method is called from the discovery service to create the actual discovery result.
     It uses the `getThingUID` method to create the thing UID of the result.
+- `getRemovalGracePeriodSeconds` (OPTIONAL) - Returns an additional grace period delay in seconds before the device will be removed from the Inbox.
+    This method is called when the discovery service is about to remove a Thing from the Inbox.
+    Some bindings handle devices that can sometimes be a bit late in sending their mDNS notifications even though they have not really gone offline.
+    This means that the device is repeatedly removed from, and (re)added to, the Inbox.
+    To prevent this, a binding may OPTIONALLY implement this method to specify an additional delay period (grace period) to wait before the device is removed from the Inbox.
+    See the example code for the `getRemovalGracePeriodSeconds()` method under the "UPnP Discovery" chapter above.
 
 ### Discovery that is bound to a Bridge
 

@@ -1,0 +1,18 @@
+name: Fetch openHAB Skill For Amazon Alexa Docs
+
+on:
+  # Repository dispatch event, to be triggerd by an openhab-alexa release
+  # or manually from the openhab-alexa repository
+  repository_dispatch:
+    types: [update-openhab-alexa-docs-event]
+  workflow_dispatch:
+
+jobs:
+  call-reusable-fetch-workflow:
+    uses: openhab/openhab-docs/.github/workflows/fetch_external_docs_reusable.yml@main
+    with:
+      base_source_repository: openhab-alexa
+      base_source_ref: ${{ github.event.client_payload.ref }}
+      base_folder: _addons_ios/alexa-skill
+      doc_base_file: USAGE.md
+      has_images: true
