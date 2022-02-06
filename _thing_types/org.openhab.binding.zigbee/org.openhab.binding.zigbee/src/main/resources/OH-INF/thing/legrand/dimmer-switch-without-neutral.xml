@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zigbee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+	xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0 https://openhab.org/schemas/thing-description-1.0.0.xsd">
+
+	<thing-type id="legrand_dimmer_without_neutral" listed="false">
+		<label>Legrand with Netatmo Dimmer</label>
+		<description>Legrand with Netatmo Dimmer without neutral</description>
+		<channels>
+			<channel id="switch_onoff" typeId="switch_onoff">
+				<properties>
+					<property name="zigbee_endpoint">1</property>
+				</properties>
+			</channel>
+			<channel id="switch_level" typeId="switch_level">
+				<label>Level Control</label>
+				<description></description>
+				<properties>
+					<property name="zigbee_endpoint">1</property>
+				</properties>
+			</channel>
+		</channels>
+
+		<config-description>
+			<parameter name="zigbee_macaddress" type="text" readOnly="true" required="true">
+				<label>MAC Address</label>
+			</parameter>
+
+			<parameter name="attribute_01_in_fc01_0001_10" type="boolean">
+				<label>Led in Dark</label>
+				<options>
+					<option value="false">Disabled</option>
+					<option value="true">Enabled</option>
+				</options>
+				<default>false</default>
+			</parameter>
+
+			<parameter name="attribute_01_in_fc01_0002_10" type="boolean">
+				<label>Led if On</label>
+				<options>
+					<option value="false">Disabled</option>
+					<option value="true">Enabled</option>
+				</options>
+				<default>false</default>
+			</parameter>
+		</config-description>
+
+	</thing-type>
+</thing:thing-descriptions>
