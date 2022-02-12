@@ -19,23 +19,23 @@ title: Rules Blockly - Items & Things
 
 ## Overview of the Items and Things category
 
-> ![items-and-things.png](images/blockly/blockly-items-and-things.png)
+> ![items-and-things](images/blockly/blockly-items-and-things.png)
 
 
 ### Item and Thing Blocks
 Most of the time you will want to get and set the state of an *item* - set a switch to ON, or get a temperature. Sometimes you may want to access the *thing* directly. Both are possible using the item-block and thing-block
 
-> ![blockly-item-thing.png](images/blockly/blockly-item-thing.png)
+> ![blockly-item-thing](images/blockly/blockly-item-thing.png)
 
 However, these blocks are not useful by themselves - they are always used together with another block. The example below uses the *get state of item* block to retrieve the *MainSwitch* *item* state, before checking if that is equal to ON within a standard comparison block
 
-![blockly-item-example.png](images/blockly/blockly-item-example.png)
+![blockly-item-example](images/blockly/blockly-item-example.png)
 
 ## Items
 
 ### Item
 
-![blockly-item.png](images/blockly/blockly-item.png)
+![blockly-item](images/blockly/blockly-item.png)
 
 Function: Retrieves a specific **Item** or **Group** for use in other item related functions.
 
@@ -45,7 +45,7 @@ Function: Retrieves a specific **Item** or **Group** for use in other item relat
 
 ### Get Item
 
-![getItem.png](images/blockly/blockly-getItem.png)
+![getItem](images/blockly/blockly-getItem.png)
 
 Function: Gets an **Item** for use in other item related functions
 
@@ -53,11 +53,11 @@ Function: Gets an **Item** for use in other item related functions
 * Technically this block returns an item *object*, to be used to retrieve specific attributes using other blocks (see below).
 * As this block does not return a String it cannot be directly attached to a log-block, as demonstrated below.
 
-![blockly-getItemStateDoesntFit.png](images/blockly/blockly-getItemStateDoesntFit.png)
+![blockly-getItemStateDoesntFit](images/blockly/blockly-getItemStateDoesntFit.png)
 
 ### Get State of Item
 
-![blockly-getStateOfItem.png](images/blockly/blockly-getStateOfItem.png)
+![blockly-getStateOfItem](images/blockly/blockly-getStateOfItem.png)
 
 Function: Get the current state of an **Item** or **Group**
 
@@ -66,7 +66,7 @@ Function: Get the current state of an **Item** or **Group**
 Note: currently a String is not always returned. [See this thread](https://community.openhab.org/t/blockly-cannot-split-text-string-from-string-item/130819) for reference and potential workaround.
 
 ### Get Members of Group
-![blockly-getMembers.png](images/blockly/blockly-getMembers.png)
+![blockly-getMembers](images/blockly/blockly-getMembers.png)
 
 Function: Gets the members of a **group**
 
@@ -79,11 +79,11 @@ GF_IndirectLights (Type=GroupItem, BaseType=SwitchItem, Members=9, State=OFF, La
 
 The following example depicts the above possibilities:
 
-![blockly-getMembersExample.png](images/blockly/blockly-getMembersExample.png)
+![blockly-getMembersExample](images/blockly/blockly-getMembersExample.png)
 
 ### Get particular attributes of an item
 
-![blockly-getItemAttributes.png](images/blockly/blockly-getItemAttributes.png)
+![blockly-getItemAttributes](images/blockly/blockly-getItemAttributes.png)
 
 Function: Get either the current name, label, state, category, tags, groups, or type of an item as a String
 
@@ -104,7 +104,7 @@ These attributes are returned with the following types:
 
 Depending on your openHAB version (pre-3.3) this block may not connect as expected. As a workaround attach the block to a variable first, and use the variable in the rest of the script.
 
-![blockly-getItemAttributes-fix.png](images/blockly/blockly-getItemAttributes-fix.png)
+![blockly-getItemAttributes-fix](images/blockly/blockly-getItemAttributes-fix.png)
 
 **Special handling for Arrays**
 
@@ -112,11 +112,11 @@ The attributes *groups* and *tags* return an Array of entries.  Therefore
 * they *cannot* be connected to a block that expects a String (e.g. log-block)
 * they *must* be handled using a for-loop as follows
 
-![blockly-specialArrayHandling.png](images/blockly/blockly-specialArrayHandling.png)
+![blockly-specialArrayHandling](images/blockly/blockly-specialArrayHandling.png)
 
 ### Send Command
 
-![blockly-sendCommand.png](images/blockly/blockly-sendCommand.png)
+![blockly-sendCommand](images/blockly/blockly-sendCommand.png)
 
 Function: Sends a command or posts an update to an **Item** or **Group**.
 
@@ -131,20 +131,20 @@ For the difference between *send command* and *post update* two check ["Manipula
 * Check if *MainSwitch* is ON.
 * If ON, send ON command to *livingroomLight* item.
 
-![blockly-sendCommandExample1.png](images/blockly/blockly-sendCommandExample1.png)
+![blockly-sendCommandExample1](images/blockly/blockly-sendCommandExample1.png)
 
 **Example 2:**
 * Get the state of *MainSwitch* and
 * Immediately send it as a command to *F2_Office_Main_Light*
 
-![blockly-sendCommandExample2.png)](images/blockly/blockly-sendCommandExample2.png)
+![blockly-sendCommandExample2)](images/blockly/blockly-sendCommandExample2.png)
 Ensure that the receiving item can handle the state of the 'sending' item.
 
 ## Things
 
 ### Thing
 
-![blockly-thing.png](images/blockly/blockly-thing.png)
+![blockly-thing](images/blockly/blockly-thing.png)
 
 Function: Retrieves a specific **Thing** for use in other thing related functions.
 
@@ -154,7 +154,7 @@ Function: Retrieves a specific **Thing** for use in other thing related function
 
 **Example**
 
-![blockly-thingExample.png](images/blockly/blockly-thingExample.png)
+![blockly-thingExample](images/blockly/blockly-thingExample.png)
 
 will write the following into the log
 
@@ -164,7 +164,7 @@ thing name = nanoleaf:controller:645E3A484A83
 
 ### Get Thing Status
 
-![blockly-getThingStatus.png](images/blockly/blockly-getThingStatus.png)
+![blockly-getThingStatus](images/blockly/blockly-getThingStatus.png)
 Function: Gets a **Thing Status** for use in other Thing related functions
 
 * Clicking 'MyThing' displays a list of **Things** to pick from.

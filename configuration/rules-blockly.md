@@ -82,7 +82,7 @@ All methods reveal the following folders
 
 ### Creating a blockly rule via the UI
   - go to Settings -> Rules
-  - press ![](images/blockly/blockly-plus-small.png) on bottom right
+  - press ![plus](images/blockly/blockly-plus-small.png) on bottom right
   - enter a unique id and rule name for your new blockly rule
   - Under "When" click on "Add Trigger" to define a trigger for the rule (you may add multiple triggers which are perceived as any of those triggers may occurs which stands for an OR combination of the triggers)
     - choose a title for the rule
@@ -90,15 +90,15 @@ All methods reveal the following folders
     - select the item from your model and the click PICK on the upper right corner
     - choose "received a command", "was updated" or "changed"
   - Under "Then" click on "Add Action"
-  - choose ![run-script-1.png](images/blockly/blockly-run-script.png)
-  - click on ![run-script-2.png](images/blockly/blockly-run-script-2.png) und you should now see this screen
-  ![blockly-edit-screen.png](images/blockly/blockly-edit-screen.png)
-  - you can now click the ![toolbox-submenu.png](images/blockly/blockly-arrow.png) to access all openHAB Blocks.
+  - choose ![run-script-1](images/blockly/blockly-run-script.png)
+  - click on ![run-script-2](images/blockly/blockly-run-script-2.png) und you should now see this screen
+  ![blockly-edit-screen](images/blockly/blockly-edit-screen.png)
+  - you can now click the ![toolbox-submenu](images/blockly/blockly-arrow.png) to access all openHAB Blocks.
   - Drag and Drop the blocks to the white area
   - Press `Ctrl-s` (Windows) or `Command-s` (MacOS) to save your rule
   - Press `Ctrl-r` (Windows) or `Command-r` (MacOS) to directly run your rule with the trigger
   - Press `Ctrl-d` (Windows) or `Command-d` (MacOS) to disable / enable your rule
-  - Click on ![](images/blockly/blockly-showcode.png) on the lower right to see the generated code (click again to come back to the blocks)
+  - Click on ![showcode](images/blockly/blockly-showcode.png) on the lower right to see the generated code (click again to come back to the blocks)
 
 ### Use Frontail for viewing log files
 During development the log-block is lot very often which writes information into the log files.
@@ -115,7 +115,17 @@ During development the log-block is lot very often which writes information into
 [![Items and Things](images/blockly/blockly-items-and-things-small.png "Items and Things")
 ](rules-blockly-items-things.html)
 
-Further documentation can be found in the  [Items & Things](rules-blockly-items-things.html) section.
+See [Items & Things](rules-blockly-items-things.html) section
+## Timers and Delays
+
+Timers and Delays are a little more complex but add important functionality to rules. Whilst the “Wait-For”-block is straightforward, the timer blocks should be well understood before being used - they may behave differently than expected. This chapter explains what these blocks do, sometimes displaying generated code to explain what is happening behind the scenes.
+
+
+[![Timers and Delays](images/blockly/blockly-timers-and-delays-small.png "Items and Things")
+](rules-blockly-timers-and-delays.html)
+
+See [Timers and Delays](rules-blockly-items-things.html) section.
+
 
 ## Further useful information
 
