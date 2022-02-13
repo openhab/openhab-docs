@@ -13,8 +13,6 @@ Timers and Delays are a little more complex but add important functionality to r
 - TOC
 {:toc}
 
-
-
 {: #blockly-timers-and-delays-overview}
 
 ## Overview of the Timers and Delays category
@@ -167,12 +165,12 @@ if (typeof this.timers['rescheduleTimerBlock'] === 'undefined' || this.timers['r
 ### Timer is Active
 ![timer-is-active](images/blockly/blockly-timer-is-active.png)
 
-*Function:* returns `true` if the timer itself is currently counting down, and the code within the timer will be executed as scheduled. This block will return `false` if the timer doesn't exist, has been cancelled, or has already finished.
+*Function:* returns `true` if the timer itself is currently counting down, and the code within the timer will be eventually executed as scheduled. This block will return `false` if the timer doesn't exist, has been cancelled, or has already finished.
 
 ### Timer is Running
 
 ![timer-is-running](images/blockly/blockly-timer-is-running.png)
-*Function*: returns `true` if the code *within the timer block* is currently running - i.e. the countdown has finished, and the code within the timer block is currently executing.
+*Function*: returns `true` if the code *within the timer block* is currently running - i.e. the countdown has finished, and the code within the timer block is currently executing. This event will usually only last a few milliseconds, and you’d be (un)lucky to catch it when your rule retriggers.
 
 ### Timer has terminated
 

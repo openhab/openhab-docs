@@ -38,77 +38,13 @@ This section provides a detailed description of the specific blocks and provides
 
 A special mention should go towards the **Help** entry that links to a resource that is usually very helpful to understand the context of that particular block. Please read this information first before asking questions in the forum. *In case you ask for help please always post the respective code that is being generated.*
 
-## Before using openHAB Blocklies
+## Before using blockly
 
-### **OpenHAB Configuration Files**
+Please visit [Getting started with openHAB Blocklies](rules-blockly-before-using.html) before asking questions in the forum
 
-Some openHAB blocks rely on particular configuration files found in the openHAB configuration folder. This folder is referred to as $OPENHAB_CONF in this page, and the location of this folder for your setup can be found via the UI: *Help & About* -> *Technical Information* -> *Configuration folder*.
+## Blocks
 
-
-- via mounting the files shares from the server to your client-PC. In the main UI as an admin you can go to *Help & About* and will have the different folder locations under *Technical information*.
-  - the exact configuration of the shares can be found on your server at [/etc/samba/smb.conf](https://github.com/openhab/openhabian/blob/main/includes/smb.conf).
-- Use the share *openHAB*-conf when mounting it from Windows or MacOS
-
-**Link the openHAB share in Windows**
-- Find you openHAB-Server via the network share functionality
-- User the share *openHAB*-conf to assign it to a network drive
-
-**Link the openHAB share in macOS**
-
-- Finder -> Go -> Connect to Server
-  - Enter the username and server name to connect to the openHAB Server
-
-  ![macos-share-1.png](images/blockly/blockly-openhab-macos-share-1.png)
-  - then choose the folder you want to mount
-
-  ![macos-share-2](images/blockly/blockly-openhab-macos-share-2.png)
-
-**Finding it on Linux**
-- Access the folder directly on the openHAB server at */etc/openhab*
-
-All methods reveal the following folders
-  - html
-  - icons
-  - items
-  - services
-  - html
-  - persistence
-  - rules
-  - scripts
-  - sitemaps
-  - sounds
-  - things
-  - transform
-
-### Creating a blockly rule via the UI
-  - go to Settings -> Rules
-  - press ![plus](images/blockly/blockly-plus-small.png) on bottom right
-  - enter a unique id and rule name for your new blockly rule
-  - Under "When" click on "Add Trigger" to define a trigger for the rule (you may add multiple triggers which are perceived as any of those triggers may occurs which stands for an OR combination of the triggers)
-    - choose a title for the rule
-    - choose "item" (or something else) that should trigger the rule
-    - select the item from your model and the click PICK on the upper right corner
-    - choose "received a command", "was updated" or "changed"
-  - Under "Then" click on "Add Action"
-  - choose ![run-script-1](images/blockly/blockly-run-script.png)
-  - click on ![run-script-2](images/blockly/blockly-run-script-2.png) und you should now see this screen
-  ![blockly-edit-screen](images/blockly/blockly-edit-screen.png)
-  - you can now click the ![toolbox-submenu](images/blockly/blockly-arrow.png) to access all openHAB Blocks.
-  - Drag and Drop the blocks to the white area
-  - Press `Ctrl-s` (Windows) or `Command-s` (MacOS) to save your rule
-  - Press `Ctrl-r` (Windows) or `Command-r` (MacOS) to directly run your rule with the trigger
-  - Press `Ctrl-d` (Windows) or `Command-d` (MacOS) to disable / enable your rule
-  - Click on ![showcode](images/blockly/blockly-showcode.png) on the lower right to see the generated code (click again to come back to the blocks)
-
-### Use Frontail for viewing log files
-During development the log-block is lot very often which writes information into the log files.
-
-- To be able to conveniently view your log files it is recommended to setup *frontail* which can be achieved easily via [openhabian-config](https://www.openhab.org/docs/installation/openhabian.html#optional-components)
-- Start `openhabian-config` on your server and choose option 20 and then option 21
-- After installation you can view your logs under http://myopenhab-server:9001 (adapt the server name)
-- **see [how to log](https://www.openhab.org/docs/administration/logging.html)**
-
-## Items and Things
+### Items and Things
 
 *Items* and *Things* are the [major entities of openHAB](https://www.openhab.org/docs/concepts/) to control and monitor the home.
 
@@ -116,7 +52,8 @@ During development the log-block is lot very often which writes information into
 ](rules-blockly-items-things.html)
 
 See [Items & Things](rules-blockly-items-things.html) section
-## Timers and Delays
+
+### Timers and Delays
 
 Timers and Delays are a little more complex but add important functionality to rules. Whilst the “Wait-For”-block is straightforward, the timer blocks should be well understood before being used - they may behave differently than expected. This chapter explains what these blocks do, sometimes displaying generated code to explain what is happening behind the scenes.
 
@@ -124,10 +61,97 @@ Timers and Delays are a little more complex but add important functionality to r
 [![Timers and Delays](images/blockly/blockly-timers-and-delays-small.png "Items and Things")
 ](rules-blockly-timers-and-delays.html)
 
-See [Timers and Delays](rules-blockly-items-things.html) section.
+See [Timers and Delays](rules-blockly-timers-and-delays.html) section.
+
+### Date Handling
+
+Date blocks are used as input parameters for other blocks.
+At the moment some of these blocks are found in the ephemeris section, whilst others are found in the persistence section - they may be equally useful for both. These blocks are *typed* to assure correct connection to other blocks.
+
+[![Timers and Delays](images/blockly/blockly-date-handling-ephemeris-small.png "Ephemeris Dates")
+](rules-blockly-date-handling.html) [![Timers and Delays](images/blockly/blockly-date-handling-persistence-small.png "Persistence Dates")
+](rules-blockly-date-handling.html)
+
+See [Date Handling](rules-blockly-date-handling.html) section.
+
+### Ephemeris
+
+The ephemeris category provides blocks with calendar functionality. The blocks can be used to determine what type of day today is, or a number of days before or after today is. For example, a way to determine if today is a weekend, a bank holiday, someone’s birthday, trash day, etc.
 
 
-## Further useful information
+[![Ephemeris](images/blockly/blockly-ephemeris-small.png "Ephemeris")
+](rules-blockly-ephemeris.html)
+
+See [Ephemeris](rules-blockly-ephemeris.html) section.
+
+### Voice and Multimedia
+
+This section deals with _playing or streaming audio_ to an audio sink e.g a speaker or _saying a text_ via using any Text-to-Speech API (e.g. Google's API)
+
+[![Voice and Multimedia](images/blockly/blockly-voice-and-multimedia-small.png "Voice and Multimedia")
+](rules-blockly-voice-and-multimedia.html)
+
+See [Voice and Multimedia](rules-blockly-voice-and-multimedia.html) section.
+
+### Notifications
+
+For use with your [openHAB cloud](https://www.openhab.org/addons/integrations/openhabcloud/) account, these blocks can be used to send notifications to relevant connected devices. Notifications can be used as push message to devices running the openHAB client.
+
+[![Notifications](images/blockly/blockly-notifications-small.png "Notifications")
+](rules-blockly-notifications.html)
+
+See [Notifications](rules-blockly-notifications.html) section.
+
+### Persistence
+
+Persistence blocks enable access of historical data stored by the default persistence service.
+
+[![Persistence](images/blockly/blockly-persistence-small.png "Persistence")
+](rules-blockly-persistence.html)
+
+See [Persistence](rules-blockly-persistence.html) section.
+
+### Value Storage
+
+These blocks enable storing information *for a rule* that is kept after the rule has run, so it can be reused when the rule is run again later in stateful way.
+
+[![Value Storage](images/blockly/blockly-value-storage-small.png "Value Storage")
+](rules-blockly-value-storage.html)
+
+See [Value Storage](rules-blockly-value-storage.html) section.
+
+### Run & Process (Rules and Scripts)
+
+This section allows calling rules or other scripts, retrieving attributes provided by the rule context or transforming values via different conversion methods (e.g. map, regex, jsonpath)
+
+[![Run & Process](images/blockly/blockly-value-storage-small.png "Value Storage")
+](rules-blockly-run-and-process.html)
+
+See [Run and Process](rules-blockly-run-and-process.html) section.
+
+### Logging
+
+This section allows calling rules or other scripts, retrieving attributes provided by the rule context or transforming values via different conversion methods (e.g. map, regex, jsonpath)
+
+[![Logging](images/blockly/blockly-value-storage-small.png "Logging")
+](rules-blockly-logging.html)
+
+See [Logging](rules-blockly-logging.html) section.
+
+### openHAB Extensions to the Standard
+
+This section explains only the blocks that have been added to the standard blocks by openHAB
+
+
+[![openHAB Extensions to the standard](images/blockly/blockly-colors-overview-small.png "openHAB Extensions to the Standard")
+](rules-blockly-standard-ext.html)[![openHAB Extensions to the standard](images/blockly/blockly-lists-dictionary-overview-small.png "openHAB Extensions to the Standard")
+](rules-blockly-standard-ext.html)
+
+See [openHAB Extensions to the standard](rules-blockly-standard-ext.html) section.
+
+## Tutorials or other useful information
 
 - [Getting Started: Rules - Blockly](https://community.openhab.org/t/getting-started-rules-blockly/132453)
+- [How to write openHAB Blockly Libraries](https://community.openhab.org/t/tutorial-how-to-write-block-libraries/130074)
 - [Extending Blockly with new openHAB commands](https://community.openhab.org/t/extending-blockly-with-new-openhab-commands/127169)
+- [Published Blockly Libraries](https://community.openhab.org/c/marketplace/block-libraries/76)

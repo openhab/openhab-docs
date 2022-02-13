@@ -13,8 +13,6 @@ title: Rules Blockly - Items & Things
 - TOC
 {:toc}
 
-
-
 {: #blockly-items-and-things-overview}
 
 ## Overview of the Items and Things category
