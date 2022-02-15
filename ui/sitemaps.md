@@ -228,7 +228,7 @@ Group item=<itemname> [label="<labelname>"] [icon="<iconname>"]
 
 Clicking on a Group element will reveal a new view showing all group items using the [Default](#element-type-default) element type.
 In addition, Item groups may be configured to hold a value, just as with normal items.
-Please refer to the documentation on [Item groups](items.html#groups) for details.
+Please refer to the documentation on [Item groups]({{base}}/configuration/items.html#groups) for details.
 
 - `item` refers to the name of the Item group to be presented.
 
@@ -621,7 +621,7 @@ Colors defined by a human-readable name may be adjusted for higher contrast, e.g
 ### Icons
 
 openHAB allows a set of icons to be assigned to the different states of an Item and therefore to be presented in a Sitemap.
-Please refer to the documentation on [Item configuration](items.html) for details.
+Please refer to the documentation on [Item configuration]({{base}}/configuration/items.html#icons) for details.
 
 ![battery-0](/iconsets/classic/battery-0.png "battery-0")
 ![battery-30](/iconsets/classic/battery-30.png "battery-30")
