@@ -383,7 +383,7 @@ A router and its settings modeled with a mix of mode/toggle-type generic attribu
 Group  Router      "Router"                 {alexa="Router"}
 Switch 2GGuestWiFi "2G Guest WiFi" (Router) {alexa="ToggleState" [capabilityNames="@Setting.2GGuestWiFi"]}
 Switch 5GGuestWiFi "5G Guest WiFi" (Router) {alexa="ToggleState" [capabilityNames="@Setting.5GGuestWiFi"]}
-String Mode        "Mode"          (Router) {alexa="Mode" [capabilityNames="@Setting.Mode", supportedModes="Normal,Gaming,Streaming]}
+String Mode        "Mode"          (Router) {alexa="Mode" [capabilityNames="@Setting.Mode", supportedModes="Normal,Gaming,Streaming"]}
 ```
 
 A smart watch and its settings modeled with multiple read-only range-type generic attributes.
@@ -711,7 +711,7 @@ If paired with [`PositionState`](#positionstate), the primary controls (open/clo
 
 #### `Channel`
 
-Items that represent a channel. It is important to note only well-known channel names can be used as these are validated against a database on the Alexa side when requested. Unfortunately, Amazon doesn't provide a list of supported channel names. For String, only channel requests by name are supported. For adjustment requests, by default, the increment is linear within the `range` parameter for Number, or the `channelMappings` parameter for String, based on the current state. For adjustment in incremental discrete steps, add [`ChannelStep`](#channelstep) to your entertainment group endpoint.
+Items that represent a channel. It is important to note only well-known channel names can be used as these are validated against a database on the Alexa side when requested. Unfortunately, Amazon doesn't provide a list of supported channel names. For String, by default, only requests by name are supported. To enable support for requests by number, set parameter `supportsChannelNumber=true`. For adjustment requests, by default, the increment is linear within the `range` parameter for Number, or the `channelMappings` parameter for String, based on the current state. For adjustment in incremental discrete steps, add [`ChannelStep`](#channelstep) to your entertainment group endpoint.
 
 * Supported item types:
   * Number
@@ -720,12 +720,15 @@ Items that represent a channel. It is important to note only well-known channel 
   * channelMappings=`<mappings>`
     * each mapping formatted as `<channelId>=<channelName>` (e.g. `channelMappings="2=CBS,4=NBC,7=ABC,13=PBS"`)
     * required for channel requests by name support
-    * defaults to item state description options `channelMappings="value1=label1,..."`, if defined, otherwise no mappings
+    * defaults to no mappings
   * range=`<range>` (Number only)
     * range formatted as `<minValue>:<maxValue>` (e.g. `range="100:499"`)
     * defaults to `"1:9999"`
+  * supportsChannelNumber=`<boolean>` (String only)
+    * set to true if supports channel requests by number
+    * defaults to false
 * Utterance examples:
-  * *Alexa, change the channel to `<channel number>` on the `<device name>`.* (Number only)
+  * *Alexa, change the channel to `<channel number>` on the `<device name>`.* (Number or if `supportsChannelNumber=true`)
   * *Alexa, change the channel to `<channel name>` on the `<device name>`.*
   * *Alexa, next channel on the `<device name>`.* (if [`ChannelStep`](#channelstep) not defined)
   * *Alexa, previous channel on the `<device name>`.* (if [`ChannelStep`](#channelstep) not defined)
@@ -894,7 +897,7 @@ Items that represent a list of equalizer modes supported by an audio system.
   * TV=`<state>`
   * supportedModes=`<modes>`
     * comma delimited list (e.g. `supportedModes="MOVIE,MUSIC,TV"`)
-    * supported modes are MOVIE, MUSIC, NIGHT, SPORT, TV
+    * supported modes are `MOVIE`, `MUSIC`, `NIGHT`, `SPORT`, `TV`
     * defaults to, depending on the parameters provided, either user-based or item type-based default mappings.
 * Utterance examples:
   * *Alexa, set mode to movie on the `<device name>`.*
@@ -911,7 +914,7 @@ Items that represent the playback controls of a AV device. For stop command supp
 * Supported metadata parameters:
   * supportedOperations=`<operations>`
     * comma delimited list (e.g. `supportedOperations="Play,Pause,Next,Previous"`)
-    * defaults to Play, Pause, Next, Previous, FastForward, Rewind.
+    * defaults to `Play,Pause,Next,Previous,FastForward,Rewind`.
 * Utterance examples:
   * *Alexa, play `<device name>`.*
   * *Alexa, resume `<device name>`.*
