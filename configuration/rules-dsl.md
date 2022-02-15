@@ -262,13 +262,16 @@ Thing <thingUID> received update [<status>]
 Thing <thingUID> changed [from <status>] [to <status>]
 ```
 
-The status used in the trigger and the script is a string (no quotes).
+The status used in the trigger is a string (no quotes).
 You can find all the possible values for status from [Thing Status](/docs/concepts/things.html).
-And refer to [Thing Status Action](/docs/configuration/actions.html#thing-status-action) to find how to get thing status in the script.
 
 The `thingUID` is the identifier assigned to the Thing, manually in your configuration or automatically during auto discovery.
 You can find it from UI or from Karaf remote console.
 For example, one z-wave device can be "zwave:device:c5155aa4:node14".
+
+If the Rule needs to know what the triggering thing was, or access a string value of the previous or new status, use the [implicit variables]({{base}}/configuration/rules-dsl.html#implicit-variables-inside-the-execution-block) `triggeringChannel`, `previousStatus` or `newStatus` to access the information.
+
+Refer to [Thing Status Action](/docs/configuration/actions.html#thing-status-action) to find how to get the new thing status details or description in the script.
 
 ::: tip Note
 You need to use quotes around `thingUID` if it contains special characters such as ':'.
@@ -772,6 +775,9 @@ Besides the implicitly available variables for items and commands/states, rules 
 - `triggeringItem` - implicitly available in every rule that has a "Member of" trigger.
 - `receivedEvent` - implicitly available in every rule that has a channel-based trigger.
 - `triggeringChannel` - implicitly available in every rule that has a channel-based trigger.
+- `triggeringThing` - implicitly available in every rule that has a thing-based trigger.
+- `previousStatus` - implicitly available in every rule that has a thing-based trigger.
+- `newStatus` - implicitly available in every rule that has a thing-based trigger.
 
 {: #return}
 
