@@ -81,18 +81,21 @@ All units which are currently supported by default are listed in the tables belo
 
 Imperial (base unit symbols):
 
-| Type        | Unit            | Symbol |
-|-------------|-----------------|--------|
-| Pressure    | Inch of Mercury | inHg   |
-| Temperature | Fahrenheit      | °F     |
-| Speed       | Miles per Hour  | mph    |
-| Length      | Inch            | in     |
-| Length      | Foot            | ft     |
-| Length      | Yard            | yd     |
-| Length      | Chain           | ch     |
-| Length      | Furlong         | fur    |
-| Length      | Mile            | mi     |
-| Length      | League          | lea    |
+| Type               | Unit                   | Symbol  |
+|--------------------|------------------------|---------|
+| Length             | Inch                   | in      |
+| Length             | Foot                   | ft      |
+| Length             | Yard                   | yd      |
+| Length             | Chain                  | ch      |
+| Length             | Furlong                | fur     |
+| Length             | Mile                   | mi      |
+| Length             | League                 | lea     |
+| Pressure           | Inch of Mercury        | inHg    |
+| Pressure           | Pound per square inch  | psi     |
+| Speed              | Miles per Hour         | mph     |
+| Temperature        | Fahrenheit             | °F      |
+| Volume             | Gallon (US)            | gal     |
+| VolumetricFlowRate | Gallon (US) per minute | gal/min |
 
 SI (base unit symbols):
 
