@@ -89,7 +89,7 @@ Then, you can choose between, *Official (Stable)*, *Beta* or *Snapshot* builds:
 
 - **Testing Release**
 
-    The beta and release candidate builds come out less frequently, but will contain new features that are currently in the testing phase.
+    The beta and release candidate builds come out more frequently, but will contain new features that are currently in the testing phase.
 
     Add the **openHAB Beta Repository** to your systems apt sources list:
 
