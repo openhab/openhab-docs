@@ -5,6 +5,7 @@ title: Foobot - Bindings
 type: binding
 description: "This binding fetches the Indoor Air Quality data of each of your Foobot devices from the Foobot cloud service."
 since: 3x
+logo: images/addons/foobot.png
 install: auto
 ---
 

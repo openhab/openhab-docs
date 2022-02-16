@@ -5,6 +5,7 @@ title: MELCloud - Bindings
 type: binding
 description: "This is an openHAB binding for Mitsubishi MELCloud (https://www.melcloud.com/)."
 since: 3x
+logo: images/addons/melcloud.png
 install: auto
 ---
 
