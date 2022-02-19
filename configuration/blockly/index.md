@@ -13,8 +13,8 @@ One of the core feature that OpenHAB provides is writing rules to allow specific
 {:toc}
 
 {: #blockly-introduction}
-## Introduction
 
+## Introduction
 
 The basic idea behind the visual paradigm and representation within openHAB is based on the [Google Blockly Support](https://developers.google.com/blockly) which has been integrated and which provides the basic blocks for programming like the ones on the left and the right side of the below images
 
@@ -23,14 +23,12 @@ The basic idea behind the visual paradigm and representation within openHAB is b
 
 ![blockly-toolbox-1](../images/blockly/blockly-toolbox-1.png)![blockly-toolbox-2](../images/blockly/blockly-toolbox-2.png)![blockly-toolbox-3](../images/blockly/blockly-toolbox-3.png)
 
-
-
 All of these provide general functionality that is not specific to openHAB itself. If you want to learn more about how to use them, search for the many blockly tutorials that are available.
 However, to leverage the full capabilities more than *50 specific blocks* have been provided that are tailored for easy access of openHAB's capabilities.
 
 This section provides a detailed description of the specific blocks and provides examples on how to use them. Note that some of the blocks (like voice, streaming or notifications) need some special setup within openHAB  - in these case links to the respective documentation is provided. It should also be mentioned that each of the blocks do have a context sensitive menu which appears upon a right click on the block itself.
 
-*Block context menu*
+**Block context menu**
 
 ![blockly-context.png](../images/blockly/blockly-contextmenu.png)
 
@@ -57,7 +55,6 @@ See [Items & Things](rules-blockly-items-things.html) section
 
 Timers and Delays are a little more complex but add important functionality to rules. Whilst the “Wait-For”-block is straightforward, the timer blocks should be well understood before being used - they may behave differently than expected. This chapter explains what these blocks do, sometimes displaying generated code to explain what is happening behind the scenes.
 
-
 [![Timers and Delays](../images/blockly/blockly-timers-and-delays-small.png "Items and Things")
 ](rules-blockly-timers-and-delays.html)
 
@@ -78,7 +75,6 @@ See [Date Handling](rules-blockly-date-handling.html) section.
 
 The ephemeris category provides blocks with calendar functionality. The blocks can be used to determine what type of day today is, or a number of days before or after today is. For example, a way to determine if today is a weekend, a bank holiday, someone’s birthday, trash day, etc.
 
-
 [![Ephemeris](../images/blockly/blockly-ephemeris-small.png "Ephemeris")
 ](rules-blockly-ephemeris.html)
 
@@ -86,7 +82,7 @@ See [Ephemeris](rules-blockly-ephemeris.html) section.
 
 ### Voice and Multimedia
 
-This section deals with _playing or streaming audio_ to an audio sink e.g a speaker or _saying a text_ via using any Text-to-Speech API (e.g. Google's API)
+This section deals with *playing or streaming audio* to an audio sink e.g a speaker or *saying a text* via using any Text-to-Speech API (e.g. Google's API)
 
 [![Voice and Multimedia](../images/blockly/blockly-voice-and-multimedia-small.png "Voice and Multimedia")
 ](rules-blockly-voice-and-multimedia.html)
@@ -141,7 +137,6 @@ See [Logging](rules-blockly-logging.html) section.
 ### openHAB Extensions to the Standard
 
 This section explains only the blocks that have been added to the standard blocks by openHAB
-
 
 [![openHAB Extensions to the standard](../images/blockly/blockly-colors-overview-small.png "openHAB Extensions to the Standard")
 ](rules-blockly-standard-ext.html)[![openHAB Extensions to the standard](../images/blockly/blockly-lists-dictionary-overview-small.png "openHAB Extensions to the Standard")

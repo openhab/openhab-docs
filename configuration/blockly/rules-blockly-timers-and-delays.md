@@ -5,6 +5,7 @@ title: Rules Blockly - Timers & Delays
 
 
 # Timers & Delays
+
 [return to Blockly Reference](index.html#timers-and-delays)
 
 Timers and Delays are a little more complex but add important functionality to rules. Whilst the "Wait-For"-block is straightforward, the timer blocks should be well understood before being used - they may behave differently than expected. This chapter explains what these blocks do, sometimes displaying generated code to explain what is happening behind the scenes.
@@ -18,7 +19,7 @@ Timers and Delays are a little more complex but add important functionality to r
 
 > ![timers-and-delays](../images/blockly/blockly-timers-and-delays-1.png) ![timers-and-delays.png](../images/blockly/blockly-timers-and-delays-2.png)
 
-##Timer Naming
+## Timer Naming
 
 Timers are created and referred to by name, enabling manipulation within a rule.
 
@@ -60,9 +61,10 @@ The following simple example uses a loop to implement a blinking light with a 1 
 ![reschedule-timer](../images/blockly/blockly-reschedule-timer.png)
 
 An example is as follows:
-* The code within the timer-block will run after 5 seconds.
-* The last part in the block reschedules the same timer-block for 5 seconds later.
-* And so on, in an endless loop.
+
+- The code within the timer-block will run after 5 seconds.
+- The last part in the block reschedules the same timer-block for 5 seconds later.
+- And so on, in an endless loop.
 
 ![reschedule-timer-example1](../images/blockly/blockly-reschedule-timer-example1.png)
 
@@ -81,9 +83,9 @@ Though it may not seem to be obvious, the same rule can be retriggered at any ti
 
 **Options on Retrigger**
 
-* *reschedule*: If the same rule that contains this Blockly script is re-triggered, and this specific timer is currently active, this specific timer will be rescheduled (i.e. restart the countdown timer).
-* *cancel*: If the same rule that contains this Blockly script is re-triggered, and this specific timer is currently active, this specific timer will be cancelled. The code within the timer will not be executed.
-* *do nothing*: If the same rule that contains this Blockly script is re-triggered, nothing happens - this will make the block identical to the simple timer-block in function, but the generated code is slightly modified - see below.
+- *reschedule*: If the same rule that contains this Blockly script is re-triggered, and this specific timer is currently active, this specific timer will be rescheduled (i.e. restart the countdown timer).
+- *cancel*: If the same rule that contains this Blockly script is re-triggered, and this specific timer is currently active, this specific timer will be cancelled. The code within the timer will not be executed.
+- *do nothing*: If the same rule that contains this Blockly script is re-triggered, nothing happens - this will make the block identical to the simple timer-block in function, but the generated code is slightly modified - see below.
 
 ![afterperiod-timer-options-block](../images/blockly/blockly-afterperiod-timer-options-block.png)
 
@@ -105,6 +107,7 @@ if (typeof this.timers['MyTimer'] === 'undefined' || this.timers['MyTimer'].hasT
 The simple timer-block generates the code shown underneath the image below.
 
 ![simple-timer](../images/blockly/blockly-simple-timer.png)
+
 ```javascript
 if (typeof this.timers['simpleTimerBlock'] === 'undefined' || this.timers['simpleTimerBlock'].hasTerminated()) {
   this.timers['simpleTimerBlock'] = scriptExecution.createTimer(zdt.now().plusSeconds(10), function () {
@@ -115,11 +118,13 @@ if (typeof this.timers['simpleTimerBlock'] === 'undefined' || this.timers['simpl
 **Retrigger timer-block**
 
 The retrigger timer-block inserts an additional `else{}` branch into the generated code which will run if:
-* The rule is retriggered and
-* the timer already exists and
-* the timer has not yet finished (it's still ticking)
+
+- The rule is retriggered and
+- the timer already exists and
+- the timer has not yet finished (it's still ticking)
 
 In the case of *do nothing* the `else{}` branch is empty (which turns to be almost equals to the simle-timer).
+
 ```javascript
 if (typeof this.timers['nothingTimerBlock'] === 'undefined' || this.timers['nothingTimerBlock'].hasTerminated()) {
   this.timers['nothingTimerBlock'] = scriptExecution.createTimer(zdt.now().plusSeconds(10), function () {
@@ -128,6 +133,7 @@ if (typeof this.timers['nothingTimerBlock'] === 'undefined' || this.timers['noth
   // do nothing
 }
 ```
+
 In the case of *cancel* the `else{}` branch contains code to cancel the timer.
 
 ```javascript
@@ -139,12 +145,13 @@ if (typeof this.timers['cancelTimerBlock'] === 'undefined' || this.timers['cance
   this.timers['cancelTimerBlock'] = undefined;
 }
 ```
+
 In the case of *reschedule* the `else{}` statement contains code to reschedule the timer - restart the countdown. In the example generated code below:
 
-* Imagine the rule is triggered at 0 elapsed seconds.
-* The timer is started with a 10 second countdown.
-* Lets say the rule is triggered again at 5 elapsed seconds.
-* Then timer will be rescheduled for another 10 second countdown, so will execute the code within its block at 15 elapsed seconds.
+- Imagine the rule is triggered at 0 elapsed seconds.
+- The timer is started with a 10 second countdown.
+- Lets say the rule is triggered again at 5 elapsed seconds.
+- Then timer will be rescheduled for another 10 second countdown, so will execute the code within its block at 15 elapsed seconds.
 
 ```javascript
 if (typeof this.timers['rescheduleTimerBlock'] === 'undefined' || this.timers['rescheduleTimerBlock'].hasTerminated()) {
@@ -162,6 +169,7 @@ if (typeof this.timers['rescheduleTimerBlock'] === 'undefined' || this.timers['r
 *Function*: Cancels the existing named timer, preventing code within the timer block from executing.
 
 ### Timer is Active
+
 ![timer-is-active](../images/blockly/blockly-timer-is-active.png)
 
 *Function:* returns `true` if the timer itself is currently counting down, and the code within the timer will be eventually executed as scheduled. This block will return `false` if the timer doesn't exist, has been cancelled, or has already finished.
@@ -181,6 +189,7 @@ if (typeof this.timers['rescheduleTimerBlock'] === 'undefined' || this.timers['r
 The intent here is to trigger an alarm to the police but allow the timer to be reset in case a reset button has been pressed during the trigger time. The rule is triggered when the burglar-alarm-item or the reset-button-item is changed.
 
 ![timer-comprehensive](../images/blockly/blockly-timer-comprehensive.png)
+
 ---
 
 ## Date handling blocks
@@ -189,9 +198,10 @@ Date blocks are used as input parameters for other blocks.
 At the moment some of these blocks are found in the ephemeris section, whilst others are found in the persistence section - they may be equally useful for both. These blocks are *typed* to assure correct connection to other blocks.
 
 ### today
+
 ![today](../images/blockly/blockly-date-today.png)
 
-Type: _DayOffset_
+Type: *DayOffset*
 
 Ephemeris blocks expect a date formatted as the number of days since today. As a result, this block returns 0.
 
@@ -199,7 +209,7 @@ Ephemeris blocks expect a date formatted as the number of days since today. As a
 
 ![now-plus-minus-offset](../images/blockly/blockly-date-plus.png)
 
-Type: _DayOffset_
+Type: *DayOffset*
 
 Returns the number of days since today, as configured in the number block. The number can be positive (offset into the future) or negative (offset into the past).
 
@@ -207,7 +217,7 @@ Returns the number of days since today, as configured in the number block. The n
 
 ![date-picker](../images/blockly/blockly-date-picker.png)
 
-Type: _ZonedDateTime_
+Type: *ZonedDateTime*
 
 Returns a date as *ZonedDateTime*. The date can be selected from a date picker. The time is set to `00:00:00`.
 
@@ -215,7 +225,7 @@ Returns a date as *ZonedDateTime*. The date can be selected from a date picker. 
 
 ![get-date](../images/blockly/blockly-date-get.png)
 
-Type: _ZonedDateTime_
+Type: *ZonedDateTime*
 
 From a String in the format `yyyy-MM-dd`, this block will return the date as *ZonedDateTime*. The input String  may be a variable-block. The time will be `00:00:00`.
 
@@ -223,7 +233,7 @@ From a String in the format `yyyy-MM-dd`, this block will return the date as *Zo
 
 ![now-with-offset](../images/blockly/blockly-get-now-offset.png)
 
-Type: _ZonedDateTime_
+Type: *ZonedDateTime*
 
 Returns a date as *ZonedDateTime* with offset relative to the current date *and* time.
 
@@ -231,11 +241,12 @@ Returns a date as *ZonedDateTime* with offset relative to the current date *and*
 
 ![date-tostring](../images/blockly/blockly-get-date-string.png)
 
-Type: _String_
+Type: *String*
 
 Returns the the String representation of a given *ZonedDateTime*-block, with or without the time.
 
 ### Example
+
 Assuming this block is run at `20:47:36` on `31/01/2022`
 
 ![date-text-example](../images/blockly/blockly-date-text-example.png)
@@ -247,7 +258,6 @@ The output in the log will be.
 2022-01-31 00:00:00
 2022-01-31 20:47:36
 ```
-
 
 ## Return to Blockly Reference
 

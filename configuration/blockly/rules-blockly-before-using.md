@@ -4,11 +4,14 @@ title: Rules Blockly - Before Using
 ---
 
 # Before using blockly in openHAB
+
 [return to Blockly Reference](index.html#before-using-blockly)
 
 ## Preface
 
-Blocklies are an easy entry to the world of writing rules. However, after some times, you end up writing more and more complex rules, so more sooner than later you will encounter some challenges. This section intends to provide some hints to get started and how to deals with those challenges. Please read them carefully before asking questions in the forum.
+Blocklies are an easy entry to the world of writing rules.
+However, after some times, you end up writing more and more complex rules, so more sooner than later you will encounter some challenges. This section intends to provide some hints to get started and how to deals with those challenges.
+Please read them carefully before asking questions in the forum.
 
 {::options toc_levels="2..4"/}
 
@@ -19,14 +22,16 @@ Blocklies are an easy entry to the world of writing rules. However, after some t
 
 ## **OpenHAB Configuration Files**
 
-Some openHAB blocks rely on particular configuration files found in the openHAB configuration folder. This folder is referred to as $OPENHAB_CONF in this page, and the location of this folder for your setup can be found via the UI: *Help & About* -> *Technical Information* -> *Configuration folder*.
+Some openHAB blocks rely on particular configuration files found in the openHAB configuration folder.
+This folder is referred to as $OPENHAB_CONF in this page, and the location of this folder for your setup can be found via the UI: *Help & About* -> *Technical Information* -> *Configuration folder*.
 
-
-- via mounting the files shares from the server to your client-PC. In the main UI as an admin you can go to *Help & About* and will have the different folder locations under *Technical information*.
+- via mounting the files shares from the server to your client-PC.
+In the main UI as an admin you can go to *Help & About* and will have the different folder locations under *Technical information*.
   - the exact configuration of the shares can be found on your server at [/etc/samba/smb.conf](https://github.com/openhab/openhabian/blob/main/includes/smb.conf).
 - Use the share *openHAB*-conf when mounting it from Windows or MacOS
 
 **Link the openHAB share in Windows**
+
 - Find you openHAB-Server via the network share functionality
 - User the share *openHAB*-conf to assign it to a network drive
 
@@ -41,9 +46,11 @@ Some openHAB blocks rely on particular configuration files found in the openHAB 
   ![macos-share-2](../images/blockly/blockly-openhab-macos-share-2.png)
 
 **Finding it on Linux**
+
 - Access the folder directly on the openHAB server at */etc/openhab*
 
 All methods reveal the following folders
+
 - html
 - icons
 - items
@@ -58,6 +65,7 @@ All methods reveal the following folders
 - transform
 
 ## Creating a blockly rule via the UI
+
 - go to Settings -> Rules
 - press ![plus](../images/blockly/blockly-plus-small.png) on bottom right
 - enter a unique id and rule name for your new blockly rule
@@ -78,13 +86,13 @@ All methods reveal the following folders
 - Click on ![showcode](../images/blockly/blockly-showcode.png) on the lower right to see the generated code (click again to come back to the blocks)
 
 ## Use Frontail for viewing log files
+
 During development the log-block is lot very often which writes information into the log files.
 
 - To be able to conveniently view your log files it is recommended to setup *frontail* which can be achieved easily via [openhabian-config](https://www.openhab.org/docs/installation/openhabian.html#optional-components)
 - Start `openhabian-config` on your server and choose option 20 and then option 21
-- After installation you can view your logs under http://myopenhab-server:9001 (adapt the server name)
+- After installation you can view your logs under [openhabian-config](http://myopenhab-server:9001) (adapt the server name)
 - **see [how to log](https://www.openhab.org/docs/administration/logging.html)**
-
 
 ## Return to Blockly Reference
 

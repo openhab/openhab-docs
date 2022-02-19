@@ -4,14 +4,16 @@ title: Rules Blockly - Run & Process
 ---
 
 # Run & Process (Rules and Scripts)
+
 [return to Blockly Reference](index.html#run-process-rules-and-scripts)
 
 ## Introduction
 
 This section contains several possibilities
-* Calling Rules or other scripts either located as files on the server or provided via the UI
-* Retrieving attributes provided by the rule context or from the own caller rule.
-* Transforming values via different conversion methods (map, regex, jsonpath)
+
+- Calling Rules or other scripts either located as files on the server or provided via the UI
+- Retrieving attributes provided by the rule context or from the own caller rule.
+- Transforming values via different conversion methods (map, regex, jsonpath)
 
 **A note about Rules and Scripts**
 
@@ -49,20 +51,21 @@ The  *ruleUID* can be found in the list of rules or scripts in the second line o
 
 Parameters are optional:
 
-* If not providing parameters leave the *with context* section as is.
-* If providing parameters you **must** replace the *create empty dictionary* block with [the *dictionary* block from the Lists section](https://community.openhab.org/t/blockly-reference/128785#lists-76), modifying the number of key/value pairs to suit.
+- If not providing parameters leave the *with context* section as is.
+- If providing parameters you **must** replace the *create empty dictionary* block with [the *dictionary* block from the Lists section](https://community.openhab.org/t/blockly-reference/128785#lists-76), modifying the number of key/value pairs to suit.
 
 Notes:
-* parameters can be retrieved in the called script via the "get context attribute"-block (see below)
-* the called rule / script cannot return any value
-* it is not possible to access a particular function in another script or rule as scripts / rules have to be perceived as completely autonomous
-* the called rule / script is run synchronously
+
+- parameters can be retrieved in the called script via the "get context attribute"-block (see below)
+- the called rule / script cannot return any value
+- it is not possible to access a particular function in another script or rule as scripts / rules have to be perceived as completely autonomous
+- the called rule / script is run synchronously
 
 ### Retrieve context attribute from rule
 
 Function: Retrieve context attributes passed by a calling rule/script (see above)
 
-![](../images/blockly/blockly-retrieve-context.png)
+![retrieve-context](../images/blockly/blockly-retrieve-context.png)
 
 This retrieves the value for the key "myKey1" that was passed by the calling rule.
 
@@ -78,12 +81,13 @@ This retrieves the value for the key "myKey1" that was passed by the calling rul
 
 A rule carries contextual information when triggered - this block can retrieve that information.
 
-* The rule trigger type defines which of the attributes are available to the rule - they will not all be available.
-* For more detailed information see [Event Object Attributes ](https://openhab-scripters.github.io/openhab-helper-libraries/Guides/Event%20Object%20Attributes.html)
+- The rule trigger type defines which of the attributes are available to the rule - they will not all be available.
+- For more detailed information see [Event Object Attributes](https://openhab-scripters.github.io/openhab-helper-libraries/Guides/Event%20Object%20Attributes.html)
 
 ## Transform values via Map, Regex or JsonPath and others
 
 OpenHAB provides many [transformations](https://www.openhab.org/docs/configuration/transformations.html):
+
 - [Map](https://www.openhab.org/addons/transformations/map/)
 - [Regex](https://www.openhab.org/addons/transformations/regex/)
 - [JsonPath](https://www.openhab.org/addons/transformations/jsonpath/)
@@ -110,10 +114,13 @@ Convert  #123456 into rgb(12,34,56)
 ![transform-regex](../images/blockly/blockly-transform-example1.png)
 
 ### Example 2: JsonPath transformation
+
 Extract the temperature from the following JSON
+
 ```json
 { "device": { "location": "Outside", "status": { "temperature": 23.2 }}}
 ```
+
 by using the jsonpath
 
 ```json
@@ -156,7 +163,7 @@ Provides the possibility to inject any ECMAScript at a given position. This shou
 
 ### Example:
 
-![](../images/blockly/blockly-inline-script-example.png)
+![inline-script-example](../images/blockly/blockly-inline-script-example.png)
 
 ## Return to Blockly Reference
 

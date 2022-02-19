@@ -4,6 +4,7 @@ title: Rules Blockly - openHAB Extensions to the Standard
 ---
 
 # openHAB Extensions to the Standard
+
 [return to Blockly Reference](index.html#openhab-extensions-to-the-standard)
 
 ## Introduction
@@ -51,7 +52,6 @@ Function: Returns a color by mixing the given values in a range from 0 - 255 for
 
 Tip: this could be used for example with a loop that changes the ratio from 0 to 1 to blend the first color into a second
 
-
 ### Create HSB-color from RGB color (openHAB)
 
 ![get-hsb-of](../images/blockly/blockly-colors-hsbof.png)
@@ -88,7 +88,6 @@ Rename the keys as required and then add any value block type to the related key
 Example:
 
 ![dictionary-example](../images/blockly/blockly-lists-dictionary-example.png)
-
 
 ### get value of key from dictionary
 

@@ -4,6 +4,7 @@ title: Rules Blockly - Ephemeris
 ---
 
 # Ephemeris
+
 [return to Blockly Reference](index.html#ephemeris)
 
 ## Introduction
@@ -23,7 +24,6 @@ Definition of holidays can be customised through the *ephemeris.cfg* file. See t
 
 ![ephemeris-dates](../images/blockly/blockly-ephemeris.png)
 
-
 ## Ephemeris Blocks
 
 ### Holiday, weekend or weekday check
@@ -32,7 +32,7 @@ Definition of holidays can be customised through the *ephemeris.cfg* file. See t
 
 *Function:* this block checks if the given date is a holiday, weekday or weekend.
 
-Type: _boolean_ `true` or `false`
+Type: *boolean* `true` or `false`
 
 **Examples**
 
@@ -44,7 +44,7 @@ Type: _boolean_ `true` or `false`
 
 *Function:* Returns the holiday name for the given date. Will return `null` if no holiday is found for the date.
 
-Type: _String_
+Type: *String*
 
 ### Get the number of days until a specific holiday
 
@@ -52,7 +52,7 @@ Type: _String_
 
 Function: Return the number of days until the given holiday name, or `-1` if the holiday is not found.
 
-Type: _number_
+Type: number
 
 Some holidays are already provided by default from openHAB. Additional holidays must be configured in *ephemeris.cfg*.
 
