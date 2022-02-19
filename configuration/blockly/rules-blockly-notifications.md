@@ -9,7 +9,8 @@ title: Rules Blockly - Notifications
 
 ## Introduction
 
-For use with your [openHAB cloud](https://www.openhab.org/addons/integrations/openhabcloud/) account, these blocks can be used to send notifications to relevant connected devices. Notifications can be used as push message to devices running the openHAB client.
+For use with your [openHAB cloud](https://www.openhab.org/addons/integrations/openhabcloud/) account, these blocks can be used to send notifications to relevant connected devices.
+Notifications can be used as push message to devices running the openHAB client.
 
 General information on cloud notification actions can be found [here](https://www.openhab.org/docs/configuration/actions.html#cloud-notification-actions).
 
@@ -45,7 +46,8 @@ Example Push Message shown under Android:
 
 ![notification-on-android](../images/blockly/blockly-notification-on-android.png)
 
-- A message can be provided together with an icon that should be shown on the device. Use the [icon names of the openHAB iconset](https://www.openhab.org/docs/configuration/iconsets/classic/).
+- A message can be provided together with an icon that should be shown on the device.
+Use the [icon names of the openHAB iconset](https://www.openhab.org/docs/configuration/iconsets/classic/).
 - The notification can also be viewed at <https://myopenhab.org/notifications>
 
 ### Send Notification to Log Only

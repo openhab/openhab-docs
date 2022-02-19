@@ -5,7 +5,9 @@ title: Rules Blockly
 
 # Blockly Reference
 
-One of the core feature that OpenHAB provides is writing rules to allow specific behaviour with the home automation system. The usual way of developing rules is by coding them like described in the [Textual Rules]({{base}}/configuration/rules-dsl.html). However, this art of programming may become intimidating early on and shy away away people with few or almost no experience in programming. Therefore openHAB also provides a graphical way of writing rules which allows to put together rules in a rather visual way (even though some programming background may still help).
+One of the core feature that OpenHAB provides is writing rules to allow specific behaviour with the home automation system. The usual way of developing rules is by coding them like described in the [Textual Rules]({{base}}/configuration/rules-dsl.html).
+However, this art of programming may become intimidating early on and shy away away people with few or almost no experience in programming.
+Therefore openHAB also provides a graphical way of writing rules which allows to put together rules in a rather visual way (even though some programming background may still help).
 
 {::options toc_levels="2..4"/}
 
@@ -26,7 +28,8 @@ The basic idea behind the visual paradigm and representation within openHAB is b
 All of these provide general functionality that is not specific to openHAB itself. If you want to learn more about how to use them, search for the many blockly tutorials that are available.
 However, to leverage the full capabilities more than *50 specific blocks* have been provided that are tailored for easy access of openHAB's capabilities.
 
-This section provides a detailed description of the specific blocks and provides examples on how to use them. Note that some of the blocks (like voice, streaming or notifications) need some special setup within openHAB  - in these case links to the respective documentation is provided. It should also be mentioned that each of the blocks do have a context sensitive menu which appears upon a right click on the block itself.
+This section provides a detailed description of the specific blocks and provides examples on how to use them. Note that some of the blocks (like voice, streaming or notifications) need some special setup within openHAB  - in these case links to the respective documentation is provided.
+It should also be mentioned that each of the blocks do have a context sensitive menu which appears upon a right click on the block itself.
 
 **Block context menu**
 
@@ -34,7 +37,8 @@ This section provides a detailed description of the specific blocks and provides
 
 **Looking for help**
 
-A special mention should go towards the **Help** entry that links to a resource that is usually very helpful to understand the context of that particular block. Please read this information first before asking questions in the forum. *In case you ask for help please always post the respective code that is being generated.*
+A special mention should go towards the **Help** entry that links to a resource that is usually very helpful to understand the context of that particular block.
+Please read this information first before asking questions in the forum. *In case you ask for help please always post the respective code that is being generated.*
 
 ## Before using blockly
 
@@ -53,7 +57,8 @@ See [Items & Things](rules-blockly-items-things.html) section
 
 ### Timers and Delays
 
-Timers and Delays are a little more complex but add important functionality to rules. Whilst the “Wait-For”-block is straightforward, the timer blocks should be well understood before being used - they may behave differently than expected. This chapter explains what these blocks do, sometimes displaying generated code to explain what is happening behind the scenes.
+Timers and Delays are a little more complex but add important functionality to rules. Whilst the “Wait-For”-block is straightforward, the timer blocks should be well understood before being used - they may behave differently than expected.
+This chapter explains what these blocks do, sometimes displaying generated code to explain what is happening behind the scenes.
 
 [![Timers and Delays](../images/blockly/blockly-timers-and-delays-small.png "Items and Things")
 ](rules-blockly-timers-and-delays.html)
@@ -73,7 +78,8 @@ See [Date Handling](rules-blockly-date-handling.html) section.
 
 ### Ephemeris
 
-The ephemeris category provides blocks with calendar functionality. The blocks can be used to determine what type of day today is, or a number of days before or after today is. For example, a way to determine if today is a weekend, a bank holiday, someone’s birthday, trash day, etc.
+The ephemeris category provides blocks with calendar functionality. The blocks can be used to determine what type of day today is, or a number of days before or after today is.
+For example, a way to determine if today is a weekend, a bank holiday, someone’s birthday, trash day, etc.
 
 [![Ephemeris](../images/blockly/blockly-ephemeris-small.png "Ephemeris")
 ](rules-blockly-ephemeris.html)
@@ -91,7 +97,8 @@ See [Voice and Multimedia](rules-blockly-voice-and-multimedia.html) section.
 
 ### Notifications
 
-For use with your [openHAB cloud](https://www.openhab.org/addons/integrations/openhabcloud/) account, these blocks can be used to send notifications to relevant connected devices. Notifications can be used as push message to devices running the openHAB client.
+For use with your [openHAB cloud](https://www.openhab.org/addons/integrations/openhabcloud/) account, these blocks can be used to send notifications to relevant connected devices.
+Notifications can be used as push message to devices running the openHAB client.
 
 [![Notifications](../images/blockly/blockly-notifications-small.png "Notifications")
 ](rules-blockly-notifications.html)

@@ -10,7 +10,8 @@ title: Rules Blockly - Before Using
 ## Preface
 
 Blocklies are an easy entry to the world of writing rules.
-However, after some times, you end up writing more and more complex rules, so more sooner than later you will encounter some challenges. This section intends to provide some hints to get started and how to deals with those challenges.
+However, after some times, you end up writing more and more complex rules, so more sooner than later you will encounter some challenges.
+This section intends to provide some hints to get started and how to deals with those challenges.
 Please read them carefully before asking questions in the forum.
 
 {::options toc_levels="2..4"/}

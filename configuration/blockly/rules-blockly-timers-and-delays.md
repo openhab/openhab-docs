@@ -186,7 +186,8 @@ if (typeof this.timers['rescheduleTimerBlock'] === 'undefined' || this.timers['r
 
 ### Comprehensive Timer Example
 
-The intent here is to trigger an alarm to the police but allow the timer to be reset in case a reset button has been pressed during the trigger time. The rule is triggered when the burglar-alarm-item or the reset-button-item is changed.
+The intent here is to trigger an alarm to the police but allow the timer to be reset in case a reset button has been pressed during the trigger time.
+The rule is triggered when the burglar-alarm-item or the reset-button-item is changed.
 
 ![timer-comprehensive](../images/blockly/blockly-timer-comprehensive.png)
 
@@ -195,7 +196,8 @@ The intent here is to trigger an alarm to the police but allow the timer to be r
 ## Date handling blocks
 
 Date blocks are used as input parameters for other blocks.
-At the moment some of these blocks are found in the ephemeris section, whilst others are found in the persistence section - they may be equally useful for both. These blocks are *typed* to assure correct connection to other blocks.
+At the moment some of these blocks are found in the ephemeris section, whilst others are found in the persistence section - they may be equally useful for both.
+These blocks are *typed* to assure correct connection to other blocks.
 
 ### today
 
@@ -203,7 +205,8 @@ At the moment some of these blocks are found in the ephemeris section, whilst ot
 
 Type: *DayOffset*
 
-Ephemeris blocks expect a date formatted as the number of days since today. As a result, this block returns 0.
+Ephemeris blocks expect a date formatted as the number of days since today.
+As a result, this block returns 0.
 
 ### today +/- x days
 
@@ -211,7 +214,8 @@ Ephemeris blocks expect a date formatted as the number of days since today. As a
 
 Type: *DayOffset*
 
-Returns the number of days since today, as configured in the number block. The number can be positive (offset into the future) or negative (offset into the past).
+Returns the number of days since today, as configured in the number block.
+The number can be positive (offset into the future) or negative (offset into the past).
 
 ### date-picker
 
@@ -219,7 +223,9 @@ Returns the number of days since today, as configured in the number block. The n
 
 Type: *ZonedDateTime*
 
-Returns a date as *ZonedDateTime*. The date can be selected from a date picker. The time is set to `00:00:00`.
+Returns a date as *ZonedDateTime*.
+The date can be selected from a date picker.
+The time is set to `00:00:00`.
 
 ### Get date
 
@@ -227,7 +233,9 @@ Returns a date as *ZonedDateTime*. The date can be selected from a date picker. 
 
 Type: *ZonedDateTime*
 
-From a String in the format `yyyy-MM-dd`, this block will return the date as *ZonedDateTime*. The input String  may be a variable-block. The time will be `00:00:00`.
+From a String in the format `yyyy-MM-dd`, this block will return the date as *ZonedDateTime*.
+The input String  may be a variable-block.
+The time will be `00:00:00`.
 
 ### Get Date now with offset
 

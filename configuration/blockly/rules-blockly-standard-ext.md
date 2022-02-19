@@ -20,11 +20,15 @@ This section explains only the blocks that have been added to the standard block
 
 ## Colors
 
-The Colors section simplifies the selection of  Color Values. Technically these color RGB values are provided as a hexadecimal combination of the three values for red, green and blue (hence RGB). Each of the individual colors can range from 0 - 255 or 0-FF (hexadecimal). A color of r=255, g=255, b=255 would therefore result into #ffffff preceded by a # which identifies it as a hexadecimal number.
+The Colors section simplifies the selection of  Color Values.
+Technically these color RGB values are provided as a hexadecimal combination of the three values for red, green and blue (hence RGB).
+Each of the individual colors can range from 0 - 255 or 0-FF (hexadecimal).
+A color of r=255, g=255, b=255 would therefore result into #ffffff preceded by a # which identifies it as a hexadecimal number.
 
 ![colors-overview](../images/blockly/blockly-colors-overview.png)
 
-Note that typically RGB values are not used within openHAB for color states but instead the Color-Type expects a HSB Type. See the special hsb-conversion block below.
+Note that typically RGB values are not used within openHAB for color states but instead the Color-Type expects a HSB Type.
+See the special hsb-conversion block below.
 
 ### Color Picker
 
@@ -42,7 +46,7 @@ Note that typically RGB values are not used within openHAB for color states but 
 
 ![create-rgb-color](../images/blockly/blockly-color-create-rgb.png)
 
-Function: Returns a color by mixing the given values in a range from 0 - 255 for reg, green and blue as a hexcode
+*Function:* Returns a color by mixing the given values in a range from 0 - 255 for reg, green and blue as a hexcode
 
 ### Blend two colors
 
@@ -56,15 +60,17 @@ Tip: this could be used for example with a loop that changes the ratio from 0 to
 
 ![get-hsb-of](../images/blockly/blockly-colors-hsbof.png)
 
-HSB stands for hue-saturation-brightness which is a different way of describing a color. An RGB color can therefore be converted equally into an HSB-color.
+HSB stands for hue-saturation-brightness which is a different way of describing a color.
+An RGB color can therefore be converted equally into an HSB-color.
 
 *Function:* This a special openHAB block that converts a hexadecimal color code from one of the above blocks into a String that is required when sending a color command to any item that accepts a color.
 
 - use that block and connect one of the above blocks into that one to be able to retrieve the HSB value of that block.
 
-HSB stands for hue-saturation-brightness which is a different way of describing a color. An RGB color can therefore be converted equally into an HSB-color.
+HSB stands for hue-saturation-brightness which is a different way of describing a color.
+An RGB color can therefore be converted equally into an HSB-color.
 
-Function: This a special openHAB block that converts a hexadecimal color code from one of the above blocks into a String that is required when sending a color command to any item that accepts a color.
+*Function:* This a special openHAB block that converts a hexadecimal color code from one of the above blocks into a String that is required when sending a color command to any item that accepts a color.
 
 - use that block and connect one of the above blocks into that one to be able to retrieve the HSB value of that block.
 
@@ -78,8 +84,9 @@ Function: This a special openHAB block that converts a hexadecimal color code fr
 
 ### Dictionary for managing key / value pairs
 
-The dictionary is a holder for key value pairs that can be passed along as one
-Add or remove new key value pairs by clicking on the cog icon to open the popup of the dictionary block (finally click on the cog again to close the popup). Then drag the key block on the upper left into the key/value bracket on the right like depicted below:
+The dictionary is a holder for key value pairs that can be passed along as one.
+Add or remove new key value pairs by clicking on the cog icon to open the popup of the dictionary block (finally click on the cog again to close the popup).
+Then drag the key block on the upper left into the key/value bracket on the right like depicted below:
 
 ![dictionary](../images/blockly/blockly-lists-dictionary.png)
 

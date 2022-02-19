@@ -7,7 +7,8 @@ title: Rules Blockly - Items & Things
 
 [return to Blockly Reference](index.html#items-and-things)
 
-*Items* and *Things* are the [major entities of openHAB](https://www.openhab.org/docs/concepts/) to control and monitor the home. These can be accessed via the "Items & Things" section of the [Blockly Toolbox]({{base}}/configuration/index.html#blockly-toolbox).
+*Items* and *Things* are the [major entities of openHAB](https://www.openhab.org/docs/concepts/) to control and monitor the home.
+These can be accessed via the "Items & Things" section of the [Blockly Toolbox]({{base}}/configuration/index.html#blockly-toolbox).
 
 {::options toc_levels="2..4"/}
 
@@ -22,11 +23,14 @@ title: Rules Blockly - Items & Things
 
 ### Item and Thing Blocks
 
-Most of the time you will want to get and set the state of an *item* - set a switch to ON, or get a temperature. Sometimes you may want to access the *thing* directly. Both are possible using the item-block and thing-block
+Most of the time you will want to get and set the state of an *item* - set a switch to ON, or get a temperature.
+Sometimes you may want to access the *thing* directly.
+Both are possible using the item-block and thing-block
 
 > ![blockly-item-thing](../images/blockly/blockly-item-thing.png)
 
-However, these blocks are not useful by themselves - they are always used together with another block. The example below uses the *get state of item* block to retrieve the *MainSwitch* *item* state, before checking if that is equal to ON within a standard comparison block
+However, these blocks are not useful by themselves - they are always used together with another block.
+The example below uses the *get state of item* block to retrieve the *MainSwitch* *item* state, before checking if that is equal to ON within a standard comparison block
 
 ![blockly-item-example](../images/blockly/blockly-item-example.png)
 
@@ -39,7 +43,8 @@ However, these blocks are not useful by themselves - they are always used togeth
 Function: Retrieves a specific **Item** or **Group** for use in other item related functions.
 
 - Clicking 'MyItem' displays a list of **Items** to pick from
-- Technically this block returns the *name* of the item as a String. As a result, this block can be used wherever the item name is required as a String.
+- Technically this block returns the *name* of the item as a String.
+- As a result, this block can be used wherever the item name is required as a String.
 - Learn more about items [here](https://www.openhab.org/docs/configuration/items.html)
 
 ### Get Item
@@ -62,7 +67,8 @@ Function: Get the current state of an **Item** or **Group**
 
 - Should return the state of an item as a String like ON/OFF, the temperature value etc.
 
-Note: currently a String is not always returned. [See this thread](https://community.openhab.org/t/blockly-cannot-split-text-string-from-string-item/130819) for reference and potential workaround.
+Note: currently a String is not always returned.
+[See this thread](https://community.openhab.org/t/blockly-cannot-split-text-string-from-string-item/130819) for reference and potential workaround.
 
 ### Get Members of Group
 
@@ -109,13 +115,15 @@ These attributes are returned with the following types:
 
 - type: String
 
-Depending on your openHAB version (pre-3.3) this block may not connect as expected. As a workaround attach the block to a variable first, and use the variable in the rest of the script.
+Depending on your openHAB version (pre-3.3) this block may not connect as expected.
+As a workaround attach the block to a variable first, and use the variable in the rest of the script.
 
 ![blockly-getItemAttributes-fix](../images/blockly/blockly-getItemAttributes-fix.png)
 
 **Special handling for Arrays**
 
-The attributes *groups* and *tags* return an Array of entries.  Therefore
+The attributes *groups* and *tags* return an Array of entries.
+Therefore
 
 - they *cannot* be connected to a block that expects a String (e.g. log-block)
 - they *must* be handled using a for-loop as follows

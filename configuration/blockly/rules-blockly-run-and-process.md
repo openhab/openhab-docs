@@ -159,7 +159,9 @@ Hue/Saturation
 
 *Function:* execute arbitrary ECMAScript content
 
-Provides the possibility to inject any ECMAScript at a given position. This should be used in cases when Blockly does not provide the desired functionality. Use with diligence.
+Provides the possibility to inject any ECMAScript at a given position.
+This should be used in cases when Blockly does not provide the desired functionality.
+Use with diligence.
 
 ### Example:
 

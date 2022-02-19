@@ -14,7 +14,8 @@ In general, this section deals with two topics
 1) Playing or streaming audio to an audio sink e.g a speaker
 1) Saying a text via using any Text-to-Speech API (e.g. Google's API)
 
-It should be noted that both functionalities do not just work right out of the box because e.g for (1) the audio sinks need to be installed in openHAB and for (2) e.g. the whole Google API needs to be configured in particular with your own personal google account. Even though (2) is not trivial but after having done that the usage of the functionality with blockly is very easy and worth the effort.
+It should be noted that both functionalities do not just work right out of the box because e.g for (1) the audio sinks need to be installed in openHAB and for (2) e.g. the whole Google API needs to be configured in particular with your own personal google account.
+Even though (2) is not trivial but after having done that the usage of the functionality with blockly is very easy and worth the effort.
 
 {::options toc_levels="2..4"/}
 
@@ -35,7 +36,9 @@ It should be noted that both functionalities do not just work right out of the b
 - Text-To-Speech
   - In order to use text-to-speech, you need to install at least one [TTS service](https://www.openhab.org/addons/#voice).
   - see [openHAB Voice](https://www.openhab.org/docs/configuration/multimedia.html#voice) for more information
-  - in case you only have one TTS service, this becomes your default TTS services. In case you have several TTS services installed, you have to configure one of them as the default which can be done in your [services.cfg](https://github.com/openhab/openhab-distro/blob/master/distributions/distribution-resources/src/main/resources/runtime/etc/services.cfg#L20). See more on that special case [here](https://community.openhab.org/t/where-to-set-default-tts-voice/15450/2)
+  - in case you only have one TTS service, this becomes your default TTS services.
+  In case you have several TTS services installed, you have to configure one of them as the default which can be done in your [services.cfg](https://github.com/openhab/openhab-distro/blob/master/distributions/distribution-resources/src/main/resources/runtime/etc/services.cfg#L20).
+  See more on that special case [here](https://community.openhab.org/t/where-to-set-default-tts-voice/15450/2)
 
 ## Voice and Multimedia Blocks
 
@@ -60,7 +63,8 @@ same as above but also allowing to provide the volume at the same time
 - all available audio sinks are automatically provided by openHABs blocklies
 
 **Known issue workaround:**
-In several cases (like the google minis) it is known that setting the volume together with playing the sound results into only setting the volume either during playing the sound or even after the sound has played. In case this happens the more robust approach is as follows
+In several cases (like the google minis) it is known that setting the volume together with playing the sound results into only setting the volume either during playing the sound or even after the sound has played.
+In case this happens the more robust approach is as follows
 
 - Search for the thing of that particular sink and add an in item for the volume channel
 - Then create the following block sequence

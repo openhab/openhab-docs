@@ -9,7 +9,8 @@ title: Rules Blockly - Persistence
 
 ## Introduction
 
-Persistence blocks enable access to and manipulation of historical data stored by the default persistence service. For more information on persistence, the default service, and its configuration see the [persistence documentation](https://www.openhab.org/docs/configuration/persistence.html).
+Persistence blocks enable access to and manipulation of historical data stored by the default persistence service.
+For more information on persistence, the default service, and its configuration see the [persistence documentation](https://www.openhab.org/docs/configuration/persistence.html).
 
 The date-blocks shown in this section are described previously in [Date handling blocks](https://community.openhab.org/t/blockly-reference/128785#date-handling-blocks-31).
 
@@ -26,7 +27,8 @@ The date-blocks shown in this section are described previously in [Date handling
 
 ## Persistence Blocks
 
-Persistence blocks enable access of historical data stored by the default persistence service. For more information on persistence, the default service, and its configuration see the [persistence documentation](https://www.openhab.org/docs/configuration/persistence.html).
+Persistence blocks enable access of historical data stored by the default persistence service.
+For more information on persistence, the default service, and its configuration see the [persistence documentation](https://www.openhab.org/docs/configuration/persistence.html).
 
 The date-blocks shown in this section are described previously in [Date handling blocks](https://community.openhab.org/t/blockly-reference/128785#date-handling-blocks-31).
 
@@ -36,7 +38,8 @@ The date-blocks shown in this section are described previously in [Date handling
 
 *Function:* computes any of the below functions for the given item since the time provided by *ZonedDateTime*-Block
 
-- average: gets the average value of the State of a persisted Item since a certain point in time. This method uses a time-weighted average calculation
+- average: gets the average value of the State of a persisted Item since a certain point in time.
+This method uses a time-weighted average calculation
 - delta: gets the difference in value of the State of a given Item since a certain point in time
 - deviation: gets the standard deviation of the state of the given Item since a certain point in time
 - variance: gets the variance of the state of the given item since a certain point in time
