@@ -4,7 +4,7 @@ title: Rules Blockly - Ephemeris
 ---
 
 # Ephemeris
-[return to Blockly Reference]({{base}}/configuration/rules-blockly.html)
+[return to Blockly Reference](index.html#ephemeris)
 
 ## Introduction
 
@@ -21,14 +21,14 @@ Definition of holidays can be customised through the *ephemeris.cfg* file. See t
 
 ## Overview of the Ephemeris blocks
 
-![ephemeris-dates](images/blockly/blockly-ephemeris.png)
+![ephemeris-dates](../images/blockly/blockly-ephemeris.png)
 
 
 ## Ephemeris Blocks
 
 ### Holiday, weekend or weekday check
 
-![ephemeris-is](images/blockly/blockly-ephemeris-is.png)
+![ephemeris-is](../images/blockly/blockly-ephemeris-is.png)
 
 *Function:* this block checks if the given date is a holiday, weekday or weekend.
 
@@ -36,11 +36,11 @@ Type: _boolean_ `true` or `false`
 
 **Examples**
 
-![ephemeris-is-example](images/blockly/blockly-ephemeris-is-example.png)
+![ephemeris-is-example](../images/blockly/blockly-ephemeris-is-example.png)
 
 ### Get the holiday name for a particular date
 
-![ephemeris-get-name](images/blockly/blockly-ephemeris-get-name.png)
+![ephemeris-get-name](../images/blockly/blockly-ephemeris-get-name.png)
 
 *Function:* Returns the holiday name for the given date. Will return `null` if no holiday is found for the date.
 
@@ -48,7 +48,7 @@ Type: _String_
 
 ### Get the number of days until a specific holiday
 
-![ephemeris-days-until](images/blockly/blockly-ephemeris-days-until.png)
+![ephemeris-days-until](../images/blockly/blockly-ephemeris-days-until.png)
 
 Function: Return the number of days until the given holiday name, or `-1` if the holiday is not found.
 
@@ -58,4 +58,4 @@ Some holidays are already provided by default from openHAB. Additional holidays 
 
 ## Return to Blockly Reference
 
-[return to Blockly Reference]({{base}}/configuration/rules-blockly.html)
+[return to Blockly Reference](index.html#ephemeris)

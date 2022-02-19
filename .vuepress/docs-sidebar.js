@@ -68,7 +68,7 @@ module.exports = [
       'configuration/items',
       'configuration/persistence',
       'configuration/rules-dsl',
-      'configuration/rules-blockly',
+      ['configuration/blockly/', 'Blockly Rules'],
       'configuration/transformations',
       'configuration/actions',
       'configuration/iconsets/classic/',

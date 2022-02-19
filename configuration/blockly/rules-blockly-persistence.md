@@ -4,7 +4,7 @@ title: Rules Blockly - Persistence
 ---
 
 # Persistence
-[return to Blockly Reference]({{base}}/configuration/rules-blockly.html)
+[return to Blockly Reference](index.html#persistence)
 
 ## Introduction
 
@@ -22,7 +22,7 @@ The date-blocks shown in this section are described previously in [Date handling
 
 ## Overview of the Persistence blocks
 
-![persistence](images/blockly/blockly-persistence.png)
+![persistence](../images/blockly/blockly-persistence.png)
 
 ## Persistence Blocks
 
@@ -32,7 +32,7 @@ The date-blocks shown in this section are described previously in [Date handling
 
 ### Get statistical value of an item
 
-![statistical-value](images/blockly/blockly-persistence-get-statistical-value.png)
+![statistical-value](../images/blockly/blockly-persistence-get-statistical-value.png)
 
 *Function:* computes any of the below functions for the given item since the time provided by *ZonedDateTime*-Block
 
@@ -49,18 +49,18 @@ Note:  in case no or 0 values are retrieved, make sure that the item in question
 
 ### Check item change / update since a point in time
 
-![item-change](images/blockly/blockly-persistence-get-item-change.png)
+![item-change](../images/blockly/blockly-persistence-get-item-change.png)
 
 *Function:* checks if an item was updated or changed since a certain point in time
 Type: boolean `true` or `false`
 
 ### Provide last updated date of an Item
 
-![item-updated-date](images/blockly/blockly-persistence-updated-date.png)
+![item-updated-date](../images/blockly/blockly-persistence-updated-date.png)
 
 *Function:* Provides the last updated date (including time) of an Item
 Type: ZonedDateTime
 
 ## Return to Blockly Reference
 
-[return to Blockly Reference]({{base}}/configuration/rules-blockly.html)
+[return to Blockly Reference](index.html#persistence)

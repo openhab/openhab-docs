@@ -4,7 +4,7 @@ title: Rules Blockly - Value Storage
 ---
 
 # Value Storage
-[return to Blockly Reference]({{base}}/configuration/rules-blockly.html)
+[return to Blockly Reference](index.html#value-storage)
 
 ## Introduction
 
@@ -26,36 +26,36 @@ These blocks enable storing information *for a rule* that is kept after the rule
 
 ## Overview of the Value Storage blocks
 
-![value-storage-blocks](images/blockly/blockly-value-storage.png)
+![value-storage-blocks](../images/blockly/blockly-value-storage.png)
 
 ## Value Storage Blocks
 
 ### Store Value
 
-![store-value](images/blockly/blockly-value-store.png)
+![store-value](../images/blockly/blockly-value-store.png)
 
 Function: Stores a value under the key name
 
 ### Get Stored Value
 
-#![get-stored-value](images/blockly/blockly-value-get.png)
+#![get-stored-value](../images/blockly/blockly-value-get.png)
 
 Function: Retrieves a stored value by the key name
 
 ### Check if Value is undefined
 
-![value-is-defined](images/blockly/blockly-value-is-defined.png)
+![value-is-defined](../images/blockly/blockly-value-is-defined.png)
 
 Function: Checks if a value is undefined
 
 ### Example 1: Initialize a key if not set
 
-![example1](images/blockly/blockly-value-example1.png)
+![example1](../images/blockly/blockly-value-example1.png)
 
 ### Example 2: Use the rule instance variable to remember a color that has been set
 
-![example2](images/blockly/blockly-value-example2.png)
+![example2](../images/blockly/blockly-value-example2.png)
 
 ## Return to Blockly Reference
 
-[return to Blockly Reference]({{base}}/configuration/rules-blockly.html)
+[return to Blockly Reference](index.html#value-storage)

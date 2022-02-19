@@ -4,7 +4,7 @@ title: Rules Blockly - Logging
 ---
 
 # Logging
-[return to Blockly Reference]({{base}}/configuration/rules-blockly.html)
+[return to Blockly Reference](index.html#logging)
 
 ## Introduction
 
@@ -20,11 +20,11 @@ This section explains only the blocks that have been added to the standard block
 ## Logging and Output
 These blocks enable arbitrary content to be published to the [openHAB log](https://www.openhab.org/docs/administration/logging.html).
 
-![logging-overview](images/blockly/blockly-logging-overview.png)
+![logging-overview](../images/blockly/blockly-logging-overview.png)
 
 ### Log Statement
 
-![log-statement](images/blockly/blockly-logging-log.png)
+![log-statement](../images/blockly/blockly-logging-log.png)
 
 *Function:* Sends an entry to the openHAB log file with a defined severity level.
 
@@ -38,10 +38,10 @@ These blocks enable arbitrary content to be published to the [openHAB log](https
 
 ### Print Statement
 
-![print-to-stdout](images/blockly/blockly-logging-print.png)
+![print-to-stdout](../images/blockly/blockly-logging-print.png)
 
 *Function:* creates a print statement with the given text in the rule that logs to _stdout_
 
 ## Return to Blockly Reference
 
-[return to Blockly Reference]({{base}}/configuration/rules-blockly.html)
+[return to Blockly Reference](index.html#logging)

@@ -21,7 +21,7 @@ The basic idea behind the visual paradigm and representation within openHAB is b
 {: #blockly-toolbox}
 *Blockly toolbox*
 
-![blockly-toolbox-1](images/blockly/blockly-toolbox-1.png)![blockly-toolbox-2](images/blockly/blockly-toolbox-2.png)![blockly-toolbox-3](images/blockly/blockly-toolbox-3.png)
+![blockly-toolbox-1](../images/blockly/blockly-toolbox-1.png)![blockly-toolbox-2](../images/blockly/blockly-toolbox-2.png)![blockly-toolbox-3](../images/blockly/blockly-toolbox-3.png)
 
 
 
@@ -32,7 +32,7 @@ This section provides a detailed description of the specific blocks and provides
 
 *Block context menu*
 
-![blockly-context.png](images/blockly/blockly-contextmenu.png)
+![blockly-context.png](../images/blockly/blockly-contextmenu.png)
 
 **Looking for help**
 
@@ -48,7 +48,7 @@ Please visit [Getting started with openHAB Blocklies](rules-blockly-before-using
 
 *Items* and *Things* are the [major entities of openHAB](https://www.openhab.org/docs/concepts/) to control and monitor the home.
 
-[![Items and Things](images/blockly/blockly-items-and-things-small.png "Items and Things")
+[![Items and Things](../images/blockly/blockly-items-and-things-small.png "Items and Things")
 ](rules-blockly-items-things.html)
 
 See [Items & Things](rules-blockly-items-things.html) section
@@ -58,7 +58,7 @@ See [Items & Things](rules-blockly-items-things.html) section
 Timers and Delays are a little more complex but add important functionality to rules. Whilst the “Wait-For”-block is straightforward, the timer blocks should be well understood before being used - they may behave differently than expected. This chapter explains what these blocks do, sometimes displaying generated code to explain what is happening behind the scenes.
 
 
-[![Timers and Delays](images/blockly/blockly-timers-and-delays-small.png "Items and Things")
+[![Timers and Delays](../images/blockly/blockly-timers-and-delays-small.png "Items and Things")
 ](rules-blockly-timers-and-delays.html)
 
 See [Timers and Delays](rules-blockly-timers-and-delays.html) section.
@@ -68,8 +68,8 @@ See [Timers and Delays](rules-blockly-timers-and-delays.html) section.
 Date blocks are used as input parameters for other blocks.
 At the moment some of these blocks are found in the ephemeris section, whilst others are found in the persistence section - they may be equally useful for both. These blocks are *typed* to assure correct connection to other blocks.
 
-[![Timers and Delays](images/blockly/blockly-date-handling-ephemeris-small.png "Ephemeris Dates")
-](rules-blockly-date-handling.html) [![Timers and Delays](images/blockly/blockly-date-handling-persistence-small.png "Persistence Dates")
+[![Timers and Delays](../images/blockly/blockly-date-handling-ephemeris-small.png "Ephemeris Dates")
+](rules-blockly-date-handling.html) [![Timers and Delays](../images/blockly/blockly-date-handling-persistence-small.png "Persistence Dates")
 ](rules-blockly-date-handling.html)
 
 See [Date Handling](rules-blockly-date-handling.html) section.
@@ -79,7 +79,7 @@ See [Date Handling](rules-blockly-date-handling.html) section.
 The ephemeris category provides blocks with calendar functionality. The blocks can be used to determine what type of day today is, or a number of days before or after today is. For example, a way to determine if today is a weekend, a bank holiday, someone’s birthday, trash day, etc.
 
 
-[![Ephemeris](images/blockly/blockly-ephemeris-small.png "Ephemeris")
+[![Ephemeris](../images/blockly/blockly-ephemeris-small.png "Ephemeris")
 ](rules-blockly-ephemeris.html)
 
 See [Ephemeris](rules-blockly-ephemeris.html) section.
@@ -88,7 +88,7 @@ See [Ephemeris](rules-blockly-ephemeris.html) section.
 
 This section deals with _playing or streaming audio_ to an audio sink e.g a speaker or _saying a text_ via using any Text-to-Speech API (e.g. Google's API)
 
-[![Voice and Multimedia](images/blockly/blockly-voice-and-multimedia-small.png "Voice and Multimedia")
+[![Voice and Multimedia](../images/blockly/blockly-voice-and-multimedia-small.png "Voice and Multimedia")
 ](rules-blockly-voice-and-multimedia.html)
 
 See [Voice and Multimedia](rules-blockly-voice-and-multimedia.html) section.
@@ -97,7 +97,7 @@ See [Voice and Multimedia](rules-blockly-voice-and-multimedia.html) section.
 
 For use with your [openHAB cloud](https://www.openhab.org/addons/integrations/openhabcloud/) account, these blocks can be used to send notifications to relevant connected devices. Notifications can be used as push message to devices running the openHAB client.
 
-[![Notifications](images/blockly/blockly-notifications-small.png "Notifications")
+[![Notifications](../images/blockly/blockly-notifications-small.png "Notifications")
 ](rules-blockly-notifications.html)
 
 See [Notifications](rules-blockly-notifications.html) section.
@@ -106,7 +106,7 @@ See [Notifications](rules-blockly-notifications.html) section.
 
 Persistence blocks enable access of historical data stored by the default persistence service.
 
-[![Persistence](images/blockly/blockly-persistence-small.png "Persistence")
+[![Persistence](../images/blockly/blockly-persistence-small.png "Persistence")
 ](rules-blockly-persistence.html)
 
 See [Persistence](rules-blockly-persistence.html) section.
@@ -115,7 +115,7 @@ See [Persistence](rules-blockly-persistence.html) section.
 
 These blocks enable storing information *for a rule* that is kept after the rule has run, so it can be reused when the rule is run again later in stateful way.
 
-[![Value Storage](images/blockly/blockly-value-storage-small.png "Value Storage")
+[![Value Storage](../images/blockly/blockly-value-storage-small.png "Value Storage")
 ](rules-blockly-value-storage.html)
 
 See [Value Storage](rules-blockly-value-storage.html) section.
@@ -124,7 +124,7 @@ See [Value Storage](rules-blockly-value-storage.html) section.
 
 This section allows calling rules or other scripts, retrieving attributes provided by the rule context or transforming values via different conversion methods (e.g. map, regex, jsonpath)
 
-[![Run & Process](images/blockly/blockly-value-storage-small.png "Value Storage")
+[![Run & Process](../images/blockly/blockly-value-storage-small.png "Value Storage")
 ](rules-blockly-run-and-process.html)
 
 See [Run and Process](rules-blockly-run-and-process.html) section.
@@ -133,7 +133,7 @@ See [Run and Process](rules-blockly-run-and-process.html) section.
 
 This section allows calling rules or other scripts, retrieving attributes provided by the rule context or transforming values via different conversion methods (e.g. map, regex, jsonpath)
 
-[![Logging](images/blockly/blockly-value-storage-small.png "Logging")
+[![Logging](../images/blockly/blockly-value-storage-small.png "Logging")
 ](rules-blockly-logging.html)
 
 See [Logging](rules-blockly-logging.html) section.
@@ -143,8 +143,8 @@ See [Logging](rules-blockly-logging.html) section.
 This section explains only the blocks that have been added to the standard blocks by openHAB
 
 
-[![openHAB Extensions to the standard](images/blockly/blockly-colors-overview-small.png "openHAB Extensions to the Standard")
-](rules-blockly-standard-ext.html)[![openHAB Extensions to the standard](images/blockly/blockly-lists-dictionary-overview-small.png "openHAB Extensions to the Standard")
+[![openHAB Extensions to the standard](../images/blockly/blockly-colors-overview-small.png "openHAB Extensions to the Standard")
+](rules-blockly-standard-ext.html)[![openHAB Extensions to the standard](../images/blockly/blockly-lists-dictionary-overview-small.png "openHAB Extensions to the Standard")
 ](rules-blockly-standard-ext.html)
 
 See [openHAB Extensions to the standard](rules-blockly-standard-ext.html) section.

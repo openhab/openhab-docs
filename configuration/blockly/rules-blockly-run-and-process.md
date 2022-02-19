@@ -4,7 +4,7 @@ title: Rules Blockly - Run & Process
 ---
 
 # Run & Process (Rules and Scripts)
-[return to Blockly Reference]({{base}}/configuration/rules-blockly.html)
+[return to Blockly Reference](index.html#run-process-rules-and-scripts)
 
 ## Introduction
 
@@ -26,13 +26,13 @@ A Script *is* a Rule too. It’s just a special type of rule that only has a sin
 
 ## Overview of the Run & Process blocks
 
-![run-and-process-blocks](images/blockly/blockly-run-and-process.png)
+![run-and-process-blocks](../images/blockly/blockly-run-and-process.png)
 
 ## Run & Process Blocks
 
 ### Call Script File
 
-![run-script-file](images/blockly/blockly-run-script.png)
+![run-script-file](../images/blockly/blockly-run-script.png)
 
 *Function:* Calls a script file with the given name which must be located in the *$OPENHAB_CONF/scripts/* folder.
 
@@ -40,12 +40,12 @@ A Script *is* a Rule too. It’s just a special type of rule that only has a sin
 
 ### Run Rule or Script created in UI
 
-![run-rule-or-script](images/blockly/blockly-run-rule.png)
+![run-rule-or-script](../images/blockly/blockly-run-rule.png)
 
 *Function:* calls another *rule* or *script* that was created via the openHAB UI.
 
 The  *ruleUID* can be found in the list of rules or scripts in the second line of the list (like here *helloBlockly* or *helloWorld*)
-![rule-uuid](images/blockly/blockly-run-rule-uuid.png)
+![rule-uuid](../images/blockly/blockly-run-rule-uuid.png)
 
 Parameters are optional:
 
@@ -62,17 +62,17 @@ Notes:
 
 Function: Retrieve context attributes passed by a calling rule/script (see above)
 
-![](images/blockly/blockly-retrieve-context.png)
+![](../images/blockly/blockly-retrieve-context.png)
 
 This retrieves the value for the key "myKey1" that was passed by the calling rule.
 
 *Example*
 
-![retrieve-context-example](images/blockly/blockly-retrieve-context-example.png)
+![retrieve-context-example](../images/blockly/blockly-retrieve-context-example.png)
 
 ### Retrieve rule context information
 
-![retrieve-context-info](images/blockly/blockly-retrieve-rule-context-info.png)
+![retrieve-context-info](../images/blockly/blockly-retrieve-rule-context-info.png)
 
 *Function:* Retrieve event context related information of the rule
 
@@ -97,9 +97,9 @@ OpenHAB provides many [transformations](https://www.openhab.org/docs/configurati
 
 The following describes examples for Map, Regex, and JsonPath
 
-![map](images/blockly/blockly-transform-map.png)
-![regex](images/blockly/blockly-transform-regex.png)
-![jsonpath](images/blockly/blockly-transform-jsonpath.png)
+![map](../images/blockly/blockly-transform-map.png)
+![regex](../images/blockly/blockly-transform-regex.png)
+![jsonpath](../images/blockly/blockly-transform-jsonpath.png)
 
 Function: Transform the given value via one of the different transformation methods
 
@@ -107,7 +107,7 @@ Function: Transform the given value via one of the different transformation meth
 
 Convert  #123456 into rgb(12,34,56)
 
-![transform-regex](images/blockly/blockly-transform-example1.png)
+![transform-regex](../images/blockly/blockly-transform-example1.png)
 
 ### Example 2: JsonPath transformation
 Extract the temperature from the following JSON
@@ -120,13 +120,13 @@ by using the jsonpath
 $.device.status.temperature
 ```
 
-![transform-jsonpath](images/blockly/blockly-transform-example2.png)
+![transform-jsonpath](../images/blockly/blockly-transform-example2.png)
 
 ### Example 3: Map transformation
 
 This example applies a map transformation from the map file nanoleaf.map in *$OPENHAB-CONF/transform/*
 
-![transform-map](images/blockly/blockly-transform-example3.png)
+![transform-map](../images/blockly/blockly-transform-example3.png)
 
 The above, with the below map file
 
@@ -148,7 +148,7 @@ Hue/Saturation
 
 ## Inline Script
 
-![inline-script](images/blockly/blockly-inline-script.png)
+![inline-script](../images/blockly/blockly-inline-script.png)
 
 *Function:* execute arbitrary ECMAScript content
 
@@ -156,8 +156,8 @@ Provides the possibility to inject any ECMAScript at a given position. This shou
 
 ### Example:
 
-![](images/blockly/blockly-inline-script-example.png)
+![](../images/blockly/blockly-inline-script-example.png)
 
 ## Return to Blockly Reference
 
-[return to Blockly Reference]({{base}}/configuration/rules-blockly.html)
+[return to Blockly Reference](index.html#run-process-rules-and-scripts)

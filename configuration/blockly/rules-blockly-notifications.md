@@ -4,7 +4,7 @@ title: Rules Blockly - Notifications
 ---
 
 # Notifications
-[return to Blockly Reference]({{base}}/configuration/rules-blockly.html)
+[return to Blockly Reference](index.html#notifications)
 
 ## Introduction
 
@@ -21,13 +21,13 @@ General information on cloud notification actions can be found [here](https://ww
 
 ## Overview of the Notification blocks
 
-![notifications](images/blockly/blockly-notifications.png)
+![notifications](../images/blockly/blockly-notifications.png)
 
 ## Notification Blocks
 
 ### Send Notification to specific cloud email user
 
-![notification-to-user](images/blockly/blockly-notification-to-user.png)
+![notification-to-user](../images/blockly/blockly-notification-to-user.png)
 
 *Function:* Sends a notification to the openHAB mobile app via openHAB cloud to a specific user signed up under the given email address
 
@@ -38,11 +38,11 @@ General information on cloud notification actions can be found [here](https://ww
 
 *Function:* Sends a notification to all devices and all users to the openHAB mobile app.
 
-![notification-to-all](images/blockly/blockly-notification-to-all.png)
+![notification-to-all](../images/blockly/blockly-notification-to-all.png)
 
 Example Push Message shown under Android:
 
-![notification-on-android](images/blockly/blockly-notification-on-android.png)
+![notification-on-android](../images/blockly/blockly-notification-on-android.png)
 
 
 * A message can be provided together with an icon that should be shown on the device. Use the [icon names of the openHAB iconset](https://www.openhab.org/docs/configuration/iconsets/classic/).
@@ -50,7 +50,7 @@ Example Push Message shown under Android:
 
 ### Send Notification to Log Only
 
-![notification-to-log](images/blockly/blockly-notification-to-log.png)
+![notification-to-log](../images/blockly/blockly-notification-to-log.png)
 
 *Function:* Sends a notification to myopenhab.org only
 
@@ -62,4 +62,4 @@ Example Push Message shown under Android:
 
 ## Return to Blockly Reference
 
-[return to Blockly Reference]({{base}}/configuration/rules-blockly.html)
+[return to Blockly Reference](index.html#notifications)

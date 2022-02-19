@@ -4,7 +4,7 @@ title: Rules Blockly - Voice and Multimedia
 ---
 
 # Multimedia
-[return to Blockly Reference]({{base}}/configuration/rules-blockly.html)
+[return to Blockly Reference](index.html#voice-and-multimedia)
 
 ## Introduction
 
@@ -24,7 +24,7 @@ It should be noted that both functionalities do not just work right out of the b
 
 ## Overview of the Voice and Multimedia blocks
 
-![voice-and-multimedia](images/blockly/blockly-voice-and-multimedia.png)
+![voice-and-multimedia](../images/blockly/blockly-voice-and-multimedia.png)
 
 ## Setup
 
@@ -40,7 +40,7 @@ It should be noted that both functionalities do not just work right out of the b
 
 ### Play Audio
 
-![play-audio](images/blockly/blockly-play-audio.png)
+![play-audio](../images/blockly/blockly-play-audio.png)
 
 *Function:* Plays an audio file on an audio sink
 
@@ -49,7 +49,7 @@ It should be noted that both functionalities do not just work right out of the b
 
 ### Play Audio with Volume
 
-![img.png](images/blockly/blockly-play-audio-with-volume.png)
+![img.png](../images/blockly/blockly-play-audio-with-volume.png)
 
 *Function:* Plays an audio file on an audio sink and setting the volume at the same time
 
@@ -65,12 +65,12 @@ In several cases (like the google minis) it is known that setting the volume tog
 - Search for the thing of that particular sink and add an in item for the volume channel
 - Then create the following block sequence
 
-![play-audio-known-issue-workaround](images/blockly/blockly-play-audio-known-issue.png)
+![play-audio-known-issue-workaround](../images/blockly/blockly-play-audio-known-issue.png)
 
 
 ### Play Stream
 
-![play-stream](images/blockly/blockly-play-stream.png)
+![play-stream](../images/blockly/blockly-play-stream.png)
 
 *Function:* Starts an stream playing on an audio sink
 
@@ -80,16 +80,16 @@ In several cases (like the google minis) it is known that setting the volume tog
 
 ### Stop Stream
 
-![stop-stream](images/blockly/blockly-stop-stream.png)
+![stop-stream](../images/blockly/blockly-stop-stream.png)
 
 *Function:* Stops playing the current stream of the specified audio sink
 
 ### Say
 
-![say](images/blockly/blockly-say.png)
+![say](../images/blockly/blockly-say.png)
 
 *Function:* Sends the given text to the sink by using the default Text-to-Speech-Service to translate the text based on the chosen language voice into a stream which is then played on that device sink.
 
 ## Return to Blockly Reference
 
-[return to Blockly Reference]({{base}}/configuration/rules-blockly.html)
+[return to Blockly Reference](index.html#voice-and-multimedia)

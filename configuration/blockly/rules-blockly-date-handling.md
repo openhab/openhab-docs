@@ -4,7 +4,7 @@ title: Rules Blockly - Date Handling
 ---
 
 # Date Handling
-[return to Blockly Reference]({{base}}/configuration/rules-blockly.html)
+[return to Blockly Reference](index.html#date-handling)
 
 ## Introduction
 
@@ -22,15 +22,15 @@ At the moment some of these blocks are found in the ephemeris section, whilst ot
 
 **Blocks in the ephemeris section**
 
-![ephemeris-dates](images/blockly/blockly-date-handling-ephemeris.png)
+![ephemeris-dates](../images/blockly/blockly-date-handling-ephemeris.png)
 
 **Blocks in the persistence section**
 
-![persistence-dates](images/blockly/blockly-date-handling-persistence.png)
+![persistence-dates](../images/blockly/blockly-date-handling-persistence.png)
 
 ## Date Handling Blocks
 ### today
-![today](images/blockly/blockly-date-today.png)
+![today](../images/blockly/blockly-date-today.png)
 
 Type: _DayOffset_
 
@@ -38,7 +38,7 @@ Ephemeris blocks expect a date formatted as the number of days since today. As a
 
 ### today +/- x days
 
-![now-plus-minus-offset](images/blockly/blockly-date-plus.png)
+![now-plus-minus-offset](../images/blockly/blockly-date-plus.png)
 
 Type: _DayOffset_
 
@@ -46,7 +46,7 @@ Returns the number of days since today, as configured in the number block. The n
 
 ### date-picker
 
-![date-picker](images/blockly/blockly-date-picker.png)
+![date-picker](../images/blockly/blockly-date-picker.png)
 
 Type: _ZonedDateTime_
 
@@ -54,7 +54,7 @@ Returns a date as *ZonedDateTime*. The date can be selected from a date picker. 
 
 ### Get date
 
-![get-date](images/blockly/blockly-date-get.png)
+![get-date](../images/blockly/blockly-date-get.png)
 
 Type: _ZonedDateTime_
 
@@ -62,7 +62,7 @@ From a String in the format `yyyy-MM-dd`, this block will return the date as *Zo
 
 ### Get Date now with offset
 
-![now-with-offset](images/blockly/blockly-get-now-offset.png)
+![now-with-offset](../images/blockly/blockly-get-now-offset.png)
 
 Type: _ZonedDateTime_
 
@@ -70,7 +70,7 @@ Returns a date as *ZonedDateTime* with offset relative to the current date *and*
 
 ### Get String representation of date
 
-![date-tostring](images/blockly/blockly-get-date-string.png)
+![date-tostring](../images/blockly/blockly-get-date-string.png)
 
 Type: _String_
 
@@ -79,7 +79,7 @@ Returns the String representation of a given *ZonedDateTime*-block, with or with
 ### Example
 Assuming this block is run at `20:47:36` on `31/01/2022`
 
-![date-text-example](images/blockly/blockly-date-text-example.png)
+![date-text-example](../images/blockly/blockly-date-text-example.png)
 
 The output in the log will be.
 
@@ -92,4 +92,4 @@ The output in the log will be.
 
 ## Return to Blockly Reference
 
-[return to Blockly Reference]({{base}}/configuration/rules-blockly.html)
+[return to Blockly Reference](index.html#date-handling)

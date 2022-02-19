@@ -4,7 +4,7 @@ title: Rules Blockly - Before Using
 ---
 
 # Before using blockly in openHAB
-[return to Blockly Reference]({{base}}/configuration/rules-blockly.html)
+[return to Blockly Reference](index.html#before-using-blockly)
 
 ## Preface
 
@@ -35,10 +35,10 @@ Some openHAB blocks rely on particular configuration files found in the openHAB 
 - Finder -> Go -> Connect to Server
   - Enter the username and server name to connect to the openHAB Server
 
-  ![macos-share-1.png](images/blockly/blockly-openhab-macos-share-1.png)
+  ![macos-share-1.png](../images/blockly/blockly-openhab-macos-share-1.png)
   - then choose the folder you want to mount
 
-  ![macos-share-2](images/blockly/blockly-openhab-macos-share-2.png)
+  ![macos-share-2](../images/blockly/blockly-openhab-macos-share-2.png)
 
 **Finding it on Linux**
 - Access the folder directly on the openHAB server at */etc/openhab*
@@ -59,7 +59,7 @@ All methods reveal the following folders
 
 ## Creating a blockly rule via the UI
 - go to Settings -> Rules
-- press ![plus](images/blockly/blockly-plus-small.png) on bottom right
+- press ![plus](../images/blockly/blockly-plus-small.png) on bottom right
 - enter a unique id and rule name for your new blockly rule
 - Under "When" click on "Add Trigger" to define a trigger for the rule (you may add multiple triggers which are perceived as any of those triggers may occurs which stands for an OR combination of the triggers)
   - choose a title for the rule
@@ -67,15 +67,15 @@ All methods reveal the following folders
   - select the item from your model and the click PICK on the upper right corner
   - choose "received a command", "was updated" or "changed"
 - Under "Then" click on "Add Action"
-- choose ![run-script-1](images/blockly/blockly-run-script.png)
-- click on ![run-script-2](images/blockly/blockly-run-script-2.png) und you should now see this screen
-  ![blockly-edit-screen](images/blockly/blockly-edit-screen.png)
-- you can now click the ![toolbox-submenu](images/blockly/blockly-arrow.png) to access all openHAB Blocks.
+- choose ![run-script-1](../images/blockly/blockly-run-script.png)
+- click on ![run-script-2](../images/blockly/blockly-run-script-2.png) und you should now see this screen
+  ![blockly-edit-screen](../images/blockly/blockly-edit-screen.png)
+- you can now click the ![toolbox-submenu](../images/blockly/blockly-arrow.png) to access all openHAB Blocks.
 - Drag and Drop the blocks to the white area
 - Press `Ctrl-s` (Windows) or `Command-s` (MacOS) to save your rule
 - Press `Ctrl-r` (Windows) or `Command-r` (MacOS) to directly run your rule with the trigger
 - Press `Ctrl-d` (Windows) or `Command-d` (MacOS) to disable / enable your rule
-- Click on ![showcode](images/blockly/blockly-showcode.png) on the lower right to see the generated code (click again to come back to the blocks)
+- Click on ![showcode](../images/blockly/blockly-showcode.png) on the lower right to see the generated code (click again to come back to the blocks)
 
 ## Use Frontail for viewing log files
 During development the log-block is lot very often which writes information into the log files.
@@ -88,4 +88,4 @@ During development the log-block is lot very often which writes information into
 
 ## Return to Blockly Reference
 
-[return to Blockly Reference]({{base}}/configuration/rules-blockly.html)
+[return to Blockly Reference](index.html#before-using-blockly)
