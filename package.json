@@ -6,6 +6,7 @@
   "scripts": {
     "prepare-docs": "ruby prepare-docs.rb",
     "build-preview": "ruby prepare-docs.rb --delete-sources && vuepress build .",
+    "build-preview-local": "ruby prepare-docs.rb && vuepress build .",
     "build-only": "vuepress build ."
   },
   "repository": {
