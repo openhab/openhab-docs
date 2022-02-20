@@ -92,6 +92,16 @@ def process_main_docs(docs_source_dir)
     puts " -> images"
     #FileUtils.cp_r("#{docs_source_dir}/configuration/images", "docs/configuration") // no images placed yet
 
+    puts ">>> Migrating the Blockly Tutorial section"
+
+    Dir.glob("#{docs_source_dir}/configuration/blockly/*.md") { |path|
+        file = File.basename(path)
+        puts " -> #{file}"
+        process_file("#{docs_source_dir}/configuration/blockly", file, "docs/configuration/blockly", "#{$docs_repo_root}/configuration/blockly/#{file}")
+    }
+    puts " -> images"
+    #FileUtils.cp_r("#{docs_source_dir}/configuration/images", "docs/configuration") // no images placed yet
+
     puts ">>> Migrating the UI section"
 
 
