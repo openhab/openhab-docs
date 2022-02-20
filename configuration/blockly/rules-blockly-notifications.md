@@ -2,6 +2,7 @@
 layout: documentation
 title: Rules Blockly - Notifications
 ---
+<!-- markdownlint-disable MD036 -->
 
 # Notifications
 

@@ -2,6 +2,7 @@
 layout: documentation
 title: Rules Blockly - Date Handling
 ---
+<!-- markdownlint-disable MD036 -->
 
 # Date Handling
 

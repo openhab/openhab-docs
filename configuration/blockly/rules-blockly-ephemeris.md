@@ -2,6 +2,7 @@
 layout: documentation
 title: Rules Blockly - Ephemeris
 ---
+<!-- markdownlint-disable MD036 -->
 
 # Ephemeris
 

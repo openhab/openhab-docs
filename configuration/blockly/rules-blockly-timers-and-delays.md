@@ -2,7 +2,7 @@
 layout: documentation
 title: Rules Blockly - Timers & Delays
 ---
-
+<!-- markdownlint-disable MD036 -->
 
 # Timers & Delays
 

@@ -2,8 +2,7 @@
 layout: documentation
 title: Rules Blockly - Items & Things
 ---
-
-
+<!-- markdownlint-disable MD036 -->
 
 [return to Blockly Reference](index.html#items-and-things)
 
@@ -78,7 +77,7 @@ Function: Gets the members of a **group**
 
 - returns a collection of items which should be used with a for-each-block to loop over the items
 - it can be attached to a log-block which would list all items in that block in the form a string representation as follows
-  
+
 ```json
 GF_IndirectLights (Type=GroupItem, BaseType=SwitchItem, Members=9, State=OFF, Label=Indirekten Lichter, Category=light, Tags=[Lightbulb], Groups=[Lights]),LichterOG (Type=GroupItem, BaseType=SwitchItem, Members=4, State=ON, Label=Lichter OG, Category=light, Groups=[Lights]),LichterEG (Type=GroupItem, BaseType=SwitchItem, Members=5, State=ON, Label=Lichter EG, Category=light, Groups=[Lights])
 ```
@@ -102,13 +101,13 @@ These attributes are returned with the following types:
 - state: State
 - category: String
 - tag: Array, e.g.
-  
+
 ```json
 [plannedTimes]
 ```
 
 - groups: Array, e.g.
-  
+
 ```json
 [plannedTimes, timers]
 ```

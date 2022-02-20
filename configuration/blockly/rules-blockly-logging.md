@@ -2,6 +2,7 @@
 layout: documentation
 title: Rules Blockly - Logging
 ---
+<!-- markdownlint-disable MD036 -->
 
 # Logging
 

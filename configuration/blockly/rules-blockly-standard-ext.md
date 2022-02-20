@@ -2,6 +2,7 @@
 layout: documentation
 title: Rules Blockly - openHAB Extensions to the Standard
 ---
+<!-- markdownlint-disable MD036 -->
 
 # openHAB Extensions to the Standard
 

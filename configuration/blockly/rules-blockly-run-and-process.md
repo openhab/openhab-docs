@@ -2,6 +2,7 @@
 layout: documentation
 title: Rules Blockly - Run & Process
 ---
+<!-- markdownlint-disable MD036 -->
 
 # Run & Process (Rules and Scripts)
 
