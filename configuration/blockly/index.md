@@ -2,6 +2,7 @@
 layout: documentation
 title: Rules Blockly
 ---
+<!-- markdownlint-disable MD036 -->
 
 # Blockly Reference
 
