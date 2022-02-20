@@ -7,6 +7,8 @@ title: Rules
 
 "Rules" are used for automating processes: Each rule can be triggered, which invokes a script that performs any kinds of tasks, e.g. turn on lights by modifying your items, do mathematical calculations, start timers etcetera.
 
+Note that there is also a visual way of programming openHAB rules, which may be more suitable for beginners. Its documentation can be found in the [Blockly Reference section]({{base}}/configuration/rules-blockly.html)
+
 openHAB has a highly integrated, lightweight but yet powerful rule engine included.
 On this page you will learn how to leverage its functionality to do *real* home automation.
 
