@@ -10,7 +10,7 @@
     <description><![CDATA[
 Door/Window Sensor 7 Pro<br /> <h1>Overview</h1><p>Aeotec Door / Window Sensor 7 was developed to record the condition of doors or windows with Z-Wave Plus. It is powered by Aeotec’s Gen7 technology and S2 framework. This Pro version adds options for a tilt sensor and terminals for use as a dry contact sensor.<br /></p> <br /> <h2>Inclusion Information</h2><p>Set your Z-Wave controller into pairing mode.</p><p>Triple-click the tamper switch on Door / Window Sensor 7 - this begins to blink five times</p><p>After completion of the inclusion, it lights up once before it goes out.</p><p>Close the cover</p><p>Note: Closing the cover is important! If the housing is not closed, the sensor is permanently awake. Only when the cover is closed does the sensor change to the idle state.</p> <br /> <h2>Exclusion Information</h2><p> Set your Z-Wave controller into unpair mode.</p><p> Triple-click the tamper switch on Door / Window Sensor 7 within 1.5 seconds - this will cause the LED to blink five times.</p><p> After a successful exclusion, it will light up its LED for 2 seconds then deactivate.</p> <br /> <h2>Wakeup Information</h2><p> Wake up the device by removing the cover. </p><p> Then hit the tamper switch once.</p>
     ]]></description>
-    <category>Battery</category>
+    <category>Sensor</category>
 
     <!-- CHANNEL DEFINITIONS -->
     <channels>
@@ -50,7 +50,7 @@ Door/Window Sensor 7 Pro<br /> <h1>Overview</h1><p>Aeotec Door / Window Sensor 7
       <property name="vendor">Aeotec Limited</property>
       <property name="modelId">ZWA012</property>
       <property name="manufacturerId">0371</property>
-      <property name="manufacturerRef">0102:000C</property>
+      <property name="manufacturerRef">0002:000C,0102:000C</property>
       <property name="dbReference">1390</property>
       <property name="defaultAssociations">1</property>
     </properties>

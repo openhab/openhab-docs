@@ -83,13 +83,13 @@ FIBARO Walli Double Switch<br /> <h1>Overview</h1><p>FIBARO Walli Double Switch 
       <channel id="meter_watts1" typeId="meter_watts">
         <label>Electric meter (watts)</label>
         <properties>
-          <property name="binding:*:DecimalType">COMMAND_CLASS_METER:1</property>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER:1;type=E_W</property>
         </properties>
       </channel>
       <channel id="meter_kwh1" typeId="meter_kwh">
         <label>Electric meter (kWh)</label>
         <properties>
-          <property name="binding:*:DecimalType">COMMAND_CLASS_METER:1</property>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER:1;type=E_KWh</property>
         </properties>
       </channel>
       <channel id="switch_binary2" typeId="switch_binary">
@@ -101,13 +101,13 @@ FIBARO Walli Double Switch<br /> <h1>Overview</h1><p>FIBARO Walli Double Switch 
       <channel id="meter_watts2" typeId="meter_watts">
         <label>Electric meter (watts)</label>
         <properties>
-          <property name="binding:*:DecimalType">COMMAND_CLASS_METER:2</property>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER:2;type=E_W</property>
         </properties>
       </channel>
       <channel id="meter_kwh2" typeId="meter_kwh">
         <label>Electric meter (kWh)</label>
         <properties>
-          <property name="binding:*:DecimalType">COMMAND_CLASS_METER:2</property>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER:2;type=E_KWh</property>
         </properties>
       </channel>
     </channels>

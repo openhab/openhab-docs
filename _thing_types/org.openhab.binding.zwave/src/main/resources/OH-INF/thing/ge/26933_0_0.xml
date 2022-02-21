@@ -81,17 +81,18 @@
       <!-- PARAMETER DEFINITIONS -->
       <parameter name="config_1_1" type="integer" groupName="configuration">
         <label>1: Timeout Duration</label>
-        <description>Amount of time the light stays on after motion stops</description>
+        <description><![CDATA[
+Amount of time the light stays on after motion stops<br /> <h1>Overview</h1><p>0=Test(5S)</p><p>1=1 minute</p><p>5=5 minutes</p><p>15=15 minutes</p><p>30=30 minutes</p><p>-1=Disable timeout</p>
+        ]]></description>
         <default>5</default>
         <options>
+          <option value="-1">Disable timeout</option>
           <option value="0">Test (5s)</option>
           <option value="1">1 minute</option>
           <option value="5">5 minutes</option>
           <option value="15">15 minutes</option>
           <option value="30">30 minutes</option>
-          <option value="255">Disable timeout</option>
         </options>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_2_1" type="integer" groupName="configuration">

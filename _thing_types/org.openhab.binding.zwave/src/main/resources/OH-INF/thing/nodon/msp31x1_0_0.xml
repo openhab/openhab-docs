@@ -8,7 +8,7 @@
   <thing-type id="nodon_msp31x1_00_000" listed="false">
     <label>MSP-3-1-X1 Z-Wave Plus Micro Smart Plug ON/OFF</label>
     <description><![CDATA[
-Z-Wave Plus Micro Smart Plug ON/OFF<br /> <h1>Overview</h1><p>The NodOn Micro Smart Plug can be controlled by any kind of Z-Wave® (or Z-Wave Plus®) gateway or other Z-Wave® controller (standalone mode) such as the NodOn® Soft Remote or Octan Remote. <br />It existed in both standard, Type E (French) or Schuko (German). Its very small design and volume allow easy integration, without obstructing nearby power holes on a power strip. Furthermore, it can perform Power and Energy Metering. <br />The NodOn Smart Plug is based on brand new 500 series Z-Wave® module from Sigma Designs®, and support all the new features of Z-Wave Plus® standard: <br />Longer range (up to 40m), lower power consumption, higher data rate transmission, and many more new features.</p> <br /> <h2>Inclusion Information</h2><p>To include/add to the Z-Wave network, long press during 2 seconds to send several NIF during 30 seconds or a triple press to send a single NIF </p> <br /> <h2>Exclusion Information</h2><p>To exclude/remove from the Z-Wave network, long press during 2 seconds to send several NIF during 30 seconds or a triple press to send a single NIF </p>
+Z-Wave Plus Micro Smart Plug ON/OFF<br /> <h1>Overview</h1><p>The NodOn Micro Smart Plug can be controlled by any kind of Z-Wave® (or Z-Wave Plus®) gateway or other Z-Wave® controller (standalone mode) such as the NodOn® Soft Remote or Octan Remote.</p><p>It existed in both standard, Type E (French) or Schuko (German). Its very small design and volume allow easy integration, without obstructing nearby power holes on a power strip. Furthermore, it can perform Power and Energy Metering. <br />The NodOn Smart Plug is based on brand new 500 series Z-Wave® module from Sigma Designs®, and support all the new features of Z-Wave Plus® standard: <br />Longer range (up to 40m), lower power consumption, higher data rate transmission, and many more new features.</p> <br /> <h2>Inclusion Information</h2><p>To include/add to the Z-Wave network, long press during 2 seconds to send several NIF during 30 seconds or a triple press to send a single NIF </p> <br /> <h2>Exclusion Information</h2><p>To exclude/remove from the Z-Wave network, long press during 2 seconds to send several NIF during 30 seconds or a triple press to send a single NIF </p> <br /> <h2>Wakeup Information</h2><p><br /></p>
     ]]></description>
     <category>PowerOutlet</category>
 
@@ -191,10 +191,12 @@ Reporting intervall for power and energy to lifeline.<br /> <h1>Overview</h1><p>
         <default>3600</default>
         <options>
           <option value="0">Metering Pulse disable</option>
+          <option value="900">Enable and send report every 15 minutes</option>
           <option value="3600">Metering Pulse enable and send report every hour</option>
           <option value="21600">Enable and send report every 6 hours</option>
           <option value="43200">Enable and send report every 12 hours</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_25_2" type="integer" groupName="configuration">

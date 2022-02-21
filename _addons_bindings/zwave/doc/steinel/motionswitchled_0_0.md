@@ -159,17 +159,13 @@ Detailed information on each parameter can be found in the sections below.
 | 16 | MOTION_DISABLE | Motion Off behaviour ( timeout ) |
 | 17 | BUTTON_BEHAVIOUR | Toggle button behaviour |
 | 18 | BUTTON_SCENES | Toggle button Scene 1-4 |
-| 19 | LEGACY_INACTIVITY_TIME ) | Toggle button inactivity time in "legacy" mode ( timeout ) |
+| 19 | LEGACY_INACTIVITY_TIME | Toggle button inactivity time in "legacy" mode ( timeout ) |
 
 ### Parameter 1: TIME
 
 Duration of light after motion detection [s]
 
-The following option values may be configured, in addition to values in the range 5 to 900 -:
-
-| Value  | Description |
-|--------|-------------|
-| 0 | Duration of light after motion detection [s] |
+Values in the range 5 to 900 may be set.
 
 The manufacturer defined default value is ```180```.
 
@@ -182,11 +178,7 @@ Light threshold [lx]
 Light threshold: 2 - 2000, 0 lx
 
 0 - run Learn ambient light sequence. 2000 - is used as daylight ( always night mode ).
-The following option values may be configured, in addition to values in the range 0 to 2000 -:
-
-| Value  | Description |
-|--------|-------------|
-| 0 | Light threshold [lx] |
+Values in the range 0 to 2000 may be set.
 
 The manufacturer defined default value is ```2000```.
 
@@ -597,7 +589,7 @@ The manufacturer defined default value is ```1```.
 This parameter has the configuration ID ```config_18_1``` and is of type ```INTEGER```.
 
 
-### Parameter 19: LEGACY_INACTIVITY_TIME )
+### Parameter 19: LEGACY_INACTIVITY_TIME
 
 Toggle button inactivity time in "legacy" mode ( timeout )
 In "legacy" button mode function this timeout is used to cancel motion sensor inactivity mode after motion end ( both for on and off state of LED ).
@@ -617,13 +609,7 @@ This parameter has the configuration ID ```config_19_2``` and is of type ```INTE
 
 Association groups allow the device to send unsolicited reports to the controller, or other devices in the network. Using association groups can allow you to eliminate polling, providing instant feedback of a device state change without unnecessary network traffic.
 
-The MotionSwitch LED supports 8 association groups.
-
-### Group 0: ROOT DEVICE
-
-Root
-
-Association group 0 supports 1 node.
+The MotionSwitch LED supports 7 association groups.
 
 ### Group 1: Lifeline
 
@@ -698,7 +684,7 @@ When device already uses remote Ambient light value, then this value is also ret
 All devices in such a group should have the same LIGHT ( threshold ) settings in order that night mode is detected at the same time.  
 If multichannel association is created the events are send from light sensor endpoint.
 
-Association group 4 supports 6 nodes.
+Association group 4 supports 16 nodes.
 
 ### Group 5: Button on/off
 

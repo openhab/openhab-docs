@@ -149,7 +149,7 @@ Detailed information on each parameter can be found in the sections below.
 
 LCD Invert
 
-The following option values may be configured -:
+The following option values may be configured, in addition to values in the range 0 to 1 -:
 
 | Value  | Description |
 |--------|-------------|
@@ -167,7 +167,7 @@ LCD Timeout
 0: No Timeout LCD always on
 
 5-30: LCD will turn off after 5 to 30 seconds
-The following option values may be configured, in addition to values in the range 5 to 30 -:
+The following option values may be configured -:
 
 | Value  | Description |
 |--------|-------------|
@@ -182,7 +182,7 @@ This parameter has the configuration ID ```config_2_1``` and is of type ```INTEG
 
 Backlight
 
-The following option values may be configured -:
+The following option values may be configured, in addition to values in the range 0 to 1 -:
 
 | Value  | Description |
 |--------|-------------|
@@ -198,7 +198,7 @@ This parameter has the configuration ID ```config_3_1``` and is of type ```INTEG
 
 Battery report
 
-The following option values may be configured -:
+The following option values may be configured, in addition to values in the range 0 to 1 -:
 
 | Value  | Description |
 |--------|-------------|
@@ -242,7 +242,7 @@ This parameter has the configuration ID ```config_6_1``` and is of type ```INTEG
 
 Window open detection
 
-The following option values may be configured -:
+The following option values may be configured, in addition to values in the range 0 to 3 -:
 
 | Value  | Description |
 |--------|-------------|
@@ -262,7 +262,7 @@ Measured temperature offset
 -50 ... +50: Offsets the measured temp by -5,0°C ... +5,0°C
 
 128: External temp sensor will be used for regulation.
-The following option values may be configured, in addition to values in the range -50 to 50 -:
+The following option values may be configured -:
 
 | Value  | Description |
 |--------|-------------|

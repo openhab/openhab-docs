@@ -669,7 +669,7 @@ Value Range (US) : 400~21200
 Default value (EU/AU) : 280
 
 Default value (US) : 824
-Values in the range 400 to 2120 may be set.
+Values in the range -400 to 2120 may be set.
 
 The manufacturer defined default value is ```0```.
 
@@ -693,7 +693,7 @@ Default Value (EU/AU) : 0
 
 
 Default Value (US) : 320
-Values in the range 400 to 2120 may be set.
+Values in the range -400 to 2120 may be set.
 
 The manufacturer defined default value is ```0```.
 
