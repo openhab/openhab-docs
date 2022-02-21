@@ -62,7 +62,7 @@ Usage: openhab:send <item> <command> - sends a command for an item
 
 | Command                                    | Description                        |
 |--------------------------------------------|------------------------------------|
-| `openhab:inbox`                            | lists all current inbox entries    |
+| `openhab:inbox list`                       | lists all current inbox entries    |
 | `openhab:inbox listignored`                | lists all ignored inbox entries    |
 | `openhab:inbox approve <thingUID> <label>` | creates a thing for an inbox entry |
 | `openhab:inbox clear`                      | clears all current inbox entries   |
