@@ -649,6 +649,10 @@ TODO
 
 Bindings can implement the `DiscoveryService` interface and register it as an OSGi service to inform the framework about devices and services, that can be added as things to the system (see also [Inbox & Discovery Concept](../../concepts/discovery.html)).
 
+::: tip Note
+There must still be the ability to configure the binding via text files (`.things` and `.items`), also if you implement an automatic discovery of Things.
+:::
+
 A discovery service provides discovery results.
 The following table gives an overview about the main parts of a `DiscoveryResult`:
 
