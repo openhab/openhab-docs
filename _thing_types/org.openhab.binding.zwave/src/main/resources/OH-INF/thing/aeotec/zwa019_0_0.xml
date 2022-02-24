@@ -56,7 +56,7 @@ Aeotec Water Sensor 7 Pro<br /> <h1>Overview</h1><p>The AEOTEC Water Sensor 7 Pr
       <property name="vendor">Aeotec Limited</property>
       <property name="modelId">ZWA019</property>
       <property name="manufacturerId">0371</property>
-      <property name="manufacturerRef">0102:0013</property>
+      <property name="manufacturerRef">0002:0013,0102:0013</property>
       <property name="dbReference">1392</property>
       <property name="defaultAssociations">1,2,3,4</property>
     </properties>

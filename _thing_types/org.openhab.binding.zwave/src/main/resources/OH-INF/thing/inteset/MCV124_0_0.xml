@@ -5,12 +5,12 @@
   xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
                       https://openhab.org/schemas/thing-description/v1.0.0">
 
-  <thing-type id="inteset_MC-V12.4_00_000" listed="false">
-    <label>Inteset Door Sensor Door Sensor</label>
+  <thing-type id="inteset_MCV124_00_000" listed="false">
+    <label>MC-V12.4 Door Sensor</label>
     <description><![CDATA[
 Door Sensor<br /> <h1>Overview</h1><p>The NEO Coolcam Door/Window Sensor provides information whether a door or window is opened or closed.<br />The battery operated sensor consits of the main unit and a magnetic element. The main unit should be installed on the frame and the magnetic element is placed on the door or window.</p> <p>Technical parameters:</p> <ul><li>Power: CR14250 x1</li> <li>Standby current: 1uA</li> <li>Battery life: 10 years</li> <li>Radio Protocol: Z-wave</li> <li>Radio Frequency: 868.4MHz EU; 908.4MHz US; 921.4MHz ANZ; 869.2MHz RU</li> <li>Wireless distance：50m</li> <li>Operation temperature: 0-40℃</li> <li>Storage temperature: 0-60℃</li> <li>Size: Contact sensor main body (L x W x H): 70mmx20mmx20mm Contact sensor deputy body (L x W x H): 40mmx11mmx11mm</li> </ul> <br /> <h2>Inclusion Information</h2><ol><li>Remove the sensor cover.</li> <li>Make sure the sensor is powered.</li> <li>Set Z‐Wave controller or Z‐Wave gateway into inclusion mode (Refer to the controller or gateway operating manual)</li> <li>Press the button three times within 1.5 second, the device will enter inclusion mode. And the LED will flash on and off alternately five times.</li> </ol> <br /> <h2>Exclusion Information</h2><ol><li>Remove the sensor cover.</li> <li>Make sure the sensor is powered.</li> <li>Set Z‐Wave controller or Z‐Wave gateway into inclusion mode (Refer to the controller or gateway operating manual)</li> <li>Press the button three times within 1.5 second, the device will enter inclusion mode. And the LED will flash on and off alternately five times.</li> </ol> <br /> <h2>Wakeup Information</h2><p>Press the button once to wake the device. If pressed successfully, the LED will blink one time.</p> <ul><li>The minimum wakeup interval is 300s (5 minutes)</li> <li>The maximum wakeup interval is 16,777,200s (about 194 days)</li> <li>Allowable min step among each wakeup interval is 60 seconds, such as 360s, 420s, 480s…</li> <li>Note: The default value is 12 hours. This value is longer, the battery life is greater.</li> </ul>
     ]]></description>
-    <category>Battery</category>
+    <category>Door</category>
 
     <!-- CHANNEL DEFINITIONS -->
     <channels>
@@ -36,7 +36,7 @@ Door Sensor<br /> <h1>Overview</h1><p>The NEO Coolcam Door/Window Sensor provide
     <!-- DEVICE PROPERTY DEFINITIONS -->
     <properties>
       <property name="vendor">Inteset Technologies,</property>
-      <property name="modelId">Inteset Door Sensor</property>
+      <property name="modelId">MC-V12.4</property>
       <property name="manufacturerId">039A</property>
       <property name="manufacturerRef">0003:0101</property>
       <property name="dbReference">1471</property>

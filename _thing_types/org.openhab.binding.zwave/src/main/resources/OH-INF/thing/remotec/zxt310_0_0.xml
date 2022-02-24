@@ -8,7 +8,7 @@
   <thing-type id="remotec_zxt310_00_000" listed="false">
     <label>ZXT-310 AV IR Extender</label>
     <description><![CDATA[
-AV IR Extender<br /> <h1>Overview</h1><p>ZXT‐310 is a Z‐Wave‐to‐AV IR Extender (Figure 1) and it works with any Z‐Wave compliant controller or gateway by translating Z‐Wave Simple AV command </p> <br /> <h2>Inclusion Information</h2><p>Press the PROG button</p> <br /> <h2>Exclusion Information</h2><p>Press the PROG button</p>
+AV IR Extender<br /> <h1>Overview</h1><p>ZXT‐310 is a Z‐Wave‐to‐AV IR Extender (Figure 1) and it works with any Z‐Wave compliant controller or gateway by translating Z‐Wave Simple AV command </p> <br /> <h2>Inclusion Information</h2><p>Press the PROG button</p> <br /> <h2>Exclusion Information</h2><p>Press the PROG button</p> <br /> <h2>Wakeup Information</h2><p><br /></p>
     ]]></description>
     <category>RemoteControl</category>
 
@@ -17,7 +17,7 @@ AV IR Extender<br /> <h1>Overview</h1><p>ZXT‐310 is a Z‐Wave‐to‐AV IR Ex
       <property name="vendor">Remotec</property>
       <property name="modelId">ZXT-310</property>
       <property name="manufacturerId">5254</property>
-      <property name="manufacturerRef">0102:8371</property>
+      <property name="manufacturerRef">0100:8371,0102:8371</property>
       <property name="dbReference">876</property>
     </properties>
 
