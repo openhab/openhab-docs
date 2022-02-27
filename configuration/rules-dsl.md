@@ -271,7 +271,7 @@ The `thingUID` is the identifier assigned to the Thing, manually in your configu
 You can find it from UI or from Karaf remote console.
 For example, one z-wave device can be "zwave:device:c5155aa4:node14".
 
-If the Rule needs to know what the triggering thing was, or access a string value of the previous or new status, use the [implicit variables]({{base}}/configuration/rules-dsl.html#implicit-variables-inside-the-execution-block) `triggeringChannel`, `previousStatus` or `newStatus` to access the information.
+If the Rule needs to know what the triggering thing was, or access a string value of the previous or new status, use the [implicit variables]({{base}}/configuration/rules-dsl.html#implicit-variables-inside-the-execution-block) `triggeringChannel`, `previousThingStatus` or `newThingStatus` to access the information.
 
 Refer to [Thing Status Action](/docs/configuration/actions.html#thing-status-action) to find how to get the new thing status details or description in the script.
 
@@ -778,8 +778,8 @@ Besides the implicitly available variables for items and commands/states, rules 
 - `receivedEvent` - implicitly available in every rule that has a channel-based trigger.
 - `triggeringChannel` - implicitly available in every rule that has a channel-based trigger.
 - `triggeringThing` - implicitly available in every rule that has a thing-based trigger.
-- `previousStatus` - implicitly available in every rule that has a thing-based trigger.
-- `newStatus` - implicitly available in every rule that has a thing-based trigger.
+- `previousThingStatus` - implicitly available in every rule that has a thing-based trigger.
+- `newThingStatus` - implicitly available in every rule that has a thing-based trigger.
 
 {: #return}
 
