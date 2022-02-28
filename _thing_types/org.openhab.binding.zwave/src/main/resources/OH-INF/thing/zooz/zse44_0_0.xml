@@ -100,19 +100,28 @@ When the sensor should report low battery<br /> <h1>Overview</h1><p><br /></p>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
+      <parameter name="config_13_1" type="integer" groupName="configuration">
+        <label>13: Temperature Scale</label>
+        <description><![CDATA[
+Celsius/Fahrenheit Selection<br /> <h1>Overview</h1><p>0: Celsius</p><p>1: Fahrenheit</p>
+        ]]></description>
+        <default>1</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_14_1" type="integer" groupName="configuration">
+        <label>14: Temperature Offset</label>
+        <description><![CDATA[
+Temperature Offset<br /> <h1>Overview</h1><p>0 = -10 degree offset</p><p>100 = 0 degree offset</p><p>200 = +10 degree offset</p>
+        ]]></description>
+        <default>100</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
       <parameter name="config_16_2" type="integer" groupName="configuration">
         <label>16: Temperature Reporting Interval</label>
         <description><![CDATA[
 Sensor will report temperature at least as often as this value<br /> <h1>Overview</h1><p>0 disables setting</p>
-        ]]></description>
-        <default>240</default>
-        <limitToOptions>false</limitToOptions>
-      </parameter>
-
-      <parameter name="config_17_2" type="integer" groupName="configuration">
-        <label>17: Humidity Reporting Interval</label>
-        <description><![CDATA[
-Sensor will report humidity at least as often as this value<br /> <h1>Overview</h1><p>0 disables this setting</p>
         ]]></description>
         <default>240</default>
         <limitToOptions>false</limitToOptions>

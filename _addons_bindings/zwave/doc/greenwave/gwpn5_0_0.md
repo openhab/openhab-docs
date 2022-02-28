@@ -50,12 +50,6 @@ The following table summarises the channels available for the GWPN5 -:
 | Switch 3 | switch_binary3 | switch_binary | Switch | Switch | 
 | Electric meter (watts) 3 | meter_watts3 | meter_watts | Energy | Number | 
 | Electric meter (kWh) 3 | meter_kwh3 | meter_kwh | Energy | Number | 
-| Switch 4 | switch_binary4 | switch_binary | Switch | Switch | 
-| Electric meter (watts) 4 | meter_watts4 | meter_watts | Energy | Number | 
-| Electric meter (kWh) 4 | meter_kwh4 | meter_kwh | Energy | Number | 
-| Switch 5 | switch_binary5 | switch_binary | Switch | Switch | 
-| Electric meter (watts) 5 | meter_watts5 | meter_watts | Energy | Number | 
-| Electric meter (kWh) 5 | meter_kwh5 | meter_kwh | Energy | Number | 
 
 ### Switch
 Switch the power on and off.
@@ -128,36 +122,6 @@ The ```meter_watts3``` channel is of type ```meter_watts``` and supports the ```
 Indicates the energy consumption (kWh).
 
 The ```meter_kwh3``` channel is of type ```meter_kwh``` and supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
-
-### Switch 4
-Switch the power on and off.
-
-The ```switch_binary4``` channel is of type ```switch_binary``` and supports the ```Switch``` item and is in the ```Switch``` category.
-
-### Electric meter (watts) 4
-Indicates the instantaneous power consumption.
-
-The ```meter_watts4``` channel is of type ```meter_watts``` and supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
-
-### Electric meter (kWh) 4
-Indicates the energy consumption (kWh).
-
-The ```meter_kwh4``` channel is of type ```meter_kwh``` and supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
-
-### Switch 5
-Switch the power on and off.
-
-The ```switch_binary5``` channel is of type ```switch_binary``` and supports the ```Switch``` item and is in the ```Switch``` category.
-
-### Electric meter (watts) 5
-Indicates the instantaneous power consumption.
-
-The ```meter_watts5``` channel is of type ```meter_watts``` and supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
-
-### Electric meter (kWh) 5
-Indicates the energy consumption (kWh).
-
-The ```meter_kwh5``` channel is of type ```meter_kwh``` and supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
 
 
 
@@ -330,20 +294,6 @@ Association group 4 supports 1 node.
 | COMMAND_CLASS_SWITCH_BINARY_V1| Linked to BASIC|
 | COMMAND_CLASS_METER_V2| |
 #### Endpoint 3
-
-| Command Class | Comment |
-|---------------|---------|
-| COMMAND_CLASS_BASIC_V1| |
-| COMMAND_CLASS_SWITCH_BINARY_V1| Linked to BASIC|
-| COMMAND_CLASS_METER_V2| |
-#### Endpoint 4
-
-| Command Class | Comment |
-|---------------|---------|
-| COMMAND_CLASS_BASIC_V1| |
-| COMMAND_CLASS_SWITCH_BINARY_V1| Linked to BASIC|
-| COMMAND_CLASS_METER_V2| |
-#### Endpoint 5
 
 | Command Class | Comment |
 |---------------|---------|

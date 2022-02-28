@@ -5,10 +5,10 @@
   xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
                       https://openhab.org/schemas/thing-description/v1.0.0">
 
-  <thing-type id="aeotec_multisensor7_00_000" listed="false">
-    <label>Aeotec Multisensor 7 Multisensor</label>
+  <thing-type id="aeotec_zwa024_00_000" listed="false">
+    <label>ZWA024 Multisensor 7</label>
     <description><![CDATA[
-Multisensor<br /> <h1>Overview</h1><p>Aeotec MultiSensor 7 was developed to detect ambient values and movement and to transmit them with Z-Wave Plus. It is powered by Aeotec’s Gen7 technology. </p> <br /> <h2>Inclusion Information</h2><ol><li>Power on the device, the power led will blink blue slowly.</li><li>Let the Primary Controller into inclusion mode (If you don’t know how to do this, refer to its manual)</li><li>Press the action button one time, when the yellow led on release the button. It indicates the device has enter learn mode.</li><li>If added successful, the power led will flash (white -&gt; green -&gt; white -&gt; green at a rate of 250ms per each color) for 2 seconds</li></ol> <br /> <h2>Exclusion Information</h2><ol><li>Power on the device.</li><li>Let the Primary Controller into exclusion mode (If you don’t know how to do this refer to its manual)</li><li>Press the action button one time, when the purple led on release the button. It indicates the device has enter learn mode.</li><li>If removed successful, the blue led will blink slowly.</li></ol> <br /> <h2>Wakeup Information</h2><p><br /></p>
+Multisensor 7<br /> <h1>Overview</h1><p>Aeotec MultiSensor 7 was developed to detect ambient values and movement and to transmit them with Z-Wave Plus. It is powered by Aeotec’s Gen7 technology. </p> <br /> <h2>Inclusion Information</h2><ol><li>Power on the device, the LED will blink blue slowly.</li><li>Put the Primary Controller into inclusion mode (If you don’t know how to do this, refer to its manual)</li><li>Tap the action button once, when the yellow LED is on it indicates the device has entered pair mode.</li><li>If inclusion was successful, the power LED  will flash (white -&gt; green -&gt; white -&gt; green at a rate of 250ms for each colour) for 2 seconds</li></ol> <br /> <h2>Exclusion Information</h2><ol><li>Power on the device.</li><li>Put the Primary Controller into exclusion mode (If you don’t know how to do this refer to its manual)</li><li>Tap the action button once, when the purple LED is on it indicates the device has entered unpair mode.</li><li>If exclusion was successful, the blue LED will blink slowly.</li></ol> <br /> <h2>Wakeup Information</h2><p>Quick Wakeup - Press and hold the action button for 2-5 seconds. LED will go solid red.</p><p>Long Wakeup -Press and hold the action button for 5-9 seconds. LED will go solid orange. Mode will remain active and LED will remain on for 5 mins max.</p>
     ]]></description>
     <category>Sensor</category>
 
@@ -72,7 +72,7 @@ Multisensor<br /> <h1>Overview</h1><p>Aeotec MultiSensor 7 was developed to dete
     <!-- DEVICE PROPERTY DEFINITIONS -->
     <properties>
       <property name="vendor">Aeotec Limited</property>
-      <property name="modelId">Aeotec Multisensor 7</property>
+      <property name="modelId">ZWA024</property>
       <property name="manufacturerId">0371</property>
       <property name="manufacturerRef">0002:0018,0102:0018</property>
       <property name="dbReference">1444</property>
