@@ -258,8 +258,9 @@ The following devices have been tested by openHAB users with the binding. This l
 | Eurotronic Spirit Thermostat                   | Radiator Thermostat                                          |
 | GE Bulbs                                       |                                                              |
 | GE Tapt Wall Switch                            | On/Off Switch                                                |
+| GLEDOPTO GL-C-007                              | GLEDOPTO RGBW Led stripe controller                          |
 | Hue Bulbs                                      | Color LED Bulb                                               |
-| Hue Dimmer                                     | Hue Dimmer Switch Remote _[<sup>[2]</sup>](#note2)_          |
+| Hue Dimmer v1                                  | Hue Dimmer Switch Remote v1 _[<sup>[2]</sup>](#note2)_       |
 | Hue Motion Sensor                              | Motion and Luminance sensor                                  |
 | IKEA Fyrtur Blinds                             | Roller blinds                                                |
 | IKEA Tradfri Bulbs                             |                                                              |
@@ -268,10 +269,12 @@ The following devices have been tested by openHAB users with the binding. This l
 | IKEA Tradfri Repeater                          |                                                              |
 | Innr Bulbs                                     | _[<sup>[1]</sup>](#note1)_                                   |
 | Innr SP 120                                    | Smart Plug _[<sup>[1]</sup>](#note1)_                        |
+| LIVARNO Smart Home                             | Lidl Livarno Smart Home Bulbs _[<sup>[4]</sup>](#note4)_     |
 | LEDVANCE/Osram Bulbs                           |                                                              |
 | Lupus Small Zigbee Temperature Sensor 12314    | Lupus-Electronics Temperature and Humidity sensor            |
 | Osram Flex 3P Multicolor                       | Osram Smart+ LED Strip                                       |
 | Osram Motion Sensor                            | Osram Smart+ Motion Sensor _[<sup>[1]</sup>](#note1)_        |
+| Osram Smart+ Plug                              |                                                              |
 | Securifi Peanut Plug                           | Metered Plug                                                 |
 | Shenzhen Ksentry Electronics On Off Controller | Relay                                                        |
 | SMaBiT (Bitron Video) Magnetic contect         | AV2010/21 /21A /21B /21C                                     |
@@ -288,6 +291,7 @@ The following devices have been tested by openHAB users with the binding. This l
 | SmartThings Plug                               | Metered Plug                                                 |
 | SmartThings Motion Sensor                      | CentraLite 3325-S Motion and Temperature sensor              |
 | SmartThings Contact Sensor                     | Contact and Temperature sensor                               |
+| SONSOFF SNZB-02                                | SONOFF Temperature sensor                                    |
 | Telkonet EcoInsight Thermostat                 | Intelligent HVAC Thermostat                                  |
 | Trust Bulbs                                    | _[<sup>[1]</sup> ](#note1)_                                  |
 | Ubisys modules                                 | D1 Dimmer, S1/S2 Switch modules                              |
@@ -301,9 +305,11 @@ The following devices have been tested by openHAB users with the binding. This l
 
 <a name="note1"></a> _Note 1: Some devices may not work with the Telegesis dongle._
 
-<a name="note2"></a> _Note 2: The Hue Dimmer can be integrated but needs additional rule-configuration to work properly. See below for example._
+<a name="note2"></a> _Note 2: The Hue Dimmer v1 can be integrated but needs additional rule-configuration to work properly. See below for example. The v2 dimmer switch (with `hue` written on the lowest switch instead of `0`) is not supported_
 
 <a name="note3"></a> _Note 3: The illuminance channel value is being reported incorrectly. Transform by 10000\*log10(measuredValue+1) to get the correct illuminance in lux._
+
+<a name="note4"></a> _Note 4: Lidl LIVARNO Smart Home brand seems to be rebranded Tuya devices._
 
 ## Discovery
 
