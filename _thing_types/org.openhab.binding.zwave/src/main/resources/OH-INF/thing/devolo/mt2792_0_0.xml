@@ -116,6 +116,7 @@ multiples of 5s<br /> <h1>Overview</h1><p>Enable automatic interval in seconds r
         <options>
           <option value="0">Disable</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_2_2" type="integer" groupName="configuration">
@@ -127,6 +128,7 @@ number of 10 minute intervals<br /> <h1>Overview</h1><p>Enable automatic interva
         <options>
           <option value="0">Disable</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_3_2" type="integer" groupName="configuration">
@@ -184,11 +186,14 @@ Restore switch state mode.<br /> <h1>Overview</h1><p>Status of the plug if it is
 
       <parameter name="config_8_2" type="integer" groupName="configuration">
         <label>8: Auto off timer</label>
-        <description>Auto off timer. 0 will disable the auto off function.</description>
+        <description><![CDATA[
+Auto off timer. 0 will disable the auto off function.<br /> <h1>Overview</h1><p>If the Home Control Smart Metering Plug switches to ON, the auto-off timer starts counting down. After the timer is set to zero, the device shuts off automatically. If the auto-off timer function is set to 0, it is disabled.Default 0.<br /></p>
+        ]]></description>
         <default>0</default>
         <options>
           <option value="0">Disable</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_9_1" type="integer" groupName="configuration">

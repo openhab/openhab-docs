@@ -80,6 +80,7 @@ Setting the BASIC command value to turn on the light.<br /> <h1>Overview</h1><ul
           <option value="0">Off</option>
           <option value="255">On</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_3_1" type="integer" groupName="configuration">
@@ -91,17 +92,19 @@ Set the sensitivity for the PIR (Passive Infrared Sensor).<br /> <h1>Overview</h
         <options>
           <option value="0">Disable</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_4_1" type="integer" groupName="configuration">
         <label>4: Light Threshold</label>
         <description><![CDATA[
-Set the illumination threshold to turn on the light.<br /> <h1>Overview</h1><p>When the event triggers and the environment illumination is lower than the threshold, the device will turn on the light.</p> <ul> <li>0 = Turn off illumination detected function and never turn</li> </ul>
+Set the illumination threshold to turn on the light.<br /> <h1>Overview</h1><p>When the event triggered and the environment illumination lower then the threshold, the device will turn on the light.</p><p>0 means turn off illumination detected function. And never turn on the light.</p><p>1 means darkest.99 means brightest.</p><p>100 means turn off illumination detected function. And always turn on the light.</p>
         ]]></description>
         <default>100</default>
         <options>
           <option value="0">Disable</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_5_1" type="integer" groupName="configuration">

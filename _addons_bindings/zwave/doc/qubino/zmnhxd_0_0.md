@@ -111,6 +111,7 @@ The following table summarises the channels available for the ZMNHXD -:
 | Electric meter (watts) | meter_watts | meter_watts | Energy | Number | 
 | Electric meter (kWh) | meter_kwh | meter_kwh | Energy | Number | 
 | Electric meter (kVAh) | meter_kvah | meter_kvah | Energy | Number | 
+| Reset the total power consumption | meter_reset | meter_reset | Energy | Switch | 
 | Electric meter (power factor) 1 | meter_powerfactor1 | meter_powerfactor | Energy | Number | 
 | Electric meter (watts) 1 | meter_watts1 | meter_watts | Energy | Number | 
 | Electric meter (kWh) 1 | meter_kwh1 | meter_kwh | Energy | Number | 
@@ -147,6 +148,11 @@ The ```meter_kwh``` channel is of type ```meter_kwh``` and supports the ```Numbe
 Indicates the energy consumption (kVAh).
 
 The ```meter_kvah``` channel is of type ```meter_kvah``` and supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
+
+### Reset the total power consumption
+Reset the meter.
+
+The ```meter_reset``` channel is of type ```meter_reset``` and supports the ```Switch``` item and is in the ```Energy``` category.
 
 ### Electric meter (power factor) 1
 Indicates the instantaneous power factor.
@@ -460,7 +466,7 @@ Association group 1 supports 1 node.
 |---------------|---------|
 | COMMAND_CLASS_NO_OPERATION_V1| |
 | COMMAND_CLASS_BASIC_V1| |
-| COMMAND_CLASS_METER_V3| Linked to BASIC|
+| COMMAND_CLASS_METER_V4| Linked to BASIC|
 | COMMAND_CLASS_TRANSPORT_SERVICE_V1| |
 | COMMAND_CLASS_CRC_16_ENCAP_V1| |
 | COMMAND_CLASS_ASSOCIATION_GRP_INFO_V1| |
@@ -482,7 +488,7 @@ Association group 1 supports 1 node.
 | Command Class | Comment |
 |---------------|---------|
 | COMMAND_CLASS_BASIC_V1| |
-| COMMAND_CLASS_METER_V3| Linked to BASIC|
+| COMMAND_CLASS_METER_V4| Linked to BASIC|
 | COMMAND_CLASS_ASSOCIATION_GRP_INFO_V1| |
 | COMMAND_CLASS_ZWAVEPLUS_INFO_V1| |
 | COMMAND_CLASS_ASSOCIATION_V2| |
@@ -493,7 +499,7 @@ Association group 1 supports 1 node.
 | Command Class | Comment |
 |---------------|---------|
 | COMMAND_CLASS_BASIC_V1| |
-| COMMAND_CLASS_METER_V3| Linked to BASIC|
+| COMMAND_CLASS_METER_V4| Linked to BASIC|
 | COMMAND_CLASS_ASSOCIATION_GRP_INFO_V1| |
 | COMMAND_CLASS_ZWAVEPLUS_INFO_V1| |
 | COMMAND_CLASS_ASSOCIATION_V2| |
@@ -504,7 +510,7 @@ Association group 1 supports 1 node.
 | Command Class | Comment |
 |---------------|---------|
 | COMMAND_CLASS_BASIC_V1| |
-| COMMAND_CLASS_METER_V3| Linked to BASIC|
+| COMMAND_CLASS_METER_V4| Linked to BASIC|
 | COMMAND_CLASS_ASSOCIATION_GRP_INFO_V1| |
 | COMMAND_CLASS_ZWAVEPLUS_INFO_V1| |
 | COMMAND_CLASS_ASSOCIATION_V2| |
@@ -515,7 +521,7 @@ Association group 1 supports 1 node.
 | Command Class | Comment |
 |---------------|---------|
 | COMMAND_CLASS_BASIC_V1| |
-| COMMAND_CLASS_METER_V3| Linked to BASIC|
+| COMMAND_CLASS_METER_V4| Linked to BASIC|
 | COMMAND_CLASS_ASSOCIATION_GRP_INFO_V1| |
 | COMMAND_CLASS_ZWAVEPLUS_INFO_V1| |
 | COMMAND_CLASS_ASSOCIATION_V2| |
