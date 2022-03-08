@@ -7,7 +7,7 @@ title: Rules Blockly - Items & Things
 [return to Blockly Reference](index.html#items-and-things)
 
 *Items* and *Things* are the [major entities of openHAB](https://www.openhab.org/docs/concepts/) to control and monitor the home.
-These can be accessed via the "Items & Things" section of the [Blockly Toolbox]({{base}}/configuration/index.html#blockly-toolbox).
+These can be accessed via the "Items & Things" section of the [Blockly Toolbox](/docs/configuration/index.html#blockly-toolbox).
 
 {::options toc_levels="2..4"/}
 
@@ -28,7 +28,7 @@ Both are possible using the item-block and thing-block
 
 > ![blockly-item-thing](../images/blockly/blockly-item-thing.png)
 
-However, these blocks are not useful by themselves - they are always used together with another block.
+However, **these blocks are not useful by themselves** - they are always used together with another block.
 The example below uses the *get state of item* block to retrieve the *MainSwitch* *item* state, before checking if that is equal to ON within a standard comparison block
 
 ![blockly-item-example](../images/blockly/blockly-item-example.png)
@@ -41,6 +41,8 @@ The example below uses the *get state of item* block to retrieve the *MainSwitch
 
 Function: Retrieves a specific **Item** or **Group** for use in other item related functions.
 
+- Tip: never use this block alone as it only returns the items name which alone does not make sense.
+Instead use the get-Item-Block below.
 - Clicking 'MyItem' displays a list of **Items** to pick from
 - Technically this block returns the *name* of the item as a String.
 - As a result, this block can be used wherever the item name is required as a String.
@@ -55,6 +57,11 @@ Function: Gets an **Item** for use in other item related functions
 - Clicking 'MyItem' displays a list of **Items** to pick from.
 - Technically this block returns an item *object*, to be used to retrieve specific attributes using other blocks (see below).
 - As this block does not return a String it cannot be directly attached to a log-block, as demonstrated below.
+  - **Tip:** Often you do want to retrieve the state, hence use the "Get State of Item"-block below
+  - The block returns the item itself.
+If you want to log the items information you can assign it to a variable first and the log the variable.
+
+![logging-getItem](../images/blockly/blockly-getItem-with-var.png)
 
 ![blockly-getItemStateDoesntFit](../images/blockly/blockly-getItemStateDoesntFit.png)
 
@@ -64,7 +71,13 @@ Function: Gets an **Item** for use in other item related functions
 
 Function: Get the current state of an **Item** or **Group**
 
-- Should return the state of an item as a String like ON/OFF, the temperature value etc.
+- Returns the [state](https://www.openhab.org/docs/configuration/items.html#state) of an item like ON/OFF, the temperature value etc.
+
+Note that most of the states can and will be directly **converted automatically to a String** but be careful that some of the **more complex states may instead return a complex object instead**.
+
+**Tip:** it is recommended in this case to assign this to a variable and use the "String-Append-Text" with an empty "" to convert it into a String for further processing.
+
+See the [Item-State documentation](https://www.openhab.org/docs/configuration/items.html#state) for more information
 
 Note: currently a String is not always returned.
 [See this thread](https://community.openhab.org/t/blockly-cannot-split-text-string-from-string-item/130819) for reference and potential workaround.
@@ -138,7 +151,7 @@ Function: Sends a command or posts an update to an **Item** or **Group**.
 - value: any state value that is allowed for that item, eg. ON or OFF for a switch.
 - Clicking 'MyItem' displays a list of **Items** to pick one item from
 
-For the difference between *send command* and *post update* two check ["Manipulating States"](https://www.openhab.org/docs/configuration/rules-dsl.html#manipulating-item-states).
+For the difference between *send command* and *post update* see ["Manipulating States"](https://www.openhab.org/docs/configuration/rules-dsl.html#manipulating-item-states) and ["Event Bus Actions"](https://www.openhab.org/docs/configuration/actions.html#event-bus-actions).
 
 **Item-block examples**
 
@@ -167,7 +180,7 @@ Function: Retrieves a specific **Thing** for use in other thing related function
 
 - Clicking 'MyThing' displays a list of **Things** to pick from
 - Technically this block returns the thingUid of the thing as a String
-- Learn more about things [here](https://www.openhab.org/docs/configuration/things.html)
+- Learn more about [things](https://www.openhab.org/docs/configuration/things.html) or [thing-concepts](https://www.openhab.org/docs/concepts/things.html)
 
 **Example**
 
