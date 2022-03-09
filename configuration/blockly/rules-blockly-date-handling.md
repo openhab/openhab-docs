@@ -67,8 +67,14 @@ The time is set to `00:00:00`.
 
 Type: *ZonedDateTime*
 
-From a String in the format `yyyy-MM-dd`, this block will return the date as *ZonedDateTime*. The input String  may be a variable-block.
-The time will be `00:00:00`.
+This block will return the date as *ZonedDateTime* based on a given String.
+The String may be one of the following formats
+
+- yyyy-MM-dd
+- yyyy-MM-dd HH:mm:ss
+- yyyy-MM-dd HH:mm:ss +HH:mm
+
+The input String  may be a variable-block.
 
 ### Get Date now with offset
 
@@ -77,6 +83,15 @@ The time will be `00:00:00`.
 Type: *ZonedDateTime*
 
 Returns a date as *ZonedDateTime* with offset relative to the current date *and* time.
+
+The options for the time period base are
+
+- seconds
+- minutes
+- hours
+- days
+- months
+- years
 
 ### Get String representation of date
 

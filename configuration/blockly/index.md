@@ -6,7 +6,7 @@ title: Rules Blockly
 
 # Blockly Reference
 
-One of the core feature that OpenHAB provides is writing rules to allow specific behaviour with the home automation system. The usual way of developing rules is by coding them like described in the [Textual Rules]({{base}}/configuration/rules-dsl.html).
+One of the core feature that OpenHAB provides is writing rules to allow specific behaviour with the home automation system. The usual way of developing rules is by coding them like described in the [Textual Rules](/docs/configuration/rules-dsl.html).
 However, this art of programming may become intimidating early on and shy away away people with few or almost no experience in programming.
 Therefore openHAB also provides a graphical way of writing rules which allows to put together rules in a rather visual way (even though some programming background may still help).
 
@@ -128,7 +128,7 @@ See [Value Storage](rules-blockly-value-storage.html) section.
 
 This section allows calling rules or other scripts, retrieving attributes provided by the rule context or transforming values via different conversion methods (e.g. map, regex, jsonpath)
 
-[![Run & Process](../images/blockly/blockly-value-storage-small.png "Value Storage")
+[![Run & Process](../images/blockly/blockly-run-and-process-small.png "Run & Process")
 ](rules-blockly-run-and-process.html)
 
 See [Run and Process](rules-blockly-run-and-process.html) section.
@@ -137,7 +137,7 @@ See [Run and Process](rules-blockly-run-and-process.html) section.
 
 This section allows calling rules or other scripts, retrieving attributes provided by the rule context or transforming values via different conversion methods (e.g. map, regex, jsonpath)
 
-[![Logging](../images/blockly/blockly-value-storage-small.png "Logging")
+[![Logging](../images/blockly/blockly-logging-overview-small.png "Logging")
 ](rules-blockly-logging.html)
 
 See [Logging](rules-blockly-logging.html) section.
