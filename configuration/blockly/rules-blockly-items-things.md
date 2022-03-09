@@ -41,7 +41,7 @@ The example below uses the *get state of item* block to retrieve the *MainSwitch
 
 Function: Retrieves a specific **Item** or **Group** for use in other item related functions.
 
-- Tip: never use this block alone as it only returns the items name which alone does not make sense.
+- **Tip:** never use this block alone as it only returns the items name which alone does not make sense.
 Instead use the get-Item-Block below.
 - Clicking 'MyItem' displays a list of **Items** to pick from
 - Technically this block returns the *name* of the item as a String.
