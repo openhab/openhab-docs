@@ -54,7 +54,7 @@ Even though (2) is not trivial but after having done that the usage of the funct
 
 ### Play Audio with Volume
 
-![img.png](../images/blockly/blockly-play-audio-with-volume.png)
+![play-audio](../images/blockly/blockly-play-audio-with-volume.png)
 
 *Function:* Plays an audio file on an audio sink and setting the volume at the same time
 

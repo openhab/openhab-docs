@@ -41,6 +41,8 @@ A Script *is* a Rule too. It’s just a special type of rule that only has a sin
 
 - No parameters can be provided
 
+See [openHAB Call-Script](https://www.openhab.org/docs/configuration/actions.html#openhab-subsystem-actions) for background information
+
 ### Run Rule or Script created in UI
 
 ![run-rule-or-script](../images/blockly/blockly-run-rule.png)
@@ -83,7 +85,7 @@ This retrieves the value for the key "myKey1" that was passed by the calling rul
 A rule carries contextual information when triggered - this block can retrieve that information.
 
 - The rule trigger type defines which of the attributes are available to the rule - they will not all be available.
-- For more detailed information see [Event Object Attributes](https://openhab-scripters.github.io/openhab-helper-libraries/Guides/Event%20Object%20Attributes.html)
+- For more detailed information see [Event Object Attributes](https://openhab-scripters.github.io/openhab-helper-libraries/Guides/Event%20Object%20Attributes.html) or [openHAB Events](https://www.openhab.org/docs/developer/utils/events.html).
 
 ## Transform values via Map, Regex or JsonPath and others
 
