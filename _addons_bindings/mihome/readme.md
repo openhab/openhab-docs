@@ -261,8 +261,8 @@ rule "Mijia & Aqara Wireless Switch"
 when
     Channel "mihome:sensor_switch:<GwID>:<ID>:button" triggered
 then
-    var actionName = receivedEvent.getEvent()
-    switch(actionName) {
+    
+    switch(receivedEvent) {
         case "SHORT_PRESSED": {
             <ACTION>
         }
@@ -282,8 +282,7 @@ rule "Mijia & Aqara Cube Controller"
 when
     Channel 'mihome:sensor_cube:<GwID>:<ID>:action' triggered
 then
-    var actionName = receivedEvent.getEvent()
-    switch(actionName) {
+    switch(receivedEvent) {
         case "MOVE": {
             <ACTION>
         }
@@ -318,8 +317,7 @@ rule "Aqara Smart Motion Sensor"
 when
     Channel 'mihome:sensor_vibration:<GwID>:<ID>:action' triggered
 then
-    var actionName = receivedEvent.getEvent()
-    switch(actionName) {
+    switch(receivedEvent) {
         case "VIBRATE": {
             <ACTION>
         }
