@@ -110,6 +110,7 @@ Enable or disable manual on/off control from the toggle.<br /> <h1>Overview</h1>
         ]]></description>
         <default>1</default>
         <options>
+          <option value="1">physical toggle and Zwave control enabled</option>
           <option value="2">physical toggle and Z-Wave control disabled</option>
         </options>
       </parameter>

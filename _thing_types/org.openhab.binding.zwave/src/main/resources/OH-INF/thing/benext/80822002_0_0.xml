@@ -15,7 +15,7 @@ Keyfob with red panic button, lock button and unlock button<br /> <h1>Overview</
     <!-- CHANNEL DEFINITIONS -->
     <channels>
       <channel id="basic_switch_binary" typeId="switch_binary">
-        <label>Lock or unlock pressed</label>
+        <label>Lock (ON) or unlock (OFF) pressed</label>
         <properties>
           <property name="binding:*:OnOffType">COMMAND_CLASS_BASIC</property>
         </properties>
@@ -27,7 +27,7 @@ Keyfob with red panic button, lock button and unlock button<br /> <h1>Overview</
         </properties>
       </channel>
       <channel id="alarm_general" typeId="alarm_general">
-        <label>Alarm</label>
+        <label>Alarm toggle, switches from ON to OFF, or OFF to ON when pressed</label>
         <properties>
           <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;NOGET</property>
         </properties>
@@ -46,6 +46,7 @@ Keyfob with red panic button, lock button and unlock button<br /> <h1>Overview</
       <property name="manufacturerId">008A</property>
       <property name="manufacturerRef">0014:0101</property>
       <property name="dbReference">1380</property>
+      <property name="commandClass:COMMAND_CLASS_ALARM">getSupported=false</property>
       <property name="defaultAssociations">1</property>
     </properties>
 

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="resideo_39455_00_000" listed="false">
+    <label>Z5SWITCH Z-WAVE IN-WALL SMART SWITCH</label>
+    <description><![CDATA[
+Z-WAVE IN-WALL SMART SWITCH<br /> <h1>Overview</h1><p>Resideo Technologies (Honeywell) In-Wall Z-Wave Plus Smart Switch. Works with all LED, CFL, Incandescent and halogen bulbs, and other devices. Includes white and light almond paddle. Model: ZW4008/39455</p> <br /> <h2>Inclusion Information</h2><ol><li>1. Follow the instructions for your Z-Wave certified controller to add a device to the Z-Wave network.</li><li>Once the controller is ready to add your device, press and release the top or bottom of the smart switch (rocker) to add it in the network. If prompted by the controller to enter the S2 security code, refer to the QR code/security number on the back of the box, or the QR code label on the product.</li></ol> <br /> <h2>Exclusion Information</h2><ol><li>Follow the instructions for your Z-Wave certified controller to remove a device from the Z-Wave network.</li><li>Once the controller is ready to remove your device, press and release the top or bottom of the smart switch (rocker) to remove it from the network. </li></ol> <br /> <h2>Wakeup Information</h2><p><br /></p>
+    ]]></description>
+    <category>WallSwitch</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_binary" typeId="switch_binary">
+        <label>Switch</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY</property>
+        </properties>
+      </channel>
+      <channel id="scene_number" typeId="scene_number">
+        <label>Scene Number</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_SCENE_ACTIVATION</property>
+        </properties>
+      </channel>
+      <channel id="scene_number" typeId="scene_number">
+        <label>Scene Number</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_CENTRAL_SCENE</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Resideo</property>
+      <property name="modelId">Z5SWITCH</property>
+      <property name="manufacturerId">041B</property>
+      <property name="manufacturerRef">4952:3135</property>
+      <property name="dbReference">1475</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_3_1" type="integer" groupName="configuration">
+        <label>3: Blue LED Night Light</label>
+        <description><![CDATA[
+Blue LED Night Light<br /> <h1>Overview</h1><p>This configuration parameter defines the behavior of the blue LED "night light". The default behavior is "ON_WHEN_OFF" - the LED is on when the switch is set to off. The other two options are "ON_WHEN_ON" - the LED is on when the switch is set to on, and "ALWAYS_OFF" - the LED is always off.<br /></p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">LED ON when switch is OFF</option>
+          <option value="1">LED ON when switch is ON</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

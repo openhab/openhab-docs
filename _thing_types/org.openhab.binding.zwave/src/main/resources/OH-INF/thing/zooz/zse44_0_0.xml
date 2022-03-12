@@ -72,7 +72,9 @@ Temperature Humidity Sensor<br /> <h1>Overview</h1><p>Temperature and humidity s
       <!-- PARAMETER DEFINITIONS -->
       <parameter name="config_1_1" type="integer" groupName="configuration">
         <label>1: Battery Reporting Threshold</label>
-        <description>Set the threshold for battery reporting</description>
+        <description><![CDATA[
+Set the threshold for battery reporting<br /> <h1>Overview</h1><p>Sets the percentage change to cause a battery report</p>
+        ]]></description>
         <default>5</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
@@ -80,7 +82,7 @@ Temperature Humidity Sensor<br /> <h1>Overview</h1><p>Temperature and humidity s
       <parameter name="config_2_1" type="integer" groupName="configuration">
         <label>2: Low Battery</label>
         <description><![CDATA[
-When the sensor should report low battery<br /> <h1>Overview</h1><p><br /></p>
+When the sensor should report low battery<br /> <h1>Overview</h1><p>Sets the low battery threshold by percentage</p>
         ]]></description>
         <default>10</default>
         <limitToOptions>false</limitToOptions>
@@ -88,7 +90,9 @@ When the sensor should report low battery<br /> <h1>Overview</h1><p><br /></p>
 
       <parameter name="config_3_1" type="integer" groupName="configuration">
         <label>3: Temperature Reporting Threshold</label>
-        <description>Sensor will send a new temperature report if difference exceeds this threshold</description>
+        <description><![CDATA[
+Sensor will send a new temperature report if difference exceeds this threshold<br /> <h1>Overview</h1><p>Sets change reporting threshold value for temperature in tenths of a degree</p>
+        ]]></description>
         <default>20</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
@@ -121,7 +125,7 @@ Temperature Offset<br /> <h1>Overview</h1><p>0 = -10 degree offset</p><p>100 = 0
       <parameter name="config_16_2" type="integer" groupName="configuration">
         <label>16: Temperature Reporting Interval</label>
         <description><![CDATA[
-Sensor will report temperature at least as often as this value<br /> <h1>Overview</h1><p>0 disables setting</p>
+Sensor will report temperature at least as often as this value<br /> <h1>Overview</h1><p>Sets the time in minutes for the minimum temperature reporting interval</p><p>0 disables setting</p>
         ]]></description>
         <default>240</default>
         <limitToOptions>false</limitToOptions>
@@ -130,7 +134,7 @@ Sensor will report temperature at least as often as this value<br /> <h1>Overvie
       <parameter name="config_17_2" type="integer" groupName="configuration">
         <label>17: Humidity Reporting Interval</label>
         <description><![CDATA[
-Sensor will report humidity at least as often as this value<br /> <h1>Overview</h1><p>0 disables this setting</p>
+Sensor will report humidity at least as often as this value<br /> <h1>Overview</h1><p>Sets the minimum time interval for humidity reports in minutes</p><p>0 disables this setting</p>
         ]]></description>
         <default>240</default>
         <limitToOptions>false</limitToOptions>
