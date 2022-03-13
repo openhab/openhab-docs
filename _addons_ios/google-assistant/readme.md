@@ -43,7 +43,7 @@ _Hint: The value of `ga` is **not** case-sensitive._
 | **Device Type** | [Switch](https://developers.google.com/assistant/smarthome/guides/switch) |
 | **Supported Traits** | [OnOff](https://developers.google.com/assistant/smarthome/traits/onoff) |
 | **Supported Items** | Switch |
-| **Configuration** | (optional) `inverted=true/false` |
+| **Configuration** | (optional) `inverted=true/false`<br>(optional) `checkState=true/false` |
 
 **Example:**
 
@@ -58,7 +58,7 @@ Switch { ga="Switch" [ inverted=false ] }
 | **Device Type** | [Light](https://developers.google.com/assistant/smarthome/guides/light) |
 | **Supported Traits** | [OnOff](https://developers.google.com/assistant/smarthome/traits/onoff), [ColorSetting](https://developers.google.com/assistant/smarthome/traits/colorsetting), [Brightness](https://developers.google.com/assistant/smarthome/traits/brightness) (depending on used item type) |
 | **Supported Items** | Switch, Dimmer, Color |
-| **Configuration** | (optional) `inverted=true/false`<br>(optional) `colorTemperatureRange="minK,maxK"` |
+| **Configuration** | (optional) `inverted=true/false`<br>(optional) `checkState=true/false`<br>(optional) `colorTemperatureRange="minK,maxK"` |
 
 ```shell
 Switch { ga="Light" [ inverted=true ] }
@@ -73,7 +73,7 @@ Color  { ga="Light" [ colorTemperatureRange="2000,9000" ] }
 | **Device Type** | [Light](https://developers.google.com/assistant/smarthome/guides/light) |
 | **Supported Traits** | [OnOff](https://developers.google.com/assistant/smarthome/traits/onoff), [ColorSetting](https://developers.google.com/assistant/smarthome/traits/colorsetting), [Brightness](https://developers.google.com/assistant/smarthome/traits/brightness) |
 | **Supported Items** | Group as `light` with the following members: (optional) Number or Dimmer as `lightBrightness`, (optional) Number or Dimmer as `lightColorTemperature`, (optional) Color as `lightColor`, (optional) Switch as `lightPower` |
-| **Configuration** | (optional) `useKelvin=true/false`<br>(optional) `colorTemperatureRange="minK,maxK"`<br>_Hint: if you want to use `lightColorTemperature` you either need to set `useKelvin=true` or `colorTemperatureRange`_ |
+| **Configuration** | (optional) `useKelvin=true/false`<br>(optional) `checkState=true/false`<br>(optional) `colorTemperatureRange="minK,maxK"`<br>_Hint: if you want to use `lightColorTemperature` you either need to set `useKelvin=true` or `colorTemperatureRange`_ |
 
 ```shell
 Group  lightGroup { ga="Light" [ useKelvin=true, colorTemperatureRange="2000,9000" ] }
@@ -90,7 +90,7 @@ Number colorTemperatureItem (lightGroup) { ga="lightColorTemperature" }
 | **Device Type** | [Scene](https://developers.google.com/assistant/smarthome/guides/scene) |
 | **Supported Traits** | [Scene](https://developers.google.com/assistant/smarthome/traits/scene) |
 | **Supported Items** | Switch |
-| **Configuration** | (optional) `sceneReversible=true/false` |
+| **Configuration** | (optional) `sceneReversible=true/false`<br>(optional) `checkState=true/false` |
 
 ```shell
 Switch { ga="Scene" [ sceneReversible=false ] }
@@ -103,7 +103,7 @@ Switch { ga="Scene" [ sceneReversible=false ] }
 | **Device Type** | [Outlet](https://developers.google.com/assistant/smarthome/guides/outlet), [Coffee_Maker](https://developers.google.com/assistant/smarthome/guides/coffeemaker), [WaterHeater](https://developers.google.com/assistant/smarthome/guides/outlet), [Fireplace](https://developers.google.com/assistant/smarthome/guides/fireplace) |
 | **Supported Traits** | [OnOff](https://developers.google.com/assistant/smarthome/traits/onoff) |
 | **Supported Items** | Switch |
-| **Configuration** | (optional) `inverted=true/false` |
+| **Configuration** | (optional) `inverted=true/false`<br>(optional) `checkState=true/false` |
 
 ```shell
 Switch { ga="Outlet" [ inverted=true ] }
@@ -119,7 +119,7 @@ Switch { ga="Fireplace" }
 | **Device Type** | [Valve](https://developers.google.com/assistant/smarthome/guides/valve) |
 | **Supported Traits** | [OpenClose](https://developers.google.com/assistant/smarthome/traits/openclose) |
 | **Supported Items** | Switch |
-| **Configuration** | (optional) `inverted=true/false` |
+| **Configuration** | (optional) `inverted=true/false`<br>(optional) `checkState=true/false` |
 
 ```shell
 Switch { ga="Valve" [ inverted=true ] }
@@ -132,7 +132,7 @@ Switch { ga="Valve" [ inverted=true ] }
 | **Device Type** | [Sprinkler](https://developers.google.com/assistant/smarthome/guides/sprinkler), [Vacuum](https://developers.google.com/assistant/smarthome/guides/vacuum) |
 | **Supported Traits** | [StartStop](https://developers.google.com/assistant/smarthome/traits/startstop) |
 | **Supported Items** | Switch |
-| **Configuration** | (optional) `inverted=true/false` |
+| **Configuration** | (optional) `inverted=true/false`<br>(optional) `checkState=true/false` |
 
 ```shell
 Switch { ga="Sprinkler" [ inverted=true ] }
@@ -146,7 +146,7 @@ Switch { ga="Vacuum" [ inverted=false ] }
 | **Device Type** | [Lock](https://developers.google.com/assistant/smarthome/guides/lock) |
 | **Supported Traits** | [LockUnlock](https://developers.google.com/assistant/smarthome/traits/lockunlock) |
 | **Supported Items** | Contact (no device control), Switch |
-| **Configuration** | (optional) `ackNeeded=true/false`<br>(optional) `pinNeeded="1234"` |
+| **Configuration** | (optional) (optional) `inverted=true/false`<br>(optional) `checkState=true/false`<br>`ackNeeded=true/false`<br>(optional) `pinNeeded="1234"` |
 
 ```shell
 Switch { ga="Lock" [ ackNeeded=true ] }
@@ -160,7 +160,7 @@ Switch { ga="Lock" [ pinNeeded="1234" ] }
 | **Device Type** | [SecuritySystem](https://developers.google.com/assistant/smarthome/guides/securitysystem) |
 | **Supported Traits** | [ArmDisarm](https://developers.google.com/assistant/smarthome/traits/armdisarm) |
 | **Supported Items** | Switch |
-| **Configuration** | (optional) `ackNeeded=true/false`<br>(optional) `pinNeeded="1234"`<br>(optional) `pinOnDisarmOnly=true/false`<br>(optional) `waitForStateChange=2` |
+| **Configuration** | (optional) (optional) `inverted=true/false`<br>(optional) `checkState=true/false`<br>`ackNeeded=true/false`<br>(optional) `pinNeeded="1234"`<br>(optional) `pinOnDisarmOnly=true/false`<br>(optional) `waitForStateChange=2` |
 
 When used as a Switch, you will be limited to arming and disarming the system.
 
@@ -179,22 +179,23 @@ Switch houseAlarm "House Alarm" { ga="SecuritySystem", pinNeeded="1234" }
 | **Device Type** | [SecuritySystem](https://developers.google.com/assistant/smarthome/guides/securitysystem) |
 | **Supported Traits** | [ArmDisarm](https://developers.google.com/assistant/smarthome/traits/armdisarm)<br>[StatusReport](https://developers.google.com/assistant/smarthome/traits/statusreport) |
 | **Supported Items** | Group as `SecuritySystem` with the following members: <br>Switch as `securitySystemArmed`<br>(optional) String as `securitySystemArmLevel`<br>(optional) Switch as `securitySystemTrouble`<br>(optional) String as `securitySystemTroubleCode`<br>(optional) Contact as `securitySystemZone` |
-| **Configuration** | (optional) `ackNeeded=true/false`<br>(optional) `pinNeeded="1234"`<br> (optional) `pinOnDisarmOnly=true/false` <br>(optional) `waitForStateChange=2`<br>(optional) `armLevels="L1=Level 1,L2=Level 2"`<br><br>Specifically on Zone Contacts:<br>(required) `zoneType=OpenClose/Motion` <br>(optional) `blocking=true/false`|
+| **Configuration** | (optional) `inverted=true/false`<br>(optional) `checkState=true/false`<br>(optional) `ackNeeded=true/false`<br>(optional) `pinNeeded="1234"`<br> (optional) `pinOnDisarmOnly=true/false` <br>(optional) `waitForStateChange=2`<br>(optional) `armLevels="L1=Level 1,L2=Level 2"`<br><br>Specifically on Zone Contacts:<br>(required) `zoneType=OpenClose/Motion` <br>(optional) `blocking=true/false`|
 
 Configuring the `SecuritySystem` as a Group will enable a lot of advanced functionality.
 
 The `Switch` and the `Group` configuration support the following configuration parameters:
 
-* `ackNeeded=true` will request an acknowledgement performing an action.
+* `checkState=true` will compare the current state with the requested one and responds accordingly.
+* `ackNeeded=true` will request an acknowledgement before performing an action.
 * `pinNeeded="1234"` will request and check the configured PIN before performing an action.
 * `pinOnDisarmOnly=true` will enforce the PIN on disarming only. Arming will be done without the PIN.
-* `waitForStateChange=0` is the number of seconds to wait for the security system state to update before checking that the arm/disarm was successful. Defaults to 0 if not specified.
+* `waitForStateChange=0` defines the number of seconds to wait for the security system state to update before checking that the arm/disarm was successful. Defaults to 0 if not specified.
 
 When configured as a group, you can add arm levels as well as report errors and get details of zones causing the system to not arm.
 
 `armLevels="Key=Label"` - The label is used for commanding Google Assistant, the key is the matching value sent to openHAB.
 
-Google Command: "*Hey Google, set House Alarm to Level 1*" (L1 sent to item).
+Google Command: "_Hey Google, set House Alarm to Level 1_" (L1 sent to item).
 
 When using arm levels, Google will send the mapped level ID (L1,L2 in below example) to the item tagged with `securitySystemArmLevel` when you use the arm command. It will then use the status of the item `securitySystemArmed` to confirm that arming was successful.
 
@@ -233,7 +234,7 @@ String { ga="Camera" [ protocols="hls,dash" ] }
 | **Device Type** | [Speaker](https://developers.google.com/assistant/smarthome/guides/speaker) |
 | **Supported Traits** | [Volume](https://developers.google.com/assistant/smarthome/traits/volume) |
 | **Supported Items** | Dimmer |
-| **Configuration** | (optional) `volumeDefaultPercentage="20"`<br>(optional) `levelStepSize="5"`<br>(optional) `volumeMaxLevel="100"` |
+| **Configuration** | (optional) `checkState=true/false`<br>(optional) `volumeDefaultPercentage="20"`<br>(optional) `levelStepSize="5"`<br>(optional) `volumeMaxLevel="100"` |
 
 ```shell
 Dimmer { ga="Speaker" [ volumeDefaultPercentage="50", levelStepSize="10", volumeMaxLevel="90" ] }
@@ -246,7 +247,7 @@ Dimmer { ga="Speaker" [ volumeDefaultPercentage="50", levelStepSize="10", volume
 | **Device Type** | [TV](https://developers.google.com/assistant/smarthome/guides/tv) |
 | **Supported Traits** | [OnOff](https://developers.google.com/assistant/smarthome/traits/onoff), [Volume](https://developers.google.com/assistant/smarthome/traits/volume), [TransportControl](https://developers.google.com/assistant/smarthome/traits/transportcontrol), [InputSelector](https://developers.google.com/assistant/smarthome/traits/inputselector), [AppSelector](https://developers.google.com/assistant/smarthome/traits/appselector), [Channel](https://developers.google.com/assistant/smarthome/traits/channel) (depending on used members) |
 | **Supported Items** | Group as `TV` with the following optional members: Switch as `tvPower`, Switch as `tvMute`, Dimmer as `tvVolume`, String as `tvChannel`, String as `tvInput`, String as `tvApplication`, Player as `tvTransport` |
-| **Configuration** | (optional) `volumeDefaultPercentage="20"`<br>(optional) `levelStepSize="5"`<br>(optional) `volumeMaxLevel="100"`<br>(optional) `transportControlSupportedCommands="NEXT,PREVIOUS,PAUSE,RESUME"`<br>(optional) `availableChannels="channelNumber=channelId=channelName:channelSynonym:...,..."`<br>(optional) `availableInputs="inputKey=inputName:inputSynonym:...,..."`<br>(optional) `availableApplications="applicationKey=applicationName:applicationSynonym:...,..."`<br>(optional) `lang="en"` |
+| **Configuration** | (optional) `checkState=true/false`<br>(optional) `volumeDefaultPercentage="20"`<br>(optional) `levelStepSize="5"`<br>(optional) `volumeMaxLevel="100"`<br>(optional) `transportControlSupportedCommands="NEXT,PREVIOUS,PAUSE,RESUME"`<br>(optional) `availableChannels="channelNumber=channelId=channelName:channelSynonym:...,..."`<br>(optional) `availableInputs="inputKey=inputName:inputSynonym:...,..."`<br>(optional) `availableApplications="applicationKey=applicationName:applicationSynonym:...,..."`<br>(optional) `lang="en"` |
 
 ```shell
 Group  tvGroup { ga="TV" [ volumeDefaultPercentage="20", levelStepSize="10", volumeMaxLevel="100", transportControlSupportedCommands="NEXT,PREVIOUS,PAUSE,RESUME", availableChannels="1=Channel1=NBC,2=Channel2=CBS", availableInputs="hdmi1=xbox:gaming,hdmi2=settopbox", availableApplications: "youtube=YouTube:Tube,netflix=Netflix:Chill" ] }
@@ -266,7 +267,7 @@ Player transportItem   (tvGroup) { ga="tvTransport" }
 | **Device Type** | [Fan](https://developers.google.com/assistant/smarthome/guides/fan), [Hood](https://developers.google.com/assistant/smarthome/guides/hood), [AirPurifier](https://developers.google.com/assistant/smarthome/guides/airpurifier) |
 | **Supported Traits** | [OnOff](https://developers.google.com/assistant/smarthome/traits/OnOff), [FanSpeed](https://developers.google.com/assistant/smarthome/traits/fanspeed) (depending on used item type) |
 | **Supported Items** | Switch (no speed control), Dimmer |
-| **Configuration** | (optional) `speeds="0=away:zero,50=default:standard:one,100=high:two"`<br>(optional) `lang="en"`<br>(optional) `ordered=true/false`<br>_Hint: if you are using a Dimmer then `speeds` is required_ |
+| **Configuration** | (optional) `checkState=true/false`<br>(optional) `speeds="0=away:zero,50=default:standard:one,100=high:two"`<br>(optional) `lang="en"`<br>(optional) `ordered=true/false`<br>_Hint: if you are using a Dimmer then `speeds` is required_ |
 
 Fans (and similar device types, like AirPurifier or Hood) support the `FanSpeed` trait.
 With that you will be able to set up and use human speakable modes, e.g. "fast" for 100% or "slow" for 25%.
@@ -289,7 +290,7 @@ Dimmer { ga="AirPurifier" [ speeds="0=off,50=mid,100=high" ] }
 | **Device Type** | [Awning](https://developers.google.com/assistant/smarthome/guides/awning), [Blinds](https://developers.google.com/assistant/smarthome/guides/blinds), [Curtain](https://developers.google.com/assistant/smarthome/guides/curtain), [Door](https://developers.google.com/assistant/smarthome/guides/door), [Garage](https://developers.google.com/assistant/smarthome/guides/garage), [Gate](https://developers.google.com/assistant/smarthome/guides/gate), [Pergola](https://developers.google.com/assistant/smarthome/guides/pergola), [Shutter](https://developers.google.com/assistant/smarthome/guides/shutter), [Window](https://developers.google.com/assistant/smarthome/guides/window) |
 | **Supported Traits** | [OpenClose](https://developers.google.com/assistant/smarthome/traits/openclose), [StartStop](https://developers.google.com/assistant/smarthome/traits/startstop) |
 | **Supported Items** | Contact (no device control), Switch (no open percentage), Rollershutter |
-| **Configuration** | (optional) `inverted=true/false` |
+| **Configuration** | (optional) `inverted=true/false`<br>(optional) `checkState=true/false` |
 
 Blinds and similar devices should always use the `Rollershutter` item type for proper functionality.
 Since Google and openHAB use the opposite percentage value for "opened" and "closed", the action will translate this automatically.
@@ -317,7 +318,7 @@ Rollershutter { ga="Window" }
 | **Device Type** | [Charger](https://developers.google.com/assistant/smarthome/guides/charger) |
 | **Supported Traits** | [EnergyStorage](https://developers.google.com/assistant/smarthome/traits/energystorage) |
 | **Supported Items** | Group as `Charger` with the following optional members: Switch as `chargerCharging`, Switch as `chargerPluggedIn`, Number or Dimmer as `chargerCapacityRemaining`, Number or Dimmer as `chargerCapacityUntilFull` |
-| **Configuration** | (optional) `isRechargeable=true/false`<br>(optional) `unit="PERCENTAGE"` |
+| **Configuration** | (optional) `checkState=true/false`<br>(optional) `isRechargeable=true/false`<br>(optional) `unit="PERCENTAGE"` |
 
 The configuration option `unit` supports the following values: `PERCENTAGE` (default), `SECONDS`, `MILES`, `KILOMETERS`, `KILOWATT_HOURS`
 
@@ -353,7 +354,7 @@ Number { ga="TemperatureSensor" [ useFahrenheit=true ] }
 | **Device Type** | [Thermostat](https://developers.google.com/assistant/smarthome/guides/thermostat) |
 | **Supported Traits** | [TemperatureSetting](https://developers.google.com/assistant/smarthome/traits/temperaturesetting) |
 | **Supported Items** | Group as `Thermostat` with the following optional members: Number as `thermostatTemperatureAmbient`, Number as `thermostatTemperatureSetpoint`, Number as `thermostatTemperatureSetpointLow`, Number as `thermostatTemperatureSetpointHigh`, Number as `thermostatHumidityAmbient`, String or Number as `thermostatMode` |
-| **Configuration** | (optional) `useFahrenheit=true/false`<br>(optional) `thermostatTemperatureRange="10,30"`<br>(optional) `modes="off=OFF:WINDOW_OPEN,heat=COMFORT:BOOST,eco=ECO,on=ON,auto"` |
+| **Configuration** | (optional) `checkState=true/false`<br>(optional) `useFahrenheit=true/false`<br>(optional) `thermostatTemperatureRange="10,30"`<br>(optional) `modes="off=OFF:WINDOW_OPEN,heat=COMFORT:BOOST,eco=ECO,on=ON,auto"` |
 
 Thermostat requires a group of items to be properly configured to be used with Google Assistant. The default temperature unit is Celsius.
 To change the temperature unit to Fahrenheit, add the config option `useFahrenheit=true` to the thermostat group.
@@ -411,6 +412,8 @@ For devices supporting the OpenClose trait, the attributes `[ discreteOnly=false
 
 * `discreteOnly` defaults to false. When set to true, this indicates that the device must either be fully open or fully closed (that is, it does not support values between 0% and 100%). An example of such a device may be a valve.
 * `queryOnly` defaults to false. Is set to true for `Contact` items. Indicates if the device can only be queried for state information and cannot be controlled. Sensors that can only report open state should set this field to true.
+
+All device types support checking the current state before sending an updated state by a command. This can be enabled by setting `[ checkState=true ]` in the metadata. When this is enabled, the current state of the target item is queried and compared to the potential new state triggered by the command. If it is identical, a special error message is triggered and communicated to the user.
 
 ---
 
