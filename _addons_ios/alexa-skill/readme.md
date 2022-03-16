@@ -103,7 +103,7 @@ Switch LightSwitch "Light Switch" {alexa="Light"}
 
 Setting this on a single item will create an Alexa endpoint as a lighting device with the spoken addressable name "Light Switch" and power control capability. You can ask *Alexa, turn on Light Switch*.
 
-In openHAB, a "Dimmer" item responds to both brightness and on/off commands. Using the same metadata device on that item will give power and brightness control to the Alexa endpoint. Alternatively, the device name can be defined in the metadata parameters, instead of the item label, along with a customized description that will show in the Alexa app. You can ask *Alexa, turn on Light Switch* well as *Alexa, set Light Switch to 50%*.
+In openHAB, a "Dimmer" item responds to both brightness and on/off commands. Using the same metadata device on that item will give power and brightness control to the Alexa endpoint. Alternatively, the device name can be defined in the metadata parameters, instead of the item label, along with a customized description that will show in the Alexa app. You can ask *Alexa, turn on Light Switch* as well as *Alexa, set Light Switch to 50%*.
 
 ```xtend
 Dimmer LightSwitch {alexa="Light" [name="Light Switch", description="Super Smart Light"]}

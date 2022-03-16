@@ -292,7 +292,10 @@ The following devices have been tested by openHAB users with the binding. This l
 | SmartThings Plug                               | Metered Plug                                                 |
 | SmartThings Motion Sensor                      | CentraLite 3325-S Motion and Temperature sensor              |
 | SmartThings Contact Sensor                     | Contact and Temperature sensor                               |
-| SONSOFF SNZB-02                                | SONOFF Temperature sensor                                    |
+| SONOFF SNZB-01                                 | Button (On/Off toggle switch) eWeLink WB01                   |
+| SONOFF SNZB-02                                 | Sensor (Temperature, Humidity) eWeLink TH01                  |
+| SONOFF SNZB-03                                 | Sensor (Motion Intrusion, Tamper, Low Battery) eWeLink MS01  |
+| SONOFF SNZB-04                                 | Sensor (Contact Portal 1, Tamper, Low Battery) eWeLink DS01  |
 | Telkonet EcoInsight Thermostat                 | Intelligent HVAC Thermostat                                  |
 | Trust Bulbs                                    | _[<sup>[1]</sup> ](#note1)_                                  |
 | Ubisys modules                                 | D1 Dimmer, S1/S2 Switch modules                              |
