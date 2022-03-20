@@ -11,14 +11,13 @@ title: Building Pages - Components & Widgets
 **UI components** are the basic building blocks for many UIs in openHAB 3.
 The Main UI Pages and Personal Widgets are notable UI components, but Sitemaps that were created in the UI and HABPanel dashboards are as well.
 
-These structures make up hierarchies that notably define the pages in their entirety are relatively simple:
-
+These structures make up hierarchies that notably define the pages in their entirety, and are relatively simple.
 Each component has:
 
 - A **type**
 - Most of the time, a set of **configuration properties**
 - Optionally, a set of **named slots** which hold collections of more components. By putting components into slots, we therefore define a hierarchy.
-Slots are optional, and have a name; usually when there’s slots involved there’s a `default` slot but not always.
+Slots are optional, and have a name; usually when there’re slots involved there’s a `default` slot but not always.
 
 The semantics of both the config properties and the slots depend on the component type, as well as the allowed sub-component types in the slots.
 The Component Reference provide details on what you can put in a certain component's config & slots.
@@ -51,7 +50,7 @@ slots:
 
 ## Root Components & Props
 
-At the top of the component tree there’s we can find a **root component**.
+At the top of the component tree we can find a **root component**.
 Pages are examples of root components.
 They have additional attributes:
 
@@ -131,7 +130,9 @@ See "Styling" below.
 
 To help you define usable pages, there are a number of built-in widgets that you can use - most of which will be in layout pages. Those built-in widgets revolve around several libraries:
 
-- the **System** library includes "crude" controls that you cannot add with the designers - for instance `oh-button`, `oh-slider`, `oh-colorpicker`. Instead, you're more likely use them within some container (card, list item...) provided by a widget of the Standard library; but when designing a personal widget with a complex layout you may want to use one or several of them directly. You may also use them in a slot of another widget, for those which define some, in order to add additional controls to that widget.
+- the **System** library includes "crude" controls that you cannot add with the designers - for instance `oh-button`, `oh-slider`, `oh-colorpicker`.
+Instead, you're more likely to use them within some container (card, list item...) provided by a widget of the Standard library; but when designing a personal widget with a complex layout you may want to use one or several of them directly.
+You may also use them in a slot of another widget, for those which define some, in order to add additional controls to that widget.
 - the **Standard** library, which has several classes of widgets:
   - **layout widgets**, examples: `oh-block`, `oh-masonry`, `oh-grid-row`, `oh-grid-col` that you usually add with the designer to a layout page
   - **standalone widgets**, examples: `oh-label-card`, `oh-slider-card`, `oh-player-card` - usually not much more than widgets from the System library wrapped in a card
