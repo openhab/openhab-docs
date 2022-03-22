@@ -5,6 +5,7 @@ title: ELRO Connects - Bindings
 type: binding
 description: "The ELRO Connects binding provides integration with the [ELRO Connects](https://www.elro.eu/en/smart-home) smart home system."
 since: 3x
+logo: images/addons/elroconnects.png
 install: manual
 ---
 
