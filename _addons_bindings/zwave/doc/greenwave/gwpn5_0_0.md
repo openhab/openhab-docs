@@ -17,7 +17,7 @@ The GWPN5 supports routing. This allows the device to communicate using other ro
 
 ## Overview
 
-This Configuration is for the 6 plug version of the PowerNode.
+This Configuration is for the 5 plug version of the PowerNode.
 
 ### Inclusion Information
 
@@ -30,6 +30,10 @@ If all bars on the activity indicator start flashing instead of forming a solid 
 ### Exclusion Information
 
 On the PowerNode, press and hold the **Sync** button for approximately one second until the PowerNode activity indicator begins to display a counter-clockwise rotating pattern. The PowerNode is attempting exclusion.
+
+### General Usage Information
+
+
 
 ## Channels
 
