@@ -20,6 +20,30 @@ Touchscreen Deadbolt Z-Wave Plus<br /> <h1>Overview</h1><p>Touchscreen Deadbolt 
           <property name="binding:*:OnOffType">COMMAND_CLASS_DOOR_LOCK</property>
         </properties>
       </channel>
+      <channel id="config_decimal_param12" typeId="config_decimal">
+        <label>Electronic Transition Count</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_CONFIGURATION;parameter=12</property>
+        </properties>
+      </channel>
+      <channel id="config_decimal_param13" typeId="config_decimal">
+        <label>Mechanical Transition Count</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_CONFIGURATION;parameter=13</property>
+        </properties>
+      </channel>
+      <channel id="config_decimal_param14" typeId="config_decimal">
+        <label>Electronic Failed Count</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_CONFIGURATION;parameter=14</property>
+        </properties>
+      </channel>
+      <channel id="config_decimal_param17" typeId="config_decimal">
+        <label>High Preload Transition Count</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_CONFIGURATION;parameter=17</property>
+        </properties>
+      </channel>
       <channel id="alarm_raw" typeId="alarm_raw">
         <label>Alarm (raw)</label>
         <properties>
@@ -267,5 +291,37 @@ One device controls an other device<br /> <h1>Overview</h1><p>Z-Wave devices con
     </config-description>
 
   </thing-type>
+
+  <channel-type id="schlage_be469zp_00_000_config_decimal_param12">
+    <item-type>Number</item-type>
+    <label>Electronic Transition Count</label>
+    <description>Get Electronic Transition Count</description>
+    <state pattern="%s">
+    </state>
+  </channel-type>
+
+  <channel-type id="schlage_be469zp_00_000_config_decimal_param13">
+    <item-type>Number</item-type>
+    <label>Mechanical Transition Count</label>
+    <description>Get Mechanical Transition Count</description>
+    <state pattern="%s">
+    </state>
+  </channel-type>
+
+  <channel-type id="schlage_be469zp_00_000_config_decimal_param14">
+    <item-type>Number</item-type>
+    <label>Electronic Failed Count</label>
+    <description>Get Electronic Failed Count</description>
+    <state pattern="%s">
+    </state>
+  </channel-type>
+
+  <channel-type id="schlage_be469zp_00_000_config_decimal_param17">
+    <item-type>Number</item-type>
+    <label>Get Electrical High Preload Transition Count</label>
+    <description>Count of high preload on the deadbolt</description>
+    <state pattern="%s">
+    </state>
+  </channel-type>
 
 </thing:thing-descriptions>

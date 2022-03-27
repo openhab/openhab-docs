@@ -6,9 +6,9 @@
                       https://openhab.org/schemas/thing-description/v1.0.0">
 
   <thing-type id="zwaveme_06436_00_000" listed="false">
-    <label>06436 Insert blind control</label>
+    <label>ZME_06436 Insert blind control</label>
     <description><![CDATA[
-Insert blind control<br /> <h1>Overview</h1><p>The Z-Wave.Me Flush Mountable Motor Control is a wireless actuator able to control 230 V powered motors for blinds and jalousies. The device is delivered as a complete set with flush mountable insert, paddle and mounting frame compatible to the design of the switching series DURO 2000 SI in color pearl white from Busch Jaeger. The paddle of the device is used to control the device itself but can also be configured to activate scenes in a central IP gateway or controller. The status of the motor control is indicated on a dual color LED for test purposes and every status change is - if configured - reported to a central IP gateway or controller. The function of the local paddle can be configured as detached from the local operation. In this local control different devices are controlled by Z-Wave while the local actuator is controlled by other devices using Z-Wave. This device is designed for a 3 wire system and needs a neutral wire in the wall box.</p> <br /> <h2>Inclusion Information</h2><p>triple click one of the buttons on the device will include the device</p> <br /> <h2>Exclusion Information</h2><p>The device is excluded by triple click to one of the buttons</p>
+Insert blind control<br /> <h1>Overview</h1><p>The Z-Wave.Me Flush Mountable Motor Control is a wireless actuator able to control 230 V powered motors for blinds and jalousies. The device is delivered as a complete set with flush mountable insert, paddle and mounting frame compatible to the design of the switching series DURO 2000 SI in color pearl white from Busch Jaeger. The paddle of the device is used to control the device itself but can also be configured to activate scenes in a central IP gateway or controller. The status of the motor control is indicated on a dual color LED for test purposes and every status change is - if configured - reported to a central IP gateway or controller. The function of the local paddle can be configured as detached from the local operation. In this local control different devices are controlled by Z-Wave while the local actuator is controlled by other devices using Z-Wave. This device is designed for a 3 wire system and needs a neutral wire in the wall box.</p> <br /> <h2>Inclusion Information</h2><p>triple click one of the buttons on the device will include the device</p> <br /> <h2>Exclusion Information</h2><p>The device is excluded by triple click to one of the buttons</p> <br /> <h2>Wakeup Information</h2><p><br /></p>
     ]]></description>
     <category>Blinds</category>
 
@@ -33,7 +33,7 @@ Insert blind control<br /> <h1>Overview</h1><p>The Z-Wave.Me Flush Mountable Mot
     <!-- DEVICE PROPERTY DEFINITIONS -->
     <properties>
       <property name="vendor">Z-Wave.Me</property>
-      <property name="modelId">06436</property>
+      <property name="modelId">ZME_06436</property>
       <property name="manufacturerId">0115</property>
       <property name="manufacturerRef">1000:0003</property>
       <property name="dbReference">50</property>
@@ -104,6 +104,7 @@ Time in seconds to go from opened to closed state.<br /> <h1>Overview</h1><p>Tim
         <options>
           <option value="0">Keep in permanent motion</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_5_1" type="integer" groupName="configuration">
@@ -115,6 +116,7 @@ Time in seconds to go from closed to open state.<br /> <h1>Overview</h1><p>Time 
         <options>
           <option value="0">Keep in permanent motion</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_6_1" type="integer" groupName="configuration">
