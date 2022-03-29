@@ -1880,13 +1880,13 @@ Items that represent components of a device that can be toggled on or off. Multi
 
 * Alexa will respond with "Sorry something wrong, to control _device_ try disabling the skill and re-enabling it from your Alexa app".
 * It indicates that Alexa isn't able to control the given device because of an authentication issue.
-* To resolve this error, for users that are using the official skill, just disable and re-enable it through the Alexa app. For users that have setup their own custom skill, make sure that the proper credentials were added to the lambda function config.js. If running an openHAB 3.x server, make sure that the API Security Implicit User Role setting is enabled.
+* To resolve this error, for users that are using the official skill, just disable and re-enable it through the Alexa app. For users that have setup their own custom skill, make sure that the proper credentials were configured in `ask-resources.json`. If running an openHAB 3.x server, make sure that the API Security Implicit User Role setting is enabled.
 
 ### Server Not Accessible
 
 * Alexa will respond with "Sorry the hub that _device_ is connected to is not responding, please check its network connection and power supply".
 * It indicates that your openHAB server is not accessible through [myopenHAB](https://myopenhab.org) cloud service.
-* To resolve this error, make sure that your server is running, your openHAB cloud service is configured with mode set to "Notifications & Remote Access", and showing online under your myopenHAB account. For users that have setup their own custom skill, make sure that the proper server base URL was added to the lambda function config.js.
+* To resolve this error, make sure that your server is running, your openHAB cloud service is configured with mode set to "Notifications & Remote Access", and showing online under your myopenHAB account. For users that have setup their own custom skill, make sure that the proper server base URL was configured in `ask-resources.json`.
 * For users running openHAB 2.4, there is a known issue when running the [Amazon Echo Control](https://www.openhab.org/addons/bindings/amazonechocontrol/) binding, associated to that release, that affects the server accessibility. In this instance, make sure to upgrade your server to 2.5 or above.
 
 ### Temperature Out Of Range
