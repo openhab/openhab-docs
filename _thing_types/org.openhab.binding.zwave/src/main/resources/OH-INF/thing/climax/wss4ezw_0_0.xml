@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="climax_wss4ezw_00_000" listed="false">
+    <label>WSS-4E-ZW Smart Scenario Switch</label>
+    <description><![CDATA[
+Smart Scenario Switch<br /> <h1>Overview</h1><p>WSS-4E-ZW is a Z-Wave Four-Button Scenario Switch designed to control a group of pre-programmed home automation devices by simply pressing the scenario buttons under the same Z-Wave network<br /></p> <br /> <h2>Inclusion Information</h2><ol><li>Remove the cover by using a screwdriver.</li><li>Insert the battery then replace the cover.</li><li>Put the Z-Wave control panel into Inclusion mode (please refer to the Z-Wave control panel manual).</li><li>Within 1.5 seconds, press the Function Button 3 times.</li><li>Refer to the operation manual of the Z-Wave gateway or control panel to complete the adding process.</li><li>If the device has already been added (included) into another Z-Wave Gateway/Control Panel, or if the device is unable to be added into the current Z-Wave Gateway/Control Panel, try removing it first (see Removing Device).</li></ol> <br /> <h2>Exclusion Information</h2><ol><li>Put the Z-Wave gateway or control panel into Exclusion mode (please refer to the Z-Wave or control panel manual).</li><li>Within 1.5 seconds, press the Function Button 3 times and the device will be removed from the Z-Wave network.</li></ol> <br /> <h2>Wakeup Information</h2><p>This function uses the Z-Wave Wake Up Command Class. The Wake Up Command Class allows the battery-powered Light Switch to notify the Control Panel/Gateway that it is awake and ready to receive any queued commands. The wake up interval time period is programmed automatically according to Control Panel’s setting when The Light Switch is included. The recommended setting of the interval time is between 30 to 60 minutes.<br /></p>
+    ]]></description>
+    <category>RemoteControl</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="scene_number" typeId="scene_number">
+        <label>Scene Number</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_SCENE_ACTIVATION</property>
+        </properties>
+      </channel>
+      <channel id="alarm_general" typeId="alarm_general">
+        <label>Alarm</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM</property>
+        </properties>
+      </channel>
+      <channel id="battery-level" typeId="system.battery-level">
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_BATTERY</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Climax Technology, Ltd.</property>
+      <property name="modelId">WSS-4E-ZW</property>
+      <property name="manufacturerId">018E</property>
+      <property name="manufacturerRef">0004:001C</property>
+      <property name="dbReference">1478</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Lifeline</label>
+        <description><![CDATA[
+Group 1 for “LifeLine”<br /> <h1>Overview</h1><p>Group 1 for “LifeLine”:</p><p>Scene Activation CC</p><p>(COMMAND_CLASS_SCENE_ACTIVATION)</p><p> Battery CC (COMMAND_CLASS_BASIC)</p><p> Device Reset Locally CC</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>
