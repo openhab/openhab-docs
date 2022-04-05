@@ -356,7 +356,7 @@ Dynamic icon filenames follow the pattern below:
 ```
 
 - `<name>` - the name of the icon set
-- `-<state>` - the Item state the icon maps to (e.g. "ON" or "OFF", "OPEN" or "CLOSED")
+- `-<state>` - the Item state the icon maps to in lowercase (e.g. "-on" or "-off", "-open" or "-closed")
 - `<extension>` - bitmap (`png`) or vector graphic (`svg`) icon file extension ([see above](#icons))
 
 Dynamic icon sets may consist of as many state-specific icon files as needed.
