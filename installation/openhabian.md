@@ -99,7 +99,9 @@ Reasonably so, this is our clear recommendation. Saving another 50 bucks is not 
 There's no genuine reason why this wouldn't work. The openHABian image is really just Raspberry Pi OS (lite) under the hood and openHABian is "just" some scripts that install a number of packages and configure the system in a specific way, optimized to run openHAB.*
 
 <a id="befair"></a>
-*What you must not do, though, is to mess with the system, OS packages and config and expect anyone to help you with that. Let's clearly state this as well: when you deliberately decide to make manual changes to the OS software packages and configuration (i.e. outside of openhabian-config), you will be on your own. Your setup is untested, and no-one but you knows about your changes. openHABian maintainers are really committed to providing you with a fine user experience, but this takes enormous efforts you don't get to see as a user. So if you choose to deviate from the standard openHABian installation and run into problems thereafter, don't be unfair: don't waste maintainer's or anyone's time by asking for help or information on your issues on the forum. Thank you !*
+*What you must not do, though, is to mess with the system, OS packages and config and expect anyone to help you with that. Let's clearly state this as well: when you deliberately decide to make manual changes to the OS software packages and configuration (i.e. outside of openhabian-config), you will be on your own.
+Your setup is untested, and no-one but you knows about your changes. openHABian maintainers are really committed to providing you with a fine user experience, but this takes enormous efforts in testing and is only possible with a fixed set of hardware. You don't get to see this as a user.
+So if you choose to deviate from the standard openHABian installation and run into problems thereafter, don't be unfair: don't waste maintainer's or anyone's time by asking for help or information on your issues on the forum. Thank you !*
 
 ## Hardware
 ### Hardware recommendation
@@ -115,8 +117,8 @@ Anything else ARM based such as ODroids, OrangePis and the like may work or not.
 NAS servers such as QNAP and Synology boxes will not work.
 Support for PINEA64 was dropped in this current release.
 We strongly recommend that users choose Raspberry Pi 2, 3 or 4 systems that have 1 GB of RAM or more.
-RPi 1 and 0/0W only have a single CPU core and 512 MB of RAM.
-This can be sufficient to run a smallish openHAB setup, but it will not be enough to run a full-blown system with many bindings and memory consuming openHABian features/components such as zram, InfluxDB or Grafana.
+RPi 1 and 0/0W just have a single CPU core and only 512 MB of RAM. The RPi0W2 has 4 cores but only 512 MB as well.
+512 MB can be sufficient to run a smallish openHAB setup, but it will not be enough to run a full-blown system with many bindings and memory consuming openHABian features/components such as zram or InfluxDB.
 We do not actively prohibit installation on any hardware, including unsupported systems, but we might skip or deny to install specific extensions such as those memory hungry applications named above.
 
 Supporting hardware means testing every single patch and every release.
@@ -143,18 +145,17 @@ Going beyond what the RPi image provides, as a manually installed set of scripts
 On ARM, we only support Raspberry Pi OS.
 These are what we develop and test openHABian against.
 We provide code that is reported "as-is" to run on Ubuntu but we do **not support Ubuntu** so please don't open issues for this (PRs then again are welcome).
-Several optional components though, such as WireGuard or Homegear, are known to expose problems on Ubuntu.
+Several optional components such as WireGuard or Homegear are known to expose problems on Ubuntu.
 
-We expect you to use the current stable distribution: 'bullseye' for Raspberry Pi OS (ARM) and Debian (x86).
+We expect you to use the current stable distribution 'bullseye' for Debian (x86). The Raspberry Pi image is based on this, too.
 To install openHABian on anything older or newer may work or not.
-If you encounter issues, you may need to upgrade first or to live with the consequences of running an OS on the edge of software development.
+If you do and encounter issues, you may need to upgrade first or to live with the consequences of running an OS on the edge of software development.
 
 ### 64 bit?
 RPi 3 and 4 have a 64 bit processor and you may want to run openHAB in 64 bit.
-We provide a 64bit version of the image but it is unsupported and just provided as-is so use it at your own risk.
+While 64 bit Raspi OS left beta and we provide a 64bit version of the image, the openHABian image is still unsupported and just provided as-is so please do not ask for help if you have issues.
 Be aware that to run in 64 bit has a major drawback: increased memory usage.
 That is not a good idea on a heavily memory constrained platform like a RPi.
-Also remember openHABian makes use of Raspberry Pi OS which as per today still is a 32 bit OS.
 We are closely observing development and will adapt openHABian once it will
 reliably work on 64 bit.
 
@@ -353,7 +354,8 @@ openHABian has a number of features built in to enhance resilience:
     See \[menu option 52\].
 
 Standard openHABian install enables zram by default (#1).
-Once you attach a _safe_ external medium to your system (such as an SSD), you can disable zram (#1) and move the system over using menu options 37 (#2).
+You can disable zram (#1) and move the system over using menu options 37 (#3) once you attached a _safe_ external medium to your system (such as an SSD), but we recommend against doing so.
+[To restate](#befair): this setup is not supported by us maintainers and you'll be on your very own to find and fix any problems you might run into.
 Finally, we strongly suggest you install Amanda (#4) right after you finish your setup.
 Amanda is to take care to backup the whole system to be able to quickly restore it when in need.
 This is not done by default because it requires a number of user inputs, but you should not skip it for your own safety!
@@ -379,7 +381,7 @@ You can also try with a different set of parameters if your initial attempt fail
 Mind the comments for each configuration parameter. Browse the next documentation section for more explanations.
 
 #### Initial configuration
-You can have openHABian import a working openHAB configuration right from the start at installation time like whenyou migrate or reinstall:
+You can have openHABian import a working openHAB configuration right from the start at installation time like when you migrate or reinstall:
 make the `initialconfig` parameter point to either a file or URL.
 Note that you can only place config zipfiles on the 1st (Windows) partition, and that partition will finally be accessible as `/boot`.
 So a filename would need to be `/boot/xxx.zip`. Default is `/boot/initial.zip`.
@@ -401,7 +403,7 @@ So in addition to the setup instructions given above, uncomment and complete the
 
 #### Wi-Fi Hotspot
 When your openHABian box does not get Internet connectivity through either Ethernet or WI-Fi (if configured), openHABian will launch a **Hotspot**.
-Use your mobile phone to scan for Wi-Fi networks, you should be seeing a new network called `openHABian-<n>`.
+Use your mobile phone to scan for Wi-Fi networks, you should be seeing a new network called `openHABian-<n>` with `<n>` being a digit.
 Connecting will work without a password. Once connected, most smartphones will transfer you to a web page.
 If this does not happen on your mobile device, open your browser on the mobile and point it at `http://raspberrypi.local` or `http://comitup-<n>`.
 This may or may not work for your mobile browser as it requires Bonjour/ZeroConf abilities.
@@ -503,7 +505,8 @@ If you want to get involved, you found a bug, or just want to see what's planned
 
 <a id="changelog"></a>
 ### Where can I find a changelog for openHABian?
-Official announcements are co-located with the download links [here](https://github.com/openhab/openhabian/releases).
+Official announcements are displayed on starting `openhabian-config` and stored in `NEWS.md` (a file in `/opt/openhabian`).
+Release notes are also co-located with the download links [here](https://github.com/openhab/openhabian/releases).
 If you want to stay in touch with all the latest code changes under the hood, see [commit history](https://github.com/openhab/openhabian/commits/main) for openHABian.
 You'll also see commits "fly by" when executing the "Update" function within the openHABian Configuration Tool.
 
