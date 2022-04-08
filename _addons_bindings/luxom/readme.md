@@ -5,6 +5,7 @@ title: Luxom - Bindings
 type: binding
 description: "This binding integrates with a https://luxom.io/ based system through a Luxom IP interface module."
 since: 3x
+logo: images/addons/luxom.png
 install: manual
 ---
 
