@@ -135,6 +135,7 @@ Send report on change of power consumption (W)<br /> <h1>Overview</h1><p>This pa
         <options>
           <option value="0">Disabled</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_17_1" type="integer" groupName="configuration">

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="climax_trv1zw_00_000" listed="false">
+    <label>TRV-1ZW Thermostatic Radiator Valve</label>
+    <description><![CDATA[
+Thermostatic Radiator Valve<br /> <h1>Overview</h1><p>TRV-1ZW is a Z-Wave Radiator Valve is designed to control the surrounding temperature by controlling the flow of hot water of radiators in the Z-Wave network, i.e. indoor room temperatures.<br /></p> <br /> <h2>Inclusion Information</h2><ol><li>Remove the Radiator Valve back cover and insert 2 AA Alkaline batteries to power up the Radiator Valve, LCD will display InS and icon will flash to indicate Radiator Valve’s motor is working.</li><li>Put Z-Wave control panel into Inclusion mode (please refer to the Z-Wave control panel manual).</li><li>Within 1.5 seconds, press the Boost Button 3 times</li><li>Refer to operation manual of the Z-Wave gateway or control panel to complete the adding process.</li><li>If the device has already been added (included) into another Z-Wave Gateway/Control Panel, or if the device is unable to be added into the current Z-Wave Gateway/Control Panel, try removing it first (see Removing Device).</li><li>When the motor stops working and icon changes to steady on, attach the Valve cap to the pipe. </li><li>Rotating the Valve cap clockwise to tighten the Radiator Valve.</li><li>Press the Auto/Manual button, LCD displays AdA and valve motor starts working again, the icon will flash. The device motor is measuring the distance to adjust the current temperature. </li><li>When the valve motor stops, the system will enter Manual mode with LCD displaying the default set temperature 18.5°C, the installation is now complete.</li><li>After joining Z-Wave network and completing installation, the Z-Wave connection icon will appear on LCD display.</li><li>If Radiator Valve loses connection to current Z-Wave network, the Z-Wave connection icon will disappear. Please check Z-Wave network condition and Radiator Valve signal range to correct the situation.</li></ol> <br /> <h2>Exclusion Information</h2><ol><li>Put the Z-Wave gateway or control panel into Exclusion mode (please refer to the Z-Wave or control panel manual).</li><li>Within 1.5 seconds, press Boost Button 3 times and device will be removed from Z-Wave network.</li></ol> <br /> <h2>Wakeup Information</h2><p><br /></p>
+    ]]></description>
+    <category>HVAC</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="thermostat_mode" typeId="climax_trv1zw_00_000_thermostat_mode">
+        <label>Thermostat mode</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_THERMOSTAT_MODE</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Climax Technology, Ltd.</property>
+      <property name="modelId">TRV-1ZW</property>
+      <property name="manufacturerId">018E</property>
+      <property name="manufacturerRef">0004:0015</property>
+      <property name="dbReference">1482</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Lifeline</label>
+        <description><![CDATA[
+Group 1 for “LifeLine”<br /> <h1>Overview</h1><p>Battery Report CC</p><p> Device Reset Locally CC (COMMAND_CLASS_DEVICE_RESET_LOCALLY)</p><p> Thermostat mode CC</p><p> Thermostat Setpoint CC</p><p> Sensor Multilevel CC</p>
+        ]]></description>
+        <multipleLimit>3</multipleLimit>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: Thermostat Operating State</label>
+        <description><![CDATA[
+Group 1 for “Thermostat Operating State”<br /> <h1>Overview</h1><p>Thermostat Operating State CC<br /></p>
+        ]]></description>
+        <multipleLimit>3</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+  <channel-type id="climax_trv1zw_00_000_thermostat_mode">
+    <item-type>Number</item-type>
+    <label>Thermostat Mode</label>
+    <description>Sets the thermostat mode</description>
+    <category>Temperature</category>
+    <state pattern="%s">
+      <options>
+        <option value="0">Off</option>
+        <option value="1">Heat</option>
+      </options>
+    </state>
+  </channel-type>
+
+</thing:thing-descriptions>

@@ -304,6 +304,13 @@ Association group 4 supports 1 node.
 | COMMAND_CLASS_BASIC_V1| |
 | COMMAND_CLASS_SWITCH_BINARY_V1| Linked to BASIC|
 | COMMAND_CLASS_METER_V2| |
+#### Endpoint 4
+
+| Command Class | Comment |
+|---------------|---------|
+| COMMAND_CLASS_BASIC_V1| |
+| COMMAND_CLASS_SWITCH_BINARY_V1| |
+| COMMAND_CLASS_METER_V1| |
 
 ### Documentation Links
 

@@ -81,6 +81,7 @@ Strobe light pulse count<br /> <h1>Overview</h1><p>Values range from 0 to 120 an
         <options>
           <option value="127">Infinite flashing</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_4_1" type="integer" groupName="configuration">
@@ -98,11 +99,14 @@ Random strobe pulse colors<br /> <h1>Overview</h1><p>Values range are 0(turn off
 
       <parameter name="config_255_4_wo" type="integer" groupName="configuration">
         <label>255: Reset bulb to factory settings</label>
-        <description>Reset bulb to factory settings</description>
+        <description><![CDATA[
+Reset bulb to factory settings<br /> <h1>Overview</h1><p><br /></p>
+        ]]></description>
         <default>1</default>
         <options>
           <option value="255">Reset bulb to factory settings</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- STATIC DEFINITIONS -->

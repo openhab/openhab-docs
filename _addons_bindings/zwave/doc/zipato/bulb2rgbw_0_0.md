@@ -108,7 +108,7 @@ Strobe light pulse count
 Values range from 0 to 120 and 
 
 a special value 127 (0x7F) which sets infinite flashing
-The following option values may be configured, in addition to values in the range 0 to 127 -:
+The following option values may be configured -:
 
 | Value  | Description |
 |--------|-------------|
@@ -139,7 +139,7 @@ This parameter has the configuration ID ```config_4_1``` and is of type ```INTEG
 
 Reset bulb to factory settings
 
-The following option values may be configured, in addition to values in the range 1 to 255 -:
+The following option values may be configured -:
 
 | Value  | Description |
 |--------|-------------|
