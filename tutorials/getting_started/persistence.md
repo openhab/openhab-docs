@@ -52,11 +52,11 @@ Edit the file per the docs to define the strategies.
 
 Often, one will not want to use the same persistence strategy for all Items.
 One may not even want to save all their Items, or may want to save different Items to different databases using different strategies.
-For example, a common approach would be to use [`MapDB`]({{base}}/addons/persistence/mapdb/) only for those Items that should be restored on startup, [`rrd4j`]({{base}}/addons/persistence/rrd4j) with an `everyChange` and every minute strategy for number and binary (Switch, Contact) type Items that are to be charted, and [`Influxdb`]({{base}}/addons/persistence/influxdb) with an `everyUpdate` strategy for analysis with external tools.
+For example, a common approach would be to use [`MapDB`](/addons/persistence/mapdb/) only for those Items that should be restored on startup, [`rrd4j`](/addons/persistence/rrd4j) with an `everyChange` and every minute strategy for number and binary (Switch, Contact) type Items that are to be charted, and [`Influxdb`](/addons/persistence/influxdb) with an `everyUpdate` strategy for analysis with external tools.
 
 ## Default Persistence
 
-openHAB ships with [`rrdj4`]({{base}}/addons/persistence/rrd4j) as the default persistence database and comes with a default persistence strategy of `everyChange`, `everyMinute`, and `restoreOnStartup` for every supported Item.
+openHAB ships with [`rrdj4`](/addons/persistence/rrd4j) as the default persistence database and comes with a default persistence strategy of `everyChange`, `everyMinute`, and `restoreOnStartup` for every supported Item.
 The good thing about `rrd4j` is that the database never grows beyond a given size, so you never have to clean it up.
 However, the way it achieves this (replacing ten readings with the average of the ten readings as the data gets older) makes the database not work for all Item types.
 If you need to `restoreOnStartup` unsupported Item types, `MapDB` might be a better choice for you.

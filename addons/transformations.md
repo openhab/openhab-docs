@@ -36,7 +36,7 @@ Transformation files need to be placed in the directory `$OPENHAB_CONF/transform
 
     ```
 
-    Usage of Transformations in the [label parameter of Sitemap elements]({{base}}/configuration/sitemaps.html#element-type-text) works the same way.
+    Usage of Transformations in the [label parameter of Sitemap elements]({{base}}/ui/sitemaps.html#element-type-text) works the same way.
 
 1. Rules
 
