@@ -230,7 +230,7 @@ C:\openHAB\userdata\bin\openHAB-service.bat remove
 You can connect to openHAB's console using the the `C:\openHAB\runtime\bin\client.bat` script on the local machine.
 Alternatively, you can use a standard SSH client:
 
-1. Install an SSH client application, e.g., [Putty](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html), [KiTTY](http://kitty.9bis.net/) or [Xshell 5](https://www.netsarang.com/products/xsh_overview.html)
+1. Install an SSH client application, e.g., [Putty](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html), [KiTTY](http://kitty.9bis.net/) or [Xshell](https://www.netsarang.com/en/xshell/)
 
 1. Setup a session with the following parameters:
 

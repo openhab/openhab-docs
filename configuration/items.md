@@ -204,7 +204,7 @@ Two naming schemes are established in the community for Group names:
 ### Label
 
 Label text is used to describe an Item in a human-readable way.
-Graphical UIs will display the label text when the Item is included, e.g. in [Basic UI]({{base}}/configuration/ui/basic.html) in a [Sitemap]({{base}}/configuration/sitemaps.html) definition.
+Graphical UIs will display the label text when the Item is included, e.g. in Basic UI in a [Sitemap]({{base}}/ui/sitemaps.html) definition.
 Some I/O services (e.g. the Amazon Alexa skill) also use the label to match an external voice command to an Item.
 
 In textual configurations the label, in quotation marks, appears next to the optional [state presentation](#state-presentation) field in square brackets (see below).
@@ -214,7 +214,7 @@ The label for the Item in the following example is "Temperature" and the optiona
 Number Livingroom_Temperature "Temperature [%.1f °C]"
 ```
 
-Channel labels can be overwritten by Item definitions and Item labels can be overwritten in [Sitemaps]({{base}}/configuration/sitemaps.html#element-types).
+Channel labels can be overwritten by Item definitions and Item labels can be overwritten in [Sitemaps]({{base}}/ui/sitemaps.html#element-types).
 
 {: #state}
 
@@ -433,7 +433,7 @@ For example:
   - Maintenance Group → All battery states → Individual battery states in percentage
   - Further examples: all lights, all room temperatures, combined power consumption
 
-These relationships can be exploited in [Sitemaps]({{base}}/configuration/sitemaps.html) or in [automation rules]({{base}}/configuration/rules-dsl.html) to navigate through the hierarchically organized Items or to perform computations and updates on subsets of similar Items.
+These relationships can be exploited in [Sitemaps]({{base}}/ui/sitemaps.html) or in [automation rules]({{base}}/configuration/rules-dsl.html) to navigate through the hierarchically organized Items or to perform computations and updates on subsets of similar Items.
 
 **Example:**
 
@@ -700,7 +700,7 @@ There are some built-in Profiles available which are described in the table belo
 Some Bindings will may offer additional Profiles for Binding-specific use cases.
 If this is the case, you will find those within the documentation of the Binding.
 
-Also, all [Transformation Services](/addons/#transform) provide a State Profile which allows you to do the transformation already on item-level instead doing it with a [Sitemap]({{base}}/configuration/sitemaps.html).
+Also, all [Transformation Services](/addons/#transform) provide a State Profile which allows you to do the transformation already on item-level instead doing it with a [Sitemap]({{base}}/ui/sitemaps.html).
 You can find the documentation of these Profiles within the [Add-On documentation of the Transformation Service](/addons/#transform) you would like to use.
 
 | Profile ID                                                                                    | Type    | Supported Item Types  | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |

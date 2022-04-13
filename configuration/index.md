@@ -18,10 +18,10 @@ In order to represent all of these, openHAB defines the following base component
 - [Things](things.html) - Your devices represented in openHAB
 - [Items](items.html) - properties and capabilities of your Things
 - [Groups](items.html#groups) - collections or categories containing Items
-- [Transformations](transform.html) - Helper functions to transform your data
+- [Transformations](transformations.html) - Helper functions to transform your data
 - [Persistence](persistence.html) - Services to store data over time
 - [Rules](rules-dsl.html) - Automation logic, the "smart" in your Smart Home!
-- [Blockly Rules](rules-blockly.html) - Visually define the automation logic of your Smart Home
+- [Blockly Rules](blockly/) - Visually define the automation logic of your Smart Home
 - [JSR223 Scripting](jsr223.html) - Define rules and other runtime objects using [Javascript](https://openjdk.java.net/projects/nashorn/), [Jython](https://www.jython.org) or [Groovy](https://www.groovy-lang.org/)
 
 The individual articles have all the details needed to understand the concepts behind these building blocks for your Smart Home.
