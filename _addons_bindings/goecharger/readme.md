@@ -5,6 +5,7 @@ title: Go-eCharger - Bindings
 type: binding
 description: "This Binding controls and reads data from the [Go-eCharger](https://go-e.co/)."
 since: 3x
+logo: images/addons/goecharger.png
 install: auto
 ---
 
