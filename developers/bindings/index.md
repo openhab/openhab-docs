@@ -189,7 +189,7 @@ The following types are supported for configuration values: `Boolean`, `boolean`
 
 *Things* can have properties.
 If you would like to add meta data to your thing, e.g. the vendor of the thing, then you can define your own thing properties by simply adding them to the thing type definition.
-The properties section [here](thing-definition.html#Properties) explains how to specify such properties.
+The properties section [here](thing-xml.html#properties) explains how to specify such properties.
 
 To retrieve the properties one can call the operation `getProperties` of the corresponding `org.openhab.core.thing.type.ThingType` instance.
 If a thing will be created for this thing type then its properties will be automatically copied into the new thing instance.
@@ -966,7 +966,7 @@ mDNS discovery is implemented in the framework as `MDNSDiscoveryService`.
 To facilitate the development, binding developers only need to implement a `MDNSDiscoveryParticipant`.
 Here the developer only needs to implement four simple methods:
 
-- `getServiceType` - Defines the [mDNS service type](https://www.dns-sd.org/ServiceTypes.html).
+- `getServiceType` - Defines the [mDNS service type](http://www.dns-sd.org/ServiceTypes.html).
 - `getSupportedThingTypeUIDs` - Returns the list of thing type UIDs that this participant supports.
     The discovery service uses this method of all registered discovery participants to return the list of currently supported thing type UIDs.
 - `getThingUID` - Creates a thing UID out of the mDNS service info or returns `null` if this is not possible.
