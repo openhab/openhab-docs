@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="eurotronic_700203_00_000" listed="false">
+    <label>700203 Door/Window Contact</label>
+    <description><![CDATA[
+Door/Window Contact<br /> <h1>Overview</h1><p>The Eurotronic Door/Window Contact Z-Wave Plus is a battery powered wireless binary sensor for detecting </p><p>the door or window open/closed position. The device uses an optical sensor for the status detection. </p> <br /> <h2>Inclusion Information</h2><p>Start the inclusion mode of your primary Z-Wave controller . </p><p>Press the button within the housing of your Door/Window Contact three times in quick succession in order to activate the inclusion mode. While the inclusion mode is active, the green LED is blinking. The joining attempt takes approx. 30 seconds.</p><p>If the inclusion was successful, the green LED lights up for 5 seconds. Otherwise, the red LED light up for 5 seconds to indicate failure.</p> <br /> <h2>Exclusion Information</h2><p>Start the exclusion mode of your primary Z-Wave controller. </p><p>Press the button within the housing of your Door/Window Contact three times in quick succession in order to activate the exclusion mode. During the attempt to leave the network, the green LED is blinking.</p><p>If the exclusion was successful, the green LED light up for 5 seconds. Otherwise, the red LED lights up for 5 seconds to indicate failure.</p> <br /> <h2>Wakeup Information</h2><p>Press the button within the housing of your Door/Window Contact three times in quick succession in order to wake up the device (necessary about 3 to 10 times every 4-5 seconds when first identifying the device)<br /></p><p><br /></p>
+    ]]></description>
+    <category>Door</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="sensor_door" typeId="sensor_door">
+        <label>Door Sensor</label>
+        <properties>
+          <property name="binding:*:OpenClosedType">COMMAND_CLASS_ALARM;type=ACCESS_CONTROL</property>
+        </properties>
+      </channel>
+      <channel id="battery-level" typeId="system.battery-level">
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_BATTERY</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Eurotronics</property>
+      <property name="modelId">700203</property>
+      <property name="manufacturerId">0148</property>
+      <property name="manufacturerRef">0010:0002</property>
+      <property name="dbReference">1485</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Lifeline</label>
+        <description>Lifeline to Z Wave Controller (battery information, notification report, device reset notification)</description>
+        <multipleLimit>1</multipleLimit>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: OnOff</label>
+        <description><![CDATA[
+Used for directly turning other devices on or off, depending of sensor state<br /> <h1>Overview</h1><p>With this association, the sensor could for example close a radiator valve when a window is opened, without the need of an extra z-wave controller. (BASIC_SET)<br /></p><p><br /></p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

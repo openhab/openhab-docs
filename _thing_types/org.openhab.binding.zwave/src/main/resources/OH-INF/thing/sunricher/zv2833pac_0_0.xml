@@ -53,6 +53,11 @@ Push-Button Coupler<br /> <h1>Overview</h1><p>This device converts the switches 
 External Switch Type<br /> <h1>Overview</h1><p>0 - Push button</p><p>1 - Normal On/Off switch</p><p>2 - 3-Way switch</p>
         ]]></description>
         <default>0</default>
+        <options>
+          <option value="0">Push button</option>
+          <option value="1">Normal On/Off switch</option>
+          <option value="2">3-Way switch</option>
+        </options>
       </parameter>
 
       <parameter name="config_3_1" type="integer" groupName="configuration">
@@ -79,33 +84,56 @@ Associations in Z-Wave network Security Mode<br /> <h1>Overview</h1><p>Enable or
 Scenes sent to the controller for button 1<br /> <h1>Overview</h1><p>This parameter defines the actions of push button 1 which can trigger Central Scene (sent to Lifeline group):</p><p>1 - button short pressed once</p><p>2 - button short pressed twice</p><p>4 - button pressed and held</p><p>8 - button released</p><p>The valid value of this parameter can be a combination, for instance, when set the parameter as 1+2=3, the actions of short pressed once and short pressed twice will both work.</p>
         ]]></description>
         <default>15</default>
+        <options>
+          <option value="1">button short pressed once</option>
+          <option value="2">buton short pressed twice</option>
+          <option value="4">button pressed and held</option>
+          <option value="8">button released</option>
+        </options>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_6_1" type="integer" groupName="configuration">
         <label>6: Scenes sent to the controller for button 2</label>
         <description><![CDATA[
-Scenes sent to the controller for button 2<br /> <h1>Overview</h1><p>This parameter defines the actions of push button 1 which can trigger Central Scene (sent to Lifeline group):</p><p>1 - button short pressed once</p><p>2 - button short pressed twice</p><p>4 - button pressed and held</p><p>8 - button released</p><p>The valid value of this parameter can be a combination, for instance, when set the parameter as 1+2=3, the actions of short pressed once and short pressed twice will both work.</p>
+Scenes sent to the controller for button 2<br /> <h1>Overview</h1><p>This parameter defines the actions of push button 2 which can trigger Central Scene (sent to Lifeline group):</p><p>1 - button short pressed once</p><p>2 - button short pressed twice</p><p>4 - button pressed and held</p><p>8 - button released</p><p>The valid value of this parameter can be a combination, for instance, when set the parameter as 1+2=3, the actions of short pressed once and short pressed twice will both work.</p>
         ]]></description>
         <default>15</default>
+        <options>
+          <option value="1">button short pressed once</option>
+          <option value="2">button short pressed twice</option>
+          <option value="4">button pressed and held</option>
+          <option value="8">button released</option>
+        </options>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_7_1" type="integer" groupName="configuration">
         <label>7: Scenes sent to the controller for button 3</label>
         <description><![CDATA[
-Scenes sent to the controller for button 3<br /> <h1>Overview</h1><p>This parameter defines the actions of push button 1 which can trigger Central Scene (sent to Lifeline group):</p><p>1 - button short pressed once</p><p>2 - button short pressed twice</p><p>4 - button pressed and held</p><p>8 - button released</p><p>The valid value of this parameter can be a combination, for instance, when set the parameter as 1+2=3, the actions of short pressed once and short pressed twice will both work.</p>
+Scenes sent to the controller for button 3<br /> <h1>Overview</h1><p>This parameter defines the actions of push button 3 which can trigger Central Scene (sent to Lifeline group):</p><p>1 - button short pressed once</p><p>2 - button short pressed twice</p><p>4 - button pressed and held</p><p>8 - button released</p><p>The valid value of this parameter can be a combination, for instance, when set the parameter as 1+2=3, the actions of short pressed once and short pressed twice will both work.</p>
         ]]></description>
         <default>15</default>
+        <options>
+          <option value="1">button short pressed once</option>
+          <option value="2">button short pressed twice</option>
+          <option value="4">button pressed and held</option>
+          <option value="8">button released</option>
+        </options>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_8_1" type="integer" groupName="configuration">
         <label>8: Scenes sent to the controller for button 4</label>
         <description><![CDATA[
-Scenes sent to the controller for button 4<br /> <h1>Overview</h1><p>This parameter defines the actions of push button 1 which can trigger Central Scene (sent to Lifeline group):</p><p>1 - button short pressed once</p><p>2 - button short pressed twice</p><p>4 - button pressed and held</p><p>8 - button released</p><p>The valid value of this parameter can be a combination, for instance, when set the parameter as 1+2=3, the actions of short pressed once and short pressed twice will both work.</p>
+Scenes sent to the controller for button 4<br /> <h1>Overview</h1><p>This parameter defines the actions of push button 4 which can trigger Central Scene (sent to Lifeline group):</p><p>1 - button short pressed once</p><p>2 - button short pressed twice</p><p>4 - button pressed and held</p><p>8 - button released</p><p>The valid value of this parameter can be a combination, for instance, when set the parameter as 1+2=3, the actions of short pressed once and short pressed twice will both work.</p>
         ]]></description>
         <default>15</default>
+        <options>
+          <option value="1">button short pressed once</option>
+          <option value="2">button short pressed twice</option>
+          <option value="4">button pressed and held</option>
+        </options>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
@@ -115,7 +143,11 @@ Scenes sent to the controller for button 4<br /> <h1>Overview</h1><p>This parame
 Function of the connected switches<br /> <h1>Overview</h1><p>This parameter defines the function of the connected switches:</p><p>0 - function 1</p><p>1 - function 2</p><p>2 - function 3</p>
         ]]></description>
         <default>0</default>
-        <limitToOptions>false</limitToOptions>
+        <options>
+          <option value="0">function 1</option>
+          <option value="1">function 2</option>
+          <option value="2">function 3</option>
+        </options>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->
