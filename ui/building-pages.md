@@ -307,7 +307,7 @@ Variables can be used using several methods:
   still be set to set the widget to the item's state, when
   the variable has no value.
 - the `vars`object available in expressions (for example
-  `=vars.var1` will evaluate to the value of the variable `var1`.
+  `=vars.var1` will evaluate to the value of the variable `var1`).
 - the `variable` action allows to set a fixed or computed
   (using an expression) value to a variable.
 
