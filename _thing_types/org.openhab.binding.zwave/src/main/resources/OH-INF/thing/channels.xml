@@ -1237,6 +1237,22 @@
         </state>
     </channel-type>
 
+    <!-- Sound tone play Channel -->
+    <channel-type id="sound_tone_play">
+        <item-type>Number</item-type>
+        <label>Sound tone play</label>
+        <description>The Sound tone that will play. The allowed tone numbers depend on the device</description>
+        <category></category>
+    </channel-type>
+
+    <!-- Sound volume Channel -->
+    <channel-type id="sound_volume">
+        <item-type>Dimmer</item-type>
+        <label>Sound volume</label>
+        <description>The sound volume channel allows control of the loudness</description>
+        <category></category>
+    </channel-type>
+
     <!-- Switch Channel -->
     <channel-type id="switch_binary">
         <item-type>Switch</item-type>
