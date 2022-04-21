@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                          xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+                          bindingId="zigbee"
+                          xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0 https://openhab.org/schemas/thing-description-1.0.0.xsd">
+   <thing-type id="philips_rwl022" listed="false">
+      <label>Hue Dimmer Switch</label>
+      <channels>
+         <channel id="switch_level" typeId="switch_level">
+            <label>Level Control</label>
+            <description></description>
+            <properties>
+               <property name="zigbee_endpoint">1</property>
+            </properties>
+         </channel>
+
+         <channel id="buttonI" typeId="system.button">
+            <label>Button I</label>
+            <description>Top Button 'I'</description>
+            <properties>
+               <property name="zigbee_endpoint">1</property>
+               <property name="zigbee_shortpress_cluster_id">0x0006</property>
+               <property name="zigbee_shortpress_command_id">0x01</property>
+            </properties>
+         </channel>
+         <channel id="buttonO" typeId="system.button">
+            <label>Button O</label>
+            <description>Bottom Button 'O'</description>
+            <properties>
+               <property name="zigbee_endpoint">1</property>
+               <property name="zigbee_shortpress_cluster_id">0x0006</property>
+               <property name="zigbee_shortpress_command_id">0x40</property>
+            </properties>
+         </channel>
+         <channel id="dimUp" typeId="system.button">
+            <label>Button Dim Up</label>
+            <description>Button with the brighter light</description>
+            <properties>
+               <property name="zigbee_endpoint">1</property>
+               <property name="zigbee_shortpress_cluster_id">0x0008</property>
+               <property name="zigbee_shortpress_command_id">0x02</property>
+               <property name="zigbee_shortpress_parameter_name">stepMode</property>
+               <property name="zigbee_shortpress_parameter_value">0</property>
+            </properties>
+         </channel>
+         <channel id="dimDown" typeId="system.button">
+            <label>Button Dim Down</label>
+            <description>Button with the darker light</description>
+            <properties>
+               <property name="zigbee_endpoint">1</property>
+               <property name="zigbee_shortpress_cluster_id">0x0008</property>
+               <property name="zigbee_shortpress_command_id">0x02</property>
+               <property name="zigbee_shortpress_parameter_name">stepMode</property>
+               <property name="zigbee_shortpress_parameter_value">1</property>
+            </properties>
+         </channel>
+
+         <channel id="batteryLevel" typeId="system.battery-level">
+            <properties>
+               <property name="zigbee_endpoint">1</property>
+            </properties>
+         </channel>
+         <channel id="batteryVoltage" typeId="battery_voltage">
+            <properties>
+               <property name="zigbee_endpoint">1</property>
+            </properties>
+         </channel>
+      </channels>
+      <config-description>
+         <parameter name="zigbee_macaddress"
+                    type="text"
+                    readOnly="true"
+                    required="true">
+            <label>MAC Address</label>
+         </parameter>
+      </config-description>
+   </thing-type>
+</thing:thing-descriptions>

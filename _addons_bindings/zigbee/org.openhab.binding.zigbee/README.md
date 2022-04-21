@@ -247,7 +247,7 @@ Extract and install the TI Flash Programmer, connect the CC-Debugger trough USB,
 
 ### Devices
 
-The following devices have been tested by openHAB users with the binding. This list is far from exhaustive, and the absence of a device in this list does not mean it will not work - if the device is a standard ZigBee device similar to ones on this list, then it should work. It should be noted that many "new" devices (approximately newer than 2020) will require coordinators that support ZigBee 3.0. If this is not supported, then devices may briefly join the network, and then leave when they find the network does not support the newer security requirements.
+The following devices have been tested by openHAB users with the binding. This list is far from exhaustive, and the absence of a device in this list does not mean it will not work - **if the device is a standard ZigBee device similar to ones on this list, then it should work**. It should be noted that many "new" devices (approximately newer than 2020) will require coordinators that support ZigBee 3.0. If this is not supported, then devices may briefly join the network, and then leave when they find the network does not support the newer security requirements.
 
 | Device                                         | Description                                                  |
 | ---------------------------------------------- | ------------------------------------------------------------ |
@@ -261,7 +261,7 @@ The following devices have been tested by openHAB users with the binding. This l
 | GE Tapt Wall Switch                            | On/Off Switch                                                |
 | GLEDOPTO GL-C-007                              | GLEDOPTO RGBW Led stripe controller                          |
 | Hue Bulbs                                      | Color LED Bulb                                               |
-| Hue Dimmer v1                                  | Hue Dimmer Switch Remote v1 _[<sup>[2]</sup>](#note2)_       |
+| Hue Dimmer Switch                              | Remote RWL021 / RWL022 _[<sup>[2]</sup>](#note2)_            |
 | Hue Motion Sensor                              | Motion and Luminance sensor                                  |
 | IKEA Fyrtur Blinds                             | Roller blinds                                                |
 | IKEA Tradfri Bulbs                             |                                                              |
@@ -309,7 +309,7 @@ The following devices have been tested by openHAB users with the binding. This l
 
 <a name="note1"></a> _Note 1: Some devices may not work with the Telegesis dongle._
 
-<a name="note2"></a> _Note 2: The Hue Dimmer v1 can be integrated but needs additional rule-configuration to work properly. See below for example. The v2 dimmer switch (with `hue` written on the lowest switch instead of `0`) is not supported_
+<a name="note2"></a> _Note 2: The Hue Dimmer can be integrated but needs additional rule-configuration to work properly. See below for example.
 
 <a name="note3"></a> _Note 3: The illuminance channel value is being reported incorrectly. Transform by 10000\*log10(measuredValue+1) to get the correct illuminance in lux._
 
