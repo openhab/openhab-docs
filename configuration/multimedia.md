@@ -154,7 +154,7 @@ result = interpret("turn on the light", "system", null)
 result = interpret(VoiceCommand.state, "system", "sonos:PLAY5:kitchen")
 ```
 
-You can select a particular human language interpreter (second parameter) and a particular audio sink (third parameter).
+You can select the human language interpreter(s) (second parameter, comma separated values are allowed to indicate multiple interpreter which will be used in order until the first successful response) and a particular audio sink (third parameter).
 The audio sink parameter is used when the interpretation fails; in this case, the error message is said using the default voice and the provided audio sink.
 If the provided audio sink is set to null, the error message will not be said.
 If no human language interpreter or no audio sink is provided, the default human language interpreter and default audio sink will be used.
