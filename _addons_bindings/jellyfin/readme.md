@@ -5,6 +5,7 @@ title: Jellyfin - Bindings
 type: binding
 description: "This is the binding for [Jellyfin](https://jellyfin.org) the volunteer-built media solution that puts you in control of your media."
 since: 3x
+logo: images/addons/jellyfin.png
 install: manual
 ---
 
