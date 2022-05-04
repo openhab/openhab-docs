@@ -95,6 +95,7 @@ One can either use the [log actions]({{base}}/addons/automation/jsscripting/#log
 ```javascript
 console.info('Motion was detected');
 ```
+
 Save and test the rule by running it manually and verify you see this statement in the logs.
 
 Next we want to `sendCommand` to the light to turn it on.
@@ -167,6 +168,7 @@ else {
     timer.reschedule(time.ZonedDateTime.now());
 }
 ```
+
 Notice that we use the `ruleUID` which is a variable made available by the Helper Library to ensure that we don't overwrite on something added to the `cache` from another rule.
 Also notice a line was added to `lightsOut` to delete the entry in the `cache` when the timer ran.
 That will cause the rule to create a new timer the next time the rule runs.
