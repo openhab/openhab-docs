@@ -85,7 +85,7 @@ Believe it or not, what you see in events.log is a greatly reduced set of events
 
 Item events (update, changed, received command), Thing events (e.g. change in status), and rule events will appear in this stream.
 But on a typical system a lot of events will be happening all the time.
-Often one will want to filter. 
+Often one will want to filter.
 Clicking on the filter icon lets you enter a comma separated list of events that should be streamed.
 The list is `OR` meaning is any one matches the event will be shown.
 For example, entering `*Hum*` would only show those events that include "Hum" in the names.
@@ -123,7 +123,7 @@ Over time you will build up a catalog of references so when you need to remeber 
 
 ## Where's it all Being Saved?
 
-Everything presented in this tutorial is "managed" and saved to a text based JSON formatted database in `$OH_USERDATA/jsondb`. 
+Everything presented in this tutorial is "managed" and saved to a text based JSON formatted database in `$OH_USERDATA/jsondb`.
 This folder contains a number of files, one for each type of entity within openHAB.
 These files are automatically backed up on changes.
 If you ever want to see the raw config data, these are the files to look in.
@@ -148,4 +148,3 @@ To maximize the likelihood of getting good help, please consider the following:
 - be polite.
 
 A detailed tutorial on how to ask for help can be found at [Help Us Help You](https://community.openhab.org/t/how-to-ask-a-good-question-help-us-help-you/58396).
-
