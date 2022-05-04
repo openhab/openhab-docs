@@ -24,8 +24,8 @@ module.exports = [
       'tutorial/rules_introduction',
       'tutorial/rules_basic',
       'tutorial/rules_blockly',
-      'tutorials/rules_advanced',
-      'tutorials/tips-and-tricks'
+      'tutorial/rules_advanced',
+      'tutorial/tips-and-tricks'
     ]
   },
   {
