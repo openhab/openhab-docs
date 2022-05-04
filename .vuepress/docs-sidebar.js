@@ -21,13 +21,11 @@ module.exports = [
       'tutorial/auto_overview',
       'tutorial/item_widgets',
       'tutorial/custom_widgets',
-      /*'tutorial/pages_intro',
-      'tutorial/pages_widgets',
-      'tutorial/pages_types',
-      'tutorial/rules_simple',
-      'tutorial/rules_intermediate',
-      'tutorial/cloud',
-      'tutorial/example'*/
+      'tutorial/rules_introduction',
+      'tutorial/rules_basic',
+      'tutorial/rules_blockly',
+      'tutorials/rules_advanced',
+      'tutorials/tips-and-tricks'
     ]
   },
   {
