@@ -110,7 +110,7 @@ This tutorial will not discuss file based rules.
 See the docs for the chosen language for details on how to write rules in files for that language.
 
 openHAB comes with three languages by default (Rules DSL, ECMAScript 5.1, and Blockly) and has a number of add-ons to add more.
-For this tutorial we will be using Blockly and the [JavaScript Scripting](https://www.openhab.org/addons/automation/jsscripting/) add-on.
+For this tutorial we will be using Blockly and the [JavaScript Scripting](/addons/automation/jsscripting/) add-on.
 But most of the concepts presented can be applied to the other languages too.
 
 ## What's the Difference Between a Rule, Script, and Schedule?
@@ -129,8 +129,8 @@ Unfortunately this term is overloaded in opneHAB and has multiple meanings based
 
 - a UI rule consisting of a single Script Action with the tag "Script"
 
-- a special piece of Rules DSL code placed in the $OH_CONF/scripts folder that can be called from other rules using the `callScript` action (note that `callScript` cannot call UI Scripts)
+- a special piece of Rules DSL code placed in the `$OH_CONF/scripts` folder that can be called from other rules using the `callScript` action (note that `callScript` cannot call UI Scripts)
 
-- a file consisting of code that is read and interpreted by a script engine, such as Bash or Python; usually called from a command line in OH using the `executeCommandLine` action or the `Exec` binding; these are not related to Rules DSL scripts and should not be placed in the $OH_CONF/scripts folder
+- a file consisting of code that is read and interpreted by a script engine, such as Bash or Python; usually called from a command line in OH using the `executeCommandLine` action or the `Exec` binding; these are not related to Rules DSL scripts and should not be placed in the `$OH_CONF/scripts` folder
 
 - in text based rules, a script is a file that creates one or more rules; as opposed to a module which is a library that might be used by a script or other modules.

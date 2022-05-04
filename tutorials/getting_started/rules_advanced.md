@@ -30,7 +30,7 @@ Such diverse languages as Python, Ruby, Groovy, Java, and more are available wit
 See the add-on docs for the reference guide and specific information for how to use each individual add-on.
 Take note, not all automation add-ons support writing rules in the UI.
 
-For the rest of this tutorial we will use the [JavaScript Scripting add-on]({{base}}/addons/automation/jsscripting/) which implements ECMAScript 2021 for Script Actions and Script Conditions in UI rules.
+For the rest of this tutorial we will use the [JavaScript Scripting add-on](/addons/automation/jsscripting/) which implements ECMAScript 2021 for Script Actions and Script Conditions in UI rules.
 See the add-on's reference for how to write rules in text files which is outside the scope of this tutorial.
 
 ## Installation
@@ -86,11 +86,11 @@ Just like in Blockly, we will create a new Action but instead of choosing Blockl
 This will open a blank text field where you can start typing your code.
 This text field provides text highlighting and some code completion which helps with coding.
 
-As previously mentioned, the Helper Library for this language comes with the add-on and is imported by default, so see the [JavaScript Scripting add-on's reference]({{base}}/addons/automation/jsscripting/) for the full guide on how to do anything you might want to do.
+As previously mentioned, the Helper Library for this language comes with the add-on and is imported by default, so see the [JavaScript Scripting add-on's reference](/addons/automation/jsscripting/) for the full guide on how to do anything you might want to do.
 For help with general JavaScript coding, there are tons of tutorials and reference documents on the web a search away.
 
 As with the Blockly example, we want to start the rule using a log statement we can see in openhab.log when the rule runs.
-One can either use the [log actions]({{base}}/addons/automation/jsscripting/#log) but most will find it easiest to use the more JavaScript native [`console`]({{base}}/addons/automation/jsscripting/#console).
+One can either use the [log actions](/addons/automation/jsscripting/#log) but most will find it easiest to use the more JavaScript native [`console`](/addons/automation/jsscripting/#console).
 
 ```javascript
 console.info('Motion was detected');
@@ -99,7 +99,7 @@ console.info('Motion was detected');
 Save and test the rule by running it manually and verify you see this statement in the logs.
 
 Next we want to `sendCommand` to the light to turn it on.
-Reading the docs we see that access to the Item registry is provided through [`Items`]({{base}}/addons/automation/jsscripting/#items) where we can get access to a JavaScript Object that represents the Item.
+Reading the docs we see that access to the Item registry is provided through [`Items`](/addons/automation/jsscripting/#items) where we can get access to a JavaScript Object that represents the Item.
 This Object has a `sendCommand()` function that takes the command.
 
 ```javascript
@@ -110,7 +110,7 @@ items.getItem('FrontPorchLight').sendCommand('ON');
 Save and test and verify you see the log statement and the Item receive an ON command.
 
 Now we want to create a Timer to go off in 30 minutes.
-We find the Timer creation documented under [ScriptExecution]({{base}}/addons/automation/jsscripting/#scriptexecution-actions).
+We find the Timer creation documented under [ScriptExecution](/addons/automation/jsscripting/#scriptexecution-actions).
 A Timer will execute a block of code passed to it as the second argument at the time specified by the first argument.
 
 In JavaScript this block of code would be defined in a function.
@@ -127,7 +127,7 @@ var lightsOut = function() {
 };
 ```
 
-To define date times, the [JS Scripting Helper Library]({{base}}/addons/automation/jsscripting/#time) includes the JS-Joda library which provides a very robust set of classes to create and manipulate dates and time.
+To define date times, the [JS Scripting Helper Library](/addons/automation/jsscripting/#time) includes the JS-Joda library which provides a very robust set of classes to create and manipulate dates and time.
 We need to use this library to specify the time when the timer should run.
 
 ```javascript
@@ -144,7 +144,7 @@ Save and test that you see the log statement and the Item receive the `ON` comma
 (hint, change the time passed to the timer to something smaller to make testing easier then change it back once things are working).
 
 Now all we are lacking is the ability to reschedule that timer if motion is seen again in the 30 minute period.
-Looking back at the docs we find the [`cache`]({{base}}/addons/automation/jsscripting/#cache).
+Looking back at the docs we find the [`cache`](/addons/automation/jsscripting/#cache).
 This is a map of key/value pairs that exists outside of the rule.
 Given that position it is able to share data between different rules or between runs of the same rule.
 We will use it to save that Timer so we can reschedule it later when needed.
@@ -188,7 +188,7 @@ When `true` the rule will run, otherwise it's skipped.
 Sunset is available in an Item called `Sunset` and we need to test to see if `now` is between then and `23:00`.
 In order to do that we need to convert the `Sunset` state to a JS-Joda date time.
 
-Looking at the docs for [`Item`]({{base}}/addons/automation/jsscripting/#items) we see that the Helper Library `Item` Class will return the String representation of the Item's state by default.
+Looking at the docs for [`Item`](/addons/automation/jsscripting/#items) we see that the Helper Library `Item` Class will return the String representation of the Item's state by default.
 Luckily the Helper Library also has an extension that makes it so JS-Joda can parse that String by default.
 
 ```javascript
