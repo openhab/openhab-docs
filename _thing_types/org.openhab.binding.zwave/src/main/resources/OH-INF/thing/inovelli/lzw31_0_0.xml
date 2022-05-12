@@ -253,6 +253,24 @@ Single Pole or Multi Pole<br /> <h1>Overview</h1><p>Select what type of installa
         </options>
       </parameter>
 
+      <parameter name="config_51_1" type="integer" groupName="configuration">
+        <label>51: Enable Instant On</label>
+        <description><![CDATA[
+Disable the 700ms delay<br /> <h1>Overview</h1><p>0: No Delay</p><p>1: 700ms Delay</p><p>v1.47 and newer</p>
+        ]]></description>
+        <default>1</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_52_1" type="integer" groupName="configuration">
+        <label>52: Smart Bulb Mode</label>
+        <description><![CDATA[
+Disable switching the load off in Smart Bulb Mode<br /> <h1>Overview</h1><p>If it set to 1, the power will output maximum % when the dimmer is on. 0 = normal operation, 1 = smart bulb.<br /></p><p>Version 1.47 and newer</p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
       <!-- ASSOCIATION DEFINITIONS -->
       <parameter name="group_1" type="text" groupName="association" multiple="true">
         <label>1: Lifeline</label>

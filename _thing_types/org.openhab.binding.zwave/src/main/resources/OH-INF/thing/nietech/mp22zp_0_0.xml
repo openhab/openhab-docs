@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="nietech_mp22zp_00_000" listed="false">
+    <label>MP22ZP Outdoor Plug with Power Meter</label>
+    <description><![CDATA[
+Outdoor Plug with Power Meter<br /> <h1>Overview</h1><p>Z-Wave Plus Outdoor Outlet Mini Plug with Power Meter(MP22ZP)</p><p>Outdoor use</p><p>Power: 120V 60Hz</p><p>Loading: 15 Amp Max Resistive</p><p>Frequency: 908.42MHz</p><p>Temperature Range: 0°C~ 40°C / (32°F~104°F)</p><p>Features:</p><p>Manual and Remote (Z-Wave) on/off control.</p><p>Z-Wave controlled AC outlet for standard incandescent lighting, CFL/LEDs, fans or small appliances(1800W Resistive Max).</p><p>Grounded 3-wire power connection for safety.</p><p>Built-in Z-Wave Plus signal repeater to extend network range.</p><p>S2 security and for reliable wireless communication.</p><p>Work with all certificated Z-Wave controllers.</p><p>Remembers and restores on / off status after power failure.</p><p>Protection function</p><p>(When the protection function is triggered, it needs to be powered the device on again for normal use.)</p><p>Voltage protection: when the voltage＞135V, the device will be forcibly shut down Current protection, when the current＞16A, the device will be forcibly shut down Power Wattage protection, when the power＞2000W, the device will be forcibly shut down.</p><p>Locally Button Press function:</p><p>press 1x: turn output ON or OFF</p><p>quickly press 3x: inclusion or exclusion</p><p>quickly press 10x: Reset KWH<br /></p><p>Factory reset: click Z-Wave button 2 twice quickly, then hold for at least 10 seconds. Light flashes once when reset successful.</p><p>Blue: Light status indicator (on / off)</p><p>Blue: Add / Inclusion</p><p>Purple: Remove / Exclusion</p><p>Red: Network Failure / Over-temperature warning</p> <br /> <h2>Inclusion Information</h2><p>Adding Device To Z-Wave Network:</p><p>Once the controller is ready to add your device, press the Manual/Program button on the smart plug 3 times quickly. The blue LED will blink quickly.</p><p>Auto-add mode: LED will blink within 30 seconds after first plugged in.</p> <br /> <h2>Exclusion Information</h2><p>Removing Device To Z-Wave Network:</p><p>Once the controller is ready to remove your device, press the Manual/Program button on the smart plug 3 times quickly. The blue LED will blink quickly.</p><p>Auto-add mode: LED will blink within 30 seconds after first plugged in.</p> <br /> <h2>Wakeup Information</h2><p><br /></p>
+    ]]></description>
+    <category>PowerOutlet</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_binary" typeId="switch_binary">
+        <label>Switch</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY</property>
+        </properties>
+      </channel>
+      <channel id="meter_kwh" typeId="meter_kwh">
+        <label>Electric meter (kWh)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_KWh</property>
+        </properties>
+      </channel>
+      <channel id="meter_watts" typeId="meter_watts">
+        <label>Electric meter (watts)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_W</property>
+        </properties>
+      </channel>
+      <channel id="meter_voltage" typeId="meter_voltage">
+        <label>Electric meter (volts)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_V</property>
+        </properties>
+      </channel>
+      <channel id="meter_current" typeId="meter_current">
+        <label>Electric meter (amps)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_A</property>
+        </properties>
+      </channel>
+      <channel id="alarm_power" typeId="alarm_power">
+        <label>Alarm (power)</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=POWER_MANAGEMENT</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">NIE Technology</property>
+      <property name="modelId">MP22ZP</property>
+      <property name="manufacturerId">0312</property>
+      <property name="manufacturerRef">FF00:FF0F</property>
+      <property name="dbReference">1488</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_1_1" type="integer" groupName="configuration">
+        <label>1: LED Indicator</label>
+        <description><![CDATA[
+LED Indicator Setup<br /> <h1>Overview</h1><p>This parameter can access you to choose the led indicator to be on when the plug(light) is on/off, or LED indicator remains on/off all times<br /></p>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_2_4" type="integer" groupName="configuration">
+        <label>2: Auto Turn-Off Timer</label>
+        <description><![CDATA[
+Auto Turn-Off Timer Setup<br /> <h1>Overview</h1><p>This parameter can access you to set a timer to make the switch turn off automatically after the switch turned on<br /></p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_3_4" type="integer" groupName="configuration">
+        <label>3: Auto Turn-On Timer</label>
+        <description><![CDATA[
+Auto Turn-On Timer Setup<br /> <h1>Overview</h1><p>This parameter can access you to set a timer to make the switch turn on automatically after the switch turned off.<br /></p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_4_1" type="integer" groupName="configuration">
+        <label>4: Restores state after power failure</label>
+        <description><![CDATA[
+Restores state after power failure Setup<br /> <h1>Overview</h1><p>This parameter can access you to set the switch to be on/off after power failure.<br /></p>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_5_1" type="integer" groupName="configuration">
+        <label>5: Power Wattage(W) Report</label>
+        <description><![CDATA[
+Power Wattage(W) Report Setup<br /> <h1>Overview</h1><p>This parameter determines the minimum change in power wattage(W) that will result in sending new power report to the main controller.<br /></p>
+        ]]></description>
+        <default>1</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_6_4" type="integer" groupName="configuration">
+        <label>6: Time Report</label>
+        <description><![CDATA[
+Time Report Setup<br /> <h1>Overview</h1><p>Electricity (A) Report Frequency (Timer)<br /></p>
+        ]]></description>
+        <default>1</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_7_1" type="integer" groupName="configuration">
+        <label>7: Current(A) Report</label>
+        <description><![CDATA[
+Current(A) Report Setup<br /> <h1>Overview</h1><p>This parameter determines the minimum change in Current(A) that will result in sending new power report to the main controller<br /></p>
+        ]]></description>
+        <default>1</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_8_1" type="integer" groupName="configuration">
+        <label>8: Energy(KWH) Report</label>
+        <description><![CDATA[
+Energy(KWH) Report Setup<br /> <h1>Overview</h1><p>This parameter determines the minimum change in consumed energy that will result in sending new energy report to the main controller<br /></p>
+        ]]></description>
+        <default>1</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Lifeline</label>
+        <description><![CDATA[
+Association group 1<br /> <h1>Overview</h1><p>Association group_1 is default to associate with the primary controller (Gateway/Hub/Controller) for MP22ZP Status change report,</p><p>1. MP22ZP will trigger AUTO report function if the Switch status had been changed.</p>
+        ]]></description>
+        <multipleLimit>1</multipleLimit>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: Basic set From Endpoint1</label>
+        <description><![CDATA[
+Send Basic Set On/Off<br /> <h1>Overview</h1><p>When the output of the MP22ZP Enpoint1 socket is changed, On (0xFF) or Off (0x00)or Overload, The MP22ZP will automatically send out a related basic set command. On (0xFF) or Off (0x00) to its associated group.<br /></p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

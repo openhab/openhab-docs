@@ -1,0 +1,321 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="widom_dry700_00_000" listed="false">
+    <label>DRY700 WiDom Smart Dry Contact Switch 7</label>
+    <description><![CDATA[
+WiDom Smart Dry Contact Switch 7<br /> <h1>Overview</h1><p>The Smart Dry Contact Switch 7 can <b>turn ON and OFF equipments with an independent power supply</b>, such as solenoid valves (e.g. gas, water and irrigation), power operated valves, etc.</p><p>It is very easy to install and <b>works with both momentary and toggle switches</b>.</p><p>It operates in any Z-Wave network with other Z-Wave/Z-Wave Plus certified devices and controllers from any other manufacturer. As a constantly powered node, the device will act as repeater regardless of the vendor in order to increase the reliability of the network.</p><p>This device is a security enabled Z-Wave Plus product that is able to use encrypted Z-Wave Plus messages to communicate to other security enabled Z-Wave Plus products. It must be used in conjunction with a Security Enabled Z-Wave Controller in order to fully utilize all implemented functions.</p><p>The device has the unique feature <b>Offline setup Mode</b> that allows to configure some parameters without using any user interface. This feature enables the professional user to setup the main features of the device in the field even if the device is not included in a Z-Wave Network. When the device will be included in the network all these configuration parameters will be maintained.</p> <br /> <h2>Inclusion Information</h2><p>All Smart Series 7 devices are compatible with all Z-Wave/Z-Wave Plus certified controllers. The devices support both the <b><i>Network Wide Inclusion</i></b> mechanism (which offers the ability to be included in a network, even if the device is not directly connected to the controller) and <b><i>Normal Inclusion</i></b>.</p><p>By default, the inclusion procedure starts in <b><i>Normal Inclusion</i></b> mode and after a short timeout the procedure continues in <i><b>Network Wide Inclusion</b></i> mode that lasts for about 20 Seconds.</p><p>Only a controller can add the device into the network. After activating the inclusion function by the controller, the device can be added by setting it in <i><b>Learn Mode</b></i>.</p><p>Before including the device, the LED status indicator is solid RED. The adding of a device is executed by activating the adding procedure in the inclusion section of the controller interface and executing 1 or 3 click on the integrated <i><b>button</b></i> (the device is set in <b><i>Learn Mode</i></b>). As soon as the inclusion procedure initiates the LED indicator starts a sequence of GREEN-BLUE blinks. The device is included in the network when the LED status is OFF and the interview is completed.</p> <br /> <h2>Exclusion Information</h2><p>Only a controller can remove the device from the network. After activating the exclusion function by the controller, the device can be removed by setting it in <b><i>Learn Mode</i></b>.</p><p>The procedure of exclusion can be activated by <b><i>Removing</i></b> a node from the Z-Wave network and executing 1 or 3 click on the integrated button; as soon as the exclusion initiates, the LED indicator starts a sequence of RED-BLUE blinks. The device is excluded from the network when the LED status indicator is solid RED.</p> <br /> <h2>Wakeup Information</h2><p><br /></p>
+    ]]></description>
+    <category>WallSwitch</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_binary" typeId="switch_binary">
+        <label>Switch</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">wiDom</property>
+      <property name="modelId">DRY700</property>
+      <property name="manufacturerId">0149</property>
+      <property name="manufacturerRef">0004:0007</property>
+      <property name="dbReference">1479</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_1_1" type="integer" groupName="configuration">
+        <label>1: IN_TYPE</label>
+        <description><![CDATA[
+Input type<br /> <h1>Overview</h1><p>This parameter defines the type of the input.<br /></p>
+        ]]></description>
+        <default>1</default>
+        <options>
+          <option value="0">No switch input</option>
+          <option value="1">Momentary switch (button)</option>
+          <option value="2">Toggle switch</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_10_1" type="integer" groupName="configuration">
+        <label>10: IN_TOGGLE</label>
+        <description><![CDATA[
+Which event on the input toggle the output<br /> <h1>Overview</h1><p>This parameter defines which events on the input toggle the output:</p><p><b>0</b>: Disabled</p><p><b>1</b>: 1 click</p><p><b>2</b>: 2 clicks</p><p><b>4</b>: 3 clicks</p><p><b>8</b>: Hold down</p><p><b>16</b>: Up</p><p>If more than one event must be supported, the value for the configuration parameter is the sum of the event values. For example:</p><p>1 click and 2 clicks → Parameter value must be 1 + 2 = 3</p><p>1 click and 3 clicks → Parameter value must be 1 + 4 = 5</p><p><b>Default Value: 1 click, 2 clicks, 3 clicks, Hold down → 15</b></p>
+        ]]></description>
+        <default>15</default>
+        <options>
+          <option value="0">Disabled</option>
+          <option value="1">1 click</option>
+          <option value="2">2 clicks</option>
+          <option value="4">3 clicks</option>
+          <option value="8">Hold down</option>
+          <option value="16">Up</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_11_1" type="integer" groupName="configuration">
+        <label>11: IN_ON_EXCLUSION</label>
+        <description><![CDATA[
+Which events on the input do not switch on the output<br /> <h1>Overview</h1><p>This parameter defines which events on the input do not switch on the output:</p><p><b>0</b>: Disabled</p><p><b>1</b>: 1 click</p><p><b>2</b>: 2 clicks</p><p><b>4</b>: 3 clicks</p><p><b>8</b>: Hold down</p><p><b>16</b>: Up</p><p>If more than one event must be supported, the value for the configuration parameter is the sum of the event values. For example:</p><p>1 click and 2 clicks → Parameter value must be 1 + 2 = 3</p><p>1 click and 3 clicks → Parameter value must be 1 + 4 = 5</p><p><b>Default Value: Disabled → 0</b></p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Disabled</option>
+          <option value="1">1 click</option>
+          <option value="2">2 clicks</option>
+          <option value="4">3 clicks</option>
+          <option value="8">Hold down</option>
+          <option value="16">Up</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_12_1" type="integer" groupName="configuration">
+        <label>12: IN_OFF_EXCLUSION</label>
+        <description><![CDATA[
+Which events on the input do not switch off the output<br /> <h1>Overview</h1><p>This parameter defines which events on the input do not switch off the output:</p><p><b>0</b>: Disabled</p><p><b>1</b>: 1 click</p><p><b>2</b>: 2 clicks</p><p><b>4</b>: 3 clicks</p><p><b>8</b>: Hold down</p><p><b>16</b>: Up</p><p>If more than one event must be supported, the value for the configuration parameter is the sum of the event values. For example:</p><p>1 click and 2 clicks → Parameter value must be 1 + 2 = 3</p><p>1 click and 3 clicks → Parameter value must be 1 + 4 = 5</p><p><b>Default Value: Disabled → 0</b></p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Disabled</option>
+          <option value="1">1 click</option>
+          <option value="2">2 clicks</option>
+          <option value="4">3 clicks</option>
+          <option value="8">Hold down</option>
+          <option value="16">Up</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_21_1" type="integer" groupName="configuration">
+        <label>21: OUT_TYPE</label>
+        <description><![CDATA[
+Type of the output<br /> <h1>Overview</h1><p>This parameter defines the type of the output.<br /></p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Direct load or Normally Open relay</option>
+          <option value="1">Normally Closed relay</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_23_1" type="integer" groupName="configuration">
+        <label>23: STARTUP_OUT</label>
+        <description><![CDATA[
+Level of the output on startup (status of the device following a restart)<br /> <h1>Overview</h1><p>This parameter defines the level of the output on startup (<i>status of the device following a restart</i>).<br /></p>
+        ]]></description>
+        <default>2</default>
+        <options>
+          <option value="0">Off</option>
+          <option value="1">On</option>
+          <option value="2">Previous status</option>
+          <option value="3">Equal to input (ON if input closed, OFF if input open)</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_30_1" type="integer" groupName="configuration">
+        <label>30: TIMER_SETUP</label>
+        <description><![CDATA[
+Which trigger events activate the timers when the output status has changed<br /> <h1>Overview</h1><p>This parameter defines which trigger events activate the timers when output status has changed:</p><p><b>0</b>: Disabled</p><p><b>1</b>: 1 click</p><p><b>2</b>: 2 clicks</p><p><b>4</b>: 3 clicks</p><p><b>8</b>: Hold down</p><p><b>16</b>: Up</p><p><b>32</b>: Network (status change triggered by gateway or other devices in the Z-Wave network)</p><p><b>64</b>: System (based on the startup status, or other timer event)</p><p>If more than one event must be supported, the value for the configuration parameter is the sum of the event values. For example, to control the load with 1 click and 2 clicks, parameter value must be 1 + 2 = 3</p><p><b>Default value: Disabled → 0</b></p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Disabled</option>
+          <option value="1">1 click</option>
+          <option value="2">2 clicks</option>
+          <option value="4">3 clicks</option>
+          <option value="8">Hold down</option>
+          <option value="16">Up</option>
+          <option value="32">Network</option>
+          <option value="64">System</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_31_4" type="integer" groupName="configuration">
+        <label>31: OFF_TIMEOUT</label>
+        <description><![CDATA[
+Time after which the output will be switched off<br /> <h1>Overview</h1><p>This parameter defines the time in tenths of seconds after which the output will be switched off.<br /></p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_32_4" type="integer" groupName="configuration">
+        <label>32: ON_TIMEOUT</label>
+        <description><![CDATA[
+Time after which the output will be switched on<br /> <h1>Overview</h1><p>This parameter defines the time in tenths of seconds after which the output will be switched on.<br /></p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_40_1" type="integer" groupName="configuration">
+        <label>40: G1_SETUP</label>
+        <description><![CDATA[
+Which events on the input control G1 association group<br /> <h1>Overview</h1><p>This parameter defines which events on the input control G1 association group:</p><p><b>0</b>: No control</p><p><b>1</b>: 1 click</p><p><b>2</b>: 2 clicks</p><p><b>4</b>: 3 clicks</p><p><b>8</b>: Hold down</p><p><b>16</b>: Up</p><p>If more than one event must be supported, the value for the configuration parameter is the sum of the event values. For example:</p><p>1 click and 2 clicks → Parameter value must be 1 + 2 = 3</p><p>1 click and 3 clicks → Parameter value must be 1 + 4 = 5</p><p><b>Default value: 1 click → 1</b></p>
+        ]]></description>
+        <default>1</default>
+        <options>
+          <option value="0">No control</option>
+          <option value="1">1 click</option>
+          <option value="2">2 clicks</option>
+          <option value="4">3 clicks</option>
+          <option value="8">Hold down</option>
+          <option value="16">Up</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_41_1" type="integer" groupName="configuration">
+        <label>41: G2_SETUP</label>
+        <description><![CDATA[
+Which events on the input control G2 association group<br /> <h1>Overview</h1><p>This parameter defines which events on the input control G2 association group:</p><p><b>0</b>: No control</p><p><b>1</b>: 1 click</p><p><b>2</b>: 2 clicks</p><p><b>4</b>: 3 clicks</p><p><b>8</b>: Hold down</p><p><b>16</b>: Up</p><p>If more than one event must be supported, the value for the configuration parameter is the sum of the event values. For example:</p><p>1 click and 2 clicks → Parameter value must be 1 + 2 = 3</p><p>1 click and 3 clicks → Parameter value must be 1 + 4 = 5</p><p><b>Default value: 2 clicks → 2</b></p>
+        ]]></description>
+        <default>2</default>
+        <options>
+          <option value="0">No control</option>
+          <option value="1">1 click</option>
+          <option value="2">2 clicks</option>
+          <option value="4">3 clicks</option>
+          <option value="8">Hold down</option>
+          <option value="16">Up</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_44_1" type="integer" groupName="configuration">
+        <label>44: G1_ASS_VALUE</label>
+        <description><![CDATA[
+Value used to control G1 association group<br /> <h1>Overview</h1><p>This parameter defines the value used to control G1 association group:</p><p><b>0</b>: OFF</p><p><b>1-99</b>: Specific dimming value</p><p><b>100</b>: ON</p><p><b>101</b>: Propagate (output status to the associated devices)</p><p><b>102</b>: Toggle remote (change status ON/OFF of associated devices)</p>
+        ]]></description>
+        <default>101</default>
+        <options>
+          <option value="0">Off</option>
+          <option value="100">On</option>
+          <option value="101">Propagate</option>
+          <option value="102">Toggle remote</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_45_1" type="integer" groupName="configuration">
+        <label>45: G2_ASS_VALUE</label>
+        <description><![CDATA[
+Value used to control G2 association group<br /> <h1>Overview</h1><p>This parameter defines the value used to control G2 association group:</p><p><b>0</b>: OFF</p><p><b>1-99</b>: Specific dimming value</p><p><b>100</b>: ON</p><p><b>101</b>: Propagate (<i>output status to the associated devices</i>)</p><p><b>102</b>: Toggle remote (<i>change status ON/OFF of associated devices</i>)</p>
+        ]]></description>
+        <default>101</default>
+        <options>
+          <option value="0">Off</option>
+          <option value="100">On</option>
+          <option value="101">Propagate</option>
+          <option value="102">Toggle remote</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_50_4" type="integer" groupName="configuration">
+        <label>50: DIMMING_TIME</label>
+        <description><![CDATA[
+Fade On/Off time to control device in dimming group<br /> <h1>Overview</h1><p>Fade On/Off time in seconds used to control device in dimming group.<br /></p>
+        ]]></description>
+        <default>5</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_51_1" type="integer" groupName="configuration">
+        <label>51: MIN_DIM_LEVEL</label>
+        <description><![CDATA[
+Minimum dimming level to control the device in a dimming group<br /> <h1>Overview</h1><p>This parameter defines the minimum dimming level to control the device in a dimming group.<br /></p>
+        ]]></description>
+        <default>1</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_60_1" type="integer" groupName="configuration">
+        <label>60: SCENE_SETUP</label>
+        <description><![CDATA[
+Which event on the input trigger a central scene notification<br /> <h1>Overview</h1><p>This parameter defines which event on the input trigger a central scene notification:</p><p><b>0</b>: None</p><p><b>1</b>: 1 click</p><p><b>2</b>: 2 clicks</p><p><b>4</b>: 3 clicks</p><p><b>8</b>: Hold down</p><p><b>16</b>: Up</p><p>If more than one event must be supported, the value for the configuration parameter is the sum of the event values. For example:</p><p>1 click and 2 clicks → Parameter value must be 1 + 2 = 3</p><p>1 click and 3 clicks → Parameter value must be 1 + 4 = 5</p><p><b>Default value: all events → 31</b></p>
+        ]]></description>
+        <default>31</default>
+        <options>
+          <option value="0">None</option>
+          <option value="1">1 click</option>
+          <option value="2">2 clicks</option>
+          <option value="4">3 clicks</option>
+          <option value="8">Hold down</option>
+          <option value="16">Up</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Lifeline</label>
+        <description>Life Line Group</description>
+        <multipleLimit>8</multipleLimit>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: Follow me</label>
+        <description>The state of the output (ON/OFF) will be propagated to the associated device</description>
+        <multipleLimit>8</multipleLimit>
+      </parameter>
+
+      <parameter name="group_3" type="text" groupName="association" multiple="true">
+        <label>3: Clicks on button G1</label>
+        <description><![CDATA[
+<br /> <h1>Overview</h1><p><br /></p>
+        ]]></description>
+        <multipleLimit>8</multipleLimit>
+      </parameter>
+
+      <parameter name="group_4" type="text" groupName="association" multiple="true">
+        <label>4: Clicks on button G2</label>
+        <description><![CDATA[
+<br /> <h1>Overview</h1><p><br /></p>
+        ]]></description>
+        <multipleLimit>8</multipleLimit>
+      </parameter>
+
+      <parameter name="group_5" type="text" groupName="association" multiple="true">
+        <label>5: Dimming group</label>
+        <description>The devices will be controlled by dimming commands</description>
+        <multipleLimit>8</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

@@ -1,0 +1,381 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="widom_edsc700_00_000" listed="false">
+    <label>EDSC700 WiDom Energy Driven Switch C 7</label>
+    <description><![CDATA[
+WiDom Energy Driven Switch C 7<br /> <h1>Overview</h1><p>The Energy Driven Switch C 7 is a device designed to monitor all <b>parameters</b>, <b>usage</b>, <b>faults </b>and <b>overloads </b>of your electrical system. Unlike ordinary energy meters, it is a bi-directional meter capable of measuring both the consumed and produced power, equipped with a relay that can be activated to initiate specific scenarios in relation to detected power levels.</p><p>The device is equipped with an external current transformer and can measure powers over 10 KW.</p><p><b>• Active Energy-saving management</b></p><p>Automatically connects and disconnects a specific load if the established threshold limit is exceeded, or supplies the required power, momentarily excluding non-priority loads.</p><p><b>• Management and prevention of electrical faults</b></p><p>Identifies malfunctions based on irregular consumption and to the maximum time of activity.</p><p><b>• Electrical overload management</b></p><p>Notifies or disconnects non-priority loads in the eventuality of system overloads.</p><p>Similarly to the other Smart Series 7 devices, it can be fully integrated into pre-existing systems and configured in full integration with the Z-Wave home automation ecosystem.</p><p>At the same time, it is completely configurable so that it can adapt to the most varied needs while also being ready to be used without needing additional configurations in order to operate.</p><p>The device is equipped with contact protection technology (Zero Crossing) which reduces the electrical stress on the relay contacts and ensures a longer life. The open / closed switching of the device always occur when the instantaneous value of voltage is 0.</p><p>It operates in any Z-Wave network with other Z-Wave/Z-Wave Plus certified devices and controllers from any other manufacturer. As a constantly powered node, the device will act as repeater regardless of the vendor in order to increase the reliability of the network.</p> <br /> <h2>Inclusion Information</h2><p>All Smart Series 7 devices are compatible with all Z-Wave/Z-Wave Plus certified controllers. The devices support both the<b><i> Network Wide Inclusion</i></b> mechanism (which offers the ability to be included in a network, even if the device is not directly connected to the controller) and <b><i>Normal Inclusion</i></b>.</p><p>By default, the inclusion procedure starts in <b><i>Normal Inclusion</i></b> mode and after a short timeout the procedure continues in <b><i>Network Wide Inclusion</i></b> mode that lasts for about 20 Seconds.</p><p>Only a controller can add the device into the network. After activating the inclusion function by the controller, the device can be added by setting it in <b><i>Learn Mode</i></b>.</p><p>Before including the device, the LED status indicator is solid RED. The adding of a device is executed by activating the adding procedure in the inclusion section of the controller interface and executing 1 or 3 click on the integrated <b><i>button</i></b> (the device is set in <i><b>Learn Mode</b></i>). As soon as the inclusion procedure initiates the LED indicator starts a sequence of GREEN-BLUE blinks. The device is included in the network when the LED status is OFF and the interview is completed.</p> <br /> <h2>Exclusion Information</h2><p>Only a controller can remove the device from the network. After activating the exclusion function by the controller, the device can be removed by setting it in <b>Learn Mode</b>.</p><p>The procedure of exclusion can be activated by <b>Removing</b> a node from the Z-Wave network and executing 1 or 3 click on the integrated button; as soon as the exclusion initiates, the LED indicator starts a sequence of RED-BLUE blinks. The device is excluded from the network when the LED status indicator is solid RED.</p> <br /> <h2>Wakeup Information</h2><p><br /></p>
+    ]]></description>
+    <category>PowerOutlet</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="meter_kwh" typeId="meter_kwh">
+        <label>Electric meter (kWh)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_KWh</property>
+        </properties>
+      </channel>
+      <channel id="meter_watts" typeId="meter_watts">
+        <label>Electric meter (watts)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_W</property>
+        </properties>
+      </channel>
+      <channel id="meter_voltage" typeId="meter_voltage">
+        <label>Electric meter (volts)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_V</property>
+        </properties>
+      </channel>
+      <channel id="meter_current" typeId="meter_current">
+        <label>Electric meter (amps)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_A</property>
+        </properties>
+      </channel>
+      <channel id="meter_powerfactor" typeId="meter_powerfactor">
+        <label>Electric meter (power factor)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_Power_Factor</property>
+        </properties>
+      </channel>
+      <channel id="alarm_power" typeId="alarm_power">
+        <label>Alarm (power)</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=POWER_MANAGEMENT</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">wiDom</property>
+      <property name="modelId">EDSC700</property>
+      <property name="manufacturerId">0149</property>
+      <property name="manufacturerRef">0004:0009</property>
+      <property name="dbReference">1480</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_21_1" type="integer" groupName="configuration">
+        <label>21: OUT_TYPE</label>
+        <description><![CDATA[
+Output type<br /> <h1>Overview</h1><p>This parameter defines the output type.</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Direct load control or normally open relay</option>
+          <option value="1">Normally closed relay</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_23_1" type="integer" groupName="configuration">
+        <label>23: STARTUP_OUT</label>
+        <description><![CDATA[
+Output level on startup<br /> <h1>Overview</h1><p>This parameter defines the output level on startup.</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Off</option>
+          <option value="1">On</option>
+          <option value="2">Previous status</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_31_4" type="integer" groupName="configuration">
+        <label>31: OFF_TIMEOUT</label>
+        <description><![CDATA[
+Time after which the output will be switched off<br /> <h1>Overview</h1><p>This parameter defines the time in tenths of second after which the output will be switched off (0 → disabled).</p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_32_4" type="integer" groupName="configuration">
+        <label>32: ON_TIMEOUT</label>
+        <description><![CDATA[
+Time after which the output will be switched on.<br /> <h1>Overview</h1><p>This parameter defines the time in tenths of second after which the output will be switched on (0 → disabled).<br /></p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_40_1" type="integer" groupName="configuration">
+        <label>40: UP_POWER_LOCAL_CONTROL</label>
+        <description><![CDATA[
+Value used to control the integrated Relay in case of Up Power event<br /> <h1>Overview</h1><p>This parameter defines the value used to control the integrated Relay in case of Up Power event.</p>
+        ]]></description>
+        <default>1</default>
+        <options>
+          <option value="0">Off</option>
+          <option value="1">On</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_41_1" type="integer" groupName="configuration">
+        <label>41: DOWN_POWER_LOCAL_CONTROL</label>
+        <description><![CDATA[
+Value used to control the integrated Relay in case of Down Power event<br /> <h1>Overview</h1><p>This parameter defines the value used to control the integrated Relay in case of Down Power event.</p>
+        ]]></description>
+        <default>1</default>
+        <options>
+          <option value="0">Off</option>
+          <option value="1">On</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_42_1" type="integer" groupName="configuration">
+        <label>42: METER_TYPE</label>
+        <description><![CDATA[
+How positive and negative power are treated<br /> <h1>Overview</h1><p>This parameter defines how positive and negative power are treated:</p><p><b>0</b>: As is (the meter is connected in a bidirectional system and you want to measure consumed and produced energy)</p><p><b>1</b>: Negative value is considered 0 (the meter is connected in a bidirectional system, but you are interested only in consumed energy)</p><p><b>2</b>: Positive value is considered 0 (the meter is connected in a bidirectional system, but you are interested only in produced energy)</p><p><b>3</b>: All values are considered positive (the meter is connected in a system that only consumes energy)</p><p><b>4</b>: All values are considered negative (the meter is connected in a system that only produces energy)</p>
+        ]]></description>
+        <default>3</default>
+        <options>
+          <option value="0">As is</option>
+          <option value="1">Negative value is considered 0</option>
+          <option value="2">Positive value is considered 0</option>
+          <option value="3">All values are considered positive</option>
+          <option value="4">All values are considered negative</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_43_1" type="integer" groupName="configuration">
+        <label>43: CT_TYPE</label>
+        <description><![CDATA[
+Model of Current Transformer connected to the device<br /> <h1>Overview</h1><p>This parameter defines the model of Current Transformer connected to the device.</p>
+        ]]></description>
+        <default>1</default>
+        <options>
+          <option value="1">Standard type</option>
+          <option value="2">Type 2 version</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_44_1" type="integer" groupName="configuration">
+        <label>44: UP_POWER_REMOTE_CONTROL</label>
+        <description><![CDATA[
+Value used to control Up Power Group<br /> <h1>Overview</h1><p>This parameter defines the value used to control Up Power Group:</p><p><b>0-99</b>: Specific value (where 0 equals OFF)</p><p><b>100</b>: ON</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Off</option>
+          <option value="100">On</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_45_1" type="integer" groupName="configuration">
+        <label>45: DOWN_POWER_REMOTE_CONTROL</label>
+        <description><![CDATA[
+Value used to control Down Power Group<br /> <h1>Overview</h1><p>This parameter defines the value used to control Down Power Group:</p><p><b>0-99</b>: Specific value (where 0 equals OFF)</p><p><b>100</b>: ON</p>
+        ]]></description>
+        <default>100</default>
+        <options>
+          <option value="0">Off</option>
+          <option value="100">On</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_46_2" type="integer" groupName="configuration">
+        <label>46: OVER_VOLTAGE_LIMIT</label>
+        <description><![CDATA[
+Over Voltage Limit<br /> <h1>Overview</h1><p>This parameter defines the Over Voltage Limit in tenths of Volt (accepted values between 900 and 2530).</p>
+        ]]></description>
+        <default>2530</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_47_2" type="integer" groupName="configuration">
+        <label>47: DOWN_VOLTAGE_LIMIT</label>
+        <description><![CDATA[
+Down Voltage Limit<br /> <h1>Overview</h1><p>This parameter defines the Down Voltage Limit in tenths of Volt (accepted values between 900 and 2530).<br /></p>
+        ]]></description>
+        <default>2070</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_50_4" type="integer" groupName="configuration">
+        <label>50: UP_POWER_LEVEL</label>
+        <description><![CDATA[
+Up Power level<br /> <h1>Overview</h1><p>This parameter sets the level of Watts beyond which time of permanence above this level is calculated:</p><p><b>0</b>: Up Power event disabled</p><p><b>1-100000</b>: Instantaneous power in Watts<br /></p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_51_1" type="integer" groupName="configuration">
+        <label>51: UP_POWER_TYPE</label>
+        <description><![CDATA[
+Up Power type<br /> <h1>Overview</h1><p>This parameter defines if the Up Power is consumed or produced.</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Consumed</option>
+          <option value="1">Produced</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_52_2" type="integer" groupName="configuration">
+        <label>52: UP_POWER_FIRST_TIMEOUT</label>
+        <description><![CDATA[
+Time of permanence above the Up Power level after which the first Up Power event occurs<br /> <h1>Overview</h1><p>This parameter defines the time of permanence in seconds above the Up Power level after which the first Up Power event occurs (accepted values are between 2 and 7200 seconds).<br /></p>
+        ]]></description>
+        <default>30</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_53_2" type="integer" groupName="configuration">
+        <label>53: UP_POWER_NEXT_TIMEOUT</label>
+        <description><![CDATA[
+Time of permanence above the Up Power level after which the next Up Power event occurs<br /> <h1>Overview</h1><p>This parameter defines the time of permanence in seconds above the Up Power level after which the next Up Power event occurs (accepted values are between 2 and 7200 seconds).<br /></p>
+        ]]></description>
+        <default>5</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_54_4" type="integer" groupName="configuration">
+        <label>54: DOWN_POWER_LEVEL</label>
+        <description><![CDATA[
+Down Power level<br /> <h1>Overview</h1><p>This parameter sets the level of Watts beyond which time of permanence below this level is calculated:</p><p><b>0</b>: Down Power event disabled</p><p><b>1-100000</b>: Instantaneous power in Watts</p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_55_1" type="integer" groupName="configuration">
+        <label>55: DOWN_POWER_TYPE</label>
+        <description><![CDATA[
+Down Power type<br /> <h1>Overview</h1><p>This parameter defines if the Down Power is consumed or produced.<br /></p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Consumed</option>
+          <option value="1">Produced</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_56_2" type="integer" groupName="configuration">
+        <label>56: DOWN_POWER_FIRST_TIMEOUT</label>
+        <description><![CDATA[
+Time of permanence below the Down Power level after which the first Down Power event occurs<br /> <h1>Overview</h1><p>This parameter defines the time of permanence in seconds below the Down Power level after which the first Down Power event occurs (accepted values are between 2 and 7200 seconds).<br /></p>
+        ]]></description>
+        <default>30</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_57_2" type="integer" groupName="configuration">
+        <label>57: DOWN_POWER_NEXT_TIMEOUT</label>
+        <description><![CDATA[
+Time of permanence below the Down Power level after which the next Down Power event occurs<br /> <h1>Overview</h1><p>This parameter defines the time of permanence in seconds below the Down Power level after which the next Down Power event occurs (accepted values are between 2 and 7200 seconds).<br /></p>
+        ]]></description>
+        <default>5</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_58_2" type="integer" groupName="configuration">
+        <label>58: PROTECTION_TIME</label>
+        <description><![CDATA[
+Minimum time after which an Up/Down Power event can be triggered again<br /> <h1>Overview</h1><p>This parameter defines the minimum time in seconds after which an Up/Down Power event can be triggered again (accepted values are between 2 and 3600 seconds).</p>
+        ]]></description>
+        <default>60</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_71_1" type="integer" groupName="configuration">
+        <label>71: METER_REPORT_MAX_DELAY</label>
+        <description><![CDATA[
+Maximum time after which the next Meter sequence report will be sent<br /> <h1>Overview</h1><p>This parameter defines the maximum time in minutes after which the next Meter sequence report will be sent (accepted values are between 1 and 120 minutes).</p>
+        ]]></description>
+        <default>10</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_75_1" type="integer" groupName="configuration">
+        <label>75: METER_INSTANT_REPORT</label>
+        <description><![CDATA[
+Percentage of Power change from the last sent report that triggers a new meter report<br /> <h1>Overview</h1><p>This parameter defines the percentage of Power change from the last sent report that triggers a new meter report sequence (accepted values are between 0 and 100, where 0 means that no report is sent, for any power change).<br /></p>
+        ]]></description>
+        <default>20</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_76_1" type="integer" groupName="configuration">
+        <label>76: REPORT_CONFIG</label>
+        <description><![CDATA[
+Which report scale will be sent<br /> <h1>Overview</h1><p>This parameter defines which report scale will be sent.</p><p>If more than one scale must be sent, the value of the configuration parameter is a sum of values.</p><p>For example:</p><p>Energy and Power reports → Parameter value must be 1 + 4 =5</p><p>Voltage and Current reports → Parameter value must be 16 + 32 =48</p><p><b>Default value: 117 (to receive all reports)</b></p>
+        ]]></description>
+        <default>117</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Lifeline</label>
+        <description>Life Line Group</description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: Up Power Detected G1</label>
+        <description><![CDATA[
+G1 and G2 group are controlled in sequence, after a user defined delay, in the case of an Up Power event<br /> <h1>Overview</h1><p><br /></p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_3" type="text" groupName="association" multiple="true">
+        <label>3: Up Power Detected G2</label>
+        <description><![CDATA[
+G1 and G2 group are controlled in sequence, after a user defined delay, in the case of an Up Power event<br /> <h1>Overview</h1><p><br /></p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_4" type="text" groupName="association" multiple="true">
+        <label>4: Down Power Detected G1</label>
+        <description><![CDATA[
+G1 and G2 group are controlled in sequence, after a user defined delay, in the case of a Down Power event<br /> <h1>Overview</h1><p><br /></p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_5" type="text" groupName="association" multiple="true">
+        <label>5: Down Power Detected G2</label>
+        <description><![CDATA[
+G1 and G2 group are controlled in sequence, after a user defined delay, in the case of a Down Power event<br /> <h1>Overview</h1><p><br /></p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

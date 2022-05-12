@@ -33,7 +33,7 @@ Smart Toggle Switch<br /> <h1>Overview</h1><p>In-Wall Smart Toggle Switch (120/2
       <property name="vendor">Jasco Products</property>
       <property name="modelId">ZW4009 / GE39354</property>
       <property name="manufacturerId">0063</property>
-      <property name="manufacturerRef">4952:3231,4952:3238</property>
+      <property name="manufacturerRef">4952:3138,4952:3231,4952:3238</property>
       <property name="dbReference">1237</property>
       <property name="defaultAssociations">1</property>
     </properties>
