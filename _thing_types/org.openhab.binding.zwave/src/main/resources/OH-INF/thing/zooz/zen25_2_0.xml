@@ -50,6 +50,12 @@ Double Plug v2<br /> <h1>Overview</h1><p>The Double Plug works great as a low pr
           <property name="binding:*:OnOffType">COMMAND_CLASS_METER</property>
         </properties>
       </channel>
+      <channel id="config_decimal_param3" typeId="config_decimal">
+        <label>Reporting Interval Watts</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_CONFIGURATION;parameter=3</property>
+        </properties>
+      </channel>
       <channel id="alarm_power" typeId="alarm_power">
         <label>Alarm (power)</label>
         <properties>
@@ -381,5 +387,13 @@ Enable/Disable Energy and USB Reports<br /> <h1>Overview</h1><p>Choose if you wa
     </config-description>
 
   </thing-type>
+
+  <channel-type id="zooz_zen25_02_000_config_decimal_param3">
+    <item-type>Number</item-type>
+    <label>Wattage Frequency</label>
+    <description>Power Wattage Report Frequency</description>
+    <state pattern="%s">
+    </state>
+  </channel-type>
 
 </thing:thing-descriptions>

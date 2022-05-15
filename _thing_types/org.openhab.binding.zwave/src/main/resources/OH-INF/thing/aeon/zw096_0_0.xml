@@ -58,6 +58,12 @@ Smart Switch 6<br /> <h1>Overview</h1><p>Aeon Labs Smart Switch is a Z-Wave powe
           <property name="binding:Command:OnOffType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
         </properties>
       </channel>
+      <channel id="config_decimal_param111" typeId="config_decimal">
+        <label>Reporting Interval Group 1</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_CONFIGURATION;parameter=111</property>
+        </properties>
+      </channel>
     </channels>
 
     <!-- DEVICE PROPERTY DEFINITIONS -->
@@ -385,5 +391,13 @@ forwarding basic set (retransmit)<br /> <h1>Overview</h1><p>Forward the Basic Se
     </config-description>
 
   </thing-type>
+
+  <channel-type id="aeon_zw096_00_000_config_decimal_param111">
+    <item-type>Number</item-type>
+    <label>Time interval for sending to group 1</label>
+    <description>Group 1 automatic update interval</description>
+    <state pattern="%s">
+    </state>
+  </channel-type>
 
 </thing:thing-descriptions>

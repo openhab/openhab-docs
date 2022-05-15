@@ -44,6 +44,12 @@ Home Energy Meter G2<br /> <h1>Overview</h1><p>Aeon Labs Home Energy Meter is a 
           <property name="binding:*:OnOffType">COMMAND_CLASS_METER,COMMAND_CLASS_BASIC;reset=true</property>
         </properties>
       </channel>
+      <channel id="config_decimal_param111" typeId="config_decimal">
+        <label>Reporting Interval- Group 1</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_CONFIGURATION;parameter=111</property>
+        </properties>
+      </channel>
       <channel id="meter_watts1" typeId="meter_watts">
         <label>Electric meter (watts) 1</label>
         <properties>
@@ -319,5 +325,12 @@ Reset all settings to factory defaults<br /> <h1>Overview</h1><p>If you upgrade 
     </config-description>
 
   </thing-type>
+
+  <channel-type id="aeon_dsb28_00_000_config_decimal_param111">
+    <item-type>Number</item-type>
+    <label>Interval to send out reports of group 1</label>
+    <state pattern="%s">
+    </state>
+  </channel-type>
 
 </thing:thing-descriptions>
