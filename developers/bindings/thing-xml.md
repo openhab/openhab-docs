@@ -805,7 +805,7 @@ The full Java API for bridge and *Thing* descriptions can be found in the Java p
 | channel-type.id               | An identifier for the channel type | mandatory |
 | channel-type.advanced         | The flag indicating if this channel contains advanced functionalities which should be typically not shown in the basic view of user interfaces | optional, default: false |
 | kind                          | The kind of channel. state for channels which have a state, trigger for trigger channels. state is the default. | |
-| item-type                     | An item type of the channel. All item types are specified in ItemFactory instances. The following items belong to the core: Switch, Rollershutter, Contact, String, Number, Dimmer, DateTime, Color, Image. | mandatory if kind state, which is the default |
+| item-type                     | An item type of the channel. All item types are specified in ItemFactory instances. The following items belong to the core: Switch, Rollershutter, Contact, String, Number, Dimmer, DateTime, Color, Image, Location, Player, Call. | mandatory if kind state, which is the default |
 | label                         | A human-readable label for the channel | mandatory |
 | description                   | A human-readable description for the channel | optional |
 | category                      | The category for the channel, e.g. TEMPERATURE | optional |
