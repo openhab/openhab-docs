@@ -34,7 +34,7 @@ Additionally, certain bindings register their supported devices as audio sinks, 
 
 ### Console commands
 
-To check, which audio sinks are available, you can use the console:
+To check which audio sinks are available, you can use the console:
 
 ```text
 openhab> openhab:audio sinks
@@ -84,7 +84,14 @@ In order to use text-to-speech, you need to install at least one [TTS service](/
 
 ### Console Commands
 
-Once you have done so, you will find voices available in your system:
+To check which Text-to-Speech services are available, you can use the console:
+
+```text
+openhab> openhab:voice ttsservices
+* macOS TTS (mactts)
+```
+
+Once you have installed at least one text-to-speech service, you will find voices available in your system:
 
 ```text
 openhab> openhab:voice voices
@@ -121,8 +128,18 @@ If no voice or no audio sink is provided, the default voice and default audio si
 
 ### Speech-to-Text
 
-Although there are already interfaces defined in openHAB for speech-to-text, up to now there is no add-on available for this functionality.
-So the only choice that is available right now is to use the Android voice recognition feature that is built into the openHAB app for Android.
+In order to use Speech-to-Text, you need to install at least one [STT service](/addons/#voice).
+
+### Console Commands
+
+To check which Speech-to-Text services are available, you can use the console:
+
+```text
+openhab> openhab:voice sttservices
+* Vosk (voskstt)
+```
+
+You can define a default STT service to use either by textual configuration in `$OPENHAB_CONF/services/runtime.cfg` or in the UI in `Settings->Voice`.
 
 ### Human Language Interpreter
 
@@ -136,6 +153,18 @@ There are two implementations available by default:
 | `system`    | Built-in Interpreter   | This is a simple implementation that understands basic home automation commands like "turn on the light" or "stop the music". It currently supports only English, German, French and Spanish and the vocabulary is still very limited. The exact syntax still needs to be documented, for the moment you need to refer to the [source code](https://github.com/openhab/openhab-core/blob/main/bundles/org.openhab.core.voice/src/main/java/org/openhab/core/voice/internal/text/StandardInterpreter.java#L42). |
 | `opennlp`   | HABot OpenNLP Interpreter | A machine-learning natural language processor based on Apache OpenNLP for intent classification and entity extraction.                                                                                                                                                                                                                                                                                                                                                                             |
 
+### Console Commands
+
+To check which human language interpreters are available, you can use the console:
+
+```text
+openhab> openhab:voice interpreters
+  Built-in Interpreter (system)
+* Rule-based Interpreter (rulehli)
+```
+
+You can define a default human language interpreter to use either by textual configuration in `$OPENHAB_CONF/services/runtime.cfg` or in the UI in `Settings->Voice`.
+
 To test the interpreter, you can enter such a command on the console (assuming you have an item with label 'light'):
 
 ```text
@@ -145,16 +174,20 @@ openhab> openhab:voice interpret turn on the light
 The default human language interpreter will be used.
 In case of interpretation error, the error message will be said using the default voice and default audio sink.
 
-Again, such a command can also be entered within DSL rules (using the [`interpret()`](https://openhab.org/javadoc/latest/org/openhab/core/voice/voicemanager#interpret(java.lang.String)) function)
+### Actions
+
+Alternatively you can execute such commands within DSL rules (using the [`interpret()`](https://openhab.org/javadoc/latest/org/openhab/core/voice/voicemanager#interpret(java.lang.String)) function)
 
 ```java
 interpret("turn on the light")
 var String result = interpret("turn on the light", "system")
 result = interpret("turn on the light", "system", null)
+result = interpret("turn on the light", "system,rulehli")
 result = interpret(VoiceCommand.state, "system", "sonos:PLAY5:kitchen")
 ```
 
-You can select a particular human language interpreter (second parameter) and a particular audio sink (third parameter).
+You can select particular human language interpreter(s) (second parameter) and a particular audio sink (third parameter).
+The human language interpreter(s) parameter must be the ID of an installed interpreter or a comma separated list of interpreter IDs; each provided interpreter is executed in the provided order until one is able to interpret the command.
 The audio sink parameter is used when the interpretation fails; in this case, the error message is said using the default voice and the provided audio sink.
 If the provided audio sink is set to null, the error message will not be said.
 If no human language interpreter or no audio sink is provided, the default human language interpreter and default audio sink will be used.
