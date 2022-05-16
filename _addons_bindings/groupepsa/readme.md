@@ -5,6 +5,7 @@ title: Groupe PSA - Bindings
 type: binding
 description: "Binding to retrieve information via the Groupe PSA Web API for cars from Opel, Peugeot, Citroen, DS and Vauxhall."
 since: 3x
+logo: images/addons/groupepsa.png
 install: manual
 ---
 
