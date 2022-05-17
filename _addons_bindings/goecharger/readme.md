@@ -26,7 +26,7 @@ The Go-eCharger HOMEfix with 11kW and 22kW is supported too.
 
 ## Thing Configuration
 
-The thing has two configuration parameters:
+The thing has three configuration parameters:
 
 | Parameter       | Description                                   | Required |
 |-----------------|-----------------------------------------------|----------|
