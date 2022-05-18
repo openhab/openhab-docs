@@ -25,7 +25,7 @@ For this example we will be creating two rules, one that sets a Switch Item to `
 
 ### Create the Rule
 
-Navigate to Settings and Rules and click on the + icon in the lower right corner.
+Navigate to Settings and Rules and click on the **+** icon in the lower right corner.
 
 #### Metadata
 

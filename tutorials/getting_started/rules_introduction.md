@@ -125,7 +125,7 @@ All are rules.
 | Schedule | any rule with a time based trigger and the tag "Schedule"                                                                                          | This page is a good place to see when your rules are scheduled to run. However, note that it only shows statically timed rules.                                                                                                                                                                                                           |
 
 Important note on the term "Script".
-Unfortunately this term is overloaded in opneHAB and has multiple meanings based on the context.
+Unfortunately this term is overloaded in openHAB and has multiple meanings based on the context.
 
 - a UI rule consisting of a single Script Action with the tag "Script"
 
