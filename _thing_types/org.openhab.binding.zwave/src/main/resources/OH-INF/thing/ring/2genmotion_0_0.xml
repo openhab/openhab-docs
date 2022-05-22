@@ -44,7 +44,7 @@
       <property name="vendor">Ring</property>
       <property name="modelId">2Gen Motion</property>
       <property name="manufacturerId">0346</property>
-      <property name="manufacturerRef">0301:0301</property>
+      <property name="manufacturerRef">0301:0301,0301:0401</property>
       <property name="dbReference">1361</property>
       <property name="defaultAssociations">1</property>
     </properties>

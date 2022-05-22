@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="yale_zws2dsk_00_000" listed="false">
+    <label>Yale Zwave S2 Security Module Supported on Lock models - SYDM3109PLUS and SYDM4109PLUS</label>
+    <description><![CDATA[
+Supported on Lock models - SYDM3109PLUS and SYDM4109PLUS<br /> <h1>Overview</h1><p>RFHX-YZW51-00</p><p>YALE AU ZWAVE MODULE FOR ASEAN MODEL<br /></p><p>Yale Z-Wave Network Module</p><p>Lose Your Keys - Forget carrying around keys; lock and unlock your door with your smartphone. Remote Access Control - With the Yale Z-Wave Network Module control your Yale SYDM3109plus/ 4109plus Lock from anywhere via your Home Automation Hub.</p><p>Features</p><ul><li>Remote access to lock features</li><li>Requires compatible 3rd party Z-Wave Home Automation Hub (sold separately)</li><li>Features may vary based on 3rd party hub software</li><li>Supported on Lock models - SYDM3109PLUS and SYDM4109PLUS</li></ul><p><br /></p> <br /> <h2>Inclusion Information</h2><ol><li>Put the Z-Wave controller into add or learn mode</li><li>Enter the master code on the lock, followed by Registration(R or I)</li><li>Press the 9 button, followed by #</li><li>Press the 1 button followed by #</li></ol> <br /> <h2>Exclusion Information</h2><ol><li>Put the Z-Wave controller into add or learn mode</li><li>Enter the master code on the lock, followed by Registration(R or I)</li><li>Press the 9 button, followed by #</li><li>Press the 3 button followed by #</li><li>Enter the master code on the lock</li></ol> <br /> <h2>Wakeup Information</h2><p><br /></p>
+    ]]></description>
+    <category>Lock</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="lock_door" typeId="lock_door">
+        <label>Door Lock</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_DOOR_LOCK</property>
+        </properties>
+      </channel>
+      <channel id="alarm_general" typeId="alarm_general">
+        <label>Alarm</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM</property>
+        </properties>
+      </channel>
+      <channel id="battery-level" typeId="system.battery-level">
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_BATTERY</property>
+        </properties>
+      </channel>
+      <channel id="time_offset" typeId="time_offset">
+        <label>Clock Time Offset</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_TIME_PARAMETERS</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">ASSA ABLOY</property>
+      <property name="modelId">Yale Zwave S2 Security Module</property>
+      <property name="manufacturerId">0129</property>
+      <property name="manufacturerRef">C600:0003</property>
+      <property name="dbReference">1492</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Alarm Reports</label>
+        <description>Alarm reports are sent out to all devices in the association group</description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

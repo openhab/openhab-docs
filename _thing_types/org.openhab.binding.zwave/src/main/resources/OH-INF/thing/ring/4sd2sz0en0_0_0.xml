@@ -44,7 +44,7 @@
       <property name="vendor">Ring</property>
       <property name="modelId">4SD2SZ-0EN0</property>
       <property name="manufacturerId">0346</property>
-      <property name="manufacturerRef">0201:0301</property>
+      <property name="manufacturerRef">0201:0301,0201:0401</property>
       <property name="dbReference">1358</property>
       <property name="defaultAssociations">1</property>
     </properties>
@@ -124,7 +124,7 @@ The number of milliseconds waiting for a Supervisory Report<br /> <h1>Overview</
 
       <!-- ASSOCIATION DEFINITIONS -->
       <parameter name="group_1" type="text" groupName="association" multiple="true">
-        <label>1: Door/Window Open</label>
+        <label>1: Lifeline</label>
         <description><![CDATA[
 <br /> <h1>Overview</h1><p>1. Notification Report</p><p> a. See notification CC section for notifications that are sent</p><p>2. Battery Report</p><p>3. Device Reset Locally Notification</p>
         ]]></description>
