@@ -182,11 +182,11 @@ This means the rule will not update based on changes to the template automatical
 To update a template and a rule use the following process.
 
 1. Notice that there has been an update to a template that you want to use (keep checking back).
-1. Select the template in MainUI and click "Remove". 
+1. Select the template in MainUI and click "Remove".
 Then click "Add" to refresh the template with the new changes.
-1. Go to Settings and Rules and navigate to the rule you want to update. 
-Click the pause icon to disable that rule. 
-Or if you don't want to keep a backup, delete it. 
+1. Go to Settings and Rules and navigate to the rule you want to update.
+Click the pause icon to disable that rule.
+Or if you don't want to keep a backup, delete it.
 Note, if you just disable you won't be able to use the same rule UID for the new rule.
 1. Create the rule following the steps from above.
 1. Once the new version of the rule is tested, delete the disabled version of the rule.
