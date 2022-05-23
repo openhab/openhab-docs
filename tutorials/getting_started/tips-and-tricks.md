@@ -32,7 +32,7 @@ If you have backups, there is little you could do that will actually break thing
 ## Developer Sidebar
 
 MainUI has a tool called the Developer Sidebar.
-Bring up the sidebar through Developer Tools or the key combination <kbd>Alt-Shift-D</kbd>.
+Bring up the sidebar through Developer Tools or the key combination <kbd>Alt</kbd><kbd>Shift</kbd><kbd>D</kbd>.
 
 ![Developer Sidebar](images/developer-sidebar.png)
 
