@@ -87,7 +87,7 @@ The command to play a file accepts an optional last parameter to specify the vol
 
 ### Actions
 
-Alternatively the [`playSound()`](https://openhab.org/javadoc/latest/org/openhab/core/model/script/actions/audio#playSound(java.lang.String)) or [`playStream()`](https://openhab.org/javadoc/latest/org/openhab/core/model/script/actions/audio#playStream(java.lang.String)) functions can be used in DSL rules:
+Alternatively the [`playSound()`](https://www.openhab.org/javadoc/latest/org/openhab/core/model/script/actions/audio#playSound(java.lang.String)) or [`playStream()`](https://www.openhab.org/javadoc/latest/org/openhab/core/model/script/actions/audio#playStream(java.lang.String)) functions can be used in DSL rules:
 
 - `playSound(String filename)` : plays a sound from the sounds folder to the default sink
 - `playSound(String filename, PercentType volume)` : plays a sound with the given volume from the sounds folder to the default sink
@@ -145,7 +145,7 @@ openhab> openhab:voice say Hello world!
 
 #### Actions
 
-Alternatively you can execute such commands within DSL rules by using the [`say()`](https://openhab.org/javadoc/latest/org/openhab/core/voice/voicemanager#say(java.lang.String)) function:
+Alternatively you can execute such commands within DSL rules by using the [`say()`](https://www.openhab.org/javadoc/latest/org/openhab/core/model/script/actions/voice#say(java.lang.Object)) function:
 
 - `say(Object text)` : says a given text with the default voice
 - `say(Object text, PercentType volume)` : says a given text with the default voice and the given volume
@@ -234,17 +234,20 @@ In case of interpretation error, the error message will be said using the defaul
 
 #### Actions
 
-Alternatively you can execute such commands within DSL rules using the [`interpret()`](https://openhab.org/javadoc/latest/org/openhab/core/voice/voicemanager#interpret(java.lang.String)) function:
+Alternatively you can execute such commands within DSL rules using the [`interpret()`](https://www.openhab.org/javadoc/latest/org/openhab/core/model/script/actions/voice#interpret(java.lang.Object)) function:
 
 - `interpret(Object text)` : interprets a given text by the default human language interpreter
 - `interpret(Object text, String interpreters)` : interprets given text by given human language interpreter(s)
 - `interpret(Object text, String interpreters, String sink)` : interprets a given text by given human language interpreter(s) and using the given sink
 
 You can select particular human language interpreter(s) (second parameter) and a particular audio sink (third parameter).
+If no human language interpreter or no audio sink is provided, the default human language interpreter and default audio sink will be used.
+
 The human language interpreter(s) parameter must be the ID of an installed interpreter or a comma separated list of interpreter IDs; each provided interpreter is executed in the provided order until one is able to interpret the command.
+
 The audio sink parameter is used when the interpretation fails; in this case, the error message is said using the default voice and the provided audio sink.
 If the provided audio sink is set to null, the error message will not be said.
-If no human language interpreter or no audio sink is provided, the default human language interpreter and default audio sink will be used.
+
 The interpretation result is returned as a string.
 Note that this result is always a null string with the rule-based Interpreter (rulehli).
 
@@ -256,4 +259,108 @@ var String result = interpret("turn on the light", "system")
 result = interpret("turn on the light", "system", null)
 result = interpret("turn on the light", "system,rulehli")
 result = interpret(VoiceCommand.state, "system", "sonos:PLAY5:kitchen")
+```
+
+### Voice Assistant
+
+openHAB embeds a dialog processor based on the services previously presented on this page.
+With this dialog processor and these services, openHAB can become a voice assistant dedicated to home automation.
+Here are the components needed to instantiate a voice assistant:
+
+- an audio source: the audio device that will listen for user speaking,
+- a keyword spotter: this will detect the keyword defined by the user to start a dialogue,
+- a Speech-to-Text service: captured audio will be converted into text,
+- one (or more) interpreter(s): the text will be analyzed and converted into commands in the automation system and a response will be produced,
+- a Text-to-Speech service: the text response will be converted into an audio file,
+- an audio sink: the audio file will be played to be heard by the user.
+
+The quality of the voice assistant will of course depend on the quality of each of the selected components.
+
+Your openHAB server can run multiple voice assistants but can only run one voice assistant for a given audio source.
+
+After you start a voice assistant, it will live until you stop it, which means it will continue to detect keyword and handle dialogues.
+
+However, there is a special mode that allows handling a single dialogue, bypassing keyword detection and starting to listen for user request immediately after running it.
+You do not need to stop it, it stops automatically after handling the user request.
+It's something you could run in a rule triggered by a particular user action, for example.
+This mode is executed using the `listenAndAnswer`command.
+
+#### Console Commands
+
+To start and stop a voice assistant, you can enter such commands on the console:
+
+```text
+openhab> openhab:voice startdialog
+openhab> openhab:voice startdialog javasound
+openhab> openhab:voice startdialog javasound sonos:PLAY5:kitchen
+openhab> openhab:voice startdialog javasound sonos:PLAY5:kitchen system
+openhab> openhab:voice startdialog javasound sonos:PLAY5:kitchen system voicerss
+openhab> openhab:voice startdialog javasound sonos:PLAY5:kitchen system,rulehli voicerss voskstt
+openhab> openhab:voice startdialog javasound sonos:PLAY5:kitchen system,rulehli voicerss voskstt porcupineks
+openhab> openhab:voice startdialog javasound sonos:PLAY5:kitchen system,rulehli voicerss voskstt porcupineks terminator
+
+openhab> openhab:voice stopdialog
+openhab> openhab:voice stopdialog javasound
+
+openhab> openhab:voice listenandanswer
+openhab> openhab:voice listenandanswer javasound
+openhab> openhab:voice listenandanswer javasound sonos:PLAY5:kitchen
+openhab> openhab:voice listenandanswer javasound sonos:PLAY5:kitchen system
+openhab> openhab:voice listenandanswer javasound sonos:PLAY5:kitchen system voicerss
+openhab> openhab:voice listenandanswer javasound sonos:PLAY5:kitchen system,rulehli voicerss voskstt
+```
+
+The commands expect parameters in a specific order; so for example, if you want to provide the interpreter as a parameter, you will have to provide the audio source and the audio sink before.
+
+When a parameter is not provided in the command line, the default from the voice settings is used.
+If no default value is set in voice settings, the command will fail.
+
+You can select particular human language interpreter(s).
+This parameter must be the ID of an installed interpreter or a comma separated list of interpreter IDs; each provided interpreter is executed in the provided order until one is able to interpret the command.
+
+If the language is defined in the regional settings, it is used as the language for the voice assistant; if not set, the system default locale is assumed.
+To not fail, the keyword spotter, the Speech-to-Text and Text-to-Speech services, and the interpreters must support this language.
+
+if the default listening switch is set in the voice settings, it is used.
+
+#### Actions
+
+Alternatively you can execute such commands within DSL rules using the [`startDialog()`](https://www.openhab.org/javadoc/latest/org/openhab/core/model/script/actions/voice#startDialog(java.lang.String,java.lang.String)), [`stopDialog()`](https://www.openhab.org/javadoc/latest/org/openhab/core/model/script/actions/voice#stopDialog(java.lang.String)) and [`listenAndAnswer()`](https://www.openhab.org/javadoc/latest/org/openhab/core/model/script/actions/voice#listenAndAnswer(java.lang.String,java.lang.String)) functions:
+
+- `startDialog(String source, String sink)` : starts dialog processing for a given audio source
+- `startDialog(String ks, String stt, String tts, String interpreters, String source, String sink, String locale, String keyword, String listeningItem)` : starts dialog processing for a given audio source
+- `stopDialog(String source)` : stops dialog processing for a given audio source
+- `listenAndAnswer(String source, String sink)` : executes a simple dialog sequence without keyword spotting for a given audio source
+- `listenAndAnswer(String stt, String tts, String interpreters, String source, String sink, String locale, String listeningItem)` : executes a simple dialog sequence without keyword spotting for a given audio source
+
+Each parameter can be `null`; in this case, the default from the voice settings is used.
+If no default value is set in the voice settings, the action will fail.
+
+You can select particular human language interpreter(s).
+The `interpreters` parameter for `startDialog` and `listenAndAnswer` must be the ID of an installed interpreter or a comma separated list of interpreter IDs; each provided interpreter is executed in the provided order until one is able to interpret the command.
+
+The `locale` parameter for `startDialog` and `listenAndAnswer` is the language to be used by the voice assistant.
+If `null` is provided, the language defined in the regional settings is used; if not set, the system default locale is assumed.
+To not fail, the keyword spotter, the Speech-to-Text and Text-to-Speech services, and the interpreters must support this language.
+
+The `listeningItem` parameter for `startDialog` and `listenAndAnswer` is the item name of the listening switch.
+This item is switched on during the period when the dialog processor has spotted the keyword and is listening for commands.
+If `null` is provided, the default item from the voice settings is used.
+If not set, no item will be switched on and off.
+
+##### Examples
+
+```java
+startDialog(null, null)
+stopDialog(null)
+
+startDialog("javasound", "sonos:PLAY5:kitchen")
+stopDialog("javasound")
+
+startDialog("porcupineks", "voskstt", "voicerss", "system,rulehli", "javasound", "sonos:PLAY5:kitchen", "fr-FR", "terminator", "listeningItem")
+stopDialog("javasound")
+
+listenAndAnswer(null, null)
+listenAndAnswer("javasound", "sonos:PLAY5:kitchen")
+listenAndAnswer("voskstt", "voicerss", "system,rulehli", "javasound", "sonos:PLAY5:kitchen", "fr-FR", "listeningItem")
 ```
