@@ -105,6 +105,13 @@ This sets the maximum time that the controller will remain in inclusion or exclu
 Note that updating this value will cause the controller to be reinitialised which will take all your Z-Wave devices offline for a short period.
 
 
+#### Battery Device Awake Duration [controller_maxawakeperiod]
+
+This sets the maximum awake time for battery nodes (in seconds). This should be set high enough to allow initialization and healing to proceed uninterupted by a "Go to Sleep" command. The "Go to Sleep" will normally be sent much earlier (when the device is fully initializated and no messages remain in the device queue).  This is just a backstop for when Zwave communications breakdown between the controller and the device. (see #### Message Routing) 
+
+It is defined in seconds.
+
+
 #### Default Wakeup Period [controller_wakeupperiod]
 
 This sets the system wide default wakeup period. If a battery device does not have the wakeup period set to a value, then the system will configure it to use this value during the device configuration. 
