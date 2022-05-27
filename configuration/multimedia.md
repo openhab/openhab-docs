@@ -121,18 +121,30 @@ To check which Text-to-Speech services are available, you can use the console:
 
 ```text
 openhab> openhab:voice ttsservices
-* macOS TTS (mactts)
+* VoiceRSS (voicerss)
 ```
 
 Once you have installed at least one text-to-speech service, you will find voices available in your system:
 
 ```text
 openhab> openhab:voice voices
-mactts:Jorge Jorge (es_ES)
-mactts:Moira Moira (en_IE)
-mactts:Alice Alice (it_IT)
-mactts:Ioana Ioana (ro_RO)
-mactts:Kanya Kanya (th_TH)
+  VoiceRSS - allemand (Allemagne) - Hanna (voicerss:deDE_Hanna)
+  VoiceRSS - allemand (Allemagne) - Jonas (voicerss:deDE_Jonas)
+  VoiceRSS - allemand (Allemagne) - Lina (voicerss:deDE_Lina)
+  VoiceRSS - allemand (Allemagne) - default (voicerss:deDE)
+  VoiceRSS - allemand (Autriche) - Lukas (voicerss:deAT_Lukas)
+  VoiceRSS - allemand (Autriche) - default (voicerss:deAT)
+  VoiceRSS - allemand (Suisse) - Tim (voicerss:deCH_Tim)
+  VoiceRSS - allemand (Suisse) - default (voicerss:deCH)
+...
+  VoiceRSS - français (France) - Axel (voicerss:frFR_Axel)
+  VoiceRSS - français (France) - Bette (voicerss:frFR_Bette)
+  VoiceRSS - français (France) - Iva (voicerss:frFR_Iva)
+* VoiceRSS - français (France) - Zola (voicerss:frFR_Zola)
+  VoiceRSS - français (France) - default (voicerss:frFR)
+...
+  VoiceRSS - vietnamien (Vietnam) - Chi (voicerss:viVN_Chi)
+  VoiceRSS - vietnamien (Vietnam) - default (voicerss:viVN)
 ```
 
 You can define a default TTS service and a default voice to use either by textual configuration in `$OPENHAB_CONF/services/runtime.cfg` or in the UI in `Settings->Voice`.
@@ -297,7 +309,8 @@ openhab> openhab:voice startdialog javasound sonos:PLAY5:kitchen system
 openhab> openhab:voice startdialog javasound sonos:PLAY5:kitchen system voicerss
 openhab> openhab:voice startdialog javasound sonos:PLAY5:kitchen system,rulehli voicerss voskstt
 openhab> openhab:voice startdialog javasound sonos:PLAY5:kitchen system,rulehli voicerss voskstt porcupineks
-openhab> openhab:voice startdialog javasound sonos:PLAY5:kitchen system,rulehli voicerss voskstt porcupineks terminator
+openhab> openhab:voice startdialog javasound sonos:PLAY5:kitchen system voicerss voskstt porcupineks voicerss:frFR_Zola
+openhab> openhab:voice startdialog javasound sonos:PLAY5:kitchen system voicerss voskstt porcupineks voicerss:frFR_Zola terminator
 
 openhab> openhab:voice stopdialog
 openhab> openhab:voice stopdialog javasound
@@ -308,6 +321,7 @@ openhab> openhab:voice listenandanswer javasound sonos:PLAY5:kitchen
 openhab> openhab:voice listenandanswer javasound sonos:PLAY5:kitchen system
 openhab> openhab:voice listenandanswer javasound sonos:PLAY5:kitchen system voicerss
 openhab> openhab:voice listenandanswer javasound sonos:PLAY5:kitchen system,rulehli voicerss voskstt
+openhab> openhab:voice listenandanswer javasound sonos:PLAY5:kitchen system voicerss voskstt voicerss:frFR_Axel
 ```
 
 The commands expect parameters in a specific order; so for example, if you want to provide the interpreter as a parameter, you will have to provide the audio source and the audio sink before.
@@ -321,6 +335,10 @@ This parameter must be the ID of an installed interpreter or a comma separated l
 If the language is defined in the regional settings, it is used as the language for the voice assistant; if not set, the system default locale is assumed.
 To not fail, the keyword spotter, the Speech-to-Text and Text-to-Speech services, and the interpreters must support this language.
 
+You can select a particular voice for the Text-to-Speech service.
+If no voice is provided, the voice defined in the regional settings is preferred.
+If this voice is not associated with the selected Text-to-Speech service or not applicable to the language used, any voice from the selected Text-to-Speech service applicable to the language being used will be selected.
+
 if the default listening switch is set in the voice settings, it is used.
 
 #### Actions
@@ -328,10 +346,10 @@ if the default listening switch is set in the voice settings, it is used.
 Alternatively you can execute such commands within DSL rules using the [`startDialog()`](https://www.openhab.org/javadoc/latest/org/openhab/core/model/script/actions/voice#startDialog(java.lang.String,java.lang.String)), [`stopDialog()`](https://www.openhab.org/javadoc/latest/org/openhab/core/model/script/actions/voice#stopDialog(java.lang.String)) and [`listenAndAnswer()`](https://www.openhab.org/javadoc/latest/org/openhab/core/model/script/actions/voice#listenAndAnswer(java.lang.String,java.lang.String)) functions:
 
 - `startDialog(String source, String sink)` : starts dialog processing for a given audio source
-- `startDialog(String ks, String stt, String tts, String interpreters, String source, String sink, String locale, String keyword, String listeningItem)` : starts dialog processing for a given audio source
+- `startDialog(String ks, String stt, String tts, String voice, String interpreters, String source, String sink, String locale, String keyword, String listeningItem)` : starts dialog processing for a given audio source
 - `stopDialog(String source)` : stops dialog processing for a given audio source
 - `listenAndAnswer(String source, String sink)` : executes a simple dialog sequence without keyword spotting for a given audio source
-- `listenAndAnswer(String stt, String tts, String interpreters, String source, String sink, String locale, String listeningItem)` : executes a simple dialog sequence without keyword spotting for a given audio source
+- `listenAndAnswer(String stt, String tts, String voice, String interpreters, String source, String sink, String locale, String listeningItem)` : executes a simple dialog sequence without keyword spotting for a given audio source
 
 Each parameter can be `null`; in this case, the default from the voice settings is used.
 If no default value is set in the voice settings, the action will fail.
@@ -342,6 +360,10 @@ The `interpreters` parameter for `startDialog` and `listenAndAnswer` must be the
 The `locale` parameter for `startDialog` and `listenAndAnswer` is the language to be used by the voice assistant.
 If `null` is provided, the language defined in the regional settings is used; if not set, the system default locale is assumed.
 To not fail, the keyword spotter, the Speech-to-Text and Text-to-Speech services, and the interpreters must support this language.
+
+The `voice` parameter for `startDialog` and `listenAndAnswer` is the voice to be used by the Text-to-Speech service.
+If `null` is provided, the voice defined in the regional settings is preferred.
+If this voice is not associated with the selected Text-to-Speech service or not applicable to the language used, any voice from the selected Text-to-Speech service applicable to the language being used will be selected.
 
 The `listeningItem` parameter for `startDialog` and `listenAndAnswer` is the item name of the listening switch.
 This item is switched on during the period when the dialog processor has spotted the keyword and is listening for commands.
@@ -357,10 +379,10 @@ stopDialog(null)
 startDialog("javasound", "sonos:PLAY5:kitchen")
 stopDialog("javasound")
 
-startDialog("porcupineks", "voskstt", "voicerss", "system,rulehli", "javasound", "sonos:PLAY5:kitchen", "fr-FR", "terminator", "listeningItem")
+startDialog("porcupineks", "voskstt", "voicerss", "voicerss:frFR_Zola", "system,rulehli", "javasound", "sonos:PLAY5:kitchen", "fr-FR", "terminator", "listeningItem")
 stopDialog("javasound")
 
 listenAndAnswer(null, null)
 listenAndAnswer("javasound", "sonos:PLAY5:kitchen")
-listenAndAnswer("voskstt", "voicerss", "system,rulehli", "javasound", "sonos:PLAY5:kitchen", "fr-FR", "listeningItem")
+listenAndAnswer("voskstt", "voicerss", "voicerss:frFR_Axel", "system,rulehli", "javasound", "sonos:PLAY5:kitchen", "fr-FR", "listeningItem")
 ```
