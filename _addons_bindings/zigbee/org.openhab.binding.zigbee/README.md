@@ -256,6 +256,7 @@ The following devices have been tested by openHAB users with the binding. This l
 | Busch-Jaeger 6735                              | Control Element (1-channel)                                  |
 | Busch-Jaeger 6735/01                           | Control Element (1-channel, battery-operated)                |
 | Busch-Jaeger 6736                              | Control Element (2-channel)                                  |
+| Clipsal Iconic dimmers and swtiches            | Switches and dimmers                                         |
 | Eurotronic Spirit Thermostat                   | Radiator Thermostat                                          |
 | GE Bulbs                                       |                                                              |
 | GE Tapt Wall Switch                            | On/Off Switch                                                |
@@ -278,6 +279,7 @@ The following devices have been tested by openHAB users with the binding. This l
 | Osram Smart+ Plug                              |                                                              |
 | Securifi Peanut Plug                           | Metered Plug                                                 |
 | Shenzhen Ksentry Electronics On Off Controller | Relay                                                        |
+| Schneider Electric dimmers and swtiches        | Switches and dimmers                                         |
 | SMaBiT (Bitron Video) Magnetic contect         | AV2010/21 /21A /21B /21C                                     |
 | SMaBiT (Bitron Video) Motion Sensor            | AV2010/22 /22A /22B                                          |
 | SMaBiT (Bitron Video) Wall-mount relay         | AV2010/18 (10A on/off), /16 (2.5A Dimmer)                    |
