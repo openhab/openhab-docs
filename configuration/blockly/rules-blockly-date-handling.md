@@ -116,6 +116,7 @@ Creates a ZonedDateTime by providing all necessary six values
 Tip: if you want to create a datetime with your time zone use the "copy of"-block and overwrite its values
 
 ### Create Datetime based on a specific date ("Copy Of")
+
 since 3.3.0M6
 
 ![date-copy-of-overview](../images/blockly/blockly-date-copy-of-overview.png)
@@ -123,6 +124,7 @@ since 3.3.0M6
 Type: *ZonedDateTime*
 
 This block allows to create a new ZonedDateTime based on a given ZonedDateTime and then either
+
 - overwrites
 - adds
 - or subtracts
@@ -194,6 +196,7 @@ This variable is then used as the value to amend the lastUpdatedTime of an item 
 ![date-copy-of-temporal22](../images/blockly/blockly-date-temporal2-example3.png)
 
 ### Datetime from item
+
 since 3.3.0M6
 
 ![datetime-from-item](../images/blockly/blockly-datetime-from-item.png)
@@ -229,6 +232,7 @@ The output in the log will be.
 ```
 
 ### Date Comparison
+
 since 3.3.0M6
 
 ![date-comparison](../images/blockly/blockly-date-comparison.png)
@@ -241,6 +245,7 @@ Type: *boolean*
 Returns true/false based on the comparison
 
 ### Date Comparison Between
+
 since 3.3.0M6
 
 ![date-comparison-between](../images/blockly/blockly-date-comparison-between.png)
@@ -253,6 +258,7 @@ Type: *boolean*
 Returns true/false based on the comparison
 
 ### Get part of datetime
+
 since 3.3.0M6
 
 ![date-getpartof](../images/blockly/blockly-date-unit-of.png)
@@ -262,6 +268,7 @@ Type: *Number*
 Returns the selected part of the datetime as a number.
 
 ### Get difference between datetimes
+
 since 3.3.0M6
 
 ![date-getdifference](../images/blockly/blockly-date-difference.png)
@@ -295,9 +302,6 @@ Returns the number of days since today, as configured in the number block.
 The number can be positive (offset into the future) or negative (offset into the past).
 Used for Emphemeris blocks only.
 
-
-
 ## Return to Blockly Reference
 
 [return to Blockly Reference](index.html#date-handling)
-
