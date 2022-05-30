@@ -283,6 +283,7 @@ Again, leave out the semantic tags and the Item will not become a part of the mo
 
 ## Group Membership
 
+To create a group, the item type must be specified as Group.
 Once a Group is created, other Items can be added as members of the Group.
 Note that this process also works for semantically tagged Groups.
 Navigate to or search for the Group on the Items Settings page and select the Group.
