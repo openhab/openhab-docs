@@ -24,6 +24,7 @@ This section explains only the blocks that have been added to the standard block
 The Text section is the general section that allows text or string manipulation
 
 ### CRLF
+
 Since OpenHAB 3.3.0M6
 
 CRLF stands for carriage-return / line-feed which is a technical term for adding a new line in a string
