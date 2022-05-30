@@ -4,7 +4,7 @@ title: Rules Blockly
 ---
 <!-- markdownlint-disable MD036 -->
 
-# Blockly Reference
+# Blockly Reference 33
 
 One of the core feature that OpenHAB provides is writing rules to allow specific behaviour with the home automation system. The usual way of developing rules is by coding them like described in the [Textual Rules](/docs/configuration/rules-dsl.html).
 However, this art of programming may become intimidating early on and shy away away people with few or almost no experience in programming.
@@ -71,8 +71,8 @@ See [Timers and Delays](rules-blockly-timers-and-delays.html) section.
 Date blocks are used as input parameters for other blocks.
 At the moment some of these blocks are found in the ephemeris section, whilst others are found in the persistence section - they may be equally useful for both. These blocks are *typed* to assure correct connection to other blocks.
 
-[![Timers and Delays](../images/blockly/blockly-date-handling-ephemeris-small.png "Ephemeris Dates")
-](rules-blockly-date-handling.html) [![Timers and Delays](../images/blockly/blockly-date-handling-persistence-small.png "Persistence Dates")
+[![Date Handling](../images/blockly/blockly-date-handling1-small.png "Dates part 1")
+](rules-blockly-date-handling.html) [![Date Handling](../images/blockly/blockly-date-handling2-small.png "Dates Part 2")
 ](rules-blockly-date-handling.html)
 
 See [Date Handling](rules-blockly-date-handling.html) section.
@@ -124,7 +124,7 @@ These blocks enable storing information *for a rule* that is kept after the rule
 
 See [Value Storage](rules-blockly-value-storage.html) section.
 
-### Run & Process (Rules and Scripts)
+### Run & Process (Rules, Scripts and Transformations)
 
 This section allows calling rules or other scripts, retrieving attributes provided by the rule context or transforming values via different conversion methods (e.g. map, regex, jsonpath)
 
@@ -146,7 +146,8 @@ See [Logging](rules-blockly-logging.html) section.
 
 This section explains only the blocks that have been added to the standard blocks by openHAB
 
-[![openHAB Extensions to the standard](../images/blockly/blockly-colors-overview-small.png "openHAB Extensions to the Standard")
+[![openHAB Extensions to the standard](../images/blockly/blockly-text-overview-small.png "openHAB Extensions to the Standard")
+](rules-blockly-standard-ext.html)[![openHAB Extensions to the standard](../images/blockly/blockly-colors-overview-small.png "openHAB Extensions to the Standard")
 ](rules-blockly-standard-ext.html)[![openHAB Extensions to the standard](../images/blockly/blockly-lists-dictionary-overview-small.png "openHAB Extensions to the Standard")
 ](rules-blockly-standard-ext.html)
 
