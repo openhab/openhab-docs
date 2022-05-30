@@ -188,7 +188,8 @@ Using just the number would be the same like providing a constant value but inst
 
 The main power arrives when using variables, which allows to calculate values that should be applied to the datetime.
 
-In the following two values are retrieved from items, added and assigned to a variable. This variable is then used as the value to amend the lastUpdatedTime of an item which is posted to the target item to be processed.
+In the following two values are retrieved from items, added and assigned to a variable.
+This variable is then used as the value to amend the lastUpdatedTime of an item which is posted to the target item to be processed.
 
 ![date-copy-of-temporal22](../images/blockly/blockly-date-temporal2-example3.png)
 
