@@ -31,7 +31,7 @@ From start to finish, the process for fully configuring a physical entity repres
 1. Define and configure the Thing
 1. Identify the Channels provided by the Thing
 1. [Add Items]({{base}}/configuration/items.html) and link them to the Thing's Channels
-1. At this point Items can be used to control the Thing or consume its information in e.g. [Sitemaps]({{base}}/configuration/sitemaps.html) or [Rules]({{base}}/configuration/rules-dsl.html)
+1. At this point Items can be used to control the Thing or consume its information in e.g. [Sitemaps]({{base}}/ui/sitemaps.html) or [Rules]({{base}}/configuration/rules-dsl.html)
 
 There are two methods for defining Things provided by the various bindings:
 through [discovery]({{base}}/concepts/discovery.html) or by manual definition in configuration text files.
@@ -55,7 +55,7 @@ Unlike manually defined Things, if a Thing has configurable properties, these pr
 **Attention:** It has to be noted, that Things and Items added through the UI / discovery to the internal database will **not** be written to configuration files.
 Things and Items definitions can be distributed and mixed among the internal database and manually defined text files.
 
-See the [beginer tutorial]({{base}}/tutorials/things_simple.html) for a step-by-step guide on how to configure Things using discovery.
+See the [beginner tutorial]({{base}}/tutorial/things_simple.html) for a step-by-step guide on how to configure Things using discovery.
 
 ### Defining Things Using Files
 

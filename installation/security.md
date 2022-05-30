@@ -22,7 +22,7 @@ openHAB has mainly two ways to be accessed:
 openHAB has a built-in webserver, which listens on port 8080 for HTTP and 8443 for HTTPS requests.
 In general, it is advised to use HTTPS in perefence to HTTP.
 
-The default ports 8080 and 8443 can be changed by setting the environment variables `OPENHAB_HTTP_PORT` resp. `OPENHAB_HTTPS_PORT`.
+The default ports 8080 and 8443 can be changed by setting the environment variables `OPENHAB_HTTP_PORT` resp. `OPENHAB_HTTPS_PORT`prior to running openHAB for the first time.
 In an apt installation, you would best do this in the file `/etc/default/openhab`.
 
 ### SSL Certificates

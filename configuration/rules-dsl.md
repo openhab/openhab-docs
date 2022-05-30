@@ -184,6 +184,7 @@ You can either use some pre-defined expressions for timers or use a [cron expres
 Time is midnight
 Time is noon
 Time cron "<cron expression>"
+Time equals <item>
 ```
 
 A cron expression takes the form of six or optionally seven fields:
@@ -641,7 +642,7 @@ var isQuantity = myItem.state instanceof QuantityType
 
 // comparing Quantities
 // Tempting ... if (fahrenheit > 10) but NO!! that will not work as expected
-if (fahrenheit > 10|°C) { logInfo("test, "It's warm.") }
+if (fahrenheit > 10|°C) { logInfo("test", "It's warm.") }
 ```
 
 Other useful conversions can be found under Dimmer Item.

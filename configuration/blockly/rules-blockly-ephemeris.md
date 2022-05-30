@@ -22,8 +22,6 @@ See the [Ephemeris configuration page](https://www.openhab.org/docs/configuratio
 - TOC
 {:toc}
 
-{: #blockly-ephemeris-overview}
-
 ## Overview of the Ephemeris blocks
 
 ![ephemeris-dates](../images/blockly/blockly-ephemeris.png)
