@@ -380,6 +380,24 @@
         </state>
     </channel-type>
 
+    <!-- Thermostat Heating Demand -->
+    <channel-type id="thermostat_heatingdemand" advanced="true">
+        <item-type>Number:Dimensionless</item-type>
+        <label>Heating Demand</label>
+        <description>The level of heating currently demanded by the thermostat</description>
+        <category>HVAC</category>
+        <state pattern="%.0f %%" readOnly="true" />
+    </channel-type>
+
+    <!-- Thermostat Cooling Demand -->
+    <channel-type id="thermostat_coolingdemand" advanced="true">
+        <item-type>Number:Dimensionless</item-type>
+        <label>Cooling Demand</label>
+        <description>The level of cooling currently demanded by the thermostat</description>
+        <category>HVAC</category>
+        <state pattern="%.0f %%" readOnly="true" />
+    </channel-type>
+
 	<!-- Warning device -->
 	<channel-type id="warning_device">
 		<item-type>String</item-type>

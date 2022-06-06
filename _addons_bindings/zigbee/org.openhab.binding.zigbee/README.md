@@ -408,6 +408,8 @@ The following channels are supported -:
 | thermostat_systemmode        | `THERMOSTAT` (0x0201)                    | Number                   |             |
 | thermostat_unoccupiedcooling | `THERMOSTAT` (0x0201)                    | Number                   |             |
 | thermostat_unoccupiedheating | `THERMOSTAT` (0x0201)                    | Number                   |             |
+| thermostat_heatingdemand     | `THERMOSTAT` (0x0201)                    | Number:Dimensionless     |             |
+| thermostat_coolingdemand     | `THERMOSTAT` (0x0201)                    | Number:Dimensionless     |             |
 | warning_device               | `IAS_WD` (0x0502)                        | String                   |             |
 | windowcovering_lift          | `WINDOW_COVERING` (0x0102)               | Rollershutter            |             |
 
