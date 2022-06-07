@@ -183,8 +183,8 @@ You can either use some pre-defined expressions for timers or use a [cron expres
 ```java
 Time is midnight
 Time is noon
+Time is <item>
 Time cron "<cron expression>"
-Time equals <item>
 ```
 
 A cron expression takes the form of six or optionally seven fields:
