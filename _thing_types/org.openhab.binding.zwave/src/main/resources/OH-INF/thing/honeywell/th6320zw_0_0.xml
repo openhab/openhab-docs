@@ -74,6 +74,18 @@ T6 Pro Z-Wave Programmable Thermostat<br /> <h1>Overview</h1><p>The Honeywell T6
           <property name="binding:*:DecimalType">COMMAND_CLASS_THERMOSTAT_FAN_STATE</property>
         </properties>
       </channel>
+      <channel id="config_decimal_param28" typeId="config_decimal">
+        <label>Minimum Cool Setpoint</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_CONFIGURATION;parameter=28</property>
+        </properties>
+      </channel>
+      <channel id="config_decimal_param29" typeId="config_decimal">
+        <label>Maximum Heat Setpoint</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_CONFIGURATION;parameter=29</property>
+        </properties>
+      </channel>
       <channel id="alarm_power" typeId="alarm_power">
         <label>Alarm (power)</label>
         <properties>
@@ -132,6 +144,16 @@ T6 Pro Z-Wave Programmable Thermostat<br /> <h1>Overview</h1><p>The Honeywell T6
         <limitToOptions>false</limitToOptions>
       </parameter>
 
+      <parameter name="config_2_1" type="integer" groupName="configuration">
+        <label>2: Temperature Scale</label>
+        <default>0</default>
+        <options>
+          <option value="0">Fahrenheit</option>
+          <option value="1">Celsius</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
       <parameter name="config_10_1" type="integer" groupName="configuration">
         <label>10: EM Heat Type</label>
         <default>0</default>
@@ -144,16 +166,56 @@ T6 Pro Z-Wave Programmable Thermostat<br /> <h1>Overview</h1><p>The Honeywell T6
 
       <parameter name="config_11_1" type="integer" groupName="configuration">
         <label>11: Fossil Kit Control</label>
-        <description><![CDATA[
-<br /> <h1>Overview</h1><p><br /></p>
-        ]]></description>
         <default>0</default>
+        <options>
+          <option value="0">Thermostat</option>
+          <option value="1">External</option>
+        </options>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_12_1" type="integer" groupName="configuration">
         <label>12: Auto Changeover</label>
+        <description><![CDATA[
+<br /> <h1>Overview</h1><p><br /></p>
+        ]]></description>
         <default>0</default>
+        <options>
+          <option value="0">Off</option>
+          <option value="1">On</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_28_1" type="integer" groupName="configuration">
+        <label>28: Minimum Cool Temperature</label>
+        <default>50</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_29_1" type="integer" groupName="configuration">
+        <label>29: Maximum Heat Temperature</label>
+        <default>90</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_40_1" type="integer" groupName="configuration">
+        <label>40: Clock Format</label>
+        <default>0</default>
+        <options>
+          <option value="0">12 hour</option>
+          <option value="1">24 hour</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_41_1" type="integer" groupName="configuration">
+        <label>41: Daylight Saving</label>
+        <default>1</default>
+        <options>
+          <option value="0">Off</option>
+          <option value="1">On</option>
+        </options>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
@@ -215,6 +277,20 @@ T6 Pro Z-Wave Programmable Thermostat<br /> <h1>Overview</h1><p>The Honeywell T6
       <options>
         <option value="0">Idle</option>
       </options>
+    </state>
+  </channel-type>
+
+  <channel-type id="honeywell_th6320zw_00_000_config_decimal_param28">
+    <item-type>Number</item-type>
+    <label>Minimum Cool Temperature</label>
+    <state pattern="%s">
+    </state>
+  </channel-type>
+
+  <channel-type id="honeywell_th6320zw_00_000_config_decimal_param29">
+    <item-type>Number</item-type>
+    <label>Maximum Heat Temperature</label>
+    <state pattern="%s">
     </state>
   </channel-type>
 

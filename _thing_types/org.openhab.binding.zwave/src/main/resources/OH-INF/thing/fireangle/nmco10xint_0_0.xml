@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="fireangle_nmco10xint_00_000" listed="false">
+    <label>NM-CO-10x-INT Carbon Monoxide Detector</label>
+    <description><![CDATA[
+Carbon Monoxide Detector<br /> <h1>Overview</h1><p>The higher the concentration of CO detected, the quicker the alarm will respond. When sufficient CO is detected a loud audible signal of 4 chirps repeated (85 dB at 1m/3 feet) will sound &amp; the Alarm LED will flash red every 5 seconds. The alarm will sound:</p><p>Between 60 &amp; 90 mins when exposed to 50ppm of CO. Between 10 &amp; 40 mins when exposed to 100ppm of CO. Within 3 mins when exposed to 300ppm or more of CO.</p><p>ZW-MODULE INSTALLATION GUIDE</p><p>This wireless module is designed to be installed in a Z-Wave compatible smoke or heat alarm which offers an additional option for wireless connectivity. For the current range of Z-Wave compatible products visit www.fireangel.de.com.</p><p>When the wireless module is fitted into a Z-Wave compatible FireAngel smoke or heat alarm it enables the unit to be wirelessly interlinked to a third party Z-Wave Controller.</p><p>When any of the interlinked products are triggered by smoke or heat, the unit will transmit messages to the main Controller.</p><p>Note: You will need the User Manual of the product into which you are installing the wireless module in order to understand alarm operation. Z-Wave module characteristics are different to those stated in FireAngel Wi-Safe 2 literature, please contact Technical Support on 0800 330 5103 or email technik@sprue.com for more information.</p><p>This product can be included and operated in any Z-Wave network with other Z-Wave certified devices from other manufacturers. All non-battery operated devices within the network will act as repeaters regardless of vendor to increase reliability of the network.</p> <br /> <h2>Inclusion Information</h2><p>‘ADDING’ YOUR Z-WAVE UNITS</p><p>Do not attempt to add your Z-Wave Module unless you are familiar with the operation of your Z-Wave Controller.</p><ol><li>Read the instructions for your Z-Wave Controller regarding adding new devices. Then initiate the inclusion function from your Z-Wave Controller.</li><li>Triple-press the add button once the Z-Wave Module is on the device. The LED will show a quick blink once per second while the module is being added. This process may take as long as 30 seconds, but typically is much quicker. If you triple-press too quickly or too slowly, inclusion will not start. In this case wait a few seconds and then try again.</li><li>Upon successful inclusion, the Z-Wave Module LED will flash 3 times. If inclusion fails, the LED will simply stop its blink pattern.</li><li>If inclusion does not succeed, restart at step 1. 5. If successful, place the alarm on its base and wait at least 30 seconds.</li><li>Press the alarm’s test button and verify the Z-Wave Controller receives Notification Reports.</li><li>After the Z-Wave Module is included, you may define association groups or perform other configuration operations from the Z-Wave Controller.</li></ol><p>For information about where to position the alarm, and operational guidelines, please see the device User Manual.</p><p>Once a year the unit will send a Notification Report showing Maintenance Required, Periodic Planned Inspection. The alarm’s test button should be pressed to clear this condition.</p> <br /> <h2>Exclusion Information</h2><p>‘REMOVING’ YOUR Z-WAVE UNITS</p><ol><li>Read the instructions on your Z-Wave Controller regarding removing devices. Note that a device can be removed using any Z-Wave Controller, not just the Controller that was used to add the Module. Initiate the removal process at your Controller.</li><li>Triple-press the button on the Z-Wave Module. The LED will show a quick double-blink once per second while the module is being removed. This process may take up to 30 seconds. If you triple-press too quickly or too slowly the removing function will not start. In this case you must wait a few seconds and try again.</li><li>Upon successful removal, the Z-Wave Module LED will flash 5 times. If removal fails, the LED will simply stop its blink pattern.</li><li>If the removal operation does not succeed, restart at step 1.</li><li>After removing, either a) add the Z-Wave Module into a different Z-Wave Controller, or b) remove the battery from the Z-Wave Module.</li></ol><p>NOTE: The effective range of the wireless module may be reduced by walls and other obstructions in the building. It is recommended not to exceed 40m as the maximum distance between smoke alarms and the Controller.</p><p>Once the Z-Wave module is removed from a device, it needs to be reset before it can be used in another device.</p><ol><li>Press and hold the button on the Z-Wave Module for 10 seconds. Once the LED light goes off, release the button.</li><li>The module is now reset. This will erase the network as well as the device ID. The module can then be placed in a new device and learned-in to a network again. Resetting whilst the module is still connected to the old alarm, will erase only the network content.</li></ol><p>Resetting once the module is removed from the alarm, will erase the network as well as the device details from the module.</p> <br /> <h2>Wakeup Information</h2><p>Waking the Module</p><p>If the module has been successfully included, when pressing the button, the LED will flash three times. In addition, the module will communicate with the Z-Wave Controller, accepting any pending commands.</p>
+    ]]></description>
+    <category>Sensor</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="alarm_co" typeId="alarm_co">
+        <label>Alarm (CO)</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=CARBON_MONOXIDE</property>
+        </properties>
+      </channel>
+      <channel id="alarm_system" typeId="alarm_system">
+        <label>Alarm (system)</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=SYSTEM</property>
+        </properties>
+      </channel>
+      <channel id="battery-level" typeId="system.battery-level">
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_BATTERY</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Fireangle</property>
+      <property name="modelId">NM-CO-10x-INT</property>
+      <property name="manufacturerId">026F</property>
+      <property name="manufacturerRef">0001:0003</property>
+      <property name="dbReference">1495</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Lifeline</label>
+        <description>Z-Wave Plus Lifeline</description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: Basic Report</label>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_3" type="text" groupName="association" multiple="true">
+        <label>3: Notification Report</label>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

@@ -8,22 +8,64 @@
   <thing-type id="zooz_zen17_00_000" listed="false">
     <label>ZEN17 Universal Relay</label>
     <description><![CDATA[
-Universal Relay<br /> <h1>Overview</h1><p><strong>Features</strong></p> <ul><li>Powerful dry contact NO/NC relays to control loads up to 20 A for NO<br /></li> <li>Perfect for DC motors, pumps, commercial gates, or HVAC equipment</li> <li>Control up to 2 connected loads independently or together</li> <li>Z-Wave or optional wall switch control (toggle or momentary type)</li><li>Monitor inpuits independently from output control<br /></li> <li>Built-in timers for each relay to simplify automation</li> <li>Built-in Z-Wave Plus signal repeater to extend network range</li> <li>Powered by 12-24 V DC/AC or USB C port for easy set-up</li> <li>Wall mounting and minimal design for clean installation</li> <li>New 700 Z-Wave chip, S2 security, and SmartStart</li> </ul><p><strong>Specifications</strong></p> <ul><li>Model Number: ZEN17</li> <li>Z-Wave Signal Frequency: 908.42 MHz</li> <li>Power: 12-24 V DC/AC or USB C (DON'T use laptop/tablet chargers)<br /></li> <li>Maximum Load: NO relays: 20 A, NC relays: 10 A</li> <li>Range: Up to 200 feet line of sight</li> <li>Operating Temperature: 32-104° F (0-40° C)</li> <li>Installation and Use: Indoor only</li> </ul> <br /> <h2>Inclusion Information</h2><ol><li>Start Z-Wave inclusion.</li> <li>Quickly press the Z-Wave button 3 times.</li> </ol><p>The LED indicator will blink to signal communication and remain on for 2 seconds to confirm inclusion.</p> <br /> <h2>Exclusion Information</h2><ol><li>Start Z-Wave inclusion.</li> <li>Quickly press the Z-Wave button 3 times.</li> </ol> <br /> <h2>Wakeup Information</h2><p><br /></p>
+Universal Relay<br /> <h1>Overview</h1><p><b>Features</b></p><ul><li>Powerful dry contact NO/NC relays to control loads up to 20 A for NO</li><li>Perfect for DC motors, pumps, commercial gates, or HVAC equipment</li><li>Control up to 2 connected loads independently or together</li><li>Z-Wave or optional wall switch control (toggle or momentary type)</li><li>Monitor inpuits independently from output control</li><li>Built-in timers for each relay to simplify automation</li><li>Built-in Z-Wave Plus signal repeater to extend network range</li><li>Powered by 12-24 V DC/AC or USB C port for easy set-up</li><li>Wall mounting and minimal design for clean installation</li><li>New 700 Z-Wave chip, S2 security, and SmartStart</li></ul><br /><b>Specifications</b><ol><li>Model Number: ZEN17</li><li>Z-Wave Signal Frequency: 908.42 MHz</li><li>Power: 12-24 V DC/AC or USB C (DON'T use laptop/tablet chargers)</li><li>Maximum Load: NO relays: 20 A, NC relays: 10 A</li><li>Range: Up to 200 feet line of sight</li><li>Operating Temperature: 32-104° F (0-40° C)</li><li>Installation and Use: Indoor only</li></ol> <br /> <h2>Inclusion Information</h2><ol><li>Start Z-Wave inclusion.</li><li>Quickly press the Z-Wave button 3 times.</li></ol><p>The LED indicator will blink to signal communication and remain on for 2 seconds to confirm inclusion.</p> <br /> <h2>Exclusion Information</h2><ol><li>Start Z-Wave exclusion.</li><li>Quickly press the Z-Wave button 3 times.</li></ol> <br /> <h2>Wakeup Information</h2><p><br /></p>
     ]]></description>
     <category>Battery</category>
 
     <!-- CHANNEL DEFINITIONS -->
     <channels>
+      <channel id="switch_binary" typeId="switch_binary">
+        <label>Switch</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY</property>
+        </properties>
+      </channel>
+      <channel id="sensor_binary" typeId="sensor_binary">
+        <label>Binary Sensor</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SENSOR_BINARY</property>
+        </properties>
+      </channel>
+      <channel id="alarm_general" typeId="alarm_general">
+        <label>Alarm</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM</property>
+        </properties>
+      </channel>
       <channel id="switch_binary1" typeId="switch_binary">
         <label>Switch 1</label>
         <properties>
           <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY:1</property>
         </properties>
       </channel>
+      <channel id="sensor_binary1" typeId="sensor_binary">
+        <label>Binary Sensor 1</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SENSOR_BINARY:1</property>
+        </properties>
+      </channel>
+      <channel id="alarm_access1" typeId="alarm_access">
+        <label>Alarm (access) 1</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM:1;type=ACCESS_CONTROL</property>
+        </properties>
+      </channel>
       <channel id="switch_binary2" typeId="switch_binary">
         <label>Switch 2</label>
         <properties>
           <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY:2</property>
+        </properties>
+      </channel>
+      <channel id="sensor_binary2" typeId="sensor_binary">
+        <label>Binary Sensor 2</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SENSOR_BINARY:2</property>
+        </properties>
+      </channel>
+      <channel id="alarm_access2" typeId="alarm_access">
+        <label>Alarm (access) 2</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM:2;type=ACCESS_CONTROL</property>
         </properties>
       </channel>
     </channels>
@@ -34,7 +76,7 @@ Universal Relay<br /> <h1>Overview</h1><p><strong>Features</strong></p> <ul><li>
       <property name="modelId">ZEN17</property>
       <property name="manufacturerId">027A</property>
       <property name="manufacturerRef">7000:A00A</property>
-      <property name="dbReference">1363</property>
+      <property name="dbReference">1496</property>
       <property name="defaultAssociations">1</property>
     </properties>
 

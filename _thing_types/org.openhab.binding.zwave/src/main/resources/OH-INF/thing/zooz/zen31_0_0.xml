@@ -391,7 +391,7 @@ RGBW Dimmer for LED Strips<br /> <h1>Overview</h1><ul><li>Manual or Z-Wave on/of
         <description><![CDATA[
 Power report frequency<br /> <h1>Overview</h1><p>Allowed values: 0 (disabled) or 30 - 32400 seconds</p> <p>Default: 3600 seconds (1 hour)</p>
         ]]></description>
-        <default>3600</default>
+        <default>0</default>
         <options>
           <option value="0">Disable</option>
         </options>
