@@ -569,6 +569,9 @@ Note that `item_name` and `operator` are both optional.
 If `item_name` is not provided, the Item name will default to the current Item.
 If an operator is not specified, the operator will default to `==`.
 
+If only a color is specified, that condition is considered as true and that color will be used.
+It can be used as a last condition to set a default color that will be used in case any of the other previous conditions is true.
+
 The comparison operators for `labelcolor` and `valuecolor` are the same as for the visibility parameter.
 
 **Examples:**
@@ -579,6 +582,7 @@ The following three lines are equivalent.
 Text item=Temperature labelcolor=[>0="blue"] valuecolor=[22="green"]
 Text item=Temperature labelcolor=[>0="blue"] valuecolor=[==22="green"]
 Text item=Temperature labelcolor=[>0="blue"] valuecolor=[Temperature==22="green"]
+Text item=Temperature labelcolor=[>0="blue", "gray"] valuecolor=[22="green", "gray"]
 ```
 
 The line below illustrates the importance of operator order:
