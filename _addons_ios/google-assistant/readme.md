@@ -166,7 +166,7 @@ When used as a Switch, you will be limited to arming and disarming the system.
 
 See `SecuritySystem as Group` for explanation on the configuration options.
 
-Google Command: "*Hey Google, arm House Alarm*" OR "*Hey Google, disarm House Alarm*".
+Google Command: "_Hey Google, arm House Alarm_" OR "_Hey Google, disarm House Alarm_".
 
 ```shell
 Switch houseAlarm "House Alarm" { ga="SecuritySystem", pinNeeded="1234" }
