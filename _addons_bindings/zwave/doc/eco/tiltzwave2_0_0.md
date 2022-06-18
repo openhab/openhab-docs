@@ -44,23 +44,11 @@ The following table summarises the channels available for the TILTZWAVE2 -:
 
 | Channel Name | Channel ID | Channel Type | Category | Item Type |
 |--------------|------------|--------------|----------|-----------|
-| Tamper Alarm | alarm_tamper | alarm_tamper |  | Switch | 
-| Door State  [Deprecated]| sensor_door | sensor_door | Door | Contact | 
+| Binary Sensor | sensor_door | sensor_door | Door | Contact | 
+| Tamper Alarm Cover Off | alarm_tamper | alarm_tamper |  | Switch | 
 | Battery Level | battery-level | system.battery_level | Battery | Number |
 
-### Tamper Alarm
-Indicates if the tamper alarm is triggered.
-
-The ```alarm_tamper``` channel is of type ```alarm_tamper``` and supports the ```Switch``` item. This is a read only channel so will only be updated following state changes from the device.
-
-The following state translation is provided for this channel to the ```Switch``` item type -:
-
-| Value | Label     |
-|-------|-----------|
-| OFF | OK |
-| ON | Alarm |
-
-### Door State [Deprecated]
+### Binary Sensor
 Indicates if the door/window is open or closed.
 
 The ```sensor_door``` channel is of type ```sensor_door``` and supports the ```Contact``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
@@ -72,7 +60,17 @@ The following state translation is provided for this channel to the ```Contact``
 | OPEN | Open |
 | CLOSED | Closed |
 
-**Note:** This channel is marked as deprecated so should not be used.
+### Tamper Alarm Cover Off
+Indicates if the tamper alarm is triggered.
+
+The ```alarm_tamper``` channel is of type ```alarm_tamper``` and supports the ```Switch``` item. This is a read only channel so will only be updated following state changes from the device.
+
+The following state translation is provided for this channel to the ```Switch``` item type -:
+
+| Value | Label     |
+|-------|-----------|
+| OFF | OK |
+| ON | Alarm |
 
 ### Battery Level
 Represents the battery level as a percentage (0-100%). Bindings for things supporting battery level in a different format (e.g. 4 levels) should convert to a percentage to provide a consistent battery level reading.
@@ -182,6 +180,7 @@ Association group 2 supports 5 nodes.
 
 * [English User Manual](https://opensmarthouse.org/zwavedatabase/139/reference/Ecolink-TILTZWAVE2-ECO-manual-rev1.pdf)
 * [Updated Manual](https://opensmarthouse.org/zwavedatabase/139/reference/Tilt-ZWave-Plus-Manual-R1-04-021816kgs.pdf)
+* [Technical Manual](https://opensmarthouse.org/zwavedatabase/139/reference/eco2advanced-zwave-configuration-v2.pdf)
 
 ---
 

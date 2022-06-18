@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zigbee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+	xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0 https://openhab.org/schemas/thing-description-1.0.0.xsd">
+
+	<thing-type id="xiaomi_lumiremotemini" listed="false">
+		<label>AQARA WXKG11LM</label>
+		<description>Smart Wireless Switch</description>
+		<category>WallSwitch</category>
+
+		<channels>
+			<channel id="center" typeId="system.button">
+				<label>Center</label>
+				<properties>
+					<property name="zigbee_endpoint">1</property>
+					<property name="zigbee_shortpress_cluster_id">0x0012</property>
+					<property name="zigbee_shortpress_attribute_id">85</property>
+					<property name="zigbee_shortpress_attribute_value">1</property>
+					<property name="zigbee_longpress_cluster_id">0x0012</property>
+					<property name="zigbee_longpress_attribute_id">85</property>
+					<property name="zigbee_longpress_attribute_value">0</property>
+					<property name="zigbee_doublepress_cluster_id">0x0012</property>
+					<property name="zigbee_doublepress_attribute_id">85</property>
+					<property name="zigbee_doublepress_attribute_value">2</property>
+				</properties>
+			</channel>
+
+			<channel id="range-check" typeId="system.button">
+				<label>Range Check</label>
+				<properties>
+					<property name="zigbee_endpoint">1</property>
+					<property name="zigbee_shortpress_cluster_id">0x00</property>
+					<property name="zigbee_shortpress_attribute_id">5</property>
+					<property name="zigbee_shortpress_attribute_value">lumi.remote.b1acn01</property>
+				</properties>
+			</channel>
+		</channels>
+
+		<representation-property>zigbee_macaddress</representation-property>
+
+		<config-description>
+			<parameter name="zigbee_macaddress" type="text" readOnly="true" required="true">
+				<label>MAC Address</label>
+			</parameter>
+		</config-description>
+	</thing-type>
+</thing:thing-descriptions>

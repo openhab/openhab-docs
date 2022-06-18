@@ -30,12 +30,6 @@ Micro Switch<br /> <h1>Overview</h1><p>MCOHome Micro Switch MH-S220-EU is a Z-Wa
       <channel id="scene_number" typeId="scene_number">
         <label>Scene Number</label>
         <properties>
-          <property name="binding:*:DecimalType">COMMAND_CLASS_SCENE_ACTIVATION</property>
-        </properties>
-      </channel>
-      <channel id="scene_number" typeId="scene_number">
-        <label>Scene Number</label>
-        <properties>
           <property name="binding:*:DecimalType">COMMAND_CLASS_CENTRAL_SCENE</property>
         </properties>
       </channel>

@@ -14,16 +14,16 @@ Z-Wave Garage Door Sensor<br /> <h1>Overview</h1><p>Sensor which transmits whenÂ
 
     <!-- CHANNEL DEFINITIONS -->
     <channels>
-      <channel id="alarm_tamper" typeId="alarm_tamper">
-        <label>Tamper Alarm</label>
+      <channel id="sensor_door" typeId="sensor_door">
+        <label>Binary Sensor</label>
         <properties>
-          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM</property>
+          <property name="binding:*:OpenClosedType">COMMAND_CLASS_SENSOR_BINARY</property>
         </properties>
       </channel>
-      <channel id="sensor_door" typeId="sensor_door">
-        <label>Door State [Deprecated]</label>
+      <channel id="alarm_tamper" typeId="alarm_tamper">
+        <label>Tamper Alarm Cover Off</label>
         <properties>
-          <property name="binding:*:OpenClosedType">COMMAND_CLASS_ALARM</property>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM</property>
         </properties>
       </channel>
       <channel id="battery-level" typeId="system.battery-level">
@@ -40,7 +40,6 @@ Z-Wave Garage Door Sensor<br /> <h1>Overview</h1><p>Sensor which transmits whenÂ
       <property name="manufacturerId">014A</property>
       <property name="manufacturerRef">0001:0003</property>
       <property name="dbReference">139</property>
-      <property name="commandClass:COMMAND_CLASS_ALARM">getSupported=false</property>
       <property name="defaultAssociations">1</property>
     </properties>
 
