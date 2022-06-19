@@ -264,7 +264,7 @@ The following devices have been tested by openHAB users with the binding. This l
 | Hue Bulbs                                      | Color LED Bulb                                               |
 | Hue Dimmer Switch                              | Remote RWL021 / RWL022 _[<sup>[2]</sup>](#note2)_            |
 | Hue Motion Sensor                              | Motion and Luminance sensor                                  |
-| IKEA Fyrtur Blinds                             | Roller blinds                                                |
+| IKEA Fyrtur Blinds                             | Roller blinds. See [forum tutorial](https://community.openhab.org/t/ikea-fyrtur-zigbee-w-direct-control-howto/136735) for further information |
 | IKEA Tradfri Bulbs                             |                                                              |
 | IKEA Tradfri Motion Sensor                     |                                                              |
 | IKEA Tradfri Outlet                            |                                                              |
@@ -304,6 +304,7 @@ The following devices have been tested by openHAB users with the binding. This l
 | Xiaomi Aqara Door and Window Sensor            | _[Known issues](#xiaomi-devices)_                            |
 | Xiaomi Aqara Temperature and Humidity Sensor   | _[Known issues](#xiaomi-devices)_                            |
 | Xiaomi Aqara Human Motion Sensor               | _[<sup>[3]</sup>](#note3)_ _[Known issues](#xiaomi-devices)_ |
+| Xiaomi Aqara Wireless Mini Switch              | WXKG11LM                                                     |
 | Xiaomi Aqara Wireless Mini Switch              | _[Known issues](#xiaomi-devices)_                            |
 | Xiaomi Aqara Wired Wall Switch                 | _[Known issues](#xiaomi-devices)_                            |
 | Xiaomi Aqara Wireless Remote Switch            | Double Rocker variant _[Known issues](#xiaomi-devices)_      |
@@ -516,6 +517,67 @@ The binding table for a node can be displayed with the `bindtable` command. It c
 A second part to the binding and reporting system is the reporting. The binding table tells the device where it should send reports, but the actual reports must be configured as well. Many attributes in a ZigBee cluster can be configured to send reports if their state changes, or at a periodical rate if there have been no state updates within a certain time. Analogue values can be configured so that they report if the value changes by a certain amount so that the reports do not flood the system.  Care must be exercised when changing this configuration as it may interfere with the binding operation.
 
 The exact command required to configure reporting can depend on whether the attribute is a binary or analogue type. The console commands `subscribe` and `unsubscribe` allow the user to manipulate the reporting of an attribute, and the `reportcfg` command can be used to display the current configuration.
+
+#### General Console Commands
+
+| Command      | Description                                                                            |
+| ------------ | -------------------------------------------------------------------------------------- |
+| join         | Enable or disable network join                                                         |
+| leave        | Remove a node from the network                                                         |
+| nodelist     | Lists the known nodes in the network                                                   |
+| node         | Provides detailed information about a node                                             |
+| endpoint     | Provides detailed information about an endpoint                                        |
+| info         | Get basic info about a device                                                          |
+| identify     | Sends the `identify` command to an endpoint                                            |
+| fingerprint  | Get detailed information about a device                                                |
+| read         | Read an attribute                                                                      |
+| write        | Write an attribute                                                                     |
+| bind         | Binds a device to another device                                                       |
+| unbind       | Unbinds a device from another device                                                   |
+| bindtable    | Reads and displays the binding table from a node                                       |
+| attsupported | Check what attributes are supported within a cluster                                   |
+| cmdsupported | Check what commanda are supported within a cluster                                     |
+| subscribe    | Subscribe to attribute reports                                                         |
+| unsubscribe  | Unsubscribe from attribute reports                                                     |
+| reportcfg    | Read the reporting configuration of an attribute                                       |
+| otaupgrade   | Provides information about device Over The Air upgrade server status                   |
+| installkey   | Adds an install key to the dongle                                                      |
+| linkkey      | Sets the link key int the dongle, optionally computing the MMO Hash from the join code |
+| netstart     | Join or Form a network as a router or coordinator                                      |
+| netbackup    | Backup or restores the state of the dongle                                             |
+| discovery    | Gets information on the network discovery tasks                                        |
+| routingtable | Gets the routing table from a node                                                     |
+| neighbours   | Gets the neighbour table from a node                                                   |
+| on           | Turns a device on                                                                      |
+| off          | Turns a device off                                                                     |
+| level        | Sets the level on a level control device                                               |
+| color        | Sets the color on a color control device                                               |
+| covering     | Sets the level on a window covering device                                             |
+| group        | Configures multicast groups                                                            |
+| scene        | Configures scenes                                                                      |
+| factoryreset | Resets a node to factory defaults                                                      |
+
+#### Ember NCP Commands 
+
+The following commands are available if the transport layer is using the Silabs Ember NCP.
+
+| Command          | Description                                                                   |
+| ---------------- | ----------------------------------------------------------------------------- |
+| ncpchildren      | Gets the NCP child information                                                |
+| ncpaddrtable     | Manages the NCP address table                                                 |
+| ncpconfig        | Read or write an NCP configuration value                                      |
+| ncpscan          | Performs a scan, looking for other networks, or energy levels on each channel |
+| ncpcounters      | Gets the NCP debug counters                                                   |
+| ncpstate         | Gets the NCP network state and optionally brings the network up or down       |
+| ncpvalue         | Read or write an NCP memory value                                             |
+| ncpversion       | Gets the NCP firmware version                                                 |
+| ncpsecuritystate | Gets the current NCP security state and configuration                         |
+| ncptransientkey  | Adds a transient link key to the NCP                                          |
+| ncpmmohash       | Uses the NCP to perform the MMO hash                                          |
+| ncprouting       | Prints the NCP routing tables and information                                 |
+| ncpmcast         | Read and configure NCP multicast group table                                  |
+| ncppolicy        | REad and write NCP policies                                                   |
+| ncptoken         | Reads and writes manufacturing tokens in the NCP                              |
 
 ## Known issues
 
