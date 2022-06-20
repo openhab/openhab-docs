@@ -3,6 +3,7 @@ layout: documentation
 title: Rules Blockly - Value Storage
 ---
 <!-- markdownlint-disable MD036 -->
+<!-- markdownlint-disable MD025 -->
 
 # Value Storage
 

@@ -3,6 +3,7 @@ layout: documentation
 title: Rules Blockly - Before Using
 ---
 <!-- markdownlint-disable MD036 -->
+<!-- markdownlint-disable MD025 -->
 
 # Before using blockly in openHAB
 
@@ -85,7 +86,43 @@ All methods reveal the following folders
 - Press `Ctrl-s` (Windows) or `Command-s` (MacOS) to save your rule
 - Press `Ctrl-r` (Windows) or `Command-r` (MacOS) to directly run your rule with the trigger
 - Press `Ctrl-d` (Windows) or `Command-d` (MacOS) to disable / enable your rule
-- Click on ![showcode](../images/blockly/blockly-showcode.png) on the lower right to see the generated code (click again to come back to the blocks)
+- Click on ![showblock](../images/blockly/blockly-workspace-showblocks.png) on the lower right of the bottom toolbar to see the generated code and will transition to ![showcode](../images/blockly/blockly-workspace-showcode.png)(click again to come back to the blocks)
+
+### Block context menu
+
+It should also be mentioned that each of the blocks do have a context sensitive menu which appears upon a right click on the block itself.
+
+![blockly-context.png](../images/blockly/blockly-contextmenu.png)
+
+- **Duplicate**: Clones the block
+- **Add comment**: Adds a comment to the block
+- **Inline Inputs** / External inputs: Switches between horizontal or vertical alignment of inputs
+
+Inline:
+![inline-inputs](../images/blockly/blockly-inputs-inline.png)
+
+External:
+![external-inputs](../images/blockly/blockly-inputs-external.png)
+
+- **Collapse (expand) block**: Shrinks the block to get a better overview
+
+Normal block view:
+![expanded-block](../images/blockly/blockly-expanded.png)
+
+Collapsed view:
+
+![collapsed-block](../images/blockly/blockly-collapsed.png)
+
+- **Disable (enable) block**: Disables the block, so no code is generated and its functionality switched off
+- **Delete**: delete the blocks (this can be reverted via Command/Ctrl-Z)
+
+### Zoom the workspace
+
+The following controls allow the workspace to be zoomed:
+
+![workspace-zoom-controls](../images/blockly/blockly-zoom.png)
+
+Pinching on a tablet or a touch bar also allows convenient zooming of the workspace.
 
 ## Use Frontail for viewing log files
 

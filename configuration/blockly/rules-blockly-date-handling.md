@@ -3,6 +3,7 @@ layout: documentation
 title: Rules Blockly - Date Handling
 ---
 <!-- markdownlint-disable MD036 -->
+<!-- markdownlint-disable MD025 -->
 
 # Date Handling
 
@@ -81,7 +82,7 @@ The time is set to `00:00:00`.
 Type: *ZonedDateTime*
 
 This block will return the date as *ZonedDateTime* based on the given String.
-The String may be one of the following formats (since 3.3.0M6 the following formats are supported)
+The String may be one of the following formats (since 3.3) the following formats are supported)
 
 - yyyy-MM-dd
 - yyyy-MM-dd HH:mm
@@ -117,7 +118,7 @@ Tip: if you want to create a datetime with your time zone use the "copy of"-bloc
 
 ### Create Datetime based on a specific date ("Copy Of")
 
-since 3.3.0M6
+since 3.3
 
 ![date-copy-of-overview](../images/blockly/blockly-date-copy-of-overview.png)
 
@@ -197,7 +198,7 @@ This variable is then used as the value to amend the lastUpdatedTime of an item 
 
 ### Datetime from item
 
-since 3.3.0M6
+since 3.3
 
 ![datetime-from-item](../images/blockly/blockly-datetime-from-item.png)
 
@@ -215,7 +216,7 @@ Type: *String*
 
 Returns the String representation of a given *ZonedDateTime*-block, with or without the time.
 
-since 3.3.0M6: also returns the same datetime format that is used by openHAB itself
+since 3.3: also returns the same datetime format that is used by openHAB itself
 
 **Example**
 
@@ -233,7 +234,7 @@ The output in the log will be.
 
 ### Date Comparison
 
-since 3.3.0M6
+since 3.3
 
 ![date-comparison](../images/blockly/blockly-date-comparison.png)
 
@@ -246,7 +247,7 @@ Returns true/false based on the comparison
 
 ### Date Comparison Between
 
-since 3.3.0M6
+since 3.3
 
 ![date-comparison-between](../images/blockly/blockly-date-comparison-between.png)
 
@@ -259,7 +260,7 @@ Returns true/false based on the comparison
 
 ### Get part of datetime
 
-since 3.3.0M6
+since 3.3
 
 ![date-getpartof](../images/blockly/blockly-date-unit-of.png)
 
@@ -269,7 +270,7 @@ Returns the selected part of the datetime as a number.
 
 ### Get difference between datetimes
 
-since 3.3.0M6
+since 3.3
 
 ![date-getdifference](../images/blockly/blockly-date-difference.png)
 

@@ -3,8 +3,9 @@ layout: documentation
 title: Rules Blockly
 ---
 <!-- markdownlint-disable MD036 -->
+<!-- markdownlint-disable MD025 -->
 
-# Blockly Reference 33
+# Blockly Reference
 
 One of the core feature that OpenHAB provides is writing rules to allow specific behaviour with the home automation system.
 The usual way of developing rules is by coding them like described in the [Textual Rules](/docs/configuration/rules-dsl.html).
@@ -32,22 +33,25 @@ All of these provide general functionality that is not specific to openHAB itsel
 However, to leverage the full capabilities more than *50 specific blocks* have been provided that are tailored for easy access of openHAB's capabilities.
 
 This section provides a detailed description of the specific blocks and provides examples on how to use them. Note that some of the blocks (like voice, streaming or notifications) need some special setup within openHAB  - in these case links to the respective documentation is provided.
-It should also be mentioned that each of the blocks do have a context sensitive menu which appears upon a right click on the block itself.
-
-**Block context menu**
-
-![blockly-context.png](../images/blockly/blockly-contextmenu.png)
 
 **Looking for help**
 
-A special mention should go towards the **Help** entry that links to a resource that is usually very helpful to understand the context of that particular block.
+A special mention should go towards the **Help** entry in a block context menu [right click on any block](rules-blockly-before-using.html#block-context-menu) that links to a resource that is usually very helpful to understand the context of that particular block.
+To retrieve the particular help for a block right click on a block to open the context menu and click on the **help**-entry:
+
+![context-help](../images/blockly/blockly-context-help.png)
+
+There is also a help-button available in each section that links to the documentation of the whole section.
+
+![main-help-button](../images/blockly/blockly-main-help.png)
+
 Please read this information first before asking questions in the forum. *In case you ask for help please always post the respective code that is being generated.*
 
 ## Before using blockly
 
 Please visit [Getting started with openHAB Blocklies](rules-blockly-before-using.html) before asking questions in the forum
 
-## Blocks
+## Blocks Overview
 
 ### Items and Things
 
@@ -71,7 +75,7 @@ See [Timers and Delays](rules-blockly-timers-and-delays.html) section.
 ### Date Handling
 
 Date blocks are used as input parameters for other blocks.
-At the moment some of these blocks are found in the ephemeris section, whilst others are found in the persistence section - they may be equally useful for both. These blocks are *typed* to assure correct connection to other blocks.
+Some of these blocks are used by ephemeris blocks, whilst others are used in the persistence section. Therefore blocks are *typed* to assure correct connection to other blocks.
 
 [![Date Handling](../images/blockly/blockly-date-handling1-small.png "Dates part 1")
 ](rules-blockly-date-handling.html) [![Date Handling](../images/blockly/blockly-date-handling2-small.png "Dates Part 2")

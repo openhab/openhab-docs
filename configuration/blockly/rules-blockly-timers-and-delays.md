@@ -3,6 +3,7 @@ layout: documentation
 title: Rules Blockly - Timers & Delays
 ---
 <!-- markdownlint-disable MD036 -->
+<!-- markdownlint-disable MD025 -->
 
 # Timers & Delays
 
@@ -70,7 +71,7 @@ An example is as follows:
 
 ![reschedule-timer-example1](../images/blockly/blockly-reschedule-timer-example1.png)
 
-Setting up an endless timer in teh above way is not recommended. The example shown below will stop rescheduling after 3 doorbell rings.
+Setting up an endless timer in the above way is not recommended. The example shown below will stop rescheduling after 3 doorbell rings.
 
 ![reschedule-timer-example2](../images/blockly/blockly-reschedule-timer-example2.png)
 
@@ -179,6 +180,7 @@ if (typeof this.timers['rescheduleTimerBlock'] === 'undefined' || this.timers['r
 ### Timer is Running
 
 ![timer-is-running](../images/blockly/blockly-timer-is-running.png)
+
 *Function*: returns `true` if the code *within the timer block* is currently running - i.e. the countdown has finished, and the code within the timer block is currently executing. This event will usually only last a few milliseconds, and you’d be (un)lucky to catch it when your rule retriggers.
 
 ### Timer has terminated
