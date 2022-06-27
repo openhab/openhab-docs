@@ -31,6 +31,8 @@ It even allows you to learn how write your own JavaScript by looking at the code
 If you have been around kids you may be familiar with [Scratch](https://scratch.mit.edu/).
 Blockly is a similar environment customized for writing openHAB scripts.
 
+For those who do better with video, there is a video introducting Blockly on the openHAB [Youtube feed](https://www.youtube.com/watch?v=EdllUlJ7p6k).
+
 A typical Blockly script might look something like this:
 
 ![full blockly script](images/blockly-full-example.png)
