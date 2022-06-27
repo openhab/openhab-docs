@@ -69,10 +69,13 @@ Alternatively resort to the [manual installation approach](#manual-installation)
 
 {% include collapsible/body.html %}
 
-First, add the openHAB repository key to your package manager:
+First, add the openHAB repository key to your package manager (note `/usr/share/keyrings` may already exist):
 
 ```shell
-wget -qO - 'https://openhab.jfrog.io/artifactory/api/gpg/key/public' | sudo apt-key add -
+curl -fsSL "https://openhab.jfrog.io/artifactory/api/gpg/key/public" | gpg --dearmor > openhab.pgp
+sudo mkdir /usr/share/keyrings
+sudo mv openhab.pgp /usr/share/keyrings
+sudo chmod u=rw,g=r,o=r /usr/share/keyrings/openhab.pgp
 ```
 
 Then, you can choose between, *Official (Stable)*, *Beta* or *Snapshot* builds:
@@ -84,7 +87,7 @@ Then, you can choose between, *Official (Stable)*, *Beta* or *Snapshot* builds:
     Add the **openHAB Stable Repository** to your systems apt sources list:
 
     ```shell
-    echo 'deb https://openhab.jfrog.io/artifactory/openhab-linuxpkg stable main' | sudo tee /etc/apt/sources.list.d/openhab.list
+    echo 'deb [signed-by=/usr/share/keyrings/openhab.gpg] https://openhab.jfrog.io/artifactory/openhab-linuxpkg stable main' | sudo tee /etc/apt/sources.list.d/openhab.list
     ```
 
 - **Testing Release**
@@ -94,7 +97,7 @@ Then, you can choose between, *Official (Stable)*, *Beta* or *Snapshot* builds:
     Add the **openHAB Beta Repository** to your systems apt sources list:
 
     ```shell
-    echo 'deb https://openhab.jfrog.io/artifactory/openhab-linuxpkg testing main' | sudo tee /etc/apt/sources.list.d/openhab.list
+    echo 'deb [signed-by=/usr/share/keyrings/openhab.gpg] https://openhab.jfrog.io/artifactory/openhab-linuxpkg testing main' | sudo tee /etc/apt/sources.list.d/openhab.list
     ```
 
 - **Snapshot Release**
@@ -106,7 +109,7 @@ Then, you can choose between, *Official (Stable)*, *Beta* or *Snapshot* builds:
     To use it, add the **openHAB Unstable Repository** to your systems apt sources list:
 
     ```shell
-    echo 'deb https://openhab.jfrog.io/artifactory/openhab-linuxpkg unstable main' | sudo tee /etc/apt/sources.list.d/openhab.list
+    echo 'deb [signed-by=/usr/share/keyrings/openhab.gpg] https://openhab.jfrog.io/artifactory/openhab-linuxpkg unstable main' | sudo tee /etc/apt/sources.list.d/openhab.list
     ```
 
 Next, resynchronize the package index:
