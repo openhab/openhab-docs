@@ -8,7 +8,7 @@
   <thing-type id="ge_28169_05_000" listed="false">
     <label>GE 28169 / Jasco 28168 Plug in Smart Switch</label>
     <description><![CDATA[
-Plug in Smart Switch<br /> <h1>Overview</h1><p>Z-wave controlled AC outlet for standard incandescent lighting, CFL/LEDs, fans or small appliances.<br />Must not exceed 600 watts (Incandescent); 1800W (15A) Resistive or ½ HP Motor </p> <br /> <h2>Inclusion Information</h2><p>Put controller into inclusion mode, single press and release the manual/program button on the smart switch to include it in the network</p> <br /> <h2>Exclusion Information</h2><p>Put controller into exclusion mode, single press and release the manual/program button on the smart switch to exclude it from the network</p>
+Plug in Smart Switch<br /> <h1>Overview</h1><p>Z-wave controlled AC outlet for standard incandescent lighting, CFL/LEDs, fans or small appliances.<br />Must not exceed 600 watts (Incandescent); 1800W (15A) Resistive or ½ HP Motor </p> <br /> <h2>Inclusion Information</h2><p>Put controller into inclusion mode, single press and release the manual/program button on the smart switch to include it in the network</p> <br /> <h2>Exclusion Information</h2><p>Put controller into exclusion mode, single press and release the manual/program button on the smart switch to exclude it from the network</p> <br /> <h2>Wakeup Information</h2><p><br /></p>
     ]]></description>
     <category>PowerOutlet</category>
 
@@ -33,7 +33,7 @@ Plug in Smart Switch<br /> <h1>Overview</h1><p>Z-wave controlled AC outlet for s
       <property name="vendor">Jasco Products</property>
       <property name="modelId">GE 28169 / Jasco 28168</property>
       <property name="manufacturerId">0063</property>
-      <property name="manufacturerRef">5052:3037,5052:3038</property>
+      <property name="manufacturerRef">5052:3037,5052:3038,5052:3039</property>
       <property name="versionMin">5.0</property>
       <property name="dbReference">1045</property>
       <property name="defaultAssociations">1</property>

@@ -1,6 +1,6 @@
 # ZigBee Binding
 
-The ZigBee binding supports an interface to a wireless ZigBee home automation network and allows ZigBee devices from numerous manufacturers to be used without a system specific gateway.
+The ZigBee binding supports an interface to a wireless ZigBee home automation network and allows ZigBee devices from numerous manufacturers to be used without a system specific gateway. It should be compatible with a broad range of devices that implement and meet the Zigbee standards including lights, alarms, switches, sensors, etc.
 
 ## Supported Things
 
@@ -518,7 +518,11 @@ A second part to the binding and reporting system is the reporting. The binding 
 
 The exact command required to configure reporting can depend on whether the attribute is a binary or analogue type. The console commands `subscribe` and `unsubscribe` allow the user to manipulate the reporting of an attribute, and the `reportcfg` command can be used to display the current configuration.
 
-#### General Console Commands
+#### General Console Commands
+
+The following console commands are available in the openHAB console - they should all be preceeded by the `zigbee` command (eg `zigbee join`).
+
+Where an address is required, endpoints can use the format `123/1` (destination/endpoint), or in hexadecimal `0xed1/1`. Group addresses can be subsituted by preceding the address with a `#` - eg `#123` or #0xed1.
 
 | Command      | Description                                                                            |
 | ------------ | -------------------------------------------------------------------------------------- |
