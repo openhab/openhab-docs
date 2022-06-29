@@ -1241,8 +1241,16 @@
     <channel-type id="sound_tone_play">
         <item-type>Number</item-type>
         <label>Sound tone play</label>
-        <description>The Sound tone that will play. The allowed tone numbers depend on the device</description>
+        <description>The Sound tone that will play. The allowed tone numbers depend on the device. 
+            The value 0 will stop any tone beeing played. 
+            The value 255 will play the default tone</description>
         <category></category>
+        <state>
+            <options>
+                <option value="0">Stop</option>
+                <option value="255">Play default tone</option>
+            </options>
+        </state>
     </channel-type>
 
     <!-- Sound volume Channel -->
@@ -1250,6 +1258,14 @@
         <item-type>Dimmer</item-type>
         <label>Sound volume</label>
         <description>The sound volume channel allows control of the loudness</description>
+        <category></category>
+    </channel-type>
+
+    <!-- Sound default tone Channel -->
+    <channel-type id="sound_default_tone">
+        <item-type>Number</item-type>
+        <label>Sound default tone</label>
+        <description>The sound default tone used when the device is activated</description>
         <category></category>
     </channel-type>
 
