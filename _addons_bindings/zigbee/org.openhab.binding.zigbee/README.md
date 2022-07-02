@@ -256,7 +256,7 @@ The following devices have been tested by openHAB users with the binding. This l
 | Busch-Jaeger 6735                              | Control Element (1-channel)                                  |
 | Busch-Jaeger 6735/01                           | Control Element (1-channel, battery-operated)                |
 | Busch-Jaeger 6736                              | Control Element (2-channel)                                  |
-| Clipsal Iconic dimmers and swtiches            | Switches and dimmers                                         |
+| Clipsal Iconic dimmers and switches            | Wiser switches and dimmers by Schneider                      |
 | Eurotronic Spirit Thermostat                   | Radiator Thermostat                                          |
 | GE Bulbs                                       |                                                              |
 | GE Tapt Wall Switch                            | On/Off Switch                                                |
