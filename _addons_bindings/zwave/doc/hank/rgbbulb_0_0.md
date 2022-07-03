@@ -153,13 +153,14 @@ This parameter has the configuration ID ```config_61_4``` and is of type ```INTE
 
 RGB BULB will exclude from the Z-Wave network with this particular command
 
-The following option values may be configured, in addition to values in the range 1 to 1431655765 -:
+The following option values may be configured, in addition to values in the range 0 to 0 -:
 
 | Value  | Description |
 |--------|-------------|
+| 1 | Do not reset to factory default |
 | 1431655765 | Resetting to the factory default |
 
-The manufacturer defined default value is ```1```.
+The manufacturer defined default value is ```1``` (Do not reset to factory default).
 
 This parameter has the configuration ID ```config_255_4``` and is of type ```INTEGER```.
 

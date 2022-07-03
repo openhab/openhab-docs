@@ -67,10 +67,14 @@ Digital or Analog Voltage input and/or Dry Contact Relay<br /> <h1>Overview</h1>
       <!-- PARAMETER DEFINITIONS -->
       <parameter name="config_2_1" type="integer" groupName="configuration">
         <label>2: Clear_Pulse_Meter_Counts</label>
+        <description><![CDATA[
+Clear Pulse Meter Counts<br /> <h1>Overview</h1><p>Change this parameter from any value to any value (The values themselves don't matter) to clear the pulse meter counts<br /></p>
+        ]]></description>
         <default>0</default>
         <options>
           <option value="0">Clear Pulse Meter Counts</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_3_1" type="integer" groupName="configuration">
@@ -88,45 +92,56 @@ Input-to-relay Mapping<br /> <h1>Overview</h1><p>The MIMOlite can be configured 
       <parameter name="config_4_1" type="integer" groupName="configuration">
         <label>4: Lower_Threshold_High</label>
         <description><![CDATA[
-Lower Threshold, High<br /> <h1>Overview</h1><p>Lower Threshold, High (Default=0xBB; must be less than Upper Threshold Low and greater than Lower Threshold Low).</p>
+Lower Threshold, High<br /> <h1>Overview</h1><p>Default=0xBB; must be less than Upper Threshold Low and greater than Lower Threshold Low</p>
         ]]></description>
         <default>-69</default>
         <options>
           <option value="187">Default (0xBB)</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_5_1" type="integer" groupName="configuration">
         <label>5: Lower_Threshold_Low</label>
-        <description>Lower Threshold, Low</description>
+        <description><![CDATA[
+Lower Threshold, Low<br /> <h1>Overview</h1><p>Default=0xAB<br /></p>
+        ]]></description>
         <default>-85</default>
         <options>
           <option value="171">Default (0xAB)</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_6_1" type="integer" groupName="configuration">
         <label>6: Upper_Threshold_High</label>
-        <description>Upper Threshold, High</description>
+        <description><![CDATA[
+Upper Threshold, High<br /> <h1>Overview</h1><p>Default=0xFF<br /></p>
+        ]]></description>
         <default>-1</default>
         <options>
           <option value="255">Default (0xFF)</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_7_1" type="integer" groupName="configuration">
         <label>7: Upper_Threshold_Low</label>
         <description><![CDATA[
-Upper Threshold, Low<br /> <h1>Overview</h1><p>Upper Threshold, Low (Default = 0xFE; must be greater than Lower Threshold High and less than Upper Threshold High).</p>
+Upper Threshold, Low<br /> <h1>Overview</h1><p>Default = 0xFE; must be greater than Lower Threshold High and less than Upper Threshold High</p>
         ]]></description>
         <default>-2</default>
         <options>
           <option value="254">Default (0xFE)</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_8_1" type="integer" groupName="configuration">
         <label>8: Trigger_Level_And_Input_Threshold</label>
+        <description><![CDATA[
+Input settings - digital/analog, threshold behavior<br /> <h1>Overview</h1><p><br /></p>
+        ]]></description>
         <default>3</default>
         <options>
           <option value="0">ANALOG, trigger OUTSIDE of thresholds.</option>
@@ -134,7 +149,6 @@ Upper Threshold, Low<br /> <h1>Overview</h1><p>Upper Threshold, Low (Default = 0
           <option value="2">DIGITAL, trigger OUTSIDE of thresholds.</option>
           <option value="3">DIGITAL, trigger BETWEEN thresholds.</option>
         </options>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_9_1" type="integer" groupName="configuration">
@@ -160,6 +174,7 @@ Momentary Relay1 output enable/disable (100msec).<br /> <h1>Overview</h1><p>Mome
           <option value="0">Disabled (Default)</option>
           <option value="5">500 milliseconds</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

@@ -89,21 +89,21 @@ Detailed information on each parameter can be found in the sections below.
 
 | Param | Name  | Description |
 |-------|-------|-------------|
-| 2 | Clear_Pulse_Meter_Counts |  |
+| 2 | Clear_Pulse_Meter_Counts | Clear Pulse Meter Counts |
 | 3 | Trigger_Mapping | Input-to-relay Mapping |
 | 4 | Lower_Threshold_High | Lower Threshold, High |
 | 5 | Lower_Threshold_Low | Lower Threshold, Low |
 | 6 | Upper_Threshold_High | Upper Threshold, High |
 | 7 | Upper_Threshold_Low | Upper Threshold, Low |
-| 8 | Trigger_Level_And_Input_Threshold |  |
+| 8 | Trigger_Level_And_Input_Threshold | Input settings - digital/analog, threshold behavior |
 | 9 | Multilevel_AutoReport_Interval | Multilevel AutoReport Interval |
 | 11 | Momentary_Relay1_Duration | Momentary Relay1 output enable/disable (100msec). |
 
 ### Parameter 2: Clear_Pulse_Meter_Counts
 
-
-
-The following option values may be configured, in addition to values in the range 0 to 255 -:
+Clear Pulse Meter Counts
+Change this parameter from any value to any value (The values themselves don't matter) to clear the pulse meter counts
+The following option values may be configured -:
 
 | Value  | Description |
 |--------|-------------|
@@ -135,8 +135,8 @@ This parameter has the configuration ID ```config_3_1``` and is of type ```INTEG
 ### Parameter 4: Lower_Threshold_High
 
 Lower Threshold, High
-Lower Threshold, High (Default=0xBB; must be less than Upper Threshold Low and greater than Lower Threshold Low).
-The following option values may be configured, in addition to values in the range 0 to 255 -:
+Default=0xBB; must be less than Upper Threshold Low and greater than Lower Threshold Low
+The following option values may be configured -:
 
 | Value  | Description |
 |--------|-------------|
@@ -150,8 +150,8 @@ This parameter has the configuration ID ```config_4_1``` and is of type ```INTEG
 ### Parameter 5: Lower_Threshold_Low
 
 Lower Threshold, Low
-
-The following option values may be configured, in addition to values in the range 0 to 255 -:
+Default=0xAB
+The following option values may be configured -:
 
 | Value  | Description |
 |--------|-------------|
@@ -165,8 +165,8 @@ This parameter has the configuration ID ```config_5_1``` and is of type ```INTEG
 ### Parameter 6: Upper_Threshold_High
 
 Upper Threshold, High
-
-The following option values may be configured, in addition to values in the range 0 to 255 -:
+Default=0xFF
+The following option values may be configured -:
 
 | Value  | Description |
 |--------|-------------|
@@ -180,8 +180,8 @@ This parameter has the configuration ID ```config_6_1``` and is of type ```INTEG
 ### Parameter 7: Upper_Threshold_Low
 
 Upper Threshold, Low
-Upper Threshold, Low (Default = 0xFE; must be greater than Lower Threshold High and less than Upper Threshold High).
-The following option values may be configured, in addition to values in the range 0 to 255 -:
+Default = 0xFE; must be greater than Lower Threshold High and less than Upper Threshold High
+The following option values may be configured -:
 
 | Value  | Description |
 |--------|-------------|
@@ -194,9 +194,9 @@ This parameter has the configuration ID ```config_7_1``` and is of type ```INTEG
 
 ### Parameter 8: Trigger_Level_And_Input_Threshold
 
+Input settings - digital/analog, threshold behavior
 
-
-The following option values may be configured -:
+The following option values may be configured, in addition to values in the range 0 to 255 -:
 
 | Value  | Description |
 |--------|-------------|
@@ -230,7 +230,7 @@ This parameter has the configuration ID ```config_9_1``` and is of type ```INTEG
 
 Momentary Relay1 output enable/disable (100msec).
 Momentary Relay1 output enable/disable. 0 = disable (Default) 1..255 = enable / value sets the approximate momentary on time in increments of 100msec.
-The following option values may be configured, in addition to values in the range 0 to 255 -:
+The following option values may be configured -:
 
 | Value  | Description |
 |--------|-------------|

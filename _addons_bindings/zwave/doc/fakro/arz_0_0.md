@@ -27,6 +27,10 @@ Press "P" button on the device and hold it for 0.5 sec.
 
 Press "P" button on the device and hold it for 0.5 sec.
 
+### General Usage Information
+
+
+
 ## Channels
 
 The following table summarises the channels available for the ARZ -:

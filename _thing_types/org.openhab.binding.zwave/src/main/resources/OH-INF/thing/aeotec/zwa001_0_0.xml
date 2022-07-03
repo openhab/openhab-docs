@@ -91,6 +91,7 @@ available value: 0x0A8C-1387Warm White(0x0A8C(2700k) ~ 0x1387 (4999k))<br /> <h1
         <options>
           <option value="2700">Warm White(0x0A8C(2700k) ~ 0x1387 (4999k))</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_82_2" type="integer" groupName="configuration" readOnly="true">
@@ -102,6 +103,7 @@ Available value:0x1388-0x1964Cold White (0x1388 (5000k) ~ 0x1964 (6500k))<br /> 
         <options>
           <option value="5000">Cold White (0x1388 (5000k) ~ 0x1964 (6500k))</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

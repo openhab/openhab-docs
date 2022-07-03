@@ -8,7 +8,7 @@
   <thing-type id="fakro_arz_00_000" listed="false">
     <label>ARZ Roller Shutter Module</label>
     <description><![CDATA[
-Roller Shutter Module<br /> <h1>Overview</h1><p>The ARZ Z-Wave roller shutters are intended for mounting onto FAKRO roof windows.</p> <br /> <h2>Inclusion Information</h2><p>Press "P" button on the device and hold it for 0.5 sec.</p> <br /> <h2>Exclusion Information</h2><p>Press "P" button on the device and hold it for 0.5 sec.</p>
+Roller Shutter Module<br /> <h1>Overview</h1><p>The ARZ Z-Wave roller shutters are intended for mounting onto FAKRO roof windows.</p> <br /> <h2>Inclusion Information</h2><p>Press "P" button on the device and hold it for 0.5 sec.</p> <br /> <h2>Exclusion Information</h2><p>Press "P" button on the device and hold it for 0.5 sec.</p> <br /> <h2>Wakeup Information</h2><p><br /></p>
     ]]></description>
     <category>Blinds</category>
 
@@ -35,7 +35,7 @@ Roller Shutter Module<br /> <h1>Overview</h1><p>The ARZ Z-Wave roller shutters a
       <property name="vendor">Fakro</property>
       <property name="modelId">ARZ</property>
       <property name="manufacturerId">0085</property>
-      <property name="manufacturerRef">0002:0002</property>
+      <property name="manufacturerRef">0003:0011</property>
       <property name="dbReference">248</property>
     </properties>
 

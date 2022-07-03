@@ -50,6 +50,12 @@ Power Switch<br /> <h1>Overview</h1><p>Z-Wave Power Switch</p> <br /> <h2>Inclus
           <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_A</property>
         </properties>
       </channel>
+      <channel id="config_decimal_param171" typeId="config_decimal">
+        <label>Watt Reporting Interval</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_CONFIGURATION;parameter=171</property>
+        </properties>
+      </channel>
     </channels>
 
     <!-- DEVICE PROPERTY DEFINITIONS -->
@@ -206,5 +212,13 @@ How often to report levels of electrical current (A) to your controller<br /> <h
     </config-description>
 
   </thing-type>
+
+  <channel-type id="zooz_zen15_01_004_config_decimal_param171">
+    <item-type>Number</item-type>
+    <label>Power Report Frequency</label>
+    <description>How often to report power consumption (W) to your controller</description>
+    <state pattern="%s">
+    </state>
+  </channel-type>
 
 </thing:thing-descriptions>
