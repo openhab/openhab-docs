@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zigbee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+	xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0 https://openhab.org/schemas/thing-description-1.0.0.xsd">
+
+	<thing-type id="tuya_ts0042" listed="false">	
+		<label>TS0042</label>
+		<description>Generic Tuya 2-Button Wall Switch</description>
+		<category>WallSwitch</category>
+
+		<channels>
+
+			<channel id="batteryVoltage" typeId="battery_voltage">
+				<properties>
+					<property name="zigbee_endpoint">1</property>
+				</properties>
+			</channel>
+			
+			<channel id="batteryLevel" typeId="system.battery-level">
+				<properties>
+					<property name="zigbee_endpoint">1</property>
+				</properties>
+			</channel>
+
+			<channel id="batteryAlarm" typeId="battery_alarm">
+				<properties>
+					<property name="zigbee_endpoint">1</property>
+				</properties>
+			</channel>
+
+			<channel id="leftButton" typeId="tuya_button">
+				<label>Left Button</label>
+				<properties>
+					<property name="zigbee_endpoint">1</property>
+				</properties>
+			</channel>
+
+			<channel id="rightButton" typeId="tuya_button">
+				<label>Right Button</label>
+				<properties>
+					<property name="zigbee_endpoint">2</property>
+				</properties>
+			</channel>
+
+		</channels>
+
+		<properties>
+			<property name="vendor">Tuya</property>
+			<property name="modelId">TS0042</property>
+			<property name="zigbee_logicaltype">END_DEVICE</property>
+		</properties>
+		
+		<representation-property>zigbee_macaddress</representation-property>
+
+		<config-description>
+			<parameter name="zigbee_macaddress" type="text" readOnly="true" required="true">
+				<label>MAC Address</label>
+			</parameter>
+		</config-description>
+	</thing-type>
+</thing:thing-descriptions>

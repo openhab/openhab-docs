@@ -437,5 +437,18 @@
         <category>Blinds</category>
     </channel-type>
 
+    <!-- Tuya Button -->
+    <channel-type id="tuya_button">
+            <kind>trigger</kind>
+            <label>Button Pressed Event</label>
+            <description>Emits events when button is pressed</description>
+            <event>
+                    <options>
+                            <option value="SHORT_PRESSED">Short pressed</option>
+                            <option value="DOUBLE_PRESSED">Double pressed</option>
+                            <option value="LONG_PRESSED">Long pressed</option>
+                    </options>
+            </event>
+    </channel-type>
 
 </thing:thing-descriptions>
