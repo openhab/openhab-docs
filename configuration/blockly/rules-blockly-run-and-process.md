@@ -166,7 +166,7 @@ Provides the possibility to inject any ECMAScript at a given position.
 This should be used in cases when Blockly does not provide the desired functionality.
 Use with diligence.
 
-### Example:
+### Example
 
 ![inline-script-example](../images/blockly/blockly-inline-script-example.png)
 
