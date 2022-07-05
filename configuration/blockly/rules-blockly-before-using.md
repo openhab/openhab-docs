@@ -3,7 +3,6 @@ layout: documentation
 title: Rules Blockly - Before Using
 ---
 <!-- markdownlint-disable MD036 -->
-<!-- markdownlint-disable MD025 -->
 
 # Before using blockly in openHAB
 

@@ -3,7 +3,6 @@ layout: documentation
 title: Rules Blockly - Voice and Multimedia
 ---
 <!-- markdownlint-disable MD036 -->
-<!-- markdownlint-disable MD025 -->
 
 # Multimedia
 

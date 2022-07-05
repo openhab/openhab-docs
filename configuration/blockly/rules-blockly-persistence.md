@@ -3,7 +3,6 @@ layout: documentation
 title: Rules Blockly - Persistence
 ---
 <!-- markdownlint-disable MD036 -->
-<!-- markdownlint-disable MD025 -->
 
 # Persistence
 
