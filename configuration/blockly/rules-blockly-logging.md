@@ -39,7 +39,7 @@ These blocks enable arbitrary content to be published to the [openHAB log](https
   - debug
   - trace
 
-Since OpenHAB 3.3.0M6: The block attached to the log-block is not restricted to a string type block anymore
+Since 3.3: The block attached to the log-block is not restricted to a string type block anymore
 
 ### Print Statement
 
