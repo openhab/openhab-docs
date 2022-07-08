@@ -3,7 +3,7 @@ id: tivo
 label: TiVo
 title: TiVo - Bindings
 type: binding
-description: "![TiVo Logo](doc/TiVo_lockup_BLK.png)"
+description: "This binding controls a [TiVo](https://www.tivo.com/) Digital Video Recorder (DVR) that supports the TiVo TCP Control Protocol v1.1 (see TiVo_TCP_Network_Remote_Control_Protocol.pdf)."
 since: 3x
 install: manual
 ---
@@ -13,8 +13,6 @@ install: manual
 {% include base.html %}
 
 # TiVo Binding
-
-![TiVo Logo](doc/TiVo_lockup_BLK.png)
 
 This binding controls a [TiVo](https://www.tivo.com/) Digital Video Recorder (DVR) that supports the TiVo TCP Control Protocol v1.1 (see TiVo_TCP_Network_Remote_Control_Protocol.pdf).
 

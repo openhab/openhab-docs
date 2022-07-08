@@ -3,7 +3,7 @@ id: radiothermostat
 label: RadioThermostat
 title: RadioThermostat - Bindings
 type: binding
-description: "![RadioThermostat logo](doc/index.jpg)"
+description: "This binding connects RadioThermostat/3M Filtrete models CT30, CT50/3M50, CT80, etc. with built-in Wi-Fi module to openHAB."
 since: 3x
 install: auto
 ---
@@ -13,8 +13,6 @@ install: auto
 {% include base.html %}
 
 # RadioThermostat Binding
-
-![RadioThermostat logo](doc/index.jpg)
 
 This binding connects RadioThermostat/3M Filtrete models CT30, CT50/3M50, CT80, etc. with built-in Wi-Fi module to openHAB. 
 Thermostats using a Z-Wave module are not supported but can be used via the openHAB ZWave binding.

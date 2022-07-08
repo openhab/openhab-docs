@@ -3,7 +3,7 @@ id: kaleidescape
 label: Kaleidescape
 title: Kaleidescape - Bindings
 type: binding
-description: "![Kaleidescape logo](doc/Kaleidescape_Logo.png)"
+description: "This binding is used to control and retrieve information from a Kaleidescape movie player."
 since: 3x
 install: auto
 ---
@@ -13,8 +13,6 @@ install: auto
 {% include base.html %}
 
 # Kaleidescape Binding
-
-![Kaleidescape logo](doc/Kaleidescape_Logo.png)
 
 This binding is used to control and retrieve information from a Kaleidescape movie player.
 All movie player components including the original K-Player series, M Class Players, Cinema One, Alto, and Strato are supported.
