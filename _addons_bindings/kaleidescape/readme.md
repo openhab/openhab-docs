@@ -5,6 +5,7 @@ title: Kaleidescape - Bindings
 type: binding
 description: "This binding is used to control and retrieve information from a Kaleidescape movie player."
 since: 3x
+logo: images/addons/kaleidescape.png
 install: auto
 ---
 

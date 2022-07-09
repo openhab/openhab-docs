@@ -5,6 +5,7 @@ title: RadioThermostat - Bindings
 type: binding
 description: "This binding connects RadioThermostat/3M Filtrete models CT30, CT50/3M50, CT80, etc. with built-in Wi-Fi module to openHAB."
 since: 3x
+logo: images/addons/radiothermostat.png
 install: auto
 ---
 
