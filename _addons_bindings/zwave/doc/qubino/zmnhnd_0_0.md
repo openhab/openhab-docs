@@ -149,7 +149,7 @@ Detailed information on each parameter can be found in the sections below.
 
 Input 1 switch type
 
-The following option values may be configured -:
+The following option values may be configured, in addition to values in the range 0 to 0 -:
 
 | Value  | Description |
 |--------|-------------|
@@ -165,7 +165,7 @@ This parameter has the configuration ID ```config_1_1``` and is of type ```INTEG
 
 Input 2 contact type
 
-The following option values may be configured -:
+The following option values may be configured, in addition to values in the range 0 to 0 -:
 
 | Value  | Description |
 |--------|-------------|
@@ -181,7 +181,7 @@ This parameter has the configuration ID ```config_2_1``` and is of type ```INTEG
 
 Activate / deactivate functions ALL ON/ALL OFF
 Flush 1D relay module responds to commands ALL ON / ALL OFF that may be sent by the main controller or by other controller belonging to the system.
-The following option values may be configured -:
+The following option values may be configured, in addition to values in the range 0 to 0 -:
 
 | Value  | Description |
 |--------|-------------|
@@ -192,7 +192,7 @@ The following option values may be configured -:
 
 The manufacturer defined default value is ```255``` (ALL ON active, ALL OFF active).
 
-This parameter has the configuration ID ```config_10_1``` and is of type ```INTEGER```.
+This parameter has the configuration ID ```config_10_2``` and is of type ```INTEGER```.
 
 
 ### Parameter 11: Automatic turning off relay after set time
@@ -231,7 +231,7 @@ Auto turn off / on seconds or milliseconds
 Automatic turning off / on seconds or milliseconds selection.
 
 NOTE: Parameter is the same for turning OFF or ON.
-The following option values may be configured -:
+The following option values may be configured, in addition to values in the range 0 to 0 -:
 
 | Value  | Description |
 |--------|-------------|
@@ -247,7 +247,7 @@ This parameter has the configuration ID ```config_15_1``` and is of type ```INTE
 
 Save state after power failure
 Saving the state of the relay after a power failure
-The following option values may be configured -:
+The following option values may be configured, in addition to values in the range 0 to 0 -:
 
 | Value  | Description |
 |--------|-------------|
@@ -263,7 +263,7 @@ This parameter has the configuration ID ```config_30_1``` and is of type ```INTE
 
 Output Switch selection
 Set value means the type of the device that is connected to the output. The device type can be normally open (NO) or normally close (NC).
-The following option values may be configured -:
+The following option values may be configured, in addition to values in the range 0 to 0 -:
 
 | Value  | Description |
 |--------|-------------|

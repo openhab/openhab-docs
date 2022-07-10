@@ -91,39 +91,40 @@ Flush 1D relay<br /> <h1>Overview</h1><p>This Z-Wave module is used for switchin
       <!-- PARAMETER DEFINITIONS -->
       <parameter name="config_1_1" type="integer" groupName="configuration">
         <label>1: Input 1 switch type</label>
-        <description>Input 1 switch type</description>
+        <description><![CDATA[
+Input 1 switch type<br /> <h1>Overview</h1><p><br /></p>
+        ]]></description>
         <default>1</default>
         <options>
           <option value="0">mono-stable switch type (push button)</option>
           <option value="1">bi-stable switch type</option>
         </options>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_2_1" type="integer" groupName="configuration">
         <label>2: Input 2 contact type</label>
-        <description>Input 2 contact type</description>
+        <description><![CDATA[
+Input 2 contact type<br /> <h1>Overview</h1><p><br /></p>
+        ]]></description>
         <default>0</default>
         <options>
           <option value="0">NO (normaly open) input type</option>
           <option value="1">NC (normaly close) input type</option>
         </options>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_10_1" type="integer" groupName="configuration">
+      <parameter name="config_10_2" type="integer" groupName="configuration">
         <label>10: Activate / deactivate functions ALL ON/ALL OFF</label>
         <description><![CDATA[
 Activate / deactivate functions ALL ON/ALL OFF<br /> <h1>Overview</h1><p>Flush 1D relay module responds to commands ALL ON / ALL OFF that may be sent by the main controller or by other controller belonging to the system.</p>
         ]]></description>
-        <default>-1</default>
+        <default>255</default>
         <options>
           <option value="0">ALL ON is not active ALL OFF is not active</option>
           <option value="1">ALL ON is not active ALL OFF active</option>
           <option value="2">ALL ON active ALL OFF is not active</option>
           <option value="255">ALL ON active, ALL OFF active</option>
         </options>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_11_2" type="integer" groupName="configuration">
@@ -160,7 +161,6 @@ Auto turn off / on seconds or milliseconds<br /> <h1>Overview</h1><p>Automatic t
           <option value="0">Seconds selected</option>
           <option value="1">Milliseconds selected</option>
         </options>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_30_1" type="integer" groupName="configuration">
@@ -173,7 +173,6 @@ Save state after power failure<br /> <h1>Overview</h1><p>Saving the state of the
           <option value="0">Saves state before power failure</option>
           <option value="1">Do not save state after power failure</option>
         </options>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_63_1" type="integer" groupName="configuration">
@@ -186,7 +185,6 @@ Output Switch selection<br /> <h1>Overview</h1><p>Set value means the type of th
           <option value="0">Output 0V when system turned off</option>
           <option value="1">Output 230V or 24V when system turned off</option>
         </options>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_100_1" type="integer" groupName="configuration">

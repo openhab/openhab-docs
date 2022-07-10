@@ -104,35 +104,53 @@ The following state translation is provided for this channel to the ```Switch```
 
 ## Device Configuration
 
-The following table provides a summary of the 11 configuration parameters available in the ZMNHYD.
+The following table provides a summary of the 17 configuration parameters available in the ZMNHYD.
 Detailed information on each parameter can be found in the sections below.
 
 | Param | Name  | Description |
 |-------|-------|-------------|
-| 10 | Activate / deactivate functions ALL ON / ALL OFF |  |
-| 11 | Automatic turning OFF relay after set time | When the relay is turned ON, it automatically turns OFF after the defined time |
-| 12 | On automatically with timer | Turn Smart plug On Automatically with Timer |
+| 10 | ALL ON / ALL OFF | Activate / deactivate ALL ON / ALL OFF Functionality |
+| 11 | Auto Off Timer | Turn Smart plug 16A Off Automatically with Timer |
+| 12 | Auto On Timer | Turn Smart plug 16A On Automatically with Timer |
 | 15 | Timer Settings Unit | Set Timer Units to Seconds or Milliseconds |
-| 30 | Restore state ofter power failure | Restore on/off status for Smart plug 16A after power failure |
-| 40 | Treshold Change in Power  for reporting | Change of power consumption [Watt] reporting threshold |
-| 41 | Threshold time for power reporting | Threshold time for power reporting [Seconds] |
-| 42 | Power Consumption Reporting Time Threshold | Power Consumption Reporting Time Threshold [Seconds] |
-| 50 | Down value | Lower power threshold [watt] used in parameter no. 52 |
-| 51 | Up value | Upper power threshold [watt] used in parameter no. 52 |
+| 30 | Restore state after power failure | Restore on/off status for Smart plug 16A after power failure |
+| 40 | Power Consumption Reporting Threshold | Power Consumption Reporting Threshold [%] |
+| 41 | ** DELETE ** confirmed with vendor - see GH issue #1784 | \*\* DELETE \*\* |
+| 42 | Power Consumption Reporting Time Threshold | Power Consumption Reporting Time Threshold [seconds] |
+| 50 | Down value | Lower power threshold used in parameter no. 52 [watt] |
+| 51 | Up value | Upper power threshold used in parameter no. 52 [watt] |
 | 52 | Action in case of exceeding defined power values | Action in case of exceeding defined power values (parameters 50 and 51) |
+| 70 | Overload safety switch | Turn off the controlled device in case of exceeding the defined power |
+| 71 | Power threshold | Allows setting the power threshold for triggering the Program started notification |
+| 72 | Time interval | Allows setting the time interval for triggering the Program completed notification |
+| 73 | Turn Smart Plug OFF | Allows turning the Smart Plug output to OFF once the time interval is expired and the Program completed notification is sent to the controller |
+| 74 | Enable/disable LED | Allows enabling or disabling the Smart Plug LED |
+| 249 | Enable/Disable Reporting on Set command | Enable/Disable Reporting on Set command |
 |  | Switch All Mode | Set the mode for the switch when receiving SWITCH ALL commands |
 
-### Parameter 10: Activate / deactivate functions ALL ON / ALL OFF
+### Parameter 10: ALL ON / ALL OFF
 
+Activate / deactivate ALL ON / ALL OFF Functionality
+Smart Plug 16A device responds to commands ALL ON / ALL OFF that may be sent by the primary or secondary gateway (hub) within the Z-Wave network.
 
+Values (size is 2 byte dec):
 
-The following option values may be configured -:
+- default value 255
+
+- 255 - ALL ON active, ALL OFF active
+
+- 0 - ALL ON not active, ALL OFF not active
+
+- 1 - ALL ON not active, ALL OFF active
+
+- 2 - ALL ON active, ALL OFF not active
+The following option values may be configured, in addition to values in the range 0 to 0 -:
 
 | Value  | Description |
 |--------|-------------|
-| 0 | ALL ON disabled, ALL of disabled |
-| 1 | ALL ON disabled, AL OFF active |
-| 2 | ALL ON active, ALL OFF disabled |
+| 0 | ALL ON not active, ALL OFF not active |
+| 1 | ALL ON not active, ALL OFF active |
+| 2 | ALL ON active, ALL OFF not active |
 | 255 | ALL ON active, ALL OFF active |
 
 The manufacturer defined default value is ```255``` (ALL ON active, ALL OFF active).
@@ -140,39 +158,30 @@ The manufacturer defined default value is ```255``` (ALL ON active, ALL OFF acti
 This parameter has the configuration ID ```config_10_2``` and is of type ```INTEGER```.
 
 
-### Parameter 11: Automatic turning OFF relay after set time
+### Parameter 11: Auto Off Timer
 
-When the relay is turned ON, it automatically turns OFF after the defined time
-The timer is reset each time, the module receives an ON command (from push button/main controller/association).
+Turn Smart plug 16A Off Automatically with Timer
+If Smart plug 16A is ON, you can schedule it to turn OFF automatically after a period of time defined in this parameter. The timer is reset each time, the module receives an ON command either remotely (from the gateway (hub) or associated device) or locally from the switch.
 
   * 0 = Auto OFF disabled
-  * 1 - 32535 = 1 second to 32535 seconds delay. Auto OFF is enabled with defined time. Step is 1s.
-The following option values may be configured, in addition to values in the range 0 to 32535 -:
+  * 1 - 32535 = 1 - 32535 seconds (or milliseconds – see Parameter no. 15) Auto OFF timer enabled for a given amount of seconds (or milliseconds)
+Values in the range 0 to 32535 may be set.
 
-| Value  | Description |
-|--------|-------------|
-| 0 | Auto OFF disabled |
-
-The manufacturer defined default value is ```0``` (Auto OFF disabled).
+The manufacturer defined default value is ```0```.
 
 This parameter has the configuration ID ```config_11_2``` and is of type ```INTEGER```.
 
 
-### Parameter 12: On automatically with timer
+### Parameter 12: Auto On Timer
 
-Turn Smart plug On Automatically with Timer
+Turn Smart plug 16A On Automatically with Timer
 If Smart plug 16A is OFF, you can schedule it to turn ON automatically after a period of time defined in this parameter. The timer is reset to zero each time the device receives an OFF command, either remotely (from the gateway (hub) or associated device) or locally from the switch.
 
   * 0 - Auto ON Disabled
   * 1 - 32535 = 1 - 32535 seconds (or milliseconds – see Parameter no. 15) Auto ON timer enabled- for a given amount of seconds (or milliseconds).
-The following option values may be configured -:
+Values in the range 0 to 32535 may be set.
 
-| Value  | Description |
-|--------|-------------|
-| 0 | Auto ON Disabled |
-| 0 | please delete this option |
-
-The manufacturer defined default value is ```0``` (please delete this option).
+The manufacturer defined default value is ```0```.
 
 This parameter has the configuration ID ```config_12_2``` and is of type ```INTEGER```.
 
@@ -181,7 +190,7 @@ This parameter has the configuration ID ```config_12_2``` and is of type ```INTE
 
 Set Timer Units to Seconds or Milliseconds
 Choose if you want to set the timer in seconds or milliseconds in parameters 11 and 12. Please note that the value for this parameter applies to settings for Smart plug 16A in all of the above parameters (timer on / timer off).
-The following option values may be configured -:
+The following option values may be configured, in addition to values in the range 0 to 1 -:
 
 | Value  | Description |
 |--------|-------------|
@@ -193,11 +202,11 @@ The manufacturer defined default value is ```0``` (timer set in seconds).
 This parameter has the configuration ID ```config_15_1``` and is of type ```INTEGER```.
 
 
-### Parameter 30: Restore state ofter power failure
+### Parameter 30: Restore state after power failure
 
 Restore on/off status for Smart plug 16A after power failure
 
-The following option values may be configured -:
+The following option values may be configured, in addition to values in the range 0 to 1 -:
 
 | Value  | Description |
 |--------|-------------|
@@ -209,9 +218,9 @@ The manufacturer defined default value is ```0``` (Restore state after power fai
 This parameter has the configuration ID ```config_30_1``` and is of type ```INTEGER```.
 
 
-### Parameter 40: Treshold Change in Power  for reporting
+### Parameter 40: Power Consumption Reporting Threshold
 
-Change of power consumption [Watt] reporting threshold
+Power Consumption Reporting Threshold [%]
 Choose by how much power consumption needs to increase or decrease to be reported. Values correspond to percentages, so if 20 is set (by default), the device will report any power consumption changes of 20% or more compared to the last reading.
 
   * 0 - Power consumption reporting disabled
@@ -227,9 +236,9 @@ The manufacturer defined default value is ```20```.
 This parameter has the configuration ID ```config_40_1``` and is of type ```INTEGER```.
 
 
-### Parameter 41: Threshold time for power reporting
+### Parameter 41: ** DELETE ** confirmed with vendor - see GH issue #1784
 
-Threshold time for power reporting [Seconds]
+\*\* DELETE \*\*
 Set value refers to the time interval with which power consumption in Watts is reported (0 – 32535 seconds). If 300 is entered (by default), energy consumption reports will be sent to the gateway (hub) every 300 seconds (or 5 minutes).
 
   * 0 - Power consumption reporting disabled
@@ -245,25 +254,31 @@ This parameter has the configuration ID ```config_41_2``` and is of type ```INTE
 
 ### Parameter 42: Power Consumption Reporting Time Threshold
 
-Power Consumption Reporting Time Threshold [Seconds]
-Set value refers to the time interval with which power consumption in Watts is reported (0 – 32535 seconds).
-
-If 300 is entered (by default), energy consumption reports will be sent to the gateway (hub) every 300 seconds (or 5 minutes).
+Power Consumption Reporting Time Threshold [seconds]
+Set value refers to the time interval with which power consumption in Watts is reported (30 – 32535 seconds).
 
 Values :
 
   * 0 : Power consumption reporting disabled
   * 30 - 32535 : 30 - 32535 seconds. Power consumption reporting enabled. Report is sent according to time interval (value) set here.
-Values in the range 0 to 32535 may be set.
 
-The manufacturer defined default value is ```0```.
+The device is reporting the following values (if there was a change): W, V and A.
+
+NOTE: The energy consumption (kWh) is reported regardless of the values, set in the parameters 40 and 42. The energy consumption will be reported, when it increases for at least 0,1 kWh.
+The following option values may be configured -:
+
+| Value  | Description |
+|--------|-------------|
+| 0 | Power consumption reporting disabled |
+
+The manufacturer defined default value is ```0``` (Power consumption reporting disabled).
 
 This parameter has the configuration ID ```config_42_2``` and is of type ```INTEGER```.
 
 
 ### Parameter 50: Down value
 
-Lower power threshold [watt] used in parameter no. 52
+Lower power threshold used in parameter no. 52 [watt]
 Lower power threshold used in parameter no. 52. 
 
 Values:
@@ -289,7 +304,7 @@ This parameter has the configuration ID ```config_50_2``` and is of type ```INTE
 
 ### Parameter 51: Up value
 
-Upper power threshold [watt] used in parameter no. 52
+Upper power threshold used in parameter no. 52 [watt]
 Values
 
   * default value 50 : 50 W
@@ -328,6 +343,169 @@ The following option values may be configured -:
 The manufacturer defined default value is ```6``` (Turn the associated devices off/on).
 
 This parameter has the configuration ID ```config_52_1``` and is of type ```INTEGER```.
+
+
+### Parameter 70: Overload safety switch
+
+Turn off the controlled device in case of exceeding the defined power
+The function allows for turning off the controlled device in case of exceeding the defined power for more than 3 seconds. Controlled device can be turned back on by S-button or sending a control frame. By default this function is inactive.
+
+Values (size is 2 byte dec):
+
+• default value 0
+
+• 1 – 4000 = 1 W – 4000W
+
+• 0 = function not active
+
+NOTE: This functionality is not an overload safety protection, please check installation note for details.
+
+In case of overload the following message will be send towards the controller:
+
+• COMMAND\_CLASS\_NOTIFICATION_V5
+
+• The Alarm V1 type field set to 0x00
+
+• Notification Type 0x08 and 0x08
+
+(Overload detected)
+
+NOTE: Regardless of the value set in this parameter the overcurrent protection is always active and can not be disabled. 
+Values in the range 0 to 4000 may be set.
+
+The manufacturer defined default value is ```0```.
+
+This parameter has the configuration ID ```config_70_2``` and is of type ```INTEGER```.
+
+
+### Parameter 71: Power threshold
+
+Allows setting the power threshold for triggering the Program started notification
+This function allows setting the power threshold for triggering the Program started notification. When the threshold is reached, the notification will let the user know that the device connected to the smart plug started working.
+
+Values (size is 2 byte dec):
+
+• default value 0
+
+• 1–4000=1W–4000W
+
+• 0 = function not active
+
+When the threshold is reached the following message will be send towards the controller:
+
+• COMMAND\_CLASS\_NOTIFICATION_V5
+
+• The Alarm V1 type field set to 0x00
+
+• Notification Type 0x0C and 0x01 (Program started)
+Values in the range 0 to 4000 may be set.
+
+The manufacturer defined default value is ```0```.
+
+This parameter has the configuration ID ```config_71_2``` and is of type ```INTEGER```.
+
+
+### Parameter 72: Time interval
+
+Allows setting the time interval for triggering the Program completed notification
+This function allows setting the time interval for triggering the Program completed notification. When the active power will fall below the power threshold set in parameter 71, the time interval will start and when it will expire the notification will let the user know that the device connected to the smart plug finished working. The time interval is useful for the devices that have pause intervals during operations.
+
+Values (size is 1 byte dec):
+
+• default value 1
+
+• 0–125=0–125minutes
+
+• 0 = immediate sending of notification when active power drops below the threshold set
+
+in the parameter 71
+
+When the time interval expires the following message will be send towards the controller:
+
+• COMMAND\_CLASS\_NOTIFICATION_V5
+
+• The Alarm V1 type field set to 0x00
+
+• Notification Type 0x0C and 0x03 (Program completed)
+Values in the range 0 to 125 may be set.
+
+The manufacturer defined default value is ```1```.
+
+This parameter has the configuration ID ```config_72_1``` and is of type ```INTEGER```.
+
+
+### Parameter 73: Turn Smart Plug OFF
+
+Allows turning the Smart Plug output to OFF once the time interval is expired and the Program completed notification is sent to the controller
+This function allows turning the Smart Plug output to OFF once the time interval is expired and the Program completed notification is sent to the controller.
+
+Values (size is 1 byte dec):
+
+• default value 0
+
+• 0 – function disabled
+
+• 1 – turn OFF relay once the notification Program completed is sent
+The following option values may be configured, in addition to values in the range 0 to 0 -:
+
+| Value  | Description |
+|--------|-------------|
+| 0 | function disabled |
+| 1 | turn OFF relay once the notification Program completed is sent |
+
+The manufacturer defined default value is ```0``` (function disabled).
+
+This parameter has the configuration ID ```config_73_1``` and is of type ```INTEGER```.
+
+
+### Parameter 74: Enable/disable LED
+
+Allows enabling or disabling the Smart Plug LED
+This function allows enabling or disabling the Smart Plug LED. In case the user doesn’t want the LED indicator, it can be turned OFF with this parameter.
+
+NOTE: if an overload or overcurrent occurs the red LED will still turn ON regardless of the value set in this parameter.
+
+Values (size is 1 byte dec):
+
+• default value 1
+
+• 0 – LED is disabled
+
+• 1 – LED is enabled
+The following option values may be configured, in addition to values in the range 0 to 0 -:
+
+| Value  | Description |
+|--------|-------------|
+| 0 | LED is disabled |
+| 1 | LED is enabled |
+
+The manufacturer defined default value is ```1``` (LED is enabled).
+
+This parameter has the configuration ID ```config_74_1``` and is of type ```INTEGER```.
+
+
+### Parameter 249: Enable/Disable Reporting on Set command
+
+Enable/Disable Reporting on Set command
+Using this parameter it is possible to enable/disable reporting after the set command (i.e. Basic set).
+
+Values (size is 1 byte dec):
+
+• default value 1
+
+• 0 - disable reporting
+
+• 1 - enable reporting
+The following option values may be configured, in addition to values in the range 0 to 0 -:
+
+| Value  | Description |
+|--------|-------------|
+| 0 | disable reporting |
+| 1 | enable reporting |
+
+The manufacturer defined default value is ```1``` (enable reporting).
+
+This parameter has the configuration ID ```config_249_1``` and is of type ```INTEGER```.
 
 ### Switch All Mode
 
@@ -415,6 +593,7 @@ Association group 5 supports 5 nodes.
 * [Qubino Smart Plug 16A extended manual](https://opensmarthouse.org/zwavedatabase/822/reference/Qubino-Smart-Plug-16A-PLUS-extended-manual-eng-2-2-2.pdf)
 * [Qubino Smart Plug 16A extended manual V2.6](https://opensmarthouse.org/zwavedatabase/822/reference/qubino-smart-plug-16a-plus-extended-manual-eng-V2.6_2019-04-10.pdf)
 * [Qubino Smart Plug 16A extended manual V2.7](https://opensmarthouse.org/zwavedatabase/822/reference/qubino-smart-plug-16a-plus-extended-manual-eng-V2.7_2019-05-09.pdf)
+* [Qubino Smart Plug 16A extended manual V2.5](https://opensmarthouse.org/zwavedatabase/822/reference/Qubino_Smart_Plug_16A_PLUS_extended_manual_eng_2.5.pdf)
 
 ---
 

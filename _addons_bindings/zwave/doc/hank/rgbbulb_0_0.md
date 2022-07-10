@@ -81,7 +81,7 @@ Detailed information on each parameter can be found in the sections below.
 
 Define how the RGB BULB will react after the power supply is back on.
 
-The following option values may be configured -:
+The following option values may be configured, in addition to values in the range 0 to 2 -:
 
 | Value  | Description |
 |--------|-------------|
@@ -98,7 +98,7 @@ This parameter has the configuration ID ```config_21_1``` and is of type ```INTE
 
 RGB BULB can send notifications to associated device
 RGB BULB can send notifications to associated device (Group Lifeline) when the status of the RGB BULB is changed.
-The following option values may be configured -:
+The following option values may be configured, in addition to values in the range 0 to 2 -:
 
 | Value  | Description |
 |--------|-------------|
@@ -115,7 +115,7 @@ This parameter has the configuration ID ```config_24_1``` and is of type ```INTE
 
 Enable/disable the function of using wall switch to turn on/off RGB BULB
 
-The following option values may be configured -:
+The following option values may be configured, in addition to values in the range 0 to 1 -:
 
 | Value  | Description |
 |--------|-------------|
@@ -131,7 +131,7 @@ This parameter has the configuration ID ```config_51_1``` and is of type ```INTE
 
 RGB BULB can blink or cyclic/random change color automatically at set intervals.
 RGB BULB can blink or cyclic/random change color automatically at set intervals. It will stop blink or change color when receiving any control command like Basic SetThis is an advanced parameter and will therefore not show in the user interface without entering advanced mode.
-The following option values may be configured -:
+The following option values may be configured, in addition to values in the range 3072 to 318816256 -:
 
 | Value  | Description |
 |--------|-------------|
@@ -158,7 +158,7 @@ The following option values may be configured, in addition to values in the rang
 | Value  | Description |
 |--------|-------------|
 | 1 | Do not reset to factory default |
-| 1431655765 | Resetting to the factory default |
+| 1431655765 | Reset to factory default |
 
 The manufacturer defined default value is ```1``` (Do not reset to factory default).
 

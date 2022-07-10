@@ -111,6 +111,30 @@ RGBW Dimmer for LED Strips<br /> <h1>Overview</h1><ul><li>Manual or Z-Wave on/of
           <property name="binding:Command:OnOffType">COMMAND_CLASS_SWITCH_MULTILEVEL:5</property>
         </properties>
       </channel>
+      <channel id="sensor_voltage6" typeId="sensor_voltage">
+        <label>Input 1 Voltage</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_SENSOR_MULTILEVEL:6,COMMAND_CLASS_BASIC:6;type=VOLTAGE</property>
+        </properties>
+      </channel>
+      <channel id="sensor_voltage7" typeId="sensor_voltage">
+        <label>Input 2 Voltage</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_SENSOR_MULTILEVEL:7,COMMAND_CLASS_BASIC:7;type=VOLTAGE</property>
+        </properties>
+      </channel>
+      <channel id="sensor_voltage8" typeId="sensor_voltage">
+        <label>Input 3 Voltage</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_SENSOR_MULTILEVEL:8,COMMAND_CLASS_BASIC:8;type=VOLTAGE</property>
+        </properties>
+      </channel>
+      <channel id="sensor_voltage9" typeId="sensor_voltage">
+        <label>Input 4 Voltage</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_SENSOR_MULTILEVEL:9,COMMAND_CLASS_BASIC:9;type=VOLTAGE</property>
+        </properties>
+      </channel>
     </channels>
 
     <!-- DEVICE PROPERTY DEFINITIONS -->
@@ -395,6 +419,7 @@ Power report frequency<br /> <h1>Overview</h1><p>Allowed values: 0 (disabled) or
         <options>
           <option value="0">Disable</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_63_2" type="integer" groupName="configuration">
@@ -414,6 +439,7 @@ Choose how often you want your RGBW Dimmer to report voltage changes.<br /> <h1>
         <options>
           <option value="0">Disable</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_65_2" type="integer" groupName="configuration">
@@ -433,6 +459,7 @@ Energy report frequency<br /> <h1>Overview</h1><p>Choose how often you want your
         <options>
           <option value="0">Disable</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_150_1" type="integer" groupName="configuration">
@@ -473,6 +500,7 @@ Single Click ON Trigger (IN1)<br /> <h1>Overview</h1><p>Set the status or bright
         <options>
           <option value="255">On</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_154_4_0000FF00" type="integer" groupName="configuration">

@@ -71,14 +71,15 @@ HKZW-RGB01-V1.0<br /> <h1>Overview</h1><p>A smart bulb with over 16 million colo
       <!-- PARAMETER DEFINITIONS -->
       <parameter name="config_21_1" type="integer" groupName="configuration">
         <label>21: Status after power failure</label>
-        <description>Define how the RGB BULB will react after the power supply is back on.</description>
+        <description><![CDATA[
+Define how the RGB BULB will react after the power supply is back on.<br /> <h1>Overview</h1><p><br /></p>
+        ]]></description>
         <default>0</default>
         <options>
           <option value="0">Memorizes its state</option>
           <option value="1">On</option>
           <option value="2">Off</option>
         </options>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_24_1" type="integer" groupName="configuration">
@@ -92,18 +93,18 @@ RGB BULB can send notifications to associated device<br /> <h1>Overview</h1><p>R
           <option value="1">Send BASIC REPORT</option>
           <option value="2">Send BASIC REPORT only without status change</option>
         </options>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_51_1" type="integer" groupName="configuration">
         <label>51: Enable/disable the function of using wall switch</label>
-        <description>Enable/disable the function of using wall switch to turn on/off RGB BULB</description>
+        <description><![CDATA[
+Enable/disable the function of using wall switch to turn on/off RGB BULB<br /> <h1>Overview</h1><p><br /></p>
+        ]]></description>
         <default>0</default>
         <options>
           <option value="0">Disable</option>
           <option value="1">Enable</option>
         </options>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_61_4" type="integer" groupName="configuration">
@@ -123,7 +124,6 @@ RGB BULB can blink or cyclic/random change color automatically at set intervals.
           <option value="318816256">Blink with a specific color</option>
         </options>
         <advanced>true</advanced>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_255_4" type="integer" groupName="configuration">
@@ -134,7 +134,7 @@ RGB BULB will exclude from the Z-Wave network with this particular command<br />
         <default>1</default>
         <options>
           <option value="1">Do not reset to factory default</option>
-          <option value="1431655765">Resetting to the factory default</option>
+          <option value="1431655765">Reset to factory default</option>
         </options>
       </parameter>
 

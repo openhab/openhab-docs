@@ -62,6 +62,12 @@ Indoor Siren 6 and Doorbell 6<br /> <h1>Overview</h1><p>Siren 6 is your home’s
           <property name="binding:*:PercentType">COMMAND_CLASS_SOUND_SWITCH:1</property>
         </properties>
       </channel>
+      <channel id="sound_default_tone1" typeId="sound_default_tone">
+        <label>Default sound tone to play (Browse)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_SOUND_SWITCH:1</property>
+        </properties>
+      </channel>
       <channel id="alarm_general2" typeId="alarm_general">
         <label>Alarm 2</label>
         <properties>
@@ -84,6 +90,12 @@ Indoor Siren 6 and Doorbell 6<br /> <h1>Overview</h1><p>Siren 6 is your home’s
         <label>Sound volume (Tamper)</label>
         <properties>
           <property name="binding:*:PercentType">COMMAND_CLASS_SOUND_SWITCH:2</property>
+        </properties>
+      </channel>
+      <channel id="sound_default_tone2" typeId="sound_default_tone">
+        <label>Default sound tone to play (Tamper)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_SOUND_SWITCH:2</property>
         </properties>
       </channel>
       <channel id="alarm_battery3" typeId="alarm_battery">
@@ -110,6 +122,12 @@ Indoor Siren 6 and Doorbell 6<br /> <h1>Overview</h1><p>Siren 6 is your home’s
           <property name="binding:*:PercentType">COMMAND_CLASS_SOUND_SWITCH:3</property>
         </properties>
       </channel>
+      <channel id="sound_default_tone3" typeId="sound_default_tone">
+        <label>Default sound tone to play (Doorbell 1)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_SOUND_SWITCH:3</property>
+        </properties>
+      </channel>
       <channel id="alarm_battery4" typeId="alarm_battery">
         <label>Low battery alarm (Doorbell 2)</label>
         <properties>
@@ -132,6 +150,12 @@ Indoor Siren 6 and Doorbell 6<br /> <h1>Overview</h1><p>Siren 6 is your home’s
         <label>Sound volume (Doorbell 2)</label>
         <properties>
           <property name="binding:*:PercentType">COMMAND_CLASS_SOUND_SWITCH:4</property>
+        </properties>
+      </channel>
+      <channel id="sound_default_tone4" typeId="sound_default_tone">
+        <label>Default sound tone to play (Doorbell 2)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_SOUND_SWITCH:4</property>
         </properties>
       </channel>
       <channel id="alarm_battery5" typeId="alarm_battery">
@@ -158,6 +182,12 @@ Indoor Siren 6 and Doorbell 6<br /> <h1>Overview</h1><p>Siren 6 is your home’s
           <property name="binding:*:PercentType">COMMAND_CLASS_SOUND_SWITCH:5</property>
         </properties>
       </channel>
+      <channel id="sound_default_tone5" typeId="sound_default_tone">
+        <label>Default sound tone to play (Doorbell 3)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_SOUND_SWITCH:5</property>
+        </properties>
+      </channel>
       <channel id="alarm_general6" typeId="alarm_general">
         <label>Alarm 6</label>
         <properties>
@@ -180,6 +210,12 @@ Indoor Siren 6 and Doorbell 6<br /> <h1>Overview</h1><p>Siren 6 is your home’s
         <label>Sound volume (Environment)</label>
         <properties>
           <property name="binding:*:PercentType">COMMAND_CLASS_SOUND_SWITCH:6</property>
+        </properties>
+      </channel>
+      <channel id="sound_default_tone6" typeId="sound_default_tone">
+        <label>Default sound tone to play (Environment)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_SOUND_SWITCH:6</property>
         </properties>
       </channel>
       <channel id="alarm_general7" typeId="alarm_general">
@@ -206,6 +242,12 @@ Indoor Siren 6 and Doorbell 6<br /> <h1>Overview</h1><p>Siren 6 is your home’s
           <property name="binding:*:PercentType">COMMAND_CLASS_SOUND_SWITCH:7</property>
         </properties>
       </channel>
+      <channel id="sound_default_tone7" typeId="sound_default_tone">
+        <label>Default sound tone to play (Security)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_SOUND_SWITCH:7</property>
+        </properties>
+      </channel>
       <channel id="notification_siren8" typeId="notification_siren">
         <label>Notification (Emergency)</label>
         <properties>
@@ -222,6 +264,12 @@ Indoor Siren 6 and Doorbell 6<br /> <h1>Overview</h1><p>Siren 6 is your home’s
         <label>Sound volume (Emergency)</label>
         <properties>
           <property name="binding:*:PercentType">COMMAND_CLASS_SOUND_SWITCH:8</property>
+        </properties>
+      </channel>
+      <channel id="sound_default_tone8" typeId="sound_default_tone">
+        <label>Default sound tone to play (Emergency)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_SOUND_SWITCH:8</property>
         </properties>
       </channel>
     </channels>

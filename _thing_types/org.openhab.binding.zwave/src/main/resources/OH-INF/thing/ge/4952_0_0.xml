@@ -23,12 +23,6 @@ In-Wall Toggle Switch<br /> <h1>Overview</h1><p>Transform any home into a smart 
       <channel id="scene_number" typeId="scene_number">
         <label>Scene Number</label>
         <properties>
-          <property name="binding:*:DecimalType">COMMAND_CLASS_SCENE_ACTIVATION</property>
-        </properties>
-      </channel>
-      <channel id="scene_number" typeId="scene_number">
-        <label>Scene Number</label>
-        <properties>
           <property name="binding:*:DecimalType">COMMAND_CLASS_CENTRAL_SCENE</property>
         </properties>
       </channel>

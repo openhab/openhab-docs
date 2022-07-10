@@ -34,7 +34,7 @@ In-Wall No Neutral Smart Dimmer<br /> <h1>Overview</h1><p>In-Wall No Neutral Sma
       <property name="vendor">Jasco Products</property>
       <property name="modelId">ZW3012</property>
       <property name="manufacturerId">0063</property>
-      <property name="manufacturerRef">4944:3333</property>
+      <property name="manufacturerRef">4944:3333,4944:3334</property>
       <property name="dbReference">1344</property>
       <property name="defaultAssociations">1</property>
     </properties>

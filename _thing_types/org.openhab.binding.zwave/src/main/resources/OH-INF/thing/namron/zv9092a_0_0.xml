@@ -68,6 +68,18 @@ Z-Wave Heating Thermostat<br /> <h1>Overview</h1><p>Z-Wave 16A underfloor heatin
           <property name="binding:*:QuantityType">COMMAND_CLASS_THERMOSTAT_SETPOINT;type=DRY_AIR</property>
         </properties>
       </channel>
+      <channel id="thermostat_setpoint_heating_econ" typeId="thermostat_setpoint">
+        <label>Setpoint (auto)</label>
+        <properties>
+          <property name="binding:*:QuantityType">COMMAND_CLASS_THERMOSTAT_SETPOINT;type=HEATING_ECON</property>
+        </properties>
+      </channel>
+      <channel id="thermostat_setpoint_away_heating" typeId="thermostat_setpoint">
+        <label>Setpoint (away)</label>
+        <properties>
+          <property name="binding:*:QuantityType">COMMAND_CLASS_THERMOSTAT_SETPOINT;type=AWAY_HEATING</property>
+        </properties>
+      </channel>
       <channel id="alarm_heat" typeId="alarm_heat">
         <label>Alarm (heat)</label>
         <properties>
@@ -114,6 +126,18 @@ Z-Wave Heating Thermostat<br /> <h1>Overview</h1><p>Z-Wave 16A underfloor heatin
         <label>Setpoint (dry air) 1</label>
         <properties>
           <property name="binding:*:QuantityType">COMMAND_CLASS_THERMOSTAT_SETPOINT:1;type=DRY_AIR</property>
+        </properties>
+      </channel>
+      <channel id="thermostat_setpoint_heating_econ1" typeId="thermostat_setpoint">
+        <label>Setpoint (auto) 1</label>
+        <properties>
+          <property name="binding:*:QuantityType">COMMAND_CLASS_THERMOSTAT_SETPOINT:1;type=HEATING_ECON</property>
+        </properties>
+      </channel>
+      <channel id="thermostat_setpoint_away_heating1" typeId="thermostat_setpoint">
+        <label>Setpoint (away) 1</label>
+        <properties>
+          <property name="binding:*:QuantityType">COMMAND_CLASS_THERMOSTAT_SETPOINT:1;type=AWAY_HEATING</property>
         </properties>
       </channel>
       <channel id="sensor_temperature2" typeId="sensor_temperature">
