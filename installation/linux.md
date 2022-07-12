@@ -72,10 +72,10 @@ Alternatively resort to the [manual installation approach](#manual-installation)
 First, add the openHAB repository key to your package manager (note `/usr/share/keyrings` may already exist):
 
 ```shell
-curl -fsSL "https://openhab.jfrog.io/artifactory/api/gpg/key/public" | gpg --dearmor > openhab.pgp
+curl -fsSL "https://openhab.jfrog.io/artifactory/api/gpg/key/public" | gpg --dearmor > openhab.gpg
 sudo mkdir /usr/share/keyrings
-sudo mv openhab.pgp /usr/share/keyrings
-sudo chmod u=rw,g=r,o=r /usr/share/keyrings/openhab.pgp
+sudo mv openhab.gpg /usr/share/keyrings
+sudo chmod u=rw,g=r,o=r /usr/share/keyrings/openhab.gpg
 ```
 
 Then, you can choose between, *Official (Stable)*, *Beta* or *Snapshot* builds:
