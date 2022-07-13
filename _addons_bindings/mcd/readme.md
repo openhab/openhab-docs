@@ -5,6 +5,7 @@ title: MCD - Bindings
 type: binding
 description: "This binding allows you to send sensor events from your openHAB environment to the cloud application Managing Care Digital (MCD) by [C&S Computer und Software GmbH](https://www.managingcare.de/)."
 since: 3x
+logo: images/addons/mcd.png
 install: manual
 ---
 
