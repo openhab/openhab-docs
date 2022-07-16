@@ -127,6 +127,7 @@ Customer function switch, using bit control.<br /> <h1>Overview</h1><p>Customer 
         <options>
           <option value="16">Preset: Notification Type = Binary</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_10_1" type="integer" groupName="configuration">

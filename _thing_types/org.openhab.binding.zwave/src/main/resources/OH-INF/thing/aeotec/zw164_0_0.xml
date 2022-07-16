@@ -1175,6 +1175,7 @@ Button #1 Software Version<br /> <h1>Overview</h1><table><tr><td><strong>Value</
         <options>
           <option value="0">Button is Unpaired</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_52_4_7FFF0000" type="integer" groupName="configuration" readOnly="true">
@@ -1186,6 +1187,7 @@ Button #1 Battery Voltage<br /> <h1>Overview</h1><table><tr><td><strong>Value</s
         <options>
           <option value="0">Button is Unpaired</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_53_4_0000FFFF" type="integer" groupName="configuration" readOnly="true">
@@ -1197,6 +1199,7 @@ Button #2 Software Version<br /> <h1>Overview</h1><table><tr><td><strong>Value</
         <options>
           <option value="0">Button is unpaired.</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_53_4_7FFF0000" type="integer" groupName="configuration" readOnly="true">
@@ -1208,6 +1211,7 @@ Button #2 Battery Voltage<br /> <h1>Overview</h1><table><tr><td><strong>Value</s
         <options>
           <option value="0">Button is unpaired.</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_54_4_0000FFFF" type="integer" groupName="configuration" readOnly="true">
@@ -1219,6 +1223,7 @@ Button #3 Software Version<br /> <h1>Overview</h1><table><tr><td><strong>Value</
         <options>
           <option value="0">Button is unpaired.</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_54_4_7FFF0000" type="integer" groupName="configuration" readOnly="true">
@@ -1230,6 +1235,7 @@ Button #3 Battery Voltage<br /> <h1>Overview</h1><table><tr><td><strong>Value</s
         <options>
           <option value="0">Button is unpaired.</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_96_1" type="integer" groupName="configuration">
