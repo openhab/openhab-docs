@@ -1,0 +1,309 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="qubino_zmnhyd_00_000" listed="false">
+    <label>ZMNHYD Smart Plug</label>
+    <description><![CDATA[
+Smart Plug<br /> <h1>Overview</h1><p>This Z-Wave module is used for switching and energy measurements in single-phase electrical power networks and can be used in residential, industrial and utility applications.</p> <ul><li>Power supply: 230V +/- 10%, 50 Hz</li> <li>Power load: 15A resistive max.</li> <li>Overload protection &gt;16 A</li> <li>Power consumption &lt;1W</li> </ul> <br /> <h2>Inclusion Information</h2><p>Auto inclusion (first time usage)</p> <ul><li>start inclusion mode of z-wave controller</li> <li>plug device into power outlet (5 seconds auto inclusion)</li> </ul><p>Manual inclusion</p> <ul><li>plug device into power outlet</li> <li>start inclusion mode of z-wave controller</li> <li>press the service button (S) 3 times within 3 seconds</li> </ul> <br /> <h2>Exclusion Information</h2><ul><li>plug device into power outlet</li> <li>ensure device is within maximum 1 meter (3 feet) of the main controller</li> <li>enable exclusion mode on main controller</li> <li>press service button (S) on module 3 times within 3 seconds (please note: configuration parameters will not be reset!)</li> </ul> <br /> <h2>Wakeup Information</h2><p>Press the Service button (S) 3 times within 3 seconds.</p>
+    ]]></description>
+    <category>PowerOutlet</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_binary" typeId="switch_binary">
+        <label>Switch</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY,COMMAND_CLASS_BASIC</property>
+        </properties>
+      </channel>
+      <channel id="meter_voltage" typeId="meter_voltage">
+        <label>Electric meter (volts)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_V</property>
+        </properties>
+      </channel>
+      <channel id="meter_current" typeId="meter_current">
+        <label>Electric meter (amps)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_A</property>
+        </properties>
+      </channel>
+      <channel id="meter_kwh" typeId="meter_kwh">
+        <label>Electric meter (kWh)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_KWh</property>
+        </properties>
+      </channel>
+      <channel id="meter_watts" typeId="meter_watts">
+        <label>Electric meter (watts)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_W</property>
+        </properties>
+      </channel>
+      <channel id="meter_reset" typeId="meter_reset">
+        <label>Reset Power Consumption</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_METER</property>
+        </properties>
+      </channel>
+      <channel id="alarm_power" typeId="alarm_power">
+        <label>Alarm (power)</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=POWER_MANAGEMENT</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Goap</property>
+      <property name="modelId">ZMNHYD</property>
+      <property name="manufacturerId">0159</property>
+      <property name="manufacturerRef">0002:0054</property>
+      <property name="dbReference">822</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_10_2" type="integer" groupName="configuration">
+        <label>10: ALL ON / ALL OFF</label>
+        <description><![CDATA[
+Activate / deactivate ALL ON / ALL OFF Functionality<br /> <h1>Overview</h1><p>Smart Plug 16A device responds to commands ALL ON / ALL OFF that may be sent by the primary or secondary gateway (hub) within the Z-Wave network.</p><p>Values (size is 2 byte dec):</p><p>- default value 255</p><p>- 255 - ALL ON active, ALL OFF active</p><p>- 0 - ALL ON not active, ALL OFF not active</p><p>- 1 - ALL ON not active, ALL OFF active</p><p>- 2 - ALL ON active, ALL OFF not active</p>
+        ]]></description>
+        <default>255</default>
+        <options>
+          <option value="0">ALL ON not active, ALL OFF not active</option>
+          <option value="1">ALL ON not active, ALL OFF active</option>
+          <option value="2">ALL ON active, ALL OFF not active</option>
+          <option value="255">ALL ON active, ALL OFF active</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_11_2" type="integer" groupName="configuration">
+        <label>11: Auto Off Timer</label>
+        <description><![CDATA[
+Turn Smart plug 16A Off Automatically with Timer<br /> <h1>Overview</h1><p>If Smart plug 16A is ON, you can schedule it to turn OFF automatically after a period of time defined in this parameter. The timer is reset each time, the module receives an ON command either remotely (from the gateway (hub) or associated device) or locally from the switch.</p> <ul><li>0 = Auto OFF disabled</li> <li>1 - 32535 = 1 - 32535 seconds (or milliseconds – see Parameter no. 15) Auto OFF timer enabled for a given amount of seconds (or milliseconds)</li> </ul>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_12_2" type="integer" groupName="configuration">
+        <label>12: Auto On Timer</label>
+        <description><![CDATA[
+Turn Smart plug 16A On Automatically with Timer<br /> <h1>Overview</h1><p>If Smart plug 16A is OFF, you can schedule it to turn ON automatically after a period of time defined in this parameter. The timer is reset to zero each time the device receives an OFF command, either remotely (from the gateway (hub) or associated device) or locally from the switch.</p> <ul><li>0 - Auto ON Disabled</li> <li>1 - 32535 = 1 - 32535 seconds (or milliseconds – see Parameter no. 15) Auto ON timer enabled- for a given amount of seconds (or milliseconds).</li> </ul>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_15_1" type="integer" groupName="configuration">
+        <label>15: Timer Settings Unit</label>
+        <description><![CDATA[
+Set Timer Units to Seconds or Milliseconds<br /> <h1>Overview</h1><p>Choose if you want to set the timer in seconds or milliseconds in parameters 11 and 12. Please note that the value for this parameter applies to settings for Smart plug 16A in all of the above parameters (timer on / timer off).</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">timer set in seconds</option>
+          <option value="1">timer set in milliseconds</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_30_1" type="integer" groupName="configuration">
+        <label>30: Restore state after power failure</label>
+        <description><![CDATA[
+Restore on/off status for Smart plug 16A after power failure<br /> <h1>Overview</h1><p><br /></p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Restore state after power failure</option>
+          <option value="1">Do not restore state after power failure</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_40_1" type="integer" groupName="configuration">
+        <label>40: Power Consumption Reporting Threshold</label>
+        <description><![CDATA[
+Power Consumption Reporting Threshold [%]<br /> <h1>Overview</h1><p>Choose by how much power consumption needs to increase or decrease to be reported. Values correspond to percentages, so if 20 is set (by default), the device will report any power consumption changes of 20% or more compared to the last reading.</p> <ul><li>0 - Power consumption reporting disabled</li> <li>1 - 100 = 1% - 100% Power consumption reporting enabled. New value is reported only when Wattage in real time changes by more than the percentage value set in this parameter compared to the previous Wattage reading, starting at 1% (the lowest value possible).</li> </ul><p>NOTE: Power consumption needs to increase or decrease by at least 1 Watt to be reported, REGARDLESS of percentage set in this parameter.</p> <p>NOTE: When reporting Watts, module will automatically report also [V] (Voltage) and [A] (Amperes)</p>
+        ]]></description>
+        <default>20</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_42_2" type="integer" groupName="configuration">
+        <label>42: Power Consumption Reporting Time Threshold</label>
+        <description><![CDATA[
+Power Consumption Reporting Time Threshold [seconds]<br /> <h1>Overview</h1><p>Set value refers to the time interval with which power consumption in Watts is reported (30 – 32535 seconds).</p> <p>Values :</p> <ul><li>0 : Power consumption reporting disabled</li> <li>30 - 32535 : 30 - 32535 seconds. Power consumption reporting enabled. Report is sent according to time interval (value) set here.</li></ul><p>The device is reporting the following values (if there was a change): W, V and A.</p><p>NOTE: The energy consumption (kWh) is reported regardless of the values, set in the parameters 40 and 42. The energy consumption will be reported, when it increases for at least 0,1 kWh.</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Power consumption reporting disabled</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_50_2" type="integer" groupName="configuration">
+        <label>50: Down value</label>
+        <description><![CDATA[
+Lower power threshold used in parameter no. 52 [watt]<br /> <h1>Overview</h1><p>Lower power threshold used in parameter no. 52. </p> <p>Values:</p> <ul><li>default value 30 : 30 W <br /></li> <li>0 – 4000 : 0W – 4000 W <br /></li> </ul><p>Down value cannot be higher than a value specified in parameter no. 51 <br /></p> <p>NOTE:</p> <ul><li>if parameter no. 50 value is 100W and if measured power is lower than 100W, the association is send association is send again if measured power will rise above 105W</li> <li>Power threshold step is 1W <br /></li> </ul>
+        ]]></description>
+        <default>30</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_51_2" type="integer" groupName="configuration">
+        <label>51: Up value</label>
+        <description><![CDATA[
+Upper power threshold used in parameter no. 52 [watt]<br /> <h1>Overview</h1><p>Values</p> <ul><li>default value 50 : 50 W</li> <li>0 – 4000 : 0 W – 400 W </li> </ul><p>Up value cannot be lower than a value specified in the parameter no. 50.</p> <p>NOTE:</p> <ul><li>If parameter no. 51 value is 200W and if measured power is higher than 200W the association is send</li> <li>Association is send again if measured power will fall below 190W</li> <li>Power threshold step is 1W </li> </ul>
+        ]]></description>
+        <default>50</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_52_1" type="integer" groupName="configuration">
+        <label>52: Action in case of exceeding defined power values</label>
+        <description>Action in case of exceeding defined power values (parameters 50 and 51)</description>
+        <default>6</default>
+        <options>
+          <option value="0">Inactive</option>
+          <option value="1">Turn the associated devices on if underpowered</option>
+          <option value="2">Turn the associated devices off if underpowered</option>
+          <option value="3">Turn the associated devices on if overpowered</option>
+          <option value="4">Turn the associated devices off if overpowered</option>
+          <option value="5">Turn the associated devices on/off</option>
+          <option value="6">Turn the associated devices off/on</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_70_2" type="integer" groupName="configuration">
+        <label>70: Overload safety switch</label>
+        <description><![CDATA[
+Turn off the controlled device in case of exceeding the defined power<br /> <h1>Overview</h1><p>The function allows for turning off the controlled device in case of exceeding the defined power for more than 3 seconds. Controlled device can be turned back on by S-button or sending a control frame. By default this function is inactive.</p><p>Values (size is 2 byte dec):</p><p>• default value 0</p><p>• 1 – 4000 = 1 W – 4000W</p><p>• 0 = function not active</p><p>NOTE: This functionality is not an overload safety protection, please check installation note for details.</p><p>In case of overload the following message will be send towards the controller:</p><p>• COMMAND_CLASS_NOTIFICATION_V5</p><p>• The Alarm V1 type field set to 0x00</p><p>• Notification Type 0x08 and 0x08</p><p>(Overload detected)</p><p>NOTE: Regardless of the value set in this parameter the overcurrent protection is always active and can not be disabled. </p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_71_2" type="integer" groupName="configuration">
+        <label>71: Power threshold</label>
+        <description><![CDATA[
+Allows setting the power threshold for triggering the Program started notification<br /> <h1>Overview</h1><p>This function allows setting the power threshold for triggering the Program started notification. When the threshold is reached, the notification will let the user know that the device connected to the smart plug started working.</p><p>Values (size is 2 byte dec):</p><p>• default value 0</p><p>• 1–4000=1W–4000W</p><p>• 0 = function not active</p><p>When the threshold is reached the following message will be send towards the controller:</p><p>• COMMAND_CLASS_NOTIFICATION_V5</p><p>• The Alarm V1 type field set to 0x00</p><p>• Notification Type 0x0C and 0x01 (Program started)</p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_72_1" type="integer" groupName="configuration">
+        <label>72: Time interval</label>
+        <description><![CDATA[
+Allows setting the time interval for triggering the Program completed notification<br /> <h1>Overview</h1><p>This function allows setting the time interval for triggering the Program completed notification. When the active power will fall below the power threshold set in parameter 71, the time interval will start and when it will expire the notification will let the user know that the device connected to the smart plug finished working. The time interval is useful for the devices that have pause intervals during operations.</p><p>Values (size is 1 byte dec):</p><p>• default value 1</p><p>• 0–125=0–125minutes</p><p>• 0 = immediate sending of notification when active power drops below the threshold set</p><p>in the parameter 71</p><p>When the time interval expires the following message will be send towards the controller:</p><p>• COMMAND_CLASS_NOTIFICATION_V5</p><p>• The Alarm V1 type field set to 0x00</p><p>• Notification Type 0x0C and 0x03 (Program completed)</p>
+        ]]></description>
+        <default>1</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_73_1" type="integer" groupName="configuration">
+        <label>73: Turn Smart Plug OFF</label>
+        <description><![CDATA[
+Allows turning the Smart Plug output to OFF once the time interval is expired and the Program completed notification is sent to the controller<br /> <h1>Overview</h1><p>This function allows turning the Smart Plug output to OFF once the time interval is expired and the Program completed notification is sent to the controller.</p><p>Values (size is 1 byte dec):</p><p>• default value 0</p><p>• 0 – function disabled</p><p>• 1 – turn OFF relay once the notification Program completed is sent</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">function disabled</option>
+          <option value="1">turn OFF relay once the notification Program completed is sent</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_74_1" type="integer" groupName="configuration">
+        <label>74: Enable/disable LED</label>
+        <description><![CDATA[
+Allows enabling or disabling the Smart Plug LED<br /> <h1>Overview</h1><p>This function allows enabling or disabling the Smart Plug LED. In case the user doesn’t want the LED indicator, it can be turned OFF with this parameter.</p><p>NOTE: if an overload or overcurrent occurs the red LED will still turn ON regardless of the value set in this parameter.</p><p>Values (size is 1 byte dec):</p><p>• default value 1</p><p>• 0 – LED is disabled</p><p>• 1 – LED is enabled</p>
+        ]]></description>
+        <default>1</default>
+        <options>
+          <option value="0">LED is disabled</option>
+          <option value="1">LED is enabled</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_249_1" type="integer" groupName="configuration">
+        <label>249: Enable/Disable Reporting on Set command</label>
+        <description><![CDATA[
+Enable/Disable Reporting on Set command<br /> <h1>Overview</h1><p>Using this parameter it is possible to enable/disable reporting after the set command (i.e. Basic set).</p><p>Values (size is 1 byte dec):</p><p>• default value 1</p><p>• 0 - disable reporting</p><p>• 1 - enable reporting</p>
+        ]]></description>
+        <default>1</default>
+        <options>
+          <option value="0">disable reporting</option>
+          <option value="1">enable reporting</option>
+        </options>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Lifeline</label>
+        <description>Reserved for communication with main controller</description>
+        <multipleLimit>1</multipleLimit>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: Status on/off</label>
+        <description><![CDATA[
+Send control command BASIC_SET 0x00/0xFF<br /> <h1>Overview</h1><p>This group is assigned to the Smart Plug status On/Off. It allows sending the control command BASIC_SET 0x00/0xFF to associated devices whenevert the Smart Plug is turned On or Off.</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_3" type="text" groupName="association" multiple="true">
+        <label>3: Load dependent</label>
+        <description><![CDATA[
+sending control commands BASIC_SET 0x00/0xFF depending on current load<br /> <h1>Overview</h1><p>This groups allows to send control commands BASIC_SET 0x00/0xFF to associated devices depending on the current load. This association group is configured through the parameters no. 50, 51 and 52.</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_4" type="text" groupName="association" multiple="true">
+        <label>4: Secure Status On/Off</label>
+        <description><![CDATA[
+Send control command BASIC_SET 0x00/0xFF<br /> <h1>Overview</h1><p>This group is equivalent to association group 2, except commands are sent securily encapsulated.</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_5" type="text" groupName="association" multiple="true">
+        <label>5: Secure Load dependent</label>
+        <description><![CDATA[
+sending control commands BASIC_SET 0x00/0xFF depending on current load<br /> <h1>Overview</h1><p>This group is equivalent to association group 3, except commands are sent securily encapsulated.</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

@@ -104,7 +104,7 @@ The following state translation is provided for this channel to the ```Switch```
 
 ## Device Configuration
 
-The following table provides a summary of the 17 configuration parameters available in the ZMNHYD.
+The following table provides a summary of the 16 configuration parameters available in the ZMNHYD.
 Detailed information on each parameter can be found in the sections below.
 
 | Param | Name  | Description |
@@ -115,7 +115,6 @@ Detailed information on each parameter can be found in the sections below.
 | 15 | Timer Settings Unit | Set Timer Units to Seconds or Milliseconds |
 | 30 | Restore state after power failure | Restore on/off status for Smart plug 16A after power failure |
 | 40 | Power Consumption Reporting Threshold | Power Consumption Reporting Threshold [%] |
-| 41 | ** DELETE ** confirmed with vendor - see GH issue #1784 | \*\* DELETE \*\* |
 | 42 | Power Consumption Reporting Time Threshold | Power Consumption Reporting Time Threshold [seconds] |
 | 50 | Down value | Lower power threshold used in parameter no. 52 [watt] |
 | 51 | Up value | Upper power threshold used in parameter no. 52 [watt] |
@@ -234,22 +233,6 @@ Values in the range 0 to 100 may be set.
 The manufacturer defined default value is ```20```.
 
 This parameter has the configuration ID ```config_40_1``` and is of type ```INTEGER```.
-
-
-### Parameter 41: ** DELETE ** confirmed with vendor - see GH issue #1784
-
-\*\* DELETE \*\*
-Set value refers to the time interval with which power consumption in Watts is reported (0 – 32535 seconds). If 300 is entered (by default), energy consumption reports will be sent to the gateway (hub) every 300 seconds (or 5 minutes).
-
-  * 0 - Power consumption reporting disabled
-  * 30 - 32535 = 30 - 32535 seconds. Power consumption reporting enabled. Report is sent according to time interval (value) set here.
-
-The device is reporting the following values (if there was a change): Power [W], Voltage [V] and Current [A]
-Values in the range 0 to 32535 may be set.
-
-The manufacturer defined default value is ```0```.
-
-This parameter has the configuration ID ```config_41_2``` and is of type ```INTEGER```.
 
 
 ### Parameter 42: Power Consumption Reporting Time Threshold
@@ -594,6 +577,7 @@ Association group 5 supports 5 nodes.
 * [Qubino Smart Plug 16A extended manual V2.6](https://opensmarthouse.org/zwavedatabase/822/reference/qubino-smart-plug-16a-plus-extended-manual-eng-V2.6_2019-04-10.pdf)
 * [Qubino Smart Plug 16A extended manual V2.7](https://opensmarthouse.org/zwavedatabase/822/reference/qubino-smart-plug-16a-plus-extended-manual-eng-V2.7_2019-05-09.pdf)
 * [Qubino Smart Plug 16A extended manual V2.5](https://opensmarthouse.org/zwavedatabase/822/reference/Qubino_Smart_Plug_16A_PLUS_extended_manual_eng_2.5.pdf)
+* [Qubino Smart Plug 16A extended manual V41.06](https://opensmarthouse.org/zwavedatabase/822/reference/Qubino_Smart-Plug-16A-PLUS-extended-manual_eng_41.06.1.pdf)
 
 ---
 
