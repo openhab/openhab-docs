@@ -35,7 +35,7 @@ Carbon Monoxide Detector<br /> <h1>Overview</h1><p>The higher the concentration 
 
     <!-- DEVICE PROPERTY DEFINITIONS -->
     <properties>
-      <property name="vendor">Fireangle</property>
+      <property name="vendor">Sprue Safety Products Ltd</property>
       <property name="modelId">NM-CO-10x-INT</property>
       <property name="manufacturerId">026F</property>
       <property name="manufacturerRef">0001:0003</property>

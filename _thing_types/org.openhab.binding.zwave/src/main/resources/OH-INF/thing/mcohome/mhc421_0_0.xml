@@ -20,6 +20,11 @@ Shutter Panel<br /> <h1>Overview</h1><p>Touch Panel Switch is a wall panel built
           <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY</property>
         </properties>
       </channel>
+      <channel id="blinds_shutter" typeId="blinds_shutter">
+        <label>Shutter Control</label>
+        <properties>
+        </properties>
+      </channel>
       <channel id="scene_number" typeId="scene_number">
         <label>Scene Number</label>
         <properties>
@@ -99,8 +104,10 @@ Shutter Panel<br /> <h1>Overview</h1><p>Touch Panel Switch is a wall panel built
 
       <parameter name="config_5_1" type="integer" groupName="configuration">
         <label>5: Level Report Mode</label>
-        <description>Level Report Mode</description>
-        <default>0</default>
+        <description><![CDATA[
+Level Report Mode<br /> <h1>Overview</h1><p><br /></p>
+        ]]></description>
+        <default>2</default>
         <options>
           <option value="1">Report destination level in 5s period when requested by the gateway; A</option>
           <option value="2">Report every 10% level change while running</option>
@@ -151,11 +158,14 @@ Shutter Panel<br /> <h1>Overview</h1><p>Touch Panel Switch is a wall panel built
 
       <parameter name="config_255_1_wo" type="integer" groupName="configuration">
         <label>255: Reset</label>
-        <description>Factory reset</description>
+        <description><![CDATA[
+Factory reset<br /> <h1>Overview</h1><p><br /></p>
+        ]]></description>
         <default>0</default>
         <options>
           <option value="85">Reset</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->
@@ -164,7 +174,7 @@ Shutter Panel<br /> <h1>Overview</h1><p>Touch Panel Switch is a wall panel built
         <description><![CDATA[
 Shutter<br /> <h1>Overview</h1><p><br /></p>
         ]]></description>
-        <multipleLimit>5</multipleLimit>
+        <multipleLimit>1</multipleLimit>
       </parameter>
 
       <!-- STATIC DEFINITIONS -->

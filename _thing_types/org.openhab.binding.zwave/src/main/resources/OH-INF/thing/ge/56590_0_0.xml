@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="ge_56590_00_000" listed="false">
+    <label>56590 In-Wall No Neutral Smart Dimmer</label>
+    <description><![CDATA[
+In-Wall No Neutral Smart Dimmer<br /> <h1>Overview</h1><p>In-Wall No Neutral Smart Dimmer<br /></p> <br /> <h2>Inclusion Information</h2><p>Single press ON or OFF to include when controller is in include mode<br /></p> <br /> <h2>Exclusion Information</h2><p>Single press ON or OFF to exclude when controller is in exclude mode<br /></p> <br /> <h2>Wakeup Information</h2><p><br /></p>
+    ]]></description>
+    <category>WallSwitch</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_dimmer" typeId="switch_dimmer">
+        <label>Dimmer</label>
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+          <property name="binding:Command:OnOffType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+        </properties>
+      </channel>
+      <channel id="scene_number" typeId="scene_number">
+        <label>Scene Number</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_CENTRAL_SCENE</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Jasco Products</property>
+      <property name="modelId">56590</property>
+      <property name="manufacturerId">0063</property>
+      <property name="manufacturerRef">4944:3334</property>
+      <property name="dbReference">1498</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_3_1" type="integer" groupName="configuration">
+        <label>3: LED Light</label>
+        <description>Set the LED light status</description>
+        <default>0</default>
+        <options>
+          <option value="0">LED On when load is On, LED Off when load is Off (Default)</option>
+          <option value="1">LED ON when load is Off, LED Off when Load is On</option>
+          <option value="2">LED always ON</option>
+          <option value="3">LED always OFF</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_4_1" type="integer" groupName="configuration">
+        <label>4: Invert Switch</label>
+        <description>Reverse the default On/Off rocker setting</description>
+        <default>0</default>
+        <options>
+          <option value="0">Disabled - Normal Operation</option>
+          <option value="1">Enabled - Invert Switch</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_6_1" type="integer" groupName="configuration">
+        <label>6: Dim up/down rate</label>
+        <description>Enable/Disable slow dim rate</description>
+        <default>0</default>
+        <options>
+          <option value="0">Disable - Normal Operation</option>
+          <option value="1">Enable - Slow Dim Rate</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_16_1" type="integer" groupName="configuration">
+        <label>16: Switch Mode</label>
+        <description>Set control mode: 0 = dim mode; 1 = switch mode</description>
+        <default>0</default>
+        <options>
+          <option value="0">Disable - Normal Operation</option>
+          <option value="1">Enabled - Switch Mode</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_19_1" type="integer" groupName="configuration">
+        <label>19: Alternate Exclusion</label>
+        <description>Alternative way to perform Exclusion</description>
+        <default>0</default>
+        <options>
+          <option value="0">Disable - Normal Operation</option>
+          <option value="1">Enabled - Alternate Exclusion</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_30_1" type="integer" groupName="configuration">
+        <label>30: Minimum Dim Threshold</label>
+        <description>Minimum Dim Threshold</description>
+        <default>1</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_31_1" type="integer" groupName="configuration">
+        <label>31: Maximum Dim Threshold</label>
+        <description>Maximum Dim Threshold</description>
+        <default>99</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_32_1" type="integer" groupName="configuration">
+        <label>32: Brightness Level</label>
+        <description>Dimmer will turn ON to this level</description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_84_1" type="integer" groupName="configuration">
+        <label>84: Reset factory default</label>
+        <description>Reset Switch to Factory Defaults</description>
+        <default>0</default>
+        <options>
+          <option value="0">Disable - Normal Operation</option>
+          <option value="1">Enable - Reset</option>
+        </options>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Lifeline</label>
+        <description><![CDATA[
+Association Group 1 supports Lifeline, Multi-level Switch report<br /> <h1>Overview</h1><p><br /></p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: Basic Set, controlled with local load</label>
+        <description>Association Group 2 supports Basic Set and is controlled with the local load</description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_3" type="text" groupName="association" multiple="true">
+        <label>3: Basic set, controlled by double pressing ON/OFF</label>
+        <description>Association Group 3 supports Basic Set and is controlled by double pressing the ON/OFF button</description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

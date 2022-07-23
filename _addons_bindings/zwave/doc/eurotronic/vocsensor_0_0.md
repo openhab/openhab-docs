@@ -162,7 +162,7 @@ Temperature on-change reporting
 0x00 No on-change reporting (only time-based reports).
 
 0x01 - 0x32 report if temperature changed by delta = 0,1°C - 5,0°C
-The following option values may be configured, in addition to values in the range 0 to 50 -:
+The following option values may be configured -:
 
 | Value  | Description |
 |--------|-------------|
@@ -179,7 +179,7 @@ Humidity on-change reporting
 0x00 No on-change reporting (only time-based reports)
 
 0x01 - 0x0A report if humidity changed by delta = 1% ...10%
-The following option values may be configured, in addition to values in the range 0 to 10 -:
+The following option values may be configured -:
 
 | Value  | Description |
 |--------|-------------|

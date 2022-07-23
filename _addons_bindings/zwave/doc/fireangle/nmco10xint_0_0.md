@@ -6,7 +6,7 @@ title: NM-CO-10x-INT - ZWave
 {% include base.html %}
 
 # NM-CO-10x-INT Carbon Monoxide Detector
-This describes the Z-Wave device *NM-CO-10x-INT*, manufactured by *Fireangle* with the thing type UID of ```fireangle_nmco10xint_00_000```.
+This describes the Z-Wave device *NM-CO-10x-INT*, manufactured by *Sprue Safety Products Ltd* with the thing type UID of ```fireangle_nmco10xint_00_000```.
 
 The device is in the category of *Sensor*, defining Device used to measure something.
 

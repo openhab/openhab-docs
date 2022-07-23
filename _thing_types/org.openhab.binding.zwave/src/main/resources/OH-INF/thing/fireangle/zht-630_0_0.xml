@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="fireangle_zht-630_00_000" listed="false">
+    <label>ZHT-630 Fire Angle Thermistek Heat Alarm/Detector</label>
+    <description><![CDATA[
+Fire Angle Thermistek Heat Alarm/Detector<br /> <h1>Overview</h1><p>This wireless module is designed to be installed in a Z-Wave compatible heat alarm. Thermistek technology provides quick detection of rapid temperature increases. Its reaction to heat rather than smoke makes it ideal for installation in kitchen areas and garages in order to avoid false alarms caused by cooking and vehicle fumes.<br /></p> <br /> <h2>Inclusion Information</h2><p>Triple-press the add button once the Z-Wave Module is on the device. The LED will show a quick blink once per second while the module is being added. This process may take as long as 30 seconds, but typically is much quicker. If you triple-press too quickly or too slowly, inclusion will not start. In this case wait a few seconds and then try again.</p><p>Upon successful inclusion, the Z-Wave Module LED will flash 3 times. If inclusion fails, the LED will simply stop its blink pattern.</p> <br /> <h2>Exclusion Information</h2><p>Triple-press the button on the Z-Wave Module. The LED will show a quick double-blink once per second while the module is being removed. This process may take up to 30 seconds. If you triple-press too quickly or too slowly the removing function will not start. In this case you must wait a few seconds and then try again.</p><p>Upon successful removal, the Z-Wave Module LED will flash 5 times. If removal fails, the LED will simply stop its blink pattern.</p> <br /> <h2>Wakeup Information</h2><p><br /></p>
+    ]]></description>
+    <category>SmokeDetector</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="alarm_heat" typeId="alarm_heat">
+        <label>Alarm (heat)</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=HEAT</property>
+        </properties>
+      </channel>
+      <channel id="alarm_system" typeId="alarm_system">
+        <label>Alarm (system)</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=SYSTEM</property>
+        </properties>
+      </channel>
+      <channel id="battery-level" typeId="system.battery-level">
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_BATTERY</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Sprue Safety Products Ltd</property>
+      <property name="modelId">ZHT-630</property>
+      <property name="manufacturerId">026F</property>
+      <property name="manufacturerRef">0001:0002</property>
+      <property name="dbReference">1505</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Lifeline</label>
+        <description>Z-Wave Plus Lifeline</description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

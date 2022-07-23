@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="shenzhen_nas-ds07z_00_000" listed="false">
+    <label>NAS-DS07Z The NEO Coolcam Door/Window Sensor V2</label>
+    <description><![CDATA[
+The NEO Coolcam Door/Window Sensor V2<br /> <h1>Overview</h1><p><b>Door/Window Sensor</b></p><p><i>Overview</i></p><p>The NEO Coolcam Door/Window Sensor provides information whether a door or window is opened or closed. It also provides temperature and humidity information.</p><p>The battery operated or USB powered sensor consists of the main unit and a magnetic element. The main unit should be installed on the frame and the magnetic element is placed on the door or window.</p><p><b>Technical parameters:</b></p><ul><li>Power: CR14250 x1</li><li>Standby current: 8uA</li><li>Battery life: 2 years</li><li>Radio Protocol: Z-wave</li><li>Radio Frequency: 868.4MHz EU; 908.4MHz US; 921.4MHz ANZ; 869.2MHz RU</li><li>Wireless distance：50m</li><li>Operation temperature: 0-40℃</li><li>Storage temperature: 0-70℃</li><li>Size: </li><li>Contact sensor main body (L x W x H): 82mmx27mmx23mm </li><li>Contact sensor deputy body (L x W x H): 50mmx13mmx16mm</li></ul><p><b>Tips: <br /></b></p><ul><li><b>3x click will wake the device.</b></li><li><b>If device is not reporting, keep the device awake while heal.</b></li></ul> <br /> <h2>Inclusion Information</h2><p><b>Inclusion Information</b></p><ul><li>Remove the sensor cover.</li><li>Make sure the sensor is USB powered.</li><li>Set Z‐Wave controller or Z‐Wave gateway into inclusion mode (Refer to the controller or gateway operating manual)</li><li>Press the button for 5 seconds, until the led turns white, then release before the led turns off, the device will enter inclusion mode. And the blue LED will flash on and off alternately until inclusion succesfull.</li></ul> <br /> <h2>Exclusion Information</h2><p><b>Exclusion Information</b></p><ul><li>Remove the device cover.</li><li>Make sure the sensor is powered.</li><li>Set Z‐Wave controller or Z‐Wave gateway into exclusion mode (Refer to the controller or gateway operating manual)</li><li>Press the button three times within 1.5 second, the device will enter exclusion mode. And the blue LED will flash on and off alternately until exclusion succesfull.</li></ul> <br /> <h2>Wakeup Information</h2><p><b>Wakeup Information</b></p><ul><li>Press the button once to wake the device. If pressed successfully, the LED will blink one time.</li><li>The minimum wakeup interval is 300s (5 minutes)</li><li>The maximum wakeup interval is 16,777,200s (about 194 days)</li><li>Allowable min step among each wakeup interval is 60 seconds, such as 360s, 420s, 480s…</li><li>Note: The default value is 12 hours. This value is longer, the battery life is greater.</li></ul>
+    ]]></description>
+    <category>Door</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="sensor_binary" typeId="sensor_binary">
+        <label>Binary Sensor</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SENSOR_BINARY</property>
+        </properties>
+      </channel>
+      <channel id="sensor_temperature" typeId="sensor_temperature">
+        <label>Sensor (temperature)</label>
+        <properties>
+          <property name="binding:*:QuantityType">COMMAND_CLASS_SENSOR_MULTILEVEL;type=TEMPERATURE</property>
+        </properties>
+      </channel>
+      <channel id="sensor_relhumidity" typeId="sensor_relhumidity">
+        <label>Sensor (relative humidity)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_SENSOR_MULTILEVEL;type=RELATIVE_HUMIDITY</property>
+        </properties>
+      </channel>
+      <channel id="alarm_access" typeId="alarm_access">
+        <label>Alarm (access)</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=ACCESS_CONTROL</property>
+        </properties>
+      </channel>
+      <channel id="alarm_burglar" typeId="alarm_burglar">
+        <label>Alarm (burglar)</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=BURGLAR</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Shenzhen Neo Electronics Co., Ltd</property>
+      <property name="modelId">NAS-DS07Z</property>
+      <property name="manufacturerId">0258</property>
+      <property name="manufacturerRef">0010:0702</property>
+      <property name="dbReference">1503</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_1_1_00000001" type="integer" groupName="configuration">
+        <label>1: Led Indicated Disable</label>
+        <description><![CDATA[
+Led Indicated Disable<br /> <h1>Overview</h1><p>This configuration sets to '0' will disable the Led indicating when device detects a door/window opened or closed event.<br /></p>
+        ]]></description>
+        <default>1</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_2_1_00000001" type="integer" groupName="configuration">
+        <label>2: Binary Sensor Report Enable</label>
+        <description><![CDATA[
+Binary Sensor Report Enabe/Disable<br /> <h1>Overview</h1><p>This configuration sets to '1' will enable SENSOR_BINARY_REPORT when device detects a door/window opened or closed event.<br /></p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">send event OFF</option>
+          <option value="1">send event ON</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_3_1_00000001" type="integer" groupName="configuration">
+        <label>3: Temperature Offset Value</label>
+        <description><![CDATA[
+The current measuring temperature value can be add and minus a value by this setting<br /> <h1>Overview</h1><p>Temperature Offset Value = [Value] × 0.1 Degree Celsius / Fahrenheit (US).</p>
+        ]]></description>
+        <default>0</default>
+        <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_4_1_00000001" type="integer" groupName="configuration">
+        <label>4: 4: Humidity Offset Value</label>
+        <description><![CDATA[
+The current measuring humidity value can be add and minus a value by this setting.<br /> <h1>Overview</h1><p>Humidity Offset Value = [Value] × 0.1 RH%.</p>
+        ]]></description>
+        <default>0</default>
+        <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_5_1_00000001" type="integer" groupName="configuration">
+        <label>5: 5: Temperature D-Value Setting</label>
+        <description><![CDATA[
+This configuration sets the changed value of the temperature. When the difference from the last report exceeds this setting value, the device will report current temperature value to Z-Wave Hubs.<br /> <h1>Overview</h1><p>The D-Value = [Value] × 0.1 Degree Celsius / Fahrenheit (US).</p>
+        ]]></description>
+        <default>10</default>
+        <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_6_1_00000001" type="integer" groupName="configuration">
+        <label>6: 6: Humidity D-Value Setting</label>
+        <description><![CDATA[
+This configuration sets the changed value of the humidity. When the difference from the last report exceeds this setting value, the device will report current humidity value to Z-Wave Hubs.<br /> <h1>Overview</h1><p>The D- Value = [Value] × 0.1 RH%.</p>
+        ]]></description>
+        <default>20</default>
+        <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_7_1_00000001" type="integer" groupName="configuration">
+        <label>7: 7: Basic Set Value</label>
+        <description><![CDATA[
+This configuration sets the level for device sending BASIC_SET to nodes that associated in group 2 when device detects a door/window opened event.<br /> <h1>Overview</h1><p>[0] – Off, BASIC_SET = 0x00, all nodes associated in group 2 will be off. [1 … 99] –On. BASIC_SET = [Setting Value]. [100] – On, BASIC_SET = 0xFF.</p>
+        ]]></description>
+        <default>100</default>
+        <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_8_2_00000001" type="integer" groupName="configuration">
+        <label>8: 8: Basic Set Off Delay Time</label>
+        <description><![CDATA[
+This configuration sets the time delay for device sending BASIC_SET = 0x00 to nodes that associated in group 2 when device detects a door/window closed event.<br /> <h1>Overview</h1><p>[0] – No time delay.<br />[1 … 30000] – Time delay count</p>
+        ]]></description>
+        <default>0</default>
+        <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_9_2_00000001" type="integer" groupName="configuration">
+        <label>9: 9: Sensor Measuring Interval</label>
+        <description><![CDATA[
+This parameter is configured the time interval for sensor measuring interval time.<br /> <h1>Overview</h1><p>This value is larger, the sensor values updates slowly. ‘<br />0’ – Sensor Measuring Disable.<br /></p>
+        ]]></description>
+        <default>180</default>
+        <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Lifeline</label>
+        <description><![CDATA[
+is lifeline group; all nodes which associated in this group will receive the messages sent by device through lifeline.<br /> <h1>Overview</h1><p>COMMAND_CLASS_NOTIFICATION <br />NOTIFICATION_REPORT<br />COMMAND_CLASS_SENSOR_MULTILEVEL <br />SENSOR_MULTILEVEL_REPORT<br />COMMAND_CLASS_SENSOR_BINARY <br />SENSOR_BINARY_REPORT<br />COMMAND_CLASS_BATTERY¹ <br />BATTERY_REPORT¹<br />COMMAND_CLASS_INDICATOR <br />INDICATOR_REPORT<br />COMMAND_CLASS_DEVICE_RESET_LOCALLY <br />DEVICE_RESET_LOCALLY_NOTIFICATION</p><p>Notice 1: {COMMAND_CLASS_BATTERY, BATTERY_REPORT} is valid only when included with LPM. Please see Page 9 for detail.</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: Controlling group</label>
+        <description><![CDATA[
+is controlling group, all nodes associated in this group will be controlled through BASIC_SET command by the device when device detects a door/window opened or closed event.<br /> <h1>Overview</h1><p>COMMAND_CLASS_BASIC BASIC_SET</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

@@ -27,7 +27,7 @@ Water Shutoff Valve<br /> <h1>Overview</h1><p>Heavy-duty automated Valve Control
       <property name="vendor">UFairy G.R. Tech</property>
       <property name="modelId">GR-105</property>
       <property name="manufacturerId">0152</property>
-      <property name="manufacturerRef">0004:0003</property>
+      <property name="manufacturerRef">0004:0002,0004:0003</property>
       <property name="versionMin">10.0</property>
       <property name="dbReference">1291</property>
       <property name="defaultAssociations">1</property>

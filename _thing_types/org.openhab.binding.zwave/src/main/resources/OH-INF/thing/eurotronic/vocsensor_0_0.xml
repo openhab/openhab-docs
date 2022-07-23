@@ -86,6 +86,7 @@ Temperature on-change reporting<br /> <h1>Overview</h1><p>0x00 No on-change repo
         <options>
           <option value="0">No on-change reporting</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_2_1" type="integer" groupName="configuration">
@@ -97,6 +98,7 @@ Humidity on-change reporting<br /> <h1>Overview</h1><p>0x00 No on-change reporti
         <options>
           <option value="0">No on change reporting</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_3_1" type="integer" groupName="configuration">
