@@ -17,7 +17,9 @@ The ZMNHHD supports routing. This allows the device to communicate using other r
 
 ## Overview
 
-Mini Dimmer is a MOSFET-switching light device that also supports control of low-voltage halogen lamps with electronic transformers, dimmable compact fluorescent lights, and dimmable LED bulbs. It measures power consumption of the connected device. It supports push-button/momentary switches (default) and toggle switches. It can work with or without the neutral line. Qubino Mini Dimmer allows the easiest and quickest installation. It is designed to be mounted inside a “flush mounting box”, hidden behind a traditional wall switch. It acts as repeater in order to improve range and stability of Z-Wave network.
+Mini Dimmer is a MOSFET-switching light device that also supports control of low-voltage halogen lamps with electronic transformers, dimmable compact fluorescent lights, and dimmable LED bulbs. It measures power consumption of the connected device. It supports push-button/momentary switches (default) and toggle switches. It can work with or without the neutral line. 
+
+Qubino Mini Dimmer allows the easiest and quickest installation. It is designed to be mounted inside a “flush mounting box”, hidden behind a traditional wall switch. It acts as repeater in order to improve range and stability of Z-Wave network.
 
 ### Inclusion Information
 
@@ -47,7 +49,7 @@ OR
 
 Press and hold the S (Service) button between 2 and 6 seconds if connected to 24-30VDC (this procedure put the device in LEARN MODE)
 
-4. A new device will appear on your dashboard
+  1. A new device will appear on your dashboard
 
 **NOTE: LEARN MODE state allows the device to receive network infromation from the conttoller **
 
