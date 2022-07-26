@@ -122,11 +122,17 @@ The following table summarises the channels available for the ZMNHHD -:
 
 | Channel Name | Channel ID | Channel Type | Category | Item Type |
 |--------------|------------|--------------|----------|-----------|
+| Switch | switch_binary | switch_binary | Switch | Switch | 
 | Dimmer | switch_dimmer | switch_dimmer | DimmableLight | Dimmer | 
 | Electric meter (kWh) | meter_kwh | meter_kwh | Energy | Number | 
 | Electric meter (watts) | meter_watts | meter_watts | Energy | Number | 
 | Reset Meter | meter_reset | meter_reset | Energy | Switch | 
 | Alarm (power) | alarm_power | alarm_power | Energy | Switch | 
+
+### Switch
+Switch the power on and off.
+
+The ```switch_binary``` channel is of type ```switch_binary``` and supports the ```Switch``` item and is in the ```Switch``` category.
 
 ### Dimmer
 The brightness channel allows to control the brightness of a light.
