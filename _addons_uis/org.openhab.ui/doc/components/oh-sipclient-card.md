@@ -1,16 +1,16 @@
 ---
-title: oh-input-card - Input Card
-component: oh-input-card
-label: Input Card
-description: Display an input in a card
-source: https://github.com/openhab/openhab-webui/edit/main/bundles/org.openhab.ui/doc/components/oh-input-card.md
+title: oh-sipclient-card - SIP Client Card
+component: oh-sipclient-card
+label: SIP Client Card
+description: SIP Client
+source: https://github.com/openhab/openhab-webui/edit/main/bundles/org.openhab.ui/doc/components/oh-sipclient-card.md
 prev: /docs/ui/components/
 ---
 
-# oh-input-card - Input Card
+# oh-sipclient-card - SIP Client Card
 
 <!-- Put a screenshot here if relevant:
-![](./images/oh-input-card/header.jpg)
+![](./images/oh-sipclient-card/header.jpg)
 -->
 
 [[toc]]
@@ -18,7 +18,7 @@ prev: /docs/ui/components/
 <!-- Note: you can overwrite the definition-provided description and add your own intro/additional sections instead -->
 <!-- DO NOT REMOVE the following comments if you intend to keep the definition-provided description -->
 <!-- GENERATED componentDescription -->
-Display an input in a card
+Client to start and answer SIP calls
 <!-- GENERATED /componentDescription -->
 
 ## Configuration
@@ -57,78 +57,70 @@ Display an input in a card
 </PropGroup>
 </div>
 
-### Input
+### SIP Settings
 <div class="props">
-<PropGroup name="input" label="Input">
-<PropBlock type="TEXT" name="name" label="Name">
+<PropGroup name="sip" label="SIP Settings">
+<PropBlock type="INTEGER" name="iconSize" label="Icon Size">
   <PropDescription>
-    Input name
+    Size of the icon(s) in px
   </PropDescription>
 </PropBlock>
-<PropBlock type="TEXT" name="type" label="Type">
+<PropBlock type="TEXT" name="websocketUrl" label="Websocket URL" required="true">
   <PropDescription>
-    Type of input (see <a class="external text-color-blue" target="_blank" href="https://framework7.io/docs/inputs.html#supported-inputs">f7 input docs</a>)
+    Full URL of the WebRTC SIP websocket, e.g. 'wss://siphost:8089/ws' or relative path, e.g. '/ws', for Android & iOS, you need wss (WebSocket secured)
   </PropDescription>
 </PropBlock>
-<PropBlock type="TEXT" name="inputmode" label="Input Mode">
+<PropBlock type="TEXT" name="domain" label="Domain" required="true">
   <PropDescription>
-    Type of data that might be entered (see <a class="external text-color-blue" target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/inputmode">MDN docs</a>)
+    SIP Domain
   </PropDescription>
 </PropBlock>
-<PropBlock type="TEXT" name="placeholder" label="Placeholder">
+<PropBlock type="TEXT" name="username" label="Username" required="true">
   <PropDescription>
-    Placeholder text
+    SIP Username
   </PropDescription>
 </PropBlock>
-<PropBlock type="BOOLEAN" name="sendButton" label="Send button">
+<PropBlock type="TEXT" name="password" label="Password" required="true">
   <PropDescription>
-    Display Send button to update the state with a command (needs a configured item)
+    SIP Password
   </PropDescription>
 </PropBlock>
-<PropBlock type="BOOLEAN" name="clearButton" label="Clear button">
+<PropBlock type="BOOLEAN" name="enableTones" label="Enable tones">
   <PropDescription>
-    Display input clear button when applicable
+    Enable ringback and ring tone, might cause issues with your browser, so that your call fails
   </PropDescription>
 </PropBlock>
-<PropBlock type="BOOLEAN" name="outline" label="Outline">
+<PropBlock type="BOOLEAN" name="hideCallerId" label="Hide caller id">
   <PropDescription>
-    Makes input outline
+    Hides the username of the remote party on incoming call
   </PropDescription>
 </PropBlock>
-<PropBlock type="BOOLEAN" name="required" label="Required">
+<PropBlock type="TEXT" name="phonebook" label="Phonebook" required="true">
   <PropDescription>
-    Display an error message if left empty
+    Single SIP Address (phone number) for a single call target or a comma-separated list of 'phoneNumber=name' for multiple call targets
   </PropDescription>
 </PropBlock>
-<PropBlock type="BOOLEAN" name="validate" label="Validate">
+<PropBlock type="BOOLEAN" name="enableVideo" label="Enable Video">
   <PropDescription>
-    When enabled, input value will be validated based on input type
+    Enable video calling
   </PropDescription>
 </PropBlock>
-<PropBlock type="BOOLEAN" name="validate-on-blur" label="Validate on blur">
+<PropBlock type="BOOLEAN" name="enableLocalVideo" label="Enable Local Video View">
   <PropDescription>
-    Only validate when focus moves away from input field
+    Display the local camera on video calls
   </PropDescription>
 </PropBlock>
-<PropBlock type="TEXT" name="item" label="Item" context="item">
+<PropBlock type="TEXT" name="defaultVideoAspectRatio" label="Default Aspect Ratio">
   <PropDescription>
-    Link the input value to the state of this item
+    Default video aspect ratio used to size the widget before video is loaded. Defaults to 4/3, 16/9 and 1 are common alternatives.
   </PropDescription>
 </PropBlock>
-<PropBlock type="BOOLEAN" name="useDisplayState" label="Use Display State">
+<PropBlock type="TEXT" name="dtmfString" label="DTMF String">
   <PropDescription>
-    Use the formatted state as the value for the input control
+    Display a button to send a preset DTMF string while in calls for remote doors, gates, etc...
   </PropDescription>
 </PropBlock>
-<PropBlock type="TEXT" name="defaultValue" label="Default value">
-  <PropDescription>
-    Default value when not found in item state or variable
-  </PropDescription>
-</PropBlock>
-<PropBlock type="TEXT" name="variable" label="Variable">
-  <PropDescription>
-    Name of the variable to set when the input changes
-  </PropDescription>
+<PropBlock type="BOOLEAN" name="enableSIPDebug" label="Enable SIP debugging to the console">
 </PropBlock>
 </PropGroup>
 </div>
@@ -146,7 +138,7 @@ Display an input in a card
 
 #### `default`
 
-The contents of the oh-input-card.
+The contents of the oh-sipclient-card.
 
 -->
 
@@ -155,10 +147,10 @@ The contents of the oh-input-card.
 
 ### Example 1
 
-![](./images/oh-input-card/example1.jpg)
+![](./images/oh-sipclient-card/example1.jpg)
 
 ```yaml
-component: oh-input-card
+component: oh-sipclient-card
 config:
   prop1: value1
   prop2: value2
@@ -166,11 +158,11 @@ config:
 
 ### Example 2
 
-![](./images/oh-input-card/example2.jpg)
+![](./images/oh-sipclient-card/example2.jpg)
 
 ::: details YAML
 ```yaml
-component: oh-input-card
+component: oh-sipclient-card
 config:
   prop1: value1
   prop2: value2

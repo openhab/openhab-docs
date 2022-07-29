@@ -71,6 +71,16 @@ Displays markers on an image overlay
     Apply an invert filter to the image in dark mode - use with images in black & white or grayscale for best results
   </PropDescription>
 </PropBlock>
+<PropBlock type="TEXT" name="tooltipColor" label="Tooltip Color">
+  <PropDescription>
+    Color of the tooltip. "Black or White" means it will be black in dark mode and white in light mode
+  </PropDescription>
+  <PropOptions>
+    <PropOption value="white" label="White" />
+    <PropOption value="black" label="Black" />
+    <PropOption value="blackwhite" label="Black or White" />
+  </PropOptions>
+</PropBlock>
 </PropGroup>
 </div>
 

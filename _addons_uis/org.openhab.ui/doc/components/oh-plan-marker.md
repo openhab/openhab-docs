@@ -49,6 +49,7 @@ A marker on a floor plan
 ### Icon
 <div class="props">
 <PropGroup name="icon" label="Icon">
+  You can customize the styles further with CSS attributes in the <code>iconStyle</code> parameter (in YAML only)
 <PropBlock type="TEXT" name="icon" label="Icon">
   <PropDescription>
     Use <code>oh:iconName</code> (<a class="external text-color-blue" target="_blank" href="https://www.openhab.org/link/icons">openHAB icon</a>), <code>f7:iconName</code> (<a class="external text-color-blue" target="_blank" href="https://framework7.io/icons/">Framework7 icon</a>), <code>material:iconName</code> (<a class="external text-color-blue" target="_blank" href="https://jossef.github.io/material-design-icons-iconfont/">Material icon</a>) or <code>iconify:iconSet:iconName</code> (<a class="external text-color-blue" target="_blank" href="https://icon-sets.iconify.design">Iconify icon</a>, requires being online if not in cache)
@@ -79,6 +80,11 @@ A marker on a floor plan
     Color of the icon (for Framework7/Material/certain Iconify icons); use expression for dynamic colors
   </PropDescription>
 </PropBlock>
+<PropBlock type="INTEGER" name="iconRotation" label="Icon Rotation">
+  <PropDescription>
+    Rotation of the icon in degrees
+  </PropDescription>
+</PropBlock>
 </PropGroup>
 </div>
 
@@ -106,6 +112,34 @@ A marker on a floor plan
 <PropBlock type="TEXT" name="tooltipColor" label="Tooltip color">
   <PropDescription>
     Color of the tooltip
+  </PropDescription>
+</PropBlock>
+<PropBlock type="TEXT" name="tooltipDirection" label="Tooltip Direction">
+  <PropDescription>
+    The direction of the tooltip
+  </PropDescription>
+  <PropOptions>
+    <PropOption value="top" label="Top" />
+    <PropOption value="bottom" label="Bottom" />
+    <PropOption value="left" label="Left" />
+    <PropOption value="right" label="Right" />
+    <PropOption value="center" label="Center" />
+    <PropOption value="auto" label="Auto" />
+  </PropOptions>
+</PropBlock>
+<PropBlock type="INTEGER" name="tooltipOffsetX" label="Tooltip Offset X">
+  <PropDescription>
+    The X offset of the tooltip from the marker in pixels
+  </PropDescription>
+</PropBlock>
+<PropBlock type="INTEGER" name="tooltipOffsetY" label="Tooltip Offset Y">
+  <PropDescription>
+    The Y offset of the tooltip from the marker in pixels
+  </PropDescription>
+</PropBlock>
+<PropBlock type="DECIMAL" name="tooltipOpacity" label="Tooltip Opacity">
+  <PropDescription>
+    The opacity of the tooltip (0-1)
   </PropDescription>
 </PropBlock>
 </PropGroup>

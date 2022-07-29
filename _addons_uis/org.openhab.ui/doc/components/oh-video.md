@@ -48,9 +48,28 @@ Displays a video player from a URL or an item
     Hide the control buttons of the video
   </PropDescription>
 </PropBlock>
-<PropBlock type="BOOLEAN" name="startManually" label="Start manually">
+<PropBlock type="BOOLEAN" name="startManually" label="Start Manually">
   <PropDescription>
     Does not start playing the video automatically
+  </PropDescription>
+</PropBlock>
+<PropBlock type="TEXT" name="playerType" label="Player Type">
+  <PropDescription>
+    Select the player type (optional), defualts to Video.js
+  </PropDescription>
+  <PropOptions>
+    <PropOption value="videojs" label="Video.js (Dash, HLS, Others)" />
+    <PropOption value="webrtc" label="WebRTC" />
+  </PropOptions>
+</PropBlock>
+<PropBlock type="TEXT" name="stunServer" label="Stun Server">
+  <PropDescription>
+    WebRTC stun server (optional), defaults to 'stun:stun.l.google.com:19302'
+  </PropDescription>
+</PropBlock>
+<PropBlock type="DECIMAL" name="candidatesTimeout" label="ICE candidates timeout">
+  <PropDescription>
+    WebRTC ICE candidates discovery timeout length in milliseconds (optional), defaults to '2000', '0' to disable
   </PropDescription>
 </PropBlock>
 </PropGroup>

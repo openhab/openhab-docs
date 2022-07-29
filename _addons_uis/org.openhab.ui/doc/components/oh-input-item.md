@@ -120,6 +120,11 @@ Display an input field in a list
     Link the input value to the state of this item
   </PropDescription>
 </PropBlock>
+<PropBlock type="BOOLEAN" name="useDisplayState" label="Use Display State">
+  <PropDescription>
+    Use the formatted state as the value for the input control
+  </PropDescription>
+</PropBlock>
 <PropBlock type="TEXT" name="defaultValue" label="Default value">
   <PropDescription>
     Default value when not found in item state or variable
