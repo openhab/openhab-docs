@@ -5,18 +5,25 @@ title: ZMNHYD - ZWave
 
 {% include base.html %}
 
-# ZMNHYD Smart Plug
-This describes the Z-Wave device *ZMNHYD*, manufactured by *[Goap](http://www.qubino.com/)* with the thing type UID of ```qubino_zmnhyd_00_000```.
-This version of the device is limited to firmware versions below 2.0
+# ZMNHYD Smart Plug 16A
+This describes the Z-Wave device *ZMNHYD*, manufactured by *[Goap](http://www.qubino.com/)* with the thing type UID of ```qubino_zmnhyd_03_000```.
+This version of the device is limited to firmware version 3.0
 
 The device is in the category of *Power Outlet*, defining Small devices to be plugged into a power socket in a wall which stick there.
 
-![ZMNHYD product image](https://opensmarthouse.org/zwavedatabase/822/image/)
+![ZMNHYD product image](https://opensmarthouse.org/zwavedatabase/1506/image/)
 
 
 The ZMNHYD supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is also able to participate in the routing of data between other devices in the mesh network.
 
 ## Overview
+
+This Z-Wave module is used for switching and energy measurements in single-phase electrical power networks and can be used in residential, industrial and utility applications.
+
+  * Power supply: 230V +/- 10%, 50 Hz
+  * Power load: 15A resistive max.
+  * Overload protection >16 A
+  * Power consumption <1W
 
 This Z-Wave module is used for switching and energy measurements in single-phase electrical power networks and can be used in residential, industrial and utility applications.
 
@@ -38,12 +45,34 @@ Manual inclusion
   * start inclusion mode of z-wave controller
   * press the service button (S) 3 times within 3 seconds
 
+Auto inclusion (first time usage)
+
+  * start inclusion mode of z-wave controller
+  * plug device into power outlet (5 seconds auto inclusion)
+
+Manual inclusion
+
+  * plug device into power outlet
+  * start inclusion mode of z-wave controller
+  * press the service button (S) 3 times within 3 seconds
+
 ### Exclusion Information
 
   * plug device into power outlet
   * ensure device is within maximum 1 meter (3 feet) of the main controller
   * enable exclusion mode on main controller
   * press service button (S) on module 3 times within 3 seconds (please note: configuration parameters will not be reset!)
+
+Auto inclusion (first time usage)
+
+  * start inclusion mode of z-wave controller
+  * plug device into power outlet (5 seconds auto inclusion)
+
+Manual inclusion
+
+  * plug device into power outlet
+  * start inclusion mode of z-wave controller
+  * press the service button (S) 3 times within 3 seconds
 
 ### General Usage Information
 
@@ -55,55 +84,6 @@ The following table summarises the channels available for the ZMNHYD -:
 
 | Channel Name | Channel ID | Channel Type | Category | Item Type |
 |--------------|------------|--------------|----------|-----------|
-| Switch | switch_binary | switch_binary | Switch | Switch | 
-| Electric meter (volts) | meter_voltage | meter_voltage | Energy | Number | 
-| Electric meter (amps) | meter_current | meter_current | Energy | Number | 
-| Electric meter (kWh) | meter_kwh | meter_kwh | Energy | Number | 
-| Electric meter (watts) | meter_watts | meter_watts | Energy | Number | 
-| Reset Power Consumption | meter_reset | meter_reset | Energy | Switch | 
-| Alarm (power) | alarm_power | alarm_power | Energy | Switch | 
-
-### Switch
-Switch the power on and off.
-
-The ```switch_binary``` channel is of type ```switch_binary``` and supports the ```Switch``` item and is in the ```Switch``` category.
-
-### Electric meter (volts)
-Indicates the instantaneous voltage.
-
-The ```meter_voltage``` channel is of type ```meter_voltage``` and supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
-
-### Electric meter (amps)
-Indicates the instantaneous current consumption.
-
-The ```meter_current``` channel is of type ```meter_current``` and supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
-
-### Electric meter (kWh)
-Indicates the energy consumption (kWh).
-
-The ```meter_kwh``` channel is of type ```meter_kwh``` and supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
-
-### Electric meter (watts)
-Indicates the instantaneous power consumption.
-
-The ```meter_watts``` channel is of type ```meter_watts``` and supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
-
-### Reset Power Consumption
-Reset the meter.
-
-The ```meter_reset``` channel is of type ```meter_reset``` and supports the ```Switch``` item and is in the ```Energy``` category.
-
-### Alarm (power)
-Indicates if a power alarm is triggered.
-
-The ```alarm_power``` channel is of type ```alarm_power``` and supports the ```Switch``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
-
-The following state translation is provided for this channel to the ```Switch``` item type -:
-
-| Value | Label     |
-|-------|-----------|
-| OFF | OK |
-| ON | Alarm |
 
 
 
@@ -130,7 +110,6 @@ Detailed information on each parameter can be found in the sections below.
 | 73 | Turn Smart Plug OFF | Allows turning the Smart Plug output to OFF once the time interval is expired and the Program completed notification is sent to the controller |
 | 74 | Enable/disable LED | Allows enabling or disabling the Smart Plug LED |
 | 249 | Enable/Disable Reporting on Set command | Enable/Disable Reporting on Set command |
-|  | Switch All Mode | Set the mode for the switch when receiving SWITCH ALL commands |
 
 ### Parameter 10: ALL ON / ALL OFF
 
@@ -495,20 +474,6 @@ The manufacturer defined default value is ```1``` (enable reporting).
 
 This parameter has the configuration ID ```config_249_1``` and is of type ```INTEGER```.
 
-### Switch All Mode
-
-Set the mode for the switch when receiving SWITCH ALL commands.
-
-The following option values may be configured -:
-| Value  | Description |
-|--------|-------------|
-| 0 | Exclude from All On and All Off groups |
-| 1 | Include in All On group |
-| 2 | Include in All Off group |
-| 255 | Include in All On and All Off groups |
-
-This parameter has the configuration ID ```switchall_mode``` and is of type ```INTEGER```.
-
 
 ## Association Groups
 
@@ -559,32 +524,16 @@ Association group 5 supports 5 nodes.
 
 | Command Class | Comment |
 |---------------|---------|
-| COMMAND_CLASS_NO_OPERATION_V1| |
 | COMMAND_CLASS_BASIC_V1| |
-| COMMAND_CLASS_SWITCH_BINARY_V1| Linked to BASIC|
-| COMMAND_CLASS_SWITCH_ALL_V1| |
-| COMMAND_CLASS_METER_V3| |
 | COMMAND_CLASS_ASSOCIATION_GRP_INFO_V1| |
-| COMMAND_CLASS_DEVICE_RESET_LOCALLY_V1| |
-| COMMAND_CLASS_ZWAVEPLUS_INFO_V1| |
-| COMMAND_CLASS_CONFIGURATION_V1| |
 | COMMAND_CLASS_ALARM_V5| |
 | COMMAND_CLASS_MANUFACTURER_SPECIFIC_V1| |
-| COMMAND_CLASS_POWERLEVEL_V1| |
-| COMMAND_CLASS_FIRMWARE_UPDATE_MD_V1| |
-| COMMAND_CLASS_ASSOCIATION_V2| |
-| COMMAND_CLASS_VERSION_V2| |
-| COMMAND_CLASS_SECURITY_V1| |
 
 ### Documentation Links
 
-* [Qubino Smart Plug 16A extended manual](https://opensmarthouse.org/zwavedatabase/822/reference/Qubino-Smart-Plug-16A-PLUS-extended-manual-eng-2-2-2.pdf)
-* [Qubino Smart Plug 16A extended manual V2.6](https://opensmarthouse.org/zwavedatabase/822/reference/qubino-smart-plug-16a-plus-extended-manual-eng-V2.6_2019-04-10.pdf)
-* [Qubino Smart Plug 16A extended manual V2.7](https://opensmarthouse.org/zwavedatabase/822/reference/qubino-smart-plug-16a-plus-extended-manual-eng-V2.7_2019-05-09.pdf)
-* [Qubino Smart Plug 16A extended manual V2.5](https://opensmarthouse.org/zwavedatabase/822/reference/Qubino_Smart_Plug_16A_PLUS_extended_manual_eng_2.5.pdf)
-* [Qubino Smart Plug 16A extended manual V41.06](https://opensmarthouse.org/zwavedatabase/822/reference/Qubino_Smart-Plug-16A-PLUS-extended-manual_eng_41.06.1.pdf)
+* [Smart Plug manual (for newer version)](https://opensmarthouse.org/zwavedatabase/1506/reference/Qubino_Smart-Plug-16A-PLUS-extended-manual_eng_41.06.1.pdf)
 
 ---
 
 Did you spot an error in the above definition or want to improve the content?
-You can [contribute to the database here](https://opensmarthouse.org/zwavedatabase/822).
+You can [contribute to the database here](https://opensmarthouse.org/zwavedatabase/1506).

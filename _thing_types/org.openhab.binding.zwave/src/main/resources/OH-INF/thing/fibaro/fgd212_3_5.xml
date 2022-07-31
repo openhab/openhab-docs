@@ -141,6 +141,7 @@ Dimmer 2<br /> <h1>Overview</h1><p>Remotely controlled light dimming module is d
       <property name="versionMin">3.5</property>
       <property name="dbReference">787</property>
       <property name="commandClass:COMMAND_CLASS_SCENE_ACTIVATION">ccAdd</property>
+      <property name="commandClass:COMMAND_CLASS_MULTI_CHANNEL">ccAdd</property>
       <property name="defaultAssociations">1</property>
     </properties>
 
