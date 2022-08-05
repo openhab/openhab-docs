@@ -20,6 +20,7 @@ Do you want to hear your favorite music when you arrive back at home?
 No problem, openHAB can do that for you too.
 Rules can also remind you of things, for example, that you opened the window hours ago and forgot that it is open?
 openHAB can send a notification to your phone.
+
 ## Parts of a Rule
 
 These rules take the high level form of *When __t__ happens, if __c__ then do __a__*,
@@ -29,22 +30,24 @@ Note that both __t__ and __c__ can be optional.
 
 To work with the *When __t__ happens, if __c__ then do __a__* principle, openHAB rules consist of three parts:
 
-| Letter | Name        | Purpose                                                                                |
-|--------|-------------|----------------------------------------------------------------------------------------|
-| __t__  | `Trigger`   | The *When __t__ happens* part: It causes the rule run when the defined event happens.  |
-| __c__  | `Condition` | The *if __c__* part: Which condition has to be met that the rule really runs?          |
-| __a__  | `Action`    | The *then do __a__* part: What should be done when the rule runs?                      |
+| Name        | Rule Part            | Purpose                                                  |
+|-------------|----------------------|----------------------------------------------------------|
+| `Trigger`   | *When __t__ happens* | Causes the rule run when the defined event happens.      |
+| `Condition` | *if __c__*           | Which condition has to be met that the rule really runs? |
+| `Action`    | *then do __a__*      | What should be done when the rule runs?                  |
 
 Any single rule is not required to have all of these (although a rule without an action is not very sensible).
 An individual rule can also have more than one of each.
 
 A rule that should always run when triggered will have zero conditions.
-An individual rule can respond to several different triggers by haveing multiple different triggers set up.
+An individual rule can respond to several different triggers by having multiple different triggers set up.
 
 Even though it might not seem sensible first, as the rule would never run on it's own, one can also have a rule with no triggers.
 But why would somebody want such a rule?
 In some cases, it is useful to have a rule that is only manually triggered.
 Sometimes there is advantage in a rule that calls another rule.
 In both cases, the rule has no triggers and no conditions.
+
+
 
 
