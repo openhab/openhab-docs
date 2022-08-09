@@ -20,9 +20,12 @@ Shutter Panel<br /> <h1>Overview</h1><p>Touch Panel Switch is a wall panel built
           <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY</property>
         </properties>
       </channel>
-      <channel id="blinds_shutter" typeId="blinds_shutter">
-        <label>Shutter Control</label>
+      <channel id="blinds_control" typeId="blinds_control">
+        <label></label>
         <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+          <property name="binding:Command:StopMoveType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+          <property name="binding:Command:UpDownType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
         </properties>
       </channel>
       <channel id="scene_number" typeId="scene_number">

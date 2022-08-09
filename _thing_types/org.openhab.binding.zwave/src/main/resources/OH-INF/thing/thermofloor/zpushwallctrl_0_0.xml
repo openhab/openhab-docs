@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="thermofloor_zpushwallctrl_00_000" listed="false">
+    <label>Heatit Z-Push Wall Controller Wall Mounted Switch</label>
+    <description><![CDATA[
+Wall Mounted Switch<br /> <h1>Overview</h1><p>The Heatit Z-Push Wall Controller is a wireless wall mounted Z-Wave Controller. It has mounting options for 1, 2 or 3 rockers, allowing for easy and practical management of your Z-Wave products. The switch can be set up to control scenarios or work in association with other Z-Wave products. Each rocker switch has a dual color LED to indicate button actions.<br /></p><p>The Heatit Z-Push Wall Controller is supplied with all three sets of rockers in the box. The Wall Controller is coin cell battery poweredThe product is intended primarily for residential applications. </p> <br /> <h2>Inclusion Information</h2><p>Method 1: Standard (Manual)<br /></p><ol><li>Initiate the learning mode in the controller.</li><li>Press any UP button 6 times within 3 seconds.-</li></ol>When the add/remove mode has started, the LED corresponding to the button you pressed will blink green. The device will indicate ”Success” by emitting a green light for 3 seconds.<br />Error while adding:<br />The add/remove mode times out after 30 seconds if it does not receive<br />any information from the gateway. The device will indicate fail by emitting a red light for 3 seconds, if this happens, please perform a removing from the controller and start adding mode on Heatit Z-Push Wall Controller.<p>Method 2: SmartStart (Automatic)<br />SmartStart-enabled products may be added to a Z-Wave network by scanning the Z-Wave QR-Code on the product if your primary controller supports SmartStart inclusion. No further action is required and the SmartStart product will be added automatically after being powered on within range of the primary controller.</p> <br /> <h2>Exclusion Information</h2><p>The primary controller/gateway has a mode for adding or removing devices. Please refer to your primary controller manual on how to set the primary controller in add/remove mode. The device may only be added or removed from the network if the primary controller is in add/ remove mode.</p><p>When the device is removed from the network, it will NOT revert to factory settings. To factory reset the device, remove the battery from the device. Press and hold any button on the device and repower the device. The LEDs will start blinking 3 times before lighting up in green. When the green LED is on, you can release the button. The device will issue a Device Reset Locally Notification Command to notify that the device will be reset to default. When preforming a factory reset the device will lose its Node ID from the gateway and reset its Home ID. </p> <br /> <h2>Wakeup Information</h2><p>To manually wake up the device, please press any down button 6 times. The device will light up in green until wake up is no longer active. The default wake up interval in seconds: 604 800 (1 week).</p>
+    ]]></description>
+    <category>Battery</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="scene_number" typeId="scene_number">
+        <label>Scene Number</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_CENTRAL_SCENE</property>
+        </properties>
+      </channel>
+      <channel id="battery-level" typeId="system.battery-level">
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_BATTERY</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">ThermoFloor</property>
+      <property name="modelId">Heatit Z-Push Wall Controller</property>
+      <property name="manufacturerId">019B</property>
+      <property name="manufacturerRef">0004:2403</property>
+      <property name="dbReference">1512</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_0_0" type="integer" groupName="configuration">
+        <label>0: </label>
+        <description><![CDATA[
+<br /> <h1>Overview</h1><p>Configure reports sent when pressing buttons</p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_1_0" type="integer" groupName="configuration">
+        <label>1: Select Button reports</label>
+        <description><![CDATA[
+Select Button reports<br /> <h1>Overview</h1><p>Configure reports sent when pressing buttons:</p><p>• 0 - Send Central Scene Command only<br />• 1 - Send Group Association Command only<br />• 2 - Send Central Scene and Group Association Commands</p>
+        ]]></description>
+        <default>2</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_2_0" type="integer" groupName="configuration">
+        <label>2: LED signalling</label>
+        <description><![CDATA[
+LED signalling<br /> <h1>Overview</h1><p>Configure if LED signaling should be enabled (should only disable simple press actions, should not turn off factory reset / inclusion etc).</p><p>• 0 = Disable (does not turn off factory reset/ learn mode blinking etc)<br />• 1 = Enable </p>
+        ]]></description>
+        <default>1</default>
+      </parameter>
+
+      <parameter name="config_3_0" type="integer" groupName="configuration">
+        <label>3: Active Button rockers</label>
+        <description><![CDATA[
+Active Button rockers<br /> <h1>Overview</h1><p>Configure different rocker setups:</p><p>1 = Single rocker<br />2 = Dual rocker<br />3 = Triple rocker</p>
+        ]]></description>
+        <default>3</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Group 1</label>
+        <description><![CDATA[
+Lifeline<br /> <h1>Overview</h1><p>- Battery notification (sent when the battery runs low).<br />- Device reset locally (sent if the device is reset).<br />- Central scene notification.</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: Group 2</label>
+        <description><![CDATA[
+Used for the first button with double rocker and triple rocker configuration.<br /> <h1>Overview</h1><p>Push on UP will send: ON (0xFF)<br />Holding UP send: Level Increase Start<br />Releasing UP send: Level Increase Stop<br />Push on DOWN send: OFF (0x00)<br />Holding DOWN send: Level Increase Start<br />Releasing DOWN send: Level Increase Stop</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_3" type="text" groupName="association" multiple="true">
+        <label>3: Group 3</label>
+        <description><![CDATA[
+Used for the first button with single rocker and the second button for triple rocker configuration.<br /> <h1>Overview</h1><p>Push on UP will send: ON (0xFF)<br />Holding UP send: Level Increase Start<br />Releasing UP send: Level Increase Stop<br />Push on DOWN send: OFF (0x00)<br />Holding DOWN send: Level Increase Start<br />Releasing DOWN send: Level Increase Stop</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_4" type="text" groupName="association" multiple="true">
+        <label>4: Group 4</label>
+        <description><![CDATA[
+Used for the last button with double rocker and triple rocker configuration.<br /> <h1>Overview</h1><p>Push on UP will send: ON (0xFF)<br />Holding UP send: Level Increas Start<br />Releasing UP send: Level Increase Stop<br />Push on DOWN send: OFF (0x00)<br />Holding DOWN send: Level Increase Start<br />Releasing DOWN send: Level Increase Stop</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

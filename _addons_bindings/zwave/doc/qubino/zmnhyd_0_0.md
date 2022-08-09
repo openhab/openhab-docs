@@ -5,7 +5,7 @@ title: ZMNHYD - ZWave
 
 {% include base.html %}
 
-# ZMNHYD Smart Plug
+# ZMNHYD Smart Plug 16A
 This describes the Z-Wave device *ZMNHYD*, manufactured by *[Goap](http://www.qubino.com/)* with the thing type UID of ```qubino_zmnhyd_00_000```.
 This version of the device is limited to firmware versions below 2.0
 
@@ -109,7 +109,7 @@ The following state translation is provided for this channel to the ```Switch```
 
 ## Device Configuration
 
-The following table provides a summary of the 16 configuration parameters available in the ZMNHYD.
+The following table provides a summary of the 12 configuration parameters available in the ZMNHYD.
 Detailed information on each parameter can be found in the sections below.
 
 | Param | Name  | Description |
@@ -125,10 +125,6 @@ Detailed information on each parameter can be found in the sections below.
 | 51 | Up value | Upper power threshold used in parameter no. 52 [watt] |
 | 52 | Action in case of exceeding defined power values | Action in case of exceeding defined power values (parameters 50 and 51) |
 | 70 | Overload safety switch | Turn off the controlled device in case of exceeding the defined power |
-| 71 | Power threshold | Allows setting the power threshold for triggering the Program started notification |
-| 72 | Time interval | Allows setting the time interval for triggering the Program completed notification |
-| 73 | Turn Smart Plug OFF | Allows turning the Smart Plug output to OFF once the time interval is expired and the Program completed notification is sent to the controller |
-| 74 | Enable/disable LED | Allows enabling or disabling the Smart Plug LED |
 | 249 | Enable/Disable Reporting on Set command | Enable/Disable Reporting on Set command |
 |  | Switch All Mode | Set the mode for the switch when receiving SWITCH ALL commands |
 
@@ -364,112 +360,6 @@ Values in the range 0 to 4000 may be set.
 The manufacturer defined default value is ```0```.
 
 This parameter has the configuration ID ```config_70_2``` and is of type ```INTEGER```.
-
-
-### Parameter 71: Power threshold
-
-Allows setting the power threshold for triggering the Program started notification
-This function allows setting the power threshold for triggering the Program started notification. When the threshold is reached, the notification will let the user know that the device connected to the smart plug started working.
-
-Values (size is 2 byte dec):
-
-• default value 0
-
-• 1–4000=1W–4000W
-
-• 0 = function not active
-
-When the threshold is reached the following message will be send towards the controller:
-
-• COMMAND\_CLASS\_NOTIFICATION_V5
-
-• The Alarm V1 type field set to 0x00
-
-• Notification Type 0x0C and 0x01 (Program started)
-Values in the range 0 to 4000 may be set.
-
-The manufacturer defined default value is ```0```.
-
-This parameter has the configuration ID ```config_71_2``` and is of type ```INTEGER```.
-
-
-### Parameter 72: Time interval
-
-Allows setting the time interval for triggering the Program completed notification
-This function allows setting the time interval for triggering the Program completed notification. When the active power will fall below the power threshold set in parameter 71, the time interval will start and when it will expire the notification will let the user know that the device connected to the smart plug finished working. The time interval is useful for the devices that have pause intervals during operations.
-
-Values (size is 1 byte dec):
-
-• default value 1
-
-• 0–125=0–125minutes
-
-• 0 = immediate sending of notification when active power drops below the threshold set
-
-in the parameter 71
-
-When the time interval expires the following message will be send towards the controller:
-
-• COMMAND\_CLASS\_NOTIFICATION_V5
-
-• The Alarm V1 type field set to 0x00
-
-• Notification Type 0x0C and 0x03 (Program completed)
-Values in the range 0 to 125 may be set.
-
-The manufacturer defined default value is ```1```.
-
-This parameter has the configuration ID ```config_72_1``` and is of type ```INTEGER```.
-
-
-### Parameter 73: Turn Smart Plug OFF
-
-Allows turning the Smart Plug output to OFF once the time interval is expired and the Program completed notification is sent to the controller
-This function allows turning the Smart Plug output to OFF once the time interval is expired and the Program completed notification is sent to the controller.
-
-Values (size is 1 byte dec):
-
-• default value 0
-
-• 0 – function disabled
-
-• 1 – turn OFF relay once the notification Program completed is sent
-The following option values may be configured, in addition to values in the range 0 to 0 -:
-
-| Value  | Description |
-|--------|-------------|
-| 0 | function disabled |
-| 1 | turn OFF relay once the notification Program completed is sent |
-
-The manufacturer defined default value is ```0``` (function disabled).
-
-This parameter has the configuration ID ```config_73_1``` and is of type ```INTEGER```.
-
-
-### Parameter 74: Enable/disable LED
-
-Allows enabling or disabling the Smart Plug LED
-This function allows enabling or disabling the Smart Plug LED. In case the user doesn’t want the LED indicator, it can be turned OFF with this parameter.
-
-NOTE: if an overload or overcurrent occurs the red LED will still turn ON regardless of the value set in this parameter.
-
-Values (size is 1 byte dec):
-
-• default value 1
-
-• 0 – LED is disabled
-
-• 1 – LED is enabled
-The following option values may be configured, in addition to values in the range 0 to 0 -:
-
-| Value  | Description |
-|--------|-------------|
-| 0 | LED is disabled |
-| 1 | LED is enabled |
-
-The manufacturer defined default value is ```1``` (LED is enabled).
-
-This parameter has the configuration ID ```config_74_1``` and is of type ```INTEGER```.
 
 
 ### Parameter 249: Enable/Disable Reporting on Set command

@@ -128,15 +128,13 @@ The following state translation is provided for this channel to the ```Switch```
 
 ## Device Configuration
 
-The following table provides a summary of the 16 configuration parameters available in the ZMNHYD.
+The following table provides a summary of the 13 configuration parameters available in the ZMNHYD.
 Detailed information on each parameter can be found in the sections below.
 
 | Param | Name  | Description |
 |-------|-------|-------------|
-| 10 | ALL ON / ALL OFF | Activate / deactivate ALL ON / ALL OFF Functionality |
 | 11 | Auto Off Timer | Turn Smart plug 16A Off Automatically with Timer |
 | 12 | Auto On Timer | Turn Smart plug 16A On Automatically with Timer |
-| 15 | Timer Settings Unit | Set Timer Units to Seconds or Milliseconds |
 | 30 | Restore state after power failure | Restore on/off status for Smart plug 16A after power failure |
 | 40 | Power Consumption Reporting Threshold | Power Consumption Reporting Threshold [%] |
 | 42 | Power Consumption Reporting Time Threshold | Power Consumption Reporting Time Threshold [seconds] |
@@ -148,37 +146,6 @@ Detailed information on each parameter can be found in the sections below.
 | 72 | Time interval | Allows setting the time interval for triggering the Program completed notification |
 | 73 | Turn Smart Plug OFF | Allows turning the Smart Plug output to OFF once the time interval is expired and the Program completed notification is sent to the controller |
 | 74 | Enable/disable LED | Allows enabling or disabling the Smart Plug LED |
-| 249 | Enable/Disable Reporting on Set command | Enable/Disable Reporting on Set command |
-
-### Parameter 10: ALL ON / ALL OFF
-
-Activate / deactivate ALL ON / ALL OFF Functionality
-Smart Plug 16A device responds to commands ALL ON / ALL OFF that may be sent by the primary or secondary gateway (hub) within the Z-Wave network.
-
-Values (size is 2 byte dec):
-
-- default value 255
-
-- 255 - ALL ON active, ALL OFF active
-
-- 0 - ALL ON not active, ALL OFF not active
-
-- 1 - ALL ON not active, ALL OFF active
-
-- 2 - ALL ON active, ALL OFF not active
-The following option values may be configured, in addition to values in the range 0 to 0 -:
-
-| Value  | Description |
-|--------|-------------|
-| 0 | ALL ON not active, ALL OFF not active |
-| 1 | ALL ON not active, ALL OFF active |
-| 2 | ALL ON active, ALL OFF not active |
-| 255 | ALL ON active, ALL OFF active |
-
-The manufacturer defined default value is ```255``` (ALL ON active, ALL OFF active).
-
-This parameter has the configuration ID ```config_10_2``` and is of type ```INTEGER```.
-
 
 ### Parameter 11: Auto Off Timer
 
@@ -186,7 +153,7 @@ Turn Smart plug 16A Off Automatically with Timer
 If Smart plug 16A is ON, you can schedule it to turn OFF automatically after a period of time defined in this parameter. The timer is reset each time, the module receives an ON command either remotely (from the gateway (hub) or associated device) or locally from the switch.
 
   * 0 = Auto OFF disabled
-  * 1 - 32535 = 1 - 32535 seconds (or milliseconds – see Parameter no. 15) Auto OFF timer enabled for a given amount of seconds (or milliseconds)
+  * 1 - 32535 = 1 - 32535 seconds. Auto OFF timer enabled for a given amount of seconds.
 Values in the range 0 to 32535 may be set.
 
 The manufacturer defined default value is ```0```.
@@ -200,28 +167,12 @@ Turn Smart plug 16A On Automatically with Timer
 If Smart plug 16A is OFF, you can schedule it to turn ON automatically after a period of time defined in this parameter. The timer is reset to zero each time the device receives an OFF command, either remotely (from the gateway (hub) or associated device) or locally from the switch.
 
   * 0 - Auto ON Disabled
-  * 1 - 32535 = 1 - 32535 seconds (or milliseconds – see Parameter no. 15) Auto ON timer enabled- for a given amount of seconds (or milliseconds).
+  * 1 - 32535 = 1 - 32535 seconds. Auto ON timer enabled- for a given amount of seconds.
 Values in the range 0 to 32535 may be set.
 
 The manufacturer defined default value is ```0```.
 
 This parameter has the configuration ID ```config_12_2``` and is of type ```INTEGER```.
-
-
-### Parameter 15: Timer Settings Unit
-
-Set Timer Units to Seconds or Milliseconds
-Choose if you want to set the timer in seconds or milliseconds in parameters 11 and 12. Please note that the value for this parameter applies to settings for Smart plug 16A in all of the above parameters (timer on / timer off).
-The following option values may be configured, in addition to values in the range 0 to 1 -:
-
-| Value  | Description |
-|--------|-------------|
-| 0 | timer set in seconds |
-| 1 | timer set in milliseconds |
-
-The manufacturer defined default value is ```0``` (timer set in seconds).
-
-This parameter has the configuration ID ```config_15_1``` and is of type ```INTEGER```.
 
 
 ### Parameter 30: Restore state after power failure
@@ -490,35 +441,11 @@ The manufacturer defined default value is ```1``` (LED is enabled).
 This parameter has the configuration ID ```config_74_1``` and is of type ```INTEGER```.
 
 
-### Parameter 249: Enable/Disable Reporting on Set command
-
-Enable/Disable Reporting on Set command
-Using this parameter it is possible to enable/disable reporting after the set command (i.e. Basic set).
-
-Values (size is 1 byte dec):
-
-• default value 1
-
-• 0 - disable reporting
-
-• 1 - enable reporting
-The following option values may be configured, in addition to values in the range 0 to 0 -:
-
-| Value  | Description |
-|--------|-------------|
-| 0 | disable reporting |
-| 1 | enable reporting |
-
-The manufacturer defined default value is ```1``` (enable reporting).
-
-This parameter has the configuration ID ```config_249_1``` and is of type ```INTEGER```.
-
-
 ## Association Groups
 
 Association groups allow the device to send unsolicited reports to the controller, or other devices in the network. Using association groups can allow you to eliminate polling, providing instant feedback of a device state change without unnecessary network traffic.
 
-The ZMNHYD supports 5 association groups.
+The ZMNHYD supports 3 association groups.
 
 ### Group 1: Lifeline
 
@@ -540,20 +467,6 @@ sending control commands BASIC_SET 0x00/0xFF depending on current load
 This groups allows to send control commands BASIC_SET 0x00/0xFF to associated devices depending on the current load. This association group is configured through the parameters no. 50, 51 and 52.
 
 Association group 3 supports 5 nodes.
-
-### Group 4: Secure Status On/Off
-
-Send control command BASIC_SET 0x00/0xFF
-This group is equivalent to association group 2, except commands are sent securily encapsulated.
-
-Association group 4 supports 5 nodes.
-
-### Group 5: Secure Load dependent 
-
-sending control commands BASIC_SET 0x00/0xFF depending on current load
-This group is equivalent to association group 3, except commands are sent securily encapsulated.
-
-Association group 5 supports 5 nodes.
 
 ## Technical Information
 

@@ -90,24 +90,10 @@ Smart Plug 16A<br /> <h1>Overview</h1><p>This Z-Wave module is used for switchin
       </parameter-group>
 
       <!-- PARAMETER DEFINITIONS -->
-      <parameter name="config_10_2" type="integer" groupName="configuration">
-        <label>10: ALL ON / ALL OFF</label>
-        <description><![CDATA[
-Activate / deactivate ALL ON / ALL OFF Functionality<br /> <h1>Overview</h1><p>Smart Plug 16A device responds to commands ALL ON / ALL OFF that may be sent by the primary or secondary gateway (hub) within the Z-Wave network.</p><p>Values (size is 2 byte dec):</p><p>- default value 255</p><p>- 255 - ALL ON active, ALL OFF active</p><p>- 0 - ALL ON not active, ALL OFF not active</p><p>- 1 - ALL ON not active, ALL OFF active</p><p>- 2 - ALL ON active, ALL OFF not active</p>
-        ]]></description>
-        <default>255</default>
-        <options>
-          <option value="0">ALL ON not active, ALL OFF not active</option>
-          <option value="1">ALL ON not active, ALL OFF active</option>
-          <option value="2">ALL ON active, ALL OFF not active</option>
-          <option value="255">ALL ON active, ALL OFF active</option>
-        </options>
-      </parameter>
-
       <parameter name="config_11_2" type="integer" groupName="configuration">
         <label>11: Auto Off Timer</label>
         <description><![CDATA[
-Turn Smart plug 16A Off Automatically with Timer<br /> <h1>Overview</h1><p>If Smart plug 16A is ON, you can schedule it to turn OFF automatically after a period of time defined in this parameter. The timer is reset each time, the module receives an ON command either remotely (from the gateway (hub) or associated device) or locally from the switch.</p> <ul><li>0 = Auto OFF disabled</li> <li>1 - 32535 = 1 - 32535 seconds (or milliseconds – see Parameter no. 15) Auto OFF timer enabled for a given amount of seconds (or milliseconds)</li> </ul>
+Turn Smart plug 16A Off Automatically with Timer<br /> <h1>Overview</h1><p>If Smart plug 16A is ON, you can schedule it to turn OFF automatically after a period of time defined in this parameter. The timer is reset each time, the module receives an ON command either remotely (from the gateway (hub) or associated device) or locally from the switch.</p> <ul><li>0 = Auto OFF disabled</li> <li>1 - 32535 = 1 - 32535 seconds. Auto OFF timer enabled for a given amount of seconds.</li> </ul>
         ]]></description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
@@ -116,22 +102,10 @@ Turn Smart plug 16A Off Automatically with Timer<br /> <h1>Overview</h1><p>If Sm
       <parameter name="config_12_2" type="integer" groupName="configuration">
         <label>12: Auto On Timer</label>
         <description><![CDATA[
-Turn Smart plug 16A On Automatically with Timer<br /> <h1>Overview</h1><p>If Smart plug 16A is OFF, you can schedule it to turn ON automatically after a period of time defined in this parameter. The timer is reset to zero each time the device receives an OFF command, either remotely (from the gateway (hub) or associated device) or locally from the switch.</p> <ul><li>0 - Auto ON Disabled</li> <li>1 - 32535 = 1 - 32535 seconds (or milliseconds – see Parameter no. 15) Auto ON timer enabled- for a given amount of seconds (or milliseconds).</li> </ul>
+Turn Smart plug 16A On Automatically with Timer<br /> <h1>Overview</h1><p>If Smart plug 16A is OFF, you can schedule it to turn ON automatically after a period of time defined in this parameter. The timer is reset to zero each time the device receives an OFF command, either remotely (from the gateway (hub) or associated device) or locally from the switch.</p> <ul><li>0 - Auto ON Disabled</li> <li>1 - 32535 = 1 - 32535 seconds. Auto ON timer enabled- for a given amount of seconds.</li> </ul>
         ]]></description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
-      </parameter>
-
-      <parameter name="config_15_1" type="integer" groupName="configuration">
-        <label>15: Timer Settings Unit</label>
-        <description><![CDATA[
-Set Timer Units to Seconds or Milliseconds<br /> <h1>Overview</h1><p>Choose if you want to set the timer in seconds or milliseconds in parameters 11 and 12. Please note that the value for this parameter applies to settings for Smart plug 16A in all of the above parameters (timer on / timer off).</p>
-        ]]></description>
-        <default>0</default>
-        <options>
-          <option value="0">timer set in seconds</option>
-          <option value="1">timer set in milliseconds</option>
-        </options>
       </parameter>
 
       <parameter name="config_30_1" type="integer" groupName="configuration">
@@ -252,18 +226,6 @@ Allows enabling or disabling the Smart Plug LED<br /> <h1>Overview</h1><p>This f
         </options>
       </parameter>
 
-      <parameter name="config_249_1" type="integer" groupName="configuration">
-        <label>249: Enable/Disable Reporting on Set command</label>
-        <description><![CDATA[
-Enable/Disable Reporting on Set command<br /> <h1>Overview</h1><p>Using this parameter it is possible to enable/disable reporting after the set command (i.e. Basic set).</p><p>Values (size is 1 byte dec):</p><p>• default value 1</p><p>• 0 - disable reporting</p><p>• 1 - enable reporting</p>
-        ]]></description>
-        <default>1</default>
-        <options>
-          <option value="0">disable reporting</option>
-          <option value="1">enable reporting</option>
-        </options>
-      </parameter>
-
       <!-- ASSOCIATION DEFINITIONS -->
       <parameter name="group_1" type="text" groupName="association" multiple="true">
         <label>1: Lifeline</label>
@@ -283,22 +245,6 @@ Send control command BASIC_SET 0x00/0xFF<br /> <h1>Overview</h1><p>This group is
         <label>3: Load dependent</label>
         <description><![CDATA[
 sending control commands BASIC_SET 0x00/0xFF depending on current load<br /> <h1>Overview</h1><p>This groups allows to send control commands BASIC_SET 0x00/0xFF to associated devices depending on the current load. This association group is configured through the parameters no. 50, 51 and 52.</p>
-        ]]></description>
-        <multipleLimit>5</multipleLimit>
-      </parameter>
-
-      <parameter name="group_4" type="text" groupName="association" multiple="true">
-        <label>4: Secure Status On/Off</label>
-        <description><![CDATA[
-Send control command BASIC_SET 0x00/0xFF<br /> <h1>Overview</h1><p>This group is equivalent to association group 2, except commands are sent securily encapsulated.</p>
-        ]]></description>
-        <multipleLimit>5</multipleLimit>
-      </parameter>
-
-      <parameter name="group_5" type="text" groupName="association" multiple="true">
-        <label>5: Secure Load dependent</label>
-        <description><![CDATA[
-sending control commands BASIC_SET 0x00/0xFF depending on current load<br /> <h1>Overview</h1><p>This group is equivalent to association group 3, except commands are sent securily encapsulated.</p>
         ]]></description>
         <multipleLimit>5</multipleLimit>
       </parameter>
