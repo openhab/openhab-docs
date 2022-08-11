@@ -201,10 +201,14 @@ Number of incorrect PINs before lockout<br /> <h1>Overview</h1><p>Number of inco
 
       <parameter name="config_15_1" type="integer" groupName="configuration">
         <label>15: Reset To Factory Defaults</label>
+        <description><![CDATA[
+<br /> <h1>Overview</h1><p><br /></p>
+        ]]></description>
         <default>0</default>
         <options>
           <option value="1">Factory Reset</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->
