@@ -36,7 +36,7 @@ Authentication is automatically sent after creating the thing.
 Two parameter are required for creating things:
 
 - `host`: The hostname or IP address of the device.
-- `mac` : The network MAC of the device.
+- `macAddress` : The network MAC of the device.
 
 The autodiscovery process finds both parts automatically.
 
@@ -62,7 +62,7 @@ The autodiscovery process finds both parts automatically.
 demo.things:
 
 ```
-Thing broadlinkthermostat:floureonthermostat:bathroomthermostat "Bathroom Thermostat" [ host="192.168.0.23", mac="00:10:FA:6E:38:4A"]
+Thing broadlinkthermostat:floureonthermostat:bathroomthermostat "Bathroom Thermostat" [ host="192.168.0.23", macAddress="00:10:FA:6E:38:4A"]
 ```
 
 demo.items:
