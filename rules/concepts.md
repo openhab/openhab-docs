@@ -176,3 +176,23 @@ In openHAB version 3 the System-based Trigger for startlevel had been added, val
 
 Startlevels less than 40 are not available as triggers because the rule engine needs to start up first before it can execute any rules.
 Please keep in mind that the rule engines of automation add-ons like JS Scripting can start up after startlevel 100 has been reached.
+
+## Conditions
+
+With triggers, we have the *When __t__ happens* part completed, so next up is the *if __c__* part.
+This part can limit when a rule can run by adding one or more condition(s).
+
+Conditions as an extra part of the rule are only supported in UI-based rules.
+In file-based rules, you have to implement your conditions using an `if`-statement in the rule action, which is written in some language depending on the rule engine, e.g. JavaScript or Python.
+
+Available conditions in the UI include:
+- An Item has a given state
+- It’s a certain time of day
+- It’s a certain day of week
+- It’s a special day, e.g. holiday, weekday, weekend, etc.
+- A script evaluates to `true`
+
+The script condition is the most universal one, as you can choose one of the many available script/rule languages to build any condition you can think of.
+This UI-based rule condition is comparable to using an `if`-statement in the (script) action of a rule.
+
+If you need help with setting up a condition for a UI-based rule, visit [Getting Started with Rules - Basic](/docs/tutorial/rules_basic.html#conditions).
