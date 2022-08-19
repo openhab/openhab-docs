@@ -146,6 +146,7 @@ module.exports = [
     children: [
       ['developer/', 'Overview & Introduction'],
       'developer/guidelines',
+      'developer/addons/',
       'developer/bindings/',
       'developer/module-types/',
       'developer/transformations/',

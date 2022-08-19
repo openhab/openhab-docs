@@ -160,7 +160,7 @@ def process_main_docs(docs_source_dir)
         puts " -> #{file}"
         process_file("#{docs_source_dir}/developers", file, "docs/developer", "#{$docs_repo_root}/developer/#{file}")
     }
-    ["audio", "bindings", "ioservices", "legacy", "module-types", "osgi", "persistence", "transformations", "utils", "ide"].each { |subsection|
+    ["addons", "audio", "bindings", "ioservices", "legacy", "module-types", "osgi", "persistence", "transformations", "utils", "ide"].each { |subsection|
         Dir.glob("#{docs_source_dir}/developers/#{subsection}/*.md") { |path|
             file = File.basename(path)
             puts " -> #{subsection}/#{file}"
