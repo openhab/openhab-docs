@@ -90,6 +90,13 @@ var ScriptResponse = executeCommandLine(Duration.ofSeconds(60), "path/to/my/scri
 var ScriptResponse = executeCommandLine(Duration.ofSeconds(60), "path/to/your/script.sh", "xyz", "fred.file");
 ```
 
+When using ECMA rules, you need to make the Java functions available like in this example:
+
+```text
+var Exec = Java.type("org.openhab.core.model.script.actions.Exec");
+Exec.executeCommandLine("path/to/my/script.sh");
+```
+
 ### HTTP Actions
 
 - `sendHttpGetRequest(String url)`: Sends a GET-HTTP request and returns the result as a String
