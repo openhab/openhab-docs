@@ -137,7 +137,7 @@ var lightsOut = function() {
   console.info('No more motion, turning off the light');
   items.getItem('FrontPorchLight').sendCommand('OFF');
 };
-ScriptExecution.createTimer(time.ZonedDateTime.now().plusMinutes(30), lightsOut);
+actions.ScriptExecution.createTimer(time.ZonedDateTime.now().plusMinutes(30), lightsOut);
 ```
 
 Save and test that you see the log statement and the Item receive the `ON` command and 30 minutes later the second log statement and the `OFF` command.
