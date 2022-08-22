@@ -187,17 +187,15 @@ Please keep in mind that rule engines provided by separately installed automatio
 With triggers, we have the *When __t__ happens* part completed, so next up is the *if __c__* part.
 This part can limit when a rule can run by adding one or more condition(s).
 
-Conditions as an extra part of the rule are only supported in UI-based rules.
-In file-based rules, you have to implement your conditions using an `if`-statement in the rule action, which is written in some language depending on the rule engine, e.g. JavaScript or Python.
+Conditions as an extra part of the rule are supported by some rule engines.
+In situations where the rule engine does not support conditions, you can implement your conditions using an `if`-statement in the rule action.
 
-Available conditions in the UI include:
+Available types of conditions include:
 - An Item has a given state
 - It’s a certain time of day
 - It’s a certain day of week
-- It’s a special day, e.g. holiday, weekday, weekend, etc.
-- A script evaluates to `true`
+- It’s a special day, e.g. holiday, weekday, weekend, etc. as defined by Ephemeris <!-- TODO: Add reference to Ephemeris docs which currently reside in the Actions page --> 
+- Script condition: A script evaluates to `true`
 
 The script condition is the most universal one, as you can choose one of the many available script/rule languages to build any condition you can think of.
-This UI-based rule condition is comparable to using an `if`-statement in the (script) action of a rule.
-
-If you need help with setting up a condition for a UI-based rule, visit [Getting Started with Rules - Basic](/docs/tutorial/rules_basic.html#conditions).
+The only restriction is a script condition's last executed line of code must result in a boolean (i.e. `true` or `false`).
