@@ -50,62 +50,75 @@ In both cases, the rule has no triggers and no conditions.
 
 ## Triggers
 
-Now that we know what rules are, we need to have something to make them run when something happens.
-This is when we need triggers.
+Now that we know the concept of rule triggers, let's look at them in more depth.
+Triggers define those events that, when they occur, causes the rule to run.
 
-There are different categories of rule triggers:
+There are the categories of rules that can be used to trigger a rule:
 
-| Trigger type      | Description                                                            |
-|-------------------|------------------------------------------------------------------------|
-| **Item**-based    | Those react on commands or state updates for the Item                  |
-| **Group**-based   | Those react on commands or state updates for member Items of the Group |
-| **Time**-based    | Those react at special times, e.g. at midnight, every hour, etc.       |
-| **Channel**-based | Those react on trigger channels provided by some add-ons               |
-| **Thing**-based   | Those react on thing status, e.g. change from `ONLINE` to `OFFLINE`    |
-| **System**-based  | Those react on certain system statuses, e.g. startup completed         |
+| Event       | Description                                                                                                                  |
+|-------------|------------------------------------------------------------------------------------------------------------------------------|
+| **Items**   | Commands, updates, and changes on an individual Item.                                                                        |
+| **Groups**  | Groups are special Items that have other Items as members. Rules can be triggered on any Item event from any of its members. |
+| **Time**    | Rules can trigger based on specific times.                                                                                   |
+| **Channel** | Some Things have Channels that can trigger rules directly instead of being linked to Items.                                  |
+| **Thing**   | When Things change or update status they generate events (e.g. ONLINE, OFFLINE, etc.).                                       |
+| **System**  | Events that occur during important activities internal to openHAB itself, such as startup complete.                          |
 
 ::: tip Triggers and Events - What's the difference?
-You might have heard or will hear about events and triggers, and wonder about the difference.
-
 An event is something that happens and is detectable by openHAB.
-The most important events for rules are time events (e.g. midnight), system events (e.g. startup completed), Item state events and Item command events.
-There are some more events, but it's not necessary to mention them here.
+Some events for rules are time events, system events, Item state and command events, etc.
 
-In contrast to this, a trigger identifies one of those events and makes the rule run.
+A few examples of events that could be used to trigger a rule:
+- The time is midnight.
+- openHAB reached a runlevel 80 indicating Things are initialized.
+- The `Bedroom_Light` Item changed from OFF to ON.
+- A member of the `Lights` Group received a command.
+- Sunrise occurred based on an event Channel on an Astro Thing.
+- The Zwave controller Thing changed to OFFLINE.
+
+A Trigger is like a filter that, when it matches one or more events, causes the rule to run.
+Triggers can therefore be very specific to match very specific events (e.g. a change in a Switch Item from `ON` to `OFF`, a Dimmer Item receives `57` as a command, etc.)
+or relatively generic and match many events (e.g. every minute, a Color Item receives any type of command, a member of a Group Item changes in any way, etc.).
 :::
-
+  
 Here are the details for each trigger type:
 
-### **Item**-based Triggers
+### **Items** Triggers
 
-You can listen to commands for a specific item, on status updates or on status changes (an update might leave the status unchanged).
-You can decide whether you want to catch only a specific command/status or any.
+You can listen to commands for a specific Item, on state updates or on state changes (an update might leave the state unchanged).
+You can decide whether you want to catch only a specific command/state or any.
 
-A simplistic explanation of the differences between `command` and `update` can be found in the article about [openHAB core actions](/docs/configuration/actions.html#event-bus-actions).
+The `command` event means a `command`, which controls an Item (e.g. turns the light on) was sent.
+The `update` event means the Item's state got updated (e.g. the light turned to `ON`).
 
 **Item**-based triggers provide some information, e.g. the received command or the received state update, see [Available Values](#available-values).
 
 When using a `received command` trigger, the rule might trigger **before** the Item's state is updated.
 Therefore, if the rule needs to know what the command was, there is an [Available Value](#available-values).
 
-### **Group**-based Triggers
+### **Groups** Triggers
 
-As with Item based event-based triggers discussed above, you can listen for commands, status updates, or status changes on the direct (but not the indirect members of a nested subgroup) members of a given Group.
-You can also decide whether you want to catch only a specific command/status or any.
+As with Item based event-based triggers discussed above, you can listen for commands, state updates, or state changes on the direct members (but not the indirect members of a nested subgroup) of a given Group.
+You can also decide whether you want to catch only a specific command/state or any.
 
-The [Available Values](#available-values) are populated using the Item that caused the Group trigger to fire and that Item's name is stored in an additional value.
+The [Available Values](#available-values) are populated using the event on the Item that caused the trigger and that triggering Item's name is provided as an additional value.
 
 Also, as with **Item**-based triggers, when using a `received command` trigger, the rule might trigger **before** the Item's state is updated.
 Therefore, if the rule needs to know what the command was, there is an [Available Value](#available-values).
 
-### **Time**-based Triggers
+### **Time** Triggers
 
-Dependening on the rule language/engine, there are some predefined expressions you can use, but universally supported are only [cron expressions](https://www.quartz-scheduler.org/documentation/quartz-2.2.2/tutorials/tutorial-lesson-06.html).
+Time Triggers are provided as described in the table below, support may vary on the used rule language:
 
-Please be aware that openHAB is using the [Quartz Scheduler](https://www.quartz-scheduler.org/documentation/quartz-2.2.2/), which is using a slighly different form than the Unix cron scheduler.
+| Trigger          | Description                                                                                                                   |
+|------------------|-------------------------------------------------------------------------------------------------------------------------------|
+| cron expressions | cron allows you to create nearly any schedule you can think of, e.g. every second sunday in November and December at 04:05 h. |
+| Time is Item     | It is a date and a time specified in an DateTime Item.                                                                        |
+| Time of Day      | It is a fixed time of the day, e.g. 09:00 h.                                                                                  |
 
-**Time**-based triggers do not provide any information in the [Available Values](#available-values).
+Time triggers do not provide any information in the [Available Values](#available-values).
 
+Please be aware that openHAB is using the [Quartz Scheduler](https://www.quartz-scheduler.org/documentation/quartz-2.2.2/), which is using a slighly different form than the Unix cron scheduler, for [cron expressions](https://www.quartz-scheduler.org/documentation/quartz-2.2.2/tutorials/tutorial-lesson-06.html).
 A Quartz cron expression takes the form of six or optionally seven fields:
 
 1. Seconds
@@ -118,10 +131,9 @@ A Quartz cron expression takes the form of six or optionally seven fields:
 
 You may use the generator at [FreeFormatter.com](https://www.freeformatter.com/cron-expression-generator-quartz.html) or the openHAB WebUI rule setup to generate your cron expressions.
 
-### **Channel**-based Triggers
+### **Channel** Triggers
 
 Some add-ons provide trigger channels.
-Compared with other types of channels, a trigger channel provides information about discrete events, but does not provide continuous state information.
 
 Your rules can take actions based upon trigger events generated by these trigger channels.
 You can decide whether you want to catch only a specific or any trigger the channel provides.
@@ -132,7 +144,7 @@ The `triggerEvent`(s) available depend upon the specific implementation details 
 
 If the rule needs to know what the received event or the triggering channel was, use the [Available Values](#available-values).
 
-### **Thing**-based Triggers
+### **Thing** Triggers
 
 Your rules can take actions based upon status updates or status changes generated by Things.
 You can decide whether you want to catch only a specific or any status the Thing can get updated too.
@@ -148,34 +160,27 @@ If the rule needs to know what the triggering Thing was, or access the previous 
 <!-- TODO: Update reference when actions are included in the reworked rule docs. -->
 Refer to [Thing Status Action](/docs/configuration/actions.html#thing-status-action) to find how to get the new thing status details or description in the script.
 
-### **System**-based Triggers
+### **System** Triggers
 
-System-based triggers are provided as described in the table below:
+There is only one System Trigger, the start level Trigger.
 
-| Trigger                            | Description                                                                                                                                                                                                                                          |
-|------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| System started                     | `System started` is triggered upon openHAB startup. In openHAB version 2, `System started` is also triggered after the rule file containing the System started trigger is modified, or after item(s) are modified in a .items file.                  |
-| System reached start level <level> | `System reached start level <level>` is triggered when openHAB reaches a specific start level. A list of possible start levels is available below. Please note that only levels 40 and higher are useful as the rule engine needs to be ready first. |
-
-You may wish to use the 'System started' trigger to initialize values at startup if they are not already set.
+You may wish to use some start level to initialize values at startup if they are not already set.
 You can then execute a rule on the next startup level which depends on the value set by the initialization rule.
 
-In openHAB version 3 the System-based Trigger for startlevel had been added, values depends on the startlevel:
+| Start level | Meaning                                                                                                        |
+|-------------|----------------------------------------------------------------------------------------------------------------|
+| 00          | OSGi framework has been started.                                                                               |
+| 10          | OSGi application start level has been reached, i.e. bundles are activated.                                     |
+| 20          | Model entities (Items, Things, channel links, persist config) have been loaded, both from DB as well as files. |
+| 30          | Item states have been restored from persistence service, where applicable.                                     |
+| 40          | Rules are loaded and parsed, both from DB as well as DSL and script files.                                     |
+| 50          | Rule engine is active.                                                                                         |
+| 70          | User interface is up and running.                                                                              |
+| 80          | All Things have been initialized.                                                                              |
+| 100         | Startup is fully complete.                                                                                     |
 
-```text
-00 - OSGi framework has been started.
-10 - OSGi application start level has been reached, i.e. bundles are activated.
-20 - Model entities (items, things, links, persist config) have been loaded, both from db as well as files.
-30 - Item states have been restored from persistence service, where applicable.
-40 - Rules are loaded and parsed, both from db as well as dsl and script files.
-50 - Rule engine has executed all "system started" rules and is active.
-70 - User interface is up and running.
-80 - All things have been initialized.
-100 - Startup is fully complete.
-```
-
-Startlevels less than 40 are not available as triggers because the rule engine needs to start up first before it can execute any rules.
-Please keep in mind that the rule engines of automation add-ons like JS Scripting can start up after startlevel 100 has been reached.
+Start levels less than 40 are not available as triggers because the rule engine needs to start up first before it can execute any rules.
+Please keep in mind that rule engines provided by separately installed automation add-ons might not start executing rules until after start level 100 is reached.
 
 ## Conditions
 
