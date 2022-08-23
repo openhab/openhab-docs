@@ -85,6 +85,11 @@ Display a video (URL or URL from String item) in a card
     Does not start playing the video automatically
   </PropDescription>
 </PropBlock>
+<PropBlock type="TEXT" name="posterURL" label="Poster URL">
+  <PropDescription>
+    URL of an image to use as a poster before the video loads
+  </PropDescription>
+</PropBlock>
 <PropBlock type="TEXT" name="playerType" label="Player Type">
   <PropDescription>
     Select the player type (optional), defualts to Video.js
