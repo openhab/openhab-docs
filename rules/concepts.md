@@ -53,11 +53,11 @@ In both cases, the rule has no triggers and no conditions.
 Now that we know the concept of rule triggers, let's look at them in more depth.
 Triggers define those events that, when they occur, causes the rule to run.
 
-There are the categories of rules that can be used to trigger a rule:
+These are the categories of rules that can be used to trigger a rule:
 
 | Event       | Description                                                                                                                  |
 |-------------|------------------------------------------------------------------------------------------------------------------------------|
-| **Items**   | Commands, updates, and changes on an individual Item.                                                                        |
+| **Items**   | Commands, updates, and changes on an individual Item's state.                                                                |
 | **Groups**  | Groups are special Items that have other Items as members. Rules can be triggered on any Item event from any of its members. |
 | **Time**    | Rules can trigger based on specific times.                                                                                   |
 | **Channel** | Some Things have Channels that can trigger rules directly instead of being linked to Items.                                  |
@@ -91,7 +91,7 @@ You can decide whether you want to catch only a specific command/state or any.
 The `command` event means a `command`, which controls an Item (e.g. turns the light on) was sent.
 The `update` event means the Item's state got updated (e.g. the light turned to `ON`).
 
-**Item**-based triggers provide some information, e.g. the received command or the received state update, see [Available Values](#available-values).
+**Items** triggers provide some information, e.g. the received command or the received state update, see [Available Values](#available-values).
 
 When using a `received command` trigger, the rule might trigger **before** the Item's state is updated.
 Therefore, if the rule needs to know what the command was, there is an [Available Value](#available-values).
@@ -103,7 +103,7 @@ You can also decide whether you want to catch only a specific command/state or a
 
 The [Available Values](#available-values) are populated using the event on the Item that caused the trigger and that triggering Item's name is provided as an additional value.
 
-Also, as with **Item**-based triggers, when using a `received command` trigger, the rule might trigger **before** the Item's state is updated.
+Also, as with **Items** triggers, when using a `received command` trigger, the rule might trigger **before** the Item's state is updated.
 Therefore, if the rule needs to know what the command was, there is an [Available Value](#available-values).
 
 ### **Time** Triggers
@@ -162,7 +162,7 @@ Refer to [Thing Status Action](/docs/configuration/actions.html#thing-status-act
 
 ### **System** Triggers
 
-There is only one System Trigger, the start level Trigger.
+The **System** triggers include the system start level trigger.
 
 You may wish to use some start level to initialize values at startup if they are not already set.
 You can then execute a rule on the next startup level which depends on the value set by the initialization rule.
@@ -187,7 +187,7 @@ Please keep in mind that rule engines provided by separately installed automatio
 With triggers, we have the *When __t__ happens* part completed, so next up is the *if __c__* part.
 This part can limit when a rule can run by adding one or more condition(s).
 
-Conditions as an extra part of the rule are supported by some rule engines.
+Conditions as a separately definable part of a rule are supported by some rule engines.
 In situations where the rule engine does not support conditions, you can implement your conditions using an `if`-statement in the rule action.
 
 Available types of conditions include:
