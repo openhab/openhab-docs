@@ -1,0 +1,313 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="zooz_zen52_00_000" listed="false">
+    <label>ZEN52 Double Relay</label>
+    <description><![CDATA[
+Double Relay<br /> <h1>Overview</h1><p>Control 2 loads individually</p><p>Resistive loads up to 5A</p><p>LED lights up to 100W</p><p>700 series Z-Wave chip for better range and faster control</p> <br /> <h2>Inclusion Information</h2><p>Initiate inclusion on your hub</p><p>Tap the z-wave button 3 times quickly</p> <br /> <h2>Exclusion Information</h2><p>Initiate exclusion on your hub</p><p>Tap the z-wave button 3 times quickly</p> <br /> <h2>Wakeup Information</h2><p><br /></p>
+    ]]></description>
+    <category>WallSwitch</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_binary" typeId="switch_binary">
+        <label>Switch</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY</property>
+        </properties>
+      </channel>
+      <channel id="scene_number" typeId="scene_number">
+        <label>Scene Number</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_CENTRAL_SCENE</property>
+        </properties>
+      </channel>
+      <channel id="switch_binary1" typeId="switch_binary">
+        <label>Switch 1</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY:1</property>
+        </properties>
+      </channel>
+      <channel id="switch_binary2" typeId="switch_binary">
+        <label>Switch 2</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY:2</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Zooz</property>
+      <property name="modelId">ZEN52</property>
+      <property name="manufacturerId">027A</property>
+      <property name="manufacturerRef">0104:0202</property>
+      <property name="dbReference">1517</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_2_1" type="integer" groupName="configuration">
+        <label>2: LED Indicator</label>
+        <description><![CDATA[
+Enable or disable the LED<br /> <h1>Overview</h1><p>Enable or disable the LED indicator to reflect the current on/off status of the connected loads (LED on when either load is on, LED off when both loads are off)<br /></p>
+        ]]></description>
+        <default>1</default>
+        <options>
+          <option value="0">LED Indicator disabled</option>
+          <option value="1">LED Indicator enabled (default)</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_3_2" type="integer" groupName="configuration">
+        <label>3: Auto Turn-Off Timer (Relay 1)</label>
+        <description><![CDATA[
+Turn off relay 1 after a given time<br /> <h1>Overview</h1><p>Set the time after which you want the device connected to relay 1 to turn off once it has been turned on. The number can be minutes or seconds, as set in Parameter 7<br /></p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_4_2" type="integer" groupName="configuration">
+        <label>4: Auto Turn-On Timer (Relay 1)</label>
+        <description><![CDATA[
+Automatically turn on relay 1 after a given time<br /> <h1>Overview</h1><p>Use this parameter to set the time after which you want the device connected to relay 1 to automatically turn on once it has been turned off. The number entered as value corresponds to the number of minutes or seconds (set the unit in Par. 7)<br /></p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_5_2" type="integer" groupName="configuration">
+        <label>5: Auto Turn-Off Timer (Relay 2)</label>
+        <description><![CDATA[
+Automatically turn off relay 2 after a given time<br /> <h1>Overview</h1><p>Set the time after which you want the device connected to relay 2 to turn off once it has been turned on. The number can be minutes or seconds, as set in Parameter 8<br /></p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_6_2" type="integer" groupName="configuration">
+        <label>6: Auto Turn-On Timer (Relay 2)</label>
+        <description><![CDATA[
+Automatically turn on relay 2 after a given time<br /> <h1>Overview</h1><p>Use this parameter to set the time after which you want the device connected to relay 2 to automatically turn on once it has been turned off. The number entered as value corresponds to the number of minutes or seconds (set the unit in Par. 8).<br /></p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_7_1" type="integer" groupName="configuration">
+        <label>7: Timer Unit (Relay 1)</label>
+        <description><![CDATA[
+Set the units for auto on/off of relay 1<br /> <h1>Overview</h1><p>Choose between seconds and minutes as the unit for the timers for relay 1 set in parameters 3 and 4<br /></p>
+        ]]></description>
+        <default>1</default>
+        <options>
+          <option value="1">Minutes (default)</option>
+          <option value="2">Seconds</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_8_1" type="integer" groupName="configuration">
+        <label>8: Timer Unit (Relay 2)</label>
+        <description><![CDATA[
+Set the units for auto on/off of relay 2<br /> <h1>Overview</h1><p>Choose between seconds and minutes as the unit for the timers for relay 2 set in parameters 5 and 6.<br /></p>
+        ]]></description>
+        <default>1</default>
+        <options>
+          <option value="1">Minutes (default)</option>
+          <option value="2">Seconds</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_14_0" type="integer" groupName="configuration">
+        <label>14: On / Off Status After Power Failure (Relay 1)</label>
+        <description><![CDATA[
+Set the on/off status for relay 1 after power failure.<br /> <h1>Overview</h1><p><br /></p>
+        ]]></description>
+        <default>2</default>
+        <options>
+          <option value="0">Forced to OFF</option>
+          <option value="1">Forced to ON</option>
+          <option value="2">Remembers and restores on/off status after power failure (default)</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_15_1" type="integer" groupName="configuration">
+        <label>15: On / Off Status After Power Failure (Relay 2)</label>
+        <description><![CDATA[
+Set the on/off status for relay 2 after power failure.<br /> <h1>Overview</h1><p><br /></p>
+        ]]></description>
+        <default>2</default>
+        <options>
+          <option value="0">Forced to OFF</option>
+          <option value="1">Forced to ON</option>
+          <option value="2">Remembers and restores on/off status after power failure (default)</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_16_1" type="integer" groupName="configuration">
+        <label>16: Enable/Disable Scene Control</label>
+        <description><![CDATA[
+Enable or disable scene control functionality<br /> <h1>Overview</h1><p>Enable or disable scene control functionality for quick multi-tap triggers (works best with momentary wall switches).<br /></p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">scene control disabled (default)</option>
+          <option value="1">scene control enabled</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_17_1" type="integer" groupName="configuration">
+        <label>17: Smart Bulb Mode (Relay 1)</label>
+        <description><![CDATA[
+Enable or disable physical or Z-Wave control for relay 1<br /> <h1>Overview</h1><p>Enable or disable physical and/or Z-Wave on/off control for relay 1. If disabled, you’ll only be able to control the connected light via Z-Wave. Scenes and other functionality will still be available through paddles.<br /></p>
+        ]]></description>
+        <default>1</default>
+        <options>
+          <option value="0">Button and wall switch control disabled, Z-Wave control enabled (the r</option>
+          <option value="1">Button, wall switch, and Z-Wave control enabled (default)</option>
+          <option value="2">Button, wall switch, and Z-Wave control control disabled (the relay wi</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_18_1" type="integer" groupName="configuration">
+        <label>18: Smart Bulb Mode (Relay 2)</label>
+        <description><![CDATA[
+Enable or disable physical or Z-Wave control for relay 2<br /> <h1>Overview</h1><p>Enable or disable physical and/or Z-Wave on/off control for relay 2. If disabled, you’ll only be able to control the connected light via Z-Wave. Scenes and other functionality will still be available through paddles.<br /></p>
+        ]]></description>
+        <default>1</default>
+        <options>
+          <option value="0">Button and wall switch control disabled, Z-Wave control enabled (the r</option>
+          <option value="1">Button, wall switch, and Z-Wave control enabled (default)</option>
+          <option value="2">Button, wall switch, and Z-Wave control control disabled (the relay wi</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_20_1" type="integer" groupName="configuration">
+        <label>20: External Switch Type (relay1)</label>
+        <description>Choose the type of wall switch connected to relay 1 and its on/off behavior.</description>
+        <default>2</default>
+        <options>
+          <option value="0">Toggle switch (device changes status when switch changes status)</option>
+          <option value="1">Momentary switch</option>
+          <option value="2">Toggle switch with fixed actions (always toggle up for on, always togg</option>
+          <option value="3">3-way impulse control (for selected 3-way scenarios, refer to the note</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_21_1" type="integer" groupName="configuration">
+        <label>21: External Switch Type (relay2)</label>
+        <description>Choose the type of wall switch connected to relay 2 and its on/off behavior.</description>
+        <default>2</default>
+        <options>
+          <option value="0">Toggle switch (device changes status when switch changes status)</option>
+          <option value="1">Momentary switch</option>
+          <option value="2">toggle switch with fixed actions (always toggle up for on, always togg</option>
+          <option value="3">3-way impulse control (for selected 3-way scenarios, refer to the note</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_22_1" type="integer" groupName="configuration">
+        <label>22: Impulse Duration for 3-Way Impulse Control (Relay 1)</label>
+        <description><![CDATA[
+Choose the duration of the impulse if you're using relay 1 with 3-way impulse control (parameter 20 set to value 3).<br /> <h1>Overview</h1><p><br /></p>
+        ]]></description>
+        <default>10</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_23_1" type="integer" groupName="configuration">
+        <label>23: Impulse Duration for 3-Way Impulse Control (Relay 2)</label>
+        <description><![CDATA[
+Choose the duration of the impulse if you're using relay 2 with 3-way impulse control (parameter 21 set to value 3).<br /> <h1>Overview</h1><p><br /></p>
+        ]]></description>
+        <default>10</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_24_1" type="integer" groupName="configuration">
+        <label>24: Association Reports</label>
+        <description><![CDATA[
+Choose the type of reports the relays will send to the hub for Z-Wave and external switch control.<br /> <h1>Overview</h1><p><br /></p>
+        ]]></description>
+        <default>1</default>
+        <options>
+          <option value="0">binary switch reports for Z-Wave control and basic reports for switch</option>
+          <option value="1">binary switch reports for both Z-Wave and switch control (default)</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_25_1" type="integer" groupName="configuration">
+        <label>25: Relay Type Behavior (Relay 1)</label>
+        <description><![CDATA[
+Select between normally open or normally closed relay 1 control<br /> <h1>Overview</h1><p>Choose if you'd like relay 1 to act as a normally open (on when the circuit is closed, off when the circuit it open), or a normally closed relay (off when the circuit is closed, on when the circuit it open).<br /></p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Normally open (default)</option>
+          <option value="1">Normally closed</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_26_1" type="integer" groupName="configuration">
+        <label>26: Relay Type Behavior (Relay 2)</label>
+        <description><![CDATA[
+Select between normally open or normally closed relay 2 control<br /> <h1>Overview</h1><p>Choose if you'd like relay 2 to act as a normally open (on when the circuit is closed, off when the circuit it open), or a normally closed relay (off when the circuit is closed, on when the circuit it open).<br /></p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Normally open (default)</option>
+          <option value="1">Normally closed</option>
+        </options>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Lifeline</label>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: Group 2</label>
+        <description>Send BASIC SET command for switch 1</description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_3" type="text" groupName="association" multiple="true">
+        <label>3: Group 3</label>
+        <description>Send BASIC SET command for switch 2</description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

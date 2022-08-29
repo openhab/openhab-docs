@@ -44,7 +44,7 @@ Alarm Keypad 2nd Gen<br /> <h1>Overview</h1><p>Ring Alarm features a Z-Wave keyp
       <property name="vendor">Ring</property>
       <property name="modelId">Keypad 2nd Gen</property>
       <property name="manufacturerId">0346</property>
-      <property name="manufacturerRef">0101:0401</property>
+      <property name="manufacturerRef">0101:0301,0101:0401</property>
       <property name="dbReference">1398</property>
       <property name="defaultAssociations">1</property>
     </properties>
