@@ -69,6 +69,7 @@ All methods reveal the following folders
 ## Creating a blockly rule via the UI
 
 Also view ![youtube](../images/blockly/youtube-logo-small.png) [Creating a Blockly Rule](https://youtu.be/EdllUlJ7p6k?t=429)
+
 - go to Settings -> Rules
 - press ![plus](../images/blockly/blockly-plus-small.png) on bottom right
 - enter a unique id and rule name for your new blockly rule
