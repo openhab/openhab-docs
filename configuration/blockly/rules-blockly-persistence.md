@@ -33,6 +33,8 @@ For more information on persistence, the default service, and its configuration 
 
 The date-blocks shown in this section are described previously in [Date handling blocks](https://community.openhab.org/t/blockly-reference/128785#date-handling-blocks-31).
 
+More about that topic can be viewed at ![youtube](../images/blockly/youtube-logo-small.png) [Using Persistence data](https://youtu.be/KwhYKy1_qVk?t=1440)
+
 ### Get statistical value of an item
 
 ![statistical-value](../images/blockly/blockly-persistence-get-statistical-value.png)

@@ -31,6 +31,8 @@ This can be directly done via the ["send command" / "post command" block](rules-
 
 ## Date Handling Blocks
 
+More about that topic can be viewed at ![youtube](../images/blockly/youtube-logo-small.png) [Datetimes and Cron-Triggers](https://youtu.be/KwhYKy1_qVk?t=45)
+
 ### Help
 
 ![help](../images/blockly/blockly-date-help.png)
@@ -98,6 +100,8 @@ In case parts of the date are not provided due to shorter pattern, the others ar
 
 Tip: if you want to create a datetime with your time zone use the "copy of"-block and overwrite its values
 
+More about that topic can be viewed at ![youtube](../images/blockly/youtube-logo-small.png) [Creating Datetimes and other datetime blocks](https://youtu.be/KwhYKy1_qVk?t=2010)
+
 ### Datetime with date and time values
 
 ![today](../images/blockly/blockly-datetime-with-values.png)
@@ -119,6 +123,8 @@ Tip: if you want to create a datetime with your time zone use the "copy of"-bloc
 
 since 3.3
 
+More about that topic can be viewed at ![youtube](../images/blockly/youtube-logo-small.png) [Copy-Of, Datetime-Now with Math-Operations](https://youtu.be/KwhYKy1_qVk?t=375)
+
 ![date-copy-of-overview](../images/blockly/blockly-date-copy-of-overview.png)
 
 Type: *ZonedDateTime*
@@ -129,9 +135,11 @@ This block allows to create a new ZonedDateTime based on a given ZonedDateTime a
 - adds
 - or subtracts
 
-parts (so called temporals) of that datetime:
+**Temporals:** parts of that datetime are called temporals
 
 ![date-copy-of-temporal1](../images/blockly/blockly-temporal1.png)![date-copy-of-temporal2](../images/blockly/blockly-temporal2.png)
+
+More about that topic can be viewed at ![youtube](../images/blockly/youtube-logo-small.png) [Datetime - Temporal Units](https://youtu.be/KwhYKy1_qVk?t=410)
 
 It is therefore a bit more complex block which is on the other hand very flexible to use.
 It consists of the main "copy of"-block and the other two temporal-Blocks that can be added.
@@ -207,6 +215,8 @@ This is a convenience block that retrieves the state of an item (at best of item
 
 ![datetime-item-example](../images/blockly/blockly-datetime-from-item-example.png)
 
+More about that topic can be viewed at ![youtube](../images/blockly/youtube-logo-small.png) [Convert item states to Datetimes](https://youtu.be/KwhYKy1_qVk?t=570)
+
 ### Get String representation of date ("text of")
 
 ![date-tostring](../images/blockly/blockly-get-date-string.png)
@@ -234,6 +244,8 @@ The output in the log will be.
 ### Date Comparison
 
 since 3.3
+
+An introduction to that topic can be viewed at ![youtube](../images/blockly/youtube-logo-small.png) [Date comparison](https://youtu.be/KwhYKy1_qVk?t=520)
 
 ![date-comparison](../images/blockly/blockly-date-comparison.png)
 
