@@ -468,60 +468,60 @@ A device type represents an [Alexa display category](https://developer.amazon.co
 
 It is important to note that all the below device types supports the [generic attributes](#generic-attributes).
 
-Default attributes for each type are displayed in _italic_ and are depending on supported item types.
+Default attributes for each type are displayed in *italic* and are depending on supported item types.
 
 Device Types | Supported Attributes | Description
 -------------|----------------------|------------
-`AirConditioner` | _[`PowerState`](#powerstate)_, [`TargetTemperature`](#targettemperature), [`CurrentTemperature`](#currenttemperature), [`FanSpeed`](#fanspeed), [`FanDirection`](#fandirection), [`FanOscillate`](#fanoscillate) | A device that cools the air in interior spaces.
+`AirConditioner` | *[`PowerState`](#powerstate)*, [`TargetTemperature`](#targettemperature), [`CurrentTemperature`](#currenttemperature), [`FanSpeed`](#fanspeed), [`FanDirection`](#fandirection), [`FanOscillate`](#fanoscillate) | A device that cools the air in interior spaces.
 `AirFreshener` | Same as `Fan` | A device that emits pleasant odors and masks unpleasant odors in interior spaces.
 `AirPurifier` | Same as `Fan` | A device that improves the quality of air in interior spaces.
 `Automobile` | [`BatteryLevel`](#batterylevel), [`FanSpeed`](#fanspeed), [`LockState`](#lockstate), [`PowerState`](#powerstate), [`TargetTemperature`](#targettemperature), [`CurrentTemperature`](#currenttemperature) | A motor vehicle (automobile, car).
 `AutomobileAccessory` | [`BatteryLevel`](#batterylevel), [`CameraStream`](#camerastream), [`FanSpeed`](#fanspeed), [`PowerState`](#powerstate) | A smart device in an automobile, such as a dash camera.
-`Blind`, `Curtain`, `Shade` | _[`OpenState`](#openstate)_, _[`PositionState`](#positionstate)_, [`TiltAngle`](#tiltAngle), [`TargetOpenState`](#targetopenstate), [`CurrentOpenState`](#currentopenstate) | A window covering on the inside of a structure.
-`BluetoothSpeaker` | _[`PowerState`](#powerstate)_, _[`VolumeLevel`](#volumelevel)_, [`VolumeStep`](#volumestep), [`MuteState`](#mutestate), [`MuteStep`](#mutestep), [`EqualizerBass`](#equalizerbass), [`EqualizerMidrange`](#equalizermidrange), [`EqualizerTreble`](#equalizertreble), [`EqualizerMode`](#equalizermode), [`Channel`](#channel), [`ChannelStep`](#channelstep), [`Input`](#input), [`Playback`](#playback), [`PlaybackStop`](#playbackstop), [`BatteryLevel`](#batterylevel) | A speaker that connects to an audio source over Bluetooth.
-`Camera` | _[`PowerState`](#powerstate)_, _[`CameraStream`](#camerastream)_, [`BatteryLevel`](#batterylevel) | A security device with video or photo functionality.
+`Blind`, `Curtain`, `Shade` | *[`OpenState`](#openstate)*, *[`PositionState`](#positionstate)*, [`TiltAngle`](#tiltAngle), [`TargetOpenState`](#targetopenstate), [`CurrentOpenState`](#currentopenstate) | A window covering on the inside of a structure.
+`BluetoothSpeaker` | *[`PowerState`](#powerstate)*, *[`VolumeLevel`](#volumelevel)*, [`VolumeStep`](#volumestep), [`MuteState`](#mutestate), [`MuteStep`](#mutestep), [`EqualizerBass`](#equalizerbass), [`EqualizerMidrange`](#equalizermidrange), [`EqualizerTreble`](#equalizertreble), [`EqualizerMode`](#equalizermode), [`Channel`](#channel), [`ChannelStep`](#channelstep), [`Input`](#input), [`Playback`](#playback), [`PlaybackStop`](#playbackstop), [`BatteryLevel`](#batterylevel) | A speaker that connects to an audio source over Bluetooth.
+`Camera` | *[`PowerState`](#powerstate)*, *[`CameraStream`](#camerastream)*, [`BatteryLevel`](#batterylevel) | A security device with video or photo functionality.
 `ChristmasTree` | Same as `Light` | A religious holiday decoration that often contains lights.
-`CoffeeMaker` | _[`PowerState`](#powerstate)_ | A device that makes coffee.
-`Computer` | _[`PowerState`](#powerstate)_, [`NetworkAccess`](#networkaccess) | A non-mobile computer, such as a desktop computer.
-`ContactSensor` | _[`ContactDetectionState`](#contactdetectionstate)_, [`BatteryLevel`](#batterylevel) | An endpoint that detects and reports changes in contact between two surfaces.
-`Dishwasher` | _[`PowerState`](#powerstate)_ | A device that cleans dishes.
-`Door` | _[`OpenState`](#openstate)_, [`TargetOpenState`](#targetopenstate), [`CurrentOpenState`](#currentopenstate) | A door.
+`CoffeeMaker` | *[`PowerState`](#powerstate)* | A device that makes coffee.
+`Computer` | *[`PowerState`](#powerstate)*, [`NetworkAccess`](#networkaccess) | A non-mobile computer, such as a desktop computer.
+`ContactSensor` | *[`ContactDetectionState`](#contactdetectionstate)*, [`BatteryLevel`](#batterylevel) | An endpoint that detects and reports changes in contact between two surfaces.
+`Dishwasher` | *[`PowerState`](#powerstate)* | A device that cleans dishes.
+`Door` | *[`OpenState`](#openstate)*, [`TargetOpenState`](#targetopenstate), [`CurrentOpenState`](#currentopenstate) | A door.
 `Doorbell` | Same as `Camera` | A doorbell.
-`Dryer` | _[`PowerState`](#powerstate)_ | A device that dries wet clothing.
-`Fan` | _[`PowerState`](#powerstate)_, _[`FanSpeed`](#fanspeed)_, [`FanDirection`](#fandirection), [`FanOscillate`](#fanoscillate) | A fan.
-`GameConsole` | _[`PowerState`](#powerstate)_, [`NetworkAccess`](#networkaccess) | A game console, such as Microsoft Xbox or Nintendo Switch.
-`GarageDoor` | _[`OpenState`](#openstate)_, [`TargetOpenState`](#targetopenstate), [`CurrentOpenState`](#currentopenstate), [`ObstacleAlert`](#obstaclealert) | A garage door. Supports unlock by voice code. Only supported in `en-US`. For other languages, use `Door` instead.
+`Dryer` | *[`PowerState`](#powerstate)* | A device that dries wet clothing.
+`Fan` | *[`PowerState`](#powerstate)*, *[`FanSpeed`](#fanspeed)*, [`FanDirection`](#fandirection), [`FanOscillate`](#fanoscillate) | A fan.
+`GameConsole` | *[`PowerState`](#powerstate)*, [`NetworkAccess`](#networkaccess) | A game console, such as Microsoft Xbox or Nintendo Switch.
+`GarageDoor` | *[`OpenState`](#openstate)*, [`TargetOpenState`](#targetopenstate), [`CurrentOpenState`](#currentopenstate), [`ObstacleAlert`](#obstaclealert) | A garage door. Supports unlock by voice code. Only supported in `en-US`. For other languages, use `Door` instead.
 `Headphones` | Same as `BluetoothSpeaker` | A wearable device that transmits audio directly into the ear.
-`Hub` | _[`PowerState`](#powerstate)_ | A smart-home hub.
-`Laptop` | _[`PowerState`](#powerstate)_, [`BatteryLevel`](#batterylevel), [`NetworkAccess`](#networkaccess) | A laptop or other mobile computer.
-`Light` | _[`PowerState`](#powerstate)_, _[`Brightness`](#brightness)_, _[`Color`](#color)_, [`ColorTemperature`](#colortemperature) | A light source or fixture.
-`Lock` | _[`LockState`](#lockstate)_, [`TargetLockState`](#targetlockstate), [`CurrentLockState`](#currentlockstate), [`BatteryLevel`](#batterylevel) | An endpoint that locks.
-`Microwave` | _[`PowerState`](#powerstate)_ | A microwave oven.
-`MobilePhone` | _[`PowerState`](#powerstate)_, [`BatteryLevel`](#batterylevel), [`NetworkAccess`](#networkaccess) | A mobile phone.
-`MotionSensor` | _[`MotionDetectionState`](#motiondetectionstate)_, [`BatteryLevel`](#batterylevel) | An endpoint that detects and reports movement in an area.
+`Hub` | *[`PowerState`](#powerstate)* | A smart-home hub.
+`Laptop` | *[`PowerState`](#powerstate)*, [`BatteryLevel`](#batterylevel), [`NetworkAccess`](#networkaccess) | A laptop or other mobile computer.
+`Light` | *[`PowerState`](#powerstate)*, *[`Brightness`](#brightness)*, *[`Color`](#color)*, [`ColorTemperature`](#colortemperature) | A light source or fixture.
+`Lock` | *[`LockState`](#lockstate)*, [`TargetLockState`](#targetlockstate), [`CurrentLockState`](#currentlockstate), [`BatteryLevel`](#batterylevel) | An endpoint that locks.
+`Microwave` | *[`PowerState`](#powerstate)* | A microwave oven.
+`MobilePhone` | *[`PowerState`](#powerstate)*, [`BatteryLevel`](#batterylevel), [`NetworkAccess`](#networkaccess) | A mobile phone.
+`MotionSensor` | *[`MotionDetectionState`](#motiondetectionstate)*, [`BatteryLevel`](#batterylevel) | An endpoint that detects and reports movement in an area.
 `MusicSystem` | Same as `StreamingDevice` | A network-connected music system.
-`NetworkHardware` | _[`PowerState`](#powerstate)_ | A network router.
+`NetworkHardware` | *[`PowerState`](#powerstate)* | A network router.
 `Outlet` | Same as `Switch` | A module that is plugged into an existing electrical outlet, and then has a device plugged into it.
-`Oven` | _[`PowerState`](#powerstate)_ | An oven cooking appliance.
-`Phone` | _[`PowerState`](#powerstate)_ | A non-mobile phone, such as landline or an IP phone.
-`Printer` | _[`PowerState`](#powerstate)_ | A device that prints.
+`Oven` | *[`PowerState`](#powerstate)* | An oven cooking appliance.
+`Phone` | *[`PowerState`](#powerstate)* | A non-mobile phone, such as landline or an IP phone.
+`Printer` | *[`PowerState`](#powerstate)* | A device that prints.
 `Router` | Same as `NetworkHardware` | A network router.
 `Screen` | Same as `Television` | A projector screen.
-`SecurityPanel` | _[`ArmState`](#armstate)_, [`BurglaryAlarm`](#burglaryalarm), [`CarbonMonoxideAlarm`](#carbonmonoxidealarm), [`FireAlarm`](#firealarm), [`WaterAlarm`](#wateralarm), [`AlarmAlert`](#alarmalert), [`ReadyAlert`](#readyalert), [`TroubleAlert`](#troublealert), [`ZonesAlert`](#zonealert) | A security panel.
+`SecurityPanel` | *[`ArmState`](#armstate)*, [`BurglaryAlarm`](#burglaryalarm), [`CarbonMonoxideAlarm`](#carbonmonoxidealarm), [`FireAlarm`](#firealarm), [`WaterAlarm`](#wateralarm), [`AlarmAlert`](#alarmalert), [`ReadyAlert`](#readyalert), [`TroubleAlert`](#troublealert), [`ZonesAlert`](#zonealert) | A security panel.
 `SecuritySystem` | Same as `SecurityPanel` | A security system.
 `Shutter`, `Awning` | Same as `Blind` | A window covering on the outside of a structure.
-`SlowCooker` | _[`PowerState`](#powerstate)_ | An electric cooking device that sits on a countertop, cooks at low temperatures, and is often shaped like a cooking pot.
-`Speaker` | _[`PowerState`](#powerstate)_, _[`VolumeLevel`](#volumelevel)_, [`VolumeStep`](#volumestep), [`MuteState`](#mutestate), [`MuteStep`](#mutestep), [`EqualizerBass`](#equalizerbass), [`EqualizerMidrange`](#equalizermidrange), [`EqualizerTreble`](#equalizertreble), [`EqualizerMode`](#equalizermode), [`Channel`](#channel), [`ChannelStep`](#channelstep), [`Input`](#input), [`Playback`](#playback), [`PlaybackStop`](#playbackstop) | A speaker or speaker system.
-`StreamingDevice` | _[`PowerState`](#powerstate)_, _[`Playback`](#playback)_, [`PlaybackStop`](#playbackstop), [`Channel`](#channel), [`ChannelStep`](#channelstep), [`Input`](#input), [`VolumeLevel`](#volumelevel), [`VolumeStep`](#volumestep), [`MuteState`](#mutestate), [`MuteStep`](#mutestep), [`EqualizerBass`](#equalizerbass), [`EqualizerMidrange`](#equalizermidrange), [`EqualizerTreble`](#equalizertreble), [`EqualizerMode`](#equalizermode) | A streaming device such as Apple TV, Chromecast, or Roku.
-`Switch` | _[`PowerState`](#powerstate)_, _[`PowerLevel`](#powerlevel)_, _[`Percentage`](#percentage)_ | A switch wired directly to the electrical system. A switch can control a variety of devices. For lighting devices, use `Light` instead.
-`Tablet` | _[`PowerState`](#powerstate)_,  [`BatteryLevel`](#batterylevel), [`NetworkAccess`](#networkaccess) | A tablet computer.
-`Television` | _[`PowerState`](#powerstate)_, _[`Channel`](#channel)_, [`ChannelStep`](#channelstep), [`Input`](#input), [`VolumeLevel`](#volumelevel), [`VolumeStep`](#volumestep), [`MuteState`](#mutestate), [`MuteStep`](#mutestep), [`EqualizerBass`](#equalizerbass), [`EqualizerMidrange`](#equalizermidrange), [`EqualizerTreble`](#equalizertreble), [`EqualizerMode`](#equalizermode), [`Playback`](#playback), [`PlaybackStop`](#playbackstop) | A television.
-`TemperatureSensor` | _[`CurrentTemperature`](#currenttemperature)_, [`BatteryLevel`](#batterylevel) | An endpoint that reports temperature, but does not control it. The temperature data of the endpoint doesn't appear in the Alexa app. If your endpoint also controls temperature, use `Thermostat` instead.
-`Thermostat` | _[`HeatingCoolingMode`](#heatingcoolingmode)_, [`TargetTemperature`](#targettemperature), [`CoolingSetpoint`](#coolingsetpoint), [`HeatingSetpoint`](#heatingsetpoint), [`EcoCoolingSetpoint`](#ecocoolingsetpoint), [`EcoHeatingSetpoint`](#ecoheatingsetpoint), [`ThermostatHold`](#thermostathold), [`ThermostatFan`](#thermostatfan), [`CurrentTemperature`](#currenttemperature), [`CurrentHumidity`](#currenthumidity), [`BatteryLevel`](#batterylevel) | An endpoint that controls temperature, stand-alone air conditioners, or heaters with direct temperature control. If your endpoint senses temperature but does not control it, use `TemperatureSensor` instead.
-`VacuumCleaner` | _[`PowerState`](#powerstate)_, _[`VacuumMode`](#vacuummode)_, [`FanSpeed`](#fanspeed), [`BatteryLevel`](#batterylevel) | A vacuum cleaner.
-`Washer` | _[`PowerState`](#powerstate)_ | A device that cleans clothing.
-`WaterHeater` | _[`PowerState`](#powerstate)_, [`TargetTemperature`](#targettemperature), [`CurrentTemperature`](#currenttemperature) | A device that heats water, often consisting of a large tank.
-`Wearable`| _[`PowerState`](#powerstate)_, [`BatteryLevel`](#batterylevel), [`NetworkAccess`](#networkaccess) | A network-connected wearable device, such as an Apple Watch, Fitbit, or Samsung Gear.
+`SlowCooker` | *[`PowerState`](#powerstate)* | An electric cooking device that sits on a countertop, cooks at low temperatures, and is often shaped like a cooking pot.
+`Speaker` | *[`PowerState`](#powerstate)*, *[`VolumeLevel`](#volumelevel)*, [`VolumeStep`](#volumestep), [`MuteState`](#mutestate), [`MuteStep`](#mutestep), [`EqualizerBass`](#equalizerbass), [`EqualizerMidrange`](#equalizermidrange), [`EqualizerTreble`](#equalizertreble), [`EqualizerMode`](#equalizermode), [`Channel`](#channel), [`ChannelStep`](#channelstep), [`Input`](#input), [`Playback`](#playback), [`PlaybackStop`](#playbackstop) | A speaker or speaker system.
+`StreamingDevice` | *[`PowerState`](#powerstate)*, *[`Playback`](#playback)*, [`PlaybackStop`](#playbackstop), [`Channel`](#channel), [`ChannelStep`](#channelstep), [`Input`](#input), [`VolumeLevel`](#volumelevel), [`VolumeStep`](#volumestep), [`MuteState`](#mutestate), [`MuteStep`](#mutestep), [`EqualizerBass`](#equalizerbass), [`EqualizerMidrange`](#equalizermidrange), [`EqualizerTreble`](#equalizertreble), [`EqualizerMode`](#equalizermode) | A streaming device such as Apple TV, Chromecast, or Roku.
+`Switch` | *[`PowerState`](#powerstate)*, *[`PowerLevel`](#powerlevel)*, *[`Percentage`](#percentage)* | A switch wired directly to the electrical system. A switch can control a variety of devices. For lighting devices, use `Light` instead.
+`Tablet` | *[`PowerState`](#powerstate)*,  [`BatteryLevel`](#batterylevel), [`NetworkAccess`](#networkaccess) | A tablet computer.
+`Television` | *[`PowerState`](#powerstate)*, *[`Channel`](#channel)*, [`ChannelStep`](#channelstep), [`Input`](#input), [`VolumeLevel`](#volumelevel), [`VolumeStep`](#volumestep), [`MuteState`](#mutestate), [`MuteStep`](#mutestep), [`EqualizerBass`](#equalizerbass), [`EqualizerMidrange`](#equalizermidrange), [`EqualizerTreble`](#equalizertreble), [`EqualizerMode`](#equalizermode), [`Playback`](#playback), [`PlaybackStop`](#playbackstop) | A television.
+`TemperatureSensor` | *[`CurrentTemperature`](#currenttemperature)*, [`BatteryLevel`](#batterylevel) | An endpoint that reports temperature, but does not control it. The temperature data of the endpoint doesn't appear in the Alexa app. If your endpoint also controls temperature, use `Thermostat` instead.
+`Thermostat` | *[`HeatingCoolingMode`](#heatingcoolingmode)*, [`TargetTemperature`](#targettemperature), [`CoolingSetpoint`](#coolingsetpoint), [`HeatingSetpoint`](#heatingsetpoint), [`EcoCoolingSetpoint`](#ecocoolingsetpoint), [`EcoHeatingSetpoint`](#ecoheatingsetpoint), [`ThermostatHold`](#thermostathold), [`ThermostatFan`](#thermostatfan), [`CurrentTemperature`](#currenttemperature), [`CurrentHumidity`](#currenthumidity), [`BatteryLevel`](#batterylevel) | An endpoint that controls temperature, stand-alone air conditioners, or heaters with direct temperature control. If your endpoint senses temperature but does not control it, use `TemperatureSensor` instead.
+`VacuumCleaner` | *[`PowerState`](#powerstate)*, *[`VacuumMode`](#vacuummode)*, [`FanSpeed`](#fanspeed), [`BatteryLevel`](#batterylevel) | A vacuum cleaner.
+`Washer` | *[`PowerState`](#powerstate)* | A device that cleans clothing.
+`WaterHeater` | *[`PowerState`](#powerstate)*, [`TargetTemperature`](#targettemperature), [`CurrentTemperature`](#currenttemperature) | A device that heats water, often consisting of a large tank.
+`Wearable`| *[`PowerState`](#powerstate)*, [`BatteryLevel`](#batterylevel), [`NetworkAccess`](#networkaccess) | A network-connected wearable device, such as an Apple Watch, Fitbit, or Samsung Gear.
 `Other`| [All attributes](#device-attributes), except [networking](#networking-attributes) and [scenes](#scene-attributes) | An endpoint that doesn't belong to one of the other categories.
 
 ## Device Attributes
@@ -544,7 +544,7 @@ Items that represent the feed from a security camera.
 
 It requires installing the [IP Camera binding](https://www.openhab.org/addons/bindings/ipcamera/) to create a [HLS live stream](https://www.openhab.org/addons/bindings/ipcamera/#hls-http-live-streaming), and running your [openHAB server behind a reverse proxy](https://www.openhab.org/docs/installation/security.html#running-openhab-behind-a-reverse-proxy) that can be accessed over HTTPS on your local network and port 443 using a valid SSL certificate.
 
-Once setup, configure the item linked to the binding `hlsUrl` channel and set the metadata parameter `proxyBaseUrl="https://openhab.myserver.tld"` pointing to your openHAB subdomain proxy base URL. This will cause the skill to provide a stream URL to your Echo device, when requested, that should be accessible at `https://openhab.myserver.tld/ipcamera/camera1/ipcamera.m3u8` along with a static image URL, replacing the extension with `.jpg`.
+Once setup, configure the item linked to the binding `hlsUrl` channel and set the metadata parameter `proxyBaseUrl="https://openhab.myserver.tld"` pointing to your openHAB subdomain proxy base URL. This will cause the skill to provide a stream URL to your Echo device, when requested, that should be accessible at `https://openhab.myserver.tld/ipcamera/camera1/ipcamera.m3u8` along with a static image URL, replacing the extension with `.jpg`. If your server requires basic authentication, set the `username` and `password` parameters.
 
 * Supported item types:
   * String
@@ -554,6 +554,10 @@ Once setup, configure the item linked to the binding `hlsUrl` channel and set th
   * resolution=`<resolution>`
     * supported resolutions are `480p`, `720p`, `1080p`
     * defaults to `1080p`
+  * username=`<username>`
+    * defaults to no basic authentication.
+  * password=`<password>`
+    * defaults to no basic authentication.
 * Utterance examples:
   * *Alexa, show the `<device name>`.*
 
@@ -1037,7 +1041,7 @@ Items that represent a lighting device responding to color commands.
 
 #### `ColorTemperature`
 
-Items that represents a color temperature. It is important to note that temperature adjustment requests for endpoints including a color item, will be rejected if the endpoint is in color mode (Dimmer => _undefined_ temperature or color saturation > 0; Number => _undefined_ temperature or temperature = 0). In that event, set the initial white level before requesting subsequent adjustments.
+Items that represents a color temperature. It is important to note that temperature adjustment requests for endpoints including a color item, will be rejected if the endpoint is in color mode (Dimmer => *undefined* temperature or color saturation > 0; Number => *undefined* temperature or temperature = 0). In that event, set the initial white level before requesting subsequent adjustments.
 
 * Supported item types:
   * Dimmer (Colder `0%` to warmer `100%` based on defined temperature range for bindings integration)
@@ -1834,13 +1838,13 @@ Items that represent components of a device that can be toggled on or off. Multi
 
 ### Command Not Working
 
-* Alexa will respond with "That command doesn't work on _device_".
+* Alexa will respond with "That command doesn't work on *device*".
 * It indicates that the command that Alexa is trying to send to openHAB doesn't work, either because the intended device is not configured properly to support that command or because your openHAB items configuration has changed and a previously discovered item may longer accept certain commands. For example, a dimmer item type that was initially setup and was changed to a switch type, will cause Alexa brightness control commands to fail.
 * To resolve this error, make sure to update your openHAB items configuration accordingly and run a discovery update either through the Alexa app or just by asking "Alexa, discover" on your echo device.
 
 ### Device Not Found
 
-* Alexa will respond with "I couldn't find a device or group named _device_ in your profile".
+* Alexa will respond with "I couldn't find a device or group named *device* in your profile".
 * It indicates that, either a device currently setup in your Alexa account, no longer exists in your openHAB server, or vice-versa.
 * To resolve this error, make sure to run a discovery update either through the Alexa app or just by asking "Alexa, discover" on your echo device. Keep in mind that previously discovered devices that have been removed from the openHAB configuration will show as offline under your Alexa account and not be automatically removed. To prevent potential device name conflicts, it is highly recommended to remove these devices through the Alexa app.
 * If all your Alexa-enabled devices in openHAB aren't discovered or getting updated:
@@ -1852,7 +1856,7 @@ Items that represent components of a device that can be toggled on or off. Multi
 
 ### Device Not Responding
 
-* Alexa will respond with "_device_ isn't responding, please check its network connection and power supply", and in some rare occasions, no response or acknowledgement will be given.
+* Alexa will respond with "*device* isn't responding, please check its network connection and power supply", and in some rare occasions, no response or acknowledgement will be given.
 * It indicates that the state of one or more of the endpoint properties retrieved from the openHAB server are considered invalid, mostly because it is in either uninitialized `NULL` or undefined `UNDEF` state.
 * To resolve this error, make sure that all items interfacing with Alexa have a defined state. If the state is not available in openHAB, set the [item state](#item-state) to not be retrievable.
 * For group endpoints, partial properties responses will be send back to Alexa excluding items with invalid state. This will allow Alexa to acknowledge a command request assuming that the relevant item state is accurate. However, it will cause Alexa to generate this error when requesting the status of a device configured with an attribute supporting these requests. For example, using a thermostat group endpoint, a request to set its mode will succeed but requesting its mode status will fail if one of its property state, such as its temperature sensor, is not defined in openHAB.
@@ -1860,7 +1864,7 @@ Items that represent components of a device that can be toggled on or off. Multi
 
 ### Duplicate Device Names
 
-* Alexa will respond with "A few things share the name _device_, which one did you want?".
+* Alexa will respond with "A few things share the name *device*, which one did you want?".
 * It indicates that more than one device on your Alexa account matches the device name requested.
 * To resolve this error, make sure that all the [item labels](#item-labels) related to your Alexa-enabled items are unique. Additionally, check your Alexa account for discovered devices from other skills or local integrations (e.g. Philips Hue bridge), that may have overlapping names.
 
@@ -1872,26 +1876,26 @@ Items that represent components of a device that can be toggled on or off. Multi
 
 ### Request Not Supported
 
-* Alexa will respond with "_device_ doesn't support that".
+* Alexa will respond with "*device* doesn't support that".
 * It indicates that a requested command is not supported by any of the device configured attributes.
 * To resolve this error, make sure that the relevant attributes are configured properly on the given device. If this is the case, the response implies a limitation on the Alexa side. This will happen for a device with specific attributes that don't support certain voice requests as of yet, such as the state of a `Switch` or `Light` capable item.
 
 ### Server Authentication Issue
 
-* Alexa will respond with "Sorry something wrong, to control _device_ try disabling the skill and re-enabling it from your Alexa app".
+* Alexa will respond with "Sorry something wrong, to control *device* try disabling the skill and re-enabling it from your Alexa app".
 * It indicates that Alexa isn't able to control the given device because of an authentication issue.
 * To resolve this error, for users that are using the official skill, just disable and re-enable it through the Alexa app. For users that have setup their own custom skill, make sure that the proper credentials were configured in `ask-resources.json`. If running an openHAB 3.x server, make sure that the API Security Implicit User Role setting is enabled.
 
 ### Server Not Accessible
 
-* Alexa will respond with "Sorry the hub that _device_ is connected to is not responding, please check its network connection and power supply".
+* Alexa will respond with "Sorry the hub that *device* is connected to is not responding, please check its network connection and power supply".
 * It indicates that your openHAB server is not accessible through [myopenHAB](https://myopenhab.org) cloud service.
 * To resolve this error, make sure that your server is running, your openHAB cloud service is configured with mode set to "Notifications & Remote Access", and showing online under your myopenHAB account. For users that have setup their own custom skill, make sure that the proper server base URL was configured in `ask-resources.json`.
 * For users running openHAB 2.4, there is a known issue when running the [Amazon Echo Control](https://www.openhab.org/addons/bindings/amazonechocontrol/) binding, associated to that release, that affects the server accessibility. In this instance, make sure to upgrade your server to 2.5 or above.
 
 ### Temperature Out Of Range
 
-* Alexa will respond with "I can only set the temperature between _minValue_ and _maxValue_".
+* Alexa will respond with "I can only set the temperature between *minValue* and *maxValue*".
 * It indicates that a requested target temperature is out of range, based on the [target](#targettemperature), [cooling](#coolingsetpoint), or [heating](#heatingsetpoint) temperature setpoints default range values.
 * To resolve this error, add the metadata parameter `setpointRange="<minValue>:<maxValue>"` on your relevant thermostat setpoint items to customize your range values and run a discovery update either through the Alexa app or just by asking "Alexa, discover" on your echo device.
 
