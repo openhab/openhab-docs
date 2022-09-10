@@ -27,7 +27,6 @@ These blocks enable arbitrary content to be published to the [openHAB log](https
 
 More about that topic can be viewed at ![youtube](../images/blockly/youtube-logo-small.png) [Logging](https://youtu.be/EdllUlJ7p6k?t=670)
 
-
 ### Log Statement
 
 ![log-statement](../images/blockly/blockly-logging-log.png)
