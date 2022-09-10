@@ -46,7 +46,7 @@ CRLF stands for carriage-return / line-feed which is a technical term for adding
 
 ## Colors
 
-More about that topic can be viewed at ![youtube](../images/blockly/youtube-logo-small.png) [Using Color-Blocks and HSB-Conversion ](https://youtu.be/EdllUlJ7p6k?t=1366)
+More about that topic can be viewed at ![youtube](../images/blockly/youtube-logo-small.png) [Using Color-Blocks and HSB-Conversion](https://youtu.be/EdllUlJ7p6k?t=1366)
 
 The Colors section simplifies the selection of  Color Values.
 Technically these color RGB values are provided as a hexadecimal combination of the three values for red, green and blue (hence RGB).
