@@ -19,9 +19,16 @@ This section explains only the blocks that have been added to the standard block
 
 {: #blockly-standard-extension-overview}
 
+## Logic
+
+One of the most commonly used standard blocks are conditions blocks.
+More about conditions can be viewed at ![youtube](../images/blockly/youtube-logo-small.png) [How to use IF and ELSE](https://youtu.be/hSRfooBKn9A?t=445).
+
 ## Text
 
 The Text section is the general section that allows text or string manipulation
+
+More about that topic can be viewed at ![youtube](../images/blockly/youtube-logo-small.png) [Working with Text-Blocks](https://youtu.be/EdllUlJ7p6k?t=975).
 
 ### CRLF
 
@@ -38,6 +45,8 @@ CRLF stands for carriage-return / line-feed which is a technical term for adding
 ![crlf](../images/blockly/blockly-text-crlf-example.png)
 
 ## Colors
+
+More about that topic can be viewed at ![youtube](../images/blockly/youtube-logo-small.png) [Using Color-Blocks and HSB-Conversion ](https://youtu.be/EdllUlJ7p6k?t=1366)
 
 The Colors section simplifies the selection of  Color Values.
 Technically these color RGB values are provided as a hexadecimal combination of the three values for red, green and blue (hence RGB).
@@ -124,6 +133,14 @@ Example:
 Example:
 
 ![dictionary-getkey-example](../images/blockly/blockly-lists-dictionary-getkey-example.png)
+
+## Loops
+
+Even though there a no specialized openHAB blocks provided, loops are used rather often. Therefore there is a good introduction to loops available which can be viewed at ![youtube](../images/blockly/youtube-logo-small.png) [Loops in Blockly](https://youtu.be/EdllUlJ7p6k?t=1947)
+
+## Functions
+
+A more advanced feature for reusable blockly code is _functions_. More about that topic can be viewed at ![youtube](../images/blockly/youtube-logo-small.png) [Functions](https://youtu.be/hSRfooBKn9A?t=60) and [Parameters](https://youtu.be/hSRfooBKn9A?t=170).
 
 ## Return to Blockly Reference
 

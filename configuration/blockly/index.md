@@ -32,8 +32,9 @@ All of these provide general functionality that is not specific to openHAB itsel
 However, to leverage the full capabilities more than *50 specific blocks* have been provided that are tailored for easy access of openHAB's capabilities.
 
 This section provides a detailed description of the specific blocks and provides examples on how to use them. Note that some of the blocks (like voice, streaming or notifications) need some special setup within openHAB  - in these case links to the respective documentation is provided.
+Also see this ![youtube](../images/blockly/youtube-logo-small.png) [Intro](https://youtu.be/EdllUlJ7p6k?t=295) Quick Intro Blockly Rules
 
-**Looking for help**
+## Looking for help
 
 A special mention should go towards the **Help** entry in a block context menu [right click on any block](rules-blockly-before-using.html#block-context-menu) that links to a resource that is usually very helpful to understand the context of that particular block.
 To retrieve the particular help for a block right click on a block to open the context menu and click on the **help**-entry:
@@ -46,11 +47,66 @@ There is also a help-button available in each section that links to the document
 
 Please read this information first before asking questions in the forum. *In case you ask for help please always post the respective code that is being generated.*
 
+Also there is a good  intro about that topic can be viewed at ![youtube](../images/blockly/youtube-logo-small.png) [Various Help Documentation available in openHAB Blocky](https://youtu.be/EdllUlJ7p6k?t=1589)
+
 ## Before using blockly
 
 Please visit [Getting started with openHAB Blocklies](rules-blockly-before-using.html) before asking questions in the forum
 
+## Blockly Youtube Tutorials
+
+Three Youtube tutorials have been made available via the [openHAB Youtube channel](https://www.youtube.com/c/OpenhabOrg):
+
+* [Episode 1](https://www.youtube.com/watch?v=EdllUlJ7p6k)
+  * [Introduction](https://www.youtube.com/watch?v=EdllUlJ7p6k)
+  * [Quick Intro Blockly Rules](https://youtu.be/EdllUlJ7p6k?t=295)
+  * [Debugging Rules with OpenHAB Developer Tools to watch Item-Status](https://youtu.be/EdllUlJ7p6k?t=325)
+  * [Creating a Blockly Rule](https://youtu.be/EdllUlJ7p6k?t=429)
+  * [Overview of the Blockly Sections](https://youtu.be/EdllUlJ7p6k?t=558)
+  * [Logging](https://youtu.be/EdllUlJ7p6k?t=670)
+  * [Working with Items](https://youtu.be/EdllUlJ7p6k?t=790)
+  * [Working with Text-Blocks](https://youtu.be/EdllUlJ7p6k?t=975)
+  * [Sending Commands](https://youtu.be/EdllUlJ7p6k?t=1077)
+  * [Using Color-Blocks and HSB-Conversion](https://youtu.be/EdllUlJ7p6k?t=1366)
+  * [Waiting in Rules](https://youtu.be/EdllUlJ7p6k?t=1600)
+  * [Various Help Documentation available in openHAB Blockly](https://youtu.be/EdllUlJ7p6k?t=1589)
+  * [Blockly as an ECMA-Script code generator](https://youtu.be/EdllUlJ7p6k?t=1739)
+  * [Loops in Blockly](https://youtu.be/EdllUlJ7p6k?t=1947)
+  * [Playing sounds on audio sinks](https://youtu.be/EdllUlJ7p6k?t=2035)
+  * [Using Text-to-speach easily with blocks](https://youtu.be/EdllUlJ7p6k?t=2395)
+  * [Streaming Music](https://youtu.be/EdllUlJ7p6k?t=2538)
+* [Episode 2](https://www.youtube.com/watch?v=hSRfooBKn9A)
+  * [Introduction](https://youtu.be/hSRfooBKn9A)
+  * [Functions](https://youtu.be/hSRfooBKn9A?t=60)
+  * [Parameters](https://youtu.be/hSRfooBKn9A?t=170)
+  * [Play Stream](https://youtu.be/hSRfooBKn9A?t=335)
+  * [IF ELSE](https://youtu.be/hSRfooBKn9A?t=445)
+  * [Timers](https://youtu.be/hSRfooBKn9A?t=630)
+  * [Burglar Alarm Example](https://youtu.be/hSRfooBKn9A?t=1046)
+  * [Disable Rules](https://youtu.be/hSRfooBKn9A?t=1668)
+* [Episode 3](https://www.youtube.com/watch?v=KwhYKy1_qVk)
+  * [Datetimes and Cron-Triggers](https://youtu.be/KwhYKy1_qVk?t=45)
+  * [Copy-Of, Datetime-Now with Math-Operations](https://youtu.be/KwhYKy1_qVk?t=375)
+  * [Datetime - Temporal Units](https://youtu.be/KwhYKy1_qVk?t=410)
+  * [Date comparison](https://youtu.be/KwhYKy1_qVk?t=520)
+  * [Creating Datetimes and other datetime blocks](https://youtu.be/KwhYKy1_qVk?t=2010)
+  * [Convert item states to Datetimes](https://youtu.be/KwhYKy1_qVk?t=570)
+  * [Send Notifications to the openHAB mobile app](https://youtu.be/KwhYKy1_qVk?t=930)
+  * [Using Ephemeris information](https://youtu.be/KwhYKy1_qVk?t=1275)
+  * [Using Persistence data](https://youtu.be/KwhYKy1_qVk?t=1440)
+  * [Wrap up and short overview on basic blocks](https://youtu.be/KwhYKy1_qVk?t=1680)
+  * [Basic: Logic, Loops, Variables overview](https://youtu.be/KwhYKy1_qVk?t=1730)
+  * [Basic: Math](https://youtu.be/KwhYKy1_qVk)
+  * [Basic: Text](https://youtu.be/KwhYKy1_qVk?t=1835)
+  * [Basic: Lists, Colors](https://youtu.be/KwhYKy1_qVk?t=1910)
+  * [openHAB Blocks Wrap up](https://youtu.be/KwhYKy1_qVk?t=1945)
+  * [Global Value Storage](https://youtu.be/KwhYKy1_qVk?t=2060)
+  * [Run & Process blocks, transform](https://youtu.be/KwhYKy1_qVk?t=2110)
+  * [Inline Scripts](https://youtu.be/KwhYKy1_qVk?t=2165)
+  * [Outro](https://youtu.be/KwhYKy1_qVk?t=2257)
+
 ## Blocks Overview
+Also view ![youtube](../images/blockly/youtube-logo-small.png) [Overview of the Blockly Sections](https://youtu.be/EdllUlJ7p6k?t=558)
 
 ### Items and Things
 
