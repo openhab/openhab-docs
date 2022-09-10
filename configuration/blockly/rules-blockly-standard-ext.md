@@ -140,7 +140,8 @@ Even though there a no specialized openHAB blocks provided, loops are used rathe
 
 ## Functions
 
-A more advanced feature for reusable blockly code is _functions_. More about that topic can be viewed at ![youtube](../images/blockly/youtube-logo-small.png) [Functions](https://youtu.be/hSRfooBKn9A?t=60) and [Parameters](https://youtu.be/hSRfooBKn9A?t=170).
+A more advanced feature for reusable blockly code is _functions_.
+More about that topic can be viewed at ![youtube](../images/blockly/youtube-logo-small.png) [Functions](https://youtu.be/hSRfooBKn9A?t=60) and [Parameters](https://youtu.be/hSRfooBKn9A?t=170).
 
 ## Return to Blockly Reference
 
