@@ -17,7 +17,7 @@ This page is aimed to help developers, that are going to use OSGi for the first 
 
 ## Concepts
 
-As described in the [OSGi architecture page][OSGi-architecture], *OSGi is a set of [specifications](https://www.osgi.org/developer/specifications/) that define a dynamic component system for Java. These specifications enable a development model, where applications are dynamically composed of many different reusable components.
+As described in the [OSGi architecture page][OSGi-architecture], *OSGi is a set of [specifications](https://docs.osgi.org/specification/) that define a dynamic component system for Java. These specifications enable a development model, where applications are dynamically composed of many different reusable components.
 The OSGi specifications enable components to hide their implementations from other components while communicating through services, which are objects that are specifically shared between components*.
 This architecture significantly reduces the overall complexity of building, maintaining and deploying applications.
 
@@ -180,4 +180,4 @@ We will list the most popular OSGi containers with a short description of their 
 [fig1]:images/layeringosgi.png
 [fig2]:images/states.png
 [fig3]:images/services.png
-[OSGi-architecture]: https://www.osgi.org/developer/architecture/
+[OSGi-architecture]: https://www.osgi.org/resources/architecture/

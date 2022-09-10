@@ -106,6 +106,7 @@ Three Youtube tutorials have been made available via the [openHAB Youtube channe
   * [Outro](https://youtu.be/KwhYKy1_qVk?t=2257)
 
 ## Blocks Overview
+
 Also view ![youtube](../images/blockly/youtube-logo-small.png) [Overview of the Blockly Sections](https://youtu.be/EdllUlJ7p6k?t=558)
 
 ### Items and Things
