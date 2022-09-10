@@ -18,6 +18,8 @@ In general, this section deals with two topics
 It should be noted that both functionalities do not just work right out of the box because e.g for (1) the audio sinks need to be installed in openHAB and for (2) e.g. the whole Google API needs to be configured in particular with your own personal google account.
 Even though (2) is not trivial but after having done that the usage of the functionality with blockly is very easy and worth the effort.
 
+More about that topic can be viewed at ![youtube](../images/blockly/youtube-logo-small.png) [Playing sounds on audio sinks](https://youtu.be/EdllUlJ7p6k?t=2035)
+
 {::options toc_levels="2..4"/}
 
 - TOC
@@ -52,6 +54,8 @@ Even though (2) is not trivial but after having done that the usage of the funct
 - the audio file must reside in the sounds-folder of openHAB that can be found [here](https://community.openhab.org/t/blockly-reference/128785#openhab-configuration-files-7)
 - all available audio sinks are automatically provided by openHABs blocklies
 
+Also view ![youtube](../images/blockly/youtube-logo-small.png)[Playing sounds on audio sinks](https://youtu.be/EdllUlJ7p6k?t=2035)
+
 ### Play Audio with Volume
 
 ![play-audio](../images/blockly/blockly-play-audio-with-volume.png)
@@ -82,6 +86,8 @@ In case this happens the more robust approach is as follows
 - All available audio sinks are automatically provided by openHAB's blocklies
 - Changing the volume needs to be done via the thing volume channel linked to the sink device by sending the respective volume level command to that item
 
+More about that topic can be viewed at ![youtube](../images/blockly/youtube-logo-small.png) [Play Stream](https://youtu.be/hSRfooBKn9A?t=335)
+
 ### Stop Stream
 
 ![stop-stream](../images/blockly/blockly-stop-stream.png)
@@ -94,6 +100,6 @@ In case this happens the more robust approach is as follows
 
 *Function:* Sends the given text to the sink by using the default Text-to-Speech-Service to translate the text based on the chosen language voice into a stream which is then played on that device sink.
 
-## Return to Blockly Reference
+More about that topic can be viewed at ![youtube](../images/blockly/youtube-logo-small.png)[Using Text-to-speach easily with blocks](https://youtu.be/EdllUlJ7p6k?t=2403)
 
 [return to Blockly Reference](index.html#voice-and-multimedia)

@@ -34,6 +34,8 @@ To check if a value is undefined, use the special "is undefined"-block
 
 ## Value Storage Blocks
 
+See also the short video part about ![youtube](../images/blockly/youtube-logo-small.png) [Global Value Storage](https://youtu.be/KwhYKy1_qVk?t=2060)
+
 ### Store Value
 
 ![store-value](../images/blockly/blockly-value-store.png)
