@@ -39,6 +39,8 @@ The example below uses the *get state of item* block to retrieve the *MainSwitch
 
 ## Items
 
+See a video introduction at ![youtube](../images/blockly/youtube-logo-small.png) [Working with Items](https://youtu.be/EdllUlJ7p6k?t=790)
+
 ### Item
 
 ![blockly-item](../images/blockly/blockly-item.png)
@@ -156,6 +158,8 @@ Function: Sends a command or posts an update to an **Item** or **Group**.
 - Clicking 'MyItem' displays a list of **Items** to pick one item from
 
 For the difference between *send command* and *post update* see ["Manipulating States"](https://www.openhab.org/docs/configuration/rules-dsl.html#manipulating-item-states) and ["Event Bus Actions"](https://www.openhab.org/docs/configuration/actions.html#event-bus-actions).
+
+More about that topic can be viewed at ![youtube](../images/blockly/youtube-logo-small.png) [Sending Commands](https://youtu.be/EdllUlJ7p6k?t=1077)
 
 **Item-block examples**
 

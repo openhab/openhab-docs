@@ -68,6 +68,8 @@ All methods reveal the following folders
 
 ## Creating a blockly rule via the UI
 
+Also view ![youtube](../images/blockly/youtube-logo-small.png) [Creating a Blockly Rule](https://youtu.be/EdllUlJ7p6k?t=429)
+
 - go to Settings -> Rules
 - press ![plus](../images/blockly/blockly-plus-small.png) on bottom right
 - enter a unique id and rule name for your new blockly rule
@@ -84,8 +86,11 @@ All methods reveal the following folders
 - Drag and Drop the blocks to the white area
 - Press `Ctrl-s` (Windows) or `Command-s` (MacOS) to save your rule
 - Press `Ctrl-r` (Windows) or `Command-r` (MacOS) to directly run your rule with the trigger
-- Press `Ctrl-d` (Windows) or `Command-d` (MacOS) to disable / enable your rule
-- Click on ![showblock](../images/blockly/blockly-workspace-showblocks.png) on the lower right of the bottom toolbar to see the generated code and will transition to ![showcode](../images/blockly/blockly-workspace-showcode.png)(click again to come back to the blocks)
+- Press `Ctrl-d` (Windows) or `Command-d` (MacOS) to disable / enable your rule.
+See the following video on ![youtube](../images/blockly/youtube-logo-small.png) [How to disable Rules](https://youtu.be/hSRfooBKn9A?t=1668)
+- Click on ![showblock](../images/blockly/blockly-workspace-showblocks.png) on the lower right of the bottom toolbar to see the generated code and will transition to ![showcode](../images/blockly/blockly-workspace-showcode.png)(click again to come back to the blocks).
+
+More about the topic of code generation can be viewed at ![youtube](../images/blockly/youtube-logo-small.png) [Blockly as an ECMA-Script code generator](https://youtu.be/EdllUlJ7p6k?t=1739)
 
 ### Block context menu
 
@@ -131,6 +136,13 @@ During development the log-block is lot very often which writes information into
 - Start `openhabian-config` on your server and choose option 20 and then option 21
 - After installation you can view your logs under [openhabian-config](http://myopenhab-server:9001) (adapt the server name)
 - **see [how to log](https://www.openhab.org/docs/administration/logging.html)**
+
+More on that topic can be viewed at ![youtube](../images/blockly/youtube-logo-small.png) [Logging](https://youtu.be/EdllUlJ7p6k?t=670)
+
+## Show an item status watch list besides the blockly rules
+
+In the developer section there is the possibility to add a sidebar to the blockly rules development workspace that allows to watch live status of an item.
+View the chapter ![youtube](../images/blockly/youtube-logo-small.png) [Debugging Rules with OpenHAB Developer Tools to watch Item-Status](https://youtu.be/EdllUlJ7p6k?t=325) for more information
 
 ## Return to Blockly Reference
 

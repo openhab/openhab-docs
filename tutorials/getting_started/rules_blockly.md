@@ -14,6 +14,10 @@ Choosing either of those presents you with a choice of language to use.
 By default there are only three choices: Blockly, ECMAScript, and Rules DSL.
 If you've installed other automation add-ons, those might be listed as well.
 
+This tutorial is not going to be a full tutorial on how to write code in Blockly.
+See the [**Blockly Reference**]({{base}}/configuration/blockly/index.html) for a detailed tutorial and reference for doing that.
+Instead it's a higher level example of building a rule step-by-step using Blockly.
+
 ![rule add script action dialog](images/rule-add-action-dialog.png)
 
 For this part of the tutorial we will choose "Design with Blockly".
@@ -30,6 +34,8 @@ For people who prefer visual over text or those who are new to programming, Bloc
 It even allows you to learn how write your own JavaScript by looking at the code that Blockly generates in the background and this code could be even copy and pasted into a pure ECMAScript rule as a starting point.
 If you have been around kids you may be familiar with [Scratch](https://scratch.mit.edu/).
 Blockly is a similar environment customized for writing openHAB scripts.
+
+For those who do better with video, there are a few videos introducing Blockly on the openHAB [Youtube feed]({{base}}/configuration/blockly/index.html#blockly-youtube-tutorials)
 
 A typical Blockly script might look something like this:
 
@@ -53,10 +59,6 @@ The openHAB category is where all the blocks that interact with openHAB are list
 These are where you'll access Items, call actions, get data from persistence, create Timers (a way to schedule some code to run in the future), etc.
 
 The Library category is where Blockly Libraries installed from the Marketplace will appear (see below and the previous discussion on Rule Templates).
-
-This tutorial is not going to be a full tutorial on how to write code in Blockly.
-See the [Blockly Reference]({{base}}/configuration/blockly/index.html) for a detailed tutorial and reference for doing that.
-Instead it's a higher level example of building a rule step-by-step using Blockly.
 
 Some sections will be short.
 If you are missing details, see the previous section for details as most of the steps are the same for creating *all* rules in the UI.

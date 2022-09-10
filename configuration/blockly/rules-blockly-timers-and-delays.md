@@ -12,6 +12,8 @@ Timers and Delays are a little more complex but add important functionality to r
 Whilst the "Wait-For"-block is straightforward, the timer blocks should be well understood before being used - they may behave differently than expected.
 This chapter explains what these blocks do, sometimes displaying generated code to explain what is happening behind the scenes.
 
+More about that topic can be viewed at ![youtube](../images/blockly/youtube-logo-small.png) [Timers](https://youtu.be/hSRfooBKn9A?t=630).
+
 - TOC
 {:toc}
 
@@ -40,6 +42,8 @@ Timers are created and referred to by name, enabling manipulation within a rule.
 The following simple example uses a loop to implement a blinking light with a 1 second delay, looping three times:
 
 ![waifor-example](../images/blockly/blockly-waitfor-example.png)
+
+More about that topic can be viewed at ![youtube](../images/blockly/youtube-logo-small.png) [Waiting in Rules](https://youtu.be/EdllUlJ7p6k?t=1600)
 
 ### After *period of time* Do With Timer
 
