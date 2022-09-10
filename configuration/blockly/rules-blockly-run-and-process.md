@@ -33,6 +33,8 @@ A Script *is* a Rule too. It’s just a special type of rule that only has a sin
 
 ## Run & Process Blocks
 
+See also the short video part about ![youtube](../images/blockly/youtube-logo-small.png) [Run & Process blocks, transform](https://youtu.be/KwhYKy1_qVk?t=2110)
+
 ### Call Script File
 
 ![run-script-file](../images/blockly/blockly-run-script.png)
@@ -169,6 +171,8 @@ Use with diligence.
 ### Example
 
 ![inline-script-example](../images/blockly/blockly-inline-script-example.png)
+
+See also the short video part about ![youtube](../images/blockly/youtube-logo-small.png) [Inline Scripts](https://youtu.be/KwhYKy1_qVk?t=2165)
 
 ## Return to Blockly Reference
 

@@ -28,6 +28,8 @@ General information on cloud notification actions can be found [here](https://ww
 
 ## Notification Blocks
 
+More about that topic can be viewed at ![youtube](../images/blockly/youtube-logo-small.png) [Send Notifications to the openHAB mobile app](https://youtu.be/KwhYKy1_qVk?t=930)
+
 ### Send Notification to specific cloud email user
 
 ![notification-to-user](../images/blockly/blockly-notification-to-user.png)
