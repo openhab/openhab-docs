@@ -40,8 +40,7 @@ More about that topic can be viewed at ![youtube](../images/blockly/youtube-logo
   - In order to use text-to-speech, you need to install at least one [TTS service](https://www.openhab.org/addons/#voice).
   - see [openHAB Voice](https://www.openhab.org/docs/configuration/multimedia.html#voice) for more information
   - in case you only have one TTS service, this becomes your default TTS services.
-  In case you have several TTS services installed, you have to configure one of them as the default which can be done in your [services.cfg](https://github.com/openhab/openhab-distro/blob/master/distributions/distribution-resources/src/main/resources/runtime/etc/services.cfg#L20).
-  See more on that special case [here](https://community.openhab.org/t/where-to-set-default-tts-voice/15450/2)
+  In case you have several TTS services installed, you have to configure one of them as the default which can be done in your [services.cfg](https://github.com/openhab/openhab-distro/blob/main/distributions/openhab/src/main/resources/runtime/services.cfg#L20) - see [here](https://community.openhab.org/t/where-to-set-default-tts-voice/15450/2) for more information on that.
 
 ## Voice and Multimedia Blocks
 

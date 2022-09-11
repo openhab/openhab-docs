@@ -81,6 +81,16 @@ def process_main_docs(docs_source_dir)
     #FileUtils.mv("docs/configuration/migration/migration.md", "docs/configuration/migration/index.md")
     #FileUtils.cp_r("#{docs_source_dir}/tutorials/images", "docs/configuration/migration")
 
+    puts ">>> Migrating the Settings section"
+
+
+    Dir.glob("#{docs_source_dir}/settings/*.md") { |path|
+        file = File.basename(path)
+        puts " -> #{file}"
+        process_file("#{docs_source_dir}/settings", file, "docs/settings", "#{$docs_repo_root}/settings/#{file}")
+    }
+    # TODO => Add images logic if necessary
+
     puts ">>> Migrating the Migration Tutorial section"
 
 
