@@ -141,7 +141,6 @@ Type of wall switch connected to the relay<br /> <h1>Overview</h1><p>Choose the 
           <option value="3">3-way impulse control</option>
           <option value="4">Garage door mode</option>
         </options>
-        <advanced>true</advanced>
       </parameter>
 
       <parameter name="config_8_1" type="integer" groupName="configuration">

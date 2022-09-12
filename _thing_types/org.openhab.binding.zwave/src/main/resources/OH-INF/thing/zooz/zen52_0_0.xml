@@ -75,7 +75,6 @@ Enable or disable the LED<br /> <h1>Overview</h1><p>Enable or disable the LED in
           <option value="0">LED Indicator disabled</option>
           <option value="1">LED Indicator enabled (default)</option>
         </options>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_3_2" type="integer" groupName="configuration">
@@ -179,53 +178,55 @@ Enable or disable scene control functionality<br /> <h1>Overview</h1><p>Enable o
       <parameter name="config_17_1" type="integer" groupName="configuration">
         <label>17: Smart Bulb Mode (Relay 1)</label>
         <description><![CDATA[
-Enable or disable physical or Z-Wave control for relay 1<br /> <h1>Overview</h1><p>Enable or disable physical and/or Z-Wave on/off control for relay 1. If disabled, you’ll only be able to control the connected light via Z-Wave. Scenes and other functionality will still be available through paddles.<br /></p>
+Enable or disable physical or Z-Wave control for relay 1<br /> <h1>Overview</h1><p>Enable or disable physical and/or Z-Wave on/off control for relay 1. If disabled, you’ll only be able to control the connected light via Z-Wave. Scenes and other functionality will still be available through paddles.<br /></p><p>Values: 0 – button and wall switch control disabled, Z-Wave control enabled (the relay will still report on/off control to the hub whenever the button or switch are toggled). 1 – button, wall switch, and Z-Wave control enabled (default). 2 – button, wall switch, and Z-Wave control control disabled (the relay will still report on/off control to the hub whenever the button or switch are toggled physically or via Z-Wave).<br /></p>
         ]]></description>
         <default>1</default>
         <options>
-          <option value="0">Button and wall switch control disabled, Z-Wave control enabled (the r</option>
+          <option value="0">Button and wall switch control disabled, Z-Wave control enabled</option>
           <option value="1">Button, wall switch, and Z-Wave control enabled (default)</option>
-          <option value="2">Button, wall switch, and Z-Wave control control disabled (the relay wi</option>
+          <option value="2">Button, wall switch, and Z-Wave control control disabled</option>
         </options>
       </parameter>
 
       <parameter name="config_18_1" type="integer" groupName="configuration">
         <label>18: Smart Bulb Mode (Relay 2)</label>
         <description><![CDATA[
-Enable or disable physical or Z-Wave control for relay 2<br /> <h1>Overview</h1><p>Enable or disable physical and/or Z-Wave on/off control for relay 2. If disabled, you’ll only be able to control the connected light via Z-Wave. Scenes and other functionality will still be available through paddles.<br /></p>
+Enable or disable physical or Z-Wave control for relay 2<br /> <h1>Overview</h1><p>Enable or disable physical and/or Z-Wave on/off control for relay 2. If disabled, you’ll only be able to control the connected light via Z-Wave. Scenes and other functionality will still be available through paddles.<br /></p><p>Values: 0 – button and wall switch control disabled, Z-Wave control enabled (the relay will still report on/off control to the hub whenever the button or switch are toggled). 1 – button, wall switch, and Z-Wave control enabled (default). 2 – button, wall switch, and Z-Wave control control disabled (the relay will still report on/off control to the hub whenever the button or switch are toggled physically or via Z-Wave).<br /></p>
         ]]></description>
         <default>1</default>
         <options>
-          <option value="0">Button and wall switch control disabled, Z-Wave control enabled (the r</option>
+          <option value="0">Button and wall switch control disabled, Z-Wave control enabled</option>
           <option value="1">Button, wall switch, and Z-Wave control enabled (default)</option>
-          <option value="2">Button, wall switch, and Z-Wave control control disabled (the relay wi</option>
+          <option value="2">Button, wall switch, and Z-Wave control control disabled</option>
         </options>
       </parameter>
 
       <parameter name="config_20_1" type="integer" groupName="configuration">
         <label>20: External Switch Type (relay1)</label>
-        <description>Choose the type of wall switch connected to relay 1 and its on/off behavior.</description>
+        <description><![CDATA[
+Choose the type of wall switch connected to relay 1 and its on/off behavior.<br /> <h1>Overview</h1><p>Values: 0 – toggle switch (device changes status when switch changes status); 1 – momentary switch (one-button switch like the ZAC99); 2 – toggle switch with fixed actions (always toggle up for on, always toggle down for off); 3 – 3-way impulse control (for selected 3-way scenarios, refer to the notes in the wiring instructions for your set-up). Default: 2.<br /></p>
+        ]]></description>
         <default>2</default>
         <options>
-          <option value="0">Toggle switch (device changes status when switch changes status)</option>
+          <option value="0">Toggle switch</option>
           <option value="1">Momentary switch</option>
-          <option value="2">Toggle switch with fixed actions (always toggle up for on, always togg</option>
-          <option value="3">3-way impulse control (for selected 3-way scenarios, refer to the note</option>
+          <option value="2">Toggle switch (default)</option>
+          <option value="3">3-way impulse control</option>
         </options>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_21_1" type="integer" groupName="configuration">
         <label>21: External Switch Type (relay2)</label>
-        <description>Choose the type of wall switch connected to relay 2 and its on/off behavior.</description>
+        <description><![CDATA[
+Choose the type of wall switch connected to relay 2 and its on/off behavior.<br /> <h1>Overview</h1><p>Values: 0 – toggle switch (device changes status when switch changes status); 1 – momentary switch (one-button switch like the ZAC99); 2 – toggle switch with fixed actions (always toggle up for on, always toggle down for off); 3 – 3-way impulse control (for selected 3-way scenarios, refer to the notes in the wiring instructions for your set-up). Default: 2.<br /></p>
+        ]]></description>
         <default>2</default>
         <options>
-          <option value="0">Toggle switch (device changes status when switch changes status)</option>
+          <option value="0">Toggle switch</option>
           <option value="1">Momentary switch</option>
-          <option value="2">toggle switch with fixed actions (always toggle up for on, always togg</option>
-          <option value="3">3-way impulse control (for selected 3-way scenarios, refer to the note</option>
+          <option value="2">Toggle switch with fixed actions (default)</option>
+          <option value="3">3-way impulse control</option>
         </options>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_22_1" type="integer" groupName="configuration">

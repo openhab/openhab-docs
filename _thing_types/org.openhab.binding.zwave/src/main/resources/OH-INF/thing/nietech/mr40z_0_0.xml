@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="nietech_mr40z_00_000" listed="false">
+    <label>MR40Z S2 Remote Control Switch</label>
+    <description><![CDATA[
+S2 Remote Control Switch<br /> <h1>Overview</h1><p>Remote Scene Controller</p><p>Scene 1: First Button 1-Tap/2-Tap/3-Tap/Held/Released</p><p>Scene 2: First Button 1-Tap/2-Tap/3-Tap/Held/Released<br /></p><p>Scene 3: First Button 1-Tap/2-Tap/3-Tap/Held/Released<br /></p><p>Scene 4: First Button 1-Tap/2-Tap/3-Tap/Held/Released<br /></p> <br /> <h2>Inclusion Information</h2><p>Place hub in inclusion mode</p><p>Tap first button 5x</p> <br /> <h2>Exclusion Information</h2><p>Place hub in exclusion mode</p><p>Tap second button 5x</p> <br /> <h2>Wakeup Information</h2><p>Tap third button 5x</p>
+    ]]></description>
+    <category>Battery</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="scene_number" typeId="scene_number">
+        <label>Scene Number</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_CENTRAL_SCENE</property>
+        </properties>
+      </channel>
+      <channel id="battery-level" typeId="system.battery-level">
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_BATTERY</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">NIE Technology</property>
+      <property name="modelId">MR40Z</property>
+      <property name="manufacturerId">0312</property>
+      <property name="manufacturerRef">0924:D001</property>
+      <property name="dbReference">1518</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_0_1" type="integer" groupName="configuration">
+        <label>0: LED brightness</label>
+        <description>LED indicator brightness level in %</description>
+        <default>5</default>
+      </parameter>
+
+      <parameter name="config_1_1" type="integer" groupName="configuration">
+        <label>1: Battery report threshold</label>
+        <description><![CDATA[
+Set battery level for battery reports<br /> <h1>Overview</h1><p>Available range: 1%-20% (Default: 10)</p>
+        ]]></description>
+        <default>10</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_2_1" type="integer" groupName="configuration">
+        <label>2: Low Battery alarm report</label>
+        <description><![CDATA[
+Set battery level for low battery reports<br /> <h1>Overview</h1><p>Available range: 5%-20% (Default: 5%)</p>
+        ]]></description>
+        <default>5</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_3_1" type="integer" groupName="configuration">
+        <label>3: First button LED Color</label>
+        <description>LED indicator color for scene 1 activation</description>
+        <default>0</default>
+        <options>
+          <option value="0">White (default)</option>
+          <option value="1">Purple</option>
+          <option value="2">Orange</option>
+          <option value="3">Cyan</option>
+          <option value="4">Red</option>
+          <option value="5">Green</option>
+          <option value="6">Blue</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_4_1" type="integer" groupName="configuration">
+        <label>4: Second button LED color</label>
+        <description>LED indicator color for scene 2 activation</description>
+        <default>0</default>
+        <options>
+          <option value="0">White (default)</option>
+          <option value="1">Purple</option>
+          <option value="2">Orange</option>
+          <option value="3">Cyan</option>
+          <option value="4">Red</option>
+          <option value="5">Green</option>
+          <option value="6">Blue</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_5_1" type="integer" groupName="configuration">
+        <label>5: Third button LED color</label>
+        <description>LED indicator color for scene 3 activation</description>
+        <default>0</default>
+        <options>
+          <option value="0">White (default)</option>
+          <option value="1">Purple</option>
+          <option value="2">Orange</option>
+          <option value="3">Cyan</option>
+          <option value="4">Red</option>
+          <option value="5">Green</option>
+          <option value="6">Blue</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_6_1" type="integer" groupName="configuration">
+        <label>6: Forth button LED color</label>
+        <description>LED indicator color for scene 4 activation</description>
+        <default>0</default>
+        <options>
+          <option value="0">White (default)</option>
+          <option value="1">Purple</option>
+          <option value="2">Orange</option>
+          <option value="3">Cyan</option>
+          <option value="4">Red</option>
+          <option value="5">Green</option>
+          <option value="6">Blue</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_7_0" type="integer" groupName="configuration">
+        <label>7: LED brightness</label>
+        <description><![CDATA[
+LED indicator brightness level<br /> <h1>Overview</h1><p>LED brightness level between 0 (off) and 10 (maximum brightness), default: 5</p>
+        ]]></description>
+        <default>5</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Lifeline</label>
+        <multipleLimit>10</multipleLimit>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: Group 2</label>
+        <description><![CDATA[
+<br /> <h1>Overview</h1><p>First button press 1x send basic set 0xFF</p><p>Second button press 1x send basic set 0x00</p>
+        ]]></description>
+        <multipleLimit>10</multipleLimit>
+      </parameter>
+
+      <parameter name="group_3" type="text" groupName="association" multiple="true">
+        <label>3: Group 3</label>
+        <description><![CDATA[
+<br /> <h1>Overview</h1><p>Third button press 1x send basic set 0xFF</p><p>Forth button press 1x send basic set 0x00</p>
+        ]]></description>
+        <multipleLimit>10</multipleLimit>
+      </parameter>
+
+      <parameter name="group_4" type="text" groupName="association" multiple="true">
+        <label>4: Group 4</label>
+        <description><![CDATA[
+<br /> <h1>Overview</h1><p>First button hold, send multilevel dim up</p><p>Second button hold, send multilevel dim down</p>
+        ]]></description>
+        <multipleLimit>10</multipleLimit>
+      </parameter>
+
+      <parameter name="group_5" type="text" groupName="association" multiple="true">
+        <label>5: Group 5</label>
+        <description><![CDATA[
+<br /> <h1>Overview</h1><p>Third button hold, send multilevel dim up</p><p>Forth button hold, send multilevel dim down</p>
+        ]]></description>
+        <multipleLimit>10</multipleLimit>
+      </parameter>
+
+      <parameter name="group_6" type="text" groupName="association" multiple="true">
+        <label>6: Group 6</label>
+        <description><![CDATA[
+<br /> <h1>Overview</h1><p>First button press 1x to toggle on/off (send basic set 0xFF or 0x00)</p>
+        ]]></description>
+        <multipleLimit>10</multipleLimit>
+      </parameter>
+
+      <parameter name="group_7" type="text" groupName="association" multiple="true">
+        <label>7: Group 7</label>
+        <description><![CDATA[
+<br /> <h1>Overview</h1><p>Second button press 1x to toggle on/off (send basic set 0xFF or 0x00)</p>
+        ]]></description>
+        <multipleLimit>10</multipleLimit>
+      </parameter>
+
+      <parameter name="group_8" type="text" groupName="association" multiple="true">
+        <label>8: Group 8</label>
+        <description><![CDATA[
+<br /> <h1>Overview</h1><p>Third button press 1x to toggle on/off (send basic set 0xFF or 0x00)<br /></p>
+        ]]></description>
+        <multipleLimit>10</multipleLimit>
+      </parameter>
+
+      <parameter name="group_9" type="text" groupName="association" multiple="true">
+        <label>9: Group 9</label>
+        <description><![CDATA[
+<br /> <h1>Overview</h1><p>Fourth button press 1x to toggle on/off (send basic set 0xFF or 0x00)</p>
+        ]]></description>
+        <multipleLimit>10</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

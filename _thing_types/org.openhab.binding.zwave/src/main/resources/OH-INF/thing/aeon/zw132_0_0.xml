@@ -310,6 +310,7 @@ To set which reports need to be sent in Report group 1<br /> <h1>Overview</h1><p
           <option value="524288">Send Multi Channel Meter Report of current (A) C1</option>
           <option value="1048576">Send Multi Channel Meter Report of current (A) C2</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_102_4" type="integer" groupName="configuration">
@@ -332,6 +333,7 @@ To set which reports will be sent in Report group 2.<br /> <h1>Overview</h1><p><
           <option value="524288">Send Multi Channel Meter Report of current (A) C1</option>
           <option value="1048576">Send Multi Channel Meter Report of current (A) C2</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_103_4" type="integer" groupName="configuration">
@@ -354,6 +356,7 @@ To set which reports need to be sent in Report group 3.<br /> <h1>Overview</h1><
           <option value="524288">Send Multi Channel Meter Report of current (A) C1</option>
           <option value="1048576">Send Multi Channel Meter Report of current (A) C2</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_110_1_wo" type="integer" groupName="configuration">
