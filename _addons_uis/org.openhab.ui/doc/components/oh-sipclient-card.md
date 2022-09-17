@@ -2,7 +2,7 @@
 title: oh-sipclient-card - SIP Client Card
 component: oh-sipclient-card
 label: SIP Client Card
-description: SIP Client
+description: Use SIP over WebSocket to start and answer calls
 source: https://github.com/openhab/openhab-webui/edit/main/bundles/org.openhab.ui/doc/components/oh-sipclient-card.md
 prev: /docs/ui/components/
 ---
@@ -13,13 +13,15 @@ prev: /docs/ui/components/
 ![](./images/oh-sipclient-card/header.jpg)
 -->
 
+<!-- GENERATED componentDescription -->
+SIP Client to start and answer SIP calls
+<!-- GENERATED /componentDescription -->
+
 [[toc]]
 
-<!-- Note: you can overwrite the definition-provided description and add your own intro/additional sections instead -->
-<!-- DO NOT REMOVE the following comments if you intend to keep the definition-provided description -->
-<!-- GENERATED componentDescription -->
-Client to start and answer SIP calls
-<!-- GENERATED /componentDescription -->
+## Usage
+
+Usage is explained at the [`oh-sipclient` component docs](/docs/ui/components/oh-sipclient.html).
 
 ## Configuration
 
@@ -87,7 +89,7 @@ Client to start and answer SIP calls
 </PropBlock>
 <PropBlock type="BOOLEAN" name="enableTones" label="Enable tones">
   <PropDescription>
-    Enable ringback and ring tone, might cause issues with your browser, so that your call fails
+    Enable ringback and ring tone. Not recommended for mobile browsers, might cause issues. Ring tone might only work after interaction with the webpage.
   </PropDescription>
 </PropBlock>
 <PropBlock type="BOOLEAN" name="hideCallerId" label="Hide caller id">

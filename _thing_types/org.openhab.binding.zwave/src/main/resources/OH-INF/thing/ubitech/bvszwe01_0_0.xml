@@ -1,0 +1,313 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="ubitech_bvszwe01_00_000" listed="false">
+    <label>BVSZWE01 Ball Valve Servo</label>
+    <description><![CDATA[
+Ball Valve Servo<br /> <h1>Overview</h1><p>The BVS (Ball Valve Servo) is a motor to retrofit existing and installed ball valves into smart water controlling devices. Its wireless communication capabilities are compatible with several industry standards (Lora, Z-Wave, ULE) for easy integration into existing networks. The motor is powered by a 12 V external power supply or - optional – a battery block.</p><p>The variable clamps allow mounting even in complex pipe installations. The patented motor coupling ensures easy installation and precise long-term operation. The device can operate in difficult environmental conditions, even submerged under water and allows to directly connect one additional local water sensor pad by cable. </p> <br /> <h2>Inclusion Information</h2><p>When using Smart start just scan the QR code on your device.</p><p>When using classical Z-Wave inclusion, triple click the button. Success is indicated by a green LED blinking for one second plus two short beeps by the buzzer.</p> <br /> <h2>Exclusion Information</h2><p>Triple click the button. Success is indicated by a green LED blinking for one second plus two short beeps by the buzzer.</p> <br /> <h2>Wakeup Information</h2><p><br /></p>
+    ]]></description>
+    <category>Valve</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_binary" typeId="switch_binary">
+        <label>Switch</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY</property>
+        </properties>
+      </channel>
+      <channel id="sensor_temperature" typeId="sensor_temperature">
+        <label>Sensor (temperature)</label>
+        <properties>
+          <property name="binding:*:QuantityType">COMMAND_CLASS_SENSOR_MULTILEVEL;type=TEMPERATURE</property>
+        </properties>
+      </channel>
+      <channel id="alarm_heat" typeId="alarm_heat">
+        <label>Alarm (heat)</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=HEAT</property>
+        </properties>
+      </channel>
+      <channel id="alarm_flood" typeId="alarm_flood">
+        <label>Alarm (flood)</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=FLOOD</property>
+        </properties>
+      </channel>
+      <channel id="alarm_power" typeId="alarm_power">
+        <label>Alarm (power)</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=POWER_MANAGEMENT</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Ubitech</property>
+      <property name="modelId">BVSZWE01</property>
+      <property name="manufacturerId">0270</property>
+      <property name="manufacturerRef">0101:000A</property>
+      <property name="dbReference">1520</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_17_1" type="integer" groupName="configuration">
+        <label>17: Water Valve Report Value</label>
+        <description><![CDATA[
+This parameter defines how the water valve position is reported.<br /> <h1>Overview</h1><p>0 Normal</p><p>1 Reversed</p>
+        ]]></description>
+        <default>1</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_18_0" type="integer" groupName="configuration">
+        <label>18: Command Sent into Association Group 2 on ON</label>
+        <description><![CDATA[
+Defines what BASIC command Value to send into Association Group 2<br /> <h1>Overview</h1><p>0 Disabled</p><p>1 Enabled Basic On (0xff)</p><p>2 Enabled, Basic Off (0x00)</p>
+        ]]></description>
+        <default>1</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_19_0" type="integer" groupName="configuration">
+        <label>19: Command Sent into Association Group 2 on OFF</label>
+        <description><![CDATA[
+Defines what BASIC command Value to send into Association Group 2<br /> <h1>Overview</h1><p>0 Disabled</p><p>1 Enabled Basic On (0xff)</p><p>2 Enabled, Basic Off (0x00)</p>
+        ]]></description>
+        <default>2</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_33_1" type="integer" groupName="configuration">
+        <label>33: Temperature Sensor Report</label>
+        <description><![CDATA[
+Defines if and how a temperature value is reported.<br /> <h1>Overview</h1><p>0 Disabled</p><p>1 Report in Celsius</p><p>2 Report in Fahrenheit</p>
+        ]]></description>
+        <default>2</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_34_2" type="integer" groupName="configuration">
+        <label>34: Temperature Sensor Report Threshold</label>
+        <description><![CDATA[
+Defines the change in temperature value to cause unsolicited sending of an report.<br /> <h1>Overview</h1><p>0x00-0xff Value in Celsius (Example: 0x02 = 2 C)</p><p>0x100-0x1ff Value in Fahrenheit (Example: 0x102 = 2 F)</p>
+        ]]></description>
+        <default>1</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_35_2" type="integer" groupName="configuration">
+        <label>35: Temperature Sensor Report Offset</label>
+        <description><![CDATA[
+Defines a temperature offset for the reported temperature. This parameter can be used to compensate for certain temperature deviations.<br /> <h1>Overview</h1><p>0x00-0xff Positive Deviation in Celsius (e.g. 0x02 = +2 C)</p><p>0x1000-0x10ff Negative Deviation in Celsius (e.g. 0x02 = -2 C)</p><p>0x0100-0x01ff Positive Deviation in Fahrenheit (e.g. 0x02 = +2 F)</p><p>0x1100-0x11ff Negative Deviation in Fahrenheit (e.g. 0x02 = -2 F)</p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_36_2" type="integer" groupName="configuration">
+        <label>36: Temperature Overheat Trigger</label>
+        <description><![CDATA[
+Sets the temperature to trigger and overheat alarm and<br /> <h1>Overview</h1><p>0x00-0xff Value in Celsius (example: 0x02 = 2 C)</p><p>0x100-0x1ff Value in Fahrenheit (Example: 0x102 = 2 F)</p>
+        ]]></description>
+        <default>40</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_37_2" type="integer" groupName="configuration">
+        <label>37: Temperature Overhead Reset Trigger Value</label>
+        <description><![CDATA[
+Sets the temperature to reset the overheat alarm and<br /> <h1>Overview</h1><p>0x00-0xff Value in Celsius (Example: 0x02 = 2 C)</p><p>0x100-0x1ff Value in Fahrenheit (Example: 0x102 = 2 F)</p>
+        ]]></description>
+        <default>40</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_38_1" type="integer" groupName="configuration">
+        <label>38: Temperature Overhead Action Value</label>
+        <description><![CDATA[
+Defines what BASIC command Value to send into Association Group 4<br /> <h1>Overview</h1><p>0 Disabled</p><p>1 Enabled Basic On (0xff)</p><p>2 Enabled, Basic Off (0x00)</p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_39_1" type="integer" groupName="configuration">
+        <label>39: Temperature Overhead Action Reset Value</label>
+        <description><![CDATA[
+Defines what BASIC command Value to send into Association Group 4<br /> <h1>Overview</h1><p>0 Disabled</p><p>1 Enabled Basic On (0xff)</p><p>2 Enabled, Basic Off (0x00)</p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_40_2" type="integer" groupName="configuration">
+        <label>40: Freeze Trigger Value</label>
+        <description><![CDATA[
+Sets the temperature threshold to cause a freeze alarm<br /> <h1>Overview</h1><p>0x00-0xff Value in Celsius (Example: 0x02 = 2 C)</p><p>0x100-0x1ff Value in Fahrenheit (Example: 0x102 = 2 F)</p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_41_2" type="integer" groupName="configuration">
+        <label>41: Freeze Trigger Reset Value</label>
+        <description><![CDATA[
+Sets the temperature threshold to reset a freeze alarm<br /> <h1>Overview</h1><p>0x00-0xff Value in Celsius (Example: 0x02 = 2 C)</p><p>0x100-0x1ff Value in Fahrenheit (Example: 0x102 = 2 F)</p>
+        ]]></description>
+        <default>40</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_42_1" type="integer" groupName="configuration">
+        <label>42: Freeze Valve Action</label>
+        <description><![CDATA[
+This parameter defines If detected freezing shall close the valve<br /> <h1>Overview</h1><p>0 Disabled</p><p>1 Enabled</p>
+        ]]></description>
+        <default>1</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_43_1" type="integer" groupName="configuration">
+        <label>43: Freeze Association Action Command</label>
+        <description><![CDATA[
+Defines what BASIC command Value to send into Association Group 5<br /> <h1>Overview</h1><p>0 Disabled</p><p>1 Enabled Basic On (0xff)</p><p>2 Enabled, Basic Off (0x00)</p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_44_1" type="integer" groupName="configuration">
+        <label>44: Freeze Association Reset Command</label>
+        <description><![CDATA[
+Defines what BASIC command Value to send into Association Group 5<br /> <h1>Overview</h1><p>0 Disabled</p><p>1 Enabled Basic On (0xff)</p><p>2 Enabled, Basic Off (0x00)</p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_49_1" type="integer" groupName="configuration">
+        <label>49: Leak Detection Command Value</label>
+        <description><![CDATA[
+Defines what BASIC command Value to send into Association Group 3<br /> <h1>Overview</h1><p>0 Disabled</p><p>1 Enabled Basic On (0xff)</p><p>2 Enabled, Basic Off (0x00)</p>
+        ]]></description>
+        <default>1</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_50_1" type="integer" groupName="configuration">
+        <label>50: Leak Detection Reset Command Value</label>
+        <description><![CDATA[
+Defines what BASIC command Value to send into Association Group 3<br /> <h1>Overview</h1><p>0 Disabled</p><p>1 Enabled Basic On (0xff)</p><p>2 Enabled, Basic Off (0x00)</p>
+        ]]></description>
+        <default>2</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_51_1" type="integer" groupName="configuration">
+        <label>51: Water Leak Detection Valve Control</label>
+        <description><![CDATA[
+Defines if the valve shall be closed when a water leak alarm accurs<br /> <h1>Overview</h1><p>0 Disabled</p><p>1 Enabled</p>
+        ]]></description>
+        <default>1</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_65_1" type="integer" groupName="configuration">
+        <label>65: Buzzer enable</label>
+        <description><![CDATA[
+Defines if built-in buzzer shall be active<br /> <h1>Overview</h1><p>0 Disabled</p><p>1 Enabled</p>
+        ]]></description>
+        <default>1</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_66_1" type="integer" groupName="configuration">
+        <label>66: LED Brightness Level</label>
+        <description><![CDATA[
+Defines the brightness level of LED in %<br /> <h1>Overview</h1><p>0-100 Brightness level</p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_67_1" type="integer" groupName="configuration">
+        <label>67: Touch Sensor Key Lock</label>
+        <description><![CDATA[
+Defines if touch button is active<br /> <h1>Overview</h1><p>0 Disabled</p><p>1 Enabled</p>
+        ]]></description>
+        <default>1</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_81_1" type="integer" groupName="configuration">
+        <label>81: Notifications</label>
+        <description><![CDATA[
+Defines which notifications are active<br /> <h1>Overview</h1><p>0 Water Valve Report</p><p>1 Overheat Report</p><p>2 Freeze Report</p><p>3 Water Leak</p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Lifeline</label>
+        <description>Lifeline. All alarms that shall be sent to the gateway</description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: Switch on operate</label>
+        <description>Switch Devices when Water Valve is operated (either local or by sensor o by wireless command)</description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_3" type="text" groupName="association" multiple="true">
+        <label>3: Switch on leak</label>
+        <description>Switch Devices when water leak was detected</description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_4" type="text" groupName="association" multiple="true">
+        <label>4: Switch on temperature too high</label>
+        <description>Switch Devices when temperature raise above threshold</description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_5" type="text" groupName="association" multiple="true">
+        <label>5: Switch on temperature too low</label>
+        <description>Switch Devices when temperature falls below threshold</description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

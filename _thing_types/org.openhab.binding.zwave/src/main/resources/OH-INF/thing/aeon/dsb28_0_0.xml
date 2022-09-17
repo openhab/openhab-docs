@@ -131,7 +131,7 @@ Home Energy Meter G2<br /> <h1>Overview</h1><p>Aeon Labs Home Energy Meter is a 
       <property name="manufacturerId">0086</property>
       <property name="manufacturerRef">0002:001C</property>
       <property name="dbReference">85</property>
-      <property name="defaultAssociations">1,2,3</property>
+      <property name="defaultAssociations">1</property>
     </properties>
 
     <!-- CONFIGURATION DESCRIPTIONS -->
@@ -163,7 +163,7 @@ Home Energy Meter G2<br /> <h1>Overview</h1><p>Aeon Labs Home Energy Meter is a 
       <parameter name="config_3_1" type="integer" groupName="configuration">
         <label>3: Selective Reporting</label>
         <description><![CDATA[
-Report only when power change reaches a threshold set in 4-11 below.<br /> <h1>Overview</h1><p>Enable selective reporting only when power change reaches a certain threshold or percentage set in 4-11 below.</p> <p>This is used to reduce network traffic.(Bit 0: Whole HEM ,Bit 1:Clamp 1,Bit 2:Clamp 2,Bit 3:Clamp 3)</p>
+Report only when power change reaches a threshold set in 4-11 below.<br /> <h1>Overview</h1><p>Enable selective reporting only when power change reaches a certain threshold or percentage set in 4-11 below.</p> <p>This is used to reduce network traffic.(Bit 0: Whole HEM ,Bit 1:Clamp 1,Bit 2:Clamp 2,Bit 3:Clamp 3)</p><p>Note this will only reduce reporting for Watts. Reports for Volts, Amps, and kWh will be sent with every report (default 5 seconds for report group 1)<br /></p>
         ]]></description>
         <default>1</default>
         <limitToOptions>false</limitToOptions>
@@ -244,7 +244,7 @@ Percentage change in power to induce a automatic report (Clamp 3).<br /> <h1>Ove
       <parameter name="config_101_4" type="integer" groupName="configuration">
         <label>101: Reports for group 1</label>
         <description><![CDATA[
-Reports for group 1<br /> <h1>Overview</h1><p>1 -&gt; Battery Report<br /><br />2 -&gt; MultiSensor Report for the whole device<br /><br />4 -&gt; Meter Report for Watt for the whole device<br /><br />8 -&gt; Meter Report for kWh for the whole device<br /><br />256 -&gt; Meter Report for Watt for clamp 1<br /><br />512 -&gt; Meter Report for W</p>
+Reports for group 1<br /> <h1>Overview</h1><p>1 - kWh (whole meter)</p><p>2 - Watts (whole meter)</p><p>4 - Volts (whole meter)</p><p>8 - Amps (whole meter)</p><p>256 - Watts (clamp 1)</p><p>512 - Watts (clamp 2)</p><p>1024 - Watts (clamp 3)</p><p>2048 - kWh (clamp 1)</p><p>4096 - kWh (clamp 2)</p><p>8192 - kWh (clamp 3)</p><p>65536 - Volts (clamp 1)</p><p>131072 - Volts (clamp 2)</p><p>262144 - Volts (clamp 3)</p><p>524288 - Amps (clamp 1)</p><p>1048576 - Amps (clamp 2)</p><p>2097152 - Amps (clamp 3)</p><p>e.g. to report kWh, Watts, Volts, and Amps for this report group, enter 15 (1+2+4+8).</p><p>Note: selective reporting only works for Watts. It's recommended to set 1 report group for Watts only with a short report period (the default for group 1 is 5 seconds), and 1 report group for other values with a longer report period (the default for groups 2 and 3 is 12 minutes)<br /></p>
         ]]></description>
         <default>8</default>
         <limitToOptions>false</limitToOptions>
@@ -253,7 +253,7 @@ Reports for group 1<br /> <h1>Overview</h1><p>1 -&gt; Battery Report<br /><br />
       <parameter name="config_102_4" type="integer" groupName="configuration">
         <label>102: Reports for group 2</label>
         <description><![CDATA[
-Reports for group 2<br /> <h1>Overview</h1><p>1 -&gt; Battery Report<br /><br />2 -&gt; MultiSensor Report for the whole device<br /><br />4 -&gt; Meter Report for Watt for the whole device<br /><br />8 -&gt; Meter Report for kWh for the whole device<br /><br />256 -&gt; Meter Report for Watt for clamp 1<br /><br />512 -&gt; Meter Report for W</p>
+Reports for group 2<br /> <h1>Overview</h1><p>Same as 101<br /></p>
         ]]></description>
         <default>8</default>
         <limitToOptions>false</limitToOptions>
@@ -262,7 +262,7 @@ Reports for group 2<br /> <h1>Overview</h1><p>1 -&gt; Battery Report<br /><br />
       <parameter name="config_103_4" type="integer" groupName="configuration">
         <label>103: Reports for group 3</label>
         <description><![CDATA[
-Reports for group 3<br /> <h1>Overview</h1><p>1 -&gt; Battery Report<br /><br />2 -&gt; MultiSensor Report for the whole device<br /><br />4 -&gt; Meter Report for Watt for the whole device<br /><br />8 -&gt; Meter Report for kWh for the whole device<br /><br />256 -&gt; Meter Report for Watt for clamp 1<br /><br />512 -&gt; Meter Report for W</p>
+Reports for group 3<br /> <h1>Overview</h1><p>Same as 101<br /></p>
         ]]></description>
         <default>8</default>
         <limitToOptions>false</limitToOptions>
@@ -270,7 +270,10 @@ Reports for group 3<br /> <h1>Overview</h1><p>1 -&gt; Battery Report<br /><br />
 
       <parameter name="config_111_4" type="integer" groupName="configuration">
         <label>111: Interval to send out reports of group 1</label>
-        <default>720</default>
+        <description><![CDATA[
+<br /> <h1>Overview</h1><p><br /></p>
+        ]]></description>
+        <default>5</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
@@ -303,16 +306,6 @@ Reset all settings to factory defaults<br /> <h1>Overview</h1><p>If you upgrade 
       <!-- ASSOCIATION DEFINITIONS -->
       <parameter name="group_1" type="text" groupName="association" multiple="true">
         <label>1: Group 1</label>
-        <multipleLimit>5</multipleLimit>
-      </parameter>
-
-      <parameter name="group_2" type="text" groupName="association" multiple="true">
-        <label>2: Group 2</label>
-        <multipleLimit>5</multipleLimit>
-      </parameter>
-
-      <parameter name="group_3" type="text" groupName="association" multiple="true">
-        <label>3: Group 3</label>
         <multipleLimit>5</multipleLimit>
       </parameter>
 

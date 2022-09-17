@@ -2,7 +2,7 @@
 title: oh-sipclient - SIP Client
 component: oh-sipclient
 label: SIP Client
-description: Use SIP over WebSocket to perform calls
+description: Use SIP over WebSocket to start and answer calls
 source: https://github.com/openhab/openhab-webui/edit/main/bundles/org.openhab.ui/doc/components/oh-sipclient.md
 prev: /docs/ui/components/
 ---
@@ -13,13 +13,33 @@ prev: /docs/ui/components/
 ![](./images/oh-sipclient/header.jpg)
 -->
 
+<!-- GENERATED componentDescription -->
+SIP Client to start and answer SIP calls
+<!-- GENERATED /componentDescription -->
+
 [[toc]]
 
-<!-- Note: you can overwrite the definition-provided description and add your own intro/additional sections instead -->
-<!-- DO NOT REMOVE the following comments if you intend to keep the definition-provided description -->
-<!-- GENERATED componentDescription -->
-SIP Client to call and answer SIP calls
-<!-- GENERATED /componentDescription -->
+The `oh-sipclient` component allows to call and answer SIP calls using the [JsSIP](https://jssip.net) library.
+
+## Usage
+
+The color of the call icon depends on the state of the connection to the SIP server:
+- yellow: no connection yet, but `oh-sipclient` tries to establish the connection 
+- green: successfully connected to the SIP server, ready to perform calls
+
+![](./images/oh-sipclient/outgoing.gif)
+
+When the call button is green, a tap on it either directly starts a call or opens a popup to choose from the phonebook.
+As soon as you start an outgoing call, a hangup button will be displayed.
+The hangup button is coloured yellow, if the call has not been accepted yet.
+If the call has been accepted, the hangup button will become red.
+
+![](./images/oh-sipclient/incoming.gif)
+
+When a call is coming in, a green accept and a red decline button are displayed.
+If the call is accepted, a red hangup button is accepted.
+
+`oh-sipclient` also supports video calling, playing ringtone as well as ringback sounds and performing DTMF operations, e.g. for doorstations to open the door.
 
 ## Configuration
 
@@ -55,7 +75,7 @@ SIP Client to call and answer SIP calls
 </PropBlock>
 <PropBlock type="BOOLEAN" name="enableTones" label="Enable tones">
   <PropDescription>
-    Enable ringback and ring tone, might cause issues with your browser, so that your call fails
+    Enable ringback and ring tone. Not recommended for mobile browsers, might cause issues. Ring tone might only work after interaction with the webpage.
   </PropDescription>
 </PropBlock>
 <PropBlock type="BOOLEAN" name="hideCallerId" label="Hide caller id">
@@ -96,10 +116,12 @@ SIP Client to call and answer SIP calls
 
 <!-- GENERATED /props -->
 
-<!-- If applicable describe how properties are forwarded to a underlying component from Framework7, ECharts, etc.:
+<!-- If applicable describe how properties are forwarded to a underlying component from Framework7, ECharts, etc.: -->
 ### Inherited Properties
 
--->
+The `iconSize` property is forwarded to the `icon-size` property and the CSS `height` attribute of the [`f7-button`](https://framework7.io/vue/button).
+
+The `defaultVideoAspectRatio` property is forwarded to the CSS `aspect-ratio` attribute of the `video-container` class.
 
 <!-- If applicable describe the slots recognized by the component and what they represent:
 ### Slots
