@@ -17,4 +17,3 @@ This is the section of all other services
 ## openhab Cloud
 
 ## Basic UI
-

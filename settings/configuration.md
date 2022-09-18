@@ -22,4 +22,3 @@ Manage the physical layer
 ## User Interfaces Pages
 
 Design displays for user control & monitoring
-

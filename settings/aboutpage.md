@@ -54,4 +54,3 @@ The about page allows to configure some client related configuration
 # Reload
 
 Reload the web page to see the selected changes.
-

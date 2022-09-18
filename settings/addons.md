@@ -27,4 +27,3 @@ Community widgets & alternative frontends
 ## Other Add-Ons
 
 Systen integrations, persistence, voice & more
-
