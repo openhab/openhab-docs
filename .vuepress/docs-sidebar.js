@@ -78,6 +78,18 @@ module.exports = [
       ['configuration/migration/', 'Migration from openHAB 2']
     ]
   },
+    {
+      title: 'Settings',
+      collapsable: false,
+      children: [
+        'settings/aboutpage',
+        'settings/configuration',
+        ['settings/automations', 'Automation'],
+        'settings/addons',
+        'settings/services_system',
+        'settings/services_other',
+      ]
+    },
   {
     title: 'User Interface Guide',
     collapsable: false,
