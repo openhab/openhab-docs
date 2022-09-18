@@ -10,7 +10,7 @@ This is the section that allows openHAB to be extended via add
 {::options toc_levels="2..4"/}
 
 - TOC
-  {:toc}
+  [[toc]]
 
 ## Bindings
 

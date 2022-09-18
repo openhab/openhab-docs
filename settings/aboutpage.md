@@ -10,7 +10,7 @@ The about page allows to configure some client related configuration
 {::options toc_levels="2..4"/}
 
 - TOC
-  {:toc}
+  [[toc]]
 
 ## Top Section
 

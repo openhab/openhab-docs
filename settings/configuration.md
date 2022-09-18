@@ -7,10 +7,9 @@ title:  Configuration
 
 This is the section for the configuration of things, items and the openHAP pages resided
 
-{::options toc_levels="2..4"/}
 
 - TOC
-  {:toc}
+  [[toc]]
 
 ## Things
 

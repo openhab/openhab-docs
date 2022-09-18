@@ -10,7 +10,7 @@ This is the section
 {::options toc_levels="2..4"/}
 
 - TOC
-  {:toc}
+  [[toc]]
 
 ## Rules
 
