@@ -7,10 +7,9 @@ title:  System Services
 
 This is the section that of the system services
 
-{::options toc_levels="2..4"/}
 
 - TOC
-  {:toc}
+  [[toc]]
 
 ## Regional Settings
 

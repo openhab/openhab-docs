@@ -7,10 +7,9 @@ title:  Other Services
 
 This is the section of all other services
 
-{::options toc_levels="2..4"/}
 
 - TOC
-  {:toc}
+  [[toc]]
 
 ## Rule Voice Interpreter
 
