@@ -49,14 +49,9 @@ The about page allows to configure some client related configuration
 - Disable card expansion animations: Disables the animations when expanding a widget card
 - Disable page transition animations: Disables the transitions when switching from one page to the other
 - Enable Web Audio sink support
-  - **TODO** : see https://github.com/openhab/openhab-webui/pull/1422
+  - **TODO** : see [https://github.com/openhab/openhab-webui/pull/1422](https://github.com/openhab/openhab-webui/pull/1422)
 
 # Reload
 
 Reload the web page to see the selected changes.
-
-
-
-
-
 

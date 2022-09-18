@@ -7,7 +7,6 @@ title:  Other Services
 
 This is the section of all other services
 
-
 - TOC
   [[toc]]
 
@@ -18,5 +17,4 @@ This is the section of all other services
 ## openhab Cloud
 
 ## Basic UI
-
 
