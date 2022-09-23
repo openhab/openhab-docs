@@ -179,7 +179,7 @@ config:
   invertText: false
 ```
 
-Place your custom imge files in `$OPENHAB_CONF/html`.
+Place your custom image files in `$OPENHAB_CONF/html`.
 Once they are there, you can use the relative path `/static/image.name` as the URL to the image.
 For example, I placed the file `garage.jpg` in `/etc/openhab/html` and referenced it as you see in the YAML above.
 This is how you use a custom image as the background of a card.
