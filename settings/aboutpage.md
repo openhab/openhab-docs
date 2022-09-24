@@ -5,7 +5,7 @@ title:  Help & About Page
 
 # Help & About Page
 
-The about page allows to configure some client related configuration
+The about page shows general information of your openHAB configuration and  allows to configure some client related configuration
 
 {::options toc_levels="2..4"/}
 
@@ -14,43 +14,110 @@ The about page allows to configure some client related configuration
 
 ## Top Section
 
-- Version
-- Links to the openHAB Website, the openHAB Documention and the Community Forum
+![img.png](images/about-top-section.png)
+
+- Version: shows the currently installed version of openHAB
+- Links to the official openHAB Website, the openHAB Documentation and the Community Forum
 
 ## Technical Information
 
-- Configuration folder
-- User data folder
-- Logs folder
-- Operating System
-- Java Runtime
-  - View Details
+This section is collapsed by default and can be opened by clicking on it which then reveals the
+
+- Configuration folder on the server
+- User data folder on the server
+- Logs folder on the server
+- Operating System openHAB is running on
+- Java Runtime openHAB is running on
+- number of processors and memory
+
+Clicking on View Details opens up a popup windows that contains very detailed information like
+
+- Runtime information
+- Locale
+- System information including memory information
+- A list of all installed bindings
+- Client information including device information, client settings (see also the below section), screen information, theme, user agent
+
+The content can be easily copied with the copy button on the top to provide it as additional information when asking questions in the community.
 
 ## Appearance (for this device only)
 
-- Theme
-![Theme](theme-selection.png)
+This section allows the setting for this device only regarding the UI of that device to allow having different appearance settings _per_ device.
+
+- Theme: Selects the theme for that device
+![theme-selection.png](images/theme-selection.png)
   - Auto: tries to detect the client type
   - Android
   - iOS
   - Destktop
 - Dark mode setting
-![Dark-Mode](dark-mode.png)
-  - Auto: **TODO**
+![ark-mode.png](images/dark-mode.png)
+  - Auto: uses the default mode
   - Light-Mode
   - Dark-Mode
-- Navigation bars style
-![Navigation bars style](navbar-style.png)
+- Navigation bars style: inverts the colors in the navigation bar
+![navbar-style.png](images/navbar-style.png)
 
 # Miscellaneous settings
 
-- Simple navigation bar on home page: **TODO** What is the navigation bar
-- Standard home page background color: **TODO**
+- Simple navigation bar on home page: When switching it on, it means the navigation bar will look the same even whether you're at the top of the page or not - you won't have the alternate look with the date.
+The first image depicts the normal setting (off), the second image shows it switched off
+![simple-nav-off.png](images/simple-nav-off.png) ![simple-nav-on.png](images/simple-nav-on.png)
+- Standard home page background color: This only relates to the light color scheme. The background color will be the same as the regular pages you can show from e.g. the sidebar, which is a kind of gray instead of white.
+The first image depicts the normal white setting (off), the second image shows it switched off with the gray setting
+![bg-white-setting.png](images/bg-white-setting.png) ![bg-gray-setting.png](images/bg-gray-setting.png)
 - Disable card expansion animations: Disables the animations when expanding a widget card
 - Disable page transition animations: Disables the transitions when switching from one page to the other
-- Enable Web Audio sink support
-  - **TODO** : see [https://github.com/openhab/openhab-webui/pull/1422](https://github.com/openhab/openhab-webui/pull/1422)
+
+# Enable Web Audio sink support
+
+- This setting is also part of the miscellaneous settings.
+- The intent of that option is to allow sending audio to that device, e.g. if that device is a tabled that is hanging on the wall in a room and a specific audio should be sent to that device for notification purposes.
+- To activate audio output that particular device, switch on this option on this option.
+In case you want to activate audio on multiple devices, each device needs to be activated by opening the about page on the device.
+Technically, this information (and all the other miscellaneous settings) are stored in the local storage of the browsers.
+  - For me information [see here](https://github.com/openhab/openhab-webui/pull/1422)
+
+To test if it works by playing some static content that comes with openHAB in the /sounds dir using a console command.
+Use [openHABs console](administration/console.html#using-the-console) to enter the following command:
+
+```text
+openhab> audio play webaudio barking.mp3
+```
+
+If you have a dog that gets triggered by barking you may opt for playing doorbell.mp3 instead. If you play doorbell.mp3 your dog will then probably play its own barking audio sound. 😉
+Note that most browsers block web pages from playing audio/video automatically nowadays.
+
+These are some useful actions available to rules in which you can specify webaudio as sink, see:
+
+- [playSound](/docs/configuration/multimedia.html#actions-2)
+
+```text
+playSound("webaudio", "barking.mp3")
+```
+
+- [say](/docs/configuration/multimedia.html#actions-3)
+
+```text
+say("Hello world!", "voicerss:enUS", "webaudio")
+```
+
+You can also configure webaudio as sink when creating rules in the UI:
+
+![play-rule.png](images/play-rule.png)
+
+or using it in a blockly rule:
+
+![webaudio-blockly.png](images/webaudio-blockly.png)
+
+It is important to understand that you cannot address one particular device.
+When you play a sound on "web audio", it will be played on each device where "web audio" is activated.
+
+If you really like webaudio, you can also make it the default sink in the "Audio" settings - see [Settings->Audio](/docs/settings/services-system.html#Audio).
+Then you can omit the webaudio sink ID from commands/actions.
+
+![settings-audio.png](images/settings-audio.png)
 
 # Reload
 
-Reload the web page to see the selected changes.
+Reload the web page to reflect the selected changes.
