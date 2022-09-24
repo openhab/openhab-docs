@@ -67,6 +67,7 @@ The first image depicts the normal setting (off), the second image shows it swit
 The first image depicts the normal white setting (off), the second image shows it switched off with the gray setting.
 
 ![bg-white-setting.png](images/bg-white-setting.png) ![bg-gray-setting.png](images/bg-gray-setting.png)
+
 - Disable card expansion animations: Disables the animations when expanding a widget card.
 - Disable page transition animations: Disables the transitions when switching from one page to the other.
 
