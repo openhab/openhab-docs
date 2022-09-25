@@ -52,13 +52,12 @@ This section allows to have different appearance settings _per_ device.
 
 ![theme-selection.png](images/theme-selection.png)
 
-  - **Dark mode** setting
-    - Auto: uses the default mode
-    - Light-Mode
-    - Dark-Mode
+- **Dark mode** setting
+  - Auto: uses the default mode
+  - Light-Mode
+  - Dark-Mode
 
 ![dark-mode.png](images/dark-mode.png)
-
 
 - **Navigation bars style**: inverts the colors in the navigation bar
 
