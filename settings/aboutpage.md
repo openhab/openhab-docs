@@ -44,32 +44,40 @@ The content can be easily copied with the copy button on the top to provide it a
 
 This section allows to have different appearance settings _per_ device.
 
-- Theme: Selects the theme for that device
-![theme-selection.png](images/theme-selection.png)
+- **Theme**: Selects the theme for that device
   - Auto: tries to detect the client type
   - Android
   - iOS
   - Destktop
-- Dark mode setting
-![ark-mode.png](images/dark-mode.png)
-  - Auto: uses the default mode
-  - Light-Mode
-  - Dark-Mode
-- Navigation bars style: inverts the colors in the navigation bar
+
+![theme-selection.png](images/theme-selection.png)
+
+  - **Dark mode** setting
+    - Auto: uses the default mode
+    - Light-Mode
+    - Dark-Mode
+
+![dark-mode.png](images/dark-mode.png)
+
+
+- **Navigation bars style**: inverts the colors in the navigation bar
+
 ![navbar-style.png](images/navbar-style.png)
 
 # Miscellaneous settings
 
-- Simple navigation bar on home page: When switching it on, it means the navigation bar will look the same even whether you're at the top of the page or not - you won't have the alternate look with the date.
+- **Simple navigation bar on home page**: When switching it on, it means the navigation bar will look the same even whether you're at the top of the page or not - you won't have the alternate look with the date.
 The first image depicts the normal setting (off), the second image shows it switched off
+
 ![simple-nav-off.png](images/simple-nav-off.png) ![simple-nav-on.png](images/simple-nav-on.png)
--Standard home page background color: This only relates to the light color scheme. The background color will be the same as the regular pages you can show from e.g. the sidebar, which is a kind of gray instead of white.
+
+- **Standard home page background color**: This only relates to the light color scheme. The background color will be the same as the regular pages you can show from e.g. the sidebar, which is a kind of gray instead of white.
 The first image depicts the normal white setting (off), the second image shows it switched off with the gray setting.
 
 ![bg-white-setting.png](images/bg-white-setting.png) ![bg-gray-setting.png](images/bg-gray-setting.png)
 
-- Disable card expansion animations: Disables the animations when expanding a widget card.
-- Disable page transition animations: Disables the transitions when switching from one page to the other.
+- **Disable card expansion animations**: Disables the animations when expanding a widget card.
+- **Disable page transition animations**: Disables the transitions when switching from one page to the other.
 
 # Enable Web Audio sink support
 
