@@ -140,6 +140,7 @@ Channels available for each appliance type are listed below.
 | phase               | String               | Read       | Current phase of the program running on the appliance               |
 | rawPhase            | Number               | Read       | Current phase of the program running on the appliance as raw number |
 | start               | DateTime             | Read       | Programmed start time of the program                                |
+| end                 | DateTime             | Read       | End time of the program (programmed or running)                     |
 | duration            | DateTime             | Read       | Duration of the program running on the appliance                    |
 | elapsed             | DateTime             | Read       | Time elapsed in the program running on the appliance                |
 | finish              | DateTime             | Read       | Time to finish the program running on the appliance                 |
@@ -252,6 +253,7 @@ Channels available for each appliance type are listed below.
 | phase               | String               | Read       | Current phase of the program running on the appliance               |
 | rawPhase            | Number               | Read       | Current phase of the program running on the appliance as raw number |
 | start               | DateTime             | Read       | Programmed start time of the program                                |
+| end                 | DateTime             | Read       | End time of the program (programmed or running)                     |
 | duration            | DateTime             | Read       | Duration of the program running on the appliance                    |
 | elapsed             | DateTime             | Read       | Time elapsed in the program running on the appliance                |
 | finish              | DateTime             | Read       | Time to finish the program running on the appliance                 |
@@ -294,6 +296,7 @@ See oven.
 | phase               | String               | Read       | Current phase of the program running on the appliance               |
 | rawPhase            | Number               | Read       | Current phase of the program running on the appliance as raw number |
 | start               | DateTime             | Read       | Programmed start time of the program                                |
+| end                 | DateTime             | Read       | End time of the program (programmed or running)                     |
 | duration            | DateTime             | Read       | Duration of the program running on the appliance                    |
 | elapsed             | DateTime             | Read       | Time elapsed in the program running on the appliance                |
 | finish              | DateTime             | Read       | Time to finish the program running on the appliance                 |
@@ -358,6 +361,7 @@ See oven.
 | phase               | String               | Read       | Current phase of the program running on the appliance               |
 | rawPhase            | Number               | Read       | Current phase of the program running on the appliance as raw number |
 | start               | DateTime             | Read       | Programmed start time of the program                                |
+| end                 | DateTime             | Read       | End time of the program (programmed or running)                     |
 | duration            | DateTime             | Read       | Duration of the program running on the appliance                    |
 | elapsed             | DateTime             | Read       | Time elapsed in the program running on the appliance                |
 | finish              | DateTime             | Read       | Time to finish the program running on the appliance                 |

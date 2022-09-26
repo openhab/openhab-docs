@@ -8,7 +8,7 @@
   <thing-type id="fibaro_fggc001_00_000" listed="false">
     <label>FGGC001 Fibaro Swipe Scene Controller</label>
     <description><![CDATA[
-Fibaro Swipe Scene Controller<br /> <h1>Overview</h1><p>FIBARO Swipe is a revolutionary battery gesture control pad that allows you to control devices in your Z-Wave network without actually touching anything. Swipe up, down, left, right, make a circular gesture and use sequences to get full and intuitive control of your home. </p> <br /> <h2>Inclusion Information</h2><p>1. Place the Swipe within the direct range of your Z-Wave controller.<br />2. Set the main controller in (security/non-security) add mode (see the controller’s manual).<br />3. Move and hold your hand close to the center of the pad.<br />4. If the device is battery powered, high pitched beep will signal exiting the Standby Mode.<br />5. Loud sound sequence will confrm entering the menu, keep holding your hand.<br />6. After hearing two short beeps (green indicator colour), withdraw the hand and perform swiping up gesture to confrm selection (two beeps will confrm validity).<br />7. Wait for the adding process to end.<br />8. Successful adding will be confrmed by the Z-Wave controller’s message and 3 short beeps (green visual indicator colour).</p> <br /> <h2>Exclusion Information</h2><p>1. Place the Swipe within the direct range of your Z-Wave controller.<br />2. Set the main controller in remove mode (see the controller’s manual).<br />3. Move and hold your hand close to the center of the pad.<br />4. If the device is battery powered, high pitched beep will signal exiting the Standby Mode.<br />5. Loud sound sequence will confrm entering the menu, keep holding your hand.<br />6. After hearing two short beeps (green indicator colour), withdraw the hand and perform swiping up gesture to confrm selection (two beeps will confrm validity).<br />7. Wait for the removing process to end.<br />8. Successful removing will be confrmed by the Z-Wave controller’s message and sequence of 2 short beeps, pause, 1 short beep (red visual indicator colour).</p> <br /> <h2>Wakeup Information</h2><p>Use 1st menu position to wake up the device or click the button on the back of the device once. </p>
+Fibaro Swipe Scene Controller<br /> <h1>Overview</h1><p>FIBARO Swipe is a revolutionary battery gesture control pad that allows you to control devices in your Z-Wave network without actually touching anything. Swipe up, down, left, right, make a circular gesture and use sequences to get full and intuitive control of your home. </p> <br /> <h2>Inclusion Information</h2><ol><li>Place the Swipe within the direct range of your Z-Wave controller.</li><li>Set the main controller in (security/non-security) add mode (see the controller’s manual).</li><li>Move and hold your hand close to the center of the pad.</li><li>If the device is battery powered, high pitched beep will signal exiting the Standby Mode.</li><li>Loud sound sequence will confirm entering the menu, keep holding your hand.</li><li>After hearing two short beeps (green indicator colour), withdraw the hand and perform swiping up gesture to confirm selection (two beeps will confrm validity).</li><li>Wait for the adding process to end.</li><li>Successful adding will be confirmed by the Z-Wave controller’s message and 3 short beeps (green visual indicator colour).</li></ol> <br /> <h2>Exclusion Information</h2><ol><li>Place the Swipe within the direct range of your Z-Wave controller.</li><li>Set the main controller in remove mode (see the controller’s manual).</li><li>Move and hold your hand close to the center of the pad.</li><li>If the device is battery powered, high pitched beep will signal exiting the Standby Mode.</li><li>Loud sound sequence will confirm entering the menu, keep holding your hand.</li><li>After hearing two short beeps (green indicator colour), withdraw the hand and perform swiping up gesture to confirm selection (two beeps will confirm validity).</li><li>Wait for the removing process to end.</li><li>Successful removing will be confirmed by the Z-Wave controller’s message and sequence of 2 short beeps, pause, 1 short beep (red visual indicator colour).</li></ol> <br /> <h2>Wakeup Information</h2><p>Use 1st menu position to wake up the device or click the button on the back of the device once. </p>
     ]]></description>
     <category>RemoteControl</category>
 
@@ -113,6 +113,7 @@ Check if the USB pwr supply is connected, update pwr mode<br /> <h1>Overview</h1
           <option value="0">Powering mode is not updated</option>
           <option value="1">Time interval (in minutes)</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_6_1" type="integer" groupName="configuration">
@@ -158,6 +159,7 @@ Defines which actions result in sending scenes to 1st “Lifeline” group.<br /
           <option value="32">Scenes for CCW circular gesture enabled</option>
           <option value="63">All commands enabled</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_11_1" type="integer" groupName="configuration">
@@ -173,6 +175,7 @@ Define sent command for specified association groups.<br /> <h1>Overview</h1><p>
           <option value="8">5th group "Flick RIGHT” sent as secure</option>
           <option value="16">6th group "Circular AirWheel” sent as secure</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_12_1" type="integer" groupName="configuration">
@@ -187,6 +190,7 @@ Choose control mode for 2nd-5th groups and scenes.<br /> <h1>Overview</h1><p>Par
           <option value="4">Toggle Mode enabled for 4th association group</option>
           <option value="8">Toggle Mode enabled for 5th association group</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_13_2" type="integer" groupName="configuration">

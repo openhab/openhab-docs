@@ -113,6 +113,7 @@ Applies only when the Color Transition Style is set to Fade Out/In<br /> <h1>Ove
         <options>
           <option value="0">Constant Speed</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_37_4_000000E0" type="integer" groupName="configuration">

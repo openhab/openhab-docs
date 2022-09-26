@@ -205,6 +205,12 @@ How the switch reports paddle control<br /> <h1>Overview</h1><p>Choose how the s
         <multipleLimit>5</multipleLimit>
       </parameter>
 
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: Group 2</label>
+        <description>Send BASIC SET when operated manually</description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
       <!-- STATIC DEFINITIONS -->
       <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
         <label>Node ID</label>
