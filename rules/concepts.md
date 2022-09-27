@@ -199,3 +199,38 @@ Available types of conditions include:
 
 The script condition is the most universal one, as you can choose one of the many available script/rule languages to build any condition you can think of.
 The only restriction is a script condition's last executed line of code must result in a boolean (i.e. `true` or `false`).
+
+## Script Actions
+
+<!--
+What are they, where are they supported, etc.
+Expand on the content in the Getting Started Tutorial
+-->
+
+## Available Values
+
+<!--
+What gets passed to the rule when it's triggered
+-->
+
+## Rule Templates
+
+<!--
+Where to find them, how to install and configure them
+Expand on content in the Getting Started Tutorial
+-->
+
+## Helper Libraries
+
+<!--
+What are they, where to find them
+-->
+
+## Comprehensive Examples
+
+<!--
+Use tabs and show most of the popular languages
+Use tabs and show most of the popular languages
+
+How to create a scene using a rule?
+-->
