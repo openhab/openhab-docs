@@ -22,7 +22,7 @@ Rules can also remind you of things, for example, that you opened the window hou
 openHAB can send a notification to your phone.
 
 Most users coming from commercial smart home systems will know the concept of "Scenes".
-These "Scenes", which are for example supported in Apple's HomeKit or Philips Hue, allow us users to set the state of multiple devices with a single action.
+These *Scenes*, which are for example supported in Apple's HomeKit or Philips Hue, allow us users to set the state of multiple devices with a single action.
 In openHAB, there is nothing called "Scenes", but you can easily use rules to build the scenes functionality.
 
 ## Parts of a Rule
@@ -225,22 +225,47 @@ These allow you to run scripts written in one of the available automation/rule l
 
 ## Available Values
 
-<!--
-What gets passed to the rule when it's triggered
--->
+When a rule is triggered, several information about the event that triggered the rule is provided to the rule.
+There are many cases in which it is useful to know what triggered your rule, e.g. you have an Item group as trigger and you need to know which Group member triggered the rule.
+
+The availablity of those values depends on the rule engine, but you can generally expect at least the following information (depending on the trigger):
+
+- The name of triggering Item.
+- The command that the triggering Item received.
+- The state the Item got updated by.
+
+For further information which values are available and how to access them, refer to the documentation of the according rule engine.
 
 ## Rule Templates
 
-<!--
-Where to find them, how to install and configure them
-Expand on content in the Getting Started Tutorial
--->
+At some point, when basic UI rules are not be sophisticated enough to reach your goal, rule templates can help.
+Someone may have already written the rule and provides it as a template at the community marketplace.
+
+To access the rule templates, visit the web UI and navigate: *Settings* -> *Add-Ons* -> *Automation* -> Scroll down to the *Rule Templates* section.
+Click on a rule template to review it's documentation, open the community thread and install the template to your system.
+Check the template's documentation for dependencies and install them!
+Otherwise the rule won't work.
+
+To instantiate a rule template, navigate to Rules and click the blue `+` icon.
+Fill out the rule's metadata as usual and select a installed rule template from the *Create from Template* section.
+Choose the rule template, and fill out the template configuration.
+
+Once a rule is created, it is seperated from it's templated and can be modified individually.
+To update rule from the template, you have to recreate the rule.
+
+If you want to create your own rule templates, visit the [Marketplace](https://community.openhab.org/c/marketplace/rule-templates/74) at the community forum.
 
 ## Helper Libraries
 
-<!--
-What are they, where to find them
--->
+Helper Libraries simplify the interaction with the openHAB runtime by providing convenient access to common functionality, and provide type conversion from Java types to native types of the chosen rule/script language.
+By providing this functionality, they help avoiding type errors and heavily reduce the amount of boilerplate code required to import openHAB classes.
+
+There are official helper libraries developed and maintained by the openHAB developers as well as community developed helper libraries.
+Some rule engines have no helper libraries at all.
+
+If there is an official helper library, it will be mentioned and used in the documentation of the rule engine, e.g. [JS Scripting](/addons/automation/jsscripting) with the [openhab-js](https://github.com/openhab/openhab-js) library.
+For unofficial helper libraries, you may search in the [community forum](https://community.openhab.org/search) for helper libraries for your rule language.
+An example for an unofficial helper library are [Ivan's helper libraries for Jython (community forum)](https://community.openhab.org/t/ivan-s-helper-libraries-oh3-python-javascript/116458).
 
 ## Comprehensive Examples
 
