@@ -204,12 +204,24 @@ Available types of conditions include:
 The script condition is the most universal one, as you can choose one of the many available script/rule languages to build any condition you can think of.
 The only restriction is a script condition's last executed line of code must result in a boolean (i.e. `true` or `false`).
 
+## Scripts
+
+Unfortunately the term "Script" is overloaded in openHAB, and has multiple meanings based on the context:
+
+- A UI rule consisting only of a single Script Action with the tag "Script".
+  This can be used to reuse code and logic across multiple rules.
+- In text based rules, a script is a file that is processed by a script engine, e.g. [JS Scripting](/addons/automation/jsscripting/).
+  Those scripts can be used to create (multiple) rules, or those are loaded by other script files a libraries.
+- A script file that is executed on the command line with a script engine, e.g. `bash`, by using `executeCommandLine`.
+- A special piece of Rules DSL code in the `$OH_CONF/scripts` folder that is called from other rules using `callScript`.
+
+The rule docs mainly refer to the first two meanings when talking about scripts.
+
 ## Script Actions
 
-<!--
-What are they, where are they supported, etc.
-Expand on the content in the Getting Started Tutorial
--->
+Script Actions are a special type of action only available in UI rules.
+
+These allow you to run scripts written in one of the available automation/rule languages, e.g. JavaScript, Rules DSL, and Python.
 
 ## Available Values
 
