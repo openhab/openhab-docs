@@ -21,6 +21,10 @@ No problem, openHAB can do that for you too.
 Rules can also remind you of things, for example, that you opened the window hours ago and forgot that it is open?
 openHAB can send a notification to your phone.
 
+Most users coming from commercial smart home systems will know the concept of "Scenes".
+These "Scenes", which are for example supported in Apple's HomeKit or Philips Hue, allow us users to set the state of multiple devices with a single action.
+In openHAB, there is nothing called "Scenes", but you can easily use rules to build the scenes functionality.
+
 ## Parts of a Rule
 
 These rules take the high level form of *When __t__ happens, if __c__ then do __a__*,
