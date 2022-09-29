@@ -70,7 +70,8 @@ The first image depicts the normal setting (off), the second image shows it swit
 
 ![simple-nav-off.png](images/simple-nav-off.png) ![simple-nav-on.png](images/simple-nav-on.png)
 
-- **Standard home page background color**: This only relates to the light color scheme. The background color will be the same as the regular pages you can show from e.g. the sidebar, which is a kind of gray instead of white.
+- **Standard home page background color**: This only relates to the light color scheme.
+The background color will be the same as the regular pages you can show from e.g. the sidebar, which is a kind of gray instead of white.
 The first image depicts the normal white setting (off), the second image shows it switched off with the gray setting.
 
 ![bg-white-setting.png](images/bg-white-setting.png) ![bg-gray-setting.png](images/bg-gray-setting.png)
