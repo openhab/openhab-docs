@@ -89,7 +89,8 @@ def process_main_docs(docs_source_dir)
         puts " -> #{file}"
         process_file("#{docs_source_dir}/settings", file, "docs/settings", "#{$docs_repo_root}/settings/#{file}")
     }
-    # TODO => Add images logic if necessary
+    puts " -> images"
+    FileUtils.cp_r("#{docs_source_dir}/settings/images", "docs/settings/images")
 
     puts ">>> Migrating the Migration Tutorial section"
 
