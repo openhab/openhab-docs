@@ -95,7 +95,8 @@ Use [openHABs console](administration/console.html#using-the-console) to enter t
 openhab> audio play webaudio barking.mp3
 ```
 
-If you have a dog that gets triggered by barking you may opt for playing doorbell.mp3 instead. If you play doorbell.mp3 your dog will then probably play its own barking audio sound. 😉
+If you have a dog that gets triggered by barking you may opt for playing doorbell.mp3 instead.
+If you play doorbell.mp3 your dog will then probably play its own barking audio sound. 😉
 Note that most browsers block web pages from playing audio/video automatically nowadays (though some browsers have a setting to activate automatic play)
 
 Here are some useful actions available to rules in which you can specify webaudio as sink, see:
