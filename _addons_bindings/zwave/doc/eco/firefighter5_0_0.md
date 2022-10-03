@@ -141,7 +141,6 @@ The following table summarises the channels available for the FF-ZWAVE5-ECO -:
 | Channel Name | Channel ID | Channel Type | Category | Item Type |
 |--------------|------------|--------------|----------|-----------|
 | Binary Sensor | sensor_binary | sensor_binary |  | Switch | 
-| Temperature | sensor_temperature | sensor_temperature | Temperature | Number:Temperature | 
 | Sensor (temperature) | sensor_temperature | sensor_temperature | Temperature | Number:Temperature | 
 | Sensor (general) | sensor_general | sensor_general |  | Number | 
 | Electric meter (watts) | meter_watts | meter_watts | Energy | Number | 
@@ -164,14 +163,9 @@ The following state translation is provided for this channel to the ```Switch```
 | ON | Triggered |
 | OFF | Untriggered |
 
-### Temperature
+### Sensor (temperature)
 The FireFighter sensor has a temperature sensor built into the device and can be queried on a Wake Up Notification with a Multi-Level Sensor Get command. The sensor supports reporting both in Celsius and Fahrenheit.
 
-Indicates the current temperature.
-
-The ```sensor_temperature``` channel is of type ```sensor_temperature``` and supports the ```Number:Temperature``` item and is in the ```Temperature``` category.
-
-### Sensor (temperature)
 Indicates the current temperature.
 
 The ```sensor_temperature``` channel is of type ```sensor_temperature``` and supports the ```Number:Temperature``` item and is in the ```Temperature``` category.

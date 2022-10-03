@@ -27,6 +27,54 @@ Scene Capable Wall Dimmer Switch<br /> <h1>Overview</h1><p>HS-WX300 is a Z-Wave 
           <property name="binding:*:DecimalType">COMMAND_CLASS_CENTRAL_SCENE</property>
         </properties>
       </channel>
+      <channel id="config_decimal_param 21" typeId="config_decimal">
+        <label>LED 1 (bottom) Status Color</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_CONFIGURATION;parameter = 21</property>
+        </properties>
+      </channel>
+      <channel id="config_decimal_param 22" typeId="config_decimal">
+        <label>LED 2 Status Color</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_CONFIGURATION;parameter = 22</property>
+        </properties>
+      </channel>
+      <channel id="config_decimal_param 23" typeId="config_decimal">
+        <label>LED 3 Status Color</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_CONFIGURATION;parameter = 23</property>
+        </properties>
+      </channel>
+      <channel id="config_decimal_param 24" typeId="config_decimal">
+        <label>LED 4 Status Color</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_CONFIGURATION;parameter = 24</property>
+        </properties>
+      </channel>
+      <channel id="config_decimal_param 25" typeId="config_decimal">
+        <label>LED 5 Status Color</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_CONFIGURATION;parameter = 25</property>
+        </properties>
+      </channel>
+      <channel id="config_decimal_param 26" typeId="config_decimal">
+        <label>LED 6 Status Color</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_CONFIGURATION;parameter = 26</property>
+        </properties>
+      </channel>
+      <channel id="config_decimal_param 27" typeId="config_decimal">
+        <label>LED 7 Status Color</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_CONFIGURATION;parameter = 27</property>
+        </properties>
+      </channel>
+      <channel id="config_decimal_param 13" typeId="config_decimal">
+        <label>LED Status Mode</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_CONFIGURATION;parameter = 13</property>
+        </properties>
+      </channel>
     </channels>
 
     <!-- DEVICE PROPERTY DEFINITIONS -->
@@ -56,26 +104,26 @@ Scene Capable Wall Dimmer Switch<br /> <h1>Overview</h1><p>HS-WX300 is a Z-Wave 
       <!-- PARAMETER DEFINITIONS -->
       <parameter name="config_3_1" type="integer" groupName="configuration">
         <label>3: Bottom LED Operation</label>
-        <description>Sets bottom LED operation (in normal mode)</description>
+        <description><![CDATA[
+Sets bottom LED operation (in normal mode)<br /> <h1>Overview</h1><p>Sets bottom LED operation (in normal mode)</p>
+        ]]></description>
         <default>1</default>
         <options>
           <option value="0">Bottom LED ON if load is OFF</option>
           <option value="1">Bottom LED OFF if load is OFF</option>
         </options>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_4_1" type="integer" groupName="configuration">
         <label>4: Orientation</label>
         <description><![CDATA[
-Sets paddle load orientation<br /> <h1>Overview</h1><p><br /></p>
+Sets paddle load orientation<br /> <h1>Overview</h1><p>Sets paddle’s load orientation</p>
         ]]></description>
         <default>0</default>
         <options>
           <option value="0">Top of Paddle turns load ON</option>
           <option value="1">Bottom of Paddle turns load ON</option>
         </options>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_5_1" type="integer" groupName="configuration">

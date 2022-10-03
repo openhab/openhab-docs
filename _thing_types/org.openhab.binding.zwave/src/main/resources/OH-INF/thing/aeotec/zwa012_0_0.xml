@@ -50,7 +50,7 @@ Door/Window Sensor 7 Pro<br /> <h1>Overview</h1><p>Aeotec Door / Window Sensor 7
       <property name="vendor">Aeotec Limited</property>
       <property name="modelId">ZWA012</property>
       <property name="manufacturerId">0371</property>
-      <property name="manufacturerRef">0002:000C,0102:000C</property>
+      <property name="manufacturerRef">0002:000C,0102:000C,0202:000C</property>
       <property name="dbReference">1390</property>
       <property name="defaultAssociations">1</property>
     </properties>

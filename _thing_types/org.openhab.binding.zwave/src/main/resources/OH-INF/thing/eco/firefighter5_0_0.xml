@@ -21,12 +21,6 @@ Firefighter Audio Detector<br /> <h1>Overview</h1><p><strong>Overview:</strong><
         </properties>
       </channel>
       <channel id="sensor_temperature" typeId="sensor_temperature">
-        <label>Temperature</label>
-        <properties>
-          <property name="binding:*:QuantityType">COMMAND_CLASS_SENSOR_MULTILEVEL;type=TARGET_TEMPERATURE</property>
-        </properties>
-      </channel>
-      <channel id="sensor_temperature" typeId="sensor_temperature">
         <label>Sensor (temperature)</label>
         <properties>
           <property name="binding:*:QuantityType">COMMAND_CLASS_SENSOR_MULTILEVEL;type=TEMPERATURE</property>
