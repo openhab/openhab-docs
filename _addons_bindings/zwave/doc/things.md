@@ -899,6 +899,7 @@ and links to more detailed information about each thing.
 | Teptron AB | [MoveZ](teptron/movez_0_0.md) |  | ```teptron_movez_00_000``` | Blinds |
 | ThermoFloor | [HeatIt ZDim](thermofloor/019b_0_0.md) |  | ```thermofloor_019b_00_000``` | Wall Switch |
 | ThermoFloor | [HEATIT Z-RELAY](thermofloor/heatitzrelay_0_0.md) |  | ```thermofloor_heatitzrelay_00_000``` | Power Outlet |
+| ThermoFloor | [Heatit ZM Single Relay](thermofloor/zmrelay_0_0.md) |  | ```thermofloor_zmrelay_00_000``` | Power Outlet |
 | ThermoFloor | [TF016](thermofloor/tf016_0_0.md) | 1.7 | ```thermofloor_tf016_00_000``` | HVAC |
 | ThermoFloor | [TF016](thermofloor/tf016_1_8.md) | 1.8 to 1.91 | ```thermofloor_tf016_01_008``` | HVAC |
 | ThermoFloor | [TF016](thermofloor/tf016_1_92.md) | 1.92 | ```thermofloor_tf016_01_092``` | HVAC |
