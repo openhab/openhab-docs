@@ -58,7 +58,7 @@ HomeKit integration supports following accessory types:
 
 ## Quick start
 
-- install homekit binding via UI
+- install homekit addon via UI
   
 - add metadata to an existing item (see [UI based configuration](#UI-based-Configuration))
   
