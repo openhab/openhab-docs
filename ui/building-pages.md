@@ -156,7 +156,7 @@ Expressions are string literals beginning with the symbol `=` and everything aft
 - `dayjs` to build instances of the [day.js library](https://day.js.org/docs/en/parse/now) that you can use to parse or manipulate date & time
 - `theme` which holds the current theme: `ios`, `md` or `aurora`
 - `themeOptions` and `device` allow to use the relevant objects that you can see in the About page, Technical information, View details, under `clientInfo`
-- `screen` allows to get the width and the heigt (in pixels) available for the content of the current page. Popups are not supported. It's recommended to use [CSS `calc()`](https://developer.mozilla.org/en-US/docs/Web/CSS/calc?retiredLocale=de) for dynamic positioning and styling.
+- `screen` allows to get the width and the heigt (in pixels) available for the content of the current page. Popups are not supported. It's recommended to use CSS [`calc()`](#dynamic-styling--positioning-using-css-calc) for dynamic positioning and styling.
 
 Expressions are particularly useful in cases where one wants to combine the states of more than one Item, or use the state of more than one Item in a single widget element.
 For example, the icon of an Item can be based on the state of a different Item.
@@ -381,6 +381,24 @@ These resources will help you with Flexbox and Grid:
 - [justify-content "Play it"](https://www.w3schools.com/cssref/playit.asp?filename=playcss_justify-content&preval=flex-start) and others found in the reference
 - [A Complete Guide to Grid](https://css-tricks.com/snippets/css/complete-guide-grid/)
 - [Grid Tutorial on W3Schools](https://www.w3schools.com/css/css_grid.asp)
+
+### Dynamic Styling & Positioning using CSS `calc()`
+
+You can dynamically style and position elements by calculating their CSS porperties with the `calc()` function.
+The `calc()` function is able to perform math (`+`, `-`, `*` & `/`) on multiple CSS values, which can even have different units.
+
+For example, to set the height of a component to the current page's maximum content height (without scrolling), use the following `calc()` statement:
+
+```css
+calc(96vh - var(--f7-navbar-height) - var(--f7-toolbar-height))
+```
+
+This subtracts the height of the navbar and the toolbar, which are stored in CSS vars, from 96% of the viewports height.
+
+These resources will help you with `calc()`:
+
+- [Mozilla Web Docs: calc()](https://developer.mozilla.org/en-US/docs/Web/CSS/calc)
+- [CSS-Tricks: A Complete Guide to calc() in CSS](https://css-tricks.com/a-complete-guide-to-calc-in-css/)
 
 ## Personal Widgets
 
