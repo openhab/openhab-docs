@@ -24,7 +24,7 @@ source: https://github.com/openhab/openhab-webui/edit/main/bundles/org.openhab.u
 | [`oh-player`](./oh-player.html) |  [Media player](./oh-player.html) | Media player controls, with previous track/pause/play/next buttons |
 | [`oh-repeater`](./oh-repeater.html) |  [Repeater](./oh-repeater.html) | Iterate over an array and repeat the children components in the default slot |
 | [`oh-rollershutter`](./oh-rollershutter.html) |  [Rollershutter](./oh-rollershutter.html) | Rollershutter control, with up/down/stop buttons |
-| [`oh-sipclient`](./oh-sipclient.html) |  [SIP Client](./oh-sipclient.html) | SIP Client to call and answer SIP calls |
+| [`oh-sipclient`](./oh-sipclient.html) |  [SIP Client](./oh-sipclient.html) | SIP Client to start and answer SIP calls |
 | [`oh-slider`](./oh-slider.html) |  [Slider](./oh-slider.html) | Slider control, allows to pick a number value on a scale |
 | [`oh-stepper`](./oh-stepper.html) |  [Stepper](./oh-stepper.html) | Stepper control, allows to input a number or decrement/increment it using buttons |
 | [`oh-swiper`](./oh-swiper.html) |  [Swiper](./oh-swiper.html) | Swiper control, allows to display multiple swipeable slides |
@@ -48,7 +48,7 @@ source: https://github.com/openhab/openhab-webui/edit/main/bundles/org.openhab.u
 | [`oh-list-card`](./oh-list-card.html) |  [List Card](./oh-list-card.html) | Display a list in a card |
 | [`oh-player-card`](./oh-player-card.html) |  [Player Card](./oh-player-card.html) | Display player controls in a card |
 | [`oh-rollershutter-card`](./oh-rollershutter-card.html) |  [Rollershutter Card](./oh-rollershutter-card.html) | Display rollershutter controls in a card |
-| [`oh-sipclient-card`](./oh-sipclient-card.html) |  [SIP Client Card](./oh-sipclient-card.html) | Client to start and answer SIP calls |
+| [`oh-sipclient-card`](./oh-sipclient-card.html) |  [SIP Client Card](./oh-sipclient-card.html) | SIP Client to start and answer SIP calls |
 | [`oh-slider-card`](./oh-slider-card.html) |  [Slider Card](./oh-slider-card.html) | Display a slider in a card to control an item |
 | [`oh-stepper-card`](./oh-stepper-card.html) |  [Stepper Card](./oh-stepper-card.html) | Display a stepper in a card to control an item |
 | [`oh-swiper-card`](./oh-swiper-card.html) |  [Swiper Card](./oh-swiper-card.html) | Display a swiper allowing to browse slides, in a card |

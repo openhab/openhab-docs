@@ -84,7 +84,7 @@ Display the state of an item in a list
   <PropOptions>
     <PropOption value="navigate" label="Navigate to page" />
     <PropOption value="command" label="Send command" />
-    <PropOption value="toggle" label="Toggle item" />
+    <PropOption value="toggle" label="Toggle Item" />
     <PropOption value="options" label="Command options" />
     <PropOption value="rule" label="Run rule" />
     <PropOption value="popup" label="Open popup" />
@@ -114,17 +114,17 @@ Display the state of an item in a list
 </PropBlock>
 <PropBlock type="TEXT" name="actionCommand" label="Action Command">
   <PropDescription>
-    Command to send to the item. If "toggle item" is selected as the action, only send the command when the state is different
+    Command to send to the Item. If "Toogle Item" is selected as the action, only send the command when the state is different
   </PropDescription>
 </PropBlock>
 <PropBlock type="TEXT" name="actionCommandAlt" label="Action Toggle Command">
   <PropDescription>
-    Command to send to the item when "toggle item" is selected as the action, and the item's state is equal to the command above
+    Command to send to the Item when "Toggle Item" is selected as the action, and the Item's state is equal to the command above
   </PropDescription>
 </PropBlock>
 <PropBlock type="TEXT" name="actionOptions" label="Command Options">
   <PropDescription>
-    Comma-separated list of options; if omitted, retrieve the command options from the item dynamically. Use <code>value=label</code> format to provide a label different than the option.
+    Comma-separated list of options; if omitted, retrieve the command options from the Item dynamically. Use <code>value=label</code> format to provide a label different than the option.
   </PropDescription>
 </PropBlock>
 <PropBlock type="TEXT" name="actionRule" label="Rule" context="rule">
@@ -164,7 +164,7 @@ Display the state of an item in a list
 </PropBlock>
 <PropBlock type="TEXT" name="actionPhotos" label="Images to show">
   <PropDescription>
-    Array of URLs or objects representing the images. Auto-refresh is not supported.<br />Edit in YAML or provide a JSON array, e.g.<br /><code>[ "url1", { "item": "ImageItem1", "caption": "Camera" } ]</code><br />Objects are in the <a class="external text-color-blue" target="_blank" href="https://framework7.io/docs/photo-browser.html#photos-array">photos array format</a> with an additional <code>item</code> property to specify an item to view.
+    Array of URLs or objects representing the images. Auto-refresh is not supported.<br />Edit in YAML, e.g.<br /><code><pre>- item: ImageItem1<br />  caption: Camera</pre></code>or provide a JSON array, e.g.<br /><code>[ "url1", { "item": "ImageItem1", "caption": "Camera" } ]</code><br />Objects are in the <a class="external text-color-blue" target="_blank" href="https://framework7.io/docs/photo-browser.html#photos-array">photos array format</a> with an additional <code>item</code> property to specify an item to view.
   </PropDescription>
 </PropBlock>
 <PropBlock type="TEXT" name="actionPhotoBrowserConfig" label="Photo browser configuration">
@@ -174,12 +174,12 @@ Display the state of an item in a list
 </PropBlock>
 <PropBlock type="TEXT" name="actionGroupPopupItem" label="Group Popup Item" context="item">
   <PropDescription>
-    Group item whose members to show in a popup
+    Group Item whose members to show in a popup
   </PropDescription>
 </PropBlock>
 <PropBlock type="TEXT" name="actionAnalyzerItems" label="Item(s) to Analyze" context="item">
   <PropDescription>
-    Start analyzing with the specified (set of) item(s)
+    Start analyzing with the specified (set of) Item(s)
   </PropDescription>
 </PropBlock>
 <PropBlock type="TEXT" name="actionAnalyzerChartType" label="Chart Type">
