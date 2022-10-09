@@ -544,7 +544,7 @@ The Item will be visible if any one of the comparisons is evaluated as `true`, o
 
 ```perl
 Text item=BatteryWarning visibility=[Battery_Level<30]
-Switch item=CinemaLight "Cinema light" visibility=[TV_Power==ON]
+Switch item=CinemaLight label="Cinema light" visibility=[TV_Power==ON]
 Switch item=LawnSprinkler visibility=[Day_Time=="Morning", Day_Time=="Afternoon", Temperature>19]
 ```
 
