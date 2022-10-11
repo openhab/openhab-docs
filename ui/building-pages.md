@@ -152,10 +152,12 @@ Expressions are string literals beginning with the symbol `=` and everything aft
 - `vars` is a dictionary of variables (see below) that are available in the component's context
 - `loop` is a dictionary containing iteration information when you're repeating components from a source collection, it is defined only when in the context of a `oh-repeater` component
 - the JavaScript `Math` object (so you can use `Math.floor(...)`, `Math.round(...)` and the like)
-- the JavaScript `JSON` object to parse or produce JSON;
+- the JavaScript `Number` object (see [mdn web docs_: Number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number))
+- the JavaScript `JSON` object to parse or produce JSON
 - `dayjs` to build instances of the [day.js library](https://day.js.org/docs/en/parse/now) that you can use to parse or manipulate date & time
 - `theme` which holds the current theme: `ios`, `md` or `aurora`
 - `themeOptions` and `device` allow to use the relevant objects that you can see in the About page, Technical information, View details, under `clientInfo`
+- `screen` returns the [`Screen`](https://developer.mozilla.org/en-US/docs/Web/API/Screen) object. This allows you to access various information about the current screen, e.g. the available width and height. The two properties `viewAreaWidth` and `viewAreaHeight` are added on top. It's recommended to use CSS [`calc()`](#dynamic-styling--positioning-using-css-calc) for dynamic positioning and styling.
 
 Expressions are particularly useful in cases where one wants to combine the states of more than one Item, or use the state of more than one Item in a single widget element.
 For example, the icon of an Item can be based on the state of a different Item.
@@ -380,6 +382,24 @@ These resources will help you with Flexbox and Grid:
 - [justify-content "Play it"](https://www.w3schools.com/cssref/playit.asp?filename=playcss_justify-content&preval=flex-start) and others found in the reference
 - [A Complete Guide to Grid](https://css-tricks.com/snippets/css/complete-guide-grid/)
 - [Grid Tutorial on W3Schools](https://www.w3schools.com/css/css_grid.asp)
+
+### Dynamic Styling & Positioning using CSS `calc()`
+
+You can dynamically style and position elements by calculating their CSS porperties with the `calc()` function.
+The `calc()` function is able to perform math (`+`, `-`, `*` & `/`) on multiple CSS values, which can even have different units.
+
+For example, to set the height of a component to the current page's maximum content height (without scrolling), use the following `calc()` statement:
+
+```css
+calc(96vh - var(--f7-navbar-height) - var(--f7-toolbar-height))
+```
+
+This subtracts the height of the navbar and the toolbar, which are stored in CSS vars, from 96% of the viewports height.
+
+These resources will help you with `calc()`:
+
+- [mdn web docs_: calc()](https://developer.mozilla.org/en-US/docs/Web/CSS/calc)
+- [CSS-Tricks: A Complete Guide to calc() in CSS](https://css-tricks.com/a-complete-guide-to-calc-in-css/)
 
 ## Personal Widgets
 
