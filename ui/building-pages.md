@@ -157,7 +157,7 @@ Expressions are string literals beginning with the symbol `=` and everything aft
 - `dayjs` to build instances of the [day.js library](https://day.js.org/docs/en/parse/now) that you can use to parse or manipulate date & time
 - `theme` which holds the current theme: `ios`, `md` or `aurora`
 - `themeOptions` and `device` allow to use the relevant objects that you can see in the About page, Technical information, View details, under `clientInfo`
-- `screen` allows to get the width and the heigt (in pixels) available for the content of the current page. Popups are not supported. It's recommended to use CSS [`calc()`](#dynamic-styling--positioning-using-css-calc) for dynamic positioning and styling.
+- `screen` returns the [`Screen`](https://developer.mozilla.org/en-US/docs/Web/API/Screen) object. This allows you to access various information about the current screen, e.g. the available width and height. The two properties `viewAreaWidth` and `viewAreaHeight` are added on top. It's recommended to use CSS [`calc()`](#dynamic-styling--positioning-using-css-calc) for dynamic positioning and styling.
 
 Expressions are particularly useful in cases where one wants to combine the states of more than one Item, or use the state of more than one Item in a single widget element.
 For example, the icon of an Item can be based on the state of a different Item.
