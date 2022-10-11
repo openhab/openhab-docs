@@ -158,12 +158,22 @@ Expressions are string literals beginning with the symbol `=` and everything aft
 - `theme` which holds the current theme: `ios`, `md` or `aurora`
 - `themeOptions` and `device` allow to use the relevant objects that you can see in the About page, Technical information, View details, under `clientInfo`
 - `screen` returns the [`Screen`](https://developer.mozilla.org/en-US/docs/Web/API/Screen) object. This allows you to access various information about the current screen, e.g. the available width and height. The two properties `viewAreaWidth` and `viewAreaHeight` are added on top. It's recommended to use CSS [`calc()`](#dynamic-styling--positioning-using-css-calc) for dynamic positioning and styling.
+- `user` returns an object with information about the logged in user: the name (`user.name`) and an array of the assigned roles for the user (`user.roles`).
+
+The `@` symbol can be used in front of an item name string as a shortcut to the `displayState` from the `items` dictionary with a fallback to the raw state:
+```yaml
+footer: =@'Switch1'
+```
+is the same as 
+```yaml
+footer: =items['Switch1'].displayState || items['Switch1'].state
+```
+Similary, `@@` can be used as a shortcut for just the item state.
 
 Expressions are particularly useful in cases where one wants to combine the states of more than one Item, or use the state of more than one Item in a single widget element.
 For example, the icon of an Item can be based on the state of a different Item.
 
 ### Examples
-
 ```js
 =(items.Color1.state.split(',')[2] !== '0') ? 'On ' + '(' + items.Color1.state.split(',')[2] + '%)' : 'Off'
 ```
