@@ -481,6 +481,19 @@ In order for a report to be sent to the binding, or to another device, a "bindin
 
 Polling may be used by the binding to request data from the device. Polling is normally only used if reporting doesn't work for some reason. This may happen if the reporting table in a device is full - if the binding detects this, it will increase the polling rate.
 
+
+## Device Firmware Updates
+
+A *Firmware Provider*, backed by the [Koenkk OTA](https://github.com/Koenkk/zigbee-OTA) repository on GitHub can be used to upgrade device firmware. This *Firmware Provider* provides firmware to the openHAB firmware management system. Since there is no information linking firmware to a device, Zigbee devices must ask for a firmware update, and when this happens, the *Firmware Provider* will use the information in this request to check to see if there is firmware available, and if there is it will download this to a local file in the *Userdata* folder. It will also advise the openHAB firmware management system that there is firmware available to upload, and the user can manage this appropriately.
+
+Devices normally request a firmware update at an interval that could be every few minutes, to every few days - depending on the manufacturer. When the provider receives the request from the device, it checks to see if there is a firmware matching the request, and if so it will download the firmware from the net in preparation for the user to approve the upgrade.
+
+Firmware files downloaded from the repository are checked for integrity against the SHA512 hash. an MD5 hash is then generated locally so that the firmware can be checked by the OH core prior to starting the firmware update.
+
+Currently the openHAB main UI doesn't support the firmware management system, so this must be performed using the console.
+
+
+
 ## When things don't appear to be working
 
 When things don't appear to be working as expected you should check the logs to try and find what is happening. Debug logging can be enabled with the following Karaf commands -:
@@ -507,7 +520,7 @@ To list all known nodes, use the `nodes` command. This will list the nodes and e
 
 #### Device Information (Fingerprint)
 
-In some instances a device may not work correctly. This could be because the binding had problems during initialisation, or possibly because the device supports features not implemented in the binding, or possibly the device may implement custom functionality. To understand this, there is a `fingerprint` command. This command will attempt to poll the device to get a list of all the commands and attributes that the device supports and create a concise list. Note that this may not work on all devices if the device doesn't support the functionality discovery commands.
+In some instances a device may not work correctly, or you may wish to see more technical information about the devices' features. This could be because the binding had problems during initialisation, or possibly because the device supports features not implemented in the binding, or possibly the device may implement custom functionality. To understand this, there is a `fingerprint` command. This command will attempt to poll the device to get a list of all the commands and attributes that the device supports and create a concise list. Note that this may not work on all devices if the device doesn't support the functionality required discovery the commands and attributes supported by the device.
 
 #### Binding and Reporting
 
