@@ -35,7 +35,7 @@ Displays an input field, used to set a variable
 </PropBlock>
 <PropBlock type="TEXT" name="type" label="Type">
   <PropDescription>
-    Type of input (see <a class="external text-color-blue" target="_blank" href="https://framework7.io/docs/inputs.html#supported-inputs">f7 input docs</a>)
+    Type of input (see <a class="external text-color-blue" target="_blank" href="https://framework7.io/docs/inputs.html#supported-inputs">f7 input docs</a> or datepicker)
   </PropDescription>
 </PropBlock>
 <PropBlock type="TEXT" name="inputmode" label="Input Mode">
@@ -86,6 +86,11 @@ Displays an input field, used to set a variable
 <PropBlock type="BOOLEAN" name="useDisplayState" label="Use Display State">
   <PropDescription>
     Use the formatted state as the value for the input control
+  </PropDescription>
+</PropBlock>
+<PropBlock type="BOOLEAN" name="showTime" label="Show time">
+  <PropDescription>
+    Display time when type set to datepicker
   </PropDescription>
 </PropBlock>
 <PropBlock type="TEXT" name="defaultValue" label="Default value">
