@@ -1,19 +1,19 @@
 ---
 layout: documentation
-title: ZM Relay - ZWave
+title: Heatit ZM Relay - ZWave
 ---
 
 {% include base.html %}
 
-# Heatit ZM Single Relay 16A
-This describes the Z-Wave device *ZM Relay*, manufactured by *ThermoFloor* with the thing type UID of ```thermofloor_zmrelay_00_000```.
+# Heatit ZM Relay Single Relay 16A
+This describes the Z-Wave device *Heatit ZM Relay*, manufactured by *ThermoFloor* with the thing type UID of ```thermofloor_zmrelay_00_000```.
 
 The device is in the category of *Power Outlet*, defining Small devices to be plugged into a power socket in a wall which stick there.
 
-![ZM Relay product image](https://opensmarthouse.org/zwavedatabase/1440/image/)
+![Heatit ZM Relay product image](https://opensmarthouse.org/zwavedatabase/1440/image/)
 
 
-The ZM Relay supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is also able to participate in the routing of data between other devices in the mesh network.
+The Heatit ZM Relay supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is also able to participate in the routing of data between other devices in the mesh network.
 
 ## Overview
 
@@ -45,7 +45,7 @@ When the device has been included in the home automation system, the LED will st
 
 ## Channels
 
-The following table summarises the channels available for the ZM Relay -:
+The following table summarises the channels available for the Heatit ZM Relay -:
 
 | Channel Name | Channel ID | Channel Type | Category | Item Type |
 |--------------|------------|--------------|----------|-----------|
@@ -115,7 +115,7 @@ The following state translation is provided for this channel to the ```Switch```
 
 ## Device Configuration
 
-The following table provides a summary of the 11 configuration parameters available in the ZM Relay.
+The following table provides a summary of the 11 configuration parameters available in the Heatit ZM Relay.
 Detailed information on each parameter can be found in the sections below.
 
 | Param | Name  | Description |

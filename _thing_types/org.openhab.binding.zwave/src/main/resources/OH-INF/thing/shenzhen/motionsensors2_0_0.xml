@@ -66,84 +66,108 @@ Motion, Temperature &amp; Light Sensor NAS_PD02Z<br /> <h1>Overview</h1><p>Motio
       <!-- PARAMETER DEFINITIONS -->
       <parameter name="config_1_1" type="integer" groupName="configuration">
         <label>1: Motion Sensitivity</label>
-        <description>Sensitivity for motion detection. If this value is larger, the sensitivity is lower, and the distance for motion detecting is closer.</description>
+        <description><![CDATA[
+Sensitivity for motion detection. If this value is larger, the sensitivity is lower, and the distance for motion detecting is closer. Default value: 3<br /> <h1>Overview</h1><p><br /></p>
+        ]]></description>
         <default>3</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_2_1" type="integer" groupName="configuration">
         <label>2: Motion Window Time</label>
-        <description>Specified time window (4s..16s) in which the amount of pulses will trigger a motion event. Window Time = [Value] * 4s + 4s.</description>
+        <description><![CDATA[
+Specified time window (4s..16s) in which the amount of pulses will trigger a motion event. Window Time = [Value] * 4s + 4s. Default value: 2<br /> <h1>Overview</h1><p><br /></p>
+        ]]></description>
         <default>2</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_3_1" type="integer" groupName="configuration">
         <label>3: Pulse Count</label>
-        <description>Amount of pulses during the specified time window which trigger a motion event. Amount of pluses = [Value] + 1.</description>
+        <description><![CDATA[
+Amount of pulses during the specified time window which trigger a motion event. Amount of pluses = [Value] + 1. Default value: 1<br /> <h1>Overview</h1><p><br /></p>
+        ]]></description>
         <default>1</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_4_1" type="integer" groupName="configuration">
         <label>4: Motion Blind Time</label>
-        <description>No motion detected time after a motion event was detected. The device will wait for setting times to ready to next detect. BlinkTime = ([Value] + I) * 0.5S.</description>
+        <description><![CDATA[
+No motion detected time after a motion event was detected. The device will wait for setting times to ready to next detect. BlinkTime = ([Value] + 1) * 0.5s. Default value: 15<br /> <h1>Overview</h1><p><br /></p>
+        ]]></description>
         <default>1</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_5_1" type="integer" groupName="configuration">
         <label>5: Motion Enable</label>
-        <description>Enables or disablesd motion detection. If "1": Motion detected function is enable. Otherwise is disabled.</description>
+        <description><![CDATA[
+Enables or disablesd motion detection. If "1": Motion detected function is enable. Otherwise is disabled. Default value: 1<br /> <h1>Overview</h1><p><br /></p>
+        ]]></description>
         <default>1</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_6_2" type="integer" groupName="configuration">
         <label>6: Motion Clear Time</label>
-        <description>Time to clear motion event after a motion event was detected. Time to motion clear, the device will send a clear event report to controller. Unit: Second.</description>
+        <description><![CDATA[
+Time to clear motion event after a motion event was detected. Time to motion clear, the device will send a clear event report to controller. Unit: Second. Default value: 30<br /> <h1>Overview</h1><p><br /></p>
+        ]]></description>
         <default>30</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_7_1" type="integer" groupName="configuration">
         <label>7: Led Indicate Enable</label>
-        <description>Led light disable or enable. '1'- Enable Led Blink when device detects a motion event. °0'- Disable led blink. This configuration is not affected in inclusion, exclusion and reset.</description>
+        <description><![CDATA[
+Led light disable or enable. '1'- Enable Led Blink when device detects a motion event. °0'- Disable led blink. This configuration is not affected in inclusion, exclusion and reset. Default value: 1<br /> <h1>Overview</h1><p><br /></p>
+        ]]></description>
         <default>1</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_8_1" type="integer" groupName="configuration">
         <label>8: Binary Sensor Report Enable</label>
-        <description>'1'- Enable sensor binary report when device detects a motion event. '0'- Disable sensor binary report when device detects a motion event.</description>
+        <description><![CDATA[
+'1'- Enable sensor binary report when device detects a motion event. '0'- Disable sensor binary report when device detects a motion event. Default value: 0<br /> <h1>Overview</h1><p><br /></p>
+        ]]></description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_9_1" type="integer" groupName="configuration">
         <label>9: Basic Set Level</label>
-        <description>Value for BASIC_SET for nodes associated in Group 2. '100'- BASIC_SET = 0xFF (ON). '0'- BASIC_SET = 0x00 (OFF).</description>
+        <description><![CDATA[
+Value for BASIC_SET for nodes associated in Group 2. '100'- BASIC_SET = 0xFF (ON). '0'- BASIC_SET = 0x00 (OFF). Default value: 100<br /> <h1>Overview</h1><p><br /></p>
+        ]]></description>
         <default>100</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_10_2" type="integer" groupName="configuration">
         <label>10: Sensor Measuring Interval</label>
-        <description>Time interval for light sensor measurement of ambient light intensity. If this value is larger, the battery life is longer. And the light intensity changed is not obvious.</description>
+        <description><![CDATA[
+Time interval for light sensor measurement of ambient light intensity. If this value is larger, the battery life is longer. And the light intensity changed is not obvious. Default value: 180<br /> <h1>Overview</h1><p><br /></p>
+        ]]></description>
         <default>180</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_11_1" type="integer" groupName="configuration">
         <label>11: Light Intensity Differential Report</label>
-        <description>Value differential between current measured and previous report value. If the differential value larger than the settings, device will report this measured light intensity to controller.</description>
+        <description><![CDATA[
+Value differential between current measured and previous report value. If the differential value larger than the settings, device will report this measured light intensity to controller. Default value: 50<br /> <h1>Overview</h1><p><br /></p>
+        ]]></description>
         <default>50</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_12_1" type="integer" groupName="configuration">
         <label>12: Light Intensity Threshold</label>
-        <description>If the light intensity current measured is less than the settings, device will considered to be dark at current time. If configuration 13 is set '1' and a motion event is detected, the device will send a BASIC_SET to the nodes that associated in group 2.</description>
+        <description><![CDATA[
+If the light intensity current measured is less than the settings, device will considered to be dark at current time. If configuration 13 is set '1' and a motion event is detected, the device will send a BASIC_SET to the nodes that associated in group 2.<br /> <h1>Overview</h1><p><br /></p>
+        ]]></description>
         <default>50</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
@@ -174,7 +198,7 @@ Motion, Temperature &amp; Light Sensor NAS_PD02Z<br /> <h1>Overview</h1><p>Motio
       <parameter name="config_99_2" type="integer" groupName="configuration">
         <label>99: Light Intensity Offset Calibration</label>
         <description><![CDATA[
-This parameter defines the calibrated scale for ambient light intensity<br /> <h1>Overview</h1><p>This parameter defines the calibrated scale for ambient light intensity. Because the method and position that the sensor mounted and the cover of sensor will bring measurement error, user can get more real light intensity by this parameter setting. User should run the steps as blows for calibrating </p><p>1. Set this parameter value to default(Assumes the sensor has been added in a Z-Wave Network). </p><p>2. Place a digital luxmeter close to sensor and keep the same direction, monitor the light intensity value (Vm) which report to controller and record it. The same time user should record the value (Vs) of Iuxmeter.</p><p>3. The scale calibration formula: k = Vm IVS.</p><p>4. The value of k is then multiplied by 1000 and rounded to the nearest whole number.</p><p>5. Set the value getting in 5) to this parameter, calibrate finished. </p><p>For example, Vm = 300, Vs = 2000, then k = 300 / 2600 = 0.11538</p><p>k=0.11538*1000=115.38=115</p><p>The parameter should be set to 115.</p>
+This parameter defines the calibrated scale for ambient light intensity. Default value: 1000<br /> <h1>Overview</h1><p>This parameter defines the calibrated scale for ambient light intensity. Because the method and position that the sensor mounted and the cover of sensor will bring measurement error, user can get more real light intensity by this parameter setting. User should run the steps as blows for calibrating </p><p>1. Set this parameter value to default(Assumes the sensor has been added in a Z-Wave Network). </p><p>2. Place a digital luxmeter close to sensor and keep the same direction, monitor the light intensity value (Vm) which report to controller and record it. The same time user should record the value (Vs) of Iuxmeter.</p><p>3. The scale calibration formula: k = Vm IVS.</p><p>4. The value of k is then multiplied by 1000 and rounded to the nearest whole number.</p><p>5. Set the value getting in 5) to this parameter, calibrate finished. </p><p>For example, Vm = 300, Vs = 2000, then k = 300 / 2600 = 0.11538</p><p>k=0.11538*1000=115.38=115</p><p>The parameter should be set to 115.</p>
         ]]></description>
         <default>1000</default>
         <limitToOptions>false</limitToOptions>
@@ -183,14 +207,16 @@ This parameter defines the calibrated scale for ambient light intensity<br /> <h
       <!-- ASSOCIATION DEFINITIONS -->
       <parameter name="group_1" type="text" groupName="association" multiple="true">
         <label>1: Lifeline</label>
-        <description>Lifeline</description>
+        <description><![CDATA[
+Group 1 is lifeline group; all nodes which associated in this group will receive the messages sent by device through lifeline.<br /> <h1>Overview</h1><p><br /></p>
+        ]]></description>
         <multipleLimit>1</multipleLimit>
       </parameter>
 
       <parameter name="group_2" type="text" groupName="association" multiple="true">
-        <label>2: Basic Set</label>
+        <label>2: Control</label>
         <description><![CDATA[
-<br /> <h1>Overview</h1><p><br /></p>
+Group 2 is controlling group, all nodes associated in this group will be controlled through BASIC_SET command by the device when device detects a movement event.<br /> <h1>Overview</h1><p><br /></p>
         ]]></description>
         <multipleLimit>5</multipleLimit>
       </parameter>

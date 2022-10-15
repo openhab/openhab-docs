@@ -101,28 +101,28 @@ Detailed information on each parameter can be found in the sections below.
 
 | Param | Name  | Description |
 |-------|-------|-------------|
-| 1 | Motion Sensitivity | Sensitivity for motion detection. If this value is larger, the sensitivity is lower, and the distance for motion detecting is closer. |
-| 2 | Motion Window Time | Specified time window (4s..16s) in which the amount of pulses will trigger a motion event. Window Time = [Value] * 4s + 4s. |
-| 3 | Pulse Count | Amount of pulses during the specified time window which trigger a motion event. Amount of pluses = [Value] + 1. |
-| 4 | Motion Blind Time | No motion detected time after a motion event was detected. The device will wait for setting times to ready to next detect. BlinkTime = ([Value] + I) * 0.5S. |
-| 5 | Motion Enable | Enables or disablesd motion detection. If "1": Motion detected function is enable. Otherwise is disabled. |
-| 6 | Motion Clear Time | Time to clear motion event after a motion event was detected. Time to motion clear, the device will send a clear event report to controller. Unit: Second. |
-| 7 | Led Indicate Enable | Led light disable or enable. '1'- Enable Led Blink when device detects a motion event. °0'- Disable led blink. This configuration is not affected in inclusion, exclusion and reset. |
-| 8 | Binary Sensor Report Enable | '1'- Enable sensor binary report when device detects a motion event. '0'- Disable sensor binary report when device detects a motion event. |
-| 9 | Basic Set Level | Value for BASIC\_SET for nodes associated in Group 2. '100'- BASIC\_SET = 0xFF (ON). '0'- BASIC_SET = 0x00 (OFF). |
-| 10 | Sensor Measuring Interval | Time interval for light sensor measurement of ambient light intensity. If this value is larger, the battery life is longer. And the light intensity changed is not obvious. |
-| 11 | Light Intensity Differential Report | Value differential between current measured and previous report value. If the differential value larger than the settings, device will report this measured light intensity to controller. |
+| 1 | Motion Sensitivity | Sensitivity for motion detection. If this value is larger, the sensitivity is lower, and the distance for motion detecting is closer. Default value: 3 |
+| 2 | Motion Window Time | Specified time window (4s..16s) in which the amount of pulses will trigger a motion event. Window Time = [Value] * 4s + 4s. Default value: 2 |
+| 3 | Pulse Count | Amount of pulses during the specified time window which trigger a motion event. Amount of pluses = [Value] + 1. Default value: 1 |
+| 4 | Motion Blind Time | No motion detected time after a motion event was detected. The device will wait for setting times to ready to next detect. BlinkTime = ([Value] + 1) * 0.5s. Default value: 15 |
+| 5 | Motion Enable | Enables or disablesd motion detection. If "1": Motion detected function is enable. Otherwise is disabled. Default value: 1 |
+| 6 | Motion Clear Time | Time to clear motion event after a motion event was detected. Time to motion clear, the device will send a clear event report to controller. Unit: Second. Default value: 30 |
+| 7 | Led Indicate Enable | Led light disable or enable. '1'- Enable Led Blink when device detects a motion event. °0'- Disable led blink. This configuration is not affected in inclusion, exclusion and reset. Default value: 1 |
+| 8 | Binary Sensor Report Enable | '1'- Enable sensor binary report when device detects a motion event. '0'- Disable sensor binary report when device detects a motion event. Default value: 0 |
+| 9 | Basic Set Level | Value for BASIC\_SET for nodes associated in Group 2. '100'- BASIC\_SET = 0xFF (ON). '0'- BASIC_SET = 0x00 (OFF). Default value: 100 |
+| 10 | Sensor Measuring Interval | Time interval for light sensor measurement of ambient light intensity. If this value is larger, the battery life is longer. And the light intensity changed is not obvious. Default value: 180 |
+| 11 | Light Intensity Differential Report | Value differential between current measured and previous report value. If the differential value larger than the settings, device will report this measured light intensity to controller. Default value: 50 |
 | 12 | Light Intensity Threshold | If the light intensity current measured is less than the settings, device will considered to be dark at current time. If configuration 13 is set '1' and a motion event is detected, the device will send a BASIC_SET to the nodes that associated in group 2. |
 | 13 | Light Intensity Associated Enable | '1'- Enable current light intensity to associate the motion event, if there has a motion event detected and the current light intensity is less than the settings in configuration 12, the device will send a BASIC_SET to nodes associated in group2. |
 | 14 | Motion Event Report Once Enable | '1' - The motion detected event will be sent to controller only once until device report motion cleared event. '0'- The motion detected event will be sent to controller when device detects a movement event. |
 | 15 | Temperature Differential Report | Value that differential between current measured and previous report value. If the differential value larger than the settings, device will report this measured temperature value to nodes associated in lifeline. DifferentialValue = [Value] x 0.1°C |
-| 99 | Light Intensity Offset Calibration | This parameter defines the calibrated scale for ambient light intensity |
+| 99 | Light Intensity Offset Calibration | This parameter defines the calibrated scale for ambient light intensity. Default value: 1000 |
 |  | Wakeup Interval | Sets the interval at which the device will accept commands from the controller |
 |  | Wakeup Node | Sets the node ID of the device to receive the wakeup notifications |
 
 ### Parameter 1: Motion Sensitivity
 
-Sensitivity for motion detection. If this value is larger, the sensitivity is lower, and the distance for motion detecting is closer.
+Sensitivity for motion detection. If this value is larger, the sensitivity is lower, and the distance for motion detecting is closer. Default value: 3
 
 Values in the range 0 to 99 may be set.
 
@@ -133,7 +133,7 @@ This parameter has the configuration ID ```config_1_1``` and is of type ```INTEG
 
 ### Parameter 2: Motion Window Time
 
-Specified time window (4s..16s) in which the amount of pulses will trigger a motion event. Window Time = [Value] * 4s + 4s.
+Specified time window (4s..16s) in which the amount of pulses will trigger a motion event. Window Time = [Value] * 4s + 4s. Default value: 2
 
 Values in the range 0 to 3 may be set.
 
@@ -144,7 +144,7 @@ This parameter has the configuration ID ```config_2_1``` and is of type ```INTEG
 
 ### Parameter 3: Pulse Count
 
-Amount of pulses during the specified time window which trigger a motion event. Amount of pluses = [Value] + 1.
+Amount of pulses during the specified time window which trigger a motion event. Amount of pluses = [Value] + 1. Default value: 1
 
 Values in the range 0 to 3 may be set.
 
@@ -155,7 +155,7 @@ This parameter has the configuration ID ```config_3_1``` and is of type ```INTEG
 
 ### Parameter 4: Motion Blind Time
 
-No motion detected time after a motion event was detected. The device will wait for setting times to ready to next detect. BlinkTime = ([Value] + I) * 0.5S.
+No motion detected time after a motion event was detected. The device will wait for setting times to ready to next detect. BlinkTime = ([Value] + 1) * 0.5s. Default value: 15
 
 Values in the range 0 to 15 may be set.
 
@@ -166,7 +166,7 @@ This parameter has the configuration ID ```config_4_1``` and is of type ```INTEG
 
 ### Parameter 5: Motion Enable
 
-Enables or disablesd motion detection. If "1": Motion detected function is enable. Otherwise is disabled.
+Enables or disablesd motion detection. If "1": Motion detected function is enable. Otherwise is disabled. Default value: 1
 
 Values in the range 0 to 1 may be set.
 
@@ -177,7 +177,7 @@ This parameter has the configuration ID ```config_5_1``` and is of type ```INTEG
 
 ### Parameter 6: Motion Clear Time
 
-Time to clear motion event after a motion event was detected. Time to motion clear, the device will send a clear event report to controller. Unit: Second.
+Time to clear motion event after a motion event was detected. Time to motion clear, the device will send a clear event report to controller. Unit: Second. Default value: 30
 
 Values in the range 10 to 3600 may be set.
 
@@ -188,7 +188,7 @@ This parameter has the configuration ID ```config_6_2``` and is of type ```INTEG
 
 ### Parameter 7: Led Indicate Enable
 
-Led light disable or enable. '1'- Enable Led Blink when device detects a motion event. °0'- Disable led blink. This configuration is not affected in inclusion, exclusion and reset.
+Led light disable or enable. '1'- Enable Led Blink when device detects a motion event. °0'- Disable led blink. This configuration is not affected in inclusion, exclusion and reset. Default value: 1
 
 Values in the range 0 to 1 may be set.
 
@@ -199,7 +199,7 @@ This parameter has the configuration ID ```config_7_1``` and is of type ```INTEG
 
 ### Parameter 8: Binary Sensor Report Enable
 
-'1'- Enable sensor binary report when device detects a motion event. '0'- Disable sensor binary report when device detects a motion event.
+'1'- Enable sensor binary report when device detects a motion event. '0'- Disable sensor binary report when device detects a motion event. Default value: 0
 
 Values in the range 0 to 1 may be set.
 
@@ -210,7 +210,7 @@ This parameter has the configuration ID ```config_8_1``` and is of type ```INTEG
 
 ### Parameter 9: Basic Set Level
 
-Value for BASIC\_SET for nodes associated in Group 2. '100'- BASIC\_SET = 0xFF (ON). '0'- BASIC_SET = 0x00 (OFF).
+Value for BASIC\_SET for nodes associated in Group 2. '100'- BASIC\_SET = 0xFF (ON). '0'- BASIC_SET = 0x00 (OFF). Default value: 100
 
 Values in the range 1 to 100 may be set.
 
@@ -221,7 +221,7 @@ This parameter has the configuration ID ```config_9_1``` and is of type ```INTEG
 
 ### Parameter 10: Sensor Measuring Interval
 
-Time interval for light sensor measurement of ambient light intensity. If this value is larger, the battery life is longer. And the light intensity changed is not obvious.
+Time interval for light sensor measurement of ambient light intensity. If this value is larger, the battery life is longer. And the light intensity changed is not obvious. Default value: 180
 
 Values in the range 30 to 3600 may be set.
 
@@ -232,7 +232,7 @@ This parameter has the configuration ID ```config_10_2``` and is of type ```INTE
 
 ### Parameter 11: Light Intensity Differential Report
 
-Value differential between current measured and previous report value. If the differential value larger than the settings, device will report this measured light intensity to controller.
+Value differential between current measured and previous report value. If the differential value larger than the settings, device will report this measured light intensity to controller. Default value: 50
 
 Values in the range 1 to 127 may be set.
 
@@ -287,7 +287,7 @@ This parameter has the configuration ID ```config_15_1``` and is of type ```INTE
 
 ### Parameter 99: Light Intensity Offset Calibration
 
-This parameter defines the calibrated scale for ambient light intensity
+This parameter defines the calibrated scale for ambient light intensity. Default value: 1000
 This parameter defines the calibrated scale for ambient light intensity. Because the method and position that the sensor mounted and the cover of sensor will bring measurement error, user can get more real light intensity by this parameter setting. User should run the steps as blows for calibrating 
 
 1. Set this parameter value to default(Assumes the sensor has been added in a Z-Wave Network). 
@@ -338,12 +338,14 @@ The Motion sensor S2 supports 2 association groups.
 ### Group 1: Lifeline
 
 The Lifeline association group reports device status to a hub and is not designed to control other devices directly. When using the Lineline group with a hub, in most cases, only the lifeline group will need to be configured and normally the hub will perform this automatically during the device initialisation.
-Lifeline
+Group 1 is lifeline group; all nodes which associated in this group will receive the messages sent by device through lifeline.
+
 
 Association group 1 supports 1 node.
 
-### Group 2: Basic Set
+### Group 2: Control
 
+Group 2 is controlling group, all nodes associated in this group will be controlled through BASIC_SET command by the device when device detects a movement event.
 
 
 Association group 2 supports 5 nodes.

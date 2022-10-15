@@ -8,7 +8,7 @@
   <thing-type id="shenzhen_naspd07z_00_000" listed="false">
     <label>NAS-PD07Z NEO Coolcam PIR 5 in 1</label>
     <description><![CDATA[
-NEO Coolcam PIR 5 in 1<br /> <h1>Overview</h1><p>5 in 1 sensor: motion, temperature, humidity, luminance, tamper alarm<br /></p> <br /> <h2>Inclusion Information</h2><ol><li>Power up the device.</li><li>Set Z-Wave Controller into inclusion mode.</li><li>Press and hold the button for 5 s until white led light is on, then release the button before led turns off.</li></ol><p>Blue led will blink with 1 s interval until inclusion successful.<br /></p> <br /> <h2>Exclusion Information</h2><ol><li>Power up the device.</li><li>Set Z-Wave Controller into exclusion mode.</li><li>Press and hold the button for 5 s until white led light is on, then release the button before led turns off.</li></ol><p>Blue led will blink with 0.5 s interval until exclusion successful.</p> <br /> <h2>Wakeup Information</h2><p>Send NIF: <br /></p><p>Press and hold the button for 5 s until white led light is on, then release the button before led turns off.</p>
+NEO Coolcam PIR 5 in 1<br /> <h1>Overview</h1><p>5 in 1 sensor: motion, temperature, humidity, luminance, tamper alarm<br /></p> <br /> <h2>Inclusion Information</h2><ol><li>Power up the device.</li><li>Set Z-Wave Controller into inclusion mode.</li><li>Press and hold the button for 5 s until white led light is on, then release the button before led turns off.</li></ol><p>Blue led will blink with 1 s interval until inclusion successful.<br /></p><p>This device supports 2 role type: AOS(Always On Slave) and LPM(Low Power Mode). Which role type is valid decided by which power (Battery or DC Power) is supplied when included.</p><p>The role type is AOS only if DC power supply first. Listening=true </p><p>The role type is LPM only if battery supply first. Listening = false</p><p>When device is included with AOS, it also can make a repeater role.</p> <br /> <h2>Exclusion Information</h2><ol><li>Power up the device.</li><li>Set Z-Wave Controller into exclusion mode.</li><li>Press and hold the button for 5 s until white led light is on, then release the button before led turns off.</li></ol><p>Blue led will blink with 0.5 s interval until exclusion successful.</p> <br /> <h2>Wakeup Information</h2><p>Send NIF: <br /></p><p>Press and hold the button for 5 s until white led light is on, then release the button before led turns off.</p>
     ]]></description>
     <category>Sensor</category>
 
@@ -120,16 +120,28 @@ NEO Coolcam PIR 5 in 1<br /> <h1>Overview</h1><p>5 in 1 sensor: motion, temperat
       </parameter>
 
       <parameter name="config_5_1" type="integer" groupName="configuration">
-        <label>5: Motion Sensitivity</label>
+        <label>5: Binary Sensor Report Enable</label>
         <description><![CDATA[
-<br /> <h1>Overview</h1><p>This parameter is configured the sensitivity that motion detect. This value is larger, the sensitivity is lower, and the distance for motion detecting is closer. Available settings: 0 ... 15. Default: 1<br /></p>
+<br /> <h1>Overview</h1><p>'1' - Enable sensor binary report when device detects a motion event. '0' - Disable sensor binary report when device detects a motion event. Default: Disable<br /></p>
         ]]></description>
-        <default>1</default>
-        <limitToOptions>false</limitToOptions>
+        <default>0</default>
+        <options>
+          <option value="0">Disable</option>
+          <option value="1">Enale</option>
+        </options>
       </parameter>
 
       <parameter name="config_6_1" type="integer" groupName="configuration">
-        <label>6: Temperature Offset Value</label>
+        <label>6: Motion Sensitivity</label>
+        <description><![CDATA[
+<br /> <h1>Overview</h1><p>This parameter is configured the sensitivity that motion detect. This value is larger, the sensitivity is lower, and the distance for motion detecting is closer. Available settings: 0 ... 15. Default: 2<br /></p>
+        ]]></description>
+        <default>2</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_7_1" type="integer" groupName="configuration">
+        <label>7: Temperature Offset Value</label>
         <description><![CDATA[
 <br /> <h1>Overview</h1><p>The current measuring temperature value can be add and minus a value by this setting. Temperature Offset Value = [Value] x 0.1 Degree Celsius / Fahrenheit (US). Available settings: -120 ... 120. Default: 0<br /></p>
         ]]></description>
@@ -137,8 +149,8 @@ NEO Coolcam PIR 5 in 1<br /> <h1>Overview</h1><p>5 in 1 sensor: motion, temperat
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_7_1" type="integer" groupName="configuration">
-        <label>7: Humidity Offset Value</label>
+      <parameter name="config_8_1" type="integer" groupName="configuration">
+        <label>8: Humidity Offset Value</label>
         <description><![CDATA[
 <br /> <h1>Overview</h1><p>The current measuring humidity value can be add and minus a value by this setting. Humidity Offset Value = [Value] x 0.1 RH%. Available settings: -120 ... 120. Default: 0 <br /></p>
         ]]></description>
@@ -146,26 +158,26 @@ NEO Coolcam PIR 5 in 1<br /> <h1>Overview</h1><p>5 in 1 sensor: motion, temperat
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_8_1" type="integer" groupName="configuration">
-        <label>8: Temperature D-Value Setting</label>
+      <parameter name="config_9_1" type="integer" groupName="configuration">
+        <label>9: Temperature D-Value Setting</label>
         <description><![CDATA[
-<br /> <h1>Overview</h1><p>This configuration sets the changed value of the temperature. When the difference from the last report exceeds this setting value, the device will report current temperature value to Z-Wave Hubs. The D-Value = [Value] x 0.1 Degree Celsius / Fahrenheit (US). Available settings: 0 ... 120. Default: 10<br /></p>
+<br /> <h1>Overview</h1><p>This configuration sets the changed value of the temperature. When the difference from the last report exceeds this setting value, the device will report current temperature value to Z-Wave Hubs. The D-Value = [Value] x 0.1 Degree Celsius / Fahrenheit (US). Available settings: 0 ... 100. Default: 10<br /></p>
         ]]></description>
         <default>10</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_9_1" type="integer" groupName="configuration">
-        <label>9: Humidity D-Value Setting</label>
+      <parameter name="config_10_1" type="integer" groupName="configuration">
+        <label>10: Humidity D-Value Setting</label>
         <description><![CDATA[
-<br /> <h1>Overview</h1><p>This configuration sets the changed value of the humidity. When the difference from the last report exceeds this setting value, the device will report current humidity value to Z-Wave Hubs. The D-Value = [Value] x 0.1 RH%. Available settings: 0 ... 120. Default: 20<br /></p>
+<br /> <h1>Overview</h1><p>This configuration sets the changed value of the humidity. When the difference from the last report exceeds this setting value, the device will report current humidity value to Z-Wave Hubs. The D-Value = [Value] x 0.1 RH%. Available settings: 0 ... 100. Default: 20<br /></p>
         ]]></description>
         <default>20</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_10_1" type="integer" groupName="configuration">
-        <label>10: Luminance D-Value Setting</label>
+      <parameter name="config_11_1" type="integer" groupName="configuration">
+        <label>11: Luminance D-Value Setting</label>
         <description><![CDATA[
 <br /> <h1>Overview</h1><p>This configuration sets the changed value of the luminance. When the difference from the last report exceeds this setting value, the device will report current luminance value to Z-Wave Hubs. Unit: Lux. Available settings: 0 ... 120. Default: 50<br /></p>
         ]]></description>
@@ -173,21 +185,12 @@ NEO Coolcam PIR 5 in 1<br /> <h1>Overview</h1><p>5 in 1 sensor: motion, temperat
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_11_2" type="integer" groupName="configuration">
-        <label>11: Basic Set Level</label>
+      <parameter name="config_12_1" type="integer" groupName="configuration">
+        <label>12: Basic Set Level</label>
         <description><![CDATA[
 <br /> <h1>Overview</h1><p>This parameter is configured the value that BASIC_SET for nodes that associated in Group 2. '100' - BASIC_SET = 0xFF (ON). '0' - BASIC_SET = 0x00 (OFF). Available settings: 0 ... 100. Default: 100<br /></p>
         ]]></description>
         <default>100</default>
-        <limitToOptions>false</limitToOptions>
-      </parameter>
-
-      <parameter name="config_12_2" type="integer" groupName="configuration">
-        <label>12: Basic Set Off Delay Time</label>
-        <description><![CDATA[
-<br /> <h1>Overview</h1><p>This parameter is configured the time delay for device sending BASIC_SET = 0x00 to nodes that associated in Group 2 when device detects a motion event. [0] - Not Send BASIC_SET = 0x00 Command. [1-30000] - Time delay count. Unit: Second. Available settings: 0 ... 30000. Default: 30<br /></p>
-        ]]></description>
-        <default>30</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
@@ -201,68 +204,47 @@ NEO Coolcam PIR 5 in 1<br /> <h1>Overview</h1><p>5 in 1 sensor: motion, temperat
       </parameter>
 
       <parameter name="config_14_2" type="integer" groupName="configuration">
-        <label>14: ??? Unknown (Luminance Threshold for Associated - Parameter #16?)</label>
+        <label>14: Basic Set Off Delay Time</label>
         <description><![CDATA[
-<br /> <h1>Overview</h1><p>Default: 50<br /></p>
+<br /> <h1>Overview</h1><p>This parameter is configured the time delay for device sending BASIC_SET = 0x00 to nodes that associated in Group 2 when device detects a motion event. [0] - Not Send BASIC_SET = 0x00 Command. [1-30000] - Time delay count. Unit: Second. Available settings: 0 ... 30000. Default: 30<br /></p>
         ]]></description>
-        <default>0</default>
+        <default>30</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_15_2" type="integer" groupName="configuration">
-        <label>15: Sensor Measuring Interval</label>
+        <label>15: Motion Clear Time</label>
         <description><![CDATA[
-<br /> <h1>Overview</h1><p>This parameter is configured the time interval for light sensor, temperature and humidity sensor measuring. This value is larger, the battery life is longer. And the sensors values changed are not obvious. 0 - All sensors are disabled. Unit: Second. Available settings: 0 - 30000. Default: 180 (on batteries) or 10 (on USB)<br /></p>
+This parameter is configured the time to clear motion event after a motion event is detected.<br /> <h1>Overview</h1><p>This parameter is configured the time to clear motion event after a motion event is detected. Time to motion clear, the device will send a clear event report to the controller. Unit: Second. Default 30 seconds</p>
         ]]></description>
-        <default>180</default>
+        <default>30</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_16_2" type="integer" groupName="configuration">
-        <label>16: ??? Luminance Threshold for Associated (or Parameter #14?)</label>
+        <label>16: Luminance Threshold for Associated</label>
         <description><![CDATA[
-<br /> <h1>Overview</h1><p>This parameter is configured the light intensity threshold. When Ambient light intensity is less than this setting, device will consider the current environment is insufficient light. If "Configuration No. 3" is set '1' and a motion event is detected, the device will send a BASIC_SET to the nodes which associated in Group 2. Unit: 1 Lux. Available settings: 0 - 1000. Default: 50 </p>
+Luminance Threshold for Association Group 2 Basic Set sending<br /> <h1>Overview</h1><p>This parameter is configured the light intensity threshold. When Ambient light intensity is less than this setting, device will consider the current environment is insufficient light. If "Configuration No. 3" is set '1' and a motion event is detected, the device will send a BASIC_SET to the nodes which associated in Group 2. Unit: 1 Lux. Available settings: 0 - 1000. Default: 50 </p>
         ]]></description>
         <default>50</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_17_2" type="integer" groupName="configuration">
-        <label>17: ??? Unknown</label>
+        <label>17: Sensor Measuring Interval</label>
         <description><![CDATA[
-<br /> <h1>Overview</h1><p>Default: 180<br /></p>
+Sensor Measuring Interval - Seconds<br /> <h1>Overview</h1><p>This parameter is configured the time interval for light sensor, temperature and humidity sensor measuring. This value is larger, the battery life is longer. And the sensors values changed are not obvious. 0 - All sensors are disabled. Unit: Second. Available settings: 0 - 30000. Default: 180 (on batteries) or 10 (on USB)<br /></p>
         ]]></description>
-        <default>0</default>
+        <default>180</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_18_2" type="integer" groupName="configuration">
-        <label>18: Light Intensity Offset Calibration</label>
+      <parameter name="config_99_2" type="integer" groupName="configuration">
+        <label>99: Light Intensity Offset Calibration</label>
         <description><![CDATA[
 <br /> <h1>Overview</h1><p>This parameter defines the calibrated scale for ambient light intensity. Because the method and position that the sensor mounted and the cover of sensor will bring measurement error, user can get more real light intensity by this parameter setting. User should run the steps blows for calibrating.</p><p>1. Set this parameter value to default (Assumes the sensor has been added in a Z-Wave Network).</p><p>2. Place a digital luxmeter close to sensor and keep the same direction, monitor the light intensity values (Vm) which report to controller and record it. The same time user should record the Value (Vs) of luxmeter.</p><p>3. The scale calibration formula: k = Vm / Vs.</p><p>4. The value of k is then multiplied by 1000 and rounded to the nearest whole number.</p><p>5. Set the value getting in 5) to this parameter, calibrate finished. <br /></p><p>For example, Vm = 300, Vs = 2000 [sic], then k = 300 / 2600 = 0.11538</p><p>k = 0.11538 * 1000 = 115,38 ~ 115</p><p>The parameter should be set to 115.</p><p>Available settings: 1 ... 32767. Default: 5320<br /></p>
         ]]></description>
         <default>5320</default>
-        <limitToOptions>false</limitToOptions>
-      </parameter>
-
-      <parameter name="config_98_1" type="integer" groupName="configuration">
-        <label>98: ??? Binary Sensor Report Enable</label>
-        <description><![CDATA[
-<br /> <h1>Overview</h1><p>'1' - Enable sensor binary report when device detects a motion event. '0' - Disable sensor binary report when device detects a motion event. Default: Disable<br /></p>
-        ]]></description>
-        <default>0</default>
-        <options>
-          <option value="0">Disable</option>
-          <option value="1">Enale</option>
-        </options>
-      </parameter>
-
-      <parameter name="config_99_2" type="integer" groupName="configuration">
-        <label>99: ??? Motion Clear Time</label>
-        <description><![CDATA[
-<br /> <h1>Overview</h1><p>This parameter is configured the time to clear motion event after a motion event detected. Time to motion clear, the device will send a clear event report to controller. Unit: Second. Available settings: 0 ... 30000. Default: 30 </p>
-        ]]></description>
-        <default>30</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 

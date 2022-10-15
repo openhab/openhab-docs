@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="isurpass_kpsw08_00_000" listed="false">
+    <label>KP-SW-08 Keemple Smart Touch Light Switch (2-way)</label>
+    <description><![CDATA[
+Keemple Smart Touch Light Switch (2-way)<br /> <h1>Overview</h1><p>Touch switch is an in-wall switchgear based on Z-Wave wireless radio frequency technology for intelligent control. This product can be added to the gateway or PC controller supporting Z-Wave Plus, remotely controlled through the APP interface, or manually controlled by the touch. In addition, the product also supports the scene mode, the user can configure the scene through the APP, combine various devices in the same scene, and run the scene function through the APP or manually.<br /></p> <br /> <h2>Inclusion Information</h2><ol><li>Connect the power supply.</li><li>Set the Z-Wave network main controller into learning mode.</li><li>Press and hold the button 1 (the red light flashes slowly) until the pink light flashes slowly and then release, the device sends the network k information (blue light flashes quickly).</li><li>After the network is successfully connected, the LED indicator of the device is steady blue, and the load is off by default.</li></ol> <br /> <h2>Exclusion Information</h2><ol><li>Power on the switch.</li><li>Set the Z-Wave network controller into the exclusion mode. </li><li>Long press the switch button 1 (Red LED blink slowly) when Pink LED indicator light blink slowly, release the button, then the device start to send out exclusion information(Blue LED indicator in quick blinking).</li><li>When exclusion successfully, LED display is steady blue, load is off.</li></ol> <br /> <h2>Wakeup Information</h2><p><br /></p>
+    ]]></description>
+    <category>WallSwitch</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_binary" typeId="switch_binary">
+        <label>Switch</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY</property>
+        </properties>
+      </channel>
+      <channel id="scene_number" typeId="scene_number">
+        <label>Scene Number</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_SCENE_ACTIVATION</property>
+        </properties>
+      </channel>
+      <channel id="switch_binary1" typeId="switch_binary">
+        <label>Switch 1</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY:1</property>
+        </properties>
+      </channel>
+      <channel id="scene_number1" typeId="scene_number">
+        <label>Scene Number 1</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_SCENE_ACTIVATION:1</property>
+        </properties>
+      </channel>
+      <channel id="switch_binary2" typeId="switch_binary">
+        <label>Switch 2</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY:2</property>
+        </properties>
+      </channel>
+      <channel id="scene_number2" typeId="scene_number">
+        <label>Scene Number 2</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_SCENE_ACTIVATION:2</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Shenzhen iSurpass Technology Co. ,Ltd</property>
+      <property name="modelId">KP-SW-08</property>
+      <property name="manufacturerId">021C</property>
+      <property name="manufacturerRef">1010:1007</property>
+      <property name="dbReference">1523</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

@@ -17,7 +17,7 @@ Paddle Dimmer (S2)<br /> <h1>Overview</h1><p>Z-Wave dimmer paddle switch, 700 se
       <channel id="switch_dimmer" typeId="switch_dimmer">
         <label>Dimmer</label>
         <properties>
-          <property name="binding:*:PercentType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+          <property name="binding:*:PercentType">COMMAND_CLASS_SWITCH_MULTILEVEL,COMMAND_CLASS_BASIC</property>
           <property name="binding:Command:OnOffType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
         </properties>
       </channel>
@@ -70,7 +70,7 @@ Reverse default on/off operation or set to toggle mode<br /> <h1>Overview</h1><p
       <parameter name="config_2_1" type="integer" groupName="configuration">
         <label>2: LED Indicator On/Off</label>
         <description><![CDATA[
-Adjust LED function<br /> <h1>Overview</h1><p>Choose if you want the LED indicator to turn on when the switch (light) is on or off, or if you want it to remain on or off at all times.</p><p>NOTE: tap the upper paddle 6 times quickly to change this mode.</p>
+Adjust LED function On/Off<br /> <h1>Overview</h1><p>Choose if you want the LED indicator to turn on when the switch (light) is on or off, or if you want it to remain on or off at all times.</p><p>NOTE: tap the upper paddle 6 times quickly to change this mode.</p>
         ]]></description>
         <default>0</default>
         <options>

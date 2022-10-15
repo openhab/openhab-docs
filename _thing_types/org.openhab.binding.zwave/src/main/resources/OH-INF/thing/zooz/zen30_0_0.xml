@@ -361,7 +361,7 @@ Set reporting behavior for the relay when physical control is disabled.<br /> <h
       <parameter name="config_26_1" type="integer" groupName="configuration">
         <label>26: Night Light Mode</label>
         <description><![CDATA[
-Set the brightness level the dimmer will turn on to when off and when lower paddle is held DOWN for a second.<br /> <h1>Overview</h1><p><br /></p>
+Set the brightness level (default 20%) the dimmer will turn on to when off and when lower paddle is held DOWN for a second.<br /> <h1>Overview</h1><p>Set the brightness level (default 20%) the dimmer will turn on to when off and when lower paddle is held DOWN for a second.<br /></p>
         ]]></description>
         <default>20</default>
         <limitToOptions>false</limitToOptions>
@@ -370,7 +370,7 @@ Set the brightness level the dimmer will turn on to when off and when lower padd
       <parameter name="config_28_1" type="integer" groupName="configuration">
         <label>28: Scene Control - Dimmer Paddles</label>
         <description><![CDATA[
-Enable or disable scene control functionality for quick double tap triggers on the dimmer paddles.<br /> <h1>Overview</h1><p>Enable or disable scene control functionality for quick double tap triggers on the dimmer paddles.<br /></p>
+Enable (default) or disable scene control functionality for quick double tap triggers on the dimmer paddles.<br /> <h1>Overview</h1><p>Enable (default) or disable scene control functionality for quick double tap triggers on the dimmer paddles.<br /></p>
         ]]></description>
         <default>1</default>
         <options>
@@ -383,9 +383,13 @@ Enable or disable scene control functionality for quick double tap triggers on t
       <parameter name="config_29_1" type="integer" groupName="configuration">
         <label>29: Scene Control - Relay Button</label>
         <description><![CDATA[
-Enable or disable scene control functionality for quick double tap triggers on the relay button.<br /> <h1>Overview</h1><p>Enable or disable scene control functionality for quick double tap triggers on the relay button.<br /></p>
+Enable (default) or disable scene control functionality for quick double tap triggers on the relay button.<br /> <h1>Overview</h1><p>Enable (default) or disable scene control functionality for quick double tap triggers on the relay button.<br /></p>
         ]]></description>
         <default>0</default>
+        <options>
+          <option value="0">Disabled</option>
+          <option value="1">enabled (default)</option>
+        </options>
         <limitToOptions>false</limitToOptions>
       </parameter>
 

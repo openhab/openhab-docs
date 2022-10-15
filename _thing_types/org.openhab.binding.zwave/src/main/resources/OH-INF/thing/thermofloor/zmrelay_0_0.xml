@@ -6,11 +6,11 @@
                       https://openhab.org/schemas/thing-description/v1.0.0">
 
   <thing-type id="thermofloor_zmrelay_00_000" listed="false">
-    <label>ZM Relay Heati Single Relay 16A</label>
+    <label>Heatit ZM Relay Single Relay 16A</label>
     <description><![CDATA[
-Heati Single Relay 16A<br /> <h1>Overview</h1><p>Heatit ZM Single Relay is a high power relay for in-wall installations. The relay allows you to control connected devices either through your Z-Wave network or via a wired switch. The module is equipped with a 16A relay and has a scene controller functionality.</p><p>The Heatit ZM Single Relay has a power metering feature that allows you to monitor the power consumption of your connected devices.</p><p>Supports encryption modes S0, S2 Authenticated Class, S2 Unauthenticated Class</p> <br /> <h2>Inclusion Information</h2><ol><li>Set the primary controller to add mode (secure/non-secure).</li><li>Press the configuration button or switch connected to S1 x 3 times in rapid succession. </li><li>The device LED will blink in green when adding procedure has been successfully initiated.</li></ol><p>When the device has been included in the home automation system, the LED will stay green for 3 seconds. The device is now ready for use with default settings.</p> <br /> <h2>Exclusion Information</h2><ol><li>Set the primary controller to add mode (secure/non-secure).</li><li>Press the configuration button or switch connected to S1 x 3 times in rapid succession. </li><li>The device LED will blink in green when adding procedure has been successfully initiated.</li></ol><p>When the device has been included in the home automation system, the LED will stay green for 3 seconds. The device is now ready for use with default settings.</p> <br /> <h2>Wakeup Information</h2><p><br /></p>
+Single Relay 16A<br /> <h1>Overview</h1><p>Heatit ZM Single Relay is a high power relay for in-wall installations. The relay allows you to control connected devices either through your Z-Wave network or via a wired switch. The module is equipped with a 16A relay and has a scene controller functionality.</p><p>The Heatit ZM Single Relay has a power metering feature that allows you to monitor the power consumption of your connected devices.</p><p>Supports encryption modes S0, S2 Authenticated Class, S2 Unauthenticated Class</p> <br /> <h2>Inclusion Information</h2><ol><li>Set the primary controller to add mode (secure/non-secure).</li><li>Press the configuration button or switch connected to S1 x 3 times in rapid succession. </li><li>The device LED will blink in green when adding procedure has been successfully initiated.</li></ol><p>When the device has been included in the home automation system, the LED will stay green for 3 seconds. The device is now ready for use with default settings.</p> <br /> <h2>Exclusion Information</h2><ol><li>Set the primary controller to add mode (secure/non-secure).</li><li>Press the configuration button or switch connected to S1 x 3 times in rapid succession. </li><li>The device LED will blink in green when adding procedure has been successfully initiated.</li></ol><p>When the device has been included in the home automation system, the LED will stay green for 3 seconds. The device is now ready for use with default settings.</p> <br /> <h2>Wakeup Information</h2><p><br /></p>
     ]]></description>
-    <category>Battery</category>
+    <category>PowerOutlet</category>
 
     <!-- CHANNEL DEFINITIONS -->
     <channels>
@@ -55,7 +55,7 @@ Heati Single Relay 16A<br /> <h1>Overview</h1><p>Heatit ZM Single Relay is a hig
     <!-- DEVICE PROPERTY DEFINITIONS -->
     <properties>
       <property name="vendor">ThermoFloor</property>
-      <property name="modelId">ZM Relay</property>
+      <property name="modelId">Heatit ZM Relay</property>
       <property name="manufacturerId">019B</property>
       <property name="manufacturerRef">0004:3500</property>
       <property name="dbReference">1440</property>
