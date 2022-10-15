@@ -15,8 +15,9 @@ Always keep this in mind when searching for help and solutions.
 
 ## Platform Recommendations
 
-1. You are **new to openHAB** and want to give it a try? You are in luck:
-    - Set up openHAB on your local PC or Mac in just a few steps.
+1. You are **new to openHAB** and just want to give it a try?
+    - Set up openHAB on your local PC or Mac in just a few steps *or*
+    - use a Raspi with [openHABian](openhabian.html)
 
 1. You've gained some experience and want to use openHAB to seriously control your home?
     Typical hardware and software requirements are:
@@ -28,19 +29,15 @@ Always keep this in mind when searching for help and solutions.
 Many devices are suited to host a continuous installation of openHAB.
 Experiences with different devices and environments can be found in the [community forum hardware section](https://community.openhab.org/c/hardware/server).
 
-The Raspberry Pi as a minimal sufficient device is quite popular, especially as we offer a quick setup with [openHABian](openhabian.html).
-A popular alternative is [our solution for the Synology DiskStation](synology.html), which many users already own in their homes.
-The previously mentioned [openHABian](openhabian.html) can also be used to kickstart your openHAB experience on existing Debian/Ubuntu based Linux systems.
-
-Please check the menu to the left for all available options.
+We recommend to get a dedicated Raspberry Pi 4 and to use [openHABian](openhabian.html) for quick setup. openHABian is also available to kickstart your openHAB experience on existing Debian x86 based Linux systems.
 
 ## Prerequisites
 
 Make sure that you have an up to date **Java 11** JVM platform installed on your host system.
-Zulu is currently the recommended Java platform for openHAB.
-[Download](https://www.azul.com/downloads/zulu-community/?&architecture=x86-64-bit&package=jdk#) and [installation](https://docs.azul.com/zulu/zuludocs/ZuluUserGuide/InstallingZulu/InstallationWindowsUsingZuluMSIFile.htm) instructions can be found on Azul Systems' Zulu website.
-Oracle Java is also suitable for most configurations, but licensing restrictions may apply.
-OpenJDK may also be used, but it has some [known limitations](https://community.openhab.org/t/running-openhab-2-on-openjdk/21443/8?u=gatekeeper6838) with openHAB and is not recommended.
+OpenJDK is currently the recommended Java platform for openHAB.
+You could also [download Azul Zulu](https://www.azul.com/downloads/zulu-community/?&architecture=x86-64-bit&package=jdk#) [Installation](https://docs.azul.com/zulu/zuludocs/ZuluUserGuide/InstallingZulu/InstallationWindowsUsingZuluMSIFile.htm) instructions can be found on Azul Systems' Zulu website.
+Oracle Java is also suitable for most configurations but it's not recommended. Licensing restrictions may apply.
+
 
 ::: warning
 Please note that versions of Java higher than 11 are not supported at the moment.
@@ -48,14 +45,14 @@ Please note that versions of Java higher than 11 are not supported at the moment
 
 | Java Platform                               | Advantages                                                                                                                                                                            | Disadvantages                                                                                                                                                                                                                                                                                                                        |
 |---------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| [Azul Zulu](https://www.azul.com/downloads/) | Completely open source, fully certified Java SE compliant build of OpenJDK, embedded version optimized for ARM devices [available here](https://www.azul.com/downloads/zulu-embedded/) |                                                                                                                                                                                                                                                                                                                                      |
+| [Azul Zulu](https://www.azul.com/downloads/) | Open source, fully certified Java SE compliant build of OpenJDK, embedded version optimized for ARM devices [available here](https://www.azul.com/downloads/zulu-embedded/) |                                                                                                                                                                                                                                                                                                                                      |
 | [Oracle Java](https://java.com/en/)         | Full openHAB support on all platforms                                                                                                                                                 | [Licensing restrictions](https://blog.takipi.com/running-java-on-docker-youre-breaking-the-law/), manual installation required on many Linux systems: [Ubuntu](https://help.ubuntu.com/community/Java), [Mint](https://community.linuxmint.com/tutorial/view/1091), and [Debian](https://wiki.debian.org/Java/Sun) are some examples |
 | [AdoptOpenJDK](https://adoptopenjdk.net)          | Open Source JDK backed by many large companies |                                                                                                                                                                                                                                                                                                                                      |
 
 Please download and install the **Java 11** version of the JVM.
 Note that openHAB 3 will run under Java 11, and you *can* use it with openHAB 2.X as well. But be aware that although developers are working hard to make this work, there might be problems with the oldest parts of openHAB 2.x, such as some of the v1 bindings, due to non-backward compatible changes in Java 11.
 
-The **64-bit version** of the JVM is recommended on platforms using a 64-bit OS and an Intel or AMD processor.
+The **64-bit version** of the JVM is **only** recommended on platforms using a 64-bit OS and an Intel or AMD processor.
 
 The **32-bit version** of the JVM is recommended on ARM platforms such as the Raspberry Pi.
 The 32-bit JVM performs better on the ARM platform. Some add-ons use libraries that do not work with a 64-bit JVM on ARM.
