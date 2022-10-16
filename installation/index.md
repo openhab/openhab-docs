@@ -34,7 +34,7 @@ We recommend to get a dedicated Raspberry Pi 4 and to use [openHABian](openhabia
 ## Prerequisites
 
 Make sure that you have an up to date **Java 11** JVM platform installed on your host system.
-OpenJDK is currently the recommended Java platform for openHAB.
+We recommended to use the openjdk package that comes with your Linux distro. If in doubt, explicitly install a JVM based on OpenJDK.
 You could also [download Azul Zulu](https://www.azul.com/downloads/zulu-community/?&architecture=x86-64-bit&package=jdk#) [Installation](https://docs.azul.com/zulu/zuludocs/ZuluUserGuide/InstallingZulu/InstallationWindowsUsingZuluMSIFile.htm) instructions can be found on Azul Systems' Zulu website.
 Oracle Java is also suitable for most configurations but it's not recommended. Licensing restrictions may apply.
 
