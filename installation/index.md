@@ -29,12 +29,14 @@ Always keep this in mind when searching for help and solutions.
 Many devices are suited to host a continuous installation of openHAB.
 Experiences with different devices and environments can be found in the [community forum hardware section](https://community.openhab.org/c/hardware/server).
 
-We recommend to get a dedicated Raspberry Pi 4 and to use [openHABian](openhabian.html) for quick setup. openHABian is also available to kickstart your openHAB experience on existing Debian x86 based Linux systems.
+We recommend to get a dedicated Raspberry Pi 4 and to use [openHABian](openhabian.html) for quick setup.
+openHABian is also available to kickstart your openHAB experience on existing Debian x86 based Linux systems.
 
 ## Prerequisites
 
 Make sure that you have an up to date **Java 11** JVM platform installed on your host system.
-We recommended to use the openjdk package that comes with your Linux distro. If in doubt, explicitly install a JVM based on OpenJDK.
+We recommended to use the openjdk package that comes with your Linux distro.
+If in doubt, explicitly install a JVM based on OpenJDK.
 You could also [download Azul Zulu](https://www.azul.com/downloads/zulu-community/?&architecture=x86-64-bit&package=jdk#) [Installation](https://docs.azul.com/zulu/zuludocs/ZuluUserGuide/InstallingZulu/InstallationWindowsUsingZuluMSIFile.htm) instructions can be found on Azul Systems' Zulu website.
 Oracle Java is also suitable for most configurations but it's not recommended. Licensing restrictions may apply.
 
