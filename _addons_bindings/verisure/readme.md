@@ -5,6 +5,7 @@ title: Verisure - Bindings
 type: binding
 description: "This is an openHAB binding for Verisure Smart Alarms by Verisure Securitas."
 since: 3x
+logo: images/addons/verisure.png
 install: auto
 ---
 
