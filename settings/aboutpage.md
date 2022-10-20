@@ -88,8 +88,13 @@ In case you want to activate audio on multiple devices, each device needs to be 
 Technically, this information (and all the other miscellaneous settings) are stored in the local storage of the browser.
 - For me information [see here](https://github.com/openhab/openhab-webui/pull/1422)
 
-To test if it works play some static content that comes with openHAB in the /sounds dir using a console command.
-Use [openHABs console](administration/console.html#using-the-console) to enter the following command:
+To test if it works play some static content that comes with openHAB in the /sounds dir using a openHAB console command.
+Use [openHABs console](/administration/console.html#using-the-console) or just run the following from the linux shell:
+
+> openhab-cli console
+
+
+and then enter the following command:
 
 ```text
 openhab> audio play webaudio barking.mp3
@@ -124,7 +129,7 @@ or using it in a blockly rule:
 It is important to understand that you cannot address one particular device.
 When you play a sound on webaudio, it will be played on each device where webaudio is activated.
 
-If you really like webaudio, you can also make it the default sink in the "Audio" settings - see [Settings->Audio](/docs/settings/services-system.html#Audio).
+If you really like webaudio, you can also make it the default sink in the "Audio" settings - see [Settings->Audio](/docs/settings/services_system.html#Audio).
 Then you can omit the webaudio sink ID from commands/actions.
 
 ![settings-audio.png](images/settings-audio.png)
