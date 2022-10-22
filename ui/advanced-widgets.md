@@ -20,6 +20,7 @@ The most commonly used f7 components will likely be the `f7-block`, `f7-row`, an
 
 Any of the OH components that allow for [wiget actions](building-pages.html#actions), include easy configuration for using some other widget as a popup or popover.  If, however, there is need for the popup or popover to be built-in with a single widget (e.g., to add a widget to the [marketplace](https://community.openhab.org/c/marketplace/ui-widgets/75) that includes a popup or popover), the `f7-popup` and `f7-popover` component can be used and the open or closed status of that modal object controled by the `popupOpen`, `popupClose`, `popoverOpen`, and `popoverClose` properties available in many of the other f7 components and their OH derivaties.
 #### Popup example
+
 ```yaml
 - component: f7-card
   config:
@@ -45,6 +46,7 @@ Any of the OH components that allow for [wiget actions](building-pages.html#acti
 There are two special components that are not derived from any other specific library, the `Label` and the `Content` component.  These two are similar in their simplicity of configuration, primarily taking only a `text` property (which can be an expression).
 
 The `Label` component renders the value given by the `text` property inside it's own `<div>` element.  For example:
+
 ```yaml
 - component: f7-row
   config:
@@ -55,15 +57,19 @@ The `Label` component renders the value given by the `text` property inside it's
         config:
           text: Label text here
 ```
+
 renders in the page html as:
+
 ```html
 <div class="row fancy-row">
   <div>Label text here</div>
 </div>  
 ```
+
 Because of this the `Label` component also accepts `class` and `style` configurations which are applied to the `<div>`.  `Label` components are often used extensively in compound widgets with several other components to place informative text.  However, because of the `<div>` container, there are times and situations where the `Label` component can cause placement/alignment issues or even configuration issues if the parent element is not compatible with having a `<div>` container as a child.
 
 In contrast, the `Content` component renders the value given by the `text` property *without* any additional container.  For example:
+
 ```yaml
 - component: f7-row
   config:
@@ -74,10 +80,13 @@ In contrast, the `Content` component renders the value given by the `text` prope
         config:
           text: Content text here
 ```
+
 renders in the page html as:
+
 ```html
 <div class="row fancy-row">Content text here</div>
 ```
+
 With no container, there is no possibility to add `class` or `style` configuration to the `Content` component.
 
 ### HTML Components
@@ -86,6 +95,7 @@ The custom widget system can also be used to build html more directly.  The `com
 Html components also accept a `default` slot which will render a child component inside the tag.
 
 #### HTML component examples
+
 The widget yaml:
 ```yaml
 - component: div
@@ -94,11 +104,15 @@ The widget yaml:
     style:
         font-weight: bold
 ```
+
 Becomes the html:
+
 ```html
 <div style="font-weight: bold;">Make this text bold</div>
 ```
-To put more complex html heirarchies, use the components `default` slot:
+
+To put more complex html heirarchies, use the component's `default` slot:
+
 ```yaml
 - component: div
   config:
@@ -115,7 +129,9 @@ To put more complex html heirarchies, use the components `default` slot:
           style:
             font-weight: bold
 ```
+
 Becomes the html:
+
 ```html
 <div style="font-style: italic;">
   This text starts with italics <span style="font-weight: bold;">but then becomes BOLD!</span>
@@ -131,23 +147,29 @@ The widget expression system uses a javascript-like expression parser, [jse-eval
 Many standard javascript methods take a function as a parameter.  The expression parser can parse arrow functions as the paramters of these methods.
 
 Here an arrow function is used in conjunction with the `.find()` method to locate the item object in an array of items (such as is returned by a `oh-repeater`) with a particular name.  The label of the found item is then used as the title of a component.
+
 ```yaml
 title: =someItemList.find( (x) => x.name=="KitchenSwitch" ).label
 ```
+
 #### String templates
 String templates are a much more human-readable way of creating strings with incorporated dynamic values.  String templates are surrounded by backticks (``` `string template` ```) instead of single- or double-quotes.  Inside string templates variable values can be insterted with `${variable}` syntax.
 
 Here the value of the widget property `props.page` is included in the text of a component by a string template.
+
 ```yaml
 text: =`This button opens the ${props.page} page`
 ```
+
 #### Regular expressions
 Regular expressions (regex) allow for complex search or replace string operations.  Many of the javascript string methods accept regex parameters expressed as the regex string between two forward slashes (`/regex here/`).
 
 Here a widget proptery containing an item name is searched using regex and the first capture (in this case all characters between two underscores) is returned as a component label.
+
 ```yaml
 label: =props.item.match(/_(.*)_/)[1]
 ```
+
 #### Objects
 The variable action allows components in widgets to pass information back and forth when there is user interaction.  Often this informtation is simple, such as a single string or input value.  Sometimes, however, it is helpul to add more information to a variable and for these instances javascript opjects are useful.  The widget system can create widgets in two different ways.
 
@@ -160,6 +182,7 @@ Due to the special meaning of `:[space]` in yaml, it is best to have no spaces b
 :::
 
 Here a variable is set to an object with `name` and `selected` keys using the object expression.
+
 ```yaml
 actionVariable: myObject
 actionVariableValue: ={'name':props.item,'selected':true}
@@ -168,6 +191,7 @@ actionVariableValue: ={'name':props.item,'selected':true}
 The other way to create objects is to take advantage of the relationship between yaml and JSON and place the key:value pairs as yaml keys under the initial key.
 
 Here is a variable definition with the same results as the one above using the yaml syntax.
+
 ```yaml
 actionVariable: myObject
 actionVariableValue:
