@@ -153,7 +153,7 @@ The variable action allows components in widgets to pass information back and fo
 
 Objects can be defined withthin the expression system using the standard javascript syntax: `{'key1':'value1','key2':'value2'}`.
 
-::: Note
+::: tip
 
 Due to the special meaning of `:[space]` in yaml, it is best to have no spaces between the `:` and the value.  If you have `:[space]` anywhere in your expression it will raise a yaml error unless you enclose the entire expression (= included) in another layer of quotes.
 
@@ -176,3 +176,15 @@ actionVariableValue:
 ```
 
 In both cases, the variable can now be referenced by other components as `vars.myObject` with keys `vars.myObject.name` and `vars.myObject.selected`.
+
+The object expression can also be used to simulate a `switch` control statement.  The most common flow control statement in the expressions is the [conditional (ternary) operator](building-pages.html#dynamically-configuring-components-with-expressions) which is very efficient for selecting from two options based on a single boolean criterion.  If you have a list of possible options, you can string multiple ternary operators together, but this grows cumbersome very quickly.  For example, if there is an HVAC with a mode item that can be set to `heat`, `cool`, `auto`, and `off` modes, it requires 4 nested ternary operators to set a component's background color to match the current HVAC mode (with a fall back option if the item has some other state, e.g. `null`).
+
+```yaml
+background: =(@@hvacModeItem == 'heat')?'orange':(@@hvacModeItem == 'cool')?'blue':(@@hvacModeItem == 'auto')?'green':(@@hvacModeItem == 'off')?'white':'red'
+```
+
+To use an object instead, simply create an object with keys for each of the item's expected states, and give each key the desired output value.  Referencing that object using the item's state will return the desired value and following that with a simple `OR` statement will provide the valueback condition is the object reference is undefined.
+
+```yaml
+background: =({'heat':'orange','cool':'blue','auto':'green','off':'white'})[@@hvacModeItem] || 'red'
+```
