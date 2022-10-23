@@ -14,17 +14,12 @@ IO Master Simon 100<br /> <h1>Overview</h1><p>Do you need a Master that will all
 
     <!-- CHANNEL DEFINITIONS -->
     <channels>
-      <channel id="switch_dimmer" typeId="switch_dimmer">
-        <label>Dimmer</label>
+      <channel id="blinds_control" typeId="blinds_control">
+        <label>Blinds Control</label>
         <properties>
           <property name="binding:*:PercentType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
-          <property name="binding:Command:OnOffType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
-        </properties>
-      </channel>
-      <channel id="scene_number" typeId="scene_number">
-        <label>Scene Number</label>
-        <properties>
-          <property name="binding:*:DecimalType">COMMAND_CLASS_CENTRAL_SCENE</property>
+          <property name="binding:Command:StopMoveType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+          <property name="binding:Command:UpDownType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
         </properties>
       </channel>
     </channels>

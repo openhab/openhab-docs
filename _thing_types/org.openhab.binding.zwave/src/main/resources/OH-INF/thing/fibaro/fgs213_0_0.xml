@@ -230,6 +230,7 @@ S1 switch - scenes sent<br /> <h1>Overview</h1><p>This parameter determines whic
           <option value="4">Key pressed 3 times</option>
           <option value="8">Key Hold Down and Key Released</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_29_1" type="integer" groupName="configuration">
@@ -245,6 +246,7 @@ S2 switch - scenes sent<br /> <h1>Overview</h1><p>This parameter determines whic
           <option value="4">Key pressed 3 times</option>
           <option value="8">Key Hold Down and Key Released</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_30_1" type="integer" groupName="configuration">

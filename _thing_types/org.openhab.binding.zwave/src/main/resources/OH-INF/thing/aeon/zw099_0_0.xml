@@ -22,13 +22,13 @@ Smart Dimmer 6<br /> <h1>Overview</h1><p>Aeotec Smart Dimmer 6 is a low-cost Z-W
         </properties>
       </channel>
       <channel id="meter_kwh" typeId="meter_kwh">
-        <label>Power Consumption (kWh)</label>
+        <label>Electric meter (kWh)</label>
         <properties>
           <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_KWh</property>
         </properties>
       </channel>
       <channel id="meter_watts" typeId="meter_watts">
-        <label>Energy Consumption (watts)</label>
+        <label>Electric meter (watts)</label>
         <properties>
           <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_W</property>
         </properties>

@@ -68,30 +68,12 @@ The following table summarises the channels available for the 10000306-039 -:
 
 | Channel Name | Channel ID | Channel Type | Category | Item Type |
 |--------------|------------|--------------|----------|-----------|
-| Dimmer | switch_dimmer | switch_dimmer | DimmableLight | Dimmer | 
-| Scene Number | scene_number | scene_number |  | Number | 
+| Blinds Control | blinds_control | blinds_control | Blinds | Rollershutter | 
 
-### Dimmer
-The brightness channel allows to control the brightness of a light.
-            It is also possible to switch the light on and off.
+### Blinds Control
+Provides start / stop control of blinds.
 
-The ```switch_dimmer``` channel is of type ```switch_dimmer``` and supports the ```Dimmer``` item and is in the ```DimmableLight``` category.
-
-### Scene Number
-Triggers when a scene button is pressed.
-
-The ```scene_number``` channel is of type ```scene_number``` and supports the ```Number``` item.
-This channel provides the scene, and the event as a decimal value in the form ```<scene>.<event>```. The scene number is set by the device, and the event is as follows -:
-
-| Event ID | Event Description  |
-|----------|--------------------|
-| 0        | Single key press   |
-| 1        | Key released       |
-| 2        | Key held down      |
-| 3        | Double keypress    |
-| 4        | Tripple keypress   |
-| 5        | 4 x keypress       |
-| 6        | 5 x keypress       |
+The ```blinds_control``` channel is of type ```blinds_control``` and supports the ```Rollershutter``` item and is in the ```Blinds``` category.
 
 
 

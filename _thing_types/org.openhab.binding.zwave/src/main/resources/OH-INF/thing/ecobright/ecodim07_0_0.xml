@@ -6,9 +6,9 @@
                       https://openhab.org/schemas/thing-description/v1.0.0">
 
   <thing-type id="ecobright_ecodim07_00_000" listed="false">
-    <label>EcoDim07 Smart Dimmer Switch 200W LED</label>
+    <label>ECO-DIM.06 or ECO-DIM.07 Smart Dimmer LED</label>
     <description><![CDATA[
-Smart Dimmer Switch 200W LED<br /> <h1>Overview</h1><p>Remotely controlled multi level push / turn dimmer that can be controlled through Z-Wave and Zigbee (by setting a hardware switch). The dimmer is suitable for 0-200W LED lights where the MIN and MAX values can be set with hardware dials. The dimmer can be installed in a 2 wire setup (no N-wire required) and has a soft start system.</p> <br /> <h2>Inclusion Information</h2><p>Make sure the right switch is set to Z-Wave. Power on the dimmer, press and hold the reset button for over 4 seconds.</p> <br /> <h2>Exclusion Information</h2><p>There are two exclusion methods:</p> <p>1. Exclusion from the primary controller / gateway:</p> <p>Twice press the reset button, the dimmer will be set to exclusion mode, waiting to be excluded.</p> <p>2. Factory reset the dimmer (forcing it to be excluded from a network):</p> <p>Press and hold down the reset button for over 4 seconds, the dimmer will be reset to factory defaults after the BLUE LED indicator blinks.</p>
+Smart Dimmer LED<br /> <h1>Overview</h1><p>ECO-DIM.06: Plug-in dimmer Z-Wave 0-100W</p><p>Plug the Z-Wave plug-in dimmer into the socket and insert the euro plug of your LED lamp into this plug-in dimmer. You can then dim the LED lamps and press on/off with the push/turn button. Unique is the MIN adjustment option, with which you can set the minimum light level yourself!</p><p>ECO-DIM.07: Smart LED dimmer Z-Wave 0-200W</p><p>Remotely controlled multi level push / turn dimmer that can be controlled through Z-Wave and Zigbee (by setting a hardware switch). The dimmer is suitable for 0-200W LED lights where the MIN and MAX values can be set with hardware dials. The dimmer can be installed in a 2 wire setup (no N-wire required) and has a soft start system.</p> <br /> <h2>Inclusion Information</h2><p>ECO-DIM.06:</p><ol><li>Step 1. Remove the device from a previous Z-Wave network if it has already been added to one, otherwise pairing mode will be fail.</li><li>Step 2. From your Z-Wave Controller interface, choose to add lighting and enter the pairing mode</li><li>Step 3. Double Press the reset button.</li><li>Step 4. The indicator will start blinking blue and will stay solid for 10s when pairing succeeds. Timeout 15mins.</li></ol><p>ECO-DIM.07:<br /></p><p>Make sure the right switch is set to Z-Wave. Power on the dimmer, press and hold the reset button for over 4 seconds.</p> <br /> <h2>Exclusion Information</h2><p>ECO-DIM.06:</p><p>Method 1. From your Z-Wave hub interface, choose to delete or reset the device as instructed.</p><p>Method 2. Remove from the Device, see below instructions.</p><ul><li>Step 1. Press the reset button for 3 times.</li><li>Step 2. The indicator will start blinking purple and will stay solid for 10s when removing is completed. Timeout 3mins.</li></ul><p><br /></p><p>ECO-DIM.07:</p><p>There are two exclusion methods:</p> <p>1. Exclusion from the primary controller / gateway:</p> <p>Twice press the reset button, the dimmer will be set to exclusion mode, waiting to be excluded.</p> <p>2. Factory reset the dimmer (forcing it to be excluded from a network):</p> <p>Press and hold down the reset button for over 4 seconds, the dimmer will be reset to factory defaults after the BLUE LED indicator blinks.</p> <br /> <h2>Wakeup Information</h2><p><br /></p>
     ]]></description>
     <category>WallSwitch</category>
 
@@ -21,12 +21,24 @@ Smart Dimmer Switch 200W LED<br /> <h1>Overview</h1><p>Remotely controlled multi
           <property name="binding:Command:OnOffType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
         </properties>
       </channel>
+      <channel id="meter_watts" typeId="meter_watts">
+        <label>Electric meter (watts)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_W</property>
+        </properties>
+      </channel>
+      <channel id="meter_kwh" typeId="meter_kwh">
+        <label>Electric meter (kWh)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_KWh</property>
+        </properties>
+      </channel>
     </channels>
 
     <!-- DEVICE PROPERTY DEFINITIONS -->
     <properties>
       <property name="vendor">EcoBright</property>
-      <property name="modelId">EcoDim07</property>
+      <property name="modelId">ECO-DIM.06 or ECO-DIM.07</property>
       <property name="manufacturerId">0431</property>
       <property name="manufacturerRef">0202:0001,0202:0002</property>
       <property name="dbReference">1114</property>

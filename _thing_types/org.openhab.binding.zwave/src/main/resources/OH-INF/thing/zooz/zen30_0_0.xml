@@ -60,13 +60,6 @@ Dimmer &amp; Dry Contact Relay<br /> <h1>Overview</h1><p>Features</p> <ul><li>Ma
       </parameter-group>
 
       <!-- PARAMETER DEFINITIONS -->
-      <parameter name="config_0_1" type="integer" groupName="configuration">
-        <label>0: Enable/Disable Scene Control - Relay Button</label>
-        <description>Enable or disable scene control functionality for quick double tap triggers on the relay button.</description>
-        <default>1</default>
-        <limitToOptions>false</limitToOptions>
-      </parameter>
-
       <parameter name="config_1_1" type="integer" groupName="configuration">
         <label>1: LED Indicator Mode for Dimmer</label>
         <description><![CDATA[

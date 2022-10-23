@@ -1,29 +1,59 @@
 ---
 layout: documentation
-title: EcoDim07 - ZWave
+title: ECO-DIM.06 or ECO-DIM.07 - ZWave
 ---
 
 {% include base.html %}
 
-# EcoDim07 Smart Dimmer Switch 200W LED
-This describes the Z-Wave device *EcoDim07*, manufactured by *EcoBright* with the thing type UID of ```ecobright_ecodim07_00_000```.
+# ECO-DIM.06 or ECO-DIM.07 Smart Dimmer LED
+This describes the Z-Wave device *ECO-DIM.06 or ECO-DIM.07*, manufactured by *EcoBright* with the thing type UID of ```ecobright_ecodim07_00_000```.
 
 The device is in the category of *Wall Switch*, defining Any device attached to the wall that controls a binary status of something, for ex. a light switch.
 
-![EcoDim07 product image](https://opensmarthouse.org/zwavedatabase/1114/image/)
+![ECO-DIM.06 or ECO-DIM.07 product image](https://opensmarthouse.org/zwavedatabase/1114/image/)
 
 
-The EcoDim07 supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is also able to participate in the routing of data between other devices in the mesh network.
+The ECO-DIM.06 or ECO-DIM.07 supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is also able to participate in the routing of data between other devices in the mesh network.
 
 ## Overview
+
+ECO-DIM.06: Plug-in dimmer Z-Wave 0-100W
+
+Plug the Z-Wave plug-in dimmer into the socket and insert the euro plug of your LED lamp into this plug-in dimmer. You can then dim the LED lamps and press on/off with the push/turn button. Unique is the MIN adjustment option, with which you can set the minimum light level yourself!
+
+ECO-DIM.07: Smart LED dimmer Z-Wave 0-200W
 
 Remotely controlled multi level push / turn dimmer that can be controlled through Z-Wave and Zigbee (by setting a hardware switch). The dimmer is suitable for 0-200W LED lights where the MIN and MAX values can be set with hardware dials. The dimmer can be installed in a 2 wire setup (no N-wire required) and has a soft start system.
 
 ### Inclusion Information
 
+ECO-DIM.06:
+
+  1. Step 1. Remove the device from a previous Z-Wave network if it has already been added to one, otherwise pairing mode will be fail.
+  2. Step 2. From your Z-Wave Controller interface, choose to add lighting and enter the pairing mode
+  3. Step 3. Double Press the reset button.
+  4. Step 4. The indicator will start blinking blue and will stay solid for 10s when pairing succeeds. Timeout 15mins.
+
+ECO-DIM.07:  
+
+
 Make sure the right switch is set to Z-Wave. Power on the dimmer, press and hold the reset button for over 4 seconds.
 
 ### Exclusion Information
+
+ECO-DIM.06:
+
+Method 1. From your Z-Wave hub interface, choose to delete or reset the device as instructed.
+
+Method 2. Remove from the Device, see below instructions.
+
+  * Step 1. Press the reset button for 3 times.
+  * Step 2. The indicator will start blinking purple and will stay solid for 10s when removing is completed. Timeout 3mins.
+
+  
+
+
+ECO-DIM.07:
 
 There are two exclusion methods:
 
@@ -49,11 +79,13 @@ Switch on the lights with the push / turn button. When the lights are on put a s
 
 ## Channels
 
-The following table summarises the channels available for the EcoDim07 -:
+The following table summarises the channels available for the ECO-DIM.06 or ECO-DIM.07 -:
 
 | Channel Name | Channel ID | Channel Type | Category | Item Type |
 |--------------|------------|--------------|----------|-----------|
 | Dimmer | switch_dimmer | switch_dimmer | DimmableLight | Dimmer | 
+| Electric meter (watts) | meter_watts | meter_watts | Energy | Number | 
+| Electric meter (kWh) | meter_kwh | meter_kwh | Energy | Number | 
 
 ### Dimmer
 The brightness channel allows to control the brightness of a light.
@@ -61,11 +93,21 @@ The brightness channel allows to control the brightness of a light.
 
 The ```switch_dimmer``` channel is of type ```switch_dimmer``` and supports the ```Dimmer``` item and is in the ```DimmableLight``` category.
 
+### Electric meter (watts)
+Indicates the instantaneous power consumption.
+
+The ```meter_watts``` channel is of type ```meter_watts``` and supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
+
+### Electric meter (kWh)
+Indicates the energy consumption (kWh).
+
+The ```meter_kwh``` channel is of type ```meter_kwh``` and supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
+
 
 
 ## Device Configuration
 
-The following table provides a summary of the 2 configuration parameters available in the EcoDim07.
+The following table provides a summary of the 2 configuration parameters available in the ECO-DIM.06 or ECO-DIM.07.
 Detailed information on each parameter can be found in the sections below.
 
 | Param | Name  | Description |
@@ -111,7 +153,7 @@ This parameter has the configuration ID ```config_2_1``` and is of type ```INTEG
 
 Association groups allow the device to send unsolicited reports to the controller, or other devices in the network. Using association groups can allow you to eliminate polling, providing instant feedback of a device state change without unnecessary network traffic.
 
-The EcoDim07 supports 1 association group.
+The ECO-DIM.06 or ECO-DIM.07 supports 1 association group.
 
 ### Group 1: Lifeline
 
@@ -145,6 +187,7 @@ Association group 1 supports 1 node.
 ### Documentation Links
 
 * [Smart Dimmer Switch 200W LED Manual](https://opensmarthouse.org/zwavedatabase/1114/reference/EcoDim.pdf)
+* [ECO-DIM.06 manual](https://opensmarthouse.org/zwavedatabase/1114/reference/z-wave-stekkerdimmer-eco-dim.06-handleiding.pdf)
 
 ---
 

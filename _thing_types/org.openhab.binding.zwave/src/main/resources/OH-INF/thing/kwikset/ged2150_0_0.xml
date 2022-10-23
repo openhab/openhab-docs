@@ -38,6 +38,12 @@ SmartCode 10 Touchpad Electronic Deadbolt<br /> <h1>Overview</h1><ul><li>Compati
           <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=POWER_MANAGEMENT</property>
         </properties>
       </channel>
+      <channel id="alarm_raw" typeId="alarm_raw">
+        <label>Alarm (raw)</label>
+        <properties>
+          <property name="binding:*:StringType">COMMAND_CLASS_ALARM</property>
+        </properties>
+      </channel>
       <channel id="battery-level" typeId="system.battery-level">
         <properties>
           <property name="binding:*:PercentType">COMMAND_CLASS_BATTERY</property>
