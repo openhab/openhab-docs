@@ -213,7 +213,8 @@ Update-openHAB -OHVersion x.x.x
 
 Now that openHAB has updated, you only need to run the above commands again for future versions.
 
-NB: Due to an issue with long file paths sometimes the update script may fail after the 'Copying files...' stage. This can be resolved by deleting the c:\openHAB\userdata\tmp folder.  
+NB: Due to an issue with long file paths sometimes the update script may fail after the 'Copying files...' stage.
+This can be resolved by deleting the c:\openHAB\userdata\tmp folder.  
 
 ### Uninstallation
 
