@@ -62,9 +62,9 @@ Some of the available configuration parameters are specific to a certain compone
 
 ### Component slots
 
-HTML pages are nested hierarchies.
+HTML pages are hierarchically nested.
 In order to reflect this structure in the YAML most components will have `slots`.
-To define a component that must be a child (nested inside) of an first component you indent the YAML of the child component within one of the defined slots of the first one.
+To define a component that must be a child (nested inside) of another component you indent the YAML of the child component within one of the defined slots of the first one.
 
 ```yaml
 - component: oh-list
@@ -81,9 +81,9 @@ Some of the components will have more specific slots such as `header` or `conten
 In the custom widget system there are many options for different components to include.
 Where each component comes from determines many of the options available for configuration and styling.
 
-### OH components
+### openHAB components
 
-The most common type of component in most widgets will be the OH family of widgets.
+The most common type of component in most widgets will be the openHAB (OH) family of widgets.
 These are modified versions of the F7 library of components.
 The modifications include themeing to match the MainUI color and style themes and functionality that provides direct interaction with OH features such as Items.
 A basic description of each of these components and the their capabilities (with examples) can be found on the [Component Reference](components/) page.
@@ -95,7 +95,7 @@ There are several subsets of OH components, each with different uses and strengt
 - **Standalone Card**: a component placed inside a container styled to look like a separate visual element (e.g., `oh-slider-card`)
 - **Cell**: a container styled to look like a separate visual element which will expand to show the component when clicked (e.g., `oh-slider-cell`)
 - **List Item**: a component placed inside a list type container meant only to be displayed as part of a list and which will not display properly on its own (e.g., `oh-slider-item`)
-- **Specialized components**: many of the avaialble page types in the MainUI (e.g., chart pages) have their own series of specialized components
+- **Specialized components**: many of the available page types in the MainUI (e.g., chart pages) have their own series of specialized components
 
 ### F7 components
 
@@ -104,7 +104,7 @@ As a general rule, the F7 components will have more configuration and style flex
 So, their use is recommended when there is something about the component that needs to be configured in a way different than what is set in the OH version.
 Of course, the F7 components do not have the OH specific functions available, so while they can have values based on Items using the epxression system, they cannot easily be used to trigger rules, update Items or variables, etc.
 
-The most commonly used F7 components will likely be the `f7-block`, `f7-row`, and `f7-col`.
+The most commonly used F7 components will likely be `f7-block`, `f7-row`, and `f7-col`.
 These all generate a simple `<div>` element with one base F7 class (`block`, `row`, and `col` respectively).
 These components are therefore useful as fundamental building-blocks of widget or page.
 The list components `f7-list-item` and `f7-list-item-row` can often be useful as well given the flexibility they provide for complex structure inside a list.
@@ -215,7 +215,7 @@ Renders to the HTML:
 <div style="font-weight: bold;">Make this text bold</div>
 ```
 
-To put more complex HTML heirarchies, use the component's `default` slot:
+To put more complex HTML hierarchies, use the component's `default` slot:
 
 ```yaml
 - component: div
@@ -265,7 +265,7 @@ title: =someItemList.find( (x) => x.name=="KitchenSwitch" ).label
 
 String templates are a much more human-readable way of creating strings with incorporated dynamic values.
 String templates are surrounded by backticks (<code>\`string template\`</code>) instead of single- or double-quotes.
-Inside string templates variable values can be insterted with `${variable}` syntax.
+Inside string templates, variable values can be inserted with `${variable}` syntax.
 
 Here the value of the widget property `props.page` is included in the text of a component by a string template.
 
@@ -278,7 +278,7 @@ text: =`This button opens the ${props.page} page`
 Regular expressions (regex) allow for complex search or replace string operations.
 Many of the JavaScript string methods accept regex parameters expressed as the regex string between two forward slashes (`/regex here/`).
 
-Here a widget proptery containing an item name is searched using regex and the first capture (in this case all characters between two underscores) is returned as a component label.
+Here a widget property containing an Item name is searched using regex and the first capture (in this case all characters between two underscores) is returned as a component label.
 
 ```yaml
 label: =props.item.match(/_(.*)_/)[1]
@@ -289,14 +289,14 @@ label: =props.item.match(/_(.*)_/)[1]
 The variable action allows components in widgets to pass information back and forth when there is user interaction.
 Often this informtation is simple, such as a single string or input value.
 Sometimes, however, it is helpul to add more information to a variable and for these instances JavaScript opjects are useful.
-The widget system can create widgets in two different ways.
+The widget system can create objects in two different ways.
 
-Objects can be defined withthin the expression system using the standard JavaScript syntax: `{'key1':'value1','key2':'value2'}`.
+Objects can be defined within the expression system using the standard JavaScript syntax: `{'key1':'value1','key2':'value2'}`.
 
 ::: tip
 
 Due to the special meaning of `:[space]` in yaml, it is best to have no spaces between the `:` and the value.
-If you have `:[space]` anywhere in your expression it will raise a yaml error unless you enclose the entire expression (= included) in another layer of quotes.
+If you have `:[space]` anywhere in your expression it will raise a YAML error unless you enclose the entire expression (= included) in another layer of quotes.
 
 :::
 
@@ -309,7 +309,7 @@ actionVariableValue: ={'name':props.item,'selected':true}
 
 The other way to create objects is to take advantage of the relationship between YAML and JSON and place the key:value pairs as YAML keys under the initial key.
 
-Here is a variable definition with the same results as the one above using the YAML[] syntax.
+Here is a variable definition with the same results as the one above using the YAML syntax.
 
 ```yaml
 actionVariable: myObject
@@ -329,8 +329,8 @@ For example, if there is an HVAC with a mode item that can be set to `heat`, `co
 background: =(@@hvacModeItem == 'heat')?'orange':(@@hvacModeItem == 'cool')?'blue':(@@hvacModeItem == 'auto')?'green':(@@hvacModeItem == 'off')?'white':'red'
 ```
 
-To use an object instead, simply create an object with keys for each of the item's expected states, and give each key the desired output value.
-Referencing that object using the item's state will return the desired value and following that with a simple `OR` statement will provide the fallback condition if the object reference is undefined.
+To use an object instead, simply create an object with keys for each of the Item's expected states, and give each key the desired output value.
+Referencing that object using the Item's state will return the desired value and following that with a simple `OR` statement will provide the fallback condition if the object reference is undefined.
 
 ```yaml
 background: =({'heat':'orange','cool':'blue','auto':'green','off':'white'})[@@hvacModeItem] || 'red'
