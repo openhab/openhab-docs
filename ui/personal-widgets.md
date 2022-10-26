@@ -35,10 +35,10 @@ config:
   item: Color1
 ```
 
-## Widget structure
+## Widget Structure
 
 The custom widget feature has been designed to be very accessible and users do not require a detailed understanding of webdesign to get started.
-It is may be useful even to beginning users, however, to have a basic understanding of the logical flow of the system.
+It may be useful even to beginning users, however, to have a basic understanding of the logical flow of the system.
 Custom widgets are defined using YAML which is a human readable data format that easily converts back and forth from JSON, a text-based data format widely-used in web applications.
 MainUI uses the JSON data to populate templates built using Vue, a language for dynamically building HTML, taking advantage of the pre-made components available from the [Framework7 (F7)](https://framework7.io/) library.
 The complete flow looks like this:
@@ -58,7 +58,7 @@ This is accompished by adding a `config` section to the component's YAML.
     item: mySwitchItem
 ```
 
-Some of the available configuration parameters are specific to a certain component while others, such as `visiblity` or `class` are available in most components.
+Some of the available configuration parameters are specific to a certain component while others, such as `visible` or `class` are available in most components.
 
 ### Component slots
 
@@ -162,7 +162,7 @@ renders in the page HTML as:
 </div>  
 ```
 
-Because of this the `Label` component also accepts `class` and `style` configurations which are applied to the `<div>`.
+Because of this, the `Label` component also accepts `class` and `style` configurations which are applied to the `<div>`.
 `Label` components are often used extensively in compound widgets with several other components to place informative text.
 However, because of the `<div>` container, there are times and situations where the `Label` component can cause placement/alignment issues or even configuration issues if the parent element is not compatible with having a `<div>` container as a child.
 
@@ -188,7 +188,7 @@ renders in the page HTML as:
 
 With no container, there is no possibility to add `class` or `style` configuration to the `Content` component.
 
-### HTML Components
+### HTML components
 
 The custom widget system can also be used to build HTML more directly.
 The `component` property can also be set to any recognized HTML tag.
@@ -215,7 +215,7 @@ Renders to the HTML:
 <div style="font-weight: bold;">Make this text bold</div>
 ```
 
-To put more complex html heirarchies, use the component's `default` slot:
+To put more complex HTML heirarchies, use the component's `default` slot:
 
 ```yaml
 - component: div
