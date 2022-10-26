@@ -161,19 +161,24 @@ Expressions are string literals beginning with the symbol `=` and everything aft
 - `user` returns an object with information about the logged in user: the name (`user.name`) and an array of the assigned roles for the user (`user.roles`).
 
 The `@` symbol can be used in front of an item name string as a shortcut to the `displayState` from the `items` dictionary with a fallback to the raw state:
+
 ```yaml
 footer: =@'Switch1'
 ```
-is the same as 
+
+is the same as
+
 ```yaml
 footer: =items['Switch1'].displayState || items['Switch1'].state
 ```
+
 Similary, `@@` can be used as a shortcut for just the item state.
 
 Expressions are particularly useful in cases where one wants to combine the states of more than one Item, or use the state of more than one Item in a single widget element.
 For example, the icon of an Item can be based on the state of a different Item.
 
 ### Examples
+
 ```js
 =(items.Color1.state.split(',')[2] !== '0') ? 'On ' + '(' + items.Color1.state.split(',')[2] + '%)' : 'Off'
 ```
@@ -410,31 +415,3 @@ These resources will help you with `calc()`:
 
 - [mdn web docs_: calc()](https://developer.mozilla.org/en-US/docs/Web/CSS/calc)
 - [CSS-Tricks: A Complete Guide to calc() in CSS](https://css-tricks.com/a-complete-guide-to-calc-in-css/)
-
-## Personal Widgets
-
-You can extend the library of widgets you have at your disposal by creating personal ones, either by yourself, or copy-pasting from examples by the community; then you can reuse them on pages, multiple times if need be, simply configuring their props to your needs.
-To add a new personal widget, as an admin, go to **Developer Tools > Widgets**, then use the '+' button to create a new one.
-
-The view features a code (YAML) editor and a live preview, you can change the orientation with the button in the center of the bottom toolbar.
-
-::: warning WARNING
-
-Don't forget to change the `uid` right away because you won't be able to alter it afterwards.
-
-:::
-
-Sometimes the live preview will fail to update, you may want to hit the Redraw button or <kbd>Ctrl-R</kbd>/<kbd>Cmd-R</kbd> regularly when designing your widget.
-
-To actually see how the config sheet would look like, and specify props for your widget for the live preview, click on Set props (<kbd>Ctrl-P</kbd>) and configure them as needed.
-
-After saving the widget, you will have it as an option (under "Personal widgets") to add it to a layout page, or display in a modal like a popover, or use it as the default representation of an item.
-
-Note the special `widget:<uid>` syntax for the component type to specify "use this personal widget here", the `config` being the value to wish to assign to the widget props:
-
-```yaml
-component: widget:widget_0a26c10a4d
-config:
-  prop1: Test
-  item: Color1
-```
