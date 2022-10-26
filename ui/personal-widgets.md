@@ -90,11 +90,12 @@ A basic description of each of these components and the their capabilities (with
 Because most of the OH specific components are built on top of the F7 components, [the documentation of the F7 components](https://framework7.io/vue/) is often useful for users wishing to understand more about the OH components as well.
 
 There are several subsets of OH components, each with different uses and strengths:
-* **Basic**: a component which can be placed within other components (e.g., `oh-slider`)
-* **Standalone Card**: a component placed inside a container styled to look like a separate visual element (e.g., `oh-slider-card`)
-* **Cell**: a container styled to look like a separate visual element which will expand to show the component when clicked (e.g., `oh-slider-cell`)
-* **List Item**: a component placed inside a list type container meant only to be displayed as part of a list and which will not display properly on its own (e.g., `oh-slider-item`)
-* **Specialized components**: many of the avaialble page types in the MainUI (e.g., chart pages) have their own series of specialized components
+
+- **Basic**: a component which can be placed within other components (e.g., `oh-slider`)
+- **Standalone Card**: a component placed inside a container styled to look like a separate visual element (e.g., `oh-slider-card`)
+- **Cell**: a container styled to look like a separate visual element which will expand to show the component when clicked (e.g., `oh-slider-cell`)
+- **List Item**: a component placed inside a list type container meant only to be displayed as part of a list and which will not display properly on its own (e.g., `oh-slider-item`)
+- **Specialized components**: many of the avaialble page types in the MainUI (e.g., chart pages) have their own series of specialized components
 
 ### F7 components
 

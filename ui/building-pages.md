@@ -166,7 +166,7 @@ The `@` symbol can be used in front of an item name string as a shortcut to the 
 footer: =@'Switch1'
 ```
 
-is the same as 
+is the same as
 
 ```yaml
 footer: =items['Switch1'].displayState || items['Switch1'].state
