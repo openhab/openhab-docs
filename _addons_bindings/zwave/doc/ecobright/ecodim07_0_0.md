@@ -86,6 +86,7 @@ The following table summarises the channels available for the ECO-DIM.06 or ECO-
 | Dimmer | switch_dimmer | switch_dimmer | DimmableLight | Dimmer | 
 | Electric meter (watts) | meter_watts | meter_watts | Energy | Number | 
 | Electric meter (kWh) | meter_kwh | meter_kwh | Energy | Number | 
+| Reset Meter | meter_reset | meter_reset | Energy | Switch | 
 
 ### Dimmer
 The brightness channel allows to control the brightness of a light.
@@ -102,6 +103,11 @@ The ```meter_watts``` channel is of type ```meter_watts``` and supports the ```N
 Indicates the energy consumption (kWh).
 
 The ```meter_kwh``` channel is of type ```meter_kwh``` and supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
+
+### Reset Meter
+Reset the meter.
+
+The ```meter_reset``` channel is of type ```meter_reset``` and supports the ```Switch``` item and is in the ```Energy``` category.
 
 
 
