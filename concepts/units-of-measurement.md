@@ -161,6 +161,7 @@ SI (base unit symbols):
 | Speed                  | Knot                             | kn     |
 | Temperature            | Kelvin                           | K      |
 | Temperature            | Celsius                          | °C     |
+| Temperature[^](#mired-footnote) | Mired                   | mired  |
 | Time                   | Second                           | s      |
 | Time                   | Minute                           | min    |
 | Time                   | Hour                             | h      |
@@ -174,6 +175,10 @@ SI (base unit symbols):
 | VolumetricFlowRate     | Cubic Metre per Minute           | m³/min |
 | VolumetricFlowRate     | Cubic Metre per Hour             | m³/h   |
 | VolumetricFlowRate     | Cubic Metre per Day              | m³/d   |
+
+<a name="mired-footnote">^</a>: Technically, mireds are the reciprocal of Temperature, but QuantityType and NumberItem will transparently convert between mireds and Kelvin.
+This technicality might be a problem if you are using mireds in rules.
+Be sure to use the `toInvertibleUnit` method on QuantityType, rather than `toUnit`.
 
 Metric Prefixes:
 
