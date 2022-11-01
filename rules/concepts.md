@@ -84,7 +84,7 @@ A Trigger is like a filter that, when it matches one or more events, causes the 
 Triggers can therefore be very specific to match very specific events (e.g. a change in a Switch Item from `ON` to `OFF`, a Dimmer Item receives `57` as a command, etc.)
 or relatively generic and match many events (e.g. every minute, a Color Item receives any type of command, a member of a Group Item changes in any way, etc.).
 :::
-  
+
 Here are the details for each trigger type:
 
 ### **Items** Triggers
@@ -198,7 +198,7 @@ Available types of conditions include:
 - An Item has a given state
 - It’s a certain time of day
 - It’s a certain day of week
-- It’s a special day, e.g. holiday, weekday, weekend, etc. as defined by Ephemeris <!-- TODO: Add reference to Ephemeris docs which currently reside in the Actions page --> 
+- It’s a special day, e.g. holiday, weekday, weekend, etc. as defined by Ephemeris <!-- TODO: Add reference to Ephemeris docs which currently reside in the Actions page -->
 - Script condition: A script evaluates to `true`
 
 The script condition is the most universal one, as you can choose one of the many available script/rule languages to build any condition you can think of.
@@ -269,9 +269,197 @@ An example for an unofficial helper library are [Ivan's helper libraries for Jyt
 
 ## Comprehensive Examples
 
-<!--
-Use tabs and show most of the popular languages
-Use tabs and show most of the popular languages
+These following code snippets implement the examples from the top of this page using UI rules, [JS Scripting](https://openhab.org/addons/automation/jsscripting) and [DSL rules](/docs/configuration/rules-dsl).
 
-How to create a scene using a rule?
--->
+The code from the JS Scripting examples can be used in file-based scripts that are created inside the `/automation/js` folder and have `.js` as their file extension.
+
+It is recommended to use helper libraries where they are available, as they provide an easy-to-use API to access openHAB functionality and avoid type problems related to the different languages combined.
+
+### When the sun rises, raise the blinds and adjust the temperature
+
+This example is using the [Astro Binding](https://www.openhab.org/addons/bindings/astro) which calculates many values for sun and moon, including sunrise.
+
+:::: tabs
+
+::: tab UI Rule
+
+:::
+
+::: tab JS Scripting
+
+JS Scripting
+
+```javascript
+const { rules, triggers, items } = require('openhab');
+
+rules.JSRule({
+  name: 'Raise the blinds & adjust temperature on sunrise',
+  description: 'When the sun rises, raise the blinds and adjust the temperature',
+  triggers: [
+    triggers.ChannelEventTrigger('astro:sun:local:rise#event', 'START') // Triggers when the sun starts to rise
+  ],
+  execute: (event) => {
+      items.getItem('gBlinds').sendCommand('UP');
+      items.getItem('gTheromstat').sendCommand('INCREASE');
+  }
+});
+```
+
+:::
+
+::::
+
+### When you leave home, turn off the lights and lower the temperature
+
+Presence detection can be achieved in many ways, this example is not able to cover a mechanism used for presence detection.
+Most presence detection mechanisms control a switch Item with `ON` for present and `OFF` for away.
+
+Examples for presence detection include the [iCloud Binding](https://www.openhab.org/addons/bindings/icloud/#icloud-rules), [Network Binding](https://www.openhab.org/addons/bindings/network/#presence-detection-configure-target-device), [GPSTracker Binding](https://www.openhab.org/addons/bindings/gpstracker/#distance-channel-and-presence-switch), etc., but you could also use a simple wall switch.
+
+:::: tabs
+
+::: tab UI Rule
+
+:::
+
+::: tab JS Scripting
+
+JS Scripting
+
+```javascript
+const { rules, triggers, items } = require('openhab');
+
+rules.JSRule({
+  name: 'Turn off the lights & adjust temperature on leaving',
+  description: 'When you leave home, turn off the lights and lower the temperature',
+  triggers: [
+    triggers.ItemCommandTrigger('Presence', 'OFF') // Triggers when Item Presence is commanded OFF
+  ],
+  execute: (event) => {
+      items.getItem('gLights').sendCommand('OFF');
+      items.getItem('gTheromstat').sendCommand('DECREASE');
+  }
+});
+```
+
+:::
+
+::::
+
+### When you return home, and it is between 1 PM and 6 PM, play your favorite music
+
+:::: tabs
+
+::: tab UI Rule
+
+:::
+
+::: tab JS Scripting
+
+JS Scripting
+
+```javascript
+const { rules, triggers, items, time } = require('openhab');
+
+rules.JSRule({
+  name: 'Play music on arrival, but only on afternoon',
+  description: 'When you return home, and it is between 1 PM and 6 PM, play your favorite music',
+  triggers: [
+    triggers.ItemCommandTrigger('Presence', 'ON') // Triggers when Item Presence is commanded ON
+  ],
+  execute: (event) => {
+      if (time.toZDT().isBetweenTimes('01:00 PM', '06:00 PM')) {
+          items.getItem('Soundbar').sendCommand('ON');
+      }
+  }
+});
+```
+
+:::
+
+::::
+
+### Remind you that the window is open for an hour
+
+:::: tabs
+
+::: tab UI Rule
+
+:::
+
+::: tab JS Scripting
+
+JS Scripting
+
+```javascript
+const { rules, triggers, items, actions } = require('openhab');
+
+rules.JSRule({
+  name: 'Window open reminder',
+  description: 'Remind you that the window is open for an hour',
+  triggers: [
+    triggers.GroupStateChangeTrigger('gWindows', 'OPEN') // Triggers when a member of the Windows group changes it's state to OPEN
+  ],
+  execute: (event) => {
+      const windowName = event.itemName;
+      const windowState = event.newState;
+      if (windowState === 'OPEN') {
+          // Use a function generator, otherwise the variable windowName can be mutated by later runs of the rule
+          const generateNotificationFunction = (windowName) => {
+            return function () {
+              const window = items.getItem(windowName);
+              // Check if the window is still open
+              if (window.state === 'OPEN') {
+                actions.NotificationAction.sendBroadcastNotification(`${window.label} is open for an hour!`);
+              }
+            }
+          }
+          // Create a timer that expires in one hour and then sends a notification using myOpenHAB, e.g. "Livingroom window is open for an hour!"
+          setTimeout(generateNotificationFunction(windowName), 3600 * 1000);
+      }
+  }
+});
+```
+
+:::
+
+::::
+
+### A "Scene" rule
+
+This rule example allows you to set multiple Items to a defined state using a single action.
+
+You might know this concept of "Scenes" from Apple HomeKit, Google Home, Philips Hue, etc.
+
+:::: tabs
+
+::: tab UI Rule
+
+:::
+
+::: tab JS Scripting
+
+JS Scripting
+
+```javascript
+const { rules, triggers, items } = require('openhab');
+
+rules.JSRule({
+  name: 'Movie Evening Scene',
+  description: 'A Scene Rule',
+  triggers: [
+    triggers.ItemCommandTrigger('MovieScene', 'ON') // Triggers when Item MovieScene is commanded ON
+  ],
+  execute: (event) => {
+      items.getItem('LivingRoom_Blinds').sendCommand('90%');
+      items.getItem('LivingRoom_MainLight').sendCommand('OFF');
+      items.getItem('LivingRoom_LEDStripe').sendCommand('50%');
+      items.getItem('Soundbar').sendCommand('ON');
+      items.getItem('TV').sendCommand('ON');
+  }
+});
+```
+
+:::
+
+::::
