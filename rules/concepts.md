@@ -272,6 +272,7 @@ An example for an unofficial helper library are [Ivan's helper libraries for Jyt
 These following code snippets implement the examples from the top of this page using UI rules, [JS Scripting](https://openhab.org/addons/automation/jsscripting) and [DSL rules](/docs/configuration/rules-dsl).
 
 The code from the JS Scripting examples can be used in file-based scripts that are created inside the `/automation/js` folder and have `.js` as their file extension.
+You can paste the code snippets from the UI rules in the UI rule editor to inspect the examples.
 
 It is recommended to use helper libraries where they are available, as they provide an easy-to-use API to access openHAB functionality and avoid type problems related to the different languages combined.
 
@@ -282,6 +283,32 @@ This example is using the [Astro Binding](https://www.openhab.org/addons/binding
 :::: tabs
 
 ::: tab UI Rule
+
+<!-- Screenshot -->
+
+```yaml
+configuration: {}
+triggers:
+  - id: "1"
+    configuration:
+      event: START
+      channelUID: astro:sun:home:rise#event
+    type: core.ChannelEventTrigger
+conditions: []
+actions:
+  - inputs: {}
+    id: "2"
+    configuration:
+      itemName: gBlinds
+      command: UP
+    type: core.ItemCommandAction
+  - inputs: {}
+    id: "3"
+    configuration:
+      itemName: gThermostat
+      command: INCREASE
+    type: core.ItemCommandAction
+```
 
 :::
 
@@ -334,6 +361,32 @@ Examples for presence detection include the [iCloud Binding](https://www.openhab
 
 ::: tab UI Rule
 
+<!-- Screenshot -->
+
+```yaml
+configuration: {}
+triggers:
+  - id: "1"
+    configuration:
+      itemName: Presence
+      command: OFF
+    type: core.ItemCommandTrigger
+conditions: []
+actions:
+  - inputs: {}
+    id: "2"
+    configuration:
+      itemName: gLights
+      command: OFF
+    type: core.ItemCommandAction
+  - inputs: {}
+    id: "3"
+    configuration:
+      itemName: gThermostat
+      command: DECREASE
+    type: core.ItemCommandAction
+```
+
 :::
 
 ::: tab DSL Rule
@@ -380,6 +433,32 @@ rules.JSRule({
 
 ::: tab UI Rule
 
+<!-- Screenshot -->
+
+```yaml
+configuration: {}
+triggers:
+  - id: "1"
+    configuration:
+      itemName: Presence
+      command: ON
+    type: core.ItemCommandTrigger
+conditions:
+  - inputs: {}
+    id: "3"
+    configuration:
+      startTime: 13:00
+      endTime: 18:00
+    type: core.TimeOfDayCondition
+actions:
+  - inputs: {}
+    id: "2"
+    configuration:
+      itemName: Soundbar
+      command: ON
+    type: core.ItemCommandAction
+```
+
 :::
 
 ::: tab JS Scripting
@@ -412,6 +491,45 @@ rules.JSRule({
 :::: tabs
 
 ::: tab UI Rule
+
+<!-- Screenshot -->
+
+```yaml
+configuration: {}
+triggers:
+  - id: "1"
+    configuration:
+      groupName: gWindows
+      state: OPEN
+    type: core.GroupStateChangeTrigger
+conditions: []
+actions:
+  - inputs: {}
+    id: "2"
+    configuration:
+      type: application/javascript;version=ECMAScript-2021
+      script: >
+        var windowName = event.itemName;
+
+        var windowState = event.newState;
+
+        // Use a function generator, otherwise the variable windowName can be mutated by later runs of the rule
+
+        let generateNotificationFunction = (windowName) => {
+            return function () {
+                const window = items.getItem(windowName);
+                // Check if the window is still open
+                if (window.state === 'OPEN') {
+                    actions.NotificationAction.sendBroadcastNotification(`${window.label} is open for an hour!`);
+                }
+            }
+        }
+
+        // Create a timer that expires in one hour and then sends a notification using myOpenHAB, e.g. "Livingroom window is open for an hour!"
+
+        setTimeout(generateNotificationFunction(windowName), 3600 * 1000);
+    type: script.ScriptAction
+```
 
 :::
 
@@ -475,6 +593,50 @@ You might know this concept of "Scenes" from Apple HomeKit, Google Home, Philips
 :::: tabs
 
 ::: tab UI Rule
+
+<!-- Screenshot -->
+
+```yaml
+configuration: {}
+triggers:
+  - id: "1"
+    configuration:
+      itemName: MovieScene
+      command: ON
+    type: core.ItemCommandTrigger
+conditions: []
+actions:
+  - inputs: {}
+    id: "2"
+    configuration:
+      itemName: LivingRoom_Blinds
+      command: 90%
+    type: core.ItemCommandAction
+  - inputs: {}
+    id: "3"
+    configuration:
+      itemName: Livingroom_MainLight
+      command: OFF
+    type: core.ItemCommandAction
+  - inputs: {}
+    id: "4"
+    configuration:
+      itemName: LivingRoom_LEDStripe
+      command: 50%
+    type: core.ItemCommandAction
+  - inputs: {}
+    id: "5"
+    configuration:
+      itemName: Soundbar
+      command: ON
+    type: core.ItemCommandAction
+  - inputs: {}
+    id: "6"
+    configuration:
+      itemName: TV
+      command: ON
+    type: core.ItemCommandAction
+```
 
 :::
 
