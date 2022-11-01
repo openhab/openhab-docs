@@ -225,7 +225,7 @@ These allow you to run scripts written in one of the available automation/rule l
 
 ## Available Values
 
-When a rule is triggered, several information about the event that triggered the rule is provided to the rule.
+When a rule is triggered, some information about the event that triggered the rule is provided to the rule.
 There are many cases in which it is useful to know what triggered your rule, e.g. you have an Item group as trigger and you need to know which Group member triggered the rule.
 
 The availablity of those values depends on the rule engine, but you can generally expect at least the following information (depending on the trigger):
@@ -285,6 +285,20 @@ This example is using the [Astro Binding](https://www.openhab.org/addons/binding
 
 :::
 
+::: tab DSL Rule
+
+```java
+rule "Raise the blinds & adjust temperature on sunrise"
+when
+  Channel 'astro:sun:home:rise#event' triggered START
+then
+  gBlinds.sendCommand(UP)
+  gThermostat.sendCommand(INCREASE)
+end
+```
+
+:::
+
 ::: tab JS Scripting
 
 JS Scripting
@@ -296,7 +310,7 @@ rules.JSRule({
   name: 'Raise the blinds & adjust temperature on sunrise',
   description: 'When the sun rises, raise the blinds and adjust the temperature',
   triggers: [
-    triggers.ChannelEventTrigger('astro:sun:local:rise#event', 'START') // Triggers when the sun starts to rise
+    triggers.ChannelEventTrigger('astro:sun:home:rise#event', 'START') // Triggers when the sun starts to rise
   ],
   execute: (event) => {
       items.getItem('gBlinds').sendCommand('UP');
@@ -319,6 +333,20 @@ Examples for presence detection include the [iCloud Binding](https://www.openhab
 :::: tabs
 
 ::: tab UI Rule
+
+:::
+
+::: tab DSL Rule
+
+```java
+rule "Turn off the lights & adjust temperature on leaving"
+when
+  Item Presence received command OFF
+then
+  gLights.sendCommand(OFF)
+  gThermostat.sendCommand(DECREASE)
+end
+```
 
 :::
 
@@ -387,6 +415,21 @@ rules.JSRule({
 
 :::
 
+::: DSL Rule
+
+```java
+rule "Window open reminder"
+when
+  Member of gWindows changed to OPEN
+then
+  createTimer(now.plusMinutes(60), [ |
+    if (triggeringItem.state == OPEN) sendBroadcastNotification(triggeringItem.label + " is open for one hour!")
+  ])
+end
+```
+
+:::
+
 ::: tab JS Scripting
 
 JS Scripting
@@ -403,20 +446,18 @@ rules.JSRule({
   execute: (event) => {
       const windowName = event.itemName;
       const windowState = event.newState;
-      if (windowState === 'OPEN') {
-          // Use a function generator, otherwise the variable windowName can be mutated by later runs of the rule
-          const generateNotificationFunction = (windowName) => {
-            return function () {
+      // Use a function generator, otherwise the variable windowName can be mutated by later runs of the rule
+      const generateNotificationFunction = (windowName) => {
+          return function () {
               const window = items.getItem(windowName);
               // Check if the window is still open
               if (window.state === 'OPEN') {
-                actions.NotificationAction.sendBroadcastNotification(`${window.label} is open for an hour!`);
+                  actions.NotificationAction.sendBroadcastNotification(`${window.label} is open for an hour!`);
               }
-            }
           }
-          // Create a timer that expires in one hour and then sends a notification using myOpenHAB, e.g. "Livingroom window is open for an hour!"
-          setTimeout(generateNotificationFunction(windowName), 3600 * 1000);
       }
+      // Create a timer that expires in one hour and then sends a notification using myOpenHAB, e.g. "Livingroom window is open for an hour!"
+      setTimeout(generateNotificationFunction(windowName), 3600 * 1000);
   }
 });
 ```
@@ -437,6 +478,23 @@ You might know this concept of "Scenes" from Apple HomeKit, Google Home, Philips
 
 :::
 
+::: DSL Rule
+
+```java
+rule "Movie Scene"
+when
+  Item MovieScene received command ON
+then
+  LivingRoom_Blinds.sendCommand(90%)
+  LivingRoom_MainLight.sendCommand(OFF)
+  LivingRoom_LEDStripe.sendCommand(50%)
+  Soundbar.sendCommand(ON)
+  TV.sendCommand(ON)
+end
+```
+
+:::
+
 ::: tab JS Scripting
 
 JS Scripting
@@ -445,7 +503,7 @@ JS Scripting
 const { rules, triggers, items } = require('openhab');
 
 rules.JSRule({
-  name: 'Movie Evening Scene',
+  name: 'Movie Scene',
   description: 'A Scene Rule',
   triggers: [
     triggers.ItemCommandTrigger('MovieScene', 'ON') // Triggers when Item MovieScene is commanded ON
