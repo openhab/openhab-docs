@@ -81,7 +81,7 @@ The following table gives a top-level description of the most important concepts
 | Channels | are the openHAB (software) connection between “Things” and “Items” (see below) | _see below_ |
 | Items | are the openHAB (software) generated representation of information about the devices | [click for more info on Items]({{base}}/concepts/items.html) |
 | Rules | that perform automatic actions (in its simplest form: if "this" happens, openHAB will do "that") | [click for more info on Rules]({{base}}/configuration/rules-dsl.html) |
-| Sitemap | is the openHAB (software) generated user interface (web site) that presents information and allows for interactions | [click for more info on Sitemaps]({{base}}/ui/sitemaps.html) |
+| Pages | is the openHAB (software) generated user interface (web site) that presents information and allows for interactions | [click for more info on Pages]({{base}}/tutorial/pages_intro.html) |
 
 While the table above gives an overview, please remember that it is incomplete and a simplification of openHAB for the sake of this overview.
 More elements will be introduced in later chapters of the documentation.
@@ -107,7 +107,7 @@ Here you will find a searchable list of several hundred bindings to support as m
 New bindings are regularly added as developers integrate more devices into openHAB.
 
 For each binding, detailed instructions and examples are provided that include guidance on configuration (if any) of the binding itself, the definition of [Things]({{base}}/concepts/things.html) supported by this binding and the Channels these [Things]({{base}}/concepts/things) provide.
-In most cases, the description also contains a fully worked out example that includes a definition of [Things]({{base}}/concepts/things) and its Channels, [Items]({{base}}/concepts/items.html) linked to those Channels and the use of these [Items]({{base}}/concepts/items.html) in a sitemap.
+In most cases, the description also contains a fully worked out example that includes a definition of [Things]({{base}}/concepts/things) and its Channels, [Items]({{base}}/concepts/items.html) linked to those Channels and the use of these [Items]({{base}}/concepts/items.html) in a user interface page.
 
 ## While You Are Getting Started
 
@@ -169,7 +169,7 @@ Here a short list of the steps that you will need to consider to get openHAB up 
 1. Add a “channel” to the “thing” if not created by the binding
 1. Define an “item”
 1. Link the “channel” to your “item”
-1. Establish a sitemap
+1. Interact with your "item" from a user interface "page"
 
 Most of the above can be done in openHAB through point-and-click processes in a graphical user interface.
 But remember, there is always more than one way to achieve your goal in openHAB.
