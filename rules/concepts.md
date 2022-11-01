@@ -284,7 +284,13 @@ This example is using the [Astro Binding](https://www.openhab.org/addons/binding
 
 ::: tab UI Rule
 
-<!-- Screenshot -->
+![](./images/concepts/rule-sunrise.jpeg)
+
+The trigger in detail:
+
+![](./images/concepts/rule-sunrise-trigger.jpeg)
+
+The code:
 
 ```yaml
 configuration: {}
@@ -361,7 +367,9 @@ Examples for presence detection include the [iCloud Binding](https://www.openhab
 
 ::: tab UI Rule
 
-<!-- Screenshot -->
+![](./images/concepts/rule-leaving.jpeg)
+
+The code:
 
 ```yaml
 configuration: {}
@@ -433,7 +441,9 @@ rules.JSRule({
 
 ::: tab UI Rule
 
-<!-- Screenshot -->
+![](./images/concepts/rule-arrival.jpeg)
+
+The code:
 
 ```yaml
 configuration: {}
@@ -492,7 +502,13 @@ rules.JSRule({
 
 ::: tab UI Rule
 
-<!-- Screenshot -->
+![](./images/concepts/rule-openwindow.jpeg)
+
+The script action in detail (for the scipt see the YAML):
+
+![](./images/concepts/rule-openwindow-action.jpeg)
+
+The code:
 
 ```yaml
 configuration: {}
@@ -594,7 +610,7 @@ You might know this concept of "Scenes" from Apple HomeKit, Google Home, Philips
 
 ::: tab UI Rule
 
-<!-- Screenshot -->
+![](./images/concepts/rule-scene.jpeg)
 
 ```yaml
 configuration: {}
