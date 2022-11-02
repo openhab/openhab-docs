@@ -66,7 +66,7 @@ By installing the openHAB process as a service in Windows, you can:
 
 #### Windows Service Installation Steps
 
-1. Complete the [prerequisites](#prerequisites) and regular [installation](#installation) steps.
+1. Complete the [prerequisites](#before-you-start) and regular [installation](#installation) steps.
 1. Issue the following two commands in your openHAB console:
 
     ```shell

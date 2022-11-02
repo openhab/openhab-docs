@@ -10,15 +10,15 @@ title: Rules Blockly - Value Storage
 
 ## Introduction
 
-These blocks enable storing information *for a rule* that is kept after the rule has run, so it can be reused when the rule is run again later in stateful way.
+These blocks enable storing information _for a rule_ that is kept after the rule has run, so it can be reused when the rule is run again later in stateful way.
 Basically a value storage can be perceived as a global variable for the rule instance.
 
-- The values are persisted as a part of the *instance* of the rule
+- The values are persisted as a part of the _instance_ of the rule
   - Modifying the rule during development creates a new instance which means the value is reset.
   - Restarting openHAB creates a new rule instance which also means the value is reset
   - In most cases both situations are negligible for many rules.
 - If you need full persistence of values that can be used across rules you need to persist the value in one of the persistence engines like MapDB
-- By default the value is *undefined*.
+- By default the value is _undefined_.
 To check if a value is undefined, use the special "is undefined"-block
 
 {::options toc_levels="2..4"/}

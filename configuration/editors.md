@@ -22,7 +22,7 @@ The steps required to set up a [network share](https://en.wikipedia.org/wiki/Sha
 How to setup and use Samba on a Linux system is described in the [Linux article]({{base}}/installation/linux.html#network-sharing).
 If you are using [openHABian]({{base}}/installation/openhabian.html), the network shares are readily configured for you, you only need to mount them locally.
 
-*Attention Windows users:* Directly accessing network shares (UNC paths) is often not supported. Please be sure to mount the network share to a drive letter.
+_Attention Windows users:_ Directly accessing network shares (UNC paths) is often not supported. Please be sure to mount the network share to a drive letter.
 
 {: #openhab-vscode}
 

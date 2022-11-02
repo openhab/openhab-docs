@@ -58,7 +58,7 @@ If the state is too old, we need to fetch it first and this may involve network 
 
 A common usage case of the `ExpiringCacheAsync` cache type is in a `ThingHandler` to encapsulate one value of an internal state and attach an expire time on that value.
 
-A **handleCommand** implementation with the interesting *RefreshType* could look like this:
+A **handleCommand** implementation with the interesting _RefreshType_ could look like this:
 
 ```java
 public void handleCommand(ChannelUID channelUID, Command command) {
@@ -85,7 +85,7 @@ with a still very common callback based device refreshing method `doSuperImporta
 The listener is the class
 itself, which implements `DeviceStateUpdateListener`.
 We will be called back with a refreshed device state in `asyncCallbackFromDeviceStateRefresh`
-and mark the Future as *complete*.
+and mark the Future as _complete_.
 
 ```java
 class FetchValueFromDevice implements Supplier<CompletableFuture<double>>, DeviceStateUpdateListener {

@@ -197,7 +197,7 @@ Two naming schemes are established in the community for Group names:
 | "`Batteries`" or "`gBattery`"             | Group combining the states of all battery Items                       |
 | "`Maintenance_Group`" or "`gMaintenance`" | Group containing all maintenance-related Items                        |
 | "`Livingroom_Lights`" or "`gLR_Light`"    | Group containing all light Items belonging to the living room         |
-| "`Livingroom`" or "`gLR`"                 | Group for *all* Items (including lights) belonging to the living room |
+| "`Livingroom`" or "`gLR`"                 | Group for _all_ Items (including lights) belonging to the living room |
 
 {: #label}
 
@@ -238,7 +238,7 @@ This section provides information about what a user can expect regarding the beh
 - A Binding may set the state of an Item to `UNDEF` if it looses communications with a Thing (for example, a Z-wave doorbell with a dead battery).
     The Binding may also set the state to `UNDEF` if an error exists in the binding configuration, or under other conditions
 
-*N.B.*  Many openHAB users find that it can be very useful to use [Persistence](/addons/#persistence) and [System started]({{base}}/configuration/rules-dsl.html#system-based-triggers) rules so that their systems behaves in a predictable way after an openHAB restart.
+_N.B._  Many openHAB users find that it can be very useful to use [Persistence](/addons/#persistence) and [System started]({{base}}/configuration/rules-dsl.html#system-based-triggers) rules so that their systems behaves in a predictable way after an openHAB restart.
 
 {: #command-vs-status}
 
@@ -637,10 +637,10 @@ The order of the parameters does not matter.
   
 ##### Parameter `autoupdate`
 
-When left as default, openHAB's `autoupdate` function attempts to predict the outcome of a *command* on the Item *state*.
+When left as default, openHAB's `autoupdate` function attempts to predict the outcome of a _command_ on the Item _state_.
 This prediction may be influenced by any linked channels.
-`autoupdate="false"` is a special instruction which keeps the current state of the Item, even if a *command* has been received.
-This way, the Item is unchanged unless you explicitly post an *update* to the Item, or a binding updates it.
+`autoupdate="false"` is a special instruction which keeps the current state of the Item, even if a _command_ has been received.
+This way, the Item is unchanged unless you explicitly post an _update_ to the Item, or a binding updates it.
 `autoupdate="true"` forces `autoupdate` to act, overriding any binding recommendations.
 
 Example:
@@ -655,7 +655,7 @@ Switch Garage_Gate {channel="xxx", autoupdate="false"}
 
 This parameter allows to post an update or command to an item after a period of time has passed.
 
-The expiration timer is started or restarted every time an item receives an update or a command *other than* the specified "expire" update/command.
+The expiration timer is started or restarted every time an item receives an update or a command _other than_ the specified "expire" update/command.
 Any future expiring update or command is cancelled, if the item receives an update or command that matches the "expire" update/command.
   
 The parameter accepts a duration of time that can be a combination of hours, minutes and seconds in the format
@@ -687,7 +687,7 @@ Without the quotes, the state would be the system type `UNDEF`.
 #### Profiles
 
 With Profiles, you are able to change the behavior how Channels interact with your Items.
-You can use *State Profiles* on State Channels and *Trigger Profiles* on Trigger Channels.
+You can use _State Profiles_ on State Channels and _Trigger Profiles_ on Trigger Channels.
 
 Profiles can be specified as a parameter for a given Channel on the Item configuration:
 
@@ -745,7 +745,7 @@ then
 end
 ```
 
-Instead of using this Rule, you can also use the `rawbutton-toggle-switch` Profile in combination with [Multi-Channel Linking](#multi-binding-channel-linkage):
+Instead of using this Rule, you can also use the `rawbutton-toggle-switch` Profile in combination with [Multi-Channel Linking](#multi-binding--channel-linkage):
 
 ```java
 Color Bedroom_Light {

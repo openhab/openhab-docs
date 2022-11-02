@@ -38,7 +38,7 @@ CRLF stands for carriage-return / line-feed which is a technical term for adding
 
 ![crlf](../images/blockly/blockly-text-overview.png)
 
-*Function:* return a newline character to be added to a string.
+_Function:_ return a newline character to be added to a string.
 
 **Example:**
 
@@ -62,25 +62,25 @@ See the special hsb-conversion block below.
 
 ![color-picker](../images/blockly/blockly-colors-picker.png)
 
-*Function:* Lets the user pick from a (limited) set of colors and returns a the hexadecimal number (in the above case the value = #33cc00.
+_Function:_ Lets the user pick from a (limited) set of colors and returns a the hexadecimal number (in the above case the value = #33cc00.
 
 ### Random Color
 
 ![get-random-color](../images/blockly/blockly-colors-random.png)
 
-*Function:* Returns a random color as a hexcode
+_Function:_ Returns a random color as a hexcode
 
 ### Create RGB color
 
 ![create-rgb-color](../images/blockly/blockly-color-create-rgb.png)
 
-*Function:* Returns a color by mixing the given values in a range from 0 - 255 for reg, green and blue as a hexcode
+_Function:_ Returns a color by mixing the given values in a range from 0 - 255 for reg, green and blue as a hexcode
 
 ### Blend two colors
 
 ![blend-two-colors](../images/blockly/blockly-colors-blend.png)
 
-*Function:* Blends two colors chosen via a color picker into one color by the given ratio.
+_Function:_ Blends two colors chosen via a color picker into one color by the given ratio.
 
 Tip: this could be used for example with a loop that changes the ratio from 0 to 1 to blend the first color into a second
 
@@ -91,14 +91,14 @@ Tip: this could be used for example with a loop that changes the ratio from 0 to
 HSB stands for hue-saturation-brightness which is a different way of describing a color.
 An RGB color can therefore be converted equally into an HSB-color.
 
-*Function:* This a special openHAB block that converts a hexadecimal color code from one of the above blocks into a String that is required when sending a color command to any item that accepts a color.
+_Function:_ This a special openHAB block that converts a hexadecimal color code from one of the above blocks into a String that is required when sending a color command to any item that accepts a color.
 
 - use that block and connect one of the above blocks into that one to be able to retrieve the HSB value of that block.
 
 HSB stands for hue-saturation-brightness which is a different way of describing a color.
 An RGB color can therefore be converted equally into an HSB-color.
 
-*Function:* This a special openHAB block that converts a hexadecimal color code from one of the above blocks into a String that is required when sending a color command to any item that accepts a color.
+_Function:_ This a special openHAB block that converts a hexadecimal color code from one of the above blocks into a String that is required when sending a color command to any item that accepts a color.
 
 - use that block and connect one of the above blocks into that one to be able to retrieve the HSB value of that block.
 
@@ -128,7 +128,7 @@ Example:
 
 ![dictionary-getkey](../images/blockly/blockly-lists-dictionary-getkey.png)
 
-*Function:* Retrieves the value of the key in the given directory
+_Function:_ Retrieves the value of the key in the given directory
 
 Example:
 

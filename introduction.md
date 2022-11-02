@@ -22,7 +22,7 @@ h1.welcome {
 
 <h1 class="welcome">Welcome!</h1>
 
-The  **open H**ome  **A**utomation  **B**us (openHAB,  *pronounced ˈəʊpənˈhæb*) is an open source, technology agnostic home automation platform which runs as the center of your smart home!
+The  **open H**ome  **A**utomation  **B**us (openHAB,  _pronounced ˈəʊpənˈhæb_) is an open source, technology agnostic home automation platform which runs as the center of your smart home!
 
 <div style="clear:both"></div>
 
@@ -44,7 +44,7 @@ Here are some key considerations especially for new users. To be successful, you
 - Celebrate all the small successes
 
 Remember, openHAB is just a computer program.
-The computer will only do what *you* tell it to do.
+The computer will only do what _you_ tell it to do.
 openHAB can provide many default solutions that are easy to setup.
 On the flip side, the more you insist that everything should look and work exactly the way you want it, the more work you will have to invest.
 openHAB is fully customizable, but doing so will require substantial effort on your part.

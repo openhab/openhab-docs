@@ -10,7 +10,7 @@ title: Rules
 Note that there is also a visual way of programming openHAB rules, which may be more suitable for beginners. Its documentation can be found in the [Blockly Reference section]({{base}}/configuration/rules-blockly.html)
 
 openHAB has a highly integrated, lightweight but yet powerful rule engine included.
-On this page you will learn how to leverage its functionality to do *real* home automation.
+On this page you will learn how to leverage its functionality to do _real_ home automation.
 
 {::options toc_levels="2..4"/}
 
@@ -358,7 +358,7 @@ The following table summarizes the impact of the two manipulator commands on the
 |--------------------------|-------------------|--------------------|-----------|
 | postUpdate               | ⚡ rule fires      | ❌                  | (depends) |
 | sendCommand              | (❌) see below     | ⚡ rule fires       | (depends) |
-| *Change through Binding* | ⚡ rule fires      | ⚡ rule fires       | (depends) |
+| _Change through Binding_ | ⚡ rule fires      | ⚡ rule fires       | (depends) |
 
 **Beware:**
 In most cases, a rule with a trigger of `received update` will fire following the command `sendCommand` as:
@@ -389,7 +389,7 @@ Using `Myitem.sendCommand(new_state)` or `Myitem.postUpdate(new_state)` will, in
 The Action `sendCommand(MyItem, new_state)` does not provide the same flexibilty.
 For example, if `new_state` is typed as a primitive (e.g., `var int new_state = 3`) and myItem is of the Object type Dimmer:
 
-- the following command ***will fail***: ~~sendCommand(MyItem, new_state)~~.
+- the following command _**will fail**_: ~~sendCommand(MyItem, new_state)~~.
 - However, the following command **will work**: `MyItem.sendCommand(new_state)`.
 
 Using `MyItem.postUpdate(new_state)` or `MyItem.sendCommand(new_state)` will create the most stable code.
@@ -449,7 +449,7 @@ There are two ways to discover these methods:
 
 #### Working with Item States: Conversions
 
-*Reminder: For a complete and up-to-date list of what item types are currently allowed in openHAB and the command types each item can accept refer to the section on [items in the openHAB documentation]({{base}}/concepts/items.html).*
+_Reminder: For a complete and up-to-date list of what item types are currently allowed in openHAB and the command types each item can accept refer to the section on [items in the openHAB documentation]({{base}}/concepts/items.html)._
 
 Below a **non-exhaustive** list of some more common conversions.
 The interested reader is encouraged to also visit the [forum](https://community.openhab.org) where many more examples can be found.
@@ -835,7 +835,7 @@ transform("<transformation-identifier>", "<transf. expression or transf. file na
 
 - `<transformation-identifier>` - Shorthand identifier of the transformation service
 - `<transf. expression or transf. file name>` - Transformation service specific
-- `<input-data or variable>` - The data to transform, MUST be of data type *String*
+- `<input-data or variable>` - The data to transform, MUST be of data type _String_
 
 Examples:
 

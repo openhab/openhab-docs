@@ -34,14 +34,14 @@ More about that topic can be viewed at ![youtube](../images/blockly/youtube-logo
 
 ![notification-to-user](../images/blockly/blockly-notification-to-user.png)
 
-*Function:* Sends a notification to the openHAB mobile app via openHAB cloud to a specific user signed up under the given email address
+_Function:_ Sends a notification to the openHAB mobile app via openHAB cloud to a specific user signed up under the given email address
 
 - **This block does not use the mail binding**, and it is not possible to send a notification to a user who does not have an openHAB cloud account.
 - Notification will only work if devices have the openHAB mobile app installed (either iOS or Android)
 
 ### Send Notification to All Devices and users
 
-*Function:* Sends a notification to all devices and all users to the openHAB mobile app.
+_Function:_ Sends a notification to all devices and all users to the openHAB mobile app.
 
 ![notification-to-all](../images/blockly/blockly-notification-to-all.png)
 
@@ -57,9 +57,9 @@ Use the [icon names of the openHAB iconset](https://www.openhab.org/docs/configu
 
 ![notification-to-log](../images/blockly/blockly-notification-to-log.png)
 
-*Function:* Sends a notification to myopenhab.org only
+_Function:_ Sends a notification to myopenhab.org only
 
-- This notification is *only* sent to the openHAB cloud log (for example at <https://myopenhab.org/notifications>), **not the local openHAB log**.
+- This notification is _only_ sent to the openHAB cloud log (for example at <https://myopenhab.org/notifications>), **not the local openHAB log**.
 - Notifications are not sent to users' devices.
 - For the time being neither the log level nor the icon is shown in the log of the cloud
 - The notification is not logged on the openhab server

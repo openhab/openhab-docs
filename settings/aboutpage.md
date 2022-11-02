@@ -93,7 +93,6 @@ Use [openHABs console](/administration/console.html#using-the-console) or just r
 
 > openhab-cli console
 
-
 and then enter the following command:
 
 ```text

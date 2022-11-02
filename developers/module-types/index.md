@@ -7,7 +7,7 @@ title: Automation Modules
 
 {:.no_toc}
 
-In this section you will be guided through developing *Module Types* and corresponding *Module Handlers* for the automation engine of openHAB.
+In this section you will be guided through developing _Module Types_ and corresponding _Module Handlers_ for the automation engine of openHAB.
 
 {::options toc_levels="2,3"/}
 
@@ -19,7 +19,7 @@ In this section you will be guided through developing *Module Types* and corresp
 Module Types describe Conditions, Triggers and Actions for the automation engine in terms of user visible strings like a label, a description, tags.
 But also what configuration values are available and what inputs and outputs a Module Type provides.
 
-For each *Module Type* a corresponding *Module Handler* is in place to actually execute code.
+For each _Module Type_ a corresponding _Module Handler_ is in place to actually execute code.
 
 To better get into the topic, let's develop a rule for the automation engine that is compromised completely out of custom modules (in contrast to core provided ones).
 
@@ -81,7 +81,7 @@ public class MyModuleTypeProvider implements ModuleTypeProvider {
 }
 ```
 
-The above factory is exposing all three *Module Types* that we need for our scenario.
+The above factory is exposing all three _Module Types_ that we need for our scenario.
 We do not need to care about the `ProviderChangeListener` methods here, because our types are rather static.
 If module types change over time in your factory, you need to notify the automation engine.
 
@@ -134,7 +134,7 @@ A configuration parameter needs a unique ID, a label, optionally a description a
 Triggers and Conditions can also output data.
 And our temperature trigger will not only trigger on a configured temperature, but also output it.
 
-To define an *Output* you need to pass at least an ID, a type, a label and a description to the constructor.
+To define an _Output_ you need to pass at least an ID, a type, a label and a description to the constructor.
 The type is the fully qualified name of a class, in this case from the `Integer` class.
 
 Conditions and Actions can take inputs on the other hand.
@@ -178,9 +178,9 @@ The Condition that we are going to implement in the Condition Handler latter on 
 Notice that our output is of type "State" instead of a fully qualified class name like `java.lang.String`.
 The following openHAB classes have short forms:
 
-- "State" (an *Item* state)
+- "State" (an _Item_ state)
 - "Event" (an openHAB event from the event bus)
-- "Command" (a command targeting an *Item*)
+- "Command" (a command targeting an _Item_)
 
 And now let's have a look at the Action type.
 
@@ -228,7 +228,7 @@ You will learn an easier way in a moment for statically defined module types
 
 ### Module types via json
 
-In the last section we learned about the programmatic way of exposing *Module Types*.
+In the last section we learned about the programmatic way of exposing _Module Types_.
 It is actually way easier to just descripe your module types in a declarative way via json and bundle them with your addon.
 
 To describe your modules (triggers, conditions, actions), add json files to `src/main/resources/OH-INF/automation/moduletypes/`.
@@ -338,7 +338,7 @@ The pieces of code that actually
 - decide on condition satisfaction for Condition types or
 - execute something in case of Action types
 
-are called *Module handlers*.
+are called _Module handlers_.
 
 We now go over the implementation for all of our custom modules.
 
@@ -388,7 +388,7 @@ In the next three sections we'll implement those three handlers.
 
 ### Trigger Handler
 
-A *Trigger Handler* is created by the automation engine for each trigger module type in actual rules,
+A _Trigger Handler_ is created by the automation engine for each trigger module type in actual rules,
 via the factory that we have implemented above.
 
 The handler tells the rule engine that something happened.

@@ -7,7 +7,7 @@ title: Thing Descriptions
 
 {:.no_toc}
 
-In order to work with *Things* and *Channels*, some meta information about them is needed.
+In order to work with _Things_ and _Channels_, some meta information about them is needed.
 
 These are provided through 'ThingType' and 'ChannelType' definitions,
 which describe details about their functionality and configuration options.
@@ -604,14 +604,14 @@ The following policies are supported:
 
 ## Bridges and Thing Descriptions
 
-Every binding has to provide meta information about which bridges and/or *Thing*s it provides and how their relations to each other are structured.
+Every binding has to provide meta information about which bridges and/or _Thing_s it provides and how their relations to each other are structured.
 In that way a binding could describe that it requires specific bridges to be operational or define which channels (e.g. temperature, color, etc.) it provides.
 
-Every bridge or *Thing* has to provide meta information such as label or description.
-The meta information of all bridges and *Thing*s is accessible through the `org.openhab.core.thing.binding.ThingTypeProvider` service.
+Every bridge or _Thing_ has to provide meta information such as label or description.
+The meta information of all bridges and _Thing_s is accessible through the `org.openhab.core.thing.binding.ThingTypeProvider` service.
 
-Bridge and *Thing* descriptions must be placed as XML file(s) (with the ending `.xml`) in the bundle's folder `/OH-INF/thing/`.
-The full Java API for bridge and *Thing* descriptions can be found in the Java package `org.openhab.core.thing.type`.
+Bridge and _Thing_ descriptions must be placed as XML file(s) (with the ending `.xml`) in the bundle's folder `/OH-INF/thing/`.
+The full Java API for bridge and _Thing_ descriptions can be found in the Java package `org.openhab.core.thing.type`.
 
 ### XML Structure for Thing Descriptions
 
@@ -851,6 +851,6 @@ The full XML schema for Thing type descriptions is specified in the [https://ope
 **Hints:**
 
 - Any identifiers of the types are automatically mapped to unique identifiers: `bindingID:id`.
-- The attribute `uri` in the section `config-description` is optional, it *should not* be specified in bridge/*Thing*/channel type definition files because it's an embedded configuration.
-  If the `uri` is *not* specified, the configuration description is registered as `thing-type:bindingID:id` or `channel-type:bindingID:id` otherwise the given `uri` is used.s
-- If a configuration description is already specified somewhere else and the bridge/*Thing*/channel type wants to (re-)use it, a `config-description-ref` should be used instead.
+- The attribute `uri` in the section `config-description` is optional, it _should not_ be specified in bridge/_Thing_/channel type definition files because it's an embedded configuration.
+  If the `uri` is _not_ specified, the configuration description is registered as `thing-type:bindingID:id` or `channel-type:bindingID:id` otherwise the given `uri` is used.s
+- If a configuration description is already specified somewhere else and the bridge/_Thing_/channel type wants to (re-)use it, a `config-description-ref` should be used instead.
