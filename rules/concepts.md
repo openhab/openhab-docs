@@ -274,6 +274,7 @@ Other times the helper library must be installed separately, searching in the co
 These following code snippets implement the examples from the top of this page using UI rules, [JS Scripting](https://openhab.org/addons/automation/jsscripting) and [DSL rules](/docs/configuration/rules-dsl).
 
 The code from the JS Scripting examples can be used in file-based scripts that are created inside the `/automation/js` folder and have `.js` as their file extension.
+The same applies for the JRuby examples, but they have to be placed inside `/automation/jsr223/ruby/personal` with `.rb` as the file extension.
 
 Each UI rule will have a "code" tab showing the full rule definition.
 When asking for help on the forum, the representation of the rule from this code tab will be the best way to show your full rule.
@@ -331,6 +332,22 @@ when
 then
   gBlinds.sendCommand(UP)
   gThermostat.sendCommand(INCREASE)
+end
+```
+
+:::
+
+::: tab JRuby
+
+```ruby
+require 'openhab'
+
+rule 'Raise the blinds & adjust temperature on sunrise' do
+  channel 'astro:sun:home:rise#event'
+  run {
+    gBlinds << up
+    gThermostat << increase
+  }
 end
 ```
 
@@ -415,6 +432,22 @@ end
 
 :::
 
+::: tab JRuby
+
+```ruby
+require 'openhab'
+
+rule 'Turn off the lights & adjust temperature on leaving' do
+  received_command Presence, command: off
+  run {
+    gLights << off
+    gThermostat << decrease
+  }
+end
+```
+
+:::
+
 ::: tab JS Scripting
 
 JS Scripting
@@ -475,6 +508,22 @@ actions:
 
 :::
 
+::: tab JRuby
+
+```ruby
+require 'openhab'
+
+rule 'Play music on arrival, but only on afternoon' do
+  received_command Presence, command: on
+  run {
+    Soundbar >> on
+  }
+  only_if { TimeOfDay.now.between? ‘1pm’..’6pm’ }
+end
+```
+
+:::
+
 ::: tab JS Scripting
 
 JS Scripting
@@ -489,7 +538,7 @@ rules.JSRule({
     triggers.ItemCommandTrigger('Presence', 'ON') // Triggers when Item Presence is commanded ON
   ],
   execute: (event) => {
-      if (time.toZDT().isBetweenTimes('01:00 PM', '06:00 PM')) {
+      if (time.toZDT().isBetweenTimes('1:00 PM', '6:00 PM')) {
           items.getItem('Soundbar').sendCommand('ON');
       }
   }
@@ -563,6 +612,25 @@ then
   createTimer(now.plusMinutes(60), [ |
     if (triggeringItem.state == OPEN) sendBroadcastNotification(triggeringItem.label + " is open for one hour!")
   ])
+end
+```
+
+:::
+
+::: tab JRuby
+
+```ruby
+require 'openhab'
+
+rule 'Window open reminder' do
+  changed: gWindows, to: open
+  run { 
+    after 1.hour do
+      if item.state.open?
+        notify("#{item.label} is open for an hour!")
+      end
+    end
+  }
 end
 ```
 
@@ -672,6 +740,26 @@ then
   LivingRoom_LEDStripe.sendCommand(50%)
   Soundbar.sendCommand(ON)
   TV.sendCommand(ON)
+end
+```
+
+:::
+
+::: tab JRuby
+
+```ruby
+require 'openhab'
+
+rule 'Movie Scene' do
+  received_command MovieScene, command: ON
+  run {
+    LivingRoom_Blinds >> '90%'
+    LivingRoom_MainLight >> off
+    LivingRoom_LEDStripe >> '50%'
+    Soundbar >> on
+    TV >> on
+    Soundbar >> ON
+  }
 end
 ```
 
