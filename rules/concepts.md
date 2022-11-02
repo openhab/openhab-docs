@@ -21,9 +21,8 @@ No problem, openHAB can do that for you too.
 Rules can also remind you of things, for example, that you opened the window hours ago and forgot that it is open?
 openHAB can send a notification to your phone.
 
-Most users coming from commercial smart home systems will know the concept of "Scenes".
-These *Scenes*, which are for example supported in Apple's HomeKit or Philips Hue, allow us users to set the state of multiple devices with a single action.
-In openHAB, there is nothing called "Scenes", but you can easily use rules to build the scenes functionality.
+Other systems may have a concept of *Automations*, *Tasks*, and other terms.
+In openHAB, rules are used to implement all of these concepts.
 
 ## Parts of a Rule
 
@@ -209,19 +208,22 @@ The only restriction is a script condition's last executed line of code must res
 Unfortunately the term "Script" is overloaded in openHAB, and has multiple meanings based on the context:
 
 - A UI rule consisting only of a single Script Action with the tag "Script".
-  This can be used to reuse code and logic across multiple rules.
-- In text based rules, a script is a file that is processed by a script engine, e.g. [JS Scripting](/addons/automation/jsscripting/).
+  - These will appear in a specific "Scripts" section on MainUI.
+  - They can be used to reuse code and logic across multiple other rules, one off experimentation to figure something out, create a catalog of examples, or to drive tests for other rules and behaviors.
+- In text based rules, a script is a file that is processed by a script engine, see the [automation addons](/addons/#automation).
   Those scripts can be used to create (multiple) rules, or those are loaded by other script files a libraries.
-- A script file that is executed on the command line with a script engine, e.g. `bash`, by using `executeCommandLine`.
-- A special piece of Rules DSL code in the `$OH_CONF/scripts` folder that is called from other rules using `callScript`.
+  <!-- TODO: Update reference to executeCommandLine when the rules docs are reworked -->
+- A script file that is executed on the command line with a script interpreter, e.g. `bash` or `python`, by using the [`executeCommandLine` action](/docs/configuration/actions.html#exec-actions) or the [Exec Binding](/addons/bindings/exec).
+  <!-- TODO: Update reference to callScript when the rules docs are reworked -->
+- A special piece of Rules DSL code in the `$OH_CONF/scripts` folder that is called from other rules using [`callScript`](/docs/configuration/actions.html#openhab-subsystem-actions).
 
-The rule docs mainly refer to the first two meanings when talking about scripts.
+These rule docs mainly refer to the first two meanings when talking about scripts.
 
 ## Script Actions
 
-Script Actions are a special type of action only available in UI rules.
+Script Actions are an action that allow you to run logic written in one of the available automation/rule languages, e.g. JavaScript, Rules DSL, Blockly.
 
-These allow you to run scripts written in one of the available automation/rule languages, e.g. JavaScript, Rules DSL, and Python.
+Text based rules will typically allow only a single script action to be defined (e.g the code between the `then` and `end` in a text based Rules DSL or the function passed as the `execute` parameter in a JS Scripting rule is the script action for that rule).
 
 ## Available Values
 
@@ -233,46 +235,48 @@ The availablity of those values depends on the rule engine, but you can generall
 - The name of triggering Item.
 - The command that the triggering Item received.
 - The state the Item got updated by.
+- The state the Item was updated to.
+- The state the Item was updated from.
+- The Thing/Thing event that triggered the rule.
 
 For further information which values are available and how to access them, refer to the documentation of the according rule engine.
 
 ## Rule Templates
 
-At some point, when basic UI rules are not be sophisticated enough to reach your goal, rule templates can help.
-Someone may have already written the rule and provides it as a template at the community marketplace.
+At some point, when basic UI rules are not be sophisticated enough, rule templates can help.
+Someone may have already written the rule and provided it as a template in the community marketplace.
 
-To access the rule templates, visit the web UI and navigate: *Settings* -> *Add-Ons* -> *Automation* -> Scroll down to the *Rule Templates* section.
+To enable access to rule templates, navigate to *Settings* -> *Community Marketplace* and toggle *Enable Community Marketplace* to ON.
+Then to install a rule template, visit the web UI and navigate: *Settings* -> *Add-Ons* -> *Automation* -> Scroll down to the *Rule Templates* section.
 Click on a rule template to review it's documentation, open the community thread and install the template to your system.
 Check the template's documentation for dependencies and install them!
 Otherwise the rule won't work.
 
-To instantiate a rule template, navigate to Rules and click the blue `+` icon.
-Fill out the rule's metadata as usual and select a installed rule template from the *Create from Template* section.
+To instantiate a rule template, navigate to *Rules* and click the blue `+` icon.
+Fill out the rule's metadata as usual and select an installed rule template from the *Create from Template* section.
 Choose the rule template, and fill out the template configuration.
 
-Once a rule is created, it is seperated from it's templated and can be modified individually.
-To update rule from the template, you have to recreate the rule.
-
-If you want to create your own rule templates, visit the [Marketplace](https://community.openhab.org/c/marketplace/rule-templates/74) at the community forum.
+Once a rule is created, it is seperated from its template and can be further customized.
+To update a rule template, return to the Automation menu in MainUI, select the rule template, remove it and then readd it.
+Then to update a rule from the template, delete the rule(s) that were instantiated from the template and recreate them.
+Note, when clicking on the "Code" tab of the rule, the properties used when instantiating the rule are preserved in the configuration section.
 
 ## Helper Libraries
 
 Helper Libraries simplify the interaction with the openHAB runtime by providing convenient access to common functionality, and provide type conversion from Java types to native types of the chosen rule/script language.
-By providing this functionality, they help avoiding type errors and heavily reduce the amount of boilerplate code required to import openHAB classes.
+By providing this functionality, they help avoid type errors and heavily reduce the amount of boilerplate code required to import and use openHAB classes.
 
-There are official helper libraries developed and maintained by the openHAB developers as well as community developed helper libraries.
-Some rule engines have no helper libraries at all.
-
-If there is an official helper library, it will be mentioned and used in the documentation of the rule engine, e.g. [JS Scripting](/addons/automation/jsscripting) with the [openhab-js](https://github.com/openhab/openhab-js) library.
-For unofficial helper libraries, you may search in the [community forum](https://community.openhab.org/search) for helper libraries for your rule language.
-An example for an unofficial helper library are [Ivan's helper libraries for Jython (community forum)](https://community.openhab.org/t/ivan-s-helper-libraries-oh3-python-javascript/116458).
+Sometimes the helper library will come with the add-on, e.g. [JS Scripting](/addons/automation/jsscripting) with the [openhab-js](https://github.com/openhab/openhab-js) library.
+Other times the helper library must be installed separately, searching in the community form might help.
 
 ## Comprehensive Examples
 
 These following code snippets implement the examples from the top of this page using UI rules, [JS Scripting](https://openhab.org/addons/automation/jsscripting) and [DSL rules](/docs/configuration/rules-dsl).
 
 The code from the JS Scripting examples can be used in file-based scripts that are created inside the `/automation/js` folder and have `.js` as their file extension.
-You can paste the code snippets from the UI rules in the UI rule editor to inspect the examples.
+
+Each UI rule will have a "code" tab showing the full rule definition.
+When asking for help on the forum, the representation of the rule from this code tab will be the best way to show your full rule.
 
 It is recommended to use helper libraries where they are available, as they provide an easy-to-use API to access openHAB functionality and avoid type problems related to the different languages combined.
 
