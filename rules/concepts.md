@@ -271,7 +271,7 @@ Other times the helper library must be installed separately, searching in the co
 
 ## Comprehensive Examples
 
-These following code snippets implement the examples from the top of this page using UI rules, [JS Scripting](https://openhab.org/addons/automation/jsscripting) and [DSL rules](/docs/configuration/rules-dsl).
+These following code snippets implement the examples from the top of this page using UI rules, [JRuby Scripting](/addons/automation/jrubyscripting/), [JS Scripting](https://openhab.org/addons/automation/jsscripting) and [DSL rules](/docs/configuration/rules-dsl).
 
 The code from the JS Scripting examples can be used in file-based scripts that are created inside the `/automation/js` folder and have `.js` as their file extension.
 The same applies for the JRuby examples, but they have to be placed inside `/automation/jsr223/ruby/personal` with `.rb` as the file extension.
@@ -283,7 +283,7 @@ It is recommended to use helper libraries where they are available, as they prov
 
 ### When the sun rises, raise the blinds and adjust the temperature
 
-This example is using the [Astro Binding](https://www.openhab.org/addons/bindings/astro) which calculates many values for sun and moon, including sunrise.
+This example is using the [Astro Binding](/addons/bindings/astro) which calculates many values for sun and moon, including sunrise.
 
 :::: tabs
 
@@ -382,7 +382,7 @@ rules.JSRule({
 Presence detection can be achieved in many ways, this example is not able to cover a mechanism used for presence detection.
 Most presence detection mechanisms control a switch Item with `ON` for present and `OFF` for away.
 
-Examples for presence detection include the [iCloud Binding](https://www.openhab.org/addons/bindings/icloud/#icloud-rules), [Network Binding](https://www.openhab.org/addons/bindings/network/#presence-detection-configure-target-device), [GPSTracker Binding](https://www.openhab.org/addons/bindings/gpstracker/#distance-channel-and-presence-switch), etc., but you could also use a simple wall switch.
+Examples for presence detection include the [iCloud Binding](/addons/bindings/icloud/#icloud-rules), [Network Binding](/addons/bindings/network/#presence-detection-configure-target-device), [GPSTracker Binding](/addons/bindings/gpstracker/#distance-channel-and-presence-switch), etc., but you could also use a simple wall switch.
 
 :::: tabs
 
