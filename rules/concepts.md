@@ -72,6 +72,7 @@ An event is something that happens and is detectable by openHAB.
 Some events for rules are time events, system events, Item state and command events, etc.
 
 A few examples of events that could be used to trigger a rule:
+
 - The time is midnight.
 - openHAB reached a runlevel 80 indicating Things are initialized.
 - The `Bedroom_Light` Item changed from OFF to ON.
@@ -125,12 +126,12 @@ Please be aware that openHAB is using the [Quartz Scheduler](https://www.quartz-
 A Quartz cron expression takes the form of six or optionally seven fields:
 
 1. Seconds
-2. Minutes
-3. Hours
-4. Day of Month
-5. Month
-6. Day of Week
-7. Year (optional field)
+1. Minutes
+1. Hours
+1. Day of Month
+1. Month
+1. Day of Week
+1. Year (optional field)
 
 You may use the generator at [FreeFormatter.com](https://www.freeformatter.com/cron-expression-generator-quartz.html) or the openHAB WebUI rule setup to generate your cron expressions.
 
@@ -194,6 +195,7 @@ Conditions as a separately definable part of a rule are supported by some rule e
 In situations where the rule engine does not support conditions, you can implement your conditions using an `if`-statement in the rule action.
 
 Available types of conditions include:
+
 - An Item has a given state
 - It’s a certain time of day
 - It’s a certain day of week
@@ -289,11 +291,11 @@ This example is using the [Astro Binding](/addons/bindings/astro) which calculat
 
 ::: tab UI Rule
 
-![](./images/concepts/rule-sunrise.jpeg)
+![Sunrise Rule Screenshot](./images/concepts/rule-sunrise.jpeg)
 
 The trigger in detail:
 
-![](./images/concepts/rule-sunrise-trigger.jpeg)
+![Sunrise Rule Trigger](./images/concepts/rule-sunrise-trigger.jpeg)
 
 The code:
 
@@ -388,7 +390,7 @@ Examples for presence detection include the [iCloud Binding](/addons/bindings/ic
 
 ::: tab UI Rule
 
-![](./images/concepts/rule-leaving.jpeg)
+![Leaving Home Screenshot](./images/concepts/rule-leaving.jpeg)
 
 The code:
 
@@ -478,7 +480,7 @@ rules.JSRule({
 
 ::: tab UI Rule
 
-![](./images/concepts/rule-arrival.jpeg)
+![Returning Home Screenshot](./images/concepts/rule-arrival.jpeg)
 
 The code:
 
@@ -555,11 +557,11 @@ rules.JSRule({
 
 ::: tab UI Rule
 
-![](./images/concepts/rule-openwindow.jpeg)
+![Open Window Screenshot](./images/concepts/rule-openwindow.jpeg)
 
 The script action in detail (for the scipt see the YAML):
 
-![](./images/concepts/rule-openwindow-action.jpeg)
+![Open Window Action](./images/concepts/rule-openwindow-action.jpeg)
 
 The code:
 
@@ -682,7 +684,7 @@ You might know this concept of "Scenes" from Apple HomeKit, Google Home, Philips
 
 ::: tab UI Rule
 
-![](./images/concepts/rule-scene.jpeg)
+![Scene Screenshot](./images/concepts/rule-scene.jpeg)
 
 ```yaml
 configuration: {}
