@@ -358,8 +358,6 @@ end
 
 ::: tab JS
 
-JS Scripting
-
 ```javascript
 const { rules, triggers, items } = require('openhab');
 
@@ -453,8 +451,6 @@ end
 
 ::: tab JS
 
-JS Scripting
-
 ```javascript
 const { rules, triggers, items } = require('openhab');
 
@@ -544,8 +540,6 @@ end
 
 ::: tab JS
 
-JS Scripting
-
 ```javascript
 const { rules, triggers, items, time } = require('openhab');
 
@@ -620,7 +614,7 @@ actions:
 
 :::
 
-::: DSL
+::: tab DSL
 
 ```java
 rule "Window open reminder"
@@ -635,7 +629,7 @@ end
 
 :::
 
-::: tab
+::: tab JRuby
 
 ```ruby
 require 'openhab'
@@ -655,8 +649,6 @@ end
 :::
 
 ::: tab JS
-
-JS Scripting
 
 ```javascript
 const { rules, triggers, items, actions } = require('openhab');
@@ -746,7 +738,7 @@ actions:
 
 :::
 
-::: DSL
+::: tab DSL
 
 ```java
 rule "Movie Scene"
@@ -784,8 +776,6 @@ end
 :::
 
 ::: tab JS
-
-JS Scripting
 
 ```javascript
 const { rules, triggers, items } = require('openhab');
