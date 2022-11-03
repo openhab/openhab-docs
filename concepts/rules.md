@@ -1,8 +1,8 @@
-# Rules Concepts
+# Rules
 
 openHAB is about home automation, but to create home automation we need to define rules.
 
-{::options toc_levels="2..4"/}
+{::options toc_levels="2"/}
 
 - TOC
 {:toc}
@@ -245,7 +245,7 @@ For further information which values are available and how to access them, refer
 
 ## Rule Templates
 
-At some point, when basic UI rules are not be sophisticated enough, rule templates can help.
+At some point, when basic UI rules are not sophisticated enough, rule templates can help.
 Someone may have already written the rule and provided it as a template in the community marketplace.
 
 To enable access to rule templates, navigate to *Settings* -> *Community Marketplace* and toggle *Enable Community Marketplace* to ON.
@@ -273,10 +273,11 @@ Other times the helper library must be installed separately, searching in the co
 
 ## Comprehensive Examples
 
-These following code snippets implement the examples from the top of this page using UI rules, [JRuby Scripting](/addons/automation/jrubyscripting/), [JS Scripting](https://openhab.org/addons/automation/jsscripting) and [DSL rules](/docs/configuration/rules-dsl).
+The following code snippets implement the examples from the top of this page using UI rules, [DSL rules](/docs/configuration/rules-dsl), [JRuby Scripting](/addons/automation/jrubyscripting/), and [JS Scripting](https://openhab.org/addons/automation/jsscripting).
 
 The code from the JS Scripting examples can be used in file-based scripts that are created inside the `/automation/js` folder and have `.js` as their file extension.
 The same applies for the JRuby examples, but they have to be placed inside `/automation/jsr223/ruby/personal` with `.rb` as the file extension.
+The Rules DSL examples can be places in the `rules` folder and have `.rules` as their file extension.
 
 Each UI rule will have a "code" tab showing the full rule definition.
 When asking for help on the forum, the representation of the rule from this code tab will be the best way to show your full rule.
@@ -289,7 +290,7 @@ This example is using the [Astro Binding](/addons/bindings/astro) which calculat
 
 :::: tabs
 
-::: tab UI Rule
+::: tab UI
 
 ![Sunrise Rule Screenshot](./images/rule-sunrise.jpeg)
 
@@ -325,7 +326,7 @@ actions:
 
 :::
 
-::: tab DSL Rule
+::: tab DSL
 
 ```java
 rule "Raise the blinds & adjust temperature on sunrise"
@@ -355,7 +356,7 @@ end
 
 :::
 
-::: tab JS Scripting
+::: tab JS
 
 JS Scripting
 
@@ -388,7 +389,7 @@ Examples for presence detection include the [iCloud Binding](/addons/bindings/ic
 
 :::: tabs
 
-::: tab UI Rule
+::: tab UI
 
 ![Leaving Home Screenshot](./images/rule-leaving.jpeg)
 
@@ -420,7 +421,7 @@ actions:
 
 :::
 
-::: tab DSL Rule
+::: tab DSL
 
 ```java
 rule "Turn off the lights & adjust temperature on leaving"
@@ -450,7 +451,7 @@ end
 
 :::
 
-::: tab JS Scripting
+::: tab JS
 
 JS Scripting
 
@@ -478,7 +479,7 @@ rules.JSRule({
 
 :::: tabs
 
-::: tab UI Rule
+::: tab UI
 
 ![Returning Home Screenshot](./images/rule-arrival.jpeg)
 
@@ -510,6 +511,21 @@ actions:
 
 :::
 
+::: tab DSL
+
+```java
+rule "Play music on arrival, but only on afternoon"
+when
+    Item Presence received command ON
+then
+    if(now.isAfter(now.withHour(13)) && now.isBefore(now.withHour(18))) {
+      Soundbar.sendCommand(ON)
+    }
+end
+```
+
+:::
+
 ::: tab JRuby
 
 ```ruby
@@ -526,7 +542,7 @@ end
 
 :::
 
-::: tab JS Scripting
+::: tab JS
 
 JS Scripting
 
@@ -555,7 +571,7 @@ rules.JSRule({
 
 :::: tabs
 
-::: tab UI Rule
+::: tab UI
 
 ![Open Window Screenshot](./images/rule-openwindow.jpeg)
 
@@ -604,7 +620,7 @@ actions:
 
 :::
 
-::: DSL Rule
+::: DSL
 
 ```java
 rule "Window open reminder"
@@ -619,7 +635,7 @@ end
 
 :::
 
-::: tab JRuby
+::: tab
 
 ```ruby
 require 'openhab'
@@ -638,7 +654,7 @@ end
 
 :::
 
-::: tab JS Scripting
+::: tab JS
 
 JS Scripting
 
@@ -682,7 +698,7 @@ You might know this concept of "Scenes" from Apple HomeKit, Google Home, Philips
 
 :::: tabs
 
-::: tab UI Rule
+::: tab UI
 
 ![Scene Screenshot](./images/rule-scene.jpeg)
 
@@ -730,7 +746,7 @@ actions:
 
 :::
 
-::: DSL Rule
+::: DSL
 
 ```java
 rule "Movie Scene"
@@ -767,7 +783,7 @@ end
 
 :::
 
-::: tab JS Scripting
+::: tab JS
 
 JS Scripting
 
