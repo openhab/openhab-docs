@@ -30,7 +30,7 @@ You will have to apply the widget to an Item and refresh a page after saving the
 ## Building Custom Widgets
 
 As you are learning how widgets work and all of the available options, it might be easier to create the widget using the form presented when adding the Item metadata and then copying the YAML from the code tab to the Custom Widget editor.
-When doing this make sure to fill out *all* the fields, because when using the defaults no value is added to the YAML in the code tab.
+When doing this make sure to fill out _all_ the fields, because when using the defaults no value is added to the YAML in the code tab.
 So, for example, be sure to enter in the Item field.
 
 Here is a filled-out form customizing a list Item widget for a light.

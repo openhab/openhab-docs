@@ -16,7 +16,7 @@ Always keep this in mind when searching for help and solutions.
 ## Platform Recommendations
 
 1. You are **new to openHAB** and just want to give it a try?
-    - Set up openHAB on your local PC or Mac in just a few steps *or*
+    - Set up openHAB on your local PC or Mac in just a few steps _or_
     - use a Raspi with [openHABian](openhabian.html)
 
 1. You've gained some experience and want to use openHAB to seriously control your home?
@@ -40,7 +40,6 @@ If in doubt, explicitly install a JVM based on OpenJDK.
 You could also [download Azul Zulu](https://www.azul.com/downloads/zulu-community/?&architecture=x86-64-bit&package=jdk#) [Installation](https://docs.azul.com/zulu/zuludocs/ZuluUserGuide/InstallingZulu/InstallationWindowsUsingZuluMSIFile.htm) instructions can be found on Azul Systems' Zulu website.
 Oracle Java is also suitable for most configurations but it's not recommended. Licensing restrictions may apply.
 
-
 ::: warning
 Please note that versions of Java higher than 11 are not supported at the moment.
 :::
@@ -52,7 +51,7 @@ Please note that versions of Java higher than 11 are not supported at the moment
 | [AdoptOpenJDK](https://adoptopenjdk.net)          | Open Source JDK backed by many large companies |                                                                                                                                                                                                                                                                                                                                      |
 
 Please download and install the **Java 11** version of the JVM.
-Note that openHAB 3 will run under Java 11, and you *can* use it with openHAB 2.X as well. But be aware that although developers are working hard to make this work, there might be problems with the oldest parts of openHAB 2.x, such as some of the v1 bindings, due to non-backward compatible changes in Java 11.
+Note that openHAB 3 will run under Java 11, and you _can_ use it with openHAB 2.X as well. But be aware that although developers are working hard to make this work, there might be problems with the oldest parts of openHAB 2.x, such as some of the v1 bindings, due to non-backward compatible changes in Java 11.
 
 The **64-bit version** of the JVM is **only** recommended on platforms using a 64-bit OS and an Intel or AMD processor.
 

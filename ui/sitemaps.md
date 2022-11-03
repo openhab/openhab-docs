@@ -548,8 +548,8 @@ Switch item=CinemaLight label="Cinema light" visibility=[TV_Power==ON]
 Switch item=LawnSprinkler visibility=[Day_Time=="Morning", Day_Time=="Afternoon", Temperature>19]
 ```
 
-In the third example above, a control for a lawn sprinkler will be visible if it is Morning, *OR* if it is Afternoon, *OR* if the temperature is above 19 °C.
-Combining multiple conditions, for example Morning *AND* above 19 °C is not supported.
+In the third example above, a control for a lawn sprinkler will be visible if it is Morning, _OR_ if it is Afternoon, _OR_ if the temperature is above 19 °C.
+Combining multiple conditions, for example Morning _AND_ above 19 °C is not supported.
 To control visibility based upon combining multiple Items, or on more complex conditions, consider defining and using an additional intermediate Item that is set by a Rule.
 Rules have a rich set of features that can support more involved scenarios.
 

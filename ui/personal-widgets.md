@@ -166,7 +166,7 @@ Because of this, the `Label` component also accepts `class` and `style` configur
 `Label` components are often used extensively in compound widgets with several other components to place informative text.
 However, because of the `<div>` container, there are times and situations where the `Label` component can cause placement/alignment issues or even configuration issues if the parent element is not compatible with having a `<div>` container as a child.
 
-In contrast, the `Content` component renders the value given by the `text` property *without* any additional container.
+In contrast, the `Content` component renders the value given by the `text` property _without_ any additional container.
 For example:
 
 ```yaml

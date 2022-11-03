@@ -177,7 +177,7 @@ The Timer object supports the following methods:
 
 - `cancel`: prevents the scheduled timer from executing. Most of the time `cancel` is used used in conjunction with setting the timer handler to `null` as a convenient indicator that some previously defined timer is now finished with. However setting the handler to `null` does not interact with the timer itself.
 - `isActive`: returns `true` if the timer will be executed as scheduled, i.e. it has not been cancelled or completed.
-- `isCancelled`: returns `true` if the timer has been cancelled *before* it completed.
+- `isCancelled`: returns `true` if the timer has been cancelled _before_ it completed.
 - `isRunning`: returns `true` if the code is currently executing (i.e. the timer activated the code but it is not done running).
 - `hasTerminated`: returns `true` if the timer has been cancelled or the code has run and completed.
 - `reschedule(AbstractInstant instant)`: reschedules the timer to execute at the new time. If the Timer has terminated this method does nothing.
@@ -227,7 +227,7 @@ Notification actions may be placed in Rules to send alerts to mobile devices reg
 Three different actions are available:
 
 - `sendNotification(emailAddress, message)`: Sends a notification to a specific cloud instance user
-- `sendBroadcastNotification(message)`: Sends a notification to *all* devices of *all* users
+- `sendBroadcastNotification(message)`: Sends a notification to _all_ devices of _all_ users
 - `sendLogNotification(message)`: Sends a log notification to the `notifications` list at your openHAB Cloud instance.  Notifications are NOT sent to any registered devices
 
 For each of the three actions, there's another variant accepting an icon name and a severity:

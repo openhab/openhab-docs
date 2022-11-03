@@ -68,13 +68,11 @@ openHAB will see these incoming requests as originating from the local loopback 
 
 The simplest way to get hold of such an openHAB Cloud is to register an account at [myopenHAB.org](https://www.myopenhab.org/), which is operated by the [openHAB Foundation](https://www.openhabfoundation.org/).
 
-{: #nginx-reverse-proxy}
-
 ### Running openHAB Behind a Reverse Proxy
 
 A reverse proxy simply directs client requests to the appropriate server.
 This means you can proxy connections to `http://mydomain_or_myip` to your openHAB runtime.
-You just have to **replace *mydomain_or_myip*** with either an **internal or external IP** (e.g. xx.xx.xx.xx) or a **domain** if you own one that links to the external IP of openHAB (e.g. openhab.mydomain.tld).
+You just have to **replace _mydomain_or_myip_** with either an **internal or external IP** (e.g. xx.xx.xx.xx) or a **domain** if you own one that links to the external IP of openHAB (e.g. openhab.mydomain.tld).
 
 Running openHAB behind a reverse proxy allows you to access your openHAB runtime via port 80 (HTTP) and 443 (HTTPS).
 It also provides you a simple way of **protecting your server** with authentication and secure certificates.
@@ -83,36 +81,32 @@ The good news is that [openHABian](openhabian) already offers the possibility to
 
 **Table of Content:**
 
-- [Setting up NGINX](#nginx-setup)
-  - [Installation](#nginx-setup-install)
-  - [Basic Configuration](#nginx-setup-config)
-- [Authentication with NGINX](#nginx-auth)
-  - [Creating the First User](#nginx-auth-user)
-  - [Referencing the File in the NGINX Configuration](#nginx-auth-file)
-  - [Adding or Removing users](#nginx-auth-users)
-- [Making Exceptions for Specific IP addresses](#nginx-satisfy)
-- [Setting up a Domain](#nginx-domain)
-- [Enabling HTTPS](#nginx-https)
-- [Using OpenSSL to Generate Self-Signed Certificates](#nginx-openssl)
-  - [Adding the Certificates to Your Proxy Server](#nginx-openssl-add)
-- [Using Let's Encrypt to Generate Trusted Certificates](#nginx-letsencrypt)
-  - [Setting up the NGINX Proxy Server to Handle the Certificate Generation Procedure](#nginx-letsencrypt-generation)
-  - [Using Certbot](#nginx-letsencrypt-certbot)
-  - [Adding the Certificates to Your Proxy Server](#nginx-letsencrypt-add)
-- [Setting Your NGINX Server to Listen to the HTTPS Port](#nginx-https-listen)
-- [Redirecting HTTP Traffic to HTTPS](#nginx-httpredirect)
-- [Putting it All Together](#nginx-summary)
-- [Additional HTTPS Security](#nginx-https-security)
-- [Configuration on Synology DiskStation](#synology-remote-config)
-- [Further Reading](#nginx-further-reading)
-
-{: #nginx-setup}
+- [Setting up NGINX](#setting-up-nginx)
+  - [Installation](#installation)
+  - [Basic Configuration](#basic-configuration)
+- [Authentication with NGINX](#authentication-with-nginx)
+  - [Creating the First User](#creating-the-first-user)
+  - [Referencing the File in the NGINX Configuration](#referencing-the-file-in-the-nginx-configuration)
+  - [Adding or Removing users](#adding-or-removing-users)
+- [Making Exceptions for Specific IP addresses](#making-exceptions-for-specific-ip-addresses)
+- [Setting up a Domain](#setting-up-a-domain)
+- [Enabling HTTPS](#enabling-https)
+- [Using OpenSSL to Generate Self-Signed Certificates](#using-openssl-to-generate-self-signed-certificates)
+  - [Adding the Certificates to Your Proxy Server](#adding-the-certificates-to-your-proxy-server)
+- [Using Let's Encrypt to Generate Trusted Certificates](#using-lets-encrypt-to-generate-trusted-certificates)
+  - [Setting up the NGINX Proxy Server to Handle the Certificate Generation Procedure](#setting-up-the-nginx-proxy-server-to-handle-the-certificate-generation-procedure)
+  - [Using Certbot](#using-certbot)
+  - [Adding the Certificates to Your Proxy Server](#adding-the-certificates-to-your-proxy-server-1)
+- [Setting Your NGINX Server to Listen to the HTTPS Port](#setting-your-nginx-server-to-listen-to-the-https-port)
+- [Redirecting HTTP Traffic to HTTPS](#redirecting-http-traffic-to-https)
+- [Putting it All Together](#putting-it-all-together)
+- [Additional HTTPS Security](#additional-https-security)
+- [Configuration on Synology DiskStation](#configuration-on-synology-diskstation)
+- [Further Reading](#further-reading)
 
 #### Setting up NGINX
 
 These are the steps required to use [**NGINX**](https://nginx.org), a lightweight HTTP server, although you can use **Apache HTTP** server or any other HTTP server which supports reverse proxying.
-
-{: #nginx-setup-install}
 
 ##### Installation
 
@@ -124,8 +118,6 @@ sudo apt-get update && sudo apt-get install nginx
 
 Once installed, you can test to see if the service is running correctly by going to `http://mydomain_or_myip`, you should see the default "Welcome to nginx" page.
 If you don't, you may need to check your firewall or ports and check if port 80 (and 443 for HTTPS later) is not blocked and that services can use it.
-
-{: #nginx-setup-config}
 
 ##### Basic Configuration
 
@@ -179,24 +171,20 @@ sudo service nginx restart
 
 ...and then go to `http://mydomain_or_myip` to see your openHAB server.
 
-{: #nginx-auth}
-
 #### Authentication with NGINX
 
 For further security, you may wish to ask for a **username and password** before users have access to openHAB.
 This is fairly simple in NGINX once you have the reverse proxy setup, you just need to provide the server with a basic authentication user file.
 
-{: #nginx-auth-user}
-
 ##### Creating the First User
 
-You will be using *htpasswd* to generate a username/password file, this utility can be found in the apache2-utils package:
+You will be using _htpasswd_ to generate a username/password file, this utility can be found in the apache2-utils package:
 
 ```shell
 sudo apt-get install apache2-utils
 ```
 
-To generate a file that NGINX can use you use the following command, don't forget to change *username* to something meaningful!
+To generate a file that NGINX can use you use the following command, don't forget to change _username_ to something meaningful!
 
 ```shell
 sudo htpasswd -c /etc/nginx/.htpasswd username
@@ -204,8 +192,6 @@ sudo htpasswd -c /etc/nginx/.htpasswd username
 
 You will receive a prompt to create a password for this username, once finished the file will be created.
 You're then free to reference the file to NGINX.
-
-{: #nginx-auth-file}
 
 ##### Referencing the File in the NGINX Configuration
 
@@ -229,8 +215,6 @@ This is not required prior to openHAB 3.0. You must add the following two direct
 
 Once done, **test and restart your NGINX service** and authentication should now be enabled on your server!
 
-{: #nginx-auth-users}
-
 ##### Adding or Removing users
 
 To add new users to your site, you must use following command, **do not** use the `-c` modifier again as this will remove all previously created users:
@@ -246,8 +230,6 @@ sudo htpasswd -D /etc/nginx/.htpasswd username
 ```
 
 Once again, any changes you make to these files **must be followed with restarting the NGINX service** otherwise no changes will be made.
-
-{: #nginx-satisfy}
 
 #### Making Exceptions for Specific IP addresses
 
@@ -265,29 +247,23 @@ These lines are placed in the `location{}` block. For example, by adding the lin
 NGINX will allow anyone within the 192.168.0.0/24 range **and** the localhost to connect without a password.
 If you have setup a password following the previous section, then the rest will be prompted for a password for access.
 
-{: #nginx-domain}
-
 #### Setting up a Domain
 
 To generate a trusted certificate, you need to own a domain. To acquire your own domain, you can use one of the following methods:
 
 | Method                           | Example Links | Note |
 |:-------------------------------- |:------------- |:---- |
-| Purchasing a domain name         | [GoDaddy](https://www.godaddy.com), [Namecheap](https://www.namecheap.com), [Enom](https://www.enom.com), [Register](https://www.register.com) | You should have an IP adress that doesn't change (i.e. fixed), or changes rarely, and then update the DNS *A record* so that your domain/subdomain to point towards your IP. |
+| Purchasing a domain name         | [GoDaddy](https://www.godaddy.com), [Namecheap](https://www.namecheap.com), [Enom](https://www.enom.com), [Register](https://www.register.com) | You should have an IP adress that doesn't change (i.e. fixed), or changes rarely, and then update the DNS _A record_ so that your domain/subdomain to point towards your IP. |
 | Obtaining a free domain | [FreeNom](https://www.freenom.com) | Setup is the same as above. |
 | Using a "Dynamic DNS" sevice | [No-IP](https://www.noip.com), [Dyn](https://www.dyn.com/dns), [FreeDNS](https://freedns.afraid.org) | Uses a client to automatically update your IP to a domain of you choice, some Dynamic DNS services (like FreeDNS) offer a free domain too. |
-
-{: #nginx-https}
 
 #### Enabling HTTPS
 
 Encrypting the communication between client and the server is important because it protects against eavesdropping and possible forgery.
 The following options are available depending if you have a valid domain:
 
-If you have a **valid domain and can change the DNS** to point towards your IP, follow the [instructions for Let's Encrypt](#nginx-letsencrypt)
-If you need to use an internal or external IP to connect to openHAB, follow the [instructions for OpenSSL](#nginx-openssl)
-
-{: #nginx-openssl}
+If you have a **valid domain and can change the DNS** to point towards your IP, follow the [instructions for Let's Encrypt](#using-lets-encrypt-to-generate-trusted-certificates)
+If you need to use an internal or external IP to connect to openHAB, follow the [instructions for OpenSSL](#using-openssl-to-generate-self-signed-certificates)
 
 #### Using OpenSSL to Generate Self-Signed Certificates
 
@@ -312,8 +288,6 @@ sudo openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /etc/ssl/openha
 You will be prompted for some information which you will need to fill out for the certificate, when it asks for a **Common Name**, you may enter your IP Address:
 Common Name (e.g. server FQDN or YOUR name) []: xx.xx.xx.xx
 
-{: #nginx-openssl-add}
-
 ##### Adding the Certificates to Your Proxy Server
 
 The certificate and key should have been placed in `/etc/ssl/`.
@@ -325,8 +299,6 @@ In the NGINX configuration, place the following underneath your `server_name` va
   ssl_certificate_key             /etc/ssl/openhab.key;
 ```
 
-{: #nginx-letsencrypt}
-
 #### Using Let's Encrypt to Generate Trusted Certificates
 
 ::: tip
@@ -335,12 +307,10 @@ Skip this step if you have no domain name or have already followed the instructi
 
 Let's Encrypt is a service that allows anyone with a valid domain to automatically generate a trusted certificate, these certificates are usually accepted by a browser without any warnings.
 
-{: #nginx-letsencrypt-generation}
-
 ##### Setting up the NGINX Proxy Server to Handle the Certificate Generation Procedure
 
 Let's Encrypt needs to validate that the server has control of the domain.
-The simplest way of doing this is using a **webroot plugin** to place a file on the server, and then access it using a specific url: */.well-known/acme-challenge*.
+The simplest way of doing this is using a **webroot plugin** to place a file on the server, and then access it using a specific url: _/.well-known/acme-challenge_.
 Since the proxy only forwards traffic to the openHAB server, the server needs to be told to handle requests at this address differently.
 
 First, **create a directory** that Certbot can be given access to:
@@ -357,8 +327,6 @@ Next add the new location parameter to your NGINX config, this should be **place
   }
 ```
 
-{: #nginx-letsencrypt-certbot}
-
 ##### Using Certbot
 
 Certbot is a tool which simplifies the process of obtaining secure certificates.
@@ -368,8 +336,6 @@ Don't forget to change the example domain to your own! An example of a valid cer
 ```shell
 sudo certbot certonly --webroot -w /var/www/mydomain -d mydomain
 ```
-
-{: #nginx-letsencrypt-add}
 
 ##### Adding the Certificates to Your Proxy Server
 
@@ -383,8 +349,6 @@ In the NGINX configuration, place the following underneath your server_name vari
     add_header                      Strict-Transport-Security "max-age=31536000";
 ```
 
-{: #nginx-https-listen}
-
 #### Setting Your NGINX Server to Listen to the HTTPS Port
 
 Regardless of the option you choose, make sure you change the port to listen in on HTTPS traffic.
@@ -397,8 +361,6 @@ After restarting NGINX service, you will be using a valid HTTPS certificate.
 You can check by going to `https://mydomain_or_myip` and confirming with your browser that you have a valid certificate.
 **These certificates expire within a few months** so it is important to run the updater in a cron expression (and also restart NGINX) as explained in the Certbot setup instructions.
 If you want to keep hold of a HTTP server for some reason, just add `listen 80;` and remove the Strict-Transport-Security line.
-
-{: #nginx-httpredirect}
 
 #### Redirecting HTTP Traffic to HTTPS
 
@@ -424,11 +386,9 @@ server {
 }
 ```
 
-{: #nginx-summary}
-
 #### Putting it All Together
 
-After following all the steps on this page, you *should* have a NGINX server configuration (`/etc/nginx/sites-enabled/openhab`) that looks like this:
+After following all the steps on this page, you _should_ have a NGINX server configuration (`/etc/nginx/sites-enabled/openhab`) that looks like this:
 
 ```nginx
 server {
@@ -477,8 +437,6 @@ server {
 }
 ```
 
-{: #synology-remote-config}
-
 #### Configuration on Synology DiskStation
 
 Synology DSM (as of 6.2) has the ability to automatically acquire certificates from Let's Encrypt and renew them every 90 days as required.
@@ -487,7 +445,7 @@ The majority of the configuration mentioned above can be completed through the D
 Before you continue, make sure you have the below conditions:
 
 - A working installation of openHAB on your DiskStation (see the [Synology Installation Guide](https://www.openhab.org/docs/installation/synology.html/))
-- Your own domain you can configure the CAA record for (see [Setting up a Domain](#nginx-domain))
+- Your own domain you can configure the CAA record for (see [Setting up a Domain](#setting-up-a-domain))
 - Access to your DiskStation by SSH ([How to login to DSM with root permission via SSH/Telnet](https://www.synology.com/en-global/knowledgebase/DSM/tutorial/General_Setup/How_to_login_to_DSM_with_root_permission_via_SSH_Telnet/))
 - Ports 80 and 443 forwarded from your router to your DiskStation (make sure you reconfigure the router web UI to a different port first, so you don't lose access!)
 
@@ -649,13 +607,11 @@ sudo tail -f /var/log/nginx/error.log
 
 This log will update in real-time, so do whatever it was that you were having issues with again, and you'll see the error.
 
-{: #nginx-https-security}
-
 #### Additional HTTPS Security
 
 To test your security settings [SSL Labs](https://www.ssllabs.com/ssltest/) provides a tool for testing your domain against ideal settings (Make sure you check "Do not show the results on the boards" if you dont want your domain seen).
 
-This optional section is for those who would like to strengthen the HTTPS security on openHAB, it can be applied regardless of which HTTPS method you used [above](#nginx-https), **but you need to follow at least one of them first**.
+This optional section is for those who would like to strengthen the HTTPS security on openHAB, it can be applied regardless of which HTTPS method you used [above](#enabling-https), **but you need to follow at least one of them first**.
 
 First, we need to generate a stronger key exchange, to do this we can generate an additional key with OpenSSL.
 
@@ -683,8 +639,6 @@ All of these settings are customisable, but make sure you [read up on](https://n
 
 Feel free to test the new configuration again on [SSL Labs](https://www.ssllabs.com/ssltest/).
 If you're achieving A or A+ here, then your client-openHAB communication is very secure.
-
-{: #nginx-further-reading}
 
 #### Further Reading
 

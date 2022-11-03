@@ -68,7 +68,7 @@ where
 
 These bundle names are used in many places in openHAB, such as in various configuration files.
 Logging also makes extensive use of this **package namespace**.
-You can see these names listed as the *Symbolic names* of bundles by using the ```-s``` option of _bundle:list_:
+You can see these names listed as the _Symbolic names_ of bundles by using the ```-s``` option of _bundle:list_:
 
 ```text
 openhab> bundle:list -s

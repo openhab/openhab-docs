@@ -39,7 +39,7 @@ More about that topic can be viewed at ![youtube](../images/blockly/youtube-logo
 
 ![statistical-value](../images/blockly/blockly-persistence-get-statistical-value.png)
 
-*Function:* computes any of the below functions for the given item since the time provided by *ZonedDateTime*-Block
+_Function:_ computes any of the below functions for the given item since the time provided by _ZonedDateTime_-Block
 
 - average: gets the average value of the State of a persisted Item since a certain point in time.
 This method uses a time-weighted average calculation
@@ -57,14 +57,14 @@ Note:  in case no or 0 values are retrieved, make sure that the item in question
 
 ![item-change](../images/blockly/blockly-persistence-get-item-change.png)
 
-*Function:* checks if an item was updated or changed since a certain point in time
+_Function:_ checks if an item was updated or changed since a certain point in time
 Type: boolean `true` or `false`
 
 ### Provide last updated date of an Item
 
 ![item-updated-date](../images/blockly/blockly-persistence-updated-date.png)
 
-*Function:* Provides the last updated date (including time) of an Item
+_Function:_ Provides the last updated date (including time) of an Item
 Type: ZonedDateTime
 
 ## Return to Blockly Reference

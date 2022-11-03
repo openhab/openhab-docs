@@ -94,7 +94,7 @@ openhab> help bundle:stop
 
 The console also supports auto-completion during input.
 Auto-completion proposes possible commands based on the current input and is triggered by a &lt;TAB&gt; press on your keyboard.
-So for example entering "*bund*" and pressing the &lt;TAB&gt; key will first extend to the only viable candidate "bundle", a subsequent &lt;TAB&gt; press will result in:
+So for example entering "_bund_" and pressing the &lt;TAB&gt; key will first extend to the only viable candidate "bundle", a subsequent &lt;TAB&gt; press will result in:
 
 ```text
 openhab> bundle

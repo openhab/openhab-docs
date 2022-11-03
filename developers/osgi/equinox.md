@@ -80,13 +80,13 @@ Some of the basic OSGi commands are:
 
 | Command                           | Description                                                                                                                                                                                                                                                       |
 |-----------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| *help*                            | Basic command that will list all available commands                                                                                                                                                                                                               |
-| *install* [bundle URL]            | Installs the bundle from the given URL                                                                                                                                                                                                                            |
-| *start* [bundle # or bundle name] | Starts the bundle with the given numeric or symbolic id                                                                                                                                                                                                           |
-| *stop* [bundle # or bundle name]  | Stops the bundle with the given numeric or symbolic id                                                                                                                                                                                                            |
-| *ss*                              | Reports a summary status of all installed bundles                                                                                                                                                                                                                 |
-| *diag* [bundle # or bundle name]  | Reports any resolution problems for the bundle with the given numeric or symbolic id                                                                                                                                                                              |
-| *services* [filter]               | Lists all available services or only services matching to [LDAP-style filter](http://www.ldapexplorer.com/en/manual/109010000-ldap-filter-syntax.htm) (e.g. services (objectClass="\*virtage\*") - will print only services having *virtage* in their class name) |
+| _help_                            | Basic command that will list all available commands                                                                                                                                                                                                               |
+| _install_ [bundle URL]            | Installs the bundle from the given URL                                                                                                                                                                                                                            |
+| _start_ [bundle # or bundle name] | Starts the bundle with the given numeric or symbolic id                                                                                                                                                                                                           |
+| _stop_ [bundle # or bundle name]  | Stops the bundle with the given numeric or symbolic id                                                                                                                                                                                                            |
+| _ss_                              | Reports a summary status of all installed bundles                                                                                                                                                                                                                 |
+| _diag_ [bundle # or bundle name]  | Reports any resolution problems for the bundle with the given numeric or symbolic id                                                                                                                                                                              |
+| _services_ [filter]               | Lists all available services or only services matching to [LDAP-style filter](http://www.ldapexplorer.com/en/manual/109010000-ldap-filter-syntax.htm) (e.g. services (objectClass="\*virtage\*") - will print only services having _virtage_ in their class name) |
 
 Table 1. Equinox commands (Source: <https://www.eclipse.org/equinox/documents/quickstart-framework.php>)
 
@@ -130,9 +130,3 @@ Table 2. OSGi Bundles (Full list can be found at: <https://www.eclipse.org/equin
 [Equinox-repo]: https://git.eclipse.org/c/equinox/
 [Eclipse]: https://eclipse.org/eclipse/
 [Equinox-Bundles]: https://www.eclipse.org/equinox/bundles/
-[Equinox-Incubator]: https://www.eclipse.org/equinox/incubator/
-[p2]: https://www.eclipse.org/equinox/p2/
-[Equinox-Server]: https://www.eclipse.org/equinox/incubator/server/
-[products]: https://help.eclipse.org/mars/index.jsp?topic=%2Forg.eclipse.platform.doc.isv%2Fguide%2Fproduct_def.htm
-[plugins]: https://help.eclipse.org/mars/index.jsp?topic=%2Forg.eclipse.platform.doc.isv%2Fguide%2Fproduct_def_plugins.htm&cp=2_0_21_2
-[features]: https://help.eclipse.org/mars/index.jsp?topic=%2Forg.eclipse.platform.doc.isv%2Fguide%2Fproduct_def_feature.htm&cp=2_0_21_1

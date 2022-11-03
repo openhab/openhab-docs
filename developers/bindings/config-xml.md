@@ -10,7 +10,7 @@ To visualize or validate concrete configuration properties, configuration descri
 All available configuration descriptions are accessible through the `org.openhab.core.config.core.ConfigDescriptionRegistry` service.
 
 Although configuration descriptions are usually specified in a declarative way (as described in this section), they can also be provided as `org.openhab.core.config.core.ConfigDescriptionProvider`.
-Any `ConfigDescriptionProvider`s must be registered as service at the *OSGi* service registry.
+Any `ConfigDescriptionProvider`s must be registered as service at the _OSGi_ service registry.
 The full Java API for configuration descriptions can be found in the Java package `org.openhab.core.config.core`.
 In addition to this there is a `org.openhab.core.config.core.validation.ConfigDescriptionValidator` that can be used to validate a set of configuration parameters against their declarations in the configuration description before the actual configuration is updated with the new configuration parameters.
 
@@ -176,7 +176,7 @@ The full XML schema for configuration descriptions is specified in the [openHAB 
 
 **Hints:**
 
-- Although the attribute `uri` is optional, it *must* be specified in configuration description files.
+- Although the attribute `uri` is optional, it _must_ be specified in configuration description files.
   Only for embedded configuration descriptions in documents for binding definitions and `Thing` type descriptions, the attribute is optional.
 
 ## Example

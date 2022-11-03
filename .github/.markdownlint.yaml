@@ -25,3 +25,7 @@ MD033: false
 # Code block style
 MD046:
     style: fenced
+
+#Emphasiszis in asterisk
+MD049:
+    style: underscore

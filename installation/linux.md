@@ -78,7 +78,7 @@ sudo mv openhab.gpg /usr/share/keyrings
 sudo chmod u=rw,g=r,o=r /usr/share/keyrings/openhab.gpg
 ```
 
-Then, you can choose between, *Official (Stable)*, *Beta* or *Snapshot* builds:
+Then, you can choose between, _Official (Stable)_, _Beta_ or _Snapshot_ builds:
 
 - **Stable Release**
 
@@ -627,7 +627,7 @@ sudo systemctl daemon-reload
 
 ## Backup and Restore
 
-It is recommended to make a backup of your configuration before *any* major change.
+It is recommended to make a backup of your configuration before _any_ major change.
 To make a backup of openHAB 2 or higher, you need to retain your configuration and userdata files.
 openHAB comes with scripts for storing your configuration in a zip file which is saved in `/var/lib/openhab/backups` for automatic installs and `openhab/backups` for manual installs.
 You can change the default path by setting the $OPENHAB_BACKUPS environment variable.
@@ -792,7 +792,7 @@ Let's activate the "openhab" user as a samba user and set his password (e.g. "ha
 sudo smbpasswd -a openhab
 ```
 
-Be aware, that creating and later using a specific user will ensure, that [permissions](#permissions) are honored.
+Be aware, that creating and later using a specific user will ensure, that **permissions** are honored.
 Make sure, the "openhab" user has ownership and/or write access to the openHAB configuration files.
 This can be accomplished by executing:
 

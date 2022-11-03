@@ -22,7 +22,7 @@ openHAB is an event driven system.
 What that means is an event happens and parts of openHAB that watch for that event can react.
 Persistence will see an Item change event and save that new state to the database.
 The UIs will watch for that same Item change event and update the UI widgets as necessary.
-And some rules will *trigger* when that Item change event occurs to create some behavior.
+And some rules will _trigger_ when that Item change event occurs to create some behavior.
 
 For example, the behavior we want is to turn on a light (represented by the Item `Light`) when motion is detected (represented by the Item `Motion`).
 To create this behavior we could create a rule that triggers on the event of the `Motion` Item receiving the command `ON` that sends the command `ON` to the `Light` Item.

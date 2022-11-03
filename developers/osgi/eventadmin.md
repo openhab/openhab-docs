@@ -11,15 +11,15 @@ A lot of core services share information using events, so understanding how to u
 OSGi events are based on the publish-subscribe messaging pattern.
 Let's use the definition for the pattern that can be found in the [OSGi Compendium Release 7][OSGi-cmpn]:
 
-*This pattern decouples sources from their handlers by interposing an event channel between them.
-The publisher posts events to the channel, which identifies which handlers need to be notified and then takes care of the notification process.*
+_This pattern decouples sources from their handlers by interposing an event channel between them.
+The publisher posts events to the channel, which identifies which handlers need to be notified and then takes care of the notification process._
 
 Both publishers and subscribers can disappear at any time.
-A central module to track the handlers availability is needed - the *Event Admin Service*.
+A central module to track the handlers availability is needed - the _Event Admin Service_.
 
 ## Event Admin Service
 
-The *Event Admin Service* (`org.osgi.service.event.EventAdmin`) takes a central place in the communication between *Event Publishers* and subscribers (*Event Listeners*).
+The _Event Admin Service_ (`org.osgi.service.event.EventAdmin`) takes a central place in the communication between _Event Publishers_ and subscribers (_Event Listeners_).
 It is responsible for keeping track of the listeners, and sending events to them.
 It supports both synchronous and asynchronous sending that will be reviewed in more details in the [section about sending events](#send-events).
 But let's illustrate that with the following picture:
@@ -32,15 +32,15 @@ Before going into more details, let's take a look at the events.
 
 ## Event
 
-The *Event* interface(`org.osgi.service.event.Event`) encapsulates a single message. It contains:
+The _Event_ interface(`org.osgi.service.event.Event`) encapsulates a single message. It contains:
 
-- topic - used from the *Event Admin Service* as a filter to dispatch the events only to the listeners that are interested;
+- topic - used from the _Event Admin Service_ as a filter to dispatch the events only to the listeners that are interested;
 - payload - the information that we would like to send. It is represented by a key-value pair.
 
 ## Receive Events
 
-In order to receive an event through the *Event Admin Service* we have to register a service that implements the `org.osgi.service.event.EventHandler` interface.
-A property *event.topics* must be defined that contains all topics that we are interested in.
+In order to receive an event through the _Event Admin Service_ we have to register a service that implements the `org.osgi.service.event.EventHandler` interface.
+A property _event.topics_ must be defined that contains all topics that we are interested in.
 
 ```java
 package com.example.handler;
@@ -67,7 +67,7 @@ public class LogEventHandler implements EventHandler {
 
 ## Send Events
 
-As we have already mentioned, you will need an *Event Admin Service* implementation to send events.
+As we have already mentioned, you will need an _Event Admin Service_ implementation to send events.
 In Equinox the service is implemented in the `org.eclipse.equinox.event` bundle.
 The service contains two methods for sending events:
 
