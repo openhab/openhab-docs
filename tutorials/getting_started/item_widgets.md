@@ -103,7 +103,7 @@ There is also a [marketplace](https://community.openhab.org/c/marketplace/69) av
 By default the state of the Item will be displayed on the right hand side of the widget.
 Sometimes the binding will provide hints on how to display the state, but most of the time this default will be just the string from `MyItem.state.toString()`.
 
-Note that the `label` field of an Item's definition in a .items file or the label set on the Item is *not* used by MainUI.
+Note that the `label` field of an Item's definition in a .items file or the label set on the Item is _not_ used by MainUI.
 
 To customize the state of the Item, the "State Description" metadata must be configured.
 This metadata lets you define the format and any transformations to apply to the Item's state before it is displayed.

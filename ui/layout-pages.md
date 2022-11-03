@@ -48,7 +48,7 @@ With that in mind, it is advisable to build the page for the narrow screens firs
 
 For cells and masonry, you don't have to worry about it, it will be handled for you. However, when you choose to keep control of the layout by making use of rows and columns, you need to take extra care about the responsive breakpoints.
 
-These are controlled using the parameters on the column (`oh-grid-col`) components - you can configure them in the Design tab with the *Column Options* menu entries, or in YAML with the Code tab or a "Edit YAML" options on a parent component.
+These are controlled using the parameters on the column (`oh-grid-col`) components - you can configure them in the Design tab with the _Column Options_ menu entries, or in YAML with the Code tab or a "Edit YAML" options on a parent component.
 
 ![Column Options](./images/responsive1.png)
 
@@ -161,8 +161,8 @@ The first thing to do when creating a Fixed Layout is to define your screen size
 
 ::: tip Note
 
-For most modern tablets, mobile phones and some other screens the **CSS resolution** is different from the **physical pixel resolution** (sometimes referred to as *Retina* displays).
-The user interface tries to help you determining the CSS resolution by showing the currently detected value as *Current Screen* rate at the top of the virtual screen area.
+For most modern tablets, mobile phones and some other screens the **CSS resolution** is different from the **physical pixel resolution** (sometimes referred to as _Retina_ displays).
+The user interface tries to help you determining the CSS resolution by showing the currently detected value as _Current Screen_ rate at the top of the virtual screen area.
 
 :::
 
@@ -170,7 +170,7 @@ The user interface tries to help you determining the CSS resolution by showing t
 
 To define your screen size open the '#' menu and click **Configure Grid Layout**.
 
-The layout editor shows a gray surface as the *virtual screen area*, which represents your defined screen.
+The layout editor shows a gray surface as the _virtual screen area_, which represents your defined screen.
 You can now place widgets on that screen by clicking the **Add Widget** button.
 Just like with responsive layouts a placeholder will appear, allowing you to choose widgets from the library.
 
@@ -189,22 +189,22 @@ The following parameters can be adjusted for a Fixed Grid Layout:
 
 ##### Layout Settings
 
-*Number of Columns:*
+_Number of Columns:_
 Number of grid columns across the page. Defaults to 16.
 Limited to a minimum widget width of 50px (calculated from screen width, margin and number of columns)
 
-*Margin:*
+_Margin:_
 Margin between items and to screen edge in CSS pixels. Defaults to 10.
 
 ##### Screen Settings
 
-*Screen Width:*
+_Screen Width:_
 Screen width in CSS pixels. Defaults to 1280.
 
-*Screen Height:*
+_Screen Height:_
 Screen width in CSS pixels. Defaults to 720.
 
-*Scaling:*
+_Scaling:_
 Enabling this scales the defined screen to the width available in the browser window.
 All widgets are resized accordingly, with the margin staying fixed.
 While this works well in many cases, it can lead to unpredictable styling issues, especially on large divergence from the defined screen width.
@@ -212,16 +212,16 @@ Defaults to false.
 
 ##### Appearance
 
-*Hide Navigation Bar:*
+_Hide Navigation Bar:_
 When enabled the navigation bar on top of a page does not get displayed on this page.
 In conjunction with hiding the sidebar via its pin icon, this can be used for full screen display, e.g. in a fullscreen browser or when used as Home Screen App on iOS.
 Defaults to false.
 
-*Hide Sidebar Icon:*
+_Hide Sidebar Icon:_
 With the navigation bar hidden, an icon is displayed on the top left corner when the sidebar is closed.
 Enabling this hides the icon. Defaults to false.
 
-*Show Fullscreen Icon:*
+_Show Fullscreen Icon:_
 Show a fullscreen icon on the top right corner to enter browser fullscreen mode.
 Defaults to false.
 
@@ -229,7 +229,7 @@ Defaults to false.
 
 To define your screen size open the canvas menu and click **Configure Canvas Layout**.
 
-The layout editor shows a gray surface as the *virtual screen area*, which represents your defined screen.
+The layout editor shows a gray surface as the _virtual screen area_, which represents your defined screen.
 You can now place widgets on that screen by clicking the **Add Widget** button.
 Just like with responsive layouts a placeholder will appear, allowing you to choose widgets from the library.
 
@@ -248,27 +248,27 @@ The following parameters can be adjusted for a Fixed Canvas Layout:
 
 ##### Layout Settings
 
-*Grid size:*
+_Grid size:_
 Pitch of the grid when the editor grid button is enabled, in CSS pixels.
 
 ##### Screen Settings
 
-*Screen Width:*
+_Screen Width:_
 Screen width in CSS pixels. Defaults to 1280.
 
-*Screen Height:*
+_Screen Height:_
 Screen width in CSS pixels. Defaults to 720.
 
-*Scaling:*
+_Scaling:_
 Enabling this scales the defined screen to the width available in the browser window. All widgets are resized accordingly.
 While this works well in many cases, it can lead to unpredictable styling issues, especially on large divergence from the defined screen width.
 Defaults to false.
 
-*Image URL:*
+_Image URL:_
 URL of the image to display in the background. The image is stretched to fit the screen size, while preserving its aspect ratio.
 If you want to achieve a different placement, adding margins to the image in an image editor will be necessary.
 
-*Image Source Set:*
+_Image Source Set:_
 The setting is passed to the [`srcset`](https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images) attribute of the image element, allowing to specify different images to be used depending on the actual resolution of the device, for example is the layout will be used both on a so called 'retina' and non-'retina' tablet.
 
 ##### Widget Settings
@@ -278,12 +278,12 @@ It provides access to the settings related to the type of the widget (**Widget S
 
 ##### Container Settings
 
-*Preserve classic style:*
+_Preserve classic style:_
 Enabling this option preserves the widget style definition as in other layout pages (responsive, fixed grid).
 Usually, this means preserving the background of the widget.
 
-*Shadow:*
+_Shadow:_
 Applies a shadow to the widget inner outline.
 
-*Bring to Front*, *Mode Up*, *Move Down*, *Send to Back*:
+_Bring to Front_, _Mode Up_, _Move Down_, _Send to Back_:
 Change the drawing order of several overlapping widgets.

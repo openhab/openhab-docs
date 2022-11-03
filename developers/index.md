@@ -24,7 +24,7 @@ openHAB allows you to build upon the following concepts:
 
 - **Bindings**: A binding connects to external services or devices.
 - **Automation engine module**: A trigger, condition, or action that can be used in automation rules (or scripts).
-- **Transformation / Profiles**: Can be used to transform a *Thing Channel*- value before it is assigned to an *Item*.
+- **Transformation / Profiles**: Can be used to transform a _Thing Channel_- value before it is assigned to an _Item_.
 - **An IO service**: Exposes openHAB internals via a defined interface (for example the REST interface, HomeKit or Hue Emulation Service).
 - **A Persistence service**: Persist item state updates and/or changes and allows them to be retrieved for specific points in time.
 - **Natural language processing skill**:

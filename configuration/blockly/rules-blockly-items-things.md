@@ -10,7 +10,7 @@ title: Rules Blockly - Items & Things
 
 ## Introduction
 
-*Items* and *Things* are the [major entities of openHAB](https://www.openhab.org/docs/concepts/) to control and monitor the home.
+_Items_ and _Things_ are the [major entities of openHAB](https://www.openhab.org/docs/concepts/) to control and monitor the home.
 These can be accessed via the "Items & Things" section of the [Blockly Toolbox](/docs/configuration/index.html#blockly-toolbox).
 
 {::options toc_levels="2..4"/}
@@ -26,14 +26,14 @@ These can be accessed via the "Items & Things" section of the [Blockly Toolbox](
 
 ### Item and Thing Blocks
 
-Most of the time you will want to get and set the state of an *item* - set a switch to ON, or get a temperature.
-Sometimes you may want to access the *thing* directly.
+Most of the time you will want to get and set the state of an _item_ - set a switch to ON, or get a temperature.
+Sometimes you may want to access the _thing_ directly.
 Both are possible using the item-block and thing-block
 
 > ![blockly-item-thing](../images/blockly/blockly-item-thing.png)
 
 However, **these blocks are not useful by themselves** - they are always used together with another block.
-The example below uses the *get state of item* block to retrieve the *MainSwitch* *item* state, before checking if that is equal to ON within a standard comparison block
+The example below uses the _get state of item_ block to retrieve the _MainSwitch_ _item_ state, before checking if that is equal to ON within a standard comparison block
 
 ![blockly-item-example](../images/blockly/blockly-item-example.png)
 
@@ -50,7 +50,7 @@ Function: Retrieves a specific **Item** or **Group** for use in other item relat
 - **Tip:** never use this block alone as it only returns the items name which alone does not make sense.
 Instead use the get-Item-Block below.
 - Clicking 'MyItem' displays a list of **Items** to pick from
-- Technically this block returns the *name* of the item as a String.
+- Technically this block returns the _name_ of the item as a String.
 - As a result, this block can be used wherever the item name is required as a String.
 - Learn more about items [here](https://www.openhab.org/docs/configuration/items.html)
 
@@ -61,7 +61,7 @@ Instead use the get-Item-Block below.
 Function: Gets an **Item** for use in other item related functions
 
 - Clicking 'MyItem' displays a list of **Items** to pick from.
-- Technically this block returns an item *object*, to be used to retrieve specific attributes using other blocks (see below).
+- Technically this block returns an item _object_, to be used to retrieve specific attributes using other blocks (see below).
 - As this block does not return a String it cannot be directly attached to a log-block, as demonstrated below.
   - **Tip:** Often you do want to retrieve the state, hence use the "Get State of Item"-block below
   - The block returns the item itself.
@@ -140,11 +140,11 @@ As a workaround attach the block to a variable first, and use the variable in th
 
 **Special handling for Arrays**
 
-The attributes *groups* and *tags* return an Array of entries.
+The attributes _groups_ and _tags_ return an Array of entries.
 Therefore
 
-- they *cannot* be connected to a block that expects a String (e.g. log-block)
-- they *must* be handled using a for-loop as follows
+- they _cannot_ be connected to a block that expects a String (e.g. log-block)
+- they _must_ be handled using a for-loop as follows
 
 ![blockly-specialArrayHandling](../images/blockly/blockly-specialArrayHandling.png)
 
@@ -157,7 +157,7 @@ Function: Sends a command or posts an update to an **Item** or **Group**.
 - value: any state value that is allowed for that item, eg. ON or OFF for a switch.
 - Clicking 'MyItem' displays a list of **Items** to pick one item from
 
-For the difference between *send command* and *post update* see ["Manipulating States"](https://www.openhab.org/docs/configuration/rules-dsl.html#manipulating-item-states) and ["Event Bus Actions"](https://www.openhab.org/docs/configuration/actions.html#event-bus-actions).
+For the difference between _send command_ and _post update_ see ["Manipulating States"](https://www.openhab.org/docs/configuration/rules-dsl.html#manipulating-item-states) and ["Event Bus Actions"](https://www.openhab.org/docs/configuration/actions.html#event-bus-actions).
 
 More about that topic can be viewed at ![youtube](../images/blockly/youtube-logo-small.png) [Sending Commands](https://youtu.be/EdllUlJ7p6k?t=1077)
 
@@ -165,15 +165,15 @@ More about that topic can be viewed at ![youtube](../images/blockly/youtube-logo
 
 **Example 1:**
 
-- Check if *MainSwitch* is ON.
-- If ON, send ON command to *livingroomLight* item.
+- Check if _MainSwitch_ is ON.
+- If ON, send ON command to _livingroomLight_ item.
 
 ![blockly-sendCommandExample1](../images/blockly/blockly-sendCommandExample1.png)
 
 **Example 2:**
 
-- Get the state of *MainSwitch* and
-- Immediately send it as a command to *F2_Office_Main_Light*
+- Get the state of _MainSwitch_ and
+- Immediately send it as a command to _F2_Office_Main_Light_
 
 ![blockly-sendCommandExample2)](../images/blockly/blockly-sendCommandExample2.png)
 Ensure that the receiving item can handle the state of the 'sending' item.

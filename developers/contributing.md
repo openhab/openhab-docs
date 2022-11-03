@@ -29,7 +29,7 @@ If there's a problem with the implementation, hopefully you received feedback on
 We're trying very hard to keep openHAB lean and focused.
 We don't want it to do everything for everybody.
 This means that we might decide against incorporating a new feature.
-However, there might be a way to implement that feature *on top of* openHAB.
+However, there might be a way to implement that feature _on top of_ openHAB.
 
 ### Discuss Your Design in the Community
 

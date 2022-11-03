@@ -155,7 +155,7 @@ You must not create an item using files and then make use of it in the model usi
 text and system database configuration for that item, too.
 :::
 
-You *can* configure the model through text only, too. No documentation exists for that however so it is not recommended and
+You _can_ configure the model through text only, too. No documentation exists for that however so it is not recommended and
 you have to figure out yourself. Please contribute to the docs here if you managed to.
 
 Things/Items configured in files will become visible in Main UI if no Thing/Item of the same name is already present in the system database, but a lock will symbolize that you can NOT change them in the GUI. You can only change them by editing the source files.

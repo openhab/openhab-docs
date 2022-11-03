@@ -25,17 +25,17 @@ Please read them carefully before asking questions in the forum.
 ## **OpenHAB Configuration Files**
 
 Some openHAB blocks rely on particular configuration files found in the openHAB configuration folder.
-This folder is referred to as $OPENHAB_CONF in this page, and the location of this folder for your setup can be found via the UI: *Help & About* -> *Technical Information* -> *Configuration folder*.
+This folder is referred to as $OPENHAB_CONF in this page, and the location of this folder for your setup can be found via the UI: _Help & About_ -> _Technical Information_ -> _Configuration folder_.
 
 - via mounting the files shares from the server to your client-PC.
-In the main UI as an admin you can go to *Help & About* and will have the different folder locations under *Technical information*.
+In the main UI as an admin you can go to _Help & About_ and will have the different folder locations under _Technical information_.
   - the exact configuration of the shares can be found on your server at [/etc/samba/smb.conf](https://github.com/openhab/openhabian/blob/main/includes/smb.conf).
-- Use the share *openHAB*-conf when mounting it from Windows or MacOS
+- Use the share _openHAB_-conf when mounting it from Windows or MacOS
 
 **Link the openHAB share in Windows**
 
 - Find you openHAB-Server via the network share functionality
-- User the share *openHAB*-conf to assign it to a network drive
+- User the share _openHAB_-conf to assign it to a network drive
 
 **Link the openHAB share in macOS**
 
@@ -49,7 +49,7 @@ In the main UI as an admin you can go to *Help & About* and will have the differ
 
 **Finding it on Linux**
 
-- Access the folder directly on the openHAB server at */etc/openhab*
+- Access the folder directly on the openHAB server at _/etc/openhab_
 
 All methods reveal the following folders
 
@@ -132,7 +132,7 @@ Pinching on a tablet or a touch bar also allows convenient zooming of the worksp
 
 During development the log-block is lot very often which writes information into the log files.
 
-- To be able to conveniently view your log files it is recommended to setup *frontail* which can be achieved easily via [openhabian-config](https://www.openhab.org/docs/installation/openhabian.html#optional-components)
+- To be able to conveniently view your log files it is recommended to setup _frontail_ which can be achieved easily via [openhabian-config](https://www.openhab.org/docs/installation/openhabian.html#optional-components)
 - Start `openhabian-config` on your server and choose option 20 and then option 21
 - After installation you can view your logs under [openhabian-config](http://myopenhab-server:9001) (adapt the server name)
 - **see [how to log](https://www.openhab.org/docs/administration/logging.html)**

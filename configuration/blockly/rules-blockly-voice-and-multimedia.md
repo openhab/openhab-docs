@@ -34,7 +34,7 @@ More about that topic can be viewed at ![youtube](../images/blockly/youtube-logo
 ## Setup
 
 - Audio Sinks
-  - Audio devices are automatically added by their bindings as *sinks* in openHAB
+  - Audio devices are automatically added by their bindings as _sinks_ in openHAB
   - [Reference on how to setup Audio and Audio Sinks](https://www.openhab.org/docs/configuration/multimedia.html)
 - Text-To-Speech
   - In order to use text-to-speech, you need to install at least one [TTS service](https://www.openhab.org/addons/#voice).
@@ -49,7 +49,7 @@ More about that topic can be viewed at ![youtube](../images/blockly/youtube-logo
 
 ![play-audio](../images/blockly/blockly-play-audio.png)
 
-*Function:* Plays an audio file on an audio sink
+_Function:_ Plays an audio file on an audio sink
 
 - the audio file must reside in the sounds-folder of openHAB that can be found [here](https://community.openhab.org/t/blockly-reference/128785#openhab-configuration-files-7)
 - all available audio sinks are automatically provided by openHABs blocklies
@@ -60,7 +60,7 @@ Also view ![youtube](../images/blockly/youtube-logo-small.png)[Playing sounds on
 
 ![play-audio](../images/blockly/blockly-play-audio-with-volume.png)
 
-*Function:* Plays an audio file on an audio sink and setting the volume at the same time
+_Function:_ Plays an audio file on an audio sink and setting the volume at the same time
 
 same as above but also allowing to provide the volume at the same time
 
@@ -80,7 +80,7 @@ In case this happens the more robust approach is as follows
 
 ![play-stream](../images/blockly/blockly-play-stream.png)
 
-*Function:* Starts an stream playing on an audio sink
+_Function:_ Starts an stream playing on an audio sink
 
 - The audio streams must be reachable from the openHAB server and can therefore be either internally or externally hosted
 - All available audio sinks are automatically provided by openHAB's blocklies
@@ -92,13 +92,13 @@ More about that topic can be viewed at ![youtube](../images/blockly/youtube-logo
 
 ![stop-stream](../images/blockly/blockly-stop-stream.png)
 
-*Function:* Stops playing the current stream of the specified audio sink
+_Function:_ Stops playing the current stream of the specified audio sink
 
 ### Say
 
 ![say](../images/blockly/blockly-say.png)
 
-*Function:* Sends the given text to the sink by using the default Text-to-Speech-Service to translate the text based on the chosen language voice into a stream which is then played on that device sink.
+_Function:_ Sends the given text to the sink by using the default Text-to-Speech-Service to translate the text based on the chosen language voice into a stream which is then played on that device sink.
 
 More about that topic can be viewed at ![youtube](../images/blockly/youtube-logo-small.png)[Using Text-to-speach easily with blocks](https://youtu.be/EdllUlJ7p6k?t=2403)
 

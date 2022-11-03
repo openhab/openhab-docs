@@ -31,7 +31,7 @@ More about that topic can be viewed at ![youtube](../images/blockly/youtube-logo
 
 ![log-statement](../images/blockly/blockly-logging-log.png)
 
-*Function:* Sends an entry to the openHAB log file with a defined severity level.
+_Function:_ Sends an entry to the openHAB log file with a defined severity level.
 
 - A [severity level](https://www.openhab.org/docs/administration/logging.html#defining-what-to-log) can be provided via the dropdown list for the log statement
 
@@ -47,7 +47,7 @@ Since 3.3: The block attached to the log-block is not restricted to a string typ
 
 ![print-to-stdout](../images/blockly/blockly-logging-print.png)
 
-*Function:* creates a print statement with the given text in the rule that logs to *stdout*
+_Function:_ creates a print statement with the given text in the rule that logs to _stdout_
 
 ## Return to Blockly Reference
 

@@ -202,7 +202,7 @@ Note, always review the README on [Docker Hub](https://hub.docker.com/r/openhab/
 - `--net=host` : by default Docker will place a container into its own network stack. However, openHAB requires UPnP discovery so this parameter makes the Docker container use the host's network stack.
 - `-v /etc/localtime:/etc/localtime:ro` : ties the time of the container to the host's time, read only so the container cannot change the host's time
 - `-v /etc/timezone:/etc/timezone:ro` : ties the timezone of the container to the host's time zone, read only so the container cannot change the host's time zone
-- `-v /opt/openhab/conf:/openhab/conf` : location of the conf folder for openHAB configurations (*Note:* you must create these folders on the host before running the container)
+- `-v /opt/openhab/conf:/openhab/conf` : location of the conf folder for openHAB configurations (_Note:_ you must create these folders on the host before running the container)
 - `-v /opt/openhab/userdata:/openhab/userdata` : location for logs, cache, persistence databases, etc.
 - `-v /opt/openhab/addons:/openhab/addons` : only needed if installing addons unavailable via UI or the Karaf Console
 - `-v /opt/openhab/.java:/openhab/.java` : needed by the Nest 1.x binding (and others?), location of the security token

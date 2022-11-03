@@ -24,12 +24,12 @@ Therefore openHAB also provides a graphical way of writing rules which allows to
 The basic idea behind the visual paradigm and representation within openHAB is based on the [Google Blockly Support](https://developers.google.com/blockly) which has been integrated and which provides the basic blocks for programming like the ones on the left and the right side of the below images
 
 {: #blockly-toolbox}
-*Blockly toolbox*
+_Blockly toolbox_
 
 ![blockly-toolbox-1](../images/blockly/blockly-toolbox-1.png)![blockly-toolbox-2](../images/blockly/blockly-toolbox-2.png)![blockly-toolbox-3](../images/blockly/blockly-toolbox-3.png)
 
 All of these provide general functionality that is not specific to openHAB itself. If you want to learn more about how to use them, search for the many blockly tutorials that are available.
-However, to leverage the full capabilities more than *50 specific blocks* have been provided that are tailored for easy access of openHAB's capabilities.
+However, to leverage the full capabilities more than _50 specific blocks_ have been provided that are tailored for easy access of openHAB's capabilities.
 
 This section provides a detailed description of the specific blocks and provides examples on how to use them. Note that some of the blocks (like voice, streaming or notifications) need some special setup within openHAB  - in these case links to the respective documentation is provided.
 Also see this ![youtube](../images/blockly/youtube-logo-small.png) [Intro](https://youtu.be/EdllUlJ7p6k?t=295) Quick Intro Blockly Rules
@@ -45,7 +45,7 @@ There is also a help-button available in each section that links to the document
 
 ![main-help-button](../images/blockly/blockly-main-help.png)
 
-Please read this information first before asking questions in the forum. *In case you ask for help please always post the respective code that is being generated.*
+Please read this information first before asking questions in the forum. _In case you ask for help please always post the respective code that is being generated._
 
 Also there is a good  intro about that topic can be viewed at ![youtube](../images/blockly/youtube-logo-small.png) [Various Help Documentation available in openHAB Blocky](https://youtu.be/EdllUlJ7p6k?t=1589)
 
@@ -111,7 +111,7 @@ Also view ![youtube](../images/blockly/youtube-logo-small.png) [Overview of the 
 
 ### Items and Things
 
-*Items* and *Things* are the [major entities of openHAB](https://www.openhab.org/docs/concepts/) to control and monitor the home.
+_Items_ and _Things_ are the [major entities of openHAB](https://www.openhab.org/docs/concepts/) to control and monitor the home.
 
 [![Items and Things](../images/blockly/blockly-items-and-things-small.png "Items and Things")
 ](rules-blockly-items-things.html)
@@ -131,7 +131,7 @@ See [Timers and Delays](rules-blockly-timers-and-delays.html) section.
 ### Date Handling
 
 Date blocks are used as input parameters for other blocks.
-Some of these blocks are used by ephemeris blocks, whilst others are used in the persistence section. Therefore blocks are *typed* to assure correct connection to other blocks.
+Some of these blocks are used by ephemeris blocks, whilst others are used in the persistence section. Therefore blocks are _typed_ to assure correct connection to other blocks.
 
 [![Date Handling](../images/blockly/blockly-date-handling1-small.png "Dates part 1")
 ](rules-blockly-date-handling.html) [![Date Handling](../images/blockly/blockly-date-handling2-small.png "Dates Part 2")
@@ -151,7 +151,7 @@ See [Ephemeris](rules-blockly-ephemeris.html) section.
 
 ### Voice and Multimedia
 
-This section deals with *playing or streaming audio* to an audio sink e.g a speaker or *saying a text* via using any Text-to-Speech API (e.g. Google's API)
+This section deals with _playing or streaming audio_ to an audio sink e.g a speaker or _saying a text_ via using any Text-to-Speech API (e.g. Google's API)
 
 [![Voice and Multimedia](../images/blockly/blockly-voice-and-multimedia-small.png "Voice and Multimedia")
 ](rules-blockly-voice-and-multimedia.html)
@@ -179,7 +179,7 @@ See [Persistence](rules-blockly-persistence.html) section.
 
 ### Value Storage
 
-These blocks enable storing information *for a rule* that is kept after the rule has run, so it can be reused when the rule is run again later in stateful way.
+These blocks enable storing information _for a rule_ that is kept after the rule has run, so it can be reused when the rule is run again later in stateful way.
 
 [![Value Storage](../images/blockly/blockly-value-storage-small.png "Value Storage")
 ](rules-blockly-value-storage.html)

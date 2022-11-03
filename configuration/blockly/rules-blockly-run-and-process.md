@@ -18,7 +18,7 @@ This section contains several possibilities
 
 **A note about Rules and Scripts**
 
-A Script *is* a Rule too. It’s just a special type of rule that only has a single script action and a “Script” tag.
+A Script _is_ a Rule too. It’s just a special type of rule that only has a single script action and a “Script” tag.
 
 {::options toc_levels="2..4"/}
 
@@ -39,7 +39,7 @@ See also the short video part about ![youtube](../images/blockly/youtube-logo-sm
 
 ![run-script-file](../images/blockly/blockly-run-script.png)
 
-*Function:* Calls a script file with the given name which must be located in the *$OPENHAB_CONF/scripts/* folder.
+_Function:_ Calls a script file with the given name which must be located in the _$OPENHAB_CONF/scripts/_ folder.
 
 - No parameters can be provided
 
@@ -49,15 +49,15 @@ See [openHAB Call-Script](https://www.openhab.org/docs/configuration/actions.htm
 
 ![run-rule-or-script](../images/blockly/blockly-run-rule.png)
 
-*Function:* calls another *rule* or *script* that was created via the openHAB UI.
+_Function:_ calls another _rule_ or _script_ that was created via the openHAB UI.
 
-The  *ruleUID* can be found in the list of rules or scripts in the second line of the list (like here *helloBlockly* or *helloWorld*)
+The  _ruleUID_ can be found in the list of rules or scripts in the second line of the list (like here _helloBlockly_ or _helloWorld_)
 ![rule-uuid](../images/blockly/blockly-run-rule-uuid.png)
 
 Parameters are optional:
 
-- If not providing parameters leave the *with context* section as is.
-- If providing parameters you **must** replace the *create empty dictionary* block with [the *dictionary* block from the Lists section](https://community.openhab.org/t/blockly-reference/128785#lists-76), modifying the number of key/value pairs to suit.
+- If not providing parameters leave the _with context_ section as is.
+- If providing parameters you **must** replace the _create empty dictionary_ block with [the _dictionary_ block from the Lists section](https://community.openhab.org/t/blockly-reference/128785#lists-76), modifying the number of key/value pairs to suit.
 
 Notes:
 
@@ -74,7 +74,7 @@ Function: Retrieve context attributes passed by a calling rule/script (see above
 
 This retrieves the value for the key "myKey1" that was passed by the calling rule.
 
-*Example*
+_Example_
 
 ![retrieve-context-example](../images/blockly/blockly-retrieve-context-example.png)
 
@@ -82,7 +82,7 @@ This retrieves the value for the key "myKey1" that was passed by the calling rul
 
 ![retrieve-context-info](../images/blockly/blockly-retrieve-rule-context-info.png)
 
-*Function:* Retrieve event context related information of the rule
+_Function:_ Retrieve event context related information of the rule
 
 A rule carries contextual information when triggered - this block can retrieve that information.
 
@@ -136,7 +136,7 @@ $.device.status.temperature
 
 ### Example 3: Map transformation
 
-This example applies a map transformation from the map file nanoleaf.map in *$OPENHAB-CONF/transform/*
+This example applies a map transformation from the map file nanoleaf.map in _$OPENHAB-CONF/transform/_
 
 ![transform-map](../images/blockly/blockly-transform-example3.png)
 
@@ -162,7 +162,7 @@ Hue/Saturation
 
 ![inline-script](../images/blockly/blockly-inline-script.png)
 
-*Function:* execute arbitrary ECMAScript content
+_Function:_ execute arbitrary ECMAScript content
 
 Provides the possibility to inject any ECMAScript at a given position.
 This should be used in cases when Blockly does not provide the desired functionality.
