@@ -291,11 +291,11 @@ This example is using the [Astro Binding](/addons/bindings/astro) which calculat
 
 ::: tab UI Rule
 
-![Sunrise Rule Screenshot](./images/concepts/rule-sunrise.jpeg)
+![Sunrise Rule Screenshot](./images/rule-sunrise.jpeg)
 
 The trigger in detail:
 
-![Sunrise Rule Trigger](./images/concepts/rule-sunrise-trigger.jpeg)
+![Sunrise Rule Trigger](./images/rule-sunrise-trigger.jpeg)
 
 The code:
 
@@ -390,7 +390,7 @@ Examples for presence detection include the [iCloud Binding](/addons/bindings/ic
 
 ::: tab UI Rule
 
-![Leaving Home Screenshot](./images/concepts/rule-leaving.jpeg)
+![Leaving Home Screenshot](./images/rule-leaving.jpeg)
 
 The code:
 
@@ -480,7 +480,7 @@ rules.JSRule({
 
 ::: tab UI Rule
 
-![Returning Home Screenshot](./images/concepts/rule-arrival.jpeg)
+![Returning Home Screenshot](./images/rule-arrival.jpeg)
 
 The code:
 
@@ -557,11 +557,11 @@ rules.JSRule({
 
 ::: tab UI Rule
 
-![Open Window Screenshot](./images/concepts/rule-openwindow.jpeg)
+![Open Window Screenshot](./images/rule-openwindow.jpeg)
 
 The script action in detail (for the scipt see the YAML):
 
-![Open Window Action](./images/concepts/rule-openwindow-action.jpeg)
+![Open Window Action](./images/rule-openwindow-action.jpeg)
 
 The code:
 
@@ -626,7 +626,7 @@ require 'openhab'
 
 rule 'Window open reminder' do
   changed: gWindows, to: open
-  run { 
+  run {
     after 1.hour do
       if item.state.open?
         notify("#{item.label} is open for an hour!")
@@ -684,7 +684,7 @@ You might know this concept of "Scenes" from Apple HomeKit, Google Home, Philips
 
 ::: tab UI Rule
 
-![Scene Screenshot](./images/concepts/rule-scene.jpeg)
+![Scene Screenshot](./images/rule-scene.jpeg)
 
 ```yaml
 configuration: {}
