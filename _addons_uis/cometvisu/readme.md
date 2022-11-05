@@ -18,8 +18,22 @@ install: auto
 
 This adds a backend for the web based visualization CometVisu <http://www.cometvisu.org>.
 The CometVisu is a highly customizable visualization, that runs in any browser.
-Unlike the browser based UI´s in openHAB, the CometVisu does not rely on sitemaps (although they can be used).
+Unlike the browser based UI´s in openHAB, the CometVisu does not rely on sitemaps.
 The layout is defined with an XML-based configuration file, which allows a multi column layout.
+
+**Using newer versions of CometVisu (>=0.12)**
+
+Newer versions of the CometVisu use openHABs native REST-API to communicate. So this backend is no requirement
+to use the CometVisu with openHAB as backend. If you use an extra webserver to serve the CometVisu (or use the official and recommended
+docker container of the CometVisu <https://hub.docker.com/r/cometvisu/cometvisu>) this binding is obsolete.
+You only need this binding if you want to use openHABs internal webserver to serve the CometVisu.
+
+**"PHP support for CometVisu"-binding is not needed anymore**
+
+If you want to use this binding to serve the CometVisu, you do not need the additional "PHP support for CometVisu" binding anymore.
+That binding is deprecated and will be removed in future openHAB versions. This binding provides everything that is needed to 
+run CometVisus own file-manager and editors. The only things that are not supported are plugins that use PHP-Code.
+
 
 ## Requirements
 
@@ -28,7 +42,7 @@ The layout is defined with an XML-based configuration file, which allows a multi
 
 ## Installation
 
-*   Install the CometVisu addon (optionally you can also install the CometVisu-PHP addon, but it is not required to run the CometVisu)
+*   Install the CometVisu addon
 *   Enable the auto-download feature via configuration setting *OR*
 *   Download the CometVisu release <https://github.com/CometVisu/CometVisu/releases> and extract the "release" folder (the one which contains the index.html file) of the downloaded archive somewhere on your openHAB server (make sure that openHAB can access that folder).
 
@@ -36,9 +50,9 @@ Note: You have to set the path to this folder in your configuration (webFolder).
 
 ## Configuration
 
-### Server configuration via Paper UI
+### Server configuration via main UI
 
-You can customize some settings of the CometVisu backend in the services configuration section of the PaperUI.
+You can customize some settings of the CometVisu backend on the settings page in the "Other Services" section.
 You can find the CometVisu configuration in the "ui" category.
 
 ### Via Config file
@@ -136,7 +150,7 @@ Or for design customizations use:
 
 ### Client configuration
 
-If you don´t use the given example below, please make sure that you correctly configure openHAB as backend in the CometVisu-Config by adding `backend="oh2"` to the root pages-element (e.g. `<pages...backend="oh2"...>`)
+If you don´t use the given example below, please make sure that you correctly configure openHAB as backend in the CometVisu-Config by adding `backend="openhab"` to the root pages-element (e.g. `<pages...backend="openhab"...>`)
 
 It is a good start to use the new sitemap support, to get a working example config, which you can store an customize for your needs.
 Open a sitemap in the CometVisu client like this:
