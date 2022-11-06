@@ -25,7 +25,7 @@ Please read them carefully before asking questions in the forum.
 ## **OpenHAB Configuration Files**
 
 Some openHAB blocks rely on particular configuration files found in the openHAB configuration folder.
-This folder is referred to as $OPENHAB_CONF in this page, and the location of this folder for your setup can be found via the UI: _Help & About_ -> _Technical Information_ -> _Configuration folder_.
+This folder is referred to as $OPENHAB\_CONF in this page, and the location of this folder for your setup can be found via the UI: _Help & About_ -> _Technical Information_ -> _Configuration folder_.
 
 - via mounting the files shares from the server to your client-PC.
 In the main UI as an admin you can go to _Help & About_ and will have the different folder locations under _Technical information_.

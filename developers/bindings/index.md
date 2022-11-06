@@ -140,7 +140,7 @@ Only Things with status (cf. [Thing Status](../../concepts/things.html#thing-sta
 To achieve that, the status must be reported to the framework via the callback or `BaseThingHandler.updateStatus(...)` for convenience.
 Furthermore, the framework expects `initialize()` to be non-blocking and to return quickly.
 For longer running initializations, the implementation has to take care of scheduling a separate job which must guarantee to set the status eventually.
-Also, please note that the framework expects the `initialize()` method to handle anticipated error situations gracefully and set the thing to _OFFLINE_ with the corresponding status detail (e.g. _COMMUNICATION_ERROR_ or _CONFIGURATION_ERROR_ including a meaningful description) instead of throwing exceptions.
+Also, please note that the framework expects the `initialize()` method to handle anticipated error situations gracefully and set the thing to _OFFLINE_ with the corresponding status detail (e.g. _COMMUNICATION\_ERROR_ or _CONFIGURATION\_ERROR_ including a meaningful description) instead of throwing exceptions.
 
 If the `Thing` is not initializable the configuration can be updated via `ThingHandler.handleConfigurationUpdate(Map)`.
 The binding has to notify the `ThingManager` about the updated configuration by a callback.
@@ -170,7 +170,7 @@ Therefore, the method `ThingHandler.bridgeStatusChanged(ThingStatusInfo)` must b
 (this method is not called for a bridge status updated through the bridge initialization itself).
 If the Thing of this handler does not have a Bridge, this method is never called.
 
-If the bridge status has changed to OFFLINE, the status of the handled thing must also be updated to _OFFLINE_ with detail _BRIDGE_OFFLINE_.
+If the bridge status has changed to OFFLINE, the status of the handled thing must also be updated to _OFFLINE_ with detail _BRIDGE\_OFFLINE_.
 If the bridge returns to _ONLINE_, the thing status must be changed at least to _OFFLINE_ with detail _NONE_ or to another thing specific status.
 
 ### Configuration
