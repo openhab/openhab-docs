@@ -290,7 +290,7 @@ Dimmer { ga="AirPurifier" [ speeds="0=off,50=mid,100=high" ] }
 | **Device Type** | [Awning](https://developers.google.com/assistant/smarthome/guides/awning), [Blinds](https://developers.google.com/assistant/smarthome/guides/blinds), [Curtain](https://developers.google.com/assistant/smarthome/guides/curtain), [Door](https://developers.google.com/assistant/smarthome/guides/door), [Garage](https://developers.google.com/assistant/smarthome/guides/garage), [Gate](https://developers.google.com/assistant/smarthome/guides/gate), [Pergola](https://developers.google.com/assistant/smarthome/guides/pergola), [Shutter](https://developers.google.com/assistant/smarthome/guides/shutter), [Window](https://developers.google.com/assistant/smarthome/guides/window) |
 | **Supported Traits** | [OpenClose](https://developers.google.com/assistant/smarthome/traits/openclose), [StartStop](https://developers.google.com/assistant/smarthome/traits/startstop) |
 | **Supported Items** | Contact (no device control), Switch (no open percentage), Rollershutter |
-| **Configuration** | (optional) `inverted=true/false`<br>(optional) `checkState=true/false` |
+| **Configuration** | (optional) `discreteOnly=true/false`<br>(optional) `queryOnly=true/false`<br>(optional) `inverted=true/false`<br>(optional) `checkState=true/false` |
 
 Blinds and similar devices should always use the `Rollershutter` item type for proper functionality.
 Since Google and openHAB use the opposite percentage value for "opened" and "closed", the action will translate this automatically.
