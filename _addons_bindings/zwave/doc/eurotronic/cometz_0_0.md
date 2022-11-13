@@ -38,6 +38,10 @@ The wakeup period does not impact the devices ability to report events or sensor
 
 Click the button in the battery compartment of the Comet Z-wave once.
 
+### General Usage Information
+
+
+
 ## Channels
 
 The following table summarises the channels available for the CometZ -:

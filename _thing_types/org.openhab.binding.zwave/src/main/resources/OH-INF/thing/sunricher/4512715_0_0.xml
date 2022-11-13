@@ -8,7 +8,7 @@
   <thing-type id="sunricher_4512715_00_000" listed="false">
     <label>4512715 Switch 400W</label>
     <description><![CDATA[
-Switch 400W<br /> <h1>Overview</h1><p>Z-Wave in-wall switch. 400W Halogen, 200W led. 1 channel. Also sold under the brand NAMRON.</p> <br /> <h2>Inclusion Information</h2><p>Set primary controller/gateway into inclusion mode (Please refer to your primary controllers manual on how to turn your controller into inclusion)</p><p>Power on the In-wall switch and set it into inclusion mode by triple pressing the action (reset) button on the switch, or by triple pressing the attached push switch.</p><p>The connected light will stay on for 3 seconds to indicate successful inclusion.<br /></p> <br /> <h2>Exclusion Information</h2><p>There are two exclusion methods:<br /><br />Method 1: Exclusion from the primary controller/gateway as follows:<br /></p><ol><li>Set primary controller/gateway into inclusion mode (Please refer to your primary controllers manual on how to turn your controller into exclusion).</li><li>Triple press the action button, the switch will be set to exclusion mode, and waiting to be excluded, then the switch will be excluded from the network.</li></ol><p>Method 2: Factory reset the switch will force the switch to be excluded from a network (Press and hold the action button for over 10 seconds, the switch will be reset to factory defaults).</p> <br /> <h2>Wakeup Information</h2><p><br /></p>
+Switch 400W<br /> <h1>Overview</h1><p>Z-Wave in-wall switch. 400W Halogen, 200W led. 1 channel. Also sold under the brand NAMRON and Vesternet.</p> <br /> <h2>Inclusion Information</h2><p>Set primary controller/gateway into inclusion mode (Please refer to your primary controllers manual on how to turn your controller into inclusion)</p><p>Power on the In-wall switch and set it into inclusion mode by triple pressing the action (reset) button on the switch, or by triple pressing the attached push switch.</p><p>The connected light will stay on for 3 seconds to indicate successful inclusion.<br /></p> <br /> <h2>Exclusion Information</h2><p>There are two exclusion methods:<br /><br />Method 1: Exclusion from the primary controller/gateway as follows:<br /></p><ol><li>Set primary controller/gateway into inclusion mode (Please refer to your primary controllers manual on how to turn your controller into exclusion).</li><li>Triple press the action button, the switch will be set to exclusion mode, and waiting to be excluded, then the switch will be excluded from the network.</li></ol><p>Method 2: Factory reset the switch will force the switch to be excluded from a network (Press and hold the action button for over 10 seconds, the switch will be reset to factory defaults).</p> <br /> <h2>Wakeup Information</h2><p><br /></p>
     ]]></description>
     <category>WallSwitch</category>
 
@@ -39,7 +39,7 @@ Switch 400W<br /> <h1>Overview</h1><p>Z-Wave in-wall switch. 400W Halogen, 200W 
       <property name="vendor">Sunricher</property>
       <property name="modelId">4512715</property>
       <property name="manufacturerId">0330</property>
-      <property name="manufacturerRef">0200:D006</property>
+      <property name="manufacturerRef">0200:D006,0200:D00F</property>
       <property name="dbReference">1303</property>
     </properties>
 

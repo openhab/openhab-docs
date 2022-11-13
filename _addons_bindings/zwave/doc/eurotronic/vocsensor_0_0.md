@@ -21,27 +21,17 @@ Z-Wave sensor in an ultra slim design housing provides comprehensive information
 
 Based on these information it is possible to always ensure a healthy living climate.
 
-• Ultra-flat design housing
-
-• Use of high-precision, Swiss sensor technology
-
-• Multicolor LED for signalling ventilation recommendations
-
-• Returns the following values:
-
-- VOC value (volatile organic compounds) in ppm
-
-- CO2 value (as CO2 equivalent) in ppm
-
-- Temperature (°C) and humidity (%)
-
-- Dew point (°C)
-
-• Supports Z-Wave Plus S2 security (encryption)
-
-• Z-Wave repeater function
-
-• Operation with plug-in power supply unit
+  * Ultra-flat design housing
+  * Use of high-precision, Swiss sensor technology
+  * Multicolor LED for signalling ventilation recommendations
+  * Returns the following values:
+      * VOC value (volatile organic compounds) in ppm
+      * CO2 value (as CO2 equivalent) in ppm
+      * Temperature (°C) and humidity (%)
+      * Dew point (°C)
+  * Supports Z-Wave Plus S2 security (encryption)
+  * Z-Wave repeater function
+  * Operation with plug-in power supply unit
 
 ### Inclusion Information
 
@@ -183,7 +173,7 @@ The following option values may be configured -:
 
 | Value  | Description |
 |--------|-------------|
-| 0 | No on change reporting |
+| 0 | No on-change reporting |
 
 The manufacturer defined default value is ```5```.
 

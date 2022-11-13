@@ -8,7 +8,7 @@
   <thing-type id="eurotronic_vocsensor_00_000" listed="false">
     <label>VOC-SENSOR Air Quality Sensor</label>
     <description><![CDATA[
-Air Quality Sensor<br /> <h1>Overview</h1><p>Z-Wave sensor in an ultra slim design housing provides comprehensive information on indoor air quality.</p> <p>Based on these information it is possible to always ensure a healthy living climate.</p> <p>• Ultra-flat design housing</p> <p>• Use of high-precision, Swiss sensor technology</p> <p>• Multicolor LED for signalling ventilation recommendations</p> <p>• Returns the following values:</p> <p>- VOC value (volatile organic compounds) in ppm</p> <p>- CO2 value (as CO2 equivalent) in ppm</p> <p>- Temperature (°C) and humidity (%)</p> <p>- Dew point (°C)</p> <p>• Supports Z-Wave Plus S2 security (encryption)</p> <p>• Z-Wave repeater function</p> <p>• Operation with plug-in power supply unit</p> <br /> <h2>Inclusion Information</h2><p>Press the back button three times within 1 second.</p> <p>While the inclusion is active, the LED is blinking green. If the inclusion was successful the green LED will light up for 5 seconds. Otherwise the red led will light up for 5 seconds to indicate failure.</p> <br /> <h2>Exclusion Information</h2><p>Press the back button three times within 1 second.</p> <p>While the exclusion is active, the LED is blinking green. If the exclusion was successful the green LED will light up for 5 seconds. Otherwise the red led will light up for 5 seconds to indicate failure.</p> <br /> <h2>Wakeup Information</h2><p>n/a</p>
+Air Quality Sensor<br /> <h1>Overview</h1><p>Z-Wave sensor in an ultra slim design housing provides comprehensive information on indoor air quality.</p> <p>Based on these information it is possible to always ensure a healthy living climate.</p> <ul><li>Ultra-flat design housing</li><li>Use of high-precision, Swiss sensor technology</li><li>Multicolor LED for signalling ventilation recommendations</li><li>Returns the following values:<ul><li>VOC value (volatile organic compounds) in ppm</li><li>CO2 value (as CO2 equivalent) in ppm</li><li>Temperature (°C) and humidity (%)</li><li>Dew point (°C)</li></ul></li><li>Supports Z-Wave Plus S2 security (encryption)</li><li>Z-Wave repeater function</li><li>Operation with plug-in power supply unit</li></ul> <br /> <h2>Inclusion Information</h2><p>Press the back button three times within 1 second.</p> <p>While the inclusion is active, the LED is blinking green. If the inclusion was successful the green LED will light up for 5 seconds. Otherwise the red led will light up for 5 seconds to indicate failure.</p> <br /> <h2>Exclusion Information</h2><p>Press the back button three times within 1 second.</p> <p>While the exclusion is active, the LED is blinking green. If the exclusion was successful the green LED will light up for 5 seconds. Otherwise the red led will light up for 5 seconds to indicate failure.</p> <br /> <h2>Wakeup Information</h2><p><br /></p>
     ]]></description>
     <category>Sensor</category>
 
@@ -96,7 +96,7 @@ Humidity on-change reporting<br /> <h1>Overview</h1><p>0x00 No on-change reporti
         ]]></description>
         <default>5</default>
         <options>
-          <option value="0">No on change reporting</option>
+          <option value="0">No on-change reporting</option>
         </options>
         <limitToOptions>false</limitToOptions>
       </parameter>

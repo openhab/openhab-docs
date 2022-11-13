@@ -57,7 +57,7 @@ Thermostatic Valve<br /> <h1>Overview</h1><p>Comet Z-wave is a Z-Wave radio stan
       <property name="vendor">Eurotronics</property>
       <property name="modelId">CometZ</property>
       <property name="manufacturerId">0148</property>
-      <property name="manufacturerRef">0002:0001,4672:BD41</property>
+      <property name="manufacturerRef">0001:0002,0002:0001,4672:BD41</property>
       <property name="dbReference">372</property>
     </properties>
 
