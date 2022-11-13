@@ -63,7 +63,7 @@ This section allows to have different appearance settings _per_ device.
 
 ![navbar-style.png](images/navbar-style.png)
 
-# Miscellaneous settings
+## Miscellaneous settings
 
 - **Simple navigation bar on home page**: When switching it on, it means the navigation bar will look the same even whether you're at the top of the page or not - you won't have the alternate look with the date.
 The first image depicts the normal setting (off), the second image shows it switched off
@@ -79,7 +79,7 @@ The first image depicts the normal white setting (off), the second image shows i
 - **Disable card expansion animations**: Disables the animations when expanding a widget card.
 - **Disable page transition animations**: Disables the transitions when switching from one page to the other.
 
-# Enable Web Audio sink support
+### Enable Web Audio sink support
 
 - This setting is also part of the miscellaneous settings.
 - The intent of that option is to allow sending audio to that device, e.g. if that device is a tablet that is hanging on the wall in a room and a specific audio should be sent to that device for notification purposes.
@@ -133,6 +133,6 @@ Then you can omit the webaudio sink ID from commands/actions.
 
 ![settings-audio.png](images/settings-audio.png)
 
-# Reload
+## Reload
 
 Reload the web page to reflect the selected changes.
