@@ -403,25 +403,25 @@ It is important to note that only one given semantic is allowed per endpoint. Ad
 
 Here is how some the [device attributes](#device-attributes) using semantic extensions are translating to:
 
-A window blind [position state](#position-state). For example, when requesting *Alexa, open the blind*, the item will receive command `UP`. Likewise, when asking *Alexa, lower the blind*, it will receive command `DOWN`. And when requesting *Alexa, stop the blind*, it will receive command `STOP`. For position request, since Rollershutter range value are inverted by default, when requesting *Alexa, set the blind to 40%*, the item state will be set to `60`.
+A window blind [position state](#positionstate). For example, when requesting *Alexa, open the blind*, the item will receive command `UP`. Likewise, when asking *Alexa, lower the blind*, it will receive command `DOWN`. And when requesting *Alexa, stop the blind*, it will receive command `STOP`. For position request, since Rollershutter range value are inverted by default, when requesting *Alexa, set the blind to 40%*, the item state will be set to `60`.
 
 ```xtend
 Rollershutter Blind "Blind" {alexa="Blind.RangeValue" [capabilityNames="@Setting.Position", supportedCommands="UP=@Value.Up:@Value.Open,DOWN=@Value.Down:@Value.Close,STOP=@Value.Stop", supportedRange="0:100:1", unitOfMeasure="Percent", actionMappings="Close=DOWN,Open=UP,Lower=DOWN,Raise=UP,Stop=STOP", stateMappings="Closed=100,Open=0:99"]}
 ```
 
-A window curtain [position state](#position-state). For example, when requesting *Alexa, open the curtain*, the item state will be set to `100`. Likewise, when asking *Alexa, close the blind*, it be set to `0`.
+A window curtain [position state](#positionstate). For example, when requesting *Alexa, open the curtain*, the item state will be set to `100`. Likewise, when asking *Alexa, close the blind*, it be set to `0`.
 
 ```xtend
 Dimmer Curtain "Curtain" {alexa="Curtain.RangeValue" [capabilityNames="@Setting.Position", supportedRange="0:100:1", unitOfMeasure="Percent", actionMappings="Close=0,Open=100", stateMappings="Closed=0,Open=1:100"]}
 ```
 
-A door [open state](#open-state). For example, when requesting *Alexa, open the door*, the item state will be set to `ON`.
+A door [open state](#openstate). For example, when requesting *Alexa, open the door*, the item state will be set to `ON`.
 
 ```xtend
 Switch Door "Door" {alexa="Door.Mode" [capabilityNames="@Setting.Opening", supportedModes="ON=@Value.Open,OFF=@Value.Close", actionMappings="Close=OFF,Open=ON,Lower=OFF,Raise=ON", stateMappings="Closed=OFF,Open=ON"]}
 ```
 
-A vacuum cleaner [mode](#vacuum-mode). For example, when requesting *Alexa, turn on the vacuum cleaner*, the item state will be set to `CLEAN`. Likewise, when asking *Alexa, pause the vacuum cleaner*, it be set to `PAUSE`. And when requesting *Alexa, resume the vacuum cleaner*, it will be set to `CLEAN` again.
+A vacuum cleaner [mode](#vacuummode). For example, when requesting *Alexa, turn on the vacuum cleaner*, the item state will be set to `CLEAN`. Likewise, when asking *Alexa, pause the vacuum cleaner*, it be set to `PAUSE`. And when requesting *Alexa, resume the vacuum cleaner*, it will be set to `CLEAN` again.
 
 ```xtend
 String VacuumCleaner "Vacuum Cleaner" {alexa="VacuumCleaner.Mode" [capabilityNames="@Setting.Mode", supportedModes="CLEAN=@Setting.Clean,DOCK=@Setting.Dock,SPOT=@Setting.Spot,PAUSE=@Setting.Pause,STOP=@Setting.Stop", actionMappings="Resume=CLEAN,Pause=PAUSE,Stop=STOP,TurnOn=CLEAN,TurnOff=DOCK"]}
@@ -477,7 +477,7 @@ Device Types | Supported Attributes | Description
 `AirPurifier` | Same as `Fan` | A device that improves the quality of air in interior spaces.
 `Automobile` | [`BatteryLevel`](#batterylevel), [`FanSpeed`](#fanspeed), [`LockState`](#lockstate), [`PowerState`](#powerstate), [`TargetTemperature`](#targettemperature), [`CurrentTemperature`](#currenttemperature) | A motor vehicle (automobile, car).
 `AutomobileAccessory` | [`BatteryLevel`](#batterylevel), [`CameraStream`](#camerastream), [`FanSpeed`](#fanspeed), [`PowerState`](#powerstate) | A smart device in an automobile, such as a dash camera.
-`Blind`, `Curtain`, `Shade` | *[`OpenState`](#openstate)*, *[`PositionState`](#positionstate)*, [`TiltAngle`](#tiltAngle), [`TargetOpenState`](#targetopenstate), [`CurrentOpenState`](#currentopenstate) | A window covering on the inside of a structure.
+`Blind`, `Curtain`, `Shade` | *[`OpenState`](#openstate)*, *[`PositionState`](#positionstate)*, [`TiltAngle`](#tiltangle), [`TargetOpenState`](#targetopenstate), [`CurrentOpenState`](#currentopenstate) | A window covering on the inside of a structure.
 `BluetoothSpeaker` | *[`PowerState`](#powerstate)*, *[`VolumeLevel`](#volumelevel)*, [`VolumeStep`](#volumestep), [`MuteState`](#mutestate), [`MuteStep`](#mutestep), [`EqualizerBass`](#equalizerbass), [`EqualizerMidrange`](#equalizermidrange), [`EqualizerTreble`](#equalizertreble), [`EqualizerMode`](#equalizermode), [`Channel`](#channel), [`ChannelStep`](#channelstep), [`Input`](#input), [`Playback`](#playback), [`PlaybackStop`](#playbackstop), [`BatteryLevel`](#batterylevel) | A speaker that connects to an audio source over Bluetooth.
 `Camera` | *[`PowerState`](#powerstate)*, *[`CameraStream`](#camerastream)*, [`BatteryLevel`](#batterylevel) | A security device with video or photo functionality.
 `ChristmasTree` | Same as `Light` | A religious holiday decoration that often contains lights.
@@ -490,7 +490,7 @@ Device Types | Supported Attributes | Description
 `Dryer` | *[`PowerState`](#powerstate)* | A device that dries wet clothing.
 `Fan` | *[`PowerState`](#powerstate)*, *[`FanSpeed`](#fanspeed)*, [`FanDirection`](#fandirection), [`FanOscillate`](#fanoscillate) | A fan.
 `GameConsole` | *[`PowerState`](#powerstate)*, [`NetworkAccess`](#networkaccess) | A game console, such as Microsoft Xbox or Nintendo Switch.
-`GarageDoor` | *[`OpenState`](#openstate)*, [`TargetOpenState`](#targetopenstate), [`CurrentOpenState`](#currentopenstate), [`ObstacleAlert`](#obstaclealert) | A garage door. Supports unlock by voice code. Only supported in `en-US`. For other languages, use `Door` instead.
+`GarageDoor` | *[`OpenState`](#openstate)*, [`TargetOpenState`](#targetopenstate), [`CurrentOpenState`](#currentopenstate), [`ObstacleAlert`](#obstaclealert) | A garage door. Supports unlock by voice code. Only supported in `de-DE`, `en-GB`, `en-US`, `es-ES`, `fr-FR`, and `it-IT`. For other languages, use `Door` instead.
 `Headphones` | Same as `BluetoothSpeaker` | A wearable device that transmits audio directly into the ear.
 `Hub` | *[`PowerState`](#powerstate)* | A smart-home hub.
 `Laptop` | *[`PowerState`](#powerstate)*, [`BatteryLevel`](#batterylevel), [`NetworkAccess`](#networkaccess) | A laptop or other mobile computer.
@@ -507,7 +507,7 @@ Device Types | Supported Attributes | Description
 `Printer` | *[`PowerState`](#powerstate)* | A device that prints.
 `Router` | Same as `NetworkHardware` | A network router.
 `Screen` | Same as `Television` | A projector screen.
-`SecurityPanel` | *[`ArmState`](#armstate)*, [`BurglaryAlarm`](#burglaryalarm), [`CarbonMonoxideAlarm`](#carbonmonoxidealarm), [`FireAlarm`](#firealarm), [`WaterAlarm`](#wateralarm), [`AlarmAlert`](#alarmalert), [`ReadyAlert`](#readyalert), [`TroubleAlert`](#troublealert), [`ZonesAlert`](#zonealert) | A security panel.
+`SecurityPanel` | *[`ArmState`](#armstate)*, [`BurglaryAlarm`](#burglaryalarm), [`CarbonMonoxideAlarm`](#carbonmonoxidealarm), [`FireAlarm`](#firealarm), [`WaterAlarm`](#wateralarm), [`AlarmAlert`](#alarmalert), [`ReadyAlert`](#readyalert), [`TroubleAlert`](#troublealert), [`ZonesAlert`](#zonesalert) | A security panel.
 `SecuritySystem` | Same as `SecurityPanel` | A security system.
 `Shutter`, `Awning` | Same as `Blind` | A window covering on the outside of a structure.
 `SlowCooker` | *[`PowerState`](#powerstate)* | An electric cooking device that sits on a countertop, cooks at low temperatures, and is often shaped like a cooking pot.
@@ -1201,7 +1201,7 @@ Items that represent the current state of a lock with decouple state. This needs
 
 #### `ArmState`
 
-Items that represent the arm state of a security panel. Multiple properties to one state can be mapped with column delimiter (e.g. for DSC alarm system, combining standard mode with no delay equivalent: `DISARMED="0",ARMED_AWAY="1:3",ARMED_STAY="2:4"`). To disarm by voice, you will need to set up a voice code in your Alexa app for that device. For security panel errors handling, add [`AlarmAlert`](#alarmalert), [`ReadyAlert`](#readyalert), [`TroubleAlert`](#troublealert) and [`ZonesAlert`](#zonealert) attributes to your security panel group endpoint.
+Items that represent the arm state of a security panel. Multiple properties to one state can be mapped with column delimiter (e.g. for DSC alarm system, combining standard mode with no delay equivalent: `DISARMED="0",ARMED_AWAY="1:3",ARMED_STAY="2:4"`). To disarm by voice, you will need to set up a voice code in your Alexa app for that device. For security panel errors handling, add [`AlarmAlert`](#alarmalert), [`ReadyAlert`](#readyalert), [`TroubleAlert`](#troublealert) and [`ZonesAlert`](#zonesalert) attributes to your security panel group endpoint.
 
 * Supported item types:
   * Number [DISARMED=0, ARMED_STAY=1, ARMED_AWAY=2, ARMED_NIGHT=3]
@@ -1923,7 +1923,7 @@ PlaybackController | [`Playback`](#playback), [`PlaybackStop`](#playbackstop) | 
 PowerController | [`PowerState`](#powerstate) | `ar-SA`, `de-DE`, `en-AU`, `en-CA`, `en-GB`, `en-IN`, `en-US`, `es-ES`, `es-MX`, `es-US`, `fr-CA`, `fr-FR`, `hi-IN`, `it-IT`, `ja-JP`, `pt-BR`
 PowerLevelController | [`PowerLevel`](#powerlevel) | `de-DE`, `en-AU`, `en-CA`, `en-GB`, `en-IN`, `en-US`, `es-ES`, `es-MX`, `fr-CA`, `fr-FR`, `it-IT`, `ja-JP`
 RangeController | [`RangeValue`](#rangevalue), [`BatteryLevel`](#batterylevel), [`CurrentHumidity`](#currenthumidity), [`FanSpeed`](#fanspeed), [`PositionState`](#positionstate), [`TiltAngle`](#tiltangle) | `de-DE`, `en-AU`, `en-CA`, `en-GB`, `en-IN`, `en-US`, `es-ES`, `es-MX`, `es-US`, `fr-CA`, `fr-FR`, `hi-IN`, `it-IT`, `ja-JP`, `pt-BR`
-Safety | [`ObstacleAlert`](#obstaclealert) | `en-US`
+Safety | [`ObstacleAlert`](#obstaclealert) | `de-DE`, `en-GB`, `en-US`, `es-ES`, `fr-FR`, `it-IT`
 SceneController | [`Scene`](#scene), [`Activity`](#activity) | `ar-SA`, `de-DE`, `en-AU`, `en-CA`, `en-GB`, `en-IN`, `en-US`, `es-ES`, `es-MX`, `es-US`, `fr-CA`, `fr-FR`, `hi-IN`, `it-IT`, `ja-JP`, `pt-BR`
 SecurityPanelController | [`ArmState`](#armstate), [`BurglaryAlarm`](#burglaryalarm), [`CarbonMonoxideAlarm`](#carbonmonoxidealarm), [`FireAlarm`](#firealarm), [`WaterAlarm`](#wateralarm) | `de-DE`, `en-AU`, `en-CA`, `en-GB`, `en-IN`, `en-US`, `es-ES`, `es-MX`, `es-US`, `fr-CA`, `fr-FR`, `it-IT`, `ja-JP`, `pt-BR`
 Speaker | [`VolumeLevel`](#volumelevel), [`MuteState`](#mutestate) | `de-DE`, `en-AU`, `en-CA`, `en-GB`, `en-IN`, `en-US`, `es-ES`, `es-MX`, `it-IT`, `ja-JP`
