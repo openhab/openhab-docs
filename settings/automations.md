@@ -8,8 +8,6 @@ title:  Automation
 This is the section to automate openHAB which provides rules, script and a scheduling sectiom.
 See [What's the Difference Between a Rule, Script, and Schedule?](/docs/tutorial/rules_introduction.html#what-s-the-difference-between-a-rule-script-and-schedule)
 
-
-
 {::options toc_levels="2..4"/}
 
 - TOC
@@ -90,5 +88,3 @@ The page has a searchable list which allows to filter by the name of the rule.
 
 To see more entries scroll to the left or the right.
 Note that the selection functionality is currently not supported.
-
-
