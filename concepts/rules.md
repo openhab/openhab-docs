@@ -2,10 +2,9 @@
 
 openHAB is about home automation, but to create home automation we need to define rules.
 
-{::options toc_levels="2"/}
 
 - TOC
-{:toc}
+[[toc]]
 
 ## What Are Rules
 
