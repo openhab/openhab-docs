@@ -2,7 +2,6 @@
 
 openHAB is about home automation, but to create home automation we need to define rules.
 
-
 - TOC
 [[toc]]
 
@@ -20,23 +19,23 @@ No problem, openHAB can do that for you too.
 Rules can also remind you of things, for example, that you opened the window hours ago and forgot that it is open?
 openHAB can send a notification to your phone.
 
-Other systems may have a concept of *Automations*, *Tasks*, and other terms.
+Other systems may have a concept of _Automations_, _Tasks_, and other terms.
 In openHAB, rules are used to implement all of these concepts.
 
 ## Parts of a Rule
 
-These rules take the high level form of *When __t__ happens, if __c__ then do __a__*,
-where __t__ are the _triggers_ that cause the rule run,
-__c__ are the _conditions_ that must be true for the rule to run, and __a__ are _actions_ to perform when the rule is triggered and allowed to run.
-Note that both __t__ and __c__ can be optional.
+These rules take the high level form of _When \_\_t\_\_ happens, if \_\_c\_\_ then do \_\_a\_\__,
+where \_\_t\_\_ are the _triggers_ that cause the rule run,
+\_\_c\_\_ are the _conditions_ that must be true for the rule to run, and \_\_a\_\_ are _actions_ to perform when the rule is triggered and allowed to run.
+Note that both \_\_t\_\_ and \_\_c\_\_ can be optional.
 
-To work with the *When __t__ happens, if __c__ then do __a__* principle, openHAB rules consist of three parts:
+To work with the _When \_\_t\_\_ happens, if \_\_c\_\_ then do \_\_a\_\__ principle, openHAB rules consist of three parts:
 
 | Name        | Rule Part            | Purpose                                                  |
 |-------------|----------------------|----------------------------------------------------------|
-| `Trigger`   | *When __t__ happens* | Causes the rule run when the defined event happens.      |
-| `Condition` | *if __c__*           | Which condition has to be met that the rule really runs? |
-| `Action`    | *then do __a__*      | What should be done when the rule runs?                  |
+| `Trigger`   | _When \_\_t\_\_ happens_ | Causes the rule run when the defined event happens.      |
+| `Condition` | _if \_\_c\_\__           | Which condition has to be met that the rule really runs? |
+| `Action`    | _then do \_\_a\_\__      | What should be done when the rule runs?                  |
 
 Any single rule is not required to have all of these (although a rule without an action is not very sensible).
 An individual rule can also have more than one of each.
@@ -187,7 +186,7 @@ Please keep in mind that rule engines provided by separately installed automatio
 
 ## Conditions
 
-With triggers, we have the *When __t__ happens* part completed, so next up is the *if __c__* part.
+With triggers, we have the _When \_\_t\_\_ happens* part completed, so next up is the *if \_\_c\_\__ part.
 This part can limit when a rule can run by adding one or more condition(s).
 
 Conditions as a separately definable part of a rule are supported by some rule engines.
@@ -247,14 +246,14 @@ For further information which values are available and how to access them, refer
 At some point, when basic UI rules are not sophisticated enough, rule templates can help.
 Someone may have already written the rule and provided it as a template in the community marketplace.
 
-To enable access to rule templates, navigate to *Settings* -> *Community Marketplace* and toggle *Enable Community Marketplace* to ON.
-Then to install a rule template, visit the web UI and navigate: *Settings* -> *Add-Ons* -> *Automation* -> Scroll down to the *Rule Templates* section.
+To enable access to rule templates, navigate to _Settings_ -> _Community Marketplace_ and toggle _Enable Community Marketplace_ to ON.
+Then to install a rule template, visit the web UI and navigate: _Settings_ -> _Add-Ons_ -> _Automation_ -> Scroll down to the _Rule Templates_ section.
 Click on a rule template to review it's documentation, open the community thread and install the template to your system.
 Check the template's documentation for dependencies and install them!
 Otherwise the rule won't work.
 
-To instantiate a rule template, navigate to *Rules* and click the blue `+` icon.
-Fill out the rule's metadata as usual and select an installed rule template from the *Create from Template* section.
+To instantiate a rule template, navigate to _Rules_ and click the blue `+` icon.
+Fill out the rule's metadata as usual and select an installed rule template from the _Create from Template_ section.
 Choose the rule template, and fill out the template configuration.
 
 Once a rule is created, it is seperated from its template and can be further customized.
