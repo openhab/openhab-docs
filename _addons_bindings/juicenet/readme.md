@@ -5,6 +5,7 @@ title: JuiceNet - Bindings
 type: binding
 description: "The JuiceNet binding will interface with the cloud portal to get status and manage your JuiceBox EV charger(s)."
 since: 3x
+logo: images/addons/juicenet.png
 install: manual
 ---
 
