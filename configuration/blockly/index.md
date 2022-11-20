@@ -229,4 +229,3 @@ All published custom blocks can be found at [Published Blockly Libraries](https:
 
 - [Getting Started: Rules - Blockly](https://community.openhab.org/t/getting-started-rules-blockly/132453)
 - [Extending Blockly with new openHAB commands](https://community.openhab.org/t/extending-blockly-with-new-openhab-commands/127169)
-

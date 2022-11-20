@@ -15,11 +15,6 @@ The _Settings_ entry links to an overview page that itself has several subsectio
 
 Some of these subpages, which are most often used, can also be accessed directly via the menu, e.g. either click on _Settings->Items_ in the overview page or on directly _Items_ in the menu.
 
-{::options toc_levels="2..4"/}
-
-- TOC
-  [[toc]]
-
 ## Sections
 
 - [Configuration](/docs/settings/configuration.html)

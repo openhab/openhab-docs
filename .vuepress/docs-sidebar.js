@@ -83,6 +83,7 @@ module.exports = [
       title: 'Settings',
       collapsable: false,
       children: [
+        ['settings/', 'Settings Overview'],
         'settings/aboutpage',
         'settings/configuration',
         ['settings/automations', 'Automation'],
