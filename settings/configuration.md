@@ -10,7 +10,7 @@ This section allows the configuration of things, items and user interface pages
 - TOC
   [[toc]]
 
-Next to the entity the count of that entity is shown, though the Things count is not the number of all configured Things but the count of the Things waiting in the [Inbox](docs/tutorial/things_simple.html#accept-the-light-bulb-things).
+Next to the entity the count of that entity is shown, though the Things count is not the number of all configured Things but the count of the Things waiting in the [Inbox](/docs/tutorial/things_simple.html#accept-the-light-bulb-things).
 
 ![config-overview.png](images/config-overview.png)
 

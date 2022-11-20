@@ -215,9 +215,17 @@ This section explains only the blocks that have been added to the standard block
 
 See [openHAB Extensions to the standard](rules-blockly-standard-ext.html) section.
 
+### openHAB Blocks provided by the community
+
+The core openHAB are meant to cover most of the functionality that is needed to write rules.
+However, there might be functionality that is not available (yet).
+These can be provided by the community.
+
+A good explanation on how to write custom blocks can be found at [How to write openHAB Blockly Libraries](https://community.openhab.org/t/tutorial-how-to-write-block-libraries/130074)
+
+All published custom blocks can be found at [Published Blockly Libraries](https://community.openhab.org/c/marketplace/block-libraries/76) and can be directly downloaded within your openHAB installation in the [Settings -> Automation section](/docs/settings/addons.html#automation)
+
 ## Tutorials or other useful information
 
 - [Getting Started: Rules - Blockly](https://community.openhab.org/t/getting-started-rules-blockly/132453)
-- [How to write openHAB Blockly Libraries](https://community.openhab.org/t/tutorial-how-to-write-block-libraries/130074)
 - [Extending Blockly with new openHAB commands](https://community.openhab.org/t/extending-blockly-with-new-openhab-commands/127169)
-- [Published Blockly Libraries](https://community.openhab.org/c/marketplace/block-libraries/76)
