@@ -7,7 +7,6 @@ title: ZMNHYD - ZWave
 
 # ZMNHYD Smart Plug 16A
 This describes the Z-Wave device *ZMNHYD*, manufactured by *[Goap](http://www.qubino.com/)* with the thing type UID of ```qubino_zmnhyd_00_000```.
-This version of the device is limited to firmware versions below 2.0
 
 The device is in the category of *Power Outlet*, defining Small devices to be plugged into a power socket in a wall which stick there.
 

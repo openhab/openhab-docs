@@ -29,6 +29,10 @@ Start Inclusion mode of your primary Z-Wave Controller. Press the Boost-Button. 
 
 Start Exclusion mode of your primary Z-Wave Controller. Now press and hold the boost button of the Spirit Z-Wave Plus for at least 5 seconds.
 
+### General Usage Information
+
+
+
 ## Channels
 
 The following table summarises the channels available for the Spirit -:

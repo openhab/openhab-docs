@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="aeotec_zwa022_00_000" listed="false">
+    <label>ZWA022 illumino WallMote 7</label>
+    <description><![CDATA[
+illumino WallMote 7<br /> <h1>Overview</h1><p>Battery powered Z-Wave remote control designed to look like a regular light switch. This Z-Wave remote control can be used to easily add a light switch or dimmer to any location in your home to control smart lighting. This versatile smart remote can also be used as a scene controller.<br /></p> <br /> <h2>Inclusion Information</h2><p>Set your Z-Wave controller into pairing mode.</p><p>Single-click the Action button on WallMote7 - the LED flashes quickly.</p><p>After successful inclusion, the LED is solid for 2 seconds.</p> <br /> <h2>Exclusion Information</h2><p>Your WallMote 7 can be removed from your Z-Wave network at any time. You'll need to use your Z-Wave network's main controller/gateway. To do this, please refer to the part of their respective manuals that tell you how to remove devices from your network.</p><p>Steps.</p><ol><li>Put your primary controller into device removal mode.</li><li>Remove your WallMote 7 from the wall and take it near to your primary controller. </li><li>Press the Top or Bottom Button 6x times quickly on your WallMote 7.</li><li>The LED on WallMote 7 will fade its LED in and out to indicate it is ready to be paired to a new hub.</li></ol> <br /> <h2>Wakeup Information</h2><p>To send your WallMote 7 new configuration commands from your Z-Wave controller or gateway, it will need to be woken up.</p><p>Steps.</p><p>Tap the top or bottom button 7x times quickly.</p><p>If successful, the LED will light up yellow.</p>
+    ]]></description>
+    <category>RemoteControl</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="scene_number" typeId="scene_number">
+        <label>Scene Number</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_CENTRAL_SCENE</property>
+        </properties>
+      </channel>
+      <channel id="battery-level" typeId="system.battery-level">
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_BATTERY</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Aeotec Limited</property>
+      <property name="modelId">ZWA022</property>
+      <property name="manufacturerId">0371</property>
+      <property name="manufacturerRef">0102:0016</property>
+      <property name="dbReference">1530</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_1_1_wo" type="integer" groupName="configuration">
+        <label>1: Define button output</label>
+        <description><![CDATA[
+Enable or disable association group command and central scene command<br /> <h1>Overview</h1><p>0 - Group Association Only<br />1- Central Scene Only<br />2 - Group Association and Central Scene</p><p><br /></p>
+        ]]></description>
+        <default>2</default>
+        <options>
+          <option value="0">Group Association only</option>
+          <option value="1">Central Scene only</option>
+          <option value="2">Group Association and Central Scene</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_2_1_wo" type="integer" groupName="configuration">
+        <label>2: Switch Group Control</label>
+        <description><![CDATA[
+Association group 2/4/6's behvaior<br /> <h1>Overview</h1><p>0 - Basic Set<br />1 - Binary Switch Set</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Basic Set</option>
+          <option value="1">Binary Switch Set</option>
+        </options>
+        <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_3_1_wo" type="integer" groupName="configuration">
+        <label>3: Dimmer Control Group</label>
+        <description><![CDATA[
+Association Group 3/5/7's behavior<br /> <h1>Overview</h1><p>0 - Disabled<br />1 - 2x Tap = Toggle fully 100% or 0%<br />2 - 2x Tap = Toggle custom brightness (parameter 4) or 0%</p>
+        ]]></description>
+        <default>1</default>
+        <options>
+          <option value="0">Disabled</option>
+          <option value="1">2x Tap - Toggle 100% / 0%</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_4_1" type="integer" groupName="configuration">
+        <label>4: Custom Brightness</label>
+        <description>Custom Brightness for parameter 3</description>
+        <default>50</default>
+        <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_39_1_wo" type="integer" groupName="configuration">
+        <label>39: Low Battery Level</label>
+        <description>Low Battery Level</description>
+        <default>20</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_81_1_wo" type="integer" groupName="configuration">
+        <label>81: Toggle Wakeup LED</label>
+        <description><![CDATA[
+Set the LED state for Wake-Up event<br /> <h1>Overview</h1><p><br /></p>
+        ]]></description>
+        <default>1</default>
+        <options>
+          <option value="0">Disable</option>
+          <option value="1">Enable</option>
+        </options>
+        <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_82_1_wo" type="integer" groupName="configuration">
+        <label>82: Toggle communication failure LED</label>
+        <description><![CDATA[
+Set the state of the pink communication failure LED<br /> <h1>Overview</h1><p><br /></p>
+        ]]></description>
+        <default>1</default>
+        <options>
+          <option value="0">Disable</option>
+          <option value="1">Enable</option>
+        </options>
+        <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_84_1_wo" type="integer" groupName="configuration">
+        <label>84: Toggle LED indicator</label>
+        <description><![CDATA[
+Used to toggle LED indicator<br /> <h1>Overview</h1><p><br /></p>
+        ]]></description>
+        <default>1</default>
+        <options>
+          <option value="0">Disable</option>
+          <option value="1">Enable</option>
+        </options>
+        <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_85_1" type="integer" groupName="configuration">
+        <label>85: Top Button LED Color</label>
+        <description><![CDATA[
+Select the indicator color for the top button<br /> <h1>Overview</h1><p>0- Disabled<br />1- Red<br />2- Blue<br />3- Green<br />4- Pink<br />5- Cyan<br />6- Purple<br />7- Orange<br />8- Yellow<br />9- White</p>
+        ]]></description>
+        <default>9</default>
+        <options>
+          <option value="0">Disabled</option>
+          <option value="1">Red</option>
+          <option value="2">Blue</option>
+          <option value="3">Green</option>
+          <option value="4">Pink</option>
+          <option value="5">Cyan</option>
+          <option value="6">Purple</option>
+          <option value="7">Orange</option>
+          <option value="8">Yellow</option>
+          <option value="9">White</option>
+        </options>
+        <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_86_1_wo" type="integer" groupName="configuration">
+        <label>86: Bottom Button LED Color</label>
+        <description><![CDATA[
+Select indicator color for the Bottom Button<br /> <h1>Overview</h1><p>0- Disabled<br />1- Red<br /> 2- Blue<br /> 3- Green<br /> 4- Pink<br /> 5- Cyan<br /> 6- Purple<br /> 7- Orange<br /> 8- Yellow<br /> 9- White</p>
+        ]]></description>
+        <default>5</default>
+        <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_87_1_wo" type="integer" groupName="configuration">
+        <label>87: Toggle FLiRs Command</label>
+        <description><![CDATA[
+Toggle FLiRs Command<br /> <h1>Overview</h1><p>0 - Disable<br />1 - Enable</p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Lifeline</label>
+        <description>Lifeline</description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: Group 2</label>
+        <description>Top Button ON/OFF</description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_3" type="text" groupName="association" multiple="true">
+        <label>3: Group 3</label>
+        <description>Top Button Multilevel Set</description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_4" type="text" groupName="association" multiple="true">
+        <label>4: Group 4</label>
+        <description>Bottom Button ON/OFF</description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_5" type="text" groupName="association" multiple="true">
+        <label>5: Group 5</label>
+        <description>Bottom Button Multilevel Set</description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_6" type="text" groupName="association" multiple="true">
+        <label>6: Group 6</label>
+        <description>Top and Bottom Button ON/OFF</description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_7" type="text" groupName="association" multiple="true">
+        <label>7: Group 7</label>
+        <description>Top and Bottom Multilevel Set</description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

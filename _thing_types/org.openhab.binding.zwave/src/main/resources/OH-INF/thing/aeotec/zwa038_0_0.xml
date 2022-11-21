@@ -1,0 +1,323 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="aeotec_zwa038_00_000" listed="false">
+    <label>ZWA038 illumino Switch</label>
+    <description><![CDATA[
+illumino Switch<br /> <h1>Overview</h1><p>Wall switch, supports 3-way circuits.</p> <br /> <h2>Inclusion Information</h2><p>1x  tap will send NIF for network pairing/ inclusion (white LED quick flashes). If pairing is successful, the LED will turn to solid green for 2s, then deactivates. </p> <br /> <h2>Exclusion Information</h2><p>3x tap will send NIF for network unpairing/ exclusion (purple LED flashes). </p> <br /> <h2>Wakeup Information</h2><p>na</p>
+    ]]></description>
+    <category>Battery</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_binary" typeId="switch_binary">
+        <label>Switch</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY</property>
+        </properties>
+      </channel>
+      <channel id="scene_number" typeId="scene_number">
+        <label>Scene Number</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_SCENE_ACTIVATION</property>
+        </properties>
+      </channel>
+      <channel id="scene_number" typeId="scene_number">
+        <label>Scene Number</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_CENTRAL_SCENE</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Aeotec Limited</property>
+      <property name="modelId">ZWA038</property>
+      <property name="manufacturerId">0371</property>
+      <property name="manufacturerRef">0103:0026</property>
+      <property name="dbReference">1528</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_20_1" type="integer" groupName="configuration">
+        <label>20: Power Restore</label>
+        <description><![CDATA[
+Status after power failure.<br /> <h1>Overview</h1><p>0- return to OFF</p><p>1- return to ON</p><p>2- returns to last known state when repowered</p>
+        ]]></description>
+        <default>2</default>
+        <options>
+          <option value="0">return to OFF</option>
+          <option value="1">return to ON</option>
+          <option value="2">last known state</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_40_4" type="integer" groupName="configuration">
+        <label>40: Auto Turn Off Timer</label>
+        <description><![CDATA[
+Timer that auto turn off once turned on.<br /> <h1>Overview</h1><p>0- disabled</p><p>1- Auto turn off after 1s once turned on </p><p>65535 - Auto turn off after 65535s once turned on</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Disabled</option>
+          <option value="1">Auto turn off after 1s once turned on</option>
+          <option value="65535">Auto turn off after 65535s once turned on</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_41_0" type="integer" groupName="configuration">
+        <label>41: Auto Turn On Timer</label>
+        <description><![CDATA[
+Timer that auto turn on once turned off.<br /> <h1>Overview</h1><p>0- disabled</p><p>1- Auto turn on after 1s once turned off </p><p>65535 - Auto turn on after 65535s once turned off</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Disabled</option>
+          <option value="1">Auto turn on after 1s once turned off</option>
+          <option value="65535">Auto turn on after 65535s once turned off</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_80_1" type="integer" groupName="configuration">
+        <label>80: Instant Status Report</label>
+        <description><![CDATA[
+The command for status report.<br /> <h1>Overview</h1><p>0-Nothing</p><p>1-Basic Report</p><p>2-Binary Switch Report</p>
+        ]]></description>
+        <default>2</default>
+        <options>
+          <option value="0">nothing</option>
+          <option value="1">basic report</option>
+          <option value="2">binary switch report</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_82_1" type="integer" groupName="configuration">
+        <label>82: Association Control Settings</label>
+        <description><![CDATA[
+Setting command for association group.<br /> <h1>Overview</h1><p>1- Basic Set</p><p>2- Binary Switch Set</p>
+        ]]></description>
+        <default>1</default>
+        <options>
+          <option value="1">basic set</option>
+          <option value="2">binary switch set</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_83_1" type="integer" groupName="configuration">
+        <label>83: Led Indicator Settings</label>
+        <description><![CDATA[
+Select the indicator function for output.<br /> <h1>Overview</h1><p>0- disable completely</p><p>1- Momentary blink</p><p>2- LED follows status of output</p>
+        ]]></description>
+        <default>2</default>
+        <options>
+          <option value="0">disable completely</option>
+          <option value="1">Momentary blink</option>
+          <option value="2">LED follows status of output</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_84_1" type="integer" groupName="configuration">
+        <label>84: Led Indicator Color For Output</label>
+        <description><![CDATA[
+Select the indicator color for output.<br /> <h1>Overview</h1><p>0- Disabled 1- Red</p><p>2- Blue</p><p>3- Green</p><p>4- Pink</p><p>5- Cyan </p><p>6- Purple </p><p>7- Orange </p><p>8- Yellow </p><p>9- White</p>
+        ]]></description>
+        <default>9</default>
+        <options>
+          <option value="0">Disabled</option>
+          <option value="1">red</option>
+          <option value="2">blue</option>
+          <option value="3">green</option>
+          <option value="4">pink</option>
+          <option value="5">cyan</option>
+          <option value="6">purple</option>
+          <option value="7">orange</option>
+          <option value="8">yellow</option>
+          <option value="9">white</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_85_1" type="integer" groupName="configuration">
+        <label>85: Led Indicator Color For Scene</label>
+        <description><![CDATA[
+Select the indicator color for scene.<br /> <h1>Overview</h1><p>0- Disabled 1- Red</p><p>2- Blue</p><p>3- Green</p><p>4- Pink</p><p>5- Cyan 6- Purple 7- Orange 8- Yellow</p>
+        ]]></description>
+        <default>2</default>
+        <options>
+          <option value="0">Disabled</option>
+          <option value="1">red</option>
+          <option value="2">blue</option>
+          <option value="3">green</option>
+          <option value="4">ping</option>
+          <option value="5">cyan</option>
+          <option value="6">purple</option>
+          <option value="7">orange</option>
+          <option value="8">yellow</option>
+          <option value="9">white</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_86_1" type="integer" groupName="configuration">
+        <label>86: Led Brightness</label>
+        <description><![CDATA[
+Setting the brightness of indicator.<br /> <h1>Overview</h1><p>0- Disable </p><p>1- 1%</p><p>.. ...</p><p>100 - 100%</p>
+        ]]></description>
+        <default>60</default>
+        <options>
+          <option value="1">1%</option>
+          <option value="25">25%</option>
+          <option value="50">50%</option>
+          <option value="75">75%</option>
+          <option value="100">100%</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_119_1" type="integer" groupName="configuration">
+        <label>119: External Switch Scene</label>
+        <description><![CDATA[
+Enable or disable the scene function of external(3-way) switch.<br /> <h1>Overview</h1><p>0- Disable </p><p>1- enable<br /></p>
+        ]]></description>
+        <default>1</default>
+        <options>
+          <option value="0">Disable</option>
+          <option value="1">Enable</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_120_1" type="integer" groupName="configuration">
+        <label>120: External Switch Type</label>
+        <description><![CDATA[
+Select the external(3-way) switch's type.<br /> <h1>Overview</h1><p>0- toggle on or off only</p><p>1- NO momentary switch</p><p>2- NC momentary switch</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">toggle on or off only</option>
+          <option value="1">NO momentary switch</option>
+          <option value="2">NC momentary switch</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_121_1" type="integer" groupName="configuration">
+        <label>121: Output Control</label>
+        <description><![CDATA[
+Enable or disable output.<br /> <h1>Overview</h1><p>0- disable completely</p><p>1- enable local control</p><p>2- enable central scene</p><p>3- enable local and central scene</p>
+        ]]></description>
+        <default>3</default>
+        <options>
+          <option value="0">disable completely</option>
+          <option value="1">enable local control</option>
+          <option value="2">enable central scene</option>
+          <option value="3">enable local and central scene</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_122_1" type="integer" groupName="configuration">
+        <label>122: Button Function</label>
+        <description><![CDATA[
+Select the paddle button functions.<br /> <h1>Overview</h1><p>0- up/ON, down/OFF</p><p>1- down/ON, up/OFF</p><p>2- toggle (up or down are the same)</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">up/ON, down/OFF</option>
+          <option value="1">down/ON, up/OFF</option>
+          <option value="2">toggle (up or down are the same)</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_123_1" type="integer" groupName="configuration">
+        <label>123: Report Behavior</label>
+        <description><![CDATA[
+Select behavior for report and indicator when output is disable.<br /> <h1>Overview</h1><p>0- report on/off status and change LED indicator when parameter 121 is set to 0 or 2</p><p>1- Don't report on/off status is pressed and parameter 121 is set to 0 or 2</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">report on/off status and change LED indicator when parameter 121 is se</option>
+          <option value="1">Don't report on/off status is pressed and parameter 121 is set to 0 or</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: General: Lifeline</label>
+        <description><![CDATA[
+Lifeline<br /> <h1>Overview</h1><p><b>Device Reset Locally Notification:</b></p><p>Issued when Factory Reset is performed.</p><p><b>Indicator Report:</b></p><p>Issued when included successfully.</p><p><b>Switch Binary Report:</b></p><p>Issued when output status is changed. (Determined by Parameter 80).</p><p><b>Basic Report:</b></p><p>Issued when output status is changed (Determined by Parameter 80).</p><p><b>Central Scene Notification:</b></p><p>Issued when button press or hold or release. (Determined by Parameter 121).</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: Control: Key 1</label>
+        <description><![CDATA[
+Top button set ON/OFF<br /> <h1>Overview</h1><p><b>Basic Set or Switch Binary Set:</b></p><p>Issued when Top button press. (The command class is determined by Parameter 82)</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_3" type="text" groupName="association" multiple="true">
+        <label>3: Control: Key 2</label>
+        <description><![CDATA[
+Bottom button set ON/OFF<br /> <h1>Overview</h1><p><b>Basic Set or Switch Binary Set</b></p><p>Issued when Bottom button press. (The command class is determined by Parameter 82)</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_4" type="text" groupName="association" multiple="true">
+        <label>4: Control: Key 3</label>
+        <description><![CDATA[
+External switch set ON/OFF<br /> <h1>Overview</h1><p><b>Basic Set or Switch Binary Set</b></p><p>Issued when External Switch press. (The command class is determined by Parameter 82).</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_5" type="text" groupName="association" multiple="true">
+        <label>5: Control: Key 4</label>
+        <description><![CDATA[
+Top and bottom button set ON/OFF<br /> <h1>Overview</h1><p><b>Basic Set or Switch Binary Set</b></p><p>Issued when Top or Bottom button press. (The command class is determined by Parameter 82).</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

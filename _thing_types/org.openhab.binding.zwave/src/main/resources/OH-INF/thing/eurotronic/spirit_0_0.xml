@@ -8,7 +8,7 @@
   <thing-type id="eurotronic_spirit_00_000" listed="false">
     <label>Spirit Thermostatic Valve</label>
     <description><![CDATA[
-Thermostatic Valve<br /> <h1>Overview</h1><p>Spirit Z-Wave Plus is a Z-Wave radio standard compatible energy-saving radiator thermostat.</p> <p>FLiRS (Frequently Listening Receiver Slave): Spirit Z-Wave uses FLiRS to provide short latency and short responding times.</p> <br /> <h2>Inclusion Information</h2><p>Start Inclusion mode of your primary Z-Wave Controller. Press the Boost-Button. Spirit Z-Wave Plus will show the assigned NodeID.</p> <br /> <h2>Exclusion Information</h2><p>Start Exclusion mode of your primary Z-Wave Controller. Now press and hold the boost button of the Spirit Z-Wave Plus for at least 5 seconds.</p>
+Thermostatic Valve<br /> <h1>Overview</h1><p>Spirit Z-Wave Plus is a Z-Wave radio standard compatible energy-saving radiator thermostat.</p> <p>FLiRS (Frequently Listening Receiver Slave): Spirit Z-Wave uses FLiRS to provide short latency and short responding times.</p> <br /> <h2>Inclusion Information</h2><p>Start Inclusion mode of your primary Z-Wave Controller. Press the Boost-Button. Spirit Z-Wave Plus will show the assigned NodeID.</p> <br /> <h2>Exclusion Information</h2><p>Start Exclusion mode of your primary Z-Wave Controller. Now press and hold the boost button of the Spirit Z-Wave Plus for at least 5 seconds.</p> <br /> <h2>Wakeup Information</h2><p><br /></p>
     ]]></description>
     <category>RadiatorControl</category>
 
@@ -87,7 +87,7 @@ Thermostatic Valve<br /> <h1>Overview</h1><p>Spirit Z-Wave Plus is a Z-Wave radi
       <property name="vendor">Eurotronics</property>
       <property name="modelId">Spirit</property>
       <property name="manufacturerId">0148</property>
-      <property name="manufacturerRef">0003:0001,0003:0003</property>
+      <property name="manufacturerRef">0003:0001,0003:0003,0003:0004</property>
       <property name="dbReference">710</property>
       <property name="commandClass:COMMAND_CLASS_BASIC">Provides access to basic functionality</property>
       <property name="commandClass:COMMAND_CLASS_SWITCH_MULTILEVEL">Provides or sets the valve opening degree of the valve Controlling the valve opening degree requires manufacturer specific mode</property>

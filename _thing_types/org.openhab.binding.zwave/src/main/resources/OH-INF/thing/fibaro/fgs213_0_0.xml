@@ -220,7 +220,7 @@ Associations in Z-Wave network security mode<br /> <h1>Overview</h1><p>This para
       <parameter name="config_28_1" type="integer" groupName="configuration">
         <label>28: S1 switch - scenes sent</label>
         <description><![CDATA[
-S1 switch - scenes sent<br /> <h1>Overview</h1><p>This parameter determines which actions result in sending scene IDs assigned to them</p>
+S1 switch - scenes sent<br /> <h1>Overview</h1><p>This parameter determines which actions result in sending scene IDs assigned to them.</p><p>Available settings:</p><p>1 - Key pressed 1 time<br />2 - Key pressed 2 times<br />4 - Key pressed 3 times<br />8 - Key Hold Down and Key Released<br /></p><p>Parameter 28 values may be combined, e.g. 1+2=3 means that scenes for single and double click are sent.</p>
         ]]></description>
         <default>0</default>
         <options>
@@ -229,6 +229,7 @@ S1 switch - scenes sent<br /> <h1>Overview</h1><p>This parameter determines whic
           <option value="2">Key pressed 2 times</option>
           <option value="4">Key pressed 3 times</option>
           <option value="8">Key Hold Down and Key Released</option>
+          <option value="15">In all cases a scene ID will be sent</option>
         </options>
         <limitToOptions>false</limitToOptions>
       </parameter>
@@ -236,7 +237,7 @@ S1 switch - scenes sent<br /> <h1>Overview</h1><p>This parameter determines whic
       <parameter name="config_29_1" type="integer" groupName="configuration">
         <label>29: S2 switch - scenes sent</label>
         <description><![CDATA[
-S2 switch - scenes sent<br /> <h1>Overview</h1><p>This parameter determines which actions result in sending scene IDs assigned to them</p>
+S2 switch - scenes sent<br /> <h1>Overview</h1><p>This parameter determines which actions result in sending scene IDs assigned to them.</p><p>Available settings:</p><p>1 - Key pressed 1 time<br />2 - Key pressed 2 times<br />4 - Key pressed 3 times<br />8 - Key Hold Down and Key Released<br /></p><p>Parameter 29 values may be combined, e.g. 1+2=3 means that scenes for single and double click are sent.</p>
         ]]></description>
         <default>0</default>
         <options>
@@ -245,6 +246,7 @@ S2 switch - scenes sent<br /> <h1>Overview</h1><p>This parameter determines whic
           <option value="2">Key pressed 2 times</option>
           <option value="4">Key pressed 3 times</option>
           <option value="8">Key Hold Down and Key Released</option>
+          <option value="15">In all cases a scene ID will be sent</option>
         </options>
         <limitToOptions>false</limitToOptions>
       </parameter>
@@ -261,7 +263,9 @@ S1 switch - associations sent to 2nd and 3rd association groups<br /> <h1>Overvi
           <option value="2">ignore turning OFF with 1 click of the switch</option>
           <option value="4">ignore holding and releasing the switch</option>
           <option value="8">ignore double click of the switch</option>
+          <option value="15">All actions are disabled by default</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_31_2" type="integer" groupName="configuration">
@@ -290,7 +294,7 @@ S1 switch - Switch ON value sent to 2nd and 3rd association groups<br /> <h1>Ove
       <parameter name="config_35_1" type="integer" groupName="configuration">
         <label>35: S2 assocs. sent to 4th and 5th group</label>
         <description><![CDATA[
-S2 switch - associations sent to 4th and 5th association groups<br /> <h1>Overview</h1><p>This parameter determines which actions result in sending commands to devices associated in 4th and 5th association group. All actions are active by default.</p>
+S2 switch - associations sent to 4th and 5th association groups<br /> <h1>Overview</h1><p>This parameter determines which actions result in sending commands to devices associated in 4th and 5th association group. All actions are active by default.<br /></p>
         ]]></description>
         <default>0</default>
         <options>
@@ -299,7 +303,9 @@ S2 switch - associations sent to 4th and 5th association groups<br /> <h1>Overvi
           <option value="2">ignore turning off with 1 click of the switch</option>
           <option value="4">ignore holding and releasing the switch</option>
           <option value="8">ignore double click of the switch</option>
+          <option value="15">All actions are disabled by default</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_36_2" type="integer" groupName="configuration">

@@ -59,6 +59,8 @@ The following table summarises the channels available for the Motion sensor S2 -
 | Binary Sensor | sensor_binary | sensor_binary |  | Switch | 
 | Sensor (luminance) | sensor_luminance | sensor_luminance |  | Number | 
 | Sensor (temperature) | sensor_temperature | sensor_temperature | Temperature | Number:Temperature | 
+| Humidity | sensor_relhumidity | sensor_relhumidity | Humidity | Number | 
+| Burglar | alarm_burglar | alarm_burglar | Door | Switch | 
 | Battery Level | battery-level | system.battery_level | Battery | Number |
 
 ### Binary Sensor
@@ -86,6 +88,23 @@ When the ambient temperature differential is over 0.5°C (in default, and decide
 Indicates the current temperature.
 
 The ```sensor_temperature``` channel is of type ```sensor_temperature``` and supports the ```Number:Temperature``` item and is in the ```Temperature``` category.
+
+### Humidity
+Indicates the current relative humidity.
+
+The ```sensor_relhumidity``` channel is of type ```sensor_relhumidity``` and supports the ```Number``` item and is in the ```Humidity``` category. This is a read only channel so will only be updated following state changes from the device.
+
+### Burglar
+Indicates if the burglar alarm is triggered.
+
+The ```alarm_burglar``` channel is of type ```alarm_burglar``` and supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
+
+The following state translation is provided for this channel to the ```Switch``` item type -:
+
+| Value | Label     |
+|-------|-----------|
+| OFF | OK |
+| ON | Alarm |
 
 ### Battery Level
 Represents the battery level as a percentage (0-100%). Bindings for things supporting battery level in a different format (e.g. 4 levels) should convert to a percentage to provide a consistent battery level reading.

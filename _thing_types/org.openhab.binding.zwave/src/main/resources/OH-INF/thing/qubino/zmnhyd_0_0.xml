@@ -64,7 +64,6 @@ Smart Plug 16A<br /> <h1>Overview</h1><p>This Z-Wave module is used for switchin
       <property name="modelId">ZMNHYD</property>
       <property name="manufacturerId">0159</property>
       <property name="manufacturerRef">0002:0054</property>
-      <property name="versionMax">2.0</property>
       <property name="dbReference">822</property>
       <property name="defaultAssociations">1</property>
     </properties>
