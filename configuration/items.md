@@ -697,7 +697,7 @@ Profiles can be specified as a parameter for a given Channel on the Item configu
 
 There are some built-in Profiles available which are described in the table below.
 
-Some Bindings will may offer additional Profiles for Binding-specific use cases.
+Some Bindings may offer additional Profiles for Binding-specific use cases.
 If this is the case, you will find those within the documentation of the Binding.
 
 Also, all [Transformation Services](/addons/#transform) provide a State Profile which allows you to do the transformation already on item-level instead doing it with a [Sitemap]({{base}}/ui/sitemaps.html).
