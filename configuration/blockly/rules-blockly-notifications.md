@@ -15,12 +15,7 @@ Notifications can be used as push message to devices running the openHAB client.
 
 General information on cloud notification actions can be found [here](https://www.openhab.org/docs/configuration/actions.html#cloud-notification-actions).
 
-{::options toc_levels="2..4"/}
-
-- TOC
-{:toc}
-
-{: #blockly-notifications-overview}
+[[toc]]
 
 ## Overview of the Notification blocks
 

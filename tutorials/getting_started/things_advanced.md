@@ -21,10 +21,7 @@ Instead, it is publishing metrics regularly on a preconfigured MQTT topic in a s
 {"light": 5424, "moisture": 30, "temperature": 21.4, "conductivity": 1020, "battery": 100}
 ```
 
-{::options toc_levels="2..4"/}
-
-- TOC
-{:toc}
+[[toc]]
 
 ## Prerequisites
 

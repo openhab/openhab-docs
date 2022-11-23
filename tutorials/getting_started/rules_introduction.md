@@ -11,10 +11,7 @@ To create home automation we need to define behaviors.
 In openHAB behaviors are defined using rules.
 Almost anything you can think of can be done as long as you have a relevant event to kick it off and access to the data needed to decide what to do.
 
-{::options toc_levels="2..4"/}
-
-- TOC
-{:toc}
+[[toc]]
 
 ## Event Driven
 

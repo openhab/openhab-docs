@@ -8,10 +8,7 @@ title: Pages - Overview Page
 MainUI will automatically generate an Overview page (id:overview).
 This Overview page has four tabs: Overview, Locations, Equipment, and Properties.
 
-{::options toc_levels="2..4"/}
-
-- TOC
-{:toc}
+[[toc]]
 
 ## Overview Page
 

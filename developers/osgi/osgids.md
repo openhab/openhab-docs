@@ -5,17 +5,11 @@ title: OSGi Declarative Services
 
 # Declarative Services
 
-{:.no_toc}
-
 In the [OSGi Overview article](osgi.html) we have mentioned that a bundle can register, unregister, get and unget services from a central point - the Service Registry.
 
 In order to simplify the usage of services the [OSGi Alliance](https://www.osgi.org/about-us/) has developed a model of managing services dynamically called _Declarative Services_.
 
-{::options toc_levels="2"/}
-
-- TOC
-
-{:toc}
+[[toc]]
 
 ## Model & Terms
 

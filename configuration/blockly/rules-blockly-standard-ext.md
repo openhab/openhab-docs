@@ -12,12 +12,7 @@ title: Rules Blockly - openHAB Extensions to the Standard
 
 This section explains only the blocks that have been added to the standard blocks by openHAB
 
-{::options toc_levels="2..4"/}
-
-- TOC
-{:toc}
-
-{: #blockly-standard-extension-overview}
+[[toc]]
 
 ## Logic
 

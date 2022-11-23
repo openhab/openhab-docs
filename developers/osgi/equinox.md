@@ -5,8 +5,6 @@ title: Equinox
 
 # Equinox
 
-{:.no_toc}
-
 [Equinox][Equinox] is considered to be a reference implementation of the [OSGi Core Release 7][OSGi-core].
 It is an [open source project][Equinox-repo], part of the [Eclipse project][Eclipse].
 It provides a set of bundles, that implement various optional OSGi services.
@@ -14,10 +12,7 @@ It provides a set of bundles, that implement various optional OSGi services.
 The openHAB bundles are deployed on an Equinox runtime.
 Knowledge about how to start the runtime and execute basic commands will help you to speedup the development process.
 
-{::options toc_levels="2,3"/}
-
-- TOC
-{:toc}
+[[toc]]
 
 ## Start Equinox Runtime from Eclipse
 

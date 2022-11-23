@@ -7,7 +7,6 @@ title:  Other Services
 
 This is the section of all other services
 
-- TOC
   [[toc]]
 
 ## Rule Voice Interpreter

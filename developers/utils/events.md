@@ -5,8 +5,6 @@ title: Event Bus
 
 # Event Bus
 
-{:.no_toc}
-
 The openHAB framework provides an event bus for inter-component communication.
 The communication is based on events which can be sent and received through the event bus in an asynchronous way.
 Examples of openHAB event types are _ItemCommandEvent_, _ItemStateEvent_, _ItemAddedEvent_, _ThingStatusInfoEvent_, etc.
@@ -14,10 +12,7 @@ Examples of openHAB event types are _ItemCommandEvent_, _ItemStateEvent_, _ItemA
 This section introduces the event API and illustrates how to receive such events.
 Furthermore, the sending of events and the implementation of new event types will be described.
 
-{::options toc_levels="2,3"/}
-
-- TOC
-{:toc}
+[[toc]]
 
 ## API Introduction
 

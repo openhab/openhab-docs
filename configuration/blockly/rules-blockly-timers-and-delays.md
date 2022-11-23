@@ -14,10 +14,7 @@ This chapter explains what these blocks do, sometimes displaying generated code 
 
 More about that topic can be viewed at ![youtube](../images/blockly/youtube-logo-small.png) [Timers](https://youtu.be/hSRfooBKn9A?t=630).
 
-- TOC
-{:toc}
-
-{: #blockly-timers-and-delays-overview}
+[[toc]]
 
 ## Overview of the Timers and Delays category
 

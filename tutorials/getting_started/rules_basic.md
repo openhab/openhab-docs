@@ -10,10 +10,7 @@ This section describes two ways to build and configure rules without code.
 Even though you may not be interested in such simple rules, do not skip this section.
 The concepts presented here will be referred to later on, and the same concepts apply even for text file based rules.
 
-{::options toc_levels="2..4"/}
-
-- TOC
-{:toc}
+[[toc]]
 
 ## Basic Rules
 

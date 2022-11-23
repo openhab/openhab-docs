@@ -15,12 +15,7 @@ However, after some times, you end up writing more and more complex rules, so mo
 This section intends to provide some hints to get started and how to deals with those challenges.
 Please read them carefully before asking questions in the forum.
 
-{::options toc_levels="2..4"/}
-
-- TOC
-{:toc}
-
-{: #blockly-before-uding}
+[[toc]]
 
 ## **OpenHAB Configuration Files**
 

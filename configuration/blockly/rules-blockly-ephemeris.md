@@ -17,10 +17,7 @@ For example, a way to determine if today is a weekend, a bank holiday, someoneâ€
 Definition of holidays can be customised through the _ephemeris.cfg_ file.
 See the [Ephemeris configuration page](https://www.openhab.org/docs/configuration/actions.html#configuration) for more information.
 
-{::options toc_levels="2..4"/}
-
-- TOC
-{:toc}
+[[toc]]
 
 ## Overview of the Ephemeris blocks
 

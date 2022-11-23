@@ -7,10 +7,7 @@ title: macOS
 
 This page is structured as follows:
 
-{::options toc_levels="2..4"/}
-
-- TOC
-{:toc}
+[[toc]]
 
 If you're unfamiliar with using the macOS terminal, then feel free to follow the many guides on the internet. For example:
 

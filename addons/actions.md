@@ -10,10 +10,7 @@ They are automatically imported and can be used to execute openHAB-specific oper
 
 The page is structured as follows:
 
-{::options toc_levels="2..4"/}
-
-- TOC
-{:toc}
+[[toc]]
 
 ## Core Actions
 

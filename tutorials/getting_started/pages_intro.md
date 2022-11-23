@@ -11,10 +11,7 @@ Almost everything that can be configured in openHAB can be configured through Ma
 In addition to being used for the administration of openHAB, MainUI can serve as the interface presented to the users of your home automation system.
 You can find an example of the MainUI on the [demo page](https://demo.openhab.org/#!/).
 
-{::options toc_levels="2..4"/}
-
-- TOC
-{:toc}
+[[toc]]
 
 ## Role Based Access
 
