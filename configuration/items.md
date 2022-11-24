@@ -17,10 +17,7 @@ An Item does not simply store information that is set by software (e.g., `OFF`, 
 But let's not get ahead of ourselves.
 The rest of this page contains details regarding Items and is structured as follows:
 
-{::options toc_levels="2..4"/}
-
-- TOC
-{:toc}
+[[toc]]
 
 ## Introduction
 
@@ -47,8 +44,6 @@ While the way of defining an Item using the graphical, interactive UI is differe
 **Editor Recommendation:**
 It's recommended to edit `.items` files using one of the [openHAB supporting editors]({{base}}/configuration/editors.html).
 Doing so will provide you with full IDE support including features such as syntax checking, and context assistance.
-
-{: #syntax}
 
 ## Item Definition and Syntax
 
@@ -86,8 +81,6 @@ The last example above defines an Item with the following fields:
 - Item is [bound to](/addons/#binding) the openHAB Binding `knx` with binding specific settings ("1/0/15+0/0/15")
 
 The remainder of this article provides additional information regarding Item definition fields.
-
-{: #type}
 
 ### Type
 
@@ -144,8 +137,6 @@ In the example above, if you move the Slider widget to 60%, move the Switch to O
 
 -->
 
-{: #name}
-
 ### Name
 
 The Item name is used to uniquely identify an Item.
@@ -199,8 +190,6 @@ Two naming schemes are established in the community for Group names:
 | "`Livingroom_Lights`" or "`gLR_Light`"    | Group containing all light Items belonging to the living room         |
 | "`Livingroom`" or "`gLR`"                 | Group for _all_ Items (including lights) belonging to the living room |
 
-{: #label}
-
 ### Label
 
 Label text is used to describe an Item in a human-readable way.
@@ -216,14 +205,10 @@ Number Livingroom_Temperature "Temperature [%.1f °C]"
 
 Channel labels can be overwritten by Item definitions and Item labels can be overwritten in [Sitemaps]({{base}}/ui/sitemaps.html#element-types).
 
-{: #state}
-
 ### State
 
 The state of an Item depends on the Item type, the Channel bound to the Item, and internal or external events.
 A analogy can be drawn between the state of an Item and the value of a variable in a computer program.
-
-{: #item-state}
 
 #### Item State
 
@@ -239,8 +224,6 @@ This section provides information about what a user can expect regarding the beh
     The Binding may also set the state to `UNDEF` if an error exists in the binding configuration, or under other conditions
 
 _N.B._  Many openHAB users find that it can be very useful to use [Persistence](/addons/#persistence) and [System started]({{base}}/configuration/rules-dsl.html#system-based-triggers) rules so that their systems behaves in a predictable way after an openHAB restart.
-
-{: #command-vs-status}
 
 #### Command vs. Status
 
@@ -261,8 +244,6 @@ If it is critical that you know that the light came on, you could install a sens
 You could then, through the appropriate Binding, reflect light level changes through a Thing to an Item.
 Then you add the light-level Item to your UI.
 Now when you send the Switch Item command, and you see a corresponding increase in light level in the room, you know for sure that your command has been received and acted upon, because you have a return status Item in your UI.
-
-{: #state-presentation}
 
 #### State Presentation
 
@@ -291,8 +272,6 @@ Number    Livingroom_Clock_Battery "Battery Charge [%d %%]"            // e.g. "
 Location  My_Location              "My Location [%2$s°N %3$s°E %1$sm]" // e.g. "49.26°N 123.19°E 0m"
 ```
 
-{: #state-transformation}
-
 #### State Transformation
 
 Transformations can be used in the state part of an Item, to translate the raw state of an Item into another language, or to convert technical values into human readable information.
@@ -304,8 +283,6 @@ Contact Livingroom_Window "Ventana del salón [MAP(window_esp.map):%s]"
 ```
 
 Please refer to the article on [Transformations](/docs/configuration/transformations.html) for more usage details and a list of available transformation services.
-
-{: #icons}
 
 ### Icons
 
@@ -338,8 +315,6 @@ Please check the user interface documentation if in doubt.
 Note that image files with the wrong file ending will be ignored.
 
 Users may substitute their own icon for an icon from the default icon set by placing a file in the `$OPENHAB_CONF/icons/classic/` folder with the same filename as the name of the icon being substituted.
-
-{: #icons-dynamic}
 
 #### Dynamic Icons
 
@@ -411,8 +386,6 @@ For a dimmable light (0-100%), you might provide icons as in the example:
 
 Just as with regular icons, user-defined dynamic icon sets may be configured via the custom icons folder `$OPENHAB_CONF/icons/classic/`.
 
-{: #groups}
-
 ### Groups
 
 The Group is a special Item type that can be used to define a category or collection into which you can combine other Items or Groups.
@@ -463,8 +436,6 @@ Therefore the addition of `Livingroom_Temperature` to a functional group called 
 Using nested group hierarchies such as these allows a rule to iterate through all sensors on the ground floor for maintenance actions, for example.
 Because of the hierarchical structure of your group items, the rule will be clean and short.
 Additionally, the rule will not need to be modified when a new Item is added to the `Temperatures` group.
-
-{: #group-type}
 
 ### Derive Group State from Member Items
 
@@ -528,8 +499,6 @@ The `EARLIEST` function returns `now().minusDays(10)`, the `LATEST` function ret
 
 The last Group counts all members of it matching the given regular expression, here any character or state (simply counts all members).
 
-{: #tags}
-
 ### Tags
 
 Tags added to an Item definition allow a user to characterize the specific nature of the Item beyond its basic Item type.
@@ -548,8 +517,6 @@ The easiest way to determine if tags have been implemented in a specific add-on 
 Tags will be ignored if no Items in the openHAB installation support it.
 
 See the [Hue Emulation Service](/addons/integrations/hueemulation/) or [HomeKit Add-on](/addons/integrations/homekit/) documentation for more details.
-
-{: #binding}
 
 ### Binding Configuration
 
@@ -625,16 +592,12 @@ Switch Office_PC {
 
 The first example shows a symbiosis of the LG webOS Binding and the Wake-on-LAN Binding to interact with a TV.
 
-{: #parameters}
-
 #### Parameters
 
 While the `channel` parameter is used to link an item to a channel of a thing, it is possible to add further parameters for additional features.
 Parameters are provided as a comma separated list.
 The order of the parameters does not matter.
-  
-{: #autoupdate}
-  
+
 ##### Parameter `autoupdate`
 
 When left as default, openHAB's `autoupdate` function attempts to predict the outcome of a _command_ on the Item _state_.
@@ -648,8 +611,6 @@ Example:
 ```java
 Switch Garage_Gate {channel="xxx", autoupdate="false"}
 ```
-
-{: #expire}
 
 ##### Parameter `expire`
 

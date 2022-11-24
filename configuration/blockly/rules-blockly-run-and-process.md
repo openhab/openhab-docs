@@ -20,12 +20,7 @@ This section contains several possibilities
 
 A Script _is_ a Rule too. It’s just a special type of rule that only has a single script action and a “Script” tag.
 
-{::options toc_levels="2..4"/}
-
-- TOC
-{:toc}
-
-{: #blockly-value-storage-overview}
+[[toc]]
 
 ## Overview of the Run & Process blocks
 

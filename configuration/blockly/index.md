@@ -12,18 +12,11 @@ The usual way of developing rules is by coding them like described in the [Textu
 However, this art of programming may become intimidating early on and shy away away people with few or almost no experience in programming.
 Therefore openHAB also provides a graphical way of writing rules which allows to put together rules in a rather visual way (even though some programming background may still help).
 
-{::options toc_levels="2..4"/}
-
-- TOC
-{:toc}
-
-{: #blockly-introduction}
+[[toc]]
 
 ## Introduction
 
 The basic idea behind the visual paradigm and representation within openHAB is based on the [Google Blockly Support](https://developers.google.com/blockly) which has been integrated and which provides the basic blocks for programming like the ones on the left and the right side of the below images
-
-{: #blockly-toolbox}
 _Blockly toolbox_
 
 ![blockly-toolbox-1](../images/blockly/blockly-toolbox-1.png)![blockly-toolbox-2](../images/blockly/blockly-toolbox-2.png)![blockly-toolbox-3](../images/blockly/blockly-toolbox-3.png)

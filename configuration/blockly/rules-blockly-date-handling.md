@@ -13,12 +13,7 @@ title: Rules Blockly - Date Handling
 Date blocks are used as input parameters for other blocks or can be used to create or compare date.
 With 3.3.0M6 many blocks were introduced to allow complex tasks with dates
 
-{::options toc_levels="2..4"/}
-
-- TOC
-{:toc}
-
-{: #blockly-date-handling-overview}
+[[toc]]
 
 ## Overview of the Date Handling blocks
 

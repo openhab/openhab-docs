@@ -18,10 +18,7 @@ Those that are not embedded require the installation and configuration of a sepa
 
 Note that Persistence only saves Item states.
 
-{::options toc_levels="2..4"/}
-
-- TOC
-{:toc}
+[[toc]]
 
 ## Persistence Concepts
 

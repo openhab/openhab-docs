@@ -33,10 +33,7 @@ The semantic model, when set up correctly, will allow openHAB to turn all lights
 Once created, a model allows one to use [Semantics Actions]({{base}}/configuration/actions.html#semantics) in Rules to e.g. determine the Location of an Item or the related Equipment.
 This will help one create, generalize, and simplify Rules based on patterns and purpose.
 
-{::options toc_levels="2..4"/}
-
-- TOC
-{:toc}
+[[toc]]
 
 ## Introduction to the Ontology and Relationships
 

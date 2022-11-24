@@ -11,10 +11,7 @@ All instructions can be executed in a terminal or remotely via SSH connection.
 
 This page is structured as follows:
 
-{::options toc_levels="2..4"/}
-
-- TOC
-{:toc}
+[[toc]]
 
 If you are unfamiliar with Linux, SSH and the Linux console or if you want to improve your skills, read up on these important topics.
 A lot of helpful articles can be found on the internet, for example:

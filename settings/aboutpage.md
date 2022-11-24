@@ -7,9 +7,6 @@ title:  Help & About Page
 
 The about page shows general information of your openHAB configuration and  allows to configure some client related configuration.
 
-{::options toc_levels="2..4"/}
-
-- TOC
   [[toc]]
 
 ## Top Section

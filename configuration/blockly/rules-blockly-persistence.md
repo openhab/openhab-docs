@@ -15,12 +15,7 @@ For more information on persistence, the default service, and its configuration 
 
 The date-blocks shown in this section are described previously in [Date handling blocks](https://community.openhab.org/t/blockly-reference/128785#date-handling-blocks-31).
 
-{::options toc_levels="2..4"/}
-
-- TOC
-{:toc}
-
-{: #blockly-persistence-overview}
+[[toc]]
 
 ## Overview of the Persistence blocks
 

@@ -10,10 +10,7 @@ Containerization allows one to run a server in its own isolated environment with
 
 This page is structured as follows:
 
-{::options toc_levels="2..4"/}
-
-- TOC
-{:toc}
+[[toc]]
 
 ## Why Docker?
 

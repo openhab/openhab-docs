@@ -20,12 +20,7 @@ Even though (2) is not trivial but after having done that the usage of the funct
 
 More about that topic can be viewed at ![youtube](../images/blockly/youtube-logo-small.png) [Playing sounds on audio sinks](https://youtu.be/EdllUlJ7p6k?t=2035)
 
-{::options toc_levels="2..4"/}
-
-- TOC
-{:toc}
-
-{: #blockly-ephemeris-overview}
+[[toc]]
 
 ## Overview of the Voice and Multimedia blocks
 

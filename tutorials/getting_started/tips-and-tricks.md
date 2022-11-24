@@ -8,10 +8,7 @@ title:  Tips and Tricks
 This section is dedicated to generic tips and tricks to make your use and configuration of openHAB easier.
 They are discussed in no particular order.
 
-{::options toc_levels="2..4"/}
-
-- TOC
-{:toc}
+[[toc]]
 
 ## Backups
 
