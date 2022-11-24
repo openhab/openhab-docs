@@ -22,10 +22,7 @@ Instead it's a higher level example of building a rule step-by-step using Blockl
 
 For this part of the tutorial we will choose "Design with Blockly".
 
-{::options toc_levels="2..4"/}
-
-- TOC
-{:toc}
+[[toc]]
 
 ## Introduction to Blockly
 

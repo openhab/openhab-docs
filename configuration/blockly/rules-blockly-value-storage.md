@@ -21,12 +21,7 @@ Basically a value storage can be perceived as a global variable for the rule ins
 - By default the value is _undefined_.
 To check if a value is undefined, use the special "is undefined"-block
 
-{::options toc_levels="2..4"/}
-
-- TOC
-{:toc}
-
-{: #blockly-value-storage-overview}
+[[toc]]
 
 ## Overview of the Value Storage blocks
 

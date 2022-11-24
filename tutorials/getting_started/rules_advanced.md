@@ -9,10 +9,7 @@ Blockly is super powerful and relatively easy to use but at some point there wil
 Or perhaps the graphical representation is too limiting.
 For what ever reason, openHAB has you covered with text based Script Actions and Script Conditions.
 
-{::options toc_levels="2..4"/}
-
-- TOC
-{:toc}
+[[toc]]
 
 ## Languages
 

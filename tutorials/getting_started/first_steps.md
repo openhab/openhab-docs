@@ -7,10 +7,7 @@ title: Getting Started - First Steps
 
 The following instructions will guide you through the initial steps after first installing openHAB.
 
-{::options toc_levels="2..4"/}
-
-- TOC
-{:toc}
+[[toc]]
 
 ## Create the Admin User
 

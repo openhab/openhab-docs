@@ -13,12 +13,7 @@ title: Rules Blockly - Items & Things
 _Items_ and _Things_ are the [major entities of openHAB](https://www.openhab.org/docs/concepts/) to control and monitor the home.
 These can be accessed via the "Items & Things" section of the [Blockly Toolbox](/docs/configuration/index.html#blockly-toolbox).
 
-{::options toc_levels="2..4"/}
-
-- TOC
-{:toc}
-
-{: #blockly-items-and-things-overview}
+[[toc]]
 
 ## Overview of the Items and Things category
 

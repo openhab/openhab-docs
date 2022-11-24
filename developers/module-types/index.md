@@ -5,14 +5,9 @@ title: Automation Modules
 
 # Developing Automation Modules
 
-{:.no_toc}
-
 In this section you will be guided through developing _Module Types_ and corresponding _Module Handlers_ for the automation engine of openHAB.
 
-{::options toc_levels="2,3"/}
-
-- TOC
-{:toc}
+[[toc]]
 
 ## Module Types and Module Handlers
 

@@ -35,9 +35,6 @@ Note that there is a tabbar at the bottom that allows you to switch between the 
 
 ![addons-toolbar](images/addons-toolbar.png)
 
-{::options toc_levels="2..4"/}
-
-- TOC
   [[toc]]
 
 ## Bindings

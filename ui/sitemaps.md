@@ -16,10 +16,7 @@ Sitemaps are one way to select and compose these elements into a user-oriented r
 
 This page is structured as follows:
 
-{::options toc_levels="2..4"/}
-
-- TOC
-{:toc}
+[[toc]]
 
 Sitemaps are text files with the `.sitemap` extension, and are stored in the `$OPENHAB_CONF/sitemaps` directory.
 Sitemaps follow the syntax described in this article.

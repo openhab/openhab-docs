@@ -11,10 +11,7 @@ A growing number of very impressive custom widgets have been posted to [Add-ons 
 This page provides just a few examples of custom widgets with an emphasis on the overall approach to developing your own.
 For a comprehensive reference on creating widgets, please see the [Building Pages]({{base}}/ui/building-pages.html) guide in the docs.
 
-{::options toc_levels="2..4"/}
-
-- TOC
-{:toc}
+[[toc]]
 
 ## Where to Create Custom Widgets
 

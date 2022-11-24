@@ -2,7 +2,6 @@
 
 openHAB is about home automation, but to create home automation we need to define rules.
 
-- TOC
 [[toc]]
 
 ## What Are Rules

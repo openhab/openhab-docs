@@ -9,10 +9,7 @@ The following instructions will guide you through the process of setting up open
 
 This page is structured as follows:
 
-{::options toc_levels="2..4"/}
-
-- TOC
-{:toc}
+[[toc]]
 
 ## Preparation of the environment
 

@@ -5,8 +5,6 @@ title: Bindings
 
 # Developing a Binding
 
-{:.no_toc}
-
 A binding is an extension to openHAB that integrates an external system like a software service or a hardware device.
 The external system is represented as a set of _Things_ and sometimes _Bridges_ with _Channels_.
 
@@ -17,10 +15,7 @@ It makes sense to briefly read over all sections to make you familiar with what 
 
 During development you might come back with specific questions.
 
-{::options toc_levels="2,3"/}
-
-- TOC
-{:toc}
+[[toc]]
 
 ## Structure of a Binding
 

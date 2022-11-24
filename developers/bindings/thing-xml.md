@@ -5,17 +5,12 @@ title: Thing Descriptions
 
 # Binding Definitions
 
-{:.no_toc}
-
 In order to work with _Things_ and _Channels_, some meta information about them is needed.
 
 These are provided through 'ThingType' and 'ChannelType' definitions,
 which describe details about their functionality and configuration options.
 
-{::options toc_levels="2,3"/}
-
-- TOC
-{:toc}
+[[toc]]
 
 ## ThingTypeProvider / ChannelTypeProvider
 

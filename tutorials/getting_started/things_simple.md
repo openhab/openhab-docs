@@ -20,10 +20,7 @@ This tutorial covers an example of the easiest and most common method for adding
 Scenario: You have some Philips Hue light bulbs connected to an official Hue bridge.
 In this case, the Hue binding supports auto-discovery of both the bridge and the bulbs and other devices attached to it.
 
-{::options toc_levels="2..4"/}
-
-- TOC
-{:toc}
+[[toc]]
 
 ## Install the Binding
 

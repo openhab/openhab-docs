@@ -8,10 +8,7 @@ title: Editors
 Currently there are several existing solutions, that can help you configuring your openHAB instance in a textual way.
 This documentation page can give you some guidance in choosing the right one for you and setting it up.
 
-{::options toc_levels="2..4"/}
-
-- TOC
-{:toc}
+[[toc]]
 
 ## Network Preparations
 
@@ -23,8 +20,6 @@ How to setup and use Samba on a Linux system is described in the [Linux article]
 If you are using [openHABian]({{base}}/installation/openhabian.html), the network shares are readily configured for you, you only need to mount them locally.
 
 _Attention Windows users:_ Directly accessing network shares (UNC paths) is often not supported. Please be sure to mount the network share to a drive letter.
-
-{: #openhab-vscode}
 
 ## openHAB VS Code Extension
 
@@ -49,8 +44,6 @@ This extension has the ability to check rules and validate them through a so cal
 The validation needs a running openHAB installation in your environment and can be activated with some simple steps.
 You can find all important information in the extensions [readme file](https://github.com/openhab/openhab-vscode#validating-the-rules).
 
-{: #others}
-
 ## Other Editor Integrations
 
 The here summarized projects provide syntax highlighting for different text editors, but have no _on top_ functionality.
@@ -59,8 +52,6 @@ The here summarized projects provide syntax highlighting for different text edit
 
 mcedit is an editor which comes with mc (Midnight Commander).
 You can find the syntax files and installation instructions on [openhab-mcedit](https://github.com/CWempe/openhab-mcedit).
-
-{: #notepadpp}
 
 ### Notepad++
 
