@@ -235,8 +235,7 @@ Once again, any changes you make to these files **must be followed with restarti
 ##### Use a client certificate based authentication
 
 You can find a short tutorial in the community forum on how to do so.
-[Using NGINX Reverse Proxy for client certificate authentication]https://community.openhab.org/t/using-nginx-reverse-proxy-for-client-certificate-authentication-start-discussion/43064)
-
+[Using NGINX Reverse Proxy for client certificate authentication](https://community.openhab.org/t/using-nginx-reverse-proxy-for-client-certificate-authentication-start-discussion/43064)
 
 #### Making Exceptions for Specific IP addresses
 
