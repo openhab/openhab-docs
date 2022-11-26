@@ -27,12 +27,6 @@ Select your default service from the drop-down list.
 Note that you must first install a persistence add-on before you make this selection.
 Be sure to save your choice once you have selected your default service.
 
-## Default Persistence Strategy
-
-Once a persistence service is installed it will start to persist Items according to its default strategy. Defaults are documented for each persistence service in their respective [documentation pages](/addons/#persistence).
-
-To overwrite the default strategy with something more appropriate for your setup, read on.
-
 ## Persistence Configuration
 
 The information below allows you to determine which Item states are persisted, when they are persisted, and where they are stored.
@@ -47,7 +41,7 @@ Persistence may also be triggered by a time-related event (see Cron Persistence 
 
 ### Strategies
 
-This section allows you to name and define one or more `Strategies` and to select a default strategy.
+This section allows you to name and define one or more `Strategies`.
 The syntax is as follows:
 
 ```java
@@ -55,14 +49,8 @@ Strategies {
   <strategyName1> : "cronexpression1"
   <strategyName2> : "cronexpression2"
   ...
-  default = everyChange
-  ...
 }
 ```
-
-The `default` parameter assigns a strategy to be used if one is not specified in the `Items` section below.
-The `default` parameter may be omitted from the `Strategies` section, but only if a strategy is provided in each line of the `Items` section.
-If the `strategy` portion of the `itemlist` is omitted in the `Items` section, the `default` strategy specified in the `Strategies` section will be applied.
 
 #### Predefined Strategies
 
@@ -95,26 +83,9 @@ where `<itemlist>` is a comma-separated list consisting of one or more of the fo
 
 - `*` - this line should apply to all items in the system
 - `<itemName>` a single Item identified by its name. This Item can be a group Item.  But note that only the group value will be persisted.  The value of the individual group members will not be persisted using this option.
-- `<groupName>*` - all members of this group will be persisted, but not the group itself. If no strategies are provided, the default strategies that are declared in the first section are applied.
+- `<groupName>*` - all members of this group will be persisted, but not the group itself.
   Optionally, an alias may be provided if the persistence service requires special names (e.g. a table to be used in a database, a feed id for an IoT service, etc.)
   Note that `*` is NOT a wildcard match character in this context.
-
-The example `Items` section below takes advantage of a `default` entry in the  `Strategies` section.
-Assume the `Strategies` section contains the line:
-
-```java
-  default = everyChange
-```
-
-then the following section,
-
-```java
-Items {
-    GF_Hall_Light
-}
-```
-
-will cause the state of `GF_Hall_Light` to be persisted on every change.
 
 Below you will find a complete example persistence configuration file:
 
@@ -123,9 +94,6 @@ Below you will find a complete example persistence configuration file:
 Strategies {
         everyHour : "0 0 * * * ?"
         everyDay  : "0 0 0 * * ?"
-
-        // if no strategy is specified for an Item entry below, the default list will be used
-       default = everyChange
 }
 
 /*
@@ -152,7 +120,8 @@ The following example persists two items on every change and restores them at st
 
 ```java
 Strategies {
-  default = everyUpdate
+        everyHour : "0 0 * * * ?"
+        everyDay  : "0 0 0 * * ?"
 }
 
 Items {
@@ -207,8 +176,7 @@ Here is the full list of available persistence extensions:
 | `<item>.sumSince(ZonedDateTime)`       | Gets the sum of the previous States of a persisted Item since a certain point in time                                                                                      |
 | `<item>.sumBetween(ZonedDateTime, ZonedDateTime)`       | Gets the sum of the previous States of a persisted Item between certain points in time                                                                                      |
 
-These extensions use the default persistence service.
-(Refer to 'Default Persistence Service' above to configure this.)
+These extensions use the [default persistence service](#default-persistence-service).
 You may specify a different persistence service by appending a String as an optional additional parameter at the end of the extension.
 
 ### Examples
