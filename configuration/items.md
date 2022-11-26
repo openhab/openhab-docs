@@ -91,20 +91,22 @@ This optimization is reflected in the data and command types.
 
 Available Item types are:
 
-| Type Name     | Description                                                                                   | Command Types                              |
-|---------------|-----------------------------------------------------------------------------------------------|--------------------------------------------|
-| Color         | Color information (RGB)                                                                       | OnOff, IncreaseDecrease, Percent, HSB      |
-| Contact       | Status of contacts, e.g. door/window contacts. Does not accept commands, only status updates. | OpenClosed                                 |
-| DateTime      | Stores date and time                                                                          | -                                          |
-| Dimmer        | Percentage value for dimmers                                                                  | OnOff, IncreaseDecrease, Percent           |
-| Group         | Item to nest other items / collect them in groups                                             | -                                          |
-| Image         | Binary data of an image                                                                       | -                                          |
-| Location      | GPS coordinates                                                                               | Point                                      |
-| Number        | Values in number format                                                                       | Decimal                                    |
-| Player        | Allows control of players (e.g. audio players)                                                | PlayPause, NextPrevious, RewindFastforward |
-| Rollershutter | Roller shutter Item, typically used for blinds                                                | UpDown, StopMove, Percent                  |
-| String        | Stores texts                                                                                  | String                                     |
-| Switch        | Switch Item, used for anything that needs to be switched ON and OFF                           | OnOff                                      |
+| Item Name          | Description                                                        | Command Types                                       |
+|--------------------|--------------------------------------------------------------------|-----------------------------------------------------|
+| Call               | Identify phone calls                                               | Refresh                                             |
+| Color              | Color information (RGB)                                            | OnOff, IncreaseDecrease, Percent, HSB, Refresh      |
+| Contact            | Item storing status of e.g. door/window contacts                   | OpenClosed, Refresh                                 |
+| DateTime           | Stores date and time                                               | DateTime                                            |
+| Dimmer             | Item carrying a percentage value for dimmers                       | OnOff, IncreaseDecrease, Percent, Refresh           |
+| Group              | Item to nest other Items / collect them in Groups                  | -                                                   |
+| Image              | Holds the binary data of an image                                  | Refresh                                             |
+| Location           | Stores GPS coordinates                                             | Point, Refresh                                      |
+| Number             | Stores values in number format, takes an optional dimension suffix | Decimal, Refresh                                    |
+| Number:<dimension> | like Number, additional dimension information for unit support     | Quantity, Refresh                                   |
+| Player             | Allows to control players (e.g. audio players)                     | PlayPause, NextPrevious, RewindFastforward, Refresh |
+| Rollershutter      | Typically used for blinds                                          | UpDown, StopMove, Percent, Refresh                  |
+| String             | Stores texts                                                       | String, Refresh                                     |
+| Switch             | Typically used for lights (on/off)                                 | OnOff, Refresh                                      |
 
 More details about all of the available Item types and their commands are available under Concepts, see:
 [Item Types Overview]({{base}}/concepts/items.html)
