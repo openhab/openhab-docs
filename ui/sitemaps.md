@@ -29,7 +29,7 @@ You may find it useful to use this file as a starting point in creating a sitema
 
 The following example illustrates what a typical Sitemap definition might look like:
 
-```perl
+```java
 sitemap demo label="My home automation" {
     Frame label="Date" {
         Text item=Date
@@ -57,7 +57,8 @@ A full explanation for this example can be found [at the end of this article](#f
 
 ## Concepts
 
-**Elements:**
+### Elements
+
 Sitemaps are composed by arranging various user interface elements.
 A set of different element types supports a user-friendly and clear presentation.
 The example above contains `Frame`, `Text` and `Switch` elements among others.
@@ -65,35 +66,51 @@ Elements present information, allow interaction and are highly configurable base
 One line of Sitemap element definition produces one corresponding UI element.
 As shown in the example, each element generates a descriptive text next to an icon on the left side and a status and/or interaction elements on the right.
 
-**Parameters:**
-A certain set of parameters can be configured to customize the presentation of an element.
-In the shown example `item`, `label` and `valuecolor` are parameters.
-Almost all parameters are optional, some are however needed to result in a meaningful user interface.
-To avoid very long or unstructured lines of element definition, parameters can be broken down to multiple code lines.
+#### Nested Elements
 
-**Blocks:**
+##### Frames
+
 By encapsulating elements with curly brackets, multiple elements can be nested inside or behind others.
 The `Frame` element type is often used in combination with element blocks.
 Frames are used to visually distinguish multiple elements of the same topic on one interface page.
+
+```java
+Frame label="Date" {
+    Text item=Date
+}
+Frame label="Demo" {
+    Switch item=Lights icon="light"
+    Text item=LR_Temperature label="Livingroom [%.1f °C]"
+    Group item=Heating
+    Text item=LR_Multimedia_Summary label="Multimedia [%s]" icon="video" {
+        Selection item=LR_TV_Channel mappings=[0="off", 1="DasErste", 2="BBC One", 3="Cartoon Network"]
+        Slider item=LR_TV_Volume
+    }
+}
+```
+
+::: tip Note
+When you are using `Frame` elements at one hierarchy level of your sitemap, you can not use any other element type besides `Frame`.
+Different elemnts can be used on the previous or next hierarchy level.
+:::
+
+##### Blocks
+
 When using code blocks behind other element types such as `Text` or `Group`, these UI elements will, in addition to their normal function, be links to a new view, presenting the nested elements.
-In the above example, multiple Frames are defined and some elements are not visible on the main view but are accessible behind their parent element.
-These are indicated by the ">" control icon on the right of an element.
 
-**Dependencies:**
-A typical sitemap contains dozens of individual elements.
-A system state and possible interactions are however often closely dependent.
-openHAB supports these dependencies by providing parameters for dynamic behavior.
-Be sure to check out the [Dynamic Sitemaps](#dynamic-sitemaps) chapter.
+```java
+Text item=LR_Multimedia_Summary label="Multimedia [%s]" icon="video" {
+    Selection item=LR_TV_Channel mappings=[0="off", 1="DasErste", 2="BBC One", 3="Cartoon Network"]
+    Slider item=LR_TV_Volume
+}
+```
 
-For the technically interested: The Sitemap definition language is an
-Xtext Domain Specific Language and the sitemap file model can be found [here](https://github.com/openhab/openhab-core/blob/main/bundles/org.openhab.core.model.sitemap/src/org/openhab/core/model/sitemap/Sitemap.xtext).
-
-### Special Element 'sitemap'
+#### Special Element 'sitemap'
 
 The `sitemap` element is **mandatory** in a Sitemap definition.
 This element shall be the first line in the sitemap file, and the following code block comprises the entire Sitemap definition.
 
-```perl
+```java
 sitemap <sitemapname> label="<title of the main screen>" {
     [all sitemap elements]
 }
@@ -103,6 +120,23 @@ sitemap <sitemapname> label="<title of the main screen>" {
 - `label` is free text and will be shown as the title of the main screen.
 
 (Note that the element `sitemap` is written with a lower case "s".)
+
+### Parameters
+
+A certain set of parameters can be configured to customize the presentation of an element.
+In the shown example `item`, `label` and `valuecolor` are parameters.
+Almost all parameters are optional, some are however needed to result in a meaningful user interface.
+To avoid very long or unstructured lines of element definition, parameters can be broken down to multiple code lines.
+
+### Dependencies
+
+A typical sitemap contains dozens of individual elements.
+A system state and possible interactions are however often closely dependent.
+openHAB supports these dependencies by providing parameters for dynamic behavior.
+Be sure to check out the [Dynamic Sitemaps](#dynamic-sitemaps) chapter.
+
+For the technically interested: The Sitemap definition language is an
+Xtext Domain Specific Language and the sitemap file model can be found [here](https://github.com/openhab/openhab-core/blob/main/bundles/org.openhab.core.model.sitemap/src/org/openhab/core/model/sitemap/Sitemap.xtext).
 
 ## Element Types
 
@@ -171,7 +205,7 @@ UoM = [Units of Measurment]({{base}}/concepts/units-of-measurement.html)
 
 ### Element Type 'Frame'
 
-```perl
+```java
 Frame [label="<labelname>"] [icon="<icon>"] {
     [additional sitemap elements]
 }
@@ -181,7 +215,7 @@ Frames are used to visually separate areas of items when the items are viewed in
 
 **Example:**
 
-```perl
+```java
 Frame label="Demo" {
     Switch item=Lights icon="light"
     //# and so on...
@@ -192,7 +226,7 @@ Frame label="Demo" {
 
 ### Element Type 'Default'
 
-```perl
+```java
 Default item=<itemname> [label="<labelname>"] [icon="<iconname>"]
 ```
 
@@ -201,7 +235,7 @@ E.g., a `Dimmer` Item will be represented as a [Slider](#element-type-slider) el
 
 ### Element Type 'Text'
 
-```perl
+```java
 Text [item=<itemname>] [label="<labelname>"] [icon="<iconname>"]
 ```
 
@@ -211,7 +245,7 @@ Please refer to the documentation on [item State Presentation]({{base}}/configur
 
 **Example:**
 
-```perl
+```java
 Text item=Temperature label="Livingroom [%.1f °C]" icon="temperature"
 ```
 
@@ -219,7 +253,7 @@ Text item=Temperature label="Livingroom [%.1f °C]" icon="temperature"
 
 ### Element Type 'Group'
 
-```perl
+```java
 Group item=<itemname> [label="<labelname>"] [icon="<iconname>"]
 ```
 
@@ -235,7 +269,7 @@ Please see the Blocks section above for information on how to create a custom su
 
 **Example:**
 
-```perl
+```java
 Group item=gTemperature label="Room Temperatures [%.1f °C]"
 ```
 
@@ -243,7 +277,7 @@ Group item=gTemperature label="Room Temperatures [%.1f °C]"
 
 ### Element Type 'Switch'
 
-```perl
+```java
 Switch item=<itemname> [label="<labelname>"] [icon="<iconname>"] [mappings="<mapping definition>"]
 ```
 
@@ -256,7 +290,7 @@ Note that Switch elements can be rendered differently on the user interface, bas
 
 **Examples:**
 
-```perl
+```java
 Switch item=LR_CeilingLight label="Ceiling Light" icon="light"
 Switch item=LR_TV_Channel label="TV Channel" mappings=[0="DasErste", 1="BBC One", 2="Cartoon Network"]
 ```
@@ -266,7 +300,7 @@ Switch item=LR_TV_Channel label="TV Channel" mappings=[0="DasErste", 1="BBC One"
 
 ### Element Type 'Selection'
 
-```perl
+```java
 Selection item=<itemname> [label="<labelname>"] [icon="<iconname>"] [mappings="<mapping definition>"]
 ```
 
@@ -277,7 +311,7 @@ The element type is, in its use cases, similar to a Switch with multiple states 
 
 **Example:**
 
-```perl
+```java
 Selection item=LR_TV_Channel label="TV Channel" mappings=[0="DasErste", 1="BBC One", 2="Cartoon Network"]
 ```
 
@@ -285,7 +319,7 @@ Selection item=LR_TV_Channel label="TV Channel" mappings=[0="DasErste", 1="BBC O
 
 ### Element Type 'Setpoint'
 
-```perl
+```java
 Setpoint item=<itemname> [label="<labelname>"] [icon="<iconname>"] minValue=<min value> maxValue=<max value> step=<step value>
 ```
 
@@ -294,7 +328,7 @@ Setpoint item=<itemname> [label="<labelname>"] [icon="<iconname>"] minValue=<min
 
 **Example:**
 
-```perl
+```java
 Setpoint item=KI_Temperature label="Kitchen [%.1f °C]" minValue=4.5 maxValue=30 step=0.5
 ```
 
@@ -302,7 +336,7 @@ Setpoint item=KI_Temperature label="Kitchen [%.1f °C]" minValue=4.5 maxValue=30
 
 ### Element Type 'Slider'
 
-```perl
+```java
 Slider item=<itemname> [label="<labelname>"] [icon="<iconname>"] [sendFrequency="frequency"] [switchSupport] [minValue=<min value>] [maxValue=<max value>] [step=<step value>]
 ```
 
@@ -320,7 +354,7 @@ This type presents a value as a user-adjustable control which slides from left (
 
 **Example:**
 
-```perl
+```java
 Slider item=KI_Temperature label="Kitchen"
 ```
 
@@ -328,7 +362,7 @@ Slider item=KI_Temperature label="Kitchen"
 
 ### Element Type 'Colorpicker'
 
-```perl
+```java
 Colorpicker item=<itemname> [label="<labelname>"] [icon="<iconname>"] [sendFrequency=<sendFrequency>]
 ```
 
@@ -341,7 +375,7 @@ The middle button opens an overlay to finetune your color. A color wheel let you
 
 **Example:**
 
-```perl
+```java
 Colorpicker item=LR_LEDLight_Color label="LED Light Color" icon="colorwheel"
 ```
 
@@ -349,7 +383,7 @@ Colorpicker item=LR_LEDLight_Color label="LED Light Color" icon="colorwheel"
 
 ### Element Type 'Webview'
 
-```perl
+```java
 Webview item=<itemname> [label="<labelname>"] [icon="<iconname>"] url="<url>" [height=<heightvalue>]
 ```
 
@@ -360,7 +394,7 @@ Please be aware that Webview elements are not usable by all user interface optio
 
 **Example:**
 
-```perl
+```java
 Webview url="https://www.openhab.org" height=5
 ```
 
@@ -368,7 +402,7 @@ Webview url="https://www.openhab.org" height=5
 
 ### Element Type 'Mapview'
 
-```perl
+```java
 Mapview [item=<itemname>] [label="<labelname>"] [icon="<iconname>"] [height=<heightvalue>]
 ```
 
@@ -378,7 +412,7 @@ Displays an [OSM](https://www.openstreetmap.org) map based on a given Location I
 
 **Example:**
 
-```perl
+```java
 Mapview item=Demo_Location height=5
 ```
 
@@ -386,7 +420,7 @@ Mapview item=Demo_Location height=5
 
 ### Element Type 'Image'
 
-```perl
+```java
 Image [item=<itemname>] [icon="<iconname>"] url="<url of image>" [label="<labelname>"] [refresh=xxxx]
 ```
 
@@ -400,7 +434,7 @@ Alternatively, the image file (e.g. YourImageFile.png) may be stored locally in 
 
 **Example:**
 
-```perl
+```java
 Image url="https://raw.githubusercontent.com/wiki/openhab/openhab/images/features.png"
 
 // display a snapshot image from an IP camera, using refresh parameter to get updated images
@@ -411,7 +445,7 @@ Image url="https://192.168.1.203:8080/?action=snapshot" refresh=10000
 
 ### Element Type 'Video'
 
-```perl
+```java
 Video [item=<itemname>] [icon="<iconname>"] url="<url of video to embed>" [encoding="<video encoding>"]
 ```
 
@@ -428,7 +462,7 @@ An embedded and/or protected video is not supported.
 
 **Example:**
 
-```perl
+```java
 Video url="https://demo.openhab.org/Hue.m4v"
 ```
 
@@ -436,7 +470,7 @@ Video url="https://demo.openhab.org/Hue.m4v"
 
 ### Element Type 'Chart'
 
-```perl
+```java
 Chart [item=<itemname>] [icon="<iconname>"] [label="<labelname>"] [refresh=xxxx]
 [period=xxxx] [service="<service>"] [begin=yyyyMMddHHmm] [end=yyyyMMddHHmm] [legend=true/false]
 [forceAsItem=true/false]
@@ -470,7 +504,7 @@ See this [Tutorial](https://community.openhab.org/t/13761/1) for more details.
 
 **Technical constraints and details:**
 
-- When using rrd4j persistence, the strategy `everyMinute` (60 seconds) has to be used. Otherwise no data will be persisted (stored) and the chart will not be drawn properly (see [rrd4j Persistence](/addons/persistence/rrd4j)).
+- When using rrd4j persistence, the strategy `everyMinute` (60 seconds) has to be used. Otherwise no data will be persisted (stored) and the chart will not be drawn projavay (see [rrd4j Persistence](/addons/persistence/rrd4j)).
 - The visibility of multiple Chart objects may be toggled to simulate changing the Chart period; non-visible Chart widgets are NOT generated behind the scenes until they become visible.
 - When charting a group of item, make sure that every label is unique.
 
@@ -480,13 +514,13 @@ Mappings is an optional parameter for the [Switch](#element-type-switch) and [Se
 
 Mapping syntax:
 
-```perl
+```java
 mappings=[value_1="description_1", value_2="description_2", ...]
 ```
 
 Examples:
 
-```perl
+```java
 mappings=[ON="on", OFF="standby"]
 mappings=[1="DasErste", 2="BBC One", 3="Cartoon Network"]
 
@@ -524,7 +558,7 @@ If the parameter is not provided, the default is to display the Item.
 
 Visibility syntax:
 
-```perl
+```java
 visibility=[item_name operator value, item_name operator value, ... ]
 ```
 
@@ -539,7 +573,7 @@ The Item will be visible if any one of the comparisons is evaluated as `true`, o
 
 **Examples:**
 
-```perl
+```java
 Text item=BatteryWarning visibility=[Battery_Level<30]
 Switch item=CinemaLight label="Cinema light" visibility=[TV_Power==ON]
 Switch item=LawnSprinkler visibility=[Day_Time=="Morning", Day_Time=="Afternoon", Temperature>19]
@@ -557,7 +591,7 @@ Colors may be assigned to either the label or the value associated with an Item.
 
 **Label and Value Color Syntax:**
 
-```perl
+```java
 labelcolor=[item_name operator value = "color", ... ]
 valuecolor=[item_name operator value = "color", ... ]
 ```
@@ -575,7 +609,7 @@ The comparison operators for `labelcolor` and `valuecolor` are the same as for t
 
 The following three lines are equivalent.
 
-```perl
+```java
 Text item=Temperature labelcolor=[>0="blue"] valuecolor=[22="green"]
 Text item=Temperature labelcolor=[>0="blue"] valuecolor=[==22="green"]
 Text item=Temperature labelcolor=[>0="blue"] valuecolor=[Temperature==22="green"]
@@ -584,13 +618,13 @@ Text item=Temperature labelcolor=[>0="blue", "gray"] valuecolor=[22="green", "gr
 
 The line below illustrates the importance of operator order:
 
-```perl
+```java
 Text item=Temperature valuecolor=[Last_Update=="Uninitialized"="gray",
                                   >=25="orange", >=15="green", 0="white", <15="blue"]
 ```
 
 Note that expressions are evaluated from left to right; the first matching expression determines the color.
-If the order of the expressions was reversed, the color assignment would not work properly.
+If the order of the expressions was reversed, the color assignment would not work projavay.
 Note also, the effect of omitting `Temperature` and the comparison operator in the expression `0="white"` (as compared to `==0="white"`).
 
 Below is a list of standard colors and their respective RGB color codes.
@@ -638,7 +672,7 @@ Please refer to the documentation on [Item configuration]({{base}}/configuration
 
 <!-- Note to author: If you update this example, remember to copy it to the beginning of this article as well! -->
 
-```perl
+```java
 sitemap demo label="My home automation" {
     Frame label="Date" {
         Text item=Date
