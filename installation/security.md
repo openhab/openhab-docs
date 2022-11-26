@@ -31,6 +31,9 @@ Note that on slow hardware, this certificate generation can take up to several m
 If you wish, you can import your own certificate into this keystore.
 Please ensure that you remove the old certificate and give the new certificate the same alias as the old one (otherwise, the App might still be presented the old certificate).
 
+You can also use certificates to authenticate, when using a reverse proxy.
+Have a lok at the corresponding [section](#use-a-client-certificate-based-authentication) for further information.
+
 ## Authentication and Access Control
 
 openHAB does not (yet) support restricting access through HTTP(S) for certain users - there is no authentication in place, nor is there a limitation of functionality or information that different users can access.
@@ -85,6 +88,7 @@ The good news is that [openHABian](openhabian) already offers the possibility to
   - [Creating the First User](#creating-the-first-user)
   - [Referencing the File in the NGINX Configuration](#referencing-the-file-in-the-nginx-configuration)
   - [Adding or Removing users](#adding-or-removing-users)
+  - [Use a client certificate based authentication](#use-a-client-certificate-based-authentication)
 - [Making Exceptions for Specific IP addresses](#making-exceptions-for-specific-ip-addresses)
 - [Setting up a Domain](#setting-up-a-domain)
 - [Enabling HTTPS](#enabling-https)
@@ -227,6 +231,11 @@ sudo htpasswd -D /etc/nginx/.htpasswd username
 ```
 
 Once again, any changes you make to these files **must be followed with restarting the NGINX service** otherwise no changes will be made.
+
+##### Use a client certificate based authentication
+
+You can find a short tutorial in the community forum on how to do so.
+[Using NGINX Reverse Proxy for client certificate authentication](https://community.openhab.org/t/using-nginx-reverse-proxy-for-client-certificate-authentication-start-discussion/43064)
 
 #### Making Exceptions for Specific IP addresses
 
