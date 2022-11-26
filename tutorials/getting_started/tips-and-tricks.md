@@ -113,6 +113,14 @@ This fourth tab has quick links to create any sort of Object that can be created
 
 ![Create Shortcuts](images/developer-sidebar-create.png)
 
+## Consider the logs
+
+Sometimes you may face errors, even if you tried your best with developing a working solution.
+In cases where the failure can not be found in a fast way you can have a look at the logging output that openHAB provides.
+
+Accessing the logs depends on different factors (e.g. the way you have installed openHAB).
+You can find a overview of how to access and handle logging in the [corresponding article](/docs/administration/logging.html).
+
 ## Save Examples
 
 When you figure out how to do something tricky in rules that you may want to use again, create a Script with an example.
