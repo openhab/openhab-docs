@@ -446,6 +446,19 @@ This user will later serve to execute the openHAB runtime with restricted permis
 sudo adduser --system --no-create-home --group --disabled-login openhab
 ```
 
+:::tip note
+The needed command syntax may vary based on the distribution you ar using.
+
+Below there is an example for fedora besed systems:
+
+```shell
+sudo adduser --system --no-create-home --user-group --disabled-login openhab
+```
+
+So make sure to check the allowed command parameters in case of any errors.
+
+:::
+
 We are going to download a platform independent archive file and extract it to the path `/opt/openhab`.
 Choose between the latest Beta release or a Snapshot with all incoming contributions, created daily.
 As openHAB is still in an evolving state, the snapshot may be the **preferred choice**.
