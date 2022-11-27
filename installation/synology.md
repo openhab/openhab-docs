@@ -46,7 +46,14 @@ In this case we need the 1032 as the user and the 65539 as the group. Write them
 
 ## Docker
 
-DSM 7 does not longer support Java 11 directly and therefor openHAB has to run in a Docker container.
+:::tip Note
+DSM 7 does not longer support Java 11 directly.
+You either have to run openHAB in a Docker container or have to take care of a properly installed Java 11 runtime on your own.
+
+The following poart shows the Docker based installation.
+You may also get Java 11 via [community package](https://synocommunity.com/package/java-11-openjdk) and go own with the manual for [older DSM Versions](#older-synology-diskstations-till-dsm-6).
+:::
+
 And that also makes the installation easier to maintain.
 It works out of the box a bit different then the normal Docker installation as described in de openHAB documententation.
 Docker is a containerization platform and is used to run lightweight containers.
