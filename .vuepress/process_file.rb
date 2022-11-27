@@ -106,9 +106,11 @@ def process_file(indir, file, outdir, source)
 
             # Actions and transformations are currently partly in add-ons, copy the content above the list of add-ons
             if line =~ /^More details regarding this and other Transformation services can be found in the individual transformation articles linked below./
+                out.puts ""
                 out.puts ":::tip"
                 out.puts "You can find the aviable transformation services [here](https://www.openhab.org/addons/#transform)."
                 out.puts ":::"
+                out.puts ""
                 break
             end
 
