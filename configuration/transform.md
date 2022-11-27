@@ -15,7 +15,3 @@ Be aware that a transformation service just as any other openHAB add-on needs to
 The configuration folder `$OPENHAB_CONF/transform` is home for Transformation service files.
 Those files contain service specific data or logic and their syntax depends on the Transformation service.
 Some but not all Transformation services rely on such additional files.
-
-:::tip
-You can find the aviable transformation services [here](https://www.openhab.org/addons/#transform).
-:::
