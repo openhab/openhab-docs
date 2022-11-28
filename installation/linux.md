@@ -447,7 +447,7 @@ sudo adduser --system --no-create-home --group --disabled-login openhab
 ```
 
 :::tip note
-The needed command syntax may vary based on the distribution you ar using.
+The needed command syntax may vary based on the distribution you are using.
 
 Below there is an example for fedora besed systems:
 
