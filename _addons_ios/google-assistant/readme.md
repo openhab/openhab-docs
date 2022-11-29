@@ -15,40 +15,13 @@ With the Action you can voice control your openHAB items and it supports lights,
 
 If you have any issues, questions or an idea for additional features, please take a look at the [repository on GitHub](https://github.com/openhab/openhab-google-assistant).
 
-## Table of Contents
-
-- [Latest Changes](#latest-changes)
-- [General Configuration](#general-configuration)
-- [Item Configuration](#item-configuration)
-  - [`Switch`](#switch)
-  - [`Light`](#light)
-  - [`Light` as Group with separate Controls](#light-as-group-with-separate-controls)
-  - [`Scene`](#scene)
-  - [`Outlet`, `Coffee_Maker`, `WaterHeater`, `Fireplace`](#outlet-coffee_maker-waterheater-fireplace)
-  - [`Valve`](#valve)
-  - [`Sprinkler`, `Vacuum`](#sprinkler-vacuum)
-  - [`Lock`](#lock)
-  - [`SecuritySystem` as Switch](#securitysystem-as-switch)
-  - [`SecuritySystem` as Group with advanced functionality](#securitysystem-as-group-with-advanced-functionality)
-  - [`Camera`](#camera)
-  - [`Speaker` (volume control only)](#speaker-volume-control-only)
-  - [`TV`](#tv)
-  - [`Fan`, `Hood`, `AirPurifier`](#fan-hood-airpurifier)
-  - [`Awning`, `Blinds`, `Curtain`, `Door`, `Garage`, `Gate`, `Pergola`, `Shutter`, `Window`](#awning-blinds-curtain-door-garage-gate-pergola-shutter-window)
-  - [`Charger`](#charger)
-  - [`TemperatureSensor`](#temperaturesensor)
-  - [`Thermostat`](#thermostat)
-  - [`Sensor`](#sensor)
-- [Additional Configuration](#additional-configuration)
-  - [Two-Factor-Authentication](#two-factor-authentication)
-- [Setup \& Usage of the Google Home App](#setup--usage-of-the-google-home-app)
-- [Example Voice Commands](#example-voice-commands)
-- [Frequently Asked Question](#frequently-asked-question)
+[[toc]]
 
 ## Latest Changes
 
 ::: tip State of this document
-This documentation refers to release [v3.5.1](https://github.com/openhab/openhab-google-assistant/releases/tag/v3.5.1) of [openHAB Google Assistant](https://github.com/openhab/openhab-google-assistant) published on 2022-11-09 :::
+This documentation refers to release [v3.5.1](https://github.com/openhab/openhab-google-assistant/releases/tag/v3.5.1) of [openHAB Google Assistant](https://github.com/openhab/openhab-google-assistant) published on 2022-11-09
+:::
 
 - `ga="light"` for SpecialColorLight is replaced by `ga="specialcolorlight"`
 - `useKelvin=true` is replaced by `colorUnit="kelvin"`
@@ -73,7 +46,7 @@ Currently the following devices are supported (also depending on Google's API ca
 
 _Hint: The value of `ga` is **not** case-sensitive._
 
-### `Switch`
+### Switch
 
 | | |
 |---|---|
@@ -88,7 +61,7 @@ _Hint: The value of `ga` is **not** case-sensitive._
 Switch { ga="Switch" [ inverted=false ] }
 ```
 
-### `Light`
+### Light
 
 | | |
 |---|---|
@@ -103,7 +76,7 @@ Dimmer { ga="Light" }
 Color  { ga="Light" [ colorTemperatureRange="2000,9000" ] }
 ```
 
-### `Light` as Group with separate controls
+### Light as Group with separate controls
 
 | | |
 |---|---|
@@ -120,7 +93,26 @@ Color  colorItem            (lightGroup) { ga="lightColor" }
 Number colorTemperatureItem (lightGroup) { ga="lightColorTemperature" }
 ```
 
-### `Scene`
+In case you want to control multiple lights using one device with Google Assistant, you can apply the following pattern:
+
+```shell
+Group        lightGroup { ga="SpecialColorLight" [ colorUnit="kelvin", colorTemperatureRange="2000,9000" ] }
+Group:Switch powerItems      (lightGroup) { ga="lightPower" }
+Group:Dimmer brightnessItems (lightGroup) { ga="lightBrightness" }
+Group:Color  colorItems      (lightGroup) { ga="lightColor" }
+...
+Switch powerItem1            (powerItems)
+Switch powerItem2            (powerItems)
+...
+Dimmer brightnessItem1       (brightnessItems)
+Dimmer brightnessItem2       (brightnessItems)
+...
+Color colorItem1             (colorItems)
+Color colorItem2             (colorItems)
+...
+```
+
+### Scene
 
 | | |
 |---|---|
@@ -133,7 +125,7 @@ Number colorTemperatureItem (lightGroup) { ga="lightColorTemperature" }
 Switch { ga="Scene" [ sceneReversible=false ] }
 ```
 
-### `Outlet`, `Coffee_Maker`, `WaterHeater`, `Fireplace`
+### Outlet, Coffee_Maker, WaterHeater, Fireplace
 
 | | |
 |---|---|
@@ -149,7 +141,7 @@ Switch { ga="WaterHeater" [ inverted=false ] }
 Switch { ga="Fireplace" }
 ```
 
-### `Valve`
+### Valve
 
 | | |
 |---|---|
@@ -162,7 +154,7 @@ Switch { ga="Fireplace" }
 Switch { ga="Valve" [ inverted=true ] }
 ```
 
-### `Sprinkler`, `Vacuum`
+### Sprinkler, Vacuum
 
 | | |
 |---|---|
@@ -176,7 +168,7 @@ Switch { ga="Sprinkler" [ inverted=true ] }
 Switch { ga="Vacuum" [ inverted=false ] }
 ```
 
-### `Lock`
+### Lock
 
 | | |
 |---|---|
@@ -190,7 +182,7 @@ Switch { ga="Lock" [ ackNeeded=true ] }
 Switch { ga="Lock" [ pinNeeded="1234" ] }
 ```
 
-### `SecuritySystem` as Switch
+### SecuritySystem as Switch
 
 | | |
 |---|---|
@@ -209,7 +201,7 @@ Google Command: "_Hey Google, arm House Alarm_" OR "_Hey Google, disarm House Al
 Switch houseAlarm "House Alarm" { ga="SecuritySystem", pinNeeded="1234" }
 ```
 
-### `SecuritySystem` as Group with advanced functionality
+### SecuritySystem as Group with advanced functionality
 
 | | |
 |---|---|
@@ -251,7 +243,7 @@ String  alarmTroubleErrorCode (gHouseAlarm) { ga="securitySystemTroubleCode" }
 Contact frontDoorSensor       (gHouseAlarm) { ga="securitySystemZone" [ zoneType="OpenClose", blocking="true" ] }
 ```
 
-### `Camera`
+### Camera
 
 | | |
 |---|---|
@@ -264,7 +256,7 @@ Contact frontDoorSensor       (gHouseAlarm) { ga="securitySystemZone" [ zoneType
 String { ga="Camera" [ protocols="hls,dash" ] }
 ```
 
-### `Speaker` (volume control only)
+### Speaker (volume control only)
 
 | | |
 |---|---|
@@ -277,7 +269,7 @@ String { ga="Camera" [ protocols="hls,dash" ] }
 Dimmer { ga="Speaker" [ volumeDefaultPercentage="50", levelStepSize="10", volumeMaxLevel="90" ] }
 ```
 
-### `TV`
+### TV
 
 | | |
 |---|---|
@@ -297,7 +289,7 @@ String applicationItem (tvGroup) { ga="tvApplication" }
 Player transportItem   (tvGroup) { ga="tvTransport" }
 ```
 
-### `Fan`, `Hood`, `AirPurifier`
+### Fan, Hood, AirPurifier
 
 | | |
 |---|---|
@@ -320,7 +312,7 @@ Switch { ga="Hood" }
 Dimmer { ga="AirPurifier" [ speeds="0=off,50=mid,100=high" ] }
 ```
 
-### `Awning`, `Blinds`, `Curtain`, `Door`, `Garage`, `Gate`, `Pergola`, `Shutter`, `Window`
+### Awning, Blinds, Curtain, Door, Garage, Gate, Pergola, Shutter, Window
 
 | | |
 |---|---|
@@ -348,7 +340,7 @@ Rollershutter { ga="Shutter" }
 Rollershutter { ga="Window" }
 ```
 
-### `Charger`
+### Charger
 
 | | |
 |---|---|
@@ -371,7 +363,7 @@ Number capacityRemainItem   (chargerGroup) { ga="chargerCapacityRemaining" }
 Number capacityFullItem     (chargerGroup) { ga="chargerCapacityUntilFull" }
 ```
 
-### `TemperatureSensor`
+### TemperatureSensor
 
 | | |
 |---|---|
@@ -384,7 +376,7 @@ Number capacityFullItem     (chargerGroup) { ga="chargerCapacityUntilFull" }
 Number { ga="TemperatureSensor" [ useFahrenheit=true ] }
 ```
 
-### `Thermostat`
+### Thermostat
 
 | | |
 |---|---|
@@ -417,7 +409,7 @@ Number setpointItemHigh (thermostatGroup) { ga="thermostatTemperatureSetpointHig
 String modeItem         (thermostatGroup) { ga="thermostatMode" }
 ```
 
-### `Sensor`
+### Sensor
 
 | | |
 |---|---|
