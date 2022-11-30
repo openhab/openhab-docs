@@ -147,7 +147,7 @@ To modify the stored log levels, use the console or edit the [configuration file
 
 There are times, especially when troubleshooting rules, when it can be helpful to log information or Item state values.
 
-For each log level there is an corresponding command for creating log entries.
+For each log level there is a corresponding command for creating log entries.
 You may use these log levels to filter or better differentiate the generated logging output.
 The logging commands require two parameters: the subpackage, in the examples below `heating`, and the text which should appear in the log:
 

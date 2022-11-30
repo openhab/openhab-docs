@@ -182,7 +182,7 @@ This provides the flexibility to present Items in the way desired in your home a
     Setting a value for `label` or `icon` of a Sitemap element will override the values defined for the linked Item.
 
 It has to be considered that if the label defined in a Channel or an Item contains text and state, these representations have to be overwritten separately in the Sitemap.
-In the following example a Item which has a label and state defined is overwritten.
+In the following example an Item which has a label and state defined is overwritten.
 
 ```java
 sitemap demo label="My home automation" {

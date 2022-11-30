@@ -11,7 +11,7 @@ At its core, there is the notion of an _audio stream_.
 Audio streams are provided by _audio sources_ and consumed by _audio sinks_.
 Each binding for handling and controlling audio services can implement an audio sink to provide their supported devices to the framework to be used as sound output.
 
-An audio sink is identified by an unique id which in general is similar to the thing type id.
+An audio sink is identified by a unique id which in general is similar to the thing type id.
 The framework itself can handle multiple audio sinks at the same time.
 
 ## Build-in Audio Sinks

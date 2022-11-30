@@ -119,7 +119,7 @@ Sometimes you may face errors, even if you tried your best with developing a wor
 In cases where the failure can not be found in a fast way you can have a look at the logging output that openHAB provides.
 
 Accessing the logs depends on different factors (e.g. the way you have installed openHAB).
-You can find a overview of how to access and handle logging in the [corresponding article](/docs/administration/logging.html).
+You can find an overview of how to access and handle logging in the [corresponding article](/docs/administration/logging.html).
 
 ## Save Examples
 
