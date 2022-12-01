@@ -85,7 +85,7 @@ In case you want to activate audio on multiple devices, each device needs to be 
 Technically, this information (and all the other miscellaneous settings) are stored in the local storage of the browser.
 - For me information [see here](https://github.com/openhab/openhab-webui/pull/1422)
 
-To test if it works play some static content that comes with openHAB in the /sounds dir using a openHAB console command.
+To test if it works play some static content that comes with openHAB in the /sounds dir using an openHAB console command.
 Use [openHABs console](/administration/console.html#using-the-console) or just run the following from the linux shell:
 
 > openhab-cli console

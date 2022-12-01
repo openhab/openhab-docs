@@ -75,7 +75,7 @@ sudo chown -R openhab:openhab /opt/openhab
 ### Running the Container as a Service Managed by Docker
 
 Note, always review the README on [Docker Hub](https://hub.docker.com/r/openhab/openhab/) for the most up to date set of recommended arguments and environment variables.
-Services can be run an maintained on a Linux machine one of two ways, using Docker or using the system's built in service management (e.g. systemd).
+Services can be run and maintained on a Linux machine one of two ways, using Docker or using the system's built in service management (e.g. systemd).
 If using Docker to manage the service, run the following command:
 
 :::: tabs

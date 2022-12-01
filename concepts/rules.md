@@ -114,7 +114,7 @@ Time Triggers are provided as described in the table below, support may vary on 
 | Trigger          | Description                                                                                                                   |
 |------------------|-------------------------------------------------------------------------------------------------------------------------------|
 | cron expressions | cron allows you to create nearly any schedule you can think of, e.g. every second sunday in November and December at 04:05 h. |
-| Time is Item     | It is a date and a time specified in an DateTime Item.                                                                        |
+| Time is Item     | It is a date and a time specified in a DateTime Item.                                                                        |
 | Time of Day      | It is a fixed time of the day, e.g. 09:00 h.                                                                                  |
 
 Time triggers do not provide any information in the [Available Values](#available-values).

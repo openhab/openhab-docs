@@ -52,7 +52,7 @@ In case of floorplans, the background will be a custom image defined by you; in 
 [**Chart**](./chart-pages.html) pages are meant for interactive visualization of persisted data in the main UI.
 Options include displaying time series, aggregates, heatmaps, calendars, with the ability to select the period and date to show.
 
-You can either start them from scratch by creating a new Chart page from the Pages section, or, when in the Analyzer, you can save the result of a analyzing session to a chart page for further customization and retaining the current view.
+You can either start them from scratch by creating a new Chart page from the Pages section, or, when in the Analyzer, you can save the result of an analyzing session to a chart page for further customization and retaining the current view.
 
 ### Tabbed Pages
 

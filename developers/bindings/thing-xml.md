@@ -823,7 +823,7 @@ The full Java API for bridge and _Thing_ descriptions can be found in the Java p
 | options                       | A list defining the possible commands | optional |
 | option                        | The description for the option | optional |
 | option.value                  | The value for the option. This is the actual command send to the channel. | mandatory |
-| event                         | The restrictions of an trigger event which gives information how to interpret it | optional |
+| event                         | The restrictions of a trigger event which gives information how to interpret it | optional |
 | autoUpdatePolicy              | The auto update policy to use | optional |
 | config-description            | The configuration description for the channel within the ConfigDescriptionRegistry | optional |
 | config-description-ref        | The reference to a configuration description for the channel within the ConfigDescriptionRegistry | optional |
