@@ -97,9 +97,9 @@ The [tasks.json](examples/vscode/tasks.json) defines the following tasks that yo
 
 1. **Start openHAB (Debug)** - this task will start a new instance of openHAB in debug mode (allowing VSCode to connect to it).  Please shut down any other instances of openHAB prior to running this (see next task).  This will open a **new** terminal for openHAB to run in.  Formally, this will call `start.bat debug` (or `start.sh debug` on macOS/Linux) in the `openhab_home` directory.
 1. **Stop openHAB** - this task will stop any running instance.  Please note this will stop an instance started outside of VSCode as well on the same machine.  Formally, this will call `stop.bat` (or `stop.sh` on macOS/Linux) in the `openhab_runtime/bin` directory.
-1. **mvn Compile (Online)** - this task will run a online Maven compile skipping code checks.  Formally, will run `mvn clean install -DskipChecks`
-1. **mvn Compile (Offline)** - this task will run a offline Maven compile skipping code checks (assumes you have run a online compile atleast once).  Formally, will run `mvn -o clean install -DskipChecks`
-1. **mvn Compile (Release)** - this task will run a online Maven compile with code checks.  Formally, will run `mvn clean install`
+1. **mvn Compile (Online)** - this task will run an online Maven compile skipping code checks.  Formally, will run `mvn clean install -DskipChecks`
+1. **mvn Compile (Offline)** - this task will run an offline Maven compile skipping code checks (assumes you have run an online compile atleast once).  Formally, will run `mvn -o clean install -DskipChecks`
+1. **mvn Compile (Release)** - this task will run an online Maven compile with code checks.  Formally, will run `mvn clean install`
 1. **Copy Distribution to Addons** - this task will run the 'mvn Compile (Offline)' task and then copy the resulting target file (as defined by `dist`) to your openHAB addons directory (defined by `openhab_addons`)
 1. **Build** - this is an alias for `Copy Distribution to Addons` task.
 1. **Tail events.log** - this will tail the events.log in a new terminal.

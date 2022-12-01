@@ -75,7 +75,7 @@ In case this happens the more robust approach is as follows
 
 ![play-stream](../images/blockly/blockly-play-stream.png)
 
-_Function:_ Starts an stream playing on an audio sink
+_Function:_ Starts a stream playing on an audio sink
 
 - The audio streams must be reachable from the openHAB server and can therefore be either internally or externally hosted
 - All available audio sinks are automatically provided by openHAB's blocklies

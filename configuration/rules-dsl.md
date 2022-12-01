@@ -693,7 +693,7 @@ val itemvalue = new java.math.BigDecimal(Integer::parseInt(myHexValue, 16))
 
 ##### Switch Item
 
-A Switch Item carries a OnOffType.
+A Switch Item carries an OnOffType.
 OnOffType is an Enumeration.
 One can convert from ON and OFF to 1 and 0 with code similar to:
 
