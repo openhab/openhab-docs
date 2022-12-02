@@ -167,12 +167,12 @@ So in Rules where the Rule needs to know what the command was, use the `received
 
 ### Time-based Triggers
 
-You can either use some pre-defined expressions for timers or use a [cron expression](https://www.quartz-scheduler.org/documentation/quartz-2.2.2/tutorials/tutorial-lesson-06.html) instead:
+You can either use some pre-defined expressions for timers or use a [cron expression](https://www.quartz-scheduler.org/documentation/quartz-2.2.2/tutorials/tutorial-lesson-06.html) or an item instead:
 
 ```java
 Time is midnight
 Time is noon
-Time is <item>
+Time is <item> [timeOnly]
 Time cron "<cron expression>"
 ```
 
@@ -187,6 +187,8 @@ A cron expression takes the form of six or optionally seven fields:
 1. Year (optional field)
 
 You may use the generator at [FreeFormatter.com](https://www.freeformatter.com/cron-expression-generator-quartz.html) to generate your cron expressions.
+
+When using an item and you want to ignore the date-portion of that item the `timeOnly` option can be used.
 
 ### System-based Triggers
 
