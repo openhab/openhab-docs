@@ -84,3 +84,48 @@ Be aware that a transformation service just as any other openHAB add-on needs to
     {% endfor %}
  </tbody>
 </table>
+
+### `SCRIPT` Transformation
+
+The `SCRIPT` transformation is available from the framework and needs no additional installation.
+It allows transforming values using any of the available scripting languages in openHAB (JSR-223 or DSL).
+
+The script needs to be placed in the `$OPENHAB_CONF/transform` folder with an extension `.script` regardless of the actual script type.
+When referencing a transformation, the script type must be prepended to the filename (e.g. `dsl:stringlength` for the DSL version of `stringlength.script`).
+Please note that you cannot have transformations with the same name and different languages as the file-extension is always `script`.
+
+The input value is injected into the script context as a string variable `input`.
+The result needs to be returned from the script, it can have be `null` or value of type that properly implements `.toString()`.
+Additional parameters can be injected in the script by adding them to the script identifier in URL style (`js:scale?correctionFactor=1.1&divider=10` would also inject `correctionFactor` and `divider`).
+
+The examples show a simple transformation with the same functionality for some languages.
+It takes the length of the input string and e.g. returns `String has 5 characters`.
+
+:::: tabs
+
+::: tab DSL
+
+The script-prefix is `dsl`.
+
+```
+var returnValue = "String has " + input.length + " characters"
+
+returnValue
+```
+
+:::
+
+::: tab Nashorn JS
+
+The script-prefix is `js`
+
+```
+(function(data) {
+	var returnValue = "String has " + data.length + " characters"
+	return returnValue
+})(input)
+```
+
+:::
+
+::::
