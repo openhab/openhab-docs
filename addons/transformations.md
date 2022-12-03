@@ -129,3 +129,5 @@ The script-prefix is `js`
 :::
 
 ::::
+
+Currently the `SCRIPT` transformation is not available as profile.
