@@ -32,7 +32,7 @@ Devolo Thermostat (09356)<br /> <h1>Overview</h1><p>Radiator Thermostat</p> <br 
         </properties>
       </channel>
       <channel id="time_offset" typeId="time_offset">
-        <label>Clock Time Offset</label>
+        <label>Clock Time offset</label>
         <properties>
           <property name="binding:*:DecimalType">COMMAND_CLASS_CLOCK</property>
         </properties>
