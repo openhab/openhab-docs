@@ -82,7 +82,7 @@ It takes the length of the input string and e.g. returns `String has 5 character
 
 The script-prefix is `dsl`.
 
-```
+```java
 var returnValue = "String has " + input.length + " characters"
 
 returnValue
@@ -94,10 +94,10 @@ returnValue
 
 The script-prefix is `js`
 
-```
+```java
 (function(data) {
-	var returnValue = "String has " + data.length + " characters"
-	return returnValue
+  var returnValue = "String has " + data.length + " characters"
+  return returnValue
 })(input)
 ```
 
