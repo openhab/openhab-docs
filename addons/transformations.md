@@ -59,33 +59,8 @@ Transformation files need to be placed in the directory `$OPENHAB_CONF/transform
     Transformations can be associated with channels, working on data being passed between bindings and Items. See [profile documentation]({{base}}/configuration/items.html#profiles) for more detail.
 
 To keep these examples simple, the contents of the referenced files `window_esp.map` and `convert-C-to-F.js` were left out.
-More details regarding this and other Transformation services can be found in the individual transformation articles linked below.
 
-## Available Transformations
-
-Be aware that a transformation service just as any other openHAB add-on needs to be installed prior to first usage.
-
-<table id="transformations-overview" class="bordered addon-table">
-  <thead>
-    <tr>
-      <th data-field="label" width="20%">Name</th>
-      <th data-field="description">Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    {% for transformation in site.addons_transformations %}
-    <tr class="install-{{transformation.install}} since-{{transformation.since}}">
-      <td>
-        <h4><a href="{{base}}{{transformation.url}}">{% if transformation.logo %}<img class="logo" src="{{base}}/{{transformation.logo}}" title="{{ transformation.label }}" alt="{{ transformation.label }}" />{% else %}{{ transformation.label }}{% endif %}</a></h4>
-        <img src="{{base}}/images/tag-install-{{transformation.install}}.svg">
-      </td>
-      <td>{{ transformation.description | markdownify }}</td>
-    </tr>
-    {% endfor %}
- </tbody>
-</table>
-
-### `SCRIPT` Transformation
+## `SCRIPT` Transformation
 
 The `SCRIPT` transformation is available from the framework and needs no additional installation.
 It allows transforming values using any of the available scripting languages in openHAB (JSR-223 or DSL).
@@ -131,3 +106,29 @@ The script-prefix is `js`
 ::::
 
 Currently the `SCRIPT` transformation is not available as profile.
+
+More details regarding this and other Transformation services can be found in the individual transformation articles linked below.
+
+## Available Transformations
+
+Be aware that a transformation service just as any other openHAB add-on needs to be installed prior to first usage.
+
+<table id="transformations-overview" class="bordered addon-table">
+  <thead>
+    <tr>
+      <th data-field="label" width="20%">Name</th>
+      <th data-field="description">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for transformation in site.addons_transformations %}
+    <tr class="install-{{transformation.install}} since-{{transformation.since}}">
+      <td>
+        <h4><a href="{{base}}{{transformation.url}}">{% if transformation.logo %}<img class="logo" src="{{base}}/{{transformation.logo}}" title="{{ transformation.label }}" alt="{{ transformation.label }}" />{% else %}{{ transformation.label }}{% endif %}</a></h4>
+        <img src="{{base}}/images/tag-install-{{transformation.install}}.svg">
+      </td>
+      <td>{{ transformation.description | markdownify }}</td>
+    </tr>
+    {% endfor %}
+ </tbody>
+</table>
