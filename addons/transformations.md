@@ -66,15 +66,17 @@ The `SCRIPT` transformation is available from the framework and needs no additio
 It allows transforming values using any of the available scripting languages in openHAB (JSR-223 or DSL).
 
 The script needs to be placed in the `$OPENHAB_CONF/transform` folder with an extension `.script` regardless of the actual script type.
-When referencing a transformation, the script type must be prepended to the filename (e.g. `dsl:stringlength` for the DSL version of `stringlength.script`).
+When referencing a transformation, the script type must be prepended to the filename (e.g. `dsl:stringlength.script` for the DSL version of `stringlength.script`).
 Please note that you cannot have transformations with the same name and different languages as the file-extension is always `script`.
+The script type depends on the scripting engine used, it is usually either the file extension or the MIME-type of the scripts.
 
 The input value is injected into the script context as a string variable `input`.
-The result needs to be returned from the script, it can have be `null` or value of type that properly implements `.toString()`.
-Additional parameters can be injected in the script by adding them to the script identifier in URL style (`js:scale?correctionFactor=1.1&divider=10` would also inject `correctionFactor` and `divider`).
+The result needs to be returned from the script, it can be `null` or a value of a type that properly implements `.toString()`.
+Additional parameters can be injected in the script by adding them to the script identifier in URL style (`js.script:scale?correctionFactor=1.1&divider=10` would also inject `correctionFactor` and `divider`).
 
 The examples show a simple transformation with the same functionality for some languages.
 It takes the length of the input string and e.g. returns `String has 5 characters`.
+Given the filename `stringlength.script`, the transformation pattern is `SCRIPT(<script-type>:stringlength.script):%s`.
 
 :::: tabs
 
@@ -92,9 +94,9 @@ returnValue
 
 ::: tab Nashorn JS
 
-The script-prefix is `js`
+The script-prefix is `js`.
 
-```java
+```javascript
 (function(data) {
   var returnValue = "String has " + data.length + " characters"
   return returnValue
