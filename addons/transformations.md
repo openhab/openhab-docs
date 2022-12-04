@@ -66,7 +66,7 @@ The `SCRIPT` transformation is available from the framework and needs no additio
 It allows transforming values using any of the available scripting languages in openHAB (JSR-223 or DSL).
 
 The script needs to be placed in the `$OPENHAB_CONF/transform` folder with an extension `.script` regardless of the actual script type.
-When referencing a transformation, the script type must be prepended to the filename (e.g. `dsl:stringlength` for the DSL version of `stringlength.script`).
+When referencing a transformation, the script type must be prepended to the filename (e.g. `dsl:stringlength.script` for the DSL version of `stringlength.script`).
 Please note that you cannot have transformations with the same name and different languages as the file-extension is always `script`.
 
 The input value is injected into the script context as a string variable `input`.
