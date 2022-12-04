@@ -68,6 +68,7 @@ It allows transforming values using any of the available scripting languages in 
 The script needs to be placed in the `$OPENHAB_CONF/transform` folder with an extension `.script` regardless of the actual script type.
 When referencing a transformation, the script type must be prepended to the filename (e.g. `dsl:stringlength.script` for the DSL version of `stringlength.script`).
 Please note that you cannot have transformations with the same name and different languages as the file-extension is always `script`.
+The script type depends on the scripting engine used, it is usually either the file extension or the MIME-type of the scripts.
 
 The input value is injected into the script context as a string variable `input`.
 The result needs to be returned from the script, it can be `null` or a value of a type that properly implements `.toString()`.
