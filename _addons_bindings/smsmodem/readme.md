@@ -5,6 +5,7 @@ title: SMSModem - Bindings
 type: binding
 description: "This binding connects to a USB serial GSM modem (or a network exposed one, see ser2net) and allows openHAB to send and receive SMS through it."
 since: 3x
+logo: images/addons/smsmodem.png
 install: manual
 ---
 
