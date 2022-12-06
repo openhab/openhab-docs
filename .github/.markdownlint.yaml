@@ -26,6 +26,10 @@ MD033: false
 MD046:
     style: fenced
 
-#Emphasiszis in asterisk
+# Emphasiszis in underscore
 MD049:
     style: underscore
+    
+# Strong in asterisk
+MD050:
+    style: asterisk
