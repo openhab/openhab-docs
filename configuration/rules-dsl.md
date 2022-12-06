@@ -755,6 +755,11 @@ Besides the implicitly available variables for items and commands/states, rules 
 - `previousThingStatus` - implicitly available in every rule that has a thing-based trigger.
 - `newThingStatus` - implicitly available in every rule that has a thing-based trigger.
 
+- `sharedCache` - a cache that is shared between all rules and all scripting languages
+- `privateCache` - a cache private to the script/rule that requests it
+
+For further documentation on using the cache see [here](jsr223.html#cache-preset).
+
 ### Early returns
 
 It is possible to return early from a rule, not executing the rest of the statements like this:
