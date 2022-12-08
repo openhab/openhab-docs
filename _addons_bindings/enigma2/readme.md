@@ -38,7 +38,7 @@ Enigma2 has the following configuration parameters:
 
 | Name            | Description                                        | Mandatory |
 |-----------------|----------------------------------------------------|-----------|
-| host            | Hostname or IP address of the Enigma2 device       | yes       | 
+| host            | Hostname or IP address of the Enigma2 device       | yes       |
 | refreshInterval | The refresh interval in seconds                    | yes       |
 | timeout         | The timeout for reading from the device in seconds | yes       |
 | user            | Optional: The Username of the Enigma2 Web API      | no        |
@@ -48,7 +48,7 @@ Enigma2 has the following configuration parameters:
 
 Set the parameters as in the following example:
 
-```
+```java
 Thing enigma2:device:192_168_0_3 [host="192.168.1.3", refreshInterval="5", timeout="5", user="usename" , password="***"]
 ```
 
@@ -70,13 +70,13 @@ Thing enigma2:device:192_168_0_3 [host="192.168.1.3", refreshInterval="5", timeo
 
 demo.things:
 
-```
+```java
 Thing enigma2:device:192_168_0_3 [host="192.168.1.3", refreshInterval="5"]
 ```
 
 demo.items:
 
-```
+```java
 Switch  Enigma2_Power              "Power: [%s]"          <switch>           { channel="enigma2:device:192_168_0_3:power" }
 Dimmer  Enigma2_Volume             "Volume: [%d %%]"      <soundvolume>      { channel="enigma2:device:192_168_0_3:volume" }
 Switch  Enigma2_Mute               "Mute: [%s]"           <soundvolume_mute> { channel="enigma2:device:192_168_0_3:mute" }
@@ -94,7 +94,7 @@ String  Enigma2_SendInfo           "Info"                 <text>             { a
 
 demo.sitemap:
 
-```
+```perl
 sitemap demo label="Enigma2 Demo"
 {
   Frame label="Enigma2" { 
@@ -136,10 +136,9 @@ sitemap demo label="Enigma2 Demo"
 }
 ```
 
-
 demo.rules:
 
-```
+```java
 rule "Enigma2_KeyS"
 when Item Enigma2_RemoteKeys received command
 then
@@ -213,7 +212,7 @@ Multiple actions are supported by this binding. In classic rules these are acces
 
 Example
 
-```
+```java
  val actions = getActions("enigma2","enigma2:device:192_168_0_3")
  if(null === actions) {
         logInfo("actions", "Actions not found, check thing ID")
@@ -233,7 +232,7 @@ Parameters:
 
 Example:
 
-```
+```java
 actions.sendInfo("Hello World")
 ```
 
@@ -250,7 +249,7 @@ Parameters:
 
 Example:
 
-```
+```java
 actions.sendInfo("Hello World", 10)
 ```
 
@@ -266,7 +265,7 @@ Parameters:
 
 Example:
 
-```
+```java
 actions.sendWarning("Hello World")
 ```
 
@@ -283,7 +282,7 @@ Parameters:
 
 Example:
 
-```
+```java
 actions.sendWarning("Hello World", 10)
 ```
 
@@ -299,7 +298,7 @@ Parameters:
 
 Example:
 
-```
+```java
 actions.sendError("Hello World")
 ```
 
@@ -316,7 +315,7 @@ Parameters:
 
 Example:
 
-```
+```java
 actions.sendError("Hello World", 10)
 ```
 
@@ -333,7 +332,7 @@ Parameters:
 
 Example:
 
-```
+```java
 actions.sendQuestion("Say hello?")
 ```
 
@@ -351,7 +350,7 @@ Parameters:
 
 Example:
 
-```
+```java
 actions.sendQuestion("Say hello?", 10)
 ```
 
@@ -364,7 +363,6 @@ Parameters:
 | Name    | Description                                                            |
 |---------|------------------------------------------------------------------------|
 | button  | see the supported buttons in chapter 'Remote Control Buttons'          |
-
 
 The button parameter has only been tested on a Vu+Solo2 and this is a list of button codes that are known to work with this device.
 
@@ -417,7 +415,6 @@ The button parameter has only been tested on a Vu+Solo2 and this is a list of bu
 
 Example:
 
-```
+```java
 actions.sendRcCommand("KEY_1")
 ```
-
