@@ -38,7 +38,7 @@ The apiVersion 2 is only available for Go-eCharger with new hardware revision (C
 
 ## Channels
 
-Currently available channels are 
+Currently available channels are
 | Channel ID               | Item Type                | Description                                                   | API version       |
 |--------------------------|--------------------------|---------------------------------------------------------------|-------------------|
 | maxCurrent               | Number:ElectricCurrent   | Maximum current allowed to use for charging                   | 1 (r/w), 2 (r/w)  |
@@ -72,13 +72,13 @@ Currently available channels are
 
 demo.things
 
-```
+```java
 Thing goecharger:goe:garage [ip="192.168.1.36",refreshInterval=5]
 ```
 
 demo.items
 
-```
+```java
 Number:ElectricCurrent     GoEChargerMaxCurrent                 "Maximum current"                       {channel="goecharger:goe:garage:maxCurrent"}
 Number:ElectricCurrent     GoEChargerMaxCurrentTemp             "Maximum current temporary"             {channel="goecharger:goe:garage:maxCurrentTemp"}
 Number                     GoEChargerForceState                 "Force state"                           {channel="goecharger:goe:garage:forceState"}
@@ -111,7 +111,7 @@ String                     GoEChargerAccessConfiguration        "Access configur
 You can easily define rules to charge with PV power alone.
 Here is a simple sample how such a rule could look like:
 
-```
+```java
 rule "Set max amps for PV charging"
 when
     Item availablePVCurrent received update
@@ -123,7 +123,7 @@ end
 
 Advanced example:
 
-```
+```java
 rule "Set charging limit for go-eCharger"
 when
     Time cron "*/10 * * ? * *" // Trigger every 10 seconds

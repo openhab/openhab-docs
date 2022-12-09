@@ -12,18 +12,17 @@ install: auto
 
 {% include base.html %}
 
-# Iammeter Binding 
+# Iammeter Binding
 
 [Iammeter](https://www.iammeter.com) provides real-time readings of single-phase (WEM3080, WEM3162) and three-phase (WEM3080T) meters from IAMMETER over Wi-Fi.
 
 ## Use of the binding
 
-The Iammeter is exposed as one thing with a number of channels that can be used to read the values for different aspects of your Iammeter devices. 
+The Iammeter is exposed as one thing with a number of channels that can be used to read the values for different aspects of your Iammeter devices.
 
 ## Setup of the binding
 
 You can add the Iammeter device via the openHAB UI manually.
-
 
 ## Available channels
 
@@ -37,7 +36,6 @@ Single-phase energy meter (WEM3080/WEM3162)
 | power_a        | W    | Active power                 | Number:Power             |
 | importenergy_a | kWh  | Energy consumption from gird | Number:Energy            |
 | exportgrid_a   | kWh  | Energy export to grid        | Number:Energy            |
-
 
 Three-phase energy meter (WEM3080T)
 | Name           | Unit | Description           | Type                     |
@@ -64,8 +62,6 @@ Three-phase energy meter (WEM3080T)
 | frequency_c    | kWh  | C phase frequency     | Number:Frequency         |
 | pf_c           | kWh  | C phase power factor  | Number                   |
 
-
-
 ## More information
 
-More information about the Iammeter devices can be found in the [Iammeter website](https://www.iammeter.com). 
+More information about the Iammeter devices can be found in the [Iammeter website](https://www.iammeter.com).

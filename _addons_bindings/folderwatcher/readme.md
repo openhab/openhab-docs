@@ -20,7 +20,6 @@ This binding is intended to monitor FTP and local folder and its subfolders and 
 
 Currently the binding support two types of things: `ftpfolder` and `localfolder`.
 
-
 ## Thing Configuration
 
 The `ftpfolder` thing has the following configuration options:
@@ -56,7 +55,6 @@ This binding currently supports the following events:
 |-----------------|--------------|----------------------------------------------------------------------------------------|
 | newftpfile | String       | A new file name discovered on FTP                                                      |
 | newlocalfile | String       | A new file name discovered on in local folder                                                      |
-
 
 ## Full Example
 

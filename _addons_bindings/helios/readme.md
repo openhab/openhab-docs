@@ -3,7 +3,7 @@ id: helios
 label: Helios
 title: Helios - Bindings
 type: binding
-description: "This binding integrates the Heliop door/videophone system (https://www.2n.cz)."
+description: "This binding integrates the Heliop door/videophone system (<https://www.2n.cz>)."
 since: 3x
 install: auto
 ---
@@ -14,17 +14,15 @@ install: auto
 
 # Helios Binding
 
-This binding integrates the Heliop door/videophone system (https://www.2n.cz).
+This binding integrates the Heliop door/videophone system (<https://www.2n.cz>).
 
 ## Supported Things
 
 Currently, the Helios IP Vario is supported by this binding, running the 2.21 version of the firmware
 
-
 ## Binding Configuration
 
 There is no specific binding configuration
-
 
 ## Thing Configuration
 
@@ -32,7 +30,7 @@ The ipvario221 Thing requires the IP address of the videophone, and the username
 
 In the thing file, this looks e.g. like
 
-```
+```java
 Thing helios:ipvario213:gate [ipAddress="192.168.0.14", username="admin", password="mypassword"]
 ```
 
@@ -68,13 +66,13 @@ For switchstate, there are as well the switchstateswitch and switchstateoriginat
 
 demo.Things:
 
-```
+```java
 Thing helios:ipvario221:gate [ipAddress="192.168.0.14", username="admin", password="mypassword"]
 ```
 
 demo.items:
 
-```
+```java
 String GateKeyStamp "[%s]" (helios) {channel="helios:ipvario221:gate:keypressedstamp"}
 String GateCardSwiped "[%s]" (helios) {channel="helios:ipvario221:gate:card"}
 String GateCardStamp "[%s]" (helios) {channel="helios:ipvario221:gate:cardstamp"}
@@ -86,7 +84,7 @@ String GateCodeValid "[%s]" (helios) {channel="helios:ipvario221:gate:codevalid"
 
 demo.rules:
 
-```
+```java
 rule SomeRule
 when
     Channel "helios:ipvario221:gate:keypressed" triggered 

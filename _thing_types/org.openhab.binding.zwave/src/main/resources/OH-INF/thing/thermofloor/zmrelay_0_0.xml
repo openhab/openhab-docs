@@ -32,6 +32,12 @@ Single Relay 16A<br /> <h1>Overview</h1><p>Heatit ZM Single Relay is a high powe
           <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_W</property>
         </properties>
       </channel>
+      <channel id="meter_reset" typeId="meter_reset">
+        <label>Reset the total power consumption</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_METER</property>
+        </properties>
+      </channel>
       <channel id="scene_number" typeId="scene_number">
         <label>Scene Number</label>
         <properties>
@@ -59,6 +65,7 @@ Single Relay 16A<br /> <h1>Overview</h1><p>Heatit ZM Single Relay is a high powe
       <property name="manufacturerId">019B</property>
       <property name="manufacturerRef">0004:3500</property>
       <property name="dbReference">1440</property>
+      <property name="defaultAssociations">1</property>
     </properties>
 
     <!-- CONFIGURATION DESCRIPTIONS -->
@@ -68,6 +75,11 @@ Single Relay 16A<br /> <h1>Overview</h1><p>Heatit ZM Single Relay is a high powe
       <parameter-group name="configuration">
         <context>setup</context>
         <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
       </parameter-group>
 
       <!-- PARAMETER DEFINITIONS -->
@@ -168,6 +180,47 @@ Decides the delta for meter in Watt for the device issue meter report. This para
         ]]></description>
         <default>75</default>
         <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Lifeline</label>
+        <description><![CDATA[
+<br /> <h1>Overview</h1><p>Lifeline. (Normally used by the Z-Wave Controller) Sends: - Device Reset Notifications.</p><p>- Indicator Report</p><p>- Configuration Report</p><p>- Meter Report</p><p>- Central Scene Notification</p><p>- Notification Command Class</p><p>Basic Reports</p><p>Max. nodes in group: 5</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: External Relay Control S1</label>
+        <description><![CDATA[
+<br /> <h1>Overview</h1><p>Send Basic Set commands representing the status of the internal relay when changed from S1.</p><p>(0x00, 0xFF) ON/OFF</p><p>Max. nodes in group: 5</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_3" type="text" groupName="association" multiple="true">
+        <label>3: Control External Start/Stop S2</label>
+        <description><![CDATA[
+<br /> <h1>Overview</h1><p>- Multilevel Switch Set When S1 pressed/held</p><p>Press: 0x00, 0xFF</p><p>Held: Multilevel Switch Start Level Change Command Level Increase Start / Level Increase Stop</p><p>Level Decrease Start / Level Decrease Stop</p><p>Max nodes in group: 5</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_4" type="text" groupName="association" multiple="true">
+        <label>4: External Relay Control S2</label>
+        <description><![CDATA[
+<br /> <h1>Overview</h1><p>- Basic Set (S2) (0x00, 0xFF)</p><p>Max. nodes in group: 5</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_5" type="text" groupName="association" multiple="true">
+        <label>5: Control External Start/Stop S2</label>
+        <description><![CDATA[
+<br /> <h1>Overview</h1><p>- Multilevel Switch Set When S2 pressed/held</p><p>Press: 0x00 / 0xFF</p><p>Held: Multilevel Switch Start Level Change Command Level Increase Start / Level Increase Stop</p><p>Level Decrease Start / Level Decrease Stop</p><p>Max nodes in group: 5</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
       </parameter>
 
       <!-- STATIC DEFINITIONS -->

@@ -28,7 +28,7 @@ Since the protocol is identical, the KNX binding can also communicate with it tr
 ## Supported Things
 
 The KNX binding supports two types of bridges, and one type of things to access the KNX bus.
-There is an *ip* bridge to connect to KNX IP Gateways, and a *serial* bridge for connection over a serial port to a host-attached gateway.
+There is an _ip_ bridge to connect to KNX IP Gateways, and a _serial_ bridge for connection over a serial port to a host-attached gateway.
 
 ## Binding Configuration
 
@@ -40,7 +40,7 @@ The following two bridge types are supported. Bridges don't have channels on the
 
 ### IP Gateway
 
-The IP Gateway is the most commonly used way to connect to the KNX bus. At its base, the *ip* bridge accepts the following configuration parameters:
+The IP Gateway is the most commonly used way to connect to the KNX bus. At its base, the _ip_ bridge accepts the following configuration parameters:
 
 | Name                | Required     | Description                                                                                                  | Default value                                        |
 |---------------------|--------------|--------------------------------------------------------------------------------------------------------------|------------------------------------------------------|
@@ -59,10 +59,9 @@ The IP Gateway is the most commonly used way to connect to the KNX bus. At its b
 | tunnelUserPassword  | No           | KNX secure: Tunnel user key for secure tunnel mode                                                           | -                                                    |
 | tunnelDeviceAuthentication  | No   | KNX secure: Tunnel device authentication for secure tunnel mode                                              | -                                                    |
 
-
 ### Serial Gateway
 
-The *serial* bridge accepts the following configuration parameters:
+The _serial_ bridge accepts the following configuration parameters:
 
 | Name                | Required | Description                                                                                                  | Default value |
 |---------------------|----------|--------------------------------------------------------------------------------------------------------------|---------------|
@@ -75,13 +74,13 @@ The *serial* bridge accepts the following configuration parameters:
 
 ## Things
 
-### *device* Things
+### _device_ Things
 
-*basic* Things are wrappers around arbitrary group addresses on the KNX bus.
-They have no specific function in the KNX binding, except that if the *address* is defined, the binding will actively poll the Individual Address on the KNX bus to detect that the KNX actuator is reachable.
+_basic_ Things are wrappers around arbitrary group addresses on the KNX bus.
+They have no specific function in the KNX binding, except that if the _address_ is defined, the binding will actively poll the Individual Address on the KNX bus to detect that the KNX actuator is reachable.
 Under normal real-world circumstances, either all devices on a bus are reachable, or the entire bus is down.
 If line couplers are installed, physical device addressing might be filtered; in this case please do not specify the addresses for devices on this line.
-When *fetch* is set to true, the binding will read-out the memory of the KNX actuator in order to detect configuration data and so forth.
+When _fetch_ is set to true, the binding will read-out the memory of the KNX actuator in order to detect configuration data and so forth.
 This is however an experimental feature, very prone to the actual on the KNX bus.
 
 | Name         | Required | Description                                                                                                              | Default value                                                               |
@@ -92,7 +91,7 @@ This is however an experimental feature, very prone to the actual on the KNX bus
 | readInterval | N        | Interval (in seconds) to actively request reading of values from the bus (0 if they should only be read once at startup) | 0                                                                           |
 
 Different kinds of channels are defined and can be used to group together Group Addresses.
-All channels of a device share one configuration parameter defined on device level: *readInterval*, an optional parameter which indicates if 'readable' group addresses of that Channel should be read periodically at the given interval, in seconds.
+All channels of a device share one configuration parameter defined on device level: _readInterval_, an optional parameter which indicates if 'readable' group addresses of that Channel should be read periodically at the given interval, in seconds.
 'Readable' group addresses are marked with an `<` in the group address definition of a Channel, see below.
 All readable group addresses are queried by openHAB during startup.
 If readInterval is not specified or set to 0, no further periodic reading will be triggered (default: 0).
@@ -109,7 +108,6 @@ Note: After changing the DPT of already existing Channels, openHAB needs to be r
 | Parameter | Description                         | Default DPT |
 |-----------|-------------------------------------|-------------|
 | ga        | Group address for the binary switch | 1.001       |
-
 
 ##### Channel Type "dimmer"
 
@@ -139,7 +137,6 @@ Note: After changing the DPT of already existing Channels, openHAB needs to be r
 |-----------|---------------|-------------|
 | ga        | Group address | 9.001       |
 
-
 Note: Using the Units Of Measurement feature of openHAB (Quantitytype) requires that the DPT value is set correctly.
 Automatic type conversion will be applied if required.
 
@@ -155,7 +152,6 @@ Automatic type conversion will be applied if required.
 |-----------|---------------|-------------|
 | ga        | Group address | 19.001      |
 
-
 #### Control Channel Types
 
 In contrast to the standard channels above, the control channel types are used for cases where the KNX bus does not own the physical state of a device.
@@ -167,7 +163,6 @@ If from the KNX bus a `GroupValueRead` telegram is sent to a *-control Channel, 
 | Parameter | Description                         | Default DPT |
 |-----------|-------------------------------------|-------------|
 | ga        | Group address for the binary switch | 1.001       |
-
 
 ##### Channel Type "dimmer-control"
 
@@ -212,7 +207,7 @@ If from the KNX bus a `GroupValueRead` telegram is sent to a *-control Channel, 
 
 #### Group Address Notation
 
-```
+```text
 <config>="[<dpt>:][<]<mainGA>[[+[<]<listeningGA>][+[<]<listeningGA>..]]"
 ```
 
@@ -226,7 +221,6 @@ Each configuration parameter has a `mainGA` where commands are written to and op
 
 The `dpt` element is optional. If omitted, the corresponding default value will be used (see the channel descriptions above).
 
-
 ## KNX Secure
 
 > NOTE: Support for KNX Secure is partly implemented for openHAB and should be considered as experimental.
@@ -236,12 +230,12 @@ The `dpt` element is optional. If omitted, the corresponding default value will 
 KNX IP Secure protects the traffic between openHAB and your KNX installation.
 It **requires a KNX Secure Router or a Secure IP Interface** and a KNX installation **with security features enabled in ETS tool**.
 
-For *Secure routing* mode, the so called `backbone key` needs to be configured in openHAB.
+For _Secure routing_ mode, the so called `backbone key` needs to be configured in openHAB.
 It is created by the ETS tool and cannot be changed via the ETS user interface.
 
 - The backbone key can be extracted from Security report (ETS, Reports, Security, look for a 32-digit key) and specified in parameter `routerBackboneKey`.
 
-For *Secure tunneling* with a Secure IP Interface (or a router in tunneling mode), more parameters are required.
+For _Secure tunneling_ with a Secure IP Interface (or a router in tunneling mode), more parameters are required.
 A unique device authentication key, and a specific tunnel identifier and password need to be available.
 
 - All information can be looked up in ETS and provided separately: `tunnelDeviceAuthentication`, `tunnelUserPassword`.
@@ -255,7 +249,6 @@ Data Secure does _not_ necessarily require a KNX Secure Router or a Secure IP In
 
 > NOTE: **openHAB currently ignores messages with secure group addresses.**
 
-
 ## Examples
 
 The following two templates are sufficient for almost all purposes.
@@ -265,7 +258,7 @@ Only add parameters to the Bridge and Thing configuration if you know exactly wh
 
 knx.things:
 
-```xtend
+```java
 Bridge knx:ip:bridge [
     type="ROUTER",
     autoReconnectPeriod=60 //optional, do not set <30 sec.
@@ -282,7 +275,7 @@ Bridge knx:ip:bridge [
 
 knx.things:
 
-```xtend
+```java
 Bridge knx:ip:bridge [
     type="TUNNEL",
     ipAddress="192.168.0.111",
@@ -298,7 +291,7 @@ Bridge knx:ip:bridge [
 
 ### Full Example
 
-```xtend
+```java
 //TUNNEL
 Bridge knx:ip:bridge [
     type="TUNNEL",
@@ -343,7 +336,7 @@ Bridge knx:ip:bridge [
 
 knx.items:
 
-```xtend
+```java
 Switch        demoSwitch         "Light [%s]"               <light>          { channel="knx:device:bridge:generic:demoSwitch" }
 Dimmer        demoDimmer         "Dimmer [%d %%]"           <light>          { channel="knx:device:bridge:generic:demoDimmer" }
 Rollershutter demoRollershutter  "Shade [%d %%]"            <rollershutter>  { channel="knx:device:bridge:generic:demoRollershutter" }
@@ -355,7 +348,7 @@ DateTime      demoDatetime       "Alarm [%1$tH:%1$tM]"                       { c
 
 knx.sitemap:
 
-```xtend
+```perl
 sitemap knx label="KNX Demo Sitemap" {
   Frame label="Demo Elements" {
     Switch item=demoSwitch
@@ -374,7 +367,7 @@ sitemap knx label="KNX Demo Sitemap" {
 
 control.things:
 
-```xtend
+```java
 Bridge knx:serial:bridge [
     serialPort="/dev/ttyAMA0",
     readingPause=50,
@@ -402,7 +395,7 @@ Bridge hue:bridge:bridge "Philips Hue Bridge" [
 
 knx.items:
 
-```xtend
+```java
 Switch        demoSwitch         "Light [%s]"               <light>          { channel="hue:0210:bridge:1:color", channel="knx:device:bridge:generic:controlSwitch" }
 Dimmer        demoDimmer         "Dimmer [%d %%]"           <light>          { channel="hue:0210:bridge:1:color", channel="knx:device:bridge:generic:controlDimmer" }
 ```

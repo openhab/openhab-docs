@@ -21,10 +21,12 @@ Even though textual configuration is possible, it is strongly recommended to use
 ## Supported Things
 
 Two Bridge things are supported:
+
 - `generic`: the internet gateway device itself (generic device)
 - `fritzbox`: similar to `generic` with extensions for AVM FritzBox devices.
 
 Two kind of Things are supported:
+
 - `subDevice`: a sub-device of the Bridge thing (e.g. a WAN interface) 
 - `subDeviceLan`: a special type of sub-device that supports MAC-detection
 
@@ -212,6 +214,7 @@ Example (use all phonebooks, match 5 digits from right):
 val tr064Actions = getActions("tr064","tr064:fritzbox:2a28aee1ee")
 val result = tr064Actions.phonebookLookup("49157712341234", 5)
 ```
+
 ## A note on textual configuration
 
 Textual configuration through a `.things` file is possible but, at present, strongly discouraged because it is significantly more error-prone
@@ -222,6 +225,7 @@ an automatic scan through the user interface first in order to extract the requi
 needed subdevices).
 
 The definition of the bridge and of the subdevices things is the following
+
 ```
 Bridge tr064:fritzbox:rootuid "Root label" @ "location" [ host="192.168.1.1", user="user", password="passwd",
                                                          phonebookInterval="0"]{

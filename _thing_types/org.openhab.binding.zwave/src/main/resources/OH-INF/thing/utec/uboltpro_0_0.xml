@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="utec_uboltpro_00_000" listed="false">
+    <label>U-Bolt Pro Z-wave Smart Lock</label>
+    <description><![CDATA[
+Smart Lock<br /> <h1>Overview</h1><p>Smart Lock from U-tec Ultraloq.  Z-wave support includes Lock, Unlock, and setting user access codes. </p> <br /> <h2>Inclusion Information</h2><p>To include this lock, you must first connect to it with the phone app. <br />Then, in the settings for the lock, click the "Z-wave Control" option. <br />Select "Add to Z-wave Hub"<br />Select "Start Inclusion"</p><p>Then, start scanning for new Z-wave devices in openHAB.</p><p>If using an S2 Z-wave controller, you will need to enter the 4-digit code provided by the u-tec app. </p> <br /> <h2>Exclusion Information</h2><p>Connect to the lock with the phone app.</p><p>Then, in the settings for the lock, click the "Z-wave Control" option. </p><p>Select "Remove from Z-wave Hub"</p><p>Select "Start the Exclusion"</p><p>Then, initiate exclusion in openHAB.</p> <br /> <h2>Wakeup Information</h2><p><br /></p>
+    ]]></description>
+    <category>Battery</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="lock_door" typeId="lock_door">
+        <label>Door Lock</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_DOOR_LOCK</property>
+        </properties>
+      </channel>
+      <channel id="battery-level" typeId="system.battery-level">
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_BATTERY</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">U-Tec Group</property>
+      <property name="modelId">U-Bolt Pro Z-wave</property>
+      <property name="manufacturerId">0452</property>
+      <property name="manufacturerRef">0004:0001</property>
+      <property name="dbReference">1532</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Lifeline</label>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="nietech_n4003_00_000" listed="false">
+    <label>n4003 Mini Smart Plug</label>
+    <description><![CDATA[
+Mini Smart Plug<br /> <h1>Overview</h1><p><br /></p><p>This product can be included and operated in any Z-Wave network with other Z-Wave certified devices from other manufacturers and/or other applications. All non-battery operated nodes within the network will act as repeaters regardless of vendor to increase the reliability of the network. This Device supports Lifeline (association group 1) supporting 1 node for lifeline communication.</p><p>Group 1 must be assigned the Node ID of the primary controller where unsolicited notifications will be sent. The Z-Wave controller should set this association automatically after inclusion.</p><p>Lifeline association only supports the "Device Reset Locally" function.</p> <br /> <h2>Inclusion Information</h2><p><br /></p><p>Once the controller is ready to add your device, press the Manual/Program button on the smart plug 3 times quickly. The blue LED will blink quickly. Auto-add mode: LED will blink within 30 seconds after first plugged in. Now, you have complete control to turn your fixture ON/OFF according to groups, schedules and interactive automation programmed by your controller. If your Z-Wave certified controller features remote access, you can control your fixture from your mobile devices.<br /></p><p>If you have issues with pairing/including, please move the device as close as possible to the hub and try again--you can move to your final location when completed.</p><p>Note: If the manual button doesn't light up after pressed 3 times, please reset the device: click the button 2 times quickly then hold for at least 10 seconds. This operation could be done when manual control is functional--single press can turn on/off the lamp.</p> <br /> <h2>Exclusion Information</h2><p><br /></p><p>Once the controller is ready to add your device, press the Manual/Program button on the smart plug 3 times quickly. The blue LED will blink quickly. Auto-add mode: LED will blink within 30 seconds after first plugged in. Now, you have complete control to turn your fixture ON/OFF according to groups, schedules and interactive automation programmed by your controller. If your Z-Wave certified controller features remote access, you can control your fixture from your mobile devices.<br /></p><p>If you have issues with pairing/including, please move the device as close as possible to the hub and try again--you can move to your final location when completed.</p><p>Note: If the manual button doesn't light up after pressed 3 times, please reset the device: click the button 2 times quickly then hold for at least 10 seconds. This operation could be done when manual control is functional--single press can turn on/off the lamp.</p> <br /> <h2>Wakeup Information</h2><p><br /></p><p><br /></p>
+    ]]></description>
+    <category>Battery</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_binary" typeId="switch_binary">
+        <label>Switch</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY</property>
+        </properties>
+      </channel>
+      <channel id="meter_kwh" typeId="meter_kwh">
+        <label>Electric meter (kWh)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_KWh</property>
+        </properties>
+      </channel>
+      <channel id="meter_watts" typeId="meter_watts">
+        <label>Electric meter (watts)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_W</property>
+        </properties>
+      </channel>
+      <channel id="meter_voltage" typeId="meter_voltage">
+        <label>Electric meter (volts)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_V</property>
+        </properties>
+      </channel>
+      <channel id="meter_current" typeId="meter_current">
+        <label>Electric meter (amps)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_A</property>
+        </properties>
+      </channel>
+      <channel id="alarm_power" typeId="alarm_power">
+        <label>Alarm (power)</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=POWER_MANAGEMENT</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">NIE Technology</property>
+      <property name="modelId">n4003</property>
+      <property name="manufacturerId">0312</property>
+      <property name="manufacturerRef">AC01:4003</property>
+      <property name="dbReference">1534</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_1_1" type="integer" groupName="configuration">
+        <label>1: LED Indicator</label>
+        <description><![CDATA[
+Define LED behavior<br /> <h1>Overview</h1><p><br /></p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">LED On when switch is On</option>
+          <option value="1">LED Off when switch is On</option>
+          <option value="2">LED Always Off</option>
+          <option value="3">LED Always On</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_2_4" type="integer" groupName="configuration">
+        <label>2: Auto Turn-Off Timer</label>
+        <description><![CDATA[
+Timer to turn switch off<br /> <h1>Overview</h1><p>Set timer to turn off the switch Set the number of minutes for the timer.</p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_3_4" type="integer" groupName="configuration">
+        <label>3: Auto Turn-On Timer</label>
+        <description><![CDATA[
+Timer to turn switch on<br /> <h1>Overview</h1><p>Set timer to turn switch on. Set the number of minutes for the timer.</p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_4_1" type="integer" groupName="configuration">
+        <label>4: Restores state after power failure</label>
+        <description><![CDATA[
+Define state for device after power failure<br /> <h1>Overview</h1><p>Define state for device after power failure<br /></p>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_5_1" type="integer" groupName="configuration">
+        <label>5: Power Wattage (W) Report</label>
+        <description>The minium change in power (W) before sending new power report.</description>
+        <default>5</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_6_4" type="integer" groupName="configuration">
+        <label>6: Time Report</label>
+        <description><![CDATA[
+Determines the minimum time before sending new power report<br /> <h1>Overview</h1><p><br /></p>
+        ]]></description>
+        <default>5</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_7_1" type="integer" groupName="configuration">
+        <label>7: Current Report (A)</label>
+        <description>Determines minimum change in current (A) that will result in sending new power report. (Value * 0.1A)</description>
+        <default>1</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_8_1" type="integer" groupName="configuration">
+        <label>8: Energy (KWH) Report</label>
+        <description>Change in consumed energy before sending new report. (Value * 0.01 KWH)</description>
+        <default>1</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Lifeline</label>
+        <description>Lifeline</description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: Basic Set</label>
+        <description><![CDATA[
+Basic Set<br /> <h1>Overview</h1><p>hen the output of the N4003 socket is changed, On (0xFF) or Off (0x00). The N4003 will automatically send out a related basic On (0xFF) or Off (0x00) to this group</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

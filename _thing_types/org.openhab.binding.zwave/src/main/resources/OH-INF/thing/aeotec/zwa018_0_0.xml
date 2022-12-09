@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="aeotec_zwa018_00_000" listed="false">
+    <label>ZWA018 Aeotec Water Sensor 7 Basic</label>
+    <description><![CDATA[
+Aeotec Water Sensor 7 Basic<br /> <h1>Overview</h1><p>The AEOTEC Water Sensor 7 Basic is a sensor, which detects water leakage.</p> <br /> <h2>Inclusion Information</h2><p><b>SmartStart Inclusion.</b></p><p>You can use this method of inclusion only if your Z-Wave gateway/controller/hub supports SmartStart.</p><ol><li> Open up your Z-Wave gateway/controller/app.</li><li>Select SmartStart inclusion.</li><li>Scan the QR code located on the Water Sensor 7.</li><li>Within 10 minutes after powering your Water Sensor 7, it will automatically get included into your Z-Wave gateway/controller/hub.</li></ol><p><b>Classic Inclusion</b></p><ol><li> Set your Z-Wave controller into pairing mode.</li><li>Triple-click the tamper switch on Water Sensor 7 - this begins to blink five times</li><li>After completion of the inclusion, the LED will illuminate green for 3 seconds.</li><li>If you pairing with S2 encryption/security, enter the first 5 digits of the DSK into your controller/gateway/hub interface when requested. </li><li>Close the cover</li></ol> <br /> <h2>Exclusion Information</h2><p>Your sensor can be removed from your Z-Wave network at any time. You'll need to use your Z-Wave network's main controller/gateway. To do this, please refer to the part of your gateways respective manual that tells you how to remove devices from your network. </p><ol><li> Set your Z-Wave controller into unpair mode.</li><li> Triple-click the tamper switch on Water Sensor 7 within 1.5 seconds - this will cause the LED to blink five times.</li><li>After a successful exclusion, it will light up its LED for 2 seconds then deactivate.</li></ol> <br /> <h2>Wakeup Information</h2><p>In order to send your sensors new configuration commands from your Z-Wave controller or gateway, it will need to be woken up. </p><ol><li> Wake Up the device by removing the cover. </li><li>The hit the tamper switch once.</li></ol><p><b>Note:</b> Water Sensor 7 remains awake until the housing is closed again.</p>
+    ]]></description>
+    <category>Battery</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="sensor_binary" typeId="sensor_binary">
+        <label>Binary Sensor</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SENSOR_BINARY</property>
+        </properties>
+      </channel>
+      <channel id="alarm_flood" typeId="alarm_flood">
+        <label>Alarm (flood)</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=FLOOD</property>
+        </properties>
+      </channel>
+      <channel id="alarm_burglar" typeId="alarm_burglar">
+        <label>Alarm (burglar)</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=BURGLAR</property>
+        </properties>
+      </channel>
+      <channel id="alarm_power" typeId="alarm_power">
+        <label>Alarm (power)</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=POWER_MANAGEMENT</property>
+        </properties>
+      </channel>
+      <channel id="battery-level" typeId="system.battery-level">
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_BATTERY</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Aeotec Limited</property>
+      <property name="modelId">ZWA018</property>
+      <property name="manufacturerId">0371</property>
+      <property name="manufacturerRef">0002:0012</property>
+      <property name="dbReference">1533</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_3_1" type="integer" groupName="configuration">
+        <label>3: Visual LED Indications</label>
+        <description><![CDATA[
+Defines when the red LED will indicate events. Disabling all indications may extend battery life.<br /> <h1>Overview</h1><p><br /></p>
+        ]]></description>
+        <default>7</default>
+        <options>
+          <option value="0">No indications</option>
+          <option value="1">Water Leakage Status Change</option>
+          <option value="2">Wake Up</option>
+          <option value="3">Water Leakage Status Change &amp; Wake Up (1 x click)</option>
+          <option value="4">Device tampering</option>
+          <option value="5">Water Leakage Status Change &amp; Device tampering</option>
+          <option value="6">Wake Up &amp; Device tampering</option>
+          <option value="7">Water Leakage Status Change &amp; Wake Up &amp; Device tampering</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_4_1" type="integer" groupName="configuration">
+        <label>4: Range test after double click</label>
+        <description><![CDATA[
+Allows to enable the activation of a Z-Wave range test with double clicking the tamper switch.<br /> <h1>Overview</h1><p><br /></p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Disabled</option>
+          <option value="1">Enabled</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_5_1" type="integer" groupName="configuration">
+        <label>5: 2nd Association Group Trigger</label>
+        <description><![CDATA[
+Defines the status of the water leakage that causes sending a BASIC command to all devices of Association Group 2.<br /> <h1>Overview</h1><p><br /></p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Switch after Water Leakage Start and Stop</option>
+          <option value="1">Switch after Water Leakage Start</option>
+          <option value="2">Switch after Water Leakage Stop</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_6_1" type="integer" groupName="configuration">
+        <label>6: Command Sent to Devices of Association Group 2</label>
+        <description><![CDATA[
+Defines which commands is sent to 2nd Association Group<br /> <h1>Overview</h1><p><br /></p>
+        ]]></description>
+        <default>2</default>
+        <options>
+          <option value="0">On</option>
+          <option value="1">Off</option>
+          <option value="2">On and Off</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_7_1" type="integer" groupName="configuration">
+        <label>7: BASIC command value sent to 2nd Association Group on On event</label>
+        <description><![CDATA[
+This is the BASIC command value sent in case of On even<br /> <h1>Overview</h1><p>0 - 99 - Value<br />255 - On<br /></p>
+        ]]></description>
+        <default>-1</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_8_1" type="integer" groupName="configuration">
+        <label>8: BASIC command value sent to 2nd Association Group on Off event</label>
+        <description><![CDATA[
+This is the BASIC command value sent in case of Off event.<br /> <h1>Overview</h1><p>0 - 99 - Value<br />255 - On <br /></p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_9_2" type="integer" groupName="configuration">
+        <label>9: Time Delay of On command frame</label>
+        <description><![CDATA[
+On command is sent after a delay defined in this parameter.<br /> <h1>Overview</h1><p><br /></p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_10_2" type="integer" groupName="configuration">
+        <label>10: Time delay of Off command frame</label>
+        <description><![CDATA[
+Off command is sent after a delay defined in this parameter.<br /> <h1>Overview</h1><p><br /></p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_11_2" type="integer" groupName="configuration">
+        <label>11: Delay of tamper alarm cancellation.</label>
+        <description>Time a tamper alarm is delayed.</description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_12_1" type="integer" groupName="configuration">
+        <label>12: Reporting tamper alarm cancellation</label>
+        <description><![CDATA[
+Defines if the alarm cancellation event is reported.<br /> <h1>Overview</h1><p><br /></p>
+        ]]></description>
+        <default>1</default>
+        <options>
+          <option value="0">Do not send report</option>
+          <option value="1">Send report</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_255_4" type="integer" groupName="configuration">
+        <label>255: Reset Parameter</label>
+        <description><![CDATA[
+Helps reset configuration parameters and the device to factory defaults<br /> <h1>Overview</h1><p><br /></p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">No reset</option>
+          <option value="1">Reset all parameters</option>
+          <option value="1431655765">Completely factory reset sensor</option>
+        </options>
+        <advanced>true</advanced>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Lifeline</label>
+        <description><![CDATA[
+Lifeline<br /> <h1>Overview</h1><p><br /></p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: Basic</label>
+        <description><![CDATA[
+Control devices when water leakage is detected <br /> <h1>Overview</h1><p><br /></p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_3" type="text" groupName="association" multiple="true">
+        <label>3: Alarm</label>
+        <description><![CDATA[
+Sends out alarm message when water leakage is detected<br /> <h1>Overview</h1><p><br /></p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_4" type="text" groupName="association" multiple="true">
+        <label>4: Tamper</label>
+        <description><![CDATA[
+Sends alarm messages when tamper is tripped<br /> <h1>Overview</h1><p><br /></p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

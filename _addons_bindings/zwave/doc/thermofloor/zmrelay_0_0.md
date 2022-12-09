@@ -52,6 +52,7 @@ The following table summarises the channels available for the Heatit ZM Relay -:
 | Switch | switch_binary | switch_binary | Switch | Switch | 
 | Electric meter (kWh) | meter_kwh | meter_kwh | Energy | Number | 
 | Electric meter (watts) | meter_watts | meter_watts | Energy | Number | 
+| Reset the total power consumption | meter_reset | meter_reset | Energy | Switch | 
 | Scene Number | scene_number | scene_number |  | Number | 
 | Alarm (power) | alarm_power | alarm_power | Energy | Switch | 
 | Alarm (heat) | alarm_heat | alarm_heat | Fire | Switch | 
@@ -70,6 +71,11 @@ The ```meter_kwh``` channel is of type ```meter_kwh``` and supports the ```Numbe
 Indicates the instantaneous power consumption.
 
 The ```meter_watts``` channel is of type ```meter_watts``` and supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
+
+### Reset the total power consumption
+Reset the meter.
+
+The ```meter_reset``` channel is of type ```meter_reset``` and supports the ```Switch``` item and is in the ```Energy``` category.
 
 ### Scene Number
 Triggers when a scene button is pressed.
@@ -279,7 +285,75 @@ This parameter has the configuration ID ```config_11_2``` and is of type ```INTE
 
 Association groups allow the device to send unsolicited reports to the controller, or other devices in the network. Using association groups can allow you to eliminate polling, providing instant feedback of a device state change without unnecessary network traffic.
 
-The device does not support associations.
+The Heatit ZM Relay supports 5 association groups.
+
+### Group 1: Lifeline
+
+The Lifeline association group reports device status to a hub and is not designed to control other devices directly. When using the Lineline group with a hub, in most cases, only the lifeline group will need to be configured and normally the hub will perform this automatically during the device initialisation.
+Lifeline. (Normally used by the Z-Wave Controller) Sends: - Device Reset Notifications.
+
+- Indicator Report
+
+- Configuration Report
+
+- Meter Report
+
+- Central Scene Notification
+
+- Notification Command Class
+
+Basic Reports
+
+Max. nodes in group: 5
+
+Association group 1 supports 5 nodes.
+
+### Group 2: External Relay Control S1
+
+Send Basic Set commands representing the status of the internal relay when changed from S1.
+
+(0x00, 0xFF) ON/OFF
+
+Max. nodes in group: 5
+
+Association group 2 supports 5 nodes.
+
+### Group 3: Control External Start/Stop S2
+
+- Multilevel Switch Set When S1 pressed/held
+
+Press: 0x00, 0xFF
+
+Held: Multilevel Switch Start Level Change Command Level Increase Start / Level Increase Stop
+
+Level Decrease Start / Level Decrease Stop
+
+Max nodes in group: 5
+
+Association group 3 supports 5 nodes.
+
+### Group 4: External Relay Control S2
+
+- Basic Set (S2) (0x00, 0xFF)
+
+Max. nodes in group: 5
+
+Association group 4 supports 5 nodes.
+
+### Group 5: Control External Start/Stop S2
+
+- Multilevel Switch Set When S2 pressed/held
+
+Press: 0x00 / 0xFF
+
+Held: Multilevel Switch Start Level Change Command Level Increase Start / Level Increase Stop
+
+Level Decrease Start / Level Decrease Stop
+
+Max nodes in group: 5
+
+Association group 5 supports 5 nodes.
+
 ## Technical Information
 
 ### Endpoints

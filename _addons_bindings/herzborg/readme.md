@@ -3,7 +3,7 @@ id: herzborg
 label: Herzborg
 title: Herzborg - Bindings
 type: binding
-description: "This binding supports smart curtain motors by Herzborg (http://www.herzborg.com/pro_list.aspx?TypeID=1)"
+description: "This binding supports smart curtain motors by Herzborg (<http://www.herzborg.com/pro_list.aspx?TypeID=1>)"
 since: 3x
 logo: images/addons/herzborg.png
 install: manual
@@ -15,7 +15,7 @@ install: manual
 
 # Herzborg Binding
 
-This binding supports smart curtain motors by Herzborg (http://www.herzborg.com/pro_list.aspx?TypeID=1)
+This binding supports smart curtain motors by Herzborg (<http://www.herzborg.com/pro_list.aspx?TypeID=1>)
 
 ## Supported Things
 
@@ -73,7 +73,7 @@ All the channels are read-write
 
 herzborg.things:
 
-```
+```java
 Bridge herzborg:serial_bus:my_herzborg_bus [ port="/dev/ttyAMA1" ]
 {
     Thing herzborg:curtain:livingroom [ address=1234, poll_interval=1 ]
@@ -82,13 +82,13 @@ Bridge herzborg:serial_bus:my_herzborg_bus [ port="/dev/ttyAMA1" ]
 
 herzborg.items:
 
-```
+```java
 Rollershutter LivingRoom_Window {channel="herzborg:curtain:livingroom:position"}
 ```
 
 herzborg.sitemap:
 
-```
+```perl
 Frame label="Living room curtain"
 {
     Switch item=LivingRoom_Window label="Control" mappings=["DOWN"="Close", "STOP"="Stop", "UP"="Open"]
