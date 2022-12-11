@@ -5,7 +5,7 @@ title: openHAB WebSocket API
 
 # openHAB WebSocket API
 
-openHAB provides direct access to the [Event Bus](/developers/utils/events.html) through WebSockets.
+openHAB provides direct access to the [Event Bus](../developers/utils/events.html) through WebSockets.
 The WebSocket API allows subscribing to all events (by default) or a sub-set of events which are configurable at runtime via messages.
 All messages on the WebSocket connection are JSON encoded text-messages.
 
@@ -26,7 +26,7 @@ Two authentication methods are available:
 ### Receiving events (openHAB -> client)
 
 By default, all events on the event bus will be sent as individual messages.
-An overview of the most common events can be found [here](/developers/utils/events.html#the-core-events).
+An overview of the most common events can be found [here](../developers/utils/events.html#the-core-events).
 The JSON representation of the event always contains the type, topic and payload of the event.
 Optionally a source is present.
 
@@ -58,7 +58,7 @@ It is set in the response message in case an error occurred and can therefore be
 The `source` is also optional.
 However, it is recommended to send it along with the message.
 Since all events on the event bus are sent over the WebSocket connection, events that are sent by the client are also transmitted.
-A [source filter](#filter-by-source--filtersource-) can be used to prevent that.
+A [source filter](#filter-by-source-filter-source) can be used to prevent that.
 
 If a message can't be understood by openHAB (e.g. because of a wrong payload encoding or wrong topic), an error message is sent:
 
