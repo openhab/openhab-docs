@@ -52,10 +52,10 @@ Nevertheless, here is some examples using [curl](https://en.wikipedia.org/wiki/C
 
   ```bash
   # ThingStatusInfoChangedEvent - The status of a thing changed.
-  curl "http://{openHAB_IP}:8080/rest/events?topics=smarthome/things/{thingUID}/statuschanged"
+  curl "http://{openHAB_IP}:8080/rest/events?topics=openhab/things/{thingUID}/statuschanged"
 
   # ChannelTriggeredEvent - A channel has been triggered.
-  curl "http://{openHAB_IP}:8080/rest/events?topics=smarthome/channels/{channelUID}/triggered"
+  curl "http://{openHAB_IP}:8080/rest/events?topics=openhab/channels/{channelUID}/triggered"
   ```
 
 The commands above have been copied from the REST API documentation for illustration.
