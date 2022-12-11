@@ -165,8 +165,3 @@ The reception is acknowledged with the filter that is applied:
     "eventId": "5"
 }
 ```
-
-
-
-
-
