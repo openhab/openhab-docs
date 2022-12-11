@@ -75,6 +75,7 @@ module.exports = [
       'configuration/services',
       'configuration/multimedia',
       ['configuration/restdocs', 'REST API'],
+      'configuration/websocket',
       ['configuration/apitokens', 'API Token Generation'],
       ['configuration/migration/', 'Migration from openHAB 2']
     ]

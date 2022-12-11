@@ -19,7 +19,7 @@ Two authentication methods are available:
 
 1. API token: `oh.ohwstest.tz1IDPniKLxc0VU4t9tz4GiAiKmc0ZDdMKxhlD5tfviQStM4oNsywrcrUTktPbBE9YQ3wnMBrCqVEIhg7Q`
 
-2. Basic Auth with username/password: `dXNlcjpwYXNzd29yZA==`
+1. Basic Auth with username/password: `dXNlcjpwYXNzd29yZA==`
 
 ## Using the WebSocket connection
 
@@ -74,7 +74,6 @@ If a message can't be understood by openHAB (e.g. because of a wrong payload enc
 ## WebSocket Management
 
 The WebSocket connection is managed through messages with the type `WebSocketEvent`.
-
 
 ### Keeping the connection alive (`/heartbeat`)
 
