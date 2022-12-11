@@ -18,6 +18,7 @@ To prevent unauthorized use of the connection an `accessToken` has to be sent wi
 Two authentication methods are available:
 
 1. API token: `oh.ohwstest.tz1IDPniKLxc0VU4t9tz4GiAiKmc0ZDdMKxhlD5tfviQStM4oNsywrcrUTktPbBE9YQ3wnMBrCqVEIhg7Q`
+
 2. Basic Auth with username/password: `dXNlcjpwYXNzd29yZA==`
 
 ## Using the WebSocket connection
@@ -61,7 +62,7 @@ A [source filter](#filter-by-source--filtersource-) can be used to prevent that.
 
 If a message can't be understood by openHAB (e.g. because of a wrong payload encoding or wrong topic), an error message is sent:
 
-```
+```json
 {
     "type": "WebSocketEvent",
     "topic": "/response/failed",
@@ -118,7 +119,7 @@ Keep in mind that source is not a mandatory property of events.
 
 The payload of the event contains a list of strings with the source names:
 
-```
+```json
 {
     "type": "WebSocketEvent",
     "topic": "/filter/source",
