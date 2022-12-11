@@ -8,17 +8,43 @@ title: Z-Weather - ZWave
 # Z-Weather Z-Wave weather interface
 This describes the Z-Wave device *Z-Weather*, manufactured by *Z-Wave.Me* with the thing type UID of ```zwaveme_zweather_00_000```.
 
+The device is in the category of *Sensor*, defining Device used to measure something.
+
+![Z-Weather product image](https://opensmarthouse.org/zwavedatabase/258/image/)
+
+
 The Z-Weather supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is unable to participate in the routing of data from other devices.
 
 The Z-Weather does not permanently listen for messages sent from the controller - it will periodically wake up automatically to check if the controller has messages to send, but will sleep most of the time to conserve battery life. Refer to the *Wakeup Information* section below for further information.
 
 ## Overview
 
+Z-Weather is a cup anemometer for Z-Wave installations. It continually measures the wind speed and can, for example, trigger closing of the awning and blinds if it is too windy. It also measures the amount of rotation, enabling calculation of the wind yield per day or per year. In addition, Z-Weather includes sensors for humidity, temperature, pressure and dew point, essentially providing the core sensors of a weather station. 
+
+### Inclusion Information
+
+  1. Charge the device by solar radiation for approx. 24h.
+  2. Press the button on the bottom of the device three times in succession.
+
+### Exclusion Information
+
+  1. Charge the device by solar radiation for approx. 24h.
+  2. Press the button on the bottom of the device three times in succession.
+
 ### Wakeup Information
 
 The Z-Weather does not permanently listen for messages sent from the controller - it will periodically wake up automatically to check if the controller has messages to send, but will sleep most of the time to conserve battery life. The wakeup period can be configured in the user interface - it is advisable not to make this too short as it will impact battery life - a reasonable compromise is 1 hour.
 
 The wakeup period does not impact the devices ability to report events or sensor data. The device can be manually woken with a button press on the device as described below - note that triggering a device to send an event is not the same as a wakeup notification, and this will not allow the controller to communicate with the device.
+
+
+Push the button 3 times within 1.5 seconds.
+
+The LED blinks once indicating that Z-Weather is alive.
+
+### General Usage Information
+
+
 
 ## Channels
 
@@ -103,14 +129,14 @@ Detailed information on each parameter can be found in the sections below.
 
 | Param | Name  | Description |
 |-------|-------|-------------|
-| 1 | Wind Speed Action Threshold | Available Parameters: 0 - Off 1 - 30 in milliseconds Default = 6 m/s |
+| 1 | Wind Speed Action Threshold | Available Parameters: 0 - Off; 1 - 30: threshold in m/s - Default = 6 m/s |
 | 2 | Twilight Action Threshold | Set from 0 - 100 % Default = 37% (street lighting) |
 |  | Wakeup Interval | Sets the interval at which the device will accept commands from the controller |
 |  | Wakeup Node | Sets the node ID of the device to receive the wakeup notifications |
 
 ### Parameter 1: Wind Speed Action Threshold
 
-Available Parameters: 0 - Off 1 - 30 in milliseconds Default = 6 m/s
+Available Parameters: 0 - Off; 1 - 30: threshold in m/s - Default = 6 m/s
 
 Values in the range 0 to 30 may be set.
 
@@ -203,6 +229,10 @@ Association group 4 supports 5 nodes.
 | COMMAND_CLASS_MULTI_CHANNEL_ASSOCIATION_V1| |
 | COMMAND_CLASS_MULTI_CMD_V1| |
 | COMMAND_CLASS_ASSOCIATION_COMMAND_CONFIGURATION_V1| |
+
+### Documentation Links
+
+* [manual-en](https://opensmarthouse.org/zwavedatabase/258/reference/z-weather-005206.pdf)
 
 ---
 

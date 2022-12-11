@@ -237,6 +237,11 @@ prev: /docs/ui/components/
     The value to set the variable to
   </PropDescription>
 </PropBlock>
+<PropBlock type="TEXT" name="actionVariableKey" label="Variable Key">
+  <PropDescription>
+    Consider the variable value is an object and set the corresponding deep property within that object using a key syntax. Examples: <code>user.name</code>, <code>user[0].address[1].street</code>, <code>[0]</code>, <code>[0].label</code>. The inner property and its parent hierarchy will be created if missing.
+  </PropDescription>
+</PropBlock>
 </PropGroup>
 </div>
 

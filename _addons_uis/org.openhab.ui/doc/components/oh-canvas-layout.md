@@ -61,7 +61,28 @@ Position widgets on a canvas layout with arbitrary position and size down to pix
 </PropBlock>
 <PropBlock type="TEXT" name="imageSrcSet" label="Image Source Set">
   <PropDescription>
-    The src-set attribute of background image element to take into account mulitple device resolutions. For example: "/static/floorplans/floor-0.jpg, /static/floorplans/floor-0@2x.jpg 2x"
+    The src-set attribute of background image element to take into account multiple device resolutions. For example: "/static/floorplans/floor-0.jpg, /static/floorplans/floor-0@2x.jpg 2x"
+  </PropDescription>
+</PropBlock>
+</PropGroup>
+</div>
+
+### Appearance
+<div class="props">
+<PropGroup name="appearance" label="Appearance">
+<PropBlock type="BOOLEAN" name="hideNavbar" label="Hide Navigation bar">
+  <PropDescription>
+    Hide navigation bar on top when page is displayed (You can additionally hide the sidebar using its pin icon) (default false)
+  </PropDescription>
+</PropBlock>
+<PropBlock type="BOOLEAN" name="hideSidebarIcon" label="Hide Sidebar Icon">
+  <PropDescription>
+    Don't show a menu icon in the top left corner when the sidebar is closed (default false)
+  </PropDescription>
+</PropBlock>
+<PropBlock type="BOOLEAN" name="showFullscreenIcon" label="Show Fullscreen Icon">
+  <PropDescription>
+    Show a fullscreen icon on the top right corner (default false)
   </PropDescription>
 </PropBlock>
 </PropGroup>
@@ -80,7 +101,7 @@ Position widgets on a canvas layout with arbitrary position and size down to pix
     Shadow applied to text elements or font icons (text-shadow CSS syntax)
   </PropDescription>
 </PropBlock>
-<PropBlock type="TEXT" name="filterShadow" label="Fitler Shadow">
+<PropBlock type="TEXT" name="filterShadow" label="Filter Shadow">
   <PropDescription>
     Shadow applied to raster or SVG image elements (filter: drop-shadow() CSS syntax)
   </PropDescription>
