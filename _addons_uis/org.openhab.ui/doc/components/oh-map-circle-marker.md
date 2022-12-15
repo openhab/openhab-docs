@@ -134,6 +134,11 @@ A circle on a map, to represent a radius
     Rule to run
   </PropDescription>
 </PropBlock>
+<PropBlock type="TEXT" name="actionRuleContext" label="Rule Context" context="script">
+  <PropDescription>
+    Object representing the optional context to pass to the rule. Edit in YAML or provide a JSON object, e.g. <code>{ "param1": "value1", "param2": { "subkey1": "testing", "subkey2": 123 } }</code>.
+  </PropDescription>
+</PropBlock>
 <PropBlock type="TEXT" name="actionPage" label="Page" context="page">
   <PropDescription>
     Page to navigate to

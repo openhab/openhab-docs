@@ -116,6 +116,11 @@ Display the state of an item in a card
     Rule to run
   </PropDescription>
 </PropBlock>
+<PropBlock type="TEXT" name="actionRuleContext" label="Rule Context" context="script">
+  <PropDescription>
+    Object representing the optional context to pass to the rule. Edit in YAML or provide a JSON object, e.g. <code>{ "param1": "value1", "param2": { "subkey1": "testing", "subkey2": 123 } }</code>.
+  </PropDescription>
+</PropBlock>
 <PropBlock type="TEXT" name="actionPage" label="Page" context="page">
   <PropDescription>
     Page to navigate to
@@ -268,6 +273,11 @@ Display the state of an item in a card
 <PropBlock type="TEXT" name="taphold_actionRule" label="Rule" context="rule">
   <PropDescription>
     Rule to run
+  </PropDescription>
+</PropBlock>
+<PropBlock type="TEXT" name="taphold_actionRuleContext" label="Rule Context" context="script">
+  <PropDescription>
+    Object representing the optional context to pass to the rule. Edit in YAML or provide a JSON object, e.g. <code>{ "param1": "value1", "param2": { "subkey1": "testing", "subkey2": 123 } }</code>.
   </PropDescription>
 </PropBlock>
 <PropBlock type="TEXT" name="taphold_actionPage" label="Page" context="page">
