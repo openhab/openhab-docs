@@ -35,14 +35,12 @@ Each inverter requires the following configuration parameters:
 | port            | no       | 12345   | Port number to connect to. This should be `12345` for most inverters |
 | refreshInterval | no       | 15      | Interval (in seconds) to refresh the channel values.                 |
 
-
 ## Properties
 
 | property        | description                                            |
 | --------------- | ------------------------------------------------------ |
 | softwareVersion | Software Version installed on the SolarMax device      |
 | buildNumber     | Firmware Build Number installed on the SolarMax device |
-
 
 ## Channels
 
@@ -74,7 +72,7 @@ Below you can find some example textual configuration for a solarmax with some b
 
 _inverter.things:_
 
-```
+```java
 Thing solarmax:inverter:solarmax "SolarMax Inverter" [
     host="192.168.1.151",
     port="12345",
@@ -84,7 +82,7 @@ Thing solarmax:inverter:solarmax "SolarMax Inverter" [
 
 _inverter.items:_
 
-```
+```java
 Group    gInverter   "SolarMax Inverter"
 
 DateTime lastUpdated "Last Updated" <clock> (gInverter) {channel="solarmax:inverter:solarmax:lastUpdated"}
@@ -119,7 +117,7 @@ Number:Temperature heatSinkTemperature "Heat Sink Temperature in degrees celcius
 
 _heatpump.sitemap:_
 
-```
+```perl
 sitemap heatpump label="Heatpump" {
     Frame label="Heatpump" {
         Text item=HeatPump_State_Ext

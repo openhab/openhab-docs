@@ -40,13 +40,13 @@ All devices support some of the following channels:
 
 .things
 
-```
+```java
 Thing rme:manager:m1 [ port="/dev/tty.usbserial-FTGVQA6D" ]
 ```
 
 .items
 
-```
+```java
 Number RMECisternLevel "Water level [%.1f %%]"(rme) {channel="rme:manager:m1:waterlevel"}
 String RMEMode (rme) {channel="rme:manager:m1:mode"}
 String RMESource (rme) {channel="rme:manager:m1:source"}

@@ -65,7 +65,7 @@ The following channels are available:
 
 Some Notes:
 
-* The values for `activeApp`, `playMode`, `timeElapsed`, `timeTotal`, `activeChannel`, `signalMode`, `signalQuality`, `channelName`, `programTitle`, `programDescription` & `programRating` refresh automatically per the configured `refresh` interval (10 seconds minimum).
+- The values for `activeApp`, `playMode`, `timeElapsed`, `timeTotal`, `activeChannel`, `signalMode`, `signalQuality`, `channelName`, `programTitle`, `programDescription` & `programRating` refresh automatically per the configured `refresh` interval (10 seconds minimum).
 
 **List of available button commands for Roku streaming devices:**  
 Home  
@@ -102,9 +102,9 @@ PowerOn
 
 ## Full Example
 
-roku.things:
+### roku.things:
 
-```
+```java
 // Roku streaming media player
 roku:roku_player:myplayer1 "My Roku" [ hostName="192.168.10.1", refresh=10 ]
 
@@ -113,9 +113,9 @@ roku:roku_tv:mytv1 "My Roku TV" [ hostName="192.168.10.1", refresh=10 ]
 
 ```
 
-roku.items:
+### roku.items:
 
-```
+```java
 // Roku streaming media player items:
 
 String Player_ActiveApp        "Current App: [%s]"         { channel="roku:roku_player:myplayer1:activeApp" }
@@ -141,9 +141,9 @@ String Player_ProgramRating      "Program Rating: [%s]"      { channel="roku:rok
 
 ```
 
-roku.sitemap:
+### roku.sitemap:
 
-```
+```perl
 sitemap roku label="Roku" {
     Frame label="My Roku" {
         Selection item=Player_ActiveApp icon="screen"

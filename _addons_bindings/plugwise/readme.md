@@ -77,7 +77,6 @@ To access the serial port of the Stick on Linux, the user running openHAB needs 
 | measurementInterval     |          | 60               | The energy measurement interval (in minutes) (5 to 60)                                                                 |
 | temporarilyNotInNetwork |          | false            | Stops searching for an unplugged device on the ZigBee network traffic (true or false)                                  |
 
-
 ### Scan
 
 | Configuration Parameter | Required | Default | Description                                                                                                      |
@@ -88,7 +87,6 @@ To access the serial port of the Stick on Linux, the user running openHAB needs 
 | daylightOverride        |          | false   | Disables movement detection when there is daylight (true or false)                                               |
 | wakeupInterval          |          | 1440    | The interval in which the Scan wakes up at least once (in minutes) (5 to 1440)                                   |
 | wakeupDuration          |          | 10      | The number of seconds the Scan stays awake after it woke up (10 to 120)                                          |
-
 
 ### Sense
 
@@ -105,7 +103,6 @@ To access the serial port of the Stick on Linux, the user running openHAB needs 
 | wakeupInterval          |          | 1440            | The interval in which the Sense wakes up at least once (in minutes) (5 to 1440)                                            |
 | wakeupDuration          |          | 10              | The number of seconds the Sense stays awake after it woke up (10 to 120)                                                   |
 
-
 ### Switch
 
 | Configuration Parameter | Required | Default | Description                                                                      |
@@ -113,7 +110,6 @@ To access the serial port of the Stick on Linux, the user running openHAB needs 
 | macAddress              | X        |         | The full device MAC address e.g. "000D6F0000A1B2C3"                              |
 | wakeupInterval          |          | 1440    | The interval in which the Switch wakes up at least once (in minutes) (5 to 1440) |
 | wakeupDuration          |          | 10      | The number of seconds the Switch stays awake after it woke up (10 to 120)        |
-
 
 ## Channels
 
@@ -136,7 +132,7 @@ To access the serial port of the Stick on Linux, the user running openHAB needs 
 
 demo.things
 
-```
+```java
 Bridge plugwise:stick:demostick [ serialPort="/dev/ttyUSB0", messageWaitTime=150 ]
 
 Thing plugwise:circle:fan (plugwise:stick:demostick) [ macAddress="000D6F0000A1A1A1", measurementInterval=15 ]
@@ -165,7 +161,7 @@ Thing plugwise:switch:lightswitches (plugwise:stick:demostick) [ macAddress="000
 
 demo.items
 
-```
+```java
 /* Circle */
 Switch Fan_Switch "Switch" <switch> { channel="plugwise:circle:fan:state" }
 String Fan_Clock "Clock [%s]" <clock> { channel="plugwise:circle:fan:clock" }
@@ -209,7 +205,7 @@ DateTime Light_Switches_Last_Seen "Last seen [%1$tY-%1$tm-%1$td %1$tH:%1$tM:%1$t
 
 demo.sitemap
 
-```
+```perl
 sitemap demo label="Main Menu"
 {
 
