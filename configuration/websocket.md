@@ -65,8 +65,8 @@ If a message can't be understood by openHAB (e.g. because of a wrong payload enc
 ```json
 {
     "type": "WebSocketEvent",
-    "topic": "/response/failed",
-    "payload": "Processing error: Topic does not match event type."
+    "topic": "openhab/websocket/response/failed",
+    "payload": "Processing error: Topic does not match event type.",
     "eventId": "17"
 }
 ```
@@ -75,7 +75,7 @@ If a message can't be understood by openHAB (e.g. because of a wrong payload enc
 
 The WebSocket connection is managed through messages with the type `WebSocketEvent`.
 
-### Keeping the connection alive (`/heartbeat`)
+### Keeping the connection alive (`openhab/websocket/heartbeat`)
 
 All connections have an idle timeout of 10s to prevent dead connections.
 It is recommended that clients send a heartbeat message at a shorter interval (e.g. 5s).
@@ -83,7 +83,7 @@ It is recommended that clients send a heartbeat message at a shorter interval (e
 ```json
 {
     "type": "WebSocketEvent",
-    "topic": "/heartbeat",
+    "topic": "openhab/websocket/heartbeat",
     "payload": "PING",
     "source": "WebSocketTestInstance"
 }
@@ -94,12 +94,12 @@ The reception of a heartbeat message is acknowledged with a `PONG`:
 ```json
 {
     "type": "WebSocketEvent",
-    "topic": "/heartbeat",
+    "topic": "openhab/websocket/heartbeat",
     "payload": "PONG"
 }
 ```
 
-### Applying filters to events (`/filter`)
+### Applying filters to events
 
 To prevent unnecessary traffic on the connection filters can be applied to the connection.
 Filters only work in the direction from openHAB to the client, i.e. even if events from type `ItemCommandEvent` are not subscribed, they can still be sent by the client.
@@ -110,7 +110,7 @@ A new filter message always overrides the settings before.
 The default setting is no filter, i.e. all events from all sources.
 It is recommended to at least set a source filter for the client itself to prevent event reflection.
 
-#### Filter by source (`/filter/source`)
+#### Filter by source (`openhab/websocket/filter/source`)
 
 Source filters can be used to remove events from a specific source from the event stream.
 They are exclusive, that means those sources that are part of the filter are removed.
@@ -121,7 +121,7 @@ The payload of the event contains a list of strings with the source names:
 ```json
 {
     "type": "WebSocketEvent",
-    "topic": "/filter/source",
+    "topic": "openhab/websocket/filter/source",
     "payload": "[\"WebSocketTestInstance\", \"RuleEngineImpl\"]",
     "source": "WebSocketTestInstance",
     "eventId": "10"
@@ -133,13 +133,13 @@ The reception is acknowledged with the filter that is applied:
 ```json
 {
     "type": "WebSocketEvent",
-    "topic": "/filter/source",
+    "topic": "openhab/websocket/filter/source",
     "payload": "[\"WebSocketTestInstance\", \"RuleEngineImpl\"]",
     "eventId": "10"
 }
 ```
 
-#### Filter by type (`/filter/type`)
+#### Filter by type (`openhab/websocket/filter/type`)
 
 Type filters are used to select a specific sub-set of all available events.
 They are a inclusive, that means only those event types sent in the filter message are sent.
@@ -148,7 +148,7 @@ The payload of the event contains a list of strings with the event names:
 ```json
 {
     "type": "WebSocketEvent",
-    "topic": "/filter/type",
+    "topic": "openhab/websocket/filter/type",
     "payload": "[\"ItemStateEvent\", \"ItemStateChangedEvent\"]",
     "source": "WebSocketTestInstance",
     "eventId": "5"
@@ -160,7 +160,7 @@ The reception is acknowledged with the filter that is applied:
 ```json
 {
     "type": "WebSocketEvent",
-    "topic": "/filter/type",
+    "topic": "openhab/websocket/filter/type",
     "payload": "[\"ItemStateEvent\", \"ItemStateChangedEvent\"]",
     "eventId": "5"
 }
