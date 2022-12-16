@@ -25,6 +25,7 @@ module.exports = [
       'tutorial/rules_basic',
       'tutorial/rules_blockly',
       'tutorial/rules_advanced',
+      'tutorial/rules_overview',
       'tutorial/tips-and-tricks'
     ]
   },
