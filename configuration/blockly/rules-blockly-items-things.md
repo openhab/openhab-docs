@@ -102,6 +102,17 @@ The following example depicts the above possibilities:
 
 ![blockly-getMembersExample](../images/blockly/blockly-getMembersExample.png)
 
+### Get Items with Tag
+
+![blockly-getMembers](../images/blockly/blockly-getitemswithtag.png)
+
+Function: Gets all items with the given tags which you can iterate over via a loop
+
+- returns a collection of items which have the given tags
+- multiple tags can be provided which then need to be separared with a comma
+- if multiple tags are given, the item must have all of the tags ("and"-condition)
+- tip: if you need an item that has one of multiple tags, then you need to use one block of each and then use the ["concatenate list block"](https://www.openhab.org/docs/configuration/blockly/rules-blockly-standard-ext.html#concatenate-list) to combine the results.
+
 ### Get particular attributes of an item
 
 ![blockly-getItemAttributes](../images/blockly/blockly-getItemAttributes.png)

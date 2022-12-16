@@ -46,7 +46,22 @@ This method uses a time-weighted average calculation
 - maximum: gets the maximum value of the State of the given Item since a certain point in time
 - maximum: gets the sum of the State of the given Item since a certain point in time
 
-Note:  in case no or 0 values are retrieved, make sure that the item in question is actually persisted.
+In the case of the following two functions the block changes its appearence by replacing the time with an option to chose if the equal value should be skipped or not:
+
+![previous-block](../images/blockly/blockly-persistence-get-previous.png)
+
+- previous state value: Gets the previous state with option to skip to different value as current
+- previous state value time: Gets the time when previous state last occurred with option to skip to different value as current
+
+The skip option set to true allows to search for first state that is different from the current state.
+
+_Important:_ This option is not supported by all persistence databases and may throw an error in that case (for example the standard rrd4j does _not_ support it while influxdb does support it).
+
+Notes: in case no or 0 values are retrieved, make sure that the item in question is actually persisted.
+
+**Previous State Example**
+
+![previous-example](../images/blockly/blockly-persistence-get-previous-example.png)
 
 ### Check item change / update since a point in time
 

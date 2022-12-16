@@ -27,8 +27,6 @@ More about that topic can be viewed at ![youtube](../images/blockly/youtube-logo
 
 ### CRLF
 
-Since OpenHAB 3.3.0M6
-
 CRLF stands for carriage-return / line-feed which is a technical term for adding a new line in a string
 
 ![crlf](../images/blockly/blockly-text-overview.png)
@@ -38,6 +36,17 @@ _Function:_ return a newline character to be added to a string.
 **Example:**
 
 ![crlf](../images/blockly/blockly-text-crlf-example.png)
+
+### Text Replace
+
+![text-replace](../images/blockly/blockly-text-replace.png)
+
+_Function:_ Allows to replace something that is defined by the _pattern_ in the _origin_-text with what is provided in _replacement_.
+Note that the pattern can be just a text or also regex expression.
+
+**Example:**
+
+![text-replace example](../images/blockly/blockly-text-replace-example.png)
 
 ## Colors
 
@@ -97,13 +106,14 @@ _Function:_ This a special openHAB block that converts a hexadecimal color code 
 
 - use that block and connect one of the above blocks into that one to be able to retrieve the HSB value of that block.
 
-**Example:**
+Example
 
 ![get-hsb-of-example](../images/blockly/blockly-colors-hsbof-example.png)
 
 ## Lists
 
 ![lists-overview](../images/blockly/blockly-lists-dictionary-overview.png)
+![lists-overview-concat](../images/blockly/blockly-lists-concatenate.png)
 
 ### Dictionary for managing key / value pairs
 
@@ -115,7 +125,7 @@ Then drag the key block on the upper left into the key/value bracket on the righ
 
 Rename the keys as required and then add any value block type to the related key:
 
-Example:
+**Example:**
 
 ![dictionary-example](../images/blockly/blockly-lists-dictionary-example.png)
 
@@ -125,9 +135,19 @@ Example:
 
 _Function:_ Retrieves the value of the key in the given directory
 
-Example:
+**Example:**
 
 ![dictionary-getkey-example](../images/blockly/blockly-lists-dictionary-getkey-example.png)
+
+### Concatenate lists
+
+![lists-overview-concat](../images/blockly/blockly-lists-concatenate.png)
+
+_Function:_ adds the second list to the first list and returns a new list
+
+Example:
+
+![lists-overview-concat](../images/blockly/blockly-lists-concatenate-example.png)
 
 ## Loops
 

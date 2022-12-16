@@ -204,6 +204,7 @@ This section explains only the blocks that have been added to the standard block
 [![openHAB Extensions to the standard](../images/blockly/blockly-text-overview-small.png "openHAB Extensions to the Standard")
 ](rules-blockly-standard-ext.html)[![openHAB Extensions to the standard](../images/blockly/blockly-colors-overview-small.png "openHAB Extensions to the Standard")
 ](rules-blockly-standard-ext.html)[![openHAB Extensions to the standard](../images/blockly/blockly-lists-dictionary-overview-small.png "openHAB Extensions to the Standard")
+![lists-overview-concat](../images/blockly/blockly-lists-concatenate.png)
 ](rules-blockly-standard-ext.html)
 
 See [openHAB Extensions to the standard](rules-blockly-standard-ext.html) section.

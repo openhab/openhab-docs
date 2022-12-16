@@ -80,6 +80,8 @@ Type: _ZonedDateTime_
 This block will return the date as _ZonedDateTime_ based on the given String.
 The String may be one of the following formats (since 3.3) the following formats are supported)
 
+- HH:mm
+- HH:mm:ss
 - yyyy-MM-dd
 - yyyy-MM-dd HH:mm
 - yyyy-MM-dd HH:mm:ss
