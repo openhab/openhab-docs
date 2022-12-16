@@ -9,6 +9,7 @@ Sometimes the built in rule engine is not the perfect fit.
 It's possible to use openHAB with a variety of different rule engines and automation techonologies.
 Some are native and can be used out of the box with openHAB and some require installation of
 additional services which interact with openHAB through its Rest API.
+
 The list is sorted alphabetically by name.
 
 | Name                | Native             | Language/Graphical  | Notes                         |
