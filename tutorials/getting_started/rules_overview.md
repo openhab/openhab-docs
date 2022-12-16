@@ -3,16 +3,16 @@ layout: documentation
 title:  Rules - Other Technologies
 ---
 
-# Rule Technology overview 
+# Rule Technology overview
 
 Sometimes the built in rule engine is not the perfect fit.
 It's possible to use openHAB with a variety of different rule engines and automation techonologies.
-Some are native and can be used out of the box with openHAB and some require installation of 
+Some are native and can be used out of the box with openHAB and some require installation of
 additional services which interact with openHAB through its Rest API.
 The list is sorted alphabetically by name.
 
 | Name                | Native             | Language/Graphical  | Notes                         |
-|---------------------|--------------------|---------------------|-------------------------------| 
+|---------------------|--------------------|---------------------|-------------------------------|
 | Blockly             | :heavy_check_mark: | Graphical           | Only available through the UI |
 | GraalVM JavaScript  | :heavy_check_mark: | JavaScript latest   | breaks Blockly/Nashorn rules  |
 | Groovy              | :heavy_check_mark: | Groovy              |                               |
