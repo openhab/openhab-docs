@@ -3,7 +3,7 @@ layout: documentation
 title:  Rules - Other Technologies
 ---
 
-# Rule Technology overview
+# Rule Technology Overview
 
 Sometimes the built in rule engine is not the perfect fit.
 It's possible to use openHAB with a variety of different rule engines and automation techonologies.
