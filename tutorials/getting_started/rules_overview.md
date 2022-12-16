@@ -11,7 +11,7 @@ It's possible to use openHAB with a variety of different rule engines and automa
 Some are native and can be used out of the box with openHAB and some require installation of
 additional services which interact with openHAB through its Rest API.
 
-The list is sorted alphabetically by name.
+The list is sorted alphabetically by name and it is meant as a starting point for further research.
 
 | Name                | Native             | Language/Graphical  | Notes                         |
 |---------------------|--------------------|---------------------|-------------------------------|
