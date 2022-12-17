@@ -5,10 +5,10 @@
   xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
                       https://openhab.org/schemas/thing-description/v1.0.0">
 
-  <thing-type id="philio_pan03_00_000" listed="false">
-    <label>PAN03 In Wall Micromodule Single Switch</label>
+  <thing-type id="northq_nq770_00_000" listed="false">
+    <label>NQ-9770 In Wall Micromodule Single Switch</label>
     <description><![CDATA[
-In Wall Micromodule Single Switch<br /> <h1>Overview</h1><p>PAN03-1: 868.40MHz; 869.85MHz(EU) /</p><p>PAN03-2: 908.40MHz; 916.00MHz(USA/Canada) /</p><p>PAN03-3: 920.90 MHz, 921.70 MHz, 923.10 MHz (Taiwan)</p><p>PAN03-IL: 916.00MHz(Israel)</p><p><br />This plug-in ON/OFF switch PAN03 is a security enabled wireless switch, based on Z-Wave Plus technology. Z-Wave PlusTM enabled devices displaying the Z-Wave PlusTM logo can also be used with it regardless of the manufacturer, and can also be used in other manufacturer’s Z-WaveTM enabled networks. Remote On/Off control of the connected load is possible with other manufacturer’s wireless Controller. Each switch is designed to act as a repeater. Repeaters will re-transmit the RF signal to ensure that the signal is received by its intended destination by routing the signal around obstacles and radio dead spots. Because PAN03 supports Security Command Class, it can learn with Secured controller. Its functionality and supported command classes is identical when included as a secure and non-secure device.</p> <br /> <h2>Inclusion Information</h2><ol><li>Put your Z-Wave controller into inclusion mode by following the instructions provided by the controller manufacturer.</li><li>Pressing On/Off button three times within 2 seconds will enter inclusion mode.</li></ol> <br /> <h2>Exclusion Information</h2><ol><li>Put your Z-Wave controller into exclusion mode by following the instructions provided by the controller manufacturer.</li><li>Pressing On/Off button three times within 2 seconds will enter exclusion mode.</li></ol> <p>Node ID has been excluded.</p> <br /> <h2>Wakeup Information</h2><p><br /></p>
+In Wall Micromodule Single Switch<br /> <h1>Overview</h1><p>PAN03-1: 868.40MHz; 869.85MHz(EU) /</p><p>PAN03-2: 908.40MHz; 916.00MHz(USA/Canada) /</p><p>PAN03-3: 920.90 MHz, 921.70 MHz, 923.10 MHz (Taiwan)</p><p>PAN03-IL: 916.00MHz(Israel)</p><p><br />This plug-in ON/OFF switch NQ-9770 (labeled as PAN03) is a security enabled wireless switch, based on Z-Wave Plus technology. Z-Wave PlusTM enabled devices displaying the Z-Wave PlusTM logo can also be used with it regardless of the manufacturer, and can also be used in other manufacturer’s Z-WaveTM enabled networks. Remote On/Off control of the connected load is possible with other manufacturer’s wireless Controller. Each switch is designed to act as a repeater. <br /><br />Repeaters will re-transmit the RF signal to ensure that the signal is received by its intended destination by routing the signal around obstacles and radio dead spots. Because NQ-9770 (labeled as PAN03) supports Security Command Class, it can learn with Secured controller. Its functionality and supported command classes is identical when included as a secure and non-secure device.</p> <br /> <h2>Inclusion Information</h2><ol><li>Put your Z-Wave controller into inclusion mode by following the instructions provided by the controller manufacturer.</li><li>Pressing On/Off button three times within 2 seconds will enter inclusion mode.</li></ol> <br /> <h2>Exclusion Information</h2><ol><li>Put your Z-Wave controller into inclusion mode by following the instructions provided by the controller manufacturer.</li><li>Pressing On/Off button three times within 2 seconds will enter inclusion mode.</li></ol> <br /> <h2>Wakeup Information</h2><p><br /></p>
     ]]></description>
     <category>WallSwitch</category>
 
@@ -17,19 +17,19 @@ In Wall Micromodule Single Switch<br /> <h1>Overview</h1><p>PAN03-1: 868.40MHz; 
       <channel id="switch_binary" typeId="switch_binary">
         <label>Switch</label>
         <properties>
-          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY,COMMAND_CLASS_BASIC</property>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY</property>
+        </properties>
+      </channel>
+      <channel id="meter_kwh" typeId="meter_kwh">
+        <label>Electric meter (kWh)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_KWh</property>
         </properties>
       </channel>
       <channel id="meter_watts" typeId="meter_watts">
         <label>Electric meter (watts)</label>
         <properties>
           <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_W</property>
-        </properties>
-      </channel>
-      <channel id="meter_powerfactor" typeId="meter_powerfactor">
-        <label>Electric meter (power factor)</label>
-        <properties>
-          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_Power_Factor</property>
         </properties>
       </channel>
       <channel id="meter_voltage" typeId="meter_voltage">
@@ -44,10 +44,10 @@ In Wall Micromodule Single Switch<br /> <h1>Overview</h1><p>PAN03-1: 868.40MHz; 
           <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_A</property>
         </properties>
       </channel>
-      <channel id="meter_kwh" typeId="meter_kwh">
-        <label>Electric meter (kWh)</label>
+      <channel id="meter_powerfactor" typeId="meter_powerfactor">
+        <label>Electric meter (power factor)</label>
         <properties>
-          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_KWh</property>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_Power_Factor</property>
         </properties>
       </channel>
       <channel id="alarm_general" typeId="alarm_general">
@@ -60,11 +60,11 @@ In Wall Micromodule Single Switch<br /> <h1>Overview</h1><p>PAN03-1: 868.40MHz; 
 
     <!-- DEVICE PROPERTY DEFINITIONS -->
     <properties>
-      <property name="vendor">Philio Technology Corp</property>
-      <property name="modelId">PAN03</property>
-      <property name="manufacturerId">013C</property>
-      <property name="manufacturerRef">0001:000F</property>
-      <property name="dbReference">529</property>
+      <property name="vendor">NorthQ</property>
+      <property name="modelId">NQ-9770</property>
+      <property name="manufacturerId">0096</property>
+      <property name="manufacturerRef">0040:0002</property>
+      <property name="dbReference">1536</property>
       <property name="defaultAssociations">1</property>
     </properties>
 
@@ -215,7 +215,7 @@ Watt differential report mode<br /> <h1>Overview</h1><p>0 : Disable</p><p>1 : 5%
       <parameter name="group_1" type="text" groupName="association" multiple="true">
         <label>1: Group 1</label>
         <description><![CDATA[
-the Switch will report its latest status to Z-Wave Controller<br /> <h1>Overview</h1><p>Grouping 1 includes, SWITCH_BINARY_REPORT, METER_REPORT, ALARM_REPORT.</p>
+the Switch will report its latest status to Z-Wave Controller<br /> <h1>Overview</h1><p>Grouping 1 includes, SWITCH_BINARY_REPORT, METER_REPORT, ALARM_REPORT.<br /></p>
         ]]></description>
         <multipleLimit>1</multipleLimit>
       </parameter>
