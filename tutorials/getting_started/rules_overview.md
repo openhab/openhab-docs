@@ -16,12 +16,12 @@ The list is sorted alphabetically by name and it is meant as a starting point fo
 | Name                | Native             | Language/Graphical  | Notes                         |
 |---------------------|--------------------|---------------------|-------------------------------|
 | Blockly             | :heavy_check_mark: | Graphical           | Only available through the UI |
-| GraalVM JavaScript  | :heavy_check_mark: | JavaScript latest   | breaks Blockly/Nashorn rules  |
-| Groovy              | :heavy_check_mark: | Groovy              |                               |
+| GraalVM JavaScript  | :heavy_check_mark: | ECMAScript 11       |                               |
+| Groovy              | :heavy_check_mark: | Groovy 3.0          |                               |
 | HABApp              | :x:                | >= Python 3.8       |                               |
-| Java                | :heavy_check_mark: | Java                |                               |
-| jRuby               | :heavy_check_mark: | Ruby                |                               |
+| Java                | :heavy_check_mark: | Java 11             |                               |
+| jRuby               | :heavy_check_mark: | Ruby 3.1            |                               |
 | Jython              | :heavy_check_mark: | Python 2.7          |                               |
 | NodeRed             | :x:                | Graphical           | Own UI                        |
-| Nashorn JavaScript  | :heavy_check_mark: | JavaScript 5.1      |                               |
+| Nashorn JavaScript  | :heavy_check_mark: | ECMAScript 5.1      |                               |
 | RulesDSL            | :heavy_check_mark: | RulesDSL            |                               |
