@@ -86,7 +86,11 @@ _Function:_ Returns a color by mixing the given values in a range from 0 - 255 f
 
 _Function:_ Blends two colors chosen via a color picker into one color by the given ratio.
 
-Tip: this could be used for example with a loop that changes the ratio from 0 to 1 to blend the first color into a second
+:::tip
+
+this could be used for example with a loop that changes the ratio from 0 to 1 to blend the first color into a second
+
+:::
 
 ### Create HSB-color from RGB color (openHAB)
 

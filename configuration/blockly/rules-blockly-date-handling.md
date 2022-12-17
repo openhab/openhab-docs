@@ -95,7 +95,11 @@ The String may be one of the following formats (since 3.3) the following formats
 The input String may also be provided via variable-block or a date from an item state.
 In case parts of the date are not provided due to shorter pattern, the others are set to 0
 
-Tip: if you want to create a datetime with your time zone use the "copy of"-block and overwrite its values
+:::tip
+
+if you want to create a datetime with your time zone use the "copy of"-block and overwrite its values
+
+:::
 
 More about that topic can be viewed at ![youtube](../images/blockly/youtube-logo-small.png) [Creating Datetimes and other datetime blocks](https://youtu.be/KwhYKy1_qVk?t=2010)
 
@@ -114,7 +118,11 @@ Creates a ZonedDateTime by providing all necessary six values
 - minute of time
 - second of time
 
-Tip: if you want to create a datetime with your time zone use the "copy of"-block and overwrite its values
+:::tip
+
+if you want to create a datetime with your time zone use the "copy of"-block and overwrite its values
+
+:::
 
 ### Create Datetime based on a specific date ("Copy Of")
 
