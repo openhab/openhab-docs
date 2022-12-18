@@ -3,7 +3,7 @@ id: pioneeravr
 label: Pioneer AVR
 title: Pioneer AVR - Bindings
 type: binding
-description: "The binding can auto-discover the Pioneer AVRs present on your local network."
+description: "This binding integrates Pioneer AVRs."
 since: 3x
 logo: images/addons/pioneeravr.png
 install: auto
@@ -14,6 +14,8 @@ install: auto
 {% include base.html %}
 
 # Pioneer AVR Binding
+
+This binding integrates Pioneer AVRs.
 
 ## Binding configuration
 
