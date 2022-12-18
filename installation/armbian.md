@@ -59,7 +59,7 @@ Select OpenHAB2 (old version) or OpenHAB3 with **SPACE** and press **ENTER**
 
 ![Openhab](images/armbian-step4.png)
 
-Wait 5 to 10 minutes depending on your hardware. During this time you can leave armbian-config and check if installation was successfull by checking what openhab is doing on the system:
+Wait 5 to 10 minutes depending on your hardware. During this time you can leave armbian-config and check if installation was successful by checking what openhab is doing on the system:
 
 ```shell
 sudo htop -u openhab
