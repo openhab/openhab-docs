@@ -32,7 +32,7 @@ The documentation is a community effort, so everyone is welcome to suggest chang
 This is done exactly the same way as for the code repositories, simply through pull requests against this repo.
 When editing a page through the _"Edit this page on GitHub"_ link on the website, you will be given the opportunity to
 create a pull request directly from GitHub.
-Please read our [contribution guidelines](CONTRIBUTING.md) and try to follow
+Please read our [contribution guidelines](.github/CONTRIBUTING.md) and try to follow
 them as best as you can before submitting a change for review - but don't worry if you don't understand all of them, we
 will help you to get it right.
 
