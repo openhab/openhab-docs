@@ -42,8 +42,13 @@ See a video introduction at ![youtube](../images/blockly/youtube-logo-small.png)
 
 Function: Retrieves a specific **Item** or **Group** for use in other item related functions.
 
-- **Tip:** never use this block alone as it only returns the items name which alone does not make sense.
+:::tip
+
+never use this block alone as it only returns the items name which alone does not make sense.
 Instead use the get-Item-Block below.
+
+:::
+
 - Clicking 'MyItem' displays a list of **Items** to pick from
 - Technically this block returns the _name_ of the item as a String.
 - As a result, this block can be used wherever the item name is required as a String.
@@ -76,7 +81,11 @@ Function: Get the current state of an **Item** or **Group**
 
 Note that most of the states can and will be directly **converted automatically to a String** but be careful that some of the **more complex states may instead return a complex object instead**.
 
-**Tip:** it is recommended in this case to assign this to a variable and use the "String-Append-Text" with an empty "" to convert it into a String for further processing.
+:::tip
+
+it is recommended in this case to assign this to a variable and use the "String-Append-Text" with an empty "" to convert it into a String for further processing.
+
+:::
 
 See the [Item-State documentation](https://www.openhab.org/docs/configuration/items.html#state) for more information
 
@@ -101,6 +110,22 @@ GF_IndirectLights (Type=GroupItem, BaseType=SwitchItem, Members=9, State=OFF, La
 The following example depicts the above possibilities:
 
 ![blockly-getMembersExample](../images/blockly/blockly-getMembersExample.png)
+
+### Get Items with Tag
+
+![blockly-getMembers](../images/blockly/blockly-getitemswithtag.png)
+
+Function: Gets all items with the given tags which you can iterate over via a loop
+
+- returns a collection of items which have the given tags
+- multiple tags can be provided which then need to be separared with a comma
+- if multiple tags are given, the item must have all of the tags ("and"-condition)
+
+:::tip
+
+If you need an item that has one of multiple tags, then you need to use one block of each and then use the ["concatenate list block"](https://www.openhab.org/docs/configuration/blockly/rules-blockly-standard-ext.html#concatenate-list) to combine the results.
+
+:::
 
 ### Get particular attributes of an item
 
