@@ -3,7 +3,7 @@ id: cometvisu
 label: CometVisu Backend for openHAB
 title: CometVisu Backend for openHAB - UIs
 type: ui
-description: "This adds a backend for the web based visualization CometVisu <http://www.cometvisu.org>."
+description: "This adds a backend for the web based visualization CometVisu <https://www.cometvisu.org>."
 since: 3x
 logo: images/addons/cometvisu.png
 install: auto
@@ -15,7 +15,7 @@ install: auto
 
 # CometVisu Backend for openHAB
 
-This adds a backend for the web based visualization CometVisu <http://www.cometvisu.org>.
+This adds a backend for the web based visualization CometVisu <https://www.cometvisu.org>.
 The CometVisu is a highly customizable visualization, that runs in any browser.
 Unlike the browser based UI´s in openHAB, the CometVisu does not rely on sitemaps.
 The layout is defined with an XML-based configuration file, which allows a multi column layout.
@@ -332,10 +332,10 @@ Something like that could help to improve the sitemap->config generation.
 
 some screenshots can be found here:
 
--   <http://knx-user-forum.de/forum/supportforen/cometvisu/26809-allgemeine-frage-wie-sieht-eure-cv-startseite-aus>
+-   <https://knx-user-forum.de/forum/supportforen/cometvisu/26809-allgemeine-frage-wie-sieht-eure-cv-startseite-aus>
 
 ## Links
 
-*   German CometVisu Support Forum: <http://knx-user-forum.de/forum/supportforen/cometvisu>
-*   User documentation for the CometVisu: <http://www.cometvisu.org/>
+*   German CometVisu Support Forum: <https://knx-user-forum.de/forum/supportforen/cometvisu>
+*   User documentation for the CometVisu: <https://www.cometvisu.org/>
 *   GitHub project page of the CometVisu: <https://github.com/CometVisu/CometVisu>
