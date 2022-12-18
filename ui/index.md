@@ -5,7 +5,7 @@ title: User Interface Design Overview
 # User Interface Design Overview
 
 Following the previous sections, you should have a working installation, with several Things, Items and Rules.
-You also ideally built a model to represent your home, and can succesfully operate your items individually within the administration area.
+You also ideally built a model to represent your home, and can successfully operate your items individually within the administration area.
 You may now want to present them a little more nicely, to yourself or your family members, so they can interact with them or check their status easily without requiring access to these administration screens.
 
 To do that, openHAB puts different options at your disposal; they are commonly referred to as **Pages**.
