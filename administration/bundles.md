@@ -58,6 +58,8 @@ Scenarios could be that a new version is not yet available via the currently run
 
 ### Using bundle:install and bundle:update
 
+A general introduction on how to install or uninstall a bundle via the UI can be found under [Installation of Add-ons](/docs/configuration/addons.html#installation-of-add-ons)
+
 Generally the approach with bundle:install / bundle:update is the recommended way to install/update bundles (this also works for core-bundles).
 The drawback is that updated bundles MAY revert to the originally installed version if another add-on is installed.
 
