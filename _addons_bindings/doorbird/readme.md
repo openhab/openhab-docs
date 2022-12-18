@@ -5,6 +5,7 @@ title: Doorbird - Bindings
 type: binding
 description: "Binding for Doorbird D101 and D210x video doorbells."
 since: 3x
+logo: images/addons/doorbird.png
 install: auto
 ---
 
