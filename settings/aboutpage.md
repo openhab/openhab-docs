@@ -86,7 +86,7 @@ Technically, this information (and all the other miscellaneous settings) are sto
 - For me information [see here](https://github.com/openhab/openhab-webui/pull/1422)
 
 To test if it works play some static content that comes with openHAB in the /sounds dir using an openHAB console command.
-Use [openHABs console](/administration/console.html#using-the-console) or just run the following from the linux shell:
+Use [openHABs console](docs/administration/console.html#using-the-console) or just run the following from the linux shell:
 
 > openhab-cli console
 
