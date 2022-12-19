@@ -83,3 +83,8 @@ One way of retrieving those files is mentioned above in the openHAB console part
 Place the `.jar` file in the `addons` folder on the machine you are running openHAB on.
 As described already for the addons.cfg option, the path depends on your installation.
 Place the .jar file in the folder Additional add-on files as described in File Locations ([Linux](/docs/installation/linux.html#file-locations), [Windows](/docs/installation/windows.html#file-locations) or [macOS](/docs/installation/macos.html#file-locations)).
+
+## Through the openHAB console
+
+Add-ons (also known as bundles) can be also installed and updated via the openHAB console.
+A detailed description can be found at [Installing or Updating Bundles](/docs/administration/bundles.html).
