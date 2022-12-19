@@ -22,10 +22,10 @@ module.exports = [
       'tutorial/item_widgets',
       'tutorial/custom_widgets',
       'tutorial/rules_introduction',
+      'tutorial/rules_overview',
       'tutorial/rules_basic',
       'tutorial/rules_blockly',
       'tutorial/rules_advanced',
-      'tutorial/rules_overview',
       'tutorial/tips-and-tricks'
     ]
   },
