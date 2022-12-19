@@ -19,7 +19,6 @@ The list is sorted alphabetically by name and it is meant as a starting point fo
 | GraalVM JavaScript  | :heavy_check_mark: | ECMAScript 11       |                               |
 | Groovy              | :heavy_check_mark: | Groovy 3.0          |                               |
 | HABApp              | :x:                | >= Python 3.8       |                               |
-| Java                | :heavy_check_mark: | Java 11             |                               |
 | jRuby               | :heavy_check_mark: | Ruby 3.1            |                               |
 | Jython              | :heavy_check_mark: | Python 2.7          |                               |
 | NodeRed             | :x:                | Graphical           | Own UI                        |
