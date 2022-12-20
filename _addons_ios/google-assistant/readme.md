@@ -20,7 +20,7 @@ If you have any issues, questions or an idea for additional features, please tak
 ## Latest Changes
 
 ::: tip State of this document
-This documentation refers to release [v3.5.1](https://github.com/openhab/openhab-google-assistant/releases/tag/v3.5.1) of [openHAB Google Assistant](https://github.com/openhab/openhab-google-assistant) published on 2022-11-09
+This documentation refers to release [v3.5.2](https://github.com/openhab/openhab-google-assistant/releases/tag/v3.5.2) of [openHAB Google Assistant](https://github.com/openhab/openhab-google-assistant) published on 2022-12-19
 :::
 
 - `ga="light"` for SpecialColorLight is replaced by `ga="specialcolorlight"`
