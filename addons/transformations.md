@@ -105,6 +105,17 @@ The script-prefix is `js`.
 
 :::
 
+::: tab JRuby
+
+The script-prefix is `rb`.
+
+```ruby
+input ||= nil # see https://github.com/jruby/jruby/issues/5876
+"String has #{input.length} characters"
+```
+
+:::
+
 ::::
 
 Currently the `SCRIPT` transformation is not available as profile.
