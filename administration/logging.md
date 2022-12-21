@@ -62,7 +62,7 @@ Please see the [Karaf documentation](https://karaf.apache.org/manual/latest/#_co
 The config file for logging is located in the `userdata/etc` folder (manual setup) or in `/var/lib/openhab/etc` (apt/deb-based setup).
 
 ::: tip Attention OH2 users
-The format and filename to store log settings has changed. It used to be `org.ops4j.pax.logging.cfg` in openHAB 2 and is `log4j2.xml` in openHAB 3.
+The format and filename to store log settings has changed. It used to be `org.ops4j.pax.logging.cfg` in openHAB 2 and is `log4j2.xml` since openHAB 3.
 Do not delete the `.cfg` though, it needs to include the new `.xml`.
 :::
 

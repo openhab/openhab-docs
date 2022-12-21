@@ -35,7 +35,7 @@ This section does not cover building user interfaces; this subject has its own s
 
 ## Versatility
 
-openHAB 3 provides a _single_ graphical user interface to modify settings, to manage your components and rules, and to provide a UI for users.
+openHAB provides a _single_ graphical user interface to modify settings, to manage your components and rules, and to provide a UI for users.
 
 While there are no full-scale starter and migration tutorials available yet, see the [recording of the recent 2020 openHAB virtual meetup](https://youtu.be/pwZ8AOwRDEk?t=1586) for a tour of the new Main UI (starting at 26:26).
 

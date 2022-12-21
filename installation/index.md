@@ -50,8 +50,8 @@ Please note that versions of Java higher than 11 are not supported at the moment
 | [Oracle Java](https://java.com/en/)         | Full openHAB support on all platforms                                                                                                                                                 | [Licensing restrictions](https://blog.takipi.com/running-java-on-docker-youre-breaking-the-law/), manual installation required on many Linux systems: [Ubuntu](https://help.ubuntu.com/community/Java), [Mint](https://community.linuxmint.com/tutorial/view/1091), and [Debian](https://wiki.debian.org/Java/Sun) are some examples |
 | [AdoptOpenJDK](https://adoptopenjdk.net)          | Open Source JDK backed by many large companies |                                                                                                                                                                                                                                                                                                                                      |
 
-Please download and install the **Java 11** version of the JVM.
-Note that openHAB 3 will run under Java 11, and you _can_ use it with openHAB 2.X as well. But be aware that although developers are working hard to make this work, there might be problems with the oldest parts of openHAB 2.x, such as some of the v1 bindings, due to non-backward compatible changes in Java 11.
+Please download and install the **Java 17** version of the JVM.
+Note that openHAB 4 will run under Java 17, and you _probably can_ use it with openHAB 2.X as well. But be aware that although developers are working hard to make this work, there might be problems with the oldest parts of openHAB 2.x, such as some of the v1 bindings, due to non-backward compatible changes in Java 17.
 
 The **64-bit version** of the JVM is **only** recommended on platforms using a 64-bit OS and an Intel or AMD processor.
 
