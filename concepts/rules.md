@@ -246,7 +246,7 @@ At some point, when basic UI rules are not sophisticated enough, rule templates 
 Someone may have already written the rule and provided it as a template in the community marketplace.
 
 To enable access to rule templates, navigate to _Settings_ -> _Community Marketplace_ and toggle _Enable Community Marketplace_ to ON.
-Then to install a rule template, visit the web UI and navigate: _Settings_ -> _Add-Ons_ -> _Automation_ -> Scroll down to the _Rule Templates_ section.
+Then to install a rule template, visit the web UI and navigate: _Settings_ -> _Add-ons_ -> _Automation_ -> Scroll down to the _Rule Templates_ section.
 Click on a rule template to review it's documentation, open the community thread and install the template to your system.
 Check the template's documentation for dependencies and install them!
 Otherwise the rule won't work.
