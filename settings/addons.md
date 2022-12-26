@@ -1,9 +1,9 @@
 ---
 layout: documentation
-title:  Add-Ons
+title:  Add-ons
 ---
 
-# Settings - Add-Ons
+# Settings - Add-ons
 
 This is the section that allows openHAB to be extended via add-ons.
 There is a huge variety of extension possibilities that openHAB provides:
@@ -75,7 +75,7 @@ However, openHAB supports some more User Interfaces like
   - PHP support for CometVisu
   - and [HABot](/docs/ui/habot/),
 
-## Other Add-Ons
+## Other Add-ons
 
 - **System integrations**: Integrate openHAB with external systems
 Here you can found the

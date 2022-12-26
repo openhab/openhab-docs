@@ -27,7 +27,7 @@ This article refers to the directory where you installed the distribution as `<D
 1. Use Maven to clean & install the addons project
 
     - mvn clean install in the root of `<ADDON_DIR>` using commandline Maven (or IntelliJ Maven view)
-    - some of the addons might fail to build - if it's not the one, you're interested in that should not bother you
+    - some of the add-ons might fail to build - if it's not the one, you're interested in that should not bother you
     - when the Maven project finished, you should find the freshly built addon JAR in the target directory
 
 ## Debug your addon
