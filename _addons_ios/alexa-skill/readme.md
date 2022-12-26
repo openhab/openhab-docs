@@ -634,6 +634,7 @@ If paired with [`TiltAngle`](#tiltangle), the primary controls (open/close/stop)
     * defaults to `position`
   * presets=`<presets>`
     * each preset formatted as `<presetValue>=<@assetIdOrName1>:...` (e.g. `presets="20=Morning,60=Afternoon,80=Evening:@Setting.Night"`)
+    * limited to a maximum of 150 presets
     * predefined [asset ids](#asset-catalog)
     * defaults to item state description options `presets="value1=label1,..."` if defined, otherwise no presets
   * language=`<code>`
@@ -681,6 +682,7 @@ If paired with [`PositionState`](#positionstate), the primary controls (open/clo
     * defaults to `position`
   * presets=`<presets>`
     * each preset formatted as `<presetValue>=<@assetIdOrName1>:...` (e.g. `presets="20=Morning,60=Afternoon,80=Evening:@Setting.Night"`)
+    * limited to a maximum of 150 presets
     * predefined [asset ids](#asset-catalog)
     * defaults to item state description options `presets="value1=label1,..."` if defined, otherwise no presets
   * language=`<code>`
@@ -767,7 +769,7 @@ Items that represent an input source (e.g. "HDMI 1" or "TUNER" on a stereo).
 * Supported metadata parameters:
   * supportedInputs=`<inputs>`
     * each input formatted as `<inputValue>=<inputName1>:...` (e.g. `supportedInputs="HDMI1=Cable:Comcast,HDMI2=Kodi"`)
-    * requires at least two inputs to be specified
+    * requires at least two inputs to be specified with a maximum of 150
     * input value used as name if not provided (e.g. `supportedInputs="HDMI1,DVD"` <=> `supportedInputs="HDMI1=HDMI1,DVD=DVD`)
     * defaults to item state description options `supportedInputs="value1=label1,..."`, if defined, otherwise no supported inputs
   * language=`<code>`
@@ -1656,7 +1658,7 @@ Items that represent components of a device that have more than one setting. Mul
     * defaults to item state description read only property if defined, otherwise false
   * supportedModes=`<modes>`
     * each mode formatted as `<mode>=<@assetIdOrName1>:...` (e.g. `supportedModes="0=Cold:Cool,1=Warm,2=Hot"`)
-    * requires at least two modes to be specified
+    * requires at least two modes to be specified with a maximum of 150
     * shortened format available for string-based modes by either leaving the first element empty or not providing the mode name at all (e.g. `supportedModes="Normal=:Cottons,Whites"` <=> `supportedModes="Normal=Normal:Cottons,Whites=Whites`)
     * defaults to item state description options `supportedModes="value1=label1,..."`, if defined, otherwise no supported modes
   * ordered=`<boolean>`
@@ -1729,6 +1731,7 @@ Items that represent components of a device that are characterized by numbers wi
     * defaults to item state description min, max & step values, if defined, otherwise `"0:100:1"` (Dimmer/Rollershutter); `"0:10:1"` (Number)
   * presets=`<presets>`
     * each preset formatted as `<presetValue>=<@assetIdOrName1>:...` (e.g. `presets="1=@Value.Low:Lowest,10=@Value.High:Highest"`)
+    * limited to a maximum of 150 presets
     * requires to be a multiple of the supported range precision
     * defaults to item state description options `presets="value1=label1,..."` if defined, otherwise no presets
   * unitOfMeasure=`<unitId>`
