@@ -91,7 +91,7 @@ Frame label="Demo" {
 
 ::: tip Note
 When you are using `Frame` elements at one hierarchy level of your sitemap, you can not use any other element type besides `Frame`.
-Different elemnts can be used on the previous or next hierarchy level.
+Different elements can be used on the previous or next hierarchy level.
 :::
 
 ##### Blocks
