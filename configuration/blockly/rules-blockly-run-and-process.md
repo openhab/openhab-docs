@@ -86,14 +86,13 @@ A rule carries contextual information when triggered - this block can retrieve t
 
 ## Transform values via Map, Regex or JsonPath and others
 
-OpenHAB provides many [transformations](https://www.openhab.org/docs/configuration/transformations.html):
+openHAB provides many [transformations](https://www.openhab.org/docs/configuration/transformations.html):
 
 - [Map](https://www.openhab.org/addons/transformations/map/)
 - [Regex](https://www.openhab.org/addons/transformations/regex/)
 - [JsonPath](https://www.openhab.org/addons/transformations/jsonpath/)
 - [Binary to Json](https://www.openhab.org/addons/transformations/bin2json/)
 - [Exec](https://www.openhab.org/addons/transformations/exec/)
-- [JavaScript](https://www.openhab.org/addons/transformations/javascript/)
 - [Jinja](https://www.openhab.org/addons/transformations/jinja/)
 - [Scale](https://www.openhab.org/addons/transformations/scale/)
 - [XPath](https://www.openhab.org/addons/transformations/xpath/)

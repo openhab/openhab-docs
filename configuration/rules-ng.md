@@ -11,7 +11,7 @@ If your are looking for general rules explanations have a look at our [Rules](ht
 # Next-Generation Rule Engine
 
 Since openHAB 2.4 another Rule Engine has been added.
-It allows Rules to be edited in a graphical fashion and to interact with [JSR223 Scripts (Javascript, Jypthon, etc)](https://www.openhab.org/docs/configuration/jsr223.html).
+It allows Rules to be edited in a graphical fashion and to interact with [JSR223 Scripts (JavaScript, Jython, etc)](https://www.openhab.org/docs/configuration/jsr223.html).
 
 ## Concept
 

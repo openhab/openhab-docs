@@ -6,7 +6,7 @@ title: Rules Blockly
 
 # Blockly Reference
 
-One of the core feature that OpenHAB provides is writing rules to allow specific behaviour with the home automation system.
+One of the core feature that openHAB provides is writing rules to allow specific behaviour with the home automation system.
 The usual way of developing rules is by coding them like described in the [Textual Rules](/docs/configuration/rules-dsl.html).
 
 However, this art of programming may become intimidating early on and shy away away people with few or almost no experience in programming.
@@ -53,7 +53,7 @@ Three Youtube tutorials have been made available via the [openHAB Youtube channe
 - [Episode 1](https://www.youtube.com/watch?v=EdllUlJ7p6k)
   - [Introduction](https://www.youtube.com/watch?v=EdllUlJ7p6k)
   - [Quick Intro Blockly Rules](https://youtu.be/EdllUlJ7p6k?t=295)
-  - [Debugging Rules with OpenHAB Developer Tools to watch Item-Status](https://youtu.be/EdllUlJ7p6k?t=325)
+  - [Debugging Rules with openHAB Developer Tools to watch Item-Status](https://youtu.be/EdllUlJ7p6k?t=325)
   - [Creating a Blockly Rule](https://youtu.be/EdllUlJ7p6k?t=429)
   - [Overview of the Blockly Sections](https://youtu.be/EdllUlJ7p6k?t=558)
   - [Logging](https://youtu.be/EdllUlJ7p6k?t=670)
