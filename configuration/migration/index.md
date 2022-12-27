@@ -45,7 +45,7 @@ You should probably do your usual OS backup too to make sure you can get back to
 
 #### Prerequisites
 
-openHAB (since version 4) requires Java 17. Most modern Linux OS have an `openjdk-11-jdk` package available for you to install but alternative solutions such as [Zulu's OpenJDK](https://www.azul.com/downloads/zulu-community/?version=java-17-lts&package=jdk) (which openHABian can install for you) are available and these may run faster on 32-bit armhf platforms such as the Raspberry Pi.
+openHAB (since version 4) requires Java 17. Most modern Linux OS have an `openjdk-17-jdk` package available for you to install but alternative solutions such as [Zulu's OpenJDK](https://www.azul.com/downloads/zulu-community/?version=java-17-lts&package=jdk) (which openHABian can install for you) are available and these may run faster on 32-bit armhf platforms such as the Raspberry Pi.
 
 You must also be on the relevant repository for openHAB, this hasn't changed for openHAB 4.x so the [same instructions for moving to it](https://www.openhab.org/docs/installation/linux.html#package-repository-installation) are still valid.
 
