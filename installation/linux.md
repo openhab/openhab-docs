@@ -33,7 +33,7 @@ If you're unsure which manual file you should download, using `dpkg --print-arch
 When installing Zulu or Zulu Embedded from a .zip or .tar archive, make sure to [set Zulu as the main Java "alternative"](https://docs.azul.com/zulu/zuludocs/#ZuluUserGuide/SwitchingBetweenJavaAlternatives/SwitchBetweenJavaAlts.htm).
 
 ::: tip Note
-Make sure to download Zulu or Java **11**.
+Make sure to download Zulu or Java **17**.
 :::
 
 ## Installation
