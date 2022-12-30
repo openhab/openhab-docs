@@ -1,8 +1,8 @@
-# openHAB 3.x Documentation Project
+# openHAB Documentation Project
 
 ## Introduction
 
-This repository contains the documentation for openHAB 3.x.
+This repository contains the documentation for openHAB.x.
 
 The result is available at [https://openhab.org/docs/](https://www.openhab.org/docs/) and [https://openhab.org/addons/](https://www.openhab.org/addons/).
 
@@ -53,7 +53,7 @@ So we are saving time for everyone by keeping those files at their original loca
 
 ::: tip UNDER REVIEW
 
-The process below is subject to changes until the openHAB 3.x website become the production one.
+The process below is subject to changes until the openHAB.x website become the production one.
 
 :::
 

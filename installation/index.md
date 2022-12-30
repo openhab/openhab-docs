@@ -34,14 +34,14 @@ openHABian is also available to kickstart your openHAB experience on existing De
 
 ## Prerequisites
 
-Make sure that you have an up to date **Java 11** JVM platform installed on your host system.
+Make sure that you have an up to date **Java 17** JVM platform installed on your host system.
 We recommended to use the openjdk package that comes with your Linux distro.
 If in doubt, explicitly install a JVM based on OpenJDK.
 You could also [download Azul Zulu](https://www.azul.com/downloads/zulu-community/?&architecture=x86-64-bit&package=jdk#) [Installation](https://docs.azul.com/zulu/zuludocs/ZuluUserGuide/InstallingZulu/InstallationWindowsUsingZuluMSIFile.htm) instructions can be found on Azul Systems' Zulu website.
 Oracle Java is also suitable for most configurations but it's not recommended. Licensing restrictions may apply.
 
 ::: warning
-Please note that versions of Java higher than 11 are not supported at the moment.
+Please note that versions of Java higher than 17 are not supported at the moment.
 :::
 
 | Java Platform                               | Advantages                                                                                                                                                                            | Disadvantages                                                                                                                                                                                                                                                                                                                        |
@@ -50,8 +50,7 @@ Please note that versions of Java higher than 11 are not supported at the moment
 | [Oracle Java](https://java.com/en/)         | Full openHAB support on all platforms                                                                                                                                                 | [Licensing restrictions](https://blog.takipi.com/running-java-on-docker-youre-breaking-the-law/), manual installation required on many Linux systems: [Ubuntu](https://help.ubuntu.com/community/Java), [Mint](https://community.linuxmint.com/tutorial/view/1091), and [Debian](https://wiki.debian.org/Java/Sun) are some examples |
 | [AdoptOpenJDK](https://adoptopenjdk.net)          | Open Source JDK backed by many large companies |                                                                                                                                                                                                                                                                                                                                      |
 
-Please download and install the **Java 11** version of the JVM.
-Note that openHAB 3 will run under Java 11, and you _can_ use it with openHAB 2.X as well. But be aware that although developers are working hard to make this work, there might be problems with the oldest parts of openHAB 2.x, such as some of the v1 bindings, due to non-backward compatible changes in Java 11.
+Please download and install the **Java 17** version of the JVM.
 
 The **64-bit version** of the JVM is **only** recommended on platforms using a 64-bit OS and an Intel or AMD processor.
 
@@ -61,9 +60,9 @@ The 32-bit JVM performs better on the ARM platform. Some add-ons use libraries t
 Check your current Java version by opening a command line console and typing `java -version`:
 
 ```text
-openjdk version "11.0.9.1" 2020-11-04 LTS
-OpenJDK Runtime Environment Zulu11.43+55-CA (build 11.0.9.1+1-LTS)
-OpenJDK 64-Bit Server VM Zulu11.43+55-CA (build 11.0.9.1+1-LTS, mixed mode)
+openjdk version "17.0.5" 2022-10-18 LTS
+OpenJDK Runtime Environment Zulu17.38+21-CA (build 17.0.5+8-LTS)
+OpenJDK 64-Bit Server VM Zulu17.38+21-CA (build 17.0.5+8-LTS, mixed mode, sharing)
 ```
 
 ## Setup variants
@@ -95,7 +94,7 @@ openhab-cli info
 will result in e.g. for an [openHABian](https://www.openhab.org/docs/installation/openhabian.html) installation
 
 ```shell
-Version:     3.0.2 (Build)
+Version:     4.0.0 (Build)
 
 User:        openhab (Active Process 7466)
 User Groups: openhab tty dialout audio bluetooth gpio

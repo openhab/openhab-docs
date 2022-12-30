@@ -3,6 +3,15 @@ layout: documentation
 title: Synology DiskStation
 ---
 
+:::tip Note
+
+openHAB 4 and higher need Java 17.
+You will need to provide a working Java installation on your DiskStation.
+The sections below are written for Java 11 but the docs are not updated currently, since we have not secured knowledge about how to install Java 17 on the DiskStation.
+If you can provide some proper sources and explanation, we are happy to include your contribution into this article.
+
+:::
+
 # Synology DiskStation DSM 7.0 and higher
 
 The [DiskStation by Synology](https://www.synology.com/en-us/dsm) is a famous NAS server solution for your home, allowing the installation of additional packages.

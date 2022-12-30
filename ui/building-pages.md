@@ -8,7 +8,7 @@ title: Building Pages - Components & Widgets
 
 ## UI Components: introduction and structure
 
-**UI components** are the basic building blocks for many UIs in openHAB 3.
+**UI components** are the basic building blocks for many UIs in openHAB.
 The Main UI Pages and Personal Widgets are notable UI components, but Sitemaps that were created in the UI and HABPanel dashboards are as well.
 
 These structures make up hierarchies that notably define the pages in their entirety, and are relatively simple.
