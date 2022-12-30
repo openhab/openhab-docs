@@ -36,7 +36,7 @@ If you wish, you can import your own certificate into this keystore.
 Please ensure that you remove the old certificate and give the new certificate the same alias as the old one (otherwise, the App might still be presented the old certificate).
 
 You can also use certificates to authenticate, when using a reverse proxy.
-Have a lok at the corresponding [section](#use-a-client-certificate-based-authentication) for further information.
+Have a lok at the [community forum](https://community.openhab.org/t/using-nginx-reverse-proxy-for-client-certificate-authentication-start-discussion/43064) for further information.
 
 ## Authentication and Access Control
 

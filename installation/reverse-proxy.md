@@ -34,7 +34,7 @@ The location of the default setup is `/etc/nginx/sites-enabled/default`. To allo
 The recommended configuration below assumes that you run the reverse proxy on the same machine as your openHAB runtime.
 If this doesn't fit for you, you just have to replace `proxy_pass http://localhost:8080/` by your openHAB runtime hostname (such as `http://youropenhabhostname:8080/`).
 
-```nginx
+```json
 server {
     listen                                    80;
     server_name                               mydomain_or_myip;
@@ -105,9 +105,9 @@ You're then free to reference the file to NGINX.
 Now the configuration file (`/etc/nginx/sites-enabled/openhab`) needs to be edited to use this password.
 Open the configuration file and **add** the following lines underneath the proxy_* settings:
 
-```nginx
-        auth_basic                            "Username and Password Required";
-        auth_basic_user_file                  /etc/nginx/.htpasswd;
+```text
+    auth_basic                            "Username and Password Required";
+    auth_basic_user_file                  /etc/nginx/.htpasswd;
 ```
 
 ### Add authorization and cookie directives in NGINX Configuration
@@ -115,9 +115,9 @@ Open the configuration file and **add** the following lines underneath the proxy
 This is an important new requirment in openHAB 3.0 and later versions.
 This is not required prior to openHAB 3.0. You must add the following two directives underneath the `add_header` (in the `server` block) and `proxy_set_header` (in the `location /` block) items respectively:
 
-```nginx
-        add_header Set-Cookie X-OPENHAB-AUTH-HEADER=1;
-        proxy_set_header Authorization          "";
+```text
+    add_header Set-Cookie X-OPENHAB-AUTH-HEADER=1;
+    proxy_set_header Authorization          "";
 ```
 
 Once done, **test and restart your NGINX service** and authentication should now be enabled on your server!
@@ -149,11 +149,11 @@ It is often desirable to allow specific IPs (e.g. the local network) to access o
 In these cases NGINX can use the `satisfy any` directive followed by `allow` and `deny` lines to make these exceptions.
 These lines are placed in the `location{}` block. For example, by adding the lines:
 
-```nginx
-        satisfy  any;
-        allow    192.168.0.0/24;
-        allow    127.0.0.1;
-        deny     all;
+```text
+    satisfy  any;
+    allow    192.168.0.0/24;
+    allow    127.0.0.1;
+    deny     all;
 ```
 
 NGINX will allow anyone within the 192.168.0.0/24 range **and** the localhost to connect without a password.
@@ -206,7 +206,7 @@ The certificate and key should have been placed in `/etc/ssl/`.
 NGINX needs to be told where these files are and then enable the reverse proxy to direct HTTPS traffic.
 In the NGINX configuration, place the following underneath your `server_name` variable:
 
-```nginx
+```text
   ssl_certificate                 /etc/ssl/openhab.crt;
   ssl_certificate_key             /etc/ssl/openhab.key;
 ```
@@ -233,7 +233,7 @@ sudo mkdir -p /var/www/mydomain
 
 Next add the new location parameter to your NGINX config, this should be **placed above the last brace** in the server setting:
 
-```nginx
+```text
   location /.well-known/acme-challenge/ {
     root                            /var/www/mydomain;
   }
@@ -255,7 +255,7 @@ The certificate and key should have been placed in `/etc/letsencrypt/live/mydoma
 NGINX needs to be told where these files are and then enable the reverse proxy to direct HTTPS traffic, using Strict Transport Security to prevent man-in-the-middle attacks.
 In the NGINX configuration, place the following underneath your server_name variable:
 
-```nginx
+```text
     ssl_certificate                 /etc/letsencrypt/live/mydomain_or_myip/fullchain.pem;
     ssl_certificate_key             /etc/letsencrypt/live/mydomain_or_myip/privkey.pem;
     add_header                      Strict-Transport-Security "max-age=31536000";
@@ -265,7 +265,7 @@ In the NGINX configuration, place the following underneath your server_name vari
 
 Regardless of the option you choose, make sure you change the port to listen in on HTTPS traffic.
 
-```nginx
+```text
     listen                          443 ssl;
 ```
 
@@ -279,7 +279,7 @@ If you want to keep hold of a HTTP server for some reason, just add `listen 80;`
 You may want to redirect all HTTP traffic to HTTPS, you can do this by adding the following to the NGINX configuration.
 This will essentially replace the HTTP url with the HTTPS version!
 
-```nginx
+```json
 server {
     listen                          80;
     server_name                     mydomain_or_myip;
@@ -290,7 +290,7 @@ server {
 It might be the case that you can't use standard ports. When trying to access a HTTPS port with HTTP, NGINX will respond with a `400 Bad Request`.
 We can redirect this gracefully using a "HTTPS [error page](https://nginx.org/en/docs/http/ngx_http_core_module.html#error_page)" for the [non-standard HTTP error code 497](https://nginx.org/en/docs/http/ngx_http_ssl_module.html#errors)
 
-```nginx
+```json
 server {
     listen                          8084 ssl;
     server_name                     mydomain_or_myip;
@@ -302,7 +302,7 @@ server {
 
 After following all the steps on this page, you _should_ have a NGINX server configuration (`/etc/nginx/sites-enabled/openhab`) that looks like this:
 
-```nginx
+```json
 server {
     listen                          80;
     server_name                     mydomain_or_myip;
@@ -446,7 +446,7 @@ DSM comes with vi installed by default, but you may wish to [install nano](https
 sudo nano /usr/local/etc/nginx/sites-enabled/openHAB-auth
 ```
 
-```nginx
+```json
 # openHAB NGINX config
 
 server {
@@ -539,7 +539,7 @@ openssl dhparam -out /etc/nginx/ssl/dhparam.pem 2048
 Now we can configure NGINX to use this key, as well as telling the client to use specific cyphers and SSL settings, just add the following under your `ssl_certificate **` settings but above ``location *``.
 All of these settings are customisable, but make sure you [read up on](https://nginx.org/en/docs/http/configuring_https_servers.html) what these do first before changing them:
 
-```nginx
+```text
     ssl_protocols                   TLSv1 TLSv1.1 TLSv1.2;
     ssl_prefer_server_ciphers       on;
     ssl_dhparam                     /etc/nginx/ssl/dhparam.pem;
