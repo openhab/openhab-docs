@@ -27,17 +27,17 @@ to use the CometVisu with openHAB as backend. If you use an extra webserver to s
 docker container of the CometVisu <https://hub.docker.com/r/cometvisu/cometvisu>) this binding is obsolete.
 You only need this binding if you want to use openHABs internal webserver to serve the CometVisu.
 
-**"PHP support for CometVisu"-binding is not needed anymore**
+**"PHP support for CometVisu"-binding is not needed anymore and has been deleted**
 
-If you want to use this binding to serve the CometVisu, you do not need the additional "PHP support for CometVisu" binding anymore.
-That binding is deprecated and will be removed in future openHAB versions. This binding provides everything that is needed to 
-run CometVisus own file-manager and editors. The only things that are not supported are plugins that use PHP-Code.
+The additional "PHP support for CometVisu" binding is not needed anymore. It has been removed in openHAB 4.0. 
+This binding provides everything that is needed to run CometVisu's own file-manager and editors. 
+The only things that are not supported are plugins, that use PHP-Code.
 
 
 ## Requirements
 
 *   openHAB 2.0 or greater
-*   CometVisu 0.8.6 or greater <https://github.com/CometVisu/CometVisu/releases>
+*   CometVisu 0.12.0 or greater <https://github.com/CometVisu/CometVisu/releases>
 
 ## Installation
 
@@ -161,12 +161,6 @@ http://<openhab-server>:8080/<webAlias>/?config=<sitemap-name>
 You can use the editor to change and store this config.
 You can start with the demo-sitemap to get a quick overview about how the CometVisu looks like.
 
-## New features (compared to the 1.x version)
-
-*   PHP support: Editor is working, rsslog-plugin can be used (see examples)
-*   Persistence support: Any persisted item can be used to create a chart
-*   GroupItem support: as known from the openHAB UI´s the group-functions like the number of open windows in a group of contacts can be shown in the visu
-
 
 ## Examples
 
@@ -283,15 +277,13 @@ sendCommand(Logger,"Received call from 123456789")
 </colorchooser>
 ```
 
-Please note: You have to add the colorchooser plugin in the meta>plugins section of you config
-
 ## Known problems
 
-Not all of the PHP-based functions in the CometVisu client have been tested so far. The untested features are:
+Plugins that use custom PHP code, do not work when you use this binding to serve the CometVisu, currently these are:
 
-*   Automatic configuration upgrade, when the library version has changed
-*   calendarlist plugin
-*   upnpcontroller plugin
+* Direct influxdb support in diagrams
+* TR064 plugin (use openHABs TR064 binding instead)
+* upnpcontroller plugin
 
 The sitemap support can only be used as a starting point for own customizations, e.g. you open an automatic generated config and store it in by CometVisu by using the editor. Then you start to customize it to your own needs. New items must by added by hand from the moment you stored and changed the generated config.
 
@@ -303,31 +295,6 @@ Please make sure that openHAB has the rights to read the configured \<webFolder\
 
 If you get an 403 - Access Denied error, when you try to open the CometVisu in your browser you have not copied the correct release folder into the \<webFolder\> folder. Please check if there is a subfolder with the exact name "release/", which contains an index.html file and copy the content to the folder defined in the \<webFolder\>-property.
 
-### Hints for development
-
-Source file are automatically generated from CometVisu's visu_config.xsd and openapi.yaml files.
-For a manual update of these files copy them to the src/main/resources folder and run
-`mvn clean generated-sources`.
-
-If the library version changes the value must be updated in `org.openhab.ui.cometvisu.internal.backend.model.config.LibVersion`.
-
-## TODO
-
-Maybe it is possible to define a general structure (in addition to a sitemap), that maps and groups items based on their context, e.g. which floor/room/subsection the belong to
-
-```
-<floor>
-	<room navbar="top">
-		<all-lights-items colspan="12">
-		<all-rollershutter-items colspan="6">
-		<all-contact-items colspan="6">
-		<all-other-items colspan="12">
-	</room>
-</floor>
-```
-
-Something like that could help to improve the sitemap->config generation.
-
 ## Screenshots
 
 some screenshots can be found here:
@@ -337,5 +304,6 @@ some screenshots can be found here:
 ## Links
 
 *   German CometVisu Support Forum: <https://knx-user-forum.de/forum/supportforen/cometvisu>
-*   User documentation for the CometVisu: <https://www.cometvisu.org/>
+*   English User documentation for the CometVisu: <https://www.cometvisu.org/CometVisu/en/latest/manual/>
+*   German user documentation for the CometVisu: <https://www.cometvisu.org/CometVisu/de/latest/manual/>
 *   GitHub project page of the CometVisu: <https://github.com/CometVisu/CometVisu>
