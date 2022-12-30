@@ -1,9 +1,9 @@
 ---
 layout: documentation
-title:  Add-Ons
+title:  Add-ons
 ---
 
-# Settings - Add-Ons
+# Settings - Add-ons
 
 This is the section that allows openHAB to be extended via add-ons.
 There is a huge variety of extension possibilities that openHAB provides:
@@ -73,9 +73,9 @@ openHAB by default support the Basic UI as well as the HABPanel (which used to b
 However, openHAB supports some more User Interfaces like
   - the [CometVisu-Backend](https://www.cometvisu.org/)
   - PHP support for CometVisu
-  - and  [Habot](/docs/ui/habot/),
+  - and [HABot](/docs/ui/habot/),
 
-## Other Add-Ons
+## Other Add-ons
 
 - **System integrations**: Integrate openHAB with external systems
 Here you can found the
@@ -88,15 +88,14 @@ Here you can found the
   - RRD
   - InfluxDB
   - mongoDB
-  - mapDB
+  - MapDB
   - several JDBC Connectors and
   - JPA Persistence
 
 - **Transformation Add-ons**: Extensions for a particular transformation like
   - JSONPath
   - RegEx
-  - JavaScript (transformation written in Javascript)
-  - MapDB
+  - Map
   - Binary To JSON
   - Exec (executes an external program and returns the output as a string)
   - Jinja

@@ -17,7 +17,7 @@ Please read them carefully before asking questions in the forum.
 
 [[toc]]
 
-## **OpenHAB Configuration Files**
+## **openHAB Configuration Files**
 
 Some openHAB blocks rely on particular configuration files found in the openHAB configuration folder.
 This folder is referred to as $OPENHAB\_CONF in this page, and the location of this folder for your setup can be found via the UI: _Help & About_ -> _Technical Information_ -> _Configuration folder_.
@@ -137,7 +137,7 @@ More on that topic can be viewed at ![youtube](../images/blockly/youtube-logo-sm
 ## Show an item status watch list besides the blockly rules
 
 In the developer section there is the possibility to add a sidebar to the blockly rules development workspace that allows to watch live status of an item.
-View the chapter ![youtube](../images/blockly/youtube-logo-small.png) [Debugging Rules with OpenHAB Developer Tools to watch Item-Status](https://youtu.be/EdllUlJ7p6k?t=325) for more information
+View the chapter ![youtube](../images/blockly/youtube-logo-small.png) [Debugging Rules with openHAB Developer Tools to watch Item-Status](https://youtu.be/EdllUlJ7p6k?t=325) for more information
 
 ## Return to Blockly Reference
 

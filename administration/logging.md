@@ -88,7 +88,6 @@ The **detail** of logging is defined by one of the following levels:
 | INFO      | 400        | When an event for informational purposes                                                |
 | DEBUG     | 500        | When a general debugging event required                                                 |
 | TRACE     | 600        | When a fine grained debug message, typically capturing the flow through the application |
-| ALL       | MAX        | When all events should be logged                                                        |
 
 The levels build a hierarchy with **ERROR** logging critical messages only and **DEBUG** logging nearly everything.
 **DEBUG** combines all logs from weight 100 to 500, while **TRACE** adds further messages in addition to what **DEBUG** displays.

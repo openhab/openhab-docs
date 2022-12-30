@@ -1059,7 +1059,7 @@ If it does, it is time to [contribute your work](../contributing.html)!
 
 ## Add your binding's logo to the openHAB website
 
-After your pull request has been merged and the next openHAB version is released, your binding will be available in the addons search on the openHAB website with a default logo.
+After your pull request has been merged and the next openHAB version is released, your binding will be available in the add-ons search on the openHAB website with a default logo.
 
 You can upload a logo to display it on the openhab.org start page, the addon search and in the readme.
 

@@ -89,7 +89,7 @@ If you have more than one Item that should look and behave the same, create a cu
 Once a custom widget is created, it will appear in the list of widget types.
 Properties can be used to customize the widget to work for each Item.
 See the docs referenced above for details, and the next page of this tutorial for some general advice and approaches.
-Look in the [Add-Ons - UI Category on the forum](https://community.openhab.org/c/add-ons/uis/30) for lots of examples.
+Look in the [Add-ons - UI Category on the forum](https://community.openhab.org/c/add-ons/uis/30) for lots of examples.
 
 ## Import Widgets from the openHAB marketplace
 
