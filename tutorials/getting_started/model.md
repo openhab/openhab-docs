@@ -16,7 +16,7 @@ For example, instead of dealing with `zwave:1231242:node12:switch` we can deal w
 Items are the main entities that the rest of openHAB works with including Pages, Sitemaps, Rules, and persistence.
 
 There are many ways to organize your items, one of which is to make use of the semantic model (descriptions for location, type of equipment and more).
-openHAB 3 makes extensive use of the semantic model to automatically create Pages (see next section) and to provide natural language interaction.
+openHAB makes extensive use of the semantic model to automatically create Pages (see next section) and to provide natural language interaction.
 Therefore we recommend creating the semantic model right from the start and sticking to it.
 This will make your life easier in the long run.
 Taking the time to understand and choose a logical structure for your home will save you from needing to re-do the work in the future.
