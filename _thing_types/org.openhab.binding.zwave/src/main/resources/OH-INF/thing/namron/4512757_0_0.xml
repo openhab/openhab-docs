@@ -1,0 +1,442 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="namron_4512757_00_000" listed="false">
+    <label>4512757 Z-Wave thermostat</label>
+    <description><![CDATA[
+Z-Wave thermostat<br /> <h1>Overview</h1><p>Z-Wave 16A heating (or cooling) wall thermostat with four regular buttons below the display. Internal, external and floor temperature sensors are supported.</p> <br /> <h2>Inclusion Information</h2><p>Press M-key for 10 seconds to enter settings mode. Press up/down arrow keys to select "NET". Short press M-key, should show "IN". Press M-key for 2 seconds to start inclusion, display will show "i..."<b> .</b> <br /></p> <br /> <h2>Exclusion Information</h2><p>Press M-key for 10 seconds to enter settings mode. Press up/down arrow keys to select "NET". Short press M-key, should show "OUT." Press M-key for 2 seconds to start inclusion, display will show "o..." .</p> <br /> <h2>Wakeup Information</h2><p><br /></p>
+    ]]></description>
+    <category>HVAC</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_binary" typeId="switch_binary">
+        <label>Switch</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY</property>
+        </properties>
+      </channel>
+      <channel id="sensor_temperature" typeId="sensor_temperature">
+        <label>Sensor (temperature)</label>
+        <properties>
+          <property name="binding:*:QuantityType">COMMAND_CLASS_SENSOR_MULTILEVEL;type=TEMPERATURE</property>
+        </properties>
+      </channel>
+      <channel id="meter_kwh" typeId="meter_kwh">
+        <label>Electric meter (kWh)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_KWh</property>
+        </properties>
+      </channel>
+      <channel id="meter_watts" typeId="meter_watts">
+        <label>Electric meter (watts)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_W</property>
+        </properties>
+      </channel>
+      <channel id="meter_voltage" typeId="meter_voltage">
+        <label>Electric meter (volts)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_V</property>
+        </properties>
+      </channel>
+      <channel id="meter_current" typeId="meter_current">
+        <label>Electric meter (amps)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_A</property>
+        </properties>
+      </channel>
+      <channel id="thermostat_mode" typeId="namron_4512757_00_000_thermostat_mode">
+        <label>Thermostat mode</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_THERMOSTAT_MODE</property>
+        </properties>
+      </channel>
+      <channel id="thermostat_state" typeId="thermostat_state">
+        <label>Thermostat Operating State</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_THERMOSTAT_OPERATING_STATE</property>
+        </properties>
+      </channel>
+      <channel id="thermostat_setpoint_heating" typeId="thermostat_setpoint">
+        <label>Setpoint (heating)</label>
+        <properties>
+          <property name="binding:*:QuantityType">COMMAND_CLASS_THERMOSTAT_SETPOINT;type=HEATING</property>
+        </properties>
+      </channel>
+      <channel id="thermostat_setpoint_cooling" typeId="thermostat_setpoint">
+        <label>Setpoint (cooling)</label>
+        <properties>
+          <property name="binding:*:QuantityType">COMMAND_CLASS_THERMOSTAT_SETPOINT;type=COOLING</property>
+        </properties>
+      </channel>
+      <channel id="alarm_access" typeId="alarm_access">
+        <label>Alarm (access)</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=ACCESS_CONTROL</property>
+        </properties>
+      </channel>
+      <channel id="alarm_power" typeId="alarm_power">
+        <label>Alarm (power)</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=POWER_MANAGEMENT</property>
+        </properties>
+      </channel>
+      <channel id="alarm_system" typeId="alarm_system">
+        <label>Alarm (system)</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=SYSTEM</property>
+        </properties>
+      </channel>
+      <channel id="time_offset" typeId="time_offset">
+        <label>Clock Time Offset</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_TIME_PARAMETERS</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Namron</property>
+      <property name="modelId">4512757</property>
+      <property name="manufacturerId">0438</property>
+      <property name="manufacturerRef">0004:0108</property>
+      <property name="dbReference">1537</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_4_4" type="integer" groupName="configuration">
+        <label>4: Eco Mode</label>
+        <description><![CDATA[
+Enable ECO mode<br /> <h1>Overview</h1><p><br /></p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Off</option>
+          <option value="1">On</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_8_4" type="integer" groupName="configuration">
+        <label>8: Window Check</label>
+        <description><![CDATA[
+Enable window open detection<br /> <h1>Overview</h1><p><br /></p>
+        ]]></description>
+        <default>1</default>
+        <options>
+          <option value="0">Off</option>
+          <option value="1">On</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_10_4" type="integer" groupName="configuration">
+        <label>10: Frost Enable</label>
+        <description><![CDATA[
+Enable frost detection and prevention feature. Note that enabling this mode overrides normal thermostat mode and forces the setpoint to the frost limit, so this mode should usually be left disabled.<br /> <h1>Overview</h1><p><br /></p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Off</option>
+          <option value="1">On</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_23_0" type="integer" groupName="configuration">
+        <label>23: Temp Unit</label>
+        <description><![CDATA[
+Select unit for temperature<br /> <h1>Overview</h1><p><br /></p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">°C</option>
+          <option value="1">°F</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_27_4" type="integer" groupName="configuration">
+        <label>27: Temp Correction</label>
+        <description><![CDATA[
+Temperature correction/calibration; in 1/10 °C<br /> <h1>Overview</h1><p><br /></p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_31_4" type="integer" groupName="configuration">
+        <label>31: Work Days Set</label>
+        <description><![CDATA[
+For week program mode, set which are working days<br /> <h1>Overview</h1><p><br /></p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">12345/67</option>
+          <option value="1">123456/7</option>
+          <option value="2">/1234567</option>
+          <option value="3">1234567/</option>
+        </options>
+        <advanced>true</advanced>
+      </parameter>
+
+      <parameter name="config_40_4" type="integer" groupName="configuration">
+        <label>40: Child Lock</label>
+        <description><![CDATA[
+Enable child lock mode where panel buttons are ignored<br /> <h1>Overview</h1><p><br /></p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Off</option>
+          <option value="1">On</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_43_4" type="integer" groupName="configuration">
+        <label>43: Sensor Mode</label>
+        <description><![CDATA[
+Select which sensors to use<br /> <h1>Overview</h1><p><br /></p>
+        ]]></description>
+        <default>1</default>
+        <options>
+          <option value="0">Internal sensor</option>
+          <option value="1">Floor sensor</option>
+          <option value="2">Internal sensor with floor temperature limit</option>
+          <option value="3">External sensor</option>
+          <option value="4">External sensor with floor temperature limit</option>
+          <option value="5">Do not use</option>
+          <option value="6">Controller heating percentage</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_58_4" type="integer" groupName="configuration">
+        <label>58: Run Mode</label>
+        <description><![CDATA[
+Select between manual mode or weekly program<br /> <h1>Overview</h1><p><br /></p>
+        ]]></description>
+        <default>1</default>
+        <options>
+          <option value="0">Manual</option>
+          <option value="1">Program</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_112_4" type="integer" groupName="configuration">
+        <label>112: Adaptation</label>
+        <description>Enable adaptation mode, self adjusting</description>
+        <default>0</default>
+        <options>
+          <option value="0">Off</option>
+          <option value="1">On</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_118_4" type="integer" groupName="configuration">
+        <label>118: Regulator</label>
+        <description><![CDATA[
+Specify heating schedule time; in minutes, 0 to turn off<br /> <h1>Overview</h1><p><br /></p>
+        ]]></description>
+        <default>30</default>
+        <options>
+          <option value="0">Off</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_123_4" type="integer" groupName="configuration">
+        <label>123: LCD Backlight Standby</label>
+        <description><![CDATA[
+LCD backlight brightness in standby mode; in %<br /> <h1>Overview</h1><p><br /></p>
+        ]]></description>
+        <default>10</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_124_4" type="integer" groupName="configuration">
+        <label>124: LCD Backligh Work</label>
+        <description><![CDATA[
+LCD backlight brightness in working mode; in %<br /> <h1>Overview</h1><p><br /></p>
+        ]]></description>
+        <default>100</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_127_4" type="integer" groupName="configuration">
+        <label>127: Regulator Percentage</label>
+        <description><![CDATA[
+Regulator percentage; in %<br /> <h1>Overview</h1><p><br /></p>
+        ]]></description>
+        <default>20</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_134_4" type="integer" groupName="configuration">
+        <label>134: Dif Celcius</label>
+        <description><![CDATA[
+Regulator temperature hysteresis, Celcius mode; in 1/10 °C (step 5)<br /> <h1>Overview</h1><p><br /></p>
+        ]]></description>
+        <default>10</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_135_4" type="integer" groupName="configuration">
+        <label>135: Dif Fahrenheit</label>
+        <description><![CDATA[
+Regulator termperature hysteresis, Fahrenheit mode; in 1/10 °F (step 10)<br /> <h1>Overview</h1><p><br /></p>
+        ]]></description>
+        <default>20</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_136_0" type="integer" groupName="configuration">
+        <label>136: Frost Celsius</label>
+        <description><![CDATA[
+Frost limit in Celcius mode; in 1/10 °C (step 10)<br /> <h1>Overview</h1><p><br /></p>
+        ]]></description>
+        <default>50</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_137_4" type="integer" groupName="configuration">
+        <label>137: Frost Fahrenheit</label>
+        <description><![CDATA[
+Frost limit in Fahrenheit mode; 1/10 °F (step 20)<br /> <h1>Overview</h1><p><br /></p>
+        ]]></description>
+        <default>410</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_183_4" type="integer" groupName="configuration">
+        <label>183: Drying Time</label>
+        <description><![CDATA[
+Drying time; in minutes (step 5), 0 for off<br /> <h1>Overview</h1><p><br /></p>
+        ]]></description>
+        <default>30</default>
+        <options>
+          <option value="0">Off</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_185_4" type="integer" groupName="configuration">
+        <label>185: Celcius Floor Limit</label>
+        <description><![CDATA[
+Floor limit temperature in Celcius mode; in 1/10 °C (step 50)<br /> <h1>Overview</h1><p><br /></p>
+        ]]></description>
+        <default>270</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_186_4" type="integer" groupName="configuration">
+        <label>186: Fahrenheit Floor Limit</label>
+        <description><![CDATA[
+Floor limit temperature in Fahrenheit mode; in 1/10 °F (step 10)<br /> <h1>Overview</h1><p><br /></p>
+        ]]></description>
+        <default>810</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_187_4" type="integer" groupName="configuration">
+        <label>187: LCD Display Switch</label>
+        <description><![CDATA[
+LCD display switch<br /> <h1>Overview</h1><p><br /></p>
+        ]]></description>
+        <default>1</default>
+        <options>
+          <option value="0">Off</option>
+          <option value="1">On</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_188_4" type="integer" groupName="configuration">
+        <label>188: Automatically Get Network Time</label>
+        <description><![CDATA[
+Automatically get network time<br /> <h1>Overview</h1><p><br /></p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Off</option>
+          <option value="1">On</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_199_4" type="integer" groupName="configuration">
+        <label>199: Week Program Time</label>
+        <description><![CDATA[
+Four byte fields, see manual<br /> <h1>Overview</h1><p><br /></p>
+        ]]></description>
+        <default>0</default>
+        <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_200_4" type="integer" groupName="configuration">
+        <label>200: Week Program Celsius</label>
+        <description><![CDATA[
+Four byte fields, see manual<br /> <h1>Overview</h1><p><br /></p>
+        ]]></description>
+        <default>0</default>
+        <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_201_4" type="integer" groupName="configuration">
+        <label>201: Week Program Fahrenheit</label>
+        <description><![CDATA[
+Four byte fields, see manual<br /> <h1>Overview</h1><p><br /></p>
+        ]]></description>
+        <default>0</default>
+        <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: </label>
+        <description><![CDATA[
+Report<br /> <h1>Overview</h1><p>Available commands:</p><p><b>DEVICE_RESET_LOCALLY_NOTIFICATION<br />SENSOR_MULTILEVEL_REPORT<br />BINARY_SWITCH_REPORT<br />NOTIFICATION_REPORT<br />CONFIGURATION_REPORT<br />THERMOSTAT_MODE_REPORT<br />THERMOSTAT_SETPOINT_REPORT<br />PROTECTION_REPORT<br />METER_REPORT<br />COMMAND_CLASS_INDICATOR<br /></b></p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+  <channel-type id="namron_4512757_00_000_thermostat_mode">
+    <item-type>Number</item-type>
+    <label>Thermostat Mode</label>
+    <description>Sets the thermostat mode</description>
+    <category>Temperature</category>
+    <state pattern="%s">
+      <options>
+        <option value="0">Off</option>
+        <option value="1">Heat</option>
+        <option value="2">Cool</option>
+      </options>
+    </state>
+  </channel-type>
+
+</thing:thing-descriptions>

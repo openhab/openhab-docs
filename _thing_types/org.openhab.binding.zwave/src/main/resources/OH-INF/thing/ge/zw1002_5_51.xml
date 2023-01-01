@@ -5,10 +5,10 @@
   xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
                       https://openhab.org/schemas/thing-description/v1.0.0">
 
-  <thing-type id="ge_zw1002_00_000" listed="false">
+  <thing-type id="ge_zw1002_05_051" listed="false">
     <label>ZW1002 Smart Outlet</label>
     <description><![CDATA[
-Smart Outlet<br /> <h1>Overview</h1><p>When paired with a compatible hub, the smart outlet controls and schedules plug-in devices through ON/OFF commands and programmed settings. Wirelessly operate lamps, fans, small appliances and more for effortless management of your home. </p> <br /> <h2>Inclusion Information</h2><ol><li>Follow the instructions for your Z-Wave certified controller to add a device to the Z-Wave network.</li><li>Once the controller is ready to add your device, press and release the program button to add it in the network.</li></ol> <br /> <h2>Exclusion Information</h2><ol><li>Follow the instructions for your Z-Wave certified controller to remove a device from the Z-Wave network. </li><li>Once the controller is ready to remove your device, press and release the manual/program button to remove it from the network.</li></ol> <br /> <h2>Wakeup Information</h2><p><br /></p>
+Smart Outlet<br /> <h1>Overview</h1><p>When paired with a compatible hub, the smart outlet controls and schedules plug-in devices through ON/OFF commands and programmed settings. Wirelessly operate lamps, fans, small appliances and more for effortless management of your home. </p> <br /> <h2>Inclusion Information</h2><ol><li>Follow the instructions for your Z-Wave certified controller to add a device to the Z-Wave network.</li><li>Once the controller is ready to add your device, press and release the program button to add it in the network.</li></ol> <br /> <h2>Exclusion Information</h2><ol><li>Follow the instructions for your Z-Wave certified controller to add a device to the Z-Wave network.</li><li>Once the controller is ready to add your device, press and release the program button to add it in the network.</li></ol> <br /> <h2>Wakeup Information</h2><p><br /></p>
     ]]></description>
     <category>PowerOutlet</category>
 
@@ -26,6 +26,12 @@ Smart Outlet<br /> <h1>Overview</h1><p>When paired with a compatible hub, the sm
           <property name="binding:*:DecimalType">COMMAND_CLASS_SCENE_ACTIVATION</property>
         </properties>
       </channel>
+      <channel id="scene_number" typeId="scene_number">
+        <label>Central Scene Number</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_CENTRAL_SCENE</property>
+        </properties>
+      </channel>
     </channels>
 
     <!-- DEVICE PROPERTY DEFINITIONS -->
@@ -33,9 +39,9 @@ Smart Outlet<br /> <h1>Overview</h1><p>When paired with a compatible hub, the sm
       <property name="vendor">Jasco Products</property>
       <property name="modelId">ZW1002</property>
       <property name="manufacturerId">0063</property>
-      <property name="manufacturerRef">4952:3134,4952:3233,4952:3234</property>
-      <property name="versionMax">5.50</property>
-      <property name="dbReference">1337</property>
+      <property name="manufacturerRef">4952:3236</property>
+      <property name="versionMin">5.51</property>
+      <property name="dbReference">1540</property>
       <property name="defaultAssociations">1</property>
     </properties>
 

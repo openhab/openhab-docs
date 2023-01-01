@@ -77,9 +77,9 @@ Once a child is removed from the child table of a router, it will be asked to re
 
 Note that ZigBee compliant devices should rejoin the network seamlessly, however some non-compliant devices may not rejoin which may leave them unusable without a manual rejoin.
 
-**Values:** Timeout time in seconds. The table below lists the options that are shown in PaperUI and the equivalent values that can be set in a configuration file:
+**Values:** Timeout time in seconds. The table below lists the options that are shown in the UI and the equivalent values that can be set in a configuration file:
 
-| Paper UI     | Config file |
+| UI     | Config file |
 | ------------ | ----------- |
 | _5 Minutes_  | `320`       |
 | _30 Minutes_ | `1800`      |
@@ -93,7 +93,7 @@ Note that ZigBee compliant devices should rejoin the network seamlessly, however
 | _4 Weeks_    | `2419200`   |
 | _7 Weeks_    | `4233600`   |
 
-Note that this value should be given as a number in the configuration file, without quotes. Also note that, technically, you are not bound to using the values from the table. But if you use an arbitrary number of seconds, not corresponding to one of the predefined periods, it might not be possible to display the configured value correctly in PaperUI.
+Note that this value should be given as a number in the configuration file, without quotes. Also note that, technically, you are not bound to using the values from the table. But if you use an arbitrary number of seconds, not corresponding to one of the predefined periods, it might not be possible to display the configured value correctly in the UI.
 
 ##### Concentrator Type (zigbee_concentrator)
 
@@ -112,7 +112,7 @@ If supported, the High RAM concentrator should be used.
 
 The binding is able to search the network to get a list of what devices can communicate with other devices. This is a useful diagnostic feature as it allows users to see the links between devices, and the quality of these links. However, this can generate considerable traffic, and some battery devices may not poll their parents often enough to provide these updates, and users may consider that it is better to reduce the period, or disable this feature.
 
-**Value:** the update period in seconds. `0` means "never update". In PaperUI, a drop down list is shown, the options from that list are shown in te table below, with their equivalent values that can be put in a config file.
+**Value:** the update period in seconds. `0` means "never update". In the UI, a drop down list is shown, the options from that list are shown in te table below, with their equivalent values that can be put in a config file.
 
 | UI           | Config file |
 | ------------ | ----------- |
@@ -124,7 +124,7 @@ The binding is able to search the network to get a list of what devices can comm
 | _1 Day_      | `86400`     |
 | _1 Week_     | `604800`    |
 
-Please note that, technically, you are not bound to using the values from the table. But if you use an arbitrary number of seconds, not corresponding to one of the predefined periods, it might not be possible to display the configured value correctly in PaperUI.
+Please note that, technically, you are not bound to using the values from the table. But if you use an arbitrary number of seconds, not corresponding to one of the predefined periods, it might not be possible to display the configured value correctly in the UI.
 
 ##### Network Size (zigbee_networksize)
 
@@ -445,7 +445,7 @@ The syntax for the command strings is as in the examples above, where the possib
 | sirenLevel / squawkLevel | `LOW`, `MEDIUM`, `HIGH`, `VERY_HIGH`, any integer value (for devices supporting levels not specified in the ZCL)                                                           |
 | duration                 | A duration specified in the ISO-8601 duration format                                                                                                                       |
 
-Note that it is possible to dynamically add command descriptions for specific warning/squawk types to a `warning_device` channel by configuring the channel configuration property `zigbee_iaswd_commandOptions`, using String parameters of the form `label=>commandString`, where `label` is the label provided to UIs to render, e.g., buttons for the provided command options (as done, e.g., by PaperUI).
+Note that it is possible to dynamically add command descriptions for specific warning/squawk types to a `warning_device` channel by configuring the channel configuration property `zigbee_iaswd_commandOptions`, using String parameters of the form `label=>commandString`, where `label` is the label provided to UIs to render, e.g., buttons for the provided command options.
 Also note that solutions integrating the binding can add implementations of type `WarningTypeCommandDescriptionProvider` to provide warning/squawk types together with command descriptions for all channels of type `warning_device`.
 
 ## Channels triggered event & rules

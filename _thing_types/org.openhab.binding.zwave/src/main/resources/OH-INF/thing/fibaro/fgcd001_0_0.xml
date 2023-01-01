@@ -80,7 +80,7 @@ Carbon Monoxide Sensor<br /> <h1>Overview</h1><p>FIBARO CO Sensor is an ultra-li
       <property name="vendor">Fibargroup</property>
       <property name="modelId">FGCD001</property>
       <property name="manufacturerId">010F</property>
-      <property name="manufacturerRef">1201:1000,1201:1001</property>
+      <property name="manufacturerRef">1201:1000,1201:1001,1201:1002</property>
       <property name="dbReference">711</property>
       <property name="defaultAssociations">1</property>
     </properties>

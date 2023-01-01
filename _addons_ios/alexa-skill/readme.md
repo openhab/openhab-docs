@@ -313,7 +313,7 @@ Number:Temperature Temperature2 "Temperature"           {alexa="CurrentTemperatu
 
 To interact with the networking capabilities of a router, such as controlling the network access for a specific device, the [networking attributes](#networking-attributes) are available to configure a representation of a home network and its connected devices.
 
-In order to be take advantage of these capabilities, your router must be configured as a [group endpoint](#group-endpoint) based on [`HomeNetwork`](#homenetwork) supported device types. If it doesn't have any other capabilities, it can be an empty group. Likewise, connected devices must be configured based on [`ConnectedDevice`](#connecteddevice) supported device types and metadata parameters.
+In order to take advantage of these capabilities, your router must be configured as a [group endpoint](#group-endpoint) based on [`HomeNetwork`](#homenetwork) supported device types. If it doesn't have any other capabilities, it can be an empty group. Likewise, connected devices must be configured based on [`ConnectedDevice`](#connecteddevice) supported device types and metadata parameters.
 
 ```xtend
 Group  Router  "Router"          {alexa="Router"}
@@ -478,7 +478,7 @@ Device Types | Supported Attributes | Description
 `Automobile` | [`BatteryLevel`](#batterylevel), [`FanSpeed`](#fanspeed), [`LockState`](#lockstate), [`PowerState`](#powerstate), [`TargetTemperature`](#targettemperature), [`CurrentTemperature`](#currenttemperature) | A motor vehicle (automobile, car).
 `AutomobileAccessory` | [`BatteryLevel`](#batterylevel), [`CameraStream`](#camerastream), [`FanSpeed`](#fanspeed), [`PowerState`](#powerstate) | A smart device in an automobile, such as a dash camera.
 `Blind`, `Curtain`, `Shade` | *[`OpenState`](#openstate)*, *[`PositionState`](#positionstate)*, [`TiltAngle`](#tiltangle), [`TargetOpenState`](#targetopenstate), [`CurrentOpenState`](#currentopenstate) | A window covering on the inside of a structure.
-`BluetoothSpeaker` | *[`PowerState`](#powerstate)*, *[`VolumeLevel`](#volumelevel)*, [`VolumeStep`](#volumestep), [`MuteState`](#mutestate), [`MuteStep`](#mutestep), [`EqualizerBass`](#equalizerbass), [`EqualizerMidrange`](#equalizermidrange), [`EqualizerTreble`](#equalizertreble), [`EqualizerMode`](#equalizermode), [`Channel`](#channel), [`ChannelStep`](#channelstep), [`Input`](#input), [`Playback`](#playback), [`PlaybackStop`](#playbackstop), [`BatteryLevel`](#batterylevel) | A speaker that connects to an audio source over Bluetooth.
+`BluetoothSpeaker` | *[`PowerState`](#powerstate)*, *[`VolumeLevel`](#volumelevel)*, [`VolumeStep`](#volumestep), [`MuteState`](#mutestate), [`MuteStep`](#mutestep), [`EqualizerBass`](#equalizerbass), [`EqualizerMidrange`](#equalizermidrange), [`EqualizerTreble`](#equalizertreble), [`EqualizerMode`](#equalizermode), [`Channel`](#channel), [`ChannelStep`](#channelstep), [`Input`](#input), [`Playback`](#playback), [`PlaybackStop`](#playbackstop), [`PlaybackStep`](#playbackstep), [`BatteryLevel`](#batterylevel) | A speaker that connects to an audio source over Bluetooth.
 `Camera` | *[`PowerState`](#powerstate)*, *[`CameraStream`](#camerastream)*, [`BatteryLevel`](#batterylevel) | A security device with video or photo functionality.
 `ChristmasTree` | Same as `Light` | A religious holiday decoration that often contains lights.
 `CoffeeMaker` | *[`PowerState`](#powerstate)* | A device that makes coffee.
@@ -511,11 +511,11 @@ Device Types | Supported Attributes | Description
 `SecuritySystem` | Same as `SecurityPanel` | A security system.
 `Shutter`, `Awning` | Same as `Blind` | A window covering on the outside of a structure.
 `SlowCooker` | *[`PowerState`](#powerstate)* | An electric cooking device that sits on a countertop, cooks at low temperatures, and is often shaped like a cooking pot.
-`Speaker` | *[`PowerState`](#powerstate)*, *[`VolumeLevel`](#volumelevel)*, [`VolumeStep`](#volumestep), [`MuteState`](#mutestate), [`MuteStep`](#mutestep), [`EqualizerBass`](#equalizerbass), [`EqualizerMidrange`](#equalizermidrange), [`EqualizerTreble`](#equalizertreble), [`EqualizerMode`](#equalizermode), [`Channel`](#channel), [`ChannelStep`](#channelstep), [`Input`](#input), [`Playback`](#playback), [`PlaybackStop`](#playbackstop) | A speaker or speaker system.
-`StreamingDevice` | *[`PowerState`](#powerstate)*, *[`Playback`](#playback)*, [`PlaybackStop`](#playbackstop), [`Channel`](#channel), [`ChannelStep`](#channelstep), [`Input`](#input), [`VolumeLevel`](#volumelevel), [`VolumeStep`](#volumestep), [`MuteState`](#mutestate), [`MuteStep`](#mutestep), [`EqualizerBass`](#equalizerbass), [`EqualizerMidrange`](#equalizermidrange), [`EqualizerTreble`](#equalizertreble), [`EqualizerMode`](#equalizermode) | A streaming device such as Apple TV, Chromecast, or Roku.
+`Speaker` | *[`PowerState`](#powerstate)*, *[`VolumeLevel`](#volumelevel)*, [`VolumeStep`](#volumestep), [`MuteState`](#mutestate), [`MuteStep`](#mutestep), [`EqualizerBass`](#equalizerbass), [`EqualizerMidrange`](#equalizermidrange), [`EqualizerTreble`](#equalizertreble), [`EqualizerMode`](#equalizermode), [`Channel`](#channel), [`ChannelStep`](#channelstep), [`Input`](#input), [`Playback`](#playback), [`PlaybackStop`](#playbackstop), [`PlaybackStep`](#playbackstep) | A speaker or speaker system.
+`StreamingDevice` | *[`PowerState`](#powerstate)*, *[`Playback`](#playback)*, [`PlaybackStop`](#playbackstop), [`PlaybackStep`](#playbackstep), [`Channel`](#channel), [`ChannelStep`](#channelstep), [`Input`](#input), [`VolumeLevel`](#volumelevel), [`VolumeStep`](#volumestep), [`MuteState`](#mutestate), [`MuteStep`](#mutestep), [`EqualizerBass`](#equalizerbass), [`EqualizerMidrange`](#equalizermidrange), [`EqualizerTreble`](#equalizertreble), [`EqualizerMode`](#equalizermode) | A streaming device such as Apple TV, Chromecast, or Roku.
 `Switch` | *[`PowerState`](#powerstate)*, *[`PowerLevel`](#powerlevel)*, *[`Percentage`](#percentage)* | A switch wired directly to the electrical system. A switch can control a variety of devices. For lighting devices, use `Light` instead.
 `Tablet` | *[`PowerState`](#powerstate)*,  [`BatteryLevel`](#batterylevel), [`NetworkAccess`](#networkaccess) | A tablet computer.
-`Television` | *[`PowerState`](#powerstate)*, *[`Channel`](#channel)*, [`ChannelStep`](#channelstep), [`Input`](#input), [`VolumeLevel`](#volumelevel), [`VolumeStep`](#volumestep), [`MuteState`](#mutestate), [`MuteStep`](#mutestep), [`EqualizerBass`](#equalizerbass), [`EqualizerMidrange`](#equalizermidrange), [`EqualizerTreble`](#equalizertreble), [`EqualizerMode`](#equalizermode), [`Playback`](#playback), [`PlaybackStop`](#playbackstop) | A television.
+`Television` | *[`PowerState`](#powerstate)*, *[`Channel`](#channel)*, [`ChannelStep`](#channelstep), [`Input`](#input), [`VolumeLevel`](#volumelevel), [`VolumeStep`](#volumestep), [`MuteState`](#mutestate), [`MuteStep`](#mutestep), [`EqualizerBass`](#equalizerbass), [`EqualizerMidrange`](#equalizermidrange), [`EqualizerTreble`](#equalizertreble), [`EqualizerMode`](#equalizermode), [`Playback`](#playback), [`PlaybackStop`](#playbackstop), [`PlaybackStep`](#playbackstep) | A television.
 `TemperatureSensor` | *[`CurrentTemperature`](#currenttemperature)*, [`BatteryLevel`](#batterylevel) | An endpoint that reports temperature, but does not control it. The temperature data of the endpoint doesn't appear in the Alexa app. If your endpoint also controls temperature, use `Thermostat` instead.
 `Thermostat` | *[`HeatingCoolingMode`](#heatingcoolingmode)*, [`TargetTemperature`](#targettemperature), [`CoolingSetpoint`](#coolingsetpoint), [`HeatingSetpoint`](#heatingsetpoint), [`EcoCoolingSetpoint`](#ecocoolingsetpoint), [`EcoHeatingSetpoint`](#ecoheatingsetpoint), [`ThermostatHold`](#thermostathold), [`ThermostatFan`](#thermostatfan), [`CurrentTemperature`](#currenttemperature), [`CurrentHumidity`](#currenthumidity), [`BatteryLevel`](#batterylevel) | An endpoint that controls temperature, stand-alone air conditioners, or heaters with direct temperature control. If your endpoint senses temperature but does not control it, use `TemperatureSensor` instead.
 `VacuumCleaner` | *[`PowerState`](#powerstate)*, *[`VacuumMode`](#vacuummode)*, [`FanSpeed`](#fanspeed), [`BatteryLevel`](#batterylevel) | A vacuum cleaner.
@@ -913,7 +913,7 @@ Items that represent a list of equalizer modes supported by an audio system.
 
 #### `Playback`
 
-Items that represent the playback controls of a AV device. For stop command support, use [`PlaybackStop`](#playbackstop).
+Items that represent the playback controls of a AV device. For stop command support, use [`PlaybackStop`](#playbackstop). For adjustment in incremental discrete steps, use [`PlaybackStep`](#playbackstep) instead.
 
 * Supported item types:
   * Player
@@ -942,6 +942,32 @@ Items that represent the playback stop command of a AV device. This needs to be 
     * defaults to false
 * Utterance examples:
   * *Alexa, stop `<device name>`.*
+
+#### `PlaybackStep`
+
+Items that represent the playback controls of a AV device adjusted in discrete steps.
+
+* Supported item types:
+  * String
+* Supported metadata parameters:
+  * PLAY=`<command>`
+  * PAUSE=`<command>`
+  * STOP=`<command>`
+  * START_OVER=`<command>`
+  * PREVIOUS=`<command>`
+  * NEXT=`<command>`
+  * REWIND=`<command>`
+  * FAST_FORWARD=`<command>`
+* Utterance examples:
+  * *Alexa, play `<device name>`.*
+  * *Alexa, resume `<device name>`.*
+  * *Alexa, pause `<device name>`.*
+  * *Alexa, stop `<device name>`.*
+  * *Alexa, start over on `<device name>`.*
+  * *Alexa, next on `<device name>`.*
+  * *Alexa, previous on `<device name>`.*
+  * *Alexa, fast forward on `<device name>`.*
+  * *Alexa, rewind on `<device name>`.*
 
 ### Fan Attributes
 
@@ -1922,7 +1948,8 @@ ModeController | [`Mode`](#mode), [`FanDirection`](#fandirection), [`FanSpeed`](
 MotionSensor | [`MotionDetectionState`](#motiondetectionstate) | `de-DE`, `en-AU`, `en-CA`, `en-GB`, `en-IN`, `en-US`, `es-ES`, `es-MX`, `es-US`, `fr-CA`, `fr-FR`, `hi-IN`, `it-IT`, `ja-JP`, `pt-BR`
 Networking | [`HomeNetwork`](#homenetwork), [`ConnectedDevice`](#connecteddevice), [`NetworkAccess`](#networkaccess) | `en-US`
 PercentageController | [`Percentage`](#percentage) | `de-DE`, `en-AU`, `en-CA`, `en-GB`, `en-IN`, `en-US`, `es-ES`, `es-US`, `fr-CA`, `fr-FR`, `hi-IN`, `it-IT`, `ja-JP`, `pt-BR`
-PlaybackController | [`Playback`](#playback), [`PlaybackStop`](#playbackstop) | `ar-SA`, `de-DE`, `en-AU`, `en-CA`, `en-GB`, `en-IN`, `en-US`, `es-ES`, `es-MX`, `es-US`, `fr-CA`, `fr-FR`, `hi-IN`, `it-IT`, `ja-JP`, `pt-BR`
+PlaybackController | [`Playback`](#playback), [`PlaybackStop`](#playbackstop), [`PlaybackStep`](#playbackstep) | `ar-SA`, `de-DE`, `en-AU`, `en-CA`, `en-GB`, `en-IN`, `en-US`, `es-ES`, `es-MX`, `es-US`, `fr-CA`, `fr-FR`, `hi-IN`, `it-IT`, `ja-JP`, `pt-BR`
+PlaybackStateReporter | [`Playback`](#playback), [`PlaybackStop`](#playbackstop) | `ar-SA`, `de-DE`, `en-AU`, `en-CA`, `en-GB`, `en-IN`, `en-US`, `es-ES`, `es-MX`, `es-US`, `fr-CA`, `fr-FR`, `hi-IN`, `it-IT`, `ja-JP`, `pt-BR`
 PowerController | [`PowerState`](#powerstate) | `ar-SA`, `de-DE`, `en-AU`, `en-CA`, `en-GB`, `en-IN`, `en-US`, `es-ES`, `es-MX`, `es-US`, `fr-CA`, `fr-FR`, `hi-IN`, `it-IT`, `ja-JP`, `pt-BR`
 PowerLevelController | [`PowerLevel`](#powerlevel) | `de-DE`, `en-AU`, `en-CA`, `en-GB`, `en-IN`, `en-US`, `es-ES`, `es-MX`, `fr-CA`, `fr-FR`, `it-IT`, `ja-JP`
 RangeController | [`RangeValue`](#rangevalue), [`BatteryLevel`](#batterylevel), [`CurrentHumidity`](#currenthumidity), [`FanSpeed`](#fanspeed), [`PositionState`](#positionstate), [`TiltAngle`](#tiltangle) | `de-DE`, `en-AU`, `en-CA`, `en-GB`, `en-IN`, `en-US`, `es-ES`, `es-MX`, `es-US`, `fr-CA`, `fr-FR`, `hi-IN`, `it-IT`, `ja-JP`, `pt-BR`

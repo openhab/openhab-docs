@@ -8,7 +8,7 @@
   <thing-type id="ge_14321_00_000" listed="false">
     <label>GE/Jasco 14321 In-Wall Dimmer</label>
     <description><![CDATA[
-In-Wall Dimmer<br /> <h1>Overview</h1><p><strong>Basic operation </strong></p> <p>Note: Before starting, fan must be set to ‘HIGH’ position using pull chain. The connected fan can then be turned ON/OFF and adjust speed levels in two ways:</p> <ol><li>Manually from the front panel rocker of the In-Wall Fan Control.</li> <li>Remotely with a Z-Wave controller.</li> </ol><p><strong>Manual control</strong></p> <ol><li>To turn the connected fan ON: Press and release the top of the rocker. NOTE: Fan will return to last speed setting of Fan Control. Default setting – HIGH.</li> <li>To turn the fan OFF: Press and release the bottom of the rocker.</li> </ol><p><strong>Adjust fan speed </strong></p> <p>The LED indicator confirms fan speed settings by flashing patterns LOW – LED will blink every 2 seconds for 10 seconds MEDIUM – LED will blink every second for 10 seconds HIGH – LED will blink every half second for 10 seconds</p> <ol><li>To decrease fan speed: Press and hold lower rocker.</li> <li>To increase fan speed: Press and hold upper rocker. </li> </ol><p><strong>This device supports Association Command Class (3 Groups) </strong></p> <ul><li>Association Group 1 supports Lifeline, Switch Multilevel Report</li> <li>Association Group 2 supports Basic Set and is controlled by pressing the On or Off button with the local load</li> <li>Association Group 3 supports Basic Set and is controlled by double pressing the On or Off button</li> <li>Each Association Group supports 5 total nodes</li> </ul> <br /> <h2>Inclusion Information</h2><p>Once the controller is ready to add your device, press and release the top or bottom of the smart fan control switch (rocker) to add it in the network.</p> <br /> <h2>Exclusion Information</h2><p>Once the controller is ready to remove your device, press and release the top or bottom of the wireless smart switch (rocker) to remove it from the network.</p>
+In-Wall Dimmer<br /> <h1>Overview</h1><p>The Jasco Z-Wave Plus Dimmer Wall Switch (Gen5) enables Z-Wave remote control as well as local control for wired dimmable lighting. The rocker switch provides On/Off and Dim/Brighten control and can be included in multiple automation groups or scenes. A blue LED indicator helps guide you to the switch through the dark.</p><p>Features</p><p>Works with dimmable incandescent CFL and LED lights</p><p>Suitable for single-pole or multi-pole applications</p><p>Can be included in multiple groups or scenes</p><p>"Z-Wave Plus" certified for wide compatibility</p><p>Uses a standard decorative-size wallplate (sold separately)</p> <br /> <h2>Inclusion Information</h2><p>Once the controller is ready to add your device, press and release the top or bottom of the dimmer switch (rocker) to add it in the network.</p> <br /> <h2>Exclusion Information</h2><p>Once the controller is ready to remove your device, press and release the top or bottom of the wireless smart switch (rocker) to remove it from the network.</p> <br /> <h2>Wakeup Information</h2><p><br /></p>
     ]]></description>
     <category>HVAC</category>
 
@@ -85,6 +85,48 @@ Defines the behavior of the blue LED<br /> <h1>Overview</h1><p>This configuratio
           <option value="0">No</option>
           <option value="1">Yes</option>
         </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_7_1" type="integer" groupName="configuration">
+        <label>7: Dim Rate Adjustments (From Z-Wave Controller)</label>
+        <description>Number of steps or levels</description>
+        <default>1</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_8_2" type="integer" groupName="configuration">
+        <label>8: Dim Rate Adjustments (From Z-Wave Controller)</label>
+        <description>Timing of steps</description>
+        <default>3</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_9_1" type="integer" groupName="configuration">
+        <label>9: Dim Rate Adjustments (When Manually Controlled)</label>
+        <description>Number of steps or levels</description>
+        <default>1</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_10_2" type="integer" groupName="configuration">
+        <label>10: Dim Rate Adjustments (When Manually Controlled)</label>
+        <description>Timing of steps</description>
+        <default>3</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_11_1" type="integer" groupName="configuration">
+        <label>11: Dim Rate Adjustments (When Receiving All-On/Off Commands)</label>
+        <description>Number of steps or levels</description>
+        <default>1</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_12_2" type="integer" groupName="configuration">
+        <label>12: Dim Rate Adjustments (When Receiving All-On/Off Command</label>
+        <description>Timing of steps</description>
+        <default>3</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
