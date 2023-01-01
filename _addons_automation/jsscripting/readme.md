@@ -302,12 +302,12 @@ Use the `SCRIPT` transformation with JavaScript Scripting by:
 Full documentation for the openHAB JavaScript library can be found at [openhab-js](https://openhab.github.io/openhab-js).
 
 The openHAB JavaScript library provides type definitions for most of its APIs to enable code completion is IDEs like [VS Code](https://code.visualstudio.com).
-To use the type definitions, install the [`openhab` npm package](https://npmjs.com/openhab) (read the [installation guide](https://github.com/openhab/openhab-js#custom-installation) for more information).
+To use the type definitions, install the [`openhab` npm package](https://npmjs.com/openhab) (read the [installation guide](https://github.com/openhab/openhab-js#custom-installation) for more information), and import the used namespaces with `const { rules, triggers, items } = require('openhab');` (adjust this to your needs).
 If an API does not provide type definitions and therefore autocompletion won‘t work, the documentation will include a note.
 
 ### Items
 
-The items namespace allows interactions with openHAB items.
+The Items namespace allows interactions with openHAB items.
 
 See [openhab-js : items](https://openhab.github.io/openhab-js/items.html) for full API documentation.
 
@@ -362,8 +362,10 @@ item.sendCommand("ON");
 // Post an update
 item.postUpdate("OFF");
 // Get state
-console.log("KitchenLight state", item.state)
+console.log("KitchenLight state", item.state);
 ```
+
+See [openhab-js : Item](https://openhab.github.io/openhab-js/items.Item.html) for full API documentation.
 
 #### `itemConfig`
 
@@ -575,7 +577,7 @@ The `ScriptExecution` actions provide the `callScript(string scriptName)` method
 You can also create timers using the [native JS methods for timer creation](#timers), your choice depends on the versatility you need.
 Sometimes, using `setTimer` is much faster and easier, but other times, you need the versatility that `createTimer` provides.
 
-Keep in mind that you should somehow manage the timers you create using `createTimer`, otherwise you could end up with unmanagable timers running until you restart openHAB.
+Keep in mind that you should somehow manage the timers you create using `createTimer`, otherwise you could end up with unmanageable timers running until you restart openHAB.
 A possible solution is to store all timers in an array and cancel all timers in the [Deinitialization Hook](#deinitialization-hook).
 
 ##### `createTimer`
