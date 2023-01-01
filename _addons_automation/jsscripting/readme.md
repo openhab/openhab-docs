@@ -30,6 +30,8 @@ to common openHAB functionality within rules including items, things, actions, l
   - [Console](#console)
   - [Timers](#timers)
   - [Paths](#paths)
+  - [Deinitialization Hook](#deinitialization-hook)
+- [`SCRIPT` Transformation](#script-transformation)
 - [Standard Library](#standard-library)
   - [Items](#items)
   - [Things](#things)
@@ -42,9 +44,8 @@ to common openHAB functionality within rules including items, things, actions, l
   - [JSRule](#jsrule)
   - [Rule Builder](#rule-builder)
   - [Event Object](#event-object)
-  - [Initialization hook: scriptLoaded](#initialization-hook-scriptloaded)
-  - [Deinitialization hook: scriptUnloaded](#deinitialization-hook-scriptunloaded)
 - [Advanced Scripting](#advanced-scripting)
+  - [Libraries](#libraries)
   - [@runtime](#runtime)
 
 ## Configuration
