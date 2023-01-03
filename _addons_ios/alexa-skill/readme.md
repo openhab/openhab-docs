@@ -7,7 +7,7 @@ description: "Alexa is an intelligent personal assistant developed by Amazon and
 
 # Amazon Alexa Smart Home Skill
 
-<img align="right" width="150px" src="./images/skill-logo.png">
+<img align="right" width="150px" src="./images/skill_logo.png">
 
 Alexa is an intelligent personal assistant developed by Amazon and designed to run on smart speakers and devices such as the Amazon Echo and Dot.
 
@@ -31,6 +31,8 @@ The skill connects your openHAB setup through the [myopenHAB.org](http://myopenH
   * [Generic Capabilities](#generic-capabilities)
   * [Semantic Extensions](#semantic-extensions)
 * [Item Configuration](#item-configuration)
+  * [Textual Configuration](#textual-configuration)
+  * [UI Configuration](#ui-configuration)
   * [Device Types](#device-types)
   * [Device Attributes](#device-attributes)
 * [Troubleshooting](#troubleshooting)
@@ -429,7 +431,11 @@ String VacuumCleaner "Vacuum Cleaner" {alexa="VacuumCleaner.Mode" [capabilityNam
 
 # Item Configuration
 
-In order to configure an Alexa endpoint, one or more device configuration, composed of a [type](#device-types) and an [attribute](#device-attributes) `{alexa="<deviceType>.<deviceAttribute>"}`, must be defined in the "Alexa" item metadata settings. Depending on the type of endpoint being configured, the device type or attribute can be omitted.
+In order to configure an Alexa endpoint, one or more device configuration, composed of a [type](#device-types) and an [attribute](#device-attributes) `{alexa="<deviceType>.<deviceAttribute>"}`, must be defined in the `Alexa` item metadata settings. Depending on the type of endpoint being configured, the device type or attribute can be omitted.
+
+The metadata settings can be configured using [textual files](#textual-configuration) or the [graphical UI](#ui-configuration). Using both methods on the same item may result in some UI integration incompatibility. It is highly recommended to use either-or.
+
+## Textual Configuration
 
 For [single endpoints](#single-endpoint), when a device is only composed of a type, the default attribute(s) of that type are used. Using the single dimmer light shorthand example from above, the `Light` device type default attributes for a "Dimmer" item are [`PowerState`](#powerstate) and [`Brightness`](#brightness). The fully qualified definition would be:
 
@@ -458,6 +464,36 @@ Group  Bulb        "Bulb"                {alexa="Light"}
 Color  Color       "Color"       (Bulb)  {alexa="Light"} // Equivalent to {alexa="PowerState,Brightness,Color"}
 Dimmer Temperature "Temperature" (Bulb)  {alexa="ColorTemperature"}
 ```
+
+## UI Configuration
+
+To add the metadata settings to an item in MainUI, click on `Settings` and then `Items` from the sidebar logged in as an administrator, and select the item to configure from the list. Click on `Add Metadata` and select the `Amazon Alexa` namespace.
+
+![metadata_namespace](images/metadata_namespace.png)
+
+Click on `Alexa Device Type/Attribute`.
+
+![metadata_config_undefined](images/metadata_config_undefined.png)
+
+Select the attribute to configure the item as.
+
+![metadata_attributes_single](images/metadata_attributes_single.png)
+
+To select multiple attributes, click the `Multiple` checkbox in the top right corner of the metadata configuration page.
+
+![metadata_attributes_multiple](images/metadata_attributes_multiple.png)
+
+Once the attribute(s) are selected, configure the associated metadata parameters if necessary. Some parameters may only be visible when the `Show Advanced` checkbox is enabled. When finished, click `Save` located in the top right corner to save the metadata settings.
+
+![metadata_config_single_endpoint](images/metadata_config_single_endpoint.png)
+
+For group items, click on `Alexa Device Type` instead and select the [device type](#device-types). Each group member with Alexa metadata settings will show under the `Group Endpoint Capabilities` section. Any invalid capability part of the group will show as ignored.
+
+![metadata_config_group_endpoint](images/metadata_config_group_endpoint.png)
+
+Click on any of the active group capabilities to access the associated item metadata settings directly. Each of them will display the [group endpoint(s)](#group-endpoint) they are part of, and their attribute selection menu will be filtered based on the group supported and already configured capabilities.
+
+![metadata_config_group_member](images/metadata_config_group_member.png)
 
 <a name="display-categories"></a>
 <a name="supported-item-metadata"></a>

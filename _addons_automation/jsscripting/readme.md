@@ -3,7 +3,7 @@ id: jsscripting
 label: JavaScript Scripting
 title: JavaScript Scripting - Automation
 type: automation
-description: "This add-on provides support for JavaScript (ECMAScript 2021+) that can be used as a scripting language within automation rules."
+description: "This add-on provides support for JavaScript (ECMAScript 2022+) that can be used as a scripting language within automation rules."
 since: 3x
 logo: images/addons/jsscripting.png
 install: manual
@@ -15,7 +15,7 @@ install: manual
 
 # JavaScript Scripting
 
-This add-on provides support for JavaScript (ECMAScript 2021+) that can be used as a scripting language within automation rules.
+This add-on provides support for JavaScript (ECMAScript 2022+) that can be used as a scripting language within automation rules.
 
 Also included is [openhab-js](https://github.com/openhab/openhab-js/), a fairly high-level ES6 library to support automation in openHAB. It provides convenient access
 to common openHAB functionality within rules including items, things, actions, logging and more.
