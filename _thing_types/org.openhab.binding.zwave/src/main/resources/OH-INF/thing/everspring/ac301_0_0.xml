@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="everspring_ac301_00_000" listed="false">
+    <label>AC301 Electronic radiator thermostat, intended for use with water based room radiators.</label>
+    <description><![CDATA[
+Electronic radiator thermostat, intended for use with water based room radiators.<br /> <h1>Overview</h1><p>Thermostatic Radiator Valves (TRVs) sense the air temperature around them and regulate the flow of water through the radiator which they are fitted to.</p><p>• Comply with S2 security and SmartStart solution</p><p>• Manual/remote setting of desired temperature</p><p>• Heat Mode and Energy Heat Mode</p><p>• Manual override the preset settings</p><p>• Open window detection</p><p>• Frost protection</p><p>• Child lock protection</p><p>• Low battery indication</p><p>• OTA function</p><p>• Decalc function</p><p><br /></p> <br /> <h2>Inclusion Information</h2><p>Manual: Press the P button 3 times within 1.5 seconds to put the unit into inclusion mode.</p><p>Automatic: When the power is applied for the first time and no node ID has been stored in the module, or after executing reset.</p> <br /> <h2>Exclusion Information</h2><p> Press the P button 3 times within 1.5 seconds to put the unit into exclusion mode.</p> <br /> <h2>Wakeup Information</h2><p>When changing target value of temperature.</p>
+    ]]></description>
+    <category>RadiatorControl</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="sensor_temperature" typeId="sensor_temperature">
+        <label>Sensor (temperature)</label>
+        <properties>
+          <property name="binding:*:QuantityType">COMMAND_CLASS_SENSOR_MULTILEVEL;type=TEMPERATURE</property>
+        </properties>
+      </channel>
+      <channel id="thermostat_mode" typeId="everspring_ac301_00_000_thermostat_mode">
+        <label>Thermostat mode</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_THERMOSTAT_MODE</property>
+        </properties>
+      </channel>
+      <channel id="thermostat_setpoint_heating" typeId="thermostat_setpoint">
+        <label>Setpoint (heating)</label>
+        <properties>
+          <property name="binding:*:QuantityType">COMMAND_CLASS_THERMOSTAT_SETPOINT;type=HEATING</property>
+        </properties>
+      </channel>
+      <channel id="thermostat_setpoint_furnace" typeId="thermostat_setpoint">
+        <label>Setpoint (furnace)</label>
+        <properties>
+          <property name="binding:*:QuantityType">COMMAND_CLASS_THERMOSTAT_SETPOINT;type=FURNACE</property>
+        </properties>
+      </channel>
+      <channel id="alarm_power" typeId="alarm_power">
+        <label>Alarm (power)</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=POWER_MANAGEMENT</property>
+        </properties>
+      </channel>
+      <channel id="battery-level" typeId="system.battery-level">
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_BATTERY</property>
+        </properties>
+      </channel>
+      <channel id="time_offset" typeId="time_offset">
+        <label>Clock Time Offset</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_CLOCK</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Everspring</property>
+      <property name="modelId">AC301</property>
+      <property name="manufacturerId">0060</property>
+      <property name="manufacturerRef">0015:0001</property>
+      <property name="dbReference">1543</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_1_2" type="integer" groupName="configuration">
+        <label>1: Temperature Auto Report period setting</label>
+        <default>120</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_2_1" type="integer" groupName="configuration">
+        <label>2: Temperature offset for internal sensor</label>
+        <description>-80~+80 Offsets the measured temperature by -8.0℃~+8.0℃</description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_3_1" type="integer" groupName="configuration">
+        <label>3: Maximum Set point value</label>
+        <default>35</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_4_1" type="integer" groupName="configuration">
+        <label>4: Minimum Set point value</label>
+        <default>5</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_5_1" type="integer" groupName="configuration">
+        <label>5: Frost protection temperature</label>
+        <default>5</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_6_1" type="integer" groupName="configuration">
+        <label>6: Open window detect function</label>
+        <description>0: Disable 1: Enable</description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_7_1" type="integer" groupName="configuration">
+        <label>7: Open window detect time period</label>
+        <default>15</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_8_1" type="integer" groupName="configuration">
+        <label>8: Open window detect temperature drop setting</label>
+        <description>4=2℃ , 5=2.5℃ 6= 3℃, 7=3.5℃, 8=4℃</description>
+        <default>4</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_9_1" type="integer" groupName="configuration">
+        <label>9: Open window detect delay time select</label>
+        <default>30</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_10_1" type="integer" groupName="configuration">
+        <label>10: Manual Override takeover period</label>
+        <description>1~48, means 30mins to 24hrs, 8=4hrs</description>
+        <default>8</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Notification Report</label>
+        <description><![CDATA[
+<br /> <h1>Overview</h1><p>When the unit is powered up first time, the unit will send a Notification Report and Clock report to the node of Group 1.</p><p>When the battery level of the unit drops to an unacceptable level, the unit will emit Battery report to the nodes of Group 1.</p><p>When performing Factory Reset the unit will send Device Reset Locally Notification to the node of Group1.</p><p>The unit will send Sensor Multilevel Report to the node of Group 1 every two hours.</p><p>When changing mod of the unit, it will send Thermostat Mode Report to the node of Group 1.</p><p>When changing target value of temperature, the unit will send Thermostat Setpoint Report to the node of Group 1.</p><p>When changing the state of button lock, the unit will send Protection Report to the node of Group 1.</p>
+        ]]></description>
+        <multipleLimit>1</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+  <channel-type id="everspring_ac301_00_000_thermostat_mode">
+    <item-type>Number</item-type>
+    <label>Thermostat Mode</label>
+    <description>Sets the thermostat mode</description>
+    <category>Temperature</category>
+    <state pattern="%s">
+      <options>
+        <option value="0">Off</option>
+        <option value="1">Heat</option>
+        <option value="11">Economy Heat</option>
+      </options>
+    </state>
+  </channel-type>
+
+</thing:thing-descriptions>

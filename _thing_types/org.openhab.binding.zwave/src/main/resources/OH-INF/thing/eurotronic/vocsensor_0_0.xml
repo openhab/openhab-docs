@@ -83,9 +83,6 @@ Air Quality Sensor<br /> <h1>Overview</h1><p>Z-Wave sensor in an ultra slim desi
 Temperature on-change reporting<br /> <h1>Overview</h1><p>0x00 No on-change reporting (only time-based reports).</p> <p>0x01 - 0x32 report if temperature changed by delta = 0,1°C - 5,0°C</p>
         ]]></description>
         <default>5</default>
-        <options>
-          <option value="0">No on-change reporting</option>
-        </options>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
@@ -95,9 +92,6 @@ Temperature on-change reporting<br /> <h1>Overview</h1><p>0x00 No on-change repo
 Humidity on-change reporting<br /> <h1>Overview</h1><p>0x00 No on-change reporting (only time-based reports)</p> <p>0x01 - 0x0A report if humidity changed by delta = 1% ...10%</p>
         ]]></description>
         <default>5</default>
-        <options>
-          <option value="0">No on-change reporting</option>
-        </options>
         <limitToOptions>false</limitToOptions>
       </parameter>
 

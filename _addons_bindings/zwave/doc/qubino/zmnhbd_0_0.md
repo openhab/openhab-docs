@@ -57,12 +57,15 @@ The following table summarises the channels available for the ZMNHBD -:
 | Sensor (temperature) | sensor_temperature | sensor_temperature | Temperature | Number:Temperature | 
 | Electric meter (watts) | meter_watts | meter_watts | Energy | Number | 
 | Electric meter (kWh) | meter_kwh | meter_kwh | Energy | Number | 
+| Meter reset | meter_reset | meter_reset | Energy | Switch | 
 | Switch 1 | switch_binary1 | switch_binary | Switch | Switch | 
 | Electric meter (watts) 1 | meter_watts1 | meter_watts | Energy | Number | 
 | Electric meter (kWh) 1 | meter_kwh1 | meter_kwh | Energy | Number | 
+| Meter reset | meter_reset1 | meter_reset | Energy | Switch | 
 | Switch 2 | switch_binary2 | switch_binary | Switch | Switch | 
 | Electric meter (watts) 2 | meter_watts2 | meter_watts | Energy | Number | 
 | Electric meter (kWh) 2 | meter_kwh2 | meter_kwh | Energy | Number | 
+| Meter reset | meter_reset2 | meter_reset | Energy | Switch | 
 | Sensor (temperature) | sensor_temperature3 | sensor_temperature | Temperature | Number:Temperature | 
 
 ### Switch
@@ -85,6 +88,11 @@ Indicates the energy consumption (kWh).
 
 The ```meter_kwh``` channel is of type ```meter_kwh``` and supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
 
+### Meter reset
+Reset the meter.
+
+The ```meter_reset``` channel is of type ```meter_reset``` and supports the ```Switch``` item and is in the ```Energy``` category.
+
 ### Switch 1
 Switch the power on and off.
 
@@ -100,6 +108,11 @@ Indicates the energy consumption (kWh).
 
 The ```meter_kwh1``` channel is of type ```meter_kwh``` and supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
 
+### Meter reset
+Reset the meter.
+
+The ```meter_reset1``` channel is of type ```meter_reset``` and supports the ```Switch``` item and is in the ```Energy``` category.
+
 ### Switch 2
 Switch the power on and off.
 
@@ -114,6 +127,11 @@ The ```meter_watts2``` channel is of type ```meter_watts``` and supports the ```
 Indicates the energy consumption (kWh).
 
 The ```meter_kwh2``` channel is of type ```meter_kwh``` and supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
+
+### Meter reset
+Reset the meter.
+
+The ```meter_reset2``` channel is of type ```meter_reset``` and supports the ```Switch``` item and is in the ```Energy``` category.
 
 ### Sensor (temperature)
 Indicates the current temperature.

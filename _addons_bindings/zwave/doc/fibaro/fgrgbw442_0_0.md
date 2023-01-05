@@ -43,6 +43,7 @@ The following table summarises the channels available for the FGRGBW-442 -:
 | Sensor (voltage) | sensor_voltage | sensor_voltage |  | Number | 
 | Electric meter (watts) | meter_watts | meter_watts | Energy | Number | 
 | Electric meter (kWh) | meter_kwh | meter_kwh | Energy | Number | 
+| Meter reset | meter_reset | meter_reset | Energy | Switch | 
 | Color Control | color_color | color_color | ColorLight | Color | 
 | Color Temperature | color_temperature | color_temperature | ColorLight | Dimmer | 
 | Scene Number | scene_number | scene_number |  | Number | 
@@ -52,6 +53,7 @@ The following table summarises the channels available for the FGRGBW-442 -:
 | Dimmer 1 | switch_dimmer1 | switch_dimmer | DimmableLight | Dimmer | 
 | Electric meter (watts) 1 | meter_watts1 | meter_watts | Energy | Number | 
 | Electric meter (kWh) 1 | meter_kwh1 | meter_kwh | Energy | Number | 
+| Meter reset | meter_reset1 | meter_reset | Energy | Switch | 
 | Color Control 1 | color_color1 | color_color | ColorLight | Color | 
 | Color Temperature 1 | color_temperature1 | color_temperature | ColorLight | Dimmer | 
 | Color Raw | color_raw1 | color_raw |  |  | 
@@ -86,6 +88,11 @@ The ```meter_watts``` channel is of type ```meter_watts``` and supports the ```N
 Indicates the energy consumption (kWh).
 
 The ```meter_kwh``` channel is of type ```meter_kwh``` and supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
+
+### Meter reset
+Reset the meter.
+
+The ```meter_reset``` channel is of type ```meter_reset``` and supports the ```Switch``` item and is in the ```Energy``` category.
 
 ### Color Control
 The color channel allows to control the color of a light.
@@ -159,6 +166,11 @@ The ```meter_watts1``` channel is of type ```meter_watts``` and supports the ```
 Indicates the energy consumption (kWh).
 
 The ```meter_kwh1``` channel is of type ```meter_kwh``` and supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
+
+### Meter reset
+Reset the meter.
+
+The ```meter_reset1``` channel is of type ```meter_reset``` and supports the ```Switch``` item and is in the ```Energy``` category.
 
 ### Color Control 1
 The color channel allows to control the color of a light.

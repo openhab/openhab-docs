@@ -38,6 +38,12 @@ Flush 2 relays<br /> <h1>Overview</h1><p>This Z-Wave module is used for switchin
           <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_KWh</property>
         </properties>
       </channel>
+      <channel id="meter_reset" typeId="meter_reset">
+        <label>Meter reset</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_METER</property>
+        </properties>
+      </channel>
       <channel id="switch_binary1" typeId="switch_binary">
         <label>Switch 1</label>
         <properties>
@@ -56,6 +62,12 @@ Flush 2 relays<br /> <h1>Overview</h1><p>This Z-Wave module is used for switchin
           <property name="binding:*:DecimalType">COMMAND_CLASS_METER:1;type=E_KWh</property>
         </properties>
       </channel>
+      <channel id="meter_reset1" typeId="meter_reset">
+        <label>Meter reset</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_METER:1</property>
+        </properties>
+      </channel>
       <channel id="switch_binary2" typeId="switch_binary">
         <label>Switch 2</label>
         <properties>
@@ -72,6 +84,12 @@ Flush 2 relays<br /> <h1>Overview</h1><p>This Z-Wave module is used for switchin
         <label>Electric meter (kWh) 2</label>
         <properties>
           <property name="binding:*:DecimalType">COMMAND_CLASS_METER:2;type=E_KWh</property>
+        </properties>
+      </channel>
+      <channel id="meter_reset2" typeId="meter_reset">
+        <label>Meter reset</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_METER:2</property>
         </properties>
       </channel>
       <channel id="sensor_temperature3" typeId="sensor_temperature">

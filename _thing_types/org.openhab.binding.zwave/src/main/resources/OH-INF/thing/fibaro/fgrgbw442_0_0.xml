@@ -39,6 +39,12 @@ RGBW CONTROLLER 2<br /> <h1>Overview</h1><p>FIBARO RGBW Controller 2 uses PWM ou
           <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_KWh</property>
         </properties>
       </channel>
+      <channel id="meter_reset" typeId="meter_reset">
+        <label>Meter reset</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_METER</property>
+        </properties>
+      </channel>
       <channel id="color_color" typeId="color_color">
         <label>Color Control</label>
         <properties>
@@ -95,6 +101,12 @@ RGBW CONTROLLER 2<br /> <h1>Overview</h1><p>FIBARO RGBW Controller 2 uses PWM ou
         <label>Electric meter (kWh) 1</label>
         <properties>
           <property name="binding:*:DecimalType">COMMAND_CLASS_METER:1;type=E_KWh</property>
+        </properties>
+      </channel>
+      <channel id="meter_reset1" typeId="meter_reset">
+        <label>Meter reset</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_METER:1</property>
         </properties>
       </channel>
       <channel id="color_color1" typeId="color_color">

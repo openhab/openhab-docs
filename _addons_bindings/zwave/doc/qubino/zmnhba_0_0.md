@@ -53,12 +53,15 @@ The following table summarises the channels available for the ZMNHBA -:
 | Sensor (temperature) | sensor_temperature | sensor_temperature | Temperature | Number:Temperature | 
 | Electric meter (kWh) | meter_kwh | meter_kwh | Energy | Number | 
 | Electric meter (watts) | meter_watts | meter_watts | Energy | Number | 
+| Meter reset | meter_reset | meter_reset | Energy | Switch | 
 | Switch 1 | switch_binary1 | switch_binary | Switch | Switch | 
 | Electric meter (kWh) 1 | meter_kwh1 | meter_kwh | Energy | Number | 
 | Electric meter (watts) 1 | meter_watts1 | meter_watts | Energy | Number | 
+| Meter reset | meter_reset1 | meter_reset | Energy | Switch | 
 | Switch 2 | switch_binary2 | switch_binary | Switch | Switch | 
 | Electric meter (kWh) 2 | meter_kwh2 | meter_kwh | Energy | Number | 
 | Electric meter (watts) 2 | meter_watts2 | meter_watts | Energy | Number | 
+| Meter reset | meter_reset2 | meter_reset | Energy | Switch | 
 
 ### Switch
 Switch the power on and off.
@@ -80,6 +83,11 @@ Indicates the instantaneous power consumption.
 
 The ```meter_watts``` channel is of type ```meter_watts``` and supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
 
+### Meter reset
+Reset the meter.
+
+The ```meter_reset``` channel is of type ```meter_reset``` and supports the ```Switch``` item and is in the ```Energy``` category.
+
 ### Switch 1
 Switch the power on and off.
 
@@ -95,6 +103,11 @@ Indicates the instantaneous power consumption.
 
 The ```meter_watts1``` channel is of type ```meter_watts``` and supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
 
+### Meter reset
+Reset the meter.
+
+The ```meter_reset1``` channel is of type ```meter_reset``` and supports the ```Switch``` item and is in the ```Energy``` category.
+
 ### Switch 2
 Switch the power on and off.
 
@@ -109,6 +122,11 @@ The ```meter_kwh2``` channel is of type ```meter_kwh``` and supports the ```Numb
 Indicates the instantaneous power consumption.
 
 The ```meter_watts2``` channel is of type ```meter_watts``` and supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
+
+### Meter reset
+Reset the meter.
+
+The ```meter_reset2``` channel is of type ```meter_reset``` and supports the ```Switch``` item and is in the ```Energy``` category.
 
 
 

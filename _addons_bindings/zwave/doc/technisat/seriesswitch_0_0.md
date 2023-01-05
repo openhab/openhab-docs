@@ -43,15 +43,18 @@ The following table summarises the channels available for the Series switch 0300
 | Switch | switch_binary | switch_binary | Switch | Switch | 
 | Electric meter (watts) | meter_watts | meter_watts | Energy | Number | 
 | Electric meter (kWh) | meter_kwh | meter_kwh | Energy | Number | 
+| Meter reset | meter_reset | meter_reset | Energy | Switch | 
 | Scene Number | scene_number | scene_number |  | Number | 
 | Alarm (power) | alarm_power | alarm_power | Energy | Switch | 
 | Switch 1 | switch_binary1 | switch_binary | Switch | Switch | 
 | Electric meter (watts) 1 | meter_watts1 | meter_watts | Energy | Number | 
 | Electric meter (kWh) 1 | meter_kwh1 | meter_kwh | Energy | Number | 
+| Meter reset | meter_reset1 | meter_reset | Energy | Switch | 
 | Alarm (power) 1 | alarm_power1 | alarm_power | Energy | Switch | 
 | Switch 2 | switch_binary2 | switch_binary | Switch | Switch | 
 | Electric meter (watts) 2 | meter_watts2 | meter_watts | Energy | Number | 
 | Electric meter (kWh) 2 | meter_kwh2 | meter_kwh | Energy | Number | 
+| Meter reset | meter_reset2 | meter_reset | Energy | Switch | 
 | Alarm (power) 2 | alarm_power2 | alarm_power | Energy | Switch | 
 
 ### Switch
@@ -68,6 +71,11 @@ The ```meter_watts``` channel is of type ```meter_watts``` and supports the ```N
 Indicates the energy consumption (kWh).
 
 The ```meter_kwh``` channel is of type ```meter_kwh``` and supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
+
+### Meter reset
+Reset the meter.
+
+The ```meter_reset``` channel is of type ```meter_reset``` and supports the ```Switch``` item and is in the ```Energy``` category.
 
 ### Scene Number
 Triggers when a scene button is pressed.
@@ -112,6 +120,11 @@ Indicates the energy consumption (kWh).
 
 The ```meter_kwh1``` channel is of type ```meter_kwh``` and supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
 
+### Meter reset
+Reset the meter.
+
+The ```meter_reset1``` channel is of type ```meter_reset``` and supports the ```Switch``` item and is in the ```Energy``` category.
+
 ### Alarm (power) 1
 Indicates if a power alarm is triggered.
 
@@ -138,6 +151,11 @@ The ```meter_watts2``` channel is of type ```meter_watts``` and supports the ```
 Indicates the energy consumption (kWh).
 
 The ```meter_kwh2``` channel is of type ```meter_kwh``` and supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
+
+### Meter reset
+Reset the meter.
+
+The ```meter_reset2``` channel is of type ```meter_reset``` and supports the ```Switch``` item and is in the ```Energy``` category.
 
 ### Alarm (power) 2
 Indicates if a power alarm is triggered.

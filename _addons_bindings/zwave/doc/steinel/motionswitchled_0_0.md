@@ -42,8 +42,7 @@ The following table summarises the channels available for the MotionSwitch LED -
 | Scene Number | scene_number | scene_number |  | Number | 
 | Duration of light after motion detection [s] | config_decimal | config_decimal |  | Number | 
 | Light threshold [lx] | config_decimal | config_decimal |  | Number | 
-| Alarm (burglar) | alarm_burglar | alarm_burglar | Door | Switch | 
-| Alarm (burglar) 1 | alarm_burglar1 | alarm_burglar | Door | Switch | 
+| Motion Alarm 1 | alarm_motion1 | alarm_motion | Motion | Switch | 
 | Sensor (luminance) 2 | sensor_luminance2 | sensor_luminance |  | Number | 
 | Switch 3 | switch_binary3 | switch_binary | Switch | Switch | 
 | Scene Number 4 | scene_number4 | scene_number |  | Number | 
@@ -85,22 +84,10 @@ Generic class for configuration parameter.
 
 The ```config_decimal``` channel is of type ```config_decimal``` and supports the ```Number``` item.
 
-### Alarm (burglar)
-Indicates if the burglar alarm is triggered.
+### Motion Alarm 1
+Indicates if a motion alarm is triggered.
 
-The ```alarm_burglar``` channel is of type ```alarm_burglar``` and supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
-
-The following state translation is provided for this channel to the ```Switch``` item type -:
-
-| Value | Label     |
-|-------|-----------|
-| OFF | OK |
-| ON | Alarm |
-
-### Alarm (burglar) 1
-Indicates if the burglar alarm is triggered.
-
-The ```alarm_burglar1``` channel is of type ```alarm_burglar``` and supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
+The ```alarm_motion1``` channel is of type ```alarm_motion``` and supports the ```Switch``` item and is in the ```Motion``` category. This is a read only channel so will only be updated following state changes from the device.
 
 The following state translation is provided for this channel to the ```Switch``` item type -:
 

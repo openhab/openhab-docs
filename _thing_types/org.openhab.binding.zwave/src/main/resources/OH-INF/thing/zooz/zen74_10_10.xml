@@ -1,0 +1,300 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="zooz_zen74_10_010" listed="false">
+    <label>ZEN74 Toggle Dimmer</label>
+    <description><![CDATA[
+Toggle Dimmer<br /> <h1>Overview</h1><p>Manual or Z-Wave on/off and brightness control.</p> <br /> <h2>Inclusion Information</h2><p>Toggle up 3 times quickly.</p> <br /> <h2>Exclusion Information</h2><p>Toggle down 3 times quickly.</p> <br /> <h2>Wakeup Information</h2><p><br /></p>
+    ]]></description>
+    <category>WallSwitch</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_dimmer" typeId="switch_dimmer">
+        <label>Dimmer</label>
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+          <property name="binding:Command:OnOffType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+        </properties>
+      </channel>
+      <channel id="scene_number" typeId="scene_number">
+        <label>Scene Number</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_CENTRAL_SCENE</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Zooz</property>
+      <property name="modelId">ZEN74</property>
+      <property name="manufacturerId">027A</property>
+      <property name="manufacturerRef">7000:A004</property>
+      <property name="versionMin">10.10</property>
+      <property name="dbReference">1541</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_1_1" type="integer" groupName="configuration">
+        <label>1: On/Off Toggle Orientation</label>
+        <description><![CDATA[
+Choose if you want to turn the light on or turn the light off when you toggle up the switch.<br /> <h1>Overview</h1><p><br /></p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Toggle up turns the light on, toggle down turns it off (default)</option>
+          <option value="1">Toggle up turns the light off, toggle down turns it on</option>
+          <option value="2">Toggle any direction to turn the light on/off (change state)</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_3_4" type="integer" groupName="configuration">
+        <label>3: Auto Turn-Off Timer</label>
+        <description><![CDATA[
+Enable/disable the auto turn-off timer function.<br /> <h1>Overview</h1><p>Use this parameter to enable or disable the auto turn-off timer function (the time after which you want the switch to automatically turn off once it has been turned on).</p><p><b>Values:</b> 0 – timer disabled (default); 1 – 65535 (minutes).</p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_5_4" type="integer" groupName="configuration">
+        <label>5: Auto Turn-On Timer</label>
+        <description><![CDATA[
+Enable/disable the auto turn-on timer function.<br /> <h1>Overview</h1><p>Use this parameter to enable or disable the auto turn-on timer function (the time after which you want the switch to automatically turn on once it has been turned off).</p><p><b>Values:</b> 0 – timer disabled (default); 1 – 65535 (minutes).</p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_8_1" type="integer" groupName="configuration">
+        <label>8: On Off Status After Power Failure</label>
+        <description>Set the on off status for the switch after power failure.</description>
+        <default>2</default>
+        <options>
+          <option value="0">Forced to OFF (regardless of state prior to power outage)</option>
+          <option value="1">Forced to ON (regardless of state prior to power outage)</option>
+          <option value="2">Remembers and restores on/off status after power failure (default)</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_9_1" type="integer" groupName="configuration">
+        <label>9: Ramp Rate Control - Physical on</label>
+        <description><![CDATA[
+Adjust the "on" (fade-in) ramp rate for your dimmer when it's operated physically.<br /> <h1>Overview</h1><p>Adjust the "on" (fade-in) ramp rate for your dimmer when it's operated physically from the toggle. Values correspond to the number of seconds it take for the dimmer to reach full or max brightness.</p><p><b>Values:</b> 1 – 99 (seconds). 0 – instant on. Default: 0.</p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_10_1" type="integer" groupName="configuration">
+        <label>10: Minimum Brightness</label>
+        <description><![CDATA[
+Set the minimum brightness level (in %) for your dimmer<br /> <h1>Overview</h1><p>Set the minimum brightness level (in %) for your dimmer. You won’t be able to dim the light below the set value.</p><p><b>Values:</b> 1 – 99 (%). Default: 1.</p>
+        ]]></description>
+        <default>1</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_11_1" type="integer" groupName="configuration">
+        <label>11: Maximum Brightness</label>
+        <description><![CDATA[
+Set the maximum brightness level (in %) for your dimmer.<br /> <h1>Overview</h1><p>Set the maximum brightness level (in %) for your dimmer. You won’t be able to add brightness to the light beyond the set value. Note: if Parameter 12 is set to value 0, Parameter 11 is automatically disabled.</p><p><b>Values:</b> 1 – 99 (%). Default: 99.</p>
+        ]]></description>
+        <default>99</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_12_1" type="integer" groupName="configuration">
+        <label>12: Double Tap Behavior</label>
+        <description>Choose what you'd like the dimmer to do when you double-tap the toggle up.</description>
+        <default>0</default>
+        <options>
+          <option value="0">Light will turn on to full brightness (default)</option>
+          <option value="1">Light will turn on to the custom brightness level set in parameter 18</option>
+          <option value="2">Light will turn on to the maximum brightness level set in Parameter 11</option>
+          <option value="3">Double tap disabled</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_13_1" type="integer" groupName="configuration">
+        <label>13: Enable/Disable Scene Control</label>
+        <description>Enable or disable scene control functionality for quick double tap triggers.</description>
+        <default>0</default>
+        <options>
+          <option value="0">Scene control disabled (default)</option>
+          <option value="1"> Scene control enabled</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_15_1" type="integer" groupName="configuration">
+        <label>15: Smart Bulb Mode</label>
+        <description><![CDATA[
+Smart Bulb Mode: Enable/Disable Toggle / Z-Wave Control<br /> <h1>Overview</h1><p>Enable or disable on/off control from the toggle (aka disable the relay). If disabled, you’ll only be able to control the connected light via Z-Wave. Scenes and other functionality will still be available from the toggle.</p><p><b>For option 3:</b></p><p><b>NOTE:</b> Hold the toggle down for 10 seconds until the LED indicator starts blinking, then within 2 seconds, toggle the switch down 5 times quickly to change this mode. The LED indicator will stay solid green for 3 seconds to confirm the change.</p>
+        ]]></description>
+        <default>1</default>
+        <options>
+          <option value="0">Physical toggle control disabled</option>
+          <option value="1">Physical toggle control enabled (default)</option>
+          <option value="2">Physical toggle and Z-Wave control disabled</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_16_1" type="integer" groupName="configuration">
+        <label>16: Physical Dimming Speed</label>
+        <description><![CDATA[
+Set the physical dimming speed when pressing and holding the toggle.<br /> <h1>Overview</h1><p>Set the time it takes to get from 0% to 100% brightness when pressing and holding the toggle (physical dimming). The number entered as value corresponds to the number of seconds.</p><p><b>Values:</b> 1 – 99 (seconds). Default: 5.</p>
+        ]]></description>
+        <default>5</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_18_1" type="integer" groupName="configuration">
+        <label>18: Custom Brightness Level On</label>
+        <description><![CDATA[
+Custom brightness level for single or double tap up<br /> <h1>Overview</h1><p>Set the custom brightness level (instead of the last set brightness level) you want the dimmer to come on to when you single tap or double tap the toggle up (see parameters 12 and 25).</p><p><b>Values:</b> 0 – last brightness level (default); 1 – 99 (%) for custom brightness level.</p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_20_1" type="integer" groupName="configuration">
+        <label>20: Dimmer Report Type</label>
+        <description><![CDATA[
+Dimmer Report Type<br /> <h1>Overview</h1><p><b>First  option</b> – send basic set report for each brightness level to hub when physical / Z-Wave control is disabled for physical dimming when the toggle is manually tapped/ held; report final brightness level only (basic set report) for physical dimming when the toggle is manually tapped/ held and physical / Z-Wave control is enabled; always report final brightness level only (via multilevel reports) for Z-Wave control regardless of the physical / Z-Wave control mode. <br /></p><p><b>Second option</b> – report final brightness level only for physical dimming, regardless of the physical / Z-Wave control mode.</p><p><b>Third option</b> – send multilevel report for each brightness level to hub when physical / Z-Wave control is disabled for physical dimming when the toggle is manually tapped/ held; report final brightness level only (multilevel report) for physical dimming when the toggle is manually tapped/ held and physical / Z-Wave control is enabled; always report final brightness level only (via multilevel reports) for Z-Wave control regardless of the physical / Z-Wave control mode.</p>
+        ]]></description>
+        <default>2</default>
+        <options>
+          <option value="0">Send basic set report</option>
+          <option value="1">Send final brightness level report</option>
+          <option value="2">Send multilevel report</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_21_1" type="integer" groupName="configuration">
+        <label>21: Reporting behavior for disabled physical control.</label>
+        <description><![CDATA[
+Set reporting behavior for disabled physical control.<br /> <h1>Overview</h1><p><b>First option -</b> Switch reports on/off status and changes LED indicator state even if physical and Z-Wave control is disabled (default).</p><p><b>Second option –</b> Switch doesn't report on/off status or change LED indicator state when physical (and Z-Wave) control is disabled.</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Reports on/off status and changes LED</option>
+          <option value="1">Doesn't report on/off status or change LED</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_22_1" type="integer" groupName="configuration">
+        <label>22: Night Light Mode</label>
+        <description><![CDATA[
+Brightness level the dimmer will turn on to when off and when toggle is held DOWN.<br /> <h1>Overview</h1><p>Set the brightness level the dimmer will turn on to when off and when toggle is held DOWN for a second.</p><p><b>Values:</b> 0 – feature disabled; 1 – 99 (%). Default: 20.</p>
+        ]]></description>
+        <default>20</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_25_1" type="integer" groupName="configuration">
+        <label>25: Single Tap Behavior</label>
+        <description>Choose what you'd like the dimmer to do when you tap the toggle up once.</description>
+        <default>0</default>
+        <options>
+          <option value="0">Light will turn on to the last brightness level (default)</option>
+          <option value="1">Light will turn on to the custom brightness level set in parameter 18</option>
+          <option value="2">Light will turn on to the maximum brightness level set in Parameter 11</option>
+          <option value="3">Light will turn on to full brightness</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_26_0" type="integer" groupName="configuration">
+        <label>26: Enable/Disable Programming on the Toggle</label>
+        <description><![CDATA[
+Enable or disable programming functionality on the toggle (physical taps)<br /> <h1>Overview</h1><p>Enable or disable programming functionality on the toggle (physical taps). If this setting is disabled, then inclusion, exclusion, smart bulb mode no longer work when dimmer is toggled in its usual sequence (factory reset and scene control will still work) - that means you can now use triple-tap triggers on the dimmer for scenes and remote control of other devices.</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Programming enabled (default)</option>
+          <option value="1">Programming disabled</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_27_1" type="integer" groupName="configuration">
+        <label>27: Ramp Rate Control - Physical off</label>
+        <description><![CDATA[
+Adjust the "off" (fade-out) ramp rate when it's operated physically.<br /> <h1>Overview</h1><p>Adjust the "off" (fade-out) ramp rate for your dimmer when it's operated physically from the toggle. Values correspond to the number of seconds it take for the dimmer to turn off from full or max brightness.</p><p><b>Values:</b> 1 – 99 (seconds). 0 – instant off. Default: 2.</p>
+        ]]></description>
+        <default>2</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_28_1" type="integer" groupName="configuration">
+        <label>28: Ramp Rate Control - Z-Wave on</label>
+        <description><![CDATA[
+Adjust the "on" (fade-in) ramp rate for your dimmer when it's operated via Z-Wave.<br /> <h1>Overview</h1><p>Adjust the "on" (fade-in) ramp rate for your dimmer when it's operated via Z-Wave from your hub. Values correspond to the number of seconds it take for the dimmer to reach full or max brightness.</p><p><b>Values:</b> 1 – 99 (seconds). 0 – instant on. 255 – match physical ramp rate (set in parameter 9). Default: 255.</p>
+        ]]></description>
+        <default>-1</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_29_1" type="integer" groupName="configuration">
+        <label>29: Ramp Rate Control - Z-Wave off</label>
+        <description><![CDATA[
+Adjust the "off" (fade-out) ramp rate for your dimmer when it's operated via Z-Wave.<br /> <h1>Overview</h1><p>Adjust the "off" (fade-out) ramp rate for your dimmer when it's operated via Z-Wave from your hub. Values correspond to the number of seconds it take for the dimmer to turn off from full or max brightness.</p><p><b>Values:</b> 1 – 99 (seconds). 0 – instant off. 255 – match physical ramp rate (set in parameter 27). Default: 255.</p>
+        ]]></description>
+        <default>-1</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_30_1" type="integer" groupName="configuration">
+        <label>30: Remote Dimming Speed</label>
+        <description><![CDATA[
+Duration for multilevel commands sent to devices associated with the dimmer in Group 3.<br /> <h1>Overview</h1><p>Set the duration for multilevel commands sent to devices associated with the dimmer in Group 3 for smooth remote dimming experience.</p><p><b>Values:</b> 1 – 99 (seconds). Default: 5.</p>
+        ]]></description>
+        <default>5</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Lifeline</label>
+        <multipleLimit>1</multipleLimit>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: Basic Set</label>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_3" type="text" groupName="association" multiple="true">
+        <label>3: MULTILEVEL (dimming)</label>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

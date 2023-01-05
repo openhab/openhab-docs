@@ -32,6 +32,12 @@ Series ON/OFF Switch Relay<br /> <h1>Overview</h1><p>The TechniSat series switch
           <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_KWh</property>
         </properties>
       </channel>
+      <channel id="meter_reset" typeId="meter_reset">
+        <label>Meter reset</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_METER</property>
+        </properties>
+      </channel>
       <channel id="scene_number" typeId="scene_number">
         <label>Scene Number</label>
         <properties>
@@ -62,6 +68,12 @@ Series ON/OFF Switch Relay<br /> <h1>Overview</h1><p>The TechniSat series switch
           <property name="binding:*:DecimalType">COMMAND_CLASS_METER:1;type=E_KWh</property>
         </properties>
       </channel>
+      <channel id="meter_reset1" typeId="meter_reset">
+        <label>Meter reset</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_METER:1</property>
+        </properties>
+      </channel>
       <channel id="alarm_power1" typeId="alarm_power">
         <label>Alarm (power) 1</label>
         <properties>
@@ -84,6 +96,12 @@ Series ON/OFF Switch Relay<br /> <h1>Overview</h1><p>The TechniSat series switch
         <label>Electric meter (kWh) 2</label>
         <properties>
           <property name="binding:*:DecimalType">COMMAND_CLASS_METER:2;type=E_KWh</property>
+        </properties>
+      </channel>
+      <channel id="meter_reset2" typeId="meter_reset">
+        <label>Meter reset</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_METER:2</property>
         </properties>
       </channel>
       <channel id="alarm_power2" typeId="alarm_power">

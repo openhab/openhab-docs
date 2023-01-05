@@ -35,6 +35,7 @@ Toggle Dimmer<br /> <h1>Overview</h1><p>Manual or Z-Wave on.off and brightness c
       <property name="modelId">ZEN74</property>
       <property name="manufacturerId">027A</property>
       <property name="manufacturerRef">7000:A004</property>
+      <property name="versionMax">10.0</property>
       <property name="dbReference">1379</property>
       <property name="defaultAssociations">1</property>
     </properties>
@@ -228,6 +229,9 @@ Tap up once behaviour<br /> <h1>Overview</h1><p><br /></p>
       <!-- ASSOCIATION DEFINITIONS -->
       <parameter name="group_1" type="text" groupName="association" multiple="true">
         <label>1: Lifeline</label>
+        <description><![CDATA[
+<br /> <h1>Overview</h1><p><br /></p>
+        ]]></description>
         <multipleLimit>1</multipleLimit>
       </parameter>
 

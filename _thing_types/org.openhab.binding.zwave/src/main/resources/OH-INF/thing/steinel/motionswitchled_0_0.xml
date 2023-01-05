@@ -45,16 +45,10 @@ Infrared motion detector with orientation light<br /> <h1>Overview</h1><p>Infrar
           <property name="binding:*:DecimalType">COMMAND_CLASS_CONFIGURATION;parameter=2</property>
         </properties>
       </channel>
-      <channel id="alarm_burglar" typeId="alarm_burglar">
-        <label>Alarm (burglar)</label>
+      <channel id="alarm_motion1" typeId="alarm_motion">
+        <label>Motion Alarm 1</label>
         <properties>
-          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=BURGLAR</property>
-        </properties>
-      </channel>
-      <channel id="alarm_burglar1" typeId="alarm_burglar">
-        <label>Alarm (burglar) 1</label>
-        <properties>
-          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM:1,COMMAND_CLASS_BASIC:1;type=BURGLAR</property>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM:1,COMMAND_CLASS_BASIC:1</property>
         </properties>
       </channel>
       <channel id="sensor_luminance2" typeId="sensor_luminance">

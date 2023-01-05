@@ -50,6 +50,7 @@ The following table summarises the channels available for the FGRGBW -:
 | Sensor (power) | sensor_power | sensor_power | Energy | Number | 
 | Electric meter (watts) | meter_watts | meter_watts | Energy | Number | 
 | Electric meter (kWh) | meter_kwh | meter_kwh | Energy | Number | 
+| Meter reset | meter_reset | meter_reset | Energy | Switch | 
 | Color | color_color | color_color | ColorLight | Color | 
 | Start animation | scene_number | scene_number |  | Number | 
 | Red | switch_dimmer2 | switch_dimmer | DimmableLight | Dimmer | 
@@ -77,6 +78,11 @@ The ```meter_watts``` channel is of type ```meter_watts``` and supports the ```N
 Indicates the energy consumption (kWh).
 
 The ```meter_kwh``` channel is of type ```meter_kwh``` and supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
+
+### Meter reset
+Reset the meter.
+
+The ```meter_reset``` channel is of type ```meter_reset``` and supports the ```Switch``` item and is in the ```Energy``` category.
 
 ### Color
 The color channel allows to control the color of a light.
