@@ -473,7 +473,7 @@ Video url="https://demo.openhab.org/Hue.m4v"
 ```java
 Chart [item=<itemname>] [icon="<iconname>"] [label="<labelname>"] [refresh=xxxx]
 [period=xxxx] [service="<service>"] [begin=yyyyMMddHHmm] [end=yyyyMMddHHmm] [legend=true/false]
-[forceAsItem=true/false]
+[forceasitem=true/false]
 ```
 
 Adds a time-series chart object for the display of logged data.
@@ -493,7 +493,7 @@ Adds a time-series chart object for the display of logged data.
     Valid values are `true` (always show the legend) and `false` (never show the legend).
     If this parameter is not set, the legend is hidden if there is only one chart series.
 
-- `forceAsItem` is used to show the value of a `Group` instead of showing a graph for each member (which is the default).
+- `forceasitem` is used to show the value of a `Group` instead of showing a graph for each member (which is the default).
 
 Visit [Charts](https://github.com/openhab/openhab/wiki/Charts) in the Wiki for examples.
 
