@@ -5,8 +5,8 @@
   xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
                       https://openhab.org/schemas/thing-description/v1.0.0">
 
-  <thing-type id="zooz_zen73v1_00_000" listed="false">
-    <label>ZEN73v1 Toggle Switch</label>
+  <thing-type id="zooz_zen73_00_000" listed="false">
+    <label>ZEN73 Toggle Switch</label>
     <description><![CDATA[
 Toggle Switch<br /> <h1>Overview</h1><p>700 Series toggle switch with simple direct 3-way. </p><p>For LED/CFL and incandescent lights only. NOT for tube lights, fans, or receptacles.</p> <br /> <h2>Inclusion Information</h2><p>Toggle up 3 times quickly</p> <br /> <h2>Exclusion Information</h2><p>Toggle down 3 times quickly</p> <br /> <h2>Wakeup Information</h2><p><br /></p>
     ]]></description>
@@ -31,7 +31,7 @@ Toggle Switch<br /> <h1>Overview</h1><p>700 Series toggle switch with simple dir
     <!-- DEVICE PROPERTY DEFINITIONS -->
     <properties>
       <property name="vendor">Zooz</property>
-      <property name="modelId">ZEN73v1</property>
+      <property name="modelId">ZEN73</property>
       <property name="manufacturerId">027A</property>
       <property name="manufacturerRef">7000:A003</property>
       <property name="dbReference">1378</property>
@@ -110,8 +110,9 @@ Enable or disable manual on/off control from the toggle.<br /> <h1>Overview</h1>
         ]]></description>
         <default>1</default>
         <options>
-          <option value="1">physical toggle and Zwave control enabled</option>
-          <option value="2">physical toggle and Z-Wave control disabled</option>
+          <option value="0">Physical toggle control disabled, Z-Wave control enabled</option>
+          <option value="1">Physical toggle and Z-Wave control enabled</option>
+          <option value="2">Physical toggle and Z-Wave control disabled</option>
         </options>
       </parameter>
 
