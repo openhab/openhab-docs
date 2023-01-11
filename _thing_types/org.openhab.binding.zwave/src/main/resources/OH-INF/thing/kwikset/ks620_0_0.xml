@@ -10,7 +10,7 @@
     <description><![CDATA[
 Deadbolt variant<br /> <h1>Overview</h1><p>Kwikset®, the leader in residential security, introduces the Home Connect 620 Touchpad Electronic Deadbolt with Z-Wave.</p><p>For use on exterior doors where keyed entry and security is needed Featuring SmartKey Security™, which protects against advanced break-in techniques and allows you to re-key your lock yourself in seconds. SmartKey Security™ re-key technology is compatible with Kwikset (KW1) keyway or (SC1) keyway options Comes with 2 keys Deadbolt Latch has round corner faceplate ANSI/BHMA grade 2 certified Latch has adjustable backset 2-3/8" to 2-3/4" to fit all standard door preparations Includes round deadbolt strike 1 inch deadbolt throw Locking mechanism functions with turn piece on the interior of the lock Requires 4 AA batteries, included Keypad stays lit for 30 seconds after inactivity Expanding your security system solution with Home Connect technology, your keyless entry lock will now communicate wirelessly to security and home automation systems via Z-Wave Multiple pre-defined Auto-locking settings available Easily installs in minutes with just a screwdriver</p> <br /> <h2>Inclusion Information</h2><p>Initiate the process to add the lock to your system at your smart home controller.</p><p>When prompted by your smart home system to add the lock, press button “A” on the lock interior one time. The red LED will illuminate when the lock enters Add Mode.</p><p>Please allow time for the controller to add the lock to your system.</p> <br /> <h2>Exclusion Information</h2><p>Follow your smart home system’s instructions to remove the lock from the network.</p><p>When prompted by the system, press button A” on the lock interior once.</p><p>The red LED will illuminate when the lock enters Remove mode. </p> <br /> <h2>Wakeup Information</h2><p><br /></p>
     ]]></description>
-    <category>Battery</category>
+    <category>Lock</category>
 
     <!-- CHANNEL DEFINITIONS -->
     <channels>
@@ -36,6 +36,24 @@ Deadbolt variant<br /> <h1>Overview</h1><p>Kwikset®, the leader in residential 
         <label>Alarm (power)</label>
         <properties>
           <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=POWER_MANAGEMENT</property>
+        </properties>
+      </channel>
+      <channel id="alarm_raw" typeId="alarm_raw">
+        <label>Alarm (raw)</label>
+        <properties>
+          <property name="binding:*:StringType">COMMAND_CLASS_ALARM</property>
+        </properties>
+      </channel>
+      <channel id="alarm_entry" typeId="alarm_entry">
+        <label>Alarm (entry)</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM</property>
+        </properties>
+      </channel>
+      <channel id="alarm_battery" typeId="alarm_battery">
+        <label>Alarm (battery)</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM</property>
         </properties>
       </channel>
       <channel id="battery-level" typeId="system.battery-level">

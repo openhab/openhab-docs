@@ -44,6 +44,7 @@ The following table summarises the channels available for the ZMNHSD -:
 | Sensor (temperature) | sensor_temperature | sensor_temperature | Temperature | Number:Temperature | 
 | Electric meter (kWh) | meter_kwh | meter_kwh | Energy | Number | 
 | Electric meter (watts) | meter_watts | meter_watts | Energy | Number | 
+| Meter reset | meter_reset | meter_reset | Energy | Switch | 
 
 ### Switch [Deprecated]
 Switch the power on and off.
@@ -72,6 +73,11 @@ The ```meter_kwh``` channel is of type ```meter_kwh``` and supports the ```Numbe
 Indicates the instantaneous power consumption.
 
 The ```meter_watts``` channel is of type ```meter_watts``` and supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
+
+### Meter reset
+Reset the meter.
+
+The ```meter_reset``` channel is of type ```meter_reset``` and supports the ```Switch``` item and is in the ```Energy``` category.
 
 
 
