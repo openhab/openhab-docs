@@ -29,7 +29,7 @@ source: https://github.com/openhab/openhab-webui/edit/main/bundles/org.openhab.u
 | [`oh-stepper`](./oh-stepper.html) |  [Stepper](./oh-stepper.html) | Stepper control, allows to input a number or decrement/increment it using buttons |
 | [`oh-swiper`](./oh-swiper.html) |  [Swiper](./oh-swiper.html) | Swiper control, allows to display multiple swipeable slides |
 | [`oh-toggle`](./oh-toggle.html) |  [Toggle](./oh-toggle.html) | Toggle control, allows to switch on or off |
-| [`oh-trend`](./oh-trend.html) |  [Trend line](./oh-trend.html) | Trend line to display the overall recent evoluation of an item |
+| [`oh-trend`](./oh-trend.html) |  [Trend line](./oh-trend.html) | Trend line to display the overall recent evolution of an item |
 | [`oh-video`](./oh-video.html) |  [Video](./oh-video.html) | Displays a video player from a URL or an item |
 | [`oh-webframe`](./oh-webframe.html) |  [Web frame](./oh-webframe.html) | Displays a web page in a frame |
 
