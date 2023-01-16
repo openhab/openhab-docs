@@ -13,6 +13,10 @@ This guide describes step by step how to use the [openHAB Google Assistant Smart
 
 With the Action you can voice control your openHAB items and it supports lights, plugs, switches, thermostats and many more. The openHAB Action comes with multiple language support like English, German or French language.
 
+::: tip Note
+Please be aware that the graphical user interface in the Google Home app or on Google Nest devices may not fully support interaction with some of the supported device types. We cannot influence this and rely on Google to implement user interfaces for more devices. Nevertheless, interaction via voice or in writing with Google Assistant should always work.
+:::
+
 If you have any issues, questions or an idea for additional features, please take a look at the [repository on GitHub](https://github.com/openhab/openhab-google-assistant).
 
 [[toc]]
@@ -20,10 +24,17 @@ If you have any issues, questions or an idea for additional features, please tak
 ## Latest Changes
 
 ::: tip State of this document
-This documentation refers to release [v3.5.2](https://github.com/openhab/openhab-google-assistant/releases/tag/v3.5.2) of [openHAB Google Assistant](https://github.com/openhab/openhab-google-assistant) published on 2022-12-19
+This documentation refers to release [v3.6.0](https://github.com/openhab/openhab-google-assistant/releases/tag/v3.6.0) of [openHAB Google Assistant](https://github.com/openhab/openhab-google-assistant) published on 2023-01-16
 :::
 
-- `ga="light"` for SpecialColorLight is replaced by `ga="specialcolorlight"`
+### v3.6.0
+
+- Added new device types [`HumiditySensor`](#humiditysensor) & [`ClimateSensor`](#climatesensor)
+- Changed trait of [`TemperatureSensor`](#temperaturesensor) to actually show a UI
+
+### v3.5.0
+
+- `ga="light"` for [`SpecialColorLight`](#light-as-group-with-separate-controls) is replaced by `ga="specialcolorlight"`
 - `useKelvin=true` is replaced by `colorUnit="kelvin"`
 - Support for color temperature in Mired added
 
@@ -42,9 +53,9 @@ More information can be found in the corresponding [docs page](https://www.openh
 
 To expose [items](https://www.openhab.org/docs/concepts/items.html) to Google Assistent you will need to add [metadata](https://www.openhab.org/docs/concepts/items.html#item-metadata) in the `ga` namespace.
 
-Currently the following devices are supported (also depending on Google's API capabilities):
-
 _Hint: The value of `ga` is **not** case-sensitive._
+
+Currently the following devices are supported (also depending on Google's API capabilities):
 
 ### Switch
 
@@ -299,7 +310,8 @@ Player transportItem   (tvGroup) { ga="tvTransport" }
 | **Configuration** | (optional) `checkState=true/false`<br>(optional) `speeds="0=away:zero,50=default:standard:one,100=high:two"`<br>(optional) `lang="en"`<br>(optional) `ordered=true/false`<br>_Hint: if you are using a Dimmer then `speeds` is required_ |
 
 Fans (and similar device types, like AirPurifier or Hood) support the `FanSpeed` trait.
-With that you will be able to set up and use human speakable modes, e.g. "fast" for 100% or "slow" for 25%.
+If you do not specify the `speeds` option, Google will use and expect percentage values for the fan speed.
+Otherwise, you will be able to set up and use human speakable modes, e.g. "fast" for 100% or "slow" for 25%.
 
 `speeds` will be a comma-separated list of modes with a percentage number followed by an equal sign and different aliases for that mode after a colon.
 So here both "high" and "two" would set the speed to 100%.
@@ -308,8 +320,8 @@ The option `ordered` will tell the system that your list is ordered and you will
 
 ```shell
 Dimmer { ga="Fan" [ speeds="0=away:zero,50=default:standard:one,100=high:two", lang="en", ordered=true ] }
-Switch { ga="Hood" }
-Dimmer { ga="AirPurifier" [ speeds="0=off,50=mid,100=high" ] }
+Switch { ga="Hood" } # No speed control - only on/off
+Number { ga="AirPurifier" } # Only percentage values for the speed
 ```
 
 ### Awning, Blinds, Curtain, Door, Garage, Gate, Pergola, Shutter, Window
@@ -368,12 +380,39 @@ Number capacityFullItem     (chargerGroup) { ga="chargerCapacityUntilFull" }
 | | |
 |---|---|
 | **Device Type** | [Sensor](https://developers.google.com/assistant/smarthome/guides/sensor) |
-| **Supported Traits** | [TemperatureControl](https://developers.google.com/assistant/smarthome/traits/temperaturecontrol) |
+| **Supported Traits** | [TemperatureSetting](https://developers.google.com/assistant/smarthome/traits/temperaturesetting) |
 | **Supported Items** | Number |
 | **Configuration** | (optional) `useFahrenheit=true/false` |
 
 ```shell
 Number { ga="TemperatureSensor" [ useFahrenheit=true ] }
+```
+
+### HumiditySensor
+
+| | |
+|---|---|
+| **Device Type** | [Sensor](https://developers.google.com/assistant/smarthome/guides/sensor) |
+| **Supported Traits** | [HumiditySetting](https://developers.home.google.com/cloud-to-cloud/traits/humiditysetting) |
+| **Supported Items** | Number |
+
+```shell
+Number { ga="HumiditySensor" }
+```
+
+### ClimateSensor
+
+| | |
+|---|---|
+| **Device Type** | [Sensor](https://developers.google.com/assistant/smarthome/guides/sensor) |
+| **Supported Traits** | [HumiditySetting](https://developers.home.google.com/cloud-to-cloud/traits/humiditysetting), [TemperatureSetting](https://developers.google.com/assistant/smarthome/traits/temperaturesetting) |
+| **Supported Items** | Group as `ClimateSensor` with the following members:<br>(optional) Number as `humidityAmbient`<br>(optional) Number as `temperatureAmbient` |
+| **Configuration** | (optional) `useFahrenheit=true/false` |
+
+```shell
+Group  sensorGroup { ga="ClimateSensor" [ useFahrenheit=true ] }
+Number temperatureItem (sensorGroup) { ga="temperatureAmbient" }
+Number humidityItem    (sensorGroup) { ga="humidityAmbient" }
 ```
 
 ### Thermostat
@@ -387,7 +426,7 @@ Number { ga="TemperatureSensor" [ useFahrenheit=true ] }
 
 Thermostat requires a group of items to be properly configured to be used with Google Assistant. The default temperature unit is Celsius.
 To change the temperature unit to Fahrenheit, add the config option `useFahrenheit=true` to the thermostat group.
-To set the temperature range your thermostat supports, add the config option `thermostatTemperatureRange="10,30"` to the thermostat group.
+To set the temperature range your thermostat supports, add the config option `thermostatTemperatureRange="10,30"` to the thermostat group. Those values always have to be provided in Celsius!
 If your thermostat supports a range for the setpoint you can use both `thermostatTemperatureSetpointLow` and `thermostatTemperatureSetpointHigh` instead of the single `thermostatTemperatureSetpoint` item.
 
 If your thermostat does not have a mode, you should create one and manually assign a value (e.g. heat, cool, on, etc.) to have proper functionality.
@@ -401,7 +440,7 @@ However, it is recommended to prefer the `TemperatureSensor` type for simple tem
 
 ```shell
 Group  thermostatGroup { ga="Thermostat" [ modes="off=OFF:WINDOW_OPEN,heat=COMFORT:BOOST,eco=ECO,on=ON,auto", thermostatTemperatureRange="10,30", useFahrenheit=false ] }
-Number ambientItem      (thermostatGroup) { ga="thermostatTemperatureAmbient" }
+Number temperatureItem  (thermostatGroup) { ga="thermostatTemperatureAmbient" }
 Number humidityItem     (thermostatGroup) { ga="thermostatHumidityAmbient" }
 Number setpointItem     (thermostatGroup) { ga="thermostatTemperatureSetpoint" }
 Number setpointItemLow  (thermostatGroup) { ga="thermostatTemperatureSetpointLow" }

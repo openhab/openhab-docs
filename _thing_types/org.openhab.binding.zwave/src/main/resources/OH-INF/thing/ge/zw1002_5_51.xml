@@ -21,12 +21,6 @@ Smart Outlet<br /> <h1>Overview</h1><p>When paired with a compatible hub, the sm
         </properties>
       </channel>
       <channel id="scene_number" typeId="scene_number">
-        <label>Scene Number</label>
-        <properties>
-          <property name="binding:*:DecimalType">COMMAND_CLASS_SCENE_ACTIVATION</property>
-        </properties>
-      </channel>
-      <channel id="scene_number" typeId="scene_number">
         <label>Central Scene Number</label>
         <properties>
           <property name="binding:*:DecimalType">COMMAND_CLASS_CENTRAL_SCENE</property>

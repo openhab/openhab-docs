@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="climax_sdco1rhth_00_000" listed="false">
+    <label>SDCO-1-RhTH-ZW-SC-OTA Smoke and Carbon Monocide Detector</label>
+    <description><![CDATA[
+Smoke and Carbon Monocide Detector<br /> <h1>Overview</h1><p>Z-Wave Smoke and Carbon Monoxide Detector with </p><p>temperature, humidity, and heat detection, as well as voice prompts and allows access to the “S2 Unauthenticated” class. It is </p><p>capable of sending wireless signals to the Z-Wave gateway/control panel upon detection of smoke particles or Carbon Monoxide.</p><p>The device is also serially connected with other sensors in the Z-Wave gateway to serve as an extra siren. When any other </p><p>sensor in the Z-Wave network is activated and sends an alarm signal, the Smoke Detector will also raise alarm with its built-in </p><p>buzzer as a siren to help sound warning (for serial connection models)</p> <br /> <h2>Inclusion Information</h2><ol><li>Put the Z-Wave gateway or control panel into Inclusion mode (please refer to the Z-Wave gateway or control panel manual).</li><li>Within 1.5 seconds, press the button 3 times.</li><li>Refer to the operation manual of the Z-Wave gateway or control panel to complete the inclusion process.</li><li>If the sensor has already been included into another Z-Wave Gateway/Control Panel, or if the sensor is unable to be included into the current Z-Wave Gateway/Control Panel, please exclude it first (see Exclusion) before attempting to include it into the current Z-WaveGateway/Control Panel</li></ol> <br /> <h2>Exclusion Information</h2><p>The SDCO must be removed from existing Z-Wave network before being included into another.</p><ol><li>Put the Z-Wave gateway or control panel into Exclusion mode (please refer to the Z-Wave gateway or control panel manual).</li><li>Within 1.5 seconds, press the button 3 times and the SDCO will be removed from the Z-Wave network.</li></ol> <br /> <h2>Wakeup Information</h2><p><br /></p>
+    ]]></description>
+    <category>Battery</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="scene_number" typeId="scene_number">
+        <label>Scene Number</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_SCENE_ACTIVATION</property>
+        </properties>
+      </channel>
+      <channel id="sensor_temperature" typeId="sensor_temperature">
+        <label>Sensor (temperature)</label>
+        <properties>
+          <property name="binding:*:QuantityType">COMMAND_CLASS_SENSOR_MULTILEVEL;type=TEMPERATURE</property>
+        </properties>
+      </channel>
+      <channel id="sensor_relhumidity" typeId="sensor_relhumidity">
+        <label>Sensor (relative humidity)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_SENSOR_MULTILEVEL;type=RELATIVE_HUMIDITY</property>
+        </properties>
+      </channel>
+      <channel id="alarm_smoke" typeId="alarm_smoke">
+        <label>Alarm (smoke)</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=SMOKE</property>
+        </properties>
+      </channel>
+      <channel id="alarm_co" typeId="alarm_co">
+        <label>Alarm (CO)</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=CARBON_MONOXIDE</property>
+        </properties>
+      </channel>
+      <channel id="alarm_heat" typeId="alarm_heat">
+        <label>Alarm (heat)</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=HEAT</property>
+        </properties>
+      </channel>
+      <channel id="alarm_burglar" typeId="alarm_burglar">
+        <label>Alarm (burglar)</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=BURGLAR</property>
+        </properties>
+      </channel>
+      <channel id="battery-level" typeId="system.battery-level">
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_BATTERY</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Climax Technology, Ltd.</property>
+      <property name="modelId">SDCO-1-RhTH-ZW-SC-OTA</property>
+      <property name="manufacturerId">018E</property>
+      <property name="manufacturerRef">0003:0014</property>
+      <property name="dbReference">1545</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Lifeline</label>
+        <description><![CDATA[
+Main group to send sensory and notification messages<br /> <h1>Overview</h1><p>Group 1 for “LifeLine”:</p><p>Battery CC (COMMAND_CLASS_BATTERY)</p><p>Notification CC,V8 (COMMAND_CLASS_NOTIFICATION)</p><p>Sensor Multilevel CC, V11 (COMMAND_CLASS_SENSOR_MULTILEVEL)</p><p>Device Reset Locally CC (COMMAND_CLASS_DEVICE_RESET_LOCALLY)</p>
+        ]]></description>
+        <multipleLimit>1</multipleLimit>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: Sensor Basic Set</label>
+        <description><![CDATA[
+Group to control siren<br /> <h1>Overview</h1><p>Basic CC (COMMAND_CLASS_BASIC)</p><p>When the Smoke Detector is active, it will send Basic Set (0xFF) in Group 2.</p><p>When the Smoke Detector is restored, it will send Basic Set (0x00) in Group 2</p>
+        ]]></description>
+        <multipleLimit>1</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>
