@@ -74,7 +74,7 @@ The simplest way to get hold of such an openHAB Cloud is to register an account 
 
 Since openHAB is open source, the myopenHAB Cloud Service is also open source.
 This allows you to run your own  openHAB cloud.
-There is support to run in a Docker container or on Amazon We Services (AWS).
+There is support to run in a Docker container or on Amazon Web Services (AWS).
 For more information see [openHAB Cloud on GitHub](https://github.com/openhab/openhab-cloud)
 
 ### Running openHAB Behind a Reverse Proxy
