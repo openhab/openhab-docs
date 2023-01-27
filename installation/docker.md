@@ -58,7 +58,7 @@ sudo useradd -r -s /sbin/nologin openhab
 Add your regular user to the `openhab` group.
 
 ```bash
-usermod -a -G openhab <user>
+sudo usermod -a -G openhab openhab
 ```
 
 ### Create the openHAB conf, userdata, and addon directories
