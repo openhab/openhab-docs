@@ -143,7 +143,7 @@ Xtext Domain Specific Language and the sitemap file model can be found [here](ht
 The following element types may be used in a Sitemap definition file.
 
 | Element                                  | Description                                                                               |
-|------------------------------------------|-------------------------------------------------------------------------------------------|
+| ---------------------------------------- | ----------------------------------------------------------------------------------------- |
 | [Chart](#element-type-chart)             | Adds a time-series chart object for [persisted](persistence.html) data.                   |
 | [Colorpicker](#element-type-colorpicker) | Allows the user to choose a color from a color wheel.                                     |
 | [Default](#element-type-default)         | Renders an Item in the default UI representation specified by the type of the given Item. |
@@ -199,7 +199,7 @@ sitemap demo label="My home automation" {
 }
 ```
 
-UoM = [Units of Measurment]({{base}}/concepts/units-of-measurement.html)
+UoM = [Units of Measurement]({{base}}/concepts/units-of-measurement.html)
 
 - Additional parameters such as `mappings` and `valuecolor` are described below.
 
@@ -504,7 +504,7 @@ See this [Tutorial](https://community.openhab.org/t/13761/1) for more details.
 
 **Technical constraints and details:**
 
-- When using rrd4j persistence, the strategy `everyMinute` (60 seconds) has to be used. Otherwise no data will be persisted (stored) and the chart will not be drawn projavay (see [rrd4j Persistence](/addons/persistence/rrd4j)).
+- When using rrd4j persistence, the strategy `everyMinute` (60 seconds) has to be used. Otherwise no data will be persisted (stored) and the chart will not be drawn (see [rrd4j Persistence](/addons/persistence/rrd4j)).
 - The visibility of multiple Chart objects may be toggled to simulate changing the Chart period; non-visible Chart widgets are NOT generated behind the scenes until they become visible.
 - When charting a group of item, make sure that every label is unique.
 
@@ -624,32 +624,32 @@ Text item=Temperature valuecolor=[Last_Update=="Uninitialized"="gray",
 ```
 
 Note that expressions are evaluated from left to right; the first matching expression determines the color.
-If the order of the expressions was reversed, the color assignment would not work projavay.
+If the order of the expressions was reversed, the color assignment would not work.
 Note also, the effect of omitting `Temperature` and the comparison operator in the expression `0="white"` (as compared to `==0="white"`).
 
 Below is a list of standard colors and their respective RGB color codes.
 
-| Color Name | Preview                                       | RGB Color Code |
-|------------|-----------------------------------------------|----------------|
-| maroon     | <div style="color: #800000;">&#11044;</div>   | `#800000`      |
-| red        | <div style="color: #ff0000;">&#11044;</div>   | `#ff0000`      |
-| orange     | <div style="color: #ffa500;">&#11044;</div>   | `#ffa500`      |
-| olive      | <div style="color: #808000;">&#11044;</div>   | `#808000`      |
-| yellow     | <div style="color: #ffff00;">&#11044;</div>   | `#ffff00`      |
-| purple     | <div style="color: #800080;">&#11044;</div>   | `#800080`      |
-| fuchsia    | <div style="color: #ff00ff;">&#11044;</div>   | `#ff00ff`      |
-| pink       | <div style="color: #ffc0cb;">&#11044;</div>   | `#ffc0cb`      |
-| white      | <div style="color: #ffffff;">&#11044;</div>   | `#ffffff`      |
-| lime       | <div style="color: #00ff00;">&#11044;</div>   | `#00ff00`      |
-| green      | <div style="color: #008000;">&#11044;</div>   | `#008000`      |
-| navy       | <div style="color: #000080;">&#11044;</div>   | `#000080`      |
-| blue       | <div style="color: #0000ff;">&#11044;</div>   | `#0000ff`      |
-| teal       | <div style="color: #008080;">&#11044;</div>   | `#008080`      |
-| aqua       | <div style="color: #00ffff;">&#11044;</div>   | `#00ffff`      |
-| black      | <div style="color: #000000;">&#11044;</div>   | `#000000`      |
-| silver     | <div style="color: #c0c0c0;">&#11044;</div>   | `#c0c0c0`      |
-| gray       | <div style="color: #808080;">&#11044;</div>   | `#808080`      |
-| gold       | <div style="color: #ffd700;">&#11044;</div>   | `#ffd700`      |
+| Color Name | Preview                                     | RGB Color Code |
+| ---------- | ------------------------------------------- | -------------- |
+| maroon     | <div style="color: #800000;">&#11044;</div> | `#800000`      |
+| red        | <div style="color: #ff0000;">&#11044;</div> | `#ff0000`      |
+| orange     | <div style="color: #ffa500;">&#11044;</div> | `#ffa500`      |
+| olive      | <div style="color: #808000;">&#11044;</div> | `#808000`      |
+| yellow     | <div style="color: #ffff00;">&#11044;</div> | `#ffff00`      |
+| purple     | <div style="color: #800080;">&#11044;</div> | `#800080`      |
+| fuchsia    | <div style="color: #ff00ff;">&#11044;</div> | `#ff00ff`      |
+| pink       | <div style="color: #ffc0cb;">&#11044;</div> | `#ffc0cb`      |
+| white      | <div style="color: #ffffff;">&#11044;</div> | `#ffffff`      |
+| lime       | <div style="color: #00ff00;">&#11044;</div> | `#00ff00`      |
+| green      | <div style="color: #008000;">&#11044;</div> | `#008000`      |
+| navy       | <div style="color: #000080;">&#11044;</div> | `#000080`      |
+| blue       | <div style="color: #0000ff;">&#11044;</div> | `#0000ff`      |
+| teal       | <div style="color: #008080;">&#11044;</div> | `#008080`      |
+| aqua       | <div style="color: #00ffff;">&#11044;</div> | `#00ffff`      |
+| black      | <div style="color: #000000;">&#11044;</div> | `#000000`      |
+| silver     | <div style="color: #c0c0c0;">&#11044;</div> | `#c0c0c0`      |
+| gray       | <div style="color: #808080;">&#11044;</div> | `#808080`      |
+| gold       | <div style="color: #ffd700;">&#11044;</div> | `#ffd700`      |
 
 Please take note that colors other than those listed in the list above may be used.
 Generally, you can expected that valid HTML colors will be accepted (e.g. `green`, `lightgrey`, `#334455`), but note that a UI may only accept internally defined colors, or work with a special theme.

@@ -92,7 +92,7 @@ This optimization is reflected in the data and command types.
 Available Item types are:
 
 | Item Name          | Description                                                        | Command Types                                       |
-|--------------------|--------------------------------------------------------------------|-----------------------------------------------------|
+| ------------------ | ------------------------------------------------------------------ | --------------------------------------------------- |
 | Call               | Identify phone calls                                               | Refresh                                             |
 | Color              | Color information (RGB)                                            | OnOff, IncreaseDecrease, Percent, HSB, Refresh      |
 | Contact            | Item storing status of e.g. door/window contacts                   | OpenClosed, Refresh                                 |
@@ -170,10 +170,10 @@ The following naming style guide is recommended:
 Examples:
 
 | Item Name                         | Interpretation (assumed Item type, example value)                                                       |
-|-----------------------------------|---------------------------------------------------------------------------------------------------------|
+| --------------------------------- | ------------------------------------------------------------------------------------------------------- |
 | "`Livingroom_CeilingLight`"       | Living room light (Switch, e.g. ON)                                                                     |
 | "`Livingroom_CeilingLight_Color`" | Living room light color (Color, e.g. warm white)                                                        |
-| "`GF_BR_WashingMachine_Power`"   | Electric power consumed by the washing machine located in the ground floor bathroom (Number, e.g. 100W) |
+| "`GF_BR_WashingMachine_Power`"    | Electric power consumed by the washing machine located in the ground floor bathroom (Number, e.g. 100W) |
 | "`Lighting_Scene`"                | Overall lighting scene of the house (String, e.g. Party)                                                |
 | "`Presence_John_Smartphone`"      | An Item indicating if John is home or not, based on smartphone detection (Switch, e.g. Offline)         |
 
@@ -186,7 +186,7 @@ Two naming schemes are established in the community for Group names:
 1. Prepend a lowercase "g" to the name (e.g. gBattery)
 
 | Group Name                                | Interpretation                                                        |
-|-------------------------------------------|-----------------------------------------------------------------------|
+| ----------------------------------------- | --------------------------------------------------------------------- |
 | "`Batteries`" or "`gBattery`"             | Group combining the states of all battery Items                       |
 | "`Maintenance_Group`" or "`gMaintenance`" | Group containing all maintenance-related Items                        |
 | "`Livingroom_Lights`" or "`gLR_Light`"    | Group containing all light Items belonging to the living room         |
@@ -361,13 +361,13 @@ String Livingroom_Light_Connection "Livingroom Ceiling Light [MAP(error.map):%s]
 On the filesystem, the following icon files are provided by the user:
 
 | File name          | Description                                                      |
-|--------------------|------------------------------------------------------------------|
+| ------------------ | ---------------------------------------------------------------- |
 | `myswitch-off.svg` | Matches `OFF` or "off" state                                     |
 | `myswitch-on.svg`  | Matches `ON` or "on" state                                       |
 | `myswitch.svg`     | Default icon, used when no matching icon is found (e.g. `UNDEF`) |
 
 | File name              | Description                                                        |
-|------------------------|--------------------------------------------------------------------|
+| ---------------------- | ------------------------------------------------------------------ |
 | `myerror-no_fault.svg` | Matches `NO_FAULT` state                                           |
 | `myerror.svg`          | Default icon, used when Item in other state (e.g. `CONNECT_ERROR`) |
 
@@ -380,7 +380,7 @@ Dimmer type Items work in the same way, being limited to 0-100 anyway.
 
 For a dimmable light (0-100%), you might provide icons as in the example:
 | File name         | Description                                          |
-|-------------------|------------------------------------------------------|
+| ----------------- | ---------------------------------------------------- |
 | `mydimmer.svg`    | Default icon (used in undefined states)              |
 | `mydimmer-0.svg`  | Matches the turned off light (0%)                    |
 | `mydimmer-1.svg`  | Matches any dimmed light between 1% up to 74%        |
@@ -456,13 +456,13 @@ Group[:itemtype[:function]] groupname ["labeltext"] [<iconname>] [(group1, group
 
 Group state aggregation functions can be any of the following:
 
-|   | Function                   | Parameters                    | Base Item                                   | Description                                                                                                                                                                                                           |   |
-|---|----------------------------|-------------------------------|---------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---|
-|   | `EQUALITY`                 | -                             | \<all\>                                     | Default if no function is specified. Sets the state of the members if all have equal state. Otherwise `UNDEF` is set. In the Item DSL `EQUALITY` is the default and may be omitted.                                   |   |
-|   | `AND`, `OR`, `NAND`, `NOR` | <activeState>, <passiveState> | \<all\> (must match active & passive state) | [Boolean](https://en.wikipedia.org/wiki/Boolean_algebra) operation. Sets the \<activeState\>, if the members state \<activeState\> evaluates to `true` under the boolean term. Otherwise the \<passiveState\> is set. |   |
-|   | `SUM`, `AVG`, `MIN`, `MAX` | -                             | Number                                      | [Arithmetic](https://en.wikipedia.org/wiki/Arithmetic) operation. Sets the state according to the arithmetic function over all members states.                                                                        |   |
-|   | `COUNT`                    | <regular expression>          | Number                                      | Sets the state to the number of members matching the given regular expression with their states.                                                                                                                      |   |
-|   | `LATEST`, `EARLIEST`       | -                             | DateTime                                    | Sets the state to the latest/earliest date from all members states                                                                                                                                                    |   |
+|     | Function                   | Parameters                    | Base Item                                   | Description                                                                                                                                                                                                           |     |
+| --- | -------------------------- | ----------------------------- | ------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --- |
+|     | `EQUALITY`                 | -                             | \<all\>                                     | Default if no function is specified. Sets the state of the members if all have equal state. Otherwise `UNDEF` is set. In the Item DSL `EQUALITY` is the default and may be omitted.                                   |     |
+|     | `AND`, `OR`, `NAND`, `NOR` | <activeState>, <passiveState> | \<all\> (must match active & passive state) | [Boolean](https://en.wikipedia.org/wiki/Boolean_algebra) operation. Sets the \<activeState\>, if the members state \<activeState\> evaluates to `true` under the boolean term. Otherwise the \<passiveState\> is set. |     |
+|     | `SUM`, `AVG`, `MIN`, `MAX` | -                             | Number                                      | [Arithmetic](https://en.wikipedia.org/wiki/Arithmetic) operation. Sets the state according to the arithmetic function over all members states.                                                                        |     |
+|     | `COUNT`                    | <regular expression>          | Number                                      | Sets the state to the number of members matching the given regular expression with their states.                                                                                                                      |     |
+|     | `LATEST`, `EARLIEST`       | -                             | DateTime                                    | Sets the state to the latest/earliest date from all members states                                                                                                                                                    |     |
 
 Boolean group state functions additionally return a number representing the count of member Items of value 'value1' (see example below).
 
@@ -620,7 +620,7 @@ This parameter allows to post an update or command to an item after a period of 
 
 The expiration timer is started or restarted every time an item receives an update or a command _other than_ the specified "expire" update/command.
 Any future expiring update or command is cancelled, if the item receives an update or command that matches the "expire" update/command.
-  
+
 The parameter accepts a duration of time that can be a combination of hours, minutes and seconds in the format
 
 ```shell
@@ -664,7 +664,7 @@ Some Bindings may offer additional Profiles for Binding-specific use cases.
 If this is the case, you will find those within the documentation of the Binding.
 
 | Profile ID                                                                                    | Type    | Supported Item Types  | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
-|-----------------------------------------------------------------------------------------------|---------|-----------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| --------------------------------------------------------------------------------------------- | ------- | --------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `default`                                                                                     | State   | All                   | If you don't specify any Profile, this Profile will be used. For State Channels, this means that states and commands are just propagated from the Channel to the Item and vice versa without any changes. For Trigger Channels, the Default Profile won't change anything on the Item.                                                                                                                                                                                                        |
 | `follow`                                                                                      | State   | All                   | If one device should "follow" the actions of another device, this can be used. The term "follow" in this case means that any state that is sent to an Item will be forwarded from this Item to any linked Channel with the `follow` Profile. It takes state updates on an Item and sends them as a command onto the Channel. In the direction from the ThingHandler towards the Item, this Profile ignores state updates.                                                                     |
 | `hysteresis`                                                                                  | State   | Switch                | The `hysteresis` Profile can be configured via three parameters: `lower` (**mandatory**) `QuantityType` or `DecimalType`, `upper` (optional) `QuantityType` or `DecimalType`, `inverted` (optional) `boolean`.  This Profile can be used to trigger alarms when number values exceed a given `lower` bound - sends `ON` to the Switch Item. By defining an additional `upper` bound it can provide kind of anti-flapping. The `inverted` parameter negates the resulting State of the Switch. |
@@ -727,7 +727,7 @@ So with Profiles, you can significantly reduce the amount of Rules you need for 
 Number:Temperature Outdoor_Temperature { channel="openweathermap:weather-and-forecast:api:local:current#temperature" }
 // Triggers a temperature high alarm (Switch = ON) as of 30 °c and stays ON until temperature drops below 29 °C
 Switch Outdoor_Temperature_High_Alert { channel="openweathermap:weather-and-forecast:api:local:current#temperature" [profile="system:hysteresis", lower="29 °C", upper="30 °C"] }
-// Temperture low alert below 0 °C
+// Temperature low alert below 0 °C
 Switch Outdoor_Temperature_Low_Alert { channel="openweathermap:weather-and-forecast:api:local:current#temperature" [profile="system:hysteresis", lower="0 °C", inverted="true"] }
 
 /** Battery Level Profile **/

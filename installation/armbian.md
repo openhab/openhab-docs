@@ -10,10 +10,10 @@ title: Armbian
 Armbian is a base operating system platform for single board computers.
 
 - comes in desktop, minimal or server variant,
-- has clean and highly optimised user space,
+- has clean and highly optimized user space,
 - is Ubuntu and Debian compatible,
 - is supported with vibrant community,
-- comes with a powerful SDK which allows reproduction and customisation,
+- comes with a powerful SDK which allows reproduction and customization,
 - supports many 3rd party wireless drivers with advanced functionalities,
 - supports Docker, disk encryption, Wireguard VPN any many other features.
 

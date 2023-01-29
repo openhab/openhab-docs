@@ -14,7 +14,7 @@ The ephemeris category provides blocks with calendar functionality.
 The blocks can be used to determine what type of day today is, or a number of days before or after today is.
 For example, a way to determine if today is a weekend, a bank holiday, someone’s birthday, trash day, etc.
 
-Definition of holidays can be customised through the _ephemeris.cfg_ file.
+Definition of holidays can be customized through the _ephemeris.cfg_ file.
 See the [Ephemeris configuration page](https://www.openhab.org/docs/configuration/actions.html#configuration) for more information.
 
 [[toc]]

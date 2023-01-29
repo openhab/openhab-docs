@@ -449,7 +449,7 @@ sudo adduser --system --no-create-home --group --disabled-login openhab
 :::tip note
 The needed command syntax may vary based on the distribution you are using.
 
-Below there is an example for fedora besed systems:
+Below there is an example for fedora based systems:
 
 ```shell
 sudo adduser --system --no-create-home --user-group --disabled-login openhab
@@ -465,7 +465,7 @@ As openHAB is still in an evolving state, the snapshot may be the **preferred ch
 
 - **Official Release**
 
-    Download and extract the latest offical stable version of openHAB from [our downloadpage](https://www.openhab.org/download/) to your host:
+    Download and extract the latest official stable version of openHAB from [our downloadpage](https://www.openhab.org/download/) to your host:
 
     ```shell
     cd /tmp
@@ -625,14 +625,14 @@ sudo systemctl daemon-reload
 
 ### File Locations
 
-|                               | Repository Installation      | Manual Installation (according to [guide](#manual-installation)) |
-|:-----------------------------:|------------------------------|------------------------------------------------------------------|
-|      openHAB application      | `/usr/share/openhab`        | `/opt/openhab`                                                  |
-|    Additional add-on files    | `/usr/share/openhab/addons` | `/opt/openhab/addons`                                           |
-|       Site configuration      | `/etc/openhab`              | `/opt/openhab/conf`                                             |
-|           Log files           | `/var/log/openhab`          | `/opt/openhab/userdata/logs`                                    |
-| Userdata like rrd4j databases | `/var/lib/openhab`          | `/opt/openhab/userdata`                                         |
-|         Backups folder        | `/var/lib/openhab/backups`  | `/opt/openhab/backups`                                          |
+|                               | Repository Installation     | Manual Installation (according to [guide](#manual-installation)) |
+| :---------------------------: | --------------------------- | ---------------------------------------------------------------- |
+|      openHAB application      | `/usr/share/openhab`        | `/opt/openhab`                                                   |
+|    Additional add-on files    | `/usr/share/openhab/addons` | `/opt/openhab/addons`                                            |
+|      Site configuration       | `/etc/openhab`              | `/opt/openhab/conf`                                              |
+|           Log files           | `/var/log/openhab`          | `/opt/openhab/userdata/logs`                                     |
+| Userdata like rrd4j databases | `/var/lib/openhab`          | `/opt/openhab/userdata`                                          |
+|        Backups folder         | `/var/lib/openhab/backups`  | `/opt/openhab/backups`                                           |
 |     Service configuration     | `/etc/default/openhab`      | (not preconfigured)                                              |
 
 ## Backup and Restore

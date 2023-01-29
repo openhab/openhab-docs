@@ -63,7 +63,7 @@ You can upload a logo to display it on the openhab.org start page, the addon sea
 
 These are the requirements for logos:
 
-- PNG (transparancy is preferred)
+- PNG (transparency is preferred)
 - 512x512 pixels or smaller in one dimension, if it's not a square logo
 - Less than 30kB
 

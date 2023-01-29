@@ -118,7 +118,7 @@ The following example depicts the above possibilities:
 Function: Gets all items with the given tags which you can iterate over via a loop
 
 - returns a collection of items which have the given tags
-- multiple tags can be provided which then need to be separared with a comma
+- multiple tags can be provided which then need to be separated with a comma
 - if multiple tags are given, the item must have all of the tags ("and"-condition)
 
 :::tip

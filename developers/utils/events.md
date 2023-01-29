@@ -45,7 +45,7 @@ The event source is optional and represents the name of the source identifying t
 #### Item Events
 
 | Event                      | Description                                             | Topic                                              |
-|----------------------------|---------------------------------------------------------|----------------------------------------------------|
+| -------------------------- | ------------------------------------------------------- | -------------------------------------------------- |
 | ItemAddedEvent             | An item has been added to the item registry.            | openhab/items/{itemName}/added                     |
 | ItemRemovedEvent           | An item has been removed from the item registry.        | openhab/items/{itemName}/removed                   |
 | ItemUpdatedEvent           | An item has been updated in the item registry.          | openhab/items/{itemName}/updated                   |
@@ -67,7 +67,7 @@ It contains the old and the new state of the group item as well as the member.
 #### Thing Events
 
 | Event                       | Description                                       | Topic                                   |
-|-----------------------------|---------------------------------------------------|-----------------------------------------|
+| --------------------------- | ------------------------------------------------- | --------------------------------------- |
 | ThingAddedEvent             | A thing has been added to the thing registry.     | openhab/things/{thingUID}/added         |
 | ThingRemovedEvent           | A thing has been removed from the thing registry. | openhab/things/{thingUID}/removed       |
 | ThingUpdatedEvent           | A thing has been updated in the thing registry.   | openhab/things/{thingUID}/updated       |
@@ -82,25 +82,25 @@ It contains the old and the new status of the thing.
 
 #### Inbox Events
 
-| Event                 | Description                                         | Topic                            |
-|-----------------------|-----------------------------------------------------|----------------------------------|
-| InboxAddedEvent       | A discovery result has been added to the inbox.     | openhab/inbox/{thingUID}/added   |
-| InboxRemovedEvent     | A discovery result has been removed from the inbox. | openhab/inbox/{thingUID}/removed |
-| InboxUpdateEvent      | A discovery result has been updated in the inbox.   | openhab/inbox/{thingUID}/updated |
+| Event             | Description                                         | Topic                            |
+| ----------------- | --------------------------------------------------- | -------------------------------- |
+| InboxAddedEvent   | A discovery result has been added to the inbox.     | openhab/inbox/{thingUID}/added   |
+| InboxRemovedEvent | A discovery result has been removed from the inbox. | openhab/inbox/{thingUID}/removed |
+| InboxUpdateEvent  | A discovery result has been updated in the inbox.   | openhab/inbox/{thingUID}/updated |
 
 #### Link Events
 
 | Event                       | Description                                              | Topic                                         |
-|-----------------------------|----------------------------------------------------------|-----------------------------------------------|
+| --------------------------- | -------------------------------------------------------- | --------------------------------------------- |
 | ItemChannelLinkAddedEvent   | An item channel link has been added to the registry.     | openhab/links/{itemName}-{channelUID}/added   |
 | ItemChannelLinkRemovedEvent | An item channel link has been removed from the registry. | openhab/links/{itemName}-{channelUID}/removed |
 
 #### Channel Events
 
-| Event                          | Description                                                   | Topic                                            |
-|--------------------------------|---------------------------------------------------------------|--------------------------------------------------|
+| Event                          | Description                                                       | Topic                                            |
+| ------------------------------ | ----------------------------------------------------------------- | ------------------------------------------------ |
 | ChannelDescriptionChangedEvent | A dynamic `CommandDescription` or `StateDescription` has changed. | openhab/channels/{channelUID}/descriptionchanged |
-| ChannelTriggeredEvent          | A channel has been triggered.                                 | openhab/channels/{channelUID}/triggered          |
+| ChannelTriggeredEvent          | A channel has been triggered.                                     | openhab/channels/{channelUID}/triggered          |
 
 The `ChannelDescriptionChangedEvent` will be delivered automatically through the openHAB event bus if the binding implements a `BaseDynamicStateDescriptionProvider` or `BaseDynamicCommandDescriptionProvider` (see [Dynamic State / Command Description section](../bindings/thing-xml.html#dynamic-state-command-description)).
 
@@ -116,7 +116,7 @@ Therefore, the `EventSubscriber` interface must be implemented.
 public class SomeItemEventSubscriber implements EventSubscriber {
 
     private final Set<String> subscribedEventTypes = Set.of(ItemStateEvent.TYPE, ItemCommandEvent.TYPE);
-    private final EventFilter eventFiter = new TopicEventFilter("openhab/items/ItemX/.*");
+    private final EventFilter eventFilter = new TopicEventFilter("openhab/items/ItemX/.*");
 
     @Override
     public Set<String> getSubscribedEventTypes() {
@@ -192,7 +192,7 @@ The class `org.openhab.core.items.events.AbstractItemEventSubscriber` provides t
 ```java
 public class SomeItemEventSubscriber extends AbstractItemEventSubscriber {
 
-    private final EventFilter eventFiter = new TopicEventFilter("openhab/items/ItemX/.*");
+    private final EventFilter eventFilter = new TopicEventFilter("openhab/items/ItemX/.*");
 
     @Override
     public EventFilter getEventFilter() {

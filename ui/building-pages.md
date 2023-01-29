@@ -172,7 +172,7 @@ is the same as
 footer: =items['Switch1'].displayState || items['Switch1'].state
 ```
 
-Similary, `@@` can be used as a shortcut for just the item state.
+Similarly, `@@` can be used as a shortcut for just the item state.
 
 Expressions are particularly useful in cases where one wants to combine the states of more than one Item, or use the state of more than one Item in a single widget element.
 For example, the icon of an Item can be based on the state of a different Item.
@@ -222,21 +222,21 @@ Configuring the action type reveal more options in the action sheet:
 
 ### Types of Actions
 
-Action | What it does
--|-
-Navigate to page | Opens a different Page with an optional transition.
-Send command | Issues a command to an Item.
-Toggle Item | Alternate an item between two states by sending commands (regular command if the item's state is different, or an alternative command if the state is equal to the regular command). Typically used with ON/OFF.
-Command options | Issues a command to the configured Item based on a comma-separated locally-defined list of options, or on the Item's State Description.
-Run rule | Trigger a rule directly.
-Open popup | Open a Page or personal widget in a popup which will be displayed fullscreen on phones and in a 630x630-pixel modal dialog on larger screens.
-Open popover | Open a Page or personal widget in a small "callout" comic-like bubble
-Open sheet | Open a Page or personal widget in a drawer appearing from the bottom of the screen.
-Open photo browser | Displays a full screen interface to view one of several images
-Group details | Used with Group items to open a popup with an automatically-generated list of the members of the group, represented by their default list item widget. For Groups with a base type like Switch, a standard card widget will also be shown for the Group itself.
-Analyze Item(s) | Opens the Analyzer window for the specified item(s) and period
-External URL | Open an external web page
-Set Variable | Set a variable that you can use in other parts of the page or widget.
+| Action             | What it does                                                                                                                                                                                                                                                    |
+| ------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Navigate to page   | Opens a different Page with an optional transition.                                                                                                                                                                                                             |
+| Send command       | Issues a command to an Item.                                                                                                                                                                                                                                    |
+| Toggle Item        | Alternate an item between two states by sending commands (regular command if the item's state is different, or an alternative command if the state is equal to the regular command). Typically used with ON/OFF.                                                |
+| Command options    | Issues a command to the configured Item based on a comma-separated locally-defined list of options, or on the Item's State Description.                                                                                                                         |
+| Run rule           | Trigger a rule directly.                                                                                                                                                                                                                                        |
+| Open popup         | Open a Page or personal widget in a popup which will be displayed fullscreen on phones and in a 630x630-pixel modal dialog on larger screens.                                                                                                                   |
+| Open popover       | Open a Page or personal widget in a small "callout" comic-like bubble                                                                                                                                                                                           |
+| Open sheet         | Open a Page or personal widget in a drawer appearing from the bottom of the screen.                                                                                                                                                                             |
+| Open photo browser | Displays a full screen interface to view one of several images                                                                                                                                                                                                  |
+| Group details      | Used with Group items to open a popup with an automatically-generated list of the members of the group, represented by their default list item widget. For Groups with a base type like Switch, a standard card widget will also be shown for the Group itself. |
+| Analyze Item(s)    | Opens the Analyzer window for the specified item(s) and period                                                                                                                                                                                                  |
+| External URL       | Open an external web page                                                                                                                                                                                                                                       |
+| Set Variable       | Set a variable that you can use in other parts of the page or widget.                                                                                                                                                                                           |
 
 ::: tip
 
@@ -266,10 +266,10 @@ If you name the parameter group `action` there won't be a prefix anymore so the 
 
 Examples:
 
-| Group Name | Prop Name Examples |
-|------------|--------------------|
-| action     | `action, actionItem, actionCommand, actionCommandAlt` |
-| tapAction  | `tap_action, tap_actionItem, tap_actionCommand, tap_actionCommandAlt` |
+| Group Name | Prop Name Examples                                                                        |
+| ---------- | ----------------------------------------------------------------------------------------- |
+| action     | `action, actionItem, actionCommand, actionCommandAlt`                                     |
+| tapAction  | `tap_action, tap_actionItem, tap_actionCommand, tap_actionCommandAlt`                     |
 | sceneOne   | `sceneOne_action, sceneOne_actionItem, sceneOne_actionCommand, sceneOne_actionCommandAlt` |
 
 You can dump the `props` objects in JSON to verify the names like in the following example (or just use `=JSON.stringify(props)` wherever you can display text in your widget):
@@ -312,7 +312,7 @@ slots:
 
 ## Variables
 
-Varibles are a way to allow more complex scenarios in pages & personal widget development.
+Variables are a way to allow more complex scenarios in pages & personal widget development.
 
 Variables can be used using several methods:
 
@@ -400,7 +400,7 @@ These resources will help you with Flexbox and Grid:
 
 ### Dynamic Styling & Positioning using CSS `calc()`
 
-You can dynamically style and position elements by calculating their CSS porperties with the `calc()` function.
+You can dynamically style and position elements by calculating their CSS properties with the `calc()` function.
 The `calc()` function is able to perform math (`+`, `-`, `*` & `/`) on multiple CSS values, which can even have different units.
 
 For example, to set the height of a component to the current page's maximum content height (without scrolling), use the following `calc()` statement:

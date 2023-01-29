@@ -197,7 +197,7 @@ You can achieve the exact same result with the following but it looks more bulky
 This block also provides a temporal value to the main block but it contains an additional indirection for the value of the temporal block.
 While the first block only takes a constant, this block allows and even requires the value to be provided by another block which in the standard case is a number block.
 
-Using just the number would be the same like providing a constant value but instead, any number-returning block can be used, hence any math operation can be applied like depicted inte following image:
+Using just the number would be the same like providing a constant value but instead, any number-returning block can be used, hence any math operation can be applied like depicted into following image:
 
 ![date-copy-of-temporal22](../images/blockly/blockly-date-temporal2-example2.png)
 

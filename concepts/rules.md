@@ -6,7 +6,7 @@ openHAB is about home automation, but to create home automation we need to defin
 
 ## What Are Rules
 
-You can think of rules as routines or behaviours for your smart home.
+You can think of rules as routines or behaviors for your smart home.
 
 Many people have a routine when they wake up in the morning: make the bed, make coffee, make and eat breakfast, brush their teeth, etc.
 Similarly your smart home can have a routine: when the sun rises raise the blinds and adjust the temperature.
@@ -30,8 +30,8 @@ Note that both \_\_t\_\_ and \_\_c\_\_ can be optional.
 
 To work with the _When \_\_t\_\_ happens, if \_\_c\_\_ then do \_\_a\_\__ principle, openHAB rules consist of three parts:
 
-| Name        | Rule Part            | Purpose                                                  |
-|-------------|----------------------|----------------------------------------------------------|
+| Name        | Rule Part                | Purpose                                                  |
+| ----------- | ------------------------ | -------------------------------------------------------- |
 | `Trigger`   | _When \_\_t\_\_ happens_ | Causes the rule run when the defined event happens.      |
 | `Condition` | _if \_\_c\_\__           | Which condition has to be met that the rule really runs? |
 | `Action`    | _then do \_\_a\_\__      | What should be done when the rule runs?                  |
@@ -56,7 +56,7 @@ Triggers define those events that, when they occur, causes the rule to run.
 These are the categories of rules that can be used to trigger a rule:
 
 | Event       | Description                                                                                                                  |
-|-------------|------------------------------------------------------------------------------------------------------------------------------|
+| ----------- | ---------------------------------------------------------------------------------------------------------------------------- |
 | **Items**   | Commands, updates, and changes on an individual Item's state.                                                                |
 | **Groups**  | Groups are special Items that have other Items as members. Rules can be triggered on any Item event from any of its members. |
 | **Time**    | Rules can trigger based on specific times.                                                                                   |
@@ -112,14 +112,14 @@ Therefore, if the rule needs to know what the command was, there is an [Availabl
 Time Triggers are provided as described in the table below, support may vary on the used rule language:
 
 | Trigger          | Description                                                                                                                   |
-|------------------|-------------------------------------------------------------------------------------------------------------------------------|
+| ---------------- | ----------------------------------------------------------------------------------------------------------------------------- |
 | cron expressions | cron allows you to create nearly any schedule you can think of, e.g. every second sunday in November and December at 04:05 h. |
-| Time is Item     | It is a date and a time specified in a DateTime Item.                                                                        |
+| Time is Item     | It is a date and a time specified in a DateTime Item.                                                                         |
 | Time of Day      | It is a fixed time of the day, e.g. 09:00 h.                                                                                  |
 
 Time triggers do not provide any information in the [Available Values](#available-values).
 
-Please be aware that openHAB is using the [Quartz Scheduler](https://www.quartz-scheduler.org/documentation/quartz-2.2.2/), which is using a slighly different form than the Unix cron scheduler, for [cron expressions](https://www.quartz-scheduler.org/documentation/quartz-2.2.2/tutorials/tutorial-lesson-06.html).
+Please be aware that openHAB is using the [Quartz Scheduler](https://www.quartz-scheduler.org/documentation/quartz-2.2.2/), which is using a slightly different form than the Unix cron scheduler, for [cron expressions](https://www.quartz-scheduler.org/documentation/quartz-2.2.2/tutorials/tutorial-lesson-06.html).
 A Quartz cron expression takes the form of six or optionally seven fields:
 
 1. Seconds
@@ -169,7 +169,7 @@ You may wish to use some start level to initialize values at startup if they are
 You can then execute a rule on the next startup level which depends on the value set by the initialization rule.
 
 | Start level | Meaning                                                                                                        |
-|-------------|----------------------------------------------------------------------------------------------------------------|
+| ----------- | -------------------------------------------------------------------------------------------------------------- |
 | 00          | OSGi framework has been started.                                                                               |
 | 10          | OSGi application start level has been reached, i.e. bundles are activated.                                     |
 | 20          | Model entities (Items, Things, channel links, persist config) have been loaded, both from DB as well as files. |
@@ -229,7 +229,7 @@ Text based rules will typically allow only a single script action to be defined 
 When a rule is triggered, some information about the event that triggered the rule is provided to the rule.
 There are many cases in which it is useful to know what triggered your rule, e.g. you have an Item group as trigger and you need to know which Group member triggered the rule.
 
-The availablity of those values depends on the rule engine, but you can generally expect at least the following information (depending on the trigger):
+The availability of those values depends on the rule engine, but you can generally expect at least the following information (depending on the trigger):
 
 - The name of triggering Item.
 - The command that the triggering Item received.
@@ -255,7 +255,7 @@ To instantiate a rule template, navigate to _Rules_ and click the blue `+` icon.
 Fill out the rule's metadata as usual and select an installed rule template from the _Create from Template_ section.
 Choose the rule template, and fill out the template configuration.
 
-Once a rule is created, it is seperated from its template and can be further customized.
+Once a rule is created, it is separated from its template and can be further customized.
 To update a rule template, return to the Automation menu in MainUI, select the rule template, remove it and then readd it.
 Then to update a rule from the template, delete the rule(s) that were instantiated from the template and recreate them.
 Note, when clicking on the "Code" tab of the rule, the properties used when instantiating the rule are preserved in the configuration section.
@@ -566,7 +566,7 @@ rules.JSRule({
 
 ![Open Window Screenshot](./images/rule-openwindow.jpeg)
 
-The script action in detail (for the scipt see the YAML):
+The script action in detail (for the script see the YAML):
 
 ![Open Window Action](./images/rule-openwindow-action.jpeg)
 

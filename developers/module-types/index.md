@@ -80,7 +80,7 @@ The above factory is exposing all three _Module Types_ that we need for our scen
 We do not need to care about the `ProviderChangeListener` methods here, because our types are rather static.
 If module types change over time in your factory, you need to notify the automation engine.
 
-It is common practise to define the unique ID (UID) within the type class itself.
+It is common practice to define the unique ID (UID) within the type class itself.
 
 Let's have a look at all of our type classes:
 
@@ -189,10 +189,10 @@ public class AirConditionerActionType extends ActionType {
     public static ActionType initialize() {
         final ConfigDescriptionParameter temp1 = ConfigDescriptionParameterBuilder.create(CONFIG_LEVEL1_MIN_TEMP, Type.INTEGER)
                 .withRequired(true).withReadOnly(true).withMultiple(false).withLabel("Temperature for level 1")
-                .withDescription("Level 1 on the given temperature in celsius").build();
+                .withDescription("Level 1 on the given temperature in Celsius").build();
         final ConfigDescriptionParameter temp2 = ConfigDescriptionParameterBuilder.create(CONFIG_LEVEL2_MIN_TEMP, Type.INTEGER)
                 .withRequired(true).withReadOnly(true).withMultiple(false).withLabel("Temperature for level 2")
-                .withDescription("Level 2 on the given temperature in celsius").build();
+                .withDescription("Level 2 on the given temperature in Celsius").build();
         List<ConfigDescriptionParameter> config = new ArrayList<ConfigDescriptionParameter>();
         config.add(temp1);
         config.add(temp2);
@@ -299,14 +299,14 @@ For our scenario we go with one file:
                "name":"level1_min_temp",
                "type":"INTEGER",
                "label":"Temperature for level 1",
-               "description":"Level 1 on the given temperature in celsius",
+               "description":"Level 1 on the given temperature in Celsius",
                "required":true
             },
             {
                "name":"level2_min_temp",
                "type":"INTEGER",
                "label":"Temperature for level 2",
-               "description":"Level 2 on the given temperature in celsius",
+               "description":"Level 2 on the given temperature in Celsius",
                "required":true
             }
          ],
@@ -594,9 +594,9 @@ public class MyRuleRegistrationComponent {
 }
 ```
 
-### Define constant / non-changable rules
+### Define constant / non-changeable rules
 
-We have seen how to define rules via json files as well as programatically.
+We have seen how to define rules via json files as well as programmatically.
 A third way is to inject rules via an own `RuleProvider`.
 
 Those rules are compiled into the bundle and cannot be changed later on, which might be desired.

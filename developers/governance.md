@@ -23,7 +23,7 @@ openHAB is a meritocracy. The more that somebody contributes, the more responsib
 ## Structure
 
 The openHAB project is a big ecosystem of different components.
-While people often think of the runtime + addons when talking about openHAB, there are other parts like openHAB Cloud, the mobile apps, the voice skills, etc. - all in all, there are well over [40 different repos](https://github.com/openhab) under the openHAB GitHub organisation.
+While people often think of the runtime + addons when talking about openHAB, there are other parts like openHAB Cloud, the mobile apps, the voice skills, etc. - all in all, there are well over [40 different repos](https://github.com/openhab) under the openHAB GitHub organization.
 
 The different components are mostly maintained independently of each other. Many have their own release cycles and a dedicated maintainer team.
 
@@ -48,7 +48,7 @@ Maintainers take care of the respective repository, i.e. they
 - sync with other maintainer teams wrt cross-team changes
 - announce important news in the community
 
-In general, a maintainer team is free to define its own rules of how the work in the team is organised, e.g. what is required for a PR to be accepted. Those rules should be written down as a pinned discussion on the GitHub team page, see [this one](https://github.com/orgs/openhab/teams/2-x-add-ons-maintainers) as an example.
+In general, a maintainer team is free to define its own rules of how the work in the team is organized, e.g. what is required for a PR to be accepted. Those rules should be written down as a pinned discussion on the GitHub team page, see [this one](https://github.com/orgs/openhab/teams/2-x-add-ons-maintainers) as an example.
 
 A [couple of rules](https://github.com/orgs/openhab/teams/maintainers/discussions/1) must be followed by all maintainer teams, they ensure that there's some consistency in the workflows across the different repositories.
 

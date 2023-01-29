@@ -45,7 +45,7 @@ This section allows to have different appearance settings _per_ device.
   - Auto: tries to detect the client type
   - Android
   - iOS
-  - Destktop
+  - Desktop
 
 ![theme-selection.png](images/theme-selection.png)
 

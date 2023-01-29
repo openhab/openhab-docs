@@ -5,7 +5,7 @@ title:  Automation
 
 # Settings - Automation
 
-This is the section to automate openHAB which provides rules, script and a scheduling sectiom.
+This is the section to automate openHAB which provides rules, script and a scheduling section.
 See [What's the Difference Between a Rule, Script, and Schedule?](/docs/tutorial/rules_introduction.html#what-s-the-difference-between-a-rule-script-and-schedule)
 
   [[toc]]
@@ -38,7 +38,7 @@ After selecting one or multiple rules three options appear in the footer to allo
 these rules.
 Press "Done" to return back to the normal list view.
 
-To add a rule press thre plus icon on the lower right corner: ![add rule](images/plus.png) and follow the [rules tutorial](/docs/tutorial/rules_basic.html#create-the-rule).
+To add a rule press the plus icon on the lower right corner: ![add rule](images/plus.png) and follow the [rules tutorial](/docs/tutorial/rules_basic.html#create-the-rule).
 
 ## Scripts
 
@@ -78,7 +78,7 @@ and it will appear in the schedule view:
 ![saturday-morning-rule](images/saturday-rule-schedule.png)
 
 A rule that is schedule repeatedly like everyday at 8:00 in the morning will therefore be shown on every day of the calendar view.
-The way openHAB handles this, is that a rule will get a tag "schedule", so if you create a rule with the help of the ![add scheduke](images/plus.png) at the bottom right corner, openHAB autoamtically adds that tag (that is also true if you create a rule with a time trigger via the normal rule page).
+The way openHAB handles this, is that a rule will get a tag "schedule", so if you create a rule with the help of the ![add schedule](images/plus.png) at the bottom right corner, openHAB automatically adds that tag (that is also true if you create a rule with a time trigger via the normal rule page).
 In case you have timed that trigger that repeats very often and which would "pollute" the schedule view with far too many entries, you can just delete the tag "schedule" in the edit mode of that rule (it can always be added later again).
 
 The page has a searchable list which allows to filter by the name of the rule.
