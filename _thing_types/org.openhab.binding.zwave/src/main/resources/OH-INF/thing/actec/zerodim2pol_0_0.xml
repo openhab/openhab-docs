@@ -5,22 +5,15 @@
   xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
                       https://openhab.org/schemas/thing-description/v1.0.0">
 
-  <thing-type id="actec_Zerodim2pol_00_000" listed="false">
+  <thing-type id="actec_zerodim2pol_00_000" listed="false">
     <label>Zerodim 2 phase Q-light / Q-Light Zerodim 2phase</label>
     <description><![CDATA[
-Q-light / Q-Light Zerodim 2phase<br /> <h1>Overview</h1><p>Zerodim Z-Wave 2 pole is a universal LED dimmer based on the Z-Wave protocol. </p><p>Certified by the Z-Wave Alliance.</p><p>Technical description<br /></p><p>The dimmer is a phase section and has a memory function in the event of a power cut.</p><p>Functionality</p><p>All non-battery-powered nodes in the network act as repeaters regardless of provider to increase the reliability of the network. Zerodim Z-Wave supports SmartStart inclusion, and products can be added to a Z-Wave network by scanning the Z-Wave QR code found on the product with a controller that provides SmartStart inclusion. No further action is required and the SmartStart product is automatically added within 10 minutes of powering on in the network area.</p><p>Area of ​​use</p><p>This product can be used in any Z-Wave network with other Z-Wave certified devices from other manufacturers.</p> <br /> <h2>Inclusion Information</h2><p>Quickly, three times press the rotary button to enter inclusion mode<br /></p> <br /> <h2>Exclusion Information</h2><p>Quickly, three times press the rotary button to enter exclusion mode<br /></p> <br /> <h2>Wakeup Information</h2><p><br /></p>
+Q-light / Q-Light Zerodim 2phase<br /> <h1>Overview</h1><p>Zerodim Z-Wave 2 pole is a universal LED dimmer based on the Z-Wave protocol. </p><p>Features:<br /></p><ul><li>0-99% dimming range</li><li>2-180W LED load</li><li>Compatible with any Z-Wave or Z-Wave Plus Controller</li><li>There is memorized function at power off</li><li>OverLoad protection</li><li>Soft start function</li><li>SmartStart</li></ul><p>This device is a security enable Z-Wave Plus product that is able to use encrypted Z-Wave Plus messages to communicate to other security enable Z-Wave Plus products.</p> <br /> <h2>Inclusion Information</h2><p>Quickly, three times press the rotary button to enter inclusion mode<br /></p> <br /> <h2>Exclusion Information</h2><p>Quickly, three times press the rotary button to enter exclusion mode<br /></p> <br /> <h2>Wakeup Information</h2><p><br /></p>
     ]]></description>
     <category>WallSwitch</category>
 
     <!-- CHANNEL DEFINITIONS -->
     <channels>
-      <channel id="switch_dimmer" typeId="switch_dimmer">
-        <label>Dimmer</label>
-        <properties>
-          <property name="binding:*:PercentType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
-          <property name="binding:Command:OnOffType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
-        </properties>
-      </channel>
       <channel id="scene_number" typeId="scene_number">
         <label>Scene Number</label>
         <properties>
@@ -40,7 +33,7 @@ Q-light / Q-Light Zerodim 2phase<br /> <h1>Overview</h1><p>Zerodim Z-Wave 2 pole
         </properties>
       </channel>
       <channel id="switch_dimmer1" typeId="switch_dimmer">
-        <label>Dimmer 1</label>
+        <label>Dimmer1</label>
         <properties>
           <property name="binding:*:PercentType">COMMAND_CLASS_SWITCH_MULTILEVEL:1</property>
           <property name="binding:Command:OnOffType">COMMAND_CLASS_SWITCH_MULTILEVEL:1</property>
@@ -55,7 +48,6 @@ Q-light / Q-Light Zerodim 2phase<br /> <h1>Overview</h1><p>Zerodim Z-Wave 2 pole
       <property name="manufacturerId">0433</property>
       <property name="manufacturerRef">0003:000E</property>
       <property name="dbReference">1546</property>
-      <property name="defaultAssociations">1</property>
     </properties>
 
     <!-- CONFIGURATION DESCRIPTIONS -->
@@ -65,11 +57,6 @@ Q-light / Q-Light Zerodim 2phase<br /> <h1>Overview</h1><p>Zerodim Z-Wave 2 pole
       <parameter-group name="configuration">
         <context>setup</context>
         <label>Configuration Parameters</label>
-      </parameter-group>
-
-      <parameter-group name="association">
-        <context>link</context>
-        <label>Association Groups</label>
       </parameter-group>
 
       <!-- PARAMETER DEFINITIONS -->
@@ -150,27 +137,6 @@ Restore state after power failure<br /> <h1>Overview</h1><p>0=no restore of stat
         <description>Auto-off timer in seconds (1s-9.1h). 0 = disabled.</description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
-      </parameter>
-
-      <!-- ASSOCIATION DEFINITIONS -->
-      <parameter name="group_1" type="text" groupName="association" multiple="true">
-        <label>1: Lifeline</label>
-        <description><![CDATA[
-Lifeline<br /> <h1>Overview</h1><p>Supports the following command classes: </p><p>- Device Reset Locally: triggered upon reset. </p><p>- Switch Multilevel Report: triggered by local light level change. </p><p>- Notification Report: triggered by Notification.</p>
-        ]]></description>
-        <multipleLimit>1</multipleLimit>
-      </parameter>
-
-      <parameter name="group_2" type="text" groupName="association" multiple="true">
-        <label>2: On/Off(rotary knob)</label>
-        <description>Mirroring of endpoint 1, group2</description>
-        <multipleLimit>5</multipleLimit>
-      </parameter>
-
-      <parameter name="group_3" type="text" groupName="association" multiple="true">
-        <label>3: Dimmer(rotary knob)</label>
-        <description>Mirroring of endpoint 1, group3</description>
-        <multipleLimit>5</multipleLimit>
       </parameter>
 
       <!-- STATIC DEFINITIONS -->

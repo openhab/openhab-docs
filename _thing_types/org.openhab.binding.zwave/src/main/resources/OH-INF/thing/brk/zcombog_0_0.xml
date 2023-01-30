@@ -15,7 +15,7 @@ Smoke and Carbon Monoxide Alarm<br /> <h1>Overview</h1><p>The Z-Wave Smoke/CO al
     <!-- CHANNEL DEFINITIONS -->
     <channels>
       <channel id="alarm_system" typeId="alarm_system">
-        <label>Alarm (system)</label>
+        <label>Heartbeat</label>
         <properties>
           <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=SYSTEM</property>
         </properties>
@@ -28,6 +28,12 @@ Smoke and Carbon Monoxide Alarm<br /> <h1>Overview</h1><p>The Z-Wave Smoke/CO al
       </channel>
       <channel id="alarm_smoke" typeId="alarm_smoke">
         <label>Alarm (smoke)</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=SMOKE</property>
+        </properties>
+      </channel>
+      <channel id="alarm_tamper" typeId="alarm_tamper">
+        <label>Test Button</label>
         <properties>
           <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=SMOKE</property>
         </properties>

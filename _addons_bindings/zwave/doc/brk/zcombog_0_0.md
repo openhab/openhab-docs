@@ -77,12 +77,13 @@ The following table summarises the channels available for the ZCOMBO-G -:
 
 | Channel Name | Channel ID | Channel Type | Category | Item Type |
 |--------------|------------|--------------|----------|-----------|
-| Alarm (system) | alarm_system | alarm_system |  | Switch | 
+| Heartbeat | alarm_system | alarm_system |  | Switch | 
 | Alarm (CO) | alarm_co | alarm_co |  | Switch | 
 | Alarm (smoke) | alarm_smoke | alarm_smoke | Smoke | Switch | 
+| Test Button | alarm_tamper | alarm_tamper |  | Switch | 
 | Battery Level | battery-level | system.battery_level | Battery | Number |
 
-### Alarm (system)
+### Heartbeat
 Indicates if a system alarm is triggered.
 
 The ```alarm_system``` channel is of type ```alarm_system``` and supports the ```Switch``` item. This is a read only channel so will only be updated following state changes from the device.
@@ -110,6 +111,20 @@ The following state translation is provided for this channel to the ```Switch```
 Indicates if a smoke is triggered.
 
 The ```alarm_smoke``` channel is of type ```alarm_smoke``` and supports the ```Switch``` item and is in the ```Smoke``` category. This is a read only channel so will only be updated following state changes from the device.
+
+The following state translation is provided for this channel to the ```Switch``` item type -:
+
+| Value | Label     |
+|-------|-----------|
+| OFF | OK |
+| ON | Alarm |
+
+### Test Button
+User pressed the Test Button on the Appliance. This will result in "Test detected type=0x01, event=0x03 and Test clear type=0x01 event=0x00". Previously it was triggering a Smoke detected Type and Event.
+
+Indicates if the tamper alarm is triggered.
+
+The ```alarm_tamper``` channel is of type ```alarm_tamper``` and supports the ```Switch``` item. This is a read only channel so will only be updated following state changes from the device.
 
 The following state translation is provided for this channel to the ```Switch``` item type -:
 
