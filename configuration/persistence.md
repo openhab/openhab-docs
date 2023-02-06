@@ -87,6 +87,9 @@ where `<itemlist>` is a comma-separated list consisting of one or more of the fo
   Optionally, an alias may be provided if the persistence service requires special names (e.g. a table to be used in a database, a feed id for an IoT service, etc.)
   Note that `*` is NOT a wildcard match character in this context.
 
+The entries are additive.
+This means if one Item appears in more than one `<itemlist>` either directly or indirectly (e.g. `*` which includes all Items or as a member of a Group used in `<groupName>*`), all the strategies strategies listed on all those lines apply to that Item. 
+
 Below you will find a complete example persistence configuration file:
 
 ```java
