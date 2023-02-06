@@ -5,7 +5,7 @@ title: IntelliJ
 
 # IntelliJ IDE
 
-## Prerequisities
+## Prerequisites
 
 - git, Maven, IntelliJ and Java 17 are installed
 
@@ -18,7 +18,7 @@ This article refers to the directory where you installed the distribution as `<D
 
 ## Build the addons repository
 
-1. Fork and clone the [openhab addons repository](https://www.github.com/openhab/openhab-addons) into a new directory (Reference `<ADDON_DIR>` from now on for this arcticle) with `git clone https://github.com/<yourgitusername>/openhab-addons` (replace git user name accordingly)
+1. Fork and clone the [openhab addons repository](https://www.github.com/openhab/openhab-addons) into a new directory (Reference `<ADDON_DIR>` from now on for this article) with `git clone https://github.com/<yourgitusername>/openhab-addons` (replace git user name accordingly)
 
 1. Open IntelliJ and create a new project from existing sources (File | New | Project from existing sources) and pick `<ADDON_DIR>`/pom.xml
 

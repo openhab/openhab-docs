@@ -46,7 +46,7 @@ This method uses a time-weighted average calculation
 - maximum: gets the maximum value of the State of the given Item since a certain point in time
 - maximum: gets the sum of the State of the given Item since a certain point in time
 
-In the case of the following two functions the block changes its appearence by replacing the time with an option to chose if the equal value should be skipped or not:
+In the case of the following two functions the block changes its appearance by replacing the time with an option to chose if the equal value should be skipped or not:
 
 ![previous-block](../images/blockly/blockly-persistence-get-previous.png)
 

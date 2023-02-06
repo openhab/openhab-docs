@@ -83,11 +83,11 @@ Nevertheless if there are reasons why you can not use the base class, the bindin
 
 The communication between the framework and the ThingHandler is bidirectional.
 
-If the framework wants the binding to do something or just notfiy it about changes,
+If the framework wants the binding to do something or just notify it about changes,
 it calls methods like `handleCommand`, `handleUpdate` or `thingUpdated`.
 
 If the ThingHandler wants to inform the framework about changes, it uses a callback
- The `BaseThingHandler` provides convience methods like `updateState`, `updateStatus` `updateThing` or `triggerChannel`, that can be used to inform the framework about changes.
+ The `BaseThingHandler` provides convenience methods like `updateState`, `updateStatus` `updateThing` or `triggerChannel`, that can be used to inform the framework about changes.
 
 The overall structure looks like this:
 
@@ -336,7 +336,7 @@ updateStatus(ThingStatus.OFFLINE, ThingStatusDetail.OFFLINE.COMMUNICATION_ERROR,
 ```
 
 After the thing is created, the framework calls the `initialize` method of the handler.
-At this time the state of the thing is _INTIALIZING_ as long as the binding sets it to something else.
+At this time the state of the thing is _INITIALIZING_ as long as the binding sets it to something else.
 Because of this the default implementation of the `initialize()` method in the `BaseThingHandler` just changes the status to _ONLINE_.
 
 ::: tip Note
@@ -454,7 +454,7 @@ The Hue gateway is an IP device with an HTTP API, which communicates over the Zi
 In the openHAB model the Hue gateway is represented as a _Bridge_ with connected _Things_, that represent the Hue bulbs.
 _Bridge_ inherits from _Thing_, so that it also has _Channels_ and all other features of a thing, with the addition that it also holds a list of things.
 
-We have a FAQ, dicussing [Thing, Bridge and Channel modelling](faq.html#structuring-things-and-thing-types).
+We have a FAQ, discussing [Thing, Bridge and Channel modelling](faq.html#structuring-things-and-thing-types).
 
 When implementing a binding with _Bridges_, the logic to communicate with the external system is often shared between the different `ThingHandler` implementations.
 In that case it makes sense to implement a handler for the _Bridge_ and delegate the actual command execution from the _ThingHandler_ to the _BridgeHandler_.
@@ -646,14 +646,14 @@ There must still be the ability to configure the binding via text files (`.thing
 A discovery service provides discovery results.
 The following table gives an overview about the main parts of a `DiscoveryResult`:
 
-| Field | Description |
-|-------|-------------|
-| `thingUID` | The `thingUID` is the unique identifier of the specific discovered thing (e.g. a device's serial number). It  _must not_ be constructed out of properties, that can change (e.g. IP addresses). A typical `thingUID` could look like this: `hue:bridge:001788141f1a`
-| `thingTypeUID` | Contrary to the `thingUID` is the `thingTypeUID` that specifies the type the discovered thing belongs to. It could be constructed from e.g. a product number. A typical `thingTypeUID` could be the following: `hue:bridge`.
-| `bridgeUID` | If the discovered thing belongs to a bridge, the `bridgeUID` contains the UID of that bridge.
-| `properties` | The `properties` of a `DiscoveryResult` contain the configuration for the newly created thing.
-| `label` | The human readable representation of the discovery result. Do not put IP/MAC addresses or similar into the label but use the special `representationProperty` instead. |
-| `representationProperty` | The name of one of the properties or configuration parameters, which best discriminates the result from other results of the same type. See chapter [Representation Property](#representation-property) below. |
+| Field                    | Description                                                                                                                                                                                                                                                          |
+| ------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `thingUID`               | The `thingUID` is the unique identifier of the specific discovered thing (e.g. a device's serial number). It  _must not_ be constructed out of properties, that can change (e.g. IP addresses). A typical `thingUID` could look like this: `hue:bridge:001788141f1a` |
+| `thingTypeUID`           | Contrary to the `thingUID` is the `thingTypeUID` that specifies the type the discovered thing belongs to. It could be constructed from e.g. a product number. A typical `thingTypeUID` could be the following: `hue:bridge`.                                         |
+| `bridgeUID`              | If the discovered thing belongs to a bridge, the `bridgeUID` contains the UID of that bridge.                                                                                                                                                                        |
+| `properties`             | The `properties` of a `DiscoveryResult` contain the configuration for the newly created thing.                                                                                                                                                                       |
+| `label`                  | The human readable representation of the discovery result. Do not put IP/MAC addresses or similar into the label but use the special `representationProperty` instead.                                                                                               |
+| `representationProperty` | The name of one of the properties or configuration parameters, which best discriminates the result from other results of the same type. See chapter [Representation Property](#representation-property) below.                                                       |
 
 To simplify the implementation of custom discovery services, an abstract base class `AbstractDiscoveryService` implements the `DiscoveryService` and just needs to be extended.
 Subclasses of `AbstractDiscoveryService` do not need to handle the `DiscoveryListeners` themselves, they can use the methods `thingDiscovered` and `thingRemoved` to notify the registered listeners.
@@ -837,7 +837,7 @@ See [i18n](../utils/i18n.html#discovery) for more information.
 ::: tip Hint!
 To make it work you have to inject references to the `LocaleProvider` and the `TranslationProvider` services into your implementation.
 The `AbstractDiscoveryService` already provides `protected` properties, which are not yet linked to a service.
-The devoloper has to take care about that.
+The developer has to take care about that.
 
 ```java
     protected @NonNullByDefault({}) TranslationProvider i18nProvider;

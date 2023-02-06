@@ -194,8 +194,8 @@ When using an item and you want to ignore the date-portion of that item the `tim
 
 System-based triggers are provided as described in the table below:
 
-| Trigger                            | Description                                                                                                                                                                                        |
-|------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Trigger                            | Description                                                                                                                                                                                                                                          |
+| ---------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | System started                     | `System started` is triggered upon openHAB startup. In openHAB version 2, `System started` is also triggered after the rule file containing the System started trigger is modified, or after item(s) are modified in a .items file.                  |
 | System reached start level <level> | `System reached start level <level>` is triggered when openHAB reaches a specific start level. A list of possible start levels is available below. Please note that only levels 40 and higher are useful as the rule engine needs to be ready first. |
 
@@ -336,7 +336,7 @@ In relation to [event-based rule triggers]({{base}}/configuration/rules-dsl.html
 The following table summarizes the impact of the two manipulator commands on the rule execution due to the used trigger:
 
 | Command \ Rule Trigger   | `received update` | `received command` | `changed` |
-|--------------------------|-------------------|--------------------|-----------|
+| ------------------------ | ----------------- | ------------------ | --------- |
 | postUpdate               | ⚡ rule fires      | ❌                  | (depends) |
 | sendCommand              | (❌) see below     | ⚡ rule fires       | (depends) |
 | _Change through Binding_ | ⚡ rule fires      | ⚡ rule fires       | (depends) |
@@ -363,9 +363,9 @@ An upper case letter data type after a `val` and `var` statement, for example `v
 Objects are more complex than primitives.
 
 Objects have special methods that can perform many necessary type conversions automatically.
-Using `Myitem.sendCommand(new_state)` or `Myitem.postUpdate(new_state)` will, in most cases, convert `new_state` into a type that Object `myItem` can apply.
+Using `MyItem.sendCommand(new_state)` or `MyItem.postUpdate(new_state)` will, in most cases, convert `new_state` into a type that Object `myItem` can apply.
 
-The Action `sendCommand(MyItem, new_state)` does not provide the same flexibilty.
+The Action `sendCommand(MyItem, new_state)` does not provide the same flexibility.
 For example, if `new_state` is typed as a primitive (e.g., `var int new_state = 3`) and myItem is of the Object type Dimmer:
 
 - the following command _**will fail**_: ~~sendCommand(MyItem, new_state)~~.
@@ -444,7 +444,7 @@ The following code can be used to send an RGB value to a Color Item.
 import java.awt.Color
 
 // Create item
-val newColor = new Color(red, blue, green) // where red, blue, and green are ints between 0 and 255
+val newColor = new Color(red, blue, green) // where red, blue, and green are integers between 0 and 255
 
 //Saving to an Item
 MyColorItem.sendCommand(new HSBType(newColor))
@@ -656,7 +656,7 @@ The Player item allows to control players (e.g. audio players) with commands suc
 The Player Item carries three types with predefined commands
 
 | State Type                | Commands            |
-|---------------------------|---------------------|
+| ------------------------- | ------------------- |
 | **PlayPauseType**         | PLAY, PAUSE         |
 | **RewindFastforwardType** | REWIND, FASTFORWARD |
 | **NextPreviousType**      | NEXT, PREVIOUS      |
@@ -730,7 +730,7 @@ As a consequence, the use of `sendCommand(MyItem, primitive)`, using a primitive
 The different syntax for the generic and the objective-specific differs and is given in the table below:
 
 | Generic (Action)                 | Specific (Method)               |
-|----------------------------------|---------------------------------|
+| -------------------------------- | ------------------------------- |
 | `postUpdate(MyItem, new_state)`  | `MyItem.postUpdate(new_state)`  |
 | `sendCommand(MyItem, new_state)` | `MyItem.sendCommand(new_state)` |
 

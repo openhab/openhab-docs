@@ -27,7 +27,7 @@ When the result of the commandString is to change the state of an Item without c
 
 As a general rule, is better to call `MyItem.sendCommand(command)` and `MyItem.postUpdate(command)` where possible because the Item methods are able to handle a wider variety of commands appropriately. The Actions are best reserved for use in cases where the Item's name is determined at runtime.
 
-- `Map<Item, State> storeStates(Item item1, Item item2, ... Item itemn)`: Returns a `Map<Item, State>` with the current state of each Item. All members of Groups are put into the Map but not the Group's state itself.
+- `Map<Item, State> storeStates(Item item1, Item item2, ... Item item<n>)`: Returns a `Map<Item, State>` with the current state of each Item. All members of Groups are put into the Map but not the Group's state itself.
 - `restoreStates(Map<Item, State> statesMap)`: Restores the items' states from the map. If the saved state can be interpreted as a command (ON/OFF/etc.), a command is sent to the Item. Otherwise an update is sent to the Item.
 
 ### Audio & Voice Actions

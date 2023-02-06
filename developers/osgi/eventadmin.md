@@ -57,7 +57,7 @@ public class LogEventHandler implements EventHandler {
 
     @Override
     public void handleEvent(Event event) {
-        logger.info(" Recevied event with topic: {}", event.getTopic());
+        logger.info(" Received event with topic: {}", event.getTopic());
     }
 }
 ```

@@ -20,7 +20,7 @@ For versions of DSM before 7.0 please refer to the second half of this page.
 ## Prerequisite - prepare the Synology OS for openHAB
 
 Synology NAS is based on Linux but it has limitations since it is not a full server.
-There are some shortcuts you have to take to make it work.  
+There are some shortcuts you have to take to make it work.
 For the use of openHAB you need some preparation steps.
 For this create a ssh session into your NAS.
 For reference how to do that: I found this [youtube tutorial](https://www.youtube.com/watch?v=BCCIMRbAUp8).
@@ -59,12 +59,12 @@ In this case we need the 1032 as the user and the 65539 as the group. Write them
 DSM 7 does not longer support Java 11 directly.
 You either have to run openHAB in a Docker container or have to take care of a properly installed Java 11 runtime on your own.
 
-The following poart shows the Docker based installation.
+The following part shows the Docker based installation.
 You may also get Java 11 via [community package](https://synocommunity.com/package/java-11-openjdk) and go own with the manual for [older DSM Versions](#older-synology-diskstations-till-dsm-6).
 :::
 
 And that also makes the installation easier to maintain.
-It works out of the box a bit different then the normal Docker installation as described in de openHAB documententation.
+It works out of the box a bit different then the normal Docker installation as described in de openHAB documentation.
 Docker is a containerization platform and is used to run lightweight containers.
 These containers require a very little amount of memory and system resources to run.
 Synology NAS has official support for Docker.
@@ -203,7 +203,7 @@ For certain Synology models the `public` folder is created automatically during 
 The administrator can also create a public shared folder if desired.
 
 Synology does not document which models will automatically create a public folder.
-Refer to the Synology knowlegde base article on [Shared Folder](https://www.synology.com/en-us/knowledgebase/DSM/help/DSM/AdminCenter/file_share_desc) to learn more.
+Refer to the Synology knowledge base article on [Shared Folder](https://www.synology.com/en-us/knowledgebase/DSM/help/DSM/AdminCenter/file_share_desc) to learn more.
 
 ## Logging
 

@@ -105,7 +105,7 @@ This `Profile` receives the `State` of the `Item` and the `Event` that has been 
 
 ## ProfileTypeProvider
 
-Custom `ProfileType`s have to be annouced by a `ProfileTypeProvider` to the framework via an OSGi service:
+Custom `ProfileType`s have to be announced by a `ProfileTypeProvider` to the framework via an OSGi service:
 
 ```java
 @Component(service = { ProfileTypeProvider.class })

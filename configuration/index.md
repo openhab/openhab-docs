@@ -139,7 +139,7 @@ _Note there is an option in Main UI to bulk create Items where you can copy'n'pa
 
 Don't confuse admin UI and user UI.
 Happens to many people as you can access both from the common UI entry point running on port 8080.
-User UI is what can be providedd to users of your home so they can interactively command the house.
+User UI is what can be provided to users of your home so they can interactively command the house.
 It's the equivalent of sitemaps in older OH versions.
 This docs section is all about admin UI to create Things and Items, it does not cover building user interfaces.
 See [User Interfaces](/docs/ui/) for that.

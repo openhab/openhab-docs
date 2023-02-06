@@ -73,7 +73,7 @@ After saving the file, the add-on will be installed.
 ## Through manually provided add-ons
 
 ::: warning Attention
-This option is adressed to advanced users.
+This option is addressed to advanced users.
 Installing add-on's with a `.jar`file can lead to problems, because add-on dependencies may not be installed.
 Please make sure to use this option only in special cases (like add-on testing for an upcoming version) or when you know what you are doing.
 :::

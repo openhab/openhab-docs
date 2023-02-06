@@ -184,7 +184,7 @@ You may optionally give the channel a proper label (like “My Custom Channel”
 ```xtend
 Thing yahooweather:weather:losangeles [ location=2442047, unit="us", refresh=120 ] {
  Channels:
-  Trigger String : customChannel1 [
+  Trigger String : customChannel1 -[
    configParameter="Value"
   ]
 }
@@ -201,7 +201,7 @@ Many bindings provide standalone channel type definitions like this:
     <channel-type id="temperature">
         <item-type>Number</item-type>
         <label>Temperature</label>
-        <description>Current temperature in degrees celsius</description>
+        <description>Current temperature in degrees Celsius</description>
         <category>Temperature</category>
         <state readOnly="true" pattern="%.1f °C">
         </state>

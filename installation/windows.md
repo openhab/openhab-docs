@@ -173,14 +173,14 @@ By installing the openHAB process as a service in Windows, you can:
 
 Assuming a successful install, you will now have various folders inside `C:\openHAB`:
 
-|                                  | Windows Installation         |
-|:--------------------------------:|:-----------------------------|
-| openHAB application              | `C:\openHAB\runtime`        |
-| Additional add-on files          | `C:\openHAB\addons`         |
-| Site configuration               | `C:\openHAB\conf`           |
-| Log files                        | `C:\openHAB\userdata\logs`  |
-| Userdata like rrd4j databases    | `C:\openHAB\userdata`       |
-| Service configuration            | `C:\openHAB\userdata\etc`   |
+|                               | Windows Installation       |
+| :---------------------------: | :------------------------- |
+|      openHAB application      | `C:\openHAB\runtime`       |
+|    Additional add-on files    | `C:\openHAB\addons`        |
+|      Site configuration       | `C:\openHAB\conf`          |
+|           Log files           | `C:\openHAB\userdata\logs` |
+| Userdata like rrd4j databases | `C:\openHAB\userdata`      |
+|     Service configuration     | `C:\openHAB\userdata\etc`  |
 
 ## What next?
 
@@ -211,9 +211,9 @@ Update-openHAB -OHVersion x.x.x
 Now that openHAB has updated, you only need to run the above commands again for future versions.
 
 NB: Due to an issue with long file paths sometimes the update script may fail after the 'Copying files...' stage.
-This can be resolved by deleting the c:\openHAB\userdata\tmp folder.  
+This can be resolved by deleting the c:\openHAB\userdata\tmp folder.
 
-### Uninstallation
+### Deinstallation
 
 - perform a backup as described above
 - uninstall openHAB as a Windows service: run PowerShell as an administrator and use the following commands
