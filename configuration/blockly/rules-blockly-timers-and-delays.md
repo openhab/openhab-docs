@@ -38,7 +38,7 @@ _Example_
 
 The following simple example uses a loop to implement a blinking light with a 1 second delay, looping three times:
 
-![waifor-example](../images/blockly/blockly-waitfor-example.png)
+![waitfor-example](../images/blockly/blockly-waitfor-example.png)
 
 More about that topic can be viewed at ![youtube](../images/blockly/youtube-logo-small.png) [Waiting in Rules](https://youtu.be/EdllUlJ7p6k?t=1600)
 
@@ -126,7 +126,7 @@ The retrigger timer-block inserts an additional `else{}` branch into the generat
 - the timer already exists and
 - the timer has not yet finished (it's still ticking)
 
-In the case of _do nothing_ the `else{}` branch is empty (which turns to be almost equals to the simle-timer).
+In the case of _do nothing_ the `else{}` branch is empty (which turns to be almost equals to the simple-timer).
 
 ```javascript
 if (typeof this.timers['nothingTimerBlock'] === 'undefined' || this.timers['nothingTimerBlock'].hasTerminated()) {

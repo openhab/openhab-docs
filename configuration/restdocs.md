@@ -62,7 +62,7 @@ The commands above have been copied from the REST API documentation for illustra
 
 ## Rest Api Explorer
 
-You can try and validate rest api calles from within the openHAB UI.
+You can try and validate rest api calls from within the openHAB UI.
 Just log in with an admin user, navigate to `Developer Tools -> API Explorer` and start exploring.
 
 ## Authentication

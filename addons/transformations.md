@@ -6,7 +6,7 @@ title: Transformations
 # Transformations
 
 Transformations are used to translate data from a cluttered or technical raw value to a processed or human-readable representation.
-They are often useful, to **interpret received Item values**, like sensor readings or state variables, and to translate them into a human-readable or better processible format.
+They are often useful, to **interpret received Item values**, like sensor readings or state variables, and to translate them into a human-readable or better processable format.
 
 **Examples:**
 

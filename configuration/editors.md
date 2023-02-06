@@ -35,7 +35,7 @@ You can find it in the [Microsoft Visual Studio Marketplace](https://marketplace
   ![openHAB VS Code Extension alternative installation](images/vscode_extensiontab_icon.png)
 1. Search for openHAB and install the extension.
 
-[Visit the Extensions GitHub Page for further Informations](https://github.com/openhab/openhab-vscode/blob/main/README.md "GitHub Repo for the VS Code Extension")
+[Visit the Extensions GitHub Page for further Information](https://github.com/openhab/openhab-vscode/blob/main/README.md "GitHub Repo for the VS Code Extension")
 
 ### Rule Validation
 
@@ -76,7 +76,7 @@ You can find the syntax file and installation instructions on [openhab-syntax-te
 
 ### BBEdit
 
-BBEdit is a text and code editor for macOS and the offical successor of TextWrangler.
+BBEdit is a text and code editor for macOS and the official successor of TextWrangler.
 You can find the syntax file and installation instructions on [BBEdit-openHAB-language](https://github.com/mjmeijer/BBEdit-openHAB-language).
 
 ### Emacs

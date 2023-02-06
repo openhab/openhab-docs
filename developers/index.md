@@ -118,7 +118,7 @@ Follow these steps to generate your binding:
    - `-Dspotless.check.skip=true` : Skips the spotless file formatting checks
    - `-Dohc.version=3.0.2` : The version of openhab you are building for
 
-1. To start your new binding it's a good practise to commit your code on a new git branch:
+1. To start your new binding it's a good practice to commit your code on a new git branch:
 
    ```bash
    git checkout -b <mynewbranch>

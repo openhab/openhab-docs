@@ -1,7 +1,7 @@
 ---
 layout: documentation
 title: Migration from openHAB 2
-description: Description of Beaking Changes and needed steps for a proper Migration from openHAB 2
+description: Description of Breaking Changes and needed steps for a proper Migration from openHAB 2
 ---
 
 # Migrating from openHAB 2
@@ -15,7 +15,7 @@ Since this is a major version release you have to pay attention to some **Breaki
 
 Please read them carefully and check if you are affected by some of the changes, like the changes to some rules namespaces and the handling of time functions.
 
-Below you can find some general informations for the technical upgrade process from openHAB 2.
+Below you can find some general information for the technical upgrade process from openHAB 2.
 Please be aware of possible changes needed for your specific environment in case of the breaking changes after upgrading.
 
 ## Upgrade Process for different installation variants

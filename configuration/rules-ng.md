@@ -61,7 +61,7 @@ name
 type - one of the following "text", "integer", "decimal", "boolean"
 label - localizable text
 description - localizable text
-required - boolean flag indicating if this configuration property can be optional and thus it can be ommited in the rule, by default required is false
+required - boolean flag indicating if this configuration property can be optional and thus it can be omitted in the rule, by default required is false
 defaultValue - default value for the configuration property when not specified in the rule
 ```
 
@@ -484,7 +484,7 @@ The above example uses two rule configuration properties:
 
 ### GenericEventTrigger
 
-GenericEventTrigger has 3 configuration paramters: `eventTopic`,`eventSource` and `eventTypes` and one output: 'event'.
+GenericEventTrigger has 3 configuration parameters: `eventTopic`,`eventSource` and `eventTypes` and one output: 'event'.
 
 ```json
 {
@@ -630,5 +630,5 @@ The composite module type wraps one or more instances of a system module type an
 
 This example demonstrates a new module type _ItemStateChangeTrigger_ which wraps the system module type _GenericEventTrigger_.
 It defines the new configuration property `itemName` which is used as the `eventSource` property of the _GenericEventTrigger_.
-The other config parameters `eventTopic` and `eventTypes` are staticly defined.
+The other config parameters `eventTopic` and `eventTypes` are statically defined.
 The composite module type can also have inputs and outputs and can use a reference to map them to inputs and outputs of the nested system module type(s).

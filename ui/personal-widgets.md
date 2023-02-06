@@ -50,7 +50,7 @@ For basic widgets this information is only sometimes relevant, but when creating
 ### Component config
 
 Nearly every component will have some aspect that needs to be specified or modified to suit a specific need.
-This is accompished by adding a `config` section to the component's YAML.
+This is accomplished by adding a `config` section to the component's YAML.
 
 ```yaml
 - component: oh-toggle
@@ -102,15 +102,15 @@ There are several subsets of OH components, each with different uses and strengt
 In addition to being the basis for the OH components, the F7 components themselves are available as options in the widget editor.
 As a general rule, the F7 components will have more configuration and style flexibility than their OH counterparts.
 So, their use is recommended when there is something about the component that needs to be configured in a way different than what is set in the OH version.
-Of course, the F7 components do not have the OH specific functions available, so while they can have values based on Items using the epxression system, they cannot easily be used to trigger rules, update Items or variables, etc.
+Of course, the F7 components do not have the OH specific functions available, so while they can have values based on Items using the expression system, they cannot easily be used to trigger rules, update Items or variables, etc.
 
 The most commonly used F7 components will likely be `f7-block`, `f7-row`, and `f7-col`.
 These all generate a simple `<div>` element with one base F7 class (`block`, `row`, and `col` respectively).
 These components are therefore useful as fundamental building-blocks of widget or page.
 The list components `f7-list-item` and `f7-list-item-row` can often be useful as well given the flexibility they provide for complex structure inside a list.
 
-Any of the OH components that allow [wiget actions](building-pages.html#actions) include easy configuration for using some other widget as a popup or popover.
-If, however, there is need for the popup or popover to be built-in with a single widget (e.g., to add a widget to the [marketplace](https://community.openhab.org/c/marketplace/ui-widgets/75) that includes a popup or popover), the `f7-popup` and `f7-popover` component can be used and the open or closed status of that modal object controled by the `popupOpen`, `popupClose`, `popoverOpen`, and `popoverClose` properties available in many of the other f7 components and their OH derivaties.
+Any of the OH components that allow [widget actions](building-pages.html#actions) include easy configuration for using some other widget as a popup or popover.
+If, however, there is need for the popup or popover to be built-in with a single widget (e.g., to add a widget to the [marketplace](https://community.openhab.org/c/marketplace/ui-widgets/75) that includes a popup or popover), the `f7-popup` and `f7-popover` component can be used and the open or closed status of that modal object controlled by the `popupOpen`, `popupClose`, `popoverOpen`, and `popoverClose` properties available in many of the other f7 components and their OH derivates.
 
 #### Popup example
 
@@ -159,7 +159,7 @@ renders in the page HTML as:
 ```html
 <div class="row fancy-row">
   <div>Label text here</div>
-</div>  
+</div>
 ```
 
 Because of this, the `Label` component also accepts `class` and `style` configurations which are applied to the `<div>`.
@@ -192,8 +192,8 @@ With no container, there is no possibility to add `class` or `style` configurati
 
 The custom widget system can also be used to build HTML more directly.
 The `component` property can also be set to any recognized HTML tag.
-When used in this manner, the component accepts any configuration paramaters that can be passed to the tag as HTML attributes (inlcuding, of course, `class` and `style`).
-There is an additional configuration parameter, `content` which allows for content text to be inlcuded in the tag.
+When used in this manner, the component accepts any configuration paramaters that can be passed to the tag as HTML attributes (including, of course, `class` and `style`).
+There is an additional configuration parameter, `content` which allows for content text to be included in the tag.
 
 HTML components also accept a `default` slot which will render a child component inside the tag.
 
@@ -252,7 +252,7 @@ In order to remain light-weight and responsive, this is not a complete JavaScrip
 #### Arrow functions
 
 Many standard JavaScript methods take a function as a parameter.
-The expression parser can parse arrow functions as the paramters of these methods.
+The expression parser can parse arrow functions as the parameters of these methods.
 
 Here an arrow function is used in conjunction with the `.find()` method to locate the item object in an array of items (such as is returned by a `oh-repeater`) with a particular name.
 The label of the found item is then used as the title of a component.
@@ -288,7 +288,7 @@ label: =props.item.match(/_(.*)_/)[1]
 
 The variable action allows components in widgets to pass information back and forth when there is user interaction.
 Often this informtation is simple, such as a single string or input value.
-Sometimes, however, it is helpul to add more information to a variable and for these instances JavaScript opjects are useful.
+Sometimes, however, it is helpful to add more information to a variable and for these instances JavaScript objects are useful.
 The widget system can create objects in two different ways.
 
 Objects can be defined within the expression system using the standard JavaScript syntax: `{'key1':'value1','key2':'value2'}`.

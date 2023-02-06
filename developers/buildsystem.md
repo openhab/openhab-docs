@@ -7,7 +7,7 @@ title: Build System
 
 The buildsystem is based on Maven.
 A very common tool for Java development.
-Maven is a convention centric, declarative system that is extensible via addional plugins.
+Maven is a convention centric, declarative system that is extensible via additional plugins.
 That means if you stick 100% to Mavens idea of a java project, your buildsystem instruction file is not longer than 10 lines.
 
 openHAB has a few extra requirements and we use about 10 additional plugins,
@@ -107,7 +107,7 @@ Two cases need to be treated differently:
 ### Multi-Bundle Features / Sub-Bundles
 
 In some cases a binding consists of several bundles (e.g. `mqtt`).
-The `feature.xml` of the sub-bundle (e.g. `mqtt.homie`) needs to add all bundles from the parent-bundle to make sure that the feature verification suceeds:
+The `feature.xml` of the sub-bundle (e.g. `mqtt.homie`) needs to add all bundles from the parent-bundle to make sure that the feature verification succeeds:
 
 ```xml
 <feature>openhab-transport-mqtt</feature>

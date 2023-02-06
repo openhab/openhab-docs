@@ -112,7 +112,7 @@ Open the configuration file and **add** the following lines underneath the proxy
 
 ### Add authorization and cookie directives in NGINX Configuration
 
-This is an important new requirment in openHAB 3.0 and later versions.
+This is an important new requirement in openHAB 3.0 and later versions.
 This is not required prior to openHAB 3.0. You must add the following two directives underneath the `add_header` (in the `server` block) and `proxy_set_header` (in the `location /` block) items respectively:
 
 ```text
@@ -163,11 +163,11 @@ If you have setup a password following the previous section, then the rest will 
 
 To generate a trusted certificate, you need to own a domain. To acquire your own domain, you can use one of the following methods:
 
-| Method                           | Example Links | Note |
-|:-------------------------------- |:------------- |:---- |
-| Purchasing a domain name         | [GoDaddy](https://www.godaddy.com), [Namecheap](https://www.namecheap.com), [Enom](https://www.enom.com), [Register](https://www.register.com) | You should have an IP adress that doesn't change (i.e. fixed), or changes rarely, and then update the DNS _A record_ so that your domain/subdomain to point towards your IP. |
-| Obtaining a free domain | [FreeNom](https://www.freenom.com) | Setup is the same as above. |
-| Using a "Dynamic DNS" sevice | [No-IP](https://www.noip.com), [Dyn](https://www.dyn.com/dns), [FreeDNS](https://freedns.afraid.org) | Uses a client to automatically update your IP to a domain of you choice, some Dynamic DNS services (like FreeDNS) offer a free domain too. |
+| Method                        | Example Links                                                                                                                                  | Note                                                                                                                                                                          |
+| :---------------------------- | :--------------------------------------------------------------------------------------------------------------------------------------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Purchasing a domain name      | [GoDaddy](https://www.godaddy.com), [Namecheap](https://www.namecheap.com), [Enom](https://www.enom.com), [Register](https://www.register.com) | You should have an IP address that doesn't change (i.e. fixed), or changes rarely, and then update the DNS _A record_ so that your domain/subdomain to point towards your IP. |
+| Obtaining a free domain       | [FreeNom](https://www.freenom.com)                                                                                                             | Setup is the same as above.                                                                                                                                                   |
+| Using a "Dynamic DNS" service | [No-IP](https://www.noip.com), [Dyn](https://www.dyn.com/dns), [FreeDNS](https://freedns.afraid.org)                                           | Uses a client to automatically update your IP to a domain of you choice, some Dynamic DNS services (like FreeDNS) offer a free domain too.                                    |
 
 ## Enabling HTTPS
 
@@ -370,31 +370,31 @@ The HTTP one can be disabled later if desired (not at all essential if you will 
 
 Create two reverse proxies as follows:
 
-| Parameter                 | Value           |
-|:------------------------- |:--------------- |
-|Description:               |openHAB HTTPS    |
-|Source Protocol:           |HTTPS            |
-|Source Hostname:           |your-hostname.com|
-|Source Port:               |443              |
-|Enable HSTS                |Unchecked        |
-|Enable HTTP/2              |Unchecked        |
-|Enable access control      |Unchecked        |
-|Destination Protocol:      |HTTPS            |
-|Destination Hostname:      |localhost        |
-|Destination Port:          |8443 (or whichever HTTPS port your openHAB instance is on)|
+| Parameter             | Value                                                      |
+| :-------------------- | :--------------------------------------------------------- |
+| Description:          | openHAB HTTPS                                              |
+| Source Protocol:      | HTTPS                                                      |
+| Source Hostname:      | your-hostname.com                                          |
+| Source Port:          | 443                                                        |
+| Enable HSTS           | Unchecked                                                  |
+| Enable HTTP/2         | Unchecked                                                  |
+| Enable access control | Unchecked                                                  |
+| Destination Protocol: | HTTPS                                                      |
+| Destination Hostname: | localhost                                                  |
+| Destination Port:     | 8443 (or whichever HTTPS port your openHAB instance is on) |
 
-| Parameter                 | Value           |
-|:------------------------- |:--------------- |
-|Description:               |openHAB HTTP     |
-|Source Protocol:           |HTTP             |
-|Source Hostname:           |your-hostname.com|
-|Source Port:               |80               |
-|Enable HSTS                |Unchecked        |
-|Enable HTTP/2              |Unchecked        |
-|Enable access control      |Unchecked        |
-|Destination Protocol:      |HTTP             |
-|Destination Hostname:      |localhost        |
-|Destination Port:          |8080 (or whichever HTTP port your openHAB instance is on)|
+| Parameter             | Value                                                     |
+| :-------------------- | :-------------------------------------------------------- |
+| Description:          | openHAB HTTP                                              |
+| Source Protocol:      | HTTP                                                      |
+| Source Hostname:      | your-hostname.com                                         |
+| Source Port:          | 80                                                        |
+| Enable HSTS           | Unchecked                                                 |
+| Enable HTTP/2         | Unchecked                                                 |
+| Enable access control | Unchecked                                                 |
+| Destination Protocol: | HTTP                                                      |
+| Destination Hostname: | localhost                                                 |
+| Destination Port:     | 8080 (or whichever HTTP port your openHAB instance is on) |
 
 Verify that the reverse proxy is working as expected - try <http://your-hostname.com> and <https://your-hostname.com> - you should end up at the openHAB landing page in both cases, but will get a security warning for the https site.
 
@@ -411,19 +411,19 @@ Click Apply, and wait a few minutes - your certificate is done!
 
 ::: tip Note
 Sometimes you may receive an error at the end of the certificate wizard - the first time this happens, click on 'cancel and see if you have a certificate anyway.
-If the certifcate has been generated, you are good to go.
+If the certificate has been generated, you are good to go.
 :::
 
 Select the certificate that has just been created, and click on 'Configure'.
 Ensure that the new certificate is listed next to your-hostname.com in the table - something like the below.
 If it's not selected, update it.
 
-| Services                  | Certificate     |
-|:------------------------- |:--------------- |
-|your-hostname.com          |your-hostname.com|
-|FTPS                       |synology.com     |
-|Cloud Station Server       |synology.com     |
-|etc etc                    |synology.com     |
+| Services             | Certificate       |
+| :------------------- | :---------------- |
+| your-hostname.com    | your-hostname.com |
+| FTPS                 | synology.com      |
+| Cloud Station Server | synology.com      |
+| etc etc              | synology.com      |
 
 Once this is done, update the CAA record for your-hostname.com with your registrar (exact process will vary by registrar).
 Within an hour or so, you should not receive the security warning for <https://your-hostname.com>.
@@ -497,13 +497,13 @@ As above, the first part of the file redirects any HTTP queries to HTTPS directl
 If you don't get any errors, update the reverse proxy settings in the DSM GUI to point to these new endpoints.
 Back in the GUI, go to Control Panel > Application Portal > Reverse Proxy, make the updates below:
 
-| Parameter                 | Value           |
-|:------------------------- |:--------------- |
-|Destination Port:          |7443 (or whatever you set it to in the openHAB-auth file)|
+| Parameter         | Value                                                     |
+| :---------------- | :-------------------------------------------------------- |
+| Destination Port: | 7443 (or whatever you set it to in the openHAB-auth file) |
 
-| Parameter                 | Value           |
-|:------------------------- |:--------------- |
-|Destination Port:          |2020 (or whatever you set it to in the openHAB-auth file)|
+| Parameter         | Value                                                     |
+| :---------------- | :-------------------------------------------------------- |
+| Destination Port: | 2020 (or whatever you set it to in the openHAB-auth file) |
 
 ::: tip Note
 We do this 'double' redirect to take advantage of the GUI certificate handling in DSM - this is the equivalent of CertBot for a Linux installation.
@@ -521,7 +521,7 @@ This log will update in real-time, so do whatever it was that you were having is
 
 ## Additional HTTPS Security
 
-To test your security settings [SSL Labs](https://www.ssllabs.com/ssltest/) provides a tool for testing your domain against ideal settings (Make sure you check "Do not show the results on the boards" if you dont want your domain seen).
+To test your security settings [SSL Labs](https://www.ssllabs.com/ssltest/) provides a tool for testing your domain against ideal settings (Make sure you check "Do not show the results on the boards" if you don't want your domain seen).
 
 This optional section is for those who would like to strengthen the HTTPS security on openHAB, it can be applied regardless of which HTTPS method you used [above](#enabling-https), **but you need to follow at least one of them first**.
 
@@ -537,7 +537,7 @@ openssl dhparam -out /etc/nginx/ssl/dhparam.pem 2048
 ```
 
 Now we can configure NGINX to use this key, as well as telling the client to use specific cyphers and SSL settings, just add the following under your `ssl_certificate **` settings but above ``location *``.
-All of these settings are customisable, but make sure you [read up on](https://nginx.org/en/docs/http/configuring_https_servers.html) what these do first before changing them:
+All of these settings are customizable, but make sure you [read up on](https://nginx.org/en/docs/http/configuring_https_servers.html) what these do first before changing them:
 
 ```text
     ssl_protocols                   TLSv1 TLSv1.1 TLSv1.2;

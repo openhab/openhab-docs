@@ -54,7 +54,7 @@ If you deal with network calls, consider the asynchronously reloading cache impl
 ## Expiring and asynchronously reloading cache
 
 If we refreshed a value of the internal state in a `ThingHandler` just recently, we can return it immediately via the usual `updateState(channel, state)` method in response to a "RefreshType" command.
-If the state is too old, we need to fetch it first and this may involve network calls, interprocess operations or anything else that will would block for a considerable amout of time.
+If the state is too old, we need to fetch it first and this may involve network calls, interprocess operations or anything else that will would block for a considerable amount of time.
 
 A common usage case of the `ExpiringCacheAsync` cache type is in a `ThingHandler` to encapsulate one value of an internal state and attach an expire time on that value.
 
@@ -77,7 +77,7 @@ The interesting part is the `updater`.
 If the value is not yet expired, the returned CompletableFuture will complete immediately and the given code is executed.
 If the value is expired, the updater will be used to request a refreshed value.
 
-An updater can be any class or lambda that implements the funtional interface of `Supplier<CompletableFuture<VALUE_TYPE>>`.
+An updater can be any class or lambda that implements the functional interface of `Supplier<CompletableFuture<VALUE_TYPE>>`.
 
 In the following example the method `CompletableFuture<VALUE_TYPE> get()` is accordingly implemented.
 The example assumes that we deal

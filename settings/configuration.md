@@ -22,7 +22,7 @@ The general explanation on how to **configure things** via things-files is descr
 
 Adding Things via the user interface as part of the _settings section_ is described comprehensively in the tutorial section
 
-- [Addings Things - Simple](/docs/tutorial/things_simple.html)
+- [Adding Things - Simple](/docs/tutorial/things_simple.html)
 - [Adding Things - Intermediate](/docs/tutorial/things_intermediate.html): Things that are dealing with a binding where the bridge-Thing cannot be automatically discovered.
 - [Adding Things - Advanced](/docs/things_advanced.html): Things that do not support automatic discovery
 
@@ -55,5 +55,5 @@ Within this section the following page types can be created:
 - [Tabbed Pages](/docs/ui/tabbed-pages.html): Tabbed Pages are composite Pages which are able to display other Pages in tabs.
 - [Charts](/docs/ui/chart-pages.html): Chart Pages can display historical values in a full-screenchart component.
 - [Floor Plans](/docs/ui/floorplan-pages.html): Floorplan Pages can display markers or other elements over a custom image.
-- [Map Views](/docs/ui/map-pages.html): Map Pages can display either fixed markers or markers representating items of type Location, on a map.
+- [Map Views](/docs/ui/map-pages.html): Map Pages can display either fixed markers or markers representing items of type Location, on a map.
 - [Sitemap](/docs/ui/sitemaps.html): Sitemaps have existed since the first versions of openHAB and were used as an easy way display items. Keep in mind that the main UI is not currently able to display them, though the mobile apps still are.
