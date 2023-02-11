@@ -24,7 +24,7 @@ If you have any issues, questions or an idea for additional features, please tak
 ## Latest Changes
 
 ::: tip State of this document
-This documentation refers to release [v3.6.0](https://github.com/openhab/openhab-google-assistant/releases/tag/v3.6.0) of [openHAB Google Assistant](https://github.com/openhab/openhab-google-assistant) published on 2023-01-16
+This documentation refers to release [v3.6.1](https://github.com/openhab/openhab-google-assistant/releases/tag/v3.6.1) of [openHAB Google Assistant](https://github.com/openhab/openhab-google-assistant) published on 2023-02-09
 :::
 
 ### v3.6.0
@@ -61,8 +61,8 @@ Currently the following devices are supported (also depending on Google's API ca
 
 | | |
 |---|---|
-| **Device Type** | [Switch](https://developers.google.com/assistant/smarthome/guides/switch) |
-| **Supported Traits** | [OnOff](https://developers.google.com/assistant/smarthome/traits/onoff) |
+| **Device Type** | [Switch](https://developers.home.google.com/cloud-to-cloud/guides/switch) |
+| **Supported Traits** | [OnOff](https://developers.home.google.com/cloud-to-cloud/traits/onoff) |
 | **Supported Items** | Switch |
 | **Configuration** | (optional) `inverted=true/false`<br>(optional) `checkState=true/false` |
 
@@ -76,8 +76,8 @@ Switch { ga="Switch" [ inverted=false ] }
 
 | | |
 |---|---|
-| **Device Type** | [Light](https://developers.google.com/assistant/smarthome/guides/light) |
-| **Supported Traits** | [OnOff](https://developers.google.com/assistant/smarthome/traits/onoff), [ColorSetting](https://developers.google.com/assistant/smarthome/traits/colorsetting), [Brightness](https://developers.google.com/assistant/smarthome/traits/brightness) (depending on used item type) |
+| **Device Type** | [Light](https://developers.home.google.com/cloud-to-cloud/guides/light) |
+| **Supported Traits** | [OnOff](https://developers.home.google.com/cloud-to-cloud/traits/onoff), [ColorSetting](https://developers.home.google.com/cloud-to-cloud/traits/colorsetting), [Brightness](https://developers.home.google.com/cloud-to-cloud/traits/brightness) (depending on used item type) |
 | **Supported Items** | Switch, Dimmer, Color |
 | **Configuration** | (optional) `inverted=true/false`<br>(optional) `checkState=true/false`<br>(optional) `colorTemperatureRange="minK,maxK"` |
 
@@ -91,8 +91,8 @@ Color  { ga="Light" [ colorTemperatureRange="2000,9000" ] }
 
 | | |
 |---|---|
-| **Device Type** | [Light](https://developers.google.com/assistant/smarthome/guides/light) |
-| **Supported Traits** | [OnOff](https://developers.google.com/assistant/smarthome/traits/onoff), [ColorSetting](https://developers.google.com/assistant/smarthome/traits/colorsetting), [Brightness](https://developers.google.com/assistant/smarthome/traits/brightness) |
+| **Device Type** | [Light](https://developers.home.google.com/cloud-to-cloud/guides/light) |
+| **Supported Traits** | [OnOff](https://developers.home.google.com/cloud-to-cloud/traits/onoff), [ColorSetting](https://developers.home.google.com/cloud-to-cloud/traits/colorsetting), [Brightness](https://developers.home.google.com/cloud-to-cloud/traits/brightness) |
 | **Supported Items** | Group as `SpecialColorLight` with the following members:<br>(optional) Number or Dimmer as `lightBrightness`<br>(optional) Number or Dimmer as `lightColorTemperature`<br>(optional) Color as `lightColor`<br>(optional) Switch as `lightPower` |
 | **Configuration** | (optional) `colorUnit=percent/kelvin/mired`<br>(optional) `checkState=true/false`<br>(optional) `colorTemperatureRange="minK,maxK"`<br>_Hint: if you want to use `lightColorTemperature` you either need to set `colorUnit` to `kelvin` or `mired` or define a `colorTemperatureRange` as `colorUnit` defaults to `percent`_ |
 
@@ -127,8 +127,8 @@ Color colorItem2             (colorItems)
 
 | | |
 |---|---|
-| **Device Type** | [Scene](https://developers.google.com/assistant/smarthome/guides/scene) |
-| **Supported Traits** | [Scene](https://developers.google.com/assistant/smarthome/traits/scene) |
+| **Device Type** | [Scene](https://developers.home.google.com/cloud-to-cloud/guides/scene) |
+| **Supported Traits** | [Scene](https://developers.home.google.com/cloud-to-cloud/traits/scene) |
 | **Supported Items** | Switch |
 | **Configuration** | (optional) `sceneReversible=true/false`<br>(optional) `checkState=true/false` |
 
@@ -140,8 +140,8 @@ Switch { ga="Scene" [ sceneReversible=false ] }
 
 | | |
 |---|---|
-| **Device Type** | [Outlet](https://developers.google.com/assistant/smarthome/guides/outlet), [Coffee_Maker](https://developers.google.com/assistant/smarthome/guides/coffeemaker), [WaterHeater](https://developers.google.com/assistant/smarthome/guides/outlet), [Fireplace](https://developers.google.com/assistant/smarthome/guides/fireplace) |
-| **Supported Traits** | [OnOff](https://developers.google.com/assistant/smarthome/traits/onoff) |
+| **Device Type** | [Outlet](https://developers.home.google.com/cloud-to-cloud/guides/outlet), [Coffee_Maker](https://developers.home.google.com/cloud-to-cloud/guides/coffeemaker), [WaterHeater](https://developers.home.google.com/cloud-to-cloud/guides/outlet), [Fireplace](https://developers.home.google.com/cloud-to-cloud/guides/fireplace) |
+| **Supported Traits** | [OnOff](https://developers.home.google.com/cloud-to-cloud/traits/onoff) |
 | **Supported Items** | Switch |
 | **Configuration** | (optional) `inverted=true/false`<br>(optional) `checkState=true/false` |
 
@@ -156,8 +156,8 @@ Switch { ga="Fireplace" }
 
 | | |
 |---|---|
-| **Device Type** | [Valve](https://developers.google.com/assistant/smarthome/guides/valve) |
-| **Supported Traits** | [OpenClose](https://developers.google.com/assistant/smarthome/traits/openclose) |
+| **Device Type** | [Valve](https://developers.home.google.com/cloud-to-cloud/guides/valve) |
+| **Supported Traits** | [OpenClose](https://developers.home.google.com/cloud-to-cloud/traits/openclose) |
 | **Supported Items** | Switch |
 | **Configuration** | (optional) `inverted=true/false`<br>(optional) `checkState=true/false` |
 
@@ -169,8 +169,8 @@ Switch { ga="Valve" [ inverted=true ] }
 
 | | |
 |---|---|
-| **Device Type** | [Sprinkler](https://developers.google.com/assistant/smarthome/guides/sprinkler), [Vacuum](https://developers.google.com/assistant/smarthome/guides/vacuum) |
-| **Supported Traits** | [StartStop](https://developers.google.com/assistant/smarthome/traits/startstop) |
+| **Device Type** | [Sprinkler](https://developers.home.google.com/cloud-to-cloud/guides/sprinkler), [Vacuum](https://developers.home.google.com/cloud-to-cloud/guides/vacuum) |
+| **Supported Traits** | [StartStop](https://developers.home.google.com/cloud-to-cloud/traits/startstop) |
 | **Supported Items** | Switch |
 | **Configuration** | (optional) `inverted=true/false`<br>(optional) `checkState=true/false` |
 
@@ -183,8 +183,8 @@ Switch { ga="Vacuum" [ inverted=false ] }
 
 | | |
 |---|---|
-| **Device Type** | [Lock](https://developers.google.com/assistant/smarthome/guides/lock) |
-| **Supported Traits** | [LockUnlock](https://developers.google.com/assistant/smarthome/traits/lockunlock) |
+| **Device Type** | [Lock](https://developers.home.google.com/cloud-to-cloud/guides/lock) |
+| **Supported Traits** | [LockUnlock](https://developers.home.google.com/cloud-to-cloud/traits/lockunlock) |
 | **Supported Items** | Contact (no device control), Switch |
 | **Configuration** | (optional) `inverted=true/false`<br>(optional) `checkState=true/false`<br>(optional) `ackNeeded=true/false`<br>(optional) `pinNeeded="1234"` |
 
@@ -197,8 +197,8 @@ Switch { ga="Lock" [ pinNeeded="1234" ] }
 
 | | |
 |---|---|
-| **Device Type** | [SecuritySystem](https://developers.google.com/assistant/smarthome/guides/securitysystem) |
-| **Supported Traits** | [ArmDisarm](https://developers.google.com/assistant/smarthome/traits/armdisarm) |
+| **Device Type** | [SecuritySystem](https://developers.home.google.com/cloud-to-cloud/guides/securitysystem) |
+| **Supported Traits** | [ArmDisarm](https://developers.home.google.com/cloud-to-cloud/traits/armdisarm) |
 | **Supported Items** | Switch |
 | **Configuration** | (optional) `inverted=true/false`<br>(optional) `checkState=true/false`<br>(optional) `ackNeeded=true/false`<br>(optional) `pinNeeded="1234"`<br>(optional) `pinOnDisarmOnly=true/false`<br>(optional) `waitForStateChange=2` |
 
@@ -216,8 +216,8 @@ Switch houseAlarm "House Alarm" { ga="SecuritySystem", pinNeeded="1234" }
 
 | | |
 |---|---|
-| **Device Type** | [SecuritySystem](https://developers.google.com/assistant/smarthome/guides/securitysystem) |
-| **Supported Traits** | [ArmDisarm](https://developers.google.com/assistant/smarthome/traits/armdisarm)<br>[StatusReport](https://developers.google.com/assistant/smarthome/traits/statusreport) |
+| **Device Type** | [SecuritySystem](https://developers.home.google.com/cloud-to-cloud/guides/securitysystem) |
+| **Supported Traits** | [ArmDisarm](https://developers.home.google.com/cloud-to-cloud/traits/armdisarm)<br>[StatusReport](https://developers.home.google.com/cloud-to-cloud/traits/statusreport) |
 | **Supported Items** | Group as `SecuritySystem` with the following members: <br>Switch as `securitySystemArmed`<br>(optional) String as `securitySystemArmLevel`<br>(optional) Switch as `securitySystemTrouble`<br>(optional) String as `securitySystemTroubleCode`<br>(optional) Contact as `securitySystemZone` |
 | **Configuration** | (optional) `inverted=true/false`<br>(optional) `checkState=true/false`<br>(optional) `ackNeeded=true/false`<br>(optional) `pinNeeded="1234"`<br> (optional) `pinOnDisarmOnly=true/false` <br>(optional) `waitForStateChange=2`<br>(optional) `armLevels="L1=Level 1,L2=Level 2"`<br><br>Specifically on Zone Contacts:<br>(required) `zoneType=OpenClose/Motion` <br>(optional) `blocking=true/false`|
 
@@ -258,8 +258,8 @@ Contact frontDoorSensor       (gHouseAlarm) { ga="securitySystemZone" [ zoneType
 
 | | |
 |---|---|
-| **Device Type** | [Camera](https://developers.google.com/assistant/smarthome/guides/camera) |
-| **Supported Traits** | [CameraStream](https://developers.google.com/assistant/smarthome/traits/camerastream) |
+| **Device Type** | [Camera](https://developers.home.google.com/cloud-to-cloud/guides/camera) |
+| **Supported Traits** | [CameraStream](https://developers.home.google.com/cloud-to-cloud/traits/camerastream) |
 | **Supported Items** | String |
 | **Configuration** | (optional) `protocols="hls,dash,smooth_stream,progressive_mp4"` _(choose suitable)_ |
 
@@ -271,8 +271,8 @@ String { ga="Camera" [ protocols="hls,dash" ] }
 
 | | |
 |---|---|
-| **Device Type** | [Speaker](https://developers.google.com/assistant/smarthome/guides/speaker) |
-| **Supported Traits** | [Volume](https://developers.google.com/assistant/smarthome/traits/volume) |
+| **Device Type** | [Speaker](https://developers.home.google.com/cloud-to-cloud/guides/speaker) |
+| **Supported Traits** | [Volume](https://developers.home.google.com/cloud-to-cloud/traits/volume) |
 | **Supported Items** | Dimmer |
 | **Configuration** | (optional) `checkState=true/false`<br>(optional) `volumeDefaultPercentage="20"`<br>(optional) `levelStepSize="5"`<br>(optional) `volumeMaxLevel="100"` |
 
@@ -284,13 +284,13 @@ Dimmer { ga="Speaker" [ volumeDefaultPercentage="50", levelStepSize="10", volume
 
 | | |
 |---|---|
-| **Device Type** | [TV](https://developers.google.com/assistant/smarthome/guides/tv) |
-| **Supported Traits** | [OnOff](https://developers.google.com/assistant/smarthome/traits/onoff), [Volume](https://developers.google.com/assistant/smarthome/traits/volume), [TransportControl](https://developers.google.com/assistant/smarthome/traits/transportcontrol), [InputSelector](https://developers.google.com/assistant/smarthome/traits/inputselector), [AppSelector](https://developers.google.com/assistant/smarthome/traits/appselector), [Channel](https://developers.google.com/assistant/smarthome/traits/channel) (depending on used members) |
+| **Device Type** | [TV](https://developers.home.google.com/cloud-to-cloud/guides/tv) |
+| **Supported Traits** | [OnOff](https://developers.home.google.com/cloud-to-cloud/traits/onoff), [Volume](https://developers.home.google.com/cloud-to-cloud/traits/volume), [TransportControl](https://developers.home.google.com/cloud-to-cloud/traits/transportcontrol), [InputSelector](https://developers.home.google.com/cloud-to-cloud/traits/inputselector), [AppSelector](https://developers.home.google.com/cloud-to-cloud/traits/appselector), [Channel](https://developers.home.google.com/cloud-to-cloud/traits/channel) (depending on used members) |
 | **Supported Items** | Group as `TV` with the following members:<br>(optional) Switch as `tvPower`<br>(optional) Switch as `tvMute`<br>(optional) Dimmer as `tvVolume`<br>(optional) String as `tvChannel`<br>(optional) String as `tvInput`<br>(optional) String as `tvApplication`<br>(optional) Player as `tvTransport` |
 | **Configuration** | (optional) `checkState=true/false`<br>(optional) `volumeDefaultPercentage="20"`<br>(optional) `levelStepSize="5"`<br>(optional) `volumeMaxLevel="100"`<br>(optional) `transportControlSupportedCommands="NEXT,PREVIOUS,PAUSE,RESUME"`<br>(optional) `availableChannels="channelNumber=channelId=channelName:channelSynonym:...,..."`<br>(optional) `availableInputs="inputKey=inputName:inputSynonym:...,..."`<br>(optional) `availableApplications="applicationKey=applicationName:applicationSynonym:...,..."`<br>(optional) `lang="en"` |
 
 ```shell
-Group  tvGroup { ga="TV" [ volumeDefaultPercentage="20", levelStepSize="10", volumeMaxLevel="100", transportControlSupportedCommands="NEXT,PREVIOUS,PAUSE,RESUME", availableChannels="1=Channel1=NBC,2=Channel2=CBS", availableInputs="hdmi1=xbox:gaming,hdmi2=settopbox", availableApplications: "youtube=YouTube:Tube,netflix=Netflix:Chill" ] }
+Group  tvGroup { ga="TV" [ volumeDefaultPercentage="20", levelStepSize="10", volumeMaxLevel="100", transportControlSupportedCommands="NEXT,PREVIOUS,PAUSE,RESUME", availableChannels="1=Channel1=NBC,2=Channel2=CBS", availableInputs="hdmi1=xbox:gaming,hdmi2=settopbox", availableApplications="spotify=Spotify:Music,netflix=Netflix:Chill" ] }
 Switch powerItem       (tvGroup) { ga="tvPower" }
 Switch muteItem        (tvGroup) { ga="tvMute" }
 Dimmer volumeItem      (tvGroup) { ga="tvVolume" }
@@ -304,8 +304,8 @@ Player transportItem   (tvGroup) { ga="tvTransport" }
 
 | | |
 |---|---|
-| **Device Type** | [Fan](https://developers.google.com/assistant/smarthome/guides/fan), [Hood](https://developers.google.com/assistant/smarthome/guides/hood), [AirPurifier](https://developers.google.com/assistant/smarthome/guides/airpurifier) |
-| **Supported Traits** | [OnOff](https://developers.google.com/assistant/smarthome/traits/OnOff), [FanSpeed](https://developers.google.com/assistant/smarthome/traits/fanspeed) (depending on used item type) |
+| **Device Type** | [Fan](https://developers.home.google.com/cloud-to-cloud/guides/fan), [Hood](https://developers.home.google.com/cloud-to-cloud/guides/hood), [AirPurifier](https://developers.home.google.com/cloud-to-cloud/guides/airpurifier) |
+| **Supported Traits** | [OnOff](https://developers.home.google.com/cloud-to-cloud/traits/OnOff), [FanSpeed](https://developers.home.google.com/cloud-to-cloud/traits/fanspeed) (depending on used item type) |
 | **Supported Items** | Switch (no speed control), Dimmer |
 | **Configuration** | (optional) `checkState=true/false`<br>(optional) `speeds="0=away:zero,50=default:standard:one,100=high:two"`<br>(optional) `lang="en"`<br>(optional) `ordered=true/false`<br>_Hint: if you are using a Dimmer then `speeds` is required_ |
 
@@ -328,8 +328,8 @@ Number { ga="AirPurifier" } # Only percentage values for the speed
 
 | | |
 |---|---|
-| **Device Type** | [Awning](https://developers.google.com/assistant/smarthome/guides/awning), [Blinds](https://developers.google.com/assistant/smarthome/guides/blinds), [Curtain](https://developers.google.com/assistant/smarthome/guides/curtain), [Door](https://developers.google.com/assistant/smarthome/guides/door), [Garage](https://developers.google.com/assistant/smarthome/guides/garage), [Gate](https://developers.google.com/assistant/smarthome/guides/gate), [Pergola](https://developers.google.com/assistant/smarthome/guides/pergola), [Shutter](https://developers.google.com/assistant/smarthome/guides/shutter), [Window](https://developers.google.com/assistant/smarthome/guides/window) |
-| **Supported Traits** | [OpenClose](https://developers.google.com/assistant/smarthome/traits/openclose), [StartStop](https://developers.google.com/assistant/smarthome/traits/startstop) |
+| **Device Type** | [Awning](https://developers.home.google.com/cloud-to-cloud/guides/awning), [Blinds](https://developers.home.google.com/cloud-to-cloud/guides/blinds), [Curtain](https://developers.home.google.com/cloud-to-cloud/guides/curtain), [Door](https://developers.home.google.com/cloud-to-cloud/guides/door), [Garage](https://developers.home.google.com/cloud-to-cloud/guides/garage), [Gate](https://developers.home.google.com/cloud-to-cloud/guides/gate), [Pergola](https://developers.home.google.com/cloud-to-cloud/guides/pergola), [Shutter](https://developers.home.google.com/cloud-to-cloud/guides/shutter), [Window](https://developers.home.google.com/cloud-to-cloud/guides/window) |
+| **Supported Traits** | [OpenClose](https://developers.home.google.com/cloud-to-cloud/traits/openclose), [StartStop](https://developers.home.google.com/cloud-to-cloud/traits/startstop) |
 | **Supported Items** | Contact (no device control), Switch (no open percentage), Rollershutter |
 | **Configuration** | (optional) `discreteOnly=true/false`<br>(optional) `queryOnly=true/false`<br>(optional) `inverted=true/false`<br>(optional) `checkState=true/false` |
 
@@ -356,8 +356,8 @@ Rollershutter { ga="Window" }
 
 | | |
 |---|---|
-| **Device Type** | [Charger](https://developers.google.com/assistant/smarthome/guides/charger) |
-| **Supported Traits** | [EnergyStorage](https://developers.google.com/assistant/smarthome/traits/energystorage) |
+| **Device Type** | [Charger](https://developers.home.google.com/cloud-to-cloud/guides/charger) |
+| **Supported Traits** | [EnergyStorage](https://developers.home.google.com/cloud-to-cloud/traits/energystorage) |
 | **Supported Items** | Group as `Charger` with the following members:<br>(optional) Switch as `chargerCharging`<br>(optional) Switch as `chargerPluggedIn`<br>(optional) Number or Dimmer as `chargerCapacityRemaining`<br>(optional) Number or Dimmer as `chargerCapacityUntilFull` |
 | **Configuration** | (optional) `checkState=true/false`<br>(optional) `isRechargeable=true/false`<br>(optional) `unit="PERCENTAGE"` |
 
@@ -379,8 +379,8 @@ Number capacityFullItem     (chargerGroup) { ga="chargerCapacityUntilFull" }
 
 | | |
 |---|---|
-| **Device Type** | [Sensor](https://developers.google.com/assistant/smarthome/guides/sensor) |
-| **Supported Traits** | [TemperatureSetting](https://developers.google.com/assistant/smarthome/traits/temperaturesetting) |
+| **Device Type** | [Sensor](https://developers.home.google.com/cloud-to-cloud/guides/sensor) |
+| **Supported Traits** | [TemperatureControl](https://developers.home.google.com/cloud-to-cloud/traits/temperaturecontrol), [TemperatureSetting](https://developers.home.google.com/cloud-to-cloud/traits/temperaturesetting) |
 | **Supported Items** | Number |
 | **Configuration** | (optional) `useFahrenheit=true/false` |
 
@@ -392,7 +392,7 @@ Number { ga="TemperatureSensor" [ useFahrenheit=true ] }
 
 | | |
 |---|---|
-| **Device Type** | [Sensor](https://developers.google.com/assistant/smarthome/guides/sensor) |
+| **Device Type** | [Sensor](https://developers.home.google.com/cloud-to-cloud/guides/sensor) |
 | **Supported Traits** | [HumiditySetting](https://developers.home.google.com/cloud-to-cloud/traits/humiditysetting) |
 | **Supported Items** | Number |
 
@@ -404,8 +404,8 @@ Number { ga="HumiditySensor" }
 
 | | |
 |---|---|
-| **Device Type** | [Sensor](https://developers.google.com/assistant/smarthome/guides/sensor) |
-| **Supported Traits** | [HumiditySetting](https://developers.home.google.com/cloud-to-cloud/traits/humiditysetting), [TemperatureSetting](https://developers.google.com/assistant/smarthome/traits/temperaturesetting) |
+| **Device Type** | [Sensor](https://developers.home.google.com/cloud-to-cloud/guides/sensor) |
+| **Supported Traits** | [HumiditySetting](https://developers.home.google.com/cloud-to-cloud/traits/humiditysetting), [TemperatureControl](https://developers.home.google.com/cloud-to-cloud/traits/temperaturecontrol), [TemperatureSetting](https://developers.home.google.com/cloud-to-cloud/traits/temperaturesetting) |
 | **Supported Items** | Group as `ClimateSensor` with the following members:<br>(optional) Number as `humidityAmbient`<br>(optional) Number as `temperatureAmbient` |
 | **Configuration** | (optional) `useFahrenheit=true/false` |
 
@@ -419,8 +419,8 @@ Number humidityItem    (sensorGroup) { ga="humidityAmbient" }
 
 | | |
 |---|---|
-| **Device Type** | [Thermostat](https://developers.google.com/assistant/smarthome/guides/thermostat) |
-| **Supported Traits** | [TemperatureSetting](https://developers.google.com/assistant/smarthome/traits/temperaturesetting) |
+| **Device Type** | [Thermostat](https://developers.home.google.com/cloud-to-cloud/guides/thermostat) |
+| **Supported Traits** | [TemperatureSetting](https://developers.home.google.com/cloud-to-cloud/traits/temperaturesetting) |
 | **Supported Items** | Group as `Thermostat` with the following members:<br>String or Number as `thermostatMode`<br>(optional) Number as `thermostatHumidityAmbient`<br>(optional) Number as `thermostatTemperatureAmbient`<br>(optional) Number as `thermostatTemperatureSetpoint`<br>(optional) Number as `thermostatTemperatureSetpointLow`<br>(optional) Number as `thermostatTemperatureSetpointHigh` |
 | **Configuration** | (optional) `checkState=true/false`<br>(optional) `useFahrenheit=true/false`<br>(optional) `thermostatTemperatureRange="10,30"`<br>(optional) `modes="off=OFF:WINDOW_OPEN,heat=COMFORT:BOOST,eco=ECO,on=ON,auto"` |
 
@@ -431,7 +431,7 @@ If your thermostat supports a range for the setpoint you can use both `thermosta
 
 If your thermostat does not have a mode, you should create one and manually assign a value (e.g. heat, cool, on, etc.) to have proper functionality.
 
-To map the [default thermostat modes of Google](https://developers.google.com/assistant/smarthome/traits/temperaturesetting.html) (on, off, heat, cool, etc.) to custom ones for your specific setup, you can use the `modes` config option on the thermostat group.
+To map the [default thermostat modes of Google](https://developers.home.google.com/cloud-to-cloud/traits/temperaturesetting.html) (on, off, heat, cool, etc.) to custom ones for your specific setup, you can use the `modes` config option on the thermostat group.
 E.g. `[ modes="off=OFF:WINDOW_OPEN,heat=COMFORT:BOOST,eco=ECO,on=ON,auto" ]` will enable the following five modes in Google Home `"off, heat, eco, on, auto"` that will be translated to `"OFF, COMFORT, ECO, ON, auto"`. You can specify alternative conversions using the colon sign, so that in the former example "BOOST" in openHAB would also be translated to "heat" in Google. For the translation of Google modes to openHAB always the first option after the equal sign is used.
 By default the integration will provide `"off,heat,cool,on,heatcool,auto,eco"`.
 
@@ -452,12 +452,12 @@ String modeItem         (thermostatGroup) { ga="thermostatMode" }
 
 | | |
 |---|---|
-| **Device Type** | [Sensor](https://developers.google.com/assistant/smarthome/guides/sensor) |
-| **Supported Traits** | [SensorState](https://developers.google.com/assistant/smarthome/traits/sensorstate) |
+| **Device Type** | [Sensor](https://developers.home.google.com/cloud-to-cloud/guides/sensor) |
+| **Supported Traits** | [SensorState](https://developers.home.google.com/cloud-to-cloud/traits/sensorstate) |
 | **Supported Items** | Number, Dimmer |
 | **Configuration** |`sensorName="SmokeLevel"`<br>`valueUnit="PARTS_PER_MILLION"`<br>`states="no smoke=10,smoke detected=50,high=90"` |
 
-Please see the [SensorState documentation](https://developers.google.com/assistant/smarthome/traits/sensorstate) for more details on configuration options.
+Please see the [SensorState documentation](https://developers.home.google.com/cloud-to-cloud/traits/sensorstate) for more details on configuration options.
 For now only exact matches of the numeric value will report the descriptive state value.
 
 ```shell

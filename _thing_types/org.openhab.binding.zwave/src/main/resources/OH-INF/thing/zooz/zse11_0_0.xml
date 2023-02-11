@@ -103,6 +103,57 @@ The delay in seconds before the sensor reports no motion<br /> <h1>Overview</h1>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
+      <parameter name="config_14_1" type="integer" groupName="configuration">
+        <label>14: Motion Detection: Send Basic Set</label>
+        <description><![CDATA[
+Enable or disable basic set reporting when motion is detected.<br /> <h1>Overview</h1><p>0 – don’t send basic set reports when motion is detected; 1 – send basic set reports when motion is detected (default).<br /></p>
+        ]]></description>
+        <default>1</default>
+        <options>
+          <option value="0">Disable</option>
+          <option value="1">Enable</option>
+        </options>
+        <advanced>true</advanced>
+      </parameter>
+
+      <parameter name="config_15_1" type="integer" groupName="configuration">
+        <label>15: Motion Detection: Basic Set Value</label>
+        <description><![CDATA[
+Select the basic set value to be sent when motion is detected.<br /> <h1>Overview</h1><p>Select which basic set value to send when motion is detected: 0 – send 0xFF basic set report (ON) when motion is detected (default); 1 – send 0x00 basic set report (OFF) when motion is detected.<br /></p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">0xFF (ON)</option>
+          <option value="1">0x00 (OFF)</option>
+        </options>
+        <advanced>true</advanced>
+      </parameter>
+
+      <parameter name="config_16_1" type="integer" groupName="configuration">
+        <label>16: Motion Detection: Send Binary Sensor Reports</label>
+        <description><![CDATA[
+Enable or disable binary sensor reports when motion is detected.<br /> <h1>Overview</h1><p>If disabled, notification reports will be sent instead<br /></p>
+        ]]></description>
+        <default>1</default>
+        <options>
+          <option value="0">Disable</option>
+          <option value="1">Enable</option>
+        </options>
+        <advanced>true</advanced>
+      </parameter>
+
+      <parameter name="config_18_1" type="integer" groupName="configuration">
+        <label>18: Temperature Unit</label>
+        <description><![CDATA[
+Set temperature reporting units (F or C)<br /> <h1>Overview</h1><p><br /></p>
+        ]]></description>
+        <default>2</default>
+        <options>
+          <option value="1">Celcius</option>
+          <option value="2">Fahrenheit</option>
+        </options>
+      </parameter>
+
       <parameter name="config_19_1" type="integer" groupName="configuration">
         <label>19: LED motion indicator</label>
         <description><![CDATA[
@@ -113,6 +164,14 @@ Enable/disable LED indicator for motion<br /> <h1>Overview</h1><p>Enable or disa
           <option value="0">Disable</option>
           <option value="1">Enable</option>
         </options>
+      </parameter>
+
+      <parameter name="config_32_1" type="integer" groupName="configuration">
+        <label>32: Low Battery Alert Threshold</label>
+        <description>% level for the sensor to report low battery to your hub.</description>
+        <default>10</default>
+        <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_172_2" type="integer" groupName="configuration">

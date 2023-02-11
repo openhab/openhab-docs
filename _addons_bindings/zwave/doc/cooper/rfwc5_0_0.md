@@ -40,6 +40,10 @@ Press the All Off (Inclusion) button one time
 
 Press the All Off (Inclusion) button one time
 
+### General Usage Information
+
+
+
 ## Channels
 
 The following table summarises the channels available for the RFWC5 -:
