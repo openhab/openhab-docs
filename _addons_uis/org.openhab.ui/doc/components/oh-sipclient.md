@@ -23,13 +23,15 @@ The `oh-sipclient` component allows to call and answer SIP calls using the [JsSI
 
 ## Usage
 
+### General
+
 The color of the call icon depends on the state of the connection to the SIP server:
 - yellow: no connection yet, but `oh-sipclient` tries to establish the connection 
 - green: successfully connected to the SIP server, ready to perform calls
 
 ![](./images/oh-sipclient/outgoing.gif)
 
-When the call button is green, a tap on it either directly starts a call or opens a popup to choose from the phonebook.
+When the call button is green, a tap on it either directly starts a call or opens a popup to choose from the `phonebook` property.
 As soon as you start an outgoing call, a hangup button will be displayed.
 The hangup button is coloured yellow, if the call has not been accepted yet.
 If the call has been accepted, the hangup button will become red.
@@ -38,8 +40,24 @@ If the call has been accepted, the hangup button will become red.
 
 When a call is coming in, a green accept and a red decline button are displayed.
 If the call is accepted, a red hangup button is accepted.
+The number or the name (looked up in the `phonebook` property) of the caller is displayed between these two buttons, but this called id can be hidden.
 
 `oh-sipclient` also supports video calling, playing ringtone as well as ringback sounds and performing DTMF operations, e.g. for doorstations to open the door.
+
+This configuration is standard widget configuration and stored on the openHAB server, it is therefore shared across all clients.
+
+### Intercom Functionality
+
+It is even possible to establish an intercom functionality between multiple MainUI clients, e.g. between several wall-mounted tablets across your house.
+
+To use the intercom functionality, it is required that each client gets his own SIP account configured.
+This can be achieved by configuring the widget as usual, but setting SIP username & password in the `Local SIP Account Settings`:
+
+1. Open the UI page with the `oh-sipclient` on the individual client.
+1. Enter `Edit` mode.
+1. `oh-sipclient` will show a button names `Local SIP Account Settings` in the upper right corner.
+1. Insert your SIP account credentials, they are used instead of those stored on the openHAB server.
+1. Insert the SIP address/phone number of your SIP account, it is used to hide your local identity from the call dial.
 
 ## Configuration
 
@@ -58,34 +76,30 @@ If the call is accepted, a red hangup button is accepted.
     Full URL of the WebRTC SIP websocket, e.g. 'wss://siphost:8089/ws' or relative path, e.g. '/ws', for Android & iOS, you need wss (WebSocket secured)
   </PropDescription>
 </PropBlock>
-<PropBlock type="TEXT" name="domain" label="Domain" required="true">
-  <PropDescription>
-    SIP Domain
-  </PropDescription>
+<PropBlock type="TEXT" name="domain" label="SIP Domain" required="true">
 </PropBlock>
-<PropBlock type="TEXT" name="username" label="Username" required="true">
-  <PropDescription>
-    SIP Username
-  </PropDescription>
+<PropBlock type="TEXT" name="username" label="SIP Username">
 </PropBlock>
-<PropBlock type="TEXT" name="password" label="Password" required="true">
-  <PropDescription>
-    SIP Password
-  </PropDescription>
+<PropBlock type="TEXT" name="password" label="SIP Password">
 </PropBlock>
 <PropBlock type="BOOLEAN" name="enableTones" label="Enable tones">
   <PropDescription>
     Enable ringback and ring tone. Not recommended for mobile browsers, might cause issues. Ring tone might only work after interaction with the webpage.
   </PropDescription>
 </PropBlock>
-<PropBlock type="BOOLEAN" name="hideCallerId" label="Hide caller id">
-  <PropDescription>
-    Hides the username of the remote party on incoming call
-  </PropDescription>
-</PropBlock>
 <PropBlock type="TEXT" name="phonebook" label="Phonebook" required="true">
   <PropDescription>
-    Single SIP Address (phone number) for a single call target or a comma-separated list of 'phoneNumber=name' for multiple call targets
+    Single SIP Address (phone number) for a single call target or a comma-separated list of 'phoneNumber=name' for multiple call targets. Used as well to display a name instead of the number for incoming calls.
+  </PropDescription>
+</PropBlock>
+<PropBlock type="TEXT" name="dtmfString" label="DTMF String">
+  <PropDescription>
+    Display a button to send a preset DTMF string while in calls for remote doors, gates, etc...
+  </PropDescription>
+</PropBlock>
+<PropBlock type="BOOLEAN" name="hideCallerId" label="Hide caller id">
+  <PropDescription>
+    Hides the username of the remote party for incoming calls.
   </PropDescription>
 </PropBlock>
 <PropBlock type="BOOLEAN" name="enableVideo" label="Enable Video">
@@ -103,12 +117,7 @@ If the call is accepted, a red hangup button is accepted.
     Default video aspect ratio used to size the widget before video is loaded. Defaults to 4/3, 16/9 and 1 are common alternatives.
   </PropDescription>
 </PropBlock>
-<PropBlock type="TEXT" name="dtmfString" label="DTMF String">
-  <PropDescription>
-    Display a button to send a preset DTMF string while in calls for remote doors, gates, etc...
-  </PropDescription>
-</PropBlock>
-<PropBlock type="BOOLEAN" name="enableSIPDebug" label="Enable SIP debugging to the console">
+<PropBlock type="BOOLEAN" name="enableSIPDebug" label="Enable SIP debugging to the browser console (dev tools)">
 </PropBlock>
 </PropGroup>
 </div>

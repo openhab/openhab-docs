@@ -72,34 +72,30 @@ Usage is explained at the [`oh-sipclient` component docs](/docs/ui/components/oh
     Full URL of the WebRTC SIP websocket, e.g. 'wss://siphost:8089/ws' or relative path, e.g. '/ws', for Android & iOS, you need wss (WebSocket secured)
   </PropDescription>
 </PropBlock>
-<PropBlock type="TEXT" name="domain" label="Domain" required="true">
-  <PropDescription>
-    SIP Domain
-  </PropDescription>
+<PropBlock type="TEXT" name="domain" label="SIP Domain" required="true">
 </PropBlock>
-<PropBlock type="TEXT" name="username" label="Username" required="true">
-  <PropDescription>
-    SIP Username
-  </PropDescription>
+<PropBlock type="TEXT" name="username" label="SIP Username">
 </PropBlock>
-<PropBlock type="TEXT" name="password" label="Password" required="true">
-  <PropDescription>
-    SIP Password
-  </PropDescription>
+<PropBlock type="TEXT" name="password" label="SIP Password">
 </PropBlock>
 <PropBlock type="BOOLEAN" name="enableTones" label="Enable tones">
   <PropDescription>
     Enable ringback and ring tone. Not recommended for mobile browsers, might cause issues. Ring tone might only work after interaction with the webpage.
   </PropDescription>
 </PropBlock>
-<PropBlock type="BOOLEAN" name="hideCallerId" label="Hide caller id">
-  <PropDescription>
-    Hides the username of the remote party on incoming call
-  </PropDescription>
-</PropBlock>
 <PropBlock type="TEXT" name="phonebook" label="Phonebook" required="true">
   <PropDescription>
-    Single SIP Address (phone number) for a single call target or a comma-separated list of 'phoneNumber=name' for multiple call targets
+    Single SIP Address (phone number) for a single call target or a comma-separated list of 'phoneNumber=name' for multiple call targets. Used as well to display a name instead of the number for incoming calls.
+  </PropDescription>
+</PropBlock>
+<PropBlock type="TEXT" name="dtmfString" label="DTMF String">
+  <PropDescription>
+    Display a button to send a preset DTMF string while in calls for remote doors, gates, etc...
+  </PropDescription>
+</PropBlock>
+<PropBlock type="BOOLEAN" name="hideCallerId" label="Hide caller id">
+  <PropDescription>
+    Hides the username of the remote party for incoming calls.
   </PropDescription>
 </PropBlock>
 <PropBlock type="BOOLEAN" name="enableVideo" label="Enable Video">
@@ -117,12 +113,7 @@ Usage is explained at the [`oh-sipclient` component docs](/docs/ui/components/oh
     Default video aspect ratio used to size the widget before video is loaded. Defaults to 4/3, 16/9 and 1 are common alternatives.
   </PropDescription>
 </PropBlock>
-<PropBlock type="TEXT" name="dtmfString" label="DTMF String">
-  <PropDescription>
-    Display a button to send a preset DTMF string while in calls for remote doors, gates, etc...
-  </PropDescription>
-</PropBlock>
-<PropBlock type="BOOLEAN" name="enableSIPDebug" label="Enable SIP debugging to the console">
+<PropBlock type="BOOLEAN" name="enableSIPDebug" label="Enable SIP debugging to the browser console (dev tools)">
 </PropBlock>
 </PropGroup>
 </div>
