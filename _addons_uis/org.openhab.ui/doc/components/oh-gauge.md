@@ -9,9 +9,7 @@ prev: /docs/ui/components/
 
 # oh-gauge - Gauge
 
-<!-- Put a screenshot here if relevant:
-![](./images/oh-gauge/header.jpg)
--->
+![](images/oh-gauge/header.png)
 
 [[toc]]
 

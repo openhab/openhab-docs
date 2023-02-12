@@ -60,7 +60,7 @@ Display a read-only gauge in a card to visualize a quantifiable item
 ### Gauge
 <div class="props">
 <PropGroup name="gauge" label="Gauge">
-  Parameters are passed to the underlying <a target="_blank" class="external text-color-blue" href="https://framework7.io/vue/gauge.html#gauge-properties">Gauge control</a>
+  Parameters are passed to the underlying <a target="_blank" class="external text-color-blue" href="https://framework7.io/vue/gauge.html#gauge-properties">gauge</a>
 <PropBlock type="TEXT" name="item" label="Item" context="item">
   <PropDescription>
     Item to control
