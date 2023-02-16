@@ -34,6 +34,30 @@ The folder contains
 ## Items and Things
 ![blockly_items_and_things](blockly_items_and_things.png)
 
+## Metadata
+
+The test is based on an item name _teststate_ with the namespace _namespaceTest_
+
+The metadata of that namespace _namespaceTest_ is configured as follows:
+
+```
+value: Stefan
+config:
+  ooone: "123"
+  oone:
+    two: "456"
+  one:
+    two:
+      three: "756"
+  field1: 1
+  field2: 2
+  field3: 3
+```
+![metadata read test](blockly_metadata_1.png)
+![metadata write test](blockly_metadata_2.png)
+![metadate loop index test](blockly_metadata_3.png)
+
+
 ## Persistence
 ![blockly_persistence](blockly_persistence.png)
 

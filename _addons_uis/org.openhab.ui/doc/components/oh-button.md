@@ -130,7 +130,7 @@ Button performing an action
     <PropOption value="command" label="Send command" />
     <PropOption value="toggle" label="Toggle Item" />
     <PropOption value="options" label="Command options" />
-    <PropOption value="rule" label="Run rule" />
+    <PropOption value="rule" label="Run scene, script or rule" />
     <PropOption value="popup" label="Open popup" />
     <PropOption value="popover" label="Open popover" />
     <PropOption value="sheet" label="Open sheet" />
@@ -171,14 +171,14 @@ Button performing an action
     Comma-separated list of options; if omitted, retrieve the command options from the Item dynamically. Use <code>value=label</code> format to provide a label different than the option.
   </PropDescription>
 </PropBlock>
-<PropBlock type="TEXT" name="actionRule" label="Rule" context="rule">
+<PropBlock type="TEXT" name="actionRule" label="Scene, Script or Rule" context="rule">
   <PropDescription>
-    Rule to run
+    Scene, Script or Rule to run
   </PropDescription>
 </PropBlock>
-<PropBlock type="TEXT" name="actionRuleContext" label="Rule Context" context="script">
+<PropBlock type="TEXT" name="actionRuleContext" label="Context" context="script">
   <PropDescription>
-    Object representing the optional context to pass to the rule. Edit in YAML or provide a JSON object, e.g. <code>{ "param1": "value1", "param2": { "subkey1": "testing", "subkey2": 123 } }</code>.
+    Object representing the optional context to pass. Edit in YAML or provide a JSON object, e.g. <code>{ "param1": "value1", "param2": { "subkey1": "testing", "subkey2": 123 } }</code>.
   </PropDescription>
 </PropBlock>
 <PropBlock type="TEXT" name="actionPage" label="Page" context="page">
@@ -289,7 +289,7 @@ Button performing an action
     <PropOption value="command" label="Send command" />
     <PropOption value="toggle" label="Toggle Item" />
     <PropOption value="options" label="Command options" />
-    <PropOption value="rule" label="Run rule" />
+    <PropOption value="rule" label="Run scene, script or rule" />
     <PropOption value="popup" label="Open popup" />
     <PropOption value="popover" label="Open popover" />
     <PropOption value="sheet" label="Open sheet" />
@@ -330,14 +330,14 @@ Button performing an action
     Comma-separated list of options; if omitted, retrieve the command options from the Item dynamically. Use <code>value=label</code> format to provide a label different than the option.
   </PropDescription>
 </PropBlock>
-<PropBlock type="TEXT" name="taphold_actionRule" label="Rule" context="rule">
+<PropBlock type="TEXT" name="taphold_actionRule" label="Scene, Script or Rule" context="rule">
   <PropDescription>
-    Rule to run
+    Scene, Script or Rule to run
   </PropDescription>
 </PropBlock>
-<PropBlock type="TEXT" name="taphold_actionRuleContext" label="Rule Context" context="script">
+<PropBlock type="TEXT" name="taphold_actionRuleContext" label="Context" context="script">
   <PropDescription>
-    Object representing the optional context to pass to the rule. Edit in YAML or provide a JSON object, e.g. <code>{ "param1": "value1", "param2": { "subkey1": "testing", "subkey2": 123 } }</code>.
+    Object representing the optional context to pass. Edit in YAML or provide a JSON object, e.g. <code>{ "param1": "value1", "param2": { "subkey1": "testing", "subkey2": 123 } }</code>.
   </PropDescription>
 </PropBlock>
 <PropBlock type="TEXT" name="taphold_actionPage" label="Page" context="page">
