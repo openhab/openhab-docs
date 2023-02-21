@@ -44,6 +44,7 @@ Iterate over an array and repeat the children components in the default slot
     <PropOption value="itemsWithTags" label="Items with tags in the &quot;itemTags&quot; parameter" />
     <PropOption value="itemStateOptions" label="State options of the item specified in &quot;itemOptions&quot;" />
     <PropOption value="itemCommandOptions" label="Command options of the item specified in &quot;itemOptions&quot;" />
+    <PropOption value="rulesWithTags" label="Rules with tags in the &quot;ruleTags&quot; parameter" />
   </PropOptions>
 </PropBlock>
 <PropBlock type="TEXT" name="in" label="Source array">
@@ -74,6 +75,11 @@ Iterate over an array and repeat the children components in the default slot
 <PropBlock type="TEXT" name="itemTags" label="Item Tags">
   <PropDescription>
     Iterate over items with the given tags (comma-separated, for "itemsWithTags" source type)
+  </PropDescription>
+</PropBlock>
+<PropBlock type="TEXT" name="ruleTags" label="Rule Tags">
+  <PropDescription>
+    Iterate over rules with the given tags (comma-separated, for "rulesWithTags" source type)
   </PropDescription>
 </PropBlock>
 <PropBlock type="TEXT" name="itemOptions" label="Item with Options">

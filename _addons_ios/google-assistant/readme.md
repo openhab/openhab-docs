@@ -24,7 +24,7 @@ If you have any issues, questions or an idea for additional features, please tak
 ## Latest Changes
 
 ::: tip State of this document
-This documentation refers to release [v3.6.1](https://github.com/openhab/openhab-google-assistant/releases/tag/v3.6.1) of [openHAB Google Assistant](https://github.com/openhab/openhab-google-assistant) published on 2023-02-09
+This documentation refers to release [v3.6.2](https://github.com/openhab/openhab-google-assistant/releases/tag/v3.6.2) of [openHAB Google Assistant](https://github.com/openhab/openhab-google-assistant) published on 2023-02-21
 :::
 
 ### v3.6.0
