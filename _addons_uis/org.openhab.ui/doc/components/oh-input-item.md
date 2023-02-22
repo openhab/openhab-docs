@@ -125,6 +125,11 @@ Display an input field in a list
     Use the formatted state as the value for the input control
   </PropDescription>
 </PropBlock>
+<PropBlock type="DECIMAL" name="step" label="Step">
+  <PropDescription>
+    Step value when type set to number, any if left empty
+  </PropDescription>
+</PropBlock>
 <PropBlock type="BOOLEAN" name="showTime" label="Show time">
   <PropDescription>
     Display time when type set to datepicker
