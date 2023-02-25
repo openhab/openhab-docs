@@ -149,6 +149,7 @@ Expressions are string literals beginning with the symbol `=` and everything aft
 
 - `items` is a dynamic key/value dictionary allowing you to retrieve the state of items; the result of `items.Item1` will be an object like `{ state: '23', displayState: '23 °C' }` (`displayState` may be omitted). You can therefore use `items.Item1.state` to use the current state of Item1 in your expression, if it changes, it will be reevaluated
 - `props` is a dictionary of the key/values of self-defined props for the current personal widget, or page (pages, like any root UI components, may indeed have props). It is indispensable to use props in expressions when developing a personal widget
+- `config` is a dictionary of the key/values of the configuration of the current component/widget
 - `vars` is a dictionary of variables (see below) that are available in the component's context
 - `loop` is a dictionary containing iteration information when you're repeating components from a source collection, it is defined only when in the context of a `oh-repeater` component
 - the JavaScript `Math` object (so you can use `Math.floor(...)`, `Math.round(...)` and the like)
