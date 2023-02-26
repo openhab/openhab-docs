@@ -20,7 +20,7 @@ Indoor Siren 6 and Doorbell 6<br /> <h1>Overview</h1><p>Siren 6 is your home’s
           <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=POWER_MANAGEMENT</property>
         </properties>
       </channel>
-      <channel id="alarm_burglar" typeId="alarm_burglar">
+      <channel id="alarm_tamper" typeId="alarm_tamper">
         <label>Alarm (burglar)</label>
         <properties>
           <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=BURGLAR</property>

@@ -25,11 +25,9 @@ The TILT-ZWAVE2.5-ECO does not permanently listen for messages sent from the con
 
 ### Inclusion Information
 
-1. Start by placing the controller into inclusion mode.
-
-2. Activate inclusion mode for the sensor by inserting the battery. When the inclusion process is complete the red LED will turn on for approximately 10 seconds and then it will go out. If the LED continues to flash, repeat the inclusion process.
-
-3. Test the garage door sensor before mounting it. Hold the sensor in your hand. Flip the sensor upside-down and watch the LED while doing so. The LED will flash each time the position of the sensor is changed. If your Z- Wave network has a software interface you may verify that the messages from the sensor are being received each time the sensor is flipped.
+  1. Start by placing the controller into inclusion mode.
+  2. Activate inclusion mode for the sensor by inserting the battery. When the inclusion process is complete the red LED will turn on for approximately 10 seconds and then it will go out. If the LED continues to flash, repeat the inclusion process.
+  3. Test the garage door sensor before mounting it. Hold the sensor in your hand. Flip the sensor upside-down and watch the LED while doing so. The LED will flash each time the position of the sensor is changed. If your Z- Wave network has a software interface you may verify that the messages from the sensor are being received each time the sensor is flipped.
 
 If you need to repeat the inclusion process, repeat STEP ONE above, then for STEP TWO you will need to simply remove the cover of the sensor, remove the battery for 5 seconds, reinsert the battery, and replace the sensor cover. This will re-enter the sensor in inclusion mode.
 
@@ -48,6 +46,10 @@ To save power, this sensor sleeps most of the time and is therefore not awake to
 
 The sensor will wake up every so often and when the case is closed, it will send a Wake-Up Notification to allow the life line master node controller that the sensor is now available for any queued messages that the controller may have for the sensor. **The time between Wake-Up Notifications can be configured with the Wake-Up Notification command class to be between 1 hour and 1 week with interval steps of 200 seconds.**
 
+### General Usage Information
+
+
+
 ## Channels
 
 The following table summarises the channels available for the TILT-ZWAVE2.5-ECO -:
@@ -55,7 +57,7 @@ The following table summarises the channels available for the TILT-ZWAVE2.5-ECO 
 | Channel Name | Channel ID | Channel Type | Category | Item Type |
 |--------------|------------|--------------|----------|-----------|
 | Binary Sensor  [Deprecated]| sensor_binary | sensor_binary |  | Switch | 
-| Alarm (power) | alarm_power | alarm_power | Energy | Switch | 
+| Alarm Battery Status | alarm_battery | alarm_battery | LowBattery | Switch | 
 | Alarm (access) | alarm_access | alarm_access | Door | Switch | 
 | Alarm (burglar) | alarm_burglar | alarm_burglar | Door | Switch | 
 | Door State | sensor_door | sensor_door | Door | Contact | 
@@ -76,10 +78,10 @@ The following state translation is provided for this channel to the ```Switch```
 
 **Note:** This channel is marked as deprecated so should not be used.
 
-### Alarm (power)
-Indicates if a power alarm is triggered.
+### Alarm Battery Status
+Indicates if the low battery alarm is triggered.
 
-The ```alarm_power``` channel is of type ```alarm_power``` and supports the ```Switch``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
+The ```alarm_battery``` channel is of type ```alarm_battery``` and supports the ```Switch``` item and is in the ```LowBattery``` category. This is a read only channel so will only be updated following state changes from the device.
 
 The following state translation is provided for this channel to the ```Switch``` item type -:
 

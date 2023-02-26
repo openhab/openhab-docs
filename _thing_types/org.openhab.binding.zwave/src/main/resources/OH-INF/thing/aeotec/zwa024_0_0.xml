@@ -50,7 +50,7 @@ Multisensor 7<br /> <h1>Overview</h1><p>Aeotec MultiSensor 7 was developed to de
           <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=SYSTEM</property>
         </properties>
       </channel>
-      <channel id="alarm_burglar" typeId="alarm_burglar">
+      <channel id="alarm_tamper" typeId="alarm_tamper">
         <label>Alarm (burglar)</label>
         <properties>
           <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=BURGLAR</property>
@@ -58,6 +58,12 @@ Multisensor 7<br /> <h1>Overview</h1><p>Aeotec MultiSensor 7 was developed to de
       </channel>
       <channel id="alarm_power" typeId="alarm_power">
         <label>Alarm (power)</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=POWER_MANAGEMENT</property>
+        </properties>
+      </channel>
+      <channel id="alarm_battery" typeId="alarm_battery">
+        <label>Alarm (battery)</label>
         <properties>
           <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=POWER_MANAGEMENT</property>
         </properties>

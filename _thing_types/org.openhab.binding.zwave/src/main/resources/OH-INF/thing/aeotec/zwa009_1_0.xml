@@ -47,7 +47,13 @@ Temperature and Humidity Sensor<br /> <h1>Overview</h1><p>Small sensor that offe
       <channel id="alarm_battery" typeId="alarm_battery">
         <label>Alarm (battery)</label>
         <properties>
-          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM</property>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=POWER_MANAGEMENT</property>
+        </properties>
+      </channel>
+      <channel id="alarm_heat" typeId="alarm_heat">
+        <label>Alarm (heat)</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=HEAT</property>
         </properties>
       </channel>
       <channel id="battery-level" typeId="system.battery-level">

@@ -104,6 +104,86 @@ Sensor will send a new temperature report if difference exceeds this threshold<b
         <limitToOptions>false</limitToOptions>
       </parameter>
 
+      <parameter name="config_5_1" type="integer" groupName="configuration">
+        <label>5: Temperature Alarm High</label>
+        <description><![CDATA[
+Set the temperature level for a heat alert notification to be sent to your hub and devices associated in Group 2.<br /> <h1>Overview</h1><p>Set the temperature level for a high heat alert notification to be sent to your hub and devices associated in Group 2.<br /></p>
+        ]]></description>
+        <default>120</default>
+        <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_6_1" type="integer" groupName="configuration">
+        <label>6: High Temperature Alarm Reporting</label>
+        <description><![CDATA[
+Decide if and how the sensor should report a heat alert.<br /> <h1>Overview</h1><p>Values: 0 – no notifications sent to the hub or association groups; 1 – notification sent to the hub only; 2 – Basic Set On command sent to devices in Group 2 only; 3 – notification sent to the hub (lifeline) and Basic Set On to the devices associated in Group 2; 4 – Basic Set Off command sent to devices in Group 2 only; 5 – notification sent to the hub and Basic Set Off to the devices associated in Group 2; 6 – Basic Set On and Off commands sent to devices in Group 2 only; 7 – notification sent to the hub and Basic Set On and Off to the devices associated in Group 2 (default).<br /></p>
+        ]]></description>
+        <default>7</default>
+        <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_7_1" type="integer" groupName="configuration">
+        <label>7: Temperature Alarm Low</label>
+        <description><![CDATA[
+Set the temperature level for a freeze / low temperature alert notification to be sent to your hub and devices associated in Group 3.<br /> <h1>Overview</h1><p>Set the temperature level for a freeze / low temperature alert notification to be sent to your hub and devices associated in Group 3.<br /></p>
+        ]]></description>
+        <default>10</default>
+        <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_8_1" type="integer" groupName="configuration">
+        <label>8: Low Temperature Alarm Reporting</label>
+        <description><![CDATA[
+Decide if and how the sensor should report a low temperature / freeze alert.<br /> <h1>Overview</h1><p>Values: 0 – no notifications sent to the hub or association groups; 1 – notification sent to the hub only; 2 – Basic Set On command sent to devices in Group 3 only; 3 – notification sent to the hub (lifeline) and Basic Set On to the devices associated in Group 3; 4 – Basic Set Off command sent to devices in Group 3 only; 5 – notification sent to the hub and Basic Set Off to the devices associated in Group 3; 6 – Basic Set On and Off commands sent to devices in Group 3 only; 7 – notification sent to the hub and Basic Set On and Off to the devices associated in Group 3 (default).<br /></p>
+        ]]></description>
+        <default>7</default>
+        <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_9_1" type="integer" groupName="configuration">
+        <label>9: Humidity Alerts High</label>
+        <description><![CDATA[
+Set the humidity level for a high humidity alert notification to be sent to your hub and devices associated in Group 4.<br /> <h1>Overview</h1><p>Values: 0 – disabled (default); 1 – 100 (%).<br /></p>
+        ]]></description>
+        <default>0</default>
+        <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_10_1" type="integer" groupName="configuration">
+        <label>10: High Humidity Alarm Reporting</label>
+        <description><![CDATA[
+Decide if and how the sensor should report a high humidity alert.<br /> <h1>Overview</h1><p>Values: 0 – no notifications sent to the hub or association groups; 1 – notification sent to the hub only; 2 – Basic Set On command sent to devices in Group 4 only; 3 – notification sent to the hub (lifeline) and Basic Set On to the devices associated in Group 4; 4 – Basic Set Off command sent to devices in Group 4 only; 5 – notification sent to the hub and Basic Set Off to the devices associated in Group 4; 6 – Basic Set On and Off commands sent to devices in Group 4 only; 7 – notification sent to the hub and Basic Set On and Off to the devices associated in Group 4 (default).<br /></p>
+        ]]></description>
+        <default>7</default>
+        <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_11_1" type="integer" groupName="configuration">
+        <label>11: Humidity Alerts Low</label>
+        <description><![CDATA[
+Set the humidity level for a low humidity alert notification to be sent to your hub and devices associated in Group 5.<br /> <h1>Overview</h1><p>Values: 0 – disabled (default); 1 – 100 (%).<br /></p>
+        ]]></description>
+        <default>0</default>
+        <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_12_1" type="integer" groupName="configuration">
+        <label>12: Low Humidity Alarm Reporting</label>
+        <description><![CDATA[
+Decide if and how the sensor should report a low humidity alert.<br /> <h1>Overview</h1><p>Values: 0 – no notifications sent to the hub or association groups; 1 – notification sent to the hub only; 2 – Basic Set On command sent to devices in Group 5 only; 3 – notification sent to the hub (lifeline) and Basic Set On to the devices associated in Group 5; 4 – Basic Set Off command sent to devices in Group 5 only; 5 – notification sent to the hub and Basic Set Off to the devices associated in Group 5; 6 – Basic Set On and Off commands sent to devices in Group 5 only; 7 – notification sent to the hub and Basic Set On and Off to the devices associated in Group 5 (default).<br /></p>
+        ]]></description>
+        <default>7</default>
+        <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
       <parameter name="config_13_1" type="integer" groupName="configuration">
         <label>13: Temperature Scale</label>
         <description><![CDATA[

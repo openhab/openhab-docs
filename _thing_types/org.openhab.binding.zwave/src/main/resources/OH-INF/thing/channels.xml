@@ -168,7 +168,22 @@
         <label>Heat alarm</label>
         <description>Indicates if a heat alarm is triggered
         </description>
-        <category>Fire</category>
+        <category>temperature_hot</category>
+        <state readOnly="true">
+            <options>
+                <option value="OFF">OK</option>
+                <option value="ON">Alarm</option>
+            </options>
+        </state>
+    </channel-type>
+
+    <!-- Cold Temperature Alarm Channel -->
+    <channel-type id="alarm_cold">
+        <item-type>Switch</item-type>
+        <label>Freeze alarm</label>
+        <description>Indicates if a low temp alarm is triggered
+        </description>
+        <category>temperature_cold</category>
         <state readOnly="true">
             <options>
                 <option value="OFF">OK</option>
@@ -280,6 +295,21 @@
         <description>
         </description>
         <category></category>
+        <state readOnly="true">
+            <options>
+                <option value="OFF">OK</option>
+                <option value="ON">Alarm</option>
+            </options>
+        </state>
+    </channel-type>
+    
+    <!-- Weather Alarm Channel -->
+    <channel-type id="alarm_humidity">
+        <item-type>Switch</item-type>
+        <label>Humidity-Moisture Alarm</label>
+        <description>
+        </description>
+        <category>Humidity</category>
         <state readOnly="true">
             <options>
                 <option value="OFF">OK</option>

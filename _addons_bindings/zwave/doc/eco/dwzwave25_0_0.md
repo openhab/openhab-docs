@@ -63,7 +63,7 @@ The following table summarises the channels available for the DWZWAVE25 -:
 | Binary Sensor | sensor_binary | sensor_binary |  | Switch | 
 | Alarm (tamper) | alarm_tamper | alarm_tamper |  | Switch | 
 | Sensor (Binary) | sensor_door | sensor_door | Door | Contact | 
-| Alarm (power) | alarm_power | alarm_power | Energy | Switch | 
+| Alarm Battery Status | alarm_battery | alarm_battery | LowBattery | Switch | 
 | Battery Level | battery-level | system.battery_level | Battery | Number |
 
 ### Binary Sensor
@@ -102,10 +102,10 @@ The following state translation is provided for this channel to the ```Contact``
 | OPEN | Open |
 | CLOSED | Closed |
 
-### Alarm (power)
-Indicates if a power alarm is triggered.
+### Alarm Battery Status
+Indicates if the low battery alarm is triggered.
 
-The ```alarm_power``` channel is of type ```alarm_power``` and supports the ```Switch``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
+The ```alarm_battery``` channel is of type ```alarm_battery``` and supports the ```Switch``` item and is in the ```LowBattery``` category. This is a read only channel so will only be updated following state changes from the device.
 
 The following state translation is provided for this channel to the ```Switch``` item type -:
 

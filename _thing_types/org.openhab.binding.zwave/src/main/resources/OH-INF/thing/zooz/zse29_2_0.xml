@@ -20,10 +20,10 @@ Outdoor Motion Sensor v2<br /> <h1>Overview</h1><p>OUTDOOR SENSOR: Introducing t
           <property name="binding:*:DecimalType">COMMAND_CLASS_SENSOR_MULTILEVEL;type=LUMINANCE</property>
         </properties>
       </channel>
-      <channel id="alarm_power" typeId="alarm_power">
-        <label>Alarm (power)</label>
+      <channel id="alarm_battery" typeId="alarm_battery">
+        <label>Alarm Battery Status</label>
         <properties>
-          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=POWER_MANAGEMENT</property>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM</property>
         </properties>
       </channel>
       <channel id="alarm_motion" typeId="alarm_motion">
