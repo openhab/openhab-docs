@@ -25,7 +25,7 @@ The Component Reference provide details on what you can put in a certain compone
 Sometimes, the slots can be seen as different placeholders within a component where new components may be added. For instance, cell widgets have a `header` slot which represents the part of the cell when not expanded.
 The `default` slot is the space in the cell which becomes visible when the cell is expanded.
 
-In various parts of the UI page designers you can "focus" on a particular component usually by selecting the **Edit YAML** item in a black context menu.
+In various parts of the UI page designers can "focus" on a particular component usually by selecting the **Edit YAML** item in a black context menu.
 
 Below is a typical component as represented in YAML:
 
@@ -82,7 +82,7 @@ config: ...
 slots: ...
 ```
 
-- an **uid** (its Unique IDentifier)
+- a **uid** (its Unique IDentifier)
 - a **props** structure describing its own properties; props define parameters and parameter groups following a subset of the configuration description schema found in bindings, services and throughout openHAB: see [Configuration Descriptions](/docs/developer/bindings/config-xml.html)
 - a set of **tags**
 
@@ -111,7 +111,7 @@ However, it's important to know that there are limitations and sometimes editing
   Sometimes it will be indicated somewhere when configuring the widget, or in the openHAB documentation itself, on the other hand some options won't be available for use (for instance, because they expect a callback function and you cannot define those in the widget's config) or need some transformation.
 
 1. Sometimes you'll want to use an expression to configure the property, but the UI will get in your way - for instance, it will display an item picker while your intention is to set the prop value to be `=props.item1`.
-  See below to learn more about expressions.
+  See below to learn more about [expressions](#dynamically-configuring-components-with-expressions).
 
 1. To quickly and efficiently duplicate similar widgets with only a few differences, it is always way easier to copy/paste the relevant YAML in the editor.
 
@@ -119,12 +119,12 @@ However, it's important to know that there are limitations and sometimes editing
 
 Besides, there are several options that virtually all widgets in layout pages, map pages and plan pages accept, all of which are not currently available in the config sheet:
 
-- `visible`: you can specify a `false` boolean to this option to hide the widget. This powerful feature, combined with expressions (see below), allows you to dynamically show widgets or even entire sections (if you use it on layout widgets containing other widgets), depending on the state of your items
+- `visible`: you can specify a `false` boolean to this option to hide the widget. This powerful feature, combined with [expressions](#dynamically-configuring-components-with-expressions), allows you to dynamically show widgets or even entire sections (if you use it on layout widgets containing other widgets), depending on the state of your items
 Example: `visible: =items.TV_Powered.state === 'ON' && items.TV_Input.state === 'HDMI1'`
 - `visibleTo`: this accepts an array of strings like `role:administrator`, `role:user`, or `user:<userid>`, allowing the widget to be only visible to specific users or those with a certain role.
 Example: `visibleTo: ["user:scott", "role:administrator"]`
 - `class` and `style` are  [standard Vue.js attributes](https://vuejs.org/v2/guide/class-and-style.html) and can be used to either alter the CSS classes or add inline styling to the component.
-See "Styling" below.
+[See "Styling" below](#techniques-for-styling-widgets).
 
 ### Types of Widgets
 
@@ -136,8 +136,8 @@ You may also use them in a slot of another widget, for those which define some, 
 - the **Standard** library, which has several classes of widgets:
   - **layout widgets**, examples: `oh-block`, `oh-masonry`, `oh-grid-row`, `oh-grid-col` that you usually add with the designer to a layout page
   - **standalone widgets**, examples: `oh-label-card`, `oh-slider-card`, `oh-player-card` - usually not much more than widgets from the System library wrapped in a card
-  - **list item widgets**, examples: `oh-list-item`, `oh-stepper-item`, `oh-toggle-item` - widgets that are thinner than the standalone ones, which you can only add a part of a list (`oh-list` or `oh-list-card`)
-  - **cell widgets**, examples: `oh-cell`, `oh-knob-cell`, `oh-colorpicker-cell`: these widgets are fixed-size cells that you can only add to a `oh-cells` container widget immediately below a `oh-block` in a layout page - they will either perform an action - switching a light on & off - or expanding to reveal additional controls
+  - **list item widgets**, examples: `oh-list-item`, `oh-stepper-item`, `oh-toggle-item` - widgets that are thinner than the standalone ones, which you can only add as a part of a list (`oh-list` or `oh-list-card`)
+  - **cell widgets**, examples: `oh-cell`, `oh-knob-cell`, `oh-colorpicker-cell`: these widgets are fixed-size cells that you can only add to an `oh-cells` container widget immediately below an `oh-block` in a layout page - they will either perform an action - switching a light on & off - or expanding to reveal additional controls
   - **page-specific widgets**, for instance map pages have `oh-map-marker` or `oh-map-circle-marker`, charts have different types of widgets than the rest to represent axes, series etc.
 
 See the [Component Reference](./components/) for details about the different libraries of components.
@@ -150,8 +150,8 @@ Expressions are string literals beginning with the symbol `=` and everything aft
 - `items` is a dynamic key/value dictionary allowing you to retrieve the state of items; the result of `items.Item1` will be an object like `{ state: '23', displayState: '23 °C' }` (`displayState` may be omitted). You can therefore use `items.Item1.state` to use the current state of Item1 in your expression, if it changes, it will be reevaluated
 - `props` is a dictionary of the key/values of self-defined props for the current personal widget, or page (pages, like any root UI components, may indeed have props). It is indispensable to use props in expressions when developing a personal widget
 - `config` is a dictionary of the key/values of the configuration of the current component/widget
-- `vars` is a dictionary of variables (see below) that are available in the component's context
-- `loop` is a dictionary containing iteration information when you're repeating components from a source collection, it is defined only when in the context of a `oh-repeater` component
+- `vars` is a dictionary of [variables](#variables) that are available in the component's context
+- `loop` is a dictionary containing iteration information when you're repeating components from a source collection, it is defined only when in the context of an `oh-repeater` component
 - the JavaScript `Math` object (so you can use `Math.floor(...)`, `Math.round(...)` and the like)
 - the JavaScript `Number` object (see [mdn web docs_: Number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number))
 - the JavaScript `JSON` object to parse or produce JSON
@@ -241,7 +241,7 @@ Configuring the action type reveal more options in the action sheet:
 
 ::: tip
 
-In your own personal widgets (see below), you can define a parameter group with an `action` context to automatically define implicit props that you can pass "en masse" to built-in components that accept actions with the `actionPropsParameterGroup` property:
+In your own personal widgets (see below code snippet), you can define a parameter group with an `action` context to automatically define implicit props that you can pass "en masse" to built-in components that accept actions with the `actionPropsParameterGroup` property:
 
 ```yaml
 props:
@@ -317,7 +317,7 @@ Variables are a way to allow more complex scenarios in pages & personal widget d
 
 Variables can be used using several methods:
 
-- the `variable` config parameter of `oh-gauge` (read-only),
+- the `variable` config parameter of an `oh-gauge` (read-only),
   `oh-input`, `oh-knob`, `oh-slider`, `oh-stepper`, `oh-toggle`
   will accept a variable name and control it instead of
   sending commands to items if set.
@@ -410,7 +410,7 @@ For example, to set the height of a component to the current page's maximum cont
 calc(96vh - var(--f7-navbar-height) - var(--f7-toolbar-height))
 ```
 
-This subtracts the height of the navbar and the toolbar, which are stored in CSS vars, from 96% of the viewports height.
+This subtracts the height of the navbar and the toolbar, which are stored in CSS vars, from 96% of the viewport's height.
 
 These resources will help you with `calc()`:
 
