@@ -19,6 +19,31 @@ This section explains only the blocks that have been added to the standard block
 One of the most commonly used standard blocks are conditions blocks.
 More about conditions can be viewed at ![youtube](../images/blockly/youtube-logo-small.png) [How to use IF and ELSE](https://youtu.be/hSRfooBKn9A?t=445).
 
+## Math
+
+The Math section mainly consists of standard Blockly blocks.
+
+two new math blocks were added for bitwise operations:
+
+### Bitwise operators
+
+_Function:_ The block allows to compute the following operations with two quantities:
+
+- bitwise and &
+- bitwise or |
+- bitwise xor ^
+- bitwise left shift <<
+- bitwise right shift >>
+- bitwise unary right shift >>>
+
+![blockly-bitwise-operators](../images/blockly/blockly-bitwise-operators.png)
+
+### Bitwise invert
+
+_Function:_ The bitwise NOT (~) operator inverts the bits of its operand.
+
+![blockly-bitwise-not.png](../images/blockly/blockly-bitwise-not.png)
+
 ## Text
 
 The Text section is the general section that allows text or string manipulation
