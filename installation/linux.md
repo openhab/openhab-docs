@@ -261,6 +261,7 @@ sudo systemctl enable openhab.service
 The first start may take **up to 15 minutes**, this is a good time to reward yourself with hot coffee or a freshly brewed tea!
 
 You should be able to reach the openHAB Dashboard at `http://openhab-device:8080` at this point.
+Be sure to check whether you need to adjust your [firewall settings](#required-ports-and-firewalls).
 If you're new to openHAB, then you should checkout the [beginner's tutorial]({{base}}/tutorial/first_steps.html)!
 
 ![The openHAB Dashboard page](images/Home_Openhab_3.png)
@@ -836,3 +837,22 @@ When asked, authenticate with the username "openhab" and the chosen password.
 If you are not able to connect, try with the IP of your device (e.g. `smb://openhab@192.168.0.2` or `\\192.168.0.2`).
 
 If everything went well, you are set and ready to start [configuring]({{base}}/configuration/index.html) your openHAB system.
+
+### Required Ports and Firewalls
+
+Depending on your Linux distribution your system might come with a preconfigured firewall that could prevent access to the openHAB Dashboard.
+Refer to your distribution's firewall documentation to open the required ports.
+
+| Port | Protocol | Purpose |
+|------|----------|---------|
+| 8080 | TCP | openHAB Dashboard via HTTP |
+| 8443 | TCP | openHAB Dashboard via HTTPS |
+| 5007 | TCP | Language Server Protocol (LSP) for VS Code |
+
+On a system using firewalld you could use the following commands:
+
+```shell
+sudo firewall-cmd --permanent --add-port=8080/tcp
+sudo firewall-cmd --permanent --add-port=8443/tcp
+sudo firewall-cmd --permanent --add-port=5007/tcp
+```
