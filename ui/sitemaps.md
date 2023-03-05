@@ -391,7 +391,7 @@ Input item=<itemname> [label="<labelname>"] [icon="<iconname>"]
 This element allows entering of text or numbers and updating the underlying items.
 This can for example be useful to update manually collected meter readings and storing the information in an item.
 Text, number or number with unit values can be updated in the respective item types.
-[Formatting]({{base}}/configuration/items.html#item-label) in the label parameter will format the current value, but the value update will be as entered in the field.
+[Formatting](/docs/configuration/items.html#item-label) in the label parameter will format the current value, but the value update will be as entered in the field.
 E.g. this makes it possible to use formatting like `[%.0f %unit%]` to show the current value without fractions, but still update to whatever is entered.
 
 Note that this element type may not be supported on all user interfaces that support sitemaps.
