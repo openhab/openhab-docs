@@ -495,8 +495,7 @@ Video url="https://demo.openhab.org/Hue.m4v"
 
 ```java
 Chart [item=<itemname>] [icon="<iconname>"] [label="<labelname>"] [refresh=xxxx]
-[period=xxxx] [service="<service>"] [begin=yyyyMMddHHmm] [end=yyyyMMddHHmm] [legend=true/false]
-[forceasitem=true/false]
+[period=xxxx] [service="<service>"] [legend=true/false] [forceasitem=true/false]
 ```
 
 Adds a time-series chart object for the display of logged data.
@@ -508,9 +507,6 @@ Adds a time-series chart object for the display of logged data.
     Therefore, for an installation with only a single persistence service, this is not required.
 
 - `period` is the scale of the time axis. Valid values are `h, 4h, 8h, 12h, D, 2D, 3D, W, 2W, M, 2M, 4M or Y`.
-
-- `begin` / `end` sets the beginning and end of the time axis.
-    Valid values are in the format: `yyyyMMddHHmm` (`yyyy` = year, `MM` = month, `dd` = day, `HH` = hour (0-23), `mm` = minutes).
 
 - `legend` is used to show or to hide the chart legend.
     Valid values are `true` (always show the legend) and `false` (never show the legend).
