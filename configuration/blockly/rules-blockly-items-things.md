@@ -62,10 +62,9 @@ Function: Gets an **Item** for use in other item related functions
 
 - Clicking 'MyItem' displays a list of **Items** to pick from.
 - Technically this block returns an item _object_, to be used to retrieve specific attributes using other blocks (see below).
-- As this block does not return a String it cannot be directly attached to a log-block, as demonstrated below.
+- In openHAB3 this block does not return a String, so it cannot be directly attached to a log-block, as demonstrated below.
   - **Tip:** Often you do want to retrieve the state, hence use the "Get State of Item"-block below
   - The block returns the item itself.
-If you want to log the items information you can assign it to a variable first and the log the variable.
 
 ![logging-getItem](../images/blockly/blockly-getItem-with-var.png)
 
@@ -133,6 +132,8 @@ If you need an item that has one of multiple tags, then you need to use one bloc
 
 Function: Get either the current name, label, state, category, tags, groups, or type of an item as a String
 
+It requires an [item object](#get-item) to be connected.
+
 These attributes are returned with the following types:
 
 - name: String
@@ -152,9 +153,6 @@ These attributes are returned with the following types:
 ```
 
 - type: String
-
-Depending on your openHAB version (pre-3.3) this block may not connect as expected.
-As a workaround attach the block to a variable first, and use the variable in the rest of the script.
 
 ![blockly-getItemAttributes-fix](../images/blockly/blockly-getItemAttributes-fix.png)
 
@@ -195,8 +193,61 @@ More about that topic can be viewed at ![youtube](../images/blockly/youtube-logo
 - Get the state of _MainSwitch_ and
 - Immediately send it as a command to _F2_Office_Main_Light_
 
-![blockly-sendCommandExample2)](../images/blockly/blockly-sendCommandExample2.png)
+![blockly-sendCommandExample2](../images/blockly/blockly-sendCommandExample2.png)
 Ensure that the receiving item can handle the state of the 'sending' item.
+
+## Item Metadata
+
+The **metadata blocks**  provide an easy way of accessing namespace metadata information both for reading and writing.
+Accessing config metadata on hierarchical levels as well as variable support that allows iteration over computed names is supported (see the examples below).
+
+Note: Metadata blocks are not available for Nashorn but only for GraalJS / JS Scripting.
+
+Here is an _expire_ metadata definition which is visualized as
+
+![metadata-expire](../images/blockly/blockly-metadata-expire.png)
+
+and modelled in YAML as
+
+```yaml
+value: 0h3m0s
+config:
+  ignoreStateUpdates: "true"
+  ignoreCommands: "true"
+with the blocks that can access it:
+
+![blockly-metadata](../images/blockly/blockly-metadata.png)
+
+There a two different type of blocks:
+The value block is the main one for the _value_ of the namespace, which is also directly shown in the MainUI's list of an item's metadata, while the _config_ part holds more complex configuration of that metadata structure below the entry _config_.
+
+The following blocks allow to _change_ the config values in the namespace _expire_:
+
+![blockly-metadata-change](../images/blockly/blockly-metadata-change.png)
+
+Here is a definition of a more complex metadata namespace:
+
+```yaml
+value: ON
+config:
+  ooone: "123"
+  oone:
+    two: "456"
+  one:
+    two:
+      three: "756"
+  field1: 1
+  field2: 2
+  field3: 3
+```
+
+which allows deep hierarchy property access via a configkey-dot-notation like `one.two.three`
+
+![blockly-metadata-config-key.png](../images/blockly/blockly-metadata-config-key.png)
+
+Using variables and loops properties like field1, field2, field3 can even be accessed in a computed way:
+
+![blockly-metadata-loop.png](../images/blockly/blockly-metadata-loop.png)
 
 ## Things
 
