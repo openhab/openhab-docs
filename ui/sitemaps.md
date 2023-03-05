@@ -675,7 +675,7 @@ Generally, you can expected that valid HTML colors will be accepted (e.g. `green
 The color names above are agreed on between all openHAB UIs and are therefore your safest choice.
 Colors defined by a human-readable name may be adjusted for higher contrast, e.g. on a dark theme `black` may be displayed as white, because white has a higher contrast to the dark background compared to black.
 
-For better theming support the Android app also accepts the keywords `primary` and `secondary` as colors.
+For better theming support Basic UI and the Android app also accepts the keywords `primary` and `secondary` as colors.
 They will be mapped to the corresponding colors of the UI theme.
 
 ### Icons
