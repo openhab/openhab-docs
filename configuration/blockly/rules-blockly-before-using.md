@@ -37,7 +37,7 @@ In the main UI as an admin you can go to _Help & About_ and will have the differ
 - Finder -> Go -> Connect to Server
   - Enter the username and server name to connect to the openHAB Server
 
-  ![macos-share-1.png](../images/blockly/blockly-openhab-macos-share-1.png)
+  ![macos-share-1](../images/blockly/blockly-openhab-macos-share-1.png)
   - then choose the folder you want to mount
 
   ![macos-share-2](../images/blockly/blockly-openhab-macos-share-2.png)
@@ -83,7 +83,7 @@ Also view ![youtube](../images/blockly/youtube-logo-small.png) [Creating a Block
 - Press `Ctrl-r` (Windows) or `Command-r` (MacOS) to directly run your rule with the trigger
 - Press `Ctrl-d` (Windows) or `Command-d` (MacOS) to disable / enable your rule.
 See the following video on ![youtube](../images/blockly/youtube-logo-small.png) [How to disable Rules](https://youtu.be/hSRfooBKn9A?t=1668)
-- Click on ![showblock](../images/blockly/blockly-workspace-showblocks.png) on the lower right of the bottom toolbar to see the generated code and will transition to ![showcode](../images/blockly/blockly-workspace-showcode.png)(click again to come back to the blocks).
+- **Click on** ![showblock](../images/blockly/blockly-workspace-showblocks.png) **on the lower right of the bottom toolbar to see the generated code** and will transition to ![showcode](../images/blockly/blockly-workspace-showcode.png)(click again to come back to the blocks).
 
 More about the topic of code generation can be viewed at ![youtube](../images/blockly/youtube-logo-small.png) [Blockly as an ECMA-Script code generator](https://youtu.be/EdllUlJ7p6k?t=1739)
 
@@ -92,6 +92,28 @@ More about the topic of code generation can be viewed at ![youtube](../images/bl
 It should also be mentioned that each of the blocks do have a context sensitive menu which appears upon a right click on the block itself.
 
 ![blockly-context.png](../images/blockly/blockly-contextmenu.png)
+
+#### **Cross-Rule-Copy/Paste**
+
+Sometimes you may want to copy some blocks from one rule to another.
+This is what _Cross-Rule-Copy/Paste_ is for.
+Just mark the block(s) you want to copy, click on _Cross-Rule-Copy_ and then in the destination rule open the context menu and click on _Cross-Rule-Paste_.
+
+![cross-rule-copy](../images/blockly/blockly-cross-rule-copy.png)
+
+Note that you cannot select several blocks at once but only one block to copy.
+
+::: tip Copy multiple blocks
+
+A way to copy multiple blocks at once is to copy a parent block, e.g. a loop block, that contains all the blocks you want to copy together.
+If you want to copy a number of connected blocks at once that do not have a parent block, there is nice trick to do that anyway: drag a function block into the workspace of the source rule, add the blocks to be copied into that function block, copy that function block and then paste it in the destination rule.
+Then in the destination rule just remove the function block that helped you to copy the inner blocks.
+
+:::
+
+Copy and Paste in Action:
+
+![copy-and-paste-in-action](../images/blockly/blockly-cross-rule-copy-and-paste.gif)
 
 - **Duplicate**: Clones the block
 - **Add comment**: Adds a comment to the block
@@ -114,6 +136,14 @@ Collapsed view:
 
 - **Disable (enable) block**: Disables the block, so no code is generated and its functionality switched off
 - **Delete**: delete the blocks (this can be reverted via Command/Ctrl-Z)
+
+### Searching the workspace
+
+Sometimes blockly rules become pretty big, and it is hard to find particular blocks in the rule.
+Therefore, a search functionality has been provided by pressing Cmd/Ctrl-F which opens a small search window in the top right (just below the "save"-label).
+After pressing _Enter_ all found blocks that contain the search term are marked in black.
+
+![blockly-search](../images/blockly/blockly-search.png)
 
 ### Zoom the workspace
 

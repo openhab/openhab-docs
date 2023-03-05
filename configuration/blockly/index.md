@@ -27,6 +27,38 @@ However, to leverage the full capabilities more than _50 specific blocks_ have b
 This section provides a detailed description of the specific blocks and provides examples on how to use them. Note that some of the blocks (like voice, streaming or notifications) need some special setup within openHAB  - in these case links to the respective documentation is provided.
 Also see this ![youtube](../images/blockly/youtube-logo-small.png) [Intro](https://youtu.be/EdllUlJ7p6k?t=295) Quick Intro Blockly Rules
 
+## Blockly is a code generator or how the 🦏 found the holy Grail
+
+### Some history
+
+Even though you may not notice it directly, the blocks are eventually used to automatically create code that can run on the openHAB server.
+Please watch the ![youtube](../images/blockly/youtube-logo-small.png) video [Blockly as an ECMA-Script code generator](https://youtu.be/EdllUlJ7p6k?t=1739) for a live demo.
+The code that is generated can be viewed when clicking the button ![showcode](../images/blockly/blockly-workspace-showcode-small.png) on the lower right corner of the blockly editor.
+
+In general, the code that Blockly generates is JavaScript (aka ECMAScript) which exists in several flavours or versions.
+The ECMAScript version that is used by Blockly in **openHAB 3** is **ECMAScript 5.1** and it is run by a component named **NashornJS** 🦏. [Nashorn JS](https://www.oracle.com/technical-resources/articles/java/jf14-nashorn.html) itself was part of Java until version 14 when it was dropped.
+The generated rule code is run within the Java runtime (also known as JVM) on the openHAB server and as openHAB 4 has moved to Java 17, the old ECMAScript 5.1 is not directly available anymore within the JVM via Nashorn.
+A replacement for the Nashorn JS is **GraalJS** ("the holy grail"), which is currently running **ECMAScript 2022** and therefore supports all modern JavaScript features, like arrow functions.
+[**GraalJS**](https://github.com/oracle/graaljs) is already available in openHAB 3 when the [JS Scripting Addon](https://www.openhab.org/addons/automation/jsscripting/) is installed.
+
+::: tip
+
+Please convert your old rules as quickly as possible because only with GraalJS you can leverage the openHAB JavaScript library (aka _openhab-js_) in Blockly.
+Using this library you can not only create much simpler code, it also allows **new functionality** that is not available with Nashorn.
+**Note that some blocks are only available with the openhab-js library on GraalJS.**
+
+:::
+
+### openHAB 3 / openHAB 4 - Migration
+
+This has several implications:
+
+- From openHAB 4 on, the default script engine is GraalJS when Blockly creates new scripts
+- If you still want to run Blockly rules that were created in openHAB3 without changing them (see below) you can install an automation plugin for Nashorn which could provide backwards compatibility until you have converted all rules.
+After installation both old code and new code can run in openHAB4.
+- **To convert a rule that was created in openHAB 3 (NashornJS) to a new rule based on GraalJS for openHAB 4 simply open the rule once in openHAB 4 and save it - that's it.**
+- After all rules have been converted, please uninstall the Nashorn addon to save memory.
+
 ## Looking for help
 
 A special mention should go towards the **Help** entry in a block context menu [right click on any block](rules-blockly-before-using.html#block-context-menu) that links to a resource that is usually very helpful to understand the context of that particular block.
@@ -44,7 +76,7 @@ Also there is a good  intro about that topic can be viewed at ![youtube](../imag
 
 ## Before using blockly
 
-Please visit [Getting started with openHAB Blocklies](rules-blockly-before-using.html) before asking questions in the forum
+Please visit [Getting started with openHAB Blocklies and creating a rule](rules-blockly-before-using.html) before asking questions in the forum.
 
 ## Blockly Youtube Tutorials
 
@@ -121,6 +153,22 @@ This chapter explains what these blocks do, sometimes displaying generated code 
 
 See [Timers and Delays](rules-blockly-timers-and-delays.html) section.
 
+### Voice and Multimedia
+
+This section deals with _playing or streaming audio_ to an audio sink e.g a speaker or _saying a text_ via using any Text-to-Speech API (e.g. Google's API)
+
+[![Voice and Multimedia](../images/blockly/blockly-voice-and-multimedia-small.png "Voice and Multimedia")
+](rules-blockly-voice-and-multimedia.html)
+
+See [Voice and Multimedia](rules-blockly-voice-and-multimedia.html) section.
+
+### Units of Measurements
+
+[![Units of Measurement](../images/blockly/blockly-uom-small.png "Units of Measurement")
+](rules-blockly-uom.html)
+
+See [Units of Measurement](rules-blockly-uom.html) section.
+
 ### Date Handling
 
 Date blocks are used as input parameters for other blocks.
@@ -141,15 +189,6 @@ For example, a way to determine if today is a weekend, a bank holiday, someone�
 ](rules-blockly-ephemeris.html)
 
 See [Ephemeris](rules-blockly-ephemeris.html) section.
-
-### Voice and Multimedia
-
-This section deals with _playing or streaming audio_ to an audio sink e.g a speaker or _saying a text_ via using any Text-to-Speech API (e.g. Google's API)
-
-[![Voice and Multimedia](../images/blockly/blockly-voice-and-multimedia-small.png "Voice and Multimedia")
-](rules-blockly-voice-and-multimedia.html)
-
-See [Voice and Multimedia](rules-blockly-voice-and-multimedia.html) section.
 
 ### Notifications
 
@@ -205,6 +244,8 @@ This section explains only the blocks that have been added to the standard block
 ](rules-blockly-standard-ext.html)[![openHAB Extensions to the standard](../images/blockly/blockly-colors-overview-small.png "openHAB Extensions to the Standard")
 ](rules-blockly-standard-ext.html)[![openHAB Extensions to the standard](../images/blockly/blockly-lists-dictionary-overview-small.png "openHAB Extensions to the Standard")
 ![lists-overview-concat](../images/blockly/blockly-lists-concatenate.png)
+](rules-blockly-standard-ext.html)
+[![openHAB Extensions to the standard](../images/blockly/blockly-bitwise.png "openHAB Extensions to the Standard")
 ](rules-blockly-standard-ext.html)
 
 See [openHAB Extensions to the standard](rules-blockly-standard-ext.html) section.
