@@ -23,7 +23,7 @@ The following example block gives a good idea of what can be done with the Unit 
 
 ## Overview of the Items and Things category
 
-> ![blockly-uom](../images/blockly/blockly-uom.png)
+![blockly-uom](../images/blockly/blockly-uom.png)
 
 ### Unit of Measurement Blocks
 

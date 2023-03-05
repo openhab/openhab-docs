@@ -93,7 +93,7 @@ It should also be mentioned that each of the blocks do have a context sensitive 
 
 ![blockly-context.png](../images/blockly/blockly-contextmenu.png)
 
-- **Cross-Rule-Copy/Paste**
+#### **Cross-Rule-Copy/Paste**
 
 Sometimes you may want to copy some blocks from one rule to another.
 This is what _Cross-Rule-Copy/Paste_ is for.

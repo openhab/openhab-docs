@@ -209,13 +209,11 @@ Here is an _expire_ metadata definition which is visualized as
 
 and modelled in YAML as
 
-````yaml
+```yaml
 value: 0h3m0s
 config:
   ignoreStateUpdates: "true"
   ignoreCommands: "true"
-````
-
 with the blocks that can access it:
 
 ![blockly-metadata](../images/blockly/blockly-metadata.png)
@@ -243,7 +241,7 @@ config:
   field3: 3
 ```
 
-which allows deep hierarchy property access via a configkey-dot-notation like one.two.three
+which allows deep hierarchy property access via a configkey-dot-notation like `one.two.three`
 
 ![blockly-metadata-config-key.png](../images/blockly/blockly-metadata-config-key.png)
 

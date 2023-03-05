@@ -22,8 +22,7 @@ More about conditions can be viewed at ![youtube](../images/blockly/youtube-logo
 ## Math
 
 The Math section mainly consists of standard Blockly blocks.
-
-two new math blocks were added for bitwise operations:
+Two new math blocks were added for bitwise operations:
 
 ### Bitwise operators
 
