@@ -28,6 +28,7 @@ To check if a value is undefined, use the special "is undefined"-block
 ![value-storage-blocks](../images/blockly/blockly-value-storage.png)
 
 ### Caching
+
 Since openHAB 4.0 caching functionality was introduced (provided that the rule is using [GraalJS / JS Scripting](/docs/configuration/blockly/#openhab-3-openhab-4-migration)).
 The blocks have the same behaviour like before when set to "private cache" which means that the value is stores in the rule cache.
 When storing a value in the "**shared cache**" the value can be even used beyond the specific rule **in a different rule**.

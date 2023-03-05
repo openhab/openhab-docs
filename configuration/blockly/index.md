@@ -43,13 +43,14 @@ A replacement for the Nashorn JS is **GraalJS** ("the holy grail"), which is cur
 
 ::: tip
 
-Please convert your old rules as quickly as possible because only with GraalJS you can leverage the openHAB JavaScript library (aka *openhab-js*) in Blockly.
+Please convert your old rules as quickly as possible because only with GraalJS you can leverage the openHAB JavaScript library (aka _openhab-js_) in Blockly.
 Using this library you can not only create much simpler code, it also allows **new functionality** that is not available with Nashorn.
 **Note that some blocks are only available with the openhab-js library on GraalJS.**
 
 :::
 
 ### openHAB 3 / openHAB 4 - Migration
+
 This has several implications:
 
 - From openHAB 4 on, the default script engine is GraalJS when Blockly creates new scripts
@@ -246,7 +247,6 @@ This section explains only the blocks that have been added to the standard block
 ](rules-blockly-standard-ext.html)
 [![openHAB Extensions to the standard](../images/blockly/blockly-bitwise.png "openHAB Extensions to the Standard")
 ](rules-blockly-standard-ext.html)
-
 
 See [openHAB Extensions to the standard](rules-blockly-standard-ext.html) section.
 

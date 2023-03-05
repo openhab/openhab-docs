@@ -85,7 +85,6 @@ Also view ![youtube](../images/blockly/youtube-logo-small.png) [Creating a Block
 See the following video on ![youtube](../images/blockly/youtube-logo-small.png) [How to disable Rules](https://youtu.be/hSRfooBKn9A?t=1668)
 - **Click on** ![showblock](../images/blockly/blockly-workspace-showblocks.png) **on the lower right of the bottom toolbar to see the generated code** and will transition to ![showcode](../images/blockly/blockly-workspace-showcode.png)(click again to come back to the blocks).
 
-
 More about the topic of code generation can be viewed at ![youtube](../images/blockly/youtube-logo-small.png) [Blockly as an ECMA-Script code generator](https://youtu.be/EdllUlJ7p6k?t=1739)
 
 ### Block context menu
@@ -115,7 +114,6 @@ Then in the destination rule just remove the function block that helped you to c
 Copy and Paste in Action:
 
 ![copy-and-paste-in-action](../images/blockly/blockly-cross-rule-copy-and-paste.gif)
-
 
 - **Duplicate**: Clones the block
 - **Add comment**: Adds a comment to the block

@@ -154,7 +154,6 @@ These attributes are returned with the following types:
 
 - type: String
 
-
 ![blockly-getItemAttributes-fix](../images/blockly/blockly-getItemAttributes-fix.png)
 
 **Special handling for Arrays**
@@ -230,7 +229,7 @@ The following blocks allow to _change_ the config values in the namespace _expir
 
 Here is a definition of a more complex metadata namespace:
 
-```
+```yaml
 value: ON
 config:
   ooone: "123"
