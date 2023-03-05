@@ -21,10 +21,10 @@ Each rule has four pieces of metadata.
 
 | Metadata    | Purpose                      | Notes                                                                                                                                                                                                                                            |
 |-------------|------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Unique ID   | uniquely identifies the rule | must be completely different from all other rule's UIDs, initialized with a random value but it is strongly recommended entering your own UID                                                                                                    |
+| Unique ID   | Uniquely identifies the rule | Must be completely different from all other rule's UIDs, initialized with a random value but it is strongly recommended entering your own UID                                                                                                    |
 | Name        | "title" of the rule          | This will be the name under which the rule is shown in MainUI and is the primary field used for search and sorting                                                                                                                               |
-| Description | describes what the rule does | do not skip, provide information about what the rule does and what it does it to; leave breadcrumbs you can use later to associated rules with Items and Channels                                                                                |
-| Tags        | arbitrary tags               | Another place to leave breadcrumbs or to group rules together. Note the `Script` and `Schedule` tags have a special meaning (see previous page), and although Semantic tags are available, rules are not yet integrated into the Semantic Model. |
+| Description | Describes what the rule does | Do not skip, provide information about what the rule does and what it does it to; leave breadcrumbs you can use later to associated rules with Items and Channels                                                                                |
+| Tags        | Arbitrary tags               | Another place to leave breadcrumbs or to group rules together. Note the `Script` and `Schedule` tags have a special meaning (see previous page), and although Semantic tags are available, rules are not yet integrated into the Semantic Model. |
 
 ![scenes UI rule heading](images/scenes-rule-heading.png)
 ![scenes UI rule heading tags](images/scenes-rule-heading-tags.png)
@@ -32,8 +32,6 @@ Each rule has four pieces of metadata.
 Here is how this rule appears in the list of rules (note the use a couple of tags):
 
 ![scenes rule list entry](images/scenes-rule-list-entry.png)
-
-It also shows the status of the rule: I
 
 All but the Unique ID can be changed later.
 
@@ -68,7 +66,7 @@ Add as many items until you end up with the scene that you wish to create:
 You can reorder the items via the ![scene-reorder](images/scene-reorder-button.png) button.
 This also defines the sequence within which the commands are sent to the device's items.
 
-Similarly to all other rules play button ![scene-pause-and-play](images/pause_and_play.png) allows you to run the rule and test it out that way and the pause button allows you to halt the rule in case you want to prevent it to be executed.
+Similarly to all other rules the play button ![scene-pause-and-play](images/pause_and_play.png) allows you to run the rule and test it out that way and the pause button allows you to halt the rule in case you want to prevent it to be executed.
 Saving can be done via Cmd/Ctrl-S and will automatically be done in case you press the play button.
 
 #### Delete an item command action / the whole scene
