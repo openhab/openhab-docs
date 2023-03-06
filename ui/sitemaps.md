@@ -603,16 +603,18 @@ Combining multiple conditions, for example Morning _AND_ above 19 °C is not sup
 To control visibility based upon combining multiple Items, or on more complex conditions, consider defining and using an additional intermediate Item that is set by a Rule.
 Rules have a rich set of features that can support more involved scenarios.
 
-### Label and Value Colors
+### Label, Value and Icon Colors
 
 Colors can be used to emphasize an items label or its value based on conditions.
 Colors may be assigned to either the label or the value associated with an Item.
+The icon may be tinted depending on the state as well.
 
 **Label and Value Color Syntax:**
 
 ```java
 labelcolor=[item_name operator value = "color", ... ]
 valuecolor=[item_name operator value = "color", ... ]
+iconcolor=[item_name operator value = "color", ... ]
 ```
 
 Note that `item_name` and `operator` are both optional.
@@ -622,14 +624,14 @@ If an operator is not specified, the operator will default to `==`.
 If only a color is specified, that condition is considered as true and that color will be used.
 It can be used as a last condition to set a default color that will be used in case any of the other previous conditions is true.
 
-The comparison operators for `labelcolor` and `valuecolor` are the same as for the visibility parameter.
+The comparison operators for `labelcolor`, `valuecolor` and `iconcolor` are the same as for the visibility parameter.
 
 **Examples:**
 
 The following three lines are equivalent.
 
 ```java
-Text item=Temperature labelcolor=[>0="blue"] valuecolor=[22="green"]
+Text item=Temperature labelcolor=[>0="blue"] valuecolor=[22="green"] iconcolor=[22="green"]
 Text item=Temperature labelcolor=[>0="blue"] valuecolor=[==22="green"]
 Text item=Temperature labelcolor=[>0="blue"] valuecolor=[Temperature==22="green"]
 Text item=Temperature labelcolor=[>0="blue", "gray"] valuecolor=[22="green", "gray"]
