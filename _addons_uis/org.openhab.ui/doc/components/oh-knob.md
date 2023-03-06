@@ -111,7 +111,7 @@ Knob control, allow to change a number value on a circular track
     butt, round, square, none - slider control only!
   </PropDescription>
 </PropBlock>
-<PropBlock type="INTEGER" name="dottedPath" label="Dotted Path">
+<PropBlock type="TEXT" name="dottedPath" label="Dotted Path">
   <PropDescription>
     Length of dotted path segments (css stroke-dasharray) - slider control only!
   </PropDescription>

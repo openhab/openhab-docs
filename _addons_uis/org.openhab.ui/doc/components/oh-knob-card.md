@@ -144,7 +144,7 @@ Display a knob in a card to visualize and control a quantifiable item
     butt, round, square, none - slider control only!
   </PropDescription>
 </PropBlock>
-<PropBlock type="INTEGER" name="dottedPath" label="Dotted Path">
+<PropBlock type="TEXT" name="dottedPath" label="Dotted Path">
   <PropDescription>
     Length of dotted path segments (css stroke-dasharray) - slider control only!
   </PropDescription>
