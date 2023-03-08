@@ -43,6 +43,11 @@ A marker on a floor plan
     The item whose state to display on this marker
   </PropDescription>
 </PropBlock>
+<PropBlock type="TEXT" name="visible" label="Visibility">
+  <PropDescription>
+    Enter an expression to dynamically show the marker, see <a class="external text-color-blue" target="_blank" href="https://www.openhab.org/docs/ui/building-pages.html#widgets-definition-usage">Building Pages: <code>visible</code></a>
+  </PropDescription>
+</PropBlock>
 </PropGroup>
 </div>
 
@@ -323,6 +328,28 @@ A marker on a floor plan
 
 
 <!-- GENERATED /props -->
+
+## Examples
+
+note that you must not have semicolons at the end of the css style
+
+### iconStyle: 
+
+```yaml
+iconStyle:
+  padding: 10px
+  border-radius: 4px
+  border: 5px solid #f00
+```
+
+### tooltipStyle:
+
+```yaml
+tooltipStyle:
+  textShadow: 0 0 15px red
+  fontSize: 40px
+  color: yellow
+```
 
 <!-- If applicable describe how properties are forwarded to a underlying component from Framework7, ECharts, etc.:
 ### Inherited Properties
