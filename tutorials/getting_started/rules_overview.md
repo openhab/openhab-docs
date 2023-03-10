@@ -6,10 +6,10 @@ title:  Rules - Other Technologies
 # Rule Technology Overview
 
 Sometimes the built in rule engine is not the perfect fit.
-It's possible to use openHAB with a variety of different rule engines and automation techonologies.
+It's possible to use openHAB with a variety of different rule engines and automation technologies.
 
 Some are native and can be used out of the box with openHAB and some require installation of
-additional services which interact with openHAB through its Rest API.
+additional services which interact with openHAB through its REST API.
 
 The list is sorted alphabetically by name and it is meant as a starting point for further research.
 
