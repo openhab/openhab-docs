@@ -93,6 +93,7 @@ By installing the openHAB process as a service in Windows, you can:
     set.default.OPENHAB_RUNTIME=%OPENHAB_HOME%\runtime
     set.default.OPENHAB_USERDATA=%OPENHAB_HOME%\userdata
     set.default.OPENHAB_LOGDIR=%OPENHAB_USERDATA%\logs
+    set.default.KARAF_LOG=%OPENHAB_USERDATA%\logs
     set.default.KARAF_HOME=%OPENHAB_RUNTIME%
     set.default.KARAF_BASE=%OPENHAB_USERDATA%
     set.default.KARAF_DATA=%OPENHAB_USERDATA%
