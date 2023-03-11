@@ -51,13 +51,43 @@ Using this library you can not only create much simpler code, it also allows **n
 
 ### openHAB 3 / openHAB 4 - Migration
 
-This has several implications:
+#### Migrating Blockly rules to openHAB 4 is easy
 
-- From openHAB 4 on, the default script engine is GraalJS when Blockly creates new scripts
-- If you still want to run Blockly rules that were created in openHAB3 without changing them (see below) you can install an automation plugin for Nashorn which could provide backwards compatibility until you have converted all rules.
-After installation both old code and new code can run in openHAB4.
-- **To convert a rule that was created in openHAB 3 (NashornJS) to a new rule based on GraalJS for openHAB 4 simply open the rule once in openHAB 4 and save it - that's it.**
-- After all rules have been converted, please uninstall the Nashorn addon to save memory.
+From openHAB 4 on, the default script engine is GraalJS when Blockly creates new scripts.
+From a technical perspective a rule internally holds a so-called MIME-type that tells openHAB how the generated JavaScript language has to be interpreted.
+The (default) MIME-type application/javascript in openHAB 3 runs the rule with NashornJS, while this same MIME-type will run the Blocky rule with GraalJS.
+As a result when running a non-converted openHAB 3 Blocky rule on openHAB 4, openHAB 4 will run a rule that was meant for NashornJS with GraalJS, which will fail.
+Therefore a conversion has to take place which in fact is not a lot of work:
+
+There is the choice to
+
+- convert each rule to GraalJS
+- or keep the NashornJS Rules
+
+but both need some work on each blockly rule you have.
+
+#### Migration to GraalJS (recommended)
+
+- Make sure the [JS Scripting Addon](https://www.openhab.org/addons/automation/jsscripting/) addon has been installed.
+- **To convert / migrate a rule that was created in openHAB 3 (NashornJS) to a compatible rule based on GraalJS for openHAB 4, simply open each Blockly rule once in openHAB 4 and save it - that's it.**
+- In this case, nothing more need to be installed additionally to openHAB 4.
+
+#### Running openHAB 3 Blockly rules without migrating them right away
+
+- If you still want to run the Blockly rules that were created in openHAB 3 for the time being without changing them (see above), you have to install the  [JavaScript Scripting (Nashorn) Addon](https://www.openhab.org/addons/automation/jsscriptingnashorn/) which could provide backwards compatibility until you have converted all rules.
+- Open each Blockly rule or go to the Code TAB or Search for type: application/javascript;
+- Replace it by `application/javascript;version=ECMAScript-5.1`.
+Open the Blockly rule, find the following symbol and click on it.
+
+![javascript-dialog](../images/blockly/blockly-javascript-dialog.png)
+
+to choose the old version of JavaScript and then save the rule.
+
+![choose-javascript](../images/blockly/blocky-choose-javascript.png)
+
+- After the installation of the Addon both old rules created in openHAB 3 and new rules created in openHAB 4 can run on openHAB 4 at the same time.
+- After all rules have been converted like explained above. please uninstall the JavaScript Scripting (Nashorn) addon to save memory.
+- Note that this allows you to mix rules that run with NashornJS and some that run with GraalJS (see above).
 
 ## Looking for help
 
