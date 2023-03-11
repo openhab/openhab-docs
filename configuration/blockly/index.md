@@ -68,14 +68,14 @@ but both need some work on each blockly rule you have.
 
 #### Migration to GraalJS (recommended)
 
-- Make sure the [JS Scripting Addon](https://www.openhab.org/addons/automation/jsscripting/) addon has been installed.
-- **To convert / migrate a rule that was created in openHAB 3 (NashornJS) to a compatible rule based on GraalJS for openHAB 4, simply open each Blockly rule once in openHAB 4 and save it - that's it.**
+- Make sure the [JS Scripting Addon](https://www.openhab.org/addons/automation/jsscripting/) addon is installed.
+- **To convert / migrate a rule that was created in openHAB 3 (NashornJS) to a GraalJS-compatible one for openHAB 4, simply open each Blockly rule once in openHAB 4 and save it - that's it.**
 - In this case, nothing more need to be installed additionally to openHAB 4.
 
 #### Running openHAB 3 Blockly rules without migrating them right away
 
-- If you still want to run the Blockly rules that were created in openHAB 3 for the time being without changing them (see above), you have to install the  [JavaScript Scripting (Nashorn) Addon](https://www.openhab.org/addons/automation/jsscriptingnashorn/) which could provide backwards compatibility until you have converted all rules.
-- Open each Blockly rule o go to the Code TAB o Search for type: application/javascript;
+- If you still want to run the Blockly rules that were created in openHAB 3 for the time being without changing them (see above), you have to install the  [JavaScript Scripting (Nashorn) Addon](https://www.openhab.org/addons/automation/jsscriptingnashorn/) which provides backwards compatibility until you have converted all rules.
+- Open each Blockly rule or go to the Code TAB or Search for type: application/javascript;
 - Replace it by `application/javascript;version=ECMAScript-5.1`.
 Open the Blockly rule, find the following symbol and click on it.
 
