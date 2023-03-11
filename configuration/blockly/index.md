@@ -75,7 +75,7 @@ but both need some work on each blockly rule you have.
 #### Running openHAB 3 Blockly rules without migrating them right away
 
 - If you still want to run the Blockly rules that were created in openHAB 3 for the time being without changing them (see above), you have to install the  [JavaScript Scripting (Nashorn) Addon](https://www.openhab.org/addons/automation/jsscriptingnashorn/) which could provide backwards compatibility until you have converted all rules.
-- Open each Blockly rule o go to the Code TAB o Search for type: application/javascript;
+- Open each Blockly rule or go to the Code TAB or Search for type: application/javascript;
 - Replace it by `application/javascript;version=ECMAScript-5.1`.
 Open the Blockly rule, find the following symbol and click on it.
 
