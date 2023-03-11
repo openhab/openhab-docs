@@ -18,7 +18,7 @@ source: https://github.com/openhab/openhab-webui/edit/main/bundles/org.openhab.u
 | [`oh-icon`](./oh-icon.html) |  [Icon](./oh-icon.html) | Display an openHAB icon |
 | [`oh-image`](./oh-image.html) |  [Image](./oh-image.html) | Displays an image from a URL or an item |
 | [`oh-input`](./oh-input.html) |  [Input](./oh-input.html) | Displays an input field, used to set a variable |
-| [`oh-knob`](./oh-knob.html) |  [Knob](./oh-knob.html) | Knob control, allow to change a number value on a circular track |
+| [`oh-knob`](./oh-knob.html) |  [Knob & Rounded Slider](./oh-knob.html) | Allows to change a number value on a circular track or a rounded slider |
 | [`oh-link`](./oh-link.html) |  [Link](./oh-link.html) | Link performing an action |
 | [`oh-list`](./oh-list.html) |  [List](./oh-list.html) | List control, hosts list items |
 | [`oh-player`](./oh-player.html) |  [Media player](./oh-player.html) | Media player controls, with previous track/pause/play/next buttons |
@@ -43,7 +43,7 @@ source: https://github.com/openhab/openhab-webui/edit/main/bundles/org.openhab.u
 | [`oh-gauge-card`](./oh-gauge-card.html) |  [Gauge Card](./oh-gauge-card.html) | Display a read-only gauge in a card to visualize a quantifiable item |
 | [`oh-image-card`](./oh-image-card.html) |  [Image Card](./oh-image-card.html) | Display an image (URL or Image item ) in a card |
 | [`oh-input-card`](./oh-input-card.html) |  [Input Card](./oh-input-card.html) | Display an input in a card |
-| [`oh-knob-card`](./oh-knob-card.html) |  [Knob Card](./oh-knob-card.html) | Display a knob in a card to visualize and control a quantifiable item |
+| [`oh-knob-card`](./oh-knob-card.html) |  [Knob & Rounded Slider Card](./oh-knob-card.html) | Display a knob or a rounded slider in a card to visualize and control a quantifiable item |
 | [`oh-label-card`](./oh-label-card.html) |  [Label Card](./oh-label-card.html) | Display the state of an item in a card |
 | [`oh-list-card`](./oh-list-card.html) |  [List Card](./oh-list-card.html) | Display a list in a card |
 | [`oh-player-card`](./oh-player-card.html) |  [Player Card](./oh-player-card.html) | Display player controls in a card |
@@ -78,7 +78,7 @@ source: https://github.com/openhab/openhab-webui/edit/main/bundles/org.openhab.u
 |--------|------|-------------|
 | [`oh-cell`](./oh-cell.html) |  [Cell](./oh-cell.html) | A regular or expandable cell |
 | [`oh-colorpicker-cell`](./oh-colorpicker-cell.html) |  [Colorpicker Cell](./oh-colorpicker-cell.html) | A cell expanding to a color picker |
-| [`oh-knob-cell`](./oh-knob-cell.html) |  [Knob Cell](./oh-knob-cell.html) | A cell expanding to a knob control |
+| [`oh-knob-cell`](./oh-knob-cell.html) |  [Knob & Rounded Slider Cell](./oh-knob-cell.html) | A cell expanding to a knob or rounded slider control |
 | [`oh-label-cell`](./oh-label-cell.html) |  [Label Cell](./oh-label-cell.html) | A cell with a big label to show a short item state value |
 | [`oh-rollershutter-cell`](./oh-rollershutter-cell.html) |  [Rollershutter Cell](./oh-rollershutter-cell.html) | A cell expanding to rollershutter controls |
 | [`oh-slider-cell`](./oh-slider-cell.html) |  [Slider Cell](./oh-slider-cell.html) | A cell expanding to a big vertical slider |

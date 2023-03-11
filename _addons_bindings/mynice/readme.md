@@ -5,6 +5,7 @@ title: MyNice - Bindings
 type: binding
 description: "This binding implements the support of the IT4Wifi module through the NHK protocol and enables management of Nice gates actuators."
 since: 3x
+logo: images/addons/mynice.png
 install: manual
 ---
 
