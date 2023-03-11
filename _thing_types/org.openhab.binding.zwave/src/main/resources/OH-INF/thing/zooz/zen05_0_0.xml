@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="zooz_zen05_00_000" listed="false">
+    <label>Zen05 Outdoor Plug Single Outdoor Plug</label>
+    <description><![CDATA[
+Single Outdoor Plug<br /> <h1>Overview</h1><p>Single plug suitable for outdoor use.  IP65 rated.</p> <br /> <h2>Inclusion Information</h2><p>Press button three times in quick succession.</p> <br /> <h2>Exclusion Information</h2><p>Press button three times in quick succession.</p> <br /> <h2>Wakeup Information</h2><p><br /></p>
+    ]]></description>
+    <category>PowerOutlet</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_binary" typeId="switch_binary">
+        <label>Switch</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Zooz</property>
+      <property name="modelId">Zen05 Outdoor Plug</property>
+      <property name="manufacturerId">027A</property>
+      <property name="manufacturerRef">7000:B001</property>
+      <property name="dbReference">1551</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_1_1" type="integer" groupName="configuration">
+        <label>1: LED Indicator</label>
+        <description><![CDATA[
+Control LED behavior based on status of the plug.<br /> <h1>Overview</h1><p>In addition to setting this through the controller, clicking the Z-Wave button 6 times quickly will toggle the value of this parameter.</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">LED on when plug is on, LED off when plug is off</option>
+          <option value="1">LED off when plug is on, LED on when plug is off</option>
+          <option value="2">LED always off</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_2_4" type="integer" groupName="configuration">
+        <label>2: Auto-off timer</label>
+        <description><![CDATA[
+Control auto-off timer<br /> <h1>Overview</h1><p>Set auto-off timer in minutes, or 0 to disable.</p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_4_4" type="integer" groupName="configuration">
+        <label>4: Auto-on timer</label>
+        <description>Control auto-on timer</description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_6_1" type="integer" groupName="configuration">
+        <label>6: On/off status after power failure</label>
+        <description><![CDATA[
+Control on/off status after power failure<br /> <h1>Overview</h1><p>Control behavior of the plug when power restored after power loss.</p>
+        ]]></description>
+        <default>2</default>
+        <options>
+          <option value="0">Outdoor plug remains off after power outage</option>
+          <option value="1">Plug turns on when power is restored</option>
+          <option value="2">Plug remembers power state when power lost and returns to that state</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_7_1" type="integer" groupName="configuration">
+        <label>7: LED brightness</label>
+        <description><![CDATA[
+Control LED brightness<br /> <h1>Overview</h1><p>Control LED brightness.</p>
+        ]]></description>
+        <default>2</default>
+        <options>
+          <option value="0">high (most) brightness</option>
+          <option value="1">medium brightness</option>
+          <option value="2">low (least) brightness</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_8_1" type="integer" groupName="configuration">
+        <label>8: Manual Control</label>
+        <description><![CDATA[
+Adjust manual control via the Z-Wave button<br /> <h1>Overview</h1><p><br /></p>
+        ]]></description>
+        <default>1</default>
+        <options>
+          <option value="0">Manual control disabled</option>
+          <option value="1">Manual control enabled</option>
+        </options>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Lifeline</label>
+        <description><![CDATA[
+Lifeline communication<br /> <h1>Overview</h1><p><br /></p>
+        ]]></description>
+        <multipleLimit>1</multipleLimit>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: Group 2</label>
+        <description>Basic Set commands sent to this group for on/off status</description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

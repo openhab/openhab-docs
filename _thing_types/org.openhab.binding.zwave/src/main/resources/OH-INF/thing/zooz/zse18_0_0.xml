@@ -112,7 +112,7 @@ Motion &amp; Vibration Sensor<br /> <h1>Overview</h1><p>Motion detection, built-
         <description><![CDATA[
 Enable or disable binary sensor reports when motion is detected.<br /> <h1>Overview</h1><p>Values: 0 – don’t send binary sensor reports when motion is detected, send notification reports instead (default); 1 – send binary sensor reports when motion is detected instead of the notification report.<br /></p>
         ]]></description>
-        <default>0</default>
+        <default>1</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 

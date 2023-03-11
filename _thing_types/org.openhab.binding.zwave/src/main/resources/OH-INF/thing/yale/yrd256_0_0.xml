@@ -8,7 +8,7 @@
   <thing-type id="yale_yrd256_00_000" listed="false">
     <label>YRD256 Touchscreen deadbolt without keyway</label>
     <description><![CDATA[
-Touchscreen deadbolt without keyway<br /> <h1>Overview</h1><ul><li>Installs On Standard Doors In Minutes</li> <li>Replaces existing deadbolt with just a screwdriver</li> <li>Fits on doors 1 3/8" to 2 1/4" thick</li> <li>Backset 2 3/4" or 2 3/4"</li> <li>Face Bore Hole: 2 1/8"</li> <li>Edge Bore Hole: 1"</li> <li>Create up to 250 entry codes for access by keypad (when used with Network Module - 25 without)</li> </ul> <br /> <h2>Inclusion Information</h2><p>To include the lock in a Z-Wave Network (taken from the installation manual:</p> <ul><li>Touch the lock screen to activate</li> <li>Enter the master pin and press # Press 7, then # Press 1, then #</li> <li>The lock will now be in inclusion mode.</li> </ul> <br /> <h2>Exclusion Information</h2><p>To exclude the lock from a Z-Wave Network (taken from the installation manual:</p> <ul><li>Touch the lock screen to activate</li> <li>Enter the master pin and press # Press 7, then # Press 3, then #</li> <li>The lock will now be in exclusion mode.</li> </ul>
+Touchscreen deadbolt without keyway<br /> <h1>Overview</h1><ul><li>Installs On Standard Doors In Minutes</li> <li>Replaces existing deadbolt with just a screwdriver</li> <li>Fits on doors 1 3/8" to 2 1/4" thick</li> <li>Backset 2 3/4" or 2 3/4"</li> <li>Face Bore Hole: 2 1/8"</li> <li>Edge Bore Hole: 1"</li> <li>Create up to 250 entry codes for access by keypad (when used with Network Module - 25 without)</li> </ul> <br /> <h2>Inclusion Information</h2><p>To include the lock in a Z-Wave Network (taken from the installation manual:</p> <ul><li>Touch the lock screen to activate</li> <li>Enter the master pin and press # Press 7, then # Press 1, then #</li> <li>The lock will now be in inclusion mode.</li> </ul> <br /> <h2>Exclusion Information</h2><p>To exclude the lock from a Z-Wave Network (taken from the installation manual:</p> <ul><li>Touch the lock screen to activate</li> <li>Enter the master pin and press # Press 7, then # Press 3, then #</li> <li>The lock will now be in exclusion mode.</li> </ul> <br /> <h2>Wakeup Information</h2><p><br /></p>
     ]]></description>
     <category>Lock</category>
 
@@ -56,7 +56,7 @@ Touchscreen deadbolt without keyway<br /> <h1>Overview</h1><ul><li>Installs On S
       <property name="vendor">ASSA ABLOY</property>
       <property name="modelId">YRD256</property>
       <property name="manufacturerId">0129</property>
-      <property name="manufacturerRef">8002:0600</property>
+      <property name="manufacturerRef">8002:0600,8109:0DD5</property>
       <property name="dbReference">594</property>
       <property name="defaultAssociations">1</property>
     </properties>

@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="siterwell_zsd109_00_000" listed="false">
+    <label>ZSD-109 Smoke detector</label>
+    <description><![CDATA[
+Smoke detector<br /> <h1>Overview</h1><p>The Nexa ZSD-109 fire alarm is designed to sense smoke particles. It has a built-in temperature sensor to provide an early warning if a fire should break out (assuming correct placement and maintenance). Principal properties is built-in temperature alarm, elevated sensitivity and stability test and pause function, LED-diode indicates normal operation and Low-battery signal.</p> <br /> <h2>Inclusion Information</h2><ol><li>Set the Z-Wave controller to “inclusion” mode (see the controller manual)</li><li>Press the Test button three times within 1.5 seconds; the LED indicator will light up.</li><li>You will then hear a beep, the LED indicator will go out and the smoke alarm is now included in your Z-Wave network.</li></ol> <br /> <h2>Exclusion Information</h2><ol><li>Set the Z-Wave controller to “exclusion” mode (see the controller manual).</li><li>Press the Test button three times within 1.5 seconds; the LED indicator will light up.</li><li>Wait for the Z-Wave controller to complete the exclusion.</li></ol> <br /> <h2>Wakeup Information</h2><p><br /></p>
+    ]]></description>
+    <category>SmokeDetector</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="alarm_smoke" typeId="alarm_smoke">
+        <label>Alarm (smoke)</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=SMOKE</property>
+        </properties>
+      </channel>
+      <channel id="alarm_heat" typeId="alarm_heat">
+        <label>Alarm (heat)</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=HEAT</property>
+        </properties>
+      </channel>
+      <channel id="battery-level" typeId="system.battery-level">
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_BATTERY</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Siterwell Technology HK Co., LTD</property>
+      <property name="modelId">ZSD-109</property>
+      <property name="manufacturerId">0266</property>
+      <property name="manufacturerRef">0005:0001</property>
+      <property name="dbReference">1550</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Lifeline</label>
+        <description><![CDATA[
+<br /> <h1>Overview</h1><p><br /></p>
+        ]]></description>
+        <multipleLimit>4</multipleLimit>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: Smoke Alarm</label>
+        <description><![CDATA[
+<br /> <h1>Overview</h1><p>Linkage group 2 is assigned to the devices status - sending BASIC SET control frame to the associated devices having detected the smoke alarm.</p><p>Pressing the test button or when smoke is detected it will send “BASIC SET(0xFF)” and “BASIC SET(0x00)” is sent when quit pressing the test button or smoke is cleared.<br /></p>
+        ]]></description>
+        <multipleLimit>4</multipleLimit>
+      </parameter>
+
+      <parameter name="group_3" type="text" groupName="association" multiple="true">
+        <label>3: Smoke Alarm Detection</label>
+        <description><![CDATA[
+<br /> <h1>Overview</h1><p>Linkage group 3 reports the detection's status to the associated device. Smoke alarm.</p>
+        ]]></description>
+        <multipleLimit>4</multipleLimit>
+      </parameter>
+
+      <parameter name="group_4" type="text" groupName="association" multiple="true">
+        <label>4: Heat Alarm</label>
+        <description><![CDATA[
+<br /> <h1>Overview</h1><p>Linkage group 4 is assigned to the devices status - sending BASIC SET control frame to the associated devices having detected the heat alarm.</p><p>Pressing the test button will send “BASIC SET(0xFF)” and “BASIC SET(0x00)” is sent when quit pressing the test button.</p>
+        ]]></description>
+        <multipleLimit>4</multipleLimit>
+      </parameter>
+
+      <parameter name="group_5" type="text" groupName="association" multiple="true">
+        <label>5: Heat Alarm Detection</label>
+        <description><![CDATA[
+<br /> <h1>Overview</h1><p>Linkage group 5 reports the detection's status to the associated device.</p>
+        ]]></description>
+        <multipleLimit>4</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>
