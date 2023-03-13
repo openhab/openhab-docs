@@ -651,7 +651,7 @@ Note also, the effect of omitting `Temperature` and the comparison operator in t
 Below is a list of standard colors and their respective RGB color codes.
 
 | Color Name | Preview                                     | RGB Color Code |
-| ---------- | ------------------------------------------- | -------------- |
+|------------|---------------------------------------------|----------------|
 | maroon     | <div style="color: #800000;">&#11044;</div> | `#800000`      |
 | red        | <div style="color: #ff0000;">&#11044;</div> | `#ff0000`      |
 | orange     | <div style="color: #ffa500;">&#11044;</div> | `#ffa500`      |
@@ -677,8 +677,13 @@ Generally, you can expected that valid HTML colors will be accepted (e.g. `green
 The color names above are agreed on between all openHAB UIs and are therefore your safest choice.
 Colors defined by a human-readable name may be adjusted for higher contrast, e.g. on a dark theme `black` may be displayed as white, because white has a higher contrast to the dark background compared to black.
 
-For better theming support Basic UI and the Android app also accepts the keywords `primary` and `secondary` as colors.
-They will be mapped to the corresponding colors of the UI theme.
+There are also the following keywords that can be used as colors:
+
+| Color Name | Note                      |
+|------------|---------------------------|
+| primary    | Primary theme color       |
+| secondary  | Secondary theme color     |
+| itemValue  | The state of a color item |
 
 ### Icons
 
