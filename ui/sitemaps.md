@@ -679,11 +679,11 @@ Colors defined by a human-readable name may be adjusted for higher contrast, e.g
 
 There are also the following keywords that can be used as colors:
 
-| Color Name | Note                      |
-|------------|---------------------------|
-| primary    | Primary theme color       |
-| secondary  | Secondary theme color     |
-| itemValue  | The state of a color item |
+| Color Name | Note                               |
+|------------|------------------------------------|
+| primary    | Primary theme color                |
+| secondary  | Secondary theme color              |
+| itemValue  | The state of the linked Color item |
 
 ### Icons
 
