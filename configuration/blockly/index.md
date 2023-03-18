@@ -55,7 +55,7 @@ Using this library you can not only create much simpler code, it also allows **n
 
 From openHAB 4 on, the default script engine is GraalJS when Blockly creates new scripts.
 From a technical perspective a rule internally holds a so-called MIME-type that tells openHAB how the generated JavaScript language has to be interpreted.
-The (default) MIME-type `application/javascript` in openHAB 3 runs the rule with NashornJS, while this same MIME-type will run the Blocky rule with GraalJS.
+The (default) MIME-type `application/javascript` in openHAB 3 runs the rule with NashornJS, while this same MIME-type will run the Blocky rule with GraalJS in openHAB 4.
 As a result when running a non-converted openHAB 3 Blocky rule on openHAB 4, openHAB 4 will run a rule that was meant for NashornJS with GraalJS, which will fail.
 Therefore a conversion has to take place which in fact is not a lot of work:
 
