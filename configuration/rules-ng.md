@@ -484,37 +484,45 @@ The above example uses two rule configuration properties:
 
 ### GenericEventTrigger
 
-GenericEventTrigger has 3 configuration parameters: `eventTopic`,`eventSource` and `eventTypes` and one output: 'event'.
+GenericEventTrigger has 4 configuration parameters: `topic`,`source`, `types`, and `payload`, and one output: `event`.
 
 ```json
 {
    "uid":"GenericEventTrigger",
    "label":"Basic Event Trigger",
    "description":"Triggers Rules on Events",
-   "configDescriptions":[
+   "configDescriptions": [
       {
-         "name":"eventTopic",
-         "type":"TEXT",
-         "label":"Topic",
-         "description":"This is the topic, the trigger will listen to: >>openhab/*<<",
-         "required":true,
-         "defaultValue":"openhab/*"
+         "name": "topic",
+         "type": "TEXT",
+         "label": "Topic",
+         "description": "the topic, as a file-system style glob (*, ** and {} operators). will match all events if empty",
+         "required": true,
+         "default": ""
       },
       {
-         "name":"eventSource",
-         "type":"TEXT",
-         "label":"Source",
-         "description":"This is the source of the event (eg. item name)",
-         "required":true,
-         "defaultValue":""
+         "name": "source",
+         "type": "TEXT",
+         "label": "Source",
+         "description": "the source of the event (e.g. org.openhab.core.expire, etc.). will match all events if empty",
+         "required": true,
+         "default": ""
       },
       {
-         "name":"eventTypes",
-         "type":"TEXT",
-         "label":"Event Type",
-         "description":"the event type, the trigger should listen to. Multiple types can be specified comma-separated",
-         "required":true,
-         "defaultValue":""
+         "name": "types",
+         "type": "TEXT",
+         "label": "Event Type",
+         "description": "the event type the trigger should listen to. multiple types can be specified comma-separated. will match all events if empty",
+         "required": true,
+         "default": ""
+      },
+      {
+         "name": "payload",
+         "type": "TEXT",
+         "label": "Event Payload",
+         "description": "A regex to match the event's serialized payload. will match all events if empty",
+         "required": true,
+         "default": ""
       }
    ],
    "outputs":[
