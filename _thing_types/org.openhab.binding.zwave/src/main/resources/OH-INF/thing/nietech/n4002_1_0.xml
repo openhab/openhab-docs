@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="nietech_n4002_01_000" listed="false">
+    <label>N4002 A single outlet plug with dimming capabilities and power meter</label>
+    <description><![CDATA[
+A single outlet plug with dimming capabilities and power meter<br /> <h1>Overview</h1><p>A single outlet controller with dimming and power metering<br /></p> <br /> <h2>Inclusion Information</h2><p>Press the button on the side 3 times quickly and watch for the light to flash blue<br /></p> <br /> <h2>Exclusion Information</h2><p>Place your hub into exclusion mode and then press the button on the side 3 times quickly and watch for the light to flash blue <br /></p> <br /> <h2>Wakeup Information</h2><p><br /></p>
+    ]]></description>
+    <category>PowerOutlet</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_dimmer" typeId="switch_dimmer">
+        <label>Dimmer</label>
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+          <property name="binding:Command:OnOffType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">NIE Technology</property>
+      <property name="modelId">N4002</property>
+      <property name="manufacturerId">0312</property>
+      <property name="manufacturerRef">AC01:4002</property>
+      <property name="versionMin">1.0</property>
+      <property name="versionMax">1.0</property>
+      <property name="dbReference">1554</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_0_4" type="integer" groupName="configuration">
+        <label>0: Auto Turn-Off Timer</label>
+        <description><![CDATA[
+Auto Turn-Off Timer--- Values: 0 – 65535 (minutes)<br /> <h1>Overview</h1><p>Auto Turn-Off Timer--- Values: 0 – 65535 (minutes)</p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_0_1" type="integer" groupName="configuration">
+        <label>0: Restores state after power failure</label>
+        <description><![CDATA[
+Restores state after power failure: Value=0 output off Value=1 output on Value=2 out put the state after power Default =2<br /> <h1>Overview</h1><p>Restores state after power failure: Value=0 output off Value=1 output on Value=2 out put the state after power Default =2 </p>
+        ]]></description>
+        <default>2</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_1_1" type="integer" groupName="configuration">
+        <label>1: Local Button function</label>
+        <description><![CDATA[
+Change the behavior of the local buttons<br /> <h1>Overview</h1><p>Parameter=1，Size=1，Value=0 Up Button: On Down Button: Off Value=1 Up Button: Off Down Button: On Value=2 Up Button: On/Off Down Button: On/Off Default = 0</p>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_2_1" type="integer" groupName="configuration">
+        <label>2: LED Indicator</label>
+        <description><![CDATA[
+LED Indicator configuration<br /> <h1>Overview</h1><p>LED Indicator configuration: Value=0 On when Off and Off when On Value=1 On when On and Off when Off Value=2 Always Off Value=3 Always On Default =0</p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_5_4" type="integer" groupName="configuration">
+        <label>5: Auto Turn-On Timer</label>
+        <description><![CDATA[
+Auto Turn-On Timer<br /> <h1>Overview</h1><p>Auto Turn-On Timer (0 - 65535 minutes)<br /></p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_9_1" type="integer" groupName="configuration">
+        <label>9: Ramp rate</label>
+        <description><![CDATA[
+Ramp rate（Local Button + Z-Wave）&gt; change to local and Z-Wave like in the latest ZEN30 firmware, also applies to any multilevel changes (so there should be soft transition between 20 and 80% brightness if changed from the hub for example) Parameter=9，Size=<br /> <h1>Overview</h1><p>Ramp rate（Local Button + Z-Wave）&gt; change to local and Z-Wave like in the latest ZEN30 firmware, also applies to any multilevel changes (so there should be soft transition between 20 and 80% brightness if changed from the hub for example) Parameter=9，Size=1, Value=1 from 0x63 to 0x00 or from 0x00 to 0x63 need 1s Value=2 from 0x63 to 0x00 or from 0x00 to 0x63 need 2s . . Value=99 from 0x63 to 0x00 or from 0x00 to 0x63 need 99s Default = 1</p>
+        ]]></description>
+        <default>1</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_10_1" type="integer" groupName="configuration">
+        <label>10: Set minimum value for dimmer</label>
+        <description><![CDATA[
+Multilevel minimum value can be set（Local Button）&gt; this should apply to both for local or Z-Wave operation Parameter=10，Size=1，Value=0 disable Value=1 . . Value=99 Default = 1<br /> <h1>Overview</h1><p>Multilevel minimum value can be set（Local Button）&gt; this should apply to both for local or Z-Wave operation Parameter=10，Size=1，Value=0 disable Value=1 . . Value=99 Default = 1</p>
+        ]]></description>
+        <default>1</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_11_1" type="integer" groupName="configuration">
+        <label>11: Multilevel maximum value</label>
+        <description><![CDATA[
+Set the maximum value for the dimmer<br /> <h1>Overview</h1><p>Multilevel maximum value can be set（Local Button）&gt; this should apply to both for local or Z-Wave operation Parameter=11，Size=1，Value=0 disable Value=1 . . Value=100 - NOT ACCEPTED BY HUB Default = 99</p>
+        ]]></description>
+        <default>99</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_12_1" type="integer" groupName="configuration">
+        <label>12: Double Tap Behavior</label>
+        <description><![CDATA[
+Double Tap Behavior: when switch is off and quickly press UPPER paddle 2 times, switch turns on to x brightness （Local Button） Parameter=12，Size=1， Value = 0 enable double tap to full brightness (99) Value = 1 custom value set in parameter 18 Value = 2<br /> <h1>Overview</h1><p>Double Tap Behavior: when switch is off and quickly press UPPER paddle 2 times, switch turns on to x brightness （Local Button） Parameter=12，Size=1， Value = 0 enable double tap to full brightness (99) Value = 1 custom value set in parameter 18 Value = 2 enable double tap to maximum brightness (turn on to the value relate with parameter 11) Value = 3 disable double tap to full brightness Default = 0</p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_15_1" type="integer" groupName="configuration">
+        <label>15: Enable or Disable local / Z-Wave control</label>
+        <description><![CDATA[
+Enable or Disable local / Z-Wave control<br /> <h1>Overview</h1><p>Enable or Disable local / Z-Wave control Parameter=15，Size=1，Value=0 disable (when paddle pressed switch will not turn light on or off BUT it will still control the light via z-wave and it will change LED indicator status and on/off/multilevel status when paddle is pressed) Value=1 enable (normal operation like now) Value = 2 disable local and Z-Wave control (LED and on/off status will still change if paddle pressed) &gt;&gt; make sure that status is still reported and LED indicator changes when Z-Wave control is disabled Default = 1</p>
+        ]]></description>
+        <default>1</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_16_1" type="integer" groupName="configuration">
+        <label>16: Dimmer Speed</label>
+        <description><![CDATA[
+Dimmer Speed<br /> <h1>Overview</h1><p>Dimmer speed (only for local press &amp; hold): amount of seconds it takes to go from 0 to 100% brightness when pressing and holding the paddle Parameter=16，Size=1, Value=1 from 0x63 to 0x00 or from 0x00 to 0x63 need 1s Value=2 from 0x63 to 0x00 or from 0x00 to 0x63 need 2s . . Value=99 from 0x63 to 0x00 or from 0x00 to 0x63 need 99s Default = 5</p>
+        ]]></description>
+        <default>5</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_18_1" type="integer" groupName="configuration">
+        <label>18: Custom brightness level</label>
+        <description><![CDATA[
+Custom brightness level - in this parameter define default brightness level the switch will turn on to from main switch or regular switch in 3-way when pressed upper paddle once. Parameter: 18 Size: 1 byte dec Values 0-99 0 - last brightness level 1-99 cu<br /> <h1>Overview</h1><p>3-way switch type Parameter=19,Size=1,Value=0 toggle switch(device changes status when switch changes status,it can only turn on or turn off lamp,it can’t dimmer)(default); Value = 1 toggle switch(press 1x change device status;quickly press 2x the result depend on Par11/Par12; quickly Press 3x it trigger dimmer in loop(dimmer up/dimmer down ) Value=2 momentary switch (press 1x change device status;quickly press 2x the result depend on Par11/Par12;hold trigger dimmer in loop(dimmer up/dimmer down ) Value=3 momentary switch (press 1x change device status;quickly press 2x the result depend on Par11/Par12;hold trigger dimmer in loop(dimmer up/dimmer down – BUT after double click to full brightness, hold will dim DOWN always instead of trying to increase brightness) &gt;&gt; This value is missing, please add to setting Notice: when the value=1,or value=2,the switch can’t respond immediately,because it need to recognize multiple press.</p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_19_1" type="integer" groupName="configuration">
+        <label>19: 3-way switch type</label>
+        <description><![CDATA[
+<br /> <h1>Overview</h1><p>3-way switch type Parameter=19,Size=1,Value=0 toggle switch(device changes status when switch changes status,it can only turn on or turn off lamp,it can’t dimmer)(default); Value = 1 toggle switch(press 1x change device status;quickly press 2x the result depend on Par11/Par12; quickly Press 3x it trigger dimmer in loop(dimmer up/dimmer down ) Value=2 momentary switch (press 1x change device status;quickly press 2x the result depend on Par11/Par12;hold trigger dimmer in loop(dimmer up/dimmer down ) Value=3 momentary switch (press 1x change device status;quickly press 2x the result depend on Par11/Par12;hold trigger dimmer in loop(dimmer up/dimmer down – BUT after double click to full brightness, hold will dim DOWN always instead of trying to increase brightness) &gt;&gt; This value is missing, please add to setting Notice: when the value=1,or value=2,the switch can’t respond immediately,because it need to recognize multiple press.</p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_20_1" type="integer" groupName="configuration">
+        <label>20: Association reports</label>
+        <description><![CDATA[
+Association reports Parameter=20,Size=1 Values: 0 – Z-Wave control：Multilevel report (without each level,just final level) Manual control (short press): Basic report(without each level,just final level) Manual control(long press &amp; relay enable): Basic rep<br /> <h1>Overview</h1><p>Association reports 0 – Z-Wave control：Multilevel report (without each level,just final level) Manual control (short press): Basic report(without each level,just final level) Manual control(long press &amp; relay enable): Basic report(without each level,just final level) Manual control(long press &amp; relay disable): Multilevel report (each level will be reported) 1 – Z-Wave control：Multilevel report (without each level,just final level) Manual control (short press): Basic report (without each level,just final level) Manual control(long press &amp; relay enable OR disable): Basic report (without each level,just final level) 2 – Z-Wave control：Multilevel report (without each level, just final level) Manual control (short press): Multilevel report (without each level, just final level) Manual control (long press &amp; relay enable): Multilevel report (without each level, just final level) Manual control (long press &amp; relay disable): Multilevel report (each level will be reported) default = 2</p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_21_1" type="integer" groupName="configuration">
+        <label>21: Disabled Relay Behavior</label>
+        <description><![CDATA[
+Disabled Relay Behavior Parameter=21,Size=1 Value=0 report on/off and multilevel status when paddle is pressed and change LED indicator status and Parameter 15 is set to value 0 or 2 (output control disabled) according to setting in Parameter 20. Value=1<br /> <h1>Overview</h1><p>Disabled Relay Behavior Parameter=21,Size=1 Value=0 report on/off and multilevel status when paddle is pressed and change LED indicator status and Parameter 15 is set to value 0 or 2 (output control disabled) according to setting in Parameter 20. Value=1 DON’t report on/off or multilevel status or and change LED indicator status when paddle is pressed and Parameter 15 is set to value 0 or 2 (output control disabled). Default = 0</p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_22_1" type="integer" groupName="configuration">
+        <label>22: Night Mode Brightness Level</label>
+        <description><![CDATA[
+Night Mode Brightness Level Set the level of brightness the dimmer will turn on to when off and lower paddle held DOWN for 2 seconds. Parameter=22,Size=1 Values: 0- disable function; 1-99 % Default:: 20<br /> <h1>Overview</h1><p>Night Mode Brightness Level Set the level of brightness the dimmer will turn on to when off and lower paddle held DOWN for 2 seconds. Parameter=22,Size=1 Values: 0- disable function; 1-99 % Default:: 20</p>
+        ]]></description>
+        <default>20</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_23_1" type="integer" groupName="configuration">
+        <label>23: LED Indicator Color</label>
+        <description><![CDATA[
+LED Indicator Color Parameter=23，Size=1，Value=0 White Value=1 Blue Value=2 Green Value=3 Red Default = 1<br /> <h1>Overview</h1><p> LED Indicator Color: Value=0 White Value=1 Blue Value=2 Green Value=3 Red Default = 1</p>
+        ]]></description>
+        <default>1</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_24_1" type="integer" groupName="configuration">
+        <label>24: LED Indicator Brightness</label>
+        <description><![CDATA[
+LED Indicator Brightness Parameter=24，Size=1，Value=0 Bright (100%) Value=1 Medium (60%) Value=2 Low (30%) Default =1<br /> <h1>Overview</h1><p>LED Indicator Brightness Value=0 Bright (100%) Value=1 Medium (60%) Value=2 Low (30%) Default =1</p>
+        ]]></description>
+        <default>1</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_25_1" type="integer" groupName="configuration">
+        <label>25: Single Tap Behavior</label>
+        <description><![CDATA[
+Single Tap Behavior: when switch is off and press UPPER paddle 1 time, switch turns on to x brightness （Local Button） Parameter=25，Size=1， Value = 0 last brightness level Value = 1 custom value set in parameter 18 Value = 2 maximum brightness set in p<br /> <h1>Overview</h1><p>Single Tap Behavior: when switch is off and press UPPER paddle 1 time, switch turns on to x brightness （Local Button） Parameter=25，Size=1， Value = 0 last brightness level Value = 1 custom value set in parameter 18 Value = 2 maximum brightness set in parameter 11 Value = 3 full 100% brightness Default = 0</p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Lifeline</label>
+        <description>Lifeline</description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: Basic Set</label>
+        <description><![CDATA[
+Basic Set<br /> <h1>Overview</h1><p>When the output of the N4003 socket is changed, On (0xFF) or Off (0x00). The N4003 will automatically send out a related basic On (0xFF) or Off (0x00) to this group</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

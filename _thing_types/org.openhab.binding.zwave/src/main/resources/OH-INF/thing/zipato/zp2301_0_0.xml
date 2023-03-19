@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="zipato_zp2301_00_000" listed="false">
+    <label>ZP2301 Multisensor Door/Temp/Humid/Illum</label>
+    <description><![CDATA[
+Multisensor Door/Temp/Humid/Illum<br /> <h1>Overview</h1><p>This sensor is a Z-Wave enabled device (interoperable, two-way RF mesh networking technology) and is fully compatible with any Z-Wave enabled network and its security framework. Every main powered Z-Wave enabled device acts as a signal repeater and multiple devices result in more possible transmission routes which helps eliminate “RF dead-spots”. Z-Wave enabled devices displaying the Z-Wave logo can also be used with it regardless of the manufacturer, and this device can also be used in other manufacturer’s Z-Wave enabled networks. Zipato Multisensor 4 in 1 sends Z-Wave signal when door or window is opened or closed or there is a humidity, temperature, luminance change.<br /><br /></p><p>Door/Window, humidity, temperature and illuminance sensor</p><p>Primarily used as dry contact Door/Window sensor, it consists of two parts, magnet and a sensor</p><p>New Z-Wave 500 series chip supports multichannel operation and higher data rates (9.6/40/100kbps)</p><p>Can be used with various Z-Wave networks/controllers, regardless of the manufacturers</p><p>Very low power power consumption</p><p>Low battery auto report</p><p>LED indicator</p><p>Over-the-air firmware update</p><p>Easy installation<br /><br /></p><p>1 | Push release button to open the rear cover.</p><p>2 | Using adhesive tape to affix the rear cover on the frame along the opening edge of door / window.</p><p>3 | Insert CR14250 into the battery compartment, if user presses the program switch, Multisensor 4 in 1 will send the Node Information Frame (NIF). Multisensor 4 in 1 will go to sleep if user didn`t press the program switch within 20 seconds. <br /><br />LED Status for Z-Wave Network:</p><p>If user presses the program switch, the red LED will flash 5 times if the Multisensor 4 in 1 has not been included yet.</p><p>If user presses the program switch, the red LED will flash 1 times if the Multisensor 4 in 1 has been included.</p> <br /> <h2>Inclusion Information</h2><p>“Inclusion” (adding) to the Z-Wave network: Put the Z-Wave Controller into “inclusion” mode, and follow its instruction to add the Multisensor 4 in 1 to your controller. To get in the “inclusion” mode, the distance between sensor and controller is suggested to be within one meter. Press the program switch once on Multisensor 4 in 1 for sending the NIF. After sending NIF, Z-Wave will send the auto inclusion; otherwise, Multisensor 4 in 1 will go to sleep after 20 seconds.</p> <br /> <h2>Exclusion Information</h2><p>“Exclusion” (removing) from the Z-Wave network: Put the Z-Wave Controller into “exclusion” mode, and follow its instruction to delete the Multisensor 4 in 1 from your controller. Press the program switch of Multisensor 4 in 1 for 1 second at least to be excluded. Note: All user and network settings will be cleared and the device reset to factory defaults when the device is excluded.</p> <br /> <h2>Wakeup Information</h2><p>Awake Mode: Press the Program SW, the LED will flash one time and Multisensor 4 in 1 will send “Wake Up Notification” after 5 seconds. If Multisensor 4 in 1 received “Wake Up No More Information” command then the Multisensor 4 in 1 will go to sleepor it will wait 10 seconds then go to sleep. It will precede all the commands after sending the “Wake Up Notification”.</p><p>Auto Wake Up: Use “Wake Up” command to set up the awaking time and send the wake up notification to controller. User can use command to change the auto wake up from 10 minutes to 1 week, Interval increment is 3 minutes.</p>
+    ]]></description>
+    <category>Battery</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="sensor_temperature" typeId="sensor_temperature">
+        <label>Sensor (temperature)</label>
+        <properties>
+          <property name="binding:*:QuantityType">COMMAND_CLASS_SENSOR_MULTILEVEL;type=TEMPERATURE</property>
+        </properties>
+      </channel>
+      <channel id="sensor_luminance" typeId="sensor_luminance">
+        <label>Sensor (luminance)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_SENSOR_MULTILEVEL;type=LUMINANCE</property>
+        </properties>
+      </channel>
+      <channel id="sensor_relhumidity" typeId="sensor_relhumidity">
+        <label>Sensor (relative humidity)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_SENSOR_MULTILEVEL;type=RELATIVE_HUMIDITY</property>
+        </properties>
+      </channel>
+      <channel id="alarm_access" typeId="alarm_access">
+        <label>Alarm (access)</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=ACCESS_CONTROL</property>
+        </properties>
+      </channel>
+      <channel id="alarm_burglar" typeId="alarm_burglar">
+        <label>Alarm (burglar)</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=BURGLAR</property>
+        </properties>
+      </channel>
+      <channel id="battery-level" typeId="system.battery-level">
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_BATTERY</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Zipato</property>
+      <property name="modelId">ZP2301</property>
+      <property name="manufacturerId">0131</property>
+      <property name="manufacturerRef">201F:1F20</property>
+      <property name="dbReference">1553</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_1_1" type="integer" groupName="configuration">
+        <label>1: Temp_units</label>
+        <description><![CDATA[
+Temperature units<br /> <h1>Overview</h1><p>Temperature units. Celsius is default (0x00)</p>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_2_1" type="integer" groupName="configuration">
+        <label>2: Temp_step</label>
+        <description><![CDATA[
+Temperature step<br /> <h1>Overview</h1><p>Temperature step. Ranges from 0.1 to 5°C. One increment is 1/10th of °C</p>
+        ]]></description>
+        <default>1</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_4_1" type="integer" groupName="configuration">
+        <label>4: Humid_config</label>
+        <description><![CDATA[
+Humidity configuration<br /> <h1>Overview</h1><p>Setup from 0 or Off or 5%~50%. Preset is 10%</p>
+        ]]></description>
+        <default>10</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_4_1" type="integer" groupName="configuration">
+        <label>4: Light_config</label>
+        <description><![CDATA[
+Light sensor configuration<br /> <h1>Overview</h1><p>Setup from 0 or Off or 5%~50%. Preset is 10%<br /></p>
+        ]]></description>
+        <default>10</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: asso1</label>
+        <description><![CDATA[
+<br /> <h1>Overview</h1><p>Support grouping identifier = 1, one group with 5 nodes.</p><p>Association is used for other capacity automatically.</p><p>All triggering reports &amp; low voltage report will be sent to the associated nodes.</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>
