@@ -110,7 +110,6 @@ The script-prefix is `js`.
 The script-prefix is `rb`.
 
 ```ruby
-input ||= nil # see https://github.com/jruby/jruby/issues/5876
 "String has #{input.length} characters"
 ```
 
