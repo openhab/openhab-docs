@@ -5,7 +5,7 @@ title: Configuration Admin
 
 # Configuration Admin Service
 
-As defined in the [OSGi Compendium Release 7][OSGi-cmpn] _configuration is the process of defining the configuration data of bundles and assuring that those bundles receive that data when they are active in the OSGi Service Platform._
+As defined in the [OSGi Compendium Release 8][OSGi-cmpn] _configuration is the process of defining the configuration data of bundles and assuring that those bundles receive that data when they are active in the OSGi Service Platform._
 
 In OSGi, configurations are stored in a central database that is being managed by a special service - the _Configuration Admin Service_(`org.osgi.service.cm.ConfigurationAdmin`).
 This service monitors the service registry and **provides a configuration to the services** that are registered with a _service.pid_ property.
@@ -154,9 +154,9 @@ If the location is not set correctly the Config Admin may not send the update to
 
 ## Further Reading
 
-- [OSGi Compendium Release 7][OSGi-cmpn]
+- [OSGi Compendium Release 8][OSGi-cmpn]
 - <https://enroute.osgi.org/Tutorial/>
 - <http://blog.vogella.com/2016/06/21/getting-started-with-osgi-declarative-services/>
 - <http://blog.vogella.com/2016/09/26/configuring-osgi-declarative-services/>
 
-[OSGi-cmpn]: https://osgi.org/download/r7/osgi.cmpn-7.0.0.pdf
+[OSGi-cmpn]: https://osgi.org/download/r8/osgi.cmpn-8.0.0.pdf
