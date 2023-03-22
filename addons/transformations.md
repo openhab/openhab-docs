@@ -92,9 +92,10 @@ returnValue
 
 :::
 
-::: tab Nashorn JS
+::: tab JS
 
-The script-prefix is `js`.
+The script-prefix is `js` when using the modern JS Scripting add-on and `nashornjs` when using the legacy JS Scripting add-on.
+Note the overall syntax is the same.
 
 ```javascript
 (function(data) {
