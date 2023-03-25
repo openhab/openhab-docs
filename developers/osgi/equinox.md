@@ -5,7 +5,7 @@ title: Equinox
 
 # Equinox
 
-[Equinox][Equinox] is considered to be a reference implementation of the [OSGi Core Release 7][OSGi-core].
+[Equinox][Equinox] is considered to be a reference implementation of the [OSGi Core Release 8][OSGi-core].
 It is an [open source project][Equinox-repo], part of the [Eclipse project][Eclipse].
 It provides a set of bundles, that implement various optional OSGi services.
 
@@ -96,7 +96,7 @@ Some or all of these bundles must be included in your runtime configuration, if 
  Name | Bundle Symbolic Name | Description
  -------- | -------- | --------
 Declarative Services | org.eclipse.equinox.ds | An implementation of the OSGi [Declarative Services](osgids.html) specification
-Event Admin Service | org.eclipse.equinox.event | OSGi Compendium Release 7 [Event Admin](https://osgi.org/javadoc/osgi.cmpn/7.0.0/org/osgi/service/event/EventAdmin.html) Service provides an inter-bundle communication mechanism based on an event publish and subscribe model
+Event Admin Service | org.eclipse.equinox.event | OSGi Compendium Release 8 [Event Admin](https://osgi.org/javadoc/osgi.cmpn/8.0.0/org/osgi/service/event/EventAdmin.html) Service provides an inter-bundle communication mechanism based on an event publish and subscribe model
 Equinox Utilities | org.eclipse.equinox.util | A library of utility classes that are frequently used from the Equinox OSGi Service implementation bundles
 OSGi Services API | org.eclipse.osgi.service | This bundle contains the set of OSGi specified service APIs
 
@@ -121,7 +121,7 @@ Table 2. OSGi Bundles (Full list can be found at: <https://www.eclipse.org/equin
 - [RT meets p2](https://bkapukaranov.wordpress.com/category/tech/virgo/)
 
 [Equinox]: https://www.eclipse.org/equinox/
-[OSGi-Core]: https://osgi.org/download/r7/osgi.core-7.0.0.pdf
+[OSGi-Core]: https://osgi.org/download/r8/osgi.core-8.0.0.pdf
 [Equinox-repo]: https://git.eclipse.org/c/equinox/
 [Eclipse]: https://eclipse.org/eclipse/
 [Equinox-Bundles]: https://www.eclipse.org/equinox/bundles/

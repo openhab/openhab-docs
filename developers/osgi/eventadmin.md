@@ -9,7 +9,7 @@ In a dynamic environment like OSGi, communication with events has a wide variety
 A lot of core services share information using events, so understanding how to use events in OSGi is fundamental.
 
 OSGi events are based on the publish-subscribe messaging pattern.
-Let's use the definition for the pattern that can be found in the [OSGi Compendium Release 7][OSGi-cmpn]:
+Let's use the definition for the pattern that can be found in the [OSGi Compendium Release 8][OSGi-cmpn]:
 
 _This pattern decouples sources from their handlers by interposing an event channel between them.
 The publisher posts events to the channel, which identifies which handlers need to be notified and then takes care of the notification process._
@@ -76,10 +76,10 @@ The service contains two methods for sending events:
 
 ## Further Reading
 
-- [OSGi Compendium Release 7][OSGi-cmpn]
+- [OSGi Compendium Release 8][OSGi-cmpn]
 - <https://enroute.osgi.org/services/org.osgi.service.event.html>
 - <http://blog.vogella.com/2017/05/16/osgi-event-admin-publish-subscribe/>
 
 [fig1]:images/event-admin.png
 
-[OSGi-cmpn]: https://osgi.org/download/r7/osgi.cmpn-7.0.0.pdf
+[OSGi-cmpn]: https://osgi.org/download/r8/osgi.cmpn-8.0.0.pdf

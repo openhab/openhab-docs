@@ -65,7 +65,7 @@ Import-Package: org.example.required
 Export-Package: org.example.provided
 ```
 
-[OSGi Core Release 7, Chapter 3: Module Layer][OSGi-core] contains detailed information about the _Module Layer_ and description of the headers (_Manifest-Version_, _Bundle-ManifestVersion_, _Bundle-Name_) used in this example.
+[OSGi Core Release 8, Chapter 3: Module Layer][OSGi-core] contains detailed information about the _Module Layer_ and description of the headers (_Manifest-Version_, _Bundle-ManifestVersion_, _Bundle-Name_) used in this example.
 
 Bundles are used often to register and consume services.
 You will find more information about that in the [Services](#services) section.
@@ -153,9 +153,9 @@ We will list the most popular OSGi containers with a short description of their 
 
 ## Important Definitions
 
-**bundle** - a unit of modularization, defined by the OSGi framework. A bundle is comprised of Java classes and other resources, which together can provide functions to end users. For more detailed definition - [OSGi Core Release 7, Chapter 3.2: Bundles][OSGi-core]
+**bundle** - a unit of modularization, defined by the OSGi framework. A bundle is comprised of Java classes and other resources, which together can provide functions to end users. For more detailed definition - [OSGi Core Release 8, Chapter 3.2: Bundles][OSGi-core]
 
-**service** - any object that is registered in the OSGi Service Registry and can be looked up using its interface name(s). Definition - [OSGi Core Release 7, Chapter 5.2: Services][OSGi-core]
+**service** - any object that is registered in the OSGi Service Registry and can be looked up using its interface name(s). Definition - [OSGi Core Release 8, Chapter 5.2: Services][OSGi-core]
 
 **manifest** - descriptive information about the bundle, contained in its JAR file
 
@@ -163,15 +163,15 @@ We will list the most popular OSGi containers with a short description of their 
 
 ## Further Reading
 
-- [OSGi Core Release 7][OSGi-core]
-- [OSGi API](https://osgi.org/javadoc/osgi.core/7.0.0/)
+- [OSGi Core Release 8][OSGi-core]
+- [OSGi API](https://osgi.org/javadoc/osgi.core/8.0.0/)
 - [OSGi Vogella guide](http://www.vogella.com/tutorials/OSGi/article.html)
 - [Lifecycle of a bundle](https://developer.atlassian.com/docs/atlassian-platform-common-components/plugin-framework/behind-the-scenes-in-the-plugin-framework/lifecycle-of-a-bundle)
 - [OSGi enRoute](https://enroute.osgi.org/)
 - <https://www.osgi.org/developer/where-to-start/>
 
 [OSGi]: https://www.osgi.org/
-[OSGi-core]: https://osgi.org/download/r7/osgi.core-7.0.0.pdf
+[OSGi-core]: https://osgi.org/download/r8/osgi.core-8.0.0.pdf
 [fig1]:images/layeringosgi.png
 [fig2]:images/states.png
 [fig3]:images/services.png
