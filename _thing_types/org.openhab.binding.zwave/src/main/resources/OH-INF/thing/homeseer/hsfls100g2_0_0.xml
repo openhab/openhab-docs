@@ -125,10 +125,10 @@ Enable/Disables floodlight is controlled by LUX Level and PIR trigger or LUX lev
         <default>0</default>
       </parameter>
 
-      <parameter name="config_7_0" type="integer" groupName="configuration">
+      <parameter name="config_7_1" type="integer" groupName="configuration">
         <label>7: Measured Temperature Offset</label>
         <description><![CDATA[
-Sets the offset to the Measured Temperature<br /> <h1>Overview</h1><p>0x9C - 0x64 (offset range : -10.0°C ~ +10.0°C)</p>
+Sets the offset to the Measured Temperature<br /> <h1>Overview</h1><p>0x9C - 0x64 (offset range : -10.0°C ~ +10.0°C)</p><p>Device accepts 0 to 100 and 156 to 255.  Values of 101 to 155 are not allowed</p>
         ]]></description>
         <default>0</default>
       </parameter>

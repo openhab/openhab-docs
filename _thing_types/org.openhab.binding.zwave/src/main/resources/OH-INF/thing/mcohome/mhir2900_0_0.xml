@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="mcohome_mhir2900_00_000" listed="false">
+    <label>IR Thermostat IR2900 IR Thermostat</label>
+    <description><![CDATA[
+IR Thermostat<br /> <h1>Overview</h1><p>The MCO Home IR Thermostat IR2900 is a Z-Wave enabled device that allows you to control your air conditioning or heating system through infrared signals. It features a built-in temperature sensor and an LCD display that shows the current temperature and humidity levels. The device can be used as a thermostat to regulate the temperature of your home, and it can also be used to set schedules for your air conditioning or heating system.<br /></p> <br /> <h2>Inclusion Information</h2><ol><li>In the home page, long press UP and DOWN synchronously for 3 sec to enter into Z-Wave interface, Product ID will be displayed on the interface.</li><li>If Product ID is 0, press POWER to include the device into Z-Wave network, if the inclusion is successful, it will not show 000 on the interface.</li></ol> <br /> <h2>Exclusion Information</h2><ol><li>In the home page, long press UP and DOWN synchronously for 3 sec to enter into Z-Wave interface, Product ID will be displayed on the interface.</li><li>If Product ID is not 0, press to exclude the device from Z-Wave network POWER, if the Exclusion is successful, it will show 000 on the interface.</li></ol> <br /> <h2>Wakeup Information</h2><p><br /></p>
+    ]]></description>
+    <category>RemoteControl</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="sensor_temperature" typeId="sensor_temperature">
+        <label>Sensor (temperature)</label>
+        <properties>
+          <property name="binding:*:QuantityType">COMMAND_CLASS_SENSOR_MULTILEVEL;type=TEMPERATURE</property>
+        </properties>
+      </channel>
+      <channel id="sensor_relhumidity" typeId="sensor_relhumidity">
+        <label>Sensor (relative humidity)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_SENSOR_MULTILEVEL;type=RELATIVE_HUMIDITY</property>
+        </properties>
+      </channel>
+      <channel id="thermostat_mode" typeId="mcohome_mhir2900_00_000_thermostat_mode">
+        <label>Thermostat mode</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_THERMOSTAT_MODE</property>
+        </properties>
+      </channel>
+      <channel id="thermostat_state" typeId="thermostat_state">
+        <label>Thermostat Operating State</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_THERMOSTAT_OPERATING_STATE</property>
+        </properties>
+      </channel>
+      <channel id="thermostat_setpoint_heating" typeId="thermostat_setpoint">
+        <label>Setpoint (heating)</label>
+        <properties>
+          <property name="binding:*:QuantityType">COMMAND_CLASS_THERMOSTAT_SETPOINT;type=HEATING</property>
+        </properties>
+      </channel>
+      <channel id="thermostat_setpoint_cooling" typeId="thermostat_setpoint">
+        <label>Setpoint (cooling)</label>
+        <properties>
+          <property name="binding:*:QuantityType">COMMAND_CLASS_THERMOSTAT_SETPOINT;type=COOLING</property>
+        </properties>
+      </channel>
+      <channel id="thermostat_fanmode" typeId="mcohome_mhir2900_00_000_thermostat_fanmode">
+        <label>Thermostat fan mode</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_THERMOSTAT_FAN_MODE</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">McoHome Technology Co., Ltd</property>
+      <property name="modelId">IR Thermostat IR2900</property>
+      <property name="manufacturerId">015F</property>
+      <property name="manufacturerRef">2900:7102</property>
+      <property name="dbReference">1552</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_2_2" type="integer" groupName="configuration">
+        <label>2: Variation of reported temperature(C)</label>
+        <description><![CDATA[
+Automatically report to gateway when variation of temperature greater than this value<br /> <h1>Overview</h1><p>0: not report to gateway when temperature varies</p><p>3 - 255: n *0.1 C</p>
+        ]]></description>
+        <default>5</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_3_1" type="integer" groupName="configuration">
+        <label>3: Variation of reported humidity</label>
+        <description><![CDATA[
+Automatically report to gateway when variation of humidity greater than this value<br /> <h1>Overview</h1><p>0: not report to gateway when humidity varies</p><p>1-99: Automatically report</p>
+        ]]></description>
+        <default>6</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_4_1" type="integer" groupName="configuration">
+        <label>4: IR-Command heating mode</label>
+        <description><![CDATA[
+Whether to send IR command when the device is in the heating mode<br /> <h1>Overview</h1><p>0: disabled</p><p>1: enabled</p>
+        ]]></description>
+        <default>1</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_5_1" type="integer" groupName="configuration">
+        <label>5: IR-Command cooling mode</label>
+        <description><![CDATA[
+Whether to send IR command when the device is in the cooling mode<br /> <h1>Overview</h1><p>0: disabled</p><p>1: enabled</p>
+        ]]></description>
+        <default>1</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_6_1" type="integer" groupName="configuration">
+        <label>6: Send repetition to Association group 2</label>
+        <description><![CDATA[
+The number of times to verify and resend after sending a command to the device of association group 2<br /> <h1>Overview</h1><p>0: not verify</p><p>1 - 9: the number of times to resend if verification failure</p><p>10: always verify till success</p>
+        ]]></description>
+        <default>3</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_7_1" type="integer" groupName="configuration">
+        <label>7: Send repetition to Association group 3</label>
+        <description><![CDATA[
+The number of times to verify and resend aller sending a command to the device of association group 3<br /> <h1>Overview</h1><p>0: not verify</p><p>1 - 9: the number of times to resend if verification failure</p>
+        ]]></description>
+        <default>3</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_10_1" type="integer" groupName="configuration">
+        <label>10: Lock key</label>
+        <description><![CDATA[
+OFF--key works; ON --keys of up and down not works (this function is invalid for menu interface<br /> <h1>Overview</h1><p>0: OFF</p><p>1: ON</p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_11_1" type="integer" groupName="configuration">
+        <label>11: Sound On/Off</label>
+        <description><![CDATA[
+<br /> <h1>Overview</h1><p>0: OFF</p><p>1: ON<br /></p>
+        ]]></description>
+        <default>1</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_12_1" type="integer" groupName="configuration">
+        <label>12: Temperature deadband setting</label>
+        <description><![CDATA[
+The device will follow thermostat‘s internal control logic to control AC‘s setting temperature, in order that the indoor temperature ranches the setting temperature of the device. (In this case, it is normal that the setting temperature of the device diff<br /> <h1>Overview</h1><p>0: Local setting temperature is same as setting temperature of air conditioner. </p><p>1 - 3: Value of temperature deadband (n*1°C)</p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_13_1" type="integer" groupName="configuration">
+        <label>13: Temperature calibration</label>
+        <description><![CDATA[
+<br /> <h1>Overview</h1><p>-100 - 100: Value of temperature calibration (n*0,1 °C)</p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_14_1" type="integer" groupName="configuration">
+        <label>14: Screen On</label>
+        <description><![CDATA[
+<br /> <h1>Overview</h1><p>0: always on</p><p>1-60: time of screen on in minutes</p>
+        ]]></description>
+        <default>1</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_15_1" type="integer" groupName="configuration">
+        <label>15: LED Brightness</label>
+        <description><![CDATA[
+<br /> <h1>Overview</h1><p>0: OFF </p><p>1-8: Level</p>
+        ]]></description>
+        <default>8</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_16_1" type="integer" groupName="configuration">
+        <label>16: Controlled by association group</label>
+        <description><![CDATA[
+Temperature deadband when the device is controlled by association group.<br /> <h1>Overview</h1><p>5-30: Value of temperature deadband (n* 0.1 C)</p>
+        ]]></description>
+        <default>10</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_255_1" type="integer" groupName="configuration">
+        <label>255: Factory reset</label>
+        <description><![CDATA[
+<br /> <h1>Overview</h1><p>85: Factory restore</p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Lifeline</label>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: Basic Set Commands Sw1</label>
+        <description>Basic Set: Variation of working status of the device in the heating mode</description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_3" type="text" groupName="association" multiple="true">
+        <label>3: Basic Set Commands Sw2</label>
+        <description>Basic Set: Variation of working status of the device in the cooling mode</description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+  <channel-type id="mcohome_mhir2900_00_000_thermostat_mode">
+    <item-type>Number</item-type>
+    <label>Thermostat Mode</label>
+    <description>Sets the thermostat mode</description>
+    <category>Temperature</category>
+    <state pattern="%s">
+      <options>
+        <option value="0">Off</option>
+        <option value="1">Heat</option>
+        <option value="10">Auto Changeover</option>
+        <option value="2">Cool</option>
+        <option value="6">Fan Only</option>
+        <option value="8">Dry Air</option>
+      </options>
+    </state>
+  </channel-type>
+
+  <channel-type id="mcohome_mhir2900_00_000_thermostat_fanmode">
+    <item-type>Number</item-type>
+    <label>Thermostat Fan Mode</label>
+    <description>Sets the thermostat fan mode</description>
+    <category>Temperature</category>
+    <state pattern="%s">
+      <options>
+        <option value="0">Auto (Low)</option>
+        <option value="1">On (Low)</option>
+        <option value="3">On (high)</option>
+      </options>
+    </state>
+  </channel-type>
+
+</thing:thing-descriptions>

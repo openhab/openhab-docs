@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="simontech_1000208113x_00_000" listed="false">
+    <label>10002081-13X S100 iO Master Roller Blind</label>
+    <description><![CDATA[
+S100 iO Master Roller Blind<br /> <h1>Overview</h1><p>Master Roller Blind IO is ready to operate with Z-Wave controllers and configured to be managed by Simon100 IO APP using the HUB plug IO for getting a better user experience. Sending the Blind controller by other window covering devices Up/Down/Stop.</p> <br /> <h2>Inclusion Information</h2><p>When the pushbutton is released after a press of (10sec&lt;T&lt;30sec) the device will Set it into Manual Association Mode. </p><p>Central LED will blink slow during Association mode time.</p><p>Association mode allows add devices to Device Group 2.</p><p>If associated devices are Simon Devices, Master will turn on Central LED to inform the user about which devices are in.</p><p>Once association is finished, Master will turn off the Central LED to allow the normal use of the devices. </p> <br /> <h2>Exclusion Information</h2><p>When the pushbutton is released after a press of (10sec&lt;T&lt;30sec) the device will Set it into Manual Association Mode. </p><p>Central LED will blink slow during Association mode time.</p><p>Association mode allows add devices to Device Group 2.</p><p>If associated devices are Simon Devices, Master will turn on Central LED to inform the user about which devices are in.</p><p>Once association is finished, Master will turn off the Central LED to allow the normal use of the devices. </p> <br /> <h2>Wakeup Information</h2><p><br /></p>
+    ]]></description>
+    <category>Controller</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_dimmer" typeId="switch_dimmer">
+        <label>Dimmer</label>
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+          <property name="binding:Command:OnOffType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+        </properties>
+      </channel>
+      <channel id="blinds_control" typeId="blinds_control">
+        <label>Blinds Control</label>
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+          <property name="binding:Command:StopMoveType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+          <property name="binding:Command:UpDownType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">SimonTech S.L.U</property>
+      <property name="modelId">10002081-13X</property>
+      <property name="manufacturerId">0267</property>
+      <property name="manufacturerRef">0106:0000</property>
+      <property name="dbReference">1556</property>
+      <property name="defaultAssociations">2</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_1_1" type="integer" groupName="configuration">
+        <label>1: Association LED</label>
+        <description>Activates the Central LED.</description>
+        <default>0</default>
+        <options>
+          <option value="0">Turns the LED OFF (default)</option>
+          <option value="255">Turns the LED ON</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_4_1" type="integer" groupName="configuration" readOnly="true">
+        <label>4: UP time</label>
+        <description>UP time</description>
+        <default>60</default>
+        <options>
+          <option value="1">Sets the UP time in seconds</option>
+          <option value="60">Default</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_5_1" type="integer" groupName="configuration">
+        <label>5: Down Time</label>
+        <description>Down Time</description>
+        <default>60</default>
+        <options>
+          <option value="1">Sets the DOWN time in seconds</option>
+          <option value="60">Default</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_9_1_wo" type="integer" groupName="configuration">
+        <label>9: Calibration</label>
+        <description><![CDATA[
+Calibration<br /> <h1>Overview</h1><p>255 - The device will perform a calibration process in order to Set the UP and DOWN times automatically<br /></p>
+        ]]></description>
+        <default>-1</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_12_1" type="integer" groupName="configuration">
+        <label>12: Behavior of LED in Repose</label>
+        <description>Configuration of Main LED as identification at 20%.</description>
+        <default>0</default>
+        <options>
+          <option value="0">LED OFF</option>
+          <option value="255">LED ON at 20% of maximum level</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_13_1" type="integer" groupName="configuration">
+        <label>13: Lock Input</label>
+        <description>Unlock/lock the direct control of load.</description>
+        <default>0</default>
+        <options>
+          <option value="0">Unlock the direct control of load.</option>
+          <option value="255">Lock the direct control of load.</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_21_2" type="integer" groupName="configuration" readOnly="true">
+        <label>21: Load State</label>
+        <description>Load State (Read Only)</description>
+        <default>0</default>
+        <options>
+          <option value="0">Bit 0: Load is OFF</option>
+          <option value="0">Bit 1: Sunblind position 0%</option>
+          <option value="1">Bit 0: Load is going UP/DOWN</option>
+          <option value="99">Bit 1: Sunblind position 99%</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_23_1" type="integer" groupName="configuration" readOnly="true">
+        <label>23: Calibration Required</label>
+        <description>Calibration Required (Read Only)</description>
+        <default>0</default>
+        <options>
+          <option value="0">Calibration is not required.</option>
+          <option value="255">It is necessary to calibrate the device.</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_27_1" type="integer" groupName="configuration">
+        <label>27: Lock long press</label>
+        <description>7 Lock long press</description>
+        <default>0</default>
+        <options>
+          <option value="0">Long press works as default.</option>
+          <option value="255">Long press works as overview.</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Lifeline</label>
+        <description><![CDATA[
+Lifeline<br /> <h1>Overview</h1><p>Change on Sunblind position:</p><p>On -&gt; CC Basic, Basic Report.</p><p>Value 0x01 - 0x63 Report sunblind position</p><p>Calibration requirement change. (If device needs to be calibrated and is Added into a ZWave network, it will report after receive an Association Set of life line).</p><p>Calibration required -&gt; CC Configuration, Configuration Report, Param 23, Value 0xF</p><p>Calibration not required -&gt; CC Configuration, Configuration Report, Param 23, Value 0x00</p>
+        ]]></description>
+        <multipleLimit>3</multipleLimit>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: ctrl</label>
+        <description><![CDATA[
+Control<br /> <h1>Overview</h1><p>Change on Sunblind position:</p><p>CC Basic, Basic Report.</p><p>Value 0x00 - 0x63 Report sunblind position</p>
+        ]]></description>
+        <multipleLimit>20</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

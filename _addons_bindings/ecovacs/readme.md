@@ -5,6 +5,7 @@ title: Ecovacs - Bindings
 type: binding
 description: "This binding provides integration for vacuum cleaning / mopping robots made by Ecovacs (<https://www.ecovacs.com/>)."
 since: 3x
+logo: images/addons/ecovacs.png
 install: manual
 ---
 
