@@ -30,10 +30,9 @@ Transformation files need to be placed in the directory `$OPENHAB_CONF/transform
     The technical state of a Contact Item (e.g. "CLOSED") is translated into a human readable representation in Spanish ("cerrado").
 
     ```java
-    Contact Livingroom_Window        "Window [MAP(window_esp.map):%s]"               {/*Some Binding*/}
+    Contact Livingroom_Window        "Window [MAP(window_esp.map):%s]"             {/*Some Binding*/}
     Number  Kitchen_Temperature_C    "Temperature [JSONPATH($.temperature):%s °C]" {/*Some Binding*/}
     Number  Livingroom_Temperature_F "Temperature [JS(convert-C-to-F.js):%s °F]"   {/*Some Binding*/}
-
     ```
 
     Usage of Transformations in the [label parameter of Sitemap elements]({{base}}/ui/sitemaps.html#element-type-text) works the same way.
@@ -60,29 +59,29 @@ Transformation files need to be placed in the directory `$OPENHAB_CONF/transform
 
 To keep these examples simple, the contents of the referenced files `window_esp.map` and `convert-C-to-F.js` were left out.
 
-## `SCRIPT` Transformation
+## Script Transformation
 
-The `SCRIPT` transformation is available from the framework and needs no additional installation.
+The script transformation is available from the framework and needs no additional installation.
 It allows transforming values using any of the available scripting languages in openHAB (JSR-223 or DSL).
 
-The script needs to be placed in the `$OPENHAB_CONF/transform` folder with an extension `.script` regardless of the actual script type.
-When referencing a transformation, the script type must be prepended to the filename (e.g. `dsl:stringlength.script` for the DSL version of `stringlength.script`).
-Please note that you cannot have transformations with the same name and different languages as the file-extension is always `script`.
-The script type depends on the scripting engine used, it is usually either the file extension or the MIME-type of the scripts.
+The script needs to be placed in the `$OPENHAB_CONF/transform` folder with the native extension for the chosen language, for example `stringlength.js` for a
+transformation using JS Scripting. The script file name here acts as the `script identifier` for the
+script transformation. A script identifier can also refer to a transformation script created in the UI.
 
-The input value is injected into the script context as a string variable `input`.
-The result needs to be returned from the script, it can be `null` or a value of a type that properly implements `.toString()`.
-Additional parameters can be injected in the script by adding them to the script identifier in URL style (`js.script:scale?correctionFactor=1.1&divider=10` would also inject `correctionFactor` and `divider`).
+The input value is injected into the script context as a _string_ variable `input`.
+Additional parameters can be injected into the script by adding them to the script identifier in URL style (`scale.js?correctionFactor=1.1&divider=10` would also inject `correctionFactor` and `divider`).
+These additional parameters are also injected into the script context as _string_ variables.
+The result of the transformation is provided by the script as its return value. It can be `null`,
+a _string_, or a value of a type that properly implements `.toString()`.
 
 The examples show a simple transformation with the same functionality for some languages.
 It takes the length of the input string and e.g. returns `String has 5 characters`.
-Given the filename `stringlength.script`, the transformation pattern is `SCRIPT(<script-type>:stringlength.script):%s`.
 
 :::: tabs
 
 ::: tab DSL
 
-The script-prefix is `dsl`.
+The script file name is `stringlength.dsl` and the transformation is `DSL(stringlength.dsl)`.
 
 ```java
 var returnValue = "String has " + input.length + " characters"
@@ -94,7 +93,9 @@ returnValue
 
 ::: tab JS
 
-The script-prefix is `js` when using the modern JS Scripting add-on and `nashornjs` when using the legacy JS Scripting add-on.
+For the modern JS Scripting, the script file name is `stringlength.js` and the transformation is `JS(stringlength.js)`.
+For the legacy JS Scripting, the script file name is `stringlength.nashornjs` and the transformation is `NASHORNJS(stringlength.nashornjs)`.
+
 Note the overall syntax is the same.
 
 ```javascript
@@ -108,7 +109,7 @@ Note the overall syntax is the same.
 
 ::: tab JRuby
 
-The script-prefix is `rb`.
+The script file name is `stringlength.rb` and the transformation is `RB(stringlength.rb)`.
 
 ```ruby
 "String has #{input.length} characters"
@@ -116,9 +117,96 @@ The script-prefix is `rb`.
 
 :::
 
+::: tab Groovy
+
+The script file name is `stringlength.groovy` and the transformation is `GROOVY(stringlength.groovy)`.
+
+```groovy
+"String has ${input.length()} characters"
+```
+
+:::
+
 ::::
 
-Currently the `SCRIPT` transformation is not available as profile.
+### Inline Script Transformation
+
+A simple transformation rule can also be given as an inline script. The inline script should
+start with the `|` character. Quotes within the script may need to be escaped with a `\` when
+used within another quoted string such as in sitemaps or text configurations.
+
+Examples:
+
+:::: tabs
+
+::: tab DSL
+
+```java
+DSL(|"String has " + input.length + " characters")
+```
+
+:::
+
+::: tab JS
+
+For the modern JS Scripting, the transformation is `JS(|...)`.
+For the legacy JS Scripting, the transformation is `NASHORNJS(|...)`.
+
+```javascript
+JS(|"String has " + input.length + " characters")
+```
+
+:::
+
+::: tab JRuby
+
+```ruby
+RB(|"String has #{input.length} characters")
+```
+
+:::
+
+::: tab Groovy
+
+```groovy
+GROOVY(|"String has ${input.length()} characters")
+```
+
+:::
+
+::::
+
+### Script Transformation Profile
+
+The script transformation is also available as profile. When acting as transformation profile:
+
+- A _string_ return value of `"UNDEF"` or `"NULL"` will be translated to `UnDefType.UNDEF` or `UnDefType.NULL` correspondingly.
+- A `null` return value will cause the input to be discarded and not propagated to the destination.
+
+#### Script Transformation Profile Configurations
+
+| Parameter Name    | Description                                                                                |
+| ----------------- | ------------------------------------------------------------------------------------------ |
+| `toItemScript`    | The `script identifier` for performing transformations from the Thing handler to the item. |
+| `toHandlerScript` | The `script identifier` for performing transformations from the item to the Thing handler. |
+
+Example usage in an `.items` file:
+
+```xtend
+Number <itemName> { channel="<channelUID>"[profile="transform:JS", toItemScript="decode_json.js" toHandlerScript="encode_json.js" ] }
+```
+
+Here, additional parameters can also be injected into the script using the URL style syntax, e.g.:
+
+```xtend
+Number <itemName> { channel="<channelUID>"[profile="transform:RB", toItemScript="multiply.rb?factor=10" toHandlerScript="multiply.rb?factor=0.1" ] }
+```
+
+Inline script is also supported in the profile syntax.
+
+```xtend
+Number <itemName> { channel="<channelUID>"[profile="transform:RB", toItemScript="| input.to_f * 10" toHandlerScript="| input.to_f * 0.1" ] }
+```
 
 More details regarding this and other Transformation services can be found in the individual transformation articles linked below.
 
