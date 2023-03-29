@@ -882,6 +882,29 @@ The following update instruction changes the channel-type for the `battery-level
 </update:update-descriptions>
 ```
 
+Different instructions can be combined in one instruction-set.
+The following removes the `water_level` channel from `foo:pool` things and adds a new `chlorine` level
+
+```xml
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<update:update-descriptions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                            xmlns:update="https://openhab.org/schemas/update-description/v1.0.0"
+                            xsi:schemaLocation="https://openhab.org/schemas/update-description/v1.0.0 https://openhab.org/schemas/update-description-1.0.0.xsd">
+
+  <thing-type uid="foo:pool">
+    <instruction-set targetVersion="1">
+      <remove-channel id="water_level">
+      </remove-channel>
+      <add-channel id="chlorine">
+        <type>foo:concentration</type>
+        <label>Chlorine Concentration</label>
+      </add-channel>
+    </instruction-set>
+  </thing-type>
+
+</update:update-descriptions>
+```
+
 In addition to the update instructions, the thing-type definition needs to add a property `thingTypeVersion` to prevent newly created things from being modified:
 
 ```xml
