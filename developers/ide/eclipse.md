@@ -35,10 +35,6 @@ If you already have Eclipse installed it is recommended to perform a separate Ec
 
     ![select](./images/ide_setup_eclipse_3_select_ide.png)
 
-    Make sure to select a version `2022-03` or earlier because the setup will fail due to a missing dependency in newer versions.
-
-    ![select version](./images/ide_setup_eclipse_3_select_ide_version.png)
-
 1. Under `GitHub Projects > openHAB` select `openHAB Development` and any desired option from `openHAB Add-ons` (includes all add-ons from openhab-addons repo), `openHAB ZigBee Binding` or `openHAB Z-Wave Binding`.
 
     ![select projects](./images/ide_setup_eclipse_4_openhab.png)
