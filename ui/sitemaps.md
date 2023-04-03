@@ -385,21 +385,23 @@ Colorpicker item=LR_LEDLight_Color label="LED Light Color" icon="colorwheel"
 ### Element Type 'Input'
 
 ```java
-Input item=<itemname> [label="<labelname>"] [icon="<iconname>"]
+Input item=<itemname> [label="<labelname>"] [icon="<iconname>"] [inputHint="<inputHint>"]
 ```
 
-This element allows entering of text or numbers and updating the underlying items.
+This element allows entering of text, numbers and dates/times and updating the underlying items.
 This can for example be useful to update manually collected meter readings and storing the information in an item.
-Text, number or number with unit values can be updated in the respective item types.
+Text, number or number with unit values and dates/times can be updated in the respective item types.
 [Formatting](/docs/configuration/items.html#item-label) in the label parameter will format the current value, but the value update will be as entered in the field.
 E.g. this makes it possible to use formatting like `[%.0f %unit%]` to show the current value without fractions, but still update to whatever is entered.
+
+- `inputHint` will give a hint to the user interface to use a specific widget adapted to a specific use. Valid values for the parameter are `text`, `number`, `date`, `time` and `datetime`. Support of these widget types vary by user interface and/or browser.
 
 Note that this element type may not be supported on all user interfaces that support sitemaps.
 
 **Example:**
 
 ```java
-Input item=Meter_Reading label="Meter [%.0f %unit%]" icon="energy"
+Input item=Meter_Reading label="Meter [%.0f %unit%]" icon="energy" inputHint="number"
 ```
 
 ![Presentation of the Input element in BasicUI](images/sitemap_demo_input.png)
