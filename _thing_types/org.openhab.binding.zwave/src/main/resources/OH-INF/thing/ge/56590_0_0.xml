@@ -36,7 +36,7 @@ In-Wall No Neutral Smart Dimmer<br /> <h1>Overview</h1><p>In-Wall No Neutral Sma
       <property name="manufacturerId">0063</property>
       <property name="manufacturerRef">4944:3334</property>
       <property name="dbReference">1498</property>
-      <property name="defaultAssociations">1</property>
+      <property name="defaultAssociations">1,3</property>
     </properties>
 
     <!-- CONFIGURATION DESCRIPTIONS -->
@@ -141,20 +141,24 @@ In-Wall No Neutral Smart Dimmer<br /> <h1>Overview</h1><p>In-Wall No Neutral Sma
       <parameter name="group_1" type="text" groupName="association" multiple="true">
         <label>1: Lifeline</label>
         <description><![CDATA[
-Association Group 1 supports Lifeline, Multi-level Switch report<br /> <h1>Overview</h1><p><br /></p>
+Z-Wave Plus Lifeline<br /> <h1>Overview</h1><p><br /></p>
         ]]></description>
         <multipleLimit>5</multipleLimit>
       </parameter>
 
       <parameter name="group_2" type="text" groupName="association" multiple="true">
-        <label>2: Basic Set, controlled with local load</label>
-        <description>Association Group 2 supports Basic Set and is controlled with the local load</description>
+        <label>2: Single Press</label>
+        <description><![CDATA[
+Basic Set - Controlled with the local load<br /> <h1>Overview</h1><p><br /></p>
+        ]]></description>
         <multipleLimit>5</multipleLimit>
       </parameter>
 
       <parameter name="group_3" type="text" groupName="association" multiple="true">
-        <label>3: Basic set, controlled by double pressing ON/OFF</label>
-        <description>Association Group 3 supports Basic Set and is controlled by double pressing the ON/OFF button</description>
+        <label>3: Double Tap</label>
+        <description><![CDATA[
+Basic Set - controlled by double pressing the ON/OFF button<br /> <h1>Overview</h1><p><br /></p>
+        ]]></description>
         <multipleLimit>5</multipleLimit>
       </parameter>
 

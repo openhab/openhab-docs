@@ -1,0 +1,597 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="aeotec_zwa037_00_000" listed="false">
+    <label>ZWA037 Aeotec Illumino Dimmer Switch</label>
+    <description><![CDATA[
+Aeotec Illumino Dimmer Switch<br /> <h1>Overview</h1><p>This product can be operated in any Z-Wave™ network with other Z-Wave Plus™ certified devices from other manufacturers. All non-battery operated nodes within the network will act as repeaters regardless of vendor to increase reliability of the network. Each module is designed to act as a repeater, which will re-transmit a radio frequency (RF) signal by routing the signal around obstacles and radio dead spots to ensure that the signal is received at its intended destination. ZWA037-A is a security enabled Z-Wave Plus™ device. A security Enabled Z-Wave Plus™</p><p>Controller must be used in order to fully utilize the product. </p> <br /> <h2>Inclusion Information</h2><p>Inclusion 1x tap</p><p>Out of network</p><p>Send NIF for network pairing/ inclusion (white LED quick flashes). If pairing is successful, the LED will turn to solid green for 2s, then deactivates.</p><p>In network</p><p>Trigger to send Central Scene 1x tap scene.</p><p>ON/OFF control of output load. </p> <br /> <h2>Exclusion Information</h2><p>Exclusion 3x tap</p><p>In network Send NIF for network unpairing/ exclusion (purple LED flashes).</p><p>Out of network</p><p>Trigger to send Central Scene 3x tap scene. </p> <br /> <h2>Wakeup Information</h2><p><br /></p>
+    ]]></description>
+    <category>WallSwitch</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_dimmer" typeId="switch_dimmer">
+        <label>Dimmer</label>
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+          <property name="binding:Command:OnOffType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+        </properties>
+      </channel>
+      <channel id="scene_number" typeId="scene_number">
+        <label>Scene Number</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_SCENE_ACTIVATION</property>
+        </properties>
+      </channel>
+      <channel id="scene_number" typeId="scene_number">
+        <label>Scene Number</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_CENTRAL_SCENE</property>
+        </properties>
+      </channel>
+      <channel id="config_decimal_param20" typeId="config_decimal">
+        <label>Power Restore</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_CONFIGURATION;paramter=20</property>
+        </properties>
+      </channel>
+      <channel id="config_decimal_param40" typeId="config_decimal">
+        <label>Auto Turn Off Timer</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_CONFIGURATION;parameter=40</property>
+        </properties>
+      </channel>
+      <channel id="config_decimal_param41" typeId="config_decimal">
+        <label>Auto Turn On Timer</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_CONFIGURATION;parameter=41</property>
+        </properties>
+      </channel>
+      <channel id="config_decimal_param80" typeId="config_decimal">
+        <label>Instant Status Report</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_CONFIGURATION;parameter=80</property>
+        </properties>
+      </channel>
+      <channel id="config_decimal_param82" typeId="config_decimal">
+        <label>Association Control Settings</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_CONFIGURATION;parameter=82</property>
+        </properties>
+      </channel>
+      <channel id="config_decimal_param83" typeId="config_decimal">
+        <label>Led Indicator Settings</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_CONFIGURATION;parameter=83</property>
+        </properties>
+      </channel>
+      <channel id="config_decimal_param84" typeId="config_decimal">
+        <label>Led Indicator Color For Output</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_CONFIGURATION;parameter=84</property>
+        </properties>
+      </channel>
+      <channel id="config_decimal_param85" typeId="config_decimal">
+        <label>Led Indicator Color For Scene</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_CONFIGURATION;parameter=85</property>
+        </properties>
+      </channel>
+      <channel id="config_decimal_param86" typeId="config_decimal">
+        <label>Led Brightness</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_CONFIGURATION;parameter=86</property>
+        </properties>
+      </channel>
+      <channel id="config_decimal_param110" typeId="config_decimal">
+        <label>Single Tap behavior</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_CONFIGURATION;parameter=110</property>
+        </properties>
+      </channel>
+      <channel id="config_decimal_param111" typeId="config_decimal">
+        <label>Double Tap behavior</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_CONFIGURATION;parameter=111</property>
+        </properties>
+      </channel>
+      <channel id="config_decimal_param119" typeId="config_decimal">
+        <label>External Switch Scene</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_CONFIGURATION;parameter=119</property>
+        </properties>
+      </channel>
+      <channel id="config_decimal_param120" typeId="config_decimal">
+        <label>External Switch Type</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_CONFIGURATION;paramater=120</property>
+        </properties>
+      </channel>
+      <channel id="config_decimal_param121" typeId="config_decimal">
+        <label>Output Control</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_CONFIGURATION;parameter=121</property>
+        </properties>
+      </channel>
+      <channel id="config_decimal_param122" typeId="config_decimal">
+        <label>Button Function</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_CONFIGURATION;parameter=122</property>
+        </properties>
+      </channel>
+      <channel id="config_decimal_param123" typeId="config_decimal">
+        <label>Report Behavior</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_CONFIGURATION;parameter=123</property>
+        </properties>
+      </channel>
+      <channel id="config_decimal_param125" typeId="config_decimal">
+        <label>Ramp Rate for Tap and Hub control</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_CONFIGURATION;parameter=125</property>
+        </properties>
+      </channel>
+      <channel id="config_decimal_param126" typeId="config_decimal">
+        <label>Ramp Rate for press and hold</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_CONFIGURATION;parameter=126</property>
+        </properties>
+      </channel>
+      <channel id="config_decimal_param131" typeId="config_decimal">
+        <label>Minimum most dim setting</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_CONFIGURATION;parameter=131</property>
+        </properties>
+      </channel>
+      <channel id="config_decimal_param132" typeId="config_decimal">
+        <label>Maximum most dim setting</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_CONFIGURATION;paramater=132</property>
+        </properties>
+      </channel>
+      <channel id="config_decimal_param133" typeId="config_decimal">
+        <label>Custom brightness</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_CONFIGURATION;parameter=133</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Aeotec Limited</property>
+      <property name="modelId">ZWA037</property>
+      <property name="manufacturerId">0371</property>
+      <property name="manufacturerRef">0103:0025</property>
+      <property name="dbReference">1555</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_20_1" type="integer" groupName="configuration">
+        <label>20: Power Restore</label>
+        <description><![CDATA[
+Status after power failure<br /> <h1>Overview</h1><p>0 - return to OFF</p><p>1 - return to ON</p><p>2 - returns to last known state when repowered </p>
+        ]]></description>
+        <default>2</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_40_4" type="integer" groupName="configuration">
+        <label>40: Auto Turn Off Timer</label>
+        <description><![CDATA[
+Timer that auto turn off once turned on.<br /> <h1>Overview</h1><p>0 - disabled</p><p>1 - Auto turn off after 1s once turned on</p><p>...</p><p>65535 - Auto turn off after 65535s once turned on</p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_41_4" type="integer" groupName="configuration">
+        <label>41: Auto Turn On Timer</label>
+        <description><![CDATA[
+Timer that auto turn on once turned off.<br /> <h1>Overview</h1><p>0 - disabled</p><p>1 - Auto turn on after 1s once turned off</p><p>...</p><p>65535 - Auto turn on after 65535s once turned off</p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_80_1" type="integer" groupName="configuration">
+        <label>80: Instant Status Report</label>
+        <description><![CDATA[
+The command for status report.<br /> <h1>Overview</h1><p>0 - Nothing</p><p>1 - Basic Report</p><p>2 - Binary Switch Report</p>
+        ]]></description>
+        <default>2</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_82_1" type="integer" groupName="configuration">
+        <label>82: Association Control Settings</label>
+        <description><![CDATA[
+Setting command for association group.<br /> <h1>Overview</h1><p> 1 - Basic Set</p><p>2- Binary Switch SET </p>
+        ]]></description>
+        <default>1</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_83_1" type="integer" groupName="configuration">
+        <label>83: Led Indicator Settings</label>
+        <description><![CDATA[
+Select the indicator function for output.<br /> <h1>Overview</h1><p>0 - disable completely</p><p>1 - Momentary blink</p><p>2 - LED follows status of output</p>
+        ]]></description>
+        <default>2</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_84_1" type="integer" groupName="configuration">
+        <label>84: Led Indicator Color For Output</label>
+        <description><![CDATA[
+Select the indicator color for output.<br /> <h1>Overview</h1><p>0 - Disabled</p><p>1 - Red</p><p>2 - Blue</p><p>3- Green</p><p>4- Pink</p><p>5- Cyan</p><p>6- Purple</p><p>7- Orange</p><p>8- Yellow</p><p>9- White</p>
+        ]]></description>
+        <default>9</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_85_1" type="integer" groupName="configuration">
+        <label>85: Led Indicator Color For Scene</label>
+        <description><![CDATA[
+Select the indicator color for scene.<br /> <h1>Overview</h1><p>0 - Disabled</p><p>1 - Red</p><p>2 - Blue</p><p>3- Green</p><p>4- Pink</p><p>5- Cyan</p><p>6- Purple</p><p>7- Orange</p><p>8- Yellow</p><p>9- White </p>
+        ]]></description>
+        <default>2</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_86_1" type="integer" groupName="configuration">
+        <label>86: Led Brightness</label>
+        <description><![CDATA[
+Setting the brightness of indicator.<br /> <h1>Overview</h1><p>0 - Disable</p><p>1 - 1%</p><p>...</p><p>60 - 60%</p><p>...</p><p>100 - 100%</p>
+        ]]></description>
+        <default>60</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_110_1" type="integer" groupName="configuration">
+        <label>110: Single Tap behavior</label>
+        <description><![CDATA[
+Select behavior when single tap.<br /> <h1>Overview</h1><p>0 - Last brightness level</p><p>1- Custom value from Param 133</p><p>2- Max brightness from Param 132</p><p>3- Full brightness at 100% </p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_111_1" type="integer" groupName="configuration">
+        <label>111: Double Tap behavior</label>
+        <description><![CDATA[
+Select behavior when double tap.<br /> <h1>Overview</h1><p>0 - Full brightness at 99</p><p>...</p><p>1- Custom value from Param 133</p><p>2- Max brightness from Param 132</p><p>3- disabled </p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_119_1" type="integer" groupName="configuration">
+        <label>119: External Switch Scene</label>
+        <description><![CDATA[
+Enable or disable the scene function of external(3-way) switch.<br /> <h1>Overview</h1><p>0 - Disable</p><p>1 - enable </p>
+        ]]></description>
+        <default>1</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_120_1" type="integer" groupName="configuration">
+        <label>120: External Switch Type</label>
+        <description><![CDATA[
+Select the external (3- way) switch's type.<br /> <h1>Overview</h1><p>0 - toggle on or off only</p><p>1 - toggle switch/1x to toggle /2x use Param 132 or 133</p><p>/3x toggle dimmer loop ramp -&gt; toggle once more to</p><p>stop dim</p><p>2 - momentary switch / 1x to toggle / 2x user Param 132</p><p>or 133/ Press and hold to dim up and down</p><p>3 - momentary switch / 1x quick toggle / 2x user Param</p><p>132 or 133 / Press and hold to dim up and down (but</p><p>after a double click to full brightness, then press and</p><p>hold will always go down instead of increasing)</p>
+        ]]></description>
+        <default>1</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_121_1" type="integer" groupName="configuration">
+        <label>121: Output Control</label>
+        <description><![CDATA[
+Enable or disable output.<br /> <h1>Overview</h1><p>0 - disable completely</p><p>1 - enable local control</p><p>2 - enable central scene</p><p>3 - enable local and central scene</p>
+        ]]></description>
+        <default>3</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_122_1" type="integer" groupName="configuration">
+        <label>122: Button Function</label>
+        <description><![CDATA[
+Select the paddle button functions.<br /> <h1>Overview</h1><p>0 - up/ON, down/OFF</p><p>1 - down/ON, up/OFF</p><p>2 - toggle (up or down are the same) </p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_123_1" type="integer" groupName="configuration">
+        <label>123: Report Behavior</label>
+        <description><![CDATA[
+Select behavior for report and indicator when output is disable.<br /> <h1>Overview</h1><p>0 - report on/off status and change LED indicator when</p><p>parameter 121 is set to 0 or 2</p><p>1 - Don't report on/off status is pressed and parameter</p><p>121 is set to 0 or 2 </p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_125_1" type="integer" groupName="configuration">
+        <label>125: Ramp Rate for Tap and Hub contro</label>
+        <description><![CDATA[
+Setting ramp rate when tap to on off or controlled by HUB.<br /> <h1>Overview</h1><p>0 - instant...</p><p>2 - Ramp Rate 2s</p><p>...</p><p>99 - Ramp Rate 99s</p>
+        ]]></description>
+        <default>2</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_126_1" type="integer" groupName="configuration">
+        <label>126: Ramp Rate for press and hold</label>
+        <description><![CDATA[
+Setting ramp rate when press and hold the paddle.<br /> <h1>Overview</h1><p>1 - Ramp Rate 1s</p><p>...</p><p>4 - Ramp Rate 4s</p><p>...</p><p>99 - Ramp Rate 99s </p>
+        ]]></description>
+        <default>4</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_131_1" type="integer" groupName="configuration">
+        <label>131: Minimum most dim setting</label>
+        <description><![CDATA[
+Setting the minimum value of dimmer.<br /> <h1>Overview</h1><p>0 - Disable</p><p>1 - Minimum value is 1</p><p>...</p><p>99 - Minimum value is 99</p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_132_1" type="integer" groupName="configuration">
+        <label>132: Maximum most dim setting</label>
+        <description><![CDATA[
+Setting the maximum value of dimmer.<br /> <h1>Overview</h1><p>0 - Disable</p><p>1 - Maximum value is 1</p><p>...</p><p>100 - Maximum value is 100 </p>
+        ]]></description>
+        <default>100</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_133_1" type="integer" groupName="configuration">
+        <label>133: Custom brightness</label>
+        <description><![CDATA[
+Setting user custom brightness.<br /> <h1>Overview</h1><p>0 - Disable</p><p>1 - custom brightness level is 1</p><p>...</p><p>99 - custom brightness level is 99</p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Lifeline</label>
+        <description><![CDATA[
+General: Lifeline<br /> <h1>Overview</h1><p>Device Reset Locally Notification:</p><p>Issued when Factory Reset is performed.</p><p>Indicator Report:</p><p>Issued when included successfully.</p><p>Switch Multilevel Report:</p><p>Issued when output level is changed. (Determined by Parameter 80).</p><p>Basic Report:</p><p>Issued when output level is changed (Determined by Parameter80).</p><p>Central Scene Notification:</p><p>Issued when button press or hold or release. (Determined by Parameter</p><p>121). </p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: Control: Key 1</label>
+        <description><![CDATA[
+Top button set ON/OFF<br /> <h1>Overview</h1><p>Basic Set or Switch Binary Set: Issued when Top button press. (The command class is determined by Parameter 82) <br /></p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_3" type="text" groupName="association" multiple="true">
+        <label>3: Control: Key 1</label>
+        <description><![CDATA[
+Top button multilevel set<br /> <h1>Overview</h1><p>Switch Multilevel Set:</p><p>Issued when Top button press or hold and release. </p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_4" type="text" groupName="association" multiple="true">
+        <label>4: Control: Key 2</label>
+        <description><![CDATA[
+Bottom button set ON/OFF<br /> <h1>Overview</h1><p>Basic Set or Switch Binary Set:</p><p>Issued when Bottom button press. (The command class is determined</p><p>by Parameter 82)</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_6" type="text" groupName="association" multiple="true">
+        <label>6: Control: Key 3</label>
+        <description><![CDATA[
+External switch set ON/OFF<br /> <h1>Overview</h1><p>Basic Set or Switch Binary Set:</p><p>Issued when External Switch press. (The command class is determined</p><p>by Parameter 82). </p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_7" type="text" groupName="association" multiple="true">
+        <label>7: Control: Key 3</label>
+        <description><![CDATA[
+External switch multilevel set<br /> <h1>Overview</h1><p>Switch Multilevel Set:</p><p>Issued when External Switch press or hold and release.</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_8" type="text" groupName="association" multiple="true">
+        <label>8: Control: Key 4</label>
+        <description><![CDATA[
+Top and bottom button set ON/OFF<br /> <h1>Overview</h1><p>Basic Set or Switch Binary Set:</p><p>Issued when Top/ Bottom button press. (The command class is</p><p>determined by Parameter 82). </p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_9" type="text" groupName="association" multiple="true">
+        <label>9: Control: Key 4</label>
+        <description><![CDATA[
+Top and bottom button set multilevel set<br /> <h1>Overview</h1><p>Switch Multilevel Set:</p><p>Issued when Top/Bottom button press or hold and release.</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+  <channel-type id="aeotec_zwa037_00_000_config_decimal_param40">
+    <item-type>Number</item-type>
+    <label>Auto Turn Off Timer</label>
+    <description>Timer that auto turn off once turned on.</description>
+    <state pattern="%s">
+    </state>
+  </channel-type>
+
+  <channel-type id="aeotec_zwa037_00_000_config_decimal_param41">
+    <item-type>Number</item-type>
+    <label>Auto Turn On Timer</label>
+    <description>Timer that auto turn on once turned off.</description>
+    <state pattern="%s">
+    </state>
+  </channel-type>
+
+  <channel-type id="aeotec_zwa037_00_000_config_decimal_param80">
+    <item-type>Number</item-type>
+    <label>Instant Status Report</label>
+    <description>The command for status report.</description>
+    <state pattern="%s">
+    </state>
+  </channel-type>
+
+  <channel-type id="aeotec_zwa037_00_000_config_decimal_param82">
+    <item-type>Number</item-type>
+    <label>Association Control Settings</label>
+    <description>Setting command for association group.</description>
+    <state pattern="%s">
+    </state>
+  </channel-type>
+
+  <channel-type id="aeotec_zwa037_00_000_config_decimal_param83">
+    <item-type>Number</item-type>
+    <label>Led Indicator Settings</label>
+    <description>Select the indicator function for output.</description>
+    <state pattern="%s">
+    </state>
+  </channel-type>
+
+  <channel-type id="aeotec_zwa037_00_000_config_decimal_param84">
+    <item-type>Number</item-type>
+    <label>Led Indicator Color For Output</label>
+    <description>Select the indicator color for output.</description>
+    <state pattern="%s">
+    </state>
+  </channel-type>
+
+  <channel-type id="aeotec_zwa037_00_000_config_decimal_param85">
+    <item-type>Number</item-type>
+    <label>Led Indicator Color For Scene</label>
+    <description>Select the indicator color for scene.</description>
+    <state pattern="%s">
+    </state>
+  </channel-type>
+
+  <channel-type id="aeotec_zwa037_00_000_config_decimal_param86">
+    <item-type>Number</item-type>
+    <label>Led Brightness</label>
+    <description>Setting the brightness of indicator.</description>
+    <state pattern="%s">
+    </state>
+  </channel-type>
+
+  <channel-type id="aeotec_zwa037_00_000_config_decimal_param110">
+    <item-type>Number</item-type>
+    <label>Single Tap behavior</label>
+    <description>Select behavior when single tap.</description>
+    <state pattern="%s">
+    </state>
+  </channel-type>
+
+  <channel-type id="aeotec_zwa037_00_000_config_decimal_param111">
+    <item-type>Number</item-type>
+    <label>Double Tap behavior</label>
+    <description>Select behavior when double tap.</description>
+    <state pattern="%s">
+    </state>
+  </channel-type>
+
+  <channel-type id="aeotec_zwa037_00_000_config_decimal_param119">
+    <item-type>Number</item-type>
+    <label>External Switch Scene</label>
+    <description>Enable or disable the scene function of external(3-way) switch.</description>
+    <state pattern="%s">
+    </state>
+  </channel-type>
+
+  <channel-type id="aeotec_zwa037_00_000_config_decimal_param121">
+    <item-type>Number</item-type>
+    <label>Output Control</label>
+    <description>Enable or disable output.</description>
+    <state pattern="%s">
+    </state>
+  </channel-type>
+
+  <channel-type id="aeotec_zwa037_00_000_config_decimal_param122">
+    <item-type>Number</item-type>
+    <label>Button Function</label>
+    <description>Select the paddle button functions.</description>
+    <state pattern="%s">
+    </state>
+  </channel-type>
+
+  <channel-type id="aeotec_zwa037_00_000_config_decimal_param123">
+    <item-type>Number</item-type>
+    <label>Report Behavior</label>
+    <description>Select behavior for report and indicator when output is disable.</description>
+    <state pattern="%s">
+    </state>
+  </channel-type>
+
+  <channel-type id="aeotec_zwa037_00_000_config_decimal_param125">
+    <item-type>Number</item-type>
+    <label>Ramp Rate for Tap and Hub contro</label>
+    <description>Setting ramp rate when tap to on off or controlled by HUB.</description>
+    <state pattern="%s">
+    </state>
+  </channel-type>
+
+  <channel-type id="aeotec_zwa037_00_000_config_decimal_param126">
+    <item-type>Number</item-type>
+    <label>Ramp Rate for press and hold</label>
+    <description>Setting ramp rate when press and hold the paddle.</description>
+    <state pattern="%s">
+    </state>
+  </channel-type>
+
+  <channel-type id="aeotec_zwa037_00_000_config_decimal_param131">
+    <item-type>Number</item-type>
+    <label>Minimum most dim setting</label>
+    <description>Setting the minimum value of dimmer.</description>
+    <state pattern="%s">
+    </state>
+  </channel-type>
+
+  <channel-type id="aeotec_zwa037_00_000_config_decimal_param133">
+    <item-type>Number</item-type>
+    <label>Custom brightness</label>
+    <description>Setting user custom brightness.</description>
+    <state pattern="%s">
+    </state>
+  </channel-type>
+
+</thing:thing-descriptions>

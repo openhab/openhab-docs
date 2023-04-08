@@ -23,6 +23,8 @@ From a hardware side we’ve upgraded our Z-Wave module for better distance and 
 
 From a firmware side, this switch has it all (literally). Scene control, notifications (flashes if your garage door is left open) and can be configured on any HUB.
 
+Updated instructions here: https://community.inovelli.com/t/resources-red-series-dimmer-switch-manual/7306#
+
 ### Inclusion Information
 
 Once the inclusion process has started press the config button 3X and the LED bar will flash blue.  If the switch was included successfully the bar will turn GREEN, however if the switch was not included successfully it will turn RED.
@@ -468,13 +470,21 @@ This parameter has the configuration ID ```config_51_1``` and is of type ```INTE
 ### Parameter 52: Enable "smart bulb" mode
 
 Enable "smart bulb" mode
-Smart bulb mode: If set to 1, power will output maximum % when dimmer is on to optimize performance with smart bulbs.
-The following option values may be configured, in addition to values in the range 0 to 1 -:
+Switch Mode  
+0 = Normal operation
+
+1 = On /Off Mode - Switch will either be in the state of 0% power or 99% power, not allowing dimming. Useful for non-dimmable bulbs or other unique loads
+
+2 = Smart Bulb - Switch always at 99% for use with loads like an Inovelli Bulb or Philips Hue Bulb. Use in conjunction with associations or scenes to achieve an awesome smart bulb experience
+
+Requires firmware 1.47 and above.
+The following option values may be configured, in addition to values in the range 0 to 2 -:
 
 | Value  | Description |
 |--------|-------------|
 | 0 | normal bulb |
-| 1 | smart bulb |
+| 1 | On/Off Mode |
+| 2 | Smart Bulb |
 
 The manufacturer defined default value is ```0``` (normal bulb).
 

@@ -8,7 +8,7 @@
   <thing-type id="inovelli_lzw31sn_00_000" listed="false">
     <label>LZW31-SN Red Series Dimmer</label>
     <description><![CDATA[
-Red Series Dimmer<br /> <h1>Overview</h1><p>Inovelli’s new dimmer switch is packed with features and designed with your house in mind.</p> <p>From a hardware side we’ve upgraded our Z-Wave module for better distance and there is no longer a need for a neutral wire. The switch can be used in any 3-Way or 4-Way setting and allows you to use either an auxiliary switch, a smart switch or your existing dumb switch (NOTE: this only applies if a neutral wire is installed. If there is no neutral wire, the switch only works in a single-pole setting).</p> <p>From a firmware side, this switch has it all (literally). Scene control, notifications (flashes if your garage door is left open) and can be configured on any HUB.</p> <br /> <h2>Inclusion Information</h2><p>Once the inclusion process has started press the config button 3X and the LED bar will flash blue.  If the switch was included successfully the bar will turn GREEN, however if the switch was not included successfully it will turn RED.</p> <br /> <h2>Exclusion Information</h2><p>Press the Config Button 3X</p> <br /> <h2>Wakeup Information</h2><p><br /></p>
+Red Series Dimmer<br /> <h1>Overview</h1><p>Inovelli’s new dimmer switch is packed with features and designed with your house in mind.</p> <p>From a hardware side we’ve upgraded our Z-Wave module for better distance and there is no longer a need for a neutral wire. The switch can be used in any 3-Way or 4-Way setting and allows you to use either an auxiliary switch, a smart switch or your existing dumb switch (NOTE: this only applies if a neutral wire is installed. If there is no neutral wire, the switch only works in a single-pole setting).</p> <p>From a firmware side, this switch has it all (literally). Scene control, notifications (flashes if your garage door is left open) and can be configured on any HUB.</p><p>Updated instructions here: https://community.inovelli.com/t/resources-red-series-dimmer-switch-manual/7306#</p> <br /> <h2>Inclusion Information</h2><p>Once the inclusion process has started press the config button 3X and the LED bar will flash blue.  If the switch was included successfully the bar will turn GREEN, however if the switch was not included successfully it will turn RED.</p> <br /> <h2>Exclusion Information</h2><p>Press the Config Button 3X</p> <br /> <h2>Wakeup Information</h2><p><br /></p>
     ]]></description>
     <category>WallSwitch</category>
 
@@ -309,12 +309,13 @@ Instant On<br /> <h1>Overview</h1><p>Enable instant on (ie: disable 700ms delay 
       <parameter name="config_52_1" type="integer" groupName="configuration">
         <label>52: Enable "smart bulb" mode</label>
         <description><![CDATA[
-Enable "smart bulb" mode<br /> <h1>Overview</h1><p>Smart bulb mode: If set to 1, power will output maximum % when dimmer is on to optimize performance with smart bulbs.</p>
+Enable "smart bulb" mode<br /> <h1>Overview</h1><p>Switch Mode<br />0 = Normal operation</p><p>1 = On /Off Mode - Switch will either be in the state of 0% power or 99% power, not allowing dimming. Useful for non-dimmable bulbs or other unique loads</p><p>2 = Smart Bulb - Switch always at 99% for use with loads like an Inovelli Bulb or Philips Hue Bulb. Use in conjunction with associations or scenes to achieve an awesome smart bulb experience</p><p>Requires firmware 1.47 and above.</p>
         ]]></description>
         <default>0</default>
         <options>
           <option value="0">normal bulb</option>
-          <option value="1">smart bulb</option>
+          <option value="1">On/Off Mode</option>
+          <option value="2">Smart Bulb</option>
         </options>
       </parameter>
 

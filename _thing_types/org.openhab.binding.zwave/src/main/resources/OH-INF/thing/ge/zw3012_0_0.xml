@@ -36,7 +36,7 @@ In-Wall No Neutral Smart Dimmer<br /> <h1>Overview</h1><p>In-Wall No Neutral Sma
       <property name="manufacturerId">0063</property>
       <property name="manufacturerRef">4944:3333,4944:3334</property>
       <property name="dbReference">1344</property>
-      <property name="defaultAssociations">1</property>
+      <property name="defaultAssociations">1,3</property>
     </properties>
 
     <!-- CONFIGURATION DESCRIPTIONS -->
@@ -55,59 +55,63 @@ In-Wall No Neutral Smart Dimmer<br /> <h1>Overview</h1><p>In-Wall No Neutral Sma
 
       <!-- PARAMETER DEFINITIONS -->
       <parameter name="config_3_1" type="integer" groupName="configuration">
-        <label>3: LED Configuration</label>
+        <label>3: LED Indicator</label>
         <description><![CDATA[
 Set LED to desired status setting<br /> <h1>Overview</h1><p>Set LED to desired status setting</p>
         ]]></description>
         <default>0</default>
         <options>
-          <option value="0">LED is Off when switch is Off, and LED is On when switch is On</option>
-          <option value="1">LED is On when switch is Off, LED is off when switch is ON (guidelight</option>
-          <option value="2">LED is Off at all times</option>
-          <option value="3">LED is On at all times</option>
+          <option value="0">On when load is off</option>
+          <option value="1">On when load is on</option>
+          <option value="2">Always off</option>
+          <option value="3">Always on</option>
         </options>
+        <advanced>true</advanced>
       </parameter>
 
       <parameter name="config_4_1" type="integer" groupName="configuration">
-        <label>4: Invert Switch</label>
+        <label>4: Inverted Orientation</label>
         <description><![CDATA[
-Reverse the default On/Off setting<br /> <h1>Overview</h1><p><br /></p>
+Invert Switch Orientation<br /> <h1>Overview</h1><p><br /></p>
         ]]></description>
         <default>0</default>
         <options>
-          <option value="0">Mount the switch in the designed orientation</option>
+          <option value="0">Disable</option>
           <option value="1">Mount the switch upside down</option>
         </options>
+        <advanced>true</advanced>
       </parameter>
 
       <parameter name="config_6_1" type="integer" groupName="configuration">
         <label>6: Dim Rate</label>
         <description><![CDATA[
-Slows down the rate at which the device ramps up and down<br /> <h1>Overview</h1><p><br /></p>
+Adjust dimming rate<br /> <h1>Overview</h1><p><br /></p>
         ]]></description>
         <default>0</default>
         <options>
-          <option value="0">Normal Rate</option>
-          <option value="1">Slow dim rate</option>
+          <option value="0">Dim Quickly</option>
+          <option value="1">Dim Slowly</option>
         </options>
+        <advanced>true</advanced>
       </parameter>
 
       <parameter name="config_16_1" type="integer" groupName="configuration">
         <label>16: Switch Mode</label>
         <description><![CDATA[
-Mimics operation of a standard switch. No ramping up or down in operation<br /> <h1>Overview</h1><p><br /></p>
+Mimics operation of a binary switch.<br /> <h1>Overview</h1><p><br /></p>
         ]]></description>
         <default>0</default>
         <options>
-          <option value="0">Disabled</option>
-          <option value="1">Enabled</option>
+          <option value="0">Disable</option>
+          <option value="1">Enable</option>
         </options>
+        <advanced>true</advanced>
       </parameter>
 
       <parameter name="config_19_1" type="integer" groupName="configuration">
         <label>19: Alternate Exclusion</label>
         <description><![CDATA[
-When programmed, the default exclusion process will not exclude device from network. Prevents accidental removal of device from network<br /> <h1>Overview</h1><p><br /></p>
+Change from default exclusion setting. Prevents accidental removal of device from network<br /> <h1>Overview</h1><p><br /></p>
         ]]></description>
         <default>0</default>
         <options>
@@ -118,21 +122,27 @@ When programmed, the default exclusion process will not exclude device from netw
 
       <parameter name="config_30_1" type="integer" groupName="configuration">
         <label>30: Minimum Dim Threshold</label>
-        <description>User can custom set a Minimum dim level other than 1%. To be used when performance in lower range is not suitable in normal operation</description>
+        <description><![CDATA[
+Set custom minimum dimmer threshold<br /> <h1>Overview</h1><p><br /></p>
+        ]]></description>
         <default>1</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_31_1" type="integer" groupName="configuration">
         <label>31: Maximum Dim Threshold</label>
-        <description>User can custom set a Maximum dim level other than 99%. To be used when performance in upper range is not suitable in normal operation</description>
+        <description><![CDATA[
+Set custom maximum dimmer threshold<br /> <h1>Overview</h1><p><br /></p>
+        ]]></description>
         <default>99</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_32_1" type="integer" groupName="configuration">
-        <label>32: Brightness Level</label>
-        <description>Dimmer will turn ON to this level</description>
+        <label>32: Default Brightness Level</label>
+        <description><![CDATA[
+Dimmer will turn ON to this level<br /> <h1>Overview</h1><p><br /></p>
+        ]]></description>
         <default>99</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
@@ -155,6 +165,18 @@ Reset to Factory Default<br /> <h1>Overview</h1><p><br /></p>
         <description><![CDATA[
 Z-Wave Plus Lifeline<br /> <h1>Overview</h1><p><br /></p>
         ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: Single Press</label>
+        <description>Basic Set - Controlled with the local load</description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_3" type="text" groupName="association" multiple="true">
+        <label>3: Double Tap</label>
+        <description>Basic Set - Controlled by pressing On/Off</description>
         <multipleLimit>5</multipleLimit>
       </parameter>
 

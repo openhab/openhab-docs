@@ -36,7 +36,7 @@ Plug-in Smart Dimmer<br /> <h1>Overview</h1><p>Jasco Z-Wave Plug-In Smart Dimmer
       <property name="manufacturerId">0063</property>
       <property name="manufacturerRef">5044:3039</property>
       <property name="dbReference">1516</property>
-      <property name="defaultAssociations">1</property>
+      <property name="defaultAssociations">1,3</property>
     </properties>
 
     <!-- CONFIGURATION DESCRIPTIONS -->
@@ -61,51 +61,63 @@ Adjust LED light settings<br /> <h1>Overview</h1><p>When shipped from the factor
         ]]></description>
         <default>0</default>
         <options>
-          <option value="0">default</option>
-          <option value="1">LED On when light is turned On</option>
-          <option value="2">LED always Off</option>
+          <option value="0">On when load is off</option>
+          <option value="1">On when load is on</option>
+          <option value="2">Alwasy off</option>
         </options>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_7_1" type="integer" groupName="configuration">
-        <label>7: Dim Rate Adjustments (From Z-Wave Controller)</label>
-        <description>Number of steps or levels</description>
+        <label>7: Dimmer Steps (Z-Wave)</label>
+        <description><![CDATA[
+Number of Dimmer Steps<br /> <h1>Overview</h1><p><br /></p>
+        ]]></description>
         <default>1</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_8_2" type="integer" groupName="configuration">
-        <label>8: Dim Rate Adjustments (From Z-Wave Controller)</label>
-        <description>Timing of steps</description>
+        <label>8: Dimmer Rate (Z-Wave)</label>
+        <description><![CDATA[
+Dimmer Steps Rate<br /> <h1>Overview</h1><p><br /></p>
+        ]]></description>
         <default>3</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_9_1" type="integer" groupName="configuration">
-        <label>9: Dim Rate Adjustments (When Manually Controlled)</label>
-        <description>Number of steps or levels</description>
+        <label>9: Dimmer Steps (Manual Control)</label>
+        <description><![CDATA[
+Number of Dimmer Steps<br /> <h1>Overview</h1><p><br /></p>
+        ]]></description>
         <default>1</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_10_2" type="integer" groupName="configuration">
-        <label>10: Dim Rate Adjustments (When Manually Controlled)</label>
-        <description>Timing of steps</description>
+        <label>10: Dimmer Rate (Manual Control)</label>
+        <description><![CDATA[
+Dimmer Steps Rate<br /> <h1>Overview</h1><p><br /></p>
+        ]]></description>
         <default>3</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_11_1" type="integer" groupName="configuration">
-        <label>11: Dim Rate Adjustments (When Receiving All-On/Off Commands)</label>
-        <description>Number of steps or levels</description>
+        <label>11: Dimmer Steps (All-On/All-Off)</label>
+        <description><![CDATA[
+Number Dimmer Steps<br /> <h1>Overview</h1><p><br /></p>
+        ]]></description>
         <default>1</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_12_2" type="integer" groupName="configuration">
-        <label>12: Dim Rate Adjustments (When Receiving All-On/Off Command</label>
-        <description>Timing of steps</description>
+        <label>12: Dimmer Rate (All-On/All-Off)</label>
+        <description><![CDATA[
+Dimmer Steps Rate<br /> <h1>Overview</h1><p><br /></p>
+        ]]></description>
         <default>3</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
@@ -120,14 +132,18 @@ Z-Wave Plus Lifeline<br /> <h1>Overview</h1><p><br /></p>
       </parameter>
 
       <parameter name="group_2" type="text" groupName="association" multiple="true">
-        <label>2: Association Group 2</label>
-        <description>Supports Basic Set and is controlled with the local load</description>
+        <label>2: Local Load</label>
+        <description><![CDATA[
+Supports Basic Set and is controlled with the local load<br /> <h1>Overview</h1><p><br /></p>
+        ]]></description>
         <multipleLimit>5</multipleLimit>
       </parameter>
 
       <parameter name="group_3" type="text" groupName="association" multiple="true">
-        <label>3: Association Group 3</label>
-        <description>Supports Basic Set and is controlled by double pressing the button</description>
+        <label>3: Double Tap</label>
+        <description><![CDATA[
+Supports Basic Set and is controlled by double pressing the button<br /> <h1>Overview</h1><p><br /></p>
+        ]]></description>
         <multipleLimit>5</multipleLimit>
       </parameter>
 
