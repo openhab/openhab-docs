@@ -154,7 +154,7 @@ Use the advanced properties to change the appearance from a knob to a rounded sl
 </PropBlock>
 <PropBlock type="TEXT" name="lineCap" label="Line Cap">
   <PropDescription>
-    Sets the shape of the end of the path
+    Sets the shape of the end of the path; dotted path and line cap cannot be used together.
   </PropDescription>
   <PropOptions>
     <PropOption value="square" label="square" />
@@ -163,7 +163,7 @@ Use the advanced properties to change the appearance from a knob to a rounded sl
 </PropBlock>
 <PropBlock type="TEXT" name="dottedPath" label="Dotted Path">
   <PropDescription>
-    Length of dotted path segments (using css stroke-dasharray)
+    Length of dotted path segments (using css stroke-dasharray); dotted path and line cap cannot be used together.
   </PropDescription>
 </PropBlock>
 <PropBlock type="INTEGER" name="borderWidth" label="Border Width">
