@@ -28,8 +28,8 @@ The structure of a binding follows the structure of a typical OSGi bundle projec
 |---- java                Your Java code
 |-------- org/openhab/[...]
 |- src/main/resources/OH-INF
-|---- binding
-|-------- binding.xml     Binding name, description and other meta data
+|---- addon
+|-------- addon.xml       Binding name, description and other meta data
 |---- config              Configuration description files when not in things files
 |-------- *.xml
 |---- i18n                Your localized binding texts
@@ -50,6 +50,20 @@ The structure of a binding follows the structure of a typical OSGi bundle projec
 - Every Java file must have a license header. You can run ```mvn license:format``` on the root of the repo to automatically add missing headers.
 
 ## B. Code formatting rules & style
+
+### Naming Convention
+
+To ensure consistency for users, new bindings should use the following naming convention:
+
+- Thing type id: `lower-case-hyphen`
+- Channel type id: `lower-case-hyphen`
+- Channel group id: `lower-case-hyphen`
+- Channel id: `lower-case-hyphen`
+- Thing property: `camelCase`
+- Config parameter: `camelCase`
+- Profile URI: `lower-case-hyphen`
+- Profile type id for transformations: `UPPER_CASE`
+- XML files in src/*/resources: `lower-case-hyphen.xml`
 
 ### Code format
 
@@ -82,7 +96,6 @@ The rules are defined at <https://github.com/openhab/static-code-analysis/tree/m
 ### Java Coding Style
 
 - The [Java naming conventions](https://java.about.com/od/javasyntax/a/nameconventions.htm) should always be used and are described in detail at the link, a quick summary is:
-  - Channel IDs: `lowerCamelCase`
   - Variables: `lowerCamelCase`
   - Constants: `ALL_UPPER_CASE`
 - Generics must be used where applicable. See example below:
