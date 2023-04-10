@@ -34,9 +34,9 @@ Bring up the sidebar through Developer Tools or the key combination <kbd>Alt</kb
 ![Developer Sidebar](images/developer-sidebar.png)
 
 Note that the sidebar will not come up if your display is too narrow.
-It will not work on a phone nor in portait mode on most tablet displays.
+It will not work on a phone nor in portrait mode on most tablet displays.
 
-There are four tabs on the sidebar, and the search field.
+There are four tabs on the sidebar, and the search field at the top.
 
 ### Search
 
@@ -46,25 +46,30 @@ Enter your Item name, and you will see in which rules, scenes, scripts and pages
 
 The developer sidebar is checking your search query non case-intensive against the following entities:
 
-- Items:
+- Things
+  - UID
+  - label
+- Items
   - name
   - label
   - tags (requires exact match)
   - metadata namespaces (requires exact match)
-- Rules, Scenes & Scripts:
-  - Item name & Thing UID of triggers, actions & conditions
-  - script code (e.g. Rules DSL, JavaScript, and even Blockly)
-  - script MIME types (requires exact match)
-- Pages:
+- Pages
   - uid
   - label
   - content (widgets, tabs, charts, etc. with their configuration)
+- Rules, Scenes & Scripts
+  - Item name & Thing UID of triggers, actions & conditions
+  - script code (e.g. Rules DSL, JavaScript, and even Blockly)
+  - script MIME types (requires exact match)
 
 ### Pinned Objects
 
 Let's say you are working on your lighting automations which involves Things, Items, and Rules.
 Instead of keeping a dozen browser tabs open and flipping between them you can pin these objects to the sidebar.
-In the searchbox at the top, enter a search term which can be part of an object's name, ID, label, etc.
+
+Enter a search term in the search filed at the top to search within Items, Things, Rules, Scripts, Scenes and Pages.
+The search term can be part of an object's name, ID, label, etc.
 
 ![search](images/developer-sidebar-search.png)
 
