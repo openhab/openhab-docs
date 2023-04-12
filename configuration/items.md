@@ -296,8 +296,11 @@ In the example below, the "switch" icon has been selected:
 Switch Livingroom_Light "Livingroom Ceiling Light" <switch>
 ```
 
+#### Icons provided with openHAB
+
 openHAB provides a set of [classic icons](/docs/configuration/iconsets/classic/) by default.
-Users may add their own icons in either `png` or `svg` format in the openHAB icons configuration folder, `$OPENHAB_CONF/icons/classic/`.
+The community marketplace also provides other openHAB icon sets that can be installed, e.g. [this subset of iconify icons]( https://community.openhab.org/t/iconify-icon-provider/144508).
+Users may also add their own icons in either `png` or `svg` format in the openHAB icons configuration folder, `$OPENHAB_CONF/icons/classic/`.
 
 The following guidelines apply to user-added icon files:
 
@@ -310,17 +313,67 @@ The following guidelines apply to user-added icon files:
 
 **Bitmaps or Vector Graphics:**
 openHAB can work with either Bitmap (`png`) or Vector (`svg`) icon files.
-The format should match the display capabilities of the user interfaces in use (e.g. Basic UI).
+The format should match the display capabilities of the user interfaces in use.
 It is thereby important to decide on one format beforehand; vector graphics are recommended.
-The setting can be changed via UI for most user interfaces.
+Most user interfaces don't expose this setting because they support both formats transparently.
+But the setting can be changed via UI in certain user interfaces.
 Please check the user interface documentation if in doubt.
 Note that image files with the wrong file ending will be ignored.
 
 Users may substitute their own icon for an icon from the default icon set by placing a file in the `$OPENHAB_CONF/icons/classic/` folder with the same filename as the name of the icon being substituted.
 
+#### Icon sources
+
+Some user interfaces supports other icons than those provided by openHAB.
+Thus the most generic reference to an icon is composed of 3 segments separated by a colon:
+
+1. The first segment is the icon source, e.g. "oh"
+
+2. The second segment is the icon set from this source, e.g. "classic"
+
+3. The third segment is the name of an icon in this set, e.g. "switch"
+
+If the value contains only two segments, the first segment is assumed to be the icon source and the second the icon name.
+In this case, the icon set is to "classic" by default.
+This is used in particular when the icon source only provides a single set of icons.
+As an example, "&lt;material:favorite&gt;" references the "favorite" icon from the Material icons.
+"&lt;oh:switch&gt;" references the "switch" icon from the openHAB classic icon set.
+
+If the value contains only one segment, it is assumed to be the name of an icon from the openHAB classic icon set.
+As an example, "&lt;switch&gt;" references the "switch" icon from the openHAB classic icon set.
+
+Here are few examples showing the different options:
+
+```java
+Switch Livingroom_Light "Livingroom Ceiling Light" <switch>
+Switch Parent_Bedroom_Light "Parent Bedroom Light" <oh:switch>
+Switch Child_Bedroom_Light "Child Bedroom Light" <oh:classic:switch>
+Switch Bathroom_Light "Bathroom Light" <material:lightbulb>
+Switch Kitchen_Light "Kitchen Light" <f7:lightbulb>
+Switch Garage_Light "Garage Light" <if:mdi:lightbulb>
+```
+
+Here is the list of available icon sources and how they are supported by the major user interfaces.
+
+| Source name          | Source description                    | Main UI    | Basic UI                          | Android app       | iOS app           |
+| -------------------- | ------------------------------------- | ---------- | --------------------------------- | ----------------- | ----------------- |
+| `oh`                | Icons provided via the openHAB server | Supported  | Supported                         | Supported         | Supported         |
+| `material`         | Material icons                        | Supported  | Supported                         | Not yet supported | Not yet supported |
+| `f7`                | Framework7 icons                      | Supported  | Not yet supported                 | Not yet supported | Not yet supported |
+| `if` or `iconify` | iconify icons                         | Supported  | Supported but needs to be enabled | Not yet supported | Not yet supported |
+
+You can find a list of [all Material icons here](https://fonts.google.com/icons?icon.set=Material+Icons).
+
+You can find a list of [all Framework7 icons here](https://framework7.io/icons/).
+
+You can find a list of [all iconify icons here](https://icon-sets.iconify.design/).
+Please note that the iconify option requires Internet connectivity on the client to access the external API.
+The WEB browser will cache the retrieved icons to limit the requests and speed up the rendering.
+Certain user interfaces provide a setting to enable this option, e.g. Basic UI disables this option by default but allows it to be enabled.
+
 #### Dynamic Icons
 
-Some icons are dynamically selected by openHAB depending on the Item's state.
+When and only when the icon source is openHAB, some icons are dynamically selected by openHAB depending on the Item's state.
 For example, a "switch" icon may appear to be green when the Item is "ON" and red when the item is "OFF.
 Behind the scenes, openHAB is actually selecting two different icon files depending upon the Item state - `switch-on` or `switch-off`.
 A third default icon file, `switch`, is required as well.
@@ -332,7 +385,7 @@ Dynamic icon filenames follow the pattern below:
 <name>-<state>.<extension>
 ```
 
-- `<name>` - the name of the icon set
+- `<name>` - the name of the icon
 - `-<state>` - the Item state the icon maps to in lowercase (e.g. "-on" or "-off", "-open" or "-closed")
 - `<extension>` - bitmap (`png`) or vector graphic (`svg`) icon file extension ([see above](#icons))
 
