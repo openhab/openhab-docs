@@ -22,13 +22,13 @@ Universal Powerline Bus (UPB) is a protocol for communication over household ele
 The binding has not yet been tested with a variety of devices, so specific device support is limited.
 Instead the binding provides some generic devices, and allows adding channels that match the type of device.
 
-* `serial-pim` - Serial PIM
-* `generic` - Generic UPB device
-* `virtual` - "Virtual" device that allows scene selection
+- `serial-pim` - Serial PIM
+- `generic` - Generic UPB device
+- `virtual` - "Virtual" device that allows scene selection
 
 Specific devices that are supported:
 
- * `leviton-38a00-1` - 6-button scene switch
+- `leviton-38a00-1` - 6-button scene switch
 
 ## Binding Configuration
 
@@ -75,7 +75,6 @@ corresponding link command on the UPB network.
 
 ## Channels
 
-
 These channels are available for generic devices:
 
 | Channel Type    | Item type | Description                                     |
@@ -93,7 +92,7 @@ The virtual device supports the `link` channel type:
 
 Here is a sample `.things configuration file:
 
-```
+```java
 Bridge upb:serial-pim:pim "UPB PIM" @ "Basement" [port="/dev/ttyUSB0"] {
   Thing generic light-switch "Living Room Light" [networkId=1, unitId=1]
 
@@ -114,7 +113,7 @@ Bridge upb:serial-pim:pim "UPB PIM" @ "Basement" [port="/dev/ttyUSB0"] {
 
 And the items:
 
-```
+```java
 // Configure as either Switch or Dimmer
 Dimmer LivingRoomLight "UPB Light Switch" {channel="upb:generic:pim:light-switch:dimmer"}
 
