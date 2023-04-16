@@ -64,15 +64,15 @@ To keep these examples simple, the contents of the referenced files `window_esp.
 The script transformation is available from the framework and needs no additional installation.
 It allows transforming values using any of the available scripting languages in openHAB (JSR-223 or DSL).
 
-The script needs to be placed in the `$OPENHAB_CONF/transform` folder with the native extension for the chosen language, for example `stringlength.js` for a
-transformation using JS Scripting. The script file name here acts as the `script identifier` for the
-script transformation. A script identifier can also refer to a transformation script created in the UI.
+The script needs to be placed in the `$OPENHAB_CONF/transform` folder with the native extension for the chosen language, for example `stringlength.js` for a transformation using JS Scripting.
+The script file name here acts as the `script identifier` for the script transformation.
+A script identifier can also refer to a transformation script created in the UI.
 
 The input value is injected into the script context as a _string_ variable `input`.
 Additional parameters can be injected into the script by adding them to the script identifier in URL style (`scale.js?correctionFactor=1.1&divider=10` would also inject `correctionFactor` and `divider`).
 These additional parameters are also injected into the script context as _string_ variables.
-The result of the transformation is provided by the script as its return value. It can be `null`,
-a _string_, or a value of a type that properly implements `.toString()`.
+The result of the transformation is provided by the script as its return value.
+It can be `null`, a _string_, or a value of a type that properly implements `.toString()`.
 
 The examples show a simple transformation with the same functionality for some languages.
 It takes the length of the input string and e.g. returns `String has 5 characters`.
@@ -131,9 +131,9 @@ The script file name is `stringlength.groovy` and the transformation is `GROOVY(
 
 ### Inline Script Transformation
 
-A simple transformation rule can also be given as an inline script. The inline script should
-start with the `|` character. Quotes within the script may need to be escaped with a `\` when
-used within another quoted string such as in sitemaps or text configurations.
+A simple transformation rule can also be given as an inline script.
+The inline script should start with the `|` character.
+Quotes within the script may need to be escaped with a `\` when used within another quoted string such as in sitemaps or text configurations.
 
 Examples:
 
