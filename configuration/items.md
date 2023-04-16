@@ -299,7 +299,7 @@ Switch Livingroom_Light "Livingroom Ceiling Light" <switch>
 #### Icons provided with openHAB
 
 openHAB provides a set of [classic icons](/docs/configuration/iconsets/classic/) by default.
-The community marketplace also provides other openHAB icon sets that can be installed, e.g. [this subset of iconify icons]( https://community.openhab.org/t/iconify-icon-provider/144508).
+The community marketplace provides other openHAB icon sets that can be installed, e.g. [this subset of iconify icons]( https://community.openhab.org/t/iconify-icon-provider/144508).
 Users may also add their own icons in either `png` or `svg` format in the openHAB icons configuration folder, `$OPENHAB_CONF/icons/classic/`.
 
 The following guidelines apply to user-added icon files:
@@ -325,13 +325,13 @@ Users may substitute their own icon for an icon from the default icon set by pla
 #### Icon sources
 
 Some user interfaces supports other icons than those provided by openHAB.
-Thus the most generic reference to an icon is composed of 3 segments separated by a colon:
+Thus, the most generic reference to an icon is composed of 3 segments separated by a colon:
 
 1. The first segment is the icon source, e.g. "oh"
 
-2. The second segment is the icon set from this source, e.g. "classic"
+1. The second segment is the icon set from this source, e.g. "classic"
 
-3. The third segment is the name of an icon in this set, e.g. "switch"
+1. The third segment is the name of an icon in this set, e.g. "switch"
 
 If the value contains only two segments, the first segment is assumed to be the icon source and the second the icon name.
 In this case, the icon set is to "classic" by default.
@@ -373,7 +373,7 @@ Certain user interfaces provide a setting to enable this option, e.g. Basic UI d
 
 #### Dynamic Icons
 
-When and only when the icon source is openHAB, some icons are dynamically selected by openHAB depending on the Item's state.
+If and only if the icon source is openHAB, some icons are dynamically selected by openHAB depending on the Item's state.
 For example, a "switch" icon may appear to be green when the Item is "ON" and red when the item is "OFF.
 Behind the scenes, openHAB is actually selecting two different icon files depending upon the Item state - `switch-on` or `switch-off`.
 A third default icon file, `switch`, is required as well.
