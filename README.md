@@ -9,11 +9,10 @@ The result is available at [https://openhab.org/docs/](https://www.openhab.org/d
 ## How it works
 
 In this repo you can find and improve all _general_ documentation contents.
-In fact that is all you can see in the `main` branch.
-There are also other _read-only_ branches, which hold external content like the _add-ons_ and _concepts_ documentation.
-We will read about them later.
+In fact, that is all you can see in the `main` branch.
+There are other _read-only_ branches, which hold external content like the _add-ons_ and _concepts_ documentation, which is explained in more details below.
 
-### So I can't improve an add-on article here?
+### So I cannot improve an add-on article here?
 
 Correct, this is done in the original repository of the add-on.
 You may want to know how to find the right file in all of those repos?
@@ -77,12 +76,12 @@ Afterwards we will redeploy the website with the latest content from the _final_
 #### Build triggers investigated
 
 There are two triggers available currently.
-The `merge docs` job is triggerd after something has been added to the documentation through this repository.
+The `merge docs` job is triggered after something has been added to the documentation through this repository.
 The `gather external docs` job is started with a __successful__ build of the openhab-distribution.
-A successful disribution build will include all of the latest changes that have been made to external sources like add-ons.
-So when a distribution build is successful, we will trigger the gathering of all external sources.
+A successful distribution build will include all the latest changes that have been made to external sources like add-ons.
+So when a distribution build is successful, it will trigger the gathering of all external sources.
 
-When one of these jobs is finished, we will then notify our website hosting service to start a new website build.
+When one of these jobs is finished, it will then notify our website hosting service to start a new website build.
 This is recognized due to new commits in the final branch of this repository.
 The new build will include all the latest changes in the code repository and in all external repositories.
 
