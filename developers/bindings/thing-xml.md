@@ -767,79 +767,79 @@ The full Java API for bridge and _Thing_ descriptions can be found in the Java p
 </thing:thing-descriptions>
 ```
 
-| Property                     | Description                                  | |
-|------------------------------|----------------------------------------------|--------|
+| Property                     | Description                                        |           |
+|------------------------------|----------------------------------------------------|-----------|
 | thing-descriptions.bindingId | The identifier of the binding this types belong to | mandatory |
 
 **Bridges and Things:**
 
-| Property                       | Description                                  | |
-|--------------------------------|----------------------------------------------|--------|
-| bridge-type.id / thing-type.id | An identifier for the bridge/Thing type | mandatory |
-| bridge-type.listed / thing-type.listed | Denotes if user interfaces should list the bridge/Thing, e.g. for pairing | optional, defaults to true |
-| bridge-type.extensible / thing-type.extensible | If the bridge/Thing supports a generic number of channels the allowed channelTypeIds can be listed here. This provides a hint for UIs to support adding/removing channels. Channel groups are not supported. | optional |
-| supported-bridge-type-refs     | The identifiers of the bridges this bridge/Thing can connect to | optional |
-| bridge-type-ref.id             | The identifier of a bridge this bridge/Thing can connect to | mandatory |
-| label                          | A human-readable label for the bridge/Thing | mandatory |
-| description                    | A human-readable description for the bridge/Thing | optional |
-| category                       | Category this bridge/Thing belongs to, see categories) | optional |
-| channels                       | The channels the bridge/Thing provides | optional |
-| channel.id                     | An identifier of the channel the bridge/Thing provides | mandatory |
-| channel.typeId                 | An identifier of the channel type definition the bridge/Thing provides | mandatory |
-| label                          | A human-readable label for the channel | optional |
-| description                    | A human-readable description for the channel | optional |
-| channel-groups                 | The channel groups defining the channels the bridge/Thing provides | optional |
-| channel-group.id               | An identifier of the channel group the bridge/Thing provides | mandatory ||
-| channel-group.typeId           | An identifier of the channel group type definition the bridge/Thing provides | mandatory |
-| properties                     | Name/value pairs for properties to be set to the thing | optional |
-| representation-property        | The name of the property that contains a unique identifier of the thing | optional |
-| config-description             | The configuration description for the bridge/Thing within the ConfigDescriptionRegistry | optional |
-| config-description-ref         | The reference to a configuration description for the bridge/Thing within the ConfigDescriptionRegistry | optional |
-| config-description-ref.uri     | The URI of the configuration description for the bridge/Thing within the ConfigDescriptionRegistry | mandatory |
+| Property                                       | Description                                                                                                                                                                                                  |                            |
+|------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------|
+| bridge-type.id / thing-type.id                 | An identifier for the bridge/Thing type                                                                                                                                                                      | mandatory                  |
+| bridge-type.listed / thing-type.listed         | Denotes if user interfaces should list the bridge/Thing, e.g. for pairing                                                                                                                                    | optional, defaults to true |
+| bridge-type.extensible / thing-type.extensible | If the bridge/Thing supports a generic number of channels the allowed channelTypeIds can be listed here. This provides a hint for UIs to support adding/removing channels. Channel groups are not supported. | optional                   |
+| supported-bridge-type-refs                     | The identifiers of the bridges this bridge/Thing can connect to                                                                                                                                              | optional                   |
+| bridge-type-ref.id                             | The identifier of a bridge this bridge/Thing can connect to                                                                                                                                                  | mandatory                  |
+| label                                          | A human-readable label for the bridge/Thing                                                                                                                                                                  | mandatory                  |
+| description                                    | A human-readable description for the bridge/Thing                                                                                                                                                            | optional                   |
+| category                                       | Category this bridge/Thing belongs to, see categories)                                                                                                                                                       | optional                   |
+| channels                                       | The channels the bridge/Thing provides                                                                                                                                                                       | optional                   |
+| channel.id                                     | An identifier of the channel the bridge/Thing provides                                                                                                                                                       | mandatory                  |
+| channel.typeId                                 | An identifier of the channel type definition the bridge/Thing provides                                                                                                                                       | mandatory                  |
+| label                                          | A human-readable label for the channel                                                                                                                                                                       | optional                   |
+| description                                    | A human-readable description for the channel                                                                                                                                                                 | optional                   |
+| channel-groups                                 | The channel groups defining the channels the bridge/Thing provides                                                                                                                                           | optional                   |
+| channel-group.id                               | An identifier of the channel group the bridge/Thing provides                                                                                                                                                 | mandatory                  ||
+| channel-group.typeId                           | An identifier of the channel group type definition the bridge/Thing provides                                                                                                                                 | mandatory                  |
+| properties                                     | Name/value pairs for properties to be set to the thing                                                                                                                                                       | optional                   |
+| representation-property                        | The name of the property that contains a unique identifier of the thing                                                                                                                                      | optional                   |
+| config-description                             | The configuration description for the bridge/Thing within the ConfigDescriptionRegistry                                                                                                                      | optional                   |
+| config-description-ref                         | The reference to a configuration description for the bridge/Thing within the ConfigDescriptionRegistry                                                                                                       | optional                   |
+| config-description-ref.uri                     | The URI of the configuration description for the bridge/Thing within the ConfigDescriptionRegistry                                                                                                           | mandatory                  |
 
 **Channels:**
 
-| Property                      | Description                                  | |
-|-------------------------------|----------------------------------------------|--------|
-| channel-type.id               | An identifier for the channel type | mandatory |
-| channel-type.advanced         | The flag indicating if this channel contains advanced functionalities which should be typically not shown in the basic view of user interfaces | optional, default: false |
-| kind                          | The kind of channel. state for channels which have a state, trigger for trigger channels. state is the default. | |
-| item-type                     | An item type of the channel. All item types are specified in ItemFactory instances. The following items belong to the core: Switch, Rollershutter, Contact, String, Number, Dimmer, DateTime, Color, Image, Location, Player, Call. | mandatory if kind state, which is the default |
-| label                         | A human-readable label for the channel | mandatory |
-| description                   | A human-readable description for the channel | optional |
-| category                      | The category for the channel, e.g. TEMPERATURE | optional |
-| tags                          | A list of default tags to be assigned to bound items | optional |
-| tag                           | A tag semantically describes the feature (typical usage) of the channel e.g. AlarmSystem. There are no pre-default tags, they are custom-specific | mandatory |
-| state                         | The restrictions of an item state which gives information how to interpret it | optional |
-| state.min                     | The minimum decimal value of the range for the state | optional |
-| state.max                     | The maximum decimal value of the range for the state | optional |
-| state.step                    | The increasing/decreasing decimal step size within the defined range, specified by the minimum/maximum values | optional |
-| state.pattern                 | The pattern following the printf syntax to render the state | optional |
-| state.readOnly                | The flag indicating if the state is read-only or can be modified | optional, default: false |
-| options                       | A list restricting all possible values | optional |
-| option                        | The description for the option | optional |
-| option.value                  | The value for the option. Note that the value may be outside of the range specified in the min/max if this is specified. | mandatory |
-| command                       | Commands this channel will send to the binding. This is used to model "write-only" channels and gives UIs a hint to display push-buttons without state | optional |
-| options                       | A list defining the possible commands | optional |
-| option                        | The description for the option | optional |
-| option.value                  | The value for the option. This is the actual command send to the channel. | mandatory |
-| event                         | The restrictions of a trigger event which gives information how to interpret it | optional |
-| autoUpdatePolicy              | The auto update policy to use | optional |
-| config-description            | The configuration description for the channel within the ConfigDescriptionRegistry | optional |
-| config-description-ref        | The reference to a configuration description for the channel within the ConfigDescriptionRegistry | optional |
-| config-description-ref.uri    | The URI of the configuration description for the channel within the ConfigDescriptionRegistry | mandatory |
+| Property                   | Description                                                                                                                                                                                                                         |                                               |
+|----------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------|
+| channel-type.id            | An identifier for the channel type                                                                                                                                                                                                  | mandatory                                     |
+| channel-type.advanced      | The flag indicating if this channel contains advanced functionalities which should be typically not shown in the basic view of user interfaces                                                                                      | optional, default: false                      |
+| kind                       | The kind of channel. state for channels which have a state, trigger for trigger channels. state is the default.                                                                                                                     |                                               |
+| item-type                  | An item type of the channel. All item types are specified in ItemFactory instances. The following items belong to the core: Switch, Rollershutter, Contact, String, Number, Dimmer, DateTime, Color, Image, Location, Player, Call. | mandatory if kind state, which is the default |
+| label                      | A human-readable label for the channel                                                                                                                                                                                              | mandatory                                     |
+| description                | A human-readable description for the channel                                                                                                                                                                                        | optional                                      |
+| category                   | The category for the channel, e.g. TEMPERATURE                                                                                                                                                                                      | optional                                      |
+| tags                       | A list of default tags to be assigned to bound items                                                                                                                                                                                | optional                                      |
+| tag                        | A tag semantically describes the feature (typical usage) of the channel e.g. AlarmSystem. There are no pre-default tags, they are custom-specific                                                                                   | mandatory                                     |
+| state                      | The restrictions of an item state which gives information how to interpret it                                                                                                                                                       | optional                                      |
+| state.min                  | The minimum decimal value of the range for the state                                                                                                                                                                                | optional                                      |
+| state.max                  | The maximum decimal value of the range for the state                                                                                                                                                                                | optional                                      |
+| state.step                 | The increasing/decreasing decimal step size within the defined range, specified by the minimum/maximum values                                                                                                                       | optional                                      |
+| state.pattern              | The pattern following the printf syntax to render the state                                                                                                                                                                         | optional                                      |
+| state.readOnly             | The flag indicating if the state is read-only or can be modified                                                                                                                                                                    | optional, default: false                      |
+| options                    | A list restricting all possible values                                                                                                                                                                                              | optional                                      |
+| option                     | The description for the option                                                                                                                                                                                                      | optional                                      |
+| option.value               | The value for the option. Note that the value may be outside of the range specified in the min/max if this is specified.                                                                                                            | mandatory                                     |
+| command                    | Commands this channel will send to the binding. This is used to model "write-only" channels and gives UIs a hint to display push-buttons without state                                                                              | optional                                      |
+| options                    | A list defining the possible commands                                                                                                                                                                                               | optional                                      |
+| option                     | The description for the option                                                                                                                                                                                                      | optional                                      |
+| option.value               | The value for the option. This is the actual command send to the channel.                                                                                                                                                           | mandatory                                     |
+| event                      | The restrictions of a trigger event which gives information how to interpret it                                                                                                                                                     | optional                                      |
+| autoUpdatePolicy           | The auto update policy to use                                                                                                                                                                                                       | optional                                      |
+| config-description         | The configuration description for the channel within the ConfigDescriptionRegistry                                                                                                                                                  | optional                                      |
+| config-description-ref     | The reference to a configuration description for the channel within the ConfigDescriptionRegistry                                                                                                                                   | optional                                      |
+| config-description-ref.uri | The URI of the configuration description for the channel within the ConfigDescriptionRegistry                                                                                                                                       | mandatory                                     |
 
 **Channel Groups:**
 
-| Property                    | Description                                  | |
-|-----------------------------|----------------------------------------------|--------|
-| channel-group-type.id       | An identifier for the channel group type | mandatory |
-| label                       | A human-readable label for the channel group | mandatory |
-| description                 | A human-readable description for the channel group | optional |
-| category                    | The category for the channel group, e.g. TEMPERATURE | optional |
-| channels                    | The channels the bridge/Thing provides | mandatory |
-| channel.id                  | An identifier of the channel the bridge/Thing provides | mandatory |
-| channel.typeId              | An identifier of the channel type definition the bridge/Thing provides | mandatory |
+| Property              | Description                                                            |           |
+|-----------------------|------------------------------------------------------------------------|-----------|
+| channel-group-type.id | An identifier for the channel group type                               | mandatory |
+| label                 | A human-readable label for the channel group                           | mandatory |
+| description           | A human-readable description for the channel group                     | optional  |
+| category              | The category for the channel group, e.g. TEMPERATURE                   | optional  |
+| channels              | The channels the bridge/Thing provides                                 | mandatory |
+| channel.id            | An identifier of the channel the bridge/Thing provides                 | mandatory |
+| channel.typeId        | An identifier of the channel type definition the bridge/Thing provides | mandatory |
 
 The full XML schema for Thing type descriptions is specified in the [https://openhab.org/schemas/thing-description-1.0.0.xsd](https://openhab.org/schemas/thing-description-1.0.0.xsd) openHAB thing description XSD</a> file.
 
@@ -849,3 +849,84 @@ The full XML schema for Thing type descriptions is specified in the [https://ope
 - The attribute `uri` in the section `config-description` is optional, it _should not_ be specified in bridge/_Thing_/channel type definition files because it's an embedded configuration.
   If the `uri` is _not_ specified, the configuration description is registered as `thing-type:bindingID:id` or `channel-type:bindingID:id` otherwise the given `uri` is used.s
 - If a configuration description is already specified somewhere else and the bridge/_Thing_/channel type wants to (re-)use it, a `config-description-ref` should be used instead.
+
+### Updating Thing Types
+
+Sometimes, when bindings evolve, thing-types need to be modified.
+Since managed things store their structure in a database at the time they are created, only updating the XML is not sufficient.
+Developers can add instructions for the framework to update these things during initialization.
+
+The instructions are provided as XML in the `OH-INF/update` folder.
+The file name can be freely chosen and the file itself can contain instructions for one or more thing-types.
+Instructions for the same thing-type MUST NOT be added in different files.
+
+Update instructions are available for adding, removing or updating channels or channel-groups.
+Changes to configuration parameters don't need update instructions and are performed automatically.
+
+The following update instruction changes the channel-type for the `battery-level` channel to `system:battery-level`.
+
+```xml
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<update:update-descriptions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                            xmlns:update="https://openhab.org/schemas/update-description/v1.0.0"
+                            xsi:schemaLocation="https://openhab.org/schemas/update-description/v1.0.0 https://openhab.org/schemas/update-description-1.0.0.xsd">
+
+  <thing-type uid="deconz:batterysensor">
+    <instruction-set targetVersion="1">
+      <update-channel id="battery_level">
+        <type>system:battery-level</type>
+      </update-channel>
+    </instruction-set>
+  </thing-type>
+
+</update:update-descriptions>
+```
+
+Different instructions can be combined in one instruction-set.
+The following removes the `water_level` channel from `foo:pool` things and adds a new `chlorine` level
+
+```xml
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<update:update-descriptions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                            xmlns:update="https://openhab.org/schemas/update-description/v1.0.0"
+                            xsi:schemaLocation="https://openhab.org/schemas/update-description/v1.0.0 https://openhab.org/schemas/update-description-1.0.0.xsd">
+
+  <thing-type uid="foo:pool">
+    <instruction-set targetVersion="1">
+      <remove-channel id="water_level">
+      </remove-channel>
+      <add-channel id="chlorine">
+        <type>foo:concentration</type>
+        <label>Chlorine Concentration</label>
+      </add-channel>
+    </instruction-set>
+  </thing-type>
+
+</update:update-descriptions>
+```
+
+In addition to the update instructions, the thing-type definition needs to add a property `thingTypeVersion` to prevent newly created things from being modified:
+
+```xml
+<thing-type id="batterysensor">
+  <supported-bridge-type-refs>
+    <bridge-type-ref id="deconz"/>
+  </supported-bridge-type-refs>
+  <label>Battery Sensor</label>
+  <channels>
+    <channel typeId="system.battery-level" id="battery_level"/>
+    <channel typeId="last_updated" id="last_updated"/>
+  </channels>
+  <properties>
+    <property name="thingTypeVersion">1</property>
+  </properties>
+  <representation-property>uid</representation-property>
+  <config-description-ref uri="thing-type:deconz:sensor"/>
+</thing-type>
+```
+
+Modifying or removing update instructions after they have been merged is not permitted, only additions are allowed.
+Each new contribution of update instructions MUST increase the `thingTypeVersion`, even if there was no release.
+The `thingTypeVersion` is bound to a thing-type, different thing types may have different versions.
+
+The full XML schema for update instructions can be found here: [https://openhab.org/schemas/thing-description-1.0.0.xsd](https://openhab.org/schemas/thing-description-1.0.0.xsd).
