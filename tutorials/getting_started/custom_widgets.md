@@ -130,7 +130,7 @@ config:
   iconColor: '=(items[props.item].state == "ON") ? "yellow" : "gray"'
   title: =props.title
   color: '=(items[props.item].state == "ON") ? "yellow" : "gray"'
-  item: props.item
+  item: =props.item
 ```
 
 Save the widget and return to one of the Items that should use this widget.
@@ -449,7 +449,7 @@ Once you are happy, save the page and that will become your Overview page.
 ## Responsive Pages
 
 The Page will be viewed on a variety of screen sizes, from computers to tablets to phones.
-To make the page adapt to the different screen widths there is a "Column Settings" option in a given column's setting icon.
+To make the page adapt to the different screen widths there is a "Column Options" option in a given column's setting icon.
 
 ![Column Settings](images/column_options.png)
 
