@@ -130,3 +130,33 @@ or by working on your own configuration.
 
 The very active [openHAB Community Forum](https://community.openhab.org) can provide you with many more details, hints, and tips.
 If you run into any problems, use the search function in the forum or open a new thread with your detailed question.
+
+## Upgrading
+
+In some cases upgrading to a new version of openHAB requires additional steps.
+For textual based configuration this can usually be done using a text editor or VS Code.
+For UI configuration updates to the JSON database should not be done manually but by using the upgrade tool.
+
+The upgrade tool is a java application and allows performing different steps.
+Each step can only be executed once (unless you `--force` the tool to perform them again).
+Currently the following steps are supported as arguments to `--command`:
+
+- `itemCopyUnitToMetadata`: With openHAB 4 presentation and internal representation of the unit of an item are separated.
+This step copies the unit set in the state description of an item to the new `unit` metadata.
+This is necessary to keep units consistent for data persisted with previous versions of openHAB.
+- `linkUpgradeJsProfile`: The JS Scripting transformation/profile has been removed because of changing to Java 17.
+They have been replaced by the generic script transformation/profile which require different configuration options.
+This step rewrites the profiles to the new format.
+
+The upgrade tool needs to know the path to the openHAB userdata folder (e.g. `/var/lib/openhab` on most Debian like systems).
+If the tool is not operated from that folder, it can be specified by using `--dir /var/lib/openhab` on the commandline.
+
+Example:
+
+```
+java -jar upgradetool.jar --dir /var/lib/openhab --command itemCopyUnitToMetadata
+```
+
+
+
+
