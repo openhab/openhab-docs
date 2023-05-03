@@ -357,15 +357,10 @@ Here is the list of available icon sources and how they are supported by the maj
 | Source name          | Source description                    | Main UI    | Basic UI                          | Android app       | iOS app           |
 | -------------------- | ------------------------------------- | ---------- | --------------------------------- | ----------------- | ----------------- |
 | `oh`                | Icons provided via the openHAB server | Supported  | Supported                         | Supported         | Supported         |
-| `material`         | Material icons                        | Supported  | Supported                         | Not yet supported | Not yet supported |
-| `f7`                | Framework7 icons                      | Supported  | Not yet supported                 | Not yet supported | Not yet supported |
-| `if` or `iconify` | iconify icons                         | Supported  | Supported but needs to be enabled | Not yet supported | Not yet supported |
+| `material`         | [Material icons](https://fonts.google.com/icons?icon.set=Material+Icons) | Supported  | Supported                         | Not yet supported | Not yet supported |
+| `f7`                | [Framework7 icons](https://framework7.io/icons/)                         | Supported  | Not yet supported                 | Not yet supported | Not yet supported |
+| `if` or `iconify` | [iconify icons](https://icon-sets.iconify.design/)                       | Supported  | Supported but needs to be enabled | Not yet supported | Not yet supported |
 
-You can find a list of [all Material icons here](https://fonts.google.com/icons?icon.set=Material+Icons).
-
-You can find a list of [all Framework7 icons here](https://framework7.io/icons/).
-
-You can find a list of [all iconify icons here](https://icon-sets.iconify.design/).
 Please note that the iconify option requires Internet connectivity on the client to access the external API.
 The WEB browser will cache the retrieved icons to limit the requests and speed up the rendering.
 Certain user interfaces provide a setting to enable this option, e.g. Basic UI disables this option by default but allows it to be enabled.
