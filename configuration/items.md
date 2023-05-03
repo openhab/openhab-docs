@@ -305,8 +305,7 @@ Users may also add their own icons in either `png` or `svg` format in the openHA
 The following guidelines apply to user-added icon files:
 
 - Only `png` or `svg` file formats may be used
-- Icon filenames may include lowercase letters, numbers and underscores (`_`)
-- Hyphens (`-`) are reserved for [Dynamic Icons](#dynamic-icons)
+- Icon filenames may include lowercase letters, numbers, hyphens (`-`) and underscores (`_`)
 - Example filenames:
   - Good: `myswitch.svg`, `power_meter.png`, `tuer23.svg`
   - Bad: `MySwitch.svg`, `power-meter.png`, `tür23.svg`
@@ -393,7 +392,7 @@ Dynamic icon sets may consist of as many state-specific icon files as needed.
 Each set must meet the following criteria:
 
 - A default icon is mandatory.
-    The default icon filename is the name of the icon without a hyphen or state (e.g. `switch.svg`)
+    The default icon filename is the name of the icon without a state (e.g. `switch.svg`)
 
 - Icon filenames must follow the naming restrictions given for [icons](#icons) above
 
