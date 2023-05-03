@@ -135,7 +135,7 @@ If you run into any problems, use the search function in the forum or open a new
 
 In some cases upgrading to a new version of openHAB requires additional steps.
 For textual based configuration this can usually be done using a text editor or VS Code.
-For UI configuration updates to the JSON database should not be done manually but by using the upgrade tool.
+UI configuration updates to the JSON database should not be done manually but by using the upgrade tool.
 
 The upgrade tool is a java application and allows performing different steps.
 Each step can only be executed once (unless you `--force` the tool to perform them again).
