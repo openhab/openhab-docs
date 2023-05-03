@@ -335,11 +335,11 @@ Thus, the most generic reference to an icon is composed of 3 segments separated 
 If the value contains only two segments, the first segment is assumed to be the icon source and the second the icon name.
 In this case, the icon set is to "classic" by default.
 This is used in particular when the icon source only provides a single set of icons.
-As an example, "&lt;material:favorite&gt;" references the "favorite" icon from the Material icons.
-"&lt;oh:switch&gt;" references the "switch" icon from the openHAB classic icon set.
+As an example, `&lt;material:favorite&gt;` references the "favorite" icon from the Material icons.
+`&lt;oh:switch&gt;` references the "switch" icon from the openHAB classic icon set.
 
 If the value contains only one segment, it is assumed to be the name of an icon from the openHAB classic icon set.
-As an example, "&lt;switch&gt;" references the "switch" icon from the openHAB classic icon set.
+As an example, `&lt;switch&gt;` references the "switch" icon from the openHAB classic icon set.
 
 Here are few examples showing the different options:
 
