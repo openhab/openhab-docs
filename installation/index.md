@@ -153,10 +153,6 @@ If the tool is not operated from that folder, it can be specified by using `--di
 
 Example:
 
-```
+```shell
 java -jar upgradetool.jar --dir /var/lib/openhab --command itemCopyUnitToMetadata
 ```
-
-
-
-
