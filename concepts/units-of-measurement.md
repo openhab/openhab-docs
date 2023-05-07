@@ -69,7 +69,7 @@ In some cases the system default unit may not be the most useful unit for a give
 For measuring precipitation km/h would be a quite uncommon unit, while mm/h would be the expected unit.
 You can set the `unit` metadata to a different unit to change the item's unit:
 
-```
+```shell
 Number:Speed "Rainfall" { unit="mm/h" }
 ```
 
