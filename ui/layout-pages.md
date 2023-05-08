@@ -202,7 +202,7 @@ _Screen Width:_
 Screen width in CSS pixels. Defaults to 1280.
 
 _Screen Height:_
-Screen width in CSS pixels. Defaults to 720.
+Screen height in CSS pixels. Defaults to 720.
 
 _Scaling:_
 Enabling this scales the defined screen to the width available in the browser window.
@@ -257,7 +257,7 @@ _Screen Width:_
 Screen width in CSS pixels. Defaults to 1280.
 
 _Screen Height:_
-Screen width in CSS pixels. Defaults to 720.
+Screen height in CSS pixels. Defaults to 720.
 
 _Scaling:_
 Enabling this scales the defined screen to the width available in the browser window. All widgets are resized accordingly.
