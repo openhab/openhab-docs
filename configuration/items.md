@@ -552,18 +552,17 @@ The last Group counts all members of it matching the given regular expression, h
 
 Tags added to an Item definition allow a user to characterize the specific nature of the Item beyond its basic Item type.
 Tags can then be used by add-ons to interact with Items in context-sensitive ways.
+Tags are used by the [Semantic Model]({{base}}/tutorial/model.html).  The `"Light"` example below maps the item to the Semantic Model.
 
 Example:
 A Light in a typical home setup can be represented by a Switch, a Dimmer or a Color Item.
 To be able to interact with the light device via a natural voice command, for example, the fact that the Item is a light can be established by adding the "Lighting" tag as shown below.
 
 ```java
-Switch Livingroom_Light "Livingroom Ceiling Light" ["Lighting"]
+Switch Livingroom_Light "Livingroom Ceiling Light" ["Light"]
 ```
 
-Tagging is a new feature and only a few I/O add-ons have implemented it.
 The easiest way to determine if tags have been implemented in a specific add-on is to see if the add-on documentation explicitly discusses their usage.
-Tags will be ignored if no Items in the openHAB installation support it.
 
 See the [Hue Emulation Service](/addons/integrations/hueemulation/) or [HomeKit Add-on](/addons/integrations/homekit/) documentation for more details.
 
