@@ -296,31 +296,78 @@ In the example below, the "switch" icon has been selected:
 Switch Livingroom_Light "Livingroom Ceiling Light" <switch>
 ```
 
+#### Icons provided with openHAB
+
 openHAB provides a set of [classic icons](/docs/configuration/iconsets/classic/) by default.
-Users may add their own icons in either `png` or `svg` format in the openHAB icons configuration folder, `$OPENHAB_CONF/icons/classic/`.
+The community marketplace provides other openHAB icon sets that can be installed, e.g. [this subset of iconify icons]( https://community.openhab.org/t/iconify-icon-provider/144508).
+Users may also add their own icons in either `png` or `svg` format in the openHAB icons configuration folder, `$OPENHAB_CONF/icons/classic/`.
 
 The following guidelines apply to user-added icon files:
 
 - Only `png` or `svg` file formats may be used
-- Icon filenames may include lowercase letters, numbers and underscores (`_`)
-- Hyphens (`-`) are reserved for [Dynamic Icons](#dynamic-icons)
+- Icon filenames may include lowercase letters, numbers, hyphens (`-`) and underscores (`_`)
 - Example filenames:
   - Good: `myswitch.svg`, `power_meter.png`, `tuer23.svg`
   - Bad: `MySwitch.svg`, `power-meter.png`, `tür23.svg`
 
 **Bitmaps or Vector Graphics:**
 openHAB can work with either Bitmap (`png`) or Vector (`svg`) icon files.
-The format should match the display capabilities of the user interfaces in use (e.g. Basic UI).
+The format should match the display capabilities of the user interfaces in use.
 It is thereby important to decide on one format beforehand; vector graphics are recommended.
-The setting can be changed via UI for most user interfaces.
+Most user interfaces don't expose this setting because they support both formats transparently.
+But the setting can be changed via UI in certain user interfaces.
 Please check the user interface documentation if in doubt.
 Note that image files with the wrong file ending will be ignored.
 
 Users may substitute their own icon for an icon from the default icon set by placing a file in the `$OPENHAB_CONF/icons/classic/` folder with the same filename as the name of the icon being substituted.
 
+#### Icon sources
+
+Some user interfaces supports other icons than those provided by openHAB.
+Thus, the most generic reference to an icon is composed of 3 segments separated by a colon:
+
+1. The first segment is the icon source, e.g. "oh"
+
+1. The second segment is the icon set from this source, e.g. "classic"
+
+1. The third segment is the name of an icon in this set, e.g. "switch"
+
+If the value contains only two segments, the first segment is assumed to be the icon source and the second the icon name.
+In this case, the icon set is to "classic" by default.
+This is used in particular when the icon source only provides a single set of icons.
+As an example, `<material:favorite>` references the "favorite" icon from the Material icons.
+`<oh:switch>` references the "switch" icon from the openHAB classic icon set.
+
+If the value contains only one segment, it is assumed to be the name of an icon from the openHAB classic icon set.
+As an example, `<switch>` references the "switch" icon from the openHAB classic icon set.
+
+Here are few examples showing the different options:
+
+```java
+Switch Livingroom_Light "Livingroom Ceiling Light" <switch>
+Switch Parent_Bedroom_Light "Parent Bedroom Light" <oh:switch>
+Switch Child_Bedroom_Light "Child Bedroom Light" <oh:classic:switch>
+Switch Bathroom_Light "Bathroom Light" <material:lightbulb>
+Switch Kitchen_Light "Kitchen Light" <f7:lightbulb>
+Switch Garage_Light "Garage Light" <if:mdi:lightbulb>
+```
+
+Here is the list of available icon sources and how they are supported by the major user interfaces.
+
+| Source name          | Source description                    | Main UI    | Basic UI                          | Android app       | iOS app           |
+| -------------------- | ------------------------------------- | ---------- | --------------------------------- | ----------------- | ----------------- |
+| `oh`                | Icons provided via the openHAB server | Supported  | Supported                         | Supported         | Supported         |
+| `material`         | [Material icons](https://fonts.google.com/icons?icon.set=Material+Icons) | Supported  | Supported                         | Not yet supported | Not yet supported |
+| `f7`                | [Framework7 icons](https://framework7.io/icons/)                         | Supported  | Not yet supported                 | Not yet supported | Not yet supported |
+| `if` or `iconify` | [iconify icons](https://icon-sets.iconify.design/)                       | Supported  | Supported but needs to be enabled | Not yet supported | Not yet supported |
+
+Please note that the iconify option requires Internet connectivity on the client to access the external API.
+The WEB browser will cache the retrieved icons to limit the requests and speed up the rendering.
+Certain user interfaces provide a setting to enable this option, e.g. Basic UI disables this option by default but allows it to be enabled.
+
 #### Dynamic Icons
 
-Some icons are dynamically selected by openHAB depending on the Item's state.
+If and only if the icon source is openHAB, some icons are dynamically selected by openHAB depending on the Item's state.
 For example, a "switch" icon may appear to be green when the Item is "ON" and red when the item is "OFF.
 Behind the scenes, openHAB is actually selecting two different icon files depending upon the Item state - `switch-on` or `switch-off`.
 A third default icon file, `switch`, is required as well.
@@ -332,7 +379,7 @@ Dynamic icon filenames follow the pattern below:
 <name>-<state>.<extension>
 ```
 
-- `<name>` - the name of the icon set
+- `<name>` - the name of the icon
 - `-<state>` - the Item state the icon maps to in lowercase (e.g. "-on" or "-off", "-open" or "-closed")
 - `<extension>` - bitmap (`png`) or vector graphic (`svg`) icon file extension ([see above](#icons))
 
@@ -340,7 +387,7 @@ Dynamic icon sets may consist of as many state-specific icon files as needed.
 Each set must meet the following criteria:
 
 - A default icon is mandatory.
-    The default icon filename is the name of the icon without a hyphen or state (e.g. `switch.svg`)
+    The default icon filename is the name of the icon without a state (e.g. `switch.svg`)
 
 - Icon filenames must follow the naming restrictions given for [icons](#icons) above
 
@@ -476,13 +523,13 @@ Incompatible Item types within a Group may result in the invalid aggregation res
 Examples for derived states on Group Items when declared in the Item DSL:
 
 ```java
-Group:Number                Lights        "Active Lights [%d]"              // e.g. "2"
-Group:Switch:OR(ON,OFF)     Lights        "Active Lights [%d]"              // e.g. ON and "2"
-Group:Switch:AND(ON,OFF)    Lights        "Active Lights [%d]"              // e.g. ON and "2"
-Group:Number:AVG            Temperatures  "All Room Temperatures [%.1f °C]" // e.g. "21.3 °C"
-Group:DateTime:EARLIEST     LatestUpdate "Latest Update [%1$tY.%1$tm.%1$tY %1$tH:%1$tM:%1$tS]"
-Group:DateTime:LATEST       LastSeen  "Last Seen [%1$tY.%1$tm.%1$tY %1$tH:%1$tM:%1$tS]"
-Group:Number:COUNT("OFFLINE")     OfflineDevices "Offline Devices [%d]"     // e.g. "2"
+Group:Number                  Lights       "Active Lights [%d]"              // e.g. "2"
+Group:Switch:OR(ON,OFF)       Lights       "Active Lights [%d]"              // e.g. ON and "2"
+Group:Switch:AND(ON,OFF)      Lights       "Active Lights [%d]"              // e.g. ON and "2"
+Group:Number:Temperature:AVG  Temperatures "All Room Temperatures [%.1f °C]" // e.g. "21.3 °C"
+Group:DateTime:EARLIEST       LatestUpdate "Latest Update [%1$tY.%1$tm.%1$tY %1$tH:%1$tM:%1$tS]"
+Group:DateTime:LATEST         LastSeen     "Last Seen [%1$tY.%1$tm.%1$tY %1$tH:%1$tM:%1$tS]"
+Group:Number:COUNT("OFFLINE") OfflineDevices "Offline Devices [%d]"     // e.g. "2"
 ```
 
 The first three examples above compute the number of active lights and store them as group state.

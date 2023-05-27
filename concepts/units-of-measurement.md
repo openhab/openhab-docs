@@ -22,34 +22,75 @@ The metric system with SI units is used for the rest of the world.
 This conversion will convert the given `QuantityType` into a default unit for the specific dimension of the type.
 This is:
 
-| Dimension     | default unit metric        | default unit imperial  |
-|---------------|----------------------------|------------------------|
-| Length        | Meter (m)                  | Inch (in)              |
-| Temperature   | Celsius (°C)               | Fahrenheit (°F)        |
-| Pressure      | Hectopascal (hPa)          | Inch of mercury (inHg) |
-| Speed         | Kilometers per hour (km/h) | Miles per hour (mph)   |
-| Intensity     | Irradiance (W/m2)          | Irradiance (W/m2)      |
-| Dimensionless | Abstract unit one (one)    | Abstract unit one (one)|
-| Angle         | Degree (°)                 | Degree (°)             |
+| Dimension                | default unit metric              | default unit imperial            |
+|--------------------------|----------------------------------|----------------------------------|
+| Acceleration             | Meter per square second (m/s²)   | Meter per square second (m/s²)   |
+| Amount of Substance      | Mole (mol)                       | Mole (mol)                       |
+| Angle                    | Degree (°)                       | Degree (°)                       |
+| Area                     | Square Meter (m²)                | Square foot (ft²)                |
+| Areal Density            | Dobson unit (DU)                 | Dobson unit (DU)                 |
+| Catalytic Activity       | Katal (kat)                      | Katal (kat)                      |
+| Data Amount              | Byte (B)                         | Byte (B)                         |
+| Data Transfer Rate       | Megabit per second (Mbit/s)      | Megabit per second (Mbit/s)      |
+| Density                  | Kilogram per cubic meter (kg/m³) | Kilogram per cubic meter (kg/m³) |
+| Dimensionless            | Abstract unit one (one)          | Abstract unit one (one)          |
+| Electric Capacitance     | Farad (F)                        | Farad (F)                        |
+| Electric Charge          | Coulomb (C)                      | Coulomb (C)                      |
+| Electric Conductance     | Siemens (S)                      | Siemens (S)                      |
+| Electric Conductivity    | Siemens per meter (S/m)          | Siemens per meter (S/m)          |
+| Electric Current         | Ampere (A)                       | Ampere (A)                       |
+| Electric Inductance      | Henry (H)                        | Henry (H)                        |
+| Electric Potential       | Volt (V)                         | Volt (V)                         |
+| Electric Resistance      | Ohm (Ω)                          | Ohm (Ω)                          |
+| Energy                   | Kilowatt hours (kWh)             | Kilowatt hours (kWh)             |
+| Force                    | Newton (N)                       | Newton (N)                       |
+| Frequency                | Hertz (Hz)                       | Hertz (Hz)                       |
+| Illuminance              | Lux (lx)                         | Lux (lx)                         |
+| Intensity                | Irradiance (W/m²)                | Irradiance (W/m²)                |
+| Length                   | Meter (m)                        | Inch (in)                        |
+| Luminous Flux            | Lumen (lm)                       | Lumen (lm)                       |
+| Luminous Intensity       | Candela (cd)                     | Candela (cd)                     |
+| Magnetic Flux            | Weber (Wb)                       | Weber (Wb)                       |
+| Magnetic Flux Density    | Tesla (T)                        | Tesla (T)                        |
+| Mass                     | Kilogram (kg)                    | Pound (lb)                       |
+| Power                    | Watt (W)                         | Watt (W)                         |
+| Pressure                 | Hectopascal (hPa)                | Inch of mercury (inHg)           |
+| Radiation Absorbed Dose  | Gray (Gy)                        | Gray (Gy)                        |
+| Radiation Effective Dose | Sievert (Sv)                     | Sievert (Sv)                     |
+| Radioactivity            | Becquerel (Bq)                   | Becquerel (Bq)                   |
+| Solid Angle              | Steradian (sr)                   | Steradian (sr)                   |
+| Speed                    | Kilometers per hour (km/h)       | Miles per hour (mph)             |
+| Temperature              | Celsius (°C)                     | Fahrenheit (°F)                  |
+| Time                     | Seconds (s)                      | Seconds (s)                      |
+| Volume                   | Cubic Meter (m³)                 | US Gallon (gal)                  |
+| Volumetric Flow Rate     | Liter per minute (l/min)         | US Gallon per minute (gal/min)   |
 
-## NumberItem linked to QuantityType Channel
+In some cases the system default unit may not be the most useful unit for a given quantity.
+For measuring precipitation km/h would be a quite uncommon unit, while mm/h would be the expected unit.
+You can set the `unit` metadata to a different unit to change the item's unit:
 
-In addition to the automated conversion the `NumberItem` linked to a Channel delivering `QuantityTypes` can be configured to always have state updates converted to a specific unit.
-The unit given in the state description is parsed and then used for conversion (if necessary).
-The framework assumes that the unit to parse is always the last token in the state description.
-If the parsing failed the locale-based default conversion takes place.
+```shell
+Number:Speed "Rainfall" { unit="mm/h" }
+```
 
-`Number:Temperature temperature "Outside [%.2f °F]" { channel="...:current#temperature" }`
+This unit is then also used for persistence.
+Setting the `unit` metadata to `kW` would persist 5.0 for a value of 5.0 kW (while 5000 would be persisted without because the system default is W).
+Attention: Changing the unit of an item may corrupt your already persisted data, no automatic conversion takes place.
 
-In the example the `NumberItem` is specified to bind to Channels which offer values from the dimension `Temperature`.
-Without the dimension information the `NumberItem` only will receive updates of type `DecimalType` without a unit and any conversion.
-The state description defines two decimal places for the value and the fix unit °F.
-In case the state description should display the unit the binding delivers or the framework calculates through locale-based conversion the pattern will look like this:
+The unit of the item is independent of the state description.
+The state description is used for display purposes only, it can contain any compatible unit and will not affect what is persisted or used in events.
 
-`"Outside [%.2f %unit%]"`
+## Number item with dimension and DecimalType
 
-The special placeholder `%unit%` will then be replaced by the actual unit symbol.
-The placeholder `%unit%` can be placed anywhere in the state description.
+A `DecimalType` state update or command to a `Number` item that contains a dimension is considered to have the item's unit.
+So updating a `Number:Length` item with `5.0` will set the item's state to 5 m or 5 in. (depending on your locale).
+In case you set a different unit (see above, e.g. `km`) that is taken and the item will set it's state to 5 km.
+
+## Number item without dimension and QuantityType
+
+A `QuantityType` state update or command to a non-dimensional `Number` item will result in a state update that consists of the numeric part only.
+So updating a `Number` item with `5.0 kW` will set the item's state to 5.0, updating the same item with `5.0 W` will also set the item's state to 5.0.
+Linking dimension channels to non-dimensional items is therefore discouraged and will not be permitted in future versions of openHAB.
 
 ### Defining ChannelTypes
 

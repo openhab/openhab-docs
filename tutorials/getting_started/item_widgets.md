@@ -35,8 +35,8 @@ For complicated expressions, gradually build up the expression in this tool unti
 
 ## Visibility
 
-Each custom defined widget has a "Visibility" and "Visible to" property.
-The "Visibility" option takes a boolean `true` or `false` (without quotes) or the result of a boolean expression to determine whether or not to render the widget.
+Each custom defined widget has a "Visibility" and a "Visible to" property.
+The "Visibility" option takes a boolean `true` or `false` or the result of a boolean expression to determine whether or not to render the widget.
 The "Visibile to" property controls which type of user can see the widget.
 Take heed of the warning, this is not a security feature, but it can be used to limit what a regular user can see in the automatically generated parts of the Overview Page.
 
