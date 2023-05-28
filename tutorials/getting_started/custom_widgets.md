@@ -130,7 +130,7 @@ config:
   iconColor: '=(items[props.item].state == "ON") ? "yellow" : "gray"'
   title: =props.title
   color: '=(items[props.item].state == "ON") ? "yellow" : "gray"'
-  item: props.item
+  item: =props.item
 ```
 
 Save the widget and return to one of the Items that should use this widget.
