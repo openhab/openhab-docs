@@ -70,7 +70,7 @@ See the [Rules article]({{base}}/configuration/rules-dsl.html#time-based-trigger
 This (optional) section allows you to name and define one or more `Filters`.
 The syntax is as follows:
 
-```java 
+```java
 Filters {
   <filterName1> : <filter definition>
   <filterName2> : <filter definition>
