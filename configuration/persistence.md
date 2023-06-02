@@ -70,7 +70,7 @@ See the [Rules article]({{base}}/configuration/rules-dsl.html#time-based-trigger
 This (optional) section allows you to name and define one or more `Filters`.
 The syntax is as follows:
 
-```
+```java 
 Filters {
   <filterName1> : <filter definition>
   <filterName2> : <filter definition>
@@ -87,7 +87,7 @@ It can be used with every item type.
 The values need to be exactly the string representation of the state.
 One or more values can be given, separated by a comma `,`.
 
-```
+```java
 Filters {
   exactlySomeState : = "ARMED", "UNARMED"
   notTheseStates : ! "UNDEF", "NULL"
@@ -106,7 +106,7 @@ In "absolute" mode the threshold is calculated by absolute difference to the las
 This mode is selected by a decimal value with optional unit (e.g. `> 5 mA` for "at least 5 mA deviation").
 For plain `Number` items the unit can be omitted.
 
-```
+```java
 Filters {
   fiveMilliAmps : > 5 mA
   tenPercent : > % 10
@@ -121,7 +121,7 @@ The filter definition consists of an integer value followed by a unit.
 The allowed units are `s` (seconds), `m` (minutes), `h` hours and `d` days.
 Composed values (`1 m 30 s`) are not possible and need to be expressed by a single value (`90 s`).
 
-```
+```java
 Filters {
   thirtySeconds : T 30 s
 }
