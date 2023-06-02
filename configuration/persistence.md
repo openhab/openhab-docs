@@ -78,7 +78,21 @@ Filters {
 }
 ```
 
-Each filter definition starts with a single character that identifies the filter type.
+Each filter definition starts with a unique identifier that identifies the filter type.
+
+#### Equals Filter `=` / Not Equals Filter (`!`)
+
+The equals (not equals) filter allows to persist only a given set of values (or exclude them).
+It can be used with every item type.
+The values need to be exactly the string representation of the state.
+One or more values can be given, separated by a comma `,`.
+
+```
+Filters {
+  exactlySomeState : = "ARMED", "UNARMED"
+  notTheseStates : ! "UNDEF", "NULL"
+}
+```
 
 #### Threshold Filter (`>`)
 
@@ -90,7 +104,7 @@ This mode is selected by a `%` character and a decimal value (e.g. `> % 10` for 
 
 In "absolute" mode the threshold is calculated by absolute difference to the last persisted value.
 This mode is selected by a decimal value with optional unit (e.g. `> 5 mA` for "at least 5 mA deviation").
-For plain `Number` items the value can be omitted.
+For plain `Number` items the unit can be omitted.
 
 ```
 Filters {
@@ -105,24 +119,11 @@ The time filter allows to discard values that arrive within the given time after
 It can be used with every item type.
 The filter definition consists of an integer value followed by a unit.
 The allowed units are `s` (seconds), `m` (minutes), `h` hours and `d` days.
+Composed values (`1 m 30 s`) are not possible and need to be expressed by a single value (`90 s`).
 
 ```
 Filters {
   thirtySeconds : T 30 s
-}
-```
-
-#### Equals Filter `=` / Not Equals Filter (`!`)
-
-The equals (not equals) filter allows to persist only a given set of values (or exclude them).
-It can be used with every item type.
-The values need to be exactly the string representation of the state.
-One or more values can be given, separated by a comma `,`.
-
-```
-Filters {
-  exactlySomeState : = "ARMED", "UNARMED"
-  notTheseStates : ! "UNDEF", "NULL"
 }
 ```
 
