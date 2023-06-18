@@ -112,6 +112,7 @@ Filters {
   tenPercent : > % 10
 }
 ```
+
 #### Include Filter (`[]`) / Exclude Filter (`][`)
 
 The include (exclude) filter allows to define a range for accepted (rejected) values.
