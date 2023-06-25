@@ -5,7 +5,7 @@ title: Pulse Width Modulation (PWM) Automation - Automation
 type: automation
 description: "This automation module implements [Pulse Width Modulation (PWM)](https://en.wikipedia.org/wiki/Pulse-width_modulation)."
 since: 3x
-install: manual
+install: auto
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

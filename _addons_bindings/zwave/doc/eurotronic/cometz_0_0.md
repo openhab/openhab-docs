@@ -7,6 +7,7 @@ title: CometZ - ZWave
 
 # CometZ Thermostatic Valve
 This describes the Z-Wave device *CometZ*, manufactured by *Eurotronics* with the thing type UID of ```eurotronic_cometz_00_000```.
+This version of the device is limited to firmware versions below 10.254
 
 The device is in the category of *Radiator Control*, defining Controls on radiators used to heat up rooms.
 

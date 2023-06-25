@@ -6,7 +6,7 @@ type: binding
 description: "This binding can help you include statistics of your SEMS / GoodWe solar panel installation into openHAB."
 since: 3x
 logo: images/addons/semsportal.png
-install: manual
+install: auto
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

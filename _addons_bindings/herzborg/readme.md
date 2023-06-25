@@ -6,7 +6,7 @@ type: binding
 description: "This binding supports smart curtain motors by Herzborg (<http://www.herzborg.com/pro_list.aspx?TypeID=1>)"
 since: 3x
 logo: images/addons/herzborg.png
-install: manual
+install: auto
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

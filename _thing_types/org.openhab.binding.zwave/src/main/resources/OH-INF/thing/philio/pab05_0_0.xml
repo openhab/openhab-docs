@@ -1,0 +1,314 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="philio_pab05_00_000" listed="false">
+    <label>PAB05 Philio PAB05 Energy meter</label>
+    <description><![CDATA[
+Philio PAB05 Energy meter<br /> <h1>Overview</h1><p>This Energy Meter monitors total electricity consumption of connected appliances and reports it to any Z-Wave enabled controller in real time. Small and compact size allows easy installation in majority of electricity distribution boxes. It supports two loads up to 13800W each (60 Amperes at 230Vac)<br /></p> <br /> <h2>Inclusion Information</h2><p>Pressing On/Off (Include) button three times within 2 seconds will enter inclusion mode.<br /></p> <br /> <h2>Exclusion Information</h2><p>Pressing On/Off (Include) button three times within 2 seconds will enter exclusion mode.<br /></p> <br /> <h2>Wakeup Information</h2><p><br /></p>
+    ]]></description>
+    <category>Sensor</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="meter_voltage" typeId="meter_voltage">
+        <label>Electric meter (volts)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_V</property>
+        </properties>
+      </channel>
+      <channel id="meter_powerfactor" typeId="meter_powerfactor">
+        <label>Electric meter (power factor)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_Power_Factor</property>
+        </properties>
+      </channel>
+      <channel id="meter_current" typeId="meter_current">
+        <label>Electric meter (amps)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_A</property>
+        </properties>
+      </channel>
+      <channel id="meter_kwh" typeId="meter_kwh">
+        <label>Electric meter (kWh)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_KWh</property>
+        </properties>
+      </channel>
+      <channel id="meter_watts" typeId="meter_watts">
+        <label>Electric meter (watts)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_W</property>
+        </properties>
+      </channel>
+      <channel id="alarm_power" typeId="alarm_power">
+        <label>Alarm (power)</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=POWER_MANAGEMENT</property>
+        </properties>
+      </channel>
+      <channel id="meter_voltage1" typeId="meter_voltage">
+        <label>Electric meter (volts) 1</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER:1;type=E_V</property>
+        </properties>
+      </channel>
+      <channel id="meter_powerfactor1" typeId="meter_powerfactor">
+        <label>Electric meter (power factor) 1</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER:1;type=E_Power_Factor</property>
+        </properties>
+      </channel>
+      <channel id="meter_current1" typeId="meter_current">
+        <label>Electric meter (amps) 1</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER:1;type=E_A</property>
+        </properties>
+      </channel>
+      <channel id="meter_kwh1" typeId="meter_kwh">
+        <label>Electric meter (kWh) 1</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER:1;type=E_KWh</property>
+        </properties>
+      </channel>
+      <channel id="meter_watts1" typeId="meter_watts">
+        <label>Electric meter (watts) 1</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER:1;type=E_W</property>
+        </properties>
+      </channel>
+      <channel id="alarm_power1" typeId="alarm_power">
+        <label>Alarm (power) 1</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM:1;type=POWER_MANAGEMENT</property>
+        </properties>
+      </channel>
+      <channel id="meter_voltage2" typeId="meter_voltage">
+        <label>Electric meter (volts) 2</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER:2;type=E_V</property>
+        </properties>
+      </channel>
+      <channel id="meter_powerfactor2" typeId="meter_powerfactor">
+        <label>Electric meter (power factor) 2</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER:2;type=E_Power_Factor</property>
+        </properties>
+      </channel>
+      <channel id="meter_current2" typeId="meter_current">
+        <label>Electric meter (amps) 2</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER:2;type=E_A</property>
+        </properties>
+      </channel>
+      <channel id="meter_kwh2" typeId="meter_kwh">
+        <label>Electric meter (kWh) 2</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER:2;type=E_KWh</property>
+        </properties>
+      </channel>
+      <channel id="meter_watts2" typeId="meter_watts">
+        <label>Electric meter (watts) 2</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER:2;type=E_W</property>
+        </properties>
+      </channel>
+      <channel id="alarm_power2" typeId="alarm_power">
+        <label>Alarm (power) 2</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM:2;type=POWER_MANAGEMENT</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Philio Technology Corp</property>
+      <property name="modelId">PAB05</property>
+      <property name="manufacturerId">013C</property>
+      <property name="manufacturerRef">0006:009B</property>
+      <property name="dbReference">1564</property>
+      <property name="defaultAssociations">1,2</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_1_2" type="integer" groupName="configuration">
+        <label>1: Watt Meter Report Period</label>
+        <description><![CDATA[
+Watt meter report period (unit is 5 seconds)<br /> <h1>Overview</h1><p>If the setting is configured for 1 hour (set value = 720), the PAB05 will report its instant power consumption every 1 hour to the node of the corresponding group (720 * 5s = 3600s = 1h). The maximum interval to report its instant power consumption is 45 hours.<br /><br /></p>
+        ]]></description>
+        <default>720</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_2_2" type="integer" groupName="configuration">
+        <label>2: kWh Meter Report Period</label>
+        <description><![CDATA[
+kWh meter report period<br /> <h1>Overview</h1><p>If the setting is configured for 1 hour (set value = 6), the PAB05 will report its accumulated power consumption (in kWh) every 1 hour to the node of the corresponding group (6 * 10min = 60min = 1h). The maximum interval to report its instant power consumption is 227 days.</p>
+        ]]></description>
+        <default>6</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_3_2" type="integer" groupName="configuration">
+        <label>3: Threshold of Current for Load Caution</label>
+        <description><![CDATA[
+Threshold of current for load caution<br /> <h1>Overview</h1><p>This is a warning when the current of the load is over the preset threshold value. If the setting value is 6000, when the load current of CT1 or CT2 is over 60A, PAB05 will send current Meter Report command to the node of corresponding Group.</p>
+        ]]></description>
+        <default>6000</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_4_2" type="integer" groupName="configuration">
+        <label>4: Threshold of kWh for Load Caution</label>
+        <description><![CDATA[
+Threshold of kWh for load caution<br /> <h1>Overview</h1><p>This is a warning when the KWh of the load is over the preset threshold value. If the setting value is 10000, when the Accumulated Power Consumption of CT1 or CT2 is over this value, PAB05 will send KWh Meter Report command to the node of  the corresponding Group. Minimum value is 1KWh and default value is 10000 kWh.</p>
+        ]]></description>
+        <default>10000</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_5_1" type="integer" groupName="configuration">
+        <label>5: Watt differential report</label>
+        <description><![CDATA[
+Watt differential report<br /> <h1>Overview</h1><p>If the parameter value is 0, the function of Watt differential report will be disabled. If the parameter value is between 1-4, PAB05 will send a meter report to the associated group when the differential value of Watt is over 10% * Parameter Value. Possible values are:<br />0 - Disabled<br />1 - 10%<br />2 - 20%<br />3 - 30%<br />4 - 40%</p>
+        ]]></description>
+        <default>1</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_6_1" type="integer" groupName="configuration">
+        <label>6: Voltage value report enable</label>
+        <description><![CDATA[
+Voltage value report enable<br /> <h1>Overview</h1><p>If this configuration is set to 1, when Watt differential report is triggered, PAB05 will report voltage value.<br />If this configuration is set to 0, when Watt differential report is triggered, PAB05 will not report voltage value.<br /></p>
+        ]]></description>
+        <default>1</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_7_1" type="integer" groupName="configuration">
+        <label>7: Current value report enable</label>
+        <description><![CDATA[
+Current value report enable<br /> <h1>Overview</h1><p>If this configuration is set to 1, when Watt differential report is triggered, PAB05 will report current value.</p><p>If this configuration is set to 0, when Watt differential report is triggered, PAB05 will not report current value.</p>
+        ]]></description>
+        <default>1</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_8_1" type="integer" groupName="configuration">
+        <label>8: Power factor value report enable</label>
+        <description><![CDATA[
+Power factor value report enable<br /> <h1>Overview</h1><p>If this configuration is set to 1, when Watt differential report is triggered, PAB05 will report power factor value.</p><p>If this configuration is set to 0, when Watt differential report is triggered, PAB05 will not report power factor value.</p>
+        ]]></description>
+        <default>1</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_9_1" type="integer" groupName="configuration">
+        <label>9: kWh value report enable</label>
+        <description><![CDATA[
+kWh value report enable<br /> <h1>Overview</h1><p>If this configuration is set to 1, when Watt differential report is triggered, PAB05 will report accumulated kWh value.</p><p>If this configuration is set to 0, when Watt differential report is triggered, PAB05 will not report accumulated kWh value.</p>
+        ]]></description>
+        <default>1</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_10_1" type="integer" groupName="configuration">
+        <label>10: Channel 1 meter rate type</label>
+        <description><![CDATA[
+Channel 1 meter rate type<br /> <h1>Overview</h1><p>For channel 1, depending of the configuration value:</p><p>1. Import only mode: In this mode, PAB05 only accumulate import energy and report import energy value.</p><p>2. Export only mode: In this mode, PAB05 only accumulate export energy and report export energy value.</p><p>3. Both mode: In this mode, PAB05 will identify energy type is import or export and will report import energy value and export energy value at the same time.</p>
+        ]]></description>
+        <default>1</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_11_1" type="integer" groupName="configuration">
+        <label>11: Channel 2 meter rate type</label>
+        <description><![CDATA[
+Channel 2 meter rate type<br /> <h1>Overview</h1><p>For channel 2, depending of the configuration value:</p><p>1. Import only mode: In this mode, PAB05 only accumulate import energy and report import energy value.</p><p>2. Export only mode: In this mode, PAB05 only accumulate export energy and report export energy value.</p><p>3. Both mode: In this mode, PAB05 will identify energy type is import or export and will report import energy value and export energy value at the same time.</p>
+        ]]></description>
+        <default>1</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_12_4" type="integer" groupName="configuration">
+        <label>12: Channel 1 import kWh value</label>
+        <description><![CDATA[
+Channel 1 import kWh value<br /> <h1>Overview</h1><p>PAB05 will start accumulating from user setting value. The default value is 0 and value can be set 0 to 100000000.</p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_13_4" type="integer" groupName="configuration">
+        <label>13: Channel 1 export kWh value</label>
+        <description><![CDATA[
+Channel 1 export kWh value<br /> <h1>Overview</h1><p>PAB05 will start accumulating from user setting value. The default value is 0 and value can be set 0 to 100000000.<br /></p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_14_4" type="integer" groupName="configuration">
+        <label>14: Channel 2 import kWh value</label>
+        <description><![CDATA[
+Channel 2 import kWh value<br /> <h1>Overview</h1><p>PAB05 will start accumulating from user setting value. The default value is 0 and value can be set 0 to 100000000.<br /></p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_15_4" type="integer" groupName="configuration">
+        <label>15: Channel 2 export kWh value</label>
+        <description><![CDATA[
+Channel 2 export kWh value<br /> <h1>Overview</h1><p>PAB05 will start accumulating from user setting value. The default value is 0 and value can be set 0 to 100000000.<br /></p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: CT1</label>
+        <description><![CDATA[
+Data from CT1<br /> <h1>Overview</h1><p><br /></p>
+        ]]></description>
+        <multipleLimit>1</multipleLimit>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: CT2</label>
+        <description><![CDATA[
+Data from CT2<br /> <h1>Overview</h1><p><br /></p>
+        ]]></description>
+        <multipleLimit>1</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

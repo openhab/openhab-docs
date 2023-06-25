@@ -6,7 +6,7 @@ type: binding
 description: "The Deutsche Bahn Binding provides the latest timetable information for all trains that arrive or depart at a specific train station, including live information for delays and changes in timetable."
 since: 3x
 logo: images/addons/deutschebahn.png
-install: manual
+install: auto
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

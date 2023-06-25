@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="namron_4512715_00_000" listed="false">
+    <label>4512715 Switch 400W</label>
+    <description><![CDATA[
+Switch 400W<br /> <h1>Overview</h1><p>Z-Wave relay for flush mounting. This relay is used to switch on/off connected lighting devices, and works with both halogen and LED light sources. Can be included and operated in a Z-Wave network with other Z-Wave devices, and will act as a signal repeater to increase the reliability of the network. With an indoor range of 40 metres, you can use this relay to switch the lighting on and off from almost anywhere in the house.<br /></p> <br /> <h2>Inclusion Information</h2><ol><li>Set primary controller/gateway into inclusion mode (Please refer to your primary controllers manual on how to turn your controller into inclusion). </li><li>Power on the in-wall switch and set it into inclusion mode. There are two methods to set the in-wall switch into inclusion mode: <ol><li>  Repower on the switch, it will be set into inclusion mode automatically, and waiting to be included. <br /></li><li>  Triple press the action button on the switch, it will set the switch into inclusion mode.<br /></li></ol></li></ol> <br /> <h2>Exclusion Information</h2><p>There are two exclusion methods: </p><p>Method 1: Exclusion from the primary controller/gateway as follows: </p><ol><li>Set the primary controller/gateway into exclusion mode (Please refer to your primary controllers manual on how to set your controller into exclusion). </li><li>Triple press the action button, the switch will be set to exclusion mode, and waiting to be excluded, then the switch will be excluded from the network. </li></ol><p>Method 2: Factory reset the switch will force the switch to be excluded from a network. (please refer to the part “Factory Reset” of this manual) </p><p>Note: Factory reset is not recommended for exclusion, please use this procedure only if the primary controller/gateway is missing or otherwise inoperable. </p><p>Factory Reset: </p><p>Press and hold down the action button for over 10 seconds, the switch will be reset to factory defaults.</p> <br /> <h2>Wakeup Information</h2><p><br /></p>
+    ]]></description>
+    <category>PowerOutlet</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_binary" typeId="switch_binary">
+        <label>Switch</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY</property>
+        </properties>
+      </channel>
+      <channel id="scene_number" typeId="scene_number">
+        <label>Scene Number</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_SCENE_ACTIVATION</property>
+        </properties>
+      </channel>
+      <channel id="alarm_system" typeId="alarm_system">
+        <label>Alarm (system)</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=SYSTEM</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Namron</property>
+      <property name="modelId">4512715</property>
+      <property name="manufacturerId">0438</property>
+      <property name="manufacturerRef">0200:D006</property>
+      <property name="dbReference">1566</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_2_1" type="integer" groupName="configuration">
+        <label>2: Save load state</label>
+        <description><![CDATA[
+Save load state before power failure<br /> <h1>Overview</h1><p>0 － shutoff load </p><p>1 － turn on load </p><p>2 － save load state before power failure<br /></p>
+        ]]></description>
+        <default>2</default>
+        <options>
+          <option value="0">Shutoff Load</option>
+          <option value="1">Turn on Load</option>
+          <option value="2">Save Load State before power failure</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_3_1" type="integer" groupName="configuration">
+        <label>3: Report to Lifeline</label>
+        <description><![CDATA[
+Enable/disable to send the basic report to the Lifeline when the load state changed<br /> <h1>Overview</h1><p>（When value set as 1, re-power on the switch, it will send Basic report automatically）</p><p>0 － Disable to send Basic report </p><p>1 － Enable to send Basic report<br /></p>
+        ]]></description>
+        <default>1</default>
+        <options>
+          <option value="0">Disable sending basic report</option>
+          <option value="1">Enable sending basic report</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_5_1" type="integer" groupName="configuration">
+        <label>5: External switch type</label>
+        <description><![CDATA[
+External switch type<br /> <h1>Overview</h1><p>0 – Push button switch </p><p>1 – normal on/off switch<br /></p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Push button switch</option>
+          <option value="1">Normal on/off switch</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_7_1" type="integer" groupName="configuration">
+        <label>7: Use switch for inclusion / exclusion</label>
+        <description><![CDATA[
+Enable/disable the switch to be added to or removed from a network through external switch (when enables this function, triple press the external switch within 1.5 seconds to enable the switch to be added or removed)<br /> <h1>Overview</h1><p>0 - disable </p><p>1 - enable<br /></p>
+        ]]></description>
+        <default>1</default>
+        <options>
+          <option value="0">Disable</option>
+          <option value="1">Enable</option>
+        </options>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Lifeline</label>
+        <description><![CDATA[
+Lifeline association group<br /> <h1>Overview</h1><p>1. When press and hold down “Reset” button to factory reset the dimmer, send "Device Reset Locally Notification CC" to associated devices of this group. </p><p>2. When load state changes, send "Basic Report CC" to associated devices of this group. </p><p>3. When over temperature protection is detected, send "Emergency shutoff status" to Lifeline.<br /></p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

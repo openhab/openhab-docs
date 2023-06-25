@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="eurotronic_cometz_11_000" listed="false">
+    <label>Comet Z HVAC- Radiator Controller</label>
+    <description><![CDATA[
+HVAC- Radiator Controller<br /> <h1>Overview</h1><p>Comet Z-Wave is an energy-saving radiator controller compatible with the Z-Wave wireless standard.</p><p>FLiRS (Frequently Listening Receiver Slave):</p><p>Comet Z-Wave uses the Z-Wave function FLiRS as a radiator thermostat. As a FLiRS device, the radiator thermostat reacts to incoming commands such as temperature changes with a particularly short latency period.</p> <br /> <h2>Inclusion Information</h2><p>Put your primary Z-Wave controller into include mode.</p><p>If Comet Z-Wave was successfully added, the LED display will show the received node ID.</p><p>If “PA” is not displayed, press both buttons on the device, until “PA” apppears.</p><p>A count down from 99 will be displayed during inclusion.</p><p>The Node ID is displayed if inclusioon was successful.</p> <br /> <h2>Exclusion Information</h2><p>Please put your Z-Wave controller into the exclusion mode. Then press and hold the button in the battery compartment for 5 seconds until “LE” appears in the display.</p><p>FACTORY RESET:<br /></p><p>Press and hold the button in the battery compartment of your Comet Z-Wave for at least 10 seconds. From the 5th second on, a counter will run on the thermostat’s display. Keep the button pressed until the 10 appears on your Comet Z-Wave. Then “PA” will be shown again on the display and the controller will be in teach-in mode.</p> <br /> <h2>Wakeup Information</h2><p>Nothing in the manual. I think I did it by pressing one of the buttons briefly or both together.</p>
+    ]]></description>
+    <category>HVAC</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_dimmer" typeId="switch_dimmer">
+        <label>Dimmer</label>
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+          <property name="binding:Command:OnOffType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+        </properties>
+      </channel>
+      <channel id="sensor_temperature" typeId="sensor_temperature">
+        <label>Sensor (temperature)</label>
+        <properties>
+          <property name="binding:*:QuantityType">COMMAND_CLASS_SENSOR_MULTILEVEL;type=TEMPERATURE</property>
+        </properties>
+      </channel>
+      <channel id="thermostat_mode" typeId="eurotronic_cometz_11_000_thermostat_mode">
+        <label>Thermostat mode</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_THERMOSTAT_MODE</property>
+        </properties>
+      </channel>
+      <channel id="thermostat_setpoint_heating" typeId="thermostat_setpoint">
+        <label>Setpoint (heating)</label>
+        <properties>
+          <property name="binding:*:QuantityType">COMMAND_CLASS_THERMOSTAT_SETPOINT;type=HEATING</property>
+        </properties>
+      </channel>
+      <channel id="thermostat_setpoint_furnace" typeId="thermostat_setpoint">
+        <label>Setpoint (furnace)</label>
+        <properties>
+          <property name="binding:*:QuantityType">COMMAND_CLASS_THERMOSTAT_SETPOINT;type=FURNACE</property>
+        </properties>
+      </channel>
+      <channel id="alarm_power" typeId="alarm_power">
+        <label>Alarm (power)</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=POWER_MANAGEMENT</property>
+        </properties>
+      </channel>
+      <channel id="alarm_system" typeId="alarm_system">
+        <label>Alarm (system)</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=SYSTEM</property>
+        </properties>
+      </channel>
+      <channel id="battery-level" typeId="system.battery-level">
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_BATTERY</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Eurotronics</property>
+      <property name="modelId">Comet Z</property>
+      <property name="manufacturerId">0148</property>
+      <property name="manufacturerRef">0004:0003</property>
+      <property name="versionMin">11.0</property>
+      <property name="dbReference">1561</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_1_1" type="integer" groupName="configuration">
+        <label>1: LCD invert</label>
+        <description>Invert display</description>
+        <default>0</default>
+        <options>
+          <option value="0">normal</option>
+          <option value="1">inverted</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_2_0" type="integer" groupName="configuration">
+        <label>2: LCD Timeout</label>
+        <description>5 - 30: Timeout after 5 seconds - 30 seconds; default: 5</description>
+        <default>5</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_4_0" type="integer" groupName="configuration">
+        <label>4: Batteriestatus</label>
+        <description>Batteriestatus; 0: Send only event-controlled as system warning; 1: Batteriestatus send 1x a day default: 0x00</description>
+        <default>0</default>
+        <options>
+          <option value="0">event controlled</option>
+          <option value="1">once a day</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_5_0" type="integer" groupName="configuration">
+        <label>5: Actual-Temperature</label>
+        <description>0: Do not send actual temperature automatically; 5-50 With temperature difference of 0.5°C - 5.0°C transfer actual temperature default: 5 (When Delta = 0,5°C report)</description>
+        <default>5</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_7_0" type="integer" groupName="configuration">
+        <label>7: Window-opendetection</label>
+        <description>0x00 Deactivated; 0x01 low sensitivity; 0x02 medium sensitivity; 0x03 high sensivity; default: 0x01 low sensitive</description>
+        <default>1</default>
+        <options>
+          <option value="0">deactivated</option>
+          <option value="1">low sensitivity</option>
+          <option value="2">medium sensitivity</option>
+          <option value="3">high sensitivity</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_8_0" type="integer" groupName="configuration">
+        <label>8: Actual-Temperature- Offset</label>
+        <description>0xCE-0x32 -5,0°C - (+) 5,0°C default: 0x00 0,0°C Offset</description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Lifeline</label>
+        <description>Lifeline</description>
+        <multipleLimit>1</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+  <channel-type id="eurotronic_cometz_11_000_thermostat_mode">
+    <item-type>Number</item-type>
+    <label>Thermostat Mode</label>
+    <description>Sets the thermostat mode</description>
+    <category>Temperature</category>
+    <state pattern="%s">
+      <options>
+        <option value="0">Off</option>
+        <option value="1">Heat</option>
+        <option value="11">Economy Heat</option>
+        <option value="15">Full Power</option>
+      </options>
+    </state>
+  </channel-type>
+
+</thing:thing-descriptions>

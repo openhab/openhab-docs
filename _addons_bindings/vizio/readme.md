@@ -6,7 +6,7 @@ type: binding
 description: "This binding connects Vizio TVs to openHAB."
 since: 3x
 logo: images/addons/vizio.png
-install: manual
+install: auto
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
@@ -146,8 +146,8 @@ If an app is running that is not currently recognized by the binding, the `activ
 If an app that is in the JSON database fails to start when selected, try adjusting the `NAME_SPACE` value for that app.
 `NAME_SPACE` seems to be a version number and adjusting the number up or down may correct the mismatch between the TV and the binding.
 
-A current list of `APP_ID`'s can be found at <http://hometest.buddytv.netdna-cdn.com/appservice/vizio_apps_prod.json>
-and `NAME_SPACE` &amp; `MESSAGE` values needed can be found at <http://hometest.buddytv.netdna-cdn.com/appservice/app_availability_prod.json>
+A current list of `APP_ID`'s can be found at <http://scfs.vizio.com/appservice/vizio_apps_prod.json>
+and `NAME_SPACE` &amp; `MESSAGE` values needed can be found at <http://scfs.vizio.com/appservice/app_availability_prod.json>
 
 If there is an error in the user supplied `appListJson`, the thing will fail to start and display a CONFIGURATION_ERROR message.
 If all text in `appListJson` is removed (set to null) and the thing configuration saved, the binding will restore `appListJson` from the binding's JSON db.

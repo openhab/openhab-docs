@@ -5,7 +5,7 @@ title: Sure Petcare - Bindings
 type: binding
 description: "This binding offers integration to the Sure Petcare API, supporting cloud-connected cat flaps and feeders."
 since: 3x
-install: manual
+install: auto
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

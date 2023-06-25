@@ -117,6 +117,11 @@ This can be achieved by configuring the widget as usual, but setting SIP usernam
     Default video aspect ratio used to size the widget before video is loaded. Defaults to 4/3, 16/9 and 1 are common alternatives.
   </PropDescription>
 </PropBlock>
+<PropBlock type="BOOLEAN" name="disableRegister" label="Disable REGISTER">
+  <PropDescription>
+    SIP registration can be disabled in case you only want to initiate calls, but not receive calls with the SIP widgets.
+  </PropDescription>
+</PropBlock>
 <PropBlock type="BOOLEAN" name="enableSIPDebug" label="Enable SIP debugging to the browser console (dev tools)">
 </PropBlock>
 </PropGroup>

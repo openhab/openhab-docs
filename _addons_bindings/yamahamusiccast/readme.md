@@ -6,7 +6,7 @@ type: binding
 description: "Binding to control Yamaha models via their MusicCast protocol (aka Yamaha Extended Control)."
 since: 3x
 logo: images/addons/yamahamusiccast.png
-install: manual
+install: auto
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

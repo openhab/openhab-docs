@@ -6,7 +6,7 @@ type: binding
 description: "This binding integrates [Miele@home](https://www.miele.de/brand/smarthome-42801.htm) appliances via a cloud connection."
 since: 3x
 logo: images/addons/mielecloud.png
-install: manual
+install: auto
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

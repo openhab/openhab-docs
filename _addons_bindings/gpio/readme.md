@@ -5,7 +5,7 @@ title: GPIO - Bindings
 type: binding
 description: "This binding adds GPIO support via the pigpio daemon to openhab."
 since: 3x
-install: manual
+install: auto
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

@@ -117,7 +117,12 @@ A cell expanding to a big vertical slider
 </PropBlock>
 <PropBlock type="TEXT" name="unit" label="Unit">
   <PropDescription>
-    Text to append to the label while dragging the cursor
+    Unit for the command sent and also append to the label while dragging the cursor, leave empty to use Item's unit
+  </PropDescription>
+</PropBlock>
+<PropBlock type="BOOLEAN" name="ignoreDisplayState" label="Ignore Display State">
+  <PropDescription>
+    Ignore the display state if available and always use the raw state.
   </PropDescription>
 </PropBlock>
 <PropBlock type="BOOLEAN" name="releaseOnly" label="Send command only on release">

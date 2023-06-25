@@ -6,7 +6,7 @@ type: automation
 description: "This add-on provides [JRuby](https://www.jruby.org/) scripting language for automation rules."
 since: 3x
 logo: images/addons/jrubyscripting.png
-install: manual
+install: auto
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

@@ -5,7 +5,7 @@ title: Prowl - Bindings
 type: binding
 description: "This is the binding for the [Prowl](https://www.prowlapp.com) iOS push service."
 since: 3x
-install: manual
+install: auto
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

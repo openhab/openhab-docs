@@ -32,7 +32,7 @@ Flood/water sensor<br /> <h1>Overview</h1><p>Flood/Water detection</p> <br /> <h
       <property name="vendor">Shenzhen Neo Electronics Co., Ltd</property>
       <property name="modelId">Flood sensor</property>
       <property name="manufacturerId">0258</property>
-      <property name="manufacturerRef">0003:0085,0003:1085,0003:2085</property>
+      <property name="manufacturerRef">0003:0085,0003:1085,0003:2085,0010:0705</property>
       <property name="dbReference">493</property>
       <property name="defaultAssociations">1</property>
     </properties>

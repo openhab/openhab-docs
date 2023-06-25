@@ -5,7 +5,7 @@ title: Wolf Smartset - Bindings
 type: binding
 description: "This binding communicates with the www.wolf-smartset.de API and provides values readonly."
 since: 3x
-install: manual
+install: auto
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

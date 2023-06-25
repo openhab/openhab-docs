@@ -5,7 +5,7 @@ title: SNCF - Bindings
 type: binding
 description: "The SNCF binding provides real-time data(*) for each train, bus, tramway... station in France."
 since: 3x
-install: manual
+install: auto
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

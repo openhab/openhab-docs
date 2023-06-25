@@ -6,7 +6,7 @@ type: binding
 description: "The Webex Team binding allows to send messages to [Webex Teams](https://web.webex.com/) users and rooms through a number of actions."
 since: 3x
 logo: images/addons/webexteams.png
-install: manual
+install: auto
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

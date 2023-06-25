@@ -80,9 +80,19 @@ Display a stepper in a card to control an item
     Minimum interval between values
   </PropDescription>
 </PropBlock>
+<PropBlock type="DECIMAL" name="offset" label="Offset">
+  <PropDescription>
+    Offset to be applied to the Item's state (e.g. Item state = 2; offset = 20; stepper behaves as Item state would be 22)
+  </PropDescription>
+</PropBlock>
 <PropBlock type="BOOLEAN" name="buttonsOnly" label="Buttons Only">
   <PropDescription>
     Display the buttons without the value in the middle
+  </PropDescription>
+</PropBlock>
+<PropBlock type="BOOLEAN" name="enableInput" label="Enable Input Field">
+  <PropDescription>
+    Enables the input field between the buttons. Note that this might not work when min/max is set.
   </PropDescription>
 </PropBlock>
 <PropBlock type="BOOLEAN" name="small" label="Small">

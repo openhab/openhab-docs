@@ -5,7 +5,7 @@ title: tplinkrouter - Bindings
 type: binding
 description: "The tplinkrouter Binding allows monitoring and controlling TP-Link routers."
 since: 3x
-install: manual
+install: auto
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

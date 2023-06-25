@@ -6,7 +6,7 @@ type: binding
 description: "The binding integrates the [Home Connect](https://www.home-connect.com/) system into openHAB."
 since: 3x
 logo: images/addons/homeconnect.png
-install: manual
+install: auto
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

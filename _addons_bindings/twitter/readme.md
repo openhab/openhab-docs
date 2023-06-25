@@ -6,7 +6,7 @@ type: binding
 description: "The Twitter binding allows your home to Tweet 280 characters at a time. It also supports direct messages and tweeting with media."
 since: 3x
 logo: images/addons/twitter.png
-install: manual
+install: auto
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

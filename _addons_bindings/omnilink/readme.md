@@ -6,7 +6,7 @@ type: binding
 description: "This binding integrates the [Omni and Lumina](https://www.leviton.com/en/products/security-automation/automation-av-controllers/omni-security-systems) line of home automation systems."
 since: 3x
 logo: images/addons/omnilink.png
-install: manual
+install: auto
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

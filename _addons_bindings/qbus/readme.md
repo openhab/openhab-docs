@@ -6,7 +6,7 @@ type: binding
 description: "This binding for [Qbus](https://qbus.be) communicates with all controllers of the Qbus home automation system."
 since: 3x
 logo: images/addons/qbus.png
-install: manual
+install: auto
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

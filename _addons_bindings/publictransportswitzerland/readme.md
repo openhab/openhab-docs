@@ -6,7 +6,7 @@ type: binding
 description: "Connects to the 'Swiss public transport API' to provide real-time public transport information. [Link to the API](https://transport.opendata.ch/)"
 since: 3x
 logo: images/addons/publictransportswitzerland.png
-install: manual
+install: auto
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

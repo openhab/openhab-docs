@@ -5,7 +5,7 @@ title: Wunderground Update Receiver - Bindings
 type: binding
 description: "Many personal weather stations or similar devices are only capable of submitting measurements to the wunderground.com update site."
 since: 3x
-install: manual
+install: auto
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

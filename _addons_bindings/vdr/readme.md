@@ -5,7 +5,7 @@ title: Video Disk Recorder (VDR) - Bindings
 type: binding
 description: "The Video Disk Recorder (VDR) binding allows openHAB to control your own [Video Disk Recorder](https://www.tvdr.de)."
 since: 3x
-install: manual
+install: auto
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

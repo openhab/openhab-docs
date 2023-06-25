@@ -6,7 +6,7 @@ type: voice
 description: "Google Cloud STT Service uses the non-free Google Cloud Speech-to-Text API to transcript audio data to text."
 since: 3x
 logo: images/addons/googlestt.png
-install: manual
+install: auto
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

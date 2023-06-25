@@ -5,7 +5,7 @@ title: PID Controller Automation - Automation
 type: automation
 description: "This automation implements a [PID](https://en.wikipedia.org/wiki/PID_controller)-T1 controller for openHAB."
 since: 3x
-install: manual
+install: auto
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

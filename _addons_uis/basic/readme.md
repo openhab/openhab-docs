@@ -41,8 +41,12 @@ The Basic UI has a default layout showing all things and their corresponding ite
 
 2. Passing the "sitemap" parameter to the URL used to access the server.
 
-Example: http://hostname:8080/basicui/app?sitemap=sitemapname
+Examples:
 
+1. http://hostname:8080/basicui/app is a valid URL to load your default sitemap or to get a page listing all defined sitemaps when no default sitemap is configured.
+2. http://hostname:8080/basicui/app?sitemap=sitemapname is a valid URL to load a particular sitemap.
+3. http://hostname:8080/basicui/app/ is an invalid URL due to trailing slash.
+4. http://hostname:8080/basicui/app?sitemap=sitemapname/ is an invalid URL due to trailing slash.
 
 ## Screenshots:
 

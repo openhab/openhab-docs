@@ -5,7 +5,7 @@ title: AmpliPi - Bindings
 type: binding
 description: "This binding supports the multi-room audio system [AmpliPi](http://www.amplipi.com/) from [MicroNova](http://www.micro-nova.com/)."
 since: 3x
-install: manual
+install: auto
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

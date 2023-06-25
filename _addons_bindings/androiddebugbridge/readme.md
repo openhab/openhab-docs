@@ -6,7 +6,7 @@ type: binding
 description: "This binding allows to connect to android devices through the adb protocol."
 since: 3x
 logo: images/addons/androiddebugbridge.png
-install: manual
+install: auto
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

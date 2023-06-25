@@ -6,7 +6,7 @@ type: voice
 description: "Watson STT Service uses the non-free IBM Watson Speech-to-Text API to transcript audio data to text."
 since: 3x
 logo: images/addons/watsonstt.png
-install: manual
+install: auto
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

@@ -6,7 +6,7 @@ type: binding
 description: "This binding provides access to the hourly prices for electricity for the German and Austrian provider aWATTar."
 since: 3x
 logo: images/addons/awattar.png
-install: manual
+install: auto
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

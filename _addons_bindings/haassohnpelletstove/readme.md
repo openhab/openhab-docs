@@ -6,7 +6,7 @@ type: binding
 description: "The binding for Haassohnpelletstove communicates with a Haas and Sohn Pelletstove through the optional"
 since: 3x
 logo: images/addons/haassohnpelletstove.png
-install: manual
+install: auto
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

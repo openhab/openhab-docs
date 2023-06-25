@@ -5,7 +5,7 @@ title: Rollershutter Position Emulation Profile Service - Transformation Service
 type: transform
 description: "The Rollershutter Position emulates absolute position setting for Rollershutter devices which only support basic UP/DOWN/STOP commands."
 since: 3x
-install: manual
+install: auto
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
@@ -28,6 +28,6 @@ The precision parameter can be used to specify the minimum movement that can be 
 This is useful when latencies in the system limit prevent very small movements and will reduce the accuracy of the position estimation.
 
 ```java
-Rollershutter <itemName> { channel="<channelUID>"[profile="rollershutter:position", uptime=<uptime>, downtime=<downtime>, precision=<minimun percent movement>]]}
+Rollershutter <itemName> { channel="<channelUID>"[profile="transform:ROLLERSHUTTERPOSITION", uptime=<uptime>, downtime=<downtime>, precision=<minimun percent movement>]}
 ```
 

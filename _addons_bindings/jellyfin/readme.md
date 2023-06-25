@@ -6,7 +6,7 @@ type: binding
 description: "This is the binding for [Jellyfin](https://jellyfin.org) the volunteer-built media solution that puts you in control of your media."
 since: 3x
 logo: images/addons/jellyfin.png
-install: manual
+install: auto
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

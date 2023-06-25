@@ -56,7 +56,7 @@ Display an input field in a list
 </PropBlock>
 <PropBlock type="BOOLEAN" name="iconUseState" label="Icon depends on state">
   <PropDescription>
-    Use the state of the item to get a dynamic icon (for openHAB icons only)
+    Use the state of the Item to get a dynamic icon (enabled by default for <code>Contact</code>, <code>Dimmer</code>, <code>Rollershutter</code> & <code>Switch</code> Item types) (for openHAB icons only)
   </PropDescription>
 </PropBlock>
 </PropGroup>

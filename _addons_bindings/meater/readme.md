@@ -6,7 +6,7 @@ type: binding
 description: "This is an openHAB binding for the MEATER probe, MEATER® is a trademark of Apption Labs™ Limited. A Traeger Company."
 since: 3x
 logo: images/addons/meater.png
-install: manual
+install: auto
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

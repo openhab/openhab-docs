@@ -6,7 +6,7 @@ type: binding
 description: "The openHAB EcoTouch binding allows interaction with a [Waterkotte](https://www.waterkotte.de/) heat pump."
 since: 3x
 logo: images/addons/ecotouch.png
-install: manual
+install: auto
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

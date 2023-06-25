@@ -5,7 +5,7 @@ title: DBQuery - Bindings
 type: binding
 description: "This binding allows creating items from the result of native database queries."
 since: 3x
-install: manual
+install: auto
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

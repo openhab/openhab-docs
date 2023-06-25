@@ -8,7 +8,7 @@
   <thing-type id="rcs_tz45_00_000" listed="false">
     <label>TZ45 Thermostat</label>
     <description><![CDATA[
-Thermostat<br /> <h1>Overview</h1><p>The Z-Wave thermostat provides for typical thermostat control of a central heating and cooling HVAC system plus has the added feature of Z-Wave communications for remote control.</p> <p>The thermostat has a large, backlit graphical display, control buttons, status LEDs and a temperature sensor. The thermostat can display multiple screens for different functions of the thermostat. The default thermostat control screen shown below, will display the current room temperature, heating and cooling setpoints, system mode, manual-fan mode, time, and status information. </p> <br /> <h2>Inclusion Information</h2><p>General Programming Procedure (for controllers supporting the thermostat device class): 1. Set your primary controller to Include mode, to add the thermostat as a node on your network (see your controller’s user manual for detailed instructions). 2. In the Thermostat’s Main Menu, scroll down to the ZWave Install item. Select the item. 3. Press the YES button in the ZWave Install screen.</p> <br /> <h2>Exclusion Information</h2><p>Not Provided</p>
+Thermostat<br /> <h1>Overview</h1><p>The Z-Wave thermostat provides for typical thermostat control of a central heating and cooling HVAC system plus has the added feature of Z-Wave communications for remote control.</p> <p>The thermostat has a large, backlit graphical display, control buttons, status LEDs and a temperature sensor. The thermostat can display multiple screens for different functions of the thermostat. The default thermostat control screen shown below, will display the current room temperature, heating and cooling setpoints, system mode, manual-fan mode, time, and status information. </p> <br /> <h2>Inclusion Information</h2><p>General Programming Procedure (for controllers supporting the thermostat device class): 1. Set your primary controller to Include mode, to add the thermostat as a node on your network (see your controller’s user manual for detailed instructions). 2. In the Thermostat’s Main Menu, scroll down to the ZWave Install item. Select the item. 3. Press the YES button in the ZWave Install screen.</p> <br /> <h2>Exclusion Information</h2><p>Not Provided</p> <br /> <h2>Wakeup Information</h2><p><br /></p>
     ]]></description>
     <category>HVAC</category>
 
@@ -69,7 +69,7 @@ Thermostat<br /> <h1>Overview</h1><p>The Z-Wave thermostat provides for typical 
       <property name="vendor">Residential Control Systems, Inc. (RCS)</property>
       <property name="modelId">TZ45</property>
       <property name="manufacturerId">0010</property>
-      <property name="manufacturerRef">0001:0009,0001:000B</property>
+      <property name="manufacturerRef">0001:0009,0001:000B,5452:5445</property>
       <property name="dbReference">685</property>
       <property name="defaultAssociations">1</property>
     </properties>

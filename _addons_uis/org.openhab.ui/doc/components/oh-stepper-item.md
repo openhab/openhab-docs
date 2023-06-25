@@ -56,7 +56,7 @@ Display a stepper control in a list
 </PropBlock>
 <PropBlock type="BOOLEAN" name="iconUseState" label="Icon depends on state">
   <PropDescription>
-    Use the state of the item to get a dynamic icon (for openHAB icons only)
+    Use the state of the Item to get a dynamic icon (enabled by default for <code>Contact</code>, <code>Dimmer</code>, <code>Rollershutter</code> & <code>Switch</code> Item types) (for openHAB icons only)
   </PropDescription>
 </PropBlock>
 </PropGroup>
@@ -85,9 +85,19 @@ Display a stepper control in a list
     Minimum interval between values
   </PropDescription>
 </PropBlock>
+<PropBlock type="DECIMAL" name="offset" label="Offset">
+  <PropDescription>
+    Offset to be applied to the Item's state (e.g. Item state = 2; offset = 20; stepper behaves as Item state would be 22)
+  </PropDescription>
+</PropBlock>
 <PropBlock type="BOOLEAN" name="buttonsOnly" label="Buttons Only">
   <PropDescription>
     Display the buttons without the value in the middle
+  </PropDescription>
+</PropBlock>
+<PropBlock type="BOOLEAN" name="enableInput" label="Enable Input Field">
+  <PropDescription>
+    Enables the input field between the buttons. Note that this might not work when min/max is set.
   </PropDescription>
 </PropBlock>
 <PropBlock type="BOOLEAN" name="small" label="Small">

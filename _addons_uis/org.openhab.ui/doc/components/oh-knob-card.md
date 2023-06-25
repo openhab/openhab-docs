@@ -81,6 +81,16 @@ Use the advanced properties to change the appearance from a knob to a rounded sl
     Minimum interval between values (default 1)
   </PropDescription>
 </PropBlock>
+<PropBlock type="DECIMAL" name="offset" label="Offset">
+  <PropDescription>
+    Offset to be applied to the Item's state (e.g. Item state = 2; offset = 20; knob/rounded slider behaves as Item state would be 22)
+  </PropDescription>
+</PropBlock>
+<PropBlock type="BOOLEAN" name="ignoreDisplayState" label="Ignore Display State">
+  <PropDescription>
+    Ignore the display state if available and always use the raw state.
+  </PropDescription>
+</PropBlock>
 <PropBlock type="BOOLEAN" name="releaseOnly" label="Send command only on release">
   <PropDescription>
     If enabled, no commands are sent during sliding

@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="namron_srzv9032a_00_000" listed="false">
+    <label>SR-ZV9032A Multisensor</label>
+    <description><![CDATA[
+Multisensor<br /> <h1>Overview</h1><p>The Z-Wave MultiSensor is a wireless, battery powered Z-Wave multi-sensor,</p><p>compatible with the Z-Wave Plus standard. The sensor combines 4 different sensors in one device: motion sensor, daylight sensor, temperature sensor and humidity sensor. It is developed to detect ambient values and movement and to transmit them with Z-Wave Plus. <br /><br />The MultiSensor is designed to be installed quickly and easily on any surface with 3M tape or screws. The LED indicator signals motion, operating mode and can be used to see if device is within the Z-Wave network. The MultiSensor can be used for lighting scenes and presence monitoring systems. This device can be easily integrated into existing standard 55mm frames and installed on the wall with the bracket, or you can put it on the desk as a portable sensor.</p><p>The encryption modes that the sensor supports are S0, S2 Unauthenticated. When the motion sensor is being included into a Z-Wave network, you can use your primary controller/gateway to enable one encryption mode or disable encryption. (The primary controller/gateway shall support encryption mode configuration).</p> <br /> <h2>Inclusion Information</h2><ol><li>Set primary controller/gateway into inclusion mode (Please refer to your primary controllers manual on how to turn your controller into inclusion).</li><li>Make sure the sensor does not belong to any Z-Wave network. If the sensor has already been included into a network, it shall be removed from the network first. There</li></ol><p>are two methods to set the sensor into inclusion mode:</p><ol><li>Triple press the action button on the sensor, it will set the sensor into inclusion mode.</li><li>Make sure that the sensor does not belong to any Z-Wave network, remove battery of the sensor and re-install again to reset power of the sensor, it will be set into inclusion mode automatically, and waiting to be included.</li></ol><p>The LED indicator will flash fast to indicate successful inclusion.</p><p>Note: During inclusion process, triple press the action button 3 times again will enable the sensor to exit inclusion mode</p> <br /> <h2>Exclusion Information</h2><p><br /></p><p>There are two exclusion methods:</p><p>Method 1: Exclusion from the primary controller/gateway as follows:</p><ol><li>Set the primary controller/gateway into exclusion mode (Please refer to your primarycontrollers manual on how to set your controller into exclusion).</li><li>Triple press the action button, the sensor will be set to exclusion mode, the LEDindicator will flash fast and then the sensor will be removed from the network and reset to factory defaults.</li></ol><p>Note: During exclusion process, triple press the action button 3 times again will enable the sensor to exit exclusion mode.</p><p>Method 2: Factory reset the sensor will force it to be excluded from a network. (please refer to the part “Factory Reset” of this manual)</p><p><br /></p> <br /> <h2>Wakeup Information</h2><p>Press and hold action button for 1 second to send Wakeup Notification CC to lifeline. <br /></p>
+    ]]></description>
+    <category>Battery</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="sensor_temperature" typeId="sensor_temperature">
+        <label>Sensor (temperature)</label>
+        <properties>
+          <property name="binding:*:QuantityType">COMMAND_CLASS_SENSOR_MULTILEVEL;type=TEMPERATURE</property>
+        </properties>
+      </channel>
+      <channel id="sensor_luminance" typeId="sensor_luminance">
+        <label>Sensor (luminance)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_SENSOR_MULTILEVEL;type=LUMINANCE</property>
+        </properties>
+      </channel>
+      <channel id="sensor_relhumidity" typeId="sensor_relhumidity">
+        <label>Sensor (relative humidity)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_SENSOR_MULTILEVEL;type=RELATIVE_HUMIDITY</property>
+        </properties>
+      </channel>
+      <channel id="alarm_burglar" typeId="alarm_burglar">
+        <label>Alarm (burglar)</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=BURGLAR</property>
+        </properties>
+      </channel>
+      <channel id="battery-level" typeId="system.battery-level">
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_BATTERY</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Namron</property>
+      <property name="modelId">SR-ZV9032A</property>
+      <property name="manufacturerId">0438</property>
+      <property name="manufacturerRef">0400:D10A</property>
+      <property name="dbReference">1569</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_2_1" type="integer" groupName="configuration">
+        <label>2: Battery treshold</label>
+        <description><![CDATA[
+Battery treshold<br /> <h1>Overview</h1><p>Threshold value to send battery report.</p><p>When battery power change value is over the threshold</p><p>value, send Battery Report to Lifeline.</p><p>Available settings: 1~50</p>
+        ]]></description>
+        <default>10</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_3_2" type="integer" groupName="configuration">
+        <label>3: Motion detection sensitivity</label>
+        <description><![CDATA[
+Motion detection sensitivity.<br /> <h1>Overview</h1><p>Motion detection sensitivity.</p><p>0: PIR sensor is disabled.</p><p>8-255: PIR sensor is enabled. The lower the value, the</p><p>more sensitive the PIR sensor is.</p><p>Available settings: 0 &amp; 8~255</p>
+        ]]></description>
+        <default>15</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_4_1" type="integer" groupName="configuration">
+        <label>4: Motion detection blind time</label>
+        <description><![CDATA[
+Motion detection blind time<br /> <h1>Overview</h1><p>Motion detection blind time (unit is 0.5S).</p><p>PIR sensor is "blind" (insensitive) to motion after last</p><p>detection for the amount of time specified in this</p><p>parameter.</p><p>Shorter time periods allow to detect motion more</p><p>frequently, but the battery will be drained faster.</p><p>Available settings: 0-15 (0.5-8 seconds, time [s] = 0.5 x</p><p>(value+1)</p>
+        ]]></description>
+        <default>15</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_5_1" type="integer" groupName="configuration">
+        <label>5: Motion detection - pulse counter</label>
+        <description><![CDATA[
+Motion detection - pulse counter<br /> <h1>Overview</h1><p>Motion detection - pulse counter.</p><p>This parameter determines the number of moves required</p><p>for the PIR sensor to report motion. The higher the value,</p><p>the less sensitive the PIR sensor is.</p><p>It is not recommended to modify this parameter settings!</p><p>Available settings: 0~3</p><p>0: 1 pulse</p><p>1: 2 pulses</p><p>2: 3 pulses</p><p>3: 4 pulses</p>
+        ]]></description>
+        <default>1</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_6_1" type="integer" groupName="configuration">
+        <label>6: Motion detection - window time.</label>
+        <description><![CDATA[
+Motion detection - window time.<br /> <h1>Overview</h1><p>Motion detection - window time.</p><p>Period of time during which the number of moves set in parameter 5 must be detected in order for the PIR sensor to report motion. The higher the value, the more sensitive the PIR sensor is.</p><p>It is not recommended to modify this parameter settings!</p><p><br /></p><p>Available settings: 0~3</p><p>0: 4 seconds</p><p>1: 8 seconds</p><p>2: 12 seconds</p><p>3: 16 seconds</p>
+        ]]></description>
+        <default>2</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_7_2" type="integer" groupName="configuration">
+        <label>7: Motion detection - alarm cancellation delay</label>
+        <description><![CDATA[
+Motion detection - alarm cancellation delay<br /> <h1>Overview</h1><p>Motion detection - alarm cancellation delay.</p><p>Time period after which the motion alarm will be cancelled</p><p>in the gateway controller and associated devices.</p><p>If there is no motion triggered during this period, the</p><p>following commands will be sent to the associated devices:</p><p>1) Send Notification to Lifeline(Notification Type is Home</p><p>Security, Event is 0, Parameter 1 is Motion Detection</p><p>Unknown Location)</p><p>2) Send BASIC OFF to group 2, the value is defined by</p><p>parameter 10.</p><p>Any motion detected during this period resets the timer.</p><p>Available settings: 3-28800 (in seconds) </p>
+        ]]></description>
+        <default>30</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_8_1" type="integer" groupName="configuration">
+        <label>8: Basic Command</label>
+        <description><![CDATA[
+BASIC command class configuration.<br /> <h1>Overview</h1><p>BASIC command class configuration.</p><p>This parameter determines the command frames sent to</p><p>2nd association group (assigned to PIR sensor).</p><p>Available settings: 0~2</p><p>0: Both BASIC On and OFF command frames sent in Basic</p><p>Command Class</p><p>1: Only the BASIC On command frame sent in Basic</p><p>Command Class when motion event is triggered</p><p>2:Only the BASIC OFF command frame sent in Basic</p><p>Command Class when motion event is cleared</p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_9_2" type="integer" groupName="configuration">
+        <label>9: PIR Sensor ON value</label>
+        <description><![CDATA[
+PIR Sensor Basic Value - ON<br /> <h1>Overview</h1><p>PIR Sensor - value of BASIC ON command sent to 2nd</p><p>association group.</p><p>This parameter determines value of BASIC ON command</p><p>sent to 2nd association group when motion event</p><p>triggered.</p><p>Available settings: 0~99 &amp; 255 </p>
+        ]]></description>
+        <default>255</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_10_2" type="integer" groupName="configuration">
+        <label>10: PIR Sensor OFF value</label>
+        <description><![CDATA[
+PIR Sensor Basic Value - OFF<br /> <h1>Overview</h1><p>PIR Sensor - value of BASIC OFF command sent to 2nd</p><p>association group.</p><p>This parameter determines value of BASIC OFF command</p><p>sent to 2nd association group when motion event</p><p>cleared.</p><p>Available settings: 0~99 &amp; 255 </p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_11_1" type="integer" groupName="configuration">
+        <label>11: Motion detect - mode</label>
+        <description><![CDATA[
+Motion detect mode - Time of day<br /> <h1>Overview</h1><p>Motion detection - operating mode</p><p>This parameter determines in which part of day the PIR</p><p>sensor will be active.</p><p>Available settings: 0~2</p><p>0: PIR sensor always active</p><p>1: PIR sensor active during the day only</p><p>2: PIR sensor active during the night only</p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_12_2" type="integer" groupName="configuration">
+        <label>12: Motion detect - night-day</label>
+        <description><![CDATA[
+Motion detect - Difference between night and day<br /> <h1>Overview</h1><p>Motion detection - night/day</p><p>This parameter defines the difference between night and</p><p>day in terms of light intensity, used in parameter 11.</p><p>Available settings: 1~32767 (1~32767 lux)</p>
+        ]]></description>
+        <default>200</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_13_4" type="integer" groupName="configuration">
+        <label>13: Illuminance report interval</label>
+        <description><![CDATA[
+Time interval between consecutive illuminance reports<br /> <h1>Overview</h1><p>Illuminance report - interval</p><p>Time interval between consecutive illuminance reports.</p><p>The reports are sent based on the interval.</p><p>Available settings: 5-2678400 (31 days = 31*24*3600=</p><p>2678400)</p><p>When the value is set as 0, the reports will not be sent</p><p>periodically.</p>
+        ]]></description>
+        <default>3600</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_14_2" type="integer" groupName="configuration">
+        <label>14: Illuminance report - threshold</label>
+        <description><![CDATA[
+Illuminance report - threshold<br /> <h1>Overview</h1><p>Illuminance report - threshold</p><p>This parameter determines the change in light intensity</p><p>level resulting in illuminance report being sent to the main</p><p>controller. (The change in light intensity will only be</p><p>detected when the PIR is triggered or the time interval set</p><p>in parameter 13 elapsed.)</p><p>Available settings: 1~32767 (1~32767 lux)</p><p>When the value is set as 0, the threshold does not work.</p>
+        ]]></description>
+        <default>100</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_15_1" type="integer" groupName="configuration">
+        <label>15: Associations in Z-Wave network Security Mode</label>
+        <description><![CDATA[
+Associations in Z-Wave network Security Mode<br /> <h1>Overview</h1><p>Associations in Z-Wave network Security Mode</p><p>This parameter defines how commands are sent in</p><p>specified association groups: as secure or non-secure.</p><p>Parameter is active only in Z-Wave network security mode.</p><p>It does not apply to 1st group “Lifeline”.</p><p>Available settings:</p><p>0: 2nd group sent as un-secure</p><p>1: 2nd group sent as secure</p>
+        ]]></description>
+        <default>1</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_16_4" type="integer" groupName="configuration">
+        <label>16: Time interval to report temperature, humidity</label>
+        <description><![CDATA[
+Time interval to report temperature, humidity<br /> <h1>Overview</h1><p>Time interval to report temperature, humidity (unit is S)</p><p>Temperature report and humidity report will be sent based</p><p>on the time interval value periodically.</p><p>Available settings: 5-2678400 (31 days = 31*24*3600=</p><p>2678400)</p><p>When the value is set as 0, the reports will not be sent</p><p>periodically.</p>
+        ]]></description>
+        <default>3600</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_17_2" type="integer" groupName="configuration">
+        <label>17: Temperature sensor value change threshold</label>
+        <description><![CDATA[
+Temperature sensor value change threshold<br /> <h1>Overview</h1><p>Temperature sensor value change threshold (unit is 0.1</p><p>degree celsius)</p><p>Report temperature value automatically when temperature</p><p>change exceeds the threshold. (temperature change only</p><p>detected when PIR is triggered or time of parameter 16</p><p>expires )</p><p>Available settings: 0-255, value 0 means the threshold is</p><p>disabled.<br /><br />10 is 1.0 C</p>
+        ]]></description>
+        <default>10</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_18_2" type="integer" groupName="configuration">
+        <label>18: Humidity sensor value change threshold</label>
+        <description><![CDATA[
+Humidity sensor value change threshold<br /> <h1>Overview</h1><p>Humidity sensor value change threshold</p><p>Report humidity value automatically when humidity change</p><p>exceeds the threshold. (humidity change only detected</p><p>when PIR is triggered or time of parameter 16 expires )</p><p>Available settings: 0-127, value 0 means the threshold is</p><p>disabled.<br /><br />5 = 5%</p>
+        ]]></description>
+        <default>5</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_19_2" type="integer" groupName="configuration">
+        <label>19: Temperature compensation</label>
+        <description><![CDATA[
+Temperature compensation<br /> <h1>Overview</h1><p>Temperature compensation (unit is 0.1 degree celsius)</p><p>Available settings: -1000~1000(-100℃~100℃)</p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_20_1" type="integer" groupName="configuration">
+        <label>20: Humidity compensation</label>
+        <description><![CDATA[
+Humidity compensation<br /> <h1>Overview</h1><p>Humidity compensation</p><p>Available settings: -100~100</p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Lifeline</label>
+        <description><![CDATA[
+Lifeline<br /> <h1>Overview</h1><p>1. When factory reset the sensor, send "Device Reset Locally</p><p>Notification CC" to associated devices of this group to report</p><p>factory reset information.</p><p>2. When motion detected, send "Notification Report" to</p><p>associated devices of this group.</p><p>3. Send " Sensor Multilevel Report" to associated devices of</p><p>this group.</p><p>4. Send " Battery Report" to associated devices of this group.</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: Motion</label>
+        <description><![CDATA[
+MotionDetect<br /> <h1>Overview</h1><p>When motion detected, send “Basic Set 0xFF/0x00” to associated</p><p>devices of this group. </p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

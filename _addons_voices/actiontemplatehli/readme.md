@@ -5,7 +5,7 @@ title: Action Template Interpreter - Voices
 type: voice
 description: "A human language interpreter implementation powered by OpenNLP."
 since: 3x
-install: manual
+install: auto
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

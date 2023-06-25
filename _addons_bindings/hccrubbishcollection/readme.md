@@ -5,7 +5,7 @@ title: HCC Rubbish Collection - Bindings
 type: binding
 description: "A Hamilton City Council (NZ) _'Fight the Landfill'_ binding."
 since: 3x
-install: manual
+install: auto
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

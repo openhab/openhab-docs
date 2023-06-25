@@ -1,0 +1,1232 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="heltun_hetps05_00_000" listed="false">
+    <label>HE-TPS05 Touch Panel Switch Quinto</label>
+    <description><![CDATA[
+Touch Panel Switch Quinto<br /> <h1>Overview</h1><p>HELTUN HE-TPS05 Advanced Programmable Touch Panel Switch Quinto brings "Impossibly Smart" capabilities to your home lighting, electric outlets, or motorized blinds, door locks, gates, and valves. It replaces an existing in-wall switch and brings over-the-Internet monitoring, control, and advanced programmability. Device is "Impossibly Thin" on the wall yet packed with features to provide the ultimate in control and convenience:<br /></p><p>Controls up to five systems with two different power sources</p><p>Connects to Z-Wave lights and dimmers</p><p>Controls motorized devices</p><p>Measures energy consumption</p><p>Has 5 ways to trigger programmed scenarios:</p><ul><li>5 buttons</li><li>Real Time Clock (RTC)</li><li>Temperature sensor</li><li>Humidity sensor</li><li>Ambient light sensor</li></ul><p><br /></p> <br /> <h2>Inclusion Information</h2><p>Start the Inclusion Mode from the gateway/controller.<br /></p><p>To start the inclusion process on the HE-TPS05, simultaneously press the two upper touch buttons and hold them for three seconds.</p><p>All buttons will then sequentially blink ‘blue-red’.</p><p>If the inclusion has been successful, all buttons will turn blue for three seconds.</p><p>If the inclusion was not successful, all buttons will turn red for three seconds. In that case repeat the inclusion process.</p> <br /> <h2>Exclusion Information</h2><p>Start the Exclusion Mode from the gateway/controller.<br /></p><p>To start the exclusion process on the HE-TPS05, simultaneously press the two upper touch buttons and hold them for three seconds.</p><p>All buttons will sequentially blink blue-red.</p><p>If the exclusion has been successful, all buttons will turn red for three seconds.</p><p>If the exclusion was not successful, all buttons will turn blue for three seconds. In that case repeat the exclusion process.</p><p>Note: If the HE-TPS05 has previously been part of a Z-Wave network and not Excluded since, Inclusion is not possible without first performing an Exclusion or Factory Reset procedure.</p> <br /> <h2>Wakeup Information</h2><p><br /></p>
+    ]]></description>
+    <category>WallSwitch</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_binary" typeId="switch_binary">
+        <label>Switch</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY</property>
+        </properties>
+      </channel>
+      <channel id="sensor_temperature" typeId="sensor_temperature">
+        <label>Sensor (temperature)</label>
+        <properties>
+          <property name="binding:*:QuantityType">COMMAND_CLASS_SENSOR_MULTILEVEL;type=TEMPERATURE</property>
+        </properties>
+      </channel>
+      <channel id="sensor_luminance" typeId="sensor_luminance">
+        <label>Sensor (luminance)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_SENSOR_MULTILEVEL;type=LUMINANCE</property>
+        </properties>
+      </channel>
+      <channel id="sensor_relhumidity" typeId="sensor_relhumidity">
+        <label>Sensor (relative humidity)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_SENSOR_MULTILEVEL;type=RELATIVE_HUMIDITY</property>
+        </properties>
+      </channel>
+      <channel id="meter_kwh" typeId="meter_kwh">
+        <label>Electric meter (kWh)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_KWh</property>
+        </properties>
+      </channel>
+      <channel id="meter_watts" typeId="meter_watts">
+        <label>Electric meter (watts)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_W</property>
+        </properties>
+      </channel>
+      <channel id="scene_number" typeId="scene_number">
+        <label>Scene Number</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_CENTRAL_SCENE</property>
+        </properties>
+      </channel>
+      <channel id="time_offset" typeId="time_offset">
+        <label>Clock Time Offset</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_CLOCK</property>
+        </properties>
+      </channel>
+      <channel id="switch_binary1" typeId="switch_binary">
+        <label>Switch 1 backlight</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY:1</property>
+        </properties>
+      </channel>
+      <channel id="switch_binary2" typeId="switch_binary">
+        <label>Switch 2 backlight</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY:2</property>
+        </properties>
+      </channel>
+      <channel id="switch_binary3" typeId="switch_binary">
+        <label>Switch 3 backlight</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY:3</property>
+        </properties>
+      </channel>
+      <channel id="switch_binary4" typeId="switch_binary">
+        <label>Switch 4 backlight</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY:4</property>
+        </properties>
+      </channel>
+      <channel id="switch_binary5" typeId="switch_binary">
+        <label>Switch 5 backlight</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY:5</property>
+        </properties>
+      </channel>
+      <channel id="switch_binary6" typeId="switch_binary">
+        <label>Switch 1</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY:6</property>
+        </properties>
+      </channel>
+      <channel id="switch_binary7" typeId="switch_binary">
+        <label>Switch 2</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY:7</property>
+        </properties>
+      </channel>
+      <channel id="switch_binary8" typeId="switch_binary">
+        <label>Switch 3</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY:8</property>
+        </properties>
+      </channel>
+      <channel id="switch_binary9" typeId="switch_binary">
+        <label>Switch 4</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY:9</property>
+        </properties>
+      </channel>
+      <channel id="switch_binary10" typeId="switch_binary">
+        <label>Switch 5</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY:10</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Heltun</property>
+      <property name="modelId">HE-TPS05</property>
+      <property name="manufacturerId">0344</property>
+      <property name="manufacturerRef">0004:0003</property>
+      <property name="dbReference">1563</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_1_1" type="integer" groupName="configuration" readOnly="true">
+        <label>1: Frequency Region</label>
+        <description><![CDATA[
+Frequency Region<br /> <h1>Overview</h1><p><br /></p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">EU (868.4 MHz, 869.85 MHz)</option>
+          <option value="1">US (908.4 MHz, 916.0 MHz)</option>
+          <option value="2">ANZ (919.8 MHz, 921.4 MHz)</option>
+          <option value="3">HK (919.8 MHz)</option>
+          <option value="4">IN (865.2 MHz)</option>
+          <option value="5">IL (916.0 MHz)</option>
+          <option value="6">RU (869.0 MHz)</option>
+          <option value="7">CN (868.4 MHz)</option>
+          <option value="8">JP (922.5 MHz, 923.9 MHz, 926.3 MHz)</option>
+          <option value="9">KR (920.9 MHz, 921.7 MHz, 923.1 MHz)</option>
+        </options>
+        <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_3_4" type="integer" groupName="configuration" readOnly="true">
+        <label>3: Hardware and Software Versions</label>
+        <description><![CDATA[
+Hardware and Software Versions<br /> <h1>Overview</h1><p>This Parameter allows to check the hardware and firmware versions of the device. The Parameter returns value in the format XXYYZZ, where XX is Hardware Version, YY is Firmware Major Version and ZZ is Firmware Minor Version.</p>
+        ]]></description>
+        <default>0</default>
+        <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_4_4" type="integer" groupName="configuration" readOnly="true">
+        <label>4: Energy Consumption</label>
+        <description><![CDATA[
+Energy Consumption, kW<br /> <h1>Overview</h1><p>This Parameter allows to check the Cumulative Energy Consumption (in kW) of the connected loads.</p><p>HE-TPS05 monitors Real-Time and Cumulative power Energy Consumption of connected loads using advanced software logic which measures the consumption based on loads power value set in Parameters from 12 to 16.</p><p>Cumulative Energy Consumption is the total electrical power being used by connected loads since the Parameter 04 value last reset. Power usage is calculated by the software using the values that were manually set when configuring Parameters 12-16, multiplied by the time tracked when the HE-TPS05 corresponding output was in ON state.</p><p>Real-Time Consumption and Cumulative Consumption are periodically reported to the Z- Wave controller according to the Parameter 141 and 142 settings.</p><p>≡ Note: This Parameter is read-only.</p><p>Resetting Cumulative Consumption memory:</p><p>The HE-TPS05 enables you to erase stored Consumption Data through the Z-Wave network as follows:</p><p>1. Make sure the HE-TPS05 is powered.</p><p>2. If not already done so, include the device into Z-Wave Gateway network.</p><p>3. Reset memory consumption data using the Reset Command in COMMAND_CLASS_METER (see the Gateway owner’s manual).</p><p>≡ Note: Turning the device main power off/on will not erase the consumption data as it is stored in nonvolatile memory.</p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_5_1" type="integer" groupName="configuration">
+        <label>5: Backlight brightness control</label>
+        <description><![CDATA[
+Backlight brightness control<br /> <h1>Overview</h1><p>The HE-TPS05 can adjust its buttons backlight brightness automatically depending on the illumination of the ambient environment and also allows to control it manually. Set the Parameter value to 0 to activate the Automatic Brightness Control or set from value 1 (lowest brightness) to 10 (highest brightness) for Manual Control. The factory default value is 0.<br /></p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_6_1" type="integer" groupName="configuration">
+        <label>6: Touch buttons sensitivity</label>
+        <description><![CDATA[
+Touch buttons sensitivity. 1 = Lowest; 10 = Highest<br /> <h1>Overview</h1><p>This Parameter allows the device Touch Button Sensitivity Threshold to be adjusted from level 1 (low sensitivity) to 10 (high sensitivity). The factory default value is 6.</p><p>Note: Setting the sensitivity too high can lead to false touch detection. We recommend not changing this Parameter unless there is a special need to do so.</p>
+        ]]></description>
+        <default>6</default>
+        <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_7_1" type="integer" groupName="configuration">
+        <label>7: Relay 1 output NO or NC mode</label>
+        <description><![CDATA[
+Relay 1 output NO or NC mode<br /> <h1>Overview</h1><p>This parameter determines the type of load connected to the device relay 1 output. The outputs type can be NO – normal open (no contact/voltage to switch the load OFF) or NC - normal close (output is contacted / there is a voltage to switch the load OFF). Choose the value 0 if NO contact type is required or value 1 if NC type is required.<br /></p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">NO</option>
+          <option value="1">NC</option>
+        </options>
+        <advanced>true</advanced>
+      </parameter>
+
+      <parameter name="config_8_1" type="integer" groupName="configuration">
+        <label>8: Relay 2 output NO or NC mode</label>
+        <description><![CDATA[
+Relay 2 output NO or NC mode<br /> <h1>Overview</h1><p>This parameter determines the type of load connected to the device relay 2 output. The outputs type can be NO – normal open (no contact/voltage to switch the load OFF) or NC - normal close (output is contacted / there is a voltage to switch the load OFF). Choose the value 0 if NO contact type is required or value 1 if NC type is required.<br /></p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">NO</option>
+          <option value="1">NC</option>
+        </options>
+        <advanced>true</advanced>
+      </parameter>
+
+      <parameter name="config_9_1" type="integer" groupName="configuration">
+        <label>9: Relay 3 output NO or NC mode</label>
+        <description><![CDATA[
+Relay 3 output NO or NC mode<br /> <h1>Overview</h1><p>This parameter determines the type of load connected to the device relay 3 output. The outputs type can be NO – normal open (no contact/voltage to switch the load OFF) or NC - normal close (output is contacted / there is a voltage to switch the load OFF). Choose the value 0 if NO contact type is required or value 1 if NC type is required.<br /></p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">NO</option>
+          <option value="1">NC</option>
+        </options>
+        <advanced>true</advanced>
+      </parameter>
+
+      <parameter name="config_10_1" type="integer" groupName="configuration">
+        <label>10: Relay 4 output NO or NC mode</label>
+        <description><![CDATA[
+Relay 4 output NO or NC mode<br /> <h1>Overview</h1><p>This parameter determines the type of load connected to the device relay 4 output. The outputs type can be NO – normal open (no contact/voltage to switch the load OFF) or NC - normal close (output is contacted / there is a voltage to switch the load OFF). Choose the value 0 if NO contact type is required or value 1 if NC type is required.<br /></p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">NO</option>
+          <option value="1">NC</option>
+        </options>
+        <advanced>true</advanced>
+      </parameter>
+
+      <parameter name="config_11_1" type="integer" groupName="configuration">
+        <label>11: Relay 5 output NO or NC mode</label>
+        <description><![CDATA[
+Relay 5 output NO or NC mode<br /> <h1>Overview</h1><p>This parameter determines the type of load connected to the device relay 5 output. The outputs type can be NO – normal open (no contact/voltage to switch the load OFF) or NC - normal close (output is contacted / there is a voltage to switch the load OFF). Choose the value 0 if NO contact type is required or value 1 if NC type is required.<br /></p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">NO</option>
+          <option value="1">NC</option>
+        </options>
+        <advanced>true</advanced>
+      </parameter>
+
+      <parameter name="config_12_2" type="integer" groupName="configuration">
+        <label>12: Power of the Relay 1 load</label>
+        <description><![CDATA[
+Power of the Relay 1 load in W<br /> <h1>Overview</h1><p>This parameter is used to specify the load power that is connected to the device output 1. Using your connected device’s power consumption specification (see associated owner’s manual), set the load in Watts. The factory default value is 0.<br /></p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_13_2" type="integer" groupName="configuration">
+        <label>13: Power of the Relay 2 load</label>
+        <description><![CDATA[
+Power of the Relay 2 load in W<br /> <h1>Overview</h1><p>This parameter is used to specify the load power that is connected to the device output 2. Using your connected device’s power consumption specification (see associated owner’s manual), set the load in Watts. The factory default value is 0.<br /></p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_14_2" type="integer" groupName="configuration">
+        <label>14: Power of the Relay 3 load</label>
+        <description><![CDATA[
+Power of the Relay 3 load in W<br /> <h1>Overview</h1><p>This parameter is used to specify the load power that is connected to the device output 3. Using your connected device’s power consumption specification (see associated owner’s manual), set the load in Watts. The factory default value is 0.<br /></p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_15_2" type="integer" groupName="configuration">
+        <label>15: Power of the Relay 4 load</label>
+        <description><![CDATA[
+Power of the Relay 4 load in W<br /> <h1>Overview</h1><p>This parameter is used to specify the load power that is connected to the device output 4. Using your connected device’s power consumption specification (see associated owner’s manual), set the load in Watts. The factory default value is 0.<br /></p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_16_2" type="integer" groupName="configuration">
+        <label>16: Power of the Relay 5 load</label>
+        <description><![CDATA[
+Power of the Relay 5 load in W<br /> <h1>Overview</h1><p>This parameter is used to specify the load power that is connected to the device output 5. Using your connected device’s power consumption specification (see associated owner’s manual), set the load in Watts. The factory default value is 0.<br /></p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_17_1" type="integer" groupName="configuration">
+        <label>17: Air Temperature Calibration</label>
+        <description><![CDATA[
+Air Temperature Calibration in °C, value X 10, e.g. 1.0°C=10<br /> <h1>Overview</h1><p>This parameter defines the offset value for room air temperature. If the internal air temperature sensor is not correctly calibrated, then manual calibration can be made by adjusting the values up to ±10°C. This value will be added or subtracted from the internal air temperature sensor reading. The value of this Parameter should be x10, e.g. for 1.5°C set the value 15. The factory default value is 0<br /></p>
+        ]]></description>
+        <default>0</default>
+        <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_19_1" type="integer" groupName="configuration">
+        <label>19: Time correction by controller</label>
+        <description><![CDATA[
+Time correction by controller<br /> <h1>Overview</h1><p>If this Parameter value = 1 and the HE-TPS05 is connected to a Z-Wave gateway, the HE-TPS05 time and day will be periodically polled and corrected from the gateway. To switch off auto-correction set the Parameter value to 0. The factory default value is 1.<br /></p>
+        ]]></description>
+        <default>1</default>
+        <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_21_1" type="integer" groupName="configuration">
+        <label>21: Week Day</label>
+        <description><![CDATA[
+Week Day<br /> <h1>Overview</h1><p>This Parameter allows manual adjustment of the day of the week in case the HE-TPS05 is not connected to any Z-Wave gateway or auto-correction is disabled (Parameter 19 value is 0). 1 = Monday, 2 = Tuesday, 3 = Wednesday, 4 = Thursday, 5 = Friday, 6 = Saturday, 7 = Sunday. The factory default value is 1.<br /></p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="1">Monday</option>
+          <option value="2">Tuesday</option>
+          <option value="3">Wednesday</option>
+          <option value="4">Thursday</option>
+          <option value="5">Friday</option>
+          <option value="6">Saturday</option>
+          <option value="7">Sunday</option>
+        </options>
+        <advanced>true</advanced>
+      </parameter>
+
+      <parameter name="config_22_2" type="integer" groupName="configuration">
+        <label>22: Time Manual Adjustment</label>
+        <description><![CDATA[
+Time: Hour and Minutes<br /> <h1>Overview</h1><p>This Parameter allows manual adjustment of Time. The Parameter has the following format: HHMM, where HH is hours and MM is minutes. E.g. for 16:08 set the value 1608 and for 1:00 set the value 100.<br /></p>
+        ]]></description>
+        <default>0</default>
+        <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_30_1" type="integer" groupName="configuration">
+        <label>30: Buttons Backlight Color</label>
+        <description><![CDATA[
+Active state backlight color<br /> <h1>Overview</h1><p>Choose the value “1” if you wish the backlight active state to be blue, and the inactive state to be red (default). Choose the value “0” if you wish the backlight active state to be red, and the inactive state to be blue. The factory default value is 1.<br /></p>
+        ]]></description>
+        <default>1</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_31_1" type="integer" groupName="configuration">
+        <label>31: Backlight 1 control source</label>
+        <description><![CDATA[
+Backlight 1 control source<br /> <h1>Overview</h1><p>0 – Backlight is disabled (both color LEDs are turned off)</p><p>1 – Backlight is controlled by touch button (reflects the button state)</p><p>2 – Backlight is controlled by gateway or associated device (the button state is ignored)</p><p>Note: If the backlight is disabled (the Parameter value is set to “0”), it is also impossible to control it from the gateway.<br /></p>
+        ]]></description>
+        <default>1</default>
+        <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_32_1" type="integer" groupName="configuration">
+        <label>32: Backlight 2 control source</label>
+        <description><![CDATA[
+Backlight 2 control source<br /> <h1>Overview</h1><p>0 – Backlight is disabled (both color LEDs are turned off)</p><p>1 – Backlight is controlled by touch button (reflects the button state)</p><p>2 – Backlight is controlled by gateway or associated device (the button state is ignored)</p><p>Note: If the backlight is disabled (the Parameter value is set to “0”), it is also impossible to control it from the gateway.</p>
+        ]]></description>
+        <default>1</default>
+        <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_33_1" type="integer" groupName="configuration">
+        <label>33: Backlight 3 control source</label>
+        <description><![CDATA[
+Backlight 3 control source<br /> <h1>Overview</h1><p>0 – Backlight is disabled (both color LEDs are turned off)</p><p>1 – Backlight is controlled by touch button (reflects the button state)</p><p>2 – Backlight is controlled by gateway or associated device (the button state is ignored)</p><p>Note: If the backlight is disabled (the Parameter value is set to “0”), it is also impossible to control it from the gateway.</p>
+        ]]></description>
+        <default>1</default>
+        <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_34_1" type="integer" groupName="configuration">
+        <label>34: Backlight 4 control source</label>
+        <description><![CDATA[
+Backlight 4 control source<br /> <h1>Overview</h1><p>0 – Backlight is disabled (both color LEDs are turned off)</p><p>1 – Backlight is controlled by touch button (reflects the button state)</p><p>2 – Backlight is controlled by gateway or associated device (the button state is ignored)</p><p>Note: If the backlight is disabled (the Parameter value is set to “0”), it is also impossible to control it from the gateway.</p>
+        ]]></description>
+        <default>1</default>
+        <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_35_1" type="integer" groupName="configuration">
+        <label>35: Backlight 5 control source</label>
+        <description><![CDATA[
+Backlight 5 control source<br /> <h1>Overview</h1><p>0 – Backlight is disabled (both color LEDs are turned off)</p><p>1 – Backlight is controlled by touch button (reflects the button state)</p><p>2 – Backlight is controlled by gateway or associated device (the button state is ignored)</p><p>Note: If the backlight is disabled (the Parameter value is set to “0”), it is also impossible to control it from the gateway.</p>
+        ]]></description>
+        <default>1</default>
+        <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_41_1" type="integer" groupName="configuration">
+        <label>41: Hold control mode for touch button 1</label>
+        <description><![CDATA[
+Hold control mode for touch button 1<br /> <h1>Overview</h1><p>0 – Hold function is disabled</p><p>1 – Operate like click</p><p>2 – When the button is held the relay output state is ON, as soon as the button is released the relay output state changes to OFF (momentary switch).</p><p>3 – When the button is held the relay output state is OFF, as soon as the button is released the relay output state changes to ON (momentary switch).</p><p>4 – When the button is held or released the relay output state will toggle its state (ON to OFF or OFF to ON).</p><p>The factory default value is 2.<br /></p><p><b>Note:</b> Regardless of this Parameter, the device will send scene notifications about the touch state (pressed, held, released) to the gateway.<br /></p>
+        ]]></description>
+        <default>2</default>
+        <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_42_1" type="integer" groupName="configuration">
+        <label>42: Hold control mode for touch button 2</label>
+        <description><![CDATA[
+Hold control mode for touch button 2<br /> <h1>Overview</h1><p>0 – Hold function is disabled</p><p>1 – Operate like click</p><p>2 – When the button is held the relay output state is ON, as soon as the button is released the relay output state changes to OFF (momentary switch).</p><p>3 – When the button is held the relay output state is OFF, as soon as the button is released the relay output state changes to ON (momentary switch).</p><p>4 – When the button is held or released the relay output state will toggle its state (ON to OFF or OFF to ON).</p><p>The factory default value is 2.</p><p>Note: Regardless of this Parameter, the device will send scene notifications about the touch state (pressed, held, released) to the gateway.</p>
+        ]]></description>
+        <default>2</default>
+        <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_43_1" type="integer" groupName="configuration">
+        <label>43: Hold control mode for touch button 3</label>
+        <description><![CDATA[
+Hold control mode for touch button 3<br /> <h1>Overview</h1><p>0 – Hold function is disabled</p><p>1 – Operate like click</p><p>2 – When the button is held the relay output state is ON, as soon as the button is released the relay output state changes to OFF (momentary switch).</p><p>3 – When the button is held the relay output state is OFF, as soon as the button is released the relay output state changes to ON (momentary switch).</p><p>4 – When the button is held or released the relay output state will toggle its state (ON to OFF or OFF to ON).</p><p>The factory default value is 2.</p><p>Note: Regardless of this Parameter, the device will send scene notifications about the touch state (pressed, held, released) to the gateway.</p>
+        ]]></description>
+        <default>2</default>
+        <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_44_1" type="integer" groupName="configuration">
+        <label>44: Hold control mode for touch button 4</label>
+        <description><![CDATA[
+Hold control mode for touch button 4<br /> <h1>Overview</h1><p>0 – Hold function is disabled</p><p>1 – Operate like click</p><p>2 – When the button is held the relay output state is ON, as soon as the button is released the relay output state changes to OFF (momentary switch).</p><p>3 – When the button is held the relay output state is OFF, as soon as the button is released the relay output state changes to ON (momentary switch).</p><p>4 – When the button is held or released the relay output state will toggle its state (ON to OFF or OFF to ON).</p><p>The factory default value is 2.</p><p>Note: Regardless of this Parameter, the device will send scene notifications about the touch state (pressed, held, released) to the gateway.</p>
+        ]]></description>
+        <default>2</default>
+        <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_45_1" type="integer" groupName="configuration">
+        <label>45: Hold control mode for touch button 5</label>
+        <description><![CDATA[
+Hold control mode for touch button 5<br /> <h1>Overview</h1><p>0 – Hold function is disabled</p><p>1 – Operate like click</p><p>2 – When the button is held the relay output state is ON, as soon as the button is released the relay output state changes to OFF (momentary switch).</p><p>3 – When the button is held the relay output state is OFF, as soon as the button is released the relay output state changes to ON (momentary switch).</p><p>4 – When the button is held or released the relay output state will toggle its state (ON to OFF or OFF to ON).</p><p>The factory default value is 2.</p><p>Note: Regardless of this Parameter, the device will send scene notifications about the touch state (pressed, held, released) to the gateway.</p>
+        ]]></description>
+        <default>2</default>
+        <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_51_1" type="integer" groupName="configuration">
+        <label>51: Click control mode for touch button 1</label>
+        <description><![CDATA[
+Click control mode for touch button 1<br /> <h1>Overview</h1><p>0 – Press function disabled</p><p>1 – Relay inverts state (toggles ON to OFF, OFF to ON) according to the relay state</p><p>2 – Relay inverts state (toggles ON to OFF, OFF to ON) according to the button backlight state.</p><p>3 – Relay switches to ON state only</p><p>4 – Relay switches to OFF state only</p><p>5 – Timer: On&gt;Off Mode: Relay output switches to ON state (contacts are closed) then after a specified time switches back to OFF state (contacts are open). The time is specified in Parameters 71-75.</p><p>6 – Timer: OFF&gt;ON Mode: Relay output switches to OFF state (contacts are open) then after a specified time switches back to ON state (contacts are closed). The time is specified in Parameters 71-75.</p><p>The factory default value is 1</p>
+        ]]></description>
+        <default>1</default>
+        <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_52_1" type="integer" groupName="configuration">
+        <label>52: Click control mode for touch button 2</label>
+        <description><![CDATA[
+Click control mode for touch button 2<br /> <h1>Overview</h1><p>0 – Press function disabled</p><p>1 – Relay inverts state (toggles ON to OFF, OFF to ON) according to the relay state</p><p>2 – Relay inverts state (toggles ON to OFF, OFF to ON) according to the button backlight state.</p><p>3 – Relay switches to ON state only</p><p>4 – Relay switches to OFF state only</p><p>5 – Timer: On&gt;Off Mode: Relay output switches to ON state (contacts are closed) then after a specified time switches back to OFF state (contacts are open). The time is specified in Parameters 71-75.</p><p>6 – Timer: OFF&gt;ON Mode: Relay output switches to OFF state (contacts are open) then after a specified time switches back to ON state (contacts are closed). The time is specified in Parameters 71-75.</p><p>The factory default value is 1</p>
+        ]]></description>
+        <default>1</default>
+        <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_53_1" type="integer" groupName="configuration">
+        <label>53: Click control mode for touch button 3</label>
+        <description><![CDATA[
+Click control mode for touch button 3<br /> <h1>Overview</h1><p>0 – Press function disabled</p><p>1 – Relay inverts state (toggles ON to OFF, OFF to ON) according to the relay state</p><p>2 – Relay inverts state (toggles ON to OFF, OFF to ON) according to the button backlight state.</p><p>3 – Relay switches to ON state only</p><p>4 – Relay switches to OFF state only</p><p>5 – Timer: On&gt;Off Mode: Relay output switches to ON state (contacts are closed) then after a specified time switches back to OFF state (contacts are open). The time is specified in Parameters 71-75.</p><p>6 – Timer: OFF&gt;ON Mode: Relay output switches to OFF state (contacts are open) then after a specified time switches back to ON state (contacts are closed). The time is specified in Parameters 71-75.</p><p>The factory default value is 1</p>
+        ]]></description>
+        <default>1</default>
+        <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_54_1" type="integer" groupName="configuration">
+        <label>54: Click control mode for touch button 4</label>
+        <description><![CDATA[
+Click control mode for touch button 4<br /> <h1>Overview</h1><p>0 – Press function disabled</p><p>1 – Relay inverts state (toggles ON to OFF, OFF to ON) according to the relay state</p><p>2 – Relay inverts state (toggles ON to OFF, OFF to ON) according to the button backlight state.</p><p>3 – Relay switches to ON state only</p><p>4 – Relay switches to OFF state only</p><p>5 – Timer: On&gt;Off Mode: Relay output switches to ON state (contacts are closed) then after a specified time switches back to OFF state (contacts are open). The time is specified in Parameters 71-75.</p><p>6 – Timer: OFF&gt;ON Mode: Relay output switches to OFF state (contacts are open) then after a specified time switches back to ON state (contacts are closed). The time is specified in Parameters 71-75.</p><p>The factory default value is 1</p>
+        ]]></description>
+        <default>1</default>
+        <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_55_1" type="integer" groupName="configuration">
+        <label>55: Click control mode for touch button 5</label>
+        <description><![CDATA[
+Click control mode for touch button 5<br /> <h1>Overview</h1><p>0 – Press function disabled</p><p>1 – Relay inverts state (toggles ON to OFF, OFF to ON) according to the relay state</p><p>2 – Relay inverts state (toggles ON to OFF, OFF to ON) according to the button backlight state.</p><p>3 – Relay switches to ON state only</p><p>4 – Relay switches to OFF state only</p><p>5 – Timer: On&gt;Off Mode: Relay output switches to ON state (contacts are closed) then after a specified time switches back to OFF state (contacts are open). The time is specified in Parameters 71-75.</p><p>6 – Timer: OFF&gt;ON Mode: Relay output switches to OFF state (contacts are open) then after a specified time switches back to ON state (contacts are closed). The time is specified in Parameters 71-75.</p><p>The factory default value is 1</p>
+        ]]></description>
+        <default>1</default>
+        <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_61_1" type="integer" groupName="configuration">
+        <label>61: Relay 1 control source</label>
+        <description><![CDATA[
+Relay 1 control source<br /> <h1>Overview</h1><p>0 – Controlled by gateway or associated device </p><p>1 – Controlled by touch button N1 (Top Left)</p><p>2 – Controlled by touch button N2 (Top Right)</p><p>3 – Controlled by touch button N3 (Bottom Left) </p><p>4 – Controlled by touch button N4 (Bottom Right) </p><p>5 – Controlled by touch button N5 (Center)</p>
+        ]]></description>
+        <default>1</default>
+        <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_62_1" type="integer" groupName="configuration">
+        <label>62: Relay 2 control source</label>
+        <description><![CDATA[
+Relay 2 control source<br /> <h1>Overview</h1><p>0 – Controlled by gateway or associated device </p><p>1 – Controlled by touch button N1 (Top Left)</p><p>2 – Controlled by touch button N2 (Top Right)</p><p>3 – Controlled by touch button N3 (Bottom Left) </p><p>4 – Controlled by touch button N4 (Bottom Right) </p><p>5 – Controlled by touch button N5 (Center)</p>
+        ]]></description>
+        <default>2</default>
+        <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_63_1" type="integer" groupName="configuration">
+        <label>63: Relay 3 control source</label>
+        <description><![CDATA[
+Relay 3 control source<br /> <h1>Overview</h1><p>0 – Controlled by gateway or associated device </p><p>1 – Controlled by touch button N1 (Top Left)</p><p>2 – Controlled by touch button N2 (Top Right)</p><p>3 – Controlled by touch button N3 (Bottom Left) </p><p>4 – Controlled by touch button N4 (Bottom Right) </p><p>5 – Controlled by touch button N5 (Center)</p>
+        ]]></description>
+        <default>3</default>
+        <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_64_1" type="integer" groupName="configuration">
+        <label>64: Relay 4 control source</label>
+        <description><![CDATA[
+Relay 4 control source<br /> <h1>Overview</h1><p>0 – Controlled by gateway or associated device </p><p>1 – Controlled by touch button N1 (Top Left)</p><p>2 – Controlled by touch button N2 (Top Right)</p><p>3 – Controlled by touch button N3 (Bottom Left) </p><p>4 – Controlled by touch button N4 (Bottom Right) </p><p>5 – Controlled by touch button N5 (Center)</p>
+        ]]></description>
+        <default>4</default>
+        <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_65_1" type="integer" groupName="configuration">
+        <label>65: Relay 5 control source</label>
+        <description><![CDATA[
+Relay 5 control source<br /> <h1>Overview</h1><p>0 – Controlled by gateway or associated device </p><p>1 – Controlled by touch button N1 (Top Left)</p><p>2 – Controlled by touch button N2 (Top Right)</p><p>3 – Controlled by touch button N3 (Bottom Left) </p><p>4 – Controlled by touch button N4 (Bottom Right) </p><p>5 – Controlled by touch button N5 (Center)</p>
+        ]]></description>
+        <default>5</default>
+        <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_66_1" type="integer" groupName="configuration">
+        <label>66: Restore 1st Relay State After Power Failure</label>
+        <description><![CDATA[
+Restore 1st Relay State After Power Failure<br /> <h1>Overview</h1><p>This Parameter determines whether the relay last state should be restored after power failure. Set the value 1 if there is a need to restore the relay to the state it was before power failure. The relay state will always be Off after power failure if the value of this Parameter is 0. The factory default value is 0.<br /></p>
+        ]]></description>
+        <default>0</default>
+        <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_67_1" type="integer" groupName="configuration">
+        <label>67: Restore 2nd Relay State After Power Failure</label>
+        <description><![CDATA[
+Restore 2nd Relay State After Power Failure<br /> <h1>Overview</h1><p>This Parameter determines whether the relay last state should be restored after power failure. Set the value 1 if there is a need to restore the relay to the state it was before power failure. The relay state will always be Off after power failure if the value of this Parameter is 0. The factory default value is 0.<br /></p>
+        ]]></description>
+        <default>0</default>
+        <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_68_1" type="integer" groupName="configuration">
+        <label>68: Restore 3rd Relay State After Power Failure</label>
+        <description><![CDATA[
+Restore 3rd Relay State After Power Failure<br /> <h1>Overview</h1><p>This Parameter determines whether the relay last state should be restored after power failure. Set the value 1 if there is a need to restore the relay to the state it was before power failure. The relay state will always be Off after power failure if the value of this Parameter is 0. The factory default value is 0.<br /></p>
+        ]]></description>
+        <default>0</default>
+        <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_69_1" type="integer" groupName="configuration">
+        <label>69: Restore 4th Relay State After Power Failure</label>
+        <description><![CDATA[
+Restore 4th Relay State After Power Failure<br /> <h1>Overview</h1><p>This Parameter determines whether the relay last state should be restored after power failure. Set the value 1 if there is a need to restore the relay to the state it was before power failure. The relay state will always be Off after power failure if the value of this Parameter is 0. The factory default value is 0.<br /></p>
+        ]]></description>
+        <default>0</default>
+        <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_70_1" type="integer" groupName="configuration">
+        <label>70: Restore 5th Relay State After Power Failure</label>
+        <description><![CDATA[
+Restore 5th Relay State After Power Failure<br /> <h1>Overview</h1><p>This Parameter determines whether the relay last state should be restored after power failure. Set the value 1 if there is a need to restore the relay to the state it was before power failure. The relay state will always be Off after power failure if the value of this Parameter is 0. The factory default value is 0.<br /></p>
+        ]]></description>
+        <default>0</default>
+        <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_71_2" type="integer" groupName="configuration">
+        <label>71: Timer mode duration for button 1</label>
+        <description><![CDATA[
+Timer mode duration for button 1<br /> <h1>Overview</h1><p>These Parameters specify the duration in seconds for the Timer mode (values 5 or 6 in Parameters 51-55 respectively). Press the button and the relay output goes to ON/OFF for the specified time then changes back to OFF/ON. This function can be used to open/close garage doors, blinds, curtains, etc. or to turn attached devices like door lock or security OFF for a short time. The time values can be configured from 0 sec to 32400 sec (9 hours). Set the value for Relay 1 (“OUT-1”) in Parameter 71, for Relay 2 (“OUT-2”) in Parameter 72, for Relay 3 (“OUT-3”) in Parameter 73, for Relay 4 (“OUT-4”) in Parameter 74, for Relay 5 (“OUT- 5”) in Parameter 75. The factory default value is 0.</p><p>Note: If the parameter value is set to “0” it will operate as a short contact (about 500mSec).</p><p>Note: If the parameter value is set to “-1” it will operate as a shorter contact (about 50mSec).</p>
+        ]]></description>
+        <default>0</default>
+        <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_72_2" type="integer" groupName="configuration">
+        <label>72: Timer mode duration for button 2</label>
+        <description><![CDATA[
+Timer mode duration for button 2<br /> <h1>Overview</h1><p>These Parameters specify the duration in seconds for the Timer mode (values 5 or 6 in Parameters 51-55 respectively). Press the button and the relay output goes to ON/OFF for the specified time then changes back to OFF/ON. This function can be used to open/close garage doors, blinds, curtains, etc. or to turn attached devices like door lock or security OFF for a short time. The time values can be configured from 0 sec to 32400 sec (9 hours). Set the value for Relay 1 (“OUT-1”) in Parameter 71, for Relay 2 (“OUT-2”) in Parameter 72, for Relay 3 (“OUT-3”) in Parameter 73, for Relay 4 (“OUT-4”) in Parameter 74, for Relay 5 (“OUT- 5”) in Parameter 75. The factory default value is 0.</p><p>Note: If the parameter value is set to “0” it will operate as a short contact (about 500mSec).</p><p>Note: If the parameter value is set to “-1” it will operate as a shorter contact (about 50mSec).</p>
+        ]]></description>
+        <default>0</default>
+        <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_73_2" type="integer" groupName="configuration">
+        <label>73: Timer mode duration for button 3</label>
+        <description><![CDATA[
+Timer mode duration for button 3<br /> <h1>Overview</h1><p>These Parameters specify the duration in seconds for the Timer mode (values 5 or 6 in Parameters 51-55 respectively). Press the button and the relay output goes to ON/OFF for the specified time then changes back to OFF/ON. This function can be used to open/close garage doors, blinds, curtains, etc. or to turn attached devices like door lock or security OFF for a short time. The time values can be configured from 0 sec to 32400 sec (9 hours). Set the value for Relay 1 (“OUT-1”) in Parameter 71, for Relay 2 (“OUT-2”) in Parameter 72, for Relay 3 (“OUT-3”) in Parameter 73, for Relay 4 (“OUT-4”) in Parameter 74, for Relay 5 (“OUT- 5”) in Parameter 75. The factory default value is 0.</p><p>Note: If the parameter value is set to “0” it will operate as a short contact (about 500mSec).</p><p>Note: If the parameter value is set to “-1” it will operate as a shorter contact (about 50mSec).</p>
+        ]]></description>
+        <default>0</default>
+        <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_74_2" type="integer" groupName="configuration">
+        <label>74: Timer mode duration for button 4</label>
+        <description><![CDATA[
+Timer mode duration for button 4<br /> <h1>Overview</h1><p>These Parameters specify the duration in seconds for the Timer mode (values 5 or 6 in Parameters 51-55 respectively). Press the button and the relay output goes to ON/OFF for the specified time then changes back to OFF/ON. This function can be used to open/close garage doors, blinds, curtains, etc. or to turn attached devices like door lock or security OFF for a short time. The time values can be configured from 0 sec to 32400 sec (9 hours). Set the value for Relay 1 (“OUT-1”) in Parameter 71, for Relay 2 (“OUT-2”) in Parameter 72, for Relay 3 (“OUT-3”) in Parameter 73, for Relay 4 (“OUT-4”) in Parameter 74, for Relay 5 (“OUT- 5”) in Parameter 75. The factory default value is 0.</p><p>Note: If the parameter value is set to “0” it will operate as a short contact (about 500mSec).</p><p>Note: If the parameter value is set to “-1” it will operate as a shorter contact (about 50mSec).</p>
+        ]]></description>
+        <default>0</default>
+        <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_75_2" type="integer" groupName="configuration">
+        <label>75: Timer mode duration for button 5</label>
+        <description><![CDATA[
+Timer mode duration for button 5<br /> <h1>Overview</h1><p>These Parameters specify the duration in seconds for the Timer mode (values 5 or 6 in Parameters 51-55 respectively). Press the button and the relay output goes to ON/OFF for the specified time then changes back to OFF/ON. This function can be used to open/close garage doors, blinds, curtains, etc. or to turn attached devices like door lock or security OFF for a short time. The time values can be configured from 0 sec to 32400 sec (9 hours). Set the value for Relay 1 (“OUT-1”) in Parameter 71, for Relay 2 (“OUT-2”) in Parameter 72, for Relay 3 (“OUT-3”) in Parameter 73, for Relay 4 (“OUT-4”) in Parameter 74, for Relay 5 (“OUT- 5”) in Parameter 75. The factory default value is 0.</p><p>Note: If the parameter value is set to “0” it will operate as a short contact (about 500mSec).</p><p>Note: If the parameter value is set to “-1” it will operate as a shorter contact (about 50mSec).</p>
+        ]]></description>
+        <default>0</default>
+        <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_101_1" type="integer" groupName="configuration">
+        <label>101: Group 1 relay inverse mode</label>
+        <description><![CDATA[
+Group 1 relay inverse mode<br /> <h1>Overview</h1><p>The values in this Parameter will specify the relay numbers that will operate in inverse mode. For this purpose, the value will be encoded as a 2-digit number “AB” where “A” is the number of the first relay, and “B” is number of the second relay. For example, if the Parameter value is “24” or “42” it means the relays N2 and N4 will operate in inverse mode. Relays can operate in an inverse mode in two different ways:</p><p>1. When the first and the second relays are connected to two different buttons. In this case, after pressing a button, the corresponding relay connected to that button will toggle its state (ON to OFF or OFF to ON), and the other relay will be switched OFF.</p><p>2. When two relays are connected to the same button. In this case, the relays will operate in roller shutter mode and their behavior will follow these four cycles:</p><p>▪ 1st press of button: the first relay will be switched ON, the second relay will be switched OFF</p><p>▪ 2nd press of button: both relays will be switched OFF</p><p>▪ 3rd press of button: the second relay will be switched ON, the first relay will be switched OFF</p><p>▪ 4th press of button: both relays will be switched OFF</p><p>≡ Note: In this mode, both relays cannot be switched ON at the same time (i.e. simultaneously).</p><p>≡ Note: Switching OFF one relay will always operate before switching ON another relay to prevent both relays from being ON at the same time.</p><p>≡ Note: Two groups of inverse relays can be specified, one group in Parameter 101, another group in Parameter 102.</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">no relay inverse mode</option>
+          <option value="12">relay 1 and 2 in inverse mode</option>
+          <option value="13">relay 1 and 3 in inverse mode</option>
+          <option value="14">relay 1 and 4 in inverse mode</option>
+          <option value="15">relay 1 and 5 in inverse mode</option>
+          <option value="21">relay 1 and 2 in inverse mode</option>
+          <option value="23">relay 2 and 3 in inverse mode</option>
+          <option value="24">relay 2 and 4 in inverse mode</option>
+          <option value="25">relay 2 and 5 in inverse mode</option>
+          <option value="31">relay 1 and 3 in inverse mode</option>
+          <option value="32">relay 2 and 3 in inverse mode</option>
+          <option value="34">relay 3 and 4 in inverse mode</option>
+          <option value="35">relay 3 and 5 in inverse mode</option>
+          <option value="41">relay 1 and 4 in inverse mode</option>
+          <option value="42">relay 2 and 4 in inverse mode</option>
+          <option value="43">relay 3 and 4 in inverse mode</option>
+          <option value="45">relay 4 and 5 in inverse mode</option>
+          <option value="51">relay 1 and 5 in inverse mode</option>
+          <option value="52">relay 2 and 5 in inverse mode</option>
+          <option value="53">relay 3 and 5 in inverse mode</option>
+          <option value="54">relay 4 and 5 in inverse mode</option>
+        </options>
+        <advanced>true</advanced>
+      </parameter>
+
+      <parameter name="config_102_1" type="integer" groupName="configuration">
+        <label>102: Group 2 relay inverse mode</label>
+        <description><![CDATA[
+Group 2 relay inverse mode<br /> <h1>Overview</h1><p>The values in this Parameter will specify the relay numbers that will operate in inverse mode. For this purpose, the value will be encoded as a 2-digit number “AB” where “A” is the number of the first relay, and “B” is number of the second relay. For example, if the Parameter value is “24” or “42” it means the relays N2 and N4 will operate in inverse mode. Relays can operate in an inverse mode in two different ways:</p><p>1. When the first and the second relays are connected to two different buttons. In this case, after pressing a button, the corresponding relay connected to that button will toggle its state (ON to OFF or OFF to ON), and the other relay will be switched OFF.</p><p>2. When two relays are connected to the same button. In this case, the relays will operate in roller shutter mode and their behavior will follow these four cycles:</p><p>▪ 1st press of button: the first relay will be switched ON, the second relay will be switched OFF</p><p>▪ 2nd press of button: both relays will be switched OFF</p><p>▪ 3rd press of button: the second relay will be switched ON, the first relay will be switched OFF</p><p>▪ 4th press of button: both relays will be switched OFF</p><p>≡ Note: In this mode, both relays cannot be switched ON at the same time (i.e. simultaneously).</p><p>≡ Note: Switching OFF one relay will always operate before switching ON another relay to prevent both relays from being ON at the same time.</p><p>≡ Note: Two groups of inverse relays can be specified, one group in Parameter 101, another group in Parameter 102.</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">no relay inverse mode</option>
+          <option value="12">relay 1 and 2 in inverse mode</option>
+          <option value="13">relay 1 and 3 in inverse mode</option>
+          <option value="14">relay 1 and 4 in inverse mode</option>
+          <option value="15">relay 1 and 5 in inverse mode</option>
+          <option value="21">relay 1 and 2 in inverse mode</option>
+          <option value="23">relay 2 and 3 in inverse mode</option>
+          <option value="24">relay 2 and 4 in inverse mode</option>
+          <option value="25">relay 2 and 5 in inverse mode</option>
+          <option value="31">relay 1 and 3 in inverse mode</option>
+          <option value="32">relay 2 and 3 in inverse mode</option>
+          <option value="34">relay 3 and 4 in inverse mode</option>
+          <option value="35">relay 3 and 5 in inverse mode</option>
+          <option value="41">relay 1 and 4 in inverse mode</option>
+          <option value="42">relay 2 and 4 in inverse mode</option>
+          <option value="43">relay 3 and 4 in inverse mode</option>
+          <option value="45">relay 4 and 5 in inverse mode</option>
+          <option value="51">relay 1 and 5 in inverse mode</option>
+          <option value="52">relay 2 and 5 in inverse mode</option>
+          <option value="53">relay 3 and 5 in inverse mode</option>
+          <option value="54">relay 4 and 5 in inverse mode</option>
+        </options>
+        <advanced>true</advanced>
+      </parameter>
+
+      <parameter name="config_111_4" type="integer" groupName="configuration">
+        <label>111: Relay control scenario 1</label>
+        <description><![CDATA[
+Relay control scenario 1<br /> <h1>Overview</h1><p>Scenarios can be created that allow connected devices to be triggered by a sensor or onboard Real Time Clock (RTC). The HE-TPS05 has built-in temperature, humidity, and ambient temperature sensors and includes a very flexible, user-friendly interface for customizing scenarios. In addition to the physical sensors, time may be used as a control source. The user should configure the output number, state, sensor type, state change condition, and threshold in the Parameters (from 111 - 120) which will trigger the scenes.</p><p>Parameters 111-120- Relays Control by Sensors</p><p>In these Parameters, the relay state changes depending on sensor threshold value. For these configurations, Parameter values are encoded as 8-digit numbers (ABCDEFGH):</p><p>A = Relay number (1 through 5)</p><p>B = Control Mode</p><p>0-Temperature Sensor, 1-Humidity Sensor, 2-Light Sensor,</p><p>3-Time control</p><p>C = State change relative to value in EFGH Condition Value fields (see below) 0-Equal or lower than</p><p>1-Equal or higher than</p><p>D: State Change, 0-Switch OFF</p><p>1-Switch ON EFGH: Condition Value</p><p>“Sensor Value” for Control modes 0, 1, and 2, or “Time” for Control mode 3.</p><p>If Temperature sensor has been chosen as a source in the control mode, the value should be x10, e.g. for 24.5°C use the value 0245.</p><p>If Time control has been chosen as a source in the control mode, the device logic will process values EFGH from 0 to 23:59 (in time measure), all other values will be ignored. EF represents Hour (0 through 23), GH represents Minutes (0 through 59).</p><p>All other numbers are reserved and will not affect the operation. To disable this option simply set this Parameter to 0.</p><p>The factory-default value: “0”</p><p>Example: Parameter value 12010050 means A=1 (relay 1 output), B=2 (light sensor), C=0 (value lower than), D=1 (switch relay On), EFGH=0050. In this case if light sensor reading drops below 50 lum, the relay 1 output will be switched On.</p><p>≡ Note: The relays still can be controlled manually using touch buttons according to Parameters 41-45 and 51-55 or via gateway.</p><p>≡ Note: The logic will implement the operation when the sensor value crosses the value in the Parameter. Meaning, that if the logic switches ON the relay and you manually switch it OFF, the relay will switch ON next time when the value crosses the set Parameter.</p>
+        ]]></description>
+        <default>0</default>
+        <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_112_4" type="integer" groupName="configuration">
+        <label>112: Relay control scenario 2</label>
+        <description><![CDATA[
+Relay control scenario 2<br /> <h1>Overview</h1><p>Scenarios can be created that allow connected devices to be triggered by a sensor or onboard Real Time Clock (RTC). The HE-TPS05 has built-in temperature, humidity, and ambient temperature sensors and includes a very flexible, user-friendly interface for customizing scenarios. In addition to the physical sensors, time may be used as a control source. The user should configure the output number, state, sensor type, state change condition, and threshold in the Parameters (from 111 - 120) which will trigger the scenes.</p><p>Parameters 111-120- Relays Control by Sensors</p><p>In these Parameters, the relay state changes depending on sensor threshold value. For these configurations, Parameter values are encoded as 8-digit numbers (ABCDEFGH):</p><p>A = Relay number (1 through 5)</p><p>B = Control Mode</p><p>0-Temperature Sensor, 1-Humidity Sensor, 2-Light Sensor,</p><p>3-Time control</p><p>C = State change relative to value in EFGH Condition Value fields (see below) 0-Equal or lower than</p><p>1-Equal or higher than</p><p>D: State Change, 0-Switch OFF</p><p>1-Switch ON EFGH: Condition Value</p><p>“Sensor Value” for Control modes 0, 1, and 2, or “Time” for Control mode 3.</p><p>If Temperature sensor has been chosen as a source in the control mode, the value should be x10, e.g. for 24.5°C use the value 0245.</p><p>If Time control has been chosen as a source in the control mode, the device logic will process values EFGH from 0 to 23:59 (in time measure), all other values will be ignored. EF represents Hour (0 through 23), GH represents Minutes (0 through 59).</p><p>All other numbers are reserved and will not affect the operation. To disable this option simply set this Parameter to 0.</p><p>The factory-default value: “0”</p><p>Example: Parameter value 12010050 means A=1 (relay 1 output), B=2 (light sensor), C=0 (value lower than), D=1 (switch relay On), EFGH=0050. In this case if light sensor reading drops below 50 lum, the relay 1 output will be switched On.</p><p>≡ Note: The relays still can be controlled manually using touch buttons according to Parameters 41-45 and 51-55 or via gateway.</p><p>≡ Note: The logic will implement the operation when the sensor value crosses the value in the Parameter. Meaning, that if the logic switches ON the relay and you manually switch it OFF, the relay will switch ON next time when the value crosses the set Parameter.</p>
+        ]]></description>
+        <default>0</default>
+        <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_113_4" type="integer" groupName="configuration">
+        <label>113: Relay control scenario 3</label>
+        <description><![CDATA[
+Relay control scenario 3<br /> <h1>Overview</h1><p>Scenarios can be created that allow connected devices to be triggered by a sensor or onboard Real Time Clock (RTC). The HE-TPS05 has built-in temperature, humidity, and ambient temperature sensors and includes a very flexible, user-friendly interface for customizing scenarios. In addition to the physical sensors, time may be used as a control source. The user should configure the output number, state, sensor type, state change condition, and threshold in the Parameters (from 111 - 120) which will trigger the scenes.</p><p>Parameters 111-120- Relays Control by Sensors</p><p>In these Parameters, the relay state changes depending on sensor threshold value. For these configurations, Parameter values are encoded as 8-digit numbers (ABCDEFGH):</p><p>A = Relay number (1 through 5)</p><p>B = Control Mode</p><p>0-Temperature Sensor, 1-Humidity Sensor, 2-Light Sensor,</p><p>3-Time control</p><p>C = State change relative to value in EFGH Condition Value fields (see below) 0-Equal or lower than</p><p>1-Equal or higher than</p><p>D: State Change, 0-Switch OFF</p><p>1-Switch ON EFGH: Condition Value</p><p>“Sensor Value” for Control modes 0, 1, and 2, or “Time” for Control mode 3.</p><p>If Temperature sensor has been chosen as a source in the control mode, the value should be x10, e.g. for 24.5°C use the value 0245.</p><p>If Time control has been chosen as a source in the control mode, the device logic will process values EFGH from 0 to 23:59 (in time measure), all other values will be ignored. EF represents Hour (0 through 23), GH represents Minutes (0 through 59).</p><p>All other numbers are reserved and will not affect the operation. To disable this option simply set this Parameter to 0.</p><p>The factory-default value: “0”</p><p>Example: Parameter value 12010050 means A=1 (relay 1 output), B=2 (light sensor), C=0 (value lower than), D=1 (switch relay On), EFGH=0050. In this case if light sensor reading drops below 50 lum, the relay 1 output will be switched On.</p><p>≡ Note: The relays still can be controlled manually using touch buttons according to Parameters 41-45 and 51-55 or via gateway.</p><p>≡ Note: The logic will implement the operation when the sensor value crosses the value in the Parameter. Meaning, that if the logic switches ON the relay and you manually switch it OFF, the relay will switch ON next time when the value crosses the set Parameter.</p>
+        ]]></description>
+        <default>0</default>
+        <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_114_4" type="integer" groupName="configuration">
+        <label>114: Relay control scenario 4</label>
+        <description><![CDATA[
+Relay control scenario 4<br /> <h1>Overview</h1><p>Scenarios can be created that allow connected devices to be triggered by a sensor or onboard Real Time Clock (RTC). The HE-TPS05 has built-in temperature, humidity, and ambient temperature sensors and includes a very flexible, user-friendly interface for customizing scenarios. In addition to the physical sensors, time may be used as a control source. The user should configure the output number, state, sensor type, state change condition, and threshold in the Parameters (from 111 - 120) which will trigger the scenes.</p><p>Parameters 111-120- Relays Control by Sensors</p><p>In these Parameters, the relay state changes depending on sensor threshold value. For these configurations, Parameter values are encoded as 8-digit numbers (ABCDEFGH):</p><p>A = Relay number (1 through 5)</p><p>B = Control Mode</p><p>0-Temperature Sensor, 1-Humidity Sensor, 2-Light Sensor,</p><p>3-Time control</p><p>C = State change relative to value in EFGH Condition Value fields (see below) 0-Equal or lower than</p><p>1-Equal or higher than</p><p>D: State Change, 0-Switch OFF</p><p>1-Switch ON EFGH: Condition Value</p><p>“Sensor Value” for Control modes 0, 1, and 2, or “Time” for Control mode 3.</p><p>If Temperature sensor has been chosen as a source in the control mode, the value should be x10, e.g. for 24.5°C use the value 0245.</p><p>If Time control has been chosen as a source in the control mode, the device logic will process values EFGH from 0 to 23:59 (in time measure), all other values will be ignored. EF represents Hour (0 through 23), GH represents Minutes (0 through 59).</p><p>All other numbers are reserved and will not affect the operation. To disable this option simply set this Parameter to 0.</p><p>The factory-default value: “0”</p><p>Example: Parameter value 12010050 means A=1 (relay 1 output), B=2 (light sensor), C=0 (value lower than), D=1 (switch relay On), EFGH=0050. In this case if light sensor reading drops below 50 lum, the relay 1 output will be switched On.</p><p>≡ Note: The relays still can be controlled manually using touch buttons according to Parameters 41-45 and 51-55 or via gateway.</p><p>≡ Note: The logic will implement the operation when the sensor value crosses the value in the Parameter. Meaning, that if the logic switches ON the relay and you manually switch it OFF, the relay will switch ON next time when the value crosses the set Parameter.</p>
+        ]]></description>
+        <default>0</default>
+        <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_115_4" type="integer" groupName="configuration">
+        <label>115: Relay control scenario 5</label>
+        <description><![CDATA[
+Relay control scenario 5<br /> <h1>Overview</h1><p>Scenarios can be created that allow connected devices to be triggered by a sensor or onboard Real Time Clock (RTC). The HE-TPS05 has built-in temperature, humidity, and ambient temperature sensors and includes a very flexible, user-friendly interface for customizing scenarios. In addition to the physical sensors, time may be used as a control source. The user should configure the output number, state, sensor type, state change condition, and threshold in the Parameters (from 111 - 120) which will trigger the scenes.</p><p>Parameters 111-120- Relays Control by Sensors</p><p>In these Parameters, the relay state changes depending on sensor threshold value. For these configurations, Parameter values are encoded as 8-digit numbers (ABCDEFGH):</p><p>A = Relay number (1 through 5)</p><p>B = Control Mode</p><p>0-Temperature Sensor, 1-Humidity Sensor, 2-Light Sensor,</p><p>3-Time control</p><p>C = State change relative to value in EFGH Condition Value fields (see below) 0-Equal or lower than</p><p>1-Equal or higher than</p><p>D: State Change, 0-Switch OFF</p><p>1-Switch ON EFGH: Condition Value</p><p>“Sensor Value” for Control modes 0, 1, and 2, or “Time” for Control mode 3.</p><p>If Temperature sensor has been chosen as a source in the control mode, the value should be x10, e.g. for 24.5°C use the value 0245.</p><p>If Time control has been chosen as a source in the control mode, the device logic will process values EFGH from 0 to 23:59 (in time measure), all other values will be ignored. EF represents Hour (0 through 23), GH represents Minutes (0 through 59).</p><p>All other numbers are reserved and will not affect the operation. To disable this option simply set this Parameter to 0.</p><p>The factory-default value: “0”</p><p>Example: Parameter value 12010050 means A=1 (relay 1 output), B=2 (light sensor), C=0 (value lower than), D=1 (switch relay On), EFGH=0050. In this case if light sensor reading drops below 50 lum, the relay 1 output will be switched On.</p><p>≡ Note: The relays still can be controlled manually using touch buttons according to Parameters 41-45 and 51-55 or via gateway.</p><p>≡ Note: The logic will implement the operation when the sensor value crosses the value in the Parameter. Meaning, that if the logic switches ON the relay and you manually switch it OFF, the relay will switch ON next time when the value crosses the set Parameter.</p>
+        ]]></description>
+        <default>0</default>
+        <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_116_4" type="integer" groupName="configuration">
+        <label>116: Relay control scenario 6</label>
+        <description><![CDATA[
+Relay control scenario 6<br /> <h1>Overview</h1><p>Scenarios can be created that allow connected devices to be triggered by a sensor or onboard Real Time Clock (RTC). The HE-TPS05 has built-in temperature, humidity, and ambient temperature sensors and includes a very flexible, user-friendly interface for customizing scenarios. In addition to the physical sensors, time may be used as a control source. The user should configure the output number, state, sensor type, state change condition, and threshold in the Parameters (from 111 - 120) which will trigger the scenes.</p><p>Parameters 111-120- Relays Control by Sensors</p><p>In these Parameters, the relay state changes depending on sensor threshold value. For these configurations, Parameter values are encoded as 8-digit numbers (ABCDEFGH):</p><p>A = Relay number (1 through 5)</p><p>B = Control Mode</p><p>0-Temperature Sensor, 1-Humidity Sensor, 2-Light Sensor,</p><p>3-Time control</p><p>C = State change relative to value in EFGH Condition Value fields (see below) 0-Equal or lower than</p><p>1-Equal or higher than</p><p>D: State Change, 0-Switch OFF</p><p>1-Switch ON EFGH: Condition Value</p><p>“Sensor Value” for Control modes 0, 1, and 2, or “Time” for Control mode 3.</p><p>If Temperature sensor has been chosen as a source in the control mode, the value should be x10, e.g. for 24.5°C use the value 0245.</p><p>If Time control has been chosen as a source in the control mode, the device logic will process values EFGH from 0 to 23:59 (in time measure), all other values will be ignored. EF represents Hour (0 through 23), GH represents Minutes (0 through 59).</p><p>All other numbers are reserved and will not affect the operation. To disable this option simply set this Parameter to 0.</p><p>The factory-default value: “0”</p><p>Example: Parameter value 12010050 means A=1 (relay 1 output), B=2 (light sensor), C=0 (value lower than), D=1 (switch relay On), EFGH=0050. In this case if light sensor reading drops below 50 lum, the relay 1 output will be switched On.</p><p>≡ Note: The relays still can be controlled manually using touch buttons according to Parameters 41-45 and 51-55 or via gateway.</p><p>≡ Note: The logic will implement the operation when the sensor value crosses the value in the Parameter. Meaning, that if the logic switches ON the relay and you manually switch it OFF, the relay will switch ON next time when the value crosses the set Parameter.</p>
+        ]]></description>
+        <default>0</default>
+        <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_117_4" type="integer" groupName="configuration">
+        <label>117: Relay control scenario 7</label>
+        <description><![CDATA[
+Relay control scenario 7<br /> <h1>Overview</h1><p>Scenarios can be created that allow connected devices to be triggered by a sensor or onboard Real Time Clock (RTC). The HE-TPS05 has built-in temperature, humidity, and ambient temperature sensors and includes a very flexible, user-friendly interface for customizing scenarios. In addition to the physical sensors, time may be used as a control source. The user should configure the output number, state, sensor type, state change condition, and threshold in the Parameters (from 111 - 120) which will trigger the scenes.</p><p>Parameters 111-120- Relays Control by Sensors</p><p>In these Parameters, the relay state changes depending on sensor threshold value. For these configurations, Parameter values are encoded as 8-digit numbers (ABCDEFGH):</p><p>A = Relay number (1 through 5)</p><p>B = Control Mode</p><p>0-Temperature Sensor, 1-Humidity Sensor, 2-Light Sensor,</p><p>3-Time control</p><p>C = State change relative to value in EFGH Condition Value fields (see below) 0-Equal or lower than</p><p>1-Equal or higher than</p><p>D: State Change, 0-Switch OFF</p><p>1-Switch ON EFGH: Condition Value</p><p>“Sensor Value” for Control modes 0, 1, and 2, or “Time” for Control mode 3.</p><p>If Temperature sensor has been chosen as a source in the control mode, the value should be x10, e.g. for 24.5°C use the value 0245.</p><p>If Time control has been chosen as a source in the control mode, the device logic will process values EFGH from 0 to 23:59 (in time measure), all other values will be ignored. EF represents Hour (0 through 23), GH represents Minutes (0 through 59).</p><p>All other numbers are reserved and will not affect the operation. To disable this option simply set this Parameter to 0.</p><p>The factory-default value: “0”</p><p>Example: Parameter value 12010050 means A=1 (relay 1 output), B=2 (light sensor), C=0 (value lower than), D=1 (switch relay On), EFGH=0050. In this case if light sensor reading drops below 50 lum, the relay 1 output will be switched On.</p><p>≡ Note: The relays still can be controlled manually using touch buttons according to Parameters 41-45 and 51-55 or via gateway.</p><p>≡ Note: The logic will implement the operation when the sensor value crosses the value in the Parameter. Meaning, that if the logic switches ON the relay and you manually switch it OFF, the relay will switch ON next time when the value crosses the set Parameter.</p>
+        ]]></description>
+        <default>0</default>
+        <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_118_4" type="integer" groupName="configuration">
+        <label>118: Relay control scenario 8</label>
+        <description><![CDATA[
+Relay control scenario 8<br /> <h1>Overview</h1><p>Scenarios can be created that allow connected devices to be triggered by a sensor or onboard Real Time Clock (RTC). The HE-TPS05 has built-in temperature, humidity, and ambient temperature sensors and includes a very flexible, user-friendly interface for customizing scenarios. In addition to the physical sensors, time may be used as a control source. The user should configure the output number, state, sensor type, state change condition, and threshold in the Parameters (from 111 - 120) which will trigger the scenes.</p><p>Parameters 111-120- Relays Control by Sensors</p><p>In these Parameters, the relay state changes depending on sensor threshold value. For these configurations, Parameter values are encoded as 8-digit numbers (ABCDEFGH):</p><p>A = Relay number (1 through 5)</p><p>B = Control Mode</p><p>0-Temperature Sensor, 1-Humidity Sensor, 2-Light Sensor,</p><p>3-Time control</p><p>C = State change relative to value in EFGH Condition Value fields (see below) 0-Equal or lower than</p><p>1-Equal or higher than</p><p>D: State Change, 0-Switch OFF</p><p>1-Switch ON EFGH: Condition Value</p><p>“Sensor Value” for Control modes 0, 1, and 2, or “Time” for Control mode 3.</p><p>If Temperature sensor has been chosen as a source in the control mode, the value should be x10, e.g. for 24.5°C use the value 0245.</p><p>If Time control has been chosen as a source in the control mode, the device logic will process values EFGH from 0 to 23:59 (in time measure), all other values will be ignored. EF represents Hour (0 through 23), GH represents Minutes (0 through 59).</p><p>All other numbers are reserved and will not affect the operation. To disable this option simply set this Parameter to 0.</p><p>The factory-default value: “0”</p><p>Example: Parameter value 12010050 means A=1 (relay 1 output), B=2 (light sensor), C=0 (value lower than), D=1 (switch relay On), EFGH=0050. In this case if light sensor reading drops below 50 lum, the relay 1 output will be switched On.</p><p>≡ Note: The relays still can be controlled manually using touch buttons according to Parameters 41-45 and 51-55 or via gateway.</p><p>≡ Note: The logic will implement the operation when the sensor value crosses the value in the Parameter. Meaning, that if the logic switches ON the relay and you manually switch it OFF, the relay will switch ON next time when the value crosses the set Parameter.</p>
+        ]]></description>
+        <default>0</default>
+        <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_119_4" type="integer" groupName="configuration">
+        <label>119: Relay control scenario 9</label>
+        <description><![CDATA[
+Relay control scenario 9<br /> <h1>Overview</h1><p>Scenarios can be created that allow connected devices to be triggered by a sensor or onboard Real Time Clock (RTC). The HE-TPS05 has built-in temperature, humidity, and ambient temperature sensors and includes a very flexible, user-friendly interface for customizing scenarios. In addition to the physical sensors, time may be used as a control source. The user should configure the output number, state, sensor type, state change condition, and threshold in the Parameters (from 111 - 120) which will trigger the scenes.</p><p>Parameters 111-120- Relays Control by Sensors</p><p>In these Parameters, the relay state changes depending on sensor threshold value. For these configurations, Parameter values are encoded as 8-digit numbers (ABCDEFGH):</p><p>A = Relay number (1 through 5)</p><p>B = Control Mode</p><p>0-Temperature Sensor, 1-Humidity Sensor, 2-Light Sensor,</p><p>3-Time control</p><p>C = State change relative to value in EFGH Condition Value fields (see below) 0-Equal or lower than</p><p>1-Equal or higher than</p><p>D: State Change, 0-Switch OFF</p><p>1-Switch ON EFGH: Condition Value</p><p>“Sensor Value” for Control modes 0, 1, and 2, or “Time” for Control mode 3.</p><p>If Temperature sensor has been chosen as a source in the control mode, the value should be x10, e.g. for 24.5°C use the value 0245.</p><p>If Time control has been chosen as a source in the control mode, the device logic will process values EFGH from 0 to 23:59 (in time measure), all other values will be ignored. EF represents Hour (0 through 23), GH represents Minutes (0 through 59).</p><p>All other numbers are reserved and will not affect the operation. To disable this option simply set this Parameter to 0.</p><p>The factory-default value: “0”</p><p>Example: Parameter value 12010050 means A=1 (relay 1 output), B=2 (light sensor), C=0 (value lower than), D=1 (switch relay On), EFGH=0050. In this case if light sensor reading drops below 50 lum, the relay 1 output will be switched On.</p><p>≡ Note: The relays still can be controlled manually using touch buttons according to Parameters 41-45 and 51-55 or via gateway.</p><p>≡ Note: The logic will implement the operation when the sensor value crosses the value in the Parameter. Meaning, that if the logic switches ON the relay and you manually switch it OFF, the relay will switch ON next time when the value crosses the set Parameter.</p>
+        ]]></description>
+        <default>0</default>
+        <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_120_4" type="integer" groupName="configuration">
+        <label>120: Relay control scenario 10</label>
+        <description><![CDATA[
+Relay control scenario 10<br /> <h1>Overview</h1><p>Scenarios can be created that allow connected devices to be triggered by a sensor or onboard Real Time Clock (RTC). The HE-TPS05 has built-in temperature, humidity, and ambient temperature sensors and includes a very flexible, user-friendly interface for customizing scenarios. In addition to the physical sensors, time may be used as a control source. The user should configure the output number, state, sensor type, state change condition, and threshold in the Parameters (from 111 - 120) which will trigger the scenes.</p><p>Parameters 111-120- Relays Control by Sensors</p><p>In these Parameters, the relay state changes depending on sensor threshold value. For these configurations, Parameter values are encoded as 8-digit numbers (ABCDEFGH):</p><p>A = Relay number (1 through 5)</p><p>B = Control Mode</p><p>0-Temperature Sensor, 1-Humidity Sensor, 2-Light Sensor,</p><p>3-Time control</p><p>C = State change relative to value in EFGH Condition Value fields (see below) 0-Equal or lower than</p><p>1-Equal or higher than</p><p>D: State Change, 0-Switch OFF</p><p>1-Switch ON EFGH: Condition Value</p><p>“Sensor Value” for Control modes 0, 1, and 2, or “Time” for Control mode 3.</p><p>If Temperature sensor has been chosen as a source in the control mode, the value should be x10, e.g. for 24.5°C use the value 0245.</p><p>If Time control has been chosen as a source in the control mode, the device logic will process values EFGH from 0 to 23:59 (in time measure), all other values will be ignored. EF represents Hour (0 through 23), GH represents Minutes (0 through 59).</p><p>All other numbers are reserved and will not affect the operation. To disable this option simply set this Parameter to 0.</p><p>The factory-default value: “0”</p><p>Example: Parameter value 12010050 means A=1 (relay 1 output), B=2 (light sensor), C=0 (value lower than), D=1 (switch relay On), EFGH=0050. In this case if light sensor reading drops below 50 lum, the relay 1 output will be switched On.</p><p>≡ Note: The relays still can be controlled manually using touch buttons according to Parameters 41-45 and 51-55 or via gateway.</p><p>≡ Note: The logic will implement the operation when the sensor value crosses the value in the Parameter. Meaning, that if the logic switches ON the relay and you manually switch it OFF, the relay will switch ON next time when the value crosses the set Parameter.</p>
+        ]]></description>
+        <default>0</default>
+        <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_141_1" type="integer" groupName="configuration">
+        <label>141: Consumption reporting interval</label>
+        <description><![CDATA[
+Consumption meter consecutive reporting interval<br /> <h1>Overview</h1><p>When the device is connected to the Z-Wave gateway (controller), it periodically sends to the gateway reports from its energy consumption meter even if there is no change in the value. This Parameter defines the interval between consecutive reports of real time and cumulative energy consumption data to the gateway. The value can be adjusted from 1 min to 120 min. The factory default value is 10 min.</p><p>≡ Note: If the consumption changes, the device will send the report to the gateway regardless of this Parameter value (the report will be sent according to value in Parameter 142).</p><p>≡ Note: It is not recommended to reduce the value of this Parameter in order not to increase the traffic on your network. We recommend to reduce the value of this Parameter only in case of poor connection, when reports from the device does not always reach the gateway.</p>
+        ]]></description>
+        <default>10</default>
+        <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_142_1" type="integer" groupName="configuration">
+        <label>142: Consumption change report to send to controller</label>
+        <description><![CDATA[
+Consumption change report to send to controller<br /> <h1>Overview</h1><p>This Parameter determines if the consumption change will resulting in the consumption report being sent to the gateway. Use the value 0 if there is a need to stop sending the reports and value 1 to activate reports. The factory default value is 1.</p><p>≡ Note: When the device is turning ON, the consumption data will be sent to the gateway once, even if the value of this Parameter is 0.</p>
+        ]]></description>
+        <default>1</default>
+        <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_143_1" type="integer" groupName="configuration">
+        <label>143: Sensors reporting interval</label>
+        <description><![CDATA[
+Sensors consecutive reporting interval<br /> <h1>Overview</h1><p>When the device is connected to the Z-Wave gateway (controller), it periodically sends to the gateway reports from its room temperature, humidity and light sensors even if there are not changes in the values. This Parameter defines the interval between consecutive reports. The value can be adjusted from 1 min to 120 min. The factory default value is 10 min.</p><p>≡ Note: If the sensor readings change, the device will send the report to the gateway regardless of this Parameter value (the report will be sent according to values in Parameters 144, 145 and 146).</p><p>≡ Note: It is not recommended to reduce the value of this Parameter in order not to increase the traffic on your network. We recommend to reduce the value of this Parameter only in case of poor connection, when reports from the device does not always reach the gateway.</p>
+        ]]></description>
+        <default>10</default>
+        <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_144_1" type="integer" groupName="configuration">
+        <label>144: Temperature difference to send to controller</label>
+        <description><![CDATA[
+Temperature difference to send to controller<br /> <h1>Overview</h1><p>This Parameter determines the change in temperature level (in °C) resulting in temperature sensor report being sent to the gateway. The value of this Parameter should be x10, e.g. for 0.4°C use value 4. From 0.1°C (value 1) to 10°C (value 100) can be selected. Use the value 0 if there is a need to stop sending the reports. The factory default value is 2 (0.2°C).<br /></p><p>≡ Note: When the device is turning ON, the sensor data will be sent to the gateway once, even if the value of this Parameter is 0.</p><p>≡ Note: It is not recommended to decrease the value of this Parameter, in order not to increase the load on your Z-Wave network traffic.</p>
+        ]]></description>
+        <default>2</default>
+        <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_145_1" type="integer" groupName="configuration">
+        <label>145: Humidity difference to send to controller</label>
+        <description><![CDATA[
+Humidity difference to send to controller<br /> <h1>Overview</h1><p>This Parameter determines the change in humidity level in % resulting in humidity sensors report being sent to the gateway. From 1% to 25% can be selected. Use the value 0 if there is a need to stop sending the reports. The factory default value is 2.</p><p>≡ Note: When the device is turning ON, the sensor data will be sent to the gateway once, even if the value of this Parameter is 0.</p><p>≡ Note: It is not recommended to decrease the value of this Parameter, in order not to increase the load on your Z-Wave network traffic.</p>
+        ]]></description>
+        <default>2</default>
+        <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_146_1" type="integer" groupName="configuration">
+        <label>146: Light difference to send to controller</label>
+        <description><![CDATA[
+Light sensor values difference to send to controller<br /> <h1>Overview</h1><p>This Parameter determines the change in the ambient environment illuminance level resulting in a light sensors report being sent to the gateway. From 10% to 99% can be selected. Use the value 0 if there is a need to stop sending the reports. The factory default value is 50.</p><p>≡ Note: When the device is turning On, the sensor data will be sent to the gateway once, even if the value of this Parameter is 0.</p><p>≡ Note: It is not recommended to decrease the value of this Parameter, in order not to increase the load on your Z-Wave network traffic.</p>
+        ]]></description>
+        <default>50</default>
+        <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_171_1" type="integer" groupName="configuration">
+        <label>171: Button 1 associations touch control mode</label>
+        <description><![CDATA[
+Touch control mode for associations with touch button 1<br /> <h1>Overview</h1><p>These Parameters are intended for use when Multilevel Switch Group Associations (Groups 3, 5, 7, 9, &amp; 11) have been activated. They define the logic of values changing if one of the touch buttons has been held for more than one second. They are useful options for controlling dimmers or roller shutter devices in the following three ways:</p><p>“0” – On each hold event, “UP (brighten)” and “DOWN (dim)” command will be alternately sent to associated devices.</p><p>“1” – On each hold event, the “UP (brighten)” command will be sent to associated devices. </p><p>“2” – On each hold event, the “DOWN (dim)” command will be sent to associated devices. </p><p>Set the value for Group 3 (Touch 1 association) in Parameter 171, for Group 5 (Touch 2 association) in Parameter 172, for Group 7 (Touch 3 association) in Parameter 173, for Group 9 (Touch 4 association) in Parameter 174, for Group 11 (Touch 5 association) in Parameter 175. </p><p>The factory-default value: 0.</p>
+        ]]></description>
+        <default>0</default>
+        <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_172_1" type="integer" groupName="configuration">
+        <label>172: Button 2 associations touch control mode</label>
+        <description><![CDATA[
+Touch control mode for associations with touch button 2<br /> <h1>Overview</h1><p>These Parameters are intended for use when Multilevel Switch Group Associations (Groups 3, 5, 7, 9, &amp; 11) have been activated. They define the logic of values changing if one of the touch buttons has been held for more than one second. They are useful options for controlling dimmers or roller shutter devices in the following three ways:</p><p>“0” – On each hold event, “UP (brighten)” and “DOWN (dim)” command will be alternately sent to associated devices.</p><p>“1” – On each hold event, the “UP (brighten)” command will be sent to associated devices. </p><p>“2” – On each hold event, the “DOWN (dim)” command will be sent to associated devices. </p><p>Set the value for Group 3 (Touch 1 association) in Parameter 171, for Group 5 (Touch 2 association) in Parameter 172, for Group 7 (Touch 3 association) in Parameter 173, for Group 9 (Touch 4 association) in Parameter 174, for Group 11 (Touch 5 association) in Parameter 175. </p><p>The factory-default value: 0.</p>
+        ]]></description>
+        <default>0</default>
+        <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_173_1" type="integer" groupName="configuration">
+        <label>173: Button 3 associations touch control mode</label>
+        <description><![CDATA[
+Touch control mode for associations with touch button 3<br /> <h1>Overview</h1><p>These Parameters are intended for use when Multilevel Switch Group Associations (Groups 3, 5, 7, 9, &amp; 11) have been activated. They define the logic of values changing if one of the touch buttons has been held for more than one second. They are useful options for controlling dimmers or roller shutter devices in the following three ways:</p><p>“0” – On each hold event, “UP (brighten)” and “DOWN (dim)” command will be alternately sent to associated devices.</p><p>“1” – On each hold event, the “UP (brighten)” command will be sent to associated devices. </p><p>“2” – On each hold event, the “DOWN (dim)” command will be sent to associated devices. </p><p>Set the value for Group 3 (Touch 1 association) in Parameter 171, for Group 5 (Touch 2 association) in Parameter 172, for Group 7 (Touch 3 association) in Parameter 173, for Group 9 (Touch 4 association) in Parameter 174, for Group 11 (Touch 5 association) in Parameter 175. </p><p>The factory-default value: 0.</p>
+        ]]></description>
+        <default>0</default>
+        <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_174_1" type="integer" groupName="configuration">
+        <label>174: Button 4 associations touch control mode</label>
+        <description><![CDATA[
+Touch control mode for associations with touch button 4<br /> <h1>Overview</h1><p>These Parameters are intended for use when Multilevel Switch Group Associations (Groups 3, 5, 7, 9, &amp; 11) have been activated. They define the logic of values changing if one of the touch buttons has been held for more than one second. They are useful options for controlling dimmers or roller shutter devices in the following three ways:</p><p>“0” – On each hold event, “UP (brighten)” and “DOWN (dim)” command will be alternately sent to associated devices.</p><p>“1” – On each hold event, the “UP (brighten)” command will be sent to associated devices. </p><p>“2” – On each hold event, the “DOWN (dim)” command will be sent to associated devices. </p><p>Set the value for Group 3 (Touch 1 association) in Parameter 171, for Group 5 (Touch 2 association) in Parameter 172, for Group 7 (Touch 3 association) in Parameter 173, for Group 9 (Touch 4 association) in Parameter 174, for Group 11 (Touch 5 association) in Parameter 175. </p><p>The factory-default value: 0.</p>
+        ]]></description>
+        <default>0</default>
+        <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_175_1" type="integer" groupName="configuration">
+        <label>175: Button 5 associations touch control mode</label>
+        <description><![CDATA[
+Touch control mode for associations with touch button 5<br /> <h1>Overview</h1><p>These Parameters are intended for use when Multilevel Switch Group Associations (Groups 3, 5, 7, 9, &amp; 11) have been activated. They define the logic of values changing if one of the touch buttons has been held for more than one second. They are useful options for controlling dimmers or roller shutter devices in the following three ways:</p><p>“0” – On each hold event, “UP (brighten)” and “DOWN (dim)” command will be alternately sent to associated devices.</p><p>“1” – On each hold event, the “UP (brighten)” command will be sent to associated devices. </p><p>“2” – On each hold event, the “DOWN (dim)” command will be sent to associated devices. </p><p>Set the value for Group 3 (Touch 1 association) in Parameter 171, for Group 5 (Touch 2 association) in Parameter 172, for Group 7 (Touch 3 association) in Parameter 173, for Group 9 (Touch 4 association) in Parameter 174, for Group 11 (Touch 5 association) in Parameter 175. </p><p>The factory-default value: 0.</p>
+        ]]></description>
+        <default>0</default>
+        <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_181_1" type="integer" groupName="configuration">
+        <label>181: Button 1 association dimming level</label>
+        <description><![CDATA[
+Dimming Brightness Level for association with touch button 1<br /> <h1>Overview</h1><p>This parameter specifies the brightness level that will be sent to associated dimmer devices when the touch button was clicked (when sending Set On command). Use values 1 to 99, to set a specific brightness level (the brightness level corresponds to the percentage of the set value), or use value 0 to restore the most recent (non-zero) brightness level on the dimmer. Set the value for Button 1 in Parameter 181, for Button 2 in Parameter 182, for Button 3 in Parameter 183, for Button 4 in Parameter 184, for Button 5 in Parameter 185. The factory default value is 0.</p><p>≡ Note: Note: Dimmer devices should be associated with the touch button as a multi- channel association.</p>
+        ]]></description>
+        <default>0</default>
+        <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_182_1" type="integer" groupName="configuration">
+        <label>182: Button 2 association dimming level</label>
+        <description><![CDATA[
+Dimming Brightness Level for association with touch button 2<br /> <h1>Overview</h1><p>This parameter specifies the brightness level that will be sent to associated dimmer devices when the touch button was clicked (when sending Set On command). Use values 1 to 99, to set a specific brightness level (the brightness level corresponds to the percentage of the set value), or use value 0 to restore the most recent (non-zero) brightness level on the dimmer. Set the value for Button 1 in Parameter 181, for Button 2 in Parameter 182, for Button 3 in Parameter 183, for Button 4 in Parameter 184, for Button 5 in Parameter 185. The factory default value is 0.</p><p>≡ Note: Note: Dimmer devices should be associated with the touch button as a multi- channel association.</p>
+        ]]></description>
+        <default>0</default>
+        <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_183_1" type="integer" groupName="configuration">
+        <label>183: Button 3 association dimming level</label>
+        <description><![CDATA[
+Dimming Brightness Level for association with touch button 3<br /> <h1>Overview</h1><p>This parameter specifies the brightness level that will be sent to associated dimmer devices when the touch button was clicked (when sending Set On command). Use values 1 to 99, to set a specific brightness level (the brightness level corresponds to the percentage of the set value), or use value 0 to restore the most recent (non-zero) brightness level on the dimmer. Set the value for Button 1 in Parameter 181, for Button 2 in Parameter 182, for Button 3 in Parameter 183, for Button 4 in Parameter 184, for Button 5 in Parameter 185. The factory default value is 0.</p><p>≡ Note: Note: Dimmer devices should be associated with the touch button as a multi- channel association.</p>
+        ]]></description>
+        <default>0</default>
+        <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_184_1" type="integer" groupName="configuration">
+        <label>184: Button 4 association dimming level</label>
+        <description><![CDATA[
+Dimming Brightness Level for association with touch button 4<br /> <h1>Overview</h1><p>This parameter specifies the brightness level that will be sent to associated dimmer devices when the touch button was clicked (when sending Set On command). Use values 1 to 99, to set a specific brightness level (the brightness level corresponds to the percentage of the set value), or use value 0 to restore the most recent (non-zero) brightness level on the dimmer. Set the value for Button 1 in Parameter 181, for Button 2 in Parameter 182, for Button 3 in Parameter 183, for Button 4 in Parameter 184, for Button 5 in Parameter 185. The factory default value is 0.</p><p>≡ Note: Note: Dimmer devices should be associated with the touch button as a multi- channel association.</p>
+        ]]></description>
+        <default>0</default>
+        <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_185_1" type="integer" groupName="configuration">
+        <label>185: Button 5 association dimming level</label>
+        <description><![CDATA[
+Dimming Brightness Level for association with touch button 5<br /> <h1>Overview</h1><p>This parameter specifies the brightness level that will be sent to associated dimmer devices when the touch button was clicked (when sending Set On command). Use values 1 to 99, to set a specific brightness level (the brightness level corresponds to the percentage of the set value), or use value 0 to restore the most recent (non-zero) brightness level on the dimmer. Set the value for Button 1 in Parameter 181, for Button 2 in Parameter 182, for Button 3 in Parameter 183, for Button 4 in Parameter 184, for Button 5 in Parameter 185. The factory default value is 0.</p><p>≡ Note: Note: Dimmer devices should be associated with the touch button as a multi- channel association.</p>
+        ]]></description>
+        <default>0</default>
+        <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_191_1" type="integer" groupName="configuration">
+        <label>191: Button 1 association dimming duration</label>
+        <description><![CDATA[
+Dimming Duration for association with touch button 1<br /> <h1>Overview</h1><p>This parameter specifies the duration when the dimmer goes from lowest (~0%) level to the highest (~99%) level and vice versa, when "Dimming up/Dimming Down" commands are received through association. Use values 1 to 120 seconds to specify the duration or use value 0 to use dimmer’s factory default duration. Set the value for Button 1 in Parameter 191, for Button 2 in Parameter 192, for Button 3 in Parameter 193, for Button 4 in Parameter 194, for Button 5 in Parameter 195. The factory default value is 0.</p><p>≡ Note: Dimmer devices should be associated with the touch button as a multi-channel association</p><p>≡ Note: Different dimmers may interpret this parameter differently, in such cases the parameter values should be determined experimentally for a specific dimmer model.</p>
+        ]]></description>
+        <default>0</default>
+        <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_192_1" type="integer" groupName="configuration">
+        <label>192: Button 2 association dimming duration</label>
+        <description><![CDATA[
+Dimming Duration for association with touch button 2<br /> <h1>Overview</h1><p>This parameter specifies the duration when the dimmer goes from lowest (~0%) level to the highest (~99%) level and vice versa, when "Dimming up/Dimming Down" commands are received through association. Use values 1 to 120 seconds to specify the duration or use value 0 to use dimmer’s factory default duration. Set the value for Button 1 in Parameter 191, for Button 2 in Parameter 192, for Button 3 in Parameter 193, for Button 4 in Parameter 194, for Button 5 in Parameter 195. The factory default value is 0.</p><p>≡ Note: Dimmer devices should be associated with the touch button as a multi-channel association</p><p>≡ Note: Different dimmers may interpret this parameter differently, in such cases the parameter values should be determined experimentally for a specific dimmer model.</p>
+        ]]></description>
+        <default>0</default>
+        <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_193_1" type="integer" groupName="configuration">
+        <label>193: Button 3 association dimming duration</label>
+        <description><![CDATA[
+Dimming Duration for association with touch button 3<br /> <h1>Overview</h1><p>This parameter specifies the duration when the dimmer goes from lowest (~0%) level to the highest (~99%) level and vice versa, when "Dimming up/Dimming Down" commands are received through association. Use values 1 to 120 seconds to specify the duration or use value 0 to use dimmer’s factory default duration. Set the value for Button 1 in Parameter 191, for Button 2 in Parameter 192, for Button 3 in Parameter 193, for Button 4 in Parameter 194, for Button 5 in Parameter 195. The factory default value is 0.</p><p>≡ Note: Dimmer devices should be associated with the touch button as a multi-channel association</p><p>≡ Note: Different dimmers may interpret this parameter differently, in such cases the parameter values should be determined experimentally for a specific dimmer model.</p>
+        ]]></description>
+        <default>0</default>
+        <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_194_1" type="integer" groupName="configuration">
+        <label>194: Button 4 association dimming duration</label>
+        <description><![CDATA[
+Dimming Duration for association with touch button 4<br /> <h1>Overview</h1><p>This parameter specifies the duration when the dimmer goes from lowest (~0%) level to the highest (~99%) level and vice versa, when "Dimming up/Dimming Down" commands are received through association. Use values 1 to 120 seconds to specify the duration or use value 0 to use dimmer’s factory default duration. Set the value for Button 1 in Parameter 191, for Button 2 in Parameter 192, for Button 3 in Parameter 193, for Button 4 in Parameter 194, for Button 5 in Parameter 195. The factory default value is 0.</p><p>≡ Note: Dimmer devices should be associated with the touch button as a multi-channel association</p><p>≡ Note: Different dimmers may interpret this parameter differently, in such cases the parameter values should be determined experimentally for a specific dimmer model.</p>
+        ]]></description>
+        <default>0</default>
+        <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_195_1" type="integer" groupName="configuration">
+        <label>195: Button 5 association dimming duration</label>
+        <description><![CDATA[
+Dimming Duration for association with touch button 5<br /> <h1>Overview</h1><p>This parameter specifies the duration when the dimmer goes from lowest (~0%) level to the highest (~99%) level and vice versa, when "Dimming up/Dimming Down" commands are received through association. Use values 1 to 120 seconds to specify the duration or use value 0 to use dimmer’s factory default duration. Set the value for Button 1 in Parameter 191, for Button 2 in Parameter 192, for Button 3 in Parameter 193, for Button 4 in Parameter 194, for Button 5 in Parameter 195. The factory default value is 0.</p><p>≡ Note: Dimmer devices should be associated with the touch button as a multi-channel association</p><p>≡ Note: Different dimmers may interpret this parameter differently, in such cases the parameter values should be determined experimentally for a specific dimmer model.</p>
+        ]]></description>
+        <default>0</default>
+        <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Lifeline</label>
+        <description><![CDATA[
+reports full state of the device and is used to communicate with the Z- Wave gateway<br /> <h1>Overview</h1><p>reports full state of the device and is used to communicate with the Z- Wave gateway. The group supports one Node.</p><p>≡ Note: It is not recommended to modify this group.</p><p>≡ Note: For correct operating in Fibaro gateways, the Single Channel Association should be removed from the device LifeLine (EndPoint 0 Group 1).</p>
+        ]]></description>
+        <multipleLimit>1</multipleLimit>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: Touch 1 Basic Set</label>
+        <description><![CDATA[
+is assigned to touch N1. Is used to send Basic Set ON (value 255) and Basic Set OFF (value 0) commands to the associated devices.<br /> <h1>Overview</h1><p>is assigned to touch N1. Is used to send Basic Set ON (value 255) and Basic Set OFF (value 0) commands to the associated devices.<br /></p>
+        ]]></description>
+        <multipleLimit>1</multipleLimit>
+      </parameter>
+
+      <parameter name="group_3" type="text" groupName="association" multiple="true">
+        <label>3: Touch 1 Multilevel Set</label>
+        <description><![CDATA[
+It sends MULTILEVEL SWITCH command class frame when touch N1 was held. Is used to send UP/DOWN command to the associated devices.<br /> <h1>Overview</h1><p>is assigned to touch N1. It sends MULTILEVEL SWITCH command class frame when touch N1 was held. Is used to send UP/DOWN command to the associated devices.<br /></p>
+        ]]></description>
+        <multipleLimit>1</multipleLimit>
+      </parameter>
+
+      <parameter name="group_4" type="text" groupName="association" multiple="true">
+        <label>4: Touch 2 Basic Set</label>
+        <description><![CDATA[
+is assigned to touch N2. Is used to send Basic Set ON (value 255) and Basic Set OFF (value 0) commands to the associated devices.<br /> <h1>Overview</h1><p>is assigned to touch N2. Is used to send Basic Set ON (value 255) and Basic Set OFF (value 0) commands to the associated devices.<br /></p>
+        ]]></description>
+        <multipleLimit>1</multipleLimit>
+      </parameter>
+
+      <parameter name="group_5" type="text" groupName="association" multiple="true">
+        <label>5: Touch 2 Multilevel Set</label>
+        <description><![CDATA[
+It sends MULTILEVEL SWITCH command class frame when touch N2 was held. Is used to send UP/DOWN command to the associated devices.<br /> <h1>Overview</h1><p>is assigned to touch N2. It sends MULTILEVEL SWITCH command class frame when touch N2 was held. Is used to send UP/DOWN command to the associated devices.<br /></p>
+        ]]></description>
+        <multipleLimit>1</multipleLimit>
+      </parameter>
+
+      <parameter name="group_6" type="text" groupName="association" multiple="true">
+        <label>6: Touch 3 Basic Set</label>
+        <description><![CDATA[
+is assigned to touch N3. Is used to send Basic Set ON (value 255) and Basic Set OFF (value 0) commands to the associated devices.<br /> <h1>Overview</h1><p>is assigned to touch N3. Is used to send Basic Set ON (value 255) and Basic Set OFF (value 0) commands to the associated devices.<br /></p>
+        ]]></description>
+        <multipleLimit>1</multipleLimit>
+      </parameter>
+
+      <parameter name="group_7" type="text" groupName="association" multiple="true">
+        <label>7: Touch 3 Multilevel Set</label>
+        <description><![CDATA[
+It sends MULTILEVEL SWITCH command class frame when touch N3 was held. Is used to send UP/DOWN command to the associated devices.<br /> <h1>Overview</h1><p>is assigned to touch N3. It sends MULTILEVEL SWITCH command class frame when touch N3 was held. Is used to send UP/DOWN command to the associated devices.<br /></p>
+        ]]></description>
+        <multipleLimit>1</multipleLimit>
+      </parameter>
+
+      <parameter name="group_8" type="text" groupName="association" multiple="true">
+        <label>8: Touch 4 Basic Set</label>
+        <description><![CDATA[
+is assigned to touch N4. Is used to send Basic Set ON (value 255) and Basic Set OFF (value 0) commands to the associated devices.<br /> <h1>Overview</h1><p>is assigned to touch N4. Is used to send Basic Set ON (value 255) and Basic Set OFF (value 0) commands to the associated devices.<br /></p>
+        ]]></description>
+        <multipleLimit>1</multipleLimit>
+      </parameter>
+
+      <parameter name="group_9" type="text" groupName="association" multiple="true">
+        <label>9: Touch 4 Multilevel Set</label>
+        <description><![CDATA[
+It sends MULTILEVEL SWITCH command class frame when touch N4 was held. Is used to send UP/DOWN command to the associated devices.<br /> <h1>Overview</h1><p>is assigned to touch N4. It sends MULTILEVEL SWITCH command class frame when touch N4 was held. Is used to send UP/DOWN command to the associated devices.<br /></p>
+        ]]></description>
+        <multipleLimit>1</multipleLimit>
+      </parameter>
+
+      <parameter name="group_10" type="text" groupName="association" multiple="true">
+        <label>10: Touch 5 Basic Set</label>
+        <description><![CDATA[
+is assigned to touch N5. Is used to send Basic Set ON (value 255) and Basic Set OFF (value 0) commands to the associated devices.<br /> <h1>Overview</h1><p>is assigned to touch N5. Is used to send Basic Set ON (value 255) and Basic Set OFF (value 0) commands to the associated devices.<br /></p>
+        ]]></description>
+        <multipleLimit>1</multipleLimit>
+      </parameter>
+
+      <parameter name="group_11" type="text" groupName="association" multiple="true">
+        <label>11: Touch 5 Multilevel Set</label>
+        <description><![CDATA[
+is assigned to touch N5. It sends MULTILEVEL SWITCH command class frame when touch N5 was held. Is used to send UP/DOWN command to the associated devices.<br /> <h1>Overview</h1><p>is assigned to touch N5. It sends MULTILEVEL SWITCH command class frame when touch N5 was held. Is used to send UP/DOWN command to the associated devices.<br /></p>
+        ]]></description>
+        <multipleLimit>1</multipleLimit>
+      </parameter>
+
+      <parameter name="group_12" type="text" groupName="association" multiple="true">
+        <label>12: LED 1 Basic Set</label>
+        <description><![CDATA[
+is assigned to LED N1. Is used to send Basic Set ON (value 255) and Basic Set OFF (value 0) commands to the associated devices.<br /> <h1>Overview</h1><p>is assigned to LED N1. Is used to send Basic Set ON (value 255) and Basic Set OFF (value 0) commands to the associated devices.<br /></p>
+        ]]></description>
+        <multipleLimit>1</multipleLimit>
+      </parameter>
+
+      <parameter name="group_13" type="text" groupName="association" multiple="true">
+        <label>13: LED 2 Basic Set</label>
+        <description><![CDATA[
+is assigned to LED N2. Is used to send Basic Set ON (value 255) and Basic Set OFF (value 0) commands to the associated devices.<br /> <h1>Overview</h1><p>is assigned to LED N2. Is used to send Basic Set ON (value 255) and Basic Set OFF (value 0) commands to the associated devices.<br /></p>
+        ]]></description>
+        <multipleLimit>1</multipleLimit>
+      </parameter>
+
+      <parameter name="group_14" type="text" groupName="association" multiple="true">
+        <label>14: LED 3 Basic Set</label>
+        <description><![CDATA[
+is assigned to LED N3. Is used to send Basic Set ON (value 255) and Basic Set OFF (value 0) commands to the associated devices.<br /> <h1>Overview</h1><p>is assigned to LED N3. Is used to send Basic Set ON (value 255) and Basic Set OFF (value 0) commands to the associated devices.<br /></p>
+        ]]></description>
+        <multipleLimit>1</multipleLimit>
+      </parameter>
+
+      <parameter name="group_15" type="text" groupName="association" multiple="true">
+        <label>15: LED 4 Basic Set</label>
+        <description><![CDATA[
+is assigned to LED N4. Is used to send Basic Set ON (value 255) and Basic Set OFF (value 0) commands to the associated devices.<br /> <h1>Overview</h1><p>is assigned to LED N4. Is used to send Basic Set ON (value 255) and Basic Set OFF (value 0) commands to the associated devices.<br /></p>
+        ]]></description>
+        <multipleLimit>1</multipleLimit>
+      </parameter>
+
+      <parameter name="group_16" type="text" groupName="association" multiple="true">
+        <label>16: LED 5 Basic Set</label>
+        <description><![CDATA[
+is assigned to LED N5. Is used to send Basic Set ON (value 255) and Basic Set OFF (value 0) commands to the associated devices.<br /> <h1>Overview</h1><p>is assigned to LED N5. Is used to send Basic Set ON (value 255) and Basic Set OFF (value 0) commands to the associated devices.<br /></p>
+        ]]></description>
+        <multipleLimit>1</multipleLimit>
+      </parameter>
+
+      <parameter name="group_17" type="text" groupName="association" multiple="true">
+        <label>17: Relay 1 Basic Set</label>
+        <description><![CDATA[
+is assigned to relay N1. Is used to send Basic Set ON (value 255) and Basic Set OFF (value 0) commands to the associated devices.<br /> <h1>Overview</h1><p>is assigned to relay N1. Is used to send Basic Set ON (value 255) and Basic Set OFF (value 0) commands to the associated devices.<br /></p>
+        ]]></description>
+        <multipleLimit>1</multipleLimit>
+      </parameter>
+
+      <parameter name="group_18" type="text" groupName="association" multiple="true">
+        <label>18: Relay 2 Basic Set</label>
+        <description><![CDATA[
+is assigned to relay N2. Is used to send Basic Set ON (value 255) and Basic Set OFF (value 0) commands to the associated devices.<br /> <h1>Overview</h1><p>is assigned to relay N2. Is used to send Basic Set ON (value 255) and Basic Set OFF (value 0) commands to the associated devices.<br /></p>
+        ]]></description>
+        <multipleLimit>1</multipleLimit>
+      </parameter>
+
+      <parameter name="group_19" type="text" groupName="association" multiple="true">
+        <label>19: Relay 3 Basic Set</label>
+        <description><![CDATA[
+is assigned to relay N3. Is used to send Basic Set ON (value 255) and Basic Set OFF (value 0) commands to the associated devices.<br /> <h1>Overview</h1><p>is assigned to relay N3. Is used to send Basic Set ON (value 255) and Basic Set OFF (value 0) commands to the associated devices.<br /></p>
+        ]]></description>
+        <multipleLimit>1</multipleLimit>
+      </parameter>
+
+      <parameter name="group_20" type="text" groupName="association" multiple="true">
+        <label>20: Relay 4 Basic Set</label>
+        <description><![CDATA[
+is assigned to relay N4. Is used to send Basic Set ON (value 255) and Basic Set OFF (value 0) commands to the associated devices.<br /> <h1>Overview</h1><p>is assigned to relay N4. Is used to send Basic Set ON (value 255) and Basic Set OFF (value 0) commands to the associated devices.<br /></p>
+        ]]></description>
+        <multipleLimit>1</multipleLimit>
+      </parameter>
+
+      <parameter name="group_21" type="text" groupName="association" multiple="true">
+        <label>21: Relay 5 Basic Set</label>
+        <description><![CDATA[
+is assigned to relay N5. Is used to send Basic Set ON (value 255) and Basic Set OFF (value 0) commands to the associated devices.<br /> <h1>Overview</h1><p>is assigned to relay N5. Is used to send Basic Set ON (value 255) and Basic Set OFF (value 0) commands to the associated devices.<br /></p>
+        ]]></description>
+        <multipleLimit>1</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

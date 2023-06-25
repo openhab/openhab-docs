@@ -75,6 +75,27 @@ Nano Shutter Controller<br /> <h1>Overview</h1><p>Aeotec Nano Shutter is a Z-Wav
         <limitToOptions>false</limitToOptions>
       </parameter>
 
+      <parameter name="config_51_2" type="integer" groupName="configuration">
+        <label>51: Curtain Trip Time for UP (Open) moving</label>
+        <description><![CDATA[
+Set the moving time from down to up, in case the time differs from parameter #35.<br /> <h1>Overview</h1><p>Added in V3.06. Use this parameter in case the time for moving the curtain up differs from moving the curtain down. See parameter #52 for activation. </p>
+        ]]></description>
+        <default>15000</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_52_1" type="integer" groupName="configuration">
+        <label>52: Set whether the Curtain Trip Times for UP and Down are equal</label>
+        <description><![CDATA[
+Set whether the Curtain Trip Times for UP and Down are equal.<br /> <h1>Overview</h1><p>Added in V3.06. Use this parameter to indicate wether curtain trip times for Up and Down are equal or not. If not equal, set parameter #51 for trip time up. <br /></p><p>0 = the Curtain Trip Times for UP and Down are not equal.<br />1 = the Curtain Trip Times for UP and Down are equal (Parameter #35).</p>
+        ]]></description>
+        <default>1</default>
+        <options>
+          <option value="0">the Curtain Trip Times for UP and Down are not equal.</option>
+          <option value="1">the Curtain Trip Times for UP and Down are equal (Parameter #35).</option>
+        </options>
+      </parameter>
+
       <parameter name="config_80_1" type="integer" groupName="configuration">
         <label>80: Report sent to nodes in association group 1</label>
         <description><![CDATA[

@@ -5,7 +5,7 @@ title: HomeWizard - Bindings
 type: binding
 description: "The HomeWizard binding retrieves measurements from the HomeWizard Wi-Fi P1 meter."
 since: 3x
-install: manual
+install: auto
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

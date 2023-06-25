@@ -6,7 +6,7 @@ type: binding
 description: "The binding integrates the [LIVISI (RWE/innogy) SmartHome](https://www.livisi.de) system into openHAB."
 since: 3x
 logo: images/addons/livisismarthome.png
-install: manual
+install: auto
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

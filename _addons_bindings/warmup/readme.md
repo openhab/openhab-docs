@@ -5,7 +5,7 @@ title: Warmup - Bindings
 type: binding
 description: "This binding integrates the Warmup 4iE Thermostat <https://www.warmup.co.uk/thermostats/smart/4ie-underfloor-heating>, via the API at <https://my.warmup.com/>."
 since: 3x
-install: manual
+install: auto
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

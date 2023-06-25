@@ -49,6 +49,10 @@ The wakeup period does not impact the devices ability to report events or sensor
   * Allowable interval among each wakeup interval is 60 second, such as 360, 420, 480…
   * Note: The default value is 12 hours. This value is longer, the battery life is greater.
 
+### General Usage Information
+
+
+
 ## Channels
 
 The following table summarises the channels available for the Flood sensor -:

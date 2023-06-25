@@ -84,10 +84,9 @@ Solar Powered Outdoor Siren<br /> <h1>Overview</h1><p>This solar powered outdoor
         <default>0</default>
         <options>
           <option value="0">Trigger, when removed from holder</option>
-          <option value="1">Trigger, when removed, and turned off</option>
+          <option value="1">Trigger, when removed, turned off when put back</option>
           <option value="2">Don't trigger at all</option>
         </options>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_2_1" type="integer" groupName="configuration">
@@ -99,6 +98,7 @@ Temperature correction with positive and negative offset values<br /> <h1>Overvi
         <options>
           <option value="0">Temperature adjustments</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_3_1" type="integer" groupName="configuration">
@@ -111,7 +111,7 @@ Threshold temperature to send unsolicited report. 10 = 1°C<br /> <h1>Overview</
       </parameter>
 
       <parameter name="config_4_2" type="integer" groupName="configuration">
-        <label>4: temperature report</label>
+        <label>4: Send temperature reports after N wake up</label>
         <description><![CDATA[
 Send unsolicited temperature report after N wake up<br /> <h1>Overview</h1><p>Send unsolicited  temperature report after N wake up</p> <p>If the value is set, after N wake up number (measurement is every 4 minutes) the  temperature report will be sent.</p> <p>By default it's 15 = every 1 hour, 0 is disabled </p>
         ]]></description>
@@ -119,6 +119,7 @@ Send unsolicited temperature report after N wake up<br /> <h1>Overview</h1><p>Se
         <options>
           <option value="0">Disable report</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_5_1" type="integer" groupName="configuration">
@@ -129,6 +130,16 @@ Send unsolicited temperature report after N wake up<br /> <h1>Overview</h1><p>Se
           <option value="0">Siren only</option>
           <option value="1">Flash only</option>
           <option value="2">Flash + Siren (Default)</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_6_1" type="integer" groupName="configuration">
+        <label>6: Auto Off</label>
+        <description>If the value is set, the alarm will be switched off automatically after a defined time.</description>
+        <default>0</default>
+        <options>
+          <option value="0">No auto off</option>
         </options>
         <limitToOptions>false</limitToOptions>
       </parameter>

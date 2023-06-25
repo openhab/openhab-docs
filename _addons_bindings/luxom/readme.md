@@ -6,7 +6,7 @@ type: binding
 description: "This binding integrates with a <https://luxom.io/> based system through a Luxom IP interface module."
 since: 3x
 logo: images/addons/luxom.png
-install: manual
+install: auto
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

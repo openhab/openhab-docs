@@ -5,7 +5,7 @@ title: DALI - Bindings
 type: binding
 description: "This binding supports controlling devices on a DALI bus (Digital Addressable Lighting Interface) via a [daliserver](https://github.com/onitake/daliserver) connection."
 since: 3x
-install: manual
+install: auto
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

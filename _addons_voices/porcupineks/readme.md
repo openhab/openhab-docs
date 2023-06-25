@@ -5,7 +5,7 @@ title: Porcupine Keyword Spotter - Voices
 type: voice
 description: "This voice service allows you to use the PicoVoice product Porcupine as your keyword spotter in openHAB."
 since: 3x
-install: manual
+install: auto
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

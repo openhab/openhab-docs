@@ -1,11 +1,10 @@
 ---
-id: luftdateninfo
-label: LuftdatenInfo
-title: LuftdatenInfo - Bindings
+id: sensorcommunity
+label: SensorCommunity
+title: SensorCommunity - Bindings
 type: binding
-description: "Binding for the Sensor Community [luftdaten.info](https://luftdaten.info/). The community provides instructions to build sensors on your own and they can be integrated into the database."
+description: "Binding for the [Sensor.Community](https://sensor.community/)."
 since: 3x
-logo: images/addons/luftdateninfo.png
 install: auto
 ---
 
@@ -13,9 +12,10 @@ install: auto
 
 {% include base.html %}
 
-# LuftdatenInfo Binding
+# SensorCommunity Binding
 
-Binding for the Sensor Community [luftdaten.info](https://luftdaten.info/). The community provides instructions to build sensors on your own and they can be integrated into the database.
+Binding for the [Sensor.Community](https://sensor.community/).
+The community provides instructions to build sensors on your own and they can be integrated into the database.
 With this binding you can integrate your sensor, a sensor nearby or even any sensors you want into openHAB.
 
 ## Supported Things
@@ -45,18 +45,18 @@ Choose either a local IP address of your personal owned sensor _or_ a sensor id 
 
 Please check in your browser if you can access your sensor with your local IP address.
 
-![Luftdaten.info Logo](doc/local-sensor.png)
+![Sensor.Community Logo](doc/local-sensor.png)
 
 ### External Sensor
 
 Perform the following steps to get the appropriate Sensor ID
 
-- Go to to [luftdaten.info map](https://deutschland.maps.sensor.community/)
+- Go to to [Sensor.Community map](https://deutschland.maps.sensor.community/)
 - Choose your desired value in bottom list - now only the Sensors are displayed which are supporting this
 - Click on your / any Sensor and the ID is displayed in the top right corner. Note: Sensor ID is just the number without beginning hash #
 - Enter this Sensor ID into the thing configuration
 
-![Luftdaten.info Logo](doc/LuftdatenInfo-Map.png)
+![Sensor.Community Logo](doc/SensorCommunity-Map.png)
 
 ## Channels
 
@@ -88,38 +88,38 @@ Perform the following steps to get the appropriate Sensor ID
 
 ### Things
 
-luftdaten.things
+sensorcommunity.things
 
 ```java
-Thing luftdateninfo:particulate:pm_sensor   "PM Sensor"         [ ipAddress=192.168.178.50 ]
-Thing luftdateninfo:conditions:cond_sensor  "Condition Sensor"  [ sensorid=28843 ]
-Thing luftdateninfo:noise:noise_sensor      "Noise Sensor"      [ sensorid=39745 ]
+Thing sensorcommunity:particulate:pm_sensor   "PM Sensor"         [ ipAddress=192.168.178.50 ]
+Thing sensorcommunity:conditions:cond_sensor  "Condition Sensor"  [ sensorid=28843 ]
+Thing sensorcommunity:noise:noise_sensor      "Noise Sensor"      [ sensorid=39745 ]
 ```
 
 ### Items
 
-luftdaten.items
+sensorcommunity.items
 
 ```java
-Number:Density PM_25                "PM2.5"                 { channel="luftdateninfo:particulate:pm_sensor:pm25" } 
-Number:Density PM_100               "PM10"                  { channel="luftdateninfo:particulate:pm_sensor:pm100" } 
+Number:Density PM_25                "PM2.5"                 { channel="sensorcommunity:particulate:pm_sensor:pm25" } 
+Number:Density PM_100               "PM10"                  { channel="sensorcommunity:particulate:pm_sensor:pm100" } 
 
-Number:Temperature LDI_Temperature  "Temperature"           { channel="luftdateninfo:conditions:cond_sensor:temperature" } 
-Number:Dimensionless LDI_Humidity   "Humidity"              { channel="luftdateninfo:conditions:cond_sensor:humidity" } 
-Number:Pressure LDI_Pressure        "Atmospheric Pressure"  { channel="luftdateninfo:conditions:cond_sensor:pressure" } 
-Number:Pressure LDI_PressureSea     "Pressure sea level"    { channel="luftdateninfo:conditions:cond_sensor:pressure-sea" } 
+Number:Temperature LDI_Temperature  "Temperature"           { channel="sensorcommunity:conditions:cond_sensor:temperature" } 
+Number:Dimensionless LDI_Humidity   "Humidity"              { channel="sensorcommunity:conditions:cond_sensor:humidity" } 
+Number:Pressure LDI_Pressure        "Atmospheric Pressure"  { channel="sensorcommunity:conditions:cond_sensor:pressure" } 
+Number:Pressure LDI_PressureSea     "Pressure sea level"    { channel="sensorcommunity:conditions:cond_sensor:pressure-sea" } 
 
-Number:Dimensionless LDI_NoiseEQ    "Noise EQ"              { channel="luftdateninfo:noise:noise_sensor:noise-eq" } 
-Number:Dimensionless LDI_NoiseMin   "Noise min"             { channel="luftdateninfo:noise:noise_sensor:noise-min" } 
-Number:Dimensionless LDI_NoiseMax   "Noise max"             { channel="luftdateninfo:noise:noise_sensor:noise-max" } 
+Number:Dimensionless LDI_NoiseEQ    "Noise EQ"              { channel="sensorcommunity:noise:noise_sensor:noise-eq" } 
+Number:Dimensionless LDI_NoiseMin   "Noise min"             { channel="sensorcommunity:noise:noise_sensor:noise-min" } 
+Number:Dimensionless LDI_NoiseMax   "Noise max"             { channel="sensorcommunity:noise:noise_sensor:noise-max" } 
 ```
 
 ### Sitemap
 
-LuftdatenInfo.sitemap
+SensorCommunity.sitemap
 
 ```perl
-sitemap LuftdatenInfo label="LuftdatenInfo" {
+sitemap SensorCommunity label="SensorCommunity" {
         Text item=PM_25                     label="Particulate Matter 2.5 [%.1f %unit%]"    
         Text item=PM_100                    label="Particulate Matter 10 [%.1f %unit%]"     
 

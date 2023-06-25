@@ -1,0 +1,315 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="zooz_zen54_00_000" listed="false">
+    <label>ZEN54 0-10v Dimmer</label>
+    <description><![CDATA[
+0-10v Dimmer<br /> <h1>Overview</h1><ul><li>Z-Wave 0-10 V dimming control for LED fixtures</li><li>Great for 0-10 V LED drivers in LED panels</li><li>Smooth dimming with instant status updates</li><li>Installs behind your existing wall switch (on/off or momentary)</li><li>700 series Z-Wave chip for better range and faster control</li><li>Z-Wave Long Range for ultra reliable no-mesh communication</li><li>Advanced configuration including min and max brightness</li><li>Built-in Z-Wave signal repeater for boosted communication</li><li>SmartStart and S2 Security for a safer network</li></ul> <br /> <h2>Inclusion Information</h2><p>Initiate inclusion (pairing) in the app (or web interface).</p><p>Tap the Z-WAVE button 3 times quickly if using traditional Z-Wave inclusion.</p><p>The LED indicator will blink green to signal communication and turn green for 2 seconds if inclusion is successful or turn red for 2 seconds if the pairing attempt fails.</p> <br /> <h2>Exclusion Information</h2><p>Bring your Z-Wave gateway (hub) close to the relay if possible</p><p>Put the Z-Wave hub into exclusion mode (not sure how to do that? ask@getzooz.com)</p><p>Click the on the relay 3 times quickly (theZ-Wave button LED indicator will start blinking green)</p><p>Your hub will confirm exclusion, the LED indicator on the relay will turn green for 2 seconds, and the device will disappear from your controller's device list.</p> <br /> <h2>Wakeup Information</h2><p><br /></p>
+    ]]></description>
+    <category>Controller</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_dimmer" typeId="switch_dimmer">
+        <label>Dimmer</label>
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+          <property name="binding:Command:OnOffType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Zooz</property>
+      <property name="modelId">ZEN54</property>
+      <property name="manufacturerId">027A</property>
+      <property name="manufacturerRef">0904:0218</property>
+      <property name="dbReference">1568</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_1_1" type="integer" groupName="configuration">
+        <label>1: On / Off Status After Power Failure</label>
+        <description><![CDATA[
+On / Off Status After Power Failure<br /> <h1>Overview</h1><p>0 – forced to OFF (regardless of state prior to power outage);</p><p>1-99 – forced to ON at the selected brightness level (regardless of state prior to power outage);</p><p>100 – remembers and restores on/off status or brightness level after power failure (default);</p>
+        ]]></description>
+        <default>100</default>
+        <options>
+          <option value="0">Forced to OFF (regardless of state prior to power outage);</option>
+          <option value="1">forced to ON at the selected brightness level (regardless of state pri</option>
+          <option value="100">remembers and restores on/off status or brightness level after power f</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_2_1" type="integer" groupName="configuration">
+        <label>2: LED Indicator</label>
+        <description><![CDATA[
+Enable or disable the LED indicator.<br /> <h1>Overview</h1><p>0 – LED Indicator disabled;</p><p>1 – LED Indicator enabled (default)</p>
+        ]]></description>
+        <default>1</default>
+        <options>
+          <option value="0">LED Indicator disabled</option>
+          <option value="1">LED Indicator enabled (default).</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_3_2" type="integer" groupName="configuration">
+        <label>3: Dimming Speed</label>
+        <description><![CDATA[
+Adjust the dimming speed (fade-in / fade-out) for your dimmer when the light is turned on and off from the switch or via Z-Wave. Values correspond to the number of seconds it take for the dimmer to reach full brightness or completely turn off.<br /> <h1>Overview</h1><p>0 – instant on/off;</p><p>1 – 99 (seconds).</p><p>Default: 5.</p>
+        ]]></description>
+        <default>5</default>
+        <options>
+          <option value="0">instant on/off;</option>
+          <option value="5">1 – 99 (seconds). Default 5 Seconds</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_4_1" type="integer" groupName="configuration">
+        <label>4: Minimum Brightness (1 – 45 (%))</label>
+        <description><![CDATA[
+Set the minimum brightness level (in %) for your dimmer. You won’t be able to dim the light below the set value.<br /> <h1>Overview</h1><p>Values: 1 – 45 (%). </p><p>Default: 1.<br /></p>
+        ]]></description>
+        <default>1</default>
+        <options>
+          <option value="1">1 – 45 (%). Default: 1</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_5_1" type="integer" groupName="configuration">
+        <label>5: Maximum Brightness (55 – 99 (%))</label>
+        <description><![CDATA[
+Set the maximum brightness level (in %) for your dimmer. You won’t be able to add brightness to the light beyond the set value.<br /> <h1>Overview</h1><p>Values: 55 – 99 (%). Default: 99.<br /></p>
+        ]]></description>
+        <default>99</default>
+        <options>
+          <option value="99">55 – 99 (%). Default: 99.</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_6_1" type="integer" groupName="configuration">
+        <label>6: Kickstart Brightness Level</label>
+        <description><![CDATA[
+Set the kickstart brightness level (in %) for your dimmer. This setting is useful for fixtures that won't turn on when starting from a low brightness level.<br /> <h1>Overview</h1><p>0 – Disabled (default).</p><p>1 – 99 (%)</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Disabled (default)</option>
+          <option value="99">1 – 99 (%)</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_7_1" type="integer" groupName="configuration">
+        <label>7: Wall Switch Control (Z-Wave inclusion)</label>
+        <description><![CDATA[
+Enable or disabled Z-Wave inclusion activation from the wall switch.<br /> <h1>Overview</h1><p>0 – Inclusion mode from switch disabled</p><p>1 – Inclusion mode from switch enabled (default).</p>
+        ]]></description>
+        <default>1</default>
+        <options>
+          <option value="0">Inclusion mode from switch disabled</option>
+          <option value="1">Inclusion mode from switch enabled (default)</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_8_4" type="integer" groupName="configuration">
+        <label>8: Auto Turn-Off Timer</label>
+        <description><![CDATA[
+Use this parameter to set the time after which you want the light connected to the dimmer to automatically turn off once it has been turned on. The number entered as value corresponds to the number of minutes or seconds (set the unit in Par. 10).<br /> <h1>Overview</h1><p>0 – timer disabled (default);</p><p>1 – 4294967295.</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">timer disabled (default)</option>
+          <option value="1">Value Between 1 – 4294967295</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_9_4" type="integer" groupName="configuration">
+        <label>9: Auto Turn-On Timer</label>
+        <description><![CDATA[
+Use this parameter to set the time after which you want the light connected to the dimmer to automatically turn on once it has been turned off. The number entered as value corresponds to the number of minutes or seconds (set the unit in Par. 10).<br /> <h1>Overview</h1><p>0 – timer disabled (default);</p><p>1 – 4294967295.</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">timer disabled (default)</option>
+          <option value="1">Value Between 1 – 4294967295</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_10_1" type="integer" groupName="configuration">
+        <label>10: Timer Unit</label>
+        <description><![CDATA[
+Choose between seconds and minutes as the unit for the timers in parameters 8 and 9<br /> <h1>Overview</h1><p>1 – minutes (default); </p><p>2 – seconds<br /></p>
+        ]]></description>
+        <default>1</default>
+        <options>
+          <option value="1">minutes (default)</option>
+          <option value="2">seconds</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_11_1" type="integer" groupName="configuration">
+        <label>11: Smart Bulb Mode: Enable/Disable Switch / Z-Wave Control</label>
+        <description><![CDATA[
+Enable or disable physical and/or Z-Wave on/off control. If disabled, you’ll only be able to control the connected light via Z-Wave.<br /> <h1>Overview</h1><p>0 – button and wall switch control disabled, Z-Wave control enabled (the dimmer will still report</p><p>on/off control to the hub whenever the button or switch are toggled);</p><p>1 – button, wall switch, and Z-Wave control enabled (default);</p><p>2 – button, wall switch, and Z-Wave control control disabled (the dimmer will still report on/off control to the hub whenever the button or switch are toggled physically or via Z-Wave).</p>
+        ]]></description>
+        <default>1</default>
+        <options>
+          <option value="0">button and wall switch control disabled, Z-Wave control enabled (the d</option>
+          <option value="1">button, wall switch, and Z-Wave control enabled (default)</option>
+          <option value="2">button, wall switch, and Z-Wave control control disabled (the dimmer w</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_12_1" type="integer" groupName="configuration">
+        <label>12: Wall Switch Control (Type of Wall Switch)</label>
+        <description><![CDATA[
+Choose the type of wall switch connected to the 0-10 V dimmer.<br /> <h1>Overview</h1><p>0 – toggle switch (device changes status when switch changes status);</p><p>1 – momentary switch (one-button switch like the ZAC99);</p><p>2 – toggle switch with fixed actions (always toggle up for on, always toggle down for off);</p><p>3 – 3-way impulse control (for selected 3-way scenarios, refer to the notes in the wiring instructions for your set-up).</p><p>Default: 2.</p>
+        ]]></description>
+        <default>2</default>
+        <options>
+          <option value="0">toggle switch (device changes status when switch changes status)</option>
+          <option value="1">momentary switch (one-button switch like the ZAC99)</option>
+          <option value="2">toggle switch with fixed actions (always toggle up for on, always togg</option>
+          <option value="3">3-way impulse control (for selected 3-way scenarios, refer to the note</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_13_1" type="integer" groupName="configuration">
+        <label>13: Association Reports</label>
+        <description><![CDATA[
+Choose the type of reports the relay will send to the hub for Z-Wave and external switch control.<br /> <h1>Overview</h1><p>0 – switch multilevel reports for Z-Wave control and basic reports for switch control;</p><p>1 – switch multilevel reports for both Z-Wave and switch control (default).</p>
+        ]]></description>
+        <default>1</default>
+        <options>
+          <option value="0">switch multilevel reports for Z-Wave control and basic reports for swi</option>
+          <option value="1">switch multilevel reports for both Z-Wave and switch control (default)</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_14_1" type="integer" groupName="configuration">
+        <label>14: Dimmer Off Behavior</label>
+        <description><![CDATA[
+Choose if you'd like the dimmer to cut power off completely to the 0-10 V driver when in the off position to prevent a glowing effect on the light (applicable to selected 0-10 V fixtures).<br /> <h1>Overview</h1><p>0 – Keep the power on to the LED driver when the 0-10 V Dimmer is off;</p><p>1 – Cut the power off to the LED driver when the 0-10 V Dimmer is off (default).</p>
+        ]]></description>
+        <default>1</default>
+        <options>
+          <option value="0">Keep the power on to the LED driver when the 0-10 V Dimmer is off</option>
+          <option value="1">Cut the power off to the LED driver when the 0-10 V Dimmer is off (def</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_15_1" type="integer" groupName="configuration">
+        <label>15: Ramp Rate Control (Physical Ramp Rate On)</label>
+        <description><![CDATA[
+Adjust the ramp rate ON for your dimmer when the button paddle is pressed (physical ramp rate on). The Values correspond to the number of seconds required to switch on the dimmer when operated manually.<br /> <h1>Overview</h1><p>0 – instant ON</p><p>1- 99 seconds (default: 5)</p>
+        ]]></description>
+        <default>5</default>
+        <options>
+          <option value="0">instant ON</option>
+          <option value="5">1- 99 seconds (default: 5)</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_16_1" type="integer" groupName="configuration">
+        <label>16: Ramp Rate Control (Physical Ramp Rate Off)</label>
+        <description><![CDATA[
+Adjust the ramp rate OFF for your dimmer when the button paddle is pressed (physical ramp rate off). The Values correspond to the number of seconds required to switch off the dimmer when operated manually.<br /> <h1>Overview</h1><p>0 – instant OFF</p><p>1- 99 seconds (default: 5)</p>
+        ]]></description>
+        <default>5</default>
+        <options>
+          <option value="0">instant OFF</option>
+          <option value="5">1- 99 seconds (default: 5)</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_17_1" type="integer" groupName="configuration">
+        <label>17: Ramp Rate Control (Z-Wave Ramp Rate On)</label>
+        <description><![CDATA[
+Adjust the ramp rate ON for your dimmer when a Z-Wave command is sent to turn the dimmer on (Z-Wave ramp rate on). The Values correspond to the number of seconds it take for the dimmer to reach full brightness when operated via Z-Wave<br /> <h1>Overview</h1><p>0 – instant ON</p><p>1- 99 seconds</p><p>100 – match parameter 15 value (default)</p>
+        ]]></description>
+        <default>100</default>
+        <options>
+          <option value="0">instant ON</option>
+          <option value="1">1- 99 seconds</option>
+          <option value="100">match parameter 15 value (default)</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_18_1" type="integer" groupName="configuration">
+        <label>18: Ramp Rate Control (Z-Wave Ramp Rate Off)</label>
+        <description><![CDATA[
+Adjust the ramp rate OFF for your dimmer when a Z-Wave command is sent to turn the dimmer off (Z-Wave ramp rate off). The Values correspond to the number of seconds it take for the dimmer to turn off when operated via Z-Wave.<br /> <h1>Overview</h1><p>0 – instant OFF</p><p>1- 99 seconds </p><p>100 – match parameter 16 value (default)</p>
+        ]]></description>
+        <default>100</default>
+        <options>
+          <option value="0">instant OFF</option>
+          <option value="1">1- 99 seconds</option>
+          <option value="100">match parameter 16 value (default)</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Group 1; Lifeline communication</label>
+        <description><![CDATA[
+Sends BASIC REPORT and SWITCH BINARY REPORT<br /> <h1>Overview</h1><p>Device will send BASIC REPORT and SWITCH BINARY REPORT<br /></p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: Group 2</label>
+        <description><![CDATA[
+Sends BASIC SET<br /> <h1>Overview</h1><p>This device will send BASIC SET command.<br /></p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

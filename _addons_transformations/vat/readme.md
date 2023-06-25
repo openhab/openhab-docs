@@ -5,7 +5,7 @@ title: VAT - Transformation Services
 type: transform
 description: "The VAT Transformation Service adds VAT (Value-Added Tax) to a given input amount."
 since: 3x
-install: manual
+install: auto
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

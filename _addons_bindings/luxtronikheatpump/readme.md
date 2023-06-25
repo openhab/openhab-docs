@@ -5,7 +5,7 @@ title: LuxtronikHeatpump - Bindings
 type: binding
 description: "This binding gives the possibility to integrate any Heatpump that is based on the Luxtronik 2 contol unit of Alpha Innotec. This includes heatpumps of:"
 since: 3x
-install: manual
+install: auto
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

@@ -6,7 +6,7 @@ type: binding
 description: "This binding provides similar access to your Mercedes Benz vehicle like the Smartphone App _Mercedes Me_."
 since: 3x
 logo: images/addons/mercedesme.png
-install: manual
+install: auto
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

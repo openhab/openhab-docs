@@ -5,7 +5,7 @@ title: Broadlink - Bindings
 type: binding
 description: "The binding integrates devices based on broadlink controllers."
 since: 3x
-install: manual
+install: auto
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

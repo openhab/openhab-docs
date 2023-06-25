@@ -6,7 +6,7 @@ type: voice
 description: "Mimic (version 3 and above) is an offline open source Text-To-speech engine designed by Mycroft A.I. for the eponym Vocal Assistant, that provides multiple voices, available in different languages and variants."
 since: 3x
 logo: images/addons/mimictts.png
-install: manual
+install: auto
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

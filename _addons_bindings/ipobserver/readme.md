@@ -6,7 +6,7 @@ type: binding
 description: "This binding is for any weather station that sends data to an IP Observer module."
 since: 3x
 logo: images/addons/ipobserver.png
-install: manual
+install: auto
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

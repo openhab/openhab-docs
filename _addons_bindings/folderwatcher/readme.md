@@ -3,9 +3,9 @@ id: folderwatcher
 label: FolderWatcher
 title: FolderWatcher - Bindings
 type: binding
-description: "This binding is intended to monitor FTP, local folder and S3 bucket and its subfolders and notify of new files"
+description: "This binding is intended to monitor a local folder, FTP and S3 bucket and their subfolders and notify of new files."
 since: 3x
-install: manual
+install: auto
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
@@ -14,38 +14,38 @@ install: manual
 
 # FolderWatcher Binding
 
-This binding is intended to monitor FTP, local folder and S3 bucket and its subfolders and notify of new files
+This binding is intended to monitor a local folder, FTP and S3 bucket and their subfolders and notify of new files.
 
 ## Supported Things
 
-Currently the binding support three types of things: `ftpfolder`, `localfolder` and `s3bucket`.
+The binding support three types of things: `localfolder`, `ftpfolder` and `s3bucket`.
 
 ## Thing Configuration
 
-The `ftpfolder` thing has the following configuration options:
-
-| Parameter         | Name                     | Description                         | Required | Default value |
-|-------------------|--------------------------|-------------------------------------|----------|---------------|
-| ftpAddress        | FTP server               | IP address of FTP server            | yes      | n/a           |
-| ftpPort           | FTP port                 | Port of FTP server                  | yes      | 21            |
-| secureMode        | FTP Security             | FTP Security                        | yes      | None          |
-| ftpUsername       | Username                 | FTP user name                       | yes      | n/a           |
-| ftpPassword       | Password                 | FTP password                        | yes      | n/a           |
-| ftpDir            | RootDir                  | Root directory to be watched        | yes      | n/a           |
-| listRecursiveFtp  | List Sub Folders         | Allow listing of sub folders        | yes      | No            |
-| listHidden        | List Hidden              | Allow listing of hidden files       | yes      | false         |
-| connectionTimeout | Connection timeout, s    | Connection timeout for FTP request  | yes      | 30            |
-| pollInterval      | Polling interval, s      | Interval for polling folder changes | yes      | 60            |
-| diffHours         | Time stamp difference, h | How many hours back to analyze      | yes      | 24            |
-
 The `localfolder` thing has the following configuration options:
 
-| Parameter          | Name                | Description                         | Required | Default value |
-|--------------------|---------------------|-------------------------------------|----------|---------------|
-| localDir           | Local Directory     | Local directory to be watched       | yes      | n/a           |
-| listHiddenLocal    | List Hidden         | Allow listing of hidden files       | yes      | No            |
-| pollIntervalLocal  | Polling interval, s | Interval for polling folder changes | yes      | 60            |
-| listRecursiveLocal | List Sub Folders    | Allow listing of sub folders        | yes      | No            |
+| Parameter          | Name                        | Description                         | Required | Default value |
+| ------------------ | --------------------------- | ----------------------------------- | -------- | ------------- |
+| localDir           | Local Directory             | Local directory to be watched       | yes      | n/a           |
+| listHiddenLocal    | List Hidden                 | Allow listing of hidden files       | yes      | No            |
+| pollIntervalLocal  | Polling interval in seconds | Interval for polling folder changes | yes      | 60            |
+| listRecursiveLocal | List Sub Folders            | Allow listing of sub folders        | yes      | No            |
+
+The `ftpfolder` thing has the following configuration options:
+
+| Parameter         | Name                           | Description                         | Required | Default value |
+| ----------------- | ------------------------------ | ----------------------------------- | -------- | ------------- |
+| ftpAddress        | FTP server                     | IP address of FTP server            | yes      | n/a           |
+| ftpPort           | FTP port                       | Port of FTP server                  | yes      | 21            |
+| secureMode        | FTP Security                   | FTP Security                        | yes      | None          |
+| ftpUsername       | Username                       | FTP user name                       | yes      | n/a           |
+| ftpPassword       | Password                       | FTP password                        | yes      | n/a           |
+| ftpDir            | RootDir                        | Root directory to be watched        | yes      | n/a           |
+| listRecursiveFtp  | List Sub Folders               | Allow listing of sub folders        | yes      | No            |
+| listHidden        | List Hidden                    | Allow listing of hidden files       | yes      | false         |
+| connectionTimeout | Connection timeout in seconds  | Connection timeout for FTP request  | yes      | 30            |
+| pollInterval      | Polling interval in seconds    | Interval for polling folder changes | yes      | 60            |
+| diffHours         | Time stamp difference in hours | How many hours back to analyze      | yes      | 24            |
 
 The `s3bucket` thing has the following configuration options:
 
@@ -60,7 +60,7 @@ The `s3bucket` thing has the following configuration options:
 | s3Anonymous    | Anonymous Connection | Connect anonymously (works for public buckets)     | yes      | true          |
 ## Events
 
-This binding currently supports the following events:
+This binding supports the following event:
 
 | Channel Type ID | Item Type | Description                |
 |-----------------|-----------|----------------------------|
@@ -71,7 +71,7 @@ This binding currently supports the following events:
 Thing configuration:
 
 ```java
-folderwatcher:localfolder:myLocalFolder [ localDir="/myfolder", pollIntervalLocal=60, listHiddenLocal="false", listRecursiveLocal="false" ] 
+folderwatcher:localfolder:myLocalFolder [ localDir="/myfolder", pollIntervalLocal=60, listHiddenLocal="false", listRecursiveLocal="false" ]
 folderwatcher:ftpfolder:myLocalFolder   [ ftpAddress="X.X.X.X", ftpPort=21, secureMode="EXPLICIT", ftpUsername="username", ftpPassword="password", ftpDir="/myfolder/",  listHidden="true", listRecursiveFtp="true", connectionTimeout=33, pollInterval=66, diffHours=25 ]
 folderwatcher:s3bucket:myS3bucket       [ s3BucketName="mypublic-bucket", pollIntervalS3=60, awsRegion="us-west-1", s3Anonymous="true" ]
 
@@ -79,29 +79,25 @@ folderwatcher:s3bucket:myS3bucket       [ s3BucketName="mypublic-bucket", pollIn
 
 ### Using in a rule:
 
-FTP example:
-
-```java
-rule "New FTP file"
-when 
-    Channel "folderwatcher:ftpfolder:myLocalFolder:newfile" triggered
-then
-
-    logInfo("NewFTPFile", receivedEvent.toString())
-
-end
-```
-
 Local folder example:
 
 ```java
 rule "New Local file"
-when 
+when
     Channel "folderwatcher:localfolder:myFTPFolder:newfile" triggered
 then
-
     logInfo("NewLocalFile", receivedEvent.toString())
+end
+```
 
+FTP example:
+
+```java
+rule "New FTP file"
+when
+    Channel "folderwatcher:ftpfolder:myLocalFolder:newfile" triggered
+then
+    logInfo("NewFTPFile", receivedEvent.toString())
 end
 ```
 
@@ -109,11 +105,9 @@ S3 bucket example:
 
 ```java
 rule "New S3 file"
-when 
+when
     Channel "folderwatcher:s3bucket:myS3bucket:newfile" triggered
 then
-
     logInfo("NewS3File", receivedEvent.toString())
-
 end
 ```

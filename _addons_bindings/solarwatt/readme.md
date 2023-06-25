@@ -6,7 +6,7 @@ type: binding
 description: "Binding to query a [solarwatt](https://www.solarwatt.de/) [energy manager](https://www.solarwatt.de/energie-management/energymanager) and read the values of all attached devices."
 since: 3x
 logo: images/addons/solarwatt.png
-install: manual
+install: auto
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
@@ -18,6 +18,18 @@ install: manual
 Binding to query a [solarwatt](https://www.solarwatt.de/) [energy manager](https://www.solarwatt.de/energie-management/energymanager) and read the values of all attached devices.
 
 All supported values and devices were discovered while playing with my own energy manager.
+
+## Supported devices
+
+* Solarwatt Energymanager; ie. the DIN rail mounted device in your house distribution.
+
+## Not supported by this binding
+
+* Solarwatt Manager/Manager Flex; ie. the black square device that is wall mounted.
+ 
+The Solarwatt Manager already contains an OpenHAB installation which can be connected to
+other installations via [Remote openHAB Binding](https://www.openhab.org/addons/bindings/remoteopenhab/).
+
 
 ## Supported Things
 

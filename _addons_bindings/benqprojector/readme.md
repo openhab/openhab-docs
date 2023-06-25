@@ -6,7 +6,7 @@ type: binding
 description: "This binding is compatible with BenQ projectors that support the control protocol via the built-in Ethernet port, serial port or USB to serial adapter."
 since: 3x
 logo: images/addons/benqprojector.png
-install: manual
+install: auto
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

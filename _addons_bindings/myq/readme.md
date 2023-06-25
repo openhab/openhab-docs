@@ -5,7 +5,7 @@ title: MyQ - Bindings
 type: binding
 description: "This binding integrates with the [The Chamberlain Group MyQ](https://www.myq.com) cloud service. It allows monitoring and control over [MyQ](https://www.myq.com) enabled garage doors manufactured by LiftMaster, Chamberlain and Craftsman."
 since: 3x
-install: manual
+install: auto
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
