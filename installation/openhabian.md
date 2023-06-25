@@ -63,21 +63,22 @@ The included **openHABian Configuration Tool** [`openhabian-config`](#openhabian
 
 ... and much more
 
-## On openHAB 2 and 3
-openHABian will install **openHAB 3** by default.
-When openHAB3 was released, there have been some big changes also to openHABian such as to install Java 11 and to use changed file and directory names so you cannot simple upgrade the packages without adapting the rest of your server system, the openHABian installation that is.
-openHAB 2 will continue to work on openHABian, but openHAB 2 support is no longer actively maintained and the software will only receive select patches deemed necessary by the maintainers of the project.
+## On openHAB 2, 3 and 4
+openHABian will install **openHAB 4** and Java 17 by default.
+(Before general availability of OH4 it will be the latest milestone version, to be replace by the release version when that becomes available).
+When openHAB3 was released some 3 years ago, there have been some big changes also to openHABian such as to install Java 11 and to use changed file and directory names so you cannot simple upgrade the packages without adapting the rest of your server system, the openHABian installation that is.
+openHAB 2 will continue to work on openHABian, but openHAB 2 support is no longer actively maintained.
 If you need openHAB 2 support please use the `stable` branch of openHABian.
 You can switch branches using menu option 01 in `openhabian-config` but ATTENTION you cannot up- or downgrade this way and you cannot arbitrarily change versions.
 There's a high risk you mess up your system if you do.
 
-### Deploy openHAB 2
-The image will install openHAB 3 by default, to have it install openHAB 2 right from the beginning, set` clonebranch=stable` in `openhabian.conf` before first boot.
+### Deploy openHAB 2 or 3
+The image will install openHAB 4 by default, to have it install openHAB 2 or 3 right from the beginning, set `clonebranch=stable` or `clonebranch=openhab3` in `openhabian.conf` before first boot.
 
-## Upgrading openHAB 2 to openHAB 3
-For openHABian users running openHAB 2.X, `openhabian-config` offers to migrate the openHABian environment and install openHAB3 for you.
+## Upgrading openHAB 2 to current openHAB
+For openHABian users still running openHAB 2.X, `openhabian-config` offers to migrate the openHABian environment and install current openHAB for you.
 Menu option 42 will do the upgrade.
-Be aware that it isn't the [answer to the ultimate question](https://en.wikipedia.org/wiki/Phrases_from_The_Hitchhiker%27s_Guide_to_the_Galaxy#The_Answer_to_the_Ultimate_Question_of_Life,_the_Universe,_and_Everything_is_42): there is ONLY an openHAB upgrade path, you cannot downgrade from openHAB 3 to openHAB 2.
+Be aware that it isn't the [answer to the ultimate question](https://en.wikipedia.org/wiki/Phrases_from_The_Hitchhiker%27s_Guide_to_the_Galaxy#The_Answer_to_the_Ultimate_Question_of_Life,_the_Universe,_and_Everything_is_42): there is ONLY an openHAB upgrade path, you cannot downgrade to openHAB 2.
 
 ::: warning No downgrades
 Take an openHAB config backup BEFORE you upgrade from openHAB v2 to v3. You should also take a system level backup!
@@ -233,7 +234,7 @@ apt-get update
 apt-get install git
 
 # download, link and create config file
-git clone -b openHAB3 https://github.com/openhab/openhabian.git /opt/openhabian
+git clone -b openHAB https://github.com/openhab/openhabian.git /opt/openhabian
 ln -s /opt/openhabian/openhabian-setup.sh /usr/local/bin/openhabian-config
 cp /opt/openhabian/build-image/openhabian.conf /etc/openhabian.conf
 ```
@@ -258,7 +259,7 @@ Take care this listing may be outdated. We try to make install options independe
 
 ## openHABian Configuration Tool
 
-The following instructions are developed for a Raspberry Pi but should be applicable to all hardware / all openHABian environments.
+The following instructions are written for a Raspberry Pi but should be applicable to all hardware / all openHABian environments.
 Once connected to the command line console of your system, please execute the openHABian configuration tool by typing the following command:
 
 (Hint: sudo executes a command with elevated rights and will hence ask for your password. The default is `openhabian`).
@@ -278,17 +279,12 @@ Press <kbd>Esc</kbd> twice to exit the configuration tool.
 
 ### Linux Hints
 
-Many helpful articles can be found on the internet, for example:
+If you're a newbie to Linux, you sooner or later will have to know some Linux if you want to copy some files or are on the search for a solution to a problem.
+To prepare, take a few minutes to study these tutorials and get to know the most basic commands and tools to be able to navigate on your Linux system, edit configurations, check the system state or look at log files.
 
 -   "Learn the ways of Linux-fu, for free" interactively with exercises at [linuxjourney.com](https://linuxjourney.com).
 -   The official Raspberry Pi help articles over at [raspberrypi.org](https://www.raspberrypi.org/help)
 -   "Now what?", Tutorial on the Command line console at [LinuxCommand.org](http://linuxcommand.org/index.php)
-
-_The good news:_ openHABian helps you to stay away from Linux - _The bad news:_ not for long...
-
-Regardless of if you want to copy some files or are on the search for a solution to a problem, sooner or later you'll have to know some Linux.
-Take a few minutes to study the above Tutorials and get to know the most basic commands and tools to be able to navigate on your Linux system, edit configurations, check the system state or look at log files.
-It's not complicated and something that doesn't hurt on one's résumé.
 
 ### First steps with openHAB
 
@@ -513,7 +509,7 @@ You'll also see commits "fly by" when executing the "Update" function within the
 ### Did my Installation succeed? What to do in case of a problem?
 openHABian setup will take 15 up to 45 minutes to complete all steps, depending on your device's performance and your internet connection.
 
-Watch the progress on the console or the web interface at <https://yourIP/> or <http://openhabian/> if that name has become available.
+Watch the progress on the console or the web interface at <https://yourIP:81/> or <http://openhabian/> if that name has become available.
 Double-check the IP address and name with your router while you wait.
 If there is absolutely no output for more than 10 minutes, your installation has failed in the first initialization phase.
 There probably is a problem with the way your router or local network are setup.
@@ -556,7 +552,7 @@ Consult the [debug guide](openhabian-DEBUG.md) and move on from there.
 #### Can I switch openHAB 2 and 3 via openHABian branches?
 
 openHABian installs the latest stable build of openHAB.
-The standard openHABian `openHAB3` and `main` branches will install the new openHAB version 3 and the old `stable` branch will install the old openHAB version 2.
+The standard openHABian `openHAB` and `main` branches will install the new openHAB version 4 and the old `openHAB3` and `stable` branch will install the old openHAB version 3 and 2, respectively.
 You can migrate between versions by selecting the corresponding 4X menu option.
 That should also result in an openHABian branch change.
 If you want to choose from stable, snapshot or milestone releases, please do so via `openhabian-config` tool (also menu 4X).
