@@ -62,7 +62,7 @@ The developer sidebar search ignores case and searches inside the following enti
   - Item name & Thing UID of triggers, actions & conditions
   - script code (e.g. Rules DSL, JavaScript, and even Blockly)
   - script MIME types (requires exact match)
-  - lists Blockly scripts (using 'block', 'blockly' or 'blocksource' as search string)
+  - Blockly scripts (using 'block', 'blockly' or 'blocksource' as search string, where case is ignored)
   - tags (requires exact match)
 
 ### Pinned Objects
