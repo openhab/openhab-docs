@@ -53,7 +53,7 @@ The developer sidebar search ignores case and searches inside the following enti
   - name
   - label
   - tags (requires exact match)
-  - metadata namespaces (requires exact match)
+  - metadata
 - Pages
   - uid
   - label
@@ -62,6 +62,8 @@ The developer sidebar search ignores case and searches inside the following enti
   - Item name & Thing UID of triggers, actions & conditions
   - script code (e.g. Rules DSL, JavaScript, and even Blockly)
   - script MIME types (requires exact match)
+  - lists Blockly scripts (using 'block', 'blockly' or 'blocksource' as search string)
+  - tags (requires exact match)
 
 ### Pinned Objects
 
