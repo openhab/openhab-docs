@@ -82,7 +82,7 @@ _Function:_ Retrieve event context related information of the rule
 A rule carries contextual information when triggered - this block can retrieve that information.
 
 - The rule trigger type defines which of the attributes are available to the rule - they will not all be available.
-- For more detailed information see [Event Object Attributes](https://openhab-scripters.github.io/openhab-helper-libraries/Guides/Event%20Object%20Attributes.html) or [openHAB Events](https://www.openhab.org/docs/developer/utils/events.html).
+- For more detailed information see [UI Event Object](https://next.openhab.org/addons/automation/jsscripting/#ui-event-object) or [openHAB Events](https://www.openhab.org/docs/developer/utils/events.html).
 
 ## Transform values via Map, Regex or JsonPath and others
 
