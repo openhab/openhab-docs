@@ -496,8 +496,8 @@ Video url="https://demo.openhab.org/Hue.m4v"
 ### Element Type 'Chart'
 
 ```java
-Chart [item=<itemname>] [icon="<iconname>"] [label="<labelname>"] [refresh=xxxx]
-[period=xxxx] [service="<service>"] [legend=true/false] [forceasitem=true/false] [yAxisDecimalPattern=xxxx]
+Chart item=<itemname> [icon="<iconname>"] [label="<labelname>"] [refresh=xxxx]
+period=xxxx [service="<service>"] [legend=true/false] [forceasitem=true/false] [yAxisDecimalPattern=xxxx]
 ```
 
 Adds a time-series chart object for the display of logged data.

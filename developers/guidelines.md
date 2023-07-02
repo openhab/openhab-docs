@@ -180,13 +180,13 @@ class MyCoolClass {
 }
 ```
 
-- Parametrized logging must be used (instead of string concatenation).
+- Parameterized logging must be used (instead of string concatenation).
 
 ```java
 void myFun() {
     String someValue = "abc";
     int someInt = 12;
-    logger.log("Current value is {} and int is {}", someValue, someInt);
+    logger.debug("Current value is {} and int is {}", someValue, someInt);
 }
 ```
 
