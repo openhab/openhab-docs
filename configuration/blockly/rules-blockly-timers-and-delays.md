@@ -18,13 +18,24 @@ More about that topic can be viewed at ![youtube](../images/blockly/youtube-logo
 
 ## Overview of the Timers and Delays category
 
-> ![timers-and-delays](../images/blockly/blockly-timers-and-delays-1.png) ![timers-and-delays.png](../images/blockly/blockly-timers-and-delays-2.png)
+![timers-and-delays](../images/blockly/blockly-timers-overview.png)
 
-## Timer Naming
+## Timer Naming and Scope
 
 Timers are created and referred to by name, enabling manipulation within a rule.
 
-> **Important**: a named timer is _only_ available within the same rule. The same timer _cannot_ be accessed via a different rule. A different rule with a timer of the same name results into two separate timers.
+A timer is by default created within the scope of that particular rule which is called  a "private" timer.
+When the timer is created as a shared timer it can also be accessed under this name from a different rule.
+
+![timer-scope](../images/blockly/blockly-timer-shared.png)
+
+This example starts a timer in Rule 1
+
+![timer-shared](../images/blockly/blockly-timer-example-shared-1.png)
+
+and cancels the same timer in Rule 2
+
+![timer-shared-cancel](../images/blockly/blockly-timer-shared-cancel.png)
 
 ### Wait for
 
@@ -97,12 +108,14 @@ Though it may not seem to be obvious, the same rule can be retriggered at any ti
 The following code example and the following are provided to understand what exactly happens behind the scenes:
 
 ```javascript
-if (typeof this.timers['MyTimer'] === 'undefined' || this.timers['MyTimer'].hasTerminated()) {
-  this.timers['MyTimer'] = scriptExecution.createTimer(zdt.now().plusSeconds(10), function () {
-    })
+if (cache.private.exists('MyTimer') === false || cache.private.get('MyTimer').hasTerminated()) {
+  cache.private.put('MyTimer', actions.ScriptExecution.createTimer('MyTimer', time.ZonedDateTime.now().plusSeconds(10), function () {
+    cache.private.remove('MyTimer');
+  }));
 } else {
-  this.timers['MyTimer'].reschedule(zdt.now().plusSeconds(10));
-}
+  cache.private.get('MyTimer').reschedule(time.ZonedDateTime.now().plusSeconds(10));
+};
+
 ```
 
 **Simple timer-block**
@@ -112,10 +125,12 @@ The simple timer-block generates the code shown underneath the image below.
 ![simple-timer](../images/blockly/blockly-simple-timer.png)
 
 ```javascript
-if (typeof this.timers['simpleTimerBlock'] === 'undefined' || this.timers['simpleTimerBlock'].hasTerminated()) {
-  this.timers['simpleTimerBlock'] = scriptExecution.createTimer(zdt.now().plusSeconds(10), function () {
-    })
-}
+if (cache.private.exists('MyTimer') === false || cache.private.get('MyTimer').hasTerminated()) {
+  cache.private.put('MyTimer', actions.ScriptExecution.createTimer('MyTimer', time.ZonedDateTime.now().plusSeconds(10), function () {
+    cache.private.remove('MyTimer');
+  }));
+};
+
 ```
 
 **Retrigger timer-block**
@@ -129,24 +144,27 @@ The retrigger timer-block inserts an additional `else{}` branch into the generat
 In the case of _do nothing_ the `else{}` branch is empty (which turns to be almost equals to the simple-timer).
 
 ```javascript
-if (typeof this.timers['nothingTimerBlock'] === 'undefined' || this.timers['nothingTimerBlock'].hasTerminated()) {
-  this.timers['nothingTimerBlock'] = scriptExecution.createTimer(zdt.now().plusSeconds(10), function () {
-    })
+if (cache.private.exists('MyTimer') === false || cache.private.get('MyTimer').hasTerminated()) {
+  cache.private.put('MyTimer', actions.ScriptExecution.createTimer('MyTimer', time.ZonedDateTime.now().plusSeconds(10), function () {
+    cache.private.remove('MyTimer');
+  }));
 } else {
   // do nothing
-}
+};
+
 ```
 
 In the case of _cancel_ the `else{}` branch contains code to cancel the timer.
 
 ```javascript
-if (typeof this.timers['cancelTimerBlock'] === 'undefined' || this.timers['cancelTimerBlock'].hasTerminated()) {
-  this.timers['cancelTimerBlock'] = scriptExecution.createTimer(zdt.now().plusSeconds(10), function () {
-    })
+if (cache.private.exists('MyTimer') === false || cache.private.get('MyTimer').hasTerminated()) {
+  cache.private.put('MyTimer', actions.ScriptExecution.createTimer('MyTimer', time.ZonedDateTime.now().plusSeconds(10), function () {
+    cache.private.remove('MyTimer');
+  }));
 } else {
-  this.timers['cancelTimerBlock'].cancel();
-  this.timers['cancelTimerBlock'] = undefined;
-}
+  cache.private.remove('MyTimer').cancel();
+};
+
 ```
 
 In the case of _reschedule_ the `else{}` statement contains code to reschedule the timer - restart the countdown. In the example generated code below:
@@ -157,18 +175,19 @@ In the case of _reschedule_ the `else{}` statement contains code to reschedule t
 - Then timer will be rescheduled for another 10 second countdown, so will execute the code within its block at 15 elapsed seconds.
 
 ```javascript
-if (typeof this.timers['rescheduleTimerBlock'] === 'undefined' || this.timers['rescheduleTimerBlock'].hasTerminated()) {
-  this.timers['rescheduleTimerBlock'] = scriptExecution.createTimer(zdt.now().plusSeconds(10), function () {
-    logger.info('I am doing my job');
-    })
+if (cache.private.exists('MyTimer') === false || cache.private.get('MyTimer').hasTerminated()) {
+  cache.private.put('MyTimer', actions.ScriptExecution.createTimer('MyTimer', time.ZonedDateTime.now().plusSeconds(10), function () {
+    cache.private.remove('MyTimer');
+  }));
 } else {
-  this.timers['rescheduleTimerBlock'].reschedule(zdt.now().plusSeconds(10));
-}
+  cache.private.get('MyTimer').reschedule(time.ZonedDateTime.now().plusSeconds(10));
+};
 ```
 
 ### Cancel Timer
 
 ![cancel-timer.png](../images/blockly/blockly-cancel-timer.png)
+
 _Function_: Cancels the existing named timer, preventing code within the timer block from executing.
 
 ### Timer is Active
