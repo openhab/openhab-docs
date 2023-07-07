@@ -5,6 +5,7 @@ title: Energi Data Service - Bindings
 type: binding
 description: "This binding integrates electricity prices from the Danish Energi Data Service ('Open energy data from Energinet to society')."
 since: 3x
+logo: images/addons/energidataservice.png
 install: auto
 ---
 
