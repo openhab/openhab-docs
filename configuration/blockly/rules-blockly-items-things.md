@@ -141,7 +141,7 @@ These attributes are returned with the following types:
 - state: State
 - numeric state: Number
 - quantity state: [Quantity](rules-blockly-uom.html#unit-of-measurement-blocks)
-- category: String
+- category:
 - tags: Array, e.g.
 
 ```json

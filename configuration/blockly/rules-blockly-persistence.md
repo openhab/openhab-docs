@@ -30,6 +30,7 @@ The date-blocks shown in this section are described previously in [Date handling
 
 More about that topic can be viewed at ![youtube](../images/blockly/youtube-logo-small.png) [Using Persistence data](https://youtu.be/KwhYKy1_qVk?t=1440)
 
+
 ### Get statistical value of an item
 
 ![statistical-value](../images/blockly/blockly-persistence-get-statistical-value.png)
@@ -54,7 +55,12 @@ In the case of the following two functions the block changes its appearance by r
 - previous state value: Gets the previous state with option to skip to different value as current
 - previous state value time: Gets the time when previous state last occurred with option to skip to different value as current
 
-The skip option set to true allows to search for first state that is different from the current state.
+The persistence dropdown allows to select the persistence storage from which the value should be retrieved.
+It automatically shows only the storage types that are currently installed on your openHAB instance.
+
+Note that not all persistence storage types (i.e. the default rrd4j) support all statistical methods.
+
+The **skip option** set to true allows to search for first state that is different from the current state.
 
 _Important:_ This option is not supported by all persistence databases and may throw an error in that case (for example the standard rrd4j does _not_ support it while influxdb does support it).
 
