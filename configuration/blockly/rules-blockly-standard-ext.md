@@ -43,6 +43,12 @@ _Function:_ The bitwise NOT (~) operator inverts the bits of its operand.
 
 ![blockly-bitwise-not.png](../images/blockly/blockly-bitwise-not.png)
 
+### Rounding
+
+The standard block has been extended to provide a rounding function with the ability to set the number of decimal places:
+
+![math-round](../images/blockly/blockly-math-round.png)
+
 ## Text
 
 The Text section is the general section that allows text or string manipulation
@@ -143,6 +149,8 @@ Example
 ![lists-overview](../images/blockly/blockly-lists-dictionary-overview.png)
 ![lists-overview-concat](../images/blockly/blockly-lists-concatenate.png)
 
+![blockly-map-for-each](../images/blockly/blockly-map-for-each.png)
+
 ### Dictionary for managing key / value pairs
 
 The dictionary is a holder for key value pairs that can be passed along as one.
@@ -166,6 +174,18 @@ _Function:_ Retrieves the value of the key in the given directory
 **Example:**
 
 ![dictionary-getkey-example](../images/blockly/blockly-lists-dictionary-getkey-example.png)
+
+### Loop over a dictionary
+
+This block can be found in the Loops section and is a dedicated block that allows to iterate over the elements of a dictionary.
+The loop provides the value into the variable that was choosen in the drop down.
+See the examples below how the loop can be used.
+
+![map-for-each](../images/blockly/blockly-map-for-each.png)
+
+Either the dictionary itself can be provided directly or via a variable.
+
+![dictionary-foreach-example](../images/blockly/blockly-map-foreach-example.png)
 
 ### Concatenate lists
 
