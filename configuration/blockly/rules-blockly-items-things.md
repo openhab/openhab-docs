@@ -139,8 +139,10 @@ These attributes are returned with the following types:
 - name: String
 - label: String
 - state: State
-- category: String
-- tag: Array, e.g.
+- numeric state: Number
+- quantity state: [Quantity](rules-blockly-uom.html#unit-of-measurement-blocks)
+- category:
+- tags: Array, e.g.
 
 ```json
 [plannedTimes]

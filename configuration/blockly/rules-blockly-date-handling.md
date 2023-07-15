@@ -224,11 +224,14 @@ More about that topic can be viewed at ![youtube](../images/blockly/youtube-logo
 
 ### Get String representation of date ("text of")
 
+![get-date-string](../images/blockly/blockly-get-date-string-without.png)
+
 ![date-tostring](../images/blockly/blockly-get-date-string.png)
 
 Type: _String_
 
-Returns the String representation of a given _ZonedDateTime_-block, with or without the time.
+Returns the String representation of a given _ZonedDateTime_-block, with, without the time or formatted in openHAB time (like in the logs).
+It also allows to return the date in a custom format which can be provided in a separate block.
 
 since 3.3: also returns the same datetime format that is used by openHAB itself
 
