@@ -140,82 +140,85 @@ Imperial (base unit symbols):
 
 SI (base unit symbols):
 
-| Type                   | Unit                             | Symbol |
-|------------------------|----------------------------------|--------|
-| Acceleration           | Metre per Second squared         | m/s²   |
-| Acceleration           | Standard Gravity                 | ɡₙ     |
-| AmountOfSubstance      | Mole                             | mol    |
-| AmountOfSubstance      | Deutscher Härtegrad              | °dH    |
-| Angle                  | Radian                           | rad    |
-| Angle                  | Degree                           | °      |
-| Angle                  | Minute Angle                     | '      |
-| Angle                  | Second Angle                     | ''     |
-| Area                   | Square Metre                     | m²     |
-| ArealDensity           | Dobson Unit                      | DU     |
-| CatalyticActivity      | Katal                            | kat    |
-| DataAmount             | Bit                              | bit    |
-| DataAmount             | Byte                             | B      |
-| DataAmount             | Octet                            | o      |
-| DataTransferRate       | Bit per Second                   | bit/s  |
-| Density                | Gram per cubic Metre             | g/m³   |
-| Dimensionless          | Percent                          | %      |
-| Dimensionless          | Parts per Million                | ppm    |
-| Dimensionless          | Decibel                          | dB     |
-| ElectricPotential      | Volt                             | V      |
-| ElectricCapacitance    | Farad                            | F      |
-| ElectricCharge         | Coulomb                          | C      |
-| ElectricCharge         | Ampere Hour                      | Ah     |
-| ElectricConductance    | Siemens                          | S      |
-| ElectricConductivity   | Siemens per Metre                | S/m    |
-| ElectricCurrent        | Ampere                           | A      |
-| ElectricInductance     | Henry                            | H      |
-| ElectricResistance     | Ohm                              | Ω      |
-| Energy                 | Joule                            | J      |
-| Energy                 | Watt Second                      | Ws     |
-| Energy                 | Watt Hour                        | Wh     |
-| Energy                 | Volt-Ampere Hour                 | VAh    |
-| Energy                 | Volt-Ampere Reactive Hour        | varh   |
-| Force                  | Newton                           | N      |
-| Frequency              | Hertz                            | Hz     |
-| Illuminance            | Lux                              | lx     |
-| Intensity              | Irradiance                       | W/m²   |
-| Intensity              | Microwatt per square Centimeter  | µW/cm² |
-| Length                 | Metre                            | m      |
-| LuminousFlux           | Lumen                            | lm     |
-| LuminousIntensity      | Candela                          | cd     |
-| MagneticFlux           | Weber                            | Wb     |
-| MagneticFluxDensity    | Tesla                            | T      |
-| Mass                   | Gram                             | g      |
-| Power                  | Watt                             | W      |
-| Power                  | Volt-Ampere                      | VA     |
-| Power                  | Volt-Ampere Reactive             | var    |
-| Power                  | Decibel-Milliwatts               | dBm    |
-| Pressure               | Pascal                           | Pa     |
-| Pressure               | Hectopascal                      | hPa    |
-| Pressure               | Millimetre of Mercury            | mmHg   |
-| Pressure               | Bar                              | bar    |
-| Radioactivity          | Becquerel                        | Bq     |
-| RadiationDoseAbsorbed  | Gray                             | Gy     |
-| RadiationDoseEffective | Sievert                          | Sv     |
-| SolidAngle             | Steradian                        | sr     |
-| Speed                  | Metre per Second                 | m/s    |
-| Speed                  | Knot                             | kn     |
-| Temperature            | Kelvin                           | K      |
-| Temperature            | Celsius                          | °C     |
-| Temperature[^](#mired-footnote) | Mired                   | mired  |
-| Time                   | Second                           | s      |
-| Time                   | Minute                           | min    |
-| Time                   | Hour                             | h      |
-| Time                   | Day                              | d      |
-| Time                   | Week                             | week   |
-| Time                   | Year                             | y      |
-| Volume                 | Litre                            | l      |
-| Volume                 | Cubic Metre                      | m³     |
-| VolumetricFlowRate     | Litre per Minute                 | l/min  |
-| VolumetricFlowRate     | Cubic Metre per Second           | m³/s   |
-| VolumetricFlowRate     | Cubic Metre per Minute           | m³/min |
-| VolumetricFlowRate     | Cubic Metre per Hour             | m³/h   |
-| VolumetricFlowRate     | Cubic Metre per Day              | m³/d   |
+| Type                      | Unit                             | Symbol |
+|---------------------------|----------------------------------|--------|
+| Acceleration              | Metre per Second squared         | m/s²   |
+| Acceleration              | Standard Gravity                 | ɡₙ     |
+| AmountOfSubstance         | Mole                             | mol    |
+| AmountOfSubstance         | Deutscher Härtegrad              | °dH    |
+| Angle                     | Radian                           | rad    |
+| Angle                     | Degree                           | °      |
+| Angle                     | Minute Angle                     | '      |
+| Angle                     | Second Angle                     | ''     |
+| Area                      | Square Metre                     | m²     |
+| ArealDensity              | Dobson Unit                      | DU     |
+| CatalyticActivity         | Katal                            | kat    |
+| DataAmount                | Bit                              | bit    |
+| DataAmount                | Byte                             | B      |
+| DataAmount                | Octet                            | o      |
+| DataTransferRate          | Bit per Second                   | bit/s  |
+| Density                   | Gram per cubic Metre             | g/m³   |
+| Dimensionless             | Percent                          | %      |
+| Dimensionless             | Parts per Million                | ppm    |
+| Dimensionless             | Decibel                          | dB     |
+| ElectricPotential         | Volt                             | V      |
+| ElectricCapacitance       | Farad                            | F      |
+| ElectricCharge            | Coulomb                          | C      |
+| ElectricCharge            | Ampere Hour                      | Ah     |
+| ElectricConductance       | Siemens                          | S      |
+| ElectricConductivity      | Siemens per Metre                | S/m    |
+| ElectricCurrent           | Ampere                           | A      |
+| ElectricInductance        | Henry                            | H      |
+| ElectricResistance        | Ohm                              | Ω      |
+| Energy                    | Joule                            | J      |
+| Energy                    | Watt Second                      | Ws     |
+| Energy                    | Watt Hour                        | Wh     |
+| Energy                    | Volt-Ampere Hour                 | VAh    |
+| Energy                    | Volt-Ampere Reactive Hour        | varh   |
+| Energy                    | Calorie                          | cal    |
+| Force                     | Newton                           | N      |
+| Frequency                 | Hertz                            | Hz     |
+| Frequency                 | Revolutions per minute           | rpm    |
+| Illuminance               | Lux                              | lx     |
+| Intensity                 | Irradiance                       | W/m²   |
+| Intensity                 | Microwatt per square Centimeter  | µW/cm² |
+| Length                    | Metre                            | m      |
+| LuminousFlux              | Lumen                            | lm     |
+| LuminousIntensity         | Candela                          | cd     |
+| MagneticFlux              | Weber                            | Wb     |
+| MagneticFluxDensity       | Tesla                            | T      |
+| Mass                      | Gram                             | g      |
+| Power                     | Watt                             | W      |
+| Power                     | Volt-Ampere                      | VA     |
+| Power                     | Volt-Ampere Reactive             | var    |
+| Power                     | Decibel-Milliwatts               | dBm    |
+| Pressure                  | Pascal                           | Pa     |
+| Pressure                  | Hectopascal                      | hPa    |
+| Pressure                  | Millimetre of Mercury            | mmHg   |
+| Pressure                  | Bar                              | bar    |
+| Radioactivity             | Becquerel                        | Bq     |
+| RadiationDoseAbsorbed     | Gray                             | Gy     |
+| RadiationDoseEffective    | Sievert                          | Sv     |
+| RadiationSpecificActivity | Curie                            | Ci     |
+| SolidAngle                | Steradian                        | sr     |
+| Speed                     | Metre per Second                 | m/s    |
+| Speed                     | Knot                             | kn     |
+| Temperature               | Kelvin                           | K      |
+| Temperature               | Celsius                          | °C     |
+| Temperature[^](#mired-footnote) | Mired                      | mired  |
+| Time                      | Second                           | s      |
+| Time                      | Minute                           | min    |
+| Time                      | Hour                             | h      |
+| Time                      | Day                              | d      |
+| Time                      | Week                             | week   |
+| Time                      | Year                             | y      |
+| Volume                    | Litre                            | l      |
+| Volume                    | Cubic Metre                      | m³     |
+| VolumetricFlowRate        | Litre per Minute                 | l/min  |
+| VolumetricFlowRate        | Cubic Metre per Second           | m³/s   |
+| VolumetricFlowRate        | Cubic Metre per Minute           | m³/min |
+| VolumetricFlowRate        | Cubic Metre per Hour             | m³/h   |
+| VolumetricFlowRate        | Cubic Metre per Day              | m³/d   |
 
 <a name="mired-footnote">^</a>: Technically, mireds are the reciprocal of Temperature, but QuantityType and NumberItem will transparently convert between mireds and Kelvin.
 This technicality might be a problem if you are using mireds in rules.
