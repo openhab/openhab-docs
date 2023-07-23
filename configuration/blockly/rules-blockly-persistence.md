@@ -30,7 +30,6 @@ The date-blocks shown in this section are described previously in [Date handling
 
 More about that topic can be viewed at ![youtube](../images/blockly/youtube-logo-small.png) [Using Persistence data](https://youtu.be/KwhYKy1_qVk?t=1440)
 
-
 ### Get statistical value of an item
 
 ![statistical-value](../images/blockly/blockly-persistence-get-statistical-value.png)
