@@ -5,6 +5,7 @@ title: Anthem - Bindings
 type: binding
 description: "The binding allows control of Anthem AV processors over an IP connection to the processor."
 since: 3x
+logo: images/addons/anthem.png
 install: auto
 ---
 
