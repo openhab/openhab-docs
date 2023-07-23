@@ -27,7 +27,7 @@ The following example block gives a good idea of what can be done with the Unit 
 
 ### Unit of Measurement Blocks
 
-These blocks allow you to convert to, add, substract, multiply and divide measurements, which include a [**unit**](docs/concepts/units-of-measurement.html#list-of-units) of measurement which is also called a Quantity Type, as well as comparing values against each other.
+These blocks allow you to convert to, add, substract, multiply and divide measurements, which include a [**unit**](/docs/concepts/units-of-measurement.html#list-of-units) of measurement which is also called a Quantity Type, as well as comparing values against each other.
 
 ### Smart block input type handling
 
