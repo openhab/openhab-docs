@@ -50,6 +50,10 @@ Step 3. Follow the On-Screen instructions in the Control Panel on adding or remo
 
  press the Program Button on the Relay once or the ON/OFF toggle on the switch 3 times
 
+### General Usage Information
+
+
+
 ## Channels
 
 The following table summarises the channels available for the ZWN-RSM1-PLUS -:
@@ -117,7 +121,8 @@ Association group 1 supports 1 node.
 
 Switch Binary Report
 
-Association group 2 supports 3 nodes.
+
+Association group 2 supports 5 nodes.
 
 ## Technical Information
 

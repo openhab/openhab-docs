@@ -1,0 +1,664 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="inovelli_vzw31sn_00_000" listed="false">
+    <label>VZW31-SN Red Series 2-1 Switch</label>
+    <description><![CDATA[
+Red Series 2-1 Switch<br /> <h1>Overview</h1><p>Introducing Z-Wave's first certified 800 Series Light Switch powered by Inovelli. Featuring Z-Wave Long Range which boasts open air signal of up to 1 mile, government level encryption and security, multi-tap scene control, LED notifications, power monitoring and over 60 parameters, this smart switch has it all. Best of all, it was developed by 1,000's of community members, which makes this truly a switch for the smart home enthusiast.<br /></p> <br /> <h2>Inclusion Information</h2><p>When you are ready to include/pair your switch, please start the inclusion process on your Z-Wave enabled hub. If you are unsure how to do that, please refer to the specific hub instructions here:</p><p>Once your hub has started the inclusion process, quickly tap three (3) times on the configuration/favorites button and the LED Bar will start to pulse blue.</p><p>If your switch includes successfully, the LED Bar will blink Green temporarily and then go back to Blue. If the switch does not include successfully, the LED Bar will blink Red temporarily and then go back to Blue.</p><p><b>Note: </b>If you run into issues where your switch is not including, you may have to try an exclusion process. To exclude your switch, start the exclusion process on your hub and then tap the config/favorites button 3x rapidly. If you continue to have issues after an exclusion, you may have to move the switch closer to the hub.</p> <br /> <h2>Exclusion Information</h2><p>Exclusion will reset your device as well and can be done directly from the hub. This is helpful if you’re running into issues with inclusion. To exclude a device, start the exclusion process on your hub and press the Configuration / Favorites Button 3x rapidly. The LED Bar will start pulsing blue and if successful, it will flash green. If unsuccessful it will flash red.<br /></p> <br /> <h2>Wakeup Information</h2><p><br /></p>
+    ]]></description>
+    <category>WallSwitch</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_dimmer" typeId="switch_dimmer">
+        <label>Dimmer</label>
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+          <property name="binding:Command:OnOffType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+        </properties>
+      </channel>
+      <channel id="meter_kwh" typeId="meter_kwh">
+        <label>Electric meter (kWh)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_KWh</property>
+        </properties>
+      </channel>
+      <channel id="meter_watts" typeId="meter_watts">
+        <label>Electric meter (watts)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_W</property>
+        </properties>
+      </channel>
+      <channel id="scene_number" typeId="scene_number">
+        <label>Scene Number</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_CENTRAL_SCENE</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Inovelli</property>
+      <property name="modelId">VZW31-SN</property>
+      <property name="manufacturerId">031E</property>
+      <property name="manufacturerRef">0015:0001</property>
+      <property name="dbReference">1573</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_1_1" type="integer" groupName="configuration">
+        <label>1: Dimming Speed (↑) - Remote</label>
+        <description><![CDATA[
+How fast or slow the light turns on when you change the dim level remotely<br /> <h1>Overview</h1><p><b>Dimmer Mode Only</b><br /></p><p>How fast or slow the light turns on when you change the dim level remotely (ie: dimming from 10-20%, 60-80%, etc)</p><p>More Details<br /></p><p>0 = Instant On<br /></p><p>5 = Fast (500ms)<br /></p><p>126 = Slow (12.6s)</p><p>IF USING A DUMB SWITCH: This parameter will not work when pressing the dumb switch manually.</p><p><b>NOTE: </b>Third party code may need to be implemented (device handler, driver, etc) for this to work properly. Some hubs may not support this feature.</p>
+        ]]></description>
+        <default>25</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_2_1" type="integer" groupName="configuration">
+        <label>2: Dimming Speed (↑) - Local</label>
+        <description><![CDATA[
+How fast or slow the light the light turns on when you hold up on the switch<br /> <h1>Overview</h1><p><b>Dimmer Mode Only</b><br /></p><p>How fast or slow the light the light turns on when you hold up on the switch (ie: dimming from 10-20%, 60-80%, etc)</p><p>More Details</p><p>0 = Instant On</p><p>5 = Fast (500ms)</p><p>126 = Slow (12.6s)</p><p>255 = Sync to Parameter 1</p><p>IF USING A DUMB SWITCH: This parameter will not work when pressing the dumb switch manually.</p>
+        ]]></description>
+        <default>-1</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_3_1" type="integer" groupName="configuration">
+        <label>3: Ramp Rate (Off → On) - Remote</label>
+        <description><![CDATA[
+How fast or slow the light turns on when you remotely bring the switch from Off to On<br /> <h1>Overview</h1><p><b>Dimmer Mode Only</b><br /></p><p>How fast or slow the light turns on when you remotely bring the switch from Off to On</p><p>More Details</p><p>0 = Instant On</p><p>5 = Fast (500ms)</p><p>126 = Slow (12.6s)</p><p>255 = Sync to Parameter 1</p><p><b>NOTE: </b>Third party code may need to be implemented (device handler, driver, etc) for this to work properly. Some hubs may not support this feature.</p>
+        ]]></description>
+        <default>-1</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_4_1" type="integer" groupName="configuration">
+        <label>4: Ramp Rate (Off → On) - Local</label>
+        <description><![CDATA[
+How fast or slow the light turns on when you press the switch up 1x to bring from Off to On<br /> <h1>Overview</h1><p><b>Dimmer Mode Only</b><br /></p><p>How fast or slow the light turns on when you press the switch up 1x to bring from Off to On</p><p>More Details</p><p>0 = Instant On</p><p>5 = Fast (500ms)</p><p>126 = Slow (12.6s)</p><p>255 = Sync to Parameter 3</p>
+        ]]></description>
+        <default>-1</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_5_1" type="integer" groupName="configuration">
+        <label>5: Dimming Speed (↓) - Remote</label>
+        <description><![CDATA[
+How fast or slow the light turns off when you change the dim level remotely<br /> <h1>Overview</h1><p><b>Dimmer Mode Only</b><br /></p><p>How fast or slow the light turns off when you change the dim level remotely (ie: dimming from 80-60%, 20-10%, etc)</p><p>More Details</p><p>0 = Instant Off</p><p>5 = Fast (500ms)</p><p>126 = Slow (12.6s)</p><p>127 = Sync to Parameter 1</p><p>IF USING A DUMB SWITCH: This parameter will not work when pressing the dumb switch manually.</p><p><b>NOTE: </b>Third party code may need to be implemented (device handler, driver, etc) for this to work properly. Some hubs may not support this feature.</p>
+        ]]></description>
+        <default>-1</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_6_1" type="integer" groupName="configuration">
+        <label>6: Dimming Speed (↓) - Local</label>
+        <description><![CDATA[
+How fast or slow the light the light turns off when you hold down on the switch<br /> <h1>Overview</h1><p><b>Dimmer Mode Only</b><br /></p><p>How fast or slow the light the light turns off when you hold down on the switch (ie: dimming from 80-60%, 20-10%, etc)</p><p>More Details</p><p>0 = Instant Off</p><p>5 = Fast (500ms)</p><p>126 = Slow (12.6s)</p><p>127 = Sync to Parameter 2</p><p>IF USING A DUMB SWITCH: This parameter will not work when pressing the dumb switch manually.</p>
+        ]]></description>
+        <default>-1</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_7_1" type="integer" groupName="configuration">
+        <label>7: Ramp Rate (On → Off) - Remote</label>
+        <description><![CDATA[
+How fast or slow the light turns on when you remotely bring the switch from Off to On<br /> <h1>Overview</h1><p><b>Dimmer Mode Only</b><br /></p><p>How fast or slow the light turns on when you remotely bring the switch from Off to On<br /></p><p>More Details<br /></p><p>0 = Instant Off</p><p>5 = Fast (500ms)</p><p>126 = Slow (12.6s)</p><p>255 = Sync to Parameter 3</p><p><b>NOTE:</b> Third party code may need to be implemented (device handler, driver, etc) for this to work properly. Some hubs may not support this feature.</p>
+        ]]></description>
+        <default>-1</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_8_1" type="integer" groupName="configuration">
+        <label>8: Ramp Rate (On → Off) - Local</label>
+        <description><![CDATA[
+How fast or slow the light turns on when you press the switch up 1x to bring from Off to On<br /> <h1>Overview</h1><p><b>Dimmer Mode Only</b><br /></p><p>How fast or slow the light turns on when you press the switch up 1x to bring from Off to On</p><p>More Details</p><p>0 = Instant Off</p><p>5 = Fast (500ms)</p><p>126 = Slow (12.6s)</p><p>255 = Sync to Parameter 4</p>
+        ]]></description>
+        <default>-1</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_9_1" type="integer" groupName="configuration">
+        <label>9: Minimum Dim Level</label>
+        <description><![CDATA[
+Minimum level the light switch will dim to<br /> <h1>Overview</h1><p><b>Dimmer Mode Only</b><br /></p><p>Minimum level the light switch will dim to</p><p>More Details</p><p>Lower the numeric value = lower the min dim level (1 = ~1%)</p><p>Higher the numeric value = higher the min dim level (54 = 99%)</p><p>Great for fixing flickering bulbs or calibrating the bulb if it shuts off prior to 1%</p>
+        ]]></description>
+        <default>1</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_10_1" type="integer" groupName="configuration">
+        <label>10: Maximum Dim Level</label>
+        <description><![CDATA[
+Maximum level the light switch will dim to<br /> <h1>Overview</h1><p><b>Dimmer Mode Only</b><br /></p><p>Maximum level the light switch will dim to</p><p>More Details</p><p>Lower the numeric value = lower the max dim level (2 = ~2%)</p><p>Higher the numeric value = higher the max dim level (99 = 99%)</p><p><b>NOTE:</b> Great for calibrating a bulb when it reaches maximum level before 99%</p>
+        ]]></description>
+        <default>99</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_11_1" type="integer" groupName="configuration">
+        <label>11: Invert Switch</label>
+        <description><![CDATA[
+Inverts the switch (Tapping ↓ = On, Tapping ↑ = Off)<br /> <h1>Overview</h1><p>Inverts the switch (Tapping ↓ = On, Tapping ↑ = Off)</p><p>More Details</p><p>0 = Disabled</p><p>1 = Enabled</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Disabled</option>
+          <option value="1">Enabled</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_12_2" type="integer" groupName="configuration">
+        <label>12: Auto Off Timer</label>
+        <description><![CDATA[
+Automatically turns the switch off after x amount of seconds<br /> <h1>Overview</h1><p>Automatically turns the switch off after x amount of seconds</p><p>More Details</p><p>0 = Disabled</p><p>1 = 1s</p><p>32767 = 32767s</p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_13_1" type="integer" groupName="configuration">
+        <label>13: Default Level - Local</label>
+        <description><![CDATA[
+The default dim level the switch goes to when turned on locally (at the switch)<br /> <h1>Overview</h1><p><b>Dimmer Mode Only</b><br /></p><p>The default dim level the switch goes to when turned on locally (at the switch)</p><p>More Details</p><p>1-99 = Specific level on</p><p>0 = Returns to prior state it was before being turned off</p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_14_1" type="integer" groupName="configuration">
+        <label>14: Default Level - Remote</label>
+        <description><![CDATA[
+The default dim level the switch goes to when powered on via a remote command<br /> <h1>Overview</h1><p><b>Dimmer Mode Only</b><br /></p><p>The default dim level the switch goes to when powered on via a remote command</p><p>More Details</p><p>1-99 = Specific level on</p><p>0 = Returns to prior state it was before being turned off</p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_15_1" type="integer" groupName="configuration">
+        <label>15: Level After Power Restored</label>
+        <description><![CDATA[
+When power is restored, the switch reverts to either On, Off, or Last Level<br /> <h1>Overview</h1><p>When power is restored, the switch reverts to either On, Off, or Last Level</p><p>More Details</p><p>0 = Off</p><p>1-99 = Specific level on</p><p>100 = Returns to level before power outage</p>
+        ]]></description>
+        <default>100</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_17_1" type="integer" groupName="configuration">
+        <label>17: LED Indicator Timeout</label>
+        <description><![CDATA[
+Changes the amount of time (in seconds) the RGB Bar shows the Dim level<br /> <h1>Overview</h1><p>Changes the amount of time (in seconds) the RGB Bar shows the Dim level</p><p>More Details</p><p>0 = Always off</p><p>1 = 1 second after level is adjusted</p><p>10 = 10 seconds after level is adjusted</p><p>11 = Always on</p>
+        ]]></description>
+        <default>11</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_18_2" type="integer" groupName="configuration">
+        <label>18: Active Power Reports</label>
+        <description><![CDATA[
+The power level change that will result in a new power report being sent in wattage (W)<br /> <h1>Overview</h1><p>The power level change that will result in a new power report being sent in wattage (W)</p><p>More Details</p><p>0 = Disabled</p><p>1 = 0.1W change</p><p>10 = 1W change</p><p>100 = 10W change</p><p>32767 = 3276.7W</p>
+        ]]></description>
+        <default>10</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_19_2" type="integer" groupName="configuration">
+        <label>19: Periodic Power &amp; Energy Reports</label>
+        <description><![CDATA[
+Time period between consecutive power and energy reports being sent (in seconds)<br /> <h1>Overview</h1><p>Time period between consecutive power and energy reports being sent (in seconds)</p><p>More Details</p><p>0 = Disabled</p><p>1 = 1s</p><p>32767 = 32767s</p><p><b>NOTE:</b> Timer resets after every report is sent</p>
+        ]]></description>
+        <default>3600</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_20_2" type="integer" groupName="configuration">
+        <label>20: Energy Reports</label>
+        <description><![CDATA[
+The energy level change that will result in a new energy report being sent in kilowatt hours (kWh)<br /> <h1>Overview</h1><p>The energy level change that will result in a new energy report being sent in kilowatt hours (kWh)</p><p>More Details</p><p>0 = Disabled</p><p>1 = 0.01kWh</p><p>10 = 0.1kWh</p><p>100 = 1kWh</p><p>32767 = 327.67kWh</p>
+        ]]></description>
+        <default>10</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_21_1" type="integer" groupName="configuration">
+        <label>21: AC Power Type</label>
+        <description><![CDATA[
+Select whether you are wiring your switch with or without a neutral wire<br /> <h1>Overview</h1><p>Select whether you are wiring your switch with or without a neutral wire</p><p>More Details</p><p>0 = No-Neutral</p><p>1 = Neutral</p>
+        ]]></description>
+        <default>1</default>
+        <options>
+          <option value="0">No-Neutral</option>
+          <option value="1">Neutral</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_22_1" type="integer" groupName="configuration">
+        <label>22: Aux Switch Type &amp; Full Sine Mode</label>
+        <description><![CDATA[
+Select the Aux Switch type as well as Full Sine Mode<br /> <h1>Overview</h1><p>Select the Aux Switch type as well as Full Sine Mode</p><p>More Details</p><p>0 = None</p><p>1 = 3-Way Dumb Switch</p><p>2 = 3-Way Aux Switch</p><p>3 = Single Pole Full Sine Wave</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">None</option>
+          <option value="1">3-Way Dumb Switch</option>
+          <option value="2">3-Way Aux Switch</option>
+          <option value="3">Single Pole Full Sine Wave</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_25_1" type="integer" groupName="configuration">
+        <label>25: Higher Output in Non-Neutral</label>
+        <description><![CDATA[
+Ability to increase level in non-neutral mode.<br /> <h1>Overview</h1><p>Ability to increase level in non-neutral mode but may cause problems with high level ficker or aux switch detection. Adjust max level (P10) if you have problems with this enabled.</p><p>More Details</p><p>0 = Disabled</p><p>1 = Enabled</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Disabled</option>
+          <option value="1">Enabled</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_50_1" type="integer" groupName="configuration">
+        <label>50: Button Press Delay</label>
+        <description><![CDATA[
+Adjusts the delay between button taps in 100ms increments<br /> <h1>Overview</h1><p>Adjusts the delay between button taps in 100ms increments</p><p>0 = 0ms / No Delay (disables multi-tap scene control)</p><p>1 = 100ms</p><p>2 = 200ms</p><p>9 = 900ms</p>
+        ]]></description>
+        <default>5</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_52_1" type="integer" groupName="configuration">
+        <label>52: Enables or disables smart bulb mode</label>
+        <description><![CDATA[
+Enables or disables smart bulb mode<br /> <h1>Overview</h1><p>Enables or disables smart bulb mode</p><p>More Details</p><p>0 = Disable SBM</p><p>1 = Enable SBM</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Disable SBM</option>
+          <option value="1">Enable SBM</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_53_1" type="integer" groupName="configuration">
+        <label>53: Double-Tap Up to Parameter 55</label>
+        <description><![CDATA[
+Enable or Disable setting brightness to parameter 55 on double-tap up.<br /> <h1>Overview</h1><p><b>Dimmer Mode Only</b><br /></p><p>Enable or Disable setting brightness to parameter 55 on double-tap up.</p><p>More Details</p><p>0 = Disabled</p><p>1 = Enabled</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Disabled</option>
+          <option value="1">Enabled</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_54_1" type="integer" groupName="configuration">
+        <label>54: Double-Tap Down to Parameter 56</label>
+        <description><![CDATA[
+Enable or Disable setting brightness to parameter 56 on double-tap down.<br /> <h1>Overview</h1><p>Enable or Disable setting brightness to parameter 56 on double-tap down.</p><p>More Details</p><p>0 = Disabled</p><p>1 = Enabled</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Disabled</option>
+          <option value="1">Enabled</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_55_1" type="integer" groupName="configuration">
+        <label>55: Brightness Level for Double-Tap Up</label>
+        <description><![CDATA[
+Set this level on double-tap up (if enabled by P53)<br /> <h1>Overview</h1><p><b>Dimmer Mode Only</b><br /></p><p>Set this level on double-tap up (if enabled by P53)</p><p>More Details</p><p>1 = 1%</p><p>2 = 2%</p><p>99 = 99%</p>
+        ]]></description>
+        <default>99</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_56_1" type="integer" groupName="configuration">
+        <label>56: Brightness Level for Double-Tap Down</label>
+        <description><![CDATA[
+Set this level on double-tap down (if enabled by P54)<br /> <h1>Overview</h1><p><b>Dimmer Mode Only</b><br /></p><p>Set this level on double-tap down (if enabled by P54)</p><p>More Details</p><p>0 = off</p><p>1 = 1%</p><p>2 = 2%</p><p>99 = 99%</p>
+        ]]></description>
+        <default>1</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_58_1" type="integer" groupName="configuration">
+        <label>58: Exclusion Behavior</label>
+        <description><![CDATA[
+How the device behaves during exclusion<br /> <h1>Overview</h1><p>How the device behaves during exclusion</p><p>More Details</p><p>0 = LED Bar Does Not Pulse (when config tapped 3x)</p><p>1 = LED Bar pulses blue</p><p>2 = Device does not enter exclusion mode (requires factory reset to leave network or change this parameter)</p>
+        ]]></description>
+        <default>1</default>
+        <options>
+          <option value="0">LED Bar Does Not Pulse</option>
+          <option value="1">LED Bar pulses blue</option>
+          <option value="2">Device does not enter exclusion mode</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_59_1" type="integer" groupName="configuration">
+        <label>59: Association Behavior</label>
+        <description><![CDATA[
+Choose when the switch sends commands to associated devices<br /> <h1>Overview</h1><p>Choose when the switch sends commands to associated devices</p><p>More Details</p><p>0 = Never</p><p>1 = Local</p><p>2 = Z-Wave</p><p>3 = Both</p>
+        ]]></description>
+        <default>1</default>
+        <options>
+          <option value="0">Never</option>
+          <option value="1">Local</option>
+          <option value="2">Z-Wave</option>
+          <option value="3">Both</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_64_4" type="integer" groupName="configuration">
+        <label>64: LED #1 Notification</label>
+        <description><![CDATA[
+A 4-Byte encoded LED Notification for LED #1 (bottom LED)<br /> <h1>Overview</h1><p>A 4-Byte encoded LED Notification for LED #1 (bottom LED)</p><p>More Details</p><p>To see an example, please go to the following URL: https://inovelliusa.github.io/inovelli-switch-toolbox/ and select, "VZW31-SN" under the "Switch Type" dropdown. Then select, "1" under where it says, "LED" and then play with the values (Color, Brightness, Duration, etc).</p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_69_4" type="integer" groupName="configuration">
+        <label>69: LED #2 Notification</label>
+        <description><![CDATA[
+A 4-Byte encoded LED Notification for LED #2 (second from the bottom LED)<br /> <h1>Overview</h1><p>A 4-Byte encoded LED Notification for LED #2 (bottom LED)</p><p>More Details</p><p>To see an example, please go to the following URL: https://inovelliusa.github.io/inovelli-switch-toolbox/ and select, "VZW31-SN" under the "Switch Type" dropdown. Then select, "2" under where it says, "LED" and then play with the values (Color, Brightness, Duration, etc).</p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_74_4" type="integer" groupName="configuration">
+        <label>74: LED #3 Notification</label>
+        <description><![CDATA[
+A 4-Byte encoded LED Notification for LED #3 (third from the bottom LED)<br /> <h1>Overview</h1><p>A 4-Byte encoded LED Notification for LED #3 (third from the bottom LED)</p><p>More Details</p><p>To see an example, please go to the following URL: https://inovelliusa.github.io/inovelli-switch-toolbox/ and select, "VZW31-SN" under the "Switch Type" dropdown. Then select, "3" under where it says, "LED" and then play with the values (Color, Brightness, Duration, etc).</p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_79_4" type="integer" groupName="configuration">
+        <label>79: LED #4 Notification</label>
+        <description><![CDATA[
+A 4-Byte encoded LED Notification for LED #4 (middle LED)<br /> <h1>Overview</h1><p>A 4-Byte encoded LED Notification for LED #4 (middle LED)</p><p>More Details</p><p>To see an example, please go to the following URL: https://inovelliusa.github.io/inovelli-switch-toolbox/ and select, "VZW31-SN" under the "Switch Type" dropdown. Then select, "4" under where it says, "LED" and then play with the values (Color, Brightness, Duration, etc).</p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_84_4" type="integer" groupName="configuration">
+        <label>84: LED #5 Notification</label>
+        <description><![CDATA[
+A 4-Byte encoded LED Notification for LED #5 (third from the top LED)<br /> <h1>Overview</h1><p>A 4-Byte encoded LED Notification for LED #5 (third from the top LED)</p><p>More Details</p><p>To see an example, please go to the following URL: https://inovelliusa.github.io/inovelli-switch-toolbox/ and select, "VZW31-SN" under the "Switch Type" dropdown. Then select, "5" under where it says, "LED" and then play with the values (Color, Brightness, Duration, etc).</p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_89_4" type="integer" groupName="configuration">
+        <label>89: LED #6 Notification</label>
+        <description><![CDATA[
+A 4-Byte encoded LED Notification for LED #6 (second from the top LED)<br /> <h1>Overview</h1><p>A 4-Byte encoded LED Notification for LED #6 (second from the top LED)</p><p>More Details</p><p>To see an example, please go to the following URL: https://inovelliusa.github.io/inovelli-switch-toolbox/ and select, "VZW31-SN" under the "Switch Type" dropdown. Then select, "6" under where it says, "LED" and then play with the values (Color, Brightness, Duration, etc).</p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_94_4" type="integer" groupName="configuration">
+        <label>94: LED #7 Notification</label>
+        <description><![CDATA[
+A 4-Byte encoded LED Notification for LED #7 (top LED)<br /> <h1>Overview</h1><p>A 4-Byte encoded LED Notification for LED #7 (top LED)</p><p>More Details</p><p>To see an example, please go to the following URL: https://inovelliusa.github.io/inovelli-switch-toolbox/ and select, "VZW31-SN" under the "Switch Type" dropdown. Then select, "7" under where it says, "LED" and then play with the values (Color, Brightness, Duration, etc).</p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_95_1" type="integer" groupName="configuration">
+        <label>95: LED Indicator Color (When On) - LED #'s 1-7</label>
+        <description><![CDATA[
+This will set the default color of the LED Bar (all 7 LED's) when the switch is on<br /> <h1>Overview</h1><p>This will set the default color of the LED Bar (all 7 LED's) when the switch is on</p><p>More Details</p><p>0 = Red</p><p>14 = Orange</p><p>35 = Lemon</p><p>64 = Lime</p><p>85 = Green</p><p>106 = Teal</p><p>127 = Cyan</p><p>149 = Aqua</p><p>170 = Blue</p><p>191 = Violet</p><p>212 = Magenta</p><p>234 = Pink</p><p>255 = White</p>
+        ]]></description>
+        <default>-86</default>
+        <options>
+          <option value="0">Red</option>
+          <option value="14">Orange</option>
+          <option value="35">Lemon</option>
+          <option value="64">Lime</option>
+          <option value="85">Green</option>
+          <option value="106">Teal</option>
+          <option value="127">Cyan</option>
+          <option value="149">Aqua</option>
+          <option value="170">Blue</option>
+          <option value="191">Violet</option>
+          <option value="212">Magenta</option>
+          <option value="234">Pink</option>
+          <option value="255">White</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_96_1" type="integer" groupName="configuration">
+        <label>96: LED Indicator Color (When Off) - LED #'s 1-7</label>
+        <description><![CDATA[
+This will set the default color of the LED Bar (all 7 LED's) when the switch is off<br /> <h1>Overview</h1><p>This will set the default color of the LED Bar (all 7 LED's) when the switch is off</p><p>More Details</p><p>0 = Red</p><p>14 = Orange</p><p>35 = Lemon</p><p>64 = Lime</p><p>85 = Green</p><p>106 = Teal</p><p>127 = Cyan</p><p>149 = Aqua</p><p>170 = Blue</p><p>191 = Violet</p><p>212 = Magenta</p><p>234 = Pink</p><p>255 = White</p>
+        ]]></description>
+        <default>-86</default>
+        <options>
+          <option value="0">Red</option>
+          <option value="14">Orange</option>
+          <option value="35">Lemon</option>
+          <option value="64">Lime</option>
+          <option value="85">Green</option>
+          <option value="106">Teal</option>
+          <option value="127">Cyan</option>
+          <option value="149">Aqua</option>
+          <option value="170">Blue</option>
+          <option value="191">Violet</option>
+          <option value="212">Magenta</option>
+          <option value="234">Pink</option>
+          <option value="255">White</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_97_1" type="integer" groupName="configuration">
+        <label>97: LED Indicator Intensity (When On) - LED #'s 1-7</label>
+        <description><![CDATA[
+This will set the intensity (ie: how bright it is) of the LED bar (all 7 LED's) when the switch is on<br /> <h1>Overview</h1><p>This will set the intensity (ie: how bright it is) of the LED bar (all 7 LED's) when the switch is on</p><p>More Details</p><p>0 = Off</p><p>10 = Low</p><p>50 = Medium</p><p>100 = High</p>
+        ]]></description>
+        <default>33</default>
+        <options>
+          <option value="0">Off</option>
+          <option value="10">Low</option>
+          <option value="50">Medium</option>
+          <option value="100">High</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_98_1" type="integer" groupName="configuration">
+        <label>98: LED Indicator Intensity (When Off) - LED #'s 1-7</label>
+        <description><![CDATA[
+This will set the intensity (ie: how bright it is) of the LED bar (all 7 LED's) when the switch is off<br /> <h1>Overview</h1><p>This will set the intensity (ie: how bright it is) of the LED bar (all 7 LED's) when the switch is off</p><p>More Details</p><p>0 = Off</p><p>10 = Low</p><p>50 = Medium</p><p>100 = High</p>
+        ]]></description>
+        <default>1</default>
+        <options>
+          <option value="0">Off</option>
+          <option value="10">Low</option>
+          <option value="50">Medium</option>
+          <option value="100">High</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_99_4" type="integer" groupName="configuration">
+        <label>99: All LED Notification</label>
+        <description><![CDATA[
+A 4-Byte encoded LED Notification for LED's 1-7 (all LED's)<br /> <h1>Overview</h1><p>A 4-Byte encoded LED Notification for LED's 1-7 (all LED's)</p><p>More Details</p><p>To see an example, please go to the following URL: https://inovelliusa.github.io/inovelli-switch-toolbox/ and select, "VZW31-SN" under the "Switch Type" dropdown. Then select, "All" under where it says, "LED" and then play with the values (Color, Brightness, Duration, etc).</p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_100_1" type="integer" groupName="configuration">
+        <label>100: LED Bar Scaling</label>
+        <description><![CDATA[
+Method used for LED Bar scaling.<br /> <h1>Overview</h1><p><b>Dimmer Mode Only</b><br /></p><p>Method used for LED Bar scaling. This allows you to match the scaling when two different generations are in the same gang box (ie: Gen 2 LZW31, LZW31-SN vs Gen 3 VZW31-SN)</p><p>More Details</p><p>0 = Gen 3 (VZW)</p><p>1 = Gen 2 (LZW)</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Gen 3 (VZW)</option>
+          <option value="1">Gen 2 (LZW)</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_123_1" type="integer" groupName="configuration">
+        <label>123: Aux Switch Unique Scenes</label>
+        <description><![CDATA[
+Have unique scene numbers for scenes activated with the aux switch.<br /> <h1>Overview</h1><p>Have unique scene numbers for scenes activated with the aux switch. In other words, you can activate Scene A (multi-tap) from the smart switch and activate Scene B (multi-tap) from the auxiliary switch with the same number of multi-taps.</p><p>More Details</p><p>0 = Disabled</p><p>1 = Enabled</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Disabled</option>
+          <option value="1">Enabled</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_158_1" type="integer" groupName="configuration">
+        <label>158: Switch Type</label>
+        <description><![CDATA[
+Select what type of installation you have<br /> <h1>Overview</h1><p>Select what type of installation you have</p><p>More Details</p><p>0 = Single-Pole (ie: one switch)</p><p>1 = Multi-Way (Dumb Switch)</p><p>2 = Multi-Way (Auxiliary Switch)</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Single-Pole (ie: one switch)</option>
+          <option value="1">Multi-Way (Dumb Switch)</option>
+          <option value="2">Multi-Way (Auxiliary Switch)</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_159_1" type="integer" groupName="configuration">
+        <label>159: LED Bar in On/Off Switch Mode</label>
+        <description><![CDATA[
+When the device in in On/Off Mode, use the Full LED Bar or just one LED<br /> <h1>Overview</h1><p><b>On/Off Mode Only</b><br /></p><p>When the device in in On/Off Mode, use the Full LED Bar or just one LED</p><p>More Details</p><p>0 = Full Bar</p><p>1 = One LED</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Full Bar</option>
+          <option value="1">One LED</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_160_1" type="integer" groupName="configuration">
+        <label>160: Firmware Update-in-Progress Bar</label>
+        <description><![CDATA[
+Display the firmware update progress on the LED Bar<br /> <h1>Overview</h1><p>Display the firmware update progress on the LED Bar</p><p>More Details</p><p>0 = Disabled</p><p>1 = Enabled</p>
+        ]]></description>
+        <default>1</default>
+        <options>
+          <option value="0">Disabled</option>
+          <option value="1">Enabled</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_161_1" type="integer" groupName="configuration">
+        <label>161: Relay Click</label>
+        <description><![CDATA[
+Audible click in On/Off Mode<br /> <h1>Overview</h1><p>Audible click in On/Off Mode</p><p>More Details</p><p>0 = Enabled</p><p>1 = Disabled</p>
+        ]]></description>
+        <default>1</default>
+        <options>
+          <option value="0">Enabled</option>
+          <option value="1">Disabled</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_162_1" type="integer" groupName="configuration">
+        <label>162: Double-Tap Config/Favorites Button to Clear Notification</label>
+        <description><![CDATA[
+Double-Tap the config/favorites button to clear notifications<br /> <h1>Overview</h1><p>Double-Tap the config/favorites button to clear notifications</p><p>More Details</p><p>0 = Enabled</p><p>1 = Disabled</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Enabled</option>
+          <option value="1">Disabled</option>
+        </options>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Lifeline</label>
+        <description><![CDATA[
+<br /> <h1>Overview</h1><p>Members of this group will receive unsolicited messages related to the status of the switch<br /></p>
+        ]]></description>
+        <multipleLimit>10</multipleLimit>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: Basic Set</label>
+        <description><![CDATA[
+<br /> <h1>Overview</h1><p>Sends On &amp; Off commands to associated devices</p><p>1. Single press on the up button sends BasicSet (0xFF)</p><p>2. Single press on the down button sends BasicSet (0x00)</p>
+        ]]></description>
+        <multipleLimit>10</multipleLimit>
+      </parameter>
+
+      <parameter name="group_3" type="text" groupName="association" multiple="true">
+        <label>3: Switch Multilevel Set</label>
+        <description><![CDATA[
+<br /> <h1>Overview</h1><p>Sends set level commands to associated devices when switch is pressed.</p><p>1. Release up or down button sends Switch MultiLevelSet which keeps associated devices in sync with this device</p><p>2. Single press on the up button sends SwitchMultiLevelSet (0xFF)</p><p>3. Single press on the down button sends SwitchMultiLevelSet (0x00)</p><p>4. If param. 53 = 1, 2x press up sends SwitchMultiLevelSet to P55</p><p>5. If param. 54 = 1, 2x press down sends SwitchMultiLevelSet to P56</p>
+        ]]></description>
+        <multipleLimit>10</multipleLimit>
+      </parameter>
+
+      <parameter name="group_4" type="text" groupName="association" multiple="true">
+        <label>4: Switch Multilevel Start/Stop</label>
+        <description><![CDATA[
+<br /> <h1>Overview</h1><p>Sends start / stop level change to associated devices (only in dimmer mode)</p><p>1. Hold up button sends SW_MULTILEVEL_START_LEVEL_CHANGE (Up)</p><p>2. Hold down button sends SW_MULTILEVEL_START_LEVEL_CHANGE (Down)</p><p>3. Release either button sends SW_MULTILEVEL_STOP_LEVEL_CHANGE</p>
+        ]]></description>
+        <multipleLimit>10</multipleLimit>
+      </parameter>
+
+      <parameter name="group_5" type="text" groupName="association" multiple="true">
+        <label>5: Double-Tap Basic Set</label>
+        <description><![CDATA[
+<br /> <h1>Overview</h1><p>Sends On &amp; Off commands to associated devices</p><p>1. 2x/3x press on the up button sends BasicSet (0xFF)</p><p>2. 2x/3x press on the down button sends BasicSet (0x00)</p>
+        ]]></description>
+        <multipleLimit>10</multipleLimit>
+      </parameter>
+
+      <parameter name="group_6" type="text" groupName="association" multiple="true">
+        <label>6: Triple-Tap Basic Set</label>
+        <description><![CDATA[
+<br /> <h1>Overview</h1><p>Sends On &amp; Off commands to associated devices</p><p>1. 2x/3x press on the up button sends BasicSet (0xFF)</p><p>2. 2x/3x press on the down button sends BasicSet (0x00)</p>
+        ]]></description>
+        <multipleLimit>10</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>
