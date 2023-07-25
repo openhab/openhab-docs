@@ -81,8 +81,21 @@ _Function:_ Retrieve event context related information of the rule
 
 A rule carries contextual information when triggered - this block can retrieve that information.
 
-- The rule trigger type defines which of the attributes are available to the rule - they will not all be available.
+- The rule trigger type defines which of the attributes are available to the rule - not not all be available.
 - For more detailed information see [UI Event Object](https://next.openhab.org/addons/automation/jsscripting/#ui-event-object) or [openHAB Events](https://www.openhab.org/docs/developer/utils/events.html).
+
+Here is a list of possible values that can be retrieved.
+
+- rule UID
+- event type
+- new state of item
+- previous state of item
+- triggering item name
+- received command
+- triggered channel
+- triggered event
+
+Note that all block return types are of type String except the triggering item name which is of type [Item](rules-blockly-items-things.html#item) and not a String.
 
 ## Transform values via Map, Regex or JsonPath and others
 
