@@ -99,7 +99,6 @@ The block adds a selection drop down in case a state or command is returned:
 
 ![blockly-context-number-string](../images/blockly/blockly-context-number-string.gif)
 
-
 ## Transform values via Map, Regex or JsonPath and others
 
 openHAB provides many [transformations](https://www.openhab.org/docs/configuration/transformations.html):
