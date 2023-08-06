@@ -144,7 +144,7 @@ See the [Component Reference](./components/) for details about the different lib
 
 ## Dynamically Configuring Components with Expressions
 
-Virtually everywhere - with the notable exception of config properties of user-created widgets - every time you need a config prop to be dynamically updated, you can use an expression to configure it.
+Virtually everywhere every time you need a config prop to be dynamically updated, you can use an expression to configure it.
 Expressions are string literals beginning with the symbol `=` and everything after it is evaluated using a syntax very similar to JavaScript, you can use arithmetic or string operations etc., the [conditional (ternary) operator](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Conditional_Operator), as well as the following objects (subject to evolutions):
 
 - `items` is a dynamic key/value dictionary allowing you to retrieve the state of items; the result of `items.Item1` will be an object like `{ state: '23', displayState: '23 °C' }` (`displayState` may be omitted). You can therefore use `items.Item1.state` to use the current state of Item1 in your expression, if it changes, it will be reevaluated
