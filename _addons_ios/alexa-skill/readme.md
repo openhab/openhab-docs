@@ -304,11 +304,12 @@ Contact Status  "Status"  (Lock) {alexa="CurrentLockState"}
 
 With the introduction of the [unit of measurement](https://www.openhab.org/docs/concepts/units-of-measurement.html) concept, the item unit can be automatically determined for thermostat and temperature using that feature, removing the need of having to set the metadata scale parameter for each of the relevant items or groups.
 
-Below are two examples; the scale on the first will be set to Fahrenheit based on how it is defined in the item state presentation pattern and the second one will be set based on your openHAB system [regional settings](#regional-settings) (US=Fahrenheit; SI=Celsius).
+Below are three examples; the scale on the first will be set to Fahrenheit based on how it is defined in the item state presentation pattern, the second one will be set to Fahrenheit based on the `unit` metadata (introduced in openHAB 4.0), and the last one will be set based on your openHAB system [regional settings](#regional-settings) (US=Fahrenheit; SI=Celsius).
 
 ```xtend
 Number:Temperature Temperature1 "Temperature [%.1f °F]" {alexa="CurrentTemperature"}
-Number:Temperature Temperature2 "Temperature"           {alexa="CurrentTemperature"}
+Number:Temperature Temperature2 "Temperature"           {alexa="CurrentTemperature", unit="°F"}
+Number:Temperature Temperature3 "Temperature"           {alexa="CurrentTemperature"}
 ```
 
 ## Networking Capabilities
