@@ -23,7 +23,7 @@ openHAB is a meritocracy. The more that somebody contributes, the more responsib
 ## Structure
 
 The openHAB project is a big ecosystem of different components.
-While people often think of the runtime + addons when talking about openHAB, there are other parts like openHAB Cloud, the mobile apps, the voice skills, etc. - all in all, there are well over [40 different repos](https://github.com/openhab) under the openHAB GitHub organization.
+While people often think of the runtime + addons when talking about openHAB, there are other parts like openHAB Cloud, the mobile apps, the voice skills, etc. - all in all, there are well over [40 different repos](https://github.com/orgs/openhab/repositories) under the openHAB GitHub organization.
 
 The different components are mostly maintained independently of each other. Many have their own release cycles and a dedicated maintainer team.
 
@@ -48,9 +48,9 @@ Maintainers take care of the respective repository, i.e. they
 - sync with other maintainer teams wrt cross-team changes
 - announce important news in the community
 
-In general, a maintainer team is free to define its own rules of how the work in the team is organized, e.g. what is required for a PR to be accepted. Those rules should be written down as a pinned discussion on the GitHub team page, see [this one](https://github.com/orgs/openhab/teams/2-x-add-ons-maintainers) as an example.
+In general, a maintainer team is free to define its own rules of how the work in the team is organized, e.g. what is required for a PR to be accepted. Those rules should be written down as a pinned discussion on the GitHub Discussions page, see [this one](https://github.com/openhab/openhab-addons/discussions/14694) as an example.
 
-A [couple of rules](https://github.com/orgs/openhab/teams/maintainers/discussions/1) must be followed by all maintainer teams, they ensure that there's some consistency in the workflows across the different repositories.
+A [couple of rules](https://github.com/openhab/openhab-distro/discussions/1505) must be followed by all maintainer teams, they ensure that there's some consistency in the workflows across the different repositories.
 
 ### Maintainer Elections
 
@@ -81,7 +81,7 @@ Comprising the finest technical leaders from all community stake holders, it is 
 
 The Architecture Council is responsible for all decisions that have a significant impact across different components and which touch any fundamental concepts how openHAB works and behaves.
 
-Discussions and decisions are done on the [Github team page](https://github.com/orgs/openhab/teams/architecture-council).
+Discussions and decisions are done in the [GitHub AC Discussions](https://github.com/openhab/openhab-distro/discussions/categories/architecture-council-discussions).
 Decisions are taken unanimously.
 This is the case if no member of the AC vetos against a proposed resolution within a week of the call for votes on the topic.
 
