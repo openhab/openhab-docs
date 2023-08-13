@@ -63,22 +63,19 @@ The included **openHABian Configuration Tool** [`openhabian-config`](#openhabian
 
 ... and much more
 
-## On openHAB 2, 3 and 4
+## On openHAB 4, 3 and 2
 openHABian will install **openHAB 4** and Java 17 by default.
-(Before general availability of OH4 it will be the latest milestone version, to be replace by the release version when that becomes available).
-When openHAB3 was released some 3 years ago, there have been some big changes also to openHABian such as to install Java 11 and to use changed file and directory names so you cannot simple upgrade the packages without adapting the rest of your server system, the openHABian installation that is.
-openHAB 2 will continue to work on openHABian, but openHAB 2 support is no longer actively maintained.
-If you need openHAB 2 support please use the `stable` branch of openHABian.
+openHAB 2 will continue to work on openHABian, but openHAB 2 support is no longer maintained.
+If you need openHAB 2 support please use the `legacy` branch of openHABian.
 You can switch branches using menu option 01 in `openhabian-config` but ATTENTION you cannot up- or downgrade this way and you cannot arbitrarily change versions.
 There's a high risk you mess up your system if you do.
 
-### Deploy openHAB 2 or 3
-The image will install openHAB 4 by default, to have it install openHAB 2 or 3 right from the beginning, set `clonebranch=stable` or `clonebranch=openhab3` in `openhabian.conf` before first boot.
+### Deploying openHAB 2 or 3
+The openHABian image will install openHAB 4 by default, to have it install openHAB 2 or 3 right from the beginning, set `clonebranch=legacy` or `clonebranch=openHAB3` in `openhabian.conf` before first boot.
 
 ## Upgrading openHAB 2 to current openHAB
 For openHABian users still running openHAB 2.X, `openhabian-config` offers to migrate the openHABian environment and install current openHAB for you.
-Menu option 42 will do the upgrade.
-Be aware that it isn't the [answer to the ultimate question](https://en.wikipedia.org/wiki/Phrases_from_The_Hitchhiker%27s_Guide_to_the_Galaxy#The_Answer_to_the_Ultimate_Question_of_Life,_the_Universe,_and_Everything_is_42): there is ONLY an openHAB upgrade path, you cannot downgrade to openHAB 2.
+using menu option 42. Beware you cannot downgrade again.
 
 ::: warning No downgrades
 Take an openHAB config backup BEFORE you upgrade from openHAB v2 to v3. You should also take a system level backup!
@@ -91,19 +88,20 @@ You will have to restore your setup from that backup after a downgrade using men
 Note option 42 will also not downgrade Java.
 openHAB 2 however is known to run with Java 11 as well.
 
-### *A note on dedication and commitment*
-*We sometimes read about people deciding against use of openHABian because they want to install additional software and believe openHABian does not let them do this.
+### A note on dedication and commitment
+We sometimes read about people deciding against use of openHABian because they want to install additional software and believe openHABian does not let them do this.
 Everybody wants their home automation to be stable and most people install a dedicated RPi, i.e. they don't install any other software there that may interfere with proper openHAB operation.
-Reasonably so, this is our clear recommendation. Saving another 50 bucks is not worth putting the reliable day-to-day operations of your home at risk.*
+Reasonably so, this is our clear recommendation. Saving another 100 bucks is not worth putting the reliable day-to-day operations of your home at risk.
 
-*Then again that being said, those who insist to can use openHABian as the starting point for their 'generic' server and run whatever software else on top.
-There's no genuine reason why this wouldn't work. The openHABian image is really just Raspberry Pi OS (lite) under the hood and openHABian is "just" some scripts that install a number of packages and configure the system in a specific way, optimized to run openHAB.*
+Then again that being said, those who insist to can use openHABian as the starting point for their 'generic' server and run whatever software else on top.
+There's no genuine reason why this wouldn't work. The openHABian image is really just Raspberry Pi OS (lite) under the hood and openHABian is "just" some scripts that install a number of packages and configure the system in a specific way, optimized to run openHAB.
 
 <a id="befair"></a>
+#### and on fairness
 *What you must not do, though, is to mess with the system, OS packages and config and expect anyone to help you with that. Let's clearly state this as well: when you deliberately decide to make manual changes to the OS software packages and configuration (i.e. outside of openhabian-config), you will be on your own.
 Your setup is untested, and no-one but you knows about your changes. openHABian maintainers are really committed to providing you with a fine user experience, but this takes enormous efforts in testing and is only possible with a fixed set of hardware. You don't get to see this as a user.
 
-So if you choose to deviate from the standard openHABian installation and run into problems thereafter, don't be unfair: don't waste maintainer's or anyone's time by asking for help or information on your issues on the forum. Thank you !*
+So if you choose to deviate from the standard openHABian installation (e.g. you change your box to run off SSD) and run into problems thereafter, don't be unfair: don't waste maintainer's or anyone's time by asking for help or information on your issues on the forum. Thank you !*
 
 ## Hardware
 ### Hardware recommendation
@@ -151,9 +149,11 @@ These are what we develop and test openHABian against.
 We provide code that is reported "as-is" to run on Ubuntu but we do **not support Ubuntu** so please don't open issues for this (PRs then again are welcome).
 Several optional components such as WireGuard or Homegear are known to expose problems on Ubuntu.
 
-We expect you to use the current stable distribution 'bullseye' for Debian (x86). The current Raspberry Pi image is based on this, too.
-To install openHABian on anything older or newer may work or not.
+We expect you to use the current stable distribution `bullseye` for Debian (x86). The current Raspberry Pi image is based on this, too.
+To install openHABian on anything older or newer may work or not. `bookworm` may work but it is not yet supported.
 If you do and encounter issues, you may need to upgrade first or to live with the consequences of running an OS on the edge of software development.
+Note: With openHAB 4 and Java 17, `buster` is no longer reported.
+There'll be issues when you upgrade Java 11->17 on `buster` so upgrade your OS to `bullseye` before attempting to upgrade openHAB.
 
 ### 64 bit?
 RPi 3 and 4 have a 64 bit processor and you may want to run openHAB in 64 bit.
@@ -552,13 +552,13 @@ Consult the [debug guide](openhabian-DEBUG.md) and move on from there.
 <a id="switch-openhab-branch"></a>
 #### Can I switch openHAB 2 and 3 via openHABian branches?
 
-openHABian installs the latest stable build of openHAB.
-The standard openHABian `openHAB` and `main` branches will install the new openHAB version 4 and the old `openHAB3` and `stable` branch will install the old openHAB version 3 and 2, respectively.
+openHABian installs the latest release build of openHAB.
+The standard openHABian `openHAB` and `main` branches will install the new openHAB version 4 and the old `openHAB3` and `legacy` branches will install the old openHAB version 3 or 2, respectively.
 You can migrate between versions by selecting the corresponding 4X menu option.
 That should also result in an openHABian branch change.
-If you want to choose from stable, snapshot or milestone releases, please do so via `openhabian-config` tool (also menu 4X).
+If you want to choose from release (stable), snapshot or milestone releases, please do so via `openhabian-config` tool (also menu 4X).
 Note this will **not** result in any openHABian branch change.
-Switching from stable to newer development releases might introduce changes and incompatibilities, so please be sure to make a full openHAB backup first!
+Switching to newer development releases might introduce changes and incompatibilities, so please be sure to make a full openHAB backup first!
 Check the Linux installation article for all needed details: [Linux: Changing Versions](linux.html#changing-versions)
 
 <a id="headache"></a>
