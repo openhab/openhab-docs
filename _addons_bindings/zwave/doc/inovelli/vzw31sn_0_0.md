@@ -1070,14 +1070,7 @@ More Details
 50 = Medium
 
 100 = High
-The following option values may be configured -:
-
-| Value  | Description |
-|--------|-------------|
-| 0 | Off |
-| 10 | Low |
-| 50 | Medium |
-| 100 | High |
+Values in the range 0 to 100 may be set.
 
 The manufacturer defined default value is ```33```.
 
@@ -1098,14 +1091,7 @@ More Details
 50 = Medium
 
 100 = High
-The following option values may be configured -:
-
-| Value  | Description |
-|--------|-------------|
-| 0 | Off |
-| 10 | Low |
-| 50 | Medium |
-| 100 | High |
+Values in the range 0 to 100 may be set.
 
 The manufacturer defined default value is ```1```.
 

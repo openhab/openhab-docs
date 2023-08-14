@@ -484,12 +484,6 @@ This will set the default color of the LED Bar (all 7 LED's) when the switch is 
 This will set the intensity (ie: how bright it is) of the LED bar (all 7 LED's) when the switch is on<br /> <h1>Overview</h1><p>This will set the intensity (ie: how bright it is) of the LED bar (all 7 LED's) when the switch is on</p><p>More Details</p><p>0 = Off</p><p>10 = Low</p><p>50 = Medium</p><p>100 = High</p>
         ]]></description>
         <default>33</default>
-        <options>
-          <option value="0">Off</option>
-          <option value="10">Low</option>
-          <option value="50">Medium</option>
-          <option value="100">High</option>
-        </options>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
@@ -499,12 +493,6 @@ This will set the intensity (ie: how bright it is) of the LED bar (all 7 LED's) 
 This will set the intensity (ie: how bright it is) of the LED bar (all 7 LED's) when the switch is off<br /> <h1>Overview</h1><p>This will set the intensity (ie: how bright it is) of the LED bar (all 7 LED's) when the switch is off</p><p>More Details</p><p>0 = Off</p><p>10 = Low</p><p>50 = Medium</p><p>100 = High</p>
         ]]></description>
         <default>1</default>
-        <options>
-          <option value="0">Off</option>
-          <option value="10">Low</option>
-          <option value="50">Medium</option>
-          <option value="100">High</option>
-        </options>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
