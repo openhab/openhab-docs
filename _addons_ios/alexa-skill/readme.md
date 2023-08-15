@@ -279,7 +279,7 @@ Switch Power          "Power"                     (WaterHeater) {alexa="PowerSta
 
 ## Item State
 
-Item states, reported back to Alexa, are formatted based on their [item state presentation](https://www.openhab.org/docs/configuration/items.html#state-presentation) definition if configured. This means you can control the precision of number values (e.g. `%.1f °C` will limit reported temperature value to one decimal point).
+Item states, reported back to Alexa, for numerical item types are formatted based on their [item state presentation](https://www.openhab.org/docs/configuration/items.html#state-presentation) definition if configured. This means you can control the precision of number values (e.g. `%.1f °C` will limit reported temperature value to one decimal point).
 
 For items that don't have a state, these can be configured as not retrievable, automatically when the item [parameter `autoupdate`](https://www.openhab.org/docs/configuration/items.html#parameter-autoupdate) is set as `autoupdate="false"` or by using metadata parameter `retrievable="false"`. In that case, the skill will not report back the state of the given item to Alexa. It is important to note that this will affect the usability of some of the advanced features in the Alexa app that require state reporting.
 
