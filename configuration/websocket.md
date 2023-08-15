@@ -58,7 +58,7 @@ It is set in the response message in case an error occurred and can therefore be
 The `source` is also optional.
 However, it is recommended to send it along with the message.
 Since all events on the event bus are sent over the WebSocket connection, events that are sent by the client are also transmitted.
-A [source filter](#filter-by-source-filter-source) can be used to prevent that.
+A [source filter](#filter-by-source-openhabwebsocketfiltersource) can be used to prevent that.
 
 If a message can't be understood by openHAB (e.g. because of a wrong payload encoding or wrong topic), an error message is sent:
 
