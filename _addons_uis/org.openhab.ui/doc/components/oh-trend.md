@@ -59,7 +59,7 @@ Trend line to display the overall recent evolution of an item
     <PropOption value="right" label="right" />
   </PropOptions>
 </PropBlock>
-<PropBlock type="TEXT" name="trendSampling" label="Trend Line Sampling">
+<PropBlock type="INTEGER" name="trendSampling" label="Trend Line Sampling">
   <PropDescription>
     Amount of minutes between each point of the trendline (default: 60). Affected by persistence strategies different from "every minute"
   </PropDescription>
