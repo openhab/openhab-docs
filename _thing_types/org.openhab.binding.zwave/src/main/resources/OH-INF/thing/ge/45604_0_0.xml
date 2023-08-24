@@ -8,7 +8,7 @@
   <thing-type id="ge_45604_00_000" listed="false">
     <label>45604 Outdoor Lighting Control Module</label>
     <description><![CDATA[
-Outdoor Lighting Control Module<br /> <h1>Overview</h1><p>The GE Z-Wave Smart Lighting Control Outdoor Module</p> <br /> <h2>Inclusion Information</h2><p>Plug In Module</p> <p>Place controller in inclusion mode</p> <p>Press button on module</p> <br /> <h2>Exclusion Information</h2><p>Plug In Module</p> <p>Place controller in exclusion mode</p> <p>Press button on module</p>
+Outdoor Lighting Control Module<br /> <h1>Overview</h1><p>The GE Z-Wave Smart Lighting Control Outdoor Module</p> <br /> <h2>Inclusion Information</h2><p>Plug In Module</p> <p>Place controller in inclusion mode</p> <p>Press button on module</p> <br /> <h2>Exclusion Information</h2><p>Plug In Module</p> <p>Place controller in exclusion mode</p> <p>Press button on module</p> <br /> <h2>Wakeup Information</h2><p><br /></p>
     ]]></description>
     <category>PowerOutlet</category>
 
@@ -27,7 +27,7 @@ Outdoor Lighting Control Module<br /> <h1>Overview</h1><p>The GE Z-Wave Smart Li
       <property name="vendor">Jasco Products</property>
       <property name="modelId">45604</property>
       <property name="manufacturerId">0063</property>
-      <property name="manufacturerRef">4F50:3031,5250:3130,6363:3130</property>
+      <property name="manufacturerRef">4F50:3031,4F50:3032,5250:3130,6363:3130</property>
       <property name="dbReference">47</property>
     </properties>
 

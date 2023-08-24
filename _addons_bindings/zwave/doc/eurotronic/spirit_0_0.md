@@ -59,6 +59,8 @@ The ```basic_number``` channel is of type ```basic_number``` and supports the ``
 **Note:** This channel is marked as deprecated so should not be used.
 
 ### Dimmer
+The valve position (0-100%) is shown here for the heating controller.
+
 The brightness channel allows to control the brightness of a light.
             It is also possible to switch the light on and off.
 
@@ -173,8 +175,12 @@ Detailed information on each parameter can be found in the sections below.
 ### Parameter 1: LCD Invert
 
 LCD Invert
+0: Normal orientation
 
-The following option values may be configured -:
+1: LCD-content inverted (UK Edition)
+
+default: 0
+The following option values may be configured, in addition to values in the range 0 to 1 -:
 
 | Value  | Description |
 |--------|-------------|
@@ -192,7 +198,9 @@ LCD Timeout
 0: No Timeout LCD always on
 
 5-30: LCD will turn off after 5 to 30 seconds
-The following option values may be configured -:
+
+default: 0
+The following option values may be configured, in addition to values in the range 0 to 30 -:
 
 | Value  | Description |
 |--------|-------------|
@@ -206,7 +214,11 @@ This parameter has the configuration ID ```config_2_1``` and is of type ```INTEG
 ### Parameter 3: Backlight
 
 Backlight
+0: Backlight disabled
 
+1: Backlight enabled
+
+default: 1
 The following option values may be configured, in addition to values in the range 0 to 1 -:
 
 | Value  | Description |
@@ -222,8 +234,12 @@ This parameter has the configuration ID ```config_3_1``` and is of type ```INTEG
 ### Parameter 4: Battery report
 
 Battery report
+0: Battery reporting disabled
 
-The following option values may be configured -:
+1: Battery reporting enabled
+
+default: 1
+The following option values may be configured, in addition to values in the range 0 to 1 -:
 
 | Value  | Description |
 |--------|-------------|
@@ -243,7 +259,11 @@ Measured Temperature report
 1-50: report if temperature changed by delta = 0,1°C ... 5,0 °C
 
 default 5: report on delta T = 0,5°C
-Values in the range 0 to 50 may be set.
+The following option values may be configured, in addition to values in the range 0 to 50 -:
+
+| Value  | Description |
+|--------|-------------|
+| 0 | Unsolicited Temperature reporting disabled |
 
 The manufacturer defined default value is ```5```.
 
@@ -256,9 +276,15 @@ Valve opening percentage report
 0: Unsolicited valve opening percentage reporting disabled.
 
 1-100: report if valve opening changed by delta = 1% ... 100%
-Values in the range 0 to 100 may be set.
 
-The manufacturer defined default value is ```0```.
+default: 0
+The following option values may be configured, in addition to values in the range 0 to 100 -:
+
+| Value  | Description |
+|--------|-------------|
+| 0 | Unsolicited valve opening percentage reporting disabled. |
+
+The manufacturer defined default value is ```0``` (Unsolicited valve opening percentage reporting disabled.).
 
 This parameter has the configuration ID ```config_6_1``` and is of type ```INTEGER```.
 
@@ -266,8 +292,16 @@ This parameter has the configuration ID ```config_6_1``` and is of type ```INTEG
 ### Parameter 7: Window open detection
 
 Window open detection
+0: Disabled
 
-The following option values may be configured -:
+1: Sensitivity low
+
+2: Sensitivity medium
+
+3: Sensitivity high
+
+default: 2 Sensitivity medium 
+The following option values may be configured, in addition to values in the range 0 to 3 -:
 
 | Value  | Description |
 |--------|-------------|
@@ -287,6 +321,8 @@ Measured temperature offset
 -50 ... +50: Offsets the measured temp by -5,0°C ... +5,0°C
 
 128: External temp sensor will be used for regulation.
+
+default: 0
 The following option values may be configured -:
 
 | Value  | Description |

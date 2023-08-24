@@ -27,6 +27,10 @@ Start INCLUDE procedure with the controller of existing network and then press p
 
 Start EXCLUDE procedure with the controller of existing network and then press programming button P on the roller shutter being added to the network.
 
+### General Usage Information
+
+
+
 ## Channels
 
 The following table summarises the channels available for the ARZ Solar -:
