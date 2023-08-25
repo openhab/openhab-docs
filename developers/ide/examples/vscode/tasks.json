@@ -41,6 +41,9 @@
                 "clean",
                 "install"
             ],
+            "dependsOn": [
+                "mvn Spotless (Fix codestyle)"                
+            ],
             "problemMatcher": []
         },
         {
@@ -51,6 +54,9 @@
                 "clean",
                 "install",
                 "-DskipChecks"
+            ],
+            "dependsOn": [
+                "mvn Spotless (Fix codestyle)"                
             ],
             "problemMatcher": []
         },
@@ -63,6 +69,9 @@
                 "clean",
                 "install",
                 "-DskipChecks"
+            ],
+            "dependsOn": [
+                "mvn Spotless (Fix codestyle)"                
             ],
             "problemMatcher": []
         },
@@ -144,6 +153,28 @@
                 "panel": "new"
             },
            "problemMatcher": []
+        },
+        {
+            "label": "mvn Spotless (Fix codestyle)",
+            "type": "shell",
+            "command": "mvn",
+            "args": [
+                "spotless:apply",
+            ],
+            "problemMatcher": []
+        
+        },
+        {
+            "label": "mvn update properties (Default)",
+            "type": "shell",
+            "command": "mvn",
+            "args": [
+                "org.openhab.core.tools:i18n-maven-plugin:3.3.0:generate-default-translations",
+                "-pl",
+                ":$env:binding"
+            ],
+            "problemMatcher": []
+        
         }
     ]
 }
