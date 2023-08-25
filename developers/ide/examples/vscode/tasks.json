@@ -169,7 +169,19 @@
             "type": "shell",
             "command": "mvn",
             "args": [
-                "org.openhab.core.tools:i18n-maven-plugin:3.3.0:generate-default-translations",
+                "i18n:generate-default-translations",
+                "-pl",
+                ":$env:binding"
+            ],
+            "problemMatcher": []
+        
+        },
+        {
+            "label": "mvn update properties (Default) [full plug-in name]",
+            "type": "shell",
+            "command": "mvn",
+            "args": [
+                "mvn org.openhab.core.tools:i18n-maven-plugin:3.4.0:generate-default-translations",
                 "-pl",
                 ":$env:binding"
             ],
