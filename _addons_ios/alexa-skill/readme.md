@@ -512,6 +512,7 @@ Device Types | Supported Attributes | Description
 `AirConditioner` | *[`PowerState`](#powerstate)*, [`TargetTemperature`](#targettemperature), [`CurrentTemperature`](#currenttemperature), [`FanSpeed`](#fanspeed), [`FanDirection`](#fandirection), [`FanOscillate`](#fanoscillate) | A device that cools the air in interior spaces.
 `AirFreshener` | Same as `Fan` | A device that emits pleasant odors and masks unpleasant odors in interior spaces.
 `AirPurifier` | Same as `Fan` | A device that improves the quality of air in interior spaces.
+`AirQualityMonitor` | [`CurrentTemperature`](#currenttemperature), [`CurrentHumidity`](#currenthumidity), [`BatteryLevel`](#batterylevel) | A device that measures air quality in interior spaces.
 `Automobile` | [`BatteryLevel`](#batterylevel), [`FanSpeed`](#fanspeed), [`LockState`](#lockstate), [`PowerState`](#powerstate), [`TargetTemperature`](#targettemperature), [`CurrentTemperature`](#currenttemperature) | A motor vehicle (automobile, car).
 `AutomobileAccessory` | [`BatteryLevel`](#batterylevel), [`CameraStream`](#camerastream), [`FanSpeed`](#fanspeed), [`PowerState`](#powerstate) | A smart device in an automobile, such as a dash camera.
 `Blind`, `Curtain`, `Shade` | *[`OpenState`](#openstate)*, *[`PositionState`](#positionstate)*, [`TiltAngle`](#tiltangle), [`TargetOpenState`](#targetopenstate), [`CurrentOpenState`](#currentopenstate) | A window covering on the inside of a structure.
@@ -542,6 +543,7 @@ Device Types | Supported Attributes | Description
 `Oven` | *[`PowerState`](#powerstate)* | An oven cooking appliance.
 `Phone` | *[`PowerState`](#powerstate)* | A non-mobile phone, such as landline or an IP phone.
 `Printer` | *[`PowerState`](#powerstate)* | A device that prints.
+`Remote` | *[`PowerState`](#powerstate)* | A device that support stateless events, such as a remote switch or smart button.
 `Router` | Same as `NetworkHardware` | A network router.
 `Screen` | Same as `Television` | A projector screen.
 `SecurityPanel` | *[`ArmState`](#armstate)*, [`BurglaryAlarm`](#burglaryalarm), [`CarbonMonoxideAlarm`](#carbonmonoxidealarm), [`FireAlarm`](#firealarm), [`WaterAlarm`](#wateralarm), [`AlarmAlert`](#alarmalert), [`ReadyAlert`](#readyalert), [`TroubleAlert`](#troublealert), [`ZonesAlert`](#zonesalert) | A security panel.
@@ -2005,10 +2007,37 @@ ToggleController | [`ToggleState`](#togglestate), [`FanOscillate`](#fanoscillate
 
 ### Alexa Asset Catalog
 
-List of Alexa asset catalog from the [Alexa Skill API](https://developer.amazon.com/docs/device-apis/resources-and-assets.html#global-alexa-catalog) documentation:
+List of Alexa asset identifiers from the [Alexa Skill API](https://developer.amazon.com/docs/device-apis/resources-and-assets.html#global-alexa-catalog) documentation:
 
 Asset Identifier | Supported Friendly Names
 -----------------|-------------------------
+`@Button.OffButton` | Off Button
+`@Button.OnButton` | On Button
+`@Button.BrightenButton` | Brighten Button
+`@Button.DimButton` | Dim Button
+`@Button.MainButton` | Main Button
+`@Button.TopButton` | Top Button
+`@Button.BottomButton` | Bottom Button
+`@Button.CenterButton` | Center Button
+`@Button.MiddleButton` | Middle Button
+`@Button.UpButton` | Up Button
+`@Button.DownButton` | Down Button
+`@Button.LeftButton` | Left Button
+`@Button.RightButton` | Right Button
+`@Button.FirstButton` | First Button
+`@Button.SecondButton` | Second Button
+`@Button.ThirdButton` | Third Button
+`@Button.FourthButton` | Fourth Button
+`@Button.FifthButton` | Fifth Button
+`@Button.SixthButton` | Sixth Button
+`@Button.SeventhButton` | Seventh Button
+`@Button.EighthButton` | Eighth Button
+`@Button.DoublePress` | Double Press
+`@Button.DoublePush` | Double Push
+`@Button.LongPress` | Long Press
+`@Button.LongPush` | Long Push
+`@Button.SinglePress` | Single Press
+`@Button.SinglePush` | Single Push
 `@DeviceName.AirPurifier` | Air Purifier<br>Air Cleaner<br>Clean Air Machine
 `@DeviceName.Camera` | Camera
 `@DeviceName.Fan` | Fan<br>Blower
@@ -2017,6 +2046,14 @@ Asset Identifier | Supported Friendly Names
 `@DeviceName.Shower` | Shower
 `@DeviceName.SpaceHeater` | Space Heater<br>Portable Heater
 `@DeviceName.Washer` | Washer<br>Washing Machine
+`@Gesture.DoubleClick` | Double Click
+`@Gesture.DoubleTap` | Double Tap
+`@Gesture.SingleClick` | Single Click
+`@Gesture.SwipeDown` | Swipe Down
+`@Gesture.SwipeLeft` | Swipe Left
+`@Gesture.SwipeRight` | Swipe Right
+`@Gesture.SwipeUp` | Swipe Up
+`@Gesture.Tap` | Tap
 `@Setting.2GGuestWiFi` | 2.4G Guest Wi-Fi<br>2.4G Guest Network<br>Guest Network 2.4G<br>2G Guest Wi-Fi
 `@Setting.5GGuestWiFi` | 5G Guest Wi-Fi<br>5G Guest Network<br>Guest Network 5G<br>5G Guest Wi-Fi
 `@Setting.Auto` | Auto<br>Automatic<br>Automatic Mode<br>Auto Mode
@@ -2036,6 +2073,29 @@ Asset Identifier | Supported Friendly Names
 `@Setting.WaterTemperature` | Water Temperature<br>Water Temp<br>Water Heat
 `@Shower.HandHeld` | Handheld Shower<br>Shower Wand<br>Hand Shower
 `@Shower.RainHead` | Rain Head<br>Overhead Shower<br>Rain Shower<br>Rain Spout<br>Rain Faucet
+`@Unit.Angle.Degrees` | Degrees<br>Degree
+`@Unit.Angle.Radians` | Radians<br>Radian
+`@Unit.Distance.Feet` | Feet<br>Foot
+`@Unit.Distance.Inches` | Inches<br>Inch
+`@Unit.Distance.Kilometers` | Kilometers<br>Kilometer
+`@Unit.Distance.Meters` | Meters<br>Meter
+`@Unit.Distance.Miles` | Miles<br>Mile
+`@Unit.Distance.Yards` | Yards<br>Yard
+`@Unit.Mass.Grams` | Grams<br>Gram
+`@Unit.Mass.Kilograms` | Kilograms<br>Kilogram
+`@Unit.Percent` | Percent
+`@Unit.Temperature.Celsius` | Celsius<br>Degrees Celsius<br>Centigrade<br>Degrees Centigrade
+`@Unit.Temperature.Degrees` | Degrees<br>Degree
+`@Unit.Temperature.Fahrenheit` | Fahrenheit<br>Degrees Fahrenheit
+`@Unit.Temperature.Kelvin` | Kelvin<br>Degrees Kelvin
+`@Unit.Volume.CubicFeet` | Cubic Feet<br>Cubic Foot
+`@Unit.Volume.CubicMeters` | Cubic Meters<br>Cubic Meter<br>Meters Cubed
+`@Unit.Volume.Gallons` | Gallons<br>Gallon
+`@Unit.Volume.Liters` | Liters<br>Liter
+`@Unit.Volume.Pints` | Pints<br>Pint
+`@Unit.Volume.Quarts` | Quarts<br>Quart
+`@Unit.Weight.Ounces` | Ounces<br>Ounce
+`@Unit.Weight.Pounds` | Pounds<br>Pound
 `@Value.Close` | Close
 `@Value.Delicate` | Delicates<br>Delicate
 `@Value.High` | High
@@ -2048,7 +2108,7 @@ Asset Identifier | Supported Friendly Names
 
 ### Custom Asset Catalog
 
-List of custom asset catalog defined by the skill:
+List of custom asset identifiers defined by the skill:
 
 Asset Identifier | Supported Friendly Names
 -----------------|-------------------------
@@ -2086,7 +2146,7 @@ Asset Identifier | Supported Friendly Names
 
 ### Alexa Semantic Catalog
 
-List of Alexa semantic catalog from the [Alexa Skill API](https://developer.amazon.com/docs/alexa-voice-service/generic-controllers.html#semantics-syntax) documentation:
+List of Alexa semantic identifiers from the [Alexa Skill API](https://developer.amazon.com/docs/alexa-voice-service/generic-controllers.html#semantics-syntax) documentation:
 
 Semantic Type | Identifiers
 --------------|------------
@@ -2095,7 +2155,7 @@ States | `Closed`<br>`Open`
 
 ### Custom Semantic Catalog
 
-List of custom semantic catalog defined by skill:
+List of custom semantic identifiers defined by skill:
 
 Semantic Type | Identifiers
 --------------|------------
@@ -2104,7 +2164,7 @@ States |
 
 ## Unit of Measurement Catalog
 
-List of Alexa unit of measurement catalog from the [Alexa Skill API](https://developer.amazon.com/docs/device-apis/alexa-property-schemas.html#units-of-measure) documentation:
+List of Alexa unit of measurement identifiers from the [Alexa Skill API](https://developer.amazon.com/docs/device-apis/alexa-property-schemas.html#units-of-measure) documentation:
 
 Unit Identifier |
 ----------------|
