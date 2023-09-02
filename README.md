@@ -58,7 +58,7 @@ The process below is subject to changes until the openHAB.x website become the p
 
 ### How the documentation build works
 
-We have set up our [build server](https://ci.openhab.org/view/Documentation%20(3.x)/) to do the magic automatically.
+We have set up our [build server](https://ci.openhab.org/view/Documentation/) to do the magic automatically.
 There are several triggers (mostly time based), which will then _gather the external contents_ and move them to our [final](https://github.com/openhab/openhab-docs/tree/final) branch.
 You can find this migrated external content in the _final_ branch under:
 
