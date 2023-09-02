@@ -149,7 +149,7 @@ then you just add a line to every git commit message:
 
 using your real name (sorry, no pseudonyms or anonymous contributions.) and an
 e-mail address under which you can be reached (sorry, no github noreply e-mail
-addresses (such as username@users.noreply.github.com) or other non-reachable
+addresses (such as `username@users.noreply.github.com`) or other non-reachable
 addresses are allowed).
 
 Additionally can also sign off commits automatically by adding the `-s` or `--signoff` parameter to your usual git commit commands.
@@ -193,7 +193,7 @@ You don't even need to know Git.
 - You can preview your changes under the "Preview changes" tab.
 - Add a title and optional description for your proposed change at the bottom of the editor.
 - The [sign off rules](#sign-your-work) described above do apply to documentation contributions as well.
-  Simply add an empty line and the sign off statement "Signed-off-by: Joe Smith \<joe.smith@email.com\>" at the end of your change description at the bottom of the editor.
+  Simply add an empty line and the sign off statement `Signed-off-by: Joe Smith <joe.smith@email.com>` at the end of your change description at the bottom of the editor.
   Note that as per the rules you have to provide your full name in the sign off and that full name has to match the name you configured in your GitHub profile for the DCO check to succeed.
 - Click the "Propose file change" button at the bottom of the editor, then click "Create pull request" on the next page, and then on the summary page click "Create pull request" one more time.
 

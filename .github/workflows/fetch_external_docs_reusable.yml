@@ -67,12 +67,12 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v2.4.0
+        uses: actions/checkout@v3
         with:
           ref: ${{ inputs.base_target_branch }}
 
       - name: Checkout external repository
-        uses: actions/checkout@v2.4.0
+        uses: actions/checkout@v3
         with:
           repository: ${{ inputs.base_source_organization }}/${{ inputs.base_source_repository }}
           path: ./external_repositories/${{ inputs.base_source_repository }}
@@ -113,7 +113,7 @@ jobs:
 
       # Create an automated pull request, if the resulting branch is ahead of the `base-target-branch`
       - name: Create pull request
-        uses: peter-evans/create-pull-request@v3
+        uses: peter-evans/create-pull-request@v5
         with:
           commit-message: Automated ${{ inputs.base_source_repository }} Docs fetch
           committer: openHAB Bot <info@openhab.org>

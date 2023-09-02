@@ -10,7 +10,7 @@ Every add-on has to provide meta information such as add-on type, id or name.
 Background information: The meta information of all add-ons is accessible through the `org.openhab.core.addon.AddonInfoRegistry` service.
 
 Although add-on definitions are usually specified in a declarative way (as described in this section), they can also be provided as `org.openhab.core.addon.AddonInfo`.
-Any `AddonInfo` must be registered as service at the *OSGi* service registry.
+Any `AddonInfo` must be registered as service at the _OSGi_ service registry.
 The full Java API for addon definitions can be found in the Java package `org.openhab.core.addon`.
 
 For the declarative way, you add your add-on information in form of an `addon.xml` file to the bundle's folder `/src/main/resources/OH-INF/addon/`.
@@ -58,7 +58,7 @@ The full XML schema for add-on definitions is specified in the [Add-on XSD](http
 
 **Hints:**
 
-- The attribute `uri` in the section `config-description` is optional, it *should not* be specified in add-on definition files because it's an embedded configuration. If the `uri` is *not* specified, the configuration description is registered as `type:addonID`, otherwise the given `uri` is used.
+- The attribute `uri` in the section `config-description` is optional, it _should not_ be specified in add-on definition files because it's an embedded configuration. If the `uri` is _not_ specified, the configuration description is registered as `type:addonID`, otherwise the given `uri` is used.
 - If a configuration description is already specified somewhere else and the add-on wants to (re-)use it, a `config-description-ref` should be used instead.
 - Normally the service id must not be defined, because it is implicitly set to "type.&lt;addonId&gt;".
   An add-on can register an OSGi service which implements the ManagedService interface and define the service.pid as e.g."binding.hue" to receive the configuration.
