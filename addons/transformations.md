@@ -193,19 +193,19 @@ The script transformation is also available as profile. When acting as transform
 Example usage in an `.items` file:
 
 ```xtend
-Number <itemName> { channel="<channelUID>"[profile="transform:JS", toItemScript="decode_json.js" toHandlerScript="encode_json.js" ] }
+Number <itemName> { channel="<channelUID>"[profile="transform:JS", toItemScript="decode_json.js", toHandlerScript="encode_json.js" ] }
 ```
 
 Here, additional parameters can also be injected into the script using the URL style syntax, e.g.:
 
 ```xtend
-Number <itemName> { channel="<channelUID>"[profile="transform:RB", toItemScript="multiply.rb?factor=10" toHandlerScript="multiply.rb?factor=0.1" ] }
+Number <itemName> { channel="<channelUID>"[profile="transform:RB", toItemScript="multiply.rb?factor=10", toHandlerScript="multiply.rb?factor=0.1" ] }
 ```
 
 Inline script is also supported in the profile syntax.
 
 ```xtend
-Number <itemName> { channel="<channelUID>"[profile="transform:RB", toItemScript="| input.to_f * 10" toHandlerScript="| input.to_f * 0.1" ] }
+Number <itemName> { channel="<channelUID>"[profile="transform:RB", toItemScript="| input.to_f * 10", toHandlerScript="| input.to_f * 0.1" ] }
 ```
 
 More details regarding this and other Transformation services can be found in the individual transformation articles linked below.
