@@ -128,6 +128,19 @@ If you plan on disconnecting your machine from the internet, then you will want 
 sudo apt-get install openhab-addons
 ```
 
+It's recommended to pin the openhab version (and openhab-addons) version to prevent unexpected breakage by accidentally updating openHAB.
+This can be done by specifying the version, e.g.
+```shell
+sudo apt install openhab=4.0.1
+sudo apt install openhab-addons=4.0.1
+```
+
+To get a list of all available version you can use
+```shell
+apt list -a openhab
+```
+
+
 {% include collapsible/item-end.html %}
 {% include collapsible/heading.html %}
 
