@@ -27,7 +27,7 @@ The  **open H**ome  **A**utomation  **B**us (openHAB,  _pronounced ˈəʊpənˈh
 <div style="clear:both"></div>
 
 Some of openHAB's strengths are:
-
+Test
 - Its ability to integrate a multitude of other devices and systems. openHAB includes other home automation systems, (smart) devices and other technologies into a single solution
 - To provide a uniform user interface and a common approach to automation rules across the entire system, regardless of the number of manufacturers and sub-systems involved
 - Giving you the most flexible tool available to make almost any home automation wish come true; if you can think it, odds are that you can implement it with openHAB.
