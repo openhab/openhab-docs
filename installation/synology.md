@@ -53,6 +53,23 @@ uid=1032(openhab) gid=100(users) groups=100(users),65537(dialout),65539(openhab)
 
 In this case we need the 1032 as the user and the 65539 as the group. Write them down.
 
+:::tip DSM 7.2
+
+- Check [here](https://kb.synology.com/en-nz/DSM/tutorial/What_kind_of_CPU_does_my_NAS_have) what kind of CPU does your Synology NAS have.
+- Download the proper USB to UART driver from [here](https://github.com/robertklep/dsm7-usb-serial-drivers/tree/main/modules) to Synology `/lib/modules`.
+- Create Synology Boot-up Scheduled Task
+
+   ```bash
+   #!/bin/sh
+   chmod 760 /var/lock
+   insmod /lib/modules/cp210x.ko > /dev/null 2>&1 # cp210x.ko sample
+   chown root:dialout /dev/ttyACM0
+   chmod g+rw /dev/ttyACM0
+   ```
+
+   :warning: This will result in Synology notification, like "Security risks detected on NAS02. Please go to Security Advisor for more information. Details."
+:::
+
 ## Docker
 
 :::tip Note
@@ -90,6 +107,16 @@ Several issues are already raised for this at Synology.
 - Enable the resource limitation, CPU on Med and Memory limit on 2048MB.
 You can increase this in the future if you like.
 - Click on "Advanced"
+
+:::tip DSM 7.2 Access Zwave USB Stick
+
+- Set `/dev/ttyACM0` permissions inside the openhab container - [OH Docs](docker.html#usb-sticks)
+   ```bash
+   root@openhab:/openhab# chown openhab:openhab /dev/ttyACM0
+   root@openhab:/openhab# chmod o+rw /dev/ttyACM0
+   ```
+   To preserve the changes on container reboot see [Executing shell scripts before openHAB is started](https://github.com/openhab/openhab-docker#executing-shell-scripts-before-openhab-is-started) article.
+:::
 
 ### Advanced Settings
 
