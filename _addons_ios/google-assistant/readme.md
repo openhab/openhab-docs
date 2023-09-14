@@ -313,15 +313,18 @@ Fans (and similar device types, like AirPurifier or Hood) support the `FanSpeed`
 If you do not specify the `speeds` option, Google will use and expect percentage values for the fan speed.
 Otherwise, you will be able to set up and use human speakable modes, e.g. "fast" for 100% or "slow" for 25%.
 
-`speeds` will be a comma-separated list of modes with a percentage number followed by an equal sign and different aliases for that mode after a colon.
-So here both "high" and "two" would set the speed to 100%.
+`speeds` will be a comma-separated list of modes, where the mode value corresponds to the speed value to be passed to the device. The mode or value is followed by an equal sign to list different aliases separated by a colon sign.
+So in the example stated below both "high" and "two" would set the speed to 100%.
+Some devices may expect a specific value instead of a percentage, like "1" or "2" as speed values. In this case, you can adjust the configuration and replace the percentage values with the values that the device expects. (e.g.: `speeds="0=away:zero,1=default:standard:one,2=high:two"`).
 You are also able to define the language of those aliases.
 The option `ordered` will tell the system that your list is ordered and you will then be able to also say "faster" or "slower" and Google will use the next or previous speed.
 
 ```shell
-Dimmer { ga="Fan" [ speeds="0=away:zero,50=default:standard:one,100=high:two", lang="en", ordered=true ] }
+Dimmer { ga="Fan" [ speeds="0=away:zero,50=default:standard:one,100=high:two", lang="en", ordered=true ] } # Only percentage values for the speed
 Switch { ga="Hood" } # No speed control - only on/off
-Number { ga="AirPurifier" } # Only percentage values for the speed
+Dimmer { ga="AirPurifier" } # Only percentage values for the speed
+Dimmer { ga="AirPurifier" [ speeds="0=away:zero,1=low:one,2=medium:two,3=high:three,4=turbo:four", lang="en", ordered=true ] } # Specific speed modes/values stated, which can differ from percentage
+Switch { ga="AirPurifier" } # No speed control - only on/off
 ```
 
 ### Awning, Blinds, Curtain, Door, Garage, Gate, Pergola, Shutter, Window

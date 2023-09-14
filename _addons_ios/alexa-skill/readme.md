@@ -1114,7 +1114,7 @@ Items that represents a color temperature. It is important to note that temperat
 
 * Supported item types:
   * Dimmer (Colder `0%` to warmer `100%` based on defined temperature range for bindings integration)
-  * Number (Color temperature value in Kelvin for custom integration)
+  * Number(:Temperature) (Color temperature value in Kelvin for custom integration)
 * Supported binding presets:
   * [hue](https://www.openhab.org/addons/bindings/hue/) [color=`2000:6500`, white=`2200:6500`]
   * [lifx](https://www.openhab.org/addons/bindings/lifx/) [color=`2500:9000`, white=`2700:6500`]
