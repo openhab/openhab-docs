@@ -100,6 +100,7 @@ A card showing model items in a certain location
     <PropOption value="speakers" label="Speakers/AV Receivers Powered On" />
     <PropOption value="temperature" label="Average Temperature (+ Setpoint)" />
     <PropOption value="humidity" label="Average Humidity" />
+    <PropOption value="co2" label="Average CO2" />
     <PropOption value="luminance" label="Average Luminance" />
   </PropOptions>
 </PropBlock>
