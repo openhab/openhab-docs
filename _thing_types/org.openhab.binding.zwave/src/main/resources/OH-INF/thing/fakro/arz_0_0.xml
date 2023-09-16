@@ -35,7 +35,7 @@ Roller Shutter Module<br /> <h1>Overview</h1><p>The ARZ Z-Wave roller shutters a
       <property name="vendor">Fakro</property>
       <property name="modelId">ARZ</property>
       <property name="manufacturerId">0085</property>
-      <property name="manufacturerRef">0003:0011</property>
+      <property name="manufacturerRef">0002:0002,0003:0011</property>
       <property name="dbReference">248</property>
     </properties>
 

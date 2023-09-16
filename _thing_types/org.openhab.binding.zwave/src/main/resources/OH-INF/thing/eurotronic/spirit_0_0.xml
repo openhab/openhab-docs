@@ -146,6 +146,7 @@ LCD Timeout<br /> <h1>Overview</h1><p>0: No Timeout LCD always on</p> <p>5-30: L
         <options>
           <option value="0">No Timeout LCD always on</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_3_1" type="integer" groupName="configuration">
@@ -181,6 +182,7 @@ Measured Temperature report<br /> <h1>Overview</h1><p>0: Unsolicited Temperature
         <options>
           <option value="0">Unsolicited Temperature reporting disabled</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_6_1" type="integer" groupName="configuration">
@@ -192,6 +194,7 @@ Valve opening percentage report<br /> <h1>Overview</h1><p>0: Unsolicited valve o
         <options>
           <option value="0">Unsolicited valve opening percentage reporting disabled.</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_7_1" type="integer" groupName="configuration">

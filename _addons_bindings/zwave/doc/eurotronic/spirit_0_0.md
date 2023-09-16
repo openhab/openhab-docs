@@ -200,7 +200,7 @@ LCD Timeout
 5-30: LCD will turn off after 5 to 30 seconds
 
 default: 0
-The following option values may be configured, in addition to values in the range 0 to 30 -:
+The following option values may be configured -:
 
 | Value  | Description |
 |--------|-------------|
@@ -259,7 +259,7 @@ Measured Temperature report
 1-50: report if temperature changed by delta = 0,1°C ... 5,0 °C
 
 default 5: report on delta T = 0,5°C
-The following option values may be configured, in addition to values in the range 0 to 50 -:
+The following option values may be configured -:
 
 | Value  | Description |
 |--------|-------------|
@@ -278,7 +278,7 @@ Valve opening percentage report
 1-100: report if valve opening changed by delta = 1% ... 100%
 
 default: 0
-The following option values may be configured, in addition to values in the range 0 to 100 -:
+The following option values may be configured -:
 
 | Value  | Description |
 |--------|-------------|
