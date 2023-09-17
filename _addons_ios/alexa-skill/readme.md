@@ -279,7 +279,7 @@ Switch Power          "Power"                     (WaterHeater) {alexa="PowerSta
 
 ## Item State
 
-Item states, reported back to Alexa, are formatted based on their [item state presentation](https://www.openhab.org/docs/configuration/items.html#state-presentation) definition if configured. This means you can control the precision of number values (e.g. `%.1f °C` will limit reported temperature value to one decimal point).
+Item states, reported back to Alexa, for numerical item types are formatted based on their [item state presentation](https://www.openhab.org/docs/configuration/items.html#state-presentation) definition if configured. This means you can control the precision of number values (e.g. `%.1f °C` will limit reported temperature value to one decimal point).
 
 For items that don't have a state, these can be configured as not retrievable, automatically when the item [parameter `autoupdate`](https://www.openhab.org/docs/configuration/items.html#parameter-autoupdate) is set as `autoupdate="false"` or by using metadata parameter `retrievable="false"`. In that case, the skill will not report back the state of the given item to Alexa. It is important to note that this will affect the usability of some of the advanced features in the Alexa app that require state reporting.
 
@@ -304,11 +304,12 @@ Contact Status  "Status"  (Lock) {alexa="CurrentLockState"}
 
 With the introduction of the [unit of measurement](https://www.openhab.org/docs/concepts/units-of-measurement.html) concept, the item unit can be automatically determined for thermostat and temperature using that feature, removing the need of having to set the metadata scale parameter for each of the relevant items or groups.
 
-Below are two examples; the scale on the first will be set to Fahrenheit based on how it is defined in the item state presentation pattern and the second one will be set based on your openHAB system [regional settings](#regional-settings) (US=Fahrenheit; SI=Celsius).
+Below are three examples; the scale on the first will be set to Fahrenheit based on how it is defined in the item state presentation pattern, the second one will be set to Fahrenheit based on the `unit` metadata (introduced in openHAB 4.0), and the last one will be set based on your openHAB system [regional settings](#regional-settings) (US=Fahrenheit; SI=Celsius).
 
 ```xtend
 Number:Temperature Temperature1 "Temperature [%.1f °F]" {alexa="CurrentTemperature"}
-Number:Temperature Temperature2 "Temperature"           {alexa="CurrentTemperature"}
+Number:Temperature Temperature2 "Temperature"           {alexa="CurrentTemperature", unit="°F"}
+Number:Temperature Temperature3 "Temperature"           {alexa="CurrentTemperature"}
 ```
 
 ## Networking Capabilities
