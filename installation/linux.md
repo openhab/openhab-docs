@@ -130,12 +130,14 @@ sudo apt-get install openhab-addons
 
 It's recommended to pin the openhab version (and openhab-addons version) to prevent unexpected breakage by accidentally updating openHAB.
 This can be done by specifying the version when using the install command, e.g.
+
 ```shell
 sudo apt install openhab=4.0.1
 sudo apt install openhab-addons=4.0.1
 ```
 
 To get a list of all available versions you can use
+
 ```shell
 apt list -a openhab
 ```
