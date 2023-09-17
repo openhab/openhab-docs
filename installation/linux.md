@@ -142,7 +142,6 @@ To get a list of all available versions you can use
 apt list -a openhab
 ```
 
-
 {% include collapsible/item-end.html %}
 {% include collapsible/heading.html %}
 
