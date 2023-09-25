@@ -5,12 +5,12 @@
   xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
                       https://openhab.org/schemas/thing-description/v1.0.0">
 
-  <thing-type id="simontech_1000208113x_00_000" listed="false">
-    <label>10002081-13X S100 iO Master Roller Blind</label>
+  <thing-type id="simontech_1000x080x_00_000" listed="false">
+    <label>1000X080-XXX S100 iO Roller Blind (2023)</label>
     <description><![CDATA[
-S100 iO Master Roller Blind<br /> <h1>Overview</h1><p>Master Roller Blind IO is ready to operate with Z-Wave controllers and configured to be managed by Simon100 IO APP using the HUB plug IO for getting a better user experience. Sending the Blind controller by other window covering devices Up/Down/Stop.</p> <br /> <h2>Inclusion Information</h2><p>When the pushbutton is released after a press of (10sec&lt;T&lt;30sec) the device will Set it into Manual Association Mode. </p><p>Central LED will blink slow during Association mode time.</p><p>Association mode allows add devices to Device Group 2.</p><p>If associated devices are Simon Devices, Master will turn on Central LED to inform the user about which devices are in.</p><p>Once association is finished, Master will turn off the Central LED to allow the normal use of the devices. </p> <br /> <h2>Exclusion Information</h2><p>When the pushbutton is released after a press of (10sec&lt;T&lt;30sec) the device will Set it into Manual Association Mode. </p><p>Central LED will blink slow during Association mode time.</p><p>Association mode allows add devices to Device Group 2.</p><p>If associated devices are Simon Devices, Master will turn on Central LED to inform the user about which devices are in.</p><p>Once association is finished, Master will turn off the Central LED to allow the normal use of the devices. </p> <br /> <h2>Wakeup Information</h2><p><br /></p>
+S100 iO Roller Blind (2023)<br /> <h1>Overview</h1><p>Roller Blind IO is ready to operate with Z-Wave controllers and configured to be managed by Simon100 IO APP using the HUB plug IO for getting a better user experience. Sending the Blind Up/Down or setting a specific position.</p> <br /> <h2>Inclusion Information</h2><p>When the pushbutton is released after a press of (2sec&lt;T&lt;10sec) the device will send a NIF to include from Z-Wave network or perform an association with other Z-Wave device. Central LED will Blink with 0,3 sec period to inform that NIF can be send after release of pushbutton. This process does not perform a default reset of configurations. Main LED will Blink with 0,3 sec period to inform that NIF can be send after release of pushbutton. <br /></p> <br /> <h2>Exclusion Information</h2><p>When the pushbutton is released after a press of (2sec&lt;T&lt;10sec) the device will send a NIF to exclude from Z-Wave network or perform an association with other Z-Wave device. Main LED will Blink with 0,3 sec period to inform that NIF can be send after release of pushbutton. This process does not perform a default reset of configurations. Main LED will Blink with 0,3 sec period to inform that NIF can be send after release of pushbutton. <br /></p> <br /> <h2>Wakeup Information</h2><p><br /></p>
     ]]></description>
-    <category>Controller</category>
+    <category>Blinds</category>
 
     <!-- CHANNEL DEFINITIONS -->
     <channels>
@@ -27,10 +27,10 @@ S100 iO Master Roller Blind<br /> <h1>Overview</h1><p>Master Roller Blind IO is 
     <!-- DEVICE PROPERTY DEFINITIONS -->
     <properties>
       <property name="vendor">SimonTech S.L.U</property>
-      <property name="modelId">10002081-13X</property>
+      <property name="modelId">1000X080-XXX</property>
       <property name="manufacturerId">0267</property>
-      <property name="manufacturerRef">0106:0000</property>
-      <property name="dbReference">1556</property>
+      <property name="manufacturerRef">0102:0000</property>
+      <property name="dbReference">1580</property>
       <property name="defaultAssociations">2</property>
     </properties>
 
@@ -60,9 +60,9 @@ S100 iO Master Roller Blind<br /> <h1>Overview</h1><p>Master Roller Blind IO is 
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_4_1" type="integer" groupName="configuration" readOnly="true">
-        <label>4: UP time</label>
-        <description>UP time</description>
+      <parameter name="config_4_1" type="integer" groupName="configuration">
+        <label>4: Up Time</label>
+        <description>Up Time</description>
         <default>60</default>
         <options>
           <option value="1">Sets the UP time in seconds</option>
@@ -79,15 +79,6 @@ S100 iO Master Roller Blind<br /> <h1>Overview</h1><p>Master Roller Blind IO is 
           <option value="1">Sets the DOWN time in seconds</option>
           <option value="60">Default</option>
         </options>
-        <limitToOptions>false</limitToOptions>
-      </parameter>
-
-      <parameter name="config_9_1_wo" type="integer" groupName="configuration">
-        <label>9: Calibration</label>
-        <description><![CDATA[
-Calibration<br /> <h1>Overview</h1><p>255 - The device will perform a calibration process in order to Set the UP and DOWN times automatically<br /></p>
-        ]]></description>
-        <default>-1</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
@@ -110,6 +101,15 @@ Calibration<br /> <h1>Overview</h1><p>255 - The device will perform a calibratio
           <option value="0">Unlock the direct control of load.</option>
           <option value="255">Lock the direct control of load.</option>
         </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_14_1_wo" type="integer" groupName="configuration">
+        <label>14: Calibration</label>
+        <description><![CDATA[
+Calibration<br /> <h1>Overview</h1><p>255 - The device will perform a calibration process in order to Set the UP and DOWN times automatically<br /></p>
+        ]]></description>
+        <default>-1</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 

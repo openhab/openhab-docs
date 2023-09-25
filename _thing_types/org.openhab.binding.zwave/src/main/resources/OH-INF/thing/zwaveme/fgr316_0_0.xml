@@ -122,7 +122,7 @@ DIN Rail 6x2kW Universal Switch / 4xInputs<br /> <h1>Overview</h1><ul><li>6CH re
       <property name="vendor">Z-Wave.Me</property>
       <property name="modelId">FGR-316</property>
       <property name="manufacturerId">0115</property>
-      <property name="manufacturerRef">0111:0001,0115:0001,0116:0001</property>
+      <property name="manufacturerRef">0110:0001,0111:0001,0115:0001,0116:0001</property>
       <property name="dbReference">734</property>
     </properties>
 

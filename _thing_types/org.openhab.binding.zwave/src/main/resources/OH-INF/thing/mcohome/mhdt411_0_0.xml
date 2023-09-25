@@ -1,0 +1,384 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="mcohome_mhdt411_00_000" listed="false">
+    <label>MH-DT411 Touch Panel Dimmer</label>
+    <description><![CDATA[
+Touch Panel Dimmer<br /> <h1>Overview</h1><p>Dimmer Switch is a wall panel built-in with Z-Wave plus module. It supports basic command class, multi channel command class and multi channel association command class, also works as a repeater in a Z-Wave network. </p> <br /> <h2>Inclusion Information</h2><p>Set the controller into Add/Remove mode, and press 3 clicks on "+" or "-" button on the panel to add/remove. If succeed, green LED flicks 4 times.</p> <br /> <h2>Exclusion Information</h2><p>Set the controller into Add/Remove mode, and press 3 clicks on "+" or "-" button on the panel to add/remove. If succeed, green LED flicks 4 times.<br /></p> <br /> <h2>Wakeup Information</h2><p><br /></p>
+    ]]></description>
+    <category>WallSwitch</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_dimmer" typeId="switch_dimmer">
+        <label>Dimmer</label>
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+          <property name="binding:Command:OnOffType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+        </properties>
+      </channel>
+      <channel id="scene_number" typeId="scene_number">
+        <label>Scene Number</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_SCENE_ACTIVATION</property>
+        </properties>
+      </channel>
+      <channel id="meter_kwh" typeId="meter_kwh">
+        <label>Electric meter (kWh)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_KWh</property>
+        </properties>
+      </channel>
+      <channel id="meter_watts" typeId="meter_watts">
+        <label>Electric meter (watts)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_W</property>
+        </properties>
+      </channel>
+      <channel id="meter_voltage" typeId="meter_voltage">
+        <label>Electric meter (volts)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_V</property>
+        </properties>
+      </channel>
+      <channel id="meter_current" typeId="meter_current">
+        <label>Electric meter (amps)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_A</property>
+        </properties>
+      </channel>
+      <channel id="alarm_power" typeId="alarm_power">
+        <label>Alarm (power)</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=POWER_MANAGEMENT</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">McoHome Technology Co., Ltd</property>
+      <property name="modelId">MH-DT411</property>
+      <property name="manufacturerId">015F</property>
+      <property name="manufacturerRef">D411:5102</property>
+      <property name="dbReference">1581</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_1_1" type="integer" groupName="configuration">
+        <label>1: Dimmer State Saved OR Not When Power Failure</label>
+        <description>0 Not saved, 1 Saved</description>
+        <default>0</default>
+        <advanced>true</advanced>
+      </parameter>
+
+      <parameter name="config_2_1" type="integer" groupName="configuration">
+        <label>2: Dimming Mode</label>
+        <description><![CDATA[
+0: Leading Edge, 1: Trailing Edge 2: on/off only<br /> <h1>Overview</h1><p>Dimming Mode</p>
+        ]]></description>
+        <default>1</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_3_1" type="integer" groupName="configuration">
+        <label>3: Auto Detection of Dimming Mode When Powered On</label>
+        <description><![CDATA[
+0: Auto detection disabled, 1: Auto detection enabled, 2: Automatically dtects the load type once<br /> <h1>Overview</h1><p>Auto Detection of Dimming Mode when Powered On</p>
+        ]]></description>
+        <default>1</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_4_1" type="integer" groupName="configuration">
+        <label>4: LED Backlit brightness level</label>
+        <description><![CDATA[
+0: Led disabled 1-10: Min-level/max-level<br /> <h1>Overview</h1><p>LED Backlit Brightness level</p>
+        ]]></description>
+        <default>10</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_5_1" type="integer" groupName="configuration">
+        <label>5: Minimum Brightness Level (%)</label>
+        <description><![CDATA[
+1~98: Percentage brightness level<br /> <h1>Overview</h1><p>Minimum Brightness Level</p>
+        ]]></description>
+        <default>1</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_6_1" type="integer" groupName="configuration">
+        <label>6: Maximum Brightness Level (%)</label>
+        <description><![CDATA[
+2~99: Percentage Brightness Level<br /> <h1>Overview</h1><p>Maximum Brightness Level percentage (2~99)</p>
+        ]]></description>
+        <default>99</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_7_2" type="integer" groupName="configuration">
+        <label>7: Single Dimming Step time (Manual)</label>
+        <description><![CDATA[
+0~255 (Max 2.55s in 10ms steps)<br /> <h1>Overview</h1><p>This parameter defines the time of single dimming step set in parameter 8 during the manual control. Manual control is performed through holding the push button</p>
+        ]]></description>
+        <default>3</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_8_1" type="integer" groupName="configuration">
+        <label>8: Single Dimming Step Size (Manual)</label>
+        <description><![CDATA[
+1~99: Dimming step percentage value<br /> <h1>Overview</h1><p>This parameter defines the percentage value of dimming step during manual control. Manual control is performed through holding the push-button. NOTE: modification of this parameter is not recommended!</p>
+        ]]></description>
+        <default>1</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_9_2" type="integer" groupName="configuration">
+        <label>9: Single Dimming Step time (Auto)</label>
+        <description><![CDATA[
+0-255 (Max 2.55s in 10ms steps)<br /> <h1>Overview</h1><p>This parameter defines the time of single dimming step set in parameter A during the automatic control. Automatic control is performed through:- single push-button click, - double push button click, - Z-Wave control frames</p>
+        ]]></description>
+        <default>3</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_10_1" type="integer" groupName="configuration">
+        <label>10: Single Dimming Step Size (Auto)</label>
+        <description><![CDATA[
+1~99: Dimming step percentage value<br /> <h1>Overview</h1><p>This parameter defines the percentage value of dimming step during the automatic control. Automatic control is performed through: - Single push-button click, - double push-button click, - Z-wave control frames</p>
+        ]]></description>
+        <default>1</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_11_1" type="integer" groupName="configuration">
+        <label>11: Dimming percentage when single touch of button (+ / -)</label>
+        <description><![CDATA[
+0: The percentage get by the last button-holding touch. 1~99: Percentage value.<br /> <h1>Overview</h1><p>With this parameter you can set the light level the lamp will reach when you turn on the lamp of single touch "+"</p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_12_1" type="integer" groupName="configuration">
+        <label>12: Reporting interval for dimming level</label>
+        <description><![CDATA[
+0: No report during dimming send report in. 1-255: N*10ms interval<br /> <h1>Overview</h1><p>This parameter sets the reporting interval of the dimming level by N*10ms</p>
+        ]]></description>
+        <default>10</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_13_1" type="integer" groupName="configuration">
+        <label>13: External Switch Type</label>
+        <description><![CDATA[
+0: Button (Momentary Buttons) 1: Toggle (2 state switches)<br /> <h1>Overview</h1><p>External Switch type, 0: Momentary button. 1: Toggle switch (2-state switches)</p>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_14_1" type="integer" groupName="configuration">
+        <label>14: External Switch Input</label>
+        <description><![CDATA[
+0: Function disabled. 1: Wire 1 ex.switch key to S1 only. 2: Wire 1 ex.switch key to S2 only. 3: Wire 2 ex.switch keys to S1 and S2, each key can control both dimming directions. 4: Wire 2 ex.switch keys to S1 and S2, each key control one dimming directio<br /> <h1>Overview</h1><p>This parameter allows configuration of external switch type</p>
+        ]]></description>
+        <default>1</default>
+      </parameter>
+
+      <parameter name="config_15_1" type="integer" groupName="configuration">
+        <label>15: Energy Meter Reporting</label>
+        <description><![CDATA[
+0: Disabled. 1: Only report Watt. 2: Only report KWH. 3: Only report Watt &amp; KWH. 4: Only report Ampere. 5: Only report Ampere &amp; Watt. 6: Only report Ampere &amp; KWH. 7: Only report Ampere &amp; KWH &amp; Watt. 8: Only report Voltage. 9: Only report Voltage &amp; Watt. 1<br /> <h1>Overview</h1><p>This parameter allows you to modify the Energy Meter report by choosing what information shall be reported</p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_16_2" type="integer" groupName="configuration">
+        <label>16: Energy Reporting Interval</label>
+        <description><![CDATA[
+1-32768:n*1s<br /> <h1>Overview</h1><p>This parameter allows you to set the Energy Reporting Interval by 1-32768:n*1s</p>
+        ]]></description>
+        <default>16</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_17_1" type="integer" groupName="configuration">
+        <label>17: Beep</label>
+        <description><![CDATA[
+0: Beep disabled. 1: Beep enabled<br /> <h1>Overview</h1><p>This parameter enabled / disables the playing of a "beep" when one of the push-buttons ("+" or "-") is touched</p>
+        ]]></description>
+        <default>1</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_32_2" type="integer" groupName="configuration">
+        <label>32: Ampere Alarm Threshold</label>
+        <description><![CDATA[
+0: Alarm disabled. 1-5000:N*0.01A alarm enabled<br /> <h1>Overview</h1><p>This parameter allows the Ampere Alarm Threshold to be set or disabled</p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_34_2" type="integer" groupName="configuration">
+        <label>34: Instantaneous Consumption Alarm Threshold</label>
+        <description><![CDATA[
+0: Alarm disabled. 1-3000*N*0.1W A alarm enabled<br /> <h1>Overview</h1><p>This parameter allows the Instantaneous Consumption Alarm to be set / disabled. The setting is in Watt (N*0.1W)</p>
+        ]]></description>
+        <default>2000</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_35_1" type="integer" groupName="configuration">
+        <label>35: Overload Time before Load Off</label>
+        <description><![CDATA[
+0: Disabled. 1-255: sec To protect the device not overload burned, it will be load off automatically, after load time detection Device will send Notification Command to gateway<br /> <h1>Overview</h1><p>This parameter allows the time in seconds to be set before the Load off will occur and notification will be send to gateway</p>
+        ]]></description>
+        <default>20</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_36_1" type="integer" groupName="configuration">
+        <label>36: Auto Load Off When Overload</label>
+        <description><![CDATA[
+0: Auto load off disabled. 1: Auto load off enabled<br /> <h1>Overview</h1><p>This parameter enables/disables the Auto Load Off when overload function (default: disabled)</p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_64_2" type="integer" groupName="configuration" readOnly="true">
+        <label>64: Detection Ampere of Overload</label>
+        <description><![CDATA[
+read-only<br /> <h1>Overview</h1><p>This parameters reports the Ampere in case of Overload detection</p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_65_2" type="integer" groupName="configuration" readOnly="true">
+        <label>65: Detection Voltage of Overload</label>
+        <description><![CDATA[
+Read-only<br /> <h1>Overview</h1><p>This parameter reports the Voltage in case of Overload Detection</p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_66_0" type="integer" groupName="configuration" readOnly="true">
+        <label>66: Detection Power of Overload</label>
+        <description><![CDATA[
+Read-only<br /> <h1>Overview</h1><p>This parameter reports the Power value (W) in case of Overload Detection</p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_67_1" type="integer" groupName="configuration" readOnly="true">
+        <label>67: Overload Time</label>
+        <description><![CDATA[
+Read-only<br /> <h1>Overview</h1><p>This parameter reports the time of the Overload detected</p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_255_1" type="integer" groupName="configuration">
+        <label>255: Factory Setting</label>
+        <description><![CDATA[
+85: Restore Factory Setting<br /> <h1>Overview</h1><p>This parameter allows the device to be reset to factory defaults</p>
+        ]]></description>
+        <default>0</default>
+        <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Meter report</label>
+        <description><![CDATA[
+COMMAND_CLASS_METER, METER_REPORT_V2<br /> <h1>Overview</h1><p>The load instant power changes after dimming<br /></p>
+        ]]></description>
+        <multipleLimit>1</multipleLimit>
+      </parameter>
+
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Multi-Level Switch class</label>
+        <description><![CDATA[
+COMMAN_CLASS_SWITCH_MULTILEVEL, SWITCH_MULTIJJLEVEL_REPORT<br /> <h1>Overview</h1><p>Trigger:</p><p>1. Press or hold momentary button on the device</p><p>2. Press or hold external button S1</p><p>3 Get dimming request from the gateway and complete dimming</p>
+        ]]></description>
+        <multipleLimit>1</multipleLimit>
+      </parameter>
+
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Notification</label>
+        <description><![CDATA[
+COMMAND_CLASS_NOTIFICATION, NOTIFICATION_REPORT<br /> <h1>Overview</h1><p>trigger:</p><p>Load exceeds the threshold set by parameter 32-34</p>
+        ]]></description>
+        <multipleLimit>1</multipleLimit>
+      </parameter>
+
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Device reset</label>
+        <description><![CDATA[
+COMMAND_CLASS_DEVICE_RESET_LOCALLY, DEVICE_RESET_LOCALLY_NOTIFICATION<br /> <h1>Overview</h1><p>Trigger:</p><p>Factory setting restored</p>
+        ]]></description>
+        <multipleLimit>1</multipleLimit>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: Switch Multi Level</label>
+        <description><![CDATA[
+COMMAND_CLASS_SWITCH_MULTILEVEL, SWITCH_MULTILEVEL_REPORT<br /> <h1>Overview</h1><p>trigger:</p><p>1. Long or short press internal button</p><p>2. Long or short press external button S1</p><p>3. Get dimming request from the gateway and complete dimming</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_3" type="text" groupName="association" multiple="true">
+        <label>3: Basic V2</label>
+        <description><![CDATA[
+COMMAND_CLASS_BASIC_V2, BASIC_SET_V2<br /> <h1>Overview</h1><p>trigger:</p><p>1. Short press internal button to open load</p><p>2. Short press external button S1 to open load</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_4" type="text" groupName="association" multiple="true">
+        <label>4: Basic V2</label>
+        <description><![CDATA[
+COMMAND_CLASS_BASIC_V2, BASIC_SET_V2<br /> <h1>Overview</h1><p>trigger:</p><p>1. Short press internal button to close load</p><p>2. Short press external button S1 to close load</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>
