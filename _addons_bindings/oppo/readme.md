@@ -183,7 +183,9 @@ String oppo_remote_button "Remote Button [%s]" { channel="oppo:player:myoppo:rem
 secondsformat.js:
 
 ```javascript
-(function(totalSeconds) {
+(function(timestamp) {
+    var totalSeconds = Date.parse(timestamp) / 1000
+
     if (isNaN(totalSeconds)) {
         return '-';
     } else {
