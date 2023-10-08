@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="sunricher_highloadswitch_00_000" listed="false">
+    <label>High load switch In wall micromodule single switch</label>
+    <description><![CDATA[
+In wall micromodule single switch<br /> <h1>Overview</h1><p>Product Description</p><p>The in-wall switch is a Z-Wave device that is used to switch ON/OFF the connected light or electrical appliances and can be controlled by other Z-Wave devices. The In-wall switch can be included and operated in any Z-Wave network with other Z-Wave certified devices from other manufacturers and/or other applications. All non-battery operated nodes within the network will act as repeaters regardless of vendor to increase reliability of the network.</p><p>This device supports the SmartStart inclusion. SmartStart enabled products can be added into a Z-Wave network by scanning the Z-Wave QR Code present on the product with a controller providing SmartStart inclusion. No further action is required and the SmartStart product will be added automatically within a period after the QR code being scanned or reset power of the device. Please find the QR code on the device casing.</p><p>The encryption mode that the switch supports is S2 Unauthenticated. When the switch is being included into a Z-Wave network, you can use your primary controller/gateway to enable encryption mode or disable encryption. (The primary controller/gateway shall support encryption mode configuration). The switch supports OTA and can update firmware wirelessly. In addition, the switch is equipped with Power Metering and over current protection.<br /></p><p>Z-Wave Frequency . 868 42 MHZ (EU)</p><p>Input Voltage AC100-240V</p><p>Output Voltage AC100-240V</p><p>Output Current 16A max.</p><p>Operating temperature 0 to 40°C</p><p>Relative humidity 8% to 80%</p><p>Dimensions 45.5x45x20.3mm</p><p><br /></p> <br /> <h2>Inclusion Information</h2><p>Inclusion (adding to a Z-Wave network)</p><ol><li>Set primary controller/gateway into inclusion mode (Please refer to your primary controllers manual on how to turn your controller into inclusion).</li><li>Power on the in-wall switch and set it into inclusion mode. There are two methods to set the in-wall switch into inclusion mode:<ol><li>Triple press the action button on the switch, LED indicator will flash rapidly, it will set the switch into inclusion mode for 30 seconds, if there is no reply from the gateway, the device will quit inclusion mode after 30 seconds.</li><li>When the value of parameter 5 is configured as 1, triple press the external switch rapidly within 1.5 seconds, LED indicator will flash rapidly, it will set the switch into inclusion mode for 30 seconds, if there is no reply from the gateway, the device will quit inclusion mode after 30 seconds.</li></ol></li></ol><p>The LED indicator will stay solid on for 3 seconds if the device is added to the network successfully. The indicator will turn off if inclusion fails.</p> <br /> <h2>Exclusion Information</h2><p>Exclusion (removing from a Z-Wave network)</p><p>There are two exclusion methods:</p><p>Method 1: Exclusion from the primary controller/gateway as follows:</p><ol><li>Set the primary controller/gateway into exclusion mode (Please refer to your primary controllers manual on how to set your controller into exclusion).</li><li>Power on the in-wall switch and set it into exclusion mode. There are two methods to set the in-wall switch into exclusion mode:<ol><li>Triple press the action button on the switch, LED indicator will flash rapidly, it will set the switch into exclusion mode for 30 seconds, if there is no reply from the gateway, the device will quit exclusion mode after 30 seconds.</li><li>When the value of parameter 5 is configured as 1, triple press the external switch rapidly within 1.5 seconds, LED indicator will flash rapidly, it will set the switch into exclusion mode for 30 seconds, if there is no reply from the gateway, the device will quit exclusion mode after 30 seconds.</li></ol></li></ol><p>The LED indicator will stay solid on for 3 seconds if the device is removed from the network successfully. The indicator will turn off if exclusion fails.</p><p>Method 2: Factory reset the switch will force the switch to be excluded from a network. (please refer to the part "Factory Reset" of this manual)</p><p>Note: Factory reset is not recommended for exclusion, please use this procedure only if the primary controller/gateway is missing or otherwise inoperable.</p><p>Factory Reset</p><p>Press and hold down the action button for over 10 seconds, LED indicator flashes slowly, the switch will restart and reset to factory defaults.</p> <br /> <h2>Wakeup Information</h2><p>Not applicable</p>
+    ]]></description>
+    <category>WallSwitch</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_binary" typeId="switch_binary">
+        <label>Switch</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY</property>
+        </properties>
+      </channel>
+      <channel id="scene_number" typeId="scene_number">
+        <label>Scene Number</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_SCENE_ACTIVATION</property>
+        </properties>
+      </channel>
+      <channel id="meter_kwh" typeId="meter_kwh">
+        <label>Electric meter (kWh)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_KWh</property>
+        </properties>
+      </channel>
+      <channel id="meter_kvah" typeId="meter_kvah">
+        <label>Electric meter (kVAh)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_KVAh</property>
+        </properties>
+      </channel>
+      <channel id="meter_watts" typeId="meter_watts">
+        <label>Electric meter (watts)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_W</property>
+        </properties>
+      </channel>
+      <channel id="meter_voltage" typeId="meter_voltage">
+        <label>Electric meter (volts)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_V</property>
+        </properties>
+      </channel>
+      <channel id="meter_current" typeId="meter_current">
+        <label>Electric meter (amps)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_A</property>
+        </properties>
+      </channel>
+      <channel id="alarm_power" typeId="alarm_power">
+        <label>Alarm (power)</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=POWER_MANAGEMENT</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Sunricher</property>
+      <property name="modelId">High load switch</property>
+      <property name="manufacturerId">0330</property>
+      <property name="manufacturerRef">0004:D019</property>
+      <property name="dbReference">1582</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

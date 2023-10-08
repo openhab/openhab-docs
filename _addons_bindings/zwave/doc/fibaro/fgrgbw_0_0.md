@@ -52,6 +52,7 @@ The following table summarises the channels available for the FGRGBW -:
 | Electric meter (kWh) | meter_kwh | meter_kwh | Energy | Number | 
 | Meter reset | meter_reset | meter_reset | Energy | Switch | 
 | Color | color_color | color_color | ColorLight | Color | 
+| Color Raw | color_raw | color_raw |  |  | 
 | Start animation | scene_number | scene_number |  | Number | 
 | Red | switch_dimmer2 | switch_dimmer | DimmableLight | Dimmer | 
 | Green | switch_dimmer3 | switch_dimmer | DimmableLight | Dimmer | 
@@ -89,6 +90,9 @@ The color channel allows to control the color of a light.
             It is also possible to dim values and switch the light on and off.
 
 The ```color_color``` channel is of type ```color_color``` and supports the ```Color``` item and is in the ```ColorLight``` category.
+
+### Color Raw
+Channel type information on this channel is not found.
 
 ### Start animation
 Triggers when a scene button is pressed.

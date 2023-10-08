@@ -100,16 +100,20 @@ HVAC- Radiator Controller<br /> <h1>Overview</h1><p>Comet Z-Wave is an energy-sa
         </options>
       </parameter>
 
-      <parameter name="config_2_0" type="integer" groupName="configuration">
+      <parameter name="config_2_1" type="integer" groupName="configuration">
         <label>2: LCD Timeout</label>
-        <description>5 - 30: Timeout after 5 seconds - 30 seconds; default: 5</description>
+        <description><![CDATA[
+5 - 30: Timeout after 5 seconds - 30 seconds; default: 5<br /> <h1>Overview</h1><p><br /></p>
+        ]]></description>
         <default>5</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_4_0" type="integer" groupName="configuration">
+      <parameter name="config_4_1" type="integer" groupName="configuration">
         <label>4: Batteriestatus</label>
-        <description>Batteriestatus; 0: Send only event-controlled as system warning; 1: Batteriestatus send 1x a day default: 0x00</description>
+        <description><![CDATA[
+Batteriestatus; 0: Send only event-controlled as system warning; 1: Batteriestatus send 1x a day default: 0x00<br /> <h1>Overview</h1><p><br /></p>
+        ]]></description>
         <default>0</default>
         <options>
           <option value="0">event controlled</option>
@@ -118,16 +122,20 @@ HVAC- Radiator Controller<br /> <h1>Overview</h1><p>Comet Z-Wave is an energy-sa
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_5_0" type="integer" groupName="configuration">
+      <parameter name="config_5_1" type="integer" groupName="configuration">
         <label>5: Actual-Temperature</label>
-        <description>0: Do not send actual temperature automatically; 5-50 With temperature difference of 0.5°C - 5.0°C transfer actual temperature default: 5 (When Delta = 0,5°C report)</description>
+        <description><![CDATA[
+0: Do not send actual temperature automatically; 5-50 With temperature difference of 0.5°C - 5.0°C transfer actual temperature default: 5 (When Delta = 0,5°C report)<br /> <h1>Overview</h1><p><br /></p>
+        ]]></description>
         <default>5</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_7_0" type="integer" groupName="configuration">
+      <parameter name="config_7_1" type="integer" groupName="configuration">
         <label>7: Window-opendetection</label>
-        <description>0x00 Deactivated; 0x01 low sensitivity; 0x02 medium sensitivity; 0x03 high sensivity; default: 0x01 low sensitive</description>
+        <description><![CDATA[
+0x00 Deactivated; 0x01 low sensitivity; 0x02 medium sensitivity; 0x03 high sensivity; default: 0x01 low sensitive<br /> <h1>Overview</h1><p><br /></p>
+        ]]></description>
         <default>1</default>
         <options>
           <option value="0">deactivated</option>
@@ -138,9 +146,11 @@ HVAC- Radiator Controller<br /> <h1>Overview</h1><p>Comet Z-Wave is an energy-sa
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_8_0" type="integer" groupName="configuration">
+      <parameter name="config_8_1" type="integer" groupName="configuration">
         <label>8: Actual-Temperature- Offset</label>
-        <description>0xCE-0x32 -5,0°C - (+) 5,0°C default: 0x00 0,0°C Offset</description>
+        <description><![CDATA[
+0xCE-0x32 -5,0°C - (+) 5,0°C default: 0x00 0,0°C Offset<br /> <h1>Overview</h1><p><br /></p>
+        ]]></description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
       </parameter>

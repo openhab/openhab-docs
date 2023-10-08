@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="heltun_hetps02_00_000" listed="false">
+    <label>HE-TPS02 Touch Panel Switch Duo</label>
+    <description><![CDATA[
+Touch Panel Switch Duo<br /> <h1>Overview</h1><p>HELTUN HE-TPS02 Advanced Programmable Touch Panel Switch brings "Impossibly Smart" capabilities to your home lighting, electric outlets, or motorized blinds, door locks, gates, and valves. It replaces an existing in-wall switch and brings over-the-Internet monitoring, control, and advanced programmability. Device is "Impossibly Thin" on the wall yet packed with features to provide the ultimate in control and convenience.<br /></p> <br /> <h2>Inclusion Information</h2><p>To add the HE-TPS02 to an existing Z-Wave network (i.e. “inclusion”), do the following:</p><ol><li>Start the Inclusion Mode from the gateway/controller.</li><li>To start the inclusion process on the HE-TPS02, simultaneously press the two upper hidden touch buttons (see Figure 8) and hold them for three seconds.</li><li>All buttons will then sequentially blink ‘blue-red’.</li><li>If the inclusion has been successful, all buttons will turn blue for three seconds.</li><li>If the inclusion was not successful, all buttons will turn red for three seconds. In that case repeat the inclusion process.</li></ol> <br /> <h2>Exclusion Information</h2><p>To remove the HE-TPS02 from a Z-Wave network (i.e. “Exclusion”), do the following:</p><ol><li>Start the Exclusion Mode from the gateway/controller.</li><li>To start the exclusion process on the HE-TPS02, simultaneously press the two upper hidden touch buttons (see Figure 8) and hold them for three seconds.</li><li>All buttons will sequentially blink blue-red.</li><li>If the exclusion has been successful, all buttons will turn red for three seconds.</li><li>If the exclusion was not successful, all buttons will turn blue for three seconds. In that case repeat the exclusion process.</li></ol><p>Note: If the HE-TPS02 has previously been part of a Z-Wave network and not Excluded since, Inclusion is not possible without rst performing an Exclusion or Factory Reset procedure.</p> <br /> <h2>Wakeup Information</h2><p><br /></p>
+    ]]></description>
+    <category>WallSwitch</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_binary" typeId="switch_binary">
+        <label>Switch</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY</property>
+        </properties>
+      </channel>
+      <channel id="sensor_temperature" typeId="sensor_temperature">
+        <label>Sensor (temperature)</label>
+        <properties>
+          <property name="binding:*:QuantityType">COMMAND_CLASS_SENSOR_MULTILEVEL;type=TEMPERATURE</property>
+        </properties>
+      </channel>
+      <channel id="sensor_luminance" typeId="sensor_luminance">
+        <label>Sensor (luminance)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_SENSOR_MULTILEVEL;type=LUMINANCE</property>
+        </properties>
+      </channel>
+      <channel id="sensor_relhumidity" typeId="sensor_relhumidity">
+        <label>Sensor (relative humidity)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_SENSOR_MULTILEVEL;type=RELATIVE_HUMIDITY</property>
+        </properties>
+      </channel>
+      <channel id="meter_kwh" typeId="meter_kwh">
+        <label>Electric meter (kWh)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_KWh</property>
+        </properties>
+      </channel>
+      <channel id="meter_watts" typeId="meter_watts">
+        <label>Electric meter (watts)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_W</property>
+        </properties>
+      </channel>
+      <channel id="scene_number" typeId="scene_number">
+        <label>Scene Number</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_CENTRAL_SCENE</property>
+        </properties>
+      </channel>
+      <channel id="time_offset" typeId="time_offset">
+        <label>Clock Time Offset</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_CLOCK</property>
+        </properties>
+      </channel>
+      <channel id="switch_binary1" typeId="switch_binary">
+        <label>Switch 1</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY:1</property>
+        </properties>
+      </channel>
+      <channel id="switch_binary2" typeId="switch_binary">
+        <label>Switch 2</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY:2</property>
+        </properties>
+      </channel>
+      <channel id="switch_binary3" typeId="switch_binary">
+        <label>Switch 3</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY:3</property>
+        </properties>
+      </channel>
+      <channel id="switch_binary4" typeId="switch_binary">
+        <label>Switch 4</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY:4</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Heltun</property>
+      <property name="modelId">HE-TPS02</property>
+      <property name="manufacturerId">0344</property>
+      <property name="manufacturerRef">0004:0006</property>
+      <property name="dbReference">1502</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

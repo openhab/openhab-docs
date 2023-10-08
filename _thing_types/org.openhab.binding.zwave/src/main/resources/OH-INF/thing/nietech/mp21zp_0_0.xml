@@ -6,9 +6,9 @@
                       https://openhab.org/schemas/thing-description/v1.0.0">
 
   <thing-type id="nietech_mp21zp_00_000" listed="false">
-    <label>MP21ZP Mini Plug with Power Meter</label>
+    <label>MP21ZP/MP31ZP Mini Plug with Power Meter</label>
     <description><![CDATA[
-Mini Plug with Power Meter<br /> <h1>Overview</h1><p><b>Z-Wave Plus Outlet Mini Plug with Power Meter(MP21ZP)</b><br /></p><p>Indoor use in dry location<br /></p><p>Power: 120V 60Hz</p><p>Loading: 10 Amp Max Resistive </p><p>Frequency: 908.42MHz</p><p>Temperature Range: 0°C~ 40°C / (32°F~104°F)</p><p><b>Features:</b></p><ol><li>Manual and Remote (Z-Wave) on/off control.</li><li>Z-Wave controlled AC outlet for standard incandescent lighting, CFL/LEDs, fans or small appliances(1250W Resistive Max).</li><li>Grounded 3-wire power connection for safety.</li><li>Remembers and restores on/off status after power failure.</li><li>Built-in Z-Wave Plus signal repeater to extend network range.</li><li>S2 security and 700 Z-Wave chip for reliable wireless communication.</li><li>Work with all certificated Z-Wave controllers</li></ol><p><b>Locally Button Press function:</b></p><ol><li>press 1x: turn output ON or OFF</li><li>quickly press 3x: inclusion or exclusion</li><li>quickly press 5x: change Parameter 1</li><li>quickly press 8x: change Parameter 4</li><li>quickly press 10x: Reset KWH</li><li>Factory reset: click Z-Wave button 2 twice quickly, then hold for at least 10 seconds.</li></ol> <br /> <h2>Inclusion Information</h2><p><b>Adding Device To Z-Wave Network:</b><br /></p><p>Once the controller is ready to add your device, press the Manual/Program button on the smart plug 3 times quickly. The blue LED will blink quickly.</p><p> Auto-add mode: LED will blink within 30 seconds after first plugged in.</p> <br /> <h2>Exclusion Information</h2><p><b>Removing Device To Z-Wave Network:</b></p><p>Once the controller is ready to remove your device, press the Manual/Program button on the smart plug 3 times quickly. The blue LED will blink quickly.</p><p>Auto-add mode: LED will blink within 30 seconds after first plugged in.</p> <br /> <h2>Wakeup Information</h2><p>N/A</p>
+Mini Plug with Power Meter<br /> <h1>Overview</h1><p><b>Z-Wave Plus Outlet Mini Plug with Power Meter (MP21ZP)</b><br /></p><p><b>Z-Wave Plug with Energy Monitor (700 Chip) (MP31ZP)</b></p><p><b><br /></b></p><p><b>Specification</b></p><p>Input: 125VAC 60Hz</p><p>Frequency: 908.42 MHz</p><p>Loading: 15A Max 1875W resistive or general purpose 5A Max 625W tungsten</p><p>Indoor use in dry location</p><p><br /></p><p><b>Features</b></p><ol><li>Z-Wave control on / off.</li><li>Z-Wave controlled AC outlet for standard incandescent lighting, CFL/LEDs, fans or small appliances (1875W Resistive Max).</li><li>Grounded 3-wire power connection for safety.</li><li>Remembers and restores on / off status after power failure</li><li>Built-in Z-Wave Plus signal repeater to extend network range.</li><li>S2 security and for reliable wireless communication.</li><li>Work with all certificated Z-Wave controllers.</li><li>Protection function (When the production function is triggered, the device needs to be powered on again for normal use.)</li></ol><ul><li>Voltage protection: when the voltage＞135V, the device will be forcibly shut down</li><li>Current protection, when the current＞16A, the device will be forcibly shut down</li><li>Power Wattage protection, when the power＞2000W, the device will be forcibly shut down</li></ul> <br /> <h2>Inclusion Information</h2><p><b>Adding Device To Z-Wave Network:</b><br /></p><p>Once the controller is ready to add your device, press the Manual/Program button on the smart plug 3 times quickly. The blue LED will blink quickly.</p><p> Auto-add mode: LED will blink within 30 seconds after first plugged in.</p> <br /> <h2>Exclusion Information</h2><p><b>Removing Device To Z-Wave Network:</b></p><p>Once the controller is ready to remove your device, press the Manual/Program button on the smart plug 3 times quickly. The blue LED will blink quickly.</p><p>Auto-add mode: LED will blink within 30 seconds after first plugged in.</p> <br /> <h2>Wakeup Information</h2><p>N/A</p>
     ]]></description>
     <category>PowerOutlet</category>
 
@@ -55,7 +55,7 @@ Mini Plug with Power Meter<br /> <h1>Overview</h1><p><b>Z-Wave Plus Outlet Mini 
     <!-- DEVICE PROPERTY DEFINITIONS -->
     <properties>
       <property name="vendor">NIE Technology</property>
-      <property name="modelId">MP21ZP</property>
+      <property name="modelId">MP21ZP/MP31ZP</property>
       <property name="manufacturerId">0312</property>
       <property name="manufacturerRef">FF00:FF0E</property>
       <property name="dbReference">1417</property>
@@ -94,7 +94,7 @@ LED Indicator Setup<br /> <h1>Overview</h1><p>This parameter can access you to c
       <parameter name="config_2_4" type="integer" groupName="configuration">
         <label>2: Auto Turn-Off Timer</label>
         <description><![CDATA[
-Auto Turn-Off Timer Setup<br /> <h1>Overview</h1><p>This parameter can access you to set a timer to make the switch turn off automatically after the switch turned on<br /></p>
+Auto Turn-Off Timer Setup<br /> <h1>Overview</h1><p>This parameter can access you to set a timer to make the switch turn off automatically after the switch turned on<br /></p><p>0 - Disable</p><p>1 - 1 minute</p><p>...</p><p>65535 - 65535 minutes</p>
         ]]></description>
         <default>0</default>
         <options>
@@ -106,7 +106,7 @@ Auto Turn-Off Timer Setup<br /> <h1>Overview</h1><p>This parameter can access yo
       <parameter name="config_3_4" type="integer" groupName="configuration">
         <label>3: Auto Turn-On Timer</label>
         <description><![CDATA[
-Auto Turn-On Timer Setup<br /> <h1>Overview</h1><p>This parameter can access you to set a timer to make the switch turn on automatically after the switch turned off.</p>
+Auto Turn-On Timer Setup<br /> <h1>Overview</h1><p>This parameter can access you to set a timer to make the switch turn on automatically after the switch turned off.</p><p>0 - Disable<br /></p><p>1 - 1 minute</p><p>...</p><p>65535 - 65535 minute</p>
         ]]></description>
         <default>0</default>
         <options>
@@ -129,9 +129,9 @@ Restores state after power failure Setup<br /> <h1>Overview</h1><p>This paramete
       </parameter>
 
       <parameter name="config_5_1" type="integer" groupName="configuration">
-        <label>5: Power Wattage(W) Report</label>
+        <label>5: Power Wattage (W) Report</label>
         <description><![CDATA[
-Power Wattage(W) Report Setup<br /> <h1>Overview</h1><p>This parameter determines the minimum change in power wattage(W) that will result in sending new power report to the main controller.</p>
+Threshold for power report<br /> <h1>Overview</h1><p>This parameter determines the minimum change in power wattage (W) that will result in sending new power report to the main controller.</p><p>5 - 5 W</p><p>...</p><p>50 - 50 W</p>
         ]]></description>
         <default>1</default>
         <limitToOptions>false</limitToOptions>
@@ -140,45 +140,53 @@ Power Wattage(W) Report Setup<br /> <h1>Overview</h1><p>This parameter determine
       <parameter name="config_6_4" type="integer" groupName="configuration">
         <label>6: Time Report</label>
         <description><![CDATA[
-Time Report Setup<br /> <h1>Overview</h1><p>Electricity (A) Report Frequency (Timer)<br /></p>
+Interval minutes after last report of power.<br /> <h1>Overview</h1><p>This parameter determines minimum time that has to elapse before sending new power report to the main controller.</p><p>1 - 1 minute</p><p>2 - 2 minutes</p><p>...</p><p>655535 - 65535 minutes</p>
         ]]></description>
-        <default>1</default>
+        <default>5</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_7_1" type="integer" groupName="configuration">
         <label>7: Current(A) Report</label>
         <description><![CDATA[
-Current(A) Report Setup<br /> <h1>Overview</h1><p>This parameter determines the minimum change in Current(A) that will result in sending new power report to the main controller</p>
+Threshold for current report (x0.1A).<br /> <h1>Overview</h1><p>This parameter determines the minimum change in Current (A) that will result in sending new power report to the main controller.</p><p>1 - 100mA<br /></p><p>2- 200mA<br /></p><p>...<br /></p><p>10 - 1A</p>
         ]]></description>
         <default>1</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_8_1" type="integer" groupName="configuration">
-        <label>8: Energy(KWH) Report</label>
+        <label>8: Energy (kWh) Report</label>
         <description><![CDATA[
-Energy(KWH) Report Setup<br /> <h1>Overview</h1><p>This parameter determines the minimum change in consumed energy that will result in sending new energy report to the main controller</p>
+Threshold for electricity report (x0.01 kWh).<br /> <h1>Overview</h1><p>This parameter determines the minimum change in consumed energy that will result in sending new energy report to the main controller.</p><p>1 - 0.01 kWh</p><p>2 - 0.02 kWh</p><p>...</p><p>100 - 1 kWh</p>
         ]]></description>
         <default>1</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_9_4" type="integer" groupName="configuration">
-        <label>9: Count Down Configuration</label>
+      <parameter name="config_9_1" type="integer" groupName="configuration">
+        <label>9: Indicator brightness</label>
         <description><![CDATA[
-Endpoint1 Count Down Configuration (Turn off the output by time）<br /> <h1>Overview</h1><p>Endpoint1 Count Down Configuration (Turn off the output by time）<br /></p>
+Setting indicator's brightness.<br /> <h1>Overview</h1><p><br /></p>
         ]]></description>
-        <default>60</default>
-        <limitToOptions>false</limitToOptions>
+        <default>2</default>
+        <options>
+          <option value="0">High Level</option>
+          <option value="1">Mid Level</option>
+          <option value="2">Low Level</option>
+        </options>
       </parameter>
 
       <parameter name="config_10_1" type="integer" groupName="configuration">
-        <label>10: Auto Turn-ON Timer</label>
+        <label>10: Disable power report</label>
         <description><![CDATA[
-Endpoint1 Enable Auto Turn-ON Timer<br /> <h1>Overview</h1><p>Endpoint1 Enable Auto Turn-ON Timer<br /></p>
+Enable or disable power report.<br /> <h1>Overview</h1><p><br /></p>
         ]]></description>
         <default>0</default>
+        <options>
+          <option value="0">Enable power report</option>
+          <option value="1">Disable power report</option>
+        </options>
       </parameter>
 
       <parameter name="config_11_4" type="integer" groupName="configuration">
@@ -190,56 +198,21 @@ Endpoint1 Count Down Configuration(Turn on the output by time）<br /> <h1>Overv
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_12_1" type="integer" groupName="configuration">
-        <label>12: E2 Auto Turn-OFF Timer</label>
+      <parameter name="config_12_4" type="integer" groupName="configuration">
+        <label>12: Report frequency of current</label>
         <description><![CDATA[
-Endpoint2 Enable Auto Turn-OFF Timer<br /> <h1>Overview</h1><p>Endpoint2 Enable Auto Turn-OFF Timer<br /></p>
+Interval minutes after last report of current.<br /> <h1>Overview</h1><p>1 - 1minute</p><p>2 - 2minutes</p><p>...</p><p>655535 - 65535 minutes</p>
         ]]></description>
-        <default>0</default>
+        <default>60</default>
       </parameter>
 
       <parameter name="config_13_4" type="integer" groupName="configuration">
-        <label>13: E2 Count Down Configuration</label>
+        <label>13: Report frequency of voltage</label>
         <description><![CDATA[
-Endpoint2 Count Down Configuration(Turn off the output by time）<br /> <h1>Overview</h1><p>Endpoint2 Count Down Configuration(Turn off the output by time）<br /></p>
+Interval minutes after last report of voltage.<br /> <h1>Overview</h1><p>0 - Disable report</p><p>1 - minute</p><p>2 - minutes</p><p>...</p><p>65535 - 65535 minutes</p>
         ]]></description>
         <default>60</default>
         <limitToOptions>false</limitToOptions>
-      </parameter>
-
-      <parameter name="config_14_1" type="integer" groupName="configuration">
-        <label>14: E2 Auto Turn-ON Timer</label>
-        <description><![CDATA[
-Endpoint2 Enable Auto Turn-ON Timer<br /> <h1>Overview</h1><p>Endpoint2 Enable Auto Turn-ON Timer<br /></p>
-        ]]></description>
-        <default>0</default>
-        <limitToOptions>false</limitToOptions>
-      </parameter>
-
-      <parameter name="config_15_4" type="integer" groupName="configuration">
-        <label>15: E2 Count Down Configuration</label>
-        <description><![CDATA[
-Endpoint2 Count Down Configuration(Turn on the output by time）<br /> <h1>Overview</h1><p>Endpoint2 Count Down Configuration(Turn on the output by time）<br /></p>
-        ]]></description>
-        <default>60</default>
-        <limitToOptions>false</limitToOptions>
-      </parameter>
-
-      <parameter name="config_16_1" type="integer" groupName="configuration">
-        <label>16: Manual Control</label>
-        <description><![CDATA[
-Enable/Disable Manual Control<br /> <h1>Overview</h1><p>Enable/Disable Manual Control<br /></p>
-        ]]></description>
-        <default>1</default>
-        <limitToOptions>false</limitToOptions>
-      </parameter>
-
-      <parameter name="config_17_1" type="integer" groupName="configuration">
-        <label>17: Status LED Configuration</label>
-        <description><![CDATA[
-Status LED Configuration<br /> <h1>Overview</h1><p>Status LED Configuration<br /></p>
-        ]]></description>
-        <default>1</default>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

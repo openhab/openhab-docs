@@ -177,7 +177,7 @@ Values in the range 5 to 30 may be set.
 
 The manufacturer defined default value is ```5```.
 
-This parameter has the configuration ID ```config_2_0``` and is of type ```INTEGER```.
+This parameter has the configuration ID ```config_2_1``` and is of type ```INTEGER```.
 
 
 ### Parameter 4: Batteriestatus
@@ -193,18 +193,18 @@ The following option values may be configured -:
 
 The manufacturer defined default value is ```0``` (event controlled).
 
-This parameter has the configuration ID ```config_4_0``` and is of type ```INTEGER```.
+This parameter has the configuration ID ```config_4_1``` and is of type ```INTEGER```.
 
 
 ### Parameter 5: Actual-Temperature
 
 0: Do not send actual temperature automatically; 5-50 With temperature difference of 0.5°C - 5.0°C transfer actual temperature default: 5 (When Delta = 0,5°C report)
 
-Values in the range 5 to 50 may be set.
+Values in the range 1 to 50 may be set.
 
 The manufacturer defined default value is ```5```.
 
-This parameter has the configuration ID ```config_5_0``` and is of type ```INTEGER```.
+This parameter has the configuration ID ```config_5_1``` and is of type ```INTEGER```.
 
 
 ### Parameter 7: Window-opendetection
@@ -222,7 +222,7 @@ The following option values may be configured -:
 
 The manufacturer defined default value is ```1``` (low sensitivity).
 
-This parameter has the configuration ID ```config_7_0``` and is of type ```INTEGER```.
+This parameter has the configuration ID ```config_7_1``` and is of type ```INTEGER```.
 
 
 ### Parameter 8: Actual-Temperature- Offset
@@ -233,7 +233,7 @@ Values in the range 0 to 255 may be set.
 
 The manufacturer defined default value is ```0```.
 
-This parameter has the configuration ID ```config_8_0``` and is of type ```INTEGER```.
+This parameter has the configuration ID ```config_8_1``` and is of type ```INTEGER```.
 
 
 ## Association Groups

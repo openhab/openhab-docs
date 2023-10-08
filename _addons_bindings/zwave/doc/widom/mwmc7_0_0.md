@@ -42,13 +42,12 @@ The following table summarises the channels available for the MWMC7 -:
 
 | Channel Name | Channel ID | Channel Type | Category | Item Type |
 |--------------|------------|--------------|----------|-----------|
-| Dimmer | switch_dimmer | switch_dimmer | DimmableLight | Dimmer | 
+| Roller Shutter Control | blinds_control | blinds_control | Blinds | Rollershutter | 
 
-### Dimmer
-The brightness channel allows to control the brightness of a light.
-            It is also possible to switch the light on and off.
+### Roller Shutter Control
+Provides start / stop control of blinds.
 
-The ```switch_dimmer``` channel is of type ```switch_dimmer``` and supports the ```Dimmer``` item and is in the ```DimmableLight``` category.
+The ```blinds_control``` channel is of type ```blinds_control``` and supports the ```Rollershutter``` item and is in the ```Blinds``` category.
 
 
 
