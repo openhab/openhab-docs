@@ -74,7 +74,7 @@ Deadbolt variant<br /> <h1>Overview</h1><p>Kwikset®, the leader in residential 
       <property name="vendor">Black &amp; Decker</property>
       <property name="modelId">Kwikset 620</property>
       <property name="manufacturerId">0090</property>
-      <property name="manufacturerRef">0811:13A8,0811:23A8</property>
+      <property name="manufacturerRef">0811:03A8,0811:13A8,0811:23A8</property>
       <property name="dbReference">1513</property>
       <property name="defaultAssociations">1</property>
     </properties>

@@ -1,0 +1,352 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="shelly_waveshutter_00_000" listed="false">
+    <label>Wave Shutter Z-WaveTM shutter control with power measurement, 10 A per channel</label>
+    <description><![CDATA[
+Z-WaveTM shutter control with power measurement, 10 A per channel<br /> <h1>Overview</h1><p>Automate and remotely control the position of roller shutters, blinds, windows, awnings, pool covers, and other devices powered by bi-directional AC motors.</p><ul><li>Control the tilt position (angle) of the venetian blind slats</li><li>Supports push-buttons/momentary switches, and toggle switches</li><li>Power metering</li><li>Extremely low power consumption: &lt; 0.3 W</li><li>Z-Wave frequency band: 868.4 MHz (CEPT countries)</li><li>Latest technology: Z-Wave 800 Series</li><li>Automatic set-up with SmartStart</li><li>Security 2 Authenticated for the highest level of security</li><li>Over-the-air firmware updates</li><li>Works with Z-Wave-certified gateways and over 4,000 Z-Wave devices</li></ul><p>*A gateway (smart hub) is not included. A gateway (smart hub) is required for the configuration of the device.</p> <br /> <h2>Inclusion Information</h2><p>Adding the Device to a Z-Wave™ network (inclusion)</p><p>SmartStart adding (inclusion):</p><p>SmartStart enabled products can be added into a Z-Wave™ network by scanning the Z-Wave™ QR Code present on the Device with a gateway providing SmartStart inclusion. No further action is re-quired, and the SmartStart device will be added automatically with-in 10 minutes of being switched on in the network vicinity.</p><ol><li>With the gateway application scan the QR code on the Device label and add the Security 2 (S2) Device Specific Key (DSK) to the provisioning list in the gateway.</li><li>Connect the Device to a power supply.</li><li>Check if the blue LED is blinking in Mode 1. If so, the Device is not added to a Z-Wave™ network.</li><li>Adding will be initiated automatically within a few seconds after connecting the Device to a power supply, and the Device will be added to a Z-Wave™ network automatically.</li><li>The blue LED will be blinking in Mode 2 during the adding process.</li><li>The green LED will be blinking in Mode 1 if the Device is success-fully added to a Z-Wave™ network.</li></ol><p>Adding (inclusion) with a switch/push-button:</p><ol><li>Connect the Device to a power supply.</li><li>Check if the blue LED is blinking in Mode 1. If so, the Device is not added to a Z-Wave™ network.</li><li>Enable add/remove mode on the gateway.</li><li>Toggle the switch/push-button connected to any of the SW terminals (SW, SW1, SW2, etc.) 3 times within 3 seconds (this procedure puts the Device in Learn mode**). The Device must receive on/off signal 3 times, which means pressing the momentary switch 3 times, or toggling the switch on and off 3 times.</li><li>The blue LED will be blinking in Mode 2 during the adding process.</li><li>The green LED will be blinking in Mode 1 if the Device is successfully added to a Z-Wave™ network.</li></ol><p>**Learn mode state allows the Device to receive network information from the gateway.</p><p>Adding (inclusion) with the S button:</p><ol><li>Connect the Device to a power supply.</li><li>Check if the blue LED is blinking in Mode 1. If so, the Device is not added to a Z-Wave™ network.</li><li>Enable addi/remove mode on the gateway.</li><li>To enter the Setting mode, quickly press and hold the S button on the Device until the LED turns solid blue.</li><li>Quickly release and then press and hold (&gt; 2s) the S button on the Device until the blue LED starts blinking in Mode 3. Releasing the S button will start the Learn mode.</li><li>The blue LED will be blinking in Mode 2 during the adding process.</li><li>The green LED will be blinking in Mode 1 if the Device is successfully added to a Z-Wave™ network.</li></ol><p>Note! In Setting mode, the Device has a timeout of 10s before entering again into Normal mode.</p> <br /> <h2>Exclusion Information</h2><p>Removing the Device from a Z-Wave™ network (exclusion)</p><p>Note! The Device will be removed from your Z-wave™ network, but any custom configuration parameters will not be erased.</p><p>Removing (exclusion) with a switch/push-button:</p><ol><li>Connect the Device to a power supply.</li><li>Check if the green LED is blinking in Mode 1. If so, the Device is added to a Z-Wave™ network.</li><li>Enable add/remove mode on the gateway.</li><li>Toggle the switch/push-button connected to any of the SW terminals (SW, SW1, SW2, etc.) 3 times within 3 seconds (this procedure puts the Device in Learn mode**). The Device must receive on/off signal 3 times, which means pressing the momentary switch 3 times, or toggling the switch on and off 3 times.</li><li>The blue LED will be blinking in Mode 2 during the removing process.</li><li>The blue LED will be blinking in Mode 1 if the Device is successfully removed from a Z-Wave™ network.</li></ol><p>Removing (exclusion) with the S button:</p><ol><li>Connect the Device to a power supply.</li><li>Check if the green LED is blinking in Mode 1. If so, the Device is added to a Z-Wave™ network.</li><li>Enable add/remove mode on the gateway.</li><li>To enter the Setting mode, quickly press and hold the S button on the Device until the LED turns Solid blue.</li><li>Quickly release and then press and hold (&gt; 2s) the S button on the Device until the blue LED starts blinking in Mode 3. Releasing the S button will start the Learn mode.</li><li>The blue LED will be blinking in Mode 2 during the removing process.</li><li>The blue LED will be blinking in Mode 1 if the Device is successfully removed from a Z-Wave™ network.</li></ol><p>Note! In Setting mode, the Device has a timeout of 10s before entering again into Normal mode.</p> <br /> <h2>Wakeup Information</h2><p><br /></p>
+    ]]></description>
+    <category>Blinds</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_dimmer" typeId="switch_dimmer">
+        <label>Dimmer</label>
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+          <property name="binding:Command:OnOffType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+        </properties>
+      </channel>
+      <channel id="meter_kwh" typeId="meter_kwh">
+        <label>Electric meter (kWh)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_KWh</property>
+        </properties>
+      </channel>
+      <channel id="meter_watts" typeId="meter_watts">
+        <label>Electric meter (watts)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_W</property>
+        </properties>
+      </channel>
+      <channel id="alarm_heat" typeId="alarm_heat">
+        <label>Alarm (heat)</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=HEAT</property>
+        </properties>
+      </channel>
+      <channel id="alarm_power" typeId="alarm_power">
+        <label>Alarm (power)</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=POWER_MANAGEMENT</property>
+        </properties>
+      </channel>
+      <channel id="alarm_system" typeId="alarm_system">
+        <label>Alarm (system)</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=SYSTEM</property>
+        </properties>
+      </channel>
+      <channel id="switch_dimmer1" typeId="switch_dimmer">
+        <label>Dimmer 1</label>
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_SWITCH_MULTILEVEL:1</property>
+          <property name="binding:Command:OnOffType">COMMAND_CLASS_SWITCH_MULTILEVEL:1</property>
+        </properties>
+      </channel>
+      <channel id="meter_kwh1" typeId="meter_kwh">
+        <label>Electric meter (kWh) 1</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER:1;type=E_KWh</property>
+        </properties>
+      </channel>
+      <channel id="meter_watts1" typeId="meter_watts">
+        <label>Electric meter (watts) 1</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER:1;type=E_W</property>
+        </properties>
+      </channel>
+      <channel id="alarm_heat1" typeId="alarm_heat">
+        <label>Alarm (heat) 1</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM:1;type=HEAT</property>
+        </properties>
+      </channel>
+      <channel id="alarm_power1" typeId="alarm_power">
+        <label>Alarm (power) 1</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM:1;type=POWER_MANAGEMENT</property>
+        </properties>
+      </channel>
+      <channel id="alarm_system1" typeId="alarm_system">
+        <label>Alarm (system) 1</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM:1;type=SYSTEM</property>
+        </properties>
+      </channel>
+      <channel id="switch_dimmer2" typeId="switch_dimmer">
+        <label>Dimmer 2</label>
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_SWITCH_MULTILEVEL:2</property>
+          <property name="binding:Command:OnOffType">COMMAND_CLASS_SWITCH_MULTILEVEL:2</property>
+        </properties>
+      </channel>
+      <channel id="meter_kwh2" typeId="meter_kwh">
+        <label>Electric meter (kWh) 2</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER:2;type=E_KWh</property>
+        </properties>
+      </channel>
+      <channel id="meter_watts2" typeId="meter_watts">
+        <label>Electric meter (watts) 2</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER:2;type=E_W</property>
+        </properties>
+      </channel>
+      <channel id="alarm_heat2" typeId="alarm_heat">
+        <label>Alarm (heat) 2</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM:2;type=HEAT</property>
+        </properties>
+      </channel>
+      <channel id="alarm_power2" typeId="alarm_power">
+        <label>Alarm (power) 2</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM:2;type=POWER_MANAGEMENT</property>
+        </properties>
+      </channel>
+      <channel id="alarm_system2" typeId="alarm_system">
+        <label>Alarm (system) 2</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM:2;type=SYSTEM</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Shelly</property>
+      <property name="modelId">Wave Shutter</property>
+      <property name="manufacturerId">0460</property>
+      <property name="manufacturerRef">0003:0082</property>
+      <property name="dbReference">1585</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_1_1" type="integer" groupName="configuration">
+        <label>1: Push-button (momentary) / bistable (toggle switch) selection</label>
+        <description><![CDATA[
+This parameter defines how the Device should treat the switch (which type) connected to the SW (SW1) terminal.<br /> <h1>Overview</h1><p>Values &amp; descriptions:</p><p> 0 - momentary switch (push button),</p><p> 1 - toggle switch (contact closed - ON / contact opened - OFF),</p><p> 2 - toggle switch (Device changes status when switch changes status)</p><p>NOTE: When set = 2, 1x click on SW1 up - 1x click on SW1 stop - 1x click down</p>
+        ]]></description>
+        <default>2</default>
+        <options>
+          <option value="0">momentary switch (push button)</option>
+          <option value="1">toggle switch (contact closed - ON / contact opened - OFF)</option>
+          <option value="2">toggle switch (Device changes status when switch changes status)</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_3_1" type="integer" groupName="configuration">
+        <label>3: Inputs orientation</label>
+        <description><![CDATA[
+This parameter allows to reverse the operation of switches connected to SW1 and SW2 inputs without changing the wiring.<br /> <h1>Overview</h1><p>Values &amp; descriptions:</p><p> 0 - default (SW1 - O1, I2 - O2)</p><p> 1 - reversed (SW1 - O2, I2 - O1)</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">default (SW1 - O1, I2 - O2)</option>
+          <option value="1">reversed (SW1 - O2, I2 - O1)</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_5_1" type="integer" groupName="configuration">
+        <label>5: Output orientation</label>
+        <description><![CDATA[
+This parameter allows to reverse the operation of O1 and O2 without changing the wiring (in case of invalid motor connection) to ensure proper operation.<br /> <h1>Overview</h1><p>Values &amp; descriptions:</p><p> 0 - default (O1 - UP, O2 - DOWN)</p><p> 1 - reversed (O1 - DOWN, O2 - UP)</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">default (O1 - UP, O2 - DOWN)</option>
+          <option value="1">reversed (O1 - DOWN, O2 - UP)</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_40_1" type="integer" groupName="configuration">
+        <label>40: Power Consumption Reporting</label>
+        <description><![CDATA[
+Choose by how much the power (W) consumption needs to increase or decrease to be reported. Values correspond to percentages, so if 50 is set (by default), the Device will report any power consumption changes of 50 % or more, compared to the last reading.<br /> <h1>Overview</h1><p>Values &amp; descriptions:</p><p> 0 - Power consumption reporting disabled</p><p> 1 - 100 = 1 % - 100 % Power consumption reporting enabled. New value is reported only when the power consumption in real time changes by more than the percentage value set in this parameter, compared to the previous power consumption reading, starting at 1 % (the lowest value possible).</p><p>NOTE: Power consumption needs to increase or decrease by at least 1 Watt to be reported, REGARDLESS of the percentage set in this parameter. </p>
+        ]]></description>
+        <default>50</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_71_1" type="integer" groupName="configuration">
+        <label>71: Operating modes</label>
+        <description><![CDATA[
+Choose between the two operating modes. In shutter mode, you can select up/down/stop. In venetian mode, an additional widget/endpoint is displayed in the UI interface, which you can use to control the tilt position of the slats.<br /> <h1>Overview</h1><p>Values &amp; descriptions:</p><p> 0 - Shutter mode</p><p> 1 - Venetian mode with (up/down and slats rotation)</p><p> 2 – Manual time set (No end switches)</p><p>NOTE: If the motor is not equipped with end switches set value to 2 and set the traveling time (Parameter No. 74 &amp; 75).</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Shutter mode</option>
+          <option value="1">Venetian mode with (up/down and slats rotation)</option>
+          <option value="2">Manual time set (No end switches)</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_72_2" type="integer" groupName="configuration">
+        <label>72: Venetian blind slats turning time</label>
+        <description><![CDATA[
+Set the time required for the slats to make a full turn (180 degrees). ⓘ NOTE: Make sure that working mode is set to venetian (Par. No. 71 =1)<br /> <h1>Overview</h1><p>Values &amp; descriptions:</p><p> 0 - turning time disabled</p><p> 1 - 32767 = 0.01 seconds – 327.67 seconds</p><p>NOTE: If the set time is too long and a full turn was already performed, the device will start moving up or down for the remaining time. In this case, shorten the turning time.</p>
+        ]]></description>
+        <default>150</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_73_1" type="integer" groupName="configuration">
+        <label>73: Slats position after moving</label>
+        <description><![CDATA[
+This parameter is used to enable/disable the slats to return to the previously set position, after being activated via the gateway, push-button operation or when the lower limit switch is reached.<br /> <h1>Overview</h1><p>Values &amp; their descriptions:</p><p> 0 - disable</p><p> 1 - enable</p><p>NOTE: Make sure that working mode is set to venetian (Par. No. 71=1)</p>
+        ]]></description>
+        <default>1</default>
+        <options>
+          <option value="0">disable</option>
+          <option value="1">enable</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_76_1" type="integer" groupName="configuration">
+        <label>76: Motor operation detection</label>
+        <description><![CDATA[
+Define the power consumption threshold at the end positions. Based on this value, the Device will know that the shutters reached the limit switches.<br /> <h1>Overview</h1><p>Values &amp; their descriptions:</p><p> 0 - Disabled: reaching a limit switch will not be detected</p><p> 1 - Auto power calibration</p><p> 2 - 2-255 (2-255W) - report interval</p><p>NOTE: For correct auto power calibration the shutter calibration must be performed!</p>
+        ]]></description>
+        <default>1</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_78_1" type="integer" groupName="configuration">
+        <label>78: Forced shutter calibration</label>
+        <description><![CDATA[
+By setting this parameter to value 1 the Device will start executing force calibration procedure. The parameter also reports the calibration status by sending the get parameter value command. NOTE: Check chapter Functionality with calibration details NO<br /> <h1>Overview</h1><p>Values &amp; their descriptions:</p><p> 1 - start calibration</p><p> 2 - device is calibrated (read only)</p><p> 3 - device is not calibrated (read only)</p><p> 4 - calibration error (read only)</p>
+        ]]></description>
+        <default>3</default>
+        <options>
+          <option value="1">start calibration</option>
+          <option value="2">device is calibrated (read only)</option>
+          <option value="3">device is not calibrated (read only)</option>
+          <option value="4">calibration error (read only)</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_80_1" type="integer" groupName="configuration">
+        <label>80: Motor stop delay after limit switch detection</label>
+        <description><![CDATA[
+This parameter defines the delay time for the motor to turn off, after reaching the limit switch.<br /> <h1>Overview</h1><p>Values &amp; their descriptions:</p><p> Default value 10 = (1s)</p><p> 0-255 (0-25.5s) - time</p>
+        ]]></description>
+        <default>10</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_85_1" type="integer" groupName="configuration">
+        <label>85: Power consumption max delay time</label>
+        <description><![CDATA[
+Define the maximum time before the power consumption of the motor is read from the Device, after one of the relays is switched on. If there is no power consumption during the set time (motor is not connected, damaged or requires longer time to start, moto<br /> <h1>Overview</h1><p>Values &amp; descriptions:</p><p> 0 = time is set automatically</p><p> 3 - 50 = 0.3seconds – 5seconds (100ms resolution)</p>
+        ]]></description>
+        <default>30</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_91_2" type="integer" groupName="configuration">
+        <label>91: Max. Motor moving time</label>
+        <description><![CDATA[
+When the shutter is not calibrated (or the motor is not equipped with a limit switch), this parameter defines the movement time of the motor.<br /> <h1>Overview</h1><p>Values &amp; descriptions:</p><p> value = 1 - 32000s</p><p> value = 65000 = unlimited time</p>
+        ]]></description>
+        <default>120</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Association Group 1 - Lifeline</label>
+        <description><![CDATA[
+Association group 1 – “Lifeline Group” reports the status of the Device status and allows to assign only one device (gateway by default); only 1 node is allowed. The following command classes are supported<br /> <h1>Overview</h1><p>Association Group 1 - Lifeline</p><p> 1. DEVICE_RESET_LOCALLY_NOTIFICATION : triggered upon request</p><p> 2. SWITCH_BINARY_REPORT : status change report for all outputs O (O, O1, O2, …) - common</p><p> 3. NOTIFICATION_REPORT : triggered on Overheat</p><p> 4. NOTIFICATION_REPORT : triggered on Over-load detected sum of all outputs O (O1+O2+…)</p><p> 5. METER_REPORT : triggered according to Configuration parameters</p>
+        ]]></description>
+        <multipleLimit>1</multipleLimit>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: Association Group 2</label>
+        <description><![CDATA[
+It is assigned to switch connected to the SW 1or SW1 terminal (uses Switch Multilevel command class). Triggered by SW 1 or SW2 valid for Shutter mode.<br /> <h1>Overview</h1><p>Supports the following command classes:</p><p> 1. SWITCH_MULTILEVEL_START_LEVEL_CHANGE : initiate a transition to a new level (increase or decrease light intensity in case of dimmer, or move shutter up or down, …)</p><p> 2. SWITCH_MULTILEVEL_STOP_LEVEL_CHANGE : stop an ongoing transition (stop increase or decrease light intensity in case of dimmer, or stop moving shutter up or down, …)</p><p>It is recommended to use push buttons for this association.</p>
+        ]]></description>
+        <multipleLimit>9</multipleLimit>
+      </parameter>
+
+      <parameter name="group_3" type="text" groupName="association" multiple="true">
+        <label>3: Association Group 3</label>
+        <description><![CDATA[
+It is assigned to switch connected to the SW (SW1) terminal (uses Switch Multilevel command class). Triggered by SW 1 or SW2 valid for Venetian mode<br /> <h1>Overview</h1><p>Supports the following command classes:</p><p> 1. SWITCH_MULTILEVEL_START_LEVEL_CHANGE : initiate a transition to a new level (increase or decrease light intensity in case of dimmer, or move shutter up or down, …)</p><p> 2. SWITCH_MULTILEVEL_STOP_LEVEL_CHANGE : stop an ongoing transition (stop increase or decrease light intensity in case of dimmer, or stop moving shutter up or down, …)</p><p>It is recommended to use push buttons for this association.</p>
+        ]]></description>
+        <multipleLimit>9</multipleLimit>
+      </parameter>
+
+      <parameter name="group_4" type="text" groupName="association" multiple="true">
+        <label>4: Association Group 4</label>
+        <description><![CDATA[
+When blinds are moving up, Shutter will send Basic set ON command to associated device and associated device will turn ON. When blinds are moving down, Flush Shutter will send Basic set OFF command to associated device and the device will turn OFF. Trigg<br /> <h1>Overview</h1><p>Supports the following command classes:</p><p> BASIC_SET : set On / Off state at the associated device</p>
+        ]]></description>
+        <multipleLimit>16</multipleLimit>
+      </parameter>
+
+      <parameter name="group_5" type="text" groupName="association" multiple="true">
+        <label>5: Association Group 5</label>
+        <description><![CDATA[
+When blinds reach upper position, Shutter will send Basic set OFF command to associated device and the device will turn OFF. When blinds reach down position Flush Shutter will send Basic set ON command to associated device and the device will turn ON. Tri<br /> <h1>Overview</h1><p>Supports the following command classes:</p><p> BASIC_SET : set On / Off state at the associated device</p>
+        ]]></description>
+        <multipleLimit>16</multipleLimit>
+      </parameter>
+
+      <parameter name="group_6" type="text" groupName="association" multiple="true">
+        <label>6: Association Group 6</label>
+        <description><![CDATA[
+It is assigned to switch connected to the SW 1or SW1 terminal (uses Switch Multilevel command class). Triggered by SW 1 or SW2 valid for Shutter mode.<br /> <h1>Overview</h1><p>Supports the following command classes:</p><p> 1. SWITCH_MULTILEVEL_START_LEVEL_CHANGE : initiate a transition to a new level (increase or decrease light intensity in case of dimmer, or move shutter up or down, …)</p><p> 2. SWITCH_MULTILEVEL_STOP_LEVEL_CHANGE : stop an ongoing transition (stop increase or decrease light intensity in case of dimmer, or stop moving shutter up or down, …)</p><p>It is recommended to use push buttons for this association.</p>
+        ]]></description>
+        <multipleLimit>9</multipleLimit>
+      </parameter>
+
+      <parameter name="group_7" type="text" groupName="association" multiple="true">
+        <label>7: Association Group 7</label>
+        <description><![CDATA[
+It is assigned to switch connected to the SW (SW1) terminal (uses Switch Multilevel command class). Triggered by SW 1 or SW2 valid for Venetian mode<br /> <h1>Overview</h1><p>Supports the following command classes:</p><p> 1. SWITCH_MULTILEVEL_START_LEVEL_CHANGE : initiate a transition to a new level (increase or decrease light intensity in case of dimmer, or move shutter up or down, …)</p><p> 2. SWITCH_MULTILEVEL_STOP_LEVEL_CHANGE : stop an ongoing transition (stop increase or decrease light intensity in case of dimmer, or stop moving shutter up or down, …)</p><p>It is recommended to use push buttons for this association.</p>
+        ]]></description>
+        <multipleLimit>9</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

@@ -27,6 +27,10 @@ Start the INCLUDE procedure by means of the controller of the existing network a
 
 Put your controller into exclusion mode, then press the programming button on the awning blind for longer than 1 sec.
 
+### General Usage Information
+
+
+
 ## Channels
 
 The following table summarises the channels available for the AMZ Solar -:

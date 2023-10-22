@@ -8,7 +8,7 @@
   <thing-type id="fakro_amzsolar_00_000" listed="false">
     <label>AMZ Solar Solar Awning</label>
     <description><![CDATA[
-Solar Awning<br /> <h1>Overview</h1><p>The AMZ Z-Wave Solar Awning Blind is intended for installation in Fakro roof windows and is adapted to cooperation with elements of wireless remote control system offered by FAKRO and other manufacturers offering products with Z-Wave logo. The awning blind is equipped with a two-way radio communication module. For communication, Z-Wave utilizes radio wave frequency of 868,42 MHz.</p> <br /> <h2>Inclusion Information</h2><p>Start the INCLUDE procedure by means of the controller of the existing network and then press the “Programming” button on the awning blind being added to the network.</p> <br /> <h2>Exclusion Information</h2><p>Put your controller into exclusion mode, then press the programming button on the awning blind for longer than 1 sec.</p>
+Solar Awning<br /> <h1>Overview</h1><p>The AMZ Z-Wave Solar Awning Blind is intended for installation in Fakro roof windows and is adapted to cooperation with elements of wireless remote control system offered by FAKRO and other manufacturers offering products with Z-Wave logo. The awning blind is equipped with a two-way radio communication module. For communication, Z-Wave utilizes radio wave frequency of 868,42 MHz.</p> <br /> <h2>Inclusion Information</h2><p>Start the INCLUDE procedure by means of the controller of the existing network and then press the “Programming” button on the awning blind being added to the network.</p> <br /> <h2>Exclusion Information</h2><p>Put your controller into exclusion mode, then press the programming button on the awning blind for longer than 1 sec.</p> <br /> <h2>Wakeup Information</h2><p><br /></p>
     ]]></description>
     <category>Blinds</category>
 
@@ -40,7 +40,7 @@ Solar Awning<br /> <h1>Overview</h1><p>The AMZ Z-Wave Solar Awning Blind is inte
       <property name="vendor">Fakro</property>
       <property name="modelId">AMZ Solar</property>
       <property name="manufacturerId">0085</property>
-      <property name="manufacturerRef">0005:0002</property>
+      <property name="manufacturerRef">0005:0002,0005:0012</property>
       <property name="dbReference">1030</property>
       <property name="defaultAssociations">1</property>
     </properties>
