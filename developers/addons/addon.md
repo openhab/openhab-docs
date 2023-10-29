@@ -38,6 +38,10 @@ If the add-on consists of more than one bundle, only one `addon.xml` is allowed 
   OR
   <config-description-ref uri="{addon|thing-type|channel-type|any_other}:addonID:..." />
 
+  <discovery-methods>
+    ...
+  </discovery-methods>
+
 </addon:addon>
 ```
 
@@ -53,6 +57,7 @@ If the add-on consists of more than one bundle, only one `addon.xml` is allowed 
 | config-description         | The configuration description for the binding within the ConfigDescriptionRegistry (cf. [Configuration Description](config-xml.html))                                                                                                                                                                                                                                | optional  |
 | config-description-ref     | The reference to a configuration description for the binding within the ConfigDescriptionRegistry                                                                                                                                                                                                                                                                    | optional  |
 | config-description-ref.uri | The URI of the configuration description for the binding within the ConfigDescriptionRegistry                                                                                                                                                                                                                                                                        | mandatory |
+| discovery-methods          | A set of xml elements that describe how the system can scan the network to discover present devices                                                                                                                                                                                                                                                                  | optional  |
 
 The full XML schema for add-on definitions is specified in the [Add-on XSD](https://openhab.org/schemas/addon-1.0.0.xsd) file.
 
@@ -62,6 +67,26 @@ The full XML schema for add-on definitions is specified in the [Add-on XSD](http
 - If a configuration description is already specified somewhere else and the add-on wants to (re-)use it, a `config-description-ref` should be used instead.
 - Normally the service id must not be defined, because it is implicitly set to "type.&lt;addonId&gt;".
   An add-on can register an OSGi service which implements the ManagedService interface and define the service.pid as e.g."binding.hue" to receive the configuration.
+
+### Discovery Methods
+
+The system can scan the network for present devices to determine if it should suggest to install specific addons during setup.
+Optionally, if you want the system to scan the user's network for your addon then you need to include additional `discovery-method` fields.
+
+| XML Element Name    | Description                                                                   | Instances                                      |
+|---------------------|-------------------------------------------------------------------------------|------------------------------------------------|
+| `discovery-methods` | Wrapper for `discovery-method` elements (see below).                          | Zero or one instances per file.                |
+| `discovery-method`  | Complex XML element describing an addon discovery method.                     | Zero or more instances per file.               |
+| `service-type`      | The type of discovery method. May be `upnp` or `mdns`.                        | Mandatory one per `discovery-method`.          |
+| `mdns-service-type` | If `service-type` is `mdns`, contains the MDNS discovery service type.        | Optional one per `discovery-method`.           |
+| `match-properties`  | Wrapper for `match-property` elements (see below).                            | Zero or one instances per `discovery-method`.  |
+| `match-property`    | A property name and regular expression used for matching discovery findings.  | Zero or more instances per `discovery-method`. |
+| `name`              | A property name to search for.                                                | Mandatory one instance per `match-property`.   |
+| `regex`             | A regular expression (or plain string) that needs to match the property name. | Mandatory one instance per `match-property`.   |
+
+Notes:
+- A `discovery-method` may contain multiple `match-property` entries, and in such a case **all** entries must match i.e. it a logical `AND` function is applied.
+- If you want to apply a logical `OR` function you can define a second separate `discovery-method` containing the respective `match-property` entry.
 
 ## Example
 
@@ -81,5 +106,22 @@ The following code gives an example for an add-on definition used in bindings.
 
   <connection>local</connection>
 
+  <discovery-methods>
+    <discovery-method>
+      <serviceType>mdns</serviceType>
+      <mdnsServiceType>_hue._tcp.local.</mdnsServiceType>
+    </discovery-method>
+    <discovery-method>
+      <service-type>upnp</service-type>
+      </match-properties>
+        <match-property>
+          <name>modelName</name>
+          <regex>Philips hue bridge</regex>
+        </match-property>
+      </match-properties>
+    </discovery-method>
+  </discovery-methods>
+
 </addon:addon>
 ```
+
