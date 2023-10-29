@@ -5,6 +5,7 @@ title: Paradox Alarm System binding - Bindings
 type: binding
 description: "This binding is intended to provide basic support for Paradox Alarm system."
 since: 3x
+logo: images/addons/paradoxalarm.png
 install: auto
 ---
 
