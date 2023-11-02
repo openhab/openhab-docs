@@ -27,7 +27,7 @@ For reference how to do that: I found this [youtube tutorial](https://www.youtub
 When you are in the secured shell first thing to do is to create the user openhab.
 
 ```bash
-sudo synouser --add openhab habopen
+sudo synouser --add openhab habopen "openhab" 0 "" 0
 sudo synogroup --add openhab openhab
 ```
 
