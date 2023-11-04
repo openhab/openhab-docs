@@ -24,9 +24,13 @@ If you have any issues, questions or an idea for additional features, please tak
 ## Latest Changes
 
 ::: tip State of this document
-This documentation refers to release [v3.7.0](https://github.com/openhab/openhab-google-assistant/releases/tag/v3.7.0) of [openHAB Google Assistant](https://github.com/openhab/openhab-google-assistant) published on 2023-10-10
+This documentation refers to release [v3.8.0](https://github.com/openhab/openhab-google-assistant/releases/tag/v3.8.0) of [openHAB Google Assistant](https://github.com/openhab/openhab-google-assistant) published on 2023-11-03
 :::
 
+### v3.8.0
+
+- Added `colorTemperatureInverted=true` option to [`SpecialColorLight`](#light-as-group-with-separate-controls) allowing users to invert the percentage to Kelvin conversion for the `lightColorTemperature` item
+  
 ### v3.7.0
 
 - Adjusted [`Fan`](#fan-hood-airpurifier) to use `supportsFanSpeedPercent` option
@@ -99,7 +103,12 @@ Color  { ga="Light" [ colorTemperatureRange="2000,9000" ] }
 | **Device Type** | [Light](https://developers.home.google.com/cloud-to-cloud/guides/light) |
 | **Supported Traits** | [OnOff](https://developers.home.google.com/cloud-to-cloud/traits/onoff), [ColorSetting](https://developers.home.google.com/cloud-to-cloud/traits/colorsetting), [Brightness](https://developers.home.google.com/cloud-to-cloud/traits/brightness) |
 | **Supported Items** | Group as `SpecialColorLight` with the following members:<br>(optional) Number or Dimmer as `lightBrightness`<br>(optional) Number or Dimmer as `lightColorTemperature`<br>(optional) Color as `lightColor`<br>(optional) Switch as `lightPower` |
-| **Configuration** | (optional) `colorUnit="percent/kelvin/mired"`<br>(optional) `checkState=true/false`<br>(optional) `colorTemperatureRange="minK,maxK"`<br>_Hint: if you want to use `lightColorTemperature`, you must either set `colorUnit` to `kelvin` or `mired` or define a `colorTemperatureRange`, because `colorUnit` defaults to `percent`_ |
+| **Configuration** | (optional) `colorUnit="percent/kelvin/mired"`<br>(optional) `checkState=true/false`<br>(optional) `colorTemperatureRange="minK,maxK"`<br>(optional) `colorTemperatureInverted=true/false` |
+
+**Important Hint:** If you want to use `lightColorTemperature`, you must either set `colorUnit` to `kelvin` or `mired` or define a `colorTemperatureRange`, because `colorUnit` defaults to `percent`.
+
+If you use `colorUnit` as percentage values, the lowest color temperature (warm light) will be converted to 0%, and correspondingly the highest color temperature (cold light) will be converted to 100%.
+If you need the inverted values for your device, you can set `colorTemperatureInverted=true`. This will convert low Kelvin values to high percentage values and vice versa.
 
 ```shell
 Group  lightGroup { ga="SpecialColorLight" [ colorUnit="kelvin", colorTemperatureRange="2000,9000" ] }
@@ -107,6 +116,14 @@ Switch powerItem            (lightGroup) { ga="lightPower" }
 Dimmer brightnessItem       (lightGroup) { ga="lightBrightness" }
 Color  colorItem            (lightGroup) { ga="lightColor" }
 Number colorTemperatureItem (lightGroup) { ga="lightColorTemperature" }
+```
+
+Example of a light device where low Kelvin values (warm light) are represented by high percentage values in the color temperature item:
+
+```shell
+Group  lightGroup { ga="SpecialColorLight" [ colorUnit="percent", colorTemperatureRange="2000,6500", colorTemperatureInverted=true ] }
+Dimmer brightnessItem       (lightGroup) { ga="lightBrightness" }
+Dimmer colorTemperatureItem (lightGroup) { ga="lightColorTemperature" }
 ```
 
 In case you want to control multiple lights using one device with Google Assistant, you can apply the following pattern:
