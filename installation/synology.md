@@ -27,7 +27,7 @@ For reference how to do that: I found this [youtube tutorial](https://www.youtub
 When you are in the secured shell first thing to do is to create the user openhab.
 
 ```bash
-sudo synouser --add openhab habopen
+sudo synouser --add openhab habopen "openhab" 0 "" 0
 sudo synogroup --add openhab openhab
 ```
 
@@ -51,24 +51,7 @@ The result will something like
 uid=1032(openhab) gid=100(users) groups=100(users),65537(dialout),65539(openhab)
 ```
 
-In this case we need the 1032 as the user and the 65539 as the group. Write them down.
-
-:::tip DSM 7.2
-
-- Check [here](https://kb.synology.com/en-nz/DSM/tutorial/What_kind_of_CPU_does_my_NAS_have) what kind of CPU does your Synology NAS have.
-- Download the proper USB to UART driver from [here](https://github.com/robertklep/dsm7-usb-serial-drivers/tree/main/modules) to Synology `/lib/modules`.
-- Create Synology Boot-up Scheduled Task
-
-   ```bash
-   #!/bin/sh
-   chmod 760 /var/lock
-   insmod /lib/modules/cp210x.ko > /dev/null 2>&1 # cp210x.ko sample
-   chown root:dialout /dev/ttyACM0
-   chmod g+rw /dev/ttyACM0
-   ```
-
-   :warning: This will result in Synology notification, like "Security risks detected on NAS02. Please go to Security Advisor for more information. Details."
-:::
+In this case we need the 1032 as the user and the 65537 as the group. Write them down.
 
 ## Docker
 
@@ -97,13 +80,9 @@ To use Docker, you need to install the Docker app from the Synology Web GUI.
 
 Here comes the part where you really notice the difference between the Synology OS and Linux.
 
-- On the create container window fill a name for the container (space and some special characters are not allowed).
-- Next enable "Execute container using high privilege".
-::: tip Note
-This is needed for the host resources like '/dev/ttyACM0' for Z-Wave binding, the TCP stack for Network Binding, etc.
-It will run the Docker container as root, the application in the container is still limited.
-Several issues are already raised for this at Synology.
-:::
+- In the Container Manager, select "Container" and then "Create"
+- Select the image (openhab/openhab:latest)
+- Fill in a name for the container (eg. "openhab" note: space and some special characters are not allowed).
 - Enable the resource limitation, CPU on Med and Memory limit on 2048MB.
 You can increase this in the future if you like.
 - Click on "Advanced"
@@ -122,34 +101,67 @@ You can increase this in the future if you like.
 
 - Enable auto-restart
 
-### Volume
+### Port Settings
 
-- Click on "Add Folder" and "Create Folder" under the folder "docker" with the name "openHAB".
-- Create the folder "userdata" in the folder "openHAB"
-- Create the folder "conf" in the folder "openHAB"
-- Create the folder "addons" in the folder "openHAB"
-- Now select "userdata" and click on "Select"
-- Change the mount path to "/openhab/userdata" this will connect the Docker containers path "/openhab/userdata" to your Synology's local path "docker/openHAB/userdata" where you can reach it from outside the Docker.
-- Click on "Add Folder", select "docker/openHAB/conf", click on select and change the mount path to "/openhab/conf".
-- Repeat this for addons.
+- No change
+
+### Volume Settings
+
+- Click on "Add Folder" and "Create Folder" under the folder "docker" with the name "openhab".
+- Create the folder "addons" in the folder "openhab"
+- Create the folder "conf" in the folder "openhab"
+- Create the folder "userdata" in the folder "openhab"
+- Now map those folders
+  - Click on "addons" then click on "Select"
+  - Add the mount path "/openhab/addons" in the input field next to /docker/openhab/addons
+  - Repeat this step for the "conf" and "userdata" folders
+
+### Environment
+
+- Remove the variables EXTRA_JAVA_OPTS & EXTRA_SHELL_OPTS using the minus buttons
+- Update the GROUP_ID to reflect the group created above (eg. 65537)
+- Update the USER_ID to reflect the user created above (eg. 1032)
+
+### Capabilities
+
+- If you're wanting to access the Synology device's USB Port(s), enable "Execute container using high privilege".
+::: tip Note
+This is needed for the host resources like '/dev/ttyACM0' for Z-Wave binding, the TCP stack for Network Binding, etc.
+It will run the Docker container as root, the application in the container is still limited.
+Several issues are already raised for this at Synology.
+:::
+
+:::tip DSM 7.2
+
+- Check [here](https://kb.synology.com/en-nz/DSM/tutorial/What_kind_of_CPU_does_my_NAS_have) what kind of CPU does your Synology NAS have.
+- Download the proper USB to UART driver from [here](https://github.com/robertklep/dsm7-usb-serial-drivers/tree/main/modules) to Synology `/lib/modules`.
+- Create Synology Boot-up Scheduled Task
+
+   ```bash
+   #!/bin/sh
+   chmod 760 /var/lock
+   insmod /lib/modules/cp210x.ko > /dev/null 2>&1 # cp210x.ko sample
+   chown root:dialout /dev/ttyACM0
+   chmod g+rw /dev/ttyACM0
+   ```
+
+   :warning: This will result in Synology notification, like "Security risks detected on NAS02. Please go to Security Advisor for more information. Details."
+:::
+
 
 ### Network
 
 - Select 'host' if you are planning to use the IP stack in bindings or if you are not sure what this does.
 
-### Port Settings
+### Execution Command
 
-- No change
+- Nothing to do here
 
 ### Links
 
 - Nothing to do here
 
-### Environment
-
-- In the list find the variable "GROUP_ID" and put your previous written down id of the group openhab here, in this tutorial it is 65539.
-- In the same list locate "USER_ID" and fill the id of the user openhab, in this tutorial 1032.
-- Click on "Apply".
+Click "Next"
 
 ### Summary
 
