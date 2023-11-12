@@ -202,6 +202,19 @@ if ((thingStatusInfo !== null) && (thingStatusInfo.getStatus().toString() == "ON
 }
 ```
 
+### Color utilities
+
+- `int[] hsbToRgb(HSBType hsb)`: transforms HSB to RGB returning an array of three int with the RGB values in the range 0 to 255
+- `PercentType[] hsbToRgbPercent(HSBType hsb)`: transforms HSB to RGB returning an array of three PercentType with the RGB values in the range 0 to 100 percent
+- `int hsbTosRgb(HSBType hsb)`: transforms HSB to the RGB value of the color in the default sRGB color model (Bits 24-31 are alpha, 16-23 are red, 8-15 are green, 0-7 are blue)
+- `double[] hsbToXY(HSBType hsb)`: transforms HSB to CIE 1931 "xy" format using default color Gamut, returning an array of three double with the closest matching CIE 1931 x,y,Y in the range 0.0000 to 1.0000
+- `double[] hsbToXY(HSBType hsb, double[] gamutR, double[] gamutG, double[] gamutB)`: transforms HSB to CIE 1931 "xy" format using specific color Gamut, returning an array of three double with the closest matching CIE 1931 x,y,Y in the range 0.0000 to 1.0000
+- `HSBType rgbToHsb(int[] rgb)`: transforms RGB (array of three or four int with the RGB(W) values in the range 0 to 255) to HSB
+- `HSBType rgbToHsb(PercentType[] rgb)`: transforms RGB (array of three PercentType with the RGB values in the range 0 to 100 percent) to HSB
+- `HSBType xyToHsb(double[] xy)`: transforms CIE 1931 "xy" format (array of double with CIE 1931 x,y[,Y] in the range 0.0000 to 1.0000 with Y being optional) to HSB using default color Gamut
+- `HSBType xyToHsb(double[] xy, double[] gamutR, double[] gamutG, double[] gamutB)`: transforms CIE 1931 "xy" format (array of double with CIE 1931 x,y[,Y] in the range 0.0000 to 1.0000 with Y being optional) to HSB using specific color Gamut
+
+
 ### openHAB Subsystem Actions
 
 openHAB has several subsystems that can be accessed from Rules. These include persistence, see [Persistence Extensions in Scripts and Rules]({{base}}/configuration/persistence.html#persistence-extensions-in-scripts-and-rules), transformations, scripts.
