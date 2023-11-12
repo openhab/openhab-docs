@@ -584,8 +584,19 @@ If the parameter is not provided, the default is to display the Item.
 Visibility syntax:
 
 ```java
-visibility=[item_name operator value, item_name operator value, ... ]
+visibility=[item_name operator value, item_name operator value AND item_name operator value, ... ]
 ```
+
+You set as many conditions as you want.
+
+A condition can be a single comparison or a combination of several comparisons separated by the AND operator.
+You can use as many AND-separated comparisons as you want.
+A condition including the AND operator will be considered as true if all individual comparisons are considered as true.
+Of course, it is possible to reference a different item in each comparison.
+
+Note that `item_name` and `operator` are both optional.
+If `item_name` is not provided, the Item name will default to the current Item.
+If an operator is not specified, the operator will default to `==`.
 
 Valid comparison operators are:
 
@@ -594,7 +605,7 @@ Valid comparison operators are:
 - less than `<`, greater than `>`
 
 Expressions are evaluated from left to right.
-The Item will be visible if any one of the comparisons is evaluated as `true`, otherwise it will be hidden.
+The Item will be visible if any one of the conditions is evaluated as `true`, otherwise it will be hidden.
 
 **Examples:**
 
@@ -602,12 +613,11 @@ The Item will be visible if any one of the comparisons is evaluated as `true`, o
 Text item=BatteryWarning visibility=[Battery_Level<30]
 Switch item=CinemaLight label="Cinema light" visibility=[TV_Power==ON]
 Switch item=LawnSprinkler visibility=[Day_Time=="Morning", Day_Time=="Afternoon", Temperature>19]
+Switch item=LawnSprinkler visibility=[Day_Time=="Morning" AND Temperature>19]
 ```
 
 In the third example above, a control for a lawn sprinkler will be visible if it is Morning, _OR_ if it is Afternoon, _OR_ if the temperature is above 19 °C.
-Combining multiple conditions, for example Morning _AND_ above 19 °C is not supported.
-To control visibility based upon combining multiple Items, or on more complex conditions, consider defining and using an additional intermediate Item that is set by a Rule.
-Rules have a rich set of features that can support more involved scenarios.
+In the fourth example above, multiple conditions are combined, a control for a lawn sprinkler will be visible if it is Morning _AND_ if the temperature is above 19 °C.
 
 ### Label, Value and Icon Colors
 
@@ -618,10 +628,17 @@ The icon may be tinted depending on the state as well.
 **Label and Value Color Syntax:**
 
 ```java
-labelcolor=[item_name operator value = "color", ... ]
-valuecolor=[item_name operator value = "color", ... ]
-iconcolor=[item_name operator value = "color", ... ]
+labelcolor=[item_name operator value = "color", item_name operator value AND item_name operator value = "color", ... ]
+valuecolor=[item_name operator value = "color", item_name operator value AND item_name operator value = "color", ... ]
+iconcolor=[item_name operator value = "color", item_name operator value AND item_name operator value = "color",... ]
 ```
+
+You set as many conditions as you want, along with a color for each condition.
+
+A condition can be a single comparison or a combination of several comparisons separated by the AND operator.
+You can use as many AND-separated comparisons as you want.
+A condition including the AND operator will be considered as true if all individual comparisons are considered as true.
+Of course, it is possible to reference a different item in each comparison.
 
 Note that `item_name` and `operator` are both optional.
 If `item_name` is not provided, the Item name will default to the current Item.
@@ -638,9 +655,14 @@ The following three lines are equivalent.
 
 ```java
 Text item=Temperature labelcolor=[>0="blue"] valuecolor=[22="green"] iconcolor=[22="green"]
-Text item=Temperature labelcolor=[>0="blue"] valuecolor=[==22="green"]
-Text item=Temperature labelcolor=[>0="blue"] valuecolor=[Temperature==22="green"]
-Text item=Temperature labelcolor=[>0="blue", "gray"] valuecolor=[22="green", "gray"]
+Text item=Temperature labelcolor=[>0="blue"] valuecolor=[==22="green"] iconcolor=[==22="green"]
+Text item=Temperature labelcolor=[Temperature>0="blue"] valuecolor=[Temperature==22="green"] iconcolor=[Temperature==22="green"]
+```
+
+The line below illustrates setting a default color (gray) and how to combine multiple comparisons with an AND operator:
+
+```java
+Text item=NumberItem labelcolor=[>0 AND <50="yellow", >=50="green", "gray"] valuecolor=[>0 AND <50="yellow", >=50="green", "gray"] iconcolor=[>0 AND <50="yellow", >=50="green", "gray"]
 ```
 
 The line below illustrates the importance of operator order:
