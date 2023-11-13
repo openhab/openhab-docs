@@ -61,9 +61,9 @@ for SVG_FILE in "${FILES[@]}"; do
   printf "(%d/%d): %s\n" "$I" "$TOTAL" "$SVG_FILE"
   print_separator "="
   scour_compression "$SVG_FILE"
-  svg2png_conversion "$SVG_FILE" "$PNG_FILE"
-  optipng_conpression "$PNG_FILE"
-  pngquant_compression "$PNG_FILE"
+  # svg2png_conversion "$SVG_FILE" "$PNG_FILE"
+  # optipng_conpression "$PNG_FILE"
+  # pngquant_compression "$PNG_FILE"
   printf '\n'
 done
 
