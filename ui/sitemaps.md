@@ -587,10 +587,9 @@ Visibility syntax:
 visibility=[item_name operator value, item_name operator value AND item_name operator value, ... ]
 ```
 
-You set as many conditions as you want.
+You can set as many conditions as you want.
 
-A condition can be a single comparison or a combination of several comparisons separated by the AND operator.
-You can use as many AND-separated comparisons as you want.
+A condition can be a single comparison or a combination of several comparisons all separated by the AND operator.
 A condition including the AND operator will be considered as true if all individual comparisons are considered as true.
 Of course, it is possible to reference a different item in each comparison.
 
@@ -633,10 +632,9 @@ valuecolor=[item_name operator value = "color", item_name operator value AND ite
 iconcolor=[item_name operator value = "color", item_name operator value AND item_name operator value = "color",... ]
 ```
 
-You set as many conditions as you want, along with a color for each condition.
+You can set as many conditions as you want, along with a color for each condition.
 
-A condition can be a single comparison or a combination of several comparisons separated by the AND operator.
-You can use as many AND-separated comparisons as you want.
+A condition can be a single comparison or a combination of several comparisons all separated by the AND operator.
 A condition including the AND operator will be considered as true if all individual comparisons are considered as true.
 Of course, it is possible to reference a different item in each comparison.
 
