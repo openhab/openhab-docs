@@ -214,7 +214,6 @@ if ((thingStatusInfo !== null) && (thingStatusInfo.getStatus().toString() == "ON
 - `HSBType xyToHsb(double[] xy)`: transforms CIE 1931 "xy" format (array of double with CIE 1931 x,y[,Y] in the range 0.0000 to 1.0000 with Y being optional) to HSB using default color Gamut
 - `HSBType xyToHsb(double[] xy, double[] gamutR, double[] gamutG, double[] gamutB)`: transforms CIE 1931 "xy" format (array of double with CIE 1931 x,y[,Y] in the range 0.0000 to 1.0000 with Y being optional) to HSB using specific color Gamut
 
-
 ### openHAB Subsystem Actions
 
 openHAB has several subsystems that can be accessed from Rules. These include persistence, see [Persistence Extensions in Scripts and Rules]({{base}}/configuration/persistence.html#persistence-extensions-in-scripts-and-rules), transformations, scripts.
