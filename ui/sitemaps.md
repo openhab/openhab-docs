@@ -182,7 +182,7 @@ This provides the flexibility to present Items in the way desired in your home a
     If no label or icon are specified in the Sitemap, then the label and/or icon you assigned to the Item will be displayed.
     Setting a value for `label` or `icon`  or `staticIcon` of a Sitemap element will override the values defined for the linked Item.
 
-- The parameters `icon` and `staticIcon` are exclusive; both allow choosing icon to show next to the element but `staticIcon` also indicates not to try to create a dynamic icon (using the current state of a linked item). The value of these two parameters can optionally be enclosed in double quotes.
+- The parameters `icon` and `staticIcon` are exclusive; both allow choosing the icon to show next to the element but `staticIcon` also indicates not to try to create a dynamic icon (using the current state of a linked item). The value of these two parameters can optionally be enclosed in double quotes.
 
 It has to be considered that if the label defined in a Channel or an Item contains text and state, these representations have to be overwritten separately in the Sitemap.
 In the following example an Item which has a label and state defined is overwritten.
