@@ -10,8 +10,7 @@ There are different approaches to get your openHAB 2 Environment upgraded.
 You could start with a fresh install and migrate your environment step-by-step or you can upgrade your running environment and change your configuration where needed.
 
 Since this is a major version release you have to pay attention to some **Breaking Changes** that may affect your environment, too.
-<https://github.com/openhab/openhab-distro/wiki/Breaking-Changes-in-openHAB-3/139901f0ef7ee8b5b7dd480204ddf5069f030f50>
-(note this link is currently only a workaround for a Github issue with the final release notes document).
+<https://github.com/openhab/openhab-distro/releases/tag/3.0.0#breaking-changes-that-require-manual-interaction-after-the-upgrade>
 
 Please read them carefully and check if you are affected by some of the changes, like the changes to some rules namespaces and the handling of time functions.
 

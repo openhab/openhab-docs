@@ -43,7 +43,7 @@ You can read a bit more below about our external resources and how we get them.
 
 ### Automatically Generated Parts
 
-Those parts include __all__ add-on documentation files, no matter if they are from the `openhab-core` repo, the `openhab-addons` repo or any special binding repo like _habmin_, _zwave_ or the _alexa skill_.
+Those parts include **all** add-on documentation files, no matter if they are from the `openhab-core` repo, the `openhab-addons` repo or any special binding repo like _habmin_, _zwave_ or the _alexa skill_.
 
 We are keeping all those files at their original location, because it simply doesn't make sense to keep them here.
 Imagine you want to do an improvement of the zwave binding and have to update the readme file in a completely different place.
@@ -58,7 +58,7 @@ The process below is subject to changes until the openHAB.x website become the p
 
 ### How the documentation build works
 
-We have set up our [build server](https://ci.openhab.org/view/Documentation%20(3.x)/) to do the magic automatically.
+We have set up our [build server](https://ci.openhab.org/view/Documentation/) to do the magic automatically.
 There are several triggers (mostly time based), which will then _gather the external contents_ and move them to our [final](https://github.com/openhab/openhab-docs/tree/final) branch.
 You can find this migrated external content in the _final_ branch under:
 
@@ -77,7 +77,7 @@ Afterwards we will redeploy the website with the latest content from the _final_
 
 There are two triggers available currently.
 The `merge docs` job is triggered after something has been added to the documentation through this repository.
-The `gather external docs` job is started with a __successful__ build of the openhab-distribution.
+The `gather external docs` job is started with a **successful** build of the openhab-distribution.
 A successful distribution build will include all the latest changes that have been made to external sources like add-ons.
 So when a distribution build is successful, it will trigger the gathering of all external sources.
 

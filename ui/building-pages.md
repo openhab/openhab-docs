@@ -83,7 +83,7 @@ slots: ...
 ```
 
 - a **uid** (its Unique IDentifier)
-- a **props** structure describing its own properties; props define parameters and parameter groups following a subset of the configuration description schema found in bindings, services and throughout openHAB: see [Configuration Descriptions](/docs/developer/bindings/config-xml.html)
+- a **props** structure describing its own properties; props define parameters and parameter groups following a subset of the configuration description schema found in bindings, services and throughout openHAB: see [Configuration Descriptions](../developers/addons/config-xml.html)
 - a set of **tags**
 
 ## Widgets: Definition & Usage
@@ -106,7 +106,7 @@ Configuring the widget with the config sheet is of course more user-friendly tha
 
 However, it's important to know that there are limitations and sometimes editing the YAML directly will be best, because:
 
-1. not all options are described, since widgets are often wrappers for a similar    concept in the library it's based on, either Framework7, ECharts, Leaflet, or other specialized libraries.
+1. not all options are described, since widgets are often wrappers for a similar concept in the library it's based on, either Framework7, ECharts, Leaflet, or other specialized libraries.
   This means that in these cases, these underlying concepts will usually be passed the key/values of the (openHAB) widget component's config so that more parameters can be accepted than those which are documented in the widget's definition.
   Sometimes it will be indicated somewhere when configuring the widget, or in the openHAB documentation itself, on the other hand some options won't be available for use (for instance, because they expect a callback function and you cannot define those in the widget's config) or need some transformation.
 
@@ -144,7 +144,7 @@ See the [Component Reference](./components/) for details about the different lib
 
 ## Dynamically Configuring Components with Expressions
 
-Virtually everywhere - with the notable exception of chart pages - every time you need a config prop to be dynamically updated, you can use an expression to configure it.
+Virtually everywhere every time you need a config prop to be dynamically updated, you can use an expression to configure it.
 Expressions are string literals beginning with the symbol `=` and everything after it is evaluated using a syntax very similar to JavaScript, you can use arithmetic or string operations etc., the [conditional (ternary) operator](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Conditional_Operator), as well as the following objects (subject to evolutions):
 
 - `items` is a dynamic key/value dictionary allowing you to retrieve the state of items; the result of `items.Item1` will be an object like `{ state: '23', displayState: '23 °C' }` (`displayState` may be omitted). You can therefore use `items.Item1.state` to use the current state of Item1 in your expression, if it changes, it will be reevaluated

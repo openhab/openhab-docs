@@ -58,6 +58,10 @@ The developer sidebar search ignores case and searches inside the following enti
   - uid
   - label
   - content (widgets, tabs, charts, etc. with their configuration)
+- Transformations
+  - uid
+  - label
+  - type
 - Rules, Scenes & Scripts
   - Item name & Thing UID of triggers, actions & conditions
   - script code (e.g. Rules DSL, JavaScript, and even Blockly)

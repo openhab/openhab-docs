@@ -159,7 +159,7 @@ See [Default libraries](#default-libraries) for more details.
 1. Creation of threads must be avoided.
   Instead, resort into using existing schedulers which use pre-configured thread pools.
   If there is no suitable scheduler available, start a discussion in the forum about it rather than creating a thread by yourself.
-  For periodically executed jobs that do not require a fixed rate [scheduleWithFixedDelay](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/ScheduledExecutorService.html#scheduleWithFixedDelay(java.lang.Runnable,long,long,java.util.concurrent.TimeUnit)) should be preferred over [scheduleAtFixedRate](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/ScheduledExecutorService.html#scheduleAtFixedRate(java.lang.Runnable,long,long,java.util.concurrent.TimeUnit)).
+  For periodically executed jobs that do not require a fixed rate [scheduleWithFixedDelay](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/concurrent/ScheduledExecutorService.html#scheduleWithFixedDelay(java.lang.Runnable,long,long,java.util.concurrent.TimeUnit)) should be preferred over [scheduleAtFixedRate](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/concurrent/ScheduledExecutorService.html#scheduleAtFixedRate(java.lang.Runnable,long,long,java.util.concurrent.TimeUnit)).
 1. Bundles need to cleanly start and stop without throwing exceptions or malfunctioning.
   This can be tested by manually starting and stopping the bundle from the console (```stop <bundle-id>``` resp. ```start <bundle-id>```).
 1. Bundles must not require any substantial CPU time.

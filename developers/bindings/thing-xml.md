@@ -144,7 +144,7 @@ There exist system-wide channel types that are available by default and which sh
 | electric-current      | system.electric-current      | Number:ElectricCurrent   | Energy           | Measurement, Current      | Electric current                                                                                                                                                                                                        |
 | electric-power        | system.electric-power        | Number:Power             | Energy           | Measurement, Power        | Electric power                                                                                                                                                                                                          |
 | electric-voltage      | system.electric-voltage      | Number:ElectricPotential | Energy           | Measurement, Voltage      | Electric voltage                                                                                                                                                                                                        |
-| electrical-energy     | system.electrical-energy     | Number:Energy            | Energy           | Measurement, Energy       | Electrical energy                                                                                                                                                                                                       |
+| electrical-energy     | system.electric-energy       | Number:Energy            | Energy           | Measurement, Energy       | Electrical energy                                                                                                                                                                                                       |
 
 For further information about categories see the [categories page](../../concepts/categories.html).
 
@@ -197,7 +197,7 @@ There exist system-wide trigger channel types that are available by default:
 | rawrocker       | system.rawrocker | Can trigger `DIR1_PRESSED`, `DIR1_RELEASED`, `DIR2_PRESSED` and `DIR2_RELEASED` |
 
 In the following sections the declaration and semantics of tags, state descriptions and channel categories will be explained in more detail.
-For a complete sample of the thing types XML file and a full list of possible configuration options please see the [XML Configuration Guide](config-xml.html).
+For a complete sample of the thing types XML file and a full list of possible configuration options please see the [XML Configuration Guide](../addons/config-xml.html).
 
 ### Default Tags
 
@@ -522,7 +522,7 @@ A new discovery would then automatically find this Thing again and add it to the
 See also [Implementing a Discovery Service](index.md#representation-property)
 
 When comparing representation properties, the auto-ignore service checks for matches between the representation property of the newly discovered Thing, and both the properties and the configuration parameters of existing Things.
-If a configuration parameter will be used, then its respective `parameter` shall be declared in the XML `config-description` section or the `config-description` [XML file](config-xml.md):
+If a configuration parameter will be used, then its respective `parameter` shall be declared in the XML `config-description` section or the `config-description` [XML file](../addons/config-xml.md):
 
 ```xml
     <thing-type id="thingTypeId">

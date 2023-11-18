@@ -273,7 +273,7 @@ Other times the helper library must be installed separately, searching in the co
 The following code snippets implement the examples from the top of this page using UI rules, [DSL rules](/docs/configuration/rules-dsl), [JRuby Scripting](/addons/automation/jrubyscripting/), and [JS Scripting](https://openhab.org/addons/automation/jsscripting).
 
 The code from the JS Scripting examples can be used in file-based scripts that are created inside the `/automation/js` folder and have `.js` as their file extension.
-The same applies for the JRuby examples, but they have to be placed inside `/automation/jsr223/ruby/personal` with `.rb` as the file extension.
+The same applies for the JRuby examples, but they have to be placed inside `/automation/ruby` with `.rb` as the file extension.
 The Rules DSL examples can be places in the `rules` folder and have `.rules` as their file extension.
 
 Each UI rule will have a "code" tab showing the full rule definition.
@@ -340,14 +340,12 @@ end
 ::: tab JRuby
 
 ```ruby
-require 'openhab'
-
-rule 'Raise the blinds & adjust temperature on sunrise' do
-  channel 'astro:sun:home:rise#event'
-  run {
-    gBlinds << up
-    gThermostat << increase
-  }
+rule "Raise the blinds & adjust temperature on sunrise" do
+  channel "astro:sun:home:rise#event", triggered: "START"
+  run do
+    gBlinds.up
+    gThermostat.increase
+  end
 end
 ```
 
@@ -433,14 +431,12 @@ end
 ::: tab JRuby
 
 ```ruby
-require 'openhab'
-
-rule 'Turn off the lights & adjust temperature on leaving' do
-  received_command Presence, command: off
-  run {
-    gLights << off
-    gThermostat << decrease
-  }
+rule "Turn off the lights & adjust temperature on leaving" do
+  received_command Presence, command: OFF
+  run do
+    gLights.off
+    gThermostat.decrease
+  end
 end
 ```
 
@@ -522,14 +518,10 @@ end
 ::: tab JRuby
 
 ```ruby
-require 'openhab'
-
-rule 'Play music on arrival, but only on afternoon' do
-  received_command Presence, command: on
-  run {
-    Soundbar >> on
-  }
-  only_if { TimeOfDay.now.between? ‘1pm’..’6pm’ }
+rule "Play music on arrival, but only on afternoon" do
+  received_command Presence, command: ON
+  only_if { LocalTime.now.between? "1pm".."6pm" }
+  run { Soundbar.on }
 end
 ```
 
@@ -629,17 +621,12 @@ end
 ::: tab JRuby
 
 ```ruby
-require 'openhab'
-
-rule 'Window open reminder' do
-  changed: gWindows, to: open
-  run {
-    after 1.hour do
-      if item.state.open?
-        notify("#{item.label} is open for an hour!")
-      end
-    end
-  }
+rule "Window open reminder" do
+  changed gWindows.members, to: OPEN, for: 1.hour
+  run do |event|
+    # Item guaranteed to be OPEN here, no need to check
+    notify("#{event.item.label} is open for an hour!")
+  end
 end
 ```
 
@@ -755,18 +742,15 @@ end
 ::: tab JRuby
 
 ```ruby
-require 'openhab'
-
-rule 'Movie Scene' do
+rule "Movie Scene" do
   received_command MovieScene, command: ON
-  run {
-    LivingRoom_Blinds >> '90%'
-    LivingRoom_MainLight >> off
-    LivingRoom_LEDStripe >> '50%'
-    Soundbar >> on
-    TV >> on
-    Soundbar >> ON
-  }
+  run do
+    LivingRoom_Blinds.command(90)
+    LivingRoom_MainLight.off
+    LivingRoom_LEDStripe.command(50)
+    Soundbar.on
+    TV.on
+  end
 end
 ```
 

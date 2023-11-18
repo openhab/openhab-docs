@@ -253,7 +253,7 @@ Binary Prefixes:
 
 | Name | Symbol | Factor |
 | ---- | ------ | ------ |
-| Kibi | Ki     | 2¹⁰    |
+| Kibi | ki     | 2¹⁰    |
 | Mebi | Mi     | 2²⁰    |
 | Gibi | Gi     | 2³⁰    |
 | Tebi | Ti     | 2⁴⁰    |
@@ -267,4 +267,4 @@ To use the prefixes simply add the prefix to the unit symbol - for example:
 - milliAmpere - `mA`
 - centiMetre - `cm`
 - kiloWatt - `kW`
-- KibiByte - `KiB`
+- KibiByte - `kiB`
