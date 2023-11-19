@@ -287,7 +287,7 @@ A Switch will present a discrete state Item and allow changing of its value.
 Note that Switch elements can be rendered differently on the user interface, based on the Item type and the `mappings` parameter.
 
 - `mappings` comes as an array of value-to-string translations, [documented further down](#mappings).
-  Without the mappings parameter, user interfaces will present an On/Off Switch, if mappings are given, several labeled buttons will be rendered.
+  Without the mappings parameter, user interfaces will present an On/Off Switch, if mappings are given, several buttons with label or icon will be rendered.
 
 **Examples:**
 
@@ -540,7 +540,7 @@ Mappings is an optional parameter for the [Switch](#element-type-switch) and [Se
 Mapping syntax:
 
 ```java
-mappings=[value_1="description_1", value_2="description_2", ...]
+mappings=[value_1="description_1", value_2="description_2"=<iconname>, ...]
 ```
 
 Examples:
@@ -551,6 +551,8 @@ mappings=[1="DasErste", 2="BBC One", 3="Cartoon Network"]
 
 mappings=[OFF="All heaters off"]
 mappings=[15="Gone", 19="Chilly", 21="Cozy"]
+
+mappings=[ON="Mic On"=material:mic, OFF="Mic Off"=material:mic_off]
 ```
 
 As you can see, different Item data types are accepted as mappings values.
@@ -565,6 +567,9 @@ Similarly, mapping above changes the numbers "1", "2", and "3" to "DasErste", "B
 
 In the third and fourth examples above, only a subset of the possible values of items belonging to a heating system are presented to the user.
 This limits the possible input values, which is yet another often occurring use case for mappings.
+
+In the fifth example above, user interfaces will display buttons using the provided icon rather than the provided description.
+Icons are usable in Switch element but ignored in Selection element.
 
 ## Dynamic Sitemaps
 
