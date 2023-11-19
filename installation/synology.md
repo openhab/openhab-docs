@@ -95,7 +95,7 @@ You can increase this in the future if you like.
    root@openhab:/openhab# chown openhab:openhab /dev/ttyACM0
    root@openhab:/openhab# chmod o+rw /dev/ttyACM0
    ```
-   
+
    To preserve the changes on container reboot see [Executing shell scripts before openHAB is started](https://github.com/openhab/openhab-docker#executing-shell-scripts-before-openhab-is-started) article.
 :::
 
