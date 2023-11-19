@@ -115,6 +115,8 @@ Next, resynchronize the package index:
 sudo apt-get update
 ```
 
+##### Installing the latest version
+
 Now install openHAB with the following command:
 
 ```shell
@@ -126,6 +128,44 @@ If you plan on disconnecting your machine from the internet, then you will want 
 
 ```shell
 sudo apt-get install openhab-addons
+```
+
+##### Prevent automatic upgrade of openHAB
+
+To prevent unexpected breakage by accidentally updating openHAB it's recommended to only manually upgrade to the newest version.
+This can be achieved by putting the openHAB package on "hold".
+
+```shell
+sudo apt-mark hold openhab
+sudo apt-mark hold openhab-addons
+```
+
+To enable automatic upgrades again run
+
+```shell
+sudo apt-mark unhold openhab
+sudo apt-mark unhold openhab-addons
+```
+
+To show the packages on hold run
+
+```shell
+sudo apt-mark showhold
+```
+
+##### Installing a specific version
+
+Installing a specific version is possible by specifing the version that should be installed.
+
+```shell
+sudo apt install openhab=4.0.1
+sudo apt install openhab-addons=4.0.1
+```
+
+To get a list of all available versions you can use
+
+```shell
+apt list -a openhab
 ```
 
 {% include collapsible/item-end.html %}
