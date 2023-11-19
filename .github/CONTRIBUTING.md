@@ -17,7 +17,6 @@ Please make sure that your contributed content is therefore compliant with these
 Checkout the [markdownlint project](https://github.com/DavidAnson/markdownlint) for support of your favorite IDE.
 In doubt, ask us to guide you on these rules.
 
-
 Pull requests descriptions should be as clear as possible and include a reference to all the issues that they address.
 
 Pull requests must not contain commits from other users or branches.
