@@ -208,6 +208,14 @@ The knob widget is similar in essence to the slider, but in a rotary fashion. It
 
 The selection widget displays the current state of an item, much like a dummy widget, except it opens a menu or a grid of automatically or manually configured choices for sending commands to this item. Various display options are available.
 
+To display different scenes on a Selection widget (like the image above), you could create an item with type `String` (e.g. call it modes).
+Then create different rules for you different scenes (i.e. a rule per scene) such as 'meditation', 'work', 'sleep' ... etc. 
+The Trigger (i.e. When) of every rule should be `an item receives a command` and every rule's triggering Item should be the one that you have just created (the one we called 'modes') and the command string could be any string of your choice (e.g. meditation, work, sleep).
+Finally, in your HABPanel Selection widget, you could send any of these commands to that item by setting the `List of comma-separated choices` to the list of the rules that you have just created.
+Selecting any of them will trigger the corresponding rule.
+To display a different label for a command, you could use the form `command=label` (e.g. `meditation=Meditation, work=Work`).
+Please refer to [this link](https://www.openhab.org/docs/tutorial/rules_basic.html#create-the-rule) for how to create a rule.
+
 #### Color picker (colorpicker)
 
 ![Color picker widget](images/habpanel_widget-colorpicker.png)
@@ -260,9 +268,9 @@ For more information, please read the [community thread about this feature](http
 
 #### Managing custom widgets
 
-The list of custom widgets either via the dashboard designer (click/tap the gears icon in the _Add Widget_ dropdown menu), or with the _Manage_ button in the settings screen.
+The list of custom widgets can be found either via the dashboard designer (click/tap the gears icon in the _Add Widget_ dropdown menu), or with the _Manage_ button in the settings screen.
 
-From the list, custom widgets can be created from scratch, or imported from a previously exported .json file or a GitHub repository. Members of the openHAB community also present their custom widgets on the forum: the _Get widgets from the openHAB community_ link brings up a filtered lists of custom widgets from the community.
+From the list, custom widgets can be created from scratch, or imported from a previously exported .json file or a GitHub repository. Members of the openHAB community also present their custom widgets on the forum: the _Get more..._ link brings up a filtered lists of custom widgets from the community.
 
 Widgets can also come from [an openHAB addon or OSGi bundle](https://community.openhab.org/t/new-feature-globally-provisioned-widgets-i-e-with-osgi-bundles/26994): those are "globally-provisioned widgets". They cannot be modified or deleted (but can be cloned and then modified), and are available to all panel configurations. 
 
