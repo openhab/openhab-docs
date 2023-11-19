@@ -123,7 +123,7 @@ The `ThingManager` creates for each Thing a `ThingHandler` instance using a `Thi
 Therefore, it tracks all `ThingHandlerFactory`s from the binding.
 
 The `ThingManager` determines if the `Thing` is initializable or not.
-A `Thing` is considered as _initializable_ if all _required_ configuration parameters (cf. property _parameter.required_ in [Configuration Description](config-xml.html)) are available.
+A `Thing` is considered as _initializable_ if all _required_ configuration parameters (cf. property _parameter.required_ in [Configuration Description](../addons/config-xml.html)) are available.
 If so, the method `ThingHandler.initialize()` is called.
 
 Only Things with status (cf. [Thing Status](../../concepts/things.html#thing-status)) _UNKNOWN_, _ONLINE_ or _OFFLINE_ are considered as _initialized_ by the framework and therefore it is the handler's duty to assign one of these states sooner or later.
@@ -454,7 +454,7 @@ The Hue gateway is an IP device with an HTTP API, which communicates over the Zi
 In the openHAB model the Hue gateway is represented as a _Bridge_ with connected _Things_, that represent the Hue bulbs.
 _Bridge_ inherits from _Thing_, so that it also has _Channels_ and all other features of a thing, with the addition that it also holds a list of things.
 
-We have a FAQ, discussing [Thing, Bridge and Channel modelling](faq.html#structuring-things-and-thing-types).
+We have a FAQ, discussing [Thing, Bridge and Channel modelling](../addons/faq.html#structuring-things-and-thing-types).
 
 When implementing a binding with _Bridges_, the logic to communicate with the external system is often shared between the different `ThingHandler` implementations.
 In that case it makes sense to implement a handler for the _Bridge_ and delegate the actual command execution from the _ThingHandler_ to the _BridgeHandler_.
@@ -727,7 +727,7 @@ In the case that a `property` will be used to match the representation property 
 updateProperty("uniqueId", uniquePropVal);
 ```
 
-Alternatively in the case that a `configuration parameter` will be used to match the auto discovery representation property, the parameter must be declared in either, a) the `thing-types.xml` file, or b) the `config-description` [XML file](config-xml.md).
+Alternatively in the case that a `configuration parameter` will be used to match the auto discovery representation property, the parameter must be declared in either, a) the `thing-types.xml` file, or b) the `config-description` [XML file](../addons/config-xml.md).
 And it must also be declared in the Thing handler's `Configuration` class:
 
 ```java
@@ -1016,4 +1016,4 @@ This is done by implementing the `getServices` method in your bridge handler:
 
 ## Frequently asked questions / FAQ
 
-Various binding related questions are answered in our [Binding development FAQ](faq.html).
+Various add-on related questions are answered in our [Add-on development FAQ](../addons/faq.html).
