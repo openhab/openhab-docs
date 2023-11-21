@@ -90,10 +90,12 @@ You can increase this in the future if you like.
 :::tip DSM 7.2 Access Zwave USB Stick
 
 - Set `/dev/ttyACM0` permissions inside the openhab container - [OH Docs](docker.html#usb-sticks)
+
    ```bash
    root@openhab:/openhab# chown openhab:openhab /dev/ttyACM0
    root@openhab:/openhab# chmod o+rw /dev/ttyACM0
    ```
+
    To preserve the changes on container reboot see [Executing shell scripts before openHAB is started](https://github.com/openhab/openhab-docker#executing-shell-scripts-before-openhab-is-started) article.
 :::
 
@@ -147,7 +149,6 @@ Several issues are already raised for this at Synology.
 
    :warning: This will result in Synology notification, like "Security risks detected on NAS02. Please go to Security Advisor for more information. Details."
 :::
-
 
 ### Network
 
