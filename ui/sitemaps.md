@@ -38,7 +38,7 @@ sitemap demo label="My home automation" {
         Switch item=Lights icon="light"
         Text item=LR_Temperature label="Livingroom [%.1f °C]"
         Group item=Heating
-        Text item=LR_Multimedia_Summary label="Multimedia [%s]" icon="video" {
+        Text item=LR_Multimedia_Summary label="Multimedia [%s]" staticIcon="video" {
             Selection item=LR_TV_Channel mappings=[0="off", 1="DasErste", 2="BBC One", 3="Cartoon Network"]
             Slider item=LR_TV_Volume
         }
@@ -82,7 +82,7 @@ Frame label="Demo" {
     Switch item=Lights icon="light"
     Text item=LR_Temperature label="Livingroom [%.1f °C]"
     Group item=Heating
-    Text item=LR_Multimedia_Summary label="Multimedia [%s]" icon="video" {
+    Text item=LR_Multimedia_Summary label="Multimedia [%s]" staticIcon="video" {
         Selection item=LR_TV_Channel mappings=[0="off", 1="DasErste", 2="BBC One", 3="Cartoon Network"]
         Slider item=LR_TV_Volume
     }
@@ -99,7 +99,7 @@ Different elements can be used on the previous or next hierarchy level.
 When using code blocks behind other element types such as `Text` or `Group`, these UI elements will, in addition to their normal function, be links to a new view, presenting the nested elements.
 
 ```java
-Text item=LR_Multimedia_Summary label="Multimedia [%s]" icon="video" {
+Text item=LR_Multimedia_Summary label="Multimedia [%s]" staticIcon="video" {
     Selection item=LR_TV_Channel mappings=[0="off", 1="DasErste", 2="BBC One", 3="Cartoon Network"]
     Slider item=LR_TV_Volume
 }
@@ -176,11 +176,13 @@ This provides the flexibility to present Items in the way desired in your home a
 - Common parameters, also known from [items definition]({{base}}/configuration/items.html#item-syntax):
   - `item` defines the name of the Item you want to present (e.g. `Temperature`), [more details]({{base}}/configuration/items.html#item-name).
   - `label` sets the textual description displayed next to the preprocessed Item data (e.g. "`Now [%s °C]`"), [more details]({{base}}/configuration/items.html#item-label).
-  - `icon` chooses the name of the icon file to show next to the element, [more details]({{base}}/configuration/items.html#icons).
+  - `icon` chooses the icon to show next to the element, [more details]({{base}}/configuration/items.html#icons).
 
 - When an [Item]({{base}}/configuration/items.html) is defined, you have the opportunity to assign a label and/or an icon at that point.
     If no label or icon are specified in the Sitemap, then the label and/or icon you assigned to the Item will be displayed.
-    Setting a value for `label` or `icon` of a Sitemap element will override the values defined for the linked Item.
+    Setting a value for `label` or `icon`  or `staticIcon` of a Sitemap element will override the values defined for the linked Item.
+
+- The parameters `icon` and `staticIcon` are exclusive; both allow choosing the icon to show next to the element but `staticIcon` also indicates not to try to create a dynamic icon (using the current state of a linked item). The value of these two parameters can optionally be enclosed in double quotes.
 
 It has to be considered that if the label defined in a Channel or an Item contains text and state, these representations have to be overwritten separately in the Sitemap.
 In the following example an Item which has a label and state defined is overwritten.
@@ -207,7 +209,7 @@ UoM = [Units of Measurement]({{base}}/concepts/units-of-measurement.html)
 ### Element Type 'Frame'
 
 ```java
-Frame [label="<labelname>"] [icon="<icon>"] {
+Frame [label="<labelname>"] [icon=<iconref>] [staticIcon=<iconref>] {
     [additional sitemap elements]
 }
 ```
@@ -228,7 +230,7 @@ Frame label="Demo" {
 ### Element Type 'Default'
 
 ```java
-Default item=<itemname> [label="<labelname>"] [icon="<iconname>"]
+Default item=<itemname> [label="<labelname>"] [icon=<iconref>] [staticIcon=<iconref>]
 ```
 
 Presents an Item using the default UI representation specified by the type of the given Item.
@@ -237,7 +239,7 @@ E.g., a `Dimmer` Item will be represented as a [Slider](#element-type-slider) el
 ### Element Type 'Text'
 
 ```java
-Text [item=<itemname>] [label="<labelname>"] [icon="<iconname>"]
+Text [item=<itemname>] [label="<labelname>"] [icon=<iconref>] [staticIcon=<iconref>]
 ```
 
 Presents data as normal text.
@@ -247,7 +249,7 @@ Please refer to the documentation on [item State Presentation]({{base}}/configur
 **Example:**
 
 ```java
-Text item=Temperature label="Livingroom [%.1f °C]" icon="temperature"
+Text item=Temperature label="Livingroom [%.1f °C]" staticIcon=temperature
 ```
 
 ![Presentation of the Text element in BasicUI](images/sitemap_demo_text.png)
@@ -255,7 +257,7 @@ Text item=Temperature label="Livingroom [%.1f °C]" icon="temperature"
 ### Element Type 'Group'
 
 ```java
-Group item=<itemname> [label="<labelname>"] [icon="<iconname>"]
+Group item=<itemname> [label="<labelname>"] [icon=<iconref>] [staticIcon=<iconref>]
 ```
 
 Clicking on a Group element will reveal a new view showing all group items using the [Default](#element-type-default) element type.
@@ -279,7 +281,7 @@ Group item=gTemperature label="Room Temperatures [%.1f °C]"
 ### Element Type 'Switch'
 
 ```java
-Switch item=<itemname> [label="<labelname>"] [icon="<iconname>"] [mappings="<mapping definition>"]
+Switch item=<itemname> [label="<labelname>"] [icon=<iconref>] [staticIcon=<iconref>] [mappings="<mapping definition>"]
 ```
 
 Switches are one of the more common elements of a typical Sitemap.
@@ -287,12 +289,12 @@ A Switch will present a discrete state Item and allow changing of its value.
 Note that Switch elements can be rendered differently on the user interface, based on the Item type and the `mappings` parameter.
 
 - `mappings` comes as an array of value-to-string translations, [documented further down](#mappings).
-  Without the mappings parameter, user interfaces will present an On/Off Switch, if mappings are given, several labeled buttons will be rendered.
+  Without the mappings parameter, user interfaces will present an On/Off Switch, if mappings are given, several buttons with label or icon will be rendered.
 
 **Examples:**
 
 ```java
-Switch item=LR_CeilingLight label="Ceiling Light" icon="light"
+Switch item=LR_CeilingLight label="Ceiling Light" icon=light
 Switch item=LR_TV_Channel label="TV Channel" mappings=[0="DasErste", 1="BBC One", 2="Cartoon Network"]
 ```
 
@@ -302,7 +304,7 @@ Switch item=LR_TV_Channel label="TV Channel" mappings=[0="DasErste", 1="BBC One"
 ### Element Type 'Selection'
 
 ```java
-Selection item=<itemname> [label="<labelname>"] [icon="<iconname>"] [mappings="<mapping definition>"]
+Selection item=<itemname> [label="<labelname>"] [icon=<iconref>] [staticIcon=<iconref>] [mappings="<mapping definition>"]
 ```
 
 The Selection element type renders the options as a dropdown menu or as a modal dialog prompt, depending on the user interface.
@@ -321,7 +323,7 @@ Selection item=LR_TV_Channel label="TV Channel" mappings=[0="DasErste", 1="BBC O
 ### Element Type 'Setpoint'
 
 ```java
-Setpoint item=<itemname> [label="<labelname>"] [icon="<iconname>"] minValue=<min value> maxValue=<max value> step=<step value>
+Setpoint item=<itemname> [label="<labelname>"] [icon=<iconref>] [staticIcon=<iconref>] minValue=<min value> maxValue=<max value> step=<step value>
 ```
 
 - `minValue` (defaults to 0) and `maxValue` (defaults to 100) limit the possible range of the value (both included in the range).
@@ -338,7 +340,7 @@ Setpoint item=KI_Temperature label="Kitchen [%.1f °C]" minValue=4.5 maxValue=30
 ### Element Type 'Slider'
 
 ```java
-Slider item=<itemname> [label="<labelname>"] [icon="<iconname>"] [sendFrequency="frequency"] [switchSupport] [minValue=<min value>] [maxValue=<max value>] [step=<step value>]
+Slider item=<itemname> [label="<labelname>"] [icon=<iconref>] [staticIcon=<iconref>] [sendFrequency="frequency"] [switchSupport] [minValue=<min value>] [maxValue=<max value>] [step=<step value>]
 ```
 
 This type presents a value as a user-adjustable control which slides from left (0) to right (100).
@@ -364,7 +366,7 @@ Slider item=KI_Temperature label="Kitchen"
 ### Element Type 'Colorpicker'
 
 ```java
-Colorpicker item=<itemname> [label="<labelname>"] [icon="<iconname>"] [sendFrequency=<sendFrequency>]
+Colorpicker item=<itemname> [label="<labelname>"] [icon=<iconref>] [staticIcon=<iconref>] [sendFrequency=<sendFrequency>]
 ```
 
 This element is a combined control for something like a rgb or rgbw light where you can adjust brightness as well es the color hue.
@@ -377,7 +379,7 @@ The middle button opens an overlay to finetune your color. A color wheel let you
 **Example:**
 
 ```java
-Colorpicker item=LR_LEDLight_Color label="LED Light Color" icon="colorwheel"
+Colorpicker item=LR_LEDLight_Color label="LED Light Color" staticIcon=colorwheel
 ```
 
 ![Presentation of the Colorpicker element in BasicUI](images/sitemap_demo_colorpicker.png)
@@ -385,7 +387,7 @@ Colorpicker item=LR_LEDLight_Color label="LED Light Color" icon="colorwheel"
 ### Element Type 'Input'
 
 ```java
-Input item=<itemname> [label="<labelname>"] [icon="<iconname>"] [inputHint="<inputHint>"]
+Input item=<itemname> [label="<labelname>"] [icon=<iconref>] [staticIcon=<iconref>] [inputHint="<inputHint>"]
 ```
 
 This element allows entering of text, numbers and dates/times and updating the underlying items.
@@ -401,7 +403,7 @@ Note that this element type may not be supported on all user interfaces that sup
 **Example:**
 
 ```java
-Input item=Meter_Reading label="Meter [%.0f %unit%]" icon="energy" inputHint="number"
+Input item=Meter_Reading label="Meter [%.0f %unit%]" staticIcon=energy inputHint="number"
 ```
 
 ![Presentation of the Input element in BasicUI](images/sitemap_demo_input.png)
@@ -409,7 +411,7 @@ Input item=Meter_Reading label="Meter [%.0f %unit%]" icon="energy" inputHint="nu
 ### Element Type 'Webview'
 
 ```java
-Webview item=<itemname> [label="<labelname>"] [icon="<iconname>"] url="<url>" [height=<heightvalue>]
+Webview item=<itemname> [label="<labelname>"] [icon=<iconref>] [staticIcon=<iconref>] url="<url>" [height=<heightvalue>]
 ```
 
 The content of a webpage will be presented live on your user interface next to other Sitemap elements.
@@ -428,7 +430,7 @@ Webview url="https://www.openhab.org" height=5
 ### Element Type 'Mapview'
 
 ```java
-Mapview [item=<itemname>] [label="<labelname>"] [icon="<iconname>"] [height=<heightvalue>]
+Mapview [item=<itemname>] [label="<labelname>"] [icon=<iconref>] [staticIcon=<iconref>] [height=<heightvalue>]
 ```
 
 Displays an [OSM](https://www.openstreetmap.org) map based on a given Location Item.
@@ -446,7 +448,7 @@ Mapview item=Demo_Location height=5
 ### Element Type 'Image'
 
 ```java
-Image [item=<itemname>] [icon="<iconname>"] url="<url of image>" [label="<labelname>"] [refresh=xxxx]
+Image [item=<itemname>] [icon=<iconref>] [staticIcon=<iconref>] url="<url of image>" [label="<labelname>"] [refresh=xxxx]
 ```
 
 This element type is able to present an image.
@@ -471,7 +473,7 @@ Image url="https://192.168.1.203:8080/?action=snapshot" refresh=10000
 ### Element Type 'Video'
 
 ```java
-Video [item=<itemname>] [icon="<iconname>"] url="<url of video to embed>" [encoding="<video encoding>"]
+Video [item=<itemname>] [icon=<iconref>] [staticIcon=<iconref>] url="<url of video to embed>" [encoding="<video encoding>"]
 ```
 
 Allows you to display a video as part of your Sitemap.
@@ -496,7 +498,7 @@ Video url="https://demo.openhab.org/Hue.m4v"
 ### Element Type 'Chart'
 
 ```java
-Chart item=<itemname> [icon="<iconname>"] [label="<labelname>"] [refresh=xxxx]
+Chart item=<itemname> [icon=<iconref>] [staticIcon=<iconref>] [label="<labelname>"] [refresh=xxxx]
 period=xxxx [service="<service>"] [legend=true/false] [forceasitem=true/false] [yAxisDecimalPattern=xxxx]
 ```
 
@@ -540,7 +542,7 @@ Mappings is an optional parameter for the [Switch](#element-type-switch) and [Se
 Mapping syntax:
 
 ```java
-mappings=[value_1="description_1", value_2="description_2", ...]
+mappings=[value_1="description_1", value_2="description_2"=<iconname>, ...]
 ```
 
 Examples:
@@ -551,6 +553,8 @@ mappings=[1="DasErste", 2="BBC One", 3="Cartoon Network"]
 
 mappings=[OFF="All heaters off"]
 mappings=[15="Gone", 19="Chilly", 21="Cozy"]
+
+mappings=[ON="Mic On"=material:mic, OFF="Mic Off"=material:mic_off]
 ```
 
 As you can see, different Item data types are accepted as mappings values.
@@ -565,6 +569,9 @@ Similarly, mapping above changes the numbers "1", "2", and "3" to "DasErste", "B
 
 In the third and fourth examples above, only a subset of the possible values of items belonging to a heating system are presented to the user.
 This limits the possible input values, which is yet another often occurring use case for mappings.
+
+In the fifth example above, user interfaces will display buttons using the provided icon rather than the provided description.
+Icons are usable in Switch element but ignored in Selection element.
 
 ## Dynamic Sitemaps
 
@@ -584,8 +591,18 @@ If the parameter is not provided, the default is to display the Item.
 Visibility syntax:
 
 ```java
-visibility=[item_name operator value, item_name operator value, ... ]
+visibility=[item_name operator value, item_name operator value AND item_name operator value, ... ]
 ```
+
+You can set as many conditions as you want.
+
+A condition can be a single comparison or a combination of several comparisons all separated by the AND operator.
+A condition including the AND operator will be considered as true if all individual comparisons are considered as true.
+Of course, it is possible to reference a different item in each comparison.
+
+Note that `item_name` and `operator` are both optional.
+If `item_name` is not provided, the Item name will default to the current Item.
+If an operator is not specified, the operator will default to `==`.
 
 Valid comparison operators are:
 
@@ -594,7 +611,7 @@ Valid comparison operators are:
 - less than `<`, greater than `>`
 
 Expressions are evaluated from left to right.
-The Item will be visible if any one of the comparisons is evaluated as `true`, otherwise it will be hidden.
+The Item will be visible if any one of the conditions is evaluated as `true`, otherwise it will be hidden.
 
 **Examples:**
 
@@ -602,12 +619,11 @@ The Item will be visible if any one of the comparisons is evaluated as `true`, o
 Text item=BatteryWarning visibility=[Battery_Level<30]
 Switch item=CinemaLight label="Cinema light" visibility=[TV_Power==ON]
 Switch item=LawnSprinkler visibility=[Day_Time=="Morning", Day_Time=="Afternoon", Temperature>19]
+Switch item=LawnSprinkler visibility=[Day_Time=="Morning" AND Temperature>19]
 ```
 
 In the third example above, a control for a lawn sprinkler will be visible if it is Morning, _OR_ if it is Afternoon, _OR_ if the temperature is above 19 °C.
-Combining multiple conditions, for example Morning _AND_ above 19 °C is not supported.
-To control visibility based upon combining multiple Items, or on more complex conditions, consider defining and using an additional intermediate Item that is set by a Rule.
-Rules have a rich set of features that can support more involved scenarios.
+In the fourth example above, multiple conditions are combined, a control for a lawn sprinkler will be visible if it is Morning _AND_ if the temperature is above 19 °C.
 
 ### Label, Value and Icon Colors
 
@@ -618,10 +634,16 @@ The icon may be tinted depending on the state as well.
 **Label and Value Color Syntax:**
 
 ```java
-labelcolor=[item_name operator value = "color", ... ]
-valuecolor=[item_name operator value = "color", ... ]
-iconcolor=[item_name operator value = "color", ... ]
+labelcolor=[item_name operator value = "color", item_name operator value AND item_name operator value = "color", ... ]
+valuecolor=[item_name operator value = "color", item_name operator value AND item_name operator value = "color", ... ]
+iconcolor=[item_name operator value = "color", item_name operator value AND item_name operator value = "color",... ]
 ```
+
+You can set as many conditions as you want, along with a color for each condition.
+
+A condition can be a single comparison or a combination of several comparisons all separated by the AND operator.
+A condition including the AND operator will be considered as true if all individual comparisons are considered as true.
+Of course, it is possible to reference a different item in each comparison.
 
 Note that `item_name` and `operator` are both optional.
 If `item_name` is not provided, the Item name will default to the current Item.
@@ -638,9 +660,14 @@ The following three lines are equivalent.
 
 ```java
 Text item=Temperature labelcolor=[>0="blue"] valuecolor=[22="green"] iconcolor=[22="green"]
-Text item=Temperature labelcolor=[>0="blue"] valuecolor=[==22="green"]
-Text item=Temperature labelcolor=[>0="blue"] valuecolor=[Temperature==22="green"]
-Text item=Temperature labelcolor=[>0="blue", "gray"] valuecolor=[22="green", "gray"]
+Text item=Temperature labelcolor=[>0="blue"] valuecolor=[==22="green"] iconcolor=[==22="green"]
+Text item=Temperature labelcolor=[Temperature>0="blue"] valuecolor=[Temperature==22="green"] iconcolor=[Temperature==22="green"]
+```
+
+The line below illustrates setting a default color (gray) and how to combine multiple comparisons with an AND operator:
+
+```java
+Text item=NumberItem labelcolor=[>0 AND <50="yellow", >=50="green", "gray"] valuecolor=[>0 AND <50="yellow", >=50="green", "gray"] iconcolor=[>0 AND <50="yellow", >=50="green", "gray"]
 ```
 
 The line below illustrates the importance of operator order:
@@ -716,7 +743,7 @@ sitemap demo label="My home automation" {
         Switch item=Lights icon="light"
         Text item=LR_Temperature label="Livingroom [%.1f °C]"
         Group item=Heating
-        Text item=LR_Multimedia_Summary label="Multimedia [%s]" icon="video" {
+        Text item=LR_Multimedia_Summary label="Multimedia [%s]" staticIcon="video" {
             Selection item=LR_TV_Channel mappings=[0="off", 1="DasErste", 2="BBC One", 3="Cartoon Network"]
             Slider item=LR_TV_Volume
         }

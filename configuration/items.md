@@ -359,7 +359,7 @@ Here is the list of available icon sources and how they are supported by the maj
 | `oh`                | Icons provided via the openHAB server | Supported  | Supported                         | Supported         | Supported         |
 | `material`         | [Material icons](https://fonts.google.com/icons?icon.set=Material+Icons) | Supported  | Supported                         | Not yet supported | Not yet supported |
 | `f7`                | [Framework7 icons](https://framework7.io/icons/)                         | Supported  | Supported                         | Not yet supported | Not yet supported |
-| `if` or `iconify` | [iconify icons](https://icon-sets.iconify.design/)                       | Supported  | Supported but needs to be enabled | Not yet supported | Not yet supported |
+| `if` or `iconify` | [iconify icons](https://icon-sets.iconify.design/)                       | Supported  | Supported but needs to be enabled | Not yet supported | Supported         |
 
 Please note that the iconify option requires Internet connectivity on the client to access the external API.
 The WEB browser will cache the retrieved icons to limit the requests and speed up the rendering.
