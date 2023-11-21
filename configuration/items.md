@@ -733,7 +733,7 @@ If this is the case, you will find those within the documentation of the Binding
 
 ##### Implicit Profiles
 
-If an Item does not have an explicitly defined Profile the framework actually uses 'behind the scenes' an implicit profile.
+If an Item does not have an explicitly defined Profile the framework actually uses an implicit profile 'behind the scenes'.
 The implicit profile type depends on the Channel kind and type, and the respective Item type or Command type, as shown below.
 
 | Channel Kind | Channel Type        | Item / Command Type | Implicit Profile                 |
