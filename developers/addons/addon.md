@@ -85,6 +85,7 @@ Optionally, if you want the system to scan the user's network for your addon the
 | `regex`             | A regular expression (or plain string) that needs to match the property name. | Mandatory one instance per `match-property`.   |
 
 Notes:
+
 - A `discovery-method` may contain multiple `match-property` entries, and in such a case **all** entries must match i.e. it a logical `AND` function is applied.
 - If you want to apply a logical `OR` function you can define a second separate `discovery-method` containing the respective `match-property` entry.
 
@@ -124,4 +125,3 @@ The following code gives an example for an add-on definition used in bindings.
 
 </addon:addon>
 ```
-
