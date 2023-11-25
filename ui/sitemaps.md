@@ -510,7 +510,7 @@ Adds a time-series chart object for the display of logged data.
     If no service is specified, openHAB will use the first queryable persistence service it finds.
     Therefore, for an installation with only a single persistence service, this is not required.
 
-- `period` is the scale of the time axis. Valid values are `h, 4h, 8h, 12h, D, 2D, 3D, W, 2W, M, 2M, 4M or Y`.
+- `period` is the scale of the time axis. Valid values are `h, 2h, 3h, ..., D, 2D, 3D, ..., W, 2W, 3W, ..., M, 2M, 3M, ..., Y, 2Y, ...` and any valid duration following the ISO8601 duration notation such as `P1Y6M` for the last year and a half or `PT1H30M` for the last hour and a half.
 
 - `legend` is used to show or to hide the chart legend.
     Valid values are `true` (always show the legend) and `false` (never show the legend).
