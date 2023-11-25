@@ -59,6 +59,10 @@ The following strategies are defined internally and may be used in place of `str
 - `everyChange`: persist the Item state whenever its state has changed
 - `everyUpdate`: persist the Item state whenever its state has been updated, even if it did not change
 - `restoreOnStartup`: load and initialize the last persisted state of the Item on openHAB startup (if the Item state is undefined (`UNDEF`)).
+- `forecast`: check for persisted states with timestamps in the future and restore these states at the given time
+
+It is recommended to use different items for forecasted (i.e. future) values and historic data.
+As a result mixing `forecast` strategy with other strategies is not recommended (except `restoreOnStartup`).
 
 #### Cron Persistence Triggers
 
