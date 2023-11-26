@@ -55,27 +55,27 @@ The following table summarises the channels available for the Comet Z -:
 
 | Channel Name | Channel ID | Channel Type | Category | Item Type |
 |--------------|------------|--------------|----------|-----------|
+| Operations Mode | thermostat_mode | thermostat_mode | Temperature | Number | 
 | Dimmer | switch_dimmer | switch_dimmer | DimmableLight | Dimmer | 
 | Sensor (temperature) | sensor_temperature | sensor_temperature | Temperature | Number:Temperature | 
 | Thermostat mode | thermostat_mode | thermostat_mode | Temperature | Number | 
-| Setpoint (heating) | thermostat_setpoint | thermostat_setpoint | Heating | Number:Temperature | 
-| Setpoint (furnace) | thermostat_setpoint | thermostat_setpoint | Heating | Number:Temperature | 
+| Setpoint heating | thermostat_setpoint | thermostat_setpoint | Heating | Number:Temperature | 
+| Setpoint Eco | thermostat_setpoint | thermostat_setpoint | Heating | Number:Temperature | 
 | Alarm (power) | alarm_power | alarm_power | Energy | Switch | 
 | Alarm (system) | alarm_system | alarm_system |  | Switch | 
 | Battery Level | battery-level | system.battery_level | Battery | Number |
 
-### Dimmer
-The brightness channel allows to control the brightness of a light.
-            It is also possible to switch the light on and off.
+### Operations Mode
+Sets operations mode via basic command:
 
-The ```switch_dimmer``` channel is of type ```switch_dimmer``` and supports the ```Dimmer``` item and is in the ```DimmableLight``` category.
+0x00 Energy Save Heating Control according to set setback temperature
 
-### Sensor (temperature)
-Indicates the current temperature.
+0x0F OFF Radiator off. Hold 7.5°C
 
-The ```sensor_temperature``` channel is of type ```sensor_temperature``` and supports the ```Number:Temperature``` item and is in the ```Temperature``` category.
+0xFE Manufacturer Specific Switching to the actuating value mode
 
-### Thermostat mode
+0xFF Heating Rules according the comfort temperature setup
+
 Sets the thermostat.
 
 The ```thermostat_mode``` channel is of type ```thermostat_mode``` and supports the ```Number``` item and is in the ```Temperature``` category.
@@ -98,12 +98,48 @@ The following state translation is provided for this channel to the ```Number```
 | 12 | Cool Economy |
 | 13 | Away |
 
-### Setpoint (heating)
+### Dimmer
+The brightness channel allows to control the brightness of a light.
+            It is also possible to switch the light on and off.
+
+The ```switch_dimmer``` channel is of type ```switch_dimmer``` and supports the ```Dimmer``` item and is in the ```DimmableLight``` category.
+
+### Sensor (temperature)
+Indicates the current temperature.
+
+The ```sensor_temperature``` channel is of type ```sensor_temperature``` and supports the ```Number:Temperature``` item and is in the ```Temperature``` category.
+
+### Thermostat mode
+
+
+Sets the thermostat.
+
+The ```thermostat_mode``` channel is of type ```thermostat_mode``` and supports the ```Number``` item and is in the ```Temperature``` category.
+The following state translation is provided for this channel to the ```Number``` item type -:
+
+| Value | Label     |
+|-------|-----------|
+| 0 | Off |
+| 1 | Heat |
+| 2 | Cool |
+| 3 | Auto |
+| 4 | Aux Heat |
+| 5 | Resume |
+| 6 | Fan Only |
+| 7 | Furnace |
+| 8 | Dry Air |
+| 9 | Moist Air |
+| 10 | Auto Changeover |
+| 11 | Heat Economy |
+| 12 | Cool Economy |
+| 13 | Away |
+
+### Setpoint heating
 Sets the thermostat setpoint.
 
 The ```thermostat_setpoint``` channel is of type ```thermostat_setpoint``` and supports the ```Number:Temperature``` item and is in the ```Heating``` category.
 
-### Setpoint (furnace)
+### Setpoint Eco
 Sets the thermostat setpoint.
 
 The ```thermostat_setpoint``` channel is of type ```thermostat_setpoint``` and supports the ```Number:Temperature``` item and is in the ```Heating``` category.

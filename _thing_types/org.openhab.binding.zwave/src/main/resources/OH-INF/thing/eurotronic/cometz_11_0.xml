@@ -14,6 +14,12 @@ HVAC- Radiator Controller<br /> <h1>Overview</h1><p>Comet Z-Wave is an energy-sa
 
     <!-- CHANNEL DEFINITIONS -->
     <channels>
+      <channel id="basic_thermostat_mode" typeId="thermostat_mode">
+        <label>Operations Mode</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_BASIC</property>
+        </properties>
+      </channel>
       <channel id="switch_dimmer" typeId="switch_dimmer">
         <label>Dimmer</label>
         <properties>
@@ -33,14 +39,14 @@ HVAC- Radiator Controller<br /> <h1>Overview</h1><p>Comet Z-Wave is an energy-sa
           <property name="binding:*:DecimalType">COMMAND_CLASS_THERMOSTAT_MODE</property>
         </properties>
       </channel>
-      <channel id="thermostat_setpoint_heating" typeId="thermostat_setpoint">
-        <label>Setpoint (heating)</label>
+      <channel id="thermostat_setpoint_heat" typeId="thermostat_setpoint">
+        <label>Setpoint heating</label>
         <properties>
-          <property name="binding:*:QuantityType">COMMAND_CLASS_THERMOSTAT_SETPOINT;type=HEATING</property>
+          <property name="binding:*:QuantityType">COMMAND_CLASS_THERMOSTAT_SETPOINT;type=HEAT</property>
         </properties>
       </channel>
       <channel id="thermostat_setpoint_furnace" typeId="thermostat_setpoint">
-        <label>Setpoint (furnace)</label>
+        <label>Setpoint Eco</label>
         <properties>
           <property name="binding:*:QuantityType">COMMAND_CLASS_THERMOSTAT_SETPOINT;type=FURNACE</property>
         </properties>

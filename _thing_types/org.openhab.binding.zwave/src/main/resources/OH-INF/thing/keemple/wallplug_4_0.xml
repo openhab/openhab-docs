@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="keemple_wallplug_04_000" listed="false">
+    <label>Keemple KP-SO-02 Wall Plug Switch</label>
+    <description><![CDATA[
+Wall Plug Switch<br /> <h1>Overview</h1><p>This Plug provides line voltage, current load, power consumption and energy consumption measuring. </p><p>Voltage – The Supply Power Voltage For Plug.</p><p>Current – The Current for the Electric Device Connect to Plug Consumption.</p><p>Power – Power Consumed by an Electric Device in an instant, unit: Watt (W).</p><p>Energy – Energy Consumed by an Electric Device through a Time Period. Most commonly measured in Kilowatt-hours (kWh). One kilowatt-hour is Equal to One Kilowatt of Power Consumed over a Period of One Hour, 1kWh = 1000Wh.0Wh.</p> <br /> <h2>Inclusion Information</h2><ol><li>Connect a plug to power and wait at least 20 seconds.</li><li>Set Z‐Wave controller or Z‐Wave gateway into inclusion mode (refer to the controller or gateway operating manual).</li><li>Briefly press the plug button three times (the LED will alternately flash gree five times).</li></ol> <br /> <h2>Exclusion Information</h2><ol><li>Connect a plug to power and wait at least 20 seconds.</li><li>et Z‐Wave controller or Z‐Wave gateway into exclusion mode (refer to the controller or gateway operating manual).</li><li>Briefly press the plug button three times (the LED will alternately flash pink five times).</li></ol> <br /> <h2>Wakeup Information</h2><p><br /></p>
+    ]]></description>
+    <category>WallSwitch</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_binary" typeId="switch_binary">
+        <label>Switch</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY</property>
+        </properties>
+      </channel>
+      <channel id="meter_watts" typeId="meter_watts">
+        <label>Electric meter (watts)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_W</property>
+        </properties>
+      </channel>
+      <channel id="meter_kwh" typeId="meter_kwh">
+        <label>Electric meter (kWh)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_KWh</property>
+        </properties>
+      </channel>
+      <channel id="meter_voltage" typeId="meter_voltage">
+        <label>Electric meter (volts)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_V</property>
+        </properties>
+      </channel>
+      <channel id="meter_current" typeId="meter_current">
+        <label>Electric meter (amps)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_A</property>
+        </properties>
+      </channel>
+      <channel id="alarm_power" typeId="alarm_power">
+        <label>Alarm (power)</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=POWER_MANAGEMENT</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Keemplecom Limited</property>
+      <property name="modelId">Keemple KP-SO-02</property>
+      <property name="manufacturerId">041A</property>
+      <property name="manufacturerRef">0200:0008</property>
+      <property name="versionMin">4.0</property>
+      <property name="dbReference">1359</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Lifeline</label>
+        <description><![CDATA[
+Assigned to Plugs status - On/Off. Allows for receiving control command from trigger devices whenever the Plug is turned On or Off.<br /> <h1>Overview</h1><p>NOTIFICATION_REPORT_V4</p><p>METER_REPORT_V4</p><p>SWITCH_BINARY_REPORT</p><p>DEVICE_RESET_LOCALLY_NOTIFICATION</p>
+        ]]></description>
+        <multipleLimit>1</multipleLimit>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: Group 2</label>
+        <description><![CDATA[
+Sending control commands to associated devices. If current load is over the max current defined in parameter #3, the Plug will send a BASIC_SET (0xFF) to associated devices. When current load is normal, plug will send a BASIC_SET (0x00).<br /> <h1>Overview</h1><p>BASIC_SET<br /></p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_3" type="text" groupName="association" multiple="true">
+        <label>3: Group 3</label>
+        <description><![CDATA[
+Send Notification to associated devices.<br /> <h1>Overview</h1><p>NOTIFICATION_REPORT_V4<br /></p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

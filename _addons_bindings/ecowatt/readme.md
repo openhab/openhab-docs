@@ -5,6 +5,7 @@ title: Ecowatt - Bindings
 type: binding
 description: "This binding uses the Ecowatt API to expose clear signals to adopt the right gestures and to ensure a good supply of electricity for all in France."
 since: 3x
+logo: images/addons/ecowatt.png
 install: auto
 ---
 

@@ -1,0 +1,489 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="thermofloor_trm6_00_000" listed="false">
+    <label>Heatit Z-TRM6 Thermostat for electrical heating</label>
+    <description><![CDATA[
+Thermostat for electrical heating<br /> <h1>Overview</h1><h3>Features<br /></h3><ul><li>Z-Wave thermostat (Z-Wave Plus v2)</li><li>Internal room sensor</li><li>External room sensor (wired by cable)</li><li>Floor sensor <br />(compatible NTC-sensors (kΩ @ 25°C) 6.8, 10, 12, 15, 22, 33, 47, 100)</li><li>fits in standard European junction boxes and may be used with most System 55 frames</li><li>Temperature limiter</li><li>3 modes: Heat - Cool and Eco</li><li>Open window detection</li><li>Lock mode/child lock</li><li>Temperature readout in gateway</li><li>Active power metering</li><li>SmartStart</li><li>Firmware update (OTA)</li><li>Supports encryption modes S0, S2 Authenticated Class, S2 Unauthenticated Class</li><li>Z-Wave 800 chip</li><li><p>Max load (resistive load) 3600W<br />Max current 16A<br />Own power usage 2W</p></li></ul> <br /> <h2>Inclusion Information</h2><h3>Method 1: Standard (Manual)</h3><ol><li>Hold the Center button for 5 seconds</li><li>The display will show “OFF”</li><li>Press the ”+” button once to see “CON” in the display</li><li>Start the add device process in your primary controller</li><li>Start the configuration mode on the thermostat by holding the Center button for approximately 2 seconds</li></ol><h3>Method 2: SmartStart (Automatic)</h3><p>Scan the Z-Wave QR-Code on the product if your primary controller supports SmartStart inclusion. No further action is required and the SmartStart product will be added automatically after being powered on within range of the primary controller.</p> <br /> <h2>Exclusion Information</h2><ol><li> Hold the Center button for 5 seconds</li><li>The display will show “OFF”</li><li>Press the ”+” button once to see “CON” in the display</li><li>Start the remove device process in your primary controller</li><li>Start the configuration mode on the thermostat by holding the Center button for approximately 2 seconds</li></ol> <br /> <h2>Wakeup Information</h2><p><br /></p>
+    ]]></description>
+    <category>RadiatorControl</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="thermostat_state" typeId="thermostat_state">
+        <label>Thermostat Operating State</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_THERMOSTAT_OPERATING_STATE</property>
+        </properties>
+      </channel>
+      <channel id="meter_kwh1" typeId="meter_kwh">
+        <label>Electric Meter (kWh)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER:1;type=E_KWh</property>
+        </properties>
+      </channel>
+      <channel id="meter_watts1" typeId="meter_watts">
+        <label>Electric Meter (watts)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER:1;type=E_W</property>
+        </properties>
+      </channel>
+      <channel id="thermostat_mode1" typeId="thermofloor_trm6_00_000_thermostat_mode">
+        <label>Thermostat Mode</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_THERMOSTAT_MODE:1</property>
+        </properties>
+      </channel>
+      <channel id="thermostat_state1" typeId="thermostat_state">
+        <label>Thermostat Operating State 1</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_THERMOSTAT_OPERATING_STATE:1</property>
+        </properties>
+      </channel>
+      <channel id="thermostat_setpoint_heating1" typeId="thermostat_setpoint">
+        <label>Heating Setpoint</label>
+        <properties>
+          <property name="binding:*:QuantityType">COMMAND_CLASS_THERMOSTAT_SETPOINT:1;type=HEATING</property>
+        </properties>
+      </channel>
+      <channel id="thermostat_setpoint_cooling1" typeId="thermostat_setpoint">
+        <label>Cooling Setpoint</label>
+        <properties>
+          <property name="binding:*:QuantityType">COMMAND_CLASS_THERMOSTAT_SETPOINT:1;type=COOLING</property>
+        </properties>
+      </channel>
+      <channel id="thermostat_setpoint_furnace1" typeId="thermostat_setpoint">
+        <label>Furnace Setpoint</label>
+        <properties>
+          <property name="binding:*:QuantityType">COMMAND_CLASS_THERMOSTAT_SETPOINT:1;type=FURNACE</property>
+        </properties>
+      </channel>
+      <channel id="thermostat_setpoint_heating_econ1" typeId="thermostat_setpoint">
+        <label>Heating Economy Setpoint</label>
+        <properties>
+          <property name="binding:*:QuantityType">COMMAND_CLASS_THERMOSTAT_SETPOINT:1;type=HEATING_ECON</property>
+        </properties>
+      </channel>
+      <channel id="alarm_heat1" typeId="alarm_heat">
+        <label>Heat Alarm</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM:1;type=HEAT</property>
+        </properties>
+      </channel>
+      <channel id="alarm_power1" typeId="alarm_power">
+        <label>Power Alarm</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM:1;type=POWER_MANAGEMENT</property>
+        </properties>
+      </channel>
+      <channel id="sensor_temperature2" typeId="sensor_temperature">
+        <label>Temperature Internal Sensor</label>
+        <properties>
+          <property name="binding:*:QuantityType">COMMAND_CLASS_SENSOR_MULTILEVEL:2;type=TEMPERATURE</property>
+        </properties>
+      </channel>
+      <channel id="sensor_temperature3" typeId="sensor_temperature">
+        <label>Temperature External Sensor</label>
+        <properties>
+          <property name="binding:*:QuantityType">COMMAND_CLASS_SENSOR_MULTILEVEL:3;type=TEMPERATURE</property>
+        </properties>
+      </channel>
+      <channel id="sensor_temperature4" typeId="sensor_temperature">
+        <label>Temperature Floor Sensor</label>
+        <properties>
+          <property name="binding:*:QuantityType">COMMAND_CLASS_SENSOR_MULTILEVEL:4;type=TEMPERATURE</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">ThermoFloor</property>
+      <property name="modelId">Heatit Z-TRM6</property>
+      <property name="manufacturerId">019B</property>
+      <property name="manufacturerRef">0030:3001</property>
+      <property name="dbReference">1586</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_1_1" type="integer" groupName="configuration">
+        <label>1: Disable buttons</label>
+        <description><![CDATA[
+Disable physical device buttons<br /> <h1>Overview</h1><p><br /></p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Enabled (buttons on the front of the device work)</option>
+          <option value="1">Disabled (buttons on the front of the device are disabled)</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_2_1" type="integer" groupName="configuration">
+        <label>2: Sensor mode</label>
+        <description><![CDATA[
+Sensor mode<br /> <h1>Overview</h1><p>The thermostat has multiple sensors and sensor modes. This lets you configure the thermostat to work correctly in most installations.</p><p><b>Available sensor modes:</b></p><p>* F: Floor sensor</p><p>* A: Internal room sensor</p><p>* AF: Internal room sensor + Floor sensor</p><p>* A2: External room sensor</p><p>* A2F: External room sensor + Floor sensor</p><p>* PWER: Power regulator mode (no sensor used)</p><p><b>NOTE:</b> Some types of floor require that a floor sensor is connected in order to limit the floor temperature to a maximum of 27°C (check the manual from the floor manufacturer). When modes AF or A2F are used, the floor limiter FHI (parameter 8) is automatically set to 27°C (but can be overwritten afterwards). When using any other sensor type (A, F or A2) the minimum and maximum limits are 5°C and 40°C respectively (parameter 5 and 8)<br /></p>
+        ]]></description>
+        <default>1</default>
+        <options>
+          <option value="0">Floor sensor (F)</option>
+          <option value="1">Internal sensor (A)</option>
+          <option value="2">Internal sensor with floor sensor limitations (AF)</option>
+          <option value="3">External sensor (A2)</option>
+          <option value="4">External sensor with floor sensor limitations (A2F)</option>
+          <option value="5">Power regulator mode (no sensor used) (PWER)</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_3_1" type="integer" groupName="configuration">
+        <label>3: Sensor value</label>
+        <description><![CDATA[
+Resistance value of the connected NTC sensor(s)<br /> <h1>Overview</h1><p>The thermostat allows the selection of multiple different resistance values of an NTC sensor and can be selected using either the local settings menu or via Parameter 3: ”Sensor value “SEN”. </p><p>The supported sensor values are as follows:</p><p>6.8, 10, 12, 15, 22, 33, 47 or 100KΩ.</p><p>The factory default value is 10kΩ. When connecting both the floor sensor and the external sensor, make sure to use sensors with the same Ohm value.</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">10KΩ</option>
+          <option value="1">12KΩ</option>
+          <option value="2">15KΩ</option>
+          <option value="3">22KΩ</option>
+          <option value="4">33KΩ</option>
+          <option value="5">47KΩ</option>
+          <option value="6">6.8KΩ</option>
+          <option value="7">100KΩ</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_4_2" type="integer" groupName="configuration">
+        <label>4: Internal sensor min temp limit</label>
+        <description><![CDATA[
+Internal sensor min temp limit (5°C to 40°C)<br /> <h1>Overview</h1><p>The lowest temperature allowed by the thermostat when using sensor mode A. If the temperature falls below the set temperature, the thermostat switches the heating on.</p><p>5.0°C to 40.0°C. Default is 50 (5.0°C)</p>
+        ]]></description>
+        <default>50</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_5_2" type="integer" groupName="configuration">
+        <label>5: Floor sensor min temp limit</label>
+        <description><![CDATA[
+Floor sensor min temp limit (5°C to 40°C)<br /> <h1>Overview</h1><p>The lowest temperature allowed by the thermostat when using sensor mode AF, F, A2F. If the temperature falls below the set temperature, the thermostat switches the heating on.</p><p>5.0°C to 40.0°C. Default is 50 (5.0°C)</p><b>Note:</b> if parameter 2 is changed to 'F' (value: 0), 'A' (value: 1) or 'A2' (value: 3), this parameter is automatically set to 5°C (value: 50) but can be overwritten afterwards.
+        ]]></description>
+        <default>50</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_6_2" type="integer" groupName="configuration">
+        <label>6: External sensor min temp limit</label>
+        <description><![CDATA[
+External sensor min temp limit (5°C to 40°C)<br /> <h1>Overview</h1><p>The lowest temperature allowed by the thermostat when using sensor mode A2, A2F. If the temperature falls below the set temperature, the thermostat switches the heating on.</p><p>5.0°C to 40.0°C. Default is 50 (5.0°C)</p>
+        ]]></description>
+        <default>50</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_7_2" type="integer" groupName="configuration">
+        <label>7: Internal sensor max temp limit</label>
+        <description><![CDATA[
+Internal sensor max temp limit (5°C to 40°C)<br /> <h1>Overview</h1><p>Decide the highest temperature allowed by the thermostat when using sensor mode A. </p><p>5.0°C to 40.0°C. Default is 50 (5.0°C)</p>
+        ]]></description>
+        <default>50</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_8_2" type="integer" groupName="configuration">
+        <label>8: Floor sensor max temp limit</label>
+        <description><![CDATA[
+Floor sensor max temp limit (5°C to 40°C)<br /> <h1>Overview</h1><p>The highest temperature allowed by the thermostat when using sensor mode AF, F, A2F.</p><p>5.0°C to 40.0°C. Default is 50 (5.0°C)</p><p><b>Notes:</b> </p><p>If parameter 2 is changed to 'AF' (value: 2) or 'A2F' (value: 4), this parameter is automatically set to 27°C (value: 270) but can be overwritten afterwards.</p><p>If parameter 2 is changed to 'F' (value: 0), 'A' (value: 1) or 'A2' (value: 3), this parameter is automatically set to 40°C (value: 400) but can be overwritten afterwards.</p>
+        ]]></description>
+        <default>50</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_9_2" type="integer" groupName="configuration">
+        <label>9: External sensor max temp limit</label>
+        <description><![CDATA[
+External sensor max temp limit (5°C to 40°C)<br /> <h1>Overview</h1><p>The highest temperature allowed by the thermostat when using sensor mode A2, A2F.</p><p>5.0°C to 40.0°C. Default is 50 (5.0°C)</p>
+        ]]></description>
+        <default>50</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_10_1" type="integer" groupName="configuration">
+        <label>10: Internal sensor calibration</label>
+        <description><![CDATA[
+Manually calibrate sensor A ±6°C<br /> <h1>Overview</h1><p>Manually calibrates the internal sensor by ±6°C (Default is 0°C)</p><p>-6.0°C (value: -60) to +6.0°C (value: 60)</p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_11_1" type="integer" groupName="configuration">
+        <label>11: Floor sensor calibration</label>
+        <description><![CDATA[
+Manually calibrate sensor F ±6°C<br /> <h1>Overview</h1><p>Manually calibrates the floor sensor by ±6°C (Default is 0°C)</p><p>-6.0°C (value: -60) to +6.0°C (value: 60)<br /></p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_12_1" type="integer" groupName="configuration">
+        <label>12: External sensor calibration</label>
+        <description><![CDATA[
+Manually calibrate sensor A2 ±6°C<br /> <h1>Overview</h1><p>Manually calibrates the external sensor by ±6°C (Default is 0°C)</p><p>-6.0°C (value: -60) to +6.0°C (value: 60)</p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_13_1" type="integer" groupName="configuration">
+        <label>13: Regulation mode</label>
+        <description><![CDATA[
+Regulation mode<br /> <h1>Overview</h1><p>The thermostat uses temperature readings retrieved from the internal sensor and/or from external wired sensors to regulate the temperature. The thermostat will regulate the temperature using hysteresis or PWM, based on the setpoint temperature.</p><p><b>Hysteresis</b></p><p>Hysteresis will turn on and off the load based on the hysteresis value in comparison to the setpoint. You can make changes to the thermostat hysteresis by using parameter 14.<br /></p><p><b>Pulse-width modulation PWM</b></p><p>With PWM regulation enabled, the thermostat will regulate based on duty cycles. The thermostat is turned on and off in percentage intervals of the cycle. The amount of time the relay will be on is based on how far the measured temperature is from the setpoint.</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Hysteresis</option>
+          <option value="1">PWM</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_14_1" type="integer" groupName="configuration">
+        <label>14: Temperature control hysteresis</label>
+        <description><![CDATA[
+Temperature control hysteresis<br /> <h1>Overview</h1><p>The hysteresis used when parameter 13 (regulation mode) is set to "Hysteresis".</p><p>You may choose hysteresis values between 0.3°C and 3.0°C. The default setting is 0.5°C. When using waterbased heating the manufacturer recommends a hysteresis of 1.0°C.</p><p>0.3°C (value: 3) to 3.0°C (value: 30). Default is 0.5°C (value: 5)<br /></p>
+        ]]></description>
+        <default>5</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_15_1" type="integer" groupName="configuration">
+        <label>15: Temperature display</label>
+        <description><![CDATA[
+Defines what is shown on the display during Standby state<br /> <h1>Overview</h1><p><br /></p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Display setpoint temperature</option>
+          <option value="1">Display measured temperature</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_16_1" type="integer" groupName="configuration">
+        <label>16: Active display brightness</label>
+        <description><![CDATA[
+Brightness of the display during active state<br /> <h1>Overview</h1><p>10% (value: 1) to 100% (value: 10)</p><p>Default: 100% (value: 10)<br /></p>
+        ]]></description>
+        <default>10</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_17_1" type="integer" groupName="configuration">
+        <label>17: Standby display brightness</label>
+        <description><![CDATA[
+Brightness of the display during standby state<br /> <h1>Overview</h1><p>10% (value: 1) to 100% (value: 10)</p><p>Default: 50% (value: 5)<br /></p>
+        ]]></description>
+        <default>5</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_18_2" type="integer" groupName="configuration">
+        <label>18: Temperature report interval</label>
+        <description><![CDATA[
+Time interval between consecutive temperature reports<br /> <h1>Overview</h1><p>30 to 65535 seconds.</p><p>Default: 840s (14 min)</p>
+        ]]></description>
+        <default>840</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_19_1" type="integer" groupName="configuration">
+        <label>19: Temperature report hysteresis</label>
+        <description><![CDATA[
+Change in temperature required to send a temperature report based on change<br /> <h1>Overview</h1><p>Set the change in temperature required to send a temperature report based on change.</p><p>0.1°C (value: 1) to 10°C (value: 100)<br /></p><p>Default: 1°C (value: 10)<br /></p>
+        ]]></description>
+        <default>10</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_20_2" type="integer" groupName="configuration">
+        <label>20: Meter report interval</label>
+        <description><![CDATA[
+Time interval between consecutive meter reports<br /> <h1>Overview</h1><p>Default: 840s (14 min)</p>
+        ]]></description>
+        <default>840</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_21_2" type="integer" groupName="configuration">
+        <label>21: Action after error</label>
+        <description><![CDATA[
+Action after error<br /> <h1>Overview</h1><p>Defines how the device should react when the overload/overheating features has turned OFF relay.</p><p>Values between 10 and 65535 seconds: device will attempt to turn on again after an error based on the delay specified.</p><p>Special value 0: device will turn off and show an error in the display. (Default)</p><p><br /></p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Turn off and show error in display</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_22_2" type="integer" groupName="configuration">
+        <label>22: Heating setpoint</label>
+        <description><![CDATA[
+Setpoint for Heating mode<br /> <h1>Overview</h1><p>5°C (value: 50) to 40°C (value: 400)<br /></p><p>Default: 21°C (value: 210)</p>
+        ]]></description>
+        <default>210</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_23_2" type="integer" groupName="configuration">
+        <label>23: Cooling setpoint</label>
+        <description><![CDATA[
+Setpoint for Cooling mode<br /> <h1>Overview</h1><p>5°C (value: 50) to 40°C (value: 400)<br /></p><p>Default: 18°C (value: 180)</p>
+        ]]></description>
+        <default>180</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_24_2" type="integer" groupName="configuration">
+        <label>24: ECO setpoint</label>
+        <description><![CDATA[
+Setpoint for ECO mode<br /> <h1>Overview</h1><p>5°C (value: 50) to 40°C (value: 400)<br /></p><p>Default: 18°C (value: 180)</p>
+        ]]></description>
+        <default>180</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_25_1" type="integer" groupName="configuration">
+        <label>25: Power regulator active time</label>
+        <description><![CDATA[
+Power regulator active time<br /> <h1>Overview</h1><p>Set the % of time the relay should be active when Parameter 2 ("sensor mode") is set to "Power regulator mode". (30-minute duty cycle).</p><p>10% (value: 1) to 100% (value: 10)</p><p>Default: 20% (value: 2)</p>
+        ]]></description>
+        <default>2</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_26_2" type="integer" groupName="configuration">
+        <label>26: Thermostat state update interval</label>
+        <description><![CDATA[
+Thermostat state update interval<br /> <h1>Overview</h1><p>Set the time interval of how often the device updates "Thermostat Setpoint set",  "Thermostat Mode set" and "Binary set" to associated devices. These updates are also sent if one of the associated values are changed.<br /></p><p>Special value 0: Send only when changed</p>
+        ]]></description>
+        <default>-22336</default>
+        <options>
+          <option value="0">Only when changed</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_27_1" type="integer" groupName="configuration">
+        <label>27: Operating mode</label>
+        <description><![CDATA[
+Operating mode<br /> <h1>Overview</h1><p>Note: 'Heating' and 'ECO' mode are both setpoints for normal heating operation. The difference is only in the setpoint - using 'ECO', you can easily set your house in night mode or vacation mode for example. </p>
+        ]]></description>
+        <default>1</default>
+        <options>
+          <option value="0">OFF - Thermostat will not operate</option>
+          <option value="1">Heating mode</option>
+          <option value="2">Cooling mode</option>
+          <option value="3">ECO mode</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_28_1" type="integer" groupName="configuration">
+        <label>28: Open window detection</label>
+        <description><![CDATA[
+Open window detection<br /> <h1>Overview</h1><p>Enable or disable the Open window detection</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Disabled</option>
+          <option value="1">Enabled</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_29_2" type="integer" groupName="configuration">
+        <label>29: Size of load</label>
+        <description><![CDATA[
+Size of load<br /> <h1>Overview</h1><p>Allows the user to set the power consumption of the connected load in 100W increments. This can be used when connected to a contactor.</p><p>100 Watt (value: 1) to 9900 Watt (value: 99)</p><p>Special value 0: The power consumption is measured instead by the device.<br /></p><p><br /></p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Uses power metering values</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Lifeline</label>
+        <description><![CDATA[
+<br /> <h1>Overview</h1><p>Lifeline Group to be used by primary controller, sends</p><p>- Thermostat Mode Report</p><p>- Thermostat Setpoint Report</p><p>- Thermostat Operating State Report</p><p>- Protection Report</p><p>- Notification Report</p><p>- Meter Report</p><p>- Sensor Multilevel Report</p><p>- Device Reset Locally Notification</p><p>- Indicator Report</p><p>- Configuration Report</p>
+        ]]></description>
+        <multipleLimit>1</multipleLimit>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: Binary Switch Set</label>
+        <description><![CDATA[
+<br /> <h1>Overview</h1><p>Binary Switch set commands based on the internal relay state</p><p>Sends:</p><p>- Binary Switch Set</p>
+        ]]></description>
+        <multipleLimit>10</multipleLimit>
+      </parameter>
+
+      <parameter name="group_3" type="text" groupName="association" multiple="true">
+        <label>3: Thermostat Setpoint set</label>
+        <description><![CDATA[
+<br /> <h1>Overview</h1><p>Thermostat Setpoint set commands based on own setpoint to allow for use as master thermostat</p><p>Sends:</p><p>-Thermostat Setpoint Set</p>
+        ]]></description>
+        <multipleLimit>10</multipleLimit>
+      </parameter>
+
+      <parameter name="group_4" type="text" groupName="association" multiple="true">
+        <label>4: Thermostat Mode set</label>
+        <description><![CDATA[
+<br /> <h1>Overview</h1><p>Thermostat Mode set commands based on own mode to allow for use as master thermostat</p><p>Sends:</p><p>-Thermostat Mode Set</p>
+        ]]></description>
+        <multipleLimit>10</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+  <channel-type id="thermofloor_trm6_00_000_thermostat_mode">
+    <item-type>Number</item-type>
+    <label>Thermostat Mode</label>
+    <description>Sets the thermostat mode</description>
+    <category>Temperature</category>
+    <state pattern="%s">
+      <options>
+        <option value="0">Off</option>
+        <option value="1">Heat</option>
+        <option value="11">Economy Heat</option>
+        <option value="2">Cool</option>
+      </options>
+    </state>
+  </channel-type>
+
+</thing:thing-descriptions>
