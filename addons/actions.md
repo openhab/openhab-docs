@@ -212,7 +212,7 @@ if ((thingStatusInfo !== null) && (thingStatusInfo.getStatus().toString() == "ON
 - `double[] hsbToXY(HSBType hsb)`: transforms HSB to CIE 1931 "xy" format using default color Gamut, returning an array of three double with the closest matching CIE 1931 x,y,Y in the range 0.0000 to 1.0000
 - `double[] hsbToXY(HSBType hsb, double[] gamutR, double[] gamutG, double[] gamutB)`: transforms HSB to CIE 1931 "xy" format using specific color Gamut, returning an array of three double with the closest matching CIE 1931 x,y,Y in the range 0.0000 to 1.0000
 - `HSBType rgbToHsb(int[] rgb)`: transforms RGB (array of three or four int with the RGB(W) values in the range 0 to 255) to HSB
-- `HSBType rgbToHsb(PercentType[] rgbw)`: transforms RGB (array of three or four PercentType with the RGB(W) values in the range 0 to 100 percent) to HSB
+- `HSBType rgbToHsb(PercentType[] rgbw)`: transforms RGB(W) (array of three or four PercentType with the RGB(W) values in the range 0 to 100 percent) to HSB
 - `HSBType xyToHsb(double[] xy)`: transforms CIE 1931 "xy" format (array of double with CIE 1931 x,y[,Y] in the range 0.0000 to 1.0000 with Y being optional) to HSB using default color Gamut
 - `HSBType xyToHsb(double[] xy, double[] gamutR, double[] gamutG, double[] gamutB)`: transforms CIE 1931 "xy" format (array of double with CIE 1931 x,y[,Y] in the range 0.0000 to 1.0000 with Y being optional) to HSB using specific color Gamut
 
