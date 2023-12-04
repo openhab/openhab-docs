@@ -12,8 +12,9 @@ The main parts of openHAB can be found in the following repositories:
 - [openHAB Core](https://github.com/openhab/openhab-core): This repo contains the core framework bundles of which the openHAB runtime is constructed.
 - [openHAB Add-ons](https://github.com/openhab/openhab-addons): Add-ons (such as bindings, voice services, etc.) of openHAB can be found within this repository.
 - [openHAB Distro](https://github.com/openhab/openhab-distro): This repo contains all parts that are required for assembling the binary distribution of openHAB.
+- [openHAB WebUI](https://github.com/openhab/openhab-webui): This repo contains the openHAB web UIs: MainUI, BasicUI, HABPanel, HABot, and CometVisu, as well as the [openHAB icons](/configuration/iconsets/classic/#icons).
 
-Besides those "main" repositories, there are a dozen further ones, which are not listed here in detail - just [check out the list](https://github.com/openhab) and you will find separate repos for openHAB Cloud, the Alexa skill, the Google Action, the Android and iOS apps, the Zigbee and ZWave bindings, HABPanel and HABot and many more.
+Besides those "main" repositories, there are a dozen further ones, which are not listed here in detail - just [check out the list](https://github.com/openhab) and you will find separate repos for openHAB Cloud, the Alexa skill, the Google Action, the Android and iOS apps, the Zigbee and ZWave bindings and many more.
 If you want to get involved with any of these, best check their respective README and CONTRIBUTING files in the root of the repos.
 
 ## Contribution Guidelines
