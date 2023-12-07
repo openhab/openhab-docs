@@ -47,6 +47,9 @@ The following table summarises the channels available for the VZW31-SN -:
 | Electric meter (kWh) | meter_kwh | meter_kwh | Energy | Number | 
 | Electric meter (watts) | meter_watts | meter_watts | Energy | Number | 
 | Scene Number | scene_number | scene_number |  | Number | 
+| LED Strip Effect | config_decimal | config_decimal |  | Number | 
+| LED Indicator Color | config_decimal | config_decimal |  | Number | 
+| LED Indicator Intensity | config_decimal | config_decimal |  | Number | 
 
 ### Dimmer
 The brightness channel allows to control the brightness of a light.
@@ -79,6 +82,32 @@ This channel provides the scene, and the event as a decimal value in the form ``
 | 4        | Tripple keypress   |
 | 5        | 4 x keypress       |
 | 6        | 5 x keypress       |
+
+### LED Strip Effect
+To adjust the LED Bar's notification (LED's 1-7) on the Red Series 2-1, find parameter 99 in your hub's UI and change it accordingly. The easiest way to see the notification's appearance is to go to the Inovelli Toolbox. First, select, "On\Off + Dimmer Switch (VZW31-SN)" followed by making sure the drop-down that says, "LED" says, "All". Then you can play with the color selector, brightness level, and duration and finally, you can select the animation itself by clicking on the "Effect" drop-down. The default is for all LED's 1-7 notifications to be set to 0, which is off.  
+
+
+https://inovelliusa.github.io/inovelli-switch-toolbox/
+
+Generic class for configuration parameter.
+
+The ```config_decimal``` channel is of type ```config_decimal``` and supports the ```Number``` item.
+
+### LED Indicator Color
+Control the color of the LED Strip as per the Inovelli Switch Toolbox.
+
+https://inovelliusa.github.io/inovelli-switch-toolbox/
+
+Generic class for configuration parameter.
+
+The ```config_decimal``` channel is of type ```config_decimal``` and supports the ```Number``` item.
+
+### LED Indicator Intensity
+Control the brightness of the LED Strip as per the Inovelli Switch Toolbox. https://inovelliusa.github.io/inovelli-switch-toolbox/
+
+Generic class for configuration parameter.
+
+The ```config_decimal``` channel is of type ```config_decimal``` and supports the ```Number``` item.
 
 
 

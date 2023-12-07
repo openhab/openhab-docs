@@ -39,6 +39,24 @@ Red Series 2-1 Switch<br /> <h1>Overview</h1><p>Introducing Z-Wave's first certi
           <property name="binding:*:DecimalType">COMMAND_CLASS_CENTRAL_SCENE</property>
         </properties>
       </channel>
+      <channel id="config_decimal_param99" typeId="config_decimal">
+        <label>LED Strip Effect</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_CONFIGURATION;parameter=99</property>
+        </properties>
+      </channel>
+      <channel id="config_decimal_param95" typeId="inovelli_vzw31sn_00_000_config_decimal_param95">
+        <label>LED Indicator Color</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_CONFIGURATION;parameter=95</property>
+        </properties>
+      </channel>
+      <channel id="config_decimal_param97" typeId="config_decimal">
+        <label>LED Indicator Intensity</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_CONFIGURATION;parameter=97</property>
+        </properties>
+      </channel>
     </channels>
 
     <!-- DEVICE PROPERTY DEFINITIONS -->
@@ -648,5 +666,44 @@ Double-Tap the config/favorites button to clear notifications<br /> <h1>Overview
     </config-description>
 
   </thing-type>
+
+  <channel-type id="inovelli_vzw31sn_00_000_config_decimal_param99">
+    <item-type>Number</item-type>
+    <label>All LED Notification</label>
+    <description>A 4-Byte encoded LED Notification for LED's 1-7 (all LED's)</description>
+    <state pattern="%s">
+    </state>
+  </channel-type>
+
+  <channel-type id="inovelli_vzw31sn_00_000_config_decimal_param95">
+    <item-type>Number</item-type>
+    <label>LED Indicator Color (When On) - LED #'s 1-7</label>
+    <description>This will set the default color of the LED Bar (all 7 LED's) when the switch is on</description>
+    <state pattern="%s">
+      <options>
+        <option value="0">Red</option>
+        <option value="14">Orange</option>
+        <option value="35">Lemon</option>
+        <option value="64">Lime</option>
+        <option value="85">Green</option>
+        <option value="106">Teal</option>
+        <option value="127">Cyan</option>
+        <option value="149">Aqua</option>
+        <option value="170">Blue</option>
+        <option value="191">Violet</option>
+        <option value="212">Magenta</option>
+        <option value="234">Pink</option>
+        <option value="255">White</option>
+      </options>
+    </state>
+  </channel-type>
+
+  <channel-type id="inovelli_vzw31sn_00_000_config_decimal_param97">
+    <item-type>Number</item-type>
+    <label>LED Indicator Intensity (When On) - LED #'s 1-7</label>
+    <description>This will set the intensity (ie: how bright it is) of the LED bar (all 7 LED's) when the switch is on</description>
+    <state pattern="%s">
+    </state>
+  </channel-type>
 
 </thing:thing-descriptions>

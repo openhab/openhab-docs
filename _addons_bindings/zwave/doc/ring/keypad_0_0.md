@@ -23,6 +23,8 @@ The keypad will include an interactive button interface, an informational displa
 
 see https://ring.com/products/alarm-keypad-v2 for further information.
 
+Be aware that as of openhab v 4.0.4 this device is not supported, since it seems to need S2 security and the Entry Control Command Class and the zwave binding does not support it.
+
 ### Inclusion Information
 
   1. Activate inclusion mode on controller
@@ -31,9 +33,13 @@ see https://ring.com/products/alarm-keypad-v2 for further information.
 
 ### Exclusion Information
 
+  
+
+
   1. Initiate exclusion mode on controller
-  2. hold button 1 on kepad for 3 seconds.
-  3. buttons on keypad should no longer beep when pressed
+  2. Locate the pinhole reset button on the back of the device.
+
+  3. With the controller in Remove (Z-Wave Exclusion) mode, use a paper clip or similar object and tap the pinhole button. The device’s Connection LED turns on solid red to indicate the device was removed from the network.
 
 ### General Usage Information
 
