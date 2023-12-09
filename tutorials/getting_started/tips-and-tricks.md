@@ -68,6 +68,9 @@ The developer sidebar search ignores case and searches inside the following enti
   - script MIME types (requires exact match)
   - Blockly scripts (using 'block', 'blockly' or 'blocksource' as search string, where case is ignored)
   - tags (requires exact match)
+- Persistence Configurations:
+  - label & service id of persistence service
+  - Items persisted by persistence service
 
 ### Pinned Objects
 
