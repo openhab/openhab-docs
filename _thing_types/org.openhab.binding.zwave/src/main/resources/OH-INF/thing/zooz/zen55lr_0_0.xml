@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="zooz_zen55lr_00_000" listed="false">
+    <label>ZEN55 LR DC Signal Sensor (Smoke and CO Detector Bridge)</label>
+    <description><![CDATA[
+DC Signal Sensor (Smoke and CO Detector Bridge)<br /> <h1>Overview</h1><ul><li>Z-Wave alerts from low-voltage trigger signals</li><li>Connect to smoke or CO detectors to monitor activity</li><li>120 V relay to control a security siren or lights</li><li>Installs in the box with the last smoke detector in series</li><li>800 series Z-Wave chip for better range and faster control</li><li>Z-Wave Long Range for ultra reliable no-mesh communication</li><li>Advanced settings to customize the device’s behavior</li><li>Built-in Z-Wave signal repeater for boosted communication</li><li>SmartStart and S2 Authenticate Security for a safer network</li></ul> <br /> <h2>Inclusion Information</h2><ol><li> Initiate inclusion (pairing) in the app (or web interface).</li><li> Tap the Z-WAVE button 3 times quickly if using traditional Z-Wave inclusion.</li><li> The LED indicator will blink green to signal communication and turn green for 2 seconds if inclusion is successful or turn red for 2 seconds if the pairing attempt fails.</li></ol> <br /> <h2>Exclusion Information</h2><ol><li> Bring your Z-Wave gateway (hub) close to the relay if possible</li><li> Put the Z-Wave hub into exclusion mode (not sure how to do that? ask@getzooz.com)</li><li> Click the on the relay 3 times quickly (the Z-Wave button LED indicator will start blinking green)</li><li> Your hub will confirm exclusion, the LED indicator on the relay will turn green for 2 seconds, and the device will disappear from your controller's device list.</li></ol> <br /> <h2>Wakeup Information</h2><p><br /></p>
+    ]]></description>
+    <category>Sensor</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="alarm_smoke" typeId="alarm_smoke">
+        <label>Alarm (smoke)</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=SMOKE</property>
+        </properties>
+      </channel>
+      <channel id="alarm_co" typeId="alarm_co">
+        <label>Alarm (CO)</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=CARBON_MONOXIDE</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Zooz</property>
+      <property name="modelId">ZEN55 LR</property>
+      <property name="manufacturerId">027A</property>
+      <property name="manufacturerRef">0004:0110</property>
+      <property name="dbReference">1593</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_1_1" type="integer" groupName="configuration">
+        <label>1: LED Indicator</label>
+        <description>Enable or disable the LED indicator to reflect the current on/off status of the connected load (LED on when the load is on, LED off when the load is off).</description>
+        <default>1</default>
+        <options>
+          <option value="0">LED Indicator disabled</option>
+          <option value="1">LED Indicator enabled (default)</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_2_1" type="integer" groupName="configuration">
+        <label>2: Relay Alarm Trigger</label>
+        <description>Use this parameter to automatically trigger the relay to turn the connected load on when alarm is detected on the input (signal) side.</description>
+        <default>1</default>
+        <options>
+          <option value="0">auto-trigger disabled</option>
+          <option value="1">auto-trigger enabled (default)</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_3_4" type="integer" groupName="configuration">
+        <label>3: Auto Turn-Off Timer</label>
+        <description><![CDATA[
+Use this parameter to set the time after which you want the device connected to the relay to automatically turn off once it has been turned on. The number entered as value corresponds to the number of seconds.<br /> <h1>Overview</h1><p>0 – timer disabled (default); 1 – 4294967295<br /></p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_4_4" type="integer" groupName="configuration">
+        <label>4: Auto Turn-Off Timer</label>
+        <description><![CDATA[
+Use this parameter to set the time after which you want the device connected to the relay to automatically turn on once it has been turned off. The number entered as value corresponds to the number of seconds.<br /> <h1>Overview</h1><p>0 – timer disabled (default); 1 – 4294967295</p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_5_1" type="integer" groupName="configuration">
+        <label>5: On/Off Status After Power Failure</label>
+        <description>Set the on/off status for the relay after power failure</description>
+        <default>2</default>
+        <options>
+          <option value="0">forced to OFF (regardless of state prior to power outage)</option>
+          <option value="1">forced to ON (regardless of state prior to power outage)</option>
+          <option value="2">remembers and restores on/off status after power failure (default)</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_6_1" type="integer" groupName="configuration">
+        <label>6: Association Reports (Group 2) - Smoke Alarm</label>
+        <description>Decide when the device will send BASIC_SET commands to devices associated in Group 2 (Smoke Alarm).</description>
+        <default>0</default>
+        <options>
+          <option value="0">BASIC_SET (0xFF) ON when smoke is detected, BASIC_SET (0x00) OFF when</option>
+          <option value="1">BASIC_SET (0x00) OFF when smoke is detected, BASIC_SET (0xFF) ON when</option>
+          <option value="2">BASIC_SET (0xFF) ON when smoke is detected, no commands sent when smok</option>
+          <option value="3">BASIC_SET (0x00) OFF when smoke is detected, no commands sent when smo</option>
+          <option value="4">BASIC_SET (0x00) OFF when smoke is not detected, no commands sent when</option>
+          <option value="5">BASIC_SET (0xFF) ON when smoke is not detected, no commands sent when</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_7_1" type="integer" groupName="configuration">
+        <label>7: Association Reports (Group 3) - CO Alarm</label>
+        <description>Decide when the device will send BASIC_SET commands to devices associated in Group 3 (CO Alarm).</description>
+        <default>0</default>
+        <options>
+          <option value="0">BASIC_SET (0xFF) ON when CO is detected, BASIC_SET (0x00) OFF when CO</option>
+          <option value="1">BASIC_SET (0x00) OFF when CO is detected, BASIC_SET (0xFF) ON when CO</option>
+          <option value="2">BASIC_SET (0xFF) ON when CO is detected, no commands sent when CO is n</option>
+          <option value="3">BASIC_SET (0x00) OFF when CO is detected, no commands sent when CO is</option>
+          <option value="4">BASIC_SET (0x00) OFF when CO is not detected, no commands sent when CO</option>
+          <option value="5">BASIC_SET (0xFF) ON when CO is not detected, no commands sent when CO</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_8_1" type="integer" groupName="configuration">
+        <label>8: Disable the Sensors or Relay</label>
+        <description><![CDATA[
+After changing this parameter and re-inclusion, the device will show up as a switch, which can be controlled via Z-Wave.<br /> <h1>Overview</h1><p>NOTE: You need to exclude and re-include the device to your hub or re-configure (re-interview) the device if the value of this setting is changed.</p>
+        ]]></description>
+        <default>1</default>
+        <options>
+          <option value="1">Enable smoke and CO sensor endpoints and disable the relay switch endp</option>
+          <option value="2">Enable the CO sensor endpoint and disable the smoke sensor and relay e</option>
+          <option value="3">Enable the smoke sensor endpoint and disable the CO sensor and relay e</option>
+          <option value="4">Enable the smoke sensor, CO sensor, and the relay endpoints (all endpo</option>
+          <option value="5">Enable the relay and CO sensor endpoints and disable the smoke sensor</option>
+          <option value="6">Enable the relay and smoke sensor endpoints and disable the CO sensor</option>
+          <option value="7">Enable the relay endpoint and disable the CO sensor and smoke sensor e</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_9_1" type="integer" groupName="configuration">
+        <label>9: Relay Status Reports</label>
+        <description>Decide what type of reports the relay part of the device sends back to the hub when it changes status.</description>
+        <default>0</default>
+        <options>
+          <option value="0">binary switch report for Z-Wave control and input control (from the DC</option>
+          <option value="1">binary switch report for Z-Wave control and basic report for input con</option>
+          <option value="2">basic report for Z-Wave control and input control (from the DC signal</option>
+        </options>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Group 1 - Lifeline</label>
+        <description>Send BASIC REPORT and NOTIFICATION REPORT to Group 1</description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: Group 2 - Smoke Alarm</label>
+        <description>Send BASIC SET command</description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_3" type="text" groupName="association" multiple="true">
+        <label>3: Group 3 - CO Alarm</label>
+        <description>Send BASIC SET command</description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_4" type="text" groupName="association" multiple="true">
+        <label>4: Group 4</label>
+        <description>Send BASIC SET command</description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

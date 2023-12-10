@@ -5,10 +5,10 @@
   xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
                       https://openhab.org/schemas/thing-description/v1.0.0">
 
-  <thing-type id="zooz_zen51_00_000" listed="false">
-    <label>ZEN51 Dry Contact Relay</label>
+  <thing-type id="zooz_zen51lr_01_050" listed="false">
+    <label>ZEN51 LR Dry Contact Relay</label>
     <description><![CDATA[
-Dry Contact Relay<br /> <h1>Overview</h1><p>On/off Z-Wave control for 120V and dry contact applications: great for lighting control or 120V load monitoring (sump pumps, motion lights)</p><p>700 series Z-Wave chip: greater coverage for a stronger mesh network</p><p>SmartStart and S2 authenticated security for a truly protected smart home</p><p>Installs behind the existing wall switch or at the fixture (if neutral is not available in the switch box)</p> <br /> <h2>Inclusion Information</h2><ol><li>Initiate inclusion (pairing) in the app (or web interface).</li><li>Tap the Z-WAVE button 3 times quickly if using traditional Z-Wave inclusion.</li><li>The LED indicator will blink green to signal communication and turn green for 2 seconds if inclusion is successful or turn red for 2 seconds if the pairing attempt fails.</li></ol> <br /> <h2>Exclusion Information</h2><ol><li>Bring your Z-Wave gateway (hub) close to the relay if possible</li><li>Put the Z-Wave hub into exclusion mode (not sure how to do that? ask@getzooz.com)</li><li>Click the on the relay 3 times quickly (theZ-Wave button LED indicator will start blinking green)</li><li>Your hub will confirm exclusion, the LED indicator on the relay will turn green for 2 seconds, and the device will disappear from your controller's device list.</li></ol> <br /> <h2>Wakeup Information</h2><p><br /></p>
+Dry Contact Relay<br /> <h1>Overview</h1><p>On/off Z-Wave control for 120V and dry contact applications: great for lighting control or 120V load monitoring (sump pumps, motion lights)</p><p>700 series Z-Wave chip: greater coverage for a stronger mesh network</p><p>SmartStart and S2 authenticated security for a truly protected smart home</p><p>Installs behind the existing wall switch or at the fixture (if neutral is not available in the switch box)</p><p>On/off Z-Wave control for 120V and dry contact applications: great for lighting control or 120V load monitoring (sump pumps, motion lights)</p><p>700 series Z-Wave chip: greater coverage for a stronger mesh network</p><p>SmartStart and S2 authenticated security for a truly protected smart home</p><p>Installs behind the existing wall switch or at the fixture (if neutral is not available in the switch box)</p> <br /> <h2>Inclusion Information</h2><ol><li> Initiate inclusion (pairing) in the app (or web interface).</li><li> Tap the Z-WAVE button 3 times quickly if using traditional Z-Wave inclusion.</li><li> The LED indicator will blink green to signal communication and turn green for 2 seconds if inclusion is successful or turn red for 2 seconds if the pairing attempt fails.</li></ol><ol><li>Initiate inclusion (pairing) in the app (or web interface).</li><li>Tap the Z-WAVE button 3 times quickly if using traditional Z-Wave inclusion.</li><li>The LED indicator will blink green to signal communication and turn green for 2 seconds if inclusion is successful or turn red for 2 seconds if the pairing attempt fails.</li></ol> <br /> <h2>Exclusion Information</h2><ol><li> Bring your Z-Wave gateway (hub) close to the relay if possible</li><li> Put the Z-Wave hub into exclusion mode (not sure how to do that? ask@getzooz.com)</li><li> Click the on the relay 3 times quickly (theZ-Wave button LED indicator will start blinking green)</li><li> Your hub will confirm exclusion, the LED indicator on the relay will turn green for 2 seconds, and the device will disappear from your controller's device list.</li></ol><ol><li>Initiate inclusion (pairing) in the app (or web interface).</li><li>Tap the Z-WAVE button 3 times quickly if using traditional Z-Wave inclusion.</li><li>The LED indicator will blink green to signal communication and turn green for 2 seconds if inclusion is successful or turn red for 2 seconds if the pairing attempt fails.</li></ol> <br /> <h2>Wakeup Information</h2><p><br /></p><p><br /></p>
     ]]></description>
     <category>WallSwitch</category>
 
@@ -31,10 +31,11 @@ Dry Contact Relay<br /> <h1>Overview</h1><p>On/off Z-Wave control for 120V and d
     <!-- DEVICE PROPERTY DEFINITIONS -->
     <properties>
       <property name="vendor">Zooz</property>
-      <property name="modelId">ZEN51</property>
+      <property name="modelId">ZEN51 LR</property>
       <property name="manufacturerId">027A</property>
-      <property name="manufacturerRef">0104:0201</property>
-      <property name="dbReference">1486</property>
+      <property name="manufacturerRef">0904:0201</property>
+      <property name="versionMin">1.50</property>
+      <property name="dbReference">1592</property>
       <property name="defaultAssociations">1</property>
     </properties>
 
@@ -189,6 +190,18 @@ Duration of the impulse if using the relay with 3-way impulse control<br /> <h1>
         <default>10</default>
         <advanced>true</advanced>
         <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_12_1" type="integer" groupName="configuration">
+        <label>12: External Switch Multiple Click Detection</label>
+        <description><![CDATA[
+Enable or disable the external switch multiple click detection.<br /> <h1>Overview</h1><p>0 – disable the external switch multiple click detection. Clicking the external switch 3 times quickly for inclusion/exclusion will be disabled, and the central scene actions (multi-tap) will be disabled. </p><p>1 – Enable the external switch multiple click detection (default).</p>
+        ]]></description>
+        <default>1</default>
+        <options>
+          <option value="0">Disable the external switch multiple click detection</option>
+          <option value="1">Enable the external switch multiple click detection (default)</option>
+        </options>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->
