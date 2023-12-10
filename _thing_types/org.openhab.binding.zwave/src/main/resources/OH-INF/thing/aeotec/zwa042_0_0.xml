@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="aeotec_zwa042_00_000" listed="false">
+    <label>ZWA042-A Outdoor Smart Plug</label>
+    <description><![CDATA[
+Outdoor Smart Plug<br /> <h1>Overview</h1><p>This device is marketed as an "Outdoor" Smart Plug. From the manufacturer's web site, the "Outdoor Smart Plug technical specifications" claims an IP65 waterproof rating.  Note that the guide included with the device itself reads in part "intended for indoor use in dry locations only".  I intend to follow up with manufacturer.  YMMV.</p><p>This device has a single external control designated the "Action button".  Once included in the network, the Action button will turn any attached load on or off with a single tap.<br /></p> <br /> <h2>Inclusion Information</h2><h3>Smart Start Pairing (QR Code Scanning) :</h3><ol><li>Scan the QR code on Outdoor Smart Plug using your Z-Wave gateway/controllers app.</li><li>Plugin your Outdoor Smart Plug to any outlet that you wish to install it on.</li><li>Your Outdoor Smart Plug will automatically pair to your Z-Wave network.</li></ol><h3>Classic Pairing:</h3><ol><li>Set your Z-Wave Controller into its 'Add Device' mode. Refer to the Controller's manual if you are unsure of how to perform this step.</li><li>Power your Outdoor Smart Plug to any outlet; its LED will slowly fade in and out slowly with a blue color to indicate it is ready to pair.</li><li>Tap the action button once. The LED will turn solid yellow when it enters pair mode.</li><li>If your Z-Wave Controller supports S2 encryption, enter the first 5 digits of DSK into your Controller's interface if it is requested. The DSK is printed on Outdoor Smart Plug.</li></ol><ul><li>If pairing succeeds, it will flash white/green 4 times.</li><li>If pairing fails, it will light a solid bright red light for 2 seconds and then return to a breathing blue light; repeat steps 1 to 4 if this happens.</li></ul><p>Outdoor Smart Plug is now a part of your Z-Wave home control system. You can configure it and its automation via your Z-Wave system; please refer to your software's user guide for precise instructions.</p> <br /> <h2>Exclusion Information</h2><h3>Removing your Outdoor Smart Plug from a Z-Wave network.</h3><ol><li>Set your Z-Wave Controller into 'Remove Device' / 'Unpair Device' mode.</li><li>2x tap the Action button on Outdoor Smart Plug. </li></ol> <br /> <h2>Wakeup Information</h2><p><br /></p>
+    ]]></description>
+    <category>Controller</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_binary" typeId="switch_binary">
+        <label>Switch</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY</property>
+        </properties>
+      </channel>
+      <channel id="switch_dimmer" typeId="switch_dimmer">
+        <label>Dimmer</label>
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+          <property name="binding:Command:OnOffType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+        </properties>
+      </channel>
+      <channel id="scene_number" typeId="scene_number">
+        <label>Scene Number</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_SCENE_ACTIVATION</property>
+        </properties>
+      </channel>
+      <channel id="alarm_general" typeId="alarm_general">
+        <label>Alarm</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM</property>
+        </properties>
+      </channel>
+      <channel id="time_offset" typeId="time_offset">
+        <label>Clock Time Offset</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_CLOCK</property>
+        </properties>
+      </channel>
+      <channel id="switch_binary1" typeId="switch_binary">
+        <label>Switch 1</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY:1</property>
+        </properties>
+      </channel>
+      <channel id="scene_number1" typeId="scene_number">
+        <label>Scene Number 1</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_SCENE_ACTIVATION:1</property>
+        </properties>
+      </channel>
+      <channel id="switch_dimmer2" typeId="switch_dimmer">
+        <label>Dimmer 2</label>
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_SWITCH_MULTILEVEL:2</property>
+          <property name="binding:Command:OnOffType">COMMAND_CLASS_SWITCH_MULTILEVEL:2</property>
+        </properties>
+      </channel>
+      <channel id="color_color2" typeId="color_color">
+        <label>Color Control 2</label>
+        <properties>
+          <property name="binding:*:HSBType">COMMAND_CLASS_SWITCH_COLOR:2</property>
+          <property name="binding:*:PercentType">COMMAND_CLASS_SWITCH_MULTILEVEL:2</property>
+          <property name="binding:Command:OnOffType">COMMAND_CLASS_SWITCH_MULTILEVEL:2</property>
+        </properties>
+      </channel>
+      <channel id="color_temperature2" typeId="color_temperature">
+        <label>Color Temperature 2</label>
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_SWITCH_COLOR:2;colorMode=DIFF_WHITE</property>
+          <property name="binding:Command:OnOffType">COMMAND_CLASS_SWITCH_MULTILEVEL:2</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Aeotec Limited</property>
+      <property name="modelId">ZWA042-A</property>
+      <property name="manufacturerId">0371</property>
+      <property name="manufacturerRef">0103:002A</property>
+      <property name="dbReference">1591</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>
