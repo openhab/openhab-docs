@@ -67,7 +67,7 @@ Display an input in a card
 </PropBlock>
 <PropBlock type="TEXT" name="type" label="Type">
   <PropDescription>
-    Type of input (see <a class="external text-color-blue" target="_blank" href="https://framework7.io/docs/inputs.html#supported-inputs">f7 input docs</a> or datepicker)
+    Type of input (see <a class="external text-color-blue" target="_blank" href="https://framework7.io/docs/inputs.html#supported-inputs">f7 input docs</a>, <code>date</code> or <code>datepicker</code>)
   </PropDescription>
 </PropBlock>
 <PropBlock type="TEXT" name="inputmode" label="Input Mode">
