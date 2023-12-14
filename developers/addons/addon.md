@@ -81,7 +81,7 @@ Optionally, if you want the system to scan the user's network for your addon the
 | `discovery-parameters` | Wrapper for `discovery-parameter` elements (see below).                       | Zero or one instances per `discovery-method`.      |
 | `discovery-parameter`  | A parameter name and value used for settings of the add-on finder process.    | Zero or more instances per `discovery-parameters`. |
 | `name`                 | A settings parameter name.                                                    | Mandatory one instance per `discovery-parameter`.  |
-| `name`                 | A settings parameter value.                                                   | Mandatory one instance per `discovery-parameter`.  |
+| `value`                | A settings parameter value.                                                   | Mandatory one instance per `discovery-parameter`.  |
 | `match-properties`     | Wrapper for `match-property` elements (see below).                            | Zero or one instances per `discovery-method`.      |
 | `match-property`       | A property name and regular expression used for matching discovery findings.  | Zero or more instances per `match-properties`.     |
 | `name`                 | A property name to search for.                                                | Mandatory one instance per `match-property`.       |
@@ -91,6 +91,7 @@ Notes:
 
 - A `discovery-method` may contain multiple `match-property` entries, and in such a case **all** entries must match i.e. it a logical `AND` function is applied.
 - If you want to apply a logical `OR` function you can define a second separate `discovery-method` containing the respective `match-property` entry.
+- Different add-on discovery finders may need different `discovery-parameters`. Check the JavaDoc of the respective finder. See the `mdns` example below.
 
 ## Example
 
