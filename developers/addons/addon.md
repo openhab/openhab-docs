@@ -73,16 +73,19 @@ The full XML schema for add-on definitions is specified in the [Add-on XSD](http
 The system can scan the network for present devices to determine if it should suggest to install specific addons during setup.
 Optionally, if you want the system to scan the user's network for your addon then you need to include additional `discovery-method` fields.
 
-| XML Element Name    | Description                                                                   | Instances                                      |
-|---------------------|-------------------------------------------------------------------------------|------------------------------------------------|
-| `discovery-methods` | Wrapper for `discovery-method` elements (see below).                          | Zero or one instances per file.                |
-| `discovery-method`  | Complex XML element describing an addon discovery method.                     | Zero or more instances per file.               |
-| `service-type`      | The type of discovery method. May be `upnp` or `mdns`.                        | Mandatory one per `discovery-method`.          |
-| `mdns-service-type` | If `service-type` is `mdns`, contains the MDNS discovery service type.        | Optional one per `discovery-method`.           |
-| `match-properties`  | Wrapper for `match-property` elements (see below).                            | Zero or one instances per `discovery-method`.  |
-| `match-property`    | A property name and regular expression used for matching discovery findings.  | Zero or more instances per `discovery-method`. |
-| `name`              | A property name to search for.                                                | Mandatory one instance per `match-property`.   |
-| `regex`             | A regular expression (or plain string) that needs to match the property name. | Mandatory one instance per `match-property`.   |
+| XML Element Name       | Description                                                                   | Instances                                          |
+|------------------------|-------------------------------------------------------------------------------|----------------------------------------------------|
+| `discovery-methods`    | Wrapper for `discovery-method` elements (see below).                          | Zero or one instances per file.                    |
+| `discovery-method`     | Complex XML element describing an addon discovery method.                     | Zero or more instances per file.                   |
+| `service-type`         | The type of discovery method. e.g. `upnp` or `mdns` etc.                      | Mandatory one per `discovery-method`.              |
+| `discovery-parameters` | Wrapper for `discovery-parameter` elements (see below).                       | Zero or one instances per `discovery-method`.      |
+| `discovery-parameter`  | A parameter name and value used for settings of the add-on finder process.    | Zero or more instances per `discovery-parameters`. |
+| `name`                 | A settings parameter name.                                                    | Mandatory one instance per `discovery-parameter`.  |
+| `name`                 | A settings parameter value.                                                   | Mandatory one instance per `discovery-parameter`.  |
+| `match-properties`     | Wrapper for `match-property` elements (see below).                            | Zero or one instances per `discovery-method`.      |
+| `match-property`       | A property name and regular expression used for matching discovery findings.  | Zero or more instances per `match-properties`.     |
+| `name`                 | A property name to search for.                                                | Mandatory one instance per `match-property`.       |
+| `regex`                | A regular expression (or plain string) that needs to match the property name. | Mandatory one instance per `match-property`.       |
 
 Notes:
 
@@ -110,7 +113,12 @@ The following code gives an example for an add-on definition used in bindings.
   <discovery-methods>
     <discovery-method>
       <serviceType>mdns</serviceType>
-      <mdnsServiceType>_hue._tcp.local.</mdnsServiceType>
+      <discovery-parameters>
+        <discovery-parameter>
+          <name>mdnsServiceType</name>
+          <value>_hue._tcp.local.</value>
+        </discovery-parameter>
+      </discovery-parameters>
     </discovery-method>
     <discovery-method>
       <service-type>upnp</service-type>
