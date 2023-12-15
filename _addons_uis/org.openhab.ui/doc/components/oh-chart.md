@@ -60,6 +60,9 @@ Visualize series of data
     <PropOption value="4M" label="4M" />
     <PropOption value="6M" label="6M" />
     <PropOption value="Y" label="Y" />
+    <PropOption value="3Y" label="3Y" />
+    <PropOption value="5Y" label="5Y" />
+    <PropOption value="10Y" label="10Y" />
   </PropOptions>
 </PropBlock>
 </PropGroup>
