@@ -182,6 +182,7 @@ This provides the flexibility to present Items in the way desired in your home a
 - When an [Item]({{base}}/configuration/items.html) is defined, you have the opportunity to assign a label and/or an icon at that point.
     If no label or icon are specified in the Sitemap, then the label and/or icon you assigned to the Item will be displayed.
     Setting a value for `label` or `icon`  or `staticIcon` of a Sitemap element will override the values defined for the linked Item.
+    There is an exception for chart, image, video, mapview and webview Sitemap elements: the item label is ignored and only the value of `label` is considered for the label.
 
 - The parameters `icon` and `staticIcon` are exclusive; both allow choosing the icon to show next to the element but `staticIcon` also indicates not to try to create a dynamic icon (using the current state of a linked item). The value of these two parameters can optionally be enclosed in double quotes.
 
@@ -455,6 +456,7 @@ Webview item=<itemname> [label="<labelname>"] [icon=<iconref>] [staticIcon=<icon
 The content of a webpage will be presented live on your user interface next to other Sitemap elements.
 Please be aware that Webview elements are not usable by all user interface options.
 
+- `label` if set, a header row will be displayed containing this label and the icon.
 - `height` is the number of element rows to fill.
 
 **Example:**
@@ -473,6 +475,7 @@ Mapview [item=<itemname>] [label="<labelname>"] [icon=<iconref>] [staticIcon=<ic
 
 Displays an [OSM](https://www.openstreetmap.org) map based on a given Location Item.
 
+- `label` if set, a header row will be displayed containing this label and the icon.
 - `height` is the number of element rows to fill.
 
 **Example:**
@@ -486,13 +489,14 @@ Mapview item=Demo_Location height=5
 ### Element Type 'Image'
 
 ```java
-Image [item=<itemname>] [icon=<iconref>] [staticIcon=<iconref>] url="<url of image>" [label="<labelname>"] [refresh=xxxx]
+Image [item=<itemname>] [label="<labelname>"] [icon=<iconref>] [staticIcon=<iconref>] url="<url of image>" [refresh=xxxx]
 ```
 
 This element type is able to present an image.
 The image must be available on a reachable website or webserver without password or access token.
 Alternatively, the image file (e.g. YourImageFile.png) may be stored locally in the $OPENHAB_CONF/html folder, and will be accessible through the static route, `https://<my.openHAB.device>:8080/static/YourImageFile.png`.
 
+- `label` if set, a header row will be displayed containing this label and the icon.
 - `item` can refer to either an Image Item whose state is the raw data of the image, or a String Item whose state is an URL that points to an image. Some clients may not (yet) consider `item`.
 - `url` is the default URL from which to retrieve the image, if there is no associated Item or if the associated item's state is not a URL.
 - `refresh` is the refresh period of the image in milliseconds ("60000" for minutely updates).
@@ -511,7 +515,7 @@ Image url="https://192.168.1.203:8080/?action=snapshot" refresh=10000
 ### Element Type 'Video'
 
 ```java
-Video [item=<itemname>] [icon=<iconref>] [staticIcon=<iconref>] url="<url of video to embed>" [encoding="<video encoding>"]
+Video [item=<itemname>] [label="<labelname>"] [icon=<iconref>] [staticIcon=<iconref>] url="<url of video to embed>" [encoding="<video encoding>"]
 ```
 
 Allows you to display a video as part of your Sitemap.
@@ -521,6 +525,7 @@ The video must be reachable directly via URL.
 An embedded and/or protected video is not supported.
 :::
 
+- `label` if set, a header row will be displayed containing this label and the icon.
 - `item` can refer to a String Item whose state is a URL to a video. Some clients may not (yet) consider `item`.
 - `url` is the default URL from which to retrieve the video if there is no associated Item or if the associated item's state is not a URL.
 - `encoding` should be set to "mjpeg" for an MJPEG video, or "HLS" for an HTTP Live Streaming playlist (file with .m3u8 extension).  If you omit the `encoding` parameter, openHAB will attempt to automatically select the correct format.
@@ -536,11 +541,13 @@ Video url="https://demo.openhab.org/Hue.m4v"
 ### Element Type 'Chart'
 
 ```java
-Chart item=<itemname> [icon=<iconref>] [staticIcon=<iconref>] [label="<labelname>"] [refresh=xxxx]
+Chart item=<itemname> [label="<labelname>"] [icon=<iconref>] [staticIcon=<iconref>] [refresh=xxxx]
 period=xxxx [service="<service>"] [legend=true/false] [forceasitem=true/false] [yAxisDecimalPattern=xxxx]
 ```
 
 Adds a time-series chart object for the display of logged data.
+
+- `label` if set, a header row will be displayed containing this label and the icon.
 
 - `refresh` defines the refresh period of the Image (in milliseconds).
 
