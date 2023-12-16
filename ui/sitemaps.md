@@ -181,7 +181,7 @@ This provides the flexibility to present Items in the way desired in your home a
 - When an [Item]({{base}}/configuration/items.html) is defined, you have the opportunity to assign a label and/or an icon at that point.
     If no label or icon are specified in the Sitemap, then the label and/or icon you assigned to the Item will be displayed.
     Setting a value for `label` or `icon`  or `staticIcon` of a Sitemap element will override the values defined for the linked Item.
-    There is an exception for chart, image, video, mapview and webview Sitemap elements, the item label is ignored and only the value of `label` is considered for the label.
+    There is an exception for chart, image, video, mapview and webview Sitemap elements: the item label is ignored and only the value of `label` is considered for the label.
 
 - The parameters `icon` and `staticIcon` are exclusive; both allow choosing the icon to show next to the element but `staticIcon` also indicates not to try to create a dynamic icon (using the current state of a linked item). The value of these two parameters can optionally be enclosed in double quotes.
 
