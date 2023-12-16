@@ -308,14 +308,14 @@ Switch item=LR_TV_Channel label="TV Channel" mappings=[0="DasErste", 1="BBC One"
 Buttongrid item=<itemname> [label="<labelname>"] [icon=<iconref>] [staticIcon=<iconref>] [buttons="<Button definition>"]
 ```
 
-A Buttongrid will present a grid of buttons and allow sending commands to an Item.
-When you press a button, the associated command is sent to the linked Item.
+A Buttongrid represents a grid of buttons and enables commands to be sent to an Item.
+When a button is pressed, the associated command is sent to the linked Item.
 Buttons never appear as selected, they do not display the current state of the linked Item.
 
-This is the typical element to use to simulate a remote control for example.
+This is a typical element for simulating a remote control, for example.
 
 - `label` if set, a header row will be displayed containing this label and the icon.
-- `buttons` defines the position of each button inside the grid and the command associated with each button; comes as an array of buttons definition.
+- `buttons` defines the position of each button within the grid and the command associated with each button; provided as an array.
 
 Buttons syntax:
 
@@ -325,7 +325,7 @@ buttons=[row_1:column_1:command_1="description_1", row_2:column_2:command_2="des
 
 The buttons can be defined in any order, their position in the grid is defined by a row index and a column index.
 The top left position is row index 1 and column index 1.
-The grid must not exceed 12 columns so the maximum allowed column index is 12.
+The grid must not exceed 12 columns so the maximum allowed column index is 12 columns.
 It is not mandatory to define a button in all grid cells.
 The user interfaces will automatically determine the grid size so that all buttons are presented.
 
