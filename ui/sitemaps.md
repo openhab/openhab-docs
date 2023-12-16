@@ -631,7 +631,7 @@ Colors can be used to emphasize an items label or its value based on conditions.
 Colors may be assigned to either the label or the value associated with an Item.
 The icon may be tinted depending on the state as well.
 
-**Label and Value Color Syntax:**
+**Label, Value and Icon Color Syntax:**
 
 ```java
 labelcolor=[item_name operator value = "color", item_name operator value AND item_name operator value = "color", ... ]
@@ -721,12 +721,49 @@ There are also the following keywords that can be used as colors:
 ### Icons
 
 openHAB allows a set of icons to be assigned to the different states of an Item and therefore to be presented in a Sitemap.
+This first way of proceeding only considers the current state of the linked item and requires the use of icons provided by openHAB and a particular syntax of icon names.
 Please refer to the documentation on [Item configuration]({{base}}/configuration/items.html#icons) for details.
 
-![battery-0](/iconsets/classic/battery-0.png "battery-0")
-![battery-30](/iconsets/classic/battery-30.png "battery-30")
-![battery-60](/iconsets/classic/battery-60.png "battery-60")
-![battery-100](/iconsets/classic/battery-100.png "battery-100")
+![battery-0](/iconsets/classic/battery-0.svg "battery-0")
+![battery-30](/iconsets/classic/battery-30.svg "battery-30")
+![battery-60](/iconsets/classic/battery-60.svg "battery-60")
+![battery-100](/iconsets/classic/battery-100.svg "battery-100")
+
+There is also a more powerful way to define a dynamic icon based on the states of different items and allowing you to attach any type of icon regardless of its source (not restricted to icons provided by openbHAB).
+
+The `icon` parameter can be used to provide conditional rules.
+
+Extended icon syntax:
+
+```java
+icon=[item_name operator value = icon, item_name operator value AND item_name operator value = icon, ... ]
+```
+
+You can set as many conditions as you want, along with a reference to an icon for each condition.
+
+A condition can be a single comparison or a combination of several comparisons all separated by the AND operator.
+A condition including the AND operator will be considered as true if all individual comparisons are considered as true.
+Of course, it is possible to reference a different item in each comparison.
+
+Note that `item_name` and `operator` are both optional.
+If `item_name` is not provided, the Item name will default to the current Item.
+If an operator is not specified, the operator will default to `==`.
+
+Conditions are evaluated from left to right; the first matching condition determines the icon.
+If only a reference to an icon is specified, that condition is considered as true and that icon will be used.
+It can be used as a last condition to set a default icon that will be used in case any of the other previous conditions is true.
+
+The comparison operators are the same as for the visibility parameter.
+
+**Examples:**
+
+The following three lines are equivalent.
+
+```java
+Text item=TemperatureTrend icon=["UP"=f7:arrowtriangle_up, "DOWN"=f7:arrowtriangle_down, f7:arrowtriangle_right]
+Text item=TemperatureTrend icon=[=="UP"=f7:arrowtriangle_up, =="DOWN"=f7:arrowtriangle_down, f7:arrowtriangle_right]
+Text item=TemperatureTrend icon=[TemperatureTrend=="UP"=f7:arrowtriangle_up, TemperatureTrend=="DOWN"=f7:arrowtriangle_down, f7:arrowtriangle_right]
+```
 
 ## Full Example
 
