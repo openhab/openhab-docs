@@ -650,7 +650,7 @@ If `item_name` is not provided, the Item name will default to the current Item.
 If an operator is not specified, the operator will default to `==`.
 
 If only a color is specified, that condition is considered as true and that color will be used.
-It can be used as a last condition to set a default color that will be used in case any of the other previous conditions is true.
+Providing only a color can be used as a last condition to set a default color that will be used in case any of the other previous conditions is true.
 
 The comparison operators for `labelcolor`, `valuecolor` and `iconcolor` are the same as for the visibility parameter.
 
@@ -729,7 +729,7 @@ Please refer to the documentation on [Item configuration]({{base}}/configuration
 ![battery-60](/iconsets/classic/battery-60.svg "battery-60")
 ![battery-100](/iconsets/classic/battery-100.svg "battery-100")
 
-There is also a more powerful way to define a dynamic icon based on the states of different items and allowing you to attach any type of icon regardless of its source (not restricted to icons provided by openbHAB).
+There is also a more powerful way to define a dynamic icon based on the states of different items and allowing you to attach any type of icon regardless of its source (not restricted to icons provided by openHAB).
 
 The `icon` parameter can be used to provide conditional rules.
 
@@ -751,7 +751,7 @@ If an operator is not specified, the operator will default to `==`.
 
 Conditions are evaluated from left to right; the first matching condition determines the icon.
 If only a reference to an icon is specified, that condition is considered as true and that icon will be used.
-It can be used as a last condition to set a default icon that will be used in case any of the other previous conditions is true.
+Providing only a reference to an icon can be used as a last condition to set a default icon that will be used in case any of the other previous conditions is true.
 
 The comparison operators are the same as for the visibility parameter.
 
