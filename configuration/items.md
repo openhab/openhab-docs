@@ -731,6 +731,23 @@ If this is the case, you will find those within the documentation of the Binding
 | `trigger-event-string`                                                                        | Trigger | String                | This Profile can be used to link a trigger channel to a String item. The item's state will be updated to the string representation of the triggering event (e.g. `PRESSED`).                                                                                                                                                                                                                                                                                                                  |
 | `transform:<SERVICE>`                                                                         | State   | All                   | Transformation Profiles can be used to transform the item state (instead of only transforming it in the [Sitemap]({{base}}/ui/sitemaps.html)) using the specified transformation service. You can find the documentation of these Profiles within the [documentation of the Transformation Service](/addons/#transform). E.g. [map](addons/transformations/map/#usage-as-a-profile) or [jsonpath](addons/transformations/jsonpath/#usage-as-a-profile)                                        |
 
+##### Implicit Profiles
+
+If an Item does not have an explicitly defined Profile the framework actually uses an implicit profile 'behind the scenes'.
+The implicit profile type depends on the Channel kind and type, and the respective Item type or Command type, as shown below.
+
+| Channel Kind | Channel Type        | Item / Command Type | Implicit Profile                 |
+|--------------|---------------------|---------------------| ---------------------------------|
+| State        | any                 | any                 | `default`                        |
+| Trigger      | any                 | String              | `trigger-event-string`           |
+| Trigger      | `system.rawbutton`  | Player              | `rawbutton-toggle-player`        |
+| Trigger      | `system.rawbutton`  | Rollershutter       | `rawbutton-toggle-rollershutter` |
+| Trigger      | `system.rawbutton`  | Switch              | `rawbutton-toggle-switch`        |
+| Trigger      | `system.rawrocker`  | Dimmer              | `rawrocker-dimmer`               |
+| Trigger      | `system.rawrocker`  | PlayPause           | `rawrocker-play-pause`           |
+| Trigger      | `system.rawrocker`  | UpDown              | `rawrocker-up-down`              |
+| Trigger      | `system.rawrocker`  | OnOff               | `rawrocker-on-off`               |
+
 ##### Basic Example
 
 You have an Item called `Bedroom_Light` that is connected to a Hue lamp
