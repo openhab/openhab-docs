@@ -38,7 +38,7 @@ However do this only if you already know that you will need specific add-ons (e.
 Or skip this step if you prefer to install add-ons individually later.
 You can always install/remove add-ons in the future so you can modify and improve your system over time.
 
-![addons wizard](https://github.com/openhab/openhab-docs/assets/893994/ecbd893b-3b95-4fd6-a89c-6f9a87313229)
+![addons wizard](images/suggestions.png)
 
 After finishing the wizard you will get a welcome message and be redirected to your dashboard.
 
