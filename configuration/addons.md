@@ -16,7 +16,7 @@ Search for the desired add-on in the categories and press 'install'.
 
 Alternatively navigate to **Add-on Store**.
 The openHAB framework will already have scanned your PC and LAN to discover home automation equipment in your system.
-And based on the discovery results it will show the add-ons that it recommends to install.
+Based on the discovery results it will show the add-ons that it recommends to install.
 Choose the desired add-on and press 'install'.
 
 ![image](https://github.com/openhab/openhab-docs/assets/893994/d922f40b-4ace-4400-9378-0e66f2f894c1)
