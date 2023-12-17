@@ -31,11 +31,12 @@ Start by setting your language, region, and time zone. You can also set your loc
 ### Install add-ons
 
 You now have the option to install openHAB add-ons.
-The openHAB system does an automatic scan to discover home automation equipment and software on your PC and LAN, and based the result it recommends suggested add-ons to install. 
+The openHAB system does an automatic scan to discover home automation equipment and software on your PC and LAN.
+Based on the scan result it recommends suggested add-ons to install.
 You can modify the list of add-ons.
-However, do this only if you already know that you'll need specific add-ons (e.g. if you're upgrading from an older openHAB system).
+However do this only if you already know that you will need specific add-ons (e.g. if you're upgrading from an older openHAB system).
 Or skip this step if you prefer to install add-ons individually later.
-You can always install/remove add-ons in the future, enabling you to modify and improve your system over time.
+You can always install/remove add-ons in the future so you can modify and improve your system over time.
 
 ![addons wizard](https://github.com/openhab/openhab-docs/assets/893994/ecbd893b-3b95-4fd6-a89c-6f9a87313229)
 
