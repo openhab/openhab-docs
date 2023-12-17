@@ -6,13 +6,20 @@ layout: documentation
 
 Add-ons can be installed in different ways, described below.
 
-## Through UI
+## Through User Interface
 
 Log into your admin account (if not already done).
-Navigate to `Settings` and have a look for the add-ons section.
-Search for the desired add-on in the categories and press install.
+Navigate to **Settings** and have a look for the add-ons section.
+Search for the desired add-on in the categories and press 'install'.
 
 ![installing Add-ons through UI](./images/InstallAddonsThroughUi.gif)
+
+Alternatively navigate to **Add-on Store**.
+The openHAB framework will already have scanned your PC and LAN to discover home automation equipment in your system.
+And based on the discovery results it will show the add-ons that it recommends to install.
+Choose the desired add-on and press 'install'.
+
+![image](https://github.com/openhab/openhab-docs/assets/893994/d922f40b-4ace-4400-9378-0e66f2f894c1)
 
 ## Through Configuration Files
 
