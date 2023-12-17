@@ -38,7 +38,7 @@ However do this only if you already know that you will need specific add-ons (e.
 Or skip this step if you prefer to install add-ons individually later.
 You can always install/remove add-ons in the future so you can modify and improve your system over time.
 
-![addons wizard](images/suggestions.png)
+![addons wizard](images/wizard_addons.png)
 
 After finishing the wizard you will get a welcome message and be redirected to your dashboard.
 
