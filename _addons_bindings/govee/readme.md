@@ -6,7 +6,7 @@ type: binding
 description: "![govee](doc/govee-lights.png)"
 since: 3x
 logo: images/addons/govee.png
-install: manual
+install: auto
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
