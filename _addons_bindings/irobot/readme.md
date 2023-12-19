@@ -5,6 +5,7 @@ title: iRobot - Bindings
 type: binding
 description: "This binding provides integration of products by iRobot company (<https://www.irobot.com/>). It is currently developed"
 since: 3x
+logo: images/addons/irobot.png
 install: auto
 ---
 
