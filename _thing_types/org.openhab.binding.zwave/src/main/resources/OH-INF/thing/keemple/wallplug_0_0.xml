@@ -5,8 +5,8 @@
   xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
                       https://openhab.org/schemas/thing-description/v1.0.0">
 
-  <thing-type id="keemple_wallplug_04_000" listed="false">
-    <label>Keemple KP-SO-02 Wall Plug Switch</label>
+  <thing-type id="keemple_wallplug_00_000" listed="false">
+    <label>KP-SO-02 Wall Plug Switch</label>
     <description><![CDATA[
 Wall Plug Switch<br /> <h1>Overview</h1><p>This Plug provides line voltage, current load, power consumption and energy consumption measuring. </p><p>Voltage – The Supply Power Voltage For Plug.</p><p>Current – The Current for the Electric Device Connect to Plug Consumption.</p><p>Power – Power Consumed by an Electric Device in an instant, unit: Watt (W).</p><p>Energy – Energy Consumed by an Electric Device through a Time Period. Most commonly measured in Kilowatt-hours (kWh). One kilowatt-hour is Equal to One Kilowatt of Power Consumed over a Period of One Hour, 1kWh = 1000Wh.0Wh.</p> <br /> <h2>Inclusion Information</h2><ol><li>Connect a plug to power and wait at least 20 seconds.</li><li>Set Z‐Wave controller or Z‐Wave gateway into inclusion mode (refer to the controller or gateway operating manual).</li><li>Briefly press the plug button three times (the LED will alternately flash gree five times).</li></ol> <br /> <h2>Exclusion Information</h2><ol><li>Connect a plug to power and wait at least 20 seconds.</li><li>Set Z‐Wave controller or Z‐Wave gateway into exclusion mode (refer to the controller or gateway operating manual).</li><li>Briefly press the plug button three times (the LED will alternately flash pink five times).</li></ol> <br /> <h2>Wakeup Information</h2><p><br /></p>
     ]]></description>
@@ -55,10 +55,9 @@ Wall Plug Switch<br /> <h1>Overview</h1><p>This Plug provides line voltage, curr
     <!-- DEVICE PROPERTY DEFINITIONS -->
     <properties>
       <property name="vendor">Keemplecom Limited</property>
-      <property name="modelId">Keemple KP-SO-02</property>
+      <property name="modelId">KP-SO-02</property>
       <property name="manufacturerId">041A</property>
       <property name="manufacturerRef">0200:0008</property>
-      <property name="versionMin">4.0</property>
       <property name="dbReference">1359</property>
       <property name="defaultAssociations">1</property>
     </properties>
@@ -76,25 +75,17 @@ Wall Plug Switch<br /> <h1>Overview</h1><p>This Plug provides line voltage, curr
       <parameter name="group_1" type="text" groupName="association" multiple="true">
         <label>1: Lifeline</label>
         <description><![CDATA[
-Assigned to Plugs status - On/Off. Allows for receiving control command from trigger devices whenever the Plug is turned On or Off.<br /> <h1>Overview</h1><p>NOTIFICATION_REPORT_V4</p><p>METER_REPORT_V4</p><p>SWITCH_BINARY_REPORT</p><p>DEVICE_RESET_LOCALLY_NOTIFICATION</p>
+Assigned to Plugs status - On/Off. Allows for receiving control command from trigger devices whenever the Plug is turned On or Off.<br /> <h1>Overview</h1><p>COMMAND_CLASS_SWITCH_BINARY<br /></p><p>COMMAND_CLASS_METER<br /></p><p>COMMAND_CLASS_DEVICE_RESET_LOCALLY<br /></p><p>COMMAND_CLASS_ALARM<br /></p>
         ]]></description>
         <multipleLimit>1</multipleLimit>
       </parameter>
 
       <parameter name="group_2" type="text" groupName="association" multiple="true">
-        <label>2: Group 2</label>
+        <label>2: OCP Alarm</label>
         <description><![CDATA[
-Sending control commands to associated devices. If current load is over the max current defined in parameter #3, the Plug will send a BASIC_SET (0xFF) to associated devices. When current load is normal, plug will send a BASIC_SET (0x00).<br /> <h1>Overview</h1><p>BASIC_SET<br /></p>
+Sending control commands to associated devices.<br /> <h1>Overview</h1><p>COMMAND_CLASS_BASIC<br /></p>
         ]]></description>
-        <multipleLimit>5</multipleLimit>
-      </parameter>
-
-      <parameter name="group_3" type="text" groupName="association" multiple="true">
-        <label>3: Group 3</label>
-        <description><![CDATA[
-Send Notification to associated devices.<br /> <h1>Overview</h1><p>NOTIFICATION_REPORT_V4<br /></p>
-        ]]></description>
-        <multipleLimit>5</multipleLimit>
+        <multipleLimit>1</multipleLimit>
       </parameter>
 
       <!-- STATIC DEFINITIONS -->

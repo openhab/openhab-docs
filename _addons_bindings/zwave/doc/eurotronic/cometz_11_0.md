@@ -320,6 +320,7 @@ Association group 1 supports 1 node.
 
 * [photo](https://opensmarthouse.org/zwavedatabase/1561/reference/Comet-Z-Wave-EN-2023-04-06.pdf)
 * [manual](https://opensmarthouse.org/zwavedatabase/1561/reference/Comet-Z-Wave-EN-2023-04-06_1.pdf)
+* [manual](https://opensmarthouse.org/zwavedatabase/1561/reference/Comet-Z-Wave-DE-2023-04-06.pdf)
 
 ---
 

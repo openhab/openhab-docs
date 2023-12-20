@@ -1,20 +1,19 @@
 ---
 layout: documentation
-title: Keemple KP-SO-02 - ZWave
+title: KP-SO-02 - ZWave
 ---
 
 {% include base.html %}
 
-# Keemple KP-SO-02 Wall Plug Switch
-This describes the Z-Wave device *Keemple KP-SO-02*, manufactured by *Keemplecom Limited* with the thing type UID of ```keemple_wallplug_04_000```.
-This version of the device is limited to firmware versions above 4.0
+# KP-SO-02 Wall Plug Switch
+This describes the Z-Wave device *KP-SO-02*, manufactured by *Keemplecom Limited* with the thing type UID of ```keemple_wallplug_00_000```.
 
 The device is in the category of *Wall Switch*, defining Any device attached to the wall that controls a binary status of something, for ex. a light switch.
 
-![Keemple KP-SO-02 product image](https://opensmarthouse.org/zwavedatabase/1359/image/)
+![KP-SO-02 product image](https://opensmarthouse.org/zwavedatabase/1359/image/)
 
 
-The Keemple KP-SO-02 supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is also able to participate in the routing of data between other devices in the mesh network.
+The KP-SO-02 supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is also able to participate in the routing of data between other devices in the mesh network.
 
 ## Overview
 
@@ -46,7 +45,7 @@ Energy – Energy Consumed by an Electric Device through a Time Period. Most com
 
 ## Channels
 
-The following table summarises the channels available for the Keemple KP-SO-02 -:
+The following table summarises the channels available for the KP-SO-02 -:
 
 | Channel Name | Channel ID | Channel Type | Category | Item Type |
 |--------------|------------|--------------|----------|-----------|
@@ -104,35 +103,31 @@ The device has no configuration parameters defined.
 
 Association groups allow the device to send unsolicited reports to the controller, or other devices in the network. Using association groups can allow you to eliminate polling, providing instant feedback of a device state change without unnecessary network traffic.
 
-The Keemple KP-SO-02 supports 3 association groups.
+The KP-SO-02 supports 2 association groups.
 
 ### Group 1: Lifeline
 
 The Lifeline association group reports device status to a hub and is not designed to control other devices directly. When using the Lineline group with a hub, in most cases, only the lifeline group will need to be configured and normally the hub will perform this automatically during the device initialisation.
 Assigned to Plugs status - On/Off. Allows for receiving control command from trigger devices whenever the Plug is turned On or Off.
-NOTIFICATION\_REPORT\_V4
+COMMAND\_CLASS\_SWITCH_BINARY  
 
-METER\_REPORT\_V4
 
-SWITCH\_BINARY\_REPORT
+COMMAND\_CLASS\_METER  
 
-DEVICE\_RESET\_LOCALLY_NOTIFICATION
+
+COMMAND\_CLASS\_DEVICE\_RESET\_LOCALLY  
+
+
+COMMAND\_CLASS\_ALARM
 
 Association group 1 supports 1 node.
 
-### Group 2: Group 2
+### Group 2: OCP Alarm
 
-Sending control commands to associated devices. If current load is over the max current defined in parameter #3, the Plug will send a BASIC\_SET (0xFF) to associated devices. When current load is normal, plug will send a BASIC\_SET (0x00).
-BASIC_SET
+Sending control commands to associated devices.
+COMMAND\_CLASS\_BASIC
 
-Association group 2 supports 5 nodes.
-
-### Group 3: Group 3
-
-Send Notification to associated devices.
-NOTIFICATION\_REPORT\_V4
-
-Association group 3 supports 5 nodes.
+Association group 2 supports 1 node.
 
 ## Technical Information
 
