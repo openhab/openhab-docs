@@ -241,9 +241,22 @@ In openHAB version 3 the System-based Trigger for startlevel had been added, val
 
 Startlevels less than 40 are not available as triggers because the rule engine needs to start up first before it can execute any rules.
 
-A rule triggering for a startlevel and being saved during development, will be reloaded.
-If the expected startlevel (or higher) has already been reached, this rule will trigger again.
+A rule that triggers for a start level and is saved during development is reloaded, if the expected startlevel (or higher) has been reached.
+The reason behind is that updated rules are considered as new rules.
+
 Writing rules with quite low startlevels might be too early, as for instance not all things are online yet.
+
+Example:
+
+```java
+rule "Start level reload"
+when
+    System reached start level 70
+then
+    logInfo("StartLevelTest", "triggered a second time, if active rule being edited and saved another time.")
+    logInfo("StartLevelTest", "You won´t realize this behaviour under regular run conditions, each start level is reached exactly once.")
+end
+```
 
 ### Thing-based Triggers
 
