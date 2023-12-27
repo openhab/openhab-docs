@@ -89,13 +89,15 @@ Currently, the supported commands are:
   Navigate to a given `$path`, e.g. `navigate:/locations` to navigate to the "Locations" tab of the home page or `navigate:/page/my_custom_page` to navigate to a page with the ID `my_custom_page`.
 - `popup:$target`, `popover:$target` and `sheet:$target`:
   Open a `$target`, which can be a page (`$target` is `page:` + a page ID), a custom widget (`$target` is `widget:` + widget ID) or any [`oh-` component]({{base}}/ui/components/) (`$target` is the component name), in a popup, popover or sheet.
+  
   For example, to open `oh-clock-card` inside a popup, send `popup:oh-clock-card` to the UI command Item.
 - `notification:$text:$title:$subtitle:$titleRight:$closeTimeout`:
   Display a notification inside the UI:
   The `$text` parameter is mandatory, all other parameters are optional.
   `$closeTimeout` is in milliseconds and defaults 5000, which means by default a notification will be closed after 5 seconds.
+  
   For example, send `notification:This is the text.:This is the title.:This is the subtitle.:This is the right title.` to the UI command Item to get the following notification displayed:
-  <p align="center"><img style="max-width: 30%;" src="./images/notification.png"/></p>
+  <p align="center"><img style="max-width: 40%;" src="./images/notification.png"/></p>
 - `close`:
   Close all popups, popovers and sheets.
 - `back`:
