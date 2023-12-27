@@ -202,7 +202,7 @@ Stacked ternary statements to translate the state of Item `xxx` to a description
 Do the same using an object and the Item state shortcut:
 
 ```js
-={0:'Off',1:'Heat',11:'Economy Heat', 15:'Full Power',31:'Manual'}[@@xxx] || 'Not Set'
+={0:'Off',1:'Heat',11:'Economy Heat',15:'Full Power',31:'Manual'}[@@xxx] || 'Not Set'
 ```
 
 Substract one week from the state of `DateTime` and return a relative time representation in the current locale ("3 weeks ago"):
@@ -214,4 +214,4 @@ Substract one week from the state of `DateTime` and return a relative time repre
 ## Debugging Expressions
 
 Expressions can be tested in the Widgets Expression Tester found in the Developer Sidebar
-(<kbd>Shift+Alt+D</kbd>).
+(<kbd>Shift</kbd><kbd>Alt</kbd><kbd>D</kbd>).

@@ -145,7 +145,7 @@ This will open a form with customization options.
 ##### Basic Settings
 
 Instead of using the Item's Label and parent Group as the Title and Subtitle of the card, these can be overridden and manually set.
-[Expressions]({{base}}/ui/building-pages.html#dynamically-configuring-components-with-expressions) can be used to make the Title and Subtitle change based on the states of Items or other conditions.
+[Expressions]({{base}}/ui/widget-expressions-variables.html) can be used to make the Title and Subtitle change based on the states of Items or other conditions.
 
 By default a background color is chosen based on the semantic tag.
 This default can be overridden here.
