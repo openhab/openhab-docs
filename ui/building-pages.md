@@ -111,7 +111,7 @@ However, it's important to know that there are limitations and sometimes editing
   Sometimes it will be indicated somewhere when configuring the widget, or in the openHAB documentation itself, on the other hand some options won't be available for use (for instance, because they expect a callback function and you cannot define those in the widget's config) or need some transformation.
 
 1. Sometimes you'll want to use an expression to configure the property, but the UI will get in your way - for instance, it will display an item picker while your intention is to set the prop value to be `=props.item1`.
-  See below to learn more about [expressions](#dynamically-configuring-components-with-expressions).
+  [Learn more about widget expressions.](widget-expressions-variables.html)
 
 1. To quickly and efficiently duplicate similar widgets with only a few differences, it is always way easier to copy/paste the relevant YAML in the editor.
 
@@ -119,7 +119,7 @@ However, it's important to know that there are limitations and sometimes editing
 
 Besides, there are several options that virtually all widgets in layout pages, map pages and plan pages accept, all of which are not currently available in the config sheet:
 
-- `visible`: you can specify a `false` boolean to this option to hide the widget. This powerful feature, combined with [expressions](#dynamically-configuring-components-with-expressions), allows you to dynamically show widgets or even entire sections (if you use it on layout widgets containing other widgets), depending on the state of your items
+- `visible`: you can specify a `false` boolean to this option to hide the widget. This powerful feature, combined with [widget expressions](widget-expressions-variables.html), allows you to dynamically show widgets or even entire sections (if you use it on layout widgets containing other widgets), depending on the state of your items
 Example: `visible: =items.TV_Powered.state === 'ON' && items.TV_Input.state === 'HDMI1'`
 - `visibleTo`: this accepts an array of strings like `role:administrator`, `role:user`, or `user:<userid>`, allowing the widget to be only visible to specific users or those with a certain role.
 Example: `visibleTo: ["user:scott", "role:administrator"]`
@@ -144,70 +144,9 @@ See the [Component Reference](./components/) for details about the different lib
 
 ## Dynamically Configuring Components with Expressions
 
-Virtually everywhere every time you need a config prop to be dynamically updated, you can use an expression to configure it.
-Expressions are string literals beginning with the symbol `=` and everything after it is evaluated using a syntax very similar to JavaScript, you can use arithmetic or string operations etc., the [conditional (ternary) operator](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Conditional_Operator), as well as the following objects (subject to evolutions):
+To dynamically configure components based on data changed on runtime, expressions can be used.
 
-- `items` is a dynamic key/value dictionary allowing you to retrieve the state of items; the result of `items.Item1` will be an object like `{ state: '23', displayState: '23 °C' }` (`displayState` may be omitted). You can therefore use `items.Item1.state` to use the current state of Item1 in your expression, if it changes, it will be reevaluated
-- `props` is a dictionary of the key/values of self-defined props for the current personal widget, or page (pages, like any root UI components, may indeed have props). It is indispensable to use props in expressions when developing a personal widget
-- `config` is a dictionary of the key/values of the configuration of the current component/widget
-- `vars` is a dictionary of [variables](#variables) that are available in the component's context
-- `loop` is a dictionary containing iteration information when you're repeating components from a source collection, it is defined only when in the context of an `oh-repeater` component
-- the JavaScript `Math` object (so you can use `Math.floor(...)`, `Math.round(...)` and the like)
-- the JavaScript `Number` object (see [mdn web docs_: Number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number))
-- the JavaScript `JSON` object to parse or produce JSON
-- `dayjs` to build instances of the [day.js library](https://day.js.org/docs/en/parse/now) that you can use to parse or manipulate date & time
-- `theme` which holds the current theme: `ios`, `md` or `aurora`
-- `themeOptions` and `device` allow to use the relevant objects that you can see in the About page, Technical information, View details, under `clientInfo`
-- `screen` returns the [`Screen`](https://developer.mozilla.org/en-US/docs/Web/API/Screen) object. This allows you to access various information about the current screen, e.g. the available width and height. The two properties `viewAreaWidth` and `viewAreaHeight` are added on top. It's recommended to use CSS [`calc()`](#dynamic-styling--positioning-using-css-calc) for dynamic positioning and styling.
-- `user` returns an object with information about the logged in user: the name (`user.name`) and an array of the assigned roles for the user (`user.roles`).
-
-The `@` symbol can be used in front of an item name string as a shortcut to the `displayState` from the `items` dictionary with a fallback to the raw state:
-
-```yaml
-footer: =@'Switch1'
-```
-
-is the same as
-
-```yaml
-footer: =items['Switch1'].displayState || items['Switch1'].state
-```
-
-Similarly, `@@` can be used as a shortcut for just the item state.
-
-Expressions are particularly useful in cases where one wants to combine the states of more than one Item, or use the state of more than one Item in a single widget element.
-For example, the icon of an Item can be based on the state of a different Item.
-
-### Examples
-
-```js
-=(items.Color1.state.split(',')[2] !== '0') ? 'On ' + '(' + items.Color1.state.split(',')[2] + '%)' : 'Off'
-```
-
-Translates the third part of the HSB state (brightness) of the Color1 item to On or Off.
-
-```js
-icon: =(items[props.item].state === 'ON') ? 'f7:lightbulb_fill' : 'f7:lightbulb'
-```
-
-Use a filled icon of a lightbulb but only if the state of the items passed in the prop `item` is ON.
-
-```js
-= (items.xxx.state === '0') ? 'Off' : (items.xxx.state === '1') ? 'Heat' : (items.xxx.state === '11') ? 'Economy Heat' : (items.xxx.state === '15') ? 'Full Power': (items.xxx.state === '31') ? 'Manual' : 'Not Set'
-```
-
-Stacked ternary statements to translate a value to a description.
-
-```js
-=dayjs(items.DateItem.state).subtract(1, 'week').fromNow()
-```
-
-Substracts one week from the state of `DateTime` and return a relative time representation in the current locale ("3 weeks ago").
-
-### Debugging Expressions
-
-Expressions can be tested in the Widgets Expression Tester found in the Developer Sidebar
-(<kbd>Shift+Alt+D</kbd>).
+Please refer to [widget expressions](widget-expressions-variables.html) for more information.
 
 ## Actions
 
@@ -310,30 +249,6 @@ slots:
 </details>
 
 :::
-
-## Variables
-
-Variables are a way to allow more complex scenarios in pages & personal widget development.
-
-Variables can be used using several methods:
-
-- the `variable` config parameter of an `oh-gauge` (read-only),
-  `oh-input`, `oh-knob`, `oh-slider`, `oh-stepper`, `oh-toggle`
-  will accept a variable name and control it instead of
-  sending commands to items if set.
-  The "item" parameter can
-  still be set to set the widget to the item's state, when
-  the variable has no value.
-- the `vars`object available in expressions (for example
-  `=vars.var1` will evaluate to the value of the variable `var1`).
-- the `variable` action allows to set a fixed or computed
-  (using an expression) value to a variable.
-
-`oh-button` & `oh-link` have a special parameter `clearVariable`
-which allows to unset a version when clicked, after performing
-the action.
-This is useful when "validating" a variable e.g.
-send a command to an item with the variable value then reset it.
 
 ## Techniques for Styling Widgets
 
