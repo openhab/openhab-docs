@@ -44,33 +44,7 @@ Imagine you need to find all usages of an Item in rules or pages.
 You could open all your rules and pages to check them, or just use the developer sidebar search.
 Enter your Item name, and you will see in which rules, scenes, scripts and pages that Item is used.
 
-The developer sidebar search ignores case and searches inside the following entities:
-
-- Things
-  - UID
-  - label
-- Items
-  - name
-  - label
-  - tags (requires exact match)
-  - metadata
-- Pages
-  - uid
-  - label
-  - content (widgets, tabs, charts, etc. with their configuration)
-- Transformations
-  - uid
-  - label
-  - type
-- Rules, Scenes & Scripts
-  - Item name & Thing UID of triggers, actions & conditions
-  - script code (e.g. Rules DSL, JavaScript, and even Blockly)
-  - script MIME types (requires exact match)
-  - Blockly scripts (using 'block', 'blockly' or 'blocksource' as search string, where case is ignored)
-  - tags (requires exact match)
-- Persistence Configurations:
-  - label & service id of persistence service
-  - Items persisted by persistence service
+For more information about the search and which entities are searchable, please refer to the [Developer Sidebar docs]({{base}}/docs/ui/mainui.html).
 
 ### Pinned Objects
 

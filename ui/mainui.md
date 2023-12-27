@@ -1,0 +1,61 @@
+---
+layout: documentation
+title: Main UI
+---
+
+# Main UI
+
+Since openHAB 3.0, the so called "Main UI" is the main web user interface of openHAB.
+Main UI allows the administrator (you) to setup and configure openHAB, and provides many types of pages to visualize data and control Items.
+
+This page aims at providing an overview over Main UI's "special" features, which means it does not try to document Main UI in general or provide a comprehensive overview over all its many capabilities and configuration pages.
+If you are new to openHAB, please refer to the [Getting Started guide]({{base}}/docs/tutorial/), which is introducing you to Main UI by using it to setup openHAB.
+
+[[toc]]
+
+## Developer Sidebar
+
+Main UI provides a developer sidebar for administrator user(s), that is accessible from anywhere in the UI.
+The developer sidebar is split into a "tools" section with several useful tools including an universal search across nearly all UI-configurable entities and a widget expression tester, and a "help" section aiming at providing help and useful information regarding configuration and setup.
+
+If your device's screen is wide enough (it has to be at least 1280 pixels wide), you can open the developer sidepanel by:
+
+- Opening the "Developer Tools" section in the menu sidebar and enabling the developer sidebar.
+- Clicking on the help icon displayed in the upper right corner of most pages.
+- Pressing the key combination <kbd>Alt</kbd><kbd>Shift</kbd><kbd>D</kbd> on your keyboard.
+
+### Developer Sidebar Search
+
+As already mentioned, the developer sidebar provides an universal search across nearly all UI-configurable entities.
+This means, you can search through most configuration available in Main UI, including Things, Items, pages.
+
+Imagine you need to find all usages of an Item.
+You could start to open all rules, scenes and scripts, check persistence configuration and have a look at pages and sitemaps to find usages of that Item - Or you use the developer sidebar search.
+
+The developer sidebar search ignores case (so it doesn't matter whether you search `LivingRoom_Light` or `livingroom_light`) and searches inside the following entities:
+
+- Things
+  - UID
+  - label
+- Items
+  - name
+  - label
+  - tags (requires exact match, i.e. if the Item has a tag `Lightbulb`, only the search query `Lightbulb` (case doesn't matter) will match)
+  - metadata
+- Pages (including Sitemaps)
+  - uid
+  - label
+  - content (widgets, tabs, charts, etc. with their configuration)/slots
+- Transformations
+  - uid
+  - label
+  - type
+- Rules, Scenes & Scripts
+  - Item name & Thing UID of triggers, actions & conditions
+  - script code (e.g. Rules DSL, JavaScript, and even Blockly)
+  - script MIME types (requires exact match)
+  - Blockly scripts (using `block`, `blockly` or `blocksource` as search string, where case is ignored)
+  - tags (requires exact match)
+- Persistence Configurations:
+  - label & service id of persistence service
+  - Items persisted by persistence service
