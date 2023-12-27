@@ -59,6 +59,7 @@ This is accomplished by adding a `config` section to the component's YAML.
 ```
 
 Some of the available configuration parameters are specific to a certain component while others, such as `visible` or `class` are available in most components.
+[Expressions](widget-expressions-variables.html) can be used to dynamically set configuration parameters depending on dynamic, changing data, e.g. Item states.
 
 ### Component slots
 
@@ -102,7 +103,7 @@ There are several subsets of OH components, each with different uses and strengt
 In addition to being the basis for the OH components, the F7 components themselves are available as options in the widget editor.
 As a general rule, the F7 components will have more configuration and style flexibility than their OH counterparts.
 So, their use is recommended when there is something about the component that needs to be configured in a way different than what is set in the OH version.
-Of course, the F7 components do not have the OH specific functions available, so while they can have values based on Items using the expression system, they cannot easily be used to trigger rules, update Items or variables, etc.
+Of course, the F7 components do not have the OH specific functions available, so while they can have values based on Items using the [widget expression system](widget-expressions-variables.html), they cannot easily be used to trigger rules, update Items or variables, etc.
 
 The most commonly used F7 components will likely be `f7-block`, `f7-row`, and `f7-col`.
 These all generate a simple `<div>` element with one base F7 class (`block`, `row`, and `col` respectively).
@@ -138,7 +139,7 @@ If, however, there is need for the popup or popover to be built-in with a single
 ### Label and Content
 
 There are two special components that are not derived from any other specific library, the `Label` and the `Content` component.
-These two are similar in their simplicity of configuration, primarily taking only a `text` property (which can be an expression).
+These two are similar in their simplicity of configuration, primarily taking only a `text` property (which can be a [widget expression](widget-expressions-variables.html)).
 
 The `Label` component renders the value given by the `text` property inside it's own `<div>` element.
 For example:
@@ -242,96 +243,8 @@ Renders to the HTML:
 </div>
 ```
 
-## The Expression Syntax
+## Styling
 
-The widget expression system uses a JavaScript-like expression parser, [jse-eval](https://github.com/6utt3rfly/jse-eval).
-In order to remain light-weight and responsive, this is not a complete JavaScript library, but nearly all of the basic function is provided along with some more advanced features.
+Personal widgets very likely require some customized styling using CSS.
 
-### Advanced expression features
-
-#### Arrow functions
-
-Many standard JavaScript methods take a function as a parameter.
-The expression parser can parse arrow functions as the parameters of these methods.
-
-Here an arrow function is used in conjunction with the `.find()` method to locate the item object in an array of items (such as is returned by a `oh-repeater`) with a particular name.
-The label of the found item is then used as the title of a component.
-
-```yaml
-title: =someItemList.find( (x) => x.name=="KitchenSwitch" ).label
-```
-
-#### String templates
-
-String templates are a much more human-readable way of creating strings with incorporated dynamic values.
-String templates are surrounded by backticks (<code>\`string template\`</code>) instead of single- or double-quotes.
-Inside string templates, variable values can be inserted with `${variable}` syntax.
-
-Here the value of the widget property `props.page` is included in the text of a component by a string template.
-
-```yaml
-text: =`This button opens the ${props.page} page`
-```
-
-#### Regular expressions
-
-Regular expressions (regex) allow for complex search or replace string operations.
-Many of the JavaScript string methods accept regex parameters expressed as the regex string between two forward slashes (`/regex here/`).
-
-Here a widget property containing an Item name is searched using regex and the first capture (in this case all characters between two underscores) is returned as a component label.
-
-```yaml
-label: =props.item.match(/_(.*)_/)[1]
-```
-
-#### Objects
-
-The variable action allows components in widgets to pass information back and forth when there is user interaction.
-Often this informtation is simple, such as a single string or input value.
-Sometimes, however, it is helpful to add more information to a variable and for these instances JavaScript objects are useful.
-The widget system can create objects in two different ways.
-
-Objects can be defined within the expression system using the standard JavaScript syntax: `{'key1':'value1','key2':'value2'}`.
-
-::: tip
-
-Due to the special meaning of `:[space]` in yaml, it is best to have no spaces between the `:` and the value.
-If you have `:[space]` anywhere in your expression it will raise a YAML error unless you enclose the entire expression (= included) in another layer of quotes.
-
-:::
-
-Here a variable is set to an object with `name` and `selected` keys using the object expression.
-
-```yaml
-actionVariable: myObject
-actionVariableValue: ={'name':props.item,'selected':true}
-```
-
-The other way to create objects is to take advantage of the relationship between YAML and JSON and place the key:value pairs as YAML keys under the initial key.
-
-Here is a variable definition with the same results as the one above using the YAML syntax.
-
-```yaml
-actionVariable: myObject
-actionVariableValue:
-  name: =props.item
-  selected: =true
-```
-
-In both cases, the variable can now be referenced by other components as `vars.myObject` with keys `vars.myObject.name` and `vars.myObject.selected`.
-
-The object expression can also be used to simulate a `switch` control statement.
-The most common flow control statement in the expressions is the [conditional (ternary) operator](building-pages.html#dynamically-configuring-components-with-expressions) which is very efficient for selecting from two options based on a single boolean criterion.
-If you have a list of possible options, you can string multiple ternary operators together, but this grows cumbersome very quickly.
-For example, if there is an HVAC with a mode item that can be set to `heat`, `cool`, `auto`, and `off` modes, it requires 4 nested ternary operators to set a component's background color to match the current HVAC mode (with a fall back option if the item has some other state, e.g. `null`).
-
-```yaml
-background: =(@@hvacModeItem == 'heat')?'orange':(@@hvacModeItem == 'cool')?'blue':(@@hvacModeItem == 'auto')?'green':(@@hvacModeItem == 'off')?'white':'red'
-```
-
-To use an object instead, simply create an object with keys for each of the Item's expected states, and give each key the desired output value.
-Referencing that object using the Item's state will return the desired value and following that with a simple `OR` statement will provide the fallback condition if the object reference is undefined.
-
-```yaml
-background: =({'heat':'orange','cool':'blue','auto':'green','off':'white'})[@@hvacModeItem] || 'red'
-```
+Please read [CSS for Pages & Widgets](css-pages-widgets.html) to learn more about using CSS.
