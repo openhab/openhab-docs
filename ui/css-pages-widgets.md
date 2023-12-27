@@ -83,5 +83,5 @@ This subtracts the height of the navbar and the toolbar, which are stored in CSS
 
 These resources will help you with `calc()`:
 
-- [mdn web docs_: calc()](https://developer.mozilla.org/en-US/docs/Web/CSS/calc)
+- [mdn web docs: calc()](https://developer.mozilla.org/en-US/docs/Web/CSS/calc)
 - [CSS-Tricks: A Complete Guide to calc() in CSS](https://css-tricks.com/a-complete-guide-to-calc-in-css/)
