@@ -242,3 +242,9 @@ Renders to the HTML:
   This text starts with italics <span style="font-weight: bold;">but then becomes BOLD!</span>
 </div>
 ```
+
+## Styling
+
+Personal widgets very likely require some customized styling using CSS.
+
+Please read [CSS for Pages & Widgets](css-pages-widgets.html) to learn more about using CSS.

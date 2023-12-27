@@ -199,6 +199,7 @@ Stacked ternary statements to translate the state of Item `xxx` to a description
 ```js
 =(items.xxx.state === '0') ? 'Off' : (items.xxx.state === '1') ? 'Heat' : (items.xxx.state === '11') ? 'Economy Heat' : (items.xxx.state === '15') ? 'Full Power': (items.xxx.state === '31') ? 'Manual' : 'Not Set'
 ```
+
 Do the same using an object and the Item state shortcut:
 
 ```js
