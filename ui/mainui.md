@@ -96,7 +96,7 @@ Currently, the supported commands are:
   The `$text` parameter is mandatory, all other parameters are optional.
   `$closeTimeout` is in milliseconds and defaults 5000, which means by default a notification will be closed after 5 seconds.
   
-  For example, send `notification:This is the text.:This is the title.:This is the subtitle.:This is the right title.` to the UI command Item to get the following notification displayed:
+  For example, send `notification:This is the text.:This is the title.:This is the subtitle.:This is the right title.` to the UI command Item to display the following notification:
   <p align="center"><img style="max-width: 40%;" src="./images/notification.png"/></p>
 - `close`:
   Close all popups, popovers and sheets.
