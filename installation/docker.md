@@ -267,11 +267,9 @@ EXTRA_JAVA_OPTS="-Dorg.jupnp.network.useInterfaces=eno1"
 
 ::: tab Linux
 
-::: tip Docker Compose
-To get full advantage of a docker/container setup it is recommended to learn about [docker compose](https://docs.docker.com/compose/).
+::: tip Note
+To get full advantage of a docker/container setup it is recommended to learn about [docker compose](https://docs.docker.com/compose/). The following example is using docker compose syntax.
 :::
-
-Example using compose
 
 Identify the network interface on the host machine:
 
@@ -335,8 +333,6 @@ services:
       - CRYPTO_POLICY=unlimited
       - EXTRA_JAVA_OPTS=${EXTRA_JAVA_OPTS} 
 ```
-
-:::
 
 ::::
 
