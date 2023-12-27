@@ -111,7 +111,7 @@ However, it's important to know that there are limitations and sometimes editing
   Sometimes it will be indicated somewhere when configuring the widget, or in the openHAB documentation itself, on the other hand some options won't be available for use (for instance, because they expect a callback function and you cannot define those in the widget's config) or need some transformation.
 
 1. Sometimes you'll want to use an expression to configure the property, but the UI will get in your way - for instance, it will display an item picker while your intention is to set the prop value to be `=props.item1`.
-  See below to learn more about [expressions](#dynamically-configuring-components-with-expressions).
+  [Learn more about widget expressions.](widget-expressions-variables.html)
 
 1. To quickly and efficiently duplicate similar widgets with only a few differences, it is always way easier to copy/paste the relevant YAML in the editor.
 
@@ -119,12 +119,11 @@ However, it's important to know that there are limitations and sometimes editing
 
 Besides, there are several options that virtually all widgets in layout pages, map pages and plan pages accept, all of which are not currently available in the config sheet:
 
-- `visible`: you can specify a `false` boolean to this option to hide the widget. This powerful feature, combined with [expressions](#dynamically-configuring-components-with-expressions), allows you to dynamically show widgets or even entire sections (if you use it on layout widgets containing other widgets), depending on the state of your items
+- `visible`: you can specify a `false` boolean to this option to hide the widget. This powerful feature, combined with [widget expressions](widget-expressions-variables.html), allows you to dynamically show widgets or even entire sections (if you use it on layout widgets containing other widgets), depending on the state of your items
 Example: `visible: =items.TV_Powered.state === 'ON' && items.TV_Input.state === 'HDMI1'`
 - `visibleTo`: this accepts an array of strings like `role:administrator`, `role:user`, or `user:<userid>`, allowing the widget to be only visible to specific users or those with a certain role.
 Example: `visibleTo: ["user:scott", "role:administrator"]`
-- `class` and `style` are  [standard Vue.js attributes](https://vuejs.org/v2/guide/class-and-style.html) and can be used to either alter the CSS classes or add inline styling to the component.
-[See "Styling" below](#techniques-for-styling-widgets).
+- `class` and `style` are  [standard Vue.js attributes](https://vuejs.org/v2/guide/class-and-style.html) and can be used to either alter the CSS classes or add inline styling to the component. Please refer to [Styling pages & widgets using CSS](css-pages-widgets.md).
 
 ### Types of Widgets
 
@@ -144,70 +143,9 @@ See the [Component Reference](./components/) for details about the different lib
 
 ## Dynamically Configuring Components with Expressions
 
-Virtually everywhere every time you need a config prop to be dynamically updated, you can use an expression to configure it.
-Expressions are string literals beginning with the symbol `=` and everything after it is evaluated using a syntax very similar to JavaScript, you can use arithmetic or string operations etc., the [conditional (ternary) operator](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Conditional_Operator), as well as the following objects (subject to evolutions):
+To dynamically configure components based on data changed on runtime, expressions can be used.
 
-- `items` is a dynamic key/value dictionary allowing you to retrieve the state of items; the result of `items.Item1` will be an object like `{ state: '23', displayState: '23 °C' }` (`displayState` may be omitted). You can therefore use `items.Item1.state` to use the current state of Item1 in your expression, if it changes, it will be reevaluated
-- `props` is a dictionary of the key/values of self-defined props for the current personal widget, or page (pages, like any root UI components, may indeed have props). It is indispensable to use props in expressions when developing a personal widget
-- `config` is a dictionary of the key/values of the configuration of the current component/widget
-- `vars` is a dictionary of [variables](#variables) that are available in the component's context
-- `loop` is a dictionary containing iteration information when you're repeating components from a source collection, it is defined only when in the context of an `oh-repeater` component
-- the JavaScript `Math` object (so you can use `Math.floor(...)`, `Math.round(...)` and the like)
-- the JavaScript `Number` object (see [mdn web docs_: Number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number))
-- the JavaScript `JSON` object to parse or produce JSON
-- `dayjs` to build instances of the [day.js library](https://day.js.org/docs/en/parse/now) that you can use to parse or manipulate date & time
-- `theme` which holds the current theme: `ios`, `md` or `aurora`
-- `themeOptions` and `device` allow to use the relevant objects that you can see in the About page, Technical information, View details, under `clientInfo`
-- `screen` returns the [`Screen`](https://developer.mozilla.org/en-US/docs/Web/API/Screen) object. This allows you to access various information about the current screen, e.g. the available width and height. The two properties `viewAreaWidth` and `viewAreaHeight` are added on top. It's recommended to use CSS [`calc()`](#dynamic-styling--positioning-using-css-calc) for dynamic positioning and styling.
-- `user` returns an object with information about the logged in user: the name (`user.name`) and an array of the assigned roles for the user (`user.roles`).
-
-The `@` symbol can be used in front of an item name string as a shortcut to the `displayState` from the `items` dictionary with a fallback to the raw state:
-
-```yaml
-footer: =@'Switch1'
-```
-
-is the same as
-
-```yaml
-footer: =items['Switch1'].displayState || items['Switch1'].state
-```
-
-Similarly, `@@` can be used as a shortcut for just the item state.
-
-Expressions are particularly useful in cases where one wants to combine the states of more than one Item, or use the state of more than one Item in a single widget element.
-For example, the icon of an Item can be based on the state of a different Item.
-
-### Examples
-
-```js
-=(items.Color1.state.split(',')[2] !== '0') ? 'On ' + '(' + items.Color1.state.split(',')[2] + '%)' : 'Off'
-```
-
-Translates the third part of the HSB state (brightness) of the Color1 item to On or Off.
-
-```js
-icon: =(items[props.item].state === 'ON') ? 'f7:lightbulb_fill' : 'f7:lightbulb'
-```
-
-Use a filled icon of a lightbulb but only if the state of the items passed in the prop `item` is ON.
-
-```js
-= (items.xxx.state === '0') ? 'Off' : (items.xxx.state === '1') ? 'Heat' : (items.xxx.state === '11') ? 'Economy Heat' : (items.xxx.state === '15') ? 'Full Power': (items.xxx.state === '31') ? 'Manual' : 'Not Set'
-```
-
-Stacked ternary statements to translate a value to a description.
-
-```js
-=dayjs(items.DateItem.state).subtract(1, 'week').fromNow()
-```
-
-Substracts one week from the state of `DateTime` and return a relative time representation in the current locale ("3 weeks ago").
-
-### Debugging Expressions
-
-Expressions can be tested in the Widgets Expression Tester found in the Developer Sidebar
-(<kbd>Shift+Alt+D</kbd>).
+Please refer to [widget expressions](widget-expressions-variables.html) for more information.
 
 ## Actions
 
@@ -310,109 +248,3 @@ slots:
 </details>
 
 :::
-
-## Variables
-
-Variables are a way to allow more complex scenarios in pages & personal widget development.
-
-Variables can be used using several methods:
-
-- the `variable` config parameter of an `oh-gauge` (read-only),
-  `oh-input`, `oh-knob`, `oh-slider`, `oh-stepper`, `oh-toggle`
-  will accept a variable name and control it instead of
-  sending commands to items if set.
-  The "item" parameter can
-  still be set to set the widget to the item's state, when
-  the variable has no value.
-- the `vars`object available in expressions (for example
-  `=vars.var1` will evaluate to the value of the variable `var1`).
-- the `variable` action allows to set a fixed or computed
-  (using an expression) value to a variable.
-
-`oh-button` & `oh-link` have a special parameter `clearVariable`
-which allows to unset a version when clicked, after performing
-the action.
-This is useful when "validating" a variable e.g.
-send a command to an item with the variable value then reset it.
-
-## Techniques for Styling Widgets
-
-### Predefined CSS Classes
-
-As seen before, you can use CSS classes in the `class` property (as an array) or set CSS properties in the `style` property (as a dictionary) on your components.
-
-You cannot define new CSS classes, but you can use classes from Framework7, for instance:
-
-- [Typography](https://v5.framework7.io/docs/typography.html)
-- [Color Themes](https://v5.framework7.io/docs/color-themes.html#apply-color-themes)
-- [Hairlines](https://v5.framework7.io/docs/hairlines.html)
-- [Elevation](https://v5.framework7.io/docs/elevation.html)
-
-### CSS Variables
-
-Another interesting technique is to override the many [CSS Variables](https://v5.framework7.io/docs/css-variables.html) defined by the framework to suit your particular component's needs.
-The override will be applied to all descendants in the HTML DOM tree, in case of the Framework7 variables the underlying components which use them will use the new value.
-It is recommended to use Framework7 CSS variables in your components too, when appropriate, so that way you'll be sure the properties change according to the current theme and dark mode setting.
-
-To redefine a CSS variable for the component and its descendants, use this syntax:
-
-```yaml
-style:
-  --f7-button-border-color: rgb(255, 0, 0)
-```
-
-To reuse a CSS variable, use:
-
-```yaml
-  border-color: var(--f7-button-border-color)
-```
-
-You can even define your own CSS variables and use them in your components:
-
-```yaml
-config:
-  style:
-    --my-color: =props.color
-slots:
-  ...
-     ...
-        ...
-           config:
-             style:
-               background-color: var(--my-color)
-```
-
-### Applying CSS Properties Directly
-
-Applying CSS properties like `border-color` directly on components is sometimes enough; but contrary to CSS variables like `--f7-button-border-color` which will be inherited to descendants in the tree, either by your own components or by f7 components (or their OH derivatives) that make use of these variables, they will only work on the element where you put the style configuration.
-
-There are hundreds of [CSS properties](https://www.w3schools.com/cssref/) you can use to design your widgets.
-Use the resources at [W3Schools](https://www.w3schools.com/css/default.asp) or the [CSS-Tricks Properties Almanac](https://css-tricks.com/almanac/properties/) to learn more about CSS properties and techniques - these resources will provide code in HTML and classes definitions but you can most of the time adapt them for usage in components' YAML definitions.
-
-While the Layout components (`oh-block`, `oh-grid-row`, `oh-grid-col`) can help you with the placement of your widgets, to lay out sub-components _within_ a widget, you shouldn't use them because they include design mode controls that you don't need.
-While can use their `f7-block`, `f7-row` and `f7-col` equivalents instead, in many cases this is still "overkill": consider applying directly the Flexbox or Grid properties to the components.
-
-These resources will help you with Flexbox and Grid:
-
-- [A Complete Guide to Flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
-- [justify-content "Play it"](https://www.w3schools.com/cssref/playit.asp?filename=playcss_justify-content&preval=flex-start) and others found in the reference
-- [A Complete Guide to Grid](https://css-tricks.com/snippets/css/complete-guide-grid/)
-- [Grid Tutorial on W3Schools](https://www.w3schools.com/css/css_grid.asp)
-
-### Dynamic Styling & Positioning using CSS `calc()`
-
-You can dynamically style and position elements by calculating their CSS properties with the `calc()` function.
-The `calc()` function is able to perform math (`+`, `-`, `*` & `/`) on multiple CSS values, which can even have different units.
-
-For example, to set the height of a component to the current page's maximum content height (without scrolling), use the following `calc()` statement:
-
-```css
-calc(96vh - var(--f7-navbar-height) - var(--f7-toolbar-height))
-```
-
-This subtracts the height of the navbar and the toolbar, which are stored in CSS vars, from 96% of the viewport's height.
-
-These resources will help you with `calc()`:
-
-- [mdn web docs_: calc()](https://developer.mozilla.org/en-US/docs/Web/CSS/calc)
-- [CSS-Tricks: A Complete Guide to calc() in CSS](https://css-tricks.com/a-complete-guide-to-calc-in-css/)

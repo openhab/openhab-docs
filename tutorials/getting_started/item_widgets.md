@@ -16,7 +16,7 @@ One can also set the "Default Stand Alone Widget" and "Default Cell Widget" to c
 Many portions of a widget can be configured to change dynamically based on the states of Items.
 This can be a powerful way to combine multiple Items into one widget (e.g. an oh-label widget showing the current state of a garage door that sends a command to a Switch Item to trigger the garage door opener when the widget is clicked).
 Common things one might use an expression for are to change an icon or color based on the state of an Item, to hide a widget entirely if an Item isn't in a given state, or to change the colors of the widget elements.
-For full details on expressions see the [Expressions docs]({{base}}/ui/building-pages.html#dynamically-configuring-components-with-expressions).
+For full details on expressions see the [Expressions docs]({{base}}/ui/widget-expressions-variables.html).
 
 Note that when working with Units of Masurement, the state of the Item needs to be parsed into a number for comparisons.
 For example -
