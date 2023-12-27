@@ -9,7 +9,7 @@ Since openHAB 3.0, the so called "Main UI" is the main web user interface of ope
 Main UI allows the administrator (you) to setup and configure openHAB, and provides many types of pages to visualize data and control Items.
 
 This page aims at providing an overview over Main UI's "special" features, which means it does not try to document Main UI in general or provide a comprehensive overview over all its many capabilities and configuration pages.
-If you are new to openHAB, please refer to the [Getting Started guide]({{base}}/docs/tutorial/), which is introducing you to Main UI by using it to setup openHAB.
+If you are new to openHAB, please refer to the [Getting Started guide]({{base}}/tutorial/), which is introducing you to Main UI by using it to setup openHAB.
 
 [[toc]]
 
@@ -71,7 +71,7 @@ Please note that due to limitations in Safari (and possibly Chrome as well), a u
 This means, that after opening Main UI, the first audio that should be played on the web audio sink is only player after the user interacts with Main UI in any way (i.e. touching the screen is enough).
 For subsequent audio playback, that is not required anymore and the audio is played immediately.
 
-For more information about audio sinks, please refer to the [multimedia configuration docs]({{base}}/docs/configuration/multimedia.html#audio).
+For more information about audio sinks, please refer to the [multimedia configuration docs]({{base}}/configuration/multimedia.html#audio).
 
 ## UI Command Item
 
@@ -88,7 +88,7 @@ Currently, the supported commands are:
 - `navigate:$path`:
   Navigate to a given `$path`, e.g. `navigate:/locations` to navigate to the "Locations" tab of the home page or `navigate:/page/my_custom_page` to navigate to a page with the ID `my_custom_page`.
 - `popup:$target`, `popover:$target` and `sheet:$target`:
-  Open a `$target`, which can be a page (`$target` is `page:` + a page ID), a custom widget (`$target` is `widget:` + widget ID) or any [`oh-` component]({{base}}/docs/ui/components/) (`$target` is the component name), in a popup, popover or sheet.
+  Open a `$target`, which can be a page (`$target` is `page:` + a page ID), a custom widget (`$target` is `widget:` + widget ID) or any [`oh-` component]({{base}}/ui/components/) (`$target` is the component name), in a popup, popover or sheet.
   For example, to open `oh-clock-card` inside a popup, send `popup:oh-clock-card` to the UI command Item.
 - `notification:$text:$title:$subtitle:$titleRight:$closeTimeout`:
   Display a notification inside the UI:
