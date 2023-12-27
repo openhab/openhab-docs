@@ -11,11 +11,15 @@ The framework supports some base [functions](https://openhab.org/javadoc/latest/
 
 ### Actions
 
+You can set and get the volume in DSL rules by using these functions:
+
 - `setMasterVolume(float volume)` : Sets the volume of the host machine (volume in range 0-1)
 - `setMasterVolume(PercentType percent)` : Sets the volume of the host machine
 - `increaseMasterVolume(float percent)` : Increases the volume by the given percent
 - `decreaseMasterVolume(float percent)` : Decreases the volume by the given percent
 - `float getMasterVolume()` : Returns the current volume as a float between 0 and 1
+
+Please refer to the documentation of the [Automation add-ons](/addons/#automation) on how to use these actions from the respective language, e.g. JavaScript or JRuby.
 
 ## Audio Capture
 
@@ -55,9 +59,15 @@ The distribution comes with these options built-in:
 | `enhancedjavasound` | System Speaker (with mp3 support) | This uses the JRE sound drivers plus an additional 3rd party library, which adds support for mp3 files.                                                                                                                                                                                                                                                      |
 | `webaudio`          | Web Audio                         | Convenient, if sounds should not be played on the server, but on the client: This sink sends the audio stream through HTTP to web clients, which then cause it to be played back by the browser. Obviously, the browser needs to be opened and have a compatible openHAB UI running. Currently, this feature is supported by Main UI, Basic UI and HABPanel. |
 
-Please refer to the [Main UI: Web Audio Sink docs]({{base}}/ui/mainui.html#web-audio-sink) for setting up web audio in Main UI.
+Please refer to the [Main UI docs]({{base}}/ui/mainui.html#web-audio-sink) for setting up web audio in Main UI.
 
 Additionally, certain bindings register their supported devices as audio sinks, e.g. Sonos speakers.
+
+### Default Audio Sink
+
+You can configure a default audio sink, which will be used if no audio sink is provided in audio and voice actions.
+
+You can define the default audio sink either by textual configuration in `$OPENHAB_CONF/services/runtime.cfg` or in the UI by visitting the **Settings** page and opening **System Settings** -> **Audio**.
 
 ### Console commands
 
@@ -68,8 +78,6 @@ openhab> openhab:audio sinks
 * System Speaker (enhancedjavasound)
   Web Audio (webaudio)
 ```
-
-You can define the default audio sink either by textual configuration in `$OPENHAB_CONF/services/runtime.cfg` or in the UI in `Settings->Audio`.
 
 In order to play a sound, you can use the following commands on the console:
 
@@ -89,7 +97,7 @@ The command to play a file accepts an optional last parameter to specify the vol
 
 ### Actions
 
-Alternatively the [`playSound()`](https://www.openhab.org/javadoc/latest/org/openhab/core/model/script/actions/audio#playSound(java.lang.String)) or [`playStream()`](https://www.openhab.org/javadoc/latest/org/openhab/core/model/script/actions/audio#playStream(java.lang.String)) functions can be used in code-based rules:
+Alternatively the [`playSound()`](https://www.openhab.org/javadoc/latest/org/openhab/core/model/script/actions/audio#playSound(java.lang.String)) or [`playStream()`](https://www.openhab.org/javadoc/latest/org/openhab/core/model/script/actions/audio#playStream(java.lang.String)) functions can be used in DSL rules:
 
 - `playSound(String filename)` : plays a sound from the sounds folder to the default sink
 - `playSound(String filename, PercentType volume)` : plays a sound with the given volume from the sounds folder to the default sink
@@ -101,8 +109,12 @@ Alternatively the [`playSound()`](https://www.openhab.org/javadoc/latest/org/ope
 
 If no audio sink is provided, the default audio sink will be used.
 
+Please refer to the documentation of the [Automation add-ons](/addons/#automation) on how to use these actions from the respective language, e.g. JavaScript or JRuby.
+
 UI-based rules support audio actions as well.
-Just create or edit a rule, add a new action, select "Audio & Voice" and the UI will then guide you trough the setup.
+Just create or edit a rule, add a new action, select "Audio & Voice" and the UI will then guide you trough the setup:
+
+![](images/rule-play-audio.png)
 
 Visit the [Blockly docs]({{base}}/configuration/blockly/rules-blockly-voice-and-multimedia.html) to learn how to use audio actions from Blockly.
 
@@ -118,11 +130,17 @@ playStream("example.com")
 playStream("sonos:PLAY5:kitchen", "example.com")
 ```
 
+You will find more examples in the documentation of the [Automation add-ons](/addons/#automation) and the [Blockly docs]({{base}}/configuration/blockly/rules-blockly-voice-and-multimedia.html).
+
 ## Voice
 
 ### Text-to-Speech
 
 In order to use text-to-speech, you need to install at least one [TTS service](/addons/#voice).
+
+#### Default TTS Service & Voice
+
+You can define a default TTS service and a default voice to use either by textual configuration in `$OPENHAB_CONF/services/runtime.cfg` or in the UI by visitting the **Settings** page and opening **System Settings** -> **Voice**.
 
 #### Console Commands
 
@@ -156,8 +174,6 @@ openhab> openhab:voice voices
   VoiceRSS - vietnamien (Vietnam) - default (voicerss:viVN)
 ```
 
-You can define a default TTS service and a default voice to use either by textual configuration in `$OPENHAB_CONF/services/runtime.cfg` or in the UI in `Settings->Voice`.
-
 In order to say a text, you can enter such a command on the console (The default voice and default audio sink will be used):
 
 ```text
@@ -166,7 +182,7 @@ openhab> openhab:voice say Hello world!
 
 #### Actions
 
-Alternatively you can execute such commands within code-based rules by using the [`say()`](https://www.openhab.org/javadoc/latest/org/openhab/core/model/script/actions/voice#say(java.lang.Object)) function:
+Alternatively you can execute such commands within DSL rules by using the [`say()`](https://www.openhab.org/javadoc/latest/org/openhab/core/model/script/actions/voice#say(java.lang.Object)) function:
 
 - `say(Object text)` : says a given text with the default voice
 - `say(Object text, PercentType volume)` : says a given text with the default voice and the given volume
@@ -178,8 +194,11 @@ Alternatively you can execute such commands within code-based rules by using the
 You can select a particular voice (second parameter) and a particular audio sink (third parameter).
 If no voice or no audio sink is provided, the default voice and default audio sink will be used.
 
+Please refer to the documentation of the [Automation add-ons](/addons/#automation) on how to use these actions from the respective language, e.g. JavaScript or JRuby.
+
 UI-based rules support voice actions as well.
 Just create or edit a rule, add a new action, select "Audio & Voice" and the UI will then guide you trough the setup.
+The presented dialog will look similar to the one shown [above](#actions-2).
 
 Visit the [Blockly docs]({{base}}/configuration/blockly/rules-blockly-voice-and-multimedia.html) to learn how to use voice actions from Blockly.
 
@@ -193,6 +212,8 @@ say("Hello world!", "voicerss:enGB", new PercentType(25))
 say("Hello world!", "voicerss:enUS", "sonos:PLAY5:kitchen")
 say("Hello world!", "voicerss:enUS", "sonos:PLAY5:kitchen", new PercentType(25))
 ```
+
+You will find more examples in the documentation of the [Automation add-ons](/addons/#automation) and the [Blockly docs]({{base}}/configuration/blockly/rules-blockly-voice-and-multimedia.html).
 
 ### Speech-to-Text
 

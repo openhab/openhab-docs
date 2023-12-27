@@ -62,7 +62,7 @@ The developer sidebar search ignores case (so it doesn't matter whether you sear
 
 ## Web Audio Sink
 
-Main UI implements a web audio sink, which means the openHAB server can play audio through on a client device through the browser.
+Main UI implements a web audio sink which allows the openHAB server to play audio through the web browser.
 
 To enable web audio sink support for a client, open the **Help & About** page from the menu and turn on the **Enable Web Audio sink support** option.
 As it is setting specific to your browser environment, web audio support has to be enabled for every client where it should be used.
@@ -76,14 +76,14 @@ When you play a sound on web audio, it will be played on all devices where web a
 
 Web audio sinks can be used for example on wall-mounted tablets to make announcements using a [text-to-speech (TTS) engine]({{base}}/configuration/multimedia.html#text-to-speech) and play notification or alarm sounds.
 
-For more information about audio sinks, please refer to the [multimedia configuration docs]({{base}}/configuration/multimedia.html#audio-playback).
+For more information about audio sinks as well as audio and voice actions, please refer to the [multimedia configuration docs]({{base}}/configuration/multimedia.html), where you will also find examples including UI-based rules and Blockly.
 
 ## UI Command Item
 
 Main UI can be controlled from the openHAB server by setting up a so-called UI command Item.
 
 Similarly to web audio support, this is a setting specific to your local browser environment, so you have to define the UI command Item for each client, which also allows you to different UI command Items for different clients.
-To setup an Item as the UI command Item on your device, open the **Help & About** page from the menu and select an Item for **Listen for UI command to**.
+To setup an Item as the UI command Item on your device, first create a particular Item of type `String`, then open the **Help & About** page from the menu and select an Item for the **Listen for UI command to** option.
 
 The command Item has to be a `String` Item.
 The UI is listening for commands to that Item, and if an Item command is a valid command string, the UI executes the given command.
@@ -92,6 +92,7 @@ Currently, the supported commands are:
 
 - `navigate:$path`:
   Navigate to a given `$path`, e.g. `navigate:/locations` to navigate to the **Locations** tab of the home page or `navigate:/page/my_custom_page` to navigate to a page with the ID `my_custom_page`.
+  For example, you can use this to open a video camera page of the door automatically when the door bell is rang.
 - `popup:$target`, `popover:$target` and `sheet:$target`:
   Open a `$target`, which can be a page (`$target` is `page:` + a page ID), a custom widget (`$target` is `widget:` + widget ID) or any [`oh-` component]({{base}}/ui/components/) (`$target` is the component name), in a popup, popover or sheet.
   
@@ -100,12 +101,13 @@ Currently, the supported commands are:
   Display a notification inside the UI:
   The `$text` parameter is mandatory, all other parameters are optional.
   `$closeTimeout` is in milliseconds and defaults 5000, which means by default a notification will be closed after 5 seconds.
+  To leave out a parameter, leave a colon space empty, e.g. `notification:$text:$title:::$closeTimeout`.
   
   For example, send `notification:This is the text.:This is the title.:This is the subtitle.:This is the right title.` to the UI command Item to display the following notification:
   <p align="center"><img style="max-width: 40%;" src="images/notification.png"/></p>
 - `close`:
   Close all popups, popovers and sheets.
 - `back`:
-  Naviate back.
+  Navigate back.
 - `reload`:
   Reload the current page.
