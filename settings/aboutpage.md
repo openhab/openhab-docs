@@ -75,60 +75,8 @@ The first image depicts the normal white setting (off), the second image shows i
 
 - **Disable card expansion animations**: Disables the animations when expanding a widget card.
 - **Disable page transition animations**: Disables the transitions when switching from one page to the other.
-
-### Enable Web Audio sink support
-
-- This setting is also part of the miscellaneous settings.
-- The intent of that option is to allow sending audio to that device, e.g. if that device is a tablet that is hanging on the wall in a room and a specific audio should be sent to that device for notification purposes.
-- To activate audio output of that particular device, switch on this option.
-In case you want to activate audio on multiple devices, each device needs to be activated by opening the about page on the device.
-Technically, this information (and all the other miscellaneous settings) are stored in the local storage of the browser.
-- For me information [see here](https://github.com/openhab/openhab-webui/pull/1422)
-
-To test if it works play some static content that comes with openHAB in the /sounds dir using an openHAB console command.
-Use [openHABs console](docs/administration/console.html#using-the-console) or just run the following from the linux shell:
-
-> openhab-cli console
-
-and then enter the following command:
-
-```text
-openhab> audio play webaudio barking.mp3
-```
-
-If you have a dog that gets triggered by barking you may opt for playing doorbell.mp3 instead.
-If you play doorbell.mp3 your dog will then probably play its own barking audio sound. 😉
-Note that most browsers block web pages from playing audio/video automatically nowadays (though some browsers have a setting to activate automatic play)
-
-Here are some useful actions available to rules in which you can specify webaudio as sink, see:
-
-- [playSound](/docs/configuration/multimedia.html#actions-2)
-
-```text
-playSound("webaudio", "barking.mp3")
-```
-
-- [say](/docs/configuration/multimedia.html#actions-3)
-
-```text
-say("Hello world!", "voicerss:enUS", "webaudio")
-```
-
-You can also configure webaudio as sink when creating rules in the UI:
-
-![play-rule.png](images/play-rule.png)
-
-or using it in a blockly rule:
-
-![webaudio-blockly.png](images/webaudio-blockly.png)
-
-It is important to understand that you cannot address one particular device.
-When you play a sound on webaudio, it will be played on each device where webaudio is activated.
-
-If you really like webaudio, you can also make it the default sink in the "Audio" settings - see [Settings->Audio](/docs/settings/services_system.html#Audio).
-Then you can omit the webaudio sink ID from commands/actions.
-
-![settings-audio.png](images/settings-audio.png)
+- **Enable Web Audio sink support**: Please refer to the [Web Audio Sink docs]({{base}}/ui/mainui.html#web-audio-sink).
+- **Listen for UI commands to**: Please refer to the [UI Command Item docs]({{base}}/ui/mainui.html#ui-command-item).
 
 ## Reload
 

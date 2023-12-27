@@ -87,7 +87,7 @@ The command to play a file accepts an optional last parameter to specify the vol
 
 ### Actions
 
-Alternatively the [`playSound()`](https://www.openhab.org/javadoc/latest/org/openhab/core/model/script/actions/audio#playSound(java.lang.String)) or [`playStream()`](https://www.openhab.org/javadoc/latest/org/openhab/core/model/script/actions/audio#playStream(java.lang.String)) functions can be used in DSL rules:
+Alternatively the [`playSound()`](https://www.openhab.org/javadoc/latest/org/openhab/core/model/script/actions/audio#playSound(java.lang.String)) or [`playStream()`](https://www.openhab.org/javadoc/latest/org/openhab/core/model/script/actions/audio#playStream(java.lang.String)) functions can be used in code-based rules:
 
 - `playSound(String filename)` : plays a sound from the sounds folder to the default sink
 - `playSound(String filename, PercentType volume)` : plays a sound with the given volume from the sounds folder to the default sink
@@ -96,6 +96,13 @@ Alternatively the [`playSound()`](https://www.openhab.org/javadoc/latest/org/ope
 
 - `playStream(String url)` : plays an audio stream from an url to the default sink (set url to `null` if streaming should be stopped)
 - `playStream(String sink, String url)` : plays an audio stream from an url to the given sink(s) (set url to `null` if streaming should be stopped)
+
+If no audio sink is provided, the default audio sink will be used.
+
+UI-based rules support audio actions as well.
+Just create or edit a rule, add a new action, select "Audio & Voice" and the UI will then guide you trough the setup.
+
+Visit the [Blockly docs]({{base}}/configuration/blockly/rules-blockly-voice-and-multimedia.html) to learn how to use audio actions from Blockly.
 
 #### Examples
 
@@ -157,7 +164,7 @@ openhab> openhab:voice say Hello world!
 
 #### Actions
 
-Alternatively you can execute such commands within DSL rules by using the [`say()`](https://www.openhab.org/javadoc/latest/org/openhab/core/model/script/actions/voice#say(java.lang.Object)) function:
+Alternatively you can execute such commands within code-based rules by using the [`say()`](https://www.openhab.org/javadoc/latest/org/openhab/core/model/script/actions/voice#say(java.lang.Object)) function:
 
 - `say(Object text)` : says a given text with the default voice
 - `say(Object text, PercentType volume)` : says a given text with the default voice and the given volume
@@ -168,6 +175,11 @@ Alternatively you can execute such commands within DSL rules by using the [`say(
 
 You can select a particular voice (second parameter) and a particular audio sink (third parameter).
 If no voice or no audio sink is provided, the default voice and default audio sink will be used.
+
+UI-based rules support voice actions as well.
+Just create or edit a rule, add a new action, select "Audio & Voice" and the UI will then guide you trough the setup.
+
+Visit the [Blockly docs]({{base}}/configuration/blockly/rules-blockly-voice-and-multimedia.html) to learn how to use voice actions from Blockly.
 
 ##### Examples
 

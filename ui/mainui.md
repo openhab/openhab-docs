@@ -20,7 +20,7 @@ The developer sidebar is split into a "tools" section with several useful tools 
 
 If your device's screen is wide enough (it has to be at least 1280 pixels wide), you can open the developer sidepanel by:
 
-- Opening the "Developer Tools" page from the menu and enabling the developer sidebar.
+- Opening the **Developer Tools** page from the menu and enabling the developer sidebar.
 - Clicking on the help icon displayed in the upper right corner of most pages.
 - Pressing the key combination <kbd>Alt</kbd><kbd>Shift</kbd><kbd>D</kbd> on your keyboard.
 
@@ -64,21 +64,26 @@ The developer sidebar search ignores case (so it doesn't matter whether you sear
 
 Main UI implements a web audio sink, which means the openHAB server can play audio through on a client device through the browser.
 
-To enable web audio sink support for a client, open the "Help & About" page from the menu and turn on the "Enable Web Audio sink support" option.
+To enable web audio sink support for a client, open the **Help & About** page from the menu and turn on the **Enable Web Audio sink support** option.
 As it is setting specific to your browser environment, web audio support has to be enabled for every client where it should be used.
 
 Please note that due to limitations in Safari (and possibly Chrome as well), a user interaction is required after the first audio stream has been sent to actually play it.
 This means, that after opening Main UI, the first audio that should be played on the web audio sink is only player after the user interacts with Main UI in any way (i.e. touching the screen is enough).
 For subsequent audio playback, that is not required anymore and the audio is played immediately.
 
-For more information about audio sinks, please refer to the [multimedia configuration docs]({{base}}/configuration/multimedia.html#audio).
+Please also note that you cannot address a particular web audio-enabled device.
+When you play a sound on web audio, it will be played on all devices where web audio is enabled.
+
+Web audio sinks can be used for example on wall-mounted tablets to make announcements using a [text-to-speech (TTS) engine]({{base}}/configuration/multimedia.html#text-to-speech) and play notification or alarm sounds.
+
+For more information about audio sinks, please refer to the [multimedia configuration docs]({{base}}/configuration/multimedia.html#audio-playback).
 
 ## UI Command Item
 
 Main UI can be controlled from the openHAB server by setting up a so-called UI command Item.
 
 Similarly to web audio support, this is a setting specific to your local browser environment, so you have to define the UI command Item for each client, which also allows you to different UI command Items for different clients.
-To setup an Item as the UI command Item on your device, open the "Help & About" page from the menu and select an Item for "Listen for UI command to".
+To setup an Item as the UI command Item on your device, open the **Help & About** page from the menu and select an Item for **Listen for UI command to**.
 
 The command Item has to be a `String` Item.
 The UI is listening for commands to that Item, and if an Item command is a valid command string, the UI executes the given command.
@@ -86,7 +91,7 @@ The UI is listening for commands to that Item, and if an Item command is a valid
 Currently, the supported commands are:
 
 - `navigate:$path`:
-  Navigate to a given `$path`, e.g. `navigate:/locations` to navigate to the "Locations" tab of the home page or `navigate:/page/my_custom_page` to navigate to a page with the ID `my_custom_page`.
+  Navigate to a given `$path`, e.g. `navigate:/locations` to navigate to the **Locations** tab of the home page or `navigate:/page/my_custom_page` to navigate to a page with the ID `my_custom_page`.
 - `popup:$target`, `popover:$target` and `sheet:$target`:
   Open a `$target`, which can be a page (`$target` is `page:` + a page ID), a custom widget (`$target` is `widget:` + widget ID) or any [`oh-` component]({{base}}/ui/components/) (`$target` is the component name), in a popup, popover or sheet.
   
