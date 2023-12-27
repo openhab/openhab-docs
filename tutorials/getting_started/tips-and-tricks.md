@@ -44,7 +44,7 @@ Imagine you need to find all usages of an Item in rules or pages.
 You could open all your rules and pages to check them, or just use the developer sidebar search.
 Enter your Item name, and you will see in which rules, scenes, scripts and pages that Item is used.
 
-For more information about the search and which entities are searchable, please refer to the [Developer Sidebar docs]({{base}}/docs/ui/mainui.html).
+For more information about the search and which entities are searchable, please refer to the [Developer Sidebar docs]({{base}}/ui/mainui.html#developer-sidebar-search).
 
 ### Pinned Objects
 
