@@ -271,7 +271,7 @@ EXTRA_JAVA_OPTS="-Dorg.jupnp.network.useInterfaces=eno1"
 To get full advantage of a docker/container setup it is recommended to learn about [docker compose](https://docs.docker.com/compose/).
 :::
 
-**Example using compose**
+Example using compose
 
 Identify the network interface on the host machine:
 
@@ -285,6 +285,7 @@ br-7406c5aa57f0  UP             172.25.0.1/16
 ```
 
 .env
+
 ```ini
 COMPOSE_PROJECT_NAME=openhab
 
@@ -295,7 +296,9 @@ OPENHAB_USERDATA=/opt/openhab/userdata
 
 EXTRA_JAVA_OPTS="-Duser.timezone=Europe/Berlin -Dorg.jupnp.network.useInterfaces=eno1"
 ```
+
 docker-compose.yaml:
+
 ```yaml
 version: '3.9'
 services:
@@ -332,10 +335,10 @@ services:
       - CRYPTO_POLICY=unlimited
       - EXTRA_JAVA_OPTS=${EXTRA_JAVA_OPTS} 
 ```
+
 :::
 
 ::::
-
 
 ### USB sticks
 
