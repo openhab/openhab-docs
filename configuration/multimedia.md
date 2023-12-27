@@ -114,7 +114,7 @@ Please refer to the documentation of the [Automation add-ons](/addons/#automatio
 UI-based rules support audio actions as well.
 Just create or edit a rule, add a new action, select "Audio & Voice" and the UI will then guide you trough the setup:
 
-![](images/rule-play-audio.png)
+![Audio action setup in the UI](images/rule-play-audio.png)
 
 Visit the [Blockly docs]({{base}}/configuration/blockly/rules-blockly-voice-and-multimedia.html) to learn how to use audio actions from Blockly.
 
