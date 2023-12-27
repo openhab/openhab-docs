@@ -58,7 +58,7 @@ There are hundreds of [CSS properties](https://www.w3schools.com/cssref/) you ca
 Use the resources at [W3Schools](https://www.w3schools.com/css/default.asp) or the [CSS-Tricks Properties Almanac](https://css-tricks.com/almanac/properties/) to learn more about CSS properties and techniques - these resources will provide code in HTML and CSS class definitions but you can most of the time adapt them for usage in components' YAML definitions.
 
 While openHAB's layout components (`oh-block`, `oh-grid-row`, `oh-grid-col`) can help you with the placement of your widgets, to layout sub-components _within_ a widget, you shouldn't use them because they include design mode controls that you don't need.
-While you can use their `f7-block`, `f7-row` and `f7-col` equivalents instead, in many cases this is still "overkill":
+Though you can use their `f7-block`, `f7-row` and `f7-col` equivalents instead, in many cases this is still "overkill":
 Consider directly applying the Flexbox or Grid properties to the components.
 
 These resources will help you with Flexbox and Grid:
