@@ -253,6 +253,90 @@ It then performs all the same steps that the upgrade script and which are perfor
 
 ## Troubleshooting
 
+### Universal Plug and Play (UPnP)
+
+Some bindings, like e.g. [SONOS](https://www.openhab.org/addons/bindings/sonos/), depend on the common [UPnP](https://en.wikipedia.org/wiki/Universal_Plug_and_Play) communication infrastructure provided by openHAB. The protocol is based on IP multicast messages, which is limited to a local subnet[^multicastrouting]. In case you have multiple network adapters in your system (which is likely if you use docker) oepnhab should use `network_mode: host`. It is then necessary to inform openHAB what interface/network shall be used for UPnP discovery.
+
+The network interface to be used can be specified via the `EXTRA_JAVA_OPTS` [Environment Variable](#environment-variables):
+
+```bash
+EXTRA_JAVA_OPTS="-Dorg.jupnp.network.useInterfaces=eno1"
+```
+
+:::: tabs
+
+::: tab Linux
+
+::: tip Docker Compose
+To get full advantage of a docker/container setup it is recommended to learn about [docker compose](https://docs.docker.com/compose/).
+:::
+
+**Example using compose**
+
+Identify the network interface on the host machine:
+
+```bash
+> ip --brief address show
+lo               UNKNOWN        127.0.0.1/8 ::1/128 
+eno1             UP             192.168.0.65/24  
+eno1.4@eno1      UP             192.168.6.97/24  
+docker0          DOWN           172.17.0.1/16  
+br-7406c5aa57f0  UP             172.25.0.1/16  
+```
+
+.env
+```ini
+COMPOSE_PROJECT_NAME=openhab
+
+OPENHAB_ADDONS=/opt/openhab/addons
+OPENHAB_CONF=/opt/openhab/conf
+OPENHAB_LOGDIR=/opt/openhab/userdata/logs
+OPENHAB_USERDATA=/opt/openhab/userdata
+
+EXTRA_JAVA_OPTS="-Duser.timezone=Europe/Berlin -Dorg.jupnp.network.useInterfaces=eno1"
+```
+docker-compose.yaml:
+```yaml
+version: '3.9'
+services:
+
+  frontail:     # place frontail configuration here ... 
+  grafana:      # place grafana configuration here ...
+  influxdb:     # place influx configuration here ...
+  zigbee2mqtt:  # place zigbee2mqtt configuration here ..
+  mosquitto:    # place mosquitto configuration here ...
+
+  openhab:
+    depends_on:
+      - frontail
+      - influxdb
+      - grafana
+      - zigbee2mqtt
+    container_name: ${COMPOSE_PROJECT_NAME}-server
+    image: openhab/openhab:4.1.0-debian
+    restart: unless-stopped
+    network_mode: host
+    group_add:
+      - tty
+    volumes:
+      - /etc/localtime:/etc/localtime
+      - /etc/timezone:/etc/timezone
+      - $OPENHAB_CONF/ssh:/openhab/.ssh
+      - $OPENHAB_ADDONS:/openhab/addons
+      - $OPENHAB_CONF:/openhab/conf
+      - $OPENHAB_USERDATA:/openhab/userdata
+    devices:
+      - /dev/serial/by-id/usb-0658_0200-if00:/dev/ttyACM2
+      - /dev/serial/by-id/usb-Prolific_Technology_Inc._USB-Serial_Controller_D-if00-port0:/dev/ttyUSB0
+    environment:
+      - CRYPTO_POLICY=unlimited
+      - EXTRA_JAVA_OPTS=${EXTRA_JAVA_OPTS} 
+```
+:::
+
+::::
+
+
 ### USB sticks
 
 If you want use an USB stick (for example for Z-Wave network), then it will be not available for the dockerized system by default.
@@ -290,3 +374,6 @@ This command changes permissions of the specific device as expected (readable an
 ::: tip Note
 The device path (`/dev/ttyACM0`) or container name (`openhab`) could be different in your system, command can be modified accordingly.
 :::
+
+[^multicastrouting]:
+    IP multicast is always available within the local subnet. Achieving IP multicast service over a wider area requires multicast routing. Many networks, including the Internet, do not support multicast routing. Multicast routing functionality is available in enterprise-grade network equipment but is typically not available until configured by a network administrator.
