@@ -108,7 +108,7 @@ Notes:
 | `mdns`       | Frequently used properties are "name", and "application". But mDNS permits any property name depending on the service concerned.             |
 | `processs`   | "command".                                                                                                                                   |
 | `upnp`       | "deviceType", "manufacturer", "manufacturerURI", "modelName", "modelNumber", "modelDescription", "modelURI", "serialNumber", "friendlyName". |
-| `usb`        | "product", "manufacturer", "vendorId", "productId".                                                                                          |
+| `usb`        | "product", "manufacturer", "chipId", "remote".                                                                                          |
 
 ## Example
 
