@@ -48,6 +48,14 @@
     // .site-name
     //     display none
 
+.page-nav
+    &::before
+        content: attr(data-footnotes)
+        border-top 1px solid #eee
+        padding 1rem
+        font-size 10pt
+        margin-bottom -3rem
+
 .dropdown-wrapper .nav-dropdown .dropdown-item h4
     margin-bottom .2rem
 
