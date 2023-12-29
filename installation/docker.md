@@ -255,7 +255,7 @@ It then performs all the same steps that the upgrade script and which are perfor
 
 ### Universal Plug and Play (UPnP)
 
-Some bindings, like e.g. [SONOS](https://www.openhab.org/addons/bindings/sonos/), depend on the common [UPnP](https://en.wikipedia.org/wiki/Universal_Plug_and_Play) communication infrastructure installed with openHAB[^jupnp]. The protocol is based on IP multicast messages, which is limited to a local subnet[^multicastrouting]. In case you have multiple network adapters in your system (which is the case if you use docker), it is necessary to inform openHAB what interface shall be used for UPnP discovery and communication. If more than one IP address is assigend to the interface, the address to use must be specified as well.
+Some bindings, like e.g. [SONOS](https://www.openhab.org/addons/bindings/sonos/), depend on the common [UPnP](https://en.wikipedia.org/wiki/Universal_Plug_and_Play) communication infrastructure installed with openHAB[^jupnp]. The protocol is based on IP multicast messages, which are limited to a local subnet[^multicastrouting]. In case you have multiple network adapters in your system (which is the case if you use docker), it is necessary to inform openHAB what interface shall be used for UPnP discovery and communication. If more than one IP address is assigend to the interface, the address to use must be specified as well.
 
 This information can be specified via the `EXTRA_JAVA_OPTS` [Environment Variable](#environment-variables):
 
