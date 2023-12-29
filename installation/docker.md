@@ -255,12 +255,12 @@ It then performs all the same steps that the upgrade script and which are perfor
 
 ### Universal Plug and Play (UPnP)
 
-Some bindings, like e.g. [SONOS](https://www.openhab.org/addons/bindings/sonos/), depend on the common [UPnP](https://en.wikipedia.org/wiki/Universal_Plug_and_Play) communication infrastructure provided by openHAB. The protocol is based on IP multicast messages, which is limited to a local subnet[^multicastrouting]. In case you have multiple network adapters in your system (which is likely if you use docker) openHAB should use `network_mode: host`. It is then necessary to inform openHAB what interface/network shall be used for UPnP discovery.
+Some bindings, like e.g. [SONOS](https://www.openhab.org/addons/bindings/sonos/), depend on the common [UPnP](https://en.wikipedia.org/wiki/Universal_Plug_and_Play) communication infrastructure installed with openHAB[^jupnp]. The protocol is based on IP multicast messages, which is limited to a local subnet[^multicastrouting]. In case you have multiple network adapters in your system (which is the case if you use docker), it is necessary to inform openHAB what interface shall be used for UPnP discovery and communication. If more than one IP address is assigend to the interface, the address to use must be specified as well.
 
-The network interface to be used can be specified via the `EXTRA_JAVA_OPTS` [Environment Variable](#environment-variables):
+This information can be specified via the `EXTRA_JAVA_OPTS` [Environment Variable](#environment-variables):
 
 ```bash
-EXTRA_JAVA_OPTS="-Dorg.jupnp.network.useInterfaces=eno1"
+EXTRA_JAVA_OPTS="-Dorg.jupnp.network.useInterfaces=eno1 -Dorg.jupnp.network.useAddresses=192.168.0.65"
 ```
 
 :::: tabs
@@ -292,7 +292,7 @@ OPENHAB_CONF=/opt/openhab/conf
 OPENHAB_LOGDIR=/opt/openhab/userdata/logs
 OPENHAB_USERDATA=/opt/openhab/userdata
 
-EXTRA_JAVA_OPTS="-Duser.timezone=Europe/Berlin -Dorg.jupnp.network.useInterfaces=eno1"
+EXTRA_JAVA_OPTS="-Duser.timezone=Europe/Berlin -Dorg.jupnp.network.useInterfaces=eno1 -Dorg.jupnp.network.useAddresses=192.168.0.65"
 ```
 
 docker-compose.yaml:
@@ -376,3 +376,9 @@ The device path (`/dev/ttyACM0`) or container name (`openhab`) could be differen
 
 [^multicastrouting]:
     IP multicast is always available within the local subnet. Achieving IP multicast service over a wider area requires multicast routing. Many networks, including the Internet, do not support multicast routing. Multicast routing functionality is available in enterprise-grade network equipment but is typically not available until configured by a network administrator.
+[^jupnp]:
+    openHAB is using the [UPnP/DLNA library for Java](https://www.jupnp.org); it defines the relevant parameters in the [NetworkAddressFactory](https://github.com/jupnp/jupnp/blob/4a3ab9dec37cb9be324d02f6dc81ffca74237e1e/bundles/org.jupnp/src/main/java/org/jupnp/transport/spi/NetworkAddressFactory.java#L33) implementation:
+    ```java
+    public static final String SYSTEM_PROPERTY_NET_IFACES = "org.jupnp.network.useInterfaces";
+    public static final String SYSTEM_PROPERTY_NET_ADDRESSES = "org.jupnp.network.useAddresses";
+    ```
