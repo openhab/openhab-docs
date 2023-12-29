@@ -377,8 +377,4 @@ The device path (`/dev/ttyACM0`) or container name (`openhab`) could be differen
 [^multicastrouting]:
     IP multicast is always available within the local subnet. Achieving IP multicast service over a wider area requires multicast routing. Many networks, including the Internet, do not support multicast routing. Multicast routing functionality is available in enterprise-grade network equipment but is typically not available until configured by a network administrator.
 [^jupnp]:
-    openHAB is using the [UPnP/DLNA library for Java](https://www.jupnp.org); it defines the relevant parameters in the [NetworkAddressFactory](https://github.com/jupnp/jupnp/blob/4a3ab9dec37cb9be324d02f6dc81ffca74237e1e/bundles/org.jupnp/src/main/java/org/jupnp/transport/spi/NetworkAddressFactory.java#L33) implementation:
-    ```java
-    public static final String SYSTEM_PROPERTY_NET_IFACES = "org.jupnp.network.useInterfaces";
-    public static final String SYSTEM_PROPERTY_NET_ADDRESSES = "org.jupnp.network.useAddresses";
-    ```
+    openHAB is using the [UPnP/DLNA library for Java](https://www.jupnp.org); it defines the relevant parameters in the [NetworkAddressFactory](https://github.com/jupnp/jupnp/blob/4a3ab9dec37cb9be324d02f6dc81ffca74237e1e/bundles/org.jupnp/src/main/java/org/jupnp/transport/spi/NetworkAddressFactory.java#L33) implementation.
