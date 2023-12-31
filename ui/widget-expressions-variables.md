@@ -145,7 +145,7 @@ The widget expression system can create objects in two different ways:
   ```
 
   In this example, a variable is set to an object with keys `name` and `selected` using JavaScript object expression syntax.
-- YAML object syntax
+- YAML object syntax:
 
   The other way to create objects is to take advantage of the relationship between YAML and JSON and place the key:value pairs as YAML keys under the initial key.
 
