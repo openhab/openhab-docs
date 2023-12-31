@@ -695,7 +695,7 @@ If `item_name` is not provided, the Item name will default to the current Item.
 If an operator is not specified, the operator will default to `==`.
 
 If only a color is specified, that condition is considered as true and that color will be used.
-Providing only a color can be used as a last condition to set a default color that will be used in case any of the other previous conditions is true.
+Providing only a color can be used as a last condition to set a default color that will be used when none of the other previous conditions were true.
 
 The comparison operators for `labelcolor`, `valuecolor` and `iconcolor` are the same as for the visibility parameter.
 
