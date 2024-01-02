@@ -1016,7 +1016,7 @@ This is done by implementing the `getServices` method in your bridge handler:
 ```java
     @Override
     public Collection<Class<? extends ThingHandlerService>> getServices() {
-        return Collections.singleton(YourBindingDiscoveryService.class);
+        return List.of(YourBindingDiscoveryService.class);
     }
 ```
 
