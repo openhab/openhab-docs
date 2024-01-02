@@ -875,7 +875,7 @@ public class HueBridgeDiscoveryParticipant implements UpnpDiscoveryParticipant {
 
     @Override
     public Set<ThingTypeUID> getSupportedThingTypeUIDs() {
-        return Collections.singleton(THING_TYPE_BRIDGE);
+        return Set.of(THING_TYPE_BRIDGE);
     }
 
     @Override
