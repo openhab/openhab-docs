@@ -596,7 +596,7 @@ public class MyThingHandler extends BaseThingHandler {
     ...
     @Override
     public Collection<Class<? extends ThingHandlerService>> getServices() {
-        return Collections.singleton(MQTTActions.class);
+        return List.of(MQTTActions.class);
     }
 }
 ```
@@ -980,7 +980,6 @@ Binding additional services to a handler can be achieved by implementing the ser
 
 It should extend the `AbstractThingHandlerDiscoveryService` (which implements `ThingHandlerService`and `DiscoveryService`) just like a normal service.
 Since a new service is created for each thing, it has to be a `PROTOTYPE` component:
-
 
 ```java
 @Component(scope = ServiceScope.PROTOTYPE, service = YourBindingDiscoveryService.class)
