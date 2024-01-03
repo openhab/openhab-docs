@@ -11,26 +11,26 @@ Please note that this page is only accessible for users with the administrator r
 
 The settings menu includes:
 
-- **Things**<br>
+- [**Things**](things.html)<br>
   Configure and add your IoT devices and services.
-- **Model**<br>
+- [**Model**](model.html)<br>
   Configure the semantically enhanced representation of the user facing aspects of your system.
-- **Items**<br>
+- [**Items**](items.html)<br>
   Basic units of openHAB control and information fully hardware-independent.
-- **Pages**<br>
+- [**Pages**](pages.html)<br>
   Manage custom user interfaces including Main UI pages and sitemaps.
-- **Transformations**<br>
+- [**Transformations**](transformations.html)<br>
   Transformations convert a value or Item state into different value or state.
-- **Persistence**<br>
+- [**Persistence**](persistence.html)<br>
   openHAB can store data over time; this is known as persistence.
   The data may be retrieved at a later time, for example to restore your system after startup, or to prepare graphs for display on a UI.
-- **Rules**<br>
+- [**Rules**](rules.html)<br>
   Rules are essential for home automation:
   Each rule can be triggered, which invokes a script that performs any kinds of tasks, e.g. turn on lights by modifying your items, do mathematical calculations, start timers etc.
-- **Scenes**<br>
+- [**Scenes**](scenes.html)<br>
   Special rules determined to command a some Items to a pre-defined state.
-- **Scripts**<br>
+- [**Scripts**](scrips.html)<br>
   Special rules without triggers and with just one action determined to run code.
-- **Schedule**<br>
+- [**Schedule**](schedule.html)<br>
   Provides an overview of rules with time-based triggers and the `Schedule` tag.
 <!-- END MAINUI SIDEBAR DOC - DO NOT REMOVE -->
