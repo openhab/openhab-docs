@@ -7,29 +7,41 @@ module.exports = [
     ]
   },
   {
-    title: 'Getting Started',
-    collapsable: false,
-    children: [
-      ['tutorial/', 'Tutorial Overview'],
-      'tutorial/first_steps',
-      'tutorial/things_simple',
-      'tutorial/things_intermediate',
-      'tutorial/things_advanced',
-      'tutorial/model',
-      'tutorial/persistence',
-      'tutorial/pages_intro',
-      'tutorial/auto_overview',
-      'tutorial/item_widgets',
-      'tutorial/custom_widgets',
-      'tutorial/rules_introduction',
-      'tutorial/rules_overview',
-      'tutorial/rules_basic',
-      'tutorial/rules_blockly',
-      'tutorial/rules_advanced',
-      'tutorial/rules_scenes',
-      'tutorial/tips-and-tricks'
-    ]
-  },
+      title: 'Getting Started',
+      collapsable: false,
+      children: [
+        ['tutorial/', 'Tutorial Overview'],
+        'tutorial/first_steps',
+        { title: 'Adding Things',
+          children: [
+            'tutorial/things_simple',
+            'tutorial/things_intermediate',
+            'tutorial/things_advanced',
+          ]
+        },
+        'tutorial/model',
+        'tutorial/persistence',
+        { title: 'Pages',
+          children: [
+            'tutorial/pages_intro',
+            'tutorial/auto_overview',
+            'tutorial/item_widgets',
+            'tutorial/custom_widgets'
+          ]
+        },
+        { title: 'Rules',
+          children: [
+            'tutorial/rules_introduction',
+            'tutorial/rules_overview',
+            'tutorial/rules_basic',
+            'tutorial/rules_blockly',
+            'tutorial/rules_advanced',
+            'tutorial/rules_scenes',
+          ]
+        },
+        'tutorial/tips-and-tricks'
+      ]
+    },
   {
     title: 'Installation Guide',
     collapsable: false,
@@ -63,18 +75,38 @@ module.exports = [
     title: 'Configuration Guide',
     collapsable: false,
     children: [
-      ['configuration/', 'Configuration Overview'],
-      'configuration/editors',
-      'configuration/addons',
-      'configuration/things',
-      'configuration/items',
-      'configuration/persistence',
-      'configuration/rules-dsl',
-      ['configuration/blockly/', 'Blockly Rules'],
-      'configuration/transformations',
+      { title: 'Configuration Overview',
+        path: '/docs/configuration/',
+        children: [
+          'configuration/editors',
+          'configuration/addons',
+          'configuration/things',
+          'configuration/items',
+          'configuration/persistence',
+          'configuration/rules-dsl',
+          'configuration/transformations',
+          { title: 'Blockly Rules',
+            path: '/docs/configuration/blockly/',
+            children: [
+              ['configuration/blockly/rules-blockly-items-things', 'Items & Things'],
+              ['configuration/blockly/rules-blockly-timers-and-delays', 'Timers & Delays'],
+              ['configuration/blockly/rules-blockly-voice-and-multimedia', 'Voice & Multimedia'],
+              ['configuration/blockly/rules-blockly-uom', 'Units of Measurements'],
+              ['configuration/blockly/rules-blockly-date-handling', 'Date Handling'],
+              ['configuration/blockly/rules-blockly-ephemeris', 'Ephemeris'],
+              ['configuration/blockly/rules-blockly-notifications', 'Notifications'],
+              ['configuration/blockly/rules-blockly-persistence', 'Persistence'],
+              ['configuration/blockly/rules-blockly-value-storage', 'Value Storage'],
+              ['configuration/blockly/rules-blockly-run-and-process', 'Run & Process'],
+              ['configuration/blockly/rules-blockly-logging', 'Logging'],
+              ['configuration/blockly/rules-blockly-standard-ext', 'Standard Extensions'],
+            ]
+          },
+        ]
+      },
       'configuration/actions',
-      'configuration/iconsets/classic/',
       'configuration/jsr223',
+      'configuration/iconsets/classic/',
       'configuration/services',
       'configuration/multimedia',
       ['configuration/restdocs', 'REST API'],
@@ -83,34 +115,42 @@ module.exports = [
       ['configuration/migration/', 'Migration from openHAB 2']
     ]
   },
-    {
-      title: 'Settings',
-      collapsable: false,
-      children: [
-        ['settings/', 'Settings Overview'],
-        'settings/aboutpage',
-        'settings/configuration',
-        ['settings/automations', 'Automation'],
-        'settings/addons',
-        'settings/services_system',
-        'settings/services_other',
-      ]
-    },
+  {
+    title: 'Main UI',
+    collapsable: false,
+    children: [
+      ['ui/mainui', 'Main UI'],
+      { title: 'Settings',
+        path: '/docs/settings/',
+        children: [
+          'settings/configuration',
+          ['settings/automations', 'Automation'],
+          ['settings/system_settings', 'System'],
+          ['settings/addons', 'Add-ons'],
+        ]
+      },
+      ['ui/addons-store', 'Add-on Store'],
+      ['ui/developer-tools', 'Developer Tools'],
+      ['ui/aboutpage', 'Help & About'],
+    ]
+  },
   {
     title: 'User Interface Guide',
     collapsable: false,
     children: [
       'ui/',
       'ui/sitemaps',
-      'ui/layout-pages',
-      'ui/map-pages',
-      'ui/floorplan-pages',
-      'ui/tabbed-pages',
-      'ui/chart-pages',
-      ['ui/building-pages', 'Building Pages'],
-      'ui/personal-widgets',
-      'ui/widget-expressions-variables',
-      'ui/css-pages-widgets',
+      { title: 'Pages',
+        children: [
+          'ui/layout-pages',
+          'ui/map-pages',
+          'ui/floorplan-pages',
+          'ui/tabbed-pages',
+          'ui/chart-pages',
+          ['ui/building-pages', 'Building Pages'],
+        ]
+      },
+      ['ui/personal-widgets', 'Creating Personal Widgets'],
       ['ui/components/', 'Component Reference'],
       'ui/habpanel/habpanel',
       ['apps/android', 'Android App'],
@@ -145,7 +185,7 @@ module.exports = [
   },
   {
     title: 'Developer Guide',
-    collapsable: false,
+    collapsable: true,
     children: [
       ['developer/', 'Overview & Introduction'],
       'developer/guidelines',
@@ -160,7 +200,7 @@ module.exports = [
   },
   {
     title: 'Developer Appendix',
-    collapsable: false,
+    collapsable: true,
     children: [
       'developer/buildsystem',
       'developer/osgi/osgi',
