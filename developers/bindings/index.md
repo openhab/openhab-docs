@@ -990,7 +990,7 @@ In the class there is a field `protected YourBridgeHandler thingHandler;` which 
 This field is guaranteed to be non-null after the service has been activated.
 
 During service creation, first `activate()` is called, then the `thingHandler` is injected and finally `ìnitialize()` is called.
-The opposite order is used when the service is destroyed, first `dispose()` is called (when the thing handler is still available in the service), then `deactivate`.
+The opposite order is used when the service is destroyed, first `dispose()` is called (when the thing handler is still available in the service), then `deactivate()`.
 `initialize()` and `dispose()` take care of background discovery.
 
 If you need additional code for initializing / disposing the discovery service, you can place them in the `initialize()` / `dispose()` methods.
