@@ -13,7 +13,7 @@ Items can also be used to store information that is just used by your openHAB sy
 On these pages you can manage all the Items you have added to your system:
 
 - **Add new Items**<br>
-  Add individual Items using the <!--F7:blue plus_circle_fill F7--> plus button and, if needed, manually link them to a channel.
+  Add individual Items using the <!--F7:blue plus_circle_fill --> plus button and, if needed, manually link them to a channel.
 - **Configure Items**<br>
   Click on any Item in the list to see its configuration page.
 - **Delete Items**<br>

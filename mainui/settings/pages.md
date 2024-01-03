@@ -13,7 +13,7 @@ All other pages have to be created yourself.
 On these pages you can manage all the Pages you have added to your system:
 
 - **Add new Pages**<br>
-  Add individual Pages of all the different types using the <!--F7:blue plus_circle_fill F7--> plus button.
+  Add individual Pages of all the different types using the <!--F7:blue plus_circle_fill --> plus button.
 - **Configure Pages**<br>
   Click on any Page in the main list to see a graphical editor and a yaml code editor for that page.
 - **Delete Pages**<br>

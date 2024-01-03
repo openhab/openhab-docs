@@ -13,7 +13,7 @@ Community made Widgets can also be added to your system from the **UI** tab of t
 On this page you can manage all the custom widgets you have added to your system:
 
 - **Add new Widgets**<br>
-  Add Widgets using the <!--F7:blue plus_circle_fill F7--> plus button.
+  Add Widgets using the <!--F7:blue plus_circle_fill --> plus button.
 - **Edit Widgets**<br>
   Click on any widget in the list to open a code editor and graphical test space for the widget.
 - **Delete Widgets**<br>

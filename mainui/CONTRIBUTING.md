@@ -26,7 +26,7 @@ Inside these comments, the UI allows the following features:
   Please note that the docs website does NOT render these icons, so you should always describe the icon, e.g.:
 
   ```markdown
-  Add ... using the <!--F7:blue plus_circle_fill F7--> plus button ...
+  Add ... using the <!--F7:blue plus_circle_fill --> plus button ...
   ```
 - Link to UI pages by linking to
   - `.html` files inside this directory:<br>

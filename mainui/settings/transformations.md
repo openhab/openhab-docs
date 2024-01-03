@@ -14,7 +14,7 @@ The different available transformation methods must be individually installed vi
 On this page you can manage all the transformations you have added to your system:
 
 - **Add new Transformations**<br>
-  Add individual transformations using the <!--F7:blue plus_circle_fill F7--> plus button.
+  Add individual transformations using the <!--F7:blue plus_circle_fill --> plus button.
 - **Configure Transformations**<br>
   Click on any transformation in the list to see its configuration page.
 - **Delete Transformations**<br>
