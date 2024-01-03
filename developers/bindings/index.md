@@ -978,7 +978,7 @@ Here the developer only needs to implement four simple methods:
 When the discovery process is dependent on a configured bridge the discovery service must be bound to the bridge handler.
 Binding additional services to a handler can be achieved by implementing the service as a `ThingHandlerService`.
 
-It should extend the `AbstractThingHandlerDiscoveryService` (which implements `ThingHandlerService`and `DiscoveryService`) just like a normal service.
+It should extend the `AbstractThingHandlerDiscoveryService` (which implements `ThingHandlerService` and `DiscoveryService`) just like a normal service.
 Since a new service is created for each thing, it has to be a `PROTOTYPE` component:
 
 ```java
