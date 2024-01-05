@@ -271,15 +271,18 @@ The following devices have been tested by openHAB users with the binding. This l
 | Hue Dimmer Switch                              | Remote RWL021 / RWL022 _[<sup>[2]</sup>](#note2)_            |
 | Hue Motion Sensor                              | Motion and Luminance sensor                                  |
 | IKEA Fyrtur Blinds                             | Roller blinds. See [forum tutorial](https://community.openhab.org/t/ikea-fyrtur-zigbee-w-direct-control-howto/136735) for further information |
-| IKEA Tradfri Bulbs                             |                                                              |
-| IKEA Tradfri Motion Sensor                     |                                                              |
-| IKEA Tradfri Outlet                            |                                                              |
-| IKEA Tradfri Repeater                          |                                                              |
+| IKEA TRÅDFRI Bulbs                             |                                                              |
+| IKEA TRÅDFRI Motion Sensor                     |                                                              |
+| IKEA TRÅDFRI Outlet                            |                                                              |
+| IKEA TRÅDFRI Repeater                          |                                                              |
+| IKEA TRÅDFRI Driver                            | 10W and 30W. Dimmer (1 channel, 0 - 100%)                    |
 | Innr Bulbs                                     | _[<sup>[1]</sup>](#note1)_                                   |
 | Innr SP 120                                    | Smart Plug _[<sup>[1]</sup>](#note1)_                        |
 | LIVARNO Smart Home                             | Lidl Livarno Smart Home Bulbs _[<sup>[4]</sup>](#note4)_     |
 | LEDVANCE/Osram Bulbs                           |                                                              |
 | Lupus Small Zigbee Temperature Sensor 12314    | Lupus-Electronics Temperature and Humidity sensor            |
+| Neuhaus Lighting Group - NLG-TW light          | Dimmer (1 channel, 0 - 100%), Color Temperature (1 channel, 0 (cold) - 100 (warm))|
+| Neuhaus Lighting Group - NLG-RGB-TW light      | Dimmer (1 channel, 0 - 100%), Color Picker (1 channel)|
 | Osram Flex 3P Multicolor                       | Osram Smart+ LED Strip                                       |
 | Osram Motion Sensor                            | Osram Smart+ Motion Sensor _[<sup>[1]</sup>](#note1)_        |
 | Osram Smart+ Plug                              |                                                              |
