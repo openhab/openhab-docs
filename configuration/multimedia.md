@@ -473,7 +473,7 @@ As you can see there are some reserved tokens and characters:
 The Item metadata namespace `voiceSystem` allows following configurations:
 
 - **isTemplate**: The rule defined on this Item metadata will not target itself but similar Items (Items with same tags and semantic).
-- **isSilent**: The interpreter will say nothing in case these rule is executed correctly (a possible use case can be trigger a rule on Item command to answer programmatically)
+- **isSilent**: The interpreter will say nothing in case these rule is executed correctly (a possible use case can be a trigger for a rule on an Item command to answer programmatically)
 - **isForced**: Send the command without checking the current Item state (default behavior).
 
 Note that if the `isTemplate` config is false, the rule target is limited to the Item that registers it. When it's true the Item registering the rule gets excluded of been a valid target.
