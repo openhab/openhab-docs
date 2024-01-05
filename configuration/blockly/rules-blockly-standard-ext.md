@@ -24,6 +24,20 @@ More about conditions can be viewed at ![youtube](../images/blockly/youtube-logo
 The Math section mainly consists of standard Blockly blocks.
 Two new math blocks were added for bitwise operations:
 
+### Quantity Type support
+
+Blockly allows to use Quantity types to do its math operations.
+This means that Quantity States can directly be used as an input for math operation blocks.
+
+Here are some examples for math operations with unit-accompanied values:
+
+![quantity-math-operations](../images/blockly/blockly-math-quantity-operations.png)
+
+Note that there is a special case on min/max if the inputs are not of equal type.
+In this case an error will be shown to the user:
+
+![quantity-math-operations](../images/blockly/blockly-math-quantity-operations-failure.png)
+
 ### Bitwise operators
 
 _Function:_ The block allows to compute the following operations with two quantities:
@@ -48,6 +62,12 @@ _Function:_ The bitwise NOT (~) operator inverts the bits of its operand.
 The standard block has been extended to provide a rounding function with the ability to set the number of decimal places:
 
 ![math-round](../images/blockly/blockly-math-round.png)
+
+### Parse Number
+
+This blocks takes a String floating point number representation and converts it into a Number type block.
+
+![blockly-math-parse-number.png](../images/blockly/blockly-math-parse-number.png)
 
 ## Text
 
@@ -91,6 +111,13 @@ A color of r=255, g=255, b=255 would therefore result into #ffffff preceded by a
 
 Note that typically RGB values are not used within openHAB for color states but instead the Color-Type expects a HSB Type.
 See the special hsb-conversion block below.
+
+- pick a color to return the value as an RGB type
+- chose a random color as RGB type
+- define an RGB color based on red, green and blue.
+- blend two colors with a ratio - this block can be used to dynamically transition from one color to the other by applying the ratio as a computed value in a rule.
+- calculate the HSB value of the RGB value
+- get hue, saturation or brightness from a HSB Type Color Status of an Item
 
 ### Color Picker
 
@@ -143,6 +170,16 @@ _Function:_ This a special openHAB block that converts a hexadecimal color code 
 Example
 
 ![get-hsb-of-example](../images/blockly/blockly-colors-hsbof-example.png)
+
+### Retrieve indidivual HSB values from an Item state
+
+This block allows to retrieve the individual values of an Item HSB color state by returning
+
+- Hue,
+- Saturation,
+- or Brightness
+
+![blockly-colors-hsb.png](../images/blockly/blockly-colors-hsb.png)
 
 ## Lists
 
