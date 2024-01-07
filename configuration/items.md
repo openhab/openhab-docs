@@ -64,9 +64,9 @@ itemtype itemname "labeltext [stateformat]" <iconname> (group1, group2, ...) ["t
 ```java
 Switch Kitchen_Light "Kitchen Light" {channel="mqtt:topic:..." }
 String Bedroom_Sonos_CurrentTitle "Title [%s]" (gBedRoom) {channel="sonos:..."}
-Number Bathroom_WashingMachine_Power "Power [%.0f W]" <energy> (gPower) {channel="homematic:..."}
+Number:Power Bathroom_WashingMachine_Power "Power [%.0f W]" <energy> (gPower) {channel="homematic:..."}
 
-Number Livingroom_Temperature "Temperature [%.1f °C]" <temperature> (gTemperature, gLivingroom) ["TargetTemperature"] {knx="1/0/15+0/0/15"}
+Number:Temperature Livingroom_Temperature "Temperature [%.1f °C]" <temperature> (gTemperature, gLivingroom) ["TargetTemperature"] {knx="1/0/15+0/0/15"}
 ```
 
 The last example above defines an Item with the following fields:
@@ -202,7 +202,7 @@ In textual configurations the label, in quotation marks, appears next to the opt
 The label for the Item in the following example is "Temperature" and the optional state representation is set to be displayed, e.g. as "23.9 °C":
 
 ```java
-Number Livingroom_Temperature "Temperature [%.1f °C]"
+Number:Temperature Livingroom_Temperature "Temperature [%.1f °C]"
 ```
 
 Channel labels can be overwritten by Item definitions and Item labels can be overwritten in [Sitemaps]({{base}}/ui/sitemaps.html#element-types).
@@ -254,10 +254,10 @@ The state presentation is part of the Item label definition and contained inside
 The state presentation for the Item in the following example is "`%.1f °C`":
 
 ```java
-Number Livingroom_Temperature "Temperature [%.1f °C]"
+Number:Temperature Livingroom_Temperature "Temperature [%.1f °C]"
 ```
 
-If no state presentation and no square brackets are given, the Item will not provide a textual presentation of its internal state (i.e. in UIs no state is shown).
+If no state presentation is given, or there is no text between the square brackets, the Item will not provide a textual presentation of its internal state (i.e. in UIs no state is shown).
 This is often meaningful when an Item is presented by a non-textual UI elements like a switch or a diagram.
 
 Formatting of the presentation is done applying [Java formatter class syntax](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Formatter.html#syntax).
@@ -267,7 +267,7 @@ Free text, like a unit, can be added before or after the formatter string.
 A few examples are given below:
 
 ```java
-Number    Livingroom_Temperature   "Temperature [%.1f °C]"             // e.g. "23.5 °C"
+Number:Temperature    Livingroom_Temperature   "Temperature [%.1f °C]"             // e.g. "23.5 °C"
 String    Livingroom_TV_Channel    "Now Playing [%s]"                  // e.g. "Lorem ipsum"
 DateTime  Livingroom_TV_LastUpdate "Last Update [%1$ta %1$tR]"         // e.g. "Sun 15:26"
 Number    Livingroom_Clock_Battery "Battery Charge [%d %%]"            // e.g. "50 %"
@@ -470,7 +470,7 @@ Group Sensors      (House)
 Group Temperatures (Sensors)
 
 // Example Item
-Number Livingroom_Temperature "Temperature [%.1f °C]" (Livingroom, Temperatures)
+Number:Temperature Livingroom_Temperature "Temperature [%.1f °C]" (Livingroom, Temperatures)
 ```
 
 The example shows an Item which stores the temperature of the living room called `Livingroom_Temperature`.
@@ -578,7 +578,7 @@ Additionally, you have the opportunity to interact with a device through its Ite
 The Binding of an Item is given in the last part of the Item definition between curly brackets e.g. `{channel="..."}` in the example below:
 
 ```java
-Number Livingroom_Temperature "Temperature [%.1f °C]" {channel="..."}
+Number:Temperature Livingroom_Temperature "Temperature [%.1f °C]" {channel="..."}
 ```
 
 openHAB introduces the concept of [Things and Channels]({{base}}/concepts/things.html).
