@@ -112,6 +112,8 @@ A color of r=255, g=255, b=255 would therefore result into #ffffff preceded by a
 Note that typically RGB values are not used within openHAB for color states but instead the Color-Type expects a HSB Type.
 See the special hsb-conversion block below.
 
+Blockly supports the following use cases:
+
 - pick a color to return the value as an RGB type
 - chose a random color as RGB type
 - define an RGB color based on red, green and blue.
@@ -173,7 +175,7 @@ Example
 
 ### Retrieve indidivual HSB values from an Item state
 
-This block allows to retrieve the individual values of an Item HSB color state by returning
+This block allows to retrieve the individual values of an Item’s HSB color state by returning
 
 - Hue,
 - Saturation,

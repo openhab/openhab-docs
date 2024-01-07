@@ -96,7 +96,7 @@ Here is a list of possible values that can be retrieved.
 - triggered channel - String
 - triggered event - String
 
-Note on "event available": All except _rule UID_ expect an event context to be available.
+Note on "event available": All values except _rule UID_ expect an event context to be available.
 Thus, to avoid issues, you can validate that with the _event available_ block in case this is not guaranteed in your rule.
 
 The block adds a selection drop down in case a state or command is returned:

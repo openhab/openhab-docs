@@ -164,13 +164,13 @@ Since openHAB 4.1 an optimization was introduced that simplifies the usage:
 
 ![blockly-getItemAttributes](../images/blockly/blockly-getItemAttributes-simple.png)
 
-It allows to attach the item block directly instead of the intermediate getItem-Block.
+It allows to attach the item block directly instead of having to use the intermediate getItem-Block.
 Internally Blockly detects the added type and applies the right code generation.
 
 _Strict block type usage when using Variables_
 
-Due to the fact that Blockly is not able to detect the type of the value that has been assigned to a variable, there is no reliable way to be flexible on block types.
-Therefore, when using variables the to be assigned block combination to a variable that is used together with the getNameOfItem block _must_ be "get item -> item".
+Due to the fact that Blockly is not able to detect the type of the value that has been assigned to a variable, there is no reliable way to allow that input flexibility for variables.
+Therefore, when using variables the set variable to block must be used together with the get item block and must not be used together with the item block.
 See the above examples for right and wrong usage.
 
 **Special handling for Arrays**
