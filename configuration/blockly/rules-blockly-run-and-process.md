@@ -87,6 +87,7 @@ A rule carries contextual information when triggered - this block can retrieve t
 Here is a list of possible values that can be retrieved.
 
 - rule UID - String
+- event available - Boolean
 - event type - String
 - new state of item - String / Number by selection
 - previous state of item - String / Number by selection
@@ -94,6 +95,9 @@ Here is a list of possible values that can be retrieved.
 - received command - String / Number by selection
 - triggered channel - String
 - triggered event - String
+
+Note on "event available": All values except _rule UID_ expect an event context to be available.
+Thus, to avoid issues, you can validate that with the _event available_ block in case this is not guaranteed in your rule.
 
 The block adds a selection drop down in case a state or command is returned:
 
