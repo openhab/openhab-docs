@@ -169,13 +169,13 @@ The following naming style guide is recommended:
 
 Examples:
 
-| Item Name                         | Interpretation (assumed Item type, example value)                                                       |
-| --------------------------------- | ------------------------------------------------------------------------------------------------------- |
-| "`Livingroom_CeilingLight`"       | Living room light (Switch, e.g. ON)                                                                     |
-| "`Livingroom_CeilingLight_Color`" | Living room light color (Color, e.g. warm white)                                                        |
-| "`GF_BR_WashingMachine_Power`"    | Electric power consumed by the washing machine located in the ground floor bathroom (Number, e.g. 100W) |
-| "`Lighting_Scene`"                | Overall lighting scene of the house (String, e.g. Party)                                                |
-| "`Presence_John_Smartphone`"      | An Item indicating if John is home or not, based on smartphone detection (Switch, e.g. Offline)         |
+| Item Name                       | Interpretation (assumed Item type, example value)                                                       |
+| ------------------------------- | ------------------------------------------------------------------------------------------------------- |
+| `Livingroom_CeilingLight`       | Living room light (Switch, e.g. ON)                                                                     |
+| `Livingroom_CeilingLight_Color` | Living room light color (Color, e.g. warm white)                                                        |
+| `GF_BR_WashingMachine_Power`    | Electric power consumed by the washing machine located in the ground floor bathroom (Number, e.g. 100W) |
+| `Lighting_Scene`                | Overall lighting scene of the house (String, e.g. Party)                                                |
+| `Presence_John_Smartphone`      | An Item indicating if John is home or not, based on smartphone detection (Switch, e.g. Offline)         |
 
 [Group](#groups) is a special Item type that may be used to nest or combine Items.
 Users are encouraged to apply the style guide above to group names as well as Item names.
@@ -185,12 +185,12 @@ Two naming schemes are established in the community for Group names:
     Otherwise the word "Group" may be appended for clarity.
 1. Prepend a lowercase "g" to the name (e.g. gBattery)
 
-| Group Name                                | Interpretation                                                        |
-| ----------------------------------------- | --------------------------------------------------------------------- |
-| "`Batteries`" or "`gBattery`"             | Group combining the states of all battery Items                       |
-| "`Maintenance_Group`" or "`gMaintenance`" | Group containing all maintenance-related Items                        |
-| "`Livingroom_Lights`" or "`gLR_Light`"    | Group containing all light Items belonging to the living room         |
-| "`Livingroom`" or "`gLR`"                 | Group for _all_ Items (including lights) belonging to the living room |
+| Group Name                            | Interpretation                                                        |
+| ------------------------------------- | --------------------------------------------------------------------- |
+| `Batteries` or `gBattery`             | Group combining the states of all battery Items                       |
+| `Maintenance_Group` or `gMaintenance` | Group containing all maintenance-related Items                        |
+| `Livingroom_Lights` or `gLR_Light`    | Group containing all light Items belonging to the living room         |
+| `Livingroom` or `gLR`                 | Group for _all_ Items (including lights) belonging to the living room |
 
 ### Label
 
@@ -352,17 +352,16 @@ Switch Kitchen_Light "Kitchen Light" <f7:lightbulb>
 Switch Garage_Light "Garage Light" <if:mdi:lightbulb>
 ```
 
-Here is the list of available icon sources and how they are supported by the major user interfaces.
+Here is the list of available icon sources that are supported by the major user interfaces (Main UI, Basic UI, Android and iOS app).
 
-| Source name          | Source description                    | Main UI    | Basic UI                          | Android app       | iOS app           |
-| -------------------- | ------------------------------------- | ---------- | --------------------------------- | ----------------- | ----------------- |
-| `oh`                | Icons provided via the openHAB server | Supported  | Supported                         | Supported         | Supported         |
-| `material`         | [Material icons](https://fonts.google.com/icons?icon.set=Material+Icons) | Supported  | Supported                         | Not yet supported | Not yet supported |
-| `f7`                | [Framework7 icons](https://framework7.io/icons/)                         | Supported  | Supported                         | Not yet supported | Not yet supported |
-| `if` or `iconify` | [iconify icons](https://icon-sets.iconify.design/)                       | Supported  | Supported but needs to be enabled | Not yet supported | Supported         |
+| Source name       | Source description                                                       |
+| ----------------- | ------------------------------------------------------------------------ |
+| `oh`              | Icons provided via the openHAB server                                    |
+| `material`        | [Material icons](https://fonts.google.com/icons?icon.set=Material+Icons) |
+| `f7`              | [Framework7 icons](https://framework7.io/icons/)                         |
+| `if` or `iconify` | [iconify icons](https://icon-sets.iconify.design/)                       |
 
-Please note that the iconify option requires Internet connectivity on the client to access the external API.
-The WEB browser will cache the retrieved icons to limit the requests and speed up the rendering.
+Please note that the iconify option requires internet connectivity on the client to access the external API.
 Certain user interfaces provide a setting to enable this option, e.g. Basic UI disables this option by default but allows it to be enabled.
 
 #### Dynamic Icons
