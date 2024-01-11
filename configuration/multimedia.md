@@ -427,7 +427,7 @@ If the Switch Item has the name `tv` and the Dimmer Item the name `tv_brightness
 
 #### Exact match label/synonym prevalence
 
-Another way you can solve this is by using the exact match prevalence, Items whose label/synonym matches the one in the command exactly take prevalence.
+Another way you can solve this is by using the exact match prevalence, Items whose label/synonym match the one in the command exactly take prevalence.
 
 If the Switch Item has the synonym `TV` there will be no collisions between them and therefore the `OFF` command will target the Switch Item.
 
