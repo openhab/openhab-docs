@@ -22,5 +22,5 @@ The developer tools consist of two tabs **Expert Features** and **Debug**.
 
 ## Debug
 
-- Test SSE Connection:
+- Test SSE Connection
 - Test an Icon
