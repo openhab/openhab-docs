@@ -108,9 +108,9 @@ Also there is a good  intro about that topic can be viewed at ![youtube](../imag
 
 Please visit [Getting started with openHAB Blocklies and creating a rule](rules-blockly-before-using.html) before asking questions in the forum.
 
-## Blockly Youtube Tutorials
+## Blockly YouTube Tutorials
 
-Three Youtube tutorials have been made available via the [openHAB Youtube channel](https://www.youtube.com/c/OpenhabOrg):
+Three YouTube tutorials have been made available via the [openHAB YouTube channel](https://www.youtube.com/c/OpenhabOrg):
 
 - [Episode 1](https://www.youtube.com/watch?v=EdllUlJ7p6k)
   - [Introduction](https://www.youtube.com/watch?v=EdllUlJ7p6k)

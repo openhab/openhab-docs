@@ -15,7 +15,7 @@ In general, this section deals with two topics
 1) Playing or streaming audio to an audio sink e.g a speaker
 1) Saying a text via using any Text-to-Speech API (e.g. Google's API)
 
-It should be noted that both functionalities do not just work right out of the box because e.g for (1) the audio sinks need to be installed in openHAB and for (2) e.g. the whole Google API needs to be configured in particular with your own personal google account.
+It should be noted that both functionalities do not just work right out of the box because e.g for (1) the audio sinks need to be installed in openHAB and for (2) e.g. the whole Google API needs to be configured in particular with your own personal Google account.
 Even though (2) is not trivial but after having done that the usage of the functionality with blockly is very easy and worth the effort.
 
 More about that topic can be viewed at ![youtube](../images/blockly/youtube-logo-small.png) [Playing sounds on audio sinks](https://youtu.be/EdllUlJ7p6k?t=2035)
@@ -63,7 +63,7 @@ same as above but also allowing to provide the volume at the same time
 - all available audio sinks are automatically provided by openHABs blocklies
 
 **Known issue workaround:**
-In several cases (like the google minis) it is known that setting the volume together with playing the sound results into only setting the volume either during playing the sound or even after the sound has played.
+In several cases (like the Google Minis) it is known that setting the volume together with playing the sound results into only setting the volume either during playing the sound or even after the sound has played.
 In case this happens the more robust approach is as follows
 
 - Search for the thing of that particular sink and add an in item for the volume channel

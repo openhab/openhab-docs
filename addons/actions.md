@@ -304,7 +304,7 @@ Action | Returns
 `isBankHoliday(<datetime>, <file>)` | `true` if the day defined by the `ZonedDateTime` `<datetime>` is in `<file>`, `false` otherwise
 `isInDayset("<set>")` | `true` if today is in the custom dayset `<set>` (see below), for example `isInDayset("school")`, `false` otherwise
 `isInDayset("<set>", <offset>)` | `true` if the day `<offset>` days from today is in dayset `<set>`, `false` otherwise
-`isInDayset("<set>", <datetime>)` | `true` if the day defined by the passed in `ZonedDateTime` `<datetime>` os in dayset `<set>`, `false` otherwise
+`isInDayset("<set>", <datetime>)` | `true` if the day defined by the passed in `ZonedDateTime` `<datetime>` is in dayset `<set>`, `false` otherwise
 `isWeekend` | `true` if today is a weekend, `false` otherwise
 `isWeekend(<offset>)` | `true` if the day `<offset>` days from today is a weekend
 `isWeekend(<datetime>)` | `true` if the day defined by the passed in `ZonedDateTime` `<datetime>` is a weekend, `false` otherwise
