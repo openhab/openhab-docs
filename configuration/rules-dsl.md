@@ -1,6 +1,6 @@
 ---
 layout: documentation
-title: Rules
+title: Textual Rules
 ---
 
 # Textual Rules

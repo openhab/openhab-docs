@@ -19,6 +19,5 @@ Some of these subpages, which are most often used, can also be accessed directly
 
 - [Configuration](/docs/settings/configuration.html)
 - [Automation](/docs/settings/automations.html)
+- [System Settings](/docs/settings/system_settings.html)
 - [Add-ons](/docs/settings/addons.html)
-- [System Services](/docs/settings/services_system.html)
-- [Other Services](/docs/settings/services_other.html)

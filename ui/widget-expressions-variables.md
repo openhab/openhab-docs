@@ -126,31 +126,31 @@ Sometimes, however, it is helpful to add more information to a variable and for 
 The widget expression system can create objects in two different ways:
 
 - JavaScript object syntax:
-  
+
   Objects can be defined within the expression system using the standard JavaScript syntax: `{'key1':'value1','key2':'value2'}`.
   If a key doesn't contain special characters such as spaces, the quotes around keys can usually be ommited:  `{key1:'value1',key2:'value2'}`.
-  
+
   ::: tip
-  
+
   Due to the special meaning of `:[space]` in yaml, it is best to have no spaces between the `:` and the value.
   If you have `:[space]` anywhere in your expression it will raise a YAML error unless you enclose the entire expression (= included) in another layer of quotes.
-  
+
   :::
-  
+
   Example:
-  
+
   ```yaml
   actionVariable: myObject
   actionVariableValue: ={'name':props.item,'selected':true}
   ```
-  
+
   In this example, a variable is set to an object with keys `name` and `selected` using JavaScript object expression syntax.
-- YAML object syntax
+- YAML object syntax:
 
   The other way to create objects is to take advantage of the relationship between YAML and JSON and place the key:value pairs as YAML keys under the initial key.
-  
+
   Here is a variable definition with the same results as the one above using the YAML syntax.
-  
+
   ```yaml
   actionVariable: myObject
   actionVariableValue:
@@ -214,5 +214,5 @@ Substract one week from the state of `DateTime` and return a relative time repre
 
 ## Debugging Expressions
 
-Expressions can be tested in the Widgets Expression Tester found in the Developer Sidebar
+Expressions can be tested in the Widgets Expression Tester found in the [Developer Sidebar](mainui.html#developer-sidebar)
 (<kbd>Shift</kbd><kbd>Alt</kbd><kbd>D</kbd>).

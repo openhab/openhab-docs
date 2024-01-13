@@ -3,7 +3,7 @@ layout: documentation
 title:  Configuration
 ---
 
-# Settings - Configuration
+# Configuration
 
 This section allows the configuration of things, items and user interface pages
 
