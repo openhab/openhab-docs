@@ -245,7 +245,7 @@ This means in detail:
     In case of such exceptions this should be reflected in an updated state of the binding.
 
 - `trace` logging should be used for verbose debug logging.
-   For example printing output values that can be large, but can help when debugging changed external apis.
+   For example printing output values that can be large, but can help when debugging changed external APIs.
 
 In general bindings should NOT log to error/warn if e.g. connections are dropped -
 this is considered to be an external problem and from a system perspective to be a normal and expected situation.
