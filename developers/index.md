@@ -48,7 +48,7 @@ Development can happen on any of the supported operating systems (Windows, macOS
 Please ensure that you have the following prerequisites installed as well:
 
 1. [Git](https://git-scm.com/downloads) For retrieving our source code and push changes back. On Windows: Must be available in %PATH%
-1. [Maven 3.x](https://maven.apache.org/download.cgi) Our buildsystem tool. On Windows: Must be available in %PATH%
+1. [Maven 3.x](https://maven.apache.org/download.cgi) Our build system tool. On Windows: Must be available in %PATH%
 1. Java JDK 17, for example from Oracle [Oracle JDK 17](https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html). On Windows: %JAVA% must be set.
 
 You can use any IDE that is suitable for OSGi/Java development.
@@ -68,7 +68,7 @@ We have prepared some step-by-step guides for the following IDEs:
 </td>
 <td style="width:30%">
 
-[![Intellij IDE](./ide/images/intellij.jpg)](ide/intellij.html)
+[![IntelliJ IDE](./ide/images/intellij.jpg)](ide/intellij.html)
 
 </td>
 </tr>

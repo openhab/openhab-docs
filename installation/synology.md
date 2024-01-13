@@ -172,7 +172,7 @@ Give it a few minutes to start up.
 
 ## Shells
 
-If you select the container running and press "Details" you will end up on  a windows where you get more information on this running container.
+If you select the container running and press "Details" you will see a window with more information on this running container.
 One particular menu item you have to check is "Terminal".
 In here you see the name of the container left from the black field and if you press that you'll get the Karaf terminal for openHAB.
 
