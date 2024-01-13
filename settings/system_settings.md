@@ -44,4 +44,4 @@ This is the section that of the system settings
 ## Language Server (LSP)
 
 **Note:** Originally it included settings for openHAB cloud, Basic UI etc.
-These can now be found in the *Add-on Settings*.
+These can now be found in the _Add-on Settings_.

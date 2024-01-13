@@ -9,13 +9,13 @@ The developer tools consist of two tabs **Expert Features** and **Debug**.
 
 ## Expert Features
 
-**Advanced Object Management**
+### Advanced Object Management
 
 - Widgets
 - Block Libraries
 - Add Items from Textual Definition
 
-**Maintenance Tools**
+### Maintenance Tools
 
 - Developer Sidebar
 - API Explorer
