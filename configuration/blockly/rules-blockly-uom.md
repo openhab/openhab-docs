@@ -1,6 +1,6 @@
 ---
 layout: documentation
-title: Rules Blockly - Items & Things
+title: Rules Blockly - Units of Measurements
 ---
 <!-- markdownlint-disable MD036 -->
 

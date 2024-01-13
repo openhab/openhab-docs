@@ -163,7 +163,7 @@ Once you have got a first overview, it is time to practice.
 Here a short list of the steps that you will need to consider to get openHAB up and running as your home automation system:
 
 1. Install openHAB
-1. If you already own a smart device, search the addons for the brand or technology used by that device (or simply browse the list of [add-ons](/addons/) for any technologies or services you may recognize)
+1. If you already own a smart device, search the add-ons for the brand or technology used by that device (or simply browse the list of [add-ons](/addons/) for any technologies or services you may recognize)
 1. Install a binding (in openHAB)
 1. Define a “thing”
 1. Add a “channel” to the “thing” if not created by the binding
