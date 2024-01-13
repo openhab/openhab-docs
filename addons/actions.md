@@ -273,7 +273,7 @@ For information on making use of the [openHAB Cloud service](https://github.com/
 
 Ephemeris is a way to determine what type of day today or a number of days before or after today is.
 For example, a way to determine if today is a weekend, a bank holiday, someone’s birthday, trash day, etc.
-The default bank holidays and configuration syntax is defined by the [Jollyday library](https://github.com/svendiedrichsen/jollyday).
+The default bank holidays and configuration syntax is defined by the [Jollyday library](https://github.com/focus-shift/jollyday).
 
 ### Actions Examples
 
@@ -322,9 +322,9 @@ One must import the Ephemeris Action and then call the above functions using `Ep
 In UI one has the ability to configure which days of the week are considered weekends and set your country, region, and city.
 If no country is provided the service uses your system default locale settings.
 Browse to Settings -> Ephemeris.
-Setting the country, region and optionally city will cause Ephemeris to use the list of bank holidays defined for that location by [Jollyday](https://github.com/svendiedrichsen/jollyday).
-You can find the XML file for your country [here](https://github.com/svendiedrichsen/jollyday/tree/master/src/main/resources/holidays).
-You can find the localized mapping files that map between the holiday name in the XML and your preferred language [here](https://github.com/svendiedrichsen/jollyday/tree/master/src/main/resources/descriptions).
+Setting the country, region and optionally city will cause Ephemeris to use the list of bank holidays defined for that location by [Jollyday](https://github.com/focus-shift/jollyday).
+You can find the XML file for your country [here](https://github.com/focus-shift/jollyday/tree/main/jollyday-core/src/main/resources/holidays).
+You can find the localized mapping files that map between the holiday name in the XML and your preferred language [here](https://github.com/focus-shift/jollyday/tree/main/jollyday-core/src/main/resources/descriptions).
 
 When filling in the country, region and city in that order, if there isn’t a drop down list leave that field blank.
 There are no special bank holidays defined by Jollyday for that level.
@@ -378,7 +378,7 @@ The following is an example listing a few custom days.
 </tns:Configuration>
 ```
 
-For further examples and to find the list of elements to reference holidays that require more complicated calculations (e.g. holidays based on a lunar calendar, Easter, etc.) see the [XSD that defines the structures of the XML](https://github.com/svendiedrichsen/jollyday/blob/b78fa20e75d48bdf14e3fa8107befe44e3bacf3a/src/main/xsd/Holiday.xsd) or the XML file for your country or others.
+For further examples and to find the list of elements to reference holidays that require more complicated calculations (e.g. holidays based on a lunar calendar, Easter, etc.) see the [XSD that defines the structures of the XML](https://github.com/focus-shift/jollyday/blob/main/jollyday-core/src/main/resources/focus_shift.de/jollyday/schema/holiday/holiday.xsd) or the XML file for your country or others.
 
 You can place these XML files anywhere on your file system that openHAB has permission to read.
 In the calls to the Actions, use the fully qualified path.
@@ -386,14 +386,15 @@ We recommend placing these custom files somewhere inside your `$OH_CONF` folder,
 
 #### Localization
 
-Ephemeris supports translation of holidays into many languages. Localization support files can be found in the [GitHub repo](https://github.com/svendiedrichsen/jollyday/tree/master/src/main/resources/descriptions). Currently these language supports are available:
+Ephemeris supports translation of holidays into many languages. Localization support files can be found in the [GitHub repo](https://github.com/focus-shift/jollyday/tree/main/jollyday-core/src/main/resources/descriptions). Currently these language supports are available:
 
-1. [Dutch](https://github.com/svendiedrichsen/jollyday/blob/master/src/main/resources/descriptions/holiday_descriptions_nl.properties)
-1. [English](https://github.com/svendiedrichsen/jollyday/blob/master/src/main/resources/descriptions/holiday_descriptions_en.properties)
-1. [French](https://github.com/svendiedrichsen/jollyday/blob/master/src/main/resources/descriptions/holiday_descriptions_fr.properties)
-1. [German](https://github.com/svendiedrichsen/jollyday/blob/master/src/main/resources/descriptions/holiday_descriptions_de.properties)
-1. [Portuguese](https://github.com/svendiedrichsen/jollyday/blob/master/src/main/resources/descriptions/holiday_descriptions_pt.properties)
-1. [Swedish](https://github.com/svendiedrichsen/jollyday/blob/master/src/main/resources/descriptions/holiday_descriptions_sv.properties)
+1. [Dutch](https://github.com/focus-shift/jollyday/tree/main/jollyday-core/src/main/resources/descriptions/holiday_descriptions_nl.properties)
+1. [English](https://github.com/focus-shift/jollyday/tree/main/jollyday-core/src/main/resources/descriptions/holiday_descriptions.properties)
+1. [French](https://github.com/focus-shift/jollyday/tree/main/jollyday-core/src/main/resources/descriptions/holiday_descriptions_fr.properties)
+1. [German](https://github.com/focus-shift/jollyday/tree/main/jollyday-core/src/main/resources/descriptions/holiday_descriptions_de.properties)
+1. [Greek](https://github.com/focus-shift/jollyday/tree/main/jollyday-core/src/main/resources/descriptions/holiday_descriptions_el.properties)
+1. [Portuguese](https://github.com/focus-shift/jollyday/tree/main/jollyday-core/src/main/resources/descriptions/holiday_descriptions_pt.properties)
+1. [Swedish](https://github.com/focus-shift/jollyday/tree/main/jollyday-core/src/main/resources/descriptions/holiday_descriptions_sv.properties)
 
 Feel free to extent this list by providing additional language support files.
 
