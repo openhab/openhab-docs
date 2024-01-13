@@ -8,7 +8,7 @@
   <thing-type id="zooz_zen76_00_000" listed="false">
     <label>ZEN76 Paddle Switch (S2)</label>
     <description><![CDATA[
-Paddle Switch (S2)<br /> <h1>Overview</h1><p>Z-Wave paddle switch, 700 series, operating in compatibility mode.</p> <br /> <h2>Inclusion Information</h2><p>1. Put hub in inclusion mode</p><p>2. Tap UP three (3) times</p> <br /> <h2>Exclusion Information</h2><p>1. Put hub in inclusion mode</p><p>2. Tap DOWN three (3) times</p> <br /> <h2>Wakeup Information</h2><p><br /></p>
+Paddle Switch (S2)<br /> <h1>Overview</h1><p>Z-Wave paddle switch, 700 series, operating in compatibility mode.</p> <br /> <h2>Inclusion Information</h2><ol><li>Put hub in inclusion mode</li><li>Tap UP three (3) times</li></ol> <br /> <h2>Exclusion Information</h2><ol><li>Put hub in inclusion mode</li><li>Tap DOWN three (3) times</li></ol> <br /> <h2>Wakeup Information</h2><p><br /></p>
     ]]></description>
     <category>WallSwitch</category>
 
@@ -17,7 +17,7 @@ Paddle Switch (S2)<br /> <h1>Overview</h1><p>Z-Wave paddle switch, 700 series, o
       <channel id="switch_binary" typeId="switch_binary">
         <label>Switch</label>
         <properties>
-          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY</property>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY,COMMAND_CLASS_BASIC</property>
         </properties>
       </channel>
       <channel id="scene_number" typeId="scene_number">
@@ -35,7 +35,7 @@ Paddle Switch (S2)<br /> <h1>Overview</h1><p>Z-Wave paddle switch, 700 series, o
       <property name="manufacturerId">027A</property>
       <property name="manufacturerRef">7000:A006</property>
       <property name="dbReference">1356</property>
-      <property name="defaultAssociations">1,2</property>
+      <property name="defaultAssociations">1</property>
     </properties>
 
     <!-- CONFIGURATION DESCRIPTIONS -->

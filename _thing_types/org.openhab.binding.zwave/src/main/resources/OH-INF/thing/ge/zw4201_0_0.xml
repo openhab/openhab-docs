@@ -33,7 +33,7 @@ Plug-in Outdoor Smart Switch, 500S<br /> <h1>Overview</h1><p>Maximum load for th
       <property name="vendor">Jasco Products</property>
       <property name="modelId">14311 / ZW4201</property>
       <property name="manufacturerId">0063</property>
-      <property name="manufacturerRef">4F50:3033</property>
+      <property name="manufacturerRef">4F50:3032,4F50:3033</property>
       <property name="dbReference">643</property>
       <property name="defaultAssociations">1</property>
     </properties>

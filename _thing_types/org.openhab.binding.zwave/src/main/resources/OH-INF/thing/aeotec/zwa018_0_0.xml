@@ -50,7 +50,7 @@ Aeotec Water Sensor 7 Basic<br /> <h1>Overview</h1><p>The AEOTEC Water Sensor 7 
       <property name="vendor">Aeotec Limited</property>
       <property name="modelId">ZWA018</property>
       <property name="manufacturerId">0371</property>
-      <property name="manufacturerRef">0002:0012</property>
+      <property name="manufacturerRef">0002:0012,0102:0012</property>
       <property name="dbReference">1533</property>
       <property name="defaultAssociations">1</property>
     </properties>

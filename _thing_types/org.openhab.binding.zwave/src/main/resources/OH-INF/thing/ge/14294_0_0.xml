@@ -15,7 +15,7 @@ In-Wall Dimmer Switch<br /> <h1>Overview</h1><p>Transform any home into a smart 
     <!-- CHANNEL DEFINITIONS -->
     <channels>
       <channel id="basic_sensor_binary" typeId="sensor_binary">
-        <label>Double Tap</label>
+        <label>Basic Set</label>
         <properties>
           <property name="binding:*:OnOffType">COMMAND_CLASS_BASIC</property>
         </properties>
@@ -23,7 +23,7 @@ In-Wall Dimmer Switch<br /> <h1>Overview</h1><p>Transform any home into a smart 
       <channel id="switch_dimmer" typeId="switch_dimmer">
         <label>Dimmer</label>
         <properties>
-          <property name="binding:*:PercentType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+          <property name="binding:*:PercentType">COMMAND_CLASS_SWITCH_MULTILEVEL,COMMAND_CLASS_BASIC</property>
           <property name="binding:Command:OnOffType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
         </properties>
       </channel>
@@ -36,7 +36,7 @@ In-Wall Dimmer Switch<br /> <h1>Overview</h1><p>Transform any home into a smart 
       <property name="manufacturerId">0063</property>
       <property name="manufacturerRef">4944:3038</property>
       <property name="dbReference">543</property>
-      <property name="defaultAssociations">1,3</property>
+      <property name="defaultAssociations">1</property>
     </properties>
 
     <!-- CONFIGURATION DESCRIPTIONS -->
@@ -147,7 +147,9 @@ Support Basic Set and is controlled with the local load<br /> <h1>Overview</h1><
 
       <parameter name="group_3" type="text" groupName="association" multiple="true">
         <label>3: Scene Group</label>
-        <description>This group gets notifications of double taps via basic set</description>
+        <description><![CDATA[
+This group gets notifications of double taps via basic set<br /> <h1>Overview</h1><p><br /></p>
+        ]]></description>
         <multipleLimit>5</multipleLimit>
       </parameter>
 

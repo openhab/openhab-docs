@@ -44,7 +44,7 @@
       <property name="vendor">Ring</property>
       <property name="modelId">4SD2SZ-0EN0</property>
       <property name="manufacturerId">0346</property>
-      <property name="manufacturerRef">0201:0301,0201:0401</property>
+      <property name="manufacturerRef">0201:0301,0201:0401,0201:0601</property>
       <property name="dbReference">1358</property>
       <property name="defaultAssociations">1</property>
     </properties>

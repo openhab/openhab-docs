@@ -27,7 +27,8 @@ The binding uses a standard Z-Wave serial stick to communicate with the Z-Wave d
 ## Supported Things
 
 The ZWave binding provides support for a large number of devices (currently 802 devices from 114 manufacturers).
-See the [full list of supported things](doc/things.md).
+See the [full list of supported things](doc/things.md). Note: As of OpenHAB 4.1 Controllers based on Silabs SDK 7 are partially supported.
+For SDK 7 controllers "Classic" inclusion (node numbers 1-232) is supported, but the higher power Long Range inclusion (node numbers over 255) is not.
 
 
 ### ZWave Serial Adapter
@@ -416,6 +417,7 @@ Z-Wave is a complex protocol, and there are many manufacturers producing thousan
 When providing a debug log, provide the full log; don't filter anything out. Provide the log with plenty of context before and after the event you're trying to troubleshoot. Sometimes the root cause of the problem happens considerably beforehand. If the log file is too big to include in your forum post, place it on a file-sharing service, and include a link to the file in your post.
 
 To enable debug logging, log on to the [console](https://www.openhab.org/docs/administration/console.html) and enter the following command -:
+Note: As of OpenHAB 4.0 debug logging can be set from the UI "Setting" page. On the right hand side expand the Add-ons Settings to select ZWave, click, then select DEBUG or INFO
 
 ```
 log:set DEBUG org.openhab.binding.zwave

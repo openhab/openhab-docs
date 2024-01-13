@@ -5,7 +5,7 @@
   xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
                       https://openhab.org/schemas/thing-description/v1.0.0">
 
-  <thing-type id="mcohome_mh-s220-v3-2_03_002" listed="false">
+  <thing-type id="mcohome_mhs220v32_03_002" listed="false">
     <label>MH-S220 Micro Switch</label>
     <description><![CDATA[
 Micro Switch<br /> <h1>Overview</h1><p>MCOHome Micro Switch MH-S220-EU is a Z-Wave enabled module that can be set in existing in-wall switches. It supports basic command class, and also can act as a repeater in Z-Wave network. This product can be included and operated in any Z-Wave network with other Z-Wave certified devices from any other manufacturers.</p><p>Power supply: 220V 50Hz</p><p>Max output: 10A (Zero-crossing switch)</p><p>Dimension：44 *38 *17mm (L *W *H)</p><p>Load Type: Incandescent</p> <br /> <h2>Inclusion Information</h2><p>INCLUDING the Micro Switch into your network:</p><p>Set the controller into INCLUSION mode. Follow the instructions provided by the controller manufacturer.</p><p>Press the ON/OFF/PROGRAM button on the Micro Switch.</p><p>Note: If the inclusion is successful, the Micro Switch INDICATION LED will be solid on or off depending on switch’s state. If not, INDICATION LED will blink slowly.</p> <br /> <h2>Exclusion Information</h2><p>EXCLUDING the Micro Switch from your network:</p><p>Set the controller into EXCLUSION mode. Follow the instructions provided by the controller manufacturer.</p><p>Press the ON/OFF/PROGRAM button on the Micro Switch.</p><p>Note: If the exclusion is successful, the Micro Switch INDICATION LED will blink slowly. If not, INDICATION LED will be solid on or off depending on switch’s state.</p> <br /> <h2>Wakeup Information</h2><p><br /></p>
@@ -46,7 +46,7 @@ Micro Switch<br /> <h1>Overview</h1><p>MCOHome Micro Switch MH-S220-EU is a Z-Wa
       <property name="vendor">McoHome Technology Co., Ltd</property>
       <property name="modelId">MH-S220</property>
       <property name="manufacturerId">015F</property>
-      <property name="manufacturerRef">2201:1252</property>
+      <property name="manufacturerRef">2201:1252,2201:7202</property>
       <property name="versionMin">3.2</property>
       <property name="dbReference">1368</property>
       <property name="defaultAssociations">1</property>
@@ -99,6 +99,7 @@ External switch type<br /> <h1>Overview</h1><p>0x00 Button (Momentary buttons )<
         <default>1</default>
         <options>
           <option value="0">without specified on/off position</option>
+          <option value="1">with specified on/off position</option>
         </options>
       </parameter>
 

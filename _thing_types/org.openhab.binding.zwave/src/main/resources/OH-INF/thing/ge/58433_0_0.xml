@@ -20,12 +20,6 @@ GE Enbrighten Z-Wave Plus Smart Switch<br /> <h1>Overview</h1><p>Home automation
           <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY</property>
         </properties>
       </channel>
-      <channel id="scene_number" typeId="scene_number">
-        <label>Scene Number</label>
-        <properties>
-          <property name="binding:*:DecimalType">COMMAND_CLASS_CENTRAL_SCENE</property>
-        </properties>
-      </channel>
     </channels>
 
     <!-- DEVICE PROPERTY DEFINITIONS -->
@@ -54,49 +48,131 @@ GE Enbrighten Z-Wave Plus Smart Switch<br /> <h1>Overview</h1><p>Home automation
 
       <!-- PARAMETER DEFINITIONS -->
       <parameter name="config_3_1" type="integer" groupName="configuration">
-        <label>3: LED Mode</label>
+        <label>3: LED Light Mode</label>
         <description><![CDATA[
-LED Indication Configuration<br /> <h1>Overview</h1><p>Sets mode for LED inside toggle switch</p>
+LED Light Mode<br /> <h1>Overview</h1><p>Set the LED Light Mode</p>
         ]]></description>
-        <default>2</default>
+        <default>0</default>
         <options>
           <option value="0">LED ON when switch is OFF</option>
           <option value="1">LED ON when switch is ON</option>
           <option value="2">LED always OFF</option>
           <option value="3">LED Always ON</option>
         </options>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_4_1" type="integer" groupName="configuration">
         <label>4: Invert Switch</label>
         <description><![CDATA[
-Invert Switch<br /> <h1>Overview</h1><p>If the switch is accidentally installed upside down with “On” at the bottom and “Off” at the top, the default On/Off rocker settings can be reversed by changing parameter 4’s value to “1”.</p>
+Invert Switch<br /> <h1>Overview</h1><p>Reverse the default ON/OFF Paddle switch setting</p>
         ]]></description>
         <default>0</default>
         <options>
           <option value="0">Normal Switch Install</option>
           <option value="1">Inverted Switch Install</option>
         </options>
-        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_5_1" type="integer" groupName="configuration">
+        <label>5: 3-Way Type</label>
+        <description><![CDATA[
+3-Way Type<br /> <h1>Overview</h1><p>Configure between standard 3-Way Switch or Add-On Switch is being used<br /></p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Standard 3-Way</option>
+          <option value="1">Add-On</option>
+        </options>
       </parameter>
 
       <parameter name="config_19_1" type="integer" groupName="configuration">
         <label>19: Alternate Exclusion</label>
-        <description>Set Alternate Exclusion Mode</description>
+        <description><![CDATA[
+Alternate Exclusion<br /> <h1>Overview</h1><p>Alternative way to perform Exclusion<br /></p>
+        ]]></description>
         <default>0</default>
         <options>
           <option value="0">Press any button on the switch</option>
           <option value="1">Alternate Exclusion</option>
         </options>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_34_1" type="integer" groupName="configuration">
         <label>34: LED Light Color</label>
-        <description>LED Light Color</description>
+        <description><![CDATA[
+LED Light Color<br /> <h1>Overview</h1><p>Set the LED Light Color<br /></p>
+        ]]></description>
+        <default>5</default>
+        <options>
+          <option value="1">Red</option>
+          <option value="2">Orange</option>
+          <option value="3">Yellow</option>
+          <option value="4">Green</option>
+          <option value="5">Blue</option>
+          <option value="6">Pink</option>
+          <option value="7">Purple</option>
+          <option value="8">White</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_35_1" type="integer" groupName="configuration">
+        <label>35: LED Light Intensity</label>
+        <description><![CDATA[
+LED Light Intensity<br /> <h1>Overview</h1><p>Set the LED Light Intensity<br /></p>
+        ]]></description>
+        <default>4</default>
+        <options>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+          <option value="7">7</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_36_1" type="integer" groupName="configuration">
+        <label>36: Guidelight Mode Intensity</label>
+        <description><![CDATA[
+Guidelight Mode Intensity<br /> <h1>Overview</h1><p>Set the Guidelight Mode Intensity<br /></p>
+        ]]></description>
+        <default>4</default>
+        <options>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+          <option value="7">7</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_39_1" type="integer" groupName="configuration">
+        <label>39: Relay Control</label>
+        <description><![CDATA[
+Relay Control<br /> <h1>Overview</h1><p>Relay Control<br /></p>
+        ]]></description>
         <default>0</default>
-        <limitToOptions>false</limitToOptions>
+        <options>
+          <option value="0">0</option>
+          <option value="1">1</option>
+        </options>
+        <advanced>true</advanced>
+      </parameter>
+
+      <parameter name="config_84_1" type="integer" groupName="configuration">
+        <label>84: Reset Factory Default</label>
+        <description><![CDATA[
+Reset Factory Default<br /> <h1>Overview</h1><p>Reset Switch to Factory Defaults<br /></p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">0</option>
+          <option value="1">1</option>
+        </options>
+        <advanced>true</advanced>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->
