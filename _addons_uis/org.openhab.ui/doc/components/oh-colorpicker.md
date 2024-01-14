@@ -51,11 +51,6 @@ Control to pick a color
     <PropOption value="initial-current-colors" label="Initial current colors" />
   </PropOptions>
 </PropBlock>
-<PropBlock type="TEXT" name="defaultColor" label="Default Color">
-  <PropDescription>
-    Color (e.g. <code>[0,0,0]</code> for black) to use for the color picker if state does not contain a color (e.g. because it is <code>NULL</code>)
-  </PropDescription>
-</PropBlock>
 </PropGroup>
 </div>
 
