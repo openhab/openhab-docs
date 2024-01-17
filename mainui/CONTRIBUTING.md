@@ -28,6 +28,7 @@ Inside these comments, the UI allows the following features:
   ```markdown
   Add ... using the <!--F7:blue plus_circle_fill --> plus button ...
   ```
+
 - Link to UI pages by linking to
   - `.html` files inside this directory:<br>
     `[Items](items.html)` will navigate to `items/`.

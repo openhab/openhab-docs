@@ -20,3 +20,11 @@ On this page, you can manage all the Things you have added to your system:
 - **Enable/Disable Things**<br>
   Select multiple Things using the top **Select** button and use the **Enable** or **Disable** buttons at the bottom or use the <!--F7 pause_circle --> pause button on the individual Thing pages.
 <!-- END MAINUI SIDEBAR DOC - DO NOT REMOVE -->
+
+## Inbox
+
+Many devices, technologies and systems can be automatically discovered on the network or browsed through some API.
+It therefore makes a lot of sense to use these features for a smart home solution.
+
+openHAB bindings can therefore implement Discovery Services for Things, which provide Discovery Results.
+All Discovery Results are put into the Thing inbox, from where they can be easily added to openHAB with just a few clicks.
