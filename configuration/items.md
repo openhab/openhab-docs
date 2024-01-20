@@ -257,7 +257,7 @@ The state presentation for the Item in the following example is "`%.1f °C`":
 Number:Temperature Livingroom_Temperature "Temperature [%.1f °C]"
 ```
 
-If no state presentation is given, or there is no text between the square brackets, the Item will not provide a textual presentation of its internal state (i.e. in UIs no state is shown).
+If no square brackets are given and the Item is not linked to a channel, the Item will not provide a textual presentation of its internal state (i.e. in UIs no state is shown).
 This is often meaningful when an Item is presented by a non-textual UI elements like a switch or a diagram.
 
 Formatting of the presentation is done applying [Java formatter class syntax](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Formatter.html#syntax).
