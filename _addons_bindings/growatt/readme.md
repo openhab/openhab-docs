@@ -6,7 +6,7 @@ type: binding
 description: "This binding supports the integration of Growatt solar inverters."
 since: 3x
 logo: images/addons/growatt.png
-install: manual
+install: auto
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
