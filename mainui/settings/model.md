@@ -9,6 +9,8 @@ title: Settings - Model
 The **Semantic Model** is a way for you to group and categorize your openHAB Items to provide additional real-world relationships and information about them.
 openHAB can use this information to automatically generate the location, equipment, and properties tabs of the home page.
 
+Learn more about the semantic model in [the tutorial]({{base}}/tutorial/model.html).
+
 Every semantic model object (location, equipment, or point) is just a regular openHAB Item with semantic tags and arranged in semantic groups.
 It is important to note that not all of your Items need to be included in the semantic model.
 For most systems it only makes sense to include those Items that users will interact with.

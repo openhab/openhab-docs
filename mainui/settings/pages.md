@@ -6,9 +6,12 @@ title: Settings - Pages
 # Settings - Pages
 
 <!-- START MAINUI SIDEBAR DOC - DO NOT REMOVE -->
-**Pages** are the different MainUI presentations that you can make to present users with control over home system.
-The location, equipment, and properties tabs of the home page are automatically generated if you have a semantic model.
-All other pages have to be created yourself.
+**Pages** allow to design custom displays for user control & monitoring.
+Though openHAB automatically creates an [overview page]({{base}}/tutorial/auto_overview.html#overview-page) of your locations, equipment (e.g. light-bulbs), and available properties (e.g. temperature measurements) based on the semantic model,
+it also allows to design and create custom pages with sophisticated [standard widgets]({{base}}/tutorial/item_widgets.html) and [custom widgets]({{base}}/tutorial/custom_widgets.html).
+
+Before manually creating pages, it is highly recommended to read the [User Interface Design Overview]({{base}}/ui/) first.
+The [pages tutorial section]({{base}}/tutorial/pages_intro.html) explains how to create and design user interface pages within openHAB.
 
 On these pages you can manage all the Pages you have added to your system:
 

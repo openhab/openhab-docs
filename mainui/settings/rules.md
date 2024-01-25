@@ -6,13 +6,14 @@ title: Settings - Rules
 # Settings - Rules
 
 <!-- START MAINUI SIDEBAR DOC - DO NOT REMOVE -->
-**Rules** are the heart of home automation.
-They allow openHAB to respond to different events with automatic reactions.
-Rules can be a simple as a directive to turn on a single light at a given time but full scripting languages also allow for more complex reactions.
+**Rules** are the heart of home automation - automate with triggers, actions and conditions.
+Rules can be as simple as a directive to turn on a single light at a given time but the use of scripting languages and Blockly also allows much more complex automations.
 
 Community made Rule Templates can also be added to your system from the **Automation** tab of the add-on store.
 
 On this page you can manage all the basic rules you have added to your system:
+
+![rules-overview](../images/settings/rules-overview.png)
 
 - **Add new Rules**<br>
   Add rules using the <!--F7:blue plus_circle_fill --> plus button.
@@ -25,3 +26,30 @@ On this page you can manage all the basic rules you have added to your system:
 - **Manually run Rules**<br>
   Use the <!--F7:blue play --> play button on the individual rule pages to have the rule run all actions immediately.
 <!-- END MAINUI SIDEBAR DOC - DO NOT REMOVE -->
+
+The page has a searchable list of rules where the following attributes
+
+- name
+- unique id
+- description
+- enabled state (disabled, enabled, idle, running)
+- tags
+
+The searchbar allows to filter by the name, the description and the tags of that rule.
+
+When clicking "select" in the top right corner, the list allows to select multiple entries at the same time:
+
+![rules-selection](../images/settings/rules-selection.png)
+
+After selecting one or multiple rules three options appear in the footer to allow
+
+- removing
+- disabling or
+- enabling
+
+these rules.
+Press "Done" to return back to the normal list view.
+
+To add a rule press the plus icon in the lower right corner:
+
+![add rule](../images/settings/plus.png) and follow the [rules tutorial]({{base}}/tutorial/rules_basic.html#create-the-rule).

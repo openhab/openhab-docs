@@ -6,8 +6,16 @@ title: Settings - Things
 # Settings - Things
 
 <!-- START MAINUI SIDEBAR DOC - DO NOT REMOVE -->
-**Things** are the openHAB structures that represent individual devices or services.
+**Things** manage the physical layer of the openHAB system and represent individual devices or services.
 The Things that you can add to your system are determined by the bindings that you have installed.
+
+There is a [Things concepts page]({{base}}/concepts/things.html) that explains the idea of Things in detail.
+
+Adding Things via the user interface is described comprehensively in the tutorial section:
+
+- [Adding Things - Simple]({{base}}/tutorial/things_simple.html)
+- [Adding Things - Intermediate]({{base}}/tutorial/things_intermediate.html): Things that are dealing with a binding where the bridge-Thing cannot be automatically discovered.
+- [Adding Things - Advanced]({{base}}/things_advanced.html): Things that do not support automatic discovery.
 
 On this page, you can manage all the Things you have added to your system:
 
@@ -28,3 +36,5 @@ It therefore makes a lot of sense to use these features for a smart home solutio
 
 openHAB bindings can therefore implement Discovery Services for Things, which provide Discovery Results.
 All Discovery Results are put into the Thing inbox, from where they can be easily added to openHAB with just a few clicks.
+
+Please read [the tutorial]({{base}}/tutorial/things_simple.html#accept-the-light-bulb-things) to learn how to use the inbox.
