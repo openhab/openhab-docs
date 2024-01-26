@@ -8,7 +8,7 @@ title: Settings - Scripts
 <!-- START MAINUI SIDEBAR DOC - DO NOT REMOVE -->
 **Rules** are the heart of home automation.
 **Scripts** are special types of rules with only one action and no triggers, so they have to be called from "real" rules or run manually.
-They can be used to reuse code and logic across multiple other rules, one off experimentation to figure something out, create a catalog of examples, or to drive tests for other rules and behaviors.
+They can be used to reuse code and logic across multiple other rules, for experimentation to figure something out, create a catalog of examples, or to drive tests for other rules and behaviors.
 
 On this page you can manage all the scripts you have added to your system:
 

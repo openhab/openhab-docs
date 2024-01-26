@@ -13,7 +13,7 @@ Learn more about the semantic model in [the tutorial]({{base}}/tutorial/model.ht
 
 Every semantic model object (location, equipment, or point) is just a regular openHAB Item with semantic tags and arranged in semantic groups.
 It is important to note that not all of your Items need to be included in the semantic model.
-For most systems it only makes sense to include those Items that users will interact with.
+For most systems it only makes sense to include these Items that users will interact with.
 
 On this page you can manage your system's semantic model:
 

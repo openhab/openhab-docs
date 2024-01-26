@@ -11,6 +11,8 @@ title: Settings - Scenes
 Scenes allow you to define an Item and its respective state very easily and combine multiple of them as a collection of item actions to be run.
 Note that the Scenes do not support triggers or conditions and need to be explicitly triggered via a page or a rule.
 
+A comprehensive introduction to scenes can be found at the [scenes tutorial]({{base}}/tutorial/rules_scenes.html).
+
 On this page you can manage all the scenes you have added to your system:
 
 - **Add new Scenes**<br>

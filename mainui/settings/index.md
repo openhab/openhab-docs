@@ -25,7 +25,7 @@ Some often used subpages can also be accessed directly via the menu sidebar.
 - [**Model**](model)<br>
   Configure the semantic, tree-like hierarchical model that structures Items and allows openHAB to automatically provide a UI.
 - [**Items**](items)<br>
-  Basic units of openHAB control and information fully hardware-independent.
+  Items manage the functional layer of openHAB fully hardware-independent.
 - [**Pages**](pages)<br>
   Manage custom user interfaces including Main UI pages and sitemaps.
 - [**Transformations**](transformations)<br>
@@ -46,7 +46,7 @@ See [What's the Difference Between a Rule, Script, and Schedule?]({{base}}/tutor
   Rules are essential for home automation:
   Each rule can be triggered, which invokes a script that performs any kinds of tasks, e.g. turn on lights by modifying your items, do mathematical calculations, start timers etc.
 - [**Scenes**](scenes)<br>
-  Special rules determined to command a some Items to a pre-defined state.
+  Special rules determined to command some Items to a pre-defined state.
 - [**Scripts**](scripts)<br>
   Special rules without triggers and with just one action determined to run code.
 - [**Schedule**](schedule)<br>

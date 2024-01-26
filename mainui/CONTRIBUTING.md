@@ -22,7 +22,7 @@ Lorem ipsum dolor sit amet, consectetur adipisici elit, ...
 Inside these comments, the UI allows the following features:
 
 - Embed [Framework7 icons](https://framework7.io/icons/) into the UI-rendered docs using these comments:
-  - `<!--F7 $iconame -->`, where `$iconname` is a Framework7 icon's name
+  - `<!--F7 $iconname -->`, where `$iconname` is a Framework7 icon's name
   - `<!--F7:blue $iconame -->` to set the icon's color to blue
   - `<!--F7:green $iconame -->` to set the icon's color to green
 

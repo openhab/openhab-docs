@@ -32,7 +32,7 @@ This section is collapsed by default and can be opened by clicking on it which t
 - Logs folder on the server
 - Operating System openHAB is running on
 - Java Runtime openHAB is running on
-- number of processors and memory
+- Number of processors and memory
 
 Clicking on View Details opens up a popup window that contains very detailed information like
 
@@ -88,11 +88,11 @@ The first image depicts the normal white setting (off), the second image shows i
 Main UI implements a web audio sink which allows the openHAB server to play audio through the web browser.
 
 To enable web audio sink support for a client, turn on the **Enable Web Audio sink support** option on the **Help & About** page.
-As it is setting specific to your browser environment, web audio support has to be enabled for every client where it should be used.
+As it is a setting specific to your browser environment, web audio support has to be enabled for every client where it should be used.
 
 Please note that due to limitations in Safari (and possibly Chrome as well), a user interaction is required after the first audio stream has been sent to actually play it.
-This means, that after opening Main UI, the first audio that should be played on the web audio sink is only player after the user interacts with Main UI in any way (i.e. touching the screen is enough).
-For subsequent audio playback, that is not required anymore and the audio is played immediately.
+This means, that after opening Main UI, the first audio that should be played on the web audio sink is only played after the user interacts with Main UI in any way (i.e. touching the screen is enough).
+For subsequent audio playback the above is not required anymore and the audio is played immediately.
 
 Please also note that you cannot address a particular web audio-enabled device.
 When you play a sound on web audio, it will be played on all devices where web audio is enabled.
@@ -143,7 +143,7 @@ or using it in a blockly rule:
 
 Main UI can be controlled from the openHAB server by setting up a so-called UI command Item.
 
-Similarly to web audio support, this is a setting specific to your local browser environment, so you have to define the UI command Item for each client, which also allows you to different UI command Items for different clients.
+Similarly to web audio support, this is a setting specific to your local browser environment, so you have to define the UI command Item for each client, which also allows you to have different UI command Items for different clients.
 To set up an Item as the UI command Item on your device, first create a particular Item of type `String`, then open the **Help & About** page from the menu and select an Item for the **Listen for UI command to** option.
 
 The command Item has to be a `String` Item.
@@ -161,7 +161,7 @@ Currently, the supported commands are:
 - `notification:$text:$title:$subtitle:$titleRight:$closeTimeout`:
   Display a notification inside the UI:
   The `$text` parameter is mandatory, all other parameters are optional.
-  `$closeTimeout` is in milliseconds and defaults 5000, which means by default a notification will be closed after 5 seconds.
+  `$closeTimeout` is in milliseconds and defaults to 5000, which means by default a notification will be closed after 5 seconds.
   To leave out a parameter, leave a colon space empty, e.g. `notification:$text:$title:::$closeTimeout`.
 
   For example, send `notification:This is the text.:This is the title.:This is the subtitle.:This is the right title.` to the UI command Item to display the following notification:

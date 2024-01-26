@@ -6,7 +6,7 @@ title: Settings - Transformations
 # Settings - Transformations
 
 <!-- START MAINUI SIDEBAR DOC - DO NOT REMOVE -->
-**Transformations** convert a value or Item state into different value or state.
+**Transformations** convert a value or Item state into a different value or state.
 Transformations can be used in many different instances including links between channels and Items, rules and scripts, and some Thing configurations.
 
 The different available transformation methods must be individually installed via the **Other** tab of the add-on store.

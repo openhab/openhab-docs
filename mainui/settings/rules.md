@@ -27,7 +27,7 @@ On this page you can manage all the basic rules you have added to your system:
   Use the <!--F7:blue play --> play button on the individual rule pages to have the rule run all actions immediately.
 <!-- END MAINUI SIDEBAR DOC - DO NOT REMOVE -->
 
-The page has a searchable list of rules where the following attributes
+The page has a searchable list of rules with the following attributes:
 
 - name
 - unique id
@@ -50,6 +50,4 @@ After selecting one or multiple rules three options appear in the footer to allo
 these rules.
 Press "Done" to return back to the normal list view.
 
-To add a rule press the plus icon in the lower right corner:
-
-![add rule](../images/plus.png) and follow the [rules tutorial]({{base}}/tutorial/rules_basic.html#create-the-rule).
+To add a rule press the plus icon ![add rule](../images/plus.png) in the lower right corner and follow the [rules tutorial]({{base}}/tutorial/rules_basic.html#create-the-rule).
