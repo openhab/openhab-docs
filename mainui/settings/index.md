@@ -17,7 +17,9 @@ Some subpages, which are most often used, can also be accessed directly via the 
 
 ![settings-menu](../images/settings-menu.png)
 
-## Configuration
+## Sections
+
+### Configuration
 
 ![config-overview.png](../images/config-overview.png)
 
@@ -38,7 +40,7 @@ Some subpages, which are most often used, can also be accessed directly via the 
 Next to the entity, the count of that entity is shown.
 Please note that the Things count is not the number of configured Things, but the number of Things waiting in the [Inbox]({{base}}/tutorial/things_simple.html#accept-the-light-bulb-things).
 
-## Automation
+### Automation
 
 openHAB provides rules, scenes and scripts as well as a schedule overview to automate your home.
 See [What's the Difference Between a Rule, Script, and Schedule?]({{base}}/tutorial/rules_introduction.html#what-s-the-difference-between-a-rule-script-and-schedule) to learn more about the different options.
@@ -53,11 +55,11 @@ See [What's the Difference Between a Rule, Script, and Schedule?]({{base}}/tutor
 - [**Schedule**](schedule.html)<br>
   Provides an overview of rules with time-based triggers and the `Schedule` tag.
 
-## System Settings
+### System Settings
 
-This section lists openHAB's system settings, which e.g. included location or time zone setup.
+This section lists openHAB's system settings, which e.g. includes regional, language, unit system and network settings.
 
-## Add-on Settings
+### Add-on Settings
 
 This section lists the installed add-ons and provides direct access to the add-on settings as well as the add-on log level:
 
@@ -65,5 +67,4 @@ This section lists the installed add-ons and provides direct access to the add-o
 
 The standard log level is `INFO` but to track down an issue it might be necessary to increase the log-level upon request.
 For more information see [Logging in openHAB]({{base}}/administration/logging.html).
-
 <!-- END MAINUI SIDEBAR DOC - DO NOT REMOVE -->

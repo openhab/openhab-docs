@@ -127,6 +127,8 @@ module.exports = [
           ['mainui/settings/model', 'Model'],
           ['mainui/settings/items', 'Items'],
           ['mainui/settings/pages', 'Pages'],
+          ['mainui/settings/transformations', 'Transformations'],
+          ['mainui/settings/persistence', 'Persistence'],
           ['mainui/settings/rules', 'Rules'],
           ['mainui/settings/scenes', 'Scenes'],
           ['mainui/settings/scripts', 'Scripts'],
