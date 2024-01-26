@@ -59,7 +59,7 @@ The distribution comes with these options built-in:
 | `enhancedjavasound` | System Speaker (with mp3 support) | This uses the JRE sound drivers plus an additional 3rd party library, which adds support for mp3 files.                                                                                                                                                                                                                                                      |
 | `webaudio`          | Web Audio                         | Convenient, if sounds should not be played on the server, but on the client: This sink sends the audio stream through HTTP to web clients, which then cause it to be played back by the browser. Obviously, the browser needs to be opened and have a compatible openHAB UI running. Currently, this feature is supported by Main UI, Basic UI and HABPanel. |
 
-Please refer to the [Main UI docs]({{base}}/ui/mainui.html#web-audio-sink) for setting up web audio in Main UI.
+Please refer to the [Main UI docs]({{base}}/mainui/about.html#web-audio-sink) for setting up web audio in Main UI.
 
 Additionally, certain bindings register their supported devices as audio sinks, e.g. Sonos speakers.
 

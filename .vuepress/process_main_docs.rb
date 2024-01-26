@@ -17,10 +17,7 @@ def process_main_docs(docs_source_dir)
     FileUtils.cp_r("#{docs_source_dir}/images/addons", ".vuepress/public/logos")
 
 
-
     puts ">>> Migrating the Concepts section"
-
-
     if Dir.exists?("#{docs_source_dir}/concepts") then
         Dir.glob("#{docs_source_dir}/concepts/*.md").each { |path|
             file = File.basename(path)
@@ -35,10 +32,7 @@ def process_main_docs(docs_source_dir)
     end
 
 
-
     puts ">>> Migrating the Installation section"
-
-
     Dir.glob("#{docs_source_dir}/installation/*.md") { |path|
         file = File.basename(path)
         next if file == "designer.md"
@@ -49,10 +43,7 @@ def process_main_docs(docs_source_dir)
     FileUtils.cp_r("#{docs_source_dir}/installation/images", "docs/installation/images")
 
 
-
     puts ">>> Migrating the Tutorial section"
-
-
     Dir.glob("#{docs_source_dir}/tutorials/getting_started/*.md") { |path|
         file = File.basename(path)
         puts " -> #{file}"
@@ -65,8 +56,6 @@ def process_main_docs(docs_source_dir)
 
 
     puts ">>> Migrating the Configuration section"
-
-
     Dir.glob("#{docs_source_dir}/configuration/*.md") { |path|
         file = File.basename(path)
         next if file == "transform.md" # Useless, copy the one from addons
@@ -81,20 +70,28 @@ def process_main_docs(docs_source_dir)
     #FileUtils.mv("docs/configuration/migration/migration.md", "docs/configuration/migration/index.md")
     #FileUtils.cp_r("#{docs_source_dir}/tutorials/images", "docs/configuration/migration")
 
-    puts ">>> Migrating the Settings section"
 
-
-    Dir.glob("#{docs_source_dir}/settings/*.md") { |path|
+    puts ">>> Migrating the Main UI section"
+    Dir.glob("#{docs_source_dir}/mainui/*.md") { |path|
         file = File.basename(path)
         puts " -> #{file}"
-        process_file("#{docs_source_dir}/settings", file, "docs/settings", "#{$docs_repo_root}/settings/#{file}")
+        process_file("#{docs_source_dir}/mainui", file, "docs/mainui", "#{$docs_repo_root}/mainui/#{file}")
+    }
+    Dir.glob("#{docs_source_dir}/mainui/developer/*.md") { |path|
+        file = File.basename(path)
+        puts " -> #{file}"
+        process_file("#{docs_source_dir}/mainui/developer", file, "docs/mainui/developer", "#{$docs_repo_root}/mainui/developer/#{file}")
+    }
+    Dir.glob("#{docs_source_dir}/mainui/settings/*.md") { |path|
+        file = File.basename(path)
+        puts " -> #{file}"
+        process_file("#{docs_source_dir}/mainui/settings", file, "docs/mainui/settings", "#{$docs_repo_root}/mainui/settings/#{file}")
     }
     puts " -> images"
-    FileUtils.cp_r("#{docs_source_dir}/settings/images", "docs/settings/images")
+    FileUtils.cp_r("#{docs_source_dir}/mainui/images", "docs/mainui/images")
+
 
     puts ">>> Migrating the Migration Tutorial section"
-
-
     Dir.glob("#{docs_source_dir}/configuration/migration/*.md") { |path|
         file = File.basename(path)
         puts " -> #{file}"
@@ -103,8 +100,8 @@ def process_main_docs(docs_source_dir)
     puts " -> images"
     #FileUtils.cp_r("#{docs_source_dir}/configuration/images", "docs/configuration") // no images placed yet
 
-    puts ">>> Migrating the Blockly Tutorial section"
 
+    puts ">>> Migrating the Blockly Tutorial section"
     Dir.glob("#{docs_source_dir}/configuration/blockly/*.md") { |path|
         file = File.basename(path)
         puts " -> #{file}"
@@ -113,9 +110,8 @@ def process_main_docs(docs_source_dir)
     puts " -> images"
     #FileUtils.cp_r("#{docs_source_dir}/configuration/images", "docs/configuration") // no images placed yet
 
+
     puts ">>> Migrating the UI section"
-
-
     Dir.glob("#{docs_source_dir}/ui/*.md") { |path|
         file = File.basename(path)
         puts " -> #{file}"
@@ -125,10 +121,7 @@ def process_main_docs(docs_source_dir)
     FileUtils.cp_r("#{docs_source_dir}/ui/images", "docs/ui/images")
 
 
-
     puts ">>> Migrating the Apps section"
-
-
     Dir.glob("#{docs_source_dir}/addons/uis/apps/*.md") { |path|
         file = File.basename(path)
         puts " -> #{file}"
@@ -138,10 +131,7 @@ def process_main_docs(docs_source_dir)
     FileUtils.cp_r("#{docs_source_dir}/addons/uis/apps/images", "docs/apps")
 
 
-
     puts ">>> Migrating the Administration section"
-
-
     Dir.glob("#{docs_source_dir}/administration/*.md") { |path|
         file = File.basename(path)
         puts " -> #{file}"
@@ -151,10 +141,7 @@ def process_main_docs(docs_source_dir)
     FileUtils.cp_r("#{docs_source_dir}/administration/images", "docs/administration/images")
 
 
-
     puts ">>> Migrating the Developer section"
-
-
     Dir.glob("#{docs_source_dir}/developers/*.md") { |path|
         file = File.basename(path)
         puts " -> #{file}"

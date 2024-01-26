@@ -48,7 +48,7 @@ If the embedded bundle's manifest is not properly exporting all needed packages,
 In two cases using an "external" (i.e. not embedded) dependency is required:
 
 1. Dependencies to other openHAB bundles (e.g. `org.openhab.addons.bundles/org.openhab.binding.bluetooth/3.1.0-SNAPSHOT` or `org.openhab.addons.bundles/org.openhab.transform.map/3.1.0-SNAPSHOT`).
-2. Bundles that are used by more than one binding (e.g. Netty-bundles like `io.netty/netty-common/4.1.34.Final`).
+1. Bundles that are used by more than one binding (e.g. Netty-bundles like `io.netty/netty-common/4.1.34.Final`).
 
 Dependencies on other openHAB bundles should always have the scope `provided`.
 To ensure that external dependencies are available at runtime they also need to be added to the `feature.xml`:
