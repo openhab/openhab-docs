@@ -13,7 +13,7 @@ Community made Rule Templates can also be added to your system from the **Automa
 
 On this page you can manage all the basic rules you have added to your system:
 
-![rules-overview](/mainui/images/rules-overview.png)
+![rules-overview](../images/rules-overview.png)
 
 - **Add new Rules**<br>
   Add rules using the <!--F7:blue plus_circle_fill --> plus button.
@@ -39,7 +39,7 @@ The searchbar allows to filter by the name, the description and the tags of that
 
 When clicking "select" in the top right corner, the list allows to select multiple entries at the same time:
 
-![rules-selection](/mainui/images/rules-selection.png)
+![rules-selection](../images/rules-selection.png)
 
 After selecting one or multiple rules three options appear in the footer to allow
 
@@ -52,4 +52,4 @@ Press "Done" to return back to the normal list view.
 
 To add a rule press the plus icon in the lower right corner:
 
-![add rule](/mainui/images/plus.png) and follow the [rules tutorial]({{base}}/tutorial/rules_basic.html#create-the-rule).
+![add rule](../images/plus.png) and follow the [rules tutorial]({{base}}/tutorial/rules_basic.html#create-the-rule).

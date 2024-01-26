@@ -11,15 +11,15 @@ Please note that this page is only accessible for users with the administrator r
 
 The settings page includes:
 
-![settings-page.png](/mainui/images/settings-page.png)
+![settings-page.png](../images/settings-page.png)
 
 Some subpages, which are most often used, can also be accessed directly via the menu sidebar.
 
-![settings-menu](/mainui/images/settings-menu.png)
+![settings-menu](../images/settings-menu.png)
 
 ## Configuration
 
-![config-overview.png](/mainui/images/config-overview.png)
+![config-overview.png](../images/config-overview.png)
 
 - [**Things**](things.html)<br>
   Configure and add your IoT devices and services.
@@ -61,7 +61,7 @@ This section lists openHAB's system settings, which e.g. included location or ti
 
 This section lists the installed add-ons and provides direct access to the add-on settings as well as the add-on log level:
 
-![log-level.png](/mainui/images/log-level.png)
+![log-level.png](../images/log-level.png)
 
 The standard log level is `INFO` but to track down an issue it might be necessary to increase the log-level upon request.
 For more information see [Logging in openHAB]({{base}}/administration/logging.html).
