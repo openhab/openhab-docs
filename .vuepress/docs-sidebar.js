@@ -119,19 +119,25 @@ module.exports = [
     title: 'Main UI',
     collapsable: false,
     children: [
-      ['ui/mainui', 'Main UI'],
+      ['mainui/', 'Overview'],
       { title: 'Settings',
-        path: '/docs/settings/',
+        path: '/docs/mainui/settings/',
         children: [
-          'settings/configuration',
-          ['settings/automations', 'Automation'],
-          ['settings/system_settings', 'System'],
-          ['settings/addons', 'Add-ons'],
+          ['mainui/settings/things', 'Things'],
+          ['mainui/settings/model', 'Model'],
+          ['mainui/settings/items', 'Items'],
+          ['mainui/settings/pages', 'Pages'],
+          ['mainui/settings/transformations', 'Transformations'],
+          ['mainui/settings/persistence', 'Persistence'],
+          ['mainui/settings/rules', 'Rules'],
+          ['mainui/settings/scenes', 'Scenes'],
+          ['mainui/settings/scripts', 'Scripts'],
+          ['mainui/settings/schedule', 'Schedule']
         ]
       },
-      ['ui/addons-store', 'Add-on Store'],
-      ['ui/developer-tools', 'Developer Tools'],
-      ['ui/aboutpage', 'Help & About'],
+      ['mainui/addons', 'Add-on Store'],
+      ['mainui/developer/', 'Developer Tools'],
+      ['mainui/about', 'Help & About'],
     ]
   },
   {
