@@ -11,12 +11,6 @@ The Things that you can add to your system are determined by the bindings that y
 
 There is a [Things concepts page]({{base}}/concepts/things.html) that explains the idea of Things in detail.
 
-Adding Things via the user interface is described comprehensively in the tutorial section:
-
-- [Adding Things - Simple]({{base}}/tutorial/things_simple.html)
-- [Adding Things - Intermediate]({{base}}/tutorial/things_intermediate.html): Things that are dealing with a binding where the bridge-Thing cannot be automatically discovered.
-- [Adding Things - Advanced]({{base}}/things_advanced.html): Things that do not support automatic discovery.
-
 On this page, you can manage all the Things you have added to your system:
 
 - **Add new Things**<br>
@@ -28,6 +22,12 @@ On this page, you can manage all the Things you have added to your system:
 - **Enable/Disable Things**<br>
   Select multiple Things using the top **Select** button and use the **Enable** or **Disable** buttons at the bottom or use the <!--F7 pause_circle --> pause button on the individual Thing pages.
 <!-- END MAINUI SIDEBAR DOC - DO NOT REMOVE -->
+
+Adding Things via the user interface is described comprehensively in the tutorial section:
+
+- [Adding Things - Simple]({{base}}/tutorial/things_simple.html)
+- [Adding Things - Intermediate]({{base}}/tutorial/things_intermediate.html): Things that are dealing with a binding where the bridge-Thing cannot be automatically discovered.
+- [Adding Things - Advanced]({{base}}/things_advanced.html): Things that do not support automatic discovery.
 
 ## Inbox
 

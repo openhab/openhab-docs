@@ -9,7 +9,7 @@ title: Settings - Persistence
 **Persistence** stores data over time.
 The data may be retrieved at a later time, for example to restore your system after startup, or to prepare graphs for display on the UI.
 
-openHAB by default ships with the [RRD4J persistence service](/addons/persistence/rrd4j) installed by default, which persists every Item on every state change and at least once a minute.
+openHAB by default ships with the [RRD4J persistence service](/addons/persistence/rrd4j/) installed by default, which persists every Item on every state change and at least once a minute.
 Additionally, it restores the last stored value at system startup.
 
 To change this behaviour, you already found the correct page!

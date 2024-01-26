@@ -10,9 +10,8 @@ title: Add-on Store
 
 The Add-on Store allows you to install and remove many different types of add-ons:
 
-- **Bindings** connect and control hardware and online services.<br>
-  Official bindings are maintained by openHAB maintainers and are available from the **openHAB Distribution**.
-  The **Community Marketplace** provides bindings independently released by the community.
+- **Bindings**<br>
+  Connect and control hardware and online services.
 - **Automation**
   - **Scripting Languages** like JavaScript and JRuby.
   - **Technologies** like PID Controller, PWM (pulse width modulation).
@@ -44,7 +43,8 @@ Note that there is a tab bar at the bottom that allows you to switch between the
 
 ## Bindings
 
-Bindings are used to connect and control hardware and online services. This section provides bindings from openHAB Distribution, which have been thoroughly reviewed by the maintainers of openHAB, as well as bindings from the Community Marketplace.
+Bindings are used to connect and control hardware and online services.
+This section provides both official bindings from the **openHAB Distribution**, which have been thoroughly reviewed by the maintainers of openHAB, as well as bindings independently released by the community on the **Community Marketplace**.
 If you want to know more about the marketplace, please read the following [Marketplace announcement](https://community.openhab.org/t/announcing-the-community-marketplace/127188).
 
 To learn more how to install add-ons read the [Add-ons tutorial]({{base}}/configuration/addons).

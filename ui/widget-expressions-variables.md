@@ -214,5 +214,5 @@ Substract one week from the state of `DateTime` and return a relative time repre
 
 ## Debugging Expressions
 
-Expressions can be tested in the Widgets Expression Tester found in the [Developer Sidebar](mainui.html#developer-sidebar)
+Expressions can be tested in the Widgets Expression Tester found in the [Developer Sidebar]({{base}}/mainui/developer/sidebar.html#developer-sidebar)
 (<kbd>Shift</kbd><kbd>Alt</kbd><kbd>D</kbd>).
