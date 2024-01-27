@@ -28,4 +28,4 @@ An unordered loose list (applied if bigger or with nested lists):
 
 - Some more text
 
-- And even more text that could also strech over multiple lines
+- And even more text that could also stretch over multiple lines
