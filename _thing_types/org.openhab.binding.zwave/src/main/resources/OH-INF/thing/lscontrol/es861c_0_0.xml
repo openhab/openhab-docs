@@ -15,9 +15,9 @@ Temperature Sensor<br /> <h1>Overview</h1><p>Temperature Sensor</p> <br /> <h2>I
     <!-- CHANNEL DEFINITIONS -->
     <channels>
       <channel id="sensor_temperature" typeId="sensor_temperature">
-        <label>Temperature</label>
+        <label>Sensor (temperature)</label>
         <properties>
-          <property name="binding:*:QuantityType">COMMAND_CLASS_SENSOR_MULTILEVEL</property>
+          <property name="binding:*:QuantityType">COMMAND_CLASS_SENSOR_MULTILEVEL;type=TEMPERATURE</property>
         </properties>
       </channel>
       <channel id="battery-level" typeId="system.battery-level">

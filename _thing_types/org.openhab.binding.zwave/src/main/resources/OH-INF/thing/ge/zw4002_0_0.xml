@@ -28,7 +28,7 @@ In-Wall Smart Fan Control<br /> <h1>Overview</h1><p><strong>Basic Operation</str
       <property name="vendor">Jasco Products</property>
       <property name="modelId">ZW4002</property>
       <property name="manufacturerId">0063</property>
-      <property name="manufacturerRef">4944:3131</property>
+      <property name="manufacturerRef">4944:3131,4944:3138</property>
       <property name="dbReference">281</property>
       <property name="defaultAssociations">1,2,3</property>
     </properties>
