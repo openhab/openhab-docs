@@ -20,7 +20,6 @@
   },
   "homepage": "https://github.com/openhab/openhab-docs#readme",
   "dependencies": {
-    "markdown-it-footnote": "^4.0.0",
     "vue-tabs-component": "^1.5.0",
     "vuepress": "^1.5.0",
     "vuepress-plugin-container": "^2.1.4",

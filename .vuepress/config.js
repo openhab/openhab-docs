@@ -29,8 +29,6 @@ module.exports = {
     // ['script', { src: `https://identity.netlify.com/v1/netlify-identity-widget.js` }]
   ],
   extendMarkdown(md) {
-    md.use(require('markdown-it-footnote'));
-    
     md.options.linkify = true
     const highlight = md.options.highlight
     md.options.highlight = (str, lang) => {
