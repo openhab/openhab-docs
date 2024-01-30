@@ -25,7 +25,7 @@ This folder is referred to as $OPENHAB\_CONF in this page, and the location of t
 - via mounting the files shares from the server to your client-PC.
 In the main UI as an admin you can go to _Help & About_ and will have the different folder locations under _Technical information_.
   - the exact configuration of the shares can be found on your server at [/etc/samba/smb.conf](https://github.com/openhab/openhabian/blob/main/includes/smb.conf).
-- Use the share _openHAB_-conf when mounting it from Windows or MacOS
+- Use the share _openHAB_-conf when mounting it from Windows or macOS
 
 **Link the openHAB share in Windows**
 
@@ -79,9 +79,9 @@ Also view ![youtube](../images/blockly/youtube-logo-small.png) [Creating a Block
   ![blockly-edit-screen](../images/blockly/blockly-edit-screen.png)
 - you can now click the ![toolbox-submenu](../images/blockly/blockly-arrow.png) to access all openHAB Blocks.
 - Drag and Drop the blocks to the white area
-- Press `Ctrl-s` (Windows) or `Command-s` (MacOS) to save your rule
-- Press `Ctrl-r` (Windows) or `Command-r` (MacOS) to directly run your rule with the trigger
-- Press `Ctrl-d` (Windows) or `Command-d` (MacOS) to disable / enable your rule.
+- Press `Ctrl-s` (Windows) or `Command-s` (macOS) to save your rule
+- Press `Ctrl-r` (Windows) or `Command-r` (macOS) to directly run your rule with the trigger
+- Press `Ctrl-d` (Windows) or `Command-d` (macOS) to disable / enable your rule.
 See the following video on ![youtube](../images/blockly/youtube-logo-small.png) [How to disable Rules](https://youtu.be/hSRfooBKn9A?t=1668)
 - **Click on** ![showblock](../images/blockly/blockly-workspace-showblocks.png) **on the lower right of the bottom toolbar to see the generated code** and will transition to ![showcode](../images/blockly/blockly-workspace-showcode.png)(click again to come back to the blocks).
 

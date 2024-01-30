@@ -60,9 +60,9 @@ Nevertheless, here is some examples using [curl](https://en.wikipedia.org/wiki/C
 
 The commands above have been copied from the REST API documentation for illustration.
 
-## Rest Api Explorer
+## REST API Explorer
 
-You can try and validate rest api calls from within the openHAB UI.
+You can try and validate REST API calls from within the openHAB UI.
 Just log in with an admin user, navigate to `Developer Tools -> API Explorer` and start exploring.
 
 ## Authentication

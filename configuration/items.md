@@ -64,9 +64,9 @@ itemtype itemname "labeltext [stateformat]" <iconname> (group1, group2, ...) ["t
 ```java
 Switch Kitchen_Light "Kitchen Light" {channel="mqtt:topic:..." }
 String Bedroom_Sonos_CurrentTitle "Title [%s]" (gBedRoom) {channel="sonos:..."}
-Number Bathroom_WashingMachine_Power "Power [%.0f W]" <energy> (gPower) {channel="homematic:..."}
+Number:Power Bathroom_WashingMachine_Power "Power [%.0f W]" <energy> (gPower) {channel="homematic:..."}
 
-Number Livingroom_Temperature "Temperature [%.1f °C]" <temperature> (gTemperature, gLivingroom) ["TargetTemperature"] {knx="1/0/15+0/0/15"}
+Number:Temperature Livingroom_Temperature "Temperature [%.1f °C]" <temperature> (gTemperature, gLivingroom) ["TargetTemperature"] {knx="1/0/15+0/0/15"}
 ```
 
 The last example above defines an Item with the following fields:
@@ -169,13 +169,13 @@ The following naming style guide is recommended:
 
 Examples:
 
-| Item Name                         | Interpretation (assumed Item type, example value)                                                       |
-| --------------------------------- | ------------------------------------------------------------------------------------------------------- |
-| "`Livingroom_CeilingLight`"       | Living room light (Switch, e.g. ON)                                                                     |
-| "`Livingroom_CeilingLight_Color`" | Living room light color (Color, e.g. warm white)                                                        |
-| "`GF_BR_WashingMachine_Power`"    | Electric power consumed by the washing machine located in the ground floor bathroom (Number, e.g. 100W) |
-| "`Lighting_Scene`"                | Overall lighting scene of the house (String, e.g. Party)                                                |
-| "`Presence_John_Smartphone`"      | An Item indicating if John is home or not, based on smartphone detection (Switch, e.g. Offline)         |
+| Item Name                       | Interpretation (assumed Item type, example value)                                                       |
+| ------------------------------- | ------------------------------------------------------------------------------------------------------- |
+| `Livingroom_CeilingLight`       | Living room light (Switch, e.g. ON)                                                                     |
+| `Livingroom_CeilingLight_Color` | Living room light color (Color, e.g. warm white)                                                        |
+| `GF_BR_WashingMachine_Power`    | Electric power consumed by the washing machine located in the ground floor bathroom (Number, e.g. 100W) |
+| `Lighting_Scene`                | Overall lighting scene of the house (String, e.g. Party)                                                |
+| `Presence_John_Smartphone`      | An Item indicating if John is home or not, based on smartphone detection (Switch, e.g. Offline)         |
 
 [Group](#groups) is a special Item type that may be used to nest or combine Items.
 Users are encouraged to apply the style guide above to group names as well as Item names.
@@ -185,12 +185,12 @@ Two naming schemes are established in the community for Group names:
     Otherwise the word "Group" may be appended for clarity.
 1. Prepend a lowercase "g" to the name (e.g. gBattery)
 
-| Group Name                                | Interpretation                                                        |
-| ----------------------------------------- | --------------------------------------------------------------------- |
-| "`Batteries`" or "`gBattery`"             | Group combining the states of all battery Items                       |
-| "`Maintenance_Group`" or "`gMaintenance`" | Group containing all maintenance-related Items                        |
-| "`Livingroom_Lights`" or "`gLR_Light`"    | Group containing all light Items belonging to the living room         |
-| "`Livingroom`" or "`gLR`"                 | Group for _all_ Items (including lights) belonging to the living room |
+| Group Name                            | Interpretation                                                        |
+| ------------------------------------- | --------------------------------------------------------------------- |
+| `Batteries` or `gBattery`             | Group combining the states of all battery Items                       |
+| `Maintenance_Group` or `gMaintenance` | Group containing all maintenance-related Items                        |
+| `Livingroom_Lights` or `gLR_Light`    | Group containing all light Items belonging to the living room         |
+| `Livingroom` or `gLR`                 | Group for _all_ Items (including lights) belonging to the living room |
 
 ### Label
 
@@ -202,7 +202,7 @@ In textual configurations the label, in quotation marks, appears next to the opt
 The label for the Item in the following example is "Temperature" and the optional state representation is set to be displayed, e.g. as "23.9 °C":
 
 ```java
-Number Livingroom_Temperature "Temperature [%.1f °C]"
+Number:Temperature Livingroom_Temperature "Temperature [%.1f °C]"
 ```
 
 Channel labels can be overwritten by Item definitions and Item labels can be overwritten in [Sitemaps]({{base}}/ui/sitemaps.html#element-types).
@@ -254,10 +254,10 @@ The state presentation is part of the Item label definition and contained inside
 The state presentation for the Item in the following example is "`%.1f °C`":
 
 ```java
-Number Livingroom_Temperature "Temperature [%.1f °C]"
+Number:Temperature Livingroom_Temperature "Temperature [%.1f °C]"
 ```
 
-If no state presentation and no square brackets are given, the Item will not provide a textual presentation of its internal state (i.e. in UIs no state is shown).
+If no square brackets are given and the Item is not linked to a channel, the Item will not provide a textual presentation of its internal state (i.e. in UIs no state is shown).
 This is often meaningful when an Item is presented by a non-textual UI elements like a switch or a diagram.
 
 Formatting of the presentation is done applying [Java formatter class syntax](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Formatter.html#syntax).
@@ -267,7 +267,7 @@ Free text, like a unit, can be added before or after the formatter string.
 A few examples are given below:
 
 ```java
-Number    Livingroom_Temperature   "Temperature [%.1f °C]"             // e.g. "23.5 °C"
+Number:Temperature    Livingroom_Temperature   "Temperature [%.1f °C]"             // e.g. "23.5 °C"
 String    Livingroom_TV_Channel    "Now Playing [%s]"                  // e.g. "Lorem ipsum"
 DateTime  Livingroom_TV_LastUpdate "Last Update [%1$ta %1$tR]"         // e.g. "Sun 15:26"
 Number    Livingroom_Clock_Battery "Battery Charge [%d %%]"            // e.g. "50 %"
@@ -352,17 +352,16 @@ Switch Kitchen_Light "Kitchen Light" <f7:lightbulb>
 Switch Garage_Light "Garage Light" <if:mdi:lightbulb>
 ```
 
-Here is the list of available icon sources and how they are supported by the major user interfaces.
+Here is the list of available icon sources that are supported by the major user interfaces (Main UI, Basic UI, Android and iOS app).
 
-| Source name          | Source description                    | Main UI    | Basic UI                          | Android app       | iOS app           |
-| -------------------- | ------------------------------------- | ---------- | --------------------------------- | ----------------- | ----------------- |
-| `oh`                | Icons provided via the openHAB server | Supported  | Supported                         | Supported         | Supported         |
-| `material`         | [Material icons](https://fonts.google.com/icons?icon.set=Material+Icons) | Supported  | Supported                         | Not yet supported | Not yet supported |
-| `f7`                | [Framework7 icons](https://framework7.io/icons/)                         | Supported  | Supported                         | Not yet supported | Not yet supported |
-| `if` or `iconify` | [iconify icons](https://icon-sets.iconify.design/)                       | Supported  | Supported but needs to be enabled | Not yet supported | Supported         |
+| Source name       | Source description                                                       |
+| ----------------- | ------------------------------------------------------------------------ |
+| `oh`              | Icons provided via the openHAB server                                    |
+| `material`        | [Material icons](https://fonts.google.com/icons?icon.set=Material+Icons) |
+| `f7`              | [Framework7 icons](https://framework7.io/icons/)                         |
+| `if` or `iconify` | [iconify icons](https://icon-sets.iconify.design/)                       |
 
-Please note that the iconify option requires Internet connectivity on the client to access the external API.
-The WEB browser will cache the retrieved icons to limit the requests and speed up the rendering.
+Please note that the iconify option requires internet connectivity on the client to access the external API.
 Certain user interfaces provide a setting to enable this option, e.g. Basic UI disables this option by default but allows it to be enabled.
 
 #### Dynamic Icons
@@ -470,7 +469,7 @@ Group Sensors      (House)
 Group Temperatures (Sensors)
 
 // Example Item
-Number Livingroom_Temperature "Temperature [%.1f °C]" (Livingroom, Temperatures)
+Number:Temperature Livingroom_Temperature "Temperature [%.1f °C]" (Livingroom, Temperatures)
 ```
 
 The example shows an Item which stores the temperature of the living room called `Livingroom_Temperature`.
@@ -578,7 +577,7 @@ Additionally, you have the opportunity to interact with a device through its Ite
 The Binding of an Item is given in the last part of the Item definition between curly brackets e.g. `{channel="..."}` in the example below:
 
 ```java
-Number Livingroom_Temperature "Temperature [%.1f °C]" {channel="..."}
+Number:Temperature Livingroom_Temperature "Temperature [%.1f °C]" {channel="..."}
 ```
 
 openHAB introduces the concept of [Things and Channels]({{base}}/concepts/things.html).

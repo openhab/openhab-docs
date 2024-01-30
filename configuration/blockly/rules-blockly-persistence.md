@@ -44,7 +44,7 @@ This method uses a time-weighted average calculation
 - evolution rate: gets the evolution rate of the state of the given Item in percent since a certain point in time (may be positive or negative)
 - minimum: gets the minimum value of the State of the given Item since a certain point in time
 - maximum: gets the maximum value of the State of the given Item since a certain point in time
-- maximum: gets the sum of the State of the given Item since a certain point in time
+- sum: gets the sum of the State of the given Item since a certain point in time
 - historic state: gets the historic state at a certain point in time
 
 In the case of the following two functions the block changes its appearance by replacing the time with an option to chose if the equal value should be skipped or not:
@@ -52,6 +52,7 @@ In the case of the following two functions the block changes its appearance by r
 ![previous-block](../images/blockly/blockly-persistence-get-previous.png)
 
 - previous state value: Gets the previous state with option to skip to different value as current
+- previous state numeric value: same as above but directly returns a number without a unit
 - previous state value time: Gets the time when previous state last occurred with option to skip to different value as current
 
 The persistence dropdown allows to select the persistence storage from which the value should be retrieved.

@@ -114,7 +114,7 @@ In most cases, the description also contains a fully worked out example that inc
 To all newcomers: please read the section [New User Tutorial]({{base}}/tutorial).
 That section provides you with step-by-step instructions for your first easy setup.
 
-openHAB runs on most popular platforms such as Linux, Windows and MacOS and on almost any hardware ranging from Raspberry Pis to desktop computers and server PCs.
+openHAB runs on most popular platforms such as Linux, Windows and macOS and on almost any hardware ranging from Raspberry Pis to desktop computers and server PCs.
 You can find specific installation instructions for these and other platforms in the [Installation Overview]({{base}}/installation/index.html) article.
 If you have a strong preference towards a particular platform, then that platform is probably your best choice.
 
@@ -163,7 +163,7 @@ Once you have got a first overview, it is time to practice.
 Here a short list of the steps that you will need to consider to get openHAB up and running as your home automation system:
 
 1. Install openHAB
-1. If you already own a smart device, search the addons for the brand or technology used by that device (or simply browse the list of [add-ons](/addons/) for any technologies or services you may recognize)
+1. If you already own a smart device, search the add-ons for the brand or technology used by that device (or simply browse the list of [add-ons](/addons/) for any technologies or services you may recognize)
 1. Install a binding (in openHAB)
 1. Define a “thing”
 1. Add a “channel” to the “thing” if not created by the binding

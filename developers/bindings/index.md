@@ -571,9 +571,11 @@ If you implement the `ThingActions` interface, you can tell the framework about 
 
 Please note that for actions not related to Things you will instead implement an `ActionHandler` as described in the developing [Module Types](../module-types/) chapter.
 
-You start things off by implementing `ThingActions` and annotate your class with `@ThingActionsScope`:
+You start things off by implementing `ThingActions` and annotate your class with `@ThingActionsScope`.
+Since a new service is required for each thing, the component needs to be a `PROTOTYPE`:
 
 ```java
+@Component(scope = ServiceScope.PROTOTYPE, service = MQTTActions.class)
 @ThingActionsScope(name = "mqtt") // Your bindings id is usually the scope
 @NonNullByDefault
 public class MQTTActions implements ThingActions {
@@ -594,7 +596,7 @@ public class MyThingHandler extends BaseThingHandler {
     ...
     @Override
     public Collection<Class<? extends ThingHandlerService>> getServices() {
-        return Collections.singleton(MQTTActions.class);
+        return List.of(MQTTActions.class);
     }
 }
 ```
@@ -873,7 +875,7 @@ public class HueBridgeDiscoveryParticipant implements UpnpDiscoveryParticipant {
 
     @Override
     public Set<ThingTypeUID> getSupportedThingTypeUIDs() {
-        return Collections.singleton(THING_TYPE_BRIDGE);
+        return Set.of(THING_TYPE_BRIDGE);
     }
 
     @Override
@@ -976,33 +978,36 @@ Here the developer only needs to implement four simple methods:
 When the discovery process is dependent on a configured bridge the discovery service must be bound to the bridge handler.
 Binding additional services to a handler can be achieved by implementing the service as a `ThingHandlerService`.
 
-Instead of using the Component annotation your discovery service implements the `ThingHandlerService`.
-It should extend the `AbstractDiscoveryService` (which implements `DiscoveryService`) just like a normal service:
+It should extend the `AbstractThingHandlerDiscoveryService` (which implements `ThingHandlerService` and `DiscoveryService`) just like a normal service.
+Since a new service is created for each thing, it has to be a `PROTOTYPE` component:
 
 ```java
-public class <your binding bridge DiscoveryService> extends AbstractDiscoveryService
-        implements ThingHandlerService {
+@Component(scope = ServiceScope.PROTOTYPE, service = YourBindingDiscoveryService.class)
+public class <YourBindingDiscoveryService> extends AbstractThingHandlerDiscoveryService<YourBridgeHandler> {
 ```
 
-The interface `ThingHandlerService` has 2 methods to pass the handler of the bridge.
-A typical implementation is:
+In the class there is a field `protected YourBridgeHandler thingHandler;` which is automatically assigned.
+This field is guaranteed to be non-null after the service has been activated.
+
+During service creation, first `activate()` is called, then the `thingHandler` is injected and finally `ìnitialize()` is called.
+The opposite order is used when the service is destroyed, first `dispose()` is called (when the thing handler is still available in the service), then `deactivate()`.
+`initialize()` and `dispose()` take care of background discovery.
+
+If you need additional code for initializing / disposing the discovery service, you can place them in the `initialize()` / `dispose()` methods.
+To ensure everything is working correctly, you should call `super.initialize()` AFTER your own code and `super.dispose()` BEFORE your own code.
+
+The `thingHandler` can be used to get the bridge UID or to get access to the configured device connected to the bridge handler.
+Fields set in `activate()` or `initialize()` can be regarded as "injected" and therefore be annotated with `@NonNullByDefault({})`.
 
 ```java
-    @Override
-    public void setThingHandler(@Nullable ThingHandler handler) {
-        if (handler instanceof <your binding handler>) {
-            bridgeHandler = (<your binding handler>) handler;
-        }
-    }
+    private @NonNullByDefault({}) ThingUID bridgeUid;
 
     @Override
-    public @Nullable ThingHandler getThingHandler() {
-        return bridgeHandler;
+    public void initialize() {
+        bridgeUid = thingHandler.getThing().getUID();
+        super.initialize();
     }
 ```
-
-The `setThingHandler` is called by the openHAB framework and give you access to the binding bridge handler.
-The handler can be used to get the bridge UID or to get access to the configured device connected to the bridge handler.
 
 In the bridge handler you need to activate the thing handler service.
 This is done by implementing the `getServices` method in your bridge handler:
@@ -1010,7 +1015,7 @@ This is done by implementing the `getServices` method in your bridge handler:
 ```java
     @Override
     public Collection<Class<? extends ThingHandlerService>> getServices() {
-        return Collections.singleton(<your binding bridge DiscoveryService>.class);
+        return List.of(YourBindingDiscoveryService.class);
     }
 ```
 
