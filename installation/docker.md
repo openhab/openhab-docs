@@ -255,7 +255,10 @@ It then performs all the same steps that the upgrade script and which are perfor
 
 ### Universal Plug and Play (UPnP)
 
-Some bindings, like e.g. [SONOS](https://www.openhab.org/addons/bindings/sonos/), depend on the common [UPnP](https://en.wikipedia.org/wiki/Universal_Plug_and_Play) communication infrastructure installed with openHAB. The protocol is based on IP multicast messages, which are limited to a local subnet. In case you have multiple network adapters in your system (which is the case if you use docker), it is necessary to inform openHAB what interface shall be used for UPnP discovery and communication. If more than one IP address is assigend to the interface, the address to use must be specified as well.
+Some bindings, like e.g. [SONOS](https://www.openhab.org/addons/bindings/sonos/), depend on the common [UPnP](https://en.wikipedia.org/wiki/Universal_Plug_and_Play) communication infrastructure installed with openHAB.
+The protocol is based on IP multicast messages, which are limited to a local subnet.
+In case you have multiple network adapters in your system (which is the case if you use docker), it is necessary to inform openHAB what interface shall be used for UPnP discovery and communication.
+If more than one IP address is assigend to the interface, the address to use must be specified as well.
 
 This information can be specified via the `EXTRA_JAVA_OPTS` [Environment Variable](#environment-variables):
 
@@ -268,7 +271,8 @@ EXTRA_JAVA_OPTS="-Dorg.jupnp.network.useInterfaces=eno1 -Dorg.jupnp.network.useA
 ::: tab Linux
 
 ::: tip Note
-To get full advantage of a docker/container setup it is recommended to learn about [docker compose](https://docs.docker.com/compose/). The following example is using docker compose syntax.
+To get full advantage of a docker/container setup it is recommended to learn about [docker compose](https://docs.docker.com/compose/).
+The following example is using docker compose syntax.
 :::
 
 Identify the network interface on the host machine:
@@ -338,7 +342,7 @@ services:
 
 ### USB sticks
 
-If you want use an USB stick (for example for Z-Wave network), then it will be not available for the dockerized system by default.
+USB periferals (for example for Z-Wave, or ZigBee network sticks) will not be available by default to the dockerized system.
 In Docker openHAB is running in name of `openhab`, a restricted user.
 The stick will work if you run the following command right after Docker image is started.
 
@@ -372,4 +376,30 @@ This command changes permissions of the specific device as expected (readable an
 
 ::: tip Note
 The device path (`/dev/ttyACM0`) or container name (`openhab`) could be different in your system, command can be modified accordingly.
+Instead of using e.g. `/dev/ttyACM0` to identify the device it might be more robust to identify a device by id (e.g. if you add devices, plug in the stick in a different port):
+
+```yml
+devices:
+  - /dev/serial/by-id/usb-0658_0200-if00:/dev/ttyACM2
+  - /dev/serial/by-id/usb-Prolific_Technology_Inc._USB-Serial_Controller_D-if00-port0:/dev/ttyUSB0
+```
+
+How to identify the device:
+
+```bash
+> pwd
+/dev/serial/by-id
+
+> ls -l
+total 0
+lrwxrwxrwx 1 root root 13 Jan 19 17:26 usb-0658_0200-if00 -> ../../ttyACM0
+lrwxrwxrwx 1 root root 13 Jan 19 17:26 usb-ITEAD_SONOFF_Zigbee_3.0_USB_Dongle_Plus_V2_20220810144536-if00 -> ../../ttyACM1
+lrwxrwxrwx 1 root root 13 Jan 19 17:26 usb-Prolific_Technology_Inc._USB-Serial_Controller_D-if00-port0 -> ../../ttyUSB0
+
+> lsusb
+Bus 002 Device 003: ID 067b:2303 Prolific Technology, Inc. PL2303 Serial Port / Mobile Action MA-8910P
+Bus 002 Device 007: ID 1a86:55d4 QinHeng Electronics SONOFF Zigbee 3.0 USB Dongle Plus V2
+Bus 002 Device 004: ID 0658:0200 Sigma Designs, Inc. Aeotec Z-Stick Gen5 (ZW090) - UZB
+```
+
 :::
