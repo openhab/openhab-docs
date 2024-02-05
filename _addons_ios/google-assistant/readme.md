@@ -24,8 +24,15 @@ If you have any issues, questions or an idea for additional features, please tak
 ## Latest Changes
 
 ::: tip State of this document
-This documentation refers to release [v3.8.1](https://github.com/openhab/openhab-google-assistant/releases/tag/v3.8.1) of [openHAB Google Assistant](https://github.com/openhab/openhab-google-assistant) published on 2023-11-26
+This documentation refers to release [v3.9.0](https://github.com/openhab/openhab-google-assistant/releases/tag/v3.9.0) of [openHAB Google Assistant](https://github.com/openhab/openhab-google-assistant) published on 2024-01-29
 :::
+
+### v3.9.0
+
+- Prepared available configuration options for the upcoming rollout of v4
+- Users can start adjusting their setup to use the new configuration options:
+  - [`Thermostat`](#thermostat): `modes` has been renamed to `thermostatModes`
+  - [`Fan`](#fan-hood-airpurifier): `speeds` has been renamed to `fanSpeeds`
 
 ### v3.8.0
 
@@ -329,23 +336,23 @@ Player transportItem   (tvGroup) { ga="tvTransport" }
 | **Device Type** | [Fan](https://developers.home.google.com/cloud-to-cloud/guides/fan), [Hood](https://developers.home.google.com/cloud-to-cloud/guides/hood), [AirPurifier](https://developers.home.google.com/cloud-to-cloud/guides/airpurifier) |
 | **Supported Traits** | [OnOff](https://developers.home.google.com/cloud-to-cloud/traits/OnOff), [FanSpeed](https://developers.home.google.com/cloud-to-cloud/traits/fanspeed) (depending on used item type) |
 | **Supported Items** | Switch (no speed control), Dimmer |
-| **Configuration** | (optional) `checkState=true/false`<br>(optional) `speeds="0=away:zero,50=default:standard:one,100=high:two"`<br>(optional) `lang="en"`<br>(optional) `ordered=true/false` |
+| **Configuration** | (optional) `checkState=true/false`<br>(optional) `fanSpeeds="0=away:zero,50=default:standard:one,100=high:two"`<br>(optional) `lang="en"`<br>(optional) `ordered=true/false` |
 
 Fans (and similar device types, like AirPurifier or Hood) support the `FanSpeed` trait.
-If you do not specify the `speeds` option, Google will use and expect percentage values for the fan speed.
+If you do not specify the `fanSpeeds` option, Google will use and expect percentage values for the fan speed.
 Otherwise, you will be able to set up and use human speakable modes, e.g. "fast" for 100% or "slow" for 25%.
 
-`speeds` will be a comma-separated list of modes, where the mode value corresponds to the speed value to be passed to the device. The mode or value is followed by an equal sign to list different aliases separated by a colon sign.
+`fanSpeeds` will be a comma-separated list of modes, where the mode value corresponds to the speed value to be passed to the device. The mode or value is followed by an equal sign to list different aliases separated by a colon sign.
 So in the example stated below both "high" and "two" would set the speed to 100%.
-Some devices may expect a specific value instead of a percentage, like "1" or "2" as speed values. In this case, you can adjust the configuration and replace the percentage values with the values that the device expects. (e.g.: `speeds="0=away:zero,1=default:standard:one,2=high:two"`).
+Some devices may expect a specific value instead of a percentage, like "1" or "2" as speed values. In this case, you can adjust the configuration and replace the percentage values with the values that the device expects. (e.g.: `fanSpeeds="0=away:zero,1=default:standard:one,2=high:two"`).
 You are also able to define the language of those aliases.
 The option `ordered` will tell the system that your list is ordered and you will then be able to also say "faster" or "slower" and Google will use the next or previous speed.
 
 ```shell
-Dimmer { ga="Fan" [ speeds="0=away:zero,50=default:standard:one,100=high:two", lang="en", ordered=true ] } # Using specific percentage values for the speed
+Dimmer { ga="Fan" [ fanSpeeds="0=away:zero,50=default:standard:one,100=high:two", lang="en", ordered=true ] } # Using specific percentage values for the speed
 Switch { ga="Hood" } # No speed control - only on/off
 Dimmer { ga="AirPurifier" } # Using percentage values for the speed
-Dimmer { ga="AirPurifier" [ speeds="0=away:zero,1=low:one,2=medium:two,3=high:three,4=turbo:four", lang="en", ordered=true ] } # Using specific speed modes/values, which differ from percentage
+Dimmer { ga="AirPurifier" [ fanSpeeds="0=away:zero,1=low:one,2=medium:two,3=high:three,4=turbo:four", lang="en", ordered=true ] } # Using specific speed modes/values, which differ from percentage
 Switch { ga="AirPurifier" } # No speed control - only on/off
 ```
 
@@ -447,7 +454,7 @@ Number humidityItem    (sensorGroup) { ga="humidityAmbient" }
 | **Device Type** | [Thermostat](https://developers.home.google.com/cloud-to-cloud/guides/thermostat) |
 | **Supported Traits** | [TemperatureSetting](https://developers.home.google.com/cloud-to-cloud/traits/temperaturesetting) |
 | **Supported Items** | Group as `Thermostat` with the following members:<br>String or Number as `thermostatMode`<br>(optional) Number as `thermostatHumidityAmbient`<br>(optional) Number as `thermostatTemperatureAmbient`<br>(optional) Number as `thermostatTemperatureSetpoint`<br>(optional) Number as `thermostatTemperatureSetpointLow`<br>(optional) Number as `thermostatTemperatureSetpointHigh` |
-| **Configuration** | (optional) `checkState=true/false`<br>(optional) `useFahrenheit=true/false`<br>(optional) `thermostatTemperatureRange="10,30"`<br>(optional) `modes="off=OFF:WINDOW_OPEN,heat=COMFORT:BOOST,eco=ECO,on=ON,auto"` |
+| **Configuration** | (optional) `checkState=true/false`<br>(optional) `useFahrenheit=true/false`<br>(optional) `thermostatTemperatureRange="10,30"`<br>(optional) `thermostatModes="off=OFF:WINDOW_OPEN,heat=COMFORT:BOOST,eco=ECO,on=ON,auto"` |
 
 Thermostat requires a group of items to be properly configured to be used with Google Assistant. The default temperature unit is Celsius.
 To change the temperature unit to Fahrenheit, add the config option `useFahrenheit=true` to the thermostat group.
@@ -456,15 +463,15 @@ If your thermostat supports a range for the setpoint you can use both `thermosta
 
 If your thermostat does not have a mode, you should create one and manually assign a value (e.g. heat, cool, on, etc.) to have proper functionality.
 
-To map the [default thermostat modes of Google](https://developers.home.google.com/cloud-to-cloud/traits/temperaturesetting.html) (on, off, heat, cool, etc.) to custom ones for your specific setup, you can use the `modes` config option on the thermostat group.
-E.g. `[ modes="off=OFF:WINDOW_OPEN,heat=COMFORT:BOOST,eco=ECO,on=ON,auto" ]` will enable the following five modes in Google Home `"off, heat, eco, on, auto"` that will be translated to `"OFF, COMFORT, ECO, ON, auto"`. You can specify alternative conversions using the colon sign, so that in the former example "BOOST" in openHAB would also be translated to "heat" in Google. For the translation of Google modes to openHAB always the first option after the equal sign is used.
-By default the integration will provide `"off,heat,cool,on,heatcool,auto,eco"`.
+To map the [default thermostat modes of Google](https://developers.home.google.com/cloud-to-cloud/traits/temperaturesetting.html) (on, off, heat, cool, etc.) to custom ones for your specific setup, you can use the `thermostatModes` config option on the thermostat group.
+E.g. `[ thermostatModes="off=OFF:WINDOW_OPEN,heat=COMFORT:BOOST,eco=ECO,on=ON,auto" ]` will enable the following five modes in Google Home `"off, heat, eco, on, auto"` that will be translated to `"OFF, COMFORT, ECO, ON, auto"`. You can specify alternative conversions using the colon sign, so that in the former example "BOOST" in openHAB would also be translated to "heat" in Google. For the translation of Google modes to openHAB always the first option after the equal sign is used.
+By default, the integration will provide `"off,heat,cool,on,heatcool,auto,eco"`.
 
 You can also set up a Thermostat for using it as a temperature sensor. To do so, create a Thermostat group and only add one item member as "thermostatTemperatureAmbient".
 However, it is recommended to prefer the `TemperatureSensor` type for simple temperature reports (but currently there is no UI support in Google Home).
 
 ```shell
-Group  thermostatGroup { ga="Thermostat" [ modes="off=OFF:WINDOW_OPEN,heat=COMFORT:BOOST,eco=ECO,on=ON,auto", thermostatTemperatureRange="10,30", useFahrenheit=false ] }
+Group  thermostatGroup { ga="Thermostat" [ thermostatModes="off=OFF:WINDOW_OPEN,heat=COMFORT:BOOST,eco=ECO,on=ON,auto", thermostatTemperatureRange="10,30", useFahrenheit=false ] }
 Number temperatureItem  (thermostatGroup) { ga="thermostatTemperatureAmbient" }
 Number humidityItem     (thermostatGroup) { ga="thermostatHumidityAmbient" }
 Number setpointItem     (thermostatGroup) { ga="thermostatTemperatureSetpoint" }
