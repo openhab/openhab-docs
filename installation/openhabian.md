@@ -15,12 +15,10 @@ You may jump to [install instructions](#raspberry-pi-prepackaged-sd-card-image) 
 
 # openHABian - Hassle-free openHAB Setup
 ``
-The Raspberry Pi is quite a famous platform for openHAB.
-However, setting up a fully working Linux system with all recommended packages and openHAB recommendations is a **boring task**, takes a lot of time and **Linux newcomers** are challenged in a number of ways although all they want is to run openHAB and not some server.
-
+Setting up a fully working Linux system with all recommended packages and openHAB recommendations takes a lot of time and **Linux newcomers** are challenged in a number of ways although all they want is to run openHAB and not some server.
 <p style="text-align: center; font-size: 1.2em; font-style: italic;"><q>A home automation enthusiast doesn't have to be a Linux enthusiast!</q></p>
 
-openHABian is a **self-configuring** Linux system setup to meet the needs of every openHAB user.
+openHABian is a **self-configuring** Linux system setup to reliably operate your openHAB instance 24 hours a day.
 It provides:
 
 *   Complete **SD-card images pre-configured with openHAB** for the Raspberry Pi line of SBCs
@@ -177,7 +175,7 @@ For reference, the RPi OS process is documented over here: <https://www.raspberr
 If you are getting an `169.*` IP address it means DHCP didn't work.
 
 When you boot a flashed image for the first time, openHABian will setup and use the Ethernet port if that one is connected with a cable to your LAN.
-It'll also use the `wifi_ssid` and `wifi_password` parameters from `/etc/openhabian.conf` to determine whether and how to setup the Wi-Fi interface.
+It'll also use the `wifi_ssid` and `wifi_password` parameters from `/boot/openhabian.conf` to determine whether and how to setup the Wi-Fi interface.
 After these stages it checks for connectivity to the Internet and if that fails, it'll open a [Wi-Fi hotspot](#wi-fi-hotspot) that lets you manually connect your system to a WLAN (Wi-Fi) of yours to jumpstart networking.
 Remember that once the hotspot is started, it'll hide once you have successfully used it to connect your Wi-Fi interface but it'll return should your Wi-Fi connectivity break down.
 
@@ -198,7 +196,7 @@ The whole process will take some minutes, then openHAB and all other tools requi
 -   Write the image to your SD card using the official [Raspberry Pi Imager](https://www.raspberrypi.org/software/). openHABian can be selected via 'Other specific purpose OS / Home assistants and home automation'. Choose the 32bit version, it's more efficient !
 -   Alternatively, you can [download the card image file](https://github.com/openhab/openhabian/releases) and use any flash tool such as [Etcher](https://www.balena.io/etcher/).
 -   Optionally, you can change a number of parameters *now* to affect the installation. See this section (https://www.openhab.org/docs/installation/openhabian.html#openhabian-conf). As a beginner or if in doubt what an option does, don't change anything.
--   Insert the SD card into your Raspberry Pi. Connect your Ethernet or [configure Wi-Fi](#wi-fi-based-setup-notes) if you want to use that. **Do not attach a keyboard**. Power on and wait approximately 15-45 minutes for openHABian to do its magic. The system will be accessible by its IP or via the local DNS name `openhabian` and you can watch the install progress in your browser. If for whatever reason networking does not work, openHABian will launch a [hotspot](#Wi-Fi-Hotspot) so if you see that, something's up with your networking.
+-   Insert the SD card into your Raspberry Pi. Connect your Ethernet or [configure Wi-Fi](#wi-fi-based-setup-notes) if you want to use that. **Do not attach a keyboard**. Power on and wait approximately 15-45 minutes for openHABian to do its magic. The system will be accessible by its IP or via the local DNS name `openhabian` and you can watch the install progress in your browser at [http://openhabian:81](http://openhabian:81). If for whatever reason networking does not work, openHABian will launch a [hotspot](#Wi-Fi-Hotspot) so if you see that, something's up with your networking.
 -   Connect to the openHAB UI at [http://openhabian:8080](http://openhabian:8080)
 -   [Connect to the Samba network shares](https://www.openhab.org/docs/installation/linux.html#mounting-locally)
 -   Connect to the openHAB Log Viewer (frontail): [http://openhabian:9001](http://openhabian:9001)
