@@ -1794,8 +1794,13 @@ Items that represent components of a device that are characterized by numbers wi
     * defaults to no support
   * supportedRange=`<range>`
     * range formatted as `<minValue>:<maxValue>:<precision>` (e.g. `supportedRange="0:100:1"`)
-    * precision value used as default increment for adjusted range value request.
-    * defaults to item state description min, max & step values, if defined, otherwise `"0:100:1"` (Dimmer/Rollershutter); `"0:10:1"` (Number)
+    * precision value used as:
+      * default increment for adjusted range value requests
+      * item state rounding for range value state requests
+    * defaults to, in order of precedence:
+      * item state description min, max & step properties
+      * item state presentation precision for non-controllable Number
+      * `"0:100:1"` (Dimmer/Rollershutter); `"0:10:1"` (Number); `"0:10:0.01"` (Number Read-Only)
   * presets=`<presets>`
     * each preset formatted as `<presetValue>=<@assetIdOrName1>:...` (e.g. `presets="1=@Value.Low:Lowest,10=@Value.High:Highest"`)
     * limited to a maximum of 150 presets
