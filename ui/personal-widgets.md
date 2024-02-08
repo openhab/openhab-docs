@@ -59,7 +59,7 @@ This is accomplished by adding a `config` section to the component's YAML.
 ```
 
 Some of the available configuration parameters are specific to a certain component while others, such as `visible` or `class` are available in most components.
-[Expressions](widget-expressions-variables.html) can be used to dynamically set configuration parameters depending on dynamic, changing data, e.g. Item states.
+[Widget expressions](widget-expressions-variables.html) can be used to dynamically set configuration parameters depending on dynamic, changing data, e.g. Item states.
 
 ### Component slots
 

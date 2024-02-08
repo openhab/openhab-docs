@@ -1,9 +1,9 @@
 ---
 layout: documentation
-title: Styling pages & widgets using CSS
+title: Styling Pages & Widgets
 ---
 
-# Styling pages & widgets using CSS
+# Styling Pages & Widgets
 
 ## Predefined CSS Classes
 
