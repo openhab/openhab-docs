@@ -14,6 +14,8 @@ Additionally, it restores the last stored value at system startup.
 
 To change this behaviour, this is the page you are looking for!
 
+Learn more about persistence in the [persistence docs]({{base}}/configuration/persistence.html).
+
 Here you can:
 
 - Set the **default persistence service**.

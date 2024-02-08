@@ -10,6 +10,8 @@ title: Developer Tools - Widgets
 
 Community made Widgets can also be added to your system from the **UI** tab of the add-on store.
 
+Please read [Creating Personal Widgets]({{base}}/ui/personal-widgets.html) to learn about the structure, components and styling of personal widgets.
+
 On this page you can manage all the custom widgets you have added to your system:
 
 - **Add new Widgets**<br>
