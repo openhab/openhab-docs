@@ -147,6 +147,19 @@ To dynamically configure components based on data changed on runtime, expression
 
 Please refer to [widget expressions](widget-expressions-variables.html) for more information.
 
+## Modifying Styling with CSS
+
+In case you want to customize the styling of a page or all its widgets, you can set CSS classes and properties globally for the page:
+
+```yaml
+config:
+  label: My Page
+  style:
+    --f7-card-border-radius: var(--f7-card-expandable-border-radius)
+```
+
+Please read [CSS for Pages & Widgets](css-pages-widgets.html) to learn more about using CSS.
+
 ## Actions
 
 When configuring a widget, you will encounter options related to actions (usually, when something is clicked or touched, but there might be several actions configured for a single widget, for instance, clicking on different parts or a long tap with a touch device); regardless, they will all have the same options:
@@ -175,7 +188,7 @@ Configuring the action type reveal more options in the action sheet:
 | Group details      | Used with Group items to open a popup with an automatically-generated list of the members of the group, represented by their default list item widget. For Groups with a base type like Switch, a standard card widget will also be shown for the Group itself. |
 | Analyze Item(s)    | Opens the Analyzer window for the specified item(s) and period                                                                                                                                                                                                  |
 | External URL       | Open an external web page                                                                                                                                                                                                                                       |
-| Set Variable       | Set a variable that you can use in other parts of the page or widget.                                                                                                                                                                                           |
+| Set Variable       | Set a [variable](widget-expressions-variables.html) that you can use in other parts of the page or widget.                                                                                                                                                      |
 
 ::: tip
 
