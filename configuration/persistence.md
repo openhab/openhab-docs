@@ -22,17 +22,19 @@ Please refer to the [available persistence service add-on](/addons/#persistence)
 You should configure a default persistence service even if you have only one persistence add-on installed.
 The default persistence service is used to provide data for the UI charting features and rules (you may choose to use another persistence service in either of these, configured on a case-by-case basis).
 
-To select a default persistence service, in UI, select `Settings->Persistence`.
-Select your default service from the drop-down list.
-Note that you must first install a persistence add-on before you make this selection.
-Be sure to save your choice once you have selected your default service.
+To select a default persistence service via UI, refer to the [Main UI docs]({{base}}/mainui/settings/persistence.html).
 
 ## Persistence Configuration
 
 The information below allows you to determine which Item states are persisted, when they are persisted, and where they are stored.
 
-Persistence Strategies are configured in a file named `<persistenceservice>.persist`, stored in `$OPENHAB_CONF/persistence`.
-Replace "persistenceservice" with the name of your persistence add-on (e.g. `rrd4j.persist`).
+Persistence Strategies are configured:
+
+- in a file named `<persistenceservice>.persist` (fill-in your persistence add-on name, e.g. `rrd4j.persist`), stored in `$OPENHAB_CONF/persistence`.
+- from the UI, refer to the [Main UI docs]({{base}}/mainui/settings/persistence.html).
+
+As usual, it is possible to combine both types of configuration, i.e. use the UI for one and a file for another persistence service.
+It is not possible to configure the same persistence service via UI and file.
 
 ### Persistence Triggers
 
