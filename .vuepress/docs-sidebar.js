@@ -137,6 +137,13 @@ module.exports = [
       },
       ['mainui/addons', 'Add-on Store'],
       ['mainui/developer/', 'Developer Tools'],
+      { title: 'Developer Tools',
+        path: '/docs/mainui/developer/',
+        children: [
+          ['mainui/developer/sidebar', 'Developer Sidebar'],
+          ['mainui/developer/widgets', 'Widgets']
+        ]
+      },
       ['mainui/about', 'Help & About'],
     ]
   },
@@ -156,7 +163,13 @@ module.exports = [
           ['ui/building-pages', 'Building Pages'],
         ]
       },
-      ['ui/personal-widgets', 'Creating Personal Widgets'],
+      { title: 'Creating Personal Widgets',
+        path: '/docs/ui/personal-widgets',
+        children: [
+          ['ui/widget-expressions-variables', 'Widget Expressions & Variables'],
+          ['ui/css-pages-widgets', 'Styling Pages & Widgets']
+        ]
+      },
       ['ui/components/', 'Component Reference'],
       'ui/habpanel/habpanel',
       ['apps/android', 'Android App'],
