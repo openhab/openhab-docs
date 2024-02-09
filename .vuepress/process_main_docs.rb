@@ -25,8 +25,8 @@ def process_main_docs(docs_source_dir)
             process_file("#{docs_source_dir}/concepts", file, "docs/concepts", "#{$esh_repo_root}/concepts/#{file}")
         }
         puts " -> images and diagrams"
-        FileUtils.cp_r("#{docs_source_dir}/concepts/images", "docs/concepts/images")
-        FileUtils.cp_r("#{docs_source_dir}/concepts/diagrams", "docs/concepts/diagrams")
+        FileUtils.cp_r("#{docs_source_dir}/concepts/images", "docs/concepts")
+        FileUtils.cp_r("#{docs_source_dir}/concepts/diagrams", "docs/concepts")
     else
         puts " Skipping non-existing section!"
     end
@@ -40,7 +40,7 @@ def process_main_docs(docs_source_dir)
         process_file("#{docs_source_dir}/installation", file, "docs/installation", "#{$docs_repo_root}/installation/#{file}")
     }
     puts " -> images"
-    FileUtils.cp_r("#{docs_source_dir}/installation/images", "docs/installation/images")
+    FileUtils.cp_r("#{docs_source_dir}/installation/images", "docs/installation")
 
 
     puts ">>> Migrating the Tutorial section"
@@ -50,9 +50,8 @@ def process_main_docs(docs_source_dir)
         process_file("#{docs_source_dir}/tutorials/getting_started", file, "docs/tutorial", "#{$docs_repo_root}/tutorials/getting_started/#{file}")
     }
     puts " -> images"
-     FileUtils.cp_r("#{docs_source_dir}/tutorials/getting_started/images", "docs/tutorial/images")
+    FileUtils.cp_r("#{docs_source_dir}/tutorials/getting_started/images", "docs/tutorial")
     # FileUtils.cp_r("#{docs_source_dir}/tutorials/images/*", "docs/tutorial/images")
-
 
 
     puts ">>> Migrating the Configuration section"
@@ -77,18 +76,15 @@ def process_main_docs(docs_source_dir)
         puts " -> #{file}"
         process_file("#{docs_source_dir}/mainui", file, "docs/mainui", "#{$docs_repo_root}/mainui/#{file}")
     }
-    Dir.glob("#{docs_source_dir}/mainui/developer/*.md") { |path|
-        file = File.basename(path)
-        puts " -> #{file}"
-        process_file("#{docs_source_dir}/mainui/developer", file, "docs/mainui/developer", "#{$docs_repo_root}/mainui/developer/#{file}")
-    }
-    Dir.glob("#{docs_source_dir}/mainui/settings/*.md") { |path|
-        file = File.basename(path)
-        puts " -> #{file}"
-        process_file("#{docs_source_dir}/mainui/settings", file, "docs/mainui/settings", "#{$docs_repo_root}/mainui/settings/#{file}")
+    ["developer", "settings"].each { |subsection|
+        Dir.glob("#{docs_source_dir}/mainui/#{subsection}/*.md") { |path|
+            file = File.basename(path)
+            puts " -> #{subsection}/#{file}"
+            process_file("#{docs_source_dir}/mainui/#{subsection}", file, "docs/mainui/#{subsection}", "#{$docs_repo_root}/mainui/#{subsection}/#{file}")
+        }
     }
     puts " -> images"
-    FileUtils.cp_r("#{docs_source_dir}/mainui/images", "docs/mainui/images")
+    FileUtils.cp_r("#{docs_source_dir}/mainui/images", "docs/mainui")
 
 
     puts ">>> Migrating the Migration Tutorial section"
@@ -118,7 +114,7 @@ def process_main_docs(docs_source_dir)
         process_file("#{docs_source_dir}/ui", file, "docs/ui", "#{$docs_repo_root}/ui/#{file}")
     }
     puts " -> images"
-    FileUtils.cp_r("#{docs_source_dir}/ui/images", "docs/ui/images")
+    FileUtils.cp_r("#{docs_source_dir}/ui/images", "docs/ui")
 
 
     puts ">>> Migrating the Apps section"
@@ -138,7 +134,7 @@ def process_main_docs(docs_source_dir)
         process_file("#{docs_source_dir}/administration", file, "docs/administration", "#{$docs_repo_root}/administration/#{file}")
     }
     puts " -> images"
-    FileUtils.cp_r("#{docs_source_dir}/administration/images", "docs/administration/images")
+    FileUtils.cp_r("#{docs_source_dir}/administration/images", "docs/administration")
 
 
     puts ">>> Migrating the Developer section"
@@ -156,8 +152,8 @@ def process_main_docs(docs_source_dir)
     }
 
     puts " -> images"
-    FileUtils.cp_r("#{docs_source_dir}/developers/bindings/images", "docs/developer/bindings/images")
-    FileUtils.cp_r("#{docs_source_dir}/developers/osgi/images", "docs/developer/osgi/images")
-    FileUtils.cp_r("#{docs_source_dir}/developers/ide/images", "docs/developer/ide/images")
+    FileUtils.cp_r("#{docs_source_dir}/developers/bindings/images", "docs/developer/bindings")
+    FileUtils.cp_r("#{docs_source_dir}/developers/osgi/images", "docs/developer/osgi")
+    FileUtils.cp_r("#{docs_source_dir}/developers/ide/images", "docs/developer/ide")
 
 end
