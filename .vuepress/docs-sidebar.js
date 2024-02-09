@@ -136,7 +136,6 @@ module.exports = [
         ]
       },
       ['mainui/addons', 'Add-on Store'],
-      ['mainui/developer/', 'Developer Tools'],
       { title: 'Developer Tools',
         path: '/docs/mainui/developer/',
         children: [
