@@ -106,7 +106,7 @@ Configuring the widget with the config sheet is of course more user-friendly tha
 
 However, it's important to know that there are limitations and sometimes editing the YAML directly will be best, because:
 
-1. Not all options are described, since widgets are often wrappers for a similar concept in the library it's based on, either Framework7, ECharts, Leaflet, or other specialized libraries.
+1. Not all options are described, since widgets are often wrappers for a similar concept in the library it is based on, either Framework7, ECharts, Leaflet, or other specialized libraries.
   This means that in these cases, these underlying concepts will usually be passed the key/values of the (openHAB) widget component's config so that more parameters can be accepted than those which are documented in the widget's definition.
   Sometimes it will be indicated somewhere when configuring the widget, or in the openHAB documentation itself, on the other hand some options won't be available for use (for instance, because they expect a callback function and you cannot define those in the widget's config) or need some transformation.
 
