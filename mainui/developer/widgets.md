@@ -12,6 +12,8 @@ Community made Widgets can also be added to your system from the **UI** tab of t
 
 Please read [Creating Personal Widgets]({{base}}/ui/personal-widgets.html) to learn about the structure, components and styling of personal widgets.
 
+![developer-widgets](../images/developer-widgets.png)
+
 On this page you can manage all the custom widgets you have added to your system:
 
 - **Add new Widgets**<br>
