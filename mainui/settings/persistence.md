@@ -12,9 +12,13 @@ The data may be retrieved at a later time, for example to restore your system af
 openHAB ships with the [RRD4J persistence service](/addons/persistence/rrd4j/) installed by default, which persists every Item on every state change and at least once a minute.
 Additionally, it restores the last stored value at system startup.
 
+Learn more about persistence in the [persistence docs]({{base}}/configuration/persistence.html).
+
 To change this behaviour, this is the page you are looking for!
 
 Here you can:
+
+![persistence-settings](../images/persistence-settings.png)
 
 - Set the **default persistence service**.
 - **Configure Persistence Policies**<br>

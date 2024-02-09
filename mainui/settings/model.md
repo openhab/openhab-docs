@@ -17,6 +17,8 @@ For most systems it only makes sense to include these Items that users will inte
 
 On this page you can manage your system's semantic model:
 
+![model-overview](../images/model-overview.png)
+
 - **Add new Locations**<br>
   Add group Items with semantic group tags to represent physical locations in and around your home.
 - **Add new Equipment**<br>

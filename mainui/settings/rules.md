@@ -11,6 +11,8 @@ Rules can be as simple as a directive to turn on a single light at a given time 
 
 Community made Rule Templates can also be added to your system from the **Automation** tab of the add-on store.
 
+There is a [rules concepts page]({{base}}/concepts/rules.html) that explains the idea of rules in detail, and a comprehensive introduction to rules in the [rules tutorial]({{base}}/tutorial/rules_basic.html).
+
 On this page you can manage all the basic rules you have added to your system:
 
 ![rules-overview](../images/rules-overview.png)
