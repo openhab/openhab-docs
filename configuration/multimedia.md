@@ -370,9 +370,9 @@ Using the 'Listening Melody' in the voice settings, you can configure an acousti
 
 Other interesting options for the dialog initialization are:
 
-- --dialog-group <group name>: You can prevent simultaneous execution of dialogs by assigning them to same group, by default they are assigned the 'default' group.
-- --location-item <ItemName>: You can provide an Item as location context for the dialogs, the interpreters can take advantage of these.
-- --listening-item <ItemName>: You  can configure an Item to be "ON"/"OFF" on recognition start/stop, useful for example to trigger a rule that mutes the surrounding devices.
+- --dialog-group `<group name>`: You can prevent simultaneous execution of dialogs by assigning them to same group, by default they are assigned the 'default' group.
+- --location-item `<ItemName>`: You can provide an Item as location context for the dialogs, the interpreters can take advantage of these.
+- --listening-item `<ItemName>`: You  can configure an Item to be "ON"/"OFF" on recognition start/stop, useful for example to trigger a rule that mutes the surrounding devices.
 
 #### Actions
 
