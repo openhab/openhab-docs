@@ -42,6 +42,7 @@ This is:
 | Electric Inductance      | Henry (H)                        | Henry (H)                        |
 | Electric Potential       | Volt (V)                         | Volt (V)                         |
 | Electric Resistance      | Ohm (Ω)                          | Ohm (Ω)                          |
+| Emission Intensity       | Gram per kilowatt hour (g/kWh)   | Gram per kilowatt hour (g/kWh)   |
 | Energy                   | Kilowatt hours (kWh)             | Kilowatt hours (kWh)             |
 | Force                    | Newton (N)                       | Newton (N)                       |
 | Frequency                | Hertz (Hz)                       | Hertz (Hz)                       |
