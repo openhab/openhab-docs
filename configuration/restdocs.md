@@ -67,8 +67,23 @@ Just log in with an admin user, navigate to `Developer Tools -> API Explorer` an
 
 ## Authentication
 
-Starting with version 3, openHAB supports password protection for sensible contents such as parts of the semantic model.
-To access this kind of information, the REST API provides the common mechanism [Basic authentication](https://en.wikipedia.org/wiki/Basic_access_authentication) and [OAuth authorization](https://en.wikipedia.org/wiki/OAuth).
+Starting with version 3, openHAB supports password protection when using the APIs.
+There are two kinds of access levels:
+- Only *admins* are able to access and change sensitive parts of the API.
+  E.g., creating/editing Things, Channels, Items or Scripts.
+- *Users* are able to interact with the end-user parts of the API.
+  E.g., looking at the state of and interacting with the existing Items.
+
+The setup process of openHAB includes creating an *admin* account.
+This (or any other account that is part of the *admin* group) can be used for the authentication of the admin APIs.
+All the *admin* accounts are equal in terms of access.
+The same is true for *user* accounts; every *user* account has equal access to the user APIs.
+
+By default anyone in the LAN will have *user* access rights.
+This behavior can be changed in the `Settings -> API Security -> Implicit User Role`.
+If the `Implicit User Role` is disabled, all the APIs need authentication of an *admin* or *user* account.
+
+The REST API provides the common mechanism [Basic authentication](https://en.wikipedia.org/wiki/Basic_access_authentication) and [OAuth authorization](https://en.wikipedia.org/wiki/OAuth).
 Both mechanisms can be used out of the box by the most programming languages and frameworks, but with regard to the `curl` examples from above, there are two alternative ways of authenticating yourself:
 
 ### With username/password
