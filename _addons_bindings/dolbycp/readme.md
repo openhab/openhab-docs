@@ -5,7 +5,7 @@ title: DolbyCP - Bindings
 type: binding
 description: "This binding is intended to connect to a _Dolby Digital Cinema Processor CP750_."
 since: 3x
-install: manual
+install: auto
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
