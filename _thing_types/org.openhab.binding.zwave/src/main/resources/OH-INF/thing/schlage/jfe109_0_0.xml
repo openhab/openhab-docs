@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="schlage_jfe109_00_000" listed="false">
+    <label>JFE109 SCHLAGE JFE109 BIL Z-Wave Keypad Lever Door Lock</label>
+    <description><![CDATA[
+SCHLAGE JFE109 BIL Z-Wave Keypad Lever Door Lock<br /> <h1>Overview</h1><p>SCHLAGE J-Series:</p><p>JBE105 Deadbolt, JFE105 Lever</p><p>JBE109 Connected Deadbolt, JFE109 Connected Lever<br /></p> <br /> <h2>Inclusion Information</h2><p>Z-Wave Functions - ONLY FOR:</p><p>JBE109 Connected Deadbolt</p><p>JFE109 Connected Lever</p><p>Add or Remove lock from Z-Wave network </p><ol><li>Place your Z-Wave Controller into the "Add" (Inclusion Mode) or "Remove" (Exclusion Mode). Refer to the respective documentation for your home automation system for details. </li><li>Remove the battery cover. </li><li>Press and hold enrolment button under battery cover for 0.5 to 3 seconds as shown. Solid amber LED will be ON. </li><li>Release the enrolment button. An LED will flash amber indicating the "Add" or "Remove" process is in progress. </li><li>Success is indicated by a green LED blink and a beep. </li></ol><p>If a red LED turns on, try repeating steps 1-3.</p> <br /> <h2>Exclusion Information</h2><p>Z-Wave Functions - ONLY FOR:</p><p>JBE109 Connected Deadbolt</p><p>JFE109 Connected Lever</p><p>Add or Remove lock from Z-Wave network</p><ol><li>Place your Z-Wave Controller into the "Add" (Inclusion Mode) or "Remove" (Exclusion Mode). Refer to the respective documentation for your home automation system for details.</li><li>Remove the battery cover.</li><li>Press and hold enrolment button under battery cover for 0.5 to 3 seconds as shown. Solid amber LED will be ON.</li><li>Release the enrolment button. An LED will flash amber indicating the "Add" or "Remove" process is in progress.</li><li>Success is indicated by a green LED blink and a beep.</li></ol><p>If a red LED turns on, try repeating steps 1-3.</p> <br /> <h2>Wakeup Information</h2><p><br /></p>
+    ]]></description>
+    <category>Lock</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="lock_door" typeId="lock_door">
+        <label>Door Lock</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_DOOR_LOCK</property>
+        </properties>
+      </channel>
+      <channel id="alarm_access" typeId="alarm_access">
+        <label>Alarm (access)</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=ACCESS_CONTROL</property>
+        </properties>
+      </channel>
+      <channel id="alarm_power" typeId="alarm_power">
+        <label>Alarm (power)</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=POWER_MANAGEMENT</property>
+        </properties>
+      </channel>
+      <channel id="battery-level" typeId="system.battery-level">
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_BATTERY</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Allegion</property>
+      <property name="modelId">JFE109</property>
+      <property name="manufacturerId">003B</property>
+      <property name="manufacturerRef">0004:6109</property>
+      <property name="dbReference">1603</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

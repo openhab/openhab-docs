@@ -41,7 +41,7 @@ parameter 1 - 20 (0x01 - 0x14)<br /> <h1>Overview</h1><p>UIRD formatted raw data
       </parameter>
 
       <parameter name="config_21_2" type="integer" groupName="configuration">
-        <label>21: The Simple AV command</label>
+        <label>21: Simple AV Command to Download</label>
         <description><![CDATA[
 The Simple AV command number or key going to be downloaded to the ZXT‐310<br /> <h1>Overview</h1><p>Referred to Simple AV command class key ID</p>
         ]]></description>
@@ -55,7 +55,94 @@ The Simple AV command number or key going to be downloaded to the ZXT‐310<br /
 Download status register<br /> <h1>Overview</h1><p><strong>The status value 1, 3, 4 will be reset to 0 when ZXT‐310 receive a get command to this parameter </strong></p>
         ]]></description>
         <default>0</default>
+        <options>
+          <option value="0">Idle</option>
+          <option value="1">OK</option>
+          <option value="2">Learning</option>
+          <option value="3">Command full</option>
+          <option value="4">Learning fail</option>
+        </options>
         <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_25_2" type="integer" groupName="configuration">
+        <label>25: Simple AV Code to Learn</label>
+        <description><![CDATA[
+The Simple AV command number or key going to be learned.<br /> <h1>Overview</h1><p>The Simple AV command number or key going to be learned. Any incoming operation may probably to wait up to 15s to release until the internal process of parameter 0x19 has finish<br /></p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_27_1" type="integer" groupName="configuration" readOnly="true">
+        <label>27: Learning status register</label>
+        <description><![CDATA[
+Learning status register<br /> <h1>Overview</h1><p>The status value 1, 3, 4 will be reset to 0 when ZXT‐310 receive a get command to this parameter <br /></p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Idle</option>
+          <option value="1">OK</option>
+          <option value="2">Command full</option>
+          <option value="4">Learning fail</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_28_1" type="integer" groupName="configuration">
+        <label>28: External IR power</label>
+        <description><![CDATA[
+External IR Emitter power level.<br /> <h1>Overview</h1><p>If IR output port routing is set to 1, IR transmission power level cannot be changed. 0: normal power mode. 255(default): high power mode.</p>
+        ]]></description>
+        <default>-1</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_29_1" type="integer" groupName="configuration">
+        <label>29: IR output port routing</label>
+        <description>IR output port routing</description>
+        <default>0</default>
+        <options>
+          <option value="1">IR port 1</option>
+          <option value="2">IR port 2</option>
+          <option value="3">IR port 3</option>
+          <option value="4">IR port 4</option>
+          <option value="5">IR port 5</option>
+          <option value="6">IR port 6</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_31_1" type="integer" groupName="configuration">
+        <label>31: IT transmission mode</label>
+        <description>IT transmission mode</description>
+        <default>0</default>
+        <options>
+          <option value="0">Continuous IR</option>
+          <option value="255">Single shot IR</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_36_4" type="integer" groupName="configuration" readOnly="true">
+        <label>36: Check library version</label>
+        <description><![CDATA[
+Check library version<br /> <h1>Overview</h1><p>Read Only. Byte 1,2: Firmware Version,  Byte 3, 4: Library Version.</p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_38_1" type="integer" groupName="configuration">
+        <label>38: Endpoint selection control</label>
+        <description>Endpoint selection control</description>
+        <default>0</default>
+        <options>
+          <option value="1">Endpoint 1</option>
+          <option value="2">Endpoint 2</option>
+          <option value="3">Endpoint 3</option>
+          <option value="4">Endpoint 4</option>
+          <option value="5">Endpoint 5</option>
+          <option value="6">Endpoint 6</option>
+        </options>
       </parameter>
 
       <!-- STATIC DEFINITIONS -->
