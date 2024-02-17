@@ -1,6 +1,6 @@
 ---
 layout: documentation
-title: Rules
+title: Textual Rules
 ---
 
 # Textual Rules
@@ -194,10 +194,10 @@ When using an item and you want to ignore the date-portion of that item the `tim
 
 System-based triggers are provided as described in the table below:
 
-| Trigger                            | Description                                                                                                                                                                                                                                          |
-| ---------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| System started                     | `System started` is triggered upon openHAB startup. In openHAB version 2, `System started` is also triggered after the rule file containing the System started trigger is modified, or after item(s) are modified in a .items file.                  |
-| System reached start level <level> | `System reached start level <level>` is triggered when openHAB reaches a specific start level. A list of possible start levels is available below. Please note that only levels 40 and higher are useful as the rule engine needs to be ready first. |
+| Trigger                              | Description                                                                                                                                                                                                                                          |
+|--------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| System started                       | `System started` is triggered upon openHAB startup. In openHAB version 2, `System started` is also triggered after the rule file containing the System started trigger is modified, or after item(s) are modified in a .items file.                  |
+| System reached start level `<level>` | `System reached start level <level>` is triggered when openHAB reaches a specific start level. A list of possible start levels is available below. Please note that only levels 40 and higher are useful as the rule engine needs to be ready first. |
 
 You may wish to use the 'System started' trigger to initialize values at startup if they are not already set.
 
@@ -240,6 +240,23 @@ In openHAB version 3 the System-based Trigger for startlevel had been added, val
 ```
 
 Startlevels less than 40 are not available as triggers because the rule engine needs to start up first before it can execute any rules.
+
+A rule that triggers for a start level and is saved during development is reloaded, if the expected startlevel (or higher) has been reached.
+The reason behind is that updated rules are considered as new rules.
+
+Writing rules with quite low startlevels might be too early, as for instance not all things are online yet.
+
+Example:
+
+```java
+rule "Start level reload"
+when
+    System reached start level 70
+then
+    logInfo("StartLevelTest", "triggered a second time, if active rule being edited and saved another time.")
+    logInfo("StartLevelTest", "You won´t realize this behaviour under regular run conditions, each start level is reached exactly once.")
+end
+```
 
 ### Thing-based Triggers
 

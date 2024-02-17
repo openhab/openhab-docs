@@ -113,6 +113,7 @@ The following Java snippet shows how to receive `ItemStateEvent`s and `ItemComma
 Therefore, the `EventSubscriber` interface must be implemented.
 
 ```java
+@Component(immediate = true, service = EventSubscriber.class)
 public class SomeItemEventSubscriber implements EventSubscriber {
 
     private final Set<String> subscribedEventTypes = Set.of(ItemStateEvent.TYPE, ItemCommandEvent.TYPE);
@@ -157,15 +158,7 @@ If the filter applies (in the given example for all item events with the item na
 Received events can be cast to the event implementation class for further processing.
 
 Each event subscriber must be registered via OSGi Declarative Services (DS) under the `org.openhab.core.event.EventSubscriber` interface.
-
-```xml
-<scr:component xmlns:scr="https://www.osgi.org/xmlns/scr/v1.1.0" immediate="true" name="SomeItemEventSubscriber">
-   <implementation class="org.openhab.core.items.events.SomeItemEventSubscriber"/>
-   <service>
-      <provide interface="org.openhab.core.events.EventSubscriber"/>
-   </service>
-</scr:component>
-```
+This is done by annotating the class with `@Component(immediate = true, service = EventSubscriber.class)`.
 
 The listing below summarizes some best practices in order to implement event subscribers:
 
@@ -190,6 +183,7 @@ Due to the fact that receiving `ItemStateEvents` and `ItemCommandEvents` is a co
 The class `org.openhab.core.items.events.AbstractItemEventSubscriber` provides two methods `receiveUpdate(ItemStateEvent)` and `receiveCommand(ItemCommandEvent)` which can be implemented in order to receive and handle such events.
 
 ```java
+@Component(immediate = true, service = EventSubscriber.class)
 public class SomeItemEventSubscriber extends AbstractItemEventSubscriber {
 
     private final EventFilter eventFilter = new TopicEventFilter("openhab/items/ItemX/.*");

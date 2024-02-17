@@ -11,11 +11,15 @@ The framework supports some base [functions](https://openhab.org/javadoc/latest/
 
 ### Actions
 
+You can set and get the volume in DSL rules by using these functions:
+
 - `setMasterVolume(float volume)` : Sets the volume of the host machine (volume in range 0-1)
 - `setMasterVolume(PercentType percent)` : Sets the volume of the host machine
 - `increaseMasterVolume(float percent)` : Increases the volume by the given percent
 - `decreaseMasterVolume(float percent)` : Decreases the volume by the given percent
 - `float getMasterVolume()` : Returns the current volume as a float between 0 and 1
+
+Please refer to the documentation of the [Automation add-ons](/addons/#automation) on how to use these actions from the respective language, e.g. JavaScript or JRuby.
 
 ## Audio Capture
 
@@ -55,7 +59,15 @@ The distribution comes with these options built-in:
 | `enhancedjavasound` | System Speaker (with mp3 support) | This uses the JRE sound drivers plus an additional 3rd party library, which adds support for mp3 files.                                                                                                                                                                                                                                                      |
 | `webaudio`          | Web Audio                         | Convenient, if sounds should not be played on the server, but on the client: This sink sends the audio stream through HTTP to web clients, which then cause it to be played back by the browser. Obviously, the browser needs to be opened and have a compatible openHAB UI running. Currently, this feature is supported by Main UI, Basic UI and HABPanel. |
 
+Please refer to the [Main UI docs]({{base}}/mainui/about.html#web-audio-sink) for setting up web audio in Main UI.
+
 Additionally, certain bindings register their supported devices as audio sinks, e.g. Sonos speakers.
+
+### Default Audio Sink
+
+You can configure a default audio sink, which will be used if no audio sink is provided in audio and voice actions.
+
+You can define the default audio sink either by textual configuration in `$OPENHAB_CONF/services/runtime.cfg` or in the UI by visitting the **Settings** page and opening **System Settings** -> **Audio**.
 
 ### Console commands
 
@@ -66,8 +78,6 @@ openhab> openhab:audio sinks
 * System Speaker (enhancedjavasound)
   Web Audio (webaudio)
 ```
-
-You can define the default audio sink either by textual configuration in `$OPENHAB_CONF/services/runtime.cfg` or in the UI in `Settings->Audio`.
 
 In order to play a sound, you can use the following commands on the console:
 
@@ -97,6 +107,17 @@ Alternatively the [`playSound()`](https://www.openhab.org/javadoc/latest/org/ope
 - `playStream(String url)` : plays an audio stream from an url to the default sink (set url to `null` if streaming should be stopped)
 - `playStream(String sink, String url)` : plays an audio stream from an url to the given sink(s) (set url to `null` if streaming should be stopped)
 
+If no audio sink is provided, the default audio sink will be used.
+
+Please refer to the documentation of the [Automation add-ons](/addons/#automation) on how to use these actions from the respective language, e.g. JavaScript or JRuby.
+
+UI-based rules support audio actions as well.
+Just create or edit a rule, add a new action, select "Audio & Voice" and the UI will then guide you trough the setup:
+
+![Audio action setup in the UI](images/rule-play-audio.png)
+
+Visit the [Blockly docs]({{base}}/configuration/blockly/rules-blockly-voice-and-multimedia.html) to learn how to use audio actions from Blockly.
+
 #### Examples
 
 ```java
@@ -109,11 +130,17 @@ playStream("example.com")
 playStream("sonos:PLAY5:kitchen", "example.com")
 ```
 
+You will find more examples in the documentation of the [Automation add-ons](/addons/#automation) and the [Blockly docs]({{base}}/configuration/blockly/rules-blockly-voice-and-multimedia.html).
+
 ## Voice
 
 ### Text-to-Speech
 
 In order to use text-to-speech, you need to install at least one [TTS service](/addons/#voice).
+
+#### Default TTS Service & Voice
+
+You can define a default TTS service and a default voice to use either by textual configuration in `$OPENHAB_CONF/services/runtime.cfg` or in the UI by visitting the **Settings** page and opening **System Settings** -> **Voice**.
 
 #### Console Commands
 
@@ -147,8 +174,6 @@ openhab> openhab:voice voices
   VoiceRSS - vietnamien (Vietnam) - default (voicerss:viVN)
 ```
 
-You can define a default TTS service and a default voice to use either by textual configuration in `$OPENHAB_CONF/services/runtime.cfg` or in the UI in `Settings->Voice`.
-
 In order to say a text, you can enter such a command on the console (The default voice and default audio sink will be used):
 
 ```text
@@ -169,6 +194,14 @@ Alternatively you can execute such commands within DSL rules by using the [`say(
 You can select a particular voice (second parameter) and a particular audio sink (third parameter).
 If no voice or no audio sink is provided, the default voice and default audio sink will be used.
 
+Please refer to the documentation of the [Automation add-ons](/addons/#automation) on how to use these actions from the respective language, e.g. JavaScript or JRuby.
+
+UI-based rules support voice actions as well.
+Just create or edit a rule, add a new action, select "Audio & Voice" and the UI will then guide you trough the setup.
+The presented dialog will look similar to the one shown [above](#actions-2).
+
+Visit the [Blockly docs]({{base}}/configuration/blockly/rules-blockly-voice-and-multimedia.html) to learn how to use voice actions from Blockly.
+
 ##### Examples
 
 ```java
@@ -179,6 +212,8 @@ say("Hello world!", "voicerss:enGB", new PercentType(25))
 say("Hello world!", "voicerss:enUS", "sonos:PLAY5:kitchen")
 say("Hello world!", "voicerss:enUS", "sonos:PLAY5:kitchen", new PercentType(25))
 ```
+
+You will find more examples in the documentation of the [Automation add-ons](/addons/#automation) and the [Blockly docs]({{base}}/configuration/blockly/rules-blockly-voice-and-multimedia.html).
 
 ### Speech-to-Text
 
@@ -220,7 +255,7 @@ There are two implementations available by default:
 | Interpreter | Type                   | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
 |-------------|------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `rulehli`   | Rule-based Interpreter | This mimics the behavior of the Android app - it sends the string as a command to a (configurable, default is "VoiceCommand") item and expects a rule to pick it up and further process it.                                                                                                                                                                                                                                                                                                           |
-| `system`    | Built-in Interpreter   | This is a simple implementation that understands basic home automation commands like "turn on the light" or "stop the music". It currently supports only English, German, French and Spanish and the vocabulary is still very limited. The exact syntax still needs to be documented, for the moment you need to refer to the [source code](https://github.com/openhab/openhab-core/blob/main/bundles/org.openhab.core.voice/src/main/java/org/openhab/core/voice/internal/text/StandardInterpreter.java#L42). |
+| `system`    | Built-in Interpreter   | This is a simple implementation that understands basic home automation commands like "turn on the light" or "stop the music". Explained in more detail below.  |
 | `opennlp`   | HABot OpenNLP Interpreter | A machine-learning natural language processor based on Apache OpenNLP for intent classification and entity extraction.                                                                                                                                                                                                                                                                                                                                                                             |
 
 #### Console Commands
@@ -235,7 +270,7 @@ openhab> openhab:voice interpreters
 
 You can define a default human language interpreter to use either by textual configuration in `$OPENHAB_CONF/services/runtime.cfg` or in the UI in `Settings->Voice`.
 
-To test the interpreter, you can enter such a command on the console (assuming you have an item with label 'light'):
+To test the interpreter, you can enter such a command on the console (assuming you have an Item with label 'light'):
 
 ```text
 openhab> openhab:voice interpret turn on the light
@@ -302,31 +337,23 @@ This mode is executed using the `listenAndAnswer`command.
 To start and stop a voice assistant, you can enter such commands on the console:
 
 ```text
-openhab> openhab:voice startdialog
-openhab> openhab:voice startdialog javasound
-openhab> openhab:voice startdialog javasound sonos:PLAY5:kitchen
-openhab> openhab:voice startdialog javasound sonos:PLAY5:kitchen system
-openhab> openhab:voice startdialog javasound sonos:PLAY5:kitchen system voicerss
-openhab> openhab:voice startdialog javasound sonos:PLAY5:kitchen system,rulehli voicerss voskstt
-openhab> openhab:voice startdialog javasound sonos:PLAY5:kitchen system,rulehli voicerss voskstt porcupineks
-openhab> openhab:voice startdialog javasound sonos:PLAY5:kitchen system voicerss voskstt porcupineks voicerss:frFR_Zola
-openhab> openhab:voice startdialog javasound sonos:PLAY5:kitchen system voicerss voskstt porcupineks voicerss:frFR_Zola terminator
-
-openhab> openhab:voice stopdialog
-openhab> openhab:voice stopdialog javasound
-
-openhab> openhab:voice listenandanswer
-openhab> openhab:voice listenandanswer javasound
-openhab> openhab:voice listenandanswer javasound sonos:PLAY5:kitchen
-openhab> openhab:voice listenandanswer javasound sonos:PLAY5:kitchen system
-openhab> openhab:voice listenandanswer javasound sonos:PLAY5:kitchen system voicerss
-openhab> openhab:voice listenandanswer javasound sonos:PLAY5:kitchen system,rulehli voicerss voskstt
-openhab> openhab:voice listenandanswer javasound sonos:PLAY5:kitchen system voicerss voskstt voicerss:frFR_Axel
+# start a dialog
+openhab> openhab:voice startdialog --source javasound --sink sonos:PLAY5:kitchen --hlis system,rulehli --stt voicerss --tts voskstt --keyword terminator --ks rustpotterks
+# list running dialogs
+openhab> openhab:voice dialogs
+# register a dialog (same as start but persisting the configuration to spawn dialog on restart or temporal service unavailability).
+openhab> openhab:voice registerdialog --source javasound --sink sonos:PLAY5:kitchen --hlis system,rulehli --stt voicerss --tts voskstt --keyword terminator --ks rustpotterks
+# list dialogs registrations
+openhab> openhab:voice dialogregs
+# stop a dialog
+openhab> openhab:voice stopdialog --source javasound
+# unregister a dialog, and stop if running
+openhab> openhab:voice unregisterdialog --source javasound
+# run single shot dialog
+openhab> openhab:voice listenandanswer --source javasound --sink sonos:PLAY5:kitchen --hlis system,rulehli --stt voicerss --tts voskstt --keyword terminator --ks rustpotterks
 ```
 
-The commands expect parameters in a specific order; so for example, if you want to provide the interpreter as a parameter, you will have to provide the audio source and the audio sink before.
-
-When a parameter is not provided in the command line, the default from the voice settings is used.
+When an argument is not provided in the command line, the default from the voice settings is used.
 If no default value is set in voice settings, the command will fail.
 
 You can select particular human language interpreter(s).
@@ -339,7 +366,13 @@ You can select a particular voice for the Text-to-Speech service.
 If no voice is provided, the voice defined in the regional settings is preferred.
 If this voice is not associated with the selected Text-to-Speech service or not applicable to the language used, any voice from the selected Text-to-Speech service applicable to the language being used will be selected.
 
-if the default listening switch is set in the voice settings, it is used.
+Using the 'Listening Melody' in the voice settings, you can configure an acoustic melody to be played when the keyword is spotted before the voice command recognition stars.
+
+Other interesting options for the dialog initialization are:
+
+- --dialog-group `<group name>`: You can prevent simultaneous execution of dialogs by assigning them to same group, by default they are assigned the 'default' group.
+- --location-item `<ItemName>`: You can provide an Item as location context for the dialogs, the interpreters can take advantage of these.
+- --listening-item `<ItemName>`: You  can configure an Item to be "ON"/"OFF" on recognition start/stop, useful for example to trigger a rule that mutes the surrounding devices.
 
 #### Actions
 
@@ -365,10 +398,10 @@ The `voice` parameter for `startDialog` and `listenAndAnswer` is the voice to be
 If `null` is provided, the voice defined in the regional settings is preferred.
 If this voice is not associated with the selected Text-to-Speech service or not applicable to the language used, any voice from the selected Text-to-Speech service applicable to the language being used will be selected.
 
-The `listeningItem` parameter for `startDialog` and `listenAndAnswer` is the item name of the listening switch.
-This item is switched on during the period when the dialog processor has spotted the keyword and is listening for commands.
-If `null` is provided, the default item from the voice settings is used.
-If not set, no item will be switched on and off.
+The `listeningItem` parameter for `startDialog` and `listenAndAnswer` is the Item name of the listening switch.
+This Item is switched on during the period when the dialog processor has spotted the keyword and is listening for commands.
+If `null` is provided, the default Item from the voice settings is used.
+If not set, no Item will be switched on and off.
 
 ##### Examples
 
@@ -386,3 +419,105 @@ listenAndAnswer(null, null)
 listenAndAnswer("javasound", "sonos:PLAY5:kitchen")
 listenAndAnswer("voskstt", "voicerss", "voicerss:frFR_Axel", "system,rulehli", "javasound", "sonos:PLAY5:kitchen", "fr-FR", "listeningItem")
 ```
+
+### The Built-in Interpreter
+
+The interpreter is available by default and includes built-in grammar for English, German, French and Spanish that can be extended using the voiceSystem metadata. Here are some examples of the built-in English grammar:
+
+```text
+increase the <item name>
+decrease the <item name>
+set the color of the <item name> to red
+put the <item name> to next
+put the <item name> to previous
+play the <item name>
+pause the <item name>
+rewind the <item name>
+fast forward the <item name>
+start the <item name>
+stop the <item name>
+refresh the <item name>
+```
+
+For exact built-in grammar you can refer to the [source code](https://github.com/openhab/openhab-core/blob/main/bundles/org.openhab.core.voice/src/main/java/org/openhab/core/voice/internal/text/StandardInterpreter.java#L92).
+
+#### Target Item
+
+The interpreter resolves the Item name based on its label/synonyms and its parent label/synonyms.
+
+An example of the possible situations could be:
+
+If you have `Group` Item labeled as `TV` with a `Dimmer` child `Brightness`:
+The interpreter understands these phrases as the same `turn off tv`, `turn off brightness`, `turn off tv brightness` and `turn off brightness tv`.
+
+If you add a Switch child labeled as `Power` to the group:
+The interpreter now also understands the phrases `turn off power`, `turn off tv power` and `turn off power tv`.
+But the `turn off tv` phrase now detects a collision because of two matching Items accepting the `OFF` command.
+
+#### Name prevalence
+
+One way you can solve this is by using the name prevalence, Items with start with other Items names take prevalence over them.
+
+If the Switch Item has the name `tv` and the Dimmer Item the name `tv_brightness` there will be no collisions between them and therefore the `OFF` command will target the Switch Item.
+
+#### Exact match label/synonym prevalence
+
+Another way you can solve this is by using the exact match prevalence, Items whose label/synonym match the one in the command exactly take prevalence.
+
+If the Switch Item has the synonym `TV` there will be no collisions between them and therefore the `OFF` command will target the Switch Item.
+
+#### Location prevalence
+
+The dialog processor forwards its configured location Item to the standard interpreter to be used for reducing collisions on the target resolution.
+
+If you have two Items labeled as `Light`  but one is a child of the location Item that has been configured for the dialog execution, the Item takes prevalence.
+So the phrase `Turn on the light` will work correctly and turn on the Item at your location.
+
+The location takes prevalence over an exact match.
+
+### Item description rules
+
+The interpreter also creates rules for your Item descriptions for English, German, French, Italian and Spanish.
+
+If you have a Dimmer Item called `Light` with command description `100=high` the interpreter will also understand the phrase `Set light to high`.
+
+### Item custom rules.
+
+You can register custom rules into the interpreter using Items and the metadata namespace `voiceSystem`.
+
+The examples of valid rules:
+
+```text
+"start? watch|watching $*$ on $name$" -> Matches "start watching some show on tv" and sends command "some show".
+
+"watch|play $*$ on tv" -> Matches "play some show on tv" and sends command "some show".
+
+"watch|play $cmd$" -> Matches "play some show" and sends command "some_show_id", only if the Item metadata `commandDescription` contains `some_show_id=some show`.
+
+"start? watch|watching $cmd$ at|on? $name$" -> Matches "watch some show tv" and sends command "some_show_id", only if Item `commandDescription` contains `some_show_id=some show`.
+```
+
+As you can see there are some reserved tokens and characters:
+
+- `$name$` defines the place of the Item name (resolved as explained before), is optional.
+- `$cmd$` defines the place of a command label, extracted from the Item command description.
+- `$*$` defines the place of a command, its value is not constrained.
+- `|` defines alternative word tokens.
+- `?` defines optional word tokens.
+
+The Item metadata namespace `voiceSystem` allows following configurations:
+
+- **isTemplate**: The rule defined on this Item metadata will not target itself but similar Items (Items with same tags and semantic).
+- **isSilent**: The interpreter will say nothing in case these rule is executed correctly (a possible use case can be a trigger for a rule on an Item command to answer programmatically)
+- **isForced**: Send the command without checking the current Item state (default behavior).
+
+Note that if the `isTemplate` config is false, the rule target is limited to the Item that registers it. When it's true the Item registering the rule gets excluded of been a valid target.
+
+Note that when you use the option `isTemplate` in rules without the `$name$` token, collisions are still solved based on the location. So you can have a `play $cmd$ here` rule which is scoped to the dialog location.
+
+There are some limitations:
+
+- Rule should contain `$cmd$` or `$*$` but not both.
+- Rules that include `$name$` and `$*$` should have at least one non-optional token between them.
+- Rules must not start by `$name$` or `$*$`, neither by them prefixed only of optional tokens.
+- Rules must not contain `$name$`, `$cmd$` or `$*$` multiple times.

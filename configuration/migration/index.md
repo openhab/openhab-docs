@@ -140,7 +140,7 @@ Note that openHAB (since version 4) now requires a Java 17 runtime, so please ma
 
 Official update scripts are available that let you update your 2.x installation to version 3.0:
 
-#### Linux/MacOS
+#### Linux/macOS
 
 1. Change to your openHAB root directory (e.g. `cd /opt/openhab`)
 1. Create a backup by calling `sudo ./runtime/bin/backup`.

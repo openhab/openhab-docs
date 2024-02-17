@@ -77,7 +77,7 @@ Optionally, if you want the system to scan the user's network for your addon the
 |------------------------|-------------------------------------------------------------------------------|----------------------------------------------------|
 | `discovery-methods`    | Wrapper for `discovery-method` elements (see below).                          | Zero or one instances per file.                    |
 | `discovery-method`     | Complex XML element describing an addon discovery method.                     | Zero or more instances per file.                   |
-| `service-type`         | The type of discovery method. e.g. `upnp` or `mdns` etc.                      | Mandatory one per `discovery-method`.              |
+| `service-type`         | The type of discovery service (see table below).                              | Mandatory one per `discovery-method`.              |
 | `discovery-parameters` | Wrapper for `discovery-parameter` elements (see below).                       | Zero or one instances per `discovery-method`.      |
 | `discovery-parameter`  | A parameter name and value used for settings of the add-on finder process.    | Zero or more instances per `discovery-parameters`. |
 | `name`                 | A settings parameter name.                                                    | Mandatory one instance per `discovery-parameter`.  |
@@ -87,11 +87,28 @@ Optionally, if you want the system to scan the user's network for your addon the
 | `name`                 | A property name to search for.                                                | Mandatory one instance per `match-property`.       |
 | `regex`                | A regular expression (or plain string) that needs to match the property name. | Mandatory one instance per `match-property`.       |
 
+| Service Type | Description                                                                                |
+|--------------|--------------------------------------------------------------------------------------------|
+| `ip`         | Service to discover add-ons by scanning for devices via a UDP 'ping' broadcast on the LAN. |
+| `mdns`       | Service to discover add-ons by scanning for devices using the mDNS discovery service.      |
+| `processs`   | Service to discover add-ons by checking processes running on the PC.                       |
+| `upnp`       | Service to discover add-ons by scanning for devices using the UPnP discovery service.      |
+| `usb`        | Service to discover add-ons by scanning for USB devices attached to the PC.                |
+
 Notes:
 
 - A `discovery-method` may contain multiple `match-property` entries, and in such a case **all** entries must match i.e. it a logical `AND` function is applied.
 - If you want to apply a logical `OR` function you can define a second separate `discovery-method` containing the respective `match-property` entry.
-- Different add-on discovery finders may need different `discovery-parameters`. Check the JavaDoc of the respective finder. See the `mdns` example below.
+- Different add-on discovery finders may need different `discovery-parameters`. Check the JavaDoc of the respective 'org.openhab.core.config.discovery.addon.*' finder class on GitHub. Or see the `mdns` example below.
+- The `match-property` has different allowed values for its `name` element depending on the discovery `service-type`, as shown in the table below.
+
+| Service Type | Allowed `match-property` `name` values                                                                                                       |
+|--------------|----------------------------------------------------------------------------------------------------------------------------------------------|
+| `ip`         | "response".                                                                                                                                  |
+| `mdns`       | Frequently used properties are "name", and "application". But mDNS permits any property name depending on the service concerned.             |
+| `process`    | "command", "commandLine".                                                                                                                    |
+| `upnp`       | "deviceType", "manufacturer", "manufacturerURI", "modelName", "modelNumber", "modelDescription", "modelURI", "serialNumber", "friendlyName". |
+| `usb`        | "product", "manufacturer", "chipId", "remote".                                                                                               |
 
 ## Example
 
