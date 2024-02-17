@@ -70,9 +70,9 @@ Just log in with an admin user, navigate to `Developer Tools -> API Explorer` an
 Starting with version 3, openHAB supports password protection when using the APIs.
 There are two kinds of access levels:
 - Only *admins* are able to access and change sensitive parts of the API.
-  E.g., creating/editing Things, Channels, Items or Scripts.
+  e.g., creating/editing Things, Channels, Items or Scripts.
 - *Users* are able to interact with the end-user parts of the API.
-  E.g., looking at the state of and interacting with the existing Items.
+  e.g., looking at the state of and interacting with the existing Items.
 
 The setup process of openHAB includes creating an *admin* account.
 This (or any other account that is part of the *admin* group) can be used for the authentication of the admin APIs.
