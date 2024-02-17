@@ -5,6 +5,7 @@ title: Meteo Alerte - Bindings
 type: binding
 description: "The Meteo Alerte binding gives alert level regarding major weather related risk factors."
 since: 3x
+logo: images/addons/meteoalerte.png
 install: auto
 ---
 

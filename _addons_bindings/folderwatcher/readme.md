@@ -5,6 +5,7 @@ title: FolderWatcher - Bindings
 type: binding
 description: "This binding is intended to monitor a local folder, FTP and S3 bucket and their subfolders and notify of new files."
 since: 3x
+logo: images/addons/folderwatcher.png
 install: auto
 ---
 

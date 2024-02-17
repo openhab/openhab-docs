@@ -5,6 +5,7 @@ title: GPIO - Bindings
 type: binding
 description: "This binding adds GPIO support via the pigpiod daemon to openHAB."
 since: 3x
+logo: images/addons/gpio.png
 install: auto
 ---
 

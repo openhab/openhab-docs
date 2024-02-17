@@ -5,6 +5,7 @@ title: Jablotron Alarm - Bindings
 type: binding
 description: "This is the binding for Jablotron alarms."
 since: 3x
+logo: images/addons/jablotron.png
 install: auto
 ---
 

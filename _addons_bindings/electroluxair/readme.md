@@ -5,6 +5,7 @@ title: ElectroluxAir - Bindings
 type: binding
 description: "This is an openHAB binding for the Pure A9 Air Purifier, by Electrolux."
 since: 3x
+logo: images/addons/electroluxair.png
 install: auto
 ---
 

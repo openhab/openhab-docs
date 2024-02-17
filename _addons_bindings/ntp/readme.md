@@ -5,6 +5,7 @@ title: NTP - Bindings
 type: binding
 description: "The NTP binding is used for displaying the local date and time based update from an NTP server."
 since: 3x
+logo: images/addons/ntp.png
 install: auto
 ---
 

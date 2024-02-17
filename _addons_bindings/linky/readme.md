@@ -5,6 +5,7 @@ title: Linky - Bindings
 type: binding
 description: "This binding uses the API provided by Enedis to retrieve your energy consumption data."
 since: 3x
+logo: images/addons/linky.png
 install: auto
 ---
 

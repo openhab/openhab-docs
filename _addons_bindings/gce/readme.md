@@ -5,6 +5,7 @@ title: GCE - Bindings
 type: binding
 description: "This binding aims to handle various GCE Electronics equipments."
 since: 3x
+logo: images/addons/gce.png
 install: auto
 ---
 

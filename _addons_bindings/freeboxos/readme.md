@@ -5,6 +5,7 @@ title: FreeboxOS - Bindings
 type: binding
 description: "Free is a French telecom operator providing advanced equipments to manage your broadband access."
 since: 3x
+logo: images/addons/freeboxos.png
 install: auto
 ---
 

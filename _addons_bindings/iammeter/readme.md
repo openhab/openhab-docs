@@ -5,6 +5,7 @@ title: Iammeter - Bindings
 type: binding
 description: "[Iammeter](https://www.iammeter.com) provides real-time readings of single-phase (WEM3080, WEM3162) and three-phase (WEM3080T) meters from IAMMETER over Wi-Fi."
 since: 3x
+logo: images/addons/iammeter.png
 install: auto
 ---
 

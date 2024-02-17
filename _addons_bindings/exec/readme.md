@@ -5,6 +5,7 @@ title: Exec - Bindings
 type: binding
 description: "This binding integrates the possibility to execute arbitrary shell commands."
 since: 3x
+logo: images/addons/exec.png
 install: auto
 ---
 

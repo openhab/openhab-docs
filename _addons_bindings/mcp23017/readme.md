@@ -5,6 +5,7 @@ title: MCP23017 - Bindings
 type: binding
 description: "This binding allows you to have native access for MCP23017 I/O expander on I2C bus."
 since: 3x
+logo: images/addons/mcp23017.png
 install: auto
 ---
 

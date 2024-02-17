@@ -5,6 +5,7 @@ title: Network - Bindings
 type: binding
 description: "This binding allows checking whether a device is currently available on the network."
 since: 3x
+logo: images/addons/network.png
 install: auto
 ---
 

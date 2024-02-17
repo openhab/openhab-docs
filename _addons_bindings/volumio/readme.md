@@ -5,6 +5,7 @@ title: Volumio - Bindings
 type: binding
 description: "This binding integrates the open-source Music Player [Volumio](https://www.volumio.com)."
 since: 3x
+logo: images/addons/volumio.png
 install: auto
 ---
 
