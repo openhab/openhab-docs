@@ -9,8 +9,7 @@ title: Rules Blockly
 One of the core feature that openHAB provides is writing rules to allow specific behaviour with the home automation system.
 The usual way of developing rules is by coding them like described in the [Textual Rules](/docs/configuration/rules-dsl.html).
 
-However, this art of programming may become intimidating early on and shy away away people with few or almost no experience in programming.
-Therefore openHAB also provides a graphical way of writing rules which allows to put together rules in a rather visual way (even though some programming background may still help).
+However, if you are not a member of the professional coder caste or do not have equivalent skills, the ability to create your programs visually might be the ideal option (even though some programming background may still help).
 
 [[toc]]
 
