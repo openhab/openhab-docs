@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "build-only": "vuepress build .",
-    "prebuild-preview-local": "cross-env LANG=en_US.UTF-8 LANGUAGE=en_US.UTF-8 LC_ALL=en_US.UTF-8 NODE_OPTIONS=--openssl-legacy-provider",
-    "build-preview-local": "npx vuepress build .",
+    "prebuild-preview-local": "ruby prepare-docs.rb",
+    "build-preview-local": "cross-env LANG=en_US.UTF-8 LANGUAGE=en_US.UTF-8 LC_ALL=en_US.UTF-8 NODE_OPTIONS=--openssl-legacy-provider && npx vuepress build .",
     "build-preview": "npm run build-only",
     "postinstall": "npm dedupe && npm prune",
     "prebuild-preview": "ruby prepare-docs.rb",
@@ -28,6 +28,7 @@
   "homepage": "https://github.com/openhab/openhab-docs#readme",
   "dependencies": {
     "cross-env": "^7.0.3",
+    "null-loader": "^4.0.1",
     "vue-tabs-component": "^1.5.0",
     "vuepress": "^1.9.10",
     "vuepress-plugin-container": "^2.1.4",

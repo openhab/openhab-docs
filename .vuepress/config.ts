@@ -22,6 +22,17 @@ const config: UserConfig<DefaultThemeConfig> = {
         'docs/**/*.md',
         'addons/integrations/**/*.md',
         '**/*.vue'],
+    configureWebpack: {
+        module: {
+            rules: [
+                {
+                    test: /\.(drawio|xml|txt)$/,
+                    exclude: /node_modules/,
+                    use: 'null-loader'
+                }
+            ]
+        }
+    },
     head: [
         ['link', { rel: 'stylesheet', href: `/fonts/fonts.css` }],
         ['link', { rel: 'icon', href: `/favicon.ico` }],
