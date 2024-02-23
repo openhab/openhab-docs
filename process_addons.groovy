@@ -60,8 +60,9 @@ def process_addon_type = { features, sources, type, collection, suffix, lblremov
                         }
                         label = label.trim()
                     }
-                    def logo = new File(project.basedir, 'images/addons/' + id + '.png').exists()
-                    if (! logo) log.info("No logo found.")
+                    def logo_svg = new File(project.basedir, 'images/addons/' + id + '.svg').exists()
+                    def logo_png = new File(project.basedir, 'images/addons/' + id + '.png').exists()
+                    if (! (logo_svg || logo_png)) log.info("No logo found.")
                     def description = ""
                     boolean firstHeadline = false
                     for (line in readme.readLines()) {
@@ -78,7 +79,9 @@ def process_addon_type = { features, sources, type, collection, suffix, lblremov
                     }
                     def front = ['id': "${id}", 'label': "${label}", 'title': "${label}${suffix}", 'type': "${type}", description: "\"${description}\""]
                     front['since'] = '3x'
-                    if (logo) {
+                    if (logo_svg) {
+                        front['logo'] = 'images/addons/' + id + '.svg'
+                    } else if (logo_png) {
                         front['logo'] = 'images/addons/' + id + '.png'
                     }
                     def feature_id = (source == 'oh1' && (type == 'binding' || type == 'io')) ? id + '1' : id
