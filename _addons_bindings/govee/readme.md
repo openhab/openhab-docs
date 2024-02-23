@@ -5,7 +5,7 @@ title: Govee Lan-API - Bindings
 type: binding
 description: "![govee](doc/govee-lights.png)"
 since: 3x
-logo: images/addons/govee.png
+logo: images/addons/govee.svg
 install: auto
 ---
 
