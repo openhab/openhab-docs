@@ -5,6 +5,7 @@ title: Jinja - Transformation Services
 type: transform
 description: "Transforms a value using a jinja template."
 since: 3x
+logo: images/addons/jinja.svg
 install: auto
 ---
 

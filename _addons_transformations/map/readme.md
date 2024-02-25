@@ -5,7 +5,7 @@ title: Map - Transformation Services
 type: transform
 description: "Transforms the input by mapping it to another string. It expects the mappings to be read from a file which is stored under the `transform` folder."
 since: 3x
-logo: images/addons/map.png
+logo: images/addons/map.svg
 install: auto
 ---
 
