@@ -115,7 +115,7 @@ Now let's add the kitchen. Make sure to select Ground Floor again and choose Add
 
 To add the first floor to the root level, we need to clear the selection first.
 Click on the white space in the tree, or Clear in the bottom toolbar.
-Add the ground floor and its rooms (master bedroom, bathroom, etc...) to your model.
+Add the first floor and its rooms (master bedroom, bathroom, etc...) to your model.
 
 You should end up with something resembling this:
 
