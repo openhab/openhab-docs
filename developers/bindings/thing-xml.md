@@ -58,7 +58,8 @@ In that way, a generic thing type could be listed for users and a corresponding 
 
 ### Thing Categories
 
-A description about thing categories as well as an overview about which categories exist can be found in our [categories overview](../../concepts/categories.html).
+Categories are used to provide meta information about Things. Thing categories describe how the physical device **looks like**. UIs can use this information e.g. to render icons.
+The available categories correspond with the [available icons of the classic iconset]({{base}}/configuration/iconsets/classic/), however categories are written in Java class-naming style, e.g. `FrontDoor` instead of lowercase `frontdoor`.
 
 ## Channels
 
@@ -145,9 +146,6 @@ There exist system-wide channel types that are available by default and which sh
 | electric-power        | system.electric-power        | Number:Power             | Energy           | Measurement, Power        | Electric power                                                                                                                                                                                                          |
 | electric-voltage      | system.electric-voltage      | Number:ElectricPotential | Energy           | Measurement, Voltage      | Electric voltage                                                                                                                                                                                                        |
 | electrical-energy     | system.electric-energy       | Number:Energy            | Energy           | Measurement, Energy       | Electrical energy                                                                                                                                                                                                       |
-
-For further information about categories see the [categories page](../../concepts/categories.html).
-
 The `advanced` property indicates whether this channel is a basic or a more specific functionality of the thing.
 If `advanced` is set to `true` a user interface may hide this channel by default.
 The default value is `false` and thus will be taken if the `advanced` attribute is not specified.
@@ -411,7 +409,8 @@ public class ExampleHandlerFactory extends BaseThingHandlerFactory {
 
 ### Channel Categories
 
-A description about channel categories as well as an overview about which categories exist can be found in out [categories overview](../../concepts/categories.html).
+Channel categories are used to provide meta information about channels. Channel categories describe the **functional purpose** of the channel and are used by the UI to render icons.
+The available categories correspond with the [available icons of the classic iconset]({{base}}/configuration/iconsets/classic/), however categories are written in Java class-naming style, e.g. `BatteryLevel` instead of lowercase `batterylevel`.
 
 ### Channel Groups
 
@@ -434,7 +433,7 @@ Inside the thing types XML file channel groups can be defined like this:
 ```
 
 The channel group type is defined on the same level as the thing types and channel types.
-The group type must have a label, an optional description, and an optional [category](../../concepts/categories.html).
+The group type must have a label, an optional description, and an optional category (e.g. used to render an icon)..
 Moreover the list of contained channels must be specified:
 
 ```xml
@@ -450,7 +449,6 @@ Moreover the list of contained channels must be specified:
 
 When a thing will be created for a thing type with channel groups, the channel UID will contain the group ID in the last segment divided by a hash (#).
 If an Item should be linked to a channel within a group, the channel UID would be `binding:multiChannelSwitchActor:myDevice:switchActor1#switch` for the XML example before.
-Details about the category can be found in our [categories overview](../../concepts/categories.html).
 
 ## Properties
 
