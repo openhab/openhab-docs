@@ -185,51 +185,32 @@ The script transformation is also available as profile. When acting as transform
 
 #### Script Transformation Profile Configurations
 
-| Parameter Name    | Description                                                                                |
-| ----------------- | ------------------------------------------------------------------------------------------ |
-| `toItemScript`    | The `script identifier` for performing transformations from the Thing handler to the item. |
-| `toHandlerScript` | The `script identifier` for performing transformations from the item to the Thing handler. |
+| Parameter Name          | Description                                                                                                     |
+|-------------------------|-----------------------------------------------------------------------------------------------------------------|
+| `toItemScript`          | The `script identifier` for performing transformations from the Thing handler to the item.                      |
+| `commandFromItemScript` | The `script identifier` for performing transformations of **commands** from the item to the Thing handler.      |
+| `stateFromItemScript`   | The `script identifier` for performing transformations of **state updates** from the item to the Thing handler. |
 
 Example usage in an `.items` file:
 
 ```xtend
-Number <itemName> { channel="<channelUID>"[profile="transform:JS", toItemScript="decode_json.js", toHandlerScript="encode_json.js" ] }
+Number <itemName> { channel="<channelUID>"[profile="transform:JS", toItemScript="decode_json.js", commandFromItemScript="encode_json.js" ] }
 ```
 
 Here, additional parameters can also be injected into the script using the URL style syntax, e.g.:
 
 ```xtend
-Number <itemName> { channel="<channelUID>"[profile="transform:RB", toItemScript="multiply.rb?factor=10", toHandlerScript="multiply.rb?factor=0.1" ] }
+Number <itemName> { channel="<channelUID>"[profile="transform:RB", toItemScript="multiply.rb?factor=10", commandFromItemScript="multiply.rb?factor=0.1" ] }
 ```
 
 Inline script is also supported in the profile syntax.
 
 ```xtend
-Number <itemName> { channel="<channelUID>"[profile="transform:RB", toItemScript="| input.to_f * 10", toHandlerScript="| input.to_f * 0.1" ] }
+Number <itemName> { channel="<channelUID>"[profile="transform:RB", toItemScript="| input.to_f * 10", commandFromItemScript="| input.to_f * 0.1" ] }
 ```
 
-More details regarding this and other Transformation services can be found in the individual transformation articles linked below.
+::: tip
 
-## Available Transformations
+You can find the available transformation services [here]({{base}}/adddons/#transform).
 
-Be aware that a transformation service just as any other openHAB add-on needs to be installed prior to first usage.
-
-<table id="transformations-overview" class="bordered addon-table">
-  <thead>
-    <tr>
-      <th data-field="label" width="20%">Name</th>
-      <th data-field="description">Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    {% for transformation in site.addons_transformations %}
-    <tr class="install-{{transformation.install}} since-{{transformation.since}}">
-      <td>
-        <h4><a href="{{base}}{{transformation.url}}">{% if transformation.logo %}<img class="logo" src="{{base}}/{{transformation.logo}}" title="{{ transformation.label }}" alt="{{ transformation.label }}" />{% else %}{{ transformation.label }}{% endif %}</a></h4>
-        <img src="{{base}}/images/tag-install-{{transformation.install}}.svg">
-      </td>
-      <td>{{ transformation.description | markdownify }}</td>
-    </tr>
-    {% endfor %}
- </tbody>
-</table>
+:::
