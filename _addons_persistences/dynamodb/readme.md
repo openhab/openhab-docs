@@ -5,6 +5,7 @@ title: Amazon DynamoDB - Persistence Services
 type: persistence
 description: "This service allows you to persist state updates using the [Amazon DynamoDB](https://aws.amazon.com/dynamodb/) database."
 since: 3x
+logo: images/addons/dynamodb.png
 install: auto
 ---
 

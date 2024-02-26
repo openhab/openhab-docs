@@ -5,7 +5,7 @@ title: MapDB - Persistence Services
 type: persistence
 description: "The [MapDB](https://mapdb.org/) persistence service is based on a simple key-value store that only saves the last value."
 since: 3x
-logo: images/addons/mapdb.png
+logo: images/addons/mapdb.svg
 install: auto
 ---
 

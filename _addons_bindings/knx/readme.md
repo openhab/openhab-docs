@@ -5,7 +5,7 @@ title: KNX - Bindings
 type: binding
 description: "The openHAB KNX binding allows to connect to [KNX Home Automation](https://www.knx.org/) installations."
 since: 3x
-logo: images/addons/knx.png
+logo: images/addons/knx.svg
 install: auto
 ---
 

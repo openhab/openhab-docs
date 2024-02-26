@@ -5,7 +5,7 @@ title: MongoDB - Persistence Services
 type: persistence
 description: "This service allows you to persist state updates using the MongoDB database."
 since: 3x
-logo: images/addons/mongodb.png
+logo: images/addons/mongodb.svg
 install: auto
 ---
 

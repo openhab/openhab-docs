@@ -5,7 +5,7 @@ title: JDBC - Persistence Services
 type: persistence
 description: "This service writes and reads item states to and from a number of relational database systems that support [Java Database Connectivity (JDBC)](https://en.wikipedia.org/wiki/Java_Database_Connectivity)."
 since: 3x
-logo: images/addons/jdbc.png
+logo: images/addons/jdbc.svg
 install: auto
 ---
 
