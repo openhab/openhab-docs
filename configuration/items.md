@@ -297,6 +297,8 @@ In the example below, the "switch" icon has been selected:
 Switch Livingroom_Light "Livingroom Ceiling Light" <switch>
 ```
 
+Please note that icons (also know as categories) are not meant to be changed dynamically via rules.
+
 #### Icons provided with openHAB
 
 openHAB provides a set of [classic icons](/docs/configuration/iconsets/classic/) by default.
