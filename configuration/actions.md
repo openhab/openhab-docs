@@ -386,7 +386,8 @@ We recommend placing these custom files somewhere inside your `$OH_CONF` folder,
 
 #### Localization
 
-Ephemeris supports translation of holidays into many languages. Localization support files can be found in the [GitHub repo](https://github.com/focus-shift/jollyday/tree/main/jollyday-core/src/main/resources/descriptions). Currently these language supports are available:
+Ephemeris supports translation of holidays into many languages. Localization support files can be found in the [GitHub repo](https://github.com/focus-shift/jollyday/tree/main/jollyday-core/src/main/resources/descriptions).
+Currently, these language supports are available:
 
 1. [Dutch](https://github.com/focus-shift/jollyday/tree/main/jollyday-core/src/main/resources/descriptions/holiday_descriptions_nl.properties)
 1. [English](https://github.com/focus-shift/jollyday/tree/main/jollyday-core/src/main/resources/descriptions/holiday_descriptions.properties)
@@ -396,56 +397,10 @@ Ephemeris supports translation of holidays into many languages. Localization sup
 1. [Portuguese](https://github.com/focus-shift/jollyday/tree/main/jollyday-core/src/main/resources/descriptions/holiday_descriptions_pt.properties)
 1. [Swedish](https://github.com/focus-shift/jollyday/tree/main/jollyday-core/src/main/resources/descriptions/holiday_descriptions_sv.properties)
 
-Feel free to extent this list by providing additional language support files.
+Feel free to extend this list by providing additional language support files.
 
-To enable localization,
+To enable localization:
 
-- copy the file for your language to your OH setup.
-  - again a folder in `$OH_CONF` folder, such as `$OH_CONF/services` is proposed.
-- use function 'Ephemeris.getHolidayDescription' to convert the name according to your localization file.
-
-## Installable Actions
-
-The following actions are available as installable add-ons.
-
-<table id="actions-select" class="striped">
-  <tbody>
-    <tr>
-      <td width="20%">
-        <p>
-          <input type="checkbox" class="filled-in" id="manual-checkbox" />
-          <label for="manual-checkbox"><img src="{{base}}/images/tag-install-manual.svg"></label>
-        </p>
-      </td>
-      <td>
-        <p>
-        Some openHAB 1 actions have not yet completed validation for inclusion in the distribution; however, they may indeed work properly under openHAB 2.
-        All openHAB 1 addons can be downloaded in a <a href="https://bintray.com/openhab/mvn/download_file?file_path=org%2Fopenhab%2Fdistro%2Fopenhab%2F1.9.0%2Fopenhab-1.9.0-addons.zip">zip file</a>.
-        We need your help testing them so that they may be easily installed in a future distribution.
-        Please see the <a href="{{base}}/developers/development/compatibilitylayer.html#how-to-use-openhab-1x-add-ons-that-are-not-part-of-the-distribution">compatibility layer documentation</a> and
-        also search the <a href="https://community.openhab.org">openHAB community forum</a> for the latest information and steps for manual installation.
-        </p>
-      </td>
-    </tr>
-  </tbody>
-</table>
-
-<table id="actions-overview" class="bordered addon-table">
-  <thead>
-    <tr>
-      <th data-field="label" width="20%">Name</th>
-      <th data-field="description">Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    {% for action in site.addons_actions %}
-        <tr class="install-{{action.install}} since-{{action.since}}">
-          <td>
-            <h4><a href="{{base}}{{action.url}}">{% if action.logo %}<img class="logo" src="{{base}}/{{action.logo}}" title="{{ action.label }}" alt="{{ action.label }}" />{% else %}{{ action.label }}{% endif %}</a></h4>
-            <img src="{{base}}/images/tag-since-{{action.since}}.svg"> <img src="{{base}}/images/tag-install-{{action.install}}.svg">
-          </td>
-          <td>{{ action.description | markdownify }}</td>
-        </tr>
-    {% endfor %}
- </tbody>
-</table>
+- Copy the file for your language to your OH setup.
+  - A folder in `$OH_CONF` folder, such as `$OH_CONF/services` is proposed.
+- Use the function `Ephemeris.getHolidayDescription` to convert the name according to your localization file.
