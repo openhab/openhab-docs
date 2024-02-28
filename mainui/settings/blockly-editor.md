@@ -25,8 +25,8 @@ Deleting a block:
 
 Copy & Paste:
 
-- <kbd>Ctrl+C</kbd>: Copy the current line or the current selection.
-- <kbd>Ctrl+X</kbd>: Cut the current line or the current selection.
+- <kbd>Ctrl+C</kbd>: Copy the selected block.
+- <kbd>Ctrl+X</kbd>: Cut selected block.
 - <kbd>Ctrl+V</kbd>: Paste what has been copied.
 
 Redo & Undo:
