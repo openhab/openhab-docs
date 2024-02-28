@@ -1,9 +1,9 @@
 ---
 id: jythonscripting
-label: Jython Scripting (DEPRECATED)
-title: Jython Scripting (DEPRECATED) - Automation
+label: Jython Scripting
+title: Jython Scripting - Automation
 type: automation
-description: "::: tip Note:"
+description: "This add-on provides [Jython](https://www.jython.org/) 2.7 that can be used as a scripting language within automation rules and which eliminates the need to download Jython and create `EXTRA_JAVA_OPTS` entries for `bootclasspath`, `python.home` and `python.path`."
 since: 3x
 logo: images/addons/jythonscripting.png
 install: auto
@@ -13,16 +13,9 @@ install: auto
 
 {% include base.html %}
 
-# Jython Scripting (DEPRECATED)
+# Jython Scripting
 
-::: tip Note:
-Currently, the development of Jython stopped at version 2.7 with no definite timeline to support Python 3.x.
-The 3rd party openHAB helper library for Jython is also no longer maintained.
-We would not recommend using Jython scripting at this point in time.
-For alternatives, check out the list of other supported [automation add-ons](https://www.openhab.org/addons/#automation).
-:::
-
-This add-on provides [Jython](https://www.jython.org/) 2.7.2 that can be used as a scripting language within automation rules and which eliminates the need to download Jython and create `EXTRA_JAVA_OPTS` entries for `bootclasspath`, `python.home` and `python.path`.
+This add-on provides [Jython](https://www.jython.org/) 2.7 that can be used as a scripting language within automation rules and which eliminates the need to download Jython and create `EXTRA_JAVA_OPTS` entries for `bootclasspath`, `python.home` and `python.path`.
 
 The `python.home` system property is set to the path of the add-on.
 

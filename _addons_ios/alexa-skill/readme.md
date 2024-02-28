@@ -27,7 +27,6 @@ The skill connects your openHAB setup through the [myopenHAB.org](http://myopenH
   * [Group Endpoint](#group-endpoint)
   * [Item State](#item-state)
   * [Item Unit of Measurement](#item-unit-of-measurement)
-  * [Networking Capabilities](#networking-capabilities)
   * [Generic Capabilities](#generic-capabilities)
   * [Semantic Extensions](#semantic-extensions)
 * [Item Configuration](#item-configuration)
@@ -312,22 +311,6 @@ Number:Temperature Temperature2 "Temperature"           {alexa="CurrentTemperatu
 Number:Temperature Temperature3 "Temperature"           {alexa="CurrentTemperature"}
 ```
 
-## Networking Capabilities
-
-To interact with the networking capabilities of a router, such as controlling the network access for a specific device, the [networking attributes](#networking-attributes) are available to configure a representation of a home network and its connected devices.
-
-In order to take advantage of these capabilities, your router must be configured as a [group endpoint](#group-endpoint) based on [`HomeNetwork`](#homenetwork) supported device types. If it doesn't have any other capabilities, it can be an empty group. Likewise, connected devices must be configured based on [`ConnectedDevice`](#connecteddevice) supported device types and metadata parameters.
-
-```xtend
-Group  Router  "Router"          {alexa="Router"}
-
-Group  Laptop  "Laptop" (Router) {alexa="Laptop" [macAddress="00:21:86:B5:6E:10"]}
-Switch Access1 "Access" (Laptop) {alexa="NetworkAccess"}
-
-Group  Tablet  "Tablet" (Router) {alexa="Tablet" [macAddress="00:21:86:B5:6E:11"]}
-Switch Access2 "Access" (Tablet) {alexa="NetworkAccess"}
-```
-
 <a name="building-block-apis"></a>
 
 ## Generic Capabilities
@@ -553,7 +536,7 @@ Device Types | Supported Attributes | Description
 `Speaker` | *[`PowerState`](#powerstate)*, *[`VolumeLevel`](#volumelevel)*, [`VolumeStep`](#volumestep), [`MuteState`](#mutestate), [`MuteStep`](#mutestep), [`EqualizerBass`](#equalizerbass), [`EqualizerMidrange`](#equalizermidrange), [`EqualizerTreble`](#equalizertreble), [`EqualizerMode`](#equalizermode), [`Channel`](#channel), [`ChannelStep`](#channelstep), [`Input`](#input), [`Playback`](#playback), [`PlaybackStop`](#playbackstop), [`PlaybackStep`](#playbackstep) | A speaker or speaker system.
 `StreamingDevice` | *[`PowerState`](#powerstate)*, *[`Playback`](#playback)*, [`PlaybackStop`](#playbackstop), [`PlaybackStep`](#playbackstep), [`Channel`](#channel), [`ChannelStep`](#channelstep), [`Input`](#input), [`VolumeLevel`](#volumelevel), [`VolumeStep`](#volumestep), [`MuteState`](#mutestate), [`MuteStep`](#mutestep), [`EqualizerBass`](#equalizerbass), [`EqualizerMidrange`](#equalizermidrange), [`EqualizerTreble`](#equalizertreble), [`EqualizerMode`](#equalizermode) | A streaming device such as Apple TV, Chromecast, or Roku.
 `Switch` | *[`PowerState`](#powerstate)*, *[`PowerLevel`](#powerlevel)*, *[`Percentage`](#percentage)* | A switch wired directly to the electrical system. A switch can control a variety of devices. For lighting devices, use `Light` instead.
-`Tablet` | *[`PowerState`](#powerstate)*,  [`BatteryLevel`](#batterylevel), [`NetworkAccess`](#networkaccess) | A tablet computer.
+`Tablet` | *[`PowerState`](#powerstate)*, [`BatteryLevel`](#batterylevel), [`NetworkAccess`](#networkaccess) | A tablet computer.
 `Television` | *[`PowerState`](#powerstate)*, *[`Channel`](#channel)*, [`ChannelStep`](#channelstep), [`Input`](#input), [`VolumeLevel`](#volumelevel), [`VolumeStep`](#volumestep), [`MuteState`](#mutestate), [`MuteStep`](#mutestep), [`EqualizerBass`](#equalizerbass), [`EqualizerMidrange`](#equalizermidrange), [`EqualizerTreble`](#equalizertreble), [`EqualizerMode`](#equalizermode), [`Playback`](#playback), [`PlaybackStop`](#playbackstop), [`PlaybackStep`](#playbackstep) | A television.
 `TemperatureSensor` | *[`CurrentTemperature`](#currenttemperature)*, [`BatteryLevel`](#batterylevel) | An endpoint that reports temperature, but does not control it. The temperature data of the endpoint doesn't appear in the Alexa app. If your endpoint also controls temperature, use `Thermostat` instead.
 `Thermostat` | *[`HeatingCoolingMode`](#heatingcoolingmode)*, [`TargetTemperature`](#targettemperature), [`CoolingSetpoint`](#coolingsetpoint), [`HeatingSetpoint`](#heatingsetpoint), [`EcoCoolingSetpoint`](#ecocoolingsetpoint), [`EcoHeatingSetpoint`](#ecoheatingsetpoint), [`ThermostatHold`](#thermostathold), [`ThermostatFan`](#thermostatfan), [`CurrentTemperature`](#currenttemperature), [`CurrentHumidity`](#currenthumidity), [`BatteryLevel`](#batterylevel) | An endpoint that controls temperature, stand-alone air conditioners, or heaters with direct temperature control. If your endpoint senses temperature but does not control it, use `TemperatureSensor` instead.
@@ -561,7 +544,7 @@ Device Types | Supported Attributes | Description
 `Washer` | *[`PowerState`](#powerstate)* | A device that cleans clothing.
 `WaterHeater` | *[`PowerState`](#powerstate)*, [`TargetTemperature`](#targettemperature), [`CurrentTemperature`](#currenttemperature) | A device that heats water, often consisting of a large tank.
 `Wearable`| *[`PowerState`](#powerstate)*, [`BatteryLevel`](#batterylevel), [`NetworkAccess`](#networkaccess) | A network-connected wearable device, such as an Apple Watch, Fitbit, or Samsung Gear.
-`Other`| [All attributes](#device-attributes), except [networking](#networking-attributes) and [scenes](#scene-attributes) | An endpoint that doesn't belong to one of the other categories.
+`Other`| [All attributes](#device-attributes), except [scenes](#scene-attributes) | An endpoint that doesn't belong to one of the other categories.
 
 ## Device Attributes
 
@@ -1150,48 +1133,19 @@ Items that represents a color temperature. It is important to note that temperat
 
 ### Networking Attributes
 
-#### `HomeNetwork`
-
-Items that represent a network router. This attribute cannot be specified by name. It is automatically added when configuring a [group endpoint](#group-endpoint) as one of the supported [device types](#device-types).
-
-* Supported device types:
-  * `NetworkHardware`
-  * `Router`
-
-#### `ConnectedDevice`
-
-Items that represent a network device, such as a computer or mobile phone, connected to a router. This attribute cannot be specified by name. It is automatically added when configuring a [group endpoint](#group-endpoint) as one of the supported [device types](#device-types), that is a member of the group representing the router, as [`HomeNetwork`](#homenetwork), where the device is connected to, and having at least the metadata parameter `macAddress` defined.
-
-* Supported device types:
-  * `Computer`
-  * `GameConsole`
-  * `Laptop`
-  * `MobilePhone`
-  * `Tablet`
-  * `Wearable`
-* Supported metadata parameters:
-  * hostname=`<name>`
-    * defaults to `N/A`
-  * macAddress=`<address>`
-    * formatted as EUI-48 or EUI-64 address with colon or dash separators (e.g. `macAddress="00:21:86:B5:6E:10"`)
-
 #### `NetworkAccess`
 
-Items that represent the internet/network access control of a Wi-Fi/Ethernet connection to a router. This needs to be paired with [`ConnectedDevice`](#connecteddevice). To enable the access control by voice, you will need to select the configured device in your Alexa app, by going to Devices > Wi-Fi Access > Add a device. To limit the control based on voice profiles, turn on the option in the Wi-Fi Access settings.
+Items that represent the access control of a network connection to a router.
 
 * Supported item types:
-  * Switch [ALLOWED="ON", BLOCKED="OFF"]
+  * Switch
 * Supported metadata parameters:
   * inverted=`<boolean>`
     * set to true to invert item state
     * defaults to false
 * Utterance examples:
-  * *Alexa, pause the Internet for `<device name>`.*
-  * *Alexa, resume the Wi-Fi for `<device name>`.*
-  * *Alexa, enable the Internet for `<device name>`.*
-  * *Alexa, disable the Wi-Fi for `<device name>`.*
-  * *Alexa, turn on the Internet for `<device name>`.*
-  * *Alexa, turn off the Wi-Fi for `<device name>`.*
+  * *Alexa, turn on the `<device name>` network access.*
+  * *Alexa, turn off the `<device name>` network access.*
 
 ### Scene Attributes
 
@@ -1959,7 +1913,7 @@ Items that represent components of a device that can be toggled on or off. Multi
 
 * Alexa will respond with "Sorry something wrong, to control *device* try disabling the skill and re-enabling it from your Alexa app".
 * It indicates that Alexa isn't able to control the given device because of an authentication issue.
-* To resolve this error, for users that are using the official skill, just disable and re-enable it through the Alexa app. For users that have setup their own custom skill, make sure that the proper credentials were configured in `ask-resources.json`. If running an openHAB 3.x server, make sure that the API Security Implicit User Role setting is enabled.
+* To resolve this error, for users that are using the official skill, just disable and re-enable it through the Alexa app. For users that have setup their own custom skill, make sure that the proper credentials were configured in `ask-resources.json`. For openHAB 3.0 and above, make sure that the API Security Implicit User Role setting is enabled.
 
 ### Server Not Accessible
 
@@ -1992,7 +1946,6 @@ EqualizerController | [`EqualizerBass`](#equalizerbass), [`EqualizerMidrange`](#
 LockController | [`LockState`](#lockstate) | `ar-SA`, `de-DE`, `en-AU`, `en-CA`, `en-GB`, `en-IN`, `en-US`, `es-ES`, `es-MX`, `es-US`, `fr-CA`, `fr-FR`, `hi-IN`, `it-IT`, `ja-JP`, `pt-BR`
 ModeController | [`Mode`](#mode), [`FanDirection`](#fandirection), [`FanSpeed`](#fanspeed), [`Input`](#input), [`OpenState`](#openstate), [`PositionState`](#positionstate), [`TiltAngle`](#tiltangle), [`ThermostatFan`](#thermostatfan), [`VacuumMode`](#vacuummode) | `de-DE`, `en-AU`, `en-CA`, `en-GB`, `en-IN`, `en-US`, `es-ES`, `es-MX`, `es-US`, `fr-CA`, `fr-FR`, `hi-IN`, `it-IT`, `ja-JP`, `pt-BR`
 MotionSensor | [`MotionDetectionState`](#motiondetectionstate) | `de-DE`, `en-AU`, `en-CA`, `en-GB`, `en-IN`, `en-US`, `es-ES`, `es-MX`, `es-US`, `fr-CA`, `fr-FR`, `hi-IN`, `it-IT`, `ja-JP`, `pt-BR`
-Networking | [`HomeNetwork`](#homenetwork), [`ConnectedDevice`](#connecteddevice), [`NetworkAccess`](#networkaccess) | `en-US`
 PercentageController | [`Percentage`](#percentage) | `de-DE`, `en-AU`, `en-CA`, `en-GB`, `en-IN`, `en-US`, `es-ES`, `es-US`, `fr-CA`, `fr-FR`, `hi-IN`, `it-IT`, `ja-JP`, `pt-BR`
 PlaybackController | [`Playback`](#playback), [`PlaybackStop`](#playbackstop), [`PlaybackStep`](#playbackstep) | `ar-SA`, `de-DE`, `en-AU`, `en-CA`, `en-GB`, `en-IN`, `en-US`, `es-ES`, `es-MX`, `es-US`, `fr-CA`, `fr-FR`, `hi-IN`, `it-IT`, `ja-JP`, `pt-BR`
 PlaybackStateReporter | [`Playback`](#playback), [`PlaybackStop`](#playbackstop) | `ar-SA`, `de-DE`, `en-AU`, `en-CA`, `en-GB`, `en-IN`, `en-US`, `es-ES`, `es-MX`, `es-US`, `fr-CA`, `fr-FR`, `hi-IN`, `it-IT`, `ja-JP`, `pt-BR`
@@ -2006,7 +1959,7 @@ Speaker | [`VolumeLevel`](#volumelevel), [`MuteState`](#mutestate) | `de-DE`, `e
 StepSpeaker | [`VolumeStep`](#volumestep), [`MuteStep`](#mutestep) | `de-DE`, `en-AU`, `en-CA`, `en-GB`, `en-IN`, `en-US`, `es-ES`, `it-IT`
 TemperatureSensor | [`CurrentTemperature`](#currenttemperature) | `ar-SA`, `de-DE`, `en-AU`, `en-CA`, `en-GB`, `en-IN`, `en-US`, `es-ES`, `es-MX`, `es-US`, `fr-CA`, `fr-FR`, `hi-IN`, `it-IT`, `ja-JP`, `pt-BR`
 ThermostatController | [`TargetTemperature`](#targettemperature), [`CoolingSetpoint`](#coolingsetpoint), [`HeatingSetpoint`](#heatingsetpoint), [`HeatingCoolingMode`](#heatingcoolingmode), [`ThermostatHold`](#thermostathold) | `ar-SA`, `de-DE`, `en-AU`, `en-CA`, `en-GB`, `en-IN`, `en-US`, `es-ES`, `es-MX`, `es-US`, `fr-CA`, `fr-FR`, `hi-IN`, `it-IT`, `ja-JP`, `pt-BR`
-ToggleController | [`ToggleState`](#togglestate), [`FanOscillate`](#fanoscillate), [`ThermostatFan`](#thermostatfan) | `de-DE`, `en-AU`, `en-CA`, `en-GB`, `en-IN`, `en-US`, `es-ES`, `es-MX`, `es-US`, `fr-CA`, `fr-FR`, `hi-IN`, `it-IT`, `ja-JP`, `pt-BR`
+ToggleController | [`ToggleState`](#togglestate), [`FanOscillate`](#fanoscillate), [`ThermostatFan`](#thermostatfan), [`NetworkAccess`](#networkaccess) | `de-DE`, `en-AU`, `en-CA`, `en-GB`, `en-IN`, `en-US`, `es-ES`, `es-MX`, `es-US`, `fr-CA`, `fr-FR`, `hi-IN`, `it-IT`, `ja-JP`, `pt-BR`
 
 ## Asset Catalog
 
@@ -2124,6 +2077,7 @@ Asset Identifier | Supported Friendly Names
 `@Setting.Forward` | Forward
 `@Setting.Humidity` | Humidity
 `@Setting.Input` | Input
+`@Setting.NetworkAccess` | Network Access
 `@Setting.Position` | Position
 `@Setting.RangeValue` | Range Value
 `@Setting.Reverse` | Reverse
