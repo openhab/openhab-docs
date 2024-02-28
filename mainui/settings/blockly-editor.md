@@ -33,5 +33,4 @@ Redo & Undo:
 
 - <kbd>Ctrl+Z</kbd>: Undo the last change.
 - <kbd>Ctrl+Y</kbd> (<kbd>Shift+Cmd+Z</kbd> on Mac): Redo the last change.
-
 <!-- END MAINUI SIDEBAR DOC - DO NOT REMOVE -->
