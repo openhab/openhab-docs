@@ -16,7 +16,7 @@ Therefore openHAB also provides a graphical way of writing rules which allows to
 
 ## Introduction
 
-!["built on Blockly"](..%2Fimages%2Fblockly%2Fbuiltonblockly.png)
+!["built on Blockly"](../images/blockly/builtonblockly.png)
 
 The basic idea behind the visual paradigm and representation within openHAB is based on the [Google Blockly Support](https://developers.google.com/blockly) which has been integrated and which provides the basic blocks for programming like the ones on the left and the right side of the below images
 _Blockly toolbox_.
