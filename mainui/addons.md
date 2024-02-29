@@ -62,8 +62,8 @@ Automation provides technologies that allow you to write rules and scripts.
   These will appear in Main UI when you create a new rule, and will present you with the configuration parameters - after the rule is created, the pre-configured rule modules (triggers, conditions, actions) will appear based on your choices.
 
 - **Block Libraries**: Community extensions to the [Blockly]({{base}}/configuration/blockly/) toolbox.<br>
-  These libraries extend the core blockly library with many useful blocks that might else be a bit too specific for the core block library or just fills the gap where a core block is still missing.
-  When installed they appear in a separate section beneath the core blocks of the blockly editor.
+  These libraries extend the core Blockly library with many useful blocks that might else be a bit too specific for the core block library or just fills the gap where a core block is still missing.
+  When installed they appear in a separate section beneath the core blocks of the Blockly editor.
 
 ## User Interfaces
 

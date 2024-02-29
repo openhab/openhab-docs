@@ -20,7 +20,7 @@ Navigate to Settings and Scenes and click on the **+** icon in the lower right c
 Each rule has four pieces of metadata.
 
 | Metadata    | Purpose                      | Notes                                                                                                                                                                                                                                            |
-|-------------|------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| ----------- | ---------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | Unique ID   | Uniquely identifies the rule | Must be completely different from all other rule's UIDs, initialized with a random value but it is strongly recommended entering your own UID                                                                                                    |
 | Name        | "title" of the rule          | This will be the name under which the rule is shown in MainUI and is the primary field used for search and sorting                                                                                                                               |
 | Description | Describes what the rule does | Do not skip, provide information about what the rule does and what it does it to; leave breadcrumbs you can use later to associated rules with Items and Channels                                                                                |
@@ -102,7 +102,7 @@ When you now click on that label card, the scene rule will be triggered and all 
 
 If we want to use triggers that are known from other rule types we can write such a rule, define that trigger and let that rule call the scene rule.
 For the purpose of the tutorial we use a very simple [Blockly Rule]({{base}}/tutorial/rules-blockly.html).
-See the details there on how to create a trigger (e.g. a cron trigger that will call the blockly rule at 22:00 in the evening) to execute that rule.
+See the details there on how to create a trigger (e.g. a cron trigger that will call the Blockly rule at 22:00 in the evening) to execute that rule.
 
 Then use the following block and add the _scene id_ to the block to call the scene
 

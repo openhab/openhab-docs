@@ -6,7 +6,7 @@ title: Rules Blockly - Persistence
 
 # Persistence
 
-[return to Blockly Reference](index.html#persistence)
+[Return to Blockly Reference](index.html#persistence)
 
 ## Introduction
 
@@ -86,4 +86,4 @@ Type: ZonedDateTime
 
 ## Return to Blockly Reference
 
-[return to Blockly Reference](index.html#persistence)
+[Return to Blockly Reference](index.html#persistence)

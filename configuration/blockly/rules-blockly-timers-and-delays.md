@@ -6,7 +6,7 @@ title: Rules Blockly - Timers & Delays
 
 # Timers & Delays
 
-[return to Blockly Reference](index.html#timers-and-delays)
+[Return to Blockly Reference](index.html#timers-and-delays)
 
 Timers and Delays are a little more complex but add important functionality to rules.
 Whilst the "Wait-For"-block is straightforward, the timer blocks should be well understood before being used - they may behave differently than expected.
@@ -216,4 +216,4 @@ The rule is triggered when the burglar-alarm-item or the reset-button-item is ch
 
 ## Return to Blockly Reference
 
-[return to Blockly Reference](index.html#timers-and-delays)
+[Return to Blockly Reference](index.html#timers-and-delays)

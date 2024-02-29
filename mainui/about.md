@@ -135,7 +135,7 @@ You can also configure webaudio as sink when creating rules in the UI:
 
 ![play-rule.png](images/play-rule.png)
 
-or using it in a blockly rule:
+or using it in a Blockly rule:
 
 ![webaudio-blockly.png](images/webaudio-blockly.png)
 

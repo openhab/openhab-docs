@@ -6,7 +6,7 @@ title: Rules Blockly - Run & Process and Transformations
 
 # Run & Process (Rules and Scripts)
 
-[return to Blockly Reference](index.html#run-process-rules-and-scripts)
+[Return to Blockly Reference](index.html#run-process-rules-and-scripts)
 
 ## Introduction
 
@@ -189,4 +189,4 @@ See also the short video part about ![youtube](../images/blockly/youtube-logo-sm
 
 ## Return to Blockly Reference
 
-[return to Blockly Reference](index.html#run-process-rules-and-scripts)
+[Return to Blockly Reference](index.html#run-process-rules-and-scripts)

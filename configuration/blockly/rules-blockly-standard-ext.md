@@ -6,7 +6,7 @@ title: Rules Blockly - openHAB Extensions to the Standard
 
 # openHAB Extensions to the Standard
 
-[return to Blockly Reference](index.html#openhab-extensions-to-the-standard)
+[Return to Blockly Reference](index.html#openhab-extensions-to-the-standard)
 
 ## Introduction
 
@@ -243,9 +243,9 @@ Therefore there is a good introduction to loops available which can be viewed at
 
 ## Functions
 
-A more advanced feature for reusable blockly code is _functions_.
+A more advanced feature for reusable Blockly code is _functions_.
 More about that topic can be viewed at ![youtube](../images/blockly/youtube-logo-small.png) [Functions](https://youtu.be/hSRfooBKn9A?t=60) and [Parameters](https://youtu.be/hSRfooBKn9A?t=170).
 
 ## Return to Blockly Reference
 
-[return to Blockly Reference](index.html#openhab-extensions-to-the-standard)
+[Return to Blockly Reference](index.html#openhab-extensions-to-the-standard)

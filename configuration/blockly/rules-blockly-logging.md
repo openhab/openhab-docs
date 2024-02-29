@@ -6,7 +6,7 @@ title: Rules Blockly - Logging
 
 # Logging
 
-[return to Blockly Reference](index.html#logging)
+[Return to Blockly Reference](index.html#logging)
 
 ## Introduction
 
@@ -46,4 +46,4 @@ _Function:_ creates a print statement with the given text in the rule that logs 
 
 ## Return to Blockly Reference
 
-[return to Blockly Reference](index.html#logging)
+[Return to Blockly Reference](index.html#logging)
