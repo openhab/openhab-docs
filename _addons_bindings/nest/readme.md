@@ -5,7 +5,7 @@ title: Nest - Bindings
 type: binding
 description: "The Nest binding integrates devices by [Nest](https://store.google.com/us/category/connected_home?) using the [Smart Device Management](https://developers.google.com/nest/device-access/api) (SDM) API."
 since: 3x
-logo: images/addons/nest.png
+logo: images/addons/nest.svg
 install: auto
 ---
 

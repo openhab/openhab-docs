@@ -5,7 +5,7 @@ title: Bluetooth - Bindings
 type: binding
 description: "This binding provides support for generic Bluetooth devices."
 since: 3x
-logo: images/addons/bluetooth.png
+logo: images/addons/bluetooth.svg
 install: auto
 ---
 

@@ -5,7 +5,7 @@ title: evcc - Bindings
 type: binding
 description: "This binding integrates [evcc - electric vehicle charging control](https://evcc.io), a project that provides a control center for electric vehicle charging."
 since: 3x
-logo: images/addons/evcc.png
+logo: images/addons/evcc.svg
 install: auto
 ---
 

@@ -5,7 +5,7 @@ title: DWD Pollenflug - Bindings
 type: binding
 description: "The 'Deutsche Wetterdienst' (DWD) reports the current pollen count index for Germany on a daily base and a forecast for tomorrow and the day after tomorrow."
 since: 3x
-logo: images/addons/dwdpollenflug.png
+logo: images/addons/dwdpollenflug.svg
 install: auto
 ---
 
