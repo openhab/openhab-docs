@@ -50,12 +50,6 @@ Imagine you want to do an improvement of the zwave binding and have to update th
 That's twice the effort and also we would have to coordinate two Pull Requests.
 So we are saving time for everyone by keeping those files at their original location along with the code.
 
-::: tip UNDER REVIEW
-
-The process below is subject to changes until the openHAB.x website become the production one.
-
-:::
-
 ### How the documentation build works
 
 We have set up our [build server](https://ci.openhab.org/view/Documentation/) to do the magic automatically.
@@ -84,6 +78,40 @@ So when a distribution build is successful, it will trigger the gathering of all
 When one of these jobs is finished, it will then notify our website hosting service to start a new website build.
 This is recognized due to new commits in the final branch of this repository.
 The new build will include all the latest changes in the code repository and in all external repositories.
+
+### How to build the documentation locally
+
+It is possible to build a preview version of the documentation on your local machine. The following software is required:
+
+- [`node =16.20.1`](https://nodejs.org/en)
+- [`ruby >=3.0.2`](https://www.ruby-lang.org/en/)
+- [`Python >= 3.10.12`](https://www.python.org)
+
+If you work on multiple node projects [Node Version Manager](https://github.com/nvm-sh/nvm) is recommended in case they use a different version of node.
+
+Example:
+
+```bash
+$ nvm install 16
+# ...
+$ nvm use 16
+Now using node v16.20.2 (npm v8.19.4)
+$ npm install
+# ...
+$ npm run serve
+# ...
+Serving HTTP on 0.0.0.0 port 8000 (http://0.0.0.0:8000/)
+```
+
+The local preview is available under the following options
+
+- [http://0.0.0.0:8000/docs](http://0.0.0.0:8000/docs)
+- [http://localhost:8000/docs](http://localhost:8000/docs)
+- [http://[::]/:8000/docs](http://[::]:8000/docs)
+
+![local preview](images/local-docu-preview.png)
+
+This will also allow you to preview how the page renders on different devices using the respective browser tools.
 
 ## Documentation Versioning
 
