@@ -104,6 +104,7 @@ Serving HTTP on 0.0.0.0 port 8000 (http://0.0.0.0:8000/)
 ```
 
 The local preview is available under the following options
+
 - [http://0.0.0.0:8000/docs](http://0.0.0.0:8000/docs)
 - [http://localhost:8000/docs](http://localhost:8000/docs)
 - [http://[::]/:8000/docs](http://[::]:8000/docs)
