@@ -32,16 +32,6 @@ end
 process_main_docs(".")
 add_placeholder_pages()
 
-
-
-if (ARGV[0] && ARGV[0] == "--delete-sources") then
-    puts ">>> !!! Deleting source files - for ephemeral clones only!"
-    FileUtils.rm_rf(Dir.glob("addons/*.md"))
-    ["administration", "appendix", "community", "configuration", "developers", "installation", "tutorials"].each { |d|
-        FileUtils.rm_rf(d)
-    }
-end
-
 # Regenerate the classic iconset docs
 #puts ">>> Generating iconset"
 #system("ruby generate_iconset_doc.rb #{docs_source_dir}/_addons_iconsets classic #{docs_source_dir}/_data docs/configuration/iconsets")
