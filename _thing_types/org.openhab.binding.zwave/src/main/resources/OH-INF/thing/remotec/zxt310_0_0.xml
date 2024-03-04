@@ -8,9 +8,121 @@
   <thing-type id="remotec_zxt310_00_000" listed="false">
     <label>ZXT-310 AV IR Extender</label>
     <description><![CDATA[
-AV IR Extender<br /> <h1>Overview</h1><p>ZXT‐310 is a Z‐Wave‐to‐AV IR Extender (Figure 1) and it works with any Z‐Wave compliant controller or gateway by translating Z‐Wave Simple AV command </p> <br /> <h2>Inclusion Information</h2><p>Press the PROG button</p> <br /> <h2>Exclusion Information</h2><p>Press the PROG button</p> <br /> <h2>Wakeup Information</h2><p><br /></p>
+AV IR Extender<br /> <h1>Overview</h1><p>ZXT‐310 is a Z‐Wave‐to‐AV IR Extender (Figure 1) and it works with any Z‐Wave compliant controller or gateway by translating Z‐Wave Simple AV command.</p><p>While I am updating this in the database for some basic functionality and testing, the Simple AV Command Class is not supported or working. Blasting power-toggle infrared commands works by sending '255' to the EP0 Basic Value channel. This is mentioned in the guide as sending 0xFF to the basic command class to for the SimpleAV Z-Wave command 39 (Power). The other channels are for testing. They may not be useful, especially without Simple AV CC support.</p> <br /> <h2>Inclusion Information</h2><p>Press the PROG button</p> <br /> <h2>Exclusion Information</h2><p>Press the PROG button</p> <br /> <h2>Wakeup Information</h2><p><br /></p>
     ]]></description>
     <category>RemoteControl</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="basic_basic_number" typeId="basic_number">
+        <label>EP0 Basic Value</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_BASIC</property>
+        </properties>
+      </channel>
+      <channel id="config_decimal_param1" typeId="config_decimal">
+        <label>EP0 Raw Simple AV Command</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_CONFIGURATION;parameter=1</property>
+        </properties>
+      </channel>
+      <channel id="config_decimal_param21" typeId="config_decimal">
+        <label>Simple AV Command to Download</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_CONFIGURATION;parameter=21</property>
+        </properties>
+      </channel>
+      <channel id="config_decimal_param22" typeId="remotec_zxt310_00_000_config_decimal_param22">
+        <label>Download status register</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_CONFIGURATION;parameter=22</property>
+        </properties>
+      </channel>
+      <channel id="config_decimal_param25" typeId="config_decimal">
+        <label>Simple AV Code to Learn</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_CONFIGURATION;parameter=25</property>
+        </properties>
+      </channel>
+      <channel id="config_decimal_param26" typeId="remotec_zxt310_00_000_config_decimal_param26">
+        <label>Learning status register</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_CONFIGURATION;parameter=26</property>
+        </properties>
+      </channel>
+      <channel id="config_decimal_param27" typeId="config_decimal">
+        <label>IR Code Library Number</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_CONFIGURATION;parameter=27</property>
+        </properties>
+      </channel>
+      <channel id="config_decimal_param28" typeId="remotec_zxt310_00_000_config_decimal_param28">
+        <label>External IR power</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_CONFIGURATION;parameter=28</property>
+        </properties>
+      </channel>
+      <channel id="config_decimal_param29" typeId="remotec_zxt310_00_000_config_decimal_param29">
+        <label>IR output port routing</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_CONFIGURATION;parameter=29</property>
+        </properties>
+      </channel>
+      <channel id="config_decimal_param31" typeId="remotec_zxt310_00_000_config_decimal_param31">
+        <label>IR transmission mode</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_CONFIGURATION;parameter=31</property>
+        </properties>
+      </channel>
+      <channel id="config_decimal_param36" typeId="config_decimal">
+        <label>Check library version</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_CONFIGURATION;parameter=36</property>
+        </properties>
+      </channel>
+      <channel id="config_decimal_param38" typeId="remotec_zxt310_00_000_config_decimal_param38">
+        <label>Endpoint selection control</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_CONFIGURATION;parameter=38</property>
+        </properties>
+      </channel>
+      <channel id="basic_basic_number1" typeId="basic_number">
+        <label>EP1 Basic Value</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_BASIC:1</property>
+        </properties>
+      </channel>
+      <channel id="basic_basic_number2" typeId="basic_number">
+        <label>EP2 Basic Value</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_BASIC:2</property>
+        </properties>
+      </channel>
+      <channel id="basic_basic_number3" typeId="basic_number">
+        <label>EP3 Basic Value</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_BASIC:3</property>
+        </properties>
+      </channel>
+      <channel id="basic_basic_number4" typeId="basic_number">
+        <label>EP4 Basic Value</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_BASIC:4</property>
+        </properties>
+      </channel>
+      <channel id="basic_basic_number5" typeId="basic_number">
+        <label>EP5 Basic Value</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_BASIC:5</property>
+        </properties>
+      </channel>
+      <channel id="basic_basic_number6" typeId="basic_number">
+        <label>EP6 Basic Value</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_BASIC:6</property>
+        </properties>
+      </channel>
+    </channels>
 
     <!-- DEVICE PROPERTY DEFINITIONS -->
     <properties>
@@ -74,8 +186,8 @@ The Simple AV command number or key going to be learned.<br /> <h1>Overview</h1>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_27_1" type="integer" groupName="configuration" readOnly="true">
-        <label>27: Learning status register</label>
+      <parameter name="config_26_1" type="integer" groupName="configuration" readOnly="true">
+        <label>26: Learning status register</label>
         <description><![CDATA[
 Learning status register<br /> <h1>Overview</h1><p>The status value 1, 3, 4 will be reset to 0 when ZXT‐310 receive a get command to this parameter <br /></p>
         ]]></description>
@@ -89,19 +201,33 @@ Learning status register<br /> <h1>Overview</h1><p>The status value 1, 3, 4 will
         <limitToOptions>false</limitToOptions>
       </parameter>
 
+      <parameter name="config_27_2" type="integer" groupName="configuration">
+        <label>27: IR Code Library Number</label>
+        <description>IR code number for built-in code library</description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
       <parameter name="config_28_1" type="integer" groupName="configuration">
         <label>28: External IR power</label>
         <description><![CDATA[
 External IR Emitter power level.<br /> <h1>Overview</h1><p>If IR output port routing is set to 1, IR transmission power level cannot be changed. 0: normal power mode. 255(default): high power mode.</p>
         ]]></description>
         <default>-1</default>
+        <options>
+          <option value="-1">IR1 output</option>
+          <option value="0">Normal power mode</option>
+          <option value="255">High power mode</option>
+        </options>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_29_1" type="integer" groupName="configuration">
         <label>29: IR output port routing</label>
-        <description>IR output port routing</description>
-        <default>0</default>
+        <description><![CDATA[
+IR output port routing<br /> <h1>Overview</h1><p><br /></p>
+        ]]></description>
+        <default>1</default>
         <options>
           <option value="1">IR port 1</option>
           <option value="2">IR port 2</option>
@@ -113,8 +239,10 @@ External IR Emitter power level.<br /> <h1>Overview</h1><p>If IR output port rou
       </parameter>
 
       <parameter name="config_31_1" type="integer" groupName="configuration">
-        <label>31: IT transmission mode</label>
-        <description>IT transmission mode</description>
+        <label>31: IR transmission mode</label>
+        <description><![CDATA[
+IR transmission mode<br /> <h1>Overview</h1><p><br /></p>
+        ]]></description>
         <default>0</default>
         <options>
           <option value="0">Continuous IR</option>
@@ -133,8 +261,10 @@ Check library version<br /> <h1>Overview</h1><p>Read Only. Byte 1,2: Firmware Ve
 
       <parameter name="config_38_1" type="integer" groupName="configuration">
         <label>38: Endpoint selection control</label>
-        <description>Endpoint selection control</description>
-        <default>0</default>
+        <description><![CDATA[
+Endpoint selection control<br /> <h1>Overview</h1><p><br /></p>
+        ]]></description>
+        <default>1</default>
         <options>
           <option value="1">Endpoint 1</option>
           <option value="2">Endpoint 2</option>
@@ -154,5 +284,131 @@ Check library version<br /> <h1>Overview</h1><p>Read Only. Byte 1,2: Firmware Ve
     </config-description>
 
   </thing-type>
+
+  <channel-type id="remotec_zxt310_00_000_config_decimal_param1">
+    <item-type>Number</item-type>
+    <label>UIRD</label>
+    <description>parameter 1 - 20 (0x01 - 0x14)</description>
+    <state pattern="%s">
+    </state>
+  </channel-type>
+
+  <channel-type id="remotec_zxt310_00_000_config_decimal_param21">
+    <item-type>Number</item-type>
+    <label>Simple AV Command to Download</label>
+    <description>The Simple AV command number or key going to be downloaded to the ZXT‐310</description>
+    <state pattern="%s">
+    </state>
+  </channel-type>
+
+  <channel-type id="remotec_zxt310_00_000_config_decimal_param22">
+    <item-type>Number</item-type>
+    <label>Download status register</label>
+    <description>Download status register</description>
+    <state pattern="%s">
+      <options>
+        <option value="0">Idle</option>
+        <option value="1">OK</option>
+        <option value="2">Learning</option>
+        <option value="3">Command full</option>
+        <option value="4">Learning fail</option>
+      </options>
+    </state>
+  </channel-type>
+
+  <channel-type id="remotec_zxt310_00_000_config_decimal_param25">
+    <item-type>Number</item-type>
+    <label>Simple AV Code to Learn</label>
+    <description>The Simple AV command number or key going to be learned.</description>
+    <state pattern="%s">
+    </state>
+  </channel-type>
+
+  <channel-type id="remotec_zxt310_00_000_config_decimal_param26">
+    <item-type>Number</item-type>
+    <label>Learning status register</label>
+    <description>Learning status register</description>
+    <state pattern="%s">
+      <options>
+        <option value="0">Idle</option>
+        <option value="1">OK</option>
+        <option value="2">Command full</option>
+        <option value="4">Learning fail</option>
+      </options>
+    </state>
+  </channel-type>
+
+  <channel-type id="remotec_zxt310_00_000_config_decimal_param27">
+    <item-type>Number</item-type>
+    <label>IR Code Library Number</label>
+    <description>IR code number for built-in code library</description>
+    <state pattern="%s">
+    </state>
+  </channel-type>
+
+  <channel-type id="remotec_zxt310_00_000_config_decimal_param28">
+    <item-type>Number</item-type>
+    <label>External IR power</label>
+    <description>External IR Emitter power level.</description>
+    <state pattern="%s">
+      <options>
+        <option value="-1">IR1 output</option>
+        <option value="0">Normal power mode</option>
+        <option value="255">High power mode</option>
+      </options>
+    </state>
+  </channel-type>
+
+  <channel-type id="remotec_zxt310_00_000_config_decimal_param29">
+    <item-type>Number</item-type>
+    <label>IR output port routing</label>
+    <description>IR output port routing</description>
+    <state pattern="%s">
+      <options>
+        <option value="1">IR port 1</option>
+        <option value="2">IR port 2</option>
+        <option value="3">IR port 3</option>
+        <option value="4">IR port 4</option>
+        <option value="5">IR port 5</option>
+        <option value="6">IR port 6</option>
+      </options>
+    </state>
+  </channel-type>
+
+  <channel-type id="remotec_zxt310_00_000_config_decimal_param31">
+    <item-type>Number</item-type>
+    <label>IR transmission mode</label>
+    <description>IR transmission mode</description>
+    <state pattern="%s">
+      <options>
+        <option value="0">Continuous IR</option>
+        <option value="255">Single shot IR</option>
+      </options>
+    </state>
+  </channel-type>
+
+  <channel-type id="remotec_zxt310_00_000_config_decimal_param36">
+    <item-type>Number</item-type>
+    <label>Check library version</label>
+    <description>Check library version</description>
+    <state pattern="%s">
+    </state>
+  </channel-type>
+
+  <channel-type id="remotec_zxt310_00_000_config_decimal_param38">
+    <item-type>Number</item-type>
+    <label>Endpoint selection control</label>
+    <description>Endpoint selection control</description>
+    <state pattern="%s">
+      <options>
+        <option value="1">Endpoint 1</option>
+        <option value="2">Endpoint 2</option>
+        <option value="3">Endpoint 3</option>
+        <option value="4">Endpoint 4</option>
+        <option value="5">Endpoint 5</option>
+        <option value="6">Endpoint 6</option>
+      </options>
+    </state>
+  </channel-type>
 
 </thing:thing-descriptions>

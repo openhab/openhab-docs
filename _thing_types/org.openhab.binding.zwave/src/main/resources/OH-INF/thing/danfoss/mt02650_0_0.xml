@@ -26,6 +26,12 @@ Devolo Thermostat (09356)<br /> <h1>Overview</h1><p>Radiator Thermostat</p> <br 
           <property name="binding:*:QuantityType">COMMAND_CLASS_THERMOSTAT_SETPOINT;type=HEATING</property>
         </properties>
       </channel>
+      <channel id="protection_local" typeId="protection_local">
+        <label>Local protection</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_PROTECTION</property>
+        </properties>
+      </channel>
       <channel id="battery-level" typeId="system.battery-level">
         <properties>
           <property name="binding:*:PercentType">COMMAND_CLASS_BATTERY</property>
