@@ -94,4 +94,17 @@ Place the .jar file in the folder Additional add-on files as described in File L
 ## Through the openHAB console
 
 Add-ons (also known as bundles) can be also installed and updated via the openHAB console.
-A detailed description can be found at [Installing or Updating Bundles](/docs/administration/bundles.html).
+
+To see the available online and offline add-ons:
+
+```sh
+openhab:addons list
+```
+
+To install an add-on in the background:
+
+```sh
+openhab:addons install <id-as-from-list-command>
+```
+
+Another approach can be found at [Installing or Updating Bundles](/docs/administration/bundles.html).
