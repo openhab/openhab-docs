@@ -55,23 +55,30 @@ mvn spotless:apply
 Re-run the build to confirm that the checks are passing.
 If it does, it is time to [contribute your work](../contributing.html)!
 
-# Add your add-on's logo to the openHAB website
+# Add your add-on's logo to the openHAB website and the UI
 
-After your pull request has been merged and the next openHAB version is released, your add-on will be available in the addons search on the openHAB website with a default logo.
+After your pull request has been merged and the next openHAB version is released, your add-on will be available on the openHAB website and in the UI's add-on store with a default logo.
 
-You can upload a logo to display it on the openhab.org start page, the addon search and in the readme.
+You can upload a logo to display it on the openHAB website (start page, add-on search and readme) and the UI.
 
 These are the requirements for logos:
+
+- SVG
+- Less than 10 kB
+
+In case you don't have an SVG version of the logo, you can instead provide a PNG version, these are the requirements for PNG logos:
 
 - PNG (transparency is preferred)
 - 512x512 pixels or smaller in one dimension, if it's not a square logo
 - Less than 30kB
 
-File size is key as the website displays hundreds of small logos on the same page.
-To shrink the file size, save your logo with Palette-Based Colors (sometimes called "Indexed-RGBA").
+File size is key as the website displays hundreds of small logos on the same page:
+
+SVG logos should normally be less than 10 kB, in case they are not, you may be able to shrink the file size be importing the SVG logo into a vector graphics software, e.g. Affinity Designer, and export it with a preset for small size.
+
+To shrink the file size of PNG logos, save your logo with Palette-Based Colors (sometimes called "Indexed-RGBA").
 Also, JPEG compression artifacts from prior conversions or halo around the logo increases file size dramatically.
-There are online converters to convert your True Color PNG logo to Palette-Based Colors. E.g. <https://compresspng.com/>.
-Or use zopflipng: `zopflipng -m --filters=0me --lossy_8bit --lossy_transparent -y logo.png logo.png`
+You may use online converters to convert your True Color PNG logo to Palette-Based Colors, e.g. <https://compresspng.com/> or use zopflipng: `zopflipng -m --filters=0me --lossy_8bit --lossy_transparent -y logo.png logo.png`
 
 _After_ your binding's pull request has been merged, you can upload your logo by filing another pull request to the [openhab-docs/images/addons/](https://github.com/openhab/openhab-docs/tree/main/images/addons) repository.
 Your logo will be available after the next website build.
