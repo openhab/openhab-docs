@@ -30,7 +30,7 @@ prev: /docs/ui/components/
 <PropGroup label="General">
 <PropBlock type="TEXT" name="type" label="Type">
   <PropDescription>
-    The type of the series.<br/><em>Note: heatmap needs a configured visual map and is not supported for time series</em>
+    The type of the series.<br/><em>Note: <code>heatmap</code> needs a configured visual map or uses the default and is not supported for time series!</em>
   </PropDescription>
   <PropOptions>
     <PropOption value="gauge" label="undefined" />
