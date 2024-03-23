@@ -128,30 +128,31 @@ The following table summarises the channels available for the Wave Shutter -:
 
 | Channel Name | Channel ID | Channel Type | Category | Item Type |
 |--------------|------------|--------------|----------|-----------|
-| Dimmer | switch_dimmer | switch_dimmer | DimmableLight | Dimmer | 
+| Blinds Control | blinds_control | blinds_control | Blinds | Rollershutter | 
 | Electric meter (kWh) | meter_kwh | meter_kwh | Energy | Number | 
 | Electric meter (watts) | meter_watts | meter_watts | Energy | Number | 
 | Alarm (heat) | alarm_heat | alarm_heat | Fire | Switch | 
 | Alarm (power) | alarm_power | alarm_power | Energy | Switch | 
 | Alarm (system) | alarm_system | alarm_system |  | Switch | 
-| Dimmer 1 | switch_dimmer1 | switch_dimmer | DimmableLight | Dimmer | 
+| Blinds Control | blinds_control1 | blinds_control | Blinds | Rollershutter | 
 | Electric meter (kWh) 1 | meter_kwh1 | meter_kwh | Energy | Number | 
 | Electric meter (watts) 1 | meter_watts1 | meter_watts | Energy | Number | 
 | Alarm (heat) 1 | alarm_heat1 | alarm_heat | Fire | Switch | 
 | Alarm (power) 1 | alarm_power1 | alarm_power | Energy | Switch | 
 | Alarm (system) 1 | alarm_system1 | alarm_system |  | Switch | 
-| Dimmer 2 | switch_dimmer2 | switch_dimmer | DimmableLight | Dimmer | 
+| Lamella Control | blinds_control2 | blinds_control | Blinds | Rollershutter | 
 | Electric meter (kWh) 2 | meter_kwh2 | meter_kwh | Energy | Number | 
 | Electric meter (watts) 2 | meter_watts2 | meter_watts | Energy | Number | 
 | Alarm (heat) 2 | alarm_heat2 | alarm_heat | Fire | Switch | 
 | Alarm (power) 2 | alarm_power2 | alarm_power | Energy | Switch | 
 | Alarm (system) 2 | alarm_system2 | alarm_system |  | Switch | 
 
-### Dimmer
-The brightness channel allows to control the brightness of a light.
-            It is also possible to switch the light on and off.
+### Blinds Control
 
-The ```switch_dimmer``` channel is of type ```switch_dimmer``` and supports the ```Dimmer``` item and is in the ```DimmableLight``` category.
+
+Provides start / stop control of blinds.
+
+The ```blinds_control``` channel is of type ```blinds_control``` and supports the ```Rollershutter``` item and is in the ```Blinds``` category.
 
 ### Electric meter (kWh)
 Indicates the energy consumption (kWh).
@@ -199,11 +200,10 @@ The following state translation is provided for this channel to the ```Switch```
 | OFF | OK |
 | ON | Alarm |
 
-### Dimmer 1
-The brightness channel allows to control the brightness of a light.
-            It is also possible to switch the light on and off.
+### Blinds Control
+Provides start / stop control of blinds.
 
-The ```switch_dimmer1``` channel is of type ```switch_dimmer``` and supports the ```Dimmer``` item and is in the ```DimmableLight``` category.
+The ```blinds_control1``` channel is of type ```blinds_control``` and supports the ```Rollershutter``` item and is in the ```Blinds``` category.
 
 ### Electric meter (kWh) 1
 Indicates the energy consumption (kWh).
@@ -251,11 +251,10 @@ The following state translation is provided for this channel to the ```Switch```
 | OFF | OK |
 | ON | Alarm |
 
-### Dimmer 2
-The brightness channel allows to control the brightness of a light.
-            It is also possible to switch the light on and off.
+### Lamella Control
+Provides start / stop control of blinds.
 
-The ```switch_dimmer2``` channel is of type ```switch_dimmer``` and supports the ```Dimmer``` item and is in the ```DimmableLight``` category.
+The ```blinds_control2``` channel is of type ```blinds_control``` and supports the ```Rollershutter``` item and is in the ```Blinds``` category.
 
 ### Electric meter (kWh) 2
 Indicates the energy consumption (kWh).
