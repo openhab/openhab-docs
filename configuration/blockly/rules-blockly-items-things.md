@@ -6,7 +6,7 @@ title: Rules Blockly - Items & Things
 
 # Item & Things
 
-[return to Blockly Reference](index.html#items-and-things)
+[Return to Blockly Reference](index.html#items-and-things)
 
 ## Introduction
 
@@ -305,4 +305,4 @@ Function: Gets a **Thing Status** for use in other Thing related functions
 
 ## Return to Blockly Reference
 
-[return to Blockly Reference](index.html#items-and-things)
+[Return to Blockly Reference](index.html#items-and-things)

@@ -6,7 +6,7 @@ title: Rules Blockly - Ephemeris
 
 # Ephemeris
 
-[return to Blockly Reference](index.html#ephemeris)
+[Return to Blockly Reference](index.html#ephemeris)
 
 ## Introduction
 
@@ -61,4 +61,4 @@ Additional holidays must be configured in _ephemeris.cfg_.
 
 ## Return to Blockly Reference
 
-[return to Blockly Reference](index.html#ephemeris)
+[Return to Blockly Reference](index.html#ephemeris)

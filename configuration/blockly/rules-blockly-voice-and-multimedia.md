@@ -6,7 +6,7 @@ title: Rules Blockly - Voice and Multimedia
 
 # Multimedia
 
-[return to Blockly Reference](index.html#voice-and-multimedia)
+[Return to Blockly Reference](index.html#voice-and-multimedia)
 
 ## Introduction
 
@@ -16,7 +16,7 @@ In general, this section deals with two topics
 1) Saying a text via using any Text-to-Speech API (e.g. Google's API)
 
 It should be noted that both functionalities do not just work right out of the box because e.g for (1) the audio sinks need to be installed in openHAB and for (2) e.g. the whole Google API needs to be configured in particular with your own personal Google account.
-Even though (2) is not trivial but after having done that the usage of the functionality with blockly is very easy and worth the effort.
+Even though (2) is not trivial but after having done that the usage of the functionality with Blockly is very easy and worth the effort.
 
 More about that topic can be viewed at ![youtube](../images/blockly/youtube-logo-small.png) [Playing sounds on audio sinks](https://youtu.be/EdllUlJ7p6k?t=2035)
 
@@ -47,7 +47,7 @@ More about that topic can be viewed at ![youtube](../images/blockly/youtube-logo
 _Function:_ Plays an audio file on an audio sink
 
 - the audio file must reside in the sounds-folder of openHAB that can be found [here](https://community.openhab.org/t/blockly-reference/128785#openhab-configuration-files-7)
-- all available audio sinks are automatically provided by openHABs blocklies
+- all available audio sinks are automatically provided by openHABs Blockly
 
 Also view ![youtube](../images/blockly/youtube-logo-small.png)[Playing sounds on audio sinks](https://youtu.be/EdllUlJ7p6k?t=2035)
 
@@ -60,7 +60,7 @@ _Function:_ Plays an audio file on an audio sink and setting the volume at the s
 same as above but also allowing to provide the volume at the same time
 
 - the audio file must reside in the sounds-folder of openHAB that can be found [here](https://community.openhab.org/t/blockly-reference/128785#openhab-configuration-files-7)
-- all available audio sinks are automatically provided by openHABs blocklies
+- all available audio sinks are automatically provided by openHABs Blockly
 
 **Known issue workaround:**
 In several cases (like the Google Minis) it is known that setting the volume together with playing the sound results into only setting the volume either during playing the sound or even after the sound has played.
@@ -78,7 +78,7 @@ In case this happens the more robust approach is as follows
 _Function:_ Starts a stream playing on an audio sink
 
 - The audio streams must be reachable from the openHAB server and can therefore be either internally or externally hosted
-- All available audio sinks are automatically provided by openHAB's blocklies
+- All available audio sinks are automatically provided by openHAB's Blockly
 - Changing the volume needs to be done via the thing volume channel linked to the sink device by sending the respective volume level command to that item
 
 More about that topic can be viewed at ![youtube](../images/blockly/youtube-logo-small.png) [Play Stream](https://youtu.be/hSRfooBKn9A?t=335)
@@ -97,4 +97,4 @@ _Function:_ Sends the given text to the sink by using the default Text-to-Speech
 
 More about that topic can be viewed at ![youtube](../images/blockly/youtube-logo-small.png)[Using Text-to-speach easily with blocks](https://youtu.be/EdllUlJ7p6k?t=2403)
 
-[return to Blockly Reference](index.html#voice-and-multimedia)
+[Return to Blockly Reference](index.html#voice-and-multimedia)

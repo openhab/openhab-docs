@@ -6,7 +6,7 @@ title: Rules Blockly - Notifications
 
 # Notifications
 
-[return to Blockly Reference](index.html#notifications)
+[Return to Blockly Reference](index.html#notifications)
 
 ## Introduction
 
@@ -61,4 +61,4 @@ _Function:_ Sends a notification to myopenhab.org only
 
 ## Return to Blockly Reference
 
-[return to Blockly Reference](index.html#notifications)
+[Return to Blockly Reference](index.html#notifications)

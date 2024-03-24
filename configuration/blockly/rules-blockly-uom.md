@@ -6,12 +6,12 @@ title: Rules Blockly - Units of Measurements
 
 # Units of Measurements
 
-[return to Blockly Reference](index.html#items-and-things)
+[Return to Blockly Reference](index.html#items-and-things)
 
 ## Introduction
 
 [Unit of Measurements](docs/concepts/units-of-measurement.html) have been a part of openHAB for a long time already and received some major improvements in particular in openHAB 4.0.
-Therefore, to make the usage in blockly easier and allow math computations with measurement units, severals blocks have been added.
+Therefore, to make the usage in Blockly easier and allow math computations with measurement units, severals blocks have been added.
 
 Note that these blocks are only available since openHAB 4.0 and are based on JS Scripting / graalJS.
 
@@ -108,4 +108,4 @@ The following examples show how to use it with an Item:
 
 ## Return to Blockly Reference
 
-[return to Blockly Reference](index.html#items-and-things)
+[Return to Blockly Reference](index.html#items-and-things)

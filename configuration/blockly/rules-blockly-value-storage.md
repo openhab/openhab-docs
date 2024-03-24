@@ -6,7 +6,7 @@ title: Rules Blockly - Value Storage
 
 # Value Storage
 
-[return to Blockly Reference](index.html#value-storage)
+[Return to Blockly Reference](index.html#value-storage)
 
 ## Introduction
 
@@ -78,4 +78,4 @@ Function: Checks if a value is undefined in the specified [cache](#caching)
 
 ## Return to Blockly Reference
 
-[return to Blockly Reference](index.html#value-storage)
+[Return to Blockly Reference](index.html#value-storage)
