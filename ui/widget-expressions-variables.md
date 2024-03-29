@@ -41,7 +41,7 @@ You can use arithmetic or string operations etc., the [conditional (ternary) ope
 
 ## Variables
 
-Variables can be used by several ways:
+Variables can be used in several ways:
 
 - The `variable` config parameter of an `oh-gauge` (read-only), `oh-input`, `oh-knob`, `oh-slider`, `oh-stepper`, `oh-toggle` will accept a variable name and control it instead of sending commands to an Item if set.
   The `item` parameter can still be set to set the widget to the Item state if the variable has no value.
@@ -81,7 +81,7 @@ footer: =items['Temperature1'].numericState
 ```
 
 These shortcuts have two major benefits over directly accessing `displayState`, `state` and `numericState`:
-Expressions become shorter when they are used, and if the Item name is a prop which is undefined, these shortcuts avoid that a request with Item name `undefined` is sent to the server, which would cause this log message:
+Expressions become shorter when they are used, and if the Item name is a prop which is undefined, **these shortcuts avoid that a request with Item name `undefined` is sent to the server**, which would cause this log message:
 
 ```
 [WARN ] [se.internal.SseItemStatesEventBuilder] - Attempting to send a state update of an item which doesn't exist: undefined
@@ -207,7 +207,7 @@ Translates the third part of the HSB state (brightness) of an `Color` Item to "O
 =(@@'Color1'.split(',')[2] !== '0') ? 'On ' + '(' + @@'Color1'.split(',')[2] + '%)' : 'Off'
 ```
 
-Use a filled icon of a light bulb but only if the state of the Item passed in the prop `item` is ON:
+Use a filled `lightbulb` icon but only if the state of the Item passed in the prop `item` is ON:
 
 ```javascript
 icon: =(@@props.item === 'ON') ? 'f7:lightbulb_fill' : 'f7:lightbulb'
