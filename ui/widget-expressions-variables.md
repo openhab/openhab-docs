@@ -83,7 +83,7 @@ footer: =items['Temperature1'].numericState
 These shortcuts have two major benefits over directly accessing `displayState`, `state` and `numericState`:
 Expressions become shorter when they are used, and if the Item name is a prop which is undefined, **these shortcuts avoid that a request with Item name `undefined` is sent to the server**, which would cause this log message:
 
-```
+```text
 [WARN ] [se.internal.SseItemStatesEventBuilder] - Attempting to send a state update of an item which doesn't exist: undefined
 ```
 
