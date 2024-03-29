@@ -83,7 +83,7 @@ There are four categories of conditions.
 | Item Condition      | Item states | tests to see if an Item's state meets a comparison (e.g. == ON, <= 65 °F, etc.)                                                                                            |
 | Time Condition      | Time        | a selection of the days of the week and a time period when the rule can run                                                                                                |
 | Ephemeris Condition | Ephemeris   | openHAB has a subsystem that tracks types of day (e.g. weekends, weekdays) and local holidays; this condition allows one to specify what types of days it's allowed to run |
-| Script Condition    | Script      | code whose last line evaluates to true of false.                                                                                                                           |
+| Script Condition    | Script      | code whose last line evaluates to true or false.                                                                                                                           |
 
 When a rule is triggered from another rule, there is an option to allow or ignore the called rule's conditions.
 When run manually, the conditions are ignored.
