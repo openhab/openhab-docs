@@ -90,7 +90,7 @@ Main UI implements a web audio sink which allows the openHAB server to play audi
 To enable web audio sink support for a client, turn on the **Enable Web Audio sink support** option on the **Help & About** page.
 As it is a setting specific to your browser environment, web audio support has to be enabled for every client where it should be used.
 
-Please note that due to limitations in Safari (and possibly Chrome as well), a user interaction is required after the first audio stream has been sent to actually play it.
+Please note that due to limitations in most modern browsers (e.g. Safari, Chrome and everything Chromium-based like Edge), a user interaction is required after the first audio stream has been sent to actually play it.
 This means, that after opening Main UI, the first audio that should be played on the web audio sink is only played after the user interacts with Main UI in any way (i.e. touching the screen is enough).
 For subsequent audio playback the above is not required anymore and the audio is played immediately.
 
