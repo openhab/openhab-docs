@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="sensative_stripsdrip700_00_000" listed="false">
+    <label>11 04 021 Strips Drip 700 Water leak &amp; temperature sensor</label>
+    <description><![CDATA[
+Strips Drip 700 Water leak &amp; temperature sensor<br /> <h1>Overview</h1><p>Strips Drip 700/800 water leak sensor also comes with temperature alerts for detecting freezing pipes, which makes it ideal for monitoring any area where a leak might occur. Drip offers a range of up to 100 meters, and with its sturdy design, these sensors can be installed in environmentally challenging areas such as in cellars or employed in outdoor environments such as under the roof where water might leak into the house structure.</p><ul><li>Water-leak detection</li><li>Discreet mounting</li><li>Temperature sensor</li><li>Easy set up &amp; installation</li><li>Long lasting battery</li><li>SmartStart &amp; S2 Security</li><li>Z-Wave™ 700/800 extended range (up to 100 m range)</li></ul> <br /> <h2>Inclusion Information</h2><p>Add Strips Drip 700/800 using classic inclusion (Non SmartStart Controllers):</p><ol><li>Open your Z-Wave™ Controller application and start pairing mode.</li><li>Remove the magnets from Strips (If you have previously removed the magnets from Strips, or need to re-add the device, performing a manual wake up will join the device when the controller is in pairing mode).</li><li>One long LED blink means Strips has been successfully added to your Z-Wave™ network.</li></ol><p>To perform a manual wake up:</p><ol><li>Take the magnet, move it to the rounded edge and wait for the blink. Then move the magnet away.</li><li>Repeat this 3 times. A final short blink will confirm that the user command was successful.</li></ol> <br /> <h2>Exclusion Information</h2><p>Place the controller into exclude mode and perform the "wake up" pattern described in the Wakeup section.</p> <br /> <h2>Wakeup Information</h2><p>To perform a manual wake up:</p><ol><li>Take the magnet, move it to the rounded edge and wait for the blink. Then move the magnet away.</li><li>Repeat this 3 times. A final short blink will confirm that the user command was successful.</li></ol>
+    ]]></description>
+    <category>Sensor</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="sensor_temperature" typeId="sensor_temperature">
+        <label>Sensor (temperature)</label>
+        <properties>
+          <property name="binding:*:QuantityType">COMMAND_CLASS_SENSOR_MULTILEVEL;type=TEMPERATURE</property>
+        </properties>
+      </channel>
+      <channel id="sensor_moisture" typeId="sensor_moisture">
+        <label>Sensor (moisture)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_SENSOR_MULTILEVEL;type=MOISTURE</property>
+        </properties>
+      </channel>
+      <channel id="alarm_heat" typeId="alarm_heat">
+        <label>Alarm (heat)</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=HEAT</property>
+        </properties>
+      </channel>
+      <channel id="alarm_flood" typeId="alarm_flood">
+        <label>Alarm (flood)</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=FLOOD</property>
+        </properties>
+      </channel>
+      <channel id="alarm_burglar" typeId="alarm_burglar">
+        <label>Alarm (burglar)</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=BURGLAR</property>
+        </properties>
+      </channel>
+      <channel id="battery-level" typeId="system.battery-level">
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_BATTERY</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Sensative AB</property>
+      <property name="modelId">11 04 021</property>
+      <property name="manufacturerId">019A</property>
+      <property name="manufacturerRef">0004:000B</property>
+      <property name="dbReference">1608</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_0_1" type="integer" groupName="configuration">
+        <label>0: DELETE ME</label>
+        <description><![CDATA[
+Should be performed when Drip is mounted correctly and absolutely dry to calibrate the "zero-level". A MultiLevel Sensor Report with the Moisture value is sent after the calibration is performed.<br /> <h1>Overview</h1><p>Should be performed when Drip is mounted correctly and absolutely dry to calibrate the "zero-level". A MultiLevel Sensor Report with the Moisture value is sent after the calibration is performed.<br /><br /></p><p>0: Device resets to this value after performing capacitance calibration and sends a report with value 0 to the gateway (as recommended by Z-Wave Specifications.)</p><p>1: Perform Calibration</p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_2_1" type="integer" groupName="configuration">
+        <label>2: LED alarm event reporting</label>
+        <description><![CDATA[
+LED alarm event reporting<br /> <h1>Overview</h1><p>Turn On or Off LED for specific event indications<br />(ex. alarms)</p>
+        ]]></description>
+        <default>1</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_4_1" type="integer" groupName="configuration">
+        <label>4: Temperature reporting type</label>
+        <description><![CDATA[
+Turn On or Off the temperature sensorvalue<br /> <h1>Overview</h1><p>Turn On or Off the temperature sensorvalue reporting(Does not affect temperature alarms.)<br /><br />0: Off<br /></p><p>1: On. Reports the actual value when the temperature is changed according to parameter 26 since the last report or at least according to the reporting period set in the config parameter 25.</p><p>2: On. Reports the actual value periodically based on the config parameter 25.</p><p>3: On. The average temperature during the period is sent periodically during every wake up interval.</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Off</option>
+          <option value="1">On_P26_P25</option>
+          <option value="2">On_P25</option>
+          <option value="3">On_wake_up</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_5_1" type="integer" groupName="configuration">
+        <label>5: Temperature reporting unit</label>
+        <description><![CDATA[
+Select the temperature unit<br /> <h1>Overview</h1><p>Select the temperature unit<br /><br />0: Celsius<br /></p><p>1: Fahrenheit</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Celsius</option>
+          <option value="1">Farenheit</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_6_1" type="integer" groupName="configuration">
+        <label>6: Temperature alarms</label>
+        <description><![CDATA[
+Turn On or Off the temperature alarm<br /> <h1>Overview</h1><p>Turn On or Off the temperature alarm<br /></p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Off</option>
+          <option value="1">On</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_7_1" type="integer" groupName="configuration">
+        <label>7: High temperature alarm level</label>
+        <description><![CDATA[
+Select a high temperature alarm level<br /> <h1>Overview</h1><p>Select a high temperature alarm level: -20 to +80 (Degree C)<br /></p>
+        ]]></description>
+        <default>40</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_8_1" type="integer" groupName="configuration">
+        <label>8: Low temperature alarm level</label>
+        <description><![CDATA[
+Select a low temperature alarm level<br /> <h1>Overview</h1><p>Select a low temperature alarm level: -20 to +60 (Degree C)<br /></p>
+        ]]></description>
+        <default>5</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_12_1" type="integer" groupName="configuration">
+        <label>12: Leakage/moisture alarm</label>
+        <description><![CDATA[
+Turn the Leakage Alarm to On or Off<br /> <h1>Overview</h1><p>Turn the Leakage Alarm to On or Off<br /></p>
+        ]]></description>
+        <default>1</default>
+        <options>
+          <option value="0">Off</option>
+          <option value="1">On</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_13_1" type="integer" groupName="configuration">
+        <label>13: Leakage/moisture alarm level</label>
+        <description><![CDATA[
+Set the trigger level at which the Leakage Alarm Notification Report will be sent<br /> <h1>Overview</h1><p>Set the trigger level at which the Leakage Alarm Notification Report will be sent.<br /><br />1 to 100 (1: Almost Dry, 100: Wet)</p>
+        ]]></description>
+        <default>10</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_14_1" type="integer" groupName="configuration">
+        <label>14: Leakage/moisture reporting period</label>
+        <description><![CDATA[
+Select the number of hours between moisture reports. Report values between -100 to 100.<br /> <h1>Overview</h1><p>Select the number of hours between moisture reports. Report values between -100 to 100. 0-120 Hours (Hours between reports) Default: 0 (Off)</p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_15_1" type="integer" groupName="configuration">
+        <label>15: Activate supervision</label>
+        <description><![CDATA[
+Activate Supervision command for only important alarm events orall events<br /> <h1>Overview</h1><p>Activate Supervision command for only important alarm events orall events.</p><p>*Supervised commands require aconfirmation from the gateway whena notification is received<br /><br />0: Off<br /></p><p>1: Alarm Report (*)</p><p>2: All Reports</p><p>*Only for alarm events (e.g. Leakage alarm)</p>
+        ]]></description>
+        <default>1</default>
+        <options>
+          <option value="0">Off</option>
+          <option value="1">Alarm_Report</option>
+          <option value="2">All_Reports</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_20_1" type="integer" groupName="configuration">
+        <label>20: Wake-Up moisture polling workaround for Fibaro Gateway users</label>
+        <description><![CDATA[
+Turn On or Off Moisture reporting during polling (applicable only for Fibaro gateway users)<br /> <h1>Overview</h1><p>Turn On or Off Moisture reporting during polling (applicable only for Fibaro gateway users).<br /><br />0: Off<br /></p><p>1: On</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Off</option>
+          <option value="1">On</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_23_1" type="integer" groupName="configuration">
+        <label>23: Perform leakage/moisture sensor calibration</label>
+        <description><![CDATA[
+Should be performed when Drip is mounted correctly and absolutely dry to calibrate the "zero-level". A MultiLevel Sensor Report with the Moisture value is sent after the calibration is performed.<br /> <h1>Overview</h1><p>Should be performed when Drip is mounted correctly and absolutely dry to calibrate the "zero-level". A MultiLevel Sensor Report with the Moisture value is sent after the calibration is performed.</p><p>0: Device resets to this value after performing capacitance calibration and sends a report with value 0 to the gateway (as recommended by Z-Wave Specifications.)</p><p>1: Perform Calibration</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">reset_0</option>
+          <option value="1">calibrate</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_24_1" type="integer" groupName="configuration">
+        <label>24: Temperature offset</label>
+        <description><![CDATA[
+The offset value is used to calibrate the temperature reports in the actual temperature.<br /> <h1>Overview</h1><p>The offset value is used to calibrate the temperature reports in the actual temperature.</p><p>-100 to 100 [=-10.0 to +10.0 (Degree C)]<br /></p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_25_2" type="integer" groupName="configuration">
+        <label>25: Temperature reporting period</label>
+        <description><![CDATA[
+Select the number of minutes between the temperature reports (15 minutes to 24 hours) (Used for parameter 4)<br /> <h1>Overview</h1><p>Select the number of minutes between the temperature reports (15 minutes to 24 hours) (Used for parameter 4)</p><p>15-1440 (minutes between reports)<br /></p>
+        ]]></description>
+        <default>1440</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_26_1" type="integer" groupName="configuration">
+        <label>26: Temperature delta</label>
+        <description><![CDATA[
+A new temperature report is sent when the temperature has changed more than the delta value. Input value converted to one decimal place.<br /> <h1>Overview</h1><p>A new temperature report is sent when the temperature has changed more than the delta value. Input value converted to one decimal place.</p><p>5 to 100 [=0.5 to 10.0 (Degree C)]<br /></p>
+        ]]></description>
+        <default>20</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_27_1" type="integer" groupName="configuration">
+        <label>27: Temperature hysteresis for temperature alarms</label>
+        <description><![CDATA[
+Triggers alarm clear reports (See parameters 7&amp;8). Input value converted to one decimal place.<br /> <h1>Overview</h1><p>Triggers alarm clear reports (See parameters 7&amp;8). Input value converted to one decimal place.</p><p>5 to 100 [=0.5 to 10.0 (Degree C)]<br /></p>
+        ]]></description>
+        <default>20</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Lifeline</label>
+        <description><![CDATA[
+<br /> <h1>Overview</h1><p>Strips supports association group 1 (Lifeline), max 1<br />node, normally used to send Strips' notification to the<br />Z-Wave Controller</p>
+        ]]></description>
+        <multipleLimit>1</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

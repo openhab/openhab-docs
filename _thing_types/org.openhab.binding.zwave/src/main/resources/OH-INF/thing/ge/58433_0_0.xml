@@ -6,7 +6,7 @@
                       https://openhab.org/schemas/thing-description/v1.0.0">
 
   <thing-type id="ge_58433_00_000" listed="false">
-    <label>GE 58433 GE Enbrighten Z-Wave Plus Smart Switch</label>
+    <label>GE 58433/58436 GE Enbrighten Z-Wave Plus Smart Switch</label>
     <description><![CDATA[
 GE Enbrighten Z-Wave Plus Smart Switch<br /> <h1>Overview</h1><p>Home automation is even smarter with the Enbrighten Z-Wave In-Wall Smart Switch with QuickFit™ and SimpleWire™. When paired with a compatible hub, the hardwired smart switch operates wall, ceiling and accent lighting through individual commands and programmed settings. Wirelessly control and schedule indoor or outdoor fixtures for effortless management of your home. Your automation possibilities are seemingly infinite when connected to hubs from Ring, Wink, SmartThings, HomeSeer, Vera, American Standard and more.</p><p>Home automation is even smarter with the GE Enbrighten Z-Wave Plus In-Wall Smart Switch with QuickFit™ and SimpleWire™. When paired with a compatible hub, the hardwired smart switch operates wall, ceiling and accent lighting through individual commands and programmed settings. Wirelessly control and schedule indoor or outdoor fixtures for effortless management of your home. Your automation possibilities are seemingly infinite when connected to hubs from Ring, Wink, SmartThings, HomeSeer, Vera, Nexia and more.</p> <br /> <h2>Inclusion Information</h2><p> Once the controller is ready to include your device, press up and release on the toggle to include it in the network. </p><p> Once your controller has confirmed that the device has been included, refresh the Z-Wave network to optimize performance. </p><ol><li>Once the controller is ready to include your device, press up and release on the toggle to include it in the network. </li> <li>Once your controller has confirmed that the device has been included, refresh the Z-Wave network to optimize performance. </li> </ol> <br /> <h2>Exclusion Information</h2><p>Once the controller is ready to exclude your device, press up and release on the toggle to exclude it from the network. </p><ol><li>Once the controller is ready to include your device, press up and release on the toggle to include it in the network. </li> <li>Once your controller has confirmed that the device has been included, refresh the Z-Wave network to optimize performance. </li> </ol> <br /> <h2>Wakeup Information</h2><p><br /></p>
     ]]></description>
@@ -25,9 +25,9 @@ GE Enbrighten Z-Wave Plus Smart Switch<br /> <h1>Overview</h1><p>Home automation
     <!-- DEVICE PROPERTY DEFINITIONS -->
     <properties>
       <property name="vendor">Jasco Products</property>
-      <property name="modelId">GE 58433</property>
+      <property name="modelId">GE 58433/58436</property>
       <property name="manufacturerId">0063</property>
-      <property name="manufacturerRef">4952:3239</property>
+      <property name="manufacturerRef">4952:3239,4952:3330</property>
       <property name="dbReference">1589</property>
       <property name="defaultAssociations">1</property>
     </properties>

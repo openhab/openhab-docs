@@ -1,0 +1,504 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="mcohome_mh4959_00_000" listed="false">
+    <label>MH4959 Battery Powered Water Boiler Thermostat</label>
+    <description><![CDATA[
+Battery Powered Water Boiler Thermostat<br /> <h1>Overview</h1><p>Battery powered water boiler thermostat MH4959 is a smart boiler thermostat, it can automatically detect the indoor temperature and display the relevant temperature value for boiler heating control. It also can automatically turn on/off the heating system according to the temperature difference.</p> <br /> <h2>Inclusion Information</h2><p>In normal working interface, long press S4(+) and S5(-) simultaneously for 3 seconds to enter the interface for inclusion or exclusion of Z-Wave network. Before the device included into network, "---" will display on the screen, short press S4(+) and the device will enter learning mode to get a node ID. If inclusion is success, a node ID will display on the screen in a few seconds, and then short press S1 to exit.</p><p>A node ID can always inform us whether the device is in the network or not.</p> <br /> <h2>Exclusion Information</h2><p>In normal working interface, long press S4(+) and S5(-) simultaneously for 3 seconds to enter the interface for inclusion or exclusion of Z-Wave network.</p> <br /> <h2>Wakeup Information</h2><p>On: short press S1 to power on the device</p><p>Off: under normal working interface, long press S1 for 2 seconds to power off the device, after that, all outputs are forced off.</p>
+    ]]></description>
+    <category>HVAC</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="sensor_temperature" typeId="sensor_temperature">
+        <label>Sensor (temperature)</label>
+        <properties>
+          <property name="binding:*:QuantityType">COMMAND_CLASS_SENSOR_MULTILEVEL;type=TEMPERATURE</property>
+        </properties>
+      </channel>
+      <channel id="sensor_relhumidity" typeId="sensor_relhumidity">
+        <label>Sensor (relative humidity)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_SENSOR_MULTILEVEL;type=RELATIVE_HUMIDITY</property>
+        </properties>
+      </channel>
+      <channel id="thermostat_mode" typeId="mcohome_mh4959_00_000_thermostat_mode">
+        <label>Thermostat mode</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_THERMOSTAT_MODE</property>
+        </properties>
+      </channel>
+      <channel id="thermostat_state" typeId="thermostat_state">
+        <label>Thermostat Operating State</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_THERMOSTAT_OPERATING_STATE</property>
+        </properties>
+      </channel>
+      <channel id="thermostat_setpoint_heating" typeId="thermostat_setpoint">
+        <label>Setpoint (heating)</label>
+        <properties>
+          <property name="binding:*:QuantityType">COMMAND_CLASS_THERMOSTAT_SETPOINT;type=HEATING</property>
+        </properties>
+      </channel>
+      <channel id="battery-level" typeId="system.battery-level">
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_BATTERY</property>
+        </properties>
+      </channel>
+      <channel id="time_offset" typeId="time_offset">
+        <label>Clock Time Offset</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_TIME_PARAMETERS</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">McoHome Technology Co., Ltd</property>
+      <property name="modelId">MH4959</property>
+      <property name="manufacturerId">015F</property>
+      <property name="manufacturerRef">4959:8101</property>
+      <property name="dbReference">1609</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_1_1" type="integer" groupName="configuration">
+        <label>1: Temperature Unit (Secret Menu E13)</label>
+        <description><![CDATA[
+0: Celsius, 1: Fahrenheit<br /> <h1>Overview</h1><p><br /></p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Celsius</option>
+          <option value="1">Fahrenheit</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_2_2" type="integer" groupName="configuration">
+        <label>2: Upload Temperature Difference (C)</label>
+        <description><![CDATA[
+The value of temperature change greather than this value will be automatically uploaded to the gateway.<br /> <h1>Overview</h1><p>Unit: 0,1 C</p><p>0: Disabled</p><p>3-255: n*0,1 C; the value of temperature change greather than this value will be automatically uploaded to the gateway</p><p>Dafault: 5</p><p>Unit: 0,1 F</p><p>0: Disabled</p><p>3-255: n*0,1 F; the value of temperature change greather than this value will be automatically uploaded to the gateway</p><p>Dafault: 10</p>
+        ]]></description>
+        <default>5</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_3_1" type="integer" groupName="configuration">
+        <label>3: Upload Humidity Difference</label>
+        <description><![CDATA[
+0: OFF, 1-99 value of humidity<br /> <h1>Overview</h1><p>The value of humidity change greater than this value will be automatically uploaded to the gateway<br /></p>
+        ]]></description>
+        <default>6</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_12_1" type="integer" groupName="configuration">
+        <label>12: Device State After Power Failure (Secret Menu E02)</label>
+        <description><![CDATA[
+Restore state before power failure<br /> <h1>Overview</h1><p><br /></p>
+        ]]></description>
+        <default>1</default>
+        <options>
+          <option value="0">Off</option>
+          <option value="1">On</option>
+          <option value="2">Restore last state before power failure</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_14_1" type="integer" groupName="configuration">
+        <label>14: BEEP (Secret Menu E04)</label>
+        <description><![CDATA[
+Sound volume<br /> <h1>Overview</h1><p><br /></p>
+        ]]></description>
+        <default>5</default>
+        <options>
+          <option value="1">Mute</option>
+          <option value="2">Low</option>
+          <option value="3">Medium</option>
+          <option value="4">Hight</option>
+          <option value="5">Normal</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_16_1" type="integer" groupName="configuration">
+        <label>16: Temp. Setting Upper Limit (Secret Menu E07)</label>
+        <description><![CDATA[
+Temperature upper limit<br /> <h1>Overview</h1><p>Fahrenheit default: 98 F<br /></p><p>Always confirm the upper limit &gt; bottom limit<br /></p>
+        ]]></description>
+        <default>37</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_17_1" type="integer" groupName="configuration">
+        <label>17: Temp. Setting Bottom Limit (Secret Menu E07)</label>
+        <description><![CDATA[
+Temperature bottom limit<br /> <h1>Overview</h1><p>Fahrenheit default: 41 F</p><p>Always confirm the upper limit &gt; bottom limit</p>
+        ]]></description>
+        <default>5</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_18_0" type="integer" groupName="configuration">
+        <label>18: Indoor Temperature Calibration (Secret Menu E08)</label>
+        <description><![CDATA[
+Temperature calibration value<br /> <h1>Overview</h1><p>Gap: 0,1 (n*0,1)</p>
+        ]]></description>
+        <default>0</default>
+        <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_19_1" type="integer" groupName="configuration">
+        <label>19: Indoor Humidity Calibration (Secret Menu E09)</label>
+        <description>Humidity calibration values</description>
+        <default>0</default>
+        <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_20_1" type="integer" groupName="configuration">
+        <label>20: Anti-Freeze protection switch (Secret Menu E10)</label>
+        <description><![CDATA[
+Anti-Freeze protection switch<br /> <h1>Overview</h1><p>Protection temperature is 5.0 C - 8.0 C by default, when the temperature decreases to 5.0 C then turn on the switch, when the temperature increases to 8.0 C then turn off the switch<br /></p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Off</option>
+          <option value="1">On</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_22_1" type="integer" groupName="configuration">
+        <label>22: Temperature Deadband (Secret Menu E12)</label>
+        <description><![CDATA[
+gap: 0,1 (n*0,1)<br /> <h1>Overview</h1><p>Default 10 (unit C), 20 (unit F)<br /></p>
+        ]]></description>
+        <default>10</default>
+        <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_24_1" type="integer" groupName="configuration">
+        <label>24: Initial Setting Temperature for Vacation Mode (Secret Menu E14)</label>
+        <description><![CDATA[
+Initial Setting Temperature for Vacation Mode<br /> <h1>Overview</h1><p>Default 16 (unit C), 60 (unit F)<br /></p>
+        ]]></description>
+        <default>16</default>
+        <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_50_4" type="integer" groupName="configuration">
+        <label>50: Schedule 1 temperature setting on Monday</label>
+        <description><![CDATA[
+Schedule 1 temperature setting on Monday<br /> <h1>Overview</h1><p>Byte 1: hour (0-23)</p><p>Byte 2: minute (0-59)</p><p>Byte 3: temperature in high byte</p><p>Byte 4: temperature in low byte.</p><p>(The resolution is 0,1 when the temperature unit is Celsius, it is 1 when the temperature unit is Fahrenheit, and the range is greater than the lower temperature limit but less than the upper temperature limit)</p><p>Note: When only the temperature value needs to be set and the time does not need to be changed, the values of Byte 1 and Byte 2 can be filled in with the values out of range.</p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_51_4" type="integer" groupName="configuration">
+        <label>51: Schedule 2 temperature setting on Monday</label>
+        <description><![CDATA[
+Schedule 2 temperature setting on Monday<br /> <h1>Overview</h1><p>Byte 1: hour (0-23)</p><p>Byte 2: minute (0-59)</p><p>Byte 3: temperature in high byte</p><p>Byte 4: temperature in low byte.</p><p>(The resolution is 0,1 when the temperature unit is Celsius, it is 1 when the temperature unit is Fahrenheit, and the range is greater than the lower temperature limit but less than the upper temperature limit)</p><p>Note: When only the temperature value needs to be set and the time does not need to be changed, the values of Byte 1 and Byte 2 can be filled in with the values out of range.</p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_52_4" type="integer" groupName="configuration">
+        <label>52: Schedule 3 temperature setting on Monday</label>
+        <description><![CDATA[
+Schedule 3 temperature setting on Monday<br /> <h1>Overview</h1><p>Byte 1: hour (0-23)</p><p>Byte 2: minute (0-59)</p><p>Byte 3: temperature in high byte</p><p>Byte 4: temperature in low byte.</p><p>(The resolution is 0,1 when the temperature unit is Celsius, it is 1 when the temperature unit is Fahrenheit, and the range is greater than the lower temperature limit but less than the upper temperature limit)</p><p>Note: When only the temperature value needs to be set and the time does not need to be changed, the values of Byte 1 and Byte 2 can be filled in with the values out of range.</p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_53_4" type="integer" groupName="configuration">
+        <label>53: Schedule 4 temperature setting on Monday</label>
+        <description><![CDATA[
+Schedule 4 temperature setting on Monday<br /> <h1>Overview</h1><p>Byte 1: hour (0-23)</p><p>Byte 2: minute (0-59)</p><p>Byte 3: temperature in high byte</p><p>Byte 4: temperature in low byte.</p><p>(The resolution is 0,1 when the temperature unit is Celsius, it is 1 when the temperature unit is Fahrenheit, and the range is greater than the lower temperature limit but less than the upper temperature limit)</p><p>Note: When only the temperature value needs to be set and the time does not need to be changed, the values of Byte 1 and Byte 2 can be filled in with the values out of range.</p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_54_4" type="integer" groupName="configuration">
+        <label>54: Schedule 1 temperature setting on Tuesday</label>
+        <description><![CDATA[
+Schedule 1 temperature setting on Tuesday<br /> <h1>Overview</h1><p>Byte 1: hour (0-23)</p><p>Byte 2: minute (0-59)</p><p>Byte 3: temperature in high byte</p><p>Byte 4: temperature in low byte.</p><p>(The resolution is 0,1 when the temperature unit is Celsius, it is 1 when the temperature unit is Fahrenheit, and the range is greater than the lower temperature limit but less than the upper temperature limit)</p><p>Note: When only the temperature value needs to be set and the time does not need to be changed, the values of Byte 1 and Byte 2 can be filled in with the values out of range.</p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_55_4" type="integer" groupName="configuration">
+        <label>55: Schedule 2 temperature setting on Tuesday</label>
+        <description><![CDATA[
+Schedule 2 temperature setting on Tuesday<br /> <h1>Overview</h1><p>Byte 1: hour (0-23)</p><p>Byte 2: minute (0-59)</p><p>Byte 3: temperature in high byte</p><p>Byte 4: temperature in low byte.</p><p>(The resolution is 0,1 when the temperature unit is Celsius, it is 1 when the temperature unit is Fahrenheit, and the range is greater than the lower temperature limit but less than the upper temperature limit)</p><p>Note: When only the temperature value needs to be set and the time does not need to be changed, the values of Byte 1 and Byte 2 can be filled in with the values out of range.</p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_56_4" type="integer" groupName="configuration">
+        <label>56: Schedule 3 temperature setting on Tuesday</label>
+        <description><![CDATA[
+Schedule 3 temperature setting on Tuesday<br /> <h1>Overview</h1><p>Byte 1: hour (0-23)</p><p>Byte 2: minute (0-59)</p><p>Byte 3: temperature in high byte</p><p>Byte 4: temperature in low byte.</p><p>(The resolution is 0,1 when the temperature unit is Celsius, it is 1 when the temperature unit is Fahrenheit, and the range is greater than the lower temperature limit but less than the upper temperature limit)</p><p>Note: When only the temperature value needs to be set and the time does not need to be changed, the values of Byte 1 and Byte 2 can be filled in with the values out of range.</p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_57_4" type="integer" groupName="configuration">
+        <label>57: Schedule 4 temperature setting on Tuesday</label>
+        <description><![CDATA[
+Schedule 3 temperature setting on Tuesday<br /> <h1>Overview</h1><p>Byte 1: hour (0-23)</p><p>Byte 2: minute (0-59)</p><p>Byte 3: temperature in high byte</p><p>Byte 4: temperature in low byte.</p><p>(The resolution is 0,1 when the temperature unit is Celsius, it is 1 when the temperature unit is Fahrenheit, and the range is greater than the lower temperature limit but less than the upper temperature limit)</p><p>Note: When only the temperature value needs to be set and the time does not need to be changed, the values of Byte 1 and Byte 2 can be filled in with the values out of range.</p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_58_4" type="integer" groupName="configuration">
+        <label>58: Schedule 1 temperature setting on Wednesday</label>
+        <description><![CDATA[
+Schedule 1 temperature setting on Wednesday<br /> <h1>Overview</h1><p>Byte 1: hour (0-23)</p><p>Byte 2: minute (0-59)</p><p>Byte 3: temperature in high byte</p><p>Byte 4: temperature in low byte.</p><p>(The resolution is 0,1 when the temperature unit is Celsius, it is 1 when the temperature unit is Fahrenheit, and the range is greater than the lower temperature limit but less than the upper temperature limit)</p><p>Note: When only the temperature value needs to be set and the time does not need to be changed, the values of Byte 1 and Byte 2 can be filled in with the values out of range.</p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_59_4" type="integer" groupName="configuration">
+        <label>59: Schedule 2 temperature setting on Wednesday</label>
+        <description><![CDATA[
+Schedule 2 temperature setting on Wednesday<br /> <h1>Overview</h1><p>Byte 1: hour (0-23)</p><p>Byte 2: minute (0-59)</p><p>Byte 3: temperature in high byte</p><p>Byte 4: temperature in low byte.</p><p>(The resolution is 0,1 when the temperature unit is Celsius, it is 1 when the temperature unit is Fahrenheit, and the range is greater than the lower temperature limit but less than the upper temperature limit)</p><p>Note: When only the temperature value needs to be set and the time does not need to be changed, the values of Byte 1 and Byte 2 can be filled in with the values out of range.</p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_60_4" type="integer" groupName="configuration">
+        <label>60: Schedule 3 temperature setting on Wednesday</label>
+        <description><![CDATA[
+Schedule 3 temperature setting on Wednesday<br /> <h1>Overview</h1><p>Byte 1: hour (0-23)</p><p>Byte 2: minute (0-59)</p><p>Byte 3: temperature in high byte</p><p>Byte 4: temperature in low byte.</p><p>(The resolution is 0,1 when the temperature unit is Celsius, it is 1 when the temperature unit is Fahrenheit, and the range is greater than the lower temperature limit but less than the upper temperature limit)</p><p>Note: When only the temperature value needs to be set and the time does not need to be changed, the values of Byte 1 and Byte 2 can be filled in with the values out of range.</p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_61_4" type="integer" groupName="configuration">
+        <label>61: Schedule 4 temperature setting on Wednesday</label>
+        <description><![CDATA[
+Schedule 4 temperature setting on Wednesday<br /> <h1>Overview</h1><p>Byte 1: hour (0-23)</p><p>Byte 2: minute (0-59)</p><p>Byte 3: temperature in high byte</p><p>Byte 4: temperature in low byte.</p><p>(The resolution is 0,1 when the temperature unit is Celsius, it is 1 when the temperature unit is Fahrenheit, and the range is greater than the lower temperature limit but less than the upper temperature limit)</p><p>Note: When only the temperature value needs to be set and the time does not need to be changed, the values of Byte 1 and Byte 2 can be filled in with the values out of range.</p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_62_4" type="integer" groupName="configuration">
+        <label>62: Schedule 1 temperature setting on Thursday</label>
+        <description><![CDATA[
+Schedule 1 temperature setting on Thursday<br /> <h1>Overview</h1><p>Byte 1: hour (0-23)</p><p>Byte 2: minute (0-59)</p><p>Byte 3: temperature in high byte</p><p>Byte 4: temperature in low byte.</p><p>(The resolution is 0,1 when the temperature unit is Celsius, it is 1 when the temperature unit is Fahrenheit, and the range is greater than the lower temperature limit but less than the upper temperature limit)</p><p>Note: When only the temperature value needs to be set and the time does not need to be changed, the values of Byte 1 and Byte 2 can be filled in with the values out of range.</p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_63_4" type="integer" groupName="configuration">
+        <label>63: Schedule 2 temperature setting on Thursday</label>
+        <description><![CDATA[
+Schedule 2 temperature setting on Thursday<br /> <h1>Overview</h1><p>Byte 1: hour (0-23)</p><p>Byte 2: minute (0-59)</p><p>Byte 3: temperature in high byte</p><p>Byte 4: temperature in low byte.</p><p>(The resolution is 0,1 when the temperature unit is Celsius, it is 1 when the temperature unit is Fahrenheit, and the range is greater than the lower temperature limit but less than the upper temperature limit)</p><p>Note: When only the temperature value needs to be set and the time does not need to be changed, the values of Byte 1 and Byte 2 can be filled in with the values out of range.</p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_64_4" type="integer" groupName="configuration">
+        <label>64: Schedule 3 temperature setting on Thursday</label>
+        <description><![CDATA[
+Schedule 3 temperature setting on Thursday<br /> <h1>Overview</h1><p>Byte 1: hour (0-23)</p><p>Byte 2: minute (0-59)</p><p>Byte 3: temperature in high byte</p><p>Byte 4: temperature in low byte.</p><p>(The resolution is 0,1 when the temperature unit is Celsius, it is 1 when the temperature unit is Fahrenheit, and the range is greater than the lower temperature limit but less than the upper temperature limit)</p><p>Note: When only the temperature value needs to be set and the time does not need to be changed, the values of Byte 1 and Byte 2 can be filled in with the values out of range.</p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_65_4" type="integer" groupName="configuration">
+        <label>65: Schedule 4 temperature setting on Thursday</label>
+        <description><![CDATA[
+Schedule 4 temperature setting on Thursday<br /> <h1>Overview</h1><p>Byte 1: hour (0-23)</p><p>Byte 2: minute (0-59)</p><p>Byte 3: temperature in high byte</p><p>Byte 4: temperature in low byte.</p><p>(The resolution is 0,1 when the temperature unit is Celsius, it is 1 when the temperature unit is Fahrenheit, and the range is greater than the lower temperature limit but less than the upper temperature limit)</p><p>Note: When only the temperature value needs to be set and the time does not need to be changed, the values of Byte 1 and Byte 2 can be filled in with the values out of range.</p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_66_4" type="integer" groupName="configuration">
+        <label>66: Schedule 1 temperature setting on Friday</label>
+        <description><![CDATA[
+Schedule 1 temperature setting on Friday<br /> <h1>Overview</h1><p>Byte 1: hour (0-23)</p><p>Byte 2: minute (0-59)</p><p>Byte 3: temperature in high byte</p><p>Byte 4: temperature in low byte.</p><p>(The resolution is 0,1 when the temperature unit is Celsius, it is 1 when the temperature unit is Fahrenheit, and the range is greater than the lower temperature limit but less than the upper temperature limit)</p><p>Note: When only the temperature value needs to be set and the time does not need to be changed, the values of Byte 1 and Byte 2 can be filled in with the values out of range.</p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_67_4" type="integer" groupName="configuration">
+        <label>67: Schedule 2 temperature setting on Friday</label>
+        <description><![CDATA[
+Schedule 2 temperature setting on Friday<br /> <h1>Overview</h1><p>Byte 1: hour (0-23)</p><p>Byte 2: minute (0-59)</p><p>Byte 3: temperature in high byte</p><p>Byte 4: temperature in low byte.</p><p>(The resolution is 0,1 when the temperature unit is Celsius, it is 1 when the temperature unit is Fahrenheit, and the range is greater than the lower temperature limit but less than the upper temperature limit)</p><p>Note: When only the temperature value needs to be set and the time does not need to be changed, the values of Byte 1 and Byte 2 can be filled in with the values out of range.</p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_68_4" type="integer" groupName="configuration">
+        <label>68: Schedule 3 temperature setting on Friday</label>
+        <description><![CDATA[
+Schedule 3 temperature setting on Friday<br /> <h1>Overview</h1><p>Byte 1: hour (0-23)</p><p>Byte 2: minute (0-59)</p><p>Byte 3: temperature in high byte</p><p>Byte 4: temperature in low byte.</p><p>(The resolution is 0,1 when the temperature unit is Celsius, it is 1 when the temperature unit is Fahrenheit, and the range is greater than the lower temperature limit but less than the upper temperature limit)</p><p>Note: When only the temperature value needs to be set and the time does not need to be changed, the values of Byte 1 and Byte 2 can be filled in with the values out of range.</p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_69_4" type="integer" groupName="configuration">
+        <label>69: Schedule 4 temperature setting on Friday</label>
+        <description><![CDATA[
+Schedule 4 temperature setting on Friday<br /> <h1>Overview</h1><p>Byte 1: hour (0-23)</p><p>Byte 2: minute (0-59)</p><p>Byte 3: temperature in high byte</p><p>Byte 4: temperature in low byte.</p><p>(The resolution is 0,1 when the temperature unit is Celsius, it is 1 when the temperature unit is Fahrenheit, and the range is greater than the lower temperature limit but less than the upper temperature limit)</p><p>Note: When only the temperature value needs to be set and the time does not need to be changed, the values of Byte 1 and Byte 2 can be filled in with the values out of range.</p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_70_4" type="integer" groupName="configuration">
+        <label>70: Schedule 1 temperature setting on Saturday</label>
+        <description><![CDATA[
+Schedule 1 temperature setting on Saturday<br /> <h1>Overview</h1><p>Byte 1: hour (0-23)</p><p>Byte 2: minute (0-59)</p><p>Byte 3: temperature in high byte</p><p>Byte 4: temperature in low byte.</p><p>(The resolution is 0,1 when the temperature unit is Celsius, it is 1 when the temperature unit is Fahrenheit, and the range is greater than the lower temperature limit but less than the upper temperature limit)</p><p>Note: When only the temperature value needs to be set and the time does not need to be changed, the values of Byte 1 and Byte 2 can be filled in with the values out of range.</p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_71_4" type="integer" groupName="configuration">
+        <label>71: Schedule 2 temperature setting on Saturday</label>
+        <description><![CDATA[
+Schedule 2 temperature setting on Saturday<br /> <h1>Overview</h1><p>Byte 1: hour (0-23)</p><p>Byte 2: minute (0-59)</p><p>Byte 3: temperature in high byte</p><p>Byte 4: temperature in low byte.</p><p>(The resolution is 0,1 when the temperature unit is Celsius, it is 1 when the temperature unit is Fahrenheit, and the range is greater than the lower temperature limit but less than the upper temperature limit)</p><p>Note: When only the temperature value needs to be set and the time does not need to be changed, the values of Byte 1 and Byte 2 can be filled in with the values out of range.</p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_72_4" type="integer" groupName="configuration">
+        <label>72: Schedule 3 temperature setting on Saturday</label>
+        <description><![CDATA[
+Schedule 3 temperature setting on Saturday<br /> <h1>Overview</h1><p>Byte 1: hour (0-23)</p><p>Byte 2: minute (0-59)</p><p>Byte 3: temperature in high byte</p><p>Byte 4: temperature in low byte.</p><p>(The resolution is 0,1 when the temperature unit is Celsius, it is 1 when the temperature unit is Fahrenheit, and the range is greater than the lower temperature limit but less than the upper temperature limit)</p><p>Note: When only the temperature value needs to be set and the time does not need to be changed, the values of Byte 1 and Byte 2 can be filled in with the values out of range.</p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_73_4" type="integer" groupName="configuration">
+        <label>73: Schedule 4 temperature setting on Saturday</label>
+        <description><![CDATA[
+Schedule 4 temperature setting on Saturday<br /> <h1>Overview</h1><p>Byte 1: hour (0-23)</p><p>Byte 2: minute (0-59)</p><p>Byte 3: temperature in high byte</p><p>Byte 4: temperature in low byte.</p><p>(The resolution is 0,1 when the temperature unit is Celsius, it is 1 when the temperature unit is Fahrenheit, and the range is greater than the lower temperature limit but less than the upper temperature limit)</p><p>Note: When only the temperature value needs to be set and the time does not need to be changed, the values of Byte 1 and Byte 2 can be filled in with the values out of range.</p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_74_4" type="integer" groupName="configuration">
+        <label>74: Schedule 1 temperature setting on Sunday</label>
+        <description><![CDATA[
+Schedule 1 temperature setting on Sunday<br /> <h1>Overview</h1><p>Byte 1: hour (0-23)</p><p>Byte 2: minute (0-59)</p><p>Byte 3: temperature in high byte</p><p>Byte 4: temperature in low byte.</p><p>(The resolution is 0,1 when the temperature unit is Celsius, it is 1 when the temperature unit is Fahrenheit, and the range is greater than the lower temperature limit but less than the upper temperature limit)</p><p>Note: When only the temperature value needs to be set and the time does not need to be changed, the values of Byte 1 and Byte 2 can be filled in with the values out of range.</p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_75_4" type="integer" groupName="configuration">
+        <label>75: Schedule 2 temperature setting on Sunday</label>
+        <description><![CDATA[
+Schedule 2 temperature setting on Sunday<br /> <h1>Overview</h1><p>Byte 1: hour (0-23)</p><p>Byte 2: minute (0-59)</p><p>Byte 3: temperature in high byte</p><p>Byte 4: temperature in low byte.</p><p>(The resolution is 0,1 when the temperature unit is Celsius, it is 1 when the temperature unit is Fahrenheit, and the range is greater than the lower temperature limit but less than the upper temperature limit)</p><p>Note: When only the temperature value needs to be set and the time does not need to be changed, the values of Byte 1 and Byte 2 can be filled in with the values out of range.</p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_76_4" type="integer" groupName="configuration">
+        <label>76: Schedule 3 temperature setting on Sunday</label>
+        <description><![CDATA[
+Schedule 3 temperature setting on Sunday<br /> <h1>Overview</h1><p>Byte 1: hour (0-23)</p><p>Byte 2: minute (0-59)</p><p>Byte 3: temperature in high byte</p><p>Byte 4: temperature in low byte.</p><p>(The resolution is 0,1 when the temperature unit is Celsius, it is 1 when the temperature unit is Fahrenheit, and the range is greater than the lower temperature limit but less than the upper temperature limit)</p><p>Note: When only the temperature value needs to be set and the time does not need to be changed, the values of Byte 1 and Byte 2 can be filled in with the values out of range.</p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_77_4" type="integer" groupName="configuration">
+        <label>77: Schedule 4 temperature setting on Sunday</label>
+        <description><![CDATA[
+Schedule 4 temperature setting on Sunday<br /> <h1>Overview</h1><p>Byte 1: hour (0-23)</p><p>Byte 2: minute (0-59)</p><p>Byte 3: temperature in high byte</p><p>Byte 4: temperature in low byte.</p><p>(The resolution is 0,1 when the temperature unit is Celsius, it is 1 when the temperature unit is Fahrenheit, and the range is greater than the lower temperature limit but less than the upper temperature limit)</p><p>Note: When only the temperature value needs to be set and the time does not need to be changed, the values of Byte 1 and Byte 2 can be filled in with the values out of range.</p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_255_1_wo" type="integer" groupName="configuration">
+        <label>255: Restore Factory Setting (Secret Menu E01)</label>
+        <description>Restore Factory Setting</description>
+        <default>0</default>
+        <options>
+          <option value="0">No action</option>
+          <option value="85">Factory reset</option>
+        </options>
+        <advanced>true</advanced>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Lifeline</label>
+        <multipleLimit>1</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+  <channel-type id="mcohome_mh4959_00_000_thermostat_mode">
+    <item-type>Number</item-type>
+    <label>Thermostat Mode</label>
+    <description>Sets the thermostat mode</description>
+    <category>Temperature</category>
+    <state pattern="%s">
+      <options>
+        <option value="0">Off</option>
+        <option value="1">Heat</option>
+        <option value="13">Away</option>
+      </options>
+    </state>
+  </channel-type>
+
+</thing:thing-descriptions>

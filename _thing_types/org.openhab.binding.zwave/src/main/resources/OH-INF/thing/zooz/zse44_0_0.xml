@@ -32,10 +32,16 @@ Temperature Humidity Sensor<br /> <h1>Overview</h1><p>Temperature and humidity s
           <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=HEAT</property>
         </properties>
       </channel>
-      <channel id="alarm_general" typeId="alarm_general">
+      <channel id="alarm_humidity" typeId="alarm_humidity">
         <label>Alarm (humidity)</label>
         <properties>
-          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=HUMIDITY</property>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=WEATHER</property>
+        </properties>
+      </channel>
+      <channel id="alarm_cold" typeId="alarm_cold">
+        <label>Alarm (cold)</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=HEAT</property>
         </properties>
       </channel>
       <channel id="battery-level" typeId="system.battery-level">

@@ -71,10 +71,118 @@ Z-Wave Switch 16A<br /> <h1>Overview</h1><p>https://www.elektroimportoren.no/doc
     <config-description>
 
       <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
       <parameter-group name="association">
         <context>link</context>
         <label>Association Groups</label>
       </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_2_1" type="integer" groupName="configuration">
+        <label>2: Saving load state before power failure</label>
+        <description><![CDATA[
+Saving load state before power failure<br /> <h1>Overview</h1><p>0 － shutoff load<br />1 － turn on load<br />2 － save load state before power failure</p>
+        ]]></description>
+        <default>2</default>
+        <options>
+          <option value="0">shutoff load</option>
+          <option value="1">turn on load</option>
+          <option value="2">save load state before power failure</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_3_1" type="integer" groupName="configuration">
+        <label>3: Enable/disable to send the basic report</label>
+        <description><![CDATA[
+Enable/disable to send the basic report to the Lifeline when the load state changed<br /> <h1>Overview</h1><p>0 － Disable to send Basic report<br />1 － Enable to send Basic report</p>
+        ]]></description>
+        <default>1</default>
+        <options>
+          <option value="0">Disable</option>
+          <option value="1">Enable</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_4_1" type="integer" groupName="configuration">
+        <label>4: Enable/disable over current or over load protection</label>
+        <description><![CDATA[
+Enable/disable over current or over load protection, report alarm when the load is over 16A if enabled<br /> <h1>Overview</h1><p>0: disable<br />1: enable</p>
+        ]]></description>
+        <default>1</default>
+        <options>
+          <option value="0">disable</option>
+          <option value="1">enable</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_5_1" type="integer" groupName="configuration">
+        <label>5: External switch type</label>
+        <description><![CDATA[
+External switch type<br /> <h1>Overview</h1><p>0: push button switch<br />1: normal on/off switch</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">push</option>
+          <option value="1">normal</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_7_1" type="integer" groupName="configuration">
+        <label>7: Added to and removed from a network through external switch</label>
+        <description><![CDATA[
+Added to and removed from a network through external switch (when enables this function, triple press the external switch to be added to or removed from a network)<br /> <h1>Overview</h1><p>0 - disable<br />1 - enable</p><p>Note: if this function is enabled, when triple press the switch rapidly, the device will be set to inclusion or exclusion mode, then device status will not be reported (basic report) during this process</p>
+        ]]></description>
+        <default>1</default>
+        <options>
+          <option value="0">disable</option>
+          <option value="1">enable</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_10_1" type="integer" groupName="configuration">
+        <label>10: Power change absolute threshold report</label>
+        <description><![CDATA[
+Power change absolute threshold report, report when the power change value is over the threshold, unit is W<br /> <h1>Overview</h1><p>0: disable absolute threshold report function</p><p>1- 255: value of the power change absolute threshold, if power change value is over the threshold value, report the power change value using METER_REPORT</p>
+        ]]></description>
+        <default>5</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_11_1" type="integer" groupName="configuration">
+        <label>11: Current change absolute threshold</label>
+        <description><![CDATA[
+Current change absolute threshold, unit is 0.1A<br /> <h1>Overview</h1><p>0: disable absolute threshold function</p><p>1- 255: value of the current change absolute threshold, if current change value is over the threshold value, report the current change value using METER_REPORT</p>
+        ]]></description>
+        <default>1</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_12_1" type="integer" groupName="configuration">
+        <label>12: Voltage change absolute threshold</label>
+        <description><![CDATA[
+Voltage change absolute threshold, unit is 1V<br /> <h1>Overview</h1><p>0: disable absolute threshold function</p><p>1- 255: value of the voltage change absolute threshold, if voltage change value is over the threshold value, report the voltage change value using METER_REPORT</p>
+        ]]></description>
+        <default>2</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_13_4" type="integer" groupName="configuration">
+        <label>13: Time cycle to report the values of energy consumption</label>
+        <description><![CDATA[
+Time cycle to report the values of energy consumption, voltage, current and load power actively<br /> <h1>Overview</h1><p>60-2678400 (31 days), value of the time cycle, unit is S.</p><p>Default is 1800(30 mins)<br /></p>
+        ]]></description>
+        <default>1800</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->
       <parameter name="group_1" type="text" groupName="association" multiple="true">
