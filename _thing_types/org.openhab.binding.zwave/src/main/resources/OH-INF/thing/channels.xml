@@ -1065,8 +1065,7 @@
                 <option value="OPEN">Open</option>
                 <option value="CLOSED">Closed</option>
             </options>
-        </state>
-        
+        </state>     
     </channel-type>
 
     <!-- Sensor - Flood -->
@@ -1096,6 +1095,16 @@
         <item-type>Number</item-type>
         <label>Sensor</label>
         <description></description>
+        <category></category>
+        <state pattern="%.1f" readOnly="true">
+        </state>
+    </channel-type>
+
+    <!-- Heating Modulation -->
+    <channel-type id="sensor_heatingmodulation">
+        <item-type>Number</item-type>
+        <label>Sensor</label>
+        <description>Boiler heating modulation in percent</description>
         <category></category>
         <state pattern="%.1f" readOnly="true">
         </state>
@@ -1205,6 +1214,16 @@
         <description>Indicates the current temperature</description>
         <category>Temperature</category>
         <state readOnly="true" pattern="%.1f %unit%" />
+    </channel-type>
+
+    <!-- Sensor Tank Capacity -->
+    <channel-type id="sensor_tankcapacity">
+        <item-type>Number</item-type>
+        <label>Volume</label>
+        <description>Volume of water in tank</description>
+        <category></category>
+        <state pattern="%.1f" readOnly="true">
+        </state>
     </channel-type>
 
     <!-- Ultraviolet Channel -->
