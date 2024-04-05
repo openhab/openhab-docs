@@ -76,7 +76,7 @@ Overriding labels of a channel type must only be done if the very same functiona
 
 ### State Channel Types
 
-The following XML snippet shows a thing type definition with 2 channels and one referenced channel type:
+The following XML snippet shows a thing type definition with three channels and two referenced channel types:
 
 ```xml
 <thing-type id="thingTypeID">
@@ -85,6 +85,7 @@ The following XML snippet shows a thing type definition with 2 channels and one 
     <channels>
         <channel id="switch" typeId="powerSwitch" />
         <channel id="temperature" typeId="setpointTemperature" />
+        <channel id="roomHumidity" typeId="humidity" />
     </channels>
 </thing-type>
 <channel-type id="setpointTemperature" advanced="true">
@@ -93,7 +94,15 @@ The following XML snippet shows a thing type definition with 2 channels and one 
     <category>Temperature</category>
     <state min="12" max="30" step="0.5" pattern="%.1f °C" readOnly="false" />
 </channel-type>
+<channel-type id="humidity" advanced="false">
+    <item-type unitHint="%">Number:Dimensionless</item-type>
+    <label>Humidity</label>
+    <state readOnly="true" pattern="%.1f %%"></state>
+</channel-type>
 ```
+
+The `item-type` element gives the [item type](../../configuration/items.md#type) to be used when a linked item is created.
+If the `item-type` is a `Number:<dimension>` then a `unitHint` attribute may be provided to suggest the measurement unit to be used when a linked item is created.
 
 In order to reuse identical channels in different bindings a channel type can be system-wide.
 A channel type can be declared as system-wide by setting its `system` property to true and can then be referenced using a `system.` prefix in a `channel` `typeId` attribute in any binding - note that this should only be done in the core framework, but not by individual bindings!
