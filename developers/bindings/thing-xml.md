@@ -101,8 +101,8 @@ The following XML snippet shows a thing type definition with three channels and 
 </channel-type>
 ```
 
-The `item-type` element gives the [item type](../../configuration/items.md#type) to be used when a linked item is created.
-If the `item-type` is a `Number:<dimension>` then a `unitHint` attribute may be provided to suggest the measurement unit to be used when a linked item is created.
+The `item-type` element defines the [item type](../../configuration/items.md#type) to be used when a linked item is created.
+If the `item-type` is a `Number:<dimension>`, then a `unitHint` attribute may be provided to suggest the measurement unit to be used when a linked item is created.
 
 In order to reuse identical channels in different bindings a channel type can be system-wide.
 A channel type can be declared as system-wide by setting its `system` property to true and can then be referenced using a `system.` prefix in a `channel` `typeId` attribute in any binding - note that this should only be done in the core framework, but not by individual bindings!
