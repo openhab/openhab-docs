@@ -105,7 +105,10 @@ Watt Meter Report Period<br /> <h1>Overview</h1><p>If set to 0, it disables auto
 External Switch type<br /> <h1>Overview</h1><p>1: One Push button<br />2: Two Push button<br />No more options are possible.</p>
         ]]></description>
         <default>2</default>
-        <limitToOptions>false</limitToOptions>
+        <options>
+          <option value="1">One Push button</option>
+          <option value="2">Two Push button</option>
+        </options>
       </parameter>
 
       <parameter name="config_3_2" type="integer" groupName="configuration">
@@ -127,9 +130,9 @@ Watt Threshold<br /> <h1>Overview</h1><p>The threshold, indicated in Watts, is u
       </parameter>
 
       <parameter name="config_5_1" type="integer" groupName="configuration">
-        <label>5: Watt differential</label>
+        <label>5: Send Meter Reports</label>
         <description><![CDATA[
-Watt differential<br /> <h1>Overview</h1><p>If set to 0, the device will not report Watt value when change is over 5%.<br />If set to 1, the device will report Watt value when the differential is over 5%.</p>
+Send Meter Reports by Watt differential<br /> <h1>Overview</h1><p>If set to 0, the device will not report Watt value when change is over 5%.<br />If set to 1, the device will report Watt value when the differential is over 5%.</p>
         ]]></description>
         <default>1</default>
         <limitToOptions>false</limitToOptions>
@@ -146,7 +149,10 @@ Timer offset for motor start running<br /> <h1>Overview</h1><p>By default, this 
 
       <!-- ASSOCIATION DEFINITIONS -->
       <parameter name="group_1" type="text" groupName="association" multiple="true">
-        <label>1: Blind Control</label>
+        <label>1: Lifeline Blind Control</label>
+        <description><![CDATA[
+<br /> <h1>Overview</h1><p><br /></p>
+        ]]></description>
         <multipleLimit>5</multipleLimit>
       </parameter>
 
