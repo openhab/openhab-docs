@@ -5,7 +5,7 @@ title: ABB/Busch-free@home Smart Home binding - Bindings
 type: binding
 description: "openHAB ABB/Busch-free@home binding based on the offical free@home local API."
 since: 3x
-install: manual
+install: auto
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
