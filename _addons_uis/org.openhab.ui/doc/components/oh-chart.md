@@ -65,6 +65,11 @@ Visualize series of data
     <PropOption value="10Y" label="10Y" />
   </PropOptions>
 </PropBlock>
+<PropBlock type="BOOLEAN" name="future" label="Future Period">
+  <PropDescription>
+    Whether the period should extend to the future instead of the past
+  </PropDescription>
+</PropBlock>
 </PropGroup>
 </div>
 

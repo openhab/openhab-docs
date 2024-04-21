@@ -48,7 +48,7 @@ prev: /docs/ui/components/
     Offset to <em>subtract</em> from the displayed period, use if you want to do period comparisons (see also Offset Unit).
   </PropDescription>
 </PropBlock>
-<PropBlock type="STRING" name="offsetUnit" label="Offset Unit" context="offsetUnit">
+<PropBlock type="TEXT" name="offsetUnit" label="Offset Unit" context="offsetUnit">
   <PropDescription>
     Offset to <em>subtract</em> from the displayed period, use if you want to do period comparisons (see also Offset Amount).
   </PropDescription>
