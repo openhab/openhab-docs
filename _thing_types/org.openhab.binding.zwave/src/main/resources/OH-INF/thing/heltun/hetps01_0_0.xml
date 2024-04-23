@@ -1,0 +1,422 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="heltun_hetps01_00_000" listed="false">
+    <label>HE-TPS01 Touch Panel Switch One Button</label>
+    <description><![CDATA[
+Touch Panel Switch One Button<br /> <h1>Overview</h1><p>HELTUN HE-TPS01 Advanced Programmable Touch Panel Switch brings "Impossibly Smart" capabilities to your home lighting, electric outlets, or motorized blinds, door locks, gates, and valves. It replaces an existing in-wall switch and brings over-the-Internet monitoring, control, and advanced programmability. Device is "Impossibly Thin" on the wall yet packed with features to provide the ultimate in control and convenience.</p> <br /> <h2>Inclusion Information</h2><p>To add the HE-TPS01 to an existing Z-Wave network (i.e. “inclusion”), do the following:</p><p> Start the Inclusion Mode from the gateway/controller.</p><p> To start the inclusion process on the HE-TPS01, simultaneously press the two upper hidden touch buttons (see Figure 8) and hold them for three seconds.</p><p> All buttons will then sequentially blink ‘blue-red’.</p><p> If the inclusion has been successful, all buttons will turn blue for three seconds.</p><p> If the inclusion was not successful, all buttons will turn red for three seconds. In that case repeat the inclusion process.</p> <br /> <h2>Exclusion Information</h2><p>To remove the HE-TPS01 from a Z-Wave network (i.e. “Exclusion”), do the following:</p><p> Start the Exclusion Mode from the gateway/controller.</p><p> To start the exclusion process on the HE-TPS01, simultaneously press the two upper hidden touch buttons (see Figure 8) and hold them for three seconds.</p><p> All buttons will sequentially blink blue-red.</p><p> If the exclusion has been successful, all buttons will turn red for three seconds.</p><p> If the exclusion was not successful, all buttons will turn blue for three seconds. In that case repeat the exclusion process.</p><p>Note: If the HE-TPS01 has previously been part of a Z-Wave network and not Excluded since, Inclusion is not possible without rst performing an Exclusion or Factory Reset procedure.</p> <br /> <h2>Wakeup Information</h2><p><br /></p>
+    ]]></description>
+    <category>WallSwitch</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_binary" typeId="switch_binary">
+        <label>Switch</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY</property>
+        </properties>
+      </channel>
+      <channel id="sensor_temperature" typeId="sensor_temperature">
+        <label>Sensor (temperature)</label>
+        <properties>
+          <property name="binding:*:QuantityType">COMMAND_CLASS_SENSOR_MULTILEVEL;type=TEMPERATURE</property>
+        </properties>
+      </channel>
+      <channel id="sensor_luminance" typeId="sensor_luminance">
+        <label>Sensor (luminance)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_SENSOR_MULTILEVEL;type=LUMINANCE</property>
+        </properties>
+      </channel>
+      <channel id="sensor_relhumidity" typeId="sensor_relhumidity">
+        <label>Sensor (relative humidity)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_SENSOR_MULTILEVEL;type=RELATIVE_HUMIDITY</property>
+        </properties>
+      </channel>
+      <channel id="meter_kwh" typeId="meter_kwh">
+        <label>Electric meter (kWh)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_KWh</property>
+        </properties>
+      </channel>
+      <channel id="meter_watts" typeId="meter_watts">
+        <label>Electric meter (watts)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_W</property>
+        </properties>
+      </channel>
+      <channel id="scene_number" typeId="scene_number">
+        <label>Scene Number</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_CENTRAL_SCENE</property>
+        </properties>
+      </channel>
+      <channel id="time_offset" typeId="time_offset">
+        <label>Clock Time Offset</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_CLOCK</property>
+        </properties>
+      </channel>
+      <channel id="switch_binary1" typeId="switch_binary">
+        <label>Switch 1</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY:1</property>
+        </properties>
+      </channel>
+      <channel id="switch_binary2" typeId="switch_binary">
+        <label>Switch 2</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY:2</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Heltun</property>
+      <property name="modelId">HE-TPS01</property>
+      <property name="manufacturerId">0344</property>
+      <property name="manufacturerRef">0004:0007</property>
+      <property name="dbReference">1614</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_1_1" type="integer" groupName="configuration" readOnly="true">
+        <label>1: Frequency Region</label>
+        <description><![CDATA[
+Frequency Region<br /> <h1>Overview</h1><p>The HE-TPS01 has Z-Wave 700 series chip inside which allows to use the device in different Z-Wave frequencies. If there is a need to use the device in the frequency different from the factory default, change the value of this Parameter according to the frequency list below. Modification is possible only while the HE-TPS01 is not included to Z-Wave network.</p><p>0: EU (868.4 MHz, 869.85 MHz)</p><p>1: US (908.4 MHz, 916.0 MHz)</p><p>2: ANZ (919.8 MHz, 921.4 MHz)</p><p>3: HK (919.8 MHz)</p><p>4: IN (865.2 MHz)</p><p>5: IL (916.0 MHz)</p><p>6: RU (869.0 MHz)</p><p>7: CN (868.4 MHz)</p><p>8: JP (922.5 MHz, 923.9 MHz, 926.3 MHz)</p><p>9: KR (920.9 MHz, 921.7 MHz, 923.1 MHz)</p>
+        ]]></description>
+        <default>0</default>
+        <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_3_4" type="integer" groupName="configuration" readOnly="true">
+        <label>3: Hardware and Software Versions</label>
+        <description><![CDATA[
+Hardware and Software Versions<br /> <h1>Overview</h1><p>Parameter 03 – Hardware and Software Versions</p><p>This Parameter allows to check the hardware and firmware versions of the device. The Parameter returns value in the format XXYYZZ, where XX is Hardware Version, YY is Firmware Major Version and ZZ is Firmware Minor Version.</p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_4_4" type="integer" groupName="configuration" readOnly="true">
+        <label>4: Energy Consumption</label>
+        <description><![CDATA[
+Energy Consumption<br /> <h1>Overview</h1><p>Parameter 04 – Energy Consumption</p><p>This Parameter allows to check the Cumulative Energy Consumption (in kW) of the connected load.</p><p>HE-TPS01 monitors Real-Time and Cumulative power Energy Consumption of connected load using advanced software logic which measures the consumption based on load power value set in Parameter 12.</p><p>Cumulative Energy Consumption is the total electrical power being used by connected load since the Parameter 04 value last reset. Power usage is calculated by the software using the values that were manually set when configuring Parameter 12, multiplied by the time tracked when the HE-TPS01 corresponding output was in ON state.</p><p>Real-Time Consumption and Cumulative Consumption are periodically reported to the Z-Wave controller according to the Parameters 141 and 142 settings.</p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_5_1" type="integer" groupName="configuration">
+        <label>5: Backlight brightness control</label>
+        <description><![CDATA[
+Backlight brightness control<br /> <h1>Overview</h1><p>The HE-TPS01 has two brightness levels for its button backlight: 1) Active Level – when the button is touched, its backlight becomes brighter, and 2) Inactive Level – after one second of inactivity, its backlight dims. The actual brightness level may be adjusted manually or automatically.</p><p>Parameter 05 – Brightness Control</p><p>The HE-TPS01 can adjust its button backlight brightness automatically depending on the illumination of the ambient environment and also allows to control it manually. Set the Parameter value to 0 to activate the Automatic Brightness Control or set from value 1 (lowest brightness) to 10 (highest brightness) for Manual Control. The factory default value is 0.</p>
+        ]]></description>
+        <default>0</default>
+        <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_6_1" type="integer" groupName="configuration">
+        <label>6: Touch buttons sensitivity</label>
+        <description><![CDATA[
+Touch buttons sensitivity<br /> <h1>Overview</h1><p>Parameter 06 – Touch Sensor Sensitivity Threshold</p><p>This Parameter allows the device Touch Button Sensitivity Threshold to be adjusted from level 1 (low sensitivity) to 10 (high sensitivity). The factory default value is 6.</p><p>≡ Note: Setting the sensitivity too high can lead to false touch detection. We recommend not changing this Parameter unless there is a special need to do so.</p>
+        ]]></description>
+        <default>6</default>
+        <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_7_1" type="integer" groupName="configuration">
+        <label>7: Relay 1 output NO or NC mode</label>
+        <description><![CDATA[
+Relay 1 output NO or NC mode<br /> <h1>Overview</h1><p>Parameter 07 – Output NO/NC Mode</p><p>This Parameter determines the type of load connected to the device relay output. The output type can be NO – normal open (no contact/voltage to switch the load OFF) or NC - normal close (output is contacted / there is a voltage to switch the load OFF). Choose the value 0 if NO contact type is required or value 1 if NC type is required. The factory default value is 0 (NO mode).</p>
+        ]]></description>
+        <default>0</default>
+        <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_12_2" type="integer" groupName="configuration">
+        <label>12: Power of the Relay 1 load</label>
+        <description><![CDATA[
+Power of the Relay 1 load<br /> <h1>Overview</h1><p>Parameter 12 – Relay Load Power in watt</p><p>This Parameter is used to specify the load power that are connected to the device output. Using your connected device’s power consumption specification (see associated owner’s manual), set the load in Watts. The factory default value is 0.</p><p>≡ Note: The range from 0 to 1100 watt can be selected.</p>
+        ]]></description>
+        <default>0</default>
+        <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_17_1" type="integer" groupName="configuration">
+        <label>17: Air Temperature Calibration</label>
+        <description><![CDATA[
+Air Temperature Calibration<br /> <h1>Overview</h1><p>Parameter 17 – Air Temperature Calibration</p><p>This parameter defines the offset value for room air temperature. If the internal air temperature sensor is not correctly calibrated, then manual calibration can be made by adjusting the values up to ±10°C. This value will be added or subtracted from the internal air temperature sensor reading. The value of this Parameter should be x10, e.g. for 1.5°C set the value 15. The factory default value is 0</p>
+        ]]></description>
+        <default>0</default>
+        <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_19_1" type="integer" groupName="configuration">
+        <label>19: Time correction by controller</label>
+        <description><![CDATA[
+Time correction by controller<br /> <h1>Overview</h1><p>Parameter 19 – Time Correction by Main Controller</p><p>If this Parameter value = 1 and the HE-TPS01 is connected to a Z-Wave gateway, the HE-TPS01 time and day will be periodically polled and corrected from the gateway. To switch off auto-correction set the Parameter value to 0. The factory default value is 1.</p>
+        ]]></description>
+        <default>1</default>
+        <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_21_1" type="integer" groupName="configuration">
+        <label>21: Week Day</label>
+        <description><![CDATA[
+Week Day<br /> <h1>Overview</h1><p>Parameter 21 – Day of the Week Manual Adjustment</p><p>This Parameter allows manual adjustment of the day of the week in case the HE-TPS01 is not connected to any Z-Wave gateway or auto-correction is disabled (Parameter 19 value is 0). 1 = Monday, 2 = Tuesday, 3 = Wednesday, 4 = Thursday, 5 = Friday, 6 = Saturday, 7 = Sunday. The factory default value is 1.</p>
+        ]]></description>
+        <default>1</default>
+        <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_22_2" type="integer" groupName="configuration">
+        <label>22: Time manual corrections</label>
+        <description><![CDATA[
+Time manual corrections<br /> <h1>Overview</h1><p>Parameter 22 – Time Manual Adjustment</p><p>This Parameter allows manual adjustment of Time. The Parameter has the following format: HHMM, where HH is hours and MM is minutes. E.g. for 16:08 set the value 1608 and for 1:00 set the value 100.</p>
+        ]]></description>
+        <default>0</default>
+        <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_30_1" type="integer" groupName="configuration">
+        <label>30: Active state backlight color</label>
+        <description><![CDATA[
+Active state backlight color<br /> <h1>Overview</h1><p>Parameter 30 – Button Backlight Color</p><p>Choose the value “1” if you wish the backlight active state to be blue, and the inactive state to be red (default). Choose the value “0” if you wish the backlight active state to be red, and the inactive state to be blue. The factory default value is 1.</p>
+        ]]></description>
+        <default>1</default>
+        <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_31_1" type="integer" groupName="configuration">
+        <label>31: Backlight 1 control source</label>
+        <description><![CDATA[
+Backlight 1 control source<br /> <h1>Overview</h1><p>Parameter 31– Button Backlight Control Source</p><p>0 – Backlight is disabled (both color LEDs are turned off)</p><p>1 – Backlight is controlled by touch button (reflects the button state)</p><p>2 – Backlight is controlled by gateway or associated device (the button state is ignored)</p><p>The factory default value is 1.</p><p>≡ Note: If the backlight is disabled (the Parameter value is set to “0”), it is also impossible to control it from the gateway</p>
+        ]]></description>
+        <default>1</default>
+        <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_41_1" type="integer" groupName="configuration">
+        <label>41: Hold control mode for touch button 1</label>
+        <description><![CDATA[
+Hold control mode for touch button 1<br /> <h1>Overview</h1><p>Parameter 41 – Button Hold (Long Press) Control Mode.</p><p>0 – Hold function is disabled</p><p>1 – Operate like click</p><p>2 – When the button is held the relay output state is ON, as soon as the button is released the relay output state changes to OFF (momentary switch).</p><p>3 – When the button is held the relay output state is OFF, as soon as the button is released the relay output state changes to ON (momentary switch).</p><p>4 – When the button is held or released the relay output state will toggle its state (ON to OFF or OFF to ON).</p><p>The factory default value is 2.</p><p>≡ Note: Regardless of this Parameter, the device will send scene notifications about the touch state (pressed, held, released) to the gateway.</p>
+        ]]></description>
+        <default>2</default>
+        <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_51_1" type="integer" groupName="configuration">
+        <label>51: Click control mode for touch button 1</label>
+        <description><![CDATA[
+Click control mode for touch button 1<br /> <h1>Overview</h1><p>Parameter 51 – Button Click (Short Press) Control Mode</p><p>0 – Press function disabled</p><p>1 – Relay inverts state (toggles ON to OFF, OFF to ON) according to the relay state</p><p>2 – Relay inverts state (toggles ON to OFF, OFF to ON) according to the button backlight state.</p><p>3 – Relay switches to ON state only</p><p>4 – Relay switches to OFF state only</p><p>5 – Timer: On&gt;Off Mode: Relay output switches to ON state (contacts are closed) then after a specified time switches back to OFF state (contacts are open). The time is specified in Parameter 71.</p><p>6 – Timer: OFF&gt;ON Mode: Relay output switches to OFF state (contacts are open) then after a specified time switches back to ON state (contacts are closed). The time is specified in Parameter 71.</p><p>The factory default value is 1.</p>
+        ]]></description>
+        <default>1</default>
+        <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_61_1" type="integer" groupName="configuration">
+        <label>61: Relay 1 control source</label>
+        <description><![CDATA[
+Relay 1 control source<br /> <h1>Overview</h1><p>Parameter 61 – Button Number for Relays Output Control</p><p>0 – Controlled by gateway or associated device</p><p>1 – Controlled by touch button</p><p>Factory default value: 1.</p>
+        ]]></description>
+        <default>0</default>
+        <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_66_1" type="integer" groupName="configuration">
+        <label>66: Restore Relay State after Power Failure</label>
+        <description><![CDATA[
+Restore Relay State after Power Failure<br /> <h1>Overview</h1><p>Parameter 66 – Retore Relay State</p><p>This Parameter determine whether the relay last state should be restored after power failure. Set the value 1 if there is a need to restore the relay to the state it was before power failure. The relay state will always be Off after power failure if the value of this Parameter is 0. The factory default value is 0</p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_71_2" type="integer" groupName="configuration">
+        <label>71: Timer mode duration for button 1</label>
+        <description><![CDATA[
+Timer mode duration for button 1<br /> <h1>Overview</h1><p>Parameter 71 – Relay Timer mode duration This Parameter specifies the duration in seconds for the Timer mode (values 5 or 6 in Parameter 51 respectively). Press the button and the relay output goes to ON/OFF for the specified time then changes back to OFF/ON. This function can be used to turn attached devices like door lock or security OFF for a short time. The time values can be configured from 0 sec to 32400 sec (9 hours). The factory default value is 0.</p><p>≡ Note: If the parameter value is set to “0” it will operate as a short contact (about 500mSec).</p><p>≡ Note: If the parameter value is set to “-1” it will operate as a shorter contact (about 50mSec).</p>
+        ]]></description>
+        <default>0</default>
+        <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_141_1" type="integer" groupName="configuration">
+        <label>141: Consumption meter consecutive reporting interval</label>
+        <description><![CDATA[
+Consumption meter consecutive reporting interval<br /> <h1>Overview</h1><p>Parameter 141 – Energy Consumption Meter Consecutive Report Interval</p><p>When the device is connected to the Z-Wave gateway (controller), it periodically sends to the gateway reports from its energy consumption meter even if there is no change in the value. This Parameter defines the interval between consecutive reports of real time and cumulative energy consumption data to the gateway. The value can be adjusted from 1 min to 120 min. The factory default value is 10 min.</p><p>≡ Note: If the consumption changes, the device will send the report to the gateway regardless of this Parameter value (the report will be sent according to value in Parameter 142).</p><p>≡ Note: It is not recommended to reduce the value of this Parameter in order not to increase the traffic on your network. We recommend to reduce the value of this Parameter only in case of poor connection, when reports from the device does not always reach the gateway.</p>
+        ]]></description>
+        <default>10</default>
+        <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_142_1" type="integer" groupName="configuration">
+        <label>142: Consumption change report to send to controller</label>
+        <description><![CDATA[
+Consumption change report to send to controller<br /> <h1>Overview</h1><p>Parameter 142 – Control Energy Consumption Report</p><p>This Parameter determines if the consumption change will resulting in the consumption report being sent to the gateway. Use the value 0 if there is a need to stop sending the reports and value 1 to activate reports. The factory default value is 1.</p><p>≡ Note: When the device is turning ON, the consumption data will be sent to the gateway once, even if the value of this Parameter is 0.</p>
+        ]]></description>
+        <default>1</default>
+        <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_143_1" type="integer" groupName="configuration">
+        <label>143: Sensors consecutive reporting interval</label>
+        <description><![CDATA[
+Sensors consecutive reporting interval<br /> <h1>Overview</h1><p>Parameter 143 – Sensors Consecutive Report Interval</p><p>When the device is connected to the Z-Wave gateway (controller), it periodically sends to the gateway reports from its room &amp; floor temperature, humidity and light sensors even if there are not changes in the values. This Parameter defines the interval between consecutive reports. The value can be adjusted from 1 min to 120 min. The factory default value is 10 min.</p><p>≡ Note: If the sensor readings change, the device will send the report to the gateway regardless of this Parameter value (the report will be sent according to values in Parameters 144, 145 and 146).</p><p>≡ Note: It is not recommended to reduce the value of this Parameter in order not to increase the traffic on your network. We recommend to reduce the value of this Parameter only in case of poor connection, when reports from the device does not always reach the gateway.</p>
+        ]]></description>
+        <default>10</default>
+        <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_144_1" type="integer" groupName="configuration">
+        <label>144: Temperature difference to send to controller</label>
+        <description><![CDATA[
+Temperature difference to send to controller,<br /> <h1>Overview</h1><p>Parameter 144 – Air Temperature Sensors Report Threshold</p><p>This Parameter determines the change in temperature level (in °C) resulting in temperature sensor report being sent to the gateway. The value of this Parameter should be x10, e.g. for 0.4°C use value 4. From 0.1°C (value 1) to 10°C (value 100) can be selected. Use the value 0 if there is a need to stop sending the reports. The factory default value is 2 (0.2°C).</p><p>≡ Note: When the device is turning ON, the sensor data will be sent to the gateway once, even if the value of this Parameter is 0.</p><p>≡ Note: It is not recommended to decrease the value of this Parameter, in order not to increase the load on your Z-Wave network traffic.</p>
+        ]]></description>
+        <default>2</default>
+        <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_145_1" type="integer" groupName="configuration">
+        <label>145: Humidity difference to send to controller</label>
+        <description><![CDATA[
+Humidity difference to send to controller<br /> <h1>Overview</h1><p>Parameter 145 – Humidity Sensor Report Threshold</p><p>This Parameter determines the change in humidity level in % resulting in humidity sensors report being sent to the gateway. From 1% to 25% can be selected. Use the value 0 if there is a need to stop sending the reports. The factory default value is 2.</p><p>≡ Note: When the device is turning ON, the sensor data will be sent to the gateway once, even if the value of this Parameter is 0.</p><p>≡ Note: It is not recommended to decrease the value of this Parameter, in order not to increase the load on your Z-Wave network traffic.</p>
+        ]]></description>
+        <default>2</default>
+        <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_146_1" type="integer" groupName="configuration">
+        <label>146: Light sensor values difference to send to controller</label>
+        <description><![CDATA[
+Light sensor values difference to send to controller<br /> <h1>Overview</h1><p>Parameter 146 – Light Sensor Report Threshold</p><p>This Parameter determines the change in the ambient environment illuminance level resulting in a light sensors report being sent to the gateway. From 10% to 99% can be selected. Use the value 0 if there is a need to stop sending the reports. The factory default value is 50.</p><p>≡ Note: When the device is turning On, the sensor data will be sent to the gateway once, even if the value of this Parameter is 0.</p><p>≡ Note: It is not recommended to decrease the value of this Parameter, in order not to increase the load on your Z-Wave network traffic.</p>
+        ]]></description>
+        <default>50</default>
+        <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_171_1" type="integer" groupName="configuration">
+        <label>171: Touch control mode for associations with touch button 1</label>
+        <description><![CDATA[
+Touch control mode for associations with touch button 1<br /> <h1>Overview</h1><p>Parameter 171 – Association Mode</p><p>This Parameter is intended for use when Multilevel Switch Group Association (Groups 3) have been activated. It defines the logic of values changing if the touch button has been held for more than one second. This is useful option for controlling dimmers or roller shutter devices in the following three ways:</p><p>“0” – On each hold event, “UP (brighten)” and “DOWN (dim)” command will be alternately sent to associated devices.</p><p>“1” – On each hold event, the “UP (brighten)” command will be sent to associated devices.</p><p>“2” – On each hold event, the “DOWN (dim)” command will be sent to associated devices.</p><p>The factory-default value: 0.</p>
+        ]]></description>
+        <default>0</default>
+        <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_181_1" type="integer" groupName="configuration">
+        <label>181: Dimming Brightness Level for association with touch button 1</label>
+        <description><![CDATA[
+Dimming Brightness Level for association with touch button 1<br /> <h1>Overview</h1><p>Parameters 181 – Dimming Set On Brightness Level</p><p>This parameter specifies the brightness level that will be sent to associated dimmer devices when the touch button was clicked (when sending Set On command). Use values 1 to 99, to set a specific brightness level (the brightness level corresponds to the percentage of the set value), or use value 0 to restore the most recent (non-zero) brightness level on the dimmer. The factory default value is 0.</p><p>≡ Note: Note: Dimmer devices should be associated with the touch button as a multi-channel association.</p>
+        ]]></description>
+        <default>0</default>
+        <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_191_1" type="integer" groupName="configuration">
+        <label>191: Dimming Duration for association with touch button 1</label>
+        <description><![CDATA[
+Dimming Duration for association with touch button 1<br /> <h1>Overview</h1><p>Parameters 191 – Dimming Duration</p><p>This parameter specifies the duration when the dimmer goes from lowest (~0%) level to the highest (~99%) level and vice versa, when "Dimming up/Dimming Down" commands are received through association. Use values 1 to 120 seconds to specify the duration or use value 0 to use dimmer’s factory default duration. The factory default value is 0.</p><p>≡ Note: Dimmer devices should be associated with the touch button as a multi-channel association</p><p>≡ Note: Different dimmers may interpret this parameter differently, in such cases the parameter values should be determined experimentally for a specific dimmer model.</p>
+        ]]></description>
+        <default>0</default>
+        <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Lifeline</label>
+        <description><![CDATA[
+Lifeline reports full state of the device and is used to communicate with the Z-Wave gateway<br /> <h1>Overview</h1><p>Group 1 – “Lifeline”: reports full state of the device and is used to communicate with the Z-Wave gateway. The group supports one Node.</p><p>≡ Note: It is not recommended to modify this group.</p><p>≡ Note: For correct operating in Fibaro gateways, the Single Channel Association should be removed from the device LifeLine (EndPoint 0 Group 1).</p>
+        ]]></description>
+        <multipleLimit>1</multipleLimit>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: Touch Basic Set</label>
+        <description><![CDATA[
+Group2-Touch Basic Set<br /> <h1>Overview</h1><p>Group 2 – “Touch Basic Set”: is assigned to touch N1. Is used to send Basic Set ON (value 255) and Basic Set OFF (value 0) commands to the associated devices. Max supported nodes: 1.</p>
+        ]]></description>
+        <multipleLimit>1</multipleLimit>
+      </parameter>
+
+      <parameter name="group_3" type="text" groupName="association" multiple="true">
+        <label>3: Touch Multilevel Set</label>
+        <description><![CDATA[
+Group3-Touch Multilevel Set<br /> <h1>Overview</h1><p>Group 3 – “Touch Multilevel Set”: is assigned to touch N1. It sends MULTILEVEL SWITCH command class frame when touch N1 was held. Is used to send UP/DOWN command to the associated devices. Max supported nodes: 1.</p>
+        ]]></description>
+        <multipleLimit>1</multipleLimit>
+      </parameter>
+
+      <parameter name="group_4" type="text" groupName="association" multiple="true">
+        <label>4: LED Basic Set</label>
+        <description><![CDATA[
+Group4-LED Basic Set<br /> <h1>Overview</h1><p>Group 4 – “LED Basic Set”: is assigned to LED N1. Is used to send Basic Set ON (value 255) and Basic Set OFF (value 0) commands to the associated devices. Max supported nodes: 1.</p>
+        ]]></description>
+        <multipleLimit>1</multipleLimit>
+      </parameter>
+
+      <parameter name="group_5" type="text" groupName="association" multiple="true">
+        <label>5: Relay Basic Set</label>
+        <description><![CDATA[
+Group5-Relay Basic Set<br /> <h1>Overview</h1><p>Group 5 – “Relay Basic Set”: is assigned to relay N1. Is used to send Basic Set ON (value 255) and Basic Set OFF (value 0) commands to the associated devices. Max supported nodes: 1.</p>
+        ]]></description>
+        <multipleLimit>1</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

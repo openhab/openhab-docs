@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="smartdhome_myot2_00_000" listed="false">
+    <label>MYOT2 OpenTherm Interfaces for boiler</label>
+    <description><![CDATA[
+OpenTherm Interfaces for boiler<br /> <h1>Overview</h1><p>Interface/actuator for OpenTherm boilers that allows you to monitor the performance of the OpenTherm boilers on which it is installed.</p> <br /> <h2>Inclusion Information</h2><p>Include the MyOT device by pressing the function button for 8 seconds.</p> <br /> <h2>Exclusion Information</h2><p>Include the MyOT device by pressing the function button for 8 seconds.</p> <br /> <h2>Wakeup Information</h2><p>Always powered on<br /></p>
+    ]]></description>
+    <category>Controller</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_binary" typeId="switch_binary">
+        <label>Boiler On/Off</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY</property>
+        </properties>
+      </channel>
+      <channel id="sensor_barpressure" typeId="sensor_barpressure">
+        <label>Heating circuit pressure</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_SENSOR_MULTILEVEL;type=BAROMETRIC_PRESSURE</property>
+        </properties>
+      </channel>
+      <channel id="water_temperature" typeId="sensor_temperature">
+        <label>Return water temperature</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_SENSOR_MULTILEVEL;type=WATER_TEMPERATURE</property>
+        </properties>
+      </channel>
+      <channel id="sensor_heatingmodulation" typeId="sensor_heatingmodulation">
+        <label>Boiler heating modulation</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_SENSOR_MULTILEVEL;type=RELATIVE_MODULATION_LEVEL</property>
+        </properties>
+      </channel>
+      <channel id="sensor_waterflow" typeId="sensor_waterflow">
+        <label>DHW Flow</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_SENSOR_MULTILEVEL;type=WATER_FLOW</property>
+        </properties>
+      </channel>
+      <channel id="boiler_watertemp" typeId="sensor_temperature">
+        <label>Boiler water temperature</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_SENSOR_MULTILEVEL;type=BOILER_WATER_TEMPERATURE</property>
+        </properties>
+      </channel>
+      <channel id="dhw_temperature" typeId="sensor_temperature">
+        <label>DHW water temperature</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_SENSOR_MULTILEVEL;type=DOMESTIC_HOT_WATER_TEMPERATURE</property>
+        </properties>
+      </channel>
+      <channel id="exhaust_temperature" typeId="sensor_temperature">
+        <label>Exhaust fumes temperature</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_SENSOR_MULTILEVEL;type=EXHAUST_TEMPERATURE</property>
+        </properties>
+      </channel>
+      <channel id="thermostat_setpoint_heating" typeId="thermostat_setpoint">
+        <label>Setpoint (heating)</label>
+        <properties>
+          <property name="binding:*:QuantityType">COMMAND_CLASS_THERMOSTAT_SETPOINT;type=HEATING</property>
+        </properties>
+      </channel>
+      <channel id="thermostat_setpoint_away_heating" typeId="thermostat_setpoint">
+        <label>Setpoint DHW</label>
+        <properties>
+          <property name="binding:*:QuantityType">COMMAND_CLASS_THERMOSTAT_SETPOINT;type=AWAY_HEATING</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">SmartDHOME</property>
+      <property name="modelId">MYOT2</property>
+      <property name="manufacturerId">044C</property>
+      <property name="manufacturerRef">0003:0004</property>
+      <property name="dbReference">1613</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_1_0" type="integer" groupName="configuration">
+        <label>1: Max setpoint of the boiler</label>
+        <description>Max setpoint of the boiler</description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_2_0" type="integer" groupName="configuration">
+        <label>2: Min setpoint of the boiler</label>
+        <description>Min setpoint of the boiler</description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_3_0" type="integer" groupName="configuration">
+        <label>3: Setpoint max DHW</label>
+        <description>Setpoint max DHW (hot water)</description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_4_0" type="integer" groupName="configuration">
+        <label>4: Setpoint min DHW</label>
+        <description>Setpoint min DHW</description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_10_1" type="integer" groupName="configuration">
+        <label>10: Error Flag</label>
+        <description>Error number of the boiler if any, default 0</description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_11_5" type="integer" groupName="configuration">
+        <label>11: Error code</label>
+        <description>Error code, if error occurs</description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_30_1" type="integer" groupName="configuration">
+        <label>30: Summer mode</label>
+        <description>Summer mode (0: no 1: yes)</description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_31_1" type="integer" groupName="configuration">
+        <label>31: Enabling DHW</label>
+        <description>Enabling DHW (hot water, 0: no 1: yes)</description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_95_0" type="integer" groupName="configuration">
+        <label>95: Report rate</label>
+        <description>Report rate (in min)</description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Lifeline</label>
+        <multipleLimit>1</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>
