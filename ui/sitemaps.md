@@ -379,7 +379,7 @@ Setpoint item=KI_Temperature label="Kitchen [%.1f °C]" minValue=4.5 maxValue=30
 ### Element Type 'Slider'
 
 ```java
-Slider item=<itemname> [label="<labelname>"] [icon=<iconref>] [staticIcon=<iconref>] [sendFrequency="frequency"] [switchSupport] [minValue=<min value>] [maxValue=<max value>] [step=<step value>]
+Slider item=<itemname> [label="<labelname>"] [icon=<iconref>] [staticIcon=<iconref>] [sendFrequency="frequency"] [switchSupport] [minValue=<min value>] [maxValue=<max value>] [step=<step value>] [releaseOnly]
 ```
 
 This type presents a value as a user-adjustable control which slides from left (0) to right (100).
@@ -393,6 +393,7 @@ This type presents a value as a user-adjustable control which slides from left (
 
 - `minValue` (defaults to 0) and `maxValue` (defaults to 100) limit the possible range of the value (both included in the range).
 - `step` (defaults to 1) defines the distance between two possible/selectable datapoints on the slider.
+- `releaseOnly`: If specified, the new value is only sent on releasing the slider. Otherwise values are sent while sliding.
 
 **Example:**
 
