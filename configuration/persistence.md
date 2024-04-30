@@ -232,7 +232,7 @@ Example:
 
 The statement
 
-`Temperature.persistedStateState(now.minusDays(1))`
+`Temperature.persistedState(now.minusDays(1))`
 
 will return the state of the Item "Temperature" from 24 hours ago.
 You can easily imagine that you can implement very powerful rules using this feature.
