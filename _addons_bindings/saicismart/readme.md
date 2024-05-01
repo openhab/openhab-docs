@@ -5,6 +5,7 @@ title: SAICiSMART - Bindings
 type: binding
 description: "OpenHAB binding to the SAIC-API used by MG cars (MG4, MG5 EV, MG ZSV...)"
 since: 3x
+logo: images/addons/saicismart.svg
 install: auto
 ---
 
