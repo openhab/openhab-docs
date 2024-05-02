@@ -301,7 +301,7 @@ Some persistence services may not support persisting to other points in time tha
 
 Some extensions return a HistoricItem object.
 It represents the state of a persisted item at a certain point in time.
-The most useful methods of the HistoricItem object returned by some queries, are `.state` and `.getTimestamp`
+The most useful methods of the HistoricItem object returned by some queries, are `.getState()` and `.getTimestamp()`
 
 ### Examples
 
