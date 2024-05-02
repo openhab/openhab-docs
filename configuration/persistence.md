@@ -296,7 +296,12 @@ Here is the full list of available persistence extensions:
 
 These extensions use the [default persistence service](#default-persistence-service).
 You may specify a different persistence service by appending a String as an optional additional parameter at the end of the extension.
+
 Some persistence services may not support persisting to other points in time than the current time and removing persisted States, therefore not all actions may be supported for all persistence services.
+
+Some extensions return a HistoricItem object.
+It represents the state of a persisted item at a certain point in time.
+The most useful methods of the HistoricItem object returned by some queries, are `.state` and `.getTimestamp`
 
 ### Examples
 
@@ -305,8 +310,6 @@ To persist an Item called `Lights` in an rrd4j database, you would enter the fol
 
 To get the average temperature over the last 5 minutes from the Item called `Temperature` in the influxdb persistence service, you would use:
 `Temperature.averageSince(now.minusMinutes(5), "influxdb")`
-
-The most useful methods of the HistoricItem object returned by some queries, are `.state` and `.getTimestamp`
 
 #### Time-weighted averages
 
