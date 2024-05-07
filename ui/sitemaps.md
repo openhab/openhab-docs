@@ -291,7 +291,7 @@ A Switch will present a discrete state Item and allow changing of its value.
 Note that Switch elements can be rendered differently on the user interface, based on the Item type and the `mappings` parameter.
 
 - `mappings` comes as an array of value-to-string translations, [documented further down](#mappings).
-  Without the mappings parameter, user interfaces will present an On/Off Switch, if mappings are given, several buttons with label or icon will be rendered.
+  Without the mappings parameter, user interfaces will present an On/Off Switch, if mappings are given, several buttons with label or icon will be rendered and each button can behave either as a click button or as a press and release button.
 
 **Examples:**
 
@@ -592,7 +592,7 @@ Mappings is an optional parameter for the [Switch](#element-type-switch) and [Se
 Mapping syntax:
 
 ```java
-mappings=[value_1="description_1", value_2="description_2"=<iconname>, ...]
+mappings=[value_1="description_1", value_2="description_2"=<iconname>, value_press:value_release="description_3", ...]
 ```
 
 Examples:
@@ -605,6 +605,8 @@ mappings=[OFF="All heaters off"]
 mappings=[15="Gone", 19="Chilly", 21="Cozy"]
 
 mappings=[ON="Mic On"=material:mic, OFF="Mic Off"=material:mic_off]
+
+mappings=[ON:OFF="On"]
 ```
 
 As you can see, different Item data types are accepted as mappings values.
@@ -622,6 +624,9 @@ This limits the possible input values, which is yet another often occurring use 
 
 In the fifth example above, user interfaces will display buttons using the provided icon rather than the provided description.
 Icons are usable in Switch element but ignored in Selection element.
+
+In the sixth example above, as there are 2 commands provided separated by a semicolon, user interface will consider a press and release behavior, the first command (ON in the example) is sent to the item when the button is pressed and the second command (OFF in the example) is sent when the button is finally released.
+This behavior is only applicable for a `Switch` element.
 
 ## Dynamic Sitemaps
 
