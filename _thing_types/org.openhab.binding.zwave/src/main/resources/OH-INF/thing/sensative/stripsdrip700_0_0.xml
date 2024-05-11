@@ -76,15 +76,6 @@ Strips Drip 700 Water leak &amp; temperature sensor<br /> <h1>Overview</h1><p>St
       </parameter-group>
 
       <!-- PARAMETER DEFINITIONS -->
-      <parameter name="config_0_1" type="integer" groupName="configuration">
-        <label>0: DELETE ME</label>
-        <description><![CDATA[
-Should be performed when Drip is mounted correctly and absolutely dry to calibrate the "zero-level". A MultiLevel Sensor Report with the Moisture value is sent after the calibration is performed.<br /> <h1>Overview</h1><p>Should be performed when Drip is mounted correctly and absolutely dry to calibrate the "zero-level". A MultiLevel Sensor Report with the Moisture value is sent after the calibration is performed.<br /><br /></p><p>0: Device resets to this value after performing capacitance calibration and sends a report with value 0 to the gateway (as recommended by Z-Wave Specifications.)</p><p>1: Perform Calibration</p>
-        ]]></description>
-        <default>0</default>
-        <limitToOptions>false</limitToOptions>
-      </parameter>
-
       <parameter name="config_2_1" type="integer" groupName="configuration">
         <label>2: LED alarm event reporting</label>
         <description><![CDATA[

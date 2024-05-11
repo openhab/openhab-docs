@@ -27,7 +27,7 @@ GE Enbrighten Z-Wave Plus Smart Switch<br /> <h1>Overview</h1><p>Home automation
       <property name="vendor">Jasco Products</property>
       <property name="modelId">GE 58433/58436</property>
       <property name="manufacturerId">0063</property>
-      <property name="manufacturerRef">4952:3239,4952:3330</property>
+      <property name="manufacturerRef">4952:3239,4952:3330,4952:3334</property>
       <property name="dbReference">1589</property>
       <property name="defaultAssociations">1</property>
     </properties>

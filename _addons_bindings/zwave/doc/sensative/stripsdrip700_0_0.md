@@ -130,12 +130,11 @@ This channel provides the battery level as a percentage and also reflects the lo
 
 ## Device Configuration
 
-The following table provides a summary of the 17 configuration parameters available in the 11 04 021.
+The following table provides a summary of the 16 configuration parameters available in the 11 04 021.
 Detailed information on each parameter can be found in the sections below.
 
 | Param | Name  | Description |
 |-------|-------|-------------|
-| 0 | DELETE ME | Should be performed when Drip is mounted correctly and absolutely dry to calibrate the "zero-level". A MultiLevel Sensor Report with the Moisture value is sent after the calibration is performed. |
 | 2 | LED alarm event reporting | LED alarm event reporting |
 | 4 | Temperature reporting type | Turn On or Off the temperature sensorvalue |
 | 5 | Temperature reporting unit | Select the temperature unit |
@@ -154,23 +153,6 @@ Detailed information on each parameter can be found in the sections below.
 | 27 | Temperature hysteresis for temperature alarms | Triggers alarm clear reports (See parameters 7&8). Input value converted to one decimal place. |
 |  | Wakeup Interval | Sets the interval at which the device will accept commands from the controller |
 |  | Wakeup Node | Sets the node ID of the device to receive the wakeup notifications |
-
-### Parameter 0: DELETE ME
-
-Should be performed when Drip is mounted correctly and absolutely dry to calibrate the "zero-level". A MultiLevel Sensor Report with the Moisture value is sent after the calibration is performed.
-Should be performed when Drip is mounted correctly and absolutely dry to calibrate the "zero-level". A MultiLevel Sensor Report with the Moisture value is sent after the calibration is performed.  
-  
-
-
-0: Device resets to this value after performing capacitance calibration and sends a report with value 0 to the gateway (as recommended by Z-Wave Specifications.)
-
-1: Perform Calibration
-Values in the range 0 to 1 may be set.
-
-The manufacturer defined default value is ```0```.
-
-This parameter has the configuration ID ```config_0_1``` and is of type ```INTEGER```.
-
 
 ### Parameter 2: LED alarm event reporting
 
