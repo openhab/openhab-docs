@@ -238,6 +238,10 @@ Default item=<itemname> [label="<labelname>"] [icon=<iconref>] [staticIcon=<icon
 Presents an Item using the default UI representation specified by the type of the given Item.
 E.g., a `Dimmer` Item will be represented as a [Slider](#element-type-slider) element while a `Player` Item will be rendered with player button controls (Previous/Pause/Play/Next).
 
+Such an implicit [Slider](#element-type-slider) element will have the `releaseOnly` parameter set.
+Its behavior is therefore to send the new value only when the slider is released.
+It will also have the `switchSupport` parameter set.
+
 ### Element Type 'Text'
 
 ```java
