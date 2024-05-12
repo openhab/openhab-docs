@@ -49,7 +49,7 @@ You can define the default audio source either by textual configuration in `$OPE
 You can also record wav audio files using the console, you should provide the desired record duration in seconds and its filename, if you do not specify the source the default will be used:
 
 ```text
-audio record javasound 10 hello.wav
+openhab> openhab:audio record javasound 10 hello.wav
 ```
 
 The generated record will be saved at the folder `$OPENHAB_CONF/sounds`.
