@@ -31,7 +31,7 @@ The distribution comes with these options built-in:
 
 | Output Device | Audio Source      | Description                                     |
 |---------------|-------------------|-------------------------------------------------|
-| `javasound`     | System Microphone | This uses the Java Sound API for audio capture. |
+| `javasound`   | System Microphone | This uses the Java Sound API for audio capture. |
 
 Additionally, certain bindings register their supported devices as audio sources, e.g. PulseAudio.
 
@@ -45,6 +45,14 @@ openhab> openhab:audio sources
 ```
 
 You can define the default audio source either by textual configuration in `$OPENHAB_CONF/services/runtime.cfg` or in the UI in `Settings->Audio`.
+
+You can also record wav audio files using the console, you should provide the desired record duration in seconds and its filename, if you do not specify the source the default will be used:
+
+```text
+audio record javasound 10 hello.wav
+```
+
+The generated record will be saved at the folder `$OPENHAB_CONF/sounds`.
 
 ## Audio Playback
 
@@ -342,7 +350,7 @@ openhab> openhab:voice startdialog --source javasound --sink sonos:PLAY5:kitchen
 # list running dialogs
 openhab> openhab:voice dialogs
 # register a dialog (same as start but persisting the configuration to spawn dialog on restart or temporal service unavailability).
-openhab> openhab:voice registerdialog --source javasound --sink sonos:PLAY5:kitchen --hlis system,rulehli --stt voicerss --tts voskstt --keyword terminator --ks rustpotterks
+openhab> openhab:voice registerdialog --source javasound --sink sonos:PLAY5:kitchen --hlis system,rulehli --tts voicerss --stt voskstt --keyword terminator --ks rustpotterks
 # list dialogs registrations
 openhab> openhab:voice dialogregs
 # stop a dialog
@@ -350,7 +358,9 @@ openhab> openhab:voice stopdialog --source javasound
 # unregister a dialog, and stop if running
 openhab> openhab:voice unregisterdialog --source javasound
 # run single shot dialog
-openhab> openhab:voice listenandanswer --source javasound --sink sonos:PLAY5:kitchen --hlis system,rulehli --stt voicerss --tts voskstt --keyword terminator --ks rustpotterks
+openhab> openhab:voice listenandanswer --source javasound --sink sonos:PLAY5:kitchen --hlis system,rulehli --tts voicerss --stt voskstt --keyword terminator --ks rustpotterks
+# run transcription and output to the console
+openhab> openhab:voice transcribe --source javasound --stt voskstt
 ```
 
 When an argument is not provided in the command line, the default from the voice settings is used.
