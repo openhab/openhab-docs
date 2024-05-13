@@ -1,0 +1,530 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="heltun_hezwsw5a1_00_000" listed="false">
+    <label>HE-ZW-SW-5A-1 5 Way Switch old</label>
+    <description><![CDATA[
+5 Way Switch old<br /> <h1>Overview</h1><p>The HELTUN 5 channel wall touch panel switch replaces an existing in-wall switch and enables manual or remote switch (On/Off) controls of lights, blinds, motors and heating systems with a maximum load of SA for each channel.</p><p>The switcher has two independent inputs for the relay channels which allows it to control systems with different power sources or to use outputs as dry contacts. Each relay can be controlled by the switcher touch buttons or independently via a Z-Wave gateway.</p><p>The panel has five sensitive capacitive touch control buttons with a two-colour (red and blue) backlight for each button. Button backlight brightness can be adjusted automatically depending on the illumination of the ambient environment or manually in the settings.</p><p>Each touch button can be configured tocontrol any relay (from one uptofive)outputstate in 7 different modes. The buttons also can be used as controller scene activators and the backlight can indicate the gateway mode or associated device status</p> <br /> <h2>Inclusion Information</h2><p>Inclusion</p><ol><li>Start the inclusion mode from the gateway</li><li>To start the inclusion process on the device simultaneously press two bottom touch buttons and hold them for 3 seconds.</li><li>Two upper buttons will sequentially blink blue-red</li><li>If the inclusion has been successful the two upper buttons will turn blue.</li><li>If the inclusion was not completed the two upper buttons will turn red. In that case start the inclusion process again.</li></ol><p>Note: In case the device has been part of the Z-Wave network before and not excluded since, inclusion is not possible. In this case, exclusion or factory reset must be performed before inclusion.</p><p>Security: SO, S2 unauthorized and S2 authorized inclusion modes are supported. If you use S2 authorized inclusion mode the security key should be used in inclusion process.</p><p>NOTE: Be sure to save this key. Without this key it is impossible to perform an inclusion in S2 authorized mode</p> <br /> <h2>Exclusion Information</h2><p>Exclusion</p><p>To exclude the thermostat from the Z-Wave network</p><ol><li>Start the exclusion mode from the gateway</li><li>Simultaneouslypress two bottom touch buttons and hold them for 3 seconds.</li><li>Two upper buttons will sequentially blink blue-red</li><li>If the exclusion has been successful the two upper buttons will turn red</li><li>If the exclusion was not completed the two upper buttons will turn blue. In that case start the exclusion process again.</li></ol> <br /> <h2>Wakeup Information</h2><p>constantly powered, always awake</p>
+    ]]></description>
+    <category>WallSwitch</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_dimmer" typeId="switch_dimmer">
+        <label>Dimmer</label>
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+          <property name="binding:Command:OnOffType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+        </properties>
+      </channel>
+      <channel id="sensor_temperature" typeId="sensor_temperature">
+        <label>Sensor (temperature)</label>
+        <properties>
+          <property name="binding:*:QuantityType">COMMAND_CLASS_SENSOR_MULTILEVEL;type=TEMPERATURE</property>
+        </properties>
+      </channel>
+      <channel id="sensor_luminance" typeId="sensor_luminance">
+        <label>Sensor (luminance)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_SENSOR_MULTILEVEL;type=LUMINANCE</property>
+        </properties>
+      </channel>
+      <channel id="sensor_power" typeId="sensor_power">
+        <label>Sensor (power)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_SENSOR_MULTILEVEL;type=POWER</property>
+        </properties>
+      </channel>
+      <channel id="sensor_relhumidity" typeId="sensor_relhumidity">
+        <label>Sensor (relative humidity)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_SENSOR_MULTILEVEL;type=RELATIVE_HUMIDITY</property>
+        </properties>
+      </channel>
+      <channel id="meter_kwh" typeId="meter_kwh">
+        <label>Electric meter (kWh)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_KWh</property>
+        </properties>
+      </channel>
+      <channel id="meter_watts" typeId="meter_watts">
+        <label>Electric meter (watts)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_W</property>
+        </properties>
+      </channel>
+      <channel id="scene_number" typeId="scene_number">
+        <label>Scene Number</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_CENTRAL_SCENE</property>
+        </properties>
+      </channel>
+      <channel id="battery-level" typeId="system.battery-level">
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_BATTERY</property>
+        </properties>
+      </channel>
+      <channel id="switch_binary1" typeId="switch_binary">
+        <label>Switch 1</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY:1</property>
+        </properties>
+      </channel>
+      <channel id="switch_binary2" typeId="switch_binary">
+        <label>Switch 2</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY:2</property>
+        </properties>
+      </channel>
+      <channel id="switch_binary3" typeId="switch_binary">
+        <label>Switch 3</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY:3</property>
+        </properties>
+      </channel>
+      <channel id="switch_binary4" typeId="switch_binary">
+        <label>Switch 4</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY:4</property>
+        </properties>
+      </channel>
+      <channel id="switch_binary5" typeId="switch_binary">
+        <label>Switch 5</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY:5</property>
+        </properties>
+      </channel>
+      <channel id="switch_binary6" typeId="switch_binary">
+        <label>Switch 6</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY:6</property>
+        </properties>
+      </channel>
+      <channel id="switch_binary7" typeId="switch_binary">
+        <label>Switch 7</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY:7</property>
+        </properties>
+      </channel>
+      <channel id="switch_binary8" typeId="switch_binary">
+        <label>Switch 8</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY:8</property>
+        </properties>
+      </channel>
+      <channel id="switch_binary9" typeId="switch_binary">
+        <label>Switch 9</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY:9</property>
+        </properties>
+      </channel>
+      <channel id="switch_binary10" typeId="switch_binary">
+        <label>Switch 10</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY:10</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Heltun</property>
+      <property name="modelId">HE-ZW-SW-5A-1</property>
+      <property name="manufacturerId">0344</property>
+      <property name="manufacturerRef">0003:0003</property>
+      <property name="dbReference">1597</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_1_1" type="integer" groupName="configuration">
+        <label>1: Backlight 1 control source</label>
+        <description><![CDATA[
+Backlight 1 control source<br /> <h1>Overview</h1><p>0-Backlight is disabled (both colour leds are turned off)</p><p>1—Controlled by touch button</p><p>2-Controlled by gateway or associated device</p><p>Factory default value: 1 </p>
+        ]]></description>
+        <default>1</default>
+      </parameter>
+
+      <parameter name="config_2_1" type="integer" groupName="configuration">
+        <label>2: Backlight 2 control source</label>
+        <description><![CDATA[
+Backlight 2 control source<br /> <h1>Overview</h1><p>0-Backlight is disabled (both colour leds are turned off)</p><p>1—Controlled by touch button</p><p>2-Controlled by gateway or associated device</p><p>Factory default value: 1 </p>
+        ]]></description>
+        <default>1</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_3_1" type="integer" groupName="configuration">
+        <label>3: Backlight 3 control source</label>
+        <description><![CDATA[
+Backlight 2 control source<br /> <h1>Overview</h1><p>0-Backlight is disabled (both colour leds are turned off)</p><p>1—Controlled by touch button</p><p>2-Controlled by gateway or associated device</p><p>Factory default value: 1 </p>
+        ]]></description>
+        <default>1</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_4_1" type="integer" groupName="configuration">
+        <label>4: Backlight 4 control source</label>
+        <description><![CDATA[
+Backlight 2 control source<br /> <h1>Overview</h1><p>0-Backlight is disabled (both colour leds are turned off)</p><p>1—Controlled by touch button</p><p>2-Controlled by gateway or associated device</p><p>Factory default value: 1 </p>
+        ]]></description>
+        <default>1</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_5_1" type="integer" groupName="configuration">
+        <label>5: Backlight 5 control source</label>
+        <description><![CDATA[
+Backlight 5 control source<br /> <h1>Overview</h1><p>0-Backlight is disabled (both colour leds are turned off)</p><p>1—Controlled by touch button</p><p>2-Controlled by gateway or associated device</p><p>Factory default value: 1 </p>
+        ]]></description>
+        <default>1</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_6_1" type="integer" groupName="configuration">
+        <label>6: Relay 1 control source</label>
+        <description><![CDATA[
+Relay 1 control source<br /> <h1>Overview</h1><p>0-Controlled by gateway or associated device</p><p>1 —Controlled by touch button N1 (Top Left)</p><p>2-Controlled by touch button N2 (Top Right)</p><p>3—-Controlled by touch button N3 (Bottom Left)</p><p>4-Controlled by touch button N4 (Bottom Right)</p><p>5—Controlled by touch button N5 (Center)</p><p>Factory default value: Each relay corresponds to its button, e.g. for Relay 3 the</p><p>default value is touch number 3 </p>
+        ]]></description>
+        <default>1</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_7_1" type="integer" groupName="configuration">
+        <label>7: Relay 2 control source</label>
+        <description><![CDATA[
+Relay 1 control source<br /> <h1>Overview</h1><p>0-Controlled by gateway or associated device</p><p>1 —Controlled by touch button N1 (Top Left)</p><p>2-Controlled by touch button N2 (Top Right)</p><p>3—-Controlled by touch button N3 (Bottom Left)</p><p>4-Controlled by touch button N4 (Bottom Right)</p><p>5—Controlled by touch button N5 (Center)</p><p>Factory default value: Each relay corresponds to its button, e.g. for Relay 3 the</p><p>default value is touch number 3 </p>
+        ]]></description>
+        <default>2</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_8_1" type="integer" groupName="configuration">
+        <label>8: Relay 3 control source</label>
+        <description><![CDATA[
+Relay 3 control source<br /> <h1>Overview</h1><p>0-Controlled by gateway or associated device</p><p>1 —Controlled by touch button N1 (Top Left)</p><p>2-Controlled by touch button N2 (Top Right)</p><p>3—-Controlled by touch button N3 (Bottom Left)</p><p>4-Controlled by touch button N4 (Bottom Right)</p><p>5—Controlled by touch button N5 (Center)</p><p>Factory default value: Each relay corresponds to its button, e.g. for Relay 3 the</p><p>default value is touch number 3 </p>
+        ]]></description>
+        <default>3</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_9_1" type="integer" groupName="configuration">
+        <label>9: Relay 4 control source</label>
+        <description><![CDATA[
+Relay 4 control source<br /> <h1>Overview</h1><p>0-Controlled by gateway or associated device</p><p>1 —Controlled by touch button N1 (Top Left)</p><p>2-Controlled by touch button N2 (Top Right)</p><p>3—-Controlled by touch button N3 (Bottom Left)</p><p>4-Controlled by touch button N4 (Bottom Right)</p><p>5—Controlled by touch button N5 (Center)</p><p>Factory default value: Each relay corresponds to its button, e.g. for Relay 3 the</p><p>default value is touch number 3 </p>
+        ]]></description>
+        <default>4</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_10_1" type="integer" groupName="configuration">
+        <label>10: Relay 5 control source</label>
+        <description><![CDATA[
+Relay 5 control source<br /> <h1>Overview</h1><p>0-Controlled by gateway or associated device</p><p>1 —Controlled by touch button N1 (Top Left)</p><p>2-Controlled by touch button N2 (Top Right)</p><p>3—-Controlled by touch button N3 (Bottom Left)</p><p>4-Controlled by touch button N4 (Bottom Right)</p><p>5—Controlled by touch button N5 (Center)</p><p>Factory default value: Each relay corresponds to its button, e.g. for Relay 3 the</p><p>default value is touch number 3 </p>
+        ]]></description>
+        <default>5</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_11_1" type="integer" groupName="configuration">
+        <label>11: Click control mode for touch button 1</label>
+        <description><![CDATA[
+Click control mode for touch button 1<br /> <h1>Overview</h1><p>0-Click function is disabled</p><p>1 — press the button and the relay inverts the state (ON to OFF, OFF to ON like a</p><p>toggle switch) regarding touch button state.</p><p>2 -— press the button and the relay inverts the state (ON to OFF, OFF to ON like a</p><p>toggle switch) regarding button backlight state</p><p>3-—press the button and the relay goes to ON state only</p><p>4—press the button and the relay goes to OFF state only</p><p>5—Timer mode ON-OFF. Press the button and the relay output goes to the ON state</p><p>(contact is closed) then after a specified time it goes back to the OFF state (contactis</p><p>open). The time is specified in parameters 21-25.</p><p>6 — Timer mode OFF-ON. Press the button and the relay output goes to the OFF</p><p>state (contact is open) then after a specified time it goes back to the ON state</p><p>(contact is close). The time is specified in Parameters 21-25</p><p>Factory default value: 1 </p>
+        ]]></description>
+        <default>1</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_12_1" type="integer" groupName="configuration">
+        <label>12: Click control mode for touch button 2</label>
+        <description><![CDATA[
+Click control mode for touch button 2<br /> <h1>Overview</h1><p>0-Click function is disabled</p><p>1 — press the button and the relay inverts the state (ON to OFF, OFF to ON like a</p><p>toggle switch) regarding touch button state.</p><p>2 -— press the button and the relay inverts the state (ON to OFF, OFF to ON like a</p><p>toggle switch) regarding button backlight state</p><p>3-—press the button and the relay goes to ON state only</p><p>4—press the button and the relay goes to OFF state only</p><p>5—Timer mode ON-OFF. Press the button and the relay output goes to the ON state</p><p>(contact is closed) then after a specified time it goes back to the OFF state (contactis</p><p>open). The time is specified in parameters 21-25.</p><p>6 — Timer mode OFF-ON. Press the button and the relay output goes to the OFF</p><p>state (contact is open) then after a specified time it goes back to the ON state</p><p>(contact is close). The time is specified in Parameters 21-25</p><p>Factory default value: 1 </p>
+        ]]></description>
+        <default>1</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_13_1" type="integer" groupName="configuration">
+        <label>13: Click control mode for touch button 3</label>
+        <description><![CDATA[
+Click control mode for touch button 3<br /> <h1>Overview</h1><p>0-Click function is disabled</p><p>1 — press the button and the relay inverts the state (ON to OFF, OFF to ON like a</p><p>toggle switch) regarding touch button state.</p><p>2 -— press the button and the relay inverts the state (ON to OFF, OFF to ON like a</p><p>toggle switch) regarding button backlight state</p><p>3-—press the button and the relay goes to ON state only</p><p>4—press the button and the relay goes to OFF state only</p><p>5—Timer mode ON-OFF. Press the button and the relay output goes to the ON state</p><p>(contact is closed) then after a specified time it goes back to the OFF state (contactis</p><p>open). The time is specified in parameters 21-25.</p><p>6 — Timer mode OFF-ON. Press the button and the relay output goes to the OFF</p><p>state (contact is open) then after a specified time it goes back to the ON state</p><p>(contact is close). The time is specified in Parameters 21-25</p><p>Factory default value: 1 </p>
+        ]]></description>
+        <default>1</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_14_1" type="integer" groupName="configuration">
+        <label>14: Click control mode for touch button 4</label>
+        <description><![CDATA[
+Click control mode for touch button 4<br /> <h1>Overview</h1><p>0-Click function is disabled</p><p>1 — press the button and the relay inverts the state (ON to OFF, OFF to ON like a</p><p>toggle switch) regarding touch button state.</p><p>2 -— press the button and the relay inverts the state (ON to OFF, OFF to ON like a</p><p>toggle switch) regarding button backlight state</p><p>3-—press the button and the relay goes to ON state only</p><p>4—press the button and the relay goes to OFF state only</p><p>5—Timer mode ON-OFF. Press the button and the relay output goes to the ON state</p><p>(contact is closed) then after a specified time it goes back to the OFF state (contactis</p><p>open). The time is specified in parameters 21-25.</p><p>6 — Timer mode OFF-ON. Press the button and the relay output goes to the OFF</p><p>state (contact is open) then after a specified time it goes back to the ON state</p><p>(contact is close). The time is specified in Parameters 21-25</p><p>Factory default value: 1 </p>
+        ]]></description>
+        <default>1</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_15_1" type="integer" groupName="configuration">
+        <label>15: Click control mode for touch button 5</label>
+        <description><![CDATA[
+Click control mode for touch button 5<br /> <h1>Overview</h1><p>0-Click function is disabled</p><p>1 — press the button and the relay inverts the state (ON to OFF, OFF to ON like a</p><p>toggle switch) regarding touch button state.</p><p>2 -— press the button and the relay inverts the state (ON to OFF, OFF to ON like a</p><p>toggle switch) regarding button backlight state</p><p>3-—press the button and the relay goes to ON state only</p><p>4—press the button and the relay goes to OFF state only</p><p>5—Timer mode ON-OFF. Press the button and the relay output goes to the ON state</p><p>(contact is closed) then after a specified time it goes back to the OFF state (contactis</p><p>open). The time is specified in parameters 21-25.</p><p>6 — Timer mode OFF-ON. Press the button and the relay output goes to the OFF</p><p>state (contact is open) then after a specified time it goes back to the ON state</p><p>(contact is close). The time is specified in Parameters 21-25</p><p>Factory default value: 1 </p>
+        ]]></description>
+        <default>1</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_16_1" type="integer" groupName="configuration">
+        <label>16: Hold control mode for touch button 1</label>
+        <description><![CDATA[
+Hold control mode for touch button 1<br /> <h1>Overview</h1><p>0—Hold function is disabled</p><p>1 — Operate like click</p><p>2 — When the button is held the relay output state is ON, as soon as the button is</p><p>released the relay output state changes to OFF (momentary switch).</p><p>3-— When the button is held the relay output state is OFF, as soon as the button is</p><p>released the relay output state changes to ON (momentary switch).</p><p>Factory default value: 1</p>
+        ]]></description>
+        <default>1</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_17_1" type="integer" groupName="configuration">
+        <label>17: Hold control mode for touch button 2</label>
+        <description><![CDATA[
+Hold control mode for touch button 2<br /> <h1>Overview</h1><p>0—Hold function is disabled</p><p>1 — Operate like click</p><p>2 — When the button is held the relay output state is ON, as soon as the button is</p><p>released the relay output state changes to OFF (momentary switch).</p><p>3-— When the button is held the relay output state is OFF, as soon as the button is</p><p>released the relay output state changes to ON (momentary switch).</p><p>Factory default value: 1</p>
+        ]]></description>
+        <default>1</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_18_1" type="integer" groupName="configuration">
+        <label>18: Hold control mode for touch button 3</label>
+        <description><![CDATA[
+Hold control mode for touch button 3<br /> <h1>Overview</h1><p>0—Hold function is disabled</p><p>1 — Operate like click</p><p>2 — When the button is held the relay output state is ON, as soon as the button is</p><p>released the relay output state changes to OFF (momentary switch).</p><p>3-— When the button is held the relay output state is OFF, as soon as the button is</p><p>released the relay output state changes to ON (momentary switch).</p><p>Factory default value: 1</p>
+        ]]></description>
+        <default>1</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_19_1" type="integer" groupName="configuration">
+        <label>19: Hold control mode for touch button 4</label>
+        <description><![CDATA[
+Hold control mode for touch button 4<br /> <h1>Overview</h1><p>0—Hold function is disabled</p><p>1 — Operate like click</p><p>2 — When the button is held the relay output state is ON, as soon as the button is</p><p>released the relay output state changes to OFF (momentary switch).</p><p>3-— When the button is held the relay output state is OFF, as soon as the button is</p><p>released the relay output state changes to ON (momentary switch).</p><p>Factory default value: 1</p>
+        ]]></description>
+        <default>1</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_20_1" type="integer" groupName="configuration">
+        <label>20: Hold control mode for touch button 5</label>
+        <description><![CDATA[
+Hold control mode for touch button 5<br /> <h1>Overview</h1><p>0—Hold function is disabled</p><p>1 — Operate like click</p><p>2 — When the button is held the relay output state is ON, as soon as the button is</p><p>released the relay output state changes to OFF (momentary switch).</p><p>3-— When the button is held the relay output state is OFF, as soon as the button is</p><p>released the relay output state changes to ON (momentary switch).</p><p>Factory default value: 1</p>
+        ]]></description>
+        <default>1</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_21_1" type="integer" groupName="configuration">
+        <label>21: Timer mode duration for button 1</label>
+        <description><![CDATA[
+Timer mode duration for button 1<br /> <h1>Overview</h1><p>These parameters specifiy the duration in seconds for the Timer mode (value 5 or 6</p><p>in Parameters 11-15 respectively). Press the button and the relay output goes to</p><p>ON/OFF for the specified time then changes back to OFF/ON. This function can be</p><p>used to open/close garage doors, blinds, curtains, etc. or to turn off the security fora</p><p>short time. Time can be configured from 1 sec to 255 sec.</p><p>Factory default value: 1</p>
+        ]]></description>
+        <default>1</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_22_1" type="integer" groupName="configuration">
+        <label>22: Timer mode duration for button 2</label>
+        <description><![CDATA[
+Timer mode duration for button 2<br /> <h1>Overview</h1><p>These parameters specifiy the duration in seconds for the Timer mode (value 5 or 6</p><p>in Parameters 11-15 respectively). Press the button and the relay output goes to</p><p>ON/OFF for the specified time then changes back to OFF/ON. This function can be</p><p>used to open/close garage doors, blinds, curtains, etc. or to turn off the security fora</p><p>short time. Time can be configured from 1 sec to 255 sec.</p><p>Factory default value: 1</p>
+        ]]></description>
+        <default>1</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_23_1" type="integer" groupName="configuration">
+        <label>23: Timer mode duration for button 3</label>
+        <description><![CDATA[
+Timer mode duration for button 3<br /> <h1>Overview</h1><p>These parameters specifiy the duration in seconds for the Timer mode (value 5 or 6</p><p>in Parameters 11-15 respectively). Press the button and the relay output goes to</p><p>ON/OFF for the specified time then changes back to OFF/ON. This function can be</p><p>used to open/close garage doors, blinds, curtains, etc. or to turn off the security fora</p><p>short time. Time can be configured from 1 sec to 255 sec.</p><p>Factory default value: 1</p>
+        ]]></description>
+        <default>1</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_24_1" type="integer" groupName="configuration">
+        <label>24: Timer mode duration for button 4</label>
+        <description><![CDATA[
+Timer mode duration for button 1<br /> <h1>Overview</h1><p>These parameters specifiy the duration in seconds for the Timer mode (value 5 or 6</p><p>in Parameters 11-15 respectively). Press the button and the relay output goes to</p><p>ON/OFF for the specified time then changes back to OFF/ON. This function can be</p><p>used to open/close garage doors, blinds, curtains, etc. or to turn off the security fora</p><p>short time. Time can be configured from 1 sec to 255 sec.</p><p>Factory default value: 1</p>
+        ]]></description>
+        <default>1</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_25_1" type="integer" groupName="configuration">
+        <label>25: Timer mode duration for button 5</label>
+        <description><![CDATA[
+Timer mode duration for button 5<br /> <h1>Overview</h1><p>These parameters specifiy the duration in seconds for the Timer mode (value 5 or 6</p><p>in Parameters 11-15 respectively). Press the button and the relay output goes to</p><p>ON/OFF for the specified time then changes back to OFF/ON. This function can be</p><p>used to open/close garage doors, blinds, curtains, etc. or to turn off the security fora</p><p>short time. Time can be configured from 1 sec to 255 sec.</p><p>Factory default value: 1</p>
+        ]]></description>
+        <default>1</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_26_2" type="integer" groupName="configuration">
+        <label>26: Power of the Relay 1 load in W</label>
+        <description><![CDATA[
+Power of the Relay 1 load in W<br /> <h1>Overview</h1><p>Itis possible to specify the consumption of the loads in watts for each relays channel.</p><p>The device will calculate total consumption relativel to the time since the output of</p><p>the relays is in the ON state.</p><p>Factory default value: 0</p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_27_2" type="integer" groupName="configuration">
+        <label>27: Power of the Relay 2 load in W</label>
+        <description><![CDATA[
+Power of the Relay 2 load in W<br /> <h1>Overview</h1><p>Itis possible to specify the consumption of the loads in watts for each relays channel.</p><p>The device will calculate total consumption relativel to the time since the output of</p><p>the relays is in the ON state.</p><p>Factory default value: 0</p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_28_2" type="integer" groupName="configuration">
+        <label>28: Power of the Relay 3 load in W</label>
+        <description><![CDATA[
+Power of the Relay 3 load in W<br /> <h1>Overview</h1><p>Itis possible to specify the consumption of the loads in watts for each relays channel.</p><p>The device will calculate total consumption relativel to the time since the output of</p><p>the relays is in the ON state.</p><p>Factory default value: 0</p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_29_2" type="integer" groupName="configuration">
+        <label>29: Power of the Relay 4 load in W</label>
+        <description><![CDATA[
+Power of the Relay 4 load in W<br /> <h1>Overview</h1><p>Itis possible to specify the consumption of the loads in watts for each relays channel.</p><p>The device will calculate total consumption relativel to the time since the output of</p><p>the relays is in the ON state.</p><p>Factory default value: 0</p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_30_2" type="integer" groupName="configuration">
+        <label>30: Power of the Relay 5 load in W</label>
+        <description><![CDATA[
+Power of the Relay 5 load in W<br /> <h1>Overview</h1><p>Itis possible to specify the consumption of the loads in watts for each relays channel.</p><p>The device will calculate total consumption relativel to the time since the output of</p><p>the relays is in the ON state.</p><p>Factory default value: 0</p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_31_1" type="integer" groupName="configuration">
+        <label>31: Red colour backlight brightness</label>
+        <description><![CDATA[
+Red colour backlight brightness<br /> <h1>Overview</h1><p>To activate the auto adjust function for the red colour backlights set the parameter</p><p>value 0. The comfort brightness for the red colour can be chosen depending on the</p><p>room illumination in Parameters 28 and 29.</p><p>0—Auto, 1 —Level 1 (Min), 2—Level 2, 3—Level 3 (Max)</p><p>Factory default value: 0 </p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_32_1" type="integer" groupName="configuration">
+        <label>32: Blue colour backlight brightness</label>
+        <description><![CDATA[
+Blue colour backlight brightness<br /> <h1>Overview</h1><p>To activate the auto adjust function for the blue colour backlights set the parameter</p><p>value 0. The comfort brightness for the red colour can be chosen depending on the</p><p>room illumination in Parameters 28 and 29.</p><p>0—Auto, 1 —Level 1 (Min), 2—Level 2, 3—Level 3 (Max)</p><p>Factory default value: 0 </p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_33_2" type="integer" groupName="configuration">
+        <label>33: Red colour auto brightness level 1 max lumens</label>
+        <description><![CDATA[
+Red colour auto brightness level 1 max lumens<br /> <h1>Overview</h1><p>The value indicates the maximum level of ambient illumination during which the</p><p>brightness of the red colour backlight will be at level 1 (the lowest level). For example</p><p>if this parameter value is set to 30 and the ambient illumination is in range 0-30 then</p><p>the backlight will be in the lowest brightness level. As soon as the illumination will be</p><p>31 or higher the backlight brightness will be changed to Level 2.</p><p>Factory default value: 30. </p>
+        ]]></description>
+        <default>30</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_34_2" type="integer" groupName="configuration">
+        <label>34: Red colour auto brightness level 2 max lumens</label>
+        <description><![CDATA[
+Red colour auto brightness level 2 max lumens<br /> <h1>Overview</h1><p>The value indicates the maximum level of ambient illumination during which the</p><p>brightness of the red colour backlight will be at level 2. In case the illumination is in</p><p>the range Parameter 33 - Parameter 34 the display brightness will be on level 2. If the</p><p>illumination drops below the value of Parameter 33 the brightness will be decreases</p><p>to level 1, and if the illumination increases beyond the value of Parameter 34 the</p><p>brightness will rise to level 3.</p><p>Factory default value: 200. </p>
+        ]]></description>
+        <default>200</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_35_2" type="integer" groupName="configuration">
+        <label>35: Blue colour auto brightness level 1 max lumens</label>
+        <description><![CDATA[
+Blue colour auto brightness level 1 max lumens<br /> <h1>Overview</h1><p>The value indicates the maximum level of ambient illumination during which the</p><p>brightness of the blue colour backlight will be at level 1 (at the lowest level).</p><p>Factory default value: 30. </p>
+        ]]></description>
+        <default>30</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_36_2" type="integer" groupName="configuration">
+        <label>36: Blue colour auto brightness level 2 max lumens</label>
+        <description><![CDATA[
+Blue colour auto brightness level 2 max lumens<br /> <h1>Overview</h1><p>The value indicates the maximum level of ambient illumination during which the</p><p>brightness of the blue colour backlight will be at level 2. If the illumination increases</p><p>beyond this value the brightness will rise to level 3.</p><p>Factory default value: 200. </p>
+        ]]></description>
+        <default>200</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_37_1" type="integer" groupName="configuration">
+        <label>37: Active state backlight colour</label>
+        <description><![CDATA[
+Active state backlight colour<br /> <h1>Overview</h1><p>Choose the value 0 if the red colour backlight is required for button active state and</p><p>the blue colour for the inactive state. Choose the value 1 if the blue colour backlight</p><p>is preferable for the active state and the red colour for the button inactive state.</p><p>Factory default value is 1. </p>
+        ]]></description>
+        <default>1</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_38_2" type="integer" groupName="configuration">
+        <label>38: Temperature sensor calibration</label>
+        <description><![CDATA[
+Temperature sensor calibration<br /> <h1>Overview</h1><p>This parameter defines the offset value for the air temperature sensor. If the internal</p><p>temperature sensor is not correctly calibrated the change of temperature can be</p><p>made by adjusting the values by up to +/- 9.5°C. This value will be added or</p><p>subtracted from the internal air temperature sensor reading. To define the offset</p><p>value set it is multiplied by 10 (value*10). E.g. the value -15 means -1.5°C.</p><p>Factory default value: 0 </p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_39_1" type="integer" groupName="configuration">
+        <label>39: Temperature difference to send to controller value X 10</label>
+        <description><![CDATA[
+Temperature difference to send to controller value X 10<br /> <h1>Overview</h1><p>The switcher will send a new temperature to the gateway only in case the</p><p>temperature change is equal or greater than the parameter value/10 (value divided</p><p>by 10) specified in this parameter. For example if the parameter value is 3 and</p><p>sensor reading is 24.0°C the switcher will send new sensor reading to the gateway</p><p>only in case if itis 24.3°C and above or in case ifit is 23.7°C and below.</p><p>From 1 (0.1°C) to 10 (1.0°C) can be chosen.</p><p>Factory default value: 2 (0.2°C)</p><p>Note: The switcher sensor is very sensitive to changes of ambient temperature and</p><p>can often vary by +0.1C, therefore it is recommended to set this parameter from 2</p><p>(0.2°C) and above to reduce the load on your Z-Wave network. </p>
+        ]]></description>
+        <default>2</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_40_1" type="integer" groupName="configuration">
+        <label>40: Touch buttons sensitivity. 10=Super sensitive, 60=lowest sensitivity</label>
+        <description><![CDATA[
+Touch buttons sensitivity. 10=Super sensitive, 60=lowest sensitivity<br /> <h1>Overview</h1><p>The device touch buttons sensitivity can be adjusted.</p><p>From 10 (supper sensitive) to 60 (minimum sensitivity) can be chosen.</p><p>Factory default value: 20.</p><p>Note: Too high sensitivity can lead to false detection. Do not change this parameter</p><p>unless there is an urgent need. </p>
+        ]]></description>
+        <default>20</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_41_1" type="integer" groupName="configuration">
+        <label>41: Gateway</label>
+        <description><![CDATA[
+Gateway<br /> <h1>Overview</h1><p>If Fibaro Home Center Lite or Fibaro Home Center 2 is used as a gateway for correct</p><p>communication of the devices set this parameter 1. For other gateways choose 0.</p><p>Factory default value: 0. </p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>
