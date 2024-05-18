@@ -20,6 +20,18 @@ Double Relay Switch 2x1.5kW<br /> <h1>Overview</h1><p>Remotely Controlled Relay 
           <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY,COMMAND_CLASS_BASIC</property>
         </properties>
       </channel>
+      <channel id="config_decimal_param4" typeId="config_decimal">
+        <label>Switch 1 OFF-delay time</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_CONFIGURATION;parameter=4</property>
+        </properties>
+      </channel>
+      <channel id="config_decimal_param5" typeId="config_decimal">
+        <label>Switch 2 OFF-delay time</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_CONFIGURATION;parameter=5</property>
+        </properties>
+      </channel>
       <channel id="switch_binary1" typeId="switch_binary">
         <label>Switch 1</label>
         <properties>
@@ -297,5 +309,21 @@ Enable/Disable operation of devices associated to group 1<br /> <h1>Overview</h1
     </config-description>
 
   </thing-type>
+
+  <channel-type id="fibaro_fgs222_00_000_config_decimal_param4">
+    <item-type>Number</item-type>
+    <label>Relay 1: OFF-delay time (100ms steps)</label>
+    <description>Auto off relay 1 after set time, in 100ms increments (default: 0 - off)</description>
+    <state pattern="%s">
+    </state>
+  </channel-type>
+
+  <channel-type id="fibaro_fgs222_00_000_config_decimal_param5">
+    <item-type>Number</item-type>
+    <label>Relay 2: OFF-delay time (100ms steps)</label>
+    <description>Auto off relay 2 after set time, in 100ms increments (default: 0 - off)</description>
+    <state pattern="%s">
+    </state>
+  </channel-type>
 
 </thing:thing-descriptions>
