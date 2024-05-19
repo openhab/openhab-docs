@@ -37,6 +37,34 @@ and cancels the same timer in Rule 2
 
 ![timer-shared-cancel](../images/blockly/blockly-timer-shared-cancel.png)
 
+## Timer context
+
+Timers provide a statement block where the blocks reside that are run when the timer triggers.
+The context allows data to be provided which is later used when the blocks are triggered by the timer (note that in many cases you can just leave the context empty or provide an [undefined block](rules-blockly-standard-ext.md#logic))
+
+To provide a context put any block to the context, which can be a block of any type like String, Number, a variable or even a Dictionary which could hold several values via a key/value mapping.
+
+The context can be used within the timer statement block by utilizing the "timer context" block:
+
+![blockly-timer-context.png](../images/blockly/blockly-timer-context.png)
+
+Here are some examples how this feature can be used
+
+![timer-context-examples](../images/blockly/blockly-timer-context-examples.png)
+
+The loop is in particular interesting to look at:
+
+- The loop counts from 1 to 10 (actually to 9)
+- It therefore creates 5 timers where the first is triggered after 1 seconds, the second after 3 seconds and so on.
+- Each timer's name is based on that counter index, i.e. the first timer's name is LoopCreatedTimer1 and the last timer is named LoopCreatedTimer9.
+- The timer name is then provided to the timer block itself via the context which could then be used in various ways (here it just prints it out).
+
+In case you don't like the context input part be empty you can add the undefined- or null-block that can be found in the [logic section](rules-blockly-standard-ext.md#logic) to the timer:
+
+![timer-context-undefined](../images/blockly/blockly-timer-context-undefined.png)
+
+## Timer Blocks
+
 ### Wait for
 
 ![waitfor](../images/blockly/blockly-waitfor.png)
