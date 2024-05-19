@@ -927,4 +927,4 @@ Modifying or removing update instructions after they have been merged is not per
 Each new contribution of update instructions MUST increase the `thingTypeVersion`, even if there was no release.
 The `thingTypeVersion` is bound to a thing-type, different thing types may have different versions.
 
-The full XML schema for update instructions can be found here: [https://www.openhab.org/schemas/update-description-1.0.0.xsd](https://www.openhab.org/schemas/update-description-1.0.0.xsd).   
+The full XML schema for update instructions can be found here: [https://www.openhab.org/schemas/update-description-1.0.0.xsd](https://www.openhab.org/schemas/update-description-1.0.0.xsd).
