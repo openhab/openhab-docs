@@ -31,9 +31,9 @@ A bridge is a specific type of thing as it can additionally provide access to ot
 Which Things can be associated through which bridge type is defined within the description of a thing:
 
 ```xml
-    <thing-type id="thingTypeID">
+    <thing-type id="thing-type-id">
         <supported-bridge-type-refs>
-            <bridge-type-ref id="bridgeTypeID" />
+            <bridge-type-ref id="bridge-type-id" />
         </supported-bridge-type-refs>
         <label>Sample Thing</label>
         <description>Some sample description</description>
@@ -46,7 +46,7 @@ Bindings may optionally set the listing of a thing type.
 By doing do, they indicate to user interfaces whether it should be shown to the users or not, e.g. when pairing things manually:
 
 ```xml
-    <thing-type id="thingTypeID" listed="false">
+    <thing-type id="thing-type-id" listed="false">
         ...
     </thing-type>
 ```
@@ -76,24 +76,33 @@ Overriding labels of a channel type must only be done if the very same functiona
 
 ### State Channel Types
 
-The following XML snippet shows a thing type definition with 2 channels and one referenced channel type:
+The following XML snippet shows a thing type definition with three channels and two referenced channel types:
 
 ```xml
-<thing-type id="thingTypeID">
+<thing-type id="thing-type-id">
     <label>Sample Thing</label>
     <description>Some sample description</description>
     <channels>
-        <channel id="switch" typeId="powerSwitch" />
-        <channel id="temperature" typeId="setpointTemperature" />
+        <channel id="switch" typeId="power-switch" />
+        <channel id="temperature" typeId="setpoint-temperature" />
+        <channel id="room-humidity" typeId="humidity" />
     </channels>
 </thing-type>
-<channel-type id="setpointTemperature" advanced="true">
+<channel-type id="setpoint-temperature" advanced="true">
     <item-type>Number</item-type>
     <label>Setpoint Temperature</label>
     <category>Temperature</category>
     <state min="12" max="30" step="0.5" pattern="%.1f °C" readOnly="false" />
 </channel-type>
+<channel-type id="humidity">
+    <item-type unitHint="%">Number:Dimensionless</item-type>
+    <label>Humidity</label>
+    <state readOnly="true" pattern="%.1f %%"/>
+</channel-type>
 ```
+
+The `item-type` element defines the [item type](../../configuration/items.md#type) to be used when a linked item is created.
+If the `item-type` is a `Number:<dimension>`, then a `unitHint` attribute may be provided to suggest the measurement unit to be used when a linked item is created.
 
 In order to reuse identical channels in different bindings a channel type can be system-wide.
 A channel type can be declared as system-wide by setting its `system` property to true and can then be referenced using a `system.` prefix in a `channel` `typeId` attribute in any binding - note that this should only be done in the core framework, but not by individual bindings!
@@ -101,7 +110,7 @@ A channel type can be declared as system-wide by setting its `system` property t
 The following XML snippet shows a system channel type definition and thing type definition that references it:
 
 ```xml
-<thing-type id="thingTypeID">
+<thing-type id="thing-type-id">
     <label>Sample Thing</label>
     <description>Some sample description</description>
     <channels>
@@ -158,11 +167,11 @@ If a functionality is rarely used it should be better marked as `advanced`.
 The following XML snippet shows a trigger channel:
 
 ```xml
-<thing-type id="thingTypeID">
+<thing-type id="thing-type-id">
     <label>Sample Thing</label>
     <description>Some sample description</description>
     <channels>
-        <channel id="s" typeId="trigger-channel" />
+        <channel id="sample-channel" typeId="trigger-channel" />
     </channels>
 </thing-type>
 <channel-type id="trigger-channel">
@@ -422,11 +431,11 @@ A thing can only have direct channels or channel groups, but not both.
 Inside the thing types XML file channel groups can be defined like this:
 
 ```xml
-<thing-type id="multiChannelSwitchActor">
+<thing-type id="multi-channel-switch-actor">
     <!-- ... -->
     <channel-groups>
-        <channel-group id="switchActor1" typeId="switchActor" />
-        <channel-group id="switchActor2" typeId="switchActor" />
+        <channel-group id="switch-actor-1" typeId="switch-actor" />
+        <channel-group id="switch-actor-2" typeId="switch-actor" />
     </channel-groups>
     <!-- ... -->
 </thing-type>
@@ -437,7 +446,7 @@ The group type must have a label, an optional description, and an optional categ
 Moreover the list of contained channels must be specified:
 
 ```xml
-<channel-group-type id="switchActor">
+<channel-group-type id="switch-actor">
     <label>Switch Actor</label>
     <description>This is a single switch actor with a switch channel</description>
     <category>Light</category>
@@ -465,7 +474,7 @@ Among others the one solution could use the data during a device pairing process
 To define such thing meta data the thing type definition provides the possibility to specify so-called `properties`:
 
 ```xml
-    <thing-type id="thingTypeId">
+    <thing-type id="thing-type-id">
         ...
         <properties>
              <property name="vendor">MyThingVendor</property>
@@ -496,7 +505,7 @@ Having this property identified per binding it could be used as the `representat
 The `representation property` shall be defined in the thing type XML:
 
 ```xml
-    <thing-type id="thingTypeId">
+    <thing-type id="thing-type-id">
         ...
         <properties>
             <property name="vendor">Philips</property>
@@ -523,7 +532,7 @@ When comparing representation properties, the auto-ignore service checks for mat
 If a configuration parameter will be used, then its respective `parameter` shall be declared in the XML `config-description` section or the `config-description` [XML file](../addons/config-xml.md):
 
 ```xml
-    <thing-type id="thingTypeId">
+    <thing-type id="thing-type-id">
         ...
         <representation-property>uniqueId</representation-property>
         ...
@@ -569,12 +578,12 @@ Nevertheless, this value can be overridden in the channel definition.
 In this example, an auto update policy is defined for the channel type, but is overridden in the channel definition:
 
 ```xml
-<channel-type id="channel">
+<channel-type id="channel-type-id">
     <label>Channel with an auto update policy</label>
     <autoUpdatePolicy>recommend</autoUpdatePolicy>
 </channel-type>
 
-<thing-type id="thingtype">
+<thing-type id="thing-type-id">
     <label>Sample Thing</label>
     <description>Thing type which overrides the auto update policy of a channel</description>
     <channels>
@@ -616,9 +625,9 @@ The full Java API for bridge and _Thing_ descriptions can be found in the Java p
     xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
         https://openhab.org/schemas/thing-description-1.0.0.xsd">
 
-  <bridge-type id="bridgeTypeID" listed="{true|false}" extensible="channelTypeId1,channelTypeId2,...">
+  <bridge-type id="bridge-type-id" listed="{true|false}" extensible="channel-type-id-1,channel-type-id-2,...">
     <supported-bridge-type-refs>
-      <bridge-type-ref id="bridgeTypeID" />
+      <bridge-type-ref id="bridge-type-ref-id" />
       ...
     </supported-bridge-type-refs>
 
@@ -627,9 +636,9 @@ The full Java API for bridge and _Thing_ descriptions can be found in the Java p
     <category>String</category>
 
     <channels>
-      <channel id="channelID" typeId="channelTypeID" />
+      <channel id="channel-id" typeId="channel-type-id" />
       OR
-      <channel id="channelID" typeId="channelTypeID">
+      <channel id="channel-id" typeId="channel-type-id">
         <label>String</label>
         <description>String</description>
       </channel>
@@ -637,9 +646,9 @@ The full Java API for bridge and _Thing_ descriptions can be found in the Java p
     </channels>
     OR
     <channel-groups>
-      <channel-group id="channelGroupID" typeId="channelGroupTypeID" />
+      <channel-group id="channel-group-id" typeId="channel-group-type-id" />
       OR
-      <channel-group id="channelGroupID" typeId="channelGroupTypeID">
+      <channel-group id="channel-group-id" typeId="channel-group-type-id">
         <label>String</label>
         <description>String</description>
       </channel-group>
@@ -659,9 +668,9 @@ The full Java API for bridge and _Thing_ descriptions can be found in the Java p
     <config-description-ref uri="{binding|thing-type|channel-type|any_other}:bindingID:..." />
   </bridge-type>
 
-  <thing-type id="thingTypeID" listed="{true|false}" extensible="channelTypeId1,channelTypeId2,...">
+  <thing-type id="thing-type-id" listed="{true|false}" extensible="channel-type-id-1,channel-type-id-2,...">
     <supported-bridge-type-refs>
-      <bridge-type-ref id="bridgeTypeID" />
+      <bridge-type-ref id="bridge-type-id" />
       ...
     </supported-bridge-type-refs>
 
@@ -670,9 +679,9 @@ The full Java API for bridge and _Thing_ descriptions can be found in the Java p
     <category>String</category>
 
     <channels>
-      <channel id="channelID" typeId="channelTypeID" />
+      <channel id="channel-id" typeId="channel-type-id" />
       OR
-      <channel id="channelID" typeId="channelTypeID">
+      <channel id="channel-id" typeId="channel-type-id">
         <label>String</label>
         <description>String</description>
       </channel>
@@ -680,9 +689,9 @@ The full Java API for bridge and _Thing_ descriptions can be found in the Java p
     </channels>
     OR
     <channel-groups>
-      <channel-group id="channelGroupID" typeId="channelGroupTypeID" />
+      <channel-group id="channel-group-id" typeId="channel-group-type-id" />
       OR
-      <channel-group id="channelGroupID" typeId="channelGroupTypeID">
+      <channel-group id="channel-group-id" typeId="channel-group-type-id">
         <label>String</label>
         <description>String</description>
       </channel-group>
@@ -702,7 +711,7 @@ The full Java API for bridge and _Thing_ descriptions can be found in the Java p
     <config-description-ref uri="{binding|thing-type|channel-type|any_other}:bindingID:..." />
   </thing-type>
 
-  <channel-type id="channelTypeID" advanced="{true|false}">
+  <channel-type id="channel-type-id" advanced="{true|false}">
     <item-type>Dimmer</item-type>
     OR
     <kind>trigger</kind>
@@ -749,13 +758,13 @@ The full Java API for bridge and _Thing_ descriptions can be found in the Java p
     <config-description-ref uri="{binding|thing-type|channel-type|any_other}:bindingID:..." />
   </channel-type>
 
-  <channel-group-type id="channelGroupTypeID">
+  <channel-group-type id="channel-group-type-id">
     <label>String</label>
     <description>String</description>
     <category>String</category>
 
     <channels>
-      <channel id="channelID" typeId="channelTypeID" />
+      <channel id="channel-id" typeId="channel-type-id" />
       ...
     </channels>
   </channel-group-type>
@@ -871,7 +880,7 @@ The following update instruction changes the channel-type for the `battery-level
 
   <thing-type uid="deconz:batterysensor">
     <instruction-set targetVersion="1">
-      <update-channel id="battery_level">
+      <update-channel id="battery-level">
         <type>system:battery-level</type>
       </update-channel>
     </instruction-set>
@@ -891,7 +900,7 @@ The following removes the `water_level` channel from `foo:pool` things and adds 
 
   <thing-type uid="foo:pool">
     <instruction-set targetVersion="1">
-      <remove-channel id="water_level">
+      <remove-channel id="water-level">
       </remove-channel>
       <add-channel id="chlorine">
         <type>foo:concentration</type>
@@ -912,8 +921,8 @@ In addition to the update instructions, the thing-type definition needs to add a
   </supported-bridge-type-refs>
   <label>Battery Sensor</label>
   <channels>
-    <channel typeId="system.battery-level" id="battery_level"/>
-    <channel typeId="last_updated" id="last_updated"/>
+    <channel typeId="system.battery-level" id="battery-level"/>
+    <channel typeId="last-updated" id="last-updated"/>
   </channels>
   <properties>
     <property name="thingTypeVersion">1</property>
