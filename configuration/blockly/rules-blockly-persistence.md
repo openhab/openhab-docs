@@ -38,7 +38,7 @@ _Function:_ computes any of the below functions for the given item since the tim
 
 openHAB supports history and future values.
 A typical example for future values is a weather forecast.
-Due to adding future values in openHAB the amount of attributes has benn vastly increased and the names had to be renamed to become more specific in terms of historic and future states.
+Due to adding future values in openHAB the amount of attributes has been vastly increased and the names had to be renamed to become more specific in terms of historic and future states.
 
 **Important:** **Due to a breaking change of the internal methods in openHAB 4.2, Blockly rules that use persistence methods need to be migrated once.**
 This does not happen automatically but needs to be done opening the blockly rule once and re-save it.
