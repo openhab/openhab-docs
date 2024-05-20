@@ -12,7 +12,6 @@ title: Rules Blockly - openHAB Extensions to the Standard
 
 This section explains only the blocks that have been added to the standard blocks by openHAB
 
-
 ## Logic
 
 One of the most commonly used standard blocks are conditions blocks.
@@ -244,7 +243,7 @@ Example:
 ## Loops
 
 Even though there a no specialized openHAB blocks provided, loops are used rather often.
-Therefore there is a good introduction to loops available which can be viewed at ![youtube](../images/blockly/youtube-logo-small.png) [Loops in Blockly](https://youtu.be/EdllUlJ7p6k?t=1947)
+Therefore, there is a good introduction to loops available which can be viewed at ![youtube](../images/blockly/youtube-logo-small.png) [Loops in Blockly](https://youtu.be/EdllUlJ7p6k?t=1947)
 
 ## Functions
 

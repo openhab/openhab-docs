@@ -115,9 +115,11 @@ Save it and that's it.
 :::
 
 ::: tab JS
+
 ```javascript
  rules.runRule('scene_office_dimmed_light', {});
 ```
+
 :::
 
 ::: tab JRuby

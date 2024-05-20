@@ -146,6 +146,7 @@ There exist system-wide channel types that are available by default and which sh
 | electric-power        | system.electric-power        | Number:Power             | Energy           | Measurement, Power        | Electric power                                                                                                                                                                                                          |
 | electric-voltage      | system.electric-voltage      | Number:ElectricPotential | Energy           | Measurement, Voltage      | Electric voltage                                                                                                                                                                                                        |
 | electrical-energy     | system.electric-energy       | Number:Energy            | Energy           | Measurement, Energy       | Electrical energy                                                                                                                                                                                                       |
+
 The `advanced` property indicates whether this channel is a basic or a more specific functionality of the thing.
 If `advanced` is set to `true` a user interface may hide this channel by default.
 The default value is `false` and thus will be taken if the `advanced` attribute is not specified.
@@ -787,7 +788,7 @@ The full Java API for bridge and _Thing_ descriptions can be found in the Java p
 | label                                          | A human-readable label for the channel                                                                                                                                                                       | optional                   |
 | description                                    | A human-readable description for the channel                                                                                                                                                                 | optional                   |
 | channel-groups                                 | The channel groups defining the channels the bridge/Thing provides                                                                                                                                           | optional                   |
-| channel-group.id                               | An identifier of the channel group the bridge/Thing provides                                                                                                                                                 | mandatory                  ||
+| channel-group.id                               | An identifier of the channel group the bridge/Thing provides                                                                                                                                                 | mandatory                  |
 | channel-group.typeId                           | An identifier of the channel group type definition the bridge/Thing provides                                                                                                                                 | mandatory                  |
 | properties                                     | Name/value pairs for properties to be set to the thing                                                                                                                                                       | optional                   |
 | representation-property                        | The name of the property that contains a unique identifier of the thing                                                                                                                                      | optional                   |
@@ -927,4 +928,4 @@ Modifying or removing update instructions after they have been merged is not per
 Each new contribution of update instructions MUST increase the `thingTypeVersion`, even if there was no release.
 The `thingTypeVersion` is bound to a thing-type, different thing types may have different versions.
 
-The full XML schema for update instructions can be found here: [https://www.openhab.org/schemas/update-description-1.0.0.xsd](https://www.openhab.org/schemas/update-description-1.0.0.xsd).   
+The full XML schema for update instructions can be found here: [https://www.openhab.org/schemas/update-description-1.0.0.xsd](https://www.openhab.org/schemas/update-description-1.0.0.xsd).
