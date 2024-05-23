@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="fibaro_fan4control_00_000" listed="false">
+    <label>Fan4-Control Fan Coil Thermostat (4-pipe)</label>
+    <description><![CDATA[
+Fan Coil Thermostat (4-pipe)<br /> <h1>Overview</h1><p>The Fan4-Control is a Z-Wave enabled thermostat designed specifically for 4-pipe fan coil systems, ensuring optimal indoor temperature control. Compatible with various Nice hubs equipped with Z-Wave technology, such as Yubii Home, Yubii Home Pro, and FIBARO Home Center models. This device enhances energy efficiency and user comfort by allowing detailed control settings through Z-Wave network commands.<br /></p> <br /> <h2>Inclusion Information</h2><p>To include the Fan4-Control device using the manual method, set your Z-Wave gateway (such as Yubii Home) to inclusion mode and then perform a long press of the "fan speed button" and "temperature up button" on the device to enter adding mode. For SmartStart inclusion, scan the DSK QR code or enter the 5-digit PIN, then power the device. Successful inclusion will be indicated on the device’s display, showing the node number in the Z-Wave network.</p> <br /> <h2>Exclusion Information</h2><p>To exclude the Fan4-Control device from your Z-Wave network, set your gateway to exclusion mode. Perform a long press of the "fan speed button" and "temperature up button" on the device to initiate the removal mode. The display will show the existing product ID. Press the 'M' button (Mode) to exclude the device from the network; successful exclusion will be confirmed by the display showing "000".<br /></p> <br /> <h2>Wakeup Information</h2><p><br /></p>
+    ]]></description>
+    <category>HVAC</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="sensor_relhumidity" typeId="sensor_relhumidity">
+        <label>Sensor (relative humidity)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_SENSOR_MULTILEVEL;type=RELATIVE_HUMIDITY</property>
+        </properties>
+      </channel>
+      <channel id="sensor_temperature" typeId="sensor_temperature">
+        <label>Sensor (temperature)</label>
+        <properties>
+          <property name="binding:*:QuantityType">COMMAND_CLASS_SENSOR_MULTILEVEL;type=TEMPERATURE</property>
+        </properties>
+      </channel>
+      <channel id="thermostat_setpoint_cooling" typeId="thermostat_setpoint">
+        <label>Setpoint (cooling)</label>
+        <properties>
+          <property name="binding:*:QuantityType">COMMAND_CLASS_THERMOSTAT_SETPOINT;type=COOLING</property>
+        </properties>
+      </channel>
+      <channel id="thermostat_setpoint_heating" typeId="thermostat_setpoint">
+        <label>Setpoint (heating)</label>
+        <properties>
+          <property name="binding:*:QuantityType">COMMAND_CLASS_THERMOSTAT_SETPOINT;type=HEATING</property>
+        </properties>
+      </channel>
+      <channel id="thermostat_fanmode" typeId="fibaro_fan4control_00_000_thermostat_fanmode">
+        <label>Thermostat fan mode</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_THERMOSTAT_FAN_MODE</property>
+        </properties>
+      </channel>
+      <channel id="thermostat_fanstate" typeId="fibaro_fan4control_00_000_thermostat_fanstate">
+        <label>Thermostat fan state</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_THERMOSTAT_FAN_STATE</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Fibargroup</property>
+      <property name="modelId">Fan4-Control</property>
+      <property name="manufacturerId">010F</property>
+      <property name="manufacturerRef">2901:1001</property>
+      <property name="dbReference">1618</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_1_1" type="integer" groupName="configuration">
+        <label>1: Temperature Unit</label>
+        <description><![CDATA[
+Sets the temperature unit displayed by the device.<br /> <h1>Overview</h1><p>Available Settings: 0-1 (0: Celsius, 1: Fahrenheit)<br /></p>
+        ]]></description>
+        <default>1</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_2_2" type="integer" groupName="configuration">
+        <label>2: Automatic Temperature Value Reporting</label>
+        <description><![CDATA[
+Automatic Temperature Value Reporting<br /> <h1>Overview</h1><p>Automatically report temperature changes to the gateway when variation exceeds a set threshold in Celsius or Fahrenheit.<br />Available Settings: 0, 3-255 (0: OFF, 3-255: Threshold for reporting, in 0.1°C or 0.1ºF increments)<br /></p>
+        ]]></description>
+        <default>5</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_3_0" type="integer" groupName="configuration">
+        <label>3: Automatic Humidity Value Reporting</label>
+        <description><![CDATA[
+Automatic Humidity Value Reporting<br /> <h1>Overview</h1><p>Automatically report humidity changes to the gateway when variation exceeds a set threshold.<br />Available Settings: 0-99 (0: OFF, 1-99: Threshold for reporting)<br /></p>
+        ]]></description>
+        <default>1</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_12_1" type="integer" groupName="configuration">
+        <label>12: Power Failure Memory</label>
+        <description><![CDATA[
+Power Failure Memory<br /> <h1>Overview</h1><p>Determines device behavior after power restoration.<br />Available Settings: 0-2 (0: Shutdown state, 1: Working interface, 2: Last state before power failure)<br /></p>
+        ]]></description>
+        <default>1</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_13_1" type="integer" groupName="configuration">
+        <label>13: Backlight Brightness</label>
+        <description><![CDATA[
+Backlight Brightness<br /> <h1>Overview</h1><p>Sets the backlight brightness level.<br />Available Settings: 1-5 (1: Dim, 2: Low brightness, 3: Medium brightness, 4: High brightness, 5: Always on)<br /></p>
+        ]]></description>
+        <default>2</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_14_1" type="integer" groupName="configuration">
+        <label>14: Beep Volume</label>
+        <description><![CDATA[
+Beep Volume<br /> <h1>Overview</h1><p>Controls the beep volume for button presses.<br />Available Settings: <br />1: OFF, 2: Low Beep, 3: Medium Beep, 4: High Beep, 5: Standard Beep<br /></p>
+        ]]></description>
+        <default>2</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_21_1" type="integer" groupName="configuration">
+        <label>21: Function option for external temperature sensor</label>
+        <description><![CDATA[
+Function option for external temperature sensor<br /> <h1>Overview</h1><p>0: External temperature sensor work as high temperature protection detection</p><p>1: External temperature sensor work as main control temperature</p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_22_1" type="integer" groupName="configuration">
+        <label>22: Switch for anti-freeze protection</label>
+        <description><![CDATA[
+Switch for anti-freeze protection<br /> <h1>Overview</h1><p>1: Turn on<br />0: Turn off<br />Default protection temperature range: (5.0°C - 8.0°C)<br />Anti-Freeze feature is available only when heating mode, turn on when temperature decrease to 5.0 °C, turn off when temperature increase to 8.0°C</p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_23_1" type="integer" groupName="configuration">
+        <label>23: Fan mode option when reaching setting</label>
+        <description><![CDATA[
+Fan mode option when indoor temp. reaches to setting temp<br /> <h1>Overview</h1><p>1: Manual fan speed, keep fan speed, valve turned off, Auto fan speed, keep low fan speed<br />0: Fan turned off</p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_24_1" type="integer" groupName="configuration">
+        <label>24: Fan Working Mode</label>
+        <description><![CDATA[
+Fan Working Mode<br /> <h1>Overview</h1><p>0: Fan works in both cooling and heating mode <br />1: Fan works only in cooling mode <br />2: Fan works only in heating mode <br />3: Fan does not work neither in cooling nor heating mode<br /></p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_25_1" type="integer" groupName="configuration">
+        <label>25: Panel lock</label>
+        <description><![CDATA[
+Panel lock<br /> <h1>Overview</h1><p>1:Turn on<br />0:Turn off</p>
+        ]]></description>
+        <default>1</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_27_1" type="integer" groupName="configuration">
+        <label>27: Option For Interval Ventilation Feature</label>
+        <description><![CDATA[
+Toggle interval ventilation<br /> <h1>Overview</h1><p>Enables (1) or disables (0) the interval ventilation feature to maintain air quality.<br /></p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_28_1" type="integer" groupName="configuration">
+        <label>28: Ventilation Duration</label>
+        <description><![CDATA[
+Sets duration for interval ventilation<br /> <h1>Overview</h1><p>Configures the duration for interval ventilation within a one-hour period, ranging from 1 to 30 minutes.<br /></p>
+        ]]></description>
+        <default>5</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_29_1" type="integer" groupName="configuration">
+        <label>29: Temperature Hysteresis</label>
+        <description><![CDATA[
+Configures temperature hysteresis<br /> <h1>Overview</h1><p>Sets the hysteresis level or deadband for temperature control, ensuring the temperature remains within a set range before reactivating heating or cooling.<br /></p>
+        ]]></description>
+        <default>15</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_255_1" type="integer" groupName="configuration">
+        <label>255: Factory Restore</label>
+        <description><![CDATA[
+Factory Restore<br /> <h1>Overview</h1><p>55: write 55 to restore factory setting and turn to shut down interface </p><p>Other Value: invalid     </p>
+        ]]></description>
+        <default>53</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Controller Lifeline</label>
+        <description><![CDATA[
+Controller Lifeline<br /> <h1>Overview</h1><p>Gateway Controller association group<br /></p>
+        ]]></description>
+        <multipleLimit>1</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+  <channel-type id="fibaro_fan4control_00_000_thermostat_fanmode">
+    <item-type>Number</item-type>
+    <label>Thermostat Fan Mode</label>
+    <description>Sets the thermostat fan mode</description>
+    <category>Temperature</category>
+    <state pattern="%s">
+    </state>
+  </channel-type>
+
+  <channel-type id="fibaro_fan4control_00_000_thermostat_fanstate">
+    <item-type>Number</item-type>
+    <label>Thermostat Fan State</label>
+    <description>Sets the thermostat fan state</description>
+    <category>Temperature</category>
+    <state pattern="%s">
+      <options>
+        <option value="0">Idle</option>
+      </options>
+    </state>
+  </channel-type>
+
+</thing:thing-descriptions>
