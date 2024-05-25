@@ -39,6 +39,9 @@ cp -f siren-on.svg          siren.svg
 
 cp -f soundvolume-100.svg   soundvolume.svg
 
+cp -f soundvolume-100.svg   soundvolume_mute-off.svg
+cp -f soundvolume_mute-on.svg   soundvolume_mute.svg
+
 cp -f switch-on.svg          switch.svg
 
 
