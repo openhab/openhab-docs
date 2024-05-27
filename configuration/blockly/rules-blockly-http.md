@@ -10,7 +10,7 @@ title: Rules Blockly - Logging
 
 ## Introduction
 
-This section explains the blocks that allow HTTP requests to be sent.
+This section explains the blocks that allow sending HTTP requests.
 
 ## HTTP Requests
 
