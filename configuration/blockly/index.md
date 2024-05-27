@@ -190,7 +190,7 @@ This will open up the following dialog:
 
 ![create typed variable dialog](../images/blockly/blockly_typed_variables3.png)
 
-Hint: Always choose the type of the variable first because it is not possible to change the variable afterwards!
+Hint: Always choose the type of the variable first because it is not possible to change the type afterwards!
 
 - Enter the name of the variable: it is recommended to use a concatenation of the variable name plus the type like _powerItemName_ as it is hard to know later on what type the variable has.
 - Don't forget to select the right type (here "Item name") before clicking ok because it cannot be changed later.
