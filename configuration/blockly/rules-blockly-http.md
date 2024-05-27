@@ -26,7 +26,7 @@ There are two toggle buttons that allow the block to be small for simple request
 ![http-toggle](../images/blockly/blockly-http-toggles.png)
 
 - Clock: enables the timeout option
-- H: stands for header and allows to provide headers during the request via a [Dictionary](rules-blockly-standard-ext.md#dictionary-for-managing-key--value-pairs)
+- H: enables the header option and allows to provide headers during the request via a [Dictionary](rules-blockly-standard-ext.md#dictionary-for-managing-key--value-pairs)
 
 ### HTTP Request GET
 
