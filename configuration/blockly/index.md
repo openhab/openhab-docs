@@ -186,7 +186,7 @@ Create a typed variable by clicking on the following button:
 
 ![create typed variable](../images/blockly/blockly_typed_variables2.png)
 
-which will open up the following dialog:
+This will open up the following dialog:
 
 ![create typed variable dialog](../images/blockly/blockly_typed_variables3.png)
 
