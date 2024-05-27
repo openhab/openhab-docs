@@ -320,7 +320,7 @@ Function: Gets the **Thing Status**
 
 ### Get particular attributes of a Thing
 
-![blockly-getItemAttributes](../images/blockly/blockly-getThingAttributes.png)
+![blockly-getThingAttributes](../images/blockly/blockly-getThingAttributes.png)
 
 Function: Get particular attributes of a Thing
 
