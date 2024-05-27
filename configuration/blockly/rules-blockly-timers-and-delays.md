@@ -48,7 +48,7 @@ The context can be used within the timer statement block by utilizing the "timer
 
 ![blockly-timer-context.png](../images/blockly/blockly-timer-context.png)
 
-Here are some examples how this feature can be used
+Here are some examples how this feature can be used:
 
 ![timer-context-examples](../images/blockly/blockly-timer-context-examples.png)
 
