@@ -48,6 +48,7 @@ Values:
 
 The following values are available as _historic_ and _future_ representations.
 
+- persisted state: gets the persisted state at a certain point in time
 - average: gets the average value of the State of a persisted Item since a certain point in time.
 This method uses a time-weighted average calculation
 - delta: gets the difference in value of the State of a given Item since a certain point in time
