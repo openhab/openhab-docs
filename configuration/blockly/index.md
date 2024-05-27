@@ -170,7 +170,7 @@ Also view ![youtube](../images/blockly/youtube-logo-small.png) [Overview of the 
 For a long time Blockly only provided untyped variables.
 Even though this seems to be more straight forward and provides the flexibility to put any type into that variable, it creates some challenges to openHAB Blockly to generate the right code.
 
-All blocks in blockly have a type with it which allows the editor to check whether this block is allowed to be added to a particular input of a block.
+All blocks in Blockly have input and output types defined which allows the editor to check whether one particular block can be used as input for a different block.
 This becomes challenging with the standard untyped variables because the type of these is basically none which means that the Blockly editor is not able to check whether this block is allowed or not.
 Even worse, this can result into unforeseen situations where values end up in a variable and therefore in that input with the effect that blockly needs to make a default guess on the type (most likely the wrong one) and your rule will not work as expected.
 
