@@ -54,7 +54,7 @@ Here are some examples how this feature can be used:
 
 The loop is in particular interesting to look at:
 
-- The loop counts from 1 to 10 (actually to 9)
+- The loop counts from 1 to 10 (actually to 9).
 - It therefore creates 5 timers where the first is triggered after 1 seconds, the second after 3 seconds and so on.
 - Each timer's name is based on that counter index, i.e. the first timer's name is LoopCreatedTimer1 and the last timer is named LoopCreatedTimer9.
 - The timer name is then provided to the timer block itself via the context which could then be used in various ways (here it just prints it out).
