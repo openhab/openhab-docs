@@ -292,7 +292,7 @@ See [Value Storage](rules-blockly-value-storage.html) section.
 
 ### HTTP
 
-This section sending HTTP requests and receiving the response.
+These blocks allow sending HTTP requests and receiving the response.
 
 [![HTTP](../images/blockly/blockly-http-overview-small.png "HTTP")
 ](rules-blockly-http.html)
