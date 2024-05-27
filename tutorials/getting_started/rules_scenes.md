@@ -101,17 +101,33 @@ When you now click on that label card, the scene rule will be triggered and all 
 #### Rule
 
 If we want to use triggers that are known from other rule types we can write such a rule, define that trigger and let that rule call the scene rule.
-For the purpose of the tutorial we use a very simple [Blockly Rule]({{base}}/tutorial/rules-blockly.html).
 See the details there on how to create a trigger (e.g. a cron trigger that will call the blockly rule at 22:00 in the evening) to execute that rule.
+The section below provides examples for Blockly and various rule/script languages.
 
-Then use the following block and add the _scene id_ to the block to call the scene
+:::: tabs
 
-![scene-blockly](images/scene-blockly-rule.png)
+::: tab Blockly
+Use the following block and add the _scene id_ to the block to call the scene
+
+![scene-blockly](./images/scene-blockly-rule.png)
 
 Save it and that's it.
+:::
 
-You can achieve the same with an ECMA-Script rule. Provided you are using the latest ECMA-Script the code is a easy as follows:
+::: tab JS
 
 ```javascript
  rules.runRule('scene_office_dimmed_light', {});
 ```
+
+:::
+
+::: tab JRuby
+
+rules[“id”] gives you the rule object for the given id, which supports the [trigger method](https://openhab.github.io/openhab-jruby/main/OpenHAB/Core/Rules/Rule.html#trigger-instance_method) (aliased as run).
+
+```ruby
+  rules["scene_id"].run
+```
+
+::::

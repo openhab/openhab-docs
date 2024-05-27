@@ -10,7 +10,7 @@ title: Rules Blockly - Logging
 
 ## Introduction
 
-This section explains only the blocks that have been added to the standard blocks by openHAB
+This section explains the blocks that have been added to allow logging.
 
 [[toc]]
 
