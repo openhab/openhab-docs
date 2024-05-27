@@ -50,7 +50,7 @@ The simplest form is shown by default and accepts the destination URI as String 
 
 ![http-post-simple](../images/blockly/blockly-http-post-simple.png)
 
-Here is a more complex example that additionally uses the header and the timeout:
+Here is a more complex example that additionally sets a header and the timeout:
 
 ![http-post-complex](../images/blockly/blockly-http-post-complex.png)
 
