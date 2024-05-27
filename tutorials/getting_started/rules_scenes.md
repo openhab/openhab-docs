@@ -128,6 +128,6 @@ rules[“id”] gives you the rule object for the given id, which supports the [
 
 ```ruby
   rules["scene_id"].run
-``
+```
 
 ::::
