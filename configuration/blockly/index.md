@@ -182,7 +182,7 @@ Therefore, a new variable section was introduced:
 
 In the very seldom case where you may mix types or you want to use a type that is not provided in the dialog, only then choose non-typed variables.
 
-Create a variable by clicking on the following button:
+Create a typed variable by clicking on the following button:
 
 ![create typed variable](../images/blockly/blockly_typed_variables2.png)
 
