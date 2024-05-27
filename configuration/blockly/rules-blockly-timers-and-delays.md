@@ -40,7 +40,7 @@ and cancels the same timer in Rule 2
 ## Timer context
 
 Timers provide a statement block where the blocks reside that are run when the timer triggers.
-The context allows data to be provided which is later used when the blocks are triggered by the timer (note that in many cases you can just leave the context empty or provide an [undefined block](rules-blockly-standard-ext.md#logic))
+The context allows data to be provided which is later used when the blocks are triggered by the timer (note that in many cases you can just leave the context empty or provide an [undefined block](rules-blockly-standard-ext.md#logic)).
 
 To provide a context put any block to the context, which can be a block of any type like String, Number, a variable or even a Dictionary which could hold several values via a key/value mapping.
 
