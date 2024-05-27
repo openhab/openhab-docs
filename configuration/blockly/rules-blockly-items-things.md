@@ -340,7 +340,7 @@ These attributes are returned with the following types:
 
 Function: Gets all things and returns a list of [Thing-Objects](#get-thing).
 
-![blockly-getItemAttributes](../images/blockly/blockly-get-things.png)
+![blockly-getThings](../images/blockly/blockly-get-things.png)
 
 The following loop iterates over all things and logs out the status.
 Note that it uses a [typed variable](./index.html#using-variables) for that.
