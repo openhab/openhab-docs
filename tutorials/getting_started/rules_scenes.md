@@ -102,7 +102,7 @@ When you now click on that label card, the scene rule will be triggered and all 
 
 If we want to use triggers that are known from other rule types we can write such a rule, define that trigger and let that rule call the scene rule.
 See the details there on how to create a trigger (e.g. a cron trigger that will call the blockly rule at 22:00 in the evening) to execute that rule.
-The section below also provides examples for JavaScript and Python.
+The section below provides examples for Blockly and various rule/script languages.
 
 :::: tabs
 
