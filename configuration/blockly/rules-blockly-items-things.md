@@ -100,6 +100,8 @@ Function: Gets the members of a **group**
 - returns a collection of items which should be used with a for-each-block to loop over the items
 - it can be attached to a log-block which would list all items in that block in the form a string representation as follows
 
+**Hint**: Make sure you are using [typed variables](./index.html#using-variables)!
+
 ```json
 GF_IndirectLights (Type=GroupItem, BaseType=SwitchItem, Members=9, State=OFF, Label=Indirekten Lichter, Category=light, Tags=[Lightbulb], Groups=[Lights]),LichterOG (Type=GroupItem, BaseType=SwitchItem, Members=4, State=ON, Label=Lichter OG, Category=light, Groups=[Lights]),LichterEG (Type=GroupItem, BaseType=SwitchItem, Members=5, State=ON, Label=Lichter EG, Category=light, Groups=[Lights])
 ```
@@ -120,13 +122,15 @@ Function: Gets all items with the given tags which you can iterate over via a lo
 - multiple tags can be provided which then need to be separated with a comma
 - if multiple tags are given, the item must have all of the tags ("and"-condition)
 
+**Hint**: Make sure you are using [typed variables](./index.html#using-variables)!
+
 :::tip
 
 If you need an item that has one of multiple tags, then you need to use one block of each and then use the ["concatenate list block"](https://www.openhab.org/docs/configuration/blockly/rules-blockly-standard-ext.html#concatenate-list) to combine the results.
 
 :::
 
-### Get particular attributes of an item
+### Get particular attributes of an Item
 
 ![blockly-getItemAttributes](../images/blockly/blockly-getItemAttributes.png)
 
@@ -167,11 +171,10 @@ Since openHAB 4.1 an optimization was introduced that simplifies the usage:
 It allows to attach the item block directly instead of having to use the intermediate getItem-Block.
 Internally Blockly detects the added type and applies the right code generation.
 
-_Strict block type usage when using Variables_
+_Use typed variables:_
 
-Due to the fact that Blockly is not able to detect the type of the value that has been assigned to a variable, there is no reliable way to allow that input flexibility for variables.
-Therefore, when using variables the set variable to block must be used together with the get item block and must not be used together with the item block.
-See the above examples for right and wrong usage.
+Due to the fact that Blockly provides untyped variables it is then not able to detect the type of the value that has been assigned to a variable which may result into unexpected behaviour.
+Therefore, always use a [typed variable](./index.html#using-variables) instead
 
 **Special handling for Arrays**
 
@@ -182,6 +185,8 @@ Therefore
 - they _must_ be handled using a for-loop as follows
 
 ![blockly-specialArrayHandling](../images/blockly/blockly-specialArrayHandling.png)
+
+- See more infos in the section about [typed variables](./index.html#using-variables)!
 
 ### Send Command
 
@@ -274,6 +279,7 @@ Using variables and loops properties like field1, field2, field3 can even be acc
 
 Function: Retrieves a specific **Thing** for use in other thing related functions.
 
+- To be specific this only provides a thing picker that provides the ID of that thing (and not the thing object itself that holds several properties)
 - Clicking 'MyThing' displays a list of **Things** to pick from
 - Technically this block returns the thingUid of the thing as a String
 - Learn more about [things](https://www.openhab.org/docs/configuration/things.html) or [thing-concepts](https://www.openhab.org/docs/concepts/things.html)
@@ -282,16 +288,25 @@ Function: Retrieves a specific **Thing** for use in other thing related function
 
 ![blockly-thingExample](../images/blockly/blockly-thingExample.png)
 
-will write the following into the log
+will write the following ID of the thing into the log
 
 ```text
 thing name = nanoleaf:controller:645E3A484A83
 ```
 
+### Get Thing
+
+![blockly-thing](../images/blockly/blockly-thing-object.png)
+
+Function: Gets a **Thing** for use in other thing related functions
+
+- Clicking 'MyThing' displays a list of **Things** to pick from.
+- Technically this block returns a thing _object_, to be used to retrieve specific attributes using other blocks (see below).
+
 ### Get Thing Status
 
 ![blockly-getThingStatus](../images/blockly/blockly-getThingStatus.png)
-Function: Gets a **Thing Status** for use in other Thing related functions
+Function: Gets the **Thing Status**
 
 - Clicking 'MyThing' displays a list of **Things** to pick from.
 - Technically this block returns a [ThingStatus](https://www.openhab.org/docs/concepts/things.html#thing-status)  - a String with one of the following statuses
@@ -302,6 +317,35 @@ Function: Gets a **Thing Status** for use in other Thing related functions
   - OFFLINE
   - REMOVING
   - REMOVED
+
+### Get particular attributes of a Thing
+
+![blockly-getThingAttributes](../images/blockly/blockly-getThingAttributes.png)
+
+Function: Get particular attributes of a Thing
+
+It requires a [thing object](#get-thing) to be connected.
+
+These attributes are returned with the following types:
+
+- UID (unique Thing ID): String
+- label: String
+- status (like ONLINE/OFFLINE): String
+- status info (status plus further info like "light not reachable"): String
+- location: String
+- thing type UID (unique ID of the Thing type): String
+- bridge UID (unique ID of the Bridge): String
+
+### Get Things
+
+Function: Gets all things and returns a list of [Thing-Objects](#get-thing).
+
+![blockly-getThings](../images/blockly/blockly-get-things.png)
+
+The following loop iterates over all things and logs out the status.
+Note that it uses a [typed variable](./index.html#using-variables) for that.
+
+![blockly-thingsLoop](../images/blockly/blockly-things-loop.png)
 
 ## Return to Blockly Reference
 
