@@ -172,7 +172,7 @@ Even though this seems to be more straight forward and provides the flexibility 
 
 All blocks in Blockly have input and output types defined which allows the editor to check whether one particular block can be used as input for a different block.
 This becomes challenging with the standard untyped variables because the type of these is basically none which means that the Blockly editor is not able to check whether this block is allowed or not.
-Even worse, this can result into unforeseen situations where values end up in a variable and therefore in that input with the effect that blockly needs to make a default guess on the type (most likely the wrong one) and your rule will not work as expected.
+This requires Blockly to make a default guess on the variable's type, which often is the wrong type guess and therefore causes wrong code to be generated - your rule will not work.
 
 Therefore, a new variable section was introduced:
 
