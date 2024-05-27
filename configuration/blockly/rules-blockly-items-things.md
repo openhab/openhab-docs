@@ -345,7 +345,7 @@ Function: Gets all things and returns a list of [Thing-Objects](#get-thing).
 The following loop iterates over all things and logs out the status.
 Note that it uses a [typed variable](./index.html#using-variables) for that.
 
-![blockly-getItemAttributes](../images/blockly/blockly-things-loop.png)
+![blockly-thingsLoop](../images/blockly/blockly-things-loop.png)
 
 ## Return to Blockly Reference
 
