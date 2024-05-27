@@ -126,6 +126,8 @@ Save it and that's it.
 
 rules[“id”] gives you the rule object for the given id, which supports the [trigger method](https://openhab.github.io/openhab-jruby/main/OpenHAB/Core/Rules/Rule.html#trigger-instance_method) (aliased as run).
 
-> rules["scene_id"].run
+```ruby
+  rules["scene_id"].run
+``
 
 ::::
