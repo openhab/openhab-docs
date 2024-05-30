@@ -92,6 +92,7 @@ Optionally, if you want the system to scan the user's network for your addon the
 | `ip`         | Service to discover add-ons by scanning for devices via a UDP 'ping' broadcast on the LAN. |
 | `mdns`       | Service to discover add-ons by scanning for devices using the mDNS discovery service.      |
 | `processs`   | Service to discover add-ons by checking processes running on the PC.                       |
+| `sddp`       | Service to discover add-ons by scanning for devices using the SDDP discovery service.      |
 | `upnp`       | Service to discover add-ons by scanning for devices using the UPnP discovery service.      |
 | `usb`        | Service to discover add-ons by scanning for USB devices attached to the PC.                |
 
@@ -107,6 +108,7 @@ Notes:
 | `ip`         | "response".                                                                                                                                  |
 | `mdns`       | Frequently used properties are "name", and "application". But mDNS permits any property name depending on the service concerned.             |
 | `process`    | "command", "commandLine".                                                                                                                    |
+| `sddp`       | "driver", "host", "ipAddress", "macAddress", "manufacturer", "model", "port", "primaryProxy", "proxies", "type"                              |
 | `upnp`       | "deviceType", "manufacturer", "manufacturerURI", "modelName", "modelNumber", "modelDescription", "modelURI", "serialNumber", "friendlyName". |
 | `usb`        | "product", "manufacturer", "chipId", "remote".                                                                                               |
 

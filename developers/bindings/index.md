@@ -661,9 +661,9 @@ To simplify the implementation of custom discovery services, an abstract base cl
 Subclasses of `AbstractDiscoveryService` do not need to handle the `DiscoveryListeners` themselves, they can use the methods `thingDiscovered` and `thingRemoved` to notify the registered listeners.
 Most of the descriptions in this chapter refer to the `AbstractDiscoveryService`.
 
-For UPnP and mDNS there already are generic discovery services available.
-Bindings only need to implement a `UpnpDiscoveryParticipant` resp. `mDNSDiscoveryParticipant`.
-For details refer to the chapters [UPnP Discovery](#upnp-discovery) and [mDNS Discovery](#mdns-discovery).
+For UPnP, mDNS and SDDP there already are generic discovery services available.
+Bindings only need to implement a `UpnpDiscoveryParticipant`, `mDNSDiscoveryParticipant` resp. `SddpDiscoveryParticipant`.
+For details refer to the chapters [UPnP Discovery](#upnp-discovery), [mDNS Discovery](#mdns-discovery) and [SDDP Discovery](#sddp-discovery).
 
 The following example is taken from the `HueLightDiscoveryService`, it calls `thingDiscovered` for each found light.
 It uses the `DiscoveryResultBuilder` to create the discovery result.
@@ -853,6 +853,7 @@ The developer has to take care about that.
 UPnP discovery is implemented in the framework as `UpnpDiscoveryService`.
 It is widely used in bindings.
 To facilitate the development, binding developers only need to implement a `UpnpDiscoveryParticipant`.
+Additionally one must add `<feature>openhab-transport-upnp</feature>` to the binding's `feature.xml` file.
 Here the developer only needs to implement three simple methods, and may optionally implement a fourth:
 
 - `getSupportedThingTypeUIDs` - Returns the list of thing type UIDs that this participant supports.
@@ -972,6 +973,21 @@ Here the developer only needs to implement four simple methods:
     This means that the device is repeatedly removed from, and (re)added to, the Inbox.
     To prevent this, a binding may OPTIONALLY implement this method to specify an additional delay period (grace period) to wait before the device is removed from the Inbox.
     See the example code for the `getRemovalGracePeriodSeconds()` method under the "UPnP Discovery" chapter above.
+
+### SDDP Discovery
+
+SDDP discovery is implemented in the framework as `SddpDiscoveryService`.
+To facilitate the development, binding developers only need to implement a `SddpDiscoveryParticipant`. 
+Additionally one must add `<feature>openhab-core-config-discovery-sddp</feature>` to the binding's `feature.xml` file.
+Here the developer only needs to implement four simple methods:
+
+- `getSupportedThingTypeUIDs` - Returns the list of thing type UIDs that this participant supports.
+    The discovery service uses this method of all registered discovery participants to return the list of currently supported thing type UIDs.
+- `getThingUID` - Creates a thing UID out of the SDDP service info or returns `null` if this is not possible.
+    This method is called from the discovery service during result creation to provide a unique thing UID for the result.
+- `createResult` - Creates the `DiscoveryResult` out of the SDDP result.
+    This method is called from the discovery service to create the actual discovery result.
+    It uses the `getThingUID` method to create the thing UID of the result.
 
 ### Discovery that is bound to a Bridge
 
