@@ -10,10 +10,10 @@ title: Armbian
 Armbian is a base operating system platform for single board computers.
 
 - comes in desktop, minimal or server variant,
-- has clean and highly optimised user space,
+- has clean and highly optimized user space,
 - is Ubuntu and Debian compatible,
 - is supported with vibrant community,
-- comes with a powerful SDK which allows reproduction and customisation,
+- comes with a powerful SDK which allows reproduction and customization,
 - supports many 3rd party wireless drivers with advanced functionalities,
 - supports Docker, disk encryption, Wireguard VPN any many other features.
 
@@ -59,7 +59,7 @@ Select OpenHAB2 (old version) or OpenHAB3 with **SPACE** and press **ENTER**
 
 ![Openhab](images/armbian-step4.png)
 
-Wait 5 to 10 minutes depending on your hardware. During this time you can leave armbian-config and check if installation was succesfull by checking what openhab is doing on the system:
+Wait 5 to 10 minutes depending on your hardware. During this time you can leave armbian-config and check if installation was successful by checking what openhab is doing on the system:
 
 ```shell
 sudo htop -u openhab
@@ -74,4 +74,4 @@ If you don't see any openhab activities, something went wrong.
 The very active [openHAB Community Forum](https://community.openhab.org) provides many more details and hints.
 If you run into any problems, use the search function or open a new thread with your detailed question.
 
-In case you run into a problem that is board hardware related, please use [Armbian Community forums](https://forum.armbian.com/forum/1-bug-tracker/).
+In case you run into a problem that is board hardware related, please use the [Armbian Community forums](https://forum.armbian.com/) or [Armbian bug reporting form](https://www.armbian.com/bugs/).

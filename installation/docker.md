@@ -10,10 +10,7 @@ Containerization allows one to run a server in its own isolated environment with
 
 This page is structured as follows:
 
-{::options toc_levels="2..4"/}
-
-- TOC
-{:toc}
+[[toc]]
 
 ## Why Docker?
 
@@ -61,7 +58,7 @@ sudo useradd -r -s /sbin/nologin openhab
 Add your regular user to the `openhab` group.
 
 ```bash
-usermod -a -G openhab <user>
+sudo usermod -a -G openhab openhab
 ```
 
 ### Create the openHAB conf, userdata, and addon directories
@@ -78,7 +75,7 @@ sudo chown -R openhab:openhab /opt/openhab
 ### Running the Container as a Service Managed by Docker
 
 Note, always review the README on [Docker Hub](https://hub.docker.com/r/openhab/openhab/) for the most up to date set of recommended arguments and environment variables.
-Services can be run an maintained on a Linux machine one of two ways, using Docker or using the system's built in service management (e.g. systemd).
+Services can be run and maintained on a Linux machine one of two ways, using Docker or using the system's built in service management (e.g. systemd).
 If using Docker to manage the service, run the following command:
 
 :::: tabs
@@ -202,7 +199,7 @@ Note, always review the README on [Docker Hub](https://hub.docker.com/r/openhab/
 - `--net=host` : by default Docker will place a container into its own network stack. However, openHAB requires UPnP discovery so this parameter makes the Docker container use the host's network stack.
 - `-v /etc/localtime:/etc/localtime:ro` : ties the time of the container to the host's time, read only so the container cannot change the host's time
 - `-v /etc/timezone:/etc/timezone:ro` : ties the timezone of the container to the host's time zone, read only so the container cannot change the host's time zone
-- `-v /opt/openhab/conf:/openhab/conf` : location of the conf folder for openHAB configurations (*Note:* you must create these folders on the host before running the container)
+- `-v /opt/openhab/conf:/openhab/conf` : location of the conf folder for openHAB configurations (_Note:_ you must create these folders on the host before running the container)
 - `-v /opt/openhab/userdata:/openhab/userdata` : location for logs, cache, persistence databases, etc.
 - `-v /opt/openhab/addons:/openhab/addons` : only needed if installing addons unavailable via UI or the Karaf Console
 - `-v /opt/openhab/.java:/openhab/.java` : needed by the Nest 1.x binding (and others?), location of the security token
@@ -256,9 +253,96 @@ It then performs all the same steps that the upgrade script and which are perfor
 
 ## Troubleshooting
 
+### Universal Plug and Play (UPnP)
+
+Some bindings, like e.g. [SONOS](https://www.openhab.org/addons/bindings/sonos/), depend on the common [UPnP](https://en.wikipedia.org/wiki/Universal_Plug_and_Play) communication infrastructure installed with openHAB.
+The protocol is based on IP multicast messages, which are limited to a local subnet.
+In case you have multiple network adapters in your system (which is the case if you use docker), it is necessary to inform openHAB what interface shall be used for UPnP discovery and communication.
+If more than one IP address is assigend to the interface, the address to use must be specified as well.
+
+This information can be specified via the `EXTRA_JAVA_OPTS` [Environment Variable](#environment-variables):
+
+```bash
+EXTRA_JAVA_OPTS="-Dorg.jupnp.network.useInterfaces=eno1 -Dorg.jupnp.network.useAddresses=192.168.0.65"
+```
+
+:::: tabs
+
+::: tab Linux
+
+::: tip Note
+To get full advantage of a docker/container setup it is recommended to learn about [docker compose](https://docs.docker.com/compose/).
+The following example is using docker compose syntax.
+:::
+
+Identify the network interface on the host machine:
+
+```bash
+> ip --brief address show
+lo               UNKNOWN        127.0.0.1/8 ::1/128 
+eno1             UP             192.168.0.65/24  
+eno1.4@eno1      UP             192.168.6.97/24  
+docker0          DOWN           172.17.0.1/16  
+br-7406c5aa57f0  UP             172.25.0.1/16  
+```
+
+.env
+
+```ini
+COMPOSE_PROJECT_NAME=openhab
+
+OPENHAB_ADDONS=/opt/openhab/addons
+OPENHAB_CONF=/opt/openhab/conf
+OPENHAB_LOGDIR=/opt/openhab/userdata/logs
+OPENHAB_USERDATA=/opt/openhab/userdata
+
+EXTRA_JAVA_OPTS="-Duser.timezone=Europe/Berlin -Dorg.jupnp.network.useInterfaces=eno1 -Dorg.jupnp.network.useAddresses=192.168.0.65"
+```
+
+docker-compose.yaml:
+
+```yaml
+version: '3.9'
+services:
+
+  frontail:     # place frontail configuration here ... 
+  grafana:      # place grafana configuration here ...
+  influxdb:     # place influx configuration here ...
+  zigbee2mqtt:  # place zigbee2mqtt configuration here ..
+  mosquitto:    # place mosquitto configuration here ...
+
+  openhab:
+    depends_on:
+      - frontail
+      - influxdb
+      - grafana
+      - zigbee2mqtt
+    container_name: ${COMPOSE_PROJECT_NAME}-server
+    image: openhab/openhab:4.1.0-debian
+    restart: unless-stopped
+    network_mode: host
+    group_add:
+      - tty
+    volumes:
+      - /etc/localtime:/etc/localtime
+      - /etc/timezone:/etc/timezone
+      - $OPENHAB_CONF/ssh:/openhab/.ssh
+      - $OPENHAB_ADDONS:/openhab/addons
+      - $OPENHAB_CONF:/openhab/conf
+      - $OPENHAB_USERDATA:/openhab/userdata
+    devices:
+      - /dev/serial/by-id/usb-0658_0200-if00:/dev/ttyACM2
+      - /dev/serial/by-id/usb-Prolific_Technology_Inc._USB-Serial_Controller_D-if00-port0:/dev/ttyUSB0
+    environment:
+      - CRYPTO_POLICY=unlimited
+      - EXTRA_JAVA_OPTS=${EXTRA_JAVA_OPTS} 
+```
+
+::::
+
 ### USB sticks
 
-If you want use an USB stick (for example for Z-Wave network), then it will be not available for the dockerized system by default.
+USB periferals (for example for Z-Wave, or ZigBee network sticks) will not be available by default to the dockerized system.
 In Docker openHAB is running in name of `openhab`, a restricted user.
 The stick will work if you run the following command right after Docker image is started.
 
@@ -292,4 +376,30 @@ This command changes permissions of the specific device as expected (readable an
 
 ::: tip Note
 The device path (`/dev/ttyACM0`) or container name (`openhab`) could be different in your system, command can be modified accordingly.
+Instead of using e.g. `/dev/ttyACM0` to identify the device it might be more robust to identify a device by id (e.g. if you add devices, plug in the stick in a different port):
+
+```yml
+devices:
+  - /dev/serial/by-id/usb-0658_0200-if00:/dev/ttyACM2
+  - /dev/serial/by-id/usb-Prolific_Technology_Inc._USB-Serial_Controller_D-if00-port0:/dev/ttyUSB0
+```
+
+How to identify the device:
+
+```bash
+> pwd
+/dev/serial/by-id
+
+> ls -l
+total 0
+lrwxrwxrwx 1 root root 13 Jan 19 17:26 usb-0658_0200-if00 -> ../../ttyACM0
+lrwxrwxrwx 1 root root 13 Jan 19 17:26 usb-ITEAD_SONOFF_Zigbee_3.0_USB_Dongle_Plus_V2_20220810144536-if00 -> ../../ttyACM1
+lrwxrwxrwx 1 root root 13 Jan 19 17:26 usb-Prolific_Technology_Inc._USB-Serial_Controller_D-if00-port0 -> ../../ttyUSB0
+
+> lsusb
+Bus 002 Device 003: ID 067b:2303 Prolific Technology, Inc. PL2303 Serial Port / Mobile Action MA-8910P
+Bus 002 Device 007: ID 1a86:55d4 QinHeng Electronics SONOFF Zigbee 3.0 USB Dongle Plus V2
+Bus 002 Device 004: ID 0658:0200 Sigma Designs, Inc. Aeotec Z-Stick Gen5 (ZW090) - UZB
+```
+
 :::

@@ -11,7 +11,7 @@ If your are looking for general rules explanations have a look at our [Rules](ht
 # Next-Generation Rule Engine
 
 Since openHAB 2.4 another Rule Engine has been added.
-It allows Rules to be edited in a graphical fashion and to interact with [JSR223 Scripts (Javascript, Jypthon, etc)](https://www.openhab.org/docs/configuration/jsr223.html).
+It allows Rules to be edited in a graphical fashion and to interact with [JSR223 Scripts (JavaScript, Jython, etc)](https://www.openhab.org/docs/configuration/jsr223.html).
 
 ## Concept
 
@@ -61,7 +61,7 @@ name
 type - one of the following "text", "integer", "decimal", "boolean"
 label - localizable text
 description - localizable text
-required - boolean flag indicating if this configuration property can be optional and thus it can be ommited in the rule, by default required is false
+required - boolean flag indicating if this configuration property can be optional and thus it can be omitted in the rule, by default required is false
 defaultValue - default value for the configuration property when not specified in the rule
 ```
 
@@ -484,37 +484,45 @@ The above example uses two rule configuration properties:
 
 ### GenericEventTrigger
 
-GenericEventTrigger has 3 configuration paramters: `eventTopic`,`eventSource` and `eventTypes` and one output: 'event'.
+GenericEventTrigger has 4 configuration parameters: `topic`,`source`, `types`, and `payload`, and one output: `event`.
 
 ```json
 {
    "uid":"GenericEventTrigger",
    "label":"Basic Event Trigger",
    "description":"Triggers Rules on Events",
-   "configDescriptions":[
+   "configDescriptions": [
       {
-         "name":"eventTopic",
-         "type":"TEXT",
-         "label":"Topic",
-         "description":"This is the topic, the trigger will listen to: >>openhab/*<<",
-         "required":true,
-         "defaultValue":"openhab/*"
+         "name": "topic",
+         "type": "TEXT",
+         "label": "Topic",
+         "description": "the topic, as a file-system style glob (*, ** and {} operators). will match all events if empty",
+         "required": true,
+         "default": ""
       },
       {
-         "name":"eventSource",
-         "type":"TEXT",
-         "label":"Source",
-         "description":"This is the source of the event (eg. item name)",
-         "required":true,
-         "defaultValue":""
+         "name": "source",
+         "type": "TEXT",
+         "label": "Source",
+         "description": "the source of the event (e.g. org.openhab.core.expire, etc.). will match all events if empty",
+         "required": true,
+         "default": ""
       },
       {
-         "name":"eventTypes",
-         "type":"TEXT",
-         "label":"Event Type",
-         "description":"the event type, the trigger should listen to. Multiple types can be specified comma-separated",
-         "required":true,
-         "defaultValue":""
+         "name": "types",
+         "type": "TEXT",
+         "label": "Event Type",
+         "description": "the event type the trigger should listen to. multiple types can be specified comma-separated. will match all events if empty",
+         "required": true,
+         "default": ""
+      },
+      {
+         "name": "payload",
+         "type": "TEXT",
+         "label": "Event Payload",
+         "description": "A regex to match the event's serialized payload. will match all events if empty",
+         "required": true,
+         "default": ""
       }
    ],
    "outputs":[
@@ -628,7 +636,7 @@ The composite module type wraps one or more instances of a system module type an
 }
 ```
 
-This example demonstrates a new module type *ItemStateChangeTrigger* which wraps the system module type *GenericEventTrigger*.
-It defines the new configuration property `itemName` which is used as the `eventSource` property of the *GenericEventTrigger*.
-The other config parameters `eventTopic` and `eventTypes` are staticly defined.
+This example demonstrates a new module type _ItemStateChangeTrigger_ which wraps the system module type _GenericEventTrigger_.
+It defines the new configuration property `itemName` which is used as the `eventSource` property of the _GenericEventTrigger_.
+The other config parameters `eventTopic` and `eventTypes` are statically defined.
 The composite module type can also have inputs and outputs and can use a reference to map them to inputs and outputs of the nested system module type(s).

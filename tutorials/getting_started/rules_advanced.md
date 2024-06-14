@@ -9,10 +9,7 @@ Blockly is super powerful and relatively easy to use but at some point there wil
 Or perhaps the graphical representation is too limiting.
 For what ever reason, openHAB has you covered with text based Script Actions and Script Conditions.
 
-{::options toc_levels="2..4"/}
-
-- TOC
-{:toc}
+[[toc]]
 
 ## Languages
 
@@ -114,7 +111,7 @@ We find the Timer creation documented under [ScriptExecution](/addons/automation
 A Timer will execute a block of code passed to it as the second argument at the time specified by the first argument.
 
 In JavaScript this block of code would be defined in a function.
-There are *lots* of ways to define functions in JavaScript including inline anonymous, and more.
+There are _lots_ of ways to define functions in JavaScript including inline anonymous, and more.
 See one of the many tutorials on JavaScript functions for details (e.g. search "JavaScript functions" on Google).
 I'll define a separate variable to hold the function here.
 
@@ -137,7 +134,7 @@ var lightsOut = function() {
   console.info('No more motion, turning off the light');
   items.getItem('FrontPorchLight').sendCommand('OFF');
 };
-ScriptExecution.createTimer(time.ZonedDateTime.now().plusMinutes(30), lightsOut);
+actions.ScriptExecution.createTimer(time.ZonedDateTime.now().plusMinutes(30), lightsOut);
 ```
 
 Save and test that you see the log statement and the Item receive the `ON` command and 30 minutes later the second log statement and the `OFF` command.

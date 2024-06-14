@@ -22,34 +22,76 @@ The metric system with SI units is used for the rest of the world.
 This conversion will convert the given `QuantityType` into a default unit for the specific dimension of the type.
 This is:
 
-| Dimension     | default unit metric        | default unit imperial  |
-|---------------|----------------------------|------------------------|
-| Length        | Meter (m)                  | Inch (in)              |
-| Temperature   | Celsius (°C)               | Fahrenheit (°F)        |
-| Pressure      | Hectopascal (hPa)          | Inch of mercury (inHg) |
-| Speed         | Kilometers per hour (km/h) | Miles per hour (mph)   |
-| Intensity     | Irradiance (W/m2)          | Irradiance (W/m2)      |
-| Dimensionless | Abstract unit one (one)    | Abstract unit one (one)|
-| Angle         | Degree (°)                 | Degree (°)             |
+| Dimension                | default unit metric              | default unit imperial            |
+|--------------------------|----------------------------------|----------------------------------|
+| Acceleration             | Meter per square second (m/s²)   | Meter per square second (m/s²)   |
+| Amount of Substance      | Mole (mol)                       | Mole (mol)                       |
+| Angle                    | Degree (°)                       | Degree (°)                       |
+| Area                     | Square Meter (m²)                | Square foot (ft²)                |
+| Areal Density            | Dobson unit (DU)                 | Dobson unit (DU)                 |
+| Catalytic Activity       | Katal (kat)                      | Katal (kat)                      |
+| Data Amount              | Byte (B)                         | Byte (B)                         |
+| Data Transfer Rate       | Megabit per second (Mbit/s)      | Megabit per second (Mbit/s)      |
+| Density                  | Kilogram per cubic meter (kg/m³) | Kilogram per cubic meter (kg/m³) |
+| Dimensionless            | Abstract unit one (one)          | Abstract unit one (one)          |
+| Electric Capacitance     | Farad (F)                        | Farad (F)                        |
+| Electric Charge          | Coulomb (C)                      | Coulomb (C)                      |
+| Electric Conductance     | Siemens (S)                      | Siemens (S)                      |
+| Electric Conductivity    | Siemens per meter (S/m)          | Siemens per meter (S/m)          |
+| Electric Current         | Ampere (A)                       | Ampere (A)                       |
+| Electric Inductance      | Henry (H)                        | Henry (H)                        |
+| Electric Potential       | Volt (V)                         | Volt (V)                         |
+| Electric Resistance      | Ohm (Ω)                          | Ohm (Ω)                          |
+| Emission Intensity       | Gram per kilowatt hour (g/kWh)   | Gram per kilowatt hour (g/kWh)   |
+| Energy                   | Kilowatt hours (kWh)             | Kilowatt hours (kWh)             |
+| Force                    | Newton (N)                       | Newton (N)                       |
+| Frequency                | Hertz (Hz)                       | Hertz (Hz)                       |
+| Illuminance              | Lux (lx)                         | Lux (lx)                         |
+| Intensity                | Irradiance (W/m²)                | Irradiance (W/m²)                |
+| Length                   | Meter (m)                        | Inch (in)                        |
+| Luminous Flux            | Lumen (lm)                       | Lumen (lm)                       |
+| Luminous Intensity       | Candela (cd)                     | Candela (cd)                     |
+| Magnetic Flux            | Weber (Wb)                       | Weber (Wb)                       |
+| Magnetic Flux Density    | Tesla (T)                        | Tesla (T)                        |
+| Mass                     | Kilogram (kg)                    | Pound (lb)                       |
+| Power                    | Watt (W)                         | Watt (W)                         |
+| Pressure                 | Hectopascal (hPa)                | Inch of mercury (inHg)           |
+| Radiation Absorbed Dose  | Gray (Gy)                        | Gray (Gy)                        |
+| Radiation Effective Dose | Sievert (Sv)                     | Sievert (Sv)                     |
+| Radioactivity            | Becquerel (Bq)                   | Becquerel (Bq)                   |
+| Solid Angle              | Steradian (sr)                   | Steradian (sr)                   |
+| Speed                    | Kilometers per hour (km/h)       | Miles per hour (mph)             |
+| Temperature              | Celsius (°C)                     | Fahrenheit (°F)                  |
+| Time                     | Seconds (s)                      | Seconds (s)                      |
+| Volume                   | Cubic Meter (m³)                 | US Gallon (gal)                  |
+| Volumetric Flow Rate     | Liter per minute (l/min)         | US Gallon per minute (gal/min)   |
 
-## NumberItem linked to QuantityType Channel
+In some cases the system default unit may not be the most useful unit for a given quantity.
+For measuring precipitation km/h would be a quite uncommon unit, while mm/h would be the expected unit.
+You can set the `unit` metadata to a different unit to change the item's unit:
 
-In addition to the automated conversion the `NumberItem` linked to a Channel delivering `QuantityTypes` can be configured to always have state updates converted to a specific unit.
-The unit given in the state description is parsed and then used for conversion (if necessary).
-The framework assumes that the unit to parse is always the last token in the state description.
-If the parsing failed the locale-based default conversion takes place.
+```shell
+Number:Speed "Rainfall" { unit="mm/h" }
+```
 
-`Number:Temperature temperature "Outside [%.2f °F]" { channel="...:current#temperature" }`
+This unit is then also used for persistence.
+Setting the `unit` metadata to `kW` would persist 5.0 for a value of 5.0 kW (while 5000 would be persisted without because the system default is W).
+Attention: Changing the unit of an item may corrupt your already persisted data, no automatic conversion takes place.
 
-In the example the `NumberItem` is specified to bind to Channels which offer values from the dimension `Temperature`.
-Without the dimension information the `NumberItem` only will receive updates of type `DecimalType` without a unit and any conversion.
-The state description defines two decimal places for the value and the fix unit °F.
-In case the state description should display the unit the binding delivers or the framework calculates through locale-based conversion the pattern will look like this:
+The unit of the item is independent of the state description.
+The state description is used for display purposes only, it can contain any compatible unit and will not affect what is persisted or used in events.
 
-`"Outside [%.2f %unit%]"`
+## Number item with dimension and DecimalType
 
-The special placeholder `%unit%` will then be replaced by the actual unit symbol.
-The placeholder `%unit%` can be placed anywhere in the state description.
+A `DecimalType` state update or command to a `Number` item that contains a dimension is considered to have the item's unit.
+So updating a `Number:Length` item with `5.0` will set the item's state to 5 m or 5 in. (depending on your locale).
+In case you set a different unit (see above, e.g. `km`) that is taken and the item will set it's state to 5 km.
+
+## Number item without dimension and QuantityType
+
+A `QuantityType` state update or command to a non-dimensional `Number` item will result in a state update that consists of the numeric part only.
+So updating a `Number` item with `5.0 kW` will set the item's state to 5.0, updating the same item with `5.0 W` will also set the item's state to 5.0.
+Linking dimension channels to non-dimensional items is therefore discouraged and will not be permitted in future versions of openHAB.
 
 ### Defining ChannelTypes
 
@@ -99,81 +141,89 @@ Imperial (base unit symbols):
 
 SI (base unit symbols):
 
-| Type                   | Unit                             | Symbol |
-|------------------------|----------------------------------|--------|
-| Acceleration           | Metre per Second squared         | m/s²   |
-| Acceleration           | Standard Gravity                 | ɡₙ     |
-| AmountOfSubstance      | Mole                             | mol    |
-| AmountOfSubstance      | Deutscher Härtegrad              | °dH    |
-| Angle                  | Radian                           | rad    |
-| Angle                  | Degree                           | °      |
-| Angle                  | Minute Angle                     | '      |
-| Angle                  | Second Angle                     | ''     |
-| Area                   | Square Metre                     | m²     |
-| ArealDensity           | Dobson Unit                      | DU     |
-| CatalyticActivity      | Katal                            | kat    |
-| DataAmount             | Bit                              | bit    |
-| DataAmount             | Byte                             | B      |
-| DataAmount             | Octet                            | o      |
-| DataTransferRate       | Bit per Second                   | bit/s  |
-| Density                | Gram per cubic Metre             | g/m³   |
-| Dimensionless          | Percent                          | %      |
-| Dimensionless          | Parts per Million                | ppm    |
-| Dimensionless          | Decibel                          | dB     |
-| ElectricPotential      | Volt                             | V      |
-| ElectricCapacitance    | Farad                            | F      |
-| ElectricCharge         | Coulomb                          | C      |
-| ElectricCharge         | Ampere Hour                      | Ah     |
-| ElectricConductance    | Siemens                          | S      |
-| ElectricConductivity   | Siemens per Metre                | S/m    |
-| ElectricCurrent        | Ampere                           | A      |
-| ElectricInductance     | Henry                            | H      |
-| ElectricResistance     | Ohm                              | Ω      |
-| Energy                 | Joule                            | J      |
-| Energy                 | Watt Second                      | Ws     |
-| Energy                 | Watt Hour                        | Wh     |
-| Energy                 | Volt-Ampere Hour                 | VAh    |
-| Energy                 | Volt-Ampere Reactive Hour        | varh   |
-| Force                  | Newton                           | N      |
-| Frequency              | Hertz                            | Hz     |
-| Illuminance            | Lux                              | lx     |
-| Intensity              | Irradiance                       | W/m²   |
-| Intensity              | Microwatt per square Centimeter  | µW/cm² |
-| Length                 | Metre                            | m      |
-| LuminousFlux           | Lumen                            | lm     |
-| LuminousIntensity      | Candela                          | cd     |
-| MagneticFlux           | Weber                            | Wb     |
-| MagneticFluxDensity    | Tesla                            | T      |
-| Mass                   | Gram                             | g      |
-| Power                  | Watt                             | W      |
-| Power                  | Volt-Ampere                      | VA     |
-| Power                  | Volt-Ampere Reactive             | var    |
-| Power                  | Decibel-Milliwatts               | dBm    |
-| Pressure               | Pascal                           | Pa     |
-| Pressure               | Hectopascal                      | hPa    |
-| Pressure               | Millimetre of Mercury            | mmHg   |
-| Pressure               | Bar                              | bar    |
-| Radioactivity          | Becquerel                        | Bq     |
-| RadiationDoseAbsorbed  | Gray                             | Gy     |
-| RadiationDoseEffective | Sievert                          | Sv     |
-| SolidAngle             | Steradian                        | sr     |
-| Speed                  | Metre per Second                 | m/s    |
-| Speed                  | Knot                             | kn     |
-| Temperature            | Kelvin                           | K      |
-| Temperature            | Celsius                          | °C     |
-| Time                   | Second                           | s      |
-| Time                   | Minute                           | min    |
-| Time                   | Hour                             | h      |
-| Time                   | Day                              | d      |
-| Time                   | Week                             | week   |
-| Time                   | Year                             | y      |
-| Volume                 | Litre                            | l      |
-| Volume                 | Cubic Metre                      | m³     |
-| VolumetricFlowRate     | Litre per Minute                 | l/min  |
-| VolumetricFlowRate     | Cubic Metre per Second           | m³/s   |
-| VolumetricFlowRate     | Cubic Metre per Minute           | m³/min |
-| VolumetricFlowRate     | Cubic Metre per Hour             | m³/h   |
-| VolumetricFlowRate     | Cubic Metre per Day              | m³/d   |
+| Type                      | Unit                             | Symbol |
+|---------------------------|----------------------------------|--------|
+| Acceleration              | Metre per Second squared         | m/s²   |
+| Acceleration              | Standard Gravity                 | ɡₙ     |
+| AmountOfSubstance         | Mole                             | mol    |
+| AmountOfSubstance         | Deutscher Härtegrad              | °dH    |
+| Angle                     | Radian                           | rad    |
+| Angle                     | Degree                           | °      |
+| Angle                     | Minute Angle                     | '      |
+| Angle                     | Second Angle                     | ''     |
+| Area                      | Square Metre                     | m²     |
+| ArealDensity              | Dobson Unit                      | DU     |
+| CatalyticActivity         | Katal                            | kat    |
+| DataAmount                | Bit                              | bit    |
+| DataAmount                | Byte                             | B      |
+| DataAmount                | Octet                            | o      |
+| DataTransferRate          | Bit per Second                   | bit/s  |
+| Density                   | Gram per cubic Metre             | g/m³   |
+| Dimensionless             | Percent                          | %      |
+| Dimensionless             | Parts per Million                | ppm    |
+| Dimensionless             | Decibel                          | dB     |
+| ElectricPotential         | Volt                             | V      |
+| ElectricCapacitance       | Farad                            | F      |
+| ElectricCharge            | Coulomb                          | C      |
+| ElectricCharge            | Ampere Hour                      | Ah     |
+| ElectricConductance       | Siemens                          | S      |
+| ElectricConductivity      | Siemens per Metre                | S/m    |
+| ElectricCurrent           | Ampere                           | A      |
+| ElectricInductance        | Henry                            | H      |
+| ElectricResistance        | Ohm                              | Ω      |
+| Energy                    | Joule                            | J      |
+| Energy                    | Watt Second                      | Ws     |
+| Energy                    | Watt Hour                        | Wh     |
+| Energy                    | Volt-Ampere Hour                 | VAh    |
+| Energy                    | Volt-Ampere Reactive Hour        | varh   |
+| Energy                    | Calorie                          | cal    |
+| Force                     | Newton                           | N      |
+| Frequency                 | Hertz                            | Hz     |
+| Frequency                 | Revolutions per minute           | rpm    |
+| Illuminance               | Lux                              | lx     |
+| Intensity                 | Irradiance                       | W/m²   |
+| Intensity                 | Microwatt per square Centimeter  | µW/cm² |
+| Length                    | Metre                            | m      |
+| LuminousFlux              | Lumen                            | lm     |
+| LuminousIntensity         | Candela                          | cd     |
+| MagneticFlux              | Weber                            | Wb     |
+| MagneticFluxDensity       | Tesla                            | T      |
+| Mass                      | Gram                             | g      |
+| Power                     | Watt                             | W      |
+| Power                     | Volt-Ampere                      | VA     |
+| Power                     | Volt-Ampere Reactive             | var    |
+| Power                     | Decibel-Milliwatts               | dBm    |
+| Pressure                  | Pascal                           | Pa     |
+| Pressure                  | Hectopascal                      | hPa    |
+| Pressure                  | Millimetre of Mercury            | mmHg   |
+| Pressure                  | Bar                              | bar    |
+| Radioactivity             | Becquerel                        | Bq     |
+| RadiationDoseAbsorbed     | Gray                             | Gy     |
+| RadiationDoseEffective    | Sievert                          | Sv     |
+| RadiationSpecificActivity | Curie                            | Ci     |
+| SolidAngle                | Steradian                        | sr     |
+| Speed                     | Metre per Second                 | m/s    |
+| Speed                     | Knot                             | kn     |
+| Temperature               | Kelvin                           | K      |
+| Temperature               | Celsius                          | °C     |
+| Temperature[^](#mired-footnote) | Mired                      | mired  |
+| Time                      | Second                           | s      |
+| Time                      | Minute                           | min    |
+| Time                      | Hour                             | h      |
+| Time                      | Day                              | d      |
+| Time                      | Week                             | week   |
+| Time                      | Year                             | y      |
+| Volume                    | Litre                            | l      |
+| Volume                    | Cubic Metre                      | m³     |
+| VolumetricFlowRate        | Litre per Minute                 | l/min  |
+| VolumetricFlowRate        | Cubic Metre per Second           | m³/s   |
+| VolumetricFlowRate        | Cubic Metre per Minute           | m³/min |
+| VolumetricFlowRate        | Cubic Metre per Hour             | m³/h   |
+| VolumetricFlowRate        | Cubic Metre per Day              | m³/d   |
+
+<a name="mired-footnote">^</a>: Technically, mireds are the reciprocal of Temperature, but QuantityType and NumberItem will transparently convert between mireds and Kelvin.
+This technicality might be a problem if you are using mireds in rules.
+Be sure to use the `toInvertibleUnit` method on QuantityType, rather than `toUnit`.
 
 Metric Prefixes:
 
@@ -204,7 +254,7 @@ Binary Prefixes:
 
 | Name | Symbol | Factor |
 | ---- | ------ | ------ |
-| Kibi | Ki     | 2¹⁰    |
+| Kibi | ki     | 2¹⁰    |
 | Mebi | Mi     | 2²⁰    |
 | Gibi | Gi     | 2³⁰    |
 | Tebi | Ti     | 2⁴⁰    |
@@ -218,4 +268,4 @@ To use the prefixes simply add the prefix to the unit symbol - for example:
 - milliAmpere - `mA`
 - centiMetre - `cm`
 - kiloWatt - `kW`
-- KibiByte - `KiB`
+- KibiByte - `kiB`

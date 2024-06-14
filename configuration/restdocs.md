@@ -20,7 +20,7 @@ Be aware that the documentation of the REST API may not be automatically install
 - Interacting with openHAB from other programs; many programming languages and automation tools can easily make use of REST API
 - Using third party software on cell phones, such as tasker to [open your garage door](https://community.openhab.org/t/triggering-items-using-openhab-2s-rest-api-from-tasker/14027)
 
-The openHAB REST API is excellently documented with detailled use instructions.
+The openHAB REST API is excellently documented with detailed use instructions.
 It would vastly exceed this space to present all possible examples.
 Nevertheless, here is some examples using [curl](https://en.wikipedia.org/wiki/CURL), a common command line tool available for many platforms:
 
@@ -52,23 +52,38 @@ Nevertheless, here is some examples using [curl](https://en.wikipedia.org/wiki/C
 
   ```bash
   # ThingStatusInfoChangedEvent - The status of a thing changed.
-  curl "http://{openHAB_IP}:8080/rest/events?topics=smarthome/things/{thingUID}/statuschanged"
+  curl "http://{openHAB_IP}:8080/rest/events?topics=openhab/things/{thingUID}/statuschanged"
 
   # ChannelTriggeredEvent - A channel has been triggered.
-  curl "http://{openHAB_IP}:8080/rest/events?topics=smarthome/channels/{channelUID}/triggered"
+  curl "http://{openHAB_IP}:8080/rest/events?topics=openhab/channels/{channelUID}/triggered"
   ```
 
 The commands above have been copied from the REST API documentation for illustration.
 
-## Rest Api Explorer
+## REST API Explorer
 
-You can try and validate rest api calles from within the openHAB UI.
+You can try and validate REST API calls from within the openHAB UI.
 Just log in with an admin user, navigate to `Developer Tools -> API Explorer` and start exploring.
 
 ## Authentication
 
-Starting with version 3, openHAB supports password protection for sensible contents such as parts of the semantic model.
-To access this kind of information, the REST API provides the common mechanism [Basic authentication](https://en.wikipedia.org/wiki/Basic_access_authentication) and [OAuth authorization](https://en.wikipedia.org/wiki/OAuth).
+Starting with version 3, openHAB supports password protection
+
+- Only _admins_ are able to access and change sensitive parts of the API.
+  e.g., creating/editing Things, Channels, Items or Scripts.
+- _Users_ are able to interact with the end-user parts of the API.
+  e.g., looking at the state of and interacting with the existing Items.
+
+The setup process of openHAB includes creating an _admin_ account.
+This (or any other account that is part of the _admin_ group) can be used for the authentication of the admin APIs.
+All the _admin_ accounts are equal in terms of access.
+The same is true for _user_ accounts; every _user_ account has equal access to the user APIs.
+
+By default anyone in the LAN will have _user_ access rights.
+This behavior can be changed in the `Settings -> API Security -> Implicit User Role`.
+If the `Implicit User Role` is disabled, all the APIs need authentication of an _admin_ or _user_ account.
+
+The REST API provides the common mechanism [Basic authentication](https://en.wikipedia.org/wiki/Basic_access_authentication) and [OAuth authorization](https://en.wikipedia.org/wiki/OAuth).
 Both mechanisms can be used out of the box by the most programming languages and frameworks, but with regard to the `curl` examples from above, there are two alternative ways of authenticating yourself:
 
 ### With username/password

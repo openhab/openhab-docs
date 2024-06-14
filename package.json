@@ -1,13 +1,20 @@
 {
   "name": "openhab-docs",
-  "version": "3.0.0",
+  "version": "4.2.0",
   "description": "openHAB Documentation",
   "main": "index.js",
   "scripts": {
-    "prepare-docs": "ruby prepare-docs.rb",
-    "build-preview": "ruby prepare-docs.rb --delete-sources && vuepress build .",
-    "build-preview-local": "ruby prepare-docs.rb && vuepress build .",
-    "build-only": "vuepress build ."
+    "build-only": "vuepress build .",
+    "prebuild-preview-local": "ruby prepare-docs.rb",
+    "build-preview-local": "cross-env LANG=en_US.UTF-8 LANGUAGE=en_US.UTF-8 LC_ALL=en_US.UTF-8 NODE_OPTIONS=--openssl-legacy-provider && npx vuepress build .",
+    "build-preview": "npm run build-only",
+    "postinstall": "npm dedupe && npm prune",
+    "prebuild-preview": "ruby prepare-docs.rb",
+    "preserve": "npm run build-preview-local",
+    "serve": "python3 -m http.server --directory vuepress"
+  },
+  "engines": {
+    "node": ">=16.20.1 <17"
   },
   "repository": {
     "type": "git",
@@ -20,10 +27,17 @@
   },
   "homepage": "https://github.com/openhab/openhab-docs#readme",
   "dependencies": {
+    "cross-env": "^7.0.3",
+    "null-loader": "^4.0.1",
     "vue-tabs-component": "^1.5.0",
-    "vuepress": "^1.5.0",
+    "vuepress": "^1.9.10",
     "vuepress-plugin-container": "^2.1.4",
     "vuepress-plugin-tabs": "^0.3.0",
-    "webpack-serve": "^3.1.1"
+    "webpack-serve": "^3.2.0"
+  },
+  "overrides": {
+    "vue": "=2.6.14",
+    "vue-server-renderer": "=2.6.14",
+    "vue-template-compiler": "=2.6.14"
   }
 }

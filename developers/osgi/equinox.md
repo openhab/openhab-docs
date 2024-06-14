@@ -5,19 +5,14 @@ title: Equinox
 
 # Equinox
 
-{:.no_toc}
-
-[Equinox][Equinox] is considered to be a reference implementation of the [OSGi Core Release 7][OSGi-core].
+[Equinox][Equinox] is considered to be a reference implementation of the [OSGi Core Release 8][OSGi-core].
 It is an [open source project][Equinox-repo], part of the [Eclipse project][Eclipse].
 It provides a set of bundles, that implement various optional OSGi services.
 
 The openHAB bundles are deployed on an Equinox runtime.
 Knowledge about how to start the runtime and execute basic commands will help you to speedup the development process.
 
-{::options toc_levels="2,3"/}
-
-- TOC
-{:toc}
+[[toc]]
 
 ## Start Equinox Runtime from Eclipse
 
@@ -80,13 +75,13 @@ Some of the basic OSGi commands are:
 
 | Command                           | Description                                                                                                                                                                                                                                                       |
 |-----------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| *help*                            | Basic command that will list all available commands                                                                                                                                                                                                               |
-| *install* [bundle URL]            | Installs the bundle from the given URL                                                                                                                                                                                                                            |
-| *start* [bundle # or bundle name] | Starts the bundle with the given numeric or symbolic id                                                                                                                                                                                                           |
-| *stop* [bundle # or bundle name]  | Stops the bundle with the given numeric or symbolic id                                                                                                                                                                                                            |
-| *ss*                              | Reports a summary status of all installed bundles                                                                                                                                                                                                                 |
-| *diag* [bundle # or bundle name]  | Reports any resolution problems for the bundle with the given numeric or symbolic id                                                                                                                                                                              |
-| *services* [filter]               | Lists all available services or only services matching to [LDAP-style filter](http://www.ldapexplorer.com/en/manual/109010000-ldap-filter-syntax.htm) (e.g. services (objectClass="\*virtage\*") - will print only services having *virtage* in their class name) |
+| _help_                            | Basic command that will list all available commands                                                                                                                                                                                                               |
+| _install_ [bundle URL]            | Installs the bundle from the given URL                                                                                                                                                                                                                            |
+| _start_ [bundle # or bundle name] | Starts the bundle with the given numeric or symbolic id                                                                                                                                                                                                           |
+| _stop_ [bundle # or bundle name]  | Stops the bundle with the given numeric or symbolic id                                                                                                                                                                                                            |
+| _ss_                              | Reports a summary status of all installed bundles                                                                                                                                                                                                                 |
+| _diag_ [bundle # or bundle name]  | Reports any resolution problems for the bundle with the given numeric or symbolic id                                                                                                                                                                              |
+| _services_ [filter]               | Lists all available services or only services matching to [LDAP-style filter](http://www.ldapexplorer.com/en/manual/109010000-ldap-filter-syntax.htm) (e.g. services (objectClass="\*virtage\*") - will print only services having _virtage_ in their class name) |
 
 Table 1. Equinox commands (Source: <https://www.eclipse.org/equinox/documents/quickstart-framework.php>)
 
@@ -101,7 +96,7 @@ Some or all of these bundles must be included in your runtime configuration, if 
  Name | Bundle Symbolic Name | Description
  -------- | -------- | --------
 Declarative Services | org.eclipse.equinox.ds | An implementation of the OSGi [Declarative Services](osgids.html) specification
-Event Admin Service | org.eclipse.equinox.event | OSGi Compendium Release 7 [Event Admin](https://osgi.org/javadoc/osgi.cmpn/7.0.0/org/osgi/service/event/EventAdmin.html) Service provides an inter-bundle communication mechanism based on an event publish and subscribe model
+Event Admin Service | org.eclipse.equinox.event | OSGi Compendium Release 8 [Event Admin](https://osgi.org/javadoc/osgi.cmpn/8.0.0/org/osgi/service/event/EventAdmin.html) Service provides an inter-bundle communication mechanism based on an event publish and subscribe model
 Equinox Utilities | org.eclipse.equinox.util | A library of utility classes that are frequently used from the Equinox OSGi Service implementation bundles
 OSGi Services API | org.eclipse.osgi.service | This bundle contains the set of OSGi specified service APIs
 
@@ -126,13 +121,7 @@ Table 2. OSGi Bundles (Full list can be found at: <https://www.eclipse.org/equin
 - [RT meets p2](https://bkapukaranov.wordpress.com/category/tech/virgo/)
 
 [Equinox]: https://www.eclipse.org/equinox/
-[OSGi-Core]: https://osgi.org/download/r7/osgi.core-7.0.0.pdf
+[OSGi-Core]: https://osgi.org/download/r8/osgi.core-8.0.0.pdf
 [Equinox-repo]: https://git.eclipse.org/c/equinox/
 [Eclipse]: https://eclipse.org/eclipse/
 [Equinox-Bundles]: https://www.eclipse.org/equinox/bundles/
-[Equinox-Incubator]: https://www.eclipse.org/equinox/incubator/
-[p2]: https://www.eclipse.org/equinox/p2/
-[Equinox-Server]: https://www.eclipse.org/equinox/incubator/server/
-[products]: https://help.eclipse.org/mars/index.jsp?topic=%2Forg.eclipse.platform.doc.isv%2Fguide%2Fproduct_def.htm
-[plugins]: https://help.eclipse.org/mars/index.jsp?topic=%2Forg.eclipse.platform.doc.isv%2Fguide%2Fproduct_def_plugins.htm&cp=2_0_21_2
-[features]: https://help.eclipse.org/mars/index.jsp?topic=%2Forg.eclipse.platform.doc.isv%2Fguide%2Fproduct_def_feature.htm&cp=2_0_21_1

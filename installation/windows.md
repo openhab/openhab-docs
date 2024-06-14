@@ -9,10 +9,7 @@ The following instructions will guide you through the process of setting up open
 
 This page is structured as follows:
 
-{::options toc_levels="2..4"/}
-
-- TOC
-{:toc}
+[[toc]]
 
 ## Preparation of the environment
 
@@ -21,6 +18,8 @@ This page is structured as follows:
 Please be sure you have installed the required supporting applications as described in [Prerequisites]({{base}}/installation/index.html#prerequisites).
 
 ### Set the `JAVA_HOME` System Environment Variable in Windows
+
+Note: If you have installed Zulu Java 17 (highly recommended for OH 4.x) you may skip this step because the JAVA_HOME environment variable was created during installation.
 
 - Navigate to: Control Panel ➡️ System and Security ➡️ System ➡️ Advanced System Settings ➡️ Environment Variables ➡️ System Variables
 - Create a New System Variable named JAVA_HOME (or update the existing one) to match the installation directory of the Java Platform chosen and installed in the step [Prerequisites]({{base}}/installation/index.html#prerequisites).
@@ -66,7 +65,7 @@ By installing the openHAB process as a service in Windows, you can:
 
 #### Windows Service Installation Steps
 
-1. Complete the [prerequisites](#prerequisites) and regular [installation](#installation) steps.
+1. Complete the [prerequisites](#before-you-start) and regular [installation](#installation) steps.
 1. Issue the following two commands in your openHAB console:
 
     ```shell
@@ -96,6 +95,7 @@ By installing the openHAB process as a service in Windows, you can:
     set.default.OPENHAB_RUNTIME=%OPENHAB_HOME%\runtime
     set.default.OPENHAB_USERDATA=%OPENHAB_HOME%\userdata
     set.default.OPENHAB_LOGDIR=%OPENHAB_USERDATA%\logs
+    set.default.KARAF_LOG=%OPENHAB_USERDATA%\logs
     set.default.KARAF_HOME=%OPENHAB_RUNTIME%
     set.default.KARAF_BASE=%OPENHAB_USERDATA%
     set.default.KARAF_DATA=%OPENHAB_USERDATA%
@@ -126,11 +126,16 @@ By installing the openHAB process as a service in Windows, you can:
     wrapper.java.additional.11=-Dopenhab.userdata="%OPENHAB_HOME%\userdata"
     wrapper.java.additional.12=-Dopenhab.logdir="%OPENHAB_USERDATA%\logs"
     wrapper.java.additional.13=-Dfelix.cm.dir="%OPENHAB_HOME%\userdata\config"
-    wrapper.java.additional.14=-Dorg.osgi.service.http.port=8080
-    wrapper.java.additional.15=-Dorg.osgi.service.http.port.secure=8443
-    wrapper.java.additional.16=-Djava.util.logging.config.file="%KARAF_ETC%\java.util.logging.properties"
-    wrapper.java.additional.17=-Dkaraf.logs="%OPENHAB_LOGDIR%"
-    wrapper.java.additional.18=-Dfile.encoding=UTF-8
+    wrapper.java.additional.14=-Djdk.util.zip.disableZip64ExtraFieldValidation=true
+    wrapper.java.additional.15=-Djetty.host=0.0.0.0
+    wrapper.java.additional.16=-Djetty.http.compliance=RFC2616
+    wrapper.java.additional.17=-Dorg.apache.cxf.osgi.http.transport.disable=true
+    wrapper.java.additional.18=-Dorg.osgi.service.http.port=8080
+    wrapper.java.additional.19=-Dorg.osgi.service.http.port.secure=8443
+    wrapper.java.additional.20=-Djava.util.logging.config.file="%KARAF_ETC%\java.util.logging.properties"
+    wrapper.java.additional.21=-Dkaraf.logs="%OPENHAB_LOGDIR%"
+    wrapper.java.additional.22=-Djava.awt.headless=true
+    wrapper.java.additional.23=-Dfile.encoding=UTF-8
     wrapper.java.maxmemory=512
 
     # Wrapper Logging Properties
@@ -176,14 +181,14 @@ By installing the openHAB process as a service in Windows, you can:
 
 Assuming a successful install, you will now have various folders inside `C:\openHAB`:
 
-|                                  | Windows Installation         |
-|:--------------------------------:|:-----------------------------|
-| openHAB application              | `C:\openHAB\runtime`        |
-| Additional add-on files          | `C:\openHAB\addons`         |
-| Site configuration               | `C:\openHAB\conf`           |
-| Log files                        | `C:\openHAB\userdata\logs`  |
-| Userdata like rrd4j databases    | `C:\openHAB\userdata`       |
-| Service configuration            | `C:\openHAB\userdata\etc`   |
+|                               | Windows Installation       |
+| :---------------------------: | :------------------------- |
+|      openHAB application      | `C:\openHAB\runtime`       |
+|    Additional add-on files    | `C:\openHAB\addons`        |
+|      Site configuration       | `C:\openHAB\conf`          |
+|           Log files           | `C:\openHAB\userdata\logs` |
+| Userdata like rrd4j databases | `C:\openHAB\userdata`      |
+|     Service configuration     | `C:\openHAB\userdata\etc`  |
 
 ## What next?
 
@@ -213,7 +218,10 @@ Update-openHAB -OHVersion x.x.x
 
 Now that openHAB has updated, you only need to run the above commands again for future versions.
 
-### Uninstallation
+NB: Due to an issue with long file paths sometimes the update script may fail after the 'Copying files...' stage.
+This can be resolved by deleting the c:\openHAB\userdata\tmp folder.
+
+### Deinstallation
 
 - perform a backup as described above
 - uninstall openHAB as a Windows service: run PowerShell as an administrator and use the following commands

@@ -5,16 +5,13 @@ title: Pages - Introduction
 
 # Introduction to Pages
 
-openHAB 3 introduces a new unified user interface called MainUI.
+openHAB 3 introduced a new unified user interface called MainUI.
 Almost everything that can be configured in openHAB can be configured through MainUI.
 
 In addition to being used for the administration of openHAB, MainUI can serve as the interface presented to the users of your home automation system.
 You can find an example of the MainUI on the [demo page](https://demo.openhab.org/#!/).
 
-{::options toc_levels="2..4"/}
-
-- TOC
-{:toc}
+[[toc]]
 
 ## Role Based Access
 
@@ -49,7 +46,7 @@ Notice the new Settings and Developer Tools menus are accessible to administrato
 
 Every openHAB deployment is unique.
 Consequently every administrator of an openHAB instance will need to create a custom interface for the users of their bespoke home automation system.
-openHAB 3 provides a number of options to supports this in addition to MainUI Pages.
+openHAB provides a number of options to support this in addition to MainUI Pages.
 
 Interface | Purpose | How the UI is Defined | Notes
 -|-|-|-

@@ -10,14 +10,9 @@ title: Rules Blockly - Logging
 
 ## Introduction
 
-This section explains only the blocks that have been added to the standard blocks by openHAB
+This section explains the blocks that have been added to allow logging.
 
-{::options toc_levels="2..4"/}
-
-- TOC
-{:toc}
-
-{: #blockly-logging-overview}
+[[toc]]
 
 ## Logging and Output
 
@@ -25,11 +20,13 @@ These blocks enable arbitrary content to be published to the [openHAB log](https
 
 ![logging-overview](../images/blockly/blockly-logging-overview.png)
 
+More about that topic can be viewed at ![youtube](../images/blockly/youtube-logo-small.png) [Logging](https://youtu.be/EdllUlJ7p6k?t=670)
+
 ### Log Statement
 
 ![log-statement](../images/blockly/blockly-logging-log.png)
 
-*Function:* Sends an entry to the openHAB log file with a defined severity level.
+_Function:_ Sends an entry to the openHAB log file with a defined severity level.
 
 - A [severity level](https://www.openhab.org/docs/administration/logging.html#defining-what-to-log) can be provided via the dropdown list for the log statement
 
@@ -45,7 +42,7 @@ Since 3.3: The block attached to the log-block is not restricted to a string typ
 
 ![print-to-stdout](../images/blockly/blockly-logging-print.png)
 
-*Function:* creates a print statement with the given text in the rule that logs to *stdout*
+_Function:_ creates a print statement with the given text in the rule that logs to _stdout_
 
 ## Return to Blockly Reference
 

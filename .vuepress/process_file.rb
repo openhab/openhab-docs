@@ -104,10 +104,6 @@ def process_file(indir, file, outdir, source)
                 next
             end
 
-            # Actions and transformations are currently partly in add-ons, copy the content above the list of add-ons
-            break if line =~ /^More details regarding this and other Transformation services can be found in the individual transformation articles linked below./
-            break if line =~ /^## Installable Actions/
-
             # Remove collapsibles in Linux install document and replace them by regular headings
             next if line =~ /include collapsible/ && file =~ /linux/
             line = "##### " + line if line =~ /^Apt Based Systems/ && file =~ /linux/

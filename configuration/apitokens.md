@@ -5,7 +5,7 @@ title: openHAB API tokens
 
 # openHAB API tokens
 
-API tokens are an authentication method, like an username and password.
+API tokens are an authentication method, like a username and password.
 Usually you would use an API token to authenticate an external service or script.
 
 ## Generate an API token

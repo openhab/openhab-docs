@@ -5,17 +5,12 @@ title: Thing Descriptions
 
 # Binding Definitions
 
-{:.no_toc}
-
-In order to work with *Things* and *Channels*, some meta information about them is needed.
+In order to work with _Things_ and _Channels_, some meta information about them is needed.
 
 These are provided through 'ThingType' and 'ChannelType' definitions,
 which describe details about their functionality and configuration options.
 
-{::options toc_levels="2,3"/}
-
-- TOC
-{:toc}
+[[toc]]
 
 ## ThingTypeProvider / ChannelTypeProvider
 
@@ -36,9 +31,9 @@ A bridge is a specific type of thing as it can additionally provide access to ot
 Which Things can be associated through which bridge type is defined within the description of a thing:
 
 ```xml
-    <thing-type id="thingTypeID">
+    <thing-type id="thing-type-id">
         <supported-bridge-type-refs>
-            <bridge-type-ref id="bridgeTypeID" />
+            <bridge-type-ref id="bridge-type-id" />
         </supported-bridge-type-refs>
         <label>Sample Thing</label>
         <description>Some sample description</description>
@@ -51,7 +46,7 @@ Bindings may optionally set the listing of a thing type.
 By doing do, they indicate to user interfaces whether it should be shown to the users or not, e.g. when pairing things manually:
 
 ```xml
-    <thing-type id="thingTypeID" listed="false">
+    <thing-type id="thing-type-id" listed="false">
         ...
     </thing-type>
 ```
@@ -63,7 +58,8 @@ In that way, a generic thing type could be listed for users and a corresponding 
 
 ### Thing Categories
 
-A description about thing categories as well as an overview about which categories exist can be found in our [categories overview](../../concepts/categories.html).
+Categories are used to provide meta information about Things. Thing categories describe how the physical device **looks like**. UIs can use this information e.g. to render icons.
+The available categories correspond with the [available icons of the classic iconset]({{base}}/configuration/iconsets/classic/), however categories are written in Java class-naming style, e.g. `FrontDoor` instead of lowercase `frontdoor`.
 
 ## Channels
 
@@ -80,24 +76,33 @@ Overriding labels of a channel type must only be done if the very same functiona
 
 ### State Channel Types
 
-The following XML snippet shows a thing type definition with 2 channels and one referenced channel type:
+The following XML snippet shows a thing type definition with three channels and two referenced channel types:
 
 ```xml
-<thing-type id="thingTypeID">
+<thing-type id="thing-type-id">
     <label>Sample Thing</label>
     <description>Some sample description</description>
     <channels>
-        <channel id="switch" typeId="powerSwitch" />
-        <channel id="temperature" typeId="setpointTemperature" />
+        <channel id="switch" typeId="power-switch" />
+        <channel id="temperature" typeId="setpoint-temperature" />
+        <channel id="room-humidity" typeId="humidity" />
     </channels>
 </thing-type>
-<channel-type id="setpointTemperature" advanced="true">
+<channel-type id="setpoint-temperature" advanced="true">
     <item-type>Number</item-type>
     <label>Setpoint Temperature</label>
     <category>Temperature</category>
     <state min="12" max="30" step="0.5" pattern="%.1f °C" readOnly="false" />
 </channel-type>
+<channel-type id="humidity">
+    <item-type unitHint="%">Number:Dimensionless</item-type>
+    <label>Humidity</label>
+    <state readOnly="true" pattern="%.1f %%"/>
+</channel-type>
 ```
+
+The `item-type` element defines the [item type](../../configuration/items.md#type) to be used when a linked item is created.
+If the `item-type` is a `Number:<dimension>`, then a `unitHint` attribute may be provided to suggest the measurement unit to be used when a linked item is created.
 
 In order to reuse identical channels in different bindings a channel type can be system-wide.
 A channel type can be declared as system-wide by setting its `system` property to true and can then be referenced using a `system.` prefix in a `channel` `typeId` attribute in any binding - note that this should only be done in the core framework, but not by individual bindings!
@@ -105,7 +110,7 @@ A channel type can be declared as system-wide by setting its `system` property t
 The following XML snippet shows a system channel type definition and thing type definition that references it:
 
 ```xml
-<thing-type id="thingTypeID">
+<thing-type id="thing-type-id">
     <label>Sample Thing</label>
     <description>Some sample description</description>
     <channels>
@@ -123,31 +128,33 @@ The following XML snippet shows a system channel type definition and thing type 
 
 There exist system-wide channel types that are available by default and which should be used whenever possible:
 
-| Channel Type ID       | Reference typeId             | Item Type            | Category         | Tags                      | Description                                                                                                                                                                                                             |
-|-----------------------|------------------------------|----------------------|------------------|---------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| signal-strength       | system.signal-strength       | Number               | QualityOfService | Measurement, Level        | Represents signal strength of a device as a Number with values 0, 1, 2, 3 or 4; 0 being worst strength and 4 being best strength.                                                                                       |
-| low-battery           | system.low-battery           | Switch               | LowBattery       | LowBattery, Energy        | Represents a low battery warning with possible values on (low battery) and off (battery ok).                                                                                                                            |
-| battery-level         | system.battery-level         | Number               | Battery          | Measurement, Energy       | Represents the battery level as a percentage (0-100%). Bindings for things supporting battery level in a different format (e.g. 4 levels) should convert to a percentage to provide a consistent battery level reading. |
-| power                 | system.power                 | Switch               | Switch           | Switch, Power             | Turn a device on/off.                                                                                                                                                                                                   |
-| brightness            | system.brightness            | Dimmer               | Light            | Control, Light            | Brightness of a bulb (0-100%).                                                                                                                                                                                          |
-| color                 | system.color                 | Color                | ColorLight       | Control, Light            | Color of a bulb.                                                                                                                                                                                                        |
-| color-temperature     | system.color-temperature     | Dimmer               | ColorLight       | Control, ColorTemperature | Color temperature of a bulb (0-100%). 0% should be the coldest setting (highest Kelvin value), 100 the warmest.                                                                                                         |
-| color-temperature-abs | system.color-temperature-abs | Number               | ColorLight       | Control, ColorTemperature | Color temperature of a bulb in Kelvin (1000K-10000K).                                                                                                                                                                   |
-| location              | system.location              | Location             | -                | Measurement               | Location in lat.,lon.,height coordinates.                                                                                                                                                                               |
-| motion                | system.motion                | Switch               | Motion           | Status, Presence          | Motion detected by the device (ON if motion is detected).                                                                                                                                                               |
-| mute                  | system.mute                  | Switch               | SoundVolume      | Switch, SoundVolume       | Turn on/off the volume of a device.                                                                                                                                                                                     |
-| volume                | system.volume                | Dimmer               | SoundVolume      | Control, SoundVolume      | Change the sound volume of a device (0-100%).                                                                                                                                                                           |
-| media-control         | system.media-control         | Player               | MediaControl     | Control                   | Control for a media player.                                                                                                                                                                                             |
-| media-title           | system.media-title           | String               | -                | Status                    | Title of a (played) media file.                                                                                                                                                                                         |
-| media-artist          | system.media-artist          | String               | -                | Status                    | Artist of a (played) media file.                                                                                                                                                                                        |
-| outdoor-temperature   | system.outdoor-temperature   | Number:Temperature   | Temperature      | Measurement, Temperature  | Current outdoor temperature.                                                                                                                                                                                            |
-| indoor-temperature    | system.indoor-temperature    | Number:Temperature   | Temperature      | Measurement, Temperature  | Current indoor temperature.                                                                                                                                                                                             |
-| wind-direction        | system.wind-direction        | Number:Angle         | Wind             | Measurement, Wind         | Wind direction in degrees (0-360°).                                                                                                                                                                                     |
-| wind-speed            | system.wind-speed            | Number:Speed         | Wind             | Measurement, Wind         | Wind speed                                                                                                                                                                                                              |
-| atmospheric-humidity  | system.atmospheric-humidity  | Number:Dimensionless | Humidity         | Measurement, Humidity     | Atmospheric humidity in percent.                                                                                                                                                                                        |
-| barometric-pressure   | system.barometric-pressure   | Number:Pressure      | Pressure         | Measurement, Pressure     | Barometric pressure                                                                                                                                                                                                     |
-
-For further information about categories see the [categories page](../../concepts/categories.html).
+| Channel Type ID       | Reference typeId             | Item Type                | Category         | Tags                      | Description                                                                                                                                                                                                             |
+|-----------------------|------------------------------|--------------------------|------------------|---------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| signal-strength       | system.signal-strength       | Number                   | QualityOfService | Measurement, Level        | Represents signal strength of a device as a Number with values 0, 1, 2, 3 or 4; 0 being worst strength and 4 being best strength.                                                                                       |
+| low-battery           | system.low-battery           | Switch                   | LowBattery       | LowBattery, Energy        | Represents a low battery warning with possible values on (low battery) and off (battery ok).                                                                                                                            |
+| battery-level         | system.battery-level         | Number                   | Battery          | Measurement, Energy       | Represents the battery level as a percentage (0-100%). Bindings for things supporting battery level in a different format (e.g. 4 levels) should convert to a percentage to provide a consistent battery level reading. |
+| power                 | system.power                 | Switch                   | Switch           | Switch, Power             | Turn a device on/off.                                                                                                                                                                                                   |
+| brightness            | system.brightness            | Dimmer                   | Light            | Control, Light            | Brightness of a bulb (0-100%).                                                                                                                                                                                          |
+| color                 | system.color                 | Color                    | ColorLight       | Control, Light            | Color of a bulb.                                                                                                                                                                                                        |
+| color-temperature     | system.color-temperature     | Dimmer                   | ColorLight       | Control, ColorTemperature | Color temperature of a bulb (0-100%). 0% should be the coldest setting (highest Kelvin value), 100 the warmest.                                                                                                         |
+| color-temperature-abs | system.color-temperature-abs | Number                   | ColorLight       | Control, ColorTemperature | Color temperature of a bulb in Kelvin (1000K-10000K).                                                                                                                                                                   |
+| location              | system.location              | Location                 | -                | Measurement               | Location in lat.,lon.,height coordinates.                                                                                                                                                                               |
+| motion                | system.motion                | Switch                   | Motion           | Status, Presence          | Motion detected by the device (ON if motion is detected).                                                                                                                                                               |
+| mute                  | system.mute                  | Switch                   | SoundVolume      | Switch, SoundVolume       | Turn on/off the volume of a device.                                                                                                                                                                                     |
+| volume                | system.volume                | Dimmer                   | SoundVolume      | Control, SoundVolume      | Change the sound volume of a device (0-100%).                                                                                                                                                                           |
+| media-control         | system.media-control         | Player                   | MediaControl     | Control                   | Control for a media player.                                                                                                                                                                                             |
+| media-title           | system.media-title           | String                   | -                | Status                    | Title of a (played) media file.                                                                                                                                                                                         |
+| media-artist          | system.media-artist          | String                   | -                | Status                    | Artist of a (played) media file.                                                                                                                                                                                        |
+| outdoor-temperature   | system.outdoor-temperature   | Number:Temperature       | Temperature      | Measurement, Temperature  | Current outdoor temperature.                                                                                                                                                                                            |
+| indoor-temperature    | system.indoor-temperature    | Number:Temperature       | Temperature      | Measurement, Temperature  | Current indoor temperature.                                                                                                                                                                                             |
+| wind-direction        | system.wind-direction        | Number:Angle             | Wind             | Measurement, Wind         | Wind direction in degrees (0-360°).                                                                                                                                                                                     |
+| wind-speed            | system.wind-speed            | Number:Speed             | Wind             | Measurement, Wind         | Wind speed                                                                                                                                                                                                              |
+| atmospheric-humidity  | system.atmospheric-humidity  | Number:Dimensionless     | Humidity         | Measurement, Humidity     | Atmospheric humidity in percent.                                                                                                                                                                                        |
+| barometric-pressure   | system.barometric-pressure   | Number:Pressure          | Pressure         | Measurement, Pressure     | Barometric pressure                                                                                                                                                                                                     |
+| electric-current      | system.electric-current      | Number:ElectricCurrent   | Energy           | Measurement, Current      | Electric current                                                                                                                                                                                                        |
+| electric-power        | system.electric-power        | Number:Power             | Energy           | Measurement, Power        | Electric power                                                                                                                                                                                                          |
+| electric-voltage      | system.electric-voltage      | Number:ElectricPotential | Energy           | Measurement, Voltage      | Electric voltage                                                                                                                                                                                                        |
+| electrical-energy     | system.electric-energy       | Number:Energy            | Energy           | Measurement, Energy       | Electrical energy                                                                                                                                                                                                       |
 
 The `advanced` property indicates whether this channel is a basic or a more specific functionality of the thing.
 If `advanced` is set to `true` a user interface may hide this channel by default.
@@ -161,11 +168,11 @@ If a functionality is rarely used it should be better marked as `advanced`.
 The following XML snippet shows a trigger channel:
 
 ```xml
-<thing-type id="thingTypeID">
+<thing-type id="thing-type-id">
     <label>Sample Thing</label>
     <description>Some sample description</description>
     <channels>
-        <channel id="s" typeId="trigger-channel" />
+        <channel id="sample-channel" typeId="trigger-channel" />
     </channels>
 </thing-type>
 <channel-type id="trigger-channel">
@@ -198,7 +205,7 @@ There exist system-wide trigger channel types that are available by default:
 | rawrocker       | system.rawrocker | Can trigger `DIR1_PRESSED`, `DIR1_RELEASED`, `DIR2_PRESSED` and `DIR2_RELEASED` |
 
 In the following sections the declaration and semantics of tags, state descriptions and channel categories will be explained in more detail.
-For a complete sample of the thing types XML file and a full list of possible configuration options please see the [XML Configuration Guide](config-xml.html).
+For a complete sample of the thing types XML file and a full list of possible configuration options please see the [XML Configuration Guide](../addons/config-xml.html).
 
 ### Default Tags
 
@@ -412,7 +419,8 @@ public class ExampleHandlerFactory extends BaseThingHandlerFactory {
 
 ### Channel Categories
 
-A description about channel categories as well as an overview about which categories exist can be found in out [categories overview](../../concepts/categories.html).
+Channel categories are used to provide meta information about channels. Channel categories describe the **functional purpose** of the channel and are used by the UI to render icons.
+The available categories correspond with the [available icons of the classic iconset]({{base}}/configuration/iconsets/classic/), however categories are written in Java class-naming style, e.g. `BatteryLevel` instead of lowercase `batterylevel`.
 
 ### Channel Groups
 
@@ -424,22 +432,22 @@ A thing can only have direct channels or channel groups, but not both.
 Inside the thing types XML file channel groups can be defined like this:
 
 ```xml
-<thing-type id="multiChannelSwitchActor">
+<thing-type id="multi-channel-switch-actor">
     <!-- ... -->
     <channel-groups>
-        <channel-group id="switchActor1" typeId="switchActor" />
-        <channel-group id="switchActor2" typeId="switchActor" />
+        <channel-group id="switch-actor-1" typeId="switch-actor" />
+        <channel-group id="switch-actor-2" typeId="switch-actor" />
     </channel-groups>
     <!-- ... -->
 </thing-type>
 ```
 
 The channel group type is defined on the same level as the thing types and channel types.
-The group type must have a label, an optional description, and an optional [category](../../concepts/categories.html).
+The group type must have a label, an optional description, and an optional category (e.g. used to render an icon)..
 Moreover the list of contained channels must be specified:
 
 ```xml
-<channel-group-type id="switchActor">
+<channel-group-type id="switch-actor">
     <label>Switch Actor</label>
     <description>This is a single switch actor with a switch channel</description>
     <category>Light</category>
@@ -451,7 +459,6 @@ Moreover the list of contained channels must be specified:
 
 When a thing will be created for a thing type with channel groups, the channel UID will contain the group ID in the last segment divided by a hash (#).
 If an Item should be linked to a channel within a group, the channel UID would be `binding:multiChannelSwitchActor:myDevice:switchActor1#switch` for the XML example before.
-Details about the category can be found in our [categories overview](../../concepts/categories.html).
 
 ## Properties
 
@@ -468,7 +475,7 @@ Among others the one solution could use the data during a device pairing process
 To define such thing meta data the thing type definition provides the possibility to specify so-called `properties`:
 
 ```xml
-    <thing-type id="thingTypeId">
+    <thing-type id="thing-type-id">
         ...
         <properties>
              <property name="vendor">MyThingVendor</property>
@@ -499,7 +506,7 @@ Having this property identified per binding it could be used as the `representat
 The `representation property` shall be defined in the thing type XML:
 
 ```xml
-    <thing-type id="thingTypeId">
+    <thing-type id="thing-type-id">
         ...
         <properties>
             <property name="vendor">Philips</property>
@@ -523,10 +530,10 @@ A new discovery would then automatically find this Thing again and add it to the
 See also [Implementing a Discovery Service](index.md#representation-property)
 
 When comparing representation properties, the auto-ignore service checks for matches between the representation property of the newly discovered Thing, and both the properties and the configuration parameters of existing Things.
-If a configuration parameter will be used, then its respective `parameter` shall be declared in the XML `config-description` section or the `config-description` [XML file](config-xml.md):
+If a configuration parameter will be used, then its respective `parameter` shall be declared in the XML `config-description` section or the `config-description` [XML file](../addons/config-xml.md):
 
 ```xml
-    <thing-type id="thingTypeId">
+    <thing-type id="thing-type-id">
         ...
         <representation-property>uniqueId</representation-property>
         ...
@@ -572,12 +579,12 @@ Nevertheless, this value can be overridden in the channel definition.
 In this example, an auto update policy is defined for the channel type, but is overridden in the channel definition:
 
 ```xml
-<channel-type id="channel">
+<channel-type id="channel-type-id">
     <label>Channel with an auto update policy</label>
     <autoUpdatePolicy>recommend</autoUpdatePolicy>
 </channel-type>
 
-<thing-type id="thingtype">
+<thing-type id="thing-type-id">
     <label>Sample Thing</label>
     <description>Thing type which overrides the auto update policy of a channel</description>
     <channels>
@@ -600,14 +607,14 @@ The following policies are supported:
 
 ## Bridges and Thing Descriptions
 
-Every binding has to provide meta information about which bridges and/or *Thing*s it provides and how their relations to each other are structured.
+Every binding has to provide meta information about which bridges and/or _Thing_s it provides and how their relations to each other are structured.
 In that way a binding could describe that it requires specific bridges to be operational or define which channels (e.g. temperature, color, etc.) it provides.
 
-Every bridge or *Thing* has to provide meta information such as label or description.
-The meta information of all bridges and *Thing*s is accessible through the `org.openhab.core.thing.binding.ThingTypeProvider` service.
+Every bridge or _Thing_ has to provide meta information such as label or description.
+The meta information of all bridges and _Thing_s is accessible through the `org.openhab.core.thing.binding.ThingTypeProvider` service.
 
-Bridge and *Thing* descriptions must be placed as XML file(s) (with the ending `.xml`) in the bundle's folder `/OH-INF/thing/`.
-The full Java API for bridge and *Thing* descriptions can be found in the Java package `org.openhab.core.thing.type`.
+Bridge and _Thing_ descriptions must be placed as XML file(s) (with the ending `.xml`) in the bundle's folder `/OH-INF/thing/`.
+The full Java API for bridge and _Thing_ descriptions can be found in the Java package `org.openhab.core.thing.type`.
 
 ### XML Structure for Thing Descriptions
 
@@ -619,9 +626,9 @@ The full Java API for bridge and *Thing* descriptions can be found in the Java p
     xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
         https://openhab.org/schemas/thing-description-1.0.0.xsd">
 
-  <bridge-type id="bridgeTypeID" listed="{true|false}" extensible="channelTypeId1,channelTypeId2,...">
+  <bridge-type id="bridge-type-id" listed="{true|false}" extensible="channel-type-id-1,channel-type-id-2,...">
     <supported-bridge-type-refs>
-      <bridge-type-ref id="bridgeTypeID" />
+      <bridge-type-ref id="bridge-type-ref-id" />
       ...
     </supported-bridge-type-refs>
 
@@ -630,9 +637,9 @@ The full Java API for bridge and *Thing* descriptions can be found in the Java p
     <category>String</category>
 
     <channels>
-      <channel id="channelID" typeId="channelTypeID" />
+      <channel id="channel-id" typeId="channel-type-id" />
       OR
-      <channel id="channelID" typeId="channelTypeID">
+      <channel id="channel-id" typeId="channel-type-id">
         <label>String</label>
         <description>String</description>
       </channel>
@@ -640,9 +647,9 @@ The full Java API for bridge and *Thing* descriptions can be found in the Java p
     </channels>
     OR
     <channel-groups>
-      <channel-group id="channelGroupID" typeId="channelGroupTypeID" />
+      <channel-group id="channel-group-id" typeId="channel-group-type-id" />
       OR
-      <channel-group id="channelGroupID" typeId="channelGroupTypeID">
+      <channel-group id="channel-group-id" typeId="channel-group-type-id">
         <label>String</label>
         <description>String</description>
       </channel-group>
@@ -662,9 +669,9 @@ The full Java API for bridge and *Thing* descriptions can be found in the Java p
     <config-description-ref uri="{binding|thing-type|channel-type|any_other}:bindingID:..." />
   </bridge-type>
 
-  <thing-type id="thingTypeID" listed="{true|false}" extensible="channelTypeId1,channelTypeId2,...">
+  <thing-type id="thing-type-id" listed="{true|false}" extensible="channel-type-id-1,channel-type-id-2,...">
     <supported-bridge-type-refs>
-      <bridge-type-ref id="bridgeTypeID" />
+      <bridge-type-ref id="bridge-type-id" />
       ...
     </supported-bridge-type-refs>
 
@@ -673,9 +680,9 @@ The full Java API for bridge and *Thing* descriptions can be found in the Java p
     <category>String</category>
 
     <channels>
-      <channel id="channelID" typeId="channelTypeID" />
+      <channel id="channel-id" typeId="channel-type-id" />
       OR
-      <channel id="channelID" typeId="channelTypeID">
+      <channel id="channel-id" typeId="channel-type-id">
         <label>String</label>
         <description>String</description>
       </channel>
@@ -683,9 +690,9 @@ The full Java API for bridge and *Thing* descriptions can be found in the Java p
     </channels>
     OR
     <channel-groups>
-      <channel-group id="channelGroupID" typeId="channelGroupTypeID" />
+      <channel-group id="channel-group-id" typeId="channel-group-type-id" />
       OR
-      <channel-group id="channelGroupID" typeId="channelGroupTypeID">
+      <channel-group id="channel-group-id" typeId="channel-group-type-id">
         <label>String</label>
         <description>String</description>
       </channel-group>
@@ -705,7 +712,7 @@ The full Java API for bridge and *Thing* descriptions can be found in the Java p
     <config-description-ref uri="{binding|thing-type|channel-type|any_other}:bindingID:..." />
   </thing-type>
 
-  <channel-type id="channelTypeID" advanced="{true|false}">
+  <channel-type id="channel-type-id" advanced="{true|false}">
     <item-type>Dimmer</item-type>
     OR
     <kind>trigger</kind>
@@ -752,13 +759,13 @@ The full Java API for bridge and *Thing* descriptions can be found in the Java p
     <config-description-ref uri="{binding|thing-type|channel-type|any_other}:bindingID:..." />
   </channel-type>
 
-  <channel-group-type id="channelGroupTypeID">
+  <channel-group-type id="channel-group-type-id">
     <label>String</label>
     <description>String</description>
     <category>String</category>
 
     <channels>
-      <channel id="channelID" typeId="channelTypeID" />
+      <channel id="channel-id" typeId="channel-type-id" />
       ...
     </channels>
   </channel-group-type>
@@ -768,85 +775,166 @@ The full Java API for bridge and *Thing* descriptions can be found in the Java p
 </thing:thing-descriptions>
 ```
 
-| Property                     | Description                                  | |
-|------------------------------|----------------------------------------------|--------|
+| Property                     | Description                                        |           |
+|------------------------------|----------------------------------------------------|-----------|
 | thing-descriptions.bindingId | The identifier of the binding this types belong to | mandatory |
 
 **Bridges and Things:**
 
-| Property                       | Description                                  | |
-|--------------------------------|----------------------------------------------|--------|
-| bridge-type.id / thing-type.id | An identifier for the bridge/Thing type | mandatory |
-| bridge-type.listed / thing-type.listed | Denotes if user interfaces should list the bridge/Thing, e.g. for pairing | optional, defaults to true |
-| bridge-type.extensible / thing-type.extensible | If the bridge/Thing supports a generic number of channels the allowed channelTypeIds can be listed here. This provides a hint for UIs to support adding/removing channels. Channel groups are not supported. | optional |
-| supported-bridge-type-refs     | The identifiers of the bridges this bridge/Thing can connect to | optional |
-| bridge-type-ref.id             | The identifier of a bridge this bridge/Thing can connect to | mandatory |
-| label                          | A human-readable label for the bridge/Thing | mandatory |
-| description                    | A human-readable description for the bridge/Thing | optional |
-| category                       | Category this bridge/Thing belongs to, see categories) | optional |
-| channels                       | The channels the bridge/Thing provides | optional |
-| channel.id                     | An identifier of the channel the bridge/Thing provides | mandatory |
-| channel.typeId                 | An identifier of the channel type definition the bridge/Thing provides | mandatory |
-| label                          | A human-readable label for the channel | optional |
-| description                    | A human-readable description for the channel | optional |
-| channel-groups                 | The channel groups defining the channels the bridge/Thing provides | optional |
-| channel-group.id               | An identifier of the channel group the bridge/Thing provides | mandatory ||
-| channel-group.typeId           | An identifier of the channel group type definition the bridge/Thing provides | mandatory |
-| properties                     | Name/value pairs for properties to be set to the thing | optional |
-| representation-property        | The name of the property that contains a unique identifier of the thing | optional |
-| config-description             | The configuration description for the bridge/Thing within the ConfigDescriptionRegistry | optional |
-| config-description-ref         | The reference to a configuration description for the bridge/Thing within the ConfigDescriptionRegistry | optional |
-| config-description-ref.uri     | The URI of the configuration description for the bridge/Thing within the ConfigDescriptionRegistry | mandatory |
+| Property                                       | Description                                                                                                                                                                                                  |                            |
+|------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------|
+| bridge-type.id / thing-type.id                 | An identifier for the bridge/Thing type                                                                                                                                                                      | mandatory                  |
+| bridge-type.listed / thing-type.listed         | Denotes if user interfaces should list the bridge/Thing, e.g. for pairing                                                                                                                                    | optional, defaults to true |
+| bridge-type.extensible / thing-type.extensible | If the bridge/Thing supports a generic number of channels the allowed channelTypeIds can be listed here. This provides a hint for UIs to support adding/removing channels. Channel groups are not supported. | optional                   |
+| supported-bridge-type-refs                     | The identifiers of the bridges this bridge/Thing can connect to                                                                                                                                              | optional                   |
+| bridge-type-ref.id                             | The identifier of a bridge this bridge/Thing can connect to                                                                                                                                                  | mandatory                  |
+| label                                          | A human-readable label for the bridge/Thing                                                                                                                                                                  | mandatory                  |
+| description                                    | A human-readable description for the bridge/Thing                                                                                                                                                            | optional                   |
+| category                                       | Category this bridge/Thing belongs to, see categories)                                                                                                                                                       | optional                   |
+| channels                                       | The channels the bridge/Thing provides                                                                                                                                                                       | optional                   |
+| channel.id                                     | An identifier of the channel the bridge/Thing provides                                                                                                                                                       | mandatory                  |
+| channel.typeId                                 | An identifier of the channel type definition the bridge/Thing provides                                                                                                                                       | mandatory                  |
+| label                                          | A human-readable label for the channel                                                                                                                                                                       | optional                   |
+| description                                    | A human-readable description for the channel                                                                                                                                                                 | optional                   |
+| channel-groups                                 | The channel groups defining the channels the bridge/Thing provides                                                                                                                                           | optional                   |
+| channel-group.id                               | An identifier of the channel group the bridge/Thing provides                                                                                                                                                 | mandatory                  |
+| channel-group.typeId                           | An identifier of the channel group type definition the bridge/Thing provides                                                                                                                                 | mandatory                  |
+| properties                                     | Name/value pairs for properties to be set to the thing                                                                                                                                                       | optional                   |
+| representation-property                        | The name of the property that contains a unique identifier of the thing                                                                                                                                      | optional                   |
+| config-description                             | The configuration description for the bridge/Thing within the ConfigDescriptionRegistry                                                                                                                      | optional                   |
+| config-description-ref                         | The reference to a configuration description for the bridge/Thing within the ConfigDescriptionRegistry                                                                                                       | optional                   |
+| config-description-ref.uri                     | The URI of the configuration description for the bridge/Thing within the ConfigDescriptionRegistry                                                                                                           | mandatory                  |
 
 **Channels:**
 
-| Property                      | Description                                  | |
-|-------------------------------|----------------------------------------------|--------|
-| channel-type.id               | An identifier for the channel type | mandatory |
-| channel-type.advanced         | The flag indicating if this channel contains advanced functionalities which should be typically not shown in the basic view of user interfaces | optional, default: false |
-| kind                          | The kind of channel. state for channels which have a state, trigger for trigger channels. state is the default. | |
-| item-type                     | An item type of the channel. All item types are specified in ItemFactory instances. The following items belong to the core: Switch, Rollershutter, Contact, String, Number, Dimmer, DateTime, Color, Image, Location, Player, Call. | mandatory if kind state, which is the default |
-| label                         | A human-readable label for the channel | mandatory |
-| description                   | A human-readable description for the channel | optional |
-| category                      | The category for the channel, e.g. TEMPERATURE | optional |
-| tags                          | A list of default tags to be assigned to bound items | optional |
-| tag                           | A tag semantically describes the feature (typical usage) of the channel e.g. AlarmSystem. There are no pre-default tags, they are custom-specific | mandatory |
-| state                         | The restrictions of an item state which gives information how to interpret it | optional |
-| state.min                     | The minimum decimal value of the range for the state | optional |
-| state.max                     | The maximum decimal value of the range for the state | optional |
-| state.step                    | The increasing/decreasing decimal step size within the defined range, specified by the minimum/maximum values | optional |
-| state.pattern                 | The pattern following the printf syntax to render the state | optional |
-| state.readOnly                | The flag indicating if the state is read-only or can be modified | optional, default: false |
-| options                       | A list restricting all possible values | optional |
-| option                        | The description for the option | optional |
-| option.value                  | The value for the option. Note that the value may be outside of the range specified in the min/max if this is specified. | mandatory |
-| command                       | Commands this channel will send to the binding. This is used to model "write-only" channels and gives UIs a hint to display push-buttons without state | optional |
-| options                       | A list defining the possible commands | optional |
-| option                        | The description for the option | optional |
-| option.value                  | The value for the option. This is the actual command send to the channel. | mandatory |
-| event                         | The restrictions of an trigger event which gives information how to interpret it | optional |
-| autoUpdatePolicy              | The auto update policy to use | optional |
-| config-description            | The configuration description for the channel within the ConfigDescriptionRegistry | optional |
-| config-description-ref        | The reference to a configuration description for the channel within the ConfigDescriptionRegistry | optional |
-| config-description-ref.uri    | The URI of the configuration description for the channel within the ConfigDescriptionRegistry | mandatory |
+| Property                   | Description                                                                                                                                                                                                                         |                                               |
+|----------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------|
+| channel-type.id            | An identifier for the channel type                                                                                                                                                                                                  | mandatory                                     |
+| channel-type.advanced      | The flag indicating if this channel contains advanced functionalities which should be typically not shown in the basic view of user interfaces                                                                                      | optional, default: false                      |
+| kind                       | The kind of channel. state for channels which have a state, trigger for trigger channels. state is the default.                                                                                                                     |                                               |
+| item-type                  | An item type of the channel. All item types are specified in ItemFactory instances. The following items belong to the core: Switch, Rollershutter, Contact, String, Number, Dimmer, DateTime, Color, Image, Location, Player, Call. | mandatory if kind state, which is the default |
+| label                      | A human-readable label for the channel                                                                                                                                                                                              | mandatory                                     |
+| description                | A human-readable description for the channel                                                                                                                                                                                        | optional                                      |
+| category                   | The category for the channel, e.g. TEMPERATURE                                                                                                                                                                                      | optional                                      |
+| tags                       | A list of default tags to be assigned to bound items                                                                                                                                                                                | optional                                      |
+| tag                        | A tag semantically describes the feature (typical usage) of the channel e.g. AlarmSystem. There are no pre-default tags, they are custom-specific                                                                                   | mandatory                                     |
+| state                      | The restrictions of an item state which gives information how to interpret it                                                                                                                                                       | optional                                      |
+| state.min                  | The minimum decimal value of the range for the state                                                                                                                                                                                | optional                                      |
+| state.max                  | The maximum decimal value of the range for the state                                                                                                                                                                                | optional                                      |
+| state.step                 | The increasing/decreasing decimal step size within the defined range, specified by the minimum/maximum values                                                                                                                       | optional                                      |
+| state.pattern              | The pattern following the printf syntax to render the state                                                                                                                                                                         | optional                                      |
+| state.readOnly             | The flag indicating if the state is read-only or can be modified                                                                                                                                                                    | optional, default: false                      |
+| options                    | A list restricting all possible values                                                                                                                                                                                              | optional                                      |
+| option                     | The description for the option                                                                                                                                                                                                      | optional                                      |
+| option.value               | The value for the option. Note that the value may be outside of the range specified in the min/max if this is specified.                                                                                                            | mandatory                                     |
+| command                    | Commands this channel will send to the binding. This is used to model "write-only" channels and gives UIs a hint to display push-buttons without state                                                                              | optional                                      |
+| options                    | A list defining the possible commands                                                                                                                                                                                               | optional                                      |
+| option                     | The description for the option                                                                                                                                                                                                      | optional                                      |
+| option.value               | The value for the option. This is the actual command send to the channel.                                                                                                                                                           | mandatory                                     |
+| event                      | The restrictions of a trigger event which gives information how to interpret it                                                                                                                                                     | optional                                      |
+| autoUpdatePolicy           | The auto update policy to use                                                                                                                                                                                                       | optional                                      |
+| config-description         | The configuration description for the channel within the ConfigDescriptionRegistry                                                                                                                                                  | optional                                      |
+| config-description-ref     | The reference to a configuration description for the channel within the ConfigDescriptionRegistry                                                                                                                                   | optional                                      |
+| config-description-ref.uri | The URI of the configuration description for the channel within the ConfigDescriptionRegistry                                                                                                                                       | mandatory                                     |
 
 **Channel Groups:**
 
-| Property                    | Description                                  | |
-|-----------------------------|----------------------------------------------|--------|
-| channel-group-type.id       | An identifier for the channel group type | mandatory |
-| label                       | A human-readable label for the channel group | mandatory |
-| description                 | A human-readable description for the channel group | optional |
-| category                    | The category for the channel group, e.g. TEMPERATURE | optional |
-| channels                    | The channels the bridge/Thing provides | mandatory |
-| channel.id                  | An identifier of the channel the bridge/Thing provides | mandatory |
-| channel.typeId              | An identifier of the channel type definition the bridge/Thing provides | mandatory |
+| Property              | Description                                                            |           |
+|-----------------------|------------------------------------------------------------------------|-----------|
+| channel-group-type.id | An identifier for the channel group type                               | mandatory |
+| label                 | A human-readable label for the channel group                           | mandatory |
+| description           | A human-readable description for the channel group                     | optional  |
+| category              | The category for the channel group, e.g. TEMPERATURE                   | optional  |
+| channels              | The channels the bridge/Thing provides                                 | mandatory |
+| channel.id            | An identifier of the channel the bridge/Thing provides                 | mandatory |
+| channel.typeId        | An identifier of the channel type definition the bridge/Thing provides | mandatory |
 
 The full XML schema for Thing type descriptions is specified in the [https://openhab.org/schemas/thing-description-1.0.0.xsd](https://openhab.org/schemas/thing-description-1.0.0.xsd) openHAB thing description XSD</a> file.
 
 **Hints:**
 
 - Any identifiers of the types are automatically mapped to unique identifiers: `bindingID:id`.
-- The attribute `uri` in the section `config-description` is optional, it *should not* be specified in bridge/*Thing*/channel type definition files because it's an embedded configuration.
-  If the `uri` is *not* specified, the configuration description is registered as `thing-type:bindingID:id` or `channel-type:bindingID:id` otherwise the given `uri` is used.s
-- If a configuration description is already specified somewhere else and the bridge/*Thing*/channel type wants to (re-)use it, a `config-description-ref` should be used instead.
+- The attribute `uri` in the section `config-description` is optional, it _should not_ be specified in bridge/_Thing_/channel type definition files because it's an embedded configuration.
+  If the `uri` is _not_ specified, the configuration description is registered as `thing-type:bindingID:id` or `channel-type:bindingID:id` otherwise the given `uri` is used.s
+- If a configuration description is already specified somewhere else and the bridge/_Thing_/channel type wants to (re-)use it, a `config-description-ref` should be used instead.
+
+### Updating Thing Types
+
+Sometimes, when bindings evolve, thing-types need to be modified.
+Since managed things store their structure in a database at the time they are created, only updating the XML is not sufficient.
+Developers can add instructions for the framework to update these things during initialization.
+
+The instructions are provided as XML in the `OH-INF/update` folder.
+The file name can be freely chosen and the file itself can contain instructions for one or more thing-types.
+Instructions for the same thing-type MUST NOT be added in different files.
+
+Update instructions are available for adding, removing or updating channels or channel-groups.
+Changes to configuration parameters don't need update instructions and are performed automatically.
+
+The following update instruction changes the channel-type for the `battery-level` channel to `system:battery-level`.
+
+```xml
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<update:update-descriptions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                            xmlns:update="https://openhab.org/schemas/update-description/v1.0.0"
+                            xsi:schemaLocation="https://openhab.org/schemas/update-description/v1.0.0 https://openhab.org/schemas/update-description-1.0.0.xsd">
+
+  <thing-type uid="deconz:batterysensor">
+    <instruction-set targetVersion="1">
+      <update-channel id="battery-level">
+        <type>system:battery-level</type>
+      </update-channel>
+    </instruction-set>
+  </thing-type>
+
+</update:update-descriptions>
+```
+
+Different instructions can be combined in one instruction-set.
+The following removes the `water_level` channel from `foo:pool` things and adds a new `chlorine` level
+
+```xml
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<update:update-descriptions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                            xmlns:update="https://openhab.org/schemas/update-description/v1.0.0"
+                            xsi:schemaLocation="https://openhab.org/schemas/update-description/v1.0.0 https://openhab.org/schemas/update-description-1.0.0.xsd">
+
+  <thing-type uid="foo:pool">
+    <instruction-set targetVersion="1">
+      <remove-channel id="water-level">
+      </remove-channel>
+      <add-channel id="chlorine">
+        <type>foo:concentration</type>
+        <label>Chlorine Concentration</label>
+      </add-channel>
+    </instruction-set>
+  </thing-type>
+
+</update:update-descriptions>
+```
+
+In addition to the update instructions, the thing-type definition needs to add a property `thingTypeVersion` to prevent newly created things from being modified:
+
+```xml
+<thing-type id="batterysensor">
+  <supported-bridge-type-refs>
+    <bridge-type-ref id="deconz"/>
+  </supported-bridge-type-refs>
+  <label>Battery Sensor</label>
+  <channels>
+    <channel typeId="system.battery-level" id="battery-level"/>
+    <channel typeId="last-updated" id="last-updated"/>
+  </channels>
+  <properties>
+    <property name="thingTypeVersion">1</property>
+  </properties>
+  <representation-property>uid</representation-property>
+  <config-description-ref uri="thing-type:deconz:sensor"/>
+</thing-type>
+```
+
+Modifying or removing update instructions after they have been merged is not permitted, only additions are allowed.
+Each new contribution of update instructions MUST increase the `thingTypeVersion`, even if there was no release.
+The `thingTypeVersion` is bound to a thing-type, different thing types may have different versions.
+
+The full XML schema for update instructions can be found here: [https://www.openhab.org/schemas/update-description-1.0.0.xsd](https://www.openhab.org/schemas/update-description-1.0.0.xsd).

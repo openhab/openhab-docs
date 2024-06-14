@@ -8,10 +8,7 @@ title:  Tips and Tricks
 This section is dedicated to generic tips and tricks to make your use and configuration of openHAB easier.
 They are discussed in no particular order.
 
-{::options toc_levels="2..4"/}
-
-- TOC
-{:toc}
+[[toc]]
 
 ## Backups
 
@@ -36,16 +33,26 @@ Bring up the sidebar through Developer Tools or the key combination <kbd>Alt</kb
 
 ![Developer Sidebar](images/developer-sidebar.png)
 
-Note that the sidebar will not come up if your display is to narrow.
-It will not work on a phone nor on most tablet displays.
+Note that the sidebar will not come up if your display is too narrow.
+It will not work on a phone nor in portrait mode on most tablet displays.
 
-There are four tabs on the sidebar.
+There are four tabs on the sidebar, and the search field at the top.
+
+### Search
+
+Imagine you need to find all usages of an Item in rules or pages.
+You could open all your rules and pages to check them, or just use the developer sidebar search.
+Enter your Item name, and you will see in which rules, scenes, scripts and pages that Item is used.
+
+For more information about the search and which entities are searchable, please refer to the [Developer Sidebar docs]({{base}}/mainui/developer/sidebar.html#developer-sidebar-search).
 
 ### Pinned Objects
 
 Let's say you are working on your lighting automations which involves Things, Items, and Rules.
 Instead of keeping a dozen browser tabs open and flipping between them you can pin these objects to the sidebar.
-In the search box at the top, enter a search term which can be part of an object's name, ID, label, etc.
+
+Enter a search term in the search filed at the top to search within Items, Things, Rules, Scripts, Scenes and Pages.
+The search term can be part of an object's name, ID, label, etc.
 
 ![search](images/developer-sidebar-search.png)
 
@@ -115,6 +122,14 @@ Finally, when developing a new capability a number of new objects will need to b
 This fourth tab has quick links to create any sort of Object that can be created in OH saving you from needing to click through the Settings menu multiple times to create different but related objects.
 
 ![Create Shortcuts](images/developer-sidebar-create.png)
+
+## Consider the logs
+
+Sometimes you may face errors, even if you tried your best with developing a working solution.
+In cases where the failure can not be found in a fast way you can have a look at the logging output that openHAB provides.
+
+Accessing the logs depends on different factors (e.g. the way you have installed openHAB).
+You can find an overview of how to access and handle logging in the [corresponding article](/docs/administration/logging.html).
 
 ## Save Examples
 

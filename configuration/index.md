@@ -14,7 +14,7 @@ You as the end-user have **full control** over every aspect of your smart home, 
 Every device connected to openHAB is functionally and logically different.
 In order to represent all of these, openHAB defines the following base components:
 
-- [Add-ons](addons.html) - The numerous Add-ons to communicate with your devices
+- [Add-ons](addons.html) - The numerous add-ons to communicate with your devices
 - [Things](things.html) - Your devices represented in openHAB
 - [Items](items.html) - properties and capabilities of your Things
 - [Groups](items.html#groups) - collections or categories containing Items
@@ -22,7 +22,7 @@ In order to represent all of these, openHAB defines the following base component
 - [Persistence](persistence.html) - Services to store data over time
 - [Rules](rules-dsl.html) - Automation logic, the "smart" in your Smart Home!
 - [Blockly Rules](blockly/) - Visually define the automation logic of your Smart Home
-- [JSR223 Scripting](jsr223.html) - Define rules and other runtime objects using [Javascript](https://openjdk.java.net/projects/nashorn/), [Jython](https://www.jython.org) or [Groovy](https://www.groovy-lang.org/)
+- [JSR223 Scripting](jsr223.html) - Define rules and other runtime objects using [JavaScript](https://openjdk.java.net/projects/nashorn/), [Jython](https://www.jython.org) or [Groovy](https://www.groovy-lang.org/)
 
 The individual articles have all the details needed to understand the concepts behind these building blocks for your Smart Home.
 For more details on the basic concepts behind openHAB, please visit the [Concepts Overview page](/docs/concepts/index.html).
@@ -35,7 +35,7 @@ This section does not cover building user interfaces; this subject has its own s
 
 ## Versatility
 
-openHAB 3 provides a _single_ graphical user interface to modify settings, to manage your components and rules, and to provide a UI for users.
+openHAB provides a _single_ graphical user interface to modify settings, to manage your components and rules, and to provide a UI for users.
 
 While there are no full-scale starter and migration tutorials available yet, see the [recording of the recent 2020 openHAB virtual meetup](https://youtu.be/pwZ8AOwRDEk?t=1586) for a tour of the new Main UI (starting at 26:26).
 
@@ -135,9 +135,18 @@ _Note there is an option in Main UI to bulk create Items where you can copy'n'pa
 
 ### Textual vs. Graphical Configuration
 
-In openHAB 1, smart home configuration was done via configuration files only.
-openHAB 2 added the general administrative web interface "Paper UI", and openHAB 3 now further streamlines input capabilities with "Main UI".
-Things and Items can still be defined either in configuration files or via the GUI.
+::: tip
+
+Don't confuse admin UI and user UI.
+Happens to many people as you can access both from the common UI entry point running on port 8080.
+User UI is what can be provided to users of your home so they can interactively command the house.
+It's the equivalent of sitemaps in older OH versions.
+This docs section is all about admin UI to create Things and Items, it does not cover building user interfaces.
+See [User Interfaces](/docs/ui/) for that.
+:::
+
+openHAB 1 was text only, openHAB 2 added the general administrative web interface "Paper UI", and openHAB 3 replaced that with "Main UI".
+Things and Items can still be defined either in configuration files or via the (admin) GUI.
 We highly recommend adding them to the [system database](/docs/administration/jsondb.html) via Main UI, though.
 Note there is an option in Main UI to bulk create Items by copy and pasting the contents of existing `.items` files.
 Bulk delete is there, too.
@@ -155,7 +164,7 @@ You must not create an item using files and then make use of it in the model usi
 text and system database configuration for that item, too.
 :::
 
-You *can* configure the model through text only, too. No documentation exists for that however so it is not recommended and
+You _can_ configure the model through text only, too. No documentation exists for that however so it is not recommended and
 you have to figure out yourself. Please contribute to the docs here if you managed to.
 
 Things/Items configured in files will become visible in Main UI if no Thing/Item of the same name is already present in the system database, but a lock will symbolize that you can NOT change them in the GUI. You can only change them by editing the source files.

@@ -5,21 +5,21 @@ title: Build System
 
 # Build System
 
-The buildsystem is based on Maven.
+The build system is based on Maven.
 A very common tool for Java development.
-Maven is a convention centric, declarative system that is extensible via addional plugins.
-That means if you stick 100% to Mavens idea of a java project, your buildsystem instruction file is not longer than 10 lines.
+Maven is a convention centric, declarative system that is extensible via additional plugins.
+That means if you stick 100% to Maven's idea of a Java project, your build system instruction file is not longer than 10 lines.
 
 openHAB has a few extra requirements and we use about 10 additional plugins,
 ranging from OSGi specific ones (bnd) to publish and testing plugins.
 
-This section talks about some common buildsystem related topics and also some quirks that you will encounter.
+This section talks about some common build system related topics and also some quirks that you will encounter.
 
 ## Adding Dependencies
 
 Generally all dependencies should be OSGi-bundles and available on Maven Central.
 
-### External dependency
+### Embedding dependency
 
 In most cases they should be referenced in the project POM with scope `compile`:
 
@@ -35,33 +35,7 @@ In most cases they should be referenced in the project POM with scope `compile`:
 ```
 
 These dependencies are embedded in the resulting bundle automatically.
-
-There are two exceptions:
-
-1. Dependencies to other openHAB bundles (e.g. `org.openhab.addons.bundles/org.openhab.binding.bluetooth/3.1.0-SNAPSHOT` or `org.openhab.addons.bundles/org.openhab.transform.map/3.1.0-SNAPSHOT`).
-1. Bundles that are used by more than one binding (e.g. Netty-bundles like `io.netty/netty-common/4.1.34.Final`).
-
-Dependencies on other openHAB bundles should have the scope `provided`.
-To ensure that they are available at runtime they also need to be added to the `feature.xml`:
-
-```xml
-  <bundle dependency="true">mvn:org.openhab.addons.bundles/org.openhab.binding.bluetooth/3.1.0-SNAPSHOT</bundle>
-```
-
-### Internal dependency
-
-In two cases libraries can be added to the `/lib` directory:
-
-1. The bundle is not available for download
-1. The bundle is not an OSGi bundle but needs to be used for integration tests.
-    Unlike Karaf, BND is not able to wrap bundles on its own.
-    In this case the binding works as wrapper.
-    You need add the library and export all needed packages manually.
-
-The build system automatically picks up all JAR files in `/lib` and embeds them in the new bundle.
-In this case they must not be added to the feature.
-
-If the bundles manifest is not properly exporting all needed packages, you can import them manually by adding
+If the embedded bundle's manifest is not properly exporting all needed packages, you can import them manually by adding
 
 ```xml
   <properties>
@@ -69,13 +43,28 @@ If the bundles manifest is not properly exporting all needed packages, you can i
   </properties>
 ```
 
-It is also necessary to add them to the `feature.xml`(see above).
+### External dependency
+
+In two cases using an "external" (i.e. not embedded) dependency is required:
+
+1. Dependencies to other openHAB bundles (e.g. `org.openhab.addons.bundles/org.openhab.binding.bluetooth/3.1.0-SNAPSHOT` or `org.openhab.addons.bundles/org.openhab.transform.map/3.1.0-SNAPSHOT`).
+1. Bundles that are used by more than one binding (e.g. Netty-bundles like `io.netty/netty-common/4.1.34.Final`).
+
+Dependencies on other openHAB bundles should always have the scope `provided`.
+To ensure that external dependencies are available at runtime they also need to be added to the `feature.xml`:
+
+```xml
+  <bundle dependency="true">mvn:org.openhab.addons.bundles/org.openhab.binding.bluetooth/${project.version}</bundle>
+  <bundle dependency="true">mvn:com.github.foo/bar/2.0.0</bundle>
+```
+
+Using release versions is mandatory.
 If the version that is used in other openHAB bundles is incompatible with your library, check if you can use a different version of your library.
 In case this is not possible, please ask if an exception can be made and a different version can be bundled within your binding.
 Technically you just need to omit the exclusion-statement above.
 If you only depend on shared bundles you can also omit the exclusion statement and add a `noEmbedDependencies.profile` file in the root directory of your binding.
 
-If the imported packages need to be exposed to other bundles (e.g. case 2 above), this has to be done manually by adding
+If the imported packages need to be exposed to other bundles, this has to be done manually by adding
 
 ```xml
   <properties>
@@ -87,6 +76,7 @@ to the POM.
 If `version="1.0.0"` is not set, the packages are exported with the same version as the main bundle.
 Optional parameters available for importing/exporting packages (e.g. `foo.bar.*;resolution:="optional"`) are available, too.
 Packages can be excluded from import/export by prepending `!` in front of the name (e.g. `<bnd.importpackage>!foo.bar.*</bnd.importpackage>` would prevent all packages starting with foo.bar from being imported).
+Using `resolution:="optional` is generally preferred over exclusion.
 
 ## Karaf Feature
 
@@ -107,7 +97,7 @@ Two cases need to be treated differently:
 ### Multi-Bundle Features / Sub-Bundles
 
 In some cases a binding consists of several bundles (e.g. `mqtt`).
-The `feature.xml` of the sub-bundle (e.g. `mqtt.homie`) needs to add all bundles from the parent-bundle to make sure that the feature verification suceeds:
+The `feature.xml` of the sub-bundle (e.g. `mqtt.homie`) needs to add all bundles from the parent-bundle to make sure that the feature verification succeeds:
 
 ```xml
 <feature>openhab-transport-mqtt</feature>

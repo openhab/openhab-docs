@@ -11,10 +11,7 @@ All instructions can be executed in a terminal or remotely via SSH connection.
 
 This page is structured as follows:
 
-{::options toc_levels="2..4"/}
-
-- TOC
-{:toc}
+[[toc]]
 
 If you are unfamiliar with Linux, SSH and the Linux console or if you want to improve your skills, read up on these important topics.
 A lot of helpful articles can be found on the internet, for example:
@@ -36,7 +33,7 @@ If you're unsure which manual file you should download, using `dpkg --print-arch
 When installing Zulu or Zulu Embedded from a .zip or .tar archive, make sure to [set Zulu as the main Java "alternative"](https://docs.azul.com/zulu/zuludocs/#ZuluUserGuide/SwitchingBetweenJavaAlternatives/SwitchBetweenJavaAlts.htm).
 
 ::: tip Note
-Make sure to download Zulu or Java **11**.
+Make sure to download Zulu or Java **17**.
 :::
 
 ## Installation
@@ -78,7 +75,7 @@ sudo mv openhab.gpg /usr/share/keyrings
 sudo chmod u=rw,g=r,o=r /usr/share/keyrings/openhab.gpg
 ```
 
-Then, you can choose between, *Official (Stable)*, *Beta* or *Snapshot* builds:
+Then, you can choose between, _Official (Stable)_, _Beta_ or _Snapshot_ builds:
 
 - **Stable Release**
 
@@ -118,6 +115,8 @@ Next, resynchronize the package index:
 sudo apt-get update
 ```
 
+##### Installing the latest version
+
 Now install openHAB with the following command:
 
 ```shell
@@ -129,6 +128,44 @@ If you plan on disconnecting your machine from the internet, then you will want 
 
 ```shell
 sudo apt-get install openhab-addons
+```
+
+##### Prevent automatic upgrade of openHAB
+
+To prevent unexpected breakage by accidentally updating openHAB it's recommended to only manually upgrade to the newest version.
+This can be achieved by putting the openHAB package on "hold".
+
+```shell
+sudo apt-mark hold openhab
+sudo apt-mark hold openhab-addons
+```
+
+To enable automatic upgrades again run
+
+```shell
+sudo apt-mark unhold openhab
+sudo apt-mark unhold openhab-addons
+```
+
+To show the packages on hold run
+
+```shell
+sudo apt-mark showhold
+```
+
+##### Installing a specific version
+
+Installing a specific version is possible by specifing the version that should be installed.
+
+```shell
+sudo apt install openhab=4.0.1
+sudo apt install openhab-addons=4.0.1
+```
+
+To get a list of all available versions you can use
+
+```shell
+apt list -a openhab
 ```
 
 {% include collapsible/item-end.html %}
@@ -264,6 +301,7 @@ sudo systemctl enable openhab.service
 The first start may take **up to 15 minutes**, this is a good time to reward yourself with hot coffee or a freshly brewed tea!
 
 You should be able to reach the openHAB Dashboard at `http://openhab-device:8080` at this point.
+Be sure to check whether you need to adjust your [firewall settings](#required-ports-and-firewalls).
 If you're new to openHAB, then you should checkout the [beginner's tutorial]({{base}}/tutorial/first_steps.html)!
 
 ![The openHAB Dashboard page](images/Home_Openhab_3.png)
@@ -449,13 +487,26 @@ This user will later serve to execute the openHAB runtime with restricted permis
 sudo adduser --system --no-create-home --group --disabled-login openhab
 ```
 
+:::tip note
+The needed command syntax may vary based on the distribution you are using.
+
+Below there is an example for fedora based systems:
+
+```shell
+sudo adduser --system --no-create-home --user-group --disabled-login openhab
+```
+
+So make sure to check the allowed command parameters in case of any errors.
+
+:::
+
 We are going to download a platform independent archive file and extract it to the path `/opt/openhab`.
 Choose between the latest Beta release or a Snapshot with all incoming contributions, created daily.
 As openHAB is still in an evolving state, the snapshot may be the **preferred choice**.
 
 - **Official Release**
 
-    Download and extract the latest offical stable version of openHAB from [our downloadpage](https://www.openhab.org/download/) to your host:
+    Download and extract the latest official stable version of openHAB from [our downloadpage](https://www.openhab.org/download/) to your host:
 
     ```shell
     cd /tmp
@@ -615,19 +666,19 @@ sudo systemctl daemon-reload
 
 ### File Locations
 
-|                               | Repository Installation      | Manual Installation (according to [guide](#manual-installation)) |
-|:-----------------------------:|------------------------------|------------------------------------------------------------------|
-|      openHAB application      | `/usr/share/openhab`        | `/opt/openhab`                                                  |
-|    Additional add-on files    | `/usr/share/openhab/addons` | `/opt/openhab/addons`                                           |
-|       Site configuration      | `/etc/openhab`              | `/opt/openhab/conf`                                             |
-|           Log files           | `/var/log/openhab`          | `/opt/openhab/userdata/logs`                                    |
-| Userdata like rrd4j databases | `/var/lib/openhab`          | `/opt/openhab/userdata`                                         |
-|         Backups folder        | `/var/lib/openhab/backups`  | `/opt/openhab/backups`                                          |
+|                               | Repository Installation     | Manual Installation (according to [guide](#manual-installation)) |
+| :---------------------------: | --------------------------- | ---------------------------------------------------------------- |
+|      openHAB application      | `/usr/share/openhab`        | `/opt/openhab`                                                   |
+|    Additional add-on files    | `/usr/share/openhab/addons` | `/opt/openhab/addons`                                            |
+|      Site configuration       | `/etc/openhab`              | `/opt/openhab/conf`                                              |
+|           Log files           | `/var/log/openhab`          | `/opt/openhab/userdata/logs`                                     |
+| Userdata like rrd4j databases | `/var/lib/openhab`          | `/opt/openhab/userdata`                                          |
+|        Backups folder         | `/var/lib/openhab/backups`  | `/opt/openhab/backups`                                           |
 |     Service configuration     | `/etc/default/openhab`      | (not preconfigured)                                              |
 
 ## Backup and Restore
 
-It is recommended to make a backup of your configuration before *any* major change.
+It is recommended to make a backup of your configuration before _any_ major change.
 To make a backup of openHAB 2 or higher, you need to retain your configuration and userdata files.
 openHAB comes with scripts for storing your configuration in a zip file which is saved in `/var/lib/openhab/backups` for automatic installs and `openhab/backups` for manual installs.
 You can change the default path by setting the $OPENHAB_BACKUPS environment variable.
@@ -792,7 +843,7 @@ Let's activate the "openhab" user as a samba user and set his password (e.g. "ha
 sudo smbpasswd -a openhab
 ```
 
-Be aware, that creating and later using a specific user will ensure, that [permissions](#permissions) are honored.
+Be aware, that creating and later using a specific user will ensure, that **permissions** are honored.
 Make sure, the "openhab" user has ownership and/or write access to the openHAB configuration files.
 This can be accomplished by executing:
 
@@ -826,3 +877,22 @@ When asked, authenticate with the username "openhab" and the chosen password.
 If you are not able to connect, try with the IP of your device (e.g. `smb://openhab@192.168.0.2` or `\\192.168.0.2`).
 
 If everything went well, you are set and ready to start [configuring]({{base}}/configuration/index.html) your openHAB system.
+
+### Required Ports and Firewalls
+
+Depending on your Linux distribution your system might come with a preconfigured firewall that could prevent access to the openHAB Dashboard.
+Refer to your distribution's firewall documentation to open the required ports.
+
+| Port | Protocol | Purpose |
+|------|----------|---------|
+| 8080 | TCP | openHAB Dashboard via HTTP |
+| 8443 | TCP | openHAB Dashboard via HTTPS |
+| 5007 | TCP | Language Server Protocol (LSP) for VS Code |
+
+On a system using firewalld you could use the following commands:
+
+```shell
+sudo firewall-cmd --permanent --add-port=8080/tcp
+sudo firewall-cmd --permanent --add-port=8443/tcp
+sudo firewall-cmd --permanent --add-port=5007/tcp
+```

@@ -11,10 +11,7 @@ A growing number of very impressive custom widgets have been posted to [Add-ons 
 This page provides just a few examples of custom widgets with an emphasis on the overall approach to developing your own.
 For a comprehensive reference on creating widgets, please see the [Building Pages]({{base}}/ui/building-pages.html) guide in the docs.
 
-{::options toc_levels="2..4"/}
-
-- TOC
-{:toc}
+[[toc]]
 
 ## Where to Create Custom Widgets
 
@@ -30,7 +27,7 @@ You will have to apply the widget to an Item and refresh a page after saving the
 ## Building Custom Widgets
 
 As you are learning how widgets work and all of the available options, it might be easier to create the widget using the form presented when adding the Item metadata and then copying the YAML from the code tab to the Custom Widget editor.
-When doing this make sure to fill out *all* the fields, because when using the defaults no value is added to the YAML in the code tab.
+When doing this make sure to fill out _all_ the fields, because when using the defaults no value is added to the YAML in the code tab.
 So, for example, be sure to enter in the Item field.
 
 Here is a filled-out form customizing a list Item widget for a light.
@@ -133,7 +130,7 @@ config:
   iconColor: '=(items[props.item].state == "ON") ? "yellow" : "gray"'
   title: =props.title
   color: '=(items[props.item].state == "ON") ? "yellow" : "gray"'
-  item: props.item
+  item: =props.item
 ```
 
 Save the widget and return to one of the Items that should use this widget.
@@ -452,7 +449,7 @@ Once you are happy, save the page and that will become your Overview page.
 ## Responsive Pages
 
 The Page will be viewed on a variety of screen sizes, from computers to tablets to phones.
-To make the page adapt to the different screen widths there is a "Column Settings" option in a given column's setting icon.
+To make the page adapt to the different screen widths there is a "Column Options" option in a given column's setting icon.
 
 ![Column Settings](images/column_options.png)
 

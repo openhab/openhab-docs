@@ -9,17 +9,14 @@ As with the Overview Page and individual cards, the way individual Point Items a
 In general, the steps to do this include navigating to the Item in the Model tree or the Items Settings, clicking on "Add Metadata", and selecting "Default List Widget" to customize how the Item appears in the automatically generated cards on the Overview Page.
 One can also set the "Default Stand Alone Widget" and "Default Cell Widget" to change how an Item appears in other parts of MainUI.
 
-{::options toc_levels="2..4"/}
-
-- TOC
-{:toc}
+[[toc]]
 
 ## Expressions
 
 Many portions of a widget can be configured to change dynamically based on the states of Items.
 This can be a powerful way to combine multiple Items into one widget (e.g. an oh-label widget showing the current state of a garage door that sends a command to a Switch Item to trigger the garage door opener when the widget is clicked).
 Common things one might use an expression for are to change an icon or color based on the state of an Item, to hide a widget entirely if an Item isn't in a given state, or to change the colors of the widget elements.
-For full details on expressions see the [Expressions docs]({{base}}/ui/building-pages.html#dynamically-configuring-components-with-expressions).
+For full details on expressions see the [Expressions docs]({{base}}/ui/widget-expressions-variables.html).
 
 Note that when working with Units of Masurement, the state of the Item needs to be parsed into a number for comparisons.
 For example -
@@ -38,8 +35,8 @@ For complicated expressions, gradually build up the expression in this tool unti
 
 ## Visibility
 
-Each custom defined widget has a "Visibility" and "Visible to" property.
-The "Visibility" option takes a boolean `true` or `false` (without quotes) or the result of a boolean expression to determine whether or not to render the widget.
+Each custom defined widget has a "Visibility" and a "Visible to" property.
+The "Visibility" option takes a boolean `true` or `false` or the result of a boolean expression to determine whether or not to render the widget.
 The "Visibile to" property controls which type of user can see the widget.
 Take heed of the warning, this is not a security feature, but it can be used to limit what a regular user can see in the automatically generated parts of the Overview Page.
 
@@ -92,7 +89,7 @@ If you have more than one Item that should look and behave the same, create a cu
 Once a custom widget is created, it will appear in the list of widget types.
 Properties can be used to customize the widget to work for each Item.
 See the docs referenced above for details, and the next page of this tutorial for some general advice and approaches.
-Look in the [Add-Ons - UI Category on the forum](https://community.openhab.org/c/add-ons/uis/30) for lots of examples.
+Look in the [Add-ons - UI Category on the forum](https://community.openhab.org/c/add-ons/uis/30) for lots of examples.
 
 ## Import Widgets from the openHAB marketplace
 
@@ -103,7 +100,7 @@ There is also a [marketplace](https://community.openhab.org/c/marketplace/69) av
 By default the state of the Item will be displayed on the right hand side of the widget.
 Sometimes the binding will provide hints on how to display the state, but most of the time this default will be just the string from `MyItem.state.toString()`.
 
-Note that the `label` field of an Item's definition in a .items file or the label set on the Item is *not* used by MainUI.
+Note that the `label` field of an Item's definition in a .items file or the label set on the Item is _not_ used by MainUI.
 
 To customize the state of the Item, the "State Description" metadata must be configured.
 This metadata lets you define the format and any transformations to apply to the Item's state before it is displayed.

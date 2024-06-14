@@ -1,0 +1,6 @@
+# Reference workflow file in ".github folder"
+# to allow local development and workflow with one configuration
+
+extends: "./.github/.markdownlint.yaml"
+
+# Any configuration should be done in the workflow file

@@ -18,10 +18,7 @@ Those that are not embedded require the installation and configuration of a sepa
 
 Note that Persistence only saves Item states.
 
-{::options toc_levels="2..4"/}
-
-- TOC
-{:toc}
+[[toc]]
 
 ## Persistence Concepts
 
@@ -33,7 +30,7 @@ But the question is, when does it save those Item states?
 - Only when the Item receives a command?
 - Every minute whether it has received an event or not?
 
-These are all different *persistence strategies*.
+These are all different _persistence strategies_.
 openHAB supports all of them, and they can be combined (e.g. every Item changed and every five minutes.)
 
 One special persistence strategy is `restoreOnStartup` which will update the Item with the most recently saved Item state when openHAB starts up or otherwise refreshes the Item.
@@ -45,7 +42,6 @@ The good news here is that if you don't know what you may want to use persistenc
 Each persistence add-on comes with it's own default persistence strategy.
 See the documentation for the specific persistence add-on for what the default strategy is.
 This default can be overridden.
-Unfortunately, configuration of persistence strategies is still text-based.
 See the [Persistence docs]({{base}}/configuration/persistence.html) for full documentation, and see the installation page for the method you used to install openHAB for a table listing file locations.
 At a high level, you will create a file in `$OH_CONF/persistence` with the name of the add-on and a .persist extension (e.g. `influxdb.persist`).
 Edit the file per the docs to define the strategies.

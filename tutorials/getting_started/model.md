@@ -16,7 +16,7 @@ For example, instead of dealing with `zwave:1231242:node12:switch` we can deal w
 Items are the main entities that the rest of openHAB works with including Pages, Sitemaps, Rules, and persistence.
 
 There are many ways to organize your items, one of which is to make use of the semantic model (descriptions for location, type of equipment and more).
-openHAB 3 makes extensive use of the semantic model to automatically create Pages (see next section) and to provide natural language interaction.
+openHAB makes extensive use of the semantic model to automatically create Pages (see next section) and to provide natural language interaction.
 Therefore we recommend creating the semantic model right from the start and sticking to it.
 This will make your life easier in the long run.
 Taking the time to understand and choose a logical structure for your home will save you from needing to re-do the work in the future.
@@ -33,10 +33,7 @@ The semantic model, when set up correctly, will allow openHAB to turn all lights
 Once created, a model allows one to use [Semantics Actions]({{base}}/configuration/actions.html#semantics) in Rules to e.g. determine the Location of an Item or the related Equipment.
 This will help one create, generalize, and simplify Rules based on patterns and purpose.
 
-{::options toc_levels="2..4"/}
-
-- TOC
-{:toc}
+[[toc]]
 
 ## Introduction to the Ontology and Relationships
 
@@ -69,7 +66,7 @@ The House has a Ground Floor and the Ground Floor has rooms including a Living R
 The Living Room has a Rollershutter equipment which in turn has a Control and Power point Item.
 The locations and equipment are Group Items and Control and Power are other types of Items.
 
-As discussed, one is not required to *only* use the semantic model.
+As discussed, one is not required to _only_ use the semantic model.
 It is possible and encouraged to create Groups and Items that are outside of the model where necessary.
 In this example, the Rollershutter in the Living Room is a member of the `AllRollershutters` Group which could be used to determine if any are OPEN and send commands to all the rollershutters in the house at once.
 But this functional cross cutting Group is not an Equipment nor is it a Location and it violates the restrictions of the model.
@@ -118,7 +115,7 @@ Now let's add the kitchen. Make sure to select Ground Floor again and choose Add
 
 To add the first floor to the root level, we need to clear the selection first.
 Click on the white space in the tree, or Clear in the bottom toolbar.
-Add the ground floor and its rooms (master bedroom, bathroom, etc...) to your model.
+Add the first floor and its rooms (master bedroom, bathroom, etc...) to your model.
 
 You should end up with something resembling this:
 
@@ -212,22 +209,22 @@ This is a table describing the Equipment, Point and Property classes needed to e
 
 | Badge        | Type        | Equipment                                                  | Point                              | Property    |
 |--------------|-------------|------------------------------------------------------------|------------------------------------|-------------|
-| Low Battery  | Status      | *Any*                                                      | LowBattery                         | *Any*       |
-| Lights       | Status      | *Any*                                                      | Control, Switch                    | Light       |
-| Windows      | Status      | Window                                                     | OpenState                          | *Any*       |
-| Doors        | Status      | Door, FrontDoor, BackDoor, InnerDoor, CellarDoor, SideDoor | OpenState                          | *Any*       |
-| Garage Doors | Status      | GarageDoor                                                 | OpenState                          | *Any*       |
-| Blinds       | Status      | Blinds                                                     | OpenState                          | *Any*       |
-| Presence     | Status      | *Any*                                                      | Status                             | Presence    |
-| Lock         | Status      | Lock                                                       | Status, OpenState, Control, Switch | *Any*       |
-| Climate      | Status      | HVAC                                                       | Status, Control, Switch            | *Any*       |
+| Low Battery  | Status      | _Any_                                                      | LowBattery                         | _Any_       |
+| Lights       | Status      | _Any_                                                      | Control, Switch                    | Light       |
+| Windows      | Status      | Window                                                     | OpenState                          | _Any_       |
+| Doors        | Status      | Door, FrontDoor, BackDoor, InnerDoor, CellarDoor, SideDoor | OpenState                          | _Any_       |
+| Garage Doors | Status      | GarageDoor                                                 | OpenState                          | _Any_       |
+| Blinds       | Status      | Blinds                                                     | OpenState                          | _Any_       |
+| Presence     | Status      | _Any_                                                      | Status                             | Presence    |
+| Lock         | Status      | Lock                                                       | Status, OpenState, Control, Switch | _Any_       |
+| Climate      | Status      | HVAC                                                       | Status, Control, Switch            | _Any_       |
 | Screens      | Status      | Screen, Television                                         | Status, Control, Switch            | Power       |
 | Speakers     | Status      | Receiver, Speaker                                          | Status, Control, Switch            | Power       |
 | Projectors   | Status      | Projector                                                  | Status, Control, Switch            | Power       |
-| Alarms       | Status      | *Any*                                                      | Alarm                              | *Any*       |
-| Luminance    | Measurement | *Any*                                                      | Measurement                        | Light       |
-| Temperature  | Measurement | *Any*                                                      | Measurement                        | Temperature |
-| Humidity     | Measurement | *Any*                                                      | Measurement                        | Humidity    |
+| Alarms       | Status      | _Any_                                                      | Alarm                              | _Any_       |
+| Luminance    | Measurement | _Any_                                                      | Measurement                        | Light       |
+| Temperature  | Measurement | _Any_                                                      | Measurement                        | Temperature |
+| Humidity     | Measurement | _Any_                                                      | Measurement                        | Humidity    |
 
 This table is based off the sources:
 

@@ -11,10 +11,7 @@ This section will show an example of dealing with a binding where the bridge Thi
 
 Scenario: you have some Z-Wave devices, including a wall plug and a rollershutter module, and a Z-Wave controller stick connected to the computer running openHAB.
 
-{::options toc_levels="2..4"/}
-
-- TOC
-{:toc}
+[[toc]]
 
 ## Install the Binding
 

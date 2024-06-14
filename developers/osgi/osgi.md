@@ -5,27 +5,22 @@ title: OSGi
 
 # OSGi Overview
 
-{:.no_toc}
-
 openHAB is being based on [OSGi][OSGi] and understanding of OSGi modular architecture is very important.
 This page is aimed to help developers, that are going to use OSGi for the first time and contains a basic overview of the OSGi technology.
 
-{::options toc_levels="2,3"/}
-
-- TOC
-{:toc}
+[[toc]]
 
 ## Concepts
 
-As described in the [OSGi architecture page][OSGi-architecture], *OSGi is a set of [specifications](https://www.osgi.org/developer/specifications/) that define a dynamic component system for Java. These specifications enable a development model, where applications are dynamically composed of many different reusable components.
-The OSGi specifications enable components to hide their implementations from other components while communicating through services, which are objects that are specifically shared between components*.
+As described in the [OSGi architecture page][OSGi-architecture], _OSGi is a set of [specifications](https://docs.osgi.org/specification/) that define a dynamic component system for Java. These specifications enable a development model, where applications are dynamically composed of many different reusable components.
+The OSGi specifications enable components to hide their implementations from other components while communicating through services, which are objects that are specifically shared between components_.
 This architecture significantly reduces the overall complexity of building, maintaining and deploying applications.
 
 Key features of OSGi are:
 
-- **Modularity** - it is realized with the [*bundle*](#important-definitions) concept;
+- **Modularity** - it is realized with the [_bundle_](#important-definitions) concept;
 - **Runtime Dynamics** - software components can be managed at runtime;
-- **Service Orientation** - components communicate between each other through [*services*](#important-definitions).
+- **Service Orientation** - components communicate between each other through [_services_](#important-definitions).
 
 ## Layering
 
@@ -47,15 +42,15 @@ More details about the OSGi architecture can be found at <https://www.osgi.org/d
 Modules (called **bundles**) are the smallest unit of modularization.
 Technically a bundle is a JAR file with additional meta information.
 This information is stored in file called [**manifest**](#important-definitions) file.
-The manifest file is part of the standard [JAR specification](https://docs.oracle.com/en/java/javase/11/docs/specs/jar/jar.html#jar-manifest), but OSGi adds additional metadata to it in form of specific headers.
-The *Bundle-SymbolicName* and the *Bundle-Version* headers uniquely identify a bundle.
+The manifest file is part of the standard [JAR specification](https://docs.oracle.com/en/java/javase/17/docs/specs/jar/jar.html#jar-manifest), but OSGi adds additional metadata to it in form of specific headers.
+The _Bundle-SymbolicName_ and the _Bundle-Version_ headers uniquely identify a bundle.
 In OSGi is allowed to have **bundles with same name, but different version running at the same time.**
 
 Some of the most important information that the manifest contains are the bundle dependencies.
 **A bundle can depend on another bundle or on a package**.
 
-The **OSGi runtime uses the information about the dependencies to *wire* the bundles and hides everything in this JAR unless it is explicitly exported**.
-The dependencies to the Java standard libraries are managed by the *Bundle-RequiredExecutionEnvironment* header, so it is not needed to import the Java core packages.
+The **OSGi runtime uses the information about the dependencies to _wire_ the bundles and hides everything in this JAR unless it is explicitly exported**.
+The dependencies to the Java standard libraries are managed by the _Bundle-RequiredExecutionEnvironment_ header, so it is not needed to import the Java core packages.
 
 A simple manifest file can have the following content:
 
@@ -70,7 +65,7 @@ Import-Package: org.example.required
 Export-Package: org.example.provided
 ```
 
-[OSGi Core Release 7, Chapter 3: Module Layer][OSGi-core] contains detailed information about the *Module Layer* and description of the headers (*Manifest-Version*, *Bundle-ManifestVersion*, *Bundle-Name*) used in this example.
+[OSGi Core Release 8, Chapter 3: Module Layer][OSGi-core] contains detailed information about the _Module Layer_ and description of the headers (_Manifest-Version_, _Bundle-ManifestVersion_, _Bundle-Name_) used in this example.
 
 Bundles are used often to register and consume services.
 You will find more information about that in the [Services](#services) section.
@@ -78,9 +73,9 @@ You will find more information about that in the [Services](#services) section.
 ## Lifecycle
 
 OSGi is a dynamic platform.
-That means that bundles may be *installed, uninstalled, started, stopped or updated* at runtime (See Table 1).
+That means that bundles may be _installed, uninstalled, started, stopped or updated_ at runtime (See Table 1).
 The OSGi specification defines a mechanism how to manage the dependencies between the bundles and the functionality that they provide.
-This is achieved with the help of the *lifecycle* concept.
+This is achieved with the help of the _lifecycle_ concept.
 
 The framework introduces a different states, transitions between these states and rules how this states are affecting the packages exported by the bundle and the services, that it provides.
 The table below shows the possible states of an OSGi bundle with a short explanation:
@@ -103,9 +98,9 @@ Fig.2 Bundle State diagram
 
 ## Services
 
-Another main concept, that allows the bundles to communicate between each other, is the *service* model.
+Another main concept, that allows the bundles to communicate between each other, is the _service_ model.
 
-**In OSGi, a bundle can register a *service* in a central [service registry](#important-definitions) under one ore more *service interface***.
+**In OSGi, a bundle can register a _service_ in a central [service registry](#important-definitions) under one ore more _service interface_**.
 It is an important feature of OSGi, because it provides a central place to register and get services.
 A bundle is permitted to register service objects at any time during the STARTING, ACTIVE or STOPPING states.
 Other bundles can go the registry and list all objects, that are registered under a specific interface or class.
@@ -123,8 +118,8 @@ Some important core services are presented below.
 
 ### Configuration Admin Service
 
-In OSGi, configurations are stored in a central database that is being managed by a special service - the *Configuration Admin Service*(`org.osgi.service.cm.ConfigurationAdmin`).
-This service monitors the service registry and **provides a configuration to the services** that are registered with a *service.pid* property.
+In OSGi, configurations are stored in a central database that is being managed by a special service - the _Configuration Admin Service_(`org.osgi.service.cm.ConfigurationAdmin`).
+This service monitors the service registry and **provides a configuration to the services** that are registered with a _service.pid_ property.
 Configuration changes are first made persistent, and then are passed to the target service.
 It is important to understand that **the target bundle receives updates from the Configuration Admin service**. Implementations should be aware that the update reception could be delayed if the Configuration Admin service is missing.
 
@@ -135,7 +130,7 @@ It is important to understand that **the target bundle receives updates from the
 In a dynamic environment like OSGi, communication with events has a wide variety of use cases.
 OSGi events are based on the publish-subscribe messaging pattern.
 
-The *Event Admin Service* (`org.osgi.service.event.EventAdmin`) takes a central place in the communication between *Event Publishers* and subscribers (*Event Listeners*).
+The _Event Admin Service_ (`org.osgi.service.event.EventAdmin`) takes a central place in the communication between _Event Publishers_ and subscribers (_Event Listeners_).
 It is responsible for keeping track of the listeners, and sending events to them.
 
 - [OSGi Event Admin](eventadmin.html)
@@ -158,9 +153,9 @@ We will list the most popular OSGi containers with a short description of their 
 
 ## Important Definitions
 
-**bundle** - a unit of modularization, defined by the OSGi framework. A bundle is comprised of Java classes and other resources, which together can provide functions to end users. For more detailed definition - [OSGi Core Release 7, Chapter 3.2: Bundles][OSGi-core]
+**bundle** - a unit of modularization, defined by the OSGi framework. A bundle is comprised of Java classes and other resources, which together can provide functions to end users. For more detailed definition - [OSGi Core Release 8, Chapter 3.2: Bundles][OSGi-core]
 
-**service** - any object that is registered in the OSGi Service Registry and can be looked up using its interface name(s). Definition - [OSGi Core Release 7, Chapter 5.2: Services][OSGi-core]
+**service** - any object that is registered in the OSGi Service Registry and can be looked up using its interface name(s). Definition - [OSGi Core Release 8, Chapter 5.2: Services][OSGi-core]
 
 **manifest** - descriptive information about the bundle, contained in its JAR file
 
@@ -168,16 +163,16 @@ We will list the most popular OSGi containers with a short description of their 
 
 ## Further Reading
 
-- [OSGi Core Release 7][OSGi-core]
-- [OSGi API](https://osgi.org/javadoc/osgi.core/7.0.0/)
+- [OSGi Core Release 8][OSGi-core]
+- [OSGi API](https://osgi.org/javadoc/osgi.core/8.0.0/)
 - [OSGi Vogella guide](http://www.vogella.com/tutorials/OSGi/article.html)
 - [Lifecycle of a bundle](https://developer.atlassian.com/docs/atlassian-platform-common-components/plugin-framework/behind-the-scenes-in-the-plugin-framework/lifecycle-of-a-bundle)
 - [OSGi enRoute](https://enroute.osgi.org/)
 - <https://www.osgi.org/developer/where-to-start/>
 
 [OSGi]: https://www.osgi.org/
-[OSGi-core]: https://osgi.org/download/r7/osgi.core-7.0.0.pdf
+[OSGi-core]: https://osgi.org/download/r8/osgi.core-8.0.0.pdf
 [fig1]:images/layeringosgi.png
 [fig2]:images/states.png
 [fig3]:images/services.png
-[OSGi-architecture]: https://www.osgi.org/developer/architecture/
+[OSGi-architecture]: https://www.osgi.org/resources/architecture/

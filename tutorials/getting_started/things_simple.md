@@ -20,10 +20,7 @@ This tutorial covers an example of the easiest and most common method for adding
 Scenario: You have some Philips Hue light bulbs connected to an official Hue bridge.
 In this case, the Hue binding supports auto-discovery of both the bridge and the bulbs and other devices attached to it.
 
-{::options toc_levels="2..4"/}
-
-- TOC
-{:toc}
+[[toc]]
 
 ## Install the Binding
 
@@ -95,7 +92,7 @@ You will notice a new red button on that screen.
 This means that there are newly discovered devices that you can add.
 Since the Hue bridge is now working, the binding has detected all the Hue devices (bulbs, switches and so on) attached to it.
 
-The Inbox shows a consolidated view of all the discovery results.
+The Inbox shows a consolidated view of all the discovery results which can sorted alphabetically or grouped by binding type (see tabs).
 Alternatively, you can also click on the "+" button to get a per-binding view and the ability to perform a new scan.
 
 Click Inbox.

@@ -5,8 +5,6 @@ title: Coding Guidelines
 
 # Coding Guidelines
 
-{:.no_toc}
-
 The following guidelines apply to all (Java) code of the openHAB project.
 They must be followed to ensure a consistent code base for easy readability and maintainability.
 Exceptions can certainly be made, but they should be discussed and approved by a project maintainer upfront.
@@ -16,10 +14,7 @@ To speed up the contribution process, we therefore advice to go through this che
 
 If you are just keen on binding development, you may skip this document first and come back later.
 
-{::options toc_levels="2,3"/}
-
-- TOC
-{:toc}
+[[toc]]
 
 ## A. Directory and File Layout
 
@@ -33,8 +28,8 @@ The structure of a binding follows the structure of a typical OSGi bundle projec
 |---- java                Your Java code
 |-------- org/openhab/[...]
 |- src/main/resources/OH-INF
-|---- binding
-|-------- binding.xml     Binding name, description and other meta data
+|---- addon
+|-------- addon.xml       Binding name, description and other meta data
 |---- config              Configuration description files when not in things files
 |-------- *.xml
 |---- i18n                Your localized binding texts
@@ -56,6 +51,20 @@ The structure of a binding follows the structure of a typical OSGi bundle projec
 
 ## B. Code formatting rules & style
 
+### Naming Convention
+
+To ensure consistency for users, new bindings should use the following naming convention:
+
+- Thing type id: `lower-case-hyphen`
+- Channel type id: `lower-case-hyphen`
+- Channel group id: `lower-case-hyphen`
+- Channel id: `lower-case-hyphen`
+- Thing property: `camelCase`
+- Config parameter: `camelCase`
+- Profile URI: `lower-case-hyphen`
+- Profile type id for transformations: `UPPER_CASE`
+- XML files in src/*/resources: `lower-case-hyphen.xml`
+
 ### Code format
 
 In order to keep the code layout consistent, code formatting rules have been defined.
@@ -68,7 +77,7 @@ Code styles files are located in here: <https://github.com/openhab/static-code-a
 
 #### Java Code
 
-The rules are defined using the Eclipse Java Formatter definitions. There are plugins available for several IDEs that support these definitons.
+The rules are defined using the Eclipse Java Formatter definitions. There are plugins available for several IDEs that support these definitions.
 
 - Official [openHAB Eclipse IDE setup](ide/eclipse.html) is preconfigured
 - Eclipse standalone installation
@@ -86,8 +95,7 @@ The rules are defined at <https://github.com/openhab/static-code-analysis/tree/m
 
 ### Java Coding Style
 
-- The [Java naming conventions](https://java.about.com/od/javasyntax/a/nameconventions.htm) should always be used and are descibed in detail at the link, a quick summary is:
-  - Channel IDs: `lowerCamelCase`
+- The [Java naming conventions](https://java.about.com/od/javasyntax/a/nameconventions.htm) should always be used and are described in detail at the link, a quick summary is:
   - Variables: `lowerCamelCase`
   - Constants: `ALL_UPPER_CASE`
 - Generics must be used where applicable. See example below:
@@ -100,7 +108,7 @@ public static <T> boolean isEqual(GenericsType<T> g1, GenericsType<T> g2){
 
 - Code MUST not show any warnings.
   Warnings that cannot be circumvented should be suppressed by using the `@SuppressWarnings` annotation.
-- Your classes are generally organised within an internal package
+- Your classes are generally organized within an internal package
 
 ```java
 org.openhab.binding.coolbinding.internal
@@ -137,8 +145,8 @@ Data-transfer-objects (DTOs map from JSON/XML to Java classes) do not require Ja
 
 ## D. Language Levels and Libraries
 
-1. openHAB generally targets the long time supported Java 11 release.
-1. The [OSGi Core Release 7](https://osgi.org/download/r7/osgi.core-7.0.0.pdf) with [OSGi Compendium Release 7](https://osgi.org/download/r7/osgi.cmpn-7.0.0.pdf) is targeted, and newer features should not be used.
+1. openHAB generally targets the long time supported Java 17 release.
+1. The [OSGi Core Release 8](https://osgi.org/download/r8/osgi.core-8.0.0.pdf) with [OSGi Compendium Release 8](https://osgi.org/download/r8/osgi.cmpn-8.0.0.pdf) is targeted, and newer features should not be used.
 1. [SLF4J](http://slf4j.org) is used for logging.
 
 You might also have the need to use other libraries for specific use cases like XML processing, networking etc.
@@ -151,7 +159,7 @@ See [Default libraries](#default-libraries) for more details.
 1. Creation of threads must be avoided.
   Instead, resort into using existing schedulers which use pre-configured thread pools.
   If there is no suitable scheduler available, start a discussion in the forum about it rather than creating a thread by yourself.
-  For periodically executed jobs that do not require a fixed rate [scheduleWithFixedDelay](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/ScheduledExecutorService.html#scheduleWithFixedDelay(java.lang.Runnable,long,long,java.util.concurrent.TimeUnit)) should be preferred over [scheduleAtFixedRate](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/ScheduledExecutorService.html#scheduleAtFixedRate(java.lang.Runnable,long,long,java.util.concurrent.TimeUnit)).
+  For periodically executed jobs that do not require a fixed rate [scheduleWithFixedDelay](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/concurrent/ScheduledExecutorService.html#scheduleWithFixedDelay(java.lang.Runnable,long,long,java.util.concurrent.TimeUnit)) should be preferred over [scheduleAtFixedRate](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/concurrent/ScheduledExecutorService.html#scheduleAtFixedRate(java.lang.Runnable,long,long,java.util.concurrent.TimeUnit)).
 1. Bundles need to cleanly start and stop without throwing exceptions or malfunctioning.
   This can be tested by manually starting and stopping the bundle from the console (```stop <bundle-id>``` resp. ```start <bundle-id>```).
 1. Bundles must not require any substantial CPU time.
@@ -172,13 +180,13 @@ class MyCoolClass {
 }
 ```
 
-- Parametrized logging must be used (instead of string concatenation).
+- Parameterized logging must be used (instead of string concatenation).
 
 ```java
 void myFun() {
     String someValue = "abc";
     int someInt = 12;
-    logger.log("Current value is {} and int is {}", someValue, someInt);
+    logger.debug("Current value is {} and int is {}", someValue, someInt);
 }
 ```
 
@@ -200,9 +208,9 @@ void myFun() {
 
 ```java
 void myFun() {
-    logger.trace("Enter myfun"); // DONT, DONT, really DONT do that
+    logger.trace("Enter myfun"); // DON'T, DON'T, really DON'T do that
     doSomething();
-    logger.trace("Leave myfun"); // DONT, DONT, really DONT do that
+    logger.trace("Leave myfun"); // DON'T, DON'T, really DON'T do that
 }
 ```
 
@@ -210,7 +218,7 @@ void myFun() {
 
 ```java
 void myFun() {
-    logger.debug("And now the thing goes online"); // DONT, DONT, really DONT do that
+    logger.debug("And now the thing goes online"); // DON'T, DON'T, really DON'T do that
     updateState(ThingState.ONLINE);
 }
 ```
@@ -237,7 +245,7 @@ This means in detail:
     In case of such exceptions this should be reflected in an updated state of the binding.
 
 - `trace` logging should be used for verbose debug logging.
-   For example printing output values that can be large, but can help when debugging changed external apis.
+   For example printing output values that can be large, but can help when debugging changed external APIs.
 
 In general bindings should NOT log to error/warn if e.g. connections are dropped -
 this is considered to be an external problem and from a system perspective to be a normal and expected situation.
@@ -274,7 +282,7 @@ You will receive detailed information (path to the file, line and message) listi
 
 [Null annotations](https://wiki.eclipse.org/JDT_Core/Null_Analysis) are used from the Eclipse JDT project.
 
-Those annotations help the compiler and our static code analyser to figure out if a potential null pointer access would happen in your code.
+Those annotations help the compiler and our static code analyzer to figure out if a potential null pointer access would happen in your code.
 
 Classes (except data transfer objects (DTO)) must be annotated with `@NonNullByDefault`:
 

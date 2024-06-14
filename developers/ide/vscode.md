@@ -79,7 +79,7 @@ The following steps will show you how to setup a specific bundle for development
     1. Shutdown any instances of openHAB
     1. Press `CTRL-SHIFT-P -> Tasks: Run Task -> Start openHAB (Debug)` to start an openHAB instance in debug mode.  You should see openHAB startup in a new VSCode terminal.
     1. Press F5 (or bring up debug in VSCode and choose the "Debug (Attach) - openHAB" configuration) and the following should occur in the VSCode terminal
-        1. The Maven compile occuring (successfully)
+        1. The Maven compile occurring (successfully)
         1. The resulting JAR is copied to the openHAB addons directory (`openhab_addons`)
         1. Connecting to the openHAB instance (the debug call stack should show a bunch of openHAB type threads running)
 
@@ -87,8 +87,8 @@ You can now make changes, set breakpoints, etc.
 
 ## Notes
 
-1. May take openHAB a few seconds to realize there is a new bundle and to reinitilize it after it's been copied.  Be a little bit patient.
-1. You must run the `mvn Compile (Online)` task atleast once to allow the offline compile to occur.  You should use the `mvn Compile (Offline)` task for most of your development as it's quicker since it uses the cache files.  When you are ready to commit (or release a test bundle) - you should run the `mvn Compile (Release)` task to include code checks (and resolve them).
+1. May take openHAB a few seconds to realize there is a new bundle and to reinitialize it after it's been copied.  Be a little bit patient.
+1. You must run the `mvn Compile (Online)` task at least once to allow the offline compile to occur.  You should use the `mvn Compile (Offline)` task for most of your development as it's quicker since it uses the cache files.  When you are ready to commit (or release a test bundle) - you should run the `mvn Compile (Release)` task to include code checks (and resolve them).
 1. Win10+ allows forward slashes as part of its path.  If you use backward slashes instead - you will need to double up on them since tasks.json uses a backward slash as a delimiter.  Example: `c:\\\\openhab`
 
 ## Tasks
@@ -97,9 +97,9 @@ The [tasks.json](examples/vscode/tasks.json) defines the following tasks that yo
 
 1. **Start openHAB (Debug)** - this task will start a new instance of openHAB in debug mode (allowing VSCode to connect to it).  Please shut down any other instances of openHAB prior to running this (see next task).  This will open a **new** terminal for openHAB to run in.  Formally, this will call `start.bat debug` (or `start.sh debug` on macOS/Linux) in the `openhab_home` directory.
 1. **Stop openHAB** - this task will stop any running instance.  Please note this will stop an instance started outside of VSCode as well on the same machine.  Formally, this will call `stop.bat` (or `stop.sh` on macOS/Linux) in the `openhab_runtime/bin` directory.
-1. **mvn Compile (Online)** - this task will run a online Maven compile skipping code checks.  Formally, will run `mvn clean install -DskipChecks`
-1. **mvn Compile (Offline)** - this task will run a offline Maven compile skipping code checks (assumes you have run a online compile atleast once).  Formally, will run `mvn -o clean install -DskipChecks`
-1. **mvn Compile (Release)** - this task will run a online Maven compile with code checks.  Formally, will run `mvn clean install`
+1. **mvn Compile (Online)** - this task will run an online Maven compile skipping code checks.  Formally, will run `mvn clean install -DskipChecks`
+1. **mvn Compile (Offline)** - this task will run an offline Maven compile skipping code checks (assumes you have run an online compile at least once).  Formally, will run `mvn -o clean install -DskipChecks`
+1. **mvn Compile (Release)** - this task will run an online Maven compile with code checks.  Formally, will run `mvn clean install`
 1. **Copy Distribution to Addons** - this task will run the 'mvn Compile (Offline)' task and then copy the resulting target file (as defined by `dist`) to your openHAB addons directory (defined by `openhab_addons`)
 1. **Build** - this is an alias for `Copy Distribution to Addons` task.
 1. **Tail events.log** - this will tail the events.log in a new terminal.

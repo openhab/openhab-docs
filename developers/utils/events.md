@@ -5,8 +5,6 @@ title: Event Bus
 
 # Event Bus
 
-{:.no_toc}
-
 The openHAB framework provides an event bus for inter-component communication.
 The communication is based on events which can be sent and received through the event bus in an asynchronous way.
 Examples of openHAB event types are _ItemCommandEvent_, _ItemStateEvent_, _ItemAddedEvent_, _ThingStatusInfoEvent_, etc.
@@ -14,10 +12,7 @@ Examples of openHAB event types are _ItemCommandEvent_, _ItemStateEvent_, _ItemA
 This section introduces the event API and illustrates how to receive such events.
 Furthermore, the sending of events and the implementation of new event types will be described.
 
-{::options toc_levels="2,3"/}
-
-- TOC
-{:toc}
+[[toc]]
 
 ## API Introduction
 
@@ -50,7 +45,7 @@ The event source is optional and represents the name of the source identifying t
 #### Item Events
 
 | Event                      | Description                                             | Topic                                              |
-|----------------------------|---------------------------------------------------------|----------------------------------------------------|
+| -------------------------- | ------------------------------------------------------- | -------------------------------------------------- |
 | ItemAddedEvent             | An item has been added to the item registry.            | openhab/items/{itemName}/added                     |
 | ItemRemovedEvent           | An item has been removed from the item registry.        | openhab/items/{itemName}/removed                   |
 | ItemUpdatedEvent           | An item has been updated in the item registry.          | openhab/items/{itemName}/updated                   |
@@ -72,7 +67,7 @@ It contains the old and the new state of the group item as well as the member.
 #### Thing Events
 
 | Event                       | Description                                       | Topic                                   |
-|-----------------------------|---------------------------------------------------|-----------------------------------------|
+| --------------------------- | ------------------------------------------------- | --------------------------------------- |
 | ThingAddedEvent             | A thing has been added to the thing registry.     | openhab/things/{thingUID}/added         |
 | ThingRemovedEvent           | A thing has been removed from the thing registry. | openhab/things/{thingUID}/removed       |
 | ThingUpdatedEvent           | A thing has been updated in the thing registry.   | openhab/things/{thingUID}/updated       |
@@ -87,25 +82,25 @@ It contains the old and the new status of the thing.
 
 #### Inbox Events
 
-| Event                 | Description                                         | Topic                            |
-|-----------------------|-----------------------------------------------------|----------------------------------|
-| InboxAddedEvent       | A discovery result has been added to the inbox.     | openhab/inbox/{thingUID}/added   |
-| InboxRemovedEvent     | A discovery result has been removed from the inbox. | openhab/inbox/{thingUID}/removed |
-| InboxUpdateEvent      | A discovery result has been updated in the inbox.   | openhab/inbox/{thingUID}/updated |
+| Event             | Description                                         | Topic                            |
+| ----------------- | --------------------------------------------------- | -------------------------------- |
+| InboxAddedEvent   | A discovery result has been added to the inbox.     | openhab/inbox/{thingUID}/added   |
+| InboxRemovedEvent | A discovery result has been removed from the inbox. | openhab/inbox/{thingUID}/removed |
+| InboxUpdateEvent  | A discovery result has been updated in the inbox.   | openhab/inbox/{thingUID}/updated |
 
 #### Link Events
 
 | Event                       | Description                                              | Topic                                         |
-|-----------------------------|----------------------------------------------------------|-----------------------------------------------|
+| --------------------------- | -------------------------------------------------------- | --------------------------------------------- |
 | ItemChannelLinkAddedEvent   | An item channel link has been added to the registry.     | openhab/links/{itemName}-{channelUID}/added   |
 | ItemChannelLinkRemovedEvent | An item channel link has been removed from the registry. | openhab/links/{itemName}-{channelUID}/removed |
 
 #### Channel Events
 
-| Event                          | Description                                                   | Topic                                            |
-|--------------------------------|---------------------------------------------------------------|--------------------------------------------------|
+| Event                          | Description                                                       | Topic                                            |
+| ------------------------------ | ----------------------------------------------------------------- | ------------------------------------------------ |
 | ChannelDescriptionChangedEvent | A dynamic `CommandDescription` or `StateDescription` has changed. | openhab/channels/{channelUID}/descriptionchanged |
-| ChannelTriggeredEvent          | A channel has been triggered.                                 | openhab/channels/{channelUID}/triggered          |
+| ChannelTriggeredEvent          | A channel has been triggered.                                     | openhab/channels/{channelUID}/triggered          |
 
 The `ChannelDescriptionChangedEvent` will be delivered automatically through the openHAB event bus if the binding implements a `BaseDynamicStateDescriptionProvider` or `BaseDynamicCommandDescriptionProvider` (see [Dynamic State / Command Description section](../bindings/thing-xml.html#dynamic-state-command-description)).
 
@@ -118,10 +113,11 @@ The following Java snippet shows how to receive `ItemStateEvent`s and `ItemComma
 Therefore, the `EventSubscriber` interface must be implemented.
 
 ```java
+@Component(immediate = true, service = EventSubscriber.class)
 public class SomeItemEventSubscriber implements EventSubscriber {
 
     private final Set<String> subscribedEventTypes = Set.of(ItemStateEvent.TYPE, ItemCommandEvent.TYPE);
-    private final EventFilter eventFiter = new TopicEventFilter("openhab/items/ItemX/.*");
+    private final EventFilter eventFilter = new TopicEventFilter("openhab/items/ItemX/.*");
 
     @Override
     public Set<String> getSubscribedEventTypes() {
@@ -156,21 +152,13 @@ A string representation of an event type can be found by a public member `TYPE` 
 To subscribe to all available event types, use the public member `ALL_EVENT_TYPES` of the event subscriber interface.
 
 The event subscriber provides a `TopicEventFilter` which is a default openHAB `EventFilter` implementation that ensures filtering of events based on a topic.
-The argument of the filter is a [Java regular expression](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/regex/Pattern.html).
+The argument of the filter is a [Java regular expression](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/regex/Pattern.html).
 The filter method `EventFilter.apply()` will be called for each event on the event bus to which the event subscriber is subscribed (in the example above `ItemStateEvent` and `ItemCommandEvent`).
 If the filter applies (in the given example for all item events with the item name "ItemX"), the event will be received by the `EventSubscriber.receive()` method.
 Received events can be cast to the event implementation class for further processing.
 
 Each event subscriber must be registered via OSGi Declarative Services (DS) under the `org.openhab.core.event.EventSubscriber` interface.
-
-```xml
-<scr:component xmlns:scr="https://www.osgi.org/xmlns/scr/v1.1.0" immediate="true" name="SomeItemEventSubscriber">
-   <implementation class="org.openhab.core.items.events.SomeItemEventSubscriber"/>
-   <service>
-      <provide interface="org.openhab.core.events.EventSubscriber"/>
-   </service>
-</scr:component>
-```
+This is done by annotating the class with `@Component(immediate = true, service = EventSubscriber.class)`.
 
 The listing below summarizes some best practices in order to implement event subscribers:
 
@@ -179,7 +167,7 @@ The listing below summarizes some best practices in order to implement event sub
     To provide an event filter the method `getEventFilter()` can be overridden.
 - openHAB provides an `AbstractItemEventSubscriber` class in order to receive `ItemStateEvents` and `ItemCommandEvents` (more information can be obtained in the next chapter).
 - To filter events based on a topic the  `org.openhab.core.events.TopicEventFilter` implementation from the openHAB core bundle can be used.
-    The filtering is based on [Java regular expression](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/regex/Pattern.html).
+    The filtering is based on [Java regular expression](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/regex/Pattern.html).
 - The subscribed event types and the filter should be stored as class members (see example above) due to performance reasons.
 - If the subscribed event types are sufficient in order to receive all interested events, do not return any filter (in that case the method getFilter() returns null) due to performance reasons.
 - Avoid the creation of too many event subscribers.
@@ -195,9 +183,10 @@ Due to the fact that receiving `ItemStateEvents` and `ItemCommandEvents` is a co
 The class `org.openhab.core.items.events.AbstractItemEventSubscriber` provides two methods `receiveUpdate(ItemStateEvent)` and `receiveCommand(ItemCommandEvent)` which can be implemented in order to receive and handle such events.
 
 ```java
+@Component(immediate = true, service = EventSubscriber.class)
 public class SomeItemEventSubscriber extends AbstractItemEventSubscriber {
 
-    private final EventFilter eventFiter = new TopicEventFilter("openhab/items/ItemX/.*");
+    private final EventFilter eventFilter = new TopicEventFilter("openhab/items/ItemX/.*");
 
     @Override
     public EventFilter getEventFilter() {

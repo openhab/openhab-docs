@@ -14,13 +14,10 @@ The ephemeris category provides blocks with calendar functionality.
 The blocks can be used to determine what type of day today is, or a number of days before or after today is.
 For example, a way to determine if today is a weekend, a bank holiday, someone’s birthday, trash day, etc.
 
-Definition of holidays can be customised through the *ephemeris.cfg* file.
+Definition of holidays can be customized through the _ephemeris.cfg_ file.
 See the [Ephemeris configuration page](https://www.openhab.org/docs/configuration/actions.html#configuration) for more information.
 
-{::options toc_levels="2..4"/}
-
-- TOC
-{:toc}
+[[toc]]
 
 ## Overview of the Ephemeris blocks
 
@@ -28,13 +25,15 @@ See the [Ephemeris configuration page](https://www.openhab.org/docs/configuratio
 
 ## Ephemeris Blocks
 
+More about that topic can be viewed at ![youtube](../images/blockly/youtube-logo-small.png) [Using Ephemeris information](https://youtu.be/KwhYKy1_qVk?t=1275)
+
 ### Holiday, weekend or weekday check
 
 ![ephemeris-is](../images/blockly/blockly-ephemeris-is.png)
 
-*Function:* this block checks if the given date is a holiday, weekday or weekend.
+_Function:_ this block checks if the given date is a holiday, weekday or weekend.
 
-Type: *boolean* `true` or `false`
+Type: _boolean_ `true` or `false`
 
 **Examples**
 
@@ -44,10 +43,10 @@ Type: *boolean* `true` or `false`
 
 ![ephemeris-get-name](../images/blockly/blockly-ephemeris-get-name.png)
 
-*Function:* Returns the holiday name for the given date.
+_Function:_ Returns the holiday name for the given date.
 Will return `null` if no holiday is found for the date.
 
-Type: *String*
+Type: _String_
 
 ### Get the number of days until a specific holiday
 
@@ -58,7 +57,7 @@ Function: Return the number of days until the given holiday name, or `-1` if the
 Type: number
 
 Some holidays are already provided by default from openHAB.
-Additional holidays must be configured in *ephemeris.cfg*.
+Additional holidays must be configured in _ephemeris.cfg_.
 
 ## Return to Blockly Reference
 

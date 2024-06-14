@@ -14,14 +14,15 @@ Choosing either of those presents you with a choice of language to use.
 By default there are only three choices: Blockly, ECMAScript, and Rules DSL.
 If you've installed other automation add-ons, those might be listed as well.
 
+This tutorial is not going to be a full tutorial on how to write code in Blockly.
+See the [**Blockly Reference**]({{base}}/configuration/blockly/index.html) for a detailed tutorial and reference for doing that.
+Instead it's a higher level example of building a rule step-by-step using Blockly.
+
 ![rule add script action dialog](images/rule-add-action-dialog.png)
 
 For this part of the tutorial we will choose "Design with Blockly".
 
-{::options toc_levels="2..4"/}
-
-- TOC
-{:toc}
+[[toc]]
 
 ## Introduction to Blockly
 
@@ -31,7 +32,7 @@ It even allows you to learn how write your own JavaScript by looking at the code
 If you have been around kids you may be familiar with [Scratch](https://scratch.mit.edu/).
 Blockly is a similar environment customized for writing openHAB scripts.
 
-For those who do better with video, there is a video introducting Blockly on the openHAB [Youtube feed](https://www.youtube.com/watch?v=EdllUlJ7p6k).
+For those who do better with video, there are a few videos introducing Blockly on the openHAB [Youtube feed]({{base}}/configuration/blockly/index.html#blockly-youtube-tutorials)
 
 A typical Blockly script might look something like this:
 
@@ -56,12 +57,8 @@ These are where you'll access Items, call actions, get data from persistence, cr
 
 The Library category is where Blockly Libraries installed from the Marketplace will appear (see below and the previous discussion on Rule Templates).
 
-This tutorial is not going to be a full tutorial on how to write code in Blockly.
-See the [Blockly Reference]({{base}}/configuration/blockly/index.html) for a detailed tutorial and reference for doing that.
-Instead it's a higher level example of building a rule step-by-step using Blockly.
-
 Some sections will be short.
-If you are missing details, see the previous section for details as most of the steps are the same for creating *all* rules in the UI.
+If you are missing details, see the previous section for details as most of the steps are the same for creating _all_ rules in the UI.
 
 ## Building a Rule
 
@@ -87,7 +84,7 @@ See the previous page for details on how to create the trigger you need.
 In this example we will use an `ON` command to the `MotionSensor` Item as the signal that there is motion.
 The motion sensor will timeout for 30 seconds before reporting motion again.
 There are three options to choose from which are explained very well [here](https://www.openhab.org/docs/configuration/rules-dsl.html#manipulating-item-states).
-In simple terms "changed" means the rule only triggers if the state *has changed* for example from OFF to ON while "was updated" would even trigger the rule if "OFF" was set to an item state that was already OFF.
+In simple terms "changed" means the rule only triggers if the state _has changed_ for example from OFF to ON while "was updated" would even trigger the rule if "OFF" was set to an item state that was already OFF.
 
 ![motion sensor received ON command](images/blockly-trigger-dialog.png)
 
@@ -280,7 +277,7 @@ Look in the "Text" category for operations to combine strings together for loggi
 
 - Watch the logs for errors, your log statements, and relevant events  (see the [Blockly Reference]({{base}}/configuration/blockly/index.html) on how to easily access log information)
 
-- When asking for help on the forum, don't *just* post a screenshot of the blocks.
+- When asking for help on the forum, don't _just_ post a screenshot of the blocks.
 Also post the code the blocks generate or, even better back out of the script to the rule and post the contents of the "Code" tab which gives the helpers on the forum the full picture.
 
 Note that you can even add comments to your blocks to document the intention of a block of code.

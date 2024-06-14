@@ -15,10 +15,10 @@ If you already have Eclipse installed it is recommended to perform a separate Ec
 
 ## Eclipse IDE Setup
 
-1. Install the Java 11 JDK if you did not have it installed.
+1. Install the Java 17 JDK if you did not have it installed.
 
    ::: warning Attention
-   openHAB development requires **Java JDK version 11**.
+   openHAB development requires **Java JDK version 17**.
    :::
 
 1. Download the "Eclipse Installer": [can be downloaded from the Eclipse web site](https://wiki.eclipse.org/Eclipse_Installer)
@@ -40,7 +40,7 @@ If you already have Eclipse installed it is recommended to perform a separate Ec
     ![select projects](./images/ide_setup_eclipse_4_openhab.png)
 
     | Selection               | Install if                            |
-    |-------------------------|---------------------------------------|
+    | ----------------------- | ------------------------------------- |
     | **openHAB Development** | **Debug/Demo Environment (Required)** |
     | openHAB Add-ons         | Add-ons Development                   |
     | openHAB ZigBee Binding  | ZigBee Binding Development            |
@@ -60,7 +60,7 @@ If you already have Eclipse installed it is recommended to perform a separate Ec
 
 1. Click `Next>` and `Finish` to start installation.
 
-    During install accept licence agreement, "Unsigned Content" for Bndtools, and Eclipse Foundation certificates when requested to complete IDE installation.
+    During install accept license agreement, "Unsigned Content" for Bndtools, and Eclipse Foundation certificates when requested to complete IDE installation.
 
 1. At this point the Eclipse installer is finished and the Eclipse IDE is automatically launched to continue the installation process.
 
@@ -143,7 +143,7 @@ The following files are of interest for the execution environment:
 
     ::: tip
     Depending on the amount of code you want to debug, especially when you're debugging not only add-ons, but also openHAB Core and UI's,
-    start-up procces may gets very slow and/or you get a `java.lang.OutOfMemoryError: Java heap space` exception.
+    start-up process may gets very slow and/or you get a `java.lang.OutOfMemoryError: Java heap space` exception.
     In case this happens, you could increase the maximum heap space by adding e.g. `-Xmx8G` (for a maximum of 8 gigabyte) to
     `Runtime Properties > JVM arguments` (bottem left of the `app.bndrun` window).
     Afterwards, you have to save `app.bndrun` file again.

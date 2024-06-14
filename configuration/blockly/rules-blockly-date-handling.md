@@ -13,12 +13,7 @@ title: Rules Blockly - Date Handling
 Date blocks are used as input parameters for other blocks or can be used to create or compare date.
 With 3.3.0M6 many blocks were introduced to allow complex tasks with dates
 
-{::options toc_levels="2..4"/}
-
-- TOC
-{:toc}
-
-{: #blockly-date-handling-overview}
+[[toc]]
 
 ## Overview of the Date Handling blocks
 
@@ -26,10 +21,12 @@ With 3.3.0M6 many blocks were introduced to allow complex tasks with dates
 
 ![dates2](../images/blockly/blockly-date-handling2.png)
 
-Note: There is *no need* for a special block to set a datetime of an openHAB item.
+Note: There is _no need_ for a special block to set a datetime of an openHAB item.
 This can be directly done via the ["send command" / "post command" block](rules-blockly-items-things.html#send-command)
 
 ## Date Handling Blocks
+
+More about that topic can be viewed at ![youtube](../images/blockly/youtube-logo-small.png) [Datetimes and Cron-Triggers](https://youtu.be/KwhYKy1_qVk?t=45)
 
 ### Help
 
@@ -43,17 +40,17 @@ This button serves as a link to this documention page
 
 ![now-with-offset](../images/blockly/blockly-date-get-now.png)
 
-Type: *ZonedDateTime*
+Type: _ZonedDateTime_
 
-Obtains the current datetime from the system clock in the default timezone as *ZonedDateTime*
+Obtains the current datetime from the system clock in the default timezone as _ZonedDateTime_
 
 ### Get Datetime now with offset
 
 ![now-with-offset](../images/blockly/blockly-get-now-offset.png)
 
-Type: *ZonedDateTime*
+Type: _ZonedDateTime_
 
-Obtains the current datetime as *ZonedDateTime* with an offset relative to the current date *and* time.
+Obtains the current datetime as _ZonedDateTime_ with an offset relative to the current date _and_ time.
 
 The options for the time period base are
 
@@ -68,9 +65,9 @@ The options for the time period base are
 
 ![date-picker](../images/blockly/blockly-date-picker.png)
 
-Type: *ZonedDateTime*
+Type: _ZonedDateTime_
 
-Returns a date as *ZonedDateTime*.
+Returns a date as _ZonedDateTime_.
 The date can be selected from a date picker.
 The time is set to `00:00:00`.
 
@@ -78,11 +75,13 @@ The time is set to `00:00:00`.
 
 ![get-date](../images/blockly/blockly-date-get.png)
 
-Type: *ZonedDateTime*
+Type: _ZonedDateTime_
 
-This block will return the date as *ZonedDateTime* based on the given String.
+This block will return the date as _ZonedDateTime_ based on the given String.
 The String may be one of the following formats (since 3.3) the following formats are supported)
 
+- HH:mm
+- HH:mm:ss
 - yyyy-MM-dd
 - yyyy-MM-dd HH:mm
 - yyyy-MM-dd HH:mm:ss
@@ -96,13 +95,19 @@ The String may be one of the following formats (since 3.3) the following formats
 The input String may also be provided via variable-block or a date from an item state.
 In case parts of the date are not provided due to shorter pattern, the others are set to 0
 
-Tip: if you want to create a datetime with your time zone use the "copy of"-block and overwrite its values
+:::tip
+
+if you want to create a datetime with your time zone use the "copy of"-block and overwrite its values
+
+:::
+
+More about that topic can be viewed at ![youtube](../images/blockly/youtube-logo-small.png) [Creating Datetimes and other datetime blocks](https://youtu.be/KwhYKy1_qVk?t=2010)
 
 ### Datetime with date and time values
 
 ![today](../images/blockly/blockly-datetime-with-values.png)
 
-Type: *ZonedDateTime*
+Type: _ZonedDateTime_
 
 Creates a ZonedDateTime by providing all necessary six values
 
@@ -113,15 +118,21 @@ Creates a ZonedDateTime by providing all necessary six values
 - minute of time
 - second of time
 
-Tip: if you want to create a datetime with your time zone use the "copy of"-block and overwrite its values
+:::tip
+
+if you want to create a datetime with your time zone use the "copy of"-block and overwrite its values
+
+:::
 
 ### Create Datetime based on a specific date ("Copy Of")
 
 since 3.3
 
+More about that topic can be viewed at ![youtube](../images/blockly/youtube-logo-small.png) [Copy-Of, Datetime-Now with Math-Operations](https://youtu.be/KwhYKy1_qVk?t=375)
+
 ![date-copy-of-overview](../images/blockly/blockly-date-copy-of-overview.png)
 
-Type: *ZonedDateTime*
+Type: _ZonedDateTime_
 
 This block allows to create a new ZonedDateTime based on a given ZonedDateTime and then either
 
@@ -129,9 +140,11 @@ This block allows to create a new ZonedDateTime based on a given ZonedDateTime a
 - adds
 - or subtracts
 
-parts (so called temporals) of that datetime:
+**Temporals:** parts of that datetime are called temporals
 
 ![date-copy-of-temporal1](../images/blockly/blockly-temporal1.png)![date-copy-of-temporal2](../images/blockly/blockly-temporal2.png)
+
+More about that topic can be viewed at ![youtube](../images/blockly/youtube-logo-small.png) [Datetime - Temporal Units](https://youtu.be/KwhYKy1_qVk?t=410)
 
 It is therefore a bit more complex block which is on the other hand very flexible to use.
 It consists of the main "copy of"-block and the other two temporal-Blocks that can be added.
@@ -141,7 +154,7 @@ The following short video explains how the block can be used
 ![date-copy-of-tutorial](../images/blockly/blockly-copy-of-tutorial.gif "Copy of Tutorial")
 
 - first drag the main copyOf-Block to the workspace
-- choose the datetime you want to base your *new* datetime on and drag it into the position (in the above video the now block is used)
+- choose the datetime you want to base your _new_ datetime on and drag it into the position (in the above video the now block is used)
 - select if you want to set (overwrite), add or subtract values via the dropdown
 - open the settings icon and drag as many "temporal units" into the block as you want to modify later, which will create the "holes" into which you can apply the temporal blocks
 - now drag one of the temporal blocks (see description below) in each of these blocks.
@@ -184,7 +197,7 @@ You can achieve the exact same result with the following but it looks more bulky
 This block also provides a temporal value to the main block but it contains an additional indirection for the value of the temporal block.
 While the first block only takes a constant, this block allows and even requires the value to be provided by another block which in the standard case is a number block.
 
-Using just the number would be the same like providing a constant value but instead, any number-returning block can be used, hence any math operation can be applied like depicted inte following image:
+Using just the number would be the same like providing a constant value but instead, any number-returning block can be used, hence any math operation can be applied like depicted into following image:
 
 ![date-copy-of-temporal22](../images/blockly/blockly-date-temporal2-example2.png)
 
@@ -201,19 +214,24 @@ since 3.3
 
 ![datetime-from-item](../images/blockly/blockly-datetime-from-item.png)
 
-Type: *ZonedDateTime*
+Type: _ZonedDateTime_
 
 This is a convenience block that retrieves the state of an item (at best of item type datetime) which is then automatically converted to a ZonedDateTime, so it can be easily used as shown in the following example:
 
 ![datetime-item-example](../images/blockly/blockly-datetime-from-item-example.png)
 
+More about that topic can be viewed at ![youtube](../images/blockly/youtube-logo-small.png) [Convert item states to Datetimes](https://youtu.be/KwhYKy1_qVk?t=570)
+
 ### Get String representation of date ("text of")
+
+![get-date-string](../images/blockly/blockly-get-date-string-without.png)
 
 ![date-tostring](../images/blockly/blockly-get-date-string.png)
 
-Type: *String*
+Type: _String_
 
-Returns the String representation of a given *ZonedDateTime*-block, with or without the time.
+Returns the String representation of a given _ZonedDateTime_-block, with, without the time or formatted in openHAB time (like in the logs).
+It also allows to return the date in a custom format which can be provided in a separate block.
 
 since 3.3: also returns the same datetime format that is used by openHAB itself
 
@@ -235,12 +253,14 @@ The output in the log will be.
 
 since 3.3
 
+An introduction to that topic can be viewed at ![youtube](../images/blockly/youtube-logo-small.png) [Date comparison](https://youtu.be/KwhYKy1_qVk?t=520)
+
 ![date-comparison](../images/blockly/blockly-date-comparison.png)
 
 Checks if the instant of the first ZonedDateTime is before, after or equal to the second ZonedDateTime.
 In the third drop-down list, the accuracy on which the comparison is based can be selected.
 
-Type: *boolean*
+Type: _boolean_
 
 Returns true/false based on the comparison
 
@@ -253,7 +273,7 @@ since 3.3
 Check if the instant of the first datetime is between the two other datetimes.
 The drop-down decides if all components, date only or time only should be used for the comparison.
 
-Type: *boolean*
+Type: _boolean_
 
 Returns true/false based on the comparison
 
@@ -263,7 +283,7 @@ since 3.3
 
 ![date-getpartof](../images/blockly/blockly-date-unit-of.png)
 
-Type: *Number*
+Type: _Number_
 
 Returns the selected part of the datetime as a number.
 
@@ -276,7 +296,7 @@ since 3.3
 Calculates the amount of time between two datetimes.
 The result will be negative if the second object is before the first one.
 
-Type: *Number*
+Type: _Number_
 
 Returns the difference between the two datetimes.
 
@@ -286,7 +306,7 @@ Returns the difference between the two datetimes.
 
 ![today](../images/blockly/blockly-date-today.png)
 
-Type: *DayOffset*
+Type: _DayOffset_
 
 Ephemeris blocks expect a date formatted as the number of days since today.
 As a result, this block always returns 0.
@@ -296,7 +316,7 @@ Used for Emphemeris blocks only.
 
 ![now-plus-minus-offset](../images/blockly/blockly-date-plus.png)
 
-Type: *DayOffset*
+Type: _DayOffset_
 
 Returns the number of days since today, as configured in the number block.
 The number can be positive (offset into the future) or negative (offset into the past).

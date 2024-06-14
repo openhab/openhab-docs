@@ -12,8 +12,9 @@ The main parts of openHAB can be found in the following repositories:
 - [openHAB Core](https://github.com/openhab/openhab-core): This repo contains the core framework bundles of which the openHAB runtime is constructed.
 - [openHAB Add-ons](https://github.com/openhab/openhab-addons): Add-ons (such as bindings, voice services, etc.) of openHAB can be found within this repository.
 - [openHAB Distro](https://github.com/openhab/openhab-distro): This repo contains all parts that are required for assembling the binary distribution of openHAB.
+- [openHAB WebUI](https://github.com/openhab/openhab-webui): This repo contains the openHAB web UIs: MainUI, BasicUI, HABPanel, HABot, and CometVisu, as well as the [openHAB icons](/configuration/iconsets/classic/#icons).
 
-Besides those "main" repositories, there are a dozen further ones, which are not listed here in detail - just [check out the list](https://github.com/openhab) and you will find separate repos for openHAB Cloud, the Alexa skill, the Google Action, the Android and iOS apps, the Zigbee and ZWave bindings, HABPanel and HABot and many more.
+Besides those "main" repositories, there are a dozen further ones, which are not listed here in detail - just [check out the list](https://github.com/openhab) and you will find separate repos for openHAB Cloud, the Alexa skill, the Google Action, the Android and iOS apps, the Zigbee and ZWave bindings and many more.
 If you want to get involved with any of these, best check their respective README and CONTRIBUTING files in the root of the repos.
 
 ## Contribution Guidelines
@@ -29,7 +30,7 @@ If there's a problem with the implementation, hopefully you received feedback on
 We're trying very hard to keep openHAB lean and focused.
 We don't want it to do everything for everybody.
 This means that we might decide against incorporating a new feature.
-However, there might be a way to implement that feature *on top of* openHAB.
+However, there might be a way to implement that feature _on top of_ openHAB.
 
 ### Discuss Your Design in the Community
 
@@ -149,7 +150,7 @@ then you just add a line to every git commit message:
 
 using your real name (sorry, no pseudonyms or anonymous contributions.) and an
 e-mail address under which you can be reached (sorry, no github noreply e-mail
-addresses (such as username@users.noreply.github.com) or other non-reachable
+addresses (such as `username@users.noreply.github.com`) or other non-reachable
 addresses are allowed).
 
 Additionally can also sign off commits automatically by adding the `-s` or `--signoff` parameter to your usual git commit commands.
@@ -193,7 +194,7 @@ You don't even need to know Git.
 - You can preview your changes under the "Preview changes" tab.
 - Add a title and optional description for your proposed change at the bottom of the editor.
 - The [sign off rules](#sign-your-work) described above do apply to documentation contributions as well.
-  Simply add an empty line and the sign off statement "Signed-off-by: Joe Smith \<joe.smith@email.com\>" at the end of your change description at the bottom of the editor.
+  Simply add an empty line and the sign off statement `Signed-off-by: Joe Smith <joe.smith@email.com>` at the end of your change description at the bottom of the editor.
   Note that as per the rules you have to provide your full name in the sign off and that full name has to match the name you configured in your GitHub profile for the DCO check to succeed.
 - Click the "Propose file change" button at the bottom of the editor, then click "Create pull request" on the next page, and then on the summary page click "Create pull request" one more time.
 

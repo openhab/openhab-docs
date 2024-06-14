@@ -18,11 +18,11 @@ h1.welcome {
 }
 </style>
 
-<img src="/openhab-logo-square.png" width="150" height="150" class="intro-logo" />
+<img src="/openhab-logo-square.svg" width="150" height="150" class="intro-logo" />
 
 <h1 class="welcome">Welcome!</h1>
 
-The  **open H**ome  **A**utomation  **B**us (openHAB,  *pronounced ˈəʊpənˈhæb*) is an open source, technology agnostic home automation platform which runs as the center of your smart home!
+The  **open H**ome  **A**utomation  **B**us (openHAB,  _pronounced ˈəʊpənˈhæb_) is an open source, technology agnostic home automation platform which runs as the center of your smart home!
 
 <div style="clear:both"></div>
 
@@ -44,7 +44,7 @@ Here are some key considerations especially for new users. To be successful, you
 - Celebrate all the small successes
 
 Remember, openHAB is just a computer program.
-The computer will only do what *you* tell it to do.
+The computer will only do what _you_ tell it to do.
 openHAB can provide many default solutions that are easy to setup.
 On the flip side, the more you insist that everything should look and work exactly the way you want it, the more work you will have to invest.
 openHAB is fully customizable, but doing so will require substantial effort on your part.
@@ -81,7 +81,7 @@ The following table gives a top-level description of the most important concepts
 | Channels | are the openHAB (software) connection between “Things” and “Items” (see below) | _see below_ |
 | Items | are the openHAB (software) generated representation of information about the devices | [click for more info on Items]({{base}}/concepts/items.html) |
 | Rules | that perform automatic actions (in its simplest form: if "this" happens, openHAB will do "that") | [click for more info on Rules]({{base}}/configuration/rules-dsl.html) |
-| Sitemap | is the openHAB (software) generated user interface (web site) that presents information and allows for interactions | [click for more info on Sitemaps]({{base}}/ui/sitemaps.html) |
+| Pages | is the openHAB (software) generated user interface (web site) that presents information and allows for interactions | [click for more info on Pages]({{base}}/tutorial/pages_intro.html) |
 
 While the table above gives an overview, please remember that it is incomplete and a simplification of openHAB for the sake of this overview.
 More elements will be introduced in later chapters of the documentation.
@@ -107,14 +107,14 @@ Here you will find a searchable list of several hundred bindings to support as m
 New bindings are regularly added as developers integrate more devices into openHAB.
 
 For each binding, detailed instructions and examples are provided that include guidance on configuration (if any) of the binding itself, the definition of [Things]({{base}}/concepts/things.html) supported by this binding and the Channels these [Things]({{base}}/concepts/things) provide.
-In most cases, the description also contains a fully worked out example that includes a definition of [Things]({{base}}/concepts/things) and its Channels, [Items]({{base}}/concepts/items.html) linked to those Channels and the use of these [Items]({{base}}/concepts/items.html) in a sitemap.
+In most cases, the description also contains a fully worked out example that includes a definition of [Things]({{base}}/concepts/things) and its Channels, [Items]({{base}}/concepts/items.html) linked to those Channels and the use of these [Items]({{base}}/concepts/items.html) in a user interface page.
 
 ## While You Are Getting Started
 
 To all newcomers: please read the section [New User Tutorial]({{base}}/tutorial).
 That section provides you with step-by-step instructions for your first easy setup.
 
-openHAB runs on most popular platforms such as Linux, Windows and MacOS and on almost any hardware ranging from Raspberry Pis to desktop computers and server PCs.
+openHAB runs on most popular platforms such as Linux, Windows and macOS and on almost any hardware ranging from Raspberry Pis to desktop computers and server PCs.
 You can find specific installation instructions for these and other platforms in the [Installation Overview]({{base}}/installation/index.html) article.
 If you have a strong preference towards a particular platform, then that platform is probably your best choice.
 
@@ -163,13 +163,13 @@ Once you have got a first overview, it is time to practice.
 Here a short list of the steps that you will need to consider to get openHAB up and running as your home automation system:
 
 1. Install openHAB
-1. If you already own a smart device, search the addons for the brand or technology used by that device (or simply browse the list of [add-ons](/addons/) for any technologies or services you may recognize)
+1. If you already own a smart device, search the add-ons for the brand or technology used by that device (or simply browse the list of [add-ons](/addons/) for any technologies or services you may recognize)
 1. Install a binding (in openHAB)
 1. Define a “thing”
 1. Add a “channel” to the “thing” if not created by the binding
 1. Define an “item”
 1. Link the “channel” to your “item”
-1. Establish a sitemap
+1. Interact with your "item" from a user interface "page"
 
 Most of the above can be done in openHAB through point-and-click processes in a graphical user interface.
 But remember, there is always more than one way to achieve your goal in openHAB.

@@ -62,7 +62,7 @@ Please see the [Karaf documentation](https://karaf.apache.org/manual/latest/#_co
 The config file for logging is located in the `userdata/etc` folder (manual setup) or in `/var/lib/openhab/etc` (apt/deb-based setup).
 
 ::: tip Attention OH2 users
-The format and filename to store log settings has changed. It used to be `org.ops4j.pax.logging.cfg` in openHAB 2 and is `log4j2.xml` in openHAB 3.
+The format and filename to store log settings has changed. It used to be `org.ops4j.pax.logging.cfg` in openHAB 2 and is `log4j2.xml` since openHAB 3.
 Do not delete the `.cfg` though, it needs to include the new `.xml`.
 :::
 
@@ -88,7 +88,6 @@ The **detail** of logging is defined by one of the following levels:
 | INFO      | 400        | When an event for informational purposes                                                |
 | DEBUG     | 500        | When a general debugging event required                                                 |
 | TRACE     | 600        | When a fine grained debug message, typically capturing the flow through the application |
-| ALL       | MAX        | When all events should be logged                                                        |
 
 The levels build a hierarchy with **ERROR** logging critical messages only and **DEBUG** logging nearly everything.
 **DEBUG** combines all logs from weight 100 to 500, while **TRACE** adds further messages in addition to what **DEBUG** displays.
@@ -147,7 +146,7 @@ To modify the stored log levels, use the console or edit the [configuration file
 
 There are times, especially when troubleshooting rules, when it can be helpful to log information or Item state values.
 
-For each log level there is an corresponding command for creating log entries.
+For each log level there is a corresponding command for creating log entries.
 You may use these log levels to filter or better differentiate the generated logging output.
 The logging commands require two parameters: the subpackage, in the examples below `heating`, and the text which should appear in the log:
 
@@ -169,7 +168,7 @@ An example output of the last log statement above is:
 2016-06-04 16:28:39.482 [DEBUG] [org.openhab.core.model.script.heating] Bedroom: Temperature 21.3°C, Mode NORMAL
 ```
 
-Note that, in the last example above, inclusion and formatting of values is done using [Java Formatter String Syntax](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Formatter.html).
+Note that, in the last example above, inclusion and formatting of values is done using [Java Formatter String Syntax](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Formatter.html).
 
 ## Log4j configuration and logging into separate files
 

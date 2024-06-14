@@ -11,10 +11,7 @@ To create home automation we need to define behaviors.
 In openHAB behaviors are defined using rules.
 Almost anything you can think of can be done as long as you have a relevant event to kick it off and access to the data needed to decide what to do.
 
-{::options toc_levels="2..4"/}
-
-- TOC
-{:toc}
+[[toc]]
 
 ## Event Driven
 
@@ -22,7 +19,7 @@ openHAB is an event driven system.
 What that means is an event happens and parts of openHAB that watch for that event can react.
 Persistence will see an Item change event and save that new state to the database.
 The UIs will watch for that same Item change event and update the UI widgets as necessary.
-And some rules will *trigger* when that Item change event occurs to create some behavior.
+And some rules will _trigger_ when that Item change event occurs to create some behavior.
 
 For example, the behavior we want is to turn on a light (represented by the Item `Light`) when motion is detected (represented by the Item `Motion`).
 To create this behavior we could create a rule that triggers on the event of the `Motion` Item receiving the command `ON` that sends the command `ON` to the `Light` Item.
@@ -35,7 +32,7 @@ Rules can do that too.
 
 A rule consists of three parts.
 
-| Name        | MainUI Section | Purpose                                                                             |
+| Name        | Main UI Section | Purpose                                                                             |
 |-------------|----------------|-------------------------------------------------------------------------------------|
 | `Trigger`   | When           | List of the events that cause the rule to run.                                      |
 | `Condition` | But Only If    | Conditions which must be true before the rule is allowed to run even when triggered |
@@ -86,7 +83,7 @@ There are four categories of conditions.
 | Item Condition      | Item states | tests to see if an Item's state meets a comparison (e.g. == ON, <= 65 °F, etc.)                                                                                            |
 | Time Condition      | Time        | a selection of the days of the week and a time period when the rule can run                                                                                                |
 | Ephemeris Condition | Ephemeris   | openHAB has a subsystem that tracks types of day (e.g. weekends, weekdays) and local holidays; this condition allows one to specify what types of days it's allowed to run |
-| Script Condition    | Script      | code whose last line evaluates to true of false.                                                                                                                           |
+| Script Condition    | Script      | code whose last line evaluates to true or false.                                                                                                                           |
 
 When a rule is triggered from another rule, there is an option to allow or ignore the called rule's conditions.
 When run manually, the conditions are ignored.
@@ -110,19 +107,20 @@ This tutorial will not discuss file based rules.
 See the docs for the chosen language for details on how to write rules in files for that language.
 
 openHAB comes with three languages by default (Rules DSL, ECMAScript 5.1, and Blockly) and has a number of add-ons to add more.
-For this tutorial we will be using Blockly and the [JavaScript Scripting](/addons/automation/jsscripting/) add-on.
+For this tutorial we will be using [Blockly](/docs/configuration/blockly/) and the [JavaScript Scripting](/addons/automation/jsscripting/) add-on.
 But most of the concepts presented can be applied to the other languages too.
 
-## What's the Difference Between a Rule, Script, and Schedule?
+## What's the Difference Between a Rule, Script, a Scene and Schedule?
 
-This is a trick question because there is nothing very significantly different between the three.
+This is a tricky question because there is nothing very significantly different between the four, except the Scenes.
 All are rules.
 
-| Type     | What's Unique                                                                                                                                      | Purpose                                                                                                                                                                                                                                                                                                                                   |
-|----------|----------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Rule     |                                                                                                                                                    | This is any unit of automation which can contain zero or more of triggers, actions and, conditions                                                                                                                                                                                                                                        |
-| Script   | rule consisting of a single Script Action and has the tag "Script", there are no triggers so they must be run manually or called from another rule | A great place to store examples when you figure something out and want to remember how you did it later. Can include reusable code called from other rules (though there are often better choices). Very useful for adhoc and pseudo-unit testing of your rules. Despite being a rule, Scripts do not appear in the Rules page of MainUI. |
-| Schedule | any rule with a time based trigger and the tag "Schedule"                                                                                          | This page is a good place to see when your rules are scheduled to run. However, note that it only shows statically timed rules.                                                                                                                                                                                                           |
+| Type                                       | What's Unique                                                                                                                                      | Purpose                                                                                                                                                                                                                                                                                                                                   |
+|--------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| ![Rule](images/wand_stars.png) Rule        |                                                                                                                                                    | This is any unit of automation which can contain zero or more of triggers, actions and, conditions                                                                                                                                                                                                                                        |
+| ![Script](images/doc_plaintext.png) Script | Rule consisting of a single Script Action and has the tag "Script". There are no triggers so they must be run manually or called from another rule. | A great place to store examples when you figure something out and want to remember how you did it later. Can include reusable code called from other rules (though there are often better choices). Very useful for adhoc and pseudo-unit testing of your rules. Despite being a rule, Scripts do not appear in the Rules page of Main UI. |
+| ![Scenes](images/scenes.png) Scene         | A special type of rule that allows to send multiple item actions at the same time.                                                                | Scenes are commonly used to restore certain complex setups, like the lighting for dinner or TV sessions. They can be easily reused from other rules.                                                                                                                                                                                       |
+| ![Schedule](images/calendar.png) Schedule  | any rule with a time based trigger and the tag "Schedule"                                                                                          | This page is a good place to see when your rules are scheduled to run. However, note that it only shows statically timed rules.                                                                                                                                                                                                           |
 
 Important note on the term "Script".
 Unfortunately this term is overloaded in openHAB and has multiple meanings based on the context.

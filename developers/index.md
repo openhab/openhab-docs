@@ -16,7 +16,7 @@ Try [git - the simple guide](https://rogerdudler.github.io/git-guide/) as a star
 Add-ons and the openHAB core itself are written in Java.
 Java is not hard to learn, but it helps if you have a general technical understanding of programming languages.
 
-The different guides of this chapter assume that you are somewhat familiar with Java 11 and that you have a rough understanding of Git's workflow (e.g. "checkout", "branches", "push").
+The different guides of this chapter assume that you are somewhat familiar with Java 17 and that you have a rough understanding of Git's workflow (e.g. "checkout", "branches", "push").
 
 ## Choose the Right Concept
 
@@ -24,7 +24,7 @@ openHAB allows you to build upon the following concepts:
 
 - **Bindings**: A binding connects to external services or devices.
 - **Automation engine module**: A trigger, condition, or action that can be used in automation rules (or scripts).
-- **Transformation / Profiles**: Can be used to transform a *Thing Channel*- value before it is assigned to an *Item*.
+- **Transformation / Profiles**: Can be used to transform a _Thing Channel_- value before it is assigned to an _Item_.
 - **An IO service**: Exposes openHAB internals via a defined interface (for example the REST interface, HomeKit or Hue Emulation Service).
 - **A Persistence service**: Persist item state updates and/or changes and allows them to be retrieved for specific points in time.
 - **Natural language processing skill**:
@@ -48,8 +48,8 @@ Development can happen on any of the supported operating systems (Windows, macOS
 Please ensure that you have the following prerequisites installed as well:
 
 1. [Git](https://git-scm.com/downloads) For retrieving our source code and push changes back. On Windows: Must be available in %PATH%
-1. [Maven 3.x](https://maven.apache.org/download.cgi) Our buildsystem tool. On Windows: Must be available in %PATH%
-1. Java JDK 11, for example from Oracle [Oracle JDK 11](https://www.oracle.com/java/technologies/javase-jdk11-downloads.html). On Windows: %JAVA% must be set.
+1. [Maven 3.x](https://maven.apache.org/download.cgi) Our build system tool. On Windows: Must be available in %PATH%
+1. Java JDK 17, for example from Oracle [Oracle JDK 17](https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html). On Windows: %JAVA% must be set.
 
 You can use any IDE that is suitable for OSGi/Java development.
 We have prepared some step-by-step guides for the following IDEs:
@@ -68,7 +68,7 @@ We have prepared some step-by-step guides for the following IDEs:
 </td>
 <td style="width:30%">
 
-[![Intellij IDE](./ide/images/intellij.jpg)](ide/intellij.html)
+[![IntelliJ IDE](./ide/images/intellij.jpg)](ide/intellij.html)
 
 </td>
 </tr>
@@ -79,7 +79,8 @@ Not sure what to choose?: openHAB maintainers use [Eclipse IDE](https://wiki.ecl
 ## Develop a NEW binding
 
 To help start developing a new binding, a script is available to generate the basic skeleton for you.
-This script is specific for binding addons. Follow these steps to generate your binding:
+This script is specific for binding add-ons.
+Follow these steps to generate your binding:
 
 1. From the command line in `openhab-addons/bundles` directory to create a skeleton of a new binding `mynewbinding` run:
 
@@ -117,7 +118,7 @@ This script is specific for binding addons. Follow these steps to generate your 
    - `-Dspotless.check.skip=true` : Skips the spotless file formatting checks
    - `-Dohc.version=3.0.2` : The version of openhab you are building for
 
-1. To start your new binding it's a good practise to commit your code on a new git branch:
+1. To start your new binding it's a good practice to commit your code on a new git branch:
 
    ```bash
    git checkout -b <mynewbranch>

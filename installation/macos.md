@@ -7,10 +7,7 @@ title: macOS
 
 This page is structured as follows:
 
-{::options toc_levels="2..4"/}
-
-- TOC
-{:toc}
+[[toc]]
 
 If you're unfamiliar with using the macOS terminal, then feel free to follow the many guides on the internet. For example:
 
@@ -18,7 +15,7 @@ If you're unfamiliar with using the macOS terminal, then feel free to follow the
 
 ## Installation
 
-openHAB is packaged as a platform independent `zip` archive. Installation is as simple as unziping it into a unique folder.
+openHAB is packaged as a platform independent `zip` archive. Installation is as simple as unzipping it into a unique folder.
 First, make sure that your system meets the [prerequisites](index.html#prerequisites).
 When you are running macOS BigSur or higher, make sure
 that you select the right platform depending on your hardware (x86 or ARM 64-bit).
