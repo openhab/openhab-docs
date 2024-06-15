@@ -52,6 +52,64 @@ Variables can be used in several ways:
 `oh-button` & `oh-link` have a special parameter `clearVariable`, which allows to unset a variable when clicked, after performing the action.
 This is useful when "validating" a variable, e.g. send the variable value as command to an Item and then reset the variable.
 
+### Default Variable Values
+
+The standard variables defined using interactive components do exist until the first time they are given a value by a component.
+This means that it is not possible to set a default value for a variable.
+To provide a default value when a variable does not exist a simple OR construction can be used in expressions that require the variable:
+
+```javascript
+text: =(vars.selectedNumber || '0')
+```
+
+Expressions such as the example above will return the value of the variable if it exists and if not will return the second value instead.
+
+If a variable is used extensively in a widget, instead of using OR statements in many different expressions, an `oh-context` component can be used to define variables that have default value at widget creation.
+
+```yaml
+- component: oh-context
+  config:
+    variables:
+      setBrightness: 75
+  slots:
+    default:
+      - component: oh-slider
+        config:
+          variable: setBrightness
+      - component: Label
+        config:
+          text: =vars.setBrightness
+```
+
+The `oh-context` can also create more complex default variable values such as arrays or objects:
+
+```yaml
+- component: oh-context
+  config:
+    variables:
+      lightArray:
+        - ON
+        - OFF
+        - OFF
+        - OFF
+      userObject:
+        user: Guest
+        color: red
+        timeout: 5
+```
+
+### Variable Scope
+
+Standard variables are also global in scope with one exception:
+
+> the value of variable defined within one custom widget will not be available to the parent page or widget that custom widget is included in.
+
+The scope of variables created using an `oh-context` component is restricted to only children of that component.
+The value of an `oh-context` variable will never pass to the parent of the `oh-context`.
+Within the scope of an `oh-context`, however, variables are fully accessible even passing values from a custom widget to parent components.
+
+Variables defined in an `oh-context` will take precedence over standard variables of the same name.
+
 ## Item Expression Shortcuts
 
 The `@` symbol can be used in front of an Item name string as a shortcut to the `displayState` from the `items` dictionary with a fallback to the raw state:
@@ -197,6 +255,49 @@ Adding a simple `OR` statement to that expression will provide the fallback cond
 
 ```javascript
 background: =({heat:'orange',cool:'blue',auto:'green',off:'white'})[@@hvacModeItem] || 'red'
+```
+
+### Constants
+
+Named constants can be defined using an `oh-context` component in a similar way to defining variables.
+The significant difference is that if a constant's value is defined using an expression, that expression is evaluated only at the time the widget is rendered and will not change.
+
+The example above using an object as a switch statement can be written even more clearly with the addition of a constant object:
+
+```yaml
+- component: oh-context
+  config:
+    constants:
+      modeColor:
+        heat: orange
+        cool: blue
+        auto: green
+        off: white
+  slots:
+    default:
+      - component: Label
+        config:
+          text: =@@hvacModeItem
+          style:
+            background: =const.modeColor[@@hvacModeItem] || 'red'
+```
+
+### Custom Functions
+
+There are times when a widget requires the same calculation in multiple locations and maintaining all the different locations can be a burden.
+In these instances, an `oh-context` component can be used to define named functions that are avialable to all children of the `oh-context`.
+Functions are defined using the arrow syntax and referenced with the `fn` object in expressions:
+
+```yaml
+- component: oh-context
+  config:
+    functions:
+      num2usd: =(x) => '$' + Number.parseFloat(x).toFixed(2)
+  slots:
+    default:
+      - component: Label
+        config:
+          text: =fn.num2usd(3.1)
 ```
 
 ## Examples
