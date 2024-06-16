@@ -152,8 +152,8 @@ Therefore, if the Rule needs to know what the command was, use the [implicit var
 As with Item based event-based triggers discussed above, you can listen for commands, status updates, or status changes on the members of a given Group.
 You can also decide whether you want to catch only a specific command/status or any.
 All of the [implicit variables]({{base}}/configuration/rules-dsl.html#implicit-variables-inside-the-execution-block) get populated using the Item that caused the event.
-The implicit variable `triggeringItem` and `triggeringItemName` are populated with the Item and the item name that caused the Rule to trigger.
-The implicit variable `triggeringGroup` and `triggeringGroupName` are populated with the Group and the group name specified in the trigger, whose member caused the Rule to trigger.
+The implicit variables `triggeringItem` and `triggeringItemName` are populated with the Item and the item name that caused the Rule to trigger.
+The implicit variables `triggeringGroup` and `triggeringGroupName` are populated with the Group and the group name specified in the trigger, whose member caused the Rule to trigger.
 
 ```java
 Member of <group> received command [<command>]
