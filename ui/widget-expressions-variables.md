@@ -54,7 +54,7 @@ This is useful when "validating" a variable, e.g. send the variable value as com
 
 ### Default Variable Values
 
-The standard variables defined using interactive components do exist until the first time they are given a value by a component.
+The standard variables defined using interactive components do not exist until the first time they are given a value by a component.
 This means that it is not possible to set a default value for a variable.
 To provide a default value when a variable does not exist a simple OR construction can be used in expressions that require the variable:
 
@@ -102,9 +102,9 @@ The `oh-context` can also create more complex default variable values such as ar
 
 Standard variables are also global in scope with one exception:
 
-> the value of variable defined within one custom widget will not be available to the parent page or widget that custom widget is included in.
+> Changes to the variable's value made by the child components do not affect the parent component that defines the variable.
 
-The scope of variables created using an `oh-context` component is restricted to only children of that component.
+The scope of variables created using an `oh-context` component is restricted to only the children of that component.
 The value of an `oh-context` variable will never pass to the parent of the `oh-context`.
 Within the scope of an `oh-context`, however, variables are fully accessible even passing values from a custom widget to parent components.
 
@@ -285,7 +285,7 @@ The example above using an object as a switch statement can be written even more
 ### Custom Functions
 
 There are times when a widget requires the same calculation in multiple locations and maintaining all the different locations can be a burden.
-In these instances, an `oh-context` component can be used to define named functions that are avialable to all children of the `oh-context`.
+In these instances, an `oh-context` component can be used to define named functions that are available to all children of the `oh-context`.
 Functions are defined using the arrow syntax and referenced with the `fn` object in expressions:
 
 ```yaml
