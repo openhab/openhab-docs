@@ -76,6 +76,13 @@ We have prepared some step-by-step guides for the following IDEs:
 
 Not sure what to choose?: openHAB maintainers use [Eclipse IDE](https://wiki.eclipse.org/Eclipse_Installer).
 
+## Make your own copy of the code base
+
+OpenHAB has [several repositories](https://github.com/openhab) on GitHub. You can find a list of them in the Developer Appendix of this 
+documentation, in the [Contribuiting](https://www.openhab.org/docs/developer/contributing.html) section.
+
+For this tutorial, you'll want to clone the [OpenHAB-addons](https://github.com/openhab/openhab-addons) repository.
+
 ## Develop a NEW binding
 
 To help start developing a new binding, a script is available to generate the basic skeleton for you.
