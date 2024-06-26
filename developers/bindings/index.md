@@ -977,7 +977,7 @@ Here the developer only needs to implement four simple methods:
 ### SDDP Discovery
 
 SDDP discovery is implemented in the framework as `SddpDiscoveryService`.
-To facilitate the development, binding developers only need to implement a `SddpDiscoveryParticipant`. 
+To facilitate the development, binding developers only need to implement a `SddpDiscoveryParticipant`.
 Additionally one must add `<feature>openhab-core-config-discovery-sddp</feature>` to the binding's `feature.xml` file.
 Here the developer only needs to implement four simple methods:
 
