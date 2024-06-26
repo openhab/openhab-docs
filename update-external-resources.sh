@@ -14,7 +14,7 @@ echo_process() { echo -e "\\e[1;94m$(timestamp)\\e[0m $*"; }
 
 # Switch to the script folder
 cd "$(dirname $0)" || exit 1
-if [ ! -f "$(dirname $0)/CNAME" ]; then
+if [ ! -f "$(dirname $0)/LICENSE" ]; then
   echo "I'm confused and don't know where I am. Exiting." >&2
   exit 1
 fi
