@@ -13,4 +13,8 @@ The latest release version of the app is always available through the Windows St
 
 Please refer to the [openhab.windows project](https://github.com/openhab/openhab.windows) on GitHub for more technical details.
 
-{% include contribution-wanted.html %}
+::: tip Contribution Wanted
+Please help us improve the documentation!
+If you'd like to leave corrections, additions or comments for this article or any other part of this website, please drop a word at:
+[Documentation Issue Tracker](#{$docs_repo}/issues)
+:::
