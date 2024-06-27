@@ -5,7 +5,7 @@ title: Miele@home - Bindings
 type: binding
 description: "This binding integrates Miele@home appliances."
 since: 3x
-logo: images/addons/miele.png
+logo: images/addons/miele.svg
 install: auto
 ---
 

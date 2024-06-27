@@ -235,6 +235,24 @@ This parameter is used to enable/disable the slats to return to the previously s
         </options>
       </parameter>
 
+      <parameter name="config_74_2" type="integer" groupName="configuration">
+        <label>74: Up time</label>
+        <description><![CDATA[
+This parameter determines the time it takes for the roller blind to reach the top. For modes with positioning, the value is set automatically during calibration, otherwise, it must be set manually.<br /> <h1>Overview</h1><p>1 - 65535 (0.01 - 655.35s, every 0.01s) - movement time<br /></p>
+        ]]></description>
+        <default>6000</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_75_2" type="integer" groupName="configuration">
+        <label>75: Down time</label>
+        <description><![CDATA[
+This parameter determines the time it takes for the roller blind to reach the bottom. For modes with positioning, the value is set automatically during calibration, otherwise, it must be set manually.<br /> <h1>Overview</h1><p>1 - 65535 (0.01 - 655.35s, every 0.01s) - movement time<br /></p>
+        ]]></description>
+        <default>6000</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
       <parameter name="config_76_1" type="integer" groupName="configuration">
         <label>76: Motor operation detection</label>
         <description><![CDATA[

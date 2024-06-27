@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zigbee"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+    xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0 org.eclipse.smarthome.thing-description.xsd">
+    <bridge-type id="coordinator_slzb06">
+        <label>SLZB06 Coordinator</label>
+        <description>SLZB06 Ember based Network NCP</description>
+        <channels>
+            <channel id="esp32_temp" typeId="slzb06_esp32temp" />
+            <channel id="zb_temp" typeId="slzb06_zbtemp" />
+            <channel id="socket_uptime" typeId="slzb06_socketuptime" />
+            <channel id="uptime" typeId="slzb06_uptime" />
+            <channel id="rx_dat" typeId="slzb06_ash_rx_dat" />
+            <channel id="tx_dat" typeId="slzb06_ash_tx_dat" />
+            <channel id="rx_nak" typeId="slzb06_ash_rx_nak" />
+            <channel id="tx_nak" typeId="slzb06_ash_tx_nak" />
+            <channel id="rx_ack" typeId="slzb06_ash_rx_ack" />
+            <channel id="tx_ack" typeId="slzb06_ash_tx_ack" />
+        </channels>
+        <representation-property>slzb06_server</representation-property>
+        <config-description>
+            <parameter-group name="network">
+                <context></context>
+                <label>ZigBee Network Configuration</label>
+                <description></description>
+            </parameter-group>
+            <parameter-group name="server">
+                <context></context>
+                <label>Server Configuration</label>
+                <description></description>
+            </parameter-group>
+            <parameter-group name="ember">
+                <context></context>
+                <label>Ember NCP Configuration</label>
+                <description></description>
+            </parameter-group>
+            <parameter name="slzb06_server" type="text" required="true" groupName="server">
+                <label>Server Network Address</label>
+                <default></default>
+                <description>Server Address</description>
+                <limitToOptions>false</limitToOptions>
+            </parameter>
+            <parameter name="slzb06_port" type="integer" required="true" groupName="server">
+                <label>Server IP Port</label>
+                <default></default>
+                <description>Server Port</description>
+                <limitToOptions>false</limitToOptions>
+            </parameter>
+            <parameter name="zigbee_powermode" type="integer" groupName="ember">
+                <label>Power Mode</label>
+                <description>Sets the Ember power mode. Boost mode will improve receive and transmit performance</description>
+                <default>1</default>
+                <options>
+                    <option value="0">Normal</option>
+                    <option value="1">Boost</option>
+                </options>
+            </parameter>
+            <parameter name="zigbee_txpower" type="integer" min="0" max="8" groupName="ember">
+                <label>Transmit Power</label>
+                <description>Sets the Ember transmit power</description>
+                <default>0</default>
+                <options>
+                    <option value="8">High</option>
+                    <option value="0">Normal</option>
+                </options>
+            </parameter>
+            <parameter name="zigbee_childtimeout" type="integer" groupName="ember">
+                <label>Child Aging Timeout</label>
+                <description>Sets the period over which the coordinator will age children. Children who have not checked in within
+					this period will be removed from the child table may be asked to rejoin the network. Note that setting this value
+					too high may prevent new devices joining the network.</description>
+                <default>86400</default>
+                <options>
+                    <option value="320">5 Minutes</option>
+                    <option value="1800">30 Minutes</option>
+                    <option value="7200">2 Hours</option>
+                    <option value="43200">12 Hours</option>
+                    <option value="86400">1 Day</option>
+                    <option value="172800">2 Days</option>
+                    <option value="432000">5 Days</option>
+                    <option value="864000">10 Days</option>
+                    <option value="1209600">2 Weeks</option>
+                    <option value="2419200">4 Weeks</option>
+                    <option value="4233600">7 Weeks</option>
+                </options>
+            </parameter>
+            <parameter name="zigbee_networksize" type="integer" min="10" max="250" groupName="ember">
+                <label>Network Size</label>
+                <description>Sets the number of nodes expected in the network</description>
+                <default>25</default>
+                <options>
+                    <option value="10">Small (10)</option>
+                    <option value="25">Medium (25)</option>
+                    <option value="100">Large (100)</option>
+                    <option value="250">Enormous (250)</option>
+                </options>
+            </parameter>
+            <parameter name="zigbee_concentrator" type="integer" groupName="ember">
+                <label>Concentrator Type</label>
+                <description>The type of concentrator used by the coordinator</description>
+                <advanced>true</advanced>
+                <default>0</default>
+                <options>
+                    <option value="0">Low RAM</option>
+                    <option value="1">High RAM</option>
+                </options>
+            </parameter>
+            <parameter name="zigbee_initialise" type="boolean" groupName="network">
+                <label>Reinitialize Controller</label>
+                <description>Resets the coordinator, reinitialises the network, and sets the configuration to the configured values</description>
+                <default>false</default>
+                <verify>true</verify>
+                <advanced>true</advanced>
+            </parameter>
+            <parameter name="zigbee_channel" type="integer" groupName="network" required="false" min="11" max="25">
+                <label>Channel</label>
+                <description>Channel number</description>
+                <default>0</default>
+                <options>
+                    <option value="0">Auto</option>
+                    <option value="11">Channel 11</option>
+                    <option value="12">Channel 12</option>
+                    <option value="13">Channel 13</option>
+                    <option value="14">Channel 14</option>
+                    <option value="15">Channel 15</option>
+                    <option value="16">Channel 16</option>
+                    <option value="17">Channel 17</option>
+                    <option value="18">Channel 18</option>
+                    <option value="19">Channel 19</option>
+                    <option value="20">Channel 20</option>
+                    <option value="21">Channel 21</option>
+                    <option value="22">Channel 22</option>
+                    <option value="23">Channel 23</option>
+                    <option value="24">Channel 24</option>
+                    <option value="25">Channel 25</option>
+                    <option value="26">Channel 26</option>
+                </options>
+                <advanced>true</advanced>
+            </parameter>
+            <parameter name="zigbee_panid" type="Integer" groupName="network" required="false">
+                <label>PAN ID</label>
+                <description>PAN Network ID</description>
+                <default>0</default>
+                <options>
+                    <option value="0">Auto</option>
+                </options>
+                <limitToOptions>false</limitToOptions>
+                <advanced>true</advanced>
+            </parameter>
+            <parameter name="zigbee_extendedpanid" type="text" groupName="network" required="false">
+                <label>Extended PAN ID</label>
+                <description>Extended PAN Network ID: 8 byte hexadecimal value</description>
+                <default>0000000000000000</default>
+                <options>
+                    <option value="0000000000000000">Auto</option>
+                </options>
+                <limitToOptions>false</limitToOptions>
+                <advanced>true</advanced>
+            </parameter>
+            <parameter name="zigbee_networkkey" type="text" groupName="network">
+                <label>Network Security Key</label>
+                <description>Set the network security key</description>
+                <default>00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00</default>
+                <options>
+                    <option value="00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00">Auto</option>
+                </options>
+                <limitToOptions>false</limitToOptions>
+                <advanced>true</advanced>
+            </parameter>
+            <parameter name="zigbee_linkkey" type="text" groupName="network">
+                <label>Link Security Key</label>
+                <description>Set the link security key</description>
+                <default>5A 69 67 42 65 65 41 6C 6C 69 61 6E 63 65 30 39</default>
+                <options>
+                    <option value="5A 69 67 42 65 65 41 6C 6C 69 61 6E 63 65 30 39">ZigBee Alliance 09</option>
+                </options>
+                <limitToOptions>false</limitToOptions>
+                <advanced>true</advanced>
+            </parameter>
+            <parameter name="zigbee_installcode" type="text" groupName="network">
+                <label>Install Code</label>
+                <description>Add a temporary install key for device installation</description>
+                <advanced>true</advanced>
+            </parameter>
+            <parameter name="zigbee_groupregistration" type="text" groupName="network">
+                <label>Group Registrations</label>
+                <description>Registers the binding to receive group notifications. Groups are separated by a comma and must be defined in hexadecimal.</description>
+                <advanced>true</advanced>
+            </parameter>
+            <parameter name="zigbee_meshupdateperiod" type="integer" groupName="network">
+                <label>Mesh Update Period</label>
+                <description>The period between subsequent updates of the mesh topology</description>
+                <advanced>true</advanced>
+                <default>86400</default>
+                <options>
+                    <option value="0">Never</option>
+                    <option value="300">5 Minutes</option>
+                    <option value="1800">30 Minutes</option>
+                    <option value="3600">1 Hour</option>
+                    <option value="21600">6 Hours</option>
+                    <option value="86400">1 Day</option>
+                    <option value="604800">1 Week</option>
+                </options>
+            </parameter>
+            <parameter name="zigbee_trustcentremode" type="text" groupName="network">
+                <label>Trust Centre Join Mode</label>
+                <description>Sets the Trust Centre join/rejoin mode</description>
+                <options>
+                    <option value="TC_JOIN_DENY">Deny all joins</option>
+                    <option value="TC_JOIN_SECURE">Allow only secure joining</option>
+                    <option value="TC_JOIN_INSECURE">Allow all joins</option>
+                    <option value="TC_JOIN_INSTALLCODE">Only join with install code</option>
+                </options>
+                <default>TC_JOIN_SECURE</default>
+                <advanced>true</advanced>
+            </parameter>
+        </config-description>
+    </bridge-type>
+    <channel-type id="slzb06_esp32temp">
+        <item-type>Number</item-type>
+        <label>ESP32 Temperature</label>
+        <description></description>
+        <state readOnly="true"></state>
+    </channel-type>
+    <channel-type id="slzb06_zbtemp">
+        <item-type>Number</item-type>
+        <label>ZigBee Temperature</label>
+        <description></description>
+        <state readOnly="true"></state>
+    </channel-type>
+    <channel-type id="slzb06_socketuptime">
+        <item-type>Number</item-type>
+        <label>Socket Uptime</label>
+        <description>The number of seconds since the zigbee network connection was started</description>
+        <state readOnly="true"></state>
+    </channel-type>
+    <channel-type id="slzb06_uptime">
+        <item-type>Number</item-type>
+        <label>SLZB06 Uptime</label>
+        <description>The number of seconds since the SLZB06 was restarted</description>
+        <state readOnly="true"></state>
+    </channel-type>
+    <channel-type id="slzb06_ash_rx_dat">
+        <item-type>Number</item-type>
+        <label>Data frames received</label>
+        <description>Provides a count of DATA frames received by the host.</description>
+        <state readOnly="true"></state>
+    </channel-type>
+    <channel-type id="slzb06_ash_tx_dat">
+        <item-type>Number</item-type>
+        <label>Data frames sent</label>
+        <description>Provides a count of DATA frames sent by the host.</description>
+        <state readOnly="true"></state>
+    </channel-type>
+    <channel-type id="slzb06_ash_rx_nak">
+        <item-type>Number</item-type>
+        <label>NAK frames received</label>
+        <description>Provides a count of DATA frames with an error or that were discarded by the NCP due to lack of memory.
+		</description>
+        <state readOnly="true"></state>
+    </channel-type>
+    <channel-type id="slzb06_ash_tx_nak">
+        <item-type>Number</item-type>
+        <label>NAK frames sent</label>
+        <description>Provides a count of DATA frames with an error or that were discarded by the host due to failed CRC.
+		</description>
+        <state readOnly="true"></state>
+    </channel-type>
+    <channel-type id="slzb06_ash_rx_ack">
+        <item-type>Number</item-type>
+        <label>ACK frames received</label>
+        <description>Provides a count of DATA frames received successfully by the NCP.</description>
+        <state readOnly="true"></state>
+    </channel-type>
+    <channel-type id="slzb06_ash_tx_ack">
+        <item-type>Number</item-type>
+        <label>ACK frames sent</label>
+        <description>Provides a count of DATA frames received successfully by the host.</description>
+        <state readOnly="true"></state>
+    </channel-type>
+</thing:thing-descriptions>

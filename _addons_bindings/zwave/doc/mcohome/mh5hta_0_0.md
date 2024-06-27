@@ -319,10 +319,10 @@ This parameter has the configuration ID ```config_23_1``` and is of type ```INTE
 
 Fan Working Mode
 Secret menu No. E14  
-1: Fan works in both cooling and heating mode  
-2: Fan works only in cooling mode  
-3: Fan works only in heating mode  
-4: Fan does not work neither in cooling nor heating mode
+0: Fan works in both cooling and heating mode  
+1: Fan works only in cooling mode  
+2: Fan works only in heating mode  
+3: Fan does not work neither in cooling nor heating mode
 Values in the range 0 to 3 may be set.
 
 The manufacturer defined default value is ```0```.

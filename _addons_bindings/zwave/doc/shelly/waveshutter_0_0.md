@@ -306,7 +306,7 @@ The following state translation is provided for this channel to the ```Switch```
 
 ## Device Configuration
 
-The following table provides a summary of the 12 configuration parameters available in the Wave Shutter.
+The following table provides a summary of the 14 configuration parameters available in the Wave Shutter.
 Detailed information on each parameter can be found in the sections below.
 
 | Param | Name  | Description |
@@ -318,6 +318,8 @@ Detailed information on each parameter can be found in the sections below.
 | 71 | Operating modes | Choose between the two operating modes. In shutter mode, you can select up/down/stop. In venetian mode, an additional widget/endpoint is displayed in the UI interface, which you can use to control the tilt position of the slats. |
 | 72 | Venetian blind slats turning time | Set the time required for the slats to make a full turn (180 degrees). ⓘ NOTE: Make sure that working mode is set to venetian (Par. No. 71 =1) |
 | 73 | Slats position after moving | This parameter is used to enable/disable the slats to return to the previously set position, after being activated via the gateway, push-button operation or when the lower limit switch is reached. |
+| 74 | Up time | This parameter determines the time it takes for the roller blind to reach the top. For modes with positioning, the value is set automatically during calibration, otherwise, it must be set manually. |
+| 75 | Down time | This parameter determines the time it takes for the roller blind to reach the bottom. For modes with positioning, the value is set automatically during calibration, otherwise, it must be set manually. |
 | 76 | Motor operation detection | Define the power consumption threshold at the end positions. Based on this value, the Device will know that the shutters reached the limit switches. |
 | 78 | Forced shutter calibration | By setting this parameter to value 1 the Device will start executing force calibration procedure. The parameter also reports the calibration status by sending the get parameter value command. NOTE: Check chapter Functionality with calibration details NO |
 | 80 | Motor stop delay after limit switch detection | This parameter defines the delay time for the motor to turn off, after reaching the limit switch. |
@@ -468,6 +470,28 @@ The following option values may be configured, in addition to values in the rang
 The manufacturer defined default value is ```1``` (enable).
 
 This parameter has the configuration ID ```config_73_1``` and is of type ```INTEGER```.
+
+
+### Parameter 74: Up time
+
+This parameter determines the time it takes for the roller blind to reach the top. For modes with positioning, the value is set automatically during calibration, otherwise, it must be set manually.
+1 - 65535 (0.01 - 655.35s, every 0.01s) - movement time
+Values in the range 1 to 65535 may be set.
+
+The manufacturer defined default value is ```6000```.
+
+This parameter has the configuration ID ```config_74_2``` and is of type ```INTEGER```.
+
+
+### Parameter 75: Down time
+
+This parameter determines the time it takes for the roller blind to reach the bottom. For modes with positioning, the value is set automatically during calibration, otherwise, it must be set manually.
+1 - 65535 (0.01 - 655.35s, every 0.01s) - movement time
+Values in the range 1 to 65535 may be set.
+
+The manufacturer defined default value is ```6000```.
+
+This parameter has the configuration ID ```config_75_2``` and is of type ```INTEGER```.
 
 
 ### Parameter 76: Motor operation detection

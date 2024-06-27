@@ -196,7 +196,7 @@ Fan Mode Option When Idle<br /> <h1>Overview</h1><p>Secret menu No. E13<br />1: 
       <parameter name="config_24_1" type="integer" groupName="configuration">
         <label>24: Fan Working Mode</label>
         <description><![CDATA[
-Fan Working Mode<br /> <h1>Overview</h1><p>Secret menu No. E14<br />1: Fan works in both cooling and heating mode <br />2: Fan works only in cooling mode <br />3: Fan works only in heating mode <br />4: Fan does not work neither in cooling nor heating mode<br /></p>
+Fan Working Mode<br /> <h1>Overview</h1><p>Secret menu No. E14<br />0: Fan works in both cooling and heating mode <br />1: Fan works only in cooling mode <br />2: Fan works only in heating mode <br />3: Fan does not work neither in cooling nor heating mode<br /></p>
         ]]></description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>

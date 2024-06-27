@@ -14,7 +14,7 @@ You just discovered openHAB and now you are eager to start but you're afraid of 
 openHABian is here to help. It's a **self-configuring** Linux system setup to reliably operate your openHAB instance 24 hours a day.
 It provides:
 
-*   Complete **SD-card images pre-configured with openHAB** for the Raspberry Pi line of SBCs
+*   Complete **SD-card images pre-configured with openHAB** for the Raspberry Pi line of small single-board computers.
 *   The openHABian configuration tool to set up and configure openHAB and many related things on any Debian based system
 
 #### Table of Contents
@@ -48,7 +48,7 @@ openHABian is for starters *and* expert users. We sometimes read about people de
 Everybody wants their home automation to be stable and most people install a dedicated RPi, i.e. they don't install any other software there that may interfere with proper openHAB operation.
 Reasonably so, this is our clear recommendation. Saving another 100 bucks is not worth putting the reliable day-to-day operations of your home at risk.
 
-Then again that being said, those who insist to can use openHABian as the starting point for their 'generic' server and run whatever software else on top.
+Then again that being said, those who really want to can use openHABian as the starting point for their 'generic' server and run whatever software else on top.
 There's no genuine reason why this wouldn't work. The openHABian image is really just Raspberry Pi OS (lite) under the hood and openHABian is "just" some scripts that install a number of packages and configure the system in a specific way, optimized to run openHAB.
 
 <a id="befair"></a>
@@ -56,7 +56,7 @@ There's no genuine reason why this wouldn't work. The openHABian image is really
 What you must not do, though, is to mess with the system, OS packages and config and expect anyone to help you with that. Let's clearly state this as well: when you deliberately decide to make manual changes to the OS software packages and configuration (i.e. outside of openhabian-config), you will be on your own.
 Your setup is untested, and no-one but you knows about your changes. openHABian maintainers are really committed to providing you with a fine user experience, but this takes enormous efforts in testing and is only possible with a fixed set of hardware. You don't get to see this as a user.
 
-So if you choose to deviate from the standard openHABian installation (e.g. you change your box to run off SSD) and run into problems thereafter, don't be unfair: please don't waste maintainer's or anyone's time by asking for help or information on your issues on the forum. Thank you !
+So if you choose to deviate from the standard openHABian installation (e.g. you change your box to run off SSD) and run into problems thereafter, please be fair: don't waste maintainer's or anyone's time by asking for help or information on your issues on the forum. Thank you !
 
 ## On openHAB 4 and older
 openHABian will install **openHAB 4** and Java 17 by default.
@@ -282,9 +282,9 @@ They can be changed from openHABian menu.
 ## Availability and Backup
 
 openHABian is designed to reliably run 24 hours a day, seven days a week. That's a complex challenge involving hardware, software and operational procedures.
-This is the right time to prepare your system for disasters such as getting hit by the SD card wear-out/corruption problem.
+This is the right time to prepare your system for disasters such as getting hit by hardware outages or the SD card wear-out/corruption problem.
 
-Preparing for hardware breakage is easiest and most likely to work with common-off-the-shelf hardware that is known it will work as a drop-in replacement the very moment you will be in need of it (i.e. when your smart home server just died).
+Preparing for hardware breakage is the challenge that is the most easy one to overcome with common-off-the-shelf hardware that is known to work as a drop-in replacement the very moment you will be in need of it (i.e. when your smart home server just died).
 
 ::: tip get your spare hardware ready
 Order **spare** pieces of *all* hardware components your home automation relies on to work. At a minimum, that's the computer itself and another storage medium.
@@ -320,8 +320,8 @@ With an openHABian RPi mirror SD setup, you can instruct your partner or even ki
 5.  For completeness, openHABian still provides the historic option to move the root filesystem to USB-attached devices. See \[menu option 37\].
     We don't recommend or support doing so but if you're convinced this is beneficial to your situation, feel free to go for it.
 
-    WARNING 1: openHABian does not support hardware modifications to have an effect on the system itself such as to add an SSD drive to boot from.
-    We clearly recommend NOT to do this, for your own sake of reliability.
+    WARNING 1: openHABian maintainers do not support you in applying hardware modifications to have an effect on the system itself such as to add an SSD drive to boot from.
+    We clearly recommend not to do this, for your own sake of reliability.
 
     WARNING 2: USB sticks are as susceptible to flash wear-out as SD cards are, making zram the better choice for a standard Pi to run off its internal SD card.
 

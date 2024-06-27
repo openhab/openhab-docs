@@ -24,15 +24,38 @@ If you have any issues, questions or an idea for additional features, please tak
 ## Latest Changes
 
 ::: tip State of this document
-This documentation refers to release [v3.9.0](https://github.com/openhab/openhab-google-assistant/releases/tag/v3.9.0) of [openHAB Google Assistant](https://github.com/openhab/openhab-google-assistant) published on 2024-01-29
+This documentation refers to release [v4.0.0](https://github.com/openhab/openhab-google-assistant/releases/tag/v4.0.0) of [openHAB Google Assistant](https://github.com/openhab/openhab-google-assistant) published on 2024-05-31
 :::
+
+### v4.0.0
+
+- **Breaking Changes**
+  - Group members are now stored in customData. This means existing (group) devices will only work after a new SYNC
+  - The `modes` configuration for Thermostats has been renamed to `thermostatModes`
+  - The `speeds` configuration for Fans will be renamed to `fanSpeeds`
+  - As item types of group members will then be validated, users might see devices disappearing in Google Home if they used an unsupported item within a group device
+  - Please take a look at [Migration Guide](https://github.com/openhab/openhab-google-assistant/discussions/558) and check your configuration against the new constraints
+- **More details and other changes**
+  - Item names for group members will be stored in customData to save a query request to openHAB when executing commands
+    - For commands that need the current state the query request is still needed (thermostat commands or relative volume)
+    - Also some other configuration options are stored in customData
+    - Item types of group members will now be validated
+  - Add a lot of new functionality to Fan devices (AirPurifier, Fan, Hood)
+    - OnOff (separate power switch if used as a group)
+    - FanSpeed (separate fan speed if used as a group)
+    - Modes (yes, for the first time modes are available)
+    - SensorState (for FilterLifeTime and PM2.5 - no clue how to query those)
+  - Add AC Unit device
+    - Basically just a combination of the extended Fan and the Thermostat with all control and config options of both
+- **Potential Issues**
+  - As customData is limited to 512 bytes it could be an issue to store very long item names e.g. for devices with a lot of members like thermostat
 
 ### v3.9.0
 
 - Prepared available configuration options for the upcoming rollout of v4
 - Users can start adjusting their setup to use the new configuration options:
   - [`Thermostat`](#thermostat): `modes` has been renamed to `thermostatModes`
-  - [`Fan`](#fan-hood-airpurifier): `speeds` has been renamed to `fanSpeeds`
+  - [`Fan`](#fan-hood-airpurifier-only-onoff-or-fan-speed-control): `speeds` has been renamed to `fanSpeeds`
 
 ### v3.8.0
 
@@ -40,7 +63,7 @@ This documentation refers to release [v3.9.0](https://github.com/openhab/openhab
   
 ### v3.7.0
 
-- Adjusted [`Fan`](#fan-hood-airpurifier) to use `supportsFanSpeedPercent` option
+- Adjusted [`Fan`](#fan-hood-airpurifier-only-onoff-or-fan-speed-control) to use `supportsFanSpeedPercent` option
 - Inverted `lightColorTemperature` percentage range when using `colorUnit="percent"` with [`SpecialColorLight`](#light-as-group-with-separate-controls)
 
 ### v3.6.0
@@ -194,7 +217,7 @@ Switch { ga="Fireplace" }
 Switch { ga="Valve" [ inverted=true ] }
 ```
 
-### Sprinkler, Vacuum
+### Sprinkler, Vacuum, Washer, Dishwasher
 
 | | |
 |---|---|
@@ -206,6 +229,8 @@ Switch { ga="Valve" [ inverted=true ] }
 ```shell
 Switch { ga="Sprinkler" [ inverted=true ] }
 Switch { ga="Vacuum" [ inverted=false ] }
+Switch { ga="Washer" [ inverted=false ] }
+Switch { ga="Dishwasher" [ inverted=false ] }
 ```
 
 ### Lock
@@ -315,7 +340,7 @@ Dimmer { ga="Speaker" [ volumeDefaultPercentage="50", levelStepSize="10", volume
 |---|---|
 | **Device Type** | [TV](https://developers.home.google.com/cloud-to-cloud/guides/tv) |
 | **Supported Traits** | [OnOff](https://developers.home.google.com/cloud-to-cloud/traits/onoff), [Volume](https://developers.home.google.com/cloud-to-cloud/traits/volume), [TransportControl](https://developers.home.google.com/cloud-to-cloud/traits/transportcontrol), [InputSelector](https://developers.home.google.com/cloud-to-cloud/traits/inputselector), [AppSelector](https://developers.home.google.com/cloud-to-cloud/traits/appselector), [Channel](https://developers.home.google.com/cloud-to-cloud/traits/channel) (depending on used members) |
-| **Supported Items** | Group as `TV` with the following members:<br>(optional) Switch as `tvPower`<br>(optional) Switch as `tvMute`<br>(optional) Dimmer as `tvVolume`<br>(optional) String as `tvChannel`<br>(optional) String as `tvInput`<br>(optional) String as `tvApplication`<br>(optional) Player as `tvTransport` |
+| **Supported Items** | Group as `TV` with the following members:<br>(optional) Switch as `tvPower`<br>(optional) Switch as `tvMute`<br>(optional) Dimmer or Number as `tvVolume`<br>(optional) String or Number as `tvChannel`<br>(optional) String or Number as `tvInput`<br>(optional) String or Number as `tvApplication`<br>(optional) Player as `tvTransport` |
 | **Configuration** | (optional) `checkState=true/false`<br>(optional) `volumeDefaultPercentage="20"`<br>(optional) `levelStepSize="5"`<br>(optional) `volumeMaxLevel="100"`<br>(optional) `transportControlSupportedCommands="NEXT,PREVIOUS,PAUSE,RESUME"`<br>(optional) `availableChannels="channelNumber=channelId=channelName:channelSynonym:...,..."`<br>(optional) `availableInputs="inputKey=inputName:inputSynonym:...,..."`<br>(optional) `availableApplications="applicationKey=applicationName:applicationSynonym:...,..."`<br>(optional) `lang="en"` |
 
 ```shell
@@ -329,13 +354,13 @@ String applicationItem (tvGroup) { ga="tvApplication" }
 Player transportItem   (tvGroup) { ga="tvTransport" }
 ```
 
-### Fan, Hood, AirPurifier
+### Fan, Hood, AirPurifier (only on/off or fan speed control)
 
 | | |
 |---|---|
 | **Device Type** | [Fan](https://developers.home.google.com/cloud-to-cloud/guides/fan), [Hood](https://developers.home.google.com/cloud-to-cloud/guides/hood), [AirPurifier](https://developers.home.google.com/cloud-to-cloud/guides/airpurifier) |
 | **Supported Traits** | [OnOff](https://developers.home.google.com/cloud-to-cloud/traits/OnOff), [FanSpeed](https://developers.home.google.com/cloud-to-cloud/traits/fanspeed) (depending on used item type) |
-| **Supported Items** | Switch (no speed control), Dimmer |
+| **Supported Items** | Switch (no speed control), Dimmer, Number |
 | **Configuration** | (optional) `checkState=true/false`<br>(optional) `fanSpeeds="0=away:zero,50=default:standard:one,100=high:two"`<br>(optional) `lang="en"`<br>(optional) `ordered=true/false` |
 
 Fans (and similar device types, like AirPurifier or Hood) support the `FanSpeed` trait.
@@ -354,6 +379,59 @@ Switch { ga="Hood" } # No speed control - only on/off
 Dimmer { ga="AirPurifier" } # Using percentage values for the speed
 Dimmer { ga="AirPurifier" [ fanSpeeds="0=away:zero,1=low:one,2=medium:two,3=high:three,4=turbo:four", lang="en", ordered=true ] } # Using specific speed modes/values, which differ from percentage
 Switch { ga="AirPurifier" } # No speed control - only on/off
+```
+
+### Fan, Hood, AirPurifier (extended control options)
+
+| | |
+|---|---|
+| **Device Type** | [Fan](https://developers.google.com/assistant/smarthome/guides/fan), [Hood](https://developers.google.com/assistant/smarthome/guides/hood), [AirPurifier](https://developers.google.com/assistant/smarthome/guides/airpurifier) |
+| **Supported Traits** | [OnOff](https://developers.google.com/assistant/smarthome/traits/OnOff), [FanSpeed](https://developers.google.com/assistant/smarthome/traits/fanspeed), [Modes](https://developers.google.com/assistant/smarthome/traits/modes),  [SensorState](https://developers.google.com/assistant/smarthome/traits/sensorstate) |
+| **Supported Items** | Group as `Fan`, `Hood` or `AirPurifier` with the following members:<br>(optional) Switch as `fanPower`<br>(optional) Dimmer or Number as `fanSpeed`<br>(optional) Number or String as `fanMode`<br>(optional) Number as `fanFilterLifeTime`<br>(optional) Number as `fanPM25` |
+| **Configuration** | (optional) `checkState=true/false`<br>(optional) `fanSpeeds="0=away:zero,50=default:standard:one,100=high:two"`<br>(optional) `fanModeName="OperationMode,Modus"`<br>(optional) `fanModeSettings="1=Low:Silent,2=Normal,3=High:Night"`<br>(optional) `lang="en"`<br>(optional) `ordered=true/false` |
+
+When configuring a Fan (or similar device) as a group with the above listed members, you will gain more options to control the device.
+In addition to control power and speeds, you will also be able to set modes and query sensor information (if supported by Google).
+
+For more information on the `fanSpeeds` configuration option, please take a look at the simple `Fan` device type.
+
+With the `fanModeName` and `fanModeSettings` you can control specific modes. Currently, one mode type per device is supported that you can configure with a name and a list of settings. The first entry in the names field is used internally while any other following separated by comma will be a synonym to be used in commands. The settings list is a comma-separated list of `value=name` pairs. The name can also contain synonyms separated by a colon. In the listed example you could then say "Set OperationMode to Normal".
+
+_Hint:_ At the moment, sensor values will only be queriable by voice and will not show up anywhere in the Google Home app.
+
+```shell
+Group  fanGroup { ga="Fan" [ fanSpeeds="0=away:zero,50=default:standard:one,100=high:two", fanModeName="OperationMode,Modus", fanModeSettings="1=Silent,2=Normal,3=Night", lang="en", ordered=true ] }
+Switch powerItem    (fanGroup) { ga="fanPower" }
+Dimmer speedItem    (fanGroup) { ga="fanSpeed" }
+String modeItem     (fanGroup) { ga="fanMode" }
+Number lifetimeItem (fanGroup) { ga="fanFilterLifeTime" }
+Number pm25Item     (fanGroup) { ga="fanPM25" }
+```
+
+### AC_Unit
+
+| | |
+|---|---|
+| **Device Type** | [AC_Unit](https://developers.google.com/assistant/smarthome/guides/acunit) |
+| **Supported Traits** | [OnOff](https://developers.google.com/assistant/smarthome/traits/OnOff), [FanSpeed](https://developers.google.com/assistant/smarthome/traits/fanspeed), [TemperatureSetting](https://developers.google.com/assistant/smarthome/traits/temperaturesetting), [Modes](https://developers.google.com/assistant/smarthome/traits/modes),  [SensorState](https://developers.google.com/assistant/smarthome/traits/sensorstate) |
+| **Supported Items** | Group as `AC_Unit` with the following members:<br>(optional) Switch as `fanPower`<br>(optional) Dimmer or Number as `fanSpeed`<br>(optional) Number or String as `fanMode`<br>(optional) Number as `fanFilterLifeTime`<br>(optional) Number as `fanPM25`<br>(optional) Number as `thermostatTemperatureAmbient`<br>(optional) Number as `thermostatTemperatureSetpoint`<br>(optional) Number as `thermostatTemperatureSetpointLow`<br>(optional) Number as `thermostatTemperatureSetpointHigh`<br>(optional) Number as `thermostatHumidityAmbient`<br>(optional) String or Number or Switch as `thermostatMode` |
+| **Configuration** | (optional) `checkState=true/false`<br>(optional) `fanSpeeds="0=away:zero,50=default:standard:one,100=high:two"`<br>(optional) `fanModeName="OperationMode,Modus"`<br>(optional) `fanModeSettings="1=Low:Silent,2=Normal,3=High:Night"`<br>(optional) `useFahrenheit=true/false`<br>(optional) `maxHumidity=1-100`<br>(optional) `thermostatTemperatureRange="10,30"`<br>(optional) `thermostatModes="off=OFF:WINDOW_OPEN,heat=COMFORT:BOOST,eco=ECO,on=ON,auto"`<br>(optional) `lang="en"`<br>(optional) `ordered=true/false` |
+
+The AC_Unit device is basically the combination of the Fan and the Thermostat device. For explanation on configuration options please take a look at both of them.
+
+```shell
+Group  acunitGroup { ga="AC_Unit" [ fanSpeeds="0=null:off,50=slow,100=full:fast", fanModeName="OperationMode,Modus", fanModeSettings="1=Silent,2=Normal,3=Night", thermostatModes="off=OFF:WINDOW_OPEN,heat=COMFORT:BOOST,eco=ECO,on=ON,auto", thermostatTemperatureRange="10,30", useFahrenheit=false, lang="en", ordered=true ] }
+Switch powerItem        (acunitGroup) { ga="fanPower" }
+Dimmer speedItem        (acunitGroup) { ga="fanSpeed" }
+String modeItem         (acunitGroup) { ga="fanMode" }
+Number lifetimeItem     (acunitGroup) { ga="fanFilterLifeTime" }
+Number pm25Item         (acunitGroup) { ga="fanPM25" }
+Number ambientItem      (acunitGroup) { ga="thermostatTemperatureAmbient" }
+Number humidityItem     (acunitGroup) { ga="thermostatHumidityAmbient" }
+Number setpointItem     (acunitGroup) { ga="thermostatTemperatureSetpoint" }
+Number setpointItemLow  (acunitGroup) { ga="thermostatTemperatureSetpointLow" }
+Number setpointItemHigh (acunitGroup) { ga="thermostatTemperatureSetpointHigh" }
+String modeItem         (acunitGroup) { ga="thermostatMode" }
 ```
 
 ### Awning, Blinds, Curtain, Door, Garage, Gate, Pergola, Shutter, Window
@@ -414,10 +492,16 @@ Number capacityFullItem     (chargerGroup) { ga="chargerCapacityUntilFull" }
 | **Device Type** | [Sensor](https://developers.home.google.com/cloud-to-cloud/guides/sensor) |
 | **Supported Traits** | [TemperatureControl](https://developers.home.google.com/cloud-to-cloud/traits/temperaturecontrol), [TemperatureSetting](https://developers.home.google.com/cloud-to-cloud/traits/temperaturesetting) |
 | **Supported Items** | Number |
-| **Configuration** | (optional) `useFahrenheit=true/false` |
+| **Configuration** | (optional) `useFahrenheit=true/false`<br>(optional) `temperatureRange="-10,50"` |
+
+By default, the temperature range of a temperature sensor is set to -100 °C to 100 °C.
+The reported state values have to fall into that range!
+If you need to adjust the range, please add the config option `temperatureRange="-20,40"` to the item. Keep in mind that those values always have to be provided in Celsius!
+
+_Hint:_ At the moment, sensor values will only be queriable by voice and will not show up anywhere in the Google Home app.
 
 ```shell
-Number { ga="TemperatureSensor" [ useFahrenheit=true ] }
+Number { ga="TemperatureSensor" [ useFahrenheit=true, temperatureRange="-20,40" ] }
 ```
 
 ### HumiditySensor
@@ -427,6 +511,7 @@ Number { ga="TemperatureSensor" [ useFahrenheit=true ] }
 | **Device Type** | [Sensor](https://developers.home.google.com/cloud-to-cloud/guides/sensor) |
 | **Supported Traits** | [HumiditySetting](https://developers.home.google.com/cloud-to-cloud/traits/humiditysetting) |
 | **Supported Items** | Number |
+| **Configuration** | (optional) `maxHumidity=1-100` |
 
 ```shell
 Number { ga="HumiditySensor" }
@@ -439,10 +524,14 @@ Number { ga="HumiditySensor" }
 | **Device Type** | [Sensor](https://developers.home.google.com/cloud-to-cloud/guides/sensor) |
 | **Supported Traits** | [HumiditySetting](https://developers.home.google.com/cloud-to-cloud/traits/humiditysetting), [TemperatureControl](https://developers.home.google.com/cloud-to-cloud/traits/temperaturecontrol), [TemperatureSetting](https://developers.home.google.com/cloud-to-cloud/traits/temperaturesetting) |
 | **Supported Items** | Group as `ClimateSensor` with the following members:<br>(optional) Number as `humidityAmbient`<br>(optional) Number as `temperatureAmbient` |
-| **Configuration** | (optional) `useFahrenheit=true/false` |
+| **Configuration** | (optional) `useFahrenheit=true/false`<br>(optional) `maxHumidity=1-100`<br>(optional) `temperatureRange="-10,50"` |
+
+By default, the temperature range of a climate sensor is set to -100 °C to 100 °C.
+The reported state values have to fall into that range!
+If you need to adjust the range, please add the config option `temperatureRange="-20,40"` to the item. Keep in mind that those values always have to be provided in Celsius!
 
 ```shell
-Group  sensorGroup { ga="ClimateSensor" [ useFahrenheit=true ] }
+Group  sensorGroup { ga="ClimateSensor" [ useFahrenheit=true, temperatureRange="0,40" ] }
 Number temperatureItem (sensorGroup) { ga="temperatureAmbient" }
 Number humidityItem    (sensorGroup) { ga="humidityAmbient" }
 ```
@@ -453,8 +542,8 @@ Number humidityItem    (sensorGroup) { ga="humidityAmbient" }
 |---|---|
 | **Device Type** | [Thermostat](https://developers.home.google.com/cloud-to-cloud/guides/thermostat) |
 | **Supported Traits** | [TemperatureSetting](https://developers.home.google.com/cloud-to-cloud/traits/temperaturesetting) |
-| **Supported Items** | Group as `Thermostat` with the following members:<br>String or Number as `thermostatMode`<br>(optional) Number as `thermostatHumidityAmbient`<br>(optional) Number as `thermostatTemperatureAmbient`<br>(optional) Number as `thermostatTemperatureSetpoint`<br>(optional) Number as `thermostatTemperatureSetpointLow`<br>(optional) Number as `thermostatTemperatureSetpointHigh` |
-| **Configuration** | (optional) `checkState=true/false`<br>(optional) `useFahrenheit=true/false`<br>(optional) `thermostatTemperatureRange="10,30"`<br>(optional) `thermostatModes="off=OFF:WINDOW_OPEN,heat=COMFORT:BOOST,eco=ECO,on=ON,auto"` |
+| **Supported Items** | Group as `Thermostat` with the following members<br>(optional) Number as `thermostatTemperatureAmbient`<br>(optional) Number as `thermostatTemperatureSetpoint`<br>(optional) Number as `thermostatTemperatureSetpointLow`<br>(optional) Number as `thermostatTemperatureSetpointHigh`<br>(optional) Number as `thermostatHumidityAmbient`<br>(optional) String or Number or Switch as `thermostatMode` |
+| **Configuration** | (optional) `checkState=true/false`<br>(optional) `useFahrenheit=true/false`<br>(optional) `maxHumidity=1-100`<br>(optional) `thermostatTemperatureRange="10,30"`<br>(optional) `thermostatModes="off=OFF:WINDOW_OPEN,heat=COMFORT:BOOST,eco=ECO,on=ON,auto"` |
 
 Thermostat requires a group of items to be properly configured to be used with Google Assistant. The default temperature unit is Celsius.
 To change the temperature unit to Fahrenheit, add the config option `useFahrenheit=true` to the thermostat group.
@@ -472,7 +561,7 @@ However, it is recommended to prefer the `TemperatureSensor` type for simple tem
 
 ```shell
 Group  thermostatGroup { ga="Thermostat" [ thermostatModes="off=OFF:WINDOW_OPEN,heat=COMFORT:BOOST,eco=ECO,on=ON,auto", thermostatTemperatureRange="10,30", useFahrenheit=false ] }
-Number temperatureItem  (thermostatGroup) { ga="thermostatTemperatureAmbient" }
+Number ambientItem      (thermostatGroup) { ga="thermostatTemperatureAmbient" }
 Number humidityItem     (thermostatGroup) { ga="thermostatHumidityAmbient" }
 Number setpointItem     (thermostatGroup) { ga="thermostatTemperatureSetpoint" }
 Number setpointItemLow  (thermostatGroup) { ga="thermostatTemperatureSetpointLow" }

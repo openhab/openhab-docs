@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="nietech_mp26z_00_000" listed="false">
+    <label>MP26Z Ministon MP26Z</label>
+    <description><![CDATA[
+Ministon MP26Z<br /> <h1>Overview</h1><p>This Minoston Z-wave smart plug has two outlets that can be controlled independently, allowing you to turn each connected device on or off separately manually or in your hub.</p> <br /> <h2>Inclusion Information</h2><p>Press either button 3 times quickly while scanning for inclusion<br /></p> <br /> <h2>Exclusion Information</h2><p>Press either button 3 times quickly while scanning for inclusion<br /></p> <br /> <h2>Wakeup Information</h2><p><br /></p>
+    ]]></description>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_binary" typeId="switch_binary">
+        <label>Switch</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY</property>
+        </properties>
+      </channel>
+      <channel id="switch_binary1" typeId="switch_binary">
+        <label>Switch 1</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY:1</property>
+        </properties>
+      </channel>
+      <channel id="switch_binary2" typeId="switch_binary">
+        <label>Switch 2</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY:2</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">NIE Technology</property>
+      <property name="modelId">MP26Z</property>
+      <property name="manufacturerId">0312</property>
+      <property name="manufacturerRef">FF01:FF97</property>
+      <property name="dbReference">1621</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_1_1" type="integer" groupName="configuration">
+        <label>1: LED Indicator</label>
+        <description><![CDATA[
+Status LED Configuration<br /> <h1>Overview</h1><p>Value: 00(default) outlet on, LED on.</p><p>Value: 01 outlet on, LED off.</p><p>Value: 02 LED always on.</p><p>Value: 03 LED always off.<br /></p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">outlet on, LED on</option>
+          <option value="1">outlet on, LED off</option>
+          <option value="2">LED always on</option>
+          <option value="3">LED always off</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_2_4" type="integer" groupName="configuration">
+        <label>2: Timer Auto Off Left Outlet</label>
+        <description><![CDATA[
+Turn Off Left Outlet Automatically<br /> <h1>Overview</h1><p>Time in minutes until turnoff of left outlet<br /></p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_3_4" type="integer" groupName="configuration">
+        <label>3: Timer Auto Off Right Outlet</label>
+        <description><![CDATA[
+Turn Off Right Outlet Automatically<br /> <h1>Overview</h1><p>Time in minutes until turnoff of right outlet</p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_4_4" type="integer" groupName="configuration">
+        <label>4: Timer Auto On Left Outlet</label>
+        <description><![CDATA[
+Turn On Left Outlet Automatically<br /> <h1>Overview</h1><p>Time in minutes until turn on of left outlet</p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_5_4" type="integer" groupName="configuration">
+        <label>5: Timer Auto On Right Outlet</label>
+        <description><![CDATA[
+Turn On Right Outlet Automatically<br /> <h1>Overview</h1><p>Time in minutes until turn on of right outlet</p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_6_1" type="integer" groupName="configuration">
+        <label>6: Power On Status</label>
+        <description><![CDATA[
+Power Status When Powered On<br /> <h1>Overview</h1><p>Power State Of Outlets When Unit Is Powered Up<br /></p>
+        ]]></description>
+        <default>2</default>
+        <options>
+          <option value="0">Power always on</option>
+          <option value="1">Power always off</option>
+          <option value="2">Power in last state (default)</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_7_1" type="integer" groupName="configuration">
+        <label>7: LED Brightness</label>
+        <description><![CDATA[
+Brightness Level of LEDs<br /> <h1>Overview</h1><p>Set the brightness of the LEDs<br /></p>
+        ]]></description>
+        <default>2</default>
+        <options>
+          <option value="0">Bright</option>
+          <option value="1">Medium</option>
+          <option value="2">Low (default)</option>
+        </options>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Lifeline</label>
+        <description>Lifeline</description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: Left Outlet</label>
+        <description><![CDATA[
+Sends Basic Set<br /> <h1>Overview</h1><p><br /></p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_3" type="text" groupName="association" multiple="true">
+        <label>3: Right Outlet</label>
+        <description>Sends Basic Set</description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

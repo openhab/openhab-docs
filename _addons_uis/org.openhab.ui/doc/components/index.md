@@ -14,6 +14,7 @@ source: https://github.com/openhab/openhab-webui/edit/main/bundles/org.openhab.u
 | [`oh-chart`](./oh-chart.html) |  [Chart](./oh-chart.html) | Visualize series of data |
 | [`oh-clock`](./oh-clock.html) |  [Digital Clock](./oh-clock.html) | Display a digital clock |
 | [`oh-colorpicker`](./oh-colorpicker.html) |  [Colorpicker](./oh-colorpicker.html) | Control to pick a color |
+| [`oh-context`](./oh-context.html) |  [Context](./oh-context.html) | Non-rendered component with functions, constants, and scoped variables for widgets |
 | [`oh-gauge`](./oh-gauge.html) |  [Gauge](./oh-gauge.html) | Circular or semi-circular read-only gauge |
 | [`oh-icon`](./oh-icon.html) |  [Icon](./oh-icon.html) | Display an openHAB icon |
 | [`oh-image`](./oh-image.html) |  [Image](./oh-image.html) | Displays an image from a URL or an item |

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="namron_4512774_00_000" listed="false">
+    <label>4512774 Remote control switch with 8 channels</label>
+    <description><![CDATA[
+Remote control switch with 8 channels<br /> <h1>Overview</h1><p>The remote control is a Z-Wave device that can both control other Z-Wave devices and activate scenes in Gateways. Although it is controlling other devices, the device cannot act as Z-Wave network controller (primary or secondary) and will always need a Z-Wave network controller to be included into a Z-Wave network. It also supports the Over The Air (OTA) feature for the product’s firmware upgrade</p> <br /> <h2>Inclusion Information</h2><p>Triple press Inclusion/Exclusion button, LED indicator turns on, the remote control will be set to inclusion mode, and waiting to be included, after 10s LED indicator blinks 6 times quickly to indicate successful inclusion. The remote control is a sleepy device, after inclusion it will not enter into sleepy mode immediately, and will continue activation status for 30s and wait data interaction from the gateway, the LED indicator will stay solid on, please be patient to wait LED indicator to turn off.</p> <br /> <h2>Exclusion Information</h2><p>Set the primary controller/gateway into exclusion mode (Please refer to your primary controllers manual on how to set your controller into exclusion). </p><p>Triple press Inclusion/Exclusion button, LED indicator turns on, the remote control will be set to exclusion mode, and waiting to be excluded, after 7s LED indicator blinks 4 times quickly to indicate successful exclusion.</p> <br /> <h2>Wakeup Information</h2><p><br /></p>
+    ]]></description>
+    <category>Battery</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="scene_number" typeId="scene_number">
+        <label>Scene Number</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_CENTRAL_SCENE</property>
+        </properties>
+      </channel>
+      <channel id="battery-level" typeId="system.battery-level">
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_BATTERY</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Namron</property>
+      <property name="modelId">4512774</property>
+      <property name="manufacturerId">0438</property>
+      <property name="manufacturerRef">0200:D309</property>
+      <property name="dbReference">1619</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

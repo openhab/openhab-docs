@@ -45,7 +45,7 @@ Double Relay<br /> <h1>Overview</h1><p>Control 2 loads individually</p><p>Resist
       <property name="vendor">Zooz</property>
       <property name="modelId">ZEN52</property>
       <property name="manufacturerId">027A</property>
-      <property name="manufacturerRef">0104:0202</property>
+      <property name="manufacturerRef">0104:0202,0904:0202</property>
       <property name="dbReference">1517</property>
       <property name="defaultAssociations">1</property>
     </properties>
