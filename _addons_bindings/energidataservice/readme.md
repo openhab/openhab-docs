@@ -134,11 +134,11 @@ rule "Calculate total price" do
 
     time_series = TimeSeries.new # the default policy is replace
     spot_prices.each do |spot_price|
-      total_price = spot_price.state +
-                    GridTariff.persisted_state(spot_price.timestamp).state +
-                    SystemTariff.persisted_state(spot_price.timestamp).state +
-                    TransmissionGridTariff.persisted_state(spot_price.timestamp).state +
-                    ElectricityTax.persisted_state(spot_price.timestamp).state
+      total_price = spot_price +
+                    GridTariff.persisted_state(spot_price.timestamp) +
+                    SystemTariff.persisted_state(spot_price.timestamp) +
+                    TransmissionGridTariff.persisted_state(spot_price.timestamp) +
+                    ElectricityTax.persisted_state(spot_price.timestamp)
       time_series.add(spot_price.timestamp, total_price)
     end
     TotalPrice.persist(time_series)
@@ -298,9 +298,17 @@ For this reason the resulting `Map` will not contain the keys `LowestPrice` and 
 
 Example:
 
-```javascript
+:::: tabs
+
+::: tab DSL
+
+```java
 var Map<String, Object> result = actions.calculateCheapestPeriod(now.toInstant(), now.plusHours(12).toInstant(), Duration.ofMinutes(90))
 ```
+
+:::
+
+::::
 
 #### `calculateCheapestPeriod` from Duration and Power
 
@@ -316,9 +324,17 @@ As a result the price is also included in the result.
 
 Example:
 
-```javascript
+:::: tabs
+
+::: tab DSL
+
+```java
 var Map<String, Object> result = actions.calculateCheapestPeriod(now.toInstant(), now.plusHours(12).toInstant(), Duration.ofMinutes(90), 250 | W)
 ```
+
+:::
+
+::::
 
 #### `calculateCheapestPeriod` from Power Phases
 
@@ -337,7 +353,11 @@ This can be considered as different phases of using power, so each list member r
 
 Example:
 
-```javascript
+:::: tabs
+
+::: tab DSL
+
+```java
 val ArrayList<Duration> durationPhases = new ArrayList<Duration>()
 durationPhases.add(Duration.ofMinutes(37))
 durationPhases.add(Duration.ofMinutes(8))
@@ -361,6 +381,10 @@ powerPhases.add(0 | W)
 var Map<String, Object> result = actions.calculateCheapestPeriod(now.toInstant(), now.plusHours(12).toInstant(), durationPhases, powerPhases)
 ```
 
+:::
+
+::::
+
 Please note that the total duration will be calculated automatically as a sum of provided duration phases.
 Therefore, if the total duration is longer than the sum of phase durations, the remaining duration must be provided as last item with a corresponding 0 W power item.
 This is to ensure that the full program will finish before the provided `latestEnd`.
@@ -383,7 +407,11 @@ Since a last phase may use no significant energy, the total duration must be pro
 
 Example:
 
-```javascript
+:::: tabs
+
+::: tab DSL
+
+```java
 val ArrayList<Duration> durationPhases = new ArrayList<Duration>()
 durationPhases.add(Duration.ofMinutes(37))
 durationPhases.add(Duration.ofMinutes(8))
@@ -396,6 +424,10 @@ durationPhases.add(Duration.ofMinutes(41))
 // 0.7 kWh is used in total (number of phases × energy used per phase)
 var Map<String, Object> result = actions.calculateCheapestPeriod(now.toInstant(), now.plusHours(12).toInstant(), Duration.ofMinutes(236), phases, 0.1 | kWh)
 ```
+
+:::
+
+::::
 
 ### `calculatePrice`
 
@@ -412,9 +444,17 @@ Returns `null` if the calculation cannot be performed due to missing price data 
 
 Example:
 
-```javascript
+:::: tabs
+
+::: tab DSL
+
+```java
 var price = actions.calculatePrice(now.toInstant(), now.plusHours(4).toInstant, 200 | W)
 ```
+
+:::
+
+::::
 
 ### `getPrices`
 
@@ -442,9 +482,17 @@ This logic ensures consistent and comparable results not affected by artifical c
 
 Example:
 
-```javascript
+:::: tabs
+
+::: tab DSL
+
+```java
 var priceMap = actions.getPrices("SpotPrice,GridTariff")
 ```
+
+:::
+
+::::
 
 ## Full Example
 
@@ -706,7 +754,7 @@ logInfo("Spot price two hours from now", price.toString)
 
 ```javascript
 var hourStart = time.toZDT().plusHours(2).truncatedTo(time.ChronoUnit.HOURS);
-var price = items.SpotPrice.history.historicState(hourStart).quantityState;
+var price = items.SpotPrice.persistence.persistedState(hourStart).quantityState;
 console.log("Spot price two hours from now: " + price);
 ```
 

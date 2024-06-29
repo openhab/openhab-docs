@@ -69,7 +69,7 @@ Usage is explained at the [`oh-sipclient` component docs](/docs/ui/components/oh
 </PropBlock>
 <PropBlock type="TEXT" name="websocketUrl" label="Websocket URL" required="true">
   <PropDescription>
-    Full URL of the WebRTC SIP websocket, e.g. 'wss://siphost:8089/ws' or relative path, e.g. '/ws', for Android & iOS, you need wss (WebSocket secured)
+    Full URL of the WebRTC SIP websocket, e.g. <code>wss://siphost:8089/ws</code> or relative path, e.g. <code>/ws</code>, for Android & iOS, you need <code>wss</code> (WebSocket secured)
   </PropDescription>
 </PropBlock>
 <PropBlock type="TEXT" name="domain" label="SIP Domain" required="true">
@@ -85,7 +85,7 @@ Usage is explained at the [`oh-sipclient` component docs](/docs/ui/components/oh
 </PropBlock>
 <PropBlock type="TEXT" name="phonebook" label="Phonebook" required="true">
   <PropDescription>
-    Single SIP Address (phone number) for a single call target or a comma-separated list of 'phoneNumber=name' for multiple call targets. Used as well to display a name instead of the number for incoming calls.
+    Single SIP Address (phone number) for a single call target or a comma-separated list of <code>phoneNumber=name</code> for multiple call targets. Used as well to display a name instead of the number for incoming calls.
   </PropDescription>
 </PropBlock>
 <PropBlock type="TEXT" name="dtmfString" label="DTMF String">
@@ -118,7 +118,20 @@ Usage is explained at the [`oh-sipclient` component docs](/docs/ui/components/oh
     SIP registration can be disabled in case you only want to initiate calls, but not receive calls with the SIP widgets.
   </PropDescription>
 </PropBlock>
-<PropBlock type="BOOLEAN" name="enableSIPDebug" label="Enable SIP debugging to the browser console (dev tools)">
+<PropBlock type="TEXT" name="autoAnswer" label="Auto Answer">
+  <PropDescription>
+    Automatically answer an incoming call from one of the comma delimited SIP addresses (<code>userInfo@hostname</code>, <code>userInfo</code>, ...) or use * for all incoming calls.
+  </PropDescription>
+</PropBlock>
+<PropBlock type="TEXT" name="autoDial" label="Auto Dial">
+  <PropDescription>
+    Automatically dial the SIP address when loaded
+  </PropDescription>
+</PropBlock>
+<PropBlock type="BOOLEAN" name="enableSIPDebug" label="Enable SIP Debug">
+  <PropDescription>
+    Enable SIP debugging to the browser console (dev tools)
+  </PropDescription>
 </PropBlock>
 </PropGroup>
 </div>
