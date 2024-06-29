@@ -174,6 +174,7 @@ val List<String> attachmentUrlList = newArrayList(
 val mailActions = getActions("mail","mail:smtp:sampleserver")
 mailActions.sendHtmlMailWithAttachments("mail@example.com", "Test subject", "<h1>Header</h1>This is the mail content.", attachmentUrlList)
 ```
+
 :::
 
 ::: tab JavaScript
@@ -182,7 +183,6 @@ mailActions.sendHtmlMailWithAttachments("mail@example.com", "Test subject", "<h1
 val mailActions = actions.get("mail","mail:smtp:samplesmtp")
 val success = mailActions.sendMail("mail@example.com", "Test subject", "This is the mail content.")
 success = mailActions.sendMail("mail1@example.com, mail2@example.com", "Test subject", "This is the mail content sent to multiple recipients.")
-
 ```
 
 ```javascript
@@ -197,7 +197,26 @@ mailActions.sendHtmlMailWithAttachments("mail@example.com", "Test subject", "<h1
 
 :::
 
+::: tab JRuby
+
+```ruby
+mail = things["mail:smtp:samplesmtp"]
+success = mail.send_mail("mail@example.com", "Test subject", "This is the mail content.")
+success = mail.send_mail("mail1@example.com, mail2@example.com", "Test subject", "This is the mail content sent to multiple recipients.")
+```
+
+```ruby
+attachment_urls = [
+  "http://some.web/site/snap.jpg&param=value",
+  "file:///tmp/201601011031.jpg"
+]
+things["mail:smtp:sampleserver"].send_html_mail_with_attachments("mail@example.com", "Test subject", "<h1>Header</h1>This is the mail content.", attachment_urls)
+```
+
+:::
+
 ::::
+
 ## Mail Headers
 
 The binding allows one to add custom e-mail headers to messages that it sends.
@@ -209,7 +228,6 @@ See the example below.
 
 ::: tab DSL
 
-
 ```java
 rule "Send Mail with a 'Reference' header; for threaded view in e-mail client"
 when
@@ -220,6 +238,7 @@ then
     mailActions.sendMail("mail@example.com", "Test subject", "Test message text")
 end
 ```
+
 :::
 
 ::: tab JavaScript
@@ -228,6 +247,16 @@ end
 val mailActions = actions.get("mail","mail:smtp:sampleserver")
 mailActions.addHeader("Reference", "<unique-thread-identifier>")
 mailActions.sendMail("mail@example.com", "Test subject", "Test message text")
+```
+
+:::
+
+::: tab JRuby
+
+```ruby
+mail = things["mail:smtp:sampleserver"]
+mail.add_header("Reference", "<unique-thread-identifier>")
+mail.send_mail("mail@example.com", "Test subject", "Test message text")
 ```
 
 :::
