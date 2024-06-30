@@ -5,7 +5,7 @@ title: SiemensHVAC - Bindings
 type: binding
 description: "This binding provides support for the Siemens HVAC controller ecosystem, and the Web Gateway interface OZW672."
 since: 3x
-install: manual
+install: auto
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
