@@ -66,7 +66,7 @@ Switch Kitchen_Light "Kitchen Light" {channel="mqtt:topic:..." }
 String Bedroom_Sonos_CurrentTitle "Title [%s]" (gBedRoom) {channel="sonos:..."}
 Number:Power Bathroom_WashingMachine_Power "Power [%.0f W]" <energy> (gPower) {channel="homematic:..."}
 
-Number:Temperature Livingroom_Temperature "Temperature [%.1f °C]" <temperature> (gTemperature, gLivingroom) ["TargetTemperature"] {knx="1/0/15+0/0/15"}
+Number:Temperature Livingroom_Temperature "Temperature [%.1f °C]" <temperature> (gTemperature, gLivingroom) ["Setpoint", "Temperature"] {knx="1/0/15+0/0/15"}
 ```
 
 The last example above defines an Item with the following fields:
@@ -77,7 +77,7 @@ The last example above defines an Item with the following fields:
 - Item [state formatted](#state-presentation) to display temperature in Celsius to one-tenth of a degree -  for example, "21.5 °C"
 - Item [icon](#icons) with the name `temperature`
 - Item belongs to [groups](#groups) `gTemperature` and `gLivingroom` (definition not shown in the example)
-- Item is [tagged](#tags) as a thermostat with the ability to set a target temperature ("TargetTemperature")
+- Item is [tagged](#tags) as a thermostat with the ability to set a target temperature ("Setpoint", "Temperature")
 - Item is [bound to](/addons/#binding) the openHAB Binding `knx` with binding specific settings ("1/0/15+0/0/15")
 
 The remainder of this article provides additional information regarding Item definition fields.
@@ -554,11 +554,12 @@ The last Group counts all members of it matching the given regular expression, h
 
 Tags added to an Item definition allow a user to characterize the specific nature of the Item beyond its basic Item type.
 Tags can then be used by add-ons to interact with Items in context-sensitive ways.
-Tags are used by the [Semantic Model]({{base}}/tutorial/model.html).  The `"Light"` example below maps the item to the Semantic Model.
+Tags are used by the [Semantic Model]({{base}}/tutorial/model.html).
+The `"Light"` example below maps the item to the Semantic Model.
 
 Example:
 A Light in a typical home setup can be represented by a Switch, a Dimmer or a Color Item.
-To be able to interact with the light device via a natural voice command, for example, the fact that the Item is a light can be established by adding the "Lighting" tag as shown below.
+To be able to interact with the light device via a natural voice command, for example, the fact that the Item is a light can be established by adding the "Light" tag as shown below.
 
 ```java
 Switch Livingroom_Light "Livingroom Ceiling Light" ["Light"]
