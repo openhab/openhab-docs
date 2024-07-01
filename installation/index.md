@@ -41,7 +41,10 @@ You could also [download Azul Zulu](https://www.azul.com/downloads/zulu-communit
 Oracle Java is also suitable for most configurations but it's not recommended. Licensing restrictions may apply.
 
 ::: warning
-Please note that versions of Java higher than 17 are not supported at the moment.
+Java 17 is recommended for openHAB.
+Using Java 21 is possible, but still considered experimental.
+OpenHABian can install Java 21, but only on the native 64-bit image.
+Please note that versions of Java other than 17 and 21 are not supported at the moment.
 :::
 
 | Java Platform                               | Advantages                                                                                                                                                                            | Disadvantages                                                                                                                                                                                                                                                                                                                        |
