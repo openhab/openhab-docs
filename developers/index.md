@@ -49,7 +49,7 @@ Please ensure that you have the following prerequisites installed as well:
 
 1. [Git](https://git-scm.com/downloads) For retrieving our source code and push changes back. On Windows: Must be available in %PATH%
 1. [Maven 3.x](https://maven.apache.org/download.cgi) Our build system tool. On Windows: Must be available in %PATH%
-1. Java JDK 17 or JDK 21, for example from Oracle [Oracle JDK 17](https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html) or [Oracle JDK 21](https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html). On Windows: %JAVA% must be set.
+1. Java JDK 17 or JDK 21, for example from Oracle [Oracle JDK 17](https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html) or [Oracle JDK 21](https://www.oracle.com/java/technologies/javase/jdk21-archive-downloads.html). On Windows: %JAVA% must be set.
 
 ::: tip Note
 Whereas we recommend Java 17 for running openHAB, development can be safely done on Java 21.
