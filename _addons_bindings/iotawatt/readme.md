@@ -5,6 +5,7 @@ title: IoTaWatt - Bindings
 type: binding
 description: "This binding integrates [IoTaWatt™ Open WiFi Electric Power Monitor](https://iotawatt.com/) into openHAB."
 since: 3x
+logo: images/addons/iotawatt.png
 install: auto
 ---
 
