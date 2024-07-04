@@ -23,35 +23,71 @@ The Wave 1PM (Device) is a single product that enables the control of the on/off
 
 On factory default the device does not belong to any Z-Wave network. The device needs to be added to an existing wireless network to communicate with the devices of this network. This process is called Inclusion.
 
-Devices can also be removed from a network. This process is called Exclusion. Both processes are initiated by the primary controller of the Z-Wave network. This controller is turned into exclusion respective inclusion mode. Inclusion and Exclusion is then performed doing a special manual action right on the device.
+This process is initiated by the primary controller of the Z-Wave network. This controller is turned into inclusion mode. Inclusion is then performed doing a special manual action right on the device.
 
-Inclusion
+SmartStart inclusion
+
+     SmartStart enabled products can be added into a Z-Wave® network by scanning the Z-Wave® QR Code present on the Device with a gateway providing SmartStart inclusion. No further action is required, and the SmartStart device will be added automatically within 10 minutes of being switched on in the network vicinity.
+
+     With the gateway application scan the QR code on the Device label and add the Security 2 (S2) Device Specific Key (DSK) to the provisioning list in the gateway.
 
   1. Connect the Device to a power supply.
-  2. Check if the blue LED is blinking in Mode 1. If so, the Device is not added to a Z-Wave™ network.
+  2. Check if the blue LED is blinking in Mode 1. If so, the Device is not added to a Z-Wave® network.
+  3. Adding will be initiated automatically within a few seconds after connecting the Device to a power supply, and the Device will be added to a Z-Wave® network automatically.
+  4. The blue LED will be blinking in Mode 2 during the adding process.
+  5. The green LED will be blinking in Mode 1 if the Device is successfully added to a Z-Wave® network.
+
+Inclusion with the S button
+
+  1. Connect the Device to a power supply.
+  2. Check if the blue LED is blinking in Mode 1. If so, the Device is not added to a Z-Wave® network.
   3. Enable add/remove mode on the gateway.
-  4. To enter the setting mode, quickly press and hold the S button on the Device until the LED turns Solid blue.
-  5. Quickly release and then press and hold (> 2 s) the S button on the Device until the blue LED starts blinking in Mode 3. Releasing the S button will start the LEARN MODE.
+  4. To enter the Setting mode, quickly press and hold the S button on the Device until the LED turns solid blue.
+  5. Quickly release and then press and hold (> 2s) the S button on the Device until the blue LED starts blinking in Mode 3. Releasing the S button will start the Learn mode.
   6. The blue LED will be blinking in Mode 2 during the adding process.
-  7. The load connected to O will be blinking 1s on/1s off/1s on/1s off if the Device is successfully added to a Z-Wave™ network.
-  8. The green LED will be blinking in Mode 1 if the Device is successfully added to a Z-Wave™ network.
+  7. The green LED will be blinking in Mode 1 if the Device is successfully added to a Z-Wave® network.
+
+Note: In Setting mode, the Device has a timeout of 10s before entering again into Normal mode.
+
+Inclusion with a switch/push-button
+
+  1. Connect the Device to a power supply.
+  2. Check if the blue LED is blinking in Mode 1. If so, the Device is not added to a Z-Wave® network.
+  3. Enable add/remove mode on the gateway.
+  4. Toggle the switch/push-button connected to any of the SW terminals (SW, SW1, SW2, etc.) 3 times within 3 seconds (this procedure puts the Device in Learn mode*). The Device must receive on/off signal 3 times, which means pressing the momentary switch 3 times, or toggling the switch on and off 3 times.
+  5. The blue LED will be blinking in Mode 2 during the adding process.
+  6. The green LED will be blinking in Mode 1 if the Device is successfully added to a Z-Wave® network.
+
+*Learn mode - a state that allows the Device to receive network information from the gateway.
+
+Note: All Device outputs (O, O1, O2, etc. - depending on the Device type) will turn the load 1s on/1s off /1s on/1s off if the Device is successfully added to a Z-Wave® network.
 
 ### Exclusion Information
 
-On factory default the device does not belong to any Z-Wave network. The device needs to be added to an existing wireless network to communicate with the devices of this network. This process is called Inclusion.
+Devices can also be removed from a network. This process is called Exclusion. This process istinitiated by the primary controller of the Z-Wave network. This controller is turned into exclusion mode. Exclusion is then performed doing a special manual action right on the device.
 
-Devices can also be removed from a network. This process is called Exclusion. Both processes are initiated by the primary controller of the Z-Wave network. This controller is turned into exclusion respective inclusion mode. Inclusion and Exclusion is then performed doing a special manual action right on the device.
-
-Inclusion
+Exclusion with the S button
 
   1. Connect the Device to a power supply.
-  2. Check if the blue LED is blinking in Mode 1. If so, the Device is not added to a Z-Wave™ network.
+  2. Check if the green LED is blinking in Mode 1. If so, the Device is added to a Z-Wave® network.
   3. Enable add/remove mode on the gateway.
-  4. To enter the setting mode, quickly press and hold the S button on the Device until the LED turns Solid blue.
-  5. Quickly release and then press and hold (> 2 s) the S button on the Device until the blue LED starts blinking in Mode 3. Releasing the S button will start the LEARN MODE.
-  6. The blue LED will be blinking in Mode 2 during the adding process.
-  7. The load connected to O will be blinking 1s on/1s off/1s on/1s off if the Device is successfully added to a Z-Wave™ network.
-  8. The green LED will be blinking in Mode 1 if the Device is successfully added to a Z-Wave™ network.
+  4. o enter the Setting mode, quickly press and hold the S button on the Device until the LED turns solid blue.
+  5. Quickly release and then press and hold (> 2s) the S button on the Device until the blue LED starts blinking in Mode 3. Releasing the S button will start the LEARN MODE.
+  6. he blue LED will be blinking in Mode 2 during the removing process.
+  7. The blue LED will be blinking in Mode 1 if the Device is successfully removed from a Z-Wave® network.
+
+Note: In Setting mode, the Device has a timeout of 10s before entering again into Normal mode.
+
+Exclusion with a switch/push-button
+
+  1. Connect the Device to a power supply.
+  2. Check if the green LED is blinking in Mode 1. If so, the Device is added to a Z-Wave® network.
+  3. Enable add/remove mode on the gateway.
+  4. Toggle the switch/push-button connected to any of the SW terminals (SW, SW1, SW2,…) 3 times within 3 seconds (this procedure puts the Device in LEARN MODE). The Device must receive on/off signal 3 times, which means pressing the momentary switch 3 times, or toggling the switch on and off 3 times.
+  5. The blue LED will be blinking in Mode 2 during the removing process.
+  6. The blue LED will be blinking in Mode 1 if the Device is successfully removed from a Z-Wave® network.
+
+Note: All Device outputs (O, O1, O2, etc. - depending on the Device type) will turn the load 1s on/1s off /1s on/1s off if the Device is successfully removed from a Z-Wave® network.
 
 ### General Usage Information
 

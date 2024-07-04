@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="shelly_wavepro2_00_000" listed="false">
+    <label>Wave Pro 2 A DIN rail mountable 2-channel smart switch with potential-free contacts</label>
+    <description><![CDATA[
+A DIN rail mountable 2-channel smart switch with potential-free contacts<br /> <h1>Overview</h1><p>The Device is a DIN rail mountable 2-channel smart switch with potential-free contacts. It controls the on/off function for two independent electrical devices with a load up to 16 A per channel (25 A in total). It is compatible with switches (default) and push-buttons.</p> <br /> <h2>Inclusion Information</h2><p> The blue LED will be blinking in Mode 2 during the adding process.<br />The green LED will be blinking in Mode 1 if the Device is successfully added to a Z-Wave® network.</p><p>Adding (inclusion) with the S button:</p><ul><li>Connect the Device to a power supply.</li><li>Check if the blue LED is blinking in Mode 1. If so, the Device is not added to a Z-Wave® network.</li><li>Enable add/remove mode on the gateway.</li><li>To enter the Setting mode, quickly press and hold the S button on the Device until the LED turns solid blue.</li><li>Quickly release and then press and hold (&gt; 2s) the S button on the Device until the blue LED starts blinking in Mode 3. Releasing the S button will start the Learn mode.</li><li>The blue LED will be blinking in Mode 2 during the adding process.</li><li>The green LED will be blinking in Mode 1 if the Device is successfully added to a Z-Wave® network.</li></ul><p>Note! In Setting mode, the Device has a timeout of 10s before entering again into Normal mode.</p><p>Adding (inclusion) with a switch/push-button:</p> <br /> <h2>Exclusion Information</h2><p>Removing (exclusion) with the S button:</p><ul><li>Connect the Device to a power supply.</li><li>Check if the green LED is blinking in Mode 1. If so, the Device is added to a Z-Wave® network.</li><li>Enable add/remove mode on the gateway.</li><li>To enter the Setting mode, quickly press and hold the S button on the Device until the LED turns solid blue.</li><li>Quickly release and then press and hold (&gt; 2s) the S button on the Device until the blue LED starts blinking in Mode 3. Releasing the S button will start the LEARN MODE.</li><li>The blue LED will be blinking in Mode 2 during the removing process.</li><li>The blue LED will be blinking in Mode 1 if the Device is successfully removed from a Z-Wave® network.</li></ul><p>Note! In Setting mode, the Device has a timeout of 10s before entering again into Normal mode.</p><p>Removing (exclusion) with a switch/push-button:</p><ul><li>Connect the Device to a power supply.</li><li>Check if the green LED is blinking in Mode 1. If so, the Device is added to a Z-Wave® network.</li><li>Enable add/remove mode on the gateway.</li><li>Toggle the switch/push-button connected to any of the SW terminals (SW, SW1, SW2,…) 3 times within 3 seconds (this procedure puts the Device in LEARN MODE). The Device must receive on/off signal 3 times, which means pressing the momentary switch 3 times, or toggling the switch on and off 3 times.</li><li>The blue LED will be blinking in Mode 2 during the removing process.</li><li>The blue LED will be blinking in Mode 1 if the Device is successfully removed from a Z-Wave® network.</li></ul> <br /> <h2>Wakeup Information</h2><p><br /></p>
+    ]]></description>
+    <category>WallSwitch</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_binary" typeId="switch_binary">
+        <label>Switch</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY</property>
+        </properties>
+      </channel>
+      <channel id="alarm_heat" typeId="alarm_heat">
+        <label>Alarm (heat)</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=HEAT</property>
+        </properties>
+      </channel>
+      <channel id="switch_binary1" typeId="switch_binary">
+        <label>Switch 1</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY:1</property>
+        </properties>
+      </channel>
+      <channel id="switch_binary2" typeId="switch_binary">
+        <label>Switch 2</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY:2</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Shelly</property>
+      <property name="modelId">Wave Pro 2</property>
+      <property name="manufacturerId">0460</property>
+      <property name="manufacturerRef">0002:008C</property>
+      <property name="dbReference">1622</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_1_1" type="integer" groupName="configuration">
+        <label>1: SW (SW1) Switch type</label>
+        <description><![CDATA[
+This parameter defines how the Device should treat the switch (which type) connected to the SW (SW1) terminal.<br /> <h1>Overview</h1><p><br /></p>
+        ]]></description>
+        <default>2</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_2_1" type="integer" groupName="configuration">
+        <label>2: SW2 Switch type</label>
+        <description>This parameter defines how the Device should treat the switch (which type) connected to the SW2 terminal.</description>
+        <default>2</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_6_1" type="integer" groupName="configuration">
+        <label>6: Inputs SW1 &amp; SW2 Swap</label>
+        <description>This parameter allows to swap the operation of switches connected to inputs SW1 and SW2 without changing the wiring.</description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_16_1" type="integer" groupName="configuration">
+        <label>16: Outputs O1 &amp; O2 swap</label>
+        <description>This parameter allows to swap the operation of outputs O1 and O2 without changing the wiring (in case of an invalid motor connection) to ensure proper operation.</description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_17_1" type="integer" groupName="configuration">
+        <label>17: Restore state of O1 after power failure</label>
+        <description>This parameter determines if the on/off status is saved and restored for the load connected to O (O1) after a power failure.</description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_18_1" type="integer" groupName="configuration">
+        <label>18: Restore the O2 state after a power failure</label>
+        <description>This parameter determines if the on/off status is saved and restored for the load connected to O2 after a power failure.</description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_19_2" type="integer" groupName="configuration">
+        <label>19: O1 Auto OFF with timer</label>
+        <description>If the load O (O1) is ON, you can schedule it to turn OFF automatically after the period of time defined in this parameter. The timer resets to zero each time the Device receives an ON command, either remotely (from the gateway or associated device) or lo</description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_20_2" type="integer" groupName="configuration">
+        <label>20: O (O1) Auto ON with timer</label>
+        <description>If the load O (O1) is OFF, you can schedule it to turn ON automatically after the period of time defined in this parameter. The timer resets to zero each time the Device receives an OFF command, either remotely (from the gateway or associated device) or l</description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_21_2" type="integer" groupName="configuration">
+        <label>21: O2 Auto OFF with timer</label>
+        <description>If the load O2 is ON, you can schedule it to turn OFF automatically after the period of time defined in this parameter. The timer resets to zero each time the device receives an ON command, either remotely (from the gateway or associated device) or locall</description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_22_2" type="integer" groupName="configuration">
+        <label>22: O2 Auto ON with timer</label>
+        <description>If the load O2 is OFF, you can schedule it to turn ON automatically after the period of time defined in this parameter. The timer resets to zero each time the device receives an OFF command, either remotely (from the gateway or associated device) or local</description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_23_1" type="integer" groupName="configuration">
+        <label>23: O1 contact type - NO/NC</label>
+        <description>The set value determines the relay contact type for output O (O1). The relay contact type can be normally open (NO) or normally closed (NC).</description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_24_1" type="integer" groupName="configuration">
+        <label>24: O2 contact type - NO/NC</label>
+        <description>The set value determines the type of Relay contact type for O2 output. The Relay contact type can be normally open (NO) or normally closed (NC).</description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_25_1" type="integer" groupName="configuration">
+        <label>25: Set timer units to s or ms for O1</label>
+        <description>Set the timer units to seconds or milliseconds. Choose if you want to set the timer in seconds or milliseconds in Parameters No. 19, 20.</description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_26_1" type="integer" groupName="configuration">
+        <label>26: Set timer units to s or ms for O2</label>
+        <description>Set the timer units to seconds or milliseconds. Choose if you want to set the timer in seconds or milliseconds in Parameters No. 21, 22.</description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_91_4" type="integer" groupName="configuration">
+        <label>91: Water Alarm</label>
+        <description>This parameter determines which alarm frames the Device should respond to and how. The parameters consist of 4 bytes, the three most significant bytes are set according to the official Z-Wave protocol specification.</description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_92_4" type="integer" groupName="configuration">
+        <label>92: Smoke Alarm</label>
+        <description>This parameter determines which alarm frames the Device should respond to and how. The parameters consist of 4 bytes, the three most significant bytes are set according to the official Z-Wave protocol specification.</description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_93_4" type="integer" groupName="configuration">
+        <label>93: CO Alarm</label>
+        <description>This parameter determines to which alarm frames and how the device should react. The parameters consist of 4 bytes, three most significant bytes are set according to the official Z-Wave protocol specification.</description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_94_4" type="integer" groupName="configuration">
+        <label>94: Heat Alarm</label>
+        <description>This parameter determines which alarm frames the Device should respond to and how. The parameters consist of 4 bytes, the three most significant bytes are set according to the official Z-Wave protocol specification.</description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_120_1" type="integer" groupName="configuration">
+        <label>120: Factory Reset</label>
+        <description>Reset to factory default settings and removed from the Z-Wave network.</description>
+        <default>0</default>
+        <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_201_4" type="integer" groupName="configuration" readOnly="true">
+        <label>201: Serial Number 1</label>
+        <description>This parameter contains a part of device’s serial number.</description>
+        <default>0</default>
+        <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_202_4" type="integer" groupName="configuration" readOnly="true">
+        <label>202: Serial Number 2</label>
+        <description>This parameter contains a part of device’s serial number.</description>
+        <default>0</default>
+        <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_203_0" type="integer" groupName="configuration" readOnly="true">
+        <label>203: Serial Number 3</label>
+        <description>This parameter contains a part of device’s serial number.</description>
+        <default>0</default>
+        <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Association group 1</label>
+        <description><![CDATA[
+Lifeline Group reports the Device status and allows for assigning single Device only (Gateway by default)<br /> <h1>Overview</h1><p>Supports the following command classes:</p><p> INDICATOR_REPORT : LED status<br />DEVICE_RESET_LOCALLY_NOTIFICATION : triggered upon request<br />SWITCH_BINARY_REPORT : status change report for output O (O1)<br />NOTIFICATION_REPORT : triggered on Overheat</p>
+        ]]></description>
+        <multipleLimit>1</multipleLimit>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: Association Group 2</label>
+        <description><![CDATA[
+It is assigned to switch connected to the SW (SW1) terminal (uses Basic command class). Triggered by SW (SW1). The device sends according to the state of SW (SW1) (switch or push-button) the command BASIC_SET ON or BASIC_SET OFF to the associated device.<br /> <h1>Overview</h1><p>Supports the following command classes:</p><p> BASIC_SET : set On / Off state at the associated device</p>
+        ]]></description>
+        <multipleLimit>9</multipleLimit>
+      </parameter>
+
+      <parameter name="group_3" type="text" groupName="association" multiple="true">
+        <label>3: Association Group 3</label>
+        <description><![CDATA[
+It is assigned to switch connected to the SW (SW1) terminal (uses Switch Multilevel command class). Triggered by SW (SW1).<br /> <h1>Overview</h1><p>It is recommended to use push buttons for this association. Supports the following command classes:</p><p> SWITCH_MULTILEVEL_START_LEVEL_CHANGE : initiate a transition to a new level (increase or decrease light intensity in case of dimmer, or move shutter up or down, …)<br />SWITCH_MULTILEVEL_STOP_LEVEL_CHANGE : stop an ongoing transition (stop increase or decrease light intensity in case of dimmer, or stop moving shutter up or down, …)</p>
+        ]]></description>
+        <multipleLimit>9</multipleLimit>
+      </parameter>
+
+      <parameter name="group_4" type="text" groupName="association" multiple="true">
+        <label>4: Association Group 4</label>
+        <description><![CDATA[
+It is assigned to switch connected to the SW2 terminal (uses Basic command class). Triggered by SW2.<br /> <h1>Overview</h1><p>Supports the following command classes:</p><p> BASIC_SET : set On / Off state at the associated device</p>
+        ]]></description>
+        <multipleLimit>9</multipleLimit>
+      </parameter>
+
+      <parameter name="group_5" type="text" groupName="association" multiple="true">
+        <label>5: Association Group 5</label>
+        <description><![CDATA[
+It is assigned to switch connected to the SW2 terminal (uses Switch Multilevel command class). Triggered by SW2.<br /> <h1>Overview</h1><p>It is recommended to use push buttons for this association. Supports the following command classes:</p><p> SWITCH_MULTILEVEL_START_LEVEL_CHANGE : initiate a transition to a new level (increase or decrease light intensity in case of dimmer, or move shutter up or down, …)<br />SWITCH_MULTILEVEL_STOP_LEVEL_CHANGE : stop an ongoing transition (stop increase or decrease light intensity in case of dimmer, or stop moving shutter up or down, …)</p>
+        ]]></description>
+        <multipleLimit>9</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

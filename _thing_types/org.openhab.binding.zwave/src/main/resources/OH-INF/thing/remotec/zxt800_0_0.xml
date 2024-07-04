@@ -5,7 +5,7 @@
   xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
                       https://openhab.org/schemas/thing-description/v1.0.0">
 
-  <thing-type id="remotec_zxt-800_00_000" listed="false">
+  <thing-type id="remotec_zxt800_00_000" listed="false">
     <label>ZXT-800 AC / AV Master</label>
     <description><![CDATA[
 AC / AV Master<br /> <h1>Overview</h1><p>The ZXT-800 is a Z-Wave™plus compliant Z-Wave™-to-IR Bridge to control split air conditioner and entertainment devices by receiving Z-Wave™ commands and translating them into Infrared commands. With a built-in and cloud-stored IR database (library) the ZXT-800 can control different brands and models of infrared devices world-wide.</p>The ZXT-800 can be set from the gateway to a particular brand with the correct IR code. Users can set up the IR (AV + AC) code using the “Conexum ZXT-800” App through Bluetooth download. iOS and Android Apps are available in the app-store. <br /> <h2>Inclusion Information</h2><p>Once the primary controller is ready to include the device, press the “PROG” button once.<br /></p> <br /> <h2>Exclusion Information</h2><p>Once the primary controller is ready to exclude the device, press the “PROG” button once.<br /></p> <br /> <h2>Wakeup Information</h2><p>The device has 2 operating modes. When the device is powered during inclusion the device is always awake / listening. When the device is included whilst on battery power the device will operate in FLiRS mode.<br /></p>
@@ -20,7 +20,7 @@ AC / AV Master<br /> <h1>Overview</h1><p>The ZXT-800 is a Z-Wave™plus complian
           <property name="binding:*:QuantityType">COMMAND_CLASS_SENSOR_MULTILEVEL;type=TEMPERATURE</property>
         </properties>
       </channel>
-      <channel id="thermostat_mode" typeId="remotec_zxt-800_00_000_thermostat_mode">
+      <channel id="thermostat_mode" typeId="remotec_zxt800_00_000_thermostat_mode">
         <label>Thermostat mode</label>
         <properties>
           <property name="binding:*:DecimalType">COMMAND_CLASS_THERMOSTAT_MODE</property>
@@ -38,7 +38,7 @@ AC / AV Master<br /> <h1>Overview</h1><p>The ZXT-800 is a Z-Wave™plus complian
           <property name="binding:*:QuantityType">COMMAND_CLASS_THERMOSTAT_SETPOINT;type=COOLING</property>
         </properties>
       </channel>
-      <channel id="thermostat_fanmode" typeId="remotec_zxt-800_00_000_thermostat_fanmode">
+      <channel id="thermostat_fanmode" typeId="remotec_zxt800_00_000_thermostat_fanmode">
         <label>Thermostat fan mode</label>
         <properties>
           <property name="binding:*:DecimalType">COMMAND_CLASS_THERMOSTAT_FAN_MODE</property>
@@ -426,7 +426,7 @@ Factory Reset the ZXT-800.<br /> <h1>Overview</h1><p>Set this parameter to 255 t
 
   </thing-type>
 
-  <channel-type id="remotec_zxt-800_00_000_thermostat_mode">
+  <channel-type id="remotec_zxt800_00_000_thermostat_mode">
     <item-type>Number</item-type>
     <label>Thermostat Mode</label>
     <description>Sets the thermostat mode</description>
@@ -444,7 +444,7 @@ Factory Reset the ZXT-800.<br /> <h1>Overview</h1><p>Set this parameter to 255 t
     </state>
   </channel-type>
 
-  <channel-type id="remotec_zxt-800_00_000_thermostat_fanmode">
+  <channel-type id="remotec_zxt800_00_000_thermostat_fanmode">
     <item-type>Number</item-type>
     <label>Thermostat Fan Mode</label>
     <description>Sets the thermostat fan mode</description>

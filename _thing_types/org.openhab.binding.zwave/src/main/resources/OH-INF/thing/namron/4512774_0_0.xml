@@ -34,10 +34,58 @@ Remote control switch with 8 channels<br /> <h1>Overview</h1><p>The remote contr
       <property name="manufacturerId">0438</property>
       <property name="manufacturerRef">0200:D309</property>
       <property name="dbReference">1619</property>
+      <property name="defaultAssociations">1</property>
     </properties>
 
     <!-- CONFIGURATION DESCRIPTIONS -->
     <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Lifeline</label>
+        <description><![CDATA[
+Group 1<br /> <h1>Overview</h1><p>1. Send Command Class "Device Reset Locally Notification V1" to associated devices of this group to report factory reset information when factory reset the remote control.</p><p>2. When remote control battery power value changes, send Command Class "Battery Report V1" to associated devices of this group to report power value information.</p><p>3. Short press or press and hold down any button to send scene activation command to the associated devices of this group using Command Class “Central Scene Notification V3”</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: Launch 1</label>
+        <description><![CDATA[
+Group 2<br /> <h1>Overview</h1><p>Short press ON / OFF button of Group 2 to send ON/OFF command to associated devices of this group using Command Class "Basic Set V2".</p><p>Press and hold down ON / OFF button of Group 2 to send light intensity increase / decrease command to associated devices of this group using Command Class "Multilevel V4".</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_3" type="text" groupName="association" multiple="true">
+        <label>3: Launch 2</label>
+        <description><![CDATA[
+Group 3<br /> <h1>Overview</h1><p>Short press ON / OFF button of Group 3 to send ON/OFF command to associated devices of this group using Command Class "Basic Set V2".</p><p>Press and hold down ON / OFF button of Group 3 to send light intensity increase / decrease command to associated devices of this group using Command Class "Multilevel V4"</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_4" type="text" groupName="association" multiple="true">
+        <label>4: Launch 3</label>
+        <description><![CDATA[
+Group 4<br /> <h1>Overview</h1><p>Short press ON / OFF button of Group 4 to send ON/OFF command to associated devices of this group using Command Class "Basic Set V2".</p><p>Press and hold down ON / OFF button of Group 4 to send light intensity increase/decrease command to associated devices of this group using Command Class "Multilevel V4"</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_5" type="text" groupName="association" multiple="true">
+        <label>5: Launch 4</label>
+        <description><![CDATA[
+Group 5<br /> <h1>Overview</h1><p>Short press ON / OFF button of Group 5 to send ON/OFF command to associated devices of this group using Command Class "Basic Set V2".</p><p>Press and hold down ON / OFF button of Group 5 to send light intensity increase/decrease command to associated devices of this group using Command Class "Multilevel V4"</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
 
       <!-- STATIC DEFINITIONS -->
       <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">

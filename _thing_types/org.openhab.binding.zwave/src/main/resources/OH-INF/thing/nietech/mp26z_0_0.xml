@@ -6,10 +6,11 @@
                       https://openhab.org/schemas/thing-description/v1.0.0">
 
   <thing-type id="nietech_mp26z_00_000" listed="false">
-    <label>MP26Z Ministon MP26Z</label>
+    <label>MP24Z / MP26Z Minoston MP24Z / MP26Z</label>
     <description><![CDATA[
-Ministon MP26Z<br /> <h1>Overview</h1><p>This Minoston Z-wave smart plug has two outlets that can be controlled independently, allowing you to turn each connected device on or off separately manually or in your hub.</p> <br /> <h2>Inclusion Information</h2><p>Press either button 3 times quickly while scanning for inclusion<br /></p> <br /> <h2>Exclusion Information</h2><p>Press either button 3 times quickly while scanning for inclusion<br /></p> <br /> <h2>Wakeup Information</h2><p><br /></p>
+Minoston MP24Z / MP26Z<br /> <h1>Overview</h1><p>This Minoston Z-wave smart plug has two outlets that can be controlled independently, allowing you to turn each connected device on or off separately manually or in your hub.</p> <br /> <h2>Inclusion Information</h2><p>Press either button 3 times quickly while scanning for inclusion<br /></p> <br /> <h2>Exclusion Information</h2><p>Press either button 3 times quickly while scanning for inclusion<br /></p> <br /> <h2>Wakeup Information</h2><p><br /></p>
     ]]></description>
+    <category>PowerOutlet</category>
 
     <!-- CHANNEL DEFINITIONS -->
     <channels>
@@ -36,7 +37,7 @@ Ministon MP26Z<br /> <h1>Overview</h1><p>This Minoston Z-wave smart plug has two
     <!-- DEVICE PROPERTY DEFINITIONS -->
     <properties>
       <property name="vendor">NIE Technology</property>
-      <property name="modelId">MP26Z</property>
+      <property name="modelId">MP24Z / MP26Z</property>
       <property name="manufacturerId">0312</property>
       <property name="manufacturerRef">FF01:FF97</property>
       <property name="dbReference">1621</property>
