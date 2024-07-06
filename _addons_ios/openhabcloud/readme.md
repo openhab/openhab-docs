@@ -110,22 +110,22 @@ Three different actions are available:
 - `sendBroadcastNotification(message)`: Send a broadcast notification to _all_ devices of _all_ users.
 - `sendLogNotification(message)`: Send a log notification to the notifications list. Log notifications do not trigger a notification on the device.
 
-For each of the three actions, there's another variant accepting an icon name and a severity:
+For each of the three actions, there's another variant accepting an icon name and a tag:
 
-- `sendNotification(emailAddress, message, icon, severity)`
-- `sendBroadcastNotification(message, icon, severity)`
-- `sendLogNotification(message, icon, severity)`
+- `sendNotification(emailAddress, message, icon, tag)`
+- `sendBroadcastNotification(message, icon, tag)`
+- `sendLogNotification(message, icon, tag)`
 
-Icon and severity can potentially be used by cloud instance clients (such as the openHAB apps for Android or iOS) to be displayed in the notification itself and the list of notifications.
+Icon and tag can potentially be used by cloud instance clients (such as the openHAB apps for Android or iOS) to be displayed in the notification itself and the list of notifications.
 
 The parameters for these actions have the following meaning:
 
 - `emailAddress`: String containing the email address the target user is registered with in the cloud instance.
 - `message`: String containing the notification message text.
 - `icon`: String containing the icon name (as described in [Items: Icons]({{base}}/configuration/items.html#icons)).
-- `severity`: String containing a description of the severity (tag) of the incident.
+- `tag`: String containing the tag for the notification.
 
-`null` may be used to skip the `icon` or `severity` parameter.
+`null` may be used to skip the `icon` or `tag` parameter.
 
 ### Title, Tag, Reference Id, Media Attachments & Actions
 
@@ -139,8 +139,8 @@ The `sendNotification` and `sendBroadcastNotification` actions additionally supp
 
 There are four different actions available:
 
-- click action: Is performed when the user clicks on the notification.
-- action button 1, 2 or 3: Is performed when the user clicks on the first, second or third action button.
+- Click action: Is performed when the user clicks on the notification.
+- Action button 1, 2 or 3: Is performed when the user clicks on the first, second or third action button.
 
 To specify media attachments and actions, there is another variant of the `sendNotification` and `sendBroadcastNotification` actions:
 
@@ -170,7 +170,7 @@ There are two types of actions available:
 - `ui`: Controls the UI in two possible ways:
   - `ui:$path` where `$path` is either `/basicui/app?...` for navigating sitemaps (using the native renderer) or `/some/absolute/path` for navigating (using the web view).
   - `ui:$commandItemSyntax` where `$commandItemSyntax` is the same syntax as used for the [UI Command Item]({{base}}/mainui/about.html#ui-command-item).
-- `http:` or `https:` : Opens the fully qualified URL in an embedded browser on the device
+- `http:` or `https:` : Opens the fully qualified URL in an embedded browser on the device.
 
 Examples:
 
@@ -227,12 +227,12 @@ rules.when().item('Apartment_FrontDoor').changed().to('OPEN').then(() => {
 rule "Front Door Notification" do
   changed Apartment_FrontDoor, to: OPEN
   run do
-    notify("Front door was opened!", email: "me@email.com")
+    Notification.send("Front door was opened!", email: "me@email.com")
   end
 end
 ```
 
-See [notify](https://openhab.github.io/openhab-jruby/main/OpenHAB/Core/Actions.html#notify-class_method)
+See [Notification.send](https://openhab.github.io/openhab-jruby/main/OpenHAB/Core/Actions/Notification.html#send-class_method)
 
 :::
 
@@ -249,7 +249,7 @@ rule "Open Window Notification"
 when
   Item Apartment_Window changed to OPEN
 then
-  sendBroadcastNotification("Apartment window was opened!", "window", "HIGH")
+  sendBroadcastNotification("Apartment window was opened!", "window", "Door")
 end
 ```
 
@@ -261,7 +261,7 @@ end
 rules.when().item('Apartment_Window').changed().to('OPEN').then(() => {
   actions.notificationBuilder('Apartment window was opened!')
     .withIcon('window')
-    .withSeverity('HIGH')
+    .withTag('Door')
     .send();
 }).build('Open Window Notification');
 ```
@@ -270,13 +270,13 @@ rules.when().item('Apartment_Window').changed().to('OPEN').then(() => {
 
 ::: tab JRuby
 
-Broadcast notification is performed by calling [notify](https://openhab.github.io/openhab-jruby/main/OpenHAB/Core/Actions.html#notify-class_method) without providing an email address.
+Broadcast notification is performed by calling [Notification.send](https://openhab.github.io/openhab-jruby/main/OpenHAB/Core/Actions/Notification.html#send-class_method) without providing an email address.
 
 ```ruby
 rule "Open Window Notification" do
   changed Apartment_Window, to: OPEN
   run do
-    notify("Apartment window was opened!", icon: "window", severity: "HIGH")
+    Notification.send("Apartment window was opened!", icon: "window", tag: "Door")
   end
 end
 ```
@@ -310,11 +310,11 @@ end
 rules.when().item('Apartment_MotionSensor').changed().to('ON').then(() => {
   actions.notificationBuilder('Motion detected in the apartment!')
     .withIcon('motion')
-    .withTag('motion-tag')
+    .withTag('Motion Tag')
     .withTitle('Motion Detected')
     .withReferenceId('motion-id-1234')
     .withMediaAttachment('https://apartment.my/camera-snapshot.jpg')
-    .addActionButton('Turn on the light=command:Apartment_Light:ON')
+    .addActionButton('Turn on the light', 'command:Apartment_Light:ON')  
     .send();
 }).build('Motion Detected Notification');
 ```
@@ -327,12 +327,13 @@ rules.when().item('Apartment_MotionSensor').changed().to('ON').then(() => {
 rule "Motion Detected Notification" do
   changed Apartment_MotionSensor, to: ON
   run do
-    notify "Motion detected in the apartment!",
-           icon: "motion",
-           tag: "motion-tag",
-           title: "Motion Detected",
-           attachment: "https://apartment.my/camera-snapshot.jpg",
-           buttons: { "Turn on the light" => "command:Apartment_Light:ON" }
+    Notification.send "Motion detected in the apartment!",
+                      icon: "motion",
+                      tag: "Motion Tag",
+                      title: "Motion Detected",
+                      id: "motion-id-1234"
+                      attachment: "https://apartment.my/camera-snapshot.jpg",
+                      buttons: { "Turn on the light" => "command:Apartment_Light:ON" }
   end
 end
 ```
