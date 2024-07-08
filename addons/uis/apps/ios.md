@@ -29,7 +29,7 @@ Beta releases are available on [TestFlight](https://testflight.apple.com/join/56
 ## Features
 
 - Control your openHAB server directly and through a [openHAB Cloud instance](https://github.com/openhab/openhab-cloud)
-- [Enhanced push notification](#push-notifications) from openHAB Cloud and the openHAB cloud binding 
+- [Enhanced push notification](#push-notifications) from openHAB Cloud and the openHAB cloud binding
 - [Apple Watch](#apple-watch-configuration) companion app
 - [Widgets](#widgets) (coming soon!)
 - Natively supports both iPhone and iPad
