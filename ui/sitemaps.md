@@ -671,7 +671,7 @@ This limits the possible input values, which is yet another often occurring use 
 In the fifth example above, user interfaces will display buttons using the provided icon rather than the provided description.
 Icons are usable in Switch element but ignored in Selection element.
 
-In the sixth example above, as there are 2 commands provided separated by a semicolon, user interface will consider a press and release behavior, the first command (ON in the example) is sent to the item when the button is pressed and the second command (OFF in the example) is sent when the button is finally released.
+In the sixth example above, as there are 2 commands provided separated by a colon, user interface will consider a press and release behavior, the first command (ON in the example) is sent to the item when the button is pressed and the second command (OFF in the example) is sent when the button is finally released.
 This behavior is only applicable for a `Switch` element.
 
 ## Dynamic Sitemaps
