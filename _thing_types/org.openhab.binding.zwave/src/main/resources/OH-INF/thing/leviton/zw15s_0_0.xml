@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="leviton_zw15s_00_000" listed="false">
+    <label>ZW15S ZW15S Switch</label>
+    <description><![CDATA[
+ZW15S Switch<br /> <h1>Overview</h1><p>Leviton Decora Smart ZW15S Wall Switch</p> <br /> <h2>Inclusion Information</h2><p>When using a Z-Wave Plus certiﬁed hub, choose network wide inclusion or SmartStart. If network wide inclusion does not discover your device, try classic inclusion.</p><p>Network Wide Inclusion to a Z-Wave Network</p><p>Enter Setup Mode</p><ol><li>Hold the top rocker for 7 seconds.</li><li>The Status LED will turn AMBER, release and the Status LED will blink AMBER. </li><li>The device is now in setup mode</li><li>Enter setup mode (see above)</li><li> Tap the top rocker 1 time. The Status LED will quickly ﬂash GREEN. The device is now ready to learn into the Z-Wave network.</li><li>Use the Z-Wave controller to complete the device enrollment process (follow the Z-Wave controller instructions)</li><li>The device’s Status LED will turn OFF and then ﬂash GREEN 4 times to conﬁrm it has been successfully added to a Z-Wave network. If the device was not successfully added, the Status LED will ﬂash RED 4 times.</li></ol><p>Classic inclusion to a Z-Wave network</p><p>For older controllers, Classic Inclusion is supported. Depending on the age of the controller it may need to be 3 to 35 feet from the device when including.</p><ol><li>Enter setup mode (see page 10).</li><li>Follow the Z-Wave controller instructions to enter inclusion mode.</li><li>Tap the top rocker 1 time, the Status LED will quickly ﬂash GREEN.</li><li>The Z-Wave controller will conﬁrm successful inclusion to the Z-Wave network.</li></ol> <br /> <h2>Exclusion Information</h2><p>Exclusion from a Z-Wave network<br /></p><p>The Exclusion command found in the Z-Wave controller is used as a best  practice for removing devices from a Z-Wave network.<br /><br /></p><ol><li>Enter setup mode (see Inclusion notes).</li><li>Follow the Z-Wave controller instructions to enter exclusion mode</li><li>Tap the top rocker 1 time, the Status LED will quickly ﬂash GREEN</li><li>The Z-Wave controller will conﬁrm successful exclusion from the Z-Wave network.</li></ol> <br /> <h2>Wakeup Information</h2><p><br /></p>
+    ]]></description>
+    <category>WallSwitch</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_binary" typeId="switch_binary">
+        <label>Switch</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY</property>
+        </properties>
+      </channel>
+      <channel id="scene_number" typeId="scene_number">
+        <label>Scene Number</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_SCENE_ACTIVATION</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Leviton</property>
+      <property name="modelId">ZW15S</property>
+      <property name="manufacturerId">001D</property>
+      <property name="manufacturerRef">0042:0002</property>
+      <property name="dbReference">1624</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_7_4" type="integer" groupName="configuration">
+        <label>7: Status LED Configuration</label>
+        <description>Status LED</description>
+        <default>255</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Lifeline</label>
+        <description><![CDATA[
+Lifeline<br /> <h1>Overview</h1><p>A notification is sent to the nodes in this association group when a Lifeline event occurs</p><p>All nodes in the association group receive notification of status changes</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: Binary Switch Set</label>
+        <description><![CDATA[
+Binart Switch Set<br /> <h1>Overview</h1><p>All nodes in the association group receive a command based on the ON/OFF button presses<br /></p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_3" type="text" groupName="association" multiple="true">
+        <label>3: Basic Set</label>
+        <description><![CDATA[
+Basic Set<br /> <h1>Overview</h1><p>All notes in the association group receive a command based on the ON/OFF button presses</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>
