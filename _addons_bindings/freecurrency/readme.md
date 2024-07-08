@@ -5,6 +5,7 @@ title: Freecurrency - Bindings
 type: binding
 description: "The Freecurrency binding connects [Freecurrency API](https://freecurrencyapi.com) to openHAB."
 since: 3x
+logo: images/addons/freecurrency.png
 install: auto
 ---
 
