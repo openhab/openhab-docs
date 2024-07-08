@@ -45,7 +45,7 @@ Beta releases are available on [TestFlight](https://testflight.apple.com/join/56
 </p>
 
 ### Connection Settings
-The app will try and connect using the Local URL as the primary connection, and if that fails or is not reachable, falls back to the local URL.  
+The app will try and connect using the Local URL as the primary connection, and if that fails or is not reachable, falls back to the Remote URL.  
 
 ### Demo Mode
 This sets up the app to use the openHAB demo server and can be used to experience the app without needing to install openHAB.
