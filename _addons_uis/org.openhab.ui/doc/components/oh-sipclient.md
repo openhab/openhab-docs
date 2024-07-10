@@ -59,6 +59,27 @@ This can be achieved by configuring the widget as usual, but setting SIP usernam
 1. Insert your SIP account credentials, they are used instead of those stored on the openHAB server.
 1. Insert the SIP address/phone number of your SIP account, it is used to hide your local identity from the call dial.
 
+## SIP Connection State Item
+
+The advanced `sipStateItem` property allows to define a String Item to publish the current SIP connection state to the openHAB server.
+
+There are the following basic states:
+
+- `connected`: The SIP client has connected to the SIP server and ready to make outgoing calls.
+- `registered`: The SIP client has registered at the SIP server and ready to receive calls.
+- `disconnected`: The SIP client has disconnected from the SIP server.
+
+In addition, there are the following call states, which provide the caller ID of the remote party, e.g. `**620@fritz.box` after a colon:
+
+- `incoming`: An incoming call is received, e.g. `incoming:**620@fritz.box`.
+- `incoming-accepted`: An incoming call has been accepted and is now active, e.g. `incoming-accepted:**620@fritz.box`.
+- `outgoing`: An outgoing call is started.
+- `outgoing-accepted`: An outgoing call has been accepted and is now active.
+- `ended`: The call has been ended.
+- `failed`: The call has failed.
+
+The `sipStateItem` is useful to track the SIP connection state on the openHAB server and work with it, e.g. in rules.
+
 ## Configuration
 
 <!-- DO NOT REMOVE the following comments -->
@@ -130,6 +151,11 @@ This can be achieved by configuring the widget as usual, but setting SIP usernam
 <PropBlock type="TEXT" name="autoDial" label="Auto Dial">
   <PropDescription>
     Automatically dial the SIP address when loaded
+  </PropDescription>
+</PropBlock>
+<PropBlock type="TEXT" name="stateItem" label="State Item" context="item">
+  <PropDescription>
+    String Item to publish the current SIP connection state to the openHAB server and make it accessible from rules etc.
   </PropDescription>
 </PropBlock>
 <PropBlock type="BOOLEAN" name="enableSIPDebug" label="Enable SIP Debug">
