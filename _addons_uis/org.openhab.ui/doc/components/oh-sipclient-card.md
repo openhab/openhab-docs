@@ -128,7 +128,7 @@ Usage is explained at the [`oh-sipclient` component docs](/docs/ui/components/oh
     Automatically dial the SIP address when loaded
   </PropDescription>
 </PropBlock>
-<PropBlock type="TEXT" name="stateItem" label="State Item" context="item">
+<PropBlock type="TEXT" name="sipStateItem" label="SIP State Item" context="item">
   <PropDescription>
     String Item to publish the current SIP connection state to the openHAB server and make it accessible from rules etc.
   </PropDescription>

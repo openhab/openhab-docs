@@ -153,7 +153,7 @@ The `sipStateItem` is useful to track the SIP connection state on the openHAB se
     Automatically dial the SIP address when loaded
   </PropDescription>
 </PropBlock>
-<PropBlock type="TEXT" name="stateItem" label="State Item" context="item">
+<PropBlock type="TEXT" name="sipStateItem" label="SIP State Item" context="item">
   <PropDescription>
     String Item to publish the current SIP connection state to the openHAB server and make it accessible from rules etc.
   </PropDescription>
