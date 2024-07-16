@@ -625,7 +625,7 @@ rule "Window open reminder" do
   changed gWindows.members, to: OPEN, for: 1.hour
   run do |event|
     # Item guaranteed to be OPEN here, no need to check
-    notify("#{event.item.label} is open for an hour!")
+    Notification.send("#{event.item.label} is open for an hour!")
   end
 end
 ```
