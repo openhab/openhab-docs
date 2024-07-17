@@ -245,8 +245,10 @@ Here is the full list of available persistence extensions:
 | `<item>.persist(ZonedDateTime, State)`                          | Persists a past or future state for the Item                                                                                                                                    |
 | `<item>.persist(TimeSeries)`                                    | Persists a TimeSeries with one or multiple values to the Item                                                                                                                   |
 | `<item>.persistedState(ZonedDateTime)`                          | Retrieves the State of an Item at a certain point in time (returns HistoricItem)                                                                                                |
-| `<item>.lastUpdate()`                                           | Returns the timestamp of the last Item update                                                                                                                                   |
+| `<item>.lastUpdate()`                                           | Returns the timestamp of the last Item update, null if current Item state different from last persisted state                                                                   |
 | `<item>.nextUpdate()`                                           | Returns the timestamp of the next Item update if future states have been persisted                                                                                              |
+| `<item>.lastChange()`                                           | Returns the timestamp of the last Item change, null if current Item state different from last persisted state                                                                   |
+| `<item>.nextChange()`                                           | Returns the timestamp of the next Item change if future states have been persisted                                                                                              |
 | `<item>.previousState()`                                        | Gets the previous State of a persisted Item (returns HistoricItem)                                                                                                              |
 | `<item>.previousState(true)`                                    | Gets the previous State of a persisted Item, skips Items with equal State values and searches the first Item with State not equal the current State (returns HistoricItem)      |
 | `<item>.nextState()`                                            | Gets the next State of a persisted Item if future states have been persisted (returns HistoricItem)                                                                             |
@@ -307,6 +309,13 @@ The most useful methods of the HistoricItem object returned by some queries, are
 
 To persist an Item called `Lights` in an rrd4j database, you would enter the following:
 `Lights.persist("rrd4j")`
+
+To get the time of the last change of an Item `Humidity` from the default persistence service, default to the current time if the last persisted state is different from the current state:
+
+```java
+var lastChange = Humidity.lastChange()
+lastChange = (lastChange !== null) ? lastChange : now
+```
 
 To get the average temperature over the last 5 minutes from the Item called `Temperature` in the influxdb persistence service, you would use:
 `Temperature.averageSince(now.minusMinutes(5), "influxdb")`

@@ -144,7 +144,8 @@ The following element types may be used in a Sitemap definition file.
 
 | Element                                  | Description                                                                               |
 | ---------------------------------------- | ----------------------------------------------------------------------------------------- |
-| [Buttongrid](#element-type-buttongrid)   | Renders a grid of stateless buttons used to send commands to a given Item.                |
+| [Buttongrid](#element-type-buttongrid)   | Renders a grid containing buttons.                                                        |
+| [Button](#element-type-button)           | Renders a button inside a Buttongrid that is used to send commands to a given Item.       |
 | [Chart](#element-type-chart)             | Adds a time-series chart object for [persisted](persistence.html) data.                   |
 | [Colorpicker](#element-type-colorpicker) | Allows the user to choose a color from a color wheel.                                     |
 | [Default](#element-type-default)         | Renders an Item in the default UI representation specified by the type of the given Item. |
@@ -310,17 +311,19 @@ Switch item=LR_TV_Channel label="TV Channel" mappings=[0="DasErste", 1="BBC One"
 ### Element Type 'Buttongrid'
 
 ```java
-Buttongrid item=<itemname> [label="<labelname>"] [icon=<iconref>] [staticIcon=<iconref>] [buttons="<Button definition>"]
+Buttongrid [item=<itemname>] [label="<labelname>"] [icon=<iconref>] [staticIcon=<iconref>] [buttons="<Button definition>"]
 ```
 
 A Buttongrid represents a grid of buttons and enables commands to be sent to an Item.
-When a button is pressed, the associated command is sent to the linked Item.
-Buttons never appear as selected, they do not display the current state of the linked Item.
 
 This is a typical element for simulating a remote control, for example.
 
+- `item` commands triggered by the buttons are sent to the item identified by this parameter. This parameter is only required if the `buttons` parameter is also used.
 - `label` if set, a header row will be displayed containing this label and the icon.
 - `buttons` defines the position of each button within the grid and the command associated with each button; provided as an array.
+
+When buttons are defined by the `buttons` parameter, all buttons are linked to the same Item and a command can only be sent to that item when one button is clicked (and not when it is pressed and released); buttons never appear as selected, they do not display the current state of the linked Item.
+The `buttons` parameter is optional, using Button elements as children is now the best option because it provides more functionality, but this option is not yet supported by all sitemap UIs.
 
 Buttons syntax:
 
@@ -343,6 +346,45 @@ Buttongrid label="Remote Control" staticIcon=screen item=RemoteControl buttons=[
 ```
 
 ![Presentation of the Buttongrid element in BasicUI](images/sitemap_demo_buttongrid.png)
+
+### Element Type 'Button'
+
+```java
+Button item=<itemname> [label="<labelname>"] [icon=<iconref>] [staticIcon=<iconref>] row=<row> column=<column> [stateless] click=<cmd> [release=<cmd>]
+```
+
+Such an element is only accepted as a child of a `Buttongrid` element.
+You can choose between stateful or stateless behavior and between click or press & release behavior.
+When a button is pressed and/or released, the associated command is sent to the linked Item.
+
+- `item` commands triggered by the button are sent to the item identified by this parameter.
+- `label` if set, it defines the text to display in the button. If not present, the value of the command (`click` parameter) is used as text.
+- `icon` / `staticIcon` if set, it defines the icon to display in the button. If not present, the button will contain a text. The icon can be dynamic by defining rules in the `icon` parameter.
+- `row` / `column` define the position of the button in the grid. The top left position is row index 1 and column index 1.
+- `stateless` sets the button to stateless; by default, a button is stateful.
+- `click` / `release` a button is a click button by default, the command to send to the item is defined by the `click` parameter. Press & release behavior is possible by setting the `click` and `release` parameters.
+
+Label and icon color can be dynamic using the `labelcolor` and `iconcolor` parameters.
+Visibility of the button can be dynamic using the `visibility` parameter.
+Care must be taken to define visibility rules such that this does not result in several buttons being visible at the same position in the grid.
+
+**Examples:**
+
+```java
+Buttongrid label="Remote Control" staticIcon=screen {
+    Button row=1 column=1 item=RemoteControl label="Power" staticIcon=switch-off stateless click=POWER
+    Button row=1 column=2 item=RemoteControl label="Menu" stateless click=MENU
+    Button row=1 column=3 item=RemoteControl label="Exit" stateless click=EXIT
+    Button row=2 column=2 item=RemoteControl label="Up" staticIcon=f7:arrowtriangle_up stateless click=UP
+    Button row=4 column=2 item=RemoteControl label="Down" staticIcon=f7:arrowtriangle_down stateless click=DOWN
+    Button row=3 column=1 item=RemoteControl label="Left" staticIcon=f7:arrowtriangle_left stateless click=LEFT
+    Button row=3 column=3 item=RemoteControl label="Right" staticIcon=f7:arrowtriangle_right stateless click=RIGHT
+    Button row=3 column=2 item=RemoteControl label="Ok" stateless click=OK
+    Button row=2 column=4 item=RemoteControl label="Volume +" stateless click=VOL_PLUS
+    Button row=4 column=4 item=RemoteControl label="Volume -" stateless click=VOL_MINUS
+    Button row=3 column=4 item=RemoteControl label="Mute" staticIcon=soundvolume_mute stateless click=MUTE
+}
+```
 
 ### Element Type 'Selection'
 
@@ -629,7 +671,7 @@ This limits the possible input values, which is yet another often occurring use 
 In the fifth example above, user interfaces will display buttons using the provided icon rather than the provided description.
 Icons are usable in Switch element but ignored in Selection element.
 
-In the sixth example above, as there are 2 commands provided separated by a semicolon, user interface will consider a press and release behavior, the first command (ON in the example) is sent to the item when the button is pressed and the second command (OFF in the example) is sent when the button is finally released.
+In the sixth example above, as there are 2 commands provided separated by a colon, user interface will consider a press and release behavior, the first command (ON in the example) is sent to the item when the button is pressed and the second command (OFF in the example) is sent when the button is finally released.
 This behavior is only applicable for a `Switch` element.
 
 ## Dynamic Sitemaps
