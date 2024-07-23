@@ -211,6 +211,6 @@ Number <itemName> { channel="<channelUID>"[profile="transform:RB", toItemScript=
 
 ::: tip
 
-You can find the available transformation services [here]({{base}}/adddons/#transform).
+You can find the available transformation services [here](/addons/#transform).
 
 :::
