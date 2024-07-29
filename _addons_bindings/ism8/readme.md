@@ -210,4 +210,4 @@ NULL=Undefiniert
 ```
 
 _Result_
-<img src="doc/Sitemap-Example.png" width="800" height="600">
+<img src="./doc/Sitemap-Example.png" width="800" height="600">
