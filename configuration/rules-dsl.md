@@ -9,7 +9,7 @@ title: Textual Rules
 
 Note that there is also a visual way of programming openHAB rules, which may be more suitable for beginners. Its documentation can be found in the [Blockly Reference section]({{base}}/configuration/blockly/)
 
-openHAB has a highly integrated, lightweight but yet powerful rule engine included.
+openHAB has a highly integrated, lightweight but yet powerful rule engine called _Rules DSL_ included.
 On this page you will learn how to leverage its functionality to do _real_ home automation.
 
 [[toc]]
