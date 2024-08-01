@@ -40,6 +40,7 @@ Smoke detector<br /> <h1>Overview</h1><p>The Nexa ZSD-109 fire alarm is designed
       <property name="manufacturerId">0266</property>
       <property name="manufacturerRef">0005:0001</property>
       <property name="dbReference">1550</property>
+      <property name="defaultAssociations">1</property>
     </properties>
 
     <!-- CONFIGURATION DESCRIPTIONS -->

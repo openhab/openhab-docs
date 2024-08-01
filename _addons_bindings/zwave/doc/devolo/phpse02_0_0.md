@@ -17,41 +17,59 @@ The ph-pse02 supports routing. This allows the device to communicate using other
 
 ## Overview
 
-**\### NOTE ###**
+## **\### NOTE ###** The XML used for adding this device to the database comes from the Devolo Home Control Alarmsiren (http://www.devolo.de/article/devolo-home-control-alarmsirene/). But it seems to be made by Zipato (https://www.zipato.com/product/multisound-indoor-siren).
 
-The XML used for adding this device to the database comes from the Devolo Home Control Alarmsiren (http://www.devolo.de/article/devolo-home-control-alarmsirene/). But it seems to be made by Zipato (https://www.zipato.com/product/multisound-indoor-siren).  
-  
-**\### FEATURES ###**  
-  
-- Indoor multichannel siren that works with a a variety of Z-Wave networks/controllers, regardless of the manufacturer  
-- The new Z-Wave 500 series chip supports multichannel operationand higher data rates (9.6/40/100kbps)  
-- 110db sound level  
-- 6 sounds: Door Chime, Bi Bi Arm/Disarm, Intruder alarm, Ambulance, Police car  
-- Higher output power enhances communication range(+6dBm output power as compared to -2.5dBm 300 series)  
-- DC or Li-ion battery power (over 24 hours of battery life)  
-- Battery overcharge protection  
-- Very low power consumption  
-- Over-the-air firmware update  
-- Easy to install in EU/China/Taiwan wall sockets  
-- Tamperproof protection  
   
   
-**\### TECHNICAL SPECIFICATIONS ###**  
+
+
+## **\### FEATURES ###**
+
+  
+
+
+  * - Indoor multichannel siren that works with a a variety of Z-Wave networks/controllers, regardless of the manufacturer
+  * - The new Z-Wave 500 series chip supports multichannel operationand higher data rates (9.6/40/100kbps)
+  * - 110db sound level
+  * - 6 sounds: Door Chime, Bi Bi Arm/Disarm, Intruder alarm, Ambulance, Police car
+  * - Higher output power enhances communication range(+6dBm output power as compared to -2.5dBm 300 series)
+  * - DC or Li-ion battery power (over 24 hours of battery life)
+  * - Battery overcharge protection
+  * - Very low power consumption
+  * - Over-the-air firmware update
+  * - Easy to install in EU/China/Taiwan wall sockets
+  * - Tamperproof protection
+
+  
+  
+
+
+## **\### TECHNICAL SPECIFICATIONS ###**
+
   
 PROTOCOL: Z-Wave Plus  
   
 POWER  
-- DC 5V, Li-Ion battery (optional)  
-- BATTERY CAPACITY 1150mAh  
+
+
+  * - DC 5V, Li-Ion battery (optional)
+  * - BATTERY CAPACITY 1150mAh
+
   
 OPERATING CONDITIONS:  
-- OPERATING VOLTAGE 3.7V  
-- OPERATING CURRENT 150 mA  
-- OPERATION TEMPERATURE -10°C ~ 40°C  
+
+
+  * - OPERATING VOLTAGE 3.7V
+  * - OPERATING CURRENT 150 mA
+  * - OPERATION TEMPERATURE -10°C ~ 40°C
+
   
 RANGE  
-- Minimum 30 meters indoor  
-- 70 meters outdoor (meant for indoor use only)  
+
+
+  * - Minimum 30 meters indoor
+  * - 70 meters outdoor (meant for indoor use only)
+
   
 DIMENSIONS  
 - DEVICE  DIMENSIONS 110 x 110 x 22 mm  
@@ -79,6 +97,10 @@ After successful inclusion, the LED will light up for 1 second.
 ### Exclusion Information
 
 Press the tamper key three times within 1.5 seconds to enter the exclusion mode.
+
+### General Usage Information
+
+
 
 ## Channels
 
@@ -395,23 +417,39 @@ Detailed information on each parameter can be found in the sections below.
 
 | Param | Name  | Description |
 |-------|-------|-------------|
-| 7 | Costumer  Function | NotificationReport/BinaryReport |
+| 7 | Costumer  Function | Customer Function Switch, using bit control |
 | 29 | Disable Alarm | Disable the alarm function. |
 | 31 | Alarm Duration | Play alarm sound duration. |
 
 ### Parameter 7: Costumer  Function
 
-NotificationReport/BinaryReport
-Notification Type,
+Customer Function Switch, using bit control
+Parameter to set the customer functions
 
-0: Using Notification Report.
+Bit 0: Reserve
 
-1: Using Sensor Binary Report.This is an advanced parameter and will therefore not show in the user interface without entering advanced mode.
-Values in the range 0 to 65535 may be set.
+Bit 1: Reserve
 
-The manufacturer defined default value is ```4```.
+Bit 2: Reserve
 
-This parameter has the configuration ID ```config_7_4``` and is of type ```INTEGER```.
+Bit 3: Disable sound
+
+Bit 4: Notification Type.
+
+  - 0: Using Notification Report,
+
+  - 1: Using Sensor Binary Report
+
+Bit 5: Reserve
+
+Bit 6: Reserve
+
+Bi t7: ReserveThis is an advanced parameter and will therefore not show in the user interface without entering advanced mode.
+Values in the range 0 to 255 may be set.
+
+The manufacturer defined default value is ```8```.
+
+This parameter has the configuration ID ```config_7_1``` and is of type ```INTEGER```.
 
 
 ### Parameter 29: Disable Alarm

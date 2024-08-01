@@ -147,7 +147,7 @@ The following table summarises the channels available for the FF-ZWAVE5-ECO -:
 | Alarm (burglar) | alarm_burglar | alarm_burglar | Door | Switch | 
 | Alarm (smoke) | alarm_smoke | alarm_smoke | Smoke | Switch | 
 | Alarm (CO) | alarm_co | alarm_co |  | Switch | 
-| Alarm (power) | alarm_power | alarm_power | Energy | Switch | 
+| Alarm (power) | alarm_battery | alarm_battery | LowBattery | Switch | 
 | Tamper Alarm | alarm_tamper | alarm_tamper |  | Switch | 
 | Battery Level | battery-level | system.battery_level | Battery | Number |
 
@@ -217,9 +217,9 @@ The following state translation is provided for this channel to the ```Switch```
 | ON | Alarm |
 
 ### Alarm (power)
-Indicates if a power alarm is triggered.
+Indicates if the low battery alarm is triggered.
 
-The ```alarm_power``` channel is of type ```alarm_power``` and supports the ```Switch``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
+The ```alarm_battery``` channel is of type ```alarm_battery``` and supports the ```Switch``` item and is in the ```LowBattery``` category. This is a read only channel so will only be updated following state changes from the device.
 
 The following state translation is provided for this channel to the ```Switch``` item type -:
 
@@ -266,7 +266,7 @@ Enables the sensor to detect smoke alarm signals from a smoke detector or alarm 
 0xA5  = Smoke alarm detection only
 
 0xFF   = Smoke and carbon monoxide alarm detection
-The following option values may be configured, in addition to values in the range 165 to 255 -:
+The following option values may be configured -:
 
 | Value  | Description |
 |--------|-------------|
