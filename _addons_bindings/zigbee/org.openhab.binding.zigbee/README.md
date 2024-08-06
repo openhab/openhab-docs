@@ -264,7 +264,10 @@ The following devices have been tested by openHAB users with the binding. This l
 | Busch-Jaeger 6735/01                           | Control Element (1-channel, battery-operated)                |
 | Busch-Jaeger 6736                              | Control Element (2-channel)                                  |
 | Clipsal Iconic dimmers and switches            | Wiser switches and dimmers by Schneider                      |
+| Current Products Corp. E-Wand                  | Vertical blind motorized                                     |
 | Eurotronic Spirit Thermostat                   | Radiator Thermostat                                          |
+| eWeLink SA-003                                 | smart power socket                                           |
+| Fingerbot TS0001 Tuya Zigbee                   | remote button pusher (_TZ3210_j4pdtz9v)                      |
 | GE Bulbs                                       |                                                              |
 | GE Tapt Wall Switch                            | On/Off Switch                                                |
 | GLEDOPTO GL-C-007                              | GLEDOPTO RGBW Led stripe controller                          |
@@ -281,6 +284,7 @@ The following devices have been tested by openHAB users with the binding. This l
 | Innr SP 120                                    | Smart Plug _[<sup>[1]</sup>](#note1)_                        |
 | LIVARNO Smart Home                             | Lidl Livarno Smart Home Bulbs _[<sup>[4]</sup>](#note4)_     |
 | LEDVANCE/Osram Bulbs                           |                                                              |
+| LUMI weather sensor                            | temperature, pressure, humidity sensor                       |
 | Lupus Small Zigbee Temperature Sensor 12314    | Lupus-Electronics Temperature and Humidity sensor            |
 | Neuhaus Lighting Group - NLG-TW light          | Dimmer (1 channel, 0 - 100%), Color Temperature (1 channel, 0 (cold) - 100 (warm))|
 | Neuhaus Lighting Group - NLG-RGB-TW light      | Dimmer (1 channel, 0 - 100%), Color Picker (1 channel)|
