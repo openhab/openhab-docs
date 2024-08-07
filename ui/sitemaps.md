@@ -425,16 +425,13 @@ Setpoint item=KI_Temperature label="Kitchen [%.1f °C]" minValue=4.5 maxValue=30
 ### Element Type 'Slider'
 
 ```java
-Slider item=<itemname> [label="<labelname>"] [icon=<iconref>] [staticIcon=<iconref>] [sendFrequency="frequency"] [switchSupport] [minValue=<min value>] [maxValue=<max value>] [step=<step value>] [releaseOnly]
+Slider item=<itemname> [label="<labelname>"] [icon=<iconref>] [staticIcon=<iconref>] [switchSupport] [minValue=<min value>] [maxValue=<max value>] [step=<step value>] [releaseOnly]
 ```
 
 This type presents a value as a user-adjustable control which slides from left (0) to right (100).
 
-- `sendFrequency` is used to distinguish between long and short button presses in the classic (web) frontend.
-    This parameter defines the interval in milliseconds for sending increase/decrease requests.
-
 - `switchSupport` is a parameter without an assignment.
-  - Android app: If specified, a short press on the item row (except the slider itself) switches the item "on" or "off".
+  - Android app: If specified, a short press on the item row (except the slider itself) switches the item `ON` or `OFF`.
   - This parameter has no effect in other UIs.
 
 - `minValue` (defaults to 0) and `maxValue` (defaults to 100) limit the possible range of the value (both included in the range).
@@ -452,15 +449,12 @@ Slider item=KI_Temperature label="Kitchen"
 ### Element Type 'Colorpicker'
 
 ```java
-Colorpicker item=<itemname> [label="<labelname>"] [icon=<iconref>] [staticIcon=<iconref>] [sendFrequency=<sendFrequency>]
+Colorpicker item=<itemname> [label="<labelname>"] [icon=<iconref>] [staticIcon=<iconref>]
 ```
 
 This element is a combined control for something like a rgb or rgbw light where you can adjust brightness as well es the color hue.
 The down-button decreases brightness to zero and switches the light off. The up-button sets brightness to full but keeps the previous color (hue).
 The middle button opens an overlay to finetune your color. A color wheel let you pick the hue and a slider allows to set the brightness.
-
-- `sendFrequency` is used to distinguish between long and short button presses in the classic (web) frontend.
-  This parameter defines the interval in milliseconds for sending increase/decrease requests.
 
 **Example:**
 
