@@ -29,6 +29,11 @@ A card showing model items in a certain location
 <div class="props">
 <PropGroup name="card" label="Model Card">
   General settings for this card
+<PropBlock type="TEXT" name="item" label="Item" context="item">
+  <PropDescription>
+    Location to display
+  </PropDescription>
+</PropBlock>
 <PropBlock type="TEXT" name="title" label="Title">
   <PropDescription>
     Title of the card

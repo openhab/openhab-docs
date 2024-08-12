@@ -29,6 +29,13 @@ A card showing model items belonging to a certain equipment class
 <div class="props">
 <PropGroup name="card" label="Model Card">
   General settings for this card
+<PropBlock type="TEXT" name="item" label="Item">
+  <PropDescription>
+    Equipment class to display
+  </PropDescription>
+  <PropOptions>
+  </PropOptions>
+</PropBlock>
 <PropBlock type="TEXT" name="title" label="Title">
   <PropDescription>
     Title of the card

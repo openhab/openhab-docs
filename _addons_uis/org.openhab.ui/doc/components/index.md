@@ -143,7 +143,7 @@ source: https://github.com/openhab/openhab-webui/edit/main/bundles/org.openhab.u
 | Component | Name | Description |
 |--------|------|-------------|
 | [`oh-location-card`](./oh-location-card.html) |  [Location Card](./oh-location-card.html) | A card showing model items in a certain location |
-| [`oh-equipment-card`](./oh-equipment-card.html) |  [Equipment Class Card](./oh-equipment-card.html) | A card showing model items belonging to a certain equipment class |
+| [`oh-equipment-card`](./oh-equipment-card.html) |  [Equipment Card](./oh-equipment-card.html) | A card showing model items belonging to a certain equipment class |
 | [`oh-property-card`](./oh-property-card.html) |  [Property Card](./oh-property-card.html) | A card showing model items related to a certain property |
 
 
