@@ -111,18 +111,35 @@ prev: /docs/ui/components/
     <PropOption value="photos" label="Open photo browser" />
     <PropOption value="group" label="Group details" />
     <PropOption value="analyzer" label="Analyze item(s)" />
-    <PropOption value="url" label="External URL" />
+    <PropOption value="url" label="Navigate to external URL" />
+    <PropOption value="http" label="Send HTTP request" />
     <PropOption value="variable" label="Set Variable" />
   </PropOptions>
 </PropBlock>
 <PropBlock type="TEXT" name="actionUrl" label="Action URL" context="url">
   <PropDescription>
-    URL to navigate to
+    URL to navigate to or to send HTTP request to
   </PropDescription>
 </PropBlock>
 <PropBlock type="BOOLEAN" name="actionUrlSameWindow" label="Open in same tab/window">
   <PropDescription>
     Open the URL in the same tab/window instead of a new one. This will exit the app.
+  </PropDescription>
+</PropBlock>
+<PropBlock type="TEXT" name="actionHttpMethod" label="HTTP Method">
+  <PropDescription>
+    HTTP method to use for the request
+  </PropDescription>
+  <PropOptions>
+    <PropOption value="GET" label="GET" />
+    <PropOption value="POST" label="POST" />
+    <PropOption value="PUT" label="PUT" />
+    <PropOption value="DELETE" label="DELETE" />
+  </PropOptions>
+</PropBlock>
+<PropBlock type="TEXT" name="actionHttpBody" label="HTTP Body">
+  <PropDescription>
+    Body to send with the request
   </PropDescription>
 </PropBlock>
 <PropBlock type="TEXT" name="actionItem" label="Action Item" context="item">
