@@ -324,6 +324,9 @@ Temperature calibration in 0.1 deg steps<br /> <h1>Overview</h1><p>Temperature c
 
       <parameter name="config_201_2_000000FF" type="integer" groupName="configuration">
         <label>201: Temperature Calibration Unit</label>
+        <description><![CDATA[
+<br /> <h1>Overview</h1><p>Low byte is the unit (0x01=Celsius, 0x02=Fahrenheit).<br /></p>
+        ]]></description>
         <default>1</default>
         <options>
           <option value="1">Celsius</option>
@@ -334,7 +337,9 @@ Temperature calibration in 0.1 deg steps<br /> <h1>Overview</h1><p>Temperature c
 
       <parameter name="config_201_2_0000FF00" type="integer" groupName="configuration">
         <label>201: Temperature Calibration Value</label>
-        <description>Calibration value containing one decimal point</description>
+        <description><![CDATA[
+Calibration value containing one decimal point<br /> <h1>Overview</h1><p>Temperature calibration (the available value range is [-128,127] or [-12.8°C ,12.7 °C ] ).</p><p>Note:</p><p>High byte is the calibration value. Low byte is the unit (0x01=Celsius, 0x02=Fahrenheit).</p><p>The calibration value (high byte) contains one decimal point. E.g. if the value is set to 20 (0x1401), the calibration value is 2.0°C (EU/AU version) or if the value is set to 20 (0x1402), the calibration value is 2.0 °F (US version)</p><p>The calibration value = standard value - measure value. °C and the standard value = 23.2 °C , so the calibration value= 23.2 °C - 25.3 °C = -2.1 °C (0xEB). If the measure value =30.1 °C and the standard value = 33.2 °C , so the calibration value= 33.2 °C - 30.1 °C =3.1 °C (0x1F).</p>
+        ]]></description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
       </parameter>

@@ -554,6 +554,7 @@ Temperature calibration in 0.1 deg steps<br /> <h1>Overview</h1><p>Temperature c
           <option value="1">Celsius</option>
           <option value="2">Fahrenheit</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_201_2_0000FF00" type="integer" groupName="configuration">
