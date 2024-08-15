@@ -296,7 +296,12 @@ A cell expanding to a big vertical slider
     <PropOption value="calendar" label="Calendar" />
   </PropOptions>
 </PropBlock>
-<PropBlock type="TEXT" name="actionFeedback" label="Action feedback">
+<PropBlock type="TEXT" name="actionConfirmation" label="Action Confirmation">
+  <PropDescription>
+    Shows a dialog or sheet to ask for confirmation before the action is executed. Can either be a text to show in the dialog or a JSON object <code>{ type: "dialog", title: "Confirm", text: "Are you sure?" }</code> or <code>{ type: "sheet", text: "Confirm", color: "green" }</code>
+  </PropDescription>
+</PropBlock>
+<PropBlock type="TEXT" name="actionFeedback" label="Action Feedback">
   <PropDescription>
     Shows a toast popup when the action has been executed. Can either be a text to show or a JSON object including some of the <a class="external text-color-blue" target="_blank" href="https://framework7.io/docs/toast.html#toast-parameters">supported parameters</a>
   </PropDescription>
