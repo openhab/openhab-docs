@@ -191,6 +191,11 @@ The script transformation is also available as profile. When acting as transform
 | `commandFromItemScript` | The `script identifier` for performing transformations of **commands** from the item to the Thing handler.      |
 | `stateFromItemScript`   | The `script identifier` for performing transformations of **state updates** from the item to the Thing handler. |
 
+When a script is not provided, the input for that parameter's action will be discarded, similar to when a script returned a `null` value.
+So be sure to provide a pass-through script for the relevant parameter as necessary.
+A simple inline script would work fine, e.g. `|input` would work for `JS`, `RB` and `GROOVY` scripting.
+However, beware that `stateFromItemScript` _should_ be left blank, because normally state updates aren't sent to the Thing, unless there is a specific reason otherwise.
+
 Example usage in an `.items` file:
 
 ```xtend
