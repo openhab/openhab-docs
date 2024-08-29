@@ -14,11 +14,15 @@ They are often useful, to **interpret received Item values**, like sensor readin
 - Processing of a raw Item value, e.g., Parsing a number from a JSON string, like `{ "temperature": 23.2 }`
 - Conversion of sensor readings, e.g., temperature in degree Celsius can be converted to degree Fahrenheit
 
+## Installation
+
+Transformations are performed by Transformation Services which are available as [transformation add-ons](/addons/#transform).
+The relevant add-on needs to be installed via the Main UI or addons.cfg before use.
+
 ## Usage
 
 Transformations are applicable in Item and Sitemap element labels and inside DSL rules.
-The relevant transformation service needs to be installed via the Main UI or addons.cfg before use.
-Be aware, that some Transformation services rely on transformation files, while others work by directly providing the transformation logic.
+Some Transformation services rely on transformation files, while others work by directly providing the transformation logic.
 Transformation files need to be placed in the directory `$OPENHAB_CONF/transform`.
 
 1. Item and Sitemap Labels
@@ -37,7 +41,7 @@ Transformation files need to be placed in the directory `$OPENHAB_CONF/transform
 
     Usage of Transformations in the [label parameter of Sitemap elements]({{base}}/ui/sitemaps.html#element-type-text) works the same way.
 
-1. Rules
+2. Rules
 
     Transformations can also be [used in rules]({{base}}/configuration/rules-dsl.html#transformations) to transform/translate/convert data.
     The following shows three examples:
@@ -48,12 +52,12 @@ Transformation files need to be placed in the directory `$OPENHAB_CONF/transform
     var fahrenheit = transform("JS", "convert-C-to-F.js", temperature)
     ```
 
-1. Bindings
+3. Bindings
 
     Transformations can sometimes be used in binding add-ons.  For example, transforming an openHAB ON command into "action=powerup" for sending to a device.
     If, and how, this use may be available is described in individual binding documentation.
 
-1. Profiles
+4. Profiles
 
     Transformations can be associated with channels, working on data being passed between bindings and Items. See [profile documentation]({{base}}/configuration/items.html#profiles) for more detail.
 
@@ -191,6 +195,11 @@ The script transformation is also available as profile. When acting as transform
 | `commandFromItemScript` | The `script identifier` for performing transformations of **commands** from the item to the Thing handler.      |
 | `stateFromItemScript`   | The `script identifier` for performing transformations of **state updates** from the item to the Thing handler. |
 
+When a script is not provided, the input for that parameter's action will be discarded, similar to when a script returned a `null` value.
+So be sure to provide a pass-through script for the relevant parameter as necessary.
+A simple inline script would work fine, e.g. `|input` would work for `JS`, `RB` and `GROOVY` scripting.
+However, beware that `stateFromItemScript` _should_ be left blank, because normally state updates aren't sent to the Thing, unless there is a specific reason otherwise.
+
 Example usage in an `.items` file:
 
 ```xtend
@@ -211,6 +220,6 @@ Number <itemName> { channel="<channelUID>"[profile="transform:RB", toItemScript=
 
 ::: tip
 
-You can find the available transformation services [here]({{base}}/adddons/#transform).
+You can find the available transformation services [here](/addons/#transform).
 
 :::

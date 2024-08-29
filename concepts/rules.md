@@ -266,7 +266,7 @@ Helper Libraries simplify the interaction with the openHAB runtime by providing 
 By providing this functionality, they help avoid type errors and heavily reduce the amount of boilerplate code required to import and use openHAB classes.
 
 Sometimes the helper library will come with the add-on, e.g. [JS Scripting](/addons/automation/jsscripting) with the [openhab-js](https://github.com/openhab/openhab-js) library.
-Other times the helper library must be installed separately, searching in the community form might help.
+Other times the helper library must be installed separately, searching in the community forums might help.
 
 ## Comprehensive Examples
 
@@ -625,7 +625,7 @@ rule "Window open reminder" do
   changed gWindows.members, to: OPEN, for: 1.hour
   run do |event|
     # Item guaranteed to be OPEN here, no need to check
-    notify("#{event.item.label} is open for an hour!")
+    Notification.send("#{event.item.label} is open for an hour!")
   end
 end
 ```
