@@ -195,7 +195,7 @@ Up to this point the tutorial has focused on list item widgets because as someon
 However, there is that Overview tab that needs to be manually populated too.
 This page will be populated with stand-alone widgets or card widgets.
 
-Often, one will want to have one single stand-alone widget to represent a single Equipment, for example a thermostat or a Chomecast.
+Often, one will want to have one single stand-alone widget to represent a single Equipment, for example a thermostat or a Chromecast.
 These will be a single card that provides the display and interaction with many Items.
 If one has more than one Equipment that will use the same widget, or the widget is complex, create a custom widget for these.
 Once created, apply the custom widget to the Equipment Group Item in the model.
