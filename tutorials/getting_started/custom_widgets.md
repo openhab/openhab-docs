@@ -413,7 +413,7 @@ For this tutorial we will have two rows and three columns.
 
 ![Overview row and columns](images/overview_row_and_columns.png)
 
-Now we will add a custom widget to that first columnn.
+Now we will add a custom widget to that first column.
 In this case we will add a garage door widget that includes a camera feed, shows the door status, and allows triggering two garage doors.
 Click on the + in that first cell and select the desired widget from the list.
 This is a simple widget that doesn't use any properties, so we are done.
