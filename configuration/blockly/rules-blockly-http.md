@@ -21,7 +21,7 @@ Depending on the required functionality it changes its design.
 
 ### Option Toggles
 
-There are two toggle buttons that allow the block to be small for simple requests and add further options to be used:
+There are three toggle buttons that allow the block to be small for simple requests and add further options to be used:
 
 ![http-toggle](../images/blockly/blockly-http-toggles.png)
 
