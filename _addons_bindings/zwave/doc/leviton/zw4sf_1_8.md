@@ -141,7 +141,7 @@ This parameter has the configuration ID ```config_6_1``` and is of type ```INTEG
 
 Controls behavior of the status LED
 0=Off, 254=Status Mode, 255=Locator Mode
-The following option values may be configured, in addition to values in the range 0 to 255 -:
+The following option values may be configured -:
 
 | Value  | Description |
 |--------|-------------|

@@ -400,7 +400,7 @@ This parameter determines the minimum time that must elapse before a new power r
         <description><![CDATA[
 “Lifeline Group” reports the status of the Device status and allows to assign only one device (gateway by default); only 1 node is allowed<br /> <h1>Overview</h1><p>Association Group 1 - Lifeline</p><p>1. INDICATOR_REPORT : LED status</p><p>2. DEVICE_RESET_LOCALLY_NOTIFICATION : triggered upon request</p><p>3. SWITCH_BINARY_REPORT : status change report for all outputs O (O, O1, O2, …) - common</p><p>4. NOTIFICATION_REPORT : triggered on Overheat</p><p>5. NOTIFICATION_REPORT : triggered on Over-current detected sum of all outputs O (O1+O2+…)</p><p>6. NOTIFICATION_REPORT : triggered on Over-voltage detected</p><p>7. NOTIFICATION_REPORT : triggered on AC mains disconnected</p><p>8. METER_REPORT : triggered by the load power consumption of all connected loads to all outputs O (O1+O2+…) (according to the settings of Parameters from No. 36 to 43)</p>
         ]]></description>
-        <multipleLimit>1</multipleLimit>
+        <multipleLimit>2</multipleLimit>
       </parameter>
 
       <parameter name="group_2" type="text" groupName="association" multiple="true">

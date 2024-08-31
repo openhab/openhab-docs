@@ -708,7 +708,7 @@ Association Group 1 - Lifeline
 
 8. METER_REPORT : triggered by the load power consumption of all connected loads to all outputs O (O1+O2+…) (according to the settings of Parameters from No. 36 to 43)
 
-Association group 1 supports 1 node.
+Association group 1 supports 2 nodes.
 
 ### Group 2: Association Group 2
 

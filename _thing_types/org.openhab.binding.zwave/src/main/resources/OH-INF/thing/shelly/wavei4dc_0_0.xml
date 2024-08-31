@@ -168,7 +168,7 @@ Reset to factory default settings and removed from the Z-Wave network.<br /> <h1
         <description><![CDATA[
 “Lifeline Group” reports the status of the Device and allows to assign only one device (gateway by default).<br /> <h1>Overview</h1><p>The following command classes are supported:<br /></p><p>1. INDICATOR_REPORT : LED status</p><p>2. DEVICE_RESET_LOCALLY_NOTIFICATION : triggered upon request</p><p>3. SWITCH_BINARY_REPORT : status change report on SW1</p><p>4. SWITCH_BINARY_REPORT : status change report on SW2</p><p>5. SWITCH_BINARY_REPORT : status change report on SW3</p><p>6. SWITCH_BINARY_REPORT : status change report on SW4</p>
         ]]></description>
-        <multipleLimit>1</multipleLimit>
+        <multipleLimit>2</multipleLimit>
       </parameter>
 
       <parameter name="group_2" type="text" groupName="association" multiple="true">

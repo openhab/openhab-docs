@@ -27,8 +27,8 @@ The binding uses a standard Z-Wave serial stick to communicate with the Z-Wave d
 ## Supported Things
 
 The ZWave binding provides support for a large number of devices (currently 802 devices from 114 manufacturers).
-See the [full list of supported things](doc/things.md). Note: As of OpenHAB 4.1 Controllers based on Silabs SDK 7 are partially supported.
-For SDK 7 controllers "Classic" inclusion (node numbers 1-232) is supported, but the higher power Long Range inclusion (node numbers over 255) is not.
+See the [full list of supported things](doc/things.md). Note: As of OpenHAB 4.1 700 chip Controllers are fully supported.  800 chip controllers and
+800 chip devices are supported for "Classic" inclusion (node numbers 1-232), but not for Long Range (LR) inclusion (node numbers over 255).
 
 
 ### ZWave Serial Adapter

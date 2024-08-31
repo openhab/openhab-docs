@@ -53,6 +53,7 @@ Z-WaveTM smart switch with power management<br /> <h1>Overview</h1><p>The Wave 1
       <property name="manufacturerId">0460</property>
       <property name="manufacturerRef">0002:0084</property>
       <property name="dbReference">1577</property>
+      <property name="defaultAssociations">1</property>
     </properties>
 
     <!-- CONFIGURATION DESCRIPTIONS -->

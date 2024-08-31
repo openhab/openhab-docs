@@ -309,7 +309,7 @@ When the shutter is not calibrated (or the motor is not equipped with a limit sw
         <description><![CDATA[
 Association group 1 – “Lifeline Group” reports the status of the Device status and allows to assign only one device (gateway by default); only 1 node is allowed. The following command classes are supported<br /> <h1>Overview</h1><p>Association Group 1 - Lifeline</p><p> 1. DEVICE_RESET_LOCALLY_NOTIFICATION : triggered upon request</p><p> 2. SWITCH_BINARY_REPORT : status change report for all outputs O (O, O1, O2, …) - common</p><p> 3. NOTIFICATION_REPORT : triggered on Overheat</p><p> 4. NOTIFICATION_REPORT : triggered on Over-load detected sum of all outputs O (O1+O2+…)</p><p> 5. METER_REPORT : triggered according to Configuration parameters</p>
         ]]></description>
-        <multipleLimit>1</multipleLimit>
+        <multipleLimit>2</multipleLimit>
       </parameter>
 
       <parameter name="group_2" type="text" groupName="association" multiple="true">

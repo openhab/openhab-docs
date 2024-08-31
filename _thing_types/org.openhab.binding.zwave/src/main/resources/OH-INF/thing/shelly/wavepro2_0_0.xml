@@ -231,7 +231,7 @@ This parameter defines how the Device should treat the switch (which type) conne
         <description><![CDATA[
 Lifeline Group reports the Device status and allows for assigning single Device only (Gateway by default)<br /> <h1>Overview</h1><p>Supports the following command classes:</p><p> INDICATOR_REPORT : LED status<br />DEVICE_RESET_LOCALLY_NOTIFICATION : triggered upon request<br />SWITCH_BINARY_REPORT : status change report for output O (O1)<br />NOTIFICATION_REPORT : triggered on Overheat</p>
         ]]></description>
-        <multipleLimit>1</multipleLimit>
+        <multipleLimit>2</multipleLimit>
       </parameter>
 
       <parameter name="group_2" type="text" groupName="association" multiple="true">

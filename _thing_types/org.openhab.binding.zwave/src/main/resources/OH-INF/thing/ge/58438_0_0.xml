@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="ge_58438_00_000" listed="false">
+    <label>58438 Enbrighten Z-Wave Plus In-Wall Smart Paddle Dimmer, 700 Series</label>
+    <description><![CDATA[
+Enbrighten Z-Wave Plus In-Wall Smart Paddle Dimmer, 700 Series<br /> <h1>Overview</h1><p>Home automation is even smarter with the Enbrighten Z-Wave In-Wall Smart Dimmer with QuickFit and SimpleWire. When paired with a compatible hub, the hardwired smart switch operates wall, ceiling and accent lighting through individual commands and programmed settings. Wirelessly control and schedule indoor or outdoor fixtures for effortless management of your home. Your automation possibilities are seemingly infinite when connected to hubs from Ring, Ezlo, SmartThings, HomeSeer, American Standard and more.</p><p>Experience the latest generation of Z-Wave™ smart controls for in-wall configurations with paddle-style dimmers to accommodate any home.</p><p>In-Wall Smart Switch with QuickFit and SimpleWire enhancements. Revolutionary QuickFit design features a housing depth that is up to 20 percent smaller than the previous Z-Wave models. This reduced size coupled with the elimination of heat taps provides a better fit in older style boxes and multi-gang configurations. SimpleWire technology allows line and load to automatically be configured with auto-sensing line-load terminals. All of this is coupled with Z-Wave S2 and Smart Start allows for effortless installation while being safer than ever!<br /></p> <br /> <h2>Inclusion Information</h2><p>Once the controller is ready to add your device, press the top or bottom of </p><p> the rocker.</p><ol><li>Follow the instructions for your Z-Wave certified controller to add a device to the Z-Wave network.</li><li>Once the controller is ready to add your device, press the top or bottom of the rocker.</li></ol><br /><p>Follow the instructions for your Z-Wave certified controller to add a device to the Z-Wave network.</p><p>Once the controller is ready to add your device, press and release the top or bottom of the wireless smart switch (rocker).</p> <br /> <h2>Exclusion Information</h2><p> Once the controller is ready to remove your device, press the top or bottom of </p><p> the rocker.</p><p><br /></p><p>Factory reset:<br /></p><ol><li>Pull up the air gap switch.</li><li>While pressing the OFF (bottom) button, push in the air gap and continue pressing the OFF button. The LED ﬂashes through the eight colors once.</li></ol><ol><li>Follow the instructions for your Z-Wave certified controller to add a device to the Z-Wave network.</li><li>Once the controller is ready to add your device, press the top or bottom of the rocker.</li></ol><br /><p>Follow the instructions for your Z-Wave certified controller to add a device to the Z-Wave network.</p><p>Once the controller is ready to add your device, press and release the top or bottom of the wireless smart switch (rocker).</p> <br /> <h2>Wakeup Information</h2><p><br /></p><p><br /></p><p><br /></p>
+    ]]></description>
+    <category>WallSwitch</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_dimmer" typeId="switch_dimmer">
+        <label>Dimmer</label>
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+          <property name="binding:Command:OnOffType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+        </properties>
+      </channel>
+      <channel id="scene_number" typeId="scene_number">
+        <label>Scene Number</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_CENTRAL_SCENE</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Jasco Products</property>
+      <property name="modelId">58438</property>
+      <property name="manufacturerId">0063</property>
+      <property name="manufacturerRef">4944:3430</property>
+      <property name="dbReference">1627</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_0_0" type="integer" groupName="configuration">
+        <label>0: </label>
+        <description><![CDATA[
+<br /> <h1>Overview</h1><p><br /></p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_3_1" type="integer" groupName="configuration">
+        <label>3: LED Light Mode</label>
+        <description><![CDATA[
+Set the LED Light Mode<br /> <h1>Overview</h1><p>This parameter changes the Indicator light (located at the bottom of the paddle, or behind the toggle) </p><p>between the 4 options (This line is only for the Paddle On/Off Switches)</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">LED ON when device is OFF</option>
+          <option value="1">LED ON when device is ON</option>
+          <option value="2">LED always OFF</option>
+          <option value="3">LED Always ON</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_4_1" type="integer" groupName="configuration">
+        <label>4: Invert Switch</label>
+        <description><![CDATA[
+Reverse the default ON/OFF Paddle switch setting<br /> <h1>Overview</h1><p>In case the user installs the switch upside down, this will invert the up and down function.</p><p>If this inverter switch is enabled, all setup keys will subject to change and according to the new inverter switch definition.</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Default Paddle Switch orientation</option>
+          <option value="1">Invert (up side down) the Paddle Switch orientation</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_5_1" type="integer" groupName="configuration">
+        <label>5: 3-Way Type</label>
+        <description><![CDATA[
+Configure between standard 3-Way Switch or Add-On Switch is being used<br /> <h1>Overview</h1><p>Configure between standard 3-Way Switch or Add-On Switch is being used<br /></p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Add on 3 way switch</option>
+          <option value="1">Standard 3-Way Switch</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_19_1" type="integer" groupName="configuration">
+        <label>19: Alternate Exclusion</label>
+        <description><![CDATA[
+Alternative way to perform Exclusion<br /> <h1>Overview</h1><p>This parameter changes how the On/Off Switch will send the NIF so it can be excluded from the network </p><p>(This is for both Paddle and Toggle On/Off Switches)</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Default Press Single Paddle switch (up or down paddle switch) once</option>
+          <option value="1">Press Menu button once</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_34_1" type="integer" groupName="configuration">
+        <label>34: LED Light Color</label>
+        <description><![CDATA[
+Set the LED Light Color<br /> <h1>Overview</h1><p>The Switch will contain a multi-color LED and we want to be able to adjust it between these colors<br /></p>
+        ]]></description>
+        <default>5</default>
+        <options>
+          <option value="1">RED</option>
+          <option value="2">ORANGE</option>
+          <option value="3">YELLOW</option>
+          <option value="4">GREEN</option>
+          <option value="5">BLUE</option>
+          <option value="6">PINK</option>
+          <option value="7">PURPLE</option>
+          <option value="8">WHITE</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_35_1" type="integer" groupName="configuration">
+        <label>35: LED Light Intensity</label>
+        <description><![CDATA[
+Set the LED Light Intensity<br /> <h1>Overview</h1><p>This parameter allows the user to change how bright the LED Indicator light is<br /></p>
+        ]]></description>
+        <default>4</default>
+        <options>
+          <option value="1"></option>
+          <option value="2"></option>
+          <option value="3"></option>
+          <option value="4"></option>
+          <option value="5"></option>
+          <option value="6"></option>
+          <option value="7"></option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_36_1" type="integer" groupName="configuration">
+        <label>36: Guidelight Mode Intensity</label>
+        <description><![CDATA[
+Set the Guidelight Mode Intensity<br /> <h1>Overview</h1><p>This parameter allows the user to change how bright the LED Indicator light is when Paremeter 3 is set to 0 </p><p>(Guidelight Setting)</p>
+        ]]></description>
+        <default>4</default>
+        <options>
+          <option value="1"></option>
+          <option value="2"></option>
+          <option value="3"></option>
+          <option value="4"></option>
+          <option value="5"></option>
+          <option value="6"></option>
+          <option value="7"></option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_39_1" type="integer" groupName="configuration">
+        <label>39: Relay Control</label>
+        <description><![CDATA[
+Relay Control<br /> <h1>Overview</h1><p>This parameter allows the user to disable the internal relay so that the power is always on. The On/Off button will still perform Central Scene Command Class Commands, however the buttons will not control the load until it has been reversed.</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Relay is controlled by the paddle switch</option>
+          <option value="1">Relay is not controlled, relay is always OFF, and power always ON</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_84_1" type="integer" groupName="configuration">
+        <label>84: Reset Factory Default</label>
+        <description><![CDATA[
+Reset Switch to Factory Defaults<br /> <h1>Overview</h1><p>This parameter will cause the switch to reset to factory defaults without touching the switch. Once set to 1, the Switch should reset to factory defaults which will reverse this parameter back to 0. The switch should perform all normal actions when it is factory reset.</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">No specific behavior</option>
+          <option value="1">Reset to factory defaults</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Lifeline</label>
+        <description><![CDATA[
+Lifeline, Binary Switch Report<br /> <h1>Overview</h1><p>Association Group 1 supports Lifeline, Binary Switch Report<br /></p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: Single Press</label>
+        <description><![CDATA[
+Single Press<br /> <h1>Overview</h1><p> Association Group 2 supports Basic Set and is controlled by pressing the ON/OFF button with the local load</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_3" type="text" groupName="association" multiple="true">
+        <label>3: Double Press</label>
+        <description><![CDATA[
+Double Press<br /> <h1>Overview</h1><p>Association Group 3 supports Basic Set and is controlled by double pressing the ON/OFF button<br /></p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

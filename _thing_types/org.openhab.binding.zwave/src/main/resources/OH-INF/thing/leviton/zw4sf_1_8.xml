@@ -101,6 +101,7 @@ Controls behavior of the status LED<br /> <h1>Overview</h1><p>0=Off, 254=Status 
           <option value="254">Status Mode</option>
           <option value="255">Locator Mode</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

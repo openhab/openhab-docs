@@ -428,7 +428,7 @@ DEVICE\_RESET\_LOCALLY_NOTIFICATION : triggered upon request
 SWITCH\_BINARY\_REPORT : status change report for output O (O1)  
 NOTIFICATION_REPORT : triggered on Overheat
 
-Association group 1 supports 1 node.
+Association group 1 supports 2 nodes.
 
 ### Group 2: Association Group 2
 

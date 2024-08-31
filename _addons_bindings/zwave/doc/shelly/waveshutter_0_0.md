@@ -605,7 +605,7 @@ Association Group 1 - Lifeline
 
 5. METER_REPORT : triggered according to Configuration parameters
 
-Association group 1 supports 1 node.
+Association group 1 supports 2 nodes.
 
 ### Group 2: Association Group 2
 

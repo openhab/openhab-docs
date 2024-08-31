@@ -315,7 +315,7 @@ The following command classes are supported:
 
 6. SWITCH\_BINARY\_REPORT : status change report on SW4
 
-Association group 1 supports 1 node.
+Association group 1 supports 2 nodes.
 
 ### Group 2: Group 2
 
