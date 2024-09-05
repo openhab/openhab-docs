@@ -40,8 +40,7 @@ Transformation files need to be placed in the directory `$OPENHAB_CONF/transform
     ```
 
     Usage of Transformations in the [label parameter of Sitemap elements]({{base}}/ui/sitemaps.html#element-type-text) works the same way.
-
-2. Rules
+1. Rules
 
     Transformations can also be [used in rules]({{base}}/configuration/rules-dsl.html#transformations) to transform/translate/convert data.
     The following shows three examples:
@@ -52,12 +51,12 @@ Transformation files need to be placed in the directory `$OPENHAB_CONF/transform
     var fahrenheit = transform("JS", "convert-C-to-F.js", temperature)
     ```
 
-3. Bindings
+1. Bindings
 
     Transformations can sometimes be used in binding add-ons.  For example, transforming an openHAB ON command into "action=powerup" for sending to a device.
     If, and how, this use may be available is described in individual binding documentation.
 
-4. Profiles
+1. Profiles
 
     Transformations can be associated with channels, working on data being passed between bindings and Items. See [profile documentation]({{base}}/configuration/items.html#profiles) for more detail.
 
