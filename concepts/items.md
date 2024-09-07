@@ -61,13 +61,16 @@ For available Group functions and examples see [Configuration Guide](../configur
 
 ### DateTimeType
 
-`DateTimeType` objects are parsed using Java's `SimpleDateFormat.parse()` using the first matching pattern:
+`DateTimeType` objects are parsed using Java's `DateTimeFormatter` with the first matching pattern:
 
-1. `yyyy-MM-dd'T'HH:mm:ss.SSSZ`
-1. `yyyy-MM-dd'T'HH:mm:ss.SSSz`
-1. `yyyy-MM-dd'T'HH:mm:ss.SSSX`
-1. `yyyy-MM-dd'T'HH:mm:ssz`
-1. `yyyy-MM-dd'T'HH:mm:ss`
+1. `yyyy-MM-dd'T'HH:mm[:ss[.SSS]]Z` or `yyyy-MM-dd HH:mm[:ss[.SSS]]Z`
+1. `yyyy-MM-dd'T'HH:mm[:ss[.SSS]]X` or `yyyy-MM-dd HH:mm[:ss[.SSS]]X`
+1. `yyyy-MM-dd'T'HH:mm[:ss[.SSS]]z` or `yyyy-MM-dd HH:mm[:ss[.SSS]]z`
+1. `yyyy-MM-dd'T'HH:mm[:ss[.SSS]]` or `yyyy-MM-dd HH:mm[:ss[.SSS]]`
+1. `HH:mm[:ss[.SSS]]` with or without a timezone
+1. A string of fewer than 12 digits as epoch in seconds
+1. A string of 12 digits of more as epoch in milliseconds
+1. `yyyy-MM-dd` with or without a timezone
 
 | Literal | Standard           | Example                               |
 |---------|--------------------|---------------------------------------|
