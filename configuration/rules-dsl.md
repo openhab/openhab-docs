@@ -173,7 +173,7 @@ You can either use some pre-defined expressions for timers or use a [cron expres
 ```java
 Time is midnight
 Time is noon
-Time is <item> [timeOnly]
+Time is <item> [timeOnly] [offset=N]
 Time cron "<cron expression>"
 ```
 
@@ -190,6 +190,7 @@ A cron expression takes the form of six or optionally seven fields:
 You may use the generator at [FreeFormatter.com](https://www.freeformatter.com/cron-expression-generator-quartz.html) to generate your cron expressions.
 
 When using an item and you want to ignore the date-portion of that item the `timeOnly` option can be used.
+A positive or negative offset in seconds, relative to the date/time of the given item can be specified.
 
 ### System-based Triggers
 
