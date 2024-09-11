@@ -40,7 +40,12 @@ The simplest form is shown by default and accepts the destination URI as String.
 By activating the toggles the timeout, request headers and query parameters can be provided.
 Instead of creating a URI containing the query parameters, you can use the query parameter option and provide a [Dictionary](rules-blockly-standard-ext.md#dictionary-for-managing-key--value-pairs) of query parameters.
 The provided parameters will automatically be URI encoded.
-See the [POST-Request](#http-request-post) below for an example showing these additional fields.
+
+Here is an example also using a query parameter.
+
+![http-get-complex](../images/blockly/blockly-http-get-complex.png)
+
+See the [POST-Request](#http-request-post) below for an example showing the use additional fields.
 
 ### HTTP Request POST
 
@@ -56,7 +61,7 @@ For `application/x-www-form-urlencoded`, you can provide a [Dictionary](rules-bl
 
 ![http-post-simple](../images/blockly/blockly-http-post-simple.png)
 
-Here is a more complex example that additionally sets a header, a query and the timeout with a `application/x-www-form-urlencoded` payload:
+Here is a more complex example that additionally sets a header and a timeout:
 
 ![http-post-complex](../images/blockly/blockly-http-post-complex.png)
 
@@ -70,6 +75,8 @@ The simplest form is shown by default and accepts the destination URI as String 
 - the content to be sent to the destination
 
 ![http-put-simple](../images/blockly/blockly-http-put-simple.png)
+
+Notice the construction of an object with a [Dictionary](rules-blockly-standard-ext.md#dictionary-for-managing-key--value-pairs) also containing a List for the JSON payload. 
 
 ### HTTP Request DELETE
 
