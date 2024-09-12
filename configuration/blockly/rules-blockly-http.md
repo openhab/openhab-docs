@@ -76,7 +76,7 @@ The simplest form is shown by default and accepts the destination URI as String 
 
 ![http-put-simple](../images/blockly/blockly-http-put-simple.png)
 
-Notice the construction of an object with a [Dictionary](rules-blockly-standard-ext.md#dictionary-for-managing-key--value-pairs) also containing a List for the JSON payload. 
+Notice the construction of an object with a [Dictionary](rules-blockly-standard-ext.md#dictionary-for-managing-key--value-pairs) also containing a List for the JSON payload.
 
 ### HTTP Request DELETE
 
