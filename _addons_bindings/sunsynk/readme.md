@@ -5,7 +5,7 @@ title: SunSynk - Bindings
 type: binding
 description: "This binding integrates the [Sun Synk Connect web services](https://www.sunsynk.net/)."
 since: 3x
-install: manual
+install: auto
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

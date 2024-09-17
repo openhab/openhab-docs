@@ -5,7 +5,7 @@ title: FENECON - Bindings
 type: binding
 description: "The FENECON Binding integrates the [FENECON energy storage system](https://fenecon.de/) device into the openHAB system via [REST-API](https://docs.fenecon.de/_/de/fems/fems-app/OEM_App_REST_JSON.html)."
 since: 3x
-install: manual
+install: auto
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

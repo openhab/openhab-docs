@@ -5,7 +5,7 @@ title: Flume - Bindings
 type: binding
 description: "This binding will interface with the cloud API to retrieve water usage from your [Flume](https://flumewater.com/) water monitor."
 since: 3x
-install: manual
+install: auto
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
