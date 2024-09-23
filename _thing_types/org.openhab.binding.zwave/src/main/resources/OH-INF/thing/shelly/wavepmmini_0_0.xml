@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="shelly_wavepmmini_00_000" listed="false">
+    <label>Wave PM Mini Z-Wave smart power meter, 1 channel 16 A</label>
+    <description><![CDATA[
+Z-Wave smart power meter, 1 channel 16 A<br /> <h1>Overview</h1><p>The Device is a small form factor smart power meter, which allows remote monitoring of an electric appliance's power consumption with a load of up to 16 A.<br /></p> <br /> <h2>Inclusion Information</h2><ol><li>Connect the Device to a power supply.</li><li>Check if the blue LED is blinking in Mode 1. If so, the Device is not added to a Z-Wave® network.</li><li>Enable add/remove mode on the gateway.</li><li>To enter the Setting mode, quickly press and hold the S button on the Device until the LED turns solid blue.</li><li>Quickly release and then press and hold (&gt; 2s) the S button on the Device until the blue LED starts blinking in Mode 3. Releasing the S button will start the Learn mode.</li><li>The blue LED will be blinking in Mode 2 during the adding process.</li><li>The green LED will be blinking in Mode 1 if the Device is successfully added to a Z-Wave® network.</li></ol><p>Note! In Setting mode, the Device has a timeout of 10s before entering again into Normal mode.</p> <br /> <h2>Exclusion Information</h2><ol><li>Connect the Device to a power supply.</li><li>Check if the green LED is blinking in Mode 1. If so, the Device is added to a Z-Wave® network.</li><li>Enable add/remove mode on the gateway.</li><li>To enter the Setting mode, quickly press and hold the S button on the Device until the LED turns solid blue.</li><li>Quickly release and then press and hold (&gt; 2s) the S button on the Device until the blue LED starts blinking in Mode 3. Releasing the S button will start the LEARN MODE.</li><li>The blue LED will be blinking in Mode 2 during the removing process.</li><li>The blue LED will be blinking in Mode 1 if the Device is successfully removed from a Z-Wave® network.</li></ol><p>Note! In Setting mode, the Device has a timeout of 10s before entering again into Normal mode.</p> <br /> <h2>Wakeup Information</h2><p><br /></p>
+    ]]></description>
+    <category>Battery</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="meter_kwh" typeId="meter_kwh">
+        <label>Electric meter (kWh)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_KWh</property>
+        </properties>
+      </channel>
+      <channel id="meter_watts" typeId="meter_watts">
+        <label>Electric meter (watts)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_W</property>
+        </properties>
+      </channel>
+      <channel id="alarm_heat" typeId="alarm_heat">
+        <label>Alarm (heat)</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=HEAT</property>
+        </properties>
+      </channel>
+      <channel id="alarm_power" typeId="alarm_power">
+        <label>Alarm (power)</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=POWER_MANAGEMENT</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Shelly</property>
+      <property name="modelId">Wave PM Mini</property>
+      <property name="manufacturerId">0460</property>
+      <property name="manufacturerRef">0007:0081</property>
+      <property name="dbReference">1638</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_36_1" type="integer" groupName="configuration">
+        <label>36: O (O1) Power report on change</label>
+        <description><![CDATA[
+Minimum change in consumed power that will result in sending a new report to the gateway.<br /> <h1>Overview</h1><p>0 - reports are disabled<br />1-100 (1-100%) - change in power</p><p>NOTE: Regardless of the power consumption change in percentage, the report will not be sent more frequently than defined by Parameter No. 39.<br /></p>
+        ]]></description>
+        <default>50</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_39_1" type="integer" groupName="configuration">
+        <label>39: Minimum time between reports (O) O1</label>
+        <description><![CDATA[
+Minimum time that must elapse before a new power report on O (O1) is sent to the gateway.<br /> <h1>Overview</h1><p>0 - reports are disabled<br />1-120 (1-120s) - report interval</p><p>NOTE: This Parameter is in relation to Parameter No. 36.<br /></p><p>NOTE: Setting the value to less than 30s can cause the Z-Wave network congestion state (slow Device response and decreased network stability).<br /></p>
+        ]]></description>
+        <default>30</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_120_1" type="integer" groupName="configuration">
+        <label>120: Factory Reset</label>
+        <description><![CDATA[
+Reset to factory default settings and removed from the Z-Wave network<br /> <h1>Overview</h1><p>0 - Don’t do Factory reset<br />1 - Do the Factory reset</p>
+        ]]></description>
+        <default>0</default>
+        <advanced>true</advanced>
+      </parameter>
+
+      <parameter name="config_201_4" type="integer" groupName="configuration" readOnly="true">
+        <label>201: Serial Number 1</label>
+        <description>Part of device’s serial number.</description>
+        <default>0</default>
+        <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_202_4" type="integer" groupName="configuration" readOnly="true">
+        <label>202: Serial Number 2</label>
+        <description>Part of device’s serial number.</description>
+        <default>0</default>
+        <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_203_4" type="integer" groupName="configuration" readOnly="true">
+        <label>203: Serial Number 3</label>
+        <description>Part of device’s serial number.</description>
+        <default>0</default>
+        <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

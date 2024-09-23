@@ -128,7 +128,7 @@ The following table summarises the channels available for the Wave Shutter -:
 
 | Channel Name | Channel ID | Channel Type | Category | Item Type |
 |--------------|------------|--------------|----------|-----------|
-| Blinds Control | blinds_control | blinds_control | Blinds | Rollershutter | 
+| Shutter Position | blinds_control | blinds_control | Blinds | Rollershutter | 
 | Electric meter (kWh) | meter_kwh | meter_kwh | Energy | Number | 
 | Electric meter (watts) | meter_watts | meter_watts | Energy | Number | 
 | Alarm (heat) | alarm_heat | alarm_heat | Fire | Switch | 
@@ -140,15 +140,15 @@ The following table summarises the channels available for the Wave Shutter -:
 | Alarm (heat) 1 | alarm_heat1 | alarm_heat | Fire | Switch | 
 | Alarm (power) 1 | alarm_power1 | alarm_power | Energy | Switch | 
 | Alarm (system) 1 | alarm_system1 | alarm_system |  | Switch | 
-| Lamella Control | blinds_control2 | blinds_control | Blinds | Rollershutter | 
+| Lamella Position | blinds_control2 | blinds_control | Blinds | Rollershutter | 
 | Electric meter (kWh) 2 | meter_kwh2 | meter_kwh | Energy | Number | 
 | Electric meter (watts) 2 | meter_watts2 | meter_watts | Energy | Number | 
 | Alarm (heat) 2 | alarm_heat2 | alarm_heat | Fire | Switch | 
 | Alarm (power) 2 | alarm_power2 | alarm_power | Energy | Switch | 
 | Alarm (system) 2 | alarm_system2 | alarm_system |  | Switch | 
 
-### Blinds Control
-
+### Shutter Position
+Sets the blinds shutter position.
 
 Provides start / stop control of blinds.
 
@@ -203,6 +203,8 @@ The following state translation is provided for this channel to the ```Switch```
 ### Blinds Control
 Provides start / stop control of blinds.
 
+Provides start / stop control of blinds.
+
 The ```blinds_control1``` channel is of type ```blinds_control``` and supports the ```Rollershutter``` item and is in the ```Blinds``` category.
 
 ### Electric meter (kWh) 1
@@ -251,7 +253,9 @@ The following state translation is provided for this channel to the ```Switch```
 | OFF | OK |
 | ON | Alarm |
 
-### Lamella Control
+### Lamella Position
+Sets the blinds lamella position.
+
 Provides start / stop control of blinds.
 
 The ```blinds_control2``` channel is of type ```blinds_control``` and supports the ```Rollershutter``` item and is in the ```Blinds``` category.

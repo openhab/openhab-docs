@@ -1,0 +1,334 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="aeotec_zwa045_00_000" listed="false">
+    <label>ZWA045 Motion, light, and temperature sensor</label>
+    <description><![CDATA[
+Motion, light, and temperature sensor<br /> <h1>Overview</h1><p>Aeotec TriSensor 8 was developed to detect ambient values and movement and to transmit them with Z-Wave Plus. It is powered by Aeotec’s Gen8 technology.</p><p>Aeotec TriSensor is a universal Z-Wave Plus compatible product, consists of temperature, lighting and motion sensors, powered by a CR123A battery. It can be included and operated in any Z-Wave network with other Z-Wave certified devices from other manufacturers and/or other applications. By the built-in motion sensor, an alarm will be sent to the gateway when the motion sensor is triggered.</p> <br /> <h2>Inclusion Information</h2><p> Aeotec Smart Home Hub / SmartThings:</p><p>1. Open SmartThings app.</p><p> 2. Tap + (at the top right corner).</p><p> 3. Tap Add (next to Partner devices)</p><p> 4. Select "Aeotec" in the catalog </p><p> 5. Tap Add without QR Code -&gt; "Motion Sensor" or "Multipurpose Sensor" (Either will work)</p><p> 6. Now tap the Action Button 3x times in 1.5 seconds on your TriSensor 8. </p><p> 7. Select "Secure Setup" when prompted</p><p> 8. Scan the QR code, or choose to enter the 5-digit DSK code.</p><p> Home Assistant / Z-WaveJS:</p><p> 1. Open up Home Assistant</p><p> 2. Click on "Configuration" at the bottom left of the page.</p><p> 3. Click on "Integrations".</p><p> 4. Click on "Configure".</p><p> 5. Click on "ADD NODE".</p><p> 6. Click on "START INCLUSION"</p><p> 7. Tap the TriSensor 8 Action button 3x times within 1.5 seconds to pair it. </p><p> Hubitat:</p><p> 1. Open up your Hubitat interface.</p><p> 2. Click on "Devices".</p><p> 3. Click on "Discover Devices".</p><p> 4. Click on "Z-Wave."</p><p> 5. Click on "Start Z-wave Inclusion."</p><p> 6. Tap the TriSensor 8 Action button 3x times within 1.5 seconds to pair it. </p><p> SmartStart QR code scanning:</p><p> If your Z-Wave gateway supports SmartStart, you can scan the QR code on the TriSensor 8 to automatically pair the sensor if your Z-Wave hub supports this.</p><p> For most other hubs:</p><p> 1. Set your Z-Wave hub to connect new Z-Wave devices.</p><p>2. Tap the TriSensor 8 action button 3x times within 1.5 seconds. </p><p> 3. If prompted, scan the QR code or enter the 5-digit DSK code. </p><p>Press once TriSensor’s Action Button. If it is the first installation, the yellow LED will keep solid until whole network processing is complete. If successful, the LED will flash white -&gt; green -&gt; white -&gt; green, after 2 seconds finished. If failed, the yellow LED lasts for 30 seconds, then the green LED flashes once. If it is the S2 encryption network, please enter the first 5 digits of DSK.</p> <br /> <h2>Exclusion Information</h2><p>Your TriSensor 8 can be removed from your Z-Wave network at any time. You'll need to use your Z-Wave network's main controller to do this and the following instructions tell you how to do this. If you are using other products as your main Z-Wave controller, please refer to the part of their respective manuals that tells you how to remove devices from your network. </p><p>Using an existing gateway:</p><p>You may need to refer to your gateway's method of including devices if you do not know how to pair a Z-Wave device. You may use any gateway to perform an unpair/removal on TriSensor 8 even if they are not paired together to factory reset TriSensor 8.</p><p>1. Set your Z-Wave gateway into Z-Wave unpair (exclusion) mode. </p><p>2. Tap the action button 3x times within 1.5 seconds; the red LED will light up. </p><p>Press once TriSensor’s Action Button. If it is the first installation, the yellow LED will keep solid until whole network processing is complete. If successful, the LED will flash white -&gt; green -&gt; white -&gt; green, after 2 seconds finished. If failed, the yellow LED lasts for 30 seconds, then the green LED flashes once. If it is the S2 encryption network, please enter the first 5 digits of DSK.</p> <br /> <h2>Wakeup Information</h2><p>In order to configure TriSensor 8, you must wake up TriSensor 8 using the below button press function. This section will go over the manual wakeup of this sensor in case you don't want to wait for configuration. </p><p>Typically the TriSensor 8 will wake up automatically using the Wakeup command class, its default wakeup timeframe is once every 43200 seconds or once every 12 hours. </p><p>Quick Wakeup.</p><p>1. Press and hold TriSensor 8 Action button for 3 seconds.</p><p>2. Wait until the LED flashes a blue color.</p><p>3. Release TriSensor 8 Action Button. </p><p>Any queued commands in your Z-Wave Controller will be sent over. </p><p>Press and hold the button at least 2s until Red Led is on and then release the button,device will send wakeup notification to controller if device is in a Z-Wave network.</p>
+    ]]></description>
+    <category>Sensor</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="sensor_temperature" typeId="sensor_temperature">
+        <label>Sensor (temperature)</label>
+        <properties>
+          <property name="binding:*:QuantityType">COMMAND_CLASS_SENSOR_MULTILEVEL;type=TEMPERATURE</property>
+        </properties>
+      </channel>
+      <channel id="sensor_luminance" typeId="sensor_luminance">
+        <label>Sensor (luminance)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_SENSOR_MULTILEVEL;type=LUMINANCE</property>
+        </properties>
+      </channel>
+      <channel id="alarm_burglar" typeId="alarm_burglar">
+        <label>Alarm (burglar)</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=BURGLAR</property>
+        </properties>
+      </channel>
+      <channel id="alarm_power" typeId="alarm_power">
+        <label>Alarm (power)</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=POWER_MANAGEMENT</property>
+        </properties>
+      </channel>
+      <channel id="alarm_system" typeId="alarm_system">
+        <label>Alarm (system)</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=SYSTEM</property>
+        </properties>
+      </channel>
+      <channel id="battery-level" typeId="system.battery-level">
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_BATTERY</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Aeotec Limited</property>
+      <property name="modelId">ZWA045</property>
+      <property name="manufacturerId">0371</property>
+      <property name="manufacturerRef">0002:002D</property>
+      <property name="dbReference">1637</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_3_2" type="integer" groupName="configuration">
+        <label>3: Motion Untrigger Time</label>
+        <description><![CDATA[
+Timeout motion sensor in seconds<br /> <h1>Overview</h1><p>Timeout configuration set in second for TriSensor to send no trigger status.</p>
+        ]]></description>
+        <default>60</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_4_1" type="integer" groupName="configuration">
+        <label>4: Motion Sensitivity</label>
+        <description><![CDATA[
+Set motion detection sensitivity<br /> <h1>Overview</h1><p>Set the sensitivity of TriSensor.</p><p>0 - disable</p><p>1 - minimum sensitivity</p><p>2 - medium sensitivity</p><p>3 - maximum sensitivity</p>
+        ]]></description>
+        <default>2</default>
+      </parameter>
+
+      <parameter name="config_7_1" type="integer" groupName="configuration">
+        <label>7: Motion Group Control (Group2)</label>
+        <description><![CDATA[
+Set message to group 2 for motion trigger<br /> <h1>Overview</h1><p>Set control of other devices on group2 based on motion trigger.</p><p>0 - Send BASIC_SET (0xFF) when motion is triggered to associated device</p><p>Send BASIC_SET (0x00) when motion is untriggered to associated device</p><p>1 - Send BASIC_SET (0x00) when motion is triggered</p><p>Send BASIC_SET (0xFF) when motion is untriggered</p><p>2 - Send BASIC_SET (0xFF) when motion is triggered, Nothing when motion untriggered.</p><p>3 - Send BASIC_SET (0x00) when motion is triggered, Nothing when motion untriggered.</p><p>4 - Send BASIC_SET (0x00) when motion is untriggered, Nothing when motion triggered.</p><p>5 - Send BASIC_SET (0xFF) when motion is untriggered, Nothing when motion triggered.</p><p>6 - Send BASIC_SET (value is configured by parameter 8) when motion is triggered to associated devices.</p><p>Send BASIC_SET (value is configured by parameter 8) when motion is untriggered.</p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_8_2" type="integer" groupName="configuration">
+        <label>8: Motion Group Value Setting</label>
+        <description><![CDATA[
+Set Basic Set value for Group2.<br /> <h1>Overview</h1><p>Set Basic Set value for Group2. The MSB will act as the basic set value when motion trigger. The LSB will act as the basic set value when motion untrigger. E.g. value=0x0A00, then BASIC_SET(0x0A) will be sent when motion trigger, BASIC_SET(0x00) will be sent when motion untrigger.</p>
+        ]]></description>
+        <default>-256</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_9_2" type="integer" groupName="configuration">
+        <label>9: Motion Group Control Requirement</label>
+        <description><![CDATA[
+Lux threshold to trigger group 2 associated devices<br /> <h1>Overview</h1><p>Set threshold of Light/Lux when devices associated in group2 should be triggered by motion. Associated device only receive BASIC_SET command when light &lt;= (this value).</p>
+        ]]></description>
+        <default>30000</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_10_2" type="integer" groupName="configuration">
+        <label>10: Over Heat Group Threshold (Group3)</label>
+        <description><![CDATA[
+Set upper threshold of temperature to trigger group 3 devices<br /> <h1>Overview</h1><p>Set threshold of temperature. Designed to control Air Conditioners or temperature controllers ON or OFF. If measured temperature &gt;= (this value, Scale is determined by Param24) send BASIC_SET (0xFF) to associated devices. If measured temperature &lt; (this value) send BASIC_SET (0x00) to associated devices. E.g. Value 239 means 23.9 C. Value 750 means 75.0 F</p><p>0 - Disable.</p><p><br /></p>
+        ]]></description>
+        <default>270</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_11_2" type="integer" groupName="configuration">
+        <label>11: Under Heat Group Threshold (Group4)</label>
+        <description><![CDATA[
+Set lower temperature threshold to trigger group 3 devices<br /> <h1>Overview</h1><p>Set threshold of temperature. Designed to control Air Conditioners or temperature controllers ON or OFF. If measured temperature &lt;= (this value, Scale is determined by Param24) send BASIC_SET (0xFF) to associated devices. If measured temperature &gt; (this value) send BASIC_SET (0x00) to associated devices. E.g. Value 155 means 15.5 C. Value 600 means 60.0 F.</p><p>0 - Disable.</p><p><br /></p>
+        ]]></description>
+        <default>165</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_12_2" type="integer" groupName="configuration">
+        <label>12: Over Light Group Threshold (Group5)</label>
+        <description><![CDATA[
+Set threshold of Light/Lux<br /> <h1>Overview</h1><p>Set threshold of Light/Lux. If measured light/lux &gt;= (this value) send BASIC_SET (0xFF) to associated devices. If measured light &lt; (this value) send BASIC_SET (0x00) to associated device.</p><p>0 - Disable.</p><p>1 ~ 30000 - Enable. 1 ~ 30000 Lux.</p>
+        ]]></description>
+        <default>2000</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_13_2" type="integer" groupName="configuration">
+        <label>13: Under Light Group Threshold (Group6)</label>
+        <description><![CDATA[
+Set lower threshold of Light/Lux.<br /> <h1>Overview</h1><p>Set threshold of Light/Lux. If measured light/lux &lt;= (this value) send BASIC_SET (0xFF) to associated devices. If measured light/lux &gt; (this value) send BASIC_SET (0x00) to associated devices.</p><p>0 - Disable.</p><p>1 ~ 30000 - Enable. 1 ~ 30000 Lux.</p>
+        ]]></description>
+        <default>100</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_14_1" type="integer" groupName="configuration">
+        <label>14: Low Battery Threshold</label>
+        <description><![CDATA[
+Set low battery report threshold<br /> <h1>Overview</h1><p>Configure low battery report threshold, sends low battery report via notification and battery report when battery level drops under setting. Unit %.</p>
+        ]]></description>
+        <default>20</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_15_1" type="integer" groupName="configuration">
+        <label>15: Threshold Check Enable/Disable</label>
+        <description><![CDATA[
+Enable Threshold Reports<br /> <h1>Overview</h1><p>0 - disable threshold reports </p><p>1 - enable threshold reports</p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_16_1" type="integer" groupName="configuration">
+        <label>16: Temperature Threshold</label>
+        <description><![CDATA[
+Temperature Threshold<br /> <h1>Overview</h1><p>0 = disable</p><p>Threshold = (Value * 0.1) <br /></p>
+        ]]></description>
+        <default>30</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_17_2" type="integer" groupName="configuration">
+        <label>17: Lux Threshold</label>
+        <description><![CDATA[
+Lux Threshold<br /> <h1>Overview</h1><p>0 = disable</p>
+        ]]></description>
+        <default>250</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_18_2" type="integer" groupName="configuration">
+        <label>18: Threshold Check Time</label>
+        <description><![CDATA[
+Set threshold time in seconds<br /> <h1>Overview</h1><p>60~65535 - Battery powered</p>
+        ]]></description>
+        <default>900</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_19_1" type="integer" groupName="configuration">
+        <label>19: Sensor Limit Control</label>
+        <description><![CDATA[
+Enable/disable various measurement reports<br /> <h1>Overview</h1><p>This value is bit mask. Used to enable/disable measurement reports for various sensors that is more than the upper limit value or less than the lower limit value.</p><p>0 - Disabled</p><p>1 - Temperature upper level</p><p>2 - Lux upper level</p><p>4 - Temperature lower level</p><p>8 - Lux lower level</p><p>Note: this parameter supports combination setting. E.g. if value = 1+2+4+8=15, which means all the limit reports are enabled. Available settings: 0|1|2|3|4|5|6|7|8|9|10|11|12|13|14|15</p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_20_2" type="integer" groupName="configuration">
+        <label>20: Temperature Upper Limit</label>
+        <description><![CDATA[
+Upper temperature limit<br /> <h1>Overview</h1><p>Set upper limit level for temperature set in scale of 0.1. Scale is determined by Param23. If (Current measurement) &gt; (Upper Limit), then report sensor.</p>
+        ]]></description>
+        <default>280</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_21_2" type="integer" groupName="configuration">
+        <label>21: Temperature Lower Limit</label>
+        <description><![CDATA[
+Set Lower Temperature Limit<br /> <h1>Overview</h1><p>Set lower limit level for temperature set in scale of 0.1. Scale is determined by Param23. If (Current Measurement) &lt; (Lower limit), then report sensor.</p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_22_2" type="integer" groupName="configuration">
+        <label>22: Lux Upper Limit</label>
+        <description><![CDATA[
+Set lux upper limit level<br /> <h1>Overview</h1><p>Set lux upper limit level. If (Current measurement) &gt; (Upper Limit), then report sensor.</p>
+        ]]></description>
+        <default>100</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_23_2" type="integer" groupName="configuration">
+        <label>23: Lux Lowe Limit</label>
+        <description><![CDATA[
+Set lux lower limit level<br /> <h1>Overview</h1><p>Set lux lower limit level. If (Current Measurement) &lt; (Lower limit), then report sensor.</p>
+        ]]></description>
+        <default>100</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_24_1" type="integer" groupName="configuration">
+        <label>24: Temperature Scale</label>
+        <description><![CDATA[
+Temperatures in C of F<br /> <h1>Overview</h1><p>Set the units for temperature reports.</p><p>0 - Celsius</p><p>1 – Fahrenheit</p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_25_2" type="integer" groupName="configuration">
+        <label>25: Automatic Interval Time</label>
+        <description><![CDATA[
+Report interval in seconds<br /> <h1>Overview</h1><p>Interval time set in seconds to check the sensor report. Multilevel Sensor Report will be sent when timeout.</p>
+        ]]></description>
+        <default>3600</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Lifeline</label>
+        <description><![CDATA[
+General: Lifeline<br /> <h1>Overview</h1><p>Device Reset Locally:</p><p>When factory reset.</p><p>Notification Report:</p><p>See Notification Chapter for more information.</p><p>Sensor Multilevel Report:</p><p>When sensors above over limit or below under limit.</p><p>Battery Report:</p><p>Indicator Report:</p><p>Issued when the indicator light changed</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: Motion Alarm</label>
+        <description><![CDATA[
+Notification: Home_Security<br /> <h1>Overview</h1><p>Basic Set:</p><p>Basic Set Command will be sent to the associated device when motion trigger or untrigger. The basic set value is determined by Param3. See Param4 for more information</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_3" type="text" groupName="association" multiple="true">
+        <label>3: Over Heat</label>
+        <description><![CDATA[
+Sensor: Temperature<br /> <h1>Overview</h1><p>Basic Set:</p><p>When the temperature change value is over or under the threshold set by Param10. Scale is determined by Param24.</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_4" type="text" groupName="association" multiple="true">
+        <label>4: Under Heat</label>
+        <description><![CDATA[
+Sensor: Temperature<br /> <h1>Overview</h1><p>Basic Set:</p><p>When the temperature change value is under or over the threshold set by Param11. Scale is determined by Param24.</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_5" type="text" groupName="association" multiple="true">
+        <label>5: Over Light</label>
+        <description><![CDATA[
+Sensor: Illuminance<br /> <h1>Overview</h1><p>Basic Set:</p><p>When the current light/lux is over or under the threshold set by Param12.</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_6" type="text" groupName="association" multiple="true">
+        <label>6: Under Light</label>
+        <description><![CDATA[
+Sensor: Illuminance<br /> <h1>Overview</h1><p>Basic Set:</p><p>When the current light/lux is under or over the threshold set by Param13.</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_7" type="text" groupName="association" multiple="true">
+        <label>7: Temperature</label>
+        <description><![CDATA[
+Sensor: Temperature<br /> <h1>Overview</h1><p>Associated device receive Temperature reports from Multisensor</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

@@ -15,7 +15,7 @@ Z-WaveTM shutter control with power measurement, 10 A per channel<br /> <h1>Over
     <!-- CHANNEL DEFINITIONS -->
     <channels>
       <channel id="blinds_control" typeId="blinds_control">
-        <label>Blinds Control</label>
+        <label>Shutter Position</label>
         <properties>
           <property name="binding:*:PercentType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
           <property name="binding:Command:StopMoveType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
@@ -91,7 +91,7 @@ Z-WaveTM shutter control with power measurement, 10 A per channel<br /> <h1>Over
         </properties>
       </channel>
       <channel id="blinds_control2" typeId="blinds_control">
-        <label>Lamella Control</label>
+        <label>Lamella Position</label>
         <properties>
           <property name="binding:*:PercentType">COMMAND_CLASS_SWITCH_MULTILEVEL:2</property>
           <property name="binding:Command:StopMoveType">COMMAND_CLASS_SWITCH_MULTILEVEL:2</property>

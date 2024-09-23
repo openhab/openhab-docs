@@ -20,8 +20,8 @@ Yale 2nd Generation Assure Deadbolt<br /> <h1>Overview</h1><p>Yale's latest and 
           <property name="binding:*:OnOffType">COMMAND_CLASS_DOOR_LOCK</property>
         </properties>
       </channel>
-      <channel id="alarm_access" typeId="alarm_access">
-        <label>Alarm (access)</label>
+      <channel id="alarm_entry" typeId="alarm_entry">
+        <label>Alarm (entry)</label>
         <properties>
           <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=ACCESS_CONTROL</property>
         </properties>
@@ -30,6 +30,12 @@ Yale 2nd Generation Assure Deadbolt<br /> <h1>Overview</h1><p>Yale's latest and 
         <label>Alarm (power)</label>
         <properties>
           <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=POWER_MANAGEMENT</property>
+        </properties>
+      </channel>
+      <channel id="alarm_raw" typeId="alarm_raw">
+        <label>Raw string of alarm (JSON)</label>
+        <properties>
+          <property name="binding:*:StringType">COMMAND_CLASS_ALARM;type=ACCESS_CONTROL</property>
         </properties>
       </channel>
       <channel id="battery-level" typeId="system.battery-level">

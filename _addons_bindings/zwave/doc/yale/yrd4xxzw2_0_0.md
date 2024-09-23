@@ -55,8 +55,9 @@ The following table summarises the channels available for the YRD4XX-ZW2 -:
 | Channel Name | Channel ID | Channel Type | Category | Item Type |
 |--------------|------------|--------------|----------|-----------|
 | Door Lock | lock_door | lock_door | Door | Switch | 
-| Alarm (access) | alarm_access | alarm_access | Door | Switch | 
+| Alarm (entry) | alarm_entry | alarm_entry | Door | Switch | 
 | Alarm (power) | alarm_power | alarm_power | Energy | Switch | 
+| Raw string of alarm (JSON) | alarm_raw | alarm_raw |  | String | 
 | Battery Level | battery-level | system.battery_level | Battery | Number |
 | Clock Time Offset | time_offset | time_offset | Time | Number | 
 
@@ -71,17 +72,17 @@ The following state translation is provided for this channel to the ```Switch```
 | ON | Locked |
 | OFF | Unlocked |
 
-### Alarm (access)
-Indicates if the access control alarm is triggered.
+### Alarm (entry)
+Indicates if the entry alarm is triggered.
 
-The ```alarm_access``` channel is of type ```alarm_access``` and supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
+The ```alarm_entry``` channel is of type ```alarm_entry``` and supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
 
 The following state translation is provided for this channel to the ```Switch``` item type -:
 
 | Value | Label     |
 |-------|-----------|
-| OFF | OK |
-| ON | Alarm |
+| ON | Open |
+| OFF | Closed |
 
 ### Alarm (power)
 Indicates if a power alarm is triggered.
@@ -95,6 +96,11 @@ The following state translation is provided for this channel to the ```Switch```
 | OFF | OK |
 | ON | Alarm |
 
+### Raw string of alarm (JSON)
+Provides alarm parameters as json string.
+
+The ```alarm_raw``` channel is of type ```alarm_raw``` and supports the ```String``` item. This is a read only channel so will only be updated following state changes from the device.
+This channel sets, and provides the alarm state as a JSON string. It is designed for use in rules.
 ### Battery Level
 Represents the battery level as a percentage (0-100%). Bindings for things supporting battery level in a different format (e.g. 4 levels) should convert to a percentage to provide a consistent battery level reading.
 
