@@ -504,7 +504,7 @@ Group state aggregation functions can be any of the following:
 |     | Function                   | Parameters                    | Base Item                                   | Description                                                                                                                                                                                                           |     |
 | --- | -------------------------- | ----------------------------- | ------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --- |
 |     | `EQUALITY`                 | -                             | \<all\>                                     | Default if no function is specified. Sets the state of the members if all have equal state. Otherwise `UNDEF` is set. In the Item DSL `EQUALITY` is the default and may be omitted.                                   |     |
-|     | `AND`, `OR`, `NAND`, `NOR` | <activeState>, <passiveState> | \<all\> (must match active & passive state) | [Boolean](https://en.wikipedia.org/wiki/Boolean_algebra) operation. Sets the \<activeState\>, if the members state \<activeState\> evaluates to `true` under the boolean term. Otherwise the \<passiveState\> is set. |     |
+|     | `AND`, `OR`, `NAND`, `NOR`, `XOR` | <activeState>, <passiveState> | \<all\> (must match active & passive state) | [Boolean](https://en.wikipedia.org/wiki/Boolean_algebra) operation. Sets the \<activeState\>, if the members state \<activeState\> evaluates to `true` under the boolean term. Otherwise the \<passiveState\> is set. |     |
 |     | `SUM`, `AVG`, `MIN`, `MAX` | -                             | Number                                      | [Arithmetic](https://en.wikipedia.org/wiki/Arithmetic) operation. Sets the state according to the arithmetic function over all members states.                                                                        |     |
 |     | `COUNT`                    | <regular expression>          | Number                                      | Sets the state to the number of members matching the given regular expression with their states.                                                                                                                      |     |
 |     | `LATEST`, `EARLIEST`       | -                             | DateTime                                    | Sets the state to the latest/earliest date from all members states                                                                                                                                                    |     |
@@ -524,22 +524,24 @@ Examples for derived states on Group Items when declared in the Item DSL:
 Group:Number                  Lights       "Active Lights [%d]"              // e.g. "2"
 Group:Switch:OR(ON,OFF)       Lights       "Active Lights [%d]"              // e.g. ON and "2"
 Group:Switch:AND(ON,OFF)      Lights       "Active Lights [%d]"              // e.g. ON and "2"
+Group:Switch:XOR(ON,OFF)      Lights       "Active Lights [%d]"              // e.g. ON and "1"
 Group:Number:Temperature:AVG  Temperatures "All Room Temperatures [%.1f °C]" // e.g. "21.3 °C"
 Group:DateTime:EARLIEST       LatestUpdate "Latest Update [%1$tY.%1$tm.%1$tY %1$tH:%1$tM:%1$tS]"
 Group:DateTime:LATEST         LastSeen     "Last Seen [%1$tY.%1$tm.%1$tY %1$tH:%1$tM:%1$tS]"
 Group:Number:COUNT("OFFLINE") OfflineDevices "Offline Devices [%d]"     // e.g. "2"
 ```
 
-The first three examples above compute the number of active lights and store them as group state.
+The first four examples above compute the number of active lights and store them as group state.
 However, the second group is of type switch and has an aggregation function of `OR`.
 This means that the state of the group will be `ON` as soon as any of the member lights are turned on.
 The third uses `AND` and sets the Group state to `ON` if all of its members have the state `ON`, `OFF` if any of the Group members has a different state than `ON`.
+The fourth uses `XOR` where the Group state is only `ON`, if exactly one light is `ON`.
 
 Groups do not only aggregate information from individual member Items, they can also accept commands.
 Sending a command to a Group causes the command to be sent to all Group members.
 An example of this is shown by the second group above; sending a single `ON` or `OFF` command to that group turns all lights in the group on or off.
 
-The fourth example computes the average temperature of all room temperature Items in the group.
+The fifth example computes the average temperature of all room temperature Items in the group.
 
 Assuming we have a Group containing three timestamps: `now().minusDays(10)`, `now()` and `now().plusSeconds(30)`.
 The `EARLIEST` function returns `now().minusDays(10)`, the `LATEST` function returns `now().plusSeconds(30)`.
