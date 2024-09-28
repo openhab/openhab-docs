@@ -859,7 +859,7 @@ logger.info "Total price for using 150 W for the next hour: #{price}" if price
 duration_phases = [
   37.minutes,
   8.minutes,
-  4.minutes, 
+  4.minutes,
   2.minutes,
   4.minutes,
   36.minutes,
@@ -878,7 +878,7 @@ consumption_phases = [
   0 | "W"
 ],
 
-result = eds.calculate_cheapest_period(ZonedDateTime.now.to_instant, 
+result = eds.calculate_cheapest_period(ZonedDateTime.now.to_instant,
                                           24.hours.from_now.to_instant,
                                           duration_phases,
                                           consumption_phases)
@@ -892,7 +892,7 @@ logger.info "Most expensive start #{result["MostExpensiveStart"]}"
 # In this example we have to provide the total duration to make sure we fit the latest end. This is because there is no
 # registered consumption in the last phase.
 # Here we are using an alternative way of constructing an array of Durations.
-# The `#minutes` method on an Integer object returns a corresponding Duration object. 
+# The `#minutes` method on an Integer object returns a corresponding Duration object.
 duration_phases = [37, 8, 4, 2, 4, 36, 41].map { |i| i.minutes }
 
 result = eds.calculate_cheapest_period(ZonedDateTime.now.to_instant,

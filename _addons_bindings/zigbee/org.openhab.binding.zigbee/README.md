@@ -16,7 +16,7 @@ If you are running on Linux, then you probably need to add the user 'openhab' to
 
 ##### Configuration via UI (recommended)
 
-After you have installed the binding, you can add a coordinator via the UI, by navigating to **Settings** > **Things** and clicking on the blue `+` button in the bottom right corner. Then choose the coordinator that matches your dongle. Make sure you check the **Show advanced** box, there are some important settings that otherwise stay hidden. Please refer to the sections [Serial port Configuration](#serial-port-configuration) and [Coordinator Configuration](coordinator-configuration) below for information about the settings for a coordinator.
+After you have installed the binding, you can add a coordinator via the UI, by navigating to **Settings** > **Things** and clicking on the blue `+` button in the bottom right corner. Then choose the coordinator that matches your dongle. Make sure you check the **Show advanced** box, there are some important settings that otherwise stay hidden. Please refer to the sections [Serial port Configuration](#serial-port-configuration) and [Coordinator Configuration](#coordinator-configuration) below for information about the settings for a coordinator.
 
 ##### Configuration via config file
 
@@ -494,7 +494,6 @@ In order for a report to be sent to the binding, or to another device, a "bindin
 
 Polling may be used by the binding to request data from the device. Polling is normally only used if reporting doesn't work for some reason. This may happen if the reporting table in a device is full - if the binding detects this, it will increase the polling rate.
 
-
 ## Device Firmware Updates
 
 A *Firmware Provider*, backed by the [Koenkk OTA](https://github.com/Koenkk/zigbee-OTA) repository on GitHub can be used to upgrade device firmware. This *Firmware Provider* provides firmware to the openHAB firmware management system. Since there is no information linking firmware to a device, Zigbee devices must ask for a firmware update, and when this happens, the *Firmware Provider* will use the information in this request to check to see if there is firmware available, and if there is it will download this to a local file in the *Userdata* folder. It will also advise the openHAB firmware management system that there is firmware available to upload, and the user can manage this appropriately.
@@ -504,8 +503,6 @@ Devices normally request a firmware update at an interval that could be every fe
 Firmware files downloaded from the repository are checked for integrity against the SHA512 hash. an MD5 hash is then generated locally so that the firmware can be checked by the OH core prior to starting the firmware update.
 
 Currently the openHAB main UI doesn't support the firmware management system, so this must be performed using the console.
-
-
 
 ## When things don't appear to be working
 
@@ -588,7 +585,7 @@ Where an address is required, endpoints can use the format `123/1` (destination/
 | scene        | Configures scenes                                                                      |
 | factoryreset | Resets a node to factory defaults                                                      |
 
-#### Ember NCP Commands 
+#### Ember NCP Commands
 
 The following commands are available if the transport layer is using the Silabs Ember NCP.
 

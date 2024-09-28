@@ -363,7 +363,7 @@ then
         logWarn("actions", "Actions not found, check thing ID for the Zone")
         return
     }
-    
+
     actions.bypass()
 end
 ```

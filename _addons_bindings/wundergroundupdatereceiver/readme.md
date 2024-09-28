@@ -226,7 +226,7 @@ You would then have to trigger another rule to submit the original request with 
 You can also define a transformation to fx. get a cardinal direction (N, S, W, E):
 
 ```javascript
-(function(s){ 
+(function(s){
   if ( (s == "NULL") || (s == "UNDEF") )
   {
       return undefined;
@@ -237,7 +237,7 @@ You can also define a transformation to fx. get a cardinal direction (N, S, W, E
     var winddiroffset = (wind + (360.0/32.0)) % 360.0;
     var winddiridx    = Math.floor(winddiroffset / (360.0/16.0));
     var winddir       = dir[winddiridx];
-    
+
     return winddir + ' ('+ wind +'°)';
   }
 })(input)

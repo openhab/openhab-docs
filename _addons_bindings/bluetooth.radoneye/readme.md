@@ -14,7 +14,7 @@ install: manual
 
 # radoneye
 
-This extension adds support for [RadonEye](http://radonftlab.com/radon-sensor-product/radon-detector/rd200/) radon bluetooth detector. 
+This extension adds support for [RadonEye](http://radonftlab.com/radon-sensor-product/radon-detector/rd200/) radon bluetooth detector.
 
 ## Supported Things
 
@@ -26,7 +26,7 @@ Following thing types are supported by this extension:
 
 ## Discovery
 
-As any other Bluetooth device, RadonEye devices are discovered automatically by the corresponding bridge. 
+As any other Bluetooth device, RadonEye devices are discovered automatically by the corresponding bridge.
 
 ## Thing Configuration
 

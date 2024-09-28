@@ -48,7 +48,7 @@ The bridge enables communication with other Nikobus components:
 - `rollershutter-module` - Nikobus roller shutter module,
 - `push-button` - Nikobus physical push button.
 
-## Warning : PC-Link software addresses writing convention 
+## Warning : PC-Link software addresses writing convention
 
 This binding and Niko's PC-Link software don't have the same address writing convention ! **You must invert the MSB & LSB**.
 
@@ -270,7 +270,7 @@ Each discovered button has a Nikobus address appended to its name, same as can b
 maps as
 
 ```text
- 3  1  
+ 3  1
  4  2
 ```
 
@@ -290,7 +290,7 @@ so
 maps as
 
 ```text
- 7  5  3  1  
+ 7  5  3  1
  8  6  4  2
 ```
 

@@ -141,7 +141,7 @@ if(actions === null) {
     return
  }
  actions.sipHangup()
- 
+
  var String ringTimeLimit = actions.getRingTimeLimit()
  ```
 

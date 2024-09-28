@@ -15,7 +15,7 @@ install: auto
 
 # Jinja Transformation Service
 
-Transforms a value using a jinja template. 
+Transforms a value using a jinja template.
 
 The main purpose of this transformer is the use in the home assistant discovery. Therfore not all features of the home assistant templating are supported.
 Basically on [Processing incoming data](https://www.home-assistant.io/docs/configuration/templating/#processing-incoming-data)
@@ -79,6 +79,6 @@ commandTransformation = "JINJA:{\"msgtype\":\"m.text\", \"body\":\"{{value}}\"}"
 
 ## Further Reading
 
-* Wikipedia on [Jinja](https://en.wikipedia.org/wiki/Jinja_(template_engine).
-* Home assistant [discovery](https://www.home-assistant.io/docs/mqtt/discovery/).
-* Home assistant [templating](https://www.home-assistant.io/docs/configuration/templating/).
+- Wikipedia on [Jinja](https://en.wikipedia.org/wiki/Jinja_(template_engine).
+- Home assistant [discovery](https://www.home-assistant.io/docs/mqtt/discovery/).
+- Home assistant [templating](https://www.home-assistant.io/docs/configuration/templating/).

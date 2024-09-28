@@ -64,12 +64,12 @@ Set `region` to your location
 - `EU` : Europe and Rest of World
 - `NA` : North America
 - `AP` : Asia Pacific
-- `CN` : China 
+- `CN` : China
 
 Set `pin` to your Mercedes Me App PIN.
 Parameter is *not required*.
 Note `pin` is needed for some commands which are affecting **vehicle safety**.
-Commands like _unlock doors_ will result into an _unsafe state_: your vehicle is unlocked and is accessible to everybody. 
+Commands like _unlock doors_ will result into an _unsafe state_: your vehicle is unlocked and is accessible to everybody.
 
 Commands protected by PIN
 
@@ -78,7 +78,7 @@ Commands protected by PIN
 - Open / Ventilate Windows
 - Open / Lift Sunroof
 
-IP `callbackIP` and port `callbackPort` will be auto-detected. 
+IP `callbackIP` and port `callbackPort` will be auto-detected.
 If you're running on server with more than one network interface please select manually.
 
 ### Bridge Authorization
@@ -88,7 +88,7 @@ The Bridge will indicate in the status headline if authorization is needed inclu
 
 Three steps are needed
 
-1. Open the mentioned URL like 192.168.x.x:8090/mb-auth 
+1. Open the mentioned URL like 192.168.x.x:8090/mb-auth
 Opening this URL will request a PIN  which will be send to your configured email.
 Check your Mail Account if you received the PIN.
 Click on _Continue_ to proceed with Step 2.
@@ -99,7 +99,7 @@ Click on _Submit_ button.
 
 3. Confirmation shall be shown that authorization was successful.
 
-In case of non successful authorization check your log for errors. 
+In case of non successful authorization check your log for errors.
 Below screenshots are illustrating the authorization flow.
 
 ### After Bridge Setup
@@ -165,17 +165,17 @@ Group name: `vehicle`
 | command-capabilities  | String              |  Command Capabilities         | X    |       |    X     |
 | proto-update          | String              |  Last Vehicle Data Update     | X    |       |    X     |
 
-Advanced channels are used to identify problems. 
+Advanced channels are used to identify problems.
 If you encounter problems with this binding follow the instructions from [Troubleshooting](#troubleshooting) section.
 
 #### Lock Status Mapping
 
-State 
+State
 
 - 0 : Locked
 - 1 : Unlocked
 
-Command 
+Command
 
 - 0 : Lock
 - 1 : Unlock
@@ -192,7 +192,7 @@ State
 
 Command
 
-- 0 : Ventilate 
+- 0 : Ventilate
 - 1 : Close
 - 2 : Open
 
@@ -205,7 +205,7 @@ Triggers `WINDOWVENTILATE`, `WINDOWCLOSE` and `WINDOWOPEN` from [Command Name Ma
 
 #### Ignition Mapping
 
-State 
+State
 
 - 0 : Off
 - 2 : Ready
@@ -239,7 +239,7 @@ States and controls are depending on your vehicle capabilities.
 | sunroof             | Number               |  Sun roof                    | X    | X     |
 
 #### Rooftop Mapping
-            
+
 - 0 : Unlocked
 - 1 : Open and locked
 - 2 : Closed and locked
@@ -316,11 +316,11 @@ State representing current window position.
 #### Rear Right Blind Channel Mapping
 
 - not available yet
- 
+
 #### Rear Left Blind Channel Mapping
 
 - not available yet
- 
+
 #### Rear Blind Channel Mapping
 
 - not available yet
@@ -373,7 +373,7 @@ Triggers `- PRECONDCONFIGURESEATS` from [Command Name Mapping](#command-name-map
 Pre-configure selected zone with desired temperature.
 Minimum and maximum temperature depends on your local settings either Degree Celsius or Fahrenheit.
 
-Celsius 
+Celsius
 
 - Minimum : 16 °C
 - Maximum : 28 °C
@@ -387,10 +387,10 @@ Fahrenheit
 
 Triggers `TEMPERATURECONFIGURE` from [Command Name Mapping](#command-name-mapping)
 
-#### AC Precondition Control 
+#### AC Precondition Control
 
 Triggers `PRECONDSTART` and `PRECONDSTOP` from [Command Name Mapping](#command-name-mapping)
- 
+
 #### AC Precondition Status Mapping
 
 - 0 : No Request
@@ -398,7 +398,7 @@ Triggers `PRECONDSTART` and `PRECONDSTOP` from [Command Name Mapping](#command-n
 - 2 : Available after Restart Engine
 - 3 : Not Possible, Charging not Finished
 - 4 : General Error</option>
- 
+
 #### Auxiliary Heating Switch
 
 Triggers `AUXHEATSTART` and `AUXHEATSTOP` from [Command Name Mapping](#command-name-mapping)
@@ -597,9 +597,9 @@ All channels `read-only`
 #### Average Consumption
 
 You can configure different average consumption units like kWh per 100 kilometer or km per kWh.
-In your Mercedes Me App front page 
+In your Mercedes Me App front page
 
-- Burger Menu top left 
+- Burger Menu top left
 - Last Entry `Settings`
 - First Entry `Units`
 
@@ -608,7 +608,7 @@ In your Mercedes Me App front page
 #### Trip Duration
 
 Shown as String in format `d days, HH:mm`.
-If duration is below 24 hours format is `HH:mm`. 
+If duration is below 24 hours format is `HH:mm`.
 
 ### ECO Score
 
@@ -672,10 +672,10 @@ All channels `read-only`
 | pressure-front-right     | Number:Pressure      |  Tire Pressure Front Right      |
 | pressure-rear-left       | Number:Pressure      |  Tire Pressure Rear Left        |
 | pressure-rear-right      | Number:Pressure      |  Tire Pressure Rear Right       |
-| sensor-available         | Number               |  Tire Sensor Available          | 
+| sensor-available         | Number               |  Tire Sensor Available          |
 | marker-front-left        | Number               |  Tire Marker Front Left         |
-| marker-front-right       | Number               |  Tire Marker Front Right        | 
-| marker-rear-left         | Number               |  Tire Marker Rear Left          | 
+| marker-front-right       | Number               |  Tire Marker Front Right        |
+| marker-rear-left         | Number               |  Tire Marker Rear Left          |
 | marker-rear-right        | Number               |  Tire Marker Rear Right         |
 | last-update              | DateTime             |  Timestamp of last Measurement  |
 
@@ -755,7 +755,7 @@ Send lock/unlock or temperatures in a short period of time will result in failur
 
 ## Vehicle Actions
 
-Actions for `vehicle` [thing}(#vehicle) are provided. 
+Actions for `vehicle` [thing}(#vehicle) are provided.
 
 ### `sendPOI`
 
@@ -792,19 +792,19 @@ Full information
 There's a big variety of vehicles with different features and different command capabilities.
 During discovery the capabilities of your vehicle are identified.
 They are stored in `Vehicle Properties` as shown below.
-You can check in beforehand if features like _Charge Program Configuration_ or _HVAC Configuration_ are supported or not. 
+You can check in beforehand if features like _Charge Program Configuration_ or _HVAC Configuration_ are supported or not.
 
 <img src="./doc/OH-capabilities.png" width="500" height="280"/>
 
-If you want to dive deeper see [Troubleshooting](#troubleshooting) `feature-capabilities` and `command-capabilities` to evaluate the exact capabilities. 
+If you want to dive deeper see [Troubleshooting](#troubleshooting) `feature-capabilities` and `command-capabilities` to evaluate the exact capabilities.
 
 ## Troubleshooting
 
 In order to be able to analyze problems 3 advanced channels are placed in the vehicle group.
 
-* `feature-capabilities` - showing which feature your vehicle is equipped with
-* `command-capabilities` - showing which commands can be sent to your vehicle
-* `proto-update` - latest update of your vehicle data
+- `feature-capabilities` - showing which feature your vehicle is equipped with
+- `command-capabilities` - showing which commands can be sent to your vehicle
+- `proto-update` - latest update of your vehicle data
 
 In case you find problems regarding this binding add items to these 3 channels.
 The items are reporting Strings in JSON format.
@@ -894,7 +894,7 @@ Number:Speed            EQA_TripAvgSpeed            {channel="mercedesme:bev:471
 Number                  EQA_TripAvgConsumption      {channel="mercedesme:bev:4711:eqa:trip#cons-ev" }
 String                  EQA_AvgConsumptionUnit      {channel="mercedesme:bev:4711:eqa:trip#cons-ev-unit" }
 
-Number:Angle            EQA_Heading                 {channel="mercedesme:bev:4711:eqa:position#heading" }  
+Number:Angle            EQA_Heading                 {channel="mercedesme:bev:4711:eqa:position#heading" }
 Location                EQA_GPSLocation             {channel="mercedesme:bev:4711:eqa:position#gps" }
 Number                  EQA_Signal                  {channel="mercedesme:bev:4711:eqa:position#signal" }
 
@@ -915,10 +915,10 @@ DateTime                EQA_CommandTimestamp        {channel="mercedesme:bev:471
 // send POI from JSON String item
 rule "Send POI"
     when
-        Item POIJsonString changed 
+        Item POIJsonString changed
     then
         // decode JSON
-        val json = POIJsonString.state.toString        
+        val json = POIJsonString.state.toString
         val title = transform("JSONPATH", "$.title", json)
         val lat = transform("JSONPATH", "$.latitude", json)
         val lon = transform("JSONPATH", "$.longitude", json)

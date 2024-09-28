@@ -237,27 +237,27 @@ sitemap demo label="Main Menu"
     Frame {
        // Switch
        Switch item=DemoSwitch
-       
+
        // LightSwitch
        Switch item=LightSwitch
-       
+
        // Motion
        Switch item=MotionSensor
        Text item=MotionSensorLastChanged icon="clock"
-       
+
        // Insight
        Switch item=InsightSwitch
        Number item=InsightPower
        Number item=InsightLastOn
        Number item=InsightToday
        Number item=InsightTotal
-       
+
        // LED Bulb
        Switch item=LED1
        Slider item=dLED1
        Switch item=LED2
        Slider item=dLED2
-       
+
        //DimmerSwitch
        Switch item=DimmerSwitch
        Slider item=dDimmerSwitch
@@ -268,7 +268,7 @@ sitemap demo label="Main Menu"
        Slider item=NightModeBrightness
        Text item=NightModeStart
        Text item=NightModeEnd
-       
+
        // CoffeMaker
        Switch item=CoffeSwitch
        Text item=CoffeMode
