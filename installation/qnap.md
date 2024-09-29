@@ -11,56 +11,11 @@ title: QNAP NAS
 
 ## Prerequisite - X86_64 or ARM64 platform
 
-QNAP NAS is based on Linux but it has limitations since it is not a full server.
-It is recommended to use [WinSCP](https://winscp.net/eng/index.php) to access logs and install updates
+You need to install openHAB from [here](https://www.myqnap.org/product/openhab/). It contains the latest stable OH version and Zulu17 JDK.
 
-Then for installation purposes run the following command:
+The easyest way is to [install the repo](https://www.myqnap.org/install-the-repo/) and install openHAB from there so that updates are proposed when published.
 
-```bash
-sudo id openhab
-```
-
-The result will something like
-
-```bash
-uid=1032(openhab) gid=100(users) groups=100(users),65537(dialout),65539(openhab)
-```
-
-In this case we need the 1032 as the user and the 65537 as the group. Write them down.
-
-## Docker
-
-:::tip Note
-DSM 7 does not longer support Java 11 directly.
-You either have to run openHAB in a Docker container or have to take care of a properly installed Java 11 runtime on your own.
-
-The following part shows the Docker based installation.
-You may also get Java 11 via [community package](https://synocommunity.com/package/java-11-openjdk) and go own with the manual for [older DSM Versions](#older-synology-diskstations-till-dsm-6).
-:::
-
-And that also makes the installation easier to maintain.
-It works out of the box a bit different then the normal Docker installation as described in de openHAB documentation.
-Docker is a containerization platform and is used to run lightweight containers.
-These containers require a very little amount of memory and system resources to run.
-Synology NAS has official support for Docker.
-To use Docker, you need to install the Docker app from the Synology Web GUI.
-
-- Login and open the DiskStation Manager.
-- Go to Main Menu → Package Center.
-- Search for "Docker" and install.
-- Click "Open".
-- Go to "Registry", here are all the available Docker images and search for openhab.
-- Choose the "openhab/openhab" image and click "Download". Select "latest" since that is the latest stable version of openHAB. The Docker image is added to "Image"
-- Go to "Image" and click on the openhab/openhab image and click "Add".
-
-Here comes the part where you really notice the difference between the Synology OS and Linux.
-
-- In the Container Manager, select "Container" and then "Create"
-- Select the image (openhab/openhab:latest)
-- Fill in a name for the container (eg. "openhab" note: space and some special characters are not allowed).
-- Enable the resource limitation, CPU on Med and Memory limit on 2048MB.
-You can increase this in the future if you like.
-- Click on "Advanced"
+QNAP NAS is based on Linux but it has limitations since it is not a full server. Therefore it is recommended to use [WinSCP](https://winscp.net/eng/index.php) to access `userdata`, edit `addons` and `conf` folders, etc.
 
 :::tip DSM 7.2 Access Zwave USB Stick
 
