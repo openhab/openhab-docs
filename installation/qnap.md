@@ -19,7 +19,7 @@ QNAP NAS is based on Linux but it has limitations since it is not a full server.
 
 :::tip USB dongles
 
-USB dongles may work (or not). If not you may install [USB serial drivers](https://www.myqnap.org/product/usb-serial-drivers/) (preferrably from the MyQNAP repo)
+USB dongles may work (or not). If not you may try [USB serial drivers](https://www.myqnap.org/product/usb-serial-drivers/) (preferrably from the MyQNAP repo)
 
 ### Mosquitto
 
