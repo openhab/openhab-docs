@@ -180,7 +180,7 @@ The FollowProfile takes state updates on an `Item` and sends them as a command o
 In the direction from the ThingHandler towards the `Item`, the FollowProfile ignores state updates.
 
 ```java
-<itemType> <itemName> { channel="<channelUID>", channel="<followChannelUID>"[profile="follow"]}
+<itemType> <itemName> { channel="<channelUID>", channel="<followChannelUID>"[profile="system:follow"]}
 ```
 
 ### OffsetProfile
@@ -191,5 +191,5 @@ A positive offset is the amount of change from the device towards the framework,
 A negative offset subtracts the offset from the value sent by the device to the framework and adds the offset to values sent from the framework to the device.
 
 ```java
-Number <itemName> { channel="<bindingID>:<thing-typeID>:<thingName>:<channelName>"[profile="offset", offset="<value>"]}
+Number <itemName> { channel="<bindingID>:<thing-typeID>:<thingName>:<channelName>"[profile="system:offset", offset="<value>"]}
 ```
