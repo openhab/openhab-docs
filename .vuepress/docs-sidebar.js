@@ -53,6 +53,7 @@ module.exports = [
       'installation/openhabian',
       'installation/armbian',
       'installation/docker',
+      'installation/qnap',
       'installation/synology',
       ['installation/security', 'Security'],
       ['installation/reverse-proxy', 'Reverse Proxy']
