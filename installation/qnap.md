@@ -15,7 +15,7 @@ You need to install openHAB from [here](https://www.myqnap.org/product/openhab/)
 
 The easyest way is to [install the MyQNAP repo](https://www.myqnap.org/install-the-repo/) and install openHAB from there so that updates are shown when published.
 
-QNAP NAS is based on Linux but it has limitations since it is not a full server. Therefore it is recommended to use [WinSCP](https://winscp.net/eng/index.php) to access `userdata`, edit `addons` and `conf` folders, etc.
+QNAP NAS is based on Linux but it has limitations since it is not a full server. Therefore it is recommended to use [WinSCP](https://winscp.net/eng/index.php) to access `userdata`, `addons` and `conf` folders, etc.
 
 :::tip USB dongles
 
