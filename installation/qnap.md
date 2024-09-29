@@ -19,15 +19,15 @@ QNAP NAS is based on Linux but it has limitations since it is not a full server.
 
 ### USB dongles
 
-USB dongles may work (or not). If not you may try [USB serial drivers](https://www.myqnap.org/product/usb-serial-drivers/) (preferrably from the MyQNAP repo)
+USB dongles may work (or not). If not you may try [USB serial drivers](https://www.myqnap.org/product/usb-serial-drivers/) (preferrably from MyQNAP repo)
 
 ### Mosquitto
 
-You can find it in the MyQNAP repo.
+You can find it in MyQNAP repo.
 
 ### Zigbee2mqtt
 
-You can install NodeJS v22 from the MyQNAP repo and then install Zigbee2mqtt from [here](https://www.zigbee2mqtt.io/).
+You can install NodeJS v22 from MyQNAP repo and then install Zigbee2mqtt from [here](https://www.zigbee2mqtt.io/).
 
 ### Other interesting packages in MyQNAP repo
 
