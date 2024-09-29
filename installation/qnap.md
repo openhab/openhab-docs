@@ -25,7 +25,14 @@ USB dongles may work (or not). If not you may install [USB serial drivers](https
 
 You can find it in the MyQNAP repo.
 
-### Node-Red
+### Zigbee2mqtt
 
-You can find it in the MyQNAP repo.
+You can install NodeJS v22 from the MyQNAP repo and then install Zigbee2mqtt from [here](https://www.zigbee2mqtt.io/).
 
+### Other interesting packages in MyQNAP repo
+
+- QGit (to manage zigbee2mqtt install/update)
+- FFMpeg (complement to `IP Camera` binding)
+- QPython312
+- UniFi
+- Node Red
