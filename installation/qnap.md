@@ -19,20 +19,14 @@ QNAP NAS is based on Linux but it has limitations since it is not a full server.
 
 ### USB dongles
 
-USB dongles may work (or not). If not you may try [USB serial drivers](https://www.myqnap.org/product/usb-serial-drivers/) (preferrably from MyQNAP repo)
-
-### Mosquitto
-
-You can find it in MyQNAP repo.
-
-### Zigbee2mqtt
-
-You can install NodeJS v22 from MyQNAP repo and then install Zigbee2mqtt from [here](https://www.zigbee2mqtt.io/).
+USB dongles may work (or not). QTS (QNAP's operating system) may not include drivers, but you can install [USB serial drivers](https://www.myqnap.org/product/usb-serial-drivers/) (preferrably from MyQNAP repo), maybe it will include missing drivers for the dongle.
 
 ### Other interesting packages in MyQNAP repo
 
-- QGit (to manage zigbee2mqtt install/update)
-- FFMpeg (complement to `IP Camera` binding)
-- QPython312
-- UniFi
+- Mosquitto (needs parametrization after install)
+- NodeJS v22 (required by [zigbee2mqtt[(https://www.zigbee2mqtt.io/))
+- QGit (required to install / update zigbee2mqtt)
 - Node Red
+- FFMpeg (complement to `IP Camera` binding)
+- QPython312 (required by `HABApp`)
+- UniFi (complement to `UniFi` binding)
