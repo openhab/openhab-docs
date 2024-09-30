@@ -612,8 +612,6 @@ Adds a time-series chart object for the display of logged data.
     It accepts [DecimalFormat](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/text/DecimalFormat.html).
     For example with `#.##` a number has to decimals.
 
-Visit [Charts](https://github.com/openhab/openhab/wiki/Charts) in the Wiki for examples.
-
 **Other options to look out for:**
 The Chart element type is a good way to present time series data quickly.
 For more sophisticated diagrams, openHAB supports the integration of outside sources like most logging and graphing solutions (e.g. [Grafana](https://grafana.org)).
