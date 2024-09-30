@@ -24,7 +24,7 @@ USB dongles may work (or not). QTS (QNAP's operating system) may not include dri
 ### Other interesting packages in MyQNAP repo
 
 - Mosquitto (needs parametrization after install)
-- NodeJS v22 (required by [zigbee2mqtt](https://www.zigbee2mqtt.io/))
+- NodeJS v22 (required by zigbee2mqtt)
 - QGit (required to install / update zigbee2mqtt)
 - Node Red
 - FFMpeg (complement to `IP Camera` binding)
