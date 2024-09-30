@@ -23,7 +23,7 @@ If you are not familiar with adb I suggest you to search "How to enable adb over
 
 ## Supported Things
 
-This binding was tested on :
+This binding was tested on:
 
 | Device                 | Android version | Comments                           |
 |------------------------|-----------------|------------------------------------|

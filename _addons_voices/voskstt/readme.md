@@ -64,7 +64,7 @@ In case you would like to setup the service via a text file, create a new file i
 
 Its contents should look similar to:
 
-```
+```ini
 org.openhab.voice.voskstt:preloadModel=false
 org.openhab.voice.voskstt:singleUtteranceMode=true
 org.openhab.voice.voskstt:maxTranscriptionSeconds=60

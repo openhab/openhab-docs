@@ -122,7 +122,7 @@ Within the Oceanic binding two routes are provided:
 
 Both workarounds can be implemented using a systemd system manager script, for example:
 
-```text
+```ini
 [Install]
 WantedBy=multi-user.target
 
