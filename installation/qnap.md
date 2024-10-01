@@ -31,7 +31,7 @@ If you decide to replace MyQNAP's distribution with an official openHAB one, for
 - delete folder runtime
 - inside folder userdata, delete folders cache, etc, and tmp
 - Download the desired openHAB version from github (zip file)
-- Unzip and copy to OpenHab3 folder (folders only, do not replace `start.sh`) 
+- Unzip and copy to OpenHab3 folder (folders only, do not replace `start.sh`)
 - Give runtime/bin/karaf and runtime/bin/backup X permission (you may use F9 in WinSCP)
 - Edit /etc/config/qpkg.conf to specify the installed version (also update `Build` field to disable automatic updates)
 - Start openhab (using "App Center")
