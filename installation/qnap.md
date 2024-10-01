@@ -32,7 +32,7 @@ The MyQNAP repo does not contain openHAB milestone versions and may not contain 
 - inside folder userdata, delete folders cache, etc, and tmp
 - Download the desired openHAB version from github (zip file)
 - Unzip and copy to OpenHab3 folder
-- Give runtime/bin/karaf and runtime/bin/backup X permission (using F9 in WinSCP)
+- Give runtime/bin/karaf and runtime/bin/backup X permission (you may use F9 in WinSCP)
 - Edit /etc/config/qpkg.conf to specify the installed version (also update `Build` field to avoid automatic updates)
 - Start openhab (using "App Center")
 
