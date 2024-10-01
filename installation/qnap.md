@@ -23,7 +23,7 @@ USB dongles may or may not work as QTS (QNAP's operating system) might not inclu
 
 ### Manual update
 
-The MyQNAP repo does not contain milestone versions and may not contain the latest openHAB stable version. In some situations you may prefer to update openHAB manually:
+The MyQNAP repo does not contain openHAB milestone versions and may not contain the latest stable version. In some situations you may prefer to update openHAB manually:
 
 - Stop openhab (using "App Center")
 - Navigate to OpenHab3 folder (physical address may be /share/CACHEDEV3_DATA/.qpkg/OpenHab3 but this depends on your install)
