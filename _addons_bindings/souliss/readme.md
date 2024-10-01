@@ -13,6 +13,8 @@ install: auto
 
 {% include base.html %}
 
+<AddonLogo />
+
 # Souliss Binding
 
 [Souliss](http://www.souliss.net/) is a networking framework for Arduino and compatibles boards, and is designed to let you easily build a smart home that is distributed over multiple boards via Ethernet, WiFi, wireless point-to-point and RS485 bus.

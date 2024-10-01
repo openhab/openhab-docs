@@ -13,6 +13,8 @@ install: auto
 
 {% include base.html %}
 
+<AddonLogo />
+
 # myStrom Binding
 
 This extension adds support for the myStrom devices.

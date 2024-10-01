@@ -13,6 +13,8 @@ install: auto
 
 {% include base.html %}
 
+<AddonLogo />
+
 # JavaScript Scripting (Nashorn)
 
 This add-on allows you to use your older ECMAScript 5.1 code on newer Java versions until the code is migrated to ECMAScript 2021+.

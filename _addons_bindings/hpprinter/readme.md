@@ -13,6 +13,8 @@ install: auto
 
 {% include base.html %}
 
+<AddonLogo />
+
 # HP Printer Binding
 
 This binding supports [HP Printers](https://store.hp.com/us/en/cv/printers), which are reachable through IP on the local network.

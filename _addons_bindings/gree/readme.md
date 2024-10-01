@@ -13,6 +13,8 @@ install: auto
 
 {% include base.html %}
 
+<AddonLogo />
+
 # GREE Binding
 
 This binding integrates Air Conditioners that use the GREE protocol (GREE, Sinclair and others).

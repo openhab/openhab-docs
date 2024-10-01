@@ -13,6 +13,8 @@ install: auto
 
 {% include base.html %}
 
+<AddonLogo />
+
 # Caddx Binding
 
 The Caddx binding is used for communicating with the Caddx alarm panels. Also known as Interlogix.

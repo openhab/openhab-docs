@@ -13,6 +13,8 @@ install: auto
 
 {% include base.html %}
 
+<AddonLogo />
+
 # IpObserver Binding
 
 This binding is for any weather station that sends data to an IP Observer module.

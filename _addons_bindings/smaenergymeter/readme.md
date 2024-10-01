@@ -13,6 +13,8 @@ install: auto
 
 {% include base.html %}
 
+<AddonLogo />
+
 # SMA Energy Meter Binding
 
 This Binding is used to display the measured values of a SMA Energy Meter device.

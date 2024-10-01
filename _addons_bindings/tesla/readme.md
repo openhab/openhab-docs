@@ -13,6 +13,8 @@ install: auto
 
 {% include base.html %}
 
+<AddonLogo />
+
 # Tesla Binding
 
 This binding integrates [Tesla Electrical Vehicles](https://www.tesla.com).

@@ -13,6 +13,8 @@ install: auto
 
 {% include base.html %}
 
+<AddonLogo />
+
 # Xiaomi Wifi devices (Mi IO) Binding
 
 This binding is used to control Xiaomi products implementing the Mi IO protocol.

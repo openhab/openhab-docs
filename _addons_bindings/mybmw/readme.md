@@ -13,6 +13,8 @@ install: auto
 
 {% include base.html %}
 
+<AddonLogo />
+
 # MyBMW Binding
 
 The binding provides access like [MyBMW App](https://www.bmw.com/en/footer/mybmw-app.html) to openHAB.

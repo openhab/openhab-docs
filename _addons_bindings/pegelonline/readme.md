@@ -13,6 +13,8 @@ install: auto
 
 {% include base.html %}
 
+<AddonLogo />
+
 # PegelOnline Binding
 
 Binding to observe water level from german rivers.

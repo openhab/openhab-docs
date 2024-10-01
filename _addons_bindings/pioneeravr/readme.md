@@ -13,6 +13,8 @@ install: auto
 
 {% include base.html %}
 
+<AddonLogo />
+
 # Pioneer AVR Binding
 
 This binding integrates Pioneer AVRs.

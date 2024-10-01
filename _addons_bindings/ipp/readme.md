@@ -13,6 +13,8 @@ install: auto
 
 {% include base.html %}
 
+<AddonLogo />
+
 # IPP Binding
 
 This binding integrates printers, which implement the Internet Printing protocol (IPP). This is the successor of the CUPS binding.

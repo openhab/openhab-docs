@@ -13,6 +13,8 @@ install: auto
 
 {% include base.html %}
 
+<AddonLogo />
+
 # Renault Binding
 
 This binding allows MyRenault App. users to get battery status and other data from their cars.

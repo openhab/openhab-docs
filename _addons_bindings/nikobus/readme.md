@@ -13,6 +13,8 @@ install: auto
 
 {% include base.html %}
 
+<AddonLogo />
+
 # Nikobus Binding
 
 This binding allows openHAB to interact with the Nikobus home automation system.

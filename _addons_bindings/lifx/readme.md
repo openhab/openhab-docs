@@ -13,6 +13,8 @@ install: auto
 
 {% include base.html %}
 
+<AddonLogo />
+
 # LIFX Binding
 
 This binding integrates the [LIFX LED Lights](https://www.lifx.com/).

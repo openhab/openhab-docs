@@ -13,6 +13,8 @@ install: auto
 
 {% include base.html %}
 
+<AddonLogo />
+
 # Solax Binding
 
 This is a binding for Solax solar power inverters.

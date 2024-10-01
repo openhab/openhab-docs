@@ -13,6 +13,8 @@ install: auto
 
 {% include base.html %}
 
+<AddonLogo />
+
 # Speedtest Binding
 
 The Speedtest Binding can be used to perform a network speed test for your openHAB instance.

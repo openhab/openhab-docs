@@ -13,6 +13,8 @@ install: auto
 
 {% include base.html %}
 
+<AddonLogo />
+
 # PlugwiseHA Binding
 
 The Plugwise Home Automation binding adds support to openHAB for the [Plugwise Home Automation ecosystem](https://www.plugwise.com/en_US/adam_zone_control).

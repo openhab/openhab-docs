@@ -13,6 +13,8 @@ install: auto
 
 {% include base.html %}
 
+<AddonLogo />
+
 # Sonnen Binding
 
 The binding for sonnen communicates with a sonnen battery.

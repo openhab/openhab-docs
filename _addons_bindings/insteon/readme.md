@@ -13,6 +13,8 @@ install: auto
 
 {% include base.html %}
 
+<AddonLogo />
+
 # Insteon Binding
 
 Insteon is a home area networking technology developed primarily for connecting light switches and loads.

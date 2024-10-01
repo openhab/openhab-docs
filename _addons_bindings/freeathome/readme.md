@@ -13,6 +13,8 @@ install: auto
 
 {% include base.html %}
 
+<AddonLogo />
+
 # ABB/Busch-free@home Smart Home binding
 
 openHAB ABB/Busch-free@home binding based on the offical free@home local API.

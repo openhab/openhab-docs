@@ -13,6 +13,8 @@ install: auto
 
 {% include base.html %}
 
+<AddonLogo />
+
 # Pushover Binding
 
 The Pushover binding allows you to notify mobile devices of a message using the [Pushover REST API](https://pushover.net/api).

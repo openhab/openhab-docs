@@ -13,6 +13,8 @@ install: auto
 
 {% include base.html %}
 
+<AddonLogo />
+
 # DBQuery Binding
 
 This binding allows creating items from the result of native database queries.

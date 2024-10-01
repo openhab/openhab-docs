@@ -13,6 +13,8 @@ install: auto
 
 {% include base.html %}
 
+<AddonLogo />
+
 # HeliosVentilation Binding
 
 This is the binding for Helios Ventilation Systems KWL EC 200/300/500 Pro.

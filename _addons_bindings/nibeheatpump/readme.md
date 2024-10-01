@@ -13,6 +13,8 @@ install: auto
 
 {% include base.html %}
 
+<AddonLogo />
+
 # Nibe Heatpump Binding
 
 The Nibe Heatpump binding is used to get live data from Nibe heat pumps without using an expensive MODBUS40 adapter.

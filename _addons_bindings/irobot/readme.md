@@ -13,6 +13,8 @@ install: auto
 
 {% include base.html %}
 
+<AddonLogo />
+
 # iRobot Binding
 
 This binding provides integration of products by iRobot company (<https://www.irobot.com/>). It is currently developed

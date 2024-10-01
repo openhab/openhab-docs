@@ -13,6 +13,8 @@ install: auto
 
 {% include base.html %}
 
+<AddonLogo />
+
 # Buienradar Binding
 
 The Buienradar Binding periodically (5 minute intervals) retrieves rainfall predictions from the Dutch [buienradar.nl webservice API.](https://www.buienradar.nl/overbuienradar/gratis-weerdata).

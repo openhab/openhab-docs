@@ -13,6 +13,8 @@ install: auto
 
 {% include base.html %}
 
+<AddonLogo />
+
 # Jellyfin Binding
 
 This is the binding for [Jellyfin](https://jellyfin.org), the volunteer built media solution that puts you in control of your media.

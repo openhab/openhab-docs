@@ -13,6 +13,8 @@ install: auto
 
 {% include base.html %}
 
+<AddonLogo />
+
 # Herzborg Binding
 
 This binding supports smart curtain motors by Herzborg (<http://www.herzborg.com/pro_list.aspx?TypeID=1>)

@@ -13,6 +13,8 @@ install: auto
 
 {% include base.html %}
 
+<AddonLogo />
+
 # TRÅDFRI Binding
 
 This binding integrates the IKEA TRÅDFRI gateway and devices connected to it (such as dimmable LED bulbs).

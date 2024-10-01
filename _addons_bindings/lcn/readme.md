@@ -13,6 +13,8 @@ install: auto
 
 {% include base.html %}
 
+<AddonLogo />
+
 # LCN Binding
 
 [Local Control Network (LCN)](https://www.lcn.eu) is a building automation system.

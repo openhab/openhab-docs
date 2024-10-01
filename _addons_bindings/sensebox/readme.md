@@ -13,6 +13,8 @@ install: auto
 
 {% include base.html %}
 
+<AddonLogo />
+
 # senseBox Binding
 
 The senseBox binding integrates environment data from the [senseBox](https://sensebox.de/)

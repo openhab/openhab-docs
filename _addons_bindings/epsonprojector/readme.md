@@ -13,6 +13,8 @@ install: auto
 
 {% include base.html %}
 
+<AddonLogo />
+
 # Epson Projector Binding
 
 This binding is compatible with Epson projectors that support the ESC/VP21 protocol over the built-in network (Ethernet or Wi-Fi) port, serial port or USB to serial adapter.

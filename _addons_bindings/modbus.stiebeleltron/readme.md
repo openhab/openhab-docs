@@ -13,6 +13,8 @@ install: manual
 
 {% include base.html %}
 
+<AddonLogo />
+
 # Stiebel Eltron ISG
 
 This extension adds support for the Stiebel Eltron modbus protocol.

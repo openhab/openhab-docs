@@ -13,6 +13,8 @@ install: auto
 
 {% include base.html %}
 
+<AddonLogo />
+
 # Android Debug Bridge Binding
 
 This binding allows to connect to android devices through the adb protocol.

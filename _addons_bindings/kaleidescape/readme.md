@@ -13,6 +13,8 @@ install: auto
 
 {% include base.html %}
 
+<AddonLogo />
+
 # Kaleidescape Binding
 
 This binding now makes it possible to easily integrate almost all of the capabilities of the Kaleidescape control protocol into openHAB.

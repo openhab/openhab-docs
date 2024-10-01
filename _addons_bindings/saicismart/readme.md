@@ -13,6 +13,8 @@ install: auto
 
 {% include base.html %}
 
+<AddonLogo />
+
 # SAICiSMART Binding
 
 OpenHAB binding to the SAIC-API used by MG cars (MG4, MG5 EV, MG ZSV...)

@@ -13,6 +13,8 @@ install: auto
 
 {% include base.html %}
 
+<AddonLogo />
+
 # AndroidTV Binding
 
 This binding is designed to emulate different protocols to interact with the AndroidTV platform.

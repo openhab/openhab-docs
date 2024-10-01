@@ -13,6 +13,8 @@ install: auto
 
 {% include base.html %}
 
+<AddonLogo />
+
 # Niko Home Control Binding
 
 **Upgrade notice for Niko Home Control II and openHAB 2.5.3 or later**:

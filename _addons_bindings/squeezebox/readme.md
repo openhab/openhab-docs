@@ -13,6 +13,8 @@ install: auto
 
 {% include base.html %}
 
+<AddonLogo />
+
 # Squeezebox Binding
 
 This binding integrates the [Logitech Media Server](https://www.mysqueezebox.com) and compatible Squeeze players.

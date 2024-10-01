@@ -13,6 +13,8 @@ install: auto
 
 {% include base.html %}
 
+<AddonLogo />
+
 # Belkin Wemo Binding
 
 This binding integrates the [Belkin WeMo Family](https://www.belkin.com/us/Products/c/home-automation/).

@@ -13,6 +13,8 @@ install: auto
 
 {% include base.html %}
 
+<AddonLogo />
+
 # JDBC Persistence
 
 This service writes and reads item states to and from a number of relational database systems that support [Java Database Connectivity (JDBC)](https://en.wikipedia.org/wiki/Java_Database_Connectivity).

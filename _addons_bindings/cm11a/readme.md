@@ -13,6 +13,8 @@ install: auto
 
 {% include base.html %}
 
+<AddonLogo />
+
 # Cm11a (X10 controller) Binding
 
 The cm11a is a serial computer interface that allows a computer to control attached X10 modules.

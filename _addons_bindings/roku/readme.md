@@ -13,6 +13,8 @@ install: auto
 
 {% include base.html %}
 
+<AddonLogo />
+
 # Roku Binding
 
 This binding connects Roku streaming media players and Roku TVs to openHAB.

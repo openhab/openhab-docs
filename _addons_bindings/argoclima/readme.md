@@ -13,6 +13,8 @@ install: auto
 
 {% include base.html %}
 
+<AddonLogo />
+
 # ArgoClima Binding
 
 The binding provides support for [ArgoClima](https://argoclima.com/en/) Wi-Fi-enabled air conditioning devices which use ***Argo Web APP*** for control.

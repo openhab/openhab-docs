@@ -13,6 +13,8 @@ install: auto
 
 {% include base.html %}
 
+<AddonLogo />
+
 # Hyperion Binding
 
 This binding integrates openHAB with the Hyperion ambient lighting software.

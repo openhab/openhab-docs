@@ -13,6 +13,8 @@ install: auto
 
 {% include base.html %}
 
+<AddonLogo />
+
 # deCONZ Binding
 
 The Zigbee binding currently does not support the Dresden Elektronik Raspbee and ConBee Zigbee dongles.

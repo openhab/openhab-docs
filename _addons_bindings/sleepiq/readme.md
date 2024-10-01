@@ -13,6 +13,8 @@ install: auto
 
 {% include base.html %}
 
+<AddonLogo />
+
 # SleepIQ Binding
 
 This binding integrates with the SleepIQ system from Select Comfort for Sleep Number beds.

@@ -13,6 +13,8 @@ install: auto
 
 {% include base.html %}
 
+<AddonLogo />
+
 # GPSTracker Binding
 
 This binding allows you to connect mobile GPS tracker applications to openHAB and process GPS location reports.

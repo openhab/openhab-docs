@@ -13,6 +13,8 @@ install: auto
 
 {% include base.html %}
 
+<AddonLogo />
+
 # Network Binding
 
 This binding allows checking whether a device is currently available on the network.

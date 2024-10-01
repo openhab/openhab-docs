@@ -13,6 +13,8 @@ install: auto
 
 {% include base.html %}
 
+<AddonLogo />
+
 # Orvibo Binding
 
 This binding integrates Orvibo devices that communicate using UDP.

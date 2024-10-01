@@ -13,6 +13,8 @@ install: auto
 
 {% include base.html %}
 
+<AddonLogo />
+
 # iCalendar Binding
 
 This binding is intended to use a web-based iCal calendar as an event trigger or presence switch.

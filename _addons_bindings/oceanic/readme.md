@@ -13,6 +13,8 @@ install: auto
 
 {% include base.html %}
 
+<AddonLogo />
+
 # Oceanic Binding
 
 This binding integrates the Oceanic water softener and management system (www.oceanic.be, but also distributed by Syr in Germany (www.syr.de)).

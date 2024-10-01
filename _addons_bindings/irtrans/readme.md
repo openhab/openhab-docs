@@ -13,6 +13,8 @@ install: auto
 
 {% include base.html %}
 
+<AddonLogo />
+
 # IRtrans Binding
 
 This binding integrates infrared receivers and blasters manufactured by IRtrans (www.irtrans.de)

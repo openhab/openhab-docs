@@ -13,6 +13,8 @@ install: auto
 
 {% include base.html %}
 
+<AddonLogo />
+
 # Gardena Binding
 
 This is the binding for [Gardena smart system](https://www.gardena.com/smart).

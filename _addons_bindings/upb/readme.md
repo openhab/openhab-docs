@@ -13,6 +13,8 @@ install: auto
 
 {% include base.html %}
 
+<AddonLogo />
+
 # UPB Binding
 
 Universal Powerline Bus (UPB) is a protocol for communication over household electrical wiring.

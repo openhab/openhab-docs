@@ -13,6 +13,8 @@ install: auto
 
 {% include base.html %}
 
+<AddonLogo />
+
 # PID Controller Automation
 
 This automation implements a [PID](https://en.wikipedia.org/wiki/PID_controller)-T1 controller for openHAB.

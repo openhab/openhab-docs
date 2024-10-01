@@ -13,6 +13,8 @@ install: auto
 
 {% include base.html %}
 
+<AddonLogo />
+
 # Denon HEOS Binding
 
 This binding support the HEOS-System from Denon.

@@ -13,6 +13,8 @@ install: auto
 
 {% include base.html %}
 
+<AddonLogo />
+
 # Philips Somneo Binding
 
 This binding integrates Philips Somneo HF367X into openHAB.

@@ -13,6 +13,8 @@ install: auto
 
 {% include base.html %}
 
+<AddonLogo />
+
 # Foobot Binding
 
 This binding fetches the Indoor Air Quality data of each of your Foobot devices from the Foobot cloud service.

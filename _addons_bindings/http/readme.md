@@ -13,6 +13,8 @@ install: auto
 
 {% include base.html %}
 
+<AddonLogo />
+
 # HTTP Binding
 
 This binding allows using HTTP to bring external data into openHAB or execute HTTP requests on commands.

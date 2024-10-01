@@ -13,6 +13,8 @@ install: auto
 
 {% include base.html %}
 
+<AddonLogo />
+
 # Ambient Weather Binding
 
 The Ambient Weather binding integrates weather station data that's stored on the Ambient Weather online service.

@@ -13,6 +13,8 @@ install: auto
 
 {% include base.html %}
 
+<AddonLogo />
+
 # ZWave Binding
 
 The ZWave binding supports an interface to a wireless Z-Wave home automation network. 

@@ -13,6 +13,8 @@ install: auto
 
 {% include base.html %}
 
+<AddonLogo />
+
 # Jablotron Alarm Binding
 
 This is the binding for Jablotron alarms.

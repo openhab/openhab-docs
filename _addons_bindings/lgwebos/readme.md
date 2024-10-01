@@ -13,6 +13,8 @@ install: auto
 
 {% include base.html %}
 
+<AddonLogo />
+
 # LG webOS Binding
 
 The binding integrates LG WebOS based smart TVs.

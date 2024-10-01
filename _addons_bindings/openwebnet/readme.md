@@ -13,6 +13,8 @@ install: auto
 
 {% include base.html %}
 
+<AddonLogo />
+
 # OpenWebNet (BTicino/Legrand) Binding
 
 This binding integrates **BTicino / Legrand** **MyHOME &reg; - BUS/SCS** and **MyHOME &reg; Radio - Zigbee** wireless devices using the [OpenWebNet](https://en.wikipedia.org/wiki/OpenWebNet) protocol.

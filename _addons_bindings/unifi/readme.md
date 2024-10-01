@@ -13,6 +13,8 @@ install: auto
 
 {% include base.html %}
 
+<AddonLogo />
+
 # UniFi Binding
 
 This binding integrates with [Ubiquiti UniFi Networks](https://www.ubnt.com/products/#unifi) allowing for presence detection of network clients.

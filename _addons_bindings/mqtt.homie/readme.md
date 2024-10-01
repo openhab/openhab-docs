@@ -13,6 +13,8 @@ install: manual
 
 {% include base.html %}
 
+<AddonLogo />
+
 # MQTT Homie Binding
 
 NOTE: This binding is provided by the [MQTT binding](https://www.openhab.org/addons/bindings/mqtt/), and therefore no explicit installation is necessary beyond installing the MQTT binding.

@@ -13,6 +13,8 @@ install: auto
 
 {% include base.html %}
 
+<AddonLogo />
+
 # Neato Binding
 
 This binding is used to connect your openHAB system with Neato web (where you log in and find Your Neato's).

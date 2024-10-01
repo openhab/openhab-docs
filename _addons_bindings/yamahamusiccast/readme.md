@@ -13,6 +13,8 @@ install: auto
 
 {% include base.html %}
 
+<AddonLogo />
+
 # Yamaha MusicCast Binding
 
 Binding to control Yamaha models via their MusicCast protocol (aka Yamaha Extended Control).

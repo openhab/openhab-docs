@@ -13,6 +13,8 @@ install: auto
 
 {% include base.html %}
 
+<AddonLogo />
+
 # SolarForecast Binding
 
 This binding provides data from Solar Forecast services.

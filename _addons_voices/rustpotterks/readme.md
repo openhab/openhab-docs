@@ -13,6 +13,8 @@ install: auto
 
 {% include base.html %}
 
+<AddonLogo />
+
 # Rustpotter Keyword Spotter
 
 This voice service allows you to use the open source library Rustpotter as your keyword spotter in openHAB.

@@ -13,6 +13,8 @@ install: auto
 
 {% include base.html %}
 
+<AddonLogo />
+
 # MQTT Binding
 
 > MQTT is a machine-to-machine (M2M)/"Internet of Things" connectivity protocol.

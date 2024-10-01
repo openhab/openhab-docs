@@ -13,6 +13,8 @@ install: auto
 
 {% include base.html %}
 
+<AddonLogo />
+
 # Konnected Binding
 
 This binding is for interacting with a [Konnected Alarm Panel](https://konnected.io/).

@@ -13,6 +13,8 @@ install: auto
 
 {% include base.html %}
 
+<AddonLogo />
+
 # Hayward Omnilogic Binding
 
 The Hayward Omnilogic binding integrates the Omnilogic pool controller using the Hayward API.

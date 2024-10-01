@@ -13,6 +13,8 @@ install: auto
 
 {% include base.html %}
 
+<AddonLogo />
+
 # Freecurrency Binding
 
 The Freecurrency binding connects [Freecurrency API](https://freecurrencyapi.com) to openHAB.

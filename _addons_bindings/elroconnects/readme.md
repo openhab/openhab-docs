@@ -13,6 +13,8 @@ install: auto
 
 {% include base.html %}
 
+<AddonLogo />
+
 # ELRO Connects Binding
 
 The ELRO Connects binding provides integration with the [ELRO Connects](https://www.elro.eu/en/smart-home) smart home system.

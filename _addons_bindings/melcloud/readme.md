@@ -13,6 +13,8 @@ install: auto
 
 {% include base.html %}
 
+<AddonLogo />
+
 # MELCloud Binding
 
 This is an openHAB binding for [Mitsubishi MELCloud](https://www.melcloud.com/).

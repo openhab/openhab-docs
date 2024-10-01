@@ -13,6 +13,8 @@ install: auto
 
 {% include base.html %}
 
+<AddonLogo />
+
 # Linux Input Binding
 
 This binding allows to you use a keyboard to control your openHAB instance.

@@ -13,6 +13,8 @@ install: auto
 
 {% include base.html %}
 
+<AddonLogo />
+
 # Dominoswiss Binding
 
 This binding allows the control of rollershutters, using an eGate as gateway and Dominoswiss radio receivers.

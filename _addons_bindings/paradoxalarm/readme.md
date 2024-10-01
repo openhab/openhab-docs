@@ -13,6 +13,8 @@ install: auto
 
 {% include base.html %}
 
+<AddonLogo />
+
 # Paradox Alarm System binding
 
 This binding is intended to provide basic support for Paradox Alarm system.

@@ -13,6 +13,8 @@ install: auto
 
 {% include base.html %}
 
+<AddonLogo />
+
 # TiVo Binding
 
 This binding controls a [TiVo](https://www.tivo.com/) Digital Video Recorder (DVR) that supports the TiVo TCP Control Protocol v1.1 (see TiVo_TCP_Network_Remote_Control_Protocol.pdf).

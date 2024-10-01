@@ -13,6 +13,8 @@ install: auto
 
 {% include base.html %}
 
+<AddonLogo />
+
 # Bose SoundTouch Binding
 
 This binding supports the Bose SoundTouch multiroom system.

@@ -13,6 +13,8 @@ install: auto
 
 {% include base.html %}
 
+<AddonLogo />
+
 # Ecowatt Binding
 
 This binding uses the Ecowatt API to expose clear signals to adopt the right gestures and to ensure a good supply of electricity for all in France.

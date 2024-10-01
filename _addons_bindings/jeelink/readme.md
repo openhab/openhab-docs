@@ -13,6 +13,8 @@ install: auto
 
 {% include base.html %}
 
+<AddonLogo />
+
 # Jeelink Binding
 
 This binding integrates JeeLink USB RF receivers and LaCrosseGateways.

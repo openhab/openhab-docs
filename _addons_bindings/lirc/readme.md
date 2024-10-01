@@ -13,6 +13,8 @@ install: auto
 
 {% include base.html %}
 
+<AddonLogo />
+
 # LIRC Binding
 
 This binding integrates infrared transceivers through [LIRC](https://www.lirc.org) or [WinLIRC](http://winlirc.sourceforge.net).

@@ -13,6 +13,8 @@ install: auto
 
 {% include base.html %}
 
+<AddonLogo />
+
 # Gembird energenie Binding
 
 This binding integrates the Gembird energenie range of power extenders by using the Energenie Data Exchange Protocol and power reading devices through HTTP interface.

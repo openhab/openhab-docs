@@ -13,6 +13,8 @@ install: auto
 
 {% include base.html %}
 
+<AddonLogo />
+
 # MAX! Binding
 
 This is the binding for the [eQ-3 MAX! Home Solution](https://www.eq-3.de/).

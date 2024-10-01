@@ -13,6 +13,8 @@ install: auto
 
 {% include base.html %}
 
+<AddonLogo />
+
 # Pushbullet Binding
 
 The Pushbullet binding allows you to notify iOS, Android & Windows 10 Phone & Desktop devices of a message using the Pushbullet API web service.

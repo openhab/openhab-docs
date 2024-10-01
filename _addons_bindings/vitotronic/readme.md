@@ -13,6 +13,8 @@ install: auto
 
 {% include base.html %}
 
+<AddonLogo />
+
 # Vitotronic Binding
 
 Viessmann heating systems with Vitotronic has an optolink Interface for maintenance.

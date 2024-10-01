@@ -13,6 +13,8 @@ install: auto
 
 {% include base.html %}
 
+<AddonLogo />
+
 # HCC Rubbish Collection Binding
 
 A Hamilton City Council (NZ) _"Fight the Landfill"_ binding.

@@ -13,6 +13,8 @@ install: auto
 
 {% include base.html %}
 
+<AddonLogo />
+
 # KVV Binding
 
 Adds support for the public API of Karlsruher Verkehrsverbund (public transport system in Karlsruhe, Germany).

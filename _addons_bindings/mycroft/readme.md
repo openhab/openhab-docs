@@ -13,6 +13,8 @@ install: auto
 
 {% include base.html %}
 
+<AddonLogo />
+
 # Mycroft Binding
 
 This binding connects to Mycroft A.I. in order to control it or react to events by listening on the message bus.

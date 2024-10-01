@@ -13,6 +13,8 @@ install: auto
 
 {% include base.html %}
 
+<AddonLogo />
+
 # VoiceRSS Text-to-Speech
 
 VoiceRSS is an Internet based TTS service hosted at <https://api.voicerss.org>.

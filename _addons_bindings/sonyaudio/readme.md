@@ -13,6 +13,8 @@ install: auto
 
 {% include base.html %}
 
+<AddonLogo />
+
 # SonyAudio Binding
 
 This binding integrates the [Sony Audio Control API](https://developer.sony.com/develop/audio-control-api/).

@@ -13,6 +13,8 @@ install: auto
 
 {% include base.html %}
 
+<AddonLogo />
+
 # OpenUV Binding
 
 This binding uses the [OpenUV Index API service](https://www.openuv.io/) for providing UV Index information for any location worldwide.

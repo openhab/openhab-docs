@@ -13,6 +13,8 @@ install: auto
 
 {% include base.html %}
 
+<AddonLogo />
+
 # Mikrotik RouterOS Binding
 
 This binding integrates [Mikrotik](https://mikrotik.com/) [RouterOS](https://help.mikrotik.com/docs/display/ROS/RouterOS)

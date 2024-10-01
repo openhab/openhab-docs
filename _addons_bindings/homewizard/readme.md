@@ -13,6 +13,8 @@ install: auto
 
 {% include base.html %}
 
+<AddonLogo />
+
 # HomeWizard Binding
 
 The HomeWizard binding provides access to several HomeWizard devices by using the local API of those devices.

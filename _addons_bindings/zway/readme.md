@@ -13,6 +13,8 @@ install: auto
 
 {% include base.html %}
 
+<AddonLogo />
+
 # Z-Way Binding
 
 Z-Way is a software to configure and control a Z-Wave network.

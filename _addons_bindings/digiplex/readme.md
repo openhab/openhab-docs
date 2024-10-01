@@ -13,6 +13,8 @@ install: auto
 
 {% include base.html %}
 
+<AddonLogo />
+
 # Digiplex/EVO Binding
 
 This binding provides integration with Digiplex/EVO alarm systems from [Paradox](https://paradox.com).

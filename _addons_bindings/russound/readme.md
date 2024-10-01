@@ -13,6 +13,8 @@ install: auto
 
 {% include base.html %}
 
+<AddonLogo />
+
 # Russound Binding
 
 This binding provides integration with any Russound system that support the RIO protocol (all MCA systems, all X systems).

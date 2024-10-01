@@ -13,6 +13,8 @@ install: auto
 
 {% include base.html %}
 
+<AddonLogo />
+
 # Pentair Pool
 
 This is an openHAB binding for a Pentair Pool System.

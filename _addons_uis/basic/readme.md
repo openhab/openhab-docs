@@ -13,6 +13,8 @@ install: auto
 
 {% include base.html %}
 
+<AddonLogo />
+
 # Basic UI
 
 The Basic UI is a web interface based on Material Design Lite from Google.

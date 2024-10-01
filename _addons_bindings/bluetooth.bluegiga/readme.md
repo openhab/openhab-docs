@@ -13,6 +13,8 @@ install: manual
 
 {% include base.html %}
 
+<AddonLogo />
+
 # Bluetooth BlueGiga Adapter
 
 This extension supports Bluetooth access via a BlueGiga (BLED112) USB dongle.

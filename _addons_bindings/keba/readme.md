@@ -13,6 +13,8 @@ install: auto
 
 {% include base.html %}
 
+<AddonLogo />
+
 # Keba Binding
 
 This binding integrates the [Keba KeContact EV Charging Stations](https://www.keba.com).

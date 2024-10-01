@@ -13,6 +13,8 @@ install: auto
 
 {% include base.html %}
 
+<AddonLogo />
+
 # Easee Binding
 
 The Easee binding can be used to retrieve data from the Easee Cloud API and also to control your wallbox via the Cloud API.

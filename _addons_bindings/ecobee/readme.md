@@ -13,6 +13,8 @@ install: auto
 
 {% include base.html %}
 
+<AddonLogo />
+
 # Ecobee Binding
 
 [Ecobee Inc.](https://www.ecobee.com/)  of Toronto, Canada, sells a range of Wi-Fi

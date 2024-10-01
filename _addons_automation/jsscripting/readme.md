@@ -13,6 +13,8 @@ install: auto
 
 {% include base.html %}
 
+<AddonLogo />
+
 # JavaScript Scripting
 
 This add-on provides support for JavaScript (ECMAScript 2022+) that can be used as a scripting language within automation rules.

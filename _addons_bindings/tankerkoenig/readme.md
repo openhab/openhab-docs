@@ -13,6 +13,8 @@ install: auto
 
 {% include base.html %}
 
+<AddonLogo />
+
 # Tankerkönig Binding
 
 The binding uses the Tankerkönig API <https://www.tankerkoenig.de> for collecting gas price data of German gas stations.

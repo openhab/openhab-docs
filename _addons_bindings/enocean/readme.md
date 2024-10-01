@@ -13,6 +13,8 @@ install: auto
 
 {% include base.html %}
 
+<AddonLogo />
+
 # EnOcean Binding
 
 The EnOcean binding connects openHAB to the EnOcean ecosystem.

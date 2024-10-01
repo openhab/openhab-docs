@@ -13,6 +13,8 @@ install: auto
 
 {% include base.html %}
 
+<AddonLogo />
+
 # Network UPS Tools Binding
 
 The primary goal of the [Network UPS Tools](https://networkupstools.org/) (NUT) project is to provide support for power devices, such as uninterruptible power supplies (UPS), Power Distribution Units and Solar Controllers.

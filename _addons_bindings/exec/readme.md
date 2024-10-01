@@ -13,6 +13,8 @@ install: auto
 
 {% include base.html %}
 
+<AddonLogo />
+
 # Exec Binding
 
 This binding integrates the possibility to execute arbitrary shell commands.

@@ -13,6 +13,8 @@ install: auto
 
 {% include base.html %}
 
+<AddonLogo />
+
 # Folding@home Binding
 
 Binding for the [Folding@home](https://folding.stanford.edu/) distributed computing software.

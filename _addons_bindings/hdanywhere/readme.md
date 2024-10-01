@@ -13,6 +13,8 @@ install: auto
 
 {% include base.html %}
 
+<AddonLogo />
+
 # HDanywhere Binding
 
 This binding integrates with [HDanywhere](https://www.hdanywhere.co.uk) HDMI matrices.

@@ -13,6 +13,8 @@ install: auto
 
 {% include base.html %}
 
+<AddonLogo />
+
 # LIVISI SmartHome Binding
 
 The binding integrates the [LIVISI (RWE/innogy) SmartHome](https://www.livisi.de) system into openHAB.

@@ -13,6 +13,8 @@ install: auto
 
 {% include base.html %}
 
+<AddonLogo />
+
 # Flic Button Binding
 
 openHAB binding for using [Flic Buttons](https://flic.io/)

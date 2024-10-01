@@ -13,6 +13,8 @@ install: auto
 
 {% include base.html %}
 
+<AddonLogo />
+
 # ComfoAir Binding
 
 This binding allows to monitor and control Zehnder ComfoAir serial controlled ventilation systems via RS232 serial connection.

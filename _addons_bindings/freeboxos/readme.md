@@ -13,6 +13,8 @@ install: auto
 
 {% include base.html %}
 
+<AddonLogo />
+
 # FreeboxOS Binding
 
 Free is a French telecom operator providing advanced equipments to manage your broadband access.

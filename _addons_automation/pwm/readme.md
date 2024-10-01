@@ -13,6 +13,8 @@ install: auto
 
 {% include base.html %}
 
+<AddonLogo />
+
 # Pulse Width Modulation (PWM) Automation
 
 This automation module implements [Pulse Width Modulation (PWM)](https://en.wikipedia.org/wiki/Pulse-width_modulation).

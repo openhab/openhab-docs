@@ -13,6 +13,8 @@ install: auto
 
 {% include base.html %}
 
+<AddonLogo />
+
 # openHAB NEEO Integration
 
 This integration will allow openHAB things/items to be exposed to the NEEO Brain and allow the NEEO smart remote to control them.

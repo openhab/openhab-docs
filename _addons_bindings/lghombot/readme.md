@@ -13,6 +13,8 @@ install: auto
 
 {% include base.html %}
 
+<AddonLogo />
+
 # LG HomBot Binding
 
 The binding integrates a modified LG HomBot VR6260 based vacuum robots.

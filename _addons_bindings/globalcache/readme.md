@@ -13,6 +13,8 @@ install: auto
 
 {% include base.html %}
 
+<AddonLogo />
+
 # GlobalCache Binding
 
 The [GlobalCache](https://www.globalcache.com) binding enables communication

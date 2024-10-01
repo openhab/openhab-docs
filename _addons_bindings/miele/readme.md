@@ -13,6 +13,8 @@ install: auto
 
 {% include base.html %}
 
+<AddonLogo />
+
 # Miele@home Binding
 
 This binding integrates Miele@home appliances.

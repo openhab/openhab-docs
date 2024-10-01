@@ -13,6 +13,8 @@ install: auto
 
 {% include base.html %}
 
+<AddonLogo />
+
 # OpenTherm Gateway Binding
 
 This binding is used to integrate the OpenTherm Gateway into openHAB.

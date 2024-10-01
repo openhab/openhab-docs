@@ -13,6 +13,8 @@ install: manual
 
 {% include base.html %}
 
+<AddonLogo />
+
 # Helios easyControls
 
 Helios Heat-Recovery Ventilation devices use a Modbus protocol to communicate with different sensors, switches, etc. Some devices come with an integrated web interface (easyControls) as well as a Modbus TCP/IP Gateway.

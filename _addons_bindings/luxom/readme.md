@@ -13,6 +13,8 @@ install: auto
 
 {% include base.html %}
 
+<AddonLogo />
+
 # Luxom Binding
 
 This binding integrates with a <https://luxom.io/> based system through a Luxom IP interface module.

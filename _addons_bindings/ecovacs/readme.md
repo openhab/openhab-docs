@@ -13,6 +13,8 @@ install: auto
 
 {% include base.html %}
 
+<AddonLogo />
+
 # Ecovacs Binding
 
 This binding provides integration for vacuum cleaning / mopping robots made by Ecovacs (<https://www.ecovacs.com/>).

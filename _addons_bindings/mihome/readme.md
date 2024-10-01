@@ -13,6 +13,8 @@ install: auto
 
 {% include base.html %}
 
+<AddonLogo />
+
 # Xiaomi Mi Smart Home Binding
 
 This binding allows your openHAB to communicate with the Xiaomi Smart Home Suite.

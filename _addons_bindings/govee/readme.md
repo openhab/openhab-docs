@@ -13,6 +13,8 @@ install: auto
 
 {% include base.html %}
 
+<AddonLogo />
+
 # Govee Lan-API Binding
 
 ![govee](doc/govee-lights.png)

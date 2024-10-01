@@ -13,6 +13,8 @@ install: auto
 
 {% include base.html %}
 
+<AddonLogo />
+
 # digitalSTROM Binding
 
   This binding integrates the [digitalSTROM-System](https://www.digitalstrom.de/).

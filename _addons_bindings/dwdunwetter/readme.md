@@ -13,6 +13,8 @@ install: auto
 
 {% include base.html %}
 
+<AddonLogo />
+
 # DWD Unwetter Binding
 
 Binding to retrieve the Weather Warnings of the "Deutscher Wetterdienstes" from the [DWD Geoserver](https://maps.dwd.de/geoserver/web/).

@@ -13,6 +13,8 @@ install: manual
 
 {% include base.html %}
 
+<AddonLogo />
+
 # E3DC
 
 Integrates the Home Power Plants from E3/DC GmbH into openHAB.

@@ -13,6 +13,8 @@ install: auto
 
 {% include base.html %}
 
+<AddonLogo />
+
 # NeoHub Binding
 
 This is a binding for integrating [Heatmiser](https://www.heatmiser.com) room and underfloor heating control products.

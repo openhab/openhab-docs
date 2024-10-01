@@ -13,6 +13,8 @@ install: auto
 
 {% include base.html %}
 
+<AddonLogo />
+
 # Somfy Tahoma Binding
 
 This binding integrates the

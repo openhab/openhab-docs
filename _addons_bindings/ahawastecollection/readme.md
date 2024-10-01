@@ -13,6 +13,8 @@ install: auto
 
 {% include base.html %}
 
+<AddonLogo />
+
 # aha Waste Collection Binding
 
 This binding provides information about the upcoming waste collection dates for places, that are served by aha, the waste collection company for the region of Hannover. The values are retrieved from the online aha waste collection schedule available at: [aha Abfuhrkalender](https://www.aha-region.de/abholtermine/abfuhrkalender).

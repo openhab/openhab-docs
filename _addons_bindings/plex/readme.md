@@ -13,6 +13,8 @@ install: auto
 
 {% include base.html %}
 
+<AddonLogo />
+
 # PLEX Binding
 
 This binding can read information from multiple PLEX players connected to a PLEX server.

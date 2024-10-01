@@ -13,6 +13,8 @@ install: auto
 
 {% include base.html %}
 
+<AddonLogo />
+
 # GCE Binding
 
 This binding aims to handle various GCE Electronics equipments.

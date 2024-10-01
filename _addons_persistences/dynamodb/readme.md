@@ -13,6 +13,8 @@ install: auto
 
 {% include base.html %}
 
+<AddonLogo />
+
 # Amazon DynamoDB Persistence
 
 This service allows you to persist state updates using the [Amazon DynamoDB](https://aws.amazon.com/dynamodb/) database.

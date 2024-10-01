@@ -13,6 +13,8 @@ install: auto
 
 {% include base.html %}
 
+<AddonLogo />
+
 # Linky Binding
 
 This binding uses the API provided by Enedis to retrieve your energy consumption data.

@@ -13,6 +13,8 @@ install: auto
 
 {% include base.html %}
 
+<AddonLogo />
+
 # Lutron Binding
 
 This binding integrates with [Lutron](https://www.lutron.com) lighting control and home automation systems.

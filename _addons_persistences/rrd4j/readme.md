@@ -13,6 +13,8 @@ install: auto
 
 {% include base.html %}
 
+<AddonLogo />
+
 # rrd4j Persistence
 
 The [rrd4j](https://github.com/rrd4j/rrd4j) persistence service is based on a round-robin database.

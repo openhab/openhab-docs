@@ -13,6 +13,8 @@ install: auto
 
 {% include base.html %}
 
+<AddonLogo />
+
 # Anel NET-PwrCtrl Binding
 
 Monitor and control Anel NET-PwrCtrl devices.

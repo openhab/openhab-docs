@@ -13,6 +13,8 @@ install: auto
 
 {% include base.html %}
 
+<AddonLogo />
+
 # OpenSprinkler Binding
 
 This binding allows good and flexible control over your OpenSprinkler devices.

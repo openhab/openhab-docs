@@ -13,6 +13,8 @@ install: auto
 
 {% include base.html %}
 
+<AddonLogo />
+
 # WLED Binding
 
 This binding allows you to auto discover and use LED strings based on the WLED project:

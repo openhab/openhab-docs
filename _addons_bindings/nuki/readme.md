@@ -13,6 +13,8 @@ install: auto
 
 {% include base.html %}
 
+<AddonLogo />
+
 # Nuki Binding
 
 This is the binding for the [Nuki Smart Lock](https://nuki.io).

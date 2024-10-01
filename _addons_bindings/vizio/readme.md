@@ -13,6 +13,8 @@ install: auto
 
 {% include base.html %}
 
+<AddonLogo />
+
 # Vizio Binding
 
 This binding connects Vizio TVs to openHAB.

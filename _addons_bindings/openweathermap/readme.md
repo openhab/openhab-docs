@@ -13,6 +13,8 @@ install: auto
 
 {% include base.html %}
 
+<AddonLogo />
+
 # OpenWeatherMap Binding
 
 This binding integrates the [OpenWeatherMap weather API](https://openweathermap.org/api).

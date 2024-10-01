@@ -13,6 +13,8 @@ install: auto
 
 {% include base.html %}
 
+<AddonLogo />
+
 # Denon / Marantz Binding
 
 This binding integrates Denon & Marantz AV receivers by using either Telnet or a (undocumented) HTTP API.

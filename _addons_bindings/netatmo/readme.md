@@ -13,6 +13,8 @@ install: auto
 
 {% include base.html %}
 
+<AddonLogo />
+
 # Netatmo Binding
 
 The Netatmo binding integrates the following Netatmo products:

@@ -13,6 +13,8 @@ install: auto
 
 {% include base.html %}
 
+<AddonLogo />
+
 # ZoneMinder Binding
 
 Supports the ZoneMinder video surveillance system.

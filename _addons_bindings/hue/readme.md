@@ -13,6 +13,8 @@ install: auto
 
 {% include base.html %}
 
+<AddonLogo />
+
 # Philips Hue Binding
 
 This binding integrates the [Philips Hue Lighting system](https://www.meethue.com).

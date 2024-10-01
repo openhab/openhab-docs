@@ -13,6 +13,8 @@ install: auto
 
 {% include base.html %}
 
+<AddonLogo />
+
 # Modbus Binding
 
 This is the binding to access Modbus TCP and serial slaves.

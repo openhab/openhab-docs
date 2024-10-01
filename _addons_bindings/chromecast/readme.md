@@ -13,6 +13,8 @@ install: auto
 
 {% include base.html %}
 
+<AddonLogo />
+
 # Chromecast Binding
 
 The binding integrates Google Chromecast streaming devices.

@@ -13,6 +13,8 @@ install: auto
 
 {% include base.html %}
 
+<AddonLogo />
+
 # HAI by Leviton OmniLink Binding
 
 This binding integrates the [Omni and Lumina](https://www.leviton.com/en/products/security-automation/automation-av-controllers/omni-security-systems) line of home automation systems.

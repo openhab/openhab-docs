@@ -13,6 +13,8 @@ install: auto
 
 {% include base.html %}
 
+<AddonLogo />
+
 # Home Connect Binding
 
 The binding integrates the [Home Connect](https://www.home-connect.com/) system into openHAB.

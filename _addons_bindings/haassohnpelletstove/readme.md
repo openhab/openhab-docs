@@ -13,6 +13,8 @@ install: auto
 
 {% include base.html %}
 
+<AddonLogo />
+
 # Haas Sohn Pellet Stove Binding
 
 The binding for Haassohnpelletstove communicates with a Haas and Sohn Pelletstove through the optional

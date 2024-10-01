@@ -13,6 +13,8 @@ install: auto
 
 {% include base.html %}
 
+<AddonLogo />
+
 # NEEO Binding
 
 This binding will discovery and control a NEEO Brain/Remote combination.

@@ -13,6 +13,8 @@ install: manual
 
 {% include base.html %}
 
+<AddonLogo />
+
 # Ruuvi Tag
 
 This extension adds support for [Ruuvi Tag](https://ruuvi.com/) Sensor Beacons.

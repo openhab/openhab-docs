@@ -13,6 +13,8 @@ install: auto
 
 {% include base.html %}
 
+<AddonLogo />
+
 # JsonPath Transformation Service
 
 Extracts values from a JSON string using a [JsonPath](https://github.com/jayway/JsonPath#jayway-jsonpath) expression.

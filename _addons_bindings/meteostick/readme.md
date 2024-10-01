@@ -13,6 +13,8 @@ install: auto
 
 {% include base.html %}
 
+<AddonLogo />
+
 # Meteostick Binding
 
 This is the binding for the [Meteostick](https://www.smartbedded.com/wiki/index.php/Meteostick) weather receiver dongle.

@@ -13,6 +13,8 @@ install: auto
 
 {% include base.html %}
 
+<AddonLogo />
+
 # MapDB Persistence
 
 The [MapDB](https://mapdb.org/) persistence service is based on a simple key-value store that only saves the last value.

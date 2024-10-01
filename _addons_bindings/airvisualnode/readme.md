@@ -13,6 +13,8 @@ install: auto
 
 {% include base.html %}
 
+<AddonLogo />
+
 # AirVisual Node Binding
 
 This is an openHAB binding for the [AirVisual Node Air Quality Monitor](https://airvisual.com/node) (also known as IQAir AirVisual Pro).

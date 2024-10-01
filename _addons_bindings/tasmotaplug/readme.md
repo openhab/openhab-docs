@@ -13,6 +13,8 @@ install: auto
 
 {% include base.html %}
 
+<AddonLogo />
+
 # TasmotaPlug Binding
 
 This binding connects Tasmota flashed smart plugs with 1, 2, 3 or 4 relay channels to openHAB.

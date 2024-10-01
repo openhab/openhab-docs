@@ -13,6 +13,8 @@ install: auto
 
 {% include base.html %}
 
+<AddonLogo />
+
 # Samsung Smartthings Binding
 
 This binding integrates the Samsung Smartthings Hub into openHAB.

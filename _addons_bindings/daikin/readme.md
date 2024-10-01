@@ -13,6 +13,8 @@ install: auto
 
 {% include base.html %}
 
+<AddonLogo />
+
 # Daikin Binding
 
 The Daikin binding allows you to control your Daikin air conditioning units with openHAB.

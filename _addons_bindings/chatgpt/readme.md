@@ -13,6 +13,8 @@ install: auto
 
 {% include base.html %}
 
+<AddonLogo />
+
 # ChatGPT Binding
 
 The openHAB ChatGPT Binding allows openHAB to communicate with the ChatGPT language model provided by OpenAI.

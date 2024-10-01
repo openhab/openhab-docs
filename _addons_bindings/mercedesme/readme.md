@@ -13,6 +13,8 @@ install: auto
 
 {% include base.html %}
 
+<AddonLogo />
+
 # MercedesMe Binding
 
 This binding provides access to your Mercedes Benz vehicle like _Mercedes Me_ Smartphone App.

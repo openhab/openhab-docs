@@ -13,6 +13,8 @@ install: manual
 
 {% include base.html %}
 
+<AddonLogo />
+
 # Bluetooth BlueZ Adapter
 
 This extension supports Bluetooth access via BlueZ and DBus on Linux.

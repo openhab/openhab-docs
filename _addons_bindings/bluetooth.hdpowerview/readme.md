@@ -13,6 +13,8 @@ install: manual
 
 {% include base.html %}
 
+<AddonLogo />
+
 # Hunter Douglas (Luxaflex) PowerView Binding for Bluetooth
 
 This is an openHAB binding for Bluetooth for [Hunter Douglas PowerView](https://www.hunterdouglas.com/operating-systems/motorized/powerview-motorization/overview) motorized shades via Bluetooth Low Energy (BLE).

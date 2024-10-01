@@ -13,6 +13,8 @@ install: auto
 
 {% include base.html %}
 
+<AddonLogo />
+
 # Etherrain Binding
 
 The Etherrain binding is used to control a sprinkler controller from Quicksmart:

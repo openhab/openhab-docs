@@ -13,6 +13,8 @@ install: auto
 
 {% include base.html %}
 
+<AddonLogo />
+
 # Drayton Wiser Binding
 
 This binding integrates the [Drayton Wiser Smart Heating System](https://wiser.draytoncontrols.co.uk/).

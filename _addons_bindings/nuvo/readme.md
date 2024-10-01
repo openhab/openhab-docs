@@ -13,6 +13,8 @@ install: auto
 
 {% include base.html %}
 
+<AddonLogo />
+
 # Nuvo Grand Concerto & Essentia G Binding
 
 This binding can be used to control the Nuvo Grand Concerto or Essentia G whole house multi-zone amplifier.

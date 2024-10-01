@@ -13,6 +13,8 @@ install: auto
 
 {% include base.html %}
 
+<AddonLogo />
+
 # AirGradient Binding
 
 AirGradient provides open source and open hardware air quality monitors.

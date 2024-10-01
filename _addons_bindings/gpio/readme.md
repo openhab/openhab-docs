@@ -13,6 +13,8 @@ install: auto
 
 {% include base.html %}
 
+<AddonLogo />
+
 # GPIO Binding
 
 This binding adds GPIO support via the pigpiod daemon to openHAB.

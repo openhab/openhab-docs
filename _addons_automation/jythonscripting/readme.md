@@ -13,6 +13,8 @@ install: auto
 
 {% include base.html %}
 
+<AddonLogo />
+
 # Jython Scripting
 
 This add-on provides [Jython](https://www.jython.org/) 2.7 that can be used as a scripting language within automation rules and which eliminates the need to download Jython and create `EXTRA_JAVA_OPTS` entries for `bootclasspath`, `python.home` and `python.path`.

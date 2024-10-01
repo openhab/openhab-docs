@@ -13,6 +13,8 @@ install: auto
 
 {% include base.html %}
 
+<AddonLogo />
+
 # Helios Binding
 
 This binding integrates the Heliop door/videophone system (<https://www.2n.cz>).

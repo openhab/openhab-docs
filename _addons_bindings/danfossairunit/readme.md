@@ -13,6 +13,8 @@ install: auto
 
 {% include base.html %}
 
+<AddonLogo />
+
 # DanfossAirUnit Binding
 
 This binding supports controlling and monitoring Danfoss Air heat recovery ventilation units via Ethernet connection.

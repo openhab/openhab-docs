@@ -13,6 +13,8 @@ install: manual
 
 {% include base.html %}
 
+<AddonLogo />
+
 # LinkTap Binding
 
 This binding is for [Link-Tap](https://www.link-tap.com/) devices.

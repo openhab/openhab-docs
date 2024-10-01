@@ -13,6 +13,8 @@ install: auto
 
 {% include base.html %}
 
+<AddonLogo />
+
 # Bosch Indego Binding
 
 This is the Binding for Bosch Indego Connect lawn mowers.

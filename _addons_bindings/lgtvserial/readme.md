@@ -13,6 +13,8 @@ install: auto
 
 {% include base.html %}
 
+<AddonLogo />
+
 # LG TV control using serial protocol
 
 This binding can send some commands typically used by LG LCD TVs (and some used by projectors).

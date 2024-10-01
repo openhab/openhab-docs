@@ -13,6 +13,8 @@ install: auto
 
 {% include base.html %}
 
+<AddonLogo />
+
 # Feed Binding
 
 This binding allows you to integrate feeds in the openHAB environment.

@@ -13,6 +13,8 @@ install: auto
 
 {% include base.html %}
 
+<AddonLogo />
+
 # Emotiva Binding
 
 This binding integrates Emotiva AV processors by using the Emotiva Network Remote Control protocol.

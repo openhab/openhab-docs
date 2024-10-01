@@ -13,6 +13,8 @@ install: auto
 
 {% include base.html %}
 
+<AddonLogo />
+
 # DALI Binding
 
 This binding supports controlling devices on a DALI bus (Digital Addressable Lighting Interface) via a [daliserver](https://github.com/onitake/daliserver) connection.

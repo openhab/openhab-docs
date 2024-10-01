@@ -13,6 +13,8 @@ install: auto
 
 {% include base.html %}
 
+<AddonLogo />
+
 # evohome Binding
 
 This binding integrates the Honeywell evohome system.

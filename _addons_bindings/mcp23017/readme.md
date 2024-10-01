@@ -13,6 +13,8 @@ install: auto
 
 {% include base.html %}
 
+<AddonLogo />
+
 # MCP23017 Binding
 
 This binding allows you to have native access for MCP23017 I/O expander on I2C bus.

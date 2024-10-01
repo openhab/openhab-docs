@@ -13,6 +13,8 @@ install: auto
 
 {% include base.html %}
 
+<AddonLogo />
+
 # Homematic Binding
 
 This is the binding for the [eQ-3 Homematic Solution](https://eq-3.de/).

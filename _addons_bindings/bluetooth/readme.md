@@ -13,6 +13,8 @@ install: auto
 
 {% include base.html %}
 
+<AddonLogo />
+
 # Bluetooth Binding
 
 This binding provides support for generic Bluetooth devices.

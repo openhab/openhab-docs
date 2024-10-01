@@ -13,6 +13,8 @@ install: auto
 
 {% include base.html %}
 
+<AddonLogo />
+
 # Fine Offset Weather Station Binding
 
 This binding is for weather stations manufactured by [Fine Offset](http://www.foshk.com/).

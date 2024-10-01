@@ -13,6 +13,8 @@ install: auto
 
 {% include base.html %}
 
+<AddonLogo />
+
 # Exec Transformation Service
 
 Transforms an input string with an external program.

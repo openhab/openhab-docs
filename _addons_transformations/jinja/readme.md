@@ -13,6 +13,8 @@ install: auto
 
 {% include base.html %}
 
+<AddonLogo />
+
 # Jinja Transformation Service
 
 Transforms a value using a jinja template.

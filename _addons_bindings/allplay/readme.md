@@ -13,6 +13,8 @@ install: auto
 
 {% include base.html %}
 
+<AddonLogo />
+
 # AllPlay Binding
 
 This binding integrates devices compatible with [Qualcomm AllPlay](https://www.qualcomm.com/products/allplay).

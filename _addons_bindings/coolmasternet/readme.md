@@ -13,6 +13,8 @@ install: auto
 
 {% include base.html %}
 
+<AddonLogo />
+
 # CoolMasterNet Binding
 
 The CoolMasterNet binding is used to control [CoolMasterNet HVAC bridge devices](https://coolautomation.com/products/coolmasternet/), using the "ASCII I/F" plaintext TCP control protocol.
