@@ -95,7 +95,10 @@ def process_addon_type = { features, sources, type, collection, suffix, lblremov
                     }
                     front = front + feature
                     def toYaml = { '---\n' + it.collect{ /$it.key: $it.value/ }.join('\n') + '\n---\n\n' }
-                    readme.write(toYaml(front) + '<!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->\n\n{% include base.html %}\n\n' + readme.text)
+                    readme.write(toYaml(front)
+                      + '<!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->\n\n{% include base.html %}\n\n'
+                      + ((logo_svg || logo_png) ? '<AddonLogo />\n\n' : '')
+                      + readme.text)
                 }
             }
             print "\n"
