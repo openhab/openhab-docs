@@ -85,7 +85,7 @@ Display a slider control in a list
     Minimum interval between values
   </PropDescription>
 </PropBlock>
-<PropBlock type="DECIMAL" name="vertical" label="Vertical">
+<PropBlock type="BOOLEAN" name="vertical" label="Vertical">
   <PropDescription>
     Display the slider vertically
   </PropDescription>

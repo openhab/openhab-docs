@@ -46,7 +46,7 @@ Position widgets on a canvas layout with arbitrary position and size down to pix
 </PropBlock>
 <PropBlock type="INTEGER" name="screenHeight" label="Screen Height">
   <PropDescription>
-    Screen width in pixels (default 720)
+    Screen height in pixels (default 720)
   </PropDescription>
 </PropBlock>
 <PropBlock type="BOOLEAN" name="scale" label="Scaling">

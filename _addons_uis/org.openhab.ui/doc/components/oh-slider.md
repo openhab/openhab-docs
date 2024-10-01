@@ -48,7 +48,7 @@ Slider control, allows to pick a number value on a scale
     Minimum interval between values
   </PropDescription>
 </PropBlock>
-<PropBlock type="DECIMAL" name="vertical" label="Vertical">
+<PropBlock type="BOOLEAN" name="vertical" label="Vertical">
   <PropDescription>
     Display the slider vertically
   </PropDescription>

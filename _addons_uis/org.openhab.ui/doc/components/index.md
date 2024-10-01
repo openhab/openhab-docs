@@ -39,6 +39,7 @@ source: https://github.com/openhab/openhab-webui/edit/main/bundles/org.openhab.u
 
 | Component | Name | Description |
 |--------|------|-------------|
+| [`oh-card`](./oh-card.html) |  [Card](./oh-card.html) | The basic structure of all card widgets, providing title and footer and requiring a content slot |
 | [`oh-clock-card`](./oh-clock-card.html) |  [Digital Clock Card](./oh-clock-card.html) | Display a digital clock in a card |
 | [`oh-colorpicker-card`](./oh-colorpicker-card.html) |  [Color Picker Card](./oh-colorpicker-card.html) | Display a color picker in a card |
 | [`oh-gauge-card`](./oh-gauge-card.html) |  [Gauge Card](./oh-gauge-card.html) | Display a read-only gauge in a card to visualize a quantifiable item |

@@ -80,7 +80,7 @@ Display a slider in a card to control an item
     Minimum interval between values
   </PropDescription>
 </PropBlock>
-<PropBlock type="DECIMAL" name="vertical" label="Vertical">
+<PropBlock type="BOOLEAN" name="vertical" label="Vertical">
   <PropDescription>
     Display the slider vertically
   </PropDescription>
