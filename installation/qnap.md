@@ -32,7 +32,7 @@ The MyQNAP repo does not contain milestone versions and may not contain the late
 - Download the desired openHAB version from github (zip file)
 - Unzip and copy to OpenHab3 folder
 - Give runtime/bin/karaf and runtime/bin/backup X permission (using F9 in WinSCP)
-- Edit /etc/config/qpkg.conf to specify the installed version (also update install `Build` to avoid automatic updates)
+- Edit /etc/config/qpkg.conf to specify the installed version (also update `Build` field to avoid automatic updates)
 - Start openhab (using "App Center")
 
 ### Other interesting packages provided by the MyQNAP repo
