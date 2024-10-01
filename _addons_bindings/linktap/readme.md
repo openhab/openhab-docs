@@ -5,6 +5,7 @@ title: LinkTap - Bindings
 type: binding
 description: "This binding is for [Link-Tap](https://www.link-tap.com/) devices."
 since: 3x
+logo: images/addons/linktap.png
 install: manual
 ---
 
