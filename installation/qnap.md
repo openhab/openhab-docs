@@ -27,6 +27,7 @@ The MyQNAP repo does not contain openHAB milestone versions and may not contain 
 
 - Stop openhab (using "App Center")
 - Navigate to OpenHab3 folder (physical address may be /share/CACHEDEV3_DATA/.qpkg/OpenHab3 but this depends on your install)
+- Do a backup of OpenHab3 folder
 - delete folder runtime
 - inside folder userdata, delete folders cache, etc, and tmp
 - Download the desired openHAB version from github (zip file)
