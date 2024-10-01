@@ -21,6 +21,20 @@ QNAP NAS is based on Linux but it has limitations since it is not a full server.
 
 USB dongles may or may not work as QTS (QNAP's operating system) might not include the necessary drivers. However, you can install [USB serial drivers](https://www.myqnap.org/product/usb-serial-drivers/) (preferrably from MyQNAP repo), maybe it will include missing drivers for the dongle.
 
+### Manual update
+
+The MyQNAP repo does not contain milestone versions and may not conatain the latest openHAB stable version. In some situations you may prefer to update openHAB manually using WinSCP:
+
+- Stop openhab (using "App Center")
+- Navigate to OpenHab3 folder (physical address may be /share/CACHEDEV3_DATA/.qpkg/OpenHab3 but this depends on your install)
+- delete folder runtime
+- inside folder userdata, delete folders cache, etc, and tmp
+- Download the desired openHAB version from github (zip file)
+- Unzip and copy to OpenHab3 folder
+- Give runtime/bin/karaf and runtime/bin/backup X permission
+- Edit /etc/config/qpkg.conf to specify the installed version (also update install `Build` to avoid automatic updates)
+- Start openhab (using "App Center")
+
 ### Other interesting packages provided by the MyQNAP repo
 
 - Mosquitto (needs configuration after install)
