@@ -23,7 +23,7 @@ USB dongles may or may not work as QTS (QNAP's operating system) might not inclu
 
 ### Manual update
 
-The MyQNAP repo does not contain openHAB milestone versions and may not contain the latest stable version. In some situations you may prefer to update openHAB manually:
+If you decide to replace MyQNAP's distribution with an official openHAB one, for example to install another OH version or even a milestone, you can update openHAB manually:
 
 - Stop openhab (using "App Center")
 - Navigate to OpenHab3 folder (physical address may be /share/CACHEDEV3_DATA/.qpkg/OpenHab3 but this depends on your install)
@@ -33,7 +33,7 @@ The MyQNAP repo does not contain openHAB milestone versions and may not contain 
 - Download the desired openHAB version from github (zip file)
 - Unzip and copy to OpenHab3 folder
 - Give runtime/bin/karaf and runtime/bin/backup X permission (you may use F9 in WinSCP)
-- Edit /etc/config/qpkg.conf to specify the installed version (also update `Build` field to avoid automatic updates)
+- Edit /etc/config/qpkg.conf to specify the installed version (also update `Build` field to disable automatic updates)
 - Start openhab (using "App Center")
 
 ### Other interesting packages provided by the MyQNAP repo
