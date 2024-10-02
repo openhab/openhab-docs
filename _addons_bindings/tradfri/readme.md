@@ -13,9 +13,9 @@ install: auto
 
 {% include base.html %}
 
-<AddonLogo />
-
 # TRÅDFRI Binding
+
+<AddonLogo />
 
 This binding integrates the IKEA TRÅDFRI gateway and devices connected to it (such as dimmable LED bulbs).
 This binding only supports IKEA TRÅDFRI gateway v1.x, it is **not** compatible with DIRIGERA.

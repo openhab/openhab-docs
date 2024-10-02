@@ -13,9 +13,9 @@ install: auto
 
 {% include base.html %}
 
-<AddonLogo />
-
 # Atlona Binding
+
+<AddonLogo />
 
 This binding integrates [Atlona](https://www.atlona.com) AT-UHD-PRO3 or AT-PRO3HD HDBaseT matrix switches into your openHAB installation.
 

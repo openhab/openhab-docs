@@ -13,9 +13,9 @@ install: auto
 
 {% include base.html %}
 
-<AddonLogo />
-
 # openHAB NEEO Integration
+
+<AddonLogo />
 
 This integration will allow openHAB things/items to be exposed to the NEEO Brain and allow the NEEO smart remote to control them.
 NEEO is a smart home solution that includes an IP based remote.
@@ -418,7 +418,7 @@ After installing this add-on, you can configure the integration using the "NEEO 
 Alternatively, you can configure the settings in the file `conf/services/neeo.cfg`:
 
 ```
-############################## openHAB NEEO Integration #############################
+############################# #############################
 
 # A boolean value describing whether to expose all things/items
 # by default or not.

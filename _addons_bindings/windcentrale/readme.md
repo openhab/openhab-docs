@@ -13,9 +13,9 @@ install: auto
 
 {% include base.html %}
 
-<AddonLogo />
-
 # Windcentrale Binding
+
+<AddonLogo />
 
 This Binding is used to display the details of Windcentrale windmills.
 

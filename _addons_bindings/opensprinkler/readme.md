@@ -13,9 +13,9 @@ install: auto
 
 {% include base.html %}
 
-<AddonLogo />
-
 # OpenSprinkler Binding
+
+<AddonLogo />
 
 This binding allows good and flexible control over your OpenSprinkler devices.
 You can choose to manually start, stop or delay the stand alone watering programs that are stored and run fully from the OpenSprinkler device.

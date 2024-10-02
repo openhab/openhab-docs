@@ -13,9 +13,9 @@ install: auto
 
 {% include base.html %}
 
-<AddonLogo />
-
 # FTP Upload Binding
+
+<AddonLogo />
 
 This binding can be used to receive image files from FTP clients.
 The binding acts as a FTP server.

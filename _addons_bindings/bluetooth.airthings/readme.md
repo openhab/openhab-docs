@@ -13,9 +13,9 @@ install: manual
 
 {% include base.html %}
 
-<AddonLogo />
-
 # Airthings
+
+<AddonLogo />
 
 This extension adds support for [Airthings](https://www.airthings.com) indoor air quality monitor sensors.
 

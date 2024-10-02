@@ -13,9 +13,9 @@ install: auto
 
 {% include base.html %}
 
-<AddonLogo />
-
 # Kaleidescape Binding
+
+<AddonLogo />
 
 This binding now makes it possible to easily integrate almost all of the capabilities of the Kaleidescape control protocol into openHAB.
 Beyond just integrating playback transport controls, all meta-data provided via the control protocol is made available for display purposes and to use in rules.

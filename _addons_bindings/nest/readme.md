@@ -13,9 +13,9 @@ install: auto
 
 {% include base.html %}
 
-<AddonLogo />
-
 # Nest Binding
+
+<AddonLogo />
 
 The Nest binding integrates devices by [Nest](https://store.google.com/us/category/connected_home?) using the [Smart Device Management](https://developers.google.com/nest/device-access/api) (SDM) API.
 

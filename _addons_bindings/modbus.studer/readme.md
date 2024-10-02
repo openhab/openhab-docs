@@ -13,9 +13,9 @@ install: manual
 
 {% include base.html %}
 
-<AddonLogo />
-
 # Studer
+
+<AddonLogo />
 
 This extension adds support for the Studer protocol.
 

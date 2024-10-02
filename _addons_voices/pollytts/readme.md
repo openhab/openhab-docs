@@ -13,9 +13,9 @@ install: auto
 
 {% include base.html %}
 
-<AddonLogo />
-
 # Polly Text-to-Speech
+
+<AddonLogo />
 
 PollyTTS is a voice service utilizing the Internet based text-to-speech (TTS) service [Amazon Polly](https://aws.amazon.com/polly/).
 The service generates speech from both plain text input and text with Speech Synthesis Markup Language (SSML) [tags](https://docs.aws.amazon.com/polly/latest/dg/supported-ssml.html).

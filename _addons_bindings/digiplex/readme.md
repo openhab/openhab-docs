@@ -13,9 +13,9 @@ install: auto
 
 {% include base.html %}
 
-<AddonLogo />
-
 # Digiplex/EVO Binding
+
+<AddonLogo />
 
 This binding provides integration with Digiplex/EVO alarm systems from [Paradox](https://paradox.com).
 It utilizes [PRT3 module](https://www.paradox.com/Products/default.asp?CATID=7&SUBCATID=75&PRD=234) for serial communication.

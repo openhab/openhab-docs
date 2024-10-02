@@ -13,9 +13,9 @@ install: auto
 
 {% include base.html %}
 
-<AddonLogo />
-
 # macOS Text-to-Speech
+
+<AddonLogo />
 
 The macOS Text-to-Speech (TTS) service uses the macOS "say" command for producing spoken text.
 

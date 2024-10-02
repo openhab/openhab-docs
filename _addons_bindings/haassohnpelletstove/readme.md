@@ -13,9 +13,9 @@ install: auto
 
 {% include base.html %}
 
-<AddonLogo />
-
 # Haas Sohn Pellet Stove Binding
+
+<AddonLogo />
 
 The binding for Haassohnpelletstove communicates with a Haas and Sohn Pelletstove through the optional
 WIFI module. More information about the WIFI module can be found here: <https://www.haassohn.com/de/ihr-plus/WLAN-Funktion>

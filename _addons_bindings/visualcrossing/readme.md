@@ -13,9 +13,9 @@ install: auto
 
 {% include base.html %}
 
-<AddonLogo />
-
 # VisualCrossing Binding
+
+<AddonLogo />
 
 VisualCrossing Binding provides integration with VisualCrossing API
 

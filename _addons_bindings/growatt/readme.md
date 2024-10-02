@@ -13,9 +13,9 @@ install: auto
 
 {% include base.html %}
 
-<AddonLogo />
-
 # Growatt Binding
+
+<AddonLogo />
 
 This binding supports the integration of Growatt solar inverters.
 

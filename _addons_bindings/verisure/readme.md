@@ -13,9 +13,9 @@ install: auto
 
 {% include base.html %}
 
-<AddonLogo />
-
 # Verisure Binding
+
+<AddonLogo />
 
 This is an openHAB binding for Verisure Smart Alarms by Verisure Securitas.
 

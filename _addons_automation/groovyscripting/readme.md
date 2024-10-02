@@ -13,9 +13,9 @@ install: auto
 
 {% include base.html %}
 
-<AddonLogo />
-
 # Groovy Scripting
+
+<AddonLogo />
 
 This add-on provides support for [Groovy](https://groovy-lang.org/) 4.0.23 that can be used as a scripting language within automation rules and which eliminates the need to manually install Groovy.
 

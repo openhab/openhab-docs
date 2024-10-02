@@ -13,9 +13,9 @@ install: auto
 
 {% include base.html %}
 
-<AddonLogo />
-
 # Enigma2 Binding
+
+<AddonLogo />
 
 The binding integrates Enigma2 devices.
 

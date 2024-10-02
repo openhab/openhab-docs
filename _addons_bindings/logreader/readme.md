@@ -13,9 +13,9 @@ install: auto
 
 {% include base.html %}
 
-<AddonLogo />
-
 # Log Reader Binding
+
+<AddonLogo />
 
 This binding reads and analyzes log files. Search patterns are fully configurable, therefore different kind of log files should be possible to monitor by this binding.
 When certain log events are recognized, openHAB rules can be used to send notification about the event e.g by email for further analysis.

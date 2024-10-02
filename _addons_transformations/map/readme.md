@@ -13,9 +13,9 @@ install: auto
 
 {% include base.html %}
 
-<AddonLogo />
-
 # Map Transformation Service
+
+<AddonLogo />
 
 Transforms the input by mapping it to another string.
 

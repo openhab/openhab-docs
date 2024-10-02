@@ -13,9 +13,9 @@ install: auto
 
 {% include base.html %}
 
-<AddonLogo />
-
 # Luxom Binding
+
+<AddonLogo />
 
 This binding integrates with a <https://luxom.io/> based system through a Luxom IP interface module.
 The binding has been tested with the DS65L IP interface, but it's not an official binding by Luxom.

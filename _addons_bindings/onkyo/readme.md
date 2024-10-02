@@ -13,9 +13,9 @@ install: auto
 
 {% include base.html %}
 
-<AddonLogo />
-
 # Onkyo Binding
+
+<AddonLogo />
 
 This binding integrates the Onkyo AV receivers.
 

@@ -13,9 +13,9 @@ install: auto
 
 {% include base.html %}
 
-<AddonLogo />
-
 # CoronaStats Binding
+
+<AddonLogo />
 
 This binding provides the statistic about cases of COVID-19 from the website [https://corona-stats.online/](https://corona-stats.online/).
 

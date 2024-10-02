@@ -13,9 +13,9 @@ install: auto
 
 {% include base.html %}
 
-<AddonLogo />
-
 # WebexTeams Binding
+
+<AddonLogo />
 
 The Webex Team binding allows to send messages to [Webex Teams](https://web.webex.com/) users and rooms through a number of actions.
 

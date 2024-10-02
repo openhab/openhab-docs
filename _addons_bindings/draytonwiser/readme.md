@@ -13,9 +13,9 @@ install: auto
 
 {% include base.html %}
 
-<AddonLogo />
-
 # Drayton Wiser Binding
+
+<AddonLogo />
 
 This binding integrates the [Drayton Wiser Smart Heating System](https://wiser.draytoncontrols.co.uk/).
 The integration happens through the HeatHub, which acts as an IP gateway to the ZigBee devices (thermostats and TRVs).

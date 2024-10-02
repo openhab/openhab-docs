@@ -13,9 +13,9 @@ install: auto
 
 {% include base.html %}
 
-<AddonLogo />
-
 # Konnected Binding
+
+<AddonLogo />
 
 This binding is for interacting with a [Konnected Alarm Panel](https://konnected.io/).
 Konnected Alarm Panels can connect to security sensors directly or interface with existing alarm panels.

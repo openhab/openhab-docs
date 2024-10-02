@@ -13,9 +13,9 @@ install: auto
 
 {% include base.html %}
 
-<AddonLogo />
-
 # Metrics service
+
+<AddonLogo />
 
 The metrics service provides:
 

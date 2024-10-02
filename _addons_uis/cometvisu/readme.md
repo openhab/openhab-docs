@@ -13,9 +13,9 @@ install: auto
 
 {% include base.html %}
 
-<AddonLogo />
-
 # CometVisu Backend for openHAB
+
+<AddonLogo />
 
 This adds a backend for the web based visualization CometVisu <https://www.cometvisu.org>.
 The CometVisu is a highly customizable visualization, that runs in any browser.

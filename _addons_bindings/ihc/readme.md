@@ -13,9 +13,9 @@ install: auto
 
 {% include base.html %}
 
-<AddonLogo />
-
 # IHC / ELKO Binding
+
+<AddonLogo />
 
 This binding is for the "Intelligent Home Control" building automation system originally made by LK, but now owned by Schneider Electric and sold as "IHC Intelligent Home Control" or "ELKO living system" depending of the country.
 It is based on a star-configured topology with wires to each device.

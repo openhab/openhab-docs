@@ -13,9 +13,9 @@ install: auto
 
 {% include base.html %}
 
-<AddonLogo />
-
 # deCONZ Binding
+
+<AddonLogo />
 
 The Zigbee binding currently does not support the Dresden Elektronik Raspbee and ConBee Zigbee dongles.
 The manufacturer provides a companion app called deCONZ together with the mentioned hardware.

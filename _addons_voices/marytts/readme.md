@@ -13,9 +13,9 @@ install: auto
 
 {% include base.html %}
 
-<AddonLogo />
-
 # Mary Text-to-Speech
+
+<AddonLogo />
 
 The Mary Text-to-Speech (TTS) service is a pure Java implementation of a TTS service, which uses the [MaryTTS](http://mary.dfki.de/) project of DFKI.
 

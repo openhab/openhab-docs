@@ -13,9 +13,9 @@ install: auto
 
 {% include base.html %}
 
-<AddonLogo />
-
 # EchonetLite Binding
+
+<AddonLogo />
 
 This binding supports devices that make use of the [Echonet Lite specification](https://echonet.jp/spec_v113_lite_en/).
 

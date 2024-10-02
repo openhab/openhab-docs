@@ -13,9 +13,9 @@ install: auto
 
 {% include base.html %}
 
-<AddonLogo />
-
 # WLED Binding
+
+<AddonLogo />
 
 This binding allows you to auto discover and use LED strings based on the WLED project:
 <https://github.com/Aircoookie/WLED>

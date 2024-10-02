@@ -13,9 +13,9 @@ install: auto
 
 {% include base.html %}
 
-<AddonLogo />
-
 # Yeelight Binding
+
+<AddonLogo />
 
 This binding integrates the [Yeelight Lighting Product](https://www.yeelight.com/).
 

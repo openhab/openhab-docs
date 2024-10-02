@@ -13,9 +13,9 @@ install: auto
 
 {% include base.html %}
 
-<AddonLogo />
-
 # air-Q Binding
+
+<AddonLogo />
 
 The air-Q Binding integrates the air analyzer [air-Q](http://www.air-q.com) device into the openHAB system.
 

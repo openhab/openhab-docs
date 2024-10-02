@@ -13,9 +13,9 @@ install: auto
 
 {% include base.html %}
 
-<AddonLogo />
-
 # TasmotaPlug Binding
+
+<AddonLogo />
 
 This binding connects Tasmota flashed smart plugs with 1, 2, 3 or 4 relay channels to openHAB.
 The plug must report the status of the relay via the url `http://$PLUG_IP/cm?cmnd=Power` in order for the binding to work.

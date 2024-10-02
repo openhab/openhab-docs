@@ -13,9 +13,9 @@ install: auto
 
 {% include base.html %}
 
-<AddonLogo />
-
 # Hunter Douglas (Luxaflex) PowerView Binding
+
+<AddonLogo />
 
 This is an openHAB binding for [Hunter Douglas PowerView](https://www.hunterdouglas.com/operating-systems/motorized/powerview-motorization/overview) motorized shades via their PowerView hub.
 In some countries the PowerView system is sold under the brand name [Luxaflex](https://www.luxaflex.com/).

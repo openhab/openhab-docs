@@ -13,9 +13,9 @@ install: auto
 
 {% include base.html %}
 
-<AddonLogo />
-
 # Teslascope Binding
+
+<AddonLogo />
 
 This binding integrates [Tesla Electrical Vehicles](https://www.tesla.com).
 The integration happens through the [Teslascope](https://www.teslascope.com) API.

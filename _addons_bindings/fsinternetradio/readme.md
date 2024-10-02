@@ -13,9 +13,9 @@ install: auto
 
 {% include base.html %}
 
-<AddonLogo />
-
 # FS Internet Radio Binding
+
+<AddonLogo />
 
 This binding integrates internet radios based on the [Frontier Silicon chipset](https://www.frontier-silicon.com/).
 

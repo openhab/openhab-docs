@@ -13,9 +13,9 @@ install: auto
 
 {% include base.html %}
 
-<AddonLogo />
-
 # IBM Watson Speech-to-Text
+
+<AddonLogo />
 
 Watson STT Service uses the non-free IBM Watson Speech-to-Text API to transcript audio data to text.
 Be aware that using this service may incur cost on your IBM account.

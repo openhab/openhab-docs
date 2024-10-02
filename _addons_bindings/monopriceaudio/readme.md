@@ -13,9 +13,9 @@ install: auto
 
 {% include base.html %}
 
-<AddonLogo />
-
 # Monoprice Whole House Audio Binding
+
+<AddonLogo />
 
 This binding can be used to control the following types of whole house multi-zone amplifier systems:
 

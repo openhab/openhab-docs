@@ -13,9 +13,9 @@ install: auto
 
 {% include base.html %}
 
-<AddonLogo />
-
 # KVV Binding
+
+<AddonLogo />
 
 Adds support for the public API of Karlsruher Verkehrsverbund (public transport system in Karlsruhe, Germany).
 Enables the user to show the latest departure times for specific street car stops in openHAB.

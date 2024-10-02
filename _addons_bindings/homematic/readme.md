@@ -13,9 +13,9 @@ install: auto
 
 {% include base.html %}
 
-<AddonLogo />
-
 # Homematic Binding
+
+<AddonLogo />
 
 This is the binding for the [eQ-3 Homematic Solution](https://eq-3.de/).
 This binding allows you to integrate, view, control and configure all Homematic devices in openHAB.

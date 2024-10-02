@@ -13,9 +13,9 @@ install: auto
 
 {% include base.html %}
 
-<AddonLogo />
-
 # Hydrawise Binding
+
+<AddonLogo />
 
 ![API Key](doc/logo.png)
 

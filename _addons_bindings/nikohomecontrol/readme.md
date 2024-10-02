@@ -13,9 +13,9 @@ install: auto
 
 {% include base.html %}
 
-<AddonLogo />
-
 # Niko Home Control Binding
+
+<AddonLogo />
 
 **Upgrade notice for Niko Home Control II and openHAB 2.5.3 or later**:
 Starting with openHAB 2.5.3 the binding uses Niko Home Control hobby API token based authentication.

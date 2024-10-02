@@ -13,9 +13,9 @@ install: auto
 
 {% include base.html %}
 
-<AddonLogo />
-
 # Denon HEOS Binding
+
+<AddonLogo />
 
 This binding support the HEOS-System from Denon.
 The binding provides control of the players and groups within the network.

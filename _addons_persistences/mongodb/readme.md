@@ -13,9 +13,9 @@ install: auto
 
 {% include base.html %}
 
-<AddonLogo />
-
 # MongoDB Persistence
+
+<AddonLogo />
 
 This service allows you to persist state updates using the MongoDB database.
 It supports writing information to a MongoDB document store, as well as querying from it.

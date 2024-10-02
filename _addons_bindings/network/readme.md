@@ -13,9 +13,9 @@ install: auto
 
 {% include base.html %}
 
-<AddonLogo />
-
 # Network Binding
+
+<AddonLogo />
 
 This binding allows checking whether a device is currently available on the network.
 This is either done using [ping](https://en.wikipedia.org/wiki/Ping_%28networking_utility%29) or by a successful TCP connection on a specified port.

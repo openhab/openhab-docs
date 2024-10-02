@@ -13,9 +13,9 @@ install: auto
 
 {% include base.html %}
 
-<AddonLogo />
-
 # Telegram Binding
+
+<AddonLogo />
 
 The Telegram binding allows sending and receiving messages to and from Telegram clients (<https://telegram.org>), by using the Telegram Bot API.
 

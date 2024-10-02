@@ -13,9 +13,9 @@ install: auto
 
 {% include base.html %}
 
-<AddonLogo />
-
 # PegelOnline Binding
+
+<AddonLogo />
 
 Binding to observe water level from german rivers.
 Data is provided by german **Water-Route and Shipping Agency** [WSV](https://www.pegelonline.wsv.de/).

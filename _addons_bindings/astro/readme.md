@@ -13,9 +13,9 @@ install: auto
 
 {% include base.html %}
 
-<AddonLogo />
-
 # Astro Binding
+
+<AddonLogo />
 
 The Astro binding is used for calculating
 

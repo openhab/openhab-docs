@@ -13,9 +13,9 @@ install: auto
 
 {% include base.html %}
 
-<AddonLogo />
-
 # Freebox Binding
+
+<AddonLogo />
 
 This binding integrates the [Freebox Revolution](https://www.free.fr/freebox/freebox-revolution/) and [Freebox Delta](https://www.free.fr/freebox/freebox-delta/) to your openHAB installation.
 

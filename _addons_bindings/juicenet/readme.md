@@ -13,9 +13,9 @@ install: auto
 
 {% include base.html %}
 
-<AddonLogo />
-
 # JuiceNet Binding
+
+<AddonLogo />
 
 The JuiceNet binding will interface with the cloud portal to get status and manage your JuiceBox EV charger(s).
 In addition to getting the status of various items from the EV charger, it is also possible to start and stop charging sessions.

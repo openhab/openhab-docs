@@ -13,9 +13,9 @@ install: auto
 
 {% include base.html %}
 
-<AddonLogo />
-
 # Minecraft Binding
+
+<AddonLogo />
 
 This binding integrates Minecraft with openHAB through the [spigot plugin](https://github.com/ibaton/bukkit-openhab-plugin/releases/download/1.5/OHMinecraft.jar) ([sources](https://github.com/ibaton/bukkit-openhab-plugin/tree/master)).
 

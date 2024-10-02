@@ -13,9 +13,9 @@ install: auto
 
 {% include base.html %}
 
-<AddonLogo />
-
 # GlobalCache Binding
+
+<AddonLogo />
 
 The [GlobalCache](https://www.globalcache.com) binding enables communication
 between openHAB and GlobalCache [GC-100](https://www.globalcache.com/products/gc-100/) and [iTach](https://www.globalcache.com/products/itach/) family of devices.

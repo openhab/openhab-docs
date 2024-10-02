@@ -13,9 +13,9 @@ install: auto
 
 {% include base.html %}
 
-<AddonLogo />
-
 # Freecurrency Binding
+
+<AddonLogo />
 
 The Freecurrency binding connects [Freecurrency API](https://freecurrencyapi.com) to openHAB.
 It allows to get exchange rates between supported currencies and acts as a currency provider for openHAB's UoM support.

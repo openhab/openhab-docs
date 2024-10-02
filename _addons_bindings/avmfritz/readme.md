@@ -13,9 +13,9 @@ install: auto
 
 {% include base.html %}
 
-<AddonLogo />
-
 # AVM FRITZ! Binding
+
+<AddonLogo />
 
 The binding integrates AVM FRITZ!Boxes with a special focus on the AHA ([AVM Home Automation](https://avm.de/ratgeber/filter/smart-home/)) features.
 

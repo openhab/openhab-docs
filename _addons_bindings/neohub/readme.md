@@ -13,9 +13,9 @@ install: auto
 
 {% include base.html %}
 
-<AddonLogo />
-
 # NeoHub Binding
+
+<AddonLogo />
 
 This is a binding for integrating [Heatmiser](https://www.heatmiser.com) room and underfloor heating control products.
 The NeoHub (bridge) binding allows you to connect openHAB via TCP/IP to Heatmiser's NeoHub and integrate your Heatmiser smart thermostats, smart plugs, and accessories.

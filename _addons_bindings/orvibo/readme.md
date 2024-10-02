@@ -13,9 +13,9 @@ install: auto
 
 {% include base.html %}
 
-<AddonLogo />
-
 # Orvibo Binding
+
+<AddonLogo />
 
 This binding integrates Orvibo devices that communicate using UDP.
 Primarily this was designed for S20 Wifi Sockets but other products using the same protocol may be implemented in future.

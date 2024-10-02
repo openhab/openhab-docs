@@ -13,9 +13,9 @@ install: auto
 
 {% include base.html %}
 
-<AddonLogo />
-
 # Amazon Dash Button Binding
+
+<AddonLogo />
 
 The [Amazon Dash Button](https://www.amazon.com/Dash-Buttons/b?node=10667898011) is a cheap and small Wi-Fi connected device to order products from Amazon with the simple press of a button.
 This Binding allows you to integrate Dash Buttons into your home automation setup.

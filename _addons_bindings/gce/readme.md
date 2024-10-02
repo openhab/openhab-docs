@@ -13,9 +13,9 @@ install: auto
 
 {% include base.html %}
 
-<AddonLogo />
-
 # GCE Binding
+
+<AddonLogo />
 
 This binding aims to handle various GCE Electronics equipments.
 IPX800 is a 8 relay webserver from gce-electronics with a lot of possibilities:

@@ -13,9 +13,9 @@ install: auto
 
 {% include base.html %}
 
-<AddonLogo />
-
 # Dominoswiss Binding
+
+<AddonLogo />
 
 This binding allows the control of rollershutters, using an eGate as gateway and Dominoswiss radio receivers.
 The eGate-gateway is connected via ethernet to openHAB and sends its commands via radio to all rollershutters.

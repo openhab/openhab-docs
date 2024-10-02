@@ -13,9 +13,9 @@ install: auto
 
 {% include base.html %}
 
-<AddonLogo />
-
 # Chromecast Binding
+
+<AddonLogo />
 
 The binding integrates Google Chromecast streaming devices.
 It not only acts as a typical binding, but also registers each Chromecast device as an audio sink that can be used for playback.

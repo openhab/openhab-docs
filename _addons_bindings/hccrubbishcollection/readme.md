@@ -13,9 +13,9 @@ install: auto
 
 {% include base.html %}
 
-<AddonLogo />
-
 # HCC Rubbish Collection Binding
+
+<AddonLogo />
 
 A Hamilton City Council (NZ) _"Fight the Landfill"_ binding.
 This binding will keep track of your rubbish collection days and uses the [Fight the Landfill](https://www.fightthelandfill.co.nz/) website API to fetch the upcoming collection dates.

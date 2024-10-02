@@ -13,9 +13,9 @@ install: auto
 
 {% include base.html %}
 
-<AddonLogo />
-
 # Easee Binding
+
+<AddonLogo />
 
 The Easee binding can be used to retrieve data from the Easee Cloud API and also to control your wallbox via the Cloud API.
 This allows you to dynamically adjust the charge current for your car depending on production of your solar plant.

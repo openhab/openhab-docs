@@ -13,9 +13,9 @@ install: auto
 
 {% include base.html %}
 
-<AddonLogo />
-
 # evohome Binding
+
+<AddonLogo />
 
 This binding integrates the Honeywell evohome system.
 It uses your Honeywell Total Connect Comfort account to access your locations and heating zones.

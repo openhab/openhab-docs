@@ -13,9 +13,9 @@ install: auto
 
 {% include base.html %}
 
-<AddonLogo />
-
 # Bosch Indego Binding
+
+<AddonLogo />
 
 This is the Binding for Bosch Indego Connect lawn mowers.
 Thank´s to zazaz-de who found out how the API works.

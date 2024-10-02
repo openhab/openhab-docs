@@ -13,9 +13,9 @@ install: manual
 
 {% include base.html %}
 
-<AddonLogo />
-
 # Blukii
+
+<AddonLogo />
 
 This extension adds support for [Blukii](https://www.blukii.com/) Sensor Beacons.
 

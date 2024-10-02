@@ -13,9 +13,9 @@ install: auto
 
 {% include base.html %}
 
-<AddonLogo />
-
 # HomeKit Add-on
+
+<AddonLogo />
 
 This is an add-on that exposes your openHAB system as a bridge over the HomeKit protocol.
 

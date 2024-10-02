@@ -13,9 +13,9 @@ install: auto
 
 {% include base.html %}
 
-<AddonLogo />
-
 # SMA Energy Meter Binding
+
+<AddonLogo />
 
 This Binding is used to display the measured values of a SMA Energy Meter device.
 It shows purchased and grid feed-in power and energy.

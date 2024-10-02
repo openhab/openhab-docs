@@ -13,9 +13,9 @@ install: manual
 
 {% include base.html %}
 
-<AddonLogo />
-
 # E3DC
+
+<AddonLogo />
 
 Integrates the Home Power Plants from E3/DC GmbH into openHAB.
 See [E3DC Website](https://www.e3dc.com/) to find more informations about the device.
@@ -64,14 +64,14 @@ Check the [full example Things](#things) for manual setup.
 | port            | integer | TCP Port of your E3DC device Modbus Settings.. Default is 502 |
 | deviceid        | integer | Modbus ID of your E3DC device Modbus Settings. Default is 1           |
 
-### E3DC Home Power Plant
+## Home Power Plant
 
 Select as Bridge your previously created Modbus TCP Slave.
 | Parameter       | Type    | Description                                                             |
 |-----------------|---------|-------------------------------------------------------------------------|
 | refresh         | integer | Refresh Rate of E3DC values in Milliseconds                             |
 
-### E3DC Wallbox
+## Wallbox
 
 Select as Bridge your previously created E3DC Home Power Plant.
 
@@ -139,7 +139,7 @@ The E3DC device offers quite an amount of channels. For clustering 4 Channel Gro
 | Charge Lock time Active                     | emergency        | charge-lock-time           |  Switch  | Charge Lock Time is currently active |
 | Discharge Lock time Active                  | emergency        | discharge-lock-time        |  Switch  | Discharge Lock Time is currently active |
 
-### E3DC Wallbox Channels
+## Wallbox Channels
 
 Some of the Wallbox Settings can be changed. See the Access column if the actual value is Read/Write (RW) or Read Only (RO)
 

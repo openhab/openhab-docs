@@ -13,9 +13,9 @@ install: auto
 
 {% include base.html %}
 
-<AddonLogo />
-
 # Pulseaudio Binding
+
+<AddonLogo />
 
 This binding integrates pulseaudio devices.
 

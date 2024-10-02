@@ -13,9 +13,9 @@ install: auto
 
 {% include base.html %}
 
-<AddonLogo />
-
 # aWATTar Binding
+
+<AddonLogo />
 
 This binding provides access to the hourly prices for electricity for the German and Austrian provider aWATTar.
 

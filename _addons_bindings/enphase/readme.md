@@ -13,9 +13,9 @@ install: auto
 
 {% include base.html %}
 
-<AddonLogo />
-
 # Enphase Binding
+
+<AddonLogo />
 
 This is the binding for the [Enphase](https://enphase.com/) Envoy Solar Panel gateway.
 The binding uses the local API of the Envoy gateway.

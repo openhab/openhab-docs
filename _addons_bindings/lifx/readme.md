@@ -13,9 +13,9 @@ install: auto
 
 {% include base.html %}
 
-<AddonLogo />
-
 # LIFX Binding
+
+<AddonLogo />
 
 This binding integrates the [LIFX LED Lights](https://www.lifx.com/).
 All LIFX lights are directly connected to the WLAN and the binding communicates with them over a UDP protocol.

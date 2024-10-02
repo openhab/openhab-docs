@@ -13,9 +13,9 @@ install: auto
 
 {% include base.html %}
 
-<AddonLogo />
-
 # Roku Binding
+
+<AddonLogo />
 
 This binding connects Roku streaming media players and Roku TVs to openHAB.
 The Roku device must support the Roku ECP protocol REST API.

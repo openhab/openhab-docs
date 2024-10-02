@@ -13,9 +13,9 @@ install: auto
 
 {% include base.html %}
 
-<AddonLogo />
-
 # myStrom Binding
+
+<AddonLogo />
 
 This extension adds support for the myStrom devices.
 As of today only the Smart Plug, Bulb and the Motionsensor are implemented.

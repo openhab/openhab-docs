@@ -13,9 +13,9 @@ install: auto
 
 {% include base.html %}
 
-<AddonLogo />
-
 # Volumio Binding
+
+<AddonLogo />
 
 This binding integrates the open-source Music Player [Volumio](https://www.volumio.com).
 

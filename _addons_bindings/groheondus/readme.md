@@ -13,9 +13,9 @@ install: auto
 
 {% include base.html %}
 
-<AddonLogo />
-
 # GROHE ONDUS Binding
+
+<AddonLogo />
 
 The GROHE ONDUS Binding provides access to data collected by a GROHE ONDUS appliance, such as an [GROHE Sense Guard](https://www.grohe.de/de_de/smarthome/grohe-sense-guard/).
 The binding uses the REST API interface (the same as used by the Android App) to retrieve the collected data.

@@ -13,9 +13,9 @@ install: auto
 
 {% include base.html %}
 
-<AddonLogo />
-
 # Feican Binding
+
+<AddonLogo />
 
 This binding adds support for the Feican Wi-Fi version of the smart light LED Bulb, the WiFi RGBW Bulb.
 

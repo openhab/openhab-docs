@@ -13,9 +13,9 @@ install: auto
 
 {% include base.html %}
 
-<AddonLogo />
-
 # LG HomBot Binding
+
+<AddonLogo />
 
 The binding integrates a modified LG HomBot VR6260 based vacuum robots.
 Details on how to modify your HomBot can be found at [roboter-forum.com](https://www.roboter-forum.com/index.php?thread/10009-lg-hombot-3-0-wlan-kamera-steuerung-per-weboberfläche/).

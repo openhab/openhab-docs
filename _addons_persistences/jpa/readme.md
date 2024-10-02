@@ -13,9 +13,9 @@ install: auto
 
 {% include base.html %}
 
-<AddonLogo />
-
 # Java Persistence API (JPA) Persistence
+
+<AddonLogo />
 
 This service allows you to persist state updates using a SQL or NoSQL database through the [Java Persistence API](https://en.wikipedia.org/wiki/Java_Persistence_API).
 The service uses an abstraction layer that theoretically allows it to support many available SQL or NoSQL databases.

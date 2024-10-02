@@ -13,9 +13,9 @@ install: auto
 
 {% include base.html %}
 
-<AddonLogo />
-
 # MecMeter Binding
+
+<AddonLogo />
 
 This binding reads data from MEC power meter for providing electrical information for the electric circuit.
 

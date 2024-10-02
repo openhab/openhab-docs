@@ -13,9 +13,9 @@ install: auto
 
 {% include base.html %}
 
-<AddonLogo />
-
 # NoboHub Binding
+
+<AddonLogo />
 
 This binding controls the Glen Dimplex Nobø Hub using the <a href="https://www.glendimplex.se/media/15650/nobo-hub-api-v-1-1-integration-for-advanced-users.pdf">Nobø Hub API v1.1</a>.
 

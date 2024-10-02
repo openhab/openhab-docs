@@ -13,9 +13,9 @@ install: auto
 
 {% include base.html %}
 
-<AddonLogo />
-
 # openHAB Cloud Connector
+
+<AddonLogo />
 
 The openHAB Cloud Connector allows connecting the local openHAB runtime to a remote [openHAB Cloud](https://github.com/openhab/openhab-cloud/blob/master/README.md) instance, such as [myopenHAB.org](https://www.myopenHAB.org), which is an instance of the
 openHAB Cloud service hosted by the [openHAB Foundation](https://www.openhabfoundation.org/).
@@ -75,7 +75,7 @@ This is also not required for remote access through the cloud service to functio
 Alternatively, you can configure the settings in the file `conf/services/openhabcloud.cfg`:
 
 ```ini
-############################## openHAB Cloud Connector #############################
+############################# #############################
 
 # The URL of the openHAB Cloud service to connect to.
 # Optional, default is set to the service offered by the openHAB Foundation

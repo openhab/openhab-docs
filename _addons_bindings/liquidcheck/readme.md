@@ -13,9 +13,9 @@ install: auto
 
 {% include base.html %}
 
-<AddonLogo />
-
 # LiquidCheck Binding
+
+<AddonLogo />
 
 This binding is for the Liquid-Check device from SI-Elektronik GmbH which can be used to measure level and content of tanks.
 

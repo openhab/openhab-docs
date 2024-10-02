@@ -13,9 +13,9 @@ install: auto
 
 {% include base.html %}
 
-<AddonLogo />
-
 # Asuswrt Binding
+
+<AddonLogo />
 
 This binding adds support to read information from ASUS-Routers (Copyright © ASUS).
 

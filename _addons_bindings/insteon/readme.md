@@ -13,9 +13,9 @@ install: auto
 
 {% include base.html %}
 
-<AddonLogo />
-
 # Insteon Binding
+
+<AddonLogo />
 
 Insteon is a home area networking technology developed primarily for connecting light switches and loads.
 Insteon devices send messages either via the power line, or by means of radio frequency (RF) waves, or both (dual-band.
@@ -292,7 +292,7 @@ Many Insteon devices send out messages on different group numbers, depending on 
 A leak sensor may send out a message on group #1 when dry, and on group #2 when wet.
 The default group used for e.g. linking two light switches is usually group #1.
 
-## Insteon Binding Process
+# Process
 
 Before Insteon devices communicate with one another, they must be linked.
 During the linking process, one of the devices will be the "Controller", the other the "Responder" (see e.g. the [SwitchLinc Instructions](https://www.insteon.com/pdf/2477S.pdf)).

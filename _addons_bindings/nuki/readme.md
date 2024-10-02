@@ -13,9 +13,9 @@ install: auto
 
 {% include base.html %}
 
-<AddonLogo />
-
 # Nuki Binding
+
+<AddonLogo />
 
 This is the binding for the [Nuki Smart Lock](https://nuki.io).
 This binding allows you to integrate, view, control and configure the Nuki Bridge, Nuki Smart Lock and Nuki Opener.

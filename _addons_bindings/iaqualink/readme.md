@@ -13,9 +13,9 @@ install: auto
 
 {% include base.html %}
 
-<AddonLogo />
-
 # iAquaLink Binding
+
+<AddonLogo />
 
 This binding supports:
 

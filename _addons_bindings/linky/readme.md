@@ -13,9 +13,9 @@ install: auto
 
 {% include base.html %}
 
-<AddonLogo />
-
 # Linky Binding
+
+<AddonLogo />
 
 This binding uses the API provided by Enedis to retrieve your energy consumption data.
 You need to create an Enedis account [here](https://espace-client-connexion.enedis.fr/auth/UI/Login?realm=particuliers) if you don't have one already.

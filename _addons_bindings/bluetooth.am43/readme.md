@@ -13,9 +13,9 @@ install: manual
 
 {% include base.html %}
 
-<AddonLogo />
-
 # AM43
+
+<AddonLogo />
 
 This extension adds support for [AM43 Blind Drive Motors](https://www.a-okmotors.com/am-43/).
 

@@ -13,9 +13,9 @@ install: auto
 
 {% include base.html %}
 
-<AddonLogo />
-
 # Tellstick Binding
+
+<AddonLogo />
 
 This is an openHAB binding for Tellstick devices produced by Telldus, a Swedish company based in Lund.
 

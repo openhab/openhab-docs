@@ -13,9 +13,9 @@ install: auto
 
 {% include base.html %}
 
-<AddonLogo />
-
 # OpenTherm Gateway Binding
+
+<AddonLogo />
 
 This binding is used to integrate the OpenTherm Gateway into openHAB.
 The OpenTherm Gateway is a module designed by Schelte Bron that can be connected to units that support communication using the OpenTherm protocol, such as boiler or ventilation / heat recovery unit.

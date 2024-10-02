@@ -13,10 +13,10 @@ install: auto
 
 {% include base.html %}
 
+# Velux Binding
+
 <AddonLogo />
 
-
-# Velux Binding
 
 This binding integrates the <B>Velux</B> devices with help of a gateway, the <B>Velux Bridge KLF200</B>, which is able to control 200 actuators.
 The Velux Binding interacts via the Velux Bridge with any [io-homecontrol](https://www.io-homecontrol.com/)-based

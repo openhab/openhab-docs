@@ -13,9 +13,9 @@ install: auto
 
 {% include base.html %}
 
-<AddonLogo />
-
 # Linux Input Binding
+
+<AddonLogo />
 
 This binding allows to you use a keyboard to control your openHAB instance.
 It works by exposing all keys on the keyboard as channels.

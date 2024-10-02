@@ -13,9 +13,9 @@ install: auto
 
 {% include base.html %}
 
-<AddonLogo />
-
 # Milight/Easybulb/Limitless Binding
+
+<AddonLogo />
 
 This binding is for using your Milight, Easybulb or LimitlessLed bulbs and the iBox.
 

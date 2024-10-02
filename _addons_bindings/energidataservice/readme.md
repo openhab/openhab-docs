@@ -13,9 +13,9 @@ install: auto
 
 {% include base.html %}
 
-<AddonLogo />
-
 # Energi Data Service Binding
+
+<AddonLogo />
 
 This binding integrates electricity prices from the Danish Energi Data Service ("Open energy data from Energinet to society").
 

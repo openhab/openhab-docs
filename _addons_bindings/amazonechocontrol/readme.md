@@ -13,9 +13,9 @@ install: auto
 
 {% include base.html %}
 
-<AddonLogo />
-
 # Amazon Echo Control Binding
+
+<AddonLogo />
 
 This binding can control Amazon Echo devices (Alexa).
 

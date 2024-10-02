@@ -13,9 +13,9 @@ install: auto
 
 {% include base.html %}
 
-<AddonLogo />
-
 # Bosch Smart Home Binding
+
+<AddonLogo />
 
 Binding for Bosch Smart Home devices.
 

@@ -13,9 +13,9 @@ install: auto
 
 {% include base.html %}
 
-<AddonLogo />
-
 # MELCloud Binding
+
+<AddonLogo />
 
 This is an openHAB binding for [Mitsubishi MELCloud](https://www.melcloud.com/).
 Installing this binding you can control your Mitsubishi devices from openHAB without accessing the MELCloud App and benefiting from all openHAB automations.

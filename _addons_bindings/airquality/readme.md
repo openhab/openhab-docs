@@ -13,9 +13,9 @@ install: auto
 
 {% include base.html %}
 
-<AddonLogo />
-
 # Air Quality Binding
+
+<AddonLogo />
 
 This binding uses the [AQIcn.org service](https://aqicn.org) for providing air quality information for any location worldwide.
 

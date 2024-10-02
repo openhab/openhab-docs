@@ -13,9 +13,9 @@ install: auto
 
 {% include base.html %}
 
-<AddonLogo />
-
 # go-e Charger Binding
+
+<AddonLogo />
 
 This Binding controls and reads data from the [go-e Charger](https://go-e.co/), which is a mobile wallbox for charging EVs and has an open REST API for reading data and configuration.
 

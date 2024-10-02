@@ -13,9 +13,9 @@ install: auto
 
 {% include base.html %}
 
-<AddonLogo />
-
 # Samsung TV Binding
+
+<AddonLogo />
 
 This binding integrates the [Samsung TV's](https://www.samsung.com).
 

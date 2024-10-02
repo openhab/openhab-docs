@@ -13,9 +13,9 @@ install: auto
 
 {% include base.html %}
 
-<AddonLogo />
-
 # digitalSTROM Binding
+
+<AddonLogo />
 
   This binding integrates the [digitalSTROM-System](https://www.digitalstrom.de/).
 The integration happens through the digitalSTROM-Server, which acts as a gateway to connect the digitalSTROM-Devices.

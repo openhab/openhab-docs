@@ -13,9 +13,9 @@ install: auto
 
 {% include base.html %}
 
-<AddonLogo />
-
 # LCN Binding
+
+<AddonLogo />
 
 [Local Control Network (LCN)](https://www.lcn.eu) is a building automation system.
 It is capable of controlling lights, shutters, access control etc. and can process data from several sensor types.

@@ -13,9 +13,9 @@ install: auto
 
 {% include base.html %}
 
-<AddonLogo />
-
 # Shelly Binding
+
+<AddonLogo />
 
 This Binding integrates [Shelly devices](https://shelly.cloud) developed by Allterco.
 

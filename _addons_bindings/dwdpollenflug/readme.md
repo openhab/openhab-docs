@@ -13,9 +13,9 @@ install: auto
 
 {% include base.html %}
 
-<AddonLogo />
-
 # DWD Pollenflug Binding
+
+<AddonLogo />
 
 The "Deutsche Wetterdienst" (DWD) reports the current pollen count index for Germany on a daily base and a forecast for tomorrow and the day after tomorrow.
 This binding allows you to retrieve this data for your region or partregion.

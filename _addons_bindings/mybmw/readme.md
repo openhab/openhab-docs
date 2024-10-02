@@ -13,9 +13,9 @@ install: auto
 
 {% include base.html %}
 
-<AddonLogo />
-
 # MyBMW Binding
+
+<AddonLogo />
 
 The binding provides access like [MyBMW App](https://www.bmw.com/en/footer/mybmw-app.html) to openHAB.
 All vehicles connected to an account will be detected by the discovery with the correct type:

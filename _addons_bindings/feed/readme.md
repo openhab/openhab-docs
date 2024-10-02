@@ -13,9 +13,9 @@ install: auto
 
 {% include base.html %}
 
-<AddonLogo />
-
 # Feed Binding
+
+<AddonLogo />
 
 This binding allows you to integrate feeds in the openHAB environment.
 The Feed binding downloads the content, tracks for changes, and displays information like feed author, feed title and description, number of entries, last update date.

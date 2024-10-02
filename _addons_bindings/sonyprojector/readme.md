@@ -13,9 +13,9 @@ install: auto
 
 {% include base.html %}
 
-<AddonLogo />
-
 # SonyProjector Binding
+
+<AddonLogo />
 
 This binding can be used to conrol Sony Projectors through:
 

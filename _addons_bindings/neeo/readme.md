@@ -13,9 +13,9 @@ install: auto
 
 {% include base.html %}
 
-<AddonLogo />
-
 # NEEO Binding
+
+<AddonLogo />
 
 This binding will discovery and control a NEEO Brain/Remote combination.
 NEEO is a smart home solution that includes an IP based remote.

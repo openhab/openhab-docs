@@ -13,9 +13,9 @@ install: auto
 
 {% include base.html %}
 
-<AddonLogo />
-
 # LaMetric Binding
+
+<AddonLogo />
 
 The LaMetric binding allows to connect openHAB to LaMetric Time connected clock devices, providing following features:
 

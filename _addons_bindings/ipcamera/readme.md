@@ -13,9 +13,9 @@ install: auto
 
 {% include base.html %}
 
-<AddonLogo />
-
 # IP Camera Binding
+
+<AddonLogo />
 
 This binding allows you to use most IP cameras in openHAB and has many hidden features, so please take the time to read through this guide to learn different ways to work with cameras that you may not know about.
 I recommend purchasing a brand of camera that has an open API, as many features use far less CPU when done with an API camera.

@@ -13,9 +13,9 @@ install: auto
 
 {% include base.html %}
 
-<AddonLogo />
-
 # D-Link Smart Home Binding
+
+<AddonLogo />
 
 A binding for D-Link Smart Home devices.
 

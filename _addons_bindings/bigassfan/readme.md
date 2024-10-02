@@ -13,9 +13,9 @@ install: auto
 
 {% include base.html %}
 
-<AddonLogo />
-
 # BigAssFan Binding
+
+<AddonLogo />
 
 The [BigAssFan](https://www.bigassfans.com/) binding is used to enable communication between openHAB and Big Ass Fans' Haiku family of residential fans and lights that implement the SenseME technology.
 

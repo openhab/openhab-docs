@@ -13,9 +13,9 @@ install: auto
 
 {% include base.html %}
 
-<AddonLogo />
-
 # senseBox Binding
+
+<AddonLogo />
 
 The senseBox binding integrates environment data from the [senseBox](https://sensebox.de/)
 Citizen Science Toolkit.

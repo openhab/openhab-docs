@@ -13,9 +13,9 @@ install: auto
 
 {% include base.html %}
 
-<AddonLogo />
-
 # Sonos Binding
+
+<AddonLogo />
 
 This binding integrates the [Sonos Multi-Room Audio system](https://www.sonos.com).
 

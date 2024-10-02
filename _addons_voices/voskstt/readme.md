@@ -13,9 +13,9 @@ install: auto
 
 {% include base.html %}
 
-<AddonLogo />
-
 # Vosk Speech-to-Text
+
+<AddonLogo />
 
 Vosk STT Service uses [vosk-api](https://github.com/alphacep/vosk-api) to perform offline speech-to-text in openHAB.
 

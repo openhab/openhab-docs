@@ -13,9 +13,9 @@ install: auto
 
 {% include base.html %}
 
-<AddonLogo />
-
 # Qbus Binding
+
+<AddonLogo />
 
 This binding for [Qbus](https://qbus.be) communicates with all controllers of the Qbus home automation system.
 

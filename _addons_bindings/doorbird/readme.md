@@ -13,9 +13,9 @@ install: auto
 
 {% include base.html %}
 
-<AddonLogo />
-
 # Doorbird Binding
+
+<AddonLogo />
 
 Binding for Doorbird D101 and D210x video doorbells.
 

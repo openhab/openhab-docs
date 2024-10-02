@@ -13,9 +13,9 @@ install: auto
 
 {% include base.html %}
 
-<AddonLogo />
-
 # EnturNo Binding
+
+<AddonLogo />
 
 This binding gets Norwegian public transport real-time (estimated) data from the [Entur.org API](https://developer.entur.org/pages-intro-overview).
 

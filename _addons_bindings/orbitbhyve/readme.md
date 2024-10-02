@@ -13,9 +13,9 @@ install: auto
 
 {% include base.html %}
 
-<AddonLogo />
-
 # Orbit B-hyve Binding
+
+<AddonLogo />
 
 This is the binding for the [Orbit B-hyve](https://bhyve.orbitonline.com/) wi-fi sprinklers.
 

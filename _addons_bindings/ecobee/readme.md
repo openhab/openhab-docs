@@ -13,9 +13,9 @@ install: auto
 
 {% include base.html %}
 
-<AddonLogo />
-
 # Ecobee Binding
+
+<AddonLogo />
 
 [Ecobee Inc.](https://www.ecobee.com/)  of Toronto, Canada, sells a range of Wi-Fi
 enabled thermostats, principally in the Americas.

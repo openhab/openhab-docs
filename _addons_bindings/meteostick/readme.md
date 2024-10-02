@@ -13,9 +13,9 @@ install: auto
 
 {% include base.html %}
 
-<AddonLogo />
-
 # Meteostick Binding
+
+<AddonLogo />
 
 This is the binding for the [Meteostick](https://www.smartbedded.com/wiki/index.php/Meteostick) weather receiver dongle.
 This is an RF receiver that can receive data directly from Davis weather devices (and others).

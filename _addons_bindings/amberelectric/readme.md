@@ -13,9 +13,9 @@ install: auto
 
 {% include base.html %}
 
-<AddonLogo />
-
 # Amber Electric Binding
+
+<AddonLogo />
 
 A binding that supports the Australian energy retailer Amber's API (<https://www.amber.com.au/>) and provides data on the current pricing for buying and selling power, as well as the current level of renewables in the NEM.
 

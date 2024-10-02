@@ -13,9 +13,9 @@ install: auto
 
 {% include base.html %}
 
-<AddonLogo />
-
 # Alarm Decoder Binding
+
+<AddonLogo />
 
 The [Alarm Decoder](https://www.alarmdecoder.com) from Nu Tech Software Solutions is a hardware adapter that interfaces with Ademco/Honeywell and DSC alarm panels.
 It acts essentially like a keypad, reading and writing messages on the serial bus that connects keypads with the main panel.

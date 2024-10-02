@@ -13,9 +13,9 @@ install: auto
 
 {% include base.html %}
 
-<AddonLogo />
-
 # Plugwise Binding
+
+<AddonLogo />
 
 The Plugwise binding adds support to openHAB for [Plugwise](https://www.plugwise.com) Zigbee devices using the Stick.
 

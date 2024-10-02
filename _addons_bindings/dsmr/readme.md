@@ -13,9 +13,9 @@ install: auto
 
 {% include base.html %}
 
-<AddonLogo />
-
 # DSMR Binding
+
+<AddonLogo />
 
 The DSMR-binding is targeted towards Dutch, Belgium, Luxembourger and Austrian users having a smart meter (Dutch: 'Slimme meter').
 Data of Dutch/Belgium/Luxembourg/Austrian smart meters can be obtained via the P1-port.

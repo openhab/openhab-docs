@@ -13,9 +13,9 @@ install: auto
 
 {% include base.html %}
 
-<AddonLogo />
-
 # Mail Binding
+
+<AddonLogo />
 
 The Mail binding provides support for sending mails from rules.
 

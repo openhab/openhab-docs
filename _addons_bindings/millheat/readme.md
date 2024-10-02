@@ -13,9 +13,9 @@ install: auto
 
 {% include base.html %}
 
-<AddonLogo />
-
 # Millheat Binding
+
+<AddonLogo />
 
 This binding integrates the Mill Wi-Fi enabled panel heaters. See <https://www.millheat.com/mill-wifi/>
 

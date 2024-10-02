@@ -13,9 +13,9 @@ install: auto
 
 {% include base.html %}
 
-<AddonLogo />
-
 # Anthem Binding
+
+<AddonLogo />
 
 The binding allows control of Anthem AV processors over an IP connection to the processor.
 

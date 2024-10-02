@@ -13,9 +13,9 @@ install: auto
 
 {% include base.html %}
 
-<AddonLogo />
-
 # Vitotronic Binding
+
+<AddonLogo />
 
 Viessmann heating systems with Vitotronic has an optolink Interface for maintenance.
 This interface can use for get/set data in the heating system. [see on openv](https://github.com/openv/openv/wiki/)

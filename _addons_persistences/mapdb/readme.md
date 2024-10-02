@@ -13,9 +13,9 @@ install: auto
 
 {% include base.html %}
 
-<AddonLogo />
-
 # MapDB Persistence
+
+<AddonLogo />
 
 The [MapDB](https://mapdb.org/) persistence service is based on a simple key-value store that only saves the last value.
 MapDB is useful for restoring items that have the `restoreOnStartup` strategy because other persistence options have some drawbacks if only the last value is needed on restarts.

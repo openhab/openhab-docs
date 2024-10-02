@@ -13,9 +13,9 @@ install: auto
 
 {% include base.html %}
 
-<AddonLogo />
-
 # KNX Binding
+
+<AddonLogo />
 
 The openHAB KNX binding allows to connect to [KNX Home Automation](https://www.knx.org/) installations.
 Switching lights on and off, activating your roller shutters, or changing room temperatures are only some examples.

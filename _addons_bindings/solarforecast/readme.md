@@ -13,9 +13,9 @@ install: auto
 
 {% include base.html %}
 
-<AddonLogo />
-
 # SolarForecast Binding
+
+<AddonLogo />
 
 This binding provides data from Solar Forecast services.
 Use it to estimate your daily production, plan electric consumers like Electric Vehicle charging, heating or HVAC.

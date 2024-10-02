@@ -13,9 +13,9 @@ install: auto
 
 {% include base.html %}
 
-<AddonLogo />
-
 # tado° Binding
+
+<AddonLogo />
 
 The tado° binding integrates devices from [tado°](https://www.tado.com).
 

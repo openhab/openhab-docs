@@ -13,9 +13,9 @@ install: auto
 
 {% include base.html %}
 
-<AddonLogo />
-
 # FolderWatcher Binding
+
+<AddonLogo />
 
 This binding is intended to monitor a local folder, FTP and S3 bucket and their subfolders and notify of new files.
 

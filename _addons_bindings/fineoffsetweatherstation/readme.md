@@ -13,9 +13,9 @@ install: auto
 
 {% include base.html %}
 
-<AddonLogo />
-
 # Fine Offset Weather Station Binding
+
+<AddonLogo />
 
 This binding is for weather stations manufactured by [Fine Offset](http://www.foshk.com/).
 These weather stations are white labeled products which are re-branded by many distribution companies around the world.

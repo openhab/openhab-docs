@@ -13,9 +13,9 @@ install: auto
 
 {% include base.html %}
 
-<AddonLogo />
-
 # Jellyfin Binding
+
+<AddonLogo />
 
 This is the binding for [Jellyfin](https://jellyfin.org), the volunteer built media solution that puts you in control of your media.
 This binding allows you to connect to Jellyfin clients that supports remote control, it's built on top of the official Jellyfin Kotlin SDK.

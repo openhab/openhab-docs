@@ -13,9 +13,9 @@ install: auto
 
 {% include base.html %}
 
-<AddonLogo />
-
 # iRobot Binding
+
+<AddonLogo />
 
 This binding provides integration of products by iRobot company (<https://www.irobot.com/>). It is currently developed
 to support Roomba vacuum cleaner/mopping robots with built-in Wi-Fi module. The binding interfaces to the robot directly

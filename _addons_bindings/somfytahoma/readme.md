@@ -13,9 +13,9 @@ install: auto
 
 {% include base.html %}
 
-<AddonLogo />
-
 # Somfy Tahoma Binding
+
+<AddonLogo />
 
 This binding integrates the
 [Somfy Tahoma](https://www.somfy.fr/produits/1811478/)

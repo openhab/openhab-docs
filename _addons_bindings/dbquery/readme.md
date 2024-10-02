@@ -13,9 +13,9 @@ install: auto
 
 {% include base.html %}
 
-<AddonLogo />
-
 # DBQuery Binding
+
+<AddonLogo />
 
 This binding allows creating items from the result of native database queries.
 It currently only supports InfluxDB 2.X.

@@ -13,9 +13,9 @@ install: auto
 
 {% include base.html %}
 
-<AddonLogo />
-
 # Deutsche Bahn Binding
+
+<AddonLogo />
 
 The Deutsche Bahn Binding provides the latest timetable information for all trains that arrive or depart at a specific train station, including live information for delays and changes in timetable.
 The information are requested from the timetable api of Deutsche Bahn developer portal, so you'll need a (free) developer account to use this binding.

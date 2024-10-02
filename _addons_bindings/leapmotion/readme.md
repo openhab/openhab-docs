@@ -13,9 +13,9 @@ install: auto
 
 {% include base.html %}
 
-<AddonLogo />
-
 # Leap Motion Binding
+
+<AddonLogo />
 
 The [Leap Motion](https://www.leapmotion.com/) controller is a gesture sensoring device that uses stereoscopic cameras and is connected through USB.
 As all processing is done in software, it requires quite some powerful computer, such that it unfortunately does not work on single-board computers such as the Raspberry Pi.

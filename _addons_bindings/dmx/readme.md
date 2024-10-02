@@ -13,9 +13,9 @@ install: auto
 
 {% include base.html %}
 
-<AddonLogo />
-
 # DMX Binding
+
+<AddonLogo />
 
 The DMX binding integrates DMX devices. There are different output devices supported as well as Dimmers and Chasers.
 

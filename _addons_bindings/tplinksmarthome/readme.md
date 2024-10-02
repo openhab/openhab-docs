@@ -13,9 +13,9 @@ install: auto
 
 {% include base.html %}
 
-<AddonLogo />
-
 # TP-Link Smart Home Binding
+
+<AddonLogo />
 
 This binding adds support to control TP-Link Smart Home Devices from your local openHAB system.
 

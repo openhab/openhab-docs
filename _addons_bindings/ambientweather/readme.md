@@ -13,9 +13,9 @@ install: auto
 
 {% include base.html %}
 
-<AddonLogo />
-
 # Ambient Weather Binding
+
+<AddonLogo />
 
 The Ambient Weather binding integrates weather station data that's stored on the Ambient Weather online service.
 The binding uses Ambient Weather's real-time API, so updates from weather stations are delivered to the binding in near real-time.

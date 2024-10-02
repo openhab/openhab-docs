@@ -13,9 +13,9 @@ install: auto
 
 {% include base.html %}
 
-<AddonLogo />
-
 # Bond Home Binding
+
+<AddonLogo />
 
 This binding connects the [Bond Home](https://bondhome.io/) Bridge to openHAB using the [BOND V2 Local HTTP API](http://docs-local.appbond.com).
 You'll need to acquire your [Local Token](http://docs-local.appbond.com/#section/Getting-Started/Getting-the-Bond-Token).

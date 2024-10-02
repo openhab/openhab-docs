@@ -13,9 +13,9 @@ install: auto
 
 {% include base.html %}
 
-<AddonLogo />
-
 # Xiaomi Mi Smart Home Binding
+
+<AddonLogo />
 
 This binding allows your openHAB to communicate with the Xiaomi Smart Home Suite.
 It consists of devices communicating over a Zigbee network with a Zigbee - WiFi gateway.

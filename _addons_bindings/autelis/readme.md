@@ -13,9 +13,9 @@ install: auto
 
 {% include base.html %}
 
-<AddonLogo />
-
 # Autelis Pool Control Binding
+
+<AddonLogo />
 
 Autelis manufactures a network enabled pool interface for many popular pool systems.
 See [the Autelis website](https://www.autelis.com) and the [Autelis Command Protocol](https://www.autelis.com/wiki/index.php?title=Pool_Control_(PI)_HTTP_Command_Reference) for more information.

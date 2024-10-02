@@ -13,9 +13,9 @@ install: auto
 
 {% include base.html %}
 
-<AddonLogo />
-
 # Logitech Harmony Hub Binding
+
+<AddonLogo />
 
 The Harmony Hub binding is used to enable communication between openHAB and multiple Logitech Harmony Hub devices.
 The API exposed by the Harmony Hub is relatively limited, but it does allow for reading the current activity as well as setting the activity and sending device commands.

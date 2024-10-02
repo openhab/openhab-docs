@@ -13,9 +13,9 @@ install: auto
 
 {% include base.html %}
 
-<AddonLogo />
-
 # Miele@home Binding
+
+<AddonLogo />
 
 This binding integrates Miele@home appliances.
 Miele@home allows controlling Miele appliances that are equipped with special communication modules.

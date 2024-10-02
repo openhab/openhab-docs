@@ -13,9 +13,9 @@ install: auto
 
 {% include base.html %}
 
-<AddonLogo />
-
 # Philips Hue Binding
+
+<AddonLogo />
 
 This binding integrates the [Philips Hue Lighting system](https://www.meethue.com).
 The integration happens through the Hue Bridge, which acts as an IP gateway to the Zigbee devices.

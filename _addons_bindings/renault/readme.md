@@ -13,9 +13,9 @@ install: auto
 
 {% include base.html %}
 
-<AddonLogo />
-
 # Renault Binding
+
+<AddonLogo />
 
 This binding allows MyRenault App. users to get battery status and other data from their cars.
 They can also heat their cars by turning ON the HVAC status and toggle the car's charging mode.

@@ -13,9 +13,9 @@ install: auto
 
 {% include base.html %}
 
-<AddonLogo />
-
 # LG webOS Binding
+
+<AddonLogo />
 
 The binding integrates LG WebOS based smart TVs.
 This binding is an adoption of LG's [Connect SDK](https://github.com/ConnectSDK/Connect-SDK-Android-Core) library, which is no longer maintained and which was specific to Android.

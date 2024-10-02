@@ -13,9 +13,9 @@ install: auto
 
 {% include base.html %}
 
-<AddonLogo />
-
 # GPIO Binding
+
+<AddonLogo />
 
 This binding adds GPIO support via the pigpiod daemon to openHAB.
 It requires the pigpiod daemon (<http://abyz.me.uk/rpi/pigpio/>) to be installed on the pi that should be controlled.

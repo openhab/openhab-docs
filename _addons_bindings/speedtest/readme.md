@@ -13,9 +13,9 @@ install: auto
 
 {% include base.html %}
 
-<AddonLogo />
-
 # Speedtest Binding
+
+<AddonLogo />
 
 The Speedtest Binding can be used to perform a network speed test for your openHAB instance.
 It is based on the command line interface (CLI) version of Ookla's Speedtest (https://www.speedtest.net/apps/cli).

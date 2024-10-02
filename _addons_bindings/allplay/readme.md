@@ -13,9 +13,9 @@ install: auto
 
 {% include base.html %}
 
-<AddonLogo />
-
 # AllPlay Binding
+
+<AddonLogo />
 
 This binding integrates devices compatible with [Qualcomm AllPlay](https://www.qualcomm.com/products/allplay).
 The binding uses native libraries for the AllJoyn framework.

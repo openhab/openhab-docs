@@ -13,9 +13,9 @@ install: auto
 
 {% include base.html %}
 
-<AddonLogo />
-
 # Vizio Binding
+
+<AddonLogo />
 
 This binding connects Vizio TVs to openHAB.
 The TV must support the Vizio SmartCast API that is found on 2016 and later models.

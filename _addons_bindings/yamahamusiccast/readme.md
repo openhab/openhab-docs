@@ -13,9 +13,9 @@ install: auto
 
 {% include base.html %}
 
-<AddonLogo />
-
 # Yamaha MusicCast Binding
+
+<AddonLogo />
 
 Binding to control Yamaha models via their MusicCast protocol (aka Yamaha Extended Control).
 With support for 4 zones: main, zone2, zone3, zone4. Main is always present. Zone2, Zone3, Zone4 are read from the model.

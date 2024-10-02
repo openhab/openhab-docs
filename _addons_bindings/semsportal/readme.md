@@ -13,9 +13,9 @@ install: auto
 
 {% include base.html %}
 
-<AddonLogo />
-
 # SEMSPortal Binding
+
+<AddonLogo />
 
 This binding can help you include statistics of your SEMS / GoodWe solar panel installation into openHAB.
 It is a read-only connection that maps collected parameters to openHAB channels.

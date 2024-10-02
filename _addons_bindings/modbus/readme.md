@@ -13,9 +13,9 @@ install: auto
 
 {% include base.html %}
 
-<AddonLogo />
-
 # Modbus Binding
+
+<AddonLogo />
 
 This is the binding to access Modbus TCP and serial slaves.
 RTU, ASCII and BIN variants of Serial Modbus are supported.

@@ -13,9 +13,9 @@ install: auto
 
 {% include base.html %}
 
-<AddonLogo />
-
 # Mikrotik RouterOS Binding
+
+<AddonLogo />
 
 This binding integrates [Mikrotik](https://mikrotik.com/) [RouterOS](https://help.mikrotik.com/docs/display/ROS/RouterOS)
 [devices](https://mikrotik.com/products) allowing monitoring of system resources, network interfaces and WiFi clients.

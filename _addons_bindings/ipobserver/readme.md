@@ -13,9 +13,9 @@ install: auto
 
 {% include base.html %}
 
-<AddonLogo />
-
 # IpObserver Binding
+
+<AddonLogo />
 
 This binding is for any weather station that sends data to an IP Observer module.
 The weather stations that do this are made by a company in China called `Fine Offset` and then re-branded by many distribution companies around the world.

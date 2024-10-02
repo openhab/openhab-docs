@@ -13,9 +13,9 @@ install: auto
 
 {% include base.html %}
 
-<AddonLogo />
-
 # meteoblue Binding
+
+<AddonLogo />
 
 The meteoblue binding uses the [meteoblue weather service](https://content.meteoblue.com/en/content/view/full/4511)
 to provide weather information.

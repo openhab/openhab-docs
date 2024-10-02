@@ -13,9 +13,9 @@ install: auto
 
 {% include base.html %}
 
-<AddonLogo />
-
 # AndroidTV Binding
+
+<AddonLogo />
 
 This binding is designed to emulate different protocols to interact with the AndroidTV platform.
 Currently it emulates the Google Video App to interact with a variety of AndroidTVs for purposes of remote control.

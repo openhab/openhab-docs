@@ -13,9 +13,9 @@ install: auto
 
 {% include base.html %}
 
-<AddonLogo />
-
 # Kostal Inverter Binding
+
+<AddonLogo />
 
 Scrapes the web interface of the inverter for the metrics of the supported channels below.
 

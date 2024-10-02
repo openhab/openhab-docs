@@ -13,9 +13,9 @@ install: auto
 
 {% include base.html %}
 
-<AddonLogo />
-
 # Groupe PSA Binding
+
+<AddonLogo />
 
 Binding to retrieve information via the Groupe PSA Web API for cars from Opel, Peugeot, Citroen, DS and Vauxhall.
 

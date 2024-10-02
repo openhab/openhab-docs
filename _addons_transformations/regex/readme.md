@@ -13,9 +13,9 @@ install: auto
 
 {% include base.html %}
 
-<AddonLogo />
-
 # RegEx Transformation Service
+
+<AddonLogo />
 
 Transforms a source string on basis of the regular expression (regex) search pattern to a defined result string.
 

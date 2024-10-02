@@ -13,9 +13,9 @@ install: auto
 
 {% include base.html %}
 
-<AddonLogo />
-
 # MCP23017 Binding
+
+<AddonLogo />
 
 This binding allows you to have native access for MCP23017 I/O expander on I2C bus.
 It was tested with Raspberry Pi 2 and Raspberry Pi 3, but probably should work with other devices supported by [Pi4J](https://pi4j.com/) library.

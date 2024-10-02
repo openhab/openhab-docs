@@ -13,9 +13,9 @@ install: auto
 
 {% include base.html %}
 
-<AddonLogo />
-
 # Google Cloud Speech-to-Text
+
+<AddonLogo />
 
 Google Cloud STT Service uses the non-free Google Cloud Speech-to-Text API to transcript audio data to text.
 Be aware, that using this service may incur cost on your Google Cloud account.

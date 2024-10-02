@@ -13,9 +13,9 @@ install: auto
 
 {% include base.html %}
 
-<AddonLogo />
-
 # Z-Way Binding
+
+<AddonLogo />
 
 Z-Way is a software to configure and control a Z-Wave network.
 The software comes with a full stack from Z-Wave transceiver with certified firmware to a REST API on high level.

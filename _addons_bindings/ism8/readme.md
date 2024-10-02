@@ -13,9 +13,9 @@ install: auto
 
 {% include base.html %}
 
-<AddonLogo />
-
 # Ism8 Binding
+
+<AddonLogo />
 
 _This binding can receive values of the Wolf heating system._
 

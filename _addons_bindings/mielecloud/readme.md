@@ -13,9 +13,9 @@ install: auto
 
 {% include base.html %}
 
-<AddonLogo />
-
 # Miele Cloud Binding
+
+<AddonLogo />
 
 This binding integrates [Miele@home](https://www.miele.de/brand/smarthome-42801.htm) appliances via a cloud connection.
 A Miele cloud account and a set of developer credentials is required to use the binding.

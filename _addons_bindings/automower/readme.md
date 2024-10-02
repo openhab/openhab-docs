@@ -13,9 +13,9 @@ install: auto
 
 {% include base.html %}
 
-<AddonLogo />
-
 # Automower Binding
+
+<AddonLogo />
 
 This is the binding for [Husqvarna Automower a robotic lawn mowers](https://www.husqvarna.com/uk/products/robotic-lawn-mowers/).
 This binding allows you to integrate, view and control Automower lawn mowers in the openHAB environment.

@@ -13,9 +13,9 @@ install: auto
 
 {% include base.html %}
 
-<AddonLogo />
-
 # Gardena Binding
+
+<AddonLogo />
 
 This is the binding for [Gardena smart system](https://www.gardena.com/smart).
 This binding allows you to integrate, view and control Gardena smart system devices in the openHAB environment.

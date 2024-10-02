@@ -13,9 +13,9 @@ install: auto
 
 {% include base.html %}
 
-<AddonLogo />
-
 # MagentaTV Binding
+
+<AddonLogo />
 
 This binding allows controlling the Deutsche Telekom Magenta TV Media Receiver series MR4xx and MR2xx (Telekom NGTV / Huawei Envision platform).
 The binding does NOT support MR3xx/1xx (old Entertain system based on Microsoft technology)!
