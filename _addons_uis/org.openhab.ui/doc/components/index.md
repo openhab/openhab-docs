@@ -58,6 +58,8 @@ source: https://github.com/openhab/openhab-webui/edit/main/bundles/org.openhab.u
 | [`oh-video-card`](./oh-video-card.html) |  [Video Card](./oh-video-card.html) | Display a video (URL or URL from String item) in a card |
 | [`oh-webframe-card`](./oh-webframe-card.html) |  [Web Frame Card](./oh-webframe-card.html) | Display a web page in a card |
 
+All cards are based on the [`oh-card`](./oh-card.html) component and share the same config options for modifying the card's appearance.
+Refer to the [`oh-card` Style](./oh-card.html#style) documentation to learn about card styling options.
 
 ## Standard Widget Library (List Items)
 

@@ -427,6 +427,7 @@ You need to define either one of these two slots:
 
 - `content`: The default slot for content, which will then be rendered inside a `f7-card-content` element.
 - `content-root`: The slot for content that should be rendered directly inside the card, without any additional wrapping element.
+  If this slot is defined, the `content` slot will be ignored, and you have to implement the handling of `config.contentStyle` and `config.contentClass` yourself.
 
 Optionally, you can define these slots:
 
