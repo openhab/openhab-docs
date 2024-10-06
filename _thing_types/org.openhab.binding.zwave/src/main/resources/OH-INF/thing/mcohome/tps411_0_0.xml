@@ -8,7 +8,7 @@
   <thing-type id="mcohome_tps411_00_000" listed="false">
     <label>TPS411 Touch Panel Switch 1 Button</label>
     <description><![CDATA[
-Touch Panel Switch 1 Button<br /> <h1>Overview</h1><p><strong>Touch Panel Switch</strong> is a wall panel built-in with Z-Wave Plus module. With its stylish design and stable performance, the panel can be used to control house-hold electrical appliances like lamp, motor, coffee machine, TV set etc. It supports basic command class，multi channel command class and multi channel association command class, also works as a repeater in a Z-Wave network. This product can be included and operated in any Z-Wave network with other Z-Wave certified devices from any other manufacturers</p> <br /> <h2>Inclusion Information</h2><p>On factory default the device does not belong to any Z-Wave network. The device needs to be <b>added to an existing wireless network</b> to communicate with the devices of this network. This process is called <b>Inclusion</b>.</p> <p>To include the device you only need to press and hold any key for 8 seconds.</p> <br /> <h2>Exclusion Information</h2><p>Devices can also be removed from a network. This process is called <b>Exclusion</b>. Both processes are initiated by the primary controller of the Z-Wave network. This controller is turned into exclusion respective inclusion mode. Inclusion and Exclusion is then performed doing a special manual action right on the device.</p> <p>To exclude the device you only need to press and hold any key for 3 seconds.</p> <br /> <h2>Wakeup Information</h2><p><br /></p>
+Touch Panel Switch 1 Button<br /> <h1>Overview</h1><p><strong>Touch Panel Switch</strong> is a wall panel built-in with Z-Wave Plus module. With its stylish design and stable performance, the panel can be used to control house-hold electrical appliances like lamp, motor, coffee machine, TV set etc. It supports basic command class，multi channel command class and multi channel association command class, also works as a repeater in a Z-Wave network. This product can be included and operated in any Z-Wave network with other Z-Wave certified devices from any other manufacturers</p> <br /> <h2>Inclusion Information</h2><p>On factory default the device does not belong to any Z-Wave network. The device needs to be <b>added to an existing wireless network</b> to communicate with the devices of this network. This process is called <b>Inclusion</b>.</p> <p>To include the device you only need to press and hold any key for 8 seconds or 3 clicks in quick succession.</p> <br /> <h2>Exclusion Information</h2><p>Devices can also be removed from a network. This process is called <b>Exclusion</b>. Both processes are initiated by the primary controller of the Z-Wave network. This controller is turned into exclusion respective inclusion mode. Inclusion and Exclusion is then performed doing a special manual action right on the device.</p> <p>To exclude the device you only need to press and hold any key for 8 seconds or 3 clicks in quick succession.</p> <br /> <h2>Wakeup Information</h2><p><br /></p>
     ]]></description>
     <category>WallSwitch</category>
 
@@ -35,7 +35,7 @@ Touch Panel Switch 1 Button<br /> <h1>Overview</h1><p><strong>Touch Panel Switch
       <property name="manufacturerId">015F</property>
       <property name="manufacturerRef">4111:1302,4111:5102</property>
       <property name="dbReference">526</property>
-      <property name="defaultAssociations">2</property>
+      <property name="defaultAssociations">1</property>
     </properties>
 
     <!-- CONFIGURATION DESCRIPTIONS -->
@@ -53,26 +53,103 @@ Touch Panel Switch 1 Button<br /> <h1>Overview</h1><p><strong>Touch Panel Switch
       </parameter-group>
 
       <!-- PARAMETER DEFINITIONS -->
-      <parameter name="config_1_1" type="integer" groupName="configuration">
-        <label>1: Saving state before power failure</label>
-        <description>Switch state saved or not when power down</description>
+      <parameter name="config_2_1" type="integer" groupName="configuration">
+        <label>2: Saving state before power failure</label>
+        <description><![CDATA[
+Switch state saved or not when power down<br /> <h1>Overview</h1><p>0= not saved，switch will be off when powered again</p><p>1= saved，switch will keep the same state when powered again</p>
+        ]]></description>
         <default>1</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_3_1" type="integer" groupName="configuration">
+        <label>3: ALL ON - ALL OFF</label>
+        <description><![CDATA[
+Allow/forbid ALL ON/ALL OFF<br /> <h1>Overview</h1><p>0=forbid ALL ON, forbid ALL OFF</p><p>1=forbid ALL ON, allow ALL OFF</p><p>2=allow ALL ON, forbid ALL OFF</p><p>255=allow ALL ON, allow ALL OFF</p>
+        ]]></description>
+        <default>-1</default>
+      </parameter>
+
+      <parameter name="config_4_1" type="integer" groupName="configuration">
+        <label>4: LED Backlit brightness level</label>
+        <description>0=LED disabled 1-10=Min level-Max level</description>
+        <default>10</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_5_1" type="integer" groupName="configuration">
+        <label>5: Key Mode</label>
+        <description><![CDATA[
+0-4<br /> <h1>Overview</h1><p>0=single click to switch on/off status</p><p>1=Key default as off state. When it is turned on, then it will be turned off automatically after a time period , which can be set in item 5</p><p>2=Key default as on state. When it is turned off, then it will be turned on automatically after a time period , which can be set in item 5</p><p>3=hold &gt;3s then key is on, and off once released</p><p>4=single click to switch on/off status + hold &gt;3s then key is on, and off once released</p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_6_2" type="integer" groupName="configuration">
+        <label>6: Key On duration</label>
+        <description>0=infinite 1~65535=unit "sec"</description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_8_1" type="integer" groupName="configuration">
+        <label>8: Basic CC integration setting</label>
+        <description><![CDATA[
+Basic CC integration setting<br /> <h1>Overview</h1><p>0: "Basic Set" received, key 1 responds; "Basic Get" received, key 1 sends "Basic Report"; key 1 will not send unsolicited "Basic Report" (No Endpoint) to LifeLine Association</p><p>1: "Basic Set" received, key 1 responds; "Basic Get" received, key 1 sends "Basic Report"; key 1 will send unsolicited "Basic Report" (No Endpoint) to LifeLine Association<br /></p><p>2: "Basic Set" received, all keys respond; "Basic Get" received, not reply "Basic Report"; All keys will not send unsolicited "Basic Report" (No Endpoint) to LifeLine Association</p><p>3: "Basic Set" received, all keys respond; "Basic Get" received, key 1 sends "Basic Report"; All keys will not send unsolicited "Basic Report" (No Endpoint) to LifeLine Association</p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_14_1" type="integer" groupName="configuration">
+        <label>14: Disable local control</label>
+        <description><![CDATA[
+disable local control<br /> <h1>Overview</h1><p>0: All keys are valid for local control</p><p>15: All keys are invalid for local control</p>
+        ]]></description>
+        <default>0</default>
         <options>
-          <option value="0">Disabled</option>
-          <option value="1">Enabled</option>
+          <option value="0">All keys are valid for local control</option>
+          <option value="15">All keys are invalid for local control</option>
         </options>
+      </parameter>
+
+      <parameter name="config_15_1" type="integer" groupName="configuration">
+        <label>15: Disable remote control</label>
+        <description><![CDATA[
+Disable remote control<br /> <h1>Overview</h1><p>0: all keys are valid for remote (gateway) control</p><p>15: all keys are invalid for remote (gateway) control</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">all keys are valid for remote (gateway) control</option>
+          <option value="15">all keys are invalid for remote (gateway) control</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_255_1_wo" type="integer" groupName="configuration">
+        <label>255: Factory setting</label>
+        <description><![CDATA[
+Factory setting<br /> <h1>Overview</h1><p>Press 20 times of any button or exclude the device from Z-Wave network, the factory setting will be restored</p>
+        ]]></description>
+        <default>0</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->
       <parameter name="group_1" type="text" groupName="association" multiple="true">
-        <label>1: Switch Button Group 1</label>
-        <multipleLimit>5</multipleLimit>
+        <label>1: All Status Reports</label>
+        <description><![CDATA[
+<br /> <h1>Overview</h1><p><br /></p>
+        ]]></description>
+        <multipleLimit>1</multipleLimit>
       </parameter>
 
       <parameter name="group_2" type="text" groupName="association" multiple="true">
-        <label>2: All Status Reports</label>
-        <multipleLimit>1</multipleLimit>
+        <label>2: Switch Association Group</label>
+        <description><![CDATA[
+<br /> <h1>Overview</h1><p>Triggered by click of touch button</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
       </parameter>
 
       <!-- STATIC DEFINITIONS -->
