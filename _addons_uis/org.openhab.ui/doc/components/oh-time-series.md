@@ -43,6 +43,16 @@ prev: /docs/ui/components/
     The identifier of the persistence service to retrieve the data from. Leave blank to the use the default.
   </PropDescription>
 </PropBlock>
+<PropBlock type="BOOLEAN" name="noBoundary" label="Don't Include Boundary">
+  <PropDescription>
+    Do not get one value before and after the requested period and move them to the start and end of the period
+  </PropDescription>
+</PropBlock>
+<PropBlock type="BOOLEAN" name="noItemState" label="Don't Include Item State">
+  <PropDescription>
+    Do not add the current Item state into the requested period (the item state will be before or at the end time)
+  </PropDescription>
+</PropBlock>
 <PropBlock type="INTEGER" name="offsetAmount" label="Offset Amount">
   <PropDescription>
     Offset to <em>subtract</em> from the displayed period, use if you want to do period comparisons (see also Offset Unit).
