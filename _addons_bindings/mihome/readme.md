@@ -126,7 +126,7 @@ Bridge mihome:bridge:f0b429XXXXXX "Xiaomi Gateway" [ ..., interface="eth0", ... 
 
 ## Configuration examples
 
-### xiaomi.things:
+### `xiaomi.things` Example
 
 ```java
 Bridge mihome:bridge:f0b429XXXXXX "Xiaomi Gateway" [ serialNumber="f0b429XXXXXX", ipAddress="192.168.0.3", port=9898, key="XXXXXXXXXXXXXXXX" ] {
@@ -142,7 +142,7 @@ Bridge mihome:bridge:f0b429XXXXXX "Xiaomi Gateway" [ serialNumber="f0b429XXXXXX"
 }
 ```
 
-### xiaomi.items:
+### `xiaomi.items` Example
 
 ```java
 // Replace <GwID> with itemId of gateway from Things file
@@ -248,7 +248,7 @@ Switch AqaraWallSwitch2 <switch> { channel="mihome:ctrl_ln2:<GwID>:<ID>:ch2" }
 Rollershutter CurtainMotorControl <blinds> { channel="curtain:<GwID>:<ID>:curtainControl" }
 ```
 
-### xiaomi.rules:
+### `xiaomi.rules` Example
 
 ```java
 rule "Mijia & Aqara Wireless Switch"
@@ -402,7 +402,7 @@ then
 end
 ```
 
-### xiaomi.sitemap:
+### `xiaomi.sitemap` Example
 
 ```perl
 sitemap xiaomi label="Xiaomi" {

@@ -6383,8 +6383,6 @@ Note, not all the values need to be in the json file, e.g. a subset of the param
 | lp_autooff_delay           | Number               | Low Power Limit Time                     |            |
 | lp_threshold               | Number               | Low Power Threshold                      |            |
 
-
-
 ## Example item file Rockrobo vacuum
 
 ```java
@@ -13066,8 +13064,6 @@ Number lp_autooff "Low Power Auto Off" (G_powerstrip) {channel="miio:basic:power
 Number lp_autooff_delay "Low Power Limit Time" (G_powerstrip) {channel="miio:basic:powerstrip:lp_autooff_delay"}
 Number lp_threshold "Low Power Threshold" (G_powerstrip) {channel="miio:basic:powerstrip:lp_threshold"}
 ```
-
-
 
 ### Country Servers
 

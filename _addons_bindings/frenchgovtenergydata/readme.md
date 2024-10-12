@@ -25,7 +25,6 @@ The binding offers things for the two usual tariff classes (proposed by example 
 - `base`: This is the basic subscription with a fixed kWh price.
 - `hphc`: Alternative subscription offering variable price in a given hour set (low hours/high hours).
 
-
 ## Thing Configuration
 
 Things (both `base` and `hphc`) only offers the configuration of the power output of the electrical delivery point (Linky terminal).
@@ -33,7 +32,6 @@ Things (both `base` and `hphc`) only offers the configuration of the power outpu
 | Name                  | Type    | Description                                 | Default       | Required |
 |-----------------------|---------|---------------------------------------------|---------------|----------|
 | puissance             | integer | PDL power output (in kVA)                   | 6             | no       |
-
 
 ## Channels
 
@@ -49,7 +47,6 @@ All channels are read-only.
 | fixed-ht     | Number:Currency    | Yearly fixed price excluding taxes      | Yes      |
 | variable-ht  | Number:EnergyPrice | Energy price in €/kWh excluding taxes   | Yes      |
 
-
 ### `hphc` Tariff Thing
 
 All channels are read-only.
@@ -64,9 +61,7 @@ All channels are read-only.
 | hc-ht        | Number:EnergyPrice | Low hours energy price in €/kWh excluding taxes    | Yes      |
 | hp-ht        | Number:EnergyPrice | High hours energy price in €/kWh excluding taxes   | Yes      |
 
-
 ## Full Example
-
 
 ### Thing Configuration
 
@@ -82,5 +77,3 @@ Number:Currency Abonnement_Annuel {channel="frenchgovtenergydata:hphc:local:fixe
 Number:EnergyPrice Prix_Heure_Pleine {channel="frenchgovtenergydata:hphc:local:hp-ttc"}
 Number:EnergyPrice Prix_Heure_Creuse {channel="frenchgovtenergydata:hphc:local:hc-ttc"}
 ```
-
-

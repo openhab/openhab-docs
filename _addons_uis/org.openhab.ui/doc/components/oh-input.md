@@ -35,7 +35,7 @@ Displays an input field, used to set a variable
 </PropBlock>
 <PropBlock type="TEXT" name="type" label="Type">
   <PropDescription>
-    Type of input (see <a class="external text-color-blue" target="_blank" href="https://framework7.io/docs/inputs.html#supported-inputs">f7 input docs</a>, <code>date</code> or <code>datepicker</code>)
+    Type of input (see <a class="external text-color-blue" target="_blank" href="https://framework7.io/docs/inputs.html#supported-inputs">f7 input docs</a>, <code>time</code>, <code>date</code> or <code>datepicker</code>)
   </PropDescription>
 </PropBlock>
 <PropBlock type="TEXT" name="inputmode" label="Input Mode">
