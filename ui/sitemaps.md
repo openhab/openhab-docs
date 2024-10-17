@@ -144,7 +144,8 @@ The following element types may be used in a Sitemap definition file.
 
 | Element                                  | Description                                                                               |
 | ---------------------------------------- | ----------------------------------------------------------------------------------------- |
-| [Buttongrid](#element-type-buttongrid)   | Renders a grid of stateless buttons used to send commands to a given Item.                |
+| [Buttongrid](#element-type-buttongrid)   | Renders a grid containing buttons.                                                        |
+| [Button](#element-type-button)           | Renders a button inside a Buttongrid that is used to send commands to a given Item.       |
 | [Chart](#element-type-chart)             | Adds a time-series chart object for [persisted](persistence.html) data.                   |
 | [Colorpicker](#element-type-colorpicker) | Allows the user to choose a color from a color wheel.                                     |
 | [Default](#element-type-default)         | Renders an Item in the default UI representation specified by the type of the given Item. |
@@ -238,6 +239,10 @@ Default item=<itemname> [label="<labelname>"] [icon=<iconref>] [staticIcon=<icon
 Presents an Item using the default UI representation specified by the type of the given Item.
 E.g., a `Dimmer` Item will be represented as a [Slider](#element-type-slider) element while a `Player` Item will be rendered with player button controls (Previous/Pause/Play/Next).
 
+Such an implicit [Slider](#element-type-slider) element will have the `releaseOnly` parameter set.
+Its behavior is therefore to send the new value only when the slider is released.
+It will also have the `switchSupport` parameter set.
+
 ### Element Type 'Text'
 
 ```java
@@ -291,7 +296,7 @@ A Switch will present a discrete state Item and allow changing of its value.
 Note that Switch elements can be rendered differently on the user interface, based on the Item type and the `mappings` parameter.
 
 - `mappings` comes as an array of value-to-string translations, [documented further down](#mappings).
-  Without the mappings parameter, user interfaces will present an On/Off Switch, if mappings are given, several buttons with label or icon will be rendered.
+  Without the mappings parameter, user interfaces will present an On/Off Switch, if mappings are given, several buttons with label or icon will be rendered and each button can behave either as a click button or as a press and release button.
 
 **Examples:**
 
@@ -306,17 +311,19 @@ Switch item=LR_TV_Channel label="TV Channel" mappings=[0="DasErste", 1="BBC One"
 ### Element Type 'Buttongrid'
 
 ```java
-Buttongrid item=<itemname> [label="<labelname>"] [icon=<iconref>] [staticIcon=<iconref>] [buttons="<Button definition>"]
+Buttongrid [item=<itemname>] [label="<labelname>"] [icon=<iconref>] [staticIcon=<iconref>] [buttons="<Button definition>"]
 ```
 
 A Buttongrid represents a grid of buttons and enables commands to be sent to an Item.
-When a button is pressed, the associated command is sent to the linked Item.
-Buttons never appear as selected, they do not display the current state of the linked Item.
 
 This is a typical element for simulating a remote control, for example.
 
+- `item` commands triggered by the buttons are sent to the item identified by this parameter. This parameter is only required if the `buttons` parameter is also used.
 - `label` if set, a header row will be displayed containing this label and the icon.
 - `buttons` defines the position of each button within the grid and the command associated with each button; provided as an array.
+
+When buttons are defined by the `buttons` parameter, all buttons are linked to the same Item and a command can only be sent to that item when one button is clicked (and not when it is pressed and released); buttons never appear as selected, they do not display the current state of the linked Item.
+The `buttons` parameter is optional, using Button elements as children is now the best option because it provides more functionality, but this option is not yet supported by all sitemap UIs.
 
 Buttons syntax:
 
@@ -339,6 +346,45 @@ Buttongrid label="Remote Control" staticIcon=screen item=RemoteControl buttons=[
 ```
 
 ![Presentation of the Buttongrid element in BasicUI](images/sitemap_demo_buttongrid.png)
+
+### Element Type 'Button'
+
+```java
+Button item=<itemname> [label="<labelname>"] [icon=<iconref>] [staticIcon=<iconref>] row=<row> column=<column> [stateless] click=<cmd> [release=<cmd>]
+```
+
+Such an element is only accepted as a child of a `Buttongrid` element.
+You can choose between stateful or stateless behavior and between click or press & release behavior.
+When a button is pressed and/or released, the associated command is sent to the linked Item.
+
+- `item` commands triggered by the button are sent to the item identified by this parameter.
+- `label` if set, it defines the text to display in the button. If not present, the value of the command (`click` parameter) is used as text.
+- `icon` / `staticIcon` if set, it defines the icon to display in the button. If not present, the button will contain a text. The icon can be dynamic by defining rules in the `icon` parameter.
+- `row` / `column` define the position of the button in the grid. The top left position is row index 1 and column index 1.
+- `stateless` sets the button to stateless; by default, a button is stateful.
+- `click` / `release` a button is a click button by default, the command to send to the item is defined by the `click` parameter. Press & release behavior is possible by setting the `click` and `release` parameters.
+
+Label and icon color can be dynamic using the `labelcolor` and `iconcolor` parameters.
+Visibility of the button can be dynamic using the `visibility` parameter.
+Care must be taken to define visibility rules such that this does not result in several buttons being visible at the same position in the grid.
+
+**Examples:**
+
+```java
+Buttongrid label="Remote Control" staticIcon=screen {
+    Button row=1 column=1 item=RemoteControl label="Power" staticIcon=switch-off stateless click=POWER
+    Button row=1 column=2 item=RemoteControl label="Menu" stateless click=MENU
+    Button row=1 column=3 item=RemoteControl label="Exit" stateless click=EXIT
+    Button row=2 column=2 item=RemoteControl label="Up" staticIcon=f7:arrowtriangle_up stateless click=UP
+    Button row=4 column=2 item=RemoteControl label="Down" staticIcon=f7:arrowtriangle_down stateless click=DOWN
+    Button row=3 column=1 item=RemoteControl label="Left" staticIcon=f7:arrowtriangle_left stateless click=LEFT
+    Button row=3 column=3 item=RemoteControl label="Right" staticIcon=f7:arrowtriangle_right stateless click=RIGHT
+    Button row=3 column=2 item=RemoteControl label="Ok" stateless click=OK
+    Button row=2 column=4 item=RemoteControl label="Volume +" stateless click=VOL_PLUS
+    Button row=4 column=4 item=RemoteControl label="Volume -" stateless click=VOL_MINUS
+    Button row=3 column=4 item=RemoteControl label="Mute" staticIcon=soundvolume_mute stateless click=MUTE
+}
+```
 
 ### Element Type 'Selection'
 
@@ -379,20 +425,18 @@ Setpoint item=KI_Temperature label="Kitchen [%.1f °C]" minValue=4.5 maxValue=30
 ### Element Type 'Slider'
 
 ```java
-Slider item=<itemname> [label="<labelname>"] [icon=<iconref>] [staticIcon=<iconref>] [sendFrequency="frequency"] [switchSupport] [minValue=<min value>] [maxValue=<max value>] [step=<step value>]
+Slider item=<itemname> [label="<labelname>"] [icon=<iconref>] [staticIcon=<iconref>] [switchSupport] [minValue=<min value>] [maxValue=<max value>] [step=<step value>] [releaseOnly]
 ```
 
 This type presents a value as a user-adjustable control which slides from left (0) to right (100).
 
-- `sendFrequency` is used to distinguish between long and short button presses in the classic (web) frontend.
-    This parameter defines the interval in milliseconds for sending increase/decrease requests.
-
 - `switchSupport` is a parameter without an assignment.
-  - Android app: If specified, a short press on the item row (except the slider itself) switches the item "on" or "off".
+  - Android app: If specified, a short press on the item row (except the slider itself) switches the item `ON` or `OFF`.
   - This parameter has no effect in other UIs.
 
 - `minValue` (defaults to 0) and `maxValue` (defaults to 100) limit the possible range of the value (both included in the range).
 - `step` (defaults to 1) defines the distance between two possible/selectable datapoints on the slider.
+- `releaseOnly`: If specified, the new value is only sent on releasing the slider. Otherwise values are sent while sliding.
 
 **Example:**
 
@@ -405,15 +449,12 @@ Slider item=KI_Temperature label="Kitchen"
 ### Element Type 'Colorpicker'
 
 ```java
-Colorpicker item=<itemname> [label="<labelname>"] [icon=<iconref>] [staticIcon=<iconref>] [sendFrequency=<sendFrequency>]
+Colorpicker item=<itemname> [label="<labelname>"] [icon=<iconref>] [staticIcon=<iconref>]
 ```
 
 This element is a combined control for something like a rgb or rgbw light where you can adjust brightness as well es the color hue.
 The down-button decreases brightness to zero and switches the light off. The up-button sets brightness to full but keeps the previous color (hue).
 The middle button opens an overlay to finetune your color. A color wheel let you pick the hue and a slider allows to set the brightness.
-
-- `sendFrequency` is used to distinguish between long and short button presses in the classic (web) frontend.
-  This parameter defines the interval in milliseconds for sending increase/decrease requests.
 
 **Example:**
 
@@ -555,7 +596,11 @@ Adds a time-series chart object for the display of logged data.
     If no service is specified, openHAB will use the first queryable persistence service it finds.
     Therefore, for an installation with only a single persistence service, this is not required.
 
-- `period` is the scale of the time axis. Valid values are `h, 2h, 3h, ..., D, 2D, 3D, ..., W, 2W, 3W, ..., M, 2M, 3M, ..., Y, 2Y, ...` and any valid duration following the ISO8601 duration notation such as `P1Y6M` for the last year and a half or `PT1H30M` for the last hour and a half.
+- `period` is the scale of the time axis.
+    The time axis can be either entirely in the past ending at the present time, entirely in the future starting at the present time, or partly in the past and partly in the future around the present time.
+    To do this, the value can be composed of two parts separated by the "-" character, the value before the "-" is then the scale in the past and the value after the "-" is the scale in the future.
+    Valid values before and after the central character "-" are `h, 2h, 3h, ..., D, 2D, 3D, ..., W, 2W, 3W, ..., M, 2M, 3M, ..., Y, 2Y, ...` and any valid duration following the ISO8601 duration notation such as `P1Y6M` for the last year and a half or `PT1H30M` for the last hour and a half.
+    If only a period is provided, i.e. without the final "-" character or without anything after the "-" character, only a period in the past is taken into account.
 
 - `legend` is used to show or to hide the chart legend.
     Valid values are `true` (always show the legend) and `false` (never show the legend).
@@ -566,8 +611,6 @@ Adds a time-series chart object for the display of logged data.
 - `yAxisDecimalPattern` is used to format the values on the y axis.
     It accepts [DecimalFormat](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/text/DecimalFormat.html).
     For example with `#.##` a number has to decimals.
-
-Visit [Charts](https://github.com/openhab/openhab/wiki/Charts) in the Wiki for examples.
 
 **Other options to look out for:**
 The Chart element type is a good way to present time series data quickly.
@@ -587,7 +630,7 @@ Mappings is an optional parameter for the [Switch](#element-type-switch) and [Se
 Mapping syntax:
 
 ```java
-mappings=[value_1="description_1", value_2="description_2"=<iconname>, ...]
+mappings=[value_1="description_1", value_2="description_2"=<iconname>, value_press:value_release="description_3", ...]
 ```
 
 Examples:
@@ -600,6 +643,8 @@ mappings=[OFF="All heaters off"]
 mappings=[15="Gone", 19="Chilly", 21="Cozy"]
 
 mappings=[ON="Mic On"=material:mic, OFF="Mic Off"=material:mic_off]
+
+mappings=[ON:OFF="On"]
 ```
 
 As you can see, different Item data types are accepted as mappings values.
@@ -617,6 +662,9 @@ This limits the possible input values, which is yet another often occurring use 
 
 In the fifth example above, user interfaces will display buttons using the provided icon rather than the provided description.
 Icons are usable in Switch element but ignored in Selection element.
+
+In the sixth example above, as there are 2 commands provided separated by a colon, user interface will consider a press and release behavior, the first command (ON in the example) is sent to the item when the button is pressed and the second command (OFF in the example) is sent when the button is finally released.
+This behavior is only applicable for a `Switch` element.
 
 ## Dynamic Sitemaps
 

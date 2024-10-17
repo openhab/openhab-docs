@@ -83,7 +83,7 @@ There are four categories of conditions.
 | Item Condition      | Item states | tests to see if an Item's state meets a comparison (e.g. == ON, <= 65 °F, etc.)                                                                                            |
 | Time Condition      | Time        | a selection of the days of the week and a time period when the rule can run                                                                                                |
 | Ephemeris Condition | Ephemeris   | openHAB has a subsystem that tracks types of day (e.g. weekends, weekdays) and local holidays; this condition allows one to specify what types of days it's allowed to run |
-| Script Condition    | Script      | code whose last line evaluates to true of false.                                                                                                                           |
+| Script Condition    | Script      | code whose last line evaluates to true or false.                                                                                                                           |
 
 When a rule is triggered from another rule, there is an option to allow or ignore the called rule's conditions.
 When run manually, the conditions are ignored.
@@ -106,7 +106,7 @@ There is a growing list of options of ways for users to create rules and many of
 This tutorial will not discuss file based rules.
 See the docs for the chosen language for details on how to write rules in files for that language.
 
-openHAB comes with three languages by default (Rules DSL, ECMAScript 5.1, and Blockly) and has a number of add-ons to add more.
+openHAB comes with three languages by default (Rules DSL, ECMAScript 5.1, and Blockly) and has a number of [automation add-ons](/addons/#automation) to add more.
 For this tutorial we will be using [Blockly](/docs/configuration/blockly/) and the [JavaScript Scripting](/addons/automation/jsscripting/) add-on.
 But most of the concepts presented can be applied to the other languages too.
 

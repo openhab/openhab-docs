@@ -12,12 +12,16 @@ title: Rules Blockly - openHAB Extensions to the Standard
 
 This section explains only the blocks that have been added to the standard blocks by openHAB
 
-[[toc]]
-
 ## Logic
 
 One of the most commonly used standard blocks are conditions blocks.
 More about conditions can be viewed at ![youtube](../images/blockly/youtube-logo-small.png) [How to use IF and ELSE](https://youtu.be/hSRfooBKn9A?t=445).
+
+A specific block that was added by openHAB is the **UNDEFINED**-Block which allows better comparison of undefined values.
+
+Here is an example on how to use it:
+
+![quantity-math-operations](../images/blockly/blockly-logic-undefined.png)
 
 ## Math
 
@@ -239,7 +243,7 @@ Example:
 ## Loops
 
 Even though there a no specialized openHAB blocks provided, loops are used rather often.
-Therefore there is a good introduction to loops available which can be viewed at ![youtube](../images/blockly/youtube-logo-small.png) [Loops in Blockly](https://youtu.be/EdllUlJ7p6k?t=1947)
+Therefore, there is a good introduction to loops available which can be viewed at ![youtube](../images/blockly/youtube-logo-small.png) [Loops in Blockly](https://youtu.be/EdllUlJ7p6k?t=1947).
 
 ## Functions
 

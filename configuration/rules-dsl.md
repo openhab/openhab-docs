@@ -9,7 +9,7 @@ title: Textual Rules
 
 Note that there is also a visual way of programming openHAB rules, which may be more suitable for beginners. Its documentation can be found in the [Blockly Reference section]({{base}}/configuration/blockly/)
 
-openHAB has a highly integrated, lightweight but yet powerful rule engine included.
+openHAB has a highly integrated, lightweight but yet powerful rule engine called _Rules DSL_ included.
 On this page you will learn how to leverage its functionality to do _real_ home automation.
 
 [[toc]]
@@ -152,7 +152,8 @@ Therefore, if the Rule needs to know what the command was, use the [implicit var
 As with Item based event-based triggers discussed above, you can listen for commands, status updates, or status changes on the members of a given Group.
 You can also decide whether you want to catch only a specific command/status or any.
 All of the [implicit variables]({{base}}/configuration/rules-dsl.html#implicit-variables-inside-the-execution-block) get populated using the Item that caused the event.
-The implicit variable `triggeringItem` is populated with the Item that caused the Rule to trigger.
+The implicit variables `triggeringItem` and `triggeringItemName` are populated with the Item and the item name that caused the Rule to trigger.
+The implicit variables `triggeringGroup` and `triggeringGroupName` are populated with the Group and the group name specified in the trigger, whose member caused the Rule to trigger.
 
 ```java
 Member of <group> received command [<command>]
@@ -172,7 +173,7 @@ You can either use some pre-defined expressions for timers or use a [cron expres
 ```java
 Time is midnight
 Time is noon
-Time is <item> [timeOnly]
+Time is <item> [timeOnly] [offset=N]
 Time cron "<cron expression>"
 ```
 
@@ -189,13 +190,14 @@ A cron expression takes the form of six or optionally seven fields:
 You may use the generator at [FreeFormatter.com](https://www.freeformatter.com/cron-expression-generator-quartz.html) to generate your cron expressions.
 
 When using an item and you want to ignore the date-portion of that item the `timeOnly` option can be used.
+A positive or negative offset in seconds, relative to the date/time of the given item can be specified.
 
 ### System-based Triggers
 
 System-based triggers are provided as described in the table below:
 
 | Trigger                              | Description                                                                                                                                                                                                                                          |
-|--------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| ------------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | System started                       | `System started` is triggered upon openHAB startup. In openHAB version 2, `System started` is also triggered after the rule file containing the System started trigger is modified, or after item(s) are modified in a .items file.                  |
 | System reached start level `<level>` | `System reached start level <level>` is triggered when openHAB reaches a specific start level. A list of possible start levels is available below. Please note that only levels 40 and higher are useful as the rule engine needs to be ready first. |
 
@@ -766,6 +768,8 @@ Besides the implicitly available variables for items and commands/states, rules 
 - `newState` - implicitly available in every rule that has at least one status update or status change event trigger.
 - `triggeringItemName` - implicitly available in every rule that has at least one status update, status change or command event trigger.
 - `triggeringItem` - implicitly available in every rule that has a "Member of" trigger.
+- `triggeringGroupName` - implicitly available in every rule that has a "Member of" trigger.
+- `triggeringGroup` - implicitly available in every rule that has a "Member of" trigger.
 - `receivedEvent` - implicitly available in every rule that has a channel-based trigger.
 - `triggeringChannel` - implicitly available in every rule that has a channel-based trigger.
 - `triggeringThing` - implicitly available in every rule that has a thing-based trigger.

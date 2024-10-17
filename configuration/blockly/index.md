@@ -9,7 +9,7 @@ title: Rules Blockly
 One of the core feature that openHAB provides is writing rules to allow specific behaviour with the home automation system.
 The usual way of developing rules is by coding them like described in the [Textual Rules](/docs/configuration/rules-dsl.html).
 
-The art of textual programming may become intimidating early on and shy away away people with few or almost no experience in programming. So, if you are not a member of the professional coder community or do not have equivalent skills, the ability to create your programs visually might be the ideal option (even though some programming background may still help or can evolve over time). Therefore openHAB also provides a graphical way of writing rules which allows to put together rules in a visual way: Welcome to the world of openHAB Blockyl.
+The art of textual programming may become intimidating early on and shy away away people with few or almost no experience in programming. So, if you are not a member of the professional coder community or do not have equivalent skills, the ability to create your programs visually might be the ideal option (even though some programming background may still help or can evolve over time). Therefore openHAB also provides a graphical way of writing rules which allows to put together rules in a visual way: Welcome to the world of openHAB Blockly.
 
 [[toc]]
 
@@ -165,6 +165,47 @@ Three YouTube tutorials have been made available via the [openHAB YouTube channe
 
 Also view ![youtube](../images/blockly/youtube-logo-small.png) [Overview of the Blockly Sections](https://youtu.be/EdllUlJ7p6k?t=558)
 
+### Using Variables
+
+For a long time Blockly only provided untyped variables.
+Even though this seems to be more straight forward and provides the flexibility to put any type into that variable, it creates some challenges to openHAB Blockly to generate the right code.
+
+All blocks in Blockly have input and output types defined which allows the editor to check whether one particular block can be used as input for a different block.
+This becomes challenging with the standard untyped variables because the type of these is basically none which means that the Blockly editor is not able to check whether this block is allowed or not.
+This requires Blockly to make a default guess on the variable's type, which often is the wrong type guess and therefore causes wrong code to be generated - your rule will not work.
+
+Therefore, a new variable section was introduced:
+
+![typed variables](../images/blockly/blockly_typed_variables1.png)
+
+**In general, always prefer Typed Variables over normal Variables!**
+
+In the very seldom case where you may mix types or you want to use a type that is not provided in the dialog, only then choose non-typed variables.
+
+Create a typed variable by clicking on the following button:
+
+![create typed variable](../images/blockly/blockly_typed_variables2.png)
+
+This will open up the following dialog:
+
+![create typed variable dialog](../images/blockly/blockly_typed_variables3.png)
+
+Hint: Always choose the type of the variable first because it is not possible to change the type afterwards!
+
+- Enter the name of the variable: it is recommended to use a concatenation of the variable name plus the type like _powerItemName_ as it is hard to know later on what type the variable has.
+- Don't forget to select the right type (here "Item name") before clicking ok because it cannot be changed later.
+- Click ok to create the variable
+
+You will notice that this typed variable can only be used in inputs where normally an Item (name) block would have been allowed.
+
+Here are some examples how these typed variable can or even should be used:
+
+![blockly_typed_variables_examples.png](../images/blockly/blockly_typed_variables_examples.png)
+
+- In the above example the variable name postfix _Var_ was sometimes used which is more like a personal taste and isn't necessary.
+- Blockly loops can also take typed variables, and it is especially useful in these cases to make sure the type that is returned by the list (e.g. "get members of group") matches the type of the variable because it allows blocks that use the list items (e.g. "get state of item") to behave correctly.
+- As it can be seen in the loop example it is very helpful if the variable name contains the type.
+
 ### Items and Things
 
 _Items_ and _Things_ are the [major entities of openHAB](https://www.openhab.org/docs/concepts/) to control and monitor the home.
@@ -248,6 +289,15 @@ These blocks enable storing information _for a rule_ that is kept after the rule
 ](rules-blockly-value-storage.html)
 
 See [Value Storage](rules-blockly-value-storage.html) section.
+
+### HTTP
+
+These blocks allow sending HTTP requests and receiving the response.
+
+[![HTTP](../images/blockly/blockly-http-overview-small.png "HTTP")
+](rules-blockly-http.html)
+
+See [HTTP](rules-blockly-http.html) section.
 
 ### Run & Process (Rules, Scripts and Transformations)
 

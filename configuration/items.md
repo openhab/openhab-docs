@@ -12,10 +12,6 @@ Items can be Strings, Numbers, Switches or one of a few other basic [Item types]
 A programmer can compare Item types with base variable data types of a programming language.
 
 A unique feature of openHAB Items is the ability to connect them to the outside world via [Bindings](/addons/#binding).
-An Item does not simply store information that is set by software (e.g., `OFF`, 3.141 or "No Error"); the information stored by an Item may also be set by actions that take place in your home.
-
-But let's not get ahead of ourselves.
-The rest of this page contains details regarding Items and is structured as follows:
 
 [[toc]]
 
@@ -66,7 +62,7 @@ Switch Kitchen_Light "Kitchen Light" {channel="mqtt:topic:..." }
 String Bedroom_Sonos_CurrentTitle "Title [%s]" (gBedRoom) {channel="sonos:..."}
 Number:Power Bathroom_WashingMachine_Power "Power [%.0f W]" <energy> (gPower) {channel="homematic:..."}
 
-Number:Temperature Livingroom_Temperature "Temperature [%.1f °C]" <temperature> (gTemperature, gLivingroom) ["TargetTemperature"] {knx="1/0/15+0/0/15"}
+Number:Temperature Livingroom_Temperature "Temperature [%.1f °C]" <temperature> (gTemperature, gLivingroom) ["Setpoint", "Temperature"] {knx="1/0/15+0/0/15"}
 ```
 
 The last example above defines an Item with the following fields:
@@ -77,7 +73,7 @@ The last example above defines an Item with the following fields:
 - Item [state formatted](#state-presentation) to display temperature in Celsius to one-tenth of a degree -  for example, "21.5 °C"
 - Item [icon](#icons) with the name `temperature`
 - Item belongs to [groups](#groups) `gTemperature` and `gLivingroom` (definition not shown in the example)
-- Item is [tagged](#tags) as a thermostat with the ability to set a target temperature ("TargetTemperature")
+- Item is [tagged](#tags) as a thermostat with the ability to set a target temperature ("Setpoint", "Temperature")
 - Item is [bound to](/addons/#binding) the openHAB Binding `knx` with binding specific settings ("1/0/15+0/0/15")
 
 The remainder of this article provides additional information regarding Item definition fields.
@@ -505,13 +501,13 @@ Group[:itemtype[:function]] groupname ["labeltext"] [<iconname>] [(group1, group
 
 Group state aggregation functions can be any of the following:
 
-|     | Function                   | Parameters                    | Base Item                                   | Description                                                                                                                                                                                                           |     |
-| --- | -------------------------- | ----------------------------- | ------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --- |
-|     | `EQUALITY`                 | -                             | \<all\>                                     | Default if no function is specified. Sets the state of the members if all have equal state. Otherwise `UNDEF` is set. In the Item DSL `EQUALITY` is the default and may be omitted.                                   |     |
-|     | `AND`, `OR`, `NAND`, `NOR` | <activeState>, <passiveState> | \<all\> (must match active & passive state) | [Boolean](https://en.wikipedia.org/wiki/Boolean_algebra) operation. Sets the \<activeState\>, if the members state \<activeState\> evaluates to `true` under the boolean term. Otherwise the \<passiveState\> is set. |     |
-|     | `SUM`, `AVG`, `MIN`, `MAX` | -                             | Number                                      | [Arithmetic](https://en.wikipedia.org/wiki/Arithmetic) operation. Sets the state according to the arithmetic function over all members states.                                                                        |     |
-|     | `COUNT`                    | <regular expression>          | Number                                      | Sets the state to the number of members matching the given regular expression with their states.                                                                                                                      |     |
-|     | `LATEST`, `EARLIEST`       | -                             | DateTime                                    | Sets the state to the latest/earliest date from all members states                                                                                                                                                    |     |
+|     | Function                             | Parameters                    | Base Item                                   | Description                                                                                                                                                                                                           |     |
+| --- | ------------------------------------ | ----------------------------- | ------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --- |
+|     | `EQUALITY`                           | -                             | \<all\>                                     | Default if no function is specified. Sets the state of the members if all have equal state. Otherwise `UNDEF` is set. In the Item DSL `EQUALITY` is the default and may be omitted.                                   |     |
+|     | `AND`, `OR`, `NAND`, `NOR`, `XOR`    | <activeState>, <passiveState> | \<all\> (must match active & passive state) | [Boolean](https://en.wikipedia.org/wiki/Boolean_algebra) operation. Sets the \<activeState\>, if the members state \<activeState\> evaluates to `true` under the boolean term. Otherwise the \<passiveState\> is set. |     |
+|     | `SUM`, `AVG`, `MEDIAN`, `MIN`, `MAX` | -                             | Number                                      | [Arithmetic](https://en.wikipedia.org/wiki/Arithmetic) operation. Sets the state according to the arithmetic function over all members states.                                                                        |     |
+|     | `COUNT`                              | <regular expression>          | Number                                      | Sets the state to the number of members matching the given regular expression with their states.                                                                                                                      |     |
+|     | `LATEST`, `EARLIEST`                 | -                             | DateTime                                    | Sets the state to the latest/earliest date from all members states                                                                                                                                                    |     |
 
 Boolean group state functions additionally return a number representing the count of member Items of value 'value1' (see example below).
 
@@ -528,22 +524,24 @@ Examples for derived states on Group Items when declared in the Item DSL:
 Group:Number                  Lights       "Active Lights [%d]"              // e.g. "2"
 Group:Switch:OR(ON,OFF)       Lights       "Active Lights [%d]"              // e.g. ON and "2"
 Group:Switch:AND(ON,OFF)      Lights       "Active Lights [%d]"              // e.g. ON and "2"
+Group:Switch:XOR(ON,OFF)      Lights       "Active Lights [%d]"              // e.g. ON and "1"
 Group:Number:Temperature:AVG  Temperatures "All Room Temperatures [%.1f °C]" // e.g. "21.3 °C"
 Group:DateTime:EARLIEST       LatestUpdate "Latest Update [%1$tY.%1$tm.%1$tY %1$tH:%1$tM:%1$tS]"
 Group:DateTime:LATEST         LastSeen     "Last Seen [%1$tY.%1$tm.%1$tY %1$tH:%1$tM:%1$tS]"
 Group:Number:COUNT("OFFLINE") OfflineDevices "Offline Devices [%d]"     // e.g. "2"
 ```
 
-The first three examples above compute the number of active lights and store them as group state.
+The first four examples above compute the number of active lights and store them as group state.
 However, the second group is of type switch and has an aggregation function of `OR`.
 This means that the state of the group will be `ON` as soon as any of the member lights are turned on.
 The third uses `AND` and sets the Group state to `ON` if all of its members have the state `ON`, `OFF` if any of the Group members has a different state than `ON`.
+The fourth uses `XOR` where the Group state is only `ON`, if exactly one light is `ON`.
 
 Groups do not only aggregate information from individual member Items, they can also accept commands.
 Sending a command to a Group causes the command to be sent to all Group members.
 An example of this is shown by the second group above; sending a single `ON` or `OFF` command to that group turns all lights in the group on or off.
 
-The fourth example computes the average temperature of all room temperature Items in the group.
+The fifth example computes the average temperature of all room temperature Items in the group.
 
 Assuming we have a Group containing three timestamps: `now().minusDays(10)`, `now()` and `now().plusSeconds(30)`.
 The `EARLIEST` function returns `now().minusDays(10)`, the `LATEST` function returns `now().plusSeconds(30)`.
@@ -554,11 +552,12 @@ The last Group counts all members of it matching the given regular expression, h
 
 Tags added to an Item definition allow a user to characterize the specific nature of the Item beyond its basic Item type.
 Tags can then be used by add-ons to interact with Items in context-sensitive ways.
-Tags are used by the [Semantic Model]({{base}}/tutorial/model.html).  The `"Light"` example below maps the item to the Semantic Model.
+Tags are used by the [Semantic Model]({{base}}/tutorial/model.html).
+The `"Light"` example below maps the item to the Semantic Model.
 
 Example:
 A Light in a typical home setup can be represented by a Switch, a Dimmer or a Color Item.
-To be able to interact with the light device via a natural voice command, for example, the fact that the Item is a light can be established by adding the "Lighting" tag as shown below.
+To be able to interact with the light device via a natural voice command, for example, the fact that the Item is a light can be established by adding the "Light" tag as shown below.
 
 ```java
 Switch Livingroom_Light "Livingroom Ceiling Light" ["Light"]

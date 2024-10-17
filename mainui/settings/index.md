@@ -65,3 +65,13 @@ This section lists the installed add-ons and provides direct access to the add-o
 
 The standard log level is `INFO` but to track down an issue it might be necessary to increase the log-level upon request.
 For more information see [Logging in openHAB]({{base}}/administration/logging.html).
+
+### Dirty Handling
+
+When you modify a configuration/setting, there are unsaved changes and the configuration page becomes "dirty".
+There is an ● indicator shown if the current settings page is dirty:
+
+![dirty-indicator.png](../images/dirty-indicator.png)
+
+To save the changes, click the `Save` button or hit <kbd>Ctrl</kbd> + <kbd>S</kbd> on your keyboard.
+If you attempt to leave the current configuration page and there are unsaved changes, a warning dialog will be shown to avoid losing your changes.

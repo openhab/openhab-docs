@@ -92,6 +92,7 @@ Optionally, if you want the system to scan the user's network for your addon the
 | `ip`         | Service to discover add-ons by scanning for devices via a UDP 'ping' broadcast on the LAN. |
 | `mdns`       | Service to discover add-ons by scanning for devices using the mDNS discovery service.      |
 | `processs`   | Service to discover add-ons by checking processes running on the PC.                       |
+| `sddp`       | Service to discover add-ons by scanning for devices using the SDDP discovery service.      |
 | `upnp`       | Service to discover add-ons by scanning for devices using the UPnP discovery service.      |
 | `usb`        | Service to discover add-ons by scanning for USB devices attached to the PC.                |
 
@@ -107,8 +108,25 @@ Notes:
 | `ip`         | "response".                                                                                                                                  |
 | `mdns`       | Frequently used properties are "name", and "application". But mDNS permits any property name depending on the service concerned.             |
 | `process`    | "command", "commandLine".                                                                                                                    |
+| `sddp`       | "driver", "host", "ipAddress", "macAddress", "manufacturer", "model", "port", "primaryProxy", "proxies", "type"                              |
 | `upnp`       | "deviceType", "manufacturer", "manufacturerURI", "modelName", "modelNumber", "modelDescription", "modelURI", "serialNumber", "friendlyName". |
 | `usb`        | "product", "manufacturer", "chipId", "remote".                                                                                               |
+
+For the `sddp` service type, the meaning of the `match-property` `name` values is explained further as follows:
+
+| Name Value     | Description                                                                                                                                   |
+|----------------|-----------------------------------------------------------------------------------------------------------------------------------------------|
+| `from`         | The network address of the device. For example: 192.168.4.237:1902                                                                            |
+| `host`         | The host address of the device. For example: JVC_PROJECTOR-E0DADC152802 Note: the last 12 characters represent the MAC address of the device. |
+| `type`         | The type of the device. Usually a colon delimited combination of a manufacturer id and a device type id. For example: JVCKENWOOD:Projector    |
+| `primaryProxy` | The id of the primary proxy that provides device services. For example: projector                                                             |
+| `proxies`      | A comma delimited list of proxies. For example: projector,thingy,etc Normally the first entry is the primary proxy.                           |
+| `manufacturer` | The device manufacturer. For example: JVCKENWOOD                                                                                              |
+| `model`        | The model number of the device. For example: DLA-RS3100_NZ8                                                                                   |
+| `driver`       | The driver id. For example: projector_JVCKENWOOD_DLA-RS3100_NZ8.c4i                                                                           |
+| `ipAddress`    | The dotted IP address part of the 'from' field. For example: 192.168.4.237                                                                    |
+| `port`         | The port part of the 'from' field. For example: 1902 (a String value)                                                                         |
+| `macAddress`   | The MAC address of the device as derived from the last 12 characters of the host field. It is presented in lower-case, dash delimited, format. For example: e0-da-dc-15-28-02 Therefore it may be used as a (unique) sub- part of a Thing UID. |
 
 ## Example
 
