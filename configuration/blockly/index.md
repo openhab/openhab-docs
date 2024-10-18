@@ -15,7 +15,6 @@ The art of textual programming may become intimidating early on and shy away peo
 
 ## Introduction
 
-
 ![built with Blockly](../images/blockly/built-with-blockly-badge-white.svg)
 
 The basic idea behind the visual paradigm and representation within openHAB is based on the [Google Blockly Support](https://g.co/dev/blockly) which has been integrated and which provides the basic blocks for programming like the ones on the left and the right side of the below images
