@@ -9,15 +9,16 @@ title: Rules Blockly
 One of the core feature that openHAB provides is writing rules to allow specific behaviour with the home automation system.
 The usual way of developing rules is by coding them like described in the [Textual Rules](/docs/configuration/rules-dsl.html).
 
-The art of textual programming may become intimidating early on and shy away away people with few or almost no experience in programming. So, if you are not a member of the professional coder community or do not have equivalent skills, the ability to create your programs visually might be the ideal option (even though some programming background may still help or can evolve over time). Therefore openHAB also provides a graphical way of writing rules which allows to put together rules in a visual way: Welcome to the world of openHAB Blockly.
+The art of textual programming may become intimidating early on and shy away people with few or almost no experience in programming. So, if you are not a member of the professional coder community or do not have equivalent skills, the ability to create your programs visually might be the ideal option (even though some programming background may still help or can evolve over time). Therefore openHAB also provides a graphical way of writing rules which allows to put together rules in a visual way: Welcome to the world of openHAB Blockly.
 
 [[toc]]
 
 ## Introduction
 
-!["built on Blockly"](../images/blockly/builtonblockly.png)
 
-The basic idea behind the visual paradigm and representation within openHAB is based on the [Google Blockly Support](https://developers.google.com/blockly) which has been integrated and which provides the basic blocks for programming like the ones on the left and the right side of the below images
+![built with Blockly](..%2Fimages%2Fblockly%2Fbuilt-with-blockly-badge-white.svg)
+
+The basic idea behind the visual paradigm and representation within openHAB is based on the [Google Blockly Support](https://g.co/dev/blockly) which has been integrated and which provides the basic blocks for programming like the ones on the left and the right side of the below images
 _Blockly toolbox_.
 
 ![blockly-toolbox-1](../images/blockly/blockly-toolbox-1.png)![blockly-toolbox-2](../images/blockly/blockly-toolbox-2.png)![blockly-toolbox-3](../images/blockly/blockly-toolbox-3.png)
