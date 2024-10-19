@@ -14,6 +14,12 @@ Double Switch 2<br /> <h1>Overview</h1><p>FIBARO Switch 2 is designed to be inst
 
     <!-- CHANNEL DEFINITIONS -->
     <channels>
+      <channel id="switch_binary" typeId="switch_binary">
+        <label>Switch</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY,COMMAND_CLASS_BASIC</property>
+        </properties>
+      </channel>
       <channel id="meter_kwh" typeId="meter_kwh">
         <label>Electric meter (kWh)</label>
         <properties>
