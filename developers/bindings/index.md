@@ -631,7 +631,11 @@ This is to support the old DSL rules engine and make the action available there.
 
 Each parameter of an action member method must be annotated with `@ActionInput`.
 
-If you return values, you do so by returning a `Map<String,Object>` and annotate the method itself with as many `@ActionOutput`s as you will return map entries.
+If you return values, you do so by returning a `Map<String,Object>` and annotate the method itself with `@ActionOutputs` containing as many `@ActionOutput`s as you will return map entries, e.g.
+
+```java
+@ActionOutputs({ @ActionOutput(name = "foo", label = "Foo", type = "java.lang.String"), @ActionOutput(name = "bar", label = "Bar", type = "java.lang.String") })
+```
 
 ## Firmware information / Firmware update
 
