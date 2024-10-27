@@ -117,7 +117,7 @@ The following contexts require a specific format of the content:
   <tr><td>password-create</td><td>text</td><td>alphanumeric characters</td><td>custom password input</td></tr>
   <tr><td>color</td><td>text</td><td>#000000 - #ffffff (hex color)</td><td><code>&lt;input type="color"/></code></td></tr>
   <tr><td>date</td><td>text</td><td>YYYY-MM-DD</td><td><code>&lt;input type="date"/></code></td></tr>
-  <tr><td>datetime</td><td>text</td><td>YYYY-MM-DD hh:mm:ss</td><td>custom input field</td></tr>
+  <tr><td>datetime</td><td>text</td><td>YYYY-MM-DD'T'hh:mm:ss, e.g. 2019-12-31T23:59:59</td><td>custom input field</td></tr>
   <tr><td>email</td><td>text</td><td>username@domain.com</td><td><code>&lt;input type="email"/></code></td></tr>
   <tr><td>month</td><td>text</td><td>month of year</td><td>custom input field</td></tr>
   <tr><td>week</td><td>integer</td><td>week of year</td><td>custom input field</td></tr>
