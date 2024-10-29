@@ -192,7 +192,7 @@ Switch { ga="Scene" [ sceneReversible=false ] }
 
 | | |
 |---|---|
-| **Device Type** | [Outlet](https://developers.home.google.com/cloud-to-cloud/guides/outlet), [Coffee_Maker](https://developers.home.google.com/cloud-to-cloud/guides/coffeemaker), [WaterHeater](https://developers.home.google.com/cloud-to-cloud/guides/outlet), [Fireplace](https://developers.home.google.com/cloud-to-cloud/guides/fireplace) |
+| **Device Type** | [Outlet](https://developers.home.google.com/cloud-to-cloud/guides/outlet), [Coffee_Maker](https://developers.home.google.com/cloud-to-cloud/guides/coffeemaker), [WaterHeater](https://developers.home.google.com/cloud-to-cloud/guides/waterheater), [Fireplace](https://developers.home.google.com/cloud-to-cloud/guides/fireplace) |
 | **Supported Traits** | [OnOff](https://developers.home.google.com/cloud-to-cloud/traits/onoff) |
 | **Supported Items** | Switch |
 | **Configuration** | (optional) `inverted=true/false`<br>(optional) `checkState=true/false` |
