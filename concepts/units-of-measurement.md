@@ -206,7 +206,7 @@ SI (base unit symbols):
 | Speed                     | Knot                             | kn     |
 | Temperature               | Kelvin                           | K      |
 | Temperature               | Celsius                          | °C     |
-| Temperature[^](#mired-footnote) | Mired                      | mired or MK⁻¹ |
+| Temperature[^](#mired-footnote) | Mired or Mirek             | MK⁻¹   |
 | Time                      | Second                           | s      |
 | Time                      | Minute                           | min    |
 | Time                      | Hour                             | h      |
@@ -222,11 +222,12 @@ SI (base unit symbols):
 | VolumetricFlowRate        | Cubic Metre per Day              | m³/d   |
 
 <a name="mired-footnote">^</a>: This unit is used to indicate the color temperature of lights.
+The name 'mired' is a colloquial name for 'micro reciprocal degree'.
+The official SI unit symbol is 'MK⁻¹', but the alias unit symbol 'mired' is also permitted.
+The unit is also sometimes known as 'micro reciprocal Kelvin' or 'mega reciprocal Kelvin', so a second alias unit symbol 'mirek' is permitted too.
 Technically, mireds are the reciprocal of Temperature, but QuantityType and NumberItem will transparently convert between mireds and Kelvin.
 This technicality might be a problem if you are using mireds in rules.
 Be sure to use the `toInvertibleUnit` method on QuantityType, rather than `toUnit`.
-The name 'mired' is a colloquial name and unit symbol for 'micro reciprocal degree'.
-The unit has subsequently been adopted by the SI committee as 'micro reciprocal Kelvin' with the colloquial name 'mirek' and the unit symbol 'MK⁻¹'.
 
 Metric Prefixes:
 
