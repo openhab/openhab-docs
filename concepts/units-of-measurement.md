@@ -224,7 +224,7 @@ SI (base unit symbols):
 <a name="mired-footnote">^</a>: This unit is used to indicate the color temperature of lights.
 The name 'mired' is a colloquial name for 'micro reciprocal degree'.
 The official SI unit symbol is 'MK⁻¹', but the alias unit symbol 'mired' is also permitted.
-The unit is also sometimes known as 'micro reciprocal Kelvin' or 'mega reciprocal Kelvin', so a second alias unit symbol 'mirek' is permitted too.
+The unit is also known as 'micro reciprocal Kelvin', so a second alias unit symbol 'mirek' is permitted too.
 Technically, mireds are the reciprocal of Temperature, but QuantityType and NumberItem will transparently convert between mireds and Kelvin.
 This technicality might be a problem if you are using mireds in rules.
 Be sure to use the `toInvertibleUnit` method on QuantityType, rather than `toUnit`.
