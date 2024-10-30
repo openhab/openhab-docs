@@ -206,7 +206,7 @@ SI (base unit symbols):
 | Speed                     | Knot                             | kn     |
 | Temperature               | Kelvin                           | K      |
 | Temperature               | Celsius                          | °C     |
-| Temperature[^](#mired-footnote) | Mired                      | mired  |
+| Temperature[^](#mired-footnote) | Mired or Mirek             | MK⁻¹   |
 | Time                      | Second                           | s      |
 | Time                      | Minute                           | min    |
 | Time                      | Hour                             | h      |
@@ -221,7 +221,11 @@ SI (base unit symbols):
 | VolumetricFlowRate        | Cubic Metre per Hour             | m³/h   |
 | VolumetricFlowRate        | Cubic Metre per Day              | m³/d   |
 
-<a name="mired-footnote">^</a>: Technically, mireds are the reciprocal of Temperature, but QuantityType and NumberItem will transparently convert between mireds and Kelvin.
+<a name="mired-footnote">^</a>: This unit is used to indicate the color temperature of lights.
+The name 'mired' is a colloquial name for 'micro reciprocal degree'.
+The official SI unit symbol is 'MK⁻¹', but the alias unit symbol 'mired' is also permitted.
+The unit is also known as 'micro reciprocal Kelvin', so a second alias unit symbol 'mirek' is permitted too.
+Technically, mireds are the reciprocal of Temperature, but QuantityType and NumberItem will transparently convert between mireds and Kelvin.
 This technicality might be a problem if you are using mireds in rules.
 Be sure to use the `toInvertibleUnit` method on QuantityType, rather than `toUnit`.
 
