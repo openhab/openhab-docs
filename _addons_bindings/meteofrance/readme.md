@@ -5,6 +5,7 @@ title: Meteo France - Bindings
 type: binding
 description: "This binding provides information made available by Meteo France:"
 since: 3x
+logo: images/addons/meteofrance.svg
 install: auto
 ---
 
@@ -13,6 +14,8 @@ install: auto
 {% include base.html %}
 
 # Meteo France Binding
+
+<AddonLogo />
 
 This binding provides information made available by Meteo France:
 
