@@ -1,7 +1,7 @@
 ---
 id: paradoxalarm
-label: Paradox Alarm System binding
-title: Paradox Alarm System binding - Bindings
+label: Paradox Alarm System
+title: Paradox Alarm System - Bindings
 type: binding
 description: "This binding is intended to provide basic support for Paradox Alarm system."
 since: 3x
@@ -13,7 +13,7 @@ install: auto
 
 {% include base.html %}
 
-# Paradox Alarm System binding
+# Paradox Alarm System Binding
 
 <AddonLogo />
 

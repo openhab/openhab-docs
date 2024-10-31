@@ -1,7 +1,7 @@
 ---
 id: freeathome
-label: ABB/Busch-free@home Smart Home binding
-title: ABB/Busch-free@home Smart Home binding - Bindings
+label: ABB/Busch-free@home Smart Home
+title: ABB/Busch-free@home Smart Home - Bindings
 type: binding
 description: "openHAB ABB/Busch-free@home binding based on the offical free@home local API."
 since: 3x
@@ -13,7 +13,7 @@ install: auto
 
 {% include base.html %}
 
-# ABB/Busch-free@home Smart Home binding
+# ABB/Busch-free@home Smart Home Binding
 
 <AddonLogo />
 

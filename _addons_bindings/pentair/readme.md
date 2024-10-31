@@ -1,7 +1,7 @@
 ---
 id: pentair
-label: Pentair Pool
-title: Pentair Pool - Bindings
+label: Pentair
+title: Pentair - Bindings
 type: binding
 description: "This is an openHAB binding for a Pentair Pool System."
 since: 3x
@@ -13,7 +13,7 @@ install: auto
 
 {% include base.html %}
 
-# Pentair Pool
+# Pentair Binding
 
 <AddonLogo />
 
