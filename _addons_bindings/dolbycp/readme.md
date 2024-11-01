@@ -5,6 +5,7 @@ title: DolbyCP - Bindings
 type: binding
 description: "This binding is intended to connect to a _Dolby Digital Cinema Processor CP750_."
 since: 3x
+logo: images/addons/dolbycp.svg
 install: auto
 ---
 
@@ -13,6 +14,8 @@ install: auto
 {% include base.html %}
 
 # DolbyCP Binding
+
+<AddonLogo />
 
 This binding is intended to connect to a _Dolby Digital Cinema Processor CP750_.
 Support for CP950 may be added in future (if someone who owns one helps to test it).
