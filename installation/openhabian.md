@@ -11,7 +11,8 @@ source: https://github.com/openhab/openhabian/blob/main/docs/openhabian.md
 # openHABian - Hassle-free openHAB Setup
 You just discovered openHAB and now you are eager to start but you're afraid of setting up a computer and OS for it ?
 
-openHABian is here to help. It's a **self-configuring** Linux system setup to reliably operate your openHAB instance 24 hours a day.
+openHABian is here to help.
+It's a **self-configuring** Linux system setup to reliably operate your openHAB instance 24 hours a day.
 It provides:
 
 *   Complete **SD-card images pre-configured with openHAB** for the Raspberry Pi line of small single-board computers.
@@ -54,7 +55,7 @@ There's no genuine reason why this wouldn't work. The openHABian image is really
 <a id="befair"></a>
 #### and on fairness
 What you must not do, though, is to mess with the system, OS packages and config and expect anyone to help you with that. Let's clearly state this as well: when you deliberately decide to make manual changes to the OS software packages and configuration (i.e. outside of openhabian-config), you will be on your own.
-Your setup is untested, and no-one but you knows about your changes. openHABian maintainers are really committed to providing you with a fine user experience, but this takes enormous efforts in testing and is only possible with a fixed set of hardware. You don't get to see this as a user.
+Your setup is untested, and no-one but you knows about your changes. openHABian maintainers are really committed to providing you with a fine user experience, but this takes enormous efforts in testing and is only possible with a fixed set of hardware and software parameters. You don't get to see this as a user.
 
 So if you choose to deviate from the standard openHABian installation (e.g. you change your box to run off SSD) and run into problems thereafter, please be fair: don't waste maintainer's or anyone's time by asking for help or information on your issues on the forum. Thank you !
 
@@ -74,7 +75,7 @@ openHABian can run on x86 based systems but on those you need to install the OS 
 Anything else ARM based such as ODroids, OrangePis and the like may work or not.
 NAS servers such as QNAP and Synology boxes will not work.
 
-We strongly recommend Raspberry Pi 2, 3 or 4 systems that have 1 GB of RAM or more.
+We strongly recommend a Raspberry Pi 2 or newer that has 1 GB of RAM or more.
 RPi 1 and 0/0W just have a single CPU core and only 512 MB of RAM. The RPi0W2 has 4 cores but only 512 MB as well.
 512 MB can be sufficient to run a smallish openHAB setup, but it will not be enough to run a full-blown system with many bindings and memory consuming openHABian features/components such as zram or InfluxDB.
 We do not actively prohibit installation on any hardware, including unsupported systems, but we might skip or deny to install specific extensions such as those memory hungry applications named above.
@@ -284,14 +285,14 @@ They can be changed from openHABian menu.
 openHABian is designed to reliably run 24 hours a day, seven days a week. That's a complex challenge involving hardware, software and operational procedures.
 This is the right time to prepare your system for disasters such as getting hit by hardware outages or the SD card wear-out/corruption problem.
 
-Preparing for hardware breakage is the challenge that is the most easy one to overcome with common-off-the-shelf hardware that is known to work as a drop-in replacement the very moment you will be in need of it (i.e. when your smart home server just died).
+Preparing for hardware breakage is the challenge that is the most easy one to overcome with common-off-the-shelf hardware that is known to work as a drop-in replacement the very moment you will be in need of (e.g. when your smart home server just died).
 
 ::: tip get your spare hardware ready
 Order **spare** pieces of *all* hardware components your home automation relies on to work. At a minimum, that's the computer itself and another storage medium.
 Have it ready for use *on site*, unboxed, mounted and tested to be working.
 :::
 
-HEADS UP: that statement applies to EVERY hardware setup, even if you run openHAB in some virtualization environment on a $$$ x86 server rackmounted in your basement.
+**HEADS UP:** that statement applies to EVERY hardware setup, even if you run openHAB in some virtualization environment on some $$$ x86 server rackmounted in your basement.
 For our recommended hardware setup that means getting another Raspberry Pi (same model), 2 more SD cards and a power supply (in case of emergency, a smartphone charger will also do).
 
 That being said, openHABian has a number of built in software features we borrowed from professional data center operations.
@@ -301,7 +302,9 @@ That being said, openHABian has a number of built in software features we borrow
     WARNING: power failure will result in some data to get lost (albeit the system should continue to run) so we recommend to also get an UPS.
     Zram is enabled by default for swap, logs and persistence data.
     You can toggle use in \[menu option 38\].
-2.  Mirror your SD card!
+    
+2.  SD cards, SSDs and HDDs can break or crash just like any hardware.
+    Mirror your SD card to have a ready-to-use alternative boot medium ready on site at any time !
     Get an USB card writer and another SD card and set up SD mirroring using \[menu option 53\].
     This will ensure you have an always ready-to-use clone of your storage medium handy at all times.
     In case of emergency, you can simply swap SD cards and get back online within just a few minutes.
@@ -309,14 +312,16 @@ That being said, openHABian has a number of built in software features we borrow
 
 ::: tip remote replacement
 Disasters love to happen when you're not at home. 
-With an openHABian RPi mirror SD setup, you can instruct your partner or even kid or your cottage neighbour to replace the SD card and/or computer from remote, by phone. No need for Internet access.
+With an openHABian RPi mirror SD setup, you can instruct your partner, kid or your cottage neighbour to replace the SD card and/or computer from remote, by phone. No need for Internet or any sort of configuring to get your system back up running.
 :::
 
 3.  Use the integrated original openHAB [openhab-cli tool](https://community.openhab.org/t/recommended-way-to-backup-restore-oh2-configurations-and-things/7193/82) at regular intervals to interactively backup/restore your openHAB **config** \[menu option 50/51\].
+
 4.  Use [Amanda Network Backup](http://www.amanda.org/) to create full system backups.
-    HEADS UP: This is NOT meant to be are replacement for #1 or #3, it's a *complement* that will also enable you to restore your system to any point in time of the past.
+    HEADS UP: This is NOT meant to be a replacement for #1 or #3, it's a *complement* that will also enable you to restore your system to any point in time of the past.
     The specific [Amanda documentation is here](openhabian-amanda.md).
     Use \[menu option 52\] to set up.
+    
 5.  For completeness, openHABian still provides the historic option to move the root filesystem to USB-attached devices. See \[menu option 37\].
     We don't recommend or support doing so but if you're convinced this is beneficial to your situation, feel free to go for it.
 
@@ -328,6 +333,7 @@ With an openHABian RPi mirror SD setup, you can instruct your partner or even ki
 Standard openHABian install enables zram by default (#1).
 You can disable zram and move the system over using menu options 37 (#5) once you attached a _safe_ external medium to your system (such as an SSD), but we recommend against doing so.
 [To restate](#befair): this setup is not supported by us maintainers and you'll be on your very own to find and fix any problems you might run into.
+
 Finally, we strongly suggest you install Amanda (#4) right after you finish your setup.
 Amanda is to take care to backup the whole system to be able to quickly restore it when in need.
 This is not done by default because it requires a number of user inputs, but you should not skip it for your own safety!
