@@ -384,20 +384,22 @@ A set of channels will be created depending on what clusters and endpoints a dev
 
 The following channels are supported -:
 
-| Channel UID                  | ZigBee Cluster                           | Type                     | Description |
+| Channel Type ID              | ZigBee Cluster                           | Type                     | Description |
 | ---------------------------- | ---------------------------------------- | ------------------------ | ----------- |
 | battery-level                | `POWER_CONFIGURATION` (0x0001)           | Number                   |             |
 | battery_voltage              | `POWER_CONFIGURATION` (0x0001)           | Number:ElectricPotential |             |
 | binaryinput                  | `BINARY_INPUT__BASIC` (0x000F)           | Switch                   |             |
 | color_color                  | `COLOR_CONTROL` (0x0300)                 | Color                    |             |
-| color_temperature            | `COLOR_CONTROL` (0x0300)                 | Dimmer                   |             |
+| color-temperature            | `COLOR_CONTROL` (0x0300)                 | Dimmer                   | Percent     |
+| color-temperature-abs        | `COLOR_CONTROL` (0x0300)                 | Number:Temperature       | Absolute    |
 | door_state                   | `DOOR_LOCK` (0x0101)                     | Switch                   |             |
 | electrical_activepower       | `ELECTRICAL_MEASUREMENT` (0x0B04)        | Number:Power             |             |
 | electrical_rmscurrent        | `ELECTRICAL_MEASUREMENT` (0x0B04)        | Number:ElectricCurrent   |             |
 | electrical_rmsvoltage        | `ELECTRICAL_MEASUREMENT` (0x0B04)        | Number:ElectricPotential |             |
 | fancontrol                   | `FAN_CONTROL` (0x0202)                   | Number                   |             |
-| ias_codetector               | `IAS_ZONE` (0x0500)                      | Switch                   |             |
+| ias_cosensor                 | `IAS_ZONE` (0x0500)                      | Switch                   |             |
 | ias_contactportal1           | `IAS_ZONE` (0x0500)                      | Switch                   |             |
+| ias_contactportal2           | `IAS_ZONE` (0x0500)                      | Switch                   |             |
 | ias_fire                     | `IAS_ZONE` (0x0500)                      | Switch                   |             |
 | ias_motionintrusion          | `IAS_ZONE` (0x0500)                      | Switch                   |             |
 | ias_motionpresence           | `IAS_ZONE` (0x0500)                      | Switch                   |             |
@@ -406,7 +408,7 @@ The following channels are supported -:
 | ias_movement                 | `IAS_ZONE` (0x0500)                      | Switch                   |             |
 | ias_vibration                | `IAS_ZONE` (0x0500)                      | Switch                   |             |
 | ias_tamper                   | `IAS_ZONE` (0x0500)                      | Switch                   |             |
-| ias_tamper                   | `IAS_ZONE` (0x0500)                      | Switch                   |             |
+| low-battery                  | `POWER_CONFIGURATION` (0x0001)           | Switch                   |             |
 | measurement_illuminance      | `ILLUMINANCE_MEASUREMENT` (0x0400)       | Number                   |             |
 | measurement_pressure         | `PRESSURE_MEASUREMENT` (0x0403)          | Number:Pressure          |             |
 | measurement_relativehumidity | `RELATIVE_HUMIDITY_MEASUREMENT` (0x0405) | Number                   |             |
