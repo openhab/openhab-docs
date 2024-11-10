@@ -124,7 +124,7 @@ URL of the image to display in the background. The image is stretched to fit the
 If you want to achieve a different placement, adding margins to the image in an image editor will be necessary.
 
 This setting is in particular in important if you want to make your background image interactive, in which case it has to be of type SVG.
-See below for more information on [interactive backgrounds](#interactive-backgrounds).
+See below for more information on [interactive backgrounds](layout-pages-fixed.html#interactive-backgrounds).
 
 _Image Source Set:_
 The setting is passed to the [`srcset`](https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images) attribute of the image element, allowing to specify different images to be used depending on the actual resolution of the device, for example is the layout will be used both on a so called 'retina' and non-'retina' tablet.
@@ -159,14 +159,14 @@ The below image depicts a few examples that can be achieved with interactive bac
 
 ![interactive-room.png](images/interactive-room.png)
 
-* The sofa can be directly clicked to control something that is related to the sofa.
-* The green bar around the desk is not only a clickable LED-Strip but also reflects the color that is currently selected.
-* The light bulb in the middle is filled by the color that is configured for the State ON of the light.
-* The light at the right is using a "glow" effect to indicate that it is currently switched on.
+- The sofa can be directly clicked to control something that is related to the sofa.
+- The green bar around the desk is not only a clickable LED-Strip but also reflects the color that is currently selected.
+- The light bulb in the middle is filled by the color that is configured for the State ON of the light.
+- The light at the right is using a "glow" effect to indicate that it is currently switched on.
 This glow effect is modelled in the SVG and is just enabled disabled by the item state.
-* The door is depicted with red gradient designed in the SVG and the gradient is shown when the door is open (the same would happen for the windows on the top).
-* The astronaut with the megaphone has an animation that fades in and out when the state is ON.
-* The horizontal button below the green light is an animated button completely modelled in the SVG and controlled by openHAB.
+- The door is depicted with red gradient designed in the SVG and the gradient is shown when the door is open (the same would happen for the windows on the top).
+- The astronaut with the megaphone has an animation that fades in and out when the state is ON.
+- The horizontal button below the green light is an animated button completely modelled in the SVG and controlled by openHAB.
 
 ### Embedding SVG Images
 
@@ -175,10 +175,10 @@ Note that this approach requires a bit more of a technical background as you nee
 
 Additionally, the following settings are important:
 
-* **Embed SVG**: Only when enabled, the SVG image is embedded in the page as "real" HTML elements, allowing to interact with it (normally an SVG would only be referenced by an IMG tag).
+- **Embed SVG**: Only when enabled, the SVG image is embedded in the page as "real" HTML elements, allowing to interact with it (normally an SVG would only be referenced by an IMG tag).
 By default, this is switched off and therefore needs to be enabled.
 
-* **Embed SVG Flashing in Run-Mode**: It is possible within the editor to flash the elements of the SVG image that have been previously marked as interactive through the attribute 'openhab' (see below).
+- **Embed SVG Flashing in Run-Mode**: It is possible within the editor to flash the elements of the SVG image that have been previously marked as interactive through the attribute 'openhab' (see below).
 This setting will also flash the elements in run-mode guiding the user getting by knowing which part of the image is clickable or not.
 By default, this is switched off.
 
@@ -191,14 +191,14 @@ It is recommended to use a dedicated SVG editor like [Inkscape](https://inkscape
 
 Let's create a very simple SVG with Inkscape which we will embed in a Fixed Canvas Layout.
 
-* Create a new SVG and draw three rectangles like the following and save the file as `background.svg`
+- Create a new SVG and draw three rectangles like the following and save the file as `background.svg`
   * As always, to be able to reference and use it in openHAB, you need to put it in the `conf/html` folder of your openHAB installation.
 
 ![interactive-elements-svg.png](images/interactive-elements-svg.png)
 
-* Add "/static/background.svg" in the Image URL field of the Fixed Canvas Layout configuration, and you will see the SVG image in the background of the layout editor.
-* Save the page.
-* Open the XML-Editor in Inkscape (Edit -> XML Editor) and you can see something like the following (note that you will see the same if you open the SVG directly with a text editor):
+- Add "/static/background.svg" in the Image URL field of the Fixed Canvas Layout configuration, and you will see the SVG image in the background of the layout editor.
+- Save the page.
+- Open the XML-Editor in Inkscape (Edit -> XML Editor) and you can see something like the following (note that you will see the same if you open the SVG directly with a text editor):
 
 ```xml
 <svg width="210mm" height="297mm" ... some information omitted here>
@@ -240,15 +240,15 @@ Let's add this attribute to the first rectangle either via Inkscape or directly 
 
 Note that you have added the `openhab="true"` attribute to the first `<rect>`angle  and not to a group `<g>` (which we talk about below)
 
-* Make sure that the `Embed SVG` option is enabled in the Fixed Canvas Layout configuration.
-* Stay in Edit-Mode of the page
-* On the right between the "Grid" icon and the "Configure Layout" icon, you can see a new icon with a flash which allows you to flash the interactive elements.
+- Make sure that the `Embed SVG` option is enabled in the Fixed Canvas Layout configuration.
+- Stay in Edit-Mode of the page
+- On the right between the "Grid" icon and the "Configure Layout" icon, you can see a new icon with a flash which allows you to flash the interactive elements.
 When you click on it, the first rectangle should flash which indicates that has become an interactive element for openHAB.
-* There are two different colors when the element flashes:
-  * Red: The element is defined as an interactive element but is not yet configured.
-  * Green: The element is defined as an interactive element and is already configured.
-* Click on it and a dialog, which is similar to configurations of a normal widget except that it has some additional settings, will appear.
-* Later, after configuration, you can go to Run-Mode and try out your configuration.
+- There are two different colors when the element flashes:
+  - Red: The element is defined as an interactive element but is not yet configured.
+  - Green: The element is defined as an interactive element and is already configured.
+- Click on it and a dialog, which is similar to configurations of a normal widget except that it has some additional settings, will appear.
+- Later, after configuration, you can go to Run-Mode and try out your configuration.
 
 ### Configuration of an interactive element
 
@@ -259,12 +259,12 @@ Usually you will first configure the Action and the Action Item like in a normal
 
 Many special options though will only be available when you click on "Show Advanced".
 
-* **State Items**: Define the item that is used to retrieve the state of the element to reflect the state.
+- **State Items**: Define the item that is used to retrieve the state of the element to reflect the state.
 Reflecting the state can be either applying a color or using the opacity of that svg element.
 The reason why you can choose several states is that in some cases you might want use expressions.
 In this case you need to select all items that you use in this expression (see below for an example).
 
-* **Use State Proxy Element**: Often you have more complex elements that are made of a group (a `<g>` element in the SVG) that do not either allow to be directly filled with a color or where you explictly want to use a specific element in that group to reflect the state.
+- **Use State Proxy Element**: Often you have more complex elements that are made of a group (a `<g>` element in the SVG) that do not either allow to be directly filled with a color or where you explictly want to use a specific element in that group to reflect the state.
 A good example is the following bulb.
 The left image shows the bulb in the OFF state and the right image shows the bulb in the ON state.
 In this case we do apply a color based on the state but enable / disable a proxy element in that group that makes up the bulb object.
@@ -287,7 +287,7 @@ It is also used when flashing the interactive elements with the flash icon, henc
 
 Tip: Search for nice SVG objects and import into your SVG background file
 
-* **State  ON Color / OFF Color**: Define the color that should be applied when the state is ON or OFF.
+- **State  ON Color / OFF Color**: Define the color that should be applied when the state is ON or OFF.
 An expression can be used here as well which is especially useful when, e.g. you want to apply the color of a light to that element.
 Here is an example of an expression that uses the color state of a light item to apply the color to the element:
 
@@ -297,9 +297,9 @@ Here is an example of an expression that uses the color state of a light item to
 
 Keep in mind that in this case, the _AZ_Govee_Light_Strip_Power_ and the _AZ_Govee_Schreibtisch_Light_Strip_Color_ both need to be selected in State Items.
 
-* **Use State as Opacity**: If this option is enabled, the state of the item will be used to set the opacity of the element.
+- **Use State as Opacity**: If this option is enabled, the state of the item will be used to set the opacity of the element.
 This is in particular helpful if the element should become more transparent depending on State Percentage or ON/FF of an item.
-* **Invert State Opacity**: If this option is enabled, the opacity will be inverted.
+- **Invert State Opacity**: If this option is enabled, the opacity will be inverted.
 
 An example could be the closing state of a rollershutter that makes a window element more and more (in)transparent.
 The blue bar that depicts the window will become less and less transperent the more the rollershutter is closed and will finally look like the wall when the rollershutter is completely closed.
@@ -310,7 +310,7 @@ The following configuration uses the inversion of the percentage state value as 
 
   ![interactive-element-rollershutter-window-config.png](images/interactive-element-rollershutter-window-config.png)
 
-* **Minimum Opacity applied**: If you want the minimum not to be 0, you can set it which makes sure the element will not be completely hidden but still be partially visible.
+- **Minimum Opacity applied**: If you want the minimum not to be 0, you can set it which makes sure the element will not be completely hidden but still be partially visible.
 An example could be to show the presence/absence of people like shown below where the minimum has been set to 0.2.
 In this case the opacity is derived from the ON/OFF state of the openHAB presence item state where 1 equals 100% and 0 equals 20% instead of 0%.
 
@@ -323,14 +323,14 @@ The value of that State Item will then be written to the text element:
 
 ![interactive-element-text.png](images/interactive-element-text.png)
 
-* **Use displayState as Text**: Sometimes you want to apply the formatted display state instead of the raw state.
+- **Use displayState as Text**: Sometimes you want to apply the formatted display state instead of the raw state.
   This is especially useful when you want to display the state of a temperature item in a more human-readable way.
 
 #### Using styles and SVG animations
 
 This is the most sophisticated part of the interactive SVG backgrounds which allows very interesting designs.
 
-* **"Set Style Class based on ON" / OFF State**: These properties allow you to apply CSS classes to an element when the state is ON or OFF.
+- **"Set Style Class based on ON" / OFF State**: These properties allow you to apply CSS classes to an element when the state is ON or OFF.
 
 In general, any style class that is defined in the CSS of the page can be applied to the SVG element.
 CSS classes can be used to apply colors, animations, or any other style that is possible with CSS.
