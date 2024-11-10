@@ -192,7 +192,7 @@ It is recommended to use a dedicated SVG editor like [Inkscape](https://inkscape
 Let's create a very simple SVG with Inkscape which we will embed in a Fixed Canvas Layout.
 
 - Create a new SVG and draw three rectangles like the following and save the file as `background.svg`
-  * As always, to be able to reference and use it in openHAB, you need to put it in the `conf/html` folder of your openHAB installation.
+  - Copy the file into the `conf/html` folder of your openHAB installation.
 
 ![interactive-elements-svg.png](images/interactive-elements-svg.png)
 

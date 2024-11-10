@@ -14,14 +14,14 @@ To do that, openHAB puts different options at your disposal; they are commonly r
 
 Several types of pages are available:
 
-- [Home Page](#the-home-page)
-- [Sitemaps](#sitemaps)
-- [Layout Pages](#layout-pages)
+- [Home Page](index.html#the-home-page)
+- [Sitemaps](index.html##sitemaps)
+- [Layout Pages](index.html##layout-pages)
   - [Responsive Layouts](./layout-pages-responsive.md)
   - [Fixed Grid Layouts](./layout-pages-fixed.md)
-- [Maps & Floorplans](#maps-floorplans)
-- [Charts](#charts)
-  - [Tabbed Pages](#tabbed-pages)
+- [Maps & Floorplans](index.html##maps-floorplans)
+- [Charts](index.html##charts)
+  - [Tabbed Pages](index.html##tabbed-pages)
 
 ### The Home Page
 
