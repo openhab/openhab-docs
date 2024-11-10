@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="shelly_waveplugus_00_000" listed="false">
+    <label>Wave Plug US Plug On Off with Energy Meter</label>
+    <description><![CDATA[
+Plug On Off with Energy Meter<br /> <h1>Overview</h1><p>The Wave Plug US (Device) is a smart plug/outlet with power measurement and overheating protection, which allows remote control of electric appliances through a mobile phone, tablet, PC, or home automation system.<br /></p> <br /> <h2>Inclusion Information</h2><p>SmartStart adding (inclusion)</p><p>SmartStart enabled products can be added into a Z-Wave® network by scanning the Z-Wave® QR Code present on the Device with a gateway providing SmartStart inclusion. No further action is required, and the SmartStart device will be added automatically within 10 minutes of being switched on in the network vicinity.</p><p>With the gateway application scan the QR code on the Device label and add the Security 2 (S2) Device Specific Key (DSK) to the provisioning list in the gateway.</p><p>Connect the Device to a power supply.</p><p>Check if the blue LED is blinking in Mode 1. If so, the Device is not added to a Z-Wave® network.</p><p>Adding will be initiated automatically within a few seconds after connecting the Device to a power supply, and the Device will be added to a Z-Wave® network automatically.</p><p>The blue LED will be blinking in Mode 2 during the adding process.</p><p>The green LED will be blinking in Mode 1 if the Device is successfully added to a Z-Wave® network.</p><p>Adding (inclusion) with the S button</p><p>Connect the Device to a power supply.</p><p>Check if the blue LED is blinking in Mode 1. If so, the Device is not added to a Z-Wave® network.</p><p>Enable add/remove mode on the gateway.</p><p>To enter the Setting mode, press and hold the S button on the Device until the LED turns solid blue.</p><p>Release and then press and hold (&gt; 2s) the S button on the Device until the blue LED starts blinking in Mode 3. Releasing the S button will start the Learn mode.</p><p>The blue LED will be blinking in Mode 2 during the adding process.</p><p>The green LED will be blinking in Mode 1 if the Device is successfully added to a Z-Wave® network.</p> <br /> <h2>Exclusion Information</h2><p>Removing (exclusion) with the S button</p><p>Connect the Device to a power supply.</p><p>Check if the green LED is blinking in Mode 1. If so, the Device is added to a Z-Wave® network.</p><p>Enable add/remove mode on the gateway.</p><p>To enter the Setting mode, press and hold the S button on the Device until the LED turns solid blue.</p><p>Release and then press and hold (&gt; 2s) the S button on the Device until the blue LED starts blinking in Mode 3. Releasing the S button will start the LEARN MODE.</p><p>The blue LED will be blinking in Mode 2 during the removing process.</p><p>The blue LED will be blinking in Mode 1 if the Device is successfully removed from a Z-Wave® network.</p> <br /> <h2>Wakeup Information</h2><p><br /></p>
+    ]]></description>
+    <category>PowerOutlet</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_binary" typeId="switch_binary">
+        <label>Switch</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY</property>
+        </properties>
+      </channel>
+      <channel id="meter_kwh" typeId="meter_kwh">
+        <label>Electric meter (kWh)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_KWh</property>
+        </properties>
+      </channel>
+      <channel id="meter_watts" typeId="meter_watts">
+        <label>Electric meter (watts)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_W</property>
+        </properties>
+      </channel>
+      <channel id="meter_voltage" typeId="meter_voltage">
+        <label>Electric meter (volts)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_V</property>
+        </properties>
+      </channel>
+      <channel id="meter_current" typeId="meter_current">
+        <label>Electric meter (amps)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_A</property>
+        </properties>
+      </channel>
+      <channel id="alarm_heat" typeId="alarm_heat">
+        <label>Alarm (heat)</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=HEAT</property>
+        </properties>
+      </channel>
+      <channel id="alarm_power" typeId="alarm_power">
+        <label>Alarm (power)</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=POWER_MANAGEMENT</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Shelly</property>
+      <property name="modelId">Wave Plug US</property>
+      <property name="manufacturerId">0460</property>
+      <property name="manufacturerRef">0002:0088</property>
+      <property name="dbReference">1642</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_17_1" type="integer" groupName="configuration">
+        <label>17: Restore state of O (O1) after power failure</label>
+        <description><![CDATA[
+This parameter determines if the on/off status is saved and restored for the load connected to output after a power failure.<br /> <h1>Overview</h1><p><br /></p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Device saves last on/off status and restores it after a power failure</option>
+          <option value="1">Device does not save on/off status and does not restore after power fa</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_19_2" type="integer" groupName="configuration">
+        <label>19: O (O1) Auto OFF with timer</label>
+        <description><![CDATA[
+If Load O (O1) is ON, you can schedule it to turn OFF automatically after a period of time defined in this parameter. The timer is reset to zero each time the device receives an ON command, either remotely (from the Gateway or associated device) or local<br /> <h1>Overview</h1><p>0 : Auto ON Disabled</p><p>1 - 32535 : seconds (or milliseconds – see Parameter no. 25. Auto ON timer enabled for a given amount of seconds (or milliseconds) resolution 100ms</p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_20_2" type="integer" groupName="configuration">
+        <label>20: O (O1) Auto ON with timer</label>
+        <description><![CDATA[
+If the load O (O1) is OFF, you can schedule it to turn ON automatically after the period of time defined in this parameter. The timer resets to zero each time the Device receives an OFF command, either remotely (from the gateway or associated device) or l<br /> <h1>Overview</h1><p>0 - Auto ON Disabled</p><p>1 - 32535 = 1 - 32535 seconds or milliseconds – see Parameter No. 25. Set timer units to s or ms for O (O1) resolution 100ms.</p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_23_1" type="integer" groupName="configuration">
+        <label>23: O (O1) contact type - NO/NC</label>
+        <description><![CDATA[
+The set value determines the relay contact type for output O (O1). The relay contact type can be normally open (NO) or normally closed (NC).<br /> <h1>Overview</h1><p>Relay logic:<br /></p><p>+-----------+---------------------------+---------------------+</p><p>| Par-NO/NC | Command (switch, Z-Wave…) | Device output state |</p><p>+-----------+---------------------------+---------------------+</p><p>| NO (0) | OFF | OFF (0 V) |</p><p>| NO (0) | ON | ON (230 V) |</p><p>| NC (1) | OFF | ON (230 V) |</p><p>| NC (1) | ON | OFF (0 V) |</p><p>+-----------+---------------------------+---------------------+</p>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_25_1" type="integer" groupName="configuration">
+        <label>25: Set timer units to s or ms for O (O1)</label>
+        <description>Set the timer units to seconds or milliseconds. Choose if you want to set the timer in seconds or milliseconds in Parameters No. 19, 20.</description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_36_1" type="integer" groupName="configuration">
+        <label>36: O (O1) Power report on change - percentage</label>
+        <description><![CDATA[
+This parameter determines the minimum change in consumed power that will result in sending a new report to the gateway.<br /> <h1>Overview</h1><p>Values &amp; descriptions:</p><p>0 - reports are disabled</p><p>1-100 (1-100%) - change in power NOTE: When the Device reports the power consumption (W), it will also automatically report the voltage (V) and current (A). NOTE: Regardless of the power consumption change in percentage, the report will not be sent more frequently than defined by Parameter No. 39</p>
+        ]]></description>
+        <default>50</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_39_1" type="integer" groupName="configuration">
+        <label>39: Minimum time between reports (O) O1</label>
+        <description><![CDATA[
+This parameter determines the minimum time that must elapse before a new power report on O (O1) is sent to the gateway.<br /> <h1>Overview</h1><p>Values &amp; descriptions:</p><p>0 - reports are disabled</p><p>1-120 (1-120s) - report interval</p><p>NOTE: This Parameter is in relation to Parameter No. 36. NOTE: Setting the value to less than 30s can cause the Z-Wave network congestion state (slow Device response and decreased network stability).</p>
+        ]]></description>
+        <default>30</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_91_4" type="integer" groupName="configuration">
+        <label>91: Water Alarm</label>
+        <description><![CDATA[
+This parameter determines how the device should respond to the reports of alarm frames. The parameters consist of 4 bytes, the three most significant bytes are set according to the official Z-Wave protocol specification.<br /> <h1>Overview</h1><p>The notification types it reacts to are as followed,</p><p>Notification Type: - NOTIFICATION_TYPE_WATER_ALARM 0x05</p><p>Notification Events: - All except ALARM_NO_EVENT 0x00</p>
+        ]]></description>
+        <default>0</default>
+        <advanced>true</advanced>
+      </parameter>
+
+      <parameter name="config_92_4" type="integer" groupName="configuration">
+        <label>92: Smoke Alarm</label>
+        <description><![CDATA[
+This parameter determines how the device should respond to the reports of alarm frames. The parameters consist of 4 bytes, the three most significant bytes are set according to the official Z-Wave protocol specification.<br /> <h1>Overview</h1><p>The notification types it reacts to are as followed,</p><p>Notification Type: - NOTIFICATION_TYPE_SMOKE_ALARM 0x01</p><p>Notification Events: - NOTIFICATION_EVENT_SMOKE_ALARM_SMOKE_DETECTED 0x01 - NOTIFICATION_EVENT_SMOKE_ALARM_SMODE_DETECTED_UNKNOWN_LOCATION 0x02</p>
+        ]]></description>
+        <default>0</default>
+        <advanced>true</advanced>
+      </parameter>
+
+      <parameter name="config_93_4" type="integer" groupName="configuration">
+        <label>93: CO Alarm</label>
+        <description><![CDATA[
+This parameter determines how the device should respond to the reports of alarm frames. The parameters consist of 4 bytes, the three most significant bytes are set according to the official Z-Wave protocol specification.<br /> <h1>Overview</h1><p>The notification types it reacts to are as followed,</p><p>Notification Type: - NOTIFICATION_TYPE_CO_ALARM 0x02</p><p>Notification Events: - All except ALARM_NO_EVENT 0x00</p>
+        ]]></description>
+        <default>0</default>
+        <advanced>true</advanced>
+      </parameter>
+
+      <parameter name="config_94_4" type="integer" groupName="configuration">
+        <label>94: Heat Alarm</label>
+        <description><![CDATA[
+This parameter determines how the device should respond to the reports of alarm frames. The parameters consist of 4 bytes, the three most significant bytes are set according to the official Z-Wave protocol specification.<br /> <h1>Overview</h1><p>The notification types it reacts to are as followed,</p><p>Notification Type: - NOTIFICATION_TYPE_HEAT_ALARM 0x04</p><p>Notification Events: - NOTIFICATION_EVENT_HEAT_ALARM_RAPID_TEMPERATURE_RISE_LOCATION_PROVIDED 0x03 - NOTIFICATION_EVENT_HEAT_ALARM_RAPID_TEMPERATURE_RISE 0x04 - NOTIFICATION_EVENT_HEAT_ALARM_RAPID_TEMPERATURE_FALL_LOCATION_PROVIDED 0x0C - NOTIFICATION_EVENT_HEAT_ALARM_RAPID_TEMPERATURE_FALL 0x0D</p>
+        ]]></description>
+        <default>0</default>
+        <advanced>true</advanced>
+      </parameter>
+
+      <parameter name="config_117_1" type="integer" groupName="configuration">
+        <label>117: Remote Device reboot</label>
+        <description>This parameter enable restarting or rebooting the Device without physical intervention. Use this parameter only for troubleshooting scope. After device reboot value will be set to default</description>
+        <default>0</default>
+        <advanced>true</advanced>
+      </parameter>
+
+      <parameter name="config_201_4" type="integer" groupName="configuration" readOnly="true">
+        <label>201: Serial Number 1</label>
+        <description>This parameter contains a part of device’s serial number.</description>
+        <default>0</default>
+        <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_201_4" type="integer" groupName="configuration" readOnly="true">
+        <label>201: Serial Number 2</label>
+        <description>This parameter contains a part of device’s serial number.</description>
+        <default>0</default>
+        <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_203_4" type="integer" groupName="configuration" readOnly="true">
+        <label>203: Serial Number 3</label>
+        <description>This parameter contains a part of device’s serial number.</description>
+        <default>0</default>
+        <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Lifeline</label>
+        <description>Lifeline</description>
+        <multipleLimit>9</multipleLimit>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: Switch 1 - Basic ON/OFF</label>
+        <description>Switch 1 - Basic ON/OFF</description>
+        <multipleLimit>9</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

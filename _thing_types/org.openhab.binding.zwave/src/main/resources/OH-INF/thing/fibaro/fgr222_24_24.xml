@@ -52,6 +52,24 @@ Roller Shutter 2<br /> <h1>Overview</h1><p>The device allows for controlling mot
           <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_KWh</property>
         </properties>
       </channel>
+      <channel id="config_decimal_param29" typeId="fibaro_fgr222_24_024_config_decimal_param29">
+        <label>Forced Calibration</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_CONFIGURATION;parameter=29</property>
+        </properties>
+      </channel>
+      <channel id="protection_local" typeId="protection_local">
+        <label>Local Protection</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_PROTECTION;type=PROTECTION_LOCAL</property>
+        </properties>
+      </channel>
+      <channel id="protection_rf" typeId="protection_rf">
+        <label>Radio Protection</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_PROTECTION;type=PROTECTION_RF</property>
+        </properties>
+      </channel>
       <channel id="blinds_shutter" typeId="blinds_shutter">
         <label>Shutter position [Deprecated]</label>
         <properties>
@@ -95,17 +113,21 @@ Roller Shutter 2<br /> <h1>Overview</h1><p>The device allows for controlling mot
       <!-- PARAMETER DEFINITIONS -->
       <parameter name="config_3_1" type="integer" groupName="configuration">
         <label>3: Reports type</label>
-        <description>value should be set to 1 if the module operates in Venetian Blind mode.</description>
+        <description><![CDATA[
+value should be set to 1 if the module operates in Venetian Blind mode.<br /> <h1>Overview</h1><p><br /></p>
+        ]]></description>
         <default>0</default>
         <options>
           <option value="0">Blind position using Z-Wave Command</option>
           <option value="1">Blind position via Fibar Command</option>
         </options>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_10_1" type="integer" groupName="configuration">
-        <label>10: Roller Shutter operating modes</label>
+        <label>10: Operating modes</label>
+        <description><![CDATA[
+Roller Shutter operating modes<br /> <h1>Overview</h1><p>Roller Shutter operating modes:</p><p>0 - Roller Blind Mode, without positioning</p><p>1 - Roller Blind Mode, with positioning</p><p>2 - Venetian Blind Mode, with positioning</p><p>3 - Gate Mode, without positioning</p><p>4 - Gate Mode, with positioning</p>
+        ]]></description>
         <default>1</default>
         <options>
           <option value="0">Roller Blind Mode, without positioning</option>
@@ -114,7 +136,6 @@ Roller Shutter 2<br /> <h1>Overview</h1><p>The device allows for controlling mot
           <option value="3">Gate Mode, without positioning</option>
           <option value="4">Gate Mode, with positioning</option>
         </options>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_12_2" type="integer" groupName="configuration">
@@ -137,7 +158,6 @@ Parameter influences the lamellas positioning in venetian blind mode<br /> <h1>O
           <option value="1">default - controller+switchlimit</option>
           <option value="2">like 1 + STOP control frame</option>
         </options>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_14_1" type="integer" groupName="configuration">
@@ -151,7 +171,6 @@ either Toggle switches or a single, momentary switch.<br /> <h1>Overview</h1><p>
           <option value="1">Toggle switches</option>
           <option value="2">Single, momentary switch.</option>
         </options>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_17_1" type="integer" groupName="configuration">
@@ -187,51 +206,58 @@ set to 1 will enter calibration mode<br /> <h1>Overview</h1><p>29. Forced Roller
           <option value="0">Deactivated</option>
           <option value="1">Start calibration process</option>
         </options>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_30_1" type="integer" groupName="configuration">
         <label>30: Response to General Alarm</label>
+        <description><![CDATA[
+<br /> <h1>Overview</h1><p><br /></p>
+        ]]></description>
         <default>2</default>
         <options>
           <option value="0">No response to alarm frames</option>
           <option value="1">Open Blind</option>
           <option value="2">Close Blind</option>
         </options>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_31_1" type="integer" groupName="configuration">
         <label>31: Response to Water Flood Alarm</label>
+        <description><![CDATA[
+<br /> <h1>Overview</h1><p><br /></p>
+        ]]></description>
         <default>0</default>
         <options>
           <option value="0">No response to alarm frames</option>
           <option value="1">Open Blind</option>
           <option value="2">Close Blind</option>
         </options>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_32_1" type="integer" groupName="configuration">
         <label>32: Response to Smoke, CO, CO2 Alarm</label>
+        <description><![CDATA[
+<br /> <h1>Overview</h1><p><br /></p>
+        ]]></description>
         <default>1</default>
         <options>
           <option value="0">No response to alarm frames</option>
           <option value="1">Open Blind</option>
           <option value="2">Close Blind</option>
         </options>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_33_1" type="integer" groupName="configuration">
         <label>33: Response to Temperature Alarm</label>
+        <description><![CDATA[
+<br /> <h1>Overview</h1><p><br /></p>
+        ]]></description>
         <default>1</default>
         <options>
           <option value="0">No response to alarm frames</option>
           <option value="1">Open Blind</option>
           <option value="2">Close Blind</option>
         </options>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_35_1" type="integer" groupName="configuration">
@@ -244,7 +270,6 @@ set to 1 will enter calibration mode<br /> <h1>Overview</h1><p>29. Forced Roller
           <option value="0">Do not change lamellas position</option>
           <option value="1">Set lamellas to their extreme position</option>
         </options>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_40_1" type="integer" groupName="configuration">
@@ -282,7 +307,6 @@ if power and energy reports are to sent to the main controller<br /> <h1>Overvie
           <option value="0">Disabled</option>
           <option value="1">Activated</option>
         </options>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_50_1" type="integer" groupName="configuration">
@@ -295,7 +319,6 @@ whether scenes or associations are activated by the switch keys<br /> <h1>Overvi
           <option value="0">Associations Active</option>
           <option value="1">Scenes Active</option>
         </options>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->
@@ -323,5 +346,17 @@ whether scenes or associations are activated by the switch keys<br /> <h1>Overvi
     </config-description>
 
   </thing-type>
+
+  <channel-type id="fibaro_fgr222_24_024_config_decimal_param29">
+    <item-type>Number</item-type>
+    <label>Forced Roller Shutter calibration</label>
+    <description>set to 1 will enter calibration mode</description>
+    <state pattern="%s">
+      <options>
+        <option value="0">Deactivated</option>
+        <option value="1">Start calibration process</option>
+      </options>
+    </state>
+  </channel-type>
 
 </thing:thing-descriptions>

@@ -52,6 +52,24 @@ Roller Shutter<br /> <h1>Overview</h1><p>Fibaro Roller Shutter is a universal, Z
           <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_KWH</property>
         </properties>
       </channel>
+      <channel id="config_decimal_param29" typeId="fibaro_fgrm222_00_000_config_decimal_param29">
+        <label>Forced Calibration</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_CONFIGURATION;parameter=29</property>
+        </properties>
+      </channel>
+      <channel id="protection_local" typeId="protection_local">
+        <label>Local Protection</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_PROTECTION;type=PROTECTION_LOCAL</property>
+        </properties>
+      </channel>
+      <channel id="protection_rf" typeId="protection_rf">
+        <label>Radio Protection</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_PROTECTION;type=PROTECTION_RF</property>
+        </properties>
+      </channel>
       <channel id="blinds_lamella" typeId="blinds_lamella">
         <label>Lamella position</label>
         <properties>
@@ -94,7 +112,7 @@ Roller Shutter<br /> <h1>Overview</h1><p>Fibaro Roller Shutter is a universal, Z
 
       <!-- PARAMETER DEFINITIONS -->
       <parameter name="config_1_1" type="integer" groupName="configuration">
-        <label>1: Local protection</label>
+        <label>1: ** DELETE **" Local protection</label>
         <description><![CDATA[
 Enables/disables local protection<br /> <h1>Overview</h1><p>Enables/disables local entry. If activated module stops responding to S1 and S2 push buttons, SCENE ID and association commands will not be sent. Only exception is the B-button.</p>
         ]]></description>
@@ -107,7 +125,7 @@ Enables/disables local protection<br /> <h1>Overview</h1><p>Enables/disables loc
       </parameter>
 
       <parameter name="config_2_1" type="integer" groupName="configuration">
-        <label>2: Radio protection</label>
+        <label>2: ** DELETE **" Radio protection</label>
         <description><![CDATA[
 Enables/disables RF protection<br /> <h1>Overview</h1><p>Enables/disables RF protection. If activated device stops responding to command frames. Configuration and polling still possible.</p>
         ]]></description>
@@ -129,11 +147,13 @@ Enable Venetian Blind mode<br /> <h1>Overview</h1><p>Parameters value shoud be s
           <option value="0">Blind position reports sent using Z-Wave Commands</option>
           <option value="1">Blind position reports sent using Fibaro Commands.</option>
         </options>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_10_1" type="integer" groupName="configuration">
         <label>10: Roller Shutter operating modes</label>
+        <description><![CDATA[
+Roller Shutter operating modes<br /> <h1>Overview</h1><p><b>10. Roller Shutter operating modes:</b></p><p>0 - Roller Blind Mode, without positioning</p><p>1 - Roller Blind Mode, with positioning</p><p>2 - Venetian Blind Mode, with positioning</p><p>3 - Gate Mode, without positioning</p><p>4 - Gate Mode, with positioning</p><p>Default settng: 1</p><p>Parameter size: 1 [byte]</p>
+        ]]></description>
         <default>1</default>
         <options>
           <option value="0">Roller Blind Mode, without positioning</option>
@@ -142,7 +162,6 @@ Enable Venetian Blind mode<br /> <h1>Overview</h1><p>Parameters value shoud be s
           <option value="3">Gate Mode, without positioning</option>
           <option value="4">Gate Mode, with positioning</option>
         </options>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_12_2" type="integer" groupName="configuration">
@@ -179,7 +198,6 @@ Parameter settings for Roller and Venetian Blind Mode<br /> <h1>Overview</h1><p>
           <option value="1">Toggle switches</option>
           <option value="2">Single, momentary switch.</option>
         </options>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_17_1" type="integer" groupName="configuration">
@@ -215,51 +233,58 @@ Roller Shutter enters the calibration mode.<br /> <h1>Overview</h1><p>Seting the
           <option value="0">Deactivated</option>
           <option value="1">Start calibration process</option>
         </options>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_30_1" type="integer" groupName="configuration">
         <label>30: Response to General Alarm</label>
+        <description><![CDATA[
+<br /> <h1>Overview</h1><p><br /></p>
+        ]]></description>
         <default>2</default>
         <options>
           <option value="0">No response to alarm frames</option>
           <option value="1">Open Blind</option>
           <option value="2">Close Blind</option>
         </options>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_31_1" type="integer" groupName="configuration">
         <label>31: Response to Water Flood Alarm</label>
+        <description><![CDATA[
+<br /> <h1>Overview</h1><p><br /></p>
+        ]]></description>
         <default>0</default>
         <options>
           <option value="0">No response to alarm frames</option>
           <option value="1">Open Blind</option>
           <option value="2">Close Blind</option>
         </options>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_32_1" type="integer" groupName="configuration">
         <label>32: Response to Smoke, CO, CO2 Alarm</label>
+        <description><![CDATA[
+<br /> <h1>Overview</h1><p><br /></p>
+        ]]></description>
         <default>3</default>
         <options>
           <option value="0">No response to alarm frames</option>
           <option value="1">Open Blind</option>
           <option value="2">Close Blind</option>
         </options>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_33_1" type="integer" groupName="configuration">
         <label>33: Response to Temperature Alarm</label>
+        <description><![CDATA[
+<br /> <h1>Overview</h1><p><br /></p>
+        ]]></description>
         <default>1</default>
         <options>
           <option value="0">No response to alarm frames</option>
           <option value="1">Open Blind</option>
           <option value="2">Close Blind</option>
         </options>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_35_1" type="integer" groupName="configuration">
@@ -310,7 +335,6 @@ Enables/disables power and energy report used by itself<br /> <h1>Overview</h1><
           <option value="0">Disabled</option>
           <option value="1">Activated</option>
         </options>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_50_1" type="integer" groupName="configuration">
@@ -323,7 +347,6 @@ Determine whether scenes or associations are activated<br /> <h1>Overview</h1><p
           <option value="0">Associations Active</option>
           <option value="1">Scenes Active</option>
         </options>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->
@@ -338,7 +361,7 @@ Determine whether scenes or associations are activated<br /> <h1>Overview</h1><p
       <parameter name="group_2" type="text" groupName="association" multiple="true">
         <label>2: Momentary hold</label>
         <description><![CDATA[
-Only applies to momentary switches<br /> <h1>Overview</h1><p><strong>Roller Shutter or other Z-Wave devices</strong></p> <p>Holding "up" button, connected to S1 terminal will move the connected roller blind up, and after 1 second delay initiate up movement in associated Roller Shutters, or send Turn On command frame to the devices associated in II-nd association group.</p> <p>Holding "down" button, connected to S2 terminal will move the connected rolled blind down, and after 1 second delay initiate down movement in associated Roller Shutters, or send Turn Off command frame to the devices associated in II-nd association group.</p> <p><strong>Venetian Blinds</strong></p> <p>Holding "up" button, connected to S1 terminal will initiate lamellas rotation up, of the connected venetian blind as well as the other devices associated in II-nd association group.</p> <p>Holding "down" button, connected to S2 terminal will initiate lamellas rotation down, of the connected venetian blind as well as the other devices  associated in II-nd association group.</p>
+Only applies to momentary switches<br /> <h1>Overview</h1><p><b>Roller Shutter or other Z-Wave devices</b></p><p>Holding "up" button, connected to S1 terminal will move the connected roller blind up, and after 1 second delay initiate up movement in associated Roller Shutters, or send Turn On command frame to the devices associated in II-nd association group. </p><p>Holding "down" button, connected to S2 terminal will move the connected roller blind down, and after 1 second delay initiate down movement in associated Roller Shutters, or send Turn Off command frame to the devices associated in II-nd association group.</p> <p><strong>Venetian Blinds</strong></p> <p>Holding "up" button, connected to S1 terminal will initiate lamellas rotation up, of the connected venetian blind as well as the other devices associated in II-nd association group.</p> <p>Holding "down" button, connected to S2 terminal will initiate lamellas rotation down, of the connected venetian blind as well as the other devices  associated in II-nd association group.</p>
         ]]></description>
         <multipleLimit>16</multipleLimit>
       </parameter>
@@ -357,5 +380,17 @@ Only applies to momentary switches<br /> <h1>Overview</h1><p><strong>Roller Shut
     </config-description>
 
   </thing-type>
+
+  <channel-type id="fibaro_fgrm222_00_000_config_decimal_param29">
+    <item-type>Number</item-type>
+    <label>Forced Roller Shutter calibration</label>
+    <description>Roller Shutter enters the calibration mode.</description>
+    <state pattern="%s">
+      <options>
+        <option value="0">Deactivated</option>
+        <option value="1">Start calibration process</option>
+      </options>
+    </state>
+  </channel-type>
 
 </thing:thing-descriptions>

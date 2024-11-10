@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="zooz_zse42_02_000" listed="false">
+    <label>ZSE42 WATER LEAK XS SENSOR 800 Series</label>
+    <description><![CDATA[
+WATER LEAK XS SENSOR 800 Series<br /> <h1>Overview</h1><p> FEATURES</p><p> Ÿ Quick and reliable water leak </p><p>alerts sent to your Z-Wave hub</p><p> Ÿ NEW 800 series chip for faster </p><p>communication and more </p><p>battery life than ever</p><p> Ÿ Extra small to fit anywhere</p><p> Ÿ Z-Wave Long Range for ultra </p><p>reliable no-mesh communication</p><p> Ÿ The latest S2 security and </p><p>SmartStart for secure set-up</p><p> Ÿ Supports OTA firmware updates</p><p> SPECIFICATIONS</p><p> Ÿ</p><p> SE42 800LR</p><p> Model Number: Z</p><p> Ÿ Power: 1 x CR2450 battery</p><p> Ÿ Operating Temperature: 32° – </p><p>104° F</p><p> Ÿ Range: Up to 130 feet line of sight </p><p>(up to 1300 with Long Range) </p><p>Ÿ Installation and Use: Indoor or </p><p>outdoor under eve (can’t be </p><p>exposed to direct rainfall or sun, a </p><p>little splash is OK)</p><p> Ÿ Dimensions: 2.4” x 1.4” x 0.4”</p><p> FEATURES</p><p> Ÿ Quick and reliable water leak </p><p>alerts sent to your Z-Wave hub</p><p> Ÿ NEW 800 series chip for faster </p><p>communication and more </p><p>battery life than ever</p><p> Ÿ Extra small to fit anywhere</p><p> Ÿ Z-Wave Long Range for ultra </p><p>reliable no-mesh communication</p><p> Ÿ The latest S2 security and </p><p>SmartStart for secure set-up</p><p> Ÿ Supports OTA firmware updates</p><p> SPECIFICATIONS</p><p> Ÿ</p><p> SE42 800LR</p><p> Model Number: Z</p><p> Ÿ Power: 1 x CR2450 battery</p><p> Ÿ Operating Temperature: 32° – </p><p>104° F</p><p> Ÿ Range: Up to 130 feet line of sight </p><p>(up to 1300 with Long Range) </p><p>Ÿ Installation and Use: Indoor or </p><p>outdoor under eve (can’t be </p><p>exposed to direct rainfall or sun, a </p><p>little splash is OK)</p><p> Ÿ Dimensions: 2.4” x 1.4” x 0.4”</p> <br /> <h2>Inclusion Information</h2><p> Initiate inclusion (pairing) in the </p><p>app (or web interface). Not sure </p><p>how? ask@getzooz.com</p><p> If you’re using an S2 hub, it will ask </p><p>you to enter the DSK PIN or scan </p><p>the QR code printed on the inside </p><p>of the back cover of the sensor to </p><p>complete SmartStart inclusion.</p><p> Initiate inclusion (pairing) in the </p><p>app (or web interface). Not sure </p><p>how? ask@getzooz.com</p><p> If you’re using an S2 hub, it will ask </p><p>you to enter the DSK PIN or scan </p><p>the QR code printed on the inside </p><p>of the back cover of the sensor to </p><p>complete SmartStart inclusion.</p> <br /> <h2>Exclusion Information</h2><p>1. Bring the sensor within direct </p><p>range of your Z-Wave hub.</p><p> 2. Put the Z-Wave hub into </p><p>exclusion mode (not sure how to </p><p>do that? ask@getzooz.com).</p><p> 3. Click the Z-Wave button 3 times </p><p>as quickly as possible.</p><p> 4. Your hub will confirm exclusion </p><p>and the sensor will disappear </p><p>from your controller's device list.</p><p> Initiate inclusion (pairing) in the </p><p>app (or web interface). Not sure </p><p>how? ask@getzooz.com</p><p> If you’re using an S2 hub, it will ask </p><p>you to enter the DSK PIN or scan </p><p>the QR code printed on the inside </p><p>of the back cover of the sensor to </p><p>complete SmartStart inclusion.</p> <br /> <h2>Wakeup Information</h2><p>The sensor’s wake-up interval is set </p><p>to 12 hours by default to save </p><p>battery life. Use the Wake Up </p><p>Command Class to adjust the </p><p>interval. Click the Z-Wave button 4 </p><p>times quickly to wake the sensor </p><p>up manually. The LED indicator will </p><p>f</p><p> lash once to confirm the device is </p><p>awake. During wake-up, the sensor </p><p>turns the Z-Wave radio on for one </p><p>minute to receive communication </p><p>from the hub. Long wake-up </p><p>interval will not affect how o en the </p><p>sensor reports to your hub so we </p><p>recommend leaving the default </p><p>setting to conserve battery.</p><p>The sensor’s wake-up interval is set </p><p>to 12 hours by default to save </p><p>battery life. Use the Wake Up </p><p>Command Class to adjust the </p><p>interval. Click the Z-Wave button 4 </p><p>times quickly to wake the sensor </p><p>up manually. The LED indicator will </p><p>f</p><p> lash once to confirm the device is </p><p>awake. During wake-up, the sensor </p><p>turns the Z-Wave radio on for one </p><p>minute to receive communication </p><p>from the hub. Long wake-up </p><p>interval will not affect how o en the </p><p>sensor reports to your hub so we </p><p>recommend leaving the default </p><p>setting to conserve battery.</p>
+    ]]></description>
+    <category>Sensor</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="sensor_binary" typeId="sensor_binary">
+        <label>Binary Sensor</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SENSOR_BINARY</property>
+        </properties>
+      </channel>
+      <channel id="alarm_flood" typeId="alarm_flood">
+        <label>Alarm (flood)</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=FLOOD</property>
+        </properties>
+      </channel>
+      <channel id="battery-level" typeId="system.battery-level">
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_BATTERY</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Zooz</property>
+      <property name="modelId">ZSE42</property>
+      <property name="manufacturerId">027A</property>
+      <property name="manufacturerRef">7000:E002</property>
+      <property name="versionMin">2.0</property>
+      <property name="dbReference">1645</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_1_1" type="integer" groupName="configuration">
+        <label>1: LED Indicator</label>
+        <description>Turn the LED indicator on (blinking) or off when a water leak is detected.</description>
+        <default>1</default>
+        <options>
+          <option value="0">LED indicator won't blink when the sensor detects water</option>
+          <option value="1">LED indicator will blink continuously when water is detected (default)</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_2_1" type="integer" groupName="configuration">
+        <label>2: Leak Alert Clear Delay</label>
+        <description><![CDATA[
+Decide how long the sensor should wait before sending a "dry" report to your hub after water is no longer detected<br /> <h1>Overview</h1><p>Values: 0-3600 (seconds)</p><p>Default: 0 seconds (no delay)</p><p>0 - reports “dry” to the hub immediately a leak is no longer detected</p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_3_1" type="integer" groupName="configuration">
+        <label>3: Battery Reporting Threshold</label>
+        <description><![CDATA[
+Set the threshold for battery reporting<br /> <h1>Overview</h1><p>Values: 1-50%</p><p>Default: 10%</p>
+        ]]></description>
+        <default>10</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_4_1" type="integer" groupName="configuration">
+        <label>4: Low Battery Reporting Level</label>
+        <description><![CDATA[
+Decide when the sensor should report low battery to the hub.<br /> <h1>Overview</h1><p>Values: 10-50 (% battery life)</p><p>Default: 20%</p>
+        ]]></description>
+        <default>20</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_5_1" type="integer" groupName="configuration">
+        <label>5: Basic Set Commands</label>
+        <description>Decide if and when the sensor sends Basic Set commands are sent to the hub and Group 2</description>
+        <default>1</default>
+        <options>
+          <option value="0">Basic Set commands not sent at all</option>
+          <option value="1">Basic Set 255/0 for ON/OFF when water detected/not detected (default)</option>
+          <option value="2">Basic Set 0/255 for OFF/ON when water detected/not detected</option>
+        </options>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Lifeline</label>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: Group 2</label>
+        <description>Send BASIC_SET reports whenever water is detected</description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>
