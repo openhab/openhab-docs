@@ -5,6 +5,7 @@ title: Wolf Smartset - Bindings
 type: binding
 description: "This binding communicates with the www.wolf-smartset.de API and provides values readonly."
 since: 3x
+logo: images/addons/wolfsmartset.png
 install: auto
 ---
 
@@ -13,6 +14,8 @@ install: auto
 {% include base.html %}
 
 # Wolf Smartset Binding
+
+<AddonLogo />
 
 This binding communicates with the www.wolf-smartset.de API and provides values readonly.
 Wolf systems are connected with official gateways (Wolf Link Home or Wolf Link Pro) <https://www.wolf.eu/produkte/smarthome/>
