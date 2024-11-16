@@ -180,8 +180,7 @@ Additionally, the following settings are important:
 - **Embed SVG**: Only when enabled, the SVG image is embedded in the page as "real" HTML elements, allowing to interact with it (normally an SVG would only be referenced by an IMG tag).
 By default, this is switched off and therefore needs to be enabled.
 
-- **Embed SVG Flashing in Run-Mode**: It is possible within the editor to flash the elements of the SVG image that have been previously marked as interactive through the attribute 'openhab' (see below).
-This setting will flash the elements of the SVG images that have been previously marked as interactive through the attribute 'openhab' (see below) in run-mode as well when hovering over them.
+- **Embed SVG Flashing in Run-Mode**: This setting will flash the elements of the SVG images that have been previously marked as interactive through the attribute 'openhab' (see below) in run-mode as well when hovering over them.
 By default, this is switched off.
 
 ### Preparing the SVG Image
