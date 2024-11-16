@@ -25,7 +25,7 @@ The user interface tries to help you to determine the CSS resolution by showing 
 
 ### Fixed Grid Layouts
 
-To define your screen size open the ![configure-grid.png](images%2Fconfigure-grid.png) menu and click **Configure Grid Layout**.
+To define your screen size open the ![configure-grid.png](images/configure-grid.png) menu and click **Configure Grid Layout**.
 
 The layout editor shows a gray surface as the _virtual screen area_, which represents your defined screen.
 You can now place widgets on that screen by clicking the **Add Widget** button.
@@ -84,7 +84,7 @@ Defaults to false.
 
 ### Fixed Canvas Layouts
 
-To define your screen size open the canvas menu ![configure-canvas.png](images%2Fconfigure-canvas.png) and click **Configure Canvas Layout**.
+To define your screen size open the canvas menu ![configure-canvas.png](images/configure-canvas.png) and click **Configure Canvas Layout**.
 
 The layout editor shows a gray surface as the _virtual screen area_, which represents your defined screen.
 You can now place widgets on that screen by clicking the **Add Widget** button.
@@ -181,7 +181,7 @@ Additionally, the following settings are important:
 By default, this is switched off and therefore needs to be enabled.
 
 - **Embed SVG Flashing in Run-Mode**: It is possible within the editor to flash the elements of the SVG image that have been previously marked as interactive through the attribute 'openhab' (see below).
-This setting will also flash the elements in run-mode guiding the user getting by knowing which part of the image is clickable or not.
+This setting will also flash the elements in run-mode guiding the user during hovering over an element to knowing which part of the image is clickable or not.
 By default, this is switched off.
 
 ### Preparing the SVG Image
@@ -262,6 +262,7 @@ Usually you will first configure the Action and the Action Item like in a normal
 Many special options though will only be available when you click on "Show Advanced".
 
 - **State Items**: Define the item that is used to retrieve the state of the element to reflect the state.
+Note it defaults to the Action Item but can be set to a different item if required.
 Reflecting the state can be either applying a color or using the opacity of that svg element.
 The reason why you can choose several states is that in some cases you might want use expressions.
 In this case you need to select all items that you use in this expression (see below for an example).
@@ -271,7 +272,7 @@ A good example is the following bulb.
 The left image shows the bulb in the OFF state and the right image shows the bulb in the ON state.
 In this case we do apply a color based on the state but enable / disable a proxy element in that group that makes up the bulb object.
 
-  ![interactive-bulb-off.png](images%2Finteractive-bulb-off.png) ![interactive-bulb-on.png](images%2Finteractive-bulb-on.png)
+  ![interactive-bulb-off.png](images/interactive-bulb-off.png) ![interactive-bulb-on.png](images/interactive-bulb-on.png)
 
 The way this can be achieved by indication a proxy element, an element that is part of that group.
 Similarly like the main element is marked with an `openhab` attribute, the proxy element is marked with a special attribte, the `flash` attribute.
@@ -342,7 +343,7 @@ They can be added to SVG text file in the same way it is added to HTML files.
 
 Here is a simple example that works with the above astronaut to create a fading in/out animation:
 
-![interactive-style.png](images%2Finteractive-style.png)
+![interactive-style.png](images/interactive-style.png)
 
 The above setting for _Set Style Class based on ON_ will apply the class `animate` to the element with the id 'astro_animate'.
 
