@@ -180,8 +180,7 @@ Additionally, the following settings are important:
 - **Embed SVG**: Only when enabled, the SVG image is embedded in the page as "real" HTML elements, allowing to interact with it (normally an SVG would only be referenced by an IMG tag).
 By default, this is switched off and therefore needs to be enabled.
 
-- **Embed SVG Flashing in Run-Mode**: It is possible within the editor to flash the elements of the SVG image that have been previously marked as interactive through the attribute 'openhab' (see below).
-This setting will also flash the elements in run-mode guiding the user getting by knowing which part of the image is clickable or not.
+- **Embed SVG Flashing in Run-Mode**: This setting will flash the elements of the SVG images that have been previously marked as interactive through the attribute 'openhab' (see below) in run-mode as well when hovering over them.
 By default, this is switched off.
 
 ### Preparing the SVG Image
@@ -262,6 +261,7 @@ Usually you will first configure the Action and the Action Item like in a normal
 Many special options though will only be available when you click on "Show Advanced".
 
 - **State Items**: Define the item that is used to retrieve the state of the element to reflect the state.
+Note it defaults to the Action Item but can be set to a different item if required.
 Reflecting the state can be either applying a color or using the opacity of that svg element.
 The reason why you can choose several states is that in some cases you might want use expressions.
 In this case you need to select all items that you use in this expression (see below for an example).
