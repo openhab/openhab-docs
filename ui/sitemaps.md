@@ -148,6 +148,7 @@ The following element types may be used in a Sitemap definition file.
 | [Button](#element-type-button)           | Renders a button inside a Buttongrid that is used to send commands to a given Item.       |
 | [Chart](#element-type-chart)             | Adds a time-series chart object for [persisted](persistence.html) data.                   |
 | [Colorpicker](#element-type-colorpicker) | Allows the user to choose a color from a color wheel.                                     |
+| [Colortemperaturepicker](#element-type-colortemperaturepicker) | Allows the user to choose a color temperature from a white color gradient. |
 | [Default](#element-type-default)         | Renders an Item in the default UI representation specified by the type of the given Item. |
 | [Frame](#element-type-frame)             | Establishes an area containing various other Sitemap elements.                            |
 | [Group](#element-type-group)             | Concentrates all elements of a given group in a nested block.                             |
@@ -454,7 +455,9 @@ Colorpicker item=<itemname> [label="<labelname>"] [icon=<iconref>] [staticIcon=<
 
 This element is a combined control for something like a rgb or rgbw light where you can adjust brightness as well es the color hue.
 The down-button decreases brightness to zero and switches the light off. The up-button sets brightness to full but keeps the previous color (hue).
-The middle button opens an overlay to finetune your color. A color wheel let you pick the hue and a slider allows to set the brightness.
+The middle button opens an overlay to finetune your color when you click on it.
+In the overlay, a color wheel let you pick the hue and a slider allows to set the brightness.
+The content of this middle button can also show what is the current color.
 
 **Example:**
 
@@ -463,6 +466,27 @@ Colorpicker item=LR_LEDLight_Color label="LED Light Color" staticIcon=colorwheel
 ```
 
 ![Presentation of the Colorpicker element in BasicUI](images/sitemap_demo_colorpicker.png)
+
+### Element Type 'Colortemperaturepicker'
+
+```java
+Colortemperaturepicker item=<itemname> [label="<labelname>"] [icon=<iconref>] [staticIcon=<iconref>]
+```
+
+This element is a control for something like a rgb or rgbw light where you can adjust the color temperature.
+The button opens an overlay to finetune your color temperature when you click on it.
+In the overlay, a white color gradient let you pick and set the color temperature.
+The content of this button can also show what is the current color temperature.
+
+- `minValue` and `maxValue` limit the possible range of the value (both included in the range).
+
+**Example:**
+
+```java
+Colortemperaturepicker item=LR_LEDLight_ColorTemp label="LED Light Color Temperature" staticIcon=colorwheel
+```
+
+![Presentation of the Colortemperaturepicker element in BasicUI](images/sitemap_demo_colortemperaturepicker.png)
 
 ### Element Type 'Input'
 
