@@ -455,8 +455,8 @@ Colorpicker item=<itemname> [label="<labelname>"] [icon=<iconref>] [staticIcon=<
 
 This element is a combined control for something like a rgb or rgbw light where you can adjust brightness as well es the color hue.
 The down-button decreases brightness to zero and switches the light off. The up-button sets brightness to full but keeps the previous color (hue).
-The middle button opens an overlay to finetune your color when you click on it.
-In the overlay, a color wheel let you pick the hue and a slider allows to set the brightness.
+The middle button opens an overlay to fine-tune your color when you click on it.
+In the overlay, a color wheel lets you pick the hue and a slider allows to set the brightness.
 The content of this middle button can also show what is the current color.
 
 **Example:**
@@ -474,8 +474,8 @@ Colortemperaturepicker item=<itemname> [label="<labelname>"] [icon=<iconref>] [s
 ```
 
 This element is a control for something like a rgb or rgbw light where you can adjust the color temperature.
-The button opens an overlay to finetune your color temperature when you click on it.
-In the overlay, a white color gradient let you pick and set the color temperature.
+The button opens an overlay to fine-tune your color temperature when you click on it.
+In the overlay, a white color gradient lets you pick and set the color temperature.
 The content of this button can also show what is the current color temperature.
 
 - `minValue` and `maxValue` limit the possible range of the value (both included in the range).
