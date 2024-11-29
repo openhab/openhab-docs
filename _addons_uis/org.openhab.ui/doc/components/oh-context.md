@@ -30,17 +30,17 @@ Non-rendered component with functions, constants, and scoped variables for widge
 <PropGroup label="General">
 <PropBlock type="TEXT" name="functions" label="Widget Functions">
   <PropDescription>
-    Object with key:arrow-function pairs. Functions are available to expressions in all child components via the <code>fn</code> object.
+    Object with key:arrow-function pairs. Functions are available to expressions in all child components via the <code>fn</code> object.<br />Functions are evaluated on every call and re-evaluated when dependency values change.
   </PropDescription>
 </PropBlock>
 <PropBlock type="TEXT" name="constants" label="Widget Constants">
   <PropDescription>
-    Object with key:constant pairs. Constants are available to expressions in all child components via the <code>const</code> object.
+    Object with key:constant pairs. Constants are available to expressions in all child components via the <code>const</code> object.<br />Constants are evaluated once before the widget is displayed the first time and cannot be changed.
   </PropDescription>
 </PropBlock>
 <PropBlock type="TEXT" name="variables" label="Widget Variables">
   <PropDescription>
-    Object with key:variable default value pairs. Variables are available to expressions in all child components via the <code>vars</code> object and take precedence over variables with the same name from higher contexts.
+    Object with key:variable default value pairs. Variables are available to expressions in all child components via the <code>vars</code> object and take precedence over variables with the same name from higher contexts.<br />Variables are evaluated once before the widget is displayed the first time . Their values can only be changed by other component variable actions (e.g. <a class="external text-color-blue" target="_blank" href="https://www.openhab.org/docs/ui/components/oh-button.html#action-variable">oh-button</a>)
   </PropDescription>
 </PropBlock>
 </PropGroup>
