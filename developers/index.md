@@ -83,6 +83,19 @@ We have prepared some step-by-step guides for the following IDEs:
 
 Not sure what to choose?: openHAB maintainers use [Eclipse IDE](https://wiki.eclipse.org/Eclipse_Installer).
 
+## Make your own copy of the code base
+
+openHAB has [several repositories](https://github.com/openhab) on GitHub.
+The most important ones are listed in the [Contribution section of the Developer Appendix](contributing.html#the-repositories).
+
+For developing a new binding, you'll need to fork the [openhab-addons](https://github.com/openhab/openhab-addons) repository (see [GitHub Docs: Fork a repository](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/fork-a-repo)) and then clone your fork to your development machine.
+Next, create a new branch for your work on the new binding.
+
+## Read the guidelines
+
+Before starting your work, please have a look at the [Coding Guidelines](guidelines.html) and the overall [Contribution docs](contributing.html).
+It is always better to know the guidelines before starting coding than having to change your code afterwards.
+
 ## Develop a NEW binding
 
 To help start developing a new binding, a script is available to generate the basic skeleton for you.
@@ -145,3 +158,13 @@ following will tell git and spotless to use LF endings:
 ```text
 * text eol=lf
 ```
+
+Further documentation about binding development can be found in the [Bindings Developer Guide](bindings/index.html).
+
+## Contribute your changes back to openHAB
+
+When you are finished with your new binding (or in the process of development and need help), you need to create a pull request (PR) to the so-called upstream repository, in this case openhab-addons.
+Have a look at [GitHub Docs: Creating a pull request](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request) if you need help.
+
+Once you have created your PR, the maintainers will review your code and provide feedback.
+Please be patient and be prepared to make changes to your code based on the feedback you receive.

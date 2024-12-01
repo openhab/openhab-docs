@@ -152,7 +152,7 @@ module.exports = [
     children: [
       'ui/',
       'ui/sitemaps',
-      { title: 'Page Types',
+      { title: 'Pages',
         children: [
           { title: 'Layout Pages',
             collapsable: true,
