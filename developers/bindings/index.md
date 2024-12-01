@@ -572,6 +572,7 @@ If you implement the `ThingActions` interface, you can tell the framework about 
 Please note that for actions not related to Things you will instead implement an `ActionHandler` as described in the developing [Module Types](../module-types/) chapter.
 
 You start things off by implementing `ThingActions` and annotate your class with `@ThingActionsScope`.
+The scope name should be the binding name, but it can also be bindingname-xxx when you need several scopes (for different thing types).
 Since a new service is required for each thing, the component needs to be a `PROTOTYPE`:
 
 ```java
