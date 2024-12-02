@@ -5,6 +5,7 @@ title: SunSynk - Bindings
 type: binding
 description: "This binding integrates the [Sun Synk Connect web services](https://www.sunsynk.net/)."
 since: 3x
+logo: images/addons/sunsynk.svg
 install: auto
 ---
 
@@ -13,6 +14,8 @@ install: auto
 {% include base.html %}
 
 # SunSynk Binding
+
+<AddonLogo />
 
 This binding integrates the [Sun Synk Connect web services](https://www.sunsynk.net/).
 This binding is used to connect your openHAB system with Sun Synk Connect (where you log in and find Your Inverters).
