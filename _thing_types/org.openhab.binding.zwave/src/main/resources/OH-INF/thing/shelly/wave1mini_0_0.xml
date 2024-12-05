@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="shelly_wave1mini_00_000" listed="false">
+    <label>Wave 1 Mini A secure, energy-efficient Z-Wave smart switch</label>
+    <description><![CDATA[
+A secure, energy-efficient Z-Wave smart switch<br /> <h1>Overview</h1><h2>Terminology</h2><p>Device - In this document, the term “Device” is used to refer to the Shelly Qubino device that is a subject of this guide.</p><p>Gateway - A Z-Wave® gateway, also referred to as a Z-Wave® controller, Z-Wave® main controller, Z-Wave® primary controller, or Z-Wave® hub, etc., is a device that serves as a central hub for a Z-Wave® smart home network. The term “gateway” is used in this document.</p><p>S button - The Z-Wave® Service button, located on Z-Wave® devices and is used for various functions such as adding (inclusion), removing (exclusion), and resetting the device to its factory default settings. The term "S button" is used in this document.</p><h2>Short description</h2><p>If the SW (SW1) is configured as a switch (default), each toggle of the switch will change the output O (O1) state to the opposite state - on, off, on, etc. If the SW (SW1) is configured as a push-button in the Device settings, each press of the push-button will change the output O (O1) state to the opposite state - on, off, on, etc.</p><h3>Switch connected to input terminal SW (SW1)</h3><p>If the SW (SW1) is configured as a switch (default), each toggle of the switch will change the output O (O1) state to the opposite state - on, off, on, etc.</p><p>Change switch position once: Change the state of the output O (O1) state to the opposite state and send the command to the associated devices in associated groups 2 and 3 (check chapter Z-Wave Association).</p><h3>Switch-memory connected to input terminal SW (SW1)</h3><p>If the SW (SW1) is configured as a switch-memory, than:</p><p>Switching to Close switch-memory contact: Change the state of the output state O (O1) to the On state and send command to the associated devices in associated groups 2 and 3 (check chapter Z-Wave Association)</p><p>Switching to Open switch-memory contact: Change the state of the output state O (O1) to the Off state and send command to the associated devices in associated groups 2 and 3 (check chapter Z-Wave Association)</p><h3>Push-button connected to input terminal SW (SW1)</h3><p>If the SW (SW1) is configured as a push-button in the Device settings, each press of the push-button changes the output state O (O1) to opposite - ON, OFF, ON, etc.</p><p>1x click: Change the state of the output state O (O1) to the opposite one and send command to the associated devices in associated groups 2 and 3 (check chapter Z-Wave Association)</p><p>2x click: If the delay between first in second click is less then 500ms, this is interpreted as double clik. Send command to the associated devices (dimmers, shutters,….) in associated groups 2 and 3 (check chapter Z-Wave Association)</p><p>Hold: Send command to the associated devices in associated group 3 (check chapter Z-Wave Association)</p><p>Release: Send command to the associated devices in associated group 3 (check chapter Z-Wave Association)</p><h2>Main applications</h2><p>Residential</p><p>MDU (Multi Dwelling Units - apartments, condominiums, hotels, etc.)</p><p>Light commercial (small office buildings, small retail/restaurant/gas station, etc.)</p><p>Government/municipal</p><p>University/college</p><h2>Integrations</h2><p>Shelly Qubino Wave devices are developed on the world's leading technology for smart homes – Z-Wave.</p><p>This means Shelly Qubino Wave works with all certified gateways supporting Z-Wave communication protocol.</p><p>To make sure the functions of Shelly Qubino Wave products are supported on your gateway, we are regularly executing compatibility tests of our devices with different Z-Wave gateways.</p><h2>Device electrical interfaces</h2><h3>Inputs</h3><p>1 switch/button input on screw terminal</p><p>1 potential-free contact relay input on screw terminal</p><p>2 power supply inputs on screw terminals: N, L</p><h3>Outputs</h3><p>1 potential-free contacts relay output on screw terminal</p><h2>Addon interface</h2><p>N/A</p><h2>Connectivity</h2><p>Z-Wave - Unsecure, S0 Security, S2 Unauthenticated Security, S2 Authenticated Security</p><h2>Safety features</h2><h3>Overheat protection</h3><ul><li>switch off its own relay</li><li>sends the Notification Report to the Gateway (Overheat detected)</li><li>the led lights react as specified above (check blinking mode for Overheat detected)</li></ul><p>Any of next activities reset this alarm: power cycle, short press on S button, press any switch-push button connected to any SW (SW, SW1, SW2, …) terminal.</p><p>NOTE: The Overheat protection is always active and cannot be disabled.</p><p>Additional description above under chapter Notification for Overheat detected.</p><h2>Supported load types</h2><ul><li>Resistive (incandescent bulbs, heating devices)</li><li>Capacitive (capacitor banks, electronic equipment, motor start capacitors)</li><li>Inductive with RC Snubber (LED light drivers, transformers, fans, refrigerators, air-conditioners)</li></ul><h2>User interface</h2><h3>S button and operating modes</h3><ol><li>Normal mode</li><li>Setting in progress mode</li><li>Setting mode (with S button)</li></ol><ul><li><ul><li>Settings mode is required to start desired procedure for example: adding (inclusion), removing (exclusion), factory reset etc. It has a limited time of operation. After the procedure in Setting mode is concluded, the Device goes automatically into Normal mode.</li><li>Entering to Setting mode:<ul><li>Quickly press and hold the S button on the Device until the LED turns solid blue</li><li>An additional quick press on the S button means menu change in infinite loop</li><li>Menu LED status has a timeout of 10s before entering again into Normal state</li></ul></li></ul></li></ul><h3>S button’s functions</h3><ul><li>Manually adding the Device to a Z-Wave network</li><li>Manually removing the Device from a Z-Wave network</li><li>Factory Reset the Device</li></ul><h2>LED Signalisation</h2><h3><b>Normal mode</b></h3><p><b>Removed/Excluded</b></p><p>The LED will be blinking blue in Mode 1 for 10 min after every power cycle and 10 min after S button pressed.</p><p><b>Added/Included</b></p><p>The LED will be blinking green in Mode 1 for 10 min after every power cycle and 10 min after S button pressed.</p><h3><b>Settings in progress</b></h3><p><b>Factory reset and reboot</b></p><p>During factory reset, the LED will turn solid green for approx. 1sec, then the blue and red LED will be blinking 0,1s On, 0,1s Off for about 2sec.</p><p><b>Adding / Removing</b></p><p>During adding or removing, the LED will be blinking blue in Mode 2.</p><p><b>Firmware updating OTA</b></p><p>During the OTA update, the LED will be blinking blue and red in Mode 2.</p><p>Checking power supply 230 V AC frequency or 24 V DC voltage</p><p>During checking the power supply, the LED will be blinking blue and red in Mode 5.</p><h3><b>Settings mode with S button</b></h3><p><b>Adding / Removing menu selected</b></p><p>When the menu is selected the LED will be on blue, for maximum of 10 seconds.</p><p><b>Adding / Removing menu - while pressing S- button - Add/Remove process selected</b></p><p>When the menu is executing the LED will be blinking blue in Mode 3.</p><p><b>Factory reset menu selected</b></p><p>When the menu is selected the LED will be on red, for maximum of 10 seconds.</p><p><b>Factory reset - while pressing S - button - Factory reset process selected</b></p><p>When the menu is executing the LED will be blinking red in Mode 3.</p><h3><b>Alarm Mode</b></h3><p><b>Overheat detected</b></p><p>The LED will be blinking red in Mode 4 - 0,2s On 0,2s Off 0,2s On 0,2s Off 2s Off and repeating this sequence</p><h3>LED blinking modes</h3><p>Click to see the LED blinking modes</p><p>| LED blinking modes | |</p><p>| Mode 1 | 0,5s On/2s Off |</p><p>| Mode 2 | 0,5s On/0,5s Off |</p><p>| Mode 3 | 0,1s On/0,1s Off |</p><p>| Mode 4 | (1x to 6x - 0,2s On/0,2s Off) + 2s Off |</p><p>| Mode 5 | 0,2s On blue/0,2s On red |</p><h2>Specifications</h2><p>| Power supply | 110 - 240 V AC, 50/60 Hz |</p><p>| Power consumption | &lt; 0,3 W |</p><p>| Max. switching voltage AC | 240 V |</p><p>| Max. switching current AC | 8 A |</p><p>| Max switching power AC | 2000 W |</p><p>| Max. switching voltage DC | 30 V |</p><p>| Max. switching current DC | 5 A |</p><p>| Overheating protection | Yes |</p><p>| Distance| Up to 40 m indoors (131 ft.) (depends on local condition) |</p><p>| Z-Wave® repeater: | Yes |</p><p>| CPU | Z-Wave® S800 |</p><p>| Z-Wave® frequency band: | 868,4 MHz |</p><p>| Maximum radio frequency power transmitted in frequency band(s) | &lt; 25 mW |</p><p>| Size (H x W x D) | 29x35x16 ±0.5 mm / 1.11x1.35x0.63 ±0.02 in |</p><p>| Weight | 19 ±1 g / 0.65 ±0.04 oz |</p><p>| Mounting | Wall box |</p><p>| Screw terminals max. torque | 0.4 Nm / 3.54 lbin |</p><p>| Conductor cross section | 0.5 to 1.5 mm² / 20 to 16 AWG |</p><p>| Conductor stripped length | 5 to 6 mm / 0.20 to 0.24 in |</p><p>| Shell material | Plastic |</p><p>| Color | Blue |</p><p>| Ambient temperature | -20°C to 40°C / -5°F to 105°F |</p><p>| Humidity | 30% to 70% RH |</p><p>| Max. altitude | 2000 m / 6562 ft. |</p><h2>Factory reset</h2><h3>Factory reset general</h3><p>After Factory reset, all custom parameters and stored values (kWh, associations, routings, etc.) will return to their default state. HOME ID and NODE ID assigned to the Device will be deleted. Use this reset procedure only when the gateway is missing or otherwise inoperable.</p><h3>Factory reset with the S button</h3><p>Note! Factory reset with the S button is possible anytime.</p><ol><li>To enter the Setting mode, quickly press and hold the S button on the Device until the LED turns solid blue.</li><li>Press the S button multiple times until the LED turns solid red.</li><li>Press and hold (&gt; 2s) S button on the Device until the red LED starts blinking in Mode 3. Releasing the S button will start the factory reset.</li><li>During factory reset, the LED will turn solid green for about 1s, then the blue and red LED will start blinking in Mode 3 for approx. 2s.</li><li>The blue LED will be blinking in Mode 1 if the Factory reset is successful.</li></ol><h3>Factory reset with a switch/push-button</h3><p>Note! Factory reset with a switch/push-button is only possible within the first minute after the Device is connected to a power supply.</p><ol><li>Connect the Device to a power supply.</li><li>Toggle the switch/push-button connected to any of the SW terminals (SW, SW1, SW2,…) 5 times within 3 seconds. The Device must receive on/off signal 5 times, which means pressing the push-button 5 times, or toggling the switch on and off 5 times.</li><li>During factory reset, the LED will turn solid green for about 1s, then the blue and red LED will start blinking in Mode 3 for approx. 2s.</li><li>The blue LED will be blinking in Mode 1 if the Factory reset is successful.</li></ol><h3>Factory reset remotely with parameter with the gateway</h3><p>Factory reset can be done remotely by settings in Parameter No. 120</p><h2>Z-Wave® Security and Device Specific Key (DSK)</h2><p>Click to see about the Security and the DSK</p><p>The Device supports the latest Security 2 (S2) feature. S2 is handled by the Strong AES 128 Encryption protocol, which means that the S2 makes Z-Wave® the most secure IoT (Internet of Things) security platform out there. To fully utilize the product and its Security 2 feature, a Security 2-enabled Z-Wave® gateway must be used.</p><p>Authenticated Control</p><p>· Out-Of-Band DSK for inclusion</p><p>· May be used by most implementations</p><p>The Device also supports Security 2 Authenticated, Unauthenticated, and Unsecure inclusion.</p><p>Note! When adding the Device to a Z-Wave® network with a gateway supporting Security 2 (S2), the PIN Code of the Z-Wave® Device Specific Key (DSK) is required. The unique DSK code is printed on the DSK label on the side of the Device and a copy is inserted in the packaging, which must not be lost. Do not remove the DSK label from the product. As a backup measure, use the label in the packaging.</p><p>The first five digits of the key are highlighted or underlined to help the user identify the PIN Code part of the DSK text. The DSK is additionally represented with a QR Code as shown on the image.</p><h3>DSK label and QR code (example)</h3><p>A joining node requesting to join the S2 Access Control Class or the S2 Authenticated Class will obfuscate its Public Key by setting the bytes 1..2 to zeros (0x00) before transferring its key via RF.</p><p>The DSK may be used for out-of-band (OOB) authentication.</p><p>The including gateway may use a QR code scanning device to read the entire DSK of the joining device and match it with the obfuscated public key received via RF from the joining device.</p> <br /> <h2>Inclusion Information</h2><h2>Adding the Device to a Z-Wave® network (inclusion)</h2><p>Click to see how to add, remove and reset the Device</p><p>Note! All Device outputs (O, O1, O2, etc. - depending on the Device type) will turn the load 1s on/1s off /1s on/1s off if the Device is successfully added to/removed from a Z-Wave® network.</p><p>Note! In case of Security 2 (S2) adding (inclusion), a dialog will appear asking you to enter the corresponding PIN Code (5 underlined digits) that are written on the Z-Wave® DSK label on the side of the Device and on the Z-Wave® DSK label inserted in the packaging.</p><p>IMPORTANT: The PIN Code must not be lost.</p><h3>SmartStart adding (inclusion)</h3><p>SmartStart enabled products can be added into a Z-Wave® network by scanning the Z-Wave® QR Code present on the Device with a gateway providing SmartStart inclusion. No further action is required, and the SmartStart device will be added automatically within 10 minutes of being switched on in the network vicinity.</p><p>With the gateway application scan the QR code on the Device label and add the Security 2 (S2) Device Specific Key (DSK) to the provisioning list in the gateway.</p><ol><li>Connect the Device to a power supply.</li><li>Check if the blue LED is blinking in Mode 1. If so, the Device is not added to a Z-Wave® network.</li><li>Adding will be initiated automatically within a few seconds after connecting the Device to a power supply, and the Device will be added to a Z-Wave® network automatically.</li><li>The blue LED will be blinking in Mode 2 during the adding process.</li><li>The green LED will be blinking in Mode 1 if the Device is successfully added to a Z-Wave® network.</li></ol><h3>Adding (inclusion) with the S button</h3><ol><li>Connect the Device to a power supply.</li><li>Check if the blue LED is blinking in Mode 1. If so, the Device is not added to a Z-Wave® network.</li><li>Enable add/remove mode on the gateway.</li><li>To enter the Setting mode, quickly press and hold the S button on the Device until the LED turns solid blue.</li><li>Quickly release and then press and hold (&gt; 2s) the S button on the Device until the blue LED starts blinking in Mode 3. Releasing the S button will start the Learn mode.</li><li>The blue LED will be blinking in Mode 2 during the adding process.</li><li>The green LED will be blinking in Mode 1 if the Device is successfully added to a Z-Wave® network.</li></ol><p>Note! In Setting mode, the Device has a timeout of 10s before entering again into Normal mode.</p><h3>Adding (inclusion) with a switch/push-button</h3><ol><li>Connect the Device to a power supply.</li><li>Check if the blue LED is blinking in Mode 1. If so, the Device is not added to a Z-Wave® network.</li><li>Enable add/remove mode on the gateway.</li><li>Toggle the switch/push-button connected to any of the SW terminals (SW, SW1, SW2, etc.) 3 times within 3 seconds (this procedure puts the Device in Learn mode*). The Device must receive on/off signal 3 times, which means pressing the momentary switch 3 times, or toggling the switch on and off 3 times.</li><li>The blue LED will be blinking in Mode 2 during the adding process.</li><li>The green LED will be blinking in Mode 1 if the Device is successfully added to a Z-Wave® network.</li></ol><p>*Learn mode - a state that allows the Device to receive network information from the gateway.</p> <br /> <h2>Exclusion Information</h2><h2>Removing the Device from a Z-Wave® network (exclusion)</h2><p>Note! The Device will be removed from your Z-Wave® network, but any custom configuration parameters will not be erased.</p><p>Note! All Device outputs (O, O1, O2, etc. - depending on the Device type) will turn the load 1s on/1s off /1s on/1s off if the Device is successfully added to/removed from a Z-Wave® network.</p><h3>Removing (exclusion) with the S button</h3><ol><li>Connect the Device to a power supply.</li><li>Check if the green LED is blinking in Mode 1. If so, the Device is added to a Z-Wave® network.</li><li>Enable add/remove mode on the gateway.</li><li>To enter the Setting mode, quickly press and hold the S button on the Device until the LED turns solid blue.</li><li>Quickly release and then press and hold (&gt; 2s) the S button on the Device until the blue LED starts blinking in Mode 3. Releasing the S button will start the LEARN MODE.</li><li>The blue LED will be blinking in Mode 2 during the removing process.</li><li>The blue LED will be blinking in Mode 1 if the Device is successfully removed from a Z-Wave® network.</li></ol>Note! In Setting mode, the Device has a timeout of 10s before entering again into Normal mode.<br /><h3>Removing (exclusion) with a switch/push-button</h3><ol><li>Connect the Device to a power supply.</li><li>Check if the green LED is blinking in Mode 1. If so, the Device is added to a Z-Wave® network.</li><li>Enable add/remove mode on the gateway.</li><li>Toggle the switch/push-button connected to any of the SW terminals (SW, SW1, SW2,…) 3 times within 3 seconds (this procedure puts the Device in LEARN MODE). The Device must receive on/off signal 3 times, which means pressing the momentary switch 3 times, or toggling the switch on and off 3 times.</li><li>The blue LED will be blinking in Mode 2 during the removing process.</li><li>The blue LED will be blinking in Mode 1 if the Device is successfully removed from a Z-Wave® network.</li></ol> <br /> <h2>Wakeup Information</h2><p><br /></p>
+    ]]></description>
+    <category>WallSwitch</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_binary" typeId="switch_binary">
+        <label>Switch</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY</property>
+        </properties>
+      </channel>
+      <channel id="alarm_heat" typeId="alarm_heat">
+        <label>Alarm (heat)</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=HEAT</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Shelly</property>
+      <property name="modelId">Wave 1 Mini</property>
+      <property name="manufacturerId">0460</property>
+      <property name="manufacturerRef">0002:008E</property>
+      <property name="dbReference">1648</property>
+      <property name="commandClass:COMMAND_CLASS_MULTI_CHANNEL">ccRemove</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_1_1" type="integer" groupName="configuration">
+        <label>1: SW (SW1) Switch type</label>
+        <description><![CDATA[
+This parameter defines how the Device should treat the switch (which type) connected to the SW (SW1) terminal.<br /> <h1>Overview</h1><p>This parameter defines how the Device should treat the switch (which type) connected to the SW (SW1) terminal.</p><p>Value size: 1 Byte</p><p>Default value: 2</p><p>Values &amp; descriptions:</p><p>0 - momentary switch,</p><p>1 - toggle switch (contact closed - ON / contact opened - OFF),</p><p>2 - toggle switch (device changes status when switch changes status)</p>
+        ]]></description>
+        <default>2</default>
+        <options>
+          <option value="0">momentary switch</option>
+          <option value="1">toggle switch (contact closed - ON / contact opened - OFF)</option>
+          <option value="2">toggle switch (device changes status when switch changes status)</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_17_1" type="integer" groupName="configuration">
+        <label>17: Restore state of O (O1) after power failure</label>
+        <description><![CDATA[
+This parameter determines if the on/off status is saved and restored for the load connected to O (O1) after a power failure.<br /> <h1>Overview</h1><p>This parameter determines if the on/off status is saved and restored for the load connected to O (O1) after a power failure.</p><p>Values size: 1 Byte</p><p>Default value: 0</p><p>Values &amp; descriptions:</p><p>0 - Device saves last on/off status and restores it after a power failure</p><p>1 - Device does not save on/off status and does not restore it after a power failure, it remains off</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Device saves last on/off status and restores it after a power failure</option>
+          <option value="1">Device does not save on/off status and does not restore it after a pow</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_19_2" type="integer" groupName="configuration">
+        <label>19: O (O1) Auto OFF with timer</label>
+        <description><![CDATA[
+If the load O (O1) is ON, you can schedule it to turn OFF automatically after the period of time defined in this parameter. The timer resets to zero each time the Device receives an ON command, either remotely (from the gateway or associated device) or lo<br /> <h1>Overview</h1><p>If the load O (O1) is ON, you can schedule it to turn OFF automatically after the period of time defined in this parameter. The timer resets to zero each time the Device receives an ON command, either remotely (from the gateway or associated device) or locally from the switch.</p><p>Values size: 2 Byte</p><p>Default value: 0</p><p>Values &amp; their descriptions:</p><p>0 - Auto OFF Disabled</p><p>1 - 32535 = 1 - 32535 seconds (or milliseconds – see Parameter no. 25. Auto OFF timer enabled for a given amount of seconds (or milliseconds) resolution 100ms</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Auto OFF Disabled</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_20_2" type="integer" groupName="configuration">
+        <label>20: O (O1) Auto ON with timer</label>
+        <description><![CDATA[
+If the load O (O1) is OFF, you can schedule it to turn ON automatically after the period of time defined in this parameter. The timer resets to zero each time the Device receives an OFF command, either remotely (from the gateway or associated device) or l<br /> <h1>Overview</h1><p>If the load O (O1) is OFF, you can schedule it to turn ON automatically after the period of time defined in this parameter. The timer resets to zero each time the Device receives an OFF command, either remotely (from the gateway or associated device) or locally from the switch.</p><p>Values size: 2 Byte</p><p>Default value: 0</p><p>Values &amp; their descriptions:</p><p>0 - Auto ON Disabled</p><p>1 - 32535 = 1 - 32535 seconds (or milliseconds – see Parameter no. 25. Auto ON timer enabled for a given amount of seconds (or milliseconds) resolution 100ms</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Auto ON Disabled</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_23_1" type="integer" groupName="configuration">
+        <label>23: O (O1) contact type - NO/NC</label>
+        <description><![CDATA[
+The set value determines the relay contact type for output O (O1). The relay contact type can be normally open (NO) or normally closed (NC).<br /> <h1>Overview</h1><p>The set value determines the relay contact type for output O (O1). The relay contact type can be normally open (NO) or normally closed (NC).</p><p>Values size: 1 Byte</p><p>Default value: 0</p><p>Values &amp; descriptions:</p><p>0 - NO</p><p>1 - NC</p><p>Relay logic:</p><p>| par-NO/NC | command (switch, zwave,..) | Device output state |</p><p>| NO (0) | OFF | OFF (0 V) |</p><p>| NO (0) | ON | ON (230 V) |</p><p>| NC (1) | OFF | ON (230 V) |</p><p>| NC (1) | ON | OFF (0 V) |</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">NO</option>
+          <option value="1">NC</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_25_1" type="integer" groupName="configuration">
+        <label>25: Set timer units to s or ms for O (O1)</label>
+        <description><![CDATA[
+Set the timer units to seconds or milliseconds. Choose if you want to set the timer in seconds or milliseconds in Parameters No. 19, 20.<br /> <h1>Overview</h1><p>Set the timer units to seconds or milliseconds. Choose if you want to set the timer in seconds or milliseconds in Parameters No. 19, 20.</p><p>Values size: 1 Byte</p><p>Default value: 0</p><p>Values &amp; descriptions:</p><p>0 – timer set in seconds</p><p>1 – timer set in milliseconds</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">timer set in seconds</option>
+          <option value="1">timer set in milliseconds</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_91_4" type="integer" groupName="configuration">
+        <label>91: Water Alarm</label>
+        <description><![CDATA[
+This parameter determines which alarm frames the Device should respond to and how. The parameters consist of 4 bytes, the three most significant bytes are set according to the official Z-Wave protocol specification.<br /> <h1>Overview</h1><p>This parameter determines which alarm frames the Device should respond to and how. The parameters consist of 4 bytes, the three most significant bytes are set according to the official Z-Wave protocol specification.</p><p>Values size: 4 Byte</p><p>Default value: 0</p><p>Values &amp; descriptions:</p><p>0 no action</p><p>1 open relay</p><p>2 close relay</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">no action</option>
+          <option value="1">open relay</option>
+          <option value="2">close relay</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_92_4" type="integer" groupName="configuration">
+        <label>92: Smoke Alarm</label>
+        <description><![CDATA[
+This parameter determines which alarm frames the Device should respond to and how. The parameters consist of 4 bytes, the three most significant bytes are set according to the official Z-Wave protocol specification.<br /> <h1>Overview</h1><p>This parameter determines which alarm frames the Device should respond to and how. The parameters consist of 4 bytes, the three most significant bytes are set according to the official Z-Wave protocol specification.</p><p>Values size: 4 Byte</p><p>Default value: 0</p><p>Values &amp; descriptions:</p><p>0 no action</p><p>1 open relay</p><p>2 close relay</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">no action</option>
+          <option value="1">open relay</option>
+          <option value="2">close relay</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_93_4" type="integer" groupName="configuration">
+        <label>93: CO Alarm</label>
+        <description><![CDATA[
+This parameter determines to which alarm frames and how the device should react. The parameters consist of 4 bytes, three most significant bytes are set according to the official Z-Wave protocol specification.<br /> <h1>Overview</h1><p>This parameter determines to which alarm frames and how the device should react. The parameters consist of 4 bytes, three most significant bytes are set according to the official Z-Wave protocol specification.</p><p>Values size: 4 Byte</p><p>Default value: 0</p><p>Values &amp; descriptions:</p><p>0 no action</p><p>1 open relay</p><p>2 close relay</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">no action</option>
+          <option value="1">open relay</option>
+          <option value="2">close relay</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_94_4" type="integer" groupName="configuration">
+        <label>94: Heat Alarm</label>
+        <description><![CDATA[
+This parameter determines which alarm frames the Device should respond to and how. The parameters consist of 4 bytes, the three most significant bytes are set according to the official Z-Wave protocol specification.<br /> <h1>Overview</h1><p>This parameter determines which alarm frames the Device should respond to and how. The parameters consist of 4 bytes, the three most significant bytes are set according to the official Z-Wave protocol specification.</p><p>Values size: 4 Byte</p><p>Default value: 0</p><p>Values &amp; descriptions:</p><p>0 no action</p><p>1 open relay</p><p>2 close relay</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">no action</option>
+          <option value="1">open relay</option>
+          <option value="2">close relay</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_120_1" type="integer" groupName="configuration">
+        <label>120: Factory Reset</label>
+        <description><![CDATA[
+Reset to factory default settings and removed from the Z-Wave network.<br /> <h1>Overview</h1><p>Reset to factory default settings and removed from the Z-Wave network.</p><p>The parameter is Advanced and may be hidden under the Advanced tag.</p><p>Values size: 1 Byte</p><p>Default value: 0</p><p>Values &amp; descriptions:</p><p>0 - Don’t do Factory reset</p><p>1 - Do the Factory reset</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Don’t do Factory reset</option>
+          <option value="1">Do the Factory reset</option>
+        </options>
+        <advanced>true</advanced>
+      </parameter>
+
+      <parameter name="config_201_4" type="integer" groupName="configuration" readOnly="true">
+        <label>201: Serial Number 1</label>
+        <description><![CDATA[
+This parameter contains a part of device’s serial number.<br /> <h1>Overview</h1><p>This parameter contains a part of device’s serial number.</p><p>The parameter is Read-Only and cannot be changed.</p><p>The parameter is Advanced and may be hidden under the Advanced tag.</p><p>Values size: 4 Byte</p><p>Default value: Device specific</p><p>Values &amp; descriptions:</p><p>0x00000000 - 0x7FFFFFFF</p>
+        ]]></description>
+        <default>0</default>
+        <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_202_4" type="integer" groupName="configuration" readOnly="true">
+        <label>202: Serial Number 2</label>
+        <description><![CDATA[
+This parameter contains a part of device’s serial number.<br /> <h1>Overview</h1><p>This parameter contains a part of device’s serial number.</p><p>The parameter is Read-Only and cannot be changed.</p><p>The parameter is Advanced and may be hidden under the Advanced tag.</p><p>Values size: 4 Byte</p><p>Default value: Device specific</p><p>Values &amp; descriptions:</p><p>0x00000000 - 0x7FFFFFFF</p>
+        ]]></description>
+        <default>0</default>
+        <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_203_4" type="integer" groupName="configuration" readOnly="true">
+        <label>203: Serial Number 3</label>
+        <description><![CDATA[
+This parameter contains a part of device’s serial number.<br /> <h1>Overview</h1><p>This parameter contains a part of device’s serial number.</p><p>The parameter is Read-Only and cannot be changed.</p><p>The parameter is Advanced and may be hidden under the Advanced tag.</p><p>Values size: 4 Byte</p><p>Default value: Device specific</p><p>Values &amp; descriptions:</p><p>0x00000000 - 0x7FFFFFFF</p>
+        ]]></description>
+        <default>0</default>
+        <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Lifeline</label>
+        <description><![CDATA[
+"Lifeline group" sends to the controlling device it's command class notifications and or command class reports when said command classes are triggered. Max. 9 nodes are allowed:<br /> <h1>Overview</h1><p>Association group 1 – "Lifeline group" sends to the controlling device it's command class notifications and or command class reports when said command classes are triggered. Max. 9 nodes are allowed:</p><p>Root device</p><p>Root Device - Association group 1 – Lifeline</p><p>INDICATOR_REPORT : LED status</p><p>DEVICE_RESET_LOCALLY_NOTIFICATION : triggered upon request</p><p>SWITCH_BINARY_REPORT : status change report for output O (O1)</p><p>NOTIFICATION_REPORT : triggered on Overheat</p>
+        ]]></description>
+        <multipleLimit>9</multipleLimit>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: Association Group 2</label>
+        <description><![CDATA[
+It is assigned to switch connected to the SW (SW1) terminal (uses Basic command class).<br /> <h1>Overview</h1><p>Association Group 2</p><p>Allowed nodes: 9</p><p>It is assigned to switch connected to the SW (SW1) terminal (uses Basic command class).</p><p>Triggered by SW (SW1). The device sends according to the state of SW (SW1) (switch or push-button) the command BASIC_SET ON or BASIC_SET OFF to the associated device. This command is reflected to the output of associated device. Supports the following command classes:</p><p>BASIC_SET : set On / Off state at the associated device</p>
+        ]]></description>
+        <multipleLimit>9</multipleLimit>
+      </parameter>
+
+      <parameter name="group_3" type="text" groupName="association" multiple="true">
+        <label>3: Association Group 3</label>
+        <description><![CDATA[
+It is assigned to switch connected to the SW (SW1) terminal (uses Switch Multilevel command class). Triggered by SW (SW1).<br /> <h1>Overview</h1><p>Association Group 3</p><p>Allowed nodes: 9</p><p>It is assigned to switch connected to the SW (SW1) terminal (uses Switch Multilevel command class). Triggered by SW (SW1).</p><p>It is recommended to use push buttons for this association. Supports the following command classes:</p><p>SWITCH_MULTILEVEL_START_LEVEL_CHANGE : initiate a transition to a new level (increase or decrease light intensity in case of dimmer, or move shutter up or down, …)</p><p>SWITCH_MULTILEVEL_STOP_LEVEL_CHANGE : stop an ongoing transition (stop increase or decrease light intensity in case of dimmer, or stop moving shutter up or down, …)</p>
+        ]]></description>
+        <multipleLimit>9</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

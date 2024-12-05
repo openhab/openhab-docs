@@ -14,8 +14,8 @@ HVAC- Radiator Controller<br /> <h1>Overview</h1><p>Comet Z-Wave is an energy-sa
 
     <!-- CHANNEL DEFINITIONS -->
     <channels>
-      <channel id="basic_thermostat_mode" typeId="thermostat_mode">
-        <label>Operations Mode</label>
+      <channel id="basic_switch_binary" typeId="switch_binary">
+        <label>Possible Override of Thermostat Mode (Heat = ON or ECO = OFF)</label>
         <properties>
           <property name="binding:*:OnOffType">COMMAND_CLASS_BASIC</property>
         </properties>
@@ -51,8 +51,8 @@ HVAC- Radiator Controller<br /> <h1>Overview</h1><p>Comet Z-Wave is an energy-sa
           <property name="binding:*:QuantityType">COMMAND_CLASS_THERMOSTAT_SETPOINT;type=HEATING_ECON</property>
         </properties>
       </channel>
-      <channel id="alarm_power" typeId="alarm_power">
-        <label>Alarm (power)</label>
+      <channel id="alarm_battery" typeId="alarm_battery">
+        <label>Alarm (battery)</label>
         <properties>
           <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=POWER_MANAGEMENT</property>
         </properties>
@@ -189,6 +189,7 @@ Batteriestatus; 0: Send only event-controlled as system warning; 1: Batteriestat
         <option value="1">Heat</option>
         <option value="11">Economy Heat</option>
         <option value="15">Full Power</option>
+        <option value="31">Manual (Use Dimmer)</option>
       </options>
     </state>
   </channel-type>

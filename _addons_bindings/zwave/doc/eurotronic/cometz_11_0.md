@@ -55,48 +55,22 @@ The following table summarises the channels available for the Comet Z -:
 
 | Channel Name | Channel ID | Channel Type | Category | Item Type |
 |--------------|------------|--------------|----------|-----------|
-| Operations Mode | thermostat_mode | thermostat_mode | Temperature | Number | 
+| Possible Override of Thermostat Mode (Heat = ON or ECO = OFF) | switch_binary | switch_binary | Switch | Switch | 
 | Dimmer | switch_dimmer | switch_dimmer | DimmableLight | Dimmer | 
 | Sensor (temperature) | sensor_temperature | sensor_temperature | Temperature | Number:Temperature | 
 | Thermostat mode | thermostat_mode | thermostat_mode | Temperature | Number | 
 | Setpoint heating | thermostat_setpoint | thermostat_setpoint | Heating | Number:Temperature | 
 | Setpoint Eco | thermostat_setpoint | thermostat_setpoint | Heating | Number:Temperature | 
-| Alarm (power) | alarm_power | alarm_power | Energy | Switch | 
+| Alarm (battery) | alarm_battery | alarm_battery | LowBattery | Switch | 
 | Alarm (system) | alarm_system | alarm_system |  | Switch | 
 | Battery Level | battery-level | system.battery_level | Battery | Number |
 
-### Operations Mode
-Sets operations mode via basic command:
+### Possible Override of Thermostat Mode (Heat = ON or ECO = OFF)
+From the manual the device accepts 0x00 (OFF) for Economy Heat mode setting as 0xFF (ON) as Heat mode setting.
 
-0x00 Energy Save Heating Control according to set setback temperature
+Switch the power on and off.
 
-0x0F OFF Radiator off. Hold 7.5°C
-
-0xFE Manufacturer Specific Switching to the actuating value mode
-
-0xFF Heating Rules according the comfort temperature setup
-
-Sets the thermostat.
-
-The ```thermostat_mode``` channel is of type ```thermostat_mode``` and supports the ```Number``` item and is in the ```Temperature``` category.
-The following state translation is provided for this channel to the ```Number``` item type -:
-
-| Value | Label     |
-|-------|-----------|
-| 0 | Off |
-| 1 | Heat |
-| 2 | Cool |
-| 3 | Auto |
-| 4 | Aux Heat |
-| 5 | Resume |
-| 6 | Fan Only |
-| 7 | Furnace |
-| 8 | Dry Air |
-| 9 | Moist Air |
-| 10 | Auto Changeover |
-| 11 | Heat Economy |
-| 12 | Cool Economy |
-| 13 | Away |
+The ```switch_binary``` channel is of type ```switch_binary``` and supports the ```Switch``` item and is in the ```Switch``` category.
 
 ### Dimmer
 The brightness channel allows to control the brightness of a light.
@@ -110,8 +84,6 @@ Indicates the current temperature.
 The ```sensor_temperature``` channel is of type ```sensor_temperature``` and supports the ```Number:Temperature``` item and is in the ```Temperature``` category.
 
 ### Thermostat mode
-
-
 Sets the thermostat.
 
 The ```thermostat_mode``` channel is of type ```thermostat_mode``` and supports the ```Number``` item and is in the ```Temperature``` category.
@@ -144,10 +116,10 @@ Sets the thermostat setpoint.
 
 The ```thermostat_setpoint``` channel is of type ```thermostat_setpoint``` and supports the ```Number:Temperature``` item and is in the ```Heating``` category.
 
-### Alarm (power)
-Indicates if a power alarm is triggered.
+### Alarm (battery)
+Indicates if the low battery alarm is triggered.
 
-The ```alarm_power``` channel is of type ```alarm_power``` and supports the ```Switch``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
+The ```alarm_battery``` channel is of type ```alarm_battery``` and supports the ```Switch``` item and is in the ```LowBattery``` category. This is a read only channel so will only be updated following state changes from the device.
 
 The following state translation is provided for this channel to the ```Switch``` item type -:
 
