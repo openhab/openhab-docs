@@ -69,7 +69,7 @@ The `awaySetPoint` defines the temperature in degrees Celsius that will be sent 
 | `heatChannel1DemandState`    | Switch               | Is channel 1 calling the boiler for heat                 |
 | `heatChannel2Demand`         | Number:Dimensionless | Current demand level of heating channel 2                |
 | `heatChannel2DemandState`    | Switch               | Is channel 2 calling the boiler for heat                 |
-| `currentSignalRSSI`          | Number               | Relative Signal Strength Indicator                       |
+| `currentSignalRSSI`          | Number:Power         | Relative Signal Strength Indicator                       |
 | `currentWiserSignalStrength` | String               | Human readable signal strength                           |
 | `currentSignalStrength`      | Number               | Signal strength value that maps to qualityofservice icon |
 
@@ -104,7 +104,7 @@ The `awaySetPoint` defines the temperature in degrees Celsius that will be sent 
 | `currentBatteryVoltage`      | Number:ElectricPotential | Currently reported battery voltage                       |
 | `currentWiserBatteryLevel`   | String                   | Human readable battery level                             |
 | `currentBatteryLevel`        | Number                   | Battery level in percent                                 |
-| `currentSignalRSSI`          | Number                   | Relative Signal Strength Indicator                       |
+| `currentSignalRSSI`          | Number:Power             | Relative Signal Strength Indicator                       |
 | `currentSignalLQI`           | Number                   | Link Quality Indicator                                   |
 | `currentWiserSignalStrength` | String                   | Human readable signal strength                           |
 | `currentSignalStrength`      | Number                   | Signal strength value that maps to qualityofservice icon |
@@ -120,7 +120,7 @@ The `awaySetPoint` defines the temperature in degrees Celsius that will be sent 
 | `currentBatteryVoltage`      | Number:ElectricPotential | Currently reported battery voltage                       |
 | `currentWiserBatteryLevel`   | String                   | Human readable battery level                             |
 | `currentBatteryLevel`        | Number                   | Battery level in percent                                 |
-| `currentSignalRSSI`          | Number                   | Relative Signal Strength Indicator                       |
+| `currentSignalRSSI`          | Number:Power             | Relative Signal Strength Indicator                       |
 | `currentSignalLQI`           | Number                   | Link Quality Indicator                                   |
 | `currentWiserSignalStrength` | String                   | Human readable signal strength                           |
 | `currentSignalStrength`      | Number                   | Signal strength value that maps to qualityofservice icon |
@@ -130,7 +130,7 @@ The `awaySetPoint` defines the temperature in degrees Celsius that will be sent 
 
 | Channel                  | Item Type     | Description                                |
 |--------------------------|---------------|--------------------------------------------|
-| `currentSignalRSSI`      | Number        | Relative Signal Strength Indicator         |
+| `currentSignalRSSI`      | Number:Power  | Relative Signal Strength Indicator         |
 | `currentSignalLQI`       | Number        | Link Quality Indicator                     |
 | `zigbeeConnected`        | Switch        | Is the TRV joined to network               |
 | `plugInstantaneousPower` | Number:Power  | Current Power being drawn through the plug |
