@@ -5,6 +5,7 @@ title: WiZ - Bindings
 type: binding
 description: "This binding integrates [WiZ Connected](https://www.wizconnected.com/en-US/) smart devices."
 since: 3x
+logo: images/addons/wiz.svg
 install: auto
 ---
 
@@ -13,6 +14,8 @@ install: auto
 {% include base.html %}
 
 # WiZ Binding
+
+<AddonLogo />
 
 This binding integrates [WiZ Connected](https://www.wizconnected.com/en-US/) smart devices.
 These inexpensive devices, typically smart bulbs, are available online and in most Home Depot stores.

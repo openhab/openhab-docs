@@ -5,6 +5,7 @@ title: hueSync - Bindings
 type: binding
 description: "<!-- markdownlint-disable MD033 -->"
 since: 3x
+logo: images/addons/huesync.png
 install: auto
 ---
 
@@ -13,6 +14,8 @@ install: auto
 {% include base.html %}
 
 # hueSync Binding
+
+<AddonLogo />
 
 <!-- markdownlint-disable MD033 -->
 This binding integrates the [Play HDMI Sync Box](https://www.philips-hue.com/en-us/p/hue-philips-hue-play-hdmi-sync-box/046677579753) into openHAB.
