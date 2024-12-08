@@ -114,7 +114,7 @@ Notes:
 
 ### SDDP Discovery Service Syntax
 
-For the `sddp` service type, the meaning of the `match-property` `name` values are explained further as follows:
+For the `sddp` service type, the meanings of the `match-property` `name` values are explained further as follows:
 
 | Name Value     | Description                                                                                                                                   |
 |----------------|-----------------------------------------------------------------------------------------------------------------------------------------------|
@@ -132,7 +132,7 @@ For the `sddp` service type, the meaning of the `match-property` `name` values a
 
 ### IP Discovery Service Syntax
 
-For the `ip` service type, the meaning of the `discovery-parameter` values are explained further as follows:
+For the `ip` service type, the meanings of the `discovery-parameter` values are explained further as follows:
 
 | Name           | Value                                                                                                                                |
 |----------------|--------------------------------------------------------------------------------------------------------------------------------------|
@@ -158,7 +158,8 @@ The `request` and `requestPlain` values may contain special tokens that are dyna
 
 #### IP Discovery: Escaping (within `requestPlain`)
 
-In `requestPlain`standard backslash sequences will be translated, and in addition to \, there are five XML special characters which need to be escaped:
+In `requestPlain`standard backslash sequences will be translated.
+Plus there are five XML special characters which must be escaped:
 
 | Character | Replacement  |
 |-----------|--------------|
@@ -172,7 +173,7 @@ In `requestPlain`standard backslash sequences will be translated, and in additio
 
 In `requestPlain` the `$srcMac` token will be converted to the actual source MAC address.
 It will be rendered according to the `fmtMac` parameter value.
-This comprises a standard Java format specifier string plus optionallly a single delimiter character.
+This comprises a standard Java format specifier string plus *optionally* a single delimiter character.
 Examples are as follows:
 
 | Format Specifier | Result (example)        |
