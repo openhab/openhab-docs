@@ -56,6 +56,7 @@ This is:
 | Mass                     | Kilogram (kg)                    | Pound (lb)                       |
 | Power                    | Watt (W)                         | Watt (W)                         |
 | Pressure                 | Hectopascal (hPa)                | Inch of mercury (inHg)           |
+| Radiant Exposure         | Joule per square meter (J/m²)    | Joule per square meter (J/m²)    |
 | Radiation Absorbed Dose  | Gray (Gy)                        | Gray (Gy)                        |
 | Radiation Effective Dose | Sievert (Sv)                     | Sievert (Sv)                     |
 | Radioactivity            | Becquerel (Bq)                   | Becquerel (Bq)                   |
@@ -125,6 +126,7 @@ Imperial (base unit symbols):
 
 | Type               | Unit                   | Symbol  |
 |--------------------|------------------------|---------|
+| Density            | Grain per cubic foot   | gr/ft³  |
 | Length             | Inch                   | in      |
 | Length             | Foot                   | ft      |
 | Length             | Yard                   | yd      |
@@ -132,6 +134,7 @@ Imperial (base unit symbols):
 | Length             | Furlong                | fur     |
 | Length             | Mile                   | mi      |
 | Length             | League                 | lea     |
+| Mass               | Grain                  | gr      |
 | Pressure           | Inch of Mercury        | inHg    |
 | Pressure           | Pound per square inch  | psi     |
 | Speed              | Miles per Hour         | mph     |
@@ -198,6 +201,7 @@ SI (base unit symbols):
 | Pressure                  | Millimetre of Mercury            | mmHg   |
 | Pressure                  | Bar                              | bar    |
 | Radioactivity             | Becquerel                        | Bq     |
+| RadiantExposure           | Joule per square meter           | J/m²   |
 | RadiationDoseAbsorbed     | Gray                             | Gy     |
 | RadiationDoseEffective    | Sievert                          | Sv     |
 | RadiationSpecificActivity | Curie                            | Ci     |
