@@ -160,13 +160,13 @@ The `request` and `requestPlain` values may contain special tokens that are dyna
 
 In `requestPlain`standard backslash sequences will be translated, and in addition to \, there are five XML special characters which need to be escaped:
 
-| Character | Replacement |
-|-----------|-------------|
-| &         | &amp;       |
-| <         | &lt;        |
-| >         | &gt;        |
-| "         | &quot;      |
-| '         | &apos;      |
+| Character | Replacement  |
+|-----------|--------------|
+| &         | &&amp;       |
+| <         | &&lt;        |
+| >         | &&gt;        |
+| "         | &&quot;      |
+| '         | &&apos;      |
 
 #### IP Discovery: Formatting of substituted MAC address (within `requestPlain`)
 
