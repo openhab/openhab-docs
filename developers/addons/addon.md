@@ -162,11 +162,11 @@ In `requestPlain`standard backslash sequences will be translated, and in additio
 
 | Character | Replacement  |
 |-----------|--------------|
-| &         | &&amp;       |
-| <         | &&lt;        |
-| >         | &&gt;        |
-| "         | &&quot;      |
-| '         | &&apos;      |
+| &         | \&amp;       |
+| <         | \&lt;        |
+| >         | \&gt;        |
+| "         | \&quot;      |
+| '         | \&apos;      |
 
 #### IP Discovery: Formatting of substituted MAC address (within `requestPlain`)
 
