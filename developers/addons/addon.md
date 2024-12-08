@@ -143,7 +143,7 @@ For the `ip` service type, the meanings of the `discovery-parameter` values are 
 | `request`      | Description of request frame as hex bytes separated by spaces (e.g. 0x01 0x02 ...) with dynamic replacement of variables (see below) |
 | `requestPlain` | Description of request frame as plaintext string dynamic replacement of variables (see below) and escaped as required (see below)    |
 | `timeoutMs`    | Timeout to wait for answers                                                                                                          |
-| `fmtMac`       | Format specifier string for mac address (see below)                                                                                  |
+| `fmtMac`       | Format specifier string for mac address (see below); if no parameter is defined the default is `%02X:`                               |
 
 #### IP Discovery: Substitution Tokens (within `request` and `requestPlain`)
 
