@@ -173,7 +173,7 @@ Plus there are five XML special characters which must be escaped:
 
 In `requestPlain` the `$srcMac` token will be converted to the actual source MAC address.
 It will be rendered according to the `fmtMac` parameter value.
-This comprises a standard Java format specifier string plus *optionally* a single delimiter character.
+This comprises a standard Java format specifier string plus _optionally_ a single delimiter character.
 Examples are as follows:
 
 | Format Specifier | Result (example)        |
