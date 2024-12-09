@@ -174,7 +174,7 @@ where `<itemlist>` is a comma-separated list consisting of one or more of the fo
 - `!<groupName>*` all members of this group, but not the group itself, to be excluded from persistence defined by the other elements in this comma-separated `<itemList>`.
 The entries are additive.
 This means if one Item appears in more than one `<itemlist>` either directly or indirectly (e.g. `*` which includes all Items or as a member of a Group used in `<groupName>*`), all the strategies strategies listed on all those lines apply to that Item.
-In the same way, an Item defined by a `!<itemName>` or `!<groupName>*` will be excluded after all addititive rules have been applied.
+In the same way, an Item defined by a `!<itemName>` or `!<groupName>*` will be excluded after all additive rules have been applied.
 
 Below you will find a complete example persistence configuration file:
 
