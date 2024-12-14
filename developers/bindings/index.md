@@ -664,6 +664,7 @@ The supported output types are (see [`AnnotationActionHandler`](https://github.c
 
 - all primitive types, e.g. `boolean`, `int`, `float`, `String`, and their boxed counterparts
 - `org.openhab.core.library.types.QuantityType`
+- `java.math.BigDecimal`
 - `java.time.LocalDate`
 - `java.time.LocalTime`
 - `java.time.LocalDateTime`
