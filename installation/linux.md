@@ -34,7 +34,7 @@ When installing Zulu or Zulu Embedded from a .zip or .tar archive, make sure to 
 
 ::: tip Note
 Make sure to download Zulu or Java **17**.
-Using Java 21 is possible, but still considered experimental.
+Using Java 21 is possible, and will be required for openHAB 5.
 :::
 
 ## Installation

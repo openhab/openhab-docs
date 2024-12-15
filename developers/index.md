@@ -16,7 +16,7 @@ Try [git - the simple guide](https://rogerdudler.github.io/git-guide/) as a star
 Add-ons and the openHAB core itself are written in Java.
 Java is not hard to learn, but it helps if you have a general technical understanding of programming languages.
 
-The different guides of this chapter assume that you are somewhat familiar with Java 17 and that you have a rough understanding of Git's workflow (e.g. "checkout", "branches", "push").
+The different guides of this chapter assume that you are somewhat familiar with Java 21 and that you have a rough understanding of Git's workflow (e.g. "checkout", "branches", "push").
 
 ## Choose the Right Concept
 
@@ -49,13 +49,10 @@ Please ensure that you have the following prerequisites installed as well:
 
 1. [Git](https://git-scm.com/downloads) For retrieving our source code and push changes back. On Windows: Must be available in %PATH%
 1. [Maven 3.x](https://maven.apache.org/download.cgi) Our build system tool. On Windows: Must be available in %PATH%
-1. Java JDK 17 or JDK 21, for example from Oracle [Oracle JDK 17](https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html) or [Oracle JDK 21](https://www.oracle.com/java/technologies/javase/jdk21-archive-downloads.html). On Windows: %JAVA% must be set.
+1. Java JDK 21, for example from Oracle [Oracle JDK 21](https://www.oracle.com/java/technologies/javase/jdk21-archive-downloads.html). On Windows: %JAVA% must be set.
 
 ::: tip Note
-Whereas we recommend Java 17 for running openHAB, development can be safely done on Java 21.
-With default settings, the Java 21 compiler will generate Java objects compatible with JRE 17.
-If you run your openHAB server on Java 21, you can enable native Java 21 objects by adding `-Pj21` to the Maven command line.
-Note that our CI checks Java 17 and Java 21 compatibility, and we only use language features available in Java 17.
+Whereas openHAB 4.x series was based on Java 17, starting with openHAB 5.0.0-SNAPSHOT, **Java 21 is required**.
 :::
 
 You can use any IDE that is suitable for OSGi/Java development.
