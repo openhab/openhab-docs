@@ -50,7 +50,7 @@ OpenHAB versions before 4.3 could use **ECMAScript 2022** or **NashornJS** with 
 Converting is as easy as making sure the [JS Scripting Addon](https://www.openhab.org/addons/automation/jsscripting/) is installed, and opening your Blockly script.
 The UI will indicate your script has been generated with an older version and needs to be saved again.
 From that point onwards, things should work as before.
-[blockly-old-version-warning](../images/blockly/blockly-old-version-warning.png)
+![blockly-old-version-warning](../images/blockly/blockly-old-version-warning.png)
 
 ## Looking for help
 
