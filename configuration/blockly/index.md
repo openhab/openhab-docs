@@ -30,65 +30,27 @@ Also see this ![youtube](../images/blockly/youtube-logo-small.png) [Intro](https
 
 ## Blockly is a code generator or how the 🦏 found the holy Grail
 
-### Some history
-
 Even though you may not notice it directly, the blocks are eventually used to automatically create code that can run on the openHAB server.
 Please watch the ![youtube](../images/blockly/youtube-logo-small.png) video [Blockly as an ECMA-Script code generator](https://youtu.be/EdllUlJ7p6k?t=1739) for a live demo.
 The code that is generated can be viewed when clicking the button ![showcode](../images/blockly/blockly-workspace-showcode-small.png) on the lower right corner of the blockly editor.
-
-In general, the code that Blockly generates is JavaScript (aka ECMAScript) which exists in several flavours or versions.
-The ECMAScript version that is used by Blockly in **openHAB 3** is **ECMAScript 5.1** and it is run by a component named **NashornJS** 🦏. [Nashorn JS](https://www.oracle.com/technical-resources/articles/java/jf14-nashorn.html) itself was part of Java until version 14 when it was dropped.
-The generated rule code is run within the Java runtime (also known as JVM) on the openHAB server and as openHAB 4 has moved to Java 17, the old ECMAScript 5.1 is not directly available anymore within the JVM via Nashorn.
-A replacement for the Nashorn JS is **GraalJS** ("the holy grail"), which is currently running **ECMAScript 2022** and therefore supports all modern JavaScript features, like arrow functions.
-[**GraalJS**](https://github.com/oracle/graaljs) is already available in openHAB 3 when the [JS Scripting Addon](https://www.openhab.org/addons/automation/jsscripting/) is installed.
+In general, the code that Blockly generates is JavaScript (aka ECMAScript).
 
 ::: tip
 
-Please convert your old rules as quickly as possible because only with GraalJS you can leverage the openHAB JavaScript library (aka _openhab-js_) in Blockly.
-Using this library you can not only create much simpler code, it also allows **new functionality** that is not available with Nashorn.
-**Note that some blocks are only available with the openhab-js library on GraalJS.**
+Important: For Blockly to work, you need to have the [Javascript Scripting Addon](https://www.openhab.org/addons/automation/jsscripting/) (aka GraalJS) installed.
 
 :::
 
-### openHAB 3 / openHAB 4 - Migration
+### openHAB 3 / openHAB 4  to openHAB 4.3 or Later - Migration
 
-#### Migrating Blockly rules to openHAB 4 is easy
+From openHAB 4 onwards, the script engine is GraalJS provided by the [JS Scripting Addon](https://www.openhab.org/addons/automation/jsscripting/), **ECMAScript 2022**, when Blockly creates new scripts.
+OpenHAB versions before 4.3 could use **ECMAScript 2022** or **NashornJS** with **ECMAScript 5.1**, either installed by default or installed through an Addon.
+**NashornJS** is no longer an option with openHAB 4.3 or later. Therefore the generated Blockly code needs to be converted to **ECMAScript 2022**.
 
-From openHAB 4 on, the default script engine is GraalJS when Blockly creates new scripts.
-From a technical perspective a rule internally holds a so-called MIME-type that tells openHAB how the generated JavaScript language has to be interpreted.
-The (default) MIME-type `application/javascript` in openHAB 3 runs the rule with NashornJS, while this same MIME-type will run the Blocky rule with GraalJS in openHAB 4.
-As a result when running a non-converted openHAB 3 Blocky rule on openHAB 4, openHAB 4 will run a rule that was meant for NashornJS with GraalJS, which will fail.
-Therefore a conversion has to take place which in fact is not a lot of work:
-
-There is the choice to
-
-- convert each rule to GraalJS
-- or keep the NashornJS Rules
-
-but both need some work on each blockly rule you have.
-
-#### Migration to GraalJS (recommended)
-
-- Make sure the [JS Scripting Addon](https://www.openhab.org/addons/automation/jsscripting/) addon is installed.
-- **To convert / migrate a rule that was created in openHAB 3 (NashornJS) to a GraalJS-compatible one for openHAB 4, simply open each Blockly rule once in openHAB 4 and save it - that's it.**
-- In this case, nothing more needs to be installed additionally to openHAB 4.
-
-#### Running openHAB 3 Blockly rules without migrating them right away
-
-- If you still want to run the Blockly rules that were created in openHAB 3 for the time being without changing them (see above), you have to install the  [JavaScript Scripting (Nashorn) Addon](https://www.openhab.org/addons/automation/jsscriptingnashorn/) which provides backwards compatibility until you have converted all rules.
-- Open each Blockly rule or go to the Code TAB or Search for type: application/javascript;
-- Replace it by `application/javascript;version=ECMAScript-5.1`.
-Open the Blockly rule, find the following symbol and click on it.
-
-![javascript-dialog](../images/blockly/blockly-javascript-dialog.png)
-
-to choose the old version of JavaScript and then save the rule.
-
-![choose-javascript](../images/blockly/blocky-choose-javascript.png)
-
-- After the installation of the Addon both old rules created in openHAB 3 and new rules created in openHAB 4 can run on openHAB 4 at the same time.
-- After all scripts of the rules have been converted, like explained above, please uninstall the JavaScript Scripting (Nashorn) addon to save memory.
-- Note that this allows you to mix rules that run with NashornJS and some that run with GraalJS (see above).
+Converting is as easy as making sure the [JS Scripting Addon](https://www.openhab.org/addons/automation/jsscripting/) is installed, and opening your Blockly script.
+The UI will indicate your script has been generated with an older version and needs to be saved again.
+From that point onwards, things should work as before.
+[blockly-old-version-warning](../images/blockly/blockly-old-version-warning.png)
 
 ## Looking for help
 
