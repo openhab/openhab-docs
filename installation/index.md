@@ -78,7 +78,7 @@ Before you can start, two decisions have to be made:
     This option is only available for certain Linux distributions such as Debian or Ubuntu derivatives, but allows you to take advantage of automatic updates and is the recommended choice: [Linux (apt/deb)](linux.html#package-repository-installation)
 
 1. Stable release or cutting edge:
-    - **Stable:** Use the latest official release [hosted on Bintray](https://bintray.com/openhab/mvn/openhab-distro) (recommended for new users).
+    - **Stable:** Use the latest official release [hosted on github](https://github.com/openhab/openhab-distro/releases/) (recommended for new users).
     - **Snapshot:** Benefit from the latest changes in the daily created snapshot ([hosted on openhab.org](https://ci.openhab.org/)).
 
 ## Installation
