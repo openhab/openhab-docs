@@ -46,6 +46,8 @@ For each of the functions, you can choose the output type:
 - Number: output as a number
 - Timestamp: time of the persisted value (when applicable)
 
+![return-type](../images/blockly/blockly-persistence-return-type.png)
+
 **Important:** **Due to a breaking change of the internal methods in openHAB 4.2, Blockly rules that use persistence methods need to be migrated once.**
 This does not happen automatically but needs to be done opening the blockly rule once and re-save it.
 Blockly then automatically rewrites the rule to be compatible.
@@ -56,6 +58,8 @@ Values:
 - persisted state: gets the persisted state at a certain point in time (can be historic or future)
 
 The following values are available as _historic_, _future_ and _between_ representations.
+
+![timescope-block](../images/blockly/blockly-persistence-timescope.png)
 
 - average: gets the average value of the State of a persisted Item.
 This method uses a time-weighted average calculation
@@ -119,8 +123,12 @@ Multiple options are available:
 Following options are not supported by all persistence services (for example the standard rrd4j does _not_ support this).
 
 - state (at specific time): persist given State at given time
-- list of states (adding): persist list of States, not replacing the already persisted States
+- list of states (adding): persist list of States, not replacing the already persisted States.
 - list of states (replacing): persist list of States, replacing the already persisted States in the same time period
+
+As an example for persisting a list of States, one could calculate timephased future values such as expected electricity availability below a specific price point from multiple inputs, and store these in one operation as a future timeseries.
+The adding operation would keep what is already in persistence, while the replacing operation would replace anything already in persistence for the item between the first and last timestap in the series.
+With a forecast persistence strategy, these future persisted values of the item would become actual values as time moves forward.
 
 The _list of states_ input is a Blockly _List_ of _List_.
 The inner _List_ represent pairs of time provided by a _ZonedDateTime_-Block and a _String_ representation of the State.
