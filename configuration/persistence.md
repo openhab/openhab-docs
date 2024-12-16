@@ -167,12 +167,14 @@ where `<itemlist>` is a comma-separated list consisting of one or more of the fo
 
 - `*` - this line should apply to all items in the system
 - `<itemName>` a single Item identified by its name. This Item can be a group Item.  But note that only the group value will be persisted.  The value of the individual group members will not be persisted using this option.
+- `!<itemName>` a single Item or group Item identified by its name, to be excluded from persistence defined by the other elements in this comma-separated `<itemList>`.
 - `<groupName>*` - all members of this group will be persisted, but not the group itself.
   Optionally, an alias may be provided if the persistence service requires special names (e.g. a table to be used in a database, a feed id for an IoT service, etc.)
   Note that `*` is NOT a wildcard match character in this context.
-
+- `!<groupName>*` all members of this group, but not the group itself, to be excluded from persistence defined by the other elements in this comma-separated `<itemList>`.
 The entries are additive.
 This means if one Item appears in more than one `<itemlist>` either directly or indirectly (e.g. `*` which includes all Items or as a member of a Group used in `<groupName>*`), all the strategies strategies listed on all those lines apply to that Item.
+In the same way, an Item defined by a `!<itemName>` or `!<groupName>*` will be excluded after all additive rules have been applied.
 
 Below you will find a complete example persistence configuration file:
 
@@ -198,6 +200,9 @@ Items {
 
         // additionally, persist all temperature and weather values every hour
         Temperature*, Weather* : strategy = everyHour
+
+        // persist all items every day, except items in the weather group and the cellar temperature
+        *, !Weather*, !CellarTemperature: strategy = everyDay
 }
 ```
 
