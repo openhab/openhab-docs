@@ -46,6 +46,7 @@ server {
     add_header 'Access-Control-Allow-Methods' 'GET,POST,OPTIONS,PUT,DELETE,PATCH' always;
 
     location / {
+        proxy_http_version                    1.1;
         proxy_pass                            http://localhost:8080/;
         proxy_set_header Host                 $http_host;
         proxy_set_header X-Real-IP            $remote_addr;
@@ -326,6 +327,7 @@ server {
     add_header                      Strict-Transport-Security "max-age=31536000"; # Remove if using self-signed and are having trouble.
 
     location / {
+        proxy_http_version                      1.1;
         proxy_pass                              http://localhost:8080/;
         proxy_set_header Host                   $http_host;
         proxy_set_header X-Real-IP              $remote_addr;
@@ -468,6 +470,7 @@ server {
     add_header Set-Cookie X-OPENHAB-AUTH-HEADER=1;
 
     location / {
+        proxy_http_version                      1.1;
         proxy_pass                              https://localhost:8443/; #Update the port number if needed
         proxy_set_header Host                   $http_host;
         proxy_set_header X-Real-IP              $remote_addr;
