@@ -13,7 +13,7 @@ The developer tools page is split into two tabs:
 
 ## Expert Features
 
-### Advanced Object Managment
+### Advanced Object Management
 
 - [**Widgets**](widgets)<br>
   Develop custom widgets, that can be then used on your pages. Community made widgets can be installed from the **UI** tab of the add-on store.
@@ -30,4 +30,6 @@ The developer tools page is split into two tabs:
   So if you read this from the website, you can also read this from inside the UI.
 - **API Explorer**<br>
   Interactively discover and access the [REST API]({{base}}/configuration/restdocs), which is also used by Main UI to interact with the openHAB server.
+- **Log Viewer**<br>
+  Display real-time logs from openHAB. Provides functionality to filter, highlight and download logs as CSV or HTML.
 <!-- END MAINUI SIDEBAR DOC - DO NOT REMOVE -->
