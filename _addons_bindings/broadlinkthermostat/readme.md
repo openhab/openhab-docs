@@ -1,7 +1,7 @@
 ---
 id: broadlinkthermostat
-label: Broadlink
-title: Broadlink - Bindings
+label: Broadlink Thermostat
+title: Broadlink Thermostat - Bindings
 type: binding
 description: "The binding integrates devices based on broadlink controllers."
 since: 3x
@@ -12,7 +12,7 @@ install: auto
 
 {% include base.html %}
 
-# Broadlink Binding
+# Broadlink Thermostat Binding
 
 The binding integrates devices based on broadlink controllers.
 As the binding uses the [broadlink-java-api](https://github.com/mob41/broadlink-java-api), theoretically all devices supported by the api can be integrated with this binding.
