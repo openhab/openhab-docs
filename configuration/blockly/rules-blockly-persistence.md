@@ -46,7 +46,7 @@ For each of the functions, you can choose the output type:
 - Number: output as a number
 - Timestamp: time of the persisted value (when applicable)
 
-![return-type](../images/blockly/blockly-persistence-return-type.png)
+![return-type](../images/blockly/blockly-persistence-return-types.png)
 
 **Important:** **Due to a breaking change of the internal methods in openHAB 4.2, Blockly rules that use persistence methods need to be migrated once.**
 This does not happen automatically but needs to be done opening the blockly rule once and re-save it.
