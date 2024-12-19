@@ -70,11 +70,6 @@ Display a digital clock in a card
     <PropOption value="HH:mm:ss" label="Current time ('HH:mm:ss')" />
   </PropOptions>
 </PropBlock>
-<PropBlock type="TEXT" name="background" label="Background style">
-  <PropDescription>
-    Background style (in CSS "background" attribute format)
-  </PropDescription>
-</PropBlock>
 <PropBlock type="TEXT" name="timeFontSize" label="Time Font Size">
   <PropDescription>
     Time font size (e.g. "34px")
