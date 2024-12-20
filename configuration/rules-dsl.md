@@ -496,13 +496,13 @@ A DateTime Item carries a **DateTimeType**, which internally holds a Java `Zoned
 
 ```java
 // Get epoch from DateTimeType
-val Number epoch = (MyDateTimeItem.state as DateTimeType).zonedDateTime.toInstant.toEpochMilli
+val Number epoch = (MyDateTimeItem.state as DateTimeType).instant.toEpochMilli
 
 // Get epoch from Java ZonedDateTime
 val Number nowEpoch = now.toInstant.toEpochMilli
 
 // Convert DateTimeType to Java ZonedDateTime
-val javaZonedDateTime = (MyDateTimeItem.state as DateTimeType).zonedDateTime
+val javaZonedDateTime = (MyDateTimeItem.state as DateTimeType).getZonedDateTime(ZoneId.systemDefault)
 
 // Convert Java ZonedDateTime to DateTimeType
 val DateTimeType date = new DateTimeType(now)
@@ -531,13 +531,13 @@ ZonedDateTimes provide a number of useful methods for comparing date times toget
 
 ```java
 // See if DateTimeType is before now
-if(now.isBefore((MyDateTimeItem.state as DateTimeType).zonedDateTime)) ...
+if(now.toInstant.isBefore((MyDateTimeItem.state as DateTimeType).instant)) ...
 
 // See if DateTimeType is after now
-if(now.isAfter((MyDateTimeItem.state as DateTimeType).zonedDateTime)) ...
+if(now.toInstant.isAfter((MyDateTimeItem.state as DateTimeType).instant)) ...
 
 // Get the hour in the day from a DateTimeType
-val hour = (MyDateTimeItem.state as DateTimeType).zonedDateTime.hour
+val hour = (MyDateTimeItem.state as DateTimeType).getZonedDateTime(ZoneId.systemDefault).hour
 ```
 
 ##### Dimmer Item
