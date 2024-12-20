@@ -7,7 +7,7 @@ title: IntelliJ
 
 ## Prerequisites
 
-- git, Maven, IntelliJ and Java 17 are installed
+- git, Maven, IntelliJ and Java 21 are installed
 
 ## Install openHAB distribution
 
