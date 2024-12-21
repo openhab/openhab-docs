@@ -633,7 +633,7 @@ Adds a time-series chart object for the display of logged data.
 - `forceasitem` is used to show the value of a `Group` instead of showing a graph for each member (which is the default).
 
 - `yAxisDecimalPattern` is used to format the values on the y axis.
-    It accepts [DecimalFormat](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/text/DecimalFormat.html).
+    It accepts [DecimalFormat](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/text/DecimalFormat.html).
     For example with `#.##` a number has to decimals.
 
 **Other options to look out for:**
