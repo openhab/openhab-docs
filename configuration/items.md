@@ -257,7 +257,7 @@ If no square brackets are given and the Item is not linked to a channel, the Ite
 No text between the square brackets also implies no textual presentation.
 This is often meaningful when an Item is presented by a non-textual UI elements like a switch or a diagram.
 
-Formatting of the presentation is done applying [Java formatter class syntax](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Formatter.html#syntax).
+Formatting of the presentation is done applying [Java formatter class syntax](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/Formatter.html#syntax).
 
 If square brackets are given, the leading `%` and the trailing formatter conversion are mandatory.
 Free text, like a unit, can be added before or after the formatter string.

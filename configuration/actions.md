@@ -61,7 +61,7 @@ You have different options to execute a command through an action.
   For example you could run `var ScriptResponse = executeCommandLine(Duration.ofSeconds(60), "path/to/my/script.sh");` would get executed and wait 1 minute for the output to be responded back and write it into the `ScriptResponse` variable.
 
 Other Durations than `ofSeconds` units are possible too.
-Check out the [Java Documentation](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/time/Duration.html?is-external=true) for possible units.
+Check out the [Java Documentation](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/time/Duration.html?is-external=true) for possible units.
 
 #### Scripts with parameters
 
