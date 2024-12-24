@@ -88,7 +88,7 @@ This requires the module **module-simple-protocol-tcp** to be present on the ser
 ### Thing Configuration
 
 | Config Name                 | Item Type   | Description                                                                                       |
-|-----------------------------|-----------------------------------------------------------------------------------------------------------------|
+|-----------------------------|-------------|---------------------------------------------------------------------------------------------------|
 | name                        | text        | The name of one specific device. You can also use the description                                 |
 | activateSimpleProtocolSink  | boolean     | Activation of a corresponding sink in openHAB                                                     |
 | additionalFilters           | text        | Additional filters to select the proper device on the pulseaudio server, in case of ambiguity     |
@@ -107,7 +107,7 @@ This requires the module **module-simple-protocol-tcp** to be present on the tar
 ### Thing Configuration
 
 | Config ID                    | Item Type   | Description                                                                                       |
-|------------------------------|-----------------------------------------------------------------------------------------------------------------|
+|------------------------------|-------------|---------------------------------------------------------------------------------------------------|
 | name                         | text        | The name of one specific device. You can also use the description                                 |
 | activateSimpleProtocolSource | boolean     | Activation of a corresponding sink in openHAB                                                     |
 | additionalFilters            | text        | Additional filters to select the proper device on the pulseaudio server, in case of ambiguity     |
@@ -136,7 +136,9 @@ Bridge pulseaudio:bridge:<bridgname> "<Bridge Label>" @ "<Room>" [ host="<ipAddr
 
 <!--
 ### pulseaudio.items
+
 ```
 
 ```
+
 -->
