@@ -661,7 +661,7 @@ If paired with [`TiltAngle`](#tiltangle), the primary controls (open/close/stop)
     * defaults to item state description options `presets="value1=label1,..."` if defined, otherwise no presets
   * language=`<code>`
     * text-based preset name language support
-    * two-letter language code: `ar`, `de`, `en`, `es`, `fr`, `hi`, `it`, `ja`, `pt`
+    * two-letter language code: `ar`, `de`, `en`, `es`, `fr`, `hi`, `it`, `ja`, `nl`, `pt`
     * defaults to your server [regional settings](#regional-settings) if defined, otherwise `en`
   * actionMappings=`<mappings>`
     * each [semantic](#semantic-extensions) mapping formatted as `<action>=<value>`
@@ -709,7 +709,7 @@ If paired with [`PositionState`](#positionstate), the primary controls (open/clo
     * defaults to item state description options `presets="value1=label1,..."` if defined, otherwise no presets
   * language=`<code>`
     * text-based preset name language support
-    * two-letter language code: `ar`, `de`, `en`, `es`, `fr`, `hi`, `it`, `ja`, `pt`
+    * two-letter language code: `ar`, `de`, `en`, `es`, `fr`, `hi`, `it`, `ja`, `nl`, `pt`
     * defaults to your server [regional settings](#regional-settings) if defined, otherwise `en`
   * actionMappings=`<mappings>`
     * each [semantic](#semantic-extensions) mapping formatted as `<action>=<value>`
@@ -798,7 +798,7 @@ Items that represent an input source (e.g. "HDMI 1" or "TUNER" on a stereo).
     * defaults to item state description options `supportedInputs="value1=label1,..."`, if defined, otherwise no supported inputs
   * language=`<code>`
     * input name language support
-    * two-letter language code: `ar`, `de`, `en`, `es`, `fr`, `hi`, `it`, `ja`, `pt`
+    * two-letter language code: `ar`, `de`, `en`, `es`, `fr`, `hi`, `it`, `ja`, `nl`, `pt`
     * defaults to your server [regional settings](#regional-settings) if defined, otherwise `en`
 * Utterance examples:
   * *Alexa, change the input to `<input name>` on the `<device name>`.*
@@ -1687,7 +1687,7 @@ Items that represent components of a device that have more than one setting. Mul
     * defaults to false
   * language=`<code>`
     * text-based name language support
-    * two-letter language code: `ar`, `de`, `en`, `es`, `fr`, `hi`, `it`, `ja`, `pt`
+    * two-letter language code: `ar`, `de`, `en`, `es`, `fr`, `hi`, `it`, `ja`, `nl`, `pt`
     * defaults to your server [regional settings](#regional-settings) if defined, otherwise `en`
   * actionMappings=`<mappings>`
     * each [semantic](#semantic-extensions) mapping formatted as, based on action type: (e.g. `actionMappings="Close=DOWN,Open=UP,Lower=DOWN,Raise=UP,Stop=STOP"`)
@@ -1770,7 +1770,7 @@ Items that represent components of a device that are characterized by numbers wi
       * Rollershutter => `Percent`
   * language=`<code>`
     * text-based name language support
-    * two-letter language code: `ar`, `de`, `en`, `es`, `fr`, `hi`, `it`, `ja`, `pt`
+    * two-letter language code: `ar`, `de`, `en`, `es`, `fr`, `hi`, `it`, `ja`, `nl`, `pt`
     * defaults to your server [regional settings](#regional-settings) if defined, otherwise `en`
   * actionMappings=`<mappings>`
     * each [semantic](#semantic-extensions) mapping formatted as, based on action type: (e.g. `actionMappings="Close=0,Open=100,Lower=(-10),Raise=(+10)"`)
@@ -1835,7 +1835,7 @@ Items that represent components of a device that can be toggled on or off. Multi
     * defaults to item state description read only property if defined, otherwise false
   * language=`<code>`
     * text-based name language support
-    * two-letter language code: `ar`, `de`, `en`, `es`, `fr`, `hi`, `it`, `ja`, `pt`
+    * two-letter language code: `ar`, `de`, `en`, `es`, `fr`, `hi`, `it`, `ja`, `nl`, `pt`
     * defaults to your server [regional settings](#regional-settings) if defined, otherwise `en`
   * actionMappings=`<mappings>`
     * each [semantic](#semantic-extensions) mapping formatted as `<action>=ON` or `<action>=OFF` (e.g. `actionMappings="Close=OFF,Open=ON"`)
@@ -1936,30 +1936,30 @@ The availability of a given capability depends on the location setting of your A
 
 Alexa Interfaces | Supported Attributes | Supported Languages
 -----------------|------------------------|--------------------
-BrightnessController | [`Brightness`](#brightness) | `ar-SA`, `de-DE`, `en-AU`, `en-CA`, `en-GB`, `en-IN`, `en-US`, `es-ES`, `es-MX`, `es-US`, `fr-CA`, `fr-FR`, `hi-IN`, `it-IT`, `ja-JP`, `pt-BR`
-CameraStreamController | [`CameraStream`](#camerastream) | `ar-SA`, `de-DE`, `en-AU`, `en-CA`, `en-GB`, `en-IN`, `en-US`, `es-ES`, `es-MX`, `es-US`, `fr-CA`, `fr-FR`, `hi-IN`, `it-IT`, `ja-JP`, `pt-BR`
+BrightnessController | [`Brightness`](#brightness) | `ar-SA`, `de-DE`, `en-AU`, `en-CA`, `en-GB`, `en-IN`, `en-US`, `es-ES`, `es-MX`, `es-US`, `fr-CA`, `fr-FR`, `hi-IN`, `it-IT`, `ja-JP`, `nl-NL`, `pt-BR`
+CameraStreamController | [`CameraStream`](#camerastream) | `ar-SA`, `de-DE`, `en-AU`, `en-CA`, `en-GB`, `en-IN`, `en-US`, `es-ES`, `es-MX`, `es-US`, `fr-CA`, `fr-FR`, `hi-IN`, `it-IT`, `ja-JP`, `nl-NL`, `pt-BR`
 ChannelController | [`Channel`](#channel), [`ChannelStep`](#channelstep) | `ar-SA`, `de-DE`, `en-AU`, `en-CA`, `en-GB`, `en-IN`, `en-US`, `es-ES`, `es-MX`, `es-US`, `fr-CA`, `fr-FR`, `hi-IN`, `it-IT`, `ja-JP`, `pt-BR`
-ColorController | [`Color`](#color) | `ar-SA`, `de-DE`, `en-AU`, `en-CA`, `en-GB`, `en-IN`, `en-US`, `es-ES`, `es-MX`, `es-US`, `fr-CA`, `fr-FR`, `hi-IN`, `it-IT`, `ja-JP`, `pt-BR`
-ColorTemperatureController | [`ColorTemperature`](#colortemperature) | `ar-SA`, `de-DE`, `en-AU`, `en-CA`, `en-GB`, `en-IN`, `en-US`, `es-ES`, `es-MX`, `es-US`, `fr-CA`, `fr-FR`, `hi-IN`, `it-IT`, `ja-JP`, `pt-BR`
+ColorController | [`Color`](#color) | `ar-SA`, `de-DE`, `en-AU`, `en-CA`, `en-GB`, `en-IN`, `en-US`, `es-ES`, `es-MX`, `es-US`, `fr-CA`, `fr-FR`, `hi-IN`, `it-IT`, `ja-JP`, `nl-NL`, `pt-BR`
+ColorTemperatureController | [`ColorTemperature`](#colortemperature) | `ar-SA`, `de-DE`, `en-AU`, `en-CA`, `en-GB`, `en-IN`, `en-US`, `es-ES`, `es-MX`, `es-US`, `fr-CA`, `fr-FR`, `hi-IN`, `it-IT`, `ja-JP`, `nl-NL`, `pt-BR`
 ContactSensor | [`ContactDetectionState`](#contactdetectionstate) | `ar-SA`, `de-DE`, `en-AU`, `en-CA`, `en-GB`, `en-IN`, `en-US`, `es-ES`, `es-MX`, `es-US`, `fr-CA`, `fr-FR`, `hi-IN`, `it-IT`, `ja-JP`, `pt-BR`
-EqualizerController | [`EqualizerBass`](#equalizerbass), [`EqualizerMidrange`](#equalizermidrange), [`EqualizerTreble`](#equalizertreble), [`EqualizerMode`](#equalizermode) | `de-DE`, `en-AU`, `en-CA`, `en-GB`, `en-IN`, `en-US`, `es-ES`, `es-MX`, `es-US`, `fr-CA`, `fr-FR`, `hi-IN`, `it-IT`, `ja-JP`, `pt-BR`
-LockController | [`LockState`](#lockstate) | `ar-SA`, `de-DE`, `en-AU`, `en-CA`, `en-GB`, `en-IN`, `en-US`, `es-ES`, `es-MX`, `es-US`, `fr-CA`, `fr-FR`, `hi-IN`, `it-IT`, `ja-JP`, `pt-BR`
-ModeController | [`Mode`](#mode), [`FanDirection`](#fandirection), [`FanSpeed`](#fanspeed), [`Input`](#input), [`OpenState`](#openstate), [`PositionState`](#positionstate), [`TiltAngle`](#tiltangle), [`ThermostatFan`](#thermostatfan), [`VacuumMode`](#vacuummode) | `de-DE`, `en-AU`, `en-CA`, `en-GB`, `en-IN`, `en-US`, `es-ES`, `es-MX`, `es-US`, `fr-CA`, `fr-FR`, `hi-IN`, `it-IT`, `ja-JP`, `pt-BR`
+EqualizerController | [`EqualizerBass`](#equalizerbass), [`EqualizerMidrange`](#equalizermidrange), [`EqualizerTreble`](#equalizertreble), [`EqualizerMode`](#equalizermode) | `de-DE`, `en-AU`, `en-CA`, `en-GB`, `en-IN`, `en-US`, `es-ES`, `es-MX`, `es-US`, `fr-CA`, `fr-FR`, `hi-IN`, `it-IT`, `ja-JP`, `nl-NL`, `pt-BR`
+LockController | [`LockState`](#lockstate) | `ar-SA`, `de-DE`, `en-AU`, `en-CA`, `en-GB`, `en-IN`, `en-US`, `es-ES`, `es-MX`, `es-US`, `fr-CA`, `fr-FR`, `hi-IN`, `it-IT`, `ja-JP`, `nl-NL`, `pt-BR`
+ModeController | [`Mode`](#mode), [`FanDirection`](#fandirection), [`FanSpeed`](#fanspeed), [`Input`](#input), [`OpenState`](#openstate), [`PositionState`](#positionstate), [`TiltAngle`](#tiltangle), [`ThermostatFan`](#thermostatfan), [`VacuumMode`](#vacuummode) | `de-DE`, `en-AU`, `en-CA`, `en-GB`, `en-IN`, `en-US`, `es-ES`, `es-MX`, `es-US`, `fr-CA`, `fr-FR`, `hi-IN`, `it-IT`, `ja-JP`, `nl-NL`, `pt-BR`
 MotionSensor | [`MotionDetectionState`](#motiondetectionstate) | `de-DE`, `en-AU`, `en-CA`, `en-GB`, `en-IN`, `en-US`, `es-ES`, `es-MX`, `es-US`, `fr-CA`, `fr-FR`, `hi-IN`, `it-IT`, `ja-JP`, `pt-BR`
-PercentageController | [`Percentage`](#percentage) | `de-DE`, `en-AU`, `en-CA`, `en-GB`, `en-IN`, `en-US`, `es-ES`, `es-US`, `fr-CA`, `fr-FR`, `hi-IN`, `it-IT`, `ja-JP`, `pt-BR`
-PlaybackController | [`Playback`](#playback), [`PlaybackStop`](#playbackstop), [`PlaybackStep`](#playbackstep) | `ar-SA`, `de-DE`, `en-AU`, `en-CA`, `en-GB`, `en-IN`, `en-US`, `es-ES`, `es-MX`, `es-US`, `fr-CA`, `fr-FR`, `hi-IN`, `it-IT`, `ja-JP`, `pt-BR`
-PlaybackStateReporter | [`Playback`](#playback), [`PlaybackStop`](#playbackstop) | `ar-SA`, `de-DE`, `en-AU`, `en-CA`, `en-GB`, `en-IN`, `en-US`, `es-ES`, `es-MX`, `es-US`, `fr-CA`, `fr-FR`, `hi-IN`, `it-IT`, `ja-JP`, `pt-BR`
-PowerController | [`PowerState`](#powerstate) | `ar-SA`, `de-DE`, `en-AU`, `en-CA`, `en-GB`, `en-IN`, `en-US`, `es-ES`, `es-MX`, `es-US`, `fr-CA`, `fr-FR`, `hi-IN`, `it-IT`, `ja-JP`, `pt-BR`
-PowerLevelController | [`PowerLevel`](#powerlevel) | `de-DE`, `en-AU`, `en-CA`, `en-GB`, `en-IN`, `en-US`, `es-ES`, `es-MX`, `fr-CA`, `fr-FR`, `it-IT`, `ja-JP`
-RangeController | [`RangeValue`](#rangevalue), [`BatteryLevel`](#batterylevel), [`CurrentHumidity`](#currenthumidity), [`FanSpeed`](#fanspeed), [`PositionState`](#positionstate), [`TiltAngle`](#tiltangle) | `de-DE`, `en-AU`, `en-CA`, `en-GB`, `en-IN`, `en-US`, `es-ES`, `es-MX`, `es-US`, `fr-CA`, `fr-FR`, `hi-IN`, `it-IT`, `ja-JP`, `pt-BR`
+PercentageController | [`Percentage`](#percentage) | `de-DE`, `en-AU`, `en-CA`, `en-GB`, `en-IN`, `en-US`, `es-ES`, `es-US`, `fr-CA`, `fr-FR`, `hi-IN`, `it-IT`, `ja-JP`, `nl-NL`, `pt-BR`
+PlaybackController | [`Playback`](#playback), [`PlaybackStop`](#playbackstop), [`PlaybackStep`](#playbackstep) | `ar-SA`, `de-DE`, `en-AU`, `en-CA`, `en-GB`, `en-IN`, `en-US`, `es-ES`, `es-MX`, `es-US`, `fr-CA`, `fr-FR`, `hi-IN`, `it-IT`, `ja-JP`, `nl-NL`, `pt-BR`
+PlaybackStateReporter | [`Playback`](#playback), [`PlaybackStop`](#playbackstop) | `ar-SA`, `de-DE`, `en-AU`, `en-CA`, `en-GB`, `en-IN`, `en-US`, `es-ES`, `es-MX`, `es-US`, `fr-CA`, `fr-FR`, `hi-IN`, `it-IT`, `ja-JP`, `nl-NL`, `pt-BR`
+PowerController | [`PowerState`](#powerstate) | `ar-SA`, `de-DE`, `en-AU`, `en-CA`, `en-GB`, `en-IN`, `en-US`, `es-ES`, `es-MX`, `es-US`, `fr-CA`, `fr-FR`, `hi-IN`, `it-IT`, `ja-JP`, `nl-NL`, `pt-BR`
+PowerLevelController | [`PowerLevel`](#powerlevel) | `de-DE`, `en-AU`, `en-CA`, `en-GB`, `en-IN`, `en-US`, `es-ES`, `es-MX`, `fr-CA`, `fr-FR`, `it-IT`, `ja-JP`, `nl-NL`
+RangeController | [`RangeValue`](#rangevalue), [`BatteryLevel`](#batterylevel), [`CurrentHumidity`](#currenthumidity), [`FanSpeed`](#fanspeed), [`PositionState`](#positionstate), [`TiltAngle`](#tiltangle) | `de-DE`, `en-AU`, `en-CA`, `en-GB`, `en-IN`, `en-US`, `es-ES`, `es-MX`, `es-US`, `fr-CA`, `fr-FR`, `hi-IN`, `it-IT`, `ja-JP`, `nl-NL`, `pt-BR`
 Safety | [`ObstacleAlert`](#obstaclealert) | `de-DE`, `en-GB`, `en-US`, `es-ES`, `fr-FR`, `it-IT`
-SceneController | [`Scene`](#scene), [`Activity`](#activity) | `ar-SA`, `de-DE`, `en-AU`, `en-CA`, `en-GB`, `en-IN`, `en-US`, `es-ES`, `es-MX`, `es-US`, `fr-CA`, `fr-FR`, `hi-IN`, `it-IT`, `ja-JP`, `pt-BR`
+SceneController | [`Scene`](#scene), [`Activity`](#activity) | `ar-SA`, `de-DE`, `en-AU`, `en-CA`, `en-GB`, `en-IN`, `en-US`, `es-ES`, `es-MX`, `es-US`, `fr-CA`, `fr-FR`, `hi-IN`, `it-IT`, `ja-JP`, `nl-NL`, `pt-BR`
 SecurityPanelController | [`ArmState`](#armstate), [`BurglaryAlarm`](#burglaryalarm), [`CarbonMonoxideAlarm`](#carbonmonoxidealarm), [`FireAlarm`](#firealarm), [`WaterAlarm`](#wateralarm) | `de-DE`, `en-AU`, `en-CA`, `en-GB`, `en-IN`, `en-US`, `es-ES`, `es-MX`, `es-US`, `fr-CA`, `fr-FR`, `it-IT`, `ja-JP`, `pt-BR`
-Speaker | [`VolumeLevel`](#volumelevel), [`MuteState`](#mutestate) | `de-DE`, `en-AU`, `en-CA`, `en-GB`, `en-IN`, `en-US`, `es-ES`, `es-MX`, `it-IT`, `ja-JP`
-StepSpeaker | [`VolumeStep`](#volumestep), [`MuteStep`](#mutestep) | `de-DE`, `en-AU`, `en-CA`, `en-GB`, `en-IN`, `en-US`, `es-ES`, `it-IT`
-TemperatureSensor | [`CurrentTemperature`](#currenttemperature) | `ar-SA`, `de-DE`, `en-AU`, `en-CA`, `en-GB`, `en-IN`, `en-US`, `es-ES`, `es-MX`, `es-US`, `fr-CA`, `fr-FR`, `hi-IN`, `it-IT`, `ja-JP`, `pt-BR`
-ThermostatController | [`TargetTemperature`](#targettemperature), [`CoolingSetpoint`](#coolingsetpoint), [`HeatingSetpoint`](#heatingsetpoint), [`HeatingCoolingMode`](#heatingcoolingmode), [`ThermostatHold`](#thermostathold) | `ar-SA`, `de-DE`, `en-AU`, `en-CA`, `en-GB`, `en-IN`, `en-US`, `es-ES`, `es-MX`, `es-US`, `fr-CA`, `fr-FR`, `hi-IN`, `it-IT`, `ja-JP`, `pt-BR`
-ToggleController | [`ToggleState`](#togglestate), [`FanOscillate`](#fanoscillate), [`ThermostatFan`](#thermostatfan), [`NetworkAccess`](#networkaccess) | `de-DE`, `en-AU`, `en-CA`, `en-GB`, `en-IN`, `en-US`, `es-ES`, `es-MX`, `es-US`, `fr-CA`, `fr-FR`, `hi-IN`, `it-IT`, `ja-JP`, `pt-BR`
+Speaker | [`VolumeLevel`](#volumelevel), [`MuteState`](#mutestate) | `de-DE`, `en-AU`, `en-CA`, `en-GB`, `en-IN`, `en-US`, `es-ES`, `es-MX`, `it-IT`, `ja-JP`, `nl-NL`
+StepSpeaker | [`VolumeStep`](#volumestep), [`MuteStep`](#mutestep) | `de-DE`, `en-AU`, `en-CA`, `en-GB`, `en-IN`, `en-US`, `es-ES`, `it-IT`, `nl-NL`
+TemperatureSensor | [`CurrentTemperature`](#currenttemperature) | `ar-SA`, `de-DE`, `en-AU`, `en-CA`, `en-GB`, `en-IN`, `en-US`, `es-ES`, `es-MX`, `es-US`, `fr-CA`, `fr-FR`, `hi-IN`, `it-IT`, `ja-JP`, `nl-NL`, `pt-BR`
+ThermostatController | [`TargetTemperature`](#targettemperature), [`CoolingSetpoint`](#coolingsetpoint), [`HeatingSetpoint`](#heatingsetpoint), [`HeatingCoolingMode`](#heatingcoolingmode), [`ThermostatHold`](#thermostathold) | `ar-SA`, `de-DE`, `en-AU`, `en-CA`, `en-GB`, `en-IN`, `en-US`, `es-ES`, `es-MX`, `es-US`, `fr-CA`, `fr-FR`, `hi-IN`, `it-IT`, `ja-JP`, `nl-NL`, `pt-BR`
+ToggleController | [`ToggleState`](#togglestate), [`FanOscillate`](#fanoscillate), [`ThermostatFan`](#thermostatfan), [`NetworkAccess`](#networkaccess) | `de-DE`, `en-AU`, `en-CA`, `en-GB`, `en-IN`, `en-US`, `es-ES`, `es-MX`, `es-US`, `fr-CA`, `fr-FR`, `hi-IN`, `it-IT`, `ja-JP`, `nl-NL`, `pt-BR`
 
 ## Asset Catalog
 
