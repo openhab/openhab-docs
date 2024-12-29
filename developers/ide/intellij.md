@@ -7,7 +7,7 @@ title: IntelliJ
 
 ## Prerequisites
 
-- git, Maven, IntelliJ and Java 17 are installed
+- git, Maven (at least 3.8.6), IntelliJ and Java (21) are installed and available in the path.
 
 ## Build the repositories
 
@@ -25,13 +25,13 @@ Use the command `git clone https://github.com/<yourgitusername>/openhab-<addons|
    IntelliJ will start importing and indexing. It will take while, wait until finished. The Module window should now be filled with a bunch of projects.
    ![Import modules](images/ide_setup_intellij_import_module.png)
 1. Repeat step 2 and 3 for all repositories you cloned.
-1. Use Maven to clean & install projects
+1. Use Maven to clean & install projects. Make sure you use the required Maven version (3.8.6 is recommended).
 
     - `mvn clean install` in the root of the repositories using commandline Maven (or IntelliJ Maven view)
     - some of the add-ons might fail to build - if it's not the one you're interested in, that should not bother you
     - when the Maven project finished, you should find the freshly built addon JAR in the target directory
 
-You then have two main options to run your development. Use the official distribution, or use Maven.
+You then have two main options to run your development: use the official distribution, or use Maven.
 
 ## Option 1: Use and debug from the official distribution
 
