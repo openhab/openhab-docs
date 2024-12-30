@@ -43,7 +43,7 @@ After editing this two files, use this maven command from the `/openhab-distro/l
 
 This will ask the bnd plugin to 'resolve' the dependencies (i.e. to calculate which bundles to run in the OSGi runtime) and update
  the `runbundles` section of the `app.bndrun` file accordingly.
-Each time you add a dependency or change version, you HAVE to run a resolve task.
+Each time you add a dependency or change the version, you HAVE to run a resolve task.
 
 ::: warning
 The `pom.xml` file is versioned. The version fields present in the file must match the modules
