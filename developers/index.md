@@ -63,22 +63,27 @@ We have prepared some step-by-step guides for the following IDEs:
 
 <table style="width:100%">
 <tr>
-<td style="width:30%">
+<td style="width:50%">
 
 [![Visual Studio Code](./ide/images/vscode.jpg)](ide/vscode.html)
 
 </td>
-<td style="width:30%">
+<td style="width:50%">
 
 [![Eclipse IDE](./ide/images/eclipse.jpg)](ide/eclipse.html)
 
 </td>
-<td style="width:30%">
+</tr>
+<tr>
+<td style="width:50%">
 
 [![IntelliJ IDE](./ide/images/intellij.jpg)](ide/intellij.html)
 
 </td>
-</tr>
+<td style="width:50%">
+
+[![Generic IDE](./ide/images/generic_ide.png)](ide/generic.html)
+
 </table>
 
 Not sure what to choose?: openHAB maintainers use [Eclipse IDE](https://wiki.eclipse.org/Eclipse_Installer).

@@ -213,6 +213,15 @@ module.exports = [
     collapsable: true,
     children: [
       ['developer/', 'Overview & Introduction'],
+      { title: 'IDEs',
+        collapsable: true,
+        children: [
+          'developer/ide/eclipse',
+          'developer/ide/intellij',
+          'developer/ide/vscode',
+          'developer/ide/generic',
+        ]
+      },
       'developer/guidelines',
       'developer/addons/',
       'developer/bindings/',
