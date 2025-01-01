@@ -141,7 +141,7 @@ Save and test that you see the log statement and the Item receive the `ON` comma
 (hint, change the time passed to the timer to something smaller to make testing easier then change it back once things are working).
 
 Now all we are lacking is the ability to reschedule that timer if motion is seen again in the 30 minute period.
-Looking back at the docs we find the [`cache`](/addons/automation/jsscripting/#cache).
+Looking back at the docs we find the [cache](/addons/automation/jsscripting/#cache).
 This is a map of key/value pairs that exists outside of the rule.
 Given that position it is able to share data between different rules or between runs of the same rule.
 We will use it to save that Timer so we can reschedule it later when needed.
@@ -150,23 +150,22 @@ We will use it to save that Timer so we can reschedule it later when needed.
 console.info('Motion was detected');
 items.getItem('FrontPorchLight').sendCommand('ON');
 
-timerId = ruleUID+'_timer';
+timerId = 'FrontPorchLight_timer';
 var lightsOut = function() {
   console.info('No more motion, turning off the light');
   items.getItem('FrontPorchLight').sendCommand('OFF');
-  cache.put(timerId, null);
+  cache.private.put(timerId, null);
 };
 
-var timer = cache.get(timerId);
+var timer = cache.private.get(timerId);
 if(!timer) {
-    cache.put(timerId, ScriptExecution.createTimer(time.ZonedDateTime.now().plusMinutes(30), lightsOut));
+    cache.private.put(timerId, ScriptExecution.createTimer(time.ZonedDateTime.now().plusMinutes(30), lightsOut));
 }
 else {
-    timer.reschedule(time.ZonedDateTime.now());
+    timer.reschedule(time.ZonedDateTime.now().plusMinutes(30));
 }
 ```
 
-Notice that we use the `ruleUID` which is a variable made available by the Helper Library to ensure that we don't overwrite on something added to the `cache` from another rule.
 Also notice a line was added to `lightsOut` to delete the entry in the `cache` when the timer ran.
 That will cause the rule to create a new timer the next time the rule runs.
 It could be coded to reuse the Timer instead which is an exercise for the reader.
