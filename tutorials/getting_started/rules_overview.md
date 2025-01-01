@@ -23,4 +23,4 @@ The list is sorted alphabetically by name and it is meant as a starting point fo
 | [Jython](/addons/automation/jythonscripting)          | :heavy_check_mark: | Python 2.7         | Enabled by installing an official add-on |
 | NodeRed                                               | :x:                | Graphical          | Own UI. A third-party solution           |
 | Nashorn JavaScript                                    | :heavy_check_mark: | ECMAScript 5.1     | Deprecated                               |
-| [RulesDSL](/configuration/rules-dsl.html)             | :heavy_check_mark: | RulesDSL           | Built-in                                 |
+| [RulesDSL](/docs/configuration/rules-dsl.html)        | :heavy_check_mark: | RulesDSL           | Built-in                                 |
