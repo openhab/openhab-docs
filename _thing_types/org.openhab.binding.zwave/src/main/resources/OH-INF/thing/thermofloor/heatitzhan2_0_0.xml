@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="thermofloor_heatitzhan2_00_000" listed="false">
+    <label>Heatit Z-HAN2 Z-Wave HAN sensor for AMS meters (smart meters).</label>
+    <description><![CDATA[
+Z-Wave HAN sensor for AMS meters (smart meters).<br /> <h1>Overview</h1><p>Heatit Z-HAN2 is a Z-Wave HAN sensor for AMS meters (smart meters). Heatit Z-HAN2 works with HAN ports.</p><p>The Heatit Z-HAN 2 is equipped with an RJ45 port for connecting the AMS meter. The Heatit Z-HAN2 can be powered through the RJ45 port by most AMS meters, but also has a 5V micro USB input for external power supply.<br /><b><br />Features:</b></p><ul><li>Z-Wave HAN sensor</li><li>RJ45 and Micro-USB</li><li> Active power metering</li><li> SmartStart</li><li> Firmware Update (OTA)</li><li> Temperature sensor</li><li>Supports encryption mode S0, S2 Authenticated Class,</li><li>S2 Unauthenticated Class</li></ul><p><b>Technical data:</b><br /></p><ul><li> IOT Protocol: Z-Wave - 868.4 MHz (EU)</li><li> Voltage: 5V DC (Micro-USB)</li><li> Protection grade (IP): IP20</li><li> Ambient humidity (RH non-condensing %): 10-85</li><li> Declarations: RoHS, Reach</li><li> International standard: CE, Z-Wave Plus</li><li> Signal range radio frequency (max no. meters): 40</li><li> IOT Chip type: Z-Wave 800 chip</li><li> Z-Wave encryption mode: S0, S2 Authenticated Class, S2 Unauthenticated Class, AES-128 encryption </li></ul> <br /> <h2>Inclusion Information</h2><p><b>Quick start:</b><br /></p><ol><li>Contact your energy company to activate your HAN-port.</li><li>Connect power to the Z-HAN2 with a micro USB cable.</li><li>Set the primary controller to add mode (security/non-security).</li><li>Press the reset button 3 times in a rapid sequence. Heatit Z-HAN2 is now included in your Z-Wave network.</li><li>Open your main fuse box.</li><li>Plug the RJ45 cable into the energy meter and the Z-HAN2.</li></ol> <br /> <h2>Exclusion Information</h2>When the device is removed from the network, it will NOT revert to factory settings. An always listening node must be powered continuously and reside in a fixed position in the installation to secure the routing table. Adding the device within a 2 meters range from the gateway can minimize faults during the Interview process.<br /><br /><b>Removing via primary controller/gateway:</b><br /><p><br />Add/remove mode is indicated on the device by a blinking green LED. It indicates this for 90 seconds until a timeout occurs, or until the module has been added to/removed from the network. Configuration mode can also be cancelled by performing the same procedure used for starting Configuration mode.<br /><br />To start the configuration process, press the reset button 3 times in rapid sequence. The LED will light up in solid green for 3 seconds if add/remove is successful. The device is now ready for use with default settings. NB! When the device is removed from the gateway, the parameters are not reset. To reset the parameters, see ”Factory reset”.<br /><b><br />Removing via factory reset:</b><br /><br />Press and hold the configuration button. After 3 seconds the LED will start to blink green. After 20 seconds the LED will start blinking green rapidly. You may now release the button. If reset was successful, the LED will light up in solid green for 3 seconds<i>. </i><i>Please use this procedure only when the network primary controller is missing or otherwise inoperable.</i></p> <br /> <h2>Wakeup Information</h2><p><br /></p>
+    ]]></description>
+    <category>Battery</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="sensor_temperature" typeId="sensor_temperature">
+        <label>Sensor (temperature)</label>
+        <properties>
+          <property name="binding:*:QuantityType">COMMAND_CLASS_SENSOR_MULTILEVEL;type=TEMPERATURE</property>
+        </properties>
+      </channel>
+      <channel id="meter_current" typeId="meter_current">
+        <label>Electric meter (amps)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_A</property>
+        </properties>
+      </channel>
+      <channel id="meter_kwh" typeId="meter_kwh">
+        <label>Electric meter (kWh)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_KWh</property>
+        </properties>
+      </channel>
+      <channel id="meter_kvah" typeId="meter_kvah">
+        <label>Electric meter (kVAh)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_KVAh</property>
+        </properties>
+      </channel>
+      <channel id="meter_voltage" typeId="meter_voltage">
+        <label>Electric meter (volts)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_V</property>
+        </properties>
+      </channel>
+      <channel id="meter_watts" typeId="meter_watts">
+        <label>Electric meter (watts)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_W</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">ThermoFloor</property>
+      <property name="modelId">Heatit Z-HAN2</property>
+      <property name="manufacturerId">019B</property>
+      <property name="manufacturerRef">0062:6201</property>
+      <property name="dbReference">1649</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_1_4" type="integer" groupName="configuration">
+        <label>1: Meter report hysteresis for W</label>
+        <default>200</default>
+        <options>
+          <option value="0">Disabled</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_2_2" type="integer" groupName="configuration">
+        <label>2: Meter report hysteresis for V</label>
+        <default>5</default>
+        <options>
+          <option value="0">Disabled</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_3_2" type="integer" groupName="configuration">
+        <label>3: Meter report hysteresis for A</label>
+        <default>20</default>
+        <options>
+          <option value="0">Disabled</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_4_2" type="integer" groupName="configuration">
+        <label>4: Meter report interval for W</label>
+        <default>10</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_5_2" type="integer" groupName="configuration">
+        <label>5: Meter report interval for V and A</label>
+        <default>300</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_6_2" type="integer" groupName="configuration">
+        <label>6: Temperature report interval</label>
+        <default>300</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_7_1" type="integer" groupName="configuration">
+        <label>7: Temperature report hysteresis</label>
+        <description><![CDATA[
+This parameter has 0.5 °C increments<br /> <h1>Overview</h1><p><br /></p>
+        ]]></description>
+        <default>10</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_8_1" type="integer" groupName="configuration">
+        <label>8: Sensor calibration</label>
+        <description>To set a negative value, use 256 and subtract the desired value.</description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_9_4" type="integer" groupName="configuration" readOnly="true">
+        <label>9: Serial</label>
+        <description><![CDATA[
+This parameter is read only.<br /> <h1>Overview</h1><p>First half of the meter point serial number.<br /></p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_10_4" type="integer" groupName="configuration" readOnly="true">
+        <label>10: Number</label>
+        <description><![CDATA[
+This parameter is read only.<br /> <h1>Overview</h1><p>Last half of the meter point serial number.<br /></p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_11_2" type="integer" groupName="configuration">
+        <label>11: Scaling factor</label>
+        <description><![CDATA[
+<br /> <h1>Overview</h1><p>Allows for multiplication of the meter value in case of use with large electrical systems.<br /></p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Lifeline</label>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: Meter Report</label>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

@@ -74,7 +74,9 @@ Motion Sensor<br /> <h1>Overview</h1><p>Detect Motion</p>
 
       <parameter name="config_18_1" type="integer" groupName="configuration">
         <label>18: PIR Timeout Duration</label>
-        <description>PIR Timeout Duration in Minutes</description>
+        <description><![CDATA[
+PIR Timeout Duration in Minutes<br /> <h1>Overview</h1><p><br /></p>
+        ]]></description>
         <default>60</default>
         <options>
           <option value="1">One Minute</option>
@@ -83,6 +85,7 @@ Motion Sensor<br /> <h1>Overview</h1><p>Detect Motion</p>
           <option value="10">Ten Minutes</option>
           <option value="255">Test Mode [5 seconds]</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_20_1" type="integer" groupName="configuration">

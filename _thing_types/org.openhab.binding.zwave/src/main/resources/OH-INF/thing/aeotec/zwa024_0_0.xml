@@ -145,12 +145,12 @@ Motion Report Type<br /> <h1>Overview</h1><p>Set which command class will be sen
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_6_0" type="integer" groupName="configuration">
+      <parameter name="config_6_1" type="integer" groupName="configuration">
         <label>6: Vibration Sensor Enable/Disable</label>
         <description><![CDATA[
 Vibration Sensor Enable/Disable<br /> <h1>Overview</h1><p>Used to enable/disable vibration sensor.</p><p>0 - disable vibration</p><p>1~254 - timeout set in minutes to reset vibration status</p><p>255 - only send vibration triggered, does not timeout</p>
         ]]></description>
-        <default>255</default>
+        <default>-1</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 

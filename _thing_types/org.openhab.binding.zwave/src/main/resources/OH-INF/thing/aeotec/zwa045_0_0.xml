@@ -26,7 +26,7 @@ Motion, light, and temperature sensor<br /> <h1>Overview</h1><p>Aeotec TriSensor
           <property name="binding:*:DecimalType">COMMAND_CLASS_SENSOR_MULTILEVEL;type=LUMINANCE</property>
         </properties>
       </channel>
-      <channel id="alarm_burglar" typeId="alarm_burglar">
+      <channel id="alarm_motion" typeId="alarm_motion">
         <label>Alarm (burglar)</label>
         <properties>
           <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=BURGLAR</property>
@@ -56,7 +56,7 @@ Motion, light, and temperature sensor<br /> <h1>Overview</h1><p>Aeotec TriSensor
       <property name="vendor">Aeotec Limited</property>
       <property name="modelId">ZWA045</property>
       <property name="manufacturerId">0371</property>
-      <property name="manufacturerRef">0002:002D</property>
+      <property name="manufacturerRef">0002:002D,0102:002D,0202:002D,0302:002D</property>
       <property name="dbReference">1637</property>
       <property name="defaultAssociations">1</property>
     </properties>
