@@ -170,6 +170,10 @@ Also notice a line was added to `lightsOut` to delete the entry in the `cache` w
 That will cause the rule to create a new timer the next time the rule runs.
 It could be coded to reuse the Timer instead which is an exercise for the reader.
 
+Another benefit of saving the timer in the `cache` is that it will be cancelled when the last script that references the cache is unloaded or reloaded.
+This will prevent the timer from executing after the original script had been removed or reloaded.
+Care must still be taken within the timer function not to reschedule itself if it has been cancelled.
+
 Save and test that the rule sends the on and off commands as described.
 
 ### But only if: Conditions
