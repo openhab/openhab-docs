@@ -284,8 +284,9 @@ The following devices have been tested by openHAB users with the binding. This l
 | IKEA TRÅDFRI Driver                            | 10W and 30W. Dimmer (1 channel, 0 - 100%)                    |
 | Innr Bulbs                                     | _[<sup>[1]</sup>](#note1)_                                   |
 | Innr SP 120                                    | Smart Plug _[<sup>[1]</sup>](#note1)_                        |
-| LIVARNO Smart Home                             | Lidl Livarno Smart Home Bulbs _[<sup>[4]</sup>](#note4)_     |
 | LEDVANCE/Osram Bulbs                           |                                                              |
+| LEGRAND                                        | Céliane with Netatmo Dimmer switch w/o neutral 067721.       |
+| LIVARNO Smart Home                             | Lidl Livarno Smart Home Bulbs _[<sup>[4]</sup>](#note4)_     |
 | LUMI weather sensor                            | temperature, pressure, humidity sensor                       |
 | Lupus Small Zigbee Temperature Sensor 12314    | Lupus-Electronics Temperature and Humidity sensor            |
 | Neuhaus Lighting Group - NLG-TW light          | Dimmer (1 channel, 0 - 100%), Color Temperature (1 channel, 0 (cold) - 100 (warm))|
@@ -312,6 +313,7 @@ The following devices have been tested by openHAB users with the binding. This l
 | SmartThings Contact Sensor                     | Contact and Temperature sensor                               |
 | SONOFF SNZB-01                                 | Button (On/Off toggle switch) eWeLink WB01                   |
 | SONOFF SNZB-02                                 | Sensor (Temperature, Humidity) eWeLink TH01                  |
+| SONOFF SNZB-02P                                | Sensor (Temperature, Humidity) eWeLink SNZB-02P              |
 | SONOFF SNZB-03                                 | Sensor (Motion Intrusion, Tamper, Low Battery) eWeLink MS01  |
 | SONOFF SNZB-04                                 | Sensor (Contact Portal 1, Tamper, Low Battery) eWeLink DS01  |
 | Telkonet EcoInsight Thermostat                 | Intelligent HVAC Thermostat                                  |
