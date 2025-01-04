@@ -43,7 +43,7 @@ const config: UserConfig<DefaultThemeConfig> = {
 
     ],
     themeConfig: {
-        logo: `/openhab-logo.png`,
+        logo: `/openhab-logo.svg`,
         editLinks: false,
         activeHeaderLinks: false,
         sidebarDepth: 0,
