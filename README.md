@@ -81,33 +81,32 @@ The new build will include all the latest changes in the code repository and in 
 
 ### How to build the documentation locally
 
-It is possible to build a preview version of the documentation on your local machine. The following software is required:
+It is possible to build a preview version of the documentation on your local machine.
+The following software is required:
 
-- [`node =16.20.1`](https://nodejs.org/en)
-- [`ruby >=3.0.2`](https://www.ruby-lang.org/en/)
-- [`Python >= 3.10.12`](https://www.python.org)
+- [`NodeJS = 16.20.1`](https://nodejs.org/en)
+- [`Ruby >= 3.3.2`](https://www.ruby-lang.org/en/)
 
-If you work on multiple node projects [Node Version Manager](https://github.com/nvm-sh/nvm) is recommended in case they use a different version of node.
+We recommend to use [Node Version Manager](https://github.com/nvm-sh/nvm) as well as [Ruby Version Manager](https://rvm.io/) to easily allow using multiple versions of NodeJS and Ruby for multiple projects.
+If you don't do that, you can simply start by only installing the above mentioned versions.
 
-Example:
+When using `nvm` and/or `rvm`, setup the NodeJS and/or Ruby version:
 
-```bash
-$ nvm install 16
-# ...
-$ nvm use 16
-Now using node v16.20.2 (npm v8.19.4)
-$ npm install
-# ...
-$ npm run serve
-# ...
-Serving HTTP on 0.0.0.0 port 8000 (http://0.0.0.0:8000/)
+```shell script
+nvm use
+rvm use
 ```
 
-The local preview is available under the following options
+Next, you can build & serve the documentation preview:
 
-- [http://0.0.0.0:8000/docs](http://0.0.0.0:8000/docs)
-- [http://localhost:8000/docs](http://localhost:8000/docs)
-- [http://[::]/:8000/docs](http://[::]:8000/docs)
+```shell script
+npm run serve-preview
+```
+
+The local preview is available under the following URLs:
+
+- <http://0.0.0.0:8080/docs>
+- <http://localhost:8080/docs>
 
 ![local preview](images/local-docu-preview.png)
 
