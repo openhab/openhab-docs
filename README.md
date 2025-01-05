@@ -115,9 +115,9 @@ The local preview is available under the following URLs:
 - <http://0.0.0.0:8080/docs>
 - <http://localhost:8080/docs>
 
-![local preview](images/local-docu-preview.png)
+This will also allow you to preview how the page renders on different devices using the respective browser tools:
 
-This will also allow you to preview how the page renders on different devices using the respective browser tools.
+![local preview](images/local-docu-preview.png)
 
 ## Documentation Versioning
 
