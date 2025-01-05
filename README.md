@@ -97,6 +97,13 @@ nvm use
 rvm use
 ```
 
+If `nvm` and/or `rvm` complain about the required versions not being installed, you can install them as following:
+
+```shell script
+nvm install 16.20.1
+rvm install ruby-3.3.2
+```
+
 Next, you can build & serve the documentation preview:
 
 ```shell script
