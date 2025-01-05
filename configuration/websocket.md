@@ -14,7 +14,7 @@ All messages on the WebSocket connection are JSON encoded text-messages.
 WebSockets are available on the same ports as the REST API, usually port 8080 for unsecured (ws-protocol) and port 8443 for secured (wss-protocol) connections.
 The connection is established by connecting to `ws[s]://{URL}:{PORT}/ws`.
 
-To prevent unauthorized use of the connection, an access token has to sent with the initial request.
+To prevent unauthorized use of the connection, an access token has to be sent with the initial request.
 There are two options to send the access token:
 
 1. Through the `Sec-WebSocket-Protocol` header:<br>
