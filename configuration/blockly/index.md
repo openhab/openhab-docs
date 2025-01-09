@@ -44,7 +44,7 @@ Important: For Blockly to work, you need to have the [Javascript Scripting Addon
 ### openHAB 3 / openHAB 4  to openHAB 4.3 or Later - Migration
 
 From openHAB 4 onwards, the script engine is GraalJS provided by the [JS Scripting Addon](https://www.openhab.org/addons/automation/jsscripting/), **ECMAScript 2022**, when Blockly creates new scripts.
-OpenHAB versions before 4.3 could use **ECMAScript 2022** or **NashornJS** with **ECMAScript 5.1**, either installed by default or installed through an Addon.
+openHAB versions before 4.3 could use **ECMAScript 2022** or **NashornJS** with **ECMAScript 5.1**, either installed by default or installed through an Addon.
 **NashornJS** is no longer an option with openHAB 4.3 or later. Therefore the generated Blockly code needs to be converted to **ECMAScript 2022**.
 
 Converting is as easy as making sure the [JS Scripting Addon](https://www.openhab.org/addons/automation/jsscripting/) is installed, and opening your Blockly script.
