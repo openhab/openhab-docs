@@ -6,9 +6,9 @@
                       https://openhab.org/schemas/thing-description/v1.0.0">
 
   <thing-type id="technisat_03009497_00_000" listed="false">
-    <label>0300/9497 Dimmer flush mount compatible to Busch-Jaeger</label>
+    <label>0300/9497 Dimmer flush mount compatible to Busch-Jaeger/Merten/Gira</label>
     <description><![CDATA[
-Dimmer flush mount compatible to Busch-Jaeger<br /> <h1>Overview</h1><p>The TechniSat dimmer controls the brightness of a ceiling lamp, for instance, via the rockers. At the same time, the system can also be integrated into a Z-Wave Smart Home system in order to set dazzling lighting accents or to create a special mood with lighting. </p><p>What's more, you can determine how much electricity you use and the dimmer can be integrated into complex schemes in smart home systems. </p><p>The dimmer can be installed in standard flush-mounted boxes (DIN 49073-1)</p> <br /> <h2>Inclusion Information</h2><p>Press the upper position of the left button (T1) 3x within a second.<br /></p> <br /> <h2>Exclusion Information</h2><p>Press and hold the upper position of the left button (T1) for at least 10 seconds when the shutter is in the top position.<br /></p> <br /> <h2>Wakeup Information</h2><p><br /></p>
+Dimmer flush mount compatible to Busch-Jaeger/Merten/Gira<br /> <h1>Overview</h1><p>The TechniSat dimmer controls the brightness of a ceiling lamp, for instance, via the rockers. At the same time, the system can also be integrated into a Z-Wave Smart Home system in order to set dazzling lighting accents or to create a special mood with lighting. </p><p>What's more, you can determine how much electricity you use and the dimmer can be integrated into complex schemes in smart home systems. </p><p>The dimmer can be installed in standard flush-mounted boxes (DIN 49073-1)</p> <br /> <h2>Inclusion Information</h2><p>Press the upper position of the left button (T1) 3x within a second.<br /></p> <br /> <h2>Exclusion Information</h2><p>Press and hold the upper position of the left button (T1) for at least 10 seconds when the shutter is in the top position.<br /></p> <br /> <h2>Wakeup Information</h2><p><br /></p>
     ]]></description>
     <category>WallSwitch</category>
 

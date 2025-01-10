@@ -1,0 +1,467 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="mcohome_mhs314a_00_000" listed="false">
+    <label>MH-S314 Touch Panel Switch (4 buttons)</label>
+    <description><![CDATA[
+Touch Panel Switch (4 buttons)<br /> <h1>Overview</h1><p>Touch Panel Switch is a wall switch with built-in Z-Wave module. It supports basic command class，multi channel command class and multi channel association command class, which can control all associated devices synchronously. This product can be included and operated in any Z-Wave network with other Z-Wave certified devices from any other manufacturers. <br /></p><p>Touch Panel Switch is a wall switch with built-in Z-Wave module. It supports basic command class，multi channel command class and multi channel association command class, which can control all associated devices synchronously. This product can be included and operated in any Z-Wave network with other Z-Wave certified devices from any other manufacturers. <br /></p> <br /> <h2>Inclusion Information</h2><p>Press and hold any key on the panel for 8 seconds, or 3 clicks in quick succession. If inclusion is successful, all INDICATION LEDs on the panel will flash 4 times.<br /></p><p>Press and hold any key on the panel for 8 seconds, or 3 clicks in quick succession. If inclusion is successful, all INDICATION LEDs on the panel will flash 4 times.<br /></p> <br /> <h2>Exclusion Information</h2><p>Press and hold any key on the panel for 8 seconds, or 3 clicks in quick succession. If the exclusion is successful, all INDICATION LEDs on the panel will flash 4 times. The exclusion will delete all association data.<br /></p><p>Press and hold any key on the panel for 8 seconds, or 3 clicks in quick succession. If inclusion is successful, all INDICATION LEDs on the panel will flash 4 times.<br /></p> <br /> <h2>Wakeup Information</h2><p><br /></p><p><br /></p>
+    ]]></description>
+    <category>WallSwitch</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_binary" typeId="switch_binary">
+        <label>Switch</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY</property>
+        </properties>
+      </channel>
+      <channel id="scene_number" typeId="scene_number">
+        <label>Scene Number</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_SCENE_ACTIVATION</property>
+        </properties>
+      </channel>
+      <channel id="scene_number" typeId="scene_number">
+        <label>Scene Number</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_CENTRAL_SCENE</property>
+        </properties>
+      </channel>
+      <channel id="switch_binary1" typeId="switch_binary">
+        <label>Switch 1</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY:1</property>
+        </properties>
+      </channel>
+      <channel id="scene_number1" typeId="scene_number">
+        <label>Scene Number 1</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_SCENE_ACTIVATION:1</property>
+        </properties>
+      </channel>
+      <channel id="switch_binary2" typeId="switch_binary">
+        <label>Switch 2</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY:2</property>
+        </properties>
+      </channel>
+      <channel id="scene_number2" typeId="scene_number">
+        <label>Scene Number 2</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_SCENE_ACTIVATION:2</property>
+        </properties>
+      </channel>
+      <channel id="switch_binary3" typeId="switch_binary">
+        <label>Switch 3</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY:3</property>
+        </properties>
+      </channel>
+      <channel id="scene_number3" typeId="scene_number">
+        <label>Scene Number 3</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_SCENE_ACTIVATION:3</property>
+        </properties>
+      </channel>
+      <channel id="switch_binary4" typeId="switch_binary">
+        <label>Switch 4</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY:4</property>
+        </properties>
+      </channel>
+      <channel id="scene_number4" typeId="scene_number">
+        <label>Scene Number 4</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_SCENE_ACTIVATION:4</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">McoHome Technology Co., Ltd</property>
+      <property name="modelId">MH-S314</property>
+      <property name="manufacturerId">015F</property>
+      <property name="manufacturerRef">7041:7102</property>
+      <property name="dbReference">1643</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_1_1" type="integer" groupName="configuration">
+        <label>1: Save state for power failure</label>
+        <description><![CDATA[
+Switch state saved or not when power failure<br /> <h1>Overview</h1><p>0: not saved, switch will be off when powered again</p><p>1: saved, switch will keep the same state when powered again</p>
+        ]]></description>
+        <default>1</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_2_1" type="integer" groupName="configuration">
+        <label>2: LED Backlit Brightness Level (when output is off)</label>
+        <description><![CDATA[
+LED Backlit Brightness Level (when output is off)<br /> <h1>Overview</h1><p>0: LED disabled</p><p>1-10: Min level - Max level</p>
+        ]]></description>
+        <default>10</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_3_1" type="integer" groupName="configuration">
+        <label>3: LED Backlit Brightness Level (when output is on)</label>
+        <description><![CDATA[
+LED Backlit Brightness Level (when output is on)<br /> <h1>Overview</h1><p>0: LED disabled</p><p>1-10: Min level - Max level</p>
+        ]]></description>
+        <default>10</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_4_1" type="integer" groupName="configuration">
+        <label>4: Disable Local Control</label>
+        <description><![CDATA[
+Disable Local Control<br /> <h1>Overview</h1><p>0: all keys are valid</p><p>1: only Key 1 invalid</p><p>2: only Key 2 invalid</p><p>3: only Key 1 &amp; 2 invalid</p><p>4: only Key 3 invalid</p><p>5: only Key 1 &amp; 3 invalid</p><p>6: only Key 2 &amp; 3 invalid</p><p>7: only Key 4 valid</p><p>8: only Key 4 invalid</p><p>9: only Key 1 &amp; 4 invalid</p><p>10: only Key 2 &amp; 4 invalid</p><p>11: only Key 3 valid</p><p>12: only Key 3 &amp; 4 invalid</p><p>13: only Key 2 valid</p><p>14: only Key 1 valid</p><p>15: all keys are invalid</p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_5_1" type="integer" groupName="configuration">
+        <label>5: Disable Remote Control</label>
+        <description><![CDATA[
+Disable Remote Control<br /> <h1>Overview</h1><p>0: all keys are valid</p><p>1: only Key 1 invalid</p><p>2: only Key 2 invalid</p><p>3: only Key 1 &amp; 2 invalid</p><p>4: only Key 3 invalid</p><p>5: only Key 1 &amp; 3 invalid</p><p>6: only Key 2 &amp; 3 invalid</p><p>7: only Key 4 valid</p><p>8: only Key 4 invalid</p><p>9: only Key 1 &amp; 4 invalid</p><p>10: only Key 2 &amp; 4 invalid</p><p>11: only Key 3 valid</p><p>12: only Key 3 &amp; 4 invalid</p><p>13: only Key 2 valid</p><p>14: only Key 1 valid</p><p>15: all keys are invalid</p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_6_1" type="integer" groupName="configuration">
+        <label>6: Key Mode</label>
+        <description><![CDATA[
+Key Mode<br /> <h1>Overview</h1><p>0: Single click to switch on/off state</p><p>1: Key default as off state, when it is turned on, then it will be turned off automatically after a time period (property 11)</p><p>2: Key default as on state, when it is turned off, then it will be turned on automatically after a time period (property 11)<br /></p><p>3: On while key is pressed, off when key is released</p><p>4: Press and hold &gt;3s to switch on/off state</p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_7_1" type="integer" groupName="configuration">
+        <label>7: Key 1 Mode</label>
+        <description><![CDATA[
+Key 1 Mode<br /> <h1>Overview</h1><p>0: Single click to switch on/off state</p><p>1: Key default as off state, when it is turned on, then it will be turned off automatically after a time period (property 12)</p><p>2: Key default as on state, when it is turned off, then it will be turned on automatically after a time period (property 12)</p><p>3: On while key is pressed, off when key is released</p><p>4: Press and hold &gt;3s to switch on/off state</p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_8_1" type="integer" groupName="configuration">
+        <label>8: Key 2 Mode</label>
+        <description><![CDATA[
+Key 2 Mode<br /> <h1>Overview</h1><p>0: Single click to switch on/off state</p><p>1: Key default as off state, when it is turned on, then it will be turned off automatically after a time period (property 13)</p><p>2: Key default as on state, when it is turned off, then it will be turned on automatically after a time period (property 13)</p><p>3: On while key is pressed, off when key is released</p><p>4: Press and hold &gt;3s to switch on/off state</p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_9_1" type="integer" groupName="configuration">
+        <label>9: Key 3 Mode</label>
+        <description><![CDATA[
+Key 3 Mode<br /> <h1>Overview</h1><p>0: Single click to switch on/off state</p><p>1: Key default as off state, when it is turned on, then it will be turned off automatically after a time period (property 14)</p><p>2: Key default as on state, when it is turned off, then it will be turned on automatically after a time period (property 14)</p><p>3: On while key is pressed, off when key is released</p><p>4: Press and hold &gt;3s to switch on/off state</p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_10_1" type="integer" groupName="configuration">
+        <label>10: Key 4 Mode</label>
+        <description><![CDATA[
+Key 4 Mode<br /> <h1>Overview</h1><p>0: Single click to switch on/off state</p><p>1: Key default as off state, when it is turned on, then it will be turned off automatically after a time period (property 15)</p><p>2: Key default as on state, when it is turned off, then it will be turned on automatically after a time period (property 15)</p><p>3: On while key is pressed, off when key is released</p><p>4: Press and hold &gt;3s to switch on/off state</p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_11_2" type="integer" groupName="configuration">
+        <label>11: On/Off State duration</label>
+        <description><![CDATA[
+On/Off State duration<br /> <h1>Overview</h1><p>0: infinite</p><p>1-32767: number of seconds</p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_12_2" type="integer" groupName="configuration">
+        <label>12: On/Off State Duration For Key 1</label>
+        <description><![CDATA[
+On/Off state duration for key 1<br /> <h1>Overview</h1><p>0: infinite</p><p>1-32767: number of seconds</p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_13_2" type="integer" groupName="configuration">
+        <label>13: On/Off State Duration For Key 2</label>
+        <description><![CDATA[
+On/Off state duration for key 2<br /> <h1>Overview</h1><p>0: infinite</p><p>1-32767: number of seconds</p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_14_2" type="integer" groupName="configuration">
+        <label>14: On/Off State Duration For Key 3</label>
+        <description><![CDATA[
+On/Off state duration for key 3<br /> <h1>Overview</h1><p>0: infinite</p><p>1-32767: number of seconds</p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_15_2" type="integer" groupName="configuration">
+        <label>15: On/Off State Duration For Key 4</label>
+        <description><![CDATA[
+On/Off state duration for key 4<br /> <h1>Overview</h1><p>0: infinite</p><p>1-32767: number of seconds</p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_23_1" type="integer" groupName="configuration">
+        <label>23: Central Scene Activation</label>
+        <description><![CDATA[
+Central Scene Activation<br /> <h1>Overview</h1><p>0: Disabled</p><p>1: Only Key 1 Central Scene function is activated</p><p>2: Only Key 2 Central Scene function is activated</p><p>3: Only Key 1 &amp; 2 Central Scene function is activated</p><p>4: Only Key 3  Central Scene function is activated</p><p>5: Only Key 1 &amp; 3 Central Scene function is activated</p><p>6: Only Key 2 &amp; 3 Central Scene function is activated</p><p>7: Only Key 1 &amp; 2 &amp; 3 Central Scene function is activated</p><p>8: Only Key 4 Central Scene function is activated</p><p>9: Only Key 1 &amp; 4 Central Scene function is activated</p><p>10: Only Key 2 &amp; 4 Central Scene function is activated</p><p>11: Only Key 1 &amp; 2 &amp; 4 Central Scene function is activated</p><p>12: Only Key 3 &amp; 4 Central Scene function is activated</p><p>13: Only Key 1 &amp; 3 &amp; 4 Central Scene function is activated</p><p>14: Only Key 2 &amp; 3 &amp; 4 Central Scene function is activated</p><p>15: All Keys Central Scene function is activated</p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_24_1" type="integer" groupName="configuration">
+        <label>24: Key 1 Scene Activate Mode Setting</label>
+        <description><![CDATA[
+Key 1 Scene Activate Mode Setting<br /> <h1>Overview</h1><p>0: Disabled</p><p>1: One click key 1 always activate scene ID1 no matter what the output state of key 1 is</p><p>2: One click key 1 only activate scene ID1 when key 1's relay output is opened</p><p>3: One click key 1 only activate scene ID1 when key 1's relay output is closed</p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_25_1" type="integer" groupName="configuration">
+        <label>25: Key 1 Activate Scene ID1</label>
+        <description><![CDATA[
+Key 1 Activate Scene ID1<br /> <h1>Overview</h1><p>0: Scene ID is invalid and will not send scene activate command</p><p>1-255: Scene ID</p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_26_1" type="integer" groupName="configuration">
+        <label>26: Key 1 Activate Scene Duration</label>
+        <description><![CDATA[
+Key 1 Scene Activation Delay<br /> <h1>Overview</h1><p>0: Instantly</p><p>1-&gt;127: n seconds delay</p><p>-1 -&gt;-127: (n+128) minutes delay</p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_27_1" type="integer" groupName="configuration">
+        <label>27: Key 2 Scene Activate Mode Setting</label>
+        <description><![CDATA[
+Key 2 Scene Activate Mode Setting<br /> <h1>Overview</h1><p>0: Disabled</p><p>1: One click key 2 always activate scene ID2 no matter what the output state of key 2 is</p><p>2: One click key 2 only activate scene ID2 when key 2's relay output is opened</p><p>3: One click key 2 only activate scene ID2 when key 2's relay output is closed</p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_28_1" type="integer" groupName="configuration">
+        <label>28: Key 2 Activate Scene ID2</label>
+        <description><![CDATA[
+Key 2 Activate Scene ID2<br /> <h1>Overview</h1><p>0: Scene ID is invalid and will not send scene activate command</p><p>1-255: Scene ID</p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_29_1" type="integer" groupName="configuration">
+        <label>29: Key 2 Activate Scene Duration</label>
+        <description><![CDATA[
+Key 2 Scene Activation Delay<br /> <h1>Overview</h1><p>0: Instantly</p><p>1-&gt;127: n seconds delay</p><p>-1 -&gt;-127: (n+128) minutes delay</p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_30_1" type="integer" groupName="configuration">
+        <label>30: Key 3 Scene Activate Mode Setting</label>
+        <description><![CDATA[
+Key 3 Scene Activate Mode Setting<br /> <h1>Overview</h1><p>0: Disabled</p><p>1: One click key 3 always activate scene ID3 no matter what the output state of key 3 is</p><p>2: One click key 3 only activate scene ID3 when key 3's relay output is opened</p><p>3: One click key 3 only activate scene ID3 when key 3's relay output is closed</p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_31_1" type="integer" groupName="configuration">
+        <label>31: Key 3 Activate Scene ID3</label>
+        <description><![CDATA[
+Key 3 Activate Scene ID3<br /> <h1>Overview</h1><p>0: Scene ID is invalid and will not send scene activate command</p><p>1-255: Scene ID</p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_32_1" type="integer" groupName="configuration">
+        <label>32: Key 3 Activate Scene Duration</label>
+        <description><![CDATA[
+Key 3 Scene Activation Delay<br /> <h1>Overview</h1><p>0: Instantly</p><p>1-&gt;127: n seconds delay</p><p>-1 -&gt;-127: (n+128) minutes delay</p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_33_1" type="integer" groupName="configuration">
+        <label>33: Key 4 Scene Activate Mode Setting</label>
+        <description><![CDATA[
+Key 4 Scene Activate Mode Setting<br /> <h1>Overview</h1><p>0: Disabled</p><p>1: One click key 4 always activate scene ID4 no matter what the output state of key 4 is</p><p>2: One click key 4 only activate scene ID4 when key 4's relay output is opened</p><p>3: One click key 4 only activate scene ID4 when key 4's relay output is closed</p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_34_1" type="integer" groupName="configuration">
+        <label>34: Key 4 Activate Scene ID4</label>
+        <description><![CDATA[
+Key 4 Activate Scene ID4<br /> <h1>Overview</h1><p>0: Scene ID is invalid and will not send scene activate command</p><p>1-255: Scene ID</p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_35_1" type="integer" groupName="configuration">
+        <label>35: Key 4 Activate Scene Duration</label>
+        <description><![CDATA[
+Key 4 Scene activation delay<br /> <h1>Overview</h1><p>0: Instantly</p><p>1-&gt;127: n seconds delay</p><p>-1 -&gt;-127: (n+128) minutes delay</p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_50_1" type="integer" groupName="configuration">
+        <label>50: As A Scene Device, Scene Respond (ID1-100)</label>
+        <description><![CDATA[
+As A Scene Device, Scene Respond (ID1-100)<br /> <h1>Overview</h1><p>0: Disabled<br /></p><p>1: Only Key 1 respond scene</p><p>2: Only Key 2 respond scene</p><p>3: Only Key 1 &amp; 2 respond scene</p><p>4: Only Key 3 respond scene</p><p>5: Only Key 1 &amp; 3 respond scene</p><p>6: Only Key 2 &amp; 3 respond scene</p><p>7: Only Key 1 &amp; 2 &amp; 3 respond scene</p><p>8: Only Key 4 respond scene</p><p>9: Only Key 1 &amp; 4 respond scene</p><p>10: Only Key 2 &amp; 4 respond scene</p><p>11: Only Key 1 &amp; 2 &amp; 4 respond scene</p><p>12: Only Key 3 &amp; 4 respond scene</p><p>13: Only Key 1 &amp; 3 &amp; 4 respond scene</p><p>14: Only Key 2 &amp; 3 &amp; 4 respond scene</p><p>15: All Keys respond scene</p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_51_1" type="integer" groupName="configuration">
+        <label>51: As A Scene Device, Scene Respond (ID1-20)</label>
+        <description><![CDATA[
+As A Scene Device, Scene Respond (ID1-20)<br /> <h1>Overview</h1><p>0: Disabled</p><p>1: Only Key 1 respond scene</p><p>2: Only Key 2 respond scene</p><p>3: Only Key 1 &amp; 2 respond scene</p><p>4: Only Key 3 respond scene</p><p>5: Only Key 1 &amp; 3 respond scene</p><p>6: Only Key 2 &amp; 3 respond scene</p><p>7: Only Key 1 &amp; 2 &amp; 3 respond scene</p><p>8: Only Key 4 respond scene</p><p>9: Only Key 1 &amp; 4 respond scene</p><p>10: Only Key 2 &amp; 4 respond scene</p><p>11: Only Key 1 &amp; 2 &amp; 4 respond scene</p><p>12: Only Key 3 &amp; 4 respond scene</p><p>13: Only Key 1 &amp; 3 &amp; 4 respond scene</p><p>14: Only Key 2 &amp; 3 &amp; 4 respond scene</p><p>15: All Keys respond scene</p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_52_1" type="integer" groupName="configuration">
+        <label>52: As A Scene Device, Scene Respond (ID21-40)</label>
+        <description><![CDATA[
+As A Scene Device, Scene Respond (ID21-40)<br /> <h1>Overview</h1><p>0: Disabled</p><p>1: Only Key 1 respond scene</p><p>2: Only Key 2 respond scene</p><p>3: Only Key 1 &amp; 2 respond scene</p><p>4: Only Key 3 respond scene</p><p>5: Only Key 1 &amp; 3 respond scene</p><p>6: Only Key 2 &amp; 3 respond scene</p><p>7: Only Key 1 &amp; 2 &amp; 3 respond scene</p><p>8: Only Key 4 respond scene</p><p>9: Only Key 1 &amp; 4 respond scene</p><p>10: Only Key 2 &amp; 4 respond scene</p><p>11: Only Key 1 &amp; 2 &amp; 4 respond scene</p><p>12: Only Key 3 &amp; 4 respond scene</p><p>13: Only Key 1 &amp; 3 &amp; 4 respond scene</p><p>14: Only Key 2 &amp; 3 &amp; 4 respond scene</p><p>15: All Keys respond scene</p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_53_1" type="integer" groupName="configuration">
+        <label>53: As A Scene Device, Scene Respond (ID41-60)</label>
+        <description><![CDATA[
+As A Scene Device, Scene Respond (ID41-60)<br /> <h1>Overview</h1><p>0: Disabled</p><p>1: Only Key 1 respond scene</p><p>2: Only Key 2 respond scene</p><p>3: Only Key 1 &amp; 2 respond scene</p><p>4: Only Key 3 respond scene</p><p>5: Only Key 1 &amp; 3 respond scene</p><p>6: Only Key 2 &amp; 3 respond scene</p><p>7: Only Key 1 &amp; 2 &amp; 3 respond scene</p><p>8: Only Key 4 respond scene</p><p>9: Only Key 1 &amp; 4 respond scene</p><p>10: Only Key 2 &amp; 4 respond scene</p><p>11: Only Key 1 &amp; 2 &amp; 4 respond scene</p><p>12: Only Key 3 &amp; 4 respond scene</p><p>13: Only Key 1 &amp; 3 &amp; 4 respond scene</p><p>14: Only Key 2 &amp; 3 &amp; 4 respond scene</p><p>15: All Keys respond scene</p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_54_1" type="integer" groupName="configuration">
+        <label>54: As A Scene Device, Scene Respond (ID61-80)</label>
+        <description><![CDATA[
+As A Scene Device, Scene Respond (ID61-80)<br /> <h1>Overview</h1><p>0: Disabled</p><p>1: Only Key 1 respond scene</p><p>2: Only Key 2 respond scene</p><p>3: Only Key 1 &amp; 2 respond scene</p><p>4: Only Key 3 respond scene</p><p>5: Only Key 1 &amp; 3 respond scene</p><p>6: Only Key 2 &amp; 3 respond scene</p><p>7: Only Key 1 &amp; 2 &amp; 3 respond scene</p><p>8: Only Key 4 respond scene</p><p>9: Only Key 1 &amp; 4 respond scene</p><p>10: Only Key 2 &amp; 4 respond scene</p><p>11: Only Key 1 &amp; 2 &amp; 4 respond scene</p><p>12: Only Key 3 &amp; 4 respond scene</p><p>13: Only Key 1 &amp; 3 &amp; 4 respond scene</p><p>14: Only Key 2 &amp; 3 &amp; 4 respond scene</p><p>15: All Keys respond scene</p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_55_1" type="integer" groupName="configuration">
+        <label>55: As A Scene Device, Scene Respond (ID81-100)</label>
+        <description><![CDATA[
+As A Scene Device, Scene Respond (ID81-100)<br /> <h1>Overview</h1><p>0: Disabled</p><p>1: Only Key 1 respond scene</p><p>2: Only Key 2 respond scene</p><p>3: Only Key 1 &amp; 2 respond scene</p><p>4: Only Key 3 respond scene</p><p>5: Only Key 1 &amp; 3 respond scene</p><p>6: Only Key 2 &amp; 3 respond scene</p><p>7: Only Key 1 &amp; 2 &amp; 3 respond scene</p><p>8: Only Key 4 respond scene</p><p>9: Only Key 1 &amp; 4 respond scene</p><p>10: Only Key 2 &amp; 4 respond scene</p><p>11: Only Key 1 &amp; 2 &amp; 4 respond scene</p><p>12: Only Key 3 &amp; 4 respond scene</p><p>13: Only Key 1 &amp; 3 &amp; 4 respond scene</p><p>14: Only Key 2 &amp; 3 &amp; 4 respond scene</p><p>15: All Keys respond scene</p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_255_1" type="integer" groupName="configuration">
+        <label>255: Factory Setting</label>
+        <description><![CDATA[
+Factory Setting<br /> <h1>Overview</h1><p>85: Restore Factory Setting</p>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: All status reports</label>
+        <description><![CDATA[
+All status reports<br /> <h1>Overview</h1><p><br /></p>
+        ]]></description>
+        <multipleLimit>1</multipleLimit>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: Switch button group 1</label>
+        <description>Switch button group 1</description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_3" type="text" groupName="association" multiple="true">
+        <label>3: Switch button group 2</label>
+        <description>Switch button group 2</description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_4" type="text" groupName="association" multiple="true">
+        <label>4: Switch button group 3</label>
+        <description>Switch button group 3</description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_5" type="text" groupName="association" multiple="true">
+        <label>5: Switch button group 4</label>
+        <description>Switch button group 4</description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>
