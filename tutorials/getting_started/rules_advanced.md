@@ -16,18 +16,17 @@ For what ever reason, openHAB has you covered with text based Script Actions and
 openHAB supports a growing list of programming languages in which rules can be written.
 openHAB comes with the following languages to choose from:
 
-| Language                                                                 | Details                                                                                                                                                                                                                                             | Intended Audience                                                                                                    |
-|--------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------|
-| [Blockly]({{base}}/configuration/blockly/)           | See the previous page                                                                                                                                                                                                                               | Non-developers                                                                                                       |
-| [Rules DSL]({{base}}/configuration/rules-dsl.html)   | A programming language developed specifically for openHAB based on the Xtend.                                                                                                                                                                       | Long time openHAB users                                                                                              |
-| [ECMAScript 5.1]({{base}}/configuration/jsr223.html) | An older version of JavaScript built into Java Virtual Machine 14 and before. It's the language Blockly "compiles" into which can be a powerful learning tool (i.e. build a rule in Blockly and examine the code it generates to see how it works). | Not recommended for use, will go away at sometime soon (Blockly will be updated at that time to use an alternative). |
+| Language                                           | Details                                                                                                       | Intended Audience       |
+| -------------------------------------------------- | ------------------------------------------------------------------------------------------------------------- | ----------------------- |
+| [Blockly]({{base}}/configuration/blockly/)         | See the previous page                                                                                         | Non-developers          |
+| [Rules DSL]({{base}}/configuration/rules-dsl.html) | A programming language developed specifically for openHAB based on [Xtend](https://eclipse.dev/Xtext/xtend/). | Long time openHAB users |
 
 In addition to these default choices, one can install a number of different languages as an Automation add-on.
-Such diverse languages as Python, Ruby, Groovy, Java, and more are available with more to come.
+Such diverse languages as [JavaScript](/addons/automation/jsscripting/), [Ruby](/addons/automation/jrubyscripting), [Python](/addons/automation/jythonscripting/), [Groovy](/addons/automation/groovyscripting/), Java, and more are available with more to come.
 See the add-on docs for the reference guide and specific information for how to use each individual add-on.
 Take note, not all automation add-ons support writing rules in the UI.
 
-For the rest of this tutorial we will use the [JavaScript Scripting add-on](/addons/automation/jsscripting/) which implements ECMAScript 2021 for Script Actions and Script Conditions in UI rules.
+For the rest of this tutorial we will show how to use the [JavaScript Scripting add-on](/addons/automation/jsscripting/) which implements ECMAScript 2021, and [JRuby Scripting add-on](/addons/automation/jrubyscripting) for Script Actions and Script Conditions in UI rules.
 See the add-on's reference for how to write rules in text files which is outside the scope of this tutorial.
 
 ## Installation
@@ -52,8 +51,27 @@ These libraries come in various forms and are installed in different ways but th
 - abstract some of the sometimes verbose series of steps requires to do something (e.g. access an Item's metadata) into a single function call.
 
 See the automation add-on's reference for how to access and install the Helper Library for your language of choice.
+
+:::: tabs
+
+::: tab JS
+
 In the case of JavaScript Scripting, the Helper Library comes with the add-on (nothing to install separately) and it is automatically imported into your rules for you (advanced users can turn off that auto import in MainUI Settings -> JS Scripting).
 To get the latest version of the Helper Library instead of waiting for the next release of OH, it can be installed using `npm`.
+
+:::
+
+::: tab JRuby
+
+The Ruby scripting is implemented using JRuby Scripting add-on.
+It will install its helper library by default, and it is automatically imported into your rules.
+This can be configured or disabled in Main UI Settings -> JRuby Scripting.
+Additional Ruby Gems can be installed by specifying them in the `gems` configuration.
+
+:::
+
+::::
+
 Again, see the add-on's reference for details.
 
 ## Creating a Rule
@@ -76,26 +94,51 @@ We will use the same trigger from the Blockly tutorial.
 
 ### Then: Actions
 
-Just like in Blockly, we will create a new Action but instead of choosing Blockly, we will choose ECMAScript 2021.
+Just like in Blockly, we will create a new Action but instead of choosing Blockly, we will choose `ECMAScript` or `Ruby`.
 
 ![select language](images/rules-advanced-select-lang.png)
 
 This will open a blank text field where you can start typing your code.
 This text field provides text highlighting and some code completion which helps with coding.
 
+As with the Blockly example, we want to start the rule using a log statement we can see in openhab.log when the rule runs.
+
+:::: tabs
+
+::: tab JS
+
 As previously mentioned, the Helper Library for this language comes with the add-on and is imported by default, so see the [JavaScript Scripting add-on's reference](/addons/automation/jsscripting/) for the full guide on how to do anything you might want to do.
 For help with general JavaScript coding, there are tons of tutorials and reference documents on the web a search away.
 
-As with the Blockly example, we want to start the rule using a log statement we can see in openhab.log when the rule runs.
 One can either use the [log actions](/addons/automation/jsscripting/#log) but most will find it easiest to use the more JavaScript native [`console`](/addons/automation/jsscripting/#console).
 
 ```javascript
 console.info('Motion was detected');
 ```
 
+:::
+
+::: tab JRuby
+
+If you are new to Ruby, check out [Ruby Basics](https://openhab.github.io/openhab-jruby/main/file.ruby-basics.html) for a quick overview of the language.
+The Ruby language and the [JRuby Helper Library](https://openhab.github.io/openhab-jruby/) offers a streamlined syntax for writing file-based and UI-based rules, making it easier and more intuitive than RulesDSL, while delivering the full features of the Ruby language.
+
+```ruby
+logger.info "Motion was detected"
+```
+
+:::
+
+::::
+
 Save and test the rule by running it manually and verify you see this statement in the logs.
 
-Next we want to `sendCommand` to the light to turn it on.
+Next we want to send a command to the light to turn it on.
+
+:::: tabs
+
+::: tab JS
+
 Reading the docs we see that access to the Item registry is provided through [`Items`](/addons/automation/jsscripting/#items) where we can get access to a JavaScript Object that represents the Item.
 This Object has a `sendCommand()` function that takes the command.
 
@@ -104,9 +147,36 @@ console.info('Motion was detected');
 items.getItem('FrontPorchLight').sendCommand('ON');
 ```
 
+:::
+
+::: tab JRuby
+
+In JRuby, openHAB Items are represented directly by their names.
+You can also access them through the [items](https://openhab.github.io/openhab-jruby/main/OpenHAB/DSL.html#items-class_method) registry so you can find them using a string.
+The Item object has a generic [#command](https://openhab.github.io/openhab-jruby/main/OpenHAB/Core/Items/GenericItem.html#command-instance_method) method and also command methods specific for each item type in openHAB.
+
+```ruby
+logger.info "Motion was detected"
+FrontPorchLight.on # this sends the ON command to the Item
+
+# The following lines do the same thing
+# FrontPorchLight.command ON
+# items["FrontPorchLight"].on
+# items["FrontPorchLight"].comand ON
+```
+
+:::
+
+::::
+
 Save and test and verify you see the log statement and the Item receive an ON command.
 
 Now we want to create a Timer to go off in 30 minutes.
+
+:::: tabs
+
+::: tab JS
+
 We find the Timer creation documented under [ScriptExecution](/addons/automation/jsscripting/#scriptexecution-actions).
 A Timer will execute a block of code passed to it as the second argument at the time specified by the first argument.
 
@@ -137,10 +207,37 @@ var lightsOut = function() {
 actions.ScriptExecution.createTimer(time.ZonedDateTime.now().plusMinutes(30), lightsOut);
 ```
 
+:::
+
+::: tab JRuby
+
+Timers are created by calling the [after](https://openhab.github.io/openhab-jruby/main/OpenHAB/DSL.html#after-class_method) method.
+It accepts a [Duration](https://openhab.github.io/openhab-jruby/main/OpenHAB/CoreExt/Java/Duration.html), a Ruby [Time](https://docs.ruby-lang.org/en/master/Time.htmll), or a java [ZonedDateTime](https://openhab.github.io/openhab-jruby/main/OpenHAB/CoreExt/Java/ZonedDateTime.html) object to specify when the timer should execute.
+Most of the time, a Duration is used, and the helper library offers a [convenient syntax](https://openhab.github.io/openhab-jruby/main/index.html#durations), e.g. `30.minutes`, to create a Duration object.
+
+```ruby
+logger.info "Motion was detected"
+FrontPorchLight.on
+
+after 30.minutes do
+  logger.info "No more motion, turning off the light"
+  FrontPorchLight.off
+end
+```
+
+:::
+
+::::
+
 Save and test that you see the log statement and the Item receive the `ON` command and 30 minutes later the second log statement and the `OFF` command.
 (hint, change the time passed to the timer to something smaller to make testing easier then change it back once things are working).
 
 Now all we are lacking is the ability to reschedule that timer if motion is seen again in the 30 minute period.
+
+:::: tabs
+
+::: tab JS
+
 Looking back at the docs we find the [cache](/addons/automation/jsscripting/#cache).
 This is a map of key/value pairs that exists outside of the rule.
 Given that position it is able to share data between different rules or between runs of the same rule.
@@ -174,18 +271,51 @@ Another benefit of saving the timer in the `cache` is that it will be cancelled 
 This will prevent the timer from executing after the original script had been removed or reloaded.
 Care must still be taken within the timer function not to reschedule itself if it has been cancelled.
 
+:::
+
+::: tab JRuby
+
+In JRuby, an easy way to reschedule the same timer is done by providing a unique `id` to the timer.
+This is called a [reentrant timer](https://openhab.github.io/openhab-jruby/main/OpenHAB/DSL.html#reentrant-timers).
+
+The most convenient ID to use is the Item object for which the timer is operating, but you can use anything as the ID, e.g. a String, a number, the rule uid, etc.
+
+```ruby
+logger.info "Motion was detected"
+FrontPorchLight.on
+
+after 30.minutes, id: FrontPorchLight do |timer|
+  logger.info "No more motion, turning off the light"
+  timer.id.off # We can do this because the Timer's id was set to the item object
+               # It is the same as FrontPorchLight.off
+end
+```
+
+While it may seem straightforward, the JRuby helper library manages the timer and rescheduling internally to reduce the need for repetitive code.
+Full flexibility to work and manipulate the timer is available for more advanced use.
+
+:::
+
+::::
+
 Save and test that the rule sends the on and off commands as described.
 
 ### But only if: Conditions
 
 Now we want the rule to only execute between sunset and 23:00.
-Create a new Condition and choose ECMAScript 2021 as the language.
+Create a new Condition and choose `ECMAScript` or `Ruby` as the language.
+This doesn't have to be the same language as the one chosen for the Script Action above.
 Just like with the Script Action, the Helper Library is available by default.
 
 As discussed in the Blockly tutorial, the last line of a condition must evaluate to `true` or `false`.
 When `true` the rule will run, otherwise it's skipped.
 
 Sunset is available in an Item called `Sunset` and we need to test to see if `now` is between then and `23:00`.
+
+:::: tabs
+
+::: tab JS
+
 In order to do that we need to convert the `Sunset` state to a JS-Joda date time.
 
 Looking at the docs for [`Item`](/addons/automation/jsscripting/#items) we see that the Helper Library `Item` Class will return the String representation of the Item's state by default.
@@ -211,6 +341,30 @@ var endTime = time.ZonedDateTime.now().withHour(23).withMinute(0).withSecond(0).
 now.isAfter(sunset) && now.isBefore(endTime)
 ```
 
+:::
+
+::: tab JRuby
+
+```ruby
+Time.now.between? Sunset.state.to_s.."23:00"
+
+# Alternative code:
+# ZonedDateTime.now.between? Sunset.state.to_s.."23:00"
+# Time.now.between? Sunset.state, Time.parse("23:00") # Two arguments of date/time objects
+# Time.now >= Sunset.state && Time.now <= Time.parse("23:00")
+# etc.
+```
+
+[#between?](https://openhab.github.io/openhab-jruby/main/OpenHAB/CoreExt/Between.html#between%3F-instance_method) helper method is available on all Ruby and Java date, time, and Duration objects.
+It takes a Ruby [Range](https://docs.ruby-lang.org/en/master/Range.html) as its argument, or two Date/Time objects to perform an inclusive range comparison.
+
+Note that in JRuby, Date/Time and also DateTimeType objects (in the above example, the item's state) can all work interchangeably without any explicit conversions.
+See [Working with Time](https://openhab.github.io/openhab-jruby/main/index.html#time) for more details.
+
+:::
+
+::::
+
 ## Advanced Topics
 
 ### Libraries
@@ -218,6 +372,10 @@ now.isAfter(sunset) && now.isBefore(endTime)
 Most of the languages support installation and importing of third party libraries.
 Many of the languages will have special tools to download and install these libraries and there might be extra requirements to use them in openHAB.
 See the add-on's docs and the forum for details on the automation add-on chosen.
+
+:::: tabs
+
+::: tab JS
 
 For JS Scripting, `npm` is supported for the installation of third party libraries.
 Run the `npm` command from the `$OH_CONF/automation/js` folder.
@@ -233,6 +391,52 @@ That keeps it from being modified or overwritten by `npm` when upgrading or inst
 
 There are several third party openHAB specific libraries on `npm` already.
 Search the forum for details.
+
+:::
+
+::: tab JRuby
+
+You can install JRuby-compatible Gems from [rubygems.org](https://rubygems.org) by listing them in the JRuby Script add-on [configurations](https://openhab.github.io/openhab-jruby/main/index.html#configuration).
+Alternatively, the inline bundler is available from inside your script.
+
+```ruby
+gemfile do
+  source "https://rubygems.org"
+  gem "faraday", "~> 2.12", ">= 2.12.2"
+end
+```
+
+[Personal libraries](https://openhab.github.io/openhab-jruby/main/index.html#shared-code) that contain your custom reusable constants, functions, data structures, and classes can be created and used inside your Script Actions and Conditions.
+Simply save a `.rb` file that contain your code in `$OH_CONF/automation/ruby/lib/` folder, then `require` it in your script.
+
+For example, a personal library file in `$OH_CONF/automation/ruby/lib/mylibs.rb`:
+
+```ruby
+DESTINATION_EMAIL = "myemail@gmail.com"
+
+def broadcast_alert(msg)
+  Notification.send msg, title: "Alert!"
+  things["mail:smtp:local"].send_mail(DESTINATION_EMAIL, "OpenHAB Alert", msg)
+end
+```
+
+Usage in Script Action:
+
+```ruby
+require "mylibs"
+
+if event.open?
+  after 30.minutes, id: event.item do
+    broadcast_alert "The Garage Door has been left open!"
+  end
+else
+  timers.cancel(event.item)
+end
+```
+
+:::
+
+::::
 
 ### Debugging
 
