@@ -63,10 +63,9 @@ To get the latest version of the Helper Library instead of waiting for the next 
 
 ::: tab JRuby
 
-The Ruby scripting is implemented using JRuby Scripting add-on.
+Ruby scripting is implemented using the JRuby Scripting add-on.
 It will install its helper library by default, and it is automatically imported into your rules.
-This can be configured or disabled in Main UI Settings -> JRuby Scripting.
-Additional Ruby Gems can be installed by specifying them in the `gems` configuration.
+The specific version used, along with any additional Ruby Gems, can be configured in Main UI Settings -> JRuby Scripting by modifying the `gems` setting.
 
 :::
 
@@ -121,7 +120,7 @@ console.info('Motion was detected');
 ::: tab JRuby
 
 If you are new to Ruby, check out [Ruby Basics](https://openhab.github.io/openhab-jruby/main/file.ruby-basics.html) for a quick overview of the language.
-The Ruby language and the [JRuby Helper Library](https://openhab.github.io/openhab-jruby/) offers a streamlined syntax for writing file-based and UI-based rules, making it easier and more intuitive than RulesDSL, while delivering the full features of the Ruby language.
+The Ruby language and the [JRuby Helper Library](https://openhab.github.io/openhab-jruby/) offers a streamlined syntax for writing file-based and UI-based rules, making it easy and intuitive to work with openHAB constructs, while also delivering the full features of the Ruby language.
 
 ```ruby
 logger.info "Motion was detected"
@@ -162,7 +161,7 @@ FrontPorchLight.on # this sends the ON command to the Item
 # The following lines do the same thing
 # FrontPorchLight.command ON
 # items["FrontPorchLight"].on
-# items["FrontPorchLight"].comand ON
+# items["FrontPorchLight"].command ON
 ```
 
 :::
@@ -350,15 +349,15 @@ Time.now.between? Sunset.state.to_s.."23:00"
 
 # Alternative code:
 # ZonedDateTime.now.between? Sunset.state.to_s.."23:00"
-# Time.now.between? Sunset.state, Time.parse("23:00") # Two arguments of date/time objects
+# Time.now.between?(Sunset.state, Time.parse("23:00")) # Two arguments of different date/time types, but they are compatible
 # Time.now >= Sunset.state && Time.now <= Time.parse("23:00")
 # etc.
 ```
 
-[#between?](https://openhab.github.io/openhab-jruby/main/OpenHAB/CoreExt/Between.html#between%3F-instance_method) helper method is available on all Ruby and Java date, time, and Duration objects.
-It takes a Ruby [Range](https://docs.ruby-lang.org/en/master/Range.html) as its argument, or two Date/Time objects to perform an inclusive range comparison.
+The [#between?](https://openhab.github.io/openhab-jruby/main/OpenHAB/CoreExt/Between.html#between%3F-instance_method) helper method is available on all Ruby and Java time types.
+It takes a Ruby [Range](https://docs.ruby-lang.org/en/master/Range.html) as its argument, or two time types to perform an inclusive range comparison.
 
-Note that in JRuby, Date/Time and also DateTimeType objects (in the above example, the item's state) can all work interchangeably without any explicit conversions.
+Note that in JRuby, Ruby Time, Java ZonedDateTime and Instant, openHAB DateTimeType type (in the above example, the item's state), and several other time related types can all work interchangeably without any explicit conversions.
 See [Working with Time](https://openhab.github.io/openhab-jruby/main/index.html#time) for more details.
 
 :::
@@ -397,7 +396,7 @@ Search the forum for details.
 ::: tab JRuby
 
 You can install JRuby-compatible Gems from [rubygems.org](https://rubygems.org) by listing them in the JRuby Script add-on [configurations](https://openhab.github.io/openhab-jruby/main/index.html#configuration).
-Alternatively, the inline bundler is available from inside your script.
+Alternatively, [inline Bundler](https://bundler.io/guides/bundler_in_a_single_file_ruby_script.html) is available from inside your script.
 
 ```ruby
 gemfile do
