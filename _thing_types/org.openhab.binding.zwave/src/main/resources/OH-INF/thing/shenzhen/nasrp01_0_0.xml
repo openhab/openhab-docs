@@ -33,7 +33,7 @@ Neo Coolcam Repeater<br /> <h1>Overview</h1><p>Neo Coolcam repeater is a Z-Wave 
       <property name="vendor">Shenzhen Neo Electronics Co., Ltd</property>
       <property name="modelId">NAS-RP01</property>
       <property name="manufacturerId">0258</property>
-      <property name="manufacturerRef">0010:0722</property>
+      <property name="manufacturerRef">0010:0716,0010:0722</property>
       <property name="dbReference">1544</property>
     </properties>
 

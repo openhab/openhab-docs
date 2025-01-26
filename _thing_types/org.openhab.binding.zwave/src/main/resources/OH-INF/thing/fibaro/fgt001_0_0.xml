@@ -38,7 +38,7 @@ Thermostatic Valve<br /> <h1>Overview</h1><p>FIBARO Heat Controller is a remotel
           <property name="binding:*:QuantityType">COMMAND_CLASS_THERMOSTAT_SETPOINT;type=HEATING</property>
         </properties>
       </channel>
-      <channel id="alarm_power" typeId="alarm_power">
+      <channel id="alarm_battery" typeId="alarm_battery">
         <label>Alarm (power)</label>
         <properties>
           <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=POWER_MANAGEMENT</property>
@@ -73,7 +73,7 @@ Thermostatic Valve<br /> <h1>Overview</h1><p>FIBARO Heat Controller is a remotel
           <property name="binding:*:QuantityType">COMMAND_CLASS_THERMOSTAT_SETPOINT:1;type=HEATING</property>
         </properties>
       </channel>
-      <channel id="alarm_power1" typeId="alarm_power">
+      <channel id="alarm_battery1" typeId="alarm_battery">
         <label>Alarm (power) 1</label>
         <properties>
           <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM:1;type=POWER_MANAGEMENT</property>
@@ -103,7 +103,7 @@ Thermostatic Valve<br /> <h1>Overview</h1><p>FIBARO Heat Controller is a remotel
           <property name="binding:*:QuantityType">COMMAND_CLASS_SENSOR_MULTILEVEL:2;type=TEMPERATURE</property>
         </properties>
       </channel>
-      <channel id="alarm_power2" typeId="alarm_power">
+      <channel id="alarm_battery2" typeId="alarm_battery">
         <label>Alarm (power) 2</label>
         <properties>
           <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM:2;type=POWER_MANAGEMENT</property>
