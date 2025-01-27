@@ -50,7 +50,14 @@ module.exports = [
       ['installation/linux', 'Linux'],
       ['installation/windows', 'Windows'],
       ['installation/macos', 'macOS'],
-      'installation/openhabian',
+      { title: 'openHABian',
+        childeren: [
+          'installation/openhabian',
+          'installation/openhabian-troubleshooting',
+          'installation/openhabian-backup',
+          'installation/openhabian-exim',
+        ]
+      },
       'installation/armbian',
       'installation/docker',
       'installation/synology',
