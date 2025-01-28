@@ -141,7 +141,7 @@ The following channels are available:
 
 ## Full Example
 
-nuvo.things:
+### `nuvo.things` Example
 
 ```java
 // serial port connection
@@ -155,7 +155,7 @@ nuvo:amplifier:myamp "Nuvo WHA" [ host="192.168.0.10", port=5006, numZones=6, cl
 
 ```
 
-nuvo.items:
+### `nuvo.items` Example
 
 ```java
 // system
@@ -257,7 +257,7 @@ String nuvo_s6_button_press "Button: [%s]" { channel="nuvo:amplifier:myamp:sourc
 
 ```
 
-nuvo.sitemap:
+### `nuvo.sitemap` Example
 
 ```perl
 sitemap nuvo label="Audio Control" {
@@ -362,7 +362,7 @@ sitemap nuvo label="Audio Control" {
 
 ```
 
-nuvo.rules:
+### `nuvo.rules` Example
 
 ```java
 import java.text.Normalizer
@@ -521,7 +521,7 @@ Also if a menu item from a custom menu was selected, ie: `Top menu 1` on Zone 5,
 
 The functionality can be used to create very powerful rules as demontrated below. The following rule triggered from a menu item turns off all zones except for the zone that triggered the rule.
 
-nuvo-turn-off-all-but-caller.rules:
+#### `nuvo-turn-off-all-but-caller.rules` Example
 
 ```java
 rule "Turn off all zones except caller zone"
@@ -562,7 +562,7 @@ By using these rules, it is possible to have artist, album and track names displ
 Global Favorites selection and Menu selections from the custom menus described above are also processed by these rules.
 The list of favorite names should be playable via another thing connected to openHAB and this thing should have a means to accept a text string that tells it to play a particular favorite/playlist.
 
-nuvo-advanced.rules:
+#### `nuvo-advanced.rules.rules` Example
 
 ```java
 import java.text.Normalizer
