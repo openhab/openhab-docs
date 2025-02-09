@@ -3,12 +3,13 @@ layout: documentation
 title: NGINX Reverse Proxy
 ---
 
+# NGINX Reverse Proxy
 
 These are the steps required to use [**NGINX**](https://nginx.org), a lightweight HTTP server, although you can use [**Apache**](reverse-proxy-apache) server or any other HTTP server which supports reverse proxying.
 
 [[toc]]
 
-# Installation
+## Installation
 
 NGINX runs as a service in most Linux distributions, installation should be as simple as:
 
@@ -19,7 +20,7 @@ sudo apt-get update && sudo apt-get install nginx
 Once installed, you can test to see if the service is running correctly by going to `http://mydomain_or_myip`, you should see the default "Welcome to nginx" page.
 If you don't, you may need to check your firewall or ports and check if port 80 (and 443 for HTTPS later) is not blocked and that services can use it.
 
-# Basic Configuration
+## Basic Configuration
 
 NGINX configures the server when it starts up based on configuration files.
 The location of the default setup is `/etc/nginx/sites-enabled/default`. To allow NGINX to proxy openHAB, you need to change this file (make a backup of it in a different folder first).
@@ -72,12 +73,12 @@ sudo service nginx restart
 
 ...and then go to `http://mydomain_or_myip` to see your openHAB server.
 
-# Authentication
+## Authentication
 
 For further security, you may wish to ask for a **username and password** before users have access to openHAB.
 This is fairly simple in NGINX once you have the reverse proxy setup, you just need to provide the server with a basic authentication user file.
 
-## Adding or Removing users
+### Adding or Removing users
 
 You will be using _htpasswd_ to generate a username/password file, this utility can be found in the apache2-utils package:
 
@@ -103,7 +104,7 @@ sudo htpasswd -D /etc/nginx/.htpasswd username
 
 Once again, any changes you make to these files **must be followed with restarting the NGINX service** otherwise no changes will be made.
 
-## Referencing the File in the NGINX Configuration
+### Referencing the File in the NGINX Configuration
 
 Now the configuration file (`/etc/nginx/sites-enabled/openhab`) needs to be edited to use this password.
 Open the configuration file and **add** the following lines underneath the proxy_* settings:
@@ -113,7 +114,7 @@ Open the configuration file and **add** the following lines underneath the proxy
     auth_basic_user_file                  /etc/nginx/.htpasswd;
 ```
 
-## Add authorization and cookie directives in NGINX Configuration
+### Add authorization and cookie directives in NGINX Configuration
 
 This is an important new requirement in openHAB 3.0 and later versions.
 This is not required prior to openHAB 3.0. You must add the following two directives underneath the `add_header` (in the `server` block) and `proxy_set_header` (in the `location /` block) items respectively:
@@ -125,12 +126,12 @@ This is not required prior to openHAB 3.0. You must add the following two direct
 
 Once done, **test and restart your NGINX service** and authentication should now be enabled on your server!
 
-## Use a client certificate based authentication
+### Use a client certificate based authentication
 
 You can find a short tutorial in the community forum on how to do so.
 [Using NGINX Reverse Proxy for client certificate authentication](https://community.openhab.org/t/using-nginx-reverse-proxy-for-client-certificate-authentication-start-discussion/43064)
 
-## Making Exceptions for Specific IP addresses
+### Making Exceptions for Specific IP addresses
 
 It is often desirable to allow specific IPs (e.g. the local network) to access openHAB without needing to prompt for a password or to block everyone else entirely.
 In these cases NGINX can use the `satisfy any` directive followed by `allow` and `deny` lines to make these exceptions.
@@ -146,7 +147,7 @@ These lines are placed in the `location{}` block. For example, by adding the lin
 NGINX will allow anyone within the 192.168.0.0/24 range **and** the localhost to connect without a password.
 If you have setup a password following the previous section, then the rest will be prompted for a password for access.
 
-# Setting up a Domain
+## Setting up a Domain
 
 To generate a trusted certificate, you need to own a domain. To acquire your own domain, you can use one of the following methods:
 
@@ -156,7 +157,7 @@ To generate a trusted certificate, you need to own a domain. To acquire your own
 | Obtaining a free domain       | [FreeNom](https://www.freenom.com)                                                                                                             | Setup is the same as above.                                                                                                                                                   |
 | Using a "Dynamic DNS" service | [No-IP](https://www.noip.com), [Dyn](https://www.dyn.com/dns), [FreeDNS](https://freedns.afraid.org)                                           | Uses a client to automatically update your IP to a domain of you choice, some Dynamic DNS services (like FreeDNS) offer a free domain too.                                    |
 
-# Enabling HTTPS
+## Enabling HTTPS
 
 Encrypting the communication between client and the server is important because it protects against eavesdropping and possible forgery.
 The following options are available depending if you have a valid domain:
@@ -164,7 +165,7 @@ The following options are available depending if you have a valid domain:
 If you have a **valid domain and can change the DNS** to point towards your IP, follow the [instructions for Let's Encrypt](#using-lets-encrypt-to-generate-trusted-certificates).
 If you need to use an internal or external IP to connect to openHAB, follow the [instructions for OpenSSL](#using-openssl-to-generate-self-signed-certificates).
 
-## Using OpenSSL to Generate Self-Signed Certificates
+### Using OpenSSL to Generate Self-Signed Certificates
 
 OpenSSL is also packaged for most Linux distributions, installing it should be as simple as:
 
@@ -187,7 +188,7 @@ sudo openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /etc/ssl/openha
 You will be prompted for some information which you will need to fill out for the certificate, when it asks for a **Common Name**, you may enter your IP Address:
 Common Name (e.g. server FQDN or YOUR name) []: xx.xx.xx.xx
 
-## Using Let's Encrypt to Generate Trusted Certificates
+### Using Let's Encrypt to Generate Trusted Certificates
 
 ::: tip
 Skip this step if you have no domain name or have already followed the instructions for OpenSSL
@@ -195,7 +196,7 @@ Skip this step if you have no domain name or have already followed the instructi
 
 Let's Encrypt is a service that allows anyone with a valid domain to automatically generate a trusted certificate, these certificates are usually accepted by a browser without any warnings.
 
-### Setting up the NGINX Proxy Server to Handle the Certificate Generation Procedure
+#### Setting up the NGINX Proxy Server to Handle the Certificate Generation Procedure
 
 Let's Encrypt needs to validate that the server has control of the domain.
 The simplest way of doing this is using a **webroot plugin** to place a file on the server, and then access it using a specific url: _/.well-known/acme-challenge_.
@@ -215,7 +216,7 @@ Next add the new location parameter to your NGINX config, this should be **place
   }
 ```
 
-### Using Certbot
+#### Using Certbot
 
 Certbot is a tool which simplifies the process of obtaining secure certificates.
 The tool may not be packaged for some Linux distributions so installation instructions may vary, check out [their website](https://certbot.eff.org/) and follow the instructions **using the webroot mode**.
@@ -225,7 +226,7 @@ Don't forget to change the example domain to your own! An example of a valid cer
 sudo certbot certonly --webroot -w /var/www/mydomain -d mydomain
 ```
 
-## Adding the Certificates to Your Proxy Server
+### Adding the Certificates to Your Proxy Server
 
 If you followed one of the two guides for OpenSSL or Let's Encrypt above, the certificate and key should have been placed in `/etc/letsencrypt/live/mydomain_or_myip/` or `/etc/ssl/` respectively.
 NGINX needs to be told where these files are and then enable the reverse proxy to direct HTTPS traffic, using Strict Transport Security to prevent man-in-the-middle attacks.
@@ -242,7 +243,7 @@ In the NGINX configuration, place one of the following underneath your server_na
     add_header                      Strict-Transport-Security "max-age=31536000";
 ```
 
-## Setting Your NGINX Server to Listen to the HTTPS Port
+### Setting Your NGINX Server to Listen to the HTTPS Port
 
 Regardless of the option you choose, make sure you change the port to listen in on HTTPS traffic.
 
@@ -255,7 +256,7 @@ You can check by going to `https://mydomain_or_myip` and confirming with your br
 **Let's Encrypt certificates expire within a few months** so it is important to run the updater in a cron expression (and also restart NGINX) as explained in the Certbot setup instructions.
 If you want to keep hold of a HTTP server for some reason, just add `listen 80;` and remove the Strict-Transport-Security line.
 
-## Redirecting HTTP Traffic to HTTPS
+### Redirecting HTTP Traffic to HTTPS
 
 You may want to redirect all HTTP traffic to HTTPS, you can do this by adding the following to the NGINX configuration.
 This will essentially replace the HTTP url with the HTTPS version!
@@ -279,7 +280,7 @@ server {
 }
 ```
 
-# Putting it All Together
+## Putting it All Together
 
 After following all the steps on this page, you _should_ have a NGINX server configuration (`/etc/nginx/sites-enabled/openhab`) that looks like this:
 
@@ -331,7 +332,7 @@ server {
 }
 ```
 
-# Additional HTTPS Security
+## Additional HTTPS Security
 
 To test your security settings [SSL Labs](https://www.ssllabs.com/ssltest/) provides a tool for testing your domain against ideal settings (Make sure you check "Do not show the results on the boards" if you don't want your domain seen).
 
@@ -364,7 +365,7 @@ All of these settings are customizable, but make sure you [read up on](https://n
 Feel free to test the new configuration again on [SSL Labs](https://www.ssllabs.com/ssltest/).
 If you're achieving A or A+ here, then your client-openHAB communication is very secure.
 
-## Further Reading
+### Further Reading
 
 The setup above is a suggestion for high compatibility with an A+ rating at the time of writing, however flaws in these settings (particularly the cyphers) may become known overtime.
 The following articles may be useful when understanding and changing these settings.

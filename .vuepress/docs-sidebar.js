@@ -55,14 +55,13 @@ module.exports = [
       'installation/docker',
       'installation/synology',
       { title: 'Security',
-        path: 'installation/security',
+        path: '/docs/installation/security',
         children: [
           'installation/reverse-proxy-nginx',
           'installation/reverse-proxy-apache',
           'installation/reverse-proxy-synology'     
         ]
       }
-      ['installation/reverse-proxy', 'Reverse Proxy']
     ]
   },
   {

@@ -4,6 +4,8 @@ title: Synology DiskStation Reverse Proxy
 ---
 [[toc]]
 
+# Synology DiskStation Reverse Proxy
+
 Synology DSM (as of 6.2) has the ability to automatically acquire certificates from Let's Encrypt and renew them every 90 days as required.
 The majority of the configuration can be completed through the DSM GUI, but SSH access is required to implement authentication (**authentication is essential for remote access to your openHAB instance**).
 
