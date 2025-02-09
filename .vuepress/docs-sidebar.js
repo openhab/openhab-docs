@@ -54,7 +54,14 @@ module.exports = [
       'installation/armbian',
       'installation/docker',
       'installation/synology',
-      ['installation/security', 'Security'],
+      { title: 'Security',
+        path: 'installation/security',
+        children: [
+          'installation/reverse-proxy-nginx',
+          'installation/reverse-proxy-apache',
+          'installation/reverse-proxy-synology'     
+        ]
+      }
       ['installation/reverse-proxy', 'Reverse Proxy']
     ]
   },
