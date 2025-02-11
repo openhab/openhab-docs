@@ -5,6 +5,7 @@ title: GrundfosAlpha - Bindings
 type: binding
 description: "This adds support for reading out the data of Grundfos Alpha Pumps with a [Grundfos Alpha Reader](https://product-selection.grundfos.com/products/alpha-reader)"
 since: 3x
+logo: images/addons/bluetooth.grundfosalpha.svg
 install: manual
 ---
 
@@ -13,6 +14,8 @@ install: manual
 {% include base.html %}
 
 # GrundfosAlpha Binding
+
+<AddonLogo />
 
 This adds support for reading out the data of Grundfos Alpha Pumps with a [Grundfos Alpha Reader](https://product-selection.grundfos.com/products/alpha-reader)
 
