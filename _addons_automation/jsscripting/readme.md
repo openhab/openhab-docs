@@ -3,7 +3,7 @@ id: jsscripting
 label: JavaScript Scripting
 title: JavaScript Scripting - Automation
 type: automation
-description: "This add-on provides support for JavaScript (ECMAScript 2022+) that can be used as a scripting language within automation rules."
+description: "This add-on provides support for JavaScript (ECMAScript 2024+) that can be used as a scripting language within automation rules."
 since: 3x
 logo: images/addons/jsscripting.svg
 install: auto
@@ -17,7 +17,7 @@ install: auto
 
 <AddonLogo />
 
-This add-on provides support for JavaScript (ECMAScript 2022+) that can be used as a scripting language within automation rules.
+This add-on provides support for JavaScript (ECMAScript 2024+) that can be used as a scripting language within automation rules.
 It is based on [GraalJS](https://www.graalvm.org/javascript/) from the [GraalVM project](https://www.graalvm.org/).
 
 Also included is [openhab-js](https://github.com/openhab/openhab-js/), a fairly high-level ES6 library to support automation in openHAB. It provides convenient access
