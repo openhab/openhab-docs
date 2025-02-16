@@ -290,7 +290,7 @@ after 30.minutes, id: FrontPorchLight do |timer|
 end
 ```
 
-While it may seem straightforward, the JRuby helper library manages the timer and rescheduling internally to reduce the need for repetitive code.
+The JRuby helper library manages the timer and rescheduling internally to reduce the need for repetitive code.
 Full flexibility to work and manipulate the timer is available for more advanced use.
 
 :::
@@ -345,10 +345,10 @@ now.isAfter(sunset) && now.isBefore(endTime)
 ::: tab JRuby
 
 ```ruby
-Time.now.between? Sunset.state.to_s.."23:00"
+Time.now.between?(Sunset.state.to_s.."23:00")
 
 # Alternative code:
-# ZonedDateTime.now.between? Sunset.state.to_s.."23:00"
+# ZonedDateTime.now.between?(Sunset.state.to_s.."23:00")
 # Time.now.between?(Sunset.state, Time.parse("23:00")) # Two arguments of different date/time types, but they are compatible
 # Time.now >= Sunset.state && Time.now <= Time.parse("23:00")
 # etc.
