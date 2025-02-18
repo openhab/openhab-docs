@@ -608,6 +608,7 @@ Video url="https://demo.openhab.org/Hue.m4v"
 ```java
 Chart item=<itemname> [label="<labelname>"] [icon=<iconref>] [staticIcon=<iconref>] [refresh=xxxx]
 period=xxxx [service="<service>"] [legend=true/false] [forceasitem=true/false] [yAxisDecimalPattern=xxxx]
+[interpolation=xxxx]
 ```
 
 Adds a time-series chart object for the display of logged data.
@@ -635,6 +636,11 @@ Adds a time-series chart object for the display of logged data.
 - `yAxisDecimalPattern` is used to format the values on the y axis.
     It accepts [DecimalFormat](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/text/DecimalFormat.html).
     For example with `#.##` a number has to decimals.
+
+- `interpolation` is used to change how the line is drawn between 2 datapoints.
+    By default, a horizontal line (step) will be drawn between 2 datapoints of `Switch` or `Contact` items.
+    All other item types will have a line (linear) connecting the datapoints.
+    With the `linear` or `step` value for this parameter, this default behaviour can be changed.
 
 **Other options to look out for:**
 The Chart element type is a good way to present time series data quickly.
