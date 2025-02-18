@@ -156,8 +156,8 @@ The syntax is as follows:
 
 ```java
 Items {
-    <itemlist1> [-> "<alias1>"] : [strategy = <strategy1>, <strategy2>, ...] [filter = <filter1>, <filter2>, ...]
-    <itemlist2> [-> "<alias2>"] : [strategy = <strategyX>, <strategyY>, ...]
+    <itemlist1> : [strategy = <strategy1>, <strategy2>, ...] [filter = <filter1>, <filter2>, ...]
+    <itemlist2> : [strategy = <strategyX>, <strategyY>, ...]
     ...
 
 }
@@ -175,6 +175,22 @@ where `<itemlist>` is a comma-separated list consisting of one or more of the fo
 The entries are additive.
 This means if one Item appears in more than one `<itemlist>` either directly or indirectly (e.g. `*` which includes all Items or as a member of a Group used in `<groupName>*`), all the strategies strategies listed on all those lines apply to that Item.
 In the same way, an Item defined by a `!<itemName>` or `!<groupName>*` will be excluded after all additive rules have been applied.
+
+### Aliases
+
+This section defines alternative names for items that will be used in storage by the persistence service.
+The syntax is as follows:
+
+```java
+Aliases {
+    <itemName1> -> <alias1>
+    <itemName2> -> <alias2>
+    ...
+
+}
+```
+
+Note that aliases should be unique and should not have the same name as an existing item that is also stored in the persistence service.
 
 Below you will find a complete example persistence configuration file:
 
