@@ -121,7 +121,7 @@ It is recommended to at least set a source filter for the client itself to preve
 
 #### Filter by topic (`openhab/websocket/filter/topic`)
 
-Topic filters can be used to select and exclude events of a specific topic from the event stream.
+Topic filters can be used to include and/or exclude events of a specific topic from the event stream.
 They can be applied both inclusive and exclusive, and provide API compatibility with the existing topic filter functionality of the SSE event stream.
 
 Topics usually start with `openhab` and are split into several segments separated by an `/`, e.g. `openhab/items/MyItem/command` to listen to commands to `MyItem`.
