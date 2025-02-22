@@ -222,11 +222,15 @@ The following snippet shows a 'Control' and 'Light' tags definition:
 
 There are two possible types of tag -- namely "Semantic" and "Non Semantic" tags.
 The former are used by the openHAB User Interface to create automatic groupings of items according to the [Semantic Model]({{base}}/tutorial/model.html).
-The latter may (optionally) be used for any other tagging purpose at the discretion of the developer or the user.
+The latter are (optionally) be used for any other tagging purpose at the discretion of the user.
+In other words the channel description XML MUST only contain tags of the "Semantic" variety.
+The channel description XML MUST only contain Semantic tags for `property` and `point`.
+Tags for `equipment` may in future be allowed in the thing type description XML.
+Tags for `location` do not make sense since these will generally be defined by the user.
+
 The list of Semantic tags is [here](https://github.com/openhab/openhab-core/blob/main/bundles/org.openhab.core.semantics/model/SemanticTags.csv).
-Note that the contents of this list are dynamic, and it may be extended from time to time.
-Binding developers can provide Semantic tags in the xml file for `property`, `point` and `equipment`.
-Tags for `location` do not make sense since these are generally defined by the user.
+The contents of this list are dynamic, and it may be extended from time to time.
+If you are a binding developer and you think there is something missing from this list then you are encouraged to open an Issue or Pull Request on GitHub to add it.
 
 ### State Description
 
@@ -822,7 +826,7 @@ The full Java API for bridge and _Thing_ descriptions can be found in the Java p
 | description                | A human-readable description for the channel                                                                                                                                                                                        | optional                                      |
 | category                   | The category for the channel, e.g. TEMPERATURE                                                                                                                                                                                      | optional                                      |
 | tags                       | A list of default tags to be assigned to bound items                                                                                                                                                                                | optional                                      |
-| tag                        | A tag semantically describes the feature (typical usage) of the channel e.g. AlarmSystem. There are two types of tags -- namely "Semantic" and "Non Semantic". See [Default Tags](#default-tags) above.                             | mandatory                                     |
+| tag                        | A tag semantically describes the feature (typical usage) of the channel e.g. AlarmSystem. See [Default Tags](#default-tags) above.                                                                                                  | mandatory                                     |
 | state                      | The restrictions of an item state which gives information how to interpret it                                                                                                                                                       | optional                                      |
 | state.min                  | The minimum decimal value of the range for the state                                                                                                                                                                                | optional                                      |
 | state.max                  | The maximum decimal value of the range for the state                                                                                                                                                                                | optional                                      |
