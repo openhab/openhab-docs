@@ -5,6 +5,7 @@ title: AirParif - Bindings
 type: binding
 description: "This binding uses the [AirParif service](https://www.airparif.fr/) for providing air quality information for Paris and departments of the Ile-de-France."
 since: 3x
+logo: images/addons/airparif.png
 install: auto
 ---
 
@@ -13,6 +14,8 @@ install: auto
 {% include base.html %}
 
 # AirParif Binding
+
+<AddonLogo />
 
 This binding uses the [AirParif service](https://www.airparif.fr/) for providing air quality information for Paris and departments of the Ile-de-France.
 To use it, you first need to [register and get your API key](https://www.airparif.fr/interface-de-programmation-applicative).
