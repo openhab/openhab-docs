@@ -223,10 +223,18 @@ The following snippet shows a 'Control' and 'Light' tags definition:
 There are two possible types of tag -- namely "Semantic" and "Non Semantic" tags.
 The former are used by the openHAB User Interface to create automatic groupings of items according to the [Semantic Model]({{base}}/tutorial/model.html).
 The latter are (optionally) be used for any other tagging purpose at the discretion of the user.
-In other words the channel description XML MUST only contain tags of the "Semantic" variety.
-The channel description XML MUST only contain Semantic tags for `property` and `point`.
-Tags for `equipment` may in future be allowed in the thing type description XML.
-Tags for `location` do not make sense since these will generally be defined by the user.
+Semantic tags are classed into four sub-types `point`, `property`, `equipment` and `location`.
+
+Developers who are providing tags in the channel description XML of an addon shall please comply with the rules below:
+1. Non- Semantic tags are NOT allowed.
+1. Semantic tags of sub-type `property` and `point` are allowed.
+1. Semantic tags of sub-type `equipment` are NOT allowed. (Note: they may in future be allowed in the thing type description XML).
+1. Semantic tags of sub-type `location` are NOT allowed. These shall generally be defined by the user.
+1. Semantic tags should be provided only when the assignment is absolutely obvious. For example, the tags `point#Measurement` plus `property#Temperature` shall not be set on a channel type used for forecasted temperature as forecast is not a measurement.
+1. When a `point#Control` or `point#Measurement` tag is provided, a sub-type `property` tag MUST also be provided. As an example, `point#Measurement` plus `property#Temperature` is OK.
+1. When a `point#Status` tag is provided, a sub-type `property` tag shall NOT be provided. As an example, `point#Status` plus `property#Temperature` is not OK.
+1. On writable channel types, when a `point:Control` or `point:Switch`tag is provided, a sub-type `property` tag MUST also be provided.
+1. TODO (reviewer please check this): On read-only channel types, the `point:Status` tag is NOT allowed.
 
 The list of Semantic tags is [here](https://github.com/openhab/openhab-core/blob/main/bundles/org.openhab.core.semantics/model/SemanticTags.csv).
 The contents of this list are dynamic, and it may be extended from time to time.
