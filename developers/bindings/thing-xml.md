@@ -226,6 +226,7 @@ The latter are (optionally) be used for any other tagging purpose at the discret
 Semantic tags are classed into four sub-types `point`, `property`, `equipment` and `location`.
 
 Developers who are providing tags in the channel description XML of an addon shall please comply with the rules below:
+
 1. Non- Semantic tags are NOT allowed.
 1. Semantic tags of sub-type `property` and `point` are allowed.
 1. Semantic tags of sub-type `equipment` are NOT allowed. (Note: they may in future be allowed in the thing type description XML).
