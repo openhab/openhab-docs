@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="fibaro_fgr224_00_000" listed="false">
+    <label>FGR224 Roller Shutter 4</label>
+    <description><![CDATA[
+Roller Shutter 4<br /> <h1>Overview</h1><p>FIBARO ROLLER SHUTTER 4 is designed for controlling roller blinds, awnings, blinds, curtains and pergolas.</p><p>FIBARO ROLLER SHUTTER 4 enables the precise positioning of roller blinds or blind blades. The device is equipped with energy monitoring. The device is equipped with energy monitoring. It enables you to control connected devices either through the Z-Wave® network through or a switch connected directly to it.</p> <br /> <h2>Inclusion Information</h2><p>Add (inclusion) – the Z-Wave device learning mode allows you to add the device to the existing Z-Wave network.</p><p>Manually adding the device to the Z-Wave network</p><ol><li>Turn on the device. If the device has not been added to the Z-Wave network, the LED indicator of the device will light up red.</li><li>Set the main control unit to the Security/Non-Safety Additional mode (see the ECU manual for more information).</li><li>Quickly click the PROG button on the device three times. Alternatively, you can click on S1 or S2 three times.</li><li>If you add the device in Security S2 Authenticated mode, enter the PIN code specified on the device. The PIN code is also a underlined part of the device-specific key (DSK) specified at the bottom of the field.</li><li>Wait until the LED indicator flashes yellow.</li><li>Successful adding is confirmed by the reporting of the Z-Wave controller and the LED display of the device:</li></ol><p> Green – successful (not secure, S0, S2 not authenticated)</p><p> Magenta – successful (Safety S2 authenticated)</p><p> Red – not successful</p><p><br /></p><p>Adding the device to the Z-Wave network with SmartStart</p><p>SmartStart solution allows you to add products to the Z-Wave network by scanning the Z-Wave QR code located on the product, with a controller that enables SmartStart integration. A SmartStart product is automatically included in the network area within 10 minutes of turning it on.</p><p>iTo use SmartStart, your ECU must support Security S2 mode (see the control unit's manual for more information).</p><ol><li>Enter the full DSK string code in your ECU. If your ECU supports a QR scan, scan the QR code on the label.</li><li>Supply the device with power (on switch on the mains voltage).</li><li>The LED indicator starts to flash yellow. Wait until the addition process is finished.</li><li>Successful adding is confirmed by the reporting of the Z-Wave controller and the LED display of the device:</li></ol><p> Green – successful (not secure, S0, S2 not authenticated)</p><p> Magenta – successful (Safety S2 authenticated)</p><p> Red – not successful</p><p>if you have any problems adding the device, please reset it and repeat the process.</p> <br /> <h2>Exclusion Information</h2><p>Remove (exclude) – the Z-Wave device learning mode makes it possible to remove the device from the existing Z Wave network.</p><ol><li>Make sure the device is turned on</li><li>Switch the main controller to the removal mode (see the controller's operating instructions for more information).</li><li>Quickly click the PROG button three times. Alternatively, you can click S1 or S2 three times within 10 minutes after turning on the device.</li><li>Wait until the removal process is finished.</li><li>The successful removal is confirmed by a reporting from the Z-Wave controller. The LED indicator lights red.</li></ol><p>Removing the device from the Z-Wave network does not result in a factory reset.</p> <br /> <h2>Wakeup Information</h2><p><br /></p>
+    ]]></description>
+    <category>Blinds</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="blinds_control" typeId="blinds_control">
+        <label>Blinds Control</label>
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_SWITCH_MULTILEVEL,COMMAND_CLASS_BASIC</property>
+          <property name="binding:Command:StopMoveType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+          <property name="binding:Command:UpDownType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+        </properties>
+      </channel>
+      <channel id="meter_kwh" typeId="meter_kwh">
+        <label>Electric meter (kWh)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_KWh</property>
+        </properties>
+      </channel>
+      <channel id="scene_number" typeId="scene_number">
+        <label>Scene Number</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_CENTRAL_SCENE</property>
+        </properties>
+      </channel>
+      <channel id="alarm_power" typeId="alarm_power">
+        <label>Alarm (power)</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=POWER_MANAGEMENT</property>
+        </properties>
+      </channel>
+      <channel id="alarm_system" typeId="alarm_system">
+        <label>Alarm (system)</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=SYSTEM</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Fibargroup</property>
+      <property name="modelId">FGR224</property>
+      <property name="manufacturerId">010F</property>
+      <property name="manufacturerRef">0304:1000</property>
+      <property name="dbReference">1654</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_20_1" type="integer" groupName="configuration">
+        <label>20: Switch type</label>
+        <description><![CDATA[
+Defines switch type<br /> <h1>Overview</h1><p>This parameter determines with which switches types and in which mode the S1 and S2 inputs operate.</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Monostable switches – click to move</option>
+          <option value="1">Monostable switches – hold to move</option>
+          <option value="2">Single monostable switch</option>
+          <option value="3">Bistable switches</option>
+          <option value="4">Single bistable switch</option>
+          <option value="5">Three-state switch</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_24_1" type="integer" groupName="configuration">
+        <label>24: Buttons orientation</label>
+        <description><![CDATA[
+Defines buttons orientation<br /> <h1>Overview</h1><p>This parameter allows reversing the operation of the buttons.</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">default (1st button UP, 2nd button DOWN)</option>
+          <option value="1">reversed (1st button DOWN, 2nd button UP)</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_25_1" type="integer" groupName="configuration">
+        <label>25: Outputs orientation</label>
+        <description><![CDATA[
+Defines outputs orientation<br /> <h1>Overview</h1><p>This parameter allows reversing the operation of O1 and O2 without changing the wiring (e.g. in case of invalid motor connection).</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">default (O1 – UP, O2 – DOWN)</option>
+          <option value="1">reversed (O1 – DOWN, O2 – UP)</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_40_1" type="integer" groupName="configuration">
+        <label>40: First button – scenes sent</label>
+        <description><![CDATA[
+Defines first button scenes sent<br /> <h1>Overview</h1><p>This parameter determines which actions result in sending scene IDs assigned to them. Values can be combined (e.g. 1+2=3 means that scenes for single and double click are sent). Enabling scenes for triple click disables entering the device in learn mode by triple clicking.</p>
+        ]]></description>
+        <default>15</default>
+        <options>
+          <option value="0">No scene active</option>
+          <option value="1">Key pressed 1 time</option>
+          <option value="2">Key pressed 2 times</option>
+          <option value="4">Key pressed 3 times</option>
+          <option value="8">Key hold down and key released</option>
+          <option value="15">default - All scenes active</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_41_1" type="integer" groupName="configuration">
+        <label>41: Second button – scenes sent</label>
+        <description><![CDATA[
+Defines first button scenes sent<br /> <h1>Overview</h1><p>This parameter determines which actions result in sending scene IDs assigned to them. Values can be combined (e.g. 1+2=3 means that scenes for single and double click are sent). Enabling scenes for triple click disables entering the device in learn mode by triple clicking.</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">No scene active</option>
+          <option value="1">Key pressed 1 time</option>
+          <option value="2">Key pressed 2 times</option>
+          <option value="4">Key pressed 3 times</option>
+          <option value="8">Key hold down and key released</option>
+          <option value="15">default - All scenes active</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_150_1" type="integer" groupName="configuration">
+        <label>150: Calibration</label>
+        <description><![CDATA[
+Calibration<br /> <h1>Overview</h1><p>To start automatic calibration, select the value 3. When the calibration process is successful, the parameter takes the value 1. When automatic calibration fails, the parameter takes the value 2. If the transitions times for the device are changed manually in the parameter (156/157), the parameter 150 will takes the value 4.</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Device is not calibrated</option>
+          <option value="1">Autocalibration successful</option>
+          <option value="2">Autocalibration failed</option>
+          <option value="3">Calibration process</option>
+          <option value="4">Manual calibration</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_151_1" type="integer" groupName="configuration">
+        <label>151: Operating mode</label>
+        <description><![CDATA[
+Operating mode<br /> <h1>Overview</h1><p>This parameter allows you to adjust the operation, depending on the connected device. In the case of venetian blinds, the angle of rotation of the slats must also be selected.</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Roller blind, Awning, Pergola, Curtain</option>
+          <option value="1">Venetian blind 90°</option>
+          <option value="2">Venetian blind 180°</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_152_2" type="integer" groupName="configuration">
+        <label>152: Venetian blind - slats full turn time</label>
+        <description><![CDATA[
+Venetian blind - slats full turn time<br /> <h1>Overview</h1><p>For Venetian blinds the parameter determines time of full turn cycle of the slats. The parameter is irrelevant for other modes.</p><p>Default: 15 (1.5 seconds) <br /></p><p>Range: 0-65535 (0 - 6553.5s, every 0.1s) - time of turn</p>
+        ]]></description>
+        <default>15</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_156_2" type="integer" groupName="configuration">
+        <label>156: Time of up movement</label>
+        <description><![CDATA[
+Time of up movement<br /> <h1>Overview</h1><p>This parameter determines the time it takes to reach full opening. The value is set automatically during the calibration process. It should be manually set in case of problems with the autocalibration.</p><p>Default: 600 (60 seconds)</p><p>Range: 0-65535 (0 - 6553.5s, every 0.1s) - time of turn</p>
+        ]]></description>
+        <default>600</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_157_2" type="integer" groupName="configuration">
+        <label>157: Time of down movement</label>
+        <description><![CDATA[
+Time of down movement<br /> <h1>Overview</h1><p>This parameter determines the time it takes to reach full closure. The value is set automatically during the calibration process. It should be manually set in case of problems with the autocalibration.</p><p>Default: 600 (60 seconds)</p><p>Range: 0-65535 (0 - 6553.5s, every 0.1s) - time of turn</p>
+        ]]></description>
+        <default>600</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_158_1" type="integer" groupName="configuration">
+        <label>158: Virtual limit switch. The pot protection</label>
+        <description><![CDATA[
+Virtual limit switch. The pot protection<br /> <h1>Overview</h1><p>This parameter allows you to set a fixed minimum level of lowering the shutter. For example, to protect a flowerpot located on a windowsill.</p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_159_1" type="integer" groupName="configuration">
+        <label>159: Favorite position - opening level</label>
+        <description><![CDATA[
+Favorite position - opening level<br /> <h1>Overview</h1><p>This parameter allows you to define your favorite aperture level.</p><p>Range: 0-99</p><p>0xFF - Functionality disabled</p>
+        ]]></description>
+        <default>50</default>
+        <options>
+          <option value="255">Functionality disabled</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_160_1" type="integer" groupName="configuration">
+        <label>160: Favorite position - slat angle</label>
+        <description><![CDATA[
+Favorite position - slat angle<br /> <h1>Overview</h1><p>This parameter allows you to define your favorite position of the slat angle. The parameter is used only for venetian blinds.</p><p>Range: 0-99</p><p>0xFF - Functionality disabled</p>
+        ]]></description>
+        <default>50</default>
+        <options>
+          <option value="255">0xFF - Functionality disabled</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Lifeline</label>
+        <description><![CDATA[
+General: Lifeline<br /> <h1>Overview</h1><p>1st association group – “Lifeline” reports the device status and allows for assigning single device only (main controller by default).</p>
+        ]]></description>
+        <multipleLimit>1</multipleLimit>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: Window Covering</label>
+        <description><![CDATA[
+Control: KEY01 (0x20: 0x01)<br /> <h1>Overview</h1><p>2nd association group – “Window Covering” is intended for curtains or blinds allowing the user to control the amount of light going through windows.</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

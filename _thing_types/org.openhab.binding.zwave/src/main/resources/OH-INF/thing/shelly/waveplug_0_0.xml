@@ -5,10 +5,10 @@
   xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
                       https://openhab.org/schemas/thing-description/v1.0.0">
 
-  <thing-type id="shelly_waveplugus_00_000" listed="false">
-    <label>Wave Plug US Plug On Off with Energy Meter</label>
+  <thing-type id="shelly_waveplug_00_000" listed="false">
+    <label>Wave Plug Plug On Off with power measurement</label>
     <description><![CDATA[
-Plug On Off with Energy Meter<br /> <h1>Overview</h1><p>The Wave Plug US (Device) is a smart plug/outlet with power measurement and overheating protection, which allows remote control of electric appliances through a mobile phone, tablet, PC, or home automation system.<br /></p> <br /> <h2>Inclusion Information</h2><p>SmartStart adding (inclusion)</p><p>SmartStart enabled products can be added into a Z-Wave® network by scanning the Z-Wave® QR Code present on the Device with a gateway providing SmartStart inclusion. No further action is required, and the SmartStart device will be added automatically within 10 minutes of being switched on in the network vicinity.</p><p>With the gateway application scan the QR code on the Device label and add the Security 2 (S2) Device Specific Key (DSK) to the provisioning list in the gateway.</p><p>Connect the Device to a power supply.</p><p>Check if the blue LED is blinking in Mode 1. If so, the Device is not added to a Z-Wave® network.</p><p>Adding will be initiated automatically within a few seconds after connecting the Device to a power supply, and the Device will be added to a Z-Wave® network automatically.</p><p>The blue LED will be blinking in Mode 2 during the adding process.</p><p>The green LED will be blinking in Mode 1 if the Device is successfully added to a Z-Wave® network.</p><p>Adding (inclusion) with the S button</p><p>Connect the Device to a power supply.</p><p>Check if the blue LED is blinking in Mode 1. If so, the Device is not added to a Z-Wave® network.</p><p>Enable add/remove mode on the gateway.</p><p>To enter the Setting mode, press and hold the S button on the Device until the LED turns solid blue.</p><p>Release and then press and hold (&gt; 2s) the S button on the Device until the blue LED starts blinking in Mode 3. Releasing the S button will start the Learn mode.</p><p>The blue LED will be blinking in Mode 2 during the adding process.</p><p>The green LED will be blinking in Mode 1 if the Device is successfully added to a Z-Wave® network.</p> <br /> <h2>Exclusion Information</h2><p>Removing (exclusion) with the S button</p><p>Connect the Device to a power supply.</p><p>Check if the green LED is blinking in Mode 1. If so, the Device is added to a Z-Wave® network.</p><p>Enable add/remove mode on the gateway.</p><p>To enter the Setting mode, press and hold the S button on the Device until the LED turns solid blue.</p><p>Release and then press and hold (&gt; 2s) the S button on the Device until the blue LED starts blinking in Mode 3. Releasing the S button will start the LEARN MODE.</p><p>The blue LED will be blinking in Mode 2 during the removing process.</p><p>The blue LED will be blinking in Mode 1 if the Device is successfully removed from a Z-Wave® network.</p> <br /> <h2>Wakeup Information</h2><p><br /></p>
+Plug On Off with power measurement<br /> <h1>Overview</h1><p>The Wave Plug (Device) is a smart plug/outlet with power measurement and overheating protection, which allows remote control of electric appliances through a mobile phone, tablet, PC, or home automation system.<br /></p> <br /> <h2>Inclusion Information</h2><p>SmartStart adding (inclusion)</p><p>SmartStart enabled products can be added into a Z-Wave® network by scanning the Z-Wave® QR Code present on the Device with a gateway providing SmartStart inclusion. No further action is required, and the SmartStart device will be added automatically within 10 minutes of being switched on in the network vicinity.</p><p>With the gateway application scan the QR code on the Device label and add the Security 2 (S2) Device Specific Key (DSK) to the provisioning list in the gateway.</p><p>Connect the Device to a power supply.</p><p>Check if the blue LED is blinking in Mode 1. If so, the Device is not added to a Z-Wave® network.</p><p>Adding will be initiated automatically within a few seconds after connecting the Device to a power supply, and the Device will be added to a Z-Wave® network automatically.</p><p>The blue LED will be blinking in Mode 2 during the adding process.</p><p>The green LED will be blinking in Mode 1 if the Device is successfully added to a Z-Wave® network.</p><p>Adding (inclusion) with the S button</p><p>Connect the Device to a power supply.</p><p>Check if the blue LED is blinking in Mode 1. If so, the Device is not added to a Z-Wave® network.</p><p>Enable add/remove mode on the gateway.</p><p>To enter the Setting mode, press and hold the S button on the Device until the LED turns solid blue.</p><p>Release and then press and hold (&gt; 2s) the S button on the Device until the blue LED starts blinking in Mode 3. Releasing the S button will start the Learn mode.</p><p>The blue LED will be blinking in Mode 2 during the adding process.</p><p>The green LED will be blinking in Mode 1 if the Device is successfully added to a Z-Wave® network.</p> <br /> <h2>Exclusion Information</h2><p>Removing (exclusion) with the S button</p><p>Connect the Device to a power supply.</p><p>Check if the green LED is blinking in Mode 1. If so, the Device is added to a Z-Wave® network.</p><p>Enable add/remove mode on the gateway.</p><p>To enter the Setting mode, press and hold the S button on the Device until the LED turns solid blue.</p><p>Release and then press and hold (&gt; 2s) the S button on the Device until the blue LED starts blinking in Mode 3. Releasing the S button will start the LEARN MODE.</p><p>The blue LED will be blinking in Mode 2 during the removing process.</p><p>The blue LED will be blinking in Mode 1 if the Device is successfully removed from a Z-Wave® network.</p> <br /> <h2>Wakeup Information</h2><p><br /></p>
     ]]></description>
     <category>PowerOutlet</category>
 
@@ -61,9 +61,9 @@ Plug On Off with Energy Meter<br /> <h1>Overview</h1><p>The Wave Plug US (Device
     <!-- DEVICE PROPERTY DEFINITIONS -->
     <properties>
       <property name="vendor">Shelly</property>
-      <property name="modelId">Wave Plug US</property>
+      <property name="modelId">Wave Plug</property>
       <property name="manufacturerId">0460</property>
-      <property name="manufacturerRef">0002:0088</property>
+      <property name="manufacturerRef">0002:0088,0002:0089</property>
       <property name="dbReference">1642</property>
       <property name="defaultAssociations">1</property>
     </properties>
@@ -182,11 +182,29 @@ This parameter determines how the device should respond to the reports of alarm 
         <advanced>true</advanced>
       </parameter>
 
+      <parameter name="config_105_1" type="integer" groupName="configuration">
+        <label>105: LED Signalisation intensity</label>
+        <description><![CDATA[
+In Wave 1, Wave 1PM and Wave 2PM, this parameter will be implemented in 2024. This parameter determines the intensity of the LED on the Device. Some Devices have RGB LEDs and some have Blue/Red LEDs, but all are dimmable.<br /> <h1>Overview</h1><p>Values &amp; descriptions:</p><p> 0-100 (0-100%, every 1%)</p>
+        ]]></description>
+        <default>100</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
       <parameter name="config_117_1" type="integer" groupName="configuration">
         <label>117: Remote Device reboot</label>
         <description>This parameter enable restarting or rebooting the Device without physical intervention. Use this parameter only for troubleshooting scope. After device reboot value will be set to default</description>
         <default>0</default>
         <advanced>true</advanced>
+      </parameter>
+
+      <parameter name="config_120_4" type="integer" groupName="configuration">
+        <label>120: Factory Reset</label>
+        <description><![CDATA[
+Reset to factory default settings and removed from the Z-Wave network.<br /> <h1>Overview</h1><p>Values &amp; descriptions:</p><p>0 - Don’t do Factory reset</p><p>1431655765 - Do the Factory reset (hex 0x55555555)</p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_201_4" type="integer" groupName="configuration" readOnly="true">

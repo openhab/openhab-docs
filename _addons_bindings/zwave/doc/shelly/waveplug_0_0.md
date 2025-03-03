@@ -1,23 +1,23 @@
 ---
 layout: documentation
-title: Wave Plug US - ZWave
+title: Wave Plug - ZWave
 ---
 
 {% include base.html %}
 
-# Wave Plug US Plug On Off with Energy Meter
-This describes the Z-Wave device *Wave Plug US*, manufactured by *Shelly* with the thing type UID of ```shelly_waveplugus_00_000```.
+# Wave Plug Plug On Off with power measurement
+This describes the Z-Wave device *Wave Plug*, manufactured by *Shelly* with the thing type UID of ```shelly_waveplug_00_000```.
 
 The device is in the category of *Power Outlet*, defining Small devices to be plugged into a power socket in a wall which stick there.
 
-![Wave Plug US product image](https://opensmarthouse.org/zwavedatabase/1642/image/)
+![Wave Plug product image](https://opensmarthouse.org/zwavedatabase/1642/image/)
 
 
-The Wave Plug US supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is also able to participate in the routing of data between other devices in the mesh network.
+The Wave Plug supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is also able to participate in the routing of data between other devices in the mesh network.
 
 ## Overview
 
-The Wave Plug US (Device) is a smart plug/outlet with power measurement and overheating protection, which allows remote control of electric appliances through a mobile phone, tablet, PC, or home automation system.
+The Wave Plug (Device) is a smart plug/outlet with power measurement and overheating protection, which allows remote control of electric appliances through a mobile phone, tablet, PC, or home automation system.
 
 ### Inclusion Information
 
@@ -77,7 +77,7 @@ The blue LED will be blinking in Mode 1 if the Device is successfully removed fr
 
 ## Channels
 
-The following table summarises the channels available for the Wave Plug US -:
+The following table summarises the channels available for the Wave Plug -:
 
 | Channel Name | Channel ID | Channel Type | Category | Item Type |
 |--------------|------------|--------------|----------|-----------|
@@ -142,7 +142,7 @@ The following state translation is provided for this channel to the ```Switch```
 
 ## Device Configuration
 
-The following table provides a summary of the 15 configuration parameters available in the Wave Plug US.
+The following table provides a summary of the 17 configuration parameters available in the Wave Plug.
 Detailed information on each parameter can be found in the sections below.
 
 | Param | Name  | Description |
@@ -158,7 +158,9 @@ Detailed information on each parameter can be found in the sections below.
 | 92 | Smoke Alarm | This parameter determines how the device should respond to the reports of alarm frames. The parameters consist of 4 bytes, the three most significant bytes are set according to the official Z-Wave protocol specification. |
 | 93 | CO Alarm | This parameter determines how the device should respond to the reports of alarm frames. The parameters consist of 4 bytes, the three most significant bytes are set according to the official Z-Wave protocol specification. |
 | 94 | Heat Alarm | This parameter determines how the device should respond to the reports of alarm frames. The parameters consist of 4 bytes, the three most significant bytes are set according to the official Z-Wave protocol specification. |
+| 105 | LED Signalisation intensity | In Wave 1, Wave 1PM and Wave 2PM, this parameter will be implemented in 2024. This parameter determines the intensity of the LED on the Device. Some Devices have RGB LEDs and some have Blue/Red LEDs, but all are dimmable. |
 | 117 | Remote Device reboot | This parameter enable restarting or rebooting the Device without physical intervention. Use this parameter only for troubleshooting scope. After device reboot value will be set to default |
+| 120 | Factory Reset | Reset to factory default settings and removed from the Z-Wave network. |
 | 201 | Serial Number 1 | This parameter contains a part of device’s serial number. |
 | 201 | Serial Number 2 | This parameter contains a part of device’s serial number. |
 | 203 | Serial Number 3 | This parameter contains a part of device’s serial number. |
@@ -336,6 +338,19 @@ The manufacturer defined default value is ```0```.
 This parameter has the configuration ID ```config_94_4``` and is of type ```INTEGER```.
 
 
+### Parameter 105: LED Signalisation intensity
+
+In Wave 1, Wave 1PM and Wave 2PM, this parameter will be implemented in 2024. This parameter determines the intensity of the LED on the Device. Some Devices have RGB LEDs and some have Blue/Red LEDs, but all are dimmable.
+Values & descriptions:
+
+ 0-100 (0-100%, every 1%)
+Values in the range 0 to 100 may be set.
+
+The manufacturer defined default value is ```100```.
+
+This parameter has the configuration ID ```config_105_1``` and is of type ```INTEGER```.
+
+
 ### Parameter 117: Remote Device reboot
 
 This parameter enable restarting or rebooting the Device without physical intervention. Use this parameter only for troubleshooting scope. After device reboot value will be set to default
@@ -345,6 +360,21 @@ Values in the range 0 to 1 may be set.
 The manufacturer defined default value is ```0```.
 
 This parameter has the configuration ID ```config_117_1``` and is of type ```INTEGER```.
+
+
+### Parameter 120: Factory Reset
+
+Reset to factory default settings and removed from the Z-Wave network.
+Values & descriptions:
+
+0 - Don’t do Factory reset
+
+1431655765 - Do the Factory reset (hex 0x55555555)
+Values in the range 0 to 0 may be set.
+
+The manufacturer defined default value is ```0```.
+
+This parameter has the configuration ID ```config_120_4``` and is of type ```INTEGER```.
 
 
 ### Parameter 201: Serial Number 1
@@ -387,7 +417,7 @@ This is a read only parameter.
 
 Association groups allow the device to send unsolicited reports to the controller, or other devices in the network. Using association groups can allow you to eliminate polling, providing instant feedback of a device state change without unnecessary network traffic.
 
-The Wave Plug US supports 2 association groups.
+The Wave Plug supports 2 association groups.
 
 ### Group 1: Lifeline
 
