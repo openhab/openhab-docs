@@ -1,4 +1,9 @@
-# Devloper Guidelines on Semantic Tags
+---
+layout: developersguide
+title: Developer Guidelines on Semantic Tags
+---
+
+# Developer Guidelines on Semantic Tags
 
 ## Introduction
 
