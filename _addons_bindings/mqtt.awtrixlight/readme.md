@@ -5,6 +5,7 @@ title: MQTT Awtrix 3 - Bindings
 type: binding
 description: "This binding allows you to control Awtrix 3 (formerly Awtrix Light) LED matrix displays via MQTT."
 since: 3x
+logo: images/addons/mqtt.awtrixlight.png
 install: manual
 ---
 
@@ -13,6 +14,8 @@ install: manual
 {% include base.html %}
 
 # MQTT Awtrix 3 Binding
+
+<AddonLogo />
 
 This binding allows you to control Awtrix 3 (formerly Awtrix Light) LED matrix displays via MQTT.
 Awtrix 3 is a firmware for a 32x8 LED matrix display that can show various information like time, weather, notifications and custom text/graphics.
