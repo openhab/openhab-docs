@@ -50,6 +50,8 @@ It is possible for users to add their own customised tags at their own discretio
 The remainder of this document does NOT relate to user customised tags.
 It applies solely to the openHAB Core tags.
 
+This following uses terms (MUST, MAY, SHALL, SHALL NOT, etc.) as defined in Internet Standard [RFC-2119](https://datatracker.ietf.org/doc/html/rfc2119)
+
 ### Rules for **APPLYING** Core Predefined Semantic Tags
 
 1. Developers MUST apply core predefined tags in their addons where possible.
