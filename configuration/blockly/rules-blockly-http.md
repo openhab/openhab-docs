@@ -21,12 +21,13 @@ Depending on the required functionality it changes its design.
 
 ### Option Toggles
 
-There are two toggle buttons that allow the block to be small for simple requests and add further options to be used:
+There are three toggle buttons that allow the block to be small for simple requests and add further options to be used:
 
 ![http-toggle](../images/blockly/blockly-http-toggles.png)
 
 - Clock: enables the timeout option
 - H: enables the header option and allows to provide headers during the request via a [Dictionary](rules-blockly-standard-ext.md#dictionary-for-managing-key--value-pairs)
+- Q: enables the query option and allows to provide URI query parameters during the request via a [Dictionary](rules-blockly-standard-ext.md#dictionary-for-managing-key--value-pairs), the query parameters will be URI encoded
 
 ### HTTP Request GET
 
@@ -36,8 +37,15 @@ The simplest form is shown by default and accepts the destination URI as String.
 
 ![http-get-simple](../images/blockly/blockly-http-get-simple.png)
 
-By activating the toggles the timeout and request headers can be provided.
-See the [POST-Request](#http-request-post) below for an example showing these additional fields.
+By activating the toggles the timeout, request headers and query parameters can be provided.
+Instead of creating a URI containing the query parameters, you can use the query parameter option and provide a [Dictionary](rules-blockly-standard-ext.md#dictionary-for-managing-key--value-pairs) of query parameters.
+The provided parameters will automatically be URI encoded.
+
+Here is an example also using a query parameter.
+
+![http-get-complex](../images/blockly/blockly-http-get-complex.png)
+
+See the [POST-Request](#http-request-post) below for an example showing the use additional fields.
 
 ### HTTP Request POST
 
@@ -48,9 +56,12 @@ The simplest form is shown by default and accepts the destination URI as String 
 - the MIME-type of the content to be sent
 - the content to be sent to the destination
 
+For MIME-type `application/json` you can provide an object as content, and it will be converted to a JSON string.
+For `application/x-www-form-urlencoded`, you can provide a [Dictionary](rules-blockly-standard-ext.md#dictionary-for-managing-key--value-pairs) and it will be URI encoded.
+
 ![http-post-simple](../images/blockly/blockly-http-post-simple.png)
 
-Here is a more complex example that additionally sets a header and the timeout:
+Here is a more complex example that additionally sets a header and a timeout:
 
 ![http-post-complex](../images/blockly/blockly-http-post-complex.png)
 
@@ -64,6 +75,8 @@ The simplest form is shown by default and accepts the destination URI as String 
 - the content to be sent to the destination
 
 ![http-put-simple](../images/blockly/blockly-http-put-simple.png)
+
+Notice the construction of an object with a [Dictionary](rules-blockly-standard-ext.md#dictionary-for-managing-key--value-pairs) also containing a List for the JSON payload.
 
 ### HTTP Request DELETE
 

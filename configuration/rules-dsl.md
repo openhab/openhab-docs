@@ -173,7 +173,7 @@ You can either use some pre-defined expressions for timers or use a [cron expres
 ```java
 Time is midnight
 Time is noon
-Time is <item> [timeOnly]
+Time is <item> [timeOnly] [offset=N]
 Time cron "<cron expression>"
 ```
 
@@ -190,6 +190,7 @@ A cron expression takes the form of six or optionally seven fields:
 You may use the generator at [FreeFormatter.com](https://www.freeformatter.com/cron-expression-generator-quartz.html) to generate your cron expressions.
 
 When using an item and you want to ignore the date-portion of that item the `timeOnly` option can be used.
+A positive or negative offset in seconds, relative to the date/time of the given item can be specified.
 
 ### System-based Triggers
 
@@ -276,6 +277,8 @@ You can find all the possible values for status from [Thing Status](/docs/concep
 The `thingUID` is the identifier assigned to the Thing, manually in your configuration or automatically during auto discovery.
 You can find it from UI or from Karaf remote console.
 For example, one z-wave device can be "zwave:device:c5155aa4:node14".
+The `*` wildcard is allowed in the `thingUID`.
+For example, `chromecast:*` will trigger on all `chromecast` Things and `*` will trigger on all things.
 
 If the Rule needs to know what the triggering thing was, or access a string value of the previous or new status, use the [implicit variables]({{base}}/configuration/rules-dsl.html#implicit-variables-inside-the-execution-block) `triggeringThing`, `previousThingStatus` or `newThingStatus` to access the information.
 
@@ -495,13 +498,13 @@ A DateTime Item carries a **DateTimeType**, which internally holds a Java `Zoned
 
 ```java
 // Get epoch from DateTimeType
-val Number epoch = (MyDateTimeItem.state as DateTimeType).zonedDateTime.toInstant.toEpochMilli
+val Number epoch = (MyDateTimeItem.state as DateTimeType).instant.toEpochMilli
 
 // Get epoch from Java ZonedDateTime
 val Number nowEpoch = now.toInstant.toEpochMilli
 
 // Convert DateTimeType to Java ZonedDateTime
-val javaZonedDateTime = (MyDateTimeItem.state as DateTimeType).zonedDateTime
+val javaZonedDateTime = (MyDateTimeItem.state as DateTimeType).getZonedDateTime(ZoneId.systemDefault)
 
 // Convert Java ZonedDateTime to DateTimeType
 val DateTimeType date = new DateTimeType(now)
@@ -530,13 +533,13 @@ ZonedDateTimes provide a number of useful methods for comparing date times toget
 
 ```java
 // See if DateTimeType is before now
-if(now.isBefore((MyDateTimeItem.state as DateTimeType).zonedDateTime)) ...
+if(now.toInstant.isBefore((MyDateTimeItem.state as DateTimeType).instant)) ...
 
 // See if DateTimeType is after now
-if(now.isAfter((MyDateTimeItem.state as DateTimeType).zonedDateTime)) ...
+if(now.toInstant.isAfter((MyDateTimeItem.state as DateTimeType).instant)) ...
 
 // Get the hour in the day from a DateTimeType
-val hour = (MyDateTimeItem.state as DateTimeType).zonedDateTime.hour
+val hour = (MyDateTimeItem.state as DateTimeType).getZonedDateTime(ZoneId.systemDefault).hour
 ```
 
 ##### Dimmer Item

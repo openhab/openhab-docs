@@ -61,7 +61,7 @@ You have different options to execute a command through an action.
   For example you could run `var ScriptResponse = executeCommandLine(Duration.ofSeconds(60), "path/to/my/script.sh");` would get executed and wait 1 minute for the output to be responded back and write it into the `ScriptResponse` variable.
 
 Other Durations than `ofSeconds` units are possible too.
-Check out the [Java Documentation](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/time/Duration.html?is-external=true) for possible units.
+Check out the [Java Documentation](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/time/Duration.html?is-external=true) for possible units.
 
 #### Scripts with parameters
 
@@ -263,7 +263,7 @@ Action | Returns
 `getNextBankHoliday` | name of the next bank holiday
 `getNextBankHoliday(<file>)` | name of the next bank holiday defined in `<file>`
 `getNextBankHoliday(<offset>)` | name of the next bank holiday after `<offset>` days from today
-`getNextBankHoliday(<offset>, <file>)` | name of the next bank holiday after `<offset>` days from today defined in `<file>`. :warning: This action is broken in OH 2.5.x. Use `getNextBankHoliday(<datetime>, <file>)` instead by replacing `<datetime>` with `new DateTimeType().zonedDateTime.now().plusDays(<offset>)`
+`getNextBankHoliday(<offset>, <file>)` | name of the next bank holiday after `<offset>` days from today defined in `<file>`. :warning: This action is broken in OH 2.5.x. Use `getNextBankHoliday(<datetime>, <file>)` instead by replacing `<datetime>` with `now.plusDays(<offset>)`
 `getNextBankHoliday(<datetime>)` | name of the next bank holiday after the day defined by the `ZonedDateTime` `<datetime>`
 `getNextBankHoliday(<datetime>, <file>)` | name of the next bank holiday after the day defined by the `ZonedDateTime` `<datetime>` defined in `<file>`
 `isBankHoliday` | `true` if today is a bank holiday (see below), `false` otherwise

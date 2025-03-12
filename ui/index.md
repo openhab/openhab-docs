@@ -14,12 +14,21 @@ To do that, openHAB puts different options at your disposal; they are commonly r
 
 Several types of pages are available:
 
+- [Home Page](index.html#the-home-page)
+- [Sitemaps](index.html#sitemaps)
+- [Layout Pages](index.html#layout-pages)
+  - [Responsive Layouts](./layout-pages-responsive.md)
+  - [Fixed Grid Layouts](./layout-pages-fixed.md)
+- [Maps & Floorplans](index.html#maps-floorplans)
+- [Charts](index.html#charts)
+  - [Tabbed Pages](index.html#tabbed-pages)
+
 ### The Home Page
 
 The main's UI **home page** consists of 4 tabs:
 
 - an overview which you can customize entirely from scratch;
-- 3 tabs representing a generated view of your model oriented by **Location**, **Equipment** and **Properties**.
+- 3 tabs representing an _automatically generated view_ of your model oriented by **Location**, **Equipment** and **Properties**.
 
 In these 3 model-oriented tabs, expandable cards will appear **automatically** as you build your model, allowing you to get different perspectives on your home.
 For instance, you may want to see everything in a particular location, or everything pertaining to a certain class of equipment, like heating, or see a consolidated view of all items related to a certain property like temperature or humidity.

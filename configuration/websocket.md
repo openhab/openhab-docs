@@ -12,14 +12,23 @@ All messages on the WebSocket connection are JSON encoded text-messages.
 ## Establishing a connection
 
 WebSockets are available on the same ports as the REST API, usually port 8080 for unsecured (ws-protocol) and port 8443 for secured (wss-protocol) connections.
-The connection is established by connecting to  `ws[s]://{URL}:{PORT}/ws`.
+The connection is established by connecting to `ws[s]://{URL}:{PORT}/ws`.
 
-To prevent unauthorized use of the connection an `accessToken` has to be sent with the initial request.
-Two authentication methods are available:
+To prevent unauthorized use of the connection, an access token has to be sent with the initial request.
+There are two options to send the access token:
 
-1. API token: `oh.ohwstest.tz1IDPniKLxc0VU4t9tz4GiAiKmc0ZDdMKxhlD5tfviQStM4oNsywrcrUTktPbBE9YQ3wnMBrCqVEIhg7Q`
+1. Through the `Sec-WebSocket-Protocol` header:<br>
+  As browsers cannot add `Authorization` headers to WebSocket requests but can specify WebSocket sub-protocols to send with the request.<br>
+  You need to set the `org.openhab.ws.protocol.default` and `org.openhab.ws.accessToken.base64.${BASE64_TOKEN}` sub-protocols, where `${BASE64_TOKEN}` is the Base64 encoded `${TOKEN}` without `=` padding.
+  The server will respond with the `org.openhab.ws.protocol.default` sub-protocol (as browsers require the server to select one of the provided sub-protocols).<br>
 
-1. Basic Auth with username/password: `dXNlcjpwYXNzd29yZA==`
+1. Through the `accessToken` query parameter: `ws[s]://{URL}:{PORT}/ws?accessToken={TOKEN}`.
+
+`${TOKEN}` can be one of these two:
+
+1. An API token: `oh.ohwstest.tz1IDPniKLxc0VU4t9tz4GiAiKmc0ZDdMKxhlD5tfviQStM4oNsywrcrUTktPbBE9YQ3wnMBrCqVEIhg7Q`
+
+1. Basic Auth with base64 encoded `{USER}:{PASSWORD}`: `dXNlcjpwYXNzd29yZA==`
 
 ## Using the WebSocket connection
 
@@ -110,6 +119,43 @@ A new filter message always overrides the settings before.
 The default setting is no filter, i.e. all events from all sources.
 It is recommended to at least set a source filter for the client itself to prevent event reflection.
 
+#### Filter by topic (`openhab/websocket/filter/topic`)
+
+Topic filters can be used to include and/or exclude events of a specific topic from the event stream.
+They can be applied both inclusive and exclusive, and provide API compatibility with the existing topic filter functionality of the SSE event stream.
+
+Topics usually start with `openhab` and are split into several segments separated by an `/`, e.g. `openhab/items/MyItem/command` to listen to commands to `MyItem`.
+You may use `*` as a wildcard for a topic segment.
+To exclude a topic, start it with a `!`.
+
+When sending only exclude topics, all events except those excluded are sent.
+In other cases, only events of the selected topics are sent, whereas exclude topics can be used to filter out a subset of the selected events.
+
+The payload of the event contains a list of string with the topics:
+
+```json
+{
+    "type": "WebSocketEvent",
+    "topic": "openhab/websocket/filter/topic",
+    "payload": "[\"openhab/items/*/command\", \"!openhab/items/MyItem/command\"]",
+    "source": "WebSocketTestInstance",
+    "eventId": "10"
+}
+```
+
+This example will only send `ItemCommandEvents` for all Items except `MyItem`.
+
+The reception is acknowledged with the filter that is applied:
+
+```json
+{
+    "type": "WebSocketEvent",
+    "topic": "openhab/websocket/filter/topic",
+    "payload": "[\"openhab/items/*/command\", \"!openhab/items/MyItem/command\"]",
+    "eventId": "10"
+}
+```
+
 #### Filter by source (`openhab/websocket/filter/source`)
 
 Source filters can be used to remove events from a specific source from the event stream.
@@ -143,6 +189,7 @@ The reception is acknowledged with the filter that is applied:
 
 Type filters are used to select a specific sub-set of all available events.
 They are a inclusive, that means only those event types sent in the filter message are sent.
+
 The payload of the event contains a list of strings with the event names:
 
 ```json

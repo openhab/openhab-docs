@@ -112,7 +112,9 @@ Notes:
 | `upnp`       | "deviceType", "manufacturer", "manufacturerURI", "modelName", "modelNumber", "modelDescription", "modelURI", "serialNumber", "friendlyName". |
 | `usb`        | "product", "manufacturer", "chipId", "remote".                                                                                               |
 
-For the `sddp` service type, the meaning of the `match-property` `name` values is explained further as follows:
+### SDDP Discovery Service Syntax
+
+For the `sddp` service type, the meanings of the `match-property` `name` values are explained further as follows:
 
 | Name Value     | Description                                                                                                                                   |
 |----------------|-----------------------------------------------------------------------------------------------------------------------------------------------|
@@ -128,9 +130,65 @@ For the `sddp` service type, the meaning of the `match-property` `name` values i
 | `port`         | The port part of the 'from' field. For example: 1902 (a String value)                                                                         |
 | `macAddress`   | The MAC address of the device as derived from the last 12 characters of the host field. It is presented in lower-case, dash delimited, format. For example: e0-da-dc-15-28-02 Therefore it may be used as a (unique) sub- part of a Thing UID. |
 
+### IP Discovery Service Syntax
+
+For the `ip` service type, the meanings of the `discovery-parameter` values are explained further as follows:
+
+| Name           | Value                                                                                                                                |
+|----------------|--------------------------------------------------------------------------------------------------------------------------------------|
+| `type`         | Either `ipMulticast` or `ipBroadcast`                                                                                                |
+| `destIp`       | Destination IP address e.g. 192.168.1.1                                                                                              |
+| `destPort`     | Destination port e.g. 4000                                                                                                           |
+| `listenPort`   | Port to use for listening to responses (optional) privileged ports (<1024) not allowed                                               |
+| `request`      | Description of request frame as hex bytes separated by spaces (e.g. 0x01 0x02 ...) with dynamic replacement of variables (see below) |
+| `requestPlain` | Description of request frame as plaintext string dynamic replacement of variables (see below) and escaped as required (see below)    |
+| `timeoutMs`    | Timeout to wait for answers                                                                                                          |
+| `fmtMac`       | Format specifier string for mac address (see below); if no parameter is defined the default is `%02X:`                               |
+
+#### IP Discovery: Substitution Tokens (within `request` and `requestPlain`)
+
+The `request` and `requestPlain` values may contain special tokens that are dynamically replaced by actual variables at runtime as follows:
+
+| Token      | Will Be Replaced By                                                                           |
+|------------|-----------------------------------------------------------------------------------------------|
+| `$srcIp`   | The actual source IP address                                                                  |
+| `$srcPort` | The actual source port                                                                        |
+| `$srcMac`  | The actual source mac address formatted according to the `fmtMac` parameter value (see below) |
+| `$uuid`    | String returned by java.util.UUID.randomUUID()                                                |
+
+#### IP Discovery: Escaping (within `requestPlain`)
+
+In `requestPlain`standard backslash sequences will be translated.
+Plus there are five XML special characters which must be escaped:
+
+| Character | Replacement  |
+|-----------|--------------|
+| &         | \&amp;       |
+| <         | \&lt;        |
+| >         | \&gt;        |
+| "         | \&quot;      |
+| '         | \&apos;      |
+
+#### IP Discovery: Formatting of substituted MAC address (within `requestPlain`)
+
+In `requestPlain` the `$srcMac` token will be converted to the actual source MAC address.
+It will be rendered according to the `fmtMac` parameter value.
+This comprises a standard Java format specifier string plus _optionally_ a single delimiter character.
+Examples are as follows:
+
+| Format Specifier | Result (example)        |
+|------------------|-------------------------|
+| %02X             | 01020304AABBCCDD        |
+| %02x-            | 01-02-03-04-aa-bb-cc-dd |
+| %02X:            | 01:02:03:04:AA:BB:CC:DD |
+| aardvark         | throws exception        |
+| %02Xaardvark     | throws exception        |
+
 ## Example
 
-The following code gives an example for an add-on definition used in bindings.
+The following code gives examples for add-on definitions used in bindings.
+
+### Example for mDNS Service
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -162,6 +220,56 @@ The following code gives an example for an add-on definition used in bindings.
         <match-property>
           <name>modelName</name>
           <regex>Philips hue bridge</regex>
+        </match-property>
+      </match-properties>
+    </discovery-method>
+  </discovery-methods>
+
+</addon:addon>
+```
+
+### Example for IP Service
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<addon:addon id="wiz" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:addon="https://openhab.org/schemas/addon/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/addon/v1.0.0 https://openhab.org/schemas/addon-1.0.0.xsd">
+
+  <type>binding</type>
+  <name>WiZ Binding</name>
+  <description>Binding for WiZ smart devices.</description>
+  <connection>local</connection>
+
+  <discovery-methods>
+    <discovery-method>
+      <service-type>ip</service-type>
+      <discovery-parameters>
+        <discovery-parameter>
+          <name>type</name>
+          <value>ipBroadcast</value>
+        </discovery-parameter>
+        <discovery-parameter>
+          <name>destPort</name>
+          <value>38899</value>
+        </discovery-parameter>
+        <discovery-parameter>
+          <name>requestPlain</name>
+          <value>{"method":"registration","id":1,"params":{"phoneIp":"$srcIp","register":false,"phoneMac":"$srcMac"}}</value>
+        </discovery-parameter>
+        <discovery-parameter>
+          <name>fmtMac</name>
+          <value>%02X</value>
+        </discovery-parameter>
+        <discovery-parameter>
+          <name>timeoutMs</name>
+          <value>5000</value>
+        </discovery-parameter>
+      </discovery-parameters>
+      <match-properties>
+        <match-property>
+          <name>response</name>
+          <regex>.*</regex>
         </match-property>
       </match-properties>
     </discovery-method>

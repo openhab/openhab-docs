@@ -7,7 +7,7 @@ const base = process.env.OH_DOCS_VERSION
     : '/'
 
 const config: UserConfig<DefaultThemeConfig> = {
-    title: 'v4 Documentation Preview',
+    title: 'Documentation Preview',
     description: 'This is a preview of the main parts of the documentation, found in the openhab/openhab-docs repository',
     dest: 'vuepress',
     host: 'localhost',
@@ -43,7 +43,7 @@ const config: UserConfig<DefaultThemeConfig> = {
 
     ],
     themeConfig: {
-        logo: `/openhab-logo.png`,
+        logo: `/openhab-logo.svg`,
         editLinks: false,
         activeHeaderLinks: false,
         sidebarDepth: 0,

@@ -154,7 +154,14 @@ module.exports = [
       'ui/sitemaps',
       { title: 'Pages',
         children: [
-          'ui/layout-pages',
+          { title: 'Layout Pages',
+            collapsable: true,
+            path: '/docs/ui/layout-pages',
+            children: [
+              ['/docs/ui/layout-pages-responsive', 'Responsive Layouts'],
+              ['/docs/ui/layout-pages-fixed', 'Fixed Layouts']
+            ]
+          },
           'ui/map-pages',
           'ui/floorplan-pages',
           'ui/tabbed-pages',
@@ -206,6 +213,15 @@ module.exports = [
     collapsable: true,
     children: [
       ['developer/', 'Overview & Introduction'],
+      { title: 'IDEs',
+        collapsable: true,
+        children: [
+          'developer/ide/eclipse',
+          'developer/ide/intellij',
+          'developer/ide/vscode',
+          'developer/ide/generic',
+        ]
+      },
       'developer/guidelines',
       'developer/addons/',
       'developer/bindings/',

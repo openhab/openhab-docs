@@ -1,7 +1,7 @@
 # This function will add placeholders for pages that are out of scope of the docs preview
 
 def add_placeholder_pages()
-    puts ">>> Adding placeholder pages for preview"
+    puts "➡️ Adding placeholder pages for preview"
     [
         "addons/integrations/homekit",
         "addons/integrations/openhabcloud",
@@ -19,7 +19,7 @@ def add_placeholder_pages()
         "docs/ecosystem/mycroft",
         "docs/installation/openhabian.md"
     ].each { |path|
-        puts " -> #{path}"
+        puts "  ➡️ #{path}"
         page = path
         if (!(path =~ /\.md/)) then
             FileUtils.mkdir_p(path)

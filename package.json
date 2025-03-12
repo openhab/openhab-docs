@@ -4,14 +4,12 @@
   "description": "openHAB Documentation",
   "main": "index.js",
   "scripts": {
-    "build-only": "vuepress build .",
-    "prebuild-preview-local": "ruby prepare-docs.rb",
-    "build-preview-local": "cross-env LANG=en_US.UTF-8 LANGUAGE=en_US.UTF-8 LC_ALL=en_US.UTF-8 NODE_OPTIONS=--openssl-legacy-provider && npx vuepress build .",
-    "build-preview": "npm run build-only",
     "postinstall": "npm dedupe && npm prune",
-    "prebuild-preview": "ruby prepare-docs.rb",
-    "preserve": "npm run build-preview-local",
-    "serve": "python3 -m http.server --directory vuepress"
+    "prepare-docs": "ruby prepare-docs.rb",
+    "build-only": "vuepress build .",
+    "build-preview": "npm run prepare-docs && npm run build-only",
+    "preserve-preview": "npm run build-preview",
+    "serve-preview": "npx http-server vuepress --silent"
   },
   "engines": {
     "node": ">=16.20.1 <17"
