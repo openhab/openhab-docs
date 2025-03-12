@@ -25,7 +25,7 @@ Semantic tags are also used by HABot and end users in rules.
 
 The purpose of this document is to provide rules for openHAB developers and openHAB maintainers in applying existing semantic tags as follows:
 
-- By addon developers/reviewers at design time in the addon's `thing-type` and `channel-type` xml definitions.
+- By addon developers/reviewers at design time in the addon's `thing-type.xml` and `channel-type.xml` definitions.
 - By addon developers/reviewers at run-time dynamically in the addon's Java code.
 - By addon developers/reviewers in deciding whether to propose/approve a new semantic tag.
 
@@ -33,12 +33,12 @@ The purpose of this document is to provide rules for openHAB developers and open
 
 Semantic tags can be applied to the following openHAB objects with a chain of inheritance as follows:
 
-- `Channel-Type` : POINT/PROPERTY tags applied at design time via the channel-type xml.
-- `Channel` : POINT/PROPERTY tags inherited from `Channel-Type` above, and/or applied at run time in the binding.
-- `Item` : POINT/PROPERTY tags inherited from Channel above, and/or all types of tags applied at run time by users.
-- `Thing-Type` : EQUIPMENT tag (single) applied at design time in the thing-type xml.
-- `Thing`: EQUIPMENT tag inherited from `Thing-Type` above, and/or applied at run time in the binding.
-- `Semantic Model`: EQUIPMENT tree structure ("create equipment from thing") inherited from `Thing` above, and/or by users.
+- `Channel-Type` : POINT/PROPERTY tags applied at design time via the `channel-type.xml`.
+- `Channel` : POINT/PROPERTY tags inherited from the `Channel-Type` above, and/or applied at run time by the binding Java code.
+- `Item` : POINT/PROPERTY tags inherited from the `Channel` above, and/or all types of tags applied at run time by users.
+- `Thing-Type` : EQUIPMENT tag (single) applied at design time in the `thing-type.xml`.
+- `Thing`: EQUIPMENT tag inherited from the `Thing-Type` above, and/or applied at run time by the binding Java code.
+- `Semantic Model`: EQUIPMENT tree structure ("create equipment from thing") inherited from the `Thing` above, and/or by users.
 
 ## General Rules for Semantic Tags
 
@@ -50,13 +50,13 @@ It is possible for users to add their own customised tags at their own discretio
 The remainder of this document does NOT relate to user customised tags.
 It applies solely to the openHAB Core tags.
 
-This following uses terms (MUST, MAY, SHALL, SHALL NOT, etc.) as defined in Internet Standard [RFC-2119](https://datatracker.ietf.org/doc/html/rfc2119)
+This following uses terms "MUST", "MAY", "SHALL", "SHALL NOT", etc. that are defined in Internet Standard [RFC-2119](https://datatracker.ietf.org/doc/html/rfc2119)
 
 ### Rules for **APPLYING** Core Predefined Semantic Tags
 
 1. Developers MUST apply core predefined tags in their addons where possible.
-1. Developers MAY hard code the tags in the ‘thing-type.xml’ or apply them dynamically at run time.
-1. Developers SHALL NOT hard code LOCATION tags in the ‘thing-type.xml’.
+1. Developers MAY hard code the tags in the `thing-type.xml` or apply them dynamically at run time.
+1. Developers SHALL NOT hard code LOCATION tags in the `thing-type.xml`.
 1. Developers MAY apply LOCATION tags dynamically at run time (if the addon can determine the location).
 1. Developers SHALL NOT apply customised tags in their addons.
 1. Developers MAY apply a POINT tag without a PROPERTY tag (in cases where a property makes no sense). However, in such a case the developer MAY submit a new PROPERTY tag that fits.
@@ -80,7 +80,7 @@ Submiting and adopting new tags should be a rare occurance.
 An EQUIPMENT tag describes the equipment type of a piece of equipment.
 Examples are thermostat, pump, car, wall switch, push button, alarm system, or alarm detector.
 
-16. New EQUIPMENT tags MUST describe the equipment type of a physical or virtual device.
+15. New EQUIPMENT tags MUST describe the equipment type of a physical or virtual device.
 1. New EQUIPMENT tags MUST be a noun.
 
 ## Point Tags
@@ -88,7 +88,7 @@ Examples are thermostat, pump, car, wall switch, push button, alarm system, or a
 A POINT is a tag that describes the functional type (or purpose) of a data point within an equipment.
 Examples are measurement, control, set point, or status.
 
-18. New POINT tags MUST describe the functional type (or purpose) of the data point.
+17. New POINT tags MUST describe the functional type (or purpose) of the data point.
 1. New POINT tags MUST be what you do to, or how you get, the state of the Item.
 
 ## Property Tags
@@ -96,14 +96,14 @@ Examples are measurement, control, set point, or status.
 A PROPERTY is a tag that describes the information type (or content type) of the data produced or consumed by a point.
 Examples are temperature, brightness, on-off, time stamp
 
-20. New PROPERTY tags MUST describe the information type (or content type) of the point.
+19. New PROPERTY tags MUST describe the information type (or content type) of the point.
 1. New PROPERTY tags MUST be a noun and represent some attribute commonly controlled or sensed in a home automation context.
-1. New PROPERTY tags MUST be defined in conjunction with a functional type of a POINT tag.
+1. New PROPERTY tags MUST be defined in conjunction with the functional type of a POINT tag.
 
 ## Location Tags
 
 A LOCATION is a tag that describes the location type of a point.
-Its  most common use case is to put equipment into a location.
+Its  most common use case is to assign equipment to a location.
 Examples are ground floor, dining (eating) room, kitchen (cooking room), living room, or garage.
 
-23. New LOCATION tags SHALL NOT be synonyms of existing tags (see rule 13.)
+23. New LOCATION tags SHALL NOT be synonyms of existing tags (see [rule 12.](#rules-for-extending-core-predefined-semantic-tags))
