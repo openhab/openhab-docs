@@ -5,6 +5,7 @@ title: CasoKitchen - Bindings
 type: binding
 description: "Provides access towards CASO Smart Kitchen devices which are connected within the [CASO Control App](https://www.casocontrol.de/)."
 since: 3x
+logo: images/addons/casokitchen.svg
 install: auto
 ---
 
@@ -13,6 +14,8 @@ install: auto
 {% include base.html %}
 
 # CasoKitchen Binding
+
+<AddonLogo />
 
 Provides access towards CASO Smart Kitchen devices which are connected within the [CASO Control App](https://www.casocontrol.de/).
  
