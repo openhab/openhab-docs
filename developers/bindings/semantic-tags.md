@@ -29,13 +29,15 @@ The purpose of this document is to provide rules for openHAB developers and open
 - By addon developers/reviewers at run-time dynamically in the addon's Java code.
 - By addon developers/reviewers in deciding whether to propose/approve a new semantic tag.
 
+Note: the document may also provide information to help users when setting up their system.
+
 ## Objects that use Semantic Tags
 
 Semantic tags can be applied to the following openHAB objects with a chain of inheritance as follows:
 
 - `Channel-Type` : POINT/PROPERTY tags applied at design time via the `channel-type.xml`.
 - `Channel` : POINT/PROPERTY tags inherited from the `Channel-Type` above, and/or applied at run time by the binding Java code.
-- `Item` : POINT/PROPERTY tags inherited from the `Channel` above, and/or all types of tags applied at run time by users.
+- `Item` : POINT/PROPERTY tags inherited from the `Channel` above, and/or all types of tags applied users when setting up their system.
 - `Thing-Type` : EQUIPMENT tag (single) applied at design time in the `thing-type.xml`.
 - `Thing`: EQUIPMENT tag inherited from the `Thing-Type` above, and/or applied at run time by the binding Java code.
 - `Semantic Model`: EQUIPMENT tree structure ("create equipment from thing") inherited from the `Thing` above, and/or by users.
@@ -71,7 +73,7 @@ Submiting and adopting new tags should be a rare occurance.
 
 1. New tags MUST fit within the hierarchy of semantic tags already defined in openHAB Core.
 1. New tags SHALL NOT be synonyms of existing tags e.g. kitchen/kitchenette, sitting/living room.
-1. New PROPERTY, POINT and EQUIPMENT tags SHOULD aim to be applicable across more than one bindings
+1. New PROPERTY, POINT and EQUIPMENT tags SHOULD aim to be applicable across more than one binding.
 1. Developers MUST provide supporting arguments in their PR that the rules above and below are met.
 
 ## C. Rules for extending EQUIPMENT Tags
