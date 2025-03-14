@@ -71,8 +71,8 @@ Submiting and adopting new tags should be a rare occurance.
 
 1. New tags MUST fit within the hierarchy of semantic tags already defined in openHAB Core.
 1. New tags SHALL NOT be synonyms of existing tags e.g. kitchen/kitchenette, sitting/living room.
-1. New tags MUST show that new PROPERTY, POINT and EQUIPMENT tags could be applied to three or more bindings.
-1. Developers MUST provide supporting evidence in their PR that the rules above and below are met.
+1. New PROPERTY, POINT and EQUIPMENT tags SHOULD aim to be applicable across more than one bindings
+1. Developers MUST provide supporting arguments in their PR that the rules above and below are met.
 
 ## C. Rules for extending EQUIPMENT Tags
 
