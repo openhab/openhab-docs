@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="qolsys_qz2101840_00_000" listed="false">
+    <label>QZ2101-840 / STW-W3350WU IQ Smart Plug</label>
+    <description><![CDATA[
+IQ Smart Plug<br /> <h1>Overview</h1><p>Smart Plug switch with voltage, power and energy measurement.</p><p>- Technical parameters</p><p>- ON/OFF control</p><p>- Compatible with 300 series and 500 series</p><p>- Measuring voltage, current, instant power, accumulated power.</p><p>- Input voltage: 110-230V AC 50/60HZ</p><p>- Max current: 13A</p><p>- Rated input current: 10A,110-230V ,50/60 Hz Continuous load current</p><p>                                   16A,110-230V ,50/60Hz Instantaneous load current</p><p>- Radio Protocol: Z-Wave</p><p>- Radio Frequency: 868.4MHz EU; 908.4MHz US; 921.4MHz ANZ; 869.2MHz RU</p><p>- Wireless distance:50m</p><p>- Operation temperature: 0-40°C</p><p>- Storage temperature:0-60°C</p><p>- Dimension (D x W x H):</p><p>- US plug: 43mm x 43mm x 45mm</p><p>- EU plug: 43mm x 43mm x 65mm (F Type)</p> <br /> <h2>Inclusion Information</h2><p>Set controller to include mode. Quickly, triple click the code button, the device will enter adding mode, and the LED light will flash red 5 times.</p> <br /> <h2>Exclusion Information</h2><p>Set controller to exclude/remove mode. Quickly, triple click the code button, the device will enter adding mode, and the LED light will flash red 5 times.</p> <br /> <h2>Wakeup Information</h2><p><br /></p>
+    ]]></description>
+    <category>PowerOutlet</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_binary" typeId="switch_binary">
+        <label>Switch</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY,COMMAND_CLASS_BASIC</property>
+        </properties>
+      </channel>
+      <channel id="meter_kwh" typeId="meter_kwh">
+        <label>Electric meter (kWh)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_KWh</property>
+        </properties>
+      </channel>
+      <channel id="meter_watts" typeId="meter_watts">
+        <label>Electric meter (watts)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_W</property>
+        </properties>
+      </channel>
+      <channel id="meter_voltage" typeId="meter_voltage">
+        <label>Electric meter (volts)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_V</property>
+        </properties>
+      </channel>
+      <channel id="meter_current" typeId="meter_current">
+        <label>Electric meter (amps)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_A</property>
+        </properties>
+      </channel>
+      <channel id="alarm_power" typeId="alarm_power">
+        <label>Alarm</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Qolsys</property>
+      <property name="modelId">QZ2101-840 / STW-W3350WU</property>
+      <property name="manufacturerId">012A</property>
+      <property name="manufacturerRef">0005:0003</property>
+      <property name="dbReference">1655</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_1_1" type="integer" groupName="configuration">
+        <label>1: Meter Report Enable</label>
+        <description><![CDATA[
+This parameter defines Disable/Enable meter report measure data to controller.<br /> <h1>Overview</h1><p><br /></p>
+        ]]></description>
+        <default>1</default>
+      </parameter>
+
+      <parameter name="config_2_3" type="integer" groupName="configuration">
+        <label>2: Meter Report Interval</label>
+        <description><![CDATA[
+Interval time reporting data to controller<br /> <h1>Overview</h1><p>This parameter defines interval time (in seconds) that Meter report data to Z-Wave</p><p>Controller.</p>
+        ]]></description>
+        <default>300</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_3_1" type="integer" groupName="configuration">
+        <label>3: Maxium over-load current</label>
+        <description><![CDATA[
+maximum current the plug can provide to load<br /> <h1>Overview</h1><p>This parameter defines maximum current the plug can provide to load that be connected to plug. If the current consumed by load greater than maximum current, the plug will cut off power.</p>
+        ]]></description>
+        <default>10</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_4_1" type="integer" groupName="configuration">
+        <label>4: Maximum alarm current</label>
+        <description><![CDATA[
+Max current for over-current notification<br /> <h1>Overview</h1><p>This parameter defines maximum current, if the current plug provides to load greater than this parameter, the plug will send over-current notification to Z-Wave Controller and the LED will be turn RED, but plug cannot cut-off power. This value must be less than parameter 3#.</p>
+        ]]></description>
+        <default>9</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_5_1" type="integer" groupName="configuration">
+        <label>5: LED enable</label>
+        <description>This parameter defines the LED indication Function ON/OFF.</description>
+        <default>1</default>
+        <options>
+          <option value="0">Disable LED indication Function</option>
+          <option value="1">Enable LED indication Function</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_6_1" type="integer" groupName="configuration">
+        <label>6: Power Report Threshold</label>
+        <description><![CDATA[
+Power consumed change to be reported<br /> <h1>Overview</h1><p>This parameter defines by how much power consumed must change to be reported to the Z-Wave Controller or Z-Wave Gateway in percent. If the rate of power consumed change ratio is greater than this parameter, the plug will report the results, voltage, current, power and energy, that plug measure to Z-Wave Controller or Z-Wave Gateway.</p>
+        ]]></description>
+        <default>5</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_7_1" type="integer" groupName="configuration">
+        <label>7: Remember Relay ON/OFF status after power failure.</label>
+        <description><![CDATA[
+Plug state after power-on<br /> <h1>Overview</h1><p>This parameter defined the relay status if remember or not. If remembered, the plug will restore the relay status last power off when the plug supply power next time.</p>
+        ]]></description>
+        <default>1</default>
+      </parameter>
+
+      <parameter name="config_8_1" type="integer" groupName="configuration">
+        <label>8: Plug Time switch Function</label>
+        <description><![CDATA[
+Timer plug OFF after time period<br /> <h1>Overview</h1><p>This parameter defines the timer function Enable/Disable. This parameter can be configured with 0 or 1, where 0 means disable time switch function and 1 enable. The time will be defined in parameter 9#. If this parameter is Set to 1, and when turn the plug relay on, the timer in plug start run with time defined in parameter #9 and the plug will turn the relay off.</p>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_9_2" type="integer" groupName="configuration">
+        <label>9: Time switch Period</label>
+        <description><![CDATA[
+Delay time after the plug is switched off (in minutes)<br /> <h1>Overview</h1><p>This parameter defines the time that plug time switch off. This parameter can be configured 1 ~ 65535(in minutes). If Parameter 9# is set to ‘1’, and relay is turn-on, the relay will be turn-off after delay this parameter.</p>
+        ]]></description>
+        <default>150</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: lifeline</label>
+        <description><![CDATA[
+Association group 1 is assigned to Plugs status - On/Off. Allows for receiving control command from trigger devices whenever the Plug is turned On or Off.<br /> <h1>Overview</h1><p>Association group 1 is assigned to Plugs status - On/Off. Allows for receiving control command from trigger devices whenever the Plug is turned On or Off.</p>
+        ]]></description>
+        <multipleLimit>1</multipleLimit>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: group 2</label>
+        <description><![CDATA[
+Association group 2 reports relay's status to just one device, Z-Wave network's main controller by default. It's not recommended to modify settings of this association group.<br /> <h1>Overview</h1><p>Association group 2 reports relay's status to just one device, Z-Wave network's main controller by default. It's not recommended to modify settings of this association group.</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

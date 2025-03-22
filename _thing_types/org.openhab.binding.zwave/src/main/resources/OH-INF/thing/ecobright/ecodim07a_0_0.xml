@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="ecobright_ecodim07a_00_000" listed="false">
+    <label>ECO-DIM.07 LED Smart Dimmer</label>
+    <description><![CDATA[
+LED Smart Dimmer<br /> <h1>Overview</h1><p>Two wire dimmer that uses z-wave as the protocol. Has options for leading and trailing and supports up to 250W RC LED and up to 150W RL LED. <br />For halogen bulbs and regular light bulbs it supports 10 - 300W. <br />Minimum on level can be modified physically by turning a screw.<br /></p> <br /> <h2>Inclusion Information</h2><p>Remove the device from previous z-wave networks if it was already added. Else the inclusion will fail. <br />Press the reset button twice. The indication light will blink blue and stays on for 10 seconds when the inclusion process succeeded. Time out is 15 minutes.<br /></p> <br /> <h2>Exclusion Information</h2><p>Method1:<br />Use the z-wave hub interface to remove the device or reconfigure the device according the documentation.</p><p>Method 2:<br />Press the reset button 3 times<br />The indication light blinks purple and stays on for 10 seconds without blinking when succeeded. Time out is 3 minutes.<br /></p> <br /> <h2>Wakeup Information</h2><p><br /></p>
+    ]]></description>
+    <category>WallSwitch</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_dimmer" typeId="switch_dimmer">
+        <label>Dimmer</label>
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_SWITCH_MULTILEVEL,COMMAND_CLASS_BASIC</property>
+          <property name="binding:Command:OnOffType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+        </properties>
+      </channel>
+      <channel id="meter_kwh" typeId="meter_kwh">
+        <label>Electric meter (kWh)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_KWh</property>
+        </properties>
+      </channel>
+      <channel id="meter_watts" typeId="meter_watts">
+        <label>Electric meter (watts)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_W</property>
+        </properties>
+      </channel>
+      <channel id="meter_voltage" typeId="meter_voltage">
+        <label>Electric meter (volts)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_V</property>
+        </properties>
+      </channel>
+      <channel id="meter_current" typeId="meter_current">
+        <label>Electric meter (amps)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_A</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">EcoBright</property>
+      <property name="modelId">ECO-DIM.07</property>
+      <property name="manufacturerId">0431</property>
+      <property name="manufacturerRef">0021:0216</property>
+      <property name="dbReference">1602</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_1_1" type="integer" groupName="configuration">
+        <label>1: Power restore level</label>
+        <description><![CDATA[
+Status of dimmer after power on<br /> <h1>Overview</h1><p>Set the power restore level. <br /></p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Off</option>
+          <option value="1">On</option>
+          <option value="2">Memory</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_2_1" type="integer" groupName="configuration">
+        <label>2: Notification when load status change</label>
+        <description><![CDATA[
+Dimmer will send notification to associated devices when the status of dimmer load changes.<br /> <h1>Overview</h1><p><br /></p>
+        ]]></description>
+        <default>1</default>
+        <options>
+          <option value="0">Disable</option>
+          <option value="1">Enable</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_3_1" type="integer" groupName="configuration">
+        <label>3: External switch dimming speed</label>
+        <description>Dimming speed of the external switch, unit is second.</description>
+        <default>5</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_4_1" type="integer" groupName="configuration">
+        <label>4: Mosfet Driving Type</label>
+        <description>Choose the dimming type</description>
+        <default>0</default>
+        <options>
+          <option value="0">Trailing Edge</option>
+          <option value="1">Leading Edge</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_5_1" type="integer" groupName="configuration">
+        <label>5: External switch pairing network</label>
+        <description>Decide if the external switch can perform inclusion</description>
+        <default>0</default>
+        <options>
+          <option value="0">Disable</option>
+          <option value="1">Enable</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_6_1" type="integer" groupName="configuration">
+        <label>6: Dimming Way</label>
+        <description>Decide if the dimmer uses linear or logarithmic dimming</description>
+        <default>0</default>
+        <options>
+          <option value="0">linear</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_7_1" type="integer" groupName="configuration">
+        <label>7: Switch on level</label>
+        <description><![CDATA[
+Setting switch on level from off status, IF set the value to 0, will automatically run 7<br /> <h1>Overview</h1><p>0 = restore last dim level<br />1 - 99 = brightness level<br /></p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_8_0" type="integer" groupName="configuration">
+        <label>8: Turn off delay</label>
+        <description>Setting turn off delay time, unit is second</description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Group 1</label>
+        <description><![CDATA[
+Lifeline<br /> <h1>Overview</h1><p>- Device reset locally noticationcal CC<br />- Switch multilevel report CC<br />- Meter report<br /></p>
+        ]]></description>
+        <multipleLimit>1</multipleLimit>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: Group 2</label>
+        <description><![CDATA[
+Basic Set<br /> <h1>Overview</h1><p>- OFF/ON (0x00 / 0xFF)<br />- 1-99% (0x01, 0x63)<br /></p>
+        ]]></description>
+        <multipleLimit>1</multipleLimit>
+      </parameter>
+
+      <parameter name="group_3" type="text" groupName="association" multiple="true">
+        <label>3: Group 3</label>
+        <description><![CDATA[
+Know switch multilevel set, when the knob is rotated/pressed<br /> <h1>Overview</h1><p>Press: OFF/ON (0x00 / 0xFF)<br />rotate: multilevel switch start/stop level change command<br />Level increase Start / stop<br />Level decrease start / stop<br /></p>
+        ]]></description>
+        <multipleLimit>1</multipleLimit>
+      </parameter>
+
+      <parameter name="group_4" type="text" groupName="association" multiple="true">
+        <label>4: Group 4</label>
+        <description><![CDATA[
+External button switch multilevel set. When the external button is pressed / held<br /> <h1>Overview</h1><p>Press: OFF/ON (0x00 / 0xFF)<br />Held: multilevel switch start/stop level change command<br />Level increase Start / stop<br />Level decrease start / stop</p>
+        ]]></description>
+        <multipleLimit>1</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>
