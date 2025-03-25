@@ -355,7 +355,7 @@ Possible values for the type are:
 |---------------------------------------------------|---------------------------------------------------|---------------------------------------------------|---------------------------------------------------|
 | `Riemann.LEFT`                                    | `Riemann.RIGHT`                                   | `Riemann.TRAPEZOIDAL`                             | `Riemann.MIDPOINT`                                |
 |---------------------------------------------------|---------------------------------------------------|---------------------------------------------------|---------------------------------------------------|
-| ![left](../images/riemann-left.svg)               | ![right](../images/riemann-right.svg)             | ![trapezoidal](../images/riemann-trapezoidal.svg) | ![midpoint](../images/riemann-midpoint.svg)       |
+| ![left](images/riemann-left.svg)                  | ![right](images/riemann-right.svg)                | ![trapezoidal](images/riemann-trapezoidal.svg)    | ![midpoint](images/riemann-midpoint.svg)          |
 |---------------------------------------------------|---------------------------------------------------|---------------------------------------------------|---------------------------------------------------|
 
 - `RiemannType.LEFT`: takes the persisted value at the start of the bucket to represent the value for the whole bucket.
