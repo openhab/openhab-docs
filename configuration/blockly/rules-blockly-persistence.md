@@ -70,10 +70,16 @@ This method uses a time-weighted average calculation
 - evolution rate: gets the evolution rate of the state of the given Item in percent (may be positive or negative)
 - minimum: gets the minimum value of the State of the given Item
 - maximum: gets the maximum value of the State of the given Item
+- Riemann sum: gets a Riemann sum of the states of the given Item.
+This is an approximation of the integral of a continuous function represented by discrete values.
 - sum: gets the sum of the State of the given Item
 - state updates count: gets the count of State updates of the given Item
 - state changes count: gets the count of State changes of the given Item
 - all states: gets all States of the given Item
+
+Some statistical values using time-weighted averages (Riemann sum, average, variance, deviation) have an extra parameter representing the approximation type for the calculation.
+Possible values are `left`, `right`, `trapezoidal` or `midpoint`.
+For more information, see: [Time-weighted calculations - Riemann Sums]({{base}}/configuration/persistence.html#time-weighted-calculations-riemann-sums)
 
 In the case of the following two functions the block changes its appearance by replacing the time with an option to chose if the equal value should be skipped or not:
 
