@@ -366,6 +366,11 @@ This is the best approximation when the real values change continuously, the per
 
 The default when no type is provided is `RiemannType.LEFT`.
 
+A Riemann sum is always calculated using seconds as unit for time.
+As an example, the Riemann sum of power values in `kW` will result in an energy measurement in `kWs`.
+You can rely on framework functionality to convert to the appropriate unit (e.g. `kWh`), or do an explicit conversion.
+If you use plain `Number` items and don't use units, be aware of this time multiplication factor.
+
 ### Examples
 
 To persist an Item called `Lights` in an rrd4j database, you would enter the following:
