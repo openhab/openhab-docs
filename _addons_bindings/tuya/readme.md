@@ -5,7 +5,7 @@ title: Tuya - Bindings
 type: binding
 description: "This addon connects Tuya WiFi devices with openHAB or compatible systems."
 since: 3x
-install: manual
+install: auto
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
