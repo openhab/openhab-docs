@@ -156,8 +156,8 @@ The syntax is as follows:
 
 ```java
 Items {
-    <itemlist1> : [strategy = <strategy1>, <strategy2>, ...] [filter = <filter1>, <filter2>, ...]
-    <itemlist2> : [strategy = <strategyX>, <strategyY>, ...]
+    <itemlist1> : strategy = <strategy1>, <strategy2>, ... [filter = <filter1>, <filter2>, ...]
+    <itemlist2> : strategy = <strategyX>, <strategyY>, ...
     ...
 
 }
@@ -175,6 +175,10 @@ where `<itemlist>` is a comma-separated list consisting of one or more of the fo
 The entries are additive.
 This means if one Item appears in more than one `<itemlist>` either directly or indirectly (e.g. `*` which includes all Items or as a member of a Group used in `<groupName>*`), all the strategies strategies listed on all those lines apply to that Item.
 In the same way, an Item defined by a `!<itemName>` or `!<groupName>*` will be excluded after all additive rules have been applied.
+
+For each `<itemlist>`, you need to define one or more strategies to apply.
+You can use the predefined strategies, or the strategies defined in the `Strategies` section.
+Defining filters is optional.
 
 ### Aliases
 
