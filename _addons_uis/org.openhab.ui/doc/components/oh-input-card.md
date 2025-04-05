@@ -120,6 +120,16 @@ Display an input in a card
     Use the formatted state as the value for the input control
   </PropDescription>
 </PropBlock>
+<PropBlock type="DECIMAL" name="min" label="Minimum">
+  <PropDescription>
+    Minimum allowed value when type set to number
+  </PropDescription>
+</PropBlock>
+<PropBlock type="DECIMAL" name="max" label="Maximum">
+  <PropDescription>
+    Maximum allowed value when type set to number
+  </PropDescription>
+</PropBlock>
 <PropBlock type="DECIMAL" name="step" label="Step">
   <PropDescription>
     Step value when type set to number, any if left empty
