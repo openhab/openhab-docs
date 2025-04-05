@@ -30,4 +30,6 @@ The developer tools page is split into two tabs:
   So if you read this from the website, you can also read this from inside the UI.
 - **API Explorer**<br>
   Interactively discover and access the [REST API]({{base}}/configuration/restdocs), which is also used by Main UI to interact with the openHAB server.
+- [**Log Viewer**](log-viewer)<br>
+  View the logs of the openHAB server in a convenient way. Filter, highlight, download and copy log messages.
 <!-- END MAINUI SIDEBAR DOC - DO NOT REMOVE -->
