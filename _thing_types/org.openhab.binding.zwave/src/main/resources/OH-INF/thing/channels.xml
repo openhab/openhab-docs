@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <thing:thing-descriptions bindingId="zwave"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:thing="http://eclipse.org/smarthome/schemas/thing-description/v1.0.0"
-    xsi:schemaLocation="http://eclipse.org/smarthome/schemas/thing-description/v1.0.0 org.eclipse.smarthome.thing-description.xsd">
+    xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+    xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0 https://openhab.org/schemas/thing-description-1.0.0.xsd">
 
     <channel-type id="basic_number">
         <item-type>Number</item-type>
@@ -20,6 +20,9 @@
         <description>Indicates if the access control alarm is triggered
         </description>
         <category>Door</category>
+        <tags>
+            <tag>Alarm</tag>
+        </tags>
         <state readOnly="true">
             <options>
                 <option value="OFF">OK</option>
@@ -34,6 +37,10 @@
         <description>Indicates if the low battery alarm is triggered
         </description>
         <category>LowBattery</category>
+        <tags>
+            <tag>Alarm</tag>
+            <tag>LowBattery</tag>
+        </tags>
         <state readOnly="true">
             <options>
                 <option value="OFF">OK</option>
@@ -49,6 +56,9 @@
         <description>Indicates if the burglar alarm is triggered
         </description>
         <category>Door</category>
+        <tags>
+            <tag>Alarm</tag>
+        </tags>
         <state readOnly="true">
             <options>
                 <option value="OFF">OK</option>
@@ -64,6 +74,10 @@
         <description>Indicates if the carbon monoxide alarm is triggered
         </description>
         <category></category>
+        <tags>
+            <tag>Alarm</tag>
+            <tag>CO</tag>
+        </tags>
         <state readOnly="true">
             <options>
                 <option value="OFF">OK</option>
@@ -79,6 +93,10 @@
         <description>Indicates if the carbon dioxide alarm is triggered
         </description>
         <category>CarbonDioxide</category>
+        <tags>
+            <tag>Alarm</tag>
+            <tag>CO2</tag>
+        </tags>
         <state readOnly="true">
             <options>
                 <option value="OFF">OK</option>
@@ -94,6 +112,10 @@
         <description>Indicates if the combustible gas alarm is triggered
         </description>
         <category></category>
+        <tags>
+            <tag>Alarm</tag>
+            <tag>Gas</tag>
+        </tags>
         <state readOnly="true">
             <options>
                 <option value="OFF">OK</option>
@@ -109,6 +131,9 @@
         <description>Indicates Police, Fire, or Medical services should be contacted
         </description>
         <category>Alarm</category>
+        <tags>
+            <tag>Alarm</tag>
+        </tags>
         <state readOnly="true">
             <options>
                 <option value="ON">EMERGENCY</option>
@@ -124,6 +149,10 @@
         <description>Indicates if the entry alarm is triggered
         </description>
         <category>Door</category>
+        <tags>
+            <tag>Alarm</tag>
+            <tag>OpenState</tag>
+        </tags>
         <state readOnly="true">
             <options>
                 <option value="ON">Open</option>
@@ -139,6 +168,10 @@
         <description>Indicates if the flood alarm is triggered
         </description>
         <category>Water</category>
+        <tags>
+            <tag>Alarm</tag>
+            <tag>Water</tag>
+        </tags>
         <state readOnly="true">
             <options>
                 <option value="OFF">OK</option>
@@ -154,6 +187,9 @@
         <description>Indicates if an alarm is triggered
         </description>
         <category>Alarm</category>
+        <tags>
+            <tag>Alarm</tag>
+        </tags>
         <state readOnly="true">
             <options>
                 <option value="OFF">OK</option>
@@ -169,6 +205,10 @@
         <description>Indicates if a heat alarm is triggered
         </description>
         <category>temperature_hot</category>
+        <tags>
+            <tag>Alarm</tag>
+            <tag>Temperature</tag>
+        </tags>
         <state readOnly="true">
             <options>
                 <option value="OFF">OK</option>
@@ -184,6 +224,10 @@
         <description>Indicates if a low temp alarm is triggered
         </description>
         <category>temperature_cold</category>
+        <tags>
+            <tag>Alarm</tag>
+            <tag>Temperature</tag>
+        </tags>
         <state readOnly="true">
             <options>
                 <option value="OFF">OK</option>
@@ -199,6 +243,10 @@
         <description>Indicates if a motion alarm is triggered
         </description>
         <category>Motion</category>
+        <tags>
+            <tag>Alarm</tag>
+            <tag>Presence</tag>
+        </tags>
         <state readOnly="true">
             <options>
                 <option value="OFF">OK</option>
@@ -213,6 +261,9 @@
         <label>Alarm type</label>
         <description>Provides the raw alarm value</description>
         <category></category>
+        <tags>
+            <tag>Alarm</tag>
+        </tags>
         <state readOnly="true">
         </state>
     </channel-type>
@@ -224,6 +275,10 @@
         <description>Indicates if a power alarm is triggered
         </description>
         <category>Energy</category>
+        <tags>
+            <tag>Alarm</tag>
+            <tag>Power</tag>
+        </tags>
         <state readOnly="true">
             <options>
                 <option value="OFF">OK</option>
@@ -239,6 +294,9 @@
         <description>Provides alarm parameters as json string
         </description>
         <category></category>
+        <tags>
+            <tag>Alarm</tag>
+        </tags>
         <state readOnly="true">
         </state>
     </channel-type>
@@ -250,6 +308,10 @@
         <description>Indicates if a smoke is triggered
         </description>
         <category>Smoke</category>
+        <tags>
+            <tag>Alarm</tag>
+            <tag>Smoke</tag>
+        </tags>
         <state readOnly="true">
             <options>
                 <option value="OFF">OK</option>
@@ -265,6 +327,9 @@
         <description>Indicates if a system alarm is triggered
         </description>
         <category></category>
+        <tags>
+            <tag>Alarm</tag>
+        </tags>
         <state readOnly="true">
             <options>
                 <option value="OFF">OK</option>
@@ -280,6 +345,10 @@
         <description>Indicates if the tamper alarm is triggered
         </description>
         <category></category>
+        <tags>
+            <tag>Alarm</tag>
+            <tag>Tampered</tag>
+        </tags>
         <state readOnly="true">
             <options>
                 <option value="OFF">OK</option>
@@ -295,6 +364,10 @@
         <description>
         </description>
         <category></category>
+        <tags>
+            <tag>Alarm</tag>
+            <tag>Water</tag>
+        </tags>
         <state readOnly="true">
             <options>
                 <option value="OFF">OK</option>
@@ -310,6 +383,9 @@
         <description>
         </description>
         <category>Humidity</category>
+        <tags>
+            <tag>Alarm</tag>
+        </tags>
         <state readOnly="true">
             <options>
                 <option value="OFF">OK</option>
@@ -325,6 +401,10 @@
         <description>Indicates the position of the barrier
         </description>
         <category>Door</category>
+        <tags>
+            <tag>Measurement</tag>
+            <tag>OpenLevel</tag>
+        </tags>
     </channel-type>
 
     <!-- Barrier State -->
@@ -334,6 +414,9 @@
         <description>Indicates the state of the barrier
         </description>
         <category>Door</category>
+        <tags>
+            <tag>Status</tag>
+        </tags>
         <state readOnly="true">
             <options>
                 <option value="0">Closed</option>
@@ -352,6 +435,10 @@
         <description>Provides start / stop control of blinds
         </description>
         <category>Blinds</category>
+        <tags>
+            <tag>Control</tag>
+            <tag>OpenLevel</tag>
+        </tags>
         <config-description>
             <parameter name="config_invert_control" type="boolean">
                 <label>Invert control</label>
@@ -392,6 +479,10 @@
         <label>Blinds Lamella Position</label>
         <description>Sets the blinds lamella position</description>
         <category>Blinds</category>
+        <tags>
+            <tag>Control</tag>
+            <tag>Tilt</tag>
+        </tags>
         <config-description>
             <parameter name="config_invert_percent" type="boolean">
                 <label>Invert percentage value</label>
@@ -411,6 +502,10 @@
         <label>Blinds Shutter Position</label>
         <description>Sets the blinds shutter position</description>
         <category>Blinds</category>
+        <tags>
+            <tag>Control</tag>
+            <tag>OpenLevel</tag>
+        </tags>
         <config-description>
             <parameter name="config_invert_percent" type="boolean">
                 <label>Invert percentage value</label>
@@ -433,6 +528,10 @@
             It is also possible to dim values and switch the light on and off.
         </description>
         <category>ColorLight</category>
+        <tags>
+            <tag>Control</tag>
+            <tag>Color</tag>
+        </tags>
     </channel-type>
 
     <!-- Color Temperature Channel -->
@@ -442,6 +541,10 @@
         <description>The color temperature channel allows to set the color
             temperature of a light from 0 (cold) to 100 (warm).</description>
         <category>ColorLight</category>
+        <tags>
+            <tag>Control</tag>
+            <tag>ColorTemperature</tag>
+        </tags>
     </channel-type>
 
     <!-- Color Command Class - Raw -->
@@ -450,6 +553,10 @@
         <label>Color Raw Setting</label>
         <description>Sets the color from a comma delimited key=value string</description>
         <category></category>
+        <tags>
+            <tag>Control</tag>
+            <tag>Color</tag>
+        </tags>
     </channel-type>
 
     <!-- Configuration Command Class Channel - Decimal Conversion -->
@@ -466,6 +573,10 @@
         <label>Indicator Level</label>
         <description>Sets the indicator brightness</description>
         <category></category>
+        <tags>
+            <tag>Control</tag>
+            <tag>Brightness</tag>
+        </tags>
     </channel-type>
 
     <!-- Indicator Command Class - Period -->
@@ -498,6 +609,9 @@
         <label>Door Lock</label>
         <description>Lock and unlock the door</description>
         <category>Door</category>
+        <tags>
+            <tag>Switch</tag>
+        </tags>
         <state>
             <options>
                 <option value="ON">Locked</option>
@@ -512,6 +626,10 @@
         <label>Electric Current Consumption</label>
         <description>Indicates the instantaneous current consumption</description>
         <category>Energy</category>
+        <tags>
+            <tag>Measurement</tag>
+            <tag>Current</tag>
+        </tags>
         <state pattern="%.1f" readOnly="true">
         </state>
     </channel-type>
@@ -522,6 +640,10 @@
         <label>Gas Cubic Meters</label>
         <description>Indicates the gas use in cubic meters</description>
         <category>Energy</category>
+        <tags>
+            <tag>Measurement</tag>
+            <tag>Gas</tag>
+        </tags>
         <state pattern="%.1f" readOnly="true">
         </state>
     </channel-type>
@@ -532,6 +654,10 @@
         <label>Gas Cubic Feet</label>
         <description>Indicates the gas use in cubic feet</description>
         <category>Energy</category>
+        <tags>
+            <tag>Measurement</tag>
+            <tag>Gas</tag>
+        </tags>
         <state pattern="%.1f" readOnly="true">
         </state>
     </channel-type>
@@ -542,6 +668,10 @@
         <label>Gas Pulse Count</label>
         <description>Indicates the gas use in pulses</description>
         <category>Energy</category>
+        <tags>
+            <tag>Measurement</tag>
+            <tag>Gas</tag>
+        </tags>
         <state pattern="%.1f" readOnly="true">
         </state>
     </channel-type>
@@ -552,6 +682,10 @@
         <label>Energy Consumption</label>
         <description>Indicates the energy consumption (kVAh)</description>
         <category>Energy</category>
+        <tags>
+            <tag>Measurement</tag>
+            <tag>Energy</tag>
+        </tags>
         <state pattern="%.1f" readOnly="true">
         </state>
     </channel-type>
@@ -562,6 +696,10 @@
         <label>Energy Consumption</label>
         <description>Indicates the energy consumption (kWh)</description>
         <category>Energy</category>
+        <tags>
+            <tag>Measurement</tag>
+            <tag>Energy</tag>
+        </tags>
         <state pattern="%.1f" readOnly="true">
         </state>
     </channel-type>
@@ -572,6 +710,9 @@
         <label>Power Factor</label>
         <description>Indicates the instantaneous power factor</description>
         <category>Energy</category>
+        <tags>
+            <tag>Measurement</tag>
+        </tags>
         <state pattern="%.1f" readOnly="true">
         </state>
     </channel-type>
@@ -582,6 +723,10 @@
         <label>Pulse Count</label>
         <description>Indicates the pulse count</description>
         <category>Energy</category>
+        <tags>
+            <tag>Measurement</tag>
+            <tag>Energy</tag>
+        </tags>
         <state pattern="%.1f" readOnly="true">
         </state>
     </channel-type>
@@ -600,6 +745,10 @@
         <label>Voltage</label>
         <description>Indicates the instantaneous voltage</description>
         <category>Energy</category>
+        <tags>
+            <tag>Measurement</tag>
+            <tag>Voltage</tag>
+        </tags>
         <state pattern="%.1f" readOnly="true">
         </state>
     </channel-type>
@@ -610,6 +759,10 @@
         <label>Water consumption in cubic meters</label>
         <description>Indicates the instantaneous water consumption</description>
         <category>Water</category>
+        <tags>
+            <tag>Measurement</tag>
+            <tag>Water</tag>
+        </tags>
         <state pattern="%.1f" readOnly="true">
         </state>
     </channel-type>
@@ -620,6 +773,10 @@
         <label>Water consumption in cubic feet</label>
         <description>Indicates the instantaneous water consumption</description>
         <category>Water</category>
+        <tags>
+            <tag>Measurement</tag>
+            <tag>Water</tag>
+        </tags>
         <state pattern="%.1f" readOnly="true">
         </state>
     </channel-type>
@@ -630,6 +787,10 @@
         <label>Water consumption in gallons</label>
         <description>Indicates the instantaneous water consumption</description>
         <category>Water</category>
+        <tags>
+            <tag>Measurement</tag>
+            <tag>Water</tag>
+        </tags>
         <state pattern="%.1f" readOnly="true">
         </state>
     </channel-type>
@@ -640,6 +801,10 @@
         <label>Water consumption in pulses</label>
         <description>Indicates the instantaneous water consumption</description>
         <category>Water</category>
+        <tags>
+            <tag>Measurement</tag>
+            <tag>Water</tag>
+        </tags>
         <state pattern="%.1f" readOnly="true">
         </state>
     </channel-type>
@@ -650,6 +815,10 @@
         <label>Electric Power Consumption</label>
         <description>Indicates the instantaneous power consumption</description>
         <category>Energy</category>
+        <tags>
+            <tag>Measurement</tag>
+            <tag>Power</tag>
+        </tags>
         <state pattern="%.1f" readOnly="true">
         </state>
     </channel-type>
@@ -660,6 +829,10 @@
         <label>Smoke Alarm</label>
         <description>Smoke Alarm</description>
         <category>Smoke</category>
+        <tags>
+            <tag>Alarm</tag>
+            <tag>Smoke</tag>
+        </tags>
         <state readOnly="true">
             <options>
                 <option value="0">Previous Events cleared</option>
@@ -676,6 +849,10 @@
         <item-type>Number</item-type>
         <label>CO Alarm</label>
         <description>CO Alarm</description>
+        <tags>
+            <tag>Alarm</tag>
+            <tag>CO</tag>
+        </tags>
         <state readOnly="true">
             <options>
                 <option value="0">Previous Events cleared</option>
@@ -692,6 +869,10 @@
         <item-type>Number</item-type>
         <label>CO2 Alarm</label>
         <description>CO2 Alarm</description>
+        <tags>
+            <tag>Alarm</tag>
+            <tag>CO2</tag>
+        </tags>
         <state readOnly="true">
             <options>
                 <option value="0">Previous Events cleared</option>
@@ -708,6 +889,9 @@
         <item-type>Number</item-type>
         <label>Heat Alarm</label>
         <description>Heat Alarm</description>
+        <tags>
+            <tag>Alarm</tag>
+        </tags>
         <state readOnly="true">
             <options>
                 <option value="0">Previous Events cleared</option>
@@ -726,6 +910,10 @@
         <item-type>Number</item-type>
         <label>Water Alarm</label>
         <description>Water Alarm</description>
+        <tags>
+            <tag>Alarm</tag>
+            <tag>Water</tag>
+        </tags>
         <state readOnly="true">
             <options>
                 <option value="0">Previous Events cleared</option>
@@ -743,6 +931,10 @@
         <item-type>Number</item-type>
         <label>Access Control</label>
         <description>Access Control</description>
+        <tags>
+            <tag>Status</tag>
+            <tag>Mode</tag>
+        </tags>
         <state readOnly="true">
             <options>
                 <option value="0">Previous Events cleared</option>
@@ -791,6 +983,10 @@
         <item-type>Number</item-type>
         <label>Home Security</label>
         <description>Home Security</description>
+        <tags>
+            <tag>Status</tag>
+            <tag>Mode</tag>
+        </tags>
         <state readOnly="true">
             <options>
                 <option value="0">Previous events cleared</option>
@@ -811,6 +1007,10 @@
         <item-type>Number</item-type>
         <label>Power Management</label>
         <description>Power Management</description>
+        <tags>
+            <tag>Status</tag>
+            <tag>Mode</tag>
+        </tags>
         <state readOnly="true">
             <options>
                 <option value="0">Previous events cleared</option>
@@ -838,6 +1038,10 @@
         <item-type>Number</item-type>
         <label>System</label>
         <description>System</description>
+        <tags>
+            <tag>Status</tag>
+            <tag>Mode</tag>
+        </tags>
         <state readOnly="true">
             <options>
                 <option value="0">Previous Events cleared</option>
@@ -854,6 +1058,10 @@
         <item-type>Number</item-type>
         <label>Emergency Alarm</label>
         <description>Emergency Alarm</description>
+        <tags>
+            <tag>Alarm</tag>
+            <tag>Mode</tag>
+        </tags>
         <state readOnly="true">
             <options>
                 <option value="0">Previous Events cleared</option>
@@ -884,6 +1092,10 @@
         <item-type>Number</item-type>
         <label>Appliance</label>
         <description>Appliance</description>
+        <tags>
+            <tag>Status</tag>
+            <tag>Mode</tag>
+        </tags>
         <state readOnly="true">
             <options>
                 <option value="0">Previous Events cleared</option>
@@ -917,6 +1129,10 @@
         <item-type>Number</item-type>
         <label>Home Health</label>
         <description>Home Health</description>
+        <tags>
+            <tag>Status</tag>
+            <tag>Mode</tag>
+        </tags>
         <state readOnly="true">
             <options>
                 <option value="0">Previous Events cleared</option>
@@ -946,6 +1162,9 @@
         <description>Indicates the siren notification has been triggered
         </description>
         <category></category>
+        <tags>
+            <tag>Alarm</tag>
+        </tags>
         <state readOnly="true">
         </state>
     </channel-type>
@@ -956,6 +1175,10 @@
         <label>Local Protection Mode</label>
         <description>Sets the local protection mode
         </description>
+        <tags>
+            <tag>Control</tag>
+            <tag>Mode</tag>
+        </tags>
         <state>
             <options>
                 <option value="0">Unprotected</option>
@@ -971,6 +1194,10 @@
         <label>Rf Protection Mode</label>
         <description>Sets the rf protection mode
         </description>
+        <tags>
+            <tag>Control</tag>
+            <tag>Mode</tag>
+        </tags>
         <state>
             <options>
                 <option value="0">Unprotected</option>
@@ -994,6 +1221,10 @@
         <label>Barometric Pressure</label>
         <description>Indicates the barometric pressure</description>
         <category>Pressure</category>
+        <tags>
+            <tag>Measurement</tag>
+            <tag>Pressure</tag>
+        </tags>
         <state pattern="%.1f" readOnly="true">
         </state>
     </channel-type>
@@ -1005,6 +1236,10 @@
         <description>Indicates if a sensor has triggered
         </description>
         <category></category>
+        <tags>
+            <tag>Switch</tag>
+            <tag>OnOff</tag>
+        </tags>
         <state readOnly="true">
             <options>
                 <option value="ON">Triggered</option>
@@ -1019,6 +1254,10 @@
         <label>Carbon Monoxide Sensor</label>
         <description>Indicates the CO level</description>
         <category></category>
+        <tags>
+            <tag>Measurement</tag>
+            <tag>CO</tag>
+        </tags>
         <state pattern="%.1f" readOnly="true">
         </state>
     </channel-type>
@@ -1029,6 +1268,10 @@
         <label>Carbon Dioxide Sensor</label>
         <description>Indicates the CO2 level</description>
         <category>CarbonDioxide</category>
+        <tags>
+            <tag>Measurement</tag>
+            <tag>CO2</tag>
+        </tags>
         <state pattern="%.1f" readOnly="true">
         </state>
     </channel-type>
@@ -1039,6 +1282,10 @@
         <label>Dewpoint</label>
         <description>Indicates the dewpoint</description>
         <category>Temperature</category>
+        <tags>
+            <tag>Measurement</tag>
+            <tag>Temperature</tag>
+        </tags>
         <state pattern="%.1f" readOnly="true">
         </state>
     </channel-type>
@@ -1049,6 +1296,10 @@
         <label>Direction</label>
         <description>Indicates the direction</description>
         <category></category>
+        <tags>
+            <tag>Measurement</tag>
+            <tag>Wind</tag>
+        </tags>
         <state pattern="%.1f" readOnly="true">
         </state>
     </channel-type>
@@ -1060,6 +1311,10 @@
         <description>Indicates if the door/window is open or closed
         </description>
         <category>Door</category>
+        <tags>
+            <tag>Status</tag>
+            <tag>OpenState</tag>
+        </tags>
         <state readOnly="true">
             <options>
                 <option value="OPEN">Open</option>
@@ -1074,6 +1329,10 @@
         <label>Flood Sensor</label>
         <description>Indicates a flood sensor is activated</description>
         <category>Water</category>
+        <tags>
+            <tag>Alarm</tag>
+            <tag>Water</tag>
+        </tags>
         <state readOnly="true">
             <options>
                 <option value="ON">Flood</option>
@@ -1088,6 +1347,10 @@
         <label>Frequency Sensor</label>
         <description>Indicates the frequency</description>
         <category></category>
+        <tags>
+            <tag>Measurement</tag>
+            <tag>Frequency</tag>
+        </tags>
     </channel-type>
 
     <!-- General Sensor -->
@@ -1096,6 +1359,9 @@
         <label>Sensor</label>
         <description></description>
         <category></category>
+        <tags>
+            <tag>Measurement</tag>
+        </tags>
         <state pattern="%.1f" readOnly="true">
         </state>
     </channel-type>
@@ -1106,6 +1372,10 @@
         <label>Sensor</label>
         <description>Boiler heating modulation in percent</description>
         <category></category>
+        <tags>
+            <tag>Measurement</tag>
+            <tag>Power</tag>
+        </tags>
         <state pattern="%.1f" readOnly="true">
         </state>
     </channel-type>
@@ -1116,6 +1386,10 @@
         <label>Luminance</label>
         <description>Indicates the current light reading</description>
         <category></category>
+        <tags>
+            <tag>Measurement</tag>
+            <tag>Illuminance</tag>
+        </tags>
         <state pattern="%.1f" readOnly="true">
         </state>
     </channel-type>
@@ -1126,6 +1400,10 @@
         <label>Loudness</label>
         <description>Indicates the loudness</description>
         <category></category>
+        <tags>
+            <tag>Measurement</tag>
+            <tag>SoundVolume</tag>
+        </tags>
         <state pattern="%.1f" readOnly="true">
         </state>
     </channel-type>
@@ -1136,6 +1414,9 @@
         <label>Moisture</label>
         <description>Indicates the current moisture level</description>
         <category>Moisture</category>
+        <tags>
+            <tag>Measurement</tag>
+        </tags>
         <state pattern="%.1f" readOnly="true">
         </state>
     </channel-type>
@@ -1146,6 +1427,10 @@
         <label>Particulate Matter</label>
         <description>Indicates the level of particulate matter</description>
         <category></category>
+        <tags>
+            <tag>Measurement</tag>
+            <tag>ParticulateMatter</tag>
+        </tags>
         <state pattern="%.1f" readOnly="true">
         </state>
     </channel-type>
@@ -1156,6 +1441,10 @@
         <label>Energy Consumption</label>
         <description>Indicates the energy consumption (kWh)</description>
         <category>Energy</category>
+        <tags>
+            <tag>Measurement</tag>
+            <tag>Energy</tag>
+        </tags>
         <state pattern="%.1f" readOnly="true">
         </state>
     </channel-type>
@@ -1166,6 +1455,10 @@
         <label>Humidity</label>
         <description>Indicates the current relative humidity</description>
         <category>Humidity</category>
+        <tags>
+            <tag>Measurement</tag>
+            <tag>Humidity</tag>
+        </tags>
         <state pattern="%.1f" readOnly="true">
         </state>
     </channel-type>
@@ -1176,6 +1469,10 @@
         <label>Rain</label>
         <description>Indicates the current relative humidity</description>
         <category>Humidity</category>
+        <tags>
+            <tag>Measurement</tag>
+            <tag>Rain</tag>
+        </tags>
         <state pattern="%.1f" readOnly="true">
         </state>
     </channel-type>
@@ -1193,16 +1490,24 @@
         <label>Seismic Intensity</label>
         <description>Indicates the current seismic intensity level</description>
         <category></category>
+        <tags>
+            <tag>Measurement</tag>
+            <tag>Vibration</tag>
+        </tags>
         <state pattern="%.1f" readOnly="true">
         </state>
     </channel-type>
 
-    <!-- Seismic Channel -->
+    <!-- Smoke Channel -->
     <channel-type id="sensor_smoke">
         <item-type>Number</item-type>
         <label>Smoke Level</label>
         <description>Indicates the current smoke level</description>
         <category></category>
+        <tags>
+            <tag>Measurement</tag>
+            <tag>Smoke</tag>
+        </tags>
         <state pattern="%.1f" readOnly="true">
         </state>
     </channel-type>
@@ -1213,6 +1518,10 @@
         <label>Temperature</label>
         <description>Indicates the current temperature</description>
         <category>Temperature</category>
+        <tags>
+            <tag>Measurement</tag>
+            <tag>Temperature</tag>
+        </tags>
         <state readOnly="true" pattern="%.1f %unit%" />
     </channel-type>
 
@@ -1222,6 +1531,9 @@
         <label>Volume</label>
         <description>Volume of water in tank</description>
         <category></category>
+        <tags>
+            <tag>Measurement</tag>
+        </tags>
         <state pattern="%.1f" readOnly="true">
         </state>
     </channel-type>
@@ -1232,6 +1544,10 @@
         <label>Ultraviolet level</label>
         <description>Indicates the current ultraviolet level</description>
         <category></category>
+        <tags>
+            <tag>Measurement</tag>
+            <tag>Ultraviolet</tag>
+        </tags>
         <state pattern="%.1f" readOnly="true">
         </state>
     </channel-type>
@@ -1242,6 +1558,10 @@
         <label>Velocity</label>
         <description>Indicates the current velocity</description>
         <category></category>
+        <tags>
+            <tag>Measurement</tag>
+            <tag>Speed</tag>
+        </tags>
         <state pattern="%.1f" readOnly="true">
         </state>
     </channel-type>
@@ -1252,6 +1572,10 @@
         <label>VOC</label>
         <description>Indicates the Volatile Organic Compound level</description>
         <category></category>
+        <tags>
+            <tag>Measurement</tag>
+            <tag>VOC</tag>
+        </tags>
         <state pattern="%.1f" readOnly="true">
         </state>
     </channel-type>
@@ -1262,6 +1586,10 @@
         <label>Voltage</label>
         <description>Indicates the current voltage</description>
         <category></category>
+        <tags>
+            <tag>Measurement</tag>
+            <tag>Voltage</tag>
+        </tags>
         <state pattern="%.1f" readOnly="true">
         </state>
     </channel-type>
@@ -1272,6 +1600,9 @@
         <label>Water Flow</label>
         <description></description>
         <category></category>
+        <tags>
+            <tag>Measurement</tag>
+        </tags>
         <state pattern="%.1f" readOnly="true">
         </state>
     </channel-type>
@@ -1282,6 +1613,10 @@
         <label>Water Pressure</label>
         <description></description>
         <category></category>
+        <tags>
+            <tag>Measurement</tag>
+            <tag>Pressure</tag>
+        </tags>
         <state pattern="%.1f" readOnly="true">
         </state>
     </channel-type>
@@ -1308,6 +1643,10 @@
         <label>Sound volume</label>
         <description>The sound volume channel allows control of the loudness</description>
         <category></category>
+        <tags>
+            <tag>Control</tag>
+            <tag>SoundVolume</tag>
+        </tags>
     </channel-type>
 
     <!-- Sound default tone Channel -->
@@ -1324,14 +1663,21 @@
         <label>Switch</label>
         <description>Switch the power on and off</description>
         <category>Switch</category>
+        <tags>
+            <tag>Switch</tag>
+            <tag>OnOff</tag>
+        </tags>
     </channel-type>
 
     <!-- Switch Start/Stop Channel -->
     <channel-type id="switch_startstop">
-        <item-type>StopMoveType</item-type>
+        <item-type>Rollershutter</item-type>
         <label>StartStop Switch</label>
         <description>Switch indicating direction</description>
         <category>Switch</category>
+        <tags>
+            <tag>Switch</tag>
+        </tags>
     </channel-type>
 
     <!-- Brightness (Dimmer) Channel -->
@@ -1342,6 +1688,10 @@
             It is also possible to switch the light on and off.
         </description>
         <category>DimmableLight</category>
+        <tags>
+            <tag>Control</tag>
+            <tag>Brightness</tag>
+        </tags>
          <config-description>
             <parameter name="config_restorelastvalue" type="boolean">
                 <label>Restore Last Value</label>
@@ -1361,6 +1711,10 @@
         <label>Heating Setpoint</label>
         <description>Sets the thermostat setpoint</description>
         <category>Heating</category>
+        <tags>
+            <tag>Setpoint</tag>
+            <tag>Temperature</tag>
+        </tags>
     </channel-type>
 
     <!-- Thermostat Fan Mode Channel -->
@@ -1369,6 +1723,10 @@
         <label>Fan Mode</label>
         <description>Sets the fan mode</description>
         <category>Temperature</category>
+        <tags>
+            <tag>Control</tag>
+            <tag>Airflow</tag>
+        </tags>
         <state>
             <options>
                 <option value="0">Auto</option>
@@ -1389,6 +1747,10 @@
         <description>Sets the fan mode
         </description>
         <category>Temperature</category>
+        <tags>
+            <tag>Control</tag>
+            <tag>Mode</tag>
+        </tags>
         <state>
             <options>
                 <option value="0">Idle</option>
@@ -1405,6 +1767,10 @@
         <description>Sets the thermostat operating state
         </description>
         <category>Temperature</category>
+        <tags>
+            <tag>Control</tag>
+            <tag>Mode</tag>
+        </tags>
         <state>
             <options>
                 <option value="0">Idle</option>
@@ -1425,6 +1791,10 @@
         <description>Sets the thermostat
         </description>
         <category>Temperature</category>
+        <tags>
+            <tag>Control</tag>
+            <tag>Mode</tag>
+        </tags>
         <state>
             <options>
                 <option value="0">Off</option>

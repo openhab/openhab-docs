@@ -9,6 +9,10 @@
         <label>Battery Voltage</label>
         <description>The current battery voltage</description>
         <category>Energy</category>
+        <tags>
+            <tag>Measurement</tag>
+            <tag>Voltage</tag>
+        </tags>
         <state pattern="%.1f %unit%" readOnly="true" />
     </channel-type>
     
@@ -18,6 +22,10 @@
         <label>Battery Alarm</label>
         <description>The battery alarm state</description>
         <category>Energy</category>
+        <tags>
+            <tag>Alarm</tag>
+            <tag>LowBattery</tag>
+        </tags>
         <state readOnly="true">
           <options>
             <option value="minThreshold">Below min threshold</option>
@@ -37,6 +45,10 @@
             It is also possible to dim values and switch the light on and off.
         </description>
         <category>ColorLight</category>
+        <tags>
+            <tag>Control</tag>
+            <tag>Light</tag>
+        </tags>
         <autoUpdatePolicy>veto</autoUpdatePolicy>
     </channel-type>
 
@@ -46,6 +58,9 @@
         <label>Door Lock State</label>
         <description>Locks and unlocks the door and maintains the lock state</description>
         <category>Door</category>
+        <tags>
+            <tag>Switch</tag>
+        </tags>
         <autoUpdatePolicy>veto</autoUpdatePolicy>
     </channel-type>
     
@@ -55,6 +70,10 @@
         <label>Fan Mode</label>
         <description>Set the fan mode</description>
         <category>HVAC</category>
+        <tags>
+            <tag>Control</tag>
+            <tag>Airflow</tag>
+        </tags>
         <state>
             <options>
                 <option value="0">Off</option>
@@ -74,6 +93,10 @@
         <label>Total Active Power</label>
         <description>The total power consumed by the device</description>
         <category>Energy</category>
+        <tags>
+            <tag>Measurement</tag>
+            <tag>Power</tag>
+        </tags>
         <state pattern="%.1f %unit%" readOnly="true" />
         <autoUpdatePolicy>veto</autoUpdatePolicy>
     </channel-type>
@@ -84,6 +107,10 @@
         <label>Current</label>
         <description>The current RMS current measurement</description>
         <category>Energy</category>
+        <tags>
+            <tag>Measurement</tag>
+            <tag>Current</tag>
+        </tags>
         <state pattern="%.1f %unit%" readOnly="true" />
     </channel-type>
 
@@ -93,6 +120,10 @@
         <label>Voltage</label>
         <description>The current RMS voltage measurement</description>
         <category>Energy</category>
+        <tags>
+            <tag>Measurement</tag>
+            <tag>Energy</tag>
+        </tags>
         <state pattern="%.1f %unit%" readOnly="true" />
     </channel-type>
 
@@ -102,6 +133,10 @@
         <label>Binary Input Sensor</label>
         <description>Indicates a binary input sensor state</description>
         <category></category>
+        <tags>
+            <tag>Status</tag>
+            <tag>OnOff</tag>
+        </tags>
         <state readOnly="true"></state>
     </channel-type>
 
@@ -111,6 +146,10 @@
         <label>Contact Sensor</label>
         <description>Contact sensor</description>
         <category>Door</category>
+        <tags>
+            <tag>Status</tag>
+            <tag>OpenState</tag>
+        </tags>
         <state readOnly="true" />
     </channel-type>
 
@@ -120,6 +159,10 @@
         <label>Motion Intrusion</label>
         <description>Motion intrusion sensor</description>
         <category>Motion</category>
+        <tags>
+            <tag>Alarm</tag>
+            <tag>Presence</tag>
+        </tags>
         <state readOnly="true" />
     </channel-type>
 
@@ -129,6 +172,10 @@
         <label>Carbon Monoxide Detector</label>
         <description>Carbon Monoxide Alarm</description>
         <category>Sensor</category>
+        <tags>
+            <tag>Alarm</tag>
+            <tag>CO</tag>
+        </tags>
         <state readOnly="true" />
     </channel-type>
 
@@ -138,6 +185,10 @@
         <label>Fire Detector</label>
         <description>Fire Indication Alarm</description>
         <category>SmokeDetector</category>
+        <tags>
+            <tag>Alarm</tag>
+            <tag>Smoke</tag>
+        </tags>
         <state readOnly="true" />
     </channel-type>
 
@@ -147,6 +198,10 @@
         <label>Motion Presence</label>
         <description>Motion presence sensor</description>
         <category>Motion</category>
+        <tags>
+            <tag>Status</tag>
+            <tag>Presence</tag>
+        </tags>
         <state readOnly="true" />
     </channel-type>
 
@@ -156,6 +211,9 @@
         <label>System Alarm</label>
         <description></description>
         <category></category>
+        <tags>
+            <tag>Alarm</tag>
+        </tags>
         <state readOnly="true" />
     </channel-type>
 
@@ -165,6 +223,10 @@
         <label>Water Sensor</label>
         <description>Water Sensor Alarm</description>
         <category>Sensor</category>
+        <tags>
+            <tag>Alarm</tag>
+            <tag>Water</tag>
+        </tags>
         <state readOnly="true" />
     </channel-type>
     
@@ -174,6 +236,10 @@
         <label>Movement Sensor</label>
         <description>Movement Sensor Alarm</description>
         <category>Sensor</category>
+        <tags>
+            <tag>Alarm</tag>
+            <tag>Presence</tag>
+        </tags>
         <state readOnly="true" />
     </channel-type>
     
@@ -183,6 +249,10 @@
         <label>Vibration Sensor</label>
         <description>Vibration Sensor Alarm</description>
         <category>Sensor</category>
+        <tags>
+            <tag>Alarm</tag>
+            <tag>Vibration</tag>
+        </tags>
         <state readOnly="true" />
     </channel-type>
 
@@ -192,6 +262,10 @@
         <label>Tamper</label>
         <description>Indicates if a device is tampered with</description>
         <category>Alarm</category>
+        <tags>
+            <tag>Alarm</tag>
+            <tag>Tampered</tag>
+        </tags>
         <state readOnly="true" />
     </channel-type>
 
@@ -201,6 +275,10 @@
         <label>Illuminance</label>
         <description>Indicates the current illuminance in lux</description>
         <category></category>
+        <tags>
+            <tag>Measurement</tag>
+            <tag>Illuminance</tag>
+        </tags>
         <state pattern="%.0f" readOnly="true" />
     </channel-type>
     
@@ -210,6 +288,10 @@
         <label>Atmospheric Pressure</label>
         <description>Indicates the current pressure</description>
         <category>Pressure</category>
+        <tags>
+            <tag>Measurement</tag>
+            <tag>Pressure</tag>
+        </tags>
         <state pattern="%.1f %unit%" readOnly="true" />
     </channel-type>
 
@@ -219,6 +301,10 @@
         <label>Humidity</label>
         <description>Indicates the current relative humidity</description>
         <category>Humidity</category>
+        <tags>
+            <tag>Measurement</tag>
+            <tag>Humidity</tag>
+        </tags>
         <state pattern="%.1f" readOnly="true" />
     </channel-type>
 
@@ -228,6 +314,10 @@
 		<label>Temperature</label>
 		<description>Indicates the current temperature</description>
 		<category>Temperature</category>
+        <tags>
+            <tag>Measurement</tag>
+            <tag>Temperature</tag>
+        </tags>
 		<state pattern="%.1f %unit%" readOnly="true" />
 	</channel-type>
 
@@ -237,6 +327,10 @@
         <label>Instantaneous Demand</label>
         <description>The instantaneous demand from the metering system</description>
         <category>Number</category>
+        <tags>
+            <tag>Measurement</tag>
+            <tag>Power</tag>
+        </tags>
         <autoUpdatePolicy>veto</autoUpdatePolicy>
     </channel-type>
 
@@ -246,6 +340,10 @@
         <label>Summation Delivered</label>
         <description>The total delivered from the metering system</description>
         <category>Number</category>
+        <tags>
+            <tag>Measurement</tag>
+            <tag>Energy</tag>
+        </tags>
         <autoUpdatePolicy>veto</autoUpdatePolicy>
     </channel-type>
 
@@ -255,6 +353,10 @@
         <label>Summation Delivered</label>
         <description>The total delivered from the metering system</description>
         <category>Number</category>
+        <tags>
+            <tag>Measurement</tag>
+            <tag>Energy</tag>
+        </tags>
         <autoUpdatePolicy>veto</autoUpdatePolicy>
     </channel-type>
 
@@ -264,6 +366,10 @@
 		<label>Occupancy</label>
 		<description>Indicates if an occupancy sensor is triggered</description>
 		<category>Motion</category>
+        <tags>
+            <tag>Status</tag>
+            <tag>Presence</tag>
+        </tags>
 		<state readOnly="true"></state>
 	</channel-type>
 
@@ -273,6 +379,10 @@
 		<label>Switch</label>
 		<description>Switches the power on and off</description>
 		<category>Light</category>
+        <tags>
+            <tag>Switch</tag>
+            <tag>OnOff</tag>
+        </tags>
         <autoUpdatePolicy>veto</autoUpdatePolicy>
 	</channel-type>
 
@@ -282,6 +392,10 @@
         <label>Dimmer</label>
         <description>Sets the level of the light</description>
         <category>Light</category>
+        <tags>
+            <tag>Control</tag>
+            <tag>Brightness</tag>
+        </tags>
         <autoUpdatePolicy>veto</autoUpdatePolicy>
     </channel-type>    
 
@@ -291,6 +405,10 @@
         <label>Local Temperature</label>
         <description>Indicates the local temperature provided by the thermostat</description>
         <category>HVAC</category>
+        <tags>
+            <tag>Measurement</tag>
+            <tag>Temperature</tag>
+        </tags>
         <state pattern="%.1f %unit%" readOnly="true"/>
     </channel-type>
 
@@ -300,6 +418,10 @@
         <label>Outdoor Temperature</label>
         <description>Indicates the outdoor temperature provided by the thermostat</description>
         <category>HVAC</category>
+        <tags>
+            <tag>Measurement</tag>
+            <tag>Temperature</tag>
+        </tags>
         <state pattern="%.1f %unit%" readOnly="true"/>
     </channel-type>
 
@@ -309,6 +431,10 @@
         <label>Occupied Heating Setpoint</label>
         <description>Set the heating temperature when the room is occupied</description>
         <category>HVAC</category>
+        <tags>
+            <tag>Setpoint</tag>
+            <tag>Temperature</tag>
+        </tags>
         <state pattern="%.1f %unit%"/>
         <autoUpdatePolicy>veto</autoUpdatePolicy>
     </channel-type>
@@ -319,6 +445,10 @@
         <label>Occupied Cooling Setpoint</label>
         <description>Set the cooling temperature when the room is occupied</description>
         <category>HVAC</category>
+        <tags>
+            <tag>Setpoint</tag>
+            <tag>Temperature</tag>
+        </tags>
         <state pattern="%.1f %unit%"/>
         <autoUpdatePolicy>veto</autoUpdatePolicy>
     </channel-type>
@@ -329,6 +459,10 @@
         <label>Unoccupied Heating Setpoint</label>
         <description>Set the heating temperature when the room is unoccupied</description>
         <category>HVAC</category>
+        <tags>
+            <tag>Setpoint</tag>
+            <tag>Temperature</tag>
+        </tags>
         <state pattern="%.1f %unit%"/>
         <autoUpdatePolicy>veto</autoUpdatePolicy>
     </channel-type>
@@ -339,6 +473,10 @@
         <label>Unoccupied Cooling Setpoint</label>
         <description>Set the cooling temperature when the room is unoccupied</description>
         <category>HVAC</category>
+        <tags>
+            <tag>Setpoint</tag>
+            <tag>Temperature</tag>
+        </tags>
         <state pattern="%.1f %unit%"/>
         <autoUpdatePolicy>veto</autoUpdatePolicy>
     </channel-type>
@@ -349,6 +487,10 @@
         <label>System Mode</label>
         <description>Set the system mode of the thermostat</description>
         <category>HVAC</category>
+        <tags>
+            <tag>Control</tag>
+            <tag>Mode</tag>
+        </tags>
         <state>
             <options>
                 <option value="0">Off</option>
@@ -371,6 +513,10 @@
         <label>Running Mode</label>
         <description>The running mode of the thermostat</description>
         <category>HVAC</category>
+        <tags>
+            <tag>Control</tag>
+            <tag>Mode</tag>
+        </tags>
         <state readOnly="true">
             <options>
                 <option value="0">Off</option>
@@ -386,6 +532,10 @@
         <label>Heating Demand</label>
         <description>The level of heating currently demanded by the thermostat</description>
         <category>HVAC</category>
+        <tags>
+            <tag>Status</tag>
+            <tag>Power</tag>
+        </tags>
         <state pattern="%.0f %%" readOnly="true" />
     </channel-type>
 
@@ -395,6 +545,10 @@
         <label>Cooling Demand</label>
         <description>The level of cooling currently demanded by the thermostat</description>
         <category>HVAC</category>
+        <tags>
+            <tag>Status</tag>
+            <tag>Power</tag>
+        </tags>
         <state pattern="%.0f %%" readOnly="true" />
     </channel-type>
 
@@ -404,6 +558,9 @@
 		<label>Warning device</label>
 		<description>Triggers warnings on a warning device</description>
 		<category>Siren</category>
+        <tags>
+            <tag>Alarm</tag>
+        </tags>
 		<state readOnly="true" />
 		<config-description>
 			<parameter name="zigbee_iaswd_maxDuration" type="integer" min="0" max="65534" unit="s">
@@ -435,6 +592,10 @@
         <description>Sets the window covering level - supporting open/close and up/down type commands
         </description>
         <category>Blinds</category>
+        <tags>
+            <tag>Control</tag>
+            <tag>OpenLevel</tag>
+        </tags>
     </channel-type>
 
     <!-- Tuya Button -->
