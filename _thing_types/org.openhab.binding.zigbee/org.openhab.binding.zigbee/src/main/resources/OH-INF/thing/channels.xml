@@ -282,6 +282,15 @@
         <state pattern="%.0f" readOnly="true" />
     </channel-type>
     
+    <!-- Particulate Matter 2.5 Channel -->
+    <channel-type id="measurement_pm25">
+        <item-type>Number:Density</item-type>
+        <label>Air Particulate PM2.5</label>
+        <description>Indicates the current PM2.5 measurement</description>
+        <category>AirQuality</category>
+        <state pattern="%.1f %unit%" readOnly="true" />
+    </channel-type>
+
     <!-- Atmospheric Pressure Channel -->
     <channel-type id="measurement_pressure">
         <item-type>Number:Pressure</item-type>
