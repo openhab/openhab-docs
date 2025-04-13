@@ -135,7 +135,6 @@
         <category></category>
         <tags>
             <tag>Status</tag>
-            <tag>OnOff</tag>
         </tags>
         <state readOnly="true"></state>
     </channel-type>
@@ -288,6 +287,10 @@
         <label>Air Particulate PM2.5</label>
         <description>Indicates the current PM2.5 measurement</description>
         <category>AirQuality</category>
+        <tags>
+            <tag>Measurement</tag>
+            <tag>ParticulateMatter</tag>
+        </tags>
         <state pattern="%.1f %unit%" readOnly="true" />
     </channel-type>
 
@@ -390,7 +393,7 @@
 		<category>Light</category>
         <tags>
             <tag>Switch</tag>
-            <tag>OnOff</tag>
+            <tag>Power</tag>
         </tags>
         <autoUpdatePolicy>veto</autoUpdatePolicy>
 	</channel-type>
