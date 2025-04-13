@@ -142,7 +142,7 @@ The following XML snippet shows a system channel type definition and thing type 
 
 ### System State Channel Types
 
-There exist system-wide channel types that are available by default and which should always be used:
+There exist system-wide channel types that are available by default and which should be used whenever possible:
 
 | Channel Type ID       | Reference typeId             | Item Type                | Category         | Tags                      | Description                                                                                                                                                                                                             |
 |-----------------------|------------------------------|--------------------------|------------------|---------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
