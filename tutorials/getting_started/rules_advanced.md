@@ -211,7 +211,7 @@ actions.ScriptExecution.createTimer(time.ZonedDateTime.now().plusMinutes(30), li
 ::: tab JRuby
 
 Timers are created by calling the [after](https://openhab.github.io/openhab-jruby/main/OpenHAB/DSL.html#after-class_method) method.
-It accepts a [Duration](https://openhab.github.io/openhab-jruby/main/OpenHAB/CoreExt/Java/Duration.html), a Ruby [Time](https://docs.ruby-lang.org/en/master/Time.htmll), or a java [ZonedDateTime](https://openhab.github.io/openhab-jruby/main/OpenHAB/CoreExt/Java/ZonedDateTime.html) object to specify when the timer should execute.
+It accepts a [Duration](https://openhab.github.io/openhab-jruby/main/OpenHAB/CoreExt/Java/Duration.html), a Ruby [Time](https://docs.ruby-lang.org/en/master/Time.htmll), or a Java [ZonedDateTime](https://openhab.github.io/openhab-jruby/main/OpenHAB/CoreExt/Java/ZonedDateTime.html) object to specify when the timer should execute.
 Most of the time, a Duration is used, and the helper library offers a [convenient syntax](https://openhab.github.io/openhab-jruby/main/index.html#durations), e.g. `30.minutes`, to create a Duration object.
 
 ```ruby
@@ -276,8 +276,10 @@ Care must still be taken within the timer function not to reschedule itself if i
 
 In JRuby, an easy way to reschedule the same timer is done by providing a unique `id` to the timer.
 This is called a [reentrant timer](https://openhab.github.io/openhab-jruby/main/OpenHAB/DSL.html#reentrant-timers).
+When [after](https://openhab.github.io/openhab-jruby/main/OpenHAB/DSL.html#after-class_method) with an `id` is executed the first time, a new timer will be created.
+Subsequent executions will reschedule the same timer instead of creating a new timer.
 
-The most convenient ID to use is the Item object for which the timer is operating, but you can use anything as the ID, e.g. a String, a number, the rule uid, etc.
+The most convenient `id` to use is the Item object for which the timer is operating, but you can use anything as the ID, e.g. a String, a number, the rule uid, etc.
 
 ```ruby
 logger.info "Motion was detected"
@@ -405,8 +407,8 @@ gemfile do
 end
 ```
 
-[Personal libraries](https://openhab.github.io/openhab-jruby/main/index.html#shared-code) that contain your custom reusable constants, functions, data structures, and classes can be created and used inside your Script Actions and Conditions.
-Simply save a `.rb` file that contain your code in `$OH_CONF/automation/ruby/lib/` folder, then `require` it in your script.
+[Personal libraries](https://openhab.github.io/openhab-jruby/main/index.html#shared-code) that contain your custom reusable constants, methods, modules, and classes can be created and used inside your Script Actions and Conditions.
+Simply save a `.rb` file that contains your code in `$OH_CONF/automation/ruby/lib/` folder, then `require` it in your script.
 
 For example, a personal library file in `$OH_CONF/automation/ruby/lib/mylibs.rb`:
 
@@ -415,7 +417,7 @@ DESTINATION_EMAIL = "myemail@gmail.com"
 
 def broadcast_alert(msg)
   Notification.send msg, title: "Alert!"
-  things["mail:smtp:local"].send_mail(DESTINATION_EMAIL, "OpenHAB Alert", msg)
+  things["mail:smtp:local"].send_mail(DESTINATION_EMAIL, "openHAB Alert", msg)
 end
 ```
 
