@@ -984,4 +984,4 @@ e.g. If you have a multi-sensor that measures both temperature and humidity, the
 The contents of this list are dynamic, and it may be extended from time to time.
 If you are an addon developer and you think there is something missing from the list please open an [Issue](https://github.com/openhab/openhab-core/issues) or [Pull Request](https://github.com/openhab/openhab-core/pulls) on GitHub.
 
-1. For further reading please see [Description of the Semantic Model]({{base}}/tutorial/model.html) and [Developer Guidelines on Semantic Tags](semantic-tags.md).
+1. For further reading please see the [Description of the Semantic Model]({{base}}/tutorial/model.html), the [Developer Guidelines on Semantic Tags](semantic-tags.md) and the [Thing-Type and Channel-Type validation schema](https://www.openhab.org/schemas/thing-description-1.0.0.xsd).
