@@ -967,10 +967,21 @@ The latter are (optionally) be used for any other tagging purpose at the discret
 Semantic tags are classed into four sub-types `Point`, `Property`, `Equipment` and `Location`.
 
 Addon developers are strongly requested to provide tags in the channel-type and thing-type type XML.
-Note: it is also possible to provide tags in instantiated Channels and Things via the binding's Java code at run-time.
-When providing such tags, developers shall comply with the [Developer Guidelines on Semantic Tags](semantic-tags.md).
+It is also possible to provide tags in instantiated Channels and Things via the binding's Java code at run-time.
 
-You can view the actual list of [Semantic Tags](https://github.com/openhab/openhab-core/blob/main/bundles/org.openhab.core.semantics/model/SemanticTags.csv).
+The following are some general tips and guideliones for applying tags:
+
+1. The purpose of tags is to logically group Things and Channels in the UI.
+The target is that your Thing or Channel shall appear in the UI close to Things or Channels from other bindings that have **SIMILAR** attributes or behavior.
+There is no point in having the granularity of the groups so fine so that groups would contain only one member.
+So please try to select tags in your bindings that align with the tags used by developers of other bindings for similar equipment and functions.
+
+1. Tags belong to a parent/child hierarchy e.g. `Equipment.Sensor` is a parent with `Equipment.TemperatureSensor` and `Equipment.HumiditySensor` as children.
+If there is no child tag that covers exactly what you need, then the general rule is to use the next higher parent tag instead.
+e.g. If you have a multi-sensor that measures both temperature and humidity, then neither `Equipment.TemperatureSensor` nor `Equipment.HumiditySensor` will fit exactly, so use the parent `Equipment.Sensor` instead.
+
+1. Here is the actual list of [Semantic Tags](https://github.com/openhab/openhab-core/blob/main/bundles/org.openhab.core.semantics/model/SemanticTags.csv).
 The contents of this list are dynamic, and it may be extended from time to time.
 If you are an addon developer and you think there is something missing from the list please open an [Issue](https://github.com/openhab/openhab-core/issues) or [Pull Request](https://github.com/openhab/openhab-core/pulls) on GitHub.
-Please make sure you comply with the [Developer Guidelines on Semantic Tags](semantic-tags.md) and the [Semantic Model]({{base}}/tutorial/model.html).
+
+1. For further reading please see [Description of the Semantic Model]({{base}}/tutorial/model.html) and [Developer Guidelines on Semantic Tags](semantic-tags.md).
