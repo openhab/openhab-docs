@@ -969,7 +969,7 @@ Semantic tags are classed into four sub-types `Point`, `Property`, `Equipment` a
 Addon developers are strongly requested to provide tags in the channel-type and thing-type type XML.
 It is also possible to provide tags in instantiated Channels and Things via the binding's Java code at run-time.
 
-The following are some general tips and guideliones for applying tags:
+The following are some general tips and guidelines for applying tags:
 
 1. The purpose of tags is to logically group Things and Channels in the UI.
 The target is that your Thing or Channel shall appear in the UI close to Things or Channels from other bindings that have **SIMILAR** attributes or behavior.
