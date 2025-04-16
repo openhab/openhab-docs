@@ -980,6 +980,9 @@ So please try to select tags in your bindings that align with the tags used by d
 If there is no child tag that covers exactly what you need, then the general rule is to use the next higher parent tag instead.
 e.g. If you have a multi-sensor that measures both temperature and humidity, then neither `Equipment.TemperatureSensor` nor `Equipment.HumiditySensor` will fit exactly, so use the parent `Equipment.Sensor` instead.
 
+1. Alternatively to the above, if a Thing has multiple functions e.g. "WiZ Ceiling Fans With a Dimmable Bulb" then apply the tag that matches the **PRIMARY** function.
+e.g. `Equipment.CeilingFan` in this case.
+
 1. Here is the actual list of [Semantic Tags](https://github.com/openhab/openhab-core/blob/main/bundles/org.openhab.core.semantics/model/SemanticTags.csv).
 The contents of this list are dynamic, and it may be extended from time to time.
 If you are an addon developer and you think there is something missing from the list please open an [Issue](https://github.com/openhab/openhab-core/issues) or [Pull Request](https://github.com/openhab/openhab-core/pulls) on GitHub.
