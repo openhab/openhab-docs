@@ -38,6 +38,7 @@ Which Things can be associated through which bridge type is defined within the d
         <label>Sample Thing</label>
         <description>Some sample description</description>
         <category>Lightbulb</category>
+        <semantic-equipment-tag>LightSource</semantic-equipment-tag>
     ...
     </thing-type>
 ```
@@ -61,6 +62,20 @@ In that way, a generic thing type could be listed for users and a corresponding 
 Categories are used to provide meta information about Things. Thing categories describe how the physical device **looks like**. UIs can use this information e.g. to render icons.
 The available categories correspond with the [available icons of the classic iconset]({{base}}/configuration/iconsets/classic/), however categories are written in Java class-naming style, e.g. `FrontDoor` instead of lowercase `frontdoor`.
 
+### Thing Semantic Equipment Tags
+
+The XML definition of a Thing-type allows to assign a semantic equipment tag.
+See [reference below](#general-information-about-tags).
+This describes the Equipment family to which the Thing belongs.
+All Things created based on the Thing-type will automatically inherit this tag.
+The user may override this tag if they desire.
+The semantic equipment tag is used by the Main User Interface to classify the Thing according to a semantic classification scheme.
+The following snippet shows an `Equipment.Blinds` tag definition:
+
+```xml
+<semantic-equipment-tag>Blinds</semantic-equipment-tag>
+```
+
 ## Channels
 
 A channel describes a specific functionality of a thing and can be linked to an item.
@@ -82,6 +97,7 @@ The following XML snippet shows a thing type definition with three channels and 
 <thing-type id="thing-type-id">
     <label>Sample Thing</label>
     <description>Some sample description</description>
+    <semantic-equipment-tag>LightSource</semantic-equipment-tag>
     <channels>
         <channel id="switch" typeId="power-switch" />
         <channel id="temperature" typeId="setpoint-temperature" />
@@ -131,14 +147,14 @@ There exist system-wide channel types that are available by default and which sh
 | Channel Type ID       | Reference typeId             | Item Type                | Category         | Tags                      | Description                                                                                                                                                                                                             |
 |-----------------------|------------------------------|--------------------------|------------------|---------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | signal-strength       | system.signal-strength       | Number                   | QualityOfService | Measurement, Level        | Represents signal strength of a device as a Number with values 0, 1, 2, 3 or 4; 0 being worst strength and 4 being best strength.                                                                                       |
-| low-battery           | system.low-battery           | Switch                   | LowBattery       | LowBattery, Energy        | Represents a low battery warning with possible values on (low battery) and off (battery ok).                                                                                                                            |
+| low-battery           | system.low-battery           | Switch                   | LowBattery       | Alarm, LowBattery         | Represents a low battery warning with possible values on (low battery) and off (battery ok).                                                                                                                            |
 | battery-level         | system.battery-level         | Number                   | Battery          | Measurement, Energy       | Represents the battery level as a percentage (0-100%). Bindings for things supporting battery level in a different format (e.g. 4 levels) should convert to a percentage to provide a consistent battery level reading. |
 | power                 | system.power                 | Switch                   | Switch           | Switch, Power             | Turn a device on/off.                                                                                                                                                                                                   |
-| brightness            | system.brightness            | Dimmer                   | Light            | Control, Light            | Brightness of a bulb (0-100%).                                                                                                                                                                                          |
-| color                 | system.color                 | Color                    | ColorLight       | Control, Light            | Color of a bulb.                                                                                                                                                                                                        |
+| brightness            | system.brightness            | Dimmer                   | Light            | Control, Brightness       | Brightness of a bulb (0-100%).                                                                                                                                                                                          |
+| color                 | system.color                 | Color                    | ColorLight       | Control, Color            | Color of a bulb.                                                                                                                                                                                                        |
 | color-temperature     | system.color-temperature     | Dimmer                   | ColorLight       | Control, ColorTemperature | Color temperature of a bulb (0-100%). 0% should be the coldest setting (highest Kelvin value), 100 the warmest.                                                                                                         |
 | color-temperature-abs | system.color-temperature-abs | Number                   | ColorLight       | Control, ColorTemperature | Color temperature of a bulb in Kelvin (1000K-10000K).                                                                                                                                                                   |
-| location              | system.location              | Location                 | -                | Measurement               | Location in lat.,lon.,height coordinates.                                                                                                                                                                               |
+| location              | system.location              | Location                 | -                | Measurement, GeoLocation  | Location in lat.,lon.,height coordinates.                                                                                                                                                                               |
 | motion                | system.motion                | Switch                   | Motion           | Status, Presence          | Motion detected by the device (ON if motion is detected).                                                                                                                                                               |
 | mute                  | system.mute                  | Switch                   | SoundVolume      | Switch, SoundVolume       | Turn on/off the volume of a device.                                                                                                                                                                                     |
 | volume                | system.volume                | Dimmer                   | SoundVolume      | Control, SoundVolume      | Change the sound volume of a device (0-100%).                                                                                                                                                                           |
@@ -171,6 +187,7 @@ The following XML snippet shows a trigger channel:
 <thing-type id="thing-type-id">
     <label>Sample Thing</label>
     <description>Some sample description</description>
+    <semantic-equipment-tag>LightSource</semantic-equipment-tag>
     <channels>
         <channel id="sample-channel" typeId="trigger-channel" />
     </channels>
@@ -207,32 +224,22 @@ There exist system-wide trigger channel types that are available by default:
 In the following sections the declaration and semantics of tags, state descriptions and channel categories will be explained in more detail.
 For a complete sample of the thing types XML file and a full list of possible configuration options please see the [XML Configuration Guide](../addons/config-xml.html).
 
-### Default Tags
+### Default Point and Property Tags
 
-The XML definition of a ChannelType allows to assign default tags to channels.
-All items bound to this channel will automatically be tagged with these default tags.
-The following snippet shows a 'Control' and 'Light' tags definition:
+The XML definition of a Channel-type allows to assign default tags to respective Channels.
+See [reference below](#general-information-about-tags).
+All Items bound to the respective Channel will automatically inherit these default tags.
+The user may override these tags if they desire.
+The XML definition may contain up to two tags.
+The first tag should be a `Point` tag, and the second may be a `Property` tag.
+The following snippet shows a `Point.Control` and `Property.Brightness` tags definition:
 
 ```xml
 <tags>
     <tag>Control</tag>
-    <tag>Light</tag>
+    <tag>Brightness</tag>
 </tags>
 ```
-
-There are two possible types of tag -- namely "Semantic" and "Non Semantic" tags.
-The former are used by the openHAB User Interface to create automatic groupings of items according to the [Semantic Model]({{base}}/tutorial/model.html).
-The latter are (optionally) be used for any other tagging purpose at the discretion of the user.
-Semantic tags are classed into four sub-types `point`, `property`, `equipment` and `location`.
-
-Addon developers are strongly requested to provide tags in the channel description and thing type XML.
-Note: it is also possible to provide tags in instantiated channels and things at run-time.
-When providing such tags, developers shall comply with the [Developer Guidelines on Semantic Tags](semantic-tags.md).
-
-You can view the actual list of [Semantic Tags](https://github.com/openhab/openhab-core/blob/main/bundles/org.openhab.core.semantics/model/SemanticTags.csv).
-The contents of this list are dynamic, and it may be extended from time to time.
-If you are an addon developer and you think there is something missing from the list please open an [Issue](https://github.com/openhab/openhab-core/issues) or [Pull Request](https://github.com/openhab/openhab-core/pulls) on GitHub.
-Please make sure you comply with the [Developer Guidelines on Semantic Tags](semantic-tags.md) and the [Semantic Model]({{base}}/tutorial/model.html).
 
 ### State Description
 
@@ -646,6 +653,7 @@ The full Java API for bridge and _Thing_ descriptions can be found in the Java p
     <label>String</label>
     <description>String</description>
     <category>String</category>
+    <semantic-equipment-tag>LightSource</semantic-equipment-tag>
 
     <channels>
       <channel id="channel-id" typeId="channel-type-id" />
@@ -689,6 +697,7 @@ The full Java API for bridge and _Thing_ descriptions can be found in the Java p
     <label>String</label>
     <description>String</description>
     <category>String</category>
+    <semantic-equipment-tag>LightSource</semantic-equipment-tag>
 
     <channels>
       <channel id="channel-id" typeId="channel-type-id" />
@@ -828,7 +837,7 @@ The full Java API for bridge and _Thing_ descriptions can be found in the Java p
 | description                | A human-readable description for the channel                                                                                                                                                                                        | optional                                      |
 | category                   | The category for the channel, e.g. TEMPERATURE                                                                                                                                                                                      | optional                                      |
 | tags                       | A list of default tags to be assigned to bound items                                                                                                                                                                                | optional                                      |
-| tag                        | A tag semantically describes the feature (typical usage) of the channel e.g. AlarmSystem. See [Default Tags](#default-tags) above.                                                                                                  | mandatory                                     |
+| tag                        | A tag semantically describes the feature (typical usage) of the channel e.g. AlarmSystem. See [Default Tags](#default-point-and-property-tags) above.                                                                                                  | mandatory                                     |
 | state                      | The restrictions of an item state which gives information how to interpret it                                                                                                                                                       | optional                                      |
 | state.min                  | The minimum decimal value of the range for the state                                                                                                                                                                                | optional                                      |
 | state.max                  | The maximum decimal value of the range for the state                                                                                                                                                                                | optional                                      |
@@ -949,3 +958,33 @@ Each new contribution of update instructions MUST increase the `thingTypeVersion
 The `thingTypeVersion` is bound to a thing-type, different thing types may have different versions.
 
 The full XML schema for update instructions can be found here: [https://www.openhab.org/schemas/update-description-1.0.0.xsd](https://www.openhab.org/schemas/update-description-1.0.0.xsd).
+
+# General Information about Tags
+
+There are two possible types of tag -- namely "Semantic" and "Non Semantic" tags.
+The former are used by the openHAB User Interface to create automatic groupings of items according to the [Semantic Model]({{base}}/tutorial/model.html).
+The latter are (optionally) be used for any other tagging purpose at the discretion of the user.
+Semantic tags are classed into four sub-types `Point`, `Property`, `Equipment` and `Location`.
+
+Addon developers are strongly requested to provide tags in the channel-type and thing-type type XML.
+It is also possible to provide tags in instantiated Channels and Things via the binding's Java code at run-time.
+
+The following are some general tips and guidelines for applying tags:
+
+1. The purpose of tags is to logically group Things and Channels in the UI.
+The target is that your Thing or Channel shall appear in the UI close to Things or Channels from other bindings that have **SIMILAR** attributes or behavior.
+There is no point in having the granularity of the groups so fine so that groups would contain only one member.
+So please try to select tags in your bindings that align with the tags used by developers of other bindings for similar equipment and functions.
+
+1. Tags belong to a parent/child hierarchy e.g. `Equipment.Sensor` is a parent with `Equipment.TemperatureSensor` and `Equipment.HumiditySensor` as children.
+If there is no child tag that covers exactly what you need, then the general rule is to use the next higher parent tag instead.
+e.g. If you have a multi-sensor that measures both temperature and humidity, then neither `Equipment.TemperatureSensor` nor `Equipment.HumiditySensor` will fit exactly, so use the parent `Equipment.Sensor` instead.
+
+1. Alternatively to the above, if a Thing has multiple functions e.g. "WiZ Ceiling Fans With a Dimmable Bulb" then apply the tag that matches the **PRIMARY** function.
+e.g. `Equipment.CeilingFan` in this case.
+
+1. Here is the actual list of [Semantic Tags](https://github.com/openhab/openhab-core/blob/main/bundles/org.openhab.core.semantics/model/SemanticTags.csv).
+The contents of this list are dynamic, and it may be extended from time to time.
+If you are an addon developer and you think there is something missing from the list please open an [Issue](https://github.com/openhab/openhab-core/issues) or [Pull Request](https://github.com/openhab/openhab-core/pulls) on GitHub.
+
+1. For further reading please see the [Description of the Semantic Model]({{base}}/tutorial/model.html), the [Developer Guidelines on Semantic Tags](semantic-tags.md) and the [Thing-Type and Channel-Type validation schema](https://www.openhab.org/schemas/thing-description-1.0.0.xsd).
