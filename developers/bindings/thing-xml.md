@@ -988,7 +988,6 @@ e.g. an electronic dimmer may be hardwired on-site to a conventional light.
 Whilst there is no 100% guarantee that the Thing is actually hardwired to such target device, in such cases it is acceptable to tag the Thing (and its Channels) according to the **EXPECTED** target device.
 e.g. in the aforementioned example, instead of tagging the dimmer as `Equipment.ControlDevice` it is acceptable to tag it as `Equipment.LightSource`.
 
-
 1. Here is the actual list of [Semantic Tags](https://github.com/openhab/openhab-core/blob/main/bundles/org.openhab.core.semantics/model/SemanticTags.csv).
 The contents of this list are dynamic, and it may be extended from time to time.
 If you are an addon developer and you think there is something missing from the list please open an [Issue](https://github.com/openhab/openhab-core/issues) or [Pull Request](https://github.com/openhab/openhab-core/pulls) on GitHub.
