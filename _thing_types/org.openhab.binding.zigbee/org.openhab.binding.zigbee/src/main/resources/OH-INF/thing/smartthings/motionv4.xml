@@ -6,6 +6,7 @@
     <thing-type id="smartthings_motionv4" listed="false">
         <label>SmartThings Motion Sensor V4</label>
         <description>SmartThings Motion and Temperature Sensor</description>
+      <semantic-equipment-tag>MotionDetector</semantic-equipment-tag>
 
         <channels>
             <channel id="temperature" typeId="measurement_temperature">

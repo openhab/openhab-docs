@@ -8,6 +8,7 @@
 		<label>AQARA WXKG11LM</label>
 		<description>Smart Wireless Switch</description>
 		<category>WallSwitch</category>
+      <semantic-equipment-tag>WallSwitch</semantic-equipment-tag>
 
 		<channels>
 			<channel id="center" typeId="system.button">

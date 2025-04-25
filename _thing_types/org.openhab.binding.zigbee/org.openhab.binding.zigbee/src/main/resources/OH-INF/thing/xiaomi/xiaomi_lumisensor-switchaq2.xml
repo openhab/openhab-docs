@@ -8,6 +8,7 @@
         <label>Xiaomi Wireless Mini Switch</label>
         <description>Xiaomi Wireless Mini Switch</description>
         <category>WallSwitch</category>
+      <semantic-equipment-tag>Sensor</semantic-equipment-tag>
 
         <channels>
             <channel id="center" typeId="system.button">

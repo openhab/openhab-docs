@@ -8,6 +8,7 @@
 		<label>TS0043</label>
 		<description>Generic Tuya 3-Button Wall Switch</description>
 		<category>WallSwitch</category>
+      <semantic-equipment-tag>WallSwitch</semantic-equipment-tag>
 
 		<channels>
 

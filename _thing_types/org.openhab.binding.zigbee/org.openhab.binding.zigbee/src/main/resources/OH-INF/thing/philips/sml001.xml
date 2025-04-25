@@ -7,6 +7,7 @@
 	<thing-type id="philips_sml001" listed="false">
 		<label>Hue Motion Sensor</label>
 		<description>Hue Motion Illuminance and Temperature Sensor</description>
+      <semantic-equipment-tag>MotionDetector</semantic-equipment-tag>
 
 		<channels>
 			<channel id="motion" typeId="sensor_occupancy">

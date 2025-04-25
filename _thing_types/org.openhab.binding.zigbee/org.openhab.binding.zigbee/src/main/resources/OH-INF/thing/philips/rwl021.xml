@@ -5,6 +5,7 @@
                           xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0 https://openhab.org/schemas/thing-description-1.0.0.xsd">
    <thing-type id="philips_rwl021" listed="false">
       <label>Hue Dimmer Switch</label>
+      <semantic-equipment-tag>LightSource</semantic-equipment-tag>
       <channels>
          <channel id="switch_level" typeId="switch_level">
             <label>Level Control</label>

@@ -18,6 +18,7 @@
 	<thing-type id="xiaomi_lumisensor-switch" listed="false">
 		<label>Xiaomi LUMI Mijia Button</label>
 		<description>Single battery operated button (round model)</description>
+      <semantic-equipment-tag>Sensor</semantic-equipment-tag>
 
 		<channels>
 			<channel id="switch" typeId="switch_onoff">

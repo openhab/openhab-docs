@@ -8,6 +8,7 @@
 		<label>Xiaomi Wall Switch</label>
 		<description>Xiaomi Wall Switch</description>
 		<category>WallSwitch</category>
+      <semantic-equipment-tag>WallSwitch</semantic-equipment-tag>
 
 		<channels>
 			<channel id="left" typeId="system.button">

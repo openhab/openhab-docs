@@ -8,6 +8,7 @@
 
     <thing-type id="xiaomi_lumisensormagnet" listed="false">
         <label>Xiaomi Door Window Sensor</label>
+      <semantic-equipment-tag>Sensor</semantic-equipment-tag>
 
         <channels>
             <channel id="contact_switch" typeId="switch_onoff">

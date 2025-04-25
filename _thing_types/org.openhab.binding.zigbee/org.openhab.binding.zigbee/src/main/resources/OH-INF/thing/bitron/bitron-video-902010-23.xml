@@ -5,6 +5,7 @@
                           xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0 https://openhab.org/schemas/thing-description-1.0.0.xsd">
    <thing-type id="bitron-video-902010-23" listed="false">
       <label>BitronVideo 4-button Remote Control</label>
+      <semantic-equipment-tag>Button</semantic-equipment-tag>
       <channels>
          <channel id="key1" typeId="system.button">
             <label>Button 1</label>

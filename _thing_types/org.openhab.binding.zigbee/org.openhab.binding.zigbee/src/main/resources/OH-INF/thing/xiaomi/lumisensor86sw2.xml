@@ -9,6 +9,7 @@
 	<thing-type id="xiaomi_lumisensor86sw2" listed="false">
 		<label>Xiaomi Wireless 2-Button Switch</label>
 		<description>Xiaomi Wireless 2-Button Switch</description>
+      <semantic-equipment-tag>Sensor</semantic-equipment-tag>
 
 		<channels>
 			<channel id="switch_1" typeId="switch_onoff">

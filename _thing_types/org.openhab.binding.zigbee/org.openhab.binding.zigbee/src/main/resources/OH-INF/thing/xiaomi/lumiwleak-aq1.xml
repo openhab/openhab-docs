@@ -7,6 +7,7 @@
     <thing-type id="xiaomi_lumisensorwaterleak" listed="false">
         <label>Xiaomi Water Leak Sensor</label>
         <description>Xiaomi Water Leak Sensor</description>
+      <semantic-equipment-tag>Sensor</semantic-equipment-tag>
 
         <channels>
             <channel id="alarm_water" typeId="ias_water">

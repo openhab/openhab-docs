@@ -5,6 +5,7 @@
                           xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0 https://openhab.org/schemas/thing-description-1.0.0.xsd">
    <thing-type id="innr-rc-110" listed="false">
       <label>Innr RC 110 Remote Control</label>
+      <semantic-equipment-tag>ControlDevice</semantic-equipment-tag>
       <channels>
          <channel id="scenesOn" typeId="system.button">
             <label>Button On</label>

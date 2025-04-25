@@ -8,6 +8,7 @@
 		<label>TS0044</label>
 		<description>Generic Tuya 4-Button Wall Switch</description>
 		<category>WallSwitch</category>
+      <semantic-equipment-tag>WallSwitch</semantic-equipment-tag>
 
 		<channels>
 

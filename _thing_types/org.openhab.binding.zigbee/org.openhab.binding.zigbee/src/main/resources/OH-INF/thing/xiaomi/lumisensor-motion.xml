@@ -7,6 +7,7 @@
 	<thing-type id="xiaomi_lumisensor-motion" listed="false">
 		<label>Xiaomi Lumi Motion Sensor</label>
 		<description>Xiaomi Motion Sensor</description>
+      <semantic-equipment-tag>MotionDetector</semantic-equipment-tag>
 
 		<channels>
 			<channel id="occupancy" typeId="sensor_occupancy">

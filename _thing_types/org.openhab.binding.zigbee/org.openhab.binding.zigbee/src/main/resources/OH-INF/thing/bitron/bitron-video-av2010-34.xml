@@ -5,6 +5,7 @@
                           xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0 https://openhab.org/schemas/thing-description-1.0.0.xsd">
    <thing-type id="bitron-video-av2010-34" listed="false">
       <label>Bitron Video Wall Switch AV2010/34</label>
+      <semantic-equipment-tag>WallSwitch</semantic-equipment-tag>
       <channels>
          <channel id="button1" typeId="system.button">
             <label>Button 1</label>
