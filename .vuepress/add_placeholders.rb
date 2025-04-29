@@ -17,7 +17,10 @@ def add_placeholder_pages()
         "docs/ecosystem/google-assistant",
         "docs/ecosystem/ifttt",
         "docs/ecosystem/mycroft",
-        "docs/installation/openhabian.md"
+        "docs/installation/openhabian.md",
+        "docs/installation/openhabian-troubleshooting.md",
+        "docs/installation/openhabian-backup.md",
+        "docs/installation/openhabian-exim.md"
     ].each { |path|
         puts "  ➡️ #{path}"
         page = path
