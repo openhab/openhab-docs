@@ -22,7 +22,7 @@ In order to represent all of these, openHAB defines the following base component
 - [Persistence](persistence.html) - Services to store data over time
 - [Rules](rules-dsl.html) - Automation logic, the "smart" in your Smart Home!
 - [Blockly Rules](blockly/) - Visually define the automation logic of your Smart Home
-- [JSR223 Scripting](jsr223.html) - Define rules and other runtime objects using [JavaScript](https://openjdk.java.net/projects/nashorn/), [Jython](https://www.jython.org) or [Groovy](https://www.groovy-lang.org/)
+- [JSR223 Scripting](jsr223.html) - Define rules and other runtime objects using [JavaScript](https://openjdk.java.net/projects/nashorn/), [Python](https://www.python.org), [Jython](https://www.jython.org), [JRuby](https://www.jruby.org/), or [Groovy](https://www.groovy-lang.org/)
 
 The individual articles have all the details needed to understand the concepts behind these building blocks for your Smart Home.
 For more details on the basic concepts behind openHAB, please visit the [Concepts Overview page](/docs/concepts/index.html).
