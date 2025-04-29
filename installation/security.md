@@ -46,7 +46,7 @@ See the page on [Role Based Access](../tutorial/pages_intro.html#role-based-acce
 If you want to limit access to only certain network interfaces, you can do so by setting the environment variable `OPENHAB_HTTP_ADDRESS`.
 Setting it to
 
-```conf
+```ini
 OPENHAB_HTTP_ADDRESS=127.0.0.1
 ```
 
