@@ -667,22 +667,34 @@ This parameter allows to post an update or command to an item after a period of 
 
 The expiration timer is started or restarted every time an item receives an update or a command _other than_ the specified "expire" update/command.
 Any future expiring update or command is cancelled, if the item receives an update or command that matches the "expire" update/command.
+See `ignoreStateUpdate` and `ignoreCommands` [configurations](#configurations-for-expire) below.
 
-The parameter accepts a duration of time that can be a combination of hours, minutes and seconds in the format
+The parameter accepts a duration of time that can be a combination of days, hours, minutes and seconds in the format `Xd Xh Xm Xs` where X is a _long_ integer.
+Every part is optional, but all parts present must be in the given order (days, hours, minutes, seconds).
+Whitespaces are allowed between the sections.
 
 ```shell
 expire="1h 30m 45s"
 expire="1h05s"
 expire="55h 59m 12s"
+expire="2d 7h 59m 12s"
 ```
 
-Every part is optional, but all parts present must be in the given order (hours, minutes, seconds).
-Whitespaces are allowed between the sections.
+A non-negative expiry value can be specified using the [ISO8601 Duration format](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/time/Duration.html#parse(java.lang.CharSequence)).
+Java's `Duration` class supports days, hours, minutes, and seconds.
+Note that while the ISO8601 format allows for fractional seconds, the openHAB `expire` feature only supports durations with a minimum granularity of one second.
+
+```shell
+expire="PT1H30M45S"
+expire="PT1H5S"
+expire="PT55H59M12S"
+expire="P2DT7H59M12S"
+```
 
 This duration can optionally be followed by a comma and the state or command to post, when the timer expires.
 If this optional section is not present, it defaults to the Undefined (`UnDefType.UNDEF`) state.
 
-```shell
+```java
 Player MyPlayer   { expire="1h,command=STOP" }                // send STOP command after one hour
 Number MyChannel  { channel="xxx", expire="5m,state=0" }      // update state to 0 after five minutes
 String MyMessage  { channel="xxx", expire="3m12s,Hello" }     // update state to Hello after three minutes and 12 seconds
@@ -693,6 +705,28 @@ Note that the `state=` part is optional.
 
 In the special case of a String item, it is possible to define a state/command as the string "UNDEF" or "NULL" by putting it into single quotes (e.g. "1m,state='UNDEF'").
 Without the quotes, the state would be the system type `UNDEF`.
+
+###### Configurations for `expire`
+
+The `expire` parameter is stored as an item metadata which supports the following configurations:
+
+| Configuration Parameter | Description                                                                                                                  |
+|:------------------------|:-----------------------------------------------------------------------------------------------------------------------------|
+| `duration`              | The expire duration as described above.                                                                                      |
+| `command`               | The command to send when the timer expires.                                                                                  |
+| `state`                 | The state to change the item to when the timer expires. This is mutually exclusive to the `command` parameter.               |
+| `ignoreStateUpdate`     | When set to true, do not reset or restart the expire timer when the item received a state update event. Defaults to `false`. |
+| `ignoreCommands`        | When set to true, do not reset or restart the timer when the item received a command. Defaults to `false`.                   |
+
+Examples:
+
+```java
+// These four definitions are equivalent
+Number MyChannel  { expire="5m,state=0" }
+Number MyChannel  { expire="5m,0" }
+Number MyChannel  { expire="5m" [state=0] }
+Number MyChannel  { expire="" [duration="5m", state=0] }
+```
 
 #### Profiles
 
