@@ -156,8 +156,8 @@ The syntax is as follows:
 
 ```java
 Items {
-    <itemlist1> : [strategy = <strategy1>, <strategy2>, ...] [filter = <filter1>, <filter2>, ...]
-    <itemlist2> : [strategy = <strategyX>, <strategyY>, ...]
+    <itemlist1> : strategy = <strategy1>, <strategy2>, ... [filter = <filter1>, <filter2>, ...]
+    <itemlist2> : strategy = <strategyX>, <strategyY>, ...
     ...
 
 }
@@ -175,6 +175,10 @@ where `<itemlist>` is a comma-separated list consisting of one or more of the fo
 The entries are additive.
 This means if one Item appears in more than one `<itemlist>` either directly or indirectly (e.g. `*` which includes all Items or as a member of a Group used in `<groupName>*`), all the strategies strategies listed on all those lines apply to that Item.
 In the same way, an Item defined by a `!<itemName>` or `!<groupName>*` will be excluded after all additive rules have been applied.
+
+For each `<itemlist>`, you need to define one or more strategies to apply.
+You can use the predefined strategies, or the strategies defined in the `Strategies` section.
+Defining filters is optional.
 
 ### Aliases
 
@@ -286,9 +290,6 @@ Here is the full list of available persistence extensions:
 | `<item>.minimumSince(ZonedDateTime)`                            | Gets the minimum value of the State of a persisted Item since a certain point in time (returns HistoricItem)                                                                     |
 | `<item>.minimumUntil(ZonedDateTime)`                            | Gets the minimum value of the State of a persisted Item until a certain future point in time (returns HistoricItem)                                                              |
 | `<item>.minimumBetween(ZonedDateTime, ZonedDateTime)`           | Gets the minimum value of the State of a persisted Item between certain points in time (returns HistoricItem)                                                                    |
-| `<item>.averageSince(ZonedDateTime)`                            | Gets the average value of the State of a persisted Item since a certain point in time. This method uses a time-weighted average calculation (see example below) (returns State)  |
-| `<item>.averageUntil(ZonedDateTime)`                            | Gets the average value of the State of a persisted Item until a certain point in time. This method uses a time-weighted average calculation (see example below) (returns State)  |
-| `<item>.averageBetween(ZonedDateTime, ZonedDateTime)`           | Gets the average value of the State of a persisted Item between certain points in time. This method uses a time-weighted average calculation (see example below) (returns State) |
 | `<item>.medianSince(ZonedDateTime)`                             | Gets the median value of the State of a persisted Item since a certain point in time (returns State)                                                                             |
 | `<item>.medianUntil(ZonedDateTime)`                             | Gets the median value of the State of a persisted Item until a certain point in time (returns State)                                                                             |
 | `<item>.medianBetween(ZonedDateTime, ZonedDateTime)`            | Gets the median value of the State of a persisted Item between certain points in time (returns State)                                                                            |
@@ -298,12 +299,6 @@ Here is the full list of available persistence extensions:
 | `<item>.evolutionRateSince(ZonedDateTime)`                      | Gets the evolution rate of the state of a given Item since a certain point in time (returns DecimalType)                                                                         |
 | `<item>.evolutionRateUntil(ZonedDateTime)`                      | Gets the evolution rate of the state of a given Item until a certain point in time (returns DecimalType)                                                                         |
 | `<item>.evolutionRateBetween(ZonedDateTime, ZonedDateTime)`     | Gets the evolution rate of the state of a given Item between certain points in time (returns DecimalType)                                                                        |
-| `<item>.deviationSince(ZonedDateTime)`                          | Gets the standard deviation of the state of the given Item since a certain point in time (returns State)                                                                         |
-| `<item>.deviationUntil(ZonedDateTime)`                          | Gets the standard deviation of the state of the given Item until a certain point in time (returns State)                                                                         |
-| `<item>.deviationBetween(ZonedDateTime, ZonedDateTime)`         | Gets the standard deviation of the state of the given Item between certain points in time (returns State)                                                                        |
-| `<item>.varianceSince(ZonedDateTime)`                           | Gets the variance of the state of the given Item since a certain point in time (returns State)                                                                                   |
-| `<item>.varianceUntil(ZonedDateTime)`                           | Gets the variance of the state of the given Item until a certain future point in time (returns State)                                                                            |
-| `<item>.varianceBetween(ZonedDateTime, ZonedDateTime)`          | Gets the variance of the state of the given Item between certain points in time (returns State)                                                                                  |
 | `<item>.sumSince(ZonedDateTime)`                                | Gets the sum of the previous States of a persisted Item since a certain point in time (returns State)                                                                            |
 | `<item>.sumUntil(ZonedDateTime)`                                | Gets the sum of the future States of a persisted Item until a certain point in time (returns State)                                                                              |
 | `<item>.sumBetween(ZonedDateTime, ZonedDateTime)`               | Gets the sum of the previous States of a persisted Item between certain points in time (returns State)                                                                           |
@@ -313,6 +308,18 @@ Here is the full list of available persistence extensions:
 | `<item>.countStateChangesSince(ZonedDateTime)`                  | Gets the number of changes in persisted States of an Item since a certain point in time                                                                                          |
 | `<item>.countStateChangesUntil(ZonedDateTime)`                  | Gets the number changes in of persisted States of an Item until a certain point in time                                                                                          |
 | `<item>.countStateChangesBetween(ZonedDateTime, ZonedDateTime)` | Gets the number of changes in persisted States of an Item between certain points in time                                                                                         |
+| `<item>.riemannSumSince(ZonedDateTime)`                         | Gets the Riemann sum of the States of a persisted Item since a certain point in time. This method uses a time-weighted calculation (see [below](#time-weighted-calculations---riemann-sums)) (returns State) |
+| `<item>.riemannSumUntil(ZonedDateTime)`                         | Gets the Riemann sum of the States of a persisted Item until a certain point in time. This method uses a time-weighted calculation (see [below](#time-weighted-calculations---riemann-sums)) (returns State) |
+| `<item>.riemannSumBetween(ZonedDateTime, ZonedDateTime)`        | Gets the Riemann sum of the States of a persisted Item between certain points in time. This method uses a time-weighted calculation (see [below](#time-weighted-calculations---riemann-sums)) (returns State) |
+| `<item>.averageSince(ZonedDateTime)`                            | Gets the average value of the State of a persisted Item since a certain point in time. This method uses a time-weighted calculation (see [below](#time-weighted-calculations---riemann-sums)) (returns State) |
+| `<item>.averageUntil(ZonedDateTime)`                            | Gets the average value of the State of a persisted Item until a certain point in time. This method uses a time-weighted calculation (see [below](#time-weighted-calculations---riemann-sums)) (returns State) |
+| `<item>.averageBetween(ZonedDateTime, ZonedDateTime)`           | Gets the average value of the State of a persisted Item between certain points in time. This method uses a time-weighted calculation (see [below](#time-weighted-calculations---riemann-sums)) (returns State) |
+| `<item>.varianceSince(ZonedDateTime)`                           | Gets the variance of the state of the given Item since a certain point in time. This method uses a time-weighted calculation (see [below](#time-weighted-calculations---riemann-sums)) (returns State) |
+| `<item>.varianceUntil(ZonedDateTime)`                           | Gets the variance of the state of the given Item until a certain future point in time. This method uses a time-weighted calculation (see [below](#time-weighted-calculations---riemann-sums)) (returns State) |
+| `<item>.varianceBetween(ZonedDateTime, ZonedDateTime)`          | Gets the variance of the state of the given Item between certain points in time. This method uses a time-weighted calculation (see [below](#time-weighted-calculations---riemann-sums)) (returns State) |
+| `<item>.deviationSince(ZonedDateTime)`                          | Gets the standard deviation of the state of the given Item since a certain point in time. This method uses a time-weighted calculation (see [below](#time-weighted-calculations---riemann-sums)) (returns State) |
+| `<item>.deviationUntil(ZonedDateTime)`                          | Gets the standard deviation of the state of the given Item until a certain point in time. This method uses a time-weighted calculation (see [below](#time-weighted-calculations---riemann-sums)) (returns State) |
+| `<item>.deviationBetween(ZonedDateTime, ZonedDateTime)`         | Gets the standard deviation of the state of the given Item between certain points in time. This method uses a time-weighted calculation (see [below](#time-weighted-calculations---riemann-sums)) (returns State) |
 | `<item>.getAllStatesSince(ZonedDateTime)`                       | Gets all persisted State changes for an Item since a certain point in time (returns Iterable<HistoricItem>)                                                                      |
 | `<item>.getAllStatesUntil(ZonedDateTime)`                       | Gets all persisted State changes for an Item until a certain point in time (returns Iterable<HistoricItem>)                                                                      |
 | `<item>.getAllStatesBetween(ZonedDateTime, ZonedDateTime)`      | Gets all persisted State changes for an Item between certain points in time (returns Iterable<HistoricItem>)                                                                     |
@@ -329,6 +336,45 @@ Some extensions return a HistoricItem object.
 It represents the state of a persisted item at a certain point in time.
 The most useful methods of the HistoricItem object returned by some queries, are `.getState()` and `.getTimestamp()`
 
+### Time-weighted calculations - Riemann Sums
+
+A number of extensions (`riemannSum`, `average`, `variance` and `deviation`) use time-weighted calculations.
+A Riemann Sum is an approximation of the integral of a continuous function represented by discrete values.
+Each of the following extensions uses a Riemann Sum as a base for its calculation:
+
+- `average` = `riemannSum` / total duration
+- `variance` = sum(value - `average`)^2 / count(values)
+- `deviation` = sqrt(`variance`)
+
+The `riemannSum` calculation is especially useful when doing calculations such as electricity consumption or production over time (e.g. in kWh) from momentary power readings (e.g. in W).
+
+The `riemannSum` extension differs from the `sum` extension in that `sum` will just add values without considering the time interval between values.
+It will therefore result in a sum with the same unit as the individual values.
+Each value will have the same weight in the calculation.
+
+There are multiple types of approximation possible when calculating Riemann Sums.
+The type can be explicitly set on all extensions doing time-weighted calculations (`riemannSum`, `average`, `variance` and `deviation`) with an extra parameter at the end (before the persistence service parameter).
+Possible values for the type are:
+
+| `Riemann.LEFT`                                    | `Riemann.RIGHT`                                   | `Riemann.TRAPEZOIDAL`                             | `Riemann.MIDPOINT`                                |
+|---------------------------------------------------|---------------------------------------------------|---------------------------------------------------|---------------------------------------------------|
+| ![left](images/riemann-left.svg)                  | ![right](images/riemann-right.svg)                | ![trapezoidal](images/riemann-trapezoidal.svg)    | ![midpoint](images/riemann-midpoint.svg)          |
+
+- `RiemannType.LEFT`: takes the persisted value at the start of the bucket to represent the value for the whole bucket.
+This is most useful when there is a `everyChange` persistence strategy and the values represent a step function. An example would be dynamic electricity rates, as they will effectively be constant inside the bucket.
+- `RiemannType.RIGHT`: takes the persisted value at the end of the bucket as an approximation for the value in the full preceding bucket.
+- `RiemannType.TRAPEZOIDAL`: takes the average of the persisted value at the start end the end of the bucket, effectively making a linear interpolation to fit the curve.
+This type is most useful when the real values change continuously. It can be used for any persistence strategy and any interval.
+- `RiemannType.MIDPOINT`: uses 3 persisted values and uses the middle of the values as an approximation for the value halfway in the interval between the middle of point 1 and 2 and the middle of point 2 and 3.
+This is the best approximation when the real values change continuously, the persistence intervals are short and the bucket sizes between persisted values are relatively constant.
+
+The default when no type is provided is `RiemannType.LEFT`.
+
+A Riemann sum is always calculated using seconds as unit for time.
+As an example, the Riemann sum of power values in `kW` will result in an energy measurement in `kWs`.
+You can rely on framework functionality to convert to the appropriate unit (e.g. `kWh`), or do an explicit conversion.
+If you use plain `Number` items and don't use units, be aware of this time multiplication factor.
+
 ### Examples
 
 To persist an Item called `Lights` in an rrd4j database, you would enter the following:
@@ -342,7 +388,21 @@ lastChange = (lastChange !== null) ? lastChange : now
 ```
 
 To get the average temperature over the last 5 minutes from the Item called `Temperature` in the influxdb persistence service, you would use:
-`Temperature.averageSince(now.minusMinutes(5), "influxdb")`
+
+```java
+Temperature.averageSince(now.minusMinutes(5), "influxdb")`
+```
+
+To calculate the total energy consumption over the last month from an Item called `Power` in the jdbc persistence service, you can do:
+
+```java
+var today = now.truncatedTo(ChronoUnit.DAYS)
+var currentMonthStart = today.withDayOfMonth(1)
+var lastMonthStart = today.minusMonths(1).withDayOfMonth(1)
+var consumption = Power.riemannSumBetween(lastMonthStart, currentMonthStart, RiemannType.TRAPEZOIDAL, "jdbc")`
+```
+
+If `Power` is a `QuantityType<Power>` Item, `consumption` will be of `QuantityType<Energy>`.
 
 #### Time-weighted averages
 
