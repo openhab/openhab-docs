@@ -82,7 +82,7 @@ By installing the openHAB process as a service in Windows, you can:
     1. Copy all the config text from the below section and paste it in your `openHAB-wrapper.conf`, replacing all existing content.
     1. Adapt the first entry (`OPENHAB_HOME`) to match your openHAB installation directory.
 
-    ```conf
+    ```ini
     #*******************************************************
     # openHAB-wrapper.conf for Windows Service Installation
     #*******************************************************
