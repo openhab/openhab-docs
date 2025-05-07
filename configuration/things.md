@@ -64,7 +64,7 @@ These files are stored in `$OPENHAB_CONF/things`.
 
 The syntax for `.things` files is defined as follows (parts in `<..>` are required):
 
-```xtend
+```java
 Thing <binding_id>:<type_id>:<thing_id> "Label" @ "Location" [ <parameters> ]
 ```
 
@@ -80,7 +80,7 @@ The type of the configuration parameter is determined by the binding and must be
 
 **Examples:**
 
-```xtend
+```java
 Thing network:device:webcam "Webcam" @ "Living Room" [ hostname="192.168.0.2", timeout="5000", ... ]
 Thing astro:moon:home [ geolocation="50.12345,10.98765", interval=300 ]
 Thing ntp:ntp:local [ hostname="de.pool.ntp.org" ]
@@ -101,7 +101,7 @@ Please check each individual binding's [documentation](/addons/#binding) for det
 
 Bridges can be defined together with contained things. The following configuration shows the definition of a Hue bridge with two Hue lamps:
 
-```xtend
+```java
 Bridge hue:bridge:mybridge [ ipAddress="192.168.3.123" ] {
  Thing 0210 bulb1 [ lightId="1" ]
  Thing 0210 bulb2 [ lightId="2" ]
@@ -115,7 +115,7 @@ The resulting UID of the thing is `hue:0210:mybridge:bulb1`.
 
 Bridges that are defined somewhere else can also be referenced in the DSL:
 
-```xtend
+```java
 Thing hue:0210:mybridge:bulb "Label" (hue:bridge:mybridge) @ "Location" [lightId="3"]
 ```
 
@@ -125,7 +125,7 @@ For the contained notation of things the UID will be inherited and the bridge ID
 
 **Example of a MQTT Bridge with Generic MQTT Things :**
 
-```xtend
+```java
 Bridge mqtt:broker:MyMQTTBroker [ host="192.168.178.50", secure=false, username="MyUserName", password="MyPassword"] {
   Thing topic sonoff_Dual_Thing "Light_Dual" @ "Sonoff" {
     Channels:
@@ -151,7 +151,7 @@ It is also possible to add additional channels to existing things and for bindin
 
 #### State channels
 
-```xtend
+```java
 Thing yahooweather:weather:losangeles [ location=2442047, unit="us", refresh=120 ] {
  Channels:
   State String : customChannel1 "My Custom Channel" [
@@ -167,7 +167,7 @@ The framework will merge the list of channels coming from the binding and the us
 
 As state channels are the default channels, you can omit the `State` keyword, the following example creates the same channels as the example above:
 
-```xtend
+```java
 Thing yahooweather:weather:losangeles [ location=2442047, unit="us", refresh=120 ] {
  Channels:
   String : customChannel1 "My Custom Channel" [
@@ -181,7 +181,7 @@ You may optionally give the channel a proper label (like “My Custom Channel”
 
 #### Trigger channels
 
-```xtend
+```java
 Thing yahooweather:weather:losangeles [ location=2442047, unit="us", refresh=120 ] {
  Channels:
   Trigger String : customChannel1 -[
@@ -196,7 +196,7 @@ Trigger channels are defined with the keyword `Trigger` and only support the typ
 
 Many bindings provide standalone channel type definitions like this:
 
-```xtend
+```java
 <thing:thing-descriptions bindingId="yahooweather" [...]>
     <channel-type id="temperature">
         <item-type>Number</item-type>
@@ -213,7 +213,7 @@ Many bindings provide standalone channel type definitions like this:
 They can be referenced within a thing’s channel definition, so that they need to be defined only once and can be reused for many channels.
 You may do so in the DSL as well:
 
-```xtend
+```java
 Thing yahooweather:weather:losangeles [ location=2442047, unit="us", refresh=120 ] {
     Channels:
         Type temperature : my_yesterday_temperature "Yesterday's Temperature"
@@ -236,12 +236,12 @@ In order to link a Thing to an Item in an `.items` file, open the Thing in UI un
 In the list of Thing Channels, look for the Channel you wish to link to an Item and copy the Channel's ID.
 For instance, a Z-Wave switch might have a Switch Channel that has an ID like this:
 
-```xtend
+```java
 zwave:device:1a2b3c4d:node2:switch_binary
 ```
 
 To bind that Channel to an Item in an `.items` file, you can define an Item in the file like so:
 
-```xtend
+```java
 Switch Kitchen_Light_Switch "Kitchen Light" (Indoor_Lights) { channel="zwave:device:1a2b3c4d:node2:switch_binary" }
 ```
