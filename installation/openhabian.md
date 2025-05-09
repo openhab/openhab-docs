@@ -57,7 +57,7 @@ This will give you a ready to go drop in replacement in the case of any hardware
 
 All Raspberry Pi models are supported by openHABian.
 
-::: info Note
+::: tip Note
 With the upcoming openHAB 5 release, we will drop support for anything older than an RPi 3 as openHAB 5 will require a 64 bit processor.
 :::
 
@@ -401,10 +401,11 @@ clonebranch="openHAB"
 
 An initial configuration file to import when setting up openHAB.
 This file must be a `.zip` archive created by `openhab-cli backup`.
+ATTENTION: keep /boot/firmware as the directory if you provide an absolute path
 
 ::: details Example
 ```
-initialconfig="/boot/initial.zip"
+initialconfig="/boot/firmware/initial.zip"
 ```
 :::
 
