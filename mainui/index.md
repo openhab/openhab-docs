@@ -21,6 +21,9 @@ Users with the administrator role can use the left panel menu to access:
   Special functions including creation of custom widgets and block libraries as well as the developer sidebar.
 - [**Help & About**](about)<br>
   The about page shows general information of your openHAB configuration and allows to configure some client related configuration.
+
+The left panel menu can be pinned to make it stay visible, but for a narrower screen, it may be hidden.
+Pressing the key combination <kbd>Alt</kbd><kbd>Shift</kbd><kbd>M</kbd> on your keyboard will toggle the visibility of the left panel menu.
 <!-- END MAINUI SIDEBAR DOC - DO NOT REMOVE -->
 
 ## Special Features
