@@ -1022,3 +1022,9 @@ So for example `Speed` need not be taken precisely to mean `m/sec` .. but can in
 
 1. For equipment (e.g. fans, pumps) that can run at several speed/power/volume/flow-rates (e.g. Off/Low/Medium/High):
 `Control.Speed` should be used.
+
+1. For tagging channels that represent entertainment media (e.g. album, artist, composer, actor, director. etc.):
+`Status.Info` should be used.
+
+1. For tagging channels that relate to the progress of playing entertainment media, or of an automatic program:
+`Status.Progress` should be used.
