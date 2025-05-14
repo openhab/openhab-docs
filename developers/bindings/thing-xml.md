@@ -1011,8 +1011,9 @@ So for example `Speed` need not be taken precisely to mean `m/sec` .. but can in
 1. For turning a piece of equipment on or off:
 `Switch.Light` should be used if the equipment is a light, otherwise `Switch.Power` should be used.
 
-1. For switching the operating mode of a piece of equipment (e.g. Auto/Manual, Day/Night, Disable/Enable, etc.):
-`Switch.Mode` should be used.
+1. For reporting or controlling the operating mode of a piece of equipment (e.g. auto/manual, day/night, disable/enable, etc.):
+If the channel has a two states (e.g. via a `Switch` type channel) then `Switch.Mode` should be used.
+Or if it has multiple states (e.g. heat/cool/dry/fan/auto via a `String` type channel) then `Control.Mode` should be used.
 
 1. For equipment having a set-point, even if the set-point is read-only for openHAB, it is OK to use `Setpoint.whatever`.
 
