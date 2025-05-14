@@ -1004,7 +1004,8 @@ The purpose of this list is to provide the convention for tagging such cases:
 So a channel may make a 'Measurement' of a 'Temperature', or show the 'Status' of an operating 'Mode' etc.
 
 1. Do not confuse `Property` tags with Units of Measure.
-A `Property` tag is a WORD (see above) that describes the nature an the action being taken by its respective `Point`.
+A `Property` tag is a WORD (see above) that describes the nature of the action being taken by its respective `Point`.
+
 So for example `Speed` need not be taken precisely to mean `m/sec` .. but can in general cover operations that "do much stuff in little time".
 
 1. For turning a piece of equipment on or off:
