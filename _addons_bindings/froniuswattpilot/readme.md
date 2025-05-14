@@ -5,6 +5,7 @@ title: Fronius Wattpilot - Bindings
 type: binding
 description: "This binding integrates the [Fronius Wattpilot EV charging stations](https://www.fronius.com/en-gb/uk/solar-energy/installers-partners/products-solutions/residential-energy-solutions/e-mobility-and-photovoltaic-residential/wattpilot-ev-charging-solution-for-homes)"
 since: 3x
+logo: images/addons/froniuswattpilot.png
 install: auto
 ---
 
@@ -13,6 +14,8 @@ install: auto
 {% include base.html %}
 
 # Fronius Wattpilot Binding
+
+<AddonLogo />
 
 This binding integrates the [Fronius Wattpilot EV charging stations](https://www.fronius.com/en-gb/uk/solar-energy/installers-partners/products-solutions/residential-energy-solutions/e-mobility-and-photovoltaic-residential/wattpilot-ev-charging-solution-for-homes)
 through their unofficial WebSocket API, which is also used by the [Fronius Solar.Wattpilot app](https://www.fronius.com/en-gb/uk/solar-energy/installers-partners/products-solutions/residential-energy-solutions/e-mobility-and-photovoltaic-residential/wattpilot-ev-charging-solution-for-homes#anc_app).
