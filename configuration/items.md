@@ -424,6 +424,7 @@ The default icon will be used for negative numbers, or above 100 i.e. the availa
 Dimmer type Items work in the same way, being limited to 0-100 anyway.
 
 For a dimmable light (0-100%), you might provide icons as in the example:
+
 | File name         | Description                                          |
 | ----------------- | ---------------------------------------------------- |
 | `mydimmer.svg`    | Default icon (used in undefined states)              |
