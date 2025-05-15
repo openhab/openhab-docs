@@ -93,12 +93,12 @@ It consists of bundles that implement all add-on services from the OSGi specific
 Some of the core bundles are listed in the table below.
 Some or all of these bundles must be included in your runtime configuration, if you want to use the services that they provide.
 
- Name | Bundle Symbolic Name | Description
- -------- | -------- | --------
-Declarative Services | org.eclipse.equinox.ds | An implementation of the OSGi [Declarative Services](osgids.html) specification
-Event Admin Service | org.eclipse.equinox.event | OSGi Compendium Release 8 [Event Admin](https://osgi.org/javadoc/osgi.cmpn/8.0.0/org/osgi/service/event/EventAdmin.html) Service provides an inter-bundle communication mechanism based on an event publish and subscribe model
-Equinox Utilities | org.eclipse.equinox.util | A library of utility classes that are frequently used from the Equinox OSGi Service implementation bundles
-OSGi Services API | org.eclipse.osgi.service | This bundle contains the set of OSGi specified service APIs
+| Name                 | Bundle Symbolic Name      | Description                                                                                                                                                                                                                     |
+|----------------------|---------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Declarative Services | org.eclipse.equinox.ds    | An implementation of the OSGi [Declarative Services](osgids.html) specification                                                                                                                                                 |
+| Event Admin Service  | org.eclipse.equinox.event | OSGi Compendium Release 8 [Event Admin](https://osgi.org/javadoc/osgi.cmpn/8.0.0/org/osgi/service/event/EventAdmin.html) Service provides an inter-bundle communication mechanism based on an event publish and subscribe model |
+| Equinox Utilities    | org.eclipse.equinox.util  | A library of utility classes that are frequently used from the Equinox OSGi Service implementation bundles                                                                                                                      |
+| OSGi Services API    | org.eclipse.osgi.service  | This bundle contains the set of OSGi specified service APIs                                                                                                                                                                     |
 
 Table 2. OSGi Bundles (Full list can be found at: <https://www.eclipse.org/equinox/bundles/>)
 
