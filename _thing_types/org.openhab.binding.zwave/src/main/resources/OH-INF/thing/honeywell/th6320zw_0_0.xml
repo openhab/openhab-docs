@@ -14,6 +14,12 @@ T6 Pro Z-Wave Programmable Thermostat<br /> <h1>Overview</h1><p>The Honeywell T6
 
     <!-- CHANNEL DEFINITIONS -->
     <channels>
+      <channel id="basic_basic_number" typeId="basic_number">
+        <label>Basic Switch</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_BASIC</property>
+        </properties>
+      </channel>
       <channel id="sensor_temperature" typeId="sensor_temperature">
         <label>Sensor (temperature)</label>
         <properties>
