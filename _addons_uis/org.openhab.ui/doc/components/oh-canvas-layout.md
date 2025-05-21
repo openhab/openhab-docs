@@ -67,6 +67,22 @@ Position widgets on a canvas layout with arbitrary position and size down to pix
 </PropGroup>
 </div>
 
+### SVG Embedding
+<div class="props">
+<PropGroup name="svgEmbedding" label="SVG Embedding">
+<PropBlock type="BOOLEAN" name="embedSvg" label="Embed SVG">
+  <PropDescription>
+    Embed SVG image directly into the page (default false)
+  </PropDescription>
+</PropBlock>
+<PropBlock type="BOOLEAN" name="embedSvgFlashing" label="Embed SVG Flashing in Run-Mode">
+  <PropDescription>
+    Flashes SVG elements on hovering in run-mode as well (default false)
+  </PropDescription>
+</PropBlock>
+</PropGroup>
+</div>
+
 ### Appearance
 <div class="props">
 <PropGroup name="appearance" label="Appearance">

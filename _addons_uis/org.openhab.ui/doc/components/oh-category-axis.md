@@ -43,6 +43,7 @@ prev: /docs/ui/components/
     <PropOption value="week" label="Days of week" />
     <PropOption value="month" label="Days of month" />
     <PropOption value="year" label="Months of year" />
+    <PropOption value="values" label="Values" />
   </PropOptions>
 </PropBlock>
 <PropBlock type="TEXT" name="weekdayFormat" label="Weekday Format" required="true">
@@ -68,6 +69,11 @@ prev: /docs/ui/components/
     <PropOption value="default" label="Long (default)" />
     <PropOption value="short" label="Short" />
   </PropOptions>
+</PropBlock>
+<PropBlock type="TEXT" name="data" label="Category Values">
+  <PropDescription>
+    Category values to display
+  </PropDescription>
 </PropBlock>
 </PropGroup>
 </div>

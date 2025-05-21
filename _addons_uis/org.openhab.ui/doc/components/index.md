@@ -131,6 +131,7 @@ Refer to the [`oh-card` Style](./oh-card.html#style) documentation to learn abou
 | [`oh-calendar-axis`](./oh-calendar-axis.html) |  [Calendar](./oh-calendar-axis.html) |  |
 | [`oh-data-series`](./oh-data-series.html) |  [Data Series](./oh-data-series.html) |  |
 | [`oh-time-series`](./oh-time-series.html) |  [Time Series](./oh-time-series.html) |  |
+| [`oh-state-series`](./oh-state-series.html) |  [State Series](./oh-state-series.html) |  |
 | [`oh-aggregate-series`](./oh-aggregate-series.html) |  [Aggregate Series](./oh-aggregate-series.html) |  |
 | [`oh-calendar-series`](./oh-calendar-series.html) |  [Calendar Series](./oh-calendar-series.html) |  |
 | [`oh-chart-tooltip`](./oh-chart-tooltip.html) |  [Tooltip](./oh-chart-tooltip.html) |  |
