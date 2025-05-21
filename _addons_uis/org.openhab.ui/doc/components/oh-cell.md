@@ -220,6 +220,21 @@ A regular or expandable cell
     <PropOption value="calendar" label="Calendar" />
   </PropOptions>
 </PropBlock>
+<PropBlock type="TEXT" name="actionAnalyzerAggregation" label="Initial Aggregation">
+  <PropDescription>
+    The initial aggregation of the analyzer - 
+  </PropDescription>
+  <PropOptions>
+    <PropOption value="average" label="Average" />
+    <PropOption value="sum" label="Sum" />
+    <PropOption value="min" label="Minimum" />
+    <PropOption value="max" label="Maximum" />
+    <PropOption value="first" label="First (earliest)" />
+    <PropOption value="last" label="Last (latest)" />
+    <PropOption value="diff_first" label="Difference of firsts" />
+    <PropOption value="diff_last" label="Difference of lasts" />
+  </PropOptions>
+</PropBlock>
 <PropBlock type="TEXT" name="actionConfirmation" label="Action Confirmation">
   <PropDescription>
     Shows a dialog or sheet to ask for confirmation before the action is executed. Can either be a text to show in the dialog or a JSON object <code>{ type: "dialog", title: "Confirm", text: "Are you sure?" }</code> or <code>{ type: "sheet", text: "Confirm", color: "green" }</code>
