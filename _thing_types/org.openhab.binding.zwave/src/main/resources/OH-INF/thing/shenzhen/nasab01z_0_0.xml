@@ -26,7 +26,7 @@ Siren Alarm<br /> <h1>Overview</h1><p>Siren Alarm with ten different sounds.</p>
           <property name="binding:*:DecimalType">COMMAND_CLASS_CONFIGURATION;parameter=7</property>
         </properties>
       </channel>
-      <channel id="alarm_general" typeId="alarm_general">
+      <channel id="notification_siren" typeId="notification_siren">
         <label>Alarm</label>
         <properties>
           <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM</property>
@@ -44,7 +44,7 @@ Siren Alarm<br /> <h1>Overview</h1><p>Siren Alarm with ten different sounds.</p>
       <property name="vendor">Shenzhen Neo Electronics Co., Ltd</property>
       <property name="modelId">NAS-AB01Z</property>
       <property name="manufacturerId">0258</property>
-      <property name="manufacturerRef">0003:0088,0003:1088,0003:2088,0003:6088</property>
+      <property name="manufacturerRef">0003:0088,0003:1088,0003:2088,0003:6088,0600:1028</property>
       <property name="dbReference">522</property>
       <property name="defaultAssociations">1,2,3</property>
     </properties>

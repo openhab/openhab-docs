@@ -36,6 +36,10 @@ The siren alarm can be included to the Z-wave network by pressing on the code bu
   3. Quickly, triple click the code button, LED light will flash red for 5 times.
   4. Wait for the main controller to delete the sensor.
 
+### General Usage Information
+
+
+
 ## Channels
 
 The following table summarises the channels available for the NAS-AB01Z -:
@@ -44,7 +48,7 @@ The following table summarises the channels available for the NAS-AB01Z -:
 |--------------|------------|--------------|----------|-----------|
 | Switch | switch_binary | switch_binary | Switch | Switch | 
 | Siren ON Mode | config_decimal | config_decimal |  | Number | 
-| Alarm | alarm_general | alarm_general | Alarm | Switch | 
+| Alarm | notification_siren | notification_siren |  | Switch | 
 | Battery Level | battery-level | system.battery_level | Battery | Number |
 
 ### Switch
@@ -64,16 +68,9 @@ Generic class for configuration parameter.
 The ```config_decimal``` channel is of type ```config_decimal``` and supports the ```Number``` item.
 
 ### Alarm
-Indicates if an alarm is triggered.
+Indicates the siren notification has been triggered.
 
-The ```alarm_general``` channel is of type ```alarm_general``` and supports the ```Switch``` item and is in the ```Alarm``` category. This is a read only channel so will only be updated following state changes from the device.
-
-The following state translation is provided for this channel to the ```Switch``` item type -:
-
-| Value | Label     |
-|-------|-----------|
-| OFF | OK |
-| ON | Alarm |
+The ```notification_siren``` channel is of type ```notification_siren``` and supports the ```Switch``` item. This is a read only channel so will only be updated following state changes from the device.
 
 ### Battery Level
 Represents the battery level as a percentage (0-100%). Bindings for things supporting battery level in a different format (e.g. 4 levels) should convert to a percentage to provide a consistent battery level reading.

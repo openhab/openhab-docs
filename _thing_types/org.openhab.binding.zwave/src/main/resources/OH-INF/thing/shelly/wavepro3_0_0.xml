@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="shelly_wavepro3_00_000" listed="false">
+    <label>Wave Pro 3 A DIN rail mountable 3-channel smart switch with potential-free contacts</label>
+    <description><![CDATA[
+A DIN rail mountable 3-channel smart switch with potential-free contacts<br /> <h1>Overview</h1><p>The Device is a DIN rail mountable 3-channel smart switch with potential-free contacts. It controls the on/off function for three independent electrical devices with a load up to 16 A per channel (48 A in total). It is compatible with switches (default) and push-buttons.</p> <br /> <h2>Inclusion Information</h2><p>SmartStart adding (inclusion)</p><p>SmartStart enabled products can be added into a Z-Wave® network by scanning the Z-Wave® QR Code present on the Device with a gateway providing SmartStart inclusion. No further action is required, and the SmartStart device will be added automatically within 10 minutes of being switched on in the network vicinity.</p><p>With the gateway application scan the QR code on the Device label and add the Security 2 (S2) Device Specific Key (DSK) to the provisioning list in the gateway.</p><p>Connect the Device to a power supply.</p><p>Check if the blue LED is blinking in Mode 1. If so, the Device is not added to a Z-Wave® network.</p><p>Adding will be initiated automatically within a few seconds after connecting the Device to a power supply, and the Device will be added to a Z-Wave® network automatically.</p><p>The blue LED will be blinking in Mode 2 during the adding process.</p><p>The green LED will be blinking in Mode 1 if the Device is successfully added to a Z-Wave® network.</p><p>Adding (inclusion) with the S button (*not available for Long Range inclusion)</p><p>Connect the Device to a power supply.</p><p>Check if the blue LED is blinking in Mode 1. If so, the Device is not added to a Z-Wave® network.</p><p>Enable add/remove mode on the gateway.</p><p>To enter the Setting mode, press and hold the S button on the Device until the LED turns solid blue.</p><p>Release and then press and hold (&gt; 2s) the S button on the Device until the blue LED starts blinking in Mode 3. Releasing the S button will start the Learn mode.</p><p>The blue LED will be blinking in Mode 2 during the adding process.</p><p>The green LED will be blinking in Mode 1 if the Device is successfully added to a Z-Wave® network.</p><p>Note! In Setting mode, the Device has a timeout of 10s before entering again into Normal mode.</p> <br /> <h2>Exclusion Information</h2><p>Removing (exclusion) with the S button</p><p>Connect the Device to a power supply.</p><p>Check if the green LED is blinking in Mode 1. If so, the Device is added to a Z-Wave® network.</p><p>Enable add/remove mode on the gateway.</p><p>To enter the Setting mode, press and hold the S button on the Device until the LED turns solid blue.</p><p>Release and then press and hold (&gt; 2s) the S button on the Device until the blue LED starts blinking in Mode 3. Releasing the S button will start the Learn mode.</p><p>The blue LED will be blinking in Mode 2 during the removing process.</p><p>The blue LED will be blinking in Mode 1 if the Device is successfully removed from a Z-Wave® network.</p><p>Note! In Setting mode, the Device has a timeout of 10s before entering again into Normal mode.</p><p>Removing (exclusion) with a switch/push-button</p><p>Connect the Device to a power supply.</p><p>Check if the green LED is blinking in Mode 1. If so, the Device is added to a Z-Wave® network.</p><p>Enable add/remove mode on the gateway.</p><p>Toggle the switch/push-button connected to any of the SW terminals (SW, SW1, SW2,…) 3 times within 3 seconds (this procedure puts the Device in Learn mode). The Device must receive on/off signal 3 times, which means pressing the momentary switch 3 times, or toggling the switch on and off 3 times.</p><p>The blue LED will be blinking in Mode 2 during the removing process.</p><p>The blue LED will be blinking in Mode 1 if the Device is successfully removed from a Z-Wave® network.</p> <br /> <h2>Wakeup Information</h2><p><br /></p>
+    ]]></description>
+    <category>WallSwitch</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_binary" typeId="switch_binary">
+        <label>Switch</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY</property>
+        </properties>
+      </channel>
+      <channel id="alarm_heat" typeId="alarm_heat">
+        <label>Alarm (heat)</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=HEAT</property>
+        </properties>
+      </channel>
+      <channel id="switch_binary1" typeId="switch_binary">
+        <label>Switch 1</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY:1</property>
+        </properties>
+      </channel>
+      <channel id="alarm_heat1" typeId="alarm_heat">
+        <label>Alarm (heat) 1</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM:1;type=HEAT</property>
+        </properties>
+      </channel>
+      <channel id="switch_binary2" typeId="switch_binary">
+        <label>Switch 2</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY:2</property>
+        </properties>
+      </channel>
+      <channel id="alarm_heat2" typeId="alarm_heat">
+        <label>Alarm (heat) 2</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM:2;type=HEAT</property>
+        </properties>
+      </channel>
+      <channel id="switch_binary3" typeId="switch_binary">
+        <label>Switch 3</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY:3</property>
+        </properties>
+      </channel>
+      <channel id="alarm_heat3" typeId="alarm_heat">
+        <label>Alarm (heat) 3</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM:3;type=HEAT</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Shelly</property>
+      <property name="modelId">Wave Pro 3</property>
+      <property name="manufacturerId">0460</property>
+      <property name="manufacturerRef">0002:0091</property>
+      <property name="dbReference">1661</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

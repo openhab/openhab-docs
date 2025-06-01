@@ -1,0 +1,345 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="mcohome_mh52d_00_000" listed="false">
+    <label>MH5-2D Fan Coil Thermostat</label>
+    <description><![CDATA[
+Fan Coil Thermostat<br /> <h1>Overview</h1><p>MH5 Fan Coil Thermostat is a Z-Wave (800 series) enabled device for indoor temperature control. It is mainly applied to a 2-pipe Fan coil system.It can read room temperature and automatically control fan speed based on the temperature difference.The device is of high reliability and practicability.</p> <br /> <h2>Inclusion Information</h2><p>Under normal display, long press "^" and "fan symbol" to enter interface for inclusion or exclusion of Z-wave network. Before device included into network, "---" will display on the screen. Then press M once, device will enter learning mode to get a node ID. If inclusion is success, a node ID will display on the screen in a few seconds. </p><p>A node ID can always inform us whether the device is in the network or not.</p><p><br /></p> <br /> <h2>Exclusion Information</h2><p>Follow the same steps for inclusion to exclude the device from the network.</p> <br /> <h2>Wakeup Information</h2><p><br /></p>
+    ]]></description>
+    <category>Battery</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="sensor_temperature" typeId="sensor_temperature">
+        <label>Sensor (temperature)</label>
+        <properties>
+          <property name="binding:*:QuantityType">COMMAND_CLASS_SENSOR_MULTILEVEL;type=TEMPERATURE</property>
+        </properties>
+      </channel>
+      <channel id="thermostat_mode" typeId="mcohome_mh52d_00_000_thermostat_mode">
+        <label>Thermostat mode</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_THERMOSTAT_MODE</property>
+        </properties>
+      </channel>
+      <channel id="thermostat_state" typeId="thermostat_state">
+        <label>Thermostat Operating State</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_THERMOSTAT_OPERATING_STATE</property>
+        </properties>
+      </channel>
+      <channel id="thermostat_setpoint_heating" typeId="thermostat_setpoint">
+        <label>Setpoint (heating)</label>
+        <properties>
+          <property name="binding:*:QuantityType">COMMAND_CLASS_THERMOSTAT_SETPOINT;type=HEATING</property>
+        </properties>
+      </channel>
+      <channel id="thermostat_setpoint_cooling" typeId="thermostat_setpoint">
+        <label>Setpoint (cooling)</label>
+        <properties>
+          <property name="binding:*:QuantityType">COMMAND_CLASS_THERMOSTAT_SETPOINT;type=COOLING</property>
+        </properties>
+      </channel>
+      <channel id="thermostat_fanstate" typeId="mcohome_mh52d_00_000_thermostat_fanstate">
+        <label>Thermostat fan state</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_THERMOSTAT_FAN_STATE</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">McoHome Technology Co., Ltd</property>
+      <property name="modelId">MH5-2D</property>
+      <property name="manufacturerId">015F</property>
+      <property name="manufacturerRef">F52D:7101</property>
+      <property name="dbReference">1662</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_1_1" type="integer" groupName="configuration">
+        <label>1: Temperature Unit</label>
+        <description><![CDATA[
+Temperature Unit<br /> <h1>Overview</h1><p>Secret Menu No. E20</p><p>Temperature Unit</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Celsius</option>
+          <option value="1">Fahrenheit</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_2_2" type="integer" groupName="configuration">
+        <label>2: Automatic Temp. Value Reporting</label>
+        <description><![CDATA[
+Automatic Temperature Value Reporting<br /> <h1>Overview</h1><p>If set to 0, temperature reporting is disabled.<br />If using Celsius, unit is 0.1ºC. Default value is 5.<br />If using Fahrenheit, unit is 0.1ºF. Default value is 10.<br />Values used should be from 3 to 255 (both included). Use 0 to disable temperature reporting.<br /><br />Example: if temperature unit is Celsius and is set to 5 (default). Then, automatically report to gateway when temperature variation is greater than 5*0.1ºC = 0.5ºC.</p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_3_1" type="integer" groupName="configuration">
+        <label>3: Automatic Humidity Value Reporting</label>
+        <description><![CDATA[
+Automatic Humidity Value Reporting<br /> <h1>Overview</h1><p>0: disabled.<br />1-99: automatically report to gateway when humidity variation greater than this value.<br /><br /></p>
+        ]]></description>
+        <default>6</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_12_1" type="integer" groupName="configuration">
+        <label>12: Power Failure Memory</label>
+        <description><![CDATA[
+Power Failure Memory<br /> <h1>Overview</h1><p>Secret Menu No. E02</p><p>When power on again:<br />0: device will be in shutdown state (OFF).<br />1: device will be in working interface.<br />2: device will stay the last status before power failure.</p>
+        ]]></description>
+        <default>1</default>
+      </parameter>
+
+      <parameter name="config_13_1" type="integer" groupName="configuration">
+        <label>13: Backlit Brightness</label>
+        <description><![CDATA[
+Backlit Brightness<br /> <h1>Overview</h1><p>Secret Menu No. E03</p><p>1: dim, dim without key touch<br />2: low brightness<br />3: medium brightness<br />4: high brightness<br />5: always on</p>
+        ]]></description>
+        <default>2</default>
+        <options>
+          <option value="1">Dim, dim without key touch</option>
+          <option value="2">Low brightness</option>
+          <option value="3">Medium brightness</option>
+          <option value="4">High brightness</option>
+          <option value="5">Always on</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_14_1" type="integer" groupName="configuration">
+        <label>14: Beep</label>
+        <description><![CDATA[
+Beep strength<br /> <h1>Overview</h1><p>Secret Menu No. E04</p><p>1: OFF<br />2: Low beep<br />3: Medium beep<br />4: High beep<br />5: Standard beep</p>
+        ]]></description>
+        <default>5</default>
+        <options>
+          <option value="1">Off</option>
+          <option value="2">Low beep</option>
+          <option value="3">Medium beep</option>
+          <option value="4">High beep</option>
+          <option value="5">Standard beep</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_16_1" type="integer" groupName="configuration">
+        <label>16: Temp. Upper Limit / Set Upper</label>
+        <description><![CDATA[
+Set Temperature Upper Limit<br /> <h1>Overview</h1><p>Secret Menu No. E06</p><p>Upper limit always &gt; lower limit<br /><br />If temperature unit is set to Celsius, default value is 37ºC.<br />If temperature unit is set to Fahrenheit, default value is 98ºF.</p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_17_1" type="integer" groupName="configuration">
+        <label>17: Temp. Lower Limit / Set Lower</label>
+        <description><![CDATA[
+Set Temperature Lower Limit<br /> <h1>Overview</h1><p>Secret Menu No. E07</p><p>Upper limit always &gt; lower limit</p><p>If temperature unit is set to Celsius, default value is 5ºC.<br />If temperature unit is set to Fahrenheit, default value is 41ºF.</p><p><br /></p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_18_1" type="integer" groupName="configuration">
+        <label>18: Indoor Temp. Calibration</label>
+        <description><![CDATA[
+Indoor Temperature Calibration<br /> <h1>Overview</h1><p>Secret Menu No. E08</p><p>Temperature calibration value in ºC or ºF depending on Temperature Unit settings, accuracy of n*0.1</p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_19_1" type="integer" groupName="configuration">
+        <label>19: Indoor Humidity Calibration</label>
+        <description><![CDATA[
+Indoor Humidity Calibration<br /> <h1>Overview</h1><p>Secret Menu No. E09</p><p>Humidity Calibration Value</p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_20_1" type="integer" groupName="configuration">
+        <label>20: External Temp. Calibration</label>
+        <description><![CDATA[
+External Temperature Calibration<br /> <h1>Overview</h1><p>Secret Menu No. E10</p><p>Temperature calibration value in ºC or ºF depending on Temperature Unit settings, accuracy of n*0.1</p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_21_1" type="integer" groupName="configuration">
+        <label>21: Function Option for External Temp.</label>
+        <description><![CDATA[
+Function Option for External Temperature Sensor<br /> <h1>Overview</h1><p>Secret Menu No. E11</p><p>0: External temperature sensor is protection sensor (not valid for fan coil type thermostat)<br />1: External temperature sensor is controlled sensor</p><p><br /></p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">External temperature sensor is protection sensor (not valid for fan co</option>
+          <option value="1">External temperature sensor is controlled sensor</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_22_1" type="integer" groupName="configuration">
+        <label>22: Anti-freeze protection</label>
+        <description><![CDATA[
+Switch for anti-freeze protection<br /> <h1>Overview</h1><p>Secret Menu No. E12</p><p>0: Turn off<br />1: Turn on</p><p>Default protection temperature range: 5-8ºC.<br />Anti-Freeze feature is available only when heating mode, turn on when temperature decrease to 5ºC, turn off when temperature increase to 8ºC.</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Turn off</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_23_1" type="integer" groupName="configuration">
+        <label>23: Fan Mode Option When Indoor Temp. Reaches to Setting Temp.</label>
+        <description><![CDATA[
+Fan Mode Option When Indoor Temperature Reaches to Setting Temperature<br /> <h1>Overview</h1><p>Secret Mode No. E13</p><p>0: Fan turned off<br />1: Manual fan speed, keep fan speed, valve turned off Auto fan speed, keep low fan speed</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Fan turned off</option>
+          <option value="1">Manual fan speed, keep fan speed, valve turned off Auto fan speed, kee</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_24_1" type="integer" groupName="configuration">
+        <label>24: Fan Working Mode</label>
+        <description><![CDATA[
+Fan Working Mode<br /> <h1>Overview</h1><p>Secret Menu No. E14</p><p>0: Fan works both for cooling and heating mode<br />1: Fan works only in cooling mode<br />2: Fan works only in heating mode<br />3: Fan not work neither in cooling nor heating mode</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Fan works both for cooling and heating mode</option>
+          <option value="1">Fan works only in cooling mode</option>
+          <option value="2">Fan works only in heating mode</option>
+          <option value="3">Fan not work neither in cooling nor heating mode</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_25_1" type="integer" groupName="configuration">
+        <label>25: Key Lock Function</label>
+        <description><![CDATA[
+Key Lock Function<br /> <h1>Overview</h1><p>Secret Menu No. E15<br /><br />0: Turn off<br />1: Turn on</p>
+        ]]></description>
+        <default>1</default>
+        <options>
+          <option value="0">Turn off</option>
+          <option value="1">Turn on</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_26_0" type="integer" groupName="configuration">
+        <label>26: Reserved</label>
+        <description><![CDATA[
+Reserved<br /> <h1>Overview</h1><p>Reserved</p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_27_1" type="integer" groupName="configuration">
+        <label>27: Option for Interval Ventilation Feature</label>
+        <description><![CDATA[
+Option for Interval Ventilation Feature<br /> <h1>Overview</h1><p>Secret Menu No. E17</p><p>0: Turn off<br />1: Turn on</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Turn off</option>
+          <option value="1">Turn on</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_28_1" type="integer" groupName="configuration">
+        <label>28: Duration for Interval Ventilation</label>
+        <description><![CDATA[
+Duration for Interval Ventilation<br /> <h1>Overview</h1><p>Secret Menu No. E18</p><p>Duration for interval ventilation within 1 hour. Unit: minutes.</p>
+        ]]></description>
+        <default>5</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_29_1" type="integer" groupName="configuration">
+        <label>29: Temp. Deadband</label>
+        <description><![CDATA[
+Temperature Deadband<br /> <h1>Overview</h1><p>Secret Menu No. E19</p><p>Temperature deadband (ºC or ºF depending on Temperature Unit settings).<br />Accuracy of 0.1</p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_255_1" type="integer" groupName="configuration">
+        <label>255: Factory Restore</label>
+        <description><![CDATA[
+Factory Restore<br /> <h1>Overview</h1><p>Secret Menu No. E01</p><p>55: write 55 to restore factory settings and turn to shut down interface<br />Other value: invalid</p>
+        ]]></description>
+        <default>53</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Group 1</label>
+        <description><![CDATA[
+Reports all changes to the nodes in the group<br /> <h1>Overview</h1><p>Changes of room temperature, device mode/status, set point value, fan mode/status and restore factory settings</p>
+        ]]></description>
+        <multipleLimit>1</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+  <channel-type id="mcohome_mh52d_00_000_thermostat_mode">
+    <item-type>Number</item-type>
+    <label>Thermostat Mode</label>
+    <description>Sets the thermostat mode</description>
+    <category>Temperature</category>
+    <state pattern="%s">
+      <options>
+        <option value="0">Off</option>
+        <option value="1">Heat</option>
+        <option value="2">Cool</option>
+        <option value="6">Fan Only</option>
+      </options>
+    </state>
+  </channel-type>
+
+  <channel-type id="mcohome_mh52d_00_000_thermostat_fanstate">
+    <item-type>Number</item-type>
+    <label>Thermostat Fan State</label>
+    <description>Sets the thermostat fan state</description>
+    <category>Temperature</category>
+    <state pattern="%s">
+    </state>
+  </channel-type>
+
+</thing:thing-descriptions>
