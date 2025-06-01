@@ -1014,15 +1014,16 @@ So for example `Speed` need not be taken precisely to mean `m/sec` .. but can in
 If the channel has two states (e.g. via a `Switch` type channel) then `Switch.Mode` should be used.
 Or if it has multiple states (e.g. heat/cool/dry/fan/auto via a `String` type channel) then `Control.Mode` should be used.
 
-1. For equipment having a set-point, even if the set-point is read-only for openHAB, it is OK to use `Setpoint.whatever`.
-
-1. For weather channels:
-`Forecast.whatever` is advised.
-
-1. For astronomical channels: `Calculation.whatever` should be used instead of `Forecast.whatever`.
-
 1. For equipment (e.g. fans, pumps) that can run at several speed/power/volume/flow-rates (e.g. Off/Low/Medium/High):
-`Control.Speed` should be used.
+In theory the above-mentioned "operating mode of a piece of equipment" `Control.Mode` ***could*** also be applied in this case.
+However for ***this specific case*** ("throughput of a fan/pump") `Control.Speed` should be used instead.
+
+1. For equipment having a set-point, even if the set-point is read-only for openHAB, it is appropriate to use `Setpoint.whatever`.
+
+1. The `Calculation` point type is used when (past or future) data is derived via a precise mathematical formula.
+By contrast the `Forecast` point type is used when (future) data is derived via a human or algorithmic estimation.
+So `Calculation` should be used for astronomical data e.g. the time of sunrise tomorrow.
+Whereas `Forecast` should be used for weather or solar forecasts, future energy prices or currency rates, etc.
 
 1. For tagging channels that represent entertainment media (e.g. album, artist, composer, actor, director. etc.):
 `Status.Info` should be used.
