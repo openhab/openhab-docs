@@ -308,6 +308,7 @@ If there is no `dayset-weekend` defined, calls to `isWeekend` will generate erro
 Config file location: `$OH_CONF/services/ephemeris.cfg`.
 
 Fields:
+
 Field | Description
 -|-
 `country` | Country to use to get the built in list of bank holidays, uses the standard two letter country code.
