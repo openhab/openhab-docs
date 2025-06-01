@@ -1015,8 +1015,8 @@ If the channel has two states (e.g. via a `Switch` type channel) then `Switch.Mo
 Or if it has multiple states (e.g. heat/cool/dry/fan/auto via a `String` type channel) then `Control.Mode` should be used.
 
 1. For equipment (e.g. fans, pumps) that can run at several speed/power/volume/flow-rates (e.g. Off/Low/Medium/High):
-In theory the above-mentioned "operating mode of a piece of equipment" `Control.Mode` ***could*** also be applied in this case.
-However for ***this specific case*** ("throughput of a fan/pump") `Control.Speed` should be used instead.
+In theory the above-mentioned "operating mode of a piece of equipment" `Control.Mode` **_could_** also be applied in this case.
+However for **_this specific case_** ("throughput of a fan/pump") `Control.Speed` should be used instead.
 
 1. For equipment having a set-point, even if the set-point is read-only for openHAB, it is appropriate to use `Setpoint.whatever`.
 
