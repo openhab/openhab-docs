@@ -1022,8 +1022,8 @@ However for **_this specific case_** ("throughput of a fan/pump") `Control.Speed
 
 1. The `Calculation` point type is used when (past or future) data is derived via a precise mathematical formula.
 By contrast the `Forecast` point type is used when (future) data is derived via a human or algorithmic estimation.
-So `Calculation` should be used for astronomical data e.g. the time of sunrise tomorrow.
-Whereas `Forecast` should be used for weather or solar forecasts, future energy prices or currency rates, etc.
+So `Calculation` should be used e.g. for astronomical data such as the time of sunrise tomorrow.
+Whereas `Forecast` should be used e.g. for weather or solar forecasts, etc.
 
 1. For tagging channels that represent entertainment media (e.g. album, artist, composer, actor, director. etc.):
 `Status.Info` should be used.
