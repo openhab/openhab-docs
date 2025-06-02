@@ -130,6 +130,16 @@ The script file name is `stringlength.groovy` and the transformation is `GROOVY(
 
 :::
 
+::: tab Python
+
+The script file name is `stringlength.py` and the transformation is `PY(stringlength.py)`.
+
+```python
+"String has " + str(len(input)) + " characters"
+```
+
+:::
+
 ::::
 
 ### Inline Script Transformation
@@ -173,6 +183,14 @@ RB(|"String has #{input.length} characters")
 
 ```groovy
 GROOVY(|"String has ${input.length()} characters")
+```
+
+:::
+
+::: tab Python
+
+```python
+PY(|"String has " + str(len(input)) + "characters")
 ```
 
 :::
