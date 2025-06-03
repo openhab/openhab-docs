@@ -110,6 +110,16 @@ Note the overall syntax is the same.
 
 :::
 
+::: tab Python
+
+The script file name is `stringlength.py` and the transformation is `PY(stringlength.py)`.
+
+```python
+"String has " + str(len(input)) + " characters"
+```
+
+:::
+
 ::: tab JRuby
 
 The script file name is `stringlength.rb` and the transformation is `RB(stringlength.rb)`.
@@ -126,16 +136,6 @@ The script file name is `stringlength.groovy` and the transformation is `GROOVY(
 
 ```groovy
 "String has ${input.length()} characters"
-```
-
-:::
-
-::: tab Python
-
-The script file name is `stringlength.py` and the transformation is `PY(stringlength.py)`.
-
-```python
-"String has " + str(len(input)) + " characters"
 ```
 
 :::
@@ -171,6 +171,14 @@ JS(|"String has " + input.length + " characters")
 
 :::
 
+::: tab Python
+
+```python
+PY(|"String has " + str(len(input)) + "characters")
+```
+
+:::
+
 ::: tab JRuby
 
 ```ruby
@@ -183,14 +191,6 @@ RB(|"String has #{input.length} characters")
 
 ```groovy
 GROOVY(|"String has ${input.length()} characters")
-```
-
-:::
-
-::: tab Python
-
-```python
-PY(|"String has " + str(len(input)) + "characters")
 ```
 
 :::
