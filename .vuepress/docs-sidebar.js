@@ -227,6 +227,7 @@ module.exports = [
           'developer/ide/intellij',
           'developer/ide/vscode',
           'developer/ide/generic',
+          'developer/ide/karaf',
         ]
       },
       'developer/guidelines',
