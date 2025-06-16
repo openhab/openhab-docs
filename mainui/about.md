@@ -165,7 +165,7 @@ Currently, the supported commands are:
   To leave out a parameter, leave a colon space empty, e.g. `notification:$text:$title:::$closeTimeout`.
 
   For example, send `notification:This is the text.:This is the title.:This is the subtitle.:This is the right title.` to the UI command Item to display the following notification:
-  <p align="center"><img style="max-width: 40%;" src="images/notification.png"/></p>
+  <p align="center"><img style="max-width: 40%;" src="images/notification.png" alt="notification"/></p>
 - `close`:
   Close all popups, popovers and sheets.
 - `back`:
