@@ -28,5 +28,5 @@ Users with the administrator role can use the left panel menu to access:
 This section attempts to highlight some of Main UI's "special" features by linking to their respective documentation:
 
 - [Developer Sidebar Search]({{base}}/mainui/developer/sidebar.html#developer-sidebar-search): Provides a universal search across nearly all UI-configurable entities (i.e. Items, rules etc.).
-- [Web Audio Sink]({{base}}/mainui/about.html#web-audio-sink) support: Allows the openHAB server to play audio trough the browser on Main UI clients.
+- [Web Audio Sink]({{base}}/mainui/about.html#web-audio-sink) support: Allows the openHAB server to play audio through the browser on Main UI clients.
 - [UI Command Item]({{base}}/mainui/about.html#ui-command-item): Allows the openHAB server to control Main UI, e.g. navigate to UI pages or display a notification.
