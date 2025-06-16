@@ -82,4 +82,4 @@ The demo app includes the Apache Felix Webconsole, which can be used to diagnose
 Check out [http://localhost:8080/system/console/](http://localhost:8080/system/console/).
 Default credentials are admin:admin.
 
-Note that this feature is only available in the demo app.
+Note that this feature is only available in the demo app
