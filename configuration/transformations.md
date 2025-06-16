@@ -110,6 +110,16 @@ Note the overall syntax is the same.
 
 :::
 
+::: tab Python
+
+The script file name is `stringlength.py` and the transformation is `PY(stringlength.py)`.
+
+```python
+"String has " + str(len(input)) + " characters"
+```
+
+:::
+
 ::: tab JRuby
 
 The script file name is `stringlength.rb` and the transformation is `RB(stringlength.rb)`.
@@ -157,6 +167,14 @@ For the legacy JS Scripting, the transformation is `NASHORNJS(|...)`.
 
 ```javascript
 JS(|"String has " + input.length + " characters")
+```
+
+:::
+
+::: tab Python
+
+```python
+PY(|"String has " + str(len(input)) + "characters")
 ```
 
 :::
