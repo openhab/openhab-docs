@@ -206,10 +206,10 @@ A component goes through several states in his lifecycle:
 - **REGISTERED** - temporary state. Only *delayed- components go through this state;
 - **ACTIVE** - the component is active and component instance is created.
 
-<img src="images/immediatecomponent.png" width="320" height="200" />
+<img src="images/immediatecomponent.png" alt="Delayed component lifecycle" width="320" height="200" />
 Fig.1 Immediate component lifecycle
 
-<img src="images/delayedcomponent.png" width="400" height="200" />
+<img src="images/delayedcomponent.png" alt="Delayed component lifecycle" width="400" height="200" />
 Fig.2 Delayed component lifecycle
 
 ### States
