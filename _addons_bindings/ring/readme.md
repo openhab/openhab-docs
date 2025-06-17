@@ -5,6 +5,7 @@ title: Ring - Bindings
 type: binding
 description: "This is an experimental binding to the Ring.com API."
 since: 3x
+logo: images/addons/ring.svg
 install: auto
 ---
 
@@ -13,6 +14,8 @@ install: auto
 {% include base.html %}
 
 # Ring Binding
+
+<AddonLogo />
 
 This is an experimental binding to the Ring.com API. 
 It currently supports a Ring account and is able to discover Ring Video Doorbells, Stick Up Cameras, Chimes, and other devices. 

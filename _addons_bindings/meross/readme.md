@@ -5,6 +5,7 @@ title: Meross - Bindings
 type: binding
 description: "This binding integrates **Meross**&reg; devices"
 since: 3x
+logo: images/addons/meross.png
 install: auto
 ---
 
@@ -13,6 +14,8 @@ install: auto
 {% include base.html %}
 
 # Meross Binding
+
+<AddonLogo />
 
 This binding integrates **Meross**&reg; devices
 
