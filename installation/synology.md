@@ -5,10 +5,9 @@ title: Synology DiskStation
 
 :::tip Note
 
-openHAB 4.x series requires Java 17.
-Java 21 can be used openHAB 4.x, and is required for openHAB 5.
+openHAB 5.x series requires Java 21.
 You will need to provide a working Java installation on your DiskStation.
-The sections below are written for Java 11 but the docs are not updated currently, since we have not secured knowledge about how to install Java 17 on the DiskStation.
+The sections below are written for Java 11 but the docs are not updated currently, since we have not secured knowledge about how to install Java 21 on the DiskStation.
 If you can provide some proper sources and explanation, we are happy to include your contribution into this article.
 
 :::

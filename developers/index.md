@@ -49,11 +49,7 @@ Please ensure that you have the following prerequisites installed as well:
 
 1. [Git](https://git-scm.com/downloads) For retrieving our source code and push changes back. On Windows: Must be available in %PATH%
 1. [Maven 3.x](https://maven.apache.org/download.cgi) Our build system tool. On Windows: Must be available in %PATH%
-1. Java JDK 21, for example from Oracle [Oracle JDK 21](https://www.oracle.com/java/technologies/javase/jdk21-archive-downloads.html). On Windows: %JAVA% must be set.
-
-::: tip Note
-Whereas openHAB 4.x series was based on Java 17, starting with openHAB 5.0.0-SNAPSHOT, **Java 21 is required**.
-:::
+1. Java JDK 21, for example the [Eclipse Temurin 21 JDK](https://adoptium.net/temurin/releases/?os=any&arch=any&version=21). On Windows: %JAVA% must be set.
 
 You can use any IDE that is suitable for OSGi/Java development.
 We have prepared some step-by-step guides for the following IDEs:
