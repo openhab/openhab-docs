@@ -720,6 +720,7 @@ end
 ```
 
 ## How To Reboot Camera
+
 ```
 rule "Reboot Camera At 12:00 AM"
 when
