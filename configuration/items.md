@@ -670,8 +670,8 @@ The expiration timer is started or restarted every time an item receives an upda
 Any future expiring update or command is cancelled, if the item receives an update or command that matches the "expire" update/command.
 See `ignoreStateUpdate` and `ignoreCommands` [configurations](#configurations-for-expire) below.
 
-The parameter accepts a duration of time that can be a combination of days, hours, minutes and seconds in the format `Xd Xh Xm Xs` where X is a _long_ integer.
-Every part is optional, but all parts present must be in the given order (days, hours, minutes, seconds).
+The parameter accepts a duration of time that can be a combination of days, hours, minutes, seconds, and milliseconds in the format `Xd Xh Xm Xs Xms` where X is a _long_ integer.
+Every part is optional, but all parts present must be in the given order (days, hours, minutes, seconds, milliseconds).
 Whitespaces are allowed between the sections.
 
 ```shell
