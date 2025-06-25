@@ -207,27 +207,27 @@ Where that's not supported, you can make the changes through the Item's Page.
 
 This is a table describing the Equipment, Point and Property classes needed to enable the display of status and measurement badges on the location cards.
 
-| Badge        | Type        | Equipment                                                  | Point                              | Property           |
-|--------------|-------------|------------------------------------------------------------|------------------------------------|--------------------|
-| Low Battery  | Status      | _Any_                                                      | _Any_                              | LowBattery         |
-| Lights       | Status      | LightSource, children                                      | _Any_                              | Light              |
-| Windows      | Status      | Window                                                     | _Any_                              | Opening, children  |
-| Doors        | Status      | Door, FrontDoor, BackDoor, InnerDoor, CellarDoor, SideDoor | _Any_                              | Opening, children  |
-| Garage Doors | Status      | GarageDoor                                                 | _Any_                              | Opening, children  |
-| Blinds       | Status      | WindowCovering, children                                   | _Any_                              | Opening, children  |
-| Presence     | Status      | _Any_                                                      | _Any_                              | Presence, Motion   |
-| Lock         | Status      | Lock                                                       | _Any_                              | Opening, children  |
-| Climate      | Status      | HVAC, children                                             | Status, Control, Switch            | _Any_              |
-| Screens      | Status      | Screen, Television                                         | Status, Control, Switch            | Power              |
-| Speakers     | Status      | Receiver, Speaker, VoiceAssistant, MediaPlayer             | Status, Control, Switch            | Power              |
-| Projectors   | Status      | Projector                                                  | Status, Control, Switch            | Power              |
-| Alarms       | Status      | _Any_                                                      | Alarm                              | _Any_              |
-| Luminance    | Measurement | _Any_                                                      | Measurement                        | Light, Illuminance |
-| Temperature  | Measurement | _Any_                                                      | Measurement                        | Temperature        |
-| Humidity     | Measurement | _Any_                                                      | Measurement                        | Humidity           |
+| Badge        | Type        | Equipment                                                  | Point                              | Property            |
+|--------------|-------------|------------------------------------------------------------|------------------------------------|---------------------|
+| Low Battery  | Status      | _Any_                                                      | _Any_                              | LowBattery          |
+| Lights       | Status      | LightSource, _Children_                                    | _Any_                              | Light               |
+| Windows      | Status      | Window                                                     | _Any_                              | Opening, _Children_ |
+| Doors        | Status      | Door, FrontDoor, BackDoor, InnerDoor, CellarDoor, SideDoor | _Any_                              | Opening, _Children_ |
+| Garage Doors | Status      | GarageDoor                                                 | _Any_                              | Opening, _Children_ |
+| Blinds       | Status      | WindowCovering, _Children_                                 | _Any_                              | Opening, _Children_ |
+| Presence     | Status      | _Any_                                                      | _Any_                              | Presence, Motion    |
+| Lock         | Status      | Lock                                                       | _Any_                              | Opening, _Children_ |
+| Climate      | Status      | HVAC, _Children_                                           | Status, Control, Switch            | _Any_               |
+| Screens      | Status      | Screen, Television                                         | Status, Control, Switch            | Power               |
+| Speakers     | Status      | Receiver, Speaker, VoiceAssistant, MediaPlayer             | Status, Control, Switch            | Power               |
+| Projectors   | Status      | Projector                                                  | Status, Control, Switch            | Power               |
+| Alarms       | Status      | _Any_                                                      | Alarm                              | _Any_               |
+| Luminance    | Measurement | _Any_                                                      | Measurement                        | Light, Illuminance  |
+| Temperature  | Measurement | _Any_                                                      | Measurement                        | Temperature         |
+| Humidity     | Measurement | _Any_                                                      | Measurement                        | Humidity            |
 
-Note the term 'children' above means any semantic tag that is a child of the tag mentioned before it.
-So for example 'Opening, children' means 'Opening, OpenState, OpenLevel'.
+Note the term '_Children_' above means any semantic tag that is a child of the tag mentioned before it.
+So for example 'Opening, _Children_' means 'Opening, OpenState, OpenLevel'.
 
 This table is based off the sources:
 
