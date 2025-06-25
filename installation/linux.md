@@ -158,8 +158,8 @@ sudo apt-mark showhold
 Installing a specific version is possible by specifing the version that should be installed.
 
 ```shell
-sudo apt install openhab=5.0.1
-sudo apt install openhab-addons=5.0.1
+sudo apt install openhab=5.0.0
+sudo apt install openhab-addons=5.0.0
 ```
 
 To get a list of all available versions you can use

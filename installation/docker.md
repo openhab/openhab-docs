@@ -318,7 +318,7 @@ services:
       - grafana
       - zigbee2mqtt
     container_name: ${COMPOSE_PROJECT_NAME}-server
-    image: openhab/openhab:4.1.0-debian
+    image: openhab/openhab:5.0.0-debian
     restart: unless-stopped
     network_mode: host
     group_add:

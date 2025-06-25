@@ -25,13 +25,13 @@ You have the choice to use the current stable version or the latest snapshot bui
 - **Stable**
 
     The stable builds have undergone testing, it is the recommended version to download.
-    Download the latest `openhab-3.x.x.zip` [here](https://www.openhab.org/download/).
+    Download the latest `openhab-5.x.x.zip` [here](https://www.openhab.org/download/).
 
 - **Snapshot (Unstable)**
 
     Snapshots are built daily, and contain the latest changes to openHAB's source code.
     These changes haven't undergone the same amount of testing as the stable releases, so only use them if you **need** a new feature.
-    Download the latest `openhab-3.x.x-SNAPSHOT.zip` [here](https://www.openhab.org/download/).
+    Download the latest `openhab-5.x.x-SNAPSHOT.zip` [here](https://www.openhab.org/download/).
 
 The following instructions are performed in a terminal window. At first launch of the terminal, you will be inside your home directory.
 
@@ -47,7 +47,7 @@ Next, unzip the file downloaded earlier.
 Assuming that you have downloaded the **stable** build to your download folder, the command will be:
 
 ```shell
-unzip ~/Downloads/openhab-3.x.x.zip -d .
+unzip ~/Downloads/openhab-5.x.x.zip -d .
 ```
 
 Check that the zip extraction was successful by using the `ls` command in order to check the contents of the folder.
@@ -79,7 +79,7 @@ Launching the openHAB runtime...
   / _ \ / _ \ / _ \ / _ \ | |_| |  / _ \  |  _ \
  | (_) | (_) |  __/| | | ||  _  | / ___ \ | |_) )
   \___/|  __/ \___/|_| |_||_| |_|/_/   \_\|____/
-       |_|       3.0.0 - Release Build
+       |_|       5.0.0 - Release Build
 
 Use '<tab>' for a list of available commands
 and '[cmd] --help' for help on a specific command.
