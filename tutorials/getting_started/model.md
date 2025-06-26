@@ -210,8 +210,8 @@ This is a table describing the Equipment, Point and Property classes needed to e
 | Badge              | Type                    | Equipment                                                  | Point                   | Property                        |
 |--------------------|-------------------------|------------------------------------------------------------|-------------------------|---------------------------------|
 | Low Battery        | Status                  | _Any_                                                      | _Any_                   | LowBattery                      |
-| Lights<sup>1</sup> | Status                  | LightSource, _Children_<sup>2</sup>                        | Switch                  | _Any_                           |
-| Lights<sup>1</sup> | Status                  | _Any_                                                      | _Any_                   | Light                           |
+| Lights<sup>1</sup> | Status                  | LightSource, _Children_<sup>2</sup>                        | Switch, Control         | _Any_                           |
+| Lights<sup>1</sup> | Status                  | _Any_                                                      | Switch, Control         | Light                           |
 | Windows            | Status                  | Window                                                     | _Any_                   | Opening, _Children_<sup>2</sup> |
 | Doors              | Status                  | Door, FrontDoor, BackDoor, InnerDoor, CellarDoor, SideDoor | _Any_                   | Opening, _Children_<sup>2</sup> |
 | Garage Doors       | Status                  | GarageDoor                                                 | _Any_                   | Opening, _Children_<sup>2</sup> |
@@ -219,7 +219,7 @@ This is a table describing the Equipment, Point and Property classes needed to e
 | Presence           | Status                  | _Any_                                                      | _Any_                   | Presence, Motion                |
 | Lock               | Status                  | Lock                                                       | _Any_                   | Opening, _Children_<sup>2</sup> |
 | Climate            | Status                  | HVAC, _Children_<sup>2</sup>                               | Status, Control, Switch | Power                           |
-| Screens            | Status                  | Screen, Television                                         | Status, Control, Switch | Power                           |
+| Screens            | Status                  | Screen, Display, Television                                | Status, Control, Switch | Power                           |
 | Speakers           | Status                  | Receiver, Speaker, VoiceAssistant, MediaPlayer             | Status, Control, Switch | Power                           |
 | Projectors         | Status                  | Projector                                                  | Status, Control, Switch | Power                           |
 | Alarms             | Status                  | _Any_                                                      | Alarm                   | _Any_                           |
