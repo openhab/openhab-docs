@@ -207,29 +207,43 @@ Where that's not supported, you can make the changes through the Item's Page.
 
 This is a table describing the Equipment, Point and Property classes needed to enable the display of status and measurement badges on the location cards.
 
-| Badge        | Type        | Equipment                                                  | Point                              | Property    |
-|--------------|-------------|------------------------------------------------------------|------------------------------------|-------------|
-| Low Battery  | Status      | _Any_                                                      | LowBattery                         | _Any_       |
-| Lights       | Status      | _Any_                                                      | Control, Switch                    | Light       |
-| Windows      | Status      | Window                                                     | OpenState                          | _Any_       |
-| Doors        | Status      | Door, FrontDoor, BackDoor, InnerDoor, CellarDoor, SideDoor | OpenState                          | _Any_       |
-| Garage Doors | Status      | GarageDoor                                                 | OpenState                          | _Any_       |
-| Blinds       | Status      | Blinds                                                     | OpenState                          | _Any_       |
-| Presence     | Status      | _Any_                                                      | Status                             | Presence    |
-| Lock         | Status      | Lock                                                       | Status, OpenState, Control, Switch | _Any_       |
-| Climate      | Status      | HVAC                                                       | Status, Control, Switch            | _Any_       |
-| Screens      | Status      | Screen, Television                                         | Status, Control, Switch            | Power       |
-| Speakers     | Status      | Receiver, Speaker                                          | Status, Control, Switch            | Power       |
-| Projectors   | Status      | Projector                                                  | Status, Control, Switch            | Power       |
-| Alarms       | Status      | _Any_                                                      | Alarm                              | _Any_       |
-| Luminance    | Measurement | _Any_                                                      | Measurement                        | Light       |
-| Temperature  | Measurement | _Any_                                                      | Measurement                        | Temperature |
-| Humidity     | Measurement | _Any_                                                      | Measurement                        | Humidity    |
+| Badge              | Type                    | Equipment                                                  | Point                   | Property                        |
+|--------------------|-------------------------|------------------------------------------------------------|-------------------------|---------------------------------|
+| Low Battery        | Status                  | _Any_                                                      | _Any_                   | LowBattery                      |
+| Lights<sup>1</sup> | Status                  | LightSource, _Children_<sup>2</sup>                        | Switch, Control         | _Any_                           |
+| Lights<sup>1</sup> | Status                  | _Any_                                                      | Switch, Control         | Light                           |
+| Windows            | Status                  | Window                                                     | _Any_                   | Opening, _Children_<sup>2</sup> |
+| Doors              | Status                  | Door, FrontDoor, BackDoor, InnerDoor, CellarDoor, SideDoor | _Any_                   | Opening, _Children_<sup>2</sup> |
+| Garage Doors       | Status                  | GarageDoor                                                 | _Any_                   | Opening, _Children_<sup>2</sup> |
+| Blinds             | Status                  | WindowCovering, _Children_<sup>2</sup>                     | _Any_                   | Opening, _Children_<sup>2</sup> |
+| Presence           | Status                  | _Any_                                                      | _Any_                   | Presence, Motion                |
+| Lock               | Status                  | Lock                                                       | _Any_                   | Opening, _Children_<sup>2</sup> |
+| Climate            | Status                  | HVAC, _Children_<sup>2</sup>                               | Status, Control, Switch | Power                           |
+| Screens            | Status                  | Screen, Display, Television                                | Status, Control, Switch | Power                           |
+| Speakers           | Status                  | Receiver, Speaker, VoiceAssistant, MediaPlayer             | Status, Control, Switch | Power                           |
+| Projectors         | Status                  | Projector                                                  | Status, Control, Switch | Power                           |
+| Alarms             | Status                  | _Any_                                                      | Alarm                   | _Any_                           |
+| Luminance          | Measurement<sup>3</sup> | _Any_                                                      | Measurement             | Light, Illuminance              |
+| Temperature        | Measurement<sup>3</sup> | _Any_                                                      | Measurement             | Temperature                     |
+| Humidity           | Measurement<sup>3</sup> | _Any_                                                      | Measurement             | Humidity                        |
+
+Notes:
+
+<sup>1</sup> There are two collection filters used for lights.
+One includes all Switch points belonging to a LightSource equipment (or children).
+The other includes all points having a Light property.
+
+<sup>2</sup> The term '_Children_' above means any semantic tag that is a child of the tag mentioned before it.
+So for example 'Opening, _Children_' means 'Opening, OpenState, OpenLevel'.
+
+<sup>3</sup> Measurement badges in the table above will display the average of the Item values.
+The calculation takes the float value from the Item state.
+So you need to make sure that all Items are using the same unit of measure.
 
 This table is based off the sources:
 
-- <https://github.com/openhab/openhab-webui/blob/main/bundles/org.openhab.ui/web/src/components/cards/glance/location/status-badge.vue#L63>
-- <https://github.com/openhab/openhab-webui/blob/main/bundles/org.openhab.ui/web/src/components/cards/glance/location/measurement-badge.vue#L48>
+- <https://github.com/openhab/openhab-webui/blob/main/bundles/org.openhab.ui/web/src/components/cards/glance/location/status-badge.vue#L71>
+- <https://github.com/openhab/openhab-webui/blob/main/bundles/org.openhab.ui/web/src/components/cards/glance/location/measurement-badge.vue#L52>
 
 # Non-semantic Items and Groups
 
