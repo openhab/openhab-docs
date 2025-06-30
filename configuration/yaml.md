@@ -370,16 +370,16 @@ variables:
 
 things:
   mqtt:topic:${device_id1}:
-    label: "${location1} Sensor"
+    label: ${location1} Sensor
     bridge: ${broker}
     config:
-      availabilityTopic: "${device_id1}/status"
+      availabilityTopic: ${device_id1}/status
 
   mqtt:topic:${device_id2}:
-    label: "${location2} Sensor"
+    label: ${location2} Sensor
     bridge: ${broker}
     config:
-      availabilityTopic: "${device_id2}/status"
+      availabilityTopic: ${device_id2}/status
 ```
 
 The resulting configuration will resolve to:
@@ -389,16 +389,16 @@ version: 1
 
 things:
   mqtt:topic:sensor01:
-    label: "Kitchen Sensor"
+    label: Kitchen Sensor
     bridge: mqtt:broker:main
     config:
-      availabilityTopic: "sensor01/status"
+      availabilityTopic: sensor01/status
 
   mqtt:topic:sensor02:
-    label: "Living Room Sensor"
+    label: Living Room Sensor
     bridge: mqtt:broker:main
     config:
-      availabilityTopic: "sensor02/status"
+      availabilityTopic: sensor02/status
 ```
 
 #### Special Variables
@@ -480,6 +480,7 @@ keyname:
 
 #### File Naming & Reload Behavior
 
+- The file can be specified as an absolute path or as a path relative to the including file.
 - Use the `.inc.yaml` or `.inc.yml` extension for included files so they aren’t loaded as primary configuration files.
 - Changes to included files automatically trigger a reload of the primary file.
 
@@ -508,13 +509,10 @@ Packages are defined under the top-level `packages:` section:
 
 ```yaml
 packages:
-  my_device: !include
-    file: package_file.inc.yaml
+  <package_key>: !include
+    file: <path/to/package_file>
     vars:
-      thingid: my_device
-      name: My_Device
-      label: "My Device"
-      location: Kitchen
+      <variable map>
 ```
 
 Each entry consists of:
@@ -523,7 +521,7 @@ Each entry consists of:
   Other than having to be unique, the package key is not used elsewhere.
   You may use a descriptive name for your own purpose.
 - An `!include` directive pointing to a reusable `.inc.yaml` file which contains references to variables to create unique object UIDs.
-- A `vars` block to pass in variables.
+- A `vars` block to pass variables to the included file.
 
 > Note: Variables declared in the `variables:` block will also be passed on to the included file, as long as they haven't been overriden in the include `vars` block.
 
