@@ -158,15 +158,15 @@ things:
           <channel config key>: <config value>
 ```
 
-| Configuration Key | Description                                                                                                                                   |
-|:------------------|:----------------------------------------------------------------------------------------------------------------------------------------------|
-| thing_uid         | The UID of the Thing or Bridge being defined. The UID format is `binding_id`:`thing_type_id`:[`bridge_id`:]`thing_id`, e.g. `astro:sun:home`. |
-| `isBridge`        | Whether the entity is a Bridge (`true`) or a Thing (`false`). Default: `false` (a Thing).                                                     |
-| `bridge`          | The bridge UID that this Thing belongs to.                                                                                                    |
-| `label`           | Thing label.                                                                                                                                  |
-| `location`        | The location of the Thing.                                                                                                                    |
-| `config`          | A key-value map of the Thing's configuration. Refer to the Binding's documentation for details.                                               |
-| `channels`        | A map of custom channels. Most bindings provide a set of built-in channels automatically, so this is not always needed.                       |
+| Configuration Key | Description                                                                                                                                     |
+|:------------------|:------------------------------------------------------------------------------------------------------------------------------------------------|
+| `<thing_uid>`     | The UID of the Thing or Bridge being defined. The UID format is `<binding_id>:<thing_type_id>:[<bridge_id>:]<thing_id>`, e.g. `astro:sun:home`. |
+| `isBridge`        | Whether the entity is a Bridge (`true`) or a Thing (`false`). Default: `false` (a Thing).                                                       |
+| `bridge`          | The bridge UID that this Thing belongs to.                                                                                                      |
+| `label`           | Thing label.                                                                                                                                    |
+| `location`        | The location of the Thing.                                                                                                                      |
+| `config`          | A key-value map of the Thing's configuration. Refer to the Binding's documentation for details.                                                 |
+| `channels`        | A map of custom channels. Most bindings provide a set of built-in channels automatically, so this is not always needed.                         |
 
 Channel Map:
 
