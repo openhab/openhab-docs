@@ -523,7 +523,7 @@ Each entry consists of:
 - An `!include` directive pointing to a reusable `.inc.yaml` file which contains references to variables to create unique object UIDs.
 - A `vars` block to pass variables to the included file.
 
-> Note: Variables declared in the `variables:` block will also be passed on to the included file, as long as they haven't been overriden in the include `vars` block.
+> Note: Variables defined in the global `variables:` block are automatically available in included files, unless they are overridden by variables specified in the `vars` block of the `!include` directive.
 
 #### Package File Contents
 
