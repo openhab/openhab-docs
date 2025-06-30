@@ -172,7 +172,7 @@ Channel Map:
 
 | Channel Configuration Key | Description                                                                                                                                                                          |
 |:--------------------------|:-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| channel_id                | The channel ID. It is a single word that when combined with the Thing UID forms the full channel UID.                                                                                |
+| `<channel_id>`            | The channel ID. It is a single word that when combined with the Thing UID forms the full channel UID.                                                                                |
 | `type`                    | Channel type as defined by the Binding. When the channel type is defined, `kind`, `itemType`, and `itemDimension` should not be defined because the channel type will override them. |
 | `kind`                    | Whether it's a State channel or a Trigger channel. Default: `state`                                                                                                                  |
 | `itemType`                | The item type that this channel can be linked to. Usually this is defined by the binding when channel `type` is defined.                                                             |
