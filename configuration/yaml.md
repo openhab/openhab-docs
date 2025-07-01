@@ -210,8 +210,8 @@ items:
     format: <format pattern> # short form for state description's pattern
     unit: <unit> # short form for the unit metadata
     autoupdate: true|false # short form for the autoupdate metadata
-    channel: <channel_uid> # short form to define an item-channel link if there is only one channel
-    channels:
+    channel: <channel_uid> # short form to link to a single channel without a profile
+    channels: # long form to link to multiple channels or to assign a profile to a link
       <channel_uid>:
         # the item-channel link configuration is defined here as a key-value map
         <config key>: <config value>
