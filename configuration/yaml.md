@@ -13,7 +13,7 @@ Files may be further structured within subdirectories, offering flexibility in o
 
 ## General Structure
 
-Top-level entries in the YAML file must be unique key-value maps with the following valid keys:
+Top-level entries in the YAML file must be unique key-value maps with the following valid keys in no particular order:
 
 | Key                                  | Object Type                                                                                                        |
 |:-------------------------------------|:-------------------------------------------------------------------------------------------------------------------|
@@ -255,10 +255,11 @@ items:
       - tag2
     format: <format pattern> # short form for state description's pattern
     unit: <unit> # short form for the unit metadata
-    autoupdate: true|false # short form for autoupdate metadata
+    autoupdate: true|false # short form for the autoupdate metadata
     channel: <channel_uid> # short form to define an item-channel link if there is only one channel
     channels:
       <channel_uid>:
+        # the item-channel link configuration is defined here as a key-value map
         <config key>: <config value>
     metadata:
       <metadata_key>:
@@ -275,12 +276,12 @@ items:
 | `label`           | Item label. Unlike the DSL syntax in an `.items` file, the label here must only contain the label without any formatting syntax.                                                                                                                                                 |
 | `icon`            | The item's icon.                                                                                                                                                                                                                                                                 |
 | `groups`          | The list of parent group names.                                                                                                                                                                                                                                                  |
-| `tags`            | The list of tags.                                                                                                                                                                                                                                                                |
+| `tags`            | The list of tags. This can contain both semantic tags and non-semantic tags.                                                                                                                                                                                                     |
 | `format`          | A short form for the `stateDescription` `pattern` metadata. This is the equivalent of the format enclosed in square brackets in DSL's item label.                                                                                                                                |
 | `unit`            | A short form for the `unit` metadata, to define the item's unit.                                                                                                                                                                                                                 |
 | `autoupdate`      | A short form for the `autoupdate` metadata. Valid values are: `true` or `false`.                                                                                                                                                                                                 |
 | `channel`         | A short form for the `channels` list to define a linked channel UID for when there is only one channel with a blank config.                                                                                                                                                      |
-| `channels`        | A key-value map to define the channels linked from this item.                                                                                                                                                                                                                    |
+| `channels`        | A key-value map to define the channels linked from this item. The key is the channel uid to link to, and the value is the link configuration as a key-value map. When no configuration is required, an empty map `{}` must be used as the value.                                 |
 | `metadata`        | A key-value map to define item metadata. The metadata defined in here overrides any short forms when both are specified.                                                                                                                                                         |
 
 Example:
@@ -314,9 +315,27 @@ items:
       - BedRoom1_Switch_Group
     channels:
       mqtt:topic:bedroom1-switch:statusled:
+        # The configuration of this item-channel link is defined below
         profile: transform:MAP
         function: "|open=ON;closed=OFF" # | is a YAML special character, so enclose it in quotes.
 ```
+
+> Note:
+>
+> The last item-channel link in the example above requires some configurations,
+> so it needs to be defined with `channels:` instead of the short form `channel:`.
+> In this instance, it is configured to use a Profile,
+> specifically a MAP Profile.
+> The item-channel configuration keys and values depend on which profile is used, and
+> the details can be found in the corresponding profile's documentation.
+> For example, [MAP Profile]({{base}}/addons/transformations/map/#usage-as-a-profile) requires
+> a `function` parameter.
+>
+> For more information on Profiles, see:
+>
+> - [Item-Channel Link Profile]({{base}}/configuration/items.html#profiles)
+> - [Script Transformation Profile]({{base}}/configuration/transformations.html#script-transformation-profile)
+> - List of available [transfomation addons](https://www.openhab.org/addons/#transform), most of which support profiles
 
 ## YAML Extensions
 
@@ -512,7 +531,8 @@ packages:
   <package_key>: !include
     file: <path/to/package_file>
     vars:
-      <variable map>
+      var1: value1
+      var2: value2
 ```
 
 Each entry consists of:
