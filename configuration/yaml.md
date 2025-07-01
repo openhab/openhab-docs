@@ -21,9 +21,9 @@ Top-level entries in the YAML file must be unique key-value maps with the follow
 | `readOnly`                           | An optional key which when set to `true` (the default) would declare that the file may not be modified by openHAB. |
 | [variables](#variable-substitutions) | Variables for Substitutions                                                                                        |
 | [packages](#packages)                | Packages                                                                                                           |
-| [tags](#tags)                        | Custom Semantic Tags                                                                                               |
 | [things](#things)                    | openHAB [Things]({{base}}/concepts/things.html)                                                                    |
 | [items](#items)                      | openHAB [Items]({{base}}/concepts/items.html)                                                                      |
+| [tags](#tags)                        | Custom Semantic Tags                                                                                               |
 
 The YAML files in general must follow the standard YAML syntax, with a few openHAB-specific features:
 
@@ -84,52 +84,6 @@ items:
 ```
 
 ## Object Configuration Structure
-
-### Tags
-
-openHAB comes with pre-defined [semantic tags](https://github.com/openhab/openhab-core/blob/main/bundles/org.openhab.core.semantics/model/SemanticTags.csv) that can be readily used.
-It is also possible to add custom semantic tags into the system and subsequently use them alongside the built-in tags.
-
-Custom semantic tags can be defined under the `tags` section.
-
-#### Tags YAML Definition Syntax
-
-```yaml
-tags:
-  <tag_full_uid>:
-    label: <tag label>
-    description: <tag description>
-    synonyms:
-      - tag synonym 1
-      - tag synonym 2
-```
-
-Each tag is specified with the tag's full UID as the key.
-The rest are optional.
-
-Example:
-
-```yaml
-version: 1
-
-tags:
-  Location_Indoor_Room_HomeCinemaRoom:
-    label: Home Cinema Room
-    description: The room containing my home cinema system
-    synonyms:
-      - Home theater room
-
-  Location_Outdoor_VegetableGarden:
-    label: Vegetable Garden
-
-  Property_Height: {} # no label/description/synonyms
-```
-
-The tag's full UID defines the location of the semantic tag in the tree.
-In the example, `Location_Indoor_Room_HomeCinemaRoom` defines semantic tag `HomeCinemaRoom` as a child of `Room` which is a child of `Indoor` which is a child of `Location`.
-There are constraints on the name of a semantic tag (like HomeCinemaRoom): it must start with a capital letter and contain only letters and numbers.
-
-You can have multiple YAML files with different semantic tags but keep semantic tags dependent on each other in the same file.
 
 ### Things
 
@@ -336,6 +290,52 @@ items:
 > - [Item-Channel Link Profile]({{base}}/configuration/items.html#profiles)
 > - [Script Transformation Profile]({{base}}/configuration/transformations.html#script-transformation-profile)
 > - List of available [transfomation addons](https://www.openhab.org/addons/#transform), most of which support profiles
+
+### Tags
+
+openHAB comes with pre-defined [semantic tags](https://github.com/openhab/openhab-core/blob/main/bundles/org.openhab.core.semantics/model/SemanticTags.csv) that can be readily used.
+It is also possible to add custom semantic tags into the system and subsequently use them alongside the built-in tags.
+
+Custom semantic tags can be defined under the `tags` section.
+
+#### Tags YAML Definition Syntax
+
+```yaml
+tags:
+  <tag_full_uid>:
+    label: <tag label>
+    description: <tag description>
+    synonyms:
+      - tag synonym 1
+      - tag synonym 2
+```
+
+Each tag is specified with the tag's full UID as the key.
+The rest are optional.
+
+Example:
+
+```yaml
+version: 1
+
+tags:
+  Location_Indoor_Room_HomeCinemaRoom:
+    label: Home Cinema Room
+    description: The room containing my home cinema system
+    synonyms:
+      - Home theater room
+
+  Location_Outdoor_VegetableGarden:
+    label: Vegetable Garden
+
+  Property_Height: {} # no label/description/synonyms
+```
+
+The tag's full UID defines the location of the semantic tag in the tree.
+In the example, `Location_Indoor_Room_HomeCinemaRoom` defines semantic tag `HomeCinemaRoom` as a child of `Room` which is a child of `Indoor` which is a child of `Location`.
+There are constraints on the name of a semantic tag (like HomeCinemaRoom): it must start with a capital letter and contain only letters and numbers.
+
+You can have multiple YAML files with different semantic tags but keep semantic tags dependent on each other in the same file.
 
 ## YAML Extensions
 
