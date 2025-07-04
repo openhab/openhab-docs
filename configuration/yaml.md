@@ -50,6 +50,8 @@ Notes about entities:
 ```yaml
 version: 1
 
+# All the sections below are optional and may appear in any order
+
 tags:
   Equipment_Curtain:
     label: Curtain
