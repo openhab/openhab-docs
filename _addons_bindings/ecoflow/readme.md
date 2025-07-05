@@ -5,6 +5,7 @@ title: EcoFlow - Bindings
 type: binding
 description: "This binding provides integration for power stations and micro inverters made by EcoFlow (<https://www.ecoflow.com/>)."
 since: 3x
+logo: images/addons/ecoflow.svg
 install: auto
 ---
 
@@ -13,6 +14,8 @@ install: auto
 {% include base.html %}
 
 # EcoFlow Binding
+
+<AddonLogo />
 
 This binding provides integration for power stations and micro inverters made by EcoFlow (<https://www.ecoflow.com/>).
 It discovers devices and communicates to them by using the cloud services provided by EcoFLow.
