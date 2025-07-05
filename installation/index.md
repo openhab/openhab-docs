@@ -6,8 +6,8 @@ title: Installation Overview
 # Installation Overview
 
 openHAB is written completely in Java.
-As such, it only depends on a Java Virtual Machine, which is available for most platforms.
-openHAB can be run on different versions of **macOS** and **Windows** and many different variants of **Linux** (Ubuntu, Raspbian, etc.).
+As such, it only depends on a Java Virtual Machine (JVM), which is available for most platforms.
+openHAB can be run on different versions of **macOS** and **Windows** and many different variants of **Linux** (Ubuntu, Raspberry Pi OS, etc.).
 
 Please be aware of the fact that openHAB is continuously updated and improved.
 Therefore, tutorials and help you may find on the Internet for it **may** be outdated!
@@ -17,7 +17,7 @@ Always keep this in mind when searching for help and solutions.
 
 1. You are **new to openHAB** and just want to give it a try?
     - Set up openHAB on your local PC or Mac in just a few steps _or_
-    - use a Raspi with [openHABian](openhabian.html)
+    - use a Raspberry Pi with [openHABian](openhabian.html)
 
 1. You've gained some experience and want to use openHAB to seriously control your home?
     Typical hardware and software requirements are:
@@ -29,44 +29,33 @@ Always keep this in mind when searching for help and solutions.
 Many devices are suited to host a continuous installation of openHAB.
 Experiences with different devices and environments can be found in the [community forum hardware section](https://community.openhab.org/c/hardware/server).
 
-We recommend to get a dedicated Raspberry Pi 4 and to use [openHABian](openhabian.html) for quick setup.
+We recommend to get a dedicated Raspberry Pi 4 (or newer) and to use [openHABian](openhabian.html) for quick setup.
 openHABian is also available to kickstart your openHAB experience on existing Debian x86 based Linux systems.
 
 ## Prerequisites
 
-Make sure that you have an up to date **Java 17** JVM platform installed on your host system.
-We recommended to use the openjdk package that comes with your Linux distro.
+Make sure that you have an up to date **64-bit** OS with **Java 21** JVM platform installed on your host system.
+We recommended to use the openjdk package that comes with your Linux distribution.
 If in doubt, explicitly install a JVM based on OpenJDK.
-You could also [download Azul Zulu](https://www.azul.com/downloads/zulu-community/?&architecture=x86-64-bit&package=jdk#) [Installation](https://docs.azul.com/zulu/zuludocs/ZuluUserGuide/InstallingZulu/InstallationWindowsUsingZuluMSIFile.htm) instructions can be found on Azul Systems' Zulu website.
-Oracle Java is also suitable for most configurations but it's not recommended. Licensing restrictions may apply.
 
-::: warning
-Java 17 is recommended for openHAB 4.x series.
-openHABian can install Java 21, but only on the native 64-bit image.
-Please note that versions of Java other than 17 and 21 are not supported at the moment.
+If your operating system does not include a **Java 21** JVM platform in its package repositories, we recommend installing the [Eclipse Temurin](https://adoptium.net/temurin/releases/?os=any&arch=any&version=21) JDK instead.
+The [Azul Zulu](https://www.azul.com/downloads/?version=java-21-lts&package=jdk#zulu) JDK is a good alternative if you need a JVM compatible with older operating systems.
+Oracle Java is also suitable for most configurations, but it is not recommended due to potential licensing restrictions.
 
-openHAB 5 requires Java 21.
-:::
+| Java Platform                                                                        | Advantages                                                                                                                                                         | Disadvantages                                                                                                                                                                                                                                                                                                 |
+|--------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| [Eclipse Temurin](https://adoptium.net/temurin/releases/?os=any&arch=any&version=21) | Open Source JDK backed by many large companies                                                                                                                     |                                                                                                                                                                                                                                                                                                               |
+| [Azul Zulu](https://www.azul.com/downloads/?version=java-21-lts&package=jdk#zulu)    | Open source, fully certified Java SE compliant build of OpenJDK, embedded version optimized for ARM devices [available here](https://www.azul.com/downloads/#zulu) |                                                                                                                                                                                                                                                                                                               |
+| [Oracle Java](https://java.com/en/)                                                  | Full openHAB support on all platforms                                                                                                                              | [Licensing restrictions](https://www.infoq.com/news/2016/03/docker-java/), manual installation required on many Linux systems: [Ubuntu](https://help.ubuntu.com/community/Java), [Mint](https://community.linuxmint.com/tutorial/view/1091), and [Debian](https://wiki.debian.org/Java/Sun) are some examples |
 
-| Java Platform                               | Advantages                                                                                                                                                                            | Disadvantages                                                                                                                                                                                                                                                                                                                        |
-|---------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| [Azul Zulu](https://www.azul.com/downloads/) | Open source, fully certified Java SE compliant build of OpenJDK, embedded version optimized for ARM devices [available here](https://www.azul.com/downloads/zulu-embedded/) |                                                                                                                                                                                                                                                                                                                                      |
-| [Oracle Java](https://java.com/en/)         | Full openHAB support on all platforms                                                                                                                                                 | [Licensing restrictions](https://blog.takipi.com/running-java-on-docker-youre-breaking-the-law/), manual installation required on many Linux systems: [Ubuntu](https://help.ubuntu.com/community/Java), [Mint](https://community.linuxmint.com/tutorial/view/1091), and [Debian](https://wiki.debian.org/Java/Sun) are some examples |
-| [AdoptOpenJDK](https://adoptopenjdk.net)          | Open Source JDK backed by many large companies |                                                                                                                                                                                                                                                                                                                                      |
-
-Please download and install the **Java 17** version of the JVM.
-
-The **64-bit version** of the JVM is **only** recommended on platforms using a 64-bit OS and an Intel or AMD processor.
-
-The **32-bit version** of the JVM is recommended on ARM platforms such as the Raspberry Pi.
-The 32-bit JVM performs better on the ARM platform. Some add-ons use libraries that do not work with a 64-bit JVM on ARM.
+Please download and install the **64-bit version** of the **Java 21** version of the JVM.
 
 Check your current Java version by opening a command line console and typing `java -version`:
 
 ```text
-openjdk version "17.0.5" 2022-10-18 LTS
-OpenJDK Runtime Environment Zulu17.38+21-CA (build 17.0.5+8-LTS)
-OpenJDK 64-Bit Server VM Zulu17.38+21-CA (build 17.0.5+8-LTS, mixed mode, sharing)
+openjdk version "21.0.7" 2025-04-15 LTS
+OpenJDK Runtime Environment Temurin-21.0.7+6 (build 21.0.7+6-LTS)
+OpenJDK 64-Bit Server VM Temurin-21.0.7+6 (build 21.0.7+6-LTS, mixed mode, sharing)
 ```
 
 ## Setup variants
@@ -98,7 +87,7 @@ openhab-cli info
 will result in e.g. for an [openHABian](https://www.openhab.org/docs/installation/openhabian.html) installation
 
 ```shell
-Version:     4.0.0 (Build)
+Version:     5.0.0 (Build)
 
 User:        openhab (Active Process 7466)
 User Groups: openhab tty dialout audio bluetooth gpio
@@ -141,7 +130,7 @@ In some cases upgrading to a new version of openHAB requires additional steps.
 For textual based configuration this can usually be done using a text editor or VS Code.
 UI configuration updates to the JSON database should not be done manually but by using the upgrade tool.
 
-The upgrade tool is a java application and allows performing different steps.
+The upgrade tool is a Java application and allows performing different steps.
 Each step can only be executed once (unless you `--force` the tool to perform them again).
 Currently the following steps are supported as arguments to `--command`:
 

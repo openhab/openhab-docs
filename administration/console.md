@@ -72,7 +72,7 @@ After successful connection and authentication, the console will appear:
   / _ \ / _ \ / _ \ / _ \ | |_| |  / _ \  |  _ \
  | (_) | (_) |  __/| | | ||  _  | / ___ \ | |_) )
   \___/|  __/ \___/|_| |_||_| |_|/_/   \_\|____/
-       |_|       4.2.0 - Release Build
+       |_|       5.0.0 - Release Build
 
 Use '<tab>' for a list of available commands
 and '[cmd] --help' for help on a specific command.
@@ -109,11 +109,11 @@ Another useful feature is the combination of the `|` (pipe) and `grep` functiona
 
 ```text
 openhab> bundle:list | grep openHAB
-135 │ Active │ 80 │ 4.2.0 │ openHAB Core :: Bundles :: Core
-136 │ Active │ 80 │ 4.2.0 │ openHAB Core :: Bundles :: Add-on XML
-137 │ Active │ 80 │ 4.2.0 │ openHAB Core :: Bundles :: Audio
-138 │ Active │ 80 │ 4.2.0 │ openHAB Core :: Bundles :: Automation
-139 │ Active │ 80 │ 4.2.0 │ openHAB Core :: Bundles :: Automation Media Modules
+135 │ Active │ 80 │ 5.0.0 │ openHAB Core :: Bundles :: Core
+136 │ Active │ 80 │ 5.0.0 │ openHAB Core :: Bundles :: Add-on XML
+137 │ Active │ 80 │ 5.0.0 │ openHAB Core :: Bundles :: Audio
+138 │ Active │ 80 │ 5.0.0 │ openHAB Core :: Bundles :: Automation
+139 │ Active │ 80 │ 5.0.0 │ openHAB Core :: Bundles :: Automation Media Modules
 ...
 ```
 

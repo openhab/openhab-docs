@@ -21,14 +21,16 @@ openhab> bundle:list
 START LEVEL 100 , List Threshold: 50
  ID | State    | Lvl | Version               | Name
 -----------------------------------------------------------------------------------------------------
- 22 │ Active │  80 │ 2.10.3                  │ Jackson-annotations
- 23 │ Active │  80 │ 2.10.3                  │ Jackson-core
- 24 │ Active │  80 │ 2.10.3                  │ jackson-databind
- 25 │ Active │  80 │ 2.10.3                  │ Jackson-dataformat-YAML
- 26 │ Active │  80 │ 2.10.3                  │ Jackson datatype: JSR310
- 27 │ Active │  80 │ 2.8.2.v20180104-1110    │ Gson: Google Json Library for Java
+ 30 │ Active   │  80 │ 2.18.2                │ Jackson-annotations
+ 31 │ Active   │  80 │ 2.18.2                │ Jackson-core
+ 32 │ Active   │  80 │ 2.18.2                │ jackson-databind
+ 33 │ Active   │  80 │ 2.18.2                │ Jackson-dataformat-XML
+ 34 │ Active   │  80 │ 2.18.2                │ Jackson-dataformat-YAML
+ 35 │ Active   │  80 │ 2.18.2                │ Jackson datatype: JSR310
+ 36 │ Active   │  80 │ 6.6.2                 │ Woodstox
+ 37 │ Active   │  80 │ 2.11.0                │ Gson
 ...
-209 | Active |  80 | 3.0.0                   | openHAB Add-ons :: Bundles :: Network Binding
+209 | Active   |  80 | 5.0.0                 | openHAB Add-ons :: Bundles :: Network Binding
 ```
 
 ## Start/Stop Bundles
@@ -39,7 +41,7 @@ Stopping a bundle is done using the command _stop_ and the ID of the bundle:
 openhab> bundle:stop 209
 openhab> bundle:list
 ...
-209 | Resolved |  80 | 3.0.0                 | openHAB Add-ons :: Bundles :: Network Binding
+209 | Resolved |  80 | 5.0.0                 | openHAB Add-ons :: Bundles :: Network Binding
 ```
 
 Starting a bundle is done using the _start_ command and the ID of the bundle:
@@ -48,7 +50,7 @@ Starting a bundle is done using the _start_ command and the ID of the bundle:
 openhab> bundle:start 209
 openhab> bundle:list
 ...
-209 | Active   |  80 | 3.0.0                 | openHAB Add-ons :: Bundles :: Network Binding
+209 | Active   |  80 | 5.0.0                 | openHAB Add-ons :: Bundles :: Network Binding
 ```
 
 ## Installing or Updating Bundles
@@ -66,13 +68,13 @@ The drawback is that updated bundles MAY revert to the originally installed vers
 In case the bundle is available via a URI:
 
 ```text
-openhab> bundle:install https://github.com/myrepy/my-binding/raw/main/org.openhab.binding.my-3.4.0-SNAPSHOT.jar
+openhab> bundle:install https://github.com/myrepy/my-binding/raw/main/org.openhab.binding.my-5.0.0-SNAPSHOT.jar
 
 openhab> bundle:list | grep My
 
-303 | Active   |  80 | 3.4.0                 | openHAB Add-ons :: Bundles :: My Binding
+303 | Active   |  80 | 5.0.0.202505050505    | openHAB Add-ons :: Bundles :: My Binding
 
-openhab> bundle:update 303 https://github.com/myrepy/my-binding/raw/main/org.openhab.binding.my-3.4.1-SNAPSHOT.jar
+openhab> bundle:update 303 https://github.com/myrepy/my-binding/raw/main/org.openhab.binding.my-5.0.0-SNAPSHOT.jar
 
 ```
 
@@ -80,7 +82,7 @@ In case the bundle is available on a file location, e.g. on the openHAB server (
 Make sure that file location is not within the addons-folder.
 
 ```text
-openhab>bundle:update 303 file:///localhost/srv/openhab-sys/org.openhab.binding.my-3.4.0-SNAPSHOT.jar
+openhab>bundle:update 303 file:///localhost/srv/openhab-sys/org.openhab.binding.my-5.0.0-SNAPSHOT.jar
 ```
 
 Note: using uninstall for a bundle will most probably NOT work, because all add-ons bundles are part of a feature and as long as the feature is installed, the bundle will likely be reinstalled.
@@ -123,5 +125,5 @@ openhab> bundle:list -s
  ID | State    | Lvl | Version                | Symbolic name
 ----------------------------------------------------------------------------------------------
 ...
-209 | Active   |  80 | 3.0.0                  | org.openhab.binding.network
+209 | Active   |  80 | 5.0.0                  | org.openhab.binding.network
 ```
