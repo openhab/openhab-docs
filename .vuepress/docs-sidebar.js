@@ -109,6 +109,7 @@ module.exports = [
               ['configuration/blockly/rules-blockly-standard-ext', 'Standard Extensions'],
             ]
           },
+          'configuration/yaml',
         ]
       },
       'configuration/actions',
