@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="shenzhen_ls100_00_000" listed="false">
+    <label>LS100 Water Leak Sensor</label>
+    <description><![CDATA[
+Water Leak Sensor<br /> <h1>Overview</h1><p>Water sensor is an intelligent security equipment that can transmit the Z-Wave network which has particular frequency. Different countries or areas, the radio frequency of Z-Wave is different. In the Z-Wave network communications, water sensor can work with any Z-Wave main controller. In the Z-Wave network communications, water sensor can send messages to the Z-Wave main controller, and realize association with other devices through the Z-Wave network. In the communication with the Z-Wave main controller, the water sensor can send messages to the Z-Wave main controller, but it can not receive messages from the Z-Wave main controller. When the water sensor is triggered, the LED light keeps on and the buzzer will make sound. The water sensor sends messages to the Z-Wave main controller at the same time, the Z-Wave main controller will display the current status of water sensor. Water sensor is battery powered, is small and can be installed easily.</p> <br /> <h2>Inclusion Information</h2><p>1. Disassemble the water sensor and insert a battery. Make sure the device is within range of the network controller.</p><p>2. Set controller into inclusion mode.</p><p>3. Quickly, triple click the button inside the sensor. The LED light will flash red 5 times.</p><p>4. Water sensor will be detected and included in the Z-Wave network.</p><p>5. Wait for the main controller to initialize the water sensor</p> <br /> <h2>Exclusion Information</h2><p>1. Disassemble the water sensor.</p><p>2. Set controller into exclusion mode.</p><p>3. Quickly, triple click the button inside the sensor. The LED light will flash red 5 times.</p><p>4. Wait for the controller to delete the sensor.</p> <br /> <h2>Wakeup Information</h2><p>Press the internal button once to wake‐up the sensor and send a wake up notification to the controller. The Led will blink once.</p>
+    ]]></description>
+    <category>Sensor</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="sensor_binary" typeId="sensor_binary">
+        <label>Binary Sensor</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SENSOR_BINARY</property>
+        </properties>
+      </channel>
+      <channel id="alarm_flood" typeId="alarm_flood">
+        <label>Alarm (flood)</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=FLOOD</property>
+        </properties>
+      </channel>
+      <channel id="battery-level" typeId="system.battery-level">
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_BATTERY</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Shenzhen Neo Electronics Co., Ltd</property>
+      <property name="modelId">LS100</property>
+      <property name="manufacturerId">0258</property>
+      <property name="manufacturerRef">0100:1025</property>
+      <property name="dbReference">1665</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_1_1" type="integer" groupName="configuration">
+        <label>1: Raised Alarm Duration</label>
+        <description><![CDATA[
+Max time the alarm should be raised for<br /> <h1>Overview</h1><p>The alarm is raised when a leak is detected. The buzzer will beep and the LED will turn on at a configurable interval until either the leak is no longer detected or the Alarm Duration Time is reached. When either condition is met, the alarm will no longer be raised.</p><p>Setting the duration to 0 will disable this limit and let the LED/beeping continue until the leak is no longer detected.</p>
+        ]]></description>
+        <default>120</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_2_1" type="integer" groupName="configuration">
+        <label>2: Alarm Interval</label>
+        <description><![CDATA[
+Time between beeps<br /> <h1>Overview</h1><p>While the alarm is raised, this is the duration between the device emitting a beep and LED flash.</p>
+        ]]></description>
+        <default>1</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_3_1" type="integer" groupName="configuration">
+        <label>3: First Alarm On Duration</label>
+        <description><![CDATA[
+First beep duration<br /> <h1>Overview</h1><p>When an alarm is raised, the initial beep and flash can have a different duration than the subsequent beeps. </p>
+        ]]></description>
+        <default>60</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_4_1" type="integer" groupName="configuration">
+        <label>4: Alarm On Duration</label>
+        <description><![CDATA[
+Beep duration<br /> <h1>Overview</h1><p>Duration to beep and light the LED for all "Alarm On" instances after the first.</p>
+        ]]></description>
+        <default>5</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_5_1" type="integer" groupName="configuration">
+        <label>5: Toggle Alarm Beep</label>
+        <description><![CDATA[
+Enable or disable beeping<br /> <h1>Overview</h1><p>Regardless of this setting, the LED will still blink.</p>
+        ]]></description>
+        <default>1</default>
+        <options>
+          <option value="0">Disabled</option>
+          <option value="1">Enabled</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_6_1" type="integer" groupName="configuration">
+        <label>6: Toggle Leak Detection</label>
+        <description><![CDATA[
+Enable or disable leak detection<br /> <h1>Overview</h1><p><br /></p>
+        ]]></description>
+        <default>1</default>
+        <options>
+          <option value="0">Disabled</option>
+          <option value="1">Enabled</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_7_1" type="integer" groupName="configuration">
+        <label>7: Basic Set Group</label>
+        <description><![CDATA[
+Define Basic Set Group<br /> <h1>Overview</h1><p>Basic Set groups allow the sensors to forward commands to other sensors in that group.</p><p>Example: If the sensor clears an active alarm, then it will forward that command to other sensors in the configured Basic Set group.</p>
+        ]]></description>
+        <default>-1</default>
+        <options>
+          <option value="255">None</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Lifeline</label>
+        <description>Z-Wave Plus Lifeline Group</description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: Basic Set</label>
+        <description><![CDATA[
+Sends commands to other nodes<br /> <h1>Overview</h1><p>Sends commands to all nodes in a Basic Set group. The Basic Set group can be changed with the Basic Set Group property.</p><p>Example: If the sensor clears an active alarm, then it will forward that command to other sensors in the configured Basic Set group.</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_3" type="text" groupName="association" multiple="true">
+        <label>3: Send Notifications</label>
+        <description>Sends NOTIFICATION_REPORT to others</description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_4" type="text" groupName="association" multiple="true">
+        <label>4: Send Sensor Report</label>
+        <description>Sends SENSOR_BINARY_REPORT to others</description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>
