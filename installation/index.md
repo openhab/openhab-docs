@@ -151,12 +151,15 @@ This is necessary to keep units consistent for data persisted with previous vers
 - `linkUpgradeJsProfile`: The JS Scripting transformation/profile has been removed because of changing to Java 17.
 They have been replaced by the generic script transformation/profile which require different configuration options.
 This step rewrites the profiles to the new format.
+- `linkUpgradeScriptProfile`: Upgrades the script profile `toHandlerScript` option into separate `commandFromItemScript` and `stateFromItemScript` options.
+- `yamlTagsListToMap`: The original implementation of custom tags in openHAB 4 were defined in a YAML List. This step converts them into map format used in openHAB 5. It will process valid YAML files in `conf/tags` directory.
 
 The upgrade tool needs to know the path to the openHAB userdata folder (e.g. `/var/lib/openhab` on most Debian like systems).
-If the tool is not operated from that folder, it can be specified by using `--dir /var/lib/openhab` on the commandline.
+If the tool is not operated from that folder, it can be specified by using `--userdata /var/lib/openhab` on the commandline.
+The full list of command line options can be displayed using the `--help` argument
 
 Example:
 
 ```shell
-java -jar upgradetool.jar --dir /var/lib/openhab --command itemCopyUnitToMetadata
+java -jar upgradetool.jar --userdata /var/lib/openhab --command itemCopyUnitToMetadata
 ```
