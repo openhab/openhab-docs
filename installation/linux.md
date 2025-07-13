@@ -25,16 +25,15 @@ Train your understanding of Linux permissions at [linuxjourney.com/lesson/file-p
 ## Meeting the Requirements
 
 As a first step, please verify, that your system meets the [prerequisites](index.html#prerequisites).
-You may want to install Zulu, a fully certified Java build [as a package or manually](https://docs.azul.com/zulu/zuludocs/ZuluUserGuide/InstallingZulu/InstallZulu.htm).
+You may want to install Eclipse Temurin [as a package or manually](https://adoptium.net/installation/linux/).
 
-Alternatively, Zulu Embedded can be installed for small systems either from the same package repository as above or [manually](https://www.azul.com/downloads/zulu-embedded/).
-If you're unsure which manual file you should download, using `dpkg --print-architecture` or `rpm -q --qf '%{ARCH}\n' rpm` in your Linux terminal should point you in the right direction (e.g. armhf means ARM Hard Float).
+Alternatively, the Azul Zulu JDK can be installed [manually](https://docs.azul.com/core/install/debian).
+If you're unsure which manual file you should download, using `dpkg --print-architecture` or `rpm -q --qf '%{ARCH}\n' rpm` in your Linux terminal should point you in the right direction.
 
-When installing Zulu or Zulu Embedded from a .zip or .tar archive, make sure to [set Zulu as the main Java "alternative"](https://docs.azul.com/zulu/zuludocs/#ZuluUserGuide/SwitchingBetweenJavaAlternatives/SwitchBetweenJavaAlts.htm).
+When installing Eclipse Temurin or the Azul Zulu JDK from a .zip or .tar archive, make sure to [set the installed JVM as default](https://www.baeldung.com/linux/java-choose-default-version).
 
 ::: tip Note
-Make sure to download Zulu or Java **17**.
-Java 21 can be used openHAB 4.x, and is required for openHAB 5.
+Make sure to download the **64-bit** Java **21** JDK.
 :::
 
 ## Installation
@@ -159,8 +158,8 @@ sudo apt-mark showhold
 Installing a specific version is possible by specifing the version that should be installed.
 
 ```shell
-sudo apt install openhab=4.0.1
-sudo apt install openhab-addons=4.0.1
+sudo apt install openhab=5.0.0
+sudo apt install openhab-addons=5.0.0
 ```
 
 To get a list of all available versions you can use
