@@ -145,7 +145,7 @@ Data-transfer-objects (DTOs map from JSON/XML to Java classes) do not require Ja
 
 ## D. Language Levels and Libraries
 
-1. openHAB generally targets the long time supported Java 17 release.
+1. openHAB generally targets the long time supported Java 21 release.
 1. The [OSGi Core Release 8](https://osgi.org/download/r8/osgi.core-8.0.0.pdf) with [OSGi Compendium Release 8](https://osgi.org/download/r8/osgi.cmpn-8.0.0.pdf) is targeted, and newer features should not be used.
 1. [SLF4J](http://slf4j.org) is used for logging.
 
