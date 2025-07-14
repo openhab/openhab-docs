@@ -39,6 +39,7 @@ These blocks allow to create a notification with labeled button and an action th
 ![notifications4](../images/blockly/blockly-notifications4.png)
 
 ### Hide Notification
+
 The last block allows hiding a notification based on a reference or a tag that was provided to the original notification.
 
 ![notifications](../images/blockly/blockly-notifications5.png)
