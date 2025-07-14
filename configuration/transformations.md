@@ -110,6 +110,16 @@ Note the overall syntax is the same.
 
 :::
 
+::: tab Python
+
+The script file name is `stringlength.py` and the transformation is `PY(stringlength.py)`.
+
+```python
+"String has " + str(len(input)) + " characters"
+```
+
+:::
+
 ::: tab JRuby
 
 The script file name is `stringlength.rb` and the transformation is `RB(stringlength.rb)`.
@@ -161,6 +171,14 @@ JS(|"String has " + input.length + " characters")
 
 :::
 
+::: tab Python
+
+```python
+PY(|"String has " + str(len(input)) + "characters")
+```
+
+:::
+
 ::: tab JRuby
 
 ```ruby
@@ -201,19 +219,19 @@ However, beware that `stateFromItemScript` _should_ be left blank, because norma
 
 Example usage in an `.items` file:
 
-```xtend
+```java
 Number <itemName> { channel="<channelUID>"[profile="transform:JS", toItemScript="decode_json.js", commandFromItemScript="encode_json.js" ] }
 ```
 
 Here, additional parameters can also be injected into the script using the URL style syntax, e.g.:
 
-```xtend
+```java
 Number <itemName> { channel="<channelUID>"[profile="transform:RB", toItemScript="multiply.rb?factor=10", commandFromItemScript="multiply.rb?factor=0.1" ] }
 ```
 
 Inline script is also supported in the profile syntax.
 
-```xtend
+```java
 Number <itemName> { channel="<channelUID>"[profile="transform:RB", toItemScript="| input.to_f * 10", commandFromItemScript="| input.to_f * 0.1" ] }
 ```
 

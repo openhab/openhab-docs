@@ -19,7 +19,7 @@ Please be sure you have installed the required supporting applications as descri
 
 ### Set the `JAVA_HOME` System Environment Variable in Windows
 
-Note: If you have installed Java 17 (recommended for OH 4.x) or Java 21, you may skip this step because the JAVA_HOME environment variable was created during installation.
+Note: If you have installed Java 21, you may skip this step because the JAVA_HOME environment variable was created during installation.
 
 - Navigate to: Control Panel ➡️ System and Security ➡️ System ➡️ Advanced System Settings ➡️ Environment Variables ➡️ System Variables
 - Create a New System Variable named JAVA_HOME (or update the existing one) to match the installation directory of the Java Platform chosen and installed in the step [Prerequisites]({{base}}/installation/index.html#prerequisites).
@@ -82,7 +82,7 @@ By installing the openHAB process as a service in Windows, you can:
     1. Copy all the config text from the below section and paste it in your `openHAB-wrapper.conf`, replacing all existing content.
     1. Adapt the first entry (`OPENHAB_HOME`) to match your openHAB installation directory.
 
-    ```conf
+    ```ini
     #*******************************************************
     # openHAB-wrapper.conf for Windows Service Installation
     #*******************************************************
