@@ -174,7 +174,6 @@ There is a rule that listens to that virtual Item, extracts the Item and specifi
 In case you want to provide your own String-based generic command, you can use the following block instead.
 It provides a combination of Label and String action command:
 
-
 ![blockly-notification-action.png](../images/blockly/blockly-notification-action-generic.png)
 
 ## Actions: Open / Call Page
