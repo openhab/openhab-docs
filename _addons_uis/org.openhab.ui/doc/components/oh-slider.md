@@ -25,10 +25,11 @@ By default, the slider control will use the display state of the Item, if availa
 If the display state is not available, it will use the raw state of the Item.
 If you want to always use the raw state, set the `ignoreDisplayState` property to `true`.
 
-> [!NOTE]
-> If you have problems with the slider resetting to a different value than the one you set, it is likely that the display state of the Item does not allow enough decimals for the step size of the slider.
-> In that case, make sure that either the state description of the Item is set to the same number of decimals than the step size (so that the display state has the same precision as the slider),
-> or that the `ignoreDisplayState` property is set to `true`.
+::: tip Note
+If you have problems with the slider resetting to a different value than the one you set, it is likely that the display state of the Item does not allow enough decimals for the step size of the slider.
+In that case, make sure that either the state description of the Item is set to the same number of decimals than the step size (so that the display state has the same precision as the slider),
+or that the `ignoreDisplayState` property is set to `true`.
+:::
 
 ## Configuration
 
