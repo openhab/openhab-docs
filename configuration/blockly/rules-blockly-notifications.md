@@ -10,11 +10,11 @@ title: Rules Blockly - Notifications
 
 ## Introduction
 
-By using your [openHAB cloud](https://www.openhab.org/addons/integrations/openhabcloud/) account, these blocks can be used to send notifications to relevant connected mobile devices.
+By using your [openHAB Cloud](https://www.openhab.org/addons/integrations/openhabcloud/) account, these blocks can be used to send notifications to relevant connected mobile devices.
 Notifications can be used as push message to devices running the openHAB client.
 The reason why this is done via the openHAB cloud is that it allows to send notifications via Apple's and Google's push notification services, which is the only way to reliably send notifications to mobile devices as openHAB's cloud is a trusted source for both.
 
-General information on cloud notification actions can be found at [cloud-notification-actions](https://www.openhab.org/docs/configuration/actions.html#cloud-notification-actions).
+General information on cloud notification actions can be found at [Actions: Cloud Notification Actions](https://www.openhab.org/docs/configuration/actions.html#cloud-notification-actions).
 
 [[toc]]
 
@@ -50,13 +50,13 @@ This will create the following block and will send a notification "My message" t
 
 ![notification-simple](../images/blockly/blockly-notification-simple.png)
 
-Note that the block can also send to "log" instead of "notification" which sends the message to <myopenhab.org>'s log only but not to the devices.
+Note that the block can also send to "log" instead of "notification" which sends the message to [myopenhab.org](https://myopenhab.org)'s log only but not to the devices.
 In this case:
 
 - This notification is _only_ sent to the openHAB cloud log (for example at <https://myopenhab.org/notifications>), **not the local openHAB log**.
 - Notifications are not sent to users' devices.
 - Neither the log level nor the icon is shown in the log of the cloud.
-- The notification is not logged on the openhab server!
+- The notification is not logged on the openHAB server!
 
 ### Notification Block Options
 
@@ -126,7 +126,7 @@ The public media image URL used here has been taken from [Wikimedia](https://upl
 ### Actions: On-Click Action
 
 When choosing the Person icon, the block will allow attaching an action to the notification.
-In general, an openHAB action as specified in the [openHAB documentation on actions](https://www.openhab.org/docs/configuration/actions.html) can be attached to the notification.
+In general, an openHAB action as specified in [openHAB Cloud Connector: Cloud Notification Actions](/addons/integrations/openhabcloud/#cloud-notification-actions) can be attached to the notification.
 If you want to create such an action yourself, you can use just use a Blockly text block to provide the action.
 
 However, this usually isn't recommended as Blockly already provides blocks that allow to create these actions conveniently.
@@ -190,7 +190,7 @@ The options are:
 - Main UI popup: Allows opening a popup in the Main UI
 - URL: opens an arbitrary specified URL
 
-For more information, see the [openHAB documentation on actions](https://www.openhab.org/addons/integrations/openhabcloud/#cloud-notification-actions).
+For more information, see [openHAB Cloud Connector: Cloud Notification Actions](/addons/integrations/openhabcloud/#cloud-notification-actions).
 
 Here is an example of a notification that opens the Main UI page "page_rolllaeden" (the rollershutter page) when clicked, so the user can choose which rollershutter(s) to close:
 
