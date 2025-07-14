@@ -33,19 +33,20 @@ These blocks allow to create a notification with labeled button and an action th
 
 ![notifications2](../images/blockly/blockly-notifications2.png)
 
-### Action blocks that can be related to a notification
+### Action support blocks
 
 ![notifications3](../images/blockly/blockly-notifications3.png)
 ![notifications4](../images/blockly/blockly-notifications4.png)
 
+### Hide Notification
 The last block allows hiding a notification based on a reference or a tag that was provided to the original notification.
 
 ![notifications](../images/blockly/blockly-notifications5.png)
 
-## Notification Blocks
+## Send Notification
 
 As the notification block allows a lot of flexibility, it provides many options to be switched on or off.
-Let's therefore start with the simplest form of the block by just dragging it into the workspace.
+Let's, therefore, start with the simplest form of the block by just dragging it into the workspace.
 This will create the following block and will send a notification "My message" to all devices and users:
 
 ![notification-simple](../images/blockly/blockly-notification-simple.png)
@@ -176,7 +177,7 @@ It provides a combination of Label and String action command:
 
 ![blockly-notification-action.png](../images/blockly/blockly-notification-action-generic.png)
 
-## Actions: Open / Call Page
+### Actions: Open / Call Page
 
 Instead of sending a command, the notification can also open a specific page in the openHAB mobile app.
 
