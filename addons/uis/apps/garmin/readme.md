@@ -19,6 +19,8 @@ source: https://github.com/openhab/openhab-garmin/blob/main/docs/USAGE.md
 }
 </style>
 
+<!-- markdownlint-disable no-alt-text -->
+
 # Garmin App
 
 The **openHAB Garmin** app connects your Garmin wearable to your [openHAB](https://www.openhab.org) smart home system, giving you convenient access to essential devices and real-time information.
@@ -66,16 +68,16 @@ Once the app is installed, you can configure the following settings by opening i
 
 | Setting                           | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
 |-----------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **URL**                           | Your openHAB URL in the format `https://host:port` or `http://host:port`. Note: HTTP only works with iOS. See [Connectivity](#connectivity) and [Using myopenHAB](#-using-myopenhab) for details.                                                                                                                                                                                                                                                                     |
-| **Sitemap Name**                  | Name of the sitemap to display. See [Sitemap Setup](#sitemap-setup) for details.                                                                                                                                                                                                                                                                                                                                                                                     |
+| **URL**                           | Your openHAB URL in the format `https://host:port` or `http://host:port`. Note: HTTP only works with iOS. See [Connectivity](#connectivity) and [Using myopenHAB](#using-myopenhab) for details.                                                                                                                                                                                                                                                                      |
+| **Sitemap Name**                  | Name of the sitemap to display. See [Sitemap Setup](#sitemap-setup) for details.                                                                                                                                                                                                                                                                                                                                                                                      |
 | **Native REST API Support**       | Enable if your openHAB supports the new JSON-based REST API for sending commands. See [Sending Commands](#sending-commands) for details.                                                                                                                                                                                                                                                                                                                              |
-| **Webhook Identifier**            | If your openHAB version doesn't support the JSON-based REST API (see above), you can configure a custom webhook to send commands. See [Custom Webhook](#custom-webhook) for details.                                                                                                                                                                                                                                                                                  |
-| **Username**                      | For basic authentication (used for [myopenHAB](#using-myopenhab), see below)                                                                                                                                                                                                                                                                                                                                                                                         |
+| **Webhook Identifier**            | If your openHAB version doesn't support the JSON-based REST API (see above), you can configure a custom webhook to send commands. See [Sending Commands](#sending-commands) for details.                                                                                                                                                                                                                                                                              |
+| **Username**                      | For basic authentication (used for [myopenHAB](#using-myopenhab), see below)                                                                                                                                                                                                                                                                                                                                                                                          |
 | **Password**                      | Password for basic authentication                                                                                                                                                                                                                                                                                                                                                                                                                                     |
 | **Supress empty response errors** | Suppress errors for empty sitemap responses. Recommended when using myopenhab.org, which occasionally returns empty results. See the related [openhab-cloud issue #496](https://github.com/openhab/openhab-cloud/issues/496) for details.                                                                                                                                                                                                                             |
 | **Polling Interval (ms)**         | Interval between data requests to your openHAB instance. Set to 0 to fetch new data immediately after the previous response is processed. Polling only occurs while the app is open, not in the background. If you're using **myopenhab.org**, it's recommended to use the default (3000 ms) or a higher value to avoid overloading their servers. If you're connecting to your own openHAB server directly, you may try setting it to 0 for more responsive updates. |
 
-![](images/app-settings/app-settings.png)
+![App Settings](images/app-settings/app-settings.png)
 
 ## Connectivity
 
@@ -83,6 +85,7 @@ Garmin wearables rely on your smartphone for network access.
 If your phone can reach your openHAB instance (e.g. via local network or VPN like Tailscale), the watch can too.
 
 **Platform-specific Limitations:**
+
 - **iOS**: HTTP and HTTPS supported
 - **Android**: Only HTTPS with a valid certificate is supported due to Garmin SDK limitations
 
@@ -93,9 +96,9 @@ You can use [myopenHAB](https://www.myopenhab.org) to securely access your local
 To connect using [myopenHAB](https://myopenhab.org):
 
 1. Install the [openHAB Cloud Connector](/addons/integrations/openhabcloud/)
-2. Register at [myopenhab.org](https://myopenhab.org)
-3. Set the URL in the app to `https://home.myopenhab.org`
-4. Use your myopenHAB username and password for authentication
+1. Register at [myopenhab.org](https://myopenhab.org)
+1. Set the URL in the app to `https://home.myopenhab.org`
+1. Use your myopenHAB username and password for authentication
 
 ### Sending Commands
 
@@ -104,7 +107,7 @@ Starting with openHAB 5.0, the REST API allows the app to send commands directly
 For earlier versions, you can either:
 
 <details>
-<summary>Install the backported API (available for openHAB 4.3.x)</summary>
+<summary>➡️ Install the backported API (available for openHAB 4.3.x)</summary>
 
 To enable JSON-based command support on openHAB 4.3.x, install the backported API bundle.
 
@@ -117,7 +120,7 @@ Follow the instructions here: [Backport Installation Guide](https://github.com/f
 or
 
 <details>
-<summary>Set up a custom webhook</summary>
+<summary>➡️ Set up a custom webhook</summary>
 
 If your openHAB setup does not support the JSON-based REST API for sending commands, you can configure a custom Webhook using the Webhook binding instead.
 
@@ -127,13 +130,13 @@ Follow the steps below to set it up:
 
 Install the [Webhook HTTP binding](https://community.openhab.org/t/webhook-http-binding/152184).
 
-![](images/custom-webhook/1_Webhook_installation.png)
+![Web Hook Installation](images/custom-webhook/1_Webhook_installation.png)
 
 #### 2. Create a Webhook Thing
 
 Create a new Webhook Thing.
 
-![](images/custom-webhook/2_1_Thing_creation.png)
+![Thing Creation](images/custom-webhook/2_1_Thing_creation.png)
 
 Go to the **Code** tab and enter the following YAML (replace `UID` with your own):
 
@@ -165,11 +168,11 @@ channels:
         }
 ```
 
-![](images/custom-webhook/2_4_Thing_channels.png)
+![Thing Channels](images/custom-webhook/2_4_Thing_channels.png)
 
 #### 3. Create a Rule with JavaScript
 
-Create a [Rule](https://www.openhab.org/docs/concepts/rules.html) that triggers on webhook and runs this JavaScript:
+Create a [Rule]({{base}}/concepts/rules.html) that triggers on webhook and runs this JavaScript:
 
 ```javascript
 var request = JSON.parse(event.event);
@@ -206,13 +209,13 @@ if (action === "sendCommand") {
 
 You can test the webhook by visiting:
 
-```
+```text
 https://yourserver:yourport/webhook/d1097152a4?action=toggle&itemName=LightBedroom
 ```
 
 Then enter the Webhook ID (`d1097152a4`) in the app settings:
 
-![](images/app-settings/app-settings-webhook.png)
+![App Settings: Webhook](images/app-settings/app-settings-webhook.png)
 
 </details>
 
@@ -222,7 +225,7 @@ This section explains how to set up your openHAB sitemap for use with the app, o
 
 ## Sitemap Setup
 
-Check the [Sitemaps documentation](/docs/ui/sitemaps.html) to learn more about how sitemaps work.
+Check the [Sitemaps documentation]({{base}}/ui/sitemaps.html) to learn more about how sitemaps work.
 
 The sitemap name configured in the app must match the filename of the sitemap, excluding the `.sitemap` extension.
 For example, if the file is named `garmin_demo.sitemap`, set the sitemap name in the app settings to `garmin_demo`.
@@ -261,34 +264,34 @@ Certain sitemap elements — namely `Frame`, `Text`, and `Group` — can contain
 In sitemaps, `Frame` elements are used to visually separate areas on a page, while nested elements under `Text` and `Group` are presented as navigable subpages.
 The Garmin app adopts a menu-based navigation structure and implements nested elements under all three types as submenus.
 
-* For `Frame` and `Text`, nested elements must be defined manually. The only functional difference is that `Text` displays the associated item’s state, whereas `Frame` does not.
-* `Group` elements automatically populate their nested elements based on the members of the referenced group item.
+- For `Frame` and `Text`, nested elements must be defined manually. The only functional difference is that `Text` displays the associated item’s state, whereas `Frame` does not.
+- `Group` elements automatically populate their nested elements based on the members of the referenced group item.
 
-For more details, refer to the [sitemap documentation on nested elements](/docs/ui/sitemaps.html#nested-elements).
+For more details, refer to the [sitemap documentation on nested elements]({{base}}/ui/sitemaps.html#nested-elements).
 
 #### `Frame`
 
-The ➡️ [`Frame`](/docs/ui/sitemaps.html#element-type-frame) element is [one of three](#nested-elements) sitemap elements that support hierarchical structuring.
+The ➡️ [`Frame`]({{base}}/ui/sitemaps.html#element-type-frame) element is [one of three](#nested-elements) sitemap elements that support hierarchical structuring.
 
 You can nest `Frame` elements within other `Frame` elements. While this is allowed by the specification, openHAB may log a warning when doing so — but it still functions as expected.
 
-Technically, the specification does *not* permit mixing `Frame` elements alongside other element types at the same hierarchy level. However, in practice, this does work in openHAB.
+Technically, the specification does _not_ permit mixing `Frame` elements alongside other element types at the same hierarchy level. However, in practice, this does work in openHAB.
 If you choose to use this unsupported approach, be aware that you're doing so at your own risk.
 
 Here is an example of a sitemap containing three `Frame` elements.
 
 ```java
 sitemap garmin_demo label="My Home" {
-	Frame label="Entrance Gates" {
-		Switch item=EntranceGatesTrigger label="Open/Close" mappings=[OFF="", ON="OK"]
-		Text item=EntranceGateStatus label="Status"
-	}
-	Frame label="Ground Floor" {
+ Frame label="Entrance Gates" {
+  Switch item=EntranceGatesTrigger label="Open/Close" mappings=[OFF="", ON="OK"]
+  Text item=EntranceGateStatus label="Status"
+ }
+ Frame label="Ground Floor" {
     // ...
-	}
-	Frame label="First Floor" {
+ }
+ Frame label="First Floor" {
     // ...
-	}
+ }
 }
 ```
 
@@ -301,7 +304,7 @@ This configuration produces the following display in the UI:
 
 #### `Default`
 
-The ➡️ [`Default`](/docs/ui/sitemaps.html#element-type-frame) element displays an item using the default widget determined by its type.
+The ➡️ [`Default`]({{base}}/ui/sitemaps.html#element-type-frame) element displays an item using the default widget determined by its type.
 This widget selection is handled automatically by openHAB.
 
 The Garmin app supports `Default` only if the item’s type maps to one of the app’s supported widgets.
@@ -309,12 +312,12 @@ If this is not the case, an error will be shown instead.
 
 #### `Text`
 
-The ➡️ [`Text`](/docs/ui/sitemaps.html#element-type-text) Sitemap Widget is used to display the current state of an item without allowing any user interaction.
+The ➡️ [`Text`]({{base}}/ui/sitemaps.html#element-type-text) Sitemap Widget is used to display the current state of an item without allowing any user interaction.
 
 **Supported parameters:**
 
-* `label`: the label shown in the UI.
-* `item`: the name of the openHAB item whose state should be displayed.
+- `label`: the label shown in the UI.
+- `item`: the name of the openHAB item whose state should be displayed.
 
 This widget is ideal for showing read-only information, such as temperature, system status, or sensor readings.
 It also supports [nested elements](#nested-elements), making it suitable for creating a hierarchical sitemap structure.
@@ -339,7 +342,7 @@ Frame label="Entrance Gates" {
 
 #### `Group`
 
-The ➡️ [`Group`](/docs/ui/sitemaps.html#element-type-group) Sitemap Widget will present a submenu containing all the items in the associated item of type `Group`.
+The ➡️ [`Group`]({{base}}/ui/sitemaps.html#element-type-group) Sitemap Widget will present a submenu containing all the items in the associated item of type `Group`.
 This also works recursively, if the `Group` item itself contains other `Group` items, those will again open their own submenus.
 
 **Example configuration:**
@@ -348,7 +351,7 @@ In this example, the `CC_House_Lights` item represents a hierarchical structure:
 
 ```java
 sitemap garmin_demo label="My Home" {
-	Group item=CC_House_Lights label="All Lights"
+ Group item=CC_House_Lights label="All Lights"
   // ...
 }
 ```
@@ -363,12 +366,12 @@ sitemap garmin_demo label="My Home" {
 
 #### `Switch` and `Selection`
 
-The ➡️ [`Switch`](/docs/ui/sitemaps.html#element-type-switch) and ➡️ [`Selection`](/docs/ui/sitemaps.html#element-type-switch) widgets display the current state of an item and allows the user to send commands to change it.
+The ➡️ [`Switch`]({{base}}/ui/sitemaps.html#element-type-switch) and ➡️ [`Selection`]({{base}}/ui/sitemaps.html#element-type-switch) widgets display the current state of an item and allows the user to send commands to change it.
 
 In other UIs, the `Switch` and `Selection` widgets behave differently:
 
-* `Switch` presents all available options **inline** within the page.
-* `Selection` opens a **dedicated selection dialog** to choose a value.
+- `Switch` presents all available options **inline** within the page.
+- `Selection` opens a **dedicated selection dialog** to choose a value.
 
 However, due to the limited screen space on wearables, the Garmin app always opens a dedicated action menu whenever there are more than one or two options.
 
@@ -383,8 +386,8 @@ As a result, `Selection` is treated as a **synonym for `Switch`**, and both beha
 The widget supports three usage variants:
 
 1. **Toggle Switch** – for binary items (`ON`/`OFF`) and `Dimmer` items.
-2. **Rollershutter Control** – a full-screen view for `Rollershutter` items with `UP`, `DOWN`, and `STOP` buttons.
-3. **Generic Switch** – for items with custom or multiple commands, defined via `mappings` or item metadata.
+1. **Rollershutter Control** – a full-screen view for `Rollershutter` items with `UP`, `DOWN`, and `STOP` buttons.
+1. **Generic Switch** – for items with custom or multiple commands, defined via `mappings` or item metadata.
 
 ##### Toggle Switch
 
@@ -457,11 +460,10 @@ In the menu, the widget displays the current state as text:
 
 **Selection behavior:**
 
-* If **one** command is defined, it is sent immediately when the item is selected.
-* If **two** commands are defined and one of them matches the current state, the **other** is sent immediately.
-* In all other cases, an **action menu** appears on the right side of the screen, allowing the user to select from the list of available commands.
+- If **one** command is defined, it is sent immediately when the item is selected.
+- If **two** commands are defined and one of them matches the current state, the **other** is sent immediately.
+- In all other cases, an **action menu** appears on the right side of the screen, allowing the user to select from the list of available commands.
   If the current state matches one of the commands, that command is **not shown** in the menu.
-
 
 **Example:**
 
@@ -481,7 +483,7 @@ Frame label="Switches" {
 **Note:** The action menu shown in the right screenshot is a **mockup**.
 The actual appearance may vary depending on the device, as it uses a native UI component.
 
-**Example with Empty Mapping Entry**
+**Example with Empty Mapping Entry:**
 
 Consider a garage door opener that acts as a toggle switch: sending an `ON` command triggers the gate to open or close, and the switch automatically resets to `OFF` after one second.
 
@@ -489,17 +491,17 @@ This can be configured in the sitemap like so:
 
 ```java
 sitemap garmin_demo label="My Home" {
-	Frame label="Entrance Gates" {
-		Switch item=EntranceGates_Operation label="Open/Close" mappings=[OFF="", ON="OK"]
-		Text item=EntranceGates_Status label="Status"
-	}
+ Frame label="Entrance Gates" {
+  Switch item=EntranceGates_Operation label="Open/Close" mappings=[OFF="", ON="OK"]
+  Text item=EntranceGates_Status label="Status"
+ }
 }
 ```
 
 In this configuration:
 
-* The switch typically stays in the `OFF` state, where the `"Open/Close"` label is sufficient.
-* When pressed, it sends the `ON` command, briefly displays `"OK"` as feedback, then returns to `OFF`.
+- The switch typically stays in the `OFF` state, where the `"Open/Close"` label is sufficient.
+- When pressed, it sends the `ON` command, briefly displays `"OK"` as feedback, then returns to `OFF`.
 
 Here’s how the interface appears when the switch is in the `OFF` state:
 
@@ -509,7 +511,7 @@ Here’s how the interface appears when the switch is in the `OFF` state:
 
 #### `Setpoint` and `Slider`
 
-The ➡️ [`Setpoint`](/docs/ui/sitemaps.html#element-type-setpoint) and ➡️ [`Slider`](/docs/ui/sitemaps.html#element-type-slider) widgets are **numeric controls** used to display and adjust the numeric state of an item.
+The ➡️ [`Setpoint`]({{base}}/ui/sitemaps.html#element-type-setpoint) and ➡️ [`Slider`]({{base}}/ui/sitemaps.html#element-type-slider) widgets are **numeric controls** used to display and adjust the numeric state of an item.
 
 When selected, both widgets open a full-screen view for choosing a new value, which is then sent as a command to the item.
 
@@ -522,7 +524,7 @@ The only behavioral difference between the two is the `Slider` widget’s suppor
 - `minValue`: lower bound of the selectable range (default: `0`).
 - `maxValue`: upper bound of the selectable range (default: `100`).
 - `step`: interval between selectable values (default: `1`).
-- `releaseOnly`: *(Slider only)*
+- `releaseOnly`: _(Slider only)_
   - **With `releaseOnly`:** The value is only sent when the dialog is confirmed. Cancelling leaves the value unchanged.
   - **Without `releaseOnly`:** Values are sent immediately as the slider is moved. Confirming keeps the current value; cancelling reverts to the value before the dialog was opened.
 
@@ -555,17 +557,17 @@ On **touch-based devices** simply **tap the icons** corresponding to the desired
 
 ### Dynamic Sitemaps
 
-Of the available [Dynamic Sitemaps](/docs/ui/sitemaps.html#dynamic-sitemaps) features, the `visibility` parameter as well as label and icon colors are supported.
+Of the available [Dynamic Sitemaps]({{base}}/ui/sitemaps.html#dynamic-sitemaps) features, the `visibility` parameter as well as label and icon colors are supported.
 
 #### Visibility
 
-For usage details and examples, see the [visibility documentation](/docs/ui/sitemaps.html#visibility).
+For usage details and examples, see the [visibility documentation]({{base}}/ui/sitemaps.html#visibility).
 
 Here's an improved version with clearer phrasing, smoother flow, and a slightly more polished tone, while preserving the original structure:
 
 #### Label and Value Colors
 
-For usage details and examples, refer to the [label & value colors documentation](/docs/ui/sitemaps.html#label-value-and-icon-colors).
+For usage details and examples, refer to the [label & value colors documentation]({{base}}/ui/sitemaps.html#label-value-and-icon-colors).
 
 The app supports both `labelcolor` and `valuecolor` attributes. Color values can be specified using either hexadecimal color codes (e.g., `#FF0000`) or named colors (e.g., `red`) as listed in the documentation.
 
@@ -573,10 +575,10 @@ Here’s an example configuration:
 
 ```java
 sitemap garmin_demo label="My Home" {
-	Frame label="Entrance Gates" {
-		Switch item=Entrance_Gates_Power label="Open/Close" mappings=[OFF="", ON="DONE"]
-		Text item=Entrance_Gates_Status label="Status" valuecolor=[==OPEN="red", ==CLOSED="green", ==MOVING="yellow"]
-	}
+ Frame label="Entrance Gates" {
+  Switch item=Entrance_Gates_Power label="Open/Close" mappings=[OFF="", ON="DONE"]
+  Text item=Entrance_Gates_Status label="Status" valuecolor=[==OPEN="red", ==CLOSED="green", ==MOVING="yellow"]
+ }
 }
 ```
 
@@ -588,9 +590,9 @@ This results in the following display:
 
 #### Icons
 
-For detailed usage and examples, refer to the [sitemap icons documentation](/docs/ui/sitemaps.html#icons).
+For detailed usage and examples, refer to the [sitemap icons documentation]({{base}}/ui/sitemaps.html#icons).
 
-The Garmin app supports both the `icon` and `staticIcon` parameters, using a subset of the [classic icon set](/docs/configuration/iconsets/classic/).
+The Garmin app supports both the `icon` and `staticIcon` parameters, using a subset of the [classic icon set]({{base}}/configuration/iconsets/classic/).
 Where applicable, the app automatically selects an icon variant based on the item's state—for example, showing different icons for a light that is `ON` or `OFF`.
 
 Below is a screenshot illustrating this behavior:
@@ -604,20 +606,20 @@ The second menu item shows a filled lightbulb icon (indicating the light is ON),
 
 Currently supported icons are:
 
-* `batterylevel`
-* `blinds`
-* `door`
-* `garagedoor`
-* `humidity`
-* `light`
-* `lightbulb`
-* `lowbattery`
-* `poweroutlet`
-* `radiator`
-* `rollershutter`
-* `screen`
-* `slider`
-* `temperature`
+- `batterylevel`
+- `blinds`
+- `door`
+- `garagedoor`
+- `humidity`
+- `light`
+- `lightbulb`
+- `lowbattery`
+- `poweroutlet`
+- `radiator`
+- `rollershutter`
+- `screen`
+- `slider`
+- `temperature`
 
 More icons can be added upon request. If you need support for additional icons, please post a request in the [openHAB Community Discussion](https://community.openhab.org/t/openhab-for-garmin/163891).
 
@@ -625,8 +627,8 @@ More icons can be added upon request. If you need support for additional icons, 
 
 To access the settings menu:
 
-* On button-based devices, scroll down on the home screen and continue past the ⚙️ icon.
-* On touch-based devices, tap the ⚙️ **Settings** entry in the home screen menu.
+- On button-based devices, scroll down on the home screen and continue past the ⚙️ icon.
+- On touch-based devices, tap the ⚙️ **Settings** entry in the home screen menu.
 
 The settings menu currently displays the app version and server URL. Additional features may be added in the future when the app evolves.
 
@@ -643,33 +645,33 @@ This section explains how the app handles errors and lists common issues you mig
 
 The app distinguishes between **temporary (non-fatal)** and **critical (fatal)** errors:
 
-* **Non-fatal errors** trigger a toast notification at the top of the screen, allowing you to continue using the app.
-* **Fatal errors** display a full-screen error view, halting further use until the issue is resolved.
+- **Non-fatal errors** trigger a toast notification at the top of the screen, allowing you to continue using the app.
+- **Fatal errors** display a full-screen error view, halting further use until the issue is resolved.
 
 **Non-fatal errors include:**
 
-* Most communication-related issues when requesting the sitemap.
-* All communication-related issues when sending a command.
+- Most communication-related issues when requesting the sitemap.
+- All communication-related issues when sending a command.
 
 > Note: Non-fatal errors related to requesting the sitemap will become fatal if they persist for more than 10 seconds.
 
 **Immediately fatal errors include:**
 
-* Certain communication errors when requesting the sitemap, specifically:
+- Certain communication errors when requesting the sitemap, specifically:
 
-  * Error `-1001` (see below)
-  * HTTP error `404`
-* Errors encountered while parsing the sitemap.
-* Any other unexpected errors or exceptions.
+  - Error `-1001` (see below)
+  - HTTP error `404`
+- Errors encountered while parsing the sitemap.
+- Any other unexpected errors or exceptions.
 
 > Note: Even after a fatal error, the app continues querying the sitemap. If a response is successfully processed, it returns to displaying the sitemap.
 
 **If "Suppress Empty Response Errors" is enabled:**
 
-When this option is enabled in the [Settings](#-configuration), toast notifications for the following errors will be suppressed:
+When this option is enabled in the [Settings](#configuration), toast notifications for the following errors will be suppressed:
 
-* `INVRES` – Invalid response (error code `-400`)
-* `EMRES` – Empty response
+- `INVRES` – Invalid response (error code `-400`)
+- `EMRES` – Empty response
 
 However, if these errors persist for more than 10 seconds, they will be treated as fatal, and a full-screen error view will be shown.
 
@@ -679,14 +681,14 @@ To save space, communication errors shown in toast notifications follow this for
 
 `X:NNNNNN`
 
-* `X` indicates the source of the error:
+- `X` indicates the source of the error:
 
-  * `S` = sitemap polling
-  * `C` = command sending
-* `NNNNNN` is the error code:
+  - `S` = sitemap polling
+  - `C` = command sending
+- `NNNNNN` is the error code:
 
-  * Positive values = HTTP status codes
-  * Negative values = Garmin SDK error codes
+  - Positive values = HTTP status codes
+  - Negative values = Garmin SDK error codes
 
 For a full list of Garmin SDK error codes, see the **Constant Summary** section here:
 ➡️ [Garmin Communications API Docs](https://developer.garmin.com/connect-iq/api-docs/Toybox/Communications.html)
@@ -695,13 +697,13 @@ For a full list of Garmin SDK error codes, see the **Constant Summary** section 
 
 The following error codes are used for common communication issues and those without specific error codes:
 
-* `NO PHONE` – The watch is not connected to the smartphone (error codes `-104` and `-2`).
-* `INVRES` – The response was invalid (error code `-400`).
-* `EMRES` – The response was empty.
+- `NO PHONE` – The watch is not connected to the smartphone (error codes `-104` and `-2`).
+- `INVRES` – The response was invalid (error code `-400`).
+- `EMRES` – The response was empty.
 
 ### Common Issues
 
 | Error     | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
 |-----------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `C:415`   | HTTP response code **415** means *Unsupported Media Type*. This usually occurs when **Native REST API Support** is enabled in the [Configuration](#configuration), but your openHAB instance doesn’t support it. If you're using the [backport](#option-1-install-the-backport) and have recently updated openHAB to a newer version or installed a new binding, you may need to re-install the backport to restore compatibility.                                                                |
+| `C:415`   | HTTP response code **415** means _Unsupported Media Type_. This usually occurs when **Native REST API Support** is enabled in the [Configuration](#configuration), but your openHAB instance doesn’t support it. If you're using the backport (see [Sending Commands](#sending-commands) and have recently updated openHAB to a newer version or installed a new binding, you may need to re-install the backport to restore compatibility.                                                       |
 | `S:EMRES` | myopenHAB currently experiences an intermittent issue ([details here](https://github.com/openhab/openhab-cloud/issues/496)) where sitemap requests may return empty responses. When this happens, the app displays a non-fatal `S:EMRES` notification. Typically, the next request succeeds, so the issue doesn't escalate into a fatal error. To avoid seeing these notifications, you can enable the **Suppress empty response errors** option in the [Configuration](#configuration) settings. |
