@@ -1,6 +1,7 @@
 ---
 layout: documentation
 title: Garmin App
+description: connects your Garmin wearable to openHAB - the vendor and technology agnostic open source automation software
 source: https://github.com/openhab/openhab-garmin/blob/main/docs/USAGE.md
 ---
 
@@ -25,13 +26,17 @@ source: https://github.com/openhab/openhab-garmin/blob/main/docs/USAGE.md
 
 The **openHAB Garmin** app connects your Garmin wearable to your [openHAB](https://www.openhab.org) smart home system, giving you convenient access to essential devices and real-time information.
 
-<div style="display: flex; flex-direction: row;">
-  <a href="https://apps.garmin.com/apps/93fd8044-1cf4-450c-b8aa-1c80a6730d1a" target="_blank" class="external" style="margin-top: auto; margin-bottom: auto;">
+<br>
+
+<div style="display: flex; flex-direction: row; flex-wrap: wrap;">
+  <a href="https://apps.garmin.com/apps/93fd8044-1cf4-450c-b8aa-1c80a6730d1a" target="_blank" class="external" style="margin-top: auto; margin-bottom: auto; margin-right: 20px;">
     <img alt="Get it on Connect IQ Store" src="images/connect_iq_badge.svg" width="240px">
   </a>
-  <div style="margin-left: 20px;">
-    <p>➡️ <a href="https://community.openhab.org/t/openhab-for-garmin/163891" target="_blank">openHAB Community Discussion</a></p>
-    <p>➡️ <a href="https://github.com/openhab/openhab-garmin/issues" target="_blank" class="external">Report an Issue on GitHub</a></p>
+  <div>
+    <p>
+      ➡️ <a href="https://community.openhab.org/t/openhab-for-garmin/163891" target="_blank">openHAB Community Discussion</a><br>
+      ➡️ <a href="https://github.com/openhab/openhab-garmin/issues" target="_blank" class="external">Report an Issue on GitHub</a>
+    </p>
   </div>
 </div>
 
@@ -77,7 +82,9 @@ Once the app is installed, you can configure the following settings by opening i
 | **Supress empty response errors** | Suppress errors for empty sitemap responses. Recommended when using myopenhab.org, which occasionally returns empty results. See the related [openhab-cloud issue #496](https://github.com/openhab/openhab-cloud/issues/496) for details.                                                                                                                                                                                                                             |
 | **Polling Interval (ms)**         | Interval between data requests to your openHAB instance. Set to 0 to fetch new data immediately after the previous response is processed. Polling only occurs while the app is open, not in the background. If you're using **myopenhab.org**, it's recommended to use the default (3000 ms) or a higher value to avoid overloading their servers. If you're connecting to your own openHAB server directly, you may try setting it to 0 for more responsive updates. |
 
-![App Settings](images/app-settings/app-settings.png)
+<div style="display: flex; justify-content: center;">
+  <img src="images/app-settings/app-settings.png" alt="App Settings" style="max-width: 340px;">
+</div>
 
 ## Connectivity
 
@@ -199,10 +206,10 @@ if (action === "sendCommand") {
 }
 ```
 
-| Parameter | Description |
-|-----------|-------------|
-| `action`  | `"sendCommand"` or `"toggle"` |
-| `itemName` | Name of the item to control |
+| Parameter  | Description                         |
+|------------|-------------------------------------|
+| `action`   | `"sendCommand"` or `"toggle"`       |
+| `itemName` | Name of the item to control         |
 | `command`  | Command to send (for `sendCommand`) |
 
 #### 4. Test & Connect
