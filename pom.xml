@@ -29,9 +29,11 @@
           </execution>
         </executions>
       </plugin>
+      <!-- Clean Plugin -->
       <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-clean-plugin</artifactId>
-        <version>3.0.0</version>
+        <version>3.5.0</version>
         <configuration>
           <filesets>
             <fileset>
@@ -64,10 +66,13 @@
           </filesets>
         </configuration>
       </plugin>
+      <!-- Copy external resources into repo -->
       <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-resources-plugin</artifactId>
-        <version>3.0.2</version>
+        <version>3.3.1</version>
         <executions>
+          <!-- from openhab-addons repo -->
           <execution>
             <id>copy-automation-docs</id>
             <phase>process-resources</phase>
@@ -149,6 +154,65 @@
             </configuration>
           </execution>
           <execution>
+            <id>copy-voice-docs</id>
+            <phase>process-resources</phase>
+            <goals>
+              <goal>copy-resources</goal>
+            </goals>
+            <configuration>
+              <outputDirectory>${basedir}/_addons_voices</outputDirectory>
+              <resources>
+                <resource>
+                  <directory>${basedir}/.external-resources/openhab-addons/bundles</directory>
+                  <includes>
+                    <include>org.openhab.voice.*/**/README.md</include>
+                    <include>org.openhab.voice.*/**/doc/**</include>
+                    <include>org.openhab.voice.*/**/cfg/**</include>
+                  </includes>
+                </resource>
+              </resources>
+            </configuration>
+          </execution>
+          <execution>
+            <id>copy-io-docs</id>
+            <phase>process-resources</phase>
+            <goals>
+              <goal>copy-resources</goal>
+            </goals>
+            <configuration>
+              <outputDirectory>${basedir}/_addons_ios</outputDirectory>
+              <resources>
+                <resource>
+                  <directory>${basedir}/.external-resources/openhab-addons/bundles</directory>
+                  <includes>
+                    <include>org.openhab.io.*/**/README.md</include>
+                    <include>org.openhab.io.*/**/doc/**</include>
+                    <include>org.openhab.io.*/**/cfg/**</include>
+                  </includes>
+                </resource>
+              </resources>
+            </configuration>
+          </execution>
+          <execution>
+            <id>copy-thing-types</id>
+            <phase>process-resources</phase>
+            <goals>
+              <goal>copy-resources</goal>
+            </goals>
+            <configuration>
+              <outputDirectory>${basedir}/_thing_types</outputDirectory>
+              <resources>
+                <resource>
+                  <directory>${basedir}/.external-resources/openhab-addons/bundles</directory>
+                  <includes>
+                    <include>**/OH-INF/thing/**/*.xml</include>
+                  </includes>
+                </resource>
+              </resources>
+            </configuration>
+          </execution>
+          <!-- from openhab-webui repo -->
+          <execution>
             <id>copy-iconset-docs</id>
             <phase>process-resources</phase>
             <goals>
@@ -194,45 +258,25 @@
             </configuration>
           </execution>
           <execution>
-            <id>copy-voice-docs</id>
+            <id>copy-habpanel-config-docs</id>
             <phase>process-resources</phase>
             <goals>
               <goal>copy-resources</goal>
             </goals>
             <configuration>
-              <outputDirectory>${basedir}/_addons_voices</outputDirectory>
+              <outputDirectory>${basedir}/configuration</outputDirectory>
               <resources>
                 <resource>
-                  <directory>${basedir}/.external-resources/openhab-addons/bundles</directory>
+                  <directory>${basedir}/.external-resources/openhab-webui/bundles/org.openhab.ui.habpanel/doc</directory>
                   <includes>
-                    <include>org.openhab.voice.*/**/README.md</include>
-                    <include>org.openhab.voice.*/**/doc/**</include>
-                    <include>org.openhab.voice.*/**/cfg/**</include>
+                    <include>habpanel.md</include>
+                    <include>images/*.png</include>
                   </includes>
                 </resource>
               </resources>
             </configuration>
           </execution>
-          <execution>
-            <id>copy-io-docs</id>
-            <phase>process-resources</phase>
-            <goals>
-              <goal>copy-resources</goal>
-            </goals>
-            <configuration>
-              <outputDirectory>${basedir}/_addons_ios</outputDirectory>
-              <resources>
-                <resource>
-                  <directory>${basedir}/.external-resources/openhab-addons/bundles</directory>
-                  <includes>
-                    <include>org.openhab.io.*/**/README.md</include>
-                    <include>org.openhab.io.*/**/doc/**</include>
-                    <include>org.openhab.io.*/**/cfg/**</include>
-                  </includes>
-                </resource>
-              </resources>
-            </configuration>
-          </execution>
+          <!-- from openhabian repo -->
           <execution>
             <id>copy-openhabian-install-docs</id>
             <phase>process-resources</phase>
@@ -255,25 +299,7 @@
               </resources>
             </configuration>
           </execution>
-          <execution>
-            <id>copy-habpanel-config-docs</id>
-            <phase>process-resources</phase>
-            <goals>
-              <goal>copy-resources</goal>
-            </goals>
-            <configuration>
-              <outputDirectory>${basedir}/configuration</outputDirectory>
-              <resources>
-                <resource>
-                  <directory>${basedir}/.external-resources/openhab-webui/bundles/org.openhab.ui.habpanel/doc</directory>
-                  <includes>
-                    <include>habpanel.md</include>
-                    <include>images/*.png</include>
-                  </includes>
-                </resource>
-              </resources>
-            </configuration>
-          </execution>
+          <!-- from openhab-android repo (images only) -->
           <execution>
             <id>copy-android-images</id>
             <phase>process-resources</phase>
@@ -292,6 +318,7 @@
               </resources>
             </configuration>
           </execution>
+          <!-- from openhab-google-assistant-repo (images only) -->
           <execution>
             <id>copy-google-assistant-images</id>
             <phase>process-resources</phase>
@@ -310,6 +337,7 @@
               </resources>
             </configuration>
           </execution>
+          <!-- from openhab-alexa repo (images only) -->
           <execution>
             <id>copy-alexa-images</id>
             <phase>process-resources</phase>
@@ -328,26 +356,9 @@
               </resources>
             </configuration>
           </execution>
-          <execution>
-            <id>copy-thing-types</id>
-            <phase>process-resources</phase>
-            <goals>
-              <goal>copy-resources</goal>
-            </goals>
-            <configuration>
-              <outputDirectory>${basedir}/_thing_types</outputDirectory>
-              <resources>
-                <resource>
-                  <directory>${basedir}/.external-resources/openhab-addons/bundles</directory>
-                  <includes>
-                    <include>**/OH-INF/thing/**/*.xml</include>
-                  </includes>
-                </resource>
-              </resources>
-            </configuration>
-          </execution>
         </executions>
       </plugin>
+      <!-- Copy & Rename external sources into repo -->
       <plugin>
         <groupId>com.coderplus.maven.plugins</groupId>
         <artifactId>copy-rename-maven-plugin</artifactId>
@@ -399,6 +410,7 @@
           </execution>
         </executions>
       </plugin>
+      <!-- Run Groovy scripts -->
       <plugin>
         <groupId>org.codehaus.gmavenplus</groupId>
         <artifactId>gmavenplus-plugin</artifactId>
