@@ -29,11 +29,16 @@ There are three toggle buttons that allow the block to be small for simple reque
 - H: enables the header option and allows to provide headers during the request via a [Dictionary](rules-blockly-standard-ext.md#dictionary-for-managing-key--value-pairs)
 - Q: enables the query option and allows to provide URI query parameters during the request via a [Dictionary](rules-blockly-standard-ext.md#dictionary-for-managing-key--value-pairs), the query parameters will be URI encoded
 
+**Query Parameters** are used to provide additional information to the server, for example, to filter results or specify options for the request.
+These are typically provided in the URI as key-value pairs, like `?key1=value1&key2=value2`.
+Instead of manually constructing the URI with query parameters, you can use the query option to provide a [Dictionary](rules-blockly-standard-ext.md#dictionary-for-managing-key--value-pairs) of query parameters, which will be automatically URI encoded.
+
 ### HTTP Request GET
 
 _Function:_ Send an HTTP GET request to a server and receive the response
 
-The simplest form is shown by default and accepts the destination URI as String.
+The simplest form is shown by default and accepts the destination URI as String, e.g., GET `http://openhab.org.
+See below for an example of a GET request with query parameters (like`<http://example.com/api?param1=value1&param2=value2`>).
 
 ![http-get-simple](../images/blockly/blockly-http-get-simple.png)
 
@@ -44,6 +49,22 @@ The provided parameters will automatically be URI encoded.
 Here is an example also using a query parameter.
 
 ![http-get-complex](../images/blockly/blockly-http-get-complex.png)
+
+Another example shows how several query parameters can be provided using a [Dictionary](rules-blockly-standard-ext.md#dictionary-for-managing-key--value-pairs):
+
+If you want to send a request with parameters like `http://example.com/api?param1=value1&param2=value2`, the request can be constructed as follows:
+
+- URI: <http://example.com/api> with two query parameters `param1` and `param2`
+  - where `param1` has a value that contains special characters, like `EncodedValueWithSpecialCharacters->!`
+  - and `param2` has a value of `value2`
+
+you can use the following block:
+
+![blockly-http-get-params.png](../images/blockly/blockly-http-get-params.png)
+
+which results in the following request:
+
+> <http://example.com/api?param1=EncodedValueWithSpecialCharacters-%3E!&param2=value2>
 
 See the [POST-Request](#http-request-post) below for an example showing the use additional fields.
 
