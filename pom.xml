@@ -69,13 +69,13 @@
         <version>3.0.2</version>
         <executions>
           <execution>
-            <id>copy-oh3-automation-docs</id>
+            <id>copy-automation-docs</id>
             <phase>process-resources</phase>
             <goals>
               <goal>copy-resources</goal>
             </goals>
             <configuration>
-              <outputDirectory>${basedir}/_addons_automation/oh3</outputDirectory>
+              <outputDirectory>${basedir}/_addons_automation</outputDirectory>
               <resources>
                 <resource>
                   <directory>${basedir}/.external-resources/openhab-addons/bundles</directory>
@@ -89,13 +89,13 @@
             </configuration>
           </execution>
           <execution>
-            <id>copy-oh3-binding-docs</id>
+            <id>copy-binding-docs</id>
             <phase>process-resources</phase>
             <goals>
               <goal>copy-resources</goal>
             </goals>
             <configuration>
-              <outputDirectory>${basedir}/_addons_bindings/oh3</outputDirectory>
+              <outputDirectory>${basedir}/_addons_bindings</outputDirectory>
               <resources>
                 <resource>
                   <directory>${basedir}/.external-resources/openhab-addons/bundles</directory>
@@ -109,13 +109,13 @@
             </configuration>
           </execution>
           <execution>
-            <id>copy-oh3-persistence-docs</id>
+            <id>copy-persistence-docs</id>
             <phase>process-resources</phase>
             <goals>
               <goal>copy-resources</goal>
             </goals>
             <configuration>
-              <outputDirectory>${basedir}/_addons_persistences/oh3</outputDirectory>
+              <outputDirectory>${basedir}/_addons_persistences</outputDirectory>
               <resources>
                 <resource>
                   <directory>${basedir}/.external-resources/openhab-addons/bundles</directory>
@@ -135,7 +135,7 @@
               <goal>copy-resources</goal>
             </goals>
             <configuration>
-              <outputDirectory>${basedir}/_addons_transformations/oh3</outputDirectory>
+              <outputDirectory>${basedir}/_addons_transformations</outputDirectory>
               <resources>
                 <resource>
                   <directory>${basedir}/.external-resources/openhab-addons/bundles</directory>
@@ -155,7 +155,7 @@
               <goal>copy-resources</goal>
             </goals>
             <configuration>
-              <outputDirectory>${basedir}/_addons_iconsets/oh3/classic</outputDirectory>
+              <outputDirectory>${basedir}/_addons_iconsets/classic</outputDirectory>
               <resources>
                 <resource>
                   <directory>${basedir}/.external-resources/openhab-webui/bundles/org.openhab.ui.iconset.classic</directory>
@@ -174,7 +174,7 @@
               <goal>copy-resources</goal>
             </goals>
             <configuration>
-              <outputDirectory>${basedir}/_addons_uis/oh3</outputDirectory>
+              <outputDirectory>${basedir}/_addons_uis</outputDirectory>
               <resources>
                 <resource>
                   <directory>${basedir}/.external-resources/openhab-webui/bundles</directory>
@@ -200,7 +200,7 @@
               <goal>copy-resources</goal>
             </goals>
             <configuration>
-              <outputDirectory>${basedir}/_addons_voices/oh3</outputDirectory>
+              <outputDirectory>${basedir}/_addons_voices</outputDirectory>
               <resources>
                 <resource>
                   <directory>${basedir}/.external-resources/openhab-addons/bundles</directory>
@@ -214,13 +214,13 @@
             </configuration>
           </execution>
           <execution>
-            <id>copy-oh3-io-docs</id>
+            <id>copy-io-docs</id>
             <phase>process-resources</phase>
             <goals>
               <goal>copy-resources</goal>
             </goals>
             <configuration>
-              <outputDirectory>${basedir}/_addons_ios/oh3</outputDirectory>
+              <outputDirectory>${basedir}/_addons_ios</outputDirectory>
               <resources>
                 <resource>
                   <directory>${basedir}/.external-resources/openhab-addons/bundles</directory>
@@ -299,7 +299,7 @@
               <goal>copy-resources</goal>
             </goals>
             <configuration>
-              <outputDirectory>${basedir}/_addons_ios/ext/google-assistant</outputDirectory>
+              <outputDirectory>${basedir}/_ecosystem/google-assistant</outputDirectory>
               <resources>
                 <resource>
                   <directory>${basedir}/.external-resources/openhab-google-assistant/docs</directory>
@@ -317,7 +317,7 @@
               <goal>copy-resources</goal>
             </goals>
             <configuration>
-              <outputDirectory>${basedir}/_addons_ios/ext/alexa-skill</outputDirectory>
+              <outputDirectory>${basedir}/_ecosystem/alexa-skill</outputDirectory>
               <resources>
                 <resource>
                   <directory>${basedir}/.external-resources/openhab-alexa/docs</directory>
@@ -354,7 +354,7 @@
         <version>1.0</version>
         <executions>
           <execution>
-            <id>copy-oh-android-docs</id>
+            <id>copy-android-docs</id>
             <phase>process-resources</phase>
             <goals>
               <goal>copy</goal>
@@ -365,36 +365,36 @@
             </configuration>
           </execution>
           <execution>
-            <id>copy-oh-mycroft-docs</id>
+            <id>copy-mycroft-docs</id>
             <phase>process-resources</phase>
             <goals>
               <goal>copy</goal>
             </goals>
             <configuration>
               <sourceFile>${basedir}/.external-resources/openhab-mycroft/USAGE.md</sourceFile>
-              <destinationFile>${basedir}/_addons_ios/ext/mycroft-skill/readme.md</destinationFile>
+              <destinationFile>${basedir}/_ecosystem/ext/mycroft-skill/readme.md</destinationFile>
             </configuration>
           </execution>
           <execution>
-            <id>copy-oh-alexa-docs</id>
+            <id>copy-alexa-docs</id>
             <phase>process-resources</phase>
             <goals>
               <goal>copy</goal>
             </goals>
             <configuration>
               <sourceFile>${basedir}/.external-resources/openhab-alexa/docs/USAGE.md</sourceFile>
-              <destinationFile>${basedir}/_addons_ios/ext/alexa-skill/readme.md</destinationFile>
+              <destinationFile>${basedir}/_ecosystem/alexa-skill/readme.md</destinationFile>
             </configuration>
           </execution>
           <execution>
-            <id>copy-oh-google-assistant-docs</id>
+            <id>copy-google-assistant-docs</id>
             <phase>process-resources</phase>
             <goals>
               <goal>copy</goal>
             </goals>
             <configuration>
               <sourceFile>${basedir}/.external-resources/openhab-google-assistant/docs/USAGE.md</sourceFile>
-              <destinationFile>${basedir}/_addons_ios/ext/google-assistant/readme.md</destinationFile>
+              <destinationFile>${basedir}/_ecosystem/google-assistant/readme.md</destinationFile>
             </configuration>
           </execution>
         </executions>
