@@ -299,6 +299,27 @@
               </resources>
             </configuration>
           </execution>
+          <!-- from openhab-garmin repo -->
+          <execution>
+            <id>copy-garmin-docs</id>
+            <phase>process-resources</phase>
+            <goals>
+              <goal>copy-resources</goal>
+            </goals>
+            <configuration>
+              <outputDirectory>${basedir}/addons/uis/apps/garmin</outputDirectory>
+              <resources>
+                <resource>
+                  <directory>${basedir}/.external-resources/openhab-garmin/docs</directory>
+                  <includes>
+                    <include>README.md</include>
+                    <include>images/**/*.png</include>
+                    <include>images/**/*.svg</include>
+                  </includes>
+                </resource>
+              </resources>
+            </configuration>
+          </execution>
           <!-- from openhab-android repo (images only) -->
           <execution>
             <id>copy-android-images</id>

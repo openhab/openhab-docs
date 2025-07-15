@@ -58,6 +58,7 @@ pull_or_clone_repo "openhab-google-assistant" "openhab/openhab-google-assistant.
 pull_or_clone_repo "openhab-webui" "openhab/openhab-webui.git" main
 pull_or_clone_repo "openhab-addons/bundles/org.openhab.binding.zigbee" "openhab/org.openhab.binding.zigbee.git" main
 pull_or_clone_repo "openhab-addons/bundles/org.openhab.binding.zwave" "openhab/org.openhab.binding.zwave.git" main
+pull_or_clone_repo "openhab-garmin" "openhab/openhab-garmin.git" main
 # copy zigbee readme to where the groovy script will see it
 cp $resourcefolder/openhab-addons/bundles/org.openhab.binding.zigbee/org.openhab.binding.zigbee/README.md $resourcefolder/openhab-addons/bundles/org.openhab.binding.zigbee/
 #rm -rf openhab-addons/bundles/org.openhab.binding.zwave
