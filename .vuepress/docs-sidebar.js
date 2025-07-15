@@ -185,8 +185,9 @@ module.exports = [
       },
       ['ui/components/', 'Component Reference'],
       'ui/habpanel/habpanel',
-      ['apps/android', 'Android App'],
+      'apps/android',
       'apps/ios',
+      'apps/garmin/',
       'apps/windows'
     ]
   },
