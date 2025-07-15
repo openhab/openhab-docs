@@ -6,6 +6,7 @@ def add_placeholder_pages()
         "addons/integrations/homekit",
         "addons/integrations/openhabcloud",
         "docs/apps/android.md",
+        "docs/apps/garmin",
         "docs/configuration/habpanel",
         "docs/configuration/iconsets/classic",
         "docs/ui/components",
