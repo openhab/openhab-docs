@@ -79,7 +79,8 @@ items:
 
   TV_Volume:
     type: Dimmer
-    label: Volume [%d]
+    label: Volume # Label must not contain a format pattern
+    format: "%d" # Values starting with a percent sign must be quoted
     channel: lgwebos:WebOSTV:3aab9eea-953b-4272-bdbd-f0cd0ecf4a46:volume
 ```
 
@@ -100,7 +101,7 @@ things:
     location: <Location>
     config:
       <config key>: <config value>
-    channels: # To define custom channels if necessary
+    channels: # To set channel config or define custom channels
       <channel_id>:
         type: <channel type>
         kind: state|trigger # Default: state
@@ -120,7 +121,7 @@ things:
 | `label`           | Thing label.                                                                                                                                    |
 | `location`        | The location of the Thing.                                                                                                                      |
 | `config`          | A key-value map of the Thing's configuration. Refer to the Binding's documentation for details.                                                 |
-| `channels`        | A map of custom channels. Most bindings provide a set of built-in channels automatically, so this is not always needed.                         |
+| `channels`        | Configure built-in channel parameters, or define custom channels.                                                                               |
 
 Channel Map:
 
@@ -128,8 +129,8 @@ Channel Map:
 |:--------------------------|:-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `<channel_id>`            | The channel ID. It is a single word that when combined with the Thing UID forms the full channel UID.                                                                                |
 | `type`                    | Channel type as defined by the Binding. When the channel type is defined, `kind`, `itemType`, and `itemDimension` should not be defined because the channel type will override them. |
-| `kind`                    | Whether it's a State channel or a Trigger channel. Default: `state`                                                                                                                  |
-| `itemType`                | The item type that this channel can be linked to. Usually this is defined by the binding when channel `type` is defined.                                                             |
+| `kind`                    | Whether it's a `state` channel or a `trigger` channel. Default: `state`                                                                                                              |
+| `itemType`                | The item type that this channel can be linked to. It is required when the channel type is not defined.                                                                               |
 | `itemDimension`           | This may be used to further define a `Number` `itemType`.                                                                                                                            |
 | `label`                   | Channel label.                                                                                                                                                                       |
 | `description`             | Channel description.                                                                                                                                                                 |
@@ -207,13 +208,13 @@ items:
     tags:
       - tag1
       - tag2
-    format: <format pattern> # short form for state description's pattern
+    format: <format pattern> # short form for state description's pattern metadata
     unit: <unit> # short form for the unit metadata
     autoupdate: true|false # short form for the autoupdate metadata
-    channel: <channel_uid> # short form to link to a single channel without a profile
-    channels: # long form to link to multiple channels or to assign a profile to a link
+    channel: <channel_uid> # short form to link to a single channel
+    channels: # long form to link to multiple channels or to add link config
       <channel_uid>:
-        # the item-channel link configuration is defined here as a key-value map
+        # the item-channel link configuration (e.g. profile) is defined here as a key-value map
         <config key>: <config value>
     metadata:
       <metadata_key>:
@@ -222,21 +223,22 @@ items:
           <config key>: <config value>
 ```
 
-| Configuration Key | Description                                                                                                                                                                                                                                                                      |
-|:------------------|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `type`            | Valid [item type]({{base}}/configuration/items.html#type) (mandatory).                                                                                                                                                                                                           |
-| `dimension`       | For dimensioned `Number` items, the `item type` must be set to just `Number`, and the dimension is set separately using this key. Valid dimensions are listed under the **Type** column in the [List of Units]({{base}}/concepts/units-of-measurement.html#list-of-units) table. |
-| `group`           | This key allows defining the group type, dimension and function. For more details, see [Derive Group State from Member Items]({{base}}/configuration/items.html#derive-group-state-from-member-items).                                                                           |
-| `label`           | Item label. Unlike the DSL syntax in an `.items` file, the label here must only contain the label without any formatting syntax.                                                                                                                                                 |
-| `icon`            | The item's icon.                                                                                                                                                                                                                                                                 |
-| `groups`          | The list of parent group names.                                                                                                                                                                                                                                                  |
-| `tags`            | The list of tags. This can contain both semantic tags and non-semantic tags.                                                                                                                                                                                                     |
-| `format`          | A short form for the `stateDescription` `pattern` metadata. This is the equivalent of the format enclosed in square brackets in DSL's item label.                                                                                                                                |
-| `unit`            | A short form for the `unit` metadata, to define the item's unit.                                                                                                                                                                                                                 |
-| `autoupdate`      | A short form for the `autoupdate` metadata. Valid values are: `true` or `false`.                                                                                                                                                                                                 |
-| `channel`         | A short form for the `channels` list to define a linked channel UID for when there is only one channel with a blank config.                                                                                                                                                      |
-| `channels`        | A key-value map to define the channels linked from this item. The key is the channel uid to link to, and the value is the link configuration as a key-value map. When no configuration is required, an empty map `{}` must be used as the value.                                 |
-| `metadata`        | A key-value map to define item metadata. The metadata defined in here overrides any short forms when both are specified.                                                                                                                                                         |
+| Configuration Key | Description                                                                                                                                                                                                                                                                             |
+|:------------------|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `<ItemName>`      | The unique name to refer to the item, e.g. in rules. The item name must start with an alphabet or underscore (`A`-`Z`, `a`-`z`, or `_`), optionally followed by one or more alphabet, underscore or digits (`0`-`9`). It is checked against the regex pattern `[a-zA-Z_][a-zA-Z0-9_]*`. |
+| `type`            | Valid [item type]({{base}}/configuration/items.html#type) (mandatory, case-insensitive).                                                                                                                                                                                                |
+| `dimension`       | For dimensioned `Number` items, the `item type` must be set to just `Number`, and the dimension is set separately using this key. Valid dimensions are listed under the **Type** column in the [List of Units]({{base}}/concepts/units-of-measurement.html#list-of-units) table.        |
+| `group`           | This key allows defining the group type, dimension and function. For more details, see [Derive Group State from Member Items]({{base}}/configuration/items.html#derive-group-state-from-member-items).                                                                                  |
+| `label`           | Item label. Unlike the DSL syntax in an `.items` file, the label here must only contain the label without any formatting syntax.                                                                                                                                                        |
+| `icon`            | The item's [icon]({{base}}/configuration/items.html#icons). The syntax is described in [icon-sources]({{base}}/configuration/items.html#icon-sources).                                                                                                                                  |
+| `groups`          | The list of parent group names.                                                                                                                                                                                                                                                         |
+| `tags`            | The list of tags. This can contain both semantic tags and non-semantic tags.                                                                                                                                                                                                            |
+| `format`          | A short form for the `stateDescription` `pattern` metadata. This is the equivalent of the format enclosed in square brackets in DSL's item label.                                                                                                                                       |
+| `unit`            | A short form for the `unit` metadata, to define the item's unit.                                                                                                                                                                                                                        |
+| `autoupdate`      | A short form for the `autoupdate` metadata. Valid values are: `true` or `false`.                                                                                                                                                                                                        |
+| `channel`         | A short form for the `channels` list to define a linked channel UID for when there is only one channel with a blank config.                                                                                                                                                             |
+| `channels`        | A key-value map to define the channels linked to this item. The key is the channel uid to link to, and the value is the link configuration as a key-value map. When no configuration is required, an empty map `{}` must be used as the value.                                          |
+| `metadata`        | A key-value map to define item metadata. The metadata defined in here overrides any short forms when both are specified.                                                                                                                                                                |
 
 Example:
 
@@ -244,9 +246,15 @@ Example:
 version: 1
 
 items:
-  BedRoom1_Switch:
+  lBedroom1:
     type: Group
-    label: Bedroom1 Light Bulb
+    label: Bedroom 1
+    tags:
+      - Bedroom
+
+  BedRoom1_WallSwitch:
+    type: Group
+    label: Bedroom1 Light Wall Switch
     groups:
       - lBedroom1
     tags:
@@ -254,19 +262,19 @@ items:
 
   BedRoom1_Light_Switch:
     type: Switch
-    label: Bed Room1 Light Switch
+    label: Bedroom1 Light Switch
     icon: switch
     format: '%s'
     groups:
-      - BedRoom1_Light_Bulb
+      - BedRoom1_WallSwitch
     tags:
       - Switch
     channel: mqtt:topic:bedroom1-switch:switch1
 
-  BedRoom1_Switch_StatusLED:
+  BedRoom1_WallSwitch_StatusLED:
     type: Switch
     groups:
-      - BedRoom1_Switch_Group
+      - BedRoom1_WallSwitch
     channels:
       mqtt:topic:bedroom1-switch:statusled:
         # The configuration of this item-channel link is defined below
