@@ -305,27 +305,6 @@
               </resources>
             </configuration>
           </execution>
-          <!-- from openhab-garmin repo -->
-          <execution>
-            <id>copy-garmin-docs</id>
-            <phase>process-resources</phase>
-            <goals>
-              <goal>copy-resources</goal>
-            </goals>
-            <configuration>
-              <outputDirectory>${basedir}/addons/uis/apps/garmin</outputDirectory>
-              <resources>
-                <resource>
-                  <directory>${basedir}/.external-resources/openhab-garmin/docs</directory>
-                  <includes>
-                    <include>README.md</include>
-                    <include>images/**/*.png</include>
-                    <include>images/**/*.svg</include>
-                  </includes>
-                </resource>
-              </resources>
-            </configuration>
-          </execution>
           <!-- from openhab-android repo (images only) -->
           <execution>
             <id>copy-android-images</id>
@@ -340,6 +319,27 @@
                   <directory>${basedir}/.external-resources/openhab-android/docs</directory>
                   <includes>
                     <include>images/*.png</include>
+                  </includes>
+                </resource>
+              </resources>
+            </configuration>
+          </execution>
+          <!-- from openhab-garmin repo (images only) -->
+          <execution>
+            <id>copy-garmin-images</id>
+            <phase>process-resources</phase>
+            <goals>
+              <goal>copy-resources</goal>
+            </goals>
+            <configuration>
+              <outputDirectory>${basedir}/addons/uis/apps/garmin</outputDirectory>
+              <resources>
+                <resource>
+                  <directory>${basedir}/.external-resources/openhab-garmin/docs</directory>
+                  <includes>
+                    <include>images/**/*.png</include>
+                    <include>images/**/*.svg</include>
+                    <include>images/**/*.bmp</include>
                   </includes>
                 </resource>
               </resources>
@@ -400,6 +400,17 @@
             <configuration>
               <sourceFile>${basedir}/.external-resources/openhab-android/docs/USAGE.md</sourceFile>
               <destinationFile>${basedir}/addons/uis/apps/android.md</destinationFile>
+            </configuration>
+          </execution>
+          <execution>
+            <id>copy-garmin-docs</id>
+            <phase>process-resources</phase>
+            <goals>
+              <goal>copy</goal>
+            </goals>
+            <configuration>
+              <sourceFile>${basedir}/.external-resources/openhab-garmin/docs/USAGE.md</sourceFile>
+              <destinationFile>${basedir}/addons/uis/apps/garmin/readme.md</destinationFile>
             </configuration>
           </execution>
           <execution>
