@@ -4,7 +4,6 @@ label: IpObserver
 title: IpObserver - Bindings
 type: binding
 description: "This binding is for any weather station that sends data to an IP Observer module."
-since: 3x
 logo: images/addons/ipobserver.png
 install: auto
 ---

@@ -4,7 +4,6 @@ label: SunSynk
 title: SunSynk - Bindings
 type: binding
 description: "This binding integrates the [Sun Synk Connect web services](https://www.sunsynk.net/)."
-since: 3x
 logo: images/addons/sunsynk.svg
 install: auto
 ---

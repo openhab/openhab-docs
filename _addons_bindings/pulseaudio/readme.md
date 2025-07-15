@@ -4,7 +4,6 @@ label: Pulseaudio
 title: Pulseaudio - Bindings
 type: binding
 description: "This binding integrates pulseaudio devices."
-since: 3x
 logo: images/addons/pulseaudio.png
 install: auto
 ---

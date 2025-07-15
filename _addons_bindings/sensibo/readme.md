@@ -4,7 +4,6 @@ label: Sensibo
 title: Sensibo - Bindings
 type: binding
 description: "This binding integrates the Sensibo Sky aircondition remote control"
-since: 3x
 install: auto
 ---
 

@@ -4,7 +4,6 @@ label: Digiplex/EVO
 title: Digiplex/EVO - Bindings
 type: binding
 description: "This binding provides integration with Digiplex/EVO alarm systems from [Paradox](https://paradox.com)."
-since: 3x
 logo: images/addons/digiplex.png
 install: auto
 ---

@@ -4,7 +4,6 @@ label: iAquaLink
 title: iAquaLink - Bindings
 type: binding
 description: "This binding supports:"
-since: 3x
 logo: images/addons/iaqualink.png
 install: auto
 ---

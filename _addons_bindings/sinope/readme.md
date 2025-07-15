@@ -4,7 +4,6 @@ label: Sinopé
 title: Sinopé - Bindings
 type: binding
 description: "The integration happens through the Sinopé (GT150) bridge, which acts as an IP gateway to the Sinopé devices on the 916 Mhz ISM band."
-since: 3x
 install: auto
 ---
 

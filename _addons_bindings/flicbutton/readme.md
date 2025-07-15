@@ -4,7 +4,6 @@ label: Flic Button
 title: Flic Button - Bindings
 type: binding
 description: "openHAB binding for using [Flic Buttons](https://flic.io/)"
-since: 3x
 logo: images/addons/flicbutton.png
 install: auto
 ---

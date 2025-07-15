@@ -4,7 +4,6 @@ label: Rotel
 title: Rotel - Bindings
 type: binding
 description: "This binding can be used to control a Rotel audio device like a surround processor, a surround receiver, a stereo preamplifier, an integrated amplifier, a CD player or a tuner."
-since: 3x
 install: auto
 ---
 

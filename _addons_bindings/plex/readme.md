@@ -4,7 +4,6 @@ label: PLEX
 title: PLEX - Bindings
 type: binding
 description: "This binding can read information from multiple PLEX players connected to a PLEX server."
-since: 3x
 logo: images/addons/plex.png
 install: auto
 ---

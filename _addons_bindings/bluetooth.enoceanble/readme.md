@@ -4,7 +4,6 @@ label: EnOcean BLE
 title: EnOcean BLE - Bindings
 type: binding
 description: "This binding adds support for the"
-since: 3x
 install: manual
 ---
 

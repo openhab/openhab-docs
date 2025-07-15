@@ -4,7 +4,6 @@ label: NZ Water Alerts
 title: NZ Water Alerts - Bindings
 type: binding
 description: "Get Water Alert Levels for cities in New Zealand."
-since: 3x
 install: auto
 ---
 

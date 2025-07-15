@@ -4,7 +4,6 @@ label: SenseEnergy
 title: SenseEnergy - Bindings
 type: binding
 description: "This binding supports the Sense Energy monitor (sense.com) which can be used to provide accurate energy usage statistics in the home."
-since: 3x
 install: auto
 ---
 

@@ -4,7 +4,6 @@ label: Nikobus
 title: Nikobus - Bindings
 type: binding
 description: "This binding allows openHAB to interact with the Nikobus home automation system."
-since: 3x
 logo: images/addons/nikobus.png
 install: auto
 ---

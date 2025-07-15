@@ -4,7 +4,6 @@ label: Haas Sohn Pellet Stove
 title: Haas Sohn Pellet Stove - Bindings
 type: binding
 description: "The binding for Haassohnpelletstove communicates with a Haas and Sohn Pelletstove through the optional"
-since: 3x
 logo: images/addons/haassohnpelletstove.png
 install: auto
 ---

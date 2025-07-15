@@ -4,7 +4,6 @@ label: Home Assistant MQTT Components
 title: Home Assistant MQTT Components - Bindings
 type: binding
 description: "NOTE: This binding is provided by the [MQTT binding](https://www.openhab.org/addons/bindings/mqtt/), and therefore no explicit installation is necessary beyond installing the MQTT binding."
-since: 3x
 install: manual
 ---
 

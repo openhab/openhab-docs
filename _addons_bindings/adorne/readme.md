@@ -4,7 +4,6 @@ label: Adorne
 title: Adorne - Bindings
 type: binding
 description: "The Adorne Binding integrates [Adorne Wi-Fi ready devices](https://www.legrand.us/adorne/products/wireless-whole-house-lighting-controls.aspx) (switches, dimmers, outlets) from [Legrand](https://legrand.com/)."
-since: 3x
 install: auto
 ---
 

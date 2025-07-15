@@ -4,7 +4,6 @@ label: Omnik Inverter
 title: Omnik Inverter - Bindings
 type: binding
 description: "This binding reads metrics from Omnik Solar Inverters."
-since: 3x
 install: auto
 ---
 

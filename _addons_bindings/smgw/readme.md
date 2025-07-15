@@ -4,7 +4,6 @@ label: PPC SMGW
 title: PPC SMGW - Bindings
 type: binding
 description: "The PPC SMGW binding adds support for PPC Smart Meter Gateways."
-since: 3x
 install: auto
 ---
 

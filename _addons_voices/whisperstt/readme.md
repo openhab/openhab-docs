@@ -4,7 +4,6 @@ label: Whisper Speech-to-Text
 title: Whisper Speech-to-Text - Voices
 type: voice
 description: "Whisper STT Service uses [whisper.cpp](https://github.com/ggerganov/whisper.cpp) to perform offline speech-to-text in openHAB."
-since: 3x
 install: auto
 ---
 

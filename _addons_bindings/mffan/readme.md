@@ -4,7 +4,6 @@ label: MfFan
 title: MfFan - Bindings
 type: binding
 description: "This binding is used to enable communications between openHAB and 'Modern Forms' or 'WAC Lighting' WIFI connected, smart, ceiling fans."
-since: 3x
 install: auto
 ---
 

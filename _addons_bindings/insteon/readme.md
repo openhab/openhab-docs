@@ -4,7 +4,6 @@ label: Insteon
 title: Insteon - Bindings
 type: binding
 description: "Insteon is a proprietary home automation system that enables light switches, lights, thermostats, leak sensors, remote controls, motion sensors, and other electrically powered devices to interoperate through power lines, radio frequency (RF) communications, or both (dual-band)"
-since: 3x
 logo: images/addons/insteon.png
 install: auto
 ---

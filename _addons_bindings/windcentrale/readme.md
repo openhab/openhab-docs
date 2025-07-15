@@ -4,7 +4,6 @@ label: Windcentrale
 title: Windcentrale - Bindings
 type: binding
 description: "This Binding is used to display the details of Windcentrale windmills."
-since: 3x
 logo: images/addons/windcentrale.png
 install: auto
 ---

@@ -4,7 +4,6 @@ label: Daikin
 title: Daikin - Bindings
 type: binding
 description: "The Daikin binding allows you to control your Daikin air conditioning units with openHAB."
-since: 3x
 logo: images/addons/daikin.png
 install: auto
 ---

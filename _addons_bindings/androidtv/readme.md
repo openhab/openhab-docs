@@ -4,7 +4,6 @@ label: AndroidTV
 title: AndroidTV - Bindings
 type: binding
 description: "This binding is designed to emulate different protocols to interact with the AndroidTV platform."
-since: 3x
 logo: images/addons/androidtv.png
 install: auto
 ---

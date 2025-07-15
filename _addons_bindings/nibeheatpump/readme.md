@@ -4,7 +4,6 @@ label: Nibe Heatpump
 title: Nibe Heatpump - Bindings
 type: binding
 description: "The Nibe Heatpump binding is used to get live data from Nibe heat pumps without using an expensive MODBUS40 adapter."
-since: 3x
 logo: images/addons/nibeheatpump.png
 install: auto
 ---

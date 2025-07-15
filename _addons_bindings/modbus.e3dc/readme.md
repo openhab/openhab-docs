@@ -4,7 +4,6 @@ label: E3DC
 title: E3DC - Bindings
 type: binding
 description: "Integrates the Home Power Plants from E3/DC GmbH into openHAB."
-since: 3x
 logo: images/addons/modbus.e3dc.png
 install: manual
 ---

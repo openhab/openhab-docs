@@ -4,7 +4,6 @@ label: Rustpotter Keyword Spotter
 title: Rustpotter Keyword Spotter - Voices
 type: voice
 description: "This voice service allows you to use the open source library Rustpotter as your keyword spotter in openHAB."
-since: 3x
 logo: images/addons/rustpotterks.png
 install: auto
 ---

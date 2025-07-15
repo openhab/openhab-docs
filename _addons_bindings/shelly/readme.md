@@ -4,7 +4,6 @@ label: Shelly
 title: Shelly - Bindings
 type: binding
 description: "This Binding integrates [Shelly devices](https://shelly.cloud) developed by Allterco."
-since: 3x
 logo: images/addons/shelly.svg
 install: auto
 ---

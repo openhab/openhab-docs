@@ -4,7 +4,6 @@ label: openHAB UI
 title: openHAB UI - UIs
 type: ui
 description: "This is openHAB's main UI."
-since: 3x
 install: manual
 ---
 

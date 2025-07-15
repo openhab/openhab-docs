@@ -4,7 +4,6 @@ label: Helios easyControls
 title: Helios easyControls - Bindings
 type: binding
 description: "Helios Heat-Recovery Ventilation devices use a Modbus protocol to communicate with different sensors, switches, etc. Some devices come with an integrated web interface (easyControls) as well as a Modbus TCP/IP Gateway."
-since: 3x
 logo: images/addons/modbus.helioseasycontrols.png
 install: manual
 ---

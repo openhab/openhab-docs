@@ -4,7 +4,6 @@ label: Homematic
 title: Homematic - Bindings
 type: binding
 description: "This is the binding for the [eQ-3 Homematic Solution](https://eq-3.de/)."
-since: 3x
 logo: images/addons/homematic.png
 install: auto
 ---

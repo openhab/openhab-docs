@@ -4,7 +4,6 @@ label: Plugwise
 title: Plugwise - Bindings
 type: binding
 description: "The Plugwise binding adds support to openHAB for [Plugwise](https://www.plugwise.com) Zigbee devices using the Stick."
-since: 3x
 logo: images/addons/plugwise.png
 install: auto
 ---

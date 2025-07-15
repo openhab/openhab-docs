@@ -4,7 +4,6 @@ label: LG ThinQ
 title: LG ThinQ - Bindings
 type: binding
 description: "This binding was developed to integrate the LG ThinQ API with openHAB."
-since: 3x
 install: auto
 ---
 

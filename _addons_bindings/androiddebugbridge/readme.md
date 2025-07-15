@@ -4,7 +4,6 @@ label: Android Debug Bridge
 title: Android Debug Bridge - Bindings
 type: binding
 description: "This binding allows to connect to android devices through the adb protocol."
-since: 3x
 logo: images/addons/androiddebugbridge.png
 install: auto
 ---

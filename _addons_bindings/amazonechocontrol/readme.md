@@ -4,7 +4,6 @@ label: Amazon Echo Control
 title: Amazon Echo Control - Bindings
 type: binding
 description: "This binding can control Amazon Echo devices (Alexa) and Smarthome devices connected through Alexa or a skill."
-since: 3x
 logo: images/addons/amazonechocontrol.png
 install: auto
 ---

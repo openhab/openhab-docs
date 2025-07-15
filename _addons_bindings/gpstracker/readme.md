@@ -4,7 +4,6 @@ label: GPSTracker
 title: GPSTracker - Bindings
 type: binding
 description: "This binding allows you to connect mobile GPS tracker applications to openHAB and process GPS location reports."
-since: 3x
 logo: images/addons/gpstracker.png
 install: auto
 ---

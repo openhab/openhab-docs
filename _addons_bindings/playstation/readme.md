@@ -4,7 +4,6 @@ label: Sony PlayStation
 title: Sony PlayStation - Bindings
 type: binding
 description: "This binding allows you to monitor the on/off status and which application that is currently running on your PlayStation 4."
-since: 3x
 install: auto
 ---
 

@@ -4,7 +4,6 @@ label: Ring
 title: Ring - Bindings
 type: binding
 description: "This is an experimental binding to the Ring.com API."
-since: 3x
 logo: images/addons/ring.svg
 install: auto
 ---

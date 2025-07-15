@@ -4,7 +4,6 @@ label: ChatGPT
 title: ChatGPT - Bindings
 type: binding
 description: "The openHAB ChatGPT Binding allows openHAB to communicate with the ChatGPT language model provided by OpenAI and manage openHAB system via [Function calling](https://platform.openai.com/docs/guides/function-calling)."
-since: 3x
 logo: images/addons/chatgpt.png
 install: auto
 ---

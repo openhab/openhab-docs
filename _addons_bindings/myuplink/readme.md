@@ -4,7 +4,6 @@ label: myUplink
 title: myUplink - Bindings
 type: binding
 description: "The myUplink binding is used to get 'live data' from from Nibe heat pumps without plugging any custom devices into your heat pump."
-since: 3x
 logo: images/addons/myuplink.png
 install: auto
 ---

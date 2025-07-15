@@ -4,7 +4,6 @@ label: OpenSprinkler
 title: OpenSprinkler - Bindings
 type: binding
 description: "This binding allows good and flexible control over your OpenSprinkler devices."
-since: 3x
 logo: images/addons/opensprinkler.png
 install: auto
 ---

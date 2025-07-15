@@ -4,7 +4,6 @@ label: FPP
 title: FPP - Bindings
 type: binding
 description: "Binding to control Falcon Player (FPP) Devices using MQTT and HTTP. Status messages are received over MQTT and Commands are HTTP Commands."
-since: 3x
 install: manual
 ---
 

@@ -4,7 +4,6 @@ label: KVV
 title: KVV - Bindings
 type: binding
 description: "Adds support for the public API of Karlsruher Verkehrsverbund (public transport system in Karlsruhe, Germany)."
-since: 3x
 logo: images/addons/kvv.png
 install: auto
 ---

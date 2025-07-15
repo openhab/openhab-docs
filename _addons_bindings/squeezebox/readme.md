@@ -4,7 +4,6 @@ label: Squeezebox
 title: Squeezebox - Bindings
 type: binding
 description: "This binding integrates the [Logitech Media Server](https://www.mysqueezebox.com) and compatible Squeeze players."
-since: 3x
 logo: images/addons/squeezebox.png
 install: auto
 ---

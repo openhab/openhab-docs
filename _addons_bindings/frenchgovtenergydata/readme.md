@@ -4,7 +4,6 @@ label: French Government Energy Data
 title: French Government Energy Data - Bindings
 type: binding
 description: "This binding provides regulated electricity prices in France."
-since: 3x
 install: auto
 ---
 

@@ -4,7 +4,6 @@ label: OJElectronics
 title: OJElectronics - Bindings
 type: binding
 description: "With this binding it is possible to connect [OWD5/MWD5 Thermostat](https://ojelectronics.com/floorheating/products/wifi-thermostat-owd5/) of OJ Electronics."
-since: 3x
 install: auto
 ---
 

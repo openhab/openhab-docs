@@ -4,7 +4,6 @@ label: UPB
 title: UPB - Bindings
 type: binding
 description: "Universal Powerline Bus (UPB) is a protocol for communication over household electrical wiring."
-since: 3x
 logo: images/addons/upb.png
 install: auto
 ---

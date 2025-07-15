@@ -4,7 +4,6 @@ label: DIRIGERA
 title: DIRIGERA - Bindings
 type: binding
 description: "Binding supporting the DIRIGERA Gateway from IKEA."
-since: 3x
 logo: images/addons/dirigera.png
 install: auto
 ---

@@ -4,7 +4,6 @@ label: Feed
 title: Feed - Bindings
 type: binding
 description: "This binding allows you to integrate feeds in the openHAB environment."
-since: 3x
 logo: images/addons/feed.png
 install: auto
 ---

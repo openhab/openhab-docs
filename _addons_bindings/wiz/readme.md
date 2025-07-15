@@ -4,7 +4,6 @@ label: WiZ
 title: WiZ - Bindings
 type: binding
 description: "This binding integrates [WiZ Connected](https://www.wizconnected.com/en-US/) smart devices."
-since: 3x
 logo: images/addons/wiz.svg
 install: auto
 ---

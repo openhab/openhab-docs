@@ -4,7 +4,6 @@ label: Pico Text-to-Speech
 title: Pico Text-to-Speech - Voices
 type: voice
 description: "The Pico Text-to-Speech (TTS) service uses the TTS binary from SVOX for producing spoken text."
-since: 3x
 install: auto
 ---
 

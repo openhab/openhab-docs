@@ -4,7 +4,6 @@ label: Modbus Sungrow
 title: Modbus Sungrow - Bindings
 type: binding
 description: "This binding integrates the sungrow inverters into openHAB."
-since: 3x
 install: manual
 ---
 

@@ -4,7 +4,6 @@ label: Qolsys IQ
 title: Qolsys IQ - Bindings
 type: binding
 description: "This binding directly controls a [Qolsys IQ](https://qolsys.com/security/) security panel."
-since: 3x
 install: auto
 ---
 

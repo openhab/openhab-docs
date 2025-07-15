@@ -4,7 +4,6 @@ label: The Weather Company
 title: The Weather Company - Bindings
 type: binding
 description: "Provides 5-day weather forecast and _Personal Weather Station_ (PWS) current"
-since: 3x
 install: auto
 ---
 

@@ -4,7 +4,6 @@ label: Sager Weathercaster
 title: Sager Weathercaster - Bindings
 type: binding
 description: "The Sager Weathercaster is a scientific instrument for accurate prediction of the weather."
-since: 3x
 install: auto
 ---
 

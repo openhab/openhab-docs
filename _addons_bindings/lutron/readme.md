@@ -4,7 +4,6 @@ label: Lutron
 title: Lutron - Bindings
 type: binding
 description: "This binding integrates with [Lutron](https://www.lutron.com) lighting control and home automation systems."
-since: 3x
 logo: images/addons/lutron.png
 install: auto
 ---

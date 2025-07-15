@@ -4,7 +4,6 @@ label: Modbus
 title: Modbus - Bindings
 type: binding
 description: "This is the binding to access Modbus TCP and serial slaves."
-since: 3x
 logo: images/addons/modbus.png
 install: auto
 ---

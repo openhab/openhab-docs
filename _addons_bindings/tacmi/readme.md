@@ -4,7 +4,6 @@ label: TA C.M.I.
 title: TA C.M.I. - Bindings
 type: binding
 description: "This binding makes use of the CAN over Ethernet feature of the C.M.I. from Technische Alternative."
-since: 3x
 install: auto
 ---
 

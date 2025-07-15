@@ -4,7 +4,6 @@ label: senseBox
 title: senseBox - Bindings
 type: binding
 description: "The senseBox binding integrates environment data from the [senseBox](https://sensebox.de/)"
-since: 3x
 logo: images/addons/sensebox.png
 install: auto
 ---

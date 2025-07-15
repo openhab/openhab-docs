@@ -4,7 +4,6 @@ label: NoboHub
 title: NoboHub - Bindings
 type: binding
 description: "This binding controls the Glen Dimplex Nobø Hub using the <a href='https://www.glendimplex.se/media/15650/nobo-hub-api-v-1-1-integration-for-advanced-users.pdf'>Nobø Hub API v1.1</a>."
-since: 3x
 logo: images/addons/nobohub.png
 install: auto
 ---

@@ -4,7 +4,6 @@ label: Xiaomi Wifi devices (Mi IO)
 title: Xiaomi Wifi devices (Mi IO) - Bindings
 type: binding
 description: "This binding is used to control Xiaomi products implementing the Mi IO protocol."
-since: 3x
 logo: images/addons/miio.png
 install: auto
 ---

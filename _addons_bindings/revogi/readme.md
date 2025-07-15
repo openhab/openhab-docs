@@ -4,7 +4,6 @@ label: Revogi
 title: Revogi - Bindings
 type: binding
 description: "This binding is written to control Revogi devices."
-since: 3x
 install: auto
 ---
 

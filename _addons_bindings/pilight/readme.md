@@ -4,7 +4,6 @@ label: pilight
 title: pilight - Bindings
 type: binding
 description: "The pilight binding allows openHAB to communicate with a [pilight](https://www.pilight.org/) instance running pilight"
-since: 3x
 install: auto
 ---
 

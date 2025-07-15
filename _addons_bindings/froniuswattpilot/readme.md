@@ -4,7 +4,6 @@ label: Fronius Wattpilot
 title: Fronius Wattpilot - Bindings
 type: binding
 description: "This binding integrates the [Fronius Wattpilot EV charging stations](https://www.fronius.com/en-gb/uk/solar-energy/installers-partners/products-solutions/residential-energy-solutions/e-mobility-and-photovoltaic-residential/wattpilot-ev-charging-solution-for-homes)"
-since: 3x
 logo: images/addons/froniuswattpilot.png
 install: auto
 ---

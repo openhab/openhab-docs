@@ -4,7 +4,6 @@ label: LCN
 title: LCN - Bindings
 type: binding
 description: "[Local Control Network (LCN)](https://www.lcn.eu) is a building automation system."
-since: 3x
 logo: images/addons/lcn.png
 install: auto
 ---

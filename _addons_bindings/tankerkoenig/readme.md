@@ -4,7 +4,6 @@ label: Tankerkönig
 title: Tankerkönig - Bindings
 type: binding
 description: "The binding uses the Tankerkönig API <https://www.tankerkoenig.de> for collecting gas price data of German gas stations."
-since: 3x
 logo: images/addons/tankerkoenig.png
 install: auto
 ---

@@ -4,7 +4,6 @@ label: LIFX
 title: LIFX - Bindings
 type: binding
 description: "This binding integrates the [LIFX LED Lights](https://www.lifx.com/)."
-since: 3x
 logo: images/addons/lifx.png
 install: auto
 ---

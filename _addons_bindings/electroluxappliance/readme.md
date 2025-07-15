@@ -4,7 +4,6 @@ label: Electrolux Appliance
 title: Electrolux Appliance - Bindings
 type: binding
 description: "This is a binding for Electrolux appliances."
-since: 3x
 install: auto
 ---
 

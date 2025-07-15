@@ -4,7 +4,6 @@ label: TRÅDFRI
 title: TRÅDFRI - Bindings
 type: binding
 description: "This binding integrates the IKEA TRÅDFRI gateway and devices connected to it (such as dimmable LED bulbs)."
-since: 3x
 logo: images/addons/tradfri.png
 install: auto
 ---

@@ -4,7 +4,6 @@ label: HDanywhere
 title: HDanywhere - Bindings
 type: binding
 description: "This binding integrates with [HDanywhere](https://www.hdanywhere.co.uk) HDMI matrices."
-since: 3x
 logo: images/addons/hdanywhere.png
 install: auto
 ---

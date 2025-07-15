@@ -4,7 +4,6 @@ label: Wolf Smartset
 title: Wolf Smartset - Bindings
 type: binding
 description: "This binding communicates with the www.wolf-smartset.de API and provides values readonly."
-since: 3x
 logo: images/addons/wolfsmartset.png
 install: auto
 ---

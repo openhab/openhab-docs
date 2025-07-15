@@ -4,7 +4,6 @@ label: ABB/Busch-free@home Smart Home
 title: ABB/Busch-free@home Smart Home - Bindings
 type: binding
 description: "openHAB ABB/Busch-free@home binding based on the offical free@home local API."
-since: 3x
 logo: images/addons/freeathome.svg
 install: auto
 ---

@@ -4,7 +4,6 @@ label: EspMilightHub
 title: EspMilightHub - Bindings
 type: binding
 description: "This binding allows an open source esp8266 based bridge to automatically find and add Milight globes."
-since: 3x
 install: manual
 ---
 

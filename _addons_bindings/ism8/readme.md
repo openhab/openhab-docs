@@ -4,7 +4,6 @@ label: Ism8
 title: Ism8 - Bindings
 type: binding
 description: "_This binding can receive measurements from a Wolf heating system._"
-since: 3x
 logo: images/addons/ism8.png
 install: auto
 ---

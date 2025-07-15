@@ -4,7 +4,6 @@ label: iCalendar
 title: iCalendar - Bindings
 type: binding
 description: "This binding is intended to use a web-based iCal calendar as an event trigger or presence switch."
-since: 3x
 logo: images/addons/icalendar.png
 install: auto
 ---

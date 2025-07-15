@@ -4,7 +4,6 @@ label: Kermi Heat pump
 title: Kermi Heat pump - Bindings
 type: binding
 description: "Integrates the X-Center Device (X-Center Pro) of Kermi Heat pump."
-since: 3x
 install: manual
 ---
 

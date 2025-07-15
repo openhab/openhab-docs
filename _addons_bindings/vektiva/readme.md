@@ -4,7 +4,6 @@ label: Vektiva
 title: Vektiva - Bindings
 type: binding
 description: "This binding allows control of [Vektiva](https://vektiva.com) products."
-since: 3x
 install: auto
 ---
 

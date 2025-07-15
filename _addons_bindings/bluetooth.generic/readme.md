@@ -4,7 +4,6 @@ label: Generic Bluetooth Device
 title: Generic Bluetooth Device - Bindings
 type: binding
 description: "This binding adds support for devices that expose [Bluetooth Generic Attributes (GATT)](https://www.bluetooth.com/specifications/gatt/)"
-since: 3x
 install: manual
 ---
 

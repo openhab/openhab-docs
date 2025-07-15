@@ -4,7 +4,6 @@ label: DanfossAirUnit
 title: DanfossAirUnit - Bindings
 type: binding
 description: "This binding supports controlling and monitoring Danfoss Air heat recovery ventilation units via Ethernet connection."
-since: 3x
 logo: images/addons/danfossairunit.svg
 install: auto
 ---

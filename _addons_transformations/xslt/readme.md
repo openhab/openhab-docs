@@ -4,7 +4,6 @@ label: XSLT
 title: XSLT - Transformation Services
 type: transform
 description: "Transform input using the XML Stylesheet Language for Transformations (XSLT)."
-since: 3x
 install: auto
 ---
 

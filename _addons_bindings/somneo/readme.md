@@ -4,7 +4,6 @@ label: Philips Somneo
 title: Philips Somneo - Bindings
 type: binding
 description: "This binding integrates Philips Somneo HF367X into openHAB."
-since: 3x
 logo: images/addons/somneo.png
 install: auto
 ---

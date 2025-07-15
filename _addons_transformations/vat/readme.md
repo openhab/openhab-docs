@@ -4,7 +4,6 @@ label: VAT
 title: VAT - Transformation Services
 type: transform
 description: "The VAT Transformation Service adds VAT (Value-Added Tax) to a given input amount."
-since: 3x
 install: auto
 ---
 

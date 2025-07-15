@@ -4,7 +4,6 @@ label: Growatt
 title: Growatt - Bindings
 type: binding
 description: "This binding supports the integration of Growatt solar inverters."
-since: 3x
 logo: images/addons/growatt.png
 install: auto
 ---

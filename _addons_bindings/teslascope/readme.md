@@ -4,7 +4,6 @@ label: Teslascope
 title: Teslascope - Bindings
 type: binding
 description: "This binding integrates [Tesla Electrical Vehicles](https://www.tesla.com)."
-since: 3x
 logo: images/addons/teslascope.svg
 install: auto
 ---

@@ -4,7 +4,6 @@ label: NovaFineDust
 title: NovaFineDust - Bindings
 type: binding
 description: "This binding is for the fine dust sensor (PM Sensor) from Nova Fitness."
-since: 3x
 install: auto
 ---
 

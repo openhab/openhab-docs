@@ -4,7 +4,6 @@ label: air-Q
 title: air-Q - Bindings
 type: binding
 description: "The air-Q Binding integrates the air analyzer [air-Q](http://www.air-q.com) device into the openHAB system."
-since: 3x
 logo: images/addons/airq.png
 install: auto
 ---

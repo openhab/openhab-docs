@@ -4,7 +4,6 @@ label: Philips Hue
 title: Philips Hue - Bindings
 type: binding
 description: "This binding integrates the [Philips Hue Lighting system](https://www.meethue.com)."
-since: 3x
 logo: images/addons/hue.png
 install: auto
 ---

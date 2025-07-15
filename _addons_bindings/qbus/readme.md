@@ -4,7 +4,6 @@ label: Qbus
 title: Qbus - Bindings
 type: binding
 description: "This binding for [Qbus](https://qbus.be) communicates with all controllers of the Qbus home automation system."
-since: 3x
 logo: images/addons/qbus.png
 install: auto
 ---

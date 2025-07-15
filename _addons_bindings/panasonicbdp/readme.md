@@ -4,7 +4,6 @@ label: Panasonic Blu-ray Player
 title: Panasonic Blu-ray Player - Bindings
 type: binding
 description: "This binding connects Panasonic Blu-ray players from 2011/2012 and UHD Blu-ray players from 2018 to openHAB."
-since: 3x
 logo: images/addons/panasonicbdp.png
 install: auto
 ---

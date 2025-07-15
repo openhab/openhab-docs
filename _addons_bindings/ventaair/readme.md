@@ -4,7 +4,6 @@ label: VentaAir
 title: VentaAir - Bindings
 type: binding
 description: "This binding is for air humidifiers from Venta Air."
-since: 3x
 install: auto
 ---
 

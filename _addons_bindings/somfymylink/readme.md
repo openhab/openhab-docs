@@ -4,7 +4,6 @@ label: Somfy myLink
 title: Somfy myLink - Bindings
 type: binding
 description: "This binding supports the [Somfy myLink](https://www.somfysystems.com/en-us/products/1811403/mylink-) device for control of Somfy RTS blinds/shades."
-since: 3x
 install: auto
 ---
 

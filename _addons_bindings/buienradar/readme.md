@@ -4,7 +4,6 @@ label: Buienradar
 title: Buienradar - Bindings
 type: binding
 description: "The Buienradar Binding periodically (5 minute intervals) retrieves rainfall predictions from the Dutch [buienradar.nl webservice API.](https://www.buienradar.nl/overbuienradar/gratis-weerdata)."
-since: 3x
 logo: images/addons/buienradar.png
 install: auto
 ---

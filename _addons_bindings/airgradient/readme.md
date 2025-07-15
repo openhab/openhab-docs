@@ -4,7 +4,6 @@ label: AirGradient
 title: AirGradient - Bindings
 type: binding
 description: "AirGradient provides open source and open hardware air quality monitors."
-since: 3x
 logo: images/addons/airgradient.svg
 install: auto
 ---

@@ -4,7 +4,6 @@ label: AmpliPi
 title: AmpliPi - Bindings
 type: binding
 description: "This binding supports the multi-room audio system [AmpliPi](http://www.amplipi.com/) from [MicroNova](http://www.micro-nova.com/)."
-since: 3x
 logo: images/addons/amplipi.png
 install: auto
 ---

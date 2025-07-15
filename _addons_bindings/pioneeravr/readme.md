@@ -4,7 +4,6 @@ label: Pioneer AVR
 title: Pioneer AVR - Bindings
 type: binding
 description: "This binding integrates Pioneer AVRs."
-since: 3x
 logo: images/addons/pioneeravr.png
 install: auto
 ---

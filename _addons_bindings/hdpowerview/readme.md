@@ -4,7 +4,6 @@ label: Hunter Douglas (Luxaflex) PowerView
 title: Hunter Douglas (Luxaflex) PowerView - Bindings
 type: binding
 description: "This is an openHAB binding for [Hunter Douglas PowerView](https://www.hunterdouglas.com/operating-systems/motorized/powerview-motorization/overview) motorized shades via their PowerView hub."
-since: 3x
 logo: images/addons/hdpowerview.png
 install: auto
 ---

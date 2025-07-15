@@ -4,7 +4,6 @@ label: DaikinMadoka
 title: DaikinMadoka - Bindings
 type: binding
 description: "This extension implements communication with Daikin Madoka BRC1H thermostat over Bluetooth Low Energy (BLE) communication protocol."
-since: 3x
 install: manual
 ---
 

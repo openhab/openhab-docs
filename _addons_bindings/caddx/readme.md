@@ -4,7 +4,6 @@ label: Caddx
 title: Caddx - Bindings
 type: binding
 description: "The Caddx binding is used for communicating with the Caddx alarm panels. Also known as Interlogix."
-since: 3x
 logo: images/addons/caddx.png
 install: auto
 ---

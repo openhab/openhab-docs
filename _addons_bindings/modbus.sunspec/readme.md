@@ -4,7 +4,6 @@ label: SunSpec
 title: SunSpec - Bindings
 type: binding
 description: "This extension adds support for the SunSpec protocol."
-since: 3x
 install: manual
 ---
 

@@ -4,7 +4,6 @@ label: FTP Upload
 title: FTP Upload - Bindings
 type: binding
 description: "This binding can be used to receive image files from FTP clients."
-since: 3x
 logo: images/addons/ftpupload.png
 install: auto
 ---

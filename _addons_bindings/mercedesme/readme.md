@@ -4,7 +4,6 @@ label: MercedesMe
 title: MercedesMe - Bindings
 type: binding
 description: "This binding provides access to your Mercedes Benz vehicle like _Mercedes Me_ Smartphone App."
-since: 3x
 logo: images/addons/mercedesme.png
 install: auto
 ---

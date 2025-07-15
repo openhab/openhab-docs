@@ -4,7 +4,6 @@ label: FS Internet Radio
 title: FS Internet Radio - Bindings
 type: binding
 description: "This binding integrates internet radios based on the [Frontier Silicon chipset](https://www.frontier-silicon.com/)."
-since: 3x
 logo: images/addons/fsinternetradio.png
 install: auto
 ---

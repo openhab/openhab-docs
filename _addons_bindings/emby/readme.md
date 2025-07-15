@@ -4,7 +4,6 @@ label: Emby
 title: Emby - Bindings
 type: binding
 description: "The **Emby Binding** integrates [Emby](https://emby.media/), a personal media server, with openHAB."
-since: 3x
 logo: images/addons/emby.png
 install: auto
 ---

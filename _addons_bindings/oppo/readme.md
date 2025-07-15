@@ -4,7 +4,6 @@ label: Oppo Blu-ray player
 title: Oppo Blu-ray player - Bindings
 type: binding
 description: "This binding can be used to control the Oppo UDP-203/205 or BDP-83/93/95/103/105 Blu-ray player."
-since: 3x
 logo: images/addons/oppo.png
 install: auto
 ---

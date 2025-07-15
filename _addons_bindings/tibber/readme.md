@@ -4,7 +4,6 @@ label: Tibber
 title: Tibber - Bindings
 type: binding
 description: "The Tibber Binding retrieves `prices` from  [Tibber API](https://developer.tibber.com)."
-since: 3x
 logo: images/addons/tibber.png
 install: auto
 ---

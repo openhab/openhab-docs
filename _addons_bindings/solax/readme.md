@@ -4,7 +4,6 @@ label: Solax
 title: Solax - Bindings
 type: binding
 description: "This is a binding for Solax solar power inverters."
-since: 3x
 logo: images/addons/solax.png
 install: auto
 ---

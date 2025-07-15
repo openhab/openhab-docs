@@ -4,7 +4,6 @@ label: OpenTherm Gateway
 title: OpenTherm Gateway - Bindings
 type: binding
 description: "This binding is used to integrate the OpenTherm Gateway into openHAB."
-since: 3x
 logo: images/addons/openthermgateway.png
 install: auto
 ---

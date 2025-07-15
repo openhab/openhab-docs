@@ -4,7 +4,6 @@ label: Linux Input
 title: Linux Input - Bindings
 type: binding
 description: "This binding allows to you use a keyboard to control your openHAB instance."
-since: 3x
 logo: images/addons/linuxinput.png
 install: auto
 ---

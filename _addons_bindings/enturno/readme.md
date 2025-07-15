@@ -4,7 +4,6 @@ label: EnturNo
 title: EnturNo - Bindings
 type: binding
 description: "This binding gets Norwegian public transport real-time (estimated) data from the [Entur.org API](https://developer.entur.org/pages-intro-overview)."
-since: 3x
 logo: images/addons/enturno.png
 install: auto
 ---

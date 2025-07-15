@@ -4,7 +4,6 @@ label: Epson Projector
 title: Epson Projector - Bindings
 type: binding
 description: "This binding is compatible with Epson projectors that support the ESC/VP21 protocol over the built-in network (Ethernet or Wi-Fi) port, serial port or USB to serial adapter."
-since: 3x
 logo: images/addons/epsonprojector.png
 install: auto
 ---

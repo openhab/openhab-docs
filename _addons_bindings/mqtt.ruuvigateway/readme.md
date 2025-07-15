@@ -4,7 +4,6 @@ label: Ruuvi Gateway MQTT
 title: Ruuvi Gateway MQTT - Bindings
 type: binding
 description: "This binding allows integration of Ruuvi Tags via MQTT data, as collected by [Ruuvi Gateway](https://ruuvi.com/gateway/)."
-since: 3x
 install: manual
 ---
 

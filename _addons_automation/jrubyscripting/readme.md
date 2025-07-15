@@ -4,7 +4,6 @@ label: JRuby Scripting
 title: JRuby Scripting - Automation
 type: automation
 description: "This add-on provides Ruby scripting language for automation rules."
-since: 3x
 logo: images/addons/jrubyscripting.png
 install: auto
 ---

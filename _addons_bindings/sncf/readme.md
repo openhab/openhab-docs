@@ -4,7 +4,6 @@ label: SNCF
 title: SNCF - Bindings
 type: binding
 description: "The SNCF binding provides real-time data(*) for each train, bus, tramway... station in France."
-since: 3x
 install: auto
 ---
 

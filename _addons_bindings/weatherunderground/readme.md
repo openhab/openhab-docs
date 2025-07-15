@@ -4,7 +4,6 @@ label: WeatherUnderground
 title: WeatherUnderground - Bindings
 type: binding
 description: "This binding uses the [Weather Underground service](https://www.wunderground.com/weather/api/) for providing weather information for any location worldwide."
-since: 3x
 logo: images/addons/weatherunderground.png
 install: auto
 ---

@@ -4,7 +4,6 @@ label: ekey
 title: ekey - Bindings
 type: binding
 description: "This binding connects to [ekey](https://ekey.net/) converter UDP (CV-LAN) using the RARE/MULTI/HOME protocols."
-since: 3x
 logo: images/addons/ekey.png
 install: auto
 ---

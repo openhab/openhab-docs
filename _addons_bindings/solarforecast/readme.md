@@ -4,7 +4,6 @@ label: SolarForecast
 title: SolarForecast - Bindings
 type: binding
 description: "This binding provides data from Solar Forecast services."
-since: 3x
 logo: images/addons/solarforecast.png
 install: auto
 ---

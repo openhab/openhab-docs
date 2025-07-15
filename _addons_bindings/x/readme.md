@@ -4,7 +4,6 @@ label: X
 title: X - Bindings
 type: binding
 description: "The X (formerly known as Twitter) binding allows your home to post 280 characters at a time. It also supports direct messages and posting with media."
-since: 3x
 install: auto
 ---
 

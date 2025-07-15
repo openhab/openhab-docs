@@ -4,7 +4,6 @@ label: Python Scripting
 title: Python Scripting - Automation
 type: automation
 description: "This add-on provides support for Python 3 that can be used as a scripting language within automation rules."
-since: 3x
 logo: images/addons/pythonscripting.svg
 install: auto
 ---

@@ -4,7 +4,6 @@ label: tplinkrouter
 title: tplinkrouter - Bindings
 type: binding
 description: "The tplinkrouter Binding allows monitoring and controlling TP-Link routers."
-since: 3x
 install: auto
 ---
 

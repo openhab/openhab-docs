@@ -4,7 +4,6 @@ label: Serial
 title: Serial - Bindings
 type: binding
 description: "The Serial binding allows openHAB to communicate over serial ports attached to the openHAB server."
-since: 3x
 install: auto
 ---
 

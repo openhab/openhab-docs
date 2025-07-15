@@ -4,7 +4,6 @@ label: Kostal Inverter
 title: Kostal Inverter - Bindings
 type: binding
 description: "Scrapes the web interface of the inverter for the metrics of the supported channels below."
-since: 3x
 logo: images/addons/kostalinverter.png
 install: auto
 ---

@@ -4,7 +4,6 @@ label: macOS Text-to-Speech
 title: macOS Text-to-Speech - Voices
 type: voice
 description: "The macOS Text-to-Speech (TTS) service uses the macOS 'say' command for producing spoken text."
-since: 3x
 logo: images/addons/mactts.svg
 install: auto
 ---

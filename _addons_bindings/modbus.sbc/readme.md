@@ -4,7 +4,6 @@ label: Modbus Saia Burgess Controls
 title: Modbus Saia Burgess Controls - Bindings
 type: binding
 description: "This binding interfaces the energy meter series ALD1 by Saia Burgess Controls (SBC) via Modbus."
-since: 3x
 install: manual
 ---
 

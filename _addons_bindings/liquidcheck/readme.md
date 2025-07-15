@@ -4,7 +4,6 @@ label: LiquidCheck
 title: LiquidCheck - Bindings
 type: binding
 description: "This binding is for the Liquid-Check device from SI-Elektronik GmbH which can be used to measure level and content of tanks."
-since: 3x
 logo: images/addons/liquidcheck.png
 install: auto
 ---

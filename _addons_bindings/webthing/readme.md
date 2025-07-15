@@ -4,7 +4,6 @@ label: WebThing
 title: WebThing - Bindings
 type: binding
 description: "The WebThing binding supports an interface to smart home device supporting the Web Thing API."
-since: 3x
 install: auto
 ---
 

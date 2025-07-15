@@ -4,7 +4,6 @@ label: Ephemeris
 title: Ephemeris - Bindings
 type: binding
 description: "The Ephemeris Binding makes the bridge with Ephemeris core actions."
-since: 3x
 install: auto
 ---
 

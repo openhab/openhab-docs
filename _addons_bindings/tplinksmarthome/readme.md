@@ -4,7 +4,6 @@ label: TP-Link Smart Home
 title: TP-Link Smart Home - Bindings
 type: binding
 description: "This binding adds support to control TP-Link Smart Home Devices from your local openHAB system."
-since: 3x
 logo: images/addons/tplinksmarthome.png
 install: auto
 ---

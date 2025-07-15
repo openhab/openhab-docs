@@ -4,7 +4,6 @@ label: GREE
 title: GREE - Bindings
 type: binding
 description: "This binding integrates Air Conditioners that use the GREE protocol (GREE, Sinclair and others)."
-since: 3x
 logo: images/addons/gree.png
 install: auto
 ---

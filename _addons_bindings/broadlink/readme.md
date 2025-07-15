@@ -4,7 +4,6 @@ label: Broadlink
 title: Broadlink - Bindings
 type: binding
 description: "This binding supports sending infrared (IR) and radio frequency (RF) commands using a range of devices for made by (and occasionally OEM licensed from) [Broadlink](https://www.ibroadlink.com/)."
-since: 3x
 logo: images/addons/broadlink.png
 install: auto
 ---

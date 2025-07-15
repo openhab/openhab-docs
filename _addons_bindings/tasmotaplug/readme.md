@@ -4,7 +4,6 @@ label: TasmotaPlug
 title: TasmotaPlug - Bindings
 type: binding
 description: "This binding connects Tasmota flashed smart plugs with 1, 2, 3 or 4 relay channels to openHAB."
-since: 3x
 logo: images/addons/tasmotaplug.png
 install: auto
 ---

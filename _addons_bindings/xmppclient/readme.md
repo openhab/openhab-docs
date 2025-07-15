@@ -4,7 +4,6 @@ label: XMPPClient
 title: XMPPClient - Bindings
 type: binding
 description: "XMPPClient binding provides support for sending and receiving XMPP (Jabber) messages."
-since: 3x
 install: auto
 ---
 

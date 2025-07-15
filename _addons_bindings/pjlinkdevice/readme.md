@@ -4,7 +4,6 @@ label: PJLink
 title: PJLink - Bindings
 type: binding
 description: "This binding allows you to control devices with [PJLink](https://pjlink.jbmia.or.jp/english/) support."
-since: 3x
 install: auto
 ---
 

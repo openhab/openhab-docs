@@ -4,7 +4,6 @@ label: Intesis
 title: Intesis - Bindings
 type: binding
 description: "This binding connects to WiFi [IntesisHome](https://www.intesis.com/products/cloud-solutions/ac-cloud-control) devices using their local REST Api and to [IntesisBox](https://www.intesis.com/products/ac-interfaces/wifi-gateways) devices using TCP connection."
-since: 3x
 logo: images/addons/intesis.png
 install: auto
 ---

@@ -4,7 +4,6 @@ label: LG HomBot
 title: LG HomBot - Bindings
 type: binding
 description: "The binding integrates a modified LG HomBot VR6260 based vacuum robots."
-since: 3x
 logo: images/addons/lghombot.png
 install: auto
 ---

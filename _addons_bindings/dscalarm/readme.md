@@ -4,7 +4,6 @@ label: DSC Alarm
 title: DSC Alarm - Bindings
 type: binding
 description: "The DSC PowerSeries Alarm System is a popular do-it-yourself home security system, which can be monitored and controlled remotely through a standard web-browser or mobile device."
-since: 3x
 logo: images/addons/dscalarm.png
 install: auto
 ---

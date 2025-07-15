@@ -4,7 +4,6 @@ label: VisualCrossing
 title: VisualCrossing - Bindings
 type: binding
 description: "VisualCrossing Binding provides integration with VisualCrossing API"
-since: 3x
 logo: images/addons/visualcrossing.png
 install: auto
 ---

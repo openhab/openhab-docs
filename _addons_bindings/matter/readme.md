@@ -4,7 +4,6 @@ label: Matter
 title: Matter - Bindings
 type: binding
 description: "The Matter Binding for openHAB allows seamless integration with Matter-compatible devices."
-since: 3x
 logo: images/addons/matter.svg
 install: auto
 ---

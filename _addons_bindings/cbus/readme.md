@@ -4,7 +4,6 @@ label: C-Bus
 title: C-Bus - Bindings
 type: binding
 description: "This is the binding for the [Clipsal C-Bus System](https://www.clipsal.com/products/c-bus-control-and-management-system)."
-since: 3x
 install: auto
 ---
 

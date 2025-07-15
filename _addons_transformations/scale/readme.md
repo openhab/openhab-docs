@@ -4,7 +4,6 @@ label: Scale
 title: Scale - Transformation Services
 type: transform
 description: "The Scale Transformation Service is an easy to handle tool that can help you with the discretization of number inputs."
-since: 3x
 logo: images/addons/scale.svg
 install: auto
 ---

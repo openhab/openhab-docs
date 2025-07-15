@@ -4,7 +4,6 @@ label: PHC
 title: PHC - Bindings
 type: binding
 description: "This binding allows you to integrate modules(at the Moment AM, EM, JRM and DIM) of PHC, without the PHC control (STM), in openHAB."
-since: 3x
 install: auto
 ---
 

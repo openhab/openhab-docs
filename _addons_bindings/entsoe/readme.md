@@ -4,7 +4,6 @@ label: ENTSO-E
 title: ENTSO-E - Bindings
 type: binding
 description: "This binding fetches day-ahead energy spot prices from ENTSO-E, the European Network of Transmission System Operators for Electricity."
-since: 3x
 logo: images/addons/entsoe.svg
 install: auto
 ---

@@ -4,7 +4,6 @@ label: Samsung Smartthings
 title: Samsung Smartthings - Bindings
 type: binding
 description: "This binding integrates the Samsung Smartthings Hub into openHAB."
-since: 3x
 logo: images/addons/smartthings.png
 install: auto
 ---

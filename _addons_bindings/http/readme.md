@@ -4,7 +4,6 @@ label: HTTP
 title: HTTP - Bindings
 type: binding
 description: "This binding allows using HTTP to bring external data into openHAB or execute HTTP requests on commands."
-since: 3x
 logo: images/addons/http.svg
 install: auto
 ---

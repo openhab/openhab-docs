@@ -4,7 +4,6 @@ label: OneWire
 title: OneWire - Bindings
 type: binding
 description: "The OneWire binding integrates OneWire (also spelled 1-Wire) devices."
-since: 3x
 install: auto
 ---
 

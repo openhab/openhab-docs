@@ -4,7 +4,6 @@ label: ZWave
 title: ZWave - Bindings
 type: binding
 description: "The ZWave binding supports an interface to a wireless Z-Wave home automation network."
-since: 3x
 logo: images/addons/zwave.svg
 install: auto
 ---

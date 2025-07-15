@@ -4,7 +4,6 @@ label: Tuya
 title: Tuya - Bindings
 type: binding
 description: "This addon connects Tuya WiFi devices with openHAB or compatible systems."
-since: 3x
 logo: images/addons/tuya.svg
 install: auto
 ---

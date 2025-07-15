@@ -4,7 +4,6 @@ label: GROHE ONDUS
 title: GROHE ONDUS - Bindings
 type: binding
 description: "The GROHE ONDUS Binding provides access to data collected by a GROHE ONDUS appliance, such as an [GROHE Sense Guard](https://www.grohe.de/de_de/smarthome/grohe-sense-guard/)."
-since: 3x
 logo: images/addons/groheondus.png
 install: auto
 ---

@@ -4,7 +4,6 @@ label: Z-Wave JS
 title: Z-Wave JS - Bindings
 type: binding
 description: "The `zwavejs` binding integrates Z-Wave JS with openHAB, allowing you to control and monitor Z-Wave devices using the Z-Wave JS Webservice (part of Z-Wave JS UI)."
-since: 3x
 logo: images/addons/zwavejs.svg
 install: auto
 ---

@@ -4,7 +4,6 @@ label: BambuLab
 title: BambuLab - Bindings
 type: binding
 description: "This addon supports connecting with BambuLab 3D printers in local mode."
-since: 3x
 logo: images/addons/bambulab.png
 install: auto
 ---

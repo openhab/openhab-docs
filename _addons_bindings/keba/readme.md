@@ -4,7 +4,6 @@ label: Keba
 title: Keba - Bindings
 type: binding
 description: "This binding integrates the [Keba KeContact EV Charging Stations](https://www.keba.com)."
-since: 3x
 logo: images/addons/keba.png
 install: auto
 ---

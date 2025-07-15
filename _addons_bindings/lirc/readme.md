@@ -4,7 +4,6 @@ label: LIRC
 title: LIRC - Bindings
 type: binding
 description: "This binding integrates infrared transceivers through [LIRC](https://www.lirc.org) or [WinLIRC](http://winlirc.sourceforge.net)."
-since: 3x
 logo: images/addons/lirc.png
 install: auto
 ---

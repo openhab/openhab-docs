@@ -4,7 +4,6 @@ label: Robonect
 title: Robonect - Bindings
 type: binding
 description: "Robonect is a piece of hardware which has to be put into your Husqvarna, Gardena and other branded automower and makes it accessible in your internal network."
-since: 3x
 install: auto
 ---
 

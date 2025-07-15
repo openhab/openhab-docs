@@ -4,7 +4,6 @@ label: PegelOnline
 title: PegelOnline - Bindings
 type: binding
 description: "Binding to observe water level from german rivers."
-since: 3x
 logo: images/addons/pegelonline.png
 install: auto
 ---

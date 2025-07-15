@@ -4,7 +4,6 @@ label: Helios
 title: Helios - Bindings
 type: binding
 description: "This binding integrates the Heliop door/videophone system (<https://www.2n.cz>)."
-since: 3x
 logo: images/addons/helios.png
 install: auto
 ---

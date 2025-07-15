@@ -4,7 +4,6 @@ label: Astro
 title: Astro - Bindings
 type: binding
 description: "The Astro binding is used for calculating"
-since: 3x
 logo: images/addons/astro.png
 install: auto
 ---

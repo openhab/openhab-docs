@@ -4,7 +4,6 @@ label: MecMeter
 title: MecMeter - Bindings
 type: binding
 description: "This binding reads data from MEC power meter for providing electrical information for the electric circuit."
-since: 3x
 logo: images/addons/mecmeter.png
 install: auto
 ---

@@ -4,7 +4,6 @@ label: Java Persistence API (JPA)
 title: Java Persistence API (JPA) - Persistence Services
 type: persistence
 description: "This service allows you to persist state updates using a SQL or NoSQL database through the [Java Persistence API](https://en.wikipedia.org/wiki/Java_Persistence_API)."
-since: 3x
 logo: images/addons/jpa.svg
 install: auto
 ---

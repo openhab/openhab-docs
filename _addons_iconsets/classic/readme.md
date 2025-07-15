@@ -4,7 +4,6 @@ label: Classic Icon Set
 title: Classic Icon Set - Icon Sets
 type: iconset
 description: "This is a modernized version of the original icon set from openHAB 1.x."
-since: 3x
 install: manual
 ---
 

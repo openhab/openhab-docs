@@ -4,7 +4,6 @@ label: Vizio
 title: Vizio - Bindings
 type: binding
 description: "This binding connects Vizio TVs to openHAB."
-since: 3x
 logo: images/addons/vizio.png
 install: auto
 ---

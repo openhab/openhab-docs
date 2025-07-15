@@ -4,7 +4,6 @@ label: VeSync
 title: VeSync - Bindings
 type: binding
 description: "Its current support is for the Air Purifiers & Humidifer's branded as Levoit which utilise the VeSync app based on the V2 protocol."
-since: 3x
 install: auto
 ---
 

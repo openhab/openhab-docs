@@ -4,7 +4,6 @@ label: Chromecast
 title: Chromecast - Bindings
 type: binding
 description: "The binding integrates Google Chromecast streaming devices."
-since: 3x
 logo: images/addons/chromecast.png
 install: auto
 ---

@@ -4,7 +4,6 @@ label: TeslaPowerwall
 title: TeslaPowerwall - Bindings
 type: binding
 description: "This binding enables the capture of key data from a Tesla Powerwall 2 into openHAB."
-since: 3x
 install: auto
 ---
 

@@ -4,7 +4,6 @@ label: Xiaomi Mi Smart Home
 title: Xiaomi Mi Smart Home - Bindings
 type: binding
 description: "This binding allows your openHAB to communicate with the Xiaomi Smart Home Suite."
-since: 3x
 logo: images/addons/mihome.png
 install: auto
 ---

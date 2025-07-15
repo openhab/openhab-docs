@@ -4,7 +4,6 @@ label: PLCLogo
 title: PLCLogo - Bindings
 type: binding
 description: "This binding provides native support of Siemens LOGO! PLC devices."
-since: 3x
 install: auto
 ---
 

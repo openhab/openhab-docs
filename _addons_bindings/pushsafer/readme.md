@@ -4,7 +4,6 @@ label: Pushsafer
 title: Pushsafer - Bindings
 type: binding
 description: "The Pushsafer binding allows you to notify mobile devices of a message using the [Pushsafer API](https://www.pushsafer.com/pushapi)."
-since: 3x
 install: auto
 ---
 

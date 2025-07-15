@@ -4,7 +4,6 @@ label: Anel NET-PwrCtrl
 title: Anel NET-PwrCtrl - Bindings
 type: binding
 description: "Monitor and control Anel NET-PwrCtrl devices."
-since: 3x
 logo: images/addons/anel.png
 install: auto
 ---

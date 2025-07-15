@@ -4,7 +4,6 @@ label: Gembird energenie
 title: Gembird energenie - Bindings
 type: binding
 description: "This binding integrates the Gembird energenie range of power extenders by using the Energenie Data Exchange Protocol and power reading devices through HTTP interface."
-since: 3x
 logo: images/addons/energenie.png
 install: auto
 ---

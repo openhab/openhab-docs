@@ -4,7 +4,6 @@ label: Somfy Tahoma
 title: Somfy Tahoma - Bindings
 type: binding
 description: "This binding integrates the"
-since: 3x
 logo: images/addons/somfytahoma.png
 install: auto
 ---

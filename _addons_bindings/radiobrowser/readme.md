@@ -4,7 +4,6 @@ label: Radio Browser
 title: Radio Browser - Bindings
 type: binding
 description: "Radio Browser is a community driven database of internet radio and TV stations, that has an open API that is free for all to use and has multiple servers to ensure up time is high."
-since: 3x
 install: auto
 ---
 

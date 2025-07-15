@@ -4,7 +4,6 @@ label: UnifiedRemote
 title: UnifiedRemote - Bindings
 type: binding
 description: "This binding integrates the [Unified Remote Server](https://www.unifiedremote.com/)."
-since: 3x
 install: auto
 ---
 

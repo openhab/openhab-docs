@@ -4,7 +4,6 @@ label: Network UPS Tools
 title: Network UPS Tools - Bindings
 type: binding
 description: "The primary goal of the [Network UPS Tools](https://networkupstools.org/) (NUT) project is to provide support for power devices, such as uninterruptible power supplies (UPS), Power Distribution Units and Solar Controllers."
-since: 3x
 logo: images/addons/networkupstools.svg
 install: auto
 ---

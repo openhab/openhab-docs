@@ -4,7 +4,6 @@ label: AllPlay
 title: AllPlay - Bindings
 type: binding
 description: "This binding integrates devices compatible with [Qualcomm AllPlay](https://www.qualcomm.com/products/allplay)."
-since: 3x
 logo: images/addons/allplay.png
 install: auto
 ---

@@ -4,7 +4,6 @@ label: Pi-hole
 title: Pi-hole - Bindings
 type: binding
 description: "The Pi-hole Binding is a bridge between openHAB and Pi-hole, enabling users to integrate Pi-hole statistics and controls into their home automation setup. Pi-hole is a DNS-based ad blocker that can run on a variety of platforms, including Raspberry Pi."
-since: 3x
 logo: images/addons/pihole.png
 install: auto
 ---

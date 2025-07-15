@@ -4,7 +4,6 @@ label: Solarman Logger
 title: Solarman Logger - Bindings
 type: binding
 description: "Binding used to communicate with Solarman (IGEN-Tech) v5 based solar inverter data loggers in direct-mode over the local network."
-since: 3x
 install: auto
 ---
 

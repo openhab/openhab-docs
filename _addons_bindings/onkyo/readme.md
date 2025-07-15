@@ -4,7 +4,6 @@ label: Onkyo
 title: Onkyo - Bindings
 type: binding
 description: "This binding integrates the Onkyo AV receivers."
-since: 3x
 logo: images/addons/onkyo.png
 install: auto
 ---

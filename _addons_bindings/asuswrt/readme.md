@@ -4,7 +4,6 @@ label: Asuswrt
 title: Asuswrt - Bindings
 type: binding
 description: "This binding adds support to read information from ASUS-Routers (Copyright © ASUS)."
-since: 3x
 logo: images/addons/asuswrt.png
 install: auto
 ---

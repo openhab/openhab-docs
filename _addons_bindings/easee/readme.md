@@ -4,7 +4,6 @@ label: Easee
 title: Easee - Bindings
 type: binding
 description: "The Easee binding can be used to retrieve data from the Easee Cloud API and also to control your wallbox via the Cloud API."
-since: 3x
 logo: images/addons/easee.png
 install: auto
 ---

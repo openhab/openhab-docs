@@ -4,7 +4,6 @@ label: Niko Home Control
 title: Niko Home Control - Bindings
 type: binding
 description: "**Upgrade notice for Niko Home Control II and openHAB 2.5.3 or later**:"
-since: 3x
 logo: images/addons/nikohomecontrol.png
 install: auto
 ---

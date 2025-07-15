@@ -4,7 +4,6 @@ label: Sbus
 title: Sbus - Bindings
 type: binding
 description: "This binding integrates Sbus devices with openHAB, allowing control and monitoring of Sbus-compatible devices over UDP."
-since: 3x
 install: auto
 ---
 

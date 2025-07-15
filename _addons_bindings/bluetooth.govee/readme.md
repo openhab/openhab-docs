@@ -4,7 +4,6 @@ label: Govee
 title: Govee - Bindings
 type: binding
 description: "This extension adds support for [Govee](https://www.govee.com/) Bluetooth Devices."
-since: 3x
 install: manual
 ---
 

@@ -4,7 +4,6 @@ label: Emotiva
 title: Emotiva - Bindings
 type: binding
 description: "This binding integrates Emotiva AV processors by using the Emotiva Network Remote Control protocol."
-since: 3x
 logo: images/addons/emotiva.svg
 install: auto
 ---

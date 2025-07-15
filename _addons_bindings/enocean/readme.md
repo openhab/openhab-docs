@@ -4,7 +4,6 @@ label: EnOcean
 title: EnOcean - Bindings
 type: binding
 description: "The EnOcean binding connects openHAB to the EnOcean ecosystem."
-since: 3x
 logo: images/addons/enocean.png
 install: auto
 ---

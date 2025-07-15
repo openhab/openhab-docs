@@ -4,7 +4,6 @@ label: ProteusEcoMeter
 title: ProteusEcoMeter - Bindings
 type: binding
 description: "This is the binding for the Proteus EcoMeter S, which is able to report the level of a cistern or tank."
-since: 3x
 install: auto
 ---
 

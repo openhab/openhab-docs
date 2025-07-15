@@ -4,7 +4,6 @@ label: Enigma2
 title: Enigma2 - Bindings
 type: binding
 description: "The binding integrates Enigma2 devices."
-since: 3x
 logo: images/addons/enigma2.png
 install: auto
 ---

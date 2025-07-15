@@ -4,7 +4,6 @@ label: Millheat
 title: Millheat - Bindings
 type: binding
 description: "This binding integrates the Mill Wi-Fi enabled panel heaters. See <https://www.millheat.com/mill-wifi/>"
-since: 3x
 logo: images/addons/millheat.png
 install: auto
 ---

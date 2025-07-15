@@ -4,7 +4,6 @@ label: Wunderground Update Receiver
 title: Wunderground Update Receiver - Bindings
 type: binding
 description: "Many personal weather stations or similar devices are only capable of submitting measurements to the wunderground.com update site."
-since: 3x
 install: auto
 ---
 

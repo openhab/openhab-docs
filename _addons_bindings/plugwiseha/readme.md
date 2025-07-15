@@ -4,7 +4,6 @@ label: PlugwiseHA
 title: PlugwiseHA - Bindings
 type: binding
 description: "The Plugwise Home Automation binding adds support to openHAB for the [Plugwise Home Automation ecosystem](https://www.plugwise.com/en_US/adam_zone_control)."
-since: 3x
 logo: images/addons/plugwiseha.svg
 install: auto
 ---

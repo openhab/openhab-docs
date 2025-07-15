@@ -4,7 +4,6 @@ label: JsonPath
 title: JsonPath - Transformation Services
 type: transform
 description: "Extracts values from a JSON string using a [JsonPath](https://github.com/jayway/JsonPath#jayway-jsonpath) expression."
-since: 3x
 logo: images/addons/jsonpath.png
 install: auto
 ---

@@ -4,7 +4,6 @@ label: IRtrans
 title: IRtrans - Bindings
 type: binding
 description: "This binding integrates infrared receivers and blasters manufactured by IRtrans <www.irtrans.de>"
-since: 3x
 logo: images/addons/irtrans.png
 install: auto
 ---

@@ -4,7 +4,6 @@ label: Gardena
 title: Gardena - Bindings
 type: binding
 description: "This is the binding for [Gardena smart system](https://www.gardena.com/smart)."
-since: 3x
 logo: images/addons/gardena.png
 install: auto
 ---

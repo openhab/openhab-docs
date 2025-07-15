@@ -4,7 +4,6 @@ label: hueSync
 title: hueSync - Bindings
 type: binding
 description: "<!-- markdownlint-disable MD033 -->"
-since: 3x
 logo: images/addons/huesync.png
 install: auto
 ---

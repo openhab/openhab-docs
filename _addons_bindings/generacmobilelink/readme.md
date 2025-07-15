@@ -4,7 +4,6 @@ label: Generac MobileLink
 title: Generac MobileLink - Bindings
 type: binding
 description: "This binding communicates with the Generac MobileLink API and reports on the status of Generac manufactured generators, including versions resold under the brands Eaton, Honeywell and Siemens."
-since: 3x
 logo: images/addons/generacmobilelink.png
 install: auto
 ---

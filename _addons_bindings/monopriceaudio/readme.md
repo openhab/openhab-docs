@@ -4,7 +4,6 @@ label: Monoprice Whole House Audio
 title: Monoprice Whole House Audio - Bindings
 type: binding
 description: "This binding can be used to control the following types of whole house multi-zone amplifier systems:"
-since: 3x
 logo: images/addons/monopriceaudio.png
 install: auto
 ---

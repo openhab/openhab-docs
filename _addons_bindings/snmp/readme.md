@@ -4,7 +4,6 @@ label: SNMP
 title: SNMP - Bindings
 type: binding
 description: "This binding integrates the Simple Network Management Protocol (SNMP)."
-since: 3x
 install: auto
 ---
 

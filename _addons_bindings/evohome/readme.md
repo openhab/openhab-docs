@@ -4,7 +4,6 @@ label: evohome
 title: evohome - Bindings
 type: binding
 description: "This binding integrates the Honeywell evohome system."
-since: 3x
 logo: images/addons/evohome.png
 install: auto
 ---

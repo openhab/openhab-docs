@@ -4,7 +4,6 @@ label: Mail
 title: Mail - Bindings
 type: binding
 description: "The Mail binding provides support for sending mails from rules."
-since: 3x
 logo: images/addons/mail.png
 install: auto
 ---

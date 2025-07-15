@@ -4,7 +4,6 @@ label: WlanThermo
 title: WlanThermo - Bindings
 type: binding
 description: "This binding add support for the WlanThermo BBQ Thermometer."
-since: 3x
 install: auto
 ---
 

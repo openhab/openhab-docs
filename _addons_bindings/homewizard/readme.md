@@ -4,7 +4,6 @@ label: HomeWizard
 title: HomeWizard - Bindings
 type: binding
 description: "The HomeWizard binding provides access to several HomeWizard devices by using the local API of those devices."
-since: 3x
 logo: images/addons/homewizard.png
 install: auto
 ---

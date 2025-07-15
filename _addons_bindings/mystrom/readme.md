@@ -4,7 +4,6 @@ label: myStrom
 title: myStrom - Bindings
 type: binding
 description: "This extension adds support for the myStrom devices."
-since: 3x
 logo: images/addons/mystrom.png
 install: auto
 ---

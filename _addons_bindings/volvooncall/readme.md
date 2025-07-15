@@ -4,7 +4,6 @@ label: VolvoOnCall
 title: VolvoOnCall - Bindings
 type: binding
 description: "This binding integrates the [Volvo On Call](https://www.volvocars.com/intl/own/connectivity/volvo-on-call) compatible vehicles."
-since: 3x
 install: auto
 ---
 

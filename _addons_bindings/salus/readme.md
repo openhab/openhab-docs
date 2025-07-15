@@ -4,7 +4,6 @@ label: Salus
 title: Salus - Bindings
 type: binding
 description: "The Salus Binding facilitates seamless integration between openHAB and [Salus Cloud](https://eu.salusconnect.io/)."
-since: 3x
 install: auto
 ---
 

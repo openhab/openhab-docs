@@ -4,7 +4,6 @@ label: Neato
 title: Neato - Bindings
 type: binding
 description: "This binding is used to connect your openHAB system with Neato web (where you log in and find Your Neato's)."
-since: 3x
 logo: images/addons/neato.png
 install: auto
 ---

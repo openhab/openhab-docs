@@ -4,7 +4,6 @@ label: MyBMW
 title: MyBMW - Bindings
 type: binding
 description: "The binding provides access like [MyBMW App](https://www.bmw.com/en/footer/mybmw-app.html) to openHAB."
-since: 3x
 logo: images/addons/mybmw.png
 install: auto
 ---

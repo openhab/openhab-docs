@@ -4,7 +4,6 @@ label: SolarMax
 title: SolarMax - Bindings
 type: binding
 description: "This binding supports SolarMax PV inverters."
-since: 3x
 install: auto
 ---
 

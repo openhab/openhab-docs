@@ -4,7 +4,6 @@ label: Map
 title: Map - Transformation Services
 type: transform
 description: "Transforms the input by mapping it to another string."
-since: 3x
 logo: images/addons/map.svg
 install: auto
 ---

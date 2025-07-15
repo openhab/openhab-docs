@@ -4,7 +4,6 @@ label: Exec
 title: Exec - Transformation Services
 type: transform
 description: "Transforms an input string with an external program."
-since: 3x
 logo: images/addons/exec.png
 install: auto
 ---

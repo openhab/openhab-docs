@@ -4,7 +4,6 @@ label: Velux
 title: Velux - Bindings
 type: binding
 description: "This binding integrates the <B>Velux</B> devices with help of a gateway, the <B>Velux Bridge KLF200</B>, which is able to control 200 actuators."
-since: 3x
 logo: images/addons/velux.png
 install: auto
 ---

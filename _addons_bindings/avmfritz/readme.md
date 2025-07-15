@@ -4,7 +4,6 @@ label: AVM FRITZ!
 title: AVM FRITZ! - Bindings
 type: binding
 description: "The binding integrates AVM FRITZ!Boxes with a special focus on the AHA ([AVM Home Automation](https://avm.de/ratgeber/filter/smart-home/)) features."
-since: 3x
 logo: images/addons/avmfritz.svg
 install: auto
 ---

@@ -4,7 +4,6 @@ label: MQTT Homie
 title: MQTT Homie - Bindings
 type: binding
 description: "NOTE: This binding is provided by the [MQTT binding](https://www.openhab.org/addons/bindings/mqtt/), and therefore no explicit installation is necessary beyond installing the MQTT binding."
-since: 3x
 logo: images/addons/mqtt.homie.png
 install: manual
 ---

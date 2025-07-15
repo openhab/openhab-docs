@@ -4,7 +4,6 @@ label: Pushbullet
 title: Pushbullet - Bindings
 type: binding
 description: "The Pushbullet binding allows you to notify supported devices of a message using the [Pushbullet API](https://docs.pushbullet.com)."
-since: 3x
 logo: images/addons/pushbullet.png
 install: auto
 ---

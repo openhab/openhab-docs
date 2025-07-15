@@ -4,7 +4,6 @@ label: Freebox
 title: Freebox - Bindings
 type: binding
 description: "This binding integrates the [Freebox Revolution](https://www.free.fr/freebox/freebox-revolution/) and [Freebox Delta](https://www.free.fr/freebox/freebox-delta/) to your openHAB installation."
-since: 3x
 logo: images/addons/freebox.png
 install: auto
 ---

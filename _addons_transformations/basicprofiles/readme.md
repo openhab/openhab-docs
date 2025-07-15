@@ -4,7 +4,6 @@ label: Basic Profiles
 title: Basic Profiles - Transformation Services
 type: transform
 description: "This bundle provides a list of useful Profiles:"
-since: 3x
 install: auto
 ---
 

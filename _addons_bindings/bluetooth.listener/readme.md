@@ -4,7 +4,6 @@ label: Listener
 title: Listener - Bindings
 type: binding
 description: "Bluetooth extension that supports receiving broadcasted data."
-since: 3x
 install: manual
 ---
 

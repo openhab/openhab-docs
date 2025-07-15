@@ -4,7 +4,6 @@ label: RME
 title: RME - Bindings
 type: binding
 description: "This binding is for the RME RainManager rain water pump and management system"
-since: 3x
 install: auto
 ---
 

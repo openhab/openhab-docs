@@ -4,7 +4,6 @@ label: Google Cloud Text-to-Speech
 title: Google Cloud Text-to-Speech - Voices
 type: voice
 description: "Google Cloud TTS Service uses the non-free Google Cloud Text-to-Speech API to convert text or Speech Synthesis Markup Language (SSML) input into audio data of natural human speech."
-since: 3x
 logo: images/addons/googletts.png
 install: auto
 ---

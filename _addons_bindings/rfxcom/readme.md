@@ -4,7 +4,6 @@ label: RFXCOM
 title: RFXCOM - Bindings
 type: binding
 description: "This binding integrates large number of sensors and actuators from several different manufactures through [RFXCOM transceivers](http://www.rfxcom.com)."
-since: 3x
 logo: images/addons/rfxcom.png
 install: auto
 ---

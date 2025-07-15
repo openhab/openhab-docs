@@ -4,7 +4,6 @@ label: Kaleidescape
 title: Kaleidescape - Bindings
 type: binding
 description: "This binding now makes it possible to easily integrate almost all of the capabilities of the Kaleidescape control protocol into openHAB."
-since: 3x
 logo: images/addons/kaleidescape.png
 install: auto
 ---

@@ -4,7 +4,6 @@ label: DolbyCP
 title: DolbyCP - Bindings
 type: binding
 description: "This binding is intended to connect to a _Dolby Digital Cinema Processor CP750_."
-since: 3x
 logo: images/addons/dolbycp.svg
 install: auto
 ---

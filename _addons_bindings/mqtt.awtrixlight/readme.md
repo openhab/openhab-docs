@@ -4,7 +4,6 @@ label: MQTT Awtrix 3
 title: MQTT Awtrix 3 - Bindings
 type: binding
 description: "This binding allows you to control Awtrix 3 (formerly Awtrix Light) LED matrix displays via MQTT."
-since: 3x
 logo: images/addons/mqtt.awtrixlight.png
 install: manual
 ---

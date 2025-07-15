@@ -4,7 +4,6 @@ label: Roku
 title: Roku - Bindings
 type: binding
 description: "This binding connects Roku streaming media players and Roku TVs to openHAB."
-since: 3x
 logo: images/addons/roku.png
 install: auto
 ---

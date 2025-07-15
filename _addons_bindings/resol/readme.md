@@ -4,7 +4,6 @@ label: Resol
 title: Resol - Bindings
 type: binding
 description: "Resol Binding connects to Solar and System Controllers of RESOL - Elektronische Regelungen GmbH, also including branded versions from Viessmann, SOLEX, COSMO, SOLTEX, DeDietrich and many more."
-since: 3x
 install: auto
 ---
 

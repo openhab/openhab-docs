@@ -4,7 +4,6 @@ label: MPD
 title: MPD - Bindings
 type: binding
 description: "[Music Player Daemon (MPD)](https://www.musicpd.org/) is a flexible, powerful, server-side application for playing music. Through plugins and libraries it can play a variety of sound files while being controlled by its network protocol."
-since: 3x
 logo: images/addons/mpd.png
 install: auto
 ---

@@ -4,7 +4,6 @@ label: Netatmo
 title: Netatmo - Bindings
 type: binding
 description: "The Netatmo binding integrates the following Netatmo products:"
-since: 3x
 logo: images/addons/netatmo.png
 install: auto
 ---

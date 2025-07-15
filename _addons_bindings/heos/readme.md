@@ -4,7 +4,6 @@ label: Denon HEOS
 title: Denon HEOS - Bindings
 type: binding
 description: "This binding support the HEOS-System from Denon."
-since: 3x
 logo: images/addons/heos.png
 install: auto
 ---

@@ -4,7 +4,7 @@ label: Piper Text-to-Speech
 title: Piper Text-to-Speech - Voices
 type: voice
 description: "This voice service allows you to use the open source library [Piper](https://github.com/rhasspy/piper) as your TTS service in openHAB."
-since: 3x
+logo: images/addons/pipertts.svg
 install: auto
 ---
 
@@ -13,6 +13,8 @@ install: auto
 {% include base.html %}
 
 # Piper Text-to-Speech
+
+<AddonLogo />
 
 This voice service allows you to use the open source library [Piper](https://github.com/rhasspy/piper) as your TTS service in openHAB.
 [Piper](https://github.com/rhasspy/piper) is a fast, local neural text to speech system that sounds great and is optimized for the Raspberry Pi 4.

@@ -4,7 +4,6 @@ label: Enphase
 title: Enphase - Bindings
 type: binding
 description: "This is the binding for the [Enphase](https://enphase.com/) Envoy Solar Panel gateway."
-since: 3x
 logo: images/addons/enphase.png
 install: auto
 ---

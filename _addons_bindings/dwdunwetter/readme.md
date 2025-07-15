@@ -4,7 +4,6 @@ label: DWD Unwetter
 title: DWD Unwetter - Bindings
 type: binding
 description: "Binding to retrieve the Weather Warnings of the 'Deutscher Wetterdienstes' from the [DWD Geoserver](https://maps.dwd.de/geoserver/web/)."
-since: 3x
 logo: images/addons/dwdunwetter.svg
 install: auto
 ---

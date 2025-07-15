@@ -4,7 +4,6 @@ label: MAX!
 title: MAX! - Bindings
 type: binding
 description: "This is the binding for the [eQ-3 MAX! Home Solution](https://www.eq-3.de/)."
-since: 3x
 logo: images/addons/max.png
 install: auto
 ---

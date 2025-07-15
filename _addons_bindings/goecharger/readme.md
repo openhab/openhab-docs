@@ -4,7 +4,6 @@ label: go-e Charger
 title: go-e Charger - Bindings
 type: binding
 description: "This Binding controls and reads data from the [go-e Charger](https://go-e.co/), which is a mobile wallbox for charging EVs and has an open REST API for reading data and configuration."
-since: 3x
 logo: images/addons/goecharger.png
 install: auto
 ---

@@ -4,7 +4,6 @@ label: Remote openHAB
 title: Remote openHAB - Bindings
 type: binding
 description: "The Remote openHAB binding allows to communicate with remote openHAB servers."
-since: 3x
 install: auto
 ---
 

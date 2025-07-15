@@ -4,7 +4,6 @@ label: Konnected
 title: Konnected - Bindings
 type: binding
 description: "This binding is for interacting with a [Konnected Alarm Panel](https://konnected.io/)."
-since: 3x
 logo: images/addons/konnected.png
 install: auto
 ---

@@ -4,7 +4,6 @@ label: Hyperion
 title: Hyperion - Bindings
 type: binding
 description: "This binding integrates openHAB with the Hyperion ambient lighting software."
-since: 3x
 logo: images/addons/hyperion.png
 install: auto
 ---

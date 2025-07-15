@@ -4,7 +4,6 @@ label: Bluetooth BlueZ Adapter
 title: Bluetooth BlueZ Adapter - Bindings
 type: binding
 description: "This extension supports Bluetooth access via BlueZ and DBus on Linux."
-since: 3x
 logo: images/addons/bluetooth.bluez.png
 install: manual
 ---

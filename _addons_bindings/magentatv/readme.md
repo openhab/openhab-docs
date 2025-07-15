@@ -4,7 +4,6 @@ label: MagentaTV
 title: MagentaTV - Bindings
 type: binding
 description: "This binding allows controlling the Deutsche Telekom Magenta TV Media Receiver series MR4xx and MR2xx (Telekom NGTV / Huawei Envision platform)."
-since: 3x
 logo: images/addons/magentatv.png
 install: auto
 ---

@@ -4,7 +4,6 @@ label: Sonos
 title: Sonos - Bindings
 type: binding
 description: "This binding integrates the [Sonos Multi-Room Audio system](https://www.sonos.com)."
-since: 3x
 logo: images/addons/sonos.svg
 install: auto
 ---

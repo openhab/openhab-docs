@@ -4,7 +4,6 @@ label: Telegram
 title: Telegram - Bindings
 type: binding
 description: "The Telegram binding allows sending and receiving messages to and from Telegram clients (<https://telegram.org>), by using the Telegram Bot API."
-since: 3x
 logo: images/addons/telegram.png
 install: auto
 ---

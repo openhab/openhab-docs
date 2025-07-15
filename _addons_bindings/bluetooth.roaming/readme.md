@@ -4,7 +4,6 @@ label: Bluetooth Roaming Adapter
 title: Bluetooth Roaming Adapter - Bindings
 type: binding
 description: "This extension adds support for accessing Bluetooth devices from any other configured adapter via a virtual adapter."
-since: 3x
 install: manual
 ---
 

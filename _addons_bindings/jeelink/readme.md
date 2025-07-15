@@ -4,7 +4,6 @@ label: Jeelink
 title: Jeelink - Bindings
 type: binding
 description: "This binding integrates JeeLink USB RF receivers and LaCrosseGateways."
-since: 3x
 logo: images/addons/jeelink.png
 install: auto
 ---

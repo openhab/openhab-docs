@@ -4,7 +4,6 @@ label: Broadlink Thermostat
 title: Broadlink Thermostat - Bindings
 type: binding
 description: "The binding integrates devices based on broadlink controllers."
-since: 3x
 install: auto
 ---
 

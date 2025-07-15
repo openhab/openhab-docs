@@ -4,7 +4,6 @@ label: Bosch Smart Home
 title: Bosch Smart Home - Bindings
 type: binding
 description: "Binding for Bosch Smart Home devices."
-since: 3x
 logo: images/addons/boschshc.png
 install: auto
 ---

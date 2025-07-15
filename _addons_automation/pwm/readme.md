@@ -4,7 +4,6 @@ label: Pulse Width Modulation (PWM) Automation
 title: Pulse Width Modulation (PWM) Automation - Automation
 type: automation
 description: "This automation module implements [Pulse Width Modulation (PWM)](https://en.wikipedia.org/wiki/Pulse-width_modulation)."
-since: 3x
 logo: images/addons/pwm.svg
 install: auto
 ---

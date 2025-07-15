@@ -4,7 +4,6 @@ label: Systeminfo
 title: Systeminfo - Bindings
 type: binding
 description: "The system information binding provides operating system and hardware information including:"
-since: 3x
 install: auto
 ---
 

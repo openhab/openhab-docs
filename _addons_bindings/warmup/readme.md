@@ -4,7 +4,6 @@ label: Warmup
 title: Warmup - Bindings
 type: binding
 description: "This binding integrates [Warmup](https://www.warmup.co.uk) Wifi enabled Thermostats via the API at <https://my.warmup.com/>."
-since: 3x
 install: auto
 ---
 

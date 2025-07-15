@@ -4,7 +4,6 @@ label: Samsung TV
 title: Samsung TV - Bindings
 type: binding
 description: "This binding integrates the [Samsung TV's](https://www.samsung.com)."
-since: 3x
 logo: images/addons/samsungtv.png
 install: auto
 ---

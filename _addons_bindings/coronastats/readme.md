@@ -4,7 +4,6 @@ label: CoronaStats
 title: CoronaStats - Bindings
 type: binding
 description: "This binding provides the statistic about cases of COVID-19 from the website [https://corona-stats.online/](https://corona-stats.online/)."
-since: 3x
 logo: images/addons/coronastats.png
 install: auto
 ---

@@ -4,7 +4,6 @@ label: radoneye
 title: radoneye - Bindings
 type: binding
 description: "This extension adds support for [RadonEye](http://radonftlab.com/radon-sensor-product/radon-detector/rd200/) radon bluetooth detector."
-since: 3x
 install: manual
 ---
 

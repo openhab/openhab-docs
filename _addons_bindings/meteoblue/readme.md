@@ -4,7 +4,6 @@ label: meteoblue
 title: meteoblue - Bindings
 type: binding
 description: "The meteoblue binding uses the [meteoblue weather service](https://content.meteoblue.com/en/content/view/full/4511)"
-since: 3x
 logo: images/addons/meteoblue.png
 install: auto
 ---

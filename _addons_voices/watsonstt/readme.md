@@ -4,7 +4,6 @@ label: IBM Watson Speech-to-Text
 title: IBM Watson Speech-to-Text - Voices
 type: voice
 description: "Watson STT Service uses the non-free IBM Watson Speech-to-Text API to transcript audio data to text."
-since: 3x
 logo: images/addons/watsonstt.png
 install: auto
 ---

@@ -4,7 +4,6 @@ label: Speedtest
 title: Speedtest - Bindings
 type: binding
 description: "The Speedtest Binding can be used to perform a network speed test for your openHAB instance."
-since: 3x
 logo: images/addons/speedtest.png
 install: auto
 ---

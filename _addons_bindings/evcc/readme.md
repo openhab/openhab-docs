@@ -4,7 +4,6 @@ label: evcc
 title: evcc - Bindings
 type: binding
 description: "This binding integrates [evcc](https://evcc.io), an extensible **E**lectric **V**ehicle **C**harge **C**ontroller and home energy management system."
-since: 3x
 logo: images/addons/evcc.svg
 install: auto
 ---

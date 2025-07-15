@@ -4,7 +4,6 @@ label: Bond Home
 title: Bond Home - Bindings
 type: binding
 description: "This binding connects the [Bond Home](https://bondhome.io/) Bridge to openHAB using the [BOND V2 Local HTTP API](http://docs-local.appbond.com)."
-since: 3x
 logo: images/addons/bondhome.png
 install: auto
 ---

@@ -4,7 +4,6 @@ label: InMemory
 title: InMemory - Persistence Services
 type: persistence
 description: "The InMemory persistence service provides a volatile storage, i.e. it is cleared on shutdown."
-since: 3x
 install: auto
 ---
 

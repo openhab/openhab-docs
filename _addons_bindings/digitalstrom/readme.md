@@ -4,7 +4,6 @@ label: digitalSTROM
 title: digitalSTROM - Bindings
 type: binding
 description: "This binding integrates the [digitalSTROM-System](https://www.digitalstrom.de/)."
-since: 3x
 logo: images/addons/digitalstrom.png
 install: auto
 ---

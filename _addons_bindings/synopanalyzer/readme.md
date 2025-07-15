@@ -4,7 +4,6 @@ label: Synop Analyzer
 title: Synop Analyzer - Bindings
 type: binding
 description: "This binding integrates the possibility to download and interpret Synop messages."
-since: 3x
 install: auto
 ---
 

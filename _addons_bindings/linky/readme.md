@@ -4,7 +4,6 @@ label: Linky
 title: Linky - Bindings
 type: binding
 description: "This binding enables the exploitation of electricity consumption data, mainly for the French market."
-since: 3x
 logo: images/addons/linky.png
 install: auto
 ---

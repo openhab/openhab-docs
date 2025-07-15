@@ -4,7 +4,6 @@ label: Met Office DataHub
 title: Met Office DataHub - Bindings
 type: binding
 description: "This binding is for the UK Based Met Office Data Hub, weather service."
-since: 3x
 logo: images/addons/metofficedatahub.png
 install: auto
 ---

@@ -4,7 +4,6 @@ label: Rollershutter Position Emulation Profile Service
 title: Rollershutter Position Emulation Profile Service - Transformation Services
 type: transform
 description: "The Rollershutter Position emulates absolute position setting for Rollershutter devices which only support basic UP/DOWN/STOP commands."
-since: 3x
 install: auto
 ---
 

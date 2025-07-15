@@ -4,7 +4,6 @@ label: TouchWand
 title: TouchWand - Bindings
 type: binding
 description: "Touchwand Wanderfull™ Hub basic is a plug & play Z-Wave based controller that uses Wi-Fi and Bluetooth to easily connect all smart home components."
-since: 3x
 install: auto
 ---
 

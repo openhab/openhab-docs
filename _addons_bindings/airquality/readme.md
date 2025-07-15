@@ -4,7 +4,6 @@ label: Air Quality
 title: Air Quality - Bindings
 type: binding
 description: "This binding uses the [AQIcn.org service](https://aqicn.org) for providing air quality information for any location worldwide."
-since: 3x
 logo: images/addons/airquality.png
 install: auto
 ---

@@ -4,7 +4,6 @@ label: D-Link Smart Home
 title: D-Link Smart Home - Bindings
 type: binding
 description: "A binding for D-Link Smart Home devices."
-since: 3x
 logo: images/addons/dlinksmarthome.png
 install: auto
 ---

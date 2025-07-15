@@ -4,7 +4,6 @@ label: Fine Offset Weather Station
 title: Fine Offset Weather Station - Bindings
 type: binding
 description: "This binding is for weather stations manufactured by [Fine Offset](http://www.foshk.com/)."
-since: 3x
 logo: images/addons/fineoffsetweatherstation.png
 install: auto
 ---

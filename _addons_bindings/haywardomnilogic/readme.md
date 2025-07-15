@@ -4,7 +4,6 @@ label: Hayward Omnilogic
 title: Hayward Omnilogic - Bindings
 type: binding
 description: "The Hayward Omnilogic binding integrates the Omnilogic pool controller using the Hayward API."
-since: 3x
 logo: images/addons/haywardomnilogic.png
 install: auto
 ---

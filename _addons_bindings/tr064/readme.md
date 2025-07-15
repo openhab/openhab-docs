@@ -4,7 +4,6 @@ label: TR-064
 title: TR-064 - Bindings
 type: binding
 description: "This binding brings support for internet gateway devices that support the TR-064 protocol (e.g. the AVM FritzBox family of routers)."
-since: 3x
 install: auto
 ---
 

@@ -4,7 +4,6 @@ label: Russound
 title: Russound - Bindings
 type: binding
 description: "This binding provides integration with any Russound system that support the RIO protocol (all MCA systems, all X systems)."
-since: 3x
 logo: images/addons/russound.png
 install: auto
 ---

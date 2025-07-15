@@ -4,7 +4,6 @@ label: SensorCommunity
 title: SensorCommunity - Bindings
 type: binding
 description: "Binding for the [Sensor.Community](https://sensor.community/)."
-since: 3x
 install: auto
 ---
 

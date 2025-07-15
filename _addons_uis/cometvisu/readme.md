@@ -4,7 +4,6 @@ label: CometVisu Backend for openHAB
 title: CometVisu Backend for openHAB - UIs
 type: ui
 description: "This adds a backend for the web based visualization CometVisu <https://www.cometvisu.org>."
-since: 3x
 logo: images/addons/cometvisu.png
 install: auto
 ---

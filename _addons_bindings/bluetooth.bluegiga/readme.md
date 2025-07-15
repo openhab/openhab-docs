@@ -4,7 +4,6 @@ label: Bluetooth BlueGiga Adapter
 title: Bluetooth BlueGiga Adapter - Bindings
 type: binding
 description: "This extension supports Bluetooth access via a BlueGiga (BLED112) USB dongle."
-since: 3x
 logo: images/addons/bluetooth.bluegiga.png
 install: manual
 ---

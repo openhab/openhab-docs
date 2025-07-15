@@ -4,7 +4,6 @@ label: Vitotronic
 title: Vitotronic - Bindings
 type: binding
 description: "Viessmann heating systems with Vitotronic has an optolink Interface for maintenance."
-since: 3x
 logo: images/addons/vitotronic.png
 install: auto
 ---

@@ -4,7 +4,6 @@ label: Yeelight
 title: Yeelight - Bindings
 type: binding
 description: "This binding integrates the [Yeelight Lighting Product](https://www.yeelight.com/)."
-since: 3x
 logo: images/addons/yeelight.png
 install: auto
 ---

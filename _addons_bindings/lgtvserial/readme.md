@@ -4,7 +4,6 @@ label: LG TV Serial
 title: LG TV Serial - Bindings
 type: binding
 description: "This binding controls LG TVs, monitors and projectors that have an RS-232C control port."
-since: 3x
 logo: images/addons/lgtvserial.png
 install: auto
 ---

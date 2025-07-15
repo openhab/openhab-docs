@@ -4,7 +4,6 @@ label: IPP
 title: IPP - Bindings
 type: binding
 description: "This binding integrates printers, which implement the Internet Printing protocol (IPP). This is the successor of the CUPS binding."
-since: 3x
 logo: images/addons/ipp.png
 install: auto
 ---

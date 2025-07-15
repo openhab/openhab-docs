@@ -4,7 +4,6 @@ label: deCONZ
 title: deCONZ - Bindings
 type: binding
 description: "The Zigbee binding currently does not support the Dresden Elektronik Raspbee and ConBee Zigbee dongles."
-since: 3x
 logo: images/addons/deconz.png
 install: auto
 ---

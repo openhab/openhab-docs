@@ -4,7 +4,6 @@ label: CoolMasterNet
 title: CoolMasterNet - Bindings
 type: binding
 description: "The CoolMasterNet binding is used to control [CoolMasterNet HVAC bridge devices](https://coolautomation.com/products/coolmasternet/), using the 'ASCII I/F' plaintext TCP control protocol."
-since: 3x
 logo: images/addons/coolmasternet.png
 install: auto
 ---

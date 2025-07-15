@@ -4,7 +4,6 @@ label: Alarm Decoder
 title: Alarm Decoder - Bindings
 type: binding
 description: "The [Alarm Decoder](https://www.alarmdecoder.com) from Nu Tech Software Solutions is a hardware adapter that interfaces with Ademco/Honeywell and DSC alarm panels."
-since: 3x
 logo: images/addons/alarmdecoder.png
 install: auto
 ---

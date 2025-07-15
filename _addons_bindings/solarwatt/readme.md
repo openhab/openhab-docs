@@ -4,7 +4,6 @@ label: Solarwatt
 title: Solarwatt - Bindings
 type: binding
 description: "Binding to query a [solarwatt](https://www.solarwatt.de/) [energy manager](https://www.solarwatt.de/energie-management/energymanager) and read the values of all attached devices."
-since: 3x
 logo: images/addons/solarwatt.png
 install: auto
 ---

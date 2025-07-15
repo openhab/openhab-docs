@@ -4,7 +4,6 @@ label: Metrics service
 title: Metrics service - System Integrations
 type: io
 description: "The metrics service provides:"
-since: 3x
 logo: images/addons/metrics.png
 install: auto
 ---

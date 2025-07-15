@@ -4,7 +4,6 @@ label: aWATTar
 title: aWATTar - Bindings
 type: binding
 description: "This binding provides access to the hourly prices for electricity for the German and Austrian provider aWATTar."
-since: 3x
 logo: images/addons/awattar.png
 install: auto
 ---

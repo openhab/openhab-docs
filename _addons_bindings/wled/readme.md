@@ -4,7 +4,6 @@ label: WLED
 title: WLED - Bindings
 type: binding
 description: "This binding allows you to auto discover and use LED strings based on the WLED project:"
-since: 3x
 logo: images/addons/wled.png
 install: auto
 ---

@@ -4,7 +4,6 @@ label: Dominoswiss
 title: Dominoswiss - Bindings
 type: binding
 description: "This binding allows the control of rollershutters, using an eGate as gateway and Dominoswiss radio receivers."
-since: 3x
 logo: images/addons/dominoswiss.png
 install: auto
 ---

@@ -4,7 +4,6 @@ label: SEMSPortal
 title: SEMSPortal - Bindings
 type: binding
 description: "This binding can help you include statistics of your SEMS / GoodWe solar panel installation into openHAB."
-since: 3x
 logo: images/addons/semsportal.png
 install: auto
 ---

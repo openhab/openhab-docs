@@ -4,7 +4,6 @@ label: ZoneMinder
 title: ZoneMinder - Bindings
 type: binding
 description: "Supports the ZoneMinder video surveillance system."
-since: 3x
 logo: images/addons/zoneminder.png
 install: auto
 ---

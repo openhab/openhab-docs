@@ -4,7 +4,6 @@ label: Senec Home
 title: Senec Home - Bindings
 type: binding
 description: "Binding to request status information from Senec Home Batteries to allow home automation decisions based on your current energy management."
-since: 3x
 install: auto
 ---
 
