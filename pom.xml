@@ -421,7 +421,7 @@
             </goals>
             <configuration>
               <sourceFile>${basedir}/.external-resources/openhab-mycroft/USAGE.md</sourceFile>
-              <destinationFile>${basedir}/_ecosystem/ext/mycroft-skill/readme.md</destinationFile>
+              <destinationFile>${basedir}/_ecosystem/mycroft-skill/readme.md</destinationFile>
             </configuration>
           </execution>
           <execution>
