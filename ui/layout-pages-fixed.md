@@ -304,7 +304,7 @@ This is in particular helpful if the element should become more transparent depe
 - **Invert State Opacity**: If this option is enabled, the opacity will be inverted.
 
 An example could be the closing state of a rollershutter that makes a window element more and more (in)transparent.
-The blue bar that depicts the window will become less and less transperent the more the rollershutter is closed and will finally look like the wall when the rollershutter is completely closed.
+The blue bar that depicts the window will become less and less transperent the more the roller shutter is closed and will finally look like the wall when the rollershutter is completely closed.
 
   ![interactive-element-rollershutter-window.png](images/interactive-element-rollershutter-window.png)
 
