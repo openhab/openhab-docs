@@ -63,6 +63,12 @@
             <fileset>
               <directory>${basedir}/_thing_types/</directory>
             </fileset>
+            <fileset>
+              <directory>${basedir}/_ecosystem/</directory>
+            </fileset>
+            <fileset>
+              <directory>${basedir}/addons/uis/apps/garmin</directory>
+            </fileset>
           </filesets>
         </configuration>
       </plugin>
