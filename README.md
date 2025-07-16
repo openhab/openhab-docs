@@ -29,11 +29,19 @@ This happens mostly once a day. Afterwards your change is included in the next b
 
 The documentation is a community effort, so everyone is welcome to suggest changes, add new sections and fix bugs.
 This is done exactly the same way as for the code repositories, simply through pull requests against this repo.
-When editing a page through the _"Edit this page on GitHub"_ link on the website, you will be given the opportunity to
-create a pull request directly from GitHub.
-Please read our [contribution guidelines](.github/CONTRIBUTING.md) and try to follow
-them as best as you can before submitting a change for review - but don't worry if you don't understand all of them, we
-will help you to get it right.
+When editing a page through the _"Edit this page on GitHub"_ link on the website, you will be given the opportunity to create a pull request directly from GitHub.
+Please read our [contribution guidelines](.github/CONTRIBUTING.md) and try to follow them as best as you can before submitting a change for review —
+but don't worry if you don't understand all of them, we will help you to get it right.
+
+### A few words on animated GIFs
+
+Animated GIFs are a great way to show how something works, but they can also be quite large in file size.
+To keep the documentation website fast and responsive, we have a few recommendations regarding animated GIFs:
+
+- **Keep them short**: Try to limit the duration of the GIF to a few seconds. If you need to show a longer process, consider breaking it into multiple shorter GIFs.
+- **Optimize the file size**: Use tools like [Licecap](https://www.cockos.com/licecap/) to capture animated GIFs on Windows, or [Gifsicle](https://www.lcdf.org/gifsicle/) to optimize existing GIFs.
+  Usually, you can reduce file size significantly by reducing the number of colors to a palette of 256 colours: `gifsicle -O3 --colors 256 -i input.gif -o output.gif`
+- **Use them sparingly**: Only use animated GIFs when they add significant value to the documentation. If a static image or a short video can convey the same information, prefer those formats.
 
 ## So what are the other branches for?
 
