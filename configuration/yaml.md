@@ -233,7 +233,7 @@ items:
 | `icon`            | The item's [icon]({{base}}/configuration/items.html#icons). The syntax is described in [icon-sources]({{base}}/configuration/items.html#icon-sources).                                                                                                                                  |
 | `groups`          | The list of parent group names.                                                                                                                                                                                                                                                         |
 | `tags`            | The list of tags. This can contain both semantic tags and non-semantic tags.                                                                                                                                                                                                            |
-| `format`          | A short form for the `stateDescription` `pattern` metadata. This is the equivalent of the format enclosed in square brackets in DSL's item label.                                                                                                                                       |
+| `format`          | A short form for the `stateDescription` → `pattern` metadata, equivalent to the format enclosed in square brackets in the DSL item label. If the pattern begins with a percent sign (`%`), it must be enclosed in single or double quotes to comply with YAML syntax.                   |
 | `unit`            | A short form for the `unit` metadata, to define the item's unit.                                                                                                                                                                                                                        |
 | `autoupdate`      | A short form for the `autoupdate` metadata. Valid values are: `true` or `false`.                                                                                                                                                                                                        |
 | `channel`         | A short form for the `channels` list to define a linked channel UID for when there is only one channel with a blank config.                                                                                                                                                             |
@@ -258,7 +258,7 @@ items:
     groups:
       - lBedroom1
     tags:
-      - Lightbulb
+      - WallSwitch
 
   BedRoom1_Light_Switch:
     type: Switch
@@ -269,7 +269,15 @@ items:
       - BedRoom1_WallSwitch
     tags:
       - Switch
-    channel: mqtt:topic:bedroom1-switch:switch1
+    channel: mqtt:topic:bedroom1-switch:switch1 # short form
+
+  BedRoom1_Light_Button:
+    type: String
+    label: Bedroom1 Light Button Action
+    groups:
+      - BedRoom1_WallSwitch
+    channels: # long form
+      mqtt:topic:bedroom1-switch:button1: {} # No config
 
   BedRoom1_WallSwitch_StatusLED:
     type: Switch
