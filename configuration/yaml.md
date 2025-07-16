@@ -321,6 +321,28 @@ tags:
 Each tag is specified with the tag's full UID as the key.
 The rest are optional.
 
+| Configuration Key | Description                                                                                                                                 |
+|:------------------|:--------------------------------------------------------------------------------------------------------------------------------------------|
+| `<tag_full_uid>`  | The tag's full UID. See below for more details.                                                                       |
+| `label`           | The tag's label in the local language for display and context interpretation purposes. This may be used to define the tag name with spaces. |
+| `description`     | A longer description for the tag.                                                                                                           |
+| `synonyms`        | A _list_ containing one or more synonyms for the tag's label.                                                                               |
+
+##### `tag_full_uid`
+
+To define a custom tag named `TagName`, you must use its full UID format: `Root[_IntermediateParent...]_TagName`.
+
+This format outlines the tag's position within the semantic hierarchy:
+
+- Each segment is separated by an underscore (`_`)
+- The Root segment must be one of: `Location`, `Equipment`, `Point`, or `Property`
+- Zero or more `IntermediateParent` segments may follow — each representing a nested parent within the hierarchy
+- The final segment is the `TagName`, which must:
+  - Begin with a capital letter
+  - Contain only letters and numbers (alphanumeric)
+
+This structure ensures that the tag is uniquely identified and correctly integrated into the semantic model.
+
 Example:
 
 ```yaml
@@ -333,14 +355,12 @@ tags:
     synonyms:
       - Home theater room
 
-  Location_Outdoor_VegetableGarden:
+  Location_Outdoor_Garden_VegetableGarden:
     label: Vegetable Garden
 
   Property_Height: {} # no label/description/synonyms
 ```
 
-The tag's full UID defines the location of the semantic tag in the tree.
-In the example, `Location_Indoor_Room_HomeCinemaRoom` defines semantic tag `HomeCinemaRoom` as a child of `Room` which is a child of `Indoor` which is a child of `Location`.
-There are constraints on the name of a semantic tag (like HomeCinemaRoom): it must start with a capital letter and contain only letters and numbers.
+In the example `Location_Indoor_Room_HomeCinemaRoom`, the semantic tag `HomeCinemaRoom` is nested under `Room`, which itself is a child of `Indoor`, which in turn belongs to the root tag `Location`.
 
 You can have multiple YAML files with different semantic tags but keep semantic tags dependent on each other in the same file.
