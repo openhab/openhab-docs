@@ -41,7 +41,7 @@ To keep the documentation website fast and responsive, we have a few recommendat
 - **Keep them short**: Try to limit the duration of the GIF to a few seconds. If you need to show a longer process, consider breaking it into multiple shorter GIFs.
 - **Optimize the file size**: Use tools like [Licecap](https://www.cockos.com/licecap/) to capture animated GIFs on Windows, or [Gifsicle](https://www.lcdf.org/gifsicle/) to optimize existing GIFs.
   Usually, you can reduce file size significantly by reducing the number of colors to a palette of 256 colours: `gifsicle -O3 --colors 256 -i input.gif -o output.gif`
-- **Use them sparingly**: Only use animated GIFs when they add significant value to the documentation. If a static image or a short video can convey the same information, prefer those formats.
+- **Use them sparingly**: Only use animated GIFs when they add significant value to the documentation. If a static image can convey the same information, prefer the image.
 
 ### How to build the documentation locally
 
