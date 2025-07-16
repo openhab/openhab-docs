@@ -182,6 +182,17 @@ things:
             - JSONPATH:$.state
           formatBeforePublish: '{"state": "%s"}' # This needs to be quoted to be parsed as a string
                                                  # because YAML interprets {} as a map object
+
+  # Example to configure a built-in channel
+  astro:sun:home:
+    config:
+      geolocation: 52.5200066,13.4049540,100
+      interval: 60
+    channels:
+      rise#event:
+        type: rangeEvent
+        config:
+          offset: -30
 ```
 
 ### Items
