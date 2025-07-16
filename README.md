@@ -43,6 +43,46 @@ To keep the documentation website fast and responsive, we have a few recommendat
   Usually, you can reduce file size significantly by reducing the number of colors to a palette of 256 colours: `gifsicle -O3 --colors 256 -i input.gif -o output.gif`
 - **Use them sparingly**: Only use animated GIFs when they add significant value to the documentation. If a static image or a short video can convey the same information, prefer those formats.
 
+### How to build the documentation locally
+
+It is possible to build a preview version of the documentation on your local machine.
+The following software is required:
+
+- [`NodeJS = 16.20.1`](https://nodejs.org/en)
+- [`Ruby >= 3.3.2`](https://www.ruby-lang.org/en/)
+
+We recommend to use [Node Version Manager](https://github.com/nvm-sh/nvm) as well as [Ruby Version Manager](https://rvm.io/) to easily allow using multiple versions of NodeJS and Ruby for multiple projects.
+If you don't do that, you can simply start by only installing the above mentioned versions.
+
+When using `nvm` and/or `rvm`, setup the NodeJS and/or Ruby version:
+
+```shell script
+nvm use
+rvm use
+```
+
+If `nvm` and/or `rvm` complain about the required versions not being installed, you can install them as following:
+
+```shell script
+nvm install 16.20.1
+rvm install ruby-3.3.2
+```
+
+Next, you can build & serve the documentation preview:
+
+```shell script
+npm run serve-preview
+```
+
+The local preview is available under the following URLs:
+
+- <http://0.0.0.0:8080/docs>
+- <http://localhost:8080/docs>
+
+This will also allow you to preview how the page renders on different devices using the respective browser tools:
+
+![local preview](images/local-docu-preview.png)
+
 ## So what are the other branches for?
 
 We use them to bring together all relevant articles or to archive versioned content.
@@ -88,46 +128,6 @@ So when a distribution build is successful, it will trigger the gathering of all
 When one of these jobs is finished, it will then notify our website hosting service to start a new website build.
 This is recognised due to new commits in the final branch of this repository.
 The new build will include all the latest changes in the code repository and in all external repositories.
-
-### How to build the documentation locally
-
-It is possible to build a preview version of the documentation on your local machine.
-The following software is required:
-
-- [`NodeJS = 16.20.1`](https://nodejs.org/en)
-- [`Ruby >= 3.3.2`](https://www.ruby-lang.org/en/)
-
-We recommend to use [Node Version Manager](https://github.com/nvm-sh/nvm) as well as [Ruby Version Manager](https://rvm.io/) to easily allow using multiple versions of NodeJS and Ruby for multiple projects.
-If you don't do that, you can simply start by only installing the above mentioned versions.
-
-When using `nvm` and/or `rvm`, setup the NodeJS and/or Ruby version:
-
-```shell script
-nvm use
-rvm use
-```
-
-If `nvm` and/or `rvm` complain about the required versions not being installed, you can install them as following:
-
-```shell script
-nvm install 16.20.1
-rvm install ruby-3.3.2
-```
-
-Next, you can build & serve the documentation preview:
-
-```shell script
-npm run serve-preview
-```
-
-The local preview is available under the following URLs:
-
-- <http://0.0.0.0:8080/docs>
-- <http://localhost:8080/docs>
-
-This will also allow you to preview how the page renders on different devices using the respective browser tools:
-
-![local preview](images/local-docu-preview.png)
 
 ## Documentation Versioning
 
