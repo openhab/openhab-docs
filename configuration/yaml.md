@@ -339,12 +339,12 @@ tags:
 Each tag is specified with the tag's full UID as the key.
 The rest are optional.
 
-| Configuration Key | Description                                                                                                                                 |
-|:------------------|:--------------------------------------------------------------------------------------------------------------------------------------------|
-| `<tag_full_uid>`  | The tag's full UID. See below for more details.                                                                       |
-| `label`           | The tag's label in the local language for display and context interpretation purposes. This may be used to define the tag name with spaces. |
-| `description`     | A longer description for the tag.                                                                                                           |
-| `synonyms`        | A _list_ containing one or more synonyms for the tag's label.                                                                               |
+| Key              | Description                                                                                                                                 |
+|:-----------------|:--------------------------------------------------------------------------------------------------------------------------------------------|
+| `<tag_full_uid>` | The tag's full UID. See below for more details.                                                                                             |
+| `label`          | The tag's label in the local language for display and context interpretation purposes. This may be used to define the tag name with spaces. |
+| `description`    | A longer description for the tag.                                                                                                           |
+| `synonyms`       | A _list_ containing one or more synonyms for the tag's label.                                                                               |
 
 ##### `tag_full_uid`
 
