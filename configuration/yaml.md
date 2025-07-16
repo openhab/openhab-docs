@@ -18,7 +18,6 @@ Top-level entries in the YAML file must be unique key-value maps with the follow
 | Key                                  | Object Type                                                                                                        |
 |:-------------------------------------|:-------------------------------------------------------------------------------------------------------------------|
 | `version`                            | A mandatory key that contains the file-version. The currently supported version is `1`.                            |
-| `readOnly`                           | An optional key which when set to `true` (the default) would declare that the file may not be modified by openHAB. |
 | [things](#things)                    | openHAB [Things]({{base}}/concepts/things.html)                                                                    |
 | [items](#items)                      | openHAB [Items]({{base}}/concepts/items.html)                                                                      |
 | [tags](#tags)                        | Custom Semantic Tags                                                                                               |
