@@ -46,45 +46,47 @@ To keep the documentation website fast and responsive, we have a few recommendat
 ## So what are the other branches for?
 
 We use them to bring together all relevant articles or to archive versioned content.
-Mostly those branches will get updated automatically through our continuous integration builds.
+Mostly, those branches will get updated automatically through our continuous integration builds.
 You can read a bit more below about our external resources and how we get them.
 
 ### Automatically Generated Parts
 
-Those parts include **all** add-on documentation files, no matter if they are from the `openhab-core` repo, the `openhab-addons` repo or any special binding repo like _habmin_, _zwave_ or the _alexa skill_.
+Those parts include **all** add-on documentation files, no matter if they are from the [openhab-core](https://github.com/openhab/openhab-core) repo, the [openhab-addons](https://github.com/openhab/openhab-core) repo,
+any special binding repos like [org.openhab.binding.zwave](https://github.com/openhab/org.openhab.binding.zwave) or other repos like [openhab-android](https://github.com/openhab/openhab-android).
 
 We are keeping all those files at their original location, because it simply doesn't make sense to keep them here.
-Imagine you want to do an improvement of the zwave binding and have to update the readme file in a completely different place.
-That's twice the effort and also we would have to coordinate two Pull Requests.
+Imagine you want to do an improvement of the Z-Wave binding and have to update the readme file in a completely different place.
+That's twice the effort, and also we would have to coordinate two Pull Requests.
 So we are saving time for everyone by keeping those files at their original location along with the code.
 
 ### How the documentation build works
 
 We have set up our [build server](https://ci.openhab.org/view/Documentation/) to do the magic automatically.
-There are several triggers (mostly time based), which will then _gather the external contents_ and move them to our [final](https://github.com/openhab/openhab-docs/tree/final) branch.
-You can find this migrated external content in the _final_ branch under:
+There are several triggers (mostly time-based), which will then _gather the external contents_ and move them to our [final](https://github.com/openhab/openhab-docs/tree/final) branch.
+You can find this migrated external content in the _final_ branch for example under the following paths:
 
 - `_addons_*`
-- `concepts`
+- `_ecosystem`
+- `addons/uis/apps/*`
 
 You can even have a look at how this works in detail.
 The external content is updated by the following toolchain:
 
-- `update-external-resources.sh` → `pom.xml` → `process_addons.groovy`
+- `update-external-resources.sh` → `pom.xml` → `process_addons.groovy` + `process_thing_types.groovy`
 
-Everything that gets updated in the _master_ branch will be also merged over to the _final_ branch automatically.
-Afterwards we will redeploy the website with the latest content from the _final_ branch at regular intervals.
+Everything that gets updated in the _main_ branch will be also merged over to the _final_ branch automatically.
+Afterwards, we will redeploy the website with the latest content from the _final_ branch at regular intervals.
 
 #### Build triggers investigated
 
 There are two triggers available currently.
-The `merge docs` job is triggered after something has been added to the documentation through this repository.
+The `merge docs` job is triggered after something has been added to the _main_ branch of this repository.
 The `gather external docs` job is started with a **successful** build of the openhab-distribution.
 A successful distribution build will include all the latest changes that have been made to external sources like add-ons.
 So when a distribution build is successful, it will trigger the gathering of all external sources.
 
 When one of these jobs is finished, it will then notify our website hosting service to start a new website build.
-This is recognized due to new commits in the final branch of this repository.
+This is recognised due to new commits in the final branch of this repository.
 The new build will include all the latest changes in the code repository and in all external repositories.
 
 ### How to build the documentation locally
