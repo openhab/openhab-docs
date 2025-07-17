@@ -34,7 +34,7 @@ The **openHAB Garmin** app connects your Garmin wearable to your [openHAB](https
   </a>
   <div>
     <p>
-      ➡️ <a href="https://community.openhab.org/t/openhab-for-garmin/163891" target="_blank">openHAB Community Discussion</a><br>
+      ➡️ <a href="https://community.openhab.org/c/apps-services/garmin-app/" target="_blank">openHAB Community Topic</a><br>
       ➡️ <a href="https://github.com/openhab/openhab-garmin/issues" target="_blank" class="external">Report an Issue on GitHub</a>
     </p>
   </div>
@@ -60,7 +60,7 @@ Commands are sent to openHAB via its JSON-based REST API. If your openHAB setup 
 
 Inside the **Widget**, sitemap elements are displayed as **Sitemap Widgets**.
 
-::: note
+::: tip
 The term "widget" is used by both Garmin and openHAB to mean different things, which can be a source of confusion.
 In this manual, "Widget" refers to the Garmin app component, while "Sitemap Widget" refers to individual elements defined in the openHAB sitemap.
 :::
@@ -628,7 +628,7 @@ Currently supported icons are:
 - `slider`
 - `temperature`
 
-More icons can be added upon request. If you need support for additional icons, please post a request in the [openHAB Community Discussion](https://community.openhab.org/t/openhab-for-garmin/163891).
+More icons can be added upon request. If you need support for additional icons, please post a request in the [openHAB Community](https://community.openhab.org/t/request-additional-icons/164976).
 
 ## Settings Menu
 
@@ -697,8 +697,7 @@ To save space, communication errors shown in toast notifications follow this for
   - Positive values = HTTP status codes
   - Negative values = Garmin SDK error codes
 
-For a full list of Garmin SDK error codes, see the **Constant Summary** section here:
-➡️ [Garmin Communications API Docs](https://developer.garmin.com/connect-iq/api-docs/Toybox/Communications.html)
+For a full list of Garmin SDK error codes, see the **Constant Summary** section here: [Garmin Communications API Docs](https://developer.garmin.com/connect-iq/api-docs/Toybox/Communications.html)
 
 **Special error codes:**
 
