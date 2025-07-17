@@ -670,15 +670,32 @@ The expiration timer is started or restarted every time an item receives an upda
 Any future expiring update or command is cancelled, if the item receives an update or command that matches the "expire" update/command.
 See `ignoreStateUpdate` and `ignoreCommands` [configurations](#configurations-for-expire) below.
 
-The parameter accepts a duration of time that can be a combination of days, hours, minutes, seconds, and milliseconds in the format `Xd Xh Xm Xs Xms` where X is a _long_ integer.
-Every part is optional, but all parts present must be in the given order (days, hours, minutes, seconds, milliseconds).
-Whitespaces are allowed between the sections.
+The parameter accepts a duration of time expressed as a combination of days, hours, minutes, seconds, and milliseconds. The format follows the structure: `Xd Xh Xm Xs Xms` where:
+
+- Each `X` is a long integer
+- At least one segment must be specified, and any included segments must appear in the following order: **days**, **hours**, **minutes**, **seconds**, **milliseconds**
+- Whitespace is allowed between segments
+- A space between the number and its unit is permitted but not required
+
+Unit names may use short or extended forms:
+
+| Unit         | Accepted Variants                       |
+|--------------|-----------------------------------------|
+| Days         | `d`, `day`, `days`                      |
+| Hours        | `h`, `hr`, `hrs`, `hour`, `hours`       |
+| Minutes      | `m`, `min`, `mins`, `minute`, `minutes` |
+| Seconds      | `s`, `sec`, `secs`, `second`, `seconds` |
+| Milliseconds | `ms`, `millisecond`, `milliseconds`     |
 
 ```shell
 expire="1h 30m 45s"
 expire="1h05s"
+expire="1 h 5 seconds"
 expire="55h 59m 12s"
+expire="55 hours 59 min 12 sec"
 expire="2d 7h 59m 12s"
+expire="2 day 7 h 59 minutes 12 seconds"
+expire="5000 milliseconds"
 ```
 
 A non-negative expiry value can be specified using the [ISO8601 Duration format](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/time/Duration.html#parse(java.lang.CharSequence)).
