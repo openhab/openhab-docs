@@ -43,6 +43,30 @@ To keep the documentation website fast and responsive, we have a few recommendat
   Usually, you can reduce file size significantly by reducing the number of colors to a palette of 256 colours: `gifsicle -O3 --colors 256 -i input.gif -o output.gif`
 - **Use them sparingly**: Only use animated GIFs when they add significant value to the documentation. If a static image can convey the same information, prefer the image.
 
+### Inline images
+
+Regular markdown images work well for things like screenshots, but when documenting e.g. UIs, and you want to focus on a particular component on the screen, this might not be ideal.
+You have to explain for example "the button to the far right, second from the top", and this might not even be true on all devices and layouts.
+In situations like this, it can be better to make a small image of just the component, a button for example, and then use that inline in the text.
+
+To achieve this, a small Vue component called `InlineImage` has been created.
+Using it is outside "regular Markdown syntax", which is why it is explained here.
+Here is an example of the syntax:
+
+```vue
+<InlineImage alt="Select button" height="1.2em" :src="require('./images/select-button.png')" />
+```
+
+This component will transform into a regular HTML `<img>` element, so any valid `<img>` attributes can be used here too.
+`alt` should be defined to have something to show if the image doesn't load for some reason.
+`:src` must be specified using `require('./<relative path to image')`, and it must have the leading `:` to make sure that it's processed as code, not text.
+Files are shuffled around when the documentation is built, and this is a way to make sure that the source link remains valid after the documentation has been build.
+The component has two "custom" attributes/properties: `height` and `vertical-align`.
+These can take any valid CSS values, and default to `1.5em` and `text-bottom` respectively, meaning that if not specified, the image will be scaled to 1.5 time the height of the text with the bottom of the image aligned to the bottom of the text.
+Adjust as required.
+
+Use of the component can be found in `tutorials/getting_started/rules_basic.md`, if you find it easier to refer to an example.
+
 ### How to build the documentation locally
 
 It is possible to build a preview version of the documentation on your local machine.
