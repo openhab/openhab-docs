@@ -698,9 +698,7 @@ expire="2 day 7 h 59 minutes 12 seconds"
 expire="5000 milliseconds"
 ```
 
-A non-negative expiry value can be specified using the [ISO8601 Duration format](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/time/Duration.html#parse(java.lang.CharSequence)).
-Java's `Duration` class supports days, hours, minutes, and seconds.
-Note that while the ISO8601 format allows for fractional seconds, the openHAB `expire` feature only supports durations with a minimum granularity of one second.
+Alternatively, the duration can be specified using a restricted subset of the [ISO 8601 Duration format](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/time/Duration.html#parse(java.lang.CharSequence)). Only non-negative durations are supported, and valid units are limited to days, hours, minutes, and seconds. While ISO 8601 allows fractional seconds, the openHAB expire feature enforces a minimum granularity of one second.
 
 ```shell
 expire="PT1H30M45S"
