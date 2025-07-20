@@ -226,10 +226,6 @@ Then enter the Webhook ID (`d1097152a4`) in the app settings:
 
 </details>
 
-## Using the App
-
-This section explains how to set up your openHAB sitemap for use with the app, outlines the supported Sitemap Widgets, and describes key aspects of the user interface.
-
 ## Sitemap Setup
 
 Check the [Sitemaps documentation]({{base}}/ui/sitemaps.html) to learn more about how sitemaps work.
