@@ -29,7 +29,7 @@ The **openHAB Garmin** app connects your Garmin wearable to your [openHAB](https
 <br>
 
 <div style="display: flex; flex-direction: row; flex-wrap: wrap;">
-  <a href="https://apps.garmin.com/apps/93fd8044-1cf4-450c-b8aa-1c80a6730d1a" target="_blank" class="external" style="margin-top: auto; margin-bottom: auto; margin-right: 20px;">
+  <a href="https://apps.garmin.com/apps/d83b5e1b-4a12-4eda-bbad-26f88952a959" target="_blank" class="external" style="margin-top: auto; margin-bottom: auto; margin-right: 20px;">
     <img alt="Get it on Connect IQ Store" src="images/connect_iq_badge.svg" width="240px">
   </a>
   <div>
@@ -114,7 +114,7 @@ Starting with openHAB 5.0, the REST API allows the app to send commands directly
 For earlier versions, you can either:
 
 <details>
-<summary>➡️ Install the backported API (available for openHAB 4.3.x)</summary>
+<summary>Install the backported API (available for openHAB 4.3.x)</summary>
 
 To enable JSON-based command support on openHAB 4.3.x, install the backported API bundle.
 
@@ -127,7 +127,7 @@ Follow the instructions here: [Backport Installation Guide](https://github.com/f
 or
 
 <details>
-<summary>➡️ Set up a custom webhook</summary>
+<summary>Set up a custom webhook</summary>
 
 If your openHAB setup does not support the JSON-based REST API for sending commands, you can configure a custom Webhook using the Webhook binding instead.
 
