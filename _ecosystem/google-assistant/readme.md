@@ -24,8 +24,12 @@ If you have any issues, questions or an idea for additional features, please tak
 ## Latest Changes
 
 ::: tip State of this document
-This documentation refers to release [v4.0.0](https://github.com/openhab/openhab-google-assistant/releases/tag/v4.0.0) of [openHAB Google Assistant](https://github.com/openhab/openhab-google-assistant) published on 2024-05-31
+This documentation refers to release [v4.1.0](https://github.com/openhab/openhab-google-assistant/releases/tag/v4.1.0) of [openHAB Google Assistant](https://github.com/openhab/openhab-google-assistant) published on 2025-07-23
 :::
+
+### v4.1.0
+
+- Added `queryOnly=true` option to [`Switch`](#switch) devices indicating that the device can only be queried for state information and not be controlled
 
 ### v4.0.0
 
@@ -103,7 +107,7 @@ Currently the following devices are supported (also depending on Google's API ca
 | **Device Type** | [Switch](https://developers.home.google.com/cloud-to-cloud/guides/switch) |
 | **Supported Traits** | [OnOff](https://developers.home.google.com/cloud-to-cloud/traits/onoff) |
 | **Supported Items** | Switch |
-| **Configuration** | (optional) `inverted=true/false`<br>(optional) `checkState=true/false` |
+| **Configuration** | (optional) `queryOnly=true/false`<br>(optional) `inverted=true/false`<br>(optional) `checkState=true/false` |
 
 **Example:**
 
@@ -597,10 +601,11 @@ Furthermore, you can state synonyms for the device name: `Switch KitchenLight "K
 
 To ease setting up new devices you can add a room hint: `[ roomHint="Living Room" ]`.
 
-For devices supporting the OpenClose trait, the attributes `[ discreteOnly=false, queryOnly=false ]` can be configured.
+For devices supporting the `OnOff` trait, the attribute `[ queryOnly=true ]` can be configured.
+For devices supporting the `OpenClose` trait, the attributes `[ queryOnly=true, discreteOnly=true ]` can be configured.
 
-- `discreteOnly` defaults to false. When set to true, this indicates that the device must either be fully open or fully closed (that is, it does not support values between 0% and 100%). An example of such a device may be a valve.
-- `queryOnly` defaults to false. Is set to true for `Contact` items. Indicates if the device can only be queried for state information and cannot be controlled. Sensors that can only report open state should set this field to true.
+- `queryOnly` defaults to `false`. Is set to `true` for `Contact` items. Indicates if the device can only be queried for state information and cannot be controlled. Sensors that can only report open state should set this field to `true`.
+- `discreteOnly` defaults to `false`. When set to `true`, this indicates that the device must either be fully open or fully closed (that is, it does not support values between 0% and 100%). An example of such a device may be a valve.
 
 All device types support checking the current state before sending an updated state by a command. This can be enabled by setting `[ checkState=true ]` in the metadata. When this is enabled, the current state of the target item is queried and compared to the potential new state triggered by the command. If it is identical, a special error message is triggered and communicated to the user.
 

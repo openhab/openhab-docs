@@ -4,6 +4,7 @@ label: MSpa
 title: MSpa - Bindings
 type: binding
 description: "Connect your MSpa Pools with openHAB if you have them connected to your MSpa-Link IOS or Android app."
+logo: images/addons/mspa.png
 install: auto
 ---
 
@@ -12,6 +13,8 @@ install: auto
 {% include base.html %}
 
 # MSpa Binding
+
+<AddonLogo />
 
 Connect your MSpa Pools with openHAB if you have them connected to your MSpa-Link IOS or Android app.
 

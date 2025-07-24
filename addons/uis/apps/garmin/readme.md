@@ -24,7 +24,7 @@ source: https://github.com/openhab/openhab-garmin/blob/main/docs/USAGE.md
 
 # Garmin App
 
-The **openHAB Garmin** app connects your Garmin wearable to your [openHAB](https://www.openhab.org) smart home system, giving you convenient access to essential devices and real-time information.
+The **openHAB Garmin** app connects your Garmin wearable to your openHAB server, giving you convenient access to essential devices and real-time information.
 
 <br>
 
@@ -612,6 +612,7 @@ Currently supported icons are:
 - `batterylevel`
 - `blinds`
 - `door`
+- `frontdoor`
 - `garagedoor`
 - `humidity`
 - `light`
@@ -623,6 +624,7 @@ Currently supported icons are:
 - `screen`
 - `slider`
 - `temperature`
+- `window`
 
 More icons can be added upon request. If you need support for additional icons, please post a request in the [openHAB Community](https://community.openhab.org/t/request-additional-icons/164976).
 
