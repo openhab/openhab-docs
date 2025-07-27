@@ -140,6 +140,24 @@ Qubino 3-Phase Smart Meter<br /> <h1>Overview</h1><p>Qubino 3-Phase Smart Meter 
           <property name="binding:*:DecimalType">COMMAND_CLASS_METER:4,COMMAND_CLASS_BASIC:4;type=E_V</property>
         </properties>
       </channel>
+      <channel id="switch_binary5" typeId="switch_binary">
+        <label>External relay</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY:5,COMMAND_CLASS_BASIC:5</property>
+        </properties>
+      </channel>
+      <channel id="switch_binary6" typeId="switch_binary">
+        <label>External IR relay</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY:6,COMMAND_CLASS_BASIC:6</property>
+        </properties>
+      </channel>
+      <channel id="meter_kwh6" typeId="meter_kwh">
+        <label>Electric meter (kwh)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER:6;type=E_KWh</property>
+        </properties>
+      </channel>
     </channels>
 
     <!-- DEVICE PROPERTY DEFINITIONS -->

@@ -58,7 +58,7 @@ If you plan things mainly for user interaction the "Schema API Page" might be be
 
 ## Discovery
 
-Autodiscovering is not supported. 
+Autodiscovering is not supported.
 You have to define the things manually.
 
 ## Schema API
@@ -236,7 +236,7 @@ The known measure types are:
 | 14     | el. Current   | mA      |                                              |
 | 15     | Time          | hours   |                                              |
 | 16     | dimensionless | [none]  | use for multiplexers, etc                    |
-| 17..   | repeating again from 1, e.g 17==1, 18==2, ...                          |
+| 17..   | repeating     | again   | from 1, e.g 17==1, 18==2, ...                |
 
 ## Full Example (CoE/Schema API)
 

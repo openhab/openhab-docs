@@ -1,0 +1,306 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="zooz_zen75_00_000" listed="false">
+    <label>ZEN75 Heavy Duty Switch</label>
+    <description><![CDATA[
+Heavy Duty Switch<br /> <h1>Overview</h1><p>Z-Wave on/off paddle switch</p> <br /> <h2>Inclusion Information</h2><p>1. Put hub in inclusion mode</p><p>2. Tap UP three (3) times</p> <br /> <h2>Exclusion Information</h2><p>1. Bring hub close to switch, if possible</p><p>2. Put hub in exclusion mode</p><p>3. Tap DOWN three (3) times</p><p><br /></p> <br /> <h2>Wakeup Information</h2><p><br /></p>
+    ]]></description>
+    <category>Battery</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_binary" typeId="switch_binary">
+        <label>Switch</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY</property>
+        </properties>
+      </channel>
+      <channel id="scene_number" typeId="scene_number">
+        <label>Scene Number</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_CENTRAL_SCENE</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Zooz</property>
+      <property name="modelId">ZEN75</property>
+      <property name="manufacturerId">027A</property>
+      <property name="manufacturerRef">7000:A005</property>
+      <property name="dbReference">1667</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_1_1" type="integer" groupName="configuration">
+        <label>1: Paddle Orientation</label>
+        <description><![CDATA[
+Choose if you want the upper paddle to turn the light on or turn the light off when tapped<br /> <h1>Overview</h1><p>Choose if you want the upper paddle to turn the light on or turn the light off when tapped</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Up for on, down for off</option>
+          <option value="1">Up for off, down for on</option>
+          <option value="2">Up or down for on/off</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_2_1" type="integer" groupName="configuration">
+        <label>2: LED Indicator</label>
+        <description><![CDATA[
+Choose if you want the LED indicator to turn on when the switch (light) is on or off, or if you want it to remain on or off at all times.<br /> <h1>Overview</h1><p><br /></p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">LED on when switch off</option>
+          <option value="1">LED on when switch on</option>
+          <option value="2">LED always off</option>
+          <option value="3">LED always on ON</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_3_4" type="integer" groupName="configuration">
+        <label>3: Auto Turn-Off Timer</label>
+        <description><![CDATA[
+Use this parameter to enable or disable the auto turn-off timer function (the time after which you want the switch to automatically turn off once it has been turned on)<br /> <h1>Overview</h1><p>Use this parameter to enable or disable the auto turn-off timer function (the time after which you want the switch to automatically turn off once it has been turned on)</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">timer disabled</option>
+          <option value="1">1-65535 Minutes</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_5_4" type="integer" groupName="configuration">
+        <label>5: Auto Turn-On Timer</label>
+        <description><![CDATA[
+Use this parameter to enable or disable the auto turn-on timer function (the time after which you want the switch to automatically turn on once it has been turned off)<br /> <h1>Overview</h1><p>Use this parameter to enable or disable the auto turn-on timer function (the time after which you want the switch to automatically turn on once it has been turned off)</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">timer disabled</option>
+          <option value="1">1-65535 Minutes</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_7_1" type="integer" groupName="configuration">
+        <label>7: Association Reports</label>
+        <description><![CDATA[
+Choose which physical and Z-Wave triggers should prompt the switch to send a status change report to the associated devices<br /> <h1>Overview</h1><p>Choose which physical and Z-Wave triggers should prompt the switch to send a status change report to the associated devices. See the manual for all available options</p>
+        ]]></description>
+        <default>15</default>
+        <options>
+          <option value="0">none</option>
+          <option value="1">physical tap on ZEN75 only</option>
+          <option value="2">physical tap on connected 3-way switch only</option>
+          <option value="3">physical tap on ZEN75 or connected 3-way switch</option>
+          <option value="4">Z-Wave command from hub</option>
+          <option value="5">physical tap on ZEN75 or Z-Wave command from hub</option>
+          <option value="6">physical tap on connected 3-way switch or Z-Wave command from hub</option>
+          <option value="7">physical tap on ZEN75 / connected 3-way switch or Z-Wave command from</option>
+          <option value="8">timer only</option>
+          <option value="9">physical tap on ZEN75 or timer</option>
+          <option value="10">physical tap on connected 3-way switch or timer</option>
+          <option value="11">physical tap on ZEN75 / connected 3-way switch or time</option>
+          <option value="12">Z-Wave command from hub or timer</option>
+          <option value="13">physical tap on ZEN75, Z-Wave command from hub, or timer</option>
+          <option value="14">physical tap on ZEN75 / connected 3-way switch, Z-Wave command from hu</option>
+          <option value="15">all of the above</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_8_1" type="integer" groupName="configuration">
+        <label>8: On Off Status After Power Failure</label>
+        <description><![CDATA[
+Set the on off status for the switch after power failure<br /> <h1>Overview</h1><p>Set the on off status for the switch after power failure</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Always Off once restored</option>
+          <option value="1">Always On once restored</option>
+          <option value="2">Restored last status</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_9_1" type="integer" groupName="configuration">
+        <label>9: Scene Control</label>
+        <description><![CDATA[
+Enable or Disable Scene Control<br /> <h1>Overview</h1><p><br /></p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">scene control disabled</option>
+          <option value="1">Scene Control enables</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_11_1" type="integer" groupName="configuration">
+        <label>11: Relay Control (Smart Bulb Mode)</label>
+        <description><![CDATA[
+Enable or disable physical and Z-Wave on/off control. Disable both physical paddle and Z-Wave control for smart bulbs (use central scene triggers). Scene control and other functionality will still be available from paddles.<br /> <h1>Overview</h1><p>NOTE: hold the lower paddle for 10 seconds until the LED indicator starts blinking, then within 2 seconds, tap the upper paddle 5 times quickly to change this mode. The LED indicator will stay solid green for 3 seconds to confirm the change.</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Disable paddle</option>
+          <option value="1">Enable paddle and Z-Wave</option>
+          <option value="2">Disable paddle and Z-Wave</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_12_1" type="integer" groupName="configuration">
+        <label>12: 3-Way Switch Type</label>
+        <description><![CDATA[
+Choose the type of 3-way switch you want to use with this switch in a 3-way set-up.<br /> <h1>Overview</h1><p>Choose the type of 3-way switch you want to use with this switch in a 3-way set-up.</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Toggle on/off switch</option>
+          <option value="1">Momentary switch (ZAC99)</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_13_1" type="integer" groupName="configuration">
+        <label>13: Disabled Relay Behavior</label>
+        <description><![CDATA[
+Set reporting behavior for disabled physical control of the relay.<br /> <h1>Overview</h1><p>Set reporting behavior for disabled physical control of the relay.</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Reports status / changes LED</option>
+          <option value="1">Doesn't report status / change LED</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_14_1" type="integer" groupName="configuration">
+        <label>14: LED Indicator Color</label>
+        <description><![CDATA[
+Choose the color of the LED indicator<br /> <h1>Overview</h1><p>Choose the color of the LED indicator</p>
+        ]]></description>
+        <default>1</default>
+        <options>
+          <option value="0">white</option>
+          <option value="1">blue</option>
+          <option value="2">green</option>
+          <option value="3">red</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_15_1" type="integer" groupName="configuration">
+        <label>15: LED Indicator Brightness</label>
+        <description><![CDATA[
+Choose the LED indicator's brightness level.<br /> <h1>Overview</h1><p>Choose the LED indicator's brightness level.</p>
+        ]]></description>
+        <default>1</default>
+        <options>
+          <option value="0">bright (100%)</option>
+          <option value="1">medium (60%)</option>
+          <option value="2">low (30%)</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_16_1" type="integer" groupName="configuration">
+        <label>16: Status Report Type</label>
+        <description><![CDATA[
+Choose how the switch reports its status back to the hub.<br /> <h1>Overview</h1><p>Choose how the switch reports its status back to the hub.</p>
+        ]]></description>
+        <default>1</default>
+        <options>
+          <option value="0">Binary switch report for Z-Wave control, basic set report for paddle c</option>
+          <option value="1">binary switch report for both Z-Wave and paddle control</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_17_1" type="integer" groupName="configuration">
+        <label>17: Disable Paddle Programming</label>
+        <description><![CDATA[
+Enable or disable programming functionality on the switch paddles<br /> <h1>Overview</h1><p>Enable or disable programming functionality on the switch paddles. If this setting is disabled, then inclusion, exclusion, smart bulb mode no longer work when switch paddles are activated (factory reset and scene control will still work) - that means you can now use triple-tap triggers on the switch for scenes and remote control of other devices.</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">programming enabled</option>
+          <option value="1">programming disabled. Default</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_18_1" type="integer" groupName="configuration">
+        <label>18: Scene Control From Remote 3-Way Switch</label>
+        <description><![CDATA[
+Enable scene control functionality from the momentary switch connected to ZEN75 in a 3-way installatio<br /> <h1>Overview</h1><p>Enable scene control functionality from the momentary switch connected to ZEN75 in a 3-way installation. If enabled, you will be able to trigger double tap and triple tap scenes from the Zooz smart switch AND the momentary switch connected to it in a 3-way set-up.</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">scene control disabled commands from the remote 3-way switch disabled</option>
+          <option value="1">scene control commands from the remote 3-way switch enabled</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_19_1" type="integer" groupName="configuration">
+        <label>19: Disable LED Indicator Flash On Setting Change</label>
+        <description><![CDATA[
+Enable / disable LED indicator for setting changes<br /> <h1>Overview</h1><p>Enable / disable LED indicator for setting changes. Choose if you want the LED indicators to flash whenever a parameter (settings) is adjusted on the device to confirm the change. Disable this feature if you're using the LED indicators in automations.</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">LED indicator flashes to confirm a setting change (default)</option>
+          <option value="1">LED indicator doesn't flash if a setting is changed</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Lifeline to hub</label>
+        <multipleLimit>1</multipleLimit>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: Basic Set (On/Off) with up to 5 devices</label>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

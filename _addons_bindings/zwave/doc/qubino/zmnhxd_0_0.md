@@ -128,6 +128,9 @@ The following table summarises the channels available for the ZMNHXD -:
 | Electric meter (amps) 4 | meter_current4 | meter_current | Energy | Number | 
 | Electric meter (watts) 4 | meter_watts4 | meter_watts | Energy | Number | 
 | Electric meter (volts) 4 | meter_voltage4 | meter_voltage | Energy | Number | 
+| External relay | switch_binary5 | switch_binary | Switch | Switch | 
+| External IR relay | switch_binary6 | switch_binary | Switch | Switch | 
+| Electric meter (kwh) | meter_kwh6 | meter_kwh | Energy | Number | 
 
 ### Electric meter (power factor)
 Indicates the instantaneous power factor.
@@ -233,6 +236,21 @@ The ```meter_watts4``` channel is of type ```meter_watts``` and supports the ```
 Indicates the instantaneous voltage.
 
 The ```meter_voltage4``` channel is of type ```meter_voltage``` and supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
+
+### External relay
+Switch the power on and off.
+
+The ```switch_binary5``` channel is of type ```switch_binary``` and supports the ```Switch``` item and is in the ```Switch``` category.
+
+### External IR relay
+Switch the power on and off.
+
+The ```switch_binary6``` channel is of type ```switch_binary``` and supports the ```Switch``` item and is in the ```Switch``` category.
+
+### Electric meter (kwh)
+Indicates the energy consumption (kWh).
+
+The ```meter_kwh6``` channel is of type ```meter_kwh``` and supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
 
 
 
@@ -531,10 +549,19 @@ Association group 1 supports 1 node.
 
 | Command Class | Comment |
 |---------------|---------|
+| COMMAND_CLASS_BASIC_V1| |
+| COMMAND_CLASS_SWITCH_BINARY_V1| Linked to BASIC|
+| COMMAND_CLASS_ASSOCIATION_V1| |
+| COMMAND_CLASS_MULTI_CHANNEL_ASSOCIATION_V1| |
 #### Endpoint 6
 
 | Command Class | Comment |
 |---------------|---------|
+| COMMAND_CLASS_BASIC_V1| |
+| COMMAND_CLASS_SWITCH_BINARY_V1| Linked to BASIC|
+| COMMAND_CLASS_METER_V1| |
+| COMMAND_CLASS_ASSOCIATION_V1| |
+| COMMAND_CLASS_MULTI_CHANNEL_ASSOCIATION_V1| |
 
 ### Documentation Links
 
