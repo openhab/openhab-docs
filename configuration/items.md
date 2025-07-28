@@ -576,15 +576,15 @@ There are two ways to do this:
 
 1. Individual per Item configuration: apply `useTags` on each respective Items' channel link definition:
 
-```java
-Switch Livingroom_Light "Livingroom Ceiling Light" {channel="hue:device:bridge:light:color" [useTags=true] }
-```
+    ```java
+    Switch Livingroom_Light "Livingroom Ceiling Light" {channel="hue:device:bridge:light:color" [useTags=true] }
+    ```
 
-2. System wide global configuration for all Items: apply `useTags` in your `conf/services/runtime.cfg` file:
+1. System wide global configuration for all Items: apply `useTags` in your `conf/services/runtime.cfg` file:
 
-```java
-org.openhab.ItemChannelLinkRegistry:useTags=true
-```
+    ```java
+    org.openhab.ItemChannelLinkRegistry:useTags=true
+    ```
 
 ### Binding Configuration
 
