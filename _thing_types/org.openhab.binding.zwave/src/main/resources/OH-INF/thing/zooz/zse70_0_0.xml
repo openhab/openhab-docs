@@ -26,16 +26,16 @@ Outdoor Sensor for Motion, Lux, and Temperature<br /> <h1>Overview</h1><p>Sensor
           <property name="binding:*:DecimalType">COMMAND_CLASS_SENSOR_MULTILEVEL;type=LUMINANCE</property>
         </properties>
       </channel>
-      <channel id="alarm_burglar" typeId="alarm_burglar">
-        <label>Alarm (burglar)</label>
+      <channel id="alarm_motion" typeId="alarm_motion">
+        <label>Alarm (motion)</label>
         <properties>
           <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=BURGLAR</property>
         </properties>
       </channel>
-      <channel id="alarm_power" typeId="alarm_power">
-        <label>Alarm (power)</label>
+      <channel id="alarm_tamper" typeId="alarm_tamper">
+        <label>Alarm (tamper)</label>
         <properties>
-          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=POWER_MANAGEMENT</property>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=BURGLAR</property>
         </properties>
       </channel>
       <channel id="battery-level" typeId="system.battery-level">
@@ -69,15 +69,6 @@ Outdoor Sensor for Motion, Lux, and Temperature<br /> <h1>Overview</h1><p>Sensor
       </parameter-group>
 
       <!-- PARAMETER DEFINITIONS -->
-      <parameter name="config_0_0" type="integer" groupName="configuration">
-        <label>0: NOTE &gt;</label>
-        <description><![CDATA[
-Click the Z-Wave button once to wake the sensor up after updating the settings.<br /> <h1>Overview</h1><p>Click the Z-Wave button once to wake the sensor up after updating the settings.</p>
-        ]]></description>
-        <default>0</default>
-        <limitToOptions>false</limitToOptions>
-      </parameter>
-
       <parameter name="config_1_1" type="integer" groupName="configuration">
         <label>1: Motion Sensitivity</label>
         <description><![CDATA[

@@ -1,7 +1,7 @@
 ---
 id: bluetooth.grundfosalpha
-label: GrundfosAlpha
-title: GrundfosAlpha - Bindings
+label: Bluetooth Grundfos Alpha Adapter
+title: Bluetooth Grundfos Alpha Adapter - Bindings
 type: binding
 description: "This binding adds support for reading out the data of Grundfos Alpha pumps with a [Grundfos Alpha Reader](https://product-selection.grundfos.com/products/alpha-reader) or [Alpha3 pump](https://product-selection.grundfos.com/products/alpha/alpha3) with built-in Bluetooth."
 logo: images/addons/bluetooth.grundfosalpha.svg
@@ -12,7 +12,7 @@ install: manual
 
 {% include base.html %}
 
-# GrundfosAlpha Binding
+# Bluetooth Grundfos Alpha Adapter
 
 <AddonLogo />
 
