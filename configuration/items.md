@@ -586,6 +586,8 @@ There are two ways to do this:
     org.openhab.ItemChannelLinkRegistry:useTags=true
     ```
 
+Note that if an item has multiple channel links with `useTags=true` (or `useTags` is set globally) then the system applies the tags from the first link, and subsequent links will cause a warning message in the logs.
+
 ### Binding Configuration
 
 One of the greatest strengths of an openHAB automation system is the sheer number of devices you can interact with.
