@@ -568,6 +568,26 @@ The easiest way to determine if tags have been implemented in a specific add-on 
 
 See the [Hue Emulation Service](/addons/integrations/hueemulation/) or [HomeKit Add-on](/addons/integrations/homekit/) documentation for more details.
 
+#### Channel Default Tags
+
+As mentioned above, many bindings have preset recommended default tags on their channels.
+And if you define Items via an `.items` file, you can optionally set the channel link to import these tags.
+There are two ways to do this:
+
+1. Individual per Item configuration: apply `useTags` on each respective Items' channel link definition:
+
+    ```java
+    Switch Livingroom_Light "Livingroom Ceiling Light" {channel="hue:device:bridge:light:color" [useTags=true] }
+    ```
+
+1. System wide global configuration for all Items: apply `useTags` in your `conf/services/runtime.cfg` file:
+
+    ```java
+    org.openhab.ItemChannelLinkRegistry:useTags=true
+    ```
+
+Note that if an item has multiple channel links with `useTags=true` (or `useTags` is set globally) then the system applies the tags from the first link, and subsequent links will cause a warning message in the logs.
+
 ### Binding Configuration
 
 One of the greatest strengths of an openHAB automation system is the sheer number of devices you can interact with.
