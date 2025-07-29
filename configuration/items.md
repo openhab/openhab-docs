@@ -571,7 +571,7 @@ See the [Hue Emulation Service](/addons/integrations/hueemulation/) or [HomeKit 
 #### Channel Default Tags
 
 As mentioned above, many bindings have preset recommended default tags on their channels.
-And you define Items via an `.items` file, you can optionally set the channel link to import these tags.
+And if you define Items via an `.items` file, you can optionally set the channel link to import these tags.
 There are two ways to do this:
 
 1. Individual per Item configuration: apply `useTags` on each respective Items' channel link definition:
