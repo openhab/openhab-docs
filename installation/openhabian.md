@@ -249,7 +249,7 @@ Each of these are included as a part of `openhabian-config` menu option 20.
 
 Many settings are configurable prior to the first boot of openHABian by changing the key value pairs in the `/boot/openhabian.conf` file on the SD card once you have flashed the initial image onto it.
 
-Please note that - in case you use a Windows system for writing the SD card - the `/boot/` partition will be mounted to a drive named `bootfs`. So, e.g. if this drive has the letter `D:`, `/boot/openhabian.conf` will be found as `D:\openhabian.conf`.
+Please note that - in case you use a Windows system for writing the SD card - the `/boot/` partition will be mounted to a drive named `bootfs`. So, e.g. if this drive has the letter `D:`, `/boot/openhabian.conf` will be found as `D:\openhabian.conf`. 
 
 The openHABian configuration file uses key value pairs, essentially a list of `option=value` settings in a plain text file.
 All supported options are already in the file but unused options and optional components are commented out by default.
