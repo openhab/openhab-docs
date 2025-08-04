@@ -1,6 +1,7 @@
 name: Fetch Docs Reusable
 # Generic action for fetching doc resources
-# This action is meant to be called by a detailled action for a specific repository, defining the needed parameters
+# This action is meant to be called by a detailed action for a specific repository, defining the necessary parameters.
+# This action is usually used to update stable documentation after the release of a new version from a specific repository.
 
 on:
   workflow_call:
