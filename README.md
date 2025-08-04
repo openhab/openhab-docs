@@ -125,6 +125,8 @@ So we are saving time for everyone by keeping those files at their original loca
 
 ### How the documentation build works
 
+#### Snapshot Documentation: [next.openhab.org](https://next.openhab.org/docs/)
+
 We have set up our [build server](https://ci.openhab.org/view/Documentation/) to do the magic automatically.
 There are several triggers (mostly time-based), which will then _gather the external contents_ and move them to our [final](https://github.com/openhab/openhab-docs/tree/final) branch.
 You can find this migrated external content in the _final_ branch for example under the following paths:
@@ -141,7 +143,7 @@ The external content is updated by the following toolchain:
 Everything that gets updated in the _main_ branch will be also merged over to the _final_ branch automatically.
 Afterwards, we will redeploy the website with the latest content from the _final_ branch at regular intervals.
 
-#### Build triggers investigated
+##### Build triggers investigated
 
 There are two triggers available currently.
 The `merge docs` job is triggered after something has been added to the _main_ branch of this repository.
@@ -152,6 +154,18 @@ So when a distribution build is successful, it will trigger the gathering of all
 When one of these jobs is finished, it will then notify our website hosting service to start a new website build.
 This is recognised due to new commits in the final branch of this repository.
 The new build will include all the latest changes in the code repository and in all external repositories.
+
+#### Stable Documentation: [www.openhab.org](https://www.openhab.org/docs/)
+
+Our stable documentation is built from the _final-stable_ branch of this repository.
+It normally does not need to be updated, as there are no changes made to openHAB after a release that would require a change in the documentation.
+But as you might have already noticed, the _final-stable_ branch does also include documentation for software from the openHAB ecosystem with its independent release cycles, e.g. openHABian or our mobile apps.
+
+When a new release of such software is made, the _final-stable_ documentation branch needs to be updated to reflect the changes.
+This is done through the `fetch_external_docs` GitHub action workflows residing in the [`.github/workflows`](.github/workflows) folder of the _main_ branch.
+The `fetch_external_docs` workflows are triggered by a new release of the software in question, and it will then create a PR to the _final-stable_ branch with the latest documentation from the respective repository.
+
+When one of these PRs is merged, the change to the _final-stable_ branch will trigger a new build of the website, which will then be deployed to [www.openhab.org](https://www.openhab.org/docs/).
 
 ## Documentation Versioning
 
