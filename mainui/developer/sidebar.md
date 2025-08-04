@@ -25,12 +25,12 @@ Instead of manually digging through rules, scenes, scripts, persistence configur
 
 ### Search Syntax
 
-Extended syntax supports refined filtering:
+The Developer Sidebar supports extended syntax to help fine-tune your search results:
 
-- **Whitespace** = logical **AND**
-- **Pipe** (`|`) = logical **OR**
-- **Double quotes** (`"`) = escape whitespace for partial exact match
-- **Equals** (`=`) = exact string match
+- **Whitespace** acts as a logical **AND**, meaning all separate terms must be present somewhere in the matched content.
+- A single **pipe (`|`)** is treated as a logical **OR**, matching entries that contain any of the terms.
+- Enclose a phrase with **double quotes (`"`)** to treat it as a single unit and avoid splitting it — useful for partial exact matches.
+- Prefix with an **equals sign (`=`)** for full-string matches (still case-insensitive), ensuring the entire field matches the query.
 
 | Token   | Meaning                                                                            |
 |:--------|:-----------------------------------------------------------------------------------|
