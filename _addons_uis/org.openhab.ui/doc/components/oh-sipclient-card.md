@@ -78,6 +78,11 @@ Usage is explained at the [`oh-sipclient` component docs](/docs/ui/components/oh
 </PropBlock>
 <PropBlock type="TEXT" name="password" label="SIP Password">
 </PropBlock>
+<PropBlock type="TEXT" name="authorizationUser" label="Authorization User">
+  <PropDescription>
+    User name used for SIP authentication, only required if different from the SIP username.
+  </PropDescription>
+</PropBlock>
 <PropBlock type="BOOLEAN" name="enableTones" label="Enable tones">
   <PropDescription>
     Enable ringback and ring tone. Not recommended for mobile browsers, might cause issues. Ring tone might only work after interaction with the webpage.
