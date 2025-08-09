@@ -200,7 +200,6 @@ module.exports = [
       ['ecosystem/google-assistant/', 'Google Assistant'],
       ['../addons/integrations/homekit/', 'Apple HomeKit'],
       // ['ecosystem/ifttt/', 'IFTTT'], // Temporary remove until service gets reactivated
-      ['ecosystem/mycroft/', 'Mycroft.AI'],
       ['../addons/integrations/openhabcloud/', 'openHAB Cloud'],
     ]
   },
