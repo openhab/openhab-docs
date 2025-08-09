@@ -159,7 +159,7 @@ An example would be to send a notification that a windows has been open for some
 - Remind me in two hours.
 - Suspend the notification until the window is closed
 
-Please note that on the iOS-Version of the openHAB App, a “tap hold” on the notification is needed to make the buttons visible.
+Please note that on iOS, a _tap & hold_ on the notification is needed to make the buttons visible.
 
 ![blockly-notifications-buttons-message.png](../images/blockly/blockly-notifications-buttons.png)
 
