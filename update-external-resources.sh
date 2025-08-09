@@ -52,7 +52,6 @@ pull_or_clone_repo "openhab-distro" "openhab/openhab-distro.git" main
 pull_or_clone_repo "openhab-addons" "openhab/openhab-addons.git" main
 pull_or_clone_repo "openhabian" "openhab/openhabian.git" main
 pull_or_clone_repo "openhab-alexa" "openhab/openhab-alexa.git" main
-pull_or_clone_repo "openhab-mycroft" "openhab/openhab-mycroft.git" main
 pull_or_clone_repo "openhab-android" "openhab/openhab-android.git" main
 pull_or_clone_repo "openhab-google-assistant" "openhab/openhab-google-assistant.git" main
 pull_or_clone_repo "openhab-webui" "openhab/openhab-webui.git" main

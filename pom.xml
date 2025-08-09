@@ -414,17 +414,6 @@
             </configuration>
           </execution>
           <execution>
-            <id>copy-mycroft-docs</id>
-            <phase>process-resources</phase>
-            <goals>
-              <goal>copy</goal>
-            </goals>
-            <configuration>
-              <sourceFile>${basedir}/.external-resources/openhab-mycroft/USAGE.md</sourceFile>
-              <destinationFile>${basedir}/_ecosystem/mycroft-skill/readme.md</destinationFile>
-            </configuration>
-          </execution>
-          <execution>
             <id>copy-alexa-docs</id>
             <phase>process-resources</phase>
             <goals>
