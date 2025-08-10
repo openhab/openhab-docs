@@ -1,8 +1,10 @@
+import groovy.xml.XmlParser
+
 def collect_feature_xml = { features, xml, attrs ->
   def feature = new File(project.basedir, xml)
   def root = new XmlParser().parse(feature)
-  root.feature.each {
-    def name = it['@name']
+  root.feature.each { Node node ->
+    def name = node['@name'] as String
     features[name] = attrs
   }
 }
@@ -21,14 +23,14 @@ def process_addon_type = { features, type, collection, suffix, lblremoves, pkgre
     log.warn "No resources found."
     return
   }
-  files.eachFile {
-    def name = it.name
+  files.eachFile { File addonDir ->
+    def name = addonDir.name
     if (!name.contains(type)) log.warn("Add-on package name '${name}' doesn't contain '${type}'.")
     if (name.endsWith('.test')) {
       log.info("Skipping .test bundle")
-      it.deleteDir()
+      addonDir.deleteDir()
     } else {
-      def id = it.name
+      def id = addonDir.name
       log.info "Processing: _" + collection + "/" + id
       for (pkg in pkgremoves) {
         id = id.replace(pkg, '')
@@ -38,7 +40,7 @@ def process_addon_type = { features, type, collection, suffix, lblremoves, pkgre
       if (simpleNameDir.exists()) {
         log.warn("Destination folder already exists: " + simpleNameDir)
       }
-      boolean success = it.renameTo(simpleNameDir)
+      boolean success = addonDir.renameTo(simpleNameDir)
       if (!success) {
         log.warn("Move failed.")
       }
@@ -49,7 +51,7 @@ def process_addon_type = { features, type, collection, suffix, lblremoves, pkgre
         def readmeLowerCase = new File(simpleNameDir.path, 'readme.md')
         readme.renameTo(readmeLowerCase)
         readme = readmeLowerCase
-        def label = readme.readLines().find { it.startsWith('#') }
+        def label = readme.readLines().find { String line -> line.startsWith('#') }
         if (label == null) {
           log.warn("No level 1 header found.")
           label = id
@@ -83,15 +85,15 @@ def process_addon_type = { features, type, collection, suffix, lblremoves, pkgre
         } else if (logo_png) {
           front['logo'] = 'images/addons/' + id + '.png'
         }
-        def feature = features.find {
-          it.key.startsWith("openhab-${type}-${id}") ||
-            (type == 'io' && it.key.startsWith("openhab-misc-${id}")) ||
-            (type == 'transform' && it.key.startsWith("openhab-transformation-${id}"))
+        def feature = features.find { entry ->
+          entry.key.startsWith("openhab-${type}-${id}") ||
+            (type == 'io' && entry.key.startsWith("openhab-misc-${id}")) ||
+            (type == 'transform' && entry.key.startsWith("openhab-transformation-${id}"))
         }?.value
         if (feature == null) {
           feature = ['install': 'manual']
         }
-        front = front + feature
+        front.putAll(feature)
         def toYaml = { '---\n' + it.collect { /$it.key: $it.value/ }.join('\n') + '\n---\n\n' }
         def heading = readme.text.find(/# .*/)
         def text = readme.text.replace(heading, '')
