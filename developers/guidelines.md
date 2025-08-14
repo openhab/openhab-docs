@@ -130,6 +130,19 @@ public class MyCoolService {
 }
 ```
 
+### Markdown Format
+
+In order to keep documentation layout consistent, Markdown formatting rules have been defined in [.markdownlint.yaml](https://github.com/openhab/openhab-docs/blob/main/.github/.markdownlint.yaml).
+Rules are enforced automatically during the build whenever a README.md file is part of a change.
+
+To check your Markdown formatting locally, run:
+
+```shell
+mvn clean install -P check-markdown
+``` 
+
+Before submitting changes, it is recommended to run this check to avoid formatting issues.
+
 ## C. Documentation
 
 JavaDoc is required to describe the purpose and usage of every:
