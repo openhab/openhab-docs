@@ -264,6 +264,8 @@ If all goes well, you'll end up with a package file which can be installed with 
 sudo pacman -U openhab3-3.0.0.M4-1-any.pkg.tar.zst
 ```
 
+#### Start openHAB automatically
+
 If everything went well, you can start openHAB and register it to be automatically executed at system startup.
 
 {% include collapsible/start.html %}
