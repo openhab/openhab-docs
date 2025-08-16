@@ -36,6 +36,8 @@ openhab> help openhab:send
 Usage: openhab:send <item> <command> - sends a command for an item
 ```
 
+## openHAB Commands
+
 ### Items
 
 | Command                           | Description                                                         |
@@ -126,3 +128,18 @@ Usage: openhab:send <item> <command> - sends a command for an item
 |`openhab:users addApiToken <userId> <tokenName> <scope>` | adds a new API token on behalf of the specified user for the specified scope               |
 |`openhab:users rmApiToken <userId> <tokenName>`          | removes (revokes) the specified API token                                                  |
 |`openhab:users clearSessions <userId>`                   | clear the refresh tokens associated with the user (will sign the user out of all sessions) |
+
+## Karaf Commands
+
+Apache Karaf itself also provides many useful commands, especially for debugging and development purposes.
+
+For example, you can create a heap dump and thread dump of the JVM to analyse memory and thread leaks:
+
+```shell
+dev:dump-create
+Created dump zip: 2025-08-08_171434.zip
+```
+
+You will find this ZIP in the `$OPENHAB_USERDATA` folder, usually `/var/lib/openhab/` on Linux systems.
+
+Please refer to the [Karaf Developer Commands documentation](https://karaf.apache.org/manual/latest/#_developer_commands) for more information about the available commands.
