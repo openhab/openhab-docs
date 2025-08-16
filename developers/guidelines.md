@@ -139,7 +139,7 @@ To check your Markdown formatting locally, run:
 
 ```shell
 mvn clean install -P check-markdown
-``` 
+```
 
 Before submitting changes, it is recommended to run this check to avoid formatting issues.
 
