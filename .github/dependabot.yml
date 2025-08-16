@@ -5,13 +5,6 @@
 
 version: 2
 
-# this would enable querying all packages from our repo first,
-# disabled for now as we do not want to use it. Kept for reference.
-#registries:
-#  openhab-jfrog:
-#    type: "maven-repository"
-#    url: "https://openhab.jfrog.io/artifactory/libs-all/"
-
 updates:
   - package-ecosystem: "github-actions" # See documentation for possible values
     directory: "/" # Location of package manifests
@@ -20,4 +13,3 @@ updates:
     open-pull-requests-limit: 10
     labels:
       - dependencies
-
