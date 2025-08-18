@@ -17,7 +17,7 @@ install: auto
 <AddonLogo />
 
 The binding for sonnen communicates with a sonnen battery.
-More information about the sonnen battery can be found [here](https://sonnen.de/).
+More information about the sonnen battery can be found on the [Sonnen official website](https://sonnen.de/).
 The binding supports the old deprecated V1 from sonnen as well as V2 which requires an authentication token.
 More information about the V2 API can be found at `http://LOCAL-SONNENBATTERY-SYSTEM-IP/api/doc.html`
 

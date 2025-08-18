@@ -17,7 +17,7 @@ install: auto
 <AddonLogo />
 
 This binding integrates openHAB with the Hyperion ambient lighting software.
-Further details on the Hyperion project can be found [here.](https://hyperion-project.org/)
+Further details on the Hyperion project can be found on the [Hyperion project website](https://hyperion-project.org/)
 
 ## Supported Things
 
