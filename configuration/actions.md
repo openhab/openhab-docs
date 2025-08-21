@@ -99,6 +99,9 @@ var ScriptResponse = executeCommandLine(Duration.ofSeconds(60), "path/to/your/sc
 - `sendHttpPostRequest(String url, String contentType, String content, Map<String, String> headers, int timeout)`: Sends a POST-HTTP request with the given content, request headers, and timeout in ms, and returns the result as a String
 - `sendHttpDeleteRequest(String url)`: Sends a DELETE-HTTP request and returns the result as a String
 - `sendHttpDeleteRequest(String url, Map<String, String> headers, int timeout)`: Sends a DELETE-HTTP request with the given request headers, and timeout in ms, and returns the result as a String
+- `setImage(String itemName, String url)`: Downloads an image from a URL and updates the Image item's state with it. Returns `true` if successful, `false` otherwise
+- `setImage(String itemName, String url, int timeout)`: Downloads an image from a URL with a specified timeout in milliseconds and updates the Image item's state with it. Returns `true` if successful, `false` otherwise
+- `setImage(String itemName, String url, long maxContentLength, int timeout)`: Downloads an image from a URL with a specified maximum content length in bytes and timeout in milliseconds, and updates the Image item's state with it. Returns `true` if successful, `false` otherwise. Use negative values for `maxContentLength` to ignore size limits
 
 ::: tip Note
 All HTTP Actions can have a last `timeout` parameter added in ms. eg. `sendHttpPostRequest(String url, String contentType, String content, int timeout)`
