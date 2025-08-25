@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="resideo_smco410_00_000" listed="false">
+    <label>SMCO410 Smoke and Carbon Monoxide Alarm</label>
+    <description><![CDATA[
+Smoke and Carbon Monoxide Alarm<br /> <h1>Overview</h1><p>Precision Detection advanced sensing technology reduces cooking nuisance alarms and delivers early warning</p><p>Z-Wave Plus Certified</p><p>Works with Ring to notify the homeowner while away in the event of a fire or CO emergency. Ring Alarm or Ring Alarm Pro Security Kit with Alarm Smoke and CO Listener required.</p><p>10-Year sealed battery eliminates battery replacements and low battery chirps</p><p>End-of-life warning lets you know when it’s time to replace the alarm</p><p>Test/silence button for efficient testing to ensure alarm is working properly</p><p>Provides reliable 2-in-1 detection against both smoke and carbon monoxide</p> <br /> <h2>Inclusion Information</h2><p>The SMCO410 is powered up and if user presses and hold down test button for approx. 10+ seconds until</p><p>2x green led blink and 2x beep and release it, the SMC0410 device start the Learn mode. After the</p><p>conclusion of learn mode (or timeout), the SMCO410 device will remain awake for 25 seconds. The</p><p>SMCO410 device supports both classic and NWI (network wide inclusion) Inclusion modes. When entering</p><p>learn mode, the SMCO410 device will go into classic mode for 5 seconds. If classic inclusion does not start</p><p>before the 5 second timeout, the SMCO410 will fall back to NWI mode. </p> <br /> <h2>Exclusion Information</h2><p>The SMCO410 is powered up and if user presses and hold down test button for approx. 10+ seconds until</p><p>2x green led blink and 2x beep and release it, the SMC0410 device start the Learn mode. After the</p><p>conclusion of learn mode (or timeout), the SMCO410 device will remain awake for 25 seconds. The</p><p>SMCO410 device supports both classic and NWE (network wide exclusion) exclusion modes. When</p><p>entering learn mode, the SMCO410 device will go into classic mode for 5 seconds. If classic exclusion does</p><p>not start before the 5 second timeout, the SMCO410 will fall back to NWE mode. </p> <br /> <h2>Wakeup Information</h2><p>The SMCO410 will send the Wake-up Notification after completion Test operation. The user will initiate</p><p>the test operation on the device by pressing the test button for approx. 0-10 seconds until 1x green led</p><p>blink and 1xbeep and release it. The device will perform the test operation on the device and after</p><p>completion of the test operation, the device will send Wakeup notification. The SMCO410 will wait for 10</p><p>seconds to receive the Wake-up No more information message from the Z-wave® controller. If the</p><p>message received, the SMCO410 will go into the sleep mode immediately, else the SMCO410 device will</p><p>go into the sleep mode after 10 second timer expire in idle mode (No ongoing communication with the Zwave® Controller). </p><p>The SMCO410 will also send the Wake-up notification if wake up interval is configured. The SMCO410</p><p>supports the wakeup interval as 3hrs interval. Mostly the SMCO410 device will send the Wake-up</p><p>notification along with the Heartbeat message.</p><p>Following are the Wake-up interval parameters,</p><p>• DEFAULT_SLEEP_TIME: 0 seconds</p><p>• MIN_SLEEP_TIME: 0 seconds</p><p>• MAX_SLEEP_TIME: 10800 seconds (3 hours)</p><p>• STEP_SLEEP_TIME: 0 </p>
+    ]]></description>
+    <category>Battery</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="alarm_smoke" typeId="alarm_smoke">
+        <label>Alarm (smoke)</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=SMOKE</property>
+        </properties>
+      </channel>
+      <channel id="alarm_co" typeId="alarm_co">
+        <label>Alarm (CO)</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=CARBON_MONOXIDE</property>
+        </properties>
+      </channel>
+      <channel id="alarm_system" typeId="alarm_system">
+        <label>Alarm (system)</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=SYSTEM</property>
+        </properties>
+      </channel>
+      <channel id="battery-level" typeId="system.battery-level">
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_BATTERY</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Resideo</property>
+      <property name="modelId">SMCO410</property>
+      <property name="manufacturerId">041B</property>
+      <property name="manufacturerRef">0001:0410</property>
+      <property name="dbReference">1668</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_1_2" type="integer" groupName="configuration">
+        <label>1: SuperVision Report Timeout</label>
+        <description><![CDATA[
+SMCO410 will send the message over SuperVision Command Class, and it will wait for the SuperVision report from the Controller for the SuperVision report timeout time.<br /> <h1>Overview</h1><p><br /></p>
+        ]]></description>
+        <default>1500</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_2_2" type="integer" groupName="configuration">
+        <label>2: SuperVision Retry Count</label>
+        <description><![CDATA[
+If the SuperVision report is not received within the SuperVision report timeout time, the SMCO410 will retry sending the message again. Upon exceeding the max retry, the SMCO410 device will send the next message available in the queue.<br /> <h1>Overview</h1><p><br /></p>
+        ]]></description>
+        <default>1</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_3_2" type="integer" groupName="configuration">
+        <label>3: SuperVision Wait Time</label>
+        <description><![CDATA[
+Before retrying the message, SMCO410 will wait for the SuperVision wait time. Actual wait time is calculated using below formula, Wait time = SuperVision wait time base-value + random-value + (attempt-count x 5 seconds)  The random value shall be a time<br /> <h1>Overview</h1><p><br /></p>
+        ]]></description>
+        <default>5</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Lifeline</label>
+        <description><![CDATA[
+The alarm supports one association group (Lifeline) and sends its alarms to that group. The Z-wave® network controller may be set in this group. It is not recommended to modify this association group. All the critical events in the list of supported event<br /> <h1>Overview</h1><p><br /></p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>
