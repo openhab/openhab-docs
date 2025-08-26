@@ -7,8 +7,8 @@ title: Developer Tools - Developer Sidebar
 
 <!-- START MAINUI SIDEBAR DOC - DO NOT REMOVE -->
 Main UI provides a developer sidebar for administrator user(s), that is accessible from anywhere in the UI.
-The developer sidebar is split into a "tools" section with several useful tools including a [universal search]({{base}}/mainui/developer/sidebar.html#developer-sidebar-search) across nearly all UI-configurable entities and a widget expression tester,
-and a "help" section aiming at providing help and useful information regarding configuration and setup.
+The developer sidebar is split into a "**Tools**" section with several useful tools including a [universal search]({{base}}/mainui/developer/sidebar.html#developer-sidebar-search), a widget expression tester,
+and a "**Help**" section aiming at providing help and useful information regarding configuration and setup.
 <!-- END MAINUI SIDEBAR DOC - DO NOT REMOVE -->
 
 If your device's screen is wide enough (it has to be at least 1280 pixels wide), you can open the developer side-panel by:
@@ -19,36 +19,55 @@ If your device's screen is wide enough (it has to be at least 1280 pixels wide),
 
 ## Developer Sidebar Search
 
-As already mentioned, the developer sidebar provides a universal search across nearly all UI-configurable entities.
-This means, you can search through most configuration available in Main UI, including Things, Items, pages.
+The Developer Sidebar provides a powerful, case-insensitive search across nearly all UI-configurable entities in Main UI — including Things, Items, Pages, Rules, Scenes, Scripts, and more.
 
-Imagine you need to find all usages of an Item.
-You could start to open all rules, scenes and scripts, check persistence configuration and have a look at pages and sitemaps to find usages of that Item or you use the developer sidebar search.
+Instead of manually digging through rules, scenes, scripts, persistence configurations, sitemaps, and pages to find where a string is used, the Developer Sidebar Search lets you locate all entities that contain the string, whether it’s an Item name, label, metadata, uid, or other textual content.
 
-The developer sidebar search ignores case (so it doesn't matter whether you search `LivingRoom_Light` or `livingroom_light`) and searches inside the following entities:
+### Search Syntax
 
-- Things
-  - UID
-  - label
-- Items
-  - name
-  - label
-  - tags (requires exact match, i.e. if the Item has a tag `Lightbulb`, only the search query `Lightbulb` (case doesn't matter) will match)
-  - metadata
-- Pages (including Sitemaps)
-  - uid
-  - label
-  - content (widgets, tabs, charts, etc. with their configuration) / slots
-- Transformations
-  - uid
-  - label
-  - type
-- Rules, Scenes & Scripts
+The Developer Sidebar supports extended syntax to help fine-tune your search results:
+
+- **Whitespace** acts as a logical **AND**, meaning all separate terms must be present somewhere in the matched content.
+- A single **pipe (`|`)** is treated as a logical **OR**, matching entries that contain any of the terms.
+- Enclose a phrase with **double quotes (`"`)** to treat it as a single unit and avoid splitting it — useful for partial exact matches.
+- Prefix with an **equals sign (`=`)** for full-string matches (still case-insensitive), ensuring the entire field matches the query.
+
+| Token   | Meaning                                                                            |
+|:--------|:-----------------------------------------------------------------------------------|
+| `word`  | Find the word `word` anywhere within the text.                                     |
+| `^word` | The matching field must begin with `word`.                                         |
+| `word$` | The matching field must end with `word`.                                           |
+| `=word` | Find an exact match (but still case-insensitive). The entire field must be `word`. |
+
+Some examples:
+
+- `living room` -> matches `Living Room Light`, `Light in the living Room`, `Room Living`
+- `"living room"` -> matches `Living Room`, `Living Room1`, `Living Room Light`, `My Living Room Light` but not `Room Living` or `Living1 Room`.
+- `="living room"` -> matches only the exact string `Living Room`.
+- `living room | dining room` -> matches entries containing either (`Living` and `Room`) or (`Dining` and `Room`), e.g. `My Living Room`, `Living My Room`, `My Dining Room`.
+  It will not match `Living Dining`.
+- `^garden` -> matches `Garden Light`, not `Light in the Garden` or `Rose Garden`.
+
+### Search Scope
+
+Entities searched include:
+
+- **Things**
+  - UID, label
+- **Items**
+  - Name, label, tags, metadata
+- **Pages** and **Sitemaps**
+  - UID, label, content (widgets, tabs, charts, slots)
+- **Widgets**
+  - UID, props, slot content
+- **Transformations**
+  - UID, label, function
+- **Rules**, **Scenes** & **Scripts**
+  - UID, name, description, tags
   - Item name & Thing UID of triggers, actions & conditions
-  - script code (e.g. Rules DSL, JavaScript, and even Blockly)
-  - script MIME types (requires exact match)
-  - Blockly scripts (using `block`, `blockly` or `blocksource` as search string, where case is ignored)
-  - tags (requires exact match)
-- Persistence Configurations:
-  - label & service id of persistence service
-  - Items persisted by persistence service
+  - Script code (Rules DSL, JavaScript, Blockly, etc.)
+  - Script MIME type
+  - Blockly scripts (using `block`, `blockly` or `blocksource` as search string)
+- **Persistence Configurations**:
+  - Label, Service ID
+  - Persisted Items
