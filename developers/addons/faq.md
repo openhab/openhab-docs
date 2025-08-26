@@ -54,17 +54,17 @@ If you do not find an answer to your question, do not hesitate to ask it on the 
 1. _How do I model a light with color, brightness, on/off, and/or color temperature chanels?_
 
     Lights have different capabilities -- some are just on/off, some are dimmable, some have cold/warm color temperature control, and some have full color control.
-So when you model a light in your binding, you must follow the ***"Highest Capability Channel Rule"***.
-This rule means supporting **only one** of the following *Single Color Channel for Top Capability Light, Single Dimmer Channel for Mid Capability Light*, or *Single Switch Channel for Low Capability Light* scenarios:
+So when you model a light in your binding, you must follow the _**"Highest Capability Channel Rule"**_.
+This rule means supporting **only one** of the following _Single Color Channel for Top Capability Light, Single Dimmer Channel for Mid Capability Light_, or _Single Switch Channel for Low Capability Light_ scenarios:
 
-    - *Single Color Channel for Top Capability Light:*
+    - _Single Color Channel for Top Capability Light:_
     If the light supports full color, then it must expose one single `Color` channel only.
     This should have the channel-type `system.color` therefore inheriting default tags `[Control, Color]`.
     Although the channel is of type `Color`, items of type `Dimmer` or `Switch` can be linked to it too.
     The possibility to dim or switch the light is therefore implicitly available so there is no need for an additional channel with item type `Dimmer` or `Switch`, even if the hardware might have separated switching and dimming in different commands.
     Therefore the channel must be able to process all of the following types of command:
-      - HSBType commands control the color hue, the brightness, and the on/off state, *plus*
-      - PercentType commands control  the brightness, and the on/off state, *plus*
+      - HSBType commands control the color hue, the brightness, and the on/off state, _plus_
+      - PercentType commands control  the brightness, and the on/off state, _plus_
       - OnOffType commands control the on/off state.
 
       When the brightness is changed through a linked `Dimmer` item, the hue and saturation values must be kept.
@@ -73,24 +73,24 @@ This rule means supporting **only one** of the following *Single Color Channel f
     Sending an `ON` command to such a channel does not have to switch to 100% brightness, though.
     Depending on whether the device supports it, it can also dim to the last brightness value (other than 0%) it was in before.
 
-    - *Single Dimmer Channel for Mid Capability Light:*
+    - _Single Dimmer Channel for Mid Capability Light:_
     If the light supports dimming, (but not full color), it must expose one single `Dimmer` channel only.
     This should have the channel-type `system.brightness` thus inheriting default tags `[Control, Brightness]`.
     Although the channel is of type `Dimmer`, items of type `Switch` can be linked to it too.
     The possibility to switch the light is therefore implicitly available so there is no need for an additional channel with item type `Switch`, even if the hardware might have separated switching and dimming in different commands.
     Therefore the channel must be able to process all of the following types of command:
-      - PercentType commands which controls  the brightness, and the on/off state, *plus*
+      - PercentType commands which controls  the brightness, and the on/off state, _plus_
       - OnOffType commands which controls the on/off state.
 
-      When an `ON` or `OFF` command is sent through a linked `Switch` item, the behaviour must be similar to the *Highest Capability Light* scenario above.
+      When an `ON` or `OFF` command is sent through a linked `Switch` item, the behaviour must be similar to the _Highest Capability Light_ scenario above.
 
-    - *Single Switch Channel for Low Capability Light:*
+    - _Single Switch Channel for Low Capability Light:_
 If the light supports on/off only, then it must expose one single `Switch` channel only.
 The channel-type should have default tags `[Switch, Light]` rather than `[Switch, Power]`.
 This channel must be able to process the following type of command:
       - OnOffType commands which controls the on/off state.
 
-    - *Color Temperature Channel:*
+    - _Color Temperature Channel:_
 If the light also supports variable color temperature (in percent) the following applies.
 Color temperature is nothing else than a color palette with a limited (linear) choice of colors.
 However there is no dedicated item type for color temperature and it is tricky (though not impossible) to map color temperatures to HSB values.
@@ -100,7 +100,7 @@ This should have the channel-type `system.color-temperature` thus inheriting def
 This channel is orthogonal to the brightness and on/off state, but not orthogonal to the HS part of the HSB.
 So changing the color temperature may (or may not) have a consequent impact on the color channel.
 
-    - *Absolute Color Temperature Channel:*
+    - _Absolute Color Temperature Channel:_
 If the light also supports absolute color temperature (in Kelvin).
 The case is similar to color temperature in percent above.
 You can implement this by exposing another separate `Dimmer` channel.
@@ -108,7 +108,7 @@ This channel should have the channel-type `system.color-temperature-abs` thus in
 This is especially useful when being used from within automation rules where different light bulbs from different vendors should be set to the very same color temperature.
 Additionally the web UI has a dedicated picker widget for selecting color temperature in Kelvin.
 
-    - *Extra (Advanced) Channels:*
+    - _Extra (Advanced) Channels:_
 HSBType commands combine a mixture of color (HS), brightness (B) and on/off state (B>0) values in a single state variable.
 There may be use cases that require pure access to these state variables independently.
 So it is also allowed (optionally) to have advanced pure channels e.g. `colorOnly`, `brightnessOnly` and/or `onOffOnly`.
