@@ -67,7 +67,7 @@ This rule means supporting **only one** of the following _Single Color Channel f
       - PercentType commands control the brightness, and on/off state, _plus_
       - OnOffType commands control the on/off state
 
-      When the brightness is changed through a linked `Dimmer` item, the hue and saturation values must be kept.
+      When the brightness is changed through a linked `Dimmer` item, the hue and saturation values must be preserved.
     Likewise, when an `OFF` command is sent through a linked `Switch` item, it must adjust the brightness to 0%, and/or set the on/off state to OFF, so that with the next ON (or brightness change), the hue and saturation values are restored untouched.
     In the openHAB abstraction layer, 0% brightness is identical to `OFF`.
     Sending an `ON` command to such a channel does _not_ have to switch to 100% brightness; depending on the device, it can also dim to the last brightness value (other than 0%) it had before.
