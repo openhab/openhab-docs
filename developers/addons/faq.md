@@ -51,26 +51,26 @@ If you do not find an answer to your question, do not hesitate to ask it on the 
 
 ### Modelling Channels
 
-1. _How do I model a light with color, brightness, on/off, and/or color temperature chanels?_
+1. _How do I model a light with color, brightness, on/off, and/or color temperature channels?_
 
     Lights have different capabilities -- some are just on/off, some are dimmable, some have cold/warm color temperature control, and some have full color control.
 So when you model a light in your binding, you must follow the _**"Highest Capability Channel Rule"**_.
 This rule means supporting **only one** of the following _Single Color Channel for Top Capability Light, Single Dimmer Channel for Mid Capability Light_, or _Single Switch Channel for Low Capability Light_ scenarios:
 
     - _Single Color Channel for Top Capability Light:_
-    If the light supports full color, then it must expose one single `Color` channel only.
+    If the light supports full color, it must expose one single `Color` channel only.
     This should have the channel-type `system.color` therefore inheriting default tags `[Control, Color]`.
-    Although the channel is of type `Color`, items of type `Dimmer` or `Switch` can be linked to it too.
-    The possibility to dim or switch the light is therefore implicitly available so there is no need for an additional channel with item type `Dimmer` or `Switch`, even if the hardware might have separated switching and dimming in different commands.
+    Although the channel is of type `Color`, items of type `Dimmer` or `Switch` can be linked to it.
+    The ability to dim or switch the light is therefore implicitly available so there is no need for an additional channel with item type `Dimmer` or `Switch`, even if the hardware might have separated switching and dimming in different commands.
     Therefore the channel must be able to process all of the following types of command:
-      - HSBType commands control the color hue, the brightness, and the on/off state, _plus_
-      - PercentType commands control  the brightness, and the on/off state, _plus_
-      - OnOffType commands control the on/off state.
+      - HSBType commands control the color hue, brightness, and on/off state, _plus_
+      - PercentType commands control the brightness, and on/off state, _plus_
+      - OnOffType commands control the on/off state
 
-      When the brightness is changed through a linked `Dimmer` item, the hue and saturation values must be kept.
-    Likewise, when an `OFF` command is sent through a linked `Switch` item, it must adjust the brightness to 0%, and/or set the on/off state to OFF, so that with the next ON (or brightness change), the hue and saturation values are restored untouched.
+      When the brightness is changed through a linked `Dimmer` item, the hue and saturation values must be preserved.
+    Likewise, when an `OFF` command is sent through a linked `Switch` item, it must adjust the brightness to 0% and/or set the on/off state to OFF, so that with the next ON (or brightness change), the hue and saturation values are restored untouched.
     In the openHAB abstraction layer, 0% brightness is identical to `OFF`.
-    Sending an `ON` command to such a channel does not have to switch to 100% brightness, though.
+    Sending an `ON` command to such a channel does _not_ have to switch to 100% brightness; depending on the device, it can also dim to the last brightness value (other than 0%) it had before.
     Depending on whether the device supports it, it can also dim to the last brightness value (other than 0%) it was in before.
 
     - _Single Dimmer Channel for Mid Capability Light:_
