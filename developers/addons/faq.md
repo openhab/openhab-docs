@@ -71,24 +71,25 @@ This rule means supporting **only one** of the following _Single Color Channel f
     Likewise, when an `OFF` command is sent through a linked `Switch` item, it must adjust the brightness to 0% and/or set the on/off state to OFF, so that with the next ON (or brightness change), the hue and saturation values are restored untouched.
     In the openHAB abstraction layer, 0% brightness is identical to `OFF`.
     Sending an `ON` command to such a channel does _not_ have to switch to 100% brightness; depending on the device, it can also dim to the last brightness value (other than 0%) it had before.
-    Depending on whether the device supports it, it can also dim to the last brightness value (other than 0%) it was in before.
 
     - _Single Dimmer Channel for Mid Capability Light:_
     If the light supports dimming, (but not full color), it must expose one single `Dimmer` channel only.
     This should have the channel-type `system.brightness` thus inheriting default tags `[Control, Brightness]`.
-    Although the channel is of type `Dimmer`, items of type `Switch` can be linked to it too.
+    Although the channel is of type `Dimmer`, items of type `Switch` can be linked to it.
     The possibility to switch the light is therefore implicitly available so there is no need for an additional channel with item type `Switch`, even if the hardware might have separated switching and dimming in different commands.
     Therefore the channel must be able to process all of the following types of command:
       - PercentType commands which controls  the brightness, and the on/off state, _plus_
-      - OnOffType commands which controls the on/off state.
+      - OnOffType commands which controls the on/off state
 
       When an `ON` or `OFF` command is sent through a linked `Switch` item, the behaviour must be similar to the _Highest Capability Light_ scenario above.
 
     - _Single Switch Channel for Low Capability Light:_
-If the light supports on/off only, then it must expose one single `Switch` channel only.
+If the light supports on/off only, it must expose one single `Switch` channel only.
 The channel-type should have default tags `[Switch, Light]` rather than `[Switch, Power]`.
 This channel must be able to process the following type of command:
-      - OnOffType commands which controls the on/off state.
+      - OnOffType commands which controls the on/off state
+
+    Please refer to the Hue API v2 Thing Handler for an [example implementation](https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.hue/src/main/java/org/openhab/binding/hue/internal/handler/Clip2ThingHandler.java#L384).
 
     - _Color Temperature Channel:_
 If the light also supports variable color temperature (in percent) the following applies.
