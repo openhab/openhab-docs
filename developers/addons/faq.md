@@ -51,7 +51,7 @@ If you do not find an answer to your question, do not hesitate to ask it on the 
 
 ### Modelling Channels
 
-1. _How do I model a light with color, brightness, on/off, and/or color temperature chanels?_
+1. _How do I model a light with color, brightness, on/off, and/or color temperature channels?_
 
     Lights have different capabilities -- some are just on/off, some are dimmable, some have cold/warm color temperature control, and some have full color control.
 So when you model a light in your binding, you must follow the _**"Highest Capability Channel Rule"**_.
