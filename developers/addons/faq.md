@@ -58,7 +58,7 @@ So when you model a light in your binding, you must follow the _**"Highest Capab
 This rule means supporting **only one** of the following _Single Color Channel for Top Capability Light, Single Dimmer Channel for Mid Capability Light_, or _Single Switch Channel for Low Capability Light_ scenarios:
 
     - _Single Color Channel for Top Capability Light:_
-    If the light supports full color, then it must expose one single `Color` channel only.
+    If the light supports full color, it must expose one single `Color` channel only.
     This should have the channel-type `system.color` therefore inheriting default tags `[Control, Color]`.
     Although the channel is of type `Color`, items of type `Dimmer` or `Switch` can be linked to it too.
     The possibility to dim or switch the light is therefore implicitly available so there is no need for an additional channel with item type `Dimmer` or `Switch`, even if the hardware might have separated switching and dimming in different commands.
