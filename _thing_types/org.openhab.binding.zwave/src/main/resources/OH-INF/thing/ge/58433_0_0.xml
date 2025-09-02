@@ -6,9 +6,9 @@
                       https://openhab.org/schemas/thing-description/v1.0.0">
 
   <thing-type id="ge_58433_00_000" listed="false">
-    <label>GE 58433/58436 GE Enbrighten Z-Wave Plus Smart Switch</label>
+    <label>Enbrighten ZWA4011, 58433 Enbrighten Z-Wave In-Wall Smart Light Switch, 700 Series, 58433</label>
     <description><![CDATA[
-GE Enbrighten Z-Wave Plus Smart Switch<br /> <h1>Overview</h1><p>Home automation is even smarter with the Enbrighten Z-Wave In-Wall Smart Switch with QuickFit™ and SimpleWire™. When paired with a compatible hub, the hardwired smart switch operates wall, ceiling and accent lighting through individual commands and programmed settings. Wirelessly control and schedule indoor or outdoor fixtures for effortless management of your home. Your automation possibilities are seemingly infinite when connected to hubs from Ring, Wink, SmartThings, HomeSeer, Vera, American Standard and more.</p><p>Home automation is even smarter with the GE Enbrighten Z-Wave Plus In-Wall Smart Switch with QuickFit™ and SimpleWire™. When paired with a compatible hub, the hardwired smart switch operates wall, ceiling and accent lighting through individual commands and programmed settings. Wirelessly control and schedule indoor or outdoor fixtures for effortless management of your home. Your automation possibilities are seemingly infinite when connected to hubs from Ring, Wink, SmartThings, HomeSeer, Vera, Nexia and more.</p> <br /> <h2>Inclusion Information</h2><p> Once the controller is ready to include your device, press up and release on the toggle to include it in the network. </p><p> Once your controller has confirmed that the device has been included, refresh the Z-Wave network to optimize performance. </p><ol><li>Once the controller is ready to include your device, press up and release on the toggle to include it in the network. </li> <li>Once your controller has confirmed that the device has been included, refresh the Z-Wave network to optimize performance. </li> </ol> <br /> <h2>Exclusion Information</h2><p>Once the controller is ready to exclude your device, press up and release on the toggle to exclude it from the network. </p><ol><li>Once the controller is ready to include your device, press up and release on the toggle to include it in the network. </li> <li>Once your controller has confirmed that the device has been included, refresh the Z-Wave network to optimize performance. </li> </ol> <br /> <h2>Wakeup Information</h2><p><br /></p>
+Enbrighten Z-Wave In-Wall Smart Light Switch, 700 Series, 58433<br /> <h1>Overview</h1><p>Home automation is even smarter with the Enbrighten Z-Wave In-Wall Smart Switch with QuickFit™ and SimpleWire™. When paired with a compatible hub, the hardwired smart switch operates wall, ceiling and accent lighting through individual commands and programmed settings. Wirelessly control and schedule indoor or outdoor fixtures for effortless management of your home. Your automation possibilities are seemingly infinite when connected to hubs from Ring, Wink, SmartThings, HomeSeer, Vera, American Standard and more.</p><p>About Z-Wave Plus and 700 series with S2 security and SmartStart</p><p>Z-Wave Plus and 700 series further enhance the security and simplicity of previous Z-Wave products. In addition to remaining backward compatible with all Z-Wave generations, 700-series devices feature multiple advancements, including:</p><p>· Over-the-air updates and doubled internal memory.</p><p>· More powerful, robust network capabilities.</p><p>· S2 security with best-in-class secure key exchange to add a layer of 128-bit encryption.</p><p>· SmartStart, which offers unique QR codes for fast, easy pairing.</p><p>· Up to five-year battery life with one coin cell for battery-powered devices.</p> <br /> <h2>Inclusion Information</h2><p>1. Follow the instructions for your Z-Wave certified controller to add a device to the Z-Wave network.</p><p>2. Once the controller is ready to add your device, press the top or bottom of the wireless smart switch (rocker).</p> <br /> <h2>Exclusion Information</h2><p>To remove and reset the device</p><p>1. Follow the instructions for your Z-Wave certified controller to remove a device from the Z-Wave network.</p><p>2. Once the controller is ready to remove your device, press the top or bottom of the wireless smart switch (rocker).</p><p><br /></p> <br /> <h2>Wakeup Information</h2><p><br /></p>
     ]]></description>
     <category>WallSwitch</category>
 
@@ -20,183 +20,31 @@ GE Enbrighten Z-Wave Plus Smart Switch<br /> <h1>Overview</h1><p>Home automation
           <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY</property>
         </properties>
       </channel>
+      <channel id="scene_number" typeId="scene_number">
+        <label>Scene Number</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_SCENE_ACTIVATION</property>
+        </properties>
+      </channel>
+      <channel id="scene_number" typeId="scene_number">
+        <label>Scene Number</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_CENTRAL_SCENE</property>
+        </properties>
+      </channel>
     </channels>
 
     <!-- DEVICE PROPERTY DEFINITIONS -->
     <properties>
       <property name="vendor">Jasco Products</property>
-      <property name="modelId">GE 58433/58436</property>
+      <property name="modelId">Enbrighten ZWA4011, 58433</property>
       <property name="manufacturerId">0063</property>
-      <property name="manufacturerRef">4952:3239,4952:3330,4952:3334</property>
-      <property name="dbReference">1589</property>
-      <property name="defaultAssociations">1</property>
+      <property name="manufacturerRef">4952:3239</property>
+      <property name="dbReference">1669</property>
     </properties>
 
     <!-- CONFIGURATION DESCRIPTIONS -->
     <config-description>
-
-      <!-- GROUP DEFINITIONS -->
-      <parameter-group name="configuration">
-        <context>setup</context>
-        <label>Configuration Parameters</label>
-      </parameter-group>
-
-      <parameter-group name="association">
-        <context>link</context>
-        <label>Association Groups</label>
-      </parameter-group>
-
-      <!-- PARAMETER DEFINITIONS -->
-      <parameter name="config_3_1" type="integer" groupName="configuration">
-        <label>3: LED Light Mode</label>
-        <description><![CDATA[
-LED Light Mode<br /> <h1>Overview</h1><p>Set the LED Light Mode</p>
-        ]]></description>
-        <default>0</default>
-        <options>
-          <option value="0">LED ON when switch is OFF</option>
-          <option value="1">LED ON when switch is ON</option>
-          <option value="2">LED always OFF</option>
-          <option value="3">LED Always ON</option>
-        </options>
-      </parameter>
-
-      <parameter name="config_4_1" type="integer" groupName="configuration">
-        <label>4: Invert Switch</label>
-        <description><![CDATA[
-Invert Switch<br /> <h1>Overview</h1><p>Reverse the default ON/OFF Paddle switch setting</p>
-        ]]></description>
-        <default>0</default>
-        <options>
-          <option value="0">Normal Switch Install</option>
-          <option value="1">Inverted Switch Install</option>
-        </options>
-      </parameter>
-
-      <parameter name="config_5_1" type="integer" groupName="configuration">
-        <label>5: 3-Way Type</label>
-        <description><![CDATA[
-3-Way Type<br /> <h1>Overview</h1><p>Configure between standard 3-Way Switch or Add-On Switch is being used<br /></p>
-        ]]></description>
-        <default>0</default>
-        <options>
-          <option value="0">Standard 3-Way</option>
-          <option value="1">Add-On</option>
-        </options>
-      </parameter>
-
-      <parameter name="config_19_1" type="integer" groupName="configuration">
-        <label>19: Alternate Exclusion</label>
-        <description><![CDATA[
-Alternate Exclusion<br /> <h1>Overview</h1><p>Alternative way to perform Exclusion<br /></p>
-        ]]></description>
-        <default>0</default>
-        <options>
-          <option value="0">Press any button on the switch</option>
-          <option value="1">Alternate Exclusion</option>
-        </options>
-      </parameter>
-
-      <parameter name="config_34_1" type="integer" groupName="configuration">
-        <label>34: LED Light Color</label>
-        <description><![CDATA[
-LED Light Color<br /> <h1>Overview</h1><p>Set the LED Light Color<br /></p>
-        ]]></description>
-        <default>5</default>
-        <options>
-          <option value="1">Red</option>
-          <option value="2">Orange</option>
-          <option value="3">Yellow</option>
-          <option value="4">Green</option>
-          <option value="5">Blue</option>
-          <option value="6">Pink</option>
-          <option value="7">Purple</option>
-          <option value="8">White</option>
-        </options>
-      </parameter>
-
-      <parameter name="config_35_1" type="integer" groupName="configuration">
-        <label>35: LED Light Intensity</label>
-        <description><![CDATA[
-LED Light Intensity<br /> <h1>Overview</h1><p>Set the LED Light Intensity<br /></p>
-        ]]></description>
-        <default>4</default>
-        <options>
-          <option value="1">1</option>
-          <option value="2">2</option>
-          <option value="3">3</option>
-          <option value="4">4</option>
-          <option value="5">5</option>
-          <option value="6">6</option>
-          <option value="7">7</option>
-        </options>
-      </parameter>
-
-      <parameter name="config_36_1" type="integer" groupName="configuration">
-        <label>36: Guidelight Mode Intensity</label>
-        <description><![CDATA[
-Guidelight Mode Intensity<br /> <h1>Overview</h1><p>Set the Guidelight Mode Intensity<br /></p>
-        ]]></description>
-        <default>4</default>
-        <options>
-          <option value="1">1</option>
-          <option value="2">2</option>
-          <option value="3">3</option>
-          <option value="4">4</option>
-          <option value="5">5</option>
-          <option value="6">6</option>
-          <option value="7">7</option>
-        </options>
-      </parameter>
-
-      <parameter name="config_39_1" type="integer" groupName="configuration">
-        <label>39: Relay Control</label>
-        <description><![CDATA[
-Relay Control<br /> <h1>Overview</h1><p>Relay Control<br /></p>
-        ]]></description>
-        <default>0</default>
-        <options>
-          <option value="0">0</option>
-          <option value="1">1</option>
-        </options>
-        <advanced>true</advanced>
-      </parameter>
-
-      <parameter name="config_84_1" type="integer" groupName="configuration">
-        <label>84: Reset Factory Default</label>
-        <description><![CDATA[
-Reset Factory Default<br /> <h1>Overview</h1><p>Reset Switch to Factory Defaults<br /></p>
-        ]]></description>
-        <default>0</default>
-        <options>
-          <option value="0">0</option>
-          <option value="1">1</option>
-        </options>
-        <advanced>true</advanced>
-      </parameter>
-
-      <!-- ASSOCIATION DEFINITIONS -->
-      <parameter name="group_1" type="text" groupName="association" multiple="true">
-        <label>1: Lifeline</label>
-        <description>Lifeline</description>
-        <multipleLimit>5</multipleLimit>
-      </parameter>
-
-      <parameter name="group_2" type="text" groupName="association" multiple="true">
-        <label>2: Single Press</label>
-        <description><![CDATA[
-Single Press<br /> <h1>Overview</h1><p><br /></p>
-        ]]></description>
-        <multipleLimit>5</multipleLimit>
-      </parameter>
-
-      <parameter name="group_3" type="text" groupName="association" multiple="true">
-        <label>3: Double Press</label>
-        <description><![CDATA[
-Double Press<br /> <h1>Overview</h1><p><br /></p>
-        ]]></description>
-        <multipleLimit>5</multipleLimit>
-      </parameter>
 
       <!-- STATIC DEFINITIONS -->
       <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
