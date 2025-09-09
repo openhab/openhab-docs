@@ -102,7 +102,7 @@ This channel is orthogonal to the brightness and on/off state, but not orthogona
 So changing the color temperature may (or may not) have a consequent impact on the color channel.
 
     - _Absolute Color Temperature Channel:_
-If the light also supports absolute color temperature (in Kelvin).
+If the light also supports absolute color temperature (in Kelvin or Mired/Mirek).
 The case is similar to color temperature in percent above.
 You can implement this by exposing another separate `Dimmer` channel.
 This channel should have the channel-type `system.color-temperature-abs` thus inheriting the `Advanced` attribute.
