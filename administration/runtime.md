@@ -154,8 +154,9 @@ threads XXXX
 
 ![ttop screenshot](images/ttop.png)
 
-As you can see, I have a few rule threads and MapDB consuming a good amount, as well as openHAB's `OSGiEventManager`.
-To get more details about the `OH-OSGiEventManager` thread, I run `threads 458` and receive the following information:
+As you can see, there are a few rule and MapDB threads consuming a good amount, as well as openHAB's `OSGiEventManager`.
+To get more details about the `OH-OSGiEventManager` thread, use the `threads` command: `threads 458`
+The following information is printed to the console:
 
 ```text
 Thread 458 OH-OSGiEventManager TIMED_WAITING
