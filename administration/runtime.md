@@ -155,7 +155,7 @@ threads XXXX
 ![ttop screenshot](images/ttop.png)
 
 As you can see, there are a few rule and MapDB threads consuming a good amount, as well as openHAB's `OSGiEventManager`.
-To get more details about the `OH-OSGiEventManager` thread, use the `threads` command: `threads 458`
+To get more details about the `OH-OSGiEventManager` thread, use the `threads` command: `threads 458`<br>
 The following information is printed to the console:
 
 ```text
