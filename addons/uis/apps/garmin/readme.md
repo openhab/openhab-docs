@@ -386,10 +386,11 @@ As a result, `Selection` is treated as a **synonym for `Switch`**, and both beha
 - `item`: Name of the associated openHAB item.
 - `mappings` (optional): Defines command-to-label mappings for display and interaction.
 
-The widget supports three usage variants:
+The widget supports four usage variants:
 
 1. **Toggle Switch** – for binary items (`ON`/`OFF`) and `Dimmer` items.
 1. **Rollershutter Control** – a full-screen view for `Rollershutter` items with `UP`, `DOWN`, and `STOP` buttons.
+1. **Player Control** – a full-screen view for `Player` items with `PLAY`/`PAUSE`, `NEXT`, and `PREVIOUS` buttons.
 1. **Generic Switch** – for items with custom or multiple commands, defined via `mappings` or item metadata.
 
 ##### Toggle Switch
@@ -443,6 +444,26 @@ Frame label="Switches" {
   <img src="images/app/06-switches-2-rollershutter-2.png"/>
   <img src="images/app/06-switches-2-rollershutter-3.png"/>
   <img src="images/app/06-switches-2-rollershutter-4.png"/>
+</div>
+
+##### Player
+
+When the item type is `Player`, the widget opens a full-screen control with `PLAY`/`PAUSE`, `NEXT`, and `PREVIOUS` actions. In the menu, the item displays the `PLAY`/`PAUSE` state.
+
+**Example:**
+
+```java
+Frame label="Switches" {
+    Switch item=MediaControl label="Audio"
+}
+```
+
+**UI Preview:**
+
+<div class="garmin-screenshot-container">
+  <img src="images/app/06-switches-4-player-1.png"/>
+  <img src="images/app/06-switches-4-player-2.png"/>
+  <img src="images/app/06-switches-4-player-3.png"/>
 </div>
 
 ##### Generic Switch
@@ -618,11 +639,14 @@ Currently supported icons are:
 - `light`
 - `lightbulb`
 - `lowbattery`
+- `mediacontrol`
+- `player`
 - `poweroutlet`
 - `radiator`
 - `rollershutter`
 - `screen`
 - `slider`
+- `soundvolume`
 - `temperature`
 - `window`
 
