@@ -4,7 +4,7 @@ label: Roborock
 title: Roborock - Bindings
 type: binding
 description: "This binding is used to control Roborock robot vacuum cleaner products implementing the Roborock protocol."
-install: manual
+install: auto
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
