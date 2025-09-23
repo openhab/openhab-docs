@@ -1,4 +1,4 @@
-name: Fetch openHAB app for Garmin Docs
+name: Fetch openHAB Garmin Client Docs
 
 on:
   # Repository dispatch event, to be triggerd by an openhabian release
@@ -14,9 +14,7 @@ jobs:
       base_source_repository: openhab-garmin
       base_source_ref: ${{ github.event.client_payload.ref }}
       base_folder: addons/uis/apps/garmin
-      base_file: readme.md
-      doc_base_dir: docs
+      base_file: readme.md 
+      doc_base_dir: /docs
       doc_base_file: USAGE.md
-      image_base_dir: docs/images
       has_images: true
-    
