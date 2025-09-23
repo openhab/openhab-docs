@@ -1,0 +1,22 @@
+name: Fetch openHAB app for Garmin Docs
+
+on:
+  # Repository dispatch event, to be triggerd by an openhabian release
+  # or manually from the openhabian repository
+  repository_dispatch:
+    types: [update-openhab-garmin-docs-event]
+  workflow_dispatch:
+
+jobs:
+  call-reusable-fetch-workflow:
+    uses: openhab/openhab-docs/.github/workflows/fetch_external_docs_reusable.yml@main
+    with:
+      base_source_repository: openhab-garmin
+      base_source_ref: ${{ github.event.client_payload.ref }}
+      base_folder: addons/uis/apps/garmin
+      base_file: readme.md
+      doc_base_dir: docs
+      doc_base_file: USAGE.md
+      image_base_dir: docs/images
+      has_images: true
+    
