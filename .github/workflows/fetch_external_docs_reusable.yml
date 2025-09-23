@@ -104,7 +104,7 @@ jobs:
       # Copy image resources if has images
       - name: Copy latest image resources
         if: ${{ inputs.has_images }}
-        run: rsync -av --include='*/' --include='*.png' --exclude='*' --prune-empty-dirs $SOURCE_DIR $TARGET_DIR
+        run: rsync -av --include='*/' --include='*.png' --include='*.svg' --include='*.bmp' --exclude='*' --prune-empty-dirs $SOURCE_DIR $TARGET_DIR
         env:
           SOURCE_DIR: ./external_repositories/${{ inputs.base_source_repository }}${{ inputs.doc_base_dir }}${{ inputs.image_base_dir }}/
           TARGET_DIR: ${{ inputs.base_folder }}${{ inputs.image_base_dir }}/
