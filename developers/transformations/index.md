@@ -72,6 +72,62 @@ There exist two different kinds of profiles: state and trigger profiles.
 State profiles are responsible for communication between Items and their corresponding state Channels (`ChannelKind.STATE`).
 Their purpose is to forward state updates and commands to and from the Thing handlers.
 
+```java
+@NonNullByDefault
+public class MyProfile implements StateProfile {
+    private final ProfileCallback callback;
+    private final ProfileContext context;
+
+    public MyProfile(ProfileCallback callback, ProfileContext context) {
+        this.callback = callback;
+        this.context = context;
+        Configuration profileConfig = context.getConfiguration();
+        ItemChannelLink link = callback.getItemChannelLink();
+        String itemName = link.getItemName();
+        ChannelUID channelUID = link.getLinkedUID();
+    }
+
+    @Override
+    public ProfileTypeUID getProfileTypeUID() {
+        return MY_PROFILE_UID;
+    }
+
+    // Will be called if an item has changed its state and this information should be forwarded to the binding.
+    @Override
+    public void onStateUpdateFromItem(State state) {
+        // Inspect and modify state as appropriate
+        // The default is to do nothing
+    }
+
+    // Will be called if a command should be forwarded to the binding.
+    @Override
+    public void onCommandFromItem(Command command) {
+        // Inspect and modify command as appropriate
+        callback.handleCommand(command);
+    }
+
+    // Optional additional override that receives the source of the command
+    @Override
+    public void onCommandFromItem(Command command, @Nullable String source) {
+        callback.handleCommand(command);
+    }
+
+    // If the binding indicated a state update on a channel, then this method will be called for each linked item.
+    @Override
+    public void onStateUpdateFromHandler(Command command) {
+        // Inspect and modify the command as appropriate
+        callback.sendUpdate(command);
+    }
+
+    // If a binding issued a command to a channel, this method will be called for each linked item.
+    @Override
+    public void onCommandFromHandler(Command command) {
+        // Inspect and modify the command as appropriate
+        callback.sendCommand(command);
+    }
+}
+```
+
 ## Trigger Profiles
 
 Trigger Channels (`ChannelKind.TRIGGER`) by themselves do not maintain a state (as by their nature they only fire events).
@@ -83,8 +139,35 @@ Trigger profiles are powerful means to implement some immediate, straight-forwar
 
 Apart from that, they do not pass any commands or state updates to and from the Thing handler as by their nature trigger Channels are not capable of handling these.
 
-This section explains how custom `Profile`s can be created.
-First you want to create a new bundle for example via the skeleton.
+```java
+@NonNullByDefault
+public class MyProfile implements TriggerProfile {
+    private final ProfileCallback callback;
+    private final ProfileContext context;
+
+    public MyProfile(ProfileCallback callback, ProfileContext context) {
+        this.callback = callback;
+        this.context = context;
+    }
+
+    @Override
+    public ProfileTypeUID getProfileTypeUID() {
+        return MY_PROFILE_UID;
+    }
+
+    @Override
+    public void onStateUpdateFromHandler(Command command) {
+        // This method is required, but unlikely to be useful for a TriggerProfile
+    }
+
+    // Will be called whenever the binding intends to issue a trigger event.
+    @Override
+    public void onTriggerFromHandler(String event) {
+        // Calculate a command to send to the item based on the event.
+        callback.sendCommand(command)
+    }
+}
+```
 
 ## Profile Properties
 
@@ -140,6 +223,7 @@ public class MyProfileFactory implements ProfileFactory, ProfileTypeProvider {
 
 `Profile`s need the opportunity to notify the framework about what they did with the `Command`s and `StateUpdate`s it received from the framework.
 The `ProfileCallback` provides methods to forward the results of a `Profile`s processing to the `ThingHandler` and to the `Framework`.
+It also provides access to the `ItemChannelLink` so the profile can access information about the specific channel or link this profile instance is for.
 It should be injected into the `Profile` upon its creation.
 
 ### ProfileContext
