@@ -21,6 +21,14 @@ openHAB can send a notification to your phone.
 Other systems may have a concept of _Automations_, _Tasks_, and other terms.
 In openHAB, rules are used to implement all of these concepts.
 
+Rules can be executed, either when fired by their triggers, or when called explicitly - from a script, another rule, MainUI widget.
+When a rule is fired by its trigger, the execution of one and the same rule does not happen in parallel.
+If a rule is triggered for execution, while the rule is currently running, it will be queued and run later.
+
+When a rule is called explicitly - from a script, another rule with [`RuleManager.runNow()`](https://www.openhab.org/javadoc/latest/org/openhab/core/automation/rulemanager), from a MainUI widget, then this rule can be executed in parallel.
+That is it can start running, while the same rule is executed at the same time.
+In this case there is a need to program protection against race conditions.
+
 ## Parts of a Rule
 
 These rules take the high level form of _When \_\_t\_\_ happens, if \_\_c\_\_ then do \_\_a\_\__,
