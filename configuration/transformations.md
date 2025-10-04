@@ -66,6 +66,7 @@ To keep these examples simple, the contents of the referenced files `window_esp.
 
 The script transformation is available from the framework and needs no additional installation.
 It allows transforming values using any of the available scripting languages in openHAB (JSR-223 or DSL).
+openHAB ensures that one and the same script transformation is not executed in parallel, there is no need to program protections against race conditions.
 
 The script needs to be placed in the `$OPENHAB_CONF/transform` folder with the native extension for the chosen language, for example `stringlength.js` for a transformation using JS Scripting.
 The script file name here acts as the `script identifier` for the script transformation.
