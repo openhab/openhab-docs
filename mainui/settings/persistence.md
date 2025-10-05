@@ -10,14 +10,15 @@ title: Settings - Persistence
 The data may be retrieved at a later time, for example to restore your system after startup, or to prepare graphs for display on the UI.
 
 openHAB ships with the [RRD4J persistence service](/addons/persistence/rrd4j/), which by default:
+
 - persists every Item on every state change, and at least once a minute.
 - restores the last stored value at system startup.
 
-By default, a new openHAB installation does not activate any particular persistence engine. This means charts remain empty. The Analyze feature within Model also remains empty. 
+By default, a new openHAB installation does not activate any particular persistence engine. This means charts remain empty. The Analyze feature within Model also remains empty.
 
-Data is however being collected in the background. Data becomes visible in charts when a persistence engine is selected. 
+Data is however being collected in the background. Data becomes visible in charts when a persistence engine is selected.
 
-To select an engine (for example, RRD4j), navigate to Settings > Configuration > Persistence. 
+To select an engine (for example, RRD4j), navigate to Settings > Configuration > Persistence.
 
 ![persistence-settings](../images/persistence-settings.png)
 
