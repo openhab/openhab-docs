@@ -4,7 +4,7 @@ label: Pushover
 title: Pushover - Bindings
 type: binding
 description: "The Pushover binding allows you to notify mobile devices of a message using the [Pushover REST API](https://pushover.net/api)."
-logo: images/addons/pushover.png
+logo: images/addons/pushover.svg
 install: auto
 ---
 
