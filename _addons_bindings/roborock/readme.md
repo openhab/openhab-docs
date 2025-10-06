@@ -4,6 +4,7 @@ label: Roborock
 title: Roborock - Bindings
 type: binding
 description: "This binding is used to control Roborock robot vacuum cleaner products implementing the Roborock protocol."
+logo: images/addons/roborock.png
 install: auto
 ---
 
@@ -12,6 +13,8 @@ install: auto
 {% include base.html %}
 
 # Roborock Binding
+
+<AddonLogo />
 
 This binding is used to control Roborock robot vacuum cleaner products implementing the Roborock protocol.
 
