@@ -47,6 +47,7 @@ The sending package is the identifier of the component that sent the event.
 The optional actor piece is an identifier of some sort that identifies the end user or device that initiated the event.
 If another event is triggered in response to an initial event, it should preserve the original source, and append (separated by `>`) another identifier for itself.
 A few examples:
+
 - `org.openhab.ui$admin` would mean the event was initiated by a user named `admin` via MainUI.
 - `org.openhab.io.homekit$1467397f-c2e7-4b15-a7dc-315331ced2db` would mean the event was initiated from the HomeKit addon by a user identified by a UUID.
 - `org.openhab.android$my-phone>org.openhab.io.openhabcloud$user@gmail.com` would mean the event was initiated in the Android openHAB app, and proxied through myopenhab.org using the user `user@gmail.com`.
