@@ -43,8 +43,9 @@ This string type presentation is used by event subscribers for event subscriptio
 The event source identifies the sender.
 Not all senders will set the source.
 The source should be structured, and of the form `<sending package>[$<actor>][><sending package$<actor>]+`
-The sending package is the identifier of the component that sent the event.
-The optional actor piece is an identifier of some sort that identifies the end user, device or rule that initiated the event.
+The sending package is meant to be the Java package name of the component that sent the event.
+For non-Java components generating a source (such as the Android and iOS apps), it should still be in Java package name format, as if the component were a Java package.
+The optional actor piece is an identifier of some sort that identifies the end user, device, or rule that initiated the event.
 If another event is triggered in response to an initial event, it should preserve the original source, and append (separated by `>`) another identifier for itself.
 A few examples:
 
