@@ -78,7 +78,7 @@ Click the green + icon under "But only if" labeled "Add Condition".
 ![rule condition dialog](images/rule-condition-dialog.png)
 
 Choose Item Condition because we want to check the state of an Item and select the Item.
-Note, sometimes if the Item not part of the model it can be hard to find.
+Note, sometimes if the Item is not part of the model it can be hard to find.
 If that happens to you, select any Item to start and then you can get a flat list of all your Items on the next screen.
 
 In this case we want to check if the `vCloudiness` Item is >= to 50 %.

@@ -11,7 +11,7 @@ Both of these are a way for you to write code that can be as long and complex as
 
 As you recall from the previous page, one of the four types of conditions are Script Conditions and one of the four types of actions are Script Actions.
 Choosing either of those presents you with a choice of language to use.
-By default there are only three choices: Blockly, ECMAScript, and Rules DSL.
+By default only Rules DSL is available.
 If you've installed other automation add-ons, those might be listed as well.
 
 This tutorial is not going to be a full tutorial on how to write code in Blockly.
