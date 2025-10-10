@@ -801,7 +801,7 @@ Caveat: Please note the semicolon after the return statement which terminates th
 
 ### Concurrency Guard
 
-If a rule triggers on UI events it may be necessary to guard against concurrency.
+If a rule is executed not fired by its triggers, but explicitly - from a script, from another rule, from a MainUI widget - the rule can be started, before its previous execution has ended.  It may be necessary to guard against concurrency.
 
 ```javascript
 import java.util.concurrent.locks.ReentrantLock
