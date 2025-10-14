@@ -42,17 +42,17 @@ This string type presentation is used by event subscribers for event subscriptio
 
 The event source identifies the sender.
 Not all senders will set the source.
-The source should be structured, and of the form `<sending package>[$<actor>][><sending package$<actor>]+`
+The source should be structured, and of the form `<sending package>[$<actor>][=><sending package[$<actor>]]+`
 The sending package is meant to be the Java package name of the component that sent the event.
 For non-Java components generating a source (such as the Android and iOS apps), it should still be in Java package name format, as if the component were a Java package.
 The optional actor piece is an identifier of some sort that identifies the end user, device, or rule that initiated the event.
-If another event is triggered in response to an initial event, it should preserve the original source, and append (separated by `>`) another identifier for itself.
+If another event is triggered in response to an initial event, it should preserve the original source, and append (separated by `=>`) another identifier for itself.
 A few examples:
 
 - `org.openhab.ui$admin` would mean the event was initiated by a user named `admin` via Main UI.
 - `org.openhab.io.homekit$1467397f-c2e7-4b15-a7dc-315331ced2db` would mean the event was initiated from the HomeKit addon by a user identified by a UUID.
-- `org.openhab.android$my-phone>org.openhab.io.openhabcloud$user@gmail.com` would mean the event was initiated in the Android openHAB app, and proxied through myopenhab.org using the user `user@gmail.com`.
-- `org.openhab.core.io.console>org.openhab.core.automation$f8e461d0d9` would mean an event was sent via the Karaf console, which then triggered a rule with ID `f8e461d0d9`, triggering the current event.
+- `org.openhab.android$my-phone=>org.openhab.io.openhabcloud$user@gmail.com` would mean the event was initiated in the Android openHAB app, and proxied through myopenhab.org using the user `user@gmail.com`.
+- `org.openhab.core.io.console=>org.openhab.core.automation$f8e461d0d9` would mean an event was sent via the Karaf console, which then triggered a rule with ID `f8e461d0d9`, triggering the current event.
 - `org.openhab.binding.mqtt$mqtt:thing:mything:mychannel` would mean an event was sent by a specific channel from the MQTT binding.
 
 #### Item Events
