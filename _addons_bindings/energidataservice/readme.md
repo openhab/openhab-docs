@@ -774,7 +774,7 @@ price_dict = {
 
 :::: tabs
 
-::: DSL
+::: tab DSL
 
 ```java
 Thing energidataservice:service:energidataservice "Energi Data Service" [ priceArea="DK1", currencyCode="DKK", gridCompanyGLN="5790001089030" ] {
@@ -785,7 +785,7 @@ Thing energidataservice:service:energidataservice "Energi Data Service" [ priceA
 
 :::
 
-::: YAML
+::: tab YAML
 
 ```yaml
 version: 1
@@ -812,7 +812,7 @@ things:
 
 :::: tabs
 
-::: DSL
+::: tab DSL
 
 ```java
 Group:Number:EnergyPrice:SUM TotalPrice "Total Price" <price>
@@ -825,7 +825,7 @@ Number:EnergyPrice ElectricityTax "Electricity Tax" <price> (TotalPrice) { chann
 
 :::
 
-::: YAML
+::: tab YAML
 
 ```yaml
 version: 1
