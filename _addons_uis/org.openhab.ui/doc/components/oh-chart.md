@@ -65,10 +65,17 @@ Visualize series of data
     <PropOption value="10Y" label="10Y" />
   </PropOptions>
 </PropBlock>
-<PropBlock type="BOOLEAN" name="future" label="Future Period">
+<PropBlock type="DECIMAL" name="future" label="Future Proportion">
   <PropDescription>
-    Whether the period should extend to the future instead of the past
+    The proportion of the period that should extend into the future
   </PropDescription>
+  <PropOptions>
+    <PropOption value="0" label="0% - Past only" />
+    <PropOption value="0.25" label="25% - 3/4 past, 1/4 future" />
+    <PropOption value="0.5" label="50% - 1/2 past, 1/2 future" />
+    <PropOption value="0.75" label="75% - 1/4 past, 3/4 future" />
+    <PropOption value="1" label="100% - Future only" />
+  </PropOptions>
 </PropBlock>
 </PropGroup>
 </div>

@@ -71,6 +71,17 @@ prev: /docs/ui/components/
     <PropOption value="year" label="Year" />
   </PropOptions>
 </PropBlock>
+<PropBlock type="TEXT" name="markers" label="Markers">
+  <PropDescription>
+    The markers to display for the series
+  </PropDescription>
+  <PropOptions multiple="true">
+    <PropOption value="avg" label="Average" />
+    <PropOption value="min" label="Minimum" />
+    <PropOption value="max" label="Maximum" />
+    <PropOption value="time" label="Current Time" />
+  </PropOptions>
+</PropBlock>
 <PropBlock type="TEXT" name="type" label="Type">
   <PropDescription>
     The type of the series.<br/><em>Note: <code>heatmap</code> needs a configured visual map or uses the default and is not supported for time series!</em>
