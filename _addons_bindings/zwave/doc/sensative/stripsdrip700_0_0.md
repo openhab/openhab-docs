@@ -70,7 +70,7 @@ The following table summarises the channels available for the 11 04 021 -:
 |--------------|------------|--------------|----------|-----------|
 | Sensor (temperature) | sensor_temperature | sensor_temperature | Temperature | Number:Temperature | 
 | Sensor (moisture) | sensor_moisture | sensor_moisture | Moisture | Number | 
-| Alarm (heat) | alarm_heat | alarm_heat | Fire | Switch | 
+| Alarm (heat) | alarm_heat | alarm_heat | temperature_hot | Switch | 
 | Alarm (flood) | alarm_flood | alarm_flood | Water | Switch | 
 | Alarm (burglar) | alarm_burglar | alarm_burglar | Door | Switch | 
 | Battery Level | battery-level | system.battery_level | Battery | Number |
@@ -88,7 +88,7 @@ The ```sensor_moisture``` channel is of type ```sensor_moisture``` and supports 
 ### Alarm (heat)
 Indicates if a heat alarm is triggered.
 
-The ```alarm_heat``` channel is of type ```alarm_heat``` and supports the ```Switch``` item and is in the ```Fire``` category. This is a read only channel so will only be updated following state changes from the device.
+The ```alarm_heat``` channel is of type ```alarm_heat``` and supports the ```Switch``` item and is in the ```temperature_hot``` category. This is a read only channel so will only be updated following state changes from the device.
 
 The following state translation is provided for this channel to the ```Switch``` item type -:
 

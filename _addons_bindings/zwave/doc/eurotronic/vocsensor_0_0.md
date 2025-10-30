@@ -70,7 +70,7 @@ The following table summarises the channels available for the VOC-SENSOR -:
 | Channel Name | Channel ID | Channel Type | Category | Item Type |
 |--------------|------------|--------------|----------|-----------|
 | Sensor (relative humidity) | sensor_relhumidity | sensor_relhumidity | Humidity | Number | 
-| Sensor (VOLATILE_ORGANIC_COMPOUND) | sensor_voc | sensor_voc |  |  | 
+| Sensor (VOLATILE_ORGANIC_COMPOUND) | sensor_voc | sensor_voc |  | Number | 
 | Sensor (CO2) | sensor_co2 | sensor_co2 | CarbonDioxide | Number | 
 | Sensor (temperature) | sensor_temperature | sensor_temperature | Temperature | Number:Temperature | 
 | Sensor (dew point) | sensor_dewpoint | sensor_dewpoint | Temperature | Number | 
@@ -91,7 +91,9 @@ Sensor type: „Volatile Organic Compound level“
 Scale: Parts/million (ppm)  
 Precision: 3
 
-Channel type information on this channel is not found.
+Indicates the Volatile Organic Compound level.
+
+The ```sensor_voc``` channel is of type ```sensor_voc``` and supports the ```Number``` item. This is a read only channel so will only be updated following state changes from the device.
 
 ### Sensor (CO2)
 Indicates the CO2 level.

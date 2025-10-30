@@ -1,0 +1,316 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="thermofloor_heatitz-temp3_00_000" listed="false">
+    <label>HEATIT Z-TEMP3 Waterbased heating thermostat</label>
+    <description><![CDATA[
+Waterbased heating thermostat<br /> <h1>Overview</h1><p>Heatit Z-Temp3 is a battery-operated thermostat designed for controlling waterbased heating systems. Used in combination with the Heatit Z-Water2, you can control your heating system through the Z-Wave® network or via the buttons on the front panel. The thermostat has a user-friendly interface.</p><p>Heatit Z-Temp3 has 3 modes: Heat, Cool, and Eco.</p><p>The thermostat fits into System 55 frames, and may be mounted alongside other equipment such as e.g dimmers or light switches. Heatit Z-Temp3 can also be mounted directly on the wall or placed freely, e.g. on a shelf.</p><p>Heatit Z-Temp3 can be set as a master thermostat. This means that you can set the setpoint and mode on one unit, and it will automatically send the setpoint and mode to other connected units.</p><p>All communication between Heatit Z-Temp3 and the controlled device is 100% wireless.</p><p>Heatit Z-Temp3 uses 2x AAA batteries, but you can also connect the device to an external power source. The Heatit Transformer 230VAC (45 126 48) is recommended for this purpose.</p><p>Heatit Z-Temp3 can be associated with Heatit ZM Single Relay, other Z-Wave relays, Heatit ZM Thermostat, Heatit Z-TRM6 Thermostat and other Z-Wave devices to control other types of heating solutions.</p><p>Heatit Z-Temp3 is a great choice for the restoration or renovation of existing buildings, as it is easy to install without the need for wiring. We recommend using multiple 230VAC devices to create a mesh network.</p> <br /> <h2>Inclusion Information</h2><p>Access to the main menu pressing during 5 seconds the middle button. Press "+" until "CON" option appears, access to it with middle button. It will appear a "ON" text and maintain the middle button pressed until it apears a loading animation. At this moment starts the inclussion/exclusion mode.</p> <br /> <h2>Exclusion Information</h2><p>Access to the main menu pressing during 5 seconds the middle button. Press "+" until "CON" option appears, access to it with middle button. It will appear a "ON" text and maintain the middle button pressed until it apears a loading animation. At this moment starts the inclussion/exclusion mode.</p> <br /> <h2>Wakeup Information</h2><p><br /></p>
+    ]]></description>
+    <category>HVAC</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="sensor_temperature" typeId="sensor_temperature">
+        <label>Sensor (temperature)</label>
+        <properties>
+          <property name="binding:*:QuantityType">COMMAND_CLASS_SENSOR_MULTILEVEL;type=TEMPERATURE</property>
+        </properties>
+      </channel>
+      <channel id="sensor_relhumidity" typeId="sensor_relhumidity">
+        <label>Sensor (relative humidity)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_SENSOR_MULTILEVEL;type=RELATIVE_HUMIDITY</property>
+        </properties>
+      </channel>
+      <channel id="thermostat_mode" typeId="thermofloor_heatitz-temp3_00_000_thermostat_mode">
+        <label>Thermostat mode</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_THERMOSTAT_MODE</property>
+        </properties>
+      </channel>
+      <channel id="thermostat_state" typeId="thermostat_state">
+        <label>Thermostat Operating State</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_THERMOSTAT_OPERATING_STATE</property>
+        </properties>
+      </channel>
+      <channel id="thermostat_setpoint_heating" typeId="thermostat_setpoint">
+        <label>Setpoint (heating)</label>
+        <properties>
+          <property name="binding:*:QuantityType">COMMAND_CLASS_THERMOSTAT_SETPOINT;type=HEATING</property>
+        </properties>
+      </channel>
+      <channel id="thermostat_setpoint_furnace" typeId="thermostat_setpoint">
+        <label>Setpoint (furnace)</label>
+        <properties>
+          <property name="binding:*:QuantityType">COMMAND_CLASS_THERMOSTAT_SETPOINT;type=FURNACE</property>
+        </properties>
+      </channel>
+      <channel id="thermostat_setpoint_cooling" typeId="thermostat_setpoint">
+        <label>Setpoint (cooling)</label>
+        <properties>
+          <property name="binding:*:QuantityType">COMMAND_CLASS_THERMOSTAT_SETPOINT;type=COOLING</property>
+        </properties>
+      </channel>
+      <channel id="battery-level" typeId="system.battery-level">
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_BATTERY</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">ThermoFloor</property>
+      <property name="modelId">HEATIT Z-TEMP3</property>
+      <property name="manufacturerId">019B</property>
+      <property name="manufacturerRef">0031:3101</property>
+      <property name="dbReference">1670</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_1_1" type="integer" groupName="configuration">
+        <label>1: Disable buttons</label>
+        <description><![CDATA[
+Disable buttons<br /> <h1>Overview</h1><p>Disable buttons, must be enabled through the parameter, or turned back on locally by holding the center and right button for 30 seconds until the display shows “UNLK”.</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Enabled, buttons on the front of the device work (default)</option>
+          <option value="1">Disabled, buttons on the front of the device are disabled.</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_2_2" type="integer" groupName="configuration">
+        <label>2: Minimum temperature limit (ALO)</label>
+        <description><![CDATA[
+5°C to 40°C (Default is 5°C)<br /> <h1>Overview</h1><p>Minimum temperature limit (Menu: ALO)<br />5°C to 40°C (Default is 5°C)</p><p><br /></p>
+        ]]></description>
+        <default>50</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_3_2" type="integer" groupName="configuration">
+        <label>3: Maximum temperature limit (AHI)</label>
+        <description><![CDATA[
+5°C to 40°C (Default is 40°C)<br /> <h1>Overview</h1><p>Maximum temperature limit (Menu: AHI)<br />5°C to 40°C (Default is 40°C)</p>
+        ]]></description>
+        <default>400</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_4_1" type="integer" groupName="configuration">
+        <label>4: Calibration (CAR)</label>
+        <description><![CDATA[
+Manually calibrate sensor A ±6°C<br /> <h1>Overview</h1><p>Calibration (Menu: CAR)<br /></p><p>Manually calibrate sensor A ±6°C</p><p>NB! To set a negative value, use 256 and subtract the desired value</p><p><br /></p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_6_2" type="integer" groupName="configuration">
+        <label>6: Thermostat state update interval</label>
+        <description><![CDATA[
+Set the time interval of how often the device updates Thermostat Setpoint set, Thermostat Mode set and Binary set to associated devices<br /> <h1>Overview</h1><p>0: Sends only when changed<br /></p><p>from 150 to max: 150 to 65535 seconds. 43200 seconds + when changed. (Default)</p><p><br /></p>
+        ]]></description>
+        <default>3600</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_7_1" type="integer" groupName="configuration">
+        <label>7: Temperature control hysteresis (HYST)</label>
+        <description><![CDATA[
+Choose the hysteresis used when regulation mode is set to HYST.<br /> <h1>Overview</h1><p>Temperature control hysteresis (Menu: HYST)<br /></p><p>Choose the hysteresis used when regulation mode is set to HYST.</p><p>0.3°C to 3.0°C. Default is 5 (0.5°C)</p><p><br /></p><p><br /></p>
+        ]]></description>
+        <default>5</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_8_1" type="integer" groupName="configuration">
+        <label>8: Temperature display</label>
+        <description><![CDATA[
+Select what is shown on the display during Standby state.<br /> <h1>Overview</h1><p>0: Display setpoint temperature. (Default)</p><p>1: Display measured temperature</p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_9_0" type="integer" groupName="configuration">
+        <label>9: Active display brightness (BR1)</label>
+        <description><![CDATA[
+Configure the brightness of the display during active state.<br /> <h1>Overview</h1><p>Active display brightness (Menu: BR1)<br />Configure the brightness of the display during active state.<br />10 to 100% (Default 100%)</p>
+        ]]></description>
+        <default>10</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_10_2" type="integer" groupName="configuration">
+        <label>10: Temperature Report Interval</label>
+        <description><![CDATA[
+Set the time interval between consecutive temperature reports<br /> <h1>Overview</h1><p>150 to 65535 seconds. <br />990s (16.5 min) (Default)</p><p><br /></p>
+        ]]></description>
+        <default>990</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_11_1" type="integer" groupName="configuration">
+        <label>11: Temperature report hysteresis</label>
+        <description><![CDATA[
+Set the change in temperature required to send a temperature report based on change<br /> <h1>Overview</h1><p>0.1°C to 10°C</p><p>10 (1°C) (Default)</p><p><br /></p>
+        ]]></description>
+        <default>10</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_12_2" type="integer" groupName="configuration">
+        <label>12: Humidity report interval</label>
+        <description><![CDATA[
+Set the time interval between consecutive humidity reports<br /> <h1>Overview</h1><p>150 to 65535 seconds.</p><p>990s (16.5 min) (Default)</p><p><br /></p>
+        ]]></description>
+        <default>990</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_13_1" type="integer" groupName="configuration">
+        <label>13: Humidity report hysteresis</label>
+        <description><![CDATA[
+Change in humidity required to send a report<br /> <h1>Overview</h1><p>10% to 100%.</p><p>25% (Default)</p><p><br /></p>
+        ]]></description>
+        <default>25</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_14_2" type="integer" groupName="configuration">
+        <label>14: Heating setpoint</label>
+        <description><![CDATA[
+Set setpoint for Heating mode<br /> <h1>Overview</h1><p>5°C to 40°C.</p><p>21°C (Default)</p>
+        ]]></description>
+        <default>210</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_15_2" type="integer" groupName="configuration">
+        <label>15: Cooling setpoint</label>
+        <description><![CDATA[
+Set setpoint for Cooling mode<br /> <h1>Overview</h1><p>5°C to 40°C.</p><p>25°C (Default)</p><p><br /></p>
+        ]]></description>
+        <default>250</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_16_2" type="integer" groupName="configuration">
+        <label>16: ECO setpoint</label>
+        <description><![CDATA[
+Set setpoint for ECO mode<br /> <h1>Overview</h1><p>5°C to 40°C.</p><p>18°C (Default)</p><p><br /></p>
+        ]]></description>
+        <default>180</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_17_1" type="integer" groupName="configuration">
+        <label>17: Operating Mode (MODE)</label>
+        <description><![CDATA[
+Set the thermostat mode<br /> <h1>Overview</h1><p>Operating Mode (Menu: MODE)</p><p>Set the thermostat mode</p>
+        ]]></description>
+        <default>1</default>
+        <options>
+          <option value="0">OFF Thermostat will not operate</option>
+          <option value="1">Heating mode (Default)</option>
+          <option value="2">Cooling mode</option>
+          <option value="3">ECO mode</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_18_1" type="integer" groupName="configuration">
+        <label>18: Open window detection</label>
+        <description><![CDATA[
+Choose to enable or disable the Open windows detection<br /> <h1>Overview</h1><p>0: Open window detection disabled. (Default)<br />1: Open windows detection enabled.</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Open window detection disabled. (Default)</option>
+          <option value="1">Open window detection enabled.</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Group 1</label>
+        <description><![CDATA[
+Lifeline Group to be used by primary controller<br /> <h1>Overview</h1><p>Lifeline.</p><p>Lifeline Group to be used by primary controller, sends:</p><p>- Thermostat Operating State</p><p>- Thermostat Setpoint Report</p><p>- Thermostat Mode Report</p><p>- Sensor multilevel Report</p><p>- Device Reset Locally</p><p>- Battery Report</p><p>- Protection Report</p><p>- Configuration Report</p><p><br /></p>
+        ]]></description>
+        <multipleLimit>1</multipleLimit>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: Group 2</label>
+        <description><![CDATA[
+Binary Switch Set<br /> <h1>Overview</h1><p>Send Binary Switch set commands based on the internal relay state, sends:</p><p>-Binary Switch Set<br /><br /></p><p>If the thermostat is to control a relay, an association from Group 2 must be created from the thermostat to the relay that is to be controlled.</p><p>Disclaimer: When using the Heatit Z-Temp3 to control multiple relays on a Heatit Z-Water (Art. no. 4512475) or a Heatit Z-Water2 (Art. no. 4512495), only use relays 1 through 7. Do not use relays 8, 9, or 10 for this purpose.</p><p><br /></p><p><br /></p>
+        ]]></description>
+        <multipleLimit>10</multipleLimit>
+      </parameter>
+
+      <parameter name="group_3" type="text" groupName="association" multiple="true">
+        <label>3: Group 3</label>
+        <description><![CDATA[
+Thermostat Setpoint set<br /> <h1>Overview</h1><p>Sends Thermostat Setpoint set commands based on own setpoint to allow for use as master thermostat, sends:</p><p>-Thermostat Setpoint Set<br /><br /></p><p>If the thermostat is to control other thermostats as a master thermostat, an association from Group 3 and Group 4 must be created from the master thermostat to the thermostats to be controlled.</p><p><br /></p><p><br /></p>
+        ]]></description>
+        <multipleLimit>10</multipleLimit>
+      </parameter>
+
+      <parameter name="group_4" type="text" groupName="association" multiple="true">
+        <label>4: Group 4</label>
+        <description><![CDATA[
+Thermostat Mode set<br /> <h1>Overview</h1><p>Sends Thermostat Mode set commands based on own mode to allow for use as master thermostat, sends:</p><p>-Thermostat Mode Set</p><p>If the thermostat is to control other thermostats as a master thermostat, an association from Group 3 and Group 4 must be created from the master thermostat to the thermostats to be controlled.</p>
+        ]]></description>
+        <multipleLimit>10</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+  <channel-type id="thermofloor_heatitz-temp3_00_000_thermostat_mode">
+    <item-type>Number</item-type>
+    <label>Thermostat Mode</label>
+    <description>Sets the thermostat mode</description>
+    <category>Temperature</category>
+    <state pattern="%s">
+      <options>
+        <option value="0">Off</option>
+        <option value="1">Heat</option>
+        <option value="11">Economy Heat</option>
+        <option value="2">Cool</option>
+      </options>
+    </state>
+  </channel-type>
+
+</thing:thing-descriptions>

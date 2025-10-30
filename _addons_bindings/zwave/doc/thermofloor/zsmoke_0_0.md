@@ -85,7 +85,7 @@ The following table summarises the channels available for the Z-Smoke Detector -
 |--------------|------------|--------------|----------|-----------|
 | Sensor (temperature) | sensor_temperature | sensor_temperature | Temperature | Number:Temperature | 
 | Alarm (motion) | alarm_motion | alarm_motion | Motion | Switch | 
-| Alarm (heat) | alarm_heat | alarm_heat | Fire | Switch | 
+| Alarm (heat) | alarm_heat | alarm_heat | temperature_hot | Switch | 
 | Alarm (smoke) | alarm_smoke | alarm_smoke | Smoke | Switch | 
 | Alarm (tamper) | alarm_tamper | alarm_tamper |  | Switch | 
 | Battery Level | battery-level | system.battery_level | Battery | Number |
@@ -110,7 +110,7 @@ The following state translation is provided for this channel to the ```Switch```
 ### Alarm (heat)
 Indicates if a heat alarm is triggered.
 
-The ```alarm_heat``` channel is of type ```alarm_heat``` and supports the ```Switch``` item and is in the ```Fire``` category. This is a read only channel so will only be updated following state changes from the device.
+The ```alarm_heat``` channel is of type ```alarm_heat``` and supports the ```Switch``` item and is in the ```temperature_hot``` category. This is a read only channel so will only be updated following state changes from the device.
 
 The following state translation is provided for this channel to the ```Switch``` item type -:
 

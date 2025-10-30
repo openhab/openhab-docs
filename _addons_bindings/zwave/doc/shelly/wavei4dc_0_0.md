@@ -82,7 +82,7 @@ The following table summarises the channels available for the Wave i4 DC -:
 |--------------|------------|--------------|----------|-----------|
 | Switch | switch_binary | switch_binary | Switch | Switch | 
 | Scene Number | scene_number | scene_number |  | Number | 
-| Alarm (heat) | alarm_heat | alarm_heat | Fire | Switch | 
+| Alarm (heat) | alarm_heat | alarm_heat | temperature_hot | Switch | 
 | Switch 2 | switch_binary2 | switch_binary | Switch | Switch | 
 | Switch 3 | switch_binary3 | switch_binary | Switch | Switch | 
 | Switch 4 | switch_binary4 | switch_binary | Switch | Switch | 
@@ -112,7 +112,7 @@ This channel provides the scene, and the event as a decimal value in the form ``
 ### Alarm (heat)
 Indicates if a heat alarm is triggered.
 
-The ```alarm_heat``` channel is of type ```alarm_heat``` and supports the ```Switch``` item and is in the ```Fire``` category. This is a read only channel so will only be updated following state changes from the device.
+The ```alarm_heat``` channel is of type ```alarm_heat``` and supports the ```Switch``` item and is in the ```temperature_hot``` category. This is a read only channel so will only be updated following state changes from the device.
 
 The following state translation is provided for this channel to the ```Switch``` item type -:
 

@@ -104,7 +104,7 @@ The following table summarises the channels available for the Wave Pro 2 -:
 | Channel Name | Channel ID | Channel Type | Category | Item Type |
 |--------------|------------|--------------|----------|-----------|
 | Switch | switch_binary | switch_binary | Switch | Switch | 
-| Alarm (heat) | alarm_heat | alarm_heat | Fire | Switch | 
+| Alarm (heat) | alarm_heat | alarm_heat | temperature_hot | Switch | 
 | Switch 1 | switch_binary1 | switch_binary | Switch | Switch | 
 | Switch 2 | switch_binary2 | switch_binary | Switch | Switch | 
 
@@ -116,7 +116,7 @@ The ```switch_binary``` channel is of type ```switch_binary``` and supports the 
 ### Alarm (heat)
 Indicates if a heat alarm is triggered.
 
-The ```alarm_heat``` channel is of type ```alarm_heat``` and supports the ```Switch``` item and is in the ```Fire``` category. This is a read only channel so will only be updated following state changes from the device.
+The ```alarm_heat``` channel is of type ```alarm_heat``` and supports the ```Switch``` item and is in the ```temperature_hot``` category. This is a read only channel so will only be updated following state changes from the device.
 
 The following state translation is provided for this channel to the ```Switch``` item type -:
 

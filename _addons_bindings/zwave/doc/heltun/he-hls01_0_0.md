@@ -61,7 +61,7 @@ The following table summarises the channels available for the HE-HLS01 -:
 | Electric meter (volts) | meter_voltage | meter_voltage | Energy | Number | 
 | Electric meter (kWh) | meter_kwh | meter_kwh | Energy | Number | 
 | Alarm (power) | alarm_power | alarm_power | Energy | Switch | 
-| Alarm (heat) | alarm_heat | alarm_heat | Fire | Switch | 
+| Alarm (heat) | alarm_heat | alarm_heat | temperature_hot | Switch | 
 | Alarm (system) | alarm_system | alarm_system |  | Switch | 
 | Clock Time Offset | time_offset | time_offset | Time | Number | 
 
@@ -105,7 +105,7 @@ The following state translation is provided for this channel to the ```Switch```
 ### Alarm (heat)
 Indicates if a heat alarm is triggered.
 
-The ```alarm_heat``` channel is of type ```alarm_heat``` and supports the ```Switch``` item and is in the ```Fire``` category. This is a read only channel so will only be updated following state changes from the device.
+The ```alarm_heat``` channel is of type ```alarm_heat``` and supports the ```Switch``` item and is in the ```temperature_hot``` category. This is a read only channel so will only be updated following state changes from the device.
 
 The following state translation is provided for this channel to the ```Switch``` item type -:
 

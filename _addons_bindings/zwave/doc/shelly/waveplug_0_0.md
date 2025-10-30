@@ -86,7 +86,7 @@ The following table summarises the channels available for the Wave Plug -:
 | Electric meter (watts) | meter_watts | meter_watts | Energy | Number | 
 | Electric meter (volts) | meter_voltage | meter_voltage | Energy | Number | 
 | Electric meter (amps) | meter_current | meter_current | Energy | Number | 
-| Alarm (heat) | alarm_heat | alarm_heat | Fire | Switch | 
+| Alarm (heat) | alarm_heat | alarm_heat | temperature_hot | Switch | 
 | Alarm (power) | alarm_power | alarm_power | Energy | Switch | 
 
 ### Switch
@@ -117,7 +117,7 @@ The ```meter_current``` channel is of type ```meter_current``` and supports the 
 ### Alarm (heat)
 Indicates if a heat alarm is triggered.
 
-The ```alarm_heat``` channel is of type ```alarm_heat``` and supports the ```Switch``` item and is in the ```Fire``` category. This is a read only channel so will only be updated following state changes from the device.
+The ```alarm_heat``` channel is of type ```alarm_heat``` and supports the ```Switch``` item and is in the ```temperature_hot``` category. This is a read only channel so will only be updated following state changes from the device.
 
 The following state translation is provided for this channel to the ```Switch``` item type -:
 

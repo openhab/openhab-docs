@@ -1,0 +1,292 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="zooz_zse50lr_00_000" listed="false">
+    <label>ZSE50LR Siren and Chime</label>
+    <description><![CDATA[
+Siren and Chime<br /> <h1>Overview</h1><p>- Sound and visual Z-Wave™ alarm</p><p>- Upload custom playback files for chime and siren</p><p>- Great for DIY security and alert applications</p><p>- Just plug it into a standard receptacle</p><p>- Z-Wave™ Long Range for an ultra stable network</p><p>- Built-in battery for back-up power up to 24 hours</p><p>- 800 series Z-Wave™ and S2 SmartStart Security</p> <br /> <h2>Inclusion Information</h2><p>Manual inclusion: initiate inclusion (pairing) in the app or hub UI. Make sure the device is powered and finalize the inclusion at the siren: tap the + buttonon the device 3 times quickly.</p> <br /> <h2>Exclusion Information</h2><p>Manual inclusion: initiate inclusion (pairing) in the app or hub UI. Make sure the device is powered and finalize the inclusion at the siren: tap the + buttonon the device 3 times quickly.</p> <br /> <h2>Wakeup Information</h2><p><br /></p>
+    ]]></description>
+    <category>Siren</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="config_decimal_param1" typeId="zooz_zse50lr_00_000_config_decimal_param1">
+        <label>Change Siren Playback Mode</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_CONFIGURATION;parameter=1</property>
+        </properties>
+      </channel>
+      <channel id="alarm_power" typeId="alarm_power">
+        <label>Alarm (power)</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=POWER_MANAGEMENT</property>
+        </properties>
+      </channel>
+      <channel id="notification_siren" typeId="notification_siren">
+        <label>Siren Notification</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM</property>
+        </properties>
+      </channel>
+      <channel id="sound_tone_play" typeId="sound_tone_play">
+        <label>Sound Tone Play</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_SOUND_SWITCH</property>
+        </properties>
+      </channel>
+      <channel id="sound_volume" typeId="sound_volume">
+        <label>Sound Volume</label>
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_SOUND_SWITCH</property>
+        </properties>
+      </channel>
+      <channel id="sound_default_tone" typeId="sound_default_tone">
+        <label>Default Sound Tone</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_SOUND_SWITCH</property>
+        </properties>
+      </channel>
+      <channel id="battery-level" typeId="system.battery-level">
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_BATTERY</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Zooz</property>
+      <property name="modelId">ZSE50LR</property>
+      <property name="manufacturerId">027A</property>
+      <property name="manufacturerRef">0004:0369</property>
+      <property name="dbReference">1672</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_1_1" type="integer" groupName="configuration">
+        <label>1: Playback Mode</label>
+        <description><![CDATA[
+Set siren playback mode.<br /> <h1>Overview</h1><p>Siren playback mode. 0 – Play once; 1 – Play in a loop for set duration (set in parameter 2); 2 – Play in a loop for set number (set in parameter 3); 3 – Play in a loop until cancelled by user; 4 – No sound, LED indicator only.</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Play Once</option>
+          <option value="1">Play in a loop for set duration (set in parameter 2)</option>
+          <option value="2">Play in a loop for set number (set in parameter 3)</option>
+          <option value="3">Play in a loop until cancelled by user</option>
+          <option value="4">No sound, LED indicator only</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_2_2" type="integer" groupName="configuration">
+        <label>2: Playback Duration</label>
+        <description><![CDATA[
+Set playback duration for the siren.<br /> <h1>Overview</h1><p>Set playback duration for the siren (in seconds) when the siren is in playback mode 1 (set in parameter 1).</p>
+        ]]></description>
+        <default>180</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_3_1" type="integer" groupName="configuration">
+        <label>3: Playback Loop Count</label>
+        <description><![CDATA[
+Set the number of playback loops<br /> <h1>Overview</h1><p>Set the number of playback loops for the selected tone when the siren is in playback mode 2 (parameter 1).</p>
+        ]]></description>
+        <default>1</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_4_1" type="integer" groupName="configuration">
+        <label>4: Playback Tone</label>
+        <description><![CDATA[
+Set the default tone for the siren playback.<br /> <h1>Overview</h1><p>0=Stop,1=Door-open,2=Door-closed,3=Window-open,4=Window-closed,5=Motion-detected,6=Motion-cleared,7=Leak-detected,8=Leak-cleared,9=ambulance,10=buzzer-alarm,11=cluster-chimes,12=doorbell1,13=doorbell2,14=doorbell3,15=doorbell4,16=doorbell5,17=doorbell6,18=fire-alarm,19=jingle-bells,20=microwave,21=old-doorbell,22=siren1,23=siren2,24=siren3,25=tone,255=default-Tone See documentation for the instructions on how to upload your own files.</p>
+        ]]></description>
+        <default>1</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_5_1" type="integer" groupName="configuration">
+        <label>5: Playback Volume</label>
+        <description><![CDATA[
+Set the volume for siren playback.<br /> <h1>Overview</h1><p>Set the volume for siren playback. Use 0 to mute, or 1–100 to adjust volume level.</p><p>Values: 0 – Mute (volume off); 1-100 (volume). Default: 100.</p>
+        ]]></description>
+        <default>100</default>
+        <options>
+          <option value="0">Muted</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_6_1" type="integer" groupName="configuration">
+        <label>6: LED Indicator Mode</label>
+        <description><![CDATA[
+Set the LED indicator mode for the siren.<br /> <h1>Overview</h1><p>Set the LED indicator mode for the siren. 0 – LED always off; 1 – LED strobe single color (set in param 7); 2 – LED strobe red and blue; 3 – LED pulse single color (set in param 7); 4 – LED solid on single color (set in param 7). Default: 1.</p>
+        ]]></description>
+        <default>1</default>
+        <options>
+          <option value="0">LED Always Off</option>
+          <option value="1">LED strobe single color (set in param 7)</option>
+          <option value="2">LED strobe red and blue</option>
+          <option value="3">LED pulse single color (set in param 7)</option>
+          <option value="4">LED solid on single color (set in param 7)</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_7_1" type="integer" groupName="configuration">
+        <label>7: LED Indicator Color</label>
+        <description><![CDATA[
+Set the LED indicator color for the siren.<br /> <h1>Overview</h1><p>More colors available through custom values corresponding to the color wheel. See advanced documentation for details.</p><p>Values: 0 – Red; 42 – Yellow; 85 – Green; 127 – Indigo; 170 – Blue; 212 – Purple; 255 – White. Default: 0. </p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_8_1" type="integer" groupName="configuration">
+        <label>8: Low Battery Report</label>
+        <description><![CDATA[
+Low Battery Report<br /> <h1>Overview</h1><p>Decide which % level should the device report low battery to the hub. Values: 10-50 %. Default: 20. </p>
+        ]]></description>
+        <default>20</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_9_1" type="integer" groupName="configuration">
+        <label>9: LED in Back-Up Battery Mode</label>
+        <description><![CDATA[
+Set the LED indicator for the siren in back-up battery mode.<br /> <h1>Overview</h1><p>Values: 0 – LED off (save battery); 1 – Regular LED mode (set in param 6); 2 – LED pulse white for full battery and red for low battery. Default: 1. </p>
+        ]]></description>
+        <default>1</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_10_1" type="integer" groupName="configuration">
+        <label>10: Button Tone Selection</label>
+        <description><![CDATA[
+Disable tone selection from physical buttons on the siren.<br /> <h1>Overview</h1><p>Disable tone selection from physical buttons on the siren. When disabled, you'll only be able to program tones using the advanced parameters in the Z-Wave UI. </p><p>Values: 0 – Tone selection from buttons disabled; 1 – Tone selection from buttons enabled.</p>
+        ]]></description>
+        <default>1</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_11_1" type="integer" groupName="configuration">
+        <label>11: Button Volume Selection</label>
+        <description><![CDATA[
+Disable volume adjustment from physical buttons on the siren<br /> <h1>Overview</h1><p>Disable volume adjustment from physical buttons on the siren. When disabled, you'll only be able to adjust volume using the advanced parameters in the Z-Wave UI. </p><p>Values: 0 – Volume adjustment from buttons disabled; 1 – Volume adjustment from buttons enabled.</p>
+        ]]></description>
+        <default>1</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_12_1" type="integer" groupName="configuration">
+        <label>12: Basic Set Commands</label>
+        <description><![CDATA[
+Basic set command to group 2<br /> <h1>Overview</h1><p>Decide if and when the siren sends Basic Set commands to devices associated in Group 2. </p>
+        ]]></description>
+        <default>1</default>
+        <options>
+          <option value="0">No Basic set commands sent</option>
+          <option value="1">Basic Set ON sent when playback starts, Off when playback stops</option>
+          <option value="2">Basic Set OFF sent when playback starts, On when playback stops</option>
+          <option value="3">Basic Set ON sent when playback starts only</option>
+          <option value="4">Basic Set OFF when playback stops only</option>
+          <option value="5">Basic Set OFF sent when playback starts only</option>
+          <option value="6">Basic Set ON when playback stops only</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_13_1" type="integer" groupName="configuration">
+        <label>13: System Message Volume</label>
+        <description><![CDATA[
+Set the volume for siren system messages<br /> <h1>Overview</h1><p>Set the volume for siren system messages.</p><p>Values: 0 – Mute (volume off); 1-100 (volume). Default: 50.</p>
+        ]]></description>
+        <default>50</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_14_1" type="integer" groupName="configuration">
+        <label>14: LED Indicator Brightness</label>
+        <description><![CDATA[
+Choose the LED indicator's brightness level.<br /> <h1>Overview</h1><p>Choose the LED indicator's brightness level.</p><p>Values: 0-10 (0 – off, 10 – high). Default: 5. </p>
+        ]]></description>
+        <default>5</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_15_1" type="integer" groupName="configuration">
+        <label>15: Battery Reporting Frequency</label>
+        <description><![CDATA[
+Set the reporting interval for the battery.<br /> <h1>Overview</h1><p>Set the reporting interval for the battery. </p><p>Values: 1-84 hours. Default: 12.</p>
+        ]]></description>
+        <default>12</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_16_1" type="integer" groupName="configuration">
+        <label>16: Battery Reporting Threshold</label>
+        <description><![CDATA[
+Threshold for battery reporting in % changes.<br /> <h1>Overview</h1><p>Set the threshold for battery reporting in % changes. Set to 0 to disable reporting based on threshold.</p><p>Values: 0 – Don't send reports based on threshold changes; 1-20 %. Default: 0</p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Lifeline</label>
+        <description>Lifeline</description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: On-Off Control</label>
+        <description><![CDATA[
+On-Off Control<br /> <h1>Overview</h1><p>This device will send Sound Switch Play Report and</p><p>Notification Report to group 1 and Basic Set command to group 2</p><p>when the status changes.</p><p>You can set direct association to have the siren control another ZWave</p><p>device independently of the hub by using Group 2.</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+  <channel-type id="zooz_zse50lr_00_000_config_decimal_param1">
+    <item-type>Number</item-type>
+    <label>Playback Mode</label>
+    <description>Set siren playback mode.</description>
+    <state pattern="%s">
+      <options>
+        <option value="0">Play Once</option>
+        <option value="1">Play in a loop for set duration (set in parameter 2)</option>
+        <option value="2">Play in a loop for set number (set in parameter 3)</option>
+        <option value="3">Play in a loop until cancelled by user</option>
+        <option value="4">No sound, LED indicator only</option>
+      </options>
+    </state>
+  </channel-type>
+
+</thing:thing-descriptions>

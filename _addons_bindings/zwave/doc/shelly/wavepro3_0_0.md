@@ -128,13 +128,13 @@ The following table summarises the channels available for the Wave Pro 3 -:
 | Channel Name | Channel ID | Channel Type | Category | Item Type |
 |--------------|------------|--------------|----------|-----------|
 | Switch | switch_binary | switch_binary | Switch | Switch | 
-| Alarm (heat) | alarm_heat | alarm_heat | Fire | Switch | 
+| Alarm (heat) | alarm_heat | alarm_heat | temperature_hot | Switch | 
 | Switch 1 | switch_binary1 | switch_binary | Switch | Switch | 
-| Alarm (heat) 1 | alarm_heat1 | alarm_heat | Fire | Switch | 
+| Alarm (heat) 1 | alarm_heat1 | alarm_heat | temperature_hot | Switch | 
 | Switch 2 | switch_binary2 | switch_binary | Switch | Switch | 
-| Alarm (heat) 2 | alarm_heat2 | alarm_heat | Fire | Switch | 
+| Alarm (heat) 2 | alarm_heat2 | alarm_heat | temperature_hot | Switch | 
 | Switch 3 | switch_binary3 | switch_binary | Switch | Switch | 
-| Alarm (heat) 3 | alarm_heat3 | alarm_heat | Fire | Switch | 
+| Alarm (heat) 3 | alarm_heat3 | alarm_heat | temperature_hot | Switch | 
 
 ### Switch
 Switch the power on and off.
@@ -144,7 +144,7 @@ The ```switch_binary``` channel is of type ```switch_binary``` and supports the 
 ### Alarm (heat)
 Indicates if a heat alarm is triggered.
 
-The ```alarm_heat``` channel is of type ```alarm_heat``` and supports the ```Switch``` item and is in the ```Fire``` category. This is a read only channel so will only be updated following state changes from the device.
+The ```alarm_heat``` channel is of type ```alarm_heat``` and supports the ```Switch``` item and is in the ```temperature_hot``` category. This is a read only channel so will only be updated following state changes from the device.
 
 The following state translation is provided for this channel to the ```Switch``` item type -:
 
@@ -161,7 +161,7 @@ The ```switch_binary1``` channel is of type ```switch_binary``` and supports the
 ### Alarm (heat) 1
 Indicates if a heat alarm is triggered.
 
-The ```alarm_heat1``` channel is of type ```alarm_heat``` and supports the ```Switch``` item and is in the ```Fire``` category. This is a read only channel so will only be updated following state changes from the device.
+The ```alarm_heat1``` channel is of type ```alarm_heat``` and supports the ```Switch``` item and is in the ```temperature_hot``` category. This is a read only channel so will only be updated following state changes from the device.
 
 The following state translation is provided for this channel to the ```Switch``` item type -:
 
@@ -178,7 +178,7 @@ The ```switch_binary2``` channel is of type ```switch_binary``` and supports the
 ### Alarm (heat) 2
 Indicates if a heat alarm is triggered.
 
-The ```alarm_heat2``` channel is of type ```alarm_heat``` and supports the ```Switch``` item and is in the ```Fire``` category. This is a read only channel so will only be updated following state changes from the device.
+The ```alarm_heat2``` channel is of type ```alarm_heat``` and supports the ```Switch``` item and is in the ```temperature_hot``` category. This is a read only channel so will only be updated following state changes from the device.
 
 The following state translation is provided for this channel to the ```Switch``` item type -:
 
@@ -195,7 +195,7 @@ The ```switch_binary3``` channel is of type ```switch_binary``` and supports the
 ### Alarm (heat) 3
 Indicates if a heat alarm is triggered.
 
-The ```alarm_heat3``` channel is of type ```alarm_heat``` and supports the ```Switch``` item and is in the ```Fire``` category. This is a read only channel so will only be updated following state changes from the device.
+The ```alarm_heat3``` channel is of type ```alarm_heat``` and supports the ```Switch``` item and is in the ```temperature_hot``` category. This is a read only channel so will only be updated following state changes from the device.
 
 The following state translation is provided for this channel to the ```Switch``` item type -:
 

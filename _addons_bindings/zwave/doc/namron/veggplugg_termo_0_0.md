@@ -46,7 +46,7 @@ The following table summarises the channels available for the 4512725 -:
 | Electric meter (amps) | meter_current | meter_current | Energy | Number | 
 | Thermostat mode | thermostat_mode | thermostat_mode | Temperature | Number | 
 | Setpoint (heating) | thermostat_setpoint | thermostat_setpoint | Heating | Number:Temperature | 
-| Alarm (heat) | alarm_heat | alarm_heat | Fire | Switch | 
+| Alarm (heat) | alarm_heat | alarm_heat | temperature_hot | Switch | 
 | Alarm (power) | alarm_power | alarm_power | Energy | Switch | 
 
 ### Switch
@@ -115,7 +115,7 @@ The ```thermostat_setpoint``` channel is of type ```thermostat_setpoint``` and s
 ### Alarm (heat)
 Indicates if a heat alarm is triggered.
 
-The ```alarm_heat``` channel is of type ```alarm_heat``` and supports the ```Switch``` item and is in the ```Fire``` category. This is a read only channel so will only be updated following state changes from the device.
+The ```alarm_heat``` channel is of type ```alarm_heat``` and supports the ```Switch``` item and is in the ```temperature_hot``` category. This is a read only channel so will only be updated following state changes from the device.
 
 The following state translation is provided for this channel to the ```Switch``` item type -:
 

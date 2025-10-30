@@ -68,18 +68,6 @@ Wall Fan Coil Thermostat<br /> <h1>Overview</h1><h2><b>Perfectly controls air co
           <property name="binding:*:QuantityType">COMMAND_CLASS_THERMOSTAT_SETPOINT;type=COOLING</property>
         </properties>
       </channel>
-      <channel id="thermostat_setpoint_furnace" typeId="thermostat_setpoint">
-        <label>Setpoint (furnace)</label>
-        <properties>
-          <property name="binding:*:QuantityType">COMMAND_CLASS_THERMOSTAT_SETPOINT;type=FURNACE</property>
-        </properties>
-      </channel>
-      <channel id="thermostat_setpoint_dry_air" typeId="thermostat_setpoint">
-        <label>Setpoint (dry air)</label>
-        <properties>
-          <property name="binding:*:QuantityType">COMMAND_CLASS_THERMOSTAT_SETPOINT;type=DRY_AIR</property>
-        </properties>
-      </channel>
       <channel id="thermostat_setpoint_auto_changeover" typeId="thermostat_setpoint">
         <label>Setpoint (auto changeover)</label>
         <properties>
@@ -708,6 +696,7 @@ defines the offset value for room air temperature. Celsius value * 10 e.g. 1.0°
         <option value="2">Auto High</option>
         <option value="3">High</option>
         <option value="4">Auto Medium</option>
+        <option value="5">Medium</option>
       </options>
     </state>
   </channel-type>

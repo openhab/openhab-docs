@@ -8,7 +8,7 @@ title: Wave PM Mini - ZWave
 # Wave PM Mini Z-Wave smart power meter, 1 channel 16 A
 This describes the Z-Wave device *Wave PM Mini*, manufactured by *Shelly* with the thing type UID of ```shelly_wavepmmini_00_000```.
 
-The device is in the category of *Battery*, defining Batteries, Energy Storages.
+The device is in the category of *Sensor*, defining Device used to measure something.
 
 ![Wave PM Mini product image](https://opensmarthouse.org/zwavedatabase/1638/image/)
 
@@ -56,7 +56,7 @@ The following table summarises the channels available for the Wave PM Mini -:
 | Electric meter (kWh) | meter_kwh | meter_kwh | Energy | Number | 
 | Electric meter (watts) | meter_watts | meter_watts | Energy | Number | 
 | Reset the total power consumption | meter_reset | meter_reset | Energy | Switch | 
-| Alarm (heat) | alarm_heat | alarm_heat | Fire | Switch | 
+| Alarm (heat) | alarm_heat | alarm_heat | temperature_hot | Switch | 
 | Alarm (power) | alarm_power | alarm_power | Energy | Switch | 
 
 ### Electric meter (kWh)
@@ -77,7 +77,7 @@ The ```meter_reset``` channel is of type ```meter_reset``` and supports the ```S
 ### Alarm (heat)
 Indicates if a heat alarm is triggered.
 
-The ```alarm_heat``` channel is of type ```alarm_heat``` and supports the ```Switch``` item and is in the ```Fire``` category. This is a read only channel so will only be updated following state changes from the device.
+The ```alarm_heat``` channel is of type ```alarm_heat``` and supports the ```Switch``` item and is in the ```temperature_hot``` category. This is a read only channel so will only be updated following state changes from the device.
 
 The following state translation is provided for this channel to the ```Switch``` item type -:
 
@@ -197,7 +197,15 @@ This is a read only parameter.
 
 Association groups allow the device to send unsolicited reports to the controller, or other devices in the network. Using association groups can allow you to eliminate polling, providing instant feedback of a device state change without unnecessary network traffic.
 
-The device does not support associations.
+The Wave PM Mini supports 1 association group.
+
+### Group 1: Lifeline
+
+The Lifeline association group reports device status to a hub and is not designed to control other devices directly. When using the Lineline group with a hub, in most cases, only the lifeline group will need to be configured and normally the hub will perform this automatically during the device initialisation.
+Lifeline
+
+Association group 1 supports 9 nodes.
+
 ## Technical Information
 
 ### Endpoints

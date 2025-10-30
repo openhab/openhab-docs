@@ -32,6 +32,12 @@ Fibaro Walli Single Switch<br /> <h1>Overview</h1><p>FIBARO Walli Single Switch 
           <property name="binding:*:DecimalType">COMMAND_CLASS_METER</property>
         </properties>
       </channel>
+      <channel id="scene_number" typeId="scene_number">
+        <label></label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_CENTRAL_SCENE</property>
+        </properties>
+      </channel>
       <channel id="config_decimal_param11" typeId="config_decimal">
         <label>LED frame color ON-state</label>
         <properties>

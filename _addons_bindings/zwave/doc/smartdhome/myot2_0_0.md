@@ -40,8 +40,8 @@ The following table summarises the channels available for the MYOT2 -:
 | Boiler On/Off | switch_binary | switch_binary | Switch | Switch | 
 | Heating circuit pressure | sensor_barpressure | sensor_barpressure | Pressure | Number | 
 | Return water temperature | water_temperature | sensor_temperature | Temperature | Number:Temperature | 
-| Boiler heating modulation | sensor_heatingmodulation | sensor_heatingmodulation |  |  | 
-| DHW Flow | sensor_waterflow | sensor_waterflow |  |  | 
+| Boiler heating modulation | sensor_heatingmodulation | sensor_heatingmodulation |  | Number | 
+| DHW Flow | sensor_waterflow | sensor_waterflow |  | Number | 
 | Boiler water temperature | boiler_watertemp | sensor_temperature | Temperature | Number:Temperature | 
 | DHW water temperature | dhw_temperature | sensor_temperature | Temperature | Number:Temperature | 
 | Exhaust fumes temperature | exhaust_temperature | sensor_temperature | Temperature | Number:Temperature | 
@@ -72,12 +72,16 @@ The ```water_temperature``` channel is of type ```sensor_temperature``` and supp
 ### Boiler heating modulation
 Boiler heating modulation in percent
 
-Channel type information on this channel is not found.
+Boiler heating modulation in percent.
+
+The ```sensor_heatingmodulation``` channel is of type ```sensor_heatingmodulation``` and supports the ```Number``` item. This is a read only channel so will only be updated following state changes from the device.
 
 ### DHW Flow
 DHW (Heating water) flow
 
-Channel type information on this channel is not found.
+
+
+The ```sensor_waterflow``` channel is of type ```sensor_waterflow``` and supports the ```Number``` item. This is a read only channel so will only be updated following state changes from the device.
 
 ### Boiler water temperature
 Boiler (heating) water temperature

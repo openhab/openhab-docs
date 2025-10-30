@@ -56,7 +56,7 @@ The following table summarises the channels available for the FGRGBW-442 -:
 | Meter reset | meter_reset1 | meter_reset | Energy | Switch | 
 | Color Control 1 | color_color1 | color_color | ColorLight | Color | 
 | Color Temperature 1 | color_temperature1 | color_temperature | ColorLight | Dimmer | 
-| Color Raw | color_raw1 | color_raw |  |  | 
+| Color Raw | color_raw1 | color_raw |  | String | 
 | Alarm (power) 1 | alarm_power1 | alarm_power | Energy | Switch | 
 | Alarm (system) 1 | alarm_system1 | alarm_system |  | Switch | 
 | Dimmer 2 | switch_dimmer2 | switch_dimmer | DimmableLight | Dimmer | 
@@ -185,7 +185,9 @@ The color temperature channel allows to set the color
 The ```color_temperature1``` channel is of type ```color_temperature``` and supports the ```Dimmer``` item and is in the ```ColorLight``` category.
 
 ### Color Raw
-Channel type information on this channel is not found.
+Sets the color from a comma delimited key=value string.
+
+The ```color_raw1``` channel is of type ```color_raw``` and supports the ```String``` item.
 
 ### Alarm (power) 1
 Indicates if a power alarm is triggered.

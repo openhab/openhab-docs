@@ -10,7 +10,7 @@
     <description><![CDATA[
 eHandle ConnectSense<br /> <h1>Overview</h1><p>The eHandle ConnectSense for windows is a smart home component intended to transmit the position of the window and the handle (closed (0°), open (90°) or tilted (180°). When closed, the eHandle Connect Sense for windows is also able to detect common burglary attempts like drilling or prying a window open. In addition, the state of the battery is transmitted to the smart home central control unit. This product can be operated in any Z-Wave™ network with other Z-Wave certified devices from other manufacturers. All mains operated devices within the network can act as repeaters regardless of manufacturer to increase reliability and range of the network.</p> <br /> <h2>Inclusion Information</h2><p>To add or remove the eHandle ConnectSense for windows in the smart home central control unit, proceed as follows: 6 6 8173 ferTor 13 adtallendorf 8 max. 360° 7 29 English 1. Follow the instructions of your smart home central control unit and start the process of adding or removing. 2. Using the Allen key, press the hidden button in the recess on the back of the wireless unit three times in quick succession (within one second), (steps 3-4). 3. The successful start and the progress of adding (Add) or removing (Remove) e can be tracked in your smart home central control unit. 4. Your smart home central control unit may ask you to enter a five-digit PIN number. You will find this on the sticker with QR code. It is the underlined sequence of numbers. 5. A successful addition (Add) is displayed in your smart home central control unit. 6. The handle signals that it is ready for calibration by continuous rapid flashing of the green LED. 7. Follow the further instructions for installation (Chapter 11) and calibration (Chapter 6.2).</p> <br /> <h2>Exclusion Information</h2><p>To add or remove the eHandle ConnectSense for windows in the smart home central control unit, proceed as follows: 6 6 8173 ferTor 13 adtallendorf 8 max. 360° 7 29 English 1. Follow the instructions of your smart home central control unit and start the process of adding or removing. 2. Using the Allen key, press the hidden button in the recess on the back of the wireless unit three times in quick succession (within one second), (steps 3-4). 3. The successful start and the progress of adding (Add) or removing (Remove) e can be tracked in your smart home central control unit. 4. Your smart home central control unit may ask you to enter a five-digit PIN number. You will find this on the sticker with QR code. It is the underlined sequence of numbers. 5. A successful addition (Add) is displayed in your smart home central control unit. 6. The handle signals that it is ready for calibration by continuous rapid flashing of the green LED. 7. Follow the further instructions for installation (Chapter 11) and calibration (Chapter 6.2).</p> <br /> <h2>Wakeup Information</h2><p>To save energy and increase battery life, the eHandle ConnectSense for windows is in sleep mode as a standard. In this mode, it does not actively receive any wireless signals. Therefore, operation is only possible with a mains-powered smart home central control unit. It saves the wireless signals for the eHandle ConnectSense for windows until the next wake-up.</p>
     ]]></description>
-    <category>Battery</category>
+    <category>Window</category>
 
     <!-- CHANNEL DEFINITIONS -->
     <channels>
@@ -20,16 +20,22 @@ eHandle ConnectSense<br /> <h1>Overview</h1><p>The eHandle ConnectSense for wind
           <property name="binding:*:OnOffType">COMMAND_CLASS_SENSOR_BINARY</property>
         </properties>
       </channel>
-      <channel id="alarm_access" typeId="alarm_access">
-        <label>Alarm (access)</label>
-        <properties>
-          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=ACCESS_CONTROL</property>
-        </properties>
-      </channel>
       <channel id="alarm_burglar" typeId="alarm_burglar">
         <label>Alarm (burglar)</label>
         <properties>
           <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=BURGLAR</property>
+        </properties>
+      </channel>
+      <channel id="sensor_door" typeId="sensor_door">
+        <label>Window Open or Closed</label>
+        <properties>
+          <property name="binding:*:OpenClosedType">COMMAND_CLASS_ALARM;type=ACCESS_CONTROL</property>
+        </properties>
+      </channel>
+      <channel id="alarm_entry" typeId="alarm_entry">
+        <label>Handle state</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=ACCESS_CONTROL</property>
         </properties>
       </channel>
       <channel id="battery-level" typeId="system.battery-level">

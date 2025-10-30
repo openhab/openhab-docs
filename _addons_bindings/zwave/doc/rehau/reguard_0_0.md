@@ -43,9 +43,9 @@ The following table summarises the channels available for the RE.GUARD -:
 | Channel Name | Channel ID | Channel Type | Category | Item Type |
 |--------------|------------|--------------|----------|-----------|
 | Open/Close | switch_binary | switch_binary | Switch | Switch | 
-| Sensor (water_flow) | sensor_waterflow | sensor_waterflow |  |  | 
+| Sensor (water_flow) | sensor_waterflow | sensor_waterflow |  | Number | 
 | Sensor (water_temperature) | sensor_temperature | sensor_temperature | Temperature | Number:Temperature | 
-| Sensor (water_pressure) | sensor_waterpressure | sensor_waterpressure |  |  | 
+| Sensor (water_pressure) | sensor_waterpressure | sensor_waterpressure |  | Number | 
 | water meter (m³) | meter_water_cubic_meters | meter_water_cubic_meters | Water | Number | 
 | Alarm (flood) | alarm_flood | alarm_flood | Water | Switch | 
 | Alarm (system) | alarm_system | alarm_system |  | Switch | 
@@ -60,7 +60,9 @@ Switch the power on and off.
 The ```switch_binary``` channel is of type ```switch_binary``` and supports the ```Switch``` item and is in the ```Switch``` category.
 
 ### Sensor (water_flow)
-Channel type information on this channel is not found.
+
+
+The ```sensor_waterflow``` channel is of type ```sensor_waterflow``` and supports the ```Number``` item. This is a read only channel so will only be updated following state changes from the device.
 
 ### Sensor (water_temperature)
 Indicates the current temperature.
@@ -68,7 +70,9 @@ Indicates the current temperature.
 The ```sensor_temperature``` channel is of type ```sensor_temperature``` and supports the ```Number:Temperature``` item and is in the ```Temperature``` category.
 
 ### Sensor (water_pressure)
-Channel type information on this channel is not found.
+
+
+The ```sensor_waterpressure``` channel is of type ```sensor_waterpressure``` and supports the ```Number``` item. This is a read only channel so will only be updated following state changes from the device.
 
 ### water meter (m³)
 Indicates the instantaneous water consumption.

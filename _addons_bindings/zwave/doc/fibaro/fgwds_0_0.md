@@ -94,6 +94,7 @@ The following table summarises the channels available for the FGWDS -:
 | Switch Binary | switch_binary | switch_binary | Switch | Switch | 
 | Electric meter (kWh) | meter_kwh | meter_kwh | Energy | Number | 
 | Electric meter (watts) | meter_watts | meter_watts | Energy | Number | 
+|  | scene_number | scene_number |  | Number | 
 | LED frame color ON-state | config_decimal | config_decimal |  | Number | 
 | LED frame color OFF-state | config_decimal | config_decimal |  | Number | 
 | LED frame color brightness | config_decimal | config_decimal |  | Number | 
@@ -112,6 +113,22 @@ The ```meter_kwh``` channel is of type ```meter_kwh``` and supports the ```Numbe
 Indicates the instantaneous power consumption.
 
 The ```meter_watts``` channel is of type ```meter_watts``` and supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
+
+### 
+Triggers when a scene button is pressed.
+
+The ```scene_number``` channel is of type ```scene_number``` and supports the ```Number``` item.
+This channel provides the scene, and the event as a decimal value in the form ```<scene>.<event>```. The scene number is set by the device, and the event is as follows -:
+
+| Event ID | Event Description  |
+|----------|--------------------|
+| 0        | Single key press   |
+| 1        | Key released       |
+| 2        | Key held down      |
+| 3        | Double keypress    |
+| 4        | Tripple keypress   |
+| 5        | 4 x keypress       |
+| 6        | 5 x keypress       |
 
 ### LED frame color ON-state
 This channel allows to change the color for the LED ring of the frame when the switch is in ON.

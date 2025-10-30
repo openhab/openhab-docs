@@ -131,19 +131,19 @@ The following table summarises the channels available for the Wave Shutter -:
 | Shutter Position | blinds_control | blinds_control | Blinds | Rollershutter | 
 | Electric meter (kWh) | meter_kwh | meter_kwh | Energy | Number | 
 | Electric meter (watts) | meter_watts | meter_watts | Energy | Number | 
-| Alarm (heat) | alarm_heat | alarm_heat | Fire | Switch | 
+| Alarm (heat) | alarm_heat | alarm_heat | temperature_hot | Switch | 
 | Alarm (power) | alarm_power | alarm_power | Energy | Switch | 
 | Alarm (system) | alarm_system | alarm_system |  | Switch | 
 | Blinds Control | blinds_control1 | blinds_control | Blinds | Rollershutter | 
 | Electric meter (kWh) 1 | meter_kwh1 | meter_kwh | Energy | Number | 
 | Electric meter (watts) 1 | meter_watts1 | meter_watts | Energy | Number | 
-| Alarm (heat) 1 | alarm_heat1 | alarm_heat | Fire | Switch | 
+| Alarm (heat) 1 | alarm_heat1 | alarm_heat | temperature_hot | Switch | 
 | Alarm (power) 1 | alarm_power1 | alarm_power | Energy | Switch | 
 | Alarm (system) 1 | alarm_system1 | alarm_system |  | Switch | 
 | Lamella Position | blinds_control2 | blinds_control | Blinds | Rollershutter | 
 | Electric meter (kWh) 2 | meter_kwh2 | meter_kwh | Energy | Number | 
 | Electric meter (watts) 2 | meter_watts2 | meter_watts | Energy | Number | 
-| Alarm (heat) 2 | alarm_heat2 | alarm_heat | Fire | Switch | 
+| Alarm (heat) 2 | alarm_heat2 | alarm_heat | temperature_hot | Switch | 
 | Alarm (power) 2 | alarm_power2 | alarm_power | Energy | Switch | 
 | Alarm (system) 2 | alarm_system2 | alarm_system |  | Switch | 
 
@@ -167,7 +167,7 @@ The ```meter_watts``` channel is of type ```meter_watts``` and supports the ```N
 ### Alarm (heat)
 Indicates if a heat alarm is triggered.
 
-The ```alarm_heat``` channel is of type ```alarm_heat``` and supports the ```Switch``` item and is in the ```Fire``` category. This is a read only channel so will only be updated following state changes from the device.
+The ```alarm_heat``` channel is of type ```alarm_heat``` and supports the ```Switch``` item and is in the ```temperature_hot``` category. This is a read only channel so will only be updated following state changes from the device.
 
 The following state translation is provided for this channel to the ```Switch``` item type -:
 
@@ -220,7 +220,7 @@ The ```meter_watts1``` channel is of type ```meter_watts``` and supports the ```
 ### Alarm (heat) 1
 Indicates if a heat alarm is triggered.
 
-The ```alarm_heat1``` channel is of type ```alarm_heat``` and supports the ```Switch``` item and is in the ```Fire``` category. This is a read only channel so will only be updated following state changes from the device.
+The ```alarm_heat1``` channel is of type ```alarm_heat``` and supports the ```Switch``` item and is in the ```temperature_hot``` category. This is a read only channel so will only be updated following state changes from the device.
 
 The following state translation is provided for this channel to the ```Switch``` item type -:
 
@@ -273,7 +273,7 @@ The ```meter_watts2``` channel is of type ```meter_watts``` and supports the ```
 ### Alarm (heat) 2
 Indicates if a heat alarm is triggered.
 
-The ```alarm_heat2``` channel is of type ```alarm_heat``` and supports the ```Switch``` item and is in the ```Fire``` category. This is a read only channel so will only be updated following state changes from the device.
+The ```alarm_heat2``` channel is of type ```alarm_heat``` and supports the ```Switch``` item and is in the ```temperature_hot``` category. This is a read only channel so will only be updated following state changes from the device.
 
 The following state translation is provided for this channel to the ```Switch``` item type -:
 
