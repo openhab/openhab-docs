@@ -85,14 +85,24 @@ Display a video (URL or URL from String item) in a card
     Does not start playing the video automatically
   </PropDescription>
 </PropBlock>
+<PropBlock type="BOOLEAN" name="startMuted" label="Start Muted">
+  <PropDescription>
+    Mute audio output by default
+  </PropDescription>
+</PropBlock>
+<PropBlock type="TEXT" name="posterItem" label="Poster Item" context="item">
+  <PropDescription>
+    Image item or String item containing the URL of an image to use as a poster before the video loads
+  </PropDescription>
+</PropBlock>
 <PropBlock type="TEXT" name="posterURL" label="Poster URL">
   <PropDescription>
-    URL of an image to use as a poster before the video loads
+    URL of an image to use as a poster before the video loads (if item if not specified)
   </PropDescription>
 </PropBlock>
 <PropBlock type="TEXT" name="playerType" label="Player Type">
   <PropDescription>
-    Select the player type (optional), defualts to Video.js
+    Select the player type (optional), defaults to Video.js
   </PropDescription>
   <PropOptions>
     <PropOption value="videojs" label="Video.js (Dash, HLS, Others)" />
@@ -107,6 +117,11 @@ Display a video (URL or URL from String item) in a card
 <PropBlock type="DECIMAL" name="candidatesTimeout" label="ICE candidates timeout">
   <PropDescription>
     WebRTC ICE candidates discovery timeout length in milliseconds (optional), defaults to '2000', '0' to disable
+  </PropDescription>
+</PropBlock>
+<PropBlock type="BOOLEAN" name="sendAudio" label="Two Way Audio">
+  <PropDescription>
+    Send audio to the WebRTC connection if supported (requires WebRTC player type)
   </PropDescription>
 </PropBlock>
 </PropGroup>
