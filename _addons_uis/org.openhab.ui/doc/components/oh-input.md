@@ -33,9 +33,9 @@ Displays an input field, used to set a variable
     Input name
   </PropDescription>
 </PropBlock>
-<PropBlock type="TEXT" name="type" label="Type">
+<PropBlock type="TEXT" name="type" label="Input Type">
   <PropDescription>
-    Type of input (see <a class="external text-color-blue" target="_blank" href="https://framework7.io/docs/inputs.html#supported-inputs">f7 input docs</a>, <code>time</code>, <code>date</code> or <code>datepicker</code>)
+    Input type for different openHAB Item types (the first listed type is the default):  <div style="padding-left: 16px;">  <li><b>String:</b> text, textarea, texteditor, password, email, tel, url</li>  <li><b>DateTime:</b> datetime-local, date, datepicker</li>  <li><b>Number:</b> number</li>  </div>
   </PropDescription>
 </PropBlock>
 <PropBlock type="TEXT" name="inputmode" label="Input Mode">
