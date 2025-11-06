@@ -29,6 +29,7 @@ The different components are mostly maintained independently of each other. Many
 
 ## Maintainers
 
+The hyperlinks in the next sentence are accessible only to members of the openHAB GitHub organization.
 The [maintainers of openHAB](https://github.com/orgs/openhab/teams/maintainers) is the superset of [all maintainers of the different code repositories](https://github.com/orgs/openhab/teams/maintainers/teams).
 This means that the maintainer role is always related to a certain repository/component only and not to the entire project as such.
 
