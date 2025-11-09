@@ -156,7 +156,7 @@ Examples:
 ::: tab DSL
 
 ```java
-DSL(|"String has " + input.length + " characters")
+|"String has " + input.length + " characters"
 ```
 
 :::
@@ -167,7 +167,7 @@ For the modern JS Scripting, the transformation is `JS(|...)`.
 For the legacy JS Scripting, the transformation is `NASHORNJS(|...)`.
 
 ```javascript
-JS(|"String has " + input.length + " characters")
+|"String has " + input.length + " characters"
 ```
 
 :::
@@ -183,7 +183,7 @@ PY(|"String has " + str(len(input)) + "characters")
 ::: tab JRuby
 
 ```ruby
-RB(|"String has #{input.length} characters")
+|"String has #{input.length} characters"
 ```
 
 :::
@@ -191,7 +191,7 @@ RB(|"String has #{input.length} characters")
 ::: tab Groovy
 
 ```groovy
-GROOVY(|"String has ${input.length()} characters")
+|"String has ${input.length()} characters"
 ```
 
 :::
