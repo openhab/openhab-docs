@@ -106,8 +106,8 @@ There is a growing list of options of ways for users to create rules and many of
 This tutorial will not discuss file based rules.
 See the docs for the chosen language for details on how to write rules in files for that language.
 
-openHAB comes with three languages by default (Rules DSL, ECMAScript 5.1, and Blockly) and has a number of [automation add-ons](/addons/#automation) to add more.
-For this tutorial we will be using [Blockly](/docs/configuration/blockly/) and the [JavaScript Scripting](/addons/automation/jsscripting/) add-on.
+openHAB comes by default with one language for automation (Rules DSL) and has a number of [automation add-ons](/addons/#automation) to add more.
+For this tutorial we will be using [Blockly](/docs/configuration/blockly/), which requires [installing](docs/configuration/addons.html) the [JavaScript Scripting](/addons/automation/jsscripting/) add-on.
 But most of the concepts presented can be applied to the other languages too.
 
 ## What's the Difference Between a Rule, Script, a Scene and Schedule?
