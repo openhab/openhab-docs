@@ -287,7 +287,7 @@ Of course, the polling job must be cancelled in the dispose method:
 ```java
 @Override
 public void dispose() {
-    final job = pollingJob;
+    final var job = pollingJob;
     if (job != null) {
         job.cancel(true);
         pollingJob = null;
