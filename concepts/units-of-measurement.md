@@ -8,6 +8,8 @@ title: Units Of Measurement
 To express measured values in a scientific correct unit the framework supports units of measurement.
 By using quantified decimal values in state updates and commands, the framework is able to automatically convert values to a desired unit which may be defined by the system locale or on a per-use-basis.
 
+[[toc]]
+
 ## QuantityType
 
 Bindings use the `QuantityType` to post updates of sensor data with a quantifying unit.
@@ -22,50 +24,53 @@ The metric system with SI units is used for the rest of the world.
 This conversion will convert the given `QuantityType` into a default unit for the specific dimension of the type.
 This is:
 
-| Dimension                | default unit metric              | default unit imperial            |
-|--------------------------|----------------------------------|----------------------------------|
-| Acceleration             | Meter per square second (m/s²)   | Meter per square second (m/s²)   |
-| Amount of Substance      | Mole (mol)                       | Mole (mol)                       |
-| Angle                    | Degree (°)                       | Degree (°)                       |
-| Area                     | Square Meter (m²)                | Square foot (ft²)                |
-| Areal Density            | Dobson unit (DU)                 | Dobson unit (DU)                 |
-| Catalytic Activity       | Katal (kat)                      | Katal (kat)                      |
-| Data Amount              | Byte (B)                         | Byte (B)                         |
-| Data Transfer Rate       | Megabit per second (Mbit/s)      | Megabit per second (Mbit/s)      |
-| Density                  | Kilogram per cubic meter (kg/m³) | Kilogram per cubic meter (kg/m³) |
-| Dimensionless            | Abstract unit one (one)          | Abstract unit one (one)          |
-| Electric Capacitance     | Farad (F)                        | Farad (F)                        |
-| Electric Charge          | Coulomb (C)                      | Coulomb (C)                      |
-| Electric Conductance     | Siemens (S)                      | Siemens (S)                      |
-| Electric Conductivity    | Siemens per meter (S/m)          | Siemens per meter (S/m)          |
-| Electric Current         | Ampere (A)                       | Ampere (A)                       |
-| Electric Inductance      | Henry (H)                        | Henry (H)                        |
-| Electric Potential       | Volt (V)                         | Volt (V)                         |
-| Electric Resistance      | Ohm (Ω)                          | Ohm (Ω)                          |
-| Emission Intensity       | Gram per kilowatt hour (g/kWh)   | Gram per kilowatt hour (g/kWh)   |
-| Energy                   | Kilowatt hours (kWh)             | Kilowatt hours (kWh)             |
-| Force                    | Newton (N)                       | Newton (N)                       |
-| Frequency                | Hertz (Hz)                       | Hertz (Hz)                       |
-| Illuminance              | Lux (lx)                         | Lux (lx)                         |
-| Intensity                | Irradiance (W/m²)                | Irradiance (W/m²)                |
-| Length                   | Meter (m)                        | Inch (in)                        |
-| Luminous Flux            | Lumen (lm)                       | Lumen (lm)                       |
-| Luminous Intensity       | Candela (cd)                     | Candela (cd)                     |
-| Magnetic Flux            | Weber (Wb)                       | Weber (Wb)                       |
-| Magnetic Flux Density    | Tesla (T)                        | Tesla (T)                        |
-| Mass                     | Kilogram (kg)                    | Pound (lb)                       |
-| Power                    | Watt (W)                         | Watt (W)                         |
-| Pressure                 | Hectopascal (hPa)                | Inch of mercury (inHg)           |
-| Radiant Exposure         | Joule per square meter (J/m²)    | Joule per square meter (J/m²)    |
-| Radiation Absorbed Dose  | Gray (Gy)                        | Gray (Gy)                        |
-| Radiation Effective Dose | Sievert (Sv)                     | Sievert (Sv)                     |
-| Radioactivity            | Becquerel (Bq)                   | Becquerel (Bq)                   |
-| Solid Angle              | Steradian (sr)                   | Steradian (sr)                   |
-| Speed                    | Kilometers per hour (km/h)       | Miles per hour (mph)             |
-| Temperature              | Celsius (°C)                     | Fahrenheit (°F)                  |
-| Time                     | Seconds (s)                      | Seconds (s)                      |
-| Volume                   | Cubic Meter (m³)                 | US Gallon (gal)                  |
-| Volumetric Flow Rate     | Liter per minute (l/min)         | US Gallon per minute (gal/min)   |
+| Dimension                | default unit metric               | default unit imperial             |
+|--------------------------|-----------------------------------|-----------------------------------|
+| Acceleration             | Meter per square second (m/s²)    | Meter per square second (m/s²)    |
+| Amount of Substance      | Mole (mol)                        | Mole (mol)                        |
+| Angle                    | Degree (°)                        | Degree (°)                        |
+| Area                     | Square Meter (m²)                 | Square foot (ft²)                 |
+| Areal Density            | Dobson unit (DU)                  | Dobson unit (DU)                  |
+| Catalytic Activity       | Katal (kat)                       | Katal (kat)                       |
+| Currency                 | User Defined Currency (DEF)       | User Defined Currency (DEF)       |
+| Data Amount              | Byte (B)                          | Byte (B)                          |
+| Data Transfer Rate       | Megabit per second (Mbit/s)       | Megabit per second (Mbit/s)       |
+| Density                  | Kilogram per cubic meter (kg/m³)  | Kilogram per cubic meter (kg/m³)  |
+| Dimensionless            | Abstract unit one (one)           | Abstract unit one (one)           |
+| Electric Capacitance     | Farad (F)                         | Farad (F)                         |
+| Electric Charge          | Coulomb (C)                       | Coulomb (C)                       |
+| Electric Conductance     | Siemens (S)                       | Siemens (S)                       |
+| Electric Conductivity    | Siemens per meter (S/m)           | Siemens per meter (S/m)           |
+| Electric Current         | Ampere (A)                        | Ampere (A)                        |
+| Electric Inductance      | Henry (H)                         | Henry (H)                         |
+| Electric Potential       | Volt (V)                          | Volt (V)                          |
+| Electric Resistance      | Ohm (Ω)                           | Ohm (Ω)                           |
+| Emission Intensity       | Gram per kilowatt hour (g/kWh)    | Gram per kilowatt hour (g/kWh)    |
+| Energy                   | Kilowatt hour (kWh)               | Kilowatt hour (kWh)               |
+| EnergyPrice              | Price per kilowatt hour (DEF/kWh) | Price per kilowatt hour (DEF/kWh) |
+| Force                    | Newton (N)                        | Newton (N)                        |
+| Frequency                | Hertz (Hz)                        | Hertz (Hz)                        |
+| Illuminance              | Lux (lx)                          | Lux (lx)                          |
+| Intensity                | Irradiance (W/m²)                 | Irradiance (W/m²)                 |
+| Length                   | Meter (m)                         | Inch (in)                         |
+| Luminous Flux            | Lumen (lm)                        | Lumen (lm)                        |
+| Luminous Intensity       | Candela (cd)                      | Candela (cd)                      |
+| Magnetic Flux            | Weber (Wb)                        | Weber (Wb)                        |
+| Magnetic Flux Density    | Tesla (T)                         | Tesla (T)                         |
+| Mass                     | Kilogram (kg)                     | Pound (lb)                        |
+| Power                    | Watt (W)                          | Watt (W)                          |
+| Pressure                 | Hectopascal (hPa)                 | Inch of mercury (inHg)            |
+| Radiant Exposure         | Joule per square meter (J/m²)     | Joule per square meter (J/m²)     |
+| Radiation Absorbed Dose  | Gray (Gy)                         | Gray (Gy)                         |
+| Radiation Effective Dose | Sievert (Sv)                      | Sievert (Sv)                      |
+| Radioactivity            | Becquerel (Bq)                    | Becquerel (Bq)                    |
+| Solid Angle              | Steradian (sr)                    | Steradian (sr)                    |
+| Speed                    | Kilometers per hour (km/h)        | Miles per hour (mph)              |
+| Temperature              | Celsius (°C)                      | Fahrenheit (°F)                   |
+| Time                     | Seconds (s)                       | Seconds (s)                       |
+| Volume                   | Cubic Meter (m³)                  | US Gallon (gal)                   |
+| VolumePrice              | Price per litre (DEF/l)           | Price per litre (DEF/l)           |
+| Volumetric Flow Rate     | Liter per minute (l/min)          | US Gallon per minute (gal/min)    |
 
 In some cases the system default unit may not be the most useful unit for a given quantity.
 For measuring precipitation km/h would be a quite uncommon unit, while mm/h would be the expected unit.
@@ -122,7 +127,7 @@ The `org.openhab.core.library.dimension` and `javax.measure.quantity` packages p
 
 All units which are currently supported by default are listed in the tables below.
 
-Imperial (base unit symbols):
+### Imperial (base unit symbols):
 
 | Type               | Unit                   | Symbol  |
 |--------------------|------------------------|---------|
@@ -142,7 +147,7 @@ Imperial (base unit symbols):
 | Volume             | Gallon (US)            | gal     |
 | VolumetricFlowRate | Gallon (US) per minute | gal/min |
 
-SI (base unit symbols):
+### SI (base unit symbols):
 
 | Type                      | Unit                             | Symbol |
 |---------------------------|----------------------------------|--------|
@@ -233,7 +238,28 @@ Technically, mireds are the reciprocal of Temperature, but QuantityType and Numb
 This technicality might be a problem if you are using mireds in rules.
 Be sure to use the `toInvertibleUnit` method on QuantityType, rather than `toUnit`.
 
-Metric Prefixes:
+### Currency:
+
+| Type        | Unit                    | Symbol  |
+|-------------|-------------------------|---------|
+| Currency    | User Defined Currency   | DEF     |
+| EnergyPrice | Price per kilowatt hour | DEF/kWh |
+| VolumePrice | Price per litre         | DEF/l   |
+| VolumePrice | Price per cubic meter   | DEF/m³  |
+| VolumePrice | Price per gallon (US)   | DEF/gal |
+
+Currently the support for currencies is pretty basic and just one currency is supported.
+In the future there is a plan to support additional providers with connections to exchanges where values can be converted between currencies using the current exchange rates.
+
+This means that you have to configure a provider to start.
+Otherwise your Items will just appear to have unit `DEF`.
+
+There are two providers supported right now.
+The `FixedCurrencyProvider` will let you just define what currency you want to use everywhere.
+The `LocaleBasedCurrencyProvider` will use your regional settings to determine the default currency.
+The units follow ISO 4217 three letter designations (e.g. `USD`, `EUR`, etc.).
+
+### Metric Prefixes:
 
 | Name  | Symbol | Factor |
 |-------|--------|--------|
@@ -258,7 +284,7 @@ Metric Prefixes:
 | Zepto | z      | 10⁻²¹  |
 | Yocto | y      | 10⁻²⁴  |
 
-Binary Prefixes:
+### Binary Prefixes:
 
 | Name | Symbol | Factor |
 | ---- | ------ | ------ |
