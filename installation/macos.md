@@ -5,7 +5,7 @@ title: openHAB on macOS
 
 # openHAB on macOS
 
-The following instructions will guide you through the process of setting up openHAB and recommended packages for both .DEB (Ubuntu, Debian etc.) and .RPM (RedHat, CentOS, Fedora etc.) Linux systems.
+The following instructions will guide you through the process of setting up openHAB on macOS systems.
 
 All instructions can be executed in a terminal or remotely via SSH connection.
 
@@ -46,6 +46,8 @@ The manual installation through the platform independent archive file is only re
 
 ### Package Installation
 
+<img align="right" width="180" src="images/homebrew-openhab.svg" alt="Homebrewed openHAB logo" />
+
 Installation through the Homebrew package is the recommended choice,
 as the package installation takes care of almost all the required steps automatically and even included a service to start openHAB automatically.
 
@@ -56,13 +58,12 @@ After installing Homebrew, you need to add the [openHAB _tap_](https://github.co
 A _tap_ is a third-party repository of formulae for the Homebrew package manager.
 Packages in Homebrew are also called _formulae_.
 
-```shell
-brew tap openhab/openhab
-```
+<div><pre class="language-shell"><code>brew <span class="token function">tap</span> openhab/openhab</code></pre></div>
 
 Choose between the latest stable or milestone release:
 
 - **Stable Releases**
+
   The stable builds contain the latest official release and have been tested thoroughly.
 
   ```shell
@@ -70,7 +71,9 @@ Choose between the latest stable or milestone release:
   ```
 
 - **Milestone Release**
+
   Milestone releases are betas and release candidates and come out more frequently than stable releases, but will contain new features that are currently in the testing phase.
+
   ```shell
   brew install openhab-milestone
   ```
@@ -105,7 +108,7 @@ To verify its checksum:
 #### Preventing automatic upgrade of openHAB
 
 To prevent unexpected breakage by accidentally updating openHAB, it's recommended to only manually upgrade to the newest version.
-This can be achieved by pinning the openHAB package version .
+This can be achieved by pinning the openHAB package version.
 
 ```shell
 brew pin openhab
@@ -128,7 +131,7 @@ brew list --pinned
 ```
 
 ::: warning
-The OpenJDK package version should be pinned as well, because after an OpenJDK upgrade, the _Local Network Access_ permission needs to be granted again through _Settings -> Privacy & Security -> Local Network_.
+The OpenJDK package version should be pinned as well, because after an OpenJDK upgrade, the _Local Network Access_ permission needs to be granted again through _Settings → Privacy & Security → Local Network_.
 
 ```shell
 brew pin openjdk@21
@@ -197,7 +200,7 @@ brew services start openhab
 brew services start openhab-milestone
 ```
 
-The following commands help managing the service:
+The following commands help manage the service:
 
 - stop the service: `brew services stop ...`
 - restart the service: `brew services restart ...`
@@ -206,7 +209,7 @@ The following commands help managing the service:
 #### Updating openHAB
 
 openHAB can easily be updated through Homebrew.
-First, the package version needs to be unpinned, so that Homebrew can update the package.
+First, the package version needs to be unpinned so that Homebrew can update the package.
 
 ```shell
 brew unpin openjdk@21
@@ -221,6 +224,8 @@ Next, the package can be updated.
 ```shell
 brew upgrade
 ```
+
+Remember to pin the package version again!
 
 #### Backup and Restore
 
@@ -243,17 +248,20 @@ Second, we are going to download a platform independent `zip` archive file.
 Choose between the latest stable release, milestone (testing release) or snapshot build:
 
 - **Stable Releases**
+
   The stable builds contain the latest official release and have been tested thoroughly.
-  Download the latest `openhab-5.x.x.zip` from [our downloadpage](https://www.openhab.org/download/).
+  Download the latest `openhab-5.x.x.zip` from [our download page](https://www.openhab.org/download/).
 
 - **Milestone Release**
+
   Milestone releases are betas and release candidates and come out more frequently than stable releases, but will contain new features that are currently in the testing phase.
-  If available, the latest `openhab-5.x.x.Mx.zip` can be downloaded from [our downloadpage](https://www.openhab.org/download/).
+  If available, the latest `openhab-5.x.x.Mx.zip` can be downloaded from [our download page](https://www.openhab.org/download/).
 
 - **Snapshot Release**
+
   The snapshot build is created [almost daily](https://ci.openhab.org/job/openHAB-Distribution/), and include the latest changes to openHAB.
   These changes are often unstable, so you should use this branch only for testing or development purposes.
-  Download the latest `openhab-5.x.x-SNAPSHOT.zip` from [our downloadpage](https://www.openhab.org/download/).
+  Download the latest `openhab-5.x.x-SNAPSHOT.zip` from [our download page](https://www.openhab.org/download/).
 
 The following instructions are performed in a terminal window.
 At the first launch of the terminal, you will be inside your home directory.
