@@ -1,0 +1,8 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Report a bug that is related to a specific binding or other add-on
+    url: https://github.com/openhab/openhab-addons/issues
+    about: In that case it's best to file your issue in the openhab-addons repository.
+  - name: I have a general question or need support
+    url: https://community.openhab.org/
+    about: GitHub is in general not the right place to ask questions; in most case, head to our community forum and it will be quickly answered!
