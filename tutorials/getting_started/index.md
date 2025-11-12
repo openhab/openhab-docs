@@ -59,7 +59,7 @@ Cons:
 
 - Can be slower to reach one's goal if you already know what you're doing and if there's a lot of bulk changes or duplicating required.
 - Harder to remove obsolete stuff.
-- Some things cannot be configured with the UI yet (e.g. persistence).
+- Some aspects cannot be configured with the UI yet.
 - You need to sit in front of a device with access to the UI to make changes.
 
 ## Table of Contents
