@@ -285,7 +285,9 @@ The following devices have been tested by openHAB users with the binding. This l
 | Innr Bulbs                                     | _[<sup>[1]</sup>](#note1)_                                   |
 | Innr SP 120                                    | Smart Plug _[<sup>[1]</sup>](#note1)_                        |
 | LEDVANCE/Osram Bulbs                           |                                                              |
+| LEGRAND                                        | Céliane with Netatmo Connected micromodule for exhaust fan CMV 2 speeds 067766. |
 | LEGRAND                                        | Céliane with Netatmo Dimmer switch w/o neutral 067721.       |
+| LEGRAND                                        | Céliane with Netatmo Dimmer switch with neutral Cx0409.      |
 | LIVARNO Smart Home                             | Lidl Livarno Smart Home Bulbs _[<sup>[4]</sup>](#note4)_     |
 | LUMI weather sensor                            | temperature, pressure, humidity sensor                       |
 | Lupus Small Zigbee Temperature Sensor 12314    | Lupus-Electronics Temperature and Humidity sensor            |
@@ -316,6 +318,7 @@ The following devices have been tested by openHAB users with the binding. This l
 | SONOFF SNZB-02P                                | Sensor (Temperature, Humidity) eWeLink SNZB-02P              |
 | SONOFF SNZB-03                                 | Sensor (Motion Intrusion, Tamper, Low Battery) eWeLink MS01  |
 | SONOFF SNZB-04                                 | Sensor (Contact Portal 1, Tamper, Low Battery) eWeLink DS01  |
+| SONOFF SNZB-05P                                | Sensor (Water alarm, Tamper, Low Battery) SONOFF SNZB-05P    |
 | Telkonet EcoInsight Thermostat                 | Intelligent HVAC Thermostat                                  |
 | Trust Bulbs                                    | _[<sup>[1]</sup> ](#note1)_                                  |
 | Ubisys modules                                 | D1 Dimmer, S1/S2 Switch modules                              |
