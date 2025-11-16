@@ -1,6 +1,7 @@
 name: Fetch Docs Reusable
 # Generic action for fetching doc resources
-# This action is meant to be called by a detailled action for a specific repository, defining the needed parameters
+# This action is meant to be called by a detailed action for a specific repository, defining the necessary parameters.
+# This action is usually used to update stable documentation after the release of a new version from a specific repository.
 
 on:
   workflow_call:
@@ -67,12 +68,12 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v5
         with:
           ref: ${{ inputs.base_target_branch }}
 
       - name: Checkout external repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v5
         with:
           repository: ${{ inputs.base_source_organization }}/${{ inputs.base_source_repository }}
           path: ./external_repositories/${{ inputs.base_source_repository }}
@@ -103,17 +104,17 @@ jobs:
       # Copy image resources if has images
       - name: Copy latest image resources
         if: ${{ inputs.has_images }}
-        run: find $SOURCE_DIR -maxdepth 1 -iname "${{ inputs.doc_base_name }}*.png" -type f -exec cp -v {} $TARGET_DIR \;
+        run: rsync -av --include='*/' --include='*.png' --include='*.svg' --include='*.bmp' --exclude='*' --prune-empty-dirs $SOURCE_DIR $TARGET_DIR
         env:
-          SOURCE_DIR: ./external_repositories/${{ inputs.base_source_repository }}${{ inputs.doc_base_dir }}${{ inputs.image_base_dir }}
-          TARGET_DIR: ${{ inputs.base_folder }}${{ inputs.image_base_dir }}
+          SOURCE_DIR: ./external_repositories/${{ inputs.base_source_repository }}${{ inputs.doc_base_dir }}${{ inputs.image_base_dir }}/
+          TARGET_DIR: ${{ inputs.base_folder }}${{ inputs.image_base_dir }}/
 
       - name: Remove external repository files
         run: rm -rf ./external_repositories
 
       # Create an automated pull request, if the resulting branch is ahead of the `base-target-branch`
       - name: Create pull request
-        uses: peter-evans/create-pull-request@v5
+        uses: peter-evans/create-pull-request@v7
         with:
           commit-message: Automated ${{ inputs.base_source_repository }} Docs fetch
           committer: openHAB Bot <info@openhab.org>

@@ -424,6 +424,7 @@ The default icon will be used for negative numbers, or above 100 i.e. the availa
 Dimmer type Items work in the same way, being limited to 0-100 anyway.
 
 For a dimmable light (0-100%), you might provide icons as in the example:
+
 | File name         | Description                                          |
 | ----------------- | ---------------------------------------------------- |
 | `mydimmer.svg`    | Default icon (used in undefined states)              |
@@ -567,6 +568,26 @@ The easiest way to determine if tags have been implemented in a specific add-on 
 
 See the [Hue Emulation Service](/addons/integrations/hueemulation/) or [HomeKit Add-on](/addons/integrations/homekit/) documentation for more details.
 
+#### Channel Default Tags
+
+As mentioned above, many bindings have preset recommended default tags on their channels.
+And if you define Items via an `.items` file, you can optionally set the channel link to import these tags.
+There are two ways to do this:
+
+1. Individual per Item configuration: apply `useTags` on each respective Items' channel link definition:
+
+    ```java
+    Switch Livingroom_Light "Livingroom Ceiling Light" {channel="hue:device:bridge:light:color" [useTags=true] }
+    ```
+
+1. System wide global configuration for all Items: apply `useTags` in your `conf/services/runtime.cfg` file:
+
+    ```java
+    org.openhab.ItemChannelLinkRegistry:useTags=true
+    ```
+
+Note that if an item has multiple channel links with `useTags=true` (or `useTags` is set globally) then the system applies the tags from the first link, and subsequent links will cause a warning message in the logs.
+
 ### Binding Configuration
 
 One of the greatest strengths of an openHAB automation system is the sheer number of devices you can interact with.
@@ -669,20 +690,35 @@ The expiration timer is started or restarted every time an item receives an upda
 Any future expiring update or command is cancelled, if the item receives an update or command that matches the "expire" update/command.
 See `ignoreStateUpdate` and `ignoreCommands` [configurations](#configurations-for-expire) below.
 
-The parameter accepts a duration of time that can be a combination of days, hours, minutes and seconds in the format `Xd Xh Xm Xs` where X is a _long_ integer.
-Every part is optional, but all parts present must be in the given order (days, hours, minutes, seconds).
-Whitespaces are allowed between the sections.
+The parameter accepts a duration of time expressed as a combination of days, hours, minutes, seconds, and milliseconds. The format follows the structure: `Xd Xh Xm Xs Xms` where:
+
+- Each `X` is a long integer
+- At least one segment must be specified, and any included segments must appear in the following order: **days**, **hours**, **minutes**, **seconds**, **milliseconds**
+- Whitespace is allowed between segments
+- A space between the number and its unit is permitted but not required
+
+Unit names may use short or extended forms:
+
+| Unit         | Accepted Variants                       |
+|--------------|-----------------------------------------|
+| Days         | `d`, `day`, `days`                      |
+| Hours        | `h`, `hr`, `hrs`, `hour`, `hours`       |
+| Minutes      | `m`, `min`, `mins`, `minute`, `minutes` |
+| Seconds      | `s`, `sec`, `secs`, `second`, `seconds` |
+| Milliseconds | `ms`, `millisecond`, `milliseconds`     |
 
 ```shell
 expire="1h 30m 45s"
 expire="1h05s"
+expire="1 h 5 seconds"
 expire="55h 59m 12s"
+expire="55 hours 59 min 12 sec"
 expire="2d 7h 59m 12s"
+expire="2 day 7 h 59 minutes 12 seconds"
+expire="5000 milliseconds"
 ```
 
-A non-negative expiry value can be specified using the [ISO8601 Duration format](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/time/Duration.html#parse(java.lang.CharSequence)).
-Java's `Duration` class supports days, hours, minutes, and seconds.
-Note that while the ISO8601 format allows for fractional seconds, the openHAB `expire` feature only supports durations with a minimum granularity of one second.
+Alternatively, the duration can be specified using a restricted subset of the [ISO 8601 Duration format](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/time/Duration.html#parse(java.lang.CharSequence)). Only non-negative durations are supported, and valid units are limited to days, hours, minutes, and seconds. While ISO 8601 allows fractional seconds, the openHAB expire feature enforces a minimum granularity of one second.
 
 ```shell
 expire="PT1H30M45S"

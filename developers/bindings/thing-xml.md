@@ -994,3 +994,40 @@ The contents of this list are dynamic, and it may be extended from time to time.
 If you are an addon developer and you think there is something missing from the list please open an [Issue](https://github.com/openhab/openhab-core/issues) or [Pull Request](https://github.com/openhab/openhab-core/pulls) on GitHub.
 
 1. For further reading please see the [Description of the Semantic Model]({{base}}/tutorial/model.html), the [Developer Guidelines on Semantic Tags](semantic-tags.md) and the [Thing-Type and Channel-Type validation schema](https://www.openhab.org/schemas/thing-description-1.0.0.xsd).
+
+## Tagging Conventions for Commonly Confused Use Cases
+
+The following are some use cases that commonly lead to confusion.
+The purpose of this list is to provide the convention for tagging such cases:
+
+1. In the case of `Point` and `Property` tags it may help to consider the `Point` as the VERB and the `Property` as the OBJECT in a sentence.
+So a channel may make a 'Measurement' of a 'Temperature', or show the 'Status' of an operating 'Mode' etc.
+
+1. Do not confuse `Property` tags with Units of Measure.
+A `Property` tag is a WORD (see above) that describes the nature of the action being taken by its respective `Point`.
+So for example `Speed` need not be taken precisely to mean `m/sec` .. but can in general cover operations that "do much stuff in little time".
+
+1. For turning a piece of equipment on or off:
+`Switch.Light` should be used if the equipment is a light, otherwise `Switch.Power` should be used.
+
+1. For reporting or controlling the operating mode of a piece of equipment (e.g. auto/manual, day/night, disable/enable, etc.):
+If the channel has two states (e.g. via a `Switch` type channel) then `Switch.Mode` should be used.
+Or if it has multiple states (e.g. heat/cool/dry/fan/auto via a `String` type channel) then `Control.Mode` should be used.
+
+1. For equipment (e.g. fans, pumps) that can run at several speed/power/volume/flow-rates (e.g. Off/Low/Medium/High):
+In theory the above-mentioned "operating mode of a piece of equipment" `Control.Mode` **_could_** also be applied in this case.
+However for **_this specific case_** ("throughput of a fan/pump") `Control.Speed` should be used instead.
+
+1. For equipment having a set-point, even if the set-point is read-only for openHAB, it is appropriate to use `Setpoint.whatever`.
+
+1. The `Calculation` point type is used when (past or future) data is derived via a precise mathematical formula.
+By contrast the `Forecast` point type is used when (future) data is derived via a human or algorithmic estimation.
+So `Calculation` should be used e.g. for astronomical data such as the time of sunrise tomorrow.
+Whereas `Forecast` should be used e.g. for weather or solar forecasts, etc.
+
+1. For tagging channels that represent entertainment media (e.g. album, artist, composer, actor, director. etc.):
+`Status.Info` should be used.
+
+1. For tagging channels that relate to the progress of playing entertainment media, or of an automatic program:
+`Status.Progress` should be used to indicate the current progress.
+Or `Control.Progress` to change the progress (e.g. via a 'fast forward' or 'next' command).

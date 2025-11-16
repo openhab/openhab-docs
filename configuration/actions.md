@@ -99,6 +99,9 @@ var ScriptResponse = executeCommandLine(Duration.ofSeconds(60), "path/to/your/sc
 - `sendHttpPostRequest(String url, String contentType, String content, Map<String, String> headers, int timeout)`: Sends a POST-HTTP request with the given content, request headers, and timeout in ms, and returns the result as a String
 - `sendHttpDeleteRequest(String url)`: Sends a DELETE-HTTP request and returns the result as a String
 - `sendHttpDeleteRequest(String url, Map<String, String> headers, int timeout)`: Sends a DELETE-HTTP request with the given request headers, and timeout in ms, and returns the result as a String
+- `setImage(String itemName, String url)`: Downloads an image from a URL and updates the Image item's state with it. Returns `true` if successful, `false` otherwise
+- `setImage(String itemName, String url, int timeout)`: Downloads an image from a URL with a specified timeout in milliseconds and updates the Image item's state with it. Returns `true` if successful, `false` otherwise
+- `setImage(String itemName, String url, long maxContentLength, int timeout)`: Downloads an image from a URL with a specified maximum content length in bytes and timeout in milliseconds, and updates the Image item's state with it. Returns `true` if successful, `false` otherwise. Use negative values for `maxContentLength` to ignore size limits
 
 ::: tip Note
 All HTTP Actions can have a last `timeout` parameter added in ms. eg. `sendHttpPostRequest(String url, String contentType, String content, int timeout)`
@@ -220,7 +223,7 @@ if ((thingStatusInfo !== null) && (thingStatusInfo.getStatus().toString() == "ON
 
 openHAB has several subsystems that can be accessed from Rules. These include persistence, see [Persistence Extensions in Scripts and Rules]({{base}}/configuration/persistence.html#persistence-extensions-in-scripts-and-rules), transformations, scripts.
 
-- `callScript(String scriptName)`: Calls a script which must be located in the `$OPENHAB_CONF/scripts` folder.
+- `callScript(String scriptName)`: Calls a script which must be located in the `$OPENHAB_CONF/scripts` folder. `callScript` returns the value of the last expression of the script.
 
 Scripts are small pieces of Rules DSL code that can be called from Rules.
 However, Scripts have limitations.
@@ -308,6 +311,7 @@ If there is no `dayset-weekend` defined, calls to `isWeekend` will generate erro
 Config file location: `$OH_CONF/services/ephemeris.cfg`.
 
 Fields:
+
 Field | Description
 -|-
 `country` | Country to use to get the built in list of bank holidays, uses the standard two letter country code.
