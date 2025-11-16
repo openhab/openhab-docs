@@ -127,7 +127,7 @@ The `org.openhab.core.library.dimension` and `javax.measure.quantity` packages p
 
 All units which are currently supported by default are listed in the tables below.
 
-### Imperial (base unit symbols):
+### Imperial (base unit symbols)
 
 | Type               | Unit                   | Symbol  |
 |--------------------|------------------------|---------|
@@ -147,7 +147,7 @@ All units which are currently supported by default are listed in the tables belo
 | Volume             | Gallon (US)            | gal     |
 | VolumetricFlowRate | Gallon (US) per minute | gal/min |
 
-### SI (base unit symbols):
+### SI (base unit symbols)
 
 | Type                      | Unit                             | Symbol |
 |---------------------------|----------------------------------|--------|
@@ -238,7 +238,7 @@ Technically, mireds are the reciprocal of Temperature, but QuantityType and Numb
 This technicality might be a problem if you are using mireds in rules.
 Be sure to use the `toInvertibleUnit` method on QuantityType, rather than `toUnit`.
 
-### Currency:
+### Currency
 
 | Type        | Unit                    | Symbol  |
 |-------------|-------------------------|---------|
@@ -259,7 +259,7 @@ The `FixedCurrencyProvider` will let you just define what currency you want to u
 The `LocaleBasedCurrencyProvider` will use your regional settings to determine the default currency.
 The units follow ISO 4217 three letter designations (e.g. `USD`, `EUR`, etc.).
 
-### Metric Prefixes:
+### Metric Prefixes
 
 | Name  | Symbol | Factor |
 |-------|--------|--------|
@@ -284,7 +284,7 @@ The units follow ISO 4217 three letter designations (e.g. `USD`, `EUR`, etc.).
 | Zepto | z      | 10⁻²¹  |
 | Yocto | y      | 10⁻²⁴  |
 
-### Binary Prefixes:
+### Binary Prefixes
 
 | Name | Symbol | Factor |
 | ---- | ------ | ------ |
