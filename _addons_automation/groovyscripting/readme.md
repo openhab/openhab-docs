@@ -3,7 +3,7 @@ id: groovyscripting
 label: Groovy Scripting
 title: Groovy Scripting - Automation
 type: automation
-description: "This add-on provides support for [Groovy](https://groovy-lang.org/) 4.0.28 that can be used as a scripting language within automation rules."
+description: "This add-on provides support for [Groovy](https://groovy-lang.org/) 4.0.29 that can be used as a scripting language within automation rules."
 logo: images/addons/groovyscripting.svg
 install: auto
 ---
@@ -16,7 +16,7 @@ install: auto
 
 <AddonLogo />
 
-This add-on provides support for [Groovy](https://groovy-lang.org/) 4.0.28 that can be used as a scripting language within automation rules.
+This add-on provides support for [Groovy](https://groovy-lang.org/) 4.0.29 that can be used as a scripting language within automation rules.
 
 ## Creating Groovy Scripts
 

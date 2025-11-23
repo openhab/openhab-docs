@@ -1,9 +1,9 @@
 ---
-id: mqtt.homeassistant
-label: Home Assistant MQTT Components
-title: Home Assistant MQTT Components - Bindings
+id: homeassistant
+label: Home Assistant
+title: Home Assistant - Bindings
 type: binding
-description: "NOTE: This binding is provided by the [MQTT binding](https://www.openhab.org/addons/bindings/mqtt/), and therefore no explicit installation is necessary beyond installing the MQTT binding."
+description: "Devices that use [Home Assistant MQTT Discovery](https://www.home-assistant.io/integrations/mqtt/#mqtt-discovery) are automatically configured with this binding."
 install: manual
 ---
 
@@ -11,9 +11,7 @@ install: manual
 
 {% include base.html %}
 
-# Home Assistant MQTT Components Binding
-
-NOTE: This binding is provided by the [MQTT binding](https://www.openhab.org/addons/bindings/mqtt/), and therefore no explicit installation is necessary beyond installing the MQTT binding.
+# Home Assistant  Binding
 
 Devices that use [Home Assistant MQTT Discovery](https://www.home-assistant.io/integrations/mqtt/#mqtt-discovery) are automatically configured with this binding.
 Components that share a common `device.identifiers` will automatically be grouped together as a single Thing.
