@@ -68,12 +68,12 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
         with:
           ref: ${{ inputs.base_target_branch }}
 
       - name: Checkout external repository
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
         with:
           repository: ${{ inputs.base_source_organization }}/${{ inputs.base_source_repository }}
           path: ./external_repositories/${{ inputs.base_source_repository }}
