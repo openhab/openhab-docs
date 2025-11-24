@@ -4,7 +4,7 @@ label: Home Assistant
 title: Home Assistant - Bindings
 type: binding
 description: "Devices that use [Home Assistant MQTT Discovery](https://www.home-assistant.io/integrations/mqtt/#mqtt-discovery) are automatically configured with this binding."
-install: manual
+install: auto
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
