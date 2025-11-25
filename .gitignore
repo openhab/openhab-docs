@@ -14,3 +14,12 @@ project.pbxproj
 # IntelliJ
 *.iml
 .idea
+
+#vscode
+.vscode
+
+# Built docs
+docs
+addons/integrations
+vuepress
+.DS_Store
