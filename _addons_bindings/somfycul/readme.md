@@ -4,7 +4,7 @@ label: SomfyCUL
 title: SomfyCUL - Bindings
 type: binding
 description: "This binding supports controlling [Somfy RTS Rollershutters](https://www.somfysystems.com/en-us/products/rolling-shutters) via CUL sticks."
-install: manual
+install: auto
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
