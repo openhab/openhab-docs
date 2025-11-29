@@ -127,7 +127,7 @@ The following contexts require a specific format of the content:
   <tr><td>url</td><td>text</td><td>web url</td><td><code>&lt;input type="url"/></code></td></tr>
   <tr><td>item</td><td>text</td><td>Item name</td><td>custom input field</td></tr>
   <tr><td>thing</td><td>text</td><td>UID of a thing</td><td>custom input field</td></tr>
-  <tr><td>group</td><td>text</td><td>group name to which this parameter belongs</td><td></td></tr>
+  <tr><td>group</td><td>text</td><td>name of a Group Item</td><td></td></tr>
   <tr><td>tag</td><td>text</td><td>tag name</td><td>custom input field</td></tr>
   <tr><td>service</td><td>text</td><td>service name</td><td>custom input field</td></tr>
   <tr><td>channel</td><td>text</td><td>UID of a channel<br></td><td>custom input field</td></tr>

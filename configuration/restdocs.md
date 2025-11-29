@@ -22,7 +22,7 @@ Be aware that the documentation of the REST API may not be automatically install
 
 The openHAB REST API is excellently documented with detailed use instructions.
 It would vastly exceed this space to present all possible examples.
-Nevertheless, here is some examples using [curl](https://en.wikipedia.org/wiki/CURL), a common command line tool available for many platforms:
+Nevertheless, here are some examples using [curl](https://en.wikipedia.org/wiki/CURL), a common command line tool available for many platforms:
 
 - Switching ```My_Item``` OFF by issuing an http [POST](https://en.wikipedia.org/wiki/POST_(HTTP)) request:
 

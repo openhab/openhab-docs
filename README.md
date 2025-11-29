@@ -95,6 +95,7 @@ rvm install ruby-3.3.2
 Next, you can build & serve the documentation preview:
 
 ```shell script
+npm install           # This needs to be run once for initialization
 npm run serve-preview
 ```
 
