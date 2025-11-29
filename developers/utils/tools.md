@@ -5,7 +5,7 @@ title: Framework Tools
 
 # Framework Tools
 
-The openHAB framework provides a number of Java tools and utilities so that addon developers do not have the _"re-invent the wheel"_ when writing their own addon code:
+The openHAB framework provides a number of Java tools and utilities so that addon developers do not have to _"re-invent the wheel"_ when writing their own addon code:
 
 - [Channel Types](#channel-types)
 - [Thing Properties](#thing-properties)
@@ -64,7 +64,7 @@ The openHAB framework provides some utilities for string manipulation functions.
 
 The openHAB framework provides modelling capabilities and utilities for lighting Things.
 The openHAB framework uses one single standard class `HSBType` for representing the state of light devices.
-This class encapsusates the hue (H), saturation (S) and brightness (B) of the light; and depending on whether B is zero, therefore also its on/off state.
+This class encapsulates the hue (H), saturation (S) and brightness (B) of the light; and depending on whether B is zero, therefore also its on/off state.
 In addition a light device may have a color temperature (e.g. warm, cool) which represents a specific white-like color.
 
 By contrast many (if indeed not most) actual lighting equipment does NOT use the HSB model.
@@ -85,7 +85,7 @@ It models the full physical state of a light device within Java code.
 The state machine has two programming "sides":
 
 1. The openHAB side, which "speaks the language of openHAB" using the standard openHAB `Command` and `State` classes such as `HSBType`, `OnOffType`, `PercentType` etc.
-2. The physical device side, which "speaks the physical language of the equipment using models like `CIE XY`, `RGB`, `RGBW`, `RGBCW` etc.
+1. The physical device side, which "speaks the physical language of the equipment using models like `CIE XY`, `RGB`, `RGBW`, `RGBCW` etc.
 
 It supports lights with different capabilities, including:
 
@@ -105,20 +105,20 @@ It also provides utility methods to convert between different color representati
 The model specifically handles the following "exotic" cases:
 
 - It handles inter relationships between the brightness PercentType state, the 'B' part of the HSBType state, and the OnOffType state.
-    Where if the brightness goes below the configured `minimum on brightness level` the on/off state changes from ON to OFF, and the brightness is clamped to 0%.
-    And analogously if the on/off state changes from OFF to ON, the brightness changes from 0% to its last non zero value.
+  Where if the brightness goes below the configured `minimum on brightness level` the on/off state changes from ON to OFF, and the brightness is clamped to 0%.
+  And analogously if the on/off state changes from OFF to ON, the brightness changes from 0% to its last non zero value.
 - It handles IncreaseDecreaseType commands to change the brightness up or down by the configured `stepSize`, and ensures that the brightness is clamped in the range [0%..100%].
 - It handles both color temperature PercentType states and QuantityType states (which may be either in Mirek/Mired or Kelvin).
-    Where color temperature PercentType values are internally converted to Mirek/Mired values on the percentage scale between the configured cooleast and warmest Mirek/Mired values, and vice versa.
+  Where color temperature PercentType values are internally converted to Mirek/Mired values on the percentage scale between the configured cooleast and warmest Mirek/Mired values, and vice versa.
 - When the color temperature changes then the HS values are adapted to match the corresponding color temperature point on the Planckian Locus in the CIE color chart.
 - It handles input/output values in RGB format in the range [0..255].
-    The behavior depends on the `rgbDataType` setting.
-    - `DEFAULT`: the RGB values read/write all three parts of the HSBType state.
-    Whereas if it is `RGB_NO_BRIGHTNESS` the RGB values read/write only the 'HS' parts.
-    - `RGB_W`: it handles values in RGBW format.
-    The behavior is similar to the RGB case above except that the white channel is derived from the lowest of the RGB values.
-    - `RGB_C_W` it handles values in RGBCW format.
-    The behavior is similar to the `RGB_W` case above except that the white channel is derived from the RGB values by a custom algorithm.
+  The behavior depends on the `rgbDataType` setting.
+  - `DEFAULT`: the RGB values read/write all three parts of the HSBType state.
+  Whereas if it is `RGB_NO_BRIGHTNESS` the RGB values read/write only the 'HS' parts.
+  - `RGB_W`: it handles values in RGBW format.
+  The behavior is similar to the RGB case above except that the white channel is derived from the lowest of the RGB values.
+  - `RGB_C_W` it handles values in RGBCW format.
+  The behavior is similar to the `RGB_W` case above except that the white channel is derived from the RGB values by a custom algorithm.
 
 ```java
 public class LightModelHandler extends BaseThingHandler {
