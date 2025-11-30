@@ -1,22 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<thing:thing-descriptions bindingId="mqtt"
+<thing:thing-descriptions bindingId="bluetooth"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
 	xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0 https://openhab.org/schemas/thing-description-1.0.0.xsd">
 
-	<!-- Ruuvi Beacon via MQTT Gateway (RuuviTag or Ruuvi Air) -->
+	<!-- Ruuvi Beacon (RuuviTag or Ruuvi Air) -->
 	<thing-type id="ruuvitag_beacon">
 		<supported-bridge-type-refs>
-			<bridge-type-ref id="broker"/>
+			<bridge-type-ref id="roaming"/>
+			<bridge-type-ref id="bluegiga"/>
+			<bridge-type-ref id="bluez"/>
 		</supported-bridge-type-refs>
 
-		<label>Ruuvi Beacon</label>
-		<description>Ruuvi Beacon via Ruuvi Gateway (RuuviTag or Ruuvi Air with environmental and optional air quality
-			measurements)</description>
-
+		<label>Ruuvi Sensor</label>
+		<description>Ruuvi environmental sensor (RuuviTag or Ruuvi Air with temperature, humidity, pressure, acceleration, air
+			quality, etc.)</description>
+		<semantic-equipment-tag>Sensor</semantic-equipment-tag>
 		<channels>
 			<!-- Common channels for all devices -->
-			<channel id="rssi" typeId="ruuvitag_rssi"/>
+			<channel id="rssi" typeId="rssi"/>
 			<channel id="temperature" typeId="ruuvi_temperature"/>
 			<channel id="humidity" typeId="ruuvi_humidity"/>
 			<channel id="pressure" typeId="ruuvi_pressure"/>
@@ -42,60 +44,18 @@
 			<channel id="luminosity" typeId="ruuvi_luminosity"/>
 			<channel id="calibrationCompleted" typeId="ruuvi_calibrationCompleted"/>
 			<channel id="airQualityIndex" typeId="ruuvi_airQualityIndex"/>
-
-			<!-- Gateway metadata channels -->
-			<channel id="ts" typeId="ruuvitag_ts"/>
-			<channel id="gwts" typeId="ruuvitag_gwts"/>
-			<channel id="gwmac" typeId="ruuvitag_gwmac"/>
 		</channels>
 
-		<properties>
-			<property name="thingTypeVersion">1</property>
-		</properties>
-
 		<config-description>
-			<parameter name="topic" type="text">
-				<label>MQTT Topic</label>
-				<description>MQTT topic containing the payload</description>
+			<parameter name="address" type="text">
+				<label>Address</label>
+				<description>Bluetooth address in XX:XX:XX:XX:XX:XX format</description>
 			</parameter>
 		</config-description>
 
 	</thing-type>
 
-	<!-- Gateway metadata channels (shared) -->
-	<channel-type id="ruuvitag_rssi">
-		<item-type unitHint="dBm">Number:Power</item-type>
-		<label>RSSI</label>
-		<description>Received signal strength indicator</description>
-		<category>QualityOfService</category>
-		<tags>
-			<tag>Measurement</tag>
-			<tag>RSSI</tag>
-		</tags>
-		<state readOnly="true" pattern="%d %unit%"/>
-	</channel-type>
-	<channel-type id="ruuvitag_ts">
-		<item-type>DateTime</item-type>
-		<label>Timestamp</label>
-		<description>Timestamp when the message from Bluetooth sensor was received by Gateway (ts)</description>
-		<category>Time</category>
-		<state readOnly="true" pattern="%1$tY-%1$tm-%1$td %1$tH:%1$tM:%1$tS"/>
-	</channel-type>
-	<channel-type id="ruuvitag_gwts" advanced="true">
-		<item-type>DateTime</item-type>
-		<label>Relay Timestamp</label>
-		<description>Timestamp when the message from Bluetooth sensor was relayed by Gateway (gwts)</description>
-		<category>Time</category>
-		<state readOnly="true" pattern="%1$tY-%1$tm-%1$td %1$tH:%1$tM:%1$tS"/>
-	</channel-type>
-	<channel-type id="ruuvitag_gwmac" advanced="true">
-		<item-type>String</item-type>
-		<label>Gateway MAC Address</label>
-		<description>MAC-address of Ruuvi Gateway</description>
-		<state readOnly="true"/>
-	</channel-type>
-
-	<!-- Shared channel-types (RuuviTag and Ruuvi Air) -->
+	<!-- Shared channel-types (same for RuuviTag and Ruuvi Air) -->
 	<channel-type id="ruuvi_temperature">
 		<item-type>Number:Temperature</item-type>
 		<label>Temperature</label>
@@ -166,7 +126,7 @@
 	<channel-type id="ruuvitag_measurementSequenceNumber" advanced="true">
 		<item-type unitHint="1">Number:Dimensionless</item-type>
 		<label>Measurement Sequence Number</label>
-		<state readOnly="true" pattern="%.0f %unit%"/>
+		<state readOnly="true" pattern="%.0f"/>
 	</channel-type>
 	<channel-type id="ruuvitag_movementCounter" advanced="true">
 		<item-type>Number:Dimensionless</item-type>
@@ -178,7 +138,7 @@
 	<channel-type id="ruuvi_pm1">
 		<item-type unitHint="μg/m³">Number:Density</item-type>
 		<label>PM1.0</label>
-		<description><![CDATA[particulate matter <= 1.0 μm concentration (E1 format only)]]></description>
+		<description><![CDATA[particulate matter <= 1.0 μm concentration]]></description>
 		<tags>
 			<tag>Measurement</tag>
 			<tag>AirQuality</tag>
@@ -198,7 +158,7 @@
 	<channel-type id="ruuvi_pm4">
 		<item-type unitHint="μg/m³">Number:Density</item-type>
 		<label>PM4.0</label>
-		<description><![CDATA[particulate matter <= 4.0 μm concentration (E1 format only)]]></description>
+		<description><![CDATA[particulate matter <= 4.0 μm concentration]]></description>
 		<tags>
 			<tag>Measurement</tag>
 			<tag>AirQuality</tag>
@@ -208,7 +168,7 @@
 	<channel-type id="ruuvi_pm10">
 		<item-type unitHint="μg/m³">Number:Density</item-type>
 		<label>PM10.0</label>
-		<description><![CDATA[particulate matter <= 10.0 μm concentration (E1 format only)]]></description>
+		<description><![CDATA[particulate matter <= 10.0 μm concentration]]></description>
 		<tags>
 			<tag>Measurement</tag>
 			<tag>AirQuality</tag>
@@ -263,5 +223,4 @@
 		</tags>
 		<state readOnly="true" pattern="%.0f %unit%"/>
 	</channel-type>
-
 </thing:thing-descriptions>
