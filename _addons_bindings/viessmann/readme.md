@@ -5,7 +5,7 @@ title: Viessmann - Bindings
 type: binding
 description: "This binding connects Viessmann devices via the new Viessmann API."
 logo: images/addons/viessmann.png
-install: manual
+install: auto
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
