@@ -1,27 +1,21 @@
 ---
-id: mqtt.homie
-label: MQTT Homie
-title: MQTT Homie - Bindings
+id: homie
+label: Homie Convention
+title: Homie Convention - Bindings
 type: binding
-description: "NOTE: This binding is provided by the [MQTT binding](https://www.openhab.org/addons/bindings/mqtt/), and therefore no explicit installation is necessary beyond installing the MQTT binding."
-logo: images/addons/mqtt.homie.png
-install: manual
+description: "Devices that follow the [Homie convention](https://homieiot.github.io/) 3.x and 4.x are auto-discovered and represented by this binding and the Homie Thing."
+install: auto
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
 {% include base.html %}
 
-# MQTT Homie Binding
+# Homie Convention Binding
 
-<AddonLogo />
+Devices that follow the [Homie convention](https://homieiot.github.io/) 3.x and 4.x are auto-discovered and represented by this binding and the Homie Thing.
 
-NOTE: This binding is provided by the [MQTT binding](https://www.openhab.org/addons/bindings/mqtt/), and therefore no explicit installation is necessary beyond installing the MQTT binding.
-
-Devices that follow the [Homie convention](https://homieiot.github.io/) 3.x and better
-are auto-discovered and represented by this binding and the Homie Thing.
-
-Find the next table to understand the topology mapping from Homie to the Framework:
+Use this table to understand the topology mapping from Homie to openHAB:
 
 | Homie    | Framework     | Example MQTT topic                 |
 |----------|---------------|------------------------------------|
