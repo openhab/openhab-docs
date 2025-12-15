@@ -65,6 +65,7 @@ A few concrete examples:
 ::: tip Note
 Sources can be provided by the user (either as parameters to REST API calls, or as arguments in rule actions), and thus no assumptions should be made about what values might be seen, including things like "all events triggered by rules flow through `org.openhab.core.automation`," "if a source indicates it came from a given bundle, that bundle actually triggered the event," or "I can enumerate all possible source bundles by searching through the code."
 In general, event sources are informational only, and helpful for end users to debug their installations, and should not be used internally by openHAB core code.
+:::
 
 #### Item Events
 
