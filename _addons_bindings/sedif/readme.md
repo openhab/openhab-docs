@@ -4,7 +4,7 @@ label: Sedif
 title: Sedif - Bindings
 type: binding
 description: "This binding enables you to retrieve water consumption data for consumers in the Île-de-France region of France."
-install: manual
+install: auto
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
