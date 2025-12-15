@@ -43,7 +43,7 @@ This string type presentation is used by event subscribers for event subscriptio
 The event source identifies the sender.
 Not all senders will set the source.
 The source should be structured.
-It consists of a series of concatenated sources (separated by `=>` to indicate delegation), and each component consists of a bundle name with an optional actor name (seprate by `$`).
+It consists of a series of concatenated sources (separated by `=>` to indicate delegation), and each component consists of a bundle name with an optional actor name (separated by `$`).
 Bundle names cannot contain either the delegation separator, or the actor separator.
 Actor names cannot contain the delegation separator.
 The sending bundle is meant to be the OSGi bundle name of the component that sent the event.
