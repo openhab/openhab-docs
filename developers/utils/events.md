@@ -48,7 +48,7 @@ Actor names cannot contain the delegation separator.
 The sending bundle is meant to be the OSGi bundle name of the component that sent the event.
 For non-Java components generating a source (such as the Android and iOS apps), it should still be in Java package name format, as if the component were a Java package.
 The actor piece is an identifier of some sort that identifies the end user, device, rule, or other identifier of a specific instance that initiated the event, if one is relevant.
-If an event is passed through multiple components before being processed, it should preserve the original source, and append (separated by `=>`) another full source for itself.
+If an event is passed through multiple components before being processed, it should preserve the original source, and append (separated by `=>`) another component for itself.
 A few concrete examples:
 
 - `org.openhab.ui=>org.openhab.core.io.rest$admin` would mean the event was initiated by a user named `admin` via Main UI (through the REST API).
