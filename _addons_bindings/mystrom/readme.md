@@ -21,7 +21,7 @@ As of today only the Smart Plug, Bulb and the Motionsensor are implemented.
 
 ## Supported Things
 
-This bundle adds the following thing types:
+This bundle adds the following Thing types:
 
 | Thing                 | ThingTypeID | Description                                        |
 | ----------------------| ----------- | -------------------------------------------------- |
@@ -37,7 +37,7 @@ This extension does not support autodiscovery. The things need to be added manua
 
 ## Thing Configuration
 
-The following parameters are valid for all thing types:
+The following parameters are valid for all Thing types:
 
 | Parameter | Type    | Required | Default if omitted | Description                                                                |
 | --------- | ------- | -------- | ------------------ | -------------------------------------------------------------------------- |
@@ -47,9 +47,9 @@ The following parameters are valid for all thing types:
 
 ## Properties
 
-In addition to the configuration a myStrom thing has the following properties.
+In addition to the configuration a myStrom Thing has the following properties.
 The properties are updated during initialize.
-Disabling/enabling the thing can be used to update the properties.
+Disabling/enabling the Thing can be used to update the properties.
 
 | Property-Name | Description                                                           |
 | ------------- | --------------------------------------------------------------------- |

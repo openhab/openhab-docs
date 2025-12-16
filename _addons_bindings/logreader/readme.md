@@ -133,7 +133,7 @@ You could easily send thousand of _spam_ emails in short period if e.g. one bind
 
 ### Thing status
 
-Check thing status for errors.
+Check Thing status for errors.
 
 ### Verbose logging
 

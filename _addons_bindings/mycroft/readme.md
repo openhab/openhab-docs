@@ -30,7 +30,7 @@ Possibilies include:
 
 ## Supported Things
 
-The only thing managed by this binding is a Mycroft instance
+The only Thing managed by this binding is a Mycroft instance
 
 |   Thing Type ID    |            Description                                                     |
 |--------------------|----------------------------------------------------------------------------|
@@ -57,7 +57,7 @@ Thing mycroft:mycroft:myMycroft "Mycroft A.I." @ "Living Room" [host="192.168.X.
 
 ## Channels
 
-A Mycroft thing has the following channels:
+A Mycroft Thing has the following channels:
 
 | channel type id              | Item type | description                                                                                    |
 |------------------------------|-----------|------------------------------------------------------------------------------------------------|

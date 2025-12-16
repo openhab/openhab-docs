@@ -3,7 +3,7 @@ id: mqtt.fpp
 label: FPP
 title: FPP - Bindings
 type: binding
-description: "Binding to control Falcon Player (FPP) Devices using MQTT and HTTP. Status messages are received over MQTT and Commands are HTTP Commands."
+description: "Binding to control Falcon Player (FPP) devices using MQTT and HTTP. Status messages are received over MQTT and commands are sent via HTTP."
 install: manual
 ---
 
@@ -13,11 +13,11 @@ install: manual
 
 # FPP Binding
 
-Binding to control Falcon Player (FPP) Devices using MQTT and HTTP. Status messages are received over MQTT and Commands are HTTP Commands.
+Binding to control Falcon Player (FPP) devices using MQTT and HTTP. Status messages are received over MQTT and commands are sent via HTTP.
 
 ## Discovery
 
-Autodiscovering is not supported. We have to define the things manually.
+Auto-discovery is not supported. Define the Thing manually.
 
 ## Supported Things
 
@@ -25,10 +25,10 @@ The binding supports one Thing `player` that represents the Falcon Player.
 
 ## Thing Configuration
 
-| Parameter    | Description                             | Required | Default |
-|--------------|-----------------------------------------|----------|---------|
-| `playerIP`   | IP Address or Host Name of FPP Devive   | Y        |         |
-| `playerMQTT` | MQTT Topic of FPP Devive Status Updates | Y        |         |
+| Parameter         | Description                             | Required | Default |
+|-------------------|-----------------------------------------|----------|---------|
+| `playerAddress`   | Player IP address or host name          | Y        |         |
+| `playerMQTTTopic` | MQTT player status topic                | Y        |         |
 
 ## Channels
 
@@ -39,15 +39,15 @@ The binding supports one Thing `player` that represents the Falcon Player.
 | `status`                               | String             | Playback Status.                          |
 | `mode`                                 | String             | Playback Mode.                            |
 | `uptime`                               | Number:Time        | Device Uptime.                            |
-| `testing-enabled`                      | Switch             | Enabled/Disable Sending Testing Data.     |
+| `testing-enabled`                      | Switch             | Enable/Disable sending testing data.      |
 | `current-sequence`                     | String (read only) | Currently Playing Sequence File.          |
 | `current-song`                         | String (read only) | Currently Playing Audio/Media File.       |
 | `current-playlist`                     | String (read only) | Currently Playing Playlist.               |
 | `seconds-played`                       | Number:Time        | Sequence Playback time in secs.           |
 | `seconds-remaining`                    | Number:Time        | Sequence Playback time remaining in secs. |
-| `last-playlist`                        | String             | Lasted Played Playlist.                   |
-| `bridging-enabled`                     | Switch             | Is Receiving Bridge Data.                 |
-| `multisync-enabled`                    | Switch             | Multisync Mode Enabled.                   |
+| `last-playlist`                        | String             | Last Played Playlist.                     |
+| `bridging-enabled`                     | Switch             | Receiving bridge data.                    |
+| `multisync-enabled`                    | Switch             | Multisync mode enabled.                   |
 | `scheduler-current-playlist`           | String (read only) | Scheduler Current Playlist.               |
 | `scheduler-current-playlist-start`     | String (read only) | Scheduler Current Playlist Start Time.    |
 | `scheduler-current-playlist-end`       | String (read only) | Scheduler Current Playlist End Time.      |
@@ -57,9 +57,9 @@ The binding supports one Thing `player` that represents the Falcon Player.
 
 ## Full Example
 
-To use these examples for textual configuration, you must already have a configured MQTT `broker` thing, and know its unique ID.
+To use these examples for textual configuration, you must already have a configured MQTT `broker` Thing, and know its unique ID.
 This UID will be used in the things file and will replace the text `myBroker`.
-The first line in the things file will create a `broker` thing and this can be removed if you have already setup a broker in another file or via the UI already.
+The first line in the things file will create a `broker` Thing and this can be removed if you have already setup a broker in another file or via the UI already.
 
 ### fpp.things
 

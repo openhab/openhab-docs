@@ -17,7 +17,7 @@ This binding is used to enable communications between openHAB and "Modern Forms"
 
 ## Supported Things
 
-The binding currently supports the following thing:
+The binding currently supports the following Thing:
 
 | Thing         | ID          |                                                                |
 |---------------|-------------|----------------------------------------------------------------|
