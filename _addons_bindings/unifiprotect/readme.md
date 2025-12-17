@@ -4,6 +4,7 @@ label: UniFi Protect
 title: UniFi Protect - Bindings
 type: binding
 description: "This binding integrates Ubiquiti UniFi Protect into openHAB."
+logo: images/addons/unifiprotect.png
 install: auto
 ---
 
@@ -12,6 +13,8 @@ install: auto
 {% include base.html %}
 
 # UniFi Protect Binding
+
+<AddonLogo />
 
 This binding integrates Ubiquiti UniFi Protect into openHAB.
 It connects to your Protect NVR/CloudKey/UNVR and provides live events and configurable settings for Cameras, Floodlights, and Sensors.
