@@ -124,7 +124,7 @@ Filters {
 The include (exclude) filter allows to define a range for accepted (rejected) values.
 It can only be used with `Number` items.
 
-The range is defined by to decimal values.
+The range is defined by two decimal values.
 The boundaries are always considered to be part (not part) of the defined range (i.e. a lower boundary of `5` considers a value of `5` to be inside the range for an include filter and outside of the range for exclude filters).
 In case of dimensional items (e.g `Number:Temperature`) a unit MUST be provided.
 
