@@ -25,7 +25,7 @@ Rules can be executed, either when fired by their triggers, or when called expli
 When a rule is fired by its trigger, the execution of one and the same rule does not happen in parallel.
 If a rule is triggered for execution, while the rule is currently running, it will be queued and run later.
 
-When a rule is called explicitly - from a script, another rule with [`RuleManager.runNow()`](https://www.openhab.org/javadoc/latest/org/openhab/core/automation/rulemanager), from a MainUI widget, then this rule can be executed in parallel.
+When a rule is called explicitly - e.g. from a script, another rule with [`RuleManager.runNow()`](https://www.openhab.org/javadoc/latest/org/openhab/core/automation/rulemanager), or from a Main UI widget - then this rule can be executed in parallel.
 That is it can start running, while the same rule is executed at the same time.
 In this case there is a need to program protection against race conditions.
 
