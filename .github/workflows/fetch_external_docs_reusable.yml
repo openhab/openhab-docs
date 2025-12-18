@@ -114,7 +114,7 @@ jobs:
 
       # Create an automated pull request, if the resulting branch is ahead of the `base-target-branch`
       - name: Create pull request
-        uses: peter-evans/create-pull-request@v7
+        uses: peter-evans/create-pull-request@v8
         with:
           commit-message: Automated ${{ inputs.base_source_repository }} Docs fetch
           committer: openHAB Bot <info@openhab.org>
