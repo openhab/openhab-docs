@@ -463,7 +463,9 @@ Additional DPTs have been introduced to add functionality:
 
 ## KNX Secure
 
-> NOTE: Support for KNX Secure is partly implemented for openHAB and should be considered as experimental.
+> NOTE: Support for KNX Secure is partially implemented.
+KNX IP Secure connections using a secure tunnel work stable.
+All other features should be considered experimental.
 
 ### KNX IP Secure
 

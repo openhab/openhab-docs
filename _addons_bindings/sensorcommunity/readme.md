@@ -4,6 +4,7 @@ label: SensorCommunity
 title: SensorCommunity - Bindings
 type: binding
 description: "Binding for the [Sensor.Community](https://sensor.community/)."
+logo: images/addons/sensorcommunity.svg
 install: auto
 ---
 
@@ -12,6 +13,8 @@ install: auto
 {% include base.html %}
 
 # SensorCommunity Binding
+
+<AddonLogo />
 
 Binding for the [Sensor.Community](https://sensor.community/).
 The community provides instructions to build sensors on your own and they can be integrated into the database.

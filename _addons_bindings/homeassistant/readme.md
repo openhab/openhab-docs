@@ -4,6 +4,7 @@ label: Home Assistant
 title: Home Assistant - Bindings
 type: binding
 description: "Devices that use [Home Assistant MQTT Discovery](https://www.home-assistant.io/integrations/mqtt/#mqtt-discovery) are automatically configured with this binding."
+logo: images/addons/homeassistant.svg
 install: auto
 ---
 
@@ -12,6 +13,8 @@ install: auto
 {% include base.html %}
 
 # Home Assistant  Binding
+
+<AddonLogo />
 
 Devices that use [Home Assistant MQTT Discovery](https://www.home-assistant.io/integrations/mqtt/#mqtt-discovery) are automatically configured with this binding.
 Components that share a common `device.identifiers` will automatically be grouped together as a single Thing.

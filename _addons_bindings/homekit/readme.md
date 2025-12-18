@@ -4,7 +4,7 @@ label: HomeKit
 title: HomeKit - Bindings
 type: binding
 description: "This binding allows pairing with HomeKit accessories and **imports** their services as channel groups and their respective service- characteristics as channels."
-logo: images/addons/homekit.png
+logo: images/addons/homekit.svg
 install: auto
 ---
 

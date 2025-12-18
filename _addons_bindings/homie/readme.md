@@ -4,6 +4,7 @@ label: Homie Convention
 title: Homie Convention - Bindings
 type: binding
 description: "Devices that follow the [Homie convention](https://homieiot.github.io/) 3.x and 4.x are auto-discovered and represented by this binding and the Homie Thing."
+logo: images/addons/homie.svg
 install: auto
 ---
 
@@ -12,6 +13,8 @@ install: auto
 {% include base.html %}
 
 # Homie Convention Binding
+
+<AddonLogo />
 
 Devices that follow the [Homie convention](https://homieiot.github.io/) 3.x and 4.x are auto-discovered and represented by this binding and the Homie Thing.
 
